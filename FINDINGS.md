@@ -192,12 +192,102 @@ Storage is a non-issue: all 2,104 caption tracks ≈ **450 MB**, extracted text
 ≈ 50 MB. Never store audio — download, transcribe, write transcript, delete;
 peak stays ~50 MB.
 
+---
+
+# FULL CENSUS — all 2,104 videos scored (2026-08-11)
+
+**The sample estimates above are superseded by this section.** Every caption
+track on the channel has been fetched and scored; `meta/ledger.tsv` is the
+per-video record (pos, id, title, duration_s, words, sentences, wps, verdict,
+provenance). Numbers below are measured, not extrapolated.
+
+| verdict | videos | audio hours | share of audio |
+|---|---:|---:|---:|
+| **good** (punctuated, usable as-is) | 1,336 | 595.2 h | **67.3%** |
+| **needs-whisper** (unpunctuated ASR) | 737 | 273.7 h | **30.9%** |
+| **no captions at all** | 31 | 15.8 h | 1.8% |
+| **total needing transcription** | **768** | **289.5 h** | **32.7%** |
+
+The 31 with no track were verified individually with `--list-subs` — YouTube has
+neither auto nor manual captions for them. They are Whisper work, not a fetch
+failure to retry. One further video (`AuFSMpFzAnw`, eevBLAB 117) is age-gated
+and needs `--cookies-from-browser` to fetch; it is counted in the 31.
+
+## The threshold is empirically real, not a judgment call
+
+Words-per-sentence across the corpus is **sharply bimodal with an empty gap**
+exactly where the cut sits, so the good/broken split is not sensitive to where
+the line is drawn:
+
+| wps | videos | |
+|---|---:|---|
+| 0–10 | 305 | normal prose |
+| 10–15 | 843 | normal prose |
+| 15–20 | 187 | |
+| 20–30 | 5 | |
+| **30–40** | **0** | **← the cut sits in an empty gap** |
+| 40–60 | 1 | |
+| 60–200 | 30 | |
+| 200+ | 702 | unpunctuated runs |
+
+Median on the good tracks is **11.9 wps** — unchanged from the 30-video sample
+(12.2), which also confirms that fetching at high concurrency did not cause
+YouTube to serve degraded tracks.
+
+## Corrected cost (this replaces the $127 figure above)
+
+| | |
+|---|---|
+| Audio needing Whisper | **289.5 h** |
+| OpenAI Whisper API @ $0.006/min | **$104** |
+| Whole corpus for comparison | $319 |
+| Local whisper.cpp large-v3, broken third only (~5× realtime) | ~2.4 days, free |
+
+An earlier correction claimed broken videos run *longer* (24 vs 20 min) and put
+the affected share at 40% by audio hours. On the full census the opposite is
+true — **broken mean 22.3 min, good mean 26.7 min** — so the share by audio
+hours (30.9%) is *lower* than the share by video count (35.6%). The 30-video
+sample was too small to resolve this.
+
+## The failure is era-correlated but not era-bounded
+
+Broken share by catalogue position (0 = newest):
+
+| position | broken |
+|---|---:|
+| 0–209 (newest) | 12% |
+| 210–419 | 24% |
+| 420–839 | 36% |
+| 840–1259 | **~52%** |
+| 1260–1889 | ~32% |
+| 1890–2104 (oldest) | 43% |
+
+The middle of the catalogue is worst, and even the newest 10% is 12% broken.
+**No date cutoff cleanly separates the two populations**, which is why ingest
+must score every video individually rather than branch on upload year.
+
+## Storage
+
+All 2,073 tracks as json3: **791 MB** on disk (higher than the 450 MB estimate).
+Extracted text will be far smaller. Still trivial; audio is never stored.
+
 ## Next session
 
-1. Fetch all 2,104 caption tracks as json3 (~450 MB, ~1 h, polite rate limits).
-2. Score each by punctuation density; write a **ledger**: id, title, date,
-   duration, words, words/sentence, verdict good | needs-whisper, provenance.
-   That replaces the 40% sample estimate with the real number and the real cost.
-3. Draft the reply to Dave (five scoping questions + paid pilot proposal).
-4. Run the 25-video pilot: 10 Fundamentals, 10 teardown/repair, 5 mailbag/BLAB
-   — deliberately including the worst case so the quote is honest.
+1. ~~Fetch and score all caption tracks~~ — **done**, see above.
+2. Draft the reply to Dave (scoping questions + paid pilot proposal).
+3. Run the 25-video pilot: 10 Fundamentals, 10 teardown/repair, 5 mailbag/BLAB
+   — deliberately including the worst case so the quote is honest. Pick the
+   worst case from the ledger's `needs-whisper` rows.
+4. Fetch the age-gated video with `--cookies-from-browser`.
+
+## Reproducing this
+
+    yt-dlp -a <shard> --skip-download --write-auto-subs --no-write-subs \
+      --sub-langs en --sub-format json3 --no-overwrites --ignore-errors \
+      --sleep-requests 0.5 -o "captions/%(id)s.%(ext)s"
+
+Sharded 10 ways round-robin across the catalogue. Sustained **~196 videos/min**,
+whole channel in **~11 minutes**, with **zero throttling** — no 429s, no bot
+checks. Serial with a 1 s sleep managed 4.5/min (7+ hours), so the concurrency
+is worth it. `tools/score_captions.py` rebuilds the ledger from what is on disk;
+`tools/watch_fetch.sh` is the progress/throttle monitor.
