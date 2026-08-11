@@ -266,6 +266,28 @@ The middle of the catalogue is worst, and even the newest 10% is 12% broken.
 **No date cutoff cleanly separates the two populations**, which is why ingest
 must score every video individually rather than branch on upload year.
 
+## EEVblog2 — the second channel (Dave asked for it too)
+
+Censused the same way. **It is materially worse than the main channel** and the
+difference matters for the quote:
+
+| | videos | hours | good h | needs Whisper | % broken by audio |
+|---|---:|---:|---:|---:|---:|
+| EEVblog | 2,104 | 885 | 595 | 290 h | 33% |
+| EEVblog2 | 1,290 | 268 | 88 | 180 h | **67%** |
+| **combined** | **3,394** | **1,153** | **683** | **470 h** | **41%** |
+
+EEVblog2 adds 61% more files but only 30% more audio — median video is 7.1 min
+vs 21.8 on the main channel. But two-thirds of its audio has unpunctuated
+captions, so it carries a disproportionate share of the transcription work:
+38% of the Whisper hours from 23% of the audio.
+
+**Whisper for the whole job: $169** (470 h), or ~3.9 days unattended on the M4.
+
+Short videos also mean fewer claims per file, so EEVblog2's contribution to
+article count will be lower per video than the main channel. Do not price it
+per-video at the same rate.
+
 ## Storage
 
 All 2,073 tracks as json3: **791 MB** on disk (higher than the 450 MB estimate).

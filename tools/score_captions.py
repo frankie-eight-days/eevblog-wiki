@@ -12,8 +12,12 @@ sit near 12, the failures run into the thousands.
 import json, pathlib, re, csv, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CAPS = ROOT / "captions"
-OUT = ROOT / "meta" / "ledger.tsv"
+
+# usage: score_captions.py [channel]   ("" = main EEVblog, "2" = EEVblog2)
+CH = sys.argv[1] if len(sys.argv) > 1 else ""
+CAPS = ROOT / f"captions{CH}"
+SRC = ROOT / "meta" / (f"EEVblog2_flat.tsv" if CH == "2" else "channel_flat.tsv")
+OUT = ROOT / "meta" / f"ledger{CH}.tsv"
 
 WPS_LIMIT = 40          # above this, treat the track as unpunctuated
 ENDER = re.compile(r"[.!?]")
@@ -35,7 +39,7 @@ def text_of(path):
 
 def main():
     meta = {}
-    for line in (ROOT / "meta" / "channel_flat.tsv").read_text().splitlines():
+    for line in SRC.read_text().splitlines():
         if not line.strip():
             continue
         parts = line.split("\\t")          # the flat dump wrote literal \t
