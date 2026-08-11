@@ -334,6 +334,30 @@ immediately, and let the Mini grind through EEVblog2 for free in the background
 (~1.9 days). That is $104 to take transcription off the critical path entirely
 while still paying nothing for the half of the corpus nobody is waiting on.
 
+## Article structure: brand pages beat model pages (2026-08-11)
+
+Measured from titles alone, before transcripts add in-passing mentions:
+
+| unit | evidence available |
+|---|---|
+| **Brand** (Fluke, Rigol, Tektronix) | Rigol 50 videos, Fluke 45, Keysight 42, Agilent 36, Siglent 28, Tektronix 28, R&S 20, Brymen 18. **22 brands appear in 5+ titles**; 481 titles name a tracked brand. |
+| **Model** (Fluke 91, Rigol DS1054Z) | 223 candidates, but only **30 appear in 2+ videos**. |
+
+So the instrument layer is really two different articles:
+
+1. **Brand pages** — genuine cross-video synthesis, and the natural home for
+   Dave's accumulated judgment ("Rigol's firmware", "Fluke build quality",
+   "why Keysight costs what it does"). This is the lane no other site has,
+   because nobody else has 16 years of one expert opening the same brands.
+2. **Teardown pages** — mostly single-video, so these are video-anchored
+   articles: specs plus what Dave noticed. Cross-video synthesis is available
+   for only ~30 models, so do not build the pipeline assuming otherwise.
+
+The census `type` vocabulary already separates these: `company-product` for the
+brand axis, `tool-equipment` for instrument classes (oscilloscope, multimeter).
+Neither is currently used to select or shape anything -- `type` is written into
+packet metadata at build_bundles.py:356 and never read again.
+
 ## Next session
 
 1. ~~Fetch and score all caption tracks~~ — **done**, see above.
