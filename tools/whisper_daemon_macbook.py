@@ -29,7 +29,7 @@ PRIORITY. The queue is ordered: main channel first, then the second channel.
 import json, os, pathlib, queue, shutil, subprocess, sys, threading, time, csv
 
 HOME = pathlib.Path.home()
-BASE = HOME / "eevblog"
+BASE = HOME / "eevblog_local"
 # q5_0 quantisation, benchmarked head-to-head against full large-v3 on the same
 # file: 98.8% word agreement, all four model numbers identical (BP3309,
 # CP2100B, T8, TO20) and the brand name right 6/6. That is a completely
