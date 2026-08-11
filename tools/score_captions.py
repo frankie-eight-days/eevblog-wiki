@@ -22,6 +22,18 @@ OUT = ROOT / "meta" / f"ledger{CH}.tsv"
 WPS_LIMIT = 40          # above this, treat the track as unpunctuated
 ENDER = re.compile(r"[.!?]")
 
+# YouTube ASR carries no speaker labels, and EEVblog is *mostly* -- not always --
+# one man talking to camera. Tours, lab visits and collabs put a second voice on
+# the track with nothing to mark it, so anything sliced from those videos cannot
+# safely be attributed to a named person. Standalone backchannels ("Mhm.",
+# "Yep.", "Right.") are the cheapest reliable tell: a monologue has almost none,
+# a conversation is full of them. Only 3.2% of titles name an interview, so this
+# has to be measured from content rather than metadata.
+BACKCHANNEL = re.compile(
+    r"\b(mhm|mm-hmm|uh-huh|yep|yeah|right|ok|okay|exactly|correct|true|sure|wow|"
+    r"really)\b[.,?]", re.I)
+BACKCHANNEL_LIMIT = 18.0        # per 1,000 words; ~p90 of the corpus
+
 
 def text_of(path):
     """Flatten a json3 track to plain text (json3 has no rolling-caption
@@ -32,9 +44,11 @@ def text_of(path):
         return None
     out = []
     for ev in doc.get("events", []):
-        for seg in ev.get("segs", []) or []:
-            out.append(seg.get("utf8", ""))
-    return "".join(out).replace("\n", " ")
+        segs = ev.get("segs", []) or []
+        line = "".join(s.get("utf8", "") for s in segs).replace("\n", " ").strip()
+        if line:
+            out.append(line)          # events need a space between them; segs do not
+    return " ".join(out)
 
 
 def main():
@@ -54,20 +68,25 @@ def main():
             missing.append(vid)
             rows.append(dict(pos=pos, id=vid, title=title, duration_s=dur,
                              words=0, sentences=0, wps=0,
+                             backchannel_per_1k=0.0, speakers="unknown",
                              verdict="no-captions", provenance="whisper-large-v3"))
             continue
         txt = text_of(p)
         if txt is None:
             rows.append(dict(pos=pos, id=vid, title=title, duration_s=dur,
                              words=0, sentences=0, wps=0,
+                             backchannel_per_1k=0.0, speakers="unknown",
                              verdict="unreadable", provenance="whisper-large-v3"))
             continue
         words = len(txt.split())
         sents = len(ENDER.findall(txt))
         wps = round(words / sents, 1) if sents else float(words)
         bad = sents == 0 or wps > WPS_LIMIT
+        bpk = round(len(BACKCHANNEL.findall(txt)) / words * 1000, 1) if words else 0.0
         rows.append(dict(pos=pos, id=vid, title=title, duration_s=dur,
                          words=words, sentences=sents, wps=wps,
+                         backchannel_per_1k=bpk,
+                         speakers="multi" if bpk >= BACKCHANNEL_LIMIT else "solo",
                          verdict="needs-whisper" if bad else "good",
                          provenance="whisper-large-v3" if bad else "youtube-asr"))
 
