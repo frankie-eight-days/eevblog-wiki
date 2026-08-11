@@ -64,13 +64,33 @@ def log(msg):
             fh.write(line + "\n")
 
 
+# The longest genuine content is a 186-minute Q&A and a 178-minute interview,
+# both worth having. Above that there is exactly one video -- a 20-hour joke
+# ("World's Most Annoying Video") that would hold a worker for ~4 hours and
+# blow the bounded-disk assumption with a 2.3 GB WAV. Cap above real content
+# but below the troll, and RECORD what was dropped rather than silently
+# skipping it, so the exclusion is reviewable.
+MAX_MINUTES = 240
+
+
 def load_queue():
     """Ordered work list; presence of OUT/<id>.json means already done."""
-    rows = []
+    rows, skipped = [], []
     with QUEUE_FILE.open() as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
-            if not (OUT / f"{r['id']}.json").exists():
-                rows.append(r)
+            if (OUT / f"{r['id']}.json").exists():
+                continue
+            if int(r.get("duration_s") or 0) > MAX_MINUTES * 60:
+                skipped.append(r)
+                continue
+            rows.append(r)
+    if skipped:
+        with (BASE / "skipped_too_long.tsv").open("w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(skipped[0]), delimiter="\t")
+            w.writeheader(); w.writerows(skipped)
+        for r in skipped:
+            log(f"SKIP (>{MAX_MINUTES}min): {r['id']} "
+                f"{int(r['duration_s'])/60:.0f}min {r['title'][:50]}")
     return rows
 
 
