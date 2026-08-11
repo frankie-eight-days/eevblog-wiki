@@ -38,8 +38,14 @@ PAUSE = BASE / "PAUSE"
 STATUS = BASE / "status.json"
 
 N_TRANSCRIBE = 2          # measured sweet spot; 3 risks swapping on 16 GB
-N_DOWNLOAD = 2
-READY_MAX = 3             # bounded, so disk stays ~300 MB
+# The 8.5x concurrency benchmark ran two transcribers and NOTHING else. In the
+# daemon, downloaders run continuously to keep the ready-queue full, and ffmpeg
+# decoding to WAV is CPU-hungry enough to steal cycles from whisper's own
+# threads -- observed throughput fell to ~2.7x. One downloader, niced, with
+# ffmpeg capped at two threads, is still far faster than the GPU can consume.
+N_DOWNLOAD = 1
+NICE = ["nice", "-n", "15"]
+READY_MAX = 2             # bounded, so disk stays ~300 MB
 WHISPER = "/opt/homebrew/bin/whisper-cli"
 
 # Conditions the decoder toward punctuated output with the right vocabulary.
@@ -100,15 +106,16 @@ def fetch(vid):
     wav = WORK / f"{vid}.wav"
     if wav.exists():
         return wav
-    r = subprocess.run(["yt-dlp", "-f", "bestaudio", "--no-progress",
-                        "--retries", "5", "-o", str(src),
-                        f"https://www.youtube.com/watch?v={vid}"],
+    r = subprocess.run(NICE + ["yt-dlp", "-f", "bestaudio", "--no-progress",
+                               "--retries", "5", "-o", str(src),
+                               f"https://www.youtube.com/watch?v={vid}"],
                        capture_output=True, text=True)
     if not src.exists():
         raise RuntimeError(f"download failed: {r.stderr.strip()[-160:]}")
-    r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
-                        "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le",
-                        str(wav)], capture_output=True, text=True)
+    r = subprocess.run(NICE + ["ffmpeg", "-y", "-loglevel", "error",
+                               "-threads", "2", "-i", str(src),
+                               "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le",
+                               str(wav)], capture_output=True, text=True)
     src.unlink(missing_ok=True)
     if not wav.exists():
         raise RuntimeError(f"transcode failed: {r.stderr.strip()[-160:]}")
