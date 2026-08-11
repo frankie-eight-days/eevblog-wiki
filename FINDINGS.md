@@ -293,6 +293,47 @@ per-video at the same rate.
 All 2,073 tracks as json3: **791 MB** on disk (higher than the 450 MB estimate).
 Extracted text will be far smaller. Still trivial; audio is never stored.
 
+## Local transcription: measured, not projected (2026-08-11)
+
+Running on the M4 Mini (16 GB, 10 cores) via a launchd daemon. **Sustained
+throughput is 3.99x realtime**, which is the number to plan with. Everything
+that got us there, including two of my own bad estimates:
+
+| configuration | throughput | note |
+|---|---|---|
+| single file, idle machine, pre-made WAV | 5.3-5.4x | benchmark conditions, not reachable in production |
+| 2 workers + 2 downloaders, launchd default QoS | 2.32x | |
+| 2 workers, downloaders niced, Interactive QoS | 3.33x | |
+| **1 worker, downloader niced, Interactive QoS** | **3.99x** | **shipping config** |
+
+Three real causes of the gap between benchmark and production:
+
+1. **launchd confines LaunchAgents to efficiency cores** under default
+   background QoS. The benchmark ran in an interactive SSH shell with P-core
+   access. Fixed with `ProcessType=Interactive`.
+2. **Downloaders steal cores.** ffmpeg decoding to WAV is CPU-hungry enough to
+   slow whisper measurably. Fixed with `nice -n 15` and `-threads 2`.
+3. **A second transcriber makes it slower, not faster.** The work is GPU-bound;
+   whisper's idle CPU during decode is not spare capacity. My original 8.5x
+   concurrency figure was an artifact of benchmarking two files of unequal
+   length -- the short one finished early and the long one ran alone for the
+   rest, so the number described a brief overlap rather than sustained rate.
+
+Flash attention (`-fa on`) made no difference (301.5s vs 301.8s). Core ML/ANE
+remains untried; docs claim >3x on the encoder but it needs a source rebuild.
+
+### What that costs in time
+
+| scope | audio | local @ 3.99x | API @ $0.36/h |
+|---|---:|---:|---:|
+| main channel | 289.6 h | **3.0 days** | $104, ~2 h |
+| both channels | 449 h | **4.7 days** | $169, ~2.5 h |
+
+**Recommended hybrid:** buy the main channel via API so article work can start
+immediately, and let the Mini grind through EEVblog2 for free in the background
+(~1.9 days). That is $104 to take transcription off the critical path entirely
+while still paying nothing for the half of the corpus nobody is waiting on.
+
 ## Next session
 
 1. ~~Fetch and score all caption tracks~~ — **done**, see above.
