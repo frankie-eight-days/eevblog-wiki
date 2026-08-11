@@ -131,3 +131,73 @@ distinction is the whole basis of the project's credibility.
 5. Anything not public: unlisted, members-only, pre-YouTube.
 6. One-off build or ongoing ingest as he publishes weekly?
 7. Hosting/ownership: his domain, his repo. Who owns the pipeline?
+
+
+## Corrections and confirmations (research pass, 2026-08-10)
+
+**Recovery branch is fully closed.** All seven caption formats (vtt, srt, srv1,
+srv2, srv3, ttml, json3) carry the same ~3 punctuation marks on a broken video.
+Pushing the track through YouTube's translation layer with `&tlang=en` is a
+no-op for English→English. There is **no documented trigger** for YouTube
+regenerating a track with the newer model — a genuine negative result, not a
+gap in searching. Likely cause (unconfirmed): YouTube ASR barely punctuated
+before ~April 2025 and the backfill is incomplete.
+
+**Use `json3`, not `vtt`.** VTT carries ~3x word inflation from rolling-caption
+duplication (yt-dlp issue 1734). Consecutive-line dedup mostly handles it, but
+json3 avoids the problem.
+
+**whisper.cpp, not faster-whisper, on Apple Silicon.** faster-whisper has no
+Metal support and runs CPU-only; whisper.cpp uses Metal and can put the encoder
+on the Neural Engine. Use large-v3 (not a smaller model) — dense electronics
+jargon is exactly where model size pays. Checkpoint per video and make the
+runner resumable.
+
+**Tag transcript provenance per video** (`youtube-asr` vs `whisper-large-v3`)
+in the packets, so spot-checks can be aimed at the re-transcribed set.
+
+**Why restoration is disqualified, sharpened:** the old ASR is not merely
+unpunctuated, it is the *weaker model* — the one mangling technical jargon.
+Restoration would fix punctuation while preserving every word error underneath,
+producing quotes that read fluently and are wrong, and the verifier would pass
+them because the bytes match the file. Byte-exact matching against a corrupted
+source guarantees internal consistency, not fidelity to what was said.
+
+### Corrected sizing (a research estimate of 120 h was wrong)
+
+Broken videos are **not** shorter — mean 24 min vs 20 min for good ones — so
+the affected share is **40% by audio hours**, not by video count:
+
+| | |
+|---|---|
+| Needs re-transcription | ~354 h |
+| Whisper API for that | **$127** |
+| Whisper API, whole corpus | $319 |
+
+### Local (Mac Mini M4, 16 GB) vs cloud
+
+| approach | cost | wall clock |
+|---|---|---|
+| local, turbo, broken 40% | free | 1.2–1.8 days |
+| local, large-v3, broken 40% | free | 3.7–5.9 days |
+| local, large-v3, whole corpus | free | 9–15 days (reject) |
+| cloud, broken 40% | $127 | 2–4 h (upload-bound) |
+| cloud, whole corpus | $319 | 4–8 h |
+
+16 GB is fine for large-v3 (~3.1 GB model); the constraint is machine
+availability, not RAM. **Plan: run the pilot locally for free; pay the $127 for
+the full build and bill it to Dave as a pass-through.**
+
+Storage is a non-issue: all 2,104 caption tracks ≈ **450 MB**, extracted text
+≈ 50 MB. Never store audio — download, transcribe, write transcript, delete;
+peak stays ~50 MB.
+
+## Next session
+
+1. Fetch all 2,104 caption tracks as json3 (~450 MB, ~1 h, polite rate limits).
+2. Score each by punctuation density; write a **ledger**: id, title, date,
+   duration, words, words/sentence, verdict good | needs-whisper, provenance.
+   That replaces the 40% sample estimate with the real number and the real cost.
+3. Draft the reply to Dave (five scoping questions + paid pilot proposal).
+4. Run the 25-video pilot: 10 Fundamentals, 10 teardown/repair, 5 mailbag/BLAB
+   — deliberately including the worst case so the quote is honest.
