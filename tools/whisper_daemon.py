@@ -11,11 +11,12 @@ already on disk, so there is no index to corrupt and no checkpoint to go stale.
 ATOMIC WRITES. Output is written to a .part and renamed. A crash mid-write can
 therefore never leave a truncated .json that a later run would mistake for done.
 
-GPU UTILISATION. Whisper alternates a GPU-heavy encoder with an autoregressive
-decoder that leaves the GPU mostly idle -- measured: 21-34s of CPU against 300s
-of wall. Two transcribers fill each other's gaps (5.3x -> 8.5x realtime). A
-separate pool of downloaders keeps decoded audio waiting so the GPU never
-blocks on the network.
+GPU UTILISATION. One transcriber, not two. Whisper's decode phase leaves the
+CPU mostly idle (21-34s of CPU against 300s of wall), which looks like room for
+a second worker -- but the work is GPU-bound, and measured end to end a second
+worker makes things worse, not better: 5.3-5.4x alone versus ~3.3x combined for
+two. Downloads run in a separate, niced thread so the GPU never waits on the
+network, which is the overlap that actually pays.
 
 DISK. Audio is deleted the moment its transcript lands. Peak usage is the
 bounded ready-queue, a few hundred MB, regardless of corpus size.
@@ -37,7 +38,14 @@ QUEUE_FILE = BASE / "queue.tsv"
 PAUSE = BASE / "PAUSE"
 STATUS = BASE / "status.json"
 
-N_TRANSCRIBE = 2          # measured sweet spot; 3 risks swapping on 16 GB
+# Measured, not assumed: a single process runs at 5.3-5.4x realtime, while two
+# concurrent workers deliver only ~3.3x COMBINED -- concurrency is a net loss
+# here. The original 8.5x figure came from a flawed benchmark: two files of
+# unequal length "both finished in 530s", but the shorter one finished early and
+# the longer ran alone for the rest, so that number reflected brief overlap
+# rather than sustained throughput. One worker keeps the GPU saturated on its
+# own; a second only contends for it.
+N_TRANSCRIBE = 1
 # The 8.5x concurrency benchmark ran two transcribers and NOTHING else. In the
 # daemon, downloaders run continuously to keep the ready-queue full, and ffmpeg
 # decoding to WAV is CPU-hungry enough to steal cycles from whisper's own
