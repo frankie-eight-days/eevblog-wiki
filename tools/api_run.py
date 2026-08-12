@@ -61,18 +61,26 @@ def log(m):
 
 
 def fetch(vid):
-    src = WORK / f"{vid}.src"
     ogg = WORK / f"{vid}.ogg"
     if ogg.exists():
         return ogg
+    # Build flags as a list and append -- never splice into the middle of the
+    # command. A cmd[5:5] insert landed between '-f' and 'bestaudio', so yt-dlp
+    # read '--cookies' as the format, tried to fetch every format at once, and
+    # died with "Fixed output name but more than one file to download".
     cmd = ["nice", "-n", "10", "yt-dlp", "-f", "bestaudio", "--no-progress",
-           "--retries", "3", "-o", str(src),
-           f"https://www.youtube.com/watch?v={vid}"]
+           "--retries", "3"]
     if COOKIES.exists():
-        cmd[5:5] = ["--cookies", str(COOKIES)]
+        cmd += ["--cookies", str(COOKIES)]
+    # %(ext)s keeps yt-dlp free to pick the container; a fixed name is also what
+    # trips the multi-file error when a format selector resolves to more than one.
+    cmd += ["-o", str(WORK / f"{vid}.%(ext)s"),
+            f"https://www.youtube.com/watch?v={vid}"]
     r = subprocess.run(cmd, capture_output=True, text=True)
-    if not src.exists():
+    got = [p for p in WORK.glob(f"{vid}.*") if p.suffix != ".ogg"]
+    if not got:
         raise RuntimeError(f"download failed: {r.stderr.strip()[-200:]}")
+    src = got[0]
     # 16 kHz mono opus: exactly what Whisper resamples to internally, and ~7x
     # smaller than source, which is what makes the upload tractable.
     r = subprocess.run(["nice", "-n", "10", "ffmpeg", "-y", "-loglevel", "error",
