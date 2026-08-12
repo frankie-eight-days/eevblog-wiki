@@ -1,0 +1,763 @@
+{
+ "episode": null,
+ "title": "EEVacademy #4 -  I²C (I2C) Bit Banging",
+ "url": "https://www.youtube.com/watch?v=fm13tIe5wSc",
+ "file": "fm13tIe5wSc.md",
+ "main_topics": [
+  "i2c",
+  "bit-banging",
+  "i2c-addressing"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": "Frontmatter is missing the episode field.",
+ "mentions": [
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 17,
+   "depth": "explains",
+   "context_snippet": "I2C and the very similar SMBus are in almost everything"
+  },
+  {
+   "concept": "smbus",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 25,
+   "depth": "mention",
+   "context_snippet": "the very similar SMBus"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 232,
+   "depth": "explains",
+   "context_snippet": "For many sensors, I2C is the standard way to get data"
+  },
+  {
+   "concept": "sda",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 318,
+   "depth": "explains",
+   "context_snippet": "you've got the S-clock and the S-data"
+  },
+  {
+   "concept": "scl",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 357,
+   "depth": "explains",
+   "context_snippet": "That's SCL and SDA"
+  },
+  {
+   "concept": "open-drain",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 455,
+   "depth": "explains",
+   "context_snippet": "because those wires are open drain"
+  },
+  {
+   "concept": "open-drain",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 508,
+   "depth": "explains",
+   "context_snippet": "Open drain means that the driving side only drives low"
+  },
+  {
+   "concept": "pull-up-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 564,
+   "depth": "explains",
+   "context_snippet": "Each of the wires have to have a pull-up"
+  },
+  {
+   "concept": "pull-up-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 739,
+   "depth": "explains",
+   "context_snippet": "you see two resistors pulling up to the power rail"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 875,
+   "depth": "explains",
+   "context_snippet": "depends on the speed grade of the interface"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 937,
+   "depth": "explains",
+   "context_snippet": "The smaller the resistance, the faster the response"
+  },
+  {
+   "concept": "dial-up-internet",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1025,
+   "depth": "mention",
+   "context_snippet": "a comparable one would be dial-up internet"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1136,
+   "depth": "explains",
+   "context_snippet": "I2C's lowest standard speed is 100 kilobits per second"
+  },
+  {
+   "concept": "gigabit-ethernet",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1260,
+   "depth": "mention",
+   "context_snippet": "a gigabit internet connection"
+  },
+  {
+   "concept": "i2c-speed-grade",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1354,
+   "depth": "explains",
+   "context_snippet": "I2C until recently only had four speed grades"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1536,
+   "depth": "explains",
+   "context_snippet": "ample for most sensors and data acquisition applications"
+  },
+  {
+   "concept": "strain-gauge",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1696,
+   "depth": "explains",
+   "context_snippet": "Strain gauges, which are on bridges, only require a few hertz"
+  },
+  {
+   "concept": "accelerometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1779,
+   "depth": "explains",
+   "context_snippet": "Even accelerometers rarely go above uh tens of kilohertz"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1840,
+   "depth": "explains",
+   "context_snippet": "the I2C bus in the megabit range easily accommodates"
+  },
+  {
+   "concept": "accelerometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 1967,
+   "depth": "explains",
+   "context_snippet": "an accelerometer that samples at 32 kHz"
+  },
+  {
+   "concept": "sampling-rate",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 1989,
+   "depth": "explains",
+   "context_snippet": "samples at 32 kHz"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2468,
+   "depth": "explains",
+   "context_snippet": "far below the 1 megabit per second mode"
+  },
+  {
+   "concept": "i2c-start-condition",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 2620,
+   "depth": "explains",
+   "context_snippet": "every transaction begins with a start condition"
+  },
+  {
+   "concept": "i2c-data-frame",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 2826,
+   "depth": "explains",
+   "context_snippet": "The data that is sent is usually in 8-bit blocks"
+  },
+  {
+   "concept": "clocking-out-data",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 2948,
+   "depth": "explains",
+   "context_snippet": "This is called clocking out data"
+  },
+  {
+   "concept": "i2c-read-transaction",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 13,
+   "char_start": 2999,
+   "depth": "explains",
+   "context_snippet": "In the case that it's a read transaction"
+  },
+  {
+   "concept": "i2c-acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 3294,
+   "depth": "explains",
+   "context_snippet": "then it will acknowledge the transaction and it will pull the line low"
+  },
+  {
+   "concept": "i2c-slave-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 3500,
+   "depth": "explains",
+   "context_snippet": "The first block of data that is transmitted is the address of the slave"
+  },
+  {
+   "concept": "i2c-7-bit-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 3611,
+   "depth": "explains",
+   "context_snippet": "this is a 7-bit address"
+  },
+  {
+   "concept": "i2c-10-bit-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 3688,
+   "depth": "mention",
+   "context_snippet": "This is 10-bit addresses"
+  },
+  {
+   "concept": "i2c-acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 3830,
+   "depth": "explains",
+   "context_snippet": "an acknowledgment will be received"
+  },
+  {
+   "concept": "i2c-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4032,
+   "depth": "explains",
+   "context_snippet": "some devices that claim to have eight-bit addresses"
+  },
+  {
+   "concept": "i2c-7-bit-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 4400,
+   "depth": "explains",
+   "context_snippet": "it's actually a seven-bit address"
+  },
+  {
+   "concept": "i2c-read-write-bit",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 4582,
+   "depth": "explains",
+   "context_snippet": "the read and write bit"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 4637,
+   "depth": "mention",
+   "context_snippet": "it is sent from the microcontroller"
+  },
+  {
+   "concept": "i2c-read-write-bit",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 20,
+   "char_start": 4691,
+   "depth": "explains",
+   "context_snippet": "If the read-write bit was one"
+  },
+  {
+   "concept": "i2c-acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 4943,
+   "depth": "explains",
+   "context_snippet": "If the data block is not acknowledged by the slave"
+  },
+  {
+   "concept": "i2c-stop-condition",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 5193,
+   "depth": "explains",
+   "context_snippet": "the master will probably then follow through with a stop condition"
+  },
+  {
+   "concept": "bit-banging",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 5583,
+   "depth": "explains",
+   "context_snippet": "If you're a bit banging this, for example, this makes things quite simple"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 5665,
+   "depth": "explains",
+   "context_snippet": "your function that writes data only needs to clock out eight bits of data"
+  },
+  {
+   "concept": "i2c-acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 5882,
+   "depth": "explains",
+   "context_snippet": "the data line is released for acknowledgment"
+  },
+  {
+   "concept": "c-plus-plus",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 6212,
+   "depth": "mention",
+   "context_snippet": "we're just going to put it in C++"
+  },
+  {
+   "concept": "spi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 6279,
+   "depth": "mention",
+   "context_snippet": "based on the example for bit banging SPI"
+  },
+  {
+   "concept": "bit-banging-library",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 27,
+   "char_start": 6338,
+   "depth": "explains",
+   "context_snippet": "I use some structures which help in developing these bit banging libraries"
+  },
+  {
+   "concept": "gpio",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 6924,
+   "depth": "explains",
+   "context_snippet": "it accesses, you know, GPIO through um functions"
+  },
+  {
+   "concept": "platform-abstraction",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 30,
+   "char_start": 7033,
+   "depth": "explains",
+   "context_snippet": "The reason that we're doing um functions instead of direct pin set and clears"
+  },
+  {
+   "concept": "visual-studio",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 30,
+   "char_start": 7222,
+   "depth": "mention",
+   "context_snippet": "from this Visual Studio environment"
+  },
+  {
+   "concept": "msp430",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 30,
+   "char_start": 7258,
+   "depth": "mention",
+   "context_snippet": "to, for example, MSP430"
+  },
+  {
+   "concept": "spi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7481,
+   "depth": "mention",
+   "context_snippet": "I'm just modifying the SPI code"
+  },
+  {
+   "concept": "gpio-state-logging",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 7645,
+   "depth": "explains",
+   "context_snippet": "before and after any change of a pin, I basically just record the state of all the pins"
+  },
+  {
+   "concept": "data-plotting",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 7785,
+   "depth": "explains",
+   "context_snippet": "that allows me to plot the data and see kind of like the relative change"
+  },
+  {
+   "concept": "bit-masking",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8051,
+   "depth": "explains",
+   "context_snippet": "We're going to mask out that top bit"
+  },
+  {
+   "concept": "clocking-out-data",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 8182,
+   "depth": "explains",
+   "context_snippet": "clocking out is the rising and falling edge"
+  },
+  {
+   "concept": "i2c-start-condition",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 8375,
+   "depth": "explains",
+   "context_snippet": "we need a start and a stop function"
+  },
+  {
+   "concept": "i2c-stop-condition",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 8416,
+   "depth": "explains",
+   "context_snippet": "those just assert the start and the stop conditions"
+  },
+  {
+   "concept": "i2c-acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 8826,
+   "depth": "explains",
+   "context_snippet": "we're going to look for an acknowledgement"
+  },
+  {
+   "concept": "i2c-address-conversion",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 8899,
+   "depth": "explains",
+   "context_snippet": "a function that converts a 7-bit address to the 8-bit data address"
+  },
+  {
+   "concept": "i2c-read-write-bit",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 9045,
+   "depth": "explains",
+   "context_snippet": "that read and write is the lowest bit of a byte"
+  },
+  {
+   "concept": "bit-masking",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9140,
+   "depth": "explains",
+   "context_snippet": "mask the address to make sure it really is 7-bits"
+  },
+  {
+   "concept": "address-masking",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9140,
+   "depth": "explains",
+   "context_snippet": "mask the address to make sure it really is 7-bits"
+  },
+  {
+   "concept": "bit-shifting",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9196,
+   "depth": "explains",
+   "context_snippet": "we're going to shift it across"
+  },
+  {
+   "concept": "read-write-bit",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9247,
+   "depth": "explains",
+   "context_snippet": "that read or write bit"
+  },
+  {
+   "concept": "acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9383,
+   "depth": "explains",
+   "context_snippet": "an acknowledgement is basically um allowing the data line to go high"
+  },
+  {
+   "concept": "i2c-data-line",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9462,
+   "depth": "explains",
+   "context_snippet": "clocking and reading the data from the slave"
+  },
+  {
+   "concept": "i2c-write-routine",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9614,
+   "depth": "explains",
+   "context_snippet": "abort the write routine"
+  },
+  {
+   "concept": "acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9655,
+   "depth": "explains",
+   "context_snippet": "if we received an acknowledgement"
+  },
+  {
+   "concept": "sda",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 9912,
+   "depth": "explains",
+   "context_snippet": "That's the SDA, so let's call a function that gets that bit out temporary and sets the pin"
+  },
+  {
+   "concept": "i2c-device-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 10046,
+   "depth": "explains",
+   "context_snippet": "write to device 0x10"
+  },
+  {
+   "concept": "hexadecimal",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 10087,
+   "depth": "mention",
+   "context_snippet": "write the data 81 in hex"
+  },
+  {
+   "concept": "pin-default-state",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 10222,
+   "depth": "explains",
+   "context_snippet": "the default states of all the pins are correct"
+  },
+  {
+   "concept": "open-drain",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 10366,
+   "depth": "explains",
+   "context_snippet": "It's open drain"
+  },
+  {
+   "concept": "i2c-write-routine",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 10397,
+   "depth": "explains",
+   "context_snippet": "update the write routine so that it does indeed stop"
+  },
+  {
+   "concept": "i2c-stop-condition",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 10486,
+   "depth": "explains",
+   "context_snippet": "it sends the stop condition"
+  },
+  {
+   "concept": "pin-default-state",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 10666,
+   "depth": "explains",
+   "context_snippet": "setting the default state of the pins in the variable"
+  },
+  {
+   "concept": "terminal",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10838,
+   "depth": "mention",
+   "context_snippet": "copying the values from the terminal"
+  },
+  {
+   "concept": "i2c-print-command",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10894,
+   "depth": "mention",
+   "context_snippet": "The print the I2C print command did that"
+  },
+  {
+   "concept": "scatter-plot",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10945,
+   "depth": "explains",
+   "context_snippet": "I've got a scatter plot in LibreOffice Calc here"
+  },
+  {
+   "concept": "libreoffice-calc",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10969,
+   "depth": "mention",
+   "context_snippet": "in LibreOffice Calc here"
+  },
+  {
+   "concept": "i2c-start-condition",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 11037,
+   "depth": "explains",
+   "context_snippet": "Here's the start condition"
+  },
+  {
+   "concept": "i2c-address",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 11069,
+   "depth": "explains",
+   "context_snippet": "here we have the address. There are seven bits there"
+  },
+  {
+   "concept": "acknowledgement",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 11130,
+   "depth": "explains",
+   "context_snippet": "here's the acknowledgement here, which we haven't received"
+  },
+  {
+   "concept": "i2c-frame",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 11321,
+   "depth": "explains",
+   "context_snippet": "our formation of the frame is correct"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 11360,
+   "depth": "mention",
+   "context_snippet": "Hope you learned a little bit about I2C"
+  }
+ ]
+}

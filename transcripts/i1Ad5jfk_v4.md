@@ -3,251 +3,269 @@ video_id: i1Ad5jfk_v4
 title: EEVblog 1475 - What's This SMD Part?
 url: https://www.youtube.com/watch?v=i1Ad5jfk_v4
 source: youtube-asr
-timestamps: {"0": 0, "1": 13, "2": 29, "3": 41, "4": 54, "5": 69, "6": 83, "7": 98, "8": 114, "9": 131, "10": 146, "11": 159, "12": 175, "13": 189, "14": 204, "15": 216, "16": 230, "17": 245, "18": 260, "19": 275, "20": 288, "21": 300, "22": 312, "23": 327, "24": 343, "25": 359, "26": 372, "27": 385, "28": 399, "29": 414, "30": 425, "31": 444, "32": 461, "33": 474, "34": 491, "35": 508, "36": 525, "37": 536, "38": 547, "39": 559, "40": 576, "41": 590, "42": 603, "43": 616, "44": 629, "45": 646, "46": 661, "47": 677, "48": 689, "49": 702, "50": 714, "51": 726, "52": 740, "53": 757, "54": 773, "55": 787, "56": 804, "57": 820, "58": 831, "59": 851, "60": 866, "61": 881, "62": 894, "63": 911, "64": 929, "65": 946, "66": 961, "67": 976, "68": 989, "69": 1001, "70": 1013, "71": 1026, "72": 1043, "73": 1059, "74": 1073, "75": 1089, "76": 1103, "77": 1118, "78": 1130, "79": 1143, "80": 1158, "81": 1170, "82": 1184, "83": 1195, "84": 1210, "85": 1221, "86": 1231, "87": 1243, "88": 1258, "89": 1271, "90": 1281, "91": 1296, "92": 1307, "93": 1323, "94": 1336, "95": 1357, "96": 1374, "97": 1389, "98": 1407, "99": 1420, "100": 1438, "101": 1455, "102": 1470, "103": 1483, "104": 1499, "105": 1515, "106": 1535, "107": 1552, "108": 1565, "109": 1578, "110": 1593, "111": 1610, "112": 1623, "113": 1634, "114": 1651, "115": 1667, "116": 1685, "117": 1702, "118": 1717, "119": 1729, "120": 1745, "121": 1758, "122": 1770}
+timestamps: {"0": 0, "1": 9, "2": 29, "3": 50, "4": 60, "5": 79, "6": 91, "7": 105, "8": 117, "9": 127, "10": 140, "11": 152, "12": 168, "13": 180, "14": 199, "15": 210, "16": 223, "17": 233, "18": 243, "19": 256, "20": 269, "21": 279, "22": 289, "23": 307, "24": 316, "25": 333, "26": 347, "27": 367, "28": 375, "29": 390, "30": 406, "31": 417, "32": 428, "33": 444, "34": 463, "35": 479, "36": 493, "37": 505, "38": 517, "39": 528, "40": 539, "41": 547, "42": 559, "43": 570, "44": 584, "45": 596, "46": 605, "47": 616, "48": 627, "49": 639, "50": 653, "51": 664, "52": 679, "53": 689, "54": 699, "55": 710, "56": 722, "57": 735, "58": 748, "59": 764, "60": 777, "61": 797, "62": 811, "63": 824, "64": 851, "65": 874, "66": 887, "67": 901, "68": 913, "69": 929, "70": 945, "71": 956, "72": 969, "73": 982, "74": 990, "75": 1007, "76": 1015, "77": 1026, "78": 1039, "79": 1054, "80": 1069, "81": 1078, "82": 1094, "83": 1106, "84": 1118, "85": 1128, "86": 1141, "87": 1148, "88": 1172, "89": 1186, "90": 1197, "91": 1213, "92": 1225, "93": 1231, "94": 1246, "95": 1255, "96": 1277, "97": 1296, "98": 1310, "99": 1326, "100": 1339, "101": 1355, "102": 1371, "103": 1384, "104": 1396, "105": 1409, "106": 1420, "107": 1431, "108": 1447, "109": 1461, "110": 1470, "111": 1478, "112": 1493, "113": 1503, "114": 1523, "115": 1540, "116": 1553, "117": 1570, "118": 1586, "119": 1597, "120": 1612, "121": 1629, "122": 1640, "123": 1651, "124": 1665, "125": 1676, "126": 1686, "127": 1717, "128": 1738, "129": 1750, "130": 1768, "131": 1777}
 ---
 
-**Dave Jones:** Hi, time for another random Twitter question and rather just try and answer it on Twitter, I thought, hey, some people might find this interesting. And so, I'd do a video on it. The question comes from Puria Solutions, if
+**Dave Jones:** Hi, time for another random Twitter question and rather just try and answer it on Twitter, I thought, hey, some people might find this interesting. And so, I'd do a video on it.
 
-**Dave Jones:** I've got that right, LLC, so obviously a company. Can anyone help me out with a part ID cross-reference? Okay, so what we have here is a photo of a SOT-23 part with some capacitors and stuff around it and resistor-ies and we need to identify
+**Dave Jones:** The question comes from Puria Solutions, if I've got that right, LLC, so obviously a company. Can anyone help me out with a part ID cross-reference? Okay, so what we have here is a photo of a SOT-23 part with some capacitors and stuff around it and resistor-ies and we need to identify this part.
 
-**Dave Jones:** this part. So, how do we go about doing this? Now, the first thing you should do is try and sort of like buzz out the circuit. Like, obviously, we've got a pin here and that's going off to this
+**Dave Jones:** So, how do we go about doing this? Now, the first thing you should do is try and sort of like buzz out the circuit. Like, obviously, we've got a pin here and that's going off to this resistor here, which looks like it's either a pull-up or a pull-down resistor because it's going to a huge pad here, which is almost certainly some sort of power pad.
 
-**Dave Jones:** resistor here, which looks like it's either a pull-up or a pull-down resistor because it's going to a huge pad here, which is almost certainly some sort of power pad. Then, we've got another signal trace going off here under this
+**Dave Jones:** Then, we've got another signal trace going off here under this component here. And then, we've got another pin here, which once again goes off to some caps here with some vias dropping down.
 
-**Dave Jones:** component here. And then, we've got another pin here, which once again goes off to some caps here with some vias dropping down. So, this is obviously a power in or power out. So, whenever you see a small little SOT-23 device like
+**Dave Jones:** So, this is obviously a power in or power out. So, whenever you see a small little SOT-23 device like this with some capacitors right next to it like this that are obviously going down to ground and power here, either power in or power out, you know that this is some sort of regulator.
 
-**Dave Jones:** this with some capacitors right next to it like this that are obviously going down to ground and power here, either power in or power out, you know that this is some sort of regulator. Now, there's two types of regulators, of
+**Dave Jones:** Now, there's two types of regulators, of course. There's linear voltage regulators and there's switching voltage regulators. Which one is this? Well, we don't know unless we look at this component down here.
 
-**Dave Jones:** course. There's linear voltage regulators and there's switching voltage regulators. Which one is this? Well, we don't know unless we look at this component down here. Now, from experience, I know that this symbol here is the Coilcraft symbol. And if you go
+**Dave Jones:** Now, from experience, I know that this symbol here is the Coilcraft symbol. And if you go look at the Coilcraft website, they make inductors. They're one of the major manufacturers, premium manufacturers of inductors.
 
-**Dave Jones:** look at the Coilcraft website, they make inductors. They're one of the major manufacturers, premium manufacturers of inductors. And you can tell it's an inductor by looking at it physically. It's a shame we don't have like a bigger zoomed-out photo, but yeah, you can tell
+**Dave Jones:** And you can tell it's an inductor by looking at it physically. It's a shame we don't have like a bigger zoomed-out photo, but yeah, you can tell by the shape with the corners like that.
 
-**Dave Jones:** by the shape with the corners like that. That is the shape of an SMD inductor. And obviously, there's a giant pad here and they've got all the thermal reliefs coming out here, here, here, here, and here. So, whenever you see an inductor
+**Dave Jones:** That is the shape of an SMD inductor. And obviously, there's a giant pad here and they've got all the thermal reliefs coming out here, here, here, here, and here.
 
-**Dave Jones:** next to what something that you think is a voltage regulator, you know, "Aha, it's not a linear voltage regulator, it's a switching voltage regulator." This package, if you didn't know, is called a SOT-23 and you should know, you should have
+**Dave Jones:** So, whenever you see an inductor next to what something that you think is a voltage regulator, you know, "Aha, it's not a linear voltage regulator, it's a switching voltage regulator."
 
-**Dave Jones:** like a have a chart on your wall of like all the different packages until you actually learn exactly what they are. And it's a five-pin SOT-23, three here and two here. There's nothing in the middle here. You can actually get
+**Dave Jones:** This package, if you didn't know, is called a SOT-23 and you should know, you should have like a have a chart on your wall of like all the different packages until you actually learn exactly what they are.
 
-**Dave Jones:** six-pin SOT-23s. Of course, the SOT-23 the classic SOT-23 is only a three-pin jobby and that's usually, you know, a transistor, a FET, a diode, or dual diode, or something like that. So, obviously, we're looking for a switching voltage regulator. This is the switching
+**Dave Jones:** And it's a five-pin SOT-23, three here and two here. There's nothing in the middle here. You can actually get six-pin SOT-23s. Of course, the SOT-23 the classic SOT-23 is only a three-pin jobby and that's usually, you know, a transistor, a FET, a diode, or dual diode, or something like that.
 
-**Dave Jones:** inductor here. This resistor up here is either a pull-up or a pull-down for some sort of enable pin for the chip. So, obviously, this pin, I would say, is the enable pin. This pin here, this is obviously going under the inductor. So,
+**Dave Jones:** So, obviously, we're looking for a switching voltage regulator. This is the switching inductor here. This resistor up here is either a pull-up or a pull-down for some sort of enable pin for the chip.
 
-**Dave Jones:** this would be the sense output line that I'll show we'll look at a schematic for a switching regulator in a minute and you'll see that there's a it has to monitor cuz it's it regulates. It can't regulate unless it knows what the output
+**Dave Jones:** So, obviously, this pin, I would say, is the enable pin. This pin here, this is obviously going under the inductor. So, this would be the sense output line that I'll show we'll look at a schematic for a switching regulator in a minute and you'll see that there's a it has to monitor cuz it's it regulates.
 
-**Dave Jones:** voltage is. So, that is obviously the output sense line there. So, this pin here is the output pin. I'll show you the schematic in a minute. But, yeah, it basically is the output pin which goes to the inductor. It's not the output the
+**Dave Jones:** It can't regulate unless it knows what the output voltage is. So, that is obviously the output sense line there. So, this pin here is the output pin. I'll show you the schematic in a minute.
 
-**Dave Jones:** final output voltage that comes from the other side of the inductor down here and that's where this pin is tapping off here. This part down here is the output, okay? So, these are your output capacitors here and your Your capacitors
+**Dave Jones:** But, yeah, it basically is the output pin which goes to the inductor. It's not the output the final output voltage that comes from the other side of the inductor down here and that's where this pin is tapping off here.
 
-**Dave Jones:** will be going to ground. So, obviously, this is your ground here. Now, if this was just the ground on its own and you just had one via here, that's pretty high inductance. That's bad board layout, everything else, right? Not good. But obviously, look, it
+**Dave Jones:** This part down here is the output, okay? So, these are your output capacitors here and your Your capacitors will be going to ground. So, obviously, this is your ground here.
 
-**Dave Jones:** snakes under the chip. Now, you can't see it, but obviously, that ground point connects down to here. So, we've got some more vias here, which stitch your ground line, which you need. It's important. So, the more vias, uh the
+**Dave Jones:** Now, if this was just the ground on its own and you just had one via here, that's pretty high inductance. That's bad board layout, everything else, right? Not good.
 
-**Dave Jones:** lower your inductance to your ground and power that you're trying to stitch to. And you'll probably find, almost certainly, we've accounted for all these other pins. So, obviously, that leaves this pin here, and I guarantee you this pin is the ground pin, and that's
+**Dave Jones:** But obviously, look, it snakes under the chip. Now, you can't see it, but obviously, that ground point connects down to here. So, we've got some more vias here, which stitch your ground line, which you need.
 
-**Dave Jones:** connected through under here like this. And of course, if you had the physical board, you can measure that. So, we've got output capacitors. This is obviously the enable pin here. It's nothing to do with that power, cuz you wouldn't have
+**Dave Jones:** It's important. So, the more vias, uh the lower your inductance to your ground and power that you're trying to stitch to. And you'll probably find, almost certainly, we've accounted for all these other pins.
 
-**Dave Jones:** it running through that tiny trace like that. So, obviously, this is our input pin here, because these are our input capacitors. These are the two input vias. So, if you measured your voltage here, so I don't know how this person
+**Dave Jones:** So, obviously, that leaves this pin here, and I guarantee you this pin is the ground pin, and that's connected through under here like this. And of course, if you had the physical board, you can measure that.
 
-**Dave Jones:** has come to say come to suspect this chip here, but yeah, obviously, you know, thou shall measure voltages is number one rule of troubleshooting. So, you know, they they probably know that this is they probably already know that
+**Dave Jones:** So, we've got output capacitors. This is obviously the enable pin here. It's nothing to do with that power, cuz you wouldn't have it running through that tiny trace like that.
 
-**Dave Jones:** this is some sort of regulator. Anyway, we'll just assume that we didn't know, but now we know. It's a switching voltage regulator just by inspection, by the topology of what's going on here. So, we're now looking for a our search
+**Dave Jones:** So, obviously, this is our input pin here, because these are our input capacitors. These are the two input vias. So, if you measured your voltage here, so I don't know how this person has come to say come to suspect this chip here, but yeah, obviously, you know, thou shall measure voltages is number one rule of troubleshooting.
 
-**Dave Jones:** begins for a SOT23-5 switching regulator with the pinout we've discussed. It's got to have the pinout. Obviously, there's going to be a whole bunch of different pinouts, especially for switching regulators. You'll get a whole bunch of different pinouts. Now, first of all, it's not
+**Dave Jones:** So, you know, they they probably know that this is they probably already know that this is some sort of regulator. Anyway, we'll just assume that we didn't know, but now we know.
 
-**Dave Jones:** going to be as easy as just searching that part number on top of the chip. One, capital A, lowercase A, 3Q. You search that and well, we've got some buy skinny women dark blue jeans online. Yeah, no thanks. So, the next step would
+**Dave Jones:** It's a switching voltage regulator just by inspection, by the topology of what's going on here. So, we're now looking for a our search begins for a SOT23-5 switching regulator with the pinout we've discussed.
 
-**Dave Jones:** be to search an SMD code database cuz SMD codes are a real pain in the butt and there are databases out there. They're not always accurate. They don't always work. In fact, I find in most cases they they don't work, but it's
+**Dave Jones:** It's got to have the pinout. Obviously, there's going to be a whole bunch of different pinouts, especially for switching regulators. You'll get a whole bunch of different pinouts. Now, first of all, it's not going to be as easy as just searching that part number on top of the chip.
 
-**Dave Jones:** worth a shot just in case, okay? So, um here's one particular one. You can search Google for SMD code database or something like that and there's there's a bunch of them out there. I just found this one and it gives you all this and
+**Dave Jones:** One, capital A, lowercase A, 3Q. You search that and well, we've got some buy skinny women dark blue jeans online. Yeah, no thanks. So, the next step would be to search an SMD code database cuz SMD codes are a real pain in the butt and there are databases out there.
 
-**Dave Jones:** we can go into sure enough, we can go into 1A here, AA, AA, which is what we had, okay? And woo, they just happen to be linear voltage regulator ICs, but uh-uh, we know this is a switching regulator.
+**Dave Jones:** They're not always accurate. They don't always work. In fact, I find in most cases they they don't work, but it's worth a shot just in case, okay? So, um here's one particular one.
 
-**Dave Jones:** It's got that inductor next to it. It's that a switching topology, definitely, um as we'll see in a minute on a schematic. Just search this XCS1. Oh, goodness, I can't even find either of those, right? Look, don't even bother wasting your time,
+**Dave Jones:** You can search Google for SMD code database or something like that and there's there's a bunch of them out there. I just found this one and it gives you all this and we can go into sure enough, we can go into 1A here, AA, AA, which is what we had, okay?
 
-**Dave Jones:** okay? What we're going to do is go into Google here and I'm getting I'm going for broke here. So, I'm going to put in SOT-23-5 and you have to put the dashes in there cuz that's just the usual um syntax with
+**Dave Jones:** And woo, they just happen to be linear voltage regulator ICs, but uh-uh, we know this is a switching regulator. It's got that inductor next to it. It's that a switching topology, definitely, um as we'll see in a minute on a schematic.
 
-**Dave Jones:** these things. It's SOT23-5. The five indicates you've got five pins. Magic, through the magic of Google, we've already got Look at this, Mouser directly into the category SOT23-5 switching voltage regulators. So, let's click on that and we're in like Flynn.
+**Dave Jones:** Just search this XCS1. Oh, goodness, I can't even find either of those, right? Look, don't even bother wasting your time, okay? What we're going to do is go into Google here and I'm getting I'm going for broke here.
 
-**Dave Jones:** Look at this, it's already put us into the switching voltage voltage regulator parametric category and it's given us the package case here, the SOT23-5. Winner, winner, chicken dinner. Okay, otherwise you could have done this manually on Mouser, Digi-Key, Element14,
+**Dave Jones:** So, I'm going to put in SOT-23-5 and you have to put the dashes in there cuz that's just the usual um syntax with these things. It's SOT23-5. The five indicates you've got five pins.
 
-**Dave Jones:** whoever your favorite uh catalog supplier is. And when do we get off the bat here? We've got a Texas Instruments jobbie LM 3671. So, we'll open the data sheet for that. So, you you just want a couple of
+**Dave Jones:** Magic, through the magic of Google, we've already got Look at this, Mouser directly into the category SOT23-5 switching voltage regulators. So, let's click on that and we're in like Flynn.
 
-**Dave Jones:** different like data sheets from one, then we'll get the TPS, which is a more modern TI part. And then we'll go down here. Nishinbo, I've never heard of Nishinbo. Okay, we'll open a Nishinbo data sheet, shall we? Um and these are all switching
+**Dave Jones:** Look at this, it's already put us into the switching voltage voltage regulator parametric category and it's given us the package case here, the SOT23-5. Winner, winner, chicken dinner. Okay, otherwise you could have done this manually on Mouser, Digi-Key, Element14, whoever your favorite uh catalog supplier is.
 
-**Dave Jones:** you know, this is a buck regulator, right? So, we're all good. And Analog Devices jobbie, we'll open that. MaxLinear. What's a MaxLinear? I don't know. We'll open that. Jeez, 19,000 stock. Haha. No one's buying the MaxLinear. And Diodes
+**Dave Jones:** And when do we get off the bat here? We've got a Texas Instruments jobbie LM 3671. So, we'll open the data sheet for that. So, you you just want a couple of different like data sheets from one, then we'll get the TPS, which is a more modern TI part.
 
-**Dave Jones:** Incorporated down here. Okay, so that's a good selection. They're almost always step down unless you know, like 95% of cases unless you specifically need a switch up for something. Generally, you're switching down with regulators. So, anyway, here's the topology I told
+**Dave Jones:** And then we'll go down here. Nishinbo, I've never heard of Nishinbo. Okay, we'll open a Nishinbo data sheet, shall we? Um and these are all switching you know, this is a buck regulator, right?
 
-**Dave Jones:** you about before. So, sure enough, right? We've got our voltage in. There's our input filter cap. And then we've got that enable pin that we saw with that resistor there. And then we've got our inductor here. You remember how I said
+**Dave Jones:** So, we're all good. And Analog Devices jobbie, we'll open that. MaxLinear. What's a MaxLinear? I don't know. We'll open that. Jeez, 19,000 stock. Haha. No one's buying the MaxLinear.
 
-**Dave Jones:** like I should have said that was the switching output, but I I just said output, okay? And then as I said, we've got that feedback line so it knows how to regulate the output voltage. It can measure it. So, what we want is the
+**Dave Jones:** And Diodes Incorporated down here. Okay, so that's a good selection. They're almost always step down unless you know, like 95% of cases unless you specifically need a switch up for something.
 
-**Dave Jones:** actual pin out right off the bat. You can tell pin four here and pin four over here. Sorry, my cursor's small. I've got a capture problem. I do actually have a big cursor on this screen, but it's not
+**Dave Jones:** Generally, you're switching down with regulators. So, anyway, here's the topology I told you about before. So, sure enough, right? We've got our voltage in. There's our input filter cap.
 
-**Dave Jones:** capturing big. If anyone knows why, let me know. Windows 10 using XSplit. I I don't know. It does the same on OBS as well. So, yeah, I don't know. Video driver thing. So, obviously, the FB pin here, pin four,
+**Dave Jones:** And then we've got that enable pin that we saw with that resistor there. And then we've got our inductor here. You remember how I said like I should have said that was the switching output, but I I just said output, okay?
 
-**Dave Jones:** yeah nah. That's a That's a yeah, nah. Right, we know that's our voltage input, okay? So, right off the bat, this is not the chip for us. Next. Here we go. Once again, same same topology here. We've got the enable pin,
+**Dave Jones:** And then as I said, we've got that feedback line so it knows how to regulate the output voltage. It can measure it. So, what we want is the actual pin out right off the bat.
 
-**Dave Jones:** everything else. Once again, nah, we're not even in the ballpark. The switching pin here, whereas it's down here like this. Nah, and these are top view, of course. Make sure you you know, they're almost always top view. And we've got
+**Dave Jones:** You can tell pin four here and pin four over here. Sorry, my cursor's small. I've got a capture problem. I do actually have a big cursor on this screen, but it's not capturing big.
 
-**Dave Jones:** obviously the top view of the uh chip here. So, nope, next. Nishimbo. Every time we do one of these videos, we find like it's just some new obscure brand. Oh, there you go. There's the input to our block diagram for those playing
+**Dave Jones:** If anyone knows why, let me know. Windows 10 using XSplit. I I don't know. It does the same on OBS as well. So, yeah, I don't know. Video driver thing.
 
-**Dave Jones:** along at home. Very cool. You can see the topology there. And once again, this is a different pinout. Look at this. Pin four is actually the V out pin. Well, we know that's not V out. We know it's V
+**Dave Jones:** So, obviously, the FB pin here, pin four, yeah nah. That's a That's a yeah, nah. Right, we know that's our voltage input, okay? So, right off the bat, this is not the chip for us.
 
-**Dave Jones:** in. And what's pin three down here? Pin three is the chip enable pin. Nah. So, once again, what's what's pin one? The input pin. So, nah, once again, we're well off. Next up, we've got this linear TECHNOLOGY JOBBY. OH, hang on.
+**Dave Jones:** Next. Here we go. Once again, same same topology here. We've got the enable pin, everything else. Once again, nah, we're not even in the ballpark. The switching pin here, whereas it's down here like this.
 
-**Dave Jones:** I might have been wrong. I might have guessed wrong here. Um have I? Because check check this one out, right? Look, pin three here is the switch, okay? So, that goes off to our inductor. So, that's a winner winner
+**Dave Jones:** Nah, and these are top view, of course. Make sure you you know, they're almost always top view. And we've got obviously the top view of the uh chip here.
 
-**Dave Jones:** chicken dinner. Pin four over here is V in, right? Sure enough, that's our V in. Five though, is feedback. So, our feedback comes like we we don't know. Unfortunately, we can't see where that trace goes. Would have been better if we
+**Dave Jones:** So, nope, next. Nishimbo. Every time we do one of these videos, we find like it's just some new obscure brand. Oh, there you go. There's the input to our block diagram for those playing along at home.
 
-**Dave Jones:** had a larger photo, but I could be wrong. And then pin one here is the run pin. I just thought that, you know, this would go under here and then it would go to this pad here. But maybe maybe I'm
+**Dave Jones:** Very cool. You can see the topology there. And once again, this is a different pinout. Look at this. Pin four is actually the V out pin. Well, we know that's not V out.
 
-**Dave Jones:** wrong. Maybe it's maybe it's this all coming down all the way. So, we're very close. If not, we've already found the actual pinout, whether or not we've found the actual chip. It It doesn't matter at this stage. Because remember
+**Dave Jones:** We know it's V in. And what's pin three down here? Pin three is the chip enable pin. Nah. So, once again, what's what's pin one? The input pin. So, nah, once again, we're well off.
 
-**Dave Jones:** the person asked that we if we could find an equivalent part. As long as you get the right pinout and, you know, they're roughly the similar sort of frequency and stuff like that. You're probably going to get And they're rated
+**Dave Jones:** Next up, we've got this linear TECHNOLOGY JOBBY. OH, hang on. I might have been wrong. I might have guessed wrong here. Um have I? Because check check this one out, right?
 
-**Dave Jones:** at the correct output voltage. And these are not adjustable voltage regulators. Like you have to actually specifically specifically get. Like this is a like this is a 1.5 V part. This is a 1.8 V part, for example. These are fixed.
+**Dave Jones:** Look, pin three here is the switch, okay? So, that goes off to our inductor. So, that's a winner winner chicken dinner. Pin four over here is V in, right?
 
-**Dave Jones:** Because there's no resistor divider in the feedback here. If there was a resistor divider, you know, aha, the it's set the output voltage is set by some resistors over here. Um and then it's, you know, it's adjustable. But it
+**Dave Jones:** Sure enough, that's our V in. Five though, is feedback. So, our feedback comes like we we don't know. Unfortunately, we can't see where that trace goes. Would have been better if we had a larger photo, but I could be wrong.
 
-**Dave Jones:** it it could be adjustable. Maybe Maybe I'm wrong. But So, next, Max Max Linear. Max Power. So, what do we got here? This is interesting. This actually shows like a a filter network here actually on the voltage feedback pin. So, this is
+**Dave Jones:** And then pin one here is the run pin. I just thought that, you know, this would go under here and then it would go to this pad here. But maybe maybe I'm wrong.
 
-**Dave Jones:** obviously an adjustable jobbie here. But anyway, let's let's have a look at the Well, we can just go by the pin numbers now. Uh pin three here. Yep. Pin three is correct. It's our switching output. Pin five is our voltage feedback.
+**Dave Jones:** Maybe it's maybe it's this all coming down all the way. So, we're very close. If not, we've already found the actual pinout, whether or not we've found the actual chip.
 
-**Dave Jones:** Uh-huh. Okay. Pin four is VIN. Yep. Um pin two is ground. Looks like pin two is always ground. And uh pin one is the enable pin. Once again, it's the same pinout as the other one. So, maybe maybe
+**Dave Jones:** It It doesn't matter at this stage. Because remember the person asked that we if we could find an equivalent part. As long as you get the right pinout and, you know, they're roughly the similar sort of frequency and stuff like that.
 
-**Dave Jones:** maybe maybe this is actually an a part of the adjustment um and the other resistor is somewhere else off uh here which we can't see. So, if it is this uh topology. But Yeah, like this could certainly be running under the
+**Dave Jones:** You're probably going to get And they're rated at the correct output voltage. And these are not adjustable voltage regulators. Like you have to actually specifically specifically get. Like this is a like this is a 1.5 V part.
 
-**Dave Jones:** inductor. And it could be going off into la-la land somewhere else into some microcontroller which enables the thing or something like that. So, obviously they they haven't tied the enable pin. Obviously, you know, whether it's this or this, it is going off
+**Dave Jones:** This is a 1.8 V part, for example. These are fixed. Because there's no resistor divider in the feedback here. If there was a resistor divider, you know, aha, the it's set the output voltage is set by some resistors over here.
 
-**Dave Jones:** somewhere and they, you know, I assumed at the start that this was a pull down. But, I don't know. I'm shooting this video as I go along. I don't actually know if we're actually going to find anything here as like an exact match.
+**Dave Jones:** Um and then it's, you know, it's adjustable. But it it it could be adjustable. Maybe Maybe I'm wrong. But So, next, Max Max Linear. Max Power. So, what do we got here?
 
-**Dave Jones:** So, either it is a fixed voltage regulator, and this is the enable pin, and this is the feedback pin from the output of the inductor here, or it's an adjustable regulator, and this is the enable pin, and this here
+**Dave Jones:** This is interesting. This actually shows like a a filter network here actually on the voltage feedback pin. So, this is obviously an adjustable jobbie here. But anyway, let's let's have a look at the Well, we can just go by the pin numbers now.
 
-**Dave Jones:** and this resistor is part of the feedback voltage divider network. And in this particular case, if it was if it isn't adjustable one, it might be harder to find a direct equivalent because you're dealing with you know, the the
+**Dave Jones:** Uh pin three here. Yep. Pin three is correct. It's our switching output. Pin five is our voltage feedback. Uh-huh. Okay. Pin four is VIN. Yep. Um pin two is ground.
 
-**Dave Jones:** chip the formula for calculating the voltage reference and everything internally could be very different between devices even though they're identical pinout. So, you could certainly come a cropper there by thinking, "Oh, yeah, I can just throw in any adjustable one." If it's a if it's a
+**Dave Jones:** Looks like pin two is always ground. And uh pin one is the enable pin. Once again, it's the same pinout as the other one. So, maybe maybe maybe maybe this is actually an a part of the adjustment um and the other resistor is somewhere else off uh here which we can't see.
 
-**Dave Jones:** fixed voltage regulator one, yeah, you can probably get away with just pretty much throwing in anyone, and it's probably going to work. You know, it might not be as efficient or whatever because the inductor values and capacitor values aren't matched for, you
+**Dave Jones:** So, if it is this uh topology. But Yeah, like this could certainly be running under the inductor. And it could be going off into la-la land somewhere else into some microcontroller which enables the thing or something like that.
 
-**Dave Jones:** know, that particular frequency of that device, the particular switching frequency, but you know, it's it's probably going to work. We've got one more to try, Diodes Inc., but it's actually BCD. So, I don't know. Diodes Inc. bought BCD. I've never heard of BCD. Nothing
+**Dave Jones:** So, obviously they they haven't tied the enable pin. Obviously, you know, whether it's this or this, it is going off somewhere and they, you know, I assumed at the start that this was a pull down.
 
-**Dave Jones:** named that we haven't heard of before. So, let's have a look. No, pin five V in, pin four shut down. No. No. So, obviously, the closest we've gotten is this MaxLinear jobbie and this linear technology one, the synchronous
+**Dave Jones:** But, I don't know. I'm shooting this video as I go along. I don't actually know if we're actually going to find anything here as like an exact match. So, either it is a fixed voltage regulator, and this is the enable pin, and this is the feedback pin from the output of the inductor here, or it's an adjustable regulator, and this is the enable pin, and this here
 
-**Dave Jones:** shutdown. One is a fixed regulator cuz there's no output adjust voltage divider and the other one is adjustable. So, yeah, unfortunately, I don't think we're going to get any further than that in this video, unfortunately. Um that's that's probably the best we do
+**Dave Jones:** and this resistor is part of the feedback voltage divider network. And in this particular case, if it was if it isn't adjustable one, it might be harder to find a direct equivalent because you're dealing with you know, the the chip the formula for calculating the voltage reference and everything internally could be very different between devices even though they're identical pinout.
 
-**Dave Jones:** unless we can get like a larger photo and see where this trace is going off here because that will tell us if that goes off to another resistor, which is then on the output. So, if there's another resistor here
+**Dave Jones:** So, you could certainly come a cropper there by thinking, "Oh, yeah, I can just throw in any adjustable one." If it's a if it's a fixed voltage regulator one, yeah, you can probably get away with just pretty much throwing in anyone, and it's probably going to work.
 
-**Dave Jones:** like this, uh Please excuse the crudity of the model. That goes to the output here, that goes to the output pad of this uh inductor switching inductor over here. If there is another resistor there, like in in series with that, then that will be
+**Dave Jones:** You know, it might not be as efficient or whatever because the inductor values and capacitor values aren't matched for, you know, that particular frequency of that device, the particular switching frequency, but you know, it's it's probably going to work.
 
-**Dave Jones:** um an adjustable voltage regulator in the So, we didn't quite answer Pooria Solutions uh question here. Sorry about that, but you know, there's only like so far you can go, but hey, leave it in the comments down below. Somebody may have
+**Dave Jones:** We've got one more to try, Diodes Inc., but it's actually BCD. So, I don't know. Diodes Inc. bought BCD. I've never heard of BCD. Nothing named that we haven't heard of before.
 
-**Dave Jones:** used this part, they may be able to decode or uh recognize this number. Like I could probably put a bit more work into trying to decode that SMD part number, but generally speaking, um yeah, you're not going to do that well.
+**Dave Jones:** So, let's have a look. No, pin five V in, pin four shut down. No. No. So, obviously, the closest we've gotten is this MaxLinear jobbie and this linear technology one, the synchronous shutdown.
 
-**Dave Jones:** And by the way, if you do want to find them, um they're like usually like down in the bottom of the data sheet somewhere. Let's see. No, this one doesn't even have it code marking. They They They can be at the top, too. They
+**Dave Jones:** One is a fixed regulator cuz there's no output adjust voltage divider and the other one is adjustable. So, yeah, unfortunately, I don't think we're going to get any further than that in this video, unfortunately.
 
-**Dave Jones:** can have like code markings and stuff like that. Let's see if I can find an example. Here we go. No, I'd usually expect it to see somewhere like that. It'd tell you what the actual number is, but I don't think this data sheet has
+**Dave Jones:** Um that's that's probably the best we do unless we can get like a larger photo and see where this trace is going off here because that will tell us if that goes off to another resistor, which is then on the output.
 
-**Dave Jones:** it. Linear Technology, here you go. Linear Technology has it, S5 part marking. There you go, it'll have LTE2 on it. Um so, and or LTE 3, LTE 4 for it looks like the different voltages. So, at the moment, I guess this is
+**Dave Jones:** So, if there's another resistor here like this, uh Please excuse the crudity of the model. That goes to the output here, that goes to the output pad of this uh inductor switching inductor over here.
 
-**Dave Jones:** Schrödinger's switching regulator. We it's it's both a an adjustable and a fixed at the same time. It's only when we open the box, do we find out which one is which. Breaking news, I asked on Twitter and he replied and we've got a
+**Dave Jones:** If there is another resistor there, like in in series with that, then that will be um an adjustable voltage regulator in the So, we didn't quite answer Pooria Solutions uh question here.
 
-**Dave Jones:** photo of well, not the entire board, but we can now see what's going on here. Unfortunately, it's only low resolution, but I've like upscaled it, but it's good enough for Australia. We can now work out exactly what's going on here. And
+**Dave Jones:** Sorry about that, but you know, there's only like so far you can go, but hey, leave it in the comments down below. Somebody may have used this part, they may be able to decode or uh recognize this number.
 
-**Dave Jones:** sure enough, yes, my original guess was wrong that this was the enable pin. This is actually the feedback pin. This is pin five, so we're talking this one over here. And you can see that it goes to the resistor to ground as we saw before,
+**Dave Jones:** Like I could probably put a bit more work into trying to decode that SMD part number, but generally speaking, um yeah, you're not going to do that well. And by the way, if you do want to find them, um they're like usually like down in the bottom of the data sheet somewhere.
 
-**Dave Jones:** but also goes around here like this to a resistor, which then goes to the huge output pad here. No, it's not an inductor. It's a huge Every trace is an inductor, but let's not go there. The huge output pad here, which is
+**Dave Jones:** Let's see. No, this one doesn't even have it code marking. They They They can be at the top, too. They can have like code markings and stuff like that.
 
-**Dave Jones:** like this. It looks like we have another cap there, is it? So, as we said before, these are our output filter caps to ground and yep, it's tapping off that. So, it is a voltage divider there. So, this is an adjustable voltage regulator.
+**Dave Jones:** Let's see if I can find an example. Here we go. No, I'd usually expect it to see somewhere like that. It'd tell you what the actual number is, but I don't think this data sheet has it.
 
-**Dave Jones:** So, that makes it a bit more difficult to actually find a suitable replacement for it. This pin here, pin number one, is the enable pin and it goes under here under here. You can see it. It comes out
+**Dave Jones:** Linear Technology, here you go. Linear Technology has it, S5 part marking. There you go, it'll have LTE2 on it. Um so, and or LTE 3, LTE 4 for it looks like the different voltages.
 
-**Dave Jones:** there and it goes off and I don't know, somewhere down here it's being controlled by something for whatever reason, startup or and you know, some part of the circuit's being enabled or disabled, something like that. And I forgot to mention it's
+**Dave Jones:** So, at the moment, I guess this is Schrödinger's switching regulator. We it's it's both a an adjustable and a fixed at the same time. It's only when we open the box, do we find out which one is which.
 
-**Dave Jones:** a vehicle data recorder that hooks up to the CAN bus in a car. So, there you go. This is well and truly solved. It's adjustable. So, what we're looking at now is this is well, a pin compatible. Now, this would be a very different
+**Dave Jones:** Breaking news, I asked on Twitter and he replied and we've got a photo of well, not the entire board, but we can now see what's going on here. Unfortunately, it's only low resolution, but I've like upscaled it, but it's good enough for Australia.
 
-**Dave Jones:** video if I actually had the board. I'd be able to well, the next thing I would do um if I'm the uh poster, I would um measure these two resistor values or you can get the values off the uh top and
+**Dave Jones:** We can now work out exactly what's going on here. And sure enough, yes, my original guess was wrong that this was the enable pin. This is actually the feedback pin.
 
-**Dave Jones:** then you can try and work out if you don't know already for whatever reason what the output voltage is supposed to be. This one here for example is 1.8 V um with 800 milliamps uh capability. Um yeah, you know, you're looking at like
+**Dave Jones:** This is pin five, so we're talking this one over here. And you can see that it goes to the resistor to ground as we saw before, but also goes around here like this to a resistor, which then goes to the huge output pad here.
 
-**Dave Jones:** half an amp sort of tops for like a sort uh package like this. But, uh yeah, you need to work out um the output voltage and then um you'll be able to get the equations down here cuz it has to do
+**Dave Jones:** No, it's not an inductor. It's a huge Every trace is an inductor, but let's not go there. The huge output pad here, which is like this. It looks like we have another cap there, is it?
 
-**Dave Jones:** with the internal reference voltage. There it is there. You've got your internal voltage reference. So, that could uh potentially vary between uh different brands and different uh types of variable switching uh chips. So, the calculation calculate the output voltage
+**Dave Jones:** So, as we said before, these are our output filter caps to ground and yep, it's tapping off that. So, it is a voltage divider there. So, this is an adjustable voltage regulator.
 
-**Dave Jones:** based on the resistor uh divider could change. So, inductor selection and all this, you know, choosing your inductor and capacitor values and stuff, they're going to change, as I said, depending on the switching frequency. Uh there can be
+**Dave Jones:** So, that makes it a bit more difficult to actually find a suitable replacement for it. This pin here, pin number one, is the enable pin and it goes under here under here.
 
-**Dave Jones:** vast differences in switching frequency uh between chips and that could really matter. But, as I said, you know, if you if you chose a different brand, it it's probably it's at least going to do something, you know, you might get more
+**Dave Jones:** You can see it. It comes out there and it goes off and I don't know, somewhere down here it's being controlled by something for whatever reason, startup or and you know, some part of the circuit's being enabled or disabled, something like that.
 
-**Dave Jones:** ripple on the output or whatever. It might not be as efficient uh different part of the efficiency curve or something like that. But, and they're setting the output voltage there. Vout 1.6 V. See, that might be like 1.25 uh
+**Dave Jones:** And I forgot to mention it's a vehicle data recorder that hooks up to the CAN bus in a car. So, there you go. This is well and truly solved.
 
-**Dave Jones:** volts uh for example um is also common. So, once you determine based on those values that this is giving your expected output value, then you know, aha, I've got the formula I need to then go and look at equivalent data sheets. But, the
+**Dave Jones:** It's adjustable. So, what we're looking at now is this is well, a pin compatible. Now, this would be a very different video if I actually had the board. I'd be able to well, the next thing I would do um if I'm the uh poster, I would um measure these two resistor values or you can get the values off the uh top and then you can try and work out if you
 
-**Dave Jones:** unfortunate downside of this is you're going to have to do potentially a lot of manual searching cuz your parametric search over here, even if you go to the manufacturer, parametric uh search, you still are not going to like there's
+**Dave Jones:** don't know already for whatever reason what the output voltage is supposed to be. This one here for example is 1.8 V um with 800 milliamps uh capability. Um yeah, you know, you're looking at like half an amp sort of tops for like a sort uh package like this.
 
-**Dave Jones:** going to be nothing in here that tells you, okay, what what is the reference voltage and what formula is used and, you know, like there's nothing like that. You just have to basically go in there. So, if you know it's a buck, for
+**Dave Jones:** But, uh yeah, you need to work out um the output voltage and then um you'll be able to get the equations down here cuz it has to do with the internal reference voltage.
 
-**Dave Jones:** example, you can then apply filter. Let's just assume it's a buck. Uh that's going down to a lower voltage, which you know, you might expect because um you know, this huge chip here, right, probably needs some low core voltage or
+**Dave Jones:** There it is there. You've got your internal voltage reference. So, that could uh potentially vary between uh different brands and different uh types of variable switching uh chips. So, the calculation calculate the output voltage based on the resistor uh divider could change.
 
-**Dave Jones:** something like that. Maybe that's what this is doing here. It's taken I don't know does this input come here or something like that? Here, I don't know when it's powering something I, you know, it's almost certainly going to be
+**Dave Jones:** So, inductor selection and all this, you know, choosing your inductor and capacitor values and stuff, they're going to change, as I said, depending on the switching frequency. Uh there can be vast differences in switching frequency uh between chips and that could really matter.
 
-**Dave Jones:** in a buck converter, especially in automotive, which you know, you're talking 12-V system. Like practically everything's lower than that, right? So, yeah, so you'd be pretty safe in actually selecting buck converters. So, we're in switching, it's definitely a switching converter. So, what you want
+**Dave Jones:** But, as I said, you know, if you if you chose a different brand, it it's probably it's at least going to do something, you know, you might get more ripple on the output or whatever.
 
-**Dave Jones:** now is to choose a variable output one. So, here the output voltage, okay, you don't want well, you we'll choose adjustable. Well, we'll choose all of these, right? Cuz these are actually adjustable, not that one there, but so
+**Dave Jones:** It might not be as efficient uh different part of the efficiency curve or something like that. But, and they're setting the output voltage there. Vout 1.6 V. See, that might be like 1.25 uh volts uh for example um is also common.
 
-**Dave Jones:** those have a range and adjustable has its own range, okay? So, we're now down to 183 No, 69 results remaining, okay? So, there you go. These are all of the uh sot 235 switching voltage regulators adjustable switching voltage regulators. Wow, some
+**Dave Jones:** So, once you determine based on those values that this is giving your expected output value, then you know, aha, I've got the formula I need to then go and look at equivalent data sheets.
 
-**Dave Jones:** of them go up to 2 amps. Really? Wow, jeez, that's a beast. TLV62569, 2-A high-efficiency step-down buck converter in a sot 23. Go figure. But yeah, that's like the only part. Looks like there's no equivalent to that. And
+**Dave Jones:** But, the unfortunate downside of this is you're going to have to do potentially a lot of manual searching cuz your parametric search over here, even if you go to the manufacturer, parametric uh search, you still are not going to like there's going to be nothing in here that tells you, okay, what what is the reference voltage and what formula is used and, you know, like there's nothing like
 
-**Dave Jones:** of course, we could go to somewhere like LC SC if you want to get like Asian uh parts as well. Anyway, from Mouser it looks like uh we've only got these manufacturers here. I Is this new? I haven't seen this before. Most popular?
+**Dave Jones:** that. You just have to basically go in there. So, if you know it's a buck, for example, you can then apply filter. Let's just assume it's a buck. Uh that's going down to a lower voltage, which you know, you might expect because um you know, this huge chip here, right, probably needs some low core voltage or something like that.
 
-**Dave Jones:** That's interesting. We looked at the Analog Devices one, didn't we? 3671, no. 3564, okay. So, open that one. And then a LT3406, we'll get that one out there. It's unlikely because this is automotive, unlikely to be some obscure like um
+**Dave Jones:** Maybe that's what this is doing here. It's taken I don't know does this input come here or something like that? Here, I don't know when it's powering something I, you know, it's almost certainly going to be in a buck converter, especially in automotive, which you know, you're talking 12-V system.
 
-**Dave Jones:** Asian brand one. Although, you know, like if they I don't know. Could be a Japanese car or something like that. So, uh you know, it could be a South Korean car, you know, could parts from South Korea. Who knows? The 2830s, I know
+**Dave Jones:** Like practically everything's lower than that, right? So, yeah, so you'd be pretty safe in actually selecting buck converters. So, we're in switching, it's definitely a switching converter. So, what you want now is to choose a variable output one.
 
-**Dave Jones:** those. Uh that's, you know, well to me that's like fairly common. There's a weirdo LMR one. Anyway, let's go in and have a look at these. So, 2.25 MHz synchronous step-down converter. Nope, incorrect package. 3406. Okay, so 3406 looks good.
+**Dave Jones:** So, here the output voltage, okay, you don't want well, you we'll choose adjustable. Well, we'll choose all of these, right? Cuz these are actually adjustable, not that one there, but so those have a range and adjustable has its own range, okay?
 
-**Dave Jones:** So, we'll get rid of that one. This is a possibility. The uh 2830, yeah, that requires external diode here. So, um I we didn't see that in there, did we? Uh no, there's no like external uh diode there at all. So, nope. Anyway,
+**Dave Jones:** So, we're now down to 183 No, 69 results remaining, okay? So, there you go. These are all of the uh sot 235 switching voltage regulators adjustable switching voltage regulators.
 
-**Dave Jones:** incorrect package. That LMR one also diode based, so it's not going to be correct package. And also, I forgot uh to do the VIN uh requirement as well. We probably should have uh done that assuming that it is actually 12 V. It
+**Dave Jones:** Wow, some of them go up to 2 amps. Really? Wow, jeez, that's a beast. TLV62569, 2-A high-efficiency step-down buck converter in a sot 23. Go figure. But yeah, that's like the only part.
 
-**Dave Jones:** may not be. It may be like there may be another converter on there and it may be converting 5 V down to a core logic level like, you know, 1.8 or something. So, it's definitely not that. Nope, and it's definitely not that one.
+**Dave Jones:** Looks like there's no equivalent to that. And of course, we could go to somewhere like LC SC if you want to get like Asian uh parts as well. Anyway, from Mouser it looks like uh we've only got these manufacturers here.
 
-**Dave Jones:** So, there's another uh weirdo footprint. Um so, yeah, we can rule those out. So, we're looking at uh really the um LTC3406. Once again, it's not going to Murphy says it's not going to be one of those parts, right? But, hey, we're
+**Dave Jones:** I Is this new? I haven't seen this before. Most popular? That's interesting. We looked at the Analog Devices one, didn't we? 3671, no. 3564, okay. So, open that one.
 
-**Dave Jones:** looking for the pin equivalent part so that you can start down that journey of trying to find an equivalent. So, really, we're back to basically this MaxLinear jobbie here and this LTC jobbie. So, they're pretty much it. Are
+**Dave Jones:** And then a LT3406, we'll get that one out there. It's unlikely because this is automotive, unlikely to be some obscure like um Asian brand one. Although, you know, like if they I don't know.
 
-**Dave Jones:** they the same formula? See, now the remember the one we looked at before, the LTC 3406B? Well, we found it again, but it's the LTC 3406AB and the AB is the adjustable version, whereas just the B version is
+**Dave Jones:** Could be a Japanese car or something like that. So, uh you know, it could be a South Korean car, you know, could parts from South Korea. Who knows? The 2830s, I know those.
 
-**Dave Jones:** non-adjustable. So, we'll get rid of that jobbie and it's the AB one here. So, let's see if it's the same formula. And yep, sure enough, it is the same formula here. 0.6 V times, so these two let's go 1.5 MHz, right? It basically,
+**Dave Jones:** Uh that's, you know, well to me that's like fairly common. There's a weirdo LMR one. Anyway, let's go in and have a look at these. So, 2.25 MHz synchronous step-down converter.
 
-**Dave Jones:** you know, as a rule of thumb, you just go by the 1.5 meg, right? 600 milliamps, 800 milliamps for the MaxLinear. I'd say these are pretty equivalent parts, so if it was one of these, you could actually substitute with the other. Like, of
+**Dave Jones:** Nope, incorrect package. 3406. Okay, so 3406 looks good. So, we'll get rid of that one. This is a possibility. The uh 2830, yeah, that requires external diode here. So, um I we didn't see that in there, did we?
 
-**Dave Jones:** course, you go into the details, look at the formulas and stuff like that, but, you know, these two look to be fairly their pin equivalent parts. They've got the same setting for the output voltage, so you can just whack it in and, you know,
+**Dave Jones:** Uh no, there's no like external uh diode there at all. So, nope. Anyway, incorrect package. That LMR one also diode based, so it's not going to be correct package.
 
-**Dave Jones:** pretty much Bob's your uncle. But, you would have to be careful with stability as well, like having the correct ESR in your output capacitors and stuff like that. Some circuits can get the heebie-jeebies without the correct output capacitors,
+**Dave Jones:** And also, I forgot uh to do the VIN uh requirement as well. We probably should have uh done that assuming that it is actually 12 V. It may not be.
 
-**Dave Jones:** so you want to look at detail in the data sheet for that. So, there you go. I think we're done. I'm going to say an SP669 from MaxLinear or an LTC 3406 from Linear Technology. But, once again, like these are only limited input
+**Dave Jones:** It may be like there may be another converter on there and it may be converting 5 V down to a core logic level like, you know, 1.8 or something.
 
-**Dave Jones:** voltage, right? So, they're not going to be powered directly from uh 12 volts. If that's the case, um then I don't know, it might be a special snowflake part uh or something that has a wider input uh voltage range cuz these are only like
+**Dave Jones:** So, it's definitely not that. Nope, and it's definitely not that one. So, there's another uh weirdo footprint. Um so, yeah, we can rule those out. So, we're looking at uh really the um LTC3406.
 
-**Dave Jones:** most of these in fact you'll probably find that uh all of them if we go back to our parametric search, they might all be Oh, no. Look, there's one 17-V jobby here. Oh, it's that uh didn't we have a
+**Dave Jones:** Once again, it's not going to Murphy says it's not going to be one of those parts, right? But, hey, we're looking for the pin equivalent part so that you can start down that journey of trying to find an equivalent.
 
-**Dave Jones:** look at that uh TI part there? I don't think that that wasn't the uh correct pinout, was it? Ooh, it's got advanced eco mode, trademark. There you go. Actually, this one looks like we've found another one which might do the business as well. V
+**Dave Jones:** So, really, we're back to basically this MaxLinear jobbie here and this LTC jobbie. So, they're pretty much it. Are they the same formula? See, now the remember the one we looked at before, the LTC 3406B?
 
-**Dave Jones:** sense, that's correct. Uh P What do they call it? PH the switch node. Um PH Hm. But anyway, that's the correct pinout. So, there you go. I jumped the gun there. We actually found We didn't go deep enough. Uh we found three here
+**Dave Jones:** Well, we found it again, but it's the LTC 3406AB and the AB is the adjustable version, whereas just the B version is non-adjustable. So, we'll get rid of that jobbie and it's the AB one here.
 
-**Dave Jones:** and one of them is certainly capable of direct 12-V input for automotive use. So, yeah. Functional block diagram for those playing along at home. Aha, the equation is uh somewhat different here, but it's um it it calculates R2 given a known R1,
+**Dave Jones:** So, let's see if it's the same formula. And yep, sure enough, it is the same formula here. 0.6 V times, so these two let's go 1.5 MHz, right? It basically, you know, as a rule of thumb, you just go by the 1.5 meg, right?
 
-**Dave Jones:** but you can rearrange that and anyway, it's 0.8. Um it's not that 0.6. So, um yeah, this wouldn't be a direct substitution with both of these. The formula doesn't work out. I just noticed trending in Australia. Both head.
+**Dave Jones:** 600 milliamps, 800 milliamps for the MaxLinear. I'd say these are pretty equivalent parts, so if it was one of these, you could actually substitute with the other. Like, of course, you go into the details, look at the formulas and stuff like that, but, you know, these two look to be fairly their pin equivalent parts.
 
-**Dave Jones:** Good stuff. So, anyway, uh I hope I've at least um started down the journey of identifying this part here for Pura uh solutions and I would start by looking at those three um trying to like he might already know what what the actual
+**Dave Jones:** They've got the same setting for the output voltage, so you can just whack it in and, you know, pretty much Bob's your uncle. But, you would have to be careful with stability as well, like having the correct ESR in your output capacitors and stuff like that.
 
-**Dave Jones:** um input voltage to this thing is and what the output voltage is supposed to be. If you know that, that helps a lot. But look at the resistor values, look at the formulas in the data sheets, and you're on your way, but yeah, it it
+**Dave Jones:** Some circuits can get the heebie-jeebies without the correct output capacitors, so you want to look at detail in the data sheet for that. So, there you go. I think we're done.
 
-**Dave Jones:** could take you know, a significant amount of time to actually figure out what in this exact part is, but as I said before, please leave it in the comments down below if you have any idea exactly what this part is and you know,
+**Dave Jones:** I'm going to say an SP669 from MaxLinear or an LTC 3406 from Linear Technology. But, once again, like these are only limited input voltage, right? So, they're not going to be powered directly from uh 12 volts.
 
-**Dave Jones:** somebody in the comments I've got a lot of viewers and certain probably someone's used it and go oh yeah, I know that. And the max linear one I don't think we ever found the F marking. Can we do marking? No.
+**Dave Jones:** If that's the case, um then I don't know, it might be a special snowflake part uh or something that has a wider input uh voltage range cuz these are only like most of these in fact you'll probably find that uh all of them if we go back to our parametric search, they might all be Oh, no.
 
-**Dave Jones:** No, it's not there, but it's unlikely to be any of these or certainly not these two cuz the marking's not correct, but anyway, hopefully it gives him something to go on and hopefully you enjoyed that and found it useful. If you did, please give
+**Dave Jones:** Look, there's one 17-V jobby here. Oh, it's that uh didn't we have a look at that uh TI part there? I don't think that that wasn't the uh correct pinout, was it?
 
-**Dave Jones:** it a big thumbs up. As always discuss down below and if you want to ask me questions like this, Twitter's the place to do it. Catch you next time.
+**Dave Jones:** Ooh, it's got advanced eco mode, trademark. There you go. Actually, this one looks like we've found another one which might do the business as well. V sense, that's correct.
+
+**Dave Jones:** Uh P What do they call it? PH the switch node. Um PH Hm. But anyway, that's the correct pinout. So, there you go. I jumped the gun there. We actually found We didn't go deep enough.
+
+**Dave Jones:** Uh we found three here and one of them is certainly capable of direct 12-V input for automotive use. So, yeah. Functional block diagram for those playing along at home.
+
+**Dave Jones:** Aha, the equation is uh somewhat different here, but it's um it it calculates R2 given a known R1, but you can rearrange that and anyway, it's 0.8. Um it's not that 0.6.
+
+**Dave Jones:** So, um yeah, this wouldn't be a direct substitution with both of these. The formula doesn't work out. I just noticed trending in Australia. Both head. Good stuff. So, anyway, uh I hope I've at least um started down the journey of identifying this part here for Pura uh solutions and I would start by looking at those three um trying to like he might already know what what the actual
+
+**Dave Jones:** um input voltage to this thing is and what the output voltage is supposed to be. If you know that, that helps a lot. But look at the resistor values, look at the formulas in the data sheets, and you're on your way, but yeah, it it could take you know, a significant amount of time to actually figure out what in this exact part is, but as I said before, please leave it in the
+
+**Dave Jones:** comments down below if you have any idea exactly what this part is and you know, somebody in the comments I've got a lot of viewers and certain probably someone's used it and go oh yeah, I know that.
+
+**Dave Jones:** And the max linear one I don't think we ever found the F marking. Can we do marking? No. No, it's not there, but it's unlikely to be any of these or certainly not these two cuz the marking's not correct, but anyway, hopefully it gives him something to go on and hopefully you enjoyed that and found it useful.
+
+**Dave Jones:** If you did, please give it a big thumbs up. As always discuss down below and if you want to ask me questions like this, Twitter's the place to do it.
+
+**Dave Jones:** Catch you next time.

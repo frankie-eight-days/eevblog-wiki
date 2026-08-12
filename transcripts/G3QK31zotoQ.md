@@ -3,297 +3,333 @@ video_id: G3QK31zotoQ
 title: EEVblog #424 - $3M Agilent Portable Calibration Lab Tour
 url: https://www.youtube.com/watch?v=G3QK31zotoQ
 source: youtube-asr
-timestamps: {"0": 10, "1": 23, "2": 38, "3": 51, "4": 64, "5": 76, "6": 90, "7": 102, "8": 114, "9": 130, "10": 139, "11": 178, "12": 187, "13": 204, "14": 218, "15": 235, "16": 253, "17": 267, "18": 284, "19": 301, "20": 316, "21": 333, "22": 349, "23": 361, "24": 377, "25": 390, "26": 398, "27": 408, "28": 421, "29": 433, "30": 445, "31": 459, "32": 475, "33": 490, "34": 505, "35": 518, "36": 533, "37": 543, "38": 561, "39": 571, "40": 580, "41": 591, "42": 605, "43": 614, "44": 629, "45": 641, "46": 654, "47": 668, "48": 679, "49": 690, "50": 704, "51": 719, "52": 731, "53": 743, "54": 755, "55": 767, "56": 785, "57": 795, "58": 807, "59": 821, "60": 838, "61": 851, "62": 863, "63": 876, "64": 891, "65": 904, "66": 917, "67": 930, "68": 945, "69": 959, "70": 977, "71": 989, "72": 1004, "73": 1021, "74": 1039, "75": 1052, "76": 1068, "77": 1083, "78": 1098, "79": 1113, "80": 1125, "81": 1137, "82": 1153, "83": 1166, "84": 1177, "85": 1190, "86": 1203, "87": 1216, "88": 1229, "89": 1242, "90": 1250, "91": 1263, "92": 1276, "93": 1292, "94": 1300, "95": 1310, "96": 1320, "97": 1334, "98": 1345, "99": 1358, "100": 1368, "101": 1383, "102": 1395, "103": 1411, "104": 1426, "105": 1442, "106": 1453, "107": 1471, "108": 1487, "109": 1499, "110": 1510, "111": 1527, "112": 1546, "113": 1558, "114": 1573, "115": 1585, "116": 1597, "117": 1609, "118": 1623, "119": 1640, "120": 1653, "121": 1670, "122": 1691, "123": 1717, "124": 1734, "125": 1747, "126": 1761, "127": 1771, "128": 1782, "129": 1793, "130": 1807, "131": 1819, "132": 1835, "133": 1847, "134": 1860, "135": 1874, "136": 1886, "137": 1902, "138": 1913, "139": 1933, "140": 1950, "141": 1964, "142": 1976, "143": 1995, "144": 2010, "145": 2022}
+timestamps: {"0": 10, "1": 18, "2": 28, "3": 45, "4": 56, "5": 72, "6": 84, "7": 94, "8": 105, "9": 114, "10": 128, "11": 138, "12": 172, "13": 180, "14": 200, "15": 224, "16": 239, "17": 262, "18": 279, "19": 305, "20": 316, "21": 329, "22": 338, "23": 352, "24": 361, "25": 373, "26": 388, "27": 393, "28": 403, "29": 413, "30": 427, "31": 437, "32": 449, "33": 459, "34": 472, "35": 485, "36": 499, "37": 513, "38": 527, "39": 540, "40": 547, "41": 562, "42": 570, "43": 577, "44": 583, "45": 594, "46": 607, "47": 615, "48": 630, "49": 641, "50": 651, "51": 660, "52": 670, "53": 679, "54": 688, "55": 696, "56": 710, "57": 720, "58": 729, "59": 740, "60": 753, "61": 761, "62": 778, "63": 788, "64": 799, "65": 808, "66": 817, "67": 839, "68": 850, "69": 856, "70": 867, "71": 877, "72": 888, "73": 898, "74": 908, "75": 919, "76": 930, "77": 945, "78": 959, "79": 977, "80": 988, "81": 1002, "82": 1015, "83": 1033, "84": 1045, "85": 1057, "86": 1072, "87": 1091, "88": 1104, "89": 1113, "90": 1125, "91": 1135, "92": 1152, "93": 1161, "94": 1171, "95": 1178, "96": 1191, "97": 1204, "98": 1219, "99": 1232, "100": 1242, "101": 1249, "102": 1262, "103": 1273, "104": 1286, "105": 1296, "106": 1304, "107": 1312, "108": 1321, "109": 1341, "110": 1354, "111": 1366, "112": 1376, "113": 1385, "114": 1398, "115": 1409, "116": 1420, "117": 1433, "118": 1448, "119": 1460, "120": 1475, "121": 1488, "122": 1497, "123": 1506, "124": 1525, "125": 1544, "126": 1554, "127": 1567, "128": 1581, "129": 1588, "130": 1600, "131": 1615, "132": 1626, "133": 1638, "134": 1649, "135": 1660, "136": 1676, "137": 1691, "138": 1709, "139": 1727, "140": 1740, "141": 1754, "142": 1761, "143": 1768, "144": 1778, "145": 1785, "146": 1800, "147": 1819, "148": 1837, "149": 1847, "150": 1858, "151": 1868, "152": 1880, "153": 1886, "154": 1900, "155": 1912, "156": 1927, "157": 1935, "158": 1957, "159": 1966, "160": 1974, "161": 1997, "162": 2011, "163": 2023}
 ---
 
-**Dave Jones:** Tell us about Our our volume on site calibration service is uh based around a 20-ft shipping container. Wow. It's a little blue and white box travels around the country. Disappears from one place, reappears in another. It's actually bigger on the inside than
+**Dave Jones:** Tell us about Our our volume on site calibration service is uh based around a 20-ft shipping container. Wow. It's a little blue and white box travels around the country.
 
-**Dave Jones:** it is on the outside. Aha. Sounds a bit familiar, doesn't it? It does sound very familiar and it's blue. And it's blue and white. So, like our our lab inside, Yep. same quality system, same traceability, and we use um
+**Dave Jones:** Disappears from one place, reappears in another. It's actually bigger on the inside than it is on the outside. Aha. Sounds a bit familiar, doesn't it? It does sound very familiar and it's blue.
 
-**Dave Jones:** a little bit different setup procedure. We arrive at a customer site um and within 4 hours we're ready to start taking work. Right. We don't do precision time bases for 48 hours Mhm. generally, but um Due to the warm up
+**Dave Jones:** And it's blue and white. So, like our our lab inside, Yep. same quality system, same traceability, and we use um a little bit different setup procedure. We arrive at a customer site um and within 4 hours we're ready to start taking work.
 
-**Dave Jones:** other rubidium. Our atomic Our atomic clock in here is different to the atomic clocks we use inside. Got it. Our atomic clocks inside are um cesium beam tubes mhm that are cross-referenced to a GPS system. Here we're using a a
+**Dave Jones:** Right. We don't do precision time bases for 48 hours Mhm. generally, but um Due to the warm up other rubidium. Our atomic Our atomic clock in here is different to the atomic clocks we use inside.
 
-**Dave Jones:** rubidium beam that is uh cross-referenced uh to in its calibration it's checked and calibrated against our cesium beam tubes. As part of our setup, we check it against the GPS system. How much power does the whole thing take?
+**Dave Jones:** Got it. Our atomic clocks inside are um cesium beam tubes mhm that are cross-referenced to a GPS system. Here we're using a a rubidium beam that is uh cross-referenced uh to in its calibration it's checked and calibrated against our cesium beam tubes.
 
-**Dave Jones:** Um needs a 32 amp line, single phase. Yep. Uh when we designed our original on site facility Mhm. uh a lot of our customers we we queried them. Um many of our customers could give us three phase power,
+**Dave Jones:** As part of our setup, we check it against the GPS system. How much power does the whole thing take? Um needs a 32 amp line, single phase. Yep. Uh when we designed our original on site facility Mhm.
 
-**Dave Jones:** uh but not all of them. Right. So, our solution was based around all of our customers' needs. Mhm. So, based it on a a 22 amp uh sorry, 32 amp single phase power supply. Got it. Nice warm day here, so the air conditioner gets a
+**Dave Jones:** uh a lot of our customers we we queried them. Um many of our customers could give us three phase power, uh but not all of them. Right. So, our solution was based around all of our customers' needs.
 
-**Dave Jones:** little bit of a caning, but uh most of the it. Most of the most of the heat's actually generated by by the uh equipment itself. Mhm. What we have is um an air conditioning system that's built to transfer that
+**Dave Jones:** Mhm. So, based it on a a 22 amp uh sorry, 32 amp single phase power supply. Got it. Nice warm day here, so the air conditioner gets a little bit of a caning, but uh most of the it.
 
-**Dave Jones:** heat outside. Mhm. The box is insulated. Um and it's environmentally controlled. Okay. Part of our environment is monitored same as we are inside, uh, and it's the broader environment. It's 23° plus or minus 5. Uh, and 5 to 80% humidity.
+**Dave Jones:** Most of the most of the heat's actually generated by by the uh equipment itself. Mhm. What we have is um an air conditioning system that's built to transfer that heat outside.
 
-**Dave Jones:** 5 to 80% humidity doesn't seem like much of a challenge, but when you get to Alice Springs and it's zero zero percent outside, you have to find the water from somewhere. And I reckon we can fit a lot of people
+**Dave Jones:** Mhm. The box is insulated. Um and it's environmentally controlled. Okay. Part of our environment is monitored same as we are inside, uh, and it's the broader environment. It's 23° plus or minus 5.
 
-**Dave Jones:** in here. I reckon we can, too. Let's try it. 30 people out of one box, Dave? That's pretty good. That's That's not not bad. The fact we normally normally have a crew of, uh, two people. Right. But it fits heaps.
+**Dave Jones:** Uh, and 5 to 80% humidity. 5 to 80% humidity doesn't seem like much of a challenge, but when you get to Alice Springs and it's zero zero percent outside, you have to find the water from somewhere.
 
-**Dave Jones:** We can fit 30 people in there quite easily. At least. Oh, plenty of room to spare. It's actually bigger on the inside than it is on the outside. And if we take a look, it's actually a standard, uh,
+**Dave Jones:** And I reckon we can fit a lot of people in here. I reckon we can, too. Let's try it. 30 people out of one box, Dave? That's pretty good.
 
-**Dave Jones:** or what looks like a standard 20-ft shipping container from this side, but if you head on over here, you'll notice that it's actually bigger on the inside than what it looks. It is expandable. The, uh, whole side of it
+**Dave Jones:** That's That's not not bad. The fact we normally normally have a crew of, uh, two people. Right. But it fits heaps. We can fit 30 people in there quite easily.
 
-**Dave Jones:** just, uh, pulls out on one side. All the instrument racks are all on the far side of it, so that's where all the weight or a good majority of the weight of it is, and then this section over here
+**Dave Jones:** At least. Oh, plenty of room to spare. It's actually bigger on the inside than it is on the outside. And if we take a look, it's actually a standard, uh, or what looks like a standard 20-ft shipping container from this side, but if you head on over here, you'll notice that it's actually bigger on the inside than what it looks.
 
-**Dave Jones:** pulls out and, uh, gives them greater room inside. So, it really is quite versatile and it's absolutely chock-a-block at the moment. And, of course, there's the obligatory, uh, fire extinguisher just in case they uh, try to calibrate one of those one hung low
+**Dave Jones:** It is expandable. The, uh, whole side of it just, uh, pulls out on one side. All the instrument racks are all on the far side of it, so that's where all the weight or a good majority of the weight of it is, and then this section over here pulls out and, uh, gives them greater room inside.
 
-**Dave Jones:** cheapy meters and it catches fire. So they've got a decent size air conditioner in it. Check it out. It really has to cool this sucker down in all sorts of temperature extremes. These sides are of course the walls are of course and the roof are
+**Dave Jones:** So, it really is quite versatile and it's absolutely chock-a-block at the moment. And, of course, there's the obligatory, uh, fire extinguisher just in case they uh, try to calibrate one of those one hung low cheapy meters and it catches fire.
 
-**Dave Jones:** all thermally insulated of course cuz this would you'd be able to fry eggs on the top of this thing in the middle of an Australian summer and there's the old one folks. It's wasn't expandable at all and uh
+**Dave Jones:** So they've got a decent size air conditioner in it. Check it out. It really has to cool this sucker down in all sorts of temperature extremes. These sides are of course the walls are of course and the roof are all thermally insulated of course cuz this would you'd be able to fry eggs on the top of this thing in the middle of an Australian summer and there's the old
 
-**Dave Jones:** it was very little room inside that thing. They had of course the same racks and stuff that you saw inside this one but uh Yep, that was pretty claustrophobic. Just might as well sit there Dave. Yep.
+**Dave Jones:** one folks. It's wasn't expandable at all and uh it was very little room inside that thing. They had of course the same racks and stuff that you saw inside this one but uh Yep, that was pretty claustrophobic.
 
-**Dave Jones:** Mind the tripod. But here it is folks. Check this out. Racks and racks of pornographic calibration gear.
+**Dave Jones:** Just might as well sit there Dave. Yep. Mind the tripod. But here it is folks. Check this out. Racks and racks of pornographic calibration gear. And I'll get some high res photos of it all.
 
-**Dave Jones:** And I'll get some high res photos of it all. No doubt. But uh Woo, that is a lot a lot of gear. Give us some specs. Give us a rundown. Well, the reason why it's bigger on the inside is that it expands.
+**Dave Jones:** No doubt. But uh Woo, that is a lot a lot of gear. Give us some specs. Give us a rundown. Well, the reason why it's bigger on the inside is that it expands.
 
-**Dave Jones:** It expands. So this wall here comes up to about this point Yep. uh for transport and once once we land at the customer's site and set up we push this whole unit out. Um it can take 1 and 1/2 ton as a load.
+**Dave Jones:** It expands. So this wall here comes up to about this point Yep. uh for transport and once once we land at the customer's site and set up we push this whole unit out.
 
-**Dave Jones:** Right. In there uh where that that is its rating. We are probably putting about 900 kilos on it. No more than that. Yeah. So it gives us our as opposed to our previous on site facilities uh we if you imagine that our workspace
+**Dave Jones:** Um it can take 1 and 1/2 ton as a load. Right. In there uh where that that is its rating. We are probably putting about 900 kilos on it.
 
-**Dave Jones:** in our old mobile facility started here. Uh-huh. We had shelves coming to here, and we had the length of the container. Right. a tight fit, all right? And uh as a result of some of us putting on weight,
+**Dave Jones:** No more than that. Yeah. So it gives us our as opposed to our previous on site facilities uh we if you imagine that our workspace in our old mobile facility started here.
 
-**Dave Jones:** we bought this box. Uh we we had this box purpose-built. Our other Our other boxes um were old containers that we refurbished and um got a lot out of. Our second Our second facility we built in 2000, and we've just retired it. Um
+**Dave Jones:** Uh-huh. We had shelves coming to here, and we had the length of the container. Right. a tight fit, all right? And uh as a result of some of us putting on weight, we bought this box.
 
-**Dave Jones:** it was probably about 25 years old when we got it. Mhm. Uh had been around the world in endless times. This box uh we put together through a company who had it built in China. It's only done one trip in a boat.
+**Dave Jones:** Uh we we had this box purpose-built. Our other Our other boxes um were old containers that we refurbished and um got a lot out of. Our second Our second facility we built in 2000, and we've just retired it.
 
-**Dave Jones:** Right. And that's the only only time it's the only one to get here. It's a slow boat from China. to get here. It's slow It took about took about uh 6 weeks to get here from China. But it's not Chinese gear in here,
+**Dave Jones:** Um it was probably about 25 years old when we got it. Mhm. Uh had been around the world in endless times. This box uh we put together through a company who had it built in China.
 
-**Dave Jones:** folks. No, it's not. We We actually had it built in China by an Australian engineering company. Mhm. Uh very good uh Sea Box in They They did They did a a a particularly good job of looking after our needs.
+**Dave Jones:** It's only done one trip in a boat. Right. And that's the only only time it's the only one to get here. It's a slow boat from China. to get here.
 
-**Dave Jones:** Right. Um particularly when uh they went over They Their engineers went over and did all the inspections. Their engineers did it went over did all the uh testing Mhm. and acceptance testing on it, and had it accredited for transport
+**Dave Jones:** It's slow It took about took about uh 6 weeks to get here from China. But it's not Chinese gear in here, folks. No, it's not. We We actually had it built in China by an Australian engineering company.
 
-**Dave Jones:** internationally. Right. So, as it is, fully loaded kitted out over there. This was just the This is just the box. Just just the thermal the box and the air con. The box and the air con and the power.
+**Dave Jones:** Mhm. Uh very good uh Sea Box in They They did They did a a a particularly good job of looking after our needs. Right. Um particularly when uh they went over They Their engineers went over and did all the inspections.
 
-**Dave Jones:** So, um that was all done built in China, unfortunately, but um they were able to to do that. It was Australian engineering, Australian design for the expanding unit, which allowed us to kit out the rest of it. Right.
+**Dave Jones:** Their engineers did it went over did all the uh testing Mhm. and acceptance testing on it, and had it accredited for transport internationally. Right. So, as it is, fully loaded kitted out over there.
 
-**Dave Jones:** Now, the rest of the kit has been transferred from our older units. Mhm. Um it's got the pretty much the same capability as our laboratory inside. Yep. Some areas not the same precision. We don't have a cesium beam tube tube on
+**Dave Jones:** This was just the This is just the box. Just just the thermal the box and the air con. The box and the air con and the power. So, um that was all done built in China, unfortunately, but um they were able to to do that.
 
-**Dave Jones:** board. We use a rubidium. Yep. Let's cross-check the GPS. Uh but at 50 gig uh S parameters at 50 gig gig power so accreditation from 20 hertz to 50 gigahertz same traceability same accreditation. DC to daylight. DC to daylight almost. We don't actually
+**Dave Jones:** It was Australian engineering, Australian design for the expanding unit, which allowed us to kit out the rest of it. Right. Now, the rest of the kit has been transferred from our older units.
 
-**Dave Jones:** do daylight on We We tend to stop at 50 gig. We haven't had a lot of We haven't had a lot of um uh interesting doing optical on site. Right. So we really we're focused on the RF side of things with this box.
+**Dave Jones:** Mhm. Um it's got the pretty much the same capability as our laboratory inside. Yep. Some areas not the same precision. We don't have a cesium beam tube tube on board.
 
-**Dave Jones:** Um let's face it if you're paying 30, 40, or 50 thousand dollars for a network analyzer or even in the case of a PNA like this one here Mhm. um you might be you might be paying 150 160 thousand dollars for that network
+**Dave Jones:** We use a rubidium. Yep. Let's cross-check the GPS. Uh but at 50 gig uh S parameters at 50 gig gig power so accreditation from 20 hertz to 50 gigahertz same traceability same accreditation.
 
-**Dave Jones:** analyzer because you want precision measurements. Yeah. All right. If you're in a production environment you want that calibrated and turn around as fast as you can. If you have a number of them Oh yeah. If you have a number of them that's
+**Dave Jones:** DC to daylight. DC to daylight almost. We don't actually do daylight on We We tend to stop at 50 gig. We haven't had a lot of We haven't had a lot of um uh interesting doing optical on site.
 
-**Dave Jones:** where we come into play. Um we could go on we could try and build a business going on site and providing calibration handheld multimeters and oscilloscopes for our customers. Yeah. But if you can if you have a system that's based on a handheld
+**Dave Jones:** Right. So we really we're focused on the RF side of things with this box. Um let's face it if you're paying 30, 40, or 50 thousand dollars for a network analyzer or even in the case of a PNA like this one here Mhm.
 
-**Dave Jones:** multimeter or an oscilloscope or general purpose that sort of general purpose stuff um you can generally afford to buy a spare. Let's buy spares and then put those in production and then to have a spare one of these.
+**Dave Jones:** um you might be you might be paying 150 160 thousand dollars for that network analyzer because you want precision measurements. Yeah. All right. If you're in a production environment you want that calibrated and turn around as fast as you can.
 
-**Dave Jones:** No, that's right. You're not going to have a spare signal generator. Yep. You're not going to have a spare spectrum analyzer. Nope. They're all expensive gear. In In all in all for someone outside of our company to put this box together
+**Dave Jones:** If you have a number of them Oh yeah. If you have a number of them that's where we come into play. Um we could go on we could try and build a business going on site and providing calibration handheld multimeters and oscilloscopes for our customers.
 
-**Dave Jones:** Mhm. with all the equipment in it would probably cost about three million bucks. Three million bucks is what this stuff is worth. would That would would be what it would cost you to to buy the gear. Just the gear in this
+**Dave Jones:** Yeah. But if you can if you have a system that's based on a handheld multimeter or an oscilloscope or general purpose that sort of general purpose stuff um you can generally afford to buy a spare.
 
-**Dave Jones:** Just the gear. In this box in this shipping container three million Don't forget it's not just the gear. You've got to have the guy that operates it. Exactly. Without blowing my own trumpet, you've got to you've got to have the
+**Dave Jones:** Let's buy spares and then put those in production and then to have a spare one of these. No, that's right. You're not going to have a spare signal generator.
 
-**Dave Jones:** You've got to have someone who knows. You've got to have someone that knows how it how it's driven. Yep. You've got to have the systems to back it up. Our systems are monitored globally for quality. Mhm. If I develop a test card in Australia
+**Dave Jones:** Yep. You're not going to have a spare spectrum analyzer. Nope. They're all expensive gear. In In all in all for someone outside of our company to put this box together Mhm.
 
-**Dave Jones:** for a particular Australian customer, I publish it go globally. Right. If I happen to make a mistake on that test card, every tech in the world, every engineer in the world has got access to that mistake. Yep. And if you if on the auto calibration
+**Dave Jones:** with all the equipment in it would probably cost about three million bucks. Three million bucks is what this stuff is worth. would That would would be what it would cost you to to buy the gear.
 
-**Dave Jones:** and you do make that mistake, someone's going to tell you about it. Mhm. All right? Because that's that's the whole purpose of having quality system. If you're in our industry and you can't afford to have someone check your work,
+**Dave Jones:** Just the gear in this Just the gear. In this box in this shipping container three million Don't forget it's not just the gear. You've got to have the guy that operates it.
 
-**Dave Jones:** you've picked the wrong trade. Exactly. All right? So, we we we are not ashamed of the fact that we make mistakes, Mhm. but we correct those mistakes. Got it. On occasions when something fails or we've made a mistake, we turn around to
+**Dave Jones:** Exactly. Without blowing my own trumpet, you've got to you've got to have the You've got to have someone who knows. You've got to have someone that knows how it how it's driven.
 
-**Dave Jones:** our customer and let them know. Yep. And Why hide it? It's crazy. Well, you know, I won't go Well, you know, if I won't go into that too much, but um if if you're afraid of telling your customers the truth,
+**Dave Jones:** Yep. You've got to have the systems to back it up. Our systems are monitored globally for quality. Mhm. If I develop a test card in Australia for a particular Australian customer, I publish it go globally.
 
-**Dave Jones:** Yeah. what are you selling your customers? Exactly. So, in here we get we go from DC to to 50 gigahertz. Um any piece of equipment on this wall here Yep. can be controlled from either end. We have a switching network that enables us
+**Dave Jones:** Right. If I happen to make a mistake on that test card, every tech in the world, every engineer in the world has got access to that mistake. Yep. And if you if on the auto calibration and you do make that mistake, someone's going to tell you about it.
 
-**Dave Jones:** to share equipment. There's the the equipment in the middle two racks Mhm. tends to get used by both sides. Right. machine. So, our two operators will be here. Um it might be uh Michael or Bruce or Luke at the other end. It
+**Dave Jones:** Mhm. All right? Because that's that's the whole purpose of having quality system. If you're in our industry and you can't afford to have someone check your work, you've picked the wrong trade.
 
-**Dave Jones:** might be here at me or Kate uh or Shana at this end. And um we work work with each other to enable us to to share those common pieces of equipment. That enables us to get best best value out of it.
+**Dave Jones:** Exactly. All right? So, we we we are not ashamed of the fact that we make mistakes, Mhm. but we correct those mistakes. Got it. On occasions when something fails or we've made a mistake, we turn around to our customer and let them know.
 
-**Dave Jones:** So, how many instruments can you count one time? I guess how many different types and We can do How many people you got? Well, yeah, we can do a number of different measurements at the same time. We can do While we're running an
+**Dave Jones:** Yep. And Why hide it? It's crazy. Well, you know, I won't go Well, you know, if I won't go into that too much, but um if if you're afraid of telling your customers the truth, Yeah.
 
-**Dave Jones:** automated system, Mhm. we can be do doing manual tests. Right. All right, so we can be doing manual tests or running two complimentary systems. At this end for example, I can be doing RF work and on an independent system, the
+**Dave Jones:** what are you selling your customers? Exactly. So, in here we get we go from DC to to 50 gigahertz. Um any piece of equipment on this wall here Yep.
 
-**Dave Jones:** same operator can be doing the multimeters, handheld multimeters and oscilloscopes Got it. that are a value add to our product. Yeah. All right, they're not they're not your target market. You you wouldn't ship this container somewhere to cuz somebody wants 500
+**Dave Jones:** can be controlled from either end. We have a switching network that enables us to share equipment. There's the the equipment in the middle two racks Mhm. tends to get used by both sides.
 
-**Dave Jones:** multimeters come No. Nice. It wouldn't be worth it to them. Yes. We're happy to charge you for it. Right. But it wouldn't be worth it to How much does it cost logistically to ship a container like this? I guess you
+**Dave Jones:** Right. machine. So, our two operators will be here. Um it might be uh Michael or Bruce or Luke at the other end. It might be here at me or Kate uh or Shana at this end.
 
-**Dave Jones:** just throw it on the back of a truck, right? And just drive? No? Or is there a bit more to it? We we have it shipped through a company called Toll, Toll Transport. Yep. We get it picked up by sidelighter.
+**Dave Jones:** And um we work work with each other to enable us to to share those common pieces of equipment. That enables us to get best best value out of it.
 
-**Dave Jones:** We insist on a sidelighter not a crane. Right. Not a forklift. It gets Why is that? Um because sidelighters are expensive pieces of kit and the people that drive them want to look after them. Got it. Cuz it's in their best interest to look
+**Dave Jones:** So, how many instruments can you count one time? I guess how many different types and We can do How many people you got? Well, yeah, we can do a number of different measurements at the same time.
 
-**Dave Jones:** after them. So they tend to not knock their sidelighter lighter about and they don't knock the load about. So it goes to a rail head. Um funnily enough, uh it goes to the rail head and gets picked up by a sidelighter the other
+**Dave Jones:** We can do While we're running an automated system, Mhm. we can be do doing manual tests. Right. All right, so we can be doing manual tests or running two complimentary systems.
 
-**Dave Jones:** other other side of the country in some some cases. How how does vibration and shock in the transport of this thing factor into such precision calibration equipment? I assume that you'd have to calibrate uh you know, check all this gear traceably calibrate
+**Dave Jones:** At this end for example, I can be doing RF work and on an independent system, the same operator can be doing the multimeters, handheld multimeters and oscilloscopes Got it.
 
-**Dave Jones:** it more often than something inside a regular standards cal lab is it? The same rules apply. It's a measure between two points in time. Right, yeah. If we've had about we've probably in the history of of this equipment we've
+**Dave Jones:** that are a value add to our product. Yeah. All right, they're not they're not your target market. You you wouldn't ship this container somewhere to cuz somebody wants 500 multimeters come No.
 
-**Dave Jones:** probably had about two or three failures over the last five or six years Right. uh which is normal. Are they gross failures or they just slightly drifting out of spec? Uh they tend to be tend to be either gross
+**Dave Jones:** Nice. It wouldn't be worth it to them. Yes. We're happy to charge you for it. Right. But it wouldn't be worth it to How much does it cost logistically to ship a container like this?
 
-**Dave Jones:** or a slight slight change. Right. Very rare really is it there's something significant in there. Right. Um and once or twice we've had to we've had to recall a couple of products. Very rarely. Our system for these things is
+**Dave Jones:** I guess you just throw it on the back of a truck, right? And just drive? No? Or is there a bit more to it? We we have it shipped through a company called Toll, Toll Transport.
 
-**Dave Jones:** is based on the idea that if we if we were to mount these racks rigidly to the container Mhm. Um and to the container wall and the base uh every shock gets transferred the momentum of that shock gets transferred
+**Dave Jones:** Yep. We get it picked up by sidelighter. We insist on a sidelighter not a crane. Right. Not a forklift. It gets Why is that? Um because sidelighters are expensive pieces of kit and the people that drive them want to look after them.
 
-**Dave Jones:** into the equipment. And straight into the reference frame into the all the other stuff that So um and you can imagine if this is a probably about 6 and 1/2 ton worth of container. All right. If it's at a railhead and happens to get
+**Dave Jones:** Got it. Cuz it's in their best interest to look after them. So they tend to not knock their sidelighter lighter about and they don't knock the load about. So it goes to a rail head.
 
-**Dave Jones:** shunted by 30 30-ton container Ooh. has a lot of momentum. So what we what we rely on is a suspension system. That means it can bounce around. So that's so it's actually compliant. It actually it actually bounces can can
+**Dave Jones:** Um funnily enough, uh it goes to the rail head and gets picked up by a sidelighter the other other other side of the country in some some cases. How how does vibration and shock in the transport of this thing factor into such precision calibration equipment?
 
-**Dave Jones:** actually bounce around. It's rubber. So each individual rack is is is independently mounted. All right. So it's it's got rubber mounts on the back to bounce off the wall Mhm. uh on on the rails and it's got resilient mounts underneath it to allow
+**Dave Jones:** I assume that you'd have to calibrate uh you know, check all this gear traceably calibrate it more often than something inside a regular standards cal lab is it? The same rules apply.
 
-**Dave Jones:** it to move. Did you actually do when you as part of the uh configuration of this thing and the um accreditation I guess, did you have to actually measure the performance of all these shock mounts? No. No? No, you just don't.
+**Dave Jones:** It's a measure between two points in time. Right, yeah. If we've had about we've probably in the history of of this equipment we've probably had about two or three failures over the last five or six years Right.
 
-**Dave Jones:** No. You put it in and then go well It's still each each item we've got about 100 and 70 170 calibration standards in this box. Right. By the time you count everything up, we've got about 170 calibration standards. Some are on a 2-year cycle,
+**Dave Jones:** uh which is normal. Are they gross failures or they just slightly drifting out of spec? Uh they tend to be tend to be either gross or a slight slight change.
 
-**Dave Jones:** some are on on a 12-month cycle. We're just at the end of the calibration period for it. It's about a month's worth of work to get everything calibrated and and back into space. Again each each piece equipment is calibrated
+**Dave Jones:** Right. Very rare really is it there's something significant in there. Right. Um and once or twice we've had to we've had to recall a couple of products. Very rarely.
 
-**Dave Jones:** Mhm. between two points in time. Yep. All right. So the physical environment's important, but the calibration is what Is what ultimately matters at the end of the That's right. So, regardless of the environment, we have to maintain the
+**Dave Jones:** Our system for these things is is based on the idea that if we if we were to mount these racks rigidly to the container Mhm. Um and to the container wall and the base uh every shock gets transferred the momentum of that shock gets transferred into the equipment.
 
-**Dave Jones:** environment as best we can. Um regardless of that, we have to monitor that environment, but it still boils down to those two points in time. Your calibration Anytime you're using a a quality system that relies on calibration, it's two points in time.
+**Dave Jones:** And straight into the reference frame into the all the other stuff that So um and you can imagine if this is a probably about 6 and 1/2 ton worth of container.
 
-**Dave Jones:** Yep. Everything that happens in those two points in time is your confidence level. All right. Our 95% confidence level that we we have on a standard cal or two sigma um is is what our general offer is. Got it.
+**Dave Jones:** All right. If it's at a railhead and happens to get shunted by 30 30-ton container Ooh. has a lot of momentum. So what we what we rely on is a suspension system.
 
-**Dave Jones:** All right. We don't do 100%. Um Do Do customer needs vary? I can assume that some customers needs vary greatly in their calibration requirements. They do. Many Many Many customers want us to want a sticker for their calibration uh system or sorry, for the
+**Dave Jones:** That means it can bounce around. So that's so it's actually compliant. It actually it actually bounces can can actually bounce around. It's rubber. So each individual rack is is is independently mounted.
 
-**Dave Jones:** quality system. They want a sticker on the box that says it's calibrated. Yep. And that's it. Yep. Those are the customers that we generally don't see because um they're interested in price. And they just send it to the cheapest
+**Dave Jones:** All right. So it's it's got rubber mounts on the back to bounce off the wall Mhm. uh on on the rails and it's got resilient mounts underneath it to allow it to move.
 
-**Dave Jones:** cal lab they can get, which is Yeah, generally, yeah. Yeah. Or, you know, back a backyard boy that's uh that hasn't got the quality system or or precision or the accreditation, most importantly the accreditation to do the work. Anyone can say that they can
+**Dave Jones:** Did you actually do when you as part of the uh configuration of this thing and the um accreditation I guess, did you have to actually measure the performance of all these shock mounts?
 
-**Dave Jones:** calibrate something, but your accreditation's what is what uh your bread and butter's based on. And what accreditations are you guys rated to? Um we're the correct term. We're accredited by NATA, Yep. um which is the Australian uh accreditation body for our industry.
+**Dave Jones:** No. No? No, you just don't. No. You put it in and then go well It's still each each item we've got about 100 and 70 170 calibration standards in this box.
 
-**Dave Jones:** Mhm. Um Not only were we we accredited, to a breadth and precision within our scope um that is probably unmatched by anyone outside of NML. And that's the key, isn't it? Because any cal any calibration lab, any tin pot guy
+**Dave Jones:** Right. By the time you count everything up, we've got about 170 calibration standards. Some are on a 2-year cycle, some are on on a 12-month cycle. We're just at the end of the calibration period for it.
 
-**Dave Jones:** in his backyard could potentially get NATA calibrated for a with within a specific narrow field of You could do. You You could measurement. You can say you're NATA accredited Yeah. without going too far into your scope. You can say you're NATA accredited for
+**Dave Jones:** It's about a month's worth of work to get everything calibrated and and back into space. Again each each piece equipment is calibrated Mhm. between two points in time. Yep.
 
-**Dave Jones:** RF power. Yep. Um But over what over what range to what precision is that over? That's That's exactly right. Um some of our competitors RF accreditation, some of our significant competitors, their RF accreditation uh might be 50 MHz 1 mW.
+**Dave Jones:** All right. So the physical environment's important, but the calibration is what Is what ultimately matters at the end of the That's right. So, regardless of the environment, we have to maintain the environment as best we can.
 
-**Dave Jones:** Yep. Which is great if you're doing 50 MHz. so that's as high as they'll go. That's as high as they'll go. Not lower. 50 MHz we're still DC, right? That's Well, to us to us yeah, but um so our our scope uh is not only does
+**Dave Jones:** Um regardless of that, we have to monitor that environment, but it still boils down to those two points in time. Your calibration Anytime you're using a a quality system that relies on calibration, it's two points in time.
 
-**Dave Jones:** it go from for RF and S parameters, not only does it go from 20 Hz to 50 GHz, but it's also the power rate ratios as well. So we go from not only 20 Hz to 50 GHz, but in our power scope we go from
+**Dave Jones:** Yep. Everything that happens in those two points in time is your confidence level. All right. Our 95% confidence level that we we have on a standard cal or two sigma um is is what our general offer is.
 
-**Dave Jones:** +20 dBm Mhm. down to -136 dBm. And you can do that in this portable? Most of it, yeah. How most of it? And you can do portable cal? it can, yeah. Yeah. Um same the same for RF, yes. For RF for DC
+**Dave Jones:** Got it. All right. We don't do 100%. Um Do Do customer needs vary? I can assume that some customers needs vary greatly in their calibration requirements. They do. Many Many Many customers want us to want a sticker for their calibration uh system or sorry, for the quality system.
 
-**Dave Jones:** DC not so much. We can't do precision equipment. We can't do the 3458s for example. Oh, okay. You wouldn't do those in here. We wouldn't do those in here because they're they're of level precision that can only be done in a standards lab.
+**Dave Jones:** They want a sticker on the box that says it's calibrated. Yep. And that's it. Yep. Those are the customers that we generally don't see because um they're interested in price.
 
-**Dave Jones:** Got it. All right. So there are there are some things that we draw the line at because it's just not commercially viable for us to have that tighter scope in our mobile facility. Well, the thing is most cal labs I've
+**Dave Jones:** And they just send it to the cheapest cal lab they can get, which is Yeah, generally, yeah. Yeah. Or, you know, back a backyard boy that's uh that hasn't got the quality system or or precision or the accreditation, most importantly the accreditation to do the work.
 
-**Dave Jones:** been to will actually use the 3458A as their primary transfer standard. Yeah. Um So like as in to calibrate a multimeter, so you can't send a you In theory you couldn't send a 3458A to them. Well, to get that
+**Dave Jones:** Anyone can say that they can calibrate something, but your accreditation's what is what uh your bread and butter's based on. And what accreditations are you guys rated to? Um we're the correct term.
 
-**Dave Jones:** Right. You could, but But you get what you pay for it. Yeah, right. All right. We have 23458s in here. They're used as working standards. They're calibrated against our gold standards in the standards laboratory. And our gold standards go away for
+**Dave Jones:** We're accredited by NATA, Yep. um which is the Australian uh accreditation body for our industry. Mhm. Um Not only were we we accredited, to a breadth and precision within our scope um that is probably unmatched by anyone outside of NML.
 
-**Dave Jones:** calibration every 6 months. So, so give us the level breakdown. There's gold standard at the top? Yep. Or is there another one above that? Well, our gold standard our gold standard is a transfer standard. Is it is is what you call a transfer
+**Dave Jones:** And that's the key, isn't it? Because any cal any calibration lab, any tin pot guy in his backyard could potentially get NATA calibrated for a with within a specific narrow field of You could do.
 
-**Dave Jones:** standard? Yeah, right. It's It's It's transfer standard that's that's been calibrated Loveland in the United States against primary standards. Right. Back. Yeah, it just That's That's the the highest level. That's the highest level we can That we have available
+**Dave Jones:** You You could measurement. You can say you're NATA accredited Yeah. without going too far into your scope. You can say you're NATA accredited for RF power. Yep. Um But over what over what range to what precision is that over?
 
-**Dave Jones:** uh in here. Um the reason we use Loveland Loveland instead of NMIs it's a faster return time for us. Uh we get the same level of precision. We get um Not only do we get the report, but we
+**Dave Jones:** That's That's exactly right. Um some of our competitors RF accreditation, some of our significant competitors, their RF accreditation uh might be 50 MHz 1 mW. Yep. Which is great if you're doing 50 MHz.
 
-**Dave Jones:** get the data. Yes. So, all the offset data is transmitted to us uh via the ether. Mhm. into our system. So, when our gold standard gets back, then 48 hours of of warming up and and running, we can do
+**Dave Jones:** so that's as high as they'll go. That's as high as they'll go. Not lower. 50 MHz we're still DC, right? That's Well, to us to us yeah, but um so our our scope uh is not only does it go from for RF and S parameters, not only does it go from 20 Hz to 50 GHz, but it's also the power rate ratios as well.
 
-**Dave Jones:** the cross checks on it against its offset standards, against our other gold standard as a cross check. And we have that we have maintained that confidence level for our customers, for our quality system. Got it. Because this something like this
+**Dave Jones:** So we go from not only 20 Hz to 50 GHz, but in our power scope we go from +20 dBm Mhm. down to -136 dBm. And you can do that in this portable?
 
-**Dave Jones:** 3458A, it actually contains offset data, doesn't it? It's not just a precision reference and then that's it. No, no. It It has to be It has to be maintained. has it got? Is it each range contains one offset data?
+**Dave Jones:** Most of it, yeah. How most of it? And you can do portable cal? it can, yeah. Yeah. Um same the same for RF, yes. For RF for DC DC not so much.
 
-**Dave Jones:** No, no. I I I wouldn't I wouldn't I I I don't I don't I don't don't want to go into that because Okay. Is that a bit proprietary, is it? No, no. I just have to pull the book out
+**Dave Jones:** We can't do precision equipment. We can't do the 3458s for example. Oh, okay. You wouldn't do those in here. We wouldn't do those in here because they're they're of level precision that can only be done in a standards lab.
 
-**Dave Jones:** and look it up. All right. All right. Um but the offset data's built into the machine, but the offset data is also um also a calibration data for our standards lab. Got it. That's That's That's That's part of So,
+**Dave Jones:** Got it. All right. So there are there are some things that we draw the line at because it's just not commercially viable for us to have that tighter scope in our mobile facility.
 
-**Dave Jones:** that's the error. Yeah. That's the absolute Not only Not only are our girl standards calibrated against a good reference, but the offset or error is taken into account as well. Right. So, it's not just a specification, but it's offset.
+**Dave Jones:** Well, the thing is most cal labs I've been to will actually use the 3458A as their primary transfer standard. Yeah. Um So like as in to calibrate a multimeter, so you can't send a you In theory you couldn't send a 3458A to them.
 
-**Dave Jones:** So, would it be when you send one of your transfer standards back to Loveland. to to Loveland to get calibrated? Yep. Do they tweak it? Do they tweak it spot on? Or do you just get the offset done?
+**Dave Jones:** Well, to get that Right. You could, but But you get what you pay for it. Yeah, right. All right. We have 23458s in here. They're used as working standards.
 
-**Dave Jones:** get the offset done. You just get the offset done, and then would you tweak with a No, we don't. wouldn't touch it. Never touch it. Why would you Why would you do that? Why would you spend all that invest all that
+**Dave Jones:** They're calibrated against our gold standards in the standards laboratory. And our gold standards go away for calibration every 6 months. So, so give us the level breakdown. There's gold standard at the top?
 
-**Dave Jones:** time, money, and effort to measure something within two points in time, and then adjust it? All right. If we measure it between two points in time, and it doesn't need adjustment Yep. If it does need adjustment, we have to
+**Dave Jones:** Yep. Or is there another one above that? Well, our gold standard our gold standard is a transfer standard. Is it is is what you call a transfer standard? Yeah, right.
 
-**Dave Jones:** go back and hit it in time. That's what I'm sort of getting at. back in time. Yep. We have to look back in time if If we have to adjust that 3458 girl standard, we have to look back in time and see
+**Dave Jones:** It's It's It's transfer standard that's that's been calibrated Loveland in the United States against primary standards. Right. Back. Yeah, it just That's That's the the highest level. That's the highest level we can That we have available uh in here.
 
-**Dave Jones:** what it's been used on. Yep. For all our customers and internal jobs that that particular item is used for, our our quality system is such that every time we do a job, Mhm. we list every piece of uh calibration
+**Dave Jones:** Um the reason we use Loveland Loveland instead of NMIs it's a faster return time for us. Uh we get the same level of precision. We get um Not only do we get the report, but we get the data.
 
-**Dave Jones:** equipment or every cal standard that's used on that on that um calibration, so that we can track it. Got it. The importance of being able to track it is when it dies or when it has a has a
+**Dave Jones:** Yes. So, all the offset data is transmitted to us uh via the ether. Mhm. into our system. So, when our gold standard gets back, then 48 hours of of warming up and and running, we can do the cross checks on it against its offset standards, against our other gold standard as a cross check.
 
-**Dave Jones:** fault or adjustment in that second point in time, we can look back in time and determine what it's been used on, and determine what impact it has on our equipment and the customer's equipment. It's more important that we do that than just have
+**Dave Jones:** And we have that we have maintained that confidence level for our customers, for our quality system. Got it. Because this something like this 3458A, it actually contains offset data, doesn't it?
 
-**Dave Jones:** a a cal sticker at the end of it Yeah. and say, "Yep, it's it's calibrated now, it's working." We have to be able to determine what the impact on a customer's product is. Got it. And on those rare occasion where it
+**Dave Jones:** It's not just a precision reference and then that's it. No, no. It It has to be It has to be maintained. has it got? Is it each range contains one offset data?
 
-**Dave Jones:** there is a likely impact on that customer's product, we will recall it, and we'll recalibrate the customer's customer's box. All right. So, you send this 3458A, you know it was a value 12 months ago, and let's say it was right at the edge of
+**Dave Jones:** No, no. I I I wouldn't I wouldn't I I I don't I don't I don't don't want to go into that because Okay. Is that a bit proprietary, is it?
 
-**Dave Jones:** what you would deem to be acceptable. Okay. And then 12 months later it's at the other end of but still acceptable, still within your acceptable range. What would you do in that This is where This is where your
+**Dave Jones:** No, no. I just have to pull the book out and look it up. All right. All right. Um but the offset data's built into the machine, but the offset data is also um also a calibration data for our standards lab.
 
-**Dave Jones:** metrologist comes into play. Your metrologist has to has to analyze that data and and determine what the impact is. If it's unstable like if it's a year in year out swing Yep. one way to the other. Either the the reference that you're
+**Dave Jones:** Got it. That's That's That's That's part of So, that's the error. Yeah. That's the absolute Not only Not only are our girl standards calibrated against a good reference, but the offset or error is taken into account as well.
 
-**Dave Jones:** checking it against is unstable or your box is unstable. If you're using that as a transfer or working standard Yeah. then you've you've got a serious problem. Because there's two different issues with something with a transfer standard like this, isn't there? There's absolute
+**Dave Jones:** Right. So, it's not just a specification, but it's offset. So, would it be when you send one of your transfer standards back to Loveland. to to Loveland to get calibrated?
 
-**Dave Jones:** level at the absolute value of it and its stability. And they're not necessarily And all all the drift. And they're not necessarily the same. They're two different things. They're things that that impact different devices. Yep. Um if you're
+**Dave Jones:** Yep. Do they tweak it? Do they tweak it spot on? Or do you just get the offset done? get the offset done. You just get the offset done, and then would you tweak with a No, we don't.
 
-**Dave Jones:** the stability of in in many cases device under test is is the largest source of instability. Mhm. If you're doing a time base. Yep. If you're If you're doing a Most of our instruments run off a 10 meg
+**Dave Jones:** wouldn't touch it. Never touch it. Why would you Why would you do that? Why would you spend all that invest all that time, money, and effort to measure something within two points in time, and then adjust it?
 
-**Dave Jones:** time base, right? Right. Most of the Agilent time bases are stable within within 4 hours. Right. However, we we wait if we're testing a precision temperature controlled crystal oscillator we'll have it running for 48 hours. Right. All right, before we we wait
+**Dave Jones:** All right. If we measure it between two points in time, and it doesn't need adjustment Yep. If it does need adjustment, we have to go back and hit it in time.
 
-**Dave Jones:** will have to be on site powered up for 48 hours before we start doing those precision time bases. General time base a normal time base um your air crystal oscillator or your your old Colpitts style oscillator RC oscillator um if you wait more than an
+**Dave Jones:** That's what I'm sort of getting at. back in time. Yep. We have to look back in time if If we have to adjust that 3458 girl standard, we have to look back in time and see what it's been used on.
 
-**Dave Jones:** hour, you're just wasting time. Yeah. All right, that that sort of that sort of sort of precision's not there. So That's all right. We gen we generally need that precision for the temperature controlled crystal oscillators. Mhm. Um and that's the limit of the time base
+**Dave Jones:** Yep. For all our customers and internal jobs that that particular item is used for, our our quality system is such that every time we do a job, Mhm. we list every piece of uh calibration equipment or every cal standard that's used on that on that um calibration, so that we can track it.
 
-**Dave Jones:** that we do here. Okay, so you couldn't do anything you couldn't do you couldn't do a rubidium in here because you're using a rubidium as your base. That's right. How how many orders do you have to go above
+**Dave Jones:** Got it. The importance of being able to track it is when it dies or when it has a has a fault or adjustment in that second point in time, we can look back in time and determine what it's been used on, and determine what impact it has on our equipment and the customer's equipment.
 
-**Dave Jones:** Um the decision? Generally accuracy ratio is is what comes into account and if you've got say you do a measurement that that is you've got a specification of plus or minus one unit. Yep. If your uncertainty is plus or minus one
+**Dave Jones:** It's more important that we do that than just have a a cal sticker at the end of it Yeah. and say, "Yep, it's it's calibrated now, it's working." We have to be able to determine what the impact on a customer's product is.
 
-**Dave Jones:** and a half units Yep. you're kidding yourself, right? Yeah, exactly. so if you've got a specification of Yeah. of plus or minus one unit um then your uncertainty level should be better than .25. Right. that gives you a test accuracy ratio of
+**Dave Jones:** Got it. And on those rare occasion where it there is a likely impact on that customer's product, we will recall it, and we'll recalibrate the customer's customer's box. All right.
 
-**Dave Jones:** four to one. So four times better is that's absolute minimum. at minimum. Right. What would you run in practice? Most of the stuff is probably 10 to one. 10 to one. 10 to one. All right, so you know, if if
+**Dave Jones:** So, you send this 3458A, you know it was a value 12 months ago, and let's say it was right at the edge of what you would deem to be acceptable.
 
-**Dave Jones:** your device under test is um is got a specification in percentages your reference will be in parts per million. Mhm. All right, that just just to just to give you the difference. Can we have a breakdown of what
+**Dave Jones:** Okay. And then 12 months later it's at the other end of but still acceptable, still within your acceptable range. What would you do in that This is where This is where your metrologist comes into play.
 
-**Dave Jones:** instruments you got here cuz I'm sure people would actually want to know each bit of kit in here and what So you want me to go through 170 items? Uh not not quite 170. I mean you've got maybe what 20?
+**Dave Jones:** Your metrologist has to has to analyze that data and and determine what the impact is. If it's unstable like if it's a year in year out swing Yep. one way to the other.
 
-**Dave Jones:** All right. 20 here in the rack is that doable? I'll I'll try I'll try and go through them. All right, so here's we'll start from here. We've A-cal A-cal kit. Whoop. Sorry folks, I'm I don't think I can
+**Dave Jones:** Either the the reference that you're checking it against is unstable or your box is unstable. If you're using that as a transfer or working standard Yeah. then you've you've got a serious problem.
 
-**Dave Jones:** we're using our wireless mics here. I don't think I can separate my camera from the Oh yes, I can. There we go. Okay. All right. So we have a PNA precision network analyzer. Below that we have a test test
+**Dave Jones:** Because there's two different issues with something with a transfer standard like this, isn't there? There's absolute level at the absolute value of it and its stability. And they're not necessarily And all all the drift.
 
-**Dave Jones:** linearity system. That looks homemade. Uh it's not homemade, but it's uh it's SSU, mate. Right. Over here we have a low lower frequency network analyzer. Below that we have a a 3 GHz pulse gen. Up here we have a low
+**Dave Jones:** And they're not necessarily the same. They're two different things. They're things that that impact different devices. Yep. Um if you're the stability of in in many cases device under test is is the largest source of instability.
 
-**Dave Jones:** frequency spectrum analyzer and network analyzer. Yep. We have 3458A. We have another another manufacturer's product. Oh, oh, no, no, no. Another manufacturer's product. These are calibrators. Agilent doesn't make calibrators. We have a counter. We have a pulse gen. We have another pulse gen.
+**Dave Jones:** Mhm. If you're doing a time base. Yep. If you're If you're doing a Most of our instruments run off a 10 meg time base, right? Right. Most of the Agilent time bases are stable within within 4 hours.
 
-**Dave Jones:** We have a multimeter. We have a noise source controller. We have a noise figure meter. We have a scalar network analyzer. We have a 50 gig source. We have a switch. We have a power meter. We have a
+**Dave Jones:** Right. However, we we wait if we're testing a precision temperature controlled crystal oscillator we'll have it running for 48 hours. Right. All right, before we we wait will have to be on site powered up for 48 hours before we start doing those precision time bases.
 
-**Dave Jones:** PSG. We have another switch box, amplifier box. We have a 1 GHz scope. We have a switch box. We have a 3333358 low frequency high precision level generator. It's an old unit, but still works. Pulse gen, AM/FM test set.
+**Dave Jones:** General time base a normal time base um your air crystal oscillator or your your old Colpitts style oscillator RC oscillator um if you wait more than an hour, you're just wasting time.
 
-**Dave Jones:** Function generator. 50 gig network analyzer. 50 gig oscilloscope. Another 30 50 gig scope. 3458, another one. 26 and 1/2 gig counter. Distortion analyzer, measuring receiver. Ah. Down converter. Ah. Another sig gen, 50 gig. GPS system, dual power meter.
+**Dave Jones:** Yeah. All right, that that sort of that sort of sort of precision's not there. So That's all right. We gen we generally need that precision for the temperature controlled crystal oscillators.
 
-**Dave Jones:** Rubidium distribution amp. DC load. Device under test. Counter. Pulse gen, counter, AC power supply. Phase noise measurement system. That one just does phase noise? That's totally devoted to to phase noise. It's um it's driven by the E5500 phase noise system as a test set. That
+**Dave Jones:** Mhm. Um and that's the limit of the time base that we do here. Okay, so you couldn't do anything you couldn't do you couldn't do a rubidium in here because you're using a rubidium as your base.
 
-**Dave Jones:** enables us to do um residual phase noise from 10 meg out offset from the carrier down to 100 millihertz offset from the carrier. Right. Um and when we're doing residual phase noise, that gives us a dynamic range of
+**Dave Jones:** That's right. How how many orders do you have to go above Um the decision? Generally accuracy ratio is is what comes into account and if you've got say you do a measurement that that is you've got a specification of plus or minus one unit.
 
-**Dave Jones:** uh minus 170 dBC per hertz at the top end. Uh these are just some phase noise plots. This is just a a cross check a cross check we're doing at phase noise system uh on three different systems. So, we we've measured the the 10
+**Dave Jones:** Yep. If your uncertainty is plus or minus one and a half units Yep. you're kidding yourself, right? Yeah, exactly. so if you've got a specification of Yeah. of plus or minus one unit um then your uncertainty level should be better than .25.
 
-**Dave Jones:** megahertz out of the GPS system, a rubidium reference, and a temperature controlled crystal oscillator. All right. Uh it's not an absolute calibration. It's just a a cross check on our system. Make sure make sure it's operationally ready to go.
+**Dave Jones:** Right. that gives you a test accuracy ratio of four to one. So four times better is that's absolute minimum. at minimum. Right. What would you run in practice? Most of the stuff is probably 10 to one.
 
-**Dave Jones:** And how often would you do this? Or is it just one off? no, you would do it um fairly regularly. You would do it as part of your normal cross check as part of your startup. Right. Um Oh, okay. So, every time you take the
+**Dave Jones:** 10 to one. 10 to one. All right, so you know, if if your device under test is um is got a specification in percentages your reference will be in parts per million.
 
-**Dave Jones:** this uh van this uh container on site, you would redo these charts? before you do you would do a check on your on your system. Right. So, you you do a check on your system. Right. In this case, we've done it against the
+**Dave Jones:** Mhm. All right, that just just to just to give you the difference. Can we have a breakdown of what instruments you got here cuz I'm sure people would actually want to know each bit of kit in here and what So you want me to go through 170 items?
 
-**Dave Jones:** 10 meg ones. All right. It's just an example of of giving yourself confidence level of what you're using. So, we've only gone we've only gone down to 100 hertz offset Yep. uh because we're doing what's called absolute phase noise just as a a
+**Dave Jones:** Uh not not quite 170. I mean you've got maybe what 20? All right. 20 here in the rack is that doable? I'll I'll try I'll try and go through them.
 
-**Dave Jones:** relatively quick check. So, if you look at them, it's it's taken it's only taken a couple of minutes to do each plot Right. All right. If we wanted to go down to um 100 millihertz offset and do residual, it probably takes about 25 or
+**Dave Jones:** All right, so here's we'll start from here. We've A-cal A-cal kit. Whoop. Sorry folks, I'm I don't think I can we're using our wireless mics here. I don't think I can separate my camera from the Oh yes, I can.
 
-**Dave Jones:** 30 minutes to do each plot. Right. That's because as uh you know yourself, as you get closer gets as you close with the FFT to go from the um the analog to digital conversion, it takes a lot more samples, a lot longer
+**Dave Jones:** There we go. Okay. All right. So we have a PNA precision network analyzer. Below that we have a test test linearity system. That looks homemade. Uh it's not homemade, but it's uh it's SSU, mate.
 
-**Dave Jones:** time. Which gives you your your Allan variance. So, That's right. we only use residual phase noise for those particular devices that customers require it on or or those precision boxes where it's um specified because it's it is directly proportional
+**Dave Jones:** Right. Over here we have a low lower frequency network analyzer. Below that we have a a 3 GHz pulse gen. Up here we have a low frequency spectrum analyzer and network analyzer.
 
-**Dave Jones:** to the Allan variance of the system. Got it. So, if you've got uh your your average Agilent uh time base, as I said earlier, is good probably good after 4 hours. Mhm. A precision timebase, we won't test for
+**Dave Jones:** Yep. We have 3458A. We have another another manufacturer's product. Oh, oh, no, no, no. Another manufacturer's product. These are calibrators. Agilent doesn't make calibrators. We have a counter. We have a pulse gen.
 
-**Dave Jones:** 48. All right, and and some of and most of our signal generators have that option in them. All right. So, as as part of their standard standard system or an option for them. If some of some of our competitors have
+**Dave Jones:** We have another pulse gen. We have a multimeter. We have a noise source controller. We have a noise figure meter. We have a scalar network analyzer. We have a 50 gig source.
 
-**Dave Jones:** got and we do do calibrate competitors' boxes Mhm. because we have to go on site Yeah. uh we're able to calibrate the competitors' boxes. That's it. Um we can't calibrate their timebases because their timebase has a 30-day stability spec.
+**Dave Jones:** We have a switch. We have a power meter. We have a PSG. We have another switch box, amplifier box. We have a 1 GHz scope. We have a switch box.
 
-**Dave Jones:** So, that's So, its specification for stability and and and short-term stability like phase noise Mhm. um we're not going to hang around for 30 days to do that stuff. not. Well, if they paid you, maybe, but they don't pay you a hell of a lot.
+**Dave Jones:** We have a 3333358 low frequency high precision level generator. It's an old unit, but still works. Pulse gen, AM/FM test set. Function generator. 50 gig network analyzer. 50 gig oscilloscope.
 
-**Dave Jones:** That's right. So, um so, yeah, you can always give it to people. All the other All our other standards uh smaller standards like our power sensors, power sensors mixers please open the drawers, uh just just just uh Look. Oh, it's wet dream stuff.
+**Dave Jones:** Another 30 50 gig scope. 3458, another one. 26 and 1/2 gig counter. Distortion analyzer, measuring receiver. Ah. Down converter. Ah. Another sig gen, 50 gig. GPS system, dual power meter.
 
-**Dave Jones:** Uh It really is. And they reckon I need to get a life. All right, so whoop. So, not much to see here. They're just just connectors and other bits and pieces. So, yeah, and we have a number of boxes
+**Dave Jones:** Rubidium distribution amp. DC load. Device under test. Counter. Pulse gen, counter, AC power supply. Phase noise measurement system. That one just does phase noise? That's totally devoted to to phase noise.
 
-**Dave Jones:** over over here where each of our cal kits, for example come in precision box like that 34 sorry, the 83 032F cal kit. All right, so these these devices we use these devices here as our reference standards, not for not just for our not
+**Dave Jones:** It's um it's driven by the E5500 phase noise system as a test set. That enables us to do um residual phase noise from 10 meg out offset from the carrier down to 100 millihertz offset from the carrier.
 
-**Dave Jones:** just for our network analyzers, but for customers' economy cal kits. We these these go overseas. They're directly traceable to physical dimensions um for their performance as well as the RF performance. All right, so that's it that's that's where we get our traceability not only
+**Dave Jones:** Right. Um and when we're doing residual phase noise, that gives us a dynamic range of uh minus 170 dBC per hertz at the top end. Uh these are just some phase noise plots.
 
-**Dave Jones:** for linear magnitude in S parameters um but also for phase for the opens and shorts. So the opens and shorts cal kit. That's a low frequency one that's only good to 9 GHz. Um an economy cal kit like that one
+**Dave Jones:** This is just a a cross check a cross check we're doing at phase noise system uh on three different systems. So, we we've measured the the 10 megahertz out of the GPS system, a rubidium reference, and a temperature controlled crystal oscillator.
 
-**Dave Jones:** there that's good to 18 GHz. Economy? It's an economy one yeah, but um a sliding load cal kit that we can we take on site. That's good for 18 GHz. That gives the sliding load gives you a different order precision. And you also
+**Dave Jones:** All right. Uh it's not an absolute calibration. It's just a a cross check on our system. Make sure make sure it's operationally ready to go. And how often would you do this?
 
-**Dave Jones:** get what's called the electronic cal kits. Uh where if we're doing lower order equipment um like a common common attenuator or a switchable attenuator um we can set the calibration up and hook the electronic e-cal in as an insertable device and let
+**Dave Jones:** Or is it just one off? no, you would do it um fairly regularly. You would do it as part of your normal cross check as part of your startup.
 
-**Dave Jones:** that do its its self cal. Got it. Doesn't give you the best performance low frequency ranges. Uh so nine for below 2 GHz we'd use a mechanical cal kit for most most uh things. Above two above 6 GHz we'd use a sliding load cal
+**Dave Jones:** Right. Um Oh, okay. So, every time you take the this uh van this uh container on site, you would redo these charts? before you do you would do a check on your on your system.
 
-**Dave Jones:** kit uh for most things. We also use a sliding load cal kit for precision precision work between in that region from 2 gig to to 6 gig. Got it. All right. And it's about 3 million bucks worth of
+**Dave Jones:** Right. So, you you do a check on your system. Right. In this case, we've done it against the 10 meg ones. All right. It's just an example of of giving yourself confidence level of what you're using.
 
-**Dave Jones:** gear probably. Yep. That'd be about it. That's how much it would cost you to set it up. Unbelievable. Thank you very much, Peter. No worries.
+**Dave Jones:** So, we've only gone we've only gone down to 100 hertz offset Yep. uh because we're doing what's called absolute phase noise just as a a relatively quick check. So, if you look at them, it's it's taken it's only taken a couple of minutes to do each plot Right.
+
+**Dave Jones:** All right. If we wanted to go down to um 100 millihertz offset and do residual, it probably takes about 25 or 30 minutes to do each plot. Right. That's because as uh you know yourself, as you get closer gets as you close with the FFT to go from the um the analog to digital conversion, it takes a lot more samples, a lot longer time.
+
+**Dave Jones:** Which gives you your your Allan variance. So, That's right. we only use residual phase noise for those particular devices that customers require it on or or those precision boxes where it's um specified because it's it is directly proportional to the Allan variance of the system.
+
+**Dave Jones:** Got it. So, if you've got uh your your average Agilent uh time base, as I said earlier, is good probably good after 4 hours. Mhm. A precision timebase, we won't test for 48.
+
+**Dave Jones:** All right, and and some of and most of our signal generators have that option in them. All right. So, as as part of their standard standard system or an option for them.
+
+**Dave Jones:** If some of some of our competitors have got and we do do calibrate competitors' boxes Mhm. because we have to go on site Yeah. uh we're able to calibrate the competitors' boxes.
+
+**Dave Jones:** That's it. Um we can't calibrate their timebases because their timebase has a 30-day stability spec. So, that's So, its specification for stability and and and short-term stability like phase noise Mhm.
+
+**Dave Jones:** um we're not going to hang around for 30 days to do that stuff. not. Well, if they paid you, maybe, but they don't pay you a hell of a lot.
+
+**Dave Jones:** That's right. So, um so, yeah, you can always give it to people. All the other All our other standards uh smaller standards like our power sensors, power sensors mixers please open the drawers, uh just just just uh Look.
+
+**Dave Jones:** Oh, it's wet dream stuff. Uh It really is. And they reckon I need to get a life. All right, so whoop. So, not much to see here. They're just just connectors and other bits and pieces.
+
+**Dave Jones:** So, yeah, and we have a number of boxes over over here where each of our cal kits, for example come in precision box like that 34 sorry, the 83 032F cal kit.
+
+**Dave Jones:** All right, so these these devices we use these devices here as our reference standards, not for not just for our not just for our network analyzers, but for customers' economy cal kits.
+
+**Dave Jones:** We these these go overseas. They're directly traceable to physical dimensions um for their performance as well as the RF performance. All right, so that's it that's that's where we get our traceability not only for linear magnitude in S parameters um but also for phase for the opens and shorts.
+
+**Dave Jones:** So the opens and shorts cal kit. That's a low frequency one that's only good to 9 GHz. Um an economy cal kit like that one there that's good to 18 GHz.
+
+**Dave Jones:** Economy? It's an economy one yeah, but um a sliding load cal kit that we can we take on site. That's good for 18 GHz. That gives the sliding load gives you a different order precision.
+
+**Dave Jones:** And you also get what's called the electronic cal kits. Uh where if we're doing lower order equipment um like a common common attenuator or a switchable attenuator um we can set the calibration up and hook the electronic e-cal in as an insertable device and let that do its its self cal.
+
+**Dave Jones:** Got it. Doesn't give you the best performance low frequency ranges. Uh so nine for below 2 GHz we'd use a mechanical cal kit for most most uh things. Above two above 6 GHz we'd use a sliding load cal kit uh for most things.
+
+**Dave Jones:** We also use a sliding load cal kit for precision precision work between in that region from 2 gig to to 6 gig. Got it. All right. And it's about 3 million bucks worth of gear probably.
+
+**Dave Jones:** Yep. That'd be about it. That's how much it would cost you to set it up. Unbelievable. Thank you very much, Peter. No worries.

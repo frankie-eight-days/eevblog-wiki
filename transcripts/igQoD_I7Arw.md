@@ -3,179 +3,191 @@ video_id: igQoD_I7Arw
 title: EEVblog 1598 - ANENG AC11 Socket Tester TEARDOWN + SCHEMATIC Reverse Eng
 url: https://www.youtube.com/watch?v=igQoD_I7Arw
 source: youtube-asr
-timestamps: {"0": 0, "1": 15, "2": 34, "3": 50, "4": 66, "5": 78, "6": 90, "7": 101, "8": 114, "9": 125, "10": 142, "11": 158, "12": 171, "13": 189, "14": 202, "15": 213, "16": 223, "17": 237, "18": 251, "19": 262, "20": 279, "21": 291, "22": 307, "23": 321, "24": 334, "25": 348, "26": 361, "27": 372, "28": 387, "29": 403, "30": 416, "31": 431, "32": 441, "33": 452, "34": 464, "35": 480, "36": 494, "37": 508, "38": 522, "39": 533, "40": 544, "41": 557, "42": 568, "43": 582, "44": 595, "45": 612, "46": 627, "47": 642, "48": 655, "49": 670, "50": 686, "51": 701, "52": 714, "53": 732, "54": 745, "55": 757, "56": 777, "57": 790, "58": 806, "59": 821, "60": 839, "61": 852, "62": 863, "63": 875, "64": 889, "65": 902, "66": 917, "67": 927, "68": 939, "69": 952, "70": 968, "71": 982, "72": 994, "73": 1007, "74": 1021, "75": 1036, "76": 1047, "77": 1064, "78": 1076, "79": 1091, "80": 1102, "81": 1114, "82": 1127, "83": 1141, "84": 1151, "85": 1165, "86": 1176}
+timestamps: {"0": 0, "1": 10, "2": 22, "3": 36, "4": 54, "5": 66, "6": 76, "7": 93, "8": 101, "9": 114, "10": 125, "11": 139, "12": 150, "13": 164, "14": 171, "15": 189, "16": 202, "17": 211, "18": 222, "19": 241, "20": 249, "21": 262, "22": 284, "23": 292, "24": 305, "25": 318, "26": 330, "27": 342, "28": 353, "29": 365, "30": 377, "31": 387, "32": 400, "33": 411, "34": 429, "35": 443, "36": 452, "37": 461, "38": 482, "39": 498, "40": 508, "41": 520, "42": 531, "43": 541, "44": 557, "45": 568, "46": 580, "47": 591, "48": 601, "49": 617, "50": 631, "51": 642, "52": 655, "53": 676, "54": 686, "55": 697, "56": 712, "57": 724, "58": 739, "59": 748, "60": 759, "61": 777, "62": 799, "63": 811, "64": 821, "65": 836, "66": 847, "67": 857, "68": 872, "69": 882, "70": 894, "71": 908, "72": 923, "73": 932, "74": 950, "75": 960, "76": 977, "77": 988, "78": 1004, "79": 1017, "80": 1032, "81": 1042, "82": 1064, "83": 1074, "84": 1084, "85": 1092, "86": 1099, "87": 1112, "88": 1122, "89": 1141, "90": 1151, "91": 1163, "92": 1172}
 ---
 
-**Dave Jones:** Hi, it's teardown time. We're going to take a look at this Aning AC11 socket tester. Now, we've seen Aning before and they rebadge a bunch of other companies products. So, I haven't looked at who originally manufactures this, but it's a
+**Dave Jones:** Hi, it's teardown time. We're going to take a look at this Aning AC11 socket tester. Now, we've seen Aning before and they rebadge a bunch of other companies products.
 
-**Dave Jones:** main socket tester. It's got an Aussie plug, none of that Yankee or European rubbish, and it's one of these wiz bang fancy ones. And it's also got non-contact voltage tester as well. So, let's power this thing on and tada. And you'll notice it has This
+**Dave Jones:** So, I haven't looked at who originally manufactures this, but it's a main socket tester. It's got an Aussie plug, none of that Yankee or European rubbish, and it's one of these wiz bang fancy ones.
 
-**Dave Jones:** actually shows up better on camera than it does in real life. In real life, this is really faded and washed out orange. It reminds me of the like really crappy gas plasma displays in like the late 80s, early 90s. I think Toshiba
+**Dave Jones:** And it's also got non-contact voltage tester as well. So, let's power this thing on and tada. And you'll notice it has This actually shows up better on camera than it does in real life.
 
-**Dave Jones:** used to make them on the Toshiba laptops, but it just it looks very sickly and washed out. Anyway, main socket testers are very interesting. This is a fancy panty one. And here is your more traditional, very simple one. I've had this for at least
+**Dave Jones:** In real life, this is really faded and washed out orange. It reminds me of the like really crappy gas plasma displays in like the late 80s, early 90s. I think Toshiba used to make them on the Toshiba laptops, but it just it looks very sickly and washed out.
 
-**Dave Jones:** 30 years. So, I'm actually going to tear this one apart. Yeah, they've got three indicators here. You don't need any power like you do with this one. This one's a battery uh powered here, fancy panty. I wouldn't rely on a battery
+**Dave Jones:** Anyway, main socket testers are very interesting. This is a fancy panty one. And here is your more traditional, very simple one. I've had this for at least 30 years.
 
-**Dave Jones:** powered socket tester. Anyway, the whole idea of these things is that they're designed to test the wiring of your mains wiring and tell you if it's correct, to tell you if you've swapped active and neutral or active and earth
+**Dave Jones:** So, I'm actually going to tear this one apart. Yeah, they've got three indicators here. You don't need any power like you do with this one. This one's a battery uh powered here, fancy panty.
 
-**Dave Jones:** or something like that, or you're missing an earth or uh something like that. So, yeah, this socket tester is very handy um to have one. You should should have one. And I built one of these when I was a kid. So, inside one
+**Dave Jones:** I wouldn't rely on a battery powered socket tester. Anyway, the whole idea of these things is that they're designed to test the wiring of your mains wiring and tell you if it's correct, to tell you if you've swapped active and neutral or active and earth or something like that, or you're missing an earth or uh something like that.
 
-**Dave Jones:** of these is very simple. They're just basically a diode in series with an LED here and a series uh dropper resistor. In this case, I think this one might be a neon bulb instead of an LED, but um
+**Dave Jones:** So, yeah, this socket tester is very handy um to have one. You should should have one. And I built one of these when I was a kid. So, inside one of these is very simple.
 
-**Dave Jones:** yeah, the new ones are LED. Yeah, it's just got one between there, one between there, and one between there in a triangle shape like that, and that gives you all these different things. So, if your red and green lights come on, then
+**Dave Jones:** They're just basically a diode in series with an LED here and a series uh dropper resistor. In this case, I think this one might be a neon bulb instead of an LED, but um yeah, the new ones are LED.
 
-**Dave Jones:** it's okay. And if just the green light comes on, it's no neutral um is unsafe, so you've got a broken neutral. And if the green and orange come on, um active and earth have been reversed, unsafe, obviously. Um and if just the orange is
+**Dave Jones:** Yeah, it's just got one between there, one between there, and one between there in a triangle shape like that, and that gives you all these different things. So, if your red and green lights come on, then it's okay.
 
-**Dave Jones:** on, active on earth and earth not connected, unsafe. And then, if orange and red are on, active on earth short or polarity reversed, unsafe. And if red's just on on its own, then you've got just a missing earth connection on there. And
+**Dave Jones:** And if just the green light comes on, it's no neutral um is unsafe, so you've got a broken neutral. And if the green and orange come on, um active and earth have been reversed, unsafe, obviously.
 
-**Dave Jones:** these are really simple things. So, anyway, um I'll just crack this open quickly. All right. Turn it the right angle. There you go. That was a bit easier than I thought. So, let's have a squeeze. And yep, I was
+**Dave Jones:** Um and if just the orange is on, active on earth and earth not connected, unsafe. And then, if orange and red are on, active on earth short or polarity reversed, unsafe.
 
-**Dave Jones:** right. There you go. This is a neon bulb version like that. So, this one um it just has dropper resistors and a neon bulb, and that's it. Yeah, so this one is really crude, but yeah, your more modern ones more modern crude ones will
+**Dave Jones:** And if red's just on on its own, then you've got just a missing earth connection on there. And these are really simple things. So, anyway, um I'll just crack this open quickly.
 
-**Dave Jones:** have a LED and diode in series. And this one is Kamagaksa. Yeah, um that was probably just pulling that out, and it's just broken off there. But there's nothing in them, really. So, we'll tear down this fancy fancy one, see what makes it tick.
+**Dave Jones:** All right. Turn it the right angle. There you go. That was a bit easier than I thought. So, let's have a squeeze. And yep, I was right. There you go.
 
-**Dave Jones:** Obviously, it's going to have a micro in there, and it's going to have a non-contact voltage tester circuit just like you've got like in your regular um voltage detection uh sticks or something like that. So, this will be really uh
+**Dave Jones:** This is a neon bulb version like that. So, this one um it just has dropper resistors and a neon bulb, and that's it. Yeah, so this one is really crude, but yeah, your more modern ones more modern crude ones will have a LED and diode in series.
 
-**Dave Jones:** fancy. So, if we have a look at a more modern passive one like this Fluke ST240 Plus. Leave it in the comments if you want me to get this and do a teardown. It's basically the same thing. It's got
+**Dave Jones:** And this one is Kamagaksa. Yeah, um that was probably just pulling that out, and it's just broken off there. But there's nothing in them, really. So, we'll tear down this fancy fancy one, see what makes it tick.
 
-**Dave Jones:** three indicators there. It's got an RCD uh test button, which uh this one does as well, uh which just puts a suitable resistor on uh between active and earth, which then will trip your 30 milliamp earth leakage circuit breaker or
+**Dave Jones:** Obviously, it's going to have a micro in there, and it's going to have a non-contact voltage tester circuit just like you've got like in your regular um voltage detection uh sticks or something like that.
 
-**Dave Jones:** residual current device, as RCD says. And once again, if you've got the two leads on, then it's correct. If you've got the earth fault, only one will be on. Neutral fault, the other lead will be on. If they're all off, your live is
+**Dave Jones:** So, this will be really uh fancy. So, if we have a look at a more modern passive one like this Fluke ST240 Plus. Leave it in the comments if you want me to get this and do a teardown.
 
-**Dave Jones:** broken or you've switched the power point off or your circuit breaker has tripped or something like that. And the other two, which includes a red lead instead of a green one, I guess, live neutral reversed or live earth reversed.
+**Dave Jones:** It's basically the same thing. It's got three indicators there. It's got an RCD uh test button, which uh this one does as well, uh which just puts a suitable resistor on uh between active and earth, which then will trip your 30 milliamp earth leakage circuit breaker or residual current device, as RCD says.
 
-**Dave Jones:** Now, what you won't notice is that this these simple testers like this, they can't test a neutral earth swap because most modern main systems use the men system or multiple earth neutral system, which means that the neutral is bonded
+**Dave Jones:** And once again, if you've got the two leads on, then it's correct. If you've got the earth fault, only one will be on. Neutral fault, the other lead will be on.
 
-**Dave Jones:** to the earth usually back at your fuse box in your house or something like that. Not sure how it works in a building like this. I haven't actually checked my power board. Does it go all the way back down to the substation in
+**Dave Jones:** If they're all off, your live is broken or you've switched the power point off or your circuit breaker has tripped or something like that. And the other two, which includes a red lead instead of a green one, I guess, live neutral reversed or live earth reversed.
 
-**Dave Jones:** the basement of the building or or not? I'm not actually sure. Leave in the comments down below if you're an industrial electrician. Anyway, these simple devices, which include these ones, they cannot detect an earth neutral swap, unfortunately. So, that's one of the
+**Dave Jones:** Now, what you won't notice is that this these simple testers like this, they can't test a neutral earth swap because most modern main systems use the men system or multiple earth neutral system, which means that the neutral is bonded to the earth usually back at your fuse box in your house or something like that.
 
-**Dave Jones:** downsides. And there's tons of these available. Here's another Stanley brand one and it works in exactly the same way as that Fluke one. But this one actually tells you, this unit will not detect detect earth neutral reverse. There it
+**Dave Jones:** Not sure how it works in a building like this. I haven't actually checked my power board. Does it go all the way back down to the substation in the basement of the building or or not?
 
-**Dave Jones:** is there. So, trap for young players. Anyway, let's go back to this Aning AC11. It's got two AAA batteries in it, which powers it here, as you can see. So, let's power that up again and you can see all the indicators and they've
+**Dave Jones:** I'm not actually sure. Leave in the comments down below if you're an industrial electrician. Anyway, these simple devices, which include these ones, they cannot detect an earth neutral swap, unfortunately.
 
-**Dave Jones:** got another filter on that LCD to give you green like that. So, green is brighter than the orange here. But this one here actually tells you the mains voltage, i.e. line and neutral here. It also tells you the
+**Dave Jones:** So, that's one of the downsides. And there's tons of these available. Here's another Stanley brand one and it works in exactly the same way as that Fluke one. But this one actually tells you, this unit will not detect detect earth neutral reverse.
 
-**Dave Jones:** neutral earth voltage. So, not only that the neutral and earth is connected, but how well is it connected? I a what's the resistance of your neutral earth? And it gives you the voltage here. So, let's have actually plug this in and try it
+**Dave Jones:** There it is there. So, trap for young players. Anyway, let's go back to this Aning AC11. It's got two AAA batteries in it, which powers it here, as you can see.
 
-**Dave Jones:** out. Oh, sorry. I forgot to plug this old one in in, but trust me, it just lights up red and green. So, here we go. Let's plug it in and and it is correct. So, it took a few
+**Dave Jones:** So, let's power that up again and you can see all the indicators and they've got another filter on that LCD to give you green like that. So, green is brighter than the orange here.
 
-**Dave Jones:** seconds there. So, obviously it's my the micro is doing it doing the detection and stuff like that. And 245 volts here in the lab, that is normal. And there you go, 0.7 to 1 volt neutral earth. But as I said, that will depend
+**Dave Jones:** But this one here actually tells you the mains voltage, i.e. line and neutral here. It also tells you the neutral earth voltage. So, not only that the neutral and earth is connected, but how well is it connected?
 
-**Dave Jones:** on your how your system's wired up. I'm in a big commercial building here. So, if it's bonded right back down in the substation down in the basement, then yeah, it depends on all the other loads that are on in the building. You'll get,
+**Dave Jones:** I a what's the resistance of your neutral earth? And it gives you the voltage here. So, let's have actually plug this in and try it out. Oh, sorry. I forgot to plug this old one in in, but trust me, it just lights up red and green.
 
-**Dave Jones:** you know, some sort of voltage drop there. So, I don't know. Is that good? I don't know. Industrial electricians with building experience down below. Sounds all right to me though. And it does have that non-contact voltage tester and it
+**Dave Jones:** So, here we go. Let's plug it in and and it is correct. So, it took a few seconds there. So, obviously it's my the micro is doing it doing the detection and stuff like that.
 
-**Dave Jones:** it works okay. Like, you know, it's good enough. But really, I like if I was an electrician, I wouldn't have this because I don't want to rely on something that has two AAA batteries in it. You know, that's battery powered.
+**Dave Jones:** And 245 volts here in the lab, that is normal. And there you go, 0.7 to 1 volt neutral earth. But as I said, that will depend on your how your system's wired up.
 
-**Dave Jones:** I would want one of those smart passive ones. So, anyway, let's take a look inside. So, two AAA batteries. It's interesting that they they looks like they've got a separate mounting plate for the sockets at the back with four
+**Dave Jones:** I'm in a big commercial building here. So, if it's bonded right back down in the substation down in the basement, then yeah, it depends on all the other loads that are on in the building.
 
-**Dave Jones:** screws in there and wires going over. That makes sense cuz of course, you've got to sell this into many different countries. And I don't know how many Does anyone know? I don't know off the top of my head how many different types
+**Dave Jones:** You'll get, you know, some sort of voltage drop there. So, I don't know. Is that good? I don't know. Industrial electricians with building experience down below. Sounds all right to me though.
 
-**Dave Jones:** of power point adapters there are. Let's have a squeeze down here. They've got some silastic down there. That's not too shabby. And we have been blobbed there. So, there you go. There's a chip on board, and just the blob on top. So,
+**Dave Jones:** And it does have that non-contact voltage tester and it it works okay. Like, you know, it's good enough. But really, I like if I was an electrician, I wouldn't have this because I don't want to rely on something that has two AAA batteries in it.
 
-**Dave Jones:** unfortunately, we don't know what micro that is at all. Maybe you could tell from the pinout, cuz obviously, um the footprint here is designed for either a bare die on there, a chip on board, as they call it, COB, and then they just
+**Dave Jones:** You know, that's battery powered. I would want one of those smart passive ones. So, anyway, let's take a look inside. So, two AAA batteries. It's interesting that they they looks like they've got a separate mounting plate for the sockets at the back with four screws in there and wires going over.
 
-**Dave Jones:** bond the wires over, or it's designed for a QFP package like that. There you go. So, they've got some uh test points up there, VPP. There you go. Pick, maybe? I don't know. No idea. Um then so, yeah, obviously, they're the uh
+**Dave Jones:** That makes sense cuz of course, you've got to sell this into many different countries. And I don't know how many Does anyone know? I don't know off the top of my head how many different types of power point adapters there are.
 
-**Dave Jones:** programming uh pins, and they would they'd have a pogo thing at the uh factory to program that. And what's an ET6621? It's upside down, or all the electrons are going to fall out. There you go. That's an E-Tech um LCD controller.
+**Dave Jones:** Let's have a squeeze down here. They've got some silastic down there. That's not too shabby. And we have been blobbed there. So, there you go. There's a chip on board, and just the blob on top.
 
-**Dave Jones:** Nothing fancy going on there. Oh, it's got 32 by 4 bits of RAM there. And yeah, that's just driving the LCD. So, obviously, they chose a micro that didn't have any uh LCD driver in it. This has quite a few segments there. In
+**Dave Jones:** So, unfortunately, we don't know what micro that is at all. Maybe you could tell from the pinout, cuz obviously, um the footprint here is designed for either a bare die on there, a chip on board, as they call it, COB, and then they just bond the wires over, or it's designed for a QFP package like that.
 
-**Dave Jones:** fact, you can see that you get it at the right angle, you can see all the different off uh segments. But, you know, it's got two three-digit uh displays, plus all the annunciators and uh stuff like that. So, you know, it's
+**Dave Jones:** There you go. So, they've got some uh test points up there, VPP. There you go. Pick, maybe? I don't know. No idea. Um then so, yeah, obviously, they're the uh programming uh pins, and they would they'd have a pogo thing at the uh factory to program that.
 
-**Dave Jones:** got some requirements there. Okay, so what else have we got going on here? I may have to actually rip all this off if I want to try and reverse it somehow. But, look at the whole bunch of uh 1206
+**Dave Jones:** And what's an ET6621? It's upside down, or all the electrons are going to fall out. There you go. That's an E-Tech um LCD controller. Nothing fancy going on there.
 
-**Dave Jones:** resistors here. So, these days, the only reason you And pretty much the only reason you use uh 12 larger 1206 packages like this if you wanted higher power dissipation and or voltage uh compliance in the voltage rating on
+**Dave Jones:** Oh, it's got 32 by 4 bits of RAM there. And yeah, that's just driving the LCD. So, obviously, they chose a micro that didn't have any uh LCD driver in it.
 
-**Dave Jones:** them. Anyway, so it looks like this is we're being mooned here. This is the switch. That would be the Yep, this is the RCD test uh switch there. And as I said, all they're doing is whacking in a
+**Dave Jones:** This has quite a few segments there. In fact, you can see that you get it at the right angle, you can see all the different off uh segments. But, you know, it's got two three-digit uh displays, plus all the annunciators and uh stuff like that.
 
-**Dave Jones:** resistor there um in series. So, basically, they've got a 10K resistor there. Uh presumably, the other end of that just goes down to earth. So, from live to earth. There's really not much else doing here at all. We've got four
+**Dave Jones:** So, you know, it's got some requirements there. Okay, so what else have we got going on here? I may have to actually rip all this off if I want to try and reverse it somehow.
 
-**Dave Jones:** around here. And um they're just some miscellaneous stuff up here for the micro and some caps here, but you know, there's not much going on. We've got a diode here. Not sure what that's doing cuz I don't know
+**Dave Jones:** But, look at the whole bunch of uh 1206 resistors here. So, these days, the only reason you And pretty much the only reason you use uh 12 larger 1206 packages like this if you wanted higher power dissipation and or voltage uh compliance in the voltage rating on them.
 
-**Dave Jones:** where these traces are buggering off to. So, I might have to get this out. Anyway, there's our non-contact uh voltage detection strip. So, they've got that entire strip along that top edge like that is the antenna. Effectively, the antenna for picking up the um
+**Dave Jones:** Anyway, so it looks like this is we're being mooned here. This is the switch. That would be the Yep, this is the RCD test uh switch there. And as I said, all they're doing is whacking in a resistor there um in series.
 
-**Dave Jones:** electric field there. And that lead wire going over there, that's going over to the backlight for the LCD. So, let's see if there's anything on the other side, but I'm doubting it. Okay. Let's get that out of there. And now, as
+**Dave Jones:** So, basically, they've got a 10K resistor there. Uh presumably, the other end of that just goes down to earth. So, from live to earth. There's really not much else doing here at all.
 
-**Dave Jones:** you'd expect, got a giant ass backlight there. Got our LCD. Got a zebra strip. And Bob's your uncle. That's it. We just got one LED down there by the looks of it. And the power button's actually a soft
+**Dave Jones:** We've got four around here. And um they're just some miscellaneous stuff up here for the micro and some caps here, but you know, there's not much going on. We've got a diode here.
 
-**Dave Jones:** button there. So, it's um on the of course on the battery side of things, but this one over here had to be a big clunking switch even though it's surface mount uh jobby because that's directly on the mains, basically.
+**Dave Jones:** Not sure what that's doing cuz I don't know where these traces are buggering off to. So, I might have to get this out. Anyway, there's our non-contact uh voltage detection strip.
 
-**Dave Jones:** So, they've gone to a bit of effort there for the backlight. That's not too shabby at all to try and get an even backlight. Shame it's such a piss-poor um LCD, but So, yeah, they've got like a different color uh filter in there
+**Dave Jones:** So, they've got that entire strip along that top edge like that is the antenna. Effectively, the antenna for picking up the um electric field there. And that lead wire going over there, that's going over to the backlight for the LCD.
 
-**Dave Jones:** basically for um to give that green indicator for correct and uh basically the orange um for everything else. And there you go. You can see that. You can see the filters inside there. You can see most of it's orange, but there is a
+**Dave Jones:** So, let's see if there's anything on the other side, but I'm doubting it. Okay. Let's get that out of there. And now, as you'd expect, got a giant ass backlight there.
 
-**Dave Jones:** green part to that as well. So, that's just um like a filter masking, so to speak, inside the uh LCD, so the word correct is across there, and that's how that one can show up green. Heh. Neat, huh? But, um yeah, you can get your LCD
+**Dave Jones:** Got our LCD. Got a zebra strip. And Bob's your uncle. That's it. We just got one LED down there by the looks of it. And the power button's actually a soft button there.
 
-**Dave Jones:** manufacturers to do custom stuff like that for you. So, although that kind of technique isn't hugely um common, the LCD manufacturers, they'll do that for you if you ask them, no worries whatsoever. There we go, we can see all
+**Dave Jones:** So, it's um on the of course on the battery side of things, but this one over here had to be a big clunking switch even though it's surface mount uh jobby because that's directly on the mains, basically.
 
-**Dave Jones:** our segments. Isn't that neat? So, that's the bottom side of the board, I guess, and the top side here is uh where is like traces like that buggering off to? Like clearance, much? Let's get this hot snot off so that we
+**Dave Jones:** So, they've gone to a bit of effort there for the backlight. That's not too shabby at all to try and get an even backlight. Shame it's such a piss-poor um LCD, but So, yeah, they've got like a different color uh filter in there basically for um to give that green indicator for correct and uh basically the orange um for everything else.
 
-**Dave Jones:** can see a bit better. Maybe trace out a couple of things. All right, I've done a quick reverse engineering the board here, not 100%, but good enough for Australia. It'll give us a great idea of what they're actually doing here. Now, it wasn't
+**Dave Jones:** And there you go. You can see that. You can see the filters inside there. You can see most of it's orange, but there is a green part to that as well.
 
-**Dave Jones:** particularly easy to find out what this IC here was, but I might do a second-channel video on that. So, so here's the top and the bottom here, and I didn't have to remove any components to what's going on here. Now, I thought
+**Dave Jones:** So, that's just um like a filter masking, so to speak, inside the uh LCD, so the word correct is across there, and that's how that one can show up green.
 
-**Dave Jones:** this was just a regular micro, but ah-ha, it's not. It's actually, well, here is the schematic. They actually use a multimeter chipset. Uh it's an SD7500 here, and you might recognize this kind of arrangement because it's essentially a multimeter front end that's doing
+**Dave Jones:** Heh. Neat, huh? But, um yeah, you can get your LCD manufacturers to do custom stuff like that for you. So, although that kind of technique isn't hugely um common, the LCD manufacturers, they'll do that for you if you ask them, no worries whatsoever.
 
-**Dave Jones:** everything here. It's powered from 3-V uh batteries. It's got the uh soft uh power button there. It's got a couple of uh transistors driving the backlight and the buzzer here, and it's got you sort of like traditional common terminal on
+**Dave Jones:** There we go, we can see all our segments. Isn't that neat? So, that's the bottom side of the board, I guess, and the top side here is uh where is like traces like that buggering off to?
 
-**Dave Jones:** your multimeter chipset here, and then your input voltage divider here, which goes into your various usual multimeter architecture, uh multiplexers and stuff like that, and your ADC. Curiously, this one does actually have an in- internal LCD driver, but it's actually using that
+**Dave Jones:** Like clearance, much? Let's get this hot snot off so that we can see a bit better. Maybe trace out a couple of things. All right, I've done a quick reverse engineering the board here, not 100%, but good enough for Australia.
 
-**Dave Jones:** um external uh chip because it's got to drive sort of like custom segments or something. I don't know what's going on there and your RCD test up here is exactly Oh, I forgot to put the values on there. They're 1K6 each. So, yeah,
+**Dave Jones:** It'll give us a great idea of what they're actually doing here. Now, it wasn't particularly easy to find out what this IC here was, but I might do a second-channel video on that.
 
-**Dave Jones:** let's get the confuser out. So, we've got 240 volts divided by four 1.6 Ks, that's 6400 ohms-skis. We're getting 37 and 1/2 milliamps and that's basically what you want cuz your regular RCDs trip at nominal 30 milliamps. So, yeah, that'll do the
+**Dave Jones:** So, so here's the top and the bottom here, and I didn't have to remove any components to what's going on here. Now, I thought this was just a regular micro, but ah-ha, it's not.
 
-**Dave Jones:** business and they've got a reverse protection diode across there like that to protect the end that's just an LED on the front which lights up and Bob's your uncle. But yeah, you've got your input protection resistor here two 5 meg
+**Dave Jones:** It's actually, well, here is the schematic. They actually use a multimeter chipset. Uh it's an SD7500 here, and you might recognize this kind of arrangement because it's essentially a multimeter front end that's doing everything here.
 
-**Dave Jones:** resistors in series and of course I mentioned you put multiple resistors in series to get the clearance and the voltage required. So, they've done that three times here. They're actually 4.99 meg but you know, five five meg good
+**Dave Jones:** It's powered from 3-V uh batteries. It's got the uh soft uh power button there. It's got a couple of uh transistors driving the backlight and the buzzer here, and it's got you sort of like traditional common terminal on your multimeter chipset here, and then your input voltage divider here, which goes into your various usual multimeter architecture, uh multiplexers and stuff like that, and your ADC.
 
-**Dave Jones:** enough for Australia. And they've got a 10K down here on the earth and the earth is directly connected through to the com terminal here and the neutral is in the middle. So, that's interesting. So, obviously in a correct configuration
+**Dave Jones:** Curiously, this one does actually have an in- internal LCD driver, but it's actually using that um external uh chip because it's got to drive sort of like custom segments or something.
 
-**Dave Jones:** when the active neutral and earth is plugged in correctly, they've calibrated the software so that it measures whatever it measures on here. We're not going to go into details of exactly how it measures that with the multimeter chipset. It doesn't matter for the
+**Dave Jones:** I don't know what's going on there and your RCD test up here is exactly Oh, I forgot to put the values on there. They're 1K6 each. So, yeah, let's get the confuser out.
 
-**Dave Jones:** purposes of this video. The fact that yeah, it makes sense to use a multimeter chipset here. And what about the non-contact voltage testing? Well, I haven't done that here but that's actually go take a look at the data
+**Dave Jones:** So, we've got 240 volts divided by four 1.6 Ks, that's 6400 ohms-skis. We're getting 37 and 1/2 milliamps and that's basically what you want cuz your regular RCDs trip at nominal 30 milliamps.
 
-**Dave Jones:** sheet over here. It's the SDIC SD7500 and it's an auto ranging six channel multimeter system on chip. So, it's got all the LCD drivers so it can actually drive you know, one of those little cheapy $2 meters. You can actually use a
+**Dave Jones:** So, yeah, that'll do the business and they've got a reverse protection diode across there like that to protect the end that's just an LED on the front which lights up and Bob's your uncle.
 
-**Dave Jones:** chipset like this to actually do it and it's only available in the one footprint here but obviously you can get it as a bare die from the company. In fact, can we go right down the bottom? Can you
+**Dave Jones:** But yeah, you've got your input protection resistor here two 5 meg resistors in series and of course I mentioned you put multiple resistors in series to get the clearance and the voltage required.
 
-**Dave Jones:** They don't mention bare die, but pretty much any manufacturer will sell you a bare die if you ask them and you order sufficient volume. It makes sense to use a multimeter chip set. All the functionalities built in there. Why not?
+**Dave Jones:** So, they've done that three times here. They're actually 4.99 meg but you know, five five meg good enough for Australia. And they've got a 10K down here on the earth and the earth is directly connected through to the com terminal here and the neutral is in the middle.
 
-**Dave Jones:** Anyway, we won't go into the internals D here, but so suffice it to say that the com terminal, which is connected through to earth here, that is the com terminal here and the battery connects to VDD and VSS. So, the battery, as you saw on the
+**Dave Jones:** So, that's interesting. So, obviously in a correct configuration when the active neutral and earth is plugged in correctly, they've calibrated the software so that it measures whatever it measures on here.
 
-**Dave Jones:** schematic, so this is the ground. This is not earth. This is the internal circuit ground and that's connected to the negative of the battery, but that's different from the com. They're not actually electrically tied together, but that's common in multimeters. Common,
+**Dave Jones:** We're not going to go into details of exactly how it measures that with the multimeter chipset. It doesn't matter for the purposes of this video. The fact that yeah, it makes sense to use a multimeter chipset here.
 
-**Dave Jones:** get it? You're a week. But yeah, it's got all the stuff required for your regular multimeter here and it's got an internal voltage reference, of course, and it's got an 8-bit risk MCU. What actual risk micro that is. It Maybe it's
+**Dave Jones:** And what about the non-contact voltage testing? Well, I haven't done that here but that's actually go take a look at the data sheet over here. It's the SDIC SD7500 and it's an auto ranging six channel multimeter system on chip.
 
-**Dave Jones:** its own flavor, but here is a typical application circuit here. This would be a multimeter, so this is the common of your multimeter. This is your regular volts amps jack here and here's your, you know, when obviously not using the
+**Dave Jones:** So, it's got all the LCD drivers so it can actually drive you know, one of those little cheapy $2 meters. You can actually use a chipset like this to actually do it and it's only available in the one footprint here but obviously you can get it as a bare die from the company.
 
-**Dave Jones:** current input here, but you can see that the common terminal is connected to the pin 12, the com of the chip over here, which is different to the VDD and VSS. See how it's got like a circuit ground
+**Dave Jones:** In fact, can we go right down the bottom? Can you They don't mention bare die, but pretty much any manufacturer will sell you a bare die if you ask them and you order sufficient volume.
 
-**Dave Jones:** over here is not and if you measure go and check out your multimeter and look at other multimeter videos I've done, the com is almost never connected to the VSS battery over here. They're different. And you can see that it's got
+**Dave Jones:** It makes sense to use a multimeter chip set. All the functionalities built in there. Why not? Anyway, we won't go into the internals D here, but so suffice it to say that the com terminal, which is connected through to earth here, that is the com terminal here and the battery connects to VDD and VSS.
 
-**Dave Jones:** a non-contact voltage tester capability built in. So, obviously, you know, it's got a two transistor clamp over here. Not sure if that's what these extra two transistors here doing. I didn't show those on my circuit, but that's the uh
+**Dave Jones:** So, the battery, as you saw on the schematic, so this is the ground. This is not earth. This is the internal circuit ground and that's connected to the negative of the battery, but that's different from the com.
 
-**Dave Jones:** and the buzzer uh driver here. So, we've got an extra two transistors here, the non-contact testers up the top there. It's got one big so there's obviously like a trace uh going down like it does here on the Yeah, it goes down here
+**Dave Jones:** They're not actually electrically tied together, but that's common in multimeters. Common, get it? You're a week. But yeah, it's got all the stuff required for your regular multimeter here and it's got an internal voltage reference, of course, and it's got an 8-bit risk MCU.
 
-**Dave Jones:** somewhere. I didn't bother to uh trace that out, but that actually connects into pin eight here and we do actually have already using pin eight here for our basically this this connection here, this voltage tap between the neutral and
+**Dave Jones:** What actual risk micro that is. It Maybe it's its own flavor, but here is a typical application circuit here. This would be a multimeter, so this is the common of your multimeter.
 
-**Dave Jones:** earth here. So, it can detect, you know, detect, you know, a broken earth or whatever. So, this node here, you can call it, is also connected to the non-contact voltage uh terminal here. So, that's what they just use pin eight
+**Dave Jones:** This is your regular volts amps jack here and here's your, you know, when obviously not using the current input here, but you can see that the common terminal is connected to the pin 12, the com of the chip over here, which is different to the VDD and VSS.
 
-**Dave Jones:** here. So, there you go. Like it's it's incredibly simple. It's just like a a regular multimeter uh chipset. It's it's smart. Um if you want to make a device like this, like a smart device like this, yeah, it makes sense. A multimeter
+**Dave Jones:** See how it's got like a circuit ground over here is not and if you measure go and check out your multimeter and look at other multimeter videos I've done, the com is almost never connected to the VSS battery over here.
 
-**Dave Jones:** chipsets are already designed for this sort of stuff. You've already got your non-contact voltage thing, you get that for free. That's why they included it even though it's a bit of a pointless wanky feature, but it's free. So, why
+**Dave Jones:** They're different. And you can see that it's got a non-contact voltage tester capability built in. So, obviously, you know, it's got a two transistor clamp over here. Not sure if that's what these extra two transistors here doing.
 
-**Dave Jones:** not include it? And that buzzer terminal, they do actually use pin 22 down here on the uh design for the uh buzzer. And then you've just got that those uh programming pins which we uh saw before on those pads there. Hence,
+**Dave Jones:** I didn't show those on my circuit, but that's the uh and the buzzer uh driver here. So, we've got an extra two transistors here, the non-contact testers up the top there.
 
-**Dave Jones:** that's the VPP and these ones over here and they must have another pad for ground and stuff like that before they solder, probably underneath the battery uh terminal there. So, you know, pogo pins uh to program this chip uh once
+**Dave Jones:** It's got one big so there's obviously like a trace uh going down like it does here on the Yeah, it goes down here somewhere. I didn't bother to uh trace that out, but that actually connects into pin eight here and we do actually have already using pin eight here for our basically this this connection here, this voltage tap between the neutral and earth here.
 
-**Dave Jones:** they've uh soldered it, you wouldn't buy it from the manufacturer. You might buy the bare die pre-programmed, maybe, but given that um the pads are on here, it's more likely that they're just buying a blank, they're whacking on the board,
+**Dave Jones:** So, it can detect, you know, detect, you know, a broken earth or whatever. So, this node here, you can call it, is also connected to the non-contact voltage uh terminal here.
 
-**Dave Jones:** and then they program it later. And then, of course, you can update grade the uh firmware at the production uh stage. It's not for user updating, of course, but uh certainly, if you want to do any bug fixes, you can do that later.
+**Dave Jones:** So, that's what they just use pin eight here. So, there you go. Like it's it's incredibly simple. It's just like a a regular multimeter uh chipset. It's it's smart.
 
-**Dave Jones:** So, there you go. Just a multimeter chip chipset. Um curiously, they didn't use the internal LCD driver, even though it's got it. Um so, some little small quirk meant they couldn't use it uh for some reason, perhaps. There you go. I
+**Dave Jones:** Um if you want to make a device like this, like a smart device like this, yeah, it makes sense. A multimeter chipsets are already designed for this sort of stuff.
 
-**Dave Jones:** was expecting just a regular micro, but no. Now Now that I think about it, yeah, it does make sense to use a multimeter chipset in this application. So, there you go. Hope you found that interesting. If you did, please give it a big thumbs
+**Dave Jones:** You've already got your non-contact voltage thing, you get that for free. That's why they included it even though it's a bit of a pointless wanky feature, but it's free.
 
-**Dave Jones:** up. And as always, discuss down below. Catch you next time.
+**Dave Jones:** So, why not include it? And that buzzer terminal, they do actually use pin 22 down here on the uh design for the uh buzzer. And then you've just got that those uh programming pins which we uh saw before on those pads there.
+
+**Dave Jones:** Hence, that's the VPP and these ones over here and they must have another pad for ground and stuff like that before they solder, probably underneath the battery uh terminal there.
+
+**Dave Jones:** So, you know, pogo pins uh to program this chip uh once they've uh soldered it, you wouldn't buy it from the manufacturer. You might buy the bare die pre-programmed, maybe, but given that um the pads are on here, it's more likely that they're just buying a blank, they're whacking on the board, and then they program it later.
+
+**Dave Jones:** And then, of course, you can update grade the uh firmware at the production uh stage. It's not for user updating, of course, but uh certainly, if you want to do any bug fixes, you can do that later.
+
+**Dave Jones:** So, there you go. Just a multimeter chip chipset. Um curiously, they didn't use the internal LCD driver, even though it's got it. Um so, some little small quirk meant they couldn't use it uh for some reason, perhaps.
+
+**Dave Jones:** There you go. I was expecting just a regular micro, but no. Now Now that I think about it, yeah, it does make sense to use a multimeter chipset in this application.
+
+**Dave Jones:** So, there you go. Hope you found that interesting. If you did, please give it a big thumbs up. And as always, discuss down below. Catch you next time.

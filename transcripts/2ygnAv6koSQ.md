@@ -3,211 +3,203 @@ video_id: 2ygnAv6koSQ
 title: EEVblog #744 - SMD Thermal Heatsink Design - µSupply Part 15
 url: https://www.youtube.com/watch?v=2ygnAv6koSQ
 source: youtube-asr
-timestamps: {"0": 0, "1": 16, "2": 31, "3": 47, "4": 62, "5": 74, "6": 87, "7": 99, "8": 112, "9": 125, "10": 137, "11": 151, "12": 165, "13": 180, "14": 190, "15": 201, "16": 215, "17": 227, "18": 238, "19": 251, "20": 262, "21": 274, "22": 289, "23": 301, "24": 314, "25": 327, "26": 338, "27": 353, "28": 365, "29": 377, "30": 388, "31": 403, "32": 416, "33": 430, "34": 442, "35": 457, "36": 472, "37": 483, "38": 495, "39": 508, "40": 523, "41": 536, "42": 547, "43": 556, "44": 569, "45": 582, "46": 595, "47": 605, "48": 618, "49": 627, "50": 641, "51": 653, "52": 670, "53": 683, "54": 695, "55": 706, "56": 721, "57": 733, "58": 745, "59": 762, "60": 779, "61": 797, "62": 811, "63": 828, "64": 843, "65": 858, "66": 870, "67": 882, "68": 895, "69": 907, "70": 916, "71": 930, "72": 945, "73": 957, "74": 972, "75": 987, "76": 999, "77": 1012, "78": 1026, "79": 1039, "80": 1054, "81": 1069, "82": 1082, "83": 1098, "84": 1111, "85": 1123, "86": 1138, "87": 1152, "88": 1164, "89": 1175, "90": 1189, "91": 1202, "92": 1215, "93": 1227, "94": 1241, "95": 1256, "96": 1266, "97": 1282, "98": 1296, "99": 1308, "100": 1319, "101": 1333, "102": 1344}
+timestamps: {"0": 0, "1": 10, "2": 36, "3": 50, "4": 66, "5": 79, "6": 92, "7": 109, "8": 122, "9": 143, "10": 159, "11": 175, "12": 181, "13": 194, "14": 203, "15": 216, "16": 229, "17": 238, "18": 251, "19": 261, "20": 270, "21": 284, "22": 299, "23": 318, "24": 333, "25": 347, "26": 359, "27": 368, "28": 382, "29": 393, "30": 406, "31": 413, "32": 433, "33": 444, "34": 470, "35": 483, "36": 495, "37": 508, "38": 520, "39": 539, "40": 546, "41": 552, "42": 575, "43": 584, "44": 604, "45": 621, "46": 628, "47": 641, "48": 650, "49": 664, "50": 675, "51": 691, "52": 699, "53": 709, "54": 723, "55": 740, "56": 748, "57": 764, "58": 782, "59": 802, "60": 817, "61": 833, "62": 846, "63": 857, "64": 864, "65": 877, "66": 886, "67": 896, "68": 907, "69": 916, "70": 926, "71": 939, "72": 948, "73": 966, "74": 982, "75": 999, "76": 1020, "77": 1035, "78": 1046, "79": 1064, "80": 1090, "81": 1114, "82": 1128, "83": 1145, "84": 1159, "85": 1167, "86": 1182, "87": 1196, "88": 1207, "89": 1219, "90": 1239, "91": 1261, "92": 1275, "93": 1290, "94": 1300, "95": 1314, "96": 1326, "97": 1336, "98": 1346}
 ---
 
-**Dave Jones:** Hi, back in video 644, which I'll link in down below if you haven't seen it, I showed these project cases and how you can do front panels and things like that. But I also mentioned about how you can get heat out from a regulator in
+**Dave Jones:** Hi, back in video 644, which I'll link in down below if you haven't seen it, I showed these project cases and how you can do front panels and things like that.
 
-**Dave Jones:** these things. Now these are a split case like this and I won't go over the whole thing, but I basically talked about if you had say a TO-220 package like that mounted on your board, you could actually flip it upside down
+**Dave Jones:** But I also mentioned about how you can get heat out from a regulator in these things. Now these are a split case like this and I won't go over the whole thing, but I basically talked about if you had say a TO-220 package like that mounted on your board, you could actually flip it upside down like that, bend the leads in the opposite direction to what you would
 
-**Dave Jones:** like that, bend the leads in the opposite direction to what you would normally bend them for for a through-hole package. And if you happen to have the right size case, which this one is, then you can see that
+**Dave Jones:** normally bend them for for a through-hole package. And if you happen to have the right size case, which this one is, then you can see that it just touches the bottom of there.
 
-**Dave Jones:** it just touches the bottom of there. There's enough room to put in an insulating sil pad in there to isolate your regulator tab from the case and you can dissipate the power from your regulator or your power transistor or
+**Dave Jones:** There's enough room to put in an insulating sil pad in there to isolate your regulator tab from the case and you can dissipate the power from your regulator or your power transistor or whatever it is into your case and you can effectively use your case as a big heatsink.
 
-**Dave Jones:** whatever it is into your case and you can effectively use your case as a big heatsink. Or I mentioned also how you could dissipate heat internal as well with just a regular heatsink like free-standing like that or, you know, it
+**Dave Jones:** Or I mentioned also how you could dissipate heat internal as well with just a regular heatsink like free-standing like that or, you know, it might be a a flatter one like that provided that it didn't touch the top of your case, for example.
 
-**Dave Jones:** might be a a flatter one like that provided that it didn't touch the top of your case, for example. So if you wanted to keep your the tab of your voltage regulator or power transistor electrically isolated from the case,
+**Dave Jones:** So if you wanted to keep your the tab of your voltage regulator or power transistor electrically isolated from the case, which is usually the case, no pun intended, usually what you want, then well, you can do that.
 
-**Dave Jones:** which is usually the case, no pun intended, usually what you want, then well, you can do that. But the problem with internal heatsinks is that usually you're going to have a sealed case like this. It's generally not going
+**Dave Jones:** But the problem with internal heatsinks is that usually you're going to have a sealed case like this. It's generally not going to have a fan on it. So all that heat can build up inside and especially if you're using say a battery-powered product, you know, you don't want your batteries inside to get hot and things like that.
 
-**Dave Jones:** to have a fan on it. So all that heat can build up inside and especially if you're using say a battery-powered product, you know, you don't want your batteries inside to get hot and things like that. So you know, really it's not
+**Dave Jones:** So you know, really it's not a great thing. So dissipating the heat out to your case can be a fairly decent option. So I showed how to do that with a TO-220, but what if you wanted to use a surface mount package like a D-Pak?
 
-**Dave Jones:** a great thing. So dissipating the heat out to your case can be a fairly decent option. So I showed how to do that with a TO-220, but what if you wanted to use a surface mount package like a D-Pak? Uh
+**Dave Jones:** Uh there are lots of advantages to these. They could be more readily available. They could be cheaper. You know, through-hole is not gone the way of the dodo yet, but uh you you know, generally uh you might have a lot more availability in these modern uh surface mount packages like this uh D-Pak or something else.
 
-**Dave Jones:** there are lots of advantages to these. They could be more readily available. They could be cheaper. You know, through-hole is not gone the way of the dodo yet, but uh you you know, generally uh you might have a lot more
+**Dave Jones:** And of course, you can pick and place them. They're brilliant for pick and placing. And uh so that you don't have to have the extra step, the manual step of having to uh manually, you know, bend the leads on your uh power transistor or your regulator and do that.
 
-**Dave Jones:** availability in these modern uh surface mount packages like this uh D-Pak or something else. And of course, you can pick and place them. They're brilliant for pick and placing. And uh so that you don't have to have the extra
+**Dave Jones:** You need a you know, you need a human to sit there and actually do that sort of thing and then hand solder the thing in. That's really annoying. But, how do you get the heat out of these surface mount parts to the case?
 
-**Dave Jones:** step, the manual step of having to uh manually, you know, bend the leads on your uh power transistor or your regulator and do that. You need a you know, you need a human to sit there and actually do that sort of thing and then
+**Dave Jones:** Yeah, you can come along and still use your internal heat sink like that. You can get like surface mount heat sinks that also work with pick and place machines.
 
-**Dave Jones:** hand solder the thing in. That's really annoying. But, how do you get the heat out of these surface mount parts to the case? Yeah, you can come along and still use your internal heat sink like that. You can get like surface mount heat sinks
+**Dave Jones:** They come along, boom, and they place them down provided that they aren't, you know, a huge amount of mass. Otherwise, they tend to fall off. If it was a big heavy thing like this, relatively, then, you know, it typically fall off the head of the pick and place machine.
 
-**Dave Jones:** that also work with pick and place machines. They come along, boom, and they place them down provided that they aren't, you know, a huge amount of mass. Otherwise, they tend to fall off. If it was a big heavy thing like this,
+**Dave Jones:** It wouldn't have enough suction to, you know, pick it up and then bring it over and dump it down. But, you can get surface mount heat sinks like that which sit which can be pick and placed and then reflow soldered.
 
-**Dave Jones:** relatively, then, you know, it typically fall off the head of the pick and place machine. It wouldn't have enough suction to, you know, pick it up and then bring it over and dump it down. But, you can get surface mount heat sinks like that
+**Dave Jones:** But, once again, you've got all the heat being dissipated in your case cuz you'd have the end on it here and there'd be no forced air through the thing cuz you wouldn't, you know, you generally wouldn't have a fan on something this small.
 
-**Dave Jones:** which sit which can be pick and placed and then reflow soldered. But, once again, you've got all the heat being dissipated in your case cuz you'd have the end on it here and there'd be no forced air through the thing cuz you wouldn't, you
+**Dave Jones:** So, it's not too hard with TO-220 packages like that, for example, especially if you've got the right height case, which this one is, and you can sort of, you know, it sort of you've got to have force down there.
 
-**Dave Jones:** know, you generally wouldn't have a fan on something this small. So, it's not too hard with TO-220 packages like that, for example, especially if you've got the right height case, which this one is, and you can sort of, you know, it
+**Dave Jones:** So, you might have to screw it or something like that. Um, but still you can, you know, fair not too without too much trouble get the heat out of that case.
 
-**Dave Jones:** sort of you've got to have force down there. So, you might have to screw it or something like that. Um, but still you can, you know, fair not too without too much trouble get the heat out of that
+**Dave Jones:** It's a little bit unprofessional and messy and a bit sort of like cheap product uh type. So, it's it's a bit more professional to do it better with that surface mount parts and have a proper solution that I'm going to show.
 
-**Dave Jones:** case. It's a little bit unprofessional and messy and a bit sort of like cheap product uh type. So, it's it's a bit more professional to do it better with that surface mount parts and have a proper solution that I'm going to show.
+**Dave Jones:** Now, of course you could actually flip your board upside down like this. You could have your parts mounted on the bottom side like that, but then of course you got a double-sided uh load.
 
-**Dave Jones:** Now, of course you could actually flip your board upside down like this. You could have your parts mounted on the bottom side like that, but then of course you got a double-sided uh load. For example, we could have all your
+**Dave Jones:** For example, we could have all your parts on the bottom and put your uh board on the upper half of the case. Um, either way you do it, but you can't sort of flip.
 
-**Dave Jones:** parts on the bottom and put your uh board on the upper half of the case. Um, either way you do it, but you can't sort of flip. You can't do the same trick and flip this one over like that
+**Dave Jones:** You can't do the same trick and flip this one over like that it and get the heat out that way. It just doesn't work and you can't uh wedge the plastic case of that uh transistor up against here because that it's just way too much thermal resistance.
 
-**Dave Jones:** it and get the heat out that way. It just doesn't work and you can't uh wedge the plastic case of that uh transistor up against here because that it's just way too much thermal resistance. You got to have metal-to-metal contact to get
+**Dave Jones:** You got to have metal-to-metal contact to get all that heat out. That plastic is just going to be horribly, horribly inefficient. So, how do you get your heat out of your little surface mount power transistors or regulators to the case of your product?
 
-**Dave Jones:** all that heat out. That plastic is just going to be horribly, horribly inefficient. So, how do you get your heat out of your little surface mount power transistors or regulators to the case of your product? Well, it's a good
+**Dave Jones:** Well, it's a good question and there's probably, you know, a few solutions to this. Now, one solution might be of course a surface mount uh heat sink like that internally and which actually came up to the top of your case or the underside depends on which way you want to uh mount it and then you can actually put screws there and get the heat through.
 
-**Dave Jones:** question and there's probably, you know, a few solutions to this. Now, one solution might be of course a surface mount uh heat sink like that internally and which actually came up to the top of your case or the underside depends on
+**Dave Jones:** And well, that's fine and dandy, but how do you electrically isolate your tab it? So, for transistors like this that tab on the end there and bottom that gets reflow soldered down to the board, it's going to be the collector of the transistor.
 
-**Dave Jones:** which way you want to uh mount it and then you can actually put screws there and get the heat through. And well, that's fine and dandy, but how do you electrically isolate your tab it? So, for transistors like this that tab on
+**Dave Jones:** Take a look at the data sheet here. So, you don't want your collector of your transistor connected to your case. That could really, really your day. It could short out um something else cuz you might have the collector uh for example connected, you know, it's not going to be ground.
 
-**Dave Jones:** the end there and bottom that gets reflow soldered down to the board, it's going to be the collector of the transistor. Take a look at the data sheet here. So, you don't want your collector of your transistor connected
+**Dave Jones:** Now, of course, if we had a uh like a 7805 voltage regulator, for example, like we do here, this one is, then this tab is actually connected to the middle pin, which is actually ground.
 
-**Dave Jones:** to your case. That could really, really your day. It could short out um something else cuz you might have the collector uh for example connected, you know, it's not going to be ground. Now, of course, if we had a uh like a 7805
+**Dave Jones:** And okay, if you want to connect your ground if you would do want to ground your case, then that's fine. You can just put your screw in there, and you don't need any insulating washer in there.
 
-**Dave Jones:** voltage regulator, for example, like we do here, this one is, then this tab is actually connected to the middle pin, which is actually ground. And okay, if you want to connect your ground if you would do want to ground your case, then
+**Dave Jones:** So, in probably the majority of cases, you want to isolate your tab of your regulator or your transistor from the case. So, you've got to have some sort of insulating material mica washer or a um sil pad or something like that.
 
-**Dave Jones:** that's fine. You can just put your screw in there, and you don't need any insulating washer in there. So, in probably the majority of cases, you want to isolate your tab of your regulator or your transistor from the case. So,
+**Dave Jones:** You could have multiple devices you want to isolate them from each other as well, cuz they're generally not going to be electrically connected. So, this is how I would uh probably do it as a first pass.
 
-**Dave Jones:** you've got to have some sort of insulating material mica washer or a um sil pad or something like that. You could have multiple devices you want to isolate them from each other as well, cuz they're generally not going to be
+**Dave Jones:** Now, I've had David to mock up a little animation in SolidWorks here, and you can see isn't it quite neat? And we've got our uh power transistors over here, all both electrically isolated like that.
 
-**Dave Jones:** electrically connected. So, this is how I would uh probably do it as a first pass. Now, I've had David to mock up a little animation in SolidWorks here, and you can see isn't it quite neat? And we've got our uh power transistors over
+**Dave Jones:** You can see that they've got uh both different islands of copper. So, that keeps them all separate, so you can have as many uh isolated devices as you want.
 
-**Dave Jones:** here, all both electrically isolated like that. You can see that they've got uh both different islands of copper. So, that keeps them all separate, so you can have as many uh isolated devices as you want. And you can see that I've got what
+**Dave Jones:** And you can see that I've got what are called uh thermal vias. I'll go over these in a second either side of the each uh power transistor there, and they are what uh transfer heat back from the uh top side of the board, cuz we're using top side uh component load here, through to the bottom side of the board, where we can actually get a heat uh
 
-**Dave Jones:** are called uh thermal vias. I'll go over these in a second either side of the each uh power transistor there, and they are what uh transfer heat back from the uh top side of the board, cuz we're using top side uh component load here,
+**Dave Jones:** spreader bar or heat transfer bar to the case. So, at this stage, it pays to actually go to the whiteboard. So, please excuse the crudity of this model. Didn't have time to build it to scale or to paint it.
 
-**Dave Jones:** through to the bottom side of the board, where we can actually get a heat uh spreader bar or heat transfer bar to the case. So, at this stage, it pays to actually go to the whiteboard. So, please excuse the crudity of this model.
+**Dave Jones:** Not as good as David 2's 3D model. But, I've redrawn it here. Now, you may be thinking, "Dave, I think you shorted out these two power transistors, because if we've got this uh red metal bar in here like this, and we've got these vias, the electric the tab of the power transistor here is connected to our big copper plane there with all these thermal vias going through the bottom side.
 
-**Dave Jones:** Didn't have time to build it to scale or to paint it. Not as good as David 2's 3D model. But, I've redrawn it here. Now, you may be thinking, "Dave, I think you shorted out these two power transistors, because if we've got
+**Dave Jones:** Now, a thermal via is just another name for a regular via, except it's not used to carry current, although it can still do that, of course. It's just a regular copper via through the board, from the top side of the board to the bottom side of the board.
 
-**Dave Jones:** this uh red metal bar in here like this, and we've got these vias, the electric the tab of the power transistor here is connected to our big copper plane there with all these thermal vias going through the bottom side. Now, a
+**Dave Jones:** But, in the case of a thermal via, it's designed to actually transfer heat energy from the top side of the board to the bottom side of the board. So, anyway, so we've got a duplicate pad on the bottom side of the board with all these vias.
 
-**Dave Jones:** thermal via is just another name for a regular via, except it's not used to carry current, although it can still do that, of course. It's just a regular copper via through the board, from the top side of the board to the bottom side
+**Dave Jones:** It's exposed copper, hasn't got any solder mask over it as you saw in the 3D model. So, that's going to make contact to our metal bar down the bottom here, and it's going to make contact to the metal bar over here.
 
-**Dave Jones:** of the board. But, in the case of a thermal via, it's designed to actually transfer heat energy from the top side of the board to the bottom side of the board. So, anyway, so we've got a duplicate pad on the bottom side of the
+**Dave Jones:** What? We've just shorted out our power transistors. So, there is one thing missing from the 3D model, which we didn't show. You need a Sil Pad in here. Sil Pad is like a trademark, I think.
 
-**Dave Jones:** board with all these vias. It's exposed copper, hasn't got any solder mask over it as you saw in the 3D model. So, that's going to make contact to our metal bar down the bottom here, and it's going to make contact to the metal bar
+**Dave Jones:** An insulating washer. Like old school stuff is made out of mica. The new stuff, the Sil Pads are like flexible, sort of tear-proof, kind of like a rubbery type thing, but they're designed to transfer heat rather efficiently from one device to another whilst actually providing electrical isolation.
 
-**Dave Jones:** over here. What? We've just shorted out our power transistors. So, there is one thing missing from the 3D model, which we didn't show. You need a Sil Pad in here. Sil Pad is like a trademark, I think. An insulating
+**Dave Jones:** So, that's where you would put the Sil Pad. You could either have just one little one there and one little one there, or just put it right across the bar like that.
 
-**Dave Jones:** washer. Like old school stuff is made out of mica. The new stuff, the Sil Pads are like flexible, sort of tear-proof, kind of like a rubbery type thing, but they're designed to transfer heat rather efficiently from one device to another
+**Dave Jones:** And this could be a bar, it could be a big block, it can be whatever. You can do this in the middle of the board, doesn't have to be on the edge like this.
 
-**Dave Jones:** whilst actually providing electrical isolation. So, that's where you would put the Sil Pad. You could either have just one little one there and one little one there, or just put it right across the bar like that. And this could be a
+**Dave Jones:** Do it wherever you want. But, you can see how now if we put an insulating Sil Pad in here, then we can transfer the heat from the surface mount device on the top through the thermal vias to the bottom to the copper on the bottom side of the board, and then through to our heat uh bar or heat transfer bar, heat spreader, whatever you want to call it, and then
 
-**Dave Jones:** bar, it could be a big block, it can be whatever. You can do this in the middle of the board, doesn't have to be on the edge like this. Do it wherever you want. But, you can see how now
+**Dave Jones:** through to the case down here. You don't need an extra seal pad between the case and the bar down here cuz you've already electrically isolated your devices like that.
 
-**Dave Jones:** if we put an insulating Sil Pad in here, then we can transfer the heat from the surface mount device on the top through the thermal vias to the bottom to the copper on the bottom side of the board,
+**Dave Jones:** So, bingo, we've got a neat professional solution for getting heat out of SMD devices through to an external case which you can use as a heat sink. Not huge amounts of power, but you know, if you only need to get rid of a couple of watts or something like that, you know, a bit of annoying amount of heat, then this is quite a decent solution for getting that heat out.
 
-**Dave Jones:** and then through to our heat uh bar or heat transfer bar, heat spreader, whatever you want to call it, and then through to the case down here. You don't need an extra seal pad between the case and the bar down here cuz
+**Dave Jones:** But, I know what you're thinking. We've got some loss in these thermal vias which I'll explain in a second. Yes, you could actually mount these power devices on the other side of the board, of course, or or flip the whole board and mount all your components cuz it's cheaper to mount your components on one side of the board with a pick and place machine.
 
-**Dave Jones:** you've already electrically isolated your devices like that. So, bingo, we've got a neat professional solution for getting heat out of SMD devices through to an external case which you can use as a heat sink. Not huge amounts of power,
+**Dave Jones:** If you have to put them on the top and the bottom, well, that's a two-step process at your assembly house. It's going to cost you a bit more. So, you want to avoid that if possible.
 
-**Dave Jones:** but you know, if you only need to get rid of a couple of watts or something like that, you know, a bit of annoying amount of heat, then this is quite a decent solution for getting that heat out. But, I know what
+**Dave Jones:** So, you could actually mount these devices on the bottom and then have a cutout in your thermal bar like that so that, you know, your device just sat down there.
 
-**Dave Jones:** you're thinking. We've got some loss in these thermal vias which I'll explain in a second. Yes, you could actually mount these power devices on the other side of the board, of course, or or flip the whole board and mount all your
+**Dave Jones:** So, you've effectively got like a couple of thermal bars just over the via and your device could sit nicely in either a little cutout like that, but you probably wouldn't do that.
 
-**Dave Jones:** components cuz it's cheaper to mount your components on one side of the board with a pick and place machine. If you have to put them on the top and the bottom, well, that's a two-step process at your assembly house. It's going to
+**Dave Jones:** You'd just have multiple blocks like that. And of course, the other trap for young players, your screws, they're metal. You don't want to accidentally connect this through to your like for this screw to touch your copper pad here.
 
-**Dave Jones:** cost you a bit more. So, you want to avoid that if possible. So, you could actually mount these devices on the bottom and then have a cutout in your thermal bar like that so that, you know, your device just sat
+**Dave Jones:** So, you want a big bit of isolation right around there like that so that your screw can go through and hold your board down because you need to apply pressure.
 
-**Dave Jones:** down there. So, you've effectively got like a couple of thermal bars just over the via and your device could sit nicely in either a little cutout like that, but you probably wouldn't do that. You'd just have multiple blocks like that. And of
+**Dave Jones:** It's important to actually apply pressure on your seal pad, otherwise you're going to get a pretty piss-poor contact and your heat transfer is going to be absolutely horrible. So, you need to screw that down so there's a bit of consistent pressure between the board and the heat bar.
 
-**Dave Jones:** course, the other trap for young players, your screws, they're metal. You don't want to accidentally connect this through to your like for this screw to touch your copper pad here. So, you want a big bit of isolation right around
+**Dave Jones:** And also, you would screw it up from the bottom as you saw on the animation there as well to get good thermal contact between your bar and your case.
 
-**Dave Jones:** there like that so that your screw can go through and hold your board down because you need to apply pressure. It's important to actually apply pressure on your seal pad, otherwise you're going to get a pretty piss-poor contact and your
+**Dave Jones:** And if you want to gild the lily a bit and make sure you had the best possible solution cuz you've only got two screws like this and you're going to get uneven surfaces on not only your bar but your case as well.
 
-**Dave Jones:** heat transfer is going to be absolutely horrible. So, you need to screw that down so there's a bit of consistent pressure between the board and the heat bar. And also, you would screw it up from the bottom as you saw
+**Dave Jones:** They're all rough surfaces. You might add some You might squeeze a bit of thermal compound under there as well. Now, this step here is just repeating a video I did way, way back in the EV blog, but it's worth including here.
 
-**Dave Jones:** on the animation there as well to get good thermal contact between your bar and your case. And if you want to gild the lily a bit and make sure you had the best possible solution cuz you've only got two screws like this and you're
+**Dave Jones:** I'll link it in down below. Way back in the early days it was, and it's showing the equivalence between electrical design and thermal design and how you can calculate temperatures in your system, the temperature of your transistor, the temperature of your case, and all sorts of things.
 
-**Dave Jones:** going to get uneven surfaces on not only your bar but your case as well. They're all rough surfaces. You might add some You might squeeze a bit of thermal compound under there as well. Now, this step here is just repeating a video I
+**Dave Jones:** Now, the great thing about thermal design and looking at it and thinking about it like this is that you already know it. It is just basic electrical theory you used to.
 
-**Dave Jones:** did way, way back in the EV blog, but it's worth including here. I'll link it in down below. Way back in the early days it was, and it's showing the equivalence between electrical design and thermal design and how you can
+**Dave Jones:** Series resistors, voltages, and currents, very easy to calculate, and it's a direct analogy. It's not a fudge, it actually works. Now, there are three rules here. Current in the electrical analogy is equivalent to power in the thermal analogy.
 
-**Dave Jones:** calculate temperatures in your system, the temperature of your transistor, the temperature of your case, and all sorts of things. Now, the great thing about thermal design and looking at it and thinking about it like this is that you
+**Dave Jones:** The resistance is still a resistance, but instead of being ohms, it's resistance in resistance in {quote} marks in degrees C per watt. It's the thermal resistance of the heat sink, of the device, of the via, or whatever it is.
 
-**Dave Jones:** already know it. It is just basic electrical theory you used to. Series resistors, voltages, and currents, very easy to calculate, and it's a direct analogy. It's not a fudge, it actually works. Now, there are three rules here. Current in
+**Dave Jones:** And voltage is equivalent to temperature. So, if we've got we can model this as an electrical equivalent. Let's say our device here is producing 10 W for example, then that 10 W is equivalent to 10 W of current flowing through all these devices cuz you can see how they got them stacked.
 
-**Dave Jones:** the electrical analogy is equivalent to power in the thermal analogy. The resistance is still a resistance, but instead of being ohms, it's resistance in resistance in {quote} marks in degrees C per watt. It's the thermal resistance of the heat sink, of the
+**Dave Jones:** We've got the actual junction, the semiconductor junction inside the transistor. So, if you look up the data sheet for your power transistor or your regulator, it'll have a term called uh it'll have the thermal resistance uh in degrees C per watt.
 
-**Dave Jones:** device, of the via, or whatever it is. And voltage is equivalent to temperature. So, if we've got we can model this as an electrical equivalent. Let's say our device here is producing 10 W for example, then that 10 W
+**Dave Jones:** That little symbol there is a theta. So, they will have theta junction to case. So, i.e. the thermal resistance between the semiconductor junction inside the transistor and the tab on the transistor.
 
-**Dave Jones:** is equivalent to 10 W of current flowing through all these devices cuz you can see how they got them stacked. We've got the actual junction, the semiconductor junction inside the transistor. So, if you look up the data sheet for your
+**Dave Jones:** That's going to have a specific thermal resistance. When that package dissipates X amount of power, it's going to produce a voltage across it, which is actually a temperature. So, we can actually get temperature across each particular device here.
 
-**Dave Jones:** power transistor or your regulator, it'll have a term called uh it'll have the thermal resistance uh in degrees C per watt. That little symbol there is a theta. So, they will have theta junction to case. So, i.e. the thermal resistance between
+**Dave Jones:** And then all your other components in the system are also going to have a specific thermal resistance. The next one after we get from the transistor, I'm ignoring the copper.
 
-**Dave Jones:** the semiconductor junction inside the transistor and the tab on the transistor. That's going to have a specific thermal resistance. When that package dissipates X amount of power, it's going to produce a voltage across it, which is actually a temperature. So,
+**Dave Jones:** The copper will have a thermal resistance, too, but it can get quite complicated. So, I'm just assuming there's no loss in the in that copper itself. The next one is the via.
 
-**Dave Jones:** we can actually get temperature across each particular device here. And then all your other components in the system are also going to have a specific thermal resistance. The next one after we get from the transistor, I'm ignoring the copper. The copper will have a
+**Dave Jones:** The heat actually has to remember that 10 W of heat, or whatever it is, has to transfer through the via. It's going to have a specific thermal resistance. And then it's got to get through that sil pad that we put in there.
 
-**Dave Jones:** thermal resistance, too, but it can get quite complicated. So, I'm just assuming there's no loss in the in that copper itself. The next one is the via. The heat actually has to remember that 10 W of heat, or whatever it is, has to
+**Dave Jones:** That sil pad will have a thermal resistance. Look up the data sheet for it. It'll tell you what it is typically. Uh and then we're going to have the thermal resistance of the bar here.
 
-**Dave Jones:** transfer through the via. It's going to have a specific thermal resistance. And then it's got to get through that sil pad that we put in there. That sil pad will have a thermal resistance. Look up the data sheet for it. It'll tell you
+**Dave Jones:** It's going to be pretty low. It's a nice big chunky bit of aluminum. But, it's still something that you have to consider in there. And then we've got the thermal resistance of the case.
 
-**Dave Jones:** what it is typically. Uh and then we're going to have the thermal resistance of the bar here. It's going to be pretty low. It's a nice big chunky bit of aluminum. But, it's still something that you have to consider in there. And then
+**Dave Jones:** Now, the case is our heat sink. In normal thermal design, you'd look up the data sheet for the heat sink. It's going to give you a theta value in degrees C per watt.
 
-**Dave Jones:** we've got the thermal resistance of the case. Now, the case is our heat sink. In normal thermal design, you'd look up the data sheet for the heat sink. It's going to give you a theta value in degrees C
+**Dave Jones:** It's going to give you a thermal resistance. So, uh but that will depend on whether or not you've got forced air across it, whether or not it's radiating, whether or not it's radiating in the free air.
 
-**Dave Jones:** per watt. It's going to give you a thermal resistance. So, uh but that will depend on whether or not you've got forced air across it, whether or not it's radiating, whether or not it's radiating in the free air.
+**Dave Jones:** Usually they're specified into free air, but they might may also have a a thermal resistance specified for a specific amount of air blowing over the heat sink in a certain way.
 
-**Dave Jones:** Usually they're specified into free air, but they might may also have a a thermal resistance specified for a specific amount of air blowing over the heat sink in a certain way. And then we've got our ambient temperature, which
+**Dave Jones:** And then we've got our ambient temperature, which is equivalent to adding a voltage down here because remember, voltage is equivalent to temperature. So, 22° C, that's going to be our ambient temperature.
 
-**Dave Jones:** is equivalent to adding a voltage down here because remember, voltage is equivalent to temperature. So, 22° C, that's going to be our ambient temperature. Say if it's room temperature here in the lab. Then you can actually go through and calculate
+**Dave Jones:** Say if it's room temperature here in the lab. Then you can actually go through and calculate based on your thermal resistance and based on the amount of power you have flowing through, i.e.
 
-**Dave Jones:** based on your thermal resistance and based on the amount of power you have flowing through, i.e. the amount of power you dissipate in your transistor, you can actually calculate the temperature rise of the case. You can calculate what temperature that case
+**Dave Jones:** the amount of power you dissipate in your transistor, you can actually calculate the temperature rise of the case. You can calculate what temperature that case will get to by just you know, simple Ohm's law stuff, the power multiplied by the thermal resistance of the case, and you can get the case temperature.
 
-**Dave Jones:** will get to by just you know, simple Ohm's law stuff, the power multiplied by the thermal resistance of the case, and you can get the case temperature. And likewise, you can then the as you can see, the temperature builds up at each stage
+**Dave Jones:** And likewise, you can then the as you can see, the temperature builds up at each stage until you get to a specific higher temperature at the junction. And a semiconductor might be rated for maybe you know, say 120° C absolute maximum junction temperature.
 
-**Dave Jones:** until you get to a specific higher temperature at the junction. And a semiconductor might be rated for maybe you know, say 120° C absolute maximum junction temperature. Well, you got to ensure that you don't exceed those sort of specs. But of course, you wouldn't
+**Dave Jones:** Well, you got to ensure that you don't exceed those sort of specs. But of course, you wouldn't want your transistor to get up to 120°. So, you you know, you calculate, you do all this, you design the size of your case, you design the size of your spreader bar, the number of vias, and all sorts of things.
 
-**Dave Jones:** want your transistor to get up to 120°. So, you you know, you calculate, you do all this, you design the size of your case, you design the size of your spreader bar, the number of vias, and all sorts of things.
+**Dave Jones:** You know, and you can do some good rough ballpark calculations here. If you really want to thermally model a a complex, this is a you know, even though this is a relatively simple example, if you really wanted to model this properly, you've got to do finite element analysis, and there's software packages which cost you know, tens of thousands of dollars to do or attempt to do this sort of modeling.
 
-**Dave Jones:** You know, and you can do some good rough ballpark calculations here. If you really want to thermally model a a complex, this is a you know, even though this is a relatively simple example, if you really wanted to model this
+**Dave Jones:** But you can really get good results with just simple electrical equivalents like this. Beauty. So, how do we calculate the thermal resistance of our vias here? You remember we've got all these multiple vias in here?
 
-**Dave Jones:** properly, you've got to do finite element analysis, and there's software packages which cost you know, tens of thousands of dollars to do or attempt to do this sort of modeling. But you can really get good results with just simple
+**Dave Jones:** It's not particularly easy, but you can get some nice ball park calculations. Now, one program I love using and highly recommend you use are the Saturn PCB tool kit for anything to do with PCB design.
 
-**Dave Jones:** electrical equivalents like this. Beauty. So, how do we calculate the thermal resistance of our vias here? You remember we've got all these multiple vias in here? It's not particularly easy, but you can get some nice ball park calculations.
+**Dave Jones:** It happens to do calculate the thermal resistance of vias like this and you punch the numbers in for a 1 mm diameter hole on a 1.6 mm double-sided PCB with typical 1 oz copper 1 oz plating on which is 35 microns on your hole it's going to be about 49.
 
-**Dave Jones:** Now, one program I love using and highly recommend you use are the Saturn PCB tool kit for anything to do with PCB design. It happens to do calculate the thermal resistance of vias like this and you punch the numbers in for a 1 mm
+**Dave Jones:** I'll round it to say 50° C per watt for that one via. So, that's pretty horrible. 50° C per watt. So, if you only stuck one via in there and try to get the heat through to the other side here even if you had 1 watt if your power transistor is dissipating 1 watt flowing through here, you had 50° C per watt, well, you're going to get a 50° C
 
-**Dave Jones:** diameter hole on a 1.6 mm double-sided PCB with typical 1 oz copper 1 oz plating on which is 35 microns on your hole it's going to be about 49. I'll round it to say 50° C per watt for that
+**Dave Jones:** temperature rise in that via. Awful. So, what do you do? Well, you put multiple ones in parallel cuz remember all this is electrical equivalent. So, if you have a look over here, then if you've got multiple vias like that, each one has a 50° C per watt thermal resistance, well, you whack three well, you whack two in parallel for example, bingo, 25° C per watt, three, and so on.
 
-**Dave Jones:** one via. So, that's pretty horrible. 50° C per watt. So, if you only stuck one via in there and try to get the heat through to the other side here even if you had 1 watt if your power
+**Dave Jones:** It goes down and down. If you put a matrix of vias like this, which is typically what you'll see on the board, you might see, you know, nine like this or you know, like a 4 by 4 16 either side or something like that surrounding the thing.
 
-**Dave Jones:** transistor is dissipating 1 watt flowing through here, you had 50° C per watt, well, you're going to get a 50° C temperature rise in that via. Awful. So, what do you do? Well, you put multiple ones in parallel
+**Dave Jones:** You may even see some thermal vias on the bottom of the device, but if you do that, there's pros and cons both ways like the solder when you put the solder paste on, it can wick down through the board and that can there can be issues with that.
 
-**Dave Jones:** cuz remember all this is electrical equivalent. So, if you have a look over here, then if you've got multiple vias like that, each one has a 50° C per watt thermal resistance, well, you whack three well, you whack two in parallel
+**Dave Jones:** So, let's not go there. But because as I briefly mentioned before, there is going to be some loss in the copper spreading the copper itself like the one ounce copper you've got on your PCB there's going to be some loss in that and so it's not simply a matter of just paralleling them up.
 
-**Dave Jones:** for example, bingo, 25° C per watt, three, and so on. It goes down and down. If you put a matrix of vias like this, which is typically what you'll see on the board, you might see, you know, nine
+**Dave Jones:** It gets a bit more complicated than that but the basic result you're going to get out of it is it's not going to be a linear thing. It's going to taper off like this.
 
-**Dave Jones:** like this or you know, like a 4 by 4 16 either side or something like that surrounding the thing. You may even see some thermal vias on the bottom of the device, but if you do that, there's pros and cons both ways like the
+**Dave Jones:** So if this is thermal resistance in degrees C per watt versus the number of vias down here, the more that you put in parallel like this, you know, if you start putting 20, 30 of them in parallel, you get diminishing returns.
 
-**Dave Jones:** solder when you put the solder paste on, it can wick down through the board and that can there can be issues with that. So, let's not go there. But because as I briefly mentioned before, there is going to be some loss in the copper spreading
+**Dave Jones:** So I've seen some data that shows maybe, you know, like like 10 or 12 vias or something like that starts become, you know, fairly optimum in terms of, you know, you can't just gild the lily and put a hundred in there.
 
-**Dave Jones:** the copper itself like the one ounce copper you've got on your PCB there's going to be some loss in that and so it's not simply a matter of just paralleling them up. It gets a bit more complicated than that but the basic
+**Dave Jones:** It it doesn't really gain you much and of course it's going to be a a trade-off as well with the diameter of the via. Generally, you know, maybe half a millimeter or 1 millimeter vias might do the job.
 
-**Dave Jones:** result you're going to get out of it is it's not going to be a linear thing. It's going to taper off like this. So if this is thermal resistance in degrees C per watt versus the number of vias down here, the
+**Dave Jones:** You don't want to do little tiny, you know, .3 millimeter ones or something like that. So maybe, you know, half millimeter, .8 millimeters is probably a good ballpark to ballpark to use for thermal vias.
 
-**Dave Jones:** more that you put in parallel like this, you know, if you start putting 20, 30 of them in parallel, you get diminishing returns. So I've seen some data that shows maybe, you know, like like 10 or 12 vias or
+**Dave Jones:** Now of course there are other ways to do it. I've done a mailbag we can get these like surface mount turret things which go through your board and they can extract power directly from the back tab of your power device and if you're really designing a critical thing, that might be a good way to do it or a good additional thing for example.
 
-**Dave Jones:** something like that starts become, you know, fairly optimum in terms of, you know, you can't just gild the lily and put a hundred in there. It it doesn't really gain you much and of course it's going to be a a trade-off as well with
+**Dave Jones:** You could also have a large hole or cutout in your board and then actually have a metal, you know, rod or a standoff or something going up and directly contacting the back of your surface mount device in there and it gets all nasty and anyway, I think this is not a bad solution for dissipating, you know, like a few watts or 5 watts or something through to a case.
 
-**Dave Jones:** the diameter of the via. Generally, you know, maybe half a millimeter or 1 millimeter vias might do the job. You don't want to do little tiny, you know, .3 millimeter ones or something like that. So maybe, you know, half
+**Dave Jones:** You wouldn't use this for like, you know, a hundred watt audio amp or something like that. then you'll be using big, beefy, uh power devices like, you know, TO-220 packages that all in parallel that are bolted directly to the side of the chassis.
 
-**Dave Jones:** millimeter, .8 millimeters is probably a good ballpark to ballpark to use for thermal vias. Now of course there are other ways to do it. I've done a mailbag we can get these like surface mount turret things which go through your
+**Dave Jones:** Because ultimately, you want as fewer things in series here as possible. So, if you can go straight from the case straight onto the heat sink here and avoid the vias and the sill pads and the uh and the heat transfer bar.
 
-**Dave Jones:** board and they can extract power directly from the back tab of your power device and if you're really designing a critical thing, that might be a good way to do it or a good additional thing for example. You could also have a large
+**Dave Jones:** And if you can take all those out of the equation, then you're going to be operating in a much better, lower temperature environment. You're going to get the heat away from the junction where it's being dissipated.
 
-**Dave Jones:** hole or cutout in your board and then actually have a metal, you know, rod or a standoff or something going up and directly contacting the back of your surface mount device in there and it gets all nasty and
+**Dave Jones:** This is, by the way, that's the temperature of the junction, I forgot in there. Then you're going to extract the heat from the junction as efficiently as possible. But when you're dealing with surface mount devices in a little case like this and uh it all gets a bit harder.
 
-**Dave Jones:** anyway, I think this is not a bad solution for dissipating, you know, like a few watts or 5 watts or something through to a case. You wouldn't use this for like, you know, a hundred watt audio amp or something like that. then you'll
+**Dave Jones:** Once again, better if you've got a fan in there to fan force stuff. But in a little handheld thing, you know, you're not going to do that if you're dissipating, you know, just a couple of watts or 5 watts or something like that.
 
-**Dave Jones:** be using big, beefy, uh power devices like, you know, TO-220 packages that all in parallel that are bolted directly to the side of the chassis. Because ultimately, you want as fewer things in series here as possible. So, if you can
+**Dave Jones:** So, there you go. That's just some basics of doing SMDs. Many ways to skin a cat here. So, if you uh if you've got your favorite technique, add it in the comments below.
 
-**Dave Jones:** go straight from the case straight onto the heat sink here and avoid the vias and the sill pads and the uh and the heat transfer bar. And if you can take all those out of the equation, then you're going to be operating in a
+**Dave Jones:** Hope you enjoyed it. As always, if you want to discuss it, uh leave YouTube comments, blog comments, or jump over to the EEVblog forum link specifically for this video, which will be down below.
 
-**Dave Jones:** much better, lower temperature environment. You're going to get the heat away from the junction where it's being dissipated. This is, by the way, that's the temperature of the junction, I forgot in there. Then you're going to extract the heat from
-
-**Dave Jones:** the junction as efficiently as possible. But when you're dealing with surface mount devices in a little case like this and uh it all gets a bit harder. Once again, better if you've got a fan in there to fan force stuff. But in a
-
-**Dave Jones:** little handheld thing, you know, you're not going to do that if you're dissipating, you know, just a couple of watts or 5 watts or something like that. So, there you go. That's just some basics of doing SMDs. Many ways to skin a cat here. So, if you
-
-**Dave Jones:** uh if you've got your favorite technique, add it in the comments below. Hope you enjoyed it. As always, if you want to discuss it, uh leave YouTube comments, blog comments, or jump over to the EEVblog forum link specifically for
-
-**Dave Jones:** this video, which will be down below. And if you like it, please give it a big thumbs up. Catch you next time.
+**Dave Jones:** And if you like it, please give it a big thumbs up. Catch you next time.

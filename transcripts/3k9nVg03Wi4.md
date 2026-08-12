@@ -3,171 +3,183 @@ video_id: 3k9nVg03Wi4
 title: EEVblog #60 - Fluke 117 Multimeter Review and Teardown
 url: https://www.youtube.com/watch?v=3k9nVg03Wi4
 source: youtube-asr
-timestamps: {"0": 0, "1": 19, "2": 40, "3": 56, "4": 70, "5": 87, "6": 105, "7": 119, "8": 137, "9": 153, "10": 164, "11": 185, "12": 199, "13": 217, "14": 232, "15": 249, "16": 264, "17": 281, "18": 294, "19": 305, "20": 321, "21": 338, "22": 353, "23": 368, "24": 379, "25": 395, "26": 409, "27": 422, "28": 436, "29": 449, "30": 460, "31": 478, "32": 492, "33": 507, "34": 520, "35": 533, "36": 550, "37": 564, "38": 576, "39": 594, "40": 612, "41": 623, "42": 639, "43": 651, "44": 666, "45": 681, "46": 694, "47": 706, "48": 721, "49": 733, "50": 747, "51": 761, "52": 776, "53": 793, "54": 809, "55": 823, "56": 835, "57": 850, "58": 867, "59": 877, "60": 892, "61": 905, "62": 917, "63": 930, "64": 948, "65": 964, "66": 977, "67": 991, "68": 1005, "69": 1017, "70": 1031, "71": 1045, "72": 1059, "73": 1074, "74": 1093, "75": 1107, "76": 1122, "77": 1135, "78": 1149, "79": 1165, "80": 1177, "81": 1191, "82": 1205}
+timestamps: {"0": 0, "1": 15, "2": 33, "3": 51, "4": 59, "5": 70, "6": 87, "7": 97, "8": 112, "9": 129, "10": 147, "11": 157, "12": 169, "13": 191, "14": 213, "15": 232, "16": 245, "17": 259, "18": 275, "19": 297, "20": 307, "21": 326, "22": 338, "23": 353, "24": 362, "25": 372, "26": 384, "27": 399, "28": 414, "29": 425, "30": 438, "31": 449, "32": 458, "33": 472, "34": 492, "35": 507, "36": 524, "37": 533, "38": 548, "39": 560, "40": 570, "41": 582, "42": 596, "43": 610, "44": 623, "45": 640, "46": 649, "47": 660, "48": 678, "49": 688, "50": 697, "51": 713, "52": 725, "53": 737, "54": 754, "55": 763, "56": 779, "57": 793, "58": 807, "59": 819, "60": 830, "61": 848, "62": 860, "63": 870, "64": 881, "65": 892, "66": 903, "67": 919, "68": 928, "69": 942, "70": 968, "71": 979, "72": 991, "73": 1002, "74": 1017, "75": 1027, "76": 1042, "77": 1054, "78": 1067, "79": 1087, "80": 1100, "81": 1118, "82": 1127, "83": 1141, "84": 1159, "85": 1170, "86": 1181, "87": 1191, "88": 1203}
 ---
 
-**Dave Jones:** Hi, welcome to the EEVblog and Electronics Engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's multimeter review time again and yes, it's another Fluke and it's the Fluke 117 electrician's multimeter. The
+**Dave Jones:** Hi, welcome to the EEVblog and Electronics Engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's multimeter review time again and yes, it's another Fluke and it's the Fluke 117 electrician's multimeter.
 
-**Dave Jones:** Fluke 117 is the top of the Fluke 110 range of multimeters. It's Fluke's lowest cost Fluke branded multimeter. You can get cheaper multimeters made by Fluke but they're under other brands like Amprobe. And so this is the cheapest series available. It's 3-year
+**Dave Jones:** The Fluke 117 is the top of the Fluke 110 range of multimeters. It's Fluke's lowest cost Fluke branded multimeter. You can get cheaper multimeters made by Fluke but they're under other brands like Amprobe.
 
-**Dave Jones:** warranty and made in China instead of the lifetime warranty and made in USA like most of the other high-end Flukes, the 170 series and the Fluke 80 series and so on. So I thought we'd take a quick look at this and see what it's
+**Dave Jones:** And so this is the cheapest series available. It's 3-year warranty and made in China instead of the lifetime warranty and made in USA like most of the other high-end Flukes, the 170 series and the Fluke 80 series and so on.
 
-**Dave Jones:** like being made in China. Is it still as good as the made in USA Flukes? Well, let's find out. And you know what we say, don't turn it on, take it apart. Okay, so I've opened it up and check it out.
+**Dave Jones:** So I thought we'd take a quick look at this and see what it's like being made in China. Is it still as good as the made in USA Flukes?
 
-**Dave Jones:** It's really lovely at first glance. You just you really get a sense that they've designed this thing properly. Let's check it out here. There's a big HRC fuse. There's a 10 amp current shunt. The jacks are separate and they're screwed in like
+**Dave Jones:** Well, let's find out. And you know what we say, don't turn it on, take it apart. Okay, so I've opened it up and check it out. It's really lovely at first glance.
 
-**Dave Jones:** this. They're soldered in four places. And two at the back, two at the front here. It's really nice and check out these plastic sort of like a blast shield almost. Not only does it not only is it also high voltage
+**Dave Jones:** You just you really get a sense that they've designed this thing properly. Let's check it out here. There's a big HRC fuse. There's a 10 amp current shunt. The jacks are separate and they're screwed in like this.
 
-**Dave Jones:** isolation slot but it's like a blast shield in case the fuse blows or something like that. And they've got another one. They've got another one protecting the thin the um film resistor network here and it's just really quite nice. They've
+**Dave Jones:** They're soldered in four places. And two at the back, two at the front here. It's really nice and check out these plastic sort of like a blast shield almost.
 
-**Dave Jones:** got input overload protection here and up here and as I've uh said the these 9-V battery contacts soldered straight onto the board, absolutely brilliant. I like it. Huge big metal shield here to protect um all the circuitry. It's just
+**Dave Jones:** Not only does it not only is it also high voltage isolation slot but it's like a blast shield in case the fuse blows or something like that. And they've got another one.
 
-**Dave Jones:** It's just great. It's really well designed. This soldering is first class that you can see and it's just really what you'd expect out in USA Fluke, but it's not. This is one of their made in China ones. So, the quality is really is
+**Dave Jones:** They've got another one protecting the thin the um film resistor network here and it's just really quite nice. They've got input overload protection here and up here and as I've uh said the these 9-V battery contacts soldered straight onto the board, absolutely brilliant.
 
-**Dave Jones:** just as good. Okay, I've taken the shield off with uh just two screws up here. It just lifted straight off. There's a couple of slots in there and as you can see there's the circuitry under there. No surprise, an
+**Dave Jones:** I like it. Huge big metal shield here to protect um all the circuitry. It's just It's just great. It's really well designed. This soldering is first class that you can see and it's just really what you'd expect out in USA Fluke, but it's not.
 
-**Dave Jones:** MSP430 processor and here this looks like a little custom uh ASIC device. I'll show some I'll try and get a close-up photo of that later, but that's obviously um that circuitry there is obviously part of the um uh non-contact uh voltage alert uh
+**Dave Jones:** This is one of their made in China ones. So, the quality is really is just as good. Okay, I've taken the shield off with uh just two screws up here.
 
-**Dave Jones:** functionality cuz you can see that there's it goes off to the shield for the can and there's two huge caps there and that's obviously that. So, the um the uh buzzer's just a standard thing and here I love this. It's just
+**Dave Jones:** It just lifted straight off. There's a couple of slots in there and as you can see there's the circuitry under there. No surprise, an MSP430 processor and here this looks like a little custom uh ASIC device.
 
-**Dave Jones:** terrific. It's a um CD um 4069, a 4000 series um hex inverter and you know, that chip's probably 35, 40 years old and here it is still used in a Fluke. I just love that um sort of generic
+**Dave Jones:** I'll show some I'll try and get a close-up photo of that later, but that's obviously um that circuitry there is obviously part of the um uh non-contact uh voltage alert uh functionality cuz you can see that there's it goes off to the shield for the can and there's two huge caps there and that's obviously that.
 
-**Dave Jones:** uh you know, uh basic jelly jelly bean logic used in products like this. The first thing I noticed about this meter when I picked it up is that it's it feels beefy and heavy heavier than you'd expect from its
+**Dave Jones:** So, the um the uh buzzer's just a standard thing and here I love this. It's just terrific. It's a um CD um 4069, a 4000 series um hex inverter and you know, that chip's probably 35, 40 years old and here it is still used in a Fluke.
 
-**Dave Jones:** little uh reasonably compact size. Now, I'll compare it with the Fluke 87 as a basic reference, and you can see it's it's quite it's quite smaller. There's there's quite a difference there in these two meters. This one's about 600 g
+**Dave Jones:** I just love that um sort of generic uh you know, uh basic jelly jelly bean logic used in products like this. The first thing I noticed about this meter when I picked it up is that it's it feels beefy and heavy heavier than you'd expect from its little uh reasonably compact size.
 
-**Dave Jones:** or thereabouts, and this one's about 400 g, but it feels almost as heavy. It's really It's really quite nice. And if you notice, it's it's contoured as well. It's designed to be held in the hand like that really really nicely. And it
+**Dave Jones:** Now, I'll compare it with the Fluke 87 as a basic reference, and you can see it's it's quite it's quite smaller. There's there's quite a difference there in these two meters.
 
-**Dave Jones:** And it does have this nice sexy curved feel. Check it out. And the knob around there is all raised up, and it's it's it's really quite something to look at. It's really nice industrial design. I like it. And with this knob
+**Dave Jones:** This one's about 600 g or thereabouts, and this one's about 400 g, but it feels almost as heavy. It's really It's really quite nice. And if you notice, it's it's contoured as well.
 
-**Dave Jones:** being sticking out protruding like this, has its good points and its bad points, I think. It's really good in that it's raised up and you can easily grab a hold of it and turn, especially if you're wearing you know, if you're out in the
+**Dave Jones:** It's designed to be held in the hand like that really really nicely. And it And it does have this nice sexy curved feel. Check it out. And the knob around there is all raised up, and it's it's it's really quite something to look at.
 
-**Dave Jones:** field and you're wearing gloves or something like that, as you might do if you're an electrician, I guess. I'm not an electrician, but you know, I can picture they'd use gloves for some things or something like that. So, it
+**Dave Jones:** It's really nice industrial design. I like it. And with this knob being sticking out protruding like this, has its good points and its bad points, I think. It's really good in that it's raised up and you can easily grab a hold of it and turn, especially if you're wearing you know, if you're out in the field and you're wearing gloves or something like that, as you might do if
 
-**Dave Jones:** could be really handy in that respect that the knob actually sticks out. But the problem is it does actually stick out like that. And really, that's I don't think that's quite as rugged a design as the recessed switch on the
+**Dave Jones:** you're an electrician, I guess. I'm not an electrician, but you know, I can picture they'd use gloves for some things or something like that. So, it could be really handy in that respect that the knob actually sticks out.
 
-**Dave Jones:** Fluke 80 series or the Fluke 170 series meters. And if you drop it, and it lands flat on its face, it's just going to hit this knob. And And also, the knob actually protrudes from the side here as well.
+**Dave Jones:** But the problem is it does actually stick out like that. And really, that's I don't think that's quite as rugged a design as the recessed switch on the Fluke 80 series or the Fluke 170 series meters.
 
-**Dave Jones:** And that's designed for one-hand thumb operation. And it works really nice. I like it. But Um, yeah, it's it's probably not the most rugged solution. So, they traded off sort of, you know, ease of ease of handling with
+**Dave Jones:** And if you drop it, and it lands flat on its face, it's just going to hit this knob. And And also, the knob actually protrudes from the side here as well.
 
-**Dave Jones:** ruggedness, I think. But, still it feels pretty rugged. I like it. So, it does feel like a meter that you can really, uh, just, you know, grab and throw in your toolbox. Probably not, um, as as much as the 170 series, but you do
+**Dave Jones:** And that's designed for one-hand thumb operation. And it works really nice. I like it. But Um, yeah, it's it's probably not the most rugged solution. So, they traded off sort of, you know, ease of ease of handling with ruggedness, I think.
 
-**Dave Jones:** get a lot of confidence that this thing is going to, you know, really survive the hard knocks, I think. Now, the biggest thing about this meter is that you've got to be aware that it's designed for electricians. It's not
+**Dave Jones:** But, still it feels pretty rugged. I like it. So, it does feel like a meter that you can really, uh, just, you know, grab and throw in your toolbox.
 
-**Dave Jones:** designed for electronics use. That's why it only has, uh, the amps, uh, jack. It's only got a 10 amp 10 20 amp range. It doesn't have milliamps. It doesn't have microamps, which which makes it, you know, almost useless for, uh, more
+**Dave Jones:** Probably not, um, as as much as the 170 series, but you do get a lot of confidence that this thing is going to, you know, really survive the hard knocks, I think.
 
-**Dave Jones:** serious electronics use cuz you've got to have milliamp or microamp ranges. But, this is designed for a different market. So, you know, don't say it's crap or anything like that because it doesn't have a milliamp or microamp range. I know people are going to say
+**Dave Jones:** Now, the biggest thing about this meter is that you've got to be aware that it's designed for electricians. It's not designed for electronics use. That's why it only has, uh, the amps, uh, jack.
 
-**Dave Jones:** that, but it's, you know, that's why Fluke make all these different meters and other manufacturers make all these different meters. Just like the fuel we had with the, uh, Agilent meter review the other week, which went nuts because
+**Dave Jones:** It's only got a 10 amp 10 20 amp range. It doesn't have milliamps. It doesn't have microamps, which which makes it, you know, almost useless for, uh, more serious electronics use cuz you've got to have milliamp or microamp ranges.
 
-**Dave Jones:** people didn't understand that you can have meters designed for different things. And this is an electrician's meter. So, what's the range switch like? Well, it feels pretty good. It's got the standard Fluke quality. It's probably not as sharp as some of the others, but
+**Dave Jones:** But, this is designed for a different market. So, you know, don't say it's crap or anything like that because it doesn't have a milliamp or microamp range. I know people are going to say that, but it's, you know, that's why Fluke make all these different meters and other manufacturers make all these different meters.
 
-**Dave Jones:** it's it's got a nice feel to it, nice sound. It feels pretty rugged and I like it. And, uh, I don't particularly like the fact that the off position is here, so you can't just you know, bang it all the way back and
+**Dave Jones:** Just like the fuel we had with the, uh, Agilent meter review the other week, which went nuts because people didn't understand that you can have meters designed for different things.
 
-**Dave Jones:** turn it off. Uh, it goes into this auto V, uh, range, which I'll talk about. But, yeah, I would have preferred the off to be right in that position, so you can just wham it around and it's off. But, you
+**Dave Jones:** And this is an electrician's meter. So, what's the range switch like? Well, it feels pretty good. It's got the standard Fluke quality. It's probably not as sharp as some of the others, but it's it's got a nice feel to it, nice sound.
 
-**Dave Jones:** can't do that. You've got to consciously go, "Ah, it's now off." Now, the specs aren't going to set the world on fire because it's designed for electrician electrical installation type use. So, it's 0.5% basic DC volts accuracy plus two counts.
+**Dave Jones:** It feels pretty rugged and I like it. And, uh, I don't particularly like the fact that the off position is here, so you can't just you know, bang it all the way back and turn it off.
 
-**Dave Jones:** Very generic. 0.9% plus two counts or plus one count, I think, for ohms. So, you know, and don't even ask about the rest because, well, you know, it's it's not a super accurate meter and it doesn't need to be for uh for just
+**Dave Jones:** Uh, it goes into this auto V, uh, range, which I'll talk about. But, yeah, I would have preferred the off to be right in that position, so you can just wham it around and it's off.
 
-**Dave Jones:** general power electrician use. Other things that show it's only designed for electrician use uh really the frequency range only goes up to 50 kHz, which is not huge. The well, the frequency measurement range, it is true RMS, which
+**Dave Jones:** But, you can't do that. You've got to consciously go, "Ah, it's now off." Now, the specs aren't going to set the world on fire because it's designed for electrician electrical installation type use.
 
-**Dave Jones:** is which is good and what you need. Um but, you know, it doesn't have a huge bandwidth. And the other thing is is the cap range on it um has a minimum resolution of 1 nF, you know, so for
+**Dave Jones:** So, it's 0.5% basic DC volts accuracy plus two counts. Very generic. 0.9% plus two counts or plus one count, I think, for ohms. So, you know, and don't even ask about the rest because, well, you know, it's it's not a super accurate meter and it doesn't need to be for uh for just general power electrician use.
 
-**Dave Jones:** electronics use, 1 nF resolution is pretty useless. One thing I do like about it is that uh the ohms and the continuity are separate switch positions, so you don't have to use, you know, they're not uh multiplexed and use the soft buttons
+**Dave Jones:** Other things that show it's only designed for electrician use uh really the frequency range only goes up to 50 kHz, which is not huge. The well, the frequency measurement range, it is true RMS, which is which is good and what you need.
 
-**Dave Jones:** like the traditional one. So, let's try out the continuity test response, shall we? Absolutely, it's got 500 microsecond response time. It'll pick up everything. Excellent. Okay, let's try out the response of the uh measurement and see if it see how it goes. When you switch
+**Dave Jones:** Um but, you know, it doesn't have a huge bandwidth. And the other thing is is the cap range on it um has a minimum resolution of 1 nF, you know, so for electronics use, 1 nF resolution is pretty useless.
 
-**Dave Jones:** it on, it it takes a little bit to get there. It's not the world's fastest switch, but it doesn't overshoot or undershoot. So, it's, you know, it's not too bad at all. By far the biggest disappointment with this meter that I found is that, you
+**Dave Jones:** One thing I do like about it is that uh the ohms and the continuity are separate switch positions, so you don't have to use, you know, they're not uh multiplexed and use the soft buttons like the traditional one.
 
-**Dave Jones:** know, it's got the hold button there and you would think that would be the famous Fluke touch hold, which they've had for, you know, 20 25 years or something. But, no, it's one of the cheap crappy hold uh
+**Dave Jones:** So, let's try out the continuity test response, shall we? Absolutely, it's got 500 microsecond response time. It'll pick up everything. Excellent. Okay, let's try out the response of the uh measurement and see if it see how it goes.
 
-**Dave Jones:** just manual hold modes that you get on all the el cheapo 111 m. And oh, it's like I hate it. It's hopeless. Look, like you you press it and yeah, okay, it freezes the uh meter reading, but it's you know, you can see the bar graph
+**Dave Jones:** When you switch it on, it it takes a little bit to get there. It's not the world's fastest switch, but it doesn't overshoot or undershoot. So, it's, you know, it's not too bad at all.
 
-**Dave Jones:** change, but it's not it's not FLUKE TOUCH HOLD. WHY? BASTARDS. It tight asses, really. They're just trying to upsell you to the next meter. Oh. Okay, let's test out the backlight, shall we? Here we go. It's you know, it's quite nice. Look at
+**Dave Jones:** By far the biggest disappointment with this meter that I found is that, you know, it's got the hold button there and you would think that would be the famous Fluke touch hold, which they've had for, you know, 20 25 years or something.
 
-**Dave Jones:** it. It's got that uh bluish sort of you know, it's supposed to be white, but it ends up being like a blue on the camera really and a bit blue tinge, but you know, it's it's quite a nice little even
+**Dave Jones:** But, no, it's one of the cheap crappy hold uh just manual hold modes that you get on all the el cheapo 111 m. And oh, it's like I hate it.
 
-**Dave Jones:** backlight. Not bad at all. There's another neat feature of this which I really like, and that's the low impedance capacitance measurement mode. Now, this is real handy for uh noisy uh capacitance measurements when you're measuring like the capacitance of a
+**Dave Jones:** It's hopeless. Look, like you you press it and yeah, okay, it freezes the uh meter reading, but it's you know, you can see the bar graph change, but it's not it's not FLUKE TOUCH HOLD.
 
-**Dave Jones:** really long cable in a factory or something. They can pick up all sorts of crap and interfere with regular meters, but this one, if you hold down the range switch when you turn it on, it's goes into low cap mode. And you turn it
+**Dave Jones:** WHY? BASTARDS. It tight asses, really. They're just trying to upsell you to the next meter. Oh. Okay, let's test out the backlight, shall we? Here we go. It's you know, it's quite nice.
 
-**Dave Jones:** around to cap and uh there we go. And it's got low Z low Z uh cap mode. And I like it. So, what's the tilting bail like? Well, it's um it's it's kind of a bit new. It's once again it's a plastic it's a
+**Dave Jones:** Look at it. It's got that uh bluish sort of you know, it's supposed to be white, but it ends up being like a blue on the camera really and a bit blue tinge, but you know, it's it's quite a nice little even backlight.
 
-**Dave Jones:** sturdy plastic thing. Feels more sturdy than some other Flukes, but one thing I really like about it is that it's got all the power on uh uh options and features engraved in the stand. And that's better than what they
+**Dave Jones:** Not bad at all. There's another neat feature of this which I really like, and that's the low impedance capacitance measurement mode. Now, this is real handy for uh noisy uh capacitance measurements when you're measuring like the capacitance of a really long cable in a factory or something.
 
-**Dave Jones:** did with the Fluke 87 and they just didn't put it on there at all, even under the holster. Um they just said refer to manual, which is stupid. But they've they've they've learned and they've put the power on features right
+**Dave Jones:** They can pick up all sorts of crap and interfere with regular meters, but this one, if you hold down the range switch when you turn it on, it's goes into low cap mode.
 
-**Dave Jones:** on the back here, and it's good. You can disable the beeper. Um you can uh disable auto power off. Um as I said, you can put it into low uh impedance capacitance mode. The other thing you'll notice with the
+**Dave Jones:** And you turn it around to cap and uh there we go. And it's got low Z low Z uh cap mode. And I like it. So, what's the tilting bail like?
 
-**Dave Jones:** holster is that it's it's actually a bit um thinner than uh than the other Fluke uh holsters. So, if I take it apart here, you can see it's actually quite quite a thin um thin-walled holster, but you know,
+**Dave Jones:** Well, it's um it's it's kind of a bit new. It's once again it's a plastic it's a sturdy plastic thing. Feels more sturdy than some other Flukes, but one thing I really like about it is that it's got all the power on uh uh options and features engraved in the stand.
 
-**Dave Jones:** it's it's nicely molded to the meter, and and there's the there's the contours of the meter. It's really a nice sexy industrial design. I really like it, and it does have that without the uh holster, it's really got
+**Dave Jones:** And that's better than what they did with the Fluke 87 and they just didn't put it on there at all, even under the holster. Um they just said refer to manual, which is stupid.
 
-**Dave Jones:** that solid Fluke feel to it. And uh it's pretty nice. Let's test out the overload capability of it. Got it hooked up to the 240-V mains, and uh as you can see, there we go. Turn it off, and let's go
+**Dave Jones:** But they've they've they've learned and they've put the power on features right on the back here, and it's good. You can disable the beeper. Um you can uh disable auto power off.
 
-**Dave Jones:** to this uh auto detect thing they've got here, which actually automatically switches between uh AC and DC voltage. Um but, it's a fixed 600-V range that one. So, but you know, I I guess it's going to be handy for some people, but
+**Dave Jones:** Um as I said, you can put it into low uh impedance capacitance mode. The other thing you'll notice with the holster is that it's it's actually a bit um thinner than uh than the other Fluke uh holsters.
 
-**Dave Jones:** there you go. Let's switch it to DC. It's surviving. Let's switch it to millivolts. Yeah, it's surviving overload. It's got the high voltage warning indicator there. Um let's switch it to ohms. Ohms is of course going to Oh, it's flashing there, so it's
+**Dave Jones:** So, if I take it apart here, you can see it's actually quite quite a thin um thin-walled holster, but you know, it's it's nicely molded to the meter, and and there's the there's the contours of the meter.
 
-**Dave Jones:** probably telling you it's you know, it's doing something stupid. But, your continuity tester is going to beep at you. Diode capacitance range is just chucking a hissy fit. And well, you know, it's all survives. Back on 240, as you'd
+**Dave Jones:** It's really a nice sexy industrial design. I really like it, and it does have that without the uh holster, it's really got that solid Fluke feel to it. And uh it's pretty nice.
 
-**Dave Jones:** expect from a Fluke. Let's check out the auto ranging speed. Here we go. Well, hang on. Boom. Yeah, it's pretty quick, as you'd expect from a from a Fluke. So, not bad at all. Now, one thing I think it's lacking in
+**Dave Jones:** Let's test out the overload capability of it. Got it hooked up to the 240-V mains, and uh as you can see, there we go. Turn it off, and let's go to this uh auto detect thing they've got here, which actually automatically switches between uh AC and DC voltage.
 
-**Dave Jones:** an electrician's, you know, industrial type multimeter is input jack warning. They've only got that on the higher end Flukes. And once again, they're trying to save cost or maybe upsell you or something like that. So, when you actually switch it in, it tells you it
+**Dave Jones:** Um but, it's a fixed 600-V range that one. So, but you know, I I guess it's going to be handy for some people, but there you go. Let's switch it to DC.
 
-**Dave Jones:** says lead, make sure you got the lead plugged in. But, you know, if you've got it switched to volts and you plug it into the amps jack, it doesn't beep at you. So, you know, they should have added that for I don't
+**Dave Jones:** It's surviving. Let's switch it to millivolts. Yeah, it's surviving overload. It's got the high voltage warning indicator there. Um let's switch it to ohms. Ohms is of course going to Oh, it's flashing there, so it's probably telling you it's you know, it's doing something stupid.
 
-**Dave Jones:** know how much extra it would have cost, but it would have been worth it. Now, I've mentioned this auto voltage mode here and it switches to 600 volts AC or DC and it doesn't actually let you range switch. So, it's fixed on 600
+**Dave Jones:** But, your continuity tester is going to beep at you. Diode capacitance range is just chucking a hissy fit. And well, you know, it's all survives. Back on 240, as you'd expect from a Fluke.
 
-**Dave Jones:** volts. But, what it is is it's low impedance mode, which means it's about 3K in this case, about 3K input impedance to reduce the effect of ghost voltages. And that's that's fairly important in industrial electrical applications. And the fact that it's you
+**Dave Jones:** Let's check out the auto ranging speed. Here we go. Well, hang on. Boom. Yeah, it's pretty quick, as you'd expect from a from a Fluke. So, not bad at all.
 
-**Dave Jones:** can just whack it to that mode and you don't have to worry about any power on mode or anything like that. You just know it's going to work in low impedance mode. It's quite handy, even though I don't like the positioning of it. But,
+**Dave Jones:** Now, one thing I think it's lacking in an electrician's, you know, industrial type multimeter is input jack warning. They've only got that on the higher end Flukes. And once again, they're trying to save cost or maybe upsell you or something like that.
 
-**Dave Jones:** it's still good. One thing I really like is the battery compartment for this thing. Under the tilt stand, there's a single threaded machine screw there, which you take off and then this whole back thing just picks off, you know, takes off and there's the
+**Dave Jones:** So, when you actually switch it in, it tells you it says lead, make sure you got the lead plugged in. But, you know, if you've got it switched to volts and you plug it into the amps jack, it doesn't beep at you.
 
-**Dave Jones:** integral battery in there held in. Very nice. I love it. This is a great industrial design. It's It's just abs- the usability of this is brilliant. You don't have to take off the rubber holster to replace the battery. Sadly,
+**Dave Jones:** So, you know, they should have added that for I don't know how much extra it would have cost, but it would have been worth it. Now, I've mentioned this auto voltage mode here and it switches to 600 volts AC or DC and it doesn't actually let you range switch.
 
-**Dave Jones:** you can't replace the fuse and you can see the two terminals soldered directly onto the board there. And I really love that. The other thing I like is that the battery compartment, you can't actually put the battery in backwards cuz the
+**Dave Jones:** So, it's fixed on 600 volts. But, what it is is it's low impedance mode, which means it's about 3K in this case, about 3K input impedance to reduce the effect of ghost voltages.
 
-**Dave Jones:** terminals, it won't let you physically push it in. Someone's really thought about changing the battery on this thing. I mean, it's got a 400 claimed 400 hour battery life, so you don't have to change it that often. But, when you
+**Dave Jones:** And that's that's fairly important in industrial electrical applications. And the fact that it's you can just whack it to that mode and you don't have to worry about any power on mode or anything like that.
 
-**Dave Jones:** do, it's just it's just brilliant. Okay. Now, the really deep ribbed walls on these things and the and the really deep grooves that they've got around here. And you might think, "Okay, so what?" But, that's purposely designed um so
+**Dave Jones:** You just know it's going to work in low impedance mode. It's quite handy, even though I don't like the positioning of it. But, it's still good. One thing I really like is the battery compartment for this thing.
 
-**Dave Jones:** that it it really fits together with like a a sort of a nice hydraulic feel, but most importantly to contain um to make a big air path that well, a very difficult path for like um you know, explosions and flames if this thing
+**Dave Jones:** Under the tilt stand, there's a single threaded machine screw there, which you take off and then this whole back thing just picks off, you know, takes off and there's the integral battery in there held in.
 
-**Dave Jones:** somehow meets its demise with an overload, it doesn't just burst out of the meter through the seams. And it's it's really well designed for high industrial overloads. I like it. One of the main selling points of this meter is
+**Dave Jones:** Very nice. I love it. This is a great industrial design. It's It's just abs- the usability of this is brilliant. You don't have to take off the rubber holster to replace the battery.
 
-**Dave Jones:** that well, the top-of-the-line 117 is that it has uh VoltAlert. It's got it written on top there and there's an LED up the top. You switch it right around to VoltAlert position and it's just like one of these Fluke uh you know,
+**Dave Jones:** Sadly, you can't replace the fuse and you can see the two terminals soldered directly onto the board there. And I really love that. The other thing I like is that the battery compartment, you can't actually put the battery in backwards cuz the terminals, it won't let you physically push it in.
 
-**Dave Jones:** non-contact uh voltage alert probes. It does exactly the same thing. And that's real handy to have that in a multimeter. So, you've got one instrument to do, you know, pretty much everything an electrician needs. I think it's great.
+**Dave Jones:** Someone's really thought about changing the battery on this thing. I mean, it's got a 400 claimed 400 hour battery life, so you don't have to change it that often.
 
-**Dave Jones:** And the good thing is it's got a high sensitivity and a low sensitivity mode. You just press high low there and um that that determines that the the distance from the mains wiring that you can actually measure stuff.
+**Dave Jones:** But, when you do, it's just it's just brilliant. Okay. Now, the really deep ribbed walls on these things and the and the really deep grooves that they've got around here.
 
-**Dave Jones:** There it is there. Right next to the thing. And that's on high range. If you put it on low range, you've got to get a bit closer than that. Um it's I think it's different cuz I'm actually holding this. If I put it put
+**Dave Jones:** And you might think, "Okay, so what?" But, that's purposely designed um so that it it really fits together with like a a sort of a nice hydraulic feel, but most importantly to contain um to make a big air path that well, a very difficult path for like um you know, explosions and flames if this thing somehow meets its demise with an overload, it doesn't just burst out of
 
-**Dave Jones:** it down on the bench here and um you put it on high range, you can it works about you know, about that far from the wiring, you know, a good 4 in, 5 in, something like that. But the low range,
+**Dave Jones:** the meter through the seams. And it's it's really well designed for high industrial overloads. I like it. One of the main selling points of this meter is that well, the top-of-the-line 117 is that it has uh VoltAlert.
 
-**Dave Jones:** you've you've pretty much got to get it within about an inch of like a mains cable and it seems to work really well. It's you know, it's not too much different. It's more sensitive than a than a standard Fluke
+**Dave Jones:** It's got it written on top there and there's an LED up the top. You switch it right around to VoltAlert position and it's just like one of these Fluke uh you know, non-contact uh voltage alert probes.
 
-**Dave Jones:** non-contact probe. Okay, let's check the battery current. I've got it switched off. I've got it hooked up to my micro current and it's drawing nothing at all as you can see. Let's switch it on and it draws about 1.3 milliamps uh
+**Dave Jones:** It does exactly the same thing. And that's real handy to have that in a multimeter. So, you've got one instrument to do, you know, pretty much everything an electrician needs.
 
-**Dave Jones:** in just normal normal normal operation. 1 milliamp in DC volts, slightly more in ohms, you know, it's not a capacitance mode. Not a big deal at all. Let's turn the backlight on. And 20 milliamps with the backlight on.
+**Dave Jones:** I think it's great. And the good thing is it's got a high sensitivity and a low sensitivity mode. You just press high low there and um that that determines that the the distance from the mains wiring that you can actually measure stuff.
 
-**Dave Jones:** So at those sort of currents with a alkaline 800 milliamp hour battery roughly, it's it's should easily meet its 400 hour claimed battery life. No problems at all. Okay, so I've let the meter actually switch off and as you can
+**Dave Jones:** There it is there. Right next to the thing. And that's on high range. If you put it on low range, you've got to get a bit closer than that.
 
-**Dave Jones:** see it's drawing about 75 microamps in the sleep mode and that's going to give you like more than a year of standby power if you just do that instead of switch it off. So I'll switch it off and of course it draws nothing.
+**Dave Jones:** Um it's I think it's different cuz I'm actually holding this. If I put it put it down on the bench here and um you put it on high range, you can it works about you know, about that far from the wiring, you know, a good 4 in, 5 in, something like that.
 
-**Dave Jones:** Tell us the price, son. Well, it goes for about a hundred the Fluke 117 is about 190 US street price really. It's more than that retail I believe but that's what you can get it for on the street. The
+**Dave Jones:** But the low range, you've you've pretty much got to get it within about an inch of like a mains cable and it seems to work really well. It's you know, it's not too much different.
 
-**Dave Jones:** the lesser models in the series which don't have the input voltage alert, the non-contact voltage alert, they're cheaper again. I think you can get as cheap as like a hundred and thirty dollars or something. But yeah, it's it's not bad value at all for an
+**Dave Jones:** It's more sensitive than a than a standard Fluke non-contact probe. Okay, let's check the battery current. I've got it switched off. I've got it hooked up to my micro current and it's drawing nothing at all as you can see.
 
-**Dave Jones:** electrician's meter. So the verdict on the Fluke 117 meter, well, I give it the thumbs up because it's as an electrician's meter, only because that's what it's designed for. If you want it for electronics, well, you know, don't even think about buying
+**Dave Jones:** Let's switch it on and it draws about 1.3 milliamps uh in just normal normal normal operation. 1 milliamp in DC volts, slightly more in ohms, you know, it's not a capacitance mode.
 
-**Dave Jones:** it. You know, you wouldn't spend two uh almost 200 US bucks for one of these when it doesn't measure milliamp and microamp. But, you know, if your applications don't need that, then well, this is a pretty darn good meter. It's
+**Dave Jones:** Not a big deal at all. Let's turn the backlight on. And 20 milliamps with the backlight on. So at those sort of currents with a alkaline 800 milliamp hour battery roughly, it's it's should easily meet its 400 hour claimed battery life.
 
-**Dave Jones:** good value for money, I think. It's uh it's a three-year warranty made in China. It's uh you wouldn't know it. Uh you would think it's it's made in USA. The um build design and build quality and component quality is just as good as
+**Dave Jones:** No problems at all. Okay, so I've let the meter actually switch off and as you can see it's drawing about 75 microamps in the sleep mode and that's going to give you like more than a year of standby power if you just do that instead of switch it off.
 
-**Dave Jones:** any of the other Flukes. I'm quite surprised, actually. I didn't expect it to be this um well made for their bottom of the range meters. But, um well, I guess for the price, 200 bucks is still what it's be a well made Fluke. And it
+**Dave Jones:** So I'll switch it off and of course it draws nothing. Tell us the price, son. Well, it goes for about a hundred the Fluke 117 is about 190 US street price really.
 
-**Dave Jones:** is. Beauty.
+**Dave Jones:** It's more than that retail I believe but that's what you can get it for on the street. The the lesser models in the series which don't have the input voltage alert, the non-contact voltage alert, they're cheaper again.
+
+**Dave Jones:** I think you can get as cheap as like a hundred and thirty dollars or something. But yeah, it's it's not bad value at all for an electrician's meter. So the verdict on the Fluke 117 meter, well, I give it the thumbs up because it's as an electrician's meter, only because that's what it's designed for.
+
+**Dave Jones:** If you want it for electronics, well, you know, don't even think about buying it. You know, you wouldn't spend two uh almost 200 US bucks for one of these when it doesn't measure milliamp and microamp.
+
+**Dave Jones:** But, you know, if your applications don't need that, then well, this is a pretty darn good meter. It's good value for money, I think. It's uh it's a three-year warranty made in China.
+
+**Dave Jones:** It's uh you wouldn't know it. Uh you would think it's it's made in USA. The um build design and build quality and component quality is just as good as any of the other Flukes.
+
+**Dave Jones:** I'm quite surprised, actually. I didn't expect it to be this um well made for their bottom of the range meters. But, um well, I guess for the price, 200 bucks is still what it's be a well made Fluke.
+
+**Dave Jones:** And it is. Beauty.

@@ -1,0 +1,988 @@
+{
+ "episode": null,
+ "title": "EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing",
+ "url": "https://www.youtube.com/watch?v=K1IJH9aJvgE",
+ "file": "K1IJH9aJvgE.md",
+ "main_topics": [
+  "rigol-ds1054z",
+  "jitter",
+  "phase-locked-loop"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "rigol-ds1054z",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 31,
+   "depth": "mention",
+   "context_snippet": "follow-up video to the Rigol DS 1054Z firmware issues"
+  },
+  {
+   "concept": "rigol",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 268,
+   "depth": "mention",
+   "context_snippet": "Rigol have finally released some new firmware"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 301,
+   "depth": "explains",
+   "context_snippet": "new firmware that they claim fixes not only the 5 microsecond jitter issue"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 345,
+   "depth": "explains",
+   "context_snippet": "the 5 microsecond jitter issue"
+  },
+  {
+   "concept": "ac-trigger-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 413,
+   "depth": "mention",
+   "context_snippet": "AC trigger coupling jitter as well"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 554,
+   "depth": "explains",
+   "context_snippet": "released a beta trial firmware fix"
+  },
+  {
+   "concept": "rigol",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 658,
+   "depth": "opinion",
+   "context_snippet": "huge thumbs up to Rigol for actually engaging directly"
+  },
+  {
+   "concept": "eevblog-forum",
+   "type": "community-event",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 704,
+   "depth": "mention",
+   "context_snippet": "directly on the EEVblog forum"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 800,
+   "depth": "opinion",
+   "context_snippet": "unfortunately that one didn't work"
+  },
+  {
+   "concept": "eevblog-forum",
+   "type": "community-event",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1329,
+   "depth": "mention",
+   "context_snippet": "users on the EEVblog forum"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1401,
+   "depth": "explains",
+   "context_snippet": "figure out exactly what was causing this 5 microsecond jitter issue"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1568,
+   "depth": "explains",
+   "context_snippet": "something to do with the PLL, the phase lock loop inside the 1054Z"
+  },
+  {
+   "concept": "crystal-oscillator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1687,
+   "depth": "opinion",
+   "context_snippet": "this is a lower frequency crystal and there's nothing wrong with the crystal itself"
+  },
+  {
+   "concept": "pll-coefficient",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2514,
+   "depth": "explains",
+   "context_snippet": "updated the coefficients which get programmed into the PLL chip"
+  },
+  {
+   "concept": "sampling-fpga",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2700,
+   "depth": "opinion",
+   "context_snippet": "a combination of some stuff in the in the sampling FPGA"
+  },
+  {
+   "concept": "electromagnetic-compatibility-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 3018,
+   "depth": "explains",
+   "context_snippet": "have a quick sniff around with an EMC probe"
+  },
+  {
+   "concept": "square-wave",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 3208,
+   "depth": "mention",
+   "context_snippet": "we've got a 20 MHz square wave going in"
+  },
+  {
+   "concept": "infinite-persistence",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 3298,
+   "depth": "explains",
+   "context_snippet": "I've got infinite persistence on there"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 3523,
+   "depth": "explains",
+   "context_snippet": "it looks like it's maybe 1.5 almost 2 nanoseconds jitter"
+  },
+  {
+   "concept": "tech-box-emc-probe-set",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 4057,
+   "depth": "mention",
+   "context_snippet": "This is the Tech Box EMC probe set"
+  },
+  {
+   "concept": "magnetic-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 4096,
+   "depth": "mention",
+   "context_snippet": "we've got the three H field probes here, the magnetic field probes"
+  },
+  {
+   "concept": "electric-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 4167,
+   "depth": "explains",
+   "context_snippet": "the one we're going to use is the E field probe here"
+  },
+  {
+   "concept": "electric-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 4408,
+   "depth": "explains",
+   "context_snippet": "the E field probe is better with its tiny tip"
+  },
+  {
+   "concept": "wideband-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 4619,
+   "depth": "explains",
+   "context_snippet": "we've got our wideband amp here. So that goes from 3 meg up to 3 gig"
+  },
+  {
+   "concept": "rigol-dsa815",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4737,
+   "depth": "mention",
+   "context_snippet": "We've got our Rigol DSA815 spectrum analyzer here"
+  },
+  {
+   "concept": "adf4360-7",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 5057,
+   "depth": "mention",
+   "context_snippet": "the Analog Devices ADF4360-7 here"
+  },
+  {
+   "concept": "analog-devices",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 5057,
+   "depth": "mention",
+   "context_snippet": "the Analog Devices ADF4360-7 here"
+  },
+  {
+   "concept": "frequency-synthesizer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 5095,
+   "depth": "explains",
+   "context_snippet": "this is an integrated synthesizer and voltage controlled oscillator"
+  },
+  {
+   "concept": "voltage-controlled-oscillator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 5133,
+   "depth": "explains",
+   "context_snippet": "voltage controlled oscillator"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 5164,
+   "depth": "explains",
+   "context_snippet": "It's basically a PLL which multiplies the main crystal here, 25 megahertz"
+  },
+  {
+   "concept": "loop-filter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 5429,
+   "depth": "explains",
+   "context_snippet": "it sort of multiplies that frequency based on these loop filter components"
+  },
+  {
+   "concept": "adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 20,
+   "char_start": 5689,
+   "depth": "mention",
+   "context_snippet": "the main clock which goes into your ADC"
+  },
+  {
+   "concept": "ac-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 6277,
+   "depth": "mention",
+   "context_snippet": "we've just got some output AC coupling here"
+  },
+  {
+   "concept": "spectrum-analyzer",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 6683,
+   "depth": "mention",
+   "context_snippet": "I've set up the DSA 815 spectrum analyzer"
+  },
+  {
+   "concept": "electric-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 6948,
+   "depth": "explains",
+   "context_snippet": "we go very close to our the output pin here"
+  },
+  {
+   "concept": "clock-signal",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 7034,
+   "depth": "mention",
+   "context_snippet": "our 25 MHz clock"
+  },
+  {
+   "concept": "harmonic",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 7103,
+   "depth": "mention",
+   "context_snippet": "the clock and all its harmonics"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 27,
+   "char_start": 7372,
+   "depth": "mention",
+   "context_snippet": "move the probe over these loop components up here"
+  },
+  {
+   "concept": "magnetic-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 8210,
+   "depth": "explains",
+   "context_snippet": "the smallest one out of the three I've got so it's got smallest loop area"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 8391,
+   "depth": "mention",
+   "context_snippet": "we can put it over the ADC here"
+  },
+  {
+   "concept": "magnetic-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 8567,
+   "depth": "explains",
+   "context_snippet": "this is going to pick up more but it depends on the loop area and the current flowing"
+  },
+  {
+   "concept": "electric-field-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 9096,
+   "depth": "opinion",
+   "context_snippet": "the E field probe is probably going to be the better choice here"
+  },
+  {
+   "concept": "sampling-rate",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 9527,
+   "depth": "explains",
+   "context_snippet": "this is a 1 gig sample per second scope"
+  },
+  {
+   "concept": "rigol-ds1054z",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 9648,
+   "depth": "mention",
+   "context_snippet": "according to the Rigol"
+  },
+  {
+   "concept": "frequency-span",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 10169,
+   "depth": "explains",
+   "context_snippet": "a 4 MHz uh span on here with a resolution bandwidth of 300 Hz"
+  },
+  {
+   "concept": "resolution-bandwidth",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 10193,
+   "depth": "explains",
+   "context_snippet": "with a resolution bandwidth of 300 Hz"
+  },
+  {
+   "concept": "frequency-span",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10749,
+   "depth": "mention",
+   "context_snippet": "I've changed the span here to 1 MHz total"
+  },
+  {
+   "concept": "frequency-jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 11040,
+   "depth": "explains",
+   "context_snippet": "our issue is a 5 microsecond multiple jitter problem"
+  },
+  {
+   "concept": "sample-clock",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 11709,
+   "depth": "explains",
+   "context_snippet": "you've got your 1 GHz sample clock"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 11756,
+   "depth": "explains",
+   "context_snippet": "because that is the trigger point of the oscilloscope"
+  },
+  {
+   "concept": "trigger-point",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 11764,
+   "depth": "explains",
+   "context_snippet": "that is the trigger point of the oscilloscope"
+  },
+  {
+   "concept": "frequency-jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 12063,
+   "depth": "explains",
+   "context_snippet": "You're only going to see it when you shift the waveform"
+  },
+  {
+   "concept": "frequency-jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 12322,
+   "depth": "explains",
+   "context_snippet": "If this uh main sample clock is jittering, effectively being modulated by 100 kHz"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 12934,
+   "depth": "mention",
+   "context_snippet": "let's upgrade our firmware"
+  },
+  {
+   "concept": "rigol-ds1054z",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 13107,
+   "depth": "explains",
+   "context_snippet": "I've installed the file on the stick that's what you're supposed to do"
+  },
+  {
+   "concept": "firmware-update",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 13266,
+   "depth": "explains",
+   "context_snippet": "We're installing 4.02.04.07. Do you wish to continue?"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 13490,
+   "depth": "explains",
+   "context_snippet": "what we really want to see is a change in that PLL. The PLL coefficients"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 15005,
+   "depth": "explains",
+   "context_snippet": "they've changed that because it's got um a uh spy bus on there"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 15077,
+   "depth": "mention",
+   "context_snippet": "interfaces to the main uh micro"
+  },
+  {
+   "concept": "loop-filter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 15133,
+   "depth": "explains",
+   "context_snippet": "program in those coefficients based on the particular loop filter components"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 64,
+   "char_start": 15478,
+   "depth": "mention",
+   "context_snippet": "there's our 20 MHz signal"
+  },
+  {
+   "concept": "frequency-jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 15757,
+   "depth": "explains",
+   "context_snippet": "And 5 microseconds. And ta-da! Look at that. It that looks pretty good."
+  },
+  {
+   "concept": "timebase",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 66,
+   "char_start": 15930,
+   "depth": "explains",
+   "context_snippet": "the lowest time base is 5 nanoseconds uh per division"
+  },
+  {
+   "concept": "oscilloscope-bandwidth",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 66,
+   "char_start": 16083,
+   "depth": "mention",
+   "context_snippet": "I've only got the 50 MHz model"
+  },
+  {
+   "concept": "infinite-persistence",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 16176,
+   "depth": "mention",
+   "context_snippet": "I've got infinite persistence on there, of course"
+  },
+  {
+   "concept": "spectrum-analyzer",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 16616,
+   "depth": "explains",
+   "context_snippet": "if you can measure it on the uh spectrum analyzer"
+  },
+  {
+   "concept": "temperature-drift",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 71,
+   "char_start": 17254,
+   "depth": "mention",
+   "context_snippet": "let alone over temperature and and everything else that can be involved"
+  },
+  {
+   "concept": "ac-trigger-coupling",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 17648,
+   "depth": "explains",
+   "context_snippet": "this is trigger coupling. As I've done a video on, it is not input AC coupling"
+  },
+  {
+   "concept": "ac-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 17699,
+   "depth": "explains",
+   "context_snippet": "it is not input AC coupling"
+  },
+  {
+   "concept": "trigger-level",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 18082,
+   "depth": "explains",
+   "context_snippet": "I can change our level there"
+  },
+  {
+   "concept": "trigger-level",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18411,
+   "depth": "explains",
+   "context_snippet": "you'd expect it to go off trigger at when it gets to about two and a half"
+  },
+  {
+   "concept": "ac-trigger-coupling",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18690,
+   "depth": "explains",
+   "context_snippet": "our AC trigger coupling is now coming back down"
+  },
+  {
+   "concept": "voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18786,
+   "depth": "mention",
+   "context_snippet": "about the same, 2.6 about 2.5 volts or thereabouts"
+  },
+  {
+   "concept": "ac-trigger-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 18916,
+   "depth": "opinion",
+   "context_snippet": "AC trigger coupling problem also fixed"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19003,
+   "depth": "mention",
+   "context_snippet": "the new PLL signal here"
+  },
+  {
+   "concept": "frequency-offset",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19034,
+   "depth": "explains",
+   "context_snippet": "our delta there is about 68.334 kHz"
+  },
+  {
+   "concept": "frequency-offset",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19103,
+   "depth": "explains",
+   "context_snippet": "invert and then halve that and that gives us an offset round about 7.31 microseconds"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19230,
+   "depth": "opinion",
+   "context_snippet": "I don't see any noticeable jitter in there at all"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19425,
+   "depth": "opinion",
+   "context_snippet": "you can actually see a little bit of fuzziness to the line"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 19502,
+   "depth": "opinion",
+   "context_snippet": "There is a slight bit of jitter there compared to the regular one"
+  },
+  {
+   "concept": "jitter",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 19751,
+   "depth": "opinion",
+   "context_snippet": "the jitter problem on my particular unit is fixed"
+  },
+  {
+   "concept": "clock-signal",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 19819,
+   "depth": "opinion",
+   "context_snippet": "this is a pretty awful clock"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 19932,
+   "depth": "mention",
+   "context_snippet": "I've now got a 500 kHz span here"
+  },
+  {
+   "concept": "frequency-offset",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 19983,
+   "depth": "mention",
+   "context_snippet": "our delta there's a delta on there that's 67.5 kHz there"
+  },
+  {
+   "concept": "carrier-signal",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 20182,
+   "depth": "mention",
+   "context_snippet": "only like 37 dB down from the carrier here"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 20268,
+   "depth": "opinion",
+   "context_snippet": "the output from that PLL is still not great"
+  },
+  {
+   "concept": "rigol",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 20334,
+   "depth": "opinion",
+   "context_snippet": "I think Rigol need to fix that"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 20517,
+   "depth": "explains",
+   "context_snippet": "whether or not they have to actually change their loop component values in hardware"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 20712,
+   "depth": "mention",
+   "context_snippet": "this firmware fixes all existing units"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 20783,
+   "depth": "opinion",
+   "context_snippet": "newer units might actually have different loop value components"
+  },
+  {
+   "concept": "clock-signal",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 20949,
+   "depth": "opinion",
+   "context_snippet": "a proper one should be like it should look"
+  },
+  {
+   "concept": "frequency-multiplier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 89,
+   "char_start": 21218,
+   "depth": "explains",
+   "context_snippet": "I've checked the multiple frequency of that and it seems to be okay"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 21510,
+   "depth": "explains",
+   "context_snippet": "fix any hardware loop component values"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 21621,
+   "depth": "explains",
+   "context_snippet": "weigh it up against the actual performance of the scope"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 91,
+   "char_start": 22062,
+   "depth": "mention",
+   "context_snippet": "if it's a solid fix"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 92,
+   "char_start": 22148,
+   "depth": "opinion",
+   "context_snippet": "even if this clock is still pretty pretty crusty"
+  },
+  {
+   "concept": "statistical-significance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 93,
+   "char_start": 22493,
+   "depth": "explains",
+   "context_snippet": "statistically significant numbers and spreads of units and component spreads"
+  },
+  {
+   "concept": "clock-signal",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 94,
+   "char_start": 22700,
+   "depth": "opinion",
+   "context_snippet": "there's still a chance that it may not fix everyone's unit"
+  },
+  {
+   "concept": "rigol",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 22909,
+   "depth": "opinion",
+   "context_snippet": "Rygo still need to be vigilant on this issue"
+  },
+  {
+   "concept": "clock-signal",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 96,
+   "char_start": 22987,
+   "depth": "opinion",
+   "context_snippet": "I still think they need to fix that clock"
+  },
+  {
+   "concept": "hardware-revision",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 98,
+   "char_start": 23624,
+   "depth": "opinion",
+   "context_snippet": "wouldn't be surprised if they sneak in a little hardware fix"
+  },
+  {
+   "concept": "adc-clock",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 98,
+   "char_start": 23749,
+   "depth": "explains",
+   "context_snippet": "the design engineer should have damn well measured the output of the ADC clock there"
+  },
+  {
+   "concept": "phase-locked-loop",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 23990,
+   "depth": "opinion",
+   "context_snippet": "the PLL locks and everything's you know everything's hunky-dory"
+  },
+  {
+   "concept": "statistical-significance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 24061,
+   "depth": "explains",
+   "context_snippet": "they just didn't test a statistically significant number"
+  },
+  {
+   "concept": "rigol",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 24181,
+   "depth": "opinion",
+   "context_snippet": "big thumbs up to Rigol for engaging the EV blog community"
+  },
+  {
+   "concept": "firmware",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 24302,
+   "depth": "opinion",
+   "context_snippet": "premature on the initial beta firmware release"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 100,
+   "char_start": 24553,
+   "depth": "opinion",
+   "context_snippet": "this is a pretty damn good scope"
+  },
+  {
+   "concept": "temperature-testing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 100,
+   "char_start": 24685,
+   "depth": "mention",
+   "context_snippet": "I could maybe test it across temperature"
+  }
+ ]
+}

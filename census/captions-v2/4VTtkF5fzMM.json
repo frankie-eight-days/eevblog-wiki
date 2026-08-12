@@ -1,0 +1,1888 @@
+{
+ "episode": null,
+ "title": "EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout",
+ "url": "https://www.youtube.com/watch?v=4VTtkF5fzMM",
+ "file": "4VTtkF5fzMM.md",
+ "main_topics": [
+  "ddr3-memory",
+  "pcb-propagation-delay",
+  "trace-length-matching"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "8-bit-computer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 403,
+   "depth": "mention",
+   "context_snippet": "4 8-bit digital computer project"
+  },
+  {
+   "concept": "ttl-logic",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 436,
+   "depth": "mention",
+   "context_snippet": "using TTL logic"
+  },
+  {
+   "concept": "fpga",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 473,
+   "depth": "opinion",
+   "context_snippet": "from limited FPGA experience, I know that meeting timing is critical"
+  },
+  {
+   "concept": "timing-analysis",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 515,
+   "depth": "explains",
+   "context_snippet": "meeting timing is critical for a functioning design"
+  },
+  {
+   "concept": "signal-propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 646,
+   "depth": "explains",
+   "context_snippet": "signal propagation delay through the wires is much faster than through digital logic"
+  },
+  {
+   "concept": "pcb-layout",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 932,
+   "depth": "explains",
+   "context_snippet": "routing a clock signal too far away from registers"
+  },
+  {
+   "concept": "clock-signal",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 932,
+   "depth": "mention",
+   "context_snippet": "routing a clock signal too far away"
+  },
+  {
+   "concept": "register",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 963,
+   "depth": "mention",
+   "context_snippet": "away from registers and other things"
+  },
+  {
+   "concept": "gigatron",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1293,
+   "depth": "mention",
+   "context_snippet": "for example, the Gigatron"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1320,
+   "depth": "explains",
+   "context_snippet": "is propagation delay for digital signals an issue in the design layout"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1791,
+   "depth": "mention",
+   "context_snippet": "start doing these serpentine traces in a design"
+  },
+  {
+   "concept": "trace-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1853,
+   "depth": "explains",
+   "context_snippet": "to match the length of the traces going to memory"
+  },
+  {
+   "concept": "ddr-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 2060,
+   "depth": "opinion",
+   "context_snippet": "It only becomes an issue really at sort of like DDR level speeds"
+  },
+  {
+   "concept": "high-speed-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2285,
+   "depth": "opinion",
+   "context_snippet": "for high-speed design like this"
+  },
+  {
+   "concept": "fpga-timing-analysis-tool",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2480,
+   "depth": "explains",
+   "context_snippet": "there are specific timing analysis tools that you can use inside FPGAs"
+  },
+  {
+   "concept": "ddr3-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2681,
+   "depth": "explains",
+   "context_snippet": "on DDR or double data rate memory"
+  },
+  {
+   "concept": "double-data-rate",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2744,
+   "depth": "explains",
+   "context_snippet": "DDR stands for double data rate"
+  },
+  {
+   "concept": "clock-edge",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2796,
+   "depth": "explains",
+   "context_snippet": "data is actually clocked on both the positive and the negative edge"
+  },
+  {
+   "concept": "pcb-trace",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 3089,
+   "depth": "explains",
+   "context_snippet": "signal propagation through a trace on a PCB is approximately 1 ns"
+  },
+  {
+   "concept": "pcb-propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 3136,
+   "depth": "explains",
+   "context_snippet": "approximately 1 ns of propagation delay for every 15 cm"
+  },
+  {
+   "concept": "trace-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 3628,
+   "depth": "explains",
+   "context_snippet": "the difference with serpentine traces and trace length matching"
+  },
+  {
+   "concept": "pcb-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 3961,
+   "depth": "explains",
+   "context_snippet": "when you're routing out PCBs, you should prioritize high-speed memory buses"
+  },
+  {
+   "concept": "memory-bus",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 4002,
+   "depth": "mention",
+   "context_snippet": "prioritize high-speed memory buses"
+  },
+  {
+   "concept": "ddr-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 4393,
+   "depth": "explains",
+   "context_snippet": "if you look at a 100 MHz DDR memory, which clocks on both cycles"
+  },
+  {
+   "concept": "gigatron",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 5863,
+   "depth": "opinion",
+   "context_snippet": "I think the Gigatron, I think I've tested it up to about 8 MHz"
+  },
+  {
+   "concept": "74hc-logic",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 5990,
+   "depth": "mention",
+   "context_snippet": "change the chips from 74 HC on here"
+  },
+  {
+   "concept": "74f-logic",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 6080,
+   "depth": "explains",
+   "context_snippet": "74F series chips or fast TTL chips, um which reduces the propagation delay"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 23,
+   "char_start": 6405,
+   "depth": "explains",
+   "context_snippet": "simulate this and work out, you know, the worst possible propagation delay"
+  },
+  {
+   "concept": "xilinx-kintex-7",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 6882,
+   "depth": "mention",
+   "context_snippet": "a Xilinx Kintex a 7 FPGA"
+  },
+  {
+   "concept": "arm-cortex-a9",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 6912,
+   "depth": "mention",
+   "context_snippet": "two ARM Cortex A9 processors"
+  },
+  {
+   "concept": "12-layer-pcb",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 7011,
+   "depth": "mention",
+   "context_snippet": "it's a 12-layer board"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 7164,
+   "depth": "explains",
+   "context_snippet": "all of these serpentining traces. They do this to match the trace lengths"
+  },
+  {
+   "concept": "signal-skew",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 7239,
+   "depth": "explains",
+   "context_snippet": "so there's no uh skew or difference between one data pin and another data pin"
+  },
+  {
+   "concept": "controlled-impedance-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 8356,
+   "depth": "explains",
+   "context_snippet": "they're obviously doing like a controlled impedance trace"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 8515,
+   "depth": "opinion",
+   "context_snippet": "signal integrity is another thing entirely"
+  },
+  {
+   "concept": "termination-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8897,
+   "depth": "mention",
+   "context_snippet": "You'll see termination resistors"
+  },
+  {
+   "concept": "signal-termination",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8931,
+   "depth": "mention",
+   "context_snippet": "There's different techniques for termination"
+  },
+  {
+   "concept": "signal-reflection",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 9238,
+   "depth": "explains",
+   "context_snippet": "then you can get reflections"
+  },
+  {
+   "concept": "setup-and-hold-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 9515,
+   "depth": "mention",
+   "context_snippet": "And set up and hold times and all that sort of jazz"
+  },
+  {
+   "concept": "dielectric-constant",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 9793,
+   "depth": "explains",
+   "context_snippet": "because of the dielectric constant of the PCB material"
+  },
+  {
+   "concept": "pcb-material",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 9875,
+   "depth": "mention",
+   "context_snippet": "the fiberglass that it's actually made up with"
+  },
+  {
+   "concept": "fr4",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 9974,
+   "depth": "explains",
+   "context_snippet": "A typical FR4 PCB might be four or four and a half dielectric constant"
+  },
+  {
+   "concept": "sierra-circuits",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 10115,
+   "depth": "mention",
+   "context_snippet": "This is from uh just Sierra Circuits"
+  },
+  {
+   "concept": "pcb-transmission-line-calculation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 10165,
+   "depth": "explains",
+   "context_snippet": "formulas where you can calculate this sort of stuff"
+  },
+  {
+   "concept": "dielectric-constant",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 10399,
+   "depth": "explains",
+   "context_snippet": "it basically comes down to here it is uh 6 in per nanosecond for a typical thing"
+  },
+  {
+   "concept": "pcb-material",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 10574,
+   "depth": "explains",
+   "context_snippet": "standard FR4 can vary quite significantly in in its dielectric uh constant"
+  },
+  {
+   "concept": "fr4",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 10574,
+   "depth": "mention",
+   "context_snippet": "standard FR4"
+  },
+  {
+   "concept": "rogers-corporation",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10710,
+   "depth": "mention",
+   "context_snippet": "Rogers Corporation make very expensive, very schmick PCB materials"
+  },
+  {
+   "concept": "rf-application",
+   "type": "other",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10777,
+   "depth": "mention",
+   "context_snippet": "for RF applications"
+  },
+  {
+   "concept": "ddr4",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10860,
+   "depth": "mention",
+   "context_snippet": "a really high-end DDR4 memory board"
+  },
+  {
+   "concept": "fpga",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10966,
+   "depth": "mention",
+   "context_snippet": "high-speed FPGA"
+  },
+  {
+   "concept": "memory-interconnect",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 11010,
+   "depth": "mention",
+   "context_snippet": "memory interconnects and architecture"
+  },
+  {
+   "concept": "dielectric-constant",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 11174,
+   "depth": "explains",
+   "context_snippet": "you can choose your dielectric constant from 3 to 10"
+  },
+  {
+   "concept": "ptfe-ceramic",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 11304,
+   "depth": "mention",
+   "context_snippet": "PTFE ceramic dielectric constant 3 plus minus .04"
+  },
+  {
+   "concept": "controlled-impedance-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 11408,
+   "depth": "explains",
+   "context_snippet": "you can really do your controlled impedance traces"
+  },
+  {
+   "concept": "pcb-calculator",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 11640,
+   "depth": "mention",
+   "context_snippet": "going to a PCB calculator like this Saturn one"
+  },
+  {
+   "concept": "saturn-pcb-toolkit",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 11671,
+   "depth": "opinion",
+   "context_snippet": "this Saturn one, which I highly recommend is the best out there"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 12021,
+   "depth": "explains",
+   "context_snippet": "it's basically 57.6 picoseconds per centimeter propagation delay"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 12239,
+   "depth": "opinion",
+   "context_snippet": "it's not varying by a huge amount"
+  },
+  {
+   "concept": "design-margin",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 12685,
+   "depth": "explains",
+   "context_snippet": "You should be operating with reasonably good design margins"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 50,
+   "char_start": 12841,
+   "depth": "explains",
+   "context_snippet": "this doesn't change with frequency"
+  },
+  {
+   "concept": "pcb-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 13109,
+   "depth": "explains",
+   "context_snippet": "that can change with how your signal's routed on your PCB"
+  },
+  {
+   "concept": "microstrip",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 13270,
+   "depth": "explains",
+   "context_snippet": "Well, that's microstrip, of course"
+  },
+  {
+   "concept": "controlled-impedance",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 13315,
+   "depth": "explains",
+   "context_snippet": "I've actually tweaked my dielectric constant to give a spot-on almost spot-on 50 ohms"
+  },
+  {
+   "concept": "embedded-microstrip",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 13502,
+   "depth": "explains",
+   "context_snippet": "let's actually change that to microstrip embedded"
+  },
+  {
+   "concept": "stripline",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 13661,
+   "depth": "mention",
+   "context_snippet": "And stripline like that, 59"
+  },
+  {
+   "concept": "field-solver",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 14025,
+   "depth": "mention",
+   "context_snippet": "you can do it field solvers and like real expensive uh software"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 14135,
+   "depth": "mention",
+   "context_snippet": "all these serpentine squiggly traces"
+  },
+  {
+   "concept": "pcb-dielectric-weave",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 58,
+   "char_start": 14626,
+   "depth": "explains",
+   "context_snippet": "Even the weave of the PCB dielectric material"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 59,
+   "char_start": 14929,
+   "depth": "explains",
+   "context_snippet": "you get a different dielectric constant"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 60,
+   "char_start": 15098,
+   "depth": "explains",
+   "context_snippet": "That can change your propagation delay right there and your signal integrity"
+  },
+  {
+   "concept": "gigatron",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 60,
+   "char_start": 15221,
+   "depth": "mention",
+   "context_snippet": "a a discrete design like this Gigatron"
+  },
+  {
+   "concept": "62256-sram",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 61,
+   "char_start": 15286,
+   "depth": "explains",
+   "context_snippet": "the absolute classic 62256 SRAM, which has been around from day dot 32K SRAM chip"
+  },
+  {
+   "concept": "sram-access-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 61,
+   "char_start": 15377,
+   "depth": "explains",
+   "context_snippet": "available in fast access times from uh 45 up to 85 nanoseconds"
+  },
+  {
+   "concept": "routing-constraint",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 16678,
+   "depth": "explains",
+   "context_snippet": "you've got some routing constraints like this"
+  },
+  {
+   "concept": "setup-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 18464,
+   "depth": "explains",
+   "context_snippet": "that's called your setup time"
+  },
+  {
+   "concept": "setup-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 18512,
+   "depth": "explains",
+   "context_snippet": "Your data or your address your input data to your chip has to be set up before that clock edge"
+  },
+  {
+   "concept": "read-cycle",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 18665,
+   "depth": "mention",
+   "context_snippet": "there's nothing in the read cycle for the setup"
+  },
+  {
+   "concept": "write-cycle",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 18714,
+   "depth": "mention",
+   "context_snippet": "but if we go into write"
+  },
+  {
+   "concept": "setup-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 18813,
+   "depth": "explains",
+   "context_snippet": "there is no address requirement"
+  },
+  {
+   "concept": "processor-architecture",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 19188,
+   "depth": "mention",
+   "context_snippet": "your processor architecture, or your FPGA"
+  },
+  {
+   "concept": "clock-edge",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 19356,
+   "depth": "explains",
+   "context_snippet": "it might be latched into the processor on one of the half cycles"
+  },
+  {
+   "concept": "setup-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19520,
+   "depth": "explains",
+   "context_snippet": "you might only have your 25 nanoseconds to get your data across. And then there might be setup time"
+  },
+  {
+   "concept": "hold-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19594,
+   "depth": "mention",
+   "context_snippet": "there might be setup time on that particular uh data"
+  },
+  {
+   "concept": "ttl",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19747,
+   "depth": "mention",
+   "context_snippet": "when you're talking about a TTL computer like this"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19859,
+   "depth": "explains",
+   "context_snippet": "each individual chip, the register in your chip will have its own propagation delay time"
+  },
+  {
+   "concept": "propagation-delay",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 20551,
+   "depth": "explains",
+   "context_snippet": "12 nanoseconds, that's typical, but that's going to vary with voltage, with temperature"
+  },
+  {
+   "concept": "74f",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20829,
+   "depth": "explains",
+   "context_snippet": "you could use a faster logic 74F, for example, it's going to have a faster propagation delay time"
+  },
+  {
+   "concept": "ddr-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 21170,
+   "depth": "mention",
+   "context_snippet": "let's take a quick look at DDR memory"
+  },
+  {
+   "concept": "termination-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 21441,
+   "depth": "explains",
+   "context_snippet": "here's our termination resistors over here, 40.2 ohms"
+  },
+  {
+   "concept": "termination-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 21496,
+   "depth": "explains",
+   "context_snippet": "They go to a specific midpoint termination voltage"
+  },
+  {
+   "concept": "ddr-memory-termination",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 21623,
+   "depth": "explains",
+   "context_snippet": "if you really want to get into termination of DDR memory"
+  },
+  {
+   "concept": "ddr3",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 21848,
+   "depth": "mention",
+   "context_snippet": "this is the memory chip that we're using, DDR3"
+  },
+  {
+   "concept": "micron",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 21918,
+   "depth": "mention",
+   "context_snippet": "It's a Micron jobbie"
+  },
+  {
+   "concept": "ddr3-2133",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 22193,
+   "depth": "explains",
+   "context_snippet": "For the DDR3 2133. Not sure what value we have on this design"
+  },
+  {
+   "concept": "cycle-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 22260,
+   "depth": "explains",
+   "context_snippet": "we're down into the 1-nanosecond class timing here"
+  },
+  {
+   "concept": "skew",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 91,
+   "char_start": 22519,
+   "depth": "explains",
+   "context_snippet": "what we start talking about now is a difference between one signal and another"
+  },
+  {
+   "concept": "length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 93,
+   "char_start": 22869,
+   "depth": "explains",
+   "context_snippet": "That's why you want a length match"
+  },
+  {
+   "concept": "micron",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 96,
+   "char_start": 23568,
+   "depth": "mention",
+   "context_snippet": "Micron have probably got an app note"
+  },
+  {
+   "concept": "point-to-point-simulation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 97,
+   "char_start": 23751,
+   "depth": "mention",
+   "context_snippet": "Point-to-point simulation process"
+  },
+  {
+   "concept": "timing-budget",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 97,
+   "char_start": 23790,
+   "depth": "explains",
+   "context_snippet": "this talks about your timing budget, which is a big thing"
+  },
+  {
+   "concept": "pcb-layout",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 98,
+   "char_start": 23954,
+   "depth": "opinion",
+   "context_snippet": "If you're laying out this board here"
+  },
+  {
+   "concept": "trace-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 24220,
+   "depth": "explains",
+   "context_snippet": "All I would know is that right, let's just match the lengths of the traces"
+  },
+  {
+   "concept": "ddr-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 100,
+   "char_start": 24567,
+   "depth": "explains",
+   "context_snippet": "Match all of the lines to the DDR together"
+  },
+  {
+   "concept": "error-budget",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 101,
+   "char_start": 24743,
+   "depth": "mention",
+   "context_snippet": "looking at analyzing error budgets"
+  },
+  {
+   "concept": "fpga",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 101,
+   "char_start": 24840,
+   "depth": "mention",
+   "context_snippet": "your processor {slash} FPGA"
+  },
+  {
+   "concept": "data-line",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 102,
+   "char_start": 24899,
+   "depth": "mention",
+   "context_snippet": "there's data and strobe lines"
+  },
+  {
+   "concept": "pcb-skew",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 103,
+   "char_start": 25145,
+   "depth": "explains",
+   "context_snippet": "You've got the PCB skew, which is the thing we're interested in"
+  },
+  {
+   "concept": "receiver-skew",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 103,
+   "char_start": 25210,
+   "depth": "explains",
+   "context_snippet": "and the receiver skew as well"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 104,
+   "char_start": 25396,
+   "depth": "mention",
+   "context_snippet": "they talk about the signal integrity process"
+  },
+  {
+   "concept": "ddr",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 104,
+   "char_start": 25621,
+   "depth": "explains",
+   "context_snippet": "because it's it's DDR, double data rate"
+  },
+  {
+   "concept": "setup-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 105,
+   "char_start": 25682,
+   "depth": "explains",
+   "context_snippet": "we've got a setup budget of 1.8 nano 1.875 ns"
+  },
+  {
+   "concept": "hold-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 106,
+   "char_start": 25860,
+   "depth": "explains",
+   "context_snippet": "And then we've got our hold budget of 1875"
+  },
+  {
+   "concept": "path-length-mismatch",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 109,
+   "char_start": 26600,
+   "depth": "explains",
+   "context_snippet": "87 mm difference that we can have, maximum difference, between Let's just say all of our traces"
+  },
+  {
+   "concept": "voltage-margin",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 111,
+   "char_start": 26891,
+   "depth": "mention",
+   "context_snippet": "we won't mention voltage margin and stuff like that"
+  },
+  {
+   "concept": "eye-diagram",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 112,
+   "char_start": 27223,
+   "depth": "explains",
+   "context_snippet": "It's called the eye, and it narrows and narrows and narrows"
+  },
+  {
+   "concept": "intersymbol-interference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27702,
+   "depth": "mention",
+   "context_snippet": "include ISI, Vref noise, path length mismatch"
+  },
+  {
+   "concept": "vref-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27702,
+   "depth": "mention",
+   "context_snippet": "include ISI, Vref noise, path length mismatch"
+  },
+  {
+   "concept": "crosstalk",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27727,
+   "depth": "mention",
+   "context_snippet": "path length mismatch, which is the main thing that we're talking about, crosstalk"
+  },
+  {
+   "concept": "input-capacitance-mismatch",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27810,
+   "depth": "mention",
+   "context_snippet": "input capacitance mismatch"
+  },
+  {
+   "concept": "termination-resistor-tolerance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27838,
+   "depth": "mention",
+   "context_snippet": "termination resistor tolerance"
+  },
+  {
+   "concept": "intersymbol-interference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 115,
+   "char_start": 28053,
+   "depth": "explains",
+   "context_snippet": "First of all, we've got the ISI, which is intersymbol interference"
+  },
+  {
+   "concept": "pcb-reflection",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 116,
+   "char_start": 28268,
+   "depth": "explains",
+   "context_snippet": "due to reflections on your PCB, you might have one data interfering the previous data"
+  },
+  {
+   "concept": "overshoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 116,
+   "char_start": 28397,
+   "depth": "mention",
+   "context_snippet": "you've got some overshoot, undershoot, some reflections coming back"
+  },
+  {
+   "concept": "undershoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 116,
+   "char_start": 28397,
+   "depth": "mention",
+   "context_snippet": "you've got some overshoot, undershoot, some reflections coming back"
+  },
+  {
+   "concept": "symbol-interference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 28595,
+   "depth": "explains",
+   "context_snippet": "some symbols, some the combination of data may interfere with another combination of data"
+  },
+  {
+   "concept": "termination",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 28716,
+   "depth": "explains",
+   "context_snippet": "depending on termination"
+  },
+  {
+   "concept": "symbol-interference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 118,
+   "char_start": 28891,
+   "depth": "opinion",
+   "context_snippet": "Anyway, into symbol interference."
+  },
+  {
+   "concept": "bus",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 28976,
+   "depth": "explains",
+   "context_snippet": "It can cause by the bus running faster than it can settle"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 29114,
+   "depth": "explains",
+   "context_snippet": "so that your data doesn't interfere with from the previous data due to signal integrity issues"
+  },
+  {
+   "concept": "crosstalk",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 29277,
+   "depth": "explains",
+   "context_snippet": "you got crosstalk between your signals because your signals are right next to each other"
+  },
+  {
+   "concept": "capacitive-coupling",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 29378,
+   "depth": "explains",
+   "context_snippet": "they're talking and they're coupling"
+  },
+  {
+   "concept": "parallel-trace-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 121,
+   "char_start": 29511,
+   "depth": "explains",
+   "context_snippet": "when you have traces running parallel like that with no ground shield in between them"
+  },
+  {
+   "concept": "capacitive-coupling",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 121,
+   "char_start": 29598,
+   "depth": "explains",
+   "context_snippet": "you get capacitive coupling"
+  },
+  {
+   "concept": "crosstalk",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29644,
+   "depth": "explains",
+   "context_snippet": "If traces just cross like that, the crosstalk's very little"
+  },
+  {
+   "concept": "mutual-capacitance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29704,
+   "depth": "explains",
+   "context_snippet": "because there's little mutual capacitance between them"
+  },
+  {
+   "concept": "crosstalk",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29764,
+   "depth": "explains",
+   "context_snippet": "when you're running buses like this all the way up, then the crosstalk can be very serious"
+  },
+  {
+   "concept": "differential-mode",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 29877,
+   "depth": "mention",
+   "context_snippet": "we won't go into differential mode, common mode"
+  },
+  {
+   "concept": "common-mode",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 29894,
+   "depth": "mention",
+   "context_snippet": "differential mode, common mode"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 29926,
+   "depth": "mention",
+   "context_snippet": "We get into signal integrity."
+  },
+  {
+   "concept": "coupled-circuit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 29965,
+   "depth": "mention",
+   "context_snippet": "And coupled circuits is all just part of that."
+  },
+  {
+   "concept": "vref-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 30084,
+   "depth": "explains",
+   "context_snippet": "VREF noise, that's a thing."
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 30123,
+   "depth": "explains",
+   "context_snippet": "the termination the volt is terminated to a mid-rail voltage reference"
+  },
+  {
+   "concept": "ddr-termination-chip",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 30216,
+   "depth": "explains",
+   "context_snippet": "specific voltage reference DDR termination chips"
+  },
+  {
+   "concept": "pcb-skew",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 125,
+   "char_start": 30410,
+   "depth": "explains",
+   "context_snippet": "the amount of skew that you can have on your PCB"
+  },
+  {
+   "concept": "vref-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 126,
+   "char_start": 30525,
+   "depth": "explains",
+   "context_snippet": "with a 0.5 V per second edge rate and a 50 mV VREF noise"
+  },
+  {
+   "concept": "ddr-sdram",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 126,
+   "char_start": 30645,
+   "depth": "explains",
+   "context_snippet": "important aspect of DDR SDRAM design"
+  },
+  {
+   "concept": "trace-inductance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 127,
+   "char_start": 30727,
+   "depth": "explains",
+   "context_snippet": "it should be as wide as possible to reduce inductance on the line"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 127,
+   "char_start": 30806,
+   "depth": "opinion",
+   "context_snippet": "here's where signal integrity does matter"
+  },
+  {
+   "concept": "vref-decoupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 128,
+   "char_start": 30909,
+   "depth": "explains",
+   "context_snippet": "I've done DDR designs where I've decoupled and inductor isolated the V ref"
+  },
+  {
+   "concept": "vref-isolation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 128,
+   "char_start": 31101,
+   "depth": "explains",
+   "context_snippet": "you typically want to keep your V ref isolated from crosstalk"
+  },
+  {
+   "concept": "crosstalk",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 129,
+   "char_start": 31252,
+   "depth": "explains",
+   "context_snippet": "crosstalk between your signals and your voltage reference"
+  },
+  {
+   "concept": "timing-budget",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 129,
+   "char_start": 31346,
+   "depth": "explains",
+   "context_snippet": "this has a large impact on your total timing budget"
+  },
+  {
+   "concept": "input-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 130,
+   "char_start": 31517,
+   "depth": "explains",
+   "context_snippet": "Then you've got input capacitance variation."
+  },
+  {
+   "concept": "odt",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 131,
+   "char_start": 31714,
+   "depth": "mention",
+   "context_snippet": "all this ODT sensitivity definition"
+  },
+  {
+   "concept": "io-calibration",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 131,
+   "char_start": 31750,
+   "depth": "mention",
+   "context_snippet": "to do with the IO calibration"
+  },
+  {
+   "concept": "input-output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 132,
+   "char_start": 31877,
+   "depth": "explains",
+   "context_snippet": "Input-output capacitance. Ta-da! But look at this, the variation 1.4 to 2.5."
+  },
+  {
+   "concept": "timing-budget",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 133,
+   "char_start": 32166,
+   "depth": "mention",
+   "context_snippet": "Here's our timing budget"
+  },
+  {
+   "concept": "transmitter-skew",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 134,
+   "char_start": 32240,
+   "depth": "mention",
+   "context_snippet": "this was a transmitter skew"
+  },
+  {
+   "concept": "receiver-skew",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 134,
+   "char_start": 32269,
+   "depth": "mention",
+   "context_snippet": "the receiver skew"
+  },
+  {
+   "concept": "pcb-skew",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 134,
+   "char_start": 32351,
+   "depth": "explains",
+   "context_snippet": "our budget for our total PCB skew"
+  },
+  {
+   "concept": "path-length-mismatch",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 135,
+   "char_start": 32444,
+   "depth": "explains",
+   "context_snippet": "the path length mismatch, that's all we got"
+  },
+  {
+   "concept": "crosstalk",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 136,
+   "char_start": 32659,
+   "depth": "explains",
+   "context_snippet": "when you take out crosstalk and and intersymbol interference and V ref noise"
+  },
+  {
+   "concept": "intersymbol-interference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 136,
+   "char_start": 32695,
+   "depth": "explains",
+   "context_snippet": "intersymbol interference and V ref noise"
+  },
+  {
+   "concept": "vref-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 136,
+   "char_start": 32720,
+   "depth": "explains",
+   "context_snippet": "and V ref noise, it it doesn't leave you much budget"
+  },
+  {
+   "concept": "pcb-trace-length",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 137,
+   "char_start": 32862,
+   "depth": "explains",
+   "context_snippet": "average PCB at, you know, the our rule of thumb, 150 uh millimeters"
+  },
+  {
+   "concept": "pcb-weave",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 138,
+   "char_start": 33205,
+   "depth": "mention",
+   "context_snippet": "the PCB weave uh problems"
+  },
+  {
+   "concept": "dielectric-constant",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 138,
+   "char_start": 33232,
+   "depth": "explains",
+   "context_snippet": "variation in the dielectric constant of the PCB material"
+  },
+  {
+   "concept": "trace-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 142,
+   "char_start": 33969,
+   "depth": "explains",
+   "context_snippet": "when you drag your if you differential pair or your single uh pair to match the lengths"
+  },
+  {
+   "concept": "kicad",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 34162,
+   "depth": "mention",
+   "context_snippet": "I believe KiCad, although I haven't actually used it"
+  },
+  {
+   "concept": "trace-length-tuning",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 34268,
+   "depth": "explains",
+   "context_snippet": "tune track length, tune uh differential pair length"
+  },
+  {
+   "concept": "differential-pair-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 34287,
+   "depth": "explains",
+   "context_snippet": "tune uh differential pair length, and things like that"
+  },
+  {
+   "concept": "kicad",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 144,
+   "char_start": 34465,
+   "depth": "opinion",
+   "context_snippet": "I haven't used this in KiCad."
+  },
+  {
+   "concept": "pcb-design-constraint",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 145,
+   "char_start": 34594,
+   "depth": "explains",
+   "context_snippet": "you may as well set fairly precise constraints"
+  },
+  {
+   "concept": "pcb-skew",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 147,
+   "char_start": 34940,
+   "depth": "explains",
+   "context_snippet": "lay out your board so that you've got no skew between the signals"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 147,
+   "char_start": 35086,
+   "depth": "explains",
+   "context_snippet": "all of these little zigzaggy serpentine traces like this on boards is because they're trying to match the lengths"
+  },
+  {
+   "concept": "ddr",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 148,
+   "char_start": 35304,
+   "depth": "mention",
+   "context_snippet": "this is actually a differential pair"
+  },
+  {
+   "concept": "differential-pair",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 148,
+   "char_start": 35304,
+   "depth": "explains",
+   "context_snippet": "this is actually a differential pair. Okay, so this is a the positive and negative"
+  },
+  {
+   "concept": "dqs",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 149,
+   "char_start": 35421,
+   "depth": "mention",
+   "context_snippet": "The DQS3 negative and positive"
+  },
+  {
+   "concept": "inter-pair-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 150,
+   "char_start": 35734,
+   "depth": "explains",
+   "context_snippet": "you match those lengths between the pairs"
+  },
+  {
+   "concept": "intra-pair-skew",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 151,
+   "char_start": 35969,
+   "depth": "explains",
+   "context_snippet": "you're matching the difference between uh D3 positive and negative"
+  },
+  {
+   "concept": "trace-length-tuning",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 152,
+   "char_start": 36090,
+   "depth": "explains",
+   "context_snippet": "your tool your automated tool can actually do this"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 152,
+   "char_start": 36217,
+   "depth": "explains",
+   "context_snippet": "manually add in the squiggles"
+  },
+  {
+   "concept": "pcb-layout-tool",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 153,
+   "char_start": 36295,
+   "depth": "explains",
+   "context_snippet": "why these tools are valuable in a PCB when you're laying out DDR memory"
+  },
+  {
+   "concept": "push-and-shove-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 154,
+   "char_start": 36428,
+   "depth": "explains",
+   "context_snippet": "Can do the push and shove."
+  },
+  {
+   "concept": "trace-length-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 154,
+   "char_start": 36497,
+   "depth": "explains",
+   "context_snippet": "I want this maximum difference between your pairs like this"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 155,
+   "char_start": 36612,
+   "depth": "mention",
+   "context_snippet": "There's another little kink out here as well"
+  },
+  {
+   "concept": "auto-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36826,
+   "depth": "opinion",
+   "context_snippet": "but don't auto route. Manually route."
+  },
+  {
+   "concept": "manual-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36848,
+   "depth": "opinion",
+   "context_snippet": "Manually route"
+  },
+  {
+   "concept": "serpentine-trace",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36892,
+   "depth": "explains",
+   "context_snippet": "these two different types of serpentine traces like this"
+  },
+  {
+   "concept": "differential-pair",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36950,
+   "depth": "explains",
+   "context_snippet": "both within a differential pair and between differential pairs"
+  },
+  {
+   "concept": "single-ended-signal",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37016,
+   "depth": "mention",
+   "context_snippet": "between single-ended traces"
+  },
+  {
+   "concept": "ddr-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37078,
+   "depth": "mention",
+   "context_snippet": "whatever it is on your memory"
+  },
+  {
+   "concept": "timing-budget",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 37264,
+   "depth": "opinion",
+   "context_snippet": "timing budgets are critical"
+  },
+  {
+   "concept": "ddr-memory",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 37380,
+   "depth": "mention",
+   "context_snippet": "laying out a board with your DDR memory"
+  },
+  {
+   "concept": "micron",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 37506,
+   "depth": "mention",
+   "context_snippet": "Micron's told you so"
+  },
+  {
+   "concept": "timing-constraint",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 159,
+   "char_start": 37696,
+   "depth": "explains",
+   "context_snippet": "I would just set those constraints to a millimeter or something like that"
+  },
+  {
+   "concept": "timing-constraint",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 160,
+   "char_start": 37810,
+   "depth": "opinion",
+   "context_snippet": "Don't set it to like 0.01 mm"
+  },
+  {
+   "concept": "timing-constraint",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 161,
+   "char_start": 38001,
+   "depth": "opinion",
+   "context_snippet": "Just do that. Know it's critical. Put it in"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 161,
+   "char_start": 38065,
+   "depth": "mention",
+   "context_snippet": "other signal integrity things to worry about"
+  },
+  {
+   "concept": "split-return-path",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 162,
+   "char_start": 38189,
+   "depth": "explains",
+   "context_snippet": "They talk about split return paths here"
+  },
+  {
+   "concept": "ground-plane",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 162,
+   "char_start": 38253,
+   "depth": "explains",
+   "context_snippet": "never split your ground planes"
+  },
+  {
+   "concept": "pcb-routing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 162,
+   "char_start": 38369,
+   "depth": "explains",
+   "context_snippet": "a routed out part of your board"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 162,
+   "char_start": 38475,
+   "depth": "explains",
+   "context_snippet": "it's going to take a longer path"
+  },
+  {
+   "concept": "timing-budget",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 163,
+   "char_start": 38573,
+   "depth": "opinion",
+   "context_snippet": "You've ruined your timing budget"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 163,
+   "char_start": 38607,
+   "depth": "opinion",
+   "context_snippet": "You've ruined your signal integrity"
+  },
+  {
+   "concept": "signal-integrity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 164,
+   "char_start": 38858,
+   "depth": "mention",
+   "context_snippet": "whole video series of just on signal integrity"
+  },
+  {
+   "concept": "ddr-timing-budget",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 164,
+   "char_start": 38920,
+   "depth": "mention",
+   "context_snippet": "analyzing DDR timing budgets"
+  }
+ ]
+}

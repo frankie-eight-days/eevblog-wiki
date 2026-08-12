@@ -3,173 +3,197 @@ video_id: 5YjS4DHKlQU
 title: Tektronix 5 Series Oscilloscope
 url: https://www.youtube.com/watch?v=5YjS4DHKlQU
 source: youtube-asr
-timestamps: {"0": 1, "1": 16, "2": 30, "3": 42, "4": 56, "5": 72, "6": 83, "7": 101, "8": 115, "9": 128, "10": 143, "11": 164, "12": 175, "13": 190, "14": 209, "15": 223, "16": 243, "17": 261, "18": 277, "19": 297, "20": 309, "21": 323, "22": 335, "23": 348, "24": 364, "25": 380, "26": 396, "27": 416, "28": 434, "29": 454, "30": 467, "31": 481, "32": 495, "33": 506, "34": 519, "35": 541, "36": 554, "37": 563, "38": 576, "39": 595, "40": 610, "41": 623, "42": 637, "43": 652, "44": 666, "45": 680, "46": 694, "47": 704, "48": 716, "49": 731, "50": 742, "51": 757, "52": 773, "53": 788, "54": 806, "55": 825, "56": 841, "57": 857, "58": 871, "59": 885, "60": 900, "61": 919, "62": 938, "63": 952, "64": 967, "65": 981, "66": 993, "67": 1007, "68": 1021, "69": 1036, "70": 1054, "71": 1077, "72": 1096, "73": 1113, "74": 1128, "75": 1144, "76": 1155, "77": 1165, "78": 1180, "79": 1195, "80": 1207, "81": 1221, "82": 1235, "83": 1250}
+timestamps: {"0": 1, "1": 13, "2": 28, "3": 50, "4": 60, "5": 73, "6": 83, "7": 96, "8": 108, "9": 121, "10": 132, "11": 147, "12": 166, "13": 175, "14": 187, "15": 202, "16": 214, "17": 230, "18": 243, "19": 263, "20": 277, "21": 295, "22": 309, "23": 321, "24": 340, "25": 353, "26": 369, "27": 380, "28": 392, "29": 410, "30": 426, "31": 434, "32": 456, "33": 467, "34": 479, "35": 493, "36": 506, "37": 516, "38": 531, "39": 548, "40": 556, "41": 567, "42": 576, "43": 590, "44": 602, "45": 612, "46": 623, "47": 637, "48": 649, "49": 665, "50": 675, "51": 685, "52": 694, "53": 707, "54": 716, "55": 733, "56": 742, "57": 753, "58": 765, "59": 774, "60": 788, "61": 803, "62": 820, "63": 839, "64": 857, "65": 869, "66": 880, "67": 888, "68": 908, "69": 924, "70": 938, "71": 950, "72": 964, "73": 974, "74": 982, "75": 993, "76": 1005, "77": 1015, "78": 1030, "79": 1040, "80": 1051, "81": 1071, "82": 1090, "83": 1107, "84": 1123, "85": 1135, "86": 1146, "87": 1155, "88": 1173, "89": 1188, "90": 1198, "91": 1204, "92": 1216, "93": 1227, "94": 1239, "95": 1251}
 ---
 
-**Dave Jones:** I'm at the Tektronix stand and I finally get to have a look at the new 5 series um and it is it's big. Um it kind of looks like an old sewing machine box or something like that. It really is um
+**Dave Jones:** I'm at the Tektronix stand and I finally get to have a look at the new 5 series um and it is it's big. Um it kind of looks like an old sewing machine box or something like that.
 
-**Dave Jones:** it's it's sexy is not the word you would use to describe this. It is very large. Um you can see it compared to the 4000 which is not a small scope. You can see the two of them there. It is
+**Dave Jones:** It really is um it's it's sexy is not the word you would use to describe this. It is very large. Um you can see it compared to the 4000 which is not a small scope.
 
-**Dave Jones:** it is very chunky like especially on the bottom part of this here. I mean you know there's a lot of a lot of space down here but of course they got the new mix front end which has the
+**Dave Jones:** You can see the two of them there. It is it is very chunky like especially on the bottom part of this here. I mean you know there's a lot of a lot of space down here but of course they got the new mix front end which has the which has your regular tech probes but you can now plug in the uh the digital Whoops.
 
-**Dave Jones:** which has your regular tech probes but you can now plug in the uh the digital Whoops. I hope I'm going to lose it. I'm going to Oh, I got to push it. There you go. Whoops. There you go.
+**Dave Jones:** I hope I'm going to lose it. I'm going to Oh, I got to push it. There you go. Whoops. There you go. Dummy. So that's the new uh interface on that.
 
-**Dave Jones:** Dummy. So that's the new uh interface on that. If you haven't seen it. There you go. But of course the problem is is that you have to sacrifice your analog channels. So if you get the four or the six channel one It's four four
+**Dave Jones:** If you haven't seen it. There you go. But of course the problem is is that you have to sacrifice your analog channels. So if you get the four or the six channel one It's four four channels as well.
 
-**Dave Jones:** channels as well. Four, six, and eight. You can buy a four channel. Four, six, and eight. So if you only buy the four channel one and you want you know you see 16 channels of digital you've only got a two channel analog
+**Dave Jones:** Four, six, and eight. You can buy a four channel. Four, six, and eight. So if you only buy the four channel one and you want you know you see 16 channels of digital you've only got a two channel analog scope now.
 
-**Dave Jones:** scope now. So that's probably the main disadvantage um of this thing. Anyway, what we're seeing on the screen at the moment is a uh a the white waveform there is a reference for the 8-bit. Uh we're just looking at the 16-bit converter at the
+**Dave Jones:** So that's probably the main disadvantage um of this thing. Anyway, what we're seeing on the screen at the moment is a uh a the white waveform there is a reference for the 8-bit.
 
-**Dave Jones:** moment. So here we go. If we hit the high res button here there we go. So it's now in 8-bit converter mode. You might be able to see that down the bottom. Where is it? It's somewhere down here.
+**Dave Jones:** Uh we're just looking at the 16-bit converter at the moment. So here we go. If we hit the high res button here there we go. So it's now in 8-bit converter mode.
 
-**Dave Jones:** Eight eight bits. There you go. So it's sampling eight bits and that's what we get and put in the 12-bit converter. Apparently, it does uh do 12 bits all the way up to 1 gig, so they claim. But, um yeah, I I don't know
+**Dave Jones:** You might be able to see that down the bottom. Where is it? It's somewhere down here. Eight eight bits. There you go. So it's sampling eight bits and that's what we get and put in the 12-bit converter.
 
-**Dave Jones:** the ins and outs of it and especially the effective number of bits and all that uh sort of jazz. And we can uh pinch and zoom and all that sort of jazz. So, there you go. And we've got the digital
+**Dave Jones:** Apparently, it does uh do 12 bits all the way up to 1 gig, so they claim. But, um yeah, I I don't know the ins and outs of it and especially the effective number of bits and all that uh sort of jazz.
 
-**Dave Jones:** signals uh superimposed on there. So, if we stop that. Where's the horizontal time base? Here we go. Oh. Oh, no. Oh, horiz- horizontal's down the bottom. I Now, okay. No. No, that's that's wrong. See, my my instinct told me
+**Dave Jones:** And we can uh pinch and zoom and all that sort of jazz. So, there you go. And we've got the digital signals uh superimposed on there. So, if we stop that.
 
-**Dave Jones:** to reach up and you know, that the vertical should be on the bottom. That's what my instinct told me. But, it's so I went down, so I went to like the higher up one for my horizontal and it's not
+**Dave Jones:** Where's the horizontal time base? Here we go. Oh. Oh, no. Oh, horiz- horizontal's down the bottom. I Now, okay. No. No, that's that's wrong. See, my my instinct told me to reach up and you know, that the vertical should be on the bottom.
 
-**Dave Jones:** the vertical's above that. So, I don't know why they did that. I I know, I I don't agree. Anyway, we've got a tiny little horizontal button. There you go. What's the sample memory? How much sample memory? 6.25 gigabytes.
+**Dave Jones:** That's what my instinct told me. But, it's so I went down, so I went to like the higher up one for my horizontal and it's not the vertical's above that.
 
-**Dave Jones:** No, there's no sample memory, the size of the memory. 62.5 62.5 meg. Right, 62.5 meg samples. And uh anyway, so that's the 12-bit That's the high res. We'll run that again and oh. Oh, no, cuz uh that's right, we haven't
+**Dave Jones:** So, I don't know why they did that. I I know, I I don't agree. Anyway, we've got a tiny little horizontal button. There you go. What's the sample memory?
 
-**Dave Jones:** zoomed in. So, if we zoom in like we can see that it's eight bits sampling at the moment. Of course, it looks nice and smooth. If you zoom in, you can see that it's all it's all jaggedy like that. And we put
+**Dave Jones:** How much sample memory? 6.25 gigabytes. No, there's no sample memory, the size of the memory. 62.5 62.5 meg. Right, 62.5 meg samples. And uh anyway, so that's the 12-bit That's the high res.
 
-**Dave Jones:** our 12-bit converter on and everything's hunky-dory, sine x sine x interpolation, I'm sure. And uh Yeah, it's big and boxy. It's really is. How much does it weigh? Hang on. Hang on. Oh my god. I can I can't I'm going to Hang on.
+**Dave Jones:** We'll run that again and oh. Oh, no, cuz uh that's right, we haven't zoomed in. So, if we zoom in like we can see that it's eight bits sampling at the moment.
 
-**Dave Jones:** Hang on. Let's Let's have a look. See if I can do it. See if I can do it. Ready?
+**Dave Jones:** Of course, it looks nice and smooth. If you zoom in, you can see that it's all it's all jaggedy like that. And we put our 12-bit converter on and everything's hunky-dory, sine x sine x interpolation, I'm sure.
 
-**Dave Jones:** That is ridiculous. I can barely do that. That is nuts. That's got to weigh That's got to be 12 13 kilos. About about 12 kilos, yeah. I called it. It is about 12 12 and 1/2 or something. So,
+**Dave Jones:** And uh Yeah, it's big and boxy. It's really is. How much does it weigh? Hang on. Hang on. Oh my god. I can I can't I'm going to Hang on.
 
-**Dave Jones:** it's a big beast. Wow. Although, the width-wise width-wise, it's probably not any wider than Yeah, it's it's the same width as the uh 4000, but it's I So, I guess height-wise, it's not, you know, it's not a problem. It is thicker on the uh
+**Dave Jones:** Hang on. Let's Let's have a look. See if I can do it. See if I can do it. Ready? That is ridiculous. I can barely do that. That is nuts.
 
-**Dave Jones:** uh back, of course. But, it's a big beast. I mean, you know, it's designed for huge performance. It's not I wouldn't call an everyday use scope, you know, you wouldn't use it for just all your basic stuff because the
+**Dave Jones:** That's got to weigh That's got to be 12 13 kilos. About about 12 kilos, yeah. I called it. It is about 12 12 and 1/2 or something. So, it's a big beast.
 
-**Dave Jones:** interface just isn't quite as nice. Some people like the pinch and stuff. Some people like all the uh the menu-based system, but we do have our horizontal and vertical. We've got all that the channels here. Uh Oh, we physically don't have the
+**Dave Jones:** Wow. Although, the width-wise width-wise, it's probably not any wider than Yeah, it's it's the same width as the uh 4000, but it's I So, I guess height-wise, it's not, you know, it's not a problem.
 
-**Dave Jones:** button. That's for channel 1 and Buttons there. The buttons there. Seven and eight is there. I can feel it. Um Yeah.
+**Dave Jones:** It is thicker on the uh uh back, of course. But, it's a big beast. I mean, you know, it's designed for huge performance. It's not I wouldn't call an everyday use scope, you know, you wouldn't use it for just all your basic stuff because the interface just isn't quite as nice.
 
-**Dave Jones:** So, we've got our uh reference uh you know, so we've got our reference waveform there, math, bus, everything's there. They're They're grouped pretty well. Don't mind that. Then, we of course you've got your uh navigation um stuff, which is Yeah, there we go. We
+**Dave Jones:** Some people like the pinch and stuff. Some people like all the uh the menu-based system, but we do have our horizontal and vertical. We've got all that the channels here.
 
-**Dave Jones:** can move our nav window up the top there, and then we can expand and do that. That that that actually feels feels rather that that feels quite nice. Don't mind that at all. Let's run that baby again. Move it up. No, we've got to go back to
+**Dave Jones:** Uh Oh, we physically don't have the button. That's for channel 1 and Buttons there. The buttons there. Seven and eight is there. I can feel it. Um Yeah. So, we've got our uh reference uh you know, so we've got our reference waveform there, math, bus, everything's there.
 
-**Dave Jones:** channel one, and of course it color codes, um, the color that you're actually on. Kind of looks green. It's supposed to be yellow, but it's kind of like yeah, it's it's kind of that that color doesn't that yellow, I swear.
+**Dave Jones:** They're They're grouped pretty well. Don't mind that. Then, we of course you've got your uh navigation um stuff, which is Yeah, there we go. We can move our nav window up the top there, and then we can expand and do that.
 
-**Dave Jones:** I swear, I'm going to nitpick. I'm going to nitpick, but that's almost green to me. That's almost green. It's not the same yellow. I'm totally nitpicking, but I swear they're they're they're not using the same LEDs. Ah. They're not I'm totally nitpicking.
+**Dave Jones:** That that that actually feels feels rather that that feels quite nice. Don't mind that at all. Let's run that baby again. Move it up. No, we've got to go back to channel one, and of course it color codes, um, the color that you're actually on.
 
-**Dave Jones:** Um. Oh. I can't Oh. Oh, there we go. I was already at the maximum that I can. Yeah, right. So, uh, let's No, no, it's all right. I'm just going to move the position like that. Look, it stops sampling.
+**Dave Jones:** Kind of looks green. It's supposed to be yellow, but it's kind of like yeah, it's it's kind of that that color doesn't that yellow, I swear. I swear, I'm going to nitpick.
 
-**Dave Jones:** It's sampling's almost stopped when I move that. Not quite. Not quite, but it is it has drastically slowed down, that's for sure. When I do the horizontal, what about when I do the vertical? Yeah, once again, you can see it is updating, but it's
+**Dave Jones:** I'm going to nitpick, but that's almost green to me. That's almost green. It's not the same yellow. I'm totally nitpicking, but I swear they're they're they're not using the same LEDs.
 
-**Dave Jones:** updating much slower as I move that. So, obviously, the acquisition, uh, processing, um, the the display and user interface, uh, uh, engine is, um, the same one as what they're using for the acquisition, cuz it's slowing down or they you know, they
+**Dave Jones:** Ah. They're not I'm totally nitpicking. Um. Oh. I can't Oh. Oh, there we go. I was already at the maximum that I can. Yeah, right. So, uh, let's No, no, it's all right.
 
-**Dave Jones:** can't dump it to memory at the same time. Can't update the screen. Maybe it is like sampling in the background properly, but that is, uh, Yeah, it's it's it's It isn't slow. It feels responsive, but it does actually
+**Dave Jones:** I'm just going to move the position like that. Look, it stops sampling. It's sampling's almost stopped when I move that. Not quite. Not quite, but it is it has drastically slowed down, that's for sure.
 
-**Dave Jones:** uh slow down when you do that. So, you know, it's most scopes all do that to some uh degree. So, it's all right, but uh yeah, then we got cursors up here. Run stop. What do we got? Run stop, single
+**Dave Jones:** When I do the horizontal, what about when I do the vertical? Yeah, once again, you can see it is updating, but it's updating much slower as I move that.
 
-**Dave Jones:** sequence, high res mode. I like that that's a high res as a separate button. That's very nice. Um fast acquisition mode. Does that go Yeah, goes into the old 2K I reckon we got our 2K of sample memory again. Old school uh tech. I I
+**Dave Jones:** So, obviously, the acquisition, uh, processing, um, the the display and user interface, uh, uh, engine is, um, the same one as what they're using for the acquisition, cuz it's slowing down or they you know, they can't dump it to memory at the same time.
 
-**Dave Jones:** reckon they're going They're jumping back to that. Does it tell us? Uh 12-bit. Where does it tell us the number of uh samples?
+**Dave Jones:** Can't update the screen. Maybe it is like sampling in the background properly, but that is, uh, Yeah, it's it's it's It isn't slow. It feels responsive, but it does actually uh slow down when you do that.
 
-**Dave Jones:** No, that's that's acquisitions per second. Where does it tell us the size of the sample memory? Oh, there we go. Is that it? Uh 12.12.5 K points. There it is. So, that's actually more than the couple of K in
+**Dave Jones:** So, you know, it's most scopes all do that to some uh degree. So, it's all right, but uh yeah, then we got cursors up here. Run stop. What do we got?
 
-**Dave Jones:** the previous uh gens. So, that's all right. They've improved improved it in the fast acq mode. No worries. And uh trigger we got force. We got slope, plus, minus, auto, normal mode. Yeah. And then we got the silly little drop-down
+**Dave Jones:** Run stop, single sequence, high res mode. I like that that's a high res as a separate button. That's very nice. Um fast acquisition mode. Does that go Yeah, goes into the old 2K I reckon we got our 2K of sample memory again.
 
-**Dave Jones:** menus. You can use it with a mouse, of course. Um but, you know, the touchscreen runt, trigger, logic, sample and hold, rise and fall, blah blah blah blah blah. Um nice. But, you know, you you either like that
+**Dave Jones:** Old school uh tech. I I reckon they're going They're jumping back to that. Does it tell us? Uh 12-bit. Where does it tell us the number of uh samples?
 
-**Dave Jones:** or you don't. But, most of the stuff, you know, most of your basic stuff you can do from your front panel. So, it's pretty good. I guess they've done well to sort of keep it the same width as the
+**Dave Jones:** No, that's that's acquisitions per second. Where does it tell us the size of the sample memory? Oh, there we go. Is that it? Uh 12.12.5 K points. There it is.
 
-**Dave Jones:** previous scopes, but get a massive screen. What's the resolution of the screen? Uh 1920 by 1080. Oh, so it's a full HD screen. So, yeah, full HD screen. It does look like a full HD screen. So, it is very impressive,
+**Dave Jones:** So, that's actually more than the couple of K in the previous uh gens. So, that's all right. They've improved improved it in the fast acq mode. No worries. And uh trigger we got force.
 
-**Dave Jones:** very bright. Let me the angle. Hang on. Screen angle. Go down like this, and it's uh it's not too terrific, although we we are getting glare, but trust me, it's not it's it it's okay. It's all right. I'm going to call that
+**Dave Jones:** We got slope, plus, minus, auto, normal mode. Yeah. And then we got the silly little drop-down menus. You can use it with a mouse, of course. Um but, you know, the touchscreen runt, trigger, logic, sample and hold, rise and fall, blah blah blah blah blah.
 
-**Dave Jones:** pretty decent. Go to the side. Yeah, it's a it's a pretty nice screen. It's pretty nice, I got to admit. It's nice and bright. It's big, it's full HD. Yeah, you're getting your money's worth there, I think. No worries.
+**Dave Jones:** Um nice. But, you know, you you either like that or you don't. But, most of the stuff, you know, most of your basic stuff you can do from your front panel.
 
-**Dave Jones:** And I like that you can just bugger off the touch. There we go, touch off. So, if you're a screen poker like I am then uh you know, it doesn't upset it upset the apple cart. So, that's nice, and
+**Dave Jones:** So, it's pretty good. I guess they've done well to sort of keep it the same width as the previous scopes, but get a massive screen. What's the resolution of the screen?
 
-**Dave Jones:** that's quick and responsive, too. The uh Keysight one's not that quick. Memory uh serves me correctly. The auto set button is indent. So, you can't accidentally uh press the auto set button, and the default set up there, they're indent as
+**Dave Jones:** Uh 1920 by 1080. Oh, so it's a full HD screen. So, yeah, full HD screen. It does look like a full HD screen. So, it is very impressive, very bright.
 
-**Dave Jones:** well. So, you know, you can't accidentally like brush across those. Let's have a look. Can we Now, I mean, obviously, it's you know, with the weight of this thing pushing the buttons, it's not going to tip over anytime soon. So, that's really quite
+**Dave Jones:** Let me the angle. Hang on. Screen angle. Go down like this, and it's uh it's not too terrific, although we we are getting glare, but trust me, it's not it's it it's okay.
 
-**Dave Jones:** nice. And for those who want to see the it's just there's the uh there's the new interface for it. And of course the problem is you've got to buy, you know, once you buy the four channel, that's it. You're stuck with the four
+**Dave Jones:** It's all right. I'm going to call that pretty decent. Go to the side. Yeah, it's a it's a pretty nice screen. It's pretty nice, I got to admit. It's nice and bright.
 
-**Dave Jones:** channel. Or if you buy the six channel, you're stuck with the six. You can't uh can't upgrade that later. Unfortunately, they don't uh pre-populate these things. So, they even like the cutouts just aren't there to uh do it. You can't even factory
+**Dave Jones:** It's big, it's full HD. Yeah, you're getting your money's worth there, I think. No worries. And I like that you can just bugger off the touch. There we go, touch off.
 
-**Dave Jones:** upgrade it, can you? No. No, you can't factory upgrade it. Shaking their head. All right. But uh anyway, I'd like Yeah, I can't do a full-on review here. Just having a play around with it. It's a nice bit of kit. It's a bit
+**Dave Jones:** So, if you're a screen poker like I am then uh you know, it doesn't upset it upset the apple cart. So, that's nice, and that's quick and responsive, too.
 
-**Dave Jones:** unusual bit of kit. But as I said, you probably, you know, you wouldn't use something like this in this as an everyday use scope. Just like you wouldn't use any of the other high-end ones as a everyday, you know, just for
+**Dave Jones:** The uh Keysight one's not that quick. Memory uh serves me correctly. The auto set button is indent. So, you can't accidentally uh press the auto set button, and the default set up there, they're indent as well.
 
-**Dave Jones:** general purpose measurements and stuff like that, around. It's just too big and, you know, you want a small simple scope that, you know, just does the basic stuff for all that sort of stuff. But of course, that's not
+**Dave Jones:** So, you know, you can't accidentally like brush across those. Let's have a look. Can we Now, I mean, obviously, it's you know, with the weight of this thing pushing the buttons, it's not going to tip over anytime soon.
 
-**Dave Jones:** the market for this thing. Look, three got a USB 3 down there, USB 2. And uh it's, you know, it's an impressive bit of kit. But uh yeah, it's I don't know. You you either like the limitation, you know, I can maybe
+**Dave Jones:** So, that's really quite nice. And for those who want to see the it's just there's the uh there's the new interface for it. And of course the problem is you've got to buy, you know, once you buy the four channel, that's it.
 
-**Dave Jones:** understand why they've done the uh logic channels on there. I just hate the fact that I have to sacrifice an our valuable analog channel uh to get the digital. It's a bit of a bummer, but, you know, they've they've
+**Dave Jones:** You're stuck with the four channel. Or if you buy the six channel, you're stuck with the six. You can't uh can't upgrade that later. Unfortunately, they don't uh pre-populate these things.
 
-**Dave Jones:** got their reasons. And it is what it is. But it's a it's a nice if unusual bit of kit. And of course, if you don't like stuff, you can just drag it. Oh, I I I didn't get it. Hold it down.
+**Dave Jones:** So, they even like the cutouts just aren't there to uh do it. You can't even factory upgrade it, can you? No. No, you can't factory upgrade it. Shaking their head.
 
-**Dave Jones:** Got it now, no? Oh, yeah, I'm not skilled enough. I I don't have the magic touch. And you can bugger that off. Like, you know, so you can like dock. So if you don't like any of the Oh, and can you do these as well? No?
+**Dave Jones:** All right. But uh anyway, I'd like Yeah, I can't do a full-on review here. Just having a play around with it. It's a nice bit of kit. It's a bit unusual bit of kit.
 
-**Dave Jones:** Okay, so they're fixed. So you can only do the digital channel. Like Yep. Oh, okay. Right. So if we go two Oh, okay. So if we go two like I don't know why you just don't leave them there
+**Dave Jones:** But as I said, you probably, you know, you wouldn't use something like this in this as an everyday use scope. Just like you wouldn't use any of the other high-end ones as a everyday, you know, just for general purpose measurements and stuff like that, around.
 
-**Dave Jones:** all the time. Why why even have the ability to get rid of them? I'm not Yeah, but there's nothing else down there to replace it. The argument is you don't clutter your screen, but there's nothing you know, maybe, you know, okay. All
+**Dave Jones:** It's just too big and, you know, you want a small simple scope that, you know, just does the basic stuff for all that sort of stuff. But of course, that's not the market for this thing.
 
-**Dave Jones:** right. Maybe. All right. No, I'm convinced. I like, you know, it's Okay, no, I think they did it just because they could. Um I'm I'm I'm not sold on that feature. No, I don't like, you know, Can we Can we drag Still haven't got it
+**Dave Jones:** Look, three got a USB 3 down there, USB 2. And uh it's, you know, it's an impressive bit of kit. But uh yeah, it's I don't know. You you either like the limitation, you know, I can maybe understand why they've done the uh logic channels on there.
 
-**Dave Jones:** yet. No, you you got to hold on to that. I do. I'm clearly So, but if you're going to have the ability to move it, why can't I move it up there and drop it there? No. Like, you know,
+**Dave Jones:** I just hate the fact that I have to sacrifice an our valuable analog channel uh to get the digital. It's a bit of a bummer, but, you know, they've they've got their reasons.
 
-**Dave Jones:** Yeah, exactly. Like Like Yeah. That's the other way of doing it. Ah, so to close it, you got Yeah.
+**Dave Jones:** And it is what it is. But it's a it's a nice if unusual bit of kit. And of course, if you don't like stuff, you can just drag it.
 
-**Dave Jones:** Yeah, but no, yeah, I'm not sold. If you're going to have the ability to drag this, I want to be able to drag it somewhere else and maybe even take this to full screen, perhaps. Like, take it to full screen. Can Can we get rid of
+**Dave Jones:** Oh, I I I didn't get it. Hold it down. Got it now, no? Oh, yeah, I'm not skilled enough. I I don't have the magic touch. And you can bugger that off.
 
-**Dave Jones:** all this and make it and expand the waveform out? Yeah? Oh, yeah, there we go. Yeah, that's nice. Okay. All right. Yep, that's Yeah, that's that's pretty neat. And I I I Like, you've already got the button here. I don't know why you need the
+**Dave Jones:** Like, you know, so you can like dock. So if you don't like any of the Oh, and can you do these as well? No? Okay, so they're fixed. So you can only do the digital channel.
 
-**Dave Jones:** ability to do that. You can just go like that. I don't get it. It's a wanky feature. Not sold on that. I'd like the ability to move stuff places, like different places on the screen. They just like they've added in this capability to sort
+**Dave Jones:** Like Yep. Oh, okay. Right. So if we go two Oh, okay. So if we go two like I don't know why you just don't leave them there all the time.
 
-**Dave Jones:** of do some dragging, but like like you can't dock things anywhere else, so I'm not sure. They've They've sort of like done it half Sort of like done it half-assed. And shut down. All right, I've got to shut down my
+**Dave Jones:** Why why even have the ability to get rid of them? I'm not Yeah, but there's nothing else down there to replace it. The argument is you don't clutter your screen, but there's nothing you know, maybe, you know, okay.
 
-**Dave Jones:** operating system. about. Install license. Great. Okay, so there's all our probes detected, all that sort of jazz. And if we I saw user interface tutorial. This 3-minute tutorial will show you the basic gestures used to operate this is
+**Dave Jones:** All right. Maybe. All right. No, I'm convinced. I like, you know, it's Okay, no, I think they did it just because they could. Um I'm I'm I'm not sold on that feature.
 
-**Dave Jones:** laughing. It it it must be pretty wanky. Single tap to select a channel. A single tap will also activate the control. Dude, is it interactive or is it just going to Do I have to just sit here? Locations
+**Dave Jones:** No, I don't like, you know, Can we Can we drag Still haven't got it yet. No, you you got to hold on to that. I do. I'm clearly So, but if you're going to have the ability to move it, why can't I move it up there and drop it there?
 
-**Dave Jones:** used a single tap. No? No? Single tap to close results bar. Yes, we did that. Ah, it's not interactive. Oh, yes, it is. No, it's just going to No, it's just a 3-minute tutorial. We're just going to sit here. We may as well watch the
+**Dave Jones:** No. Like, you know, Yeah, exactly. Like Like Yeah. That's the other way of doing it. Ah, so to close it, you got Yeah. Yeah, but no, yeah, I'm not sold.
 
-**Dave Jones:** YouTube video. Ah, boring. How do I get out of that? Close, there we go. We're out. Thank goodness. Back to using our scope, but anyway, yeah, it's what I mean. It's got phenomenal specs. The and the update rate with everything else and the and
+**Dave Jones:** If you're going to have the ability to drag this, I want to be able to drag it somewhere else and maybe even take this to full screen, perhaps. Like, take it to full screen.
 
-**Dave Jones:** the technology they've got inside the front ends is really fantastic. So, you know, it it's no problem. It's just a bit of an unusual, um, you know, a few unusual choices they've decided to go with, but it is what it
+**Dave Jones:** Can Can we get rid of all this and make it and expand the waveform out? Yeah? Oh, yeah, there we go. Yeah, that's nice. Okay. All right. Yep, that's Yeah, that's that's pretty neat.
 
-**Dave Jones:** is. And, uh, it's an impressive bit of kit. And there's I don't think there's there's some aspects of it that aren't matched by other scopes. So, um, anyway, this isn't a full review, but certainly interesting. So, at the moment
+**Dave Jones:** And I I I Like, you've already got the button here. I don't know why you need the ability to do that. You can just go like that. I don't get it.
 
-**Dave Jones:** we've gone full screen and you can apparently double tap on here, you put it into stacked mode and then it will, uh, separate the screen like that. So, I don't know why they don't call it split screen, but you can get multiple ones
+**Dave Jones:** It's a wanky feature. Not sold on that. I'd like the ability to move stuff places, like different places on the screen. They just like they've added in this capability to sort of do some dragging, but like like you can't dock things anywhere else, so I'm not sure.
 
-**Dave Jones:** all stacked on top of each other. So, that's kind of neat. So, there's your scale. It's all very far like it, you know, it like it it's res- I got no problems with the response of this thing. It seems
+**Dave Jones:** They've They've sort of like done it half Sort of like done it half-assed. And shut down. All right, I've got to shut down my operating system. about. Install license.
 
-**Dave Jones:** pretty good. Yeah, that's just periodic there. Oh, yep, there we go. Ah, seems to be pretty quick and responsive. But you either uh there's interpolation and there's the persistence. You can go into dot mode, of course. There we go.
+**Dave Jones:** Great. Okay, so there's all our probes detected, all that sort of jazz. And if we I saw user interface tutorial. This 3-minute tutorial will show you the basic gestures used to operate this is laughing.
 
-**Dave Jones:** Woah. Single. Let's go in there. Oh. Ah, went for the horizontal again. Why is the horizontal on the bottom? I find that really, really annoying. My god, that's going to kill me. Unbelievable. What's Look at the edge on that. Hang on.
+**Dave Jones:** It it it must be pretty wanky. Single tap to select a channel. A single tap will also activate the control. Dude, is it interactive or is it just going to Do I have to just sit here?
 
-**Dave Jones:** Wow, like it's almost as if there's jitter. Is there some jittery in there? Look at that. So, if I go into vectors and dots, and the yet the dots go Do they go like that? I Yeah. All right. Oh, okay. Is it multiple
+**Dave Jones:** Locations used a single tap. No? No? Single tap to close results bar. Yes, we did that. Ah, it's not interactive. Oh, yes, it is. No, it's just going to No, it's just a 3-minute tutorial.
 
-**Dave Jones:** acquisitions? Oh, it's multiple acquisitions. Okay. All right. Hmm. Oh, one thing I one thing it doesn't have a knob for is the waveform intensity. There's no no knob for your waveform intensity. So, oh no. Hang on. No, we've got our uh
+**Dave Jones:** We're just going to sit here. We may as well watch the YouTube video. Ah, boring. How do I get out of that? Close, there we go. We're out. Thank goodness.
 
-**Dave Jones:** But you can't but there's no So, if you're always adjusting your waveform intensity, um no, you've got to call up a menu to get your waveform intensity. So, they don't have a dedicated button for that. That's a bummer.
+**Dave Jones:** Back to using our scope, but anyway, yeah, it's what I mean. It's got phenomenal specs. The and the update rate with everything else and the and the technology they've got inside the front ends is really fantastic.
 
-**Dave Jones:** One nice touch on this thing is the feet fold, of course, right? But this actually pushes up. Once it goes down, you it locks. It actually locks like that. So, when you put the weight down you can tilt it forward like that, and
+**Dave Jones:** So, you know, it it's no problem. It's just a bit of an unusual, um, you know, a few unusual choices they've decided to go with, but it is what it is.
 
-**Dave Jones:** it's not the feet aren't going to collapse under themselves. But because the scope's so heavy, they've had to add that. And that's that's a nice touch. Someone was thinking. Well done. Check out the new Rohde & Schwarz RTP
+**Dave Jones:** And, uh, it's an impressive bit of kit. And there's I don't think there's there's some aspects of it that aren't matched by other scopes. So, um, anyway, this isn't a full review, but certainly interesting.
 
-**Dave Jones:** scope. Um if you have to ask the price, you can't afford it. This is the 8 gig 20 gig sample per second, but they're going to come out It's a It's a new platform that they got and they're going
+**Dave Jones:** So, at the moment we've gone full screen and you can apparently double tap on here, you put it into stacked mode and then it will, uh, separate the screen like that.
 
-**Dave Jones:** to come out with new uh uh models that have um up to 16 gig analog bandwidth and 40 gig sample per second, and you can interleave channels. I like the fact that you can upgrade the user upgradeable uh digital channels. This is
+**Dave Jones:** So, I don't know why they don't call it split screen, but you can get multiple ones all stacked on top of each other. So, that's kind of neat. So, there's your scale.
 
-**Dave Jones:** a weird connector. Check this out. Check this out. I swear it looks like a HDMI connector. Right? It looks like like a giant HDMI connector. I don't know. I'd love to know what that Is that an industry standard connector or are
+**Dave Jones:** It's all very far like it, you know, it like it it's res- I got no problems with the response of this thing. It seems pretty good. Yeah, that's just periodic there.
 
-**Dave Jones:** they just going for some custom thing? Anyway, they're going to have They don't have it at the moment. They're going to have arb gens in there, pulse gens, and signal gens, and stuff like that. Anyway, that looks very impressive. The
+**Dave Jones:** Oh, yep, there we go. Ah, seems to be pretty quick and responsive. But you either uh there's interpolation and there's the persistence. You can go into dot mode, of course.
 
-**Dave Jones:** menus down the bottom, which is uh fascinating. But doesn't that look groovy? That like the just the effort in the user interface compared to that uh tech 5 series. And I love the big font that you can actually see. And
+**Dave Jones:** There we go. Woah. Single. Let's go in there. Oh. Ah, went for the horizontal again. Why is the horizontal on the bottom? I find that really, really annoying. My god, that's going to kill me.
 
-**Dave Jones:** it's like a nice big bold font. It really is Actually, it's I love the way they've implemented that menu. Just looks very sexy. So, that's That's it. If you're going to have a menu, make it look like that.
+**Dave Jones:** Unbelievable. What's Look at the edge on that. Hang on. Wow, like it's almost as if there's jitter. Is there some jittery in there? Look at that. So, if I go into vectors and dots, and the yet the dots go Do they go like that?
 
-**Dave Jones:** That's just fantastic. I really like that. So, I'm impressed. But uh yeah, the Rohde & Schwarz are very the touch interfaces and you can dock things all over the place and stuff like that. And it's just Yeah, they've really got that
+**Dave Jones:** I Yeah. All right. Oh, okay. Is it multiple acquisitions? Oh, it's multiple acquisitions. Okay. All right. Hmm. Oh, one thing I one thing it doesn't have a knob for is the waveform intensity.
 
-**Dave Jones:** polished down pat. So, very impressive. Sorry, I won't play with it anymore, but yeah, that's just a Just Just Oh man, it's brilliant.
+**Dave Jones:** There's no no knob for your waveform intensity. So, oh no. Hang on. No, we've got our uh But you can't but there's no So, if you're always adjusting your waveform intensity, um no, you've got to call up a menu to get your waveform intensity.
+
+**Dave Jones:** So, they don't have a dedicated button for that. That's a bummer. One nice touch on this thing is the feet fold, of course, right? But this actually pushes up.
+
+**Dave Jones:** Once it goes down, you it locks. It actually locks like that. So, when you put the weight down you can tilt it forward like that, and it's not the feet aren't going to collapse under themselves.
+
+**Dave Jones:** But because the scope's so heavy, they've had to add that. And that's that's a nice touch. Someone was thinking. Well done. Check out the new Rohde & Schwarz RTP scope.
+
+**Dave Jones:** Um if you have to ask the price, you can't afford it. This is the 8 gig 20 gig sample per second, but they're going to come out It's a It's a new platform that they got and they're going to come out with new uh uh models that have um up to 16 gig analog bandwidth and 40 gig sample per second, and you can interleave channels.
+
+**Dave Jones:** I like the fact that you can upgrade the user upgradeable uh digital channels. This is a weird connector. Check this out. Check this out. I swear it looks like a HDMI connector.
+
+**Dave Jones:** Right? It looks like like a giant HDMI connector. I don't know. I'd love to know what that Is that an industry standard connector or are they just going for some custom thing?
+
+**Dave Jones:** Anyway, they're going to have They don't have it at the moment. They're going to have arb gens in there, pulse gens, and signal gens, and stuff like that. Anyway, that looks very impressive.
+
+**Dave Jones:** The menus down the bottom, which is uh fascinating. But doesn't that look groovy? That like the just the effort in the user interface compared to that uh tech 5 series.
+
+**Dave Jones:** And I love the big font that you can actually see. And it's like a nice big bold font. It really is Actually, it's I love the way they've implemented that menu.
+
+**Dave Jones:** Just looks very sexy. So, that's That's it. If you're going to have a menu, make it look like that. That's just fantastic. I really like that. So, I'm impressed.
+
+**Dave Jones:** But uh yeah, the Rohde & Schwarz are very the touch interfaces and you can dock things all over the place and stuff like that. And it's just Yeah, they've really got that polished down pat.
+
+**Dave Jones:** So, very impressive. Sorry, I won't play with it anymore, but yeah, that's just a Just Just Oh man, it's brilliant.

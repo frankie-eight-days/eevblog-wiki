@@ -1,0 +1,2779 @@
+{
+ "episode": null,
+ "title": "EEVblog #232 - Lab Power Supply Design Part 5",
+ "url": "https://www.youtube.com/watch?v=Lg6oYFerUlA",
+ "file": "Lg6oYFerUlA.md",
+ "main_topics": [
+  "power-supply",
+  "current-sense-amplifier",
+  "analog-to-digital-converter"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 87,
+   "depth": "mention",
+   "context_snippet": "designing this cute little power supply"
+  },
+  {
+   "concept": "schematic",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 146,
+   "depth": "mention",
+   "context_snippet": "take a look at the final schematic"
+  },
+  {
+   "concept": "breadboard",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 294,
+   "depth": "mention",
+   "context_snippet": "which I breadboarded up"
+  },
+  {
+   "concept": "power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 372,
+   "depth": "explains",
+   "context_snippet": "the final schematic we're going to go through today is essentially exactly the same configuration"
+  },
+  {
+   "concept": "system-engineering",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 536,
+   "depth": "mention",
+   "context_snippet": "put some system engineering into it"
+  },
+  {
+   "concept": "schematic",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 635,
+   "depth": "opinion",
+   "context_snippet": "Here's the final schematic. Now, it might look a bit complicated"
+  },
+  {
+   "concept": "modular-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 774,
+   "depth": "opinion",
+   "context_snippet": "It's not terribly modular, but stick with me"
+  },
+  {
+   "concept": "block-diagram",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1270,
+   "depth": "mention",
+   "context_snippet": "take a look at the thing from a block diagram level"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1398,
+   "depth": "mention",
+   "context_snippet": "I've added a microcontroller down here"
+  },
+  {
+   "concept": "atmega168",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1438,
+   "depth": "mention",
+   "context_snippet": "It's an ATmega168"
+  },
+  {
+   "concept": "atmega328",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1457,
+   "depth": "mention",
+   "context_snippet": "It could be an ATmega328"
+  },
+  {
+   "concept": "arduino",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1589,
+   "depth": "mention",
+   "context_snippet": "the software will be written in the Arduino software environment"
+  },
+  {
+   "concept": "external-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1655,
+   "depth": "mention",
+   "context_snippet": "I've added external ADC"
+  },
+  {
+   "concept": "voltage-follower",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1713,
+   "depth": "mention",
+   "context_snippet": "with some voltage followers"
+  },
+  {
+   "concept": "external-dac",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1741,
+   "depth": "mention",
+   "context_snippet": "and an external DAC as well"
+  },
+  {
+   "concept": "pulse-width-modulation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1811,
+   "depth": "explains",
+   "context_snippet": "the video on the pulse width modulation output and how you can control the output voltage and current with PWM"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1961,
+   "depth": "opinion",
+   "context_snippet": "most microcontrollers are only 10-bit resolution"
+  },
+  {
+   "concept": "digital-to-analog-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2120,
+   "depth": "explains",
+   "context_snippet": "I'm using external 12-bit DAC"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2150,
+   "depth": "explains",
+   "context_snippet": "and an external 12-bit ADC"
+  },
+  {
+   "concept": "lcd",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2255,
+   "depth": "mention",
+   "context_snippet": "we've got to have an LCD display to display the voltage and current"
+  },
+  {
+   "concept": "push-button-switch",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2417,
+   "depth": "mention",
+   "context_snippet": "Some push button switches"
+  },
+  {
+   "concept": "rotary-encoder",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2444,
+   "depth": "mention",
+   "context_snippet": "rotary encoders down here, two of them, one for voltage, one for current"
+  },
+  {
+   "concept": "usb-charger-identification",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 2732,
+   "depth": "explains",
+   "context_snippet": "tell an iPod that it's a genuine charger"
+  },
+  {
+   "concept": "voltage-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 2846,
+   "depth": "mention",
+   "context_snippet": "There's a couple of voltage regulators up here"
+  },
+  {
+   "concept": "microcurrent",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 2979,
+   "depth": "mention",
+   "context_snippet": "one of my microcurrent devices"
+  },
+  {
+   "concept": "current-measurement",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 13,
+   "char_start": 3178,
+   "depth": "explains",
+   "context_snippet": "can measure down to microamp output current"
+  },
+  {
+   "concept": "current-measurement-range",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 3272,
+   "depth": "explains",
+   "context_snippet": "from anywhere from a couple of microamps all the way up to a couple of amps"
+  },
+  {
+   "concept": "precision-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 4438,
+   "depth": "explains",
+   "context_snippet": "difficult to get an accurate precision current shunt resistor"
+  },
+  {
+   "concept": "resistor-sourcing",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 4636,
+   "depth": "opinion",
+   "context_snippet": "very difficult and expensive to source"
+  },
+  {
+   "concept": "gaussian-resistor-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 4744,
+   "depth": "mention",
+   "context_snippet": "my previous videos on the Gaussian resistor response"
+  },
+  {
+   "concept": "software-calibration",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 20,
+   "char_start": 5090,
+   "depth": "explains",
+   "context_snippet": "we can calibrate the thing and compensate for that in software"
+  },
+  {
+   "concept": "precision-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 5354,
+   "depth": "mention",
+   "context_snippet": "I've used 0.1% resistors elsewhere in the circuit"
+  },
+  {
+   "concept": "star-ground",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 6115,
+   "depth": "mention",
+   "context_snippet": "you might add a star ground over here"
+  },
+  {
+   "concept": "max4080f",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 6317,
+   "depth": "explains",
+   "context_snippet": "we're using a maximum 4080F high-side current sense amplifier"
+  },
+  {
+   "concept": "high-side-current-sense",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 6345,
+   "depth": "explains",
+   "context_snippet": "high-side current sense amplifier"
+  },
+  {
+   "concept": "differential-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 6434,
+   "depth": "explains",
+   "context_snippet": "It's basically a differential amplifier"
+  },
+  {
+   "concept": "current-sense-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 6482,
+   "depth": "explains",
+   "context_snippet": "it measures the differential voltage across a high-side current shunt resistor"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 6519,
+   "depth": "explains",
+   "context_snippet": "across a high-side current shunt resistor"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6927,
+   "depth": "mention",
+   "context_snippet": "I'm actually using a 2.048 voltage reference here"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 7148,
+   "depth": "explains",
+   "context_snippet": "why I'm using 2.048 V instead of the more traditional 2.5 V voltage reference"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 7242,
+   "depth": "explains",
+   "context_snippet": "the values that we're going to get out of our analog-to-digital converter"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 30,
+   "char_start": 7505,
+   "depth": "explains",
+   "context_snippet": "we're using a 12-bit analog-to-digital converter"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7638,
+   "depth": "explains",
+   "context_snippet": "in that analog-to-digital converter"
+  },
+  {
+   "concept": "adc-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 8219,
+   "depth": "explains",
+   "context_snippet": "you have to compensate for that in software"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 8353,
+   "depth": "explains",
+   "context_snippet": "they make these voltage references which correspond to the like a power of two"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8648,
+   "depth": "explains",
+   "context_snippet": "if you're using 2.048 volts, okay, on maximum ADC value"
+  },
+  {
+   "concept": "adc-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8751,
+   "depth": "explains",
+   "context_snippet": "you've got a nice round number of 500 microvolts per bit"
+  },
+  {
+   "concept": "adc-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 8932,
+   "depth": "explains",
+   "context_snippet": "a very nice round 500 microamps per bit resolution"
+  },
+  {
+   "concept": "adc-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 9046,
+   "depth": "explains",
+   "context_snippet": "1 milliamp per bit resolution precisely from the output of your analog-to-digital converter"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 9329,
+   "depth": "explains",
+   "context_snippet": "If you put 10 in parallel, you're going to get 0.2 ohms current shunt resistor"
+  },
+  {
+   "concept": "max4080f",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 9491,
+   "depth": "explains",
+   "context_snippet": "it's built-in gain of five"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9701,
+   "depth": "explains",
+   "context_snippet": "that will give us because it's a gain of five, okay, 0.2 ohms"
+  },
+  {
+   "concept": "current-sense-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9719,
+   "depth": "explains",
+   "context_snippet": "because it's a gain of five, okay, 0.2 ohms"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 10064,
+   "depth": "explains",
+   "context_snippet": "using a reference voltage on your analog-to-digital converter"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 10325,
+   "depth": "mention",
+   "context_snippet": "use a uh 3-amp version of this LT3080"
+  },
+  {
+   "concept": "lt3083",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 10364,
+   "depth": "mention",
+   "context_snippet": "the LT3083, then uh you could say set it"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10617,
+   "depth": "explains",
+   "context_snippet": "you might have a 1-W resistor in there"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10662,
+   "depth": "explains",
+   "context_snippet": "you might have 5 W or 10 W dissipation capability in your current shunt resistor"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 10790,
+   "depth": "explains",
+   "context_snippet": "this current shunt resistor isn't going to heat up at all"
+  },
+  {
+   "concept": "temperature-coefficient",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 10937,
+   "depth": "explains",
+   "context_snippet": "They're not going to change much with temperature because they don't heat up much"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 11037,
+   "depth": "explains",
+   "context_snippet": "Let's take the example of the 2-ohm resistor here"
+  },
+  {
+   "concept": "joule-heating",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 11128,
+   "depth": "explains",
+   "context_snippet": "I squared R, 2 squared is 4 and * 0.2 ohms, we're only going to dissipate 0.8 W"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 11390,
+   "depth": "explains",
+   "context_snippet": "the value of your current shunt resistor is going to determine how much voltage drop"
+  },
+  {
+   "concept": "voltage-drop",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 11453,
+   "depth": "explains",
+   "context_snippet": "how much voltage drop you get across there"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 11634,
+   "depth": "explains",
+   "context_snippet": "if we use a 0.1 ohms, then we're only Well, in either of these two cases"
+  },
+  {
+   "concept": "current-sense-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 11862,
+   "depth": "explains",
+   "context_snippet": "use like a gain of 20 here or a gain of 60"
+  },
+  {
+   "concept": "amplifier-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 11919,
+   "depth": "explains",
+   "context_snippet": "you can start getting right down into the noise, and you can get errors"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 12109,
+   "depth": "explains",
+   "context_snippet": "maximum voltage drop across your current shunt resistor as you can tolerate"
+  },
+  {
+   "concept": "amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 12261,
+   "depth": "opinion",
+   "context_snippet": "how much error can you tolerate in this amplifier here?"
+  },
+  {
+   "concept": "software-compensation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 12395,
+   "depth": "opinion",
+   "context_snippet": "whether or not you're willing to compensate for it in software"
+  },
+  {
+   "concept": "input-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 50,
+   "char_start": 12599,
+   "depth": "explains",
+   "context_snippet": "the input offset error of this amplifier is going to matter"
+  },
+  {
+   "concept": "operational-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 50,
+   "char_start": 12798,
+   "depth": "explains",
+   "context_snippet": "swamped by the input offset voltage of this op amp"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 13020,
+   "depth": "explains",
+   "context_snippet": "one bit resolution on your analog-to-digital converter"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 13197,
+   "depth": "explains",
+   "context_snippet": "500 microamps per bit. So, 500 microamps is the minimum we can measure"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 13299,
+   "depth": "explains",
+   "context_snippet": "500 microamps here times our 0.2 ohm resistor there"
+  },
+  {
+   "concept": "max4080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 13556,
+   "depth": "explains",
+   "context_snippet": "our MAX uh 4080 device. And what's its input offset voltage?"
+  },
+  {
+   "concept": "input-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 13642,
+   "depth": "explains",
+   "context_snippet": "It's 100 microvolts. Typical"
+  },
+  {
+   "concept": "max4080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 13801,
+   "depth": "explains",
+   "context_snippet": "the MAX4080 is almost ideal for this"
+  },
+  {
+   "concept": "precision",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 13993,
+   "depth": "opinion",
+   "context_snippet": "if you're designing a really high precision thing"
+  },
+  {
+   "concept": "input-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 57,
+   "char_start": 14278,
+   "depth": "explains",
+   "context_snippet": "the input offset voltage is just that. It's relative to the input"
+  },
+  {
+   "concept": "amplifier-gain",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 58,
+   "char_start": 14397,
+   "depth": "explains",
+   "context_snippet": "the actual um output uh uh the area going to get on the output is the input offset voltage times five"
+  },
+  {
+   "concept": "noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 59,
+   "char_start": 14769,
+   "depth": "explains",
+   "context_snippet": "not only is there input offset voltages, but then you get um uh noise"
+  },
+  {
+   "concept": "rc-low-pass-filter",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 60,
+   "char_start": 14981,
+   "depth": "explains",
+   "context_snippet": "I've added just a little um RC low-pass filter there"
+  },
+  {
+   "concept": "constant-current-comparator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 60,
+   "char_start": 15108,
+   "depth": "mention",
+   "context_snippet": "our um our uh constant current um comparator down the bottom here"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 61,
+   "char_start": 15246,
+   "depth": "mention",
+   "context_snippet": "it also goes over to our uh analog-to-digital converter over here"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 15401,
+   "depth": "explains",
+   "context_snippet": "we've used a four-channel one here"
+  },
+  {
+   "concept": "microcurrent-circuit",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 15538,
+   "depth": "mention",
+   "context_snippet": "the output current from this micro amp circuit over here"
+  },
+  {
+   "concept": "output-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 64,
+   "char_start": 15855,
+   "depth": "explains",
+   "context_snippet": "it can also measure the output voltage"
+  },
+  {
+   "concept": "software",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16031,
+   "depth": "explains",
+   "context_snippet": "your software is able to determine whether or not it's got adequate voltage"
+  },
+  {
+   "concept": "voltage-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16111,
+   "depth": "explains",
+   "context_snippet": "whether or not this regulator is going to actually drop out"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16176,
+   "depth": "mention",
+   "context_snippet": "our 2.048 voltage reference here"
+  },
+  {
+   "concept": "digital-to-analog-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16209,
+   "depth": "mention",
+   "context_snippet": "goes into the DAC over here, the 12-bit DAC"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16279,
+   "depth": "mention",
+   "context_snippet": "our 12-bit analog-to-digital converter here"
+  },
+  {
+   "concept": "microchip",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16328,
+   "depth": "mention",
+   "context_snippet": "both of those are devices from Microchip"
+  },
+  {
+   "concept": "mcp4922",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 66,
+   "char_start": 16395,
+   "depth": "mention",
+   "context_snippet": "The DAC is an MCP4922"
+  },
+  {
+   "concept": "mcp3204",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 66,
+   "char_start": 16422,
+   "depth": "mention",
+   "context_snippet": "the ADC is an MCP3204"
+  },
+  {
+   "concept": "digi-key",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 66,
+   "char_start": 16539,
+   "depth": "explains",
+   "context_snippet": "Let's go and do a parametric search in Digi-Key here"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 16610,
+   "depth": "mention",
+   "context_snippet": "Let's search for ADC, and we'll go down here to analog-to-digital converters"
+  },
+  {
+   "concept": "through-hole-technology",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 68,
+   "char_start": 16972,
+   "depth": "mention",
+   "context_snippet": "because this is a kit, we only want through-hole"
+  },
+  {
+   "concept": "parametric-search",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 68,
+   "char_start": 17025,
+   "depth": "explains",
+   "context_snippet": "we'll select through-hole over here, and we apply the filter"
+  },
+  {
+   "concept": "microchip",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 17180,
+   "depth": "opinion",
+   "context_snippet": "Microchip, I like them"
+  },
+  {
+   "concept": "national-semiconductor",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 17180,
+   "depth": "mention",
+   "context_snippet": "Microchip, I like them, National, Texas"
+  },
+  {
+   "concept": "texas-instruments",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 17204,
+   "depth": "mention",
+   "context_snippet": "National, Texas, you know, all the biggies are there"
+  },
+  {
+   "concept": "linear-technology",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 17231,
+   "depth": "mention",
+   "context_snippet": "all the biggies are there, Linear, Analog Devices"
+  },
+  {
+   "concept": "analog-devices",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 17258,
+   "depth": "mention",
+   "context_snippet": "Linear, Analog Devices"
+  },
+  {
+   "concept": "microchip",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 71,
+   "char_start": 17644,
+   "depth": "opinion",
+   "context_snippet": "People mostly know them for their uh uh PIC microcontrollers"
+  },
+  {
+   "concept": "pic-microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 71,
+   "char_start": 17672,
+   "depth": "mention",
+   "context_snippet": "their uh uh PIC microcontrollers and stuff like that"
+  },
+  {
+   "concept": "digi-key",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 18178,
+   "depth": "opinion",
+   "context_snippet": "something's happened to that Digi-Key search"
+  },
+  {
+   "concept": "mcp3204",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 18377,
+   "depth": "mention",
+   "context_snippet": "Here's my converter. It's a four-channel"
+  },
+  {
+   "concept": "mcp3204",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 18612,
+   "depth": "explains",
+   "context_snippet": "the cheapest uh device, four-channel ADC we can get, is a Microchip MCP3204"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 18636,
+   "depth": "explains",
+   "context_snippet": "four-channel ADC we can get"
+  },
+  {
+   "concept": "component-pricing",
+   "type": "business-model",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18787,
+   "depth": "explains",
+   "context_snippet": "It's $2.40 in 100 of quantity"
+  },
+  {
+   "concept": "mcp3204",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18853,
+   "depth": "explains",
+   "context_snippet": "it is a 12-bit uh converter"
+  },
+  {
+   "concept": "ads7822",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18935,
+   "depth": "opinion",
+   "context_snippet": "Texas Instruments ADS7822"
+  },
+  {
+   "concept": "four-channel-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18992,
+   "depth": "mention",
+   "context_snippet": "that won't be a four-channel in an eight-pin package"
+  },
+  {
+   "concept": "microchip",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19137,
+   "depth": "opinion",
+   "context_snippet": "that's why I chose the Microchip"
+  },
+  {
+   "concept": "digital-to-analog-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19175,
+   "depth": "explains",
+   "context_snippet": "I did exactly the same thing for the DAC"
+  },
+  {
+   "concept": "mcp4922",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19221,
+   "depth": "mention",
+   "context_snippet": "the matching Microchip DAC, unsurprisingly, I guess, came up as the cheapest again"
+  },
+  {
+   "concept": "parametric-search",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19350,
+   "depth": "explains",
+   "context_snippet": "That's parametric search"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19418,
+   "depth": "mention",
+   "context_snippet": "use a microcontroller with a 12-bit analog-to-digital converter"
+  },
+  {
+   "concept": "pulse-width-modulation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19482,
+   "depth": "mention",
+   "context_snippet": "and PWM in it"
+  },
+  {
+   "concept": "dip-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19561,
+   "depth": "mention",
+   "context_snippet": "selected all the DIP devices here"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19671,
+   "depth": "mention",
+   "context_snippet": "searching through the 32,000 microcontrollers available"
+  },
+  {
+   "concept": "digi-key",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19717,
+   "depth": "mention",
+   "context_snippet": "available from Digi-Key"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19821,
+   "depth": "mention",
+   "context_snippet": "ADC at 12 bits"
+  },
+  {
+   "concept": "12-bit-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 20159,
+   "depth": "mention",
+   "context_snippet": "find ones with 12-bit analog-to-digital converters"
+  },
+  {
+   "concept": "freescale",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20246,
+   "depth": "mention",
+   "context_snippet": "We've got Freescale"
+  },
+  {
+   "concept": "microchip",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20267,
+   "depth": "mention",
+   "context_snippet": "and we've got Microchip"
+  },
+  {
+   "concept": "texas-instruments",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20405,
+   "depth": "mention",
+   "context_snippet": "if you're a TI fanboy"
+  },
+  {
+   "concept": "dip-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 20504,
+   "depth": "opinion",
+   "context_snippet": "a 12-bit ADC in a DIP package"
+  },
+  {
+   "concept": "hcs08",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 20716,
+   "depth": "mention",
+   "context_snippet": "the Freescale, the HCS08"
+  },
+  {
+   "concept": "pic-microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 20941,
+   "depth": "mention",
+   "context_snippet": "you get into the PIC devices here"
+  },
+  {
+   "concept": "external-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 21382,
+   "depth": "opinion",
+   "context_snippet": "use an external ADC and DAC"
+  },
+  {
+   "concept": "external-dac",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 21382,
+   "depth": "opinion",
+   "context_snippet": "use an external ADC and DAC"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 89,
+   "char_start": 21577,
+   "depth": "explains",
+   "context_snippet": "when you start trying to push 12 bits inside a microcontroller"
+  },
+  {
+   "concept": "voltage-buffer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 21823,
+   "depth": "explains",
+   "context_snippet": "I've got a couple of voltage buffers down here driving the ADC"
+  },
+  {
+   "concept": "successive-approximation-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 21953,
+   "depth": "explains",
+   "context_snippet": "when you got a successive-approximation ADC like this"
+  },
+  {
+   "concept": "input-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 22008,
+   "depth": "explains",
+   "context_snippet": "you can't have an arbitrarily high input impedance"
+  },
+  {
+   "concept": "sample-and-hold",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 92,
+   "char_start": 22276,
+   "depth": "explains",
+   "context_snippet": "this has sample and holds in here"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 93,
+   "char_start": 22543,
+   "depth": "mention",
+   "context_snippet": "directly from the output of the op amp"
+  },
+  {
+   "concept": "low-pass-filter",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 93,
+   "char_start": 22587,
+   "depth": "explains",
+   "context_snippet": "through three a little low-pass filter of 330 ohms here"
+  },
+  {
+   "concept": "datasheet",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 22885,
+   "depth": "opinion",
+   "context_snippet": "as always, read the data sheet"
+  },
+  {
+   "concept": "mcp3204",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 22917,
+   "depth": "mention",
+   "context_snippet": "Here's the ADC, the MCP3204"
+  },
+  {
+   "concept": "sampling-switch",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 96,
+   "char_start": 23180,
+   "depth": "explains",
+   "context_snippet": "it's got an inbuilt sampling switch here"
+  },
+  {
+   "concept": "sampling-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 96,
+   "char_start": 23272,
+   "depth": "explains",
+   "context_snippet": "it's got a 20 pF sampling capacitor on here"
+  },
+  {
+   "concept": "input-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 98,
+   "char_start": 23534,
+   "depth": "explains",
+   "context_snippet": "your external impedance here will actually affect the time that this capacitor takes to charge up"
+  },
+  {
+   "concept": "12-bit-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 98,
+   "char_start": 23672,
+   "depth": "explains",
+   "context_snippet": "if you've got a 12-bit converter, it's got to get very close to the nominal value"
+  },
+  {
+   "concept": "input-resistance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 23941,
+   "depth": "mention",
+   "context_snippet": "shows you the input resistance in ohms"
+  },
+  {
+   "concept": "3-3-volt-logic",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 100,
+   "char_start": 24166,
+   "depth": "mention",
+   "context_snippet": "we're operating at 3.3 volts"
+  },
+  {
+   "concept": "input-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 101,
+   "char_start": 24346,
+   "depth": "explains",
+   "context_snippet": "if you've got a 10K input impedance, it's useless to you"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 102,
+   "char_start": 24530,
+   "depth": "mention",
+   "context_snippet": "we may not um, need these op amps down here"
+  },
+  {
+   "concept": "sampling-rate",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 103,
+   "char_start": 24814,
+   "depth": "explains",
+   "context_snippet": "that can affect your maximum sampling rate"
+  },
+  {
+   "concept": "nmj14558",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 105,
+   "char_start": 25142,
+   "depth": "mention",
+   "context_snippet": "It's an NMJ, uh, 14558"
+  },
+  {
+   "concept": "4558-op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 105,
+   "char_start": 25195,
+   "depth": "mention",
+   "context_snippet": "very common 4558 op amp"
+  },
+  {
+   "concept": "precision-op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 106,
+   "char_start": 25474,
+   "depth": "mention",
+   "context_snippet": "put, uh, really, um, better precision op amps in there"
+  },
+  {
+   "concept": "spi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 107,
+   "char_start": 25676,
+   "depth": "explains",
+   "context_snippet": "It's an SPI, so we've got a clock, a chip select, and, uh, data input"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 107,
+   "char_start": 25747,
+   "depth": "mention",
+   "context_snippet": "a voltage reference input"
+  },
+  {
+   "concept": "bypass-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 107,
+   "char_start": 25774,
+   "depth": "mention",
+   "context_snippet": "bypass cap"
+  },
+  {
+   "concept": "dual-channel-dac",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 108,
+   "char_start": 25847,
+   "depth": "mention",
+   "context_snippet": "It's a dual channel 12-bit DAC"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 108,
+   "char_start": 26033,
+   "depth": "mention",
+   "context_snippet": "if we hooked a pot onto here"
+  },
+  {
+   "concept": "dac-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 109,
+   "char_start": 26249,
+   "depth": "explains",
+   "context_snippet": "a nice, good 12-bit resolution DAC, that gives us some great resolution"
+  },
+  {
+   "concept": "10-bit-dac",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 111,
+   "char_start": 26646,
+   "depth": "explains",
+   "context_snippet": "If we used a 10-bit DAC, you'd be looking at 2 milliamps per bit"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 112,
+   "char_start": 26997,
+   "depth": "explains",
+   "context_snippet": "that's our voltage reference coming in here"
+  },
+  {
+   "concept": "voltage-gain",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 113,
+   "char_start": 27077,
+   "depth": "explains",
+   "context_snippet": "I've put in a gain of five here in this amplifier"
+  },
+  {
+   "concept": "series-resistance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 113,
+   "char_start": 27242,
+   "depth": "mention",
+   "context_snippet": "it compensates for these series resistances here"
+  },
+  {
+   "concept": "voltage-gain",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27437,
+   "depth": "explains",
+   "context_snippet": "0 to 2.048 V input, which gives a 0 to 10.24 V output"
+  },
+  {
+   "concept": "output-voltage-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27491,
+   "depth": "explains",
+   "context_snippet": "with 2.5 mV resolution"
+  },
+  {
+   "concept": "10-bit-pwm",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 115,
+   "char_start": 27698,
+   "depth": "explains",
+   "context_snippet": "a 10-bit DAC or a 10-bit PWM in your microcontroller"
+  },
+  {
+   "concept": "resistor-tolerance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 28200,
+   "depth": "mention",
+   "context_snippet": "these resistors are fairly, you know, fairly expensive cuz they're 0.1% tolerance"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 28200,
+   "depth": "opinion",
+   "context_snippet": "these resistors are fairly, you know, fairly expensive cuz they're 0.1% tolerance"
+  },
+  {
+   "concept": "bom-consolidation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 118,
+   "char_start": 28360,
+   "depth": "explains",
+   "context_snippet": "use them and reduce more of them and reduce your bill of materials"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 28604,
+   "depth": "mention",
+   "context_snippet": "you can buy a whole bunch of those"
+  },
+  {
+   "concept": "bom-consolidation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 28643,
+   "depth": "explains",
+   "context_snippet": "you can consolidate your bill of materials and you only have to buy the one item"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 28835,
+   "depth": "mention",
+   "context_snippet": "my current um fixed current output here, the LM 334"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 28901,
+   "depth": "opinion",
+   "context_snippet": "that required an oddball value resistor here I'm not using elsewhere"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 121,
+   "char_start": 29019,
+   "depth": "explains",
+   "context_snippet": "use a 100 ohm I am using elsewhere in the circuit"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 121,
+   "char_start": 29129,
+   "depth": "explains",
+   "context_snippet": "a minimum load on our LT3080"
+  },
+  {
+   "concept": "component-consolidation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29176,
+   "depth": "explains",
+   "context_snippet": "Component consolidation is one of those steps you should do in any good design"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29271,
+   "depth": "mention",
+   "context_snippet": "not only the resistors I've done that"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29310,
+   "depth": "mention",
+   "context_snippet": "but also elsewhere on the circuit I've done that for the capacitors"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 29524,
+   "depth": "explains",
+   "context_snippet": "I'm going to use a 10 microfarad in there instead of the 4.7"
+  },
+  {
+   "concept": "reverse-polarity-protection",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 29607,
+   "depth": "mention",
+   "context_snippet": "for output protection"
+  },
+  {
+   "concept": "schottky-diode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 29639,
+   "depth": "mention",
+   "context_snippet": "a big nice 5 amp reverse Schottky diode"
+  },
+  {
+   "concept": "load-switch",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 29728,
+   "depth": "mention",
+   "context_snippet": "a load switch external to the board"
+  },
+  {
+   "concept": "voltage-sense-line",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 125,
+   "char_start": 29883,
+   "depth": "explains",
+   "context_snippet": "this is my sense line that senses the output voltage goes back to the analog-to-digital converter"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 125,
+   "char_start": 29992,
+   "depth": "mention",
+   "context_snippet": "This net here goes down to the ADC"
+  },
+  {
+   "concept": "remote-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 126,
+   "char_start": 30087,
+   "depth": "explains",
+   "context_snippet": "some people like to have the sense line directly on the output"
+  },
+  {
+   "concept": "load-switch",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 126,
+   "char_start": 30186,
+   "depth": "mention",
+   "context_snippet": "when the switch the load switch is open"
+  },
+  {
+   "concept": "voltage-sense-line",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 127,
+   "char_start": 30360,
+   "depth": "opinion",
+   "context_snippet": "what the output voltage actually is regardless of the load switch position"
+  },
+  {
+   "concept": "voltage-divider",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 128,
+   "char_start": 30576,
+   "depth": "explains",
+   "context_snippet": "I've just got some voltage divider resistors here"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 128,
+   "char_start": 30641,
+   "depth": "explains",
+   "context_snippet": "give me a certain voltage into my analog-to-digital converter scaled down"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 128,
+   "char_start": 30723,
+   "depth": "mention",
+   "context_snippet": "my 2.04 V voltage reference"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 129,
+   "char_start": 30943,
+   "depth": "explains",
+   "context_snippet": "scales perfectly"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 130,
+   "char_start": 31022,
+   "depth": "explains",
+   "context_snippet": "the max input to my ADC is going to be 2.048 V"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 131,
+   "char_start": 31145,
+   "depth": "explains",
+   "context_snippet": "I'm using the full maximum range of my analog-to-digital converter to measure my output"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 132,
+   "char_start": 31390,
+   "depth": "opinion",
+   "context_snippet": "this convoluted op amp before"
+  },
+  {
+   "concept": "transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 133,
+   "char_start": 31570,
+   "depth": "explains",
+   "context_snippet": "use a second transistor here and drive it direct"
+  },
+  {
+   "concept": "comparator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 133,
+   "char_start": 31675,
+   "depth": "mention",
+   "context_snippet": "Here's my current my current limit comparator down here"
+  },
+  {
+   "concept": "transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 134,
+   "char_start": 31822,
+   "depth": "mention",
+   "context_snippet": "it also drives a separate second transistor here"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 135,
+   "char_start": 31970,
+   "depth": "explains",
+   "context_snippet": "that current limit goes into your microcontroller over here"
+  },
+  {
+   "concept": "led-indicator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 135,
+   "char_start": 32109,
+   "depth": "explains",
+   "context_snippet": "the software can do intelligent stuff with the LED"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 136,
+   "char_start": 32322,
+   "depth": "explains",
+   "context_snippet": "you can program a pull-up resistor directly on your microcontroller here"
+  },
+  {
+   "concept": "optical-rotary-encoder",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 137,
+   "char_start": 32431,
+   "depth": "explains",
+   "context_snippet": "the same with the optical rotary encoders"
+  },
+  {
+   "concept": "pull-up-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 137,
+   "char_start": 32544,
+   "depth": "explains",
+   "context_snippet": "Normally, they need pull-up resistors on there, but do it inside the micro"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 138,
+   "char_start": 32800,
+   "depth": "mention",
+   "context_snippet": "if your if this lab power supply is powering your little microcontroller circuit"
+  },
+  {
+   "concept": "microcurrent",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 139,
+   "char_start": 33045,
+   "depth": "opinion",
+   "context_snippet": "Not as good as the microcurrent"
+  },
+  {
+   "concept": "microampere-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 139,
+   "char_start": 33078,
+   "depth": "explains",
+   "context_snippet": "It only goes down to a maximum of 2.5 microamps per bit"
+  },
+  {
+   "concept": "mosfet",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 141,
+   "char_start": 33578,
+   "depth": "explains",
+   "context_snippet": "it does that with this MOSFET here"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 142,
+   "char_start": 33852,
+   "depth": "explains",
+   "context_snippet": "it goes through a current shunt resistor here"
+  },
+  {
+   "concept": "low-side-current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 142,
+   "char_start": 33901,
+   "depth": "explains",
+   "context_snippet": "what's called a low-side as opposed to the high-side current shunt resistor"
+  },
+  {
+   "concept": "low-side-current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 34061,
+   "depth": "opinion",
+   "context_snippet": "I don't like doing that because then it introduces an offset voltage error here"
+  },
+  {
+   "concept": "mosfet",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 144,
+   "char_start": 34310,
+   "depth": "explains",
+   "context_snippet": "shunt that Excuse the pun. We want to shunt that through a much lower value MOSFET"
+  },
+  {
+   "concept": "adc-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 145,
+   "char_start": 34616,
+   "depth": "explains",
+   "context_snippet": "our output voltage is maximum output voltage is 10.25 V, 2.4 V, sorry, divided by 4096"
+  },
+  {
+   "concept": "12-bit-adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 146,
+   "char_start": 34721,
+   "depth": "explains",
+   "context_snippet": "We've got a 12-bit converter. So, 2.5 mV"
+  },
+  {
+   "concept": "mosfet",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 147,
+   "char_start": 34961,
+   "depth": "explains",
+   "context_snippet": "we want 2.5 mV maximum drop across this MOSFET here"
+  },
+  {
+   "concept": "mosfet-on-resistance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 147,
+   "char_start": 35099,
+   "depth": "explains",
+   "context_snippet": "Our maximum resistance there is going to be 2.5 mV divided by the 2 A maximum current there, 1.25 mΩ"
+  },
+  {
+   "concept": "mosfet",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 148,
+   "char_start": 35368,
+   "depth": "opinion",
+   "context_snippet": "you need a really, really beefy MOSFET"
+  },
+  {
+   "concept": "mosfet-on-resistance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 149,
+   "char_start": 35563,
+   "depth": "explains",
+   "context_snippet": "a rated maximum RDS on or a maximum maximum resistance of 8.4 mΩ"
+  },
+  {
+   "concept": "mosfet",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 150,
+   "char_start": 35824,
+   "depth": "explains",
+   "context_snippet": "that MOSFET should give us a a very insignificant error at our maximum range of 2 amps"
+  },
+  {
+   "concept": "mosfet-gate-drive",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 151,
+   "char_start": 36026,
+   "depth": "explains",
+   "context_snippet": "to get a higher um gate source voltage"
+  },
+  {
+   "concept": "transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 152,
+   "char_start": 36322,
+   "depth": "mention",
+   "context_snippet": "I'm going to use an external transistor to turn it off and on"
+  },
+  {
+   "concept": "gate-source-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 153,
+   "char_start": 36556,
+   "depth": "explains",
+   "context_snippet": "the higher the gate source voltage, the lower the turn-on resistance for this MOSFET"
+  },
+  {
+   "concept": "high-side-current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 155,
+   "char_start": 36897,
+   "depth": "mention",
+   "context_snippet": "our measurement based on this high side uh current shunt resistor"
+  },
+  {
+   "concept": "current-measurement-range",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 155,
+   "char_start": 36968,
+   "depth": "explains",
+   "context_snippet": "we've effectively got two different current measurement ranges"
+  },
+  {
+   "concept": "shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37175,
+   "depth": "explains",
+   "context_snippet": "four resistors here, 1 ohm, and they're in series parallel combination giving a total shunt resistor"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37175,
+   "depth": "explains",
+   "context_snippet": "four resistors here, 1 ohm, and they're in series parallel combination"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37246,
+   "depth": "explains",
+   "context_snippet": "giving a total shunt resistor here, low side shunt resistor value of 1 ohm"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 37493,
+   "depth": "mention",
+   "context_snippet": "a bit of margin for error in case this software selects the wrong range"
+  },
+  {
+   "concept": "software",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 37527,
+   "depth": "opinion",
+   "context_snippet": "this software selects the wrong range"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 37791,
+   "depth": "explains",
+   "context_snippet": "all that current would try and flow through the would flow through these resistors here"
+  },
+  {
+   "concept": "power-dissipation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 37883,
+   "depth": "explains",
+   "context_snippet": "we would get a power dissipation in those resistors of 4 watts"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 159,
+   "char_start": 37986,
+   "depth": "explains",
+   "context_snippet": "if you put a tiny little resistor single resistor in there, you might burn it out accidentally"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 160,
+   "char_start": 38335,
+   "depth": "explains",
+   "context_snippet": "if we've got a 1 amp current shunt resistor here and 1 milliamp flows through there, we're going to have 1 millivolt"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 160,
+   "char_start": 38338,
+   "depth": "explains",
+   "context_snippet": "we've got a 1 amp current shunt resistor here"
+  },
+  {
+   "concept": "operational-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 161,
+   "char_start": 38482,
+   "depth": "mention",
+   "context_snippet": "This op amp, the MAX4238"
+  },
+  {
+   "concept": "max4238",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 161,
+   "char_start": 38495,
+   "depth": "explains",
+   "context_snippet": "the MAX4238 you've seen in my micro current"
+  },
+  {
+   "concept": "current-sense-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 161,
+   "char_start": 38563,
+   "depth": "explains",
+   "context_snippet": "It's got a gain set by these two resistors here of 200"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 162,
+   "char_start": 38668,
+   "depth": "explains",
+   "context_snippet": "if we've got 1 millivolt drop across the shunt resistor, we'll get 0.2 volts output"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 163,
+   "char_start": 38952,
+   "depth": "explains",
+   "context_snippet": "our ADC down here, remember it's only 2.048 volts maximum"
+  },
+  {
+   "concept": "current-measurement",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 164,
+   "char_start": 39194,
+   "depth": "explains",
+   "context_snippet": "10.24 milliamps maximum is what this circuit is capable of measuring"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 165,
+   "char_start": 39285,
+   "depth": "explains",
+   "context_snippet": "the microcontroller, when it when it measures over here on this shunt resistor"
+  },
+  {
+   "concept": "sleep-current-measurement",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 166,
+   "char_start": 39836,
+   "depth": "explains",
+   "context_snippet": "it can switch on this circuit and measure that sleep current accurately"
+  },
+  {
+   "concept": "power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 167,
+   "char_start": 39952,
+   "depth": "opinion",
+   "context_snippet": "Why can't all power supplies have a feature like that?"
+  },
+  {
+   "concept": "input-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 167,
+   "char_start": 40060,
+   "depth": "explains",
+   "context_snippet": "what is the maximum input offset voltage we can tolerate here before we start getting errors?"
+  },
+  {
+   "concept": "adc-resolution",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 168,
+   "char_start": 40246,
+   "depth": "explains",
+   "context_snippet": "we're getting 500 µV is our minimum on the output here"
+  },
+  {
+   "concept": "input-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 169,
+   "char_start": 40455,
+   "depth": "explains",
+   "context_snippet": "it can tolerate and that translates to 2.5 µV is our minimum per bit value across here"
+  },
+  {
+   "concept": "auto-zero-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 170,
+   "char_start": 40780,
+   "depth": "mention",
+   "context_snippet": "auto-zeroing amplifier, which is exactly what the MAX4238 is"
+  },
+  {
+   "concept": "max4238",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 170,
+   "char_start": 40804,
+   "depth": "explains",
+   "context_snippet": "which is exactly what the MAX4238 is"
+  },
+  {
+   "concept": "temperature-drift",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 171,
+   "char_start": 41098,
+   "depth": "explains",
+   "context_snippet": "over the full temperature range, we're only going to get one bit error"
+  },
+  {
+   "concept": "through-hole-component",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 172,
+   "char_start": 41388,
+   "depth": "explains",
+   "context_snippet": "I wanted all the components to be through hole"
+  },
+  {
+   "concept": "max480",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 173,
+   "char_start": 41590,
+   "depth": "mention",
+   "context_snippet": "the MAX 480 is only in an SO8 package"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 173,
+   "char_start": 41633,
+   "depth": "explains",
+   "context_snippet": "the voltage reference, although I can get ones in like a TO92 package"
+  },
+  {
+   "concept": "soic-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 173,
+   "char_start": 41704,
+   "depth": "mention",
+   "context_snippet": "they're cheaper and more readily available, especially in the 2.848 V version, in a SO23"
+  },
+  {
+   "concept": "surface-mount-technology",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 174,
+   "char_start": 41823,
+   "depth": "mention",
+   "context_snippet": "the only three surface mount parts on the entire design"
+  },
+  {
+   "concept": "through-hole-component",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 174,
+   "char_start": 41880,
+   "depth": "explains",
+   "context_snippet": "Everything else is through hole"
+  },
+  {
+   "concept": "mcp1700",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 177,
+   "char_start": 42517,
+   "depth": "mention",
+   "context_snippet": "a little MAXIM MCP1700 3.3 V voltage regulator"
+  },
+  {
+   "concept": "voltage-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 177,
+   "char_start": 42532,
+   "depth": "mention",
+   "context_snippet": "MCP1700 3.3 V voltage regulator"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 178,
+   "char_start": 42757,
+   "depth": "explains",
+   "context_snippet": "You can actually use those almost as a voltage reference at an ambient temperature"
+  },
+  {
+   "concept": "lm7805",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 179,
+   "char_start": 42915,
+   "depth": "mention",
+   "context_snippet": "a standard LM7805 to give our 5 V out"
+  },
+  {
+   "concept": "usb",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 179,
+   "char_start": 42965,
+   "depth": "mention",
+   "context_snippet": "for our USB output connector over here"
+  },
+  {
+   "concept": "altronics",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 180,
+   "char_start": 43062,
+   "depth": "mention",
+   "context_snippet": "I'm actually using it's from Altronics here in Australia"
+  },
+  {
+   "concept": "heat-sink",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 180,
+   "char_start": 43196,
+   "depth": "mention",
+   "context_snippet": "It's a PCB mount one"
+  },
+  {
+   "concept": "pcb-mount",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 181,
+   "char_start": 43317,
+   "depth": "mention",
+   "context_snippet": "it's got an extra hole here so I can mount both devices on the same heat sink"
+  },
+  {
+   "concept": "mica-washer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 184,
+   "char_start": 43882,
+   "depth": "explains",
+   "context_snippet": "put some mica washers or some seal pad in there"
+  },
+  {
+   "concept": "internal-oscillator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 185,
+   "char_start": 44205,
+   "depth": "explains",
+   "context_snippet": "using the 8 MHz internal oscillator in here"
+  },
+  {
+   "concept": "rs-232",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 185,
+   "char_start": 44315,
+   "depth": "explains",
+   "context_snippet": "to do RS232 as a rule of thumb you need a 1% tolerance frequency error or better"
+  },
+  {
+   "concept": "atmel",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 185,
+   "char_start": 44400,
+   "depth": "mention",
+   "context_snippet": "the oscillator in this thing can be trimmed to 1% or better"
+  },
+  {
+   "concept": "ceramic-resonator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 188,
+   "char_start": 45079,
+   "depth": "mention",
+   "context_snippet": "I'll probably use a ceramic resonator"
+  },
+  {
+   "concept": "serial-port",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 190,
+   "char_start": 45482,
+   "depth": "explains",
+   "context_snippet": "I've added a separate serial port here, it'll be a separate board"
+  },
+  {
+   "concept": "electrical-isolation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 192,
+   "char_start": 46137,
+   "depth": "explains",
+   "context_snippet": "you could use one of those XBee wireless boards or something like that"
+  },
+  {
+   "concept": "xbee",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 192,
+   "char_start": 46151,
+   "depth": "mention",
+   "context_snippet": "one of those XBee wireless boards"
+  },
+  {
+   "concept": "wireless-control",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 193,
+   "char_start": 46226,
+   "depth": "opinion",
+   "context_snippet": "So, this could be a wireless controlled power supply"
+  },
+  {
+   "concept": "spi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 193,
+   "char_start": 46406,
+   "depth": "explains",
+   "context_snippet": "my DAC up here and my ADC over here, they're both SPI input devices"
+  },
+  {
+   "concept": "digital-to-analog-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 193,
+   "char_start": 46406,
+   "depth": "mention",
+   "context_snippet": "my DAC up here"
+  },
+  {
+   "concept": "analog-to-digital-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 193,
+   "char_start": 46425,
+   "depth": "mention",
+   "context_snippet": "my ADC over here"
+  },
+  {
+   "concept": "shared-bus",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 194,
+   "char_start": 46609,
+   "depth": "explains",
+   "context_snippet": "combine the clock pin on both"
+  },
+  {
+   "concept": "adc",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 195,
+   "char_start": 46894,
+   "depth": "mention",
+   "context_snippet": "for each for the ADC and DAC"
+  },
+  {
+   "concept": "dac",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 195,
+   "char_start": 46894,
+   "depth": "mention",
+   "context_snippet": "for each for the ADC and DAC"
+  },
+  {
+   "concept": "ceramic-resonator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 196,
+   "char_start": 46990,
+   "depth": "mention",
+   "context_snippet": "so I can put the ceramic resonator"
+  },
+  {
+   "concept": "rs232",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 196,
+   "char_start": 47045,
+   "depth": "mention",
+   "context_snippet": "for our RS232 and Arduino compatibility"
+  },
+  {
+   "concept": "arduino",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 196,
+   "char_start": 47045,
+   "depth": "mention",
+   "context_snippet": "for our RS232 and Arduino compatibility"
+  },
+  {
+   "concept": "avr-isp",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 196,
+   "char_start": 47099,
+   "depth": "explains",
+   "context_snippet": "the external AVR ISP interface here so you can program the chip in circuit"
+  },
+  {
+   "concept": "hex-code",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 196,
+   "char_start": 47178,
+   "depth": "mention",
+   "context_snippet": "download your hex code to it"
+  },
+  {
+   "concept": "lcd-display",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 197,
+   "char_start": 47238,
+   "depth": "mention",
+   "context_snippet": "For the LCD display up here, I've chosen a Newhaven display"
+  },
+  {
+   "concept": "newhaven",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 197,
+   "char_start": 47267,
+   "depth": "opinion",
+   "context_snippet": "I've chosen a Newhaven display. I rather like them"
+  },
+  {
+   "concept": "lcd-display",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 198,
+   "char_start": 47438,
+   "depth": "explains",
+   "context_snippet": "it's an I squared C interface. There it is, SCL and SDA"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 198,
+   "char_start": 47438,
+   "depth": "explains",
+   "context_snippet": "it's an I squared C interface. There it is, SCL and SDA"
+  },
+  {
+   "concept": "scl",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 198,
+   "char_start": 47469,
+   "depth": "mention",
+   "context_snippet": "There it is, SCL and SDA"
+  },
+  {
+   "concept": "sda",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 198,
+   "char_start": 47469,
+   "depth": "mention",
+   "context_snippet": "There it is, SCL and SDA"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 198,
+   "char_start": 47495,
+   "depth": "explains",
+   "context_snippet": "That requires less pins on your microcontroller"
+  },
+  {
+   "concept": "parallel-interface",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 198,
+   "char_start": 47567,
+   "depth": "opinion",
+   "context_snippet": "rather than using the standard parallel or full bit interface one"
+  },
+  {
+   "concept": "lcd-reset",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 199,
+   "char_start": 47704,
+   "depth": "mention",
+   "context_snippet": "There's an LCD reset line as well"
+  },
+  {
+   "concept": "lcd-display",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 200,
+   "char_start": 47916,
+   "depth": "explains",
+   "context_snippet": "it's a 20 character by two line because I figured 16 by two probably wouldn't give"
+  },
+  {
+   "concept": "lcd-display",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 201,
+   "char_start": 48076,
+   "depth": "explains",
+   "context_snippet": "So it's a 20 by two line display, I squared C compatible input"
+  },
+  {
+   "concept": "i2c",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 201,
+   "char_start": 48110,
+   "depth": "mention",
+   "context_snippet": "I squared C compatible input"
+  },
+  {
+   "concept": "component-cost",
+   "type": "business-model",
+   "speaker": "Dave Jones",
+   "paragraph_index": 201,
+   "char_start": 48140,
+   "depth": "opinion",
+   "context_snippet": "It's only about eight or 10 bucks or something"
+  },
+  {
+   "concept": "lcd-display",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 202,
+   "char_start": 48330,
+   "depth": "mention",
+   "context_snippet": "This is actually an RGB backlight one"
+  },
+  {
+   "concept": "rgb-backlight",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 202,
+   "char_start": 48330,
+   "depth": "mention",
+   "context_snippet": "This is actually an RGB backlight one"
+  },
+  {
+   "concept": "enclosure",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 204,
+   "char_start": 48888,
+   "depth": "explains",
+   "context_snippet": "how I engineered this thing to fit into this case"
+  },
+  {
+   "concept": "design-requirements",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 204,
+   "char_start": 48986,
+   "depth": "explains",
+   "context_snippet": "that drove a lot of the design requirements in terms of how many switches I use"
+  },
+  {
+   "concept": "switch",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 204,
+   "char_start": 49042,
+   "depth": "mention",
+   "context_snippet": "how many switches I use to fit on my front panel"
+  },
+  {
+   "concept": "usb",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 204,
+   "char_start": 49091,
+   "depth": "mention",
+   "context_snippet": "whether or not I had room for a USB output connector"
+  },
+  {
+   "concept": "heatsink",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 204,
+   "char_start": 49155,
+   "depth": "mention",
+   "context_snippet": "the type of heatsink I used"
+  },
+  {
+   "concept": "lcd-display",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 205,
+   "char_start": 49249,
+   "depth": "mention",
+   "context_snippet": "the room I had for the LCD"
+  },
+  {
+   "concept": "ten-turn-potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 205,
+   "char_start": 49352,
+   "depth": "mention",
+   "context_snippet": "whether or not I could use 10 turn pots"
+  },
+  {
+   "concept": "enclosure",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 205,
+   "char_start": 49429,
+   "depth": "opinion",
+   "context_snippet": "pretty much revolved around the case I'm using"
+  },
+  {
+   "concept": "pcb-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 206,
+   "char_start": 49572,
+   "depth": "mention",
+   "context_snippet": "I've already designed the PCB for this thing"
+  }
+ ]
+}

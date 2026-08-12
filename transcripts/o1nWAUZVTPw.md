@@ -3,231 +3,241 @@ video_id: o1nWAUZVTPw
 title: EEVblog 1575 - TIPA: The World's Most Efficient Solar Panel - BUSTED
 url: https://www.youtube.com/watch?v=o1nWAUZVTPw
 source: youtube-asr
-timestamps: {"0": 0, "1": 17, "2": 41, "3": 55, "4": 79, "5": 101, "6": 123, "7": 153, "8": 170, "9": 198, "10": 213, "11": 227, "12": 241, "13": 264, "14": 280, "15": 297, "16": 314, "17": 334, "18": 349, "19": 365, "20": 386, "21": 404, "22": 420, "23": 436, "24": 450, "25": 461, "26": 472, "27": 483, "28": 494, "29": 507, "30": 518, "31": 534, "32": 550, "33": 566, "34": 580, "35": 595, "36": 611, "37": 627, "38": 642, "39": 653, "40": 668, "41": 681, "42": 697, "43": 710, "44": 726, "45": 743, "46": 759, "47": 773, "48": 788, "49": 808, "50": 829, "51": 845, "52": 864, "53": 882, "54": 898, "55": 910, "56": 927, "57": 939, "58": 953, "59": 969, "60": 986, "61": 1004, "62": 1017, "63": 1027, "64": 1042, "65": 1055, "66": 1071, "67": 1090, "68": 1108, "69": 1124, "70": 1141, "71": 1154, "72": 1172, "73": 1189, "74": 1204, "75": 1219, "76": 1238, "77": 1250, "78": 1270, "79": 1282, "80": 1301, "81": 1312, "82": 1326, "83": 1341, "84": 1353, "85": 1371, "86": 1385, "87": 1402, "88": 1421, "89": 1434, "90": 1445, "91": 1457, "92": 1473, "93": 1485, "94": 1495, "95": 1506, "96": 1519, "97": 1531, "98": 1543, "99": 1556, "100": 1569, "101": 1588, "102": 1601, "103": 1618, "104": 1632, "105": 1646, "106": 1665, "107": 1679, "108": 1696, "109": 1710, "110": 1729, "111": 1739, "112": 1758}
+timestamps: {"0": 0, "1": 11, "2": 25, "3": 46, "4": 59, "5": 76, "6": 91, "7": 108, "8": 141, "9": 165, "10": 195, "11": 222, "12": 230, "13": 243, "14": 261, "15": 274, "16": 289, "17": 304, "18": 315, "19": 334, "20": 347, "21": 357, "22": 373, "23": 386, "24": 401, "25": 418, "26": 430, "27": 446, "28": 457, "29": 468, "30": 476, "31": 484, "32": 496, "33": 509, "34": 518, "35": 537, "36": 548, "37": 555, "38": 571, "39": 581, "40": 598, "41": 627, "42": 641, "43": 657, "44": 680, "45": 695, "46": 714, "47": 728, "48": 752, "49": 759, "50": 776, "51": 791, "52": 818, "53": 831, "54": 856, "55": 884, "56": 908, "57": 922, "58": 939, "59": 949, "60": 966, "61": 980, "62": 993, "63": 1010, "64": 1032, "65": 1045, "66": 1060, "67": 1071, "68": 1088, "69": 1099, "70": 1113, "71": 1127, "72": 1144, "73": 1158, "74": 1169, "75": 1183, "76": 1194, "77": 1206, "78": 1224, "79": 1242, "80": 1253, "81": 1267, "82": 1278, "83": 1292, "84": 1302, "85": 1317, "86": 1332, "87": 1344, "88": 1356, "89": 1368, "90": 1382, "91": 1393, "92": 1416, "93": 1427, "94": 1439, "95": 1450, "96": 1473, "97": 1481, "98": 1492, "99": 1500, "100": 1510, "101": 1524, "102": 1539, "103": 1549, "104": 1562, "105": 1576, "106": 1588, "107": 1610, "108": 1628, "109": 1638, "110": 1648, "111": 1662, "112": 1674, "113": 1696, "114": 1710, "115": 1729, "116": 1743, "117": 1758}
 ---
 
-**Dave Jones:** Hi. Yes, it's Indiegogo and Kickstarter time again. And yes, it involves solar. And yes, it involves some government funding. And yes, it involves some other wacky ideas as well. Let's go take a look at it. Um Indiegogo here, the TIPA,
+**Dave Jones:** Hi. Yes, it's Indiegogo and Kickstarter time again. And yes, it involves solar. And yes, it involves some government funding. And yes, it involves some other wacky ideas as well.
 
-**Dave Jones:** the world's most efficient solar panel. From smartphones to smart homes, the ultimate in scalable solar energy from Nick Veasey, um who is in the UK. So, raised 152,000 British pounds from its 5,000 pound goal here, 291,000 Aussie dollaridoos here. Um and this
+**Dave Jones:** Let's go take a look at it. Um Indiegogo here, the TIPA, the world's most efficient solar panel. From smartphones to smart homes, the ultimate in scalable solar energy from Nick Veasey, um who is in the UK.
 
-**Dave Jones:** isn't all of it. It just raised it on September 15th. Gosh darn it, we all missed out. We all missed out on investing in the world's most efficient solar panel. But we also missed out on Kickstarter as well. And they actually
+**Dave Jones:** So, raised 152,000 British pounds from its 5,000 pound goal here, 291,000 Aussie dollaridoos here. Um and this isn't all of it. It just raised it on September 15th. Gosh darn it, we all missed out.
 
-**Dave Jones:** raised another 140,000 pounds here. So, that's 292,000 pounds, but that's not all. They also got a government grant. This is the company Yellow Studio Limited. They got a UK Research and Innovation Grant. So, congratulations, UK taxpayers. You've got a slice of this game-changing
+**Dave Jones:** We all missed out on investing in the world's most efficient solar panel. But we also missed out on Kickstarter as well. And they actually raised another 140,000 pounds here.
 
-**Dave Jones:** investment here. Low cost modular solar thermal system using total internal photonic absorption awarded to Yellow Studio. And this was almost 500,000 pounds. They've raised like almost 800,000 pounds for this boondoggle. Anyway, let's take a look at it. Oh yeah, they
+**Dave Jones:** So, that's 292,000 pounds, but that's not all. They also got a government grant. This is the company Yellow Studio Limited. They got a UK Research and Innovation Grant. So, congratulations, UK taxpayers.
 
-**Dave Jones:** got a video. Let's go. Introducing TIPA, the world's TIPA, the world's first patented 3D solar panel. 3D solar panel. Revolutionary. With TIPA's total internal Total. photonic Internal photonic absorption. 200% more power.
+**Dave Jones:** You've got a slice of this game-changing investment here. Low cost modular solar thermal system using total internal photonic absorption awarded to Yellow Studio. And this was almost 500,000 pounds.
 
-**Dave Jones:** Six times. Six times. Yep. 22%. Not good. It bends light into 3D. Look at this. Multiple. Genius. No need to angle them.
+**Dave Jones:** They've raised like almost 800,000 pounds for this boondoggle. Anyway, let's take a look at it. Oh yeah, they got a video. Let's go. Introducing TIPA, the world's TIPA, the world's first patented 3D solar panel.
 
-**Dave Jones:** Six times. There you go. Per area. Wow. One chance. It's all you get. One chance. And you you're blowing your wad. Yeah, about 20%. To electricity.
+**Dave Jones:** 3D solar panel. Revolutionary. With TIPA's total internal Total. photonic Internal photonic absorption. 200% more power. Six times. Six times. Yep. 22%. Not good. It bends light into 3D. Look at this.
 
-**Dave Jones:** It reflects 80%, doesn't it? Look. Look. Look. It reflects. Look. Quantum mechanics. The more chance. So what of course. Quantum mechanics. If regular solar panels reflect 80% of the light, they only absorb 20% and convert that 20% to electricity. Look at
+**Dave Jones:** Multiple. Genius. No need to angle them. Six times. There you go. Per area. Wow. One chance. It's all you get. One chance. And you you're blowing your wad. Yeah, about 20%.
 
-**Dave Jones:** this. It it reflects that 80%. Okay, so they got the conversion over here, right? It only when it hits the first solar cell, it only absorbs 20% and it reflects the 80% and that'll just bounce off these mirrors here inside and then
+**Dave Jones:** To electricity. It reflects 80%, doesn't it? Look. Look. Look. It reflects. Look. Quantum mechanics. The more chance. So what of course. Quantum mechanics. If regular solar panels reflect 80% of the light, they only absorb 20% and convert that 20% to electricity.
 
-**Dave Jones:** it can have another go, have another shot at you know, absorbing another 20% and then if that doesn't do it, well, it reflects 80% of that which is then 64% of the total reflected power and so on and so
+**Dave Jones:** Look at this. It it reflects that 80%. Okay, so they got the conversion over here, right? It only when it hits the first solar cell, it only absorbs 20% and it reflects the 80% and that'll just bounce off these mirrors here inside and then it can have another go, have another shot at you know, absorbing another 20% and then if that doesn't do it, well, it reflects
 
-**Dave Jones:** on. Diminishing returns, of course, you know, you can't beat the laws of physics, Captain. And, you eventually end up with like three times the 300 the three times more energy. What happened to the six times? Oh, it's magically
+**Dave Jones:** 80% of that which is then 64% of the total reflected power and so on and so on. Diminishing returns, of course, you know, you can't beat the laws of physics, Captain.
 
-**Dave Jones:** gone from six to three. It's But, anyway, 300% game-changing. To produce an electron, there are more solar cells in the pipe as it takes More solar cells. And three-dimensional reflection produces more electricity. TIPA is freedom. It's freedom. 45-W TIPA
+**Dave Jones:** And, you eventually end up with like three times the 300 the three times more energy. What happened to the six times? Oh, it's magically gone from six to three.
 
-**Dave Jones:** can power multiple devices. Charge your phone. Charge your shoe phone. Charge Charge your campervan. Setting you free from the grid. Motorhome. Sorry, if you don't like boats. boats and yachts to last the whole day. Whole day? TIPA isn't just efficient, it's also
+**Dave Jones:** It's But, anyway, 300% game-changing. To produce an electron, there are more solar cells in the pipe as it takes More solar cells. And three-dimensional reflection produces more electricity. TIPA is freedom.
 
-**Dave Jones:** durable, lasting up to 30 years. 30 years? You reduce the cost per watt of electricity to the lowest in the world Lowest in the world. Wow. while saving the earth. Up to six times per square meter. can save over 100
+**Dave Jones:** It's freedom. 45-W TIPA can power multiple devices. Charge your phone. Charge your shoe phone. Charge Charge your campervan. Setting you free from the grid. Motorhome. Sorry, if you don't like boats.
 
-**Dave Jones:** tons of Global warming. Fixed. TIPA is not just about savings. It's not just about saving those greenbacks. I saved the planet. Look at the rainforest and the whales, the penguins. Save them all. Look. Achieve great independent Want to put them on top of your car as
+**Dave Jones:** boats and yachts to last the whole day. Whole day? TIPA isn't just efficient, it's also durable, lasting up to 30 years. 30 years? You reduce the cost per watt of electricity to the lowest in the world Lowest in the world.
 
-**Dave Jones:** well. EV. EV. They They missed. The future of solar energy. Protecting the planet. Protecting the planet. Get it now. Get it now. I'm sorry. You missed out. Ah, tipatech.io. We'll have a look at the website, but gosh darn it, we missed
+**Dave Jones:** Wow. while saving the earth. Up to six times per square meter. can save over 100 tons of Global warming. Fixed. TIPA is not just about savings. It's not just about saving those greenbacks.
 
-**Dave Jones:** out. Look at this. For 95 bucks, I could have gotten one. Unbelievable. 30% off. Seven people back that. Seven people claimed this one. 16. Nobody wants the single jobbie to charge their shoe phone. No, everyone's gone for like the
+**Dave Jones:** I saved the planet. Look at the rainforest and the whales, the penguins. Save them all. Look. Achieve great independent Want to put them on top of your car as well.
 
-**Dave Jones:** big packs here. 16 people bought this. Five people claimed a 10 10-pack jobby. Six people claimed the 20 thing module camper van package. And uh no nobody wants to power their entire house for 60 times. You know, you can't
+**Dave Jones:** EV. EV. They They missed. The future of solar energy. Protecting the planet. Protecting the planet. Get it now. Get it now. I'm sorry. You missed out. Ah, tipatech.io. We'll have a look at the website, but gosh darn it, we missed out.
 
-**Dave Jones:** can't suck in that many people, but anyway, they had 514 people put their money into this boondoggle. And over on Kickstarter here, 471. And of course the UK taxpayers, yeah, you got diddled as well. So as you saw there, it has a this wrap-around
+**Dave Jones:** Look at this. For 95 bucks, I could have gotten one. Unbelievable. 30% off. Seven people back that. Seven people claimed this one. 16. Nobody wants the single jobbie to charge their shoe phone.
 
-**Dave Jones:** solar panel like this. It's got the reflection mirror in here. It's got a prismatic dome on the top. The whole idea is that it's you know, a three-dimensional. It just bounces the light around and reflects it around, right? And the energy density here is 30
+**Dave Jones:** No, everyone's gone for like the big packs here. 16 people bought this. Five people claimed a 10 10-pack jobby. Six people claimed the 20 thing module camper van package.
 
-**Dave Jones:** W peak per kilogram, 3.4 times less area at just 1.34 square meters. And compared to a conventional flat panel, which is 19 W peak per kilogram and a 4 to 5 square meter area required for that peak. And its efficiency is not affected
+**Dave Jones:** And uh no nobody wants to power their entire house for 60 times. You know, you can't can't suck in that many people, but anyway, they had 514 people put their money into this boondoggle.
 
-**Dave Jones:** by the Shockley-Queisser limit either due to all the internal reflections. And yes, this is a real thing. And I won't go into details on the Shockley-Queisser limit. You can have a look for yourself, but yeah, basically there's maximum limits to what solar
+**Dave Jones:** And over on Kickstarter here, 471. And of course the UK taxpayers, yeah, you got diddled as well. So as you saw there, it has a this wrap-around solar panel like this.
 
-**Dave Jones:** panels are can achieve. But because this thing just bounces light around until there's all the photons just bounce around until they're eventually absorbed, you can get much greater efficiency out of this thing. Regular flat panels only 20%. You only get one
+**Dave Jones:** It's got the reflection mirror in here. It's got a prismatic dome on the top. The whole idea is that it's you know, a three-dimensional. It just bounces the light around and reflects it around, right?
 
-**Dave Jones:** suck of the sav. So how this one works is you get multiple sucks of the sav. So let's assume that you got 100 W going in here, okay? Then it goes in here. There's no loss here on the this
+**Dave Jones:** And the energy density here is 30 W peak per kilogram, 3.4 times less area at just 1.34 square meters. And compared to a conventional flat panel, which is 19 W peak per kilogram and a 4 to 5 square meter area required for that peak.
 
-**Dave Jones:** prismatic thing on the top. No, don't worry about that. Okay, and then it reflects down here. Okay, and then you're going to get it's your regular solar panel. Okay, so you get your one first suck of the sav at so it's going
+**Dave Jones:** And its efficiency is not affected by the Shockley-Queisser limit either due to all the internal reflections. And yes, this is a real thing. And I won't go into details on the Shockley-Queisser limit.
 
-**Dave Jones:** to be 20%. So you're going to get your 20 watts out of out of your 100 watts coming in. You're going to get 20 watts and then it's going to reflect all of it. Obviously, there's no other losses.
+**Dave Jones:** You can have a look for yourself, but yeah, basically there's maximum limits to what solar panels are can achieve. But because this thing just bounces light around until there's all the photons just bounce around until they're eventually absorbed, you can get much greater efficiency out of this thing.
 
-**Dave Jones:** And then it bounces off here like this. Bounces off the mirror. No loss there. And then it bounce you get a second suck of the sav here. So you get another 20% opportunity chance there. So you get an
+**Dave Jones:** Regular flat panels only 20%. You only get one suck of the sav. So how this one works is you get multiple sucks of the sav. So let's assume that you got 100 W going in here, okay?
 
-**Dave Jones:** extra 16 watts and then it's going to reflect. Now you've only got cuz it's diminishing returns, of course. Can't break the laws of physics, captain. And then it reflects 64% and then that bounces over here. You get another third
+**Dave Jones:** Then it goes in here. There's no loss here on the this prismatic thing on the top. No, don't worry about that. Okay, and then it reflects down here. Okay, and then you're going to get it's your regular solar panel.
 
-**Dave Jones:** suck of the sav and then you get So you get an extra 12.8 watts over here. Then it bounces over here and you get an extra 10 watts over here. And well, yeah, okay, we'll stop it going there.
+**Dave Jones:** Okay, so you get your one first suck of the sav at so it's going to be 20%. So you're going to get your 20 watts out of out of your 100 watts coming in.
 
-**Dave Jones:** And so you add all those up. Okay, 20, 16, 12.8 and 10.2 and you get 59% 59% and your regular solar panel if you're one suck of the sav, you only get your 20%. So you're going to get 300%
+**Dave Jones:** You're going to get 20 watts and then it's going to reflect all of it. Obviously, there's no other losses. And then it bounces off here like this. Bounces off the mirror.
 
-**Dave Jones:** more energy than a regular flat panel. Ah, genius. And you can read how it works yourself. Why are we so special? Because we reflect the light. It's a It's globally unique way of doing this. Nobody else has thought of this before. And yes, I think
+**Dave Jones:** No loss there. And then it bounce you get a second suck of the sav here. So you get another 20% opportunity chance there. So you get an extra 16 watts and then it's going to reflect.
 
-**Dave Jones:** I've got the No, it looks like 560,000 UK pounds. Well, it's more than that that was on the website. So they got their research grant in 2020. They have a 15-year patent on it. A potential $2 IP value with a successful prototype. Do
+**Dave Jones:** Now you've only got cuz it's diminishing returns, of course. Can't break the laws of physics, captain. And then it reflects 64% and then that bounces over here. You get another third suck of the sav and then you get So you get an extra 12.8 watts over here.
 
-**Dave Jones:** they have a successful prototype? Yeah, well, they do actually have a photo of a prototype. Look. So these are their prototypes. Okay, which is So they do actually have a prototype and is that like a little converter for each panel
+**Dave Jones:** Then it bounces over here and you get an extra 10 watts over here. And well, yeah, okay, we'll stop it going there. And so you add all those up.
 
-**Dave Jones:** or whatever? Yeah, but it looks totally legit. So they're actually doing this, you know, it's not a scam. They're They're They're actually doing it, right? Unfortunately, they're drastically mistaken in how this works, okay? Anyway, you can buy all these multiple
+**Dave Jones:** Okay, 20, 16, 12.8 and 10.2 and you get 59% 59% and your regular solar panel if you're one suck of the sav, you only get your 20%. So you're going to get 300% more energy than a regular flat panel.
 
-**Dave Jones:** packs and oh look you need a 9 kW pack and come on. Come on. Here's their timeline and you they'll ship it in start of regular orders at regular prices. May 24th is not that far away for regular Kickstarter shipment, but yeah,
+**Dave Jones:** Ah, genius. And you can read how it works yourself. Why are we so special? Because we reflect the light. It's a It's globally unique way of doing this. Nobody else has thought of this before.
 
-**Dave Jones:** they have nothing that actually looks like the actual final product here, but anyway, so they've got something that works, but where they've screwed it up is of course you don't get 80% reflection.
+**Dave Jones:** And yes, I think I've got the No, it looks like 560,000 UK pounds. Well, it's more than that that was on the website. So they got their research grant in 2020.
 
-**Dave Jones:** Now there's heaps of references for this, but I'll just pick one at random here. This is a Sino Voltaic say a photovoltaic manufacturer here and of course modern solar panels have anti-reflective coatings on them and you've probably seen these. In fact,
+**Dave Jones:** They have a 15-year patent on it. A potential $2 IP value with a successful prototype. Do they have a successful prototype? Yeah, well, they do actually have a photo of a prototype.
 
-**Dave Jones:** they use them in their advertising marketing materials, you know, our our panels don't reflect as much not light into the neighbors windows and they look better and they can change the color of how the solar panels look on your
+**Dave Jones:** Look. So these are their prototypes. Okay, which is So they do actually have a prototype and is that like a little converter for each panel or whatever? Yeah, but it looks totally legit.
 
-**Dave Jones:** rooftop and you know, it's some of them can like look really jazzy with these new anti-reflective coatings. Now the reason they they use these anti-reflective coatings is because they need to absorb as much light as possible and having these anti-reflective
+**Dave Jones:** So they're actually doing this, you know, it's not a scam. They're They're They're actually doing it, right? Unfortunately, they're drastically mistaken in how this works, okay? Anyway, you can buy all these multiple packs and oh look you need a 9 kW pack and come on.
 
-**Dave Jones:** coatings actually helps by in the order of a couple of percent up to maybe 5% efficiency type figures and what they say here is the anti-reflective coating helps to increase the amount of light absorbed into the cell. This
+**Dave Jones:** Come on. Here's their timeline and you they'll ship it in start of regular orders at regular prices. May 24th is not that far away for regular Kickstarter shipment, but yeah, they have nothing that actually looks like the actual final product here, but anyway, so they've got something that works, but where they've screwed it up is of course you don't get 80% reflection.
 
-**Dave Jones:** anti-reflective coating is very much needed as the reflection of a bare silicon solar cell is over 30%. So even if you have bare silicon right there, right? You're not going to reflect to 80% It's just ridiculous. So, they talk
+**Dave Jones:** Now there's heaps of references for this, but I'll just pick one at random here. This is a Sino Voltaic say a photovoltaic manufacturer here and of course modern solar panels have anti-reflective coatings on them and you've probably seen these.
 
-**Dave Jones:** about the color if you like leave the anti-reflective coating off and stuff like that. So, this tipper solar panel obviously has to order special solar cells without the anti-reflective coating on them cuz almost all of the modern solar panel
+**Dave Jones:** In fact, they use them in their advertising marketing materials, you know, our our panels don't reflect as much not light into the neighbors windows and they look better and they can change the color of how the solar panels look on your rooftop and you know, it's some of them can like look really jazzy with these new anti-reflective coatings.
 
-**Dave Jones:** cells are going to actually have anti-reflective coatings to help absorb as much light as possible, right? But even then, even if you have bare silicon, you're only going to reflect 30%, not 80%. That's just how the modern art manufacturing of solar panels is,
+**Dave Jones:** Now the reason they they use these anti-reflective coatings is because they need to absorb as much light as possible and having these anti-reflective coatings actually helps by in the order of a couple of percent up to maybe 5% efficiency type figures and what they say here is the anti-reflective coating helps to increase the amount of light absorbed into the cell.
 
-**Dave Jones:** but you're actually not going to get this 30% reflection here. In practice, you only get a couple of percent reflection and they've got these figures here, okay? Without the anti-reflective coating, okay? So, a regular modern high-efficiency solar cell without the
+**Dave Jones:** This anti-reflective coating is very much needed as the reflection of a bare silicon solar cell is over 30%. So even if you have bare silicon right there, right? You're not going to reflect to 80% It's just ridiculous.
 
-**Dave Jones:** anti without the anti-reflective coating is only going to reflect 4 to 8% of the light, not 80%. And of course, modern ones, they don't reflect with the anti-reflective coating. They don't reflect much at all. They only reflect one or you know, a
+**Dave Jones:** So, they talk about the color if you like leave the anti-reflective coating off and stuff like that. So, this tipper solar panel obviously has to order special solar cells without the anti-reflective coating on them cuz almost all of the modern solar panel cells are going to actually have anti-reflective coatings to help absorb as much light as possible, right?
 
-**Dave Jones:** couple of percent maximum. They're really quite good. That's why you can get, you know, quite high-efficiency solar cells these days. So, if modern solar cells without the anti-reflective coating only reflect single-digit percentages of the light like I E under
+**Dave Jones:** But even then, even if you have bare silicon, you're only going to reflect 30%, not 80%. That's just how the modern art manufacturing of solar panels is, but you're actually not going to get this 30% reflection here.
 
-**Dave Jones:** 10% assuming you absorb like 20%, you convert 20% into energy. Let's say you can even let's just say 10%, right? 10% reflected, then where does the other that's 30% where does the other 70% of the 100 watts here or the 100% in this
+**Dave Jones:** In practice, you only get a couple of percent reflection and they've got these figures here, okay? Without the anti-reflective coating, okay? So, a regular modern high-efficiency solar cell without the anti without the anti-reflective coating is only going to reflect 4 to 8% of the light, not 80%.
 
-**Dave Jones:** case that hits the solar panel, where does it go? It goes into heating up the solar cell. It's absorbed as heat. It's just wasted as heat energy. So, I This is just total It doesn't reflect 80%. Now, could you actually in
+**Dave Jones:** And of course, modern ones, they don't reflect with the anti-reflective coating. They don't reflect much at all. They only reflect one or you know, a couple of percent maximum.
 
-**Dave Jones:** theory get like this like 30-odd percent from like bare silicon processed cells or even though their data sounds like single-digit percentages? Yeah, maybe. Let's have a look at some actual data from the National Renewable Energy Laboratory. I've used this this is a US government
+**Dave Jones:** They're really quite good. That's why you can get, you know, quite high-efficiency solar cells these days. So, if modern solar cells without the anti-reflective coating only reflect single-digit percentages of the light like I E under 10% assuming you absorb like 20%, you convert 20% into energy.
 
-**Dave Jones:** research institute. They have all sorts of solar-related stuff. I've used them many times. And they've done some reflectance uh spectro- uh spectro- py, reflectance spectroscopy. I have to say that three times quickly. So, what they've done is they've
+**Dave Jones:** Let's say you can even let's just say 10%, right? 10% reflected, then where does the other that's 30% where does the other 70% of the 100 watts here or the 100% in this case that hits the solar panel, where does it go?
 
-**Dave Jones:** actually they've set up specific like test instrument here to actually design this reflectometer and they've like done raw wafer things and they've got like a diode array spectrometer. So, they're measuring the entire like spectrum of so reflected light here
+**Dave Jones:** It goes into heating up the solar cell. It's absorbed as heat. It's just wasted as heat energy. So, I This is just total It doesn't reflect 80%. Now, could you actually in theory get like this like 30-odd percent from like bare silicon processed cells or even though their data sounds like single-digit percentages?
 
-**Dave Jones:** and they do actually have This is interesting data. Now, after raw soaring of the solar cell over most of the range here, maybe maybe you might get up to your 50% at like your highest level like your highest wavelength here, but most
+**Dave Jones:** Yeah, maybe. Let's have a look at some actual data from the National Renewable Energy Laboratory. I've used this this is a US government research institute. They have all sorts of solar-related stuff.
 
-**Dave Jones:** of it's only around 60%, but that's just after soaring, right? That's just like the raw kind of like like you don't have a practical solar cell at this point, right? So, then after texturing, right? It drops right down. So, around about
+**Dave Jones:** I've used them many times. And they've done some reflectance uh spectro- uh spectro- py, reflectance spectroscopy. I have to say that three times quickly. So, what they've done is they've actually they've set up specific like test instrument here to actually design this reflectometer and they've like done raw wafer things and they've got like a diode array spectrometer.
 
-**Dave Jones:** that 20% mark there and then looks like you've got like oxide coatings or something on there, that drops it by a bit more and then once you add the anti-reflective coating, you know, it drops it right down. So, even if you
+**Dave Jones:** So, they're measuring the entire like spectrum of so reflected light here and they do actually have This is interesting data. Now, after raw soaring of the solar cell over most of the range here, maybe maybe you might get up to your 50% at like your highest level like your highest wavelength here, but most of it's only around 60%, but that's just after soaring, right?
 
-**Dave Jones:** remove the anti-reflective coating, over most of the bandwidth there, you're only talking like you're talking sub-20%. See, one of the problems here, as always, is you don't get a free lunch. If you want that 20% absorption and 80%
+**Dave Jones:** That's just like the raw kind of like like you don't have a practical solar cell at this point, right? So, then after texturing, right? It drops right down. So, around about that 20% mark there and then looks like you've got like oxide coatings or something on there, that drops it by a bit more and then once you add the anti-reflective coating, you know, it drops it right down.
 
-**Dave Jones:** well and maximize your reflectance you're never going to get the 80% not even close. But if you want to maximize your reflection, okay, you do away with the anti-reflective coating but then that lowers the efficiency of your solar
+**Dave Jones:** So, even if you remove the anti-reflective coating, over most of the bandwidth there, you're only talking like you're talking sub-20%. See, one of the problems here, as always, is you don't get a free lunch.
 
-**Dave Jones:** cell. So you're still so you're not going to get your 20%. You can lose up to like 5% easily, maybe even 10% depending on which type of cell you're trying to do. If there's going to be a trade-off there between the amount you
+**Dave Jones:** If you want that 20% absorption and 80% well and maximize your reflectance you're never going to get the 80% not even close. But if you want to maximize your reflection, okay, you do away with the anti-reflective coating but then that lowers the efficiency of your solar cell.
 
-**Dave Jones:** want to reflect and the amount that you want and the efficiency of your absorption. The anti-reflective coatings are designed to help increase your absorption figure increase your efficiency of your solar cell basically. So for the entire basis of your product
+**Dave Jones:** So you're still so you're not going to get your 20%. You can lose up to like 5% easily, maybe even 10% depending on which type of cell you're trying to do.
 
-**Dave Jones:** and all your claims of 300% 600% better is based on the fact that you're reflecting all of the light that doesn't get converted into electricity. It just doesn't happen. It's It can be in the order of like single digits. It's
+**Dave Jones:** If there's going to be a trade-off there between the amount you want to reflect and the amount that you want and the efficiency of your absorption. The anti-reflective coatings are designed to help increase your absorption figure increase your efficiency of your solar cell basically.
 
-**Dave Jones:** nowhere near 80%. This is just ridiculous. Their entire thing is completely busted. You just have to go to Wikipedia and you can read this. And Wikipedia actually explains how these anti-reflective coatings effectively do what they're claiming to do but they do
+**Dave Jones:** So for the entire basis of your product and all your claims of 300% 600% better is based on the fact that you're reflecting all of the light that doesn't get converted into electricity.
 
-**Dave Jones:** it inside the solar cell. So the anti-reflective coatings help absorb the light trap it in there and you can bounce through multiple times. And this is all part of the design of your solar panel and like the diffusion layers like
+**Dave Jones:** It just doesn't happen. It's It can be in the order of like single digits. It's nowhere near 80%. This is just ridiculous. Their entire thing is completely busted. You just have to go to Wikipedia and you can read this.
 
-**Dave Jones:** the various layers of construction of your solar panel. The anti-reflective layers designed to keep the light in there so that yes, you can get multiple sucks of the sav as the light sort of bounces around in there and it can
+**Dave Jones:** And Wikipedia actually explains how these anti-reflective coatings effectively do what they're claiming to do but they do it inside the solar cell. So the anti-reflective coatings help absorb the light trap it in there and you can bounce through multiple times.
 
-**Dave Jones:** increase the efficiency of your solar cell but you can't just go, okay, I'm going to get a standard solar panel and I'm going to rely on all of the light being reflected. There's zero losses in heat. Yeah, good luck. And like he's going to
+**Dave Jones:** And this is all part of the design of your solar panel and like the diffusion layers like the various layers of construction of your solar panel. The anti-reflective layers designed to keep the light in there so that yes, you can get multiple sucks of the sav as the light sort of bounces around in there and it can increase the efficiency of your solar cell but you can't just go, okay, I'm
 
-**Dave Jones:** reflect it all, bounce it off some mirrors, and then bounce it back in to trap it. It's Oh god. So, basically all of the stuff that you're trying to do to increase the efficiency of your solar cell actually
+**Dave Jones:** going to get a standard solar panel and I'm going to rely on all of the light being reflected. There's zero losses in heat. Yeah, good luck. And like he's going to reflect it all, bounce it off some mirrors, and then bounce it back in to trap it.
 
-**Dave Jones:** lowers the reflectivity of the thing. You can't have it both ways. Anyway, this is why they don't provide any like real-world measurement and they've just got some crude prototypes here and they they've just got no clue. They've got absolutely no
+**Dave Jones:** It's Oh god. So, basically all of the stuff that you're trying to do to increase the efficiency of your solar cell actually lowers the reflectivity of the thing. You can't have it both ways.
 
-**Dave Jones:** clue about what they're doing. And I'll show you what else this company's been up to. So, I'll link in down below. So, this is a company called Yellow Stud Yellow Studio. This is a company called Yellow Studio. So, I'll link it in down below. Has been
+**Dave Jones:** Anyway, this is why they don't provide any like real-world measurement and they've just got some crude prototypes here and they they've just got no clue. They've got absolutely no clue about what they're doing.
 
-**Dave Jones:** in They've been invited to Israel on sponsored trip for pitching. Wow. Look at this. So, they're a research and development company, a sustainable research and development company. They're taking a holistic approach with minimizing enemy energy use, land use, and resources to sustainable
+**Dave Jones:** And I'll show you what else this company's been up to. So, I'll link in down below. So, this is a company called Yellow Stud Yellow Studio. This is a company called Yellow Studio.
 
-**Dave Jones:** generation and technical innovation. Amazon was a book company, is now one of the world's largest cloud computing providers. Oh, well, that means that they Anyway, here's their tipper module thing, but that's not all they do, right? Total internal photonic absorption. A
+**Dave Jones:** So, I'll link it in down below. Has been in They've been invited to Israel on sponsored trip for pitching. Wow. Look at this. So, they're a research and development company, a sustainable research and development company.
 
-**Dave Jones:** new innovative way to embed light and reflect to internally increase the amount of energy. Basically, it's what they're already trying to achieve inside the solar inside high-efficiency solar cells as it is, anyway. Unbelievable. Look. And of course, you're not going to have any loss on the
+**Dave Jones:** They're taking a holistic approach with minimizing enemy energy use, land use, and resources to sustainable generation and technical innovation. Amazon was a book company, is now one of the world's largest cloud computing providers.
 
-**Dave Jones:** on this what poly put the kettle on poly tarp prison on top. No, you're not going to have any losses through that. And no, it's just going to bounce around and bounce around until all the photons are absorbed. What a load of
+**Dave Jones:** Oh, well, that means that they Anyway, here's their tipper module thing, but that's not all they do, right? Total internal photonic absorption. A new innovative way to embed light and reflect to internally increase the amount of energy.
 
-**Dave Jones:** But look, they've got the e-spin back. Stands for electron spin battery charging. Yellow is helping to increase battery density and lowering battery charging. What does that mean? For all types of battery using the peculiarities of quantum spin. Quantum again. Did you
+**Dave Jones:** Basically, it's what they're already trying to achieve inside the solar inside high-efficiency solar cells as it is, anyway. Unbelievable. Look. And of course, you're not going to have any loss on the on this what poly put the kettle on poly tarp prison on top.
 
-**Dave Jones:** know that each electron has own little magnet in terms of its behavior. Batteries only use electrostatic forces. E-spin back adds magnetic forces increasing amount of electron density at the anode. Simple, effective, world class. Expect a crowd funder for that one soon,
+**Dave Jones:** No, you're not going to have any losses through that. And no, it's just going to bounce around and bounce around until all the photons are absorbed. What a load of But look, they've got the e-spin back.
 
-**Dave Jones:** too. I'm sure. Right. So, look, I I don't know. Just leave it in the comments down below, right? And that's not the end of it. They've got a seep back stands for solar electromagnetic energy power battery system using liquid nitrogen as a
+**Dave Jones:** Stands for electron spin battery charging. Yellow is helping to increase battery density and lowering battery charging. What does that mean? For all types of battery using the peculiarities of quantum spin.
 
-**Dave Jones:** working fluid in specialized solar containers. The full electromagnetic wavelength of the sun is absorbed to phase change nitrogen and increase pressure inside enclosed cylinders. This is then passed through a turbine and recondensed and the liquid nitrogen is re-exposed to the EM radiation day and
+**Dave Jones:** Quantum again. Did you know that each electron has own little magnet in terms of its behavior. Batteries only use electrostatic forces. E-spin back adds magnetic forces increasing amount of electron density at the anode.
 
-**Dave Jones:** night 24/7 energy without fossil fuels and a way to store excess energy in a gas battery. So, they've just is working with innovative partners on phase change turbines, vector canceling condensers, and electric plane. Electric plane with a novel propulsion system.
+**Dave Jones:** Simple, effective, world class. Expect a crowd funder for that one soon, too. I'm sure. Right. So, look, I I don't know. Just leave it in the comments down below, right?
 
-**Dave Jones:** Innovation is not limited to the large companies is limited by lack of imagination. Those who believe they can change the world often do. Yeah, well, sorry, Yellow. You ain't going to change the world because when people get this
+**Dave Jones:** And that's not the end of it. They've got a seep back stands for solar electromagnetic energy power battery system using liquid nitrogen as a working fluid in specialized solar containers.
 
-**Dave Jones:** boondoggle back and it'll work, right? You're not going to get anywhere near. I'd be surprised if it's any better at all at all than a regular equivalent capture area of a a high efficiency solar cell. This is just This is just
+**Dave Jones:** The full electromagnetic wavelength of the sun is absorbed to phase change nitrogen and increase pressure inside enclosed cylinders. This is then passed through a turbine and recondensed and the liquid nitrogen is re-exposed to the EM radiation day and night 24/7 energy without fossil fuels and a way to store excess energy in a gas battery.
 
-**Dave Jones:** rubbish. And they actually go under a different name Alt here, and I'll show you why in a minute. And yeah, wink wink, here's the products that they sell, right? They've got this Alt pen. They sell a pen. A pen in aluminum,
+**Dave Jones:** So, they've just is working with innovative partners on phase change turbines, vector canceling condensers, and electric plane. Electric plane with a novel propulsion system. Innovation is not limited to the large companies is limited by lack of imagination.
 
-**Dave Jones:** titanium, resin, and stuff like, right? Explore it on Instagram, and of course, visit the Kickstarter because yes, they've got a Kickstarter for this as well. Custom 236 backers, 9,000 pounds. Oh, that didn't work. That wasn't that popular. And did they ship it?
+**Dave Jones:** Those who believe they can change the world often do. Yeah, well, sorry, Yellow. You ain't going to change the world because when people get this boondoggle back and it'll work, right?
 
-**Dave Jones:** It It looks like they shipped them. It looks like they shipped them. Good on them, right? Good on them. And I'm sure they'll ship these. I have no doubt that they Well, there's some always some doubt, you know? Hiccups
+**Dave Jones:** You're not going to get anywhere near. I'd be surprised if it's any better at all at all than a regular equivalent capture area of a a high efficiency solar cell.
 
-**Dave Jones:** happen with manufacturer and, you know, cost overruns and all sorts of things, right? But I I have no doubt that they plan to ship these things. And and with any luck, the backers will actually get them. But uh please, if you're If you
+**Dave Jones:** This is just This is just rubbish. And they actually go under a different name Alt here, and I'll show you why in a minute. And yeah, wink wink, here's the products that they sell, right?
 
-**Dave Jones:** invested in this boondoggle, and you've got one, you'll eventually get one, please send it in. And we can do some performance measurements on it. That'd be absolutely hilarious. But yeah, leave your thoughts and comments down below. I'd be surprised if this is
+**Dave Jones:** They've got this Alt pen. They sell a pen. A pen in aluminum, titanium, resin, and stuff like, right? Explore it on Instagram, and of course, visit the Kickstarter because yes, they've got a Kickstarter for this as well.
 
-**Dave Jones:** any more efficient per capture area, and that's what it's all about. I haven't even talked about the angle of lights compared to like an angled solar panel and everything else, right? It's all about the capture area. You've only got
+**Dave Jones:** Custom 236 backers, 9,000 pounds. Oh, that didn't work. That wasn't that popular. And did they ship it? It It looks like they shipped them. It looks like they shipped them.
 
-**Dave Jones:** a certain capture area, uh right? Regardless of certain If you've got 1 square meter, you'll get a nominal 1,000 W insolation, right? That's That's the nominal figure that the solar industry accepts and specifies their solar panels on per square meter. So, 1,000 W per
+**Dave Jones:** Good on them, right? Good on them. And I'm sure they'll ship these. I have no doubt that they Well, there's some always some doubt, you know? Hiccups happen with manufacturer and, you know, cost overruns and all sorts of things, right?
 
-**Dave Jones:** square meter is nominal insolation from the sun. Of course, it varies greatly depends upon the season and where you are in on the planet, of course, um, all sorts of other things. Uh, varies daily, really, um, at any
+**Dave Jones:** But I I have no doubt that they plan to ship these things. And and with any luck, the backers will actually get them. But uh please, if you're If you invested in this boondoggle, and you've got one, you'll eventually get one, please send it in.
 
-**Dave Jones:** given location. And, yeah, but for a given capture area, this thing's just No, no, it's just utter Because you've got that trade-off. There's no mention at all of them using any, s- you know, really specially designed, highly reflective
+**Dave Jones:** And we can do some performance measurements on it. That'd be absolutely hilarious. But yeah, leave your thoughts and comments down below. I'd be surprised if this is any more efficient per capture area, and that's what it's all about.
 
-**Dave Jones:** panels that are optimized for high high reflectivity, 80% where, you know, show us the menu factor solar cell in this thing that's going to have 80% reflection and 20% absorption and zero heat losses. It's just Most of the losses in solar panels are absorbed
+**Dave Jones:** I haven't even talked about the angle of lights compared to like an angled solar panel and everything else, right? It's all about the capture area. You've only got a certain capture area, uh right?
 
-**Dave Jones:** as heat. Very little of it actually gets reflected, let alone 80%. It's just complete and utter Yet, they sucked in a lot of people. They sucked in, you know, half a million pounds from the UK government. And, well, yeah, the
+**Dave Jones:** Regardless of certain If you've got 1 square meter, you'll get a nominal 1,000 W insolation, right? That's That's the nominal figure that the solar industry accepts and specifies their solar panels on per square meter.
 
-**Dave Jones:** grift is real. Um, and I'm sure they'll ship them and people will hook them up and go, uh, yeah, okay. It charges my shoe phone, but, uh, is it any better than anything else? People are, you know, there's what, 10
+**Dave Jones:** So, 1,000 W per square meter is nominal insolation from the sun. Of course, it varies greatly depends upon the season and where you are in on the planet, of course, um, all sorts of other things.
 
-**Dave Jones:** people or something who are going to six people who are going to mount them on top trying to mount them on top of their camper van or something like that. And, yeah, well, good luck. Hang on, folks. We have a skeptic.
+**Dave Jones:** Uh, varies daily, really, um, at any given location. And, yeah, but for a given capture area, this thing's just No, no, it's just utter Because you've got that trade-off.
 
-**Dave Jones:** A backer, who's the skeptic? Uh, Julian Borchert, uh, who is a backer. And, uh, from the response from, uh, Nick Vias, the, uh, creator of this thing, um, it sounds like, um, she's a solar cell researcher of some description, of some
+**Dave Jones:** There's no mention at all of them using any, s- you know, really specially designed, highly reflective panels that are optimized for high high reflectivity, 80% where, you know, show us the menu factor solar cell in this thing that's going to have 80% reflection and 20% absorption and zero heat losses.
 
-**Dave Jones:** note. Um, something like that. Anyway, um, let's go through it cuz this is hilarious. Well, I won't go through the whole lot, but anyway, let's see what Julian has to say, the skeptic. You are claiming that these solar panels will be
+**Dave Jones:** It's just Most of the losses in solar panels are absorbed as heat. Very little of it actually gets reflected, let alone 80%. It's just complete and utter Yet, they sucked in a lot of people.
 
-**Dave Jones:** three times more efficient than the current state of the art solar modules. Problem is that it's physically impossible. You will never be able to actually build a module with the 60% efficiency you promise. Let me explain why. Typical starting point is that the
+**Dave Jones:** They sucked in, you know, half a million pounds from the UK government. And, well, yeah, the grift is real. Um, and I'm sure they'll ship them and people will hook them up and go, uh, yeah, okay.
 
-**Dave Jones:** current solar panels have an efficiency of around 20%. That means they use 20% of the energy that's contained in the sunlight. That is actually a very high number. Photosynthesis, blah blah. Tippa claims the energy that solar panels do
+**Dave Jones:** It charges my shoe phone, but, uh, is it any better than anything else? People are, you know, there's what, 10 people or something who are going to six people who are going to mount them on top trying to mount them on top of their camper van or something like that.
 
-**Dave Jones:** not use is lost via reflection and that this system could use that reflection. Problem is reflection is actually a minor loss mechanism in solar panels, which it is. Only about 5% of light is reflected. As I said, it could be higher
+**Dave Jones:** And, yeah, well, good luck. Hang on, folks. We have a skeptic. A backer, who's the skeptic? Uh, Julian Borchert, uh, who is a backer. And, uh, from the response from, uh, Nick Vias, the, uh, creator of this thing, um, it sounds like, um, she's a solar cell researcher of some description, of some note.
 
-**Dave Jones:** than that if you remove the anti-reflective coating, but then you trade off the efficiency of your solar panels. But you know, it's a sure it all comes out in the wash. Not 80% like Tippa claimed. The main loss mechanism in solar panels
+**Dave Jones:** Um, something like that. Anyway, um, let's go through it cuz this is hilarious. Well, I won't go through the whole lot, but anyway, let's see what Julian has to say, the skeptic.
 
-**Dave Jones:** is called thermalization. That means the sunlight is absorbed and not be turned into electricity and instead turned into thermal energy and heats up the solar panel. Tippa does not address thermalization. When you look at Tippa's claims and correct them using the
+**Dave Jones:** You are claiming that these solar panels will be three times more efficient than the current state of the art solar modules. Problem is that it's physically impossible. You will never be able to actually build a module with the 60% efficiency you promise.
 
-**Dave Jones:** correct reflection amount of 5%, you can quickly see that the second and third solar cell barely receive any reflected light. This design will not be more efficient than the regular solar panel. Exactly. Um, Tippa's tech solar concept will not be able to deliver the
+**Dave Jones:** Let me explain why. Typical starting point is that the current solar panels have an efficiency of around 20%. That means they use 20% of the energy that's contained in the sunlight.
 
-**Dave Jones:** efficiency gains I promised because the basic assumptions behind the designs are wrong and there are great solar certification laboratories that offer independent test. Why is Tippa getting Why isn't Tippa getting such a certified test? Yes, interesting. And here's the
+**Dave Jones:** That is actually a very high number. Photosynthesis, blah blah. Tippa claims the energy that solar panels do not use is lost via reflection and that this system could use that reflection.
 
-**Dave Jones:** response from the project owner and designer Nick Viass. And I look, I I won't even read this whole thing. It is just word salad. It's just word salad. It like I my god, even like did a chat GPT spit this out? I mean, like I
+**Dave Jones:** Problem is reflection is actually a minor loss mechanism in solar panels, which it is. Only about 5% of light is reflected. As I said, it could be higher than that if you remove the anti-reflective coating, but then you trade off the efficiency of your solar panels.
 
-**Dave Jones:** just go through little bits of it. Um, we note that you and your team are working on third generation PV materials in the PVX 3 category. I don't know what that is. Obviously, he's done his research on her to then note this,
+**Dave Jones:** But you know, it's a sure it all comes out in the wash. Not 80% like Tippa claimed. The main loss mechanism in solar panels is called thermalization. That means the sunlight is absorbed and not be turned into electricity and instead turned into thermal energy and heats up the solar panel.
 
-**Dave Jones:** but the Take note that the question she had as I, why didn't you get a certified test, you know, independent test and how can you claim the 80% reflection, right? It the 80% reflection, the initial 80% reflection from the panel and then
+**Dave Jones:** Tippa does not address thermalization. When you look at Tippa's claims and correct them using the correct reflection amount of 5%, you can quickly see that the second and third solar cell barely receive any reflected light.
 
-**Dave Jones:** subsequent 80% each time you go through. And well, you can read this and starts talking about the Shockley-Queisser limit again and how they achieve 47% in the lab. Yeah, that's the um NREL actually did that. They have the highest
+**Dave Jones:** This design will not be more efficient than the regular solar panel. Exactly. Um, Tippa's tech solar concept will not be able to deliver the efficiency gains I promised because the basic assumptions behind the designs are wrong and there are great solar certification laboratories that offer independent test.
 
-**Dave Jones:** efficiency, you know, with concentrated solar source and everything and you know, and all this sort of stuff, right? Then he talks to the PBX 3 material that she's working on or something and 150° C and talking about lattices and then
+**Dave Jones:** Why is Tippa getting Why isn't Tippa getting such a certified test? Yes, interesting. And here's the response from the project owner and designer Nick Viass. And I look, I I won't even read this whole thing.
 
-**Dave Jones:** talks about the electron the band gap, right? The stuff and then any photon cascades and heat losses combination whole electron pairs cascade about energy levels and just keeps talking about energy levels. Nothing in here at all about reflection, right? And then in
+**Dave Jones:** It is just word salad. It's just word salad. It like I my god, even like did a chat GPT spit this out? I mean, like I just go through little bits of it.
 
-**Dave Jones:** the trapped environment or recombinant photons of those which are lost to reflection did not interact. Blah blah blah blah. Also, an increased number of photons would then drop, claims they'll drop down into the energy band. That's actually accepted
+**Dave Jones:** Um, we note that you and your team are working on third generation PV materials in the PVX 3 category. I don't know what that is. Obviously, he's done his research on her to then note this, but the Take note that the question she had as I, why didn't you get a certified test, you know, independent test and how can you claim the 80% reflection, right?
 
-**Dave Jones:** via optical phonons and quantum interactions, right? And he starts talking about spins and everything. The point is that there are many impediments to a photon electron interaction and tipper increases the statistical probability of an interaction occurring and that the tipper
+**Dave Jones:** It the 80% reflection, the initial 80% reflection from the panel and then subsequent 80% each time you go through. And well, you can read this and starts talking about the Shockley-Queisser limit again and how they achieve 47% in the lab.
 
-**Dave Jones:** phonons are what's a phonon? I am not a physicist. Are desirable unlike flat solar panels. Once again, has not addressed the 80% reflection. It's a basic thing in the marketing for this thing is and the whole concept of it is
+**Dave Jones:** Yeah, that's the um NREL actually did that. They have the highest efficiency, you know, with concentrated solar source and everything and you know, and all this sort of stuff, right?
 
-**Dave Jones:** that it reflects 80%. How is it reflecting reflecting their own claim reflecting 80%? It's like and it's just all this word salad stuff. Like no, no, sorry. It's just rid of yourself. Try my kids at tiles on it.
+**Dave Jones:** Then he talks to the PBX 3 material that she's working on or something and 150° C and talking about lattices and then talks about the electron the band gap, right?
 
-**Dave Jones:** Anyway, that's just a classic example of a company, you know, an ideas company that just come up with all these ideas and think that they can, you know, come up with a a new one like we're going to
+**Dave Jones:** The stuff and then any photon cascades and heat losses combination whole electron pairs cascade about energy levels and just keeps talking about energy levels. Nothing in here at all about reflection, right?
 
-**Dave Jones:** do a magnetic forces inside batteries to make them more efficient. We're going to use liquid nitrogen and then absorb all the energy and do some like and then we're going to Obviously, like they read somewhere that oh, solar panels are only 20% efficient.
+**Dave Jones:** And then in the trapped environment or recombinant photons of those which are lost to reflection did not interact. Blah blah blah blah. Also, an increased number of photons would then drop, claims they'll drop down into the energy band.
+
+**Dave Jones:** That's actually accepted via optical phonons and quantum interactions, right? And he starts talking about spins and everything. The point is that there are many impediments to a photon electron interaction and tipper increases the statistical probability of an interaction occurring and that the tipper phonons are what's a phonon?
+
+**Dave Jones:** I am not a physicist. Are desirable unlike flat solar panels. Once again, has not addressed the 80% reflection. It's a basic thing in the marketing for this thing is and the whole concept of it is that it reflects 80%.
+
+**Dave Jones:** How is it reflecting reflecting their own claim reflecting 80%? It's like and it's just all this word salad stuff. Like no, no, sorry. It's just rid of yourself. Try my kids at tiles on it.
+
+**Dave Jones:** Anyway, that's just a classic example of a company, you know, an ideas company that just come up with all these ideas and think that they can, you know, come up with a a new one like we're going to do a magnetic forces inside batteries to make them more efficient.
+
+**Dave Jones:** We're going to use liquid nitrogen and then absorb all the energy and do some like and then we're going to Obviously, like they read somewhere that oh, solar panels are only 20% efficient.
 
 **Dave Jones:** Therefore, they must reflect 80% of light. It's complete utter It's busted. So thoroughly busted. Anyway, as always, you can discuss down below or on the EVblog forum. Catch you next time.

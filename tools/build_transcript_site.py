@@ -23,7 +23,7 @@ from collections import defaultdict
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "site/transcripts"
 SRC = [(ROOT / "transcripts", "captions"), (ROOT / "transcripts_whisper", "whisper")]
-CENSUS = [ROOT / "census/captions-v1", ROOT / "census/full-v1"]
+CENSUS = [ROOT / "census/captions-v2", ROOT / "census/full-v1"]
 TOP_CONCEPTS = 10          # per video, for the search index
 
 CSS = """

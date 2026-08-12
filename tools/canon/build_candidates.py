@@ -42,7 +42,7 @@ SWEEP = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 80, 100]
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--census", nargs="+",
-                    default=[str(ROOT / "census/captions-v1"),
+                    default=[str(ROOT / "census/captions-v2"),
                              str(ROOT / "census/full-v1")])
     ap.add_argument("--canon", default=str(ROOT / "canon"))
     ap.add_argument("--out", default=str(ROOT / "articles"))

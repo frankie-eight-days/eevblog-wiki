@@ -172,7 +172,7 @@ def adjudicate(pairs, corpus, log):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--census", nargs="+",
-                    default=[str(ROOT / "census/captions-v1"),
+                    default=[str(ROOT / "census/captions-v2"),
                              str(ROOT / "census/full-v1")])
     ap.add_argument("--out", default=str(ROOT / "canon"))
     ap.add_argument("--no-llm", action="store_true",

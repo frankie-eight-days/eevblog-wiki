@@ -3,221 +3,227 @@ video_id: Gmryy5KWm_g
 title: EEVblog #261 - Marconi 2023 RF Signal Generator Teardown
 url: https://www.youtube.com/watch?v=Gmryy5KWm_g
 source: youtube-asr
-timestamps: {"0": 0, "1": 17, "2": 31, "3": 51, "4": 69, "5": 84, "6": 101, "7": 121, "8": 135, "9": 151, "10": 164, "11": 184, "12": 199, "13": 214, "14": 234, "15": 256, "16": 270, "17": 290, "18": 305, "19": 321, "20": 334, "21": 359, "22": 373, "23": 389, "24": 407, "25": 421, "26": 448, "27": 462, "28": 475, "29": 484, "30": 503, "31": 517, "32": 532, "33": 547, "34": 566, "35": 579, "36": 593, "37": 609, "38": 624, "39": 641, "40": 656, "41": 674, "42": 690, "43": 704, "44": 718, "45": 733, "46": 748, "47": 764, "48": 778, "49": 794, "50": 807, "51": 828, "52": 843, "53": 860, "54": 878, "55": 894, "56": 911, "57": 927, "58": 943, "59": 963, "60": 976, "61": 991, "62": 1041, "63": 1057, "64": 1073, "65": 1106, "66": 1123, "67": 1138, "68": 1155, "69": 1177, "70": 1192, "71": 1210, "72": 1225, "73": 1238, "74": 1251, "75": 1268, "76": 1283, "77": 1297, "78": 1309, "79": 1326, "80": 1340, "81": 1358, "82": 1373, "83": 1387, "84": 1404, "85": 1415, "86": 1439, "87": 1455, "88": 1474, "89": 1492, "90": 1506, "91": 1520, "92": 1531, "93": 1547, "94": 1563, "95": 1579, "96": 1596, "97": 1610, "98": 1624, "99": 1642, "100": 1659, "101": 1676, "102": 1694, "103": 1711, "104": 1726, "105": 1741, "106": 1756, "107": 1768}
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 41, "4": 57, "5": 76, "6": 97, "7": 108, "8": 129, "9": 146, "10": 154, "11": 167, "12": 184, "13": 199, "14": 207, "15": 225, "16": 242, "17": 253, "18": 266, "19": 279, "20": 291, "21": 303, "22": 312, "23": 334, "24": 369, "25": 383, "26": 402, "27": 414, "28": 433, "29": 460, "30": 470, "31": 477, "32": 486, "33": 503, "34": 520, "35": 532, "36": 550, "37": 572, "38": 583, "39": 607, "40": 617, "41": 629, "42": 646, "43": 661, "44": 677, "45": 700, "46": 712, "47": 732, "48": 748, "49": 758, "50": 773, "51": 787, "52": 801, "53": 818, "54": 832, "55": 846, "56": 858, "57": 878, "58": 886, "59": 900, "60": 919, "61": 948, "62": 976, "63": 1001, "64": 1053, "65": 1068, "66": 1091, "67": 1123, "68": 1149, "69": 1160, "70": 1179, "71": 1192, "72": 1206, "73": 1227, "74": 1240, "75": 1253, "76": 1268, "77": 1283, "78": 1294, "79": 1305, "80": 1315, "81": 1330, "82": 1346, "83": 1363, "84": 1381, "85": 1393, "86": 1409, "87": 1419, "88": 1445, "89": 1459, "90": 1476, "91": 1489, "92": 1498, "93": 1516, "94": 1536, "95": 1550, "96": 1563, "97": 1582, "98": 1596, "99": 1612, "100": 1629, "101": 1645, "102": 1656, "103": 1674, "104": 1686, "105": 1703, "106": 1718, "107": 1736, "108": 1747, "109": 1757, "110": 1771}
 ---
 
-**Dave Jones:** Hi, it's tear down time again. Today, we've got a real sexy bit of kit. This is a Marconi Instruments 2023 1.2 GHz signal generator. Ah, I love it. This one's going to be fun. Lots of porn in here. Let's check it
+**Dave Jones:** Hi, it's tear down time again. Today, we've got a real sexy bit of kit. This is a Marconi Instruments 2023 1.2 GHz signal generator. Ah, I love it. This one's going to be fun.
 
-**Dave Jones:** out. And you should know the name Marconi. Yes, the famous man himself. And that led to a whole bunch of companies including a spin-off Marconi Instruments. And interestingly, I used to work back in the day at GEC Marconi.
+**Dave Jones:** Lots of porn in here. Let's check it out. And you should know the name Marconi. Yes, the famous man himself. And that led to a whole bunch of companies including a spin-off Marconi Instruments.
 
-**Dave Jones:** Go figure. Anyway, they used to make some really top-end highly reputable RF signal sources, generators, all sorts of test gear like that. So, very famous name. So, I expect a whole bunch of top-end very well-designed hardware in here. Made in England. Beauty, the old
+**Dave Jones:** And interestingly, I used to work back in the day at GEC Marconi. Go figure. Anyway, they used to make some really top-end highly reputable RF signal sources, generators, all sorts of test gear like that.
 
-**Dave Jones:** dart. Ripper. And they were sold sadly to IFR Systems I think back in the late '90s or thereabouts. And in the early 2000s, a company called Aeroflex. Huh? Go figure. And apparently, they still sell these. You can still buy the 2023A.
+**Dave Jones:** So, very famous name. So, I expect a whole bunch of top-end very well-designed hardware in here. Made in England. Beauty, the old dart. Ripper. And they were sold sadly to IFR Systems I think back in the late '90s or thereabouts.
 
-**Dave Jones:** Looks exactly the same. It's probably got a few little upgrades inside, but you can still buy the same instrument today more than I don't know, at least 15 years later. Fantastic. Think we're going to enjoy this one. Let's check it out.
+**Dave Jones:** And in the early 2000s, a company called Aeroflex. Huh? Go figure. And apparently, they still sell these. You can still buy the 2023A. Looks exactly the same. It's probably got a few little upgrades inside, but you can still buy the same instrument today more than I don't know, at least 15 years later.
 
-**Dave Jones:** Oh, yeah. You can smell it. Top-end hardware. And I thought I'd just show you it powered on first because look at this beautiful backlit dot matrix display. I'm not sure how well it's going to show up on video,
+**Dave Jones:** Fantastic. Think we're going to enjoy this one. Let's check it out. Oh, yeah. You can smell it. Top-end hardware. And I thought I'd just show you it powered on first because look at this beautiful backlit dot matrix display.
 
-**Dave Jones:** but it's really bright, really fantastic display. Almost like a vacuum fluorescent display. Keypad interface, external modulation input over here. 9 kHz to 1.2 gig uh, range all up. and it's got uh, the low frequency modulation uh, output and the
+**Dave Jones:** I'm not sure how well it's going to show up on video, but it's really bright, really fantastic display. Almost like a vacuum fluorescent display. Keypad interface, external modulation input over here.
 
-**Dave Jones:** RF output of course, which is an N connector, but uh, I've got an N to uh, BNC uh, on there, and of course, it's got to have a knob. Beautiful. And check this out. If we hit the uh, carrier
+**Dave Jones:** 9 kHz to 1.2 gig uh, range all up. and it's got uh, the low frequency modulation uh, output and the RF output of course, which is an N connector, but uh, I've got an N to uh, BNC uh, on there, and of course, it's got to have a knob.
 
-**Dave Jones:** frequency button here, we can actually adjust this thing in 1 Hz steps from 9 kHz all the way up to 1.2 GHz in 1 Hz steps. You've got to be kidding me. So, let's go up to a GHz there. There it is.
+**Dave Jones:** Beautiful. And check this out. If we hit the uh, carrier frequency button here, we can actually adjust this thing in 1 Hz steps from 9 kHz all the way up to 1.2 GHz in 1 Hz steps.
 
-**Dave Jones:** 1 GHz. And we can still go up in 1 Hz steps. Beautiful. It's got two different types of modulation as well, which you can which you can actually uh, mix together as well as with the external modulation input over here, and it
+**Dave Jones:** You've got to be kidding me. So, let's go up to a GHz there. There it is. 1 GHz. And we can still go up in 1 Hz steps. Beautiful.
 
-**Dave Jones:** really is quite a versatile RF signal generator. I love it. And the RF output can go anywhere from +13 dBm to -137 dB. Beautiful. And with this puppy of course, we can check the bandwidth of our Agilent InfiniiVision 3000X series
+**Dave Jones:** It's got two different types of modulation as well, which you can which you can actually uh, mix together as well as with the external modulation input over here, and it really is quite a versatile RF signal generator.
 
-**Dave Jones:** scope here. 500 MHz bandwidth scope. Let's check it out. I've got a 10 MHz uh, signal on feeding in now at about uh, half a volt um, RMS. So, uh, let's try and find the uh, -3 dB uh, frequency
+**Dave Jones:** I love it. And the RF output can go anywhere from +13 dBm to -137 dB. Beautiful. And with this puppy of course, we can check the bandwidth of our Agilent InfiniiVision 3000X series scope here.
 
-**Dave Jones:** of this thing. You'd expect it to be 500 MHz cuz that's its quoted bandwidth. So, expect it to drop to about 350 mV or -3 dB. 0.707 of 500 mV at 500 MHz. Let's give that a go. Let's up the frequency
+**Dave Jones:** 500 MHz bandwidth scope. Let's check it out. I've got a 10 MHz uh, signal on feeding in now at about uh, half a volt um, RMS. So, uh, let's try and find the uh, -3 dB uh, frequency of this thing.
 
-**Dave Jones:** directly to 500 MHz. There it is. And check it out. It's only 400 odd mV. So, it actually does better than that. So, we're going to have to um, up the frequency here and uh, see what happens. So, I'm going to uh
+**Dave Jones:** You'd expect it to be 500 MHz cuz that's its quoted bandwidth. So, expect it to drop to about 350 mV or -3 dB. 0.707 of 500 mV at 500 MHz.
 
-**Dave Jones:** up it in 1 MHz steps until 450 or 453 or thereabouts. There it is. And that's 637 MHz. Beautiful. And just as a little heads-up, Agilent going to actually upgrade this scope for me to the one the brand new 1 GHz um option. So, it's
+**Dave Jones:** Let's give that a go. Let's up the frequency directly to 500 MHz. There it is. And check it out. It's only 400 odd mV. So, it actually does better than that.
 
-**Dave Jones:** going back to Melbourne. I'm going to be flying down there in the coming months and we'll see hopefully see this puppy being upgraded to 1 GHz. So, stay tuned for that one. All right, I know you're curious to see it. Let's wind the wick
+**Dave Jones:** So, we're going to have to um, up the frequency here and uh, see what happens. So, I'm going to uh up it in 1 MHz steps until 450 or 453 or thereabouts.
 
-**Dave Jones:** up even further. Let's go. Can it display our 1 GHz signal? It certainly can. Can it go to 1.2? Uh yeah, but now we're really right down in the noise. But, interestingly, the hardware frequency counter is still spot-on. And on the back here, we've got
+**Dave Jones:** There it is. And that's 637 MHz. Beautiful. And just as a little heads-up, Agilent going to actually upgrade this scope for me to the one the brand new 1 GHz um option.
 
-**Dave Jones:** uh there's a sticker that says no options fitted. Bummer. So, this thing comes with various options. Uh one of the real good ones is the um really uh high-stability temperature oven uh controlled oscillator. So, I don't have that. What a bummer, but it doesn't
+**Dave Jones:** So, it's going back to Melbourne. I'm going to be flying down there in the coming months and we'll see hopefully see this puppy being upgraded to 1 GHz. So, stay tuned for that one.
 
-**Dave Jones:** matter. I've got uh those in my lab anyway. And check it out. Made in England. How often do you see that? The old uh art. Brilliant. And of course, it can be controlled by RS-232 or IEEE. And it's got a uh standard IEC mains input
+**Dave Jones:** All right, I know you're curious to see it. Let's wind the wick up even further. Let's go. Can it display our 1 GHz signal? It certainly can. Can it go to 1.2?
 
-**Dave Jones:** connector. It's got various other uh DC inputs and a um RF uh output on the back, optional, which I haven't got, or a uh DC supply if you uh want to use it in some sort of remote location or
+**Dave Jones:** Uh yeah, but now we're really right down in the noise. But, interestingly, the hardware frequency counter is still spot-on. And on the back here, we've got uh there's a sticker that says no options fitted.
 
-**Dave Jones:** something like that. But, that's about all you got on the back. Now, it's time to crack this thing open.
+**Dave Jones:** Bummer. So, this thing comes with various options. Uh one of the real good ones is the um really uh high-stability temperature oven uh controlled oscillator. So, I don't have that.
 
-**Dave Jones:** And that came open pretty easily, exactly as you'd expect instrument of this type two with the case just sliding off the back like that after a few screws. And check out what's up here. There's a loose bit of
+**Dave Jones:** What a bummer, but it doesn't matter. I've got uh those in my lab anyway. And check it out. Made in England. How often do you see that? The old uh art.
 
-**Dave Jones:** There's a bit of paper. Let's check it out. I wonder what it is. Unbelievable. It's Maybe somebody's serviced it or done something. What is it? It's a data sheet.
+**Dave Jones:** Brilliant. And of course, it can be controlled by RS-232 or IEEE. And it's got a uh standard IEC mains input connector. It's got various other uh DC inputs and a um RF uh output on the back, optional, which I haven't got, or a uh DC supply if you uh want to use it in some sort of remote location or something like that.
 
-**Dave Jones:** transistor. What the Why on earth is that stuck inside this thing? Nothing on the back. That's bizarre. And as for the unit itself, this is pretty much the construction I expected. The power supply's huge. It takes up almost the
+**Dave Jones:** But, that's about all you got on the back. Now, it's time to crack this thing open. And that came open pretty easily, exactly as you'd expect instrument of this type two with the case just sliding off the back like that after a few screws.
 
-**Dave Jones:** full length and the full height of the unit. So that's a massive. I'm a bit surprised at the size of that power supply. I guess they're going for ultra-high reliability, I guess. One big digital processor board on the top. It's
+**Dave Jones:** And check out what's up here. There's a loose bit of There's a bit of paper. Let's check it out. I wonder what it is. Unbelievable. It's Maybe somebody's serviced it or done something.
 
-**Dave Jones:** got the main frequency crystal here we'll take a look at. And you know, coax or two going around, but all of the RF magic is contained in a can on the bottom there, presumably. Exactly what I expected.
+**Dave Jones:** What is it? It's a data sheet. transistor. What the Why on earth is that stuck inside this thing? Nothing on the back. That's bizarre. And as for the unit itself, this is pretty much the construction I expected.
 
-**Dave Jones:** And let's take a look in the power supply section. And it's not really as big as I thought, but here's the main board here. And but they've also got the backlight inverter in here as well. And they're basically
+**Dave Jones:** The power supply's huge. It takes up almost the full length and the full height of the unit. So that's a massive. I'm a bit surprised at the size of that power supply.
 
-**Dave Jones:** just using it as a big shielded cage pretty much. There's a bit of wasted space over here, but apart from that, that's pretty much what they're doing. It's just shielding this sucker. But they've also gone to a lot of trouble on
+**Dave Jones:** I guess they're going for ultra-high reliability, I guess. One big digital processor board on the top. It's got the main frequency crystal here we'll take a look at. And you know, coax or two going around, but all of the RF magic is contained in a can on the bottom there, presumably.
 
-**Dave Jones:** the finer points of the engineering in here. So, let's take a look at it. Now, these power devices attached to the side of the case, they're using the side of the case as a heat sink. They've gone to
+**Dave Jones:** Exactly what I expected. And let's take a look in the power supply section. And it's not really as big as I thought, but here's the main board here. And but they've also got the backlight inverter in here as well.
 
-**Dave Jones:** the trouble to do a custom folded aluminum bracket there. Massive amount and there's a second secondary metal black bracket behind here as well. And they've used some very professional looking clamping mechanism for the devices all individually screwed. They've got some
+**Dave Jones:** And they're basically just using it as a big shielded cage pretty much. There's a bit of wasted space over here, but apart from that, that's pretty much what they're doing.
 
-**Dave Jones:** seal pad material behind there. Very nice. There's a couple of linear linear voltage regulators on there plus a couple of switching components here and over here as well. And they've just gone to a lot of trouble to actually heat
+**Dave Jones:** It's just shielding this sucker. But they've also gone to a lot of trouble on the finer points of the engineering in here. So, let's take a look at it.
 
-**Dave Jones:** sink those very professionally on the side of the case. I like it. And the transformer here, as you'd expect, it's professionally mu metal wrapped there just to try and keep the leakage from that down. They've got another heat sink
+**Dave Jones:** Now, these power devices attached to the side of the case, they're using the side of the case as a heat sink. They've gone to the trouble to do a custom folded aluminum bracket there.
 
-**Dave Jones:** heat sink device over here. And they've got four output filter caps here because probably for redundancy and stuff like that. They're not just relying on one big one. They've got either two or four separate ones or possibly due to the massive
+**Dave Jones:** Massive amount and there's a second secondary metal black bracket behind here as well. And they've used some very professional looking clamping mechanism for the devices all individually screwed. They've got some seal pad material behind there.
 
-**Dave Jones:** inductors in here, probably some extra low frequency filtering as well. And the main capacitors have been gunked down so they don't vibrate. Unfortunately, this little vertical riser board here could actually vibrate a little bit. But look, they've gone to the effort to put the
+**Dave Jones:** Very nice. There's a couple of linear linear voltage regulators on there plus a couple of switching components here and over here as well. And they've just gone to a lot of trouble to actually heat sink those very professionally on the side of the case.
 
-**Dave Jones:** plastic spacers on a good lot of the high powered resistors and diodes on this board. I really like that. No surprises though, the power supply is actually made in Taiwan by a third party. Ah, well, you can't have
+**Dave Jones:** I like it. And the transformer here, as you'd expect, it's professionally mu metal wrapped there just to try and keep the leakage from that down. They've got another heat sink heat sink device over here.
 
-**Dave Jones:** everything, but that's fairly typical of these devices, but they've put a lot of effort into this supply. And here's the power switch on the front panel there, and they've gone to quite a bit of effort to actually make this shielded,
+**Dave Jones:** And they've got four output filter caps here because probably for redundancy and stuff like that. They're not just relying on one big one. They've got either two or four separate ones or possibly due to the massive inductors in here, probably some extra low frequency filtering as well.
 
-**Dave Jones:** and the shielding is connected down there, properly crimped and properly locked in place with a shake-proof nut, and it's really quite nice just to shield the mains wiring going from the back to the front. I really like that.
+**Dave Jones:** And the main capacitors have been gunked down so they don't vibrate. Unfortunately, this little vertical riser board here could actually vibrate a little bit. But look, they've gone to the effort to put the plastic spacers on a good lot of the high powered resistors and diodes on this board.
 
-**Dave Jones:** And they've got more grounding on the heat sink plate here, which goes into here, and also the earth, they've got that going down to the plate down the bottom. Once again, also with a shake-proof nut and professionally crimped. And there's the other end of
+**Dave Jones:** I really like that. No surprises though, the power supply is actually made in Taiwan by a third party. Ah, well, you can't have everything, but that's fairly typical of these devices, but they've put a lot of effort into this supply.
 
-**Dave Jones:** the mains cable. Once again, the shield for that is also connected at this end as well. And check out the rubber boot they've got complete like a heat shrink rubber boot going over the IEC power connector. Brilliant. And this device down here,
+**Dave Jones:** And here's the power switch on the front panel there, and they've gone to quite a bit of effort to actually make this shielded, and the shielding is connected down there, properly crimped and properly locked in place with a shake-proof nut, and it's really quite nice just to shield the mains wiring going from the back to the front.
 
-**Dave Jones:** that looks for to me for all the world like one of those temperature cutout things. So, maybe if the temperature of this plate gets too high, it's just going to cut out the mains input. Beautiful. I don't think
+**Dave Jones:** I really like that. And they've got more grounding on the heat sink plate here, which goes into here, and also the earth, they've got that going down to the plate down the bottom.
 
-**Dave Jones:** I've ever seen that on a bit of test gear like this. And one thing you'll note on the back of the case here, they've got this metal stuck on metal braid like this to get good RF screening between this and the
+**Dave Jones:** Once again, also with a shake-proof nut and professionally crimped. And there's the other end of the mains cable. Once again, the shield for that is also connected at this end as well.
 
-**Dave Jones:** back and well, and the top, the outer cover of the unit. Nice attention to detail. They're really serious about keeping things out, keeping RF out of this, and keeping it in. And there's the LCD backlight switching board. Nothing
+**Dave Jones:** And check out the rubber boot they've got complete like a heat shrink rubber boot going over the IEC power connector. Brilliant. And this device down here, that looks for to me for all the world like one of those temperature cutout things.
 
-**Dave Jones:** really uh exciting going on there, but uh they've put it inside this uh the same uh case as the switching power supply to keep to uh shield it from the rest of the circuitry. Great. And the power supply output wire in here,
+**Dave Jones:** So, maybe if the temperature of this plate gets too high, it's just going to cut out the mains input. Beautiful. I don't think I've ever seen that on a bit of test gear like this.
 
-**Dave Jones:** they've got a couple of ferrite beads on there for RFI. And those beads there are actually matched with these ones on the input to the board down there. Check it out. And there's a nice uh standard flat flex
+**Dave Jones:** And one thing you'll note on the back of the case here, they've got this metal stuck on metal braid like this to get good RF screening between this and the back and well, and the top, the outer cover of the unit.
 
-**Dave Jones:** rainbow ribbon cable there going from the digital board uh to actually uh penetrate it. They use a D9 connector uh sorry, a D25 connector here to penetrate uh down through into the RF uh section of the board. Another rainbow ribbon
+**Dave Jones:** Nice attention to detail. They're really serious about keeping things out, keeping RF out of this, and keeping it in. And there's the LCD backlight switching board. Nothing really uh exciting going on there, but uh they've put it inside this uh the same uh case as the switching power supply to keep to uh shield it from the rest of the circuitry.
 
-**Dave Jones:** cable going to the front panel here for all the uh switches. And there's another rainbow cable in the back of this board which actually uh connects everything from one side this board over here once again through to the front panel board.
+**Dave Jones:** Great. And the power supply output wire in here, they've got a couple of ferrite beads on there for RFI. And those beads there are actually matched with these ones on the input to the board down there.
 
-**Dave Jones:** And construction of the main board is fairly typical of the era. We've got uh PLCC packages here for various uh devices, and uh the rest of them are just uh standard SO packages. So, you know, we're talking '95, '96 vintage
+**Dave Jones:** Check it out. And there's a nice uh standard flat flex rainbow ribbon cable there going from the digital board uh to actually uh penetrate it. They use a D9 connector uh sorry, a D25 connector here to penetrate uh down through into the RF uh section of the board.
 
-**Dave Jones:** here. They've got one DIP40 package up the top here, but apart from that, um it's uh you know, and they've used all SMD electrolytic uh caps all around here. Totally almost totally um SMD design. I like it, but uh they've got a
+**Dave Jones:** Another rainbow ribbon cable going to the front panel here for all the uh switches. And there's another rainbow cable in the back of this board which actually uh connects everything from one side this board over here once again through to the front panel board.
 
-**Dave Jones:** socketed EPROM, of course. Um still fairly typical of the day cuz they're using a micro uh processor instead of a microcontroller which has flash firmware. They've got good old-fashioned EPROM. Love it. And of course, there's the obligatory uh bodge wires around
+**Dave Jones:** And construction of the main board is fairly typical of the era. We've got uh PLCC packages here for various uh devices, and uh the rest of them are just uh standard SO packages.
 
-**Dave Jones:** here. Green mod wires, maybe to try and match in with the green solder mask on the PCB perhaps, but they're uh near some HC uh double O's. There's a lot of uh 74 um HC series uh TTL stuff on here.
+**Dave Jones:** So, you know, we're talking '95, '96 vintage here. They've got one DIP40 package up the top here, but apart from that, um it's uh you know, and they've used all SMD electrolytic uh caps all around here.
 
-**Dave Jones:** And we've got an Analog Devices ADSP-2100 series uh It's optimized essentially a microcontroller optimized for DSP uh type work. 25 MIPS or thereabouts, nothing uh earth-shattering by by today's standards, but that would have been a relatively uh powerful beast back
+**Dave Jones:** Totally almost totally um SMD design. I like it, but uh they've got a socketed EPROM, of course. Um still fairly typical of the day cuz they're using a micro uh processor instead of a microcontroller which has flash firmware.
 
-**Dave Jones:** in 1995. There it is, 41st week, '95. So, that dates this board uh to uh very much towards the end of '95, possibly uh early '96 manufacture. And we've got a high Q brand, very popular uh for the
+**Dave Jones:** They've got good old-fashioned EPROM. Love it. And of course, there's the obligatory uh bodge wires around here. Green mod wires, maybe to try and match in with the green solder mask on the PCB perhaps, but they're uh near some HC uh double O's.
 
-**Dave Jones:** age uh TCO-768 10 MHz reference oscillator. Now, this is the uh temperature-compensated oscillator. It's not the um uh extra option uh oven-stabilized uh oscillator. You got to pay I don't know, a thousand or a couple of grand more for that option. And looky what we
+**Dave Jones:** There's a lot of uh 74 um HC series uh TTL stuff on here. And we've got an Analog Devices ADSP-2100 series uh It's optimized essentially a microcontroller optimized for DSP uh type work.
 
-**Dave Jones:** have here, an Intel 80C188 uh processor. And we've got the uh EEPROM to go along with it. So, they've clearly uh split the uh function processing functionality between the Intel processor and between the uh uh Analog Devices DSP we saw before.
+**Dave Jones:** 25 MIPS or thereabouts, nothing uh earth-shattering by by today's standards, but that would have been a relatively uh powerful beast back in 1995. There it is, 41st week, '95.
 
-**Dave Jones:** We've got another uh Atmel um EEPROM device up here. We've got some SRAM. And uh this device over here is an NEC uh 70 uh 7210 uh GPIB controller. And that's about all she wrote for the uh processing part of this thing. And this
+**Dave Jones:** So, that dates this board uh to uh very much towards the end of '95, possibly uh early '96 manufacture. And we've got a high Q brand, very popular uh for the age uh TCO-768 10 MHz reference oscillator.
 
-**Dave Jones:** Texas Instruments TL16C452, it's a uh Centronics uh printer port interface and dual UART as well. So, it's one of those um sort of, you know, all-in-one LSI solutions for uh Centronics and serial back in the days of the IBM PC.
+**Dave Jones:** Now, this is the uh temperature-compensated oscillator. It's not the um uh extra option uh oven-stabilized uh oscillator. You got to pay I don't know, a thousand or a couple of grand more for that option.
 
-**Dave Jones:** And here we've got an AD7537 uh dual 12-bit DAC and support circuitry with those caps up here and stuff like that. And it's obviously part of the uh modulation uh capability because the external modulation inputs are up here
+**Dave Jones:** And looky what we have here, an Intel 80C188 uh processor. And we've got the uh EEPROM to go along with it. So, they've clearly uh split the uh function processing functionality between the Intel processor and between the uh uh Analog Devices DSP we saw before.
 
-**Dave Jones:** like this and so obviously that's part of I'm not sure if it's all of the modulation capability but at least the high level modulation capability of the board and we've got some power supply stuff around here and we've got an 80586
+**Dave Jones:** We've got another uh Atmel um EEPROM device up here. We've got some SRAM. And uh this device over here is an NEC uh 70 uh 7210 uh GPIB controller.
 
-**Dave Jones:** that's a 5 volt precision reference right there and that's probably about all there is to the main control board. And if you notice the front panel end connector down in there it doesn't have a shielded coax at all instead it's a
+**Dave Jones:** And that's about all she wrote for the uh processing part of this thing. And this Texas Instruments TL16C452, it's a uh Centronics uh printer port interface and dual UART as well.
 
-**Dave Jones:** proper metal tubing there might be a coax inside that metal tubing but they've really gone to town they're not just relying on the braid of the of the coax itself they're they're really making sure and using that as a full
+**Dave Jones:** So, it's one of those um sort of, you know, all-in-one LSI solutions for uh Centronics and serial back in the days of the IBM PC. And here we've got an AD7537 uh dual 12-bit DAC and support circuitry with those caps up here and stuff like that.
 
-**Dave Jones:** metal tube and that goes all runs all the way over to the other side here and here's just another view of that tubing going from the end connector on the front panel there all the way across down into the
+**Dave Jones:** And it's obviously part of the uh modulation uh capability because the external modulation inputs are up here like this and so obviously that's part of I'm not sure if it's all of the modulation capability but at least the high level modulation capability of the board and we've got some power supply stuff around here and we've got an 80586 that's a 5 volt precision reference right there and that's probably about
 
-**Dave Jones:** RF section and check out the RF section there's an awful lot of screws and stuff on this thing this could take some effort uh-oh this module contains beryllium oxide components refer to handbook screw the handbook.
+**Dave Jones:** all there is to the main control board. And if you notice the front panel end connector down in there it doesn't have a shielded coax at all instead it's a proper metal tubing there might be a coax inside that metal tubing but they've really gone to town they're not just relying on the braid of the of the coax itself they're they're really making sure and using that as a full
 
-**Dave Jones:** Well, it seems like I've taken off possibly the wrong side because there's this is all diecast aluminum here and so all the screws on the bottom obviously holding the board on that side. All these center screws, they're all mold it
+**Dave Jones:** metal tube and that goes all runs all the way over to the other side here and here's just another view of that tubing going from the end connector on the front panel there all the way across down into the RF section and check out the RF section there's an awful lot of screws and stuff on this thing this could take some effort uh-oh this module contains beryllium oxide
 
-**Dave Jones:** looks like they're all molded into that diecast but there is this top aluminum plate with all these screws so maybe it's a dual side access board this plate here. I expect if I take off all these screws we should get access to at least some
+**Dave Jones:** components refer to handbook screw the handbook. Well, it seems like I've taken off possibly the wrong side because there's this is all diecast aluminum here and so all the screws on the bottom obviously holding the board on that side.
 
-**Dave Jones:** circuitry under here with the bulk of it being accessible on the other side. Oh yeah, smell it RF porn. It just isn't a side here. Look at the this whole diecast plate here. They've actually built in the standoffs for the top PCB into that
+**Dave Jones:** All these center screws, they're all mold it looks like they're all molded into that diecast but there is this top aluminum plate with all these screws so maybe it's a dual side access board this plate here.
 
-**Dave Jones:** here and here so that you know that's a lot of system engineering which goes in there to ensure that you know that this whole thing is assembled and constructed you know so that the mechanical people who design this talk to the PCB people
+**Dave Jones:** I expect if I take off all these screws we should get access to at least some circuitry under here with the bulk of it being accessible on the other side.
 
-**Dave Jones:** who are laying out the board talk to the system engineers who are actually laying out you know designing the architecture of the thing and it's just a lot of work but tada here we have RF magic and one of the first things
+**Dave Jones:** Oh yeah, smell it RF porn. It just isn't a side here. Look at the this whole diecast plate here. They've actually built in the standoffs for the top PCB into that here and here so that you know that's a lot of system engineering which goes in there to ensure that you know that this whole thing is assembled and constructed you know so that the mechanical people who design this talk to the PCB people
 
-**Dave Jones:** you'll notice is that all the circuitry is embedded in the diecast can here and it's surrounded by this what looks like a like a rubber seal against the top plate but if we take a look at that, so let's actually
+**Dave Jones:** who are laying out the board talk to the system engineers who are actually laying out you know designing the architecture of the thing and it's just a lot of work but tada here we have RF magic and one of the first things you'll notice is that all the circuitry is embedded in the diecast can here and it's surrounded by this what looks like a like a rubber
 
-**Dave Jones:** probe what that stuff which looks like rubber down there, and it's not. It's It's completely conductive. And there's no surprises really. This construction, you've seen it before in my teardown of the Tektronix mixed domain spectrum analyzer scope, and it's very typical of RF system
+**Dave Jones:** seal against the top plate but if we take a look at that, so let's actually probe what that stuff which looks like rubber down there, and it's not. It's It's completely conductive.
 
-**Dave Jones:** design like this is very modular. They're actually broken down into modules, and you can physically see them, and you can actually see the controlled impedance traces, and check out the heavy number of bolts they've got tying down the board in each
+**Dave Jones:** And there's no surprises really. This construction, you've seen it before in my teardown of the Tektronix mixed domain spectrum analyzer scope, and it's very typical of RF system design like this is very modular.
 
-**Dave Jones:** section. It's absolutely incredible. And if you look closely, you can see the penetrators going through to the bottom module down in here. So, these penetrators are all the way along. They're They're tapping points off. They're either injecting stuff in, or
+**Dave Jones:** They're actually broken down into modules, and you can physically see them, and you can actually see the controlled impedance traces, and check out the heavy number of bolts they've got tying down the board in each section.
 
-**Dave Jones:** they're tapping stuff out down to the bottom RF section of this board. I love it. It's brilliant. And what we've got here is clearly the output board, because if you look down in there, there's the that RF tubing going to the end connector on
+**Dave Jones:** It's absolutely incredible. And if you look closely, you can see the penetrators going through to the bottom module down in here. So, these penetrators are all the way along.
 
-**Dave Jones:** the front panel, and it goes into a pickerin RF relay here. That thing wouldn't be cheap, let me tell you. It might be 100 bucks or something like that. Wouldn't surprise me at all. So, there's obviously some power protection
+**Dave Jones:** They're They're tapping points off. They're either injecting stuff in, or they're tapping stuff out down to the bottom RF section of this board. I love it. It's brilliant. And what we've got here is clearly the output board, because if you look down in there, there's the that RF tubing going to the end connector on the front panel, and it goes into a pickerin RF relay here.
 
-**Dave Jones:** circuitry in there which trips the relay or something like that. Now, what I've done here is I flipped the board around so that the output is over here to match the system block diagram. And if we show the system block diagram on top of this,
+**Dave Jones:** That thing wouldn't be cheap, let me tell you. It might be 100 bucks or something like that. Wouldn't surprise me at all. So, there's obviously some power protection circuitry in there which trips the relay or something like that.
 
-**Dave Jones:** it might actually make some sense. Here's the output reverse polarity protection here. We've probably got the step attenuator here. We've probably got the pulse modulator here coming through one of the penetrators there, the input to the pulse modulator and the input to the
+**Dave Jones:** Now, what I've done here is I flipped the board around so that the output is over here to match the system block diagram. And if we show the system block diagram on top of this, it might actually make some sense.
 
-**Dave Jones:** step attenuator perhaps. And then going along further, we might have the BFO. We might the two BFO switching sections with the input. The BFO is actually probably on the bottom board down in there, but they're just the switch
+**Dave Jones:** Here's the output reverse polarity protection here. We've probably got the step attenuator here. We've probably got the pulse modulator here coming through one of the penetrators there, the input to the pulse modulator and the input to the step attenuator perhaps.
 
-**Dave Jones:** sections for it. And then over here, we've probably got the level modulation and probably the AM modulation too. So, you can see how that's probably making sense now based on the block diagram. And that's probably how they design this thing. You
+**Dave Jones:** And then going along further, we might have the BFO. We might the two BFO switching sections with the input. The BFO is actually probably on the bottom board down in there, but they're just the switch sections for it.
 
-**Dave Jones:** start off with a high-level block diagram. You go into little building blocks. And then you're going to lay out your board pretty much exactly the same way that you see it. And you can shield the individual sections cuz you see the
+**Dave Jones:** And then over here, we've probably got the level modulation and probably the AM modulation too. So, you can see how that's probably making sense now based on the block diagram.
 
-**Dave Jones:** shield actually comes down in between here with just a little penetrator down there for the for the trace going across there. And it just, you know, it just all works based on the overall system diagram. And on second glance, that does actually
+**Dave Jones:** And that's probably how they design this thing. You start off with a high-level block diagram. You go into little building blocks. And then you're going to lay out your board pretty much exactly the same way that you see it.
 
-**Dave Jones:** match up perfectly cuz these are relays. Look, they're on the underside of the board, but they're RLF. So, it's relay F. And they go along and they number it D, E, F, G, H, E. And it goes so forth right up
+**Dave Jones:** And you can shield the individual sections cuz you see the shield actually comes down in between here with just a little penetrator down there for the for the trace going across there.
 
-**Dave Jones:** to the Pickering relay, the Pickering output relay over here, which is RLM. There you go. So, these are those switching boards. So, it matches up precisely. The individual blocks match up exactly to the system block diagram. I love it. And I love how you can just
+**Dave Jones:** And it just, you know, it just all works based on the overall system diagram. And on second glance, that does actually match up perfectly cuz these are relays. Look, they're on the underside of the board, but they're RLF.
 
-**Dave Jones:** see the main signal flowing through that center conductor, that center microstrip conductor there. This would be a controlled impedance board, of course. They would have paid very close attention to that. It's probably not even FR4 material. It would be
+**Dave Jones:** So, it's relay F. And they go along and they number it D, E, F, G, H, E. And it goes so forth right up to the Pickering relay, the Pickering output relay over here, which is RLM.
 
-**Dave Jones:** some sort of, you know, a Teflon board or something like that, some sort of high frequency and controlled impedance board than FR4. but you can see the microstrip run the signal run straight through and then they've got these are
+**Dave Jones:** There you go. So, these are those switching boards. So, it matches up precisely. The individual blocks match up exactly to the system block diagram. I love it. And I love how you can just see the main signal flowing through that center conductor, that center microstrip conductor there.
 
-**Dave Jones:** shielded bits and sort of like a penetrator here between each section like that. So, that just the microstrip trace goes through. Brilliant.
+**Dave Jones:** This would be a controlled impedance board, of course. They would have paid very close attention to that. It's probably not even FR4 material. It would be some sort of, you know, a Teflon board or something like that, some sort of high frequency and controlled impedance board than FR4.
 
-**Dave Jones:** Now, this part here is rather tricky. You I can't get a socket down in there to actually undo those screws. So, you've got to actually shift There's a couple of uh screws on the side here. You've got to loosen them and the whole
+**Dave Jones:** but you can see the microstrip run the signal run straight through and then they've got these are shielded bits and sort of like a penetrator here between each section like that.
 
-**Dave Jones:** thing actually just slides out a little bit and comes out more into that open notch. Well, I don't know why you just didn't put the huge notch in there. Anyway, that's a bit tricky.
+**Dave Jones:** So, that just the microstrip trace goes through. Brilliant. Now, this part here is rather tricky. You I can't get a socket down in there to actually undo those screws.
 
-**Dave Jones:** Ah, here we go. This is going to be good. Bloody hell of a lot of screws on there. Someone was really fond of these long black screws which presumably go down into the um uh die-cast uh walls to separate all the
+**Dave Jones:** So, you've got to actually shift There's a couple of uh screws on the side here. You've got to loosen them and the whole thing actually just slides out a little bit and comes out more into that open notch.
 
-**Dave Jones:** modules. Here we go. Whoa, crikey. Check it out. Beautiful. Oh, I love it. There it is. Warning. Beryllium. Under that uh uh RF transistor by the looks of it there. So, there you go. That's about uh all they've got in here in terms of
+**Dave Jones:** Well, I don't know why you just didn't put the huge notch in there. Anyway, that's a bit tricky. Ah, here we go. This is going to be good. Bloody hell of a lot of screws on there.
 
-**Dave Jones:** beryllium and they marked it on the silkscreen. Brilliant. And once again, no surprise. Typical RF uh layout. It's all modularized and they've uh got this um alloy um uh shield inside. That's not part of the die-cast. I can actually uh lift that um
+**Dave Jones:** Someone was really fond of these long black screws which presumably go down into the um uh die-cast uh walls to separate all the modules. Here we go. Whoa, crikey.
 
-**Dave Jones:** out if I wanted to. It's a just It's one big uh uh board. It's uh one big PCB, but with that shielded uh um parts. And they've even gone to the trouble to shield inside the shield. Crazy. But,
+**Dave Jones:** Check it out. Beautiful. Oh, I love it. There it is. Warning. Beryllium. Under that uh uh RF transistor by the looks of it there. So, there you go. That's about uh all they've got in here in terms of beryllium and they marked it on the silkscreen.
 
-**Dave Jones:** there you go. That's the effort they've gone to. There's a big um uh tag down here to connect to the um upper plate as if all the screw holes and everything else wasn't enough. They had to actually attach it at that point uh
+**Dave Jones:** Brilliant. And once again, no surprise. Typical RF uh layout. It's all modularized and they've uh got this um alloy um uh shield inside. That's not part of the die-cast.
 
-**Dave Jones:** down there as well. And no doubt, just like the uh board we saw on the upper side, if you got out the rest of the uh block diagram and looked at the rest of the modules that we have left, you'd
+**Dave Jones:** I can actually uh lift that um out if I wanted to. It's a just It's one big uh uh board. It's uh one big PCB, but with that shielded uh um parts.
 
-**Dave Jones:** probably find that each one of these mapped to an individual part of that system block diagram. And interestingly, here's the penetrators along the top here. And they're just uh rainbow ribbon cable down to the 0.1 in um header down
+**Dave Jones:** And they've even gone to the trouble to shield inside the shield. Crazy. But, there you go. That's the effort they've gone to. There's a big um uh tag down here to connect to the um upper plate as if all the screw holes and everything else wasn't enough.
 
-**Dave Jones:** there. And these penetrators obviously are like uh DC signals. They're not uh RF signals. They're just DC control voltages or uh low-frequency uh modulation signals or something like that. So, they don't have to go through um like a coax or anything like that.
+**Dave Jones:** They had to actually attach it at that point uh down there as well. And no doubt, just like the uh board we saw on the upper side, if you got out the rest of the uh block diagram and looked at the rest of the modules that we have left, you'd probably find that each one of these mapped to an individual part of that system block diagram.
 
-**Dave Jones:** They'd happily um do it using ribbon cable. Now, this section here goes through these penetrators into the um AM modulation top uh far end part of the board. And there's a DAC here, so that obviously contains the um uh the RF
+**Dave Jones:** And interestingly, here's the penetrators along the top here. And they're just uh rainbow ribbon cable down to the 0.1 in um header down there. And these penetrators obviously are like uh DC signals.
 
-**Dave Jones:** level DAC and the uh AM DAC as well inside this section. The harmonic filters, they're probably over on this board over here. And this board with the warning beryllium uh compound, these are probably the uh harmonic uh filters in
+**Dave Jones:** They're not uh RF signals. They're just DC control voltages or uh low-frequency uh modulation signals or something like that. So, they don't have to go through um like a coax or anything like that.
 
-**Dave Jones:** this section of the board. And you can see those on this system block diagram. And one of these in here is probably the uh top octave uh processor or something like that. Maybe the uh local uh oscillator, the voltage-controlled
+**Dave Jones:** They'd happily um do it using ribbon cable. Now, this section here goes through these penetrators into the um AM modulation top uh far end part of the board. And there's a DAC here, so that obviously contains the um uh the RF level DAC and the uh AM DAC as well inside this section.
 
-**Dave Jones:** oscillator perhaps, or maybe that's um in one of these sections over here. But, I'm sure if you put a bit of thought into it and studied the block diagram, you could easily figure out which module is which. And down here, we have a
+**Dave Jones:** The harmonic filters, they're probably over on this board over here. And this board with the warning beryllium uh compound, these are probably the uh harmonic uh filters in this section of the board.
 
-**Dave Jones:** Zarlink SP8402, and that's a very low phase noise divide by N device. So, there's our divide by N part of the block diagram, and it probably contains the top octave processor in there as well. And here's another Zarlink device. It's the SP8400
+**Dave Jones:** And you can see those on this system block diagram. And one of these in here is probably the uh top octave uh processor or something like that. Maybe the uh local uh oscillator, the voltage-controlled oscillator perhaps, or maybe that's um in one of these sections over here.
 
-**Dave Jones:** as opposed to the 8402 we saw before. And that is once again a very low phase noise device device, and it's the fractional N synthesizer. So, that's the fractional N synthesizer block that we saw in our system block diagram. Easy.
+**Dave Jones:** But, I'm sure if you put a bit of thought into it and studied the block diagram, you could easily figure out which module is which. And down here, we have a Zarlink SP8402, and that's a very low phase noise divide by N device.
 
-**Dave Jones:** And this section in here, well, we've got a Philips PM7543 DAC. So, that's probably this part of the system block diagram with the attenuation module with the modulation converter and the step attenuator and stuff like that. And I've
+**Dave Jones:** So, there's our divide by N part of the block diagram, and it probably contains the top octave processor in there as well. And here's another Zarlink device. It's the SP8400 as opposed to the 8402 we saw before.
 
-**Dave Jones:** taken the shield off those cans, and that's probably the VCO over here, perhaps. So, that is in that part of the overall system. So, there you go. That's a rough functional block breakdown of this device. I love it. And once again, it
+**Dave Jones:** And that is once again a very low phase noise device device, and it's the fractional N synthesizer. So, that's the fractional N synthesizer block that we saw in our system block diagram.
 
-**Dave Jones:** clearly follows the system functional block diagram. It's really neat. And when you're designing these, it just really helps to modularize these and keep them separate like this. Not only does it make sense from a shielding point of view and a layout board point
+**Dave Jones:** Easy. And this section in here, well, we've got a Philips PM7543 DAC. So, that's probably this part of the system block diagram with the attenuation module with the modulation converter and the step attenuator and stuff like that.
 
-**Dave Jones:** of view and all that sort of stuff, but really it it just makes sense from a system debugging point of view, testing, all that sort of stuff. But, really they've done well to get all this RF magic onto the one board. There's a
+**Dave Jones:** And I've taken the shield off those cans, and that's probably the VCO over here, perhaps. So, that is in that part of the overall system. So, there you go.
 
-**Dave Jones:** lot of effort there, each individual sub section would have had to be individually tested and characterized and stuff like that before they did the final layout. And up here it says it's only issue two of the board, although there's another
+**Dave Jones:** That's a rough functional block breakdown of this device. I love it. And once again, it clearly follows the system functional block diagram. It's really neat. And when you're designing these, it just really helps to modularize these and keep them separate like this.
 
-**Dave Jones:** box next to it which says issue eight in a pen. So maybe they've gone through a few revisions. So I hope you enjoyed that, a teardown of the Marconi 2023. Lots of RF magic in there. I love it.
+**Dave Jones:** Not only does it make sense from a shielding point of view and a layout board point of view and all that sort of stuff, but really it it just makes sense from a system debugging point of view, testing, all that sort of stuff.
 
-**Dave Jones:** Brilliant. And if you like the video, don't forget to give it a thumbs up. If you comment, if you got any comments on what you think parts of these circuitry do, I haven't gone through it in detail at all, then by all means leave it in
+**Dave Jones:** But, really they've done well to get all this RF magic onto the one board. There's a lot of effort there, each individual sub section would have had to be individually tested and characterized and stuff like that before they did the final layout.
 
-**Dave Jones:** the comments or jump on the EVblog forum and talk about it. This has been a rather interesting bit of kit. I'll catch you next time.
+**Dave Jones:** And up here it says it's only issue two of the board, although there's another box next to it which says issue eight in a pen. So maybe they've gone through a few revisions.
+
+**Dave Jones:** So I hope you enjoyed that, a teardown of the Marconi 2023. Lots of RF magic in there. I love it. Brilliant. And if you like the video, don't forget to give it a thumbs up.
+
+**Dave Jones:** If you comment, if you got any comments on what you think parts of these circuitry do, I haven't gone through it in detail at all, then by all means leave it in the comments or jump on the EVblog forum and talk about it.
+
+**Dave Jones:** This has been a rather interesting bit of kit. I'll catch you next time.

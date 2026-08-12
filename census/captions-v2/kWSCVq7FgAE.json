@@ -1,0 +1,934 @@
+{
+ "episode": null,
+ "title": "EEVblog 1445 - How to Simulate an Oscilloscope Probe in LTSPICE",
+ "url": "https://www.youtube.com/watch?v=kWSCVq7FgAE",
+ "file": "kWSCVq7FgAE.md",
+ "main_topics": [
+  "oscilloscope-probe",
+  "ltspice",
+  "lossy-transmission-line"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 48,
+   "depth": "explains",
+   "context_snippet": "show you how to simulate an oscilloscope probe or in this particular case a times one oscilloscope probe"
+  },
+  {
+   "concept": "circuit-loading",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 308,
+   "depth": "explains",
+   "context_snippet": "you are effectively loading down your circuit in a often complex way"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 664,
+   "depth": "explains",
+   "context_snippet": "we've got a probe like this one which has a switchable times one times 10 switch on it"
+  },
+  {
+   "concept": "probe-bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 755,
+   "depth": "explains",
+   "context_snippet": "in times one position spoiler alert it has a very low bandwidth"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 886,
+   "depth": "explains",
+   "context_snippet": "all switchable probes, this one has six and a half megahertz"
+  },
+  {
+   "concept": "oscilloscope-bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 952,
+   "depth": "explains",
+   "context_snippet": "your wiz-bang 100 megahertz 200 meg scope if you switch this to times one"
+  },
+  {
+   "concept": "circuit-loading",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1238,
+   "depth": "explains",
+   "context_snippet": "circuit loading probe loading can be a big thing"
+  },
+  {
+   "concept": "pp510",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1460,
+   "depth": "mention",
+   "context_snippet": "simulate this PP510 Siglent oscilloscope probe"
+  },
+  {
+   "concept": "siglent",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1474,
+   "depth": "mention",
+   "context_snippet": "PP510 Siglent oscilloscope probe"
+  },
+  {
+   "concept": "ltspice",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1619,
+   "depth": "explains",
+   "context_snippet": "we're going to be using LTSpice here because not only is it a really good simulator"
+  },
+  {
+   "concept": "transmission-line",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1885,
+   "depth": "explains",
+   "context_snippet": "LTSpice because it has transmission line stuff"
+  },
+  {
+   "concept": "ideal-lossless-transmission-line",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 2022,
+   "depth": "explains",
+   "context_snippet": "this is an ideal lossless transmission line"
+  },
+  {
+   "concept": "lossy-transmission-line",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2151,
+   "depth": "explains",
+   "context_snippet": "it is deliberately lossy. It's deliberately designed to be lossy"
+  },
+  {
+   "concept": "lossy-transmission-line",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2233,
+   "depth": "mention",
+   "context_snippet": "they do have another one called a lossy transmission line"
+  },
+  {
+   "concept": "lossy-transmission-line",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2350,
+   "depth": "explains",
+   "context_snippet": "when you actually go and place your lossy transmission line like this, it doesn't just work"
+  },
+  {
+   "concept": "lt-wiki",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 2857,
+   "depth": "mention",
+   "context_snippet": "there's actually a LT Wiki"
+  },
+  {
+   "concept": "spice-model-parameter",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 2997,
+   "depth": "explains",
+   "context_snippet": "it's got the spice model parameters, the spice directive as it's called"
+  },
+  {
+   "concept": "spice-directive",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 3034,
+   "depth": "explains",
+   "context_snippet": "the spice directive as it's called, which we'll use"
+  },
+  {
+   "concept": "resistance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 13,
+   "char_start": 3283,
+   "depth": "explains",
+   "context_snippet": "the resistance in ohms per unit length"
+  },
+  {
+   "concept": "coaxial-cable",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 13,
+   "char_start": 3323,
+   "depth": "explains",
+   "context_snippet": "Because this is a lossy coax cable, it's not just a regular coax cable, it's lossy"
+  },
+  {
+   "concept": "multimeter",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 3474,
+   "depth": "mention",
+   "context_snippet": "if you get your multimeter out, go and do it right now"
+  },
+  {
+   "concept": "coaxial-cable",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 3679,
+   "depth": "explains",
+   "context_snippet": "you don't measure zero ohms. You measure a couple of hundred ohms"
+  },
+  {
+   "concept": "john-kobbe",
+   "type": "person",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 3804,
+   "depth": "mention",
+   "context_snippet": "invented by John Kobbe at Tektronix"
+  },
+  {
+   "concept": "tektronix",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 3816,
+   "depth": "mention",
+   "context_snippet": "John Kobbe at Tektronix"
+  },
+  {
+   "concept": "lossy-coaxial-cable",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 3968,
+   "depth": "explains",
+   "context_snippet": "Lossy coax, that's how we get the really high frequency really superb performance in modern passive probes"
+  },
+  {
+   "concept": "inductance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4146,
+   "depth": "explains",
+   "context_snippet": "every wire has got inductance in it"
+  },
+  {
+   "concept": "conductance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4186,
+   "depth": "explains",
+   "context_snippet": "G that's conductance in Siemens"
+  },
+  {
+   "concept": "multimeter",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 4264,
+   "depth": "mention",
+   "context_snippet": "Your multimeter might have a conductance mode"
+  },
+  {
+   "concept": "capacitance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 4423,
+   "depth": "explains",
+   "context_snippet": "capacitance per unit length"
+  },
+  {
+   "concept": "spice-directive",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 5175,
+   "depth": "explains",
+   "context_snippet": "this is what's called the spice directive"
+  },
+  {
+   "concept": "ltspice",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 5272,
+   "depth": "mention",
+   "context_snippet": "we go into our LTSpice"
+  },
+  {
+   "concept": "spice-directive",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 5649,
+   "depth": "explains",
+   "context_snippet": "we have to go up here and insert a spice directive"
+  },
+  {
+   "concept": "oscilloscope-input",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 5728,
+   "depth": "mention",
+   "context_snippet": "a regular comment like down here oscilloscope input"
+  },
+  {
+   "concept": "resistance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6386,
+   "depth": "explains",
+   "context_snippet": "The resistance 210 ohms, the capacitance 83 puff, the inductance 208"
+  },
+  {
+   "concept": "capacitance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6411,
+   "depth": "explains",
+   "context_snippet": "the capacitance 83 puff"
+  },
+  {
+   "concept": "inductance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6436,
+   "depth": "explains",
+   "context_snippet": "the inductance 208"
+  },
+  {
+   "concept": "sine-wave",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 6698,
+   "depth": "explains",
+   "context_snippet": "set that up as a sine wave at a 1 V amplitude"
+  },
+  {
+   "concept": "source-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 6754,
+   "depth": "explains",
+   "context_snippet": "I've got a 50 ohm source impedance here"
+  },
+  {
+   "concept": "oscilloscope-input",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 6871,
+   "depth": "explains",
+   "context_snippet": "and then we've got our oscilloscope input"
+  },
+  {
+   "concept": "system-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7141,
+   "depth": "explains",
+   "context_snippet": "I want to model the whole effectively the system response including the oscilloscope input"
+  },
+  {
+   "concept": "compensation-network",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7242,
+   "depth": "explains",
+   "context_snippet": "this 68 ohm and 22.5 puff here is actually the compensation network"
+  },
+  {
+   "concept": "compensation-network",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 7512,
+   "depth": "explains",
+   "context_snippet": "that's just designed to taper the response off"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 8125,
+   "depth": "explains",
+   "context_snippet": "Where do we get the 83 pF from? Well, 83 pF as we uh call it"
+  },
+  {
+   "concept": "probe-capacitance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 8239,
+   "depth": "explains",
+   "context_snippet": "It says in times one mode 85 pF to 120 pF"
+  },
+  {
+   "concept": "characteristic-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 8696,
+   "depth": "explains",
+   "context_snippet": "the characteristic impedance is equal to square root of uh the L square root of LC"
+  },
+  {
+   "concept": "compensation-network",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 8916,
+   "depth": "opinion",
+   "context_snippet": "leave this uh compensation network here uh for now at the um oscilloscope end of the uh probe"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 8967,
+   "depth": "mention",
+   "context_snippet": "at the um oscilloscope end of the uh probe"
+  },
+  {
+   "concept": "ac-analysis",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9198,
+   "depth": "explains",
+   "context_snippet": "So, we want an AC analysis like this. We'll just run linear"
+  },
+  {
+   "concept": "frequency-sweep",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9398,
+   "depth": "explains",
+   "context_snippet": "Start frequency 1 Hz, uh stop frequency 20 meg"
+  },
+  {
+   "concept": "bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9453,
+   "depth": "explains",
+   "context_snippet": "I know the bandwidth of this is going to be about 6.5 meg"
+  },
+  {
+   "concept": "spice",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 9621,
+   "depth": "explains",
+   "context_snippet": "this GUI interface is just a nice way of using spice, but spice is basically a command line thing"
+  },
+  {
+   "concept": "simulation-engine",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 9781,
+   "depth": "explains",
+   "context_snippet": "all of your simulation engines, they use the spice as is backbone"
+  },
+  {
+   "concept": "spice",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 9813,
+   "depth": "mention",
+   "context_snippet": "they use the spice as is backbone"
+  },
+  {
+   "concept": "matrix-singularity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 9995,
+   "depth": "explains",
+   "context_snippet": "analysis failed. Matrix is singular"
+  },
+  {
+   "concept": "ltspice",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 10103,
+   "depth": "mention",
+   "context_snippet": "not just on LTSpice. It might give you a similar error"
+  },
+  {
+   "concept": "floating-circuit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 10317,
+   "depth": "explains",
+   "context_snippet": "it thinks there's another part of your circuit which is floating"
+  },
+  {
+   "concept": "dc-bias-connection",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 10411,
+   "depth": "explains",
+   "context_snippet": "there's no like DC bias connection between them"
+  },
+  {
+   "concept": "transformer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 10506,
+   "depth": "explains",
+   "context_snippet": "if you're doing a transformer simulation or something like that"
+  },
+  {
+   "concept": "ground-reference",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10872,
+   "depth": "explains",
+   "context_snippet": "get around that by adding another ground point on this side over here"
+  },
+  {
+   "concept": "transmission-line-model",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 11032,
+   "depth": "explains",
+   "context_snippet": "the transmission line model, it doesn't like having the other side"
+  },
+  {
+   "concept": "3-db-bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 11391,
+   "depth": "explains",
+   "context_snippet": "we'll add a cursor 3 dB there, cuz that's our bandwidth point, our minus 3 dB point"
+  },
+  {
+   "concept": "ground-reference",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 50,
+   "char_start": 11604,
+   "depth": "opinion",
+   "context_snippet": "you may not want to simulate with a ground reference point on both sides of the circuit"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 11925,
+   "depth": "mention",
+   "context_snippet": "we can actually whack in a resistor here"
+  },
+  {
+   "concept": "dc-bias-path",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 11989,
+   "depth": "explains",
+   "context_snippet": "we'll put in a high value resistor, make it 1 g ohm"
+  },
+  {
+   "concept": "dc-bias-path",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 12210,
+   "depth": "explains",
+   "context_snippet": "when we've got that DC bias path, this other side is no longer deemed to be floating"
+  },
+  {
+   "concept": "floating-circuit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 12557,
+   "depth": "explains",
+   "context_snippet": "something's floating, you're going to have to add a DC bias or another ground reference"
+  },
+  {
+   "concept": "probe-compensation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 12822,
+   "depth": "explains",
+   "context_snippet": "the compensation range is between 10 and 35 pF"
+  },
+  {
+   "concept": "series-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 12933,
+   "depth": "mention",
+   "context_snippet": "normally they have a series resistor in there of normally 68 ohms"
+  },
+  {
+   "concept": "compensation-network",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 13294,
+   "depth": "explains",
+   "context_snippet": "a compensation network uh to ensure that the uh response doesn't go higgledy-piggledy at high frequency"
+  },
+  {
+   "concept": "adjustment-screw",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 57,
+   "char_start": 13470,
+   "depth": "mention",
+   "context_snippet": "there's actually the adjustment screw on here"
+  },
+  {
+   "concept": "input-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 58,
+   "char_start": 13683,
+   "depth": "explains",
+   "context_snippet": "designed to compensate to match the input uh capacitance of your scope"
+  },
+  {
+   "concept": "system-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 58,
+   "char_start": 13769,
+   "depth": "explains",
+   "context_snippet": "give you the like a total system response a flat response"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 60,
+   "char_start": 14222,
+   "depth": "mention",
+   "context_snippet": "move this compensation network over to the input side to match this specific scope probe"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 61,
+   "char_start": 14417,
+   "depth": "mention",
+   "context_snippet": "we'll add a resistor in here like this"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 61,
+   "char_start": 14500,
+   "depth": "mention",
+   "context_snippet": "then we'll add a cap uh across there like that"
+  },
+  {
+   "concept": "variable-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 14602,
+   "depth": "explains",
+   "context_snippet": "that's our variable capacitor compensation network"
+  },
+  {
+   "concept": "coaxial-cable",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 14748,
+   "depth": "explains",
+   "context_snippet": "the actual coax, the lossy transmission line starts after there's a physical resistor and a physical cap"
+  },
+  {
+   "concept": "series-resistance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 15861,
+   "depth": "explains",
+   "context_snippet": "when you've got your resistor, your compensation network in here, it's a series resistance"
+  },
+  {
+   "concept": "siglent",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 70,
+   "char_start": 16598,
+   "depth": "mention",
+   "context_snippet": "Siglent data sheet probe series"
+  },
+  {
+   "concept": "pp510",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 70,
+   "char_start": 16631,
+   "depth": "mention",
+   "context_snippet": "the PP510 probe 100 MHz"
+  },
+  {
+   "concept": "probe-bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 70,
+   "char_start": 16631,
+   "depth": "explains",
+   "context_snippet": "the PP510 probe 100 MHz. There you go. Oh, it's 6 MHz"
+  },
+  {
+   "concept": "iterative-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 71,
+   "char_start": 17103,
+   "depth": "explains",
+   "context_snippet": "we can just back calculate, we can just iterate the value of that 68 ohm"
+  },
+  {
+   "concept": "compensation-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 17673,
+   "depth": "explains",
+   "context_snippet": "this PP 50 510 probe likely has a compensation resistor in here of 12 ohms"
+  },
+  {
+   "concept": "lossy-coax",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 17752,
+   "depth": "explains",
+   "context_snippet": "a lossy coax of roughly 318 ohms"
+  },
+  {
+   "concept": "tip-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 18065,
+   "depth": "explains",
+   "context_snippet": "simulate your just using the tip capacitance or the system capacitance as it's called"
+  },
+  {
+   "concept": "clip-lead-inductance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18396,
+   "depth": "explains",
+   "context_snippet": "model the the actual clip lead you're in inductive clip lead like this"
+  },
+  {
+   "concept": "transformer-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18519,
+   "depth": "mention",
+   "context_snippet": "model like a transformer coupling into your ground lead"
+  },
+  {
+   "concept": "50-hz-mains",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18622,
+   "depth": "mention",
+   "context_snippet": "50 hertz mains"
+  },
+  {
+   "concept": "magnetic-interference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18653,
+   "depth": "explains",
+   "context_snippet": "some other magnetic thing nearby that is coupling into your ground lead"
+  },
+  {
+   "concept": "magnetic-coupling",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18653,
+   "depth": "explains",
+   "context_snippet": "some other magnetic thing nearby that is coupling into your ground lead"
+  },
+  {
+   "concept": "ground-lead",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18694,
+   "depth": "explains",
+   "context_snippet": "coupling into your ground lead"
+  },
+  {
+   "concept": "oscilloscope-probe-simulation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18739,
+   "depth": "explains",
+   "context_snippet": "use this sort of simulation to actually see what's going on here"
+  },
+  {
+   "concept": "oscilloscope-input",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 18843,
+   "depth": "explains",
+   "context_snippet": "delete this oscilloscope input like this and we can run that again"
+  },
+  {
+   "concept": "bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 18986,
+   "depth": "explains",
+   "context_snippet": "that's going to be a higher bandwidth minus 3 dB"
+  },
+  {
+   "concept": "oscilloscope-input",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19076,
+   "depth": "explains",
+   "context_snippet": "if we don't include the oscilloscope input here"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19129,
+   "depth": "explains",
+   "context_snippet": "just the probe itself has a bandwidth of 7.8 meg"
+  },
+  {
+   "concept": "bandwidth",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19134,
+   "depth": "explains",
+   "context_snippet": "the probe itself has a bandwidth of 7.8 meg"
+  },
+  {
+   "concept": "input-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19324,
+   "depth": "opinion",
+   "context_snippet": "15 puff input on the Siglent"
+  },
+  {
+   "concept": "siglent",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19338,
+   "depth": "opinion",
+   "context_snippet": "on the Siglent"
+  },
+  {
+   "concept": "oscilloscope-probe",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19432,
+   "depth": "explains",
+   "context_snippet": "This is how you simulate a oscilloscope probe"
+  },
+  {
+   "concept": "oscilloscope-input",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19483,
+   "depth": "explains",
+   "context_snippet": "the complete system oscilloscope probe with the ground reference on this side"
+  },
+  {
+   "concept": "ground-reference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19522,
+   "depth": "explains",
+   "context_snippet": "with the ground reference on this side"
+  }
+ ]
+}

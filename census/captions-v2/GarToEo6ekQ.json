@@ -1,0 +1,745 @@
+{
+ "episode": null,
+ "title": "EEVacademy #9 - Implementing SCPI in C++",
+ "url": "https://www.youtube.com/watch?v=GarToEo6ekQ",
+ "file": "GarToEo6ekQ.md",
+ "main_topics": [
+  "scpi",
+  "scpi-parser",
+  "c-plus-plus"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "scpi-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 85,
+   "depth": "explains",
+   "context_snippet": "a set of commands that format the standard commands for program mobile instruments"
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 169,
+   "depth": "explains",
+   "context_snippet": "SCIPPI commands are separated into these sections and they're separated by colons"
+  },
+  {
+   "concept": "scpi-command-tree",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 273,
+   "depth": "explains",
+   "context_snippet": "here we have the first node, the second node, and the third node"
+  },
+  {
+   "concept": "scpi-command-syntax",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 440,
+   "depth": "explains",
+   "context_snippet": "these strange syntaxes like you get these square brackets"
+  },
+  {
+   "concept": "optional-syntax",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 516,
+   "depth": "explains",
+   "context_snippet": "And this means optional. And so this is something that we're going to have to implement"
+  },
+  {
+   "concept": "colon-delimiter",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 608,
+   "depth": "explains",
+   "context_snippet": "commands are always separated by these colons"
+  },
+  {
+   "concept": "required-command-section",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 765,
+   "depth": "explains",
+   "context_snippet": "The required section is in uppercase and the optional section is in lowercase"
+  },
+  {
+   "concept": "case-sensitivity",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 849,
+   "depth": "explains",
+   "context_snippet": "SCIPPI is not strictly case-sensitive"
+  },
+  {
+   "concept": "scpi-command-abbreviation",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1102,
+   "depth": "explains",
+   "context_snippet": "you could abbreviate that node as INST"
+  },
+  {
+   "concept": "scpi-parameter",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1267,
+   "depth": "explains",
+   "context_snippet": "parameters are always separated by commas"
+  },
+  {
+   "concept": "comma-delimiter",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1267,
+   "depth": "explains",
+   "context_snippet": "parameters are always separated by commas"
+  },
+  {
+   "concept": "optional-whitespace",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1476,
+   "depth": "explains",
+   "context_snippet": "it's an optional white space between them. It doesn't have to be there"
+  },
+  {
+   "concept": "scpi-keyword",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1697,
+   "depth": "explains",
+   "context_snippet": "it has two different sections, a required section and an optional section"
+  },
+  {
+   "concept": "c-plus-plus-string",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 1820,
+   "depth": "opinion",
+   "context_snippet": "in an embedded system, you wouldn't use std::string"
+  },
+  {
+   "concept": "embedded-system",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 1820,
+   "depth": "opinion",
+   "context_snippet": "in an embedded system, you wouldn't use std::string"
+  },
+  {
+   "concept": "fixed-size-array",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 1876,
+   "depth": "explains",
+   "context_snippet": "you would use a fixed-size array"
+  },
+  {
+   "concept": "scpi-identification-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2457,
+   "depth": "mention",
+   "context_snippet": "things like test and reset and identification"
+  },
+  {
+   "concept": "scpi-command-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 2824,
+   "depth": "explains",
+   "context_snippet": "you then can parse an optional section"
+  },
+  {
+   "concept": "parser-index",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 14,
+   "char_start": 3350,
+   "depth": "explains",
+   "context_snippet": "an index which to start processing"
+  },
+  {
+   "concept": "keyword-matching",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 3788,
+   "depth": "explains",
+   "context_snippet": "if keyword \"hello\" with an index and if if that is true, then we know it's found"
+  },
+  {
+   "concept": "string-index",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 18,
+   "char_start": 4094,
+   "depth": "explains",
+   "context_snippet": "when the required section is found the index um increments by the length of that that section"
+  },
+  {
+   "concept": "optional-section-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 20,
+   "char_start": 4518,
+   "depth": "explains",
+   "context_snippet": "the optional section um begins processing at that index"
+  },
+  {
+   "concept": "parser-index-increment",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 4748,
+   "depth": "explains",
+   "context_snippet": "it was incremented by that that optional section of length two"
+  },
+  {
+   "concept": "scpi-keyword-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 4921,
+   "depth": "explains",
+   "context_snippet": "the structure of the um the skip command"
+  },
+  {
+   "concept": "required-section-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 23,
+   "char_start": 5200,
+   "depth": "explains",
+   "context_snippet": "we're looking for h e l and that is required"
+  },
+  {
+   "concept": "block-bounds-check",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 5829,
+   "depth": "explains",
+   "context_snippet": "if the block index is within the bounds of the block"
+  },
+  {
+   "concept": "keyword-length",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6603,
+   "depth": "explains",
+   "context_snippet": "test whether the index is equal to the keyword size"
+  },
+  {
+   "concept": "optional-parser-function",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7312,
+   "depth": "explains",
+   "context_snippet": "optional is basically identical to required, but it always returns true"
+  },
+  {
+   "concept": "scpi-node",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 7719,
+   "depth": "explains",
+   "context_snippet": "the node is actually just a keyword with a um with a colon in front of it"
+  },
+  {
+   "concept": "root-node",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 7828,
+   "depth": "explains",
+   "context_snippet": "the root node, the first node in Skippy, that's this node here, is actually optional"
+  },
+  {
+   "concept": "boolean-flag",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 7953,
+   "depth": "mention",
+   "context_snippet": "we have to have this bool is root flag"
+  },
+  {
+   "concept": "c-plus-plus-template",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 8014,
+   "depth": "mention",
+   "context_snippet": "you don't really have to understand templates to understand this"
+  },
+  {
+   "concept": "optional-root-colon",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 8170,
+   "depth": "explains",
+   "context_snippet": "if it's true, then the colon is optional"
+  },
+  {
+   "concept": "required-node-colon",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 8663,
+   "depth": "explains",
+   "context_snippet": "if it isn't the root node, the first node, then we're kind of fine to say the colon is required"
+  },
+  {
+   "concept": "colon",
+   "type": "other",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 8875,
+   "depth": "explains",
+   "context_snippet": "if the colon is found and then the keyword is found"
+  },
+  {
+   "concept": "keyword",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 8875,
+   "depth": "explains",
+   "context_snippet": "if the colon is found and then the keyword is found"
+  },
+  {
+   "concept": "parser-node",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9111,
+   "depth": "explains",
+   "context_snippet": "a node and we're going to do a non-root node"
+  },
+  {
+   "concept": "keyword",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9181,
+   "depth": "explains",
+   "context_snippet": "a node consists of a keyword"
+  },
+  {
+   "concept": "keyword",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9232,
+   "depth": "explains",
+   "context_snippet": "the keyword here is hello"
+  },
+  {
+   "concept": "colon",
+   "type": "other",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 9418,
+   "depth": "explains",
+   "context_snippet": "Only now we're looking for that colon"
+  },
+  {
+   "concept": "root-node",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 9596,
+   "depth": "mention",
+   "context_snippet": "And this is not a root node"
+  },
+  {
+   "concept": "colon",
+   "type": "other",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 9817,
+   "depth": "explains",
+   "context_snippet": "if we add a colon here, the required colon is now inside the block"
+  },
+  {
+   "concept": "keyword",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 10116,
+   "depth": "explains",
+   "context_snippet": "the keyword's found, so we know we've found this node"
+  },
+  {
+   "concept": "skippy-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 10192,
+   "depth": "explains",
+   "context_snippet": "Skippy is really just a bunch of nodes"
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10460,
+   "depth": "explains",
+   "context_snippet": "a standard command in Skippy would be sense"
+  },
+  {
+   "concept": "sense-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 10460,
+   "depth": "explains",
+   "context_snippet": "a standard command in Skippy would be sense"
+  },
+  {
+   "concept": "query",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 10635,
+   "depth": "explains",
+   "context_snippet": "one more thing, which is query"
+  },
+  {
+   "concept": "question-mark",
+   "type": "other",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 10755,
+   "depth": "explains",
+   "context_snippet": "Query just detects the question mark character"
+  },
+  {
+   "concept": "sense-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 10916,
+   "depth": "explains",
+   "context_snippet": "We have the sense node"
+  },
+  {
+   "concept": "voltage",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 50,
+   "char_start": 11026,
+   "depth": "mention",
+   "context_snippet": "Then we've got a voltage node"
+  },
+  {
+   "concept": "current",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 50,
+   "char_start": 11105,
+   "depth": "mention",
+   "context_snippet": "And then finally, we have current"
+  },
+  {
+   "concept": "case-insensitivity",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 11292,
+   "depth": "explains",
+   "context_snippet": "this is not case sensitive"
+  },
+  {
+   "concept": "command-parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 11431,
+   "depth": "explains",
+   "context_snippet": "first we have to take the command as an input"
+  },
+  {
+   "concept": "voltage",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 11917,
+   "depth": "mention",
+   "context_snippet": "we're looking for sense voltage"
+  },
+  {
+   "concept": "current",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 11985,
+   "depth": "mention",
+   "context_snippet": "we're looking for either or either of those"
+  },
+  {
+   "concept": "query",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 12212,
+   "depth": "explains",
+   "context_snippet": "inside the processing of those two, it's either a query"
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 15860,
+   "depth": "explains",
+   "context_snippet": "the Micro Supply SCPI specification"
+  },
+  {
+   "concept": "optional-syntax",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 16007,
+   "depth": "explains",
+   "context_snippet": "Optional things are put around square brackets"
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 16183,
+   "depth": "explains",
+   "context_snippet": "SCPI is typically done by serial"
+  },
+  {
+   "concept": "serial-communication",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 16183,
+   "depth": "explains",
+   "context_snippet": "SCPI is typically done by serial"
+  },
+  {
+   "concept": "source-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 16318,
+   "depth": "explains",
+   "context_snippet": "if we input source colon voltage"
+  },
+  {
+   "concept": "source-voltage",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 16427,
+   "depth": "explains",
+   "context_snippet": "it will set the source voltage to 1.2"
+  },
+  {
+   "concept": "voltage-query",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 16521,
+   "depth": "explains",
+   "context_snippet": "we can query whether it was correct"
+  },
+  {
+   "concept": "source-current",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 16672,
+   "depth": "explains",
+   "context_snippet": "How about source current? Source current"
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 16852,
+   "depth": "explains",
+   "context_snippet": "this is basically a real-world example of a SCPI command interface."
+  },
+  {
+   "concept": "scpi-command-interface",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 16870,
+   "depth": "explains",
+   "context_snippet": "a real-world example of a SCPI command interface"
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 17201,
+   "depth": "explains",
+   "context_snippet": "SCPI requires all of them."
+  },
+  {
+   "concept": "minimum-viable-product",
+   "type": "business-model",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 17319,
+   "depth": "opinion",
+   "context_snippet": "So, for the minimum viable product, we are not doing that."
+  },
+  {
+   "concept": "scpi",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 17431,
+   "depth": "explains",
+   "context_snippet": "the required commands start in a star."
+  },
+  {
+   "concept": "idn-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 17556,
+   "depth": "explains",
+   "context_snippet": "IDN with a query."
+  },
+  {
+   "concept": "build-date",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 17741,
+   "depth": "explains",
+   "context_snippet": "the build date is October 12th."
+  },
+  {
+   "concept": "command-interface",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 17855,
+   "depth": "explains",
+   "context_snippet": "this is a good command interface. It's something that is human-readable."
+  },
+  {
+   "concept": "serial-interface",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 18038,
+   "depth": "explains",
+   "context_snippet": "send a simple string to the device through the serial interface."
+  },
+  {
+   "concept": "voltage-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 18200,
+   "depth": "explains",
+   "context_snippet": "type this voltage command with a different voltage"
+  },
+  {
+   "concept": "voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 18279,
+   "depth": "explains",
+   "context_snippet": "Then we see it changes."
+  },
+  {
+   "concept": "measurement-command",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 18480,
+   "depth": "mention",
+   "context_snippet": "you've got some measurement commands."
+  },
+  {
+   "concept": "command-syntax",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 18575,
+   "depth": "opinion",
+   "context_snippet": "the structure of these commands might change."
+  },
+  {
+   "concept": "parser",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 18914,
+   "depth": "explains",
+   "context_snippet": "writing parsers can be a real pain if you don't have a standardized pattern"
+  },
+  {
+   "concept": "std-string",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 19093,
+   "depth": "explains",
+   "context_snippet": "In production, I don't use stood string."
+  },
+  {
+   "concept": "template-metaprogramming",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 19134,
+   "depth": "explains",
+   "context_snippet": "I use a replacement using template metaprogramming."
+  },
+  {
+   "concept": "c-plus-plus",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 19236,
+   "depth": "mention",
+   "context_snippet": "go full node with C++"
+  }
+ ]
+}

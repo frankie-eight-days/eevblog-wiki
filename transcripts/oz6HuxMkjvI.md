@@ -3,99 +3,109 @@ video_id: oz6HuxMkjvI
 title: EEVblog 1661 - AC Basics Tutorial Part 5: Time Domain vs Frequency Domain
 url: https://www.youtube.com/watch?v=oz6HuxMkjvI
 source: youtube-asr
-timestamps: {"0": 0, "1": 15, "2": 30, "3": 42, "4": 60, "5": 74, "6": 89, "7": 106, "8": 125, "9": 141, "10": 160, "11": 173, "12": 191, "13": 207, "14": 223, "15": 239, "16": 256, "17": 270, "18": 284, "19": 297, "20": 312, "21": 327, "22": 344, "23": 362, "24": 379, "25": 395, "26": 412, "27": 429, "28": 445, "29": 463, "30": 478, "31": 491, "32": 506, "33": 523, "34": 540, "35": 555, "36": 567, "37": 579, "38": 601, "39": 617, "40": 637, "41": 649, "42": 663, "43": 678, "44": 691, "45": 703, "46": 714}
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 38, "4": 53, "5": 67, "6": 82, "7": 93, "8": 109, "9": 127, "10": 138, "11": 154, "12": 169, "13": 196, "14": 213, "15": 225, "16": 244, "17": 260, "18": 280, "19": 290, "20": 301, "21": 315, "22": 329, "23": 341, "24": 362, "25": 379, "26": 395, "27": 409, "28": 420, "29": 431, "30": 450, "31": 464, "32": 476, "33": 484, "34": 506, "35": 520, "36": 537, "37": 552, "38": 560, "39": 571, "40": 587, "41": 604, "42": 622, "43": 636, "44": 644, "45": 654, "46": 668, "47": 681, "48": 693, "49": 701, "50": 709, "51": 720}
 ---
 
-**Dave Jones:** Hi, this is part five in the AC basics tutorial series. Last time we took a look at resistors, inductors, and capacitors uh alone in circuit. What we're going to look at briefly this time is what's called time domain versus frequency
+**Dave Jones:** Hi, this is part five in the AC basics tutorial series. Last time we took a look at resistors, inductors, and capacitors uh alone in circuit. What we're going to look at briefly this time is what's called time domain versus frequency domain.
 
-**Dave Jones:** domain. And you might be used to this. Time domain is your basic oscilloscope with your waveforms and whatnot. And your frequency domain is frequency domain analysis. Cuz your oscilloscope, for example, is a time domain instrument. You view waveforms on it.
+**Dave Jones:** And you might be used to this. Time domain is your basic oscilloscope with your waveforms and whatnot. And your frequency domain is frequency domain analysis. Cuz your oscilloscope, for example, is a time domain instrument.
 
-**Dave Jones:** You get like an instantaneous value over uh time on your oscilloscope as that waveform sweeps across. At least it used to on your old school analog oscilloscope. That sweep would go across and your way and it would draw the
+**Dave Jones:** You view waveforms on it. You get like an instantaneous value over uh time on your oscilloscope as that waveform sweeps across. At least it used to on your old school analog oscilloscope.
 
-**Dave Jones:** waveform at each moment in time, that instantaneous value. Whereas your spectrum analyzer would operate in the frequency domain where you would have uh frequency on uh the x-axis versus and versus amplitude. And this is not quite the same thing, but kind of the sort of.
+**Dave Jones:** That sweep would go across and your way and it would draw the waveform at each moment in time, that instantaneous value. Whereas your spectrum analyzer would operate in the frequency domain where you would have uh frequency on uh the x-axis versus and versus amplitude.
 
-**Dave Jones:** When it comes to AC circuit analysis, a time domain and frequency domain are just two different ways of looking at and analyzing uh your AC circuits. In this particular case, we've got LC and R in here. So, we've got uh
+**Dave Jones:** And this is not quite the same thing, but kind of the sort of. When it comes to AC circuit analysis, a time domain and frequency domain are just two different ways of looking at and analyzing uh your AC circuits.
 
-**Dave Jones:** just all all in series with an AC generator here. So, this is a time domain and this is a frequency domain circuit and analysis. And there's a pros and cons with both approaches. Similar to how your oscilloscope works, think of
+**Dave Jones:** In this particular case, we've got LC and R in here. So, we've got uh just all all in series with an AC generator here. So, this is a time domain and this is a frequency domain circuit and analysis.
 
-**Dave Jones:** uh time domain AC circuit analysis as uh working on uh instantaneous values. And uh so, you can use these on uh circuits that are tran- you know, a transient circuits uh for example. You'll see that in the time domain uh the circuit
+**Dave Jones:** And there's a pros and cons with both approaches. Similar to how your oscilloscope works, think of uh time domain AC circuit analysis as uh working on uh instantaneous values.
 
-**Dave Jones:** elements are represented as their actual uh LC and R values. So, resistance in ohms, inductance in uh Henry's, and capacitance in farad here. and then you've got your current flowing through that. Whereas frequency domain over here, we've moved over to a more a
+**Dave Jones:** And uh so, you can use these on uh circuits that are tran- you know, a transient circuits uh for example. You'll see that in the time domain uh the circuit elements are represented as their actual uh LC and R values.
 
-**Dave Jones:** phasor representation instead of an instantaneous value representation. In this case, we're dealing with phasor representation. So we've got the angle. So we've got the magnitude and the angle here. We have an instantaneous value. We saw this in the previous video. The
+**Dave Jones:** So, resistance in ohms, inductance in uh Henry's, and capacitance in farad here. and then you've got your current flowing through that. Whereas frequency domain over here, we've moved over to a more a phasor representation instead of an instantaneous value representation.
 
-**Dave Jones:** instantaneous value which is a small v equals Vmax which is the peak voltage of your waveform. Sine omega t. Now omega of course is lower case Greek letter omega and that means 2 pi f. And the units for that are in radians per second
+**Dave Jones:** In this case, we're dealing with phasor representation. So we've got the angle. So we've got the magnitude and the angle here. We have an instantaneous value. We saw this in the previous video.
 
-**Dave Jones:** which is not an angular velocity. It's an actually an angular frequency in AC circuit analysis as opposed to maths which you might be might call it angular velocity. But that's not the case here. So in frequency domain analysis over
+**Dave Jones:** The instantaneous value which is a small v equals Vmax which is the peak voltage of your waveform. Sine omega t. Now omega of course is lower case Greek letter omega and that means 2 pi f.
 
-**Dave Jones:** here, we use instead of using the instantaneous representation, these two circuits are identical. So this 141 sine 500 t which is 500 radians per second, this is going to translate over to 100 angle zero over here and then the
+**Dave Jones:** And the units for that are in radians per second which is not an angular velocity. It's an actually an angular frequency in AC circuit analysis as opposed to maths which you might be might call it angular velocity.
 
-**Dave Jones:** radians per second will then translate into these values here when we look at the L's and the C's. But basically this is a phasor representation in polar form. So of course Vmax is the peak voltage. If it's if it's 141 volts and
+**Dave Jones:** But that's not the case here. So in frequency domain analysis over here, we use instead of using the instantaneous representation, these two circuits are identical. So this 141 sine 500 t which is 500 radians per second, this is going to translate over to 100 angle zero over here and then the radians per second will then translate into these values here when we look at the L's and the C's.
 
-**Dave Jones:** you multiply that by 0.707 from peak to RMS and you're dealing with an RMS value here. Hence why this is useful for steady state fixed frequency stuff. And in steady state, you can simply work in like RMS values. And because of that,
+**Dave Jones:** But basically this is a phasor representation in polar form. So of course Vmax is the peak voltage. If it's if it's 141 volts and you multiply that by 0.707 from peak to RMS and you're dealing with an RMS value here.
 
-**Dave Jones:** we're no longer talking in terms of farads and Henry's here. We're talking in terms of capacitive reactance and inductive reactance that we looked at in the previous video. So, that's a complex form. So, minus J 100 ohms is equivalent
+**Dave Jones:** Hence why this is useful for steady state fixed frequency stuff. And in steady state, you can simply work in like RMS values. And because of that, we're no longer talking in terms of farads and Henry's here.
 
-**Dave Jones:** to 20 microfarads at the particular radians per second that we're dealing with here. And likewise, the inductive reactants over here is positive J 25 ohms. Remember from the previous video, reactance is in ohms. So, yeah, basically we're just dealing
+**Dave Jones:** We're talking in terms of capacitive reactance and inductive reactance that we looked at in the previous video. So, that's a complex form. So, minus J 100 ohms is equivalent to 20 microfarads at the particular radians per second that we're dealing with here.
 
-**Dave Jones:** with different ohm values in the circuit. We're here, we're actually dealing with the actual capacitors and resistors. So, if you're just dealing with one frequency, say you were dealing with a main circuit or something like that or some other fixed frequency
+**Dave Jones:** And likewise, the inductive reactants over here is positive J 25 ohms. Remember from the previous video, reactance is in ohms. So, yeah, basically we're just dealing with different ohm values in the circuit.
 
-**Dave Jones:** circuit, then it's going to make your job a lot simpler to convert your circuit and your calculations and do them all in the frequency domain over here. In the In the case of one frequency, well, the frequency domain,
+**Dave Jones:** We're here, we're actually dealing with the actual capacitors and resistors. So, if you're just dealing with one frequency, say you were dealing with a main circuit or something like that or some other fixed frequency circuit, then it's going to make your job a lot simpler to convert your circuit and your calculations and do them all in the frequency domain over here.
 
-**Dave Jones:** like a spectrum analyzer, would be across all frequencies. This particular case, you'd only be dealing with one frequency. Makes it real simple. So, the forms that you're going to be using, and we won't go into mathematical detail of all this kind of
+**Dave Jones:** In the In the case of one frequency, well, the frequency domain, like a spectrum analyzer, would be across all frequencies. This particular case, you'd only be dealing with one frequency.
 
-**Dave Jones:** stuff. It's out of the scope of this video, but it's basically voltage as a function of frequency here. And then over here, you've got an instantaneous voltage as a function of time. Hence, time domain versus frequency domain. So,
+**Dave Jones:** Makes it real simple. So, the forms that you're going to be using, and we won't go into mathematical detail of all this kind of stuff. It's out of the scope of this video, but it's basically voltage as a function of frequency here.
 
-**Dave Jones:** converting between a time domain and frequency domain is really easy. We just use the reactance formulas that we had in the previous that we looked at in the previous video. Now, of course, ohms is going to stay the same because it's a
+**Dave Jones:** And then over here, you've got an instantaneous voltage as a function of time. Hence, time domain versus frequency domain. So, converting between a time domain and frequency domain is really easy.
 
-**Dave Jones:** linear component that doesn't that isn't affected by frequency. So, our 10 ohms simply becomes 10 ohms over here. Nothing changes. But, our 20 microfarad capacitor, remember our capacitive reactance formula here is minus J 1 on omega C. And omega in this
+**Dave Jones:** We just use the reactance formulas that we had in the previous that we looked at in the previous video. Now, of course, ohms is going to stay the same because it's a linear component that doesn't that isn't affected by frequency.
 
-**Dave Jones:** particular case is 500 radians per second. I've just picked that value because it comes out to a nice value down here. Anyway, so that's minus J 1/500 * 20 micro Farads here, which gives us a value of minus J 100
+**Dave Jones:** So, our 10 ohms simply becomes 10 ohms over here. Nothing changes. But, our 20 microfarad capacitor, remember our capacitive reactance formula here is minus J 1 on omega C.
 
-**Dave Jones:** ohms. Just plug that into your computer and do it yourself. So we write minus J 100 ohms there and so we've got the complex representation of our 20 micro Farads at the one particular frequency, which is 2 pi f in radians per second is
+**Dave Jones:** And omega in this particular case is 500 radians per second. I've just picked that value because it comes out to a nice value down here. Anyway, so that's minus J 1/500 * 20 micro Farads here, which gives us a value of minus J 100 ohms.
 
-**Dave Jones:** 500 here. So what is that frequency? Get your computer out again and 500 radians per second divided by two. So 500 radians per second divided by 2 * pi and that's going to give you a value of 79.57
+**Dave Jones:** Just plug that into your computer and do it yourself. So we write minus J 100 ohms there and so we've got the complex representation of our 20 micro Farads at the one particular frequency, which is 2 pi f in radians per second is 500 here.
 
-**Dave Jones:** hertz. So that's just the frequency that we're dealing with here. Nothing special about it. Just gives a nice round value there. And likewise for our 50 milli Henry inductor here, remember our inductive reactance formula, XL equals J omega L. It's positive J this time. So
+**Dave Jones:** So what is that frequency? Get your computer out again and 500 radians per second divided by two. So 500 radians per second divided by 2 * pi and that's going to give you a value of 79.57 hertz.
 
-**Dave Jones:** that's just 500, which is our radian angular omega radians per second value there, times 50 milli Henry's. That gives us our J 25 ohms. So we write that in our polar form there, J 25 ohms instead of 50 milli Henry's. So how do we solve for
+**Dave Jones:** So that's just the frequency that we're dealing with here. Nothing special about it. Just gives a nice round value there. And likewise for our 50 milli Henry inductor here, remember our inductive reactance formula, XL equals J omega L.
 
-**Dave Jones:** the current flowing in the circuit? Well, it's a series circuit. So it's just the voltage divided by the total resistance here or because we're dealing in terms of complex reactances here, total impedance. And we'll do impedance versus reactance in a
+**Dave Jones:** It's positive J this time. So that's just 500, which is our radian angular omega radians per second value there, times 50 milli Henry's. That gives us our J 25 ohms.
 
-**Dave Jones:** future video, but to briefly explain the difference here, impedance, which is denoted by Z. So we're going to talk impedance down here. Impedance is basically reactance plus resistance. So the total reactance here plus the resistance is the impedance. That's the
+**Dave Jones:** So we write that in our polar form there, J 25 ohms instead of 50 milli Henry's. So how do we solve for the current flowing in the circuit? Well, it's a series circuit.
 
-**Dave Jones:** difference between impedance and reactance. Reactance is just uh the inductive component or the capacitive component on its own with no resistive element in it. But, because we're dealing with an entire circuit, we're talking about the whole circuit impedance. So, it's the circuit voltage,
+**Dave Jones:** So it's just the voltage divided by the total resistance here or because we're dealing in terms of complex reactances here, total impedance. And we'll do impedance versus reactance in a future video, but to briefly explain the difference here, impedance, which is denoted by Z.
 
-**Dave Jones:** which is 100 V with an angle of zero because we've deemed it so. Um you've got to have a reference somewhere, so make it easy for yourself. Reference uh angle zero. And we've got the resistance of 10 ohms plus the impedance here. And
+**Dave Jones:** So we're going to talk impedance down here. Impedance is basically reactance plus resistance. So the total reactance here plus the resistance is the impedance. That's the difference between impedance and reactance.
 
-**Dave Jones:** very handily, as we've looked at in our complex number video, when you want to add uh complex impedances uh reactances like this, then it's better to have them in the rectangular form J like this rather than in the polar angular form like
+**Dave Jones:** Reactance is just uh the inductive component or the capacitive component on its own with no resistive element in it. But, because we're dealing with an entire circuit, we're talking about the whole circuit impedance.
 
-**Dave Jones:** this. So, you just add them up. So, our total impedance is our resistance plus our inductive um reactance plus our capacitive reactance XC, and we've got them in conveniently uh rectangular form, so we just add them up. 10 + J25
+**Dave Jones:** So, it's the circuit voltage, which is 100 V with an angle of zero because we've deemed it so. Um you've got to have a reference somewhere, so make it easy for yourself.
 
-**Dave Jones:** J100 cuz there's a minus in there cuz it's a capacitor. So, um that's 10 - J75, and the unit of impedance uh is in ohms. So, our total impedance for that circuit is 10 - J75 ohms. So, our circuit
+**Dave Jones:** Reference uh angle zero. And we've got the resistance of 10 ohms plus the impedance here. And very handily, as we've looked at in our complex number video, when you want to add uh complex impedances uh reactances like this, then it's better to have them in the rectangular form J like this rather than in the polar angular form like this.
 
-**Dave Jones:** current flowing through is just V on R or voltage divided by the impedance. Um so, I equals voltage divided by the total impedance here. And we've got these in polar form. Remember from our complex number video, when you want to
+**Dave Jones:** So, you just add them up. So, our total impedance is our resistance plus our inductive um reactance plus our capacitive reactance XC, and we've got them in conveniently uh rectangular form, so we just add them up.
 
-**Dave Jones:** divide numbers, it's easier to have them in uh polar form like this than it is to have in rectangular form like this. So, what I've done is use my confuser here, which has uh that's what those R to P
+**Dave Jones:** 10 + J25 J100 cuz there's a minus in there cuz it's a capacitor. So, um that's 10 - J75, and the unit of impedance uh is in ohms. So, our total impedance for that circuit is 10 - J75 ohms.
 
-**Dave Jones:** and P to R buttons on your calculator do. I'll put that up here a screenshot up here. You can see that that's what they do, polar to rectangular. Watch my complex number video for that. Um so, I've converted uh this rectangular form
+**Dave Jones:** So, our circuit current flowing through is just V on R or voltage divided by the impedance. Um so, I equals voltage divided by the total impedance here. And we've got these in polar form.
 
-**Dave Jones:** 10 - J75 into its polar form, which is 75.66 magnitude and -82.4 phase, like that. And so, you simply divide two polar complex numbers like that. So, it's 100 / 70 So, the real component 100 / 75.66 is 1.32
+**Dave Jones:** Remember from our complex number video, when you want to divide numbers, it's easier to have them in uh polar form like this than it is to have in rectangular form like this.
 
-**Dave Jones:** amps. That's what's the value of current that's flowing in the circuit. And then the complex part, when you're doing a division, you just subtract them. So, 0 - -82 gives you positive 82.4. So, the current flowing in the circuit is
+**Dave Jones:** So, what I've done is use my confuser here, which has uh that's what those R to P and P to R buttons on your calculator do. I'll put that up here a screenshot up here.
 
-**Dave Jones:** 1.32 amps with a phase of 82.4°. Beauty. So, a polar diagram is just a phasor like that of the 1.32 amps as the magnitude and the phase angle is positive 82.4° like that. Bingo. We've solved our for the current in the circuit. So, how do
+**Dave Jones:** You can see that that's what they do, polar to rectangular. Watch my complex number video for that. Um so, I've converted uh this rectangular form 10 - J75 into its polar form, which is 75.66 magnitude and -82.4 phase, like that.
 
-**Dave Jones:** you solve that in the time domain? Well, you could get complex and depends on the time that you want to solve it at, but we're talking about a steady state current. And when you're talking about a steady state current in a circuit, even
+**Dave Jones:** And so, you simply divide two polar complex numbers like that. So, it's 100 / 70 So, the real component 100 / 75.66 is 1.32 amps. That's what's the value of current that's flowing in the circuit.
 
-**Dave Jones:** if it's AC steady state, you want it in polar form like this so that you can actually calculate the impedance. So, you don't know the current that's flowing through here without converting the capacitor into an impedance and without converting the inductor into
+**Dave Jones:** And then the complex part, when you're doing a division, you just subtract them. So, 0 - -82 gives you positive 82.4. So, the current flowing in the circuit is 1.32 amps with a phase of 82.4°.
 
-**Dave Jones:** impedance or into a reactance and then calculating the total current. So, we used our frequency domain for that. So, there's a lot more complexity that goes into all this, but it's just important to know that there are two different
+**Dave Jones:** Beauty. So, a polar diagram is just a phasor like that of the 1.32 amps as the magnitude and the phase angle is positive 82.4° like that. Bingo. We've solved our for the current in the circuit.
 
-**Dave Jones:** ways to look at an AC circuit, the time domain and the frequency domain. So, mathematically, you could go down the rabbit hole chasing a red herring until the cows come home with this sort of stuff, but yeah, it's just important uh
+**Dave Jones:** So, how do you solve that in the time domain? Well, you could get complex and depends on the time that you want to solve it at, but we're talking about a steady state current.
 
-**Dave Jones:** to know that there's two different types of things. So, if you want to do steady state stuff, this is the ticket. If you want to do any uh sort of transient uh or instantaneous value stuff, time domain is the way to do it. So, I hope
+**Dave Jones:** And when you're talking about a steady state current in a circuit, even if it's AC steady state, you want it in polar form like this so that you can actually calculate the impedance.
 
-**Dave Jones:** you found that video useful. If you did, please give it a big thumbs up. And as always, you can discuss down below in the comments or over on the EEVblog forum, where it's all happening. And I've got a new uh merch range available
+**Dave Jones:** So, you don't know the current that's flowing through here without converting the capacitor into an impedance and without converting the inductor into impedance or into a reactance and then calculating the total current.
 
-**Dave Jones:** on TeePublic. I'll link that in down below. T-shirts, mugs, hats, stickers, all sorts of stuff with some new designs out there. So, check it out. Catch you next time.
+**Dave Jones:** So, we used our frequency domain for that. So, there's a lot more complexity that goes into all this, but it's just important to know that there are two different ways to look at an AC circuit, the time domain and the frequency domain.
+
+**Dave Jones:** So, mathematically, you could go down the rabbit hole chasing a red herring until the cows come home with this sort of stuff, but yeah, it's just important uh to know that there's two different types of things.
+
+**Dave Jones:** So, if you want to do steady state stuff, this is the ticket. If you want to do any uh sort of transient uh or instantaneous value stuff, time domain is the way to do it.
+
+**Dave Jones:** So, I hope you found that video useful. If you did, please give it a big thumbs up. And as always, you can discuss down below in the comments or over on the EEVblog forum, where it's all happening.
+
+**Dave Jones:** And I've got a new uh merch range available on TeePublic. I'll link that in down below. T-shirts, mugs, hats, stickers, all sorts of stuff with some new designs out there.
+
+**Dave Jones:** So, check it out. Catch you next time.

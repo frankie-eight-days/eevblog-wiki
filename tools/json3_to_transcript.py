@@ -8,8 +8,10 @@ and they matter, because the census records paragraph_index + char_start and
 an article's quotes are sliced out of those paragraphs. Too coarse and a quote
 drags in unrelated material; too fine and it can't reach a full thought.
 
-Break on a real pause (a gap between caption events) at a sentence boundary,
-which follows how Dave actually speaks rather than an arbitrary word count.
+Break at the first sentence end past a target word count. An earlier version also
+broke on a pause between caption events; that was dropped because caption event
+timings are display artifacts, not speech pauses, and sentence alignment turned
+out to matter far more than pause fidelity (see the note on MAX_WORDS below).
 """
 import json, pathlib, re, sys, csv
 
@@ -20,9 +22,19 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # from 4.8x the text, which reads as "EEVblog is 4x less informative" when it is
 # really just coarser chunking. Match the Amp Hour's 45 words/paragraph so the
 # two corpora are measured with the same instrument.
-GAP_MS = 400           # pause that justifies a paragraph break
-MIN_WORDS = 15         # ...but only once the paragraph has some substance
-MAX_WORDS = 40         # hard break, so no paragraph is too big to quote from
+MAX_WORDS = 30         # break at the first sentence end past this
+HARD_MAX = 70          # safety valve for a run with no punctuation at all
+SENT_SPLIT = re.compile(r"(?<=[.!?])\s+")
+SENT_END = re.compile(r"[.!?][\"')\]]?\s*$")
+
+# NEVER break mid-sentence if it can be avoided. The census locates each mention
+# by finding its context_snippet inside the paragraph it names, so a snippet
+# straddling a paragraph break can never be found and the mention is discarded.
+# The old rule broke hard at MAX_WORDS wherever it landed, and measurement showed
+# the cost: 21.6% of caption-derived mentions rejected against 7.8% on the whisper
+# half, and 48% of those rejects were snippets spanning a boundary -- roughly
+# 20,000 mentions thrown away for a chunking reason, not a model one. The whisper
+# converter always broke on sentence ends, which is why it never had this.
 
 
 def events(path):
@@ -50,21 +62,28 @@ def paragraphs(path):
     always did this; the caption path used to discard it, which would have left
     two thirds of the transcript pages with no timestamps.
     """
-    out, cur, words, prev_end, start_s = [], [], 0, None, None
-    for start, dur, text in events(path):
-        gap = start - prev_end if prev_end is not None else 0
-        ends_sentence = bool(cur) and re.search(r"[.!?]\s*$", "".join(cur).strip())
-        if cur and ((gap >= GAP_MS and words >= MIN_WORDS and ends_sentence)
-                    or words >= MAX_WORDS):
-            out.append((start_s or 0, "".join(cur).strip()))
-            cur, words, start_s = [], 0, None
-        if start_s is None:
-            start_s = start // 1000
-        cur.append(text)
-        words += len(text.split())
-        prev_end = start + dur
+    out, cur, words, start_s = [], [], 0, None
+    for start, _dur, text in events(path):
+        # Accumulate SENTENCES, not events. A caption event is an arbitrary
+        # display line -- sentences end in the middle of them constantly, so
+        # checking "does this event end a sentence?" almost always says no and the
+        # paragraph runs on to the hard cap. Splitting first is what lets a break
+        # land exactly on a sentence boundary at the target size, and it is what
+        # the whisper converter has always done.
+        for sent in SENT_SPLIT.split(text):
+            sent = sent.strip()
+            if not sent:
+                continue
+            if start_s is None:
+                start_s = start // 1000
+            cur.append(sent)
+            words += len(sent.split())
+            ends_sentence = bool(SENT_END.search(sent))
+            if (words >= MAX_WORDS and ends_sentence) or words >= HARD_MAX:
+                out.append((start_s, " ".join(cur)))
+                cur, words, start_s = [], 0, None
     if cur:
-        out.append((start_s or 0, "".join(cur).strip()))
+        out.append((start_s or 0, " ".join(cur)))
     return [(s, re.sub(r"\s+", " ", p)) for s, p in out if p.strip()]
 
 

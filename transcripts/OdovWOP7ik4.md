@@ -3,107 +3,115 @@ video_id: OdovWOP7ik4
 title: OF COURSE this happened
 url: https://www.youtube.com/watch?v=OdovWOP7ik4
 source: youtube-asr
-timestamps: {"0": 0, "1": 17, "2": 28, "3": 43, "4": 61, "5": 74, "6": 91, "7": 106, "8": 122, "9": 135, "10": 146, "11": 163, "12": 178, "13": 196, "14": 212, "15": 227, "16": 241, "17": 265, "18": 283, "19": 298, "20": 312, "21": 324, "22": 340, "23": 357, "24": 374, "25": 389, "26": 408, "27": 423, "28": 434, "29": 452, "30": 467, "31": 475, "32": 493, "33": 507, "34": 525, "35": 541, "36": 558, "37": 578, "38": 592, "39": 607, "40": 621, "41": 637, "42": 652, "43": 670, "44": 685, "45": 699, "46": 713, "47": 731, "48": 756, "49": 771, "50": 852}
+timestamps: {"0": 0, "1": 13, "2": 23, "3": 36, "4": 46, "5": 61, "6": 72, "7": 86, "8": 101, "9": 124, "10": 136, "11": 151, "12": 163, "13": 178, "14": 191, "15": 203, "16": 215, "17": 225, "18": 249, "19": 265, "20": 279, "21": 287, "22": 305, "23": 315, "24": 322, "25": 343, "26": 355, "27": 368, "28": 380, "29": 395, "30": 408, "31": 419, "32": 430, "33": 448, "34": 465, "35": 480, "36": 498, "37": 509, "38": 525, "39": 539, "40": 554, "41": 578, "42": 593, "43": 604, "44": 619, "45": 629, "46": 646, "47": 658, "48": 673, "49": 688, "50": 699, "51": 729, "52": 749, "53": 760, "54": 776}
 ---
 
-**Dave Jones:** Hi, it's repair time. This is a dumpster 43-in LG LCD TV, 4K, that I found in the dumpster if you follow me on the dumpster diving on the EV blog 2 channel. Oh, hang on. Is that plastic sticking out there?
+**Dave Jones:** Hi, it's repair time. This is a dumpster 43-in LG LCD TV, 4K, that I found in the dumpster if you follow me on the dumpster diving on the EV blog 2 channel.
 
-**Dave Jones:** Not sure. Is it on this side? Oh, no. I think it's supposed to do that. Anyway, found in the dumpster, it's a 2018 model. It's got the, you know, the stand and everything. But my camera is color balanced, trust me. I've got matched
+**Dave Jones:** Oh, hang on. Is that plastic sticking out there? Not sure. Is it on this side? Oh, no. I think it's supposed to do that. Anyway, found in the dumpster, it's a 2018 model.
 
-**Dave Jones:** color lights here in the lab high CRI, and it's matched to 5,000 K Kelvin color temperature, and I'm not displaying a blue signal. I'm displaying a white signal, as you can see, white screen, as you can see on the this other monitor
+**Dave Jones:** It's got the, you know, the stand and everything. But my camera is color balanced, trust me. I've got matched color lights here in the lab high CRI, and it's matched to 5,000 K Kelvin color temperature, and I'm not displaying a blue signal.
 
-**Dave Jones:** over here. It's a perfectly white screen, and it's a bit blue-sky. So, this is actually a fairly common fault with LCD TVs, and in particular these LG, a lot of the LG models, not just this one, where the backlight, the white
+**Dave Jones:** I'm displaying a white signal, as you can see, white screen, as you can see on the this other monitor over here. It's a perfectly white screen, and it's a bit blue-sky.
 
-**Dave Jones:** backlight behind the screen. I've done teardown videos before of LCD TVs and monitors. I'll have to link those in. Very interesting if you want to go into the more of the physics side of things. But anyway, the what are supposed to be
+**Dave Jones:** So, this is actually a fairly common fault with LCD TVs, and in particular these LG, a lot of the LG models, not just this one, where the backlight, the white backlight behind the screen.
 
-**Dave Jones:** white LCD backlights in these things, they turn blue with age because the white LEDs are actually blue LEDs with a phosphor coating over the front to actually turn them white. So, with time and temperature and age and everything
+**Dave Jones:** I've done teardown videos before of LCD TVs and monitors. I'll have to link those in. Very interesting if you want to go into the more of the physics side of things.
 
-**Dave Jones:** else, and maybe they used, I don't know, cheap LEDs in the in the backlights of these things, the phosphor wears out and they have this blue, horrible blue tint. So, we are going to replace the backlights in these. So, even though
+**Dave Jones:** But anyway, the what are supposed to be white LCD backlights in these things, they turn blue with age because the white LEDs are actually blue LEDs with a phosphor coating over the front to actually turn them white.
 
-**Dave Jones:** it's a cheap dumpster TV, it is a 43-in 4K TV, and it's an LG, and thanks to 20 bucks on AliExpress, Um, this is such a common fault that you can actually buy the backlight replacement kits for these
+**Dave Jones:** So, with time and temperature and age and everything else, and maybe they used, I don't know, cheap LEDs in the in the backlights of these things, the phosphor wears out and they have this blue, horrible blue tint.
 
-**Dave Jones:** LG TVs and a whole bunch of other TVs cuz it's such a common fire point. So, hopefully I've ordered the right one. Um, won't know until we tear it down. That'd be embarrassing if not I might not release this video. Um,
+**Dave Jones:** So, we are going to replace the backlights in these. So, even though it's a cheap dumpster TV, it is a 43-in 4K TV, and it's an LG, and thanks to 20 bucks on AliExpress, Um, this is such a common fault that you can actually buy the backlight replacement kits for these LG TVs and a whole bunch of other TVs cuz it's such a common fire point.
 
-**Dave Jones:** or it might have to wait another week to get some new ones. But yeah, 20 bucks on um, AliExpress uh, delivered. Thank you very much. Got me um, these. So, yeah, it's looking great, is it? Look Look at
+**Dave Jones:** So, hopefully I've ordered the right one. Um, won't know until we tear it down. That'd be embarrassing if not I might not release this video. Um, or it might have to wait another week to get some new ones.
 
-**Dave Jones:** the difference. Let's have a quick check with my uh, spectrometer here, the HP 320. Bit nice little bit of kit. So, what I'm going to do is go over here and I've got the white screen there and let's do that. And there is our color
+**Dave Jones:** But yeah, 20 bucks on um, AliExpress uh, delivered. Thank you very much. Got me um, these. So, yeah, it's looking great, is it? Look Look at the difference. Let's have a quick check with my uh, spectrometer here, the HP 320.
 
-**Dave Jones:** spectrum. There you go. It's uh, you know, it's fairly broad. It's got the reds, the greens, and the blueskies there. Um, so, let's do the same thing on here where's sort of like the blue That's a pretty blue part.
+**Dave Jones:** Bit nice little bit of kit. So, what I'm going to do is go over here and I've got the white screen there and let's do that. And there is our color spectrum.
 
-**Dave Jones:** Woo! Check that out. It's all blue. There's no white. It's exactly the same signal going in there. Unbelievable. That's about 445 nanometers there. Like all of the phosphor in that it's just gone. Like you can see it like there's hardly any
+**Dave Jones:** There you go. It's uh, you know, it's fairly broad. It's got the reds, the greens, and the blueskies there. Um, so, let's do the same thing on here where's sort of like the blue That's a pretty blue part.
 
-**Dave Jones:** extra color information down there. The phosphor's just all completely I don't know. How does it degrade? Any physicists in there? But uh, yeah, it does and it's a shocker. For those playing along at home, it's a 43UJ654T.
+**Dave Jones:** Woo! Check that out. It's all blue. There's no white. It's exactly the same signal going in there. Unbelievable. That's about 445 nanometers there. Like all of the phosphor in that it's just gone.
 
-**Dave Jones:** January 2018. Made in Indonesia. Hi to all my viewers in Indonesia. And it's nothing fancy at all. It's got two HDMIs on the side. One is an arc. Two extra HDMIs on the back. Um, Ethernet. And it's a had the Wi-Fis. I
+**Dave Jones:** Like you can see it like there's hardly any extra color information down there. The phosphor's just all completely I don't know. How does it degrade? Any physicists in there?
 
-**Dave Jones:** don't know. But it's got the Dolbys. And yes, it still has a old school antenna input. Yeah, don't need that anymore. All right, let's go.
+**Dave Jones:** But uh, yeah, it does and it's a shocker. For those playing along at home, it's a 43UJ654T. January 2018. Made in Indonesia. Hi to all my viewers in Indonesia.
 
-**Dave Jones:** That was slightly different from the mains. All right, I think I've got everything out. Oh, yeah. Usually miss one. But I haven't. Ta-da! We're in like Flynn. Here's the main control board for those at all interested, but we're not here
+**Dave Jones:** And it's nothing fancy at all. It's got two HDMIs on the side. One is an arc. Two extra HDMIs on the back. Um, Ethernet. And it's a had the Wi-Fis.
 
-**Dave Jones:** for that today. And there's the T-con board. And there's the power supply. Looks all right. I'll just give it a brief visual one over. No bulging leaking caps. No obvious burn marks or anything. Looks pretty good. So, yeah, happy with that. I mean, it seems
+**Dave Jones:** I don't know. But it's got the Dolbys. And yes, it still has a old school antenna input. Yeah, don't need that anymore. All right, let's go. That was slightly different from the mains.
 
-**Dave Jones:** to work fine. It's just the uh backlight's gone-ski. And that is a 6 ohm 10/14 watt speaker. There's two of those. And it's rubber It's got rubber baby buggy bumpers on it. Very compliant. There's the actual back of
+**Dave Jones:** All right, I think I've got everything out. Oh, yeah. Usually miss one. But I haven't. Ta-da! We're in like Flynn. Here's the main control board for those at all interested, but we're not here for that today.
 
-**Dave Jones:** the main uh driver in there. And yeah, it's got a port uh down this side down here. So, yeah, main driver here, port down here. So, what we're interested in today is I think to get all these screws
+**Dave Jones:** And there's the T-con board. And there's the power supply. Looks all right. I'll just give it a brief visual one over. No bulging leaking caps. No obvious burn marks or anything.
 
-**Dave Jones:** along the side. There's a lot of them. Um and get the front uh panel off. So, we have to lift out the Like, we don't take out I don't believe we take out the metal back in here. We'll be actually
+**Dave Jones:** Looks pretty good. So, yeah, happy with that. I mean, it seems to work fine. It's just the uh backlight's gone-ski. And that is a 6 ohm 10/14 watt speaker.
 
-**Dave Jones:** lifting it off from the front. Let's give that a go. Wow, that's a lot of screws. I can see how uh some manufacturers try to uh avoid that as much as possible having like a clip-based system, which we've
+**Dave Jones:** There's two of those. And it's rubber It's got rubber baby buggy bumpers on it. Very compliant. There's the actual back of the main uh driver in there. And yeah, it's got a port uh down this side down here.
 
-**Dave Jones:** seen in previous teardowns. And the speaker assembly has to come off, too. Can disconnect that if we really need to, but uh uh yeah. And there's the little uh control board under the uh bottom. Need to get access
+**Dave Jones:** So, yeah, main driver here, port down here. So, what we're interested in today is I think to get all these screws along the side. There's a lot of them.
 
-**Dave Jones:** to more screws along the bottom here for the outside bit. Oh, these are way longer. Because the bottom edge of the TV has a much thicker plastic base on it. Uh pure um I presume for like physical mounting.
+**Dave Jones:** Um and get the front uh panel off. So, we have to lift out the Like, we don't take out I don't believe we take out the metal back in here.
 
-**Dave Jones:** Yeah, there's metal sheeting there and on the other side that it goes into, whereas the other one's only one metal sheet. So, this one's two. So, yeah, the bottom edge is a different physical design to the top edge. There you go for the
+**Dave Jones:** We'll be actually lifting it off from the front. Let's give that a go. Wow, that's a lot of screws. I can see how uh some manufacturers try to uh avoid that as much as possible having like a clip-based system, which we've seen in previous teardowns.
 
-**Dave Jones:** speaker aficionados. Main driver and just the vented port. Now, we have to try and prize the bezel off. You can see looks like there's some like little indents there and over here that hold it in place. So, we have to
+**Dave Jones:** And the speaker assembly has to come off, too. Can disconnect that if we really need to, but uh uh yeah. And there's the little uh control board under the uh bottom.
 
-**Dave Jones:** wedgie those up. Careful, this this metal surround's actually sharp. Seems a bit annoying. Get the camera out of the way and get back to you. Now, you can't actually get under here with a plastic spudger as well. And that seems to
+**Dave Jones:** Need to get access to more screws along the bottom here for the outside bit. Oh, these are way longer. Because the bottom edge of the TV has a much thicker plastic base on it.
 
-**Dave Jones:** that seems to help, but yeah, once you've got once you've got one bit of it, the rest I think it's going to come up pretty easy. Yeah, yeah, there we go. Just the first couple of clips that are
+**Dave Jones:** Uh pure um I presume for like physical mounting. Yeah, there's metal sheeting there and on the other side that it goes into, whereas the other one's only one metal sheet.
 
-**Dave Jones:** tricky. And wallah! Wallah! Look at that. Beautiful. And what we should be able to do now is flip up the screen like this, cuz it's going to hinge all on these flat flex drivers here. So, we're going to want um
+**Dave Jones:** So, this one's two. So, yeah, the bottom edge is a different physical design to the top edge. There you go for the speaker aficionados. Main driver and just the vented port.
 
-**Dave Jones:** something to rest it up on against, I think, while we actually work on this. Um yeah, I don't do this every day, so I haven't got a dedicated bench for it. So, I'm just going to put some cardboard
+**Dave Jones:** Now, we have to try and prize the bezel off. You can see looks like there's some like little indents there and over here that hold it in place. So, we have to wedgie those up.
 
-**Dave Jones:** here, and then we can lift it up and put it flat. There's the actual panel.
+**Dave Jones:** Careful, this this metal surround's actually sharp. Seems a bit annoying. Get the camera out of the way and get back to you. Now, you can't actually get under here with a plastic spudger as well.
 
-**Dave Jones:** Yeah. And that should fold over nicely. You definitely don't want to put any stress on the flat flexes. That's going to ruin your day. Now, we have to take off all of our layers. Here, I once again I've done
+**Dave Jones:** And that seems to that seems to help, but yeah, once you've got once you've got one bit of it, the rest I think it's going to come up pretty easy.
 
-**Dave Jones:** tear downs of all the diffusion and all the other layers on Oh, are they stuck under? Oh, they're stuck under. Damn, I was hoping they'd just lift out, but they won't. They're stuck under the plastic bezel. Bugger. I think
+**Dave Jones:** Yeah, yeah, there we go. Just the first couple of clips that are tricky. And wallah! Wallah! Look at that. Beautiful. And what we should be able to do now is flip up the screen like this, cuz it's going to hinge all on these flat flex drivers here.
 
-**Dave Jones:** this has just turned this into an easy job into a pain in the ass. Yeah, look along here. We've got clips, plastic clips. Oh, bugger. I am Yeah, looks like this whole outer plastic bezel keeps all of those back sheets in, and uh that's
+**Dave Jones:** So, we're going to want um something to rest it up on against, I think, while we actually work on this. Um yeah, I don't do this every day, so I haven't got a dedicated bench for it.
 
-**Dave Jones:** really annoying. I've got that plastic out, but I'm not sure how that Are they going Oh, no. So, I've got to get that I left the speaker on and the back clips on here. Oh, that's an Yeah, that's annoying.
+**Dave Jones:** So, I'm just going to put some cardboard here, and then we can lift it up and put it flat. There's the actual panel. Yeah. And that should fold over nicely.
 
-**Dave Jones:** [clears throat] And I can't really get away with it. Nope. Nope. I should have taken that whole speaker assembly off. Damn. >> [laughter] >> Yeah, speaker assembly should have come off, and then um there's back back plastic clips along here. Unbelievable.
+**Dave Jones:** You definitely don't want to put any stress on the flat flexes. That's going to ruin your day. Now, we have to take off all of our layers. Here, I once again I've done tear downs of all the diffusion and all the other layers on Oh, are they stuck under?
 
-**Dave Jones:** LG design is uh not exactly the greatest. Well, here's the layers. We've got our prism sheet there. We've got our diffuser layer, and that's it. And just our white uh back in there, and there's our LEDs sticking out there.
+**Dave Jones:** Oh, they're stuck under. Damn, I was hoping they'd just lift out, but they won't. They're stuck under the plastic bezel. Bugger. I think this has just turned this into an easy job into a pain in the ass.
 
-**Dave Jones:** There's the culprits, so I might actually be That's the They're just stuck down. This is going to double-sided tape. Yeah. So, I think might not be able to get it on camera, but uh I should be able to without
+**Dave Jones:** Yeah, look along here. We've got clips, plastic clips. Oh, bugger. I am Yeah, looks like this whole outer plastic bezel keeps all of those back sheets in, and uh that's really annoying.
 
-**Dave Jones:** having to take out the rest of them. Should be able to get I think there's Yeah, there's three strips of LEDs in there. So, I should be able to get to those. Ooh, this is one big board. I've got two separate smaller boards.
+**Dave Jones:** I've got that plastic out, but I'm not sure how that Are they going Oh, no. So, I've got to get that I left the speaker on and the back clips on here.
 
-**Dave Jones:** So, what's going on? And in the middle there were these two little uh twisty clips that just uh prop up um the middle here, so it just just doesn't uh sag in there. Keeps it a bit more even. Um they
+**Dave Jones:** Oh, that's an Yeah, that's annoying. [clears throat] And I can't really get away with it. Nope. Nope. I should have taken that whole speaker assembly off. Damn. >> [laughter] >> Yeah, speaker assembly should have come off, and then um there's back back plastic clips along here.
 
-**Dave Jones:** just come out easy. And what what what what Here is my one that I got. And there's the one in there. Mine's in two pieces like this. It's got four here and two four six here. The other one has two
+**Dave Jones:** Unbelievable. LG design is uh not exactly the greatest. Well, here's the layers. We've got our prism sheet there. We've got our diffuser layer, and that's it. And just our white uh back in there, and there's our LEDs sticking out there.
 
-**Dave Jones:** four six seven and it's one big board. So, I've either goofed it and ordered the wrong one or they've sent the wrong one. And, you know, their ad was wrong or something like that. It was very confusing. There were a lots of options
+**Dave Jones:** There's the culprits, so I might actually be That's the They're just stuck down. This is going to double-sided tape. Yeah. So, I think might not be able to get it on camera, but uh I should be able to without having to take out the rest of them.
 
-**Dave Jones:** for all different model TVs, but I thought I had it and I like I double-checked and everything and nope. Nope, I've come a gutser. Damn. Um this Oh, the adhesive is ridiculous. Mate, maybe I can get it, but yeah, it'd be
+**Dave Jones:** Should be able to get I think there's Yeah, there's three strips of LEDs in there. So, I should be able to get to those. Ooh, this is one big board.
 
-**Dave Jones:** easier if I could just heat it up. Unfortunately, I can't really do that with like in this state um unless I can take out the whole lot. Yes, I do actually have the correct connector. >> [laughter] >> But, as you can see, these are a totally
+**Dave Jones:** I've got two separate smaller boards. So, what's going on? And in the middle there were these two little uh twisty clips that just uh prop up um the middle here, so it just just doesn't uh sag in there.
 
-**Dave Jones:** incorrect pitch and totally incorrect size of uh the lens. And that's what's designed to go through that paper backing and in theory you could like get rid of the paper back or cut you know bigger holes in the paper back in and
+**Dave Jones:** Keeps it a bit more even. Um they just come out easy. And what what what what Here is my one that I got. And there's the one in there.
 
-**Dave Jones:** everything and put it in. I don't know. What do you think? Leave it in the comments. Should I make do? Obviously like it's the right length and it still work I guess. I bought it in and it you know cut some
+**Dave Jones:** Mine's in two pieces like this. It's got four here and two four six here. The other one has two four six seven and it's one big board. So, I've either goofed it and ordered the wrong one or they've sent the wrong one.
 
-**Dave Jones:** holes in the paper and uh but uh the the whole idea of the paper is that it provides a nice even reflecting uh surface inside and like and physically they're much uh thicker but I think I'd probably have some room
+**Dave Jones:** And, you know, their ad was wrong or something like that. It was very confusing. There were a lots of options for all different model TVs, but I thought I had it and I like I double-checked and everything and nope.
 
-**Dave Jones:** in there but someone screwed the pooch. It's probably Dave. The originals are 43UJ65 Ultra HD exactly like the uh part number and this one's a V174343-in 17 uh three. Um you know these aren't genuine LG replacements. They're uh you know
+**Dave Jones:** Nope, I've come a gutser. Damn. Um this Oh, the adhesive is ridiculous. Mate, maybe I can get it, but yeah, it'd be easier if I could just heat it up.
 
-**Dave Jones:** made by some random factory but uh who've you know worked out oh there's a market after market for these. We can you know sell thousands of these. People want to replace their uh the backlights in their LCD TVs and uh
+**Dave Jones:** Unfortunately, I can't really do that with like in this state um unless I can take out the whole lot. Yes, I do actually have the correct connector. >> [laughter] >> But, as you can see, these are a totally incorrect pitch and totally incorrect size of uh the lens.
 
-**Dave Jones:** it's 10:00 to 7:00 p.m. and I've got an obstacle race uh first thing tomorrow morning. I'm going home. I've had enough. Uh comment down below. Catch you next time.
+**Dave Jones:** And that's what's designed to go through that paper backing and in theory you could like get rid of the paper back or cut you know bigger holes in the paper back in and everything and put it in.
 
-**Dave Jones:** >> Woo!
+**Dave Jones:** I don't know. What do you think? Leave it in the comments. Should I make do? Obviously like it's the right length and it still work I guess. I bought it in and it you know cut some holes in the paper and uh but uh the the whole idea of the paper is that it provides a nice even reflecting uh surface inside and like and physically they're much uh thicker
+
+**Dave Jones:** but I think I'd probably have some room in there but someone screwed the pooch. It's probably Dave. The originals are 43UJ65 Ultra HD exactly like the uh part number and this one's a V174343-in 17 uh three.
+
+**Dave Jones:** Um you know these aren't genuine LG replacements. They're uh you know made by some random factory but uh who've you know worked out oh there's a market after market for these.
+
+**Dave Jones:** We can you know sell thousands of these. People want to replace their uh the backlights in their LCD TVs and uh it's 10:00 to 7:00 p.m. and I've got an obstacle race uh first thing tomorrow morning.
+
+**Dave Jones:** I'm going home. I've had enough. Uh comment down below. Catch you next time. >> Woo!

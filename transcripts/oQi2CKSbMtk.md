@@ -3,83 +3,77 @@ video_id: oQi2CKSbMtk
 title: EEVblog #10 Part 1 of 2 - How a rubber band cost millions of dollars
 url: https://www.youtube.com/watch?v=oQi2CKSbMtk
 source: youtube-asr
-timestamps: {"0": 0, "1": 16, "2": 32, "3": 47, "4": 65, "5": 82, "6": 97, "7": 111, "8": 128, "9": 140, "10": 152, "11": 168, "12": 185, "13": 202, "14": 220, "15": 237, "16": 256, "17": 272, "18": 284, "19": 297, "20": 314, "21": 329, "22": 347, "23": 362, "24": 376, "25": 388, "26": 402, "27": 416, "28": 429, "29": 446, "30": 461, "31": 477, "32": 498, "33": 514, "34": 530, "35": 551, "36": 563, "37": 578, "38": 593}
+timestamps: {"0": 0, "1": 26, "2": 53, "3": 80, "4": 90, "5": 104, "6": 125, "7": 149, "8": 157, "9": 170, "10": 187, "11": 197, "12": 210, "13": 222, "14": 242, "15": 270, "16": 278, "17": 301, "18": 318, "19": 332, "20": 343, "21": 362, "22": 376, "23": 393, "24": 412, "25": 424, "26": 436, "27": 462, "28": 475, "29": 499, "30": 514, "31": 528, "32": 551, "33": 560, "34": 572, "35": 587}
 ---
 
-**Dave Jones:** Welcome to the AE VLOG. I'm your host Dave Jones and this is episode number 10. Double digits. Woohoo! Now my previous blog on cheap Chinese molding meters and why they're so crap, um that you know it stirred up a bit of
+**Dave Jones:** Welcome to the AE VLOG. I'm your host Dave Jones and this is episode number 10. Double digits. Woohoo! Now my previous blog on cheap Chinese molding meters and why they're so crap, um that you know it stirred up a bit of controversy and well not controversy but you know people saying oh they're they're not that bad and uh but yes they are and I've got a story to
 
-**Dave Jones:** controversy and well not controversy but you know people saying oh they're they're not that bad and uh but yes they are and I've got a story to tell you. I was working at a company once where we used It was a factory environment. We
+**Dave Jones:** tell you. I was working at a company once where we used It was a factory environment. We were manufacturing a very expensive product, you know, in the order of you know 20 to 30,000 dollars each and they were very difficult to rework and we bought a bunch of cheap meters due to budget constraints for use out on the factory floor and we had you know technicians and operators you know
 
-**Dave Jones:** were manufacturing a very expensive product, you know, in the order of you know 20 to 30,000 dollars each and they were very difficult to rework and we bought a bunch of cheap meters due to budget constraints for use out on
+**Dave Jones:** testing these products with these cheap molding meters and um one day they measured one of the products and it you know it failed. It it measured incorrectly. So they looked up the standard fire procedures and they found that oh that reading they they got indicated that there was a particular fault in the product which had a standard rework.
 
-**Dave Jones:** the factory floor and we had you know technicians and operators you know testing these products with these cheap molding meters and um one day they measured one of the products and it you know it failed. It it measured
+**Dave Jones:** Actually associated with this. There was a standard procedure to fix that problem. So no worries. They didn't give it a second thought. They measured it once. The meter seemed quite accurate and it gave them a reading.
 
-**Dave Jones:** incorrectly. So they looked up the standard fire procedures and they found that oh that reading they they got indicated that there was a particular fault in the product which had a standard rework. Actually associated with this. There was
+**Dave Jones:** They measured it again same thing and so they went so they well they marked that product as bad. It had to be reworked and it turned out that the meter was actually giving a false reading.
 
-**Dave Jones:** a standard procedure to fix that problem. So no worries. They didn't give it a second thought. They measured it once. The meter seemed quite accurate and it gave them a reading. They measured it again same thing and so they went so they well they marked
+**Dave Jones:** The cheap Chinese molding meter the cheap you know 30 dollar molding meter it failed and it was giving a bad reading which just happened by accident to indicate a known fault and they spent like, you know, thousands of dollars reworking this uh product thinking that there's a fault with it because they got a bad reading on a cheap Chinese multimeter.
 
-**Dave Jones:** that product as bad. It had to be reworked and it turned out that the meter was actually giving a false reading. The cheap Chinese molding meter the cheap you know 30 dollar molding meter it failed and it was giving a bad
+**Dave Jones:** And um you know, it's Yeah, you can say it's, you know, it's bad procedure and things like that. They should have checked it with a second meter, but because they had been seeing a lot of these problems recently and, you know, meters seemed to be operating correctly, the operators, you know, said, "Okay, that's that's faulty." And um you know, they put it straight into rework and you know, standard procedure, but it
 
-**Dave Jones:** reading which just happened by accident to indicate a known fault and they spent like, you know, thousands of dollars reworking this uh product thinking that there's a fault with it because they got a bad reading on a cheap Chinese multimeter. And um you
+**Dave Jones:** cost them thousands. And then the products were delayed going out the door, which cost, you know, untold tens of thousands of dollars in delays and things like that to the customer.
 
-**Dave Jones:** know, it's Yeah, you can say it's, you know, it's bad procedure and things like that. They should have checked it with a second meter, but because they had been seeing a lot of these problems recently and, you know, meters seemed to be
+**Dave Jones:** And it's just not bad. You know, it's just bad news. And so that's why a cheap Chinese multimeter can cost you a hell of a lot of money. And they're not worth using.
 
-**Dave Jones:** operating correctly, the operators, you know, said, "Okay, that's that's faulty." And um you know, they put it straight into rework and you know, standard procedure, but it cost them thousands. And then the products were delayed going out the
+**Dave Jones:** Now, there's another industry story I want to tell you about. And it's It's quite unusual. It involves a rubber band, a humble rubber band, and how this cost a company millions of dollars and a bad reputation.
 
-**Dave Jones:** door, which cost, you know, untold tens of thousands of dollars in delays and things like that to the customer. And it's just not bad. You know, it's just bad news. And so that's why a cheap Chinese multimeter can cost you a hell of a lot of money.
+**Dave Jones:** Now, I won't name the company or the uh product involved, but a standard um assembly procedure to assemble the product involved the use of rubber bands, something like this.
 
-**Dave Jones:** And they're not worth using. Now, there's another industry story I want to tell you about. And it's It's quite unusual. It involves a rubber band, a humble rubber band, and how this cost a company millions of dollars and a
+**Dave Jones:** They were actually used to hold uh wires um to actually bundle um some wires, and I'll actually show you exactly how it worked and how it caused a problem that cost millions of dollars.
 
-**Dave Jones:** bad reputation. Now, I won't name the company or the uh product involved, but a standard um assembly procedure to assemble the product involved the use of rubber bands, something like this. They were actually used to hold uh wires um to
+**Dave Jones:** Now, this actual um product involved an acoustic um sensor. It was an underwater uh sensor. And I've got a whiteboard here, and I'll explain how it works. Okay, so let's explain it.
 
-**Dave Jones:** actually bundle um some wires, and I'll actually show you exactly how it worked and how it caused a problem that cost millions of dollars. Now, this actual um product involved an acoustic um sensor. It was an underwater uh sensor. And I've got a whiteboard
+**Dave Jones:** Now, the product looked Well, it had a cutout, a little well like this, and there was a little sensor inside there which had some wires that ran off and it went down into the product and there was this shell over the top which had some holes in it.
 
-**Dave Jones:** here, and I'll explain how it works. Okay, so let's explain it. Now, the product looked Well, it had a cutout, a little well like this, and there was a little sensor inside there which had some wires that ran off and it went down into the
+**Dave Jones:** And now these holes were to allow uh acoustic um pressure to actually uh flow in and out. And this uh sensor actually measured that um pressure. Now, what they used, because this was a product which looked like this, they actually used rubber bands inside to actually um hold hold the wires down when they assembled this plate on.
 
-**Dave Jones:** product and there was this shell over the top which had some holes in it. And now these holes were to allow uh acoustic um pressure to actually uh flow in and out. And this uh sensor actually measured that um pressure. Now,
+**Dave Jones:** Now, this wasn't a problem until one day somebody decided to change the rubber band. They couldn't get the existing one they used, so they just thought, "Ah, it's just a rubber band.
 
-**Dave Jones:** what they used, because this was a product which looked like this, they actually used rubber bands inside to actually um hold hold the wires down when they assembled this plate on. Now, this wasn't a problem until one day
+**Dave Jones:** We'll just order from anyone." So, they went and ordered it and um they went and used it, no problems at all. But when these things got out into the field, when men uh they manufactured, you know, thousands of these, and they got out into the field and they found that because this was actually filled with an oil-based product, this actual cavity, uh this new rubber band, it actually swelled up.
 
-**Dave Jones:** somebody decided to change the rubber band. They couldn't get the existing one they used, so they just thought, "Ah, it's just a rubber band. We'll just order from anyone." So, they went and ordered it and um they went and used it,
+**Dave Jones:** And it swelled up and it blocked off one of these ports. And so the uh acoustic pressure was only coming in and out of one port or sometimes it would actually block cuz there were two rubber bands in there, it'd block off uh two ports.
 
-**Dave Jones:** no problems at all. But when these things got out into the field, when men uh they manufactured, you know, thousands of these, and they got out into the field and they found that because this was actually filled with an
+**Dave Jones:** But if it blocked off one, that ruined the acoustic performance of the product. Now, this was actually noticed by the customer out in the field after we had delivered thousands of these units out there.
 
-**Dave Jones:** oil-based product, this actual cavity, uh this new rubber band, it actually swelled up. And it swelled up and it blocked off one of these ports. And so the uh acoustic pressure was only coming in and out of one port or sometimes it would
+**Dave Jones:** Um cuz one one product actually contained um you know, hundreds of these uh sensors. So, uh just, you know, one product um had potentially, you know, 50 or 100 uh faults in it.
 
-**Dave Jones:** actually block cuz there were two rubber bands in there, it'd block off uh two ports. But if it blocked off one, that ruined the acoustic performance of the product. Now, this was actually noticed by the customer out in the field after we had
+**Dave Jones:** And it um quite random. The, uh, rubber band, some would, um, swell up and block the port, and, um, others wouldn't. And, uh, so it was really embarrassing, and the whole batch of products we sold to the customer were, uh, were, you know, ruined.
 
-**Dave Jones:** delivered thousands of these units out there. Um cuz one one product actually contained um you know, hundreds of these uh sensors. So, uh just, you know, one product um had potentially, you know, 50 or 100 uh faults in it. And it um quite
+**Dave Jones:** They were dead. They didn't meet their performance targets, and performance was a key aspect of our product. So, not only did, uh, the product fail, but we didn't have a rework technique to actually fix these things, and we couldn't detect the fault, either.
 
-**Dave Jones:** random. The, uh, rubber band, some would, um, swell up and block the port, and, um, others wouldn't. And, uh, so it was really embarrassing, and the whole batch of products we sold to the customer were, uh, were, you know,
+**Dave Jones:** So, we had to design test jigs to actually, uh, come up and, you know, to actually see if we could, which sensors were actually failing, cuz they're actually parallel, the whole bunch of them them were parallel, so you couldn't tell, um, just based on the measurement from the, uh, signal.
 
-**Dave Jones:** ruined. They were dead. They didn't meet their performance targets, and performance was a key aspect of our product. So, not only did, uh, the product fail, but we didn't have a rework technique to actually fix these things, and we
+**Dave Jones:** You had to actually, um, individually test each one. It was quite difficult. And then came the task of actually repairing these things. And, uh, eventually, um, you know, came up with my idea to, you know, design some custom drilling machine to drill through the metal plate, and and all sorts of things.
 
-**Dave Jones:** couldn't detect the fault, either. So, we had to design test jigs to actually, uh, come up and, you know, to actually see if we could, which sensors were actually failing, cuz they're actually parallel, the whole bunch of them them
+**Dave Jones:** And it was really messy. I mean, it worked in the end, but it but it cost millions of dollars. We had to rework, you know, millions of dollars worth of product, and the customer was without their product, losing revenue for, you know, months and months.
 
-**Dave Jones:** were parallel, so you couldn't tell, um, just based on the measurement from the, uh, signal. You had to actually, um, individually test each one. It was quite difficult. And then came the task of actually repairing these things. And,
+**Dave Jones:** And it was as a it was a very small niche industry, and it was very embarrassing. And, quite frankly, it almost ruined the company. So, the moral of the rubber band story?
 
-**Dave Jones:** uh, eventually, um, you know, came up with my idea to, you know, design some custom drilling machine to drill through the metal plate, and and all sorts of things. And it was really messy. I mean, it worked in the end, but it but it cost
+**Dave Jones:** Well, even the most insignificant things and the smallest aspect of your product, if you change it, it can have massive consequences down the track. So, just be careful when you engineer any change into your product, whether it's a part, like this rubber band, or whether it's a process, or some other step, you really have to be very careful and take it seriously.
 
-**Dave Jones:** millions of dollars. We had to rework, you know, millions of dollars worth of product, and the customer was without their product, losing revenue for, you know, months and months. And it was as a it was a very small niche industry, and
+**Dave Jones:** A rubber band can cost a millions of dollars and that's a real story. Yes, it's equipment review time again and yes, again, I've got another multimeter because I love them.
 
-**Dave Jones:** it was very embarrassing. And, quite frankly, it almost ruined the company. So, the moral of the rubber band story? Well, even the most insignificant things and the smallest aspect of your product, if you change it, it can have
+**Dave Jones:** And everyone else does too. They can't get enough of multimeter reviews. So, here it is. This week, it's the Fluke 87 5 4 and 1/2 digit industrial multimeter. Now, this is Fluke's best multimeter in their sort of standard range of multimeters without going to the fancy data logging ones like the 289 series, for example.
 
-**Dave Jones:** massive consequences down the track. So, just be careful when you engineer any change into your product, whether it's a part, like this rubber band, or whether it's a process, or some other step, you really have to be very careful and take
+**Dave Jones:** This is the um series 5, which is different. I've owned like the series 3 and owned and used like the series 3 and the original 87 and they've been going since the 1980s or something like that.
 
-**Dave Jones:** it seriously. A rubber band can cost a millions of dollars and that's a real story. Yes, it's equipment review time again and yes, again, I've got another multimeter because I love them. And everyone else does too. They can't
+**Dave Jones:** Now, the first thing you notice about the series 5 is that it looks um a bit to the series 3, uh the previous series and it's it's really just the rubber case that's actually different.
 
-**Dave Jones:** get enough of multimeter reviews. So, here it is. This week, it's the Fluke 87 5 4 and 1/2 digit industrial multimeter. Now, this is Fluke's best multimeter in their sort of standard range of multimeters without going to the fancy data logging ones
+**Dave Jones:** The actual um multimeter itself is exactly the same shape and dimensions as the old one when you take it out of the case. The basic specs are 4 and 1/2 digit, uh 0.05% basic DC volts accuracy and 6,000 count standard standard display.
 
-**Dave Jones:** like the 289 series, for example. This is the um series 5, which is different. I've owned like the series 3 and owned and used like the series 3 and the original 87 and they've been going since the 1980s
+**Dave Jones:** So, when you switch it on, it's actually 6,000 count, it's not 4 and 1/2 digit. You've got to switch it into a special mode for that. Other improvements they've made, it's got a larger, brighter LCD display.
 
-**Dave Jones:** or something like that. Now, the first thing you notice about the series 5 is that it looks um a bit to the series 3, uh the previous series and it's it's really just the rubber case that's actually different. The actual
+**Dave Jones:** It's much better. It's finally got a battery door on the back, so you don't actually have to unscrew the case to change the battery, which was a which was a real bad issue with the previous versions.
 
-**Dave Jones:** um multimeter itself is exactly the same shape and dimensions as the old one when you take it out of the case. The basic specs are 4 and 1/2 digit, uh 0.05% basic DC volts accuracy and 6,000 count standard
+**Dave Jones:** Now, I can't say I'm a big fan of this new style case they've got. They've replaced the fantastic old flexible tilting bail, which you could use to hang the thing up on um things or tilt it to just the right angle you actually need.
 
-**Dave Jones:** standard display. So, when you switch it on, it's actually 6,000 count, it's not 4 and 1/2 digit. You've got to switch it into a special mode for that. Other improvements they've made, it's got a larger, brighter LCD display. It's much
-
-**Dave Jones:** better. It's finally got a battery door on the back, so you don't actually have to unscrew the case to change the battery, which was a which was a real bad issue with the previous versions. Now, I can't say I'm a big fan of this new style case
-
-**Dave Jones:** they've got. They've replaced the fantastic old flexible tilting bail, which you could use to hang the thing up on um things or tilt it to just the right angle you actually need. Now, they've got this new um stupid plastic
-
-**Dave Jones:** fixed, you know, tilting bail. It's not nearly as good as the old one. I don't know why they changed it.
+**Dave Jones:** Now, they've got this new um stupid plastic fixed, you know, tilting bail. It's not nearly as good as the old one. I don't know why they changed it.

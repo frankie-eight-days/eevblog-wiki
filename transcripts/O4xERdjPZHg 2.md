@@ -1,0 +1,169 @@
+---
+video_id: O4xERdjPZHg
+title: EEVblog #1111 - World's First Microcontroller & Electronic Game
+url: https://www.youtube.com/watch?v=O4xERdjPZHg
+source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 30, "3": 48, "4": 64, "5": 79, "6": 95, "7": 113, "8": 130, "9": 147, "10": 160, "11": 173, "12": 186, "13": 199, "14": 215, "15": 233, "16": 249, "17": 262, "18": 277, "19": 290, "20": 307, "21": 319, "22": 329, "23": 342, "24": 353, "25": 367, "26": 380, "27": 396, "28": 411, "29": 426, "30": 441, "31": 452, "32": 464, "33": 478, "34": 493, "35": 504, "36": 514, "37": 527, "38": 539, "39": 551, "40": 565, "41": 580, "42": 593, "43": 604, "44": 619, "45": 632, "46": 647, "47": 660, "48": 673, "49": 688, "50": 704, "51": 723, "52": 736, "53": 752, "54": 768, "55": 780, "56": 794, "57": 809, "58": 824, "59": 839, "60": 854, "61": 873, "62": 890, "63": 905, "64": 922, "65": 935, "66": 949, "67": 963, "68": 977, "69": 992, "70": 1005, "71": 1019, "72": 1032, "73": 1045, "74": 1059, "75": 1075, "76": 1097, "77": 1113, "78": 1127, "79": 1146, "80": 1157}
+---
+
+**Dave Jones:** Hi, it's video number 1111. You know what that means? It's the end of four-bit counting. We're flipping over to the fifth bit. Well, we would be if we actually counted EV blog episodes in binary, but we don't. Meh, details. It's video
+
+**Dave Jones:** number 1111. So, I thought we'd take a look at the world's first microcontroller, which just so happens to be a four-bit microcontroller, none of this eight-bit rubbish. And to go along with it, I thought we'd take a look at the one of the world's first
+
+**Dave Jones:** electronic games to use a microcontroller. The Merlin. Check it out. Who remembers the Merlin? Fantastic. Came out in 1978. The Merlin was released in 1978 along with the famous Simon game as well, which is a much simpler game. They
+
+**Dave Jones:** basically came out the same time. And whilst technically they weren't the first games on the market to use a microcontroller at the time, they were the two games that became massively popular because of their functionality and their low price bracket. The Merlin
+
+**Dave Jones:** and the Simon were about $25 US at the time. Some companies were even selling it at close to its cost price of around about $20 US. And both of them just so happen to use the world's first microcontroller, the
+
+**Dave Jones:** Texas Instruments TMS 1000. So, let's take a look at it. The Merlin actually was the best-selling toy in 1980, selling 2.2 million units. It was phenomenally popular. I had one of these as a kid. It was absolutely remarkable.
+
+**Dave Jones:** I was just amazed that a computer inside like a toy. There's a computer in here. Cuz you got to remember, this is 1978. And whilst like 1977, the year before, was famously the year that the Commodore PET came out, the Apple II, the Tandy
+
+**Dave Jones:** TRS-80 Model I. So, you know, computers were out there, the Atari 2600 uh video game, of course, came out, but these were relatively expensive items. So, you know, people knew what computers were, but to get a computer in a toy that cost
+
+**Dave Jones:** like 20 to 25 dollars was mind-blowing. The Merlin was actually developed by Bob and Holly Doyle, who formed an independent game company a few years earlier along with Holly's brother, Wendell Thomas, and they were contracted to Parker Brothers.
+
+**Dave Jones:** At the time, Parker Brothers said, "Hey, we want one of these electronic games." In fact, they had actually developed an earlier game to this called Sector, or it's what they wanted to call it was Sync the Sub, and it came out slightly
+
+**Dave Jones:** before the Merlin, I believe, but then, you know, it wasn't hugely popular because it it didn't it really only appealed to certain niche market, whereas they wanted something that would every kid would want for Christmas. And so, they said, "Hey,
+
+**Dave Jones:** give us your game ideas. What have you got?" And they developed the Merlin and showed them a prototype, and they went, "Yep, let's do that." And they had a lot more games than the six games in one that came with this, and there was a bit
+
+**Dave Jones:** of you know, toing and froing over what games would be included in this, but this was more popular, I think, than the Simon cuz the Simon was basically a one-trick pony. It just did, you know, a simple memory type flashing light game.
+
+**Dave Jones:** This actually had six games built in. Remarkable. So, Bob and Holly Doyle were both Harvard astrophysicists, and Wendell Thomas, he was actually a computer scientist from IBM. So, they went, "What do we do? Let's make games. There's got to be money in games." And
+
+**Dave Jones:** sure enough, come certain night in 1978, there was. So, both the Simon and the Merlin used the world's first four-bit microcontroller. None of this eight-bit rubbish. Four-bit TMS 1000 processor. In fact, the Merlin uses a slightly higher memory version of that, the TMS 1100.
+
+**Dave Jones:** And curiously, the microcontroller didn't actually come out in 1977 or 1978 when these made their Well, the first electronic games to use them made their appearance. It actually came out in 1974, basically 4 years earlier, but it it took those 4 years for the game
+
+**Dave Jones:** industry to catch on and go, "Hey, we can use these microcontrollers in electronic toys, and they only cost a couple of dollars per chip, and they can sell a $20 item." Cuz as you'll see in the teardown of this thing, the
+
+**Dave Jones:** microcontroller is does practically everything in this. So, they could really got to get their bill of materials cost down because the microcontroller had everything built in. It had the RAM, the ROM, and the IO. Everything you wanted, and that's all
+
+**Dave Jones:** you had to use. A single microcontroller could do everything. And the rest of it was just some LEDs and some molding and cases and stuff like that, and you could sell it for like 25 bucks at retail. Crazy. Of course, we take that for
+
+**Dave Jones:** granted now where you can buy a farting novelty gadget for $1 delivered on eBay, but back in 1970 uh eight, it was a huge deal, and everyone was amazed that you could get a computer inside a toy. So, here it is, and it really is a funky
+
+**Dave Jones:** form factor. What I loved about this was the fact that it had these membrane touch uh keys, which I had no idea what membrane touch keys. Didn't even know the name for it back when I was a kid,
+
+**Dave Jones:** but I thought it was just magic that you could just touch these. Like they didn't feel like a real button. For the time, it was absolutely magical. And the fact that there was an LED behind each one of
+
+**Dave Jones:** these, and you could press the button and see the LED at the same time. IT'S LIKE, "WOW, HOW DID THAT WORK?" ANYWAY, um the form factor was uh designed, I believe, to be like a familiar uh at the
+
+**Dave Jones:** time, like a like a phone handset. And apparently, um the they did show that yeah, it was a sort of, you know, kind of like a familiar form factor to people. It did have a DC jack or a
+
+**Dave Jones:** battery eliminator on the side, and there was a power switch which, uh, confusingly, was not labeled at all. And, of course, it's got a, uh, what looks like a 57 mm speaker up in the top here. And, of course, like, you might
+
+**Dave Jones:** think, "Well, why does it need such a big speaker? Like, I've got a speaker in my phone." Yeah, well, that's modern. Um, you know, electromagnetic speaker technology. Back then, it was like, "Yep, we're going to just use a paper
+
+**Dave Jones:** cone, off-the-shelf 57 mm driver." And they just designed it around that. None of this buzzer, you know, piezo, uh, buzzer rubbish. Nope, genuine speaker. So, basically, it was just a two-part molding case. Of course, you have to get the, uh, price point down
+
+**Dave Jones:** for these games are plus the, uh, back, uh, door as well. But, apart from that, a two-part molding, very large self-tappers, ooh, into plastic. I hate that snap. I hate it. But, whoop, yeah, there it comes out complete with the plastic on
+
+**Dave Jones:** it. Ugh. So, it looks like it's got a couple of plastic clips at the end. All right, so let's open this up, and it should just Oh, we're in like Flynn. Check it out. Oh, hello. And, yeah, classic 1970s
+
+**Dave Jones:** single-sided PCB, uh, construction, as you'd expect. Uh, just a phenolic-based, uh, PCB. Of course, that's done to, uh, get the cost down. You don't want any of that double-sided PCB rubbish, not in a consumer product. Um, and even today,
+
+**Dave Jones:** you'll still find that a lot of consumer goods, you know, white goods, TVs, and things like that, use single-sided PCBs. Cuz it gets the cost down. And you can see that there's not much in here. There's the micro, uh, controller, as
+
+**Dave Jones:** we'll take a look at, which was absolutely revolutionary for the day. It was so incredible that they actually got the price down. And they did it with the micro controller, but also did it with various other aspects. Actually, take a
+
+**Dave Jones:** look at the rest of it here. There's our membrane keypad up our membrane keypad under there. They've got another Look at this, a complete molding like this. Another So, what's that? Like four moldings. They got the upper case, the lower case,
+
+**Dave Jones:** this LED which is also used as the LED diffuser, and the back panel. So, there's four plastic moldings like that. But, the other thing about it is that you'll notice that the LEDs actually go into moldings on there not only to uh
+
+**Dave Jones:** diffuser, but also to hold it in place so that you don't need any screws inside this thing. There's just the two screws to hold it together cuz getting that price point down is not about not only about putting it in the microcontroller
+
+**Dave Jones:** with nothing else on there. There's just going to be some LEDs and a switch and that's basically it. The batteries are probably just power not even a voltage regulator in there, I doubt. So, they're just powering it directly from the
+
+**Dave Jones:** batteries and not only to get the component uh bill materials cost down, but also um assembly time as well cuz the more screws you have if you have to put four screws in here to screw this board down,
+
+**Dave Jones:** that's going to take uh time and time cost money. So, they do away with that with the big plastic molding. It makes sense. They needed sort of, you know, that anyway really to uh to get the diffusing on the LEDs. You could have
+
+**Dave Jones:** used the internal diffusing on the LEDs, I guess. Um you know, the dome top on them just like that and you know, it might not been as as good, but you know, it still would have worked. Anyway, they
+
+**Dave Jones:** got down. They figured they have to do that molding anyway, so might as well make that. Now, let's have a look at the There we go. There's our membrane keypad. And when I tore apart this as a kid, I thought this was absolute magic.
+
+**Dave Jones:** I didn't know how it worked. I'd never seen a membrane uh keypad before. So, it rather than the uh conductive uh you know, like carbon of the day, this I I presume it's like some form of like silver or silver alloy, something
+
+**Dave Jones:** like that. And they've got an inner sheet here, which is the separator, which just insulates the two like that because there's no insulation on these traces. They're all exposed. So, you need that inner one. Of course, these cost
+
+**Dave Jones:** practically nothing, especially in like the inner sheet. So, the separators, and that's how they get the button. You just press down on that. Doesn't require much force, and that was magical. And of course, you could have the cutouts so
+
+**Dave Jones:** the LED shines through. And at the same time as the LED shining through, there you go. You can just make contact just with those keys like that. Brilliant. Took them four revisions to get it right, though. Rev D. And is the
+
+**Dave Jones:** PCB a Rev D as well? I don't know what that part number means. Anyway, you can see that uh Look at this. This has to be the world's largest solder mask expansion. Look at that. I mean, that's just incredible.
+
+**Dave Jones:** None of this solder mask between pins rubbish that you get these days. They just didn't need it. This is all wave soldered. You can just tell by the the uniformness of the joints. And they obviously didn't have a problem
+
+**Dave Jones:** with you know, bridging between pins or anything like that. But you know, they went to the effort to put the solder mask on there. And solder mask expansion around the flat flex connector as well. But apart from that,
+
+**Dave Jones:** I mean, there's not much There's not much on here at all. Let's flip it over. And they didn't even bother with screws for the speaker as well. Just some double-sided sponge tape on the top and like a you know, a reasonably tight fit
+
+**Dave Jones:** designed into there and just stuck on the top. Nice. But you can see No, there's no form of regulation or anything like that. The mic is powered directly from the batteries. Do they have a What's We've got one cap in there? It's
+
+**Dave Jones:** like they wouldn't need that for decoupling. And another cap here. RC oscillator. and there's the brains of this thing, the Texas Instruments TMS1100. Of course, the TMS1000 was the world's first, uh, microcontroller. Um, what defines a microcontroller is
+
+**Dave Jones:** that, as opposed to a microprocessor, is that a microprocessor needs external memory, RAM and, uh, program memory as well. Whereas, a microcontroller has those built in. Nowadays, you think of microcontrollers as having built-in analog-to-digital converters, you know, timers and serial UARTs and all that
+
+**Dave Jones:** sort of stuff. But, back then, it was, you know, like, to have that sort of stuff, they didn't really have those, uh, peripherals back then. But, just having the RAM and the ROM integrated, in this case, it's a mask ROM. None of this
+
+**Dave Jones:** reprogrammable rubbish. Flash wasn't invented yet. E-squared PROM wasn't invented yet. Um, and maybe they had a windowed version of this, like, like, for development, that would have cost a lot of money. But, this one would have cost them a dollar or two each. And, but
+
+**Dave Jones:** they were mask programmable, one-time programmable. And, there's a more modern PIC microcontroller, and you can see the pin pitch difference there. So, you know, it's not your standard 0.1 in pitch, much finer. That was, you know, pretty advanced stuff for 1970. And,
+
+**Dave Jones:** we've got a diode in there as well, or as I called them at the time when I was a kid, diodies, because I'd never heard anyone say the word diode before. So, you know, that's what I called them.
+
+**Dave Jones:** Anyway, we've got a cap in there, ceramic jobby. What value? 100? Is that 100 n or 100 pF? This one looks like manufactured in Korea in the 8th week, 1980. It's a modern one. And, that matches the date
+
+**Dave Jones:** code here, 5th week, 1980. In Singapore. I don't know why yours in Singapore. Singapore manufactured chips back then. It's quite common. So, here's our 100 pF cap on the back here. And, if you're follow the money from this pin here,
+
+**Dave Jones:** let's go around. Always follow the money. Right into the basement car park at midnight. It's where all you find get all the good info. So, that's actually pin 20, which is the VSS or ground pin, and that goes over to the the switch the
+
+**Dave Jones:** ground there. And you can see that the two oscillator pins 18 and 19 are actually shorted out. So, I didn't but do believe it's actually using the internal oscillator. But, it's also got a power on needs a power on reset. So, maybe
+
+**Dave Jones:** that's what this chip this cap over here is doing. Plus the diode is part of that reset circuit, too. And because I know you want to know what the clock rate is, well, let's have a look. 340 kHz. Nice.
+
+**Dave Jones:** Ah, screaming. And we'll just capture the speaker here. Ta-da! There we go. Wow, look at that. Ha-ha. And check this out. If we have a look at the original design patent for this thing, um there's three names on there. Bob Doyle,
+
+**Dave Jones:** I don't know who Arthur Venditti is, but apparently Samuel Kelman was a designer at Parker Brothers, and apparently he's responsible for the futuristic design of this thing. And look, isn't it great? You can see that it's like it's very
+
+**Dave Jones:** like Star Wars, you know, droidy kind of look. I just I love this. Anyway, it's just a design patent. It's not a actual patent for the game. The from the engineering staff at Texas Instruments Incorporated, and they show
+
+**Dave Jones:** the die. Love it. Copyright 1976. And we can see here that the TMS 1100 is basically pin-for-pin compatible with the original TMS 1000, but it's got even though it's a 4-bit processor, it's actually 2K by 8 ROM and 512 bits of
+
+**Dave Jones:** RAM, as opposed to I think it's half that in the original. Now, we can see just the internal uh block diagrams of how it works and it's a microcontroller cuz it has the built-in RAM and ROM. But, you'll see it's got nothing else.
+
+**Dave Jones:** It's got no newfangled ADCs, no even simple UARTs or anything like that. There's many variants of this uh 1000 family. Some of them had higher voltage capability, open uh source and open drain outputs as well for driving uh you
+
+**Dave Jones:** know, Nixie tube displays and all sorts of other stuff. And the standard instruction set for those playing along at home contains two two chapters of 16 pages each. Each page contains 68 8-bit words, etc. etc. But, it was a 4-bit
+
+**Dave Jones:** processor even though it used an 8-bit uh instruction word. There's not exactly a lot of uh instructions here. It's It's okay. It does the business, you know, it's similar to any sort of like a modern uh PIC processor or anything like
+
+**Dave Jones:** that. Similar, I think it's 40 odd uh uh in instructions or something like that. All the instructions actually executed in six clock cycles here. Um as you can see, there's the six clock cycles and it's split up into multiple phases. So,
+
+**Dave Jones:** quite complicated phase clocking internally. But, yeah, I don't believe you have to really worry about that sort of stuff, but heh, stand to be corrected. And here's all the different uh variants on there. I thought it probably more than that in the end. But,
+
+**Dave Jones:** uh as you can see, the TMS1100 here, uh nominal power supply 15 V. But, obviously operating at uh well below that cuz we're operating 6 V directly from the batteries. It has no problem doing that. But, uh to be operating at
+
+**Dave Jones:** the higher voltages means it was fully compatible with like 4000 series CMOS logic and stuff like that. Very nice. Um nominal at 15 V, 105 mW. So, the processor wouldn't have been drawing uh much at all. Most of the power would
+
+**Dave Jones:** have been coming from the LEDs. The LEDs weren't hugely efficient uh back in 1978. So, that's why they're a bit piss-weak on there. I remember back when I used it though, pretty piss-weak LEDs. They weren't very bright at all. So, maybe they're trading
+
+**Dave Jones:** off some brightness with battery life. And the output drivers are more than capable, I think 10 to 15 milliamps each. They're more than capable of driving the LEDs directly. And if you want to see their development environment, here it is. They got a
+
+**Dave Jones:** flowchart of how it all worked. There was a simulator apparently. And the Doyles actually developed this on an Intel development system. Don't know exactly which one, but it's probably would not be too dissimilar to the one that I just
+
+**Dave Jones:** found at the computer museum warehouse closing thing. And apparently that was worth 25 grand at the time that development system just to develop for your microcontroller. Like crazy. And this is rather interesting. The instruction program will logic array. It's got a PLA in or a PLD
+
+**Dave Jones:** basically. And they give this example of a BCD to seven-segment decoder here. And they're the fuse mappings in order to map the outputs like that. To have that built into a micro, that's pretty cool. And it's a very basic micro. Like
+
+**Dave Jones:** there's no interrupts in this thing at all. So, all the logic would just be sequential. That'd be it. So, can you imagine what sort of effort would be required to hand code a game like this in assembly? They did well to get these
+
+**Dave Jones:** six games into that 2K words. Awesome. Anyway, I hope you enjoyed that look at the Merlin 1978 four-bit processor technology. Oh, I I was going to like do some video actually just playing the games on this thing, but I won't include it here. Probably
+
+**Dave Jones:** include that over on the second channel. Link at the end. So, you want to check out EVblog 2 to see that. Anyway, if you liked it, please give it a big thumbs up as always. Discuss down below. Catch you
+
+**Dave Jones:** next time.

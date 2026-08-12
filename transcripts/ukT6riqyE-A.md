@@ -3,363 +3,425 @@ video_id: ukT6riqyE-A
 title: EEVblog #759 - Mailbag
 url: https://www.youtube.com/watch?v=ukT6riqyE-A
 source: youtube-asr
-timestamps: {"0": 1, "1": 15, "2": 27, "3": 40, "4": 52, "5": 67, "6": 85, "7": 97, "8": 110, "9": 119, "10": 132, "11": 146, "12": 174, "13": 192, "14": 212, "15": 222, "16": 238, "17": 254, "18": 271, "19": 290, "20": 306, "21": 317, "22": 334, "23": 354, "24": 373, "25": 389, "26": 410, "27": 422, "28": 431, "29": 446, "30": 469, "31": 489, "32": 505, "33": 522, "34": 543, "35": 560, "36": 584, "37": 600, "38": 617, "39": 639, "40": 660, "41": 683, "42": 713, "43": 725, "44": 738, "45": 753, "46": 772, "47": 787, "48": 810, "49": 828, "50": 847, "51": 870, "52": 895, "53": 914, "54": 934, "55": 949, "56": 961, "57": 976, "58": 991, "59": 1008, "60": 1020, "61": 1037, "62": 1062, "63": 1076, "64": 1098, "65": 1112, "66": 1128, "67": 1147, "68": 1162, "69": 1180, "70": 1196, "71": 1211, "72": 1226, "73": 1239, "74": 1250, "75": 1265, "76": 1278, "77": 1298, "78": 1311, "79": 1333, "80": 1350, "81": 1367, "82": 1380, "83": 1396, "84": 1405, "85": 1423, "86": 1438, "87": 1456, "88": 1474, "89": 1487, "90": 1508, "91": 1521, "92": 1543, "93": 1560, "94": 1575, "95": 1587, "96": 1598, "97": 1614, "98": 1626, "99": 1639, "100": 1656, "101": 1669, "102": 1681, "103": 1697, "104": 1716, "105": 1734, "106": 1750, "107": 1764, "108": 1785, "109": 1808, "110": 1823, "111": 1845, "112": 1859, "113": 1877, "114": 1897, "115": 1913, "116": 1923, "117": 1940, "118": 1957, "119": 1970, "120": 1983, "121": 1994, "122": 2004, "123": 2020, "124": 2032, "125": 2048, "126": 2063, "127": 2077, "128": 2092, "129": 2106, "130": 2120, "131": 2133, "132": 2150, "133": 2163, "134": 2177, "135": 2189, "136": 2204, "137": 2215, "138": 2225, "139": 2240, "140": 2253, "141": 2270, "142": 2287, "143": 2305, "144": 2320, "145": 2338, "146": 2350, "147": 2367, "148": 2380, "149": 2396, "150": 2411, "151": 2430, "152": 2453, "153": 2470, "154": 2486, "155": 2501, "156": 2518, "157": 2534, "158": 2550, "159": 2566, "160": 2579, "161": 2595, "162": 2613, "163": 2631, "164": 2645, "165": 2661, "166": 2681, "167": 2703, "168": 2722, "169": 2734, "170": 2747, "171": 2764, "172": 2778, "173": 2794, "174": 2810, "175": 2827, "176": 2843, "177": 2853, "178": 2865}
+timestamps: {"0": 1, "1": 11, "2": 20, "3": 31, "4": 43, "5": 52, "6": 61, "7": 77, "8": 87, "9": 95, "10": 105, "11": 121, "12": 132, "13": 141, "14": 163, "15": 184, "16": 198, "17": 222, "18": 234, "19": 245, "20": 263, "21": 277, "22": 290, "23": 304, "24": 314, "25": 324, "26": 341, "27": 354, "28": 370, "29": 383, "30": 398, "31": 420, "32": 429, "33": 436, "34": 459, "35": 474, "36": 489, "37": 501, "38": 511, "39": 522, "40": 539, "41": 550, "42": 560, "43": 580, "44": 590, "45": 606, "46": 621, "47": 636, "48": 653, "49": 676, "50": 693, "51": 720, "52": 732, "53": 746, "54": 757, "55": 773, "56": 784, "57": 804, "58": 814, "59": 828, "60": 844, "61": 862, "62": 877, "63": 898, "64": 910, "65": 930, "66": 938, "67": 949, "68": 961, "69": 973, "70": 985, "71": 998, "72": 1012, "73": 1020, "74": 1033, "75": 1054, "76": 1065, "77": 1076, "78": 1095, "79": 1109, "80": 1120, "81": 1132, "82": 1147, "83": 1158, "84": 1176, "85": 1186, "86": 1199, "87": 1209, "88": 1220, "89": 1231, "90": 1242, "91": 1252, "92": 1262, "93": 1272, "94": 1292, "95": 1307, "96": 1317, "97": 1333, "98": 1346, "99": 1361, "100": 1373, "101": 1386, "102": 1396, "103": 1413, "104": 1432, "105": 1447, "106": 1458, "107": 1480, "108": 1490, "109": 1508, "110": 1531, "111": 1543, "112": 1557, "113": 1568, "114": 1576, "115": 1587, "116": 1605, "117": 1617, "118": 1630, "119": 1645, "120": 1662, "121": 1671, "122": 1681, "123": 1695, "124": 1702, "125": 1723, "126": 1734, "127": 1744, "128": 1757, "129": 1772, "130": 1781, "131": 1820, "132": 1835, "133": 1849, "134": 1859, "135": 1870, "136": 1893, "137": 1904, "138": 1916, "139": 1924, "140": 1940, "141": 1955, "142": 1968, "143": 1977, "144": 1991, "145": 1999, "146": 2007, "147": 2021, "148": 2034, "149": 2048, "150": 2066, "151": 2080, "152": 2094, "153": 2103, "154": 2120, "155": 2132, "156": 2145, "157": 2157, "158": 2169, "159": 2181, "160": 2192, "161": 2208, "162": 2223, "163": 2232, "164": 2247, "165": 2262, "166": 2277, "167": 2298, "168": 2311, "169": 2324, "170": 2338, "171": 2347, "172": 2367, "173": 2379, "174": 2392, "175": 2404, "176": 2414, "177": 2430, "178": 2445, "179": 2462, "180": 2473, "181": 2491, "182": 2509, "183": 2524, "184": 2539, "185": 2550, "186": 2564, "187": 2574, "188": 2583, "189": 2598, "190": 2619, "191": 2631, "192": 2648, "193": 2656, "194": 2681, "195": 2698, "196": 2712, "197": 2726, "198": 2734, "199": 2747, "200": 2761, "201": 2775, "202": 2788, "203": 2802, "204": 2815, "205": 2829, "206": 2843, "207": 2851, "208": 2860, "209": 2867}
 ---
 
-**Dave Jones:** Hi, welcome to another mailbag. Yes, Ryan is still here. Last day work experience. Yeah, learned tons about videography. Yeah, pretty much everything else. You're a great teacher. Very hands-on. I like that. Excellent. Now, yeah, we have to get through some
+**Dave Jones:** Hi, welcome to another mailbag. Yes, Ryan is still here. Last day work experience. Yeah, learned tons about videography. Yeah, pretty much everything else. You're a great teacher. Very hands-on.
 
-**Dave Jones:** old mailbags. Sorry. Yeah, these smaller ones. I keep sort of opening the bigger ones, which is a bit naughty of me. So, sorry if you've been waiting on your mailbags. I still got like, look, the shelf is still full over there. It's
+**Dave Jones:** I like that. Excellent. Now, yeah, we have to get through some old mailbags. Sorry. Yeah, these smaller ones. I keep sort of opening the bigger ones, which is a bit naughty of me.
 
-**Dave Jones:** just ridiculous. I've got like the earliest mail bag is like from 3 months ago. Ah yeah, sorry. It's just Yep. It's really bad. Anyway, let's go. Um Barley got a postcard. Don't normally do postcards, but that's from uh Martin
+**Dave Jones:** So, sorry if you've been waiting on your mailbags. I still got like, look, the shelf is still full over there. It's just ridiculous. I've got like the earliest mail bag is like from 3 months ago.
 
-**Dave Jones:** Stern. I do like still like getting postcards, but people say they don't like to put them on. So there you go. Barley. Never been to Barley. Um there's a lot of Australians boycotting Bali at the moment. Let's not go into that. Uh
+**Dave Jones:** Ah yeah, sorry. It's just Yep. It's really bad. Anyway, let's go. Um Barley got a postcard. Don't normally do postcards, but that's from uh Martin Stern. I do like still like getting postcards, but people say they don't like to put them on.
 
-**Dave Jones:** right. I don't know. Yeah, let's start opening some, shall we? This one's from James S. He's from Noble Park in Victoria. So local. Thank you very much, James. Awesome. What do we got? We got a note. Of course we do. And I'm just
+**Dave Jones:** So there you go. Barley. Never been to Barley. Um there's a lot of Australians boycotting Bali at the moment. Let's not go into that. Uh right. I don't know.
 
-**Dave Jones:** writing this. There's something. I can feel something. Can feel something. I'm not sure what that is. Can you have a look? Sure. My appreciation for all the work you have done making all your videos. Thank you very much. Unfortunately, I cannot buy
+**Dave Jones:** Yeah, let's start opening some, shall we? This one's from James S. He's from Noble Park in Victoria. So local. Thank you very much, James. Awesome. What do we got?
 
-**Dave Jones:** the stuff for your Amazon stores as I am in Melbourne. Yeah. Yeah, they don't ship. Amazon don't ship a lot of stuff to uh Australia, unfortunately. Um, do I have an eBay store or something where I can buy the stuff you recommend? No, I
+**Dave Jones:** We got a note. Of course we do. And I'm just writing this. There's something. I can feel something. Can feel something. I'm not sure what that is. Can you have a look?
 
-**Dave Jones:** don't, unfortunately. I am looking at getting more of an online shop and stuff like that. I have a few more things available, possibly my own products, but uh we won't go there. Um, uh, thank you for inspiring me into electronics.
+**Dave Jones:** Sure. My appreciation for all the work you have done making all your videos. Thank you very much. Unfortunately, I cannot buy the stuff for your Amazon stores as I am in Melbourne.
 
-**Dave Jones:** Brilliant. Thank you very much, James. What is it? Uh, they look like touch pens, I think.
+**Dave Jones:** Yeah. Yeah, they don't ship. Amazon don't ship a lot of stuff to uh Australia, unfortunately. Um, do I have an eBay store or something where I can buy the stuff you recommend?
 
-**Dave Jones:** I don't get it. I think I think I've heard of these. They're like um like little touch pens. Yeah, like like stuff for your DS and Oh, right. for your tablet. That's what that was my first thought was that it
+**Dave Jones:** No, I don't, unfortunately. I am looking at getting more of an online shop and stuff like that. I have a few more things available, possibly my own products, but uh we won't go there.
 
-**Dave Jones:** was like a little tablety. It's one of those tablet tappers. Tablet tappers with a rubber end on it. Cool. And you got two of them now. All right. Next. Thank you very much, James. Um, don't turn. Yeah, a random one. What do we got
+**Dave Jones:** Um, uh, thank you for inspiring me into electronics. Brilliant. Thank you very much, James. What is it? Uh, they look like touch pens, I think. I don't get it.
 
-**Dave Jones:** here from Pan Zoo? Let's have a look from China. There we go. Got to use the big knife, and oh, it's a crappy lead lamp. No, note. We've just got ourselves a crappy lead lamp. We've already looked at crappy lead lamps before and uh
+**Dave Jones:** I think I think I've heard of these. They're like um like little touch pens. Yeah, like like stuff for your DS and Oh, right. for your tablet. That's what that was my first thought was that it was like a little tablety.
 
-**Dave Jones:** yeah, I guess we have another crappy lead lamp. That one looks like it hasn't actually burnt or charred or anything like that. Oh, surprise. Have to use it around the office. Next. I'm going through them. This one's from
+**Dave Jones:** It's one of those tablet tappers. Tablet tappers with a rubber end on it. Cool. And you got two of them now. All right. Next. Thank you very much, James.
 
-**Dave Jones:** Tate Thomas. Caesar and Bell B E L E in uh WV. What state is WV? Um, Western something. West Virginia. Virginia. That would be Anyway, WV.
+**Dave Jones:** Um, don't turn. Yeah, a random one. What do we got here from Pan Zoo? Let's have a look from China. There we go. Got to use the big knife, and oh, it's a crappy lead lamp.
 
-**Dave Jones:** There we go. Now we're in like Flint. Hurrah. So, let's see what Tate has sent. What do we get?
+**Dave Jones:** No, note. We've just got ourselves a crappy lead lamp. We've already looked at crappy lead lamps before and uh yeah, I guess we have another crappy lead lamp. That one looks like it hasn't actually burnt or charred or anything like that.
 
-**Dave Jones:** Uh lots of miscellaneous parts. But of course, we've got a um that looks like the um array out of a scanner. Um that's the part that looks like like either a photocopier or you know a scanner. One of those office machines. That's the uh
+**Dave Jones:** Oh, surprise. Have to use it around the office. Next. I'm going through them. This one's from Tate Thomas. Caesar and Bell B E L E in uh WV. What state is WV?
 
-**Dave Jones:** that's the uh element array. That's the linear what are they called? You know, yeah, one of those. Yeah. This the scanning array. Single pixel scanning array. and goes along. And it's got a little uh um flat flex connector on the
+**Dave Jones:** Um, Western something. West Virginia. Virginia. That would be Anyway, WV. There we go. Now we're in like Flint. Hurrah. So, let's see what Tate has sent. What do we get?
 
-**Dave Jones:** back. And so it looks like he's stripped down something that looks like the probably the controller from it and a whole bunch of throughhole parts. Awesome. He's just ripped something apart. Does he tell us what he ripped apart?
+**Dave Jones:** Uh lots of miscellaneous parts. But of course, we've got a um that looks like the um array out of a scanner. Um that's the part that looks like like either a photocopier or you know a scanner.
 
-**Dave Jones:** And there's a whole bunch of circles. Circles? Why do I have Wait. Oh, is that like circle? Yeah, they got Oh, there diagrams. I don't know. We got a variable cap. We got a switch. What? I don't get it. I don't get it. Uh, what
+**Dave Jones:** One of those office machines. That's the uh that's the uh element array. That's the linear what are they called? You know, yeah, one of those. Yeah. This the scanning array.
 
-**Dave Jones:** about the letter? I don't get it. What does he say? Um, he's Oh, he's 10 years old. Oh, 10. Hey, awesome. Tate. Beautiful. 10 years old. And he lives in Bell in West West Virginia. There you go. I have been a
+**Dave Jones:** Single pixel scanning array. and goes along. And it's got a little uh um flat flex connector on the back. And so it looks like he's stripped down something that looks like the probably the controller from it and a whole bunch of throughhole parts.
 
-**Dave Jones:** fan of yours for over two years. Love mailbag Monday. I thought I would send some vintage components from my collection. Also includes photos of me from my electronics lab and schematic symbols for Sean. Ah, so he can learn to
+**Dave Jones:** Awesome. He's just ripped something apart. Does he tell us what he ripped apart? And there's a whole bunch of circles. Circles? Why do I have Wait. Oh, is that like circle?
 
-**Dave Jones:** be like you. Little flash cards, right? Those um Yeah, the you know Yeah. Don't they call them flash cards or something? Memory flash cards. Very cool. Very cool. So, let's Here we go. We got our photo in here.
+**Dave Jones:** Yeah, they got Oh, there diagrams. I don't know. We got a variable cap. We got a switch. What? I don't get it. I don't get it. Uh, what about the letter?
 
-**Dave Jones:** There he is. Tate, there he is. Hey, glasses like me. Good day, Tate. Awesome. And there's his lab. Oh, yeah. What's he got? He's got an old uh he's got an old tech analog scope. A thumbs up. Yeah, that's his
+**Dave Jones:** I don't get it. What does he say? Um, he's Oh, he's 10 years old. Oh, 10. Hey, awesome. Tate. Beautiful. 10 years old. And he lives in Bell in West West Virginia.
 
-**Dave Jones:** home lab at 10. There we go. And it's a uh is that a 475? Anyway, there you go. Oh, that's terrific. Look at that. It's his home lab. Fantastic. That was That's better than my home lab at 10, let me tell you. I uh
+**Dave Jones:** There you go. I have been a fan of yours for over two years. Love mailbag Monday. I thought I would send some vintage components from my collection. Also includes photos of me from my electronics lab and schematic symbols for Sean.
 
-**Dave Jones:** Yeah, that's terrific. This kid's grown up to be a scientist. He's He's going places. Good on you, T. Thanks, mate. Good job. Keep it up. Excellent. And his parts. He salvages parts. Always good to salvage parts. Freddy Olsen. He's from
+**Dave Jones:** Ah, so he can learn to be like you. Little flash cards, right? Those um Yeah, the you know Yeah. Don't they call them flash cards or something? Memory flash cards.
 
-**Dave Jones:** uh Lond Lond. Not sure. Weird. Yeah. Let's go. We're doing this all in a single take. This is like Yeah. Usually I don't do mailbags in a single take, but we're sort of getting through them. And uh mailbag special. Yeah.
+**Dave Jones:** Very cool. Very cool. So, let's Here we go. We got our photo in here. There he is. Tate, there he is. Hey, glasses like me. Good day, Tate. Awesome.
 
-**Dave Jones:** Cuz if you don't know how I normally shoot mailbags, I uh you I used to shoot like I'd open one box and then it go to the second camera over there and I would uh analyze it and analyze it. do, you
+**Dave Jones:** And there's his lab. Oh, yeah. What's he got? He's got an old uh he's got an old tech analog scope. A thumbs up. Yeah, that's his home lab at 10.
 
-**Dave Jones:** know, tear it down, do whatever. And but now, no, it's I think it's more efficient to just sit here, open all the boxes, and then I I leave them all on the floor, don't I? I line them up on
+**Dave Jones:** There we go. And it's a uh is that a 475? Anyway, there you go. Oh, that's terrific. Look at that. It's his home lab. Fantastic. That was That's better than my home lab at 10, let me tell you.
 
-**Dave Jones:** the floor in the order that I open them so that we can go back and shoot the others in order. Yeah. So, it makes editing the season for you folks. Yeah. So, this is a Lure 7 MCU board.
+**Dave Jones:** I uh Yeah, that's terrific. This kid's grown up to be a scientist. He's He's going places. Good on you, T. Thanks, mate. Good job. Keep it up. Excellent. And his parts.
 
-**Dave Jones:** It's a double-sided load and uh from Lond. There you go. Excellent. I actually I don't know where that is. I'm sorry. I'm I'm lost. Anyway, he's got uh from Lond University. We're in the formula student team of Lond University in the south of
+**Dave Jones:** He salvages parts. Always good to salvage parts. Freddy Olsen. He's from uh Lond Lond. Not sure. Weird. Yeah. Let's go. We're doing this all in a single take. This is like Yeah.
 
-**Dave Jones:** Sweden. Aha. This summer we'll attend competition in Silverstone in England and Red Bull Racetrack. Awesome. With our newly built car. They're building cars. Fantastic. Carbon fiber mono. Yep. Um, a few extra pieces to send you a sample and they are powered by an AT mega 32.
+**Dave Jones:** Usually I don't do mailbags in a single take, but we're sort of getting through them. And uh mailbag special. Yeah. Cuz if you don't know how I normally shoot mailbags, I uh you I used to shoot like I'd open one box and then it go to the second camera over there and I would uh analyze it and analyze it.
 
-**Dave Jones:** It's built-in can controller. Okay. So, it's like a CAN car controller board and output MOSFET driven for all sorts of stuff. Awesome. And a few comments about our circuit board. Yeah. Okay. I might have to do that on the uh second thing. So,
+**Dave Jones:** do, you know, tear it down, do whatever. And but now, no, it's I think it's more efficient to just sit here, open all the boxes, and then I I leave them all on the floor, don't I?
 
-**Dave Jones:** can you go whack that on the floor? Sure. In order. So, that'll be our first item to inspect. And oh, and there we go. Here we go. Let me know if you like this single take thing. Um, we may have to do more of that for more
+**Dave Jones:** I line them up on the floor in the order that I open them so that we can go back and shoot the others in order. Yeah. So, it makes editing the season for you folks.
 
-**Dave Jones:** small packets. I know it's not that efficient. Oh, sorry. This one's from I IOT. Ivato. Ivato. I think that's a T. Yeah. Anyway, IO, right? He's from Sunnyvale. Assuming it's a he. Um, he's from Sunnyvale in California. Hi to all my viewers in
+**Dave Jones:** Yeah. So, this is a Lure 7 MCU board. It's a double-sided load and uh from Lond. There you go. Excellent. I actually I don't know where that is. I'm sorry.
 
-**Dave Jones:** Sunnyvale. I have been there. Been to Sunnyvale and uh and Mountain View and all places around there. And uh it's a a fail button. button. We've got We've got an Oh button. Lion Ryan loves the oh button. Oh, I think I'm going to love
+**Dave Jones:** I'm I'm lost. Anyway, he's got uh from Lond University. We're in the formula student team of Lond University in the south of Sweden. Aha. This summer we'll attend competition in Silverstone in England and Red Bull Racetrack.
 
-**Dave Jones:** this even more. It kind apparently it actually makes awesome. Oh, it needs a battery. All right. Well, can you whip that battery out? There you go. I'll open the next one. So, hang on. There's a caution button. There's a caution
+**Dave Jones:** Awesome. With our newly built car. They're building cars. Fantastic. Carbon fiber mono. Yep. Um, a few extra pieces to send you a sample and they are powered by an AT mega 32.
 
-**Dave Jones:** water thing on the back. Use fail button with rest with restraints. Excessive activation of fail button may lead to feelings of superiority. Superiority and condescending attitude. Awesome. All right. Yeah. Can you whack some batteries in that? Got some
+**Dave Jones:** It's built-in can controller. Okay. So, it's like a CAN car controller board and output MOSFET driven for all sorts of stuff. Awesome. And a few comments about our circuit board.
 
-**Dave Jones:** batteries up there in that second tub. Cool. Let's try that. So, uh, what's that? Double A's. No. Yeah, double A's, I think. Um, please use proper technology when expressing your emotions on camera. In this day and age, accomplishing anything without
+**Dave Jones:** Yeah. Okay. I might have to do that on the uh second thing. So, can you go whack that on the floor? Sure. In order. So, that'll be our first item to inspect.
 
-**Dave Jones:** pushing a button comes out as amateur-ish and non-professional. Appreciate the forum. Excellent. Thank you very much, Ive Iveo. Io, he's I am Yeah, IO on forum. Excellent. Thank you very much, Iveo. I'm definitely pronouncing that incorrectly. So, right, right, fail button. We'll
+**Dave Jones:** And oh, and there we go. Here we go. Let me know if you like this single take thing. Um, we may have to do more of that for more small packets.
 
-**Dave Jones:** have that up and running in a tick. And next up, oh have this one we saw before. Nicaragua. I got it. I can never say Nicaragua. I said it twice. Brilliant. I don't think we've ever had one from Nicaragua.
+**Dave Jones:** I know it's not that efficient. Oh, sorry. This one's from I IOT. Ivato. Ivato. I think that's a T. Yeah. Anyway, IO, right? He's from Sunnyvale. Assuming it's a he.
 
-**Dave Jones:** I should have cut my losses. It's a tongue twister to say. And that's uh from nicadrome.com in Nicaragua. And there's the I'll cover up the address, but there's Nicaraguan stamps. Awesome. I love it. Wow. Okay, that's got to be a first.
+**Dave Jones:** Um, he's from Sunnyvale in California. Hi to all my viewers in Sunnyvale. I have been there. Been to Sunnyvale and uh and Mountain View and all places around there.
 
-**Dave Jones:** I'm pretty sure we haven't had one from Nicaragua. I could be wrong. I'm sure people will be correcting me. Let's have a look. Open. Grab electropman magnet. Combining the advant advantages of electro and permanent magnets. Oh jeez. Hang on.
+**Dave Jones:** And uh it's a a fail button. button. We've got We've got an Oh button. Lion Ryan loves the oh button. Oh, I think I'm going to love this even more.
 
-**Dave Jones:** That was in perfect timing. That's pretty good. That can um that will have to get some use here on the blog. Unfortunately, it's not probably not loud enough. I might have to boost it because the mic won't pick it up from
+**Dave Jones:** It kind apparently it actually makes awesome. Oh, it needs a battery. All right. Well, can you whip that battery out? There you go. I'll open the next one. So, hang on.
 
-**Dave Jones:** here that well. [Music] Actually, that's not bad. You wouldn't know what the fail is. Oh, no. It's got little feet on it. I was going to say the fail would have been because the speaker's on the back and if it didn't
+**Dave Jones:** There's a caution button. There's a caution water thing on the back. Use fail button with rest with restraints. Excessive activation of fail button may lead to feelings of superiority.
 
-**Dave Jones:** have the feet and it was just a flat surface, you put it down on here and it would actually block the speaker port. Yeah. But because it's lifted up a little bit, it might even amplify it a tad. So, don't know if that was
+**Dave Jones:** Superiority and condescending attitude. Awesome. All right. Yeah. Can you whack some batteries in that? Got some batteries up there in that second tub. Cool. Let's try that. So, uh, what's that?
 
-**Dave Jones:** deliberate, but that's great. That's great. That is a beautiful button right there. That Yeah, that's wind. That's got wind written all over it. Oh, yeah. So, nicer drone. This is an electropant magnet. Can be operated with 50 Hz 5V PWM.
+**Dave Jones:** Double A's. No. Yeah, double A's, I think. Um, please use proper technology when expressing your emotions on camera. In this day and age, accomplishing anything without pushing a button comes out as amateur-ish and non-professional.
 
-**Dave Jones:** Wow. Wow. We'll have a look at that in the next segment. But I definitely want to definitely want to try that out. That's really cool. I think I even recall I may have got an email about this. So, thank
+**Dave Jones:** Appreciate the forum. Excellent. Thank you very much, Ive Iveo. Io, he's I am Yeah, IO on forum. Excellent. Thank you very much, Iveo. I'm definitely pronouncing that incorrectly. So, right, right, fail button.
 
-**Dave Jones:** you very much. Nicar drone. Nicar drone. Who is it? Who is it from? Nicar drone. Doesn't say. Thank you very much. Nicarag.com. Whack that on the floor. And all the best stuff goes straight to the floor. Instead of the pool room,
+**Dave Jones:** We'll have that up and running in a tick. And next up, oh have this one we saw before. Nicaragua. I got it. I can never say Nicaragua. I said it twice.
 
-**Dave Jones:** goes straight to the floor. And with me around here, I'm the mailman. Oh, there we go. There we go. We got some more stuff with it. Yay. Y. All right. And Okay. Postcard dirt. Next. Single take. Unbelievable. Open here.
+**Dave Jones:** Brilliant. I don't think we've ever had one from Nicaragua. I should have cut my losses. It's a tongue twister to say. And that's uh from nicadrome.com in Nicaragua. And there's the I'll cover up the address, but there's Nicaraguan stamps.
 
-**Dave Jones:** Oh, it's got to open here. And it's from um Saurin or Sarin. Sarin. Uh yeah, Sarin or Saurin. Um I don't know. You could I think you can pronounce it either way. Anyway, it's from Texas. Assuming it's a
+**Dave Jones:** Awesome. I love it. Wow. Okay, that's got to be a first. I'm pretty sure we haven't had one from Nicaragua. I could be wrong. I'm sure people will be correcting me.
 
-**Dave Jones:** he again. Um sorry, just going with the odds, you know. Um okay, open here. Texas. Not from Houston, Texas, but Victoria, Texas. Oh. Oh, there fail button. [Music] It's just not. This is definitely going to come in use. It had a proper pull tab
+**Dave Jones:** Let's have a look. Open. Grab electropman magnet. Combining the advant advantages of electro and permanent magnets. Oh jeez. Hang on. That was in perfect timing. That's pretty good. That can um that will have to get some use here on the blog.
 
-**Dave Jones:** on it and it didn't work. Unbelievable. There we go. Nothing beats the power of the knife. Nope. What do we got? Oh, postcards. New Jersey Air Force. The mosquito. That's cute. And we've got a RF um thing on my Bob.
+**Dave Jones:** Unfortunately, it's not probably not loud enough. I might have to boost it because the mic won't pick it up from here that well. [Music] Actually, that's not bad. You wouldn't know what the fail is.
 
-**Dave Jones:** What does it do? It's a Nintendo RF switch. Jeez, there won't be much in that 2minut tearown. Thank you very much. Um Saurin. Yeah, Saurin. Now take it apart. Excellent. Two-minute tear down. So, whack that over there with that. And
+**Dave Jones:** Oh, no. It's got little feet on it. I was going to say the fail would have been because the speaker's on the back and if it didn't have the feet and it was just a flat surface, you put it down on here and it would actually block the speaker port.
 
-**Dave Jones:** postcards. Lovely. Timberlane Campground in Philadelphia. Woohoo. Nothing beats the mosquito. Philly. Hi to uh Fran if she's watching. She's in Philly. Um I'll get to Philly one day. And that crazy Aussie lo. This is an Aussie post uh padded envelope. It's
+**Dave Jones:** Yeah. But because it's lifted up a little bit, it might even amplify it a tad. So, don't know if that was deliberate, but that's great. That's great. That is a beautiful button right there.
 
-**Dave Jones:** from Ben. Ben Wang. He's from Crow's Nest here. Thank you very much, Ben. This will work. This one because these are like what you know what sort of plastic is that? like it's a plasticky thing and it just the surface tension
+**Dave Jones:** That Yeah, that's wind. That's got wind written all over it. Oh, yeah. So, nicer drone. This is an electropant magnet. Can be operated with 50 Hz 5V PWM. Wow.
 
-**Dave Jones:** just didn't and it just failed. But this one Yeah, this one actually has the red line in under the bottom of it. So there you go. It's actually got the strip inside. I don't think that one had a
+**Dave Jones:** Wow. We'll have a look at that in the next segment. But I definitely want to definitely want to try that out. That's really cool. I think I even recall I may have got an email about this.
 
-**Dave Jones:** strip. So that's a complete fail. So let's see what Ben sent in. There we go. Just look like a trip. Now we need a success button. And these are uh Perf boards. No. Oh, we've seen these before. Haven't
+**Dave Jones:** So, thank you very much. Nicar drone. Nicar drone. Who is it? Who is it from? Nicar drone. Doesn't say. Thank you very much. Nicarag.com. Whack that on the floor.
 
-**Dave Jones:** we seen these before? I think these are these uh and I think we critiqued it and Oh, I can still see myself through that. Can I? Well, it's a mess board. What did you expect? I I It's Sometimes it's a bit hard to
+**Dave Jones:** And all the best stuff goes straight to the floor. Instead of the pool room, goes straight to the floor. And with me around here, I'm the mailman. Oh, there we go.
 
-**Dave Jones:** see things on here because in detail because I've got the um the focus um uh peing on. Uh sorry, the Yeah. Uh yeah, focus. Yeah. fail. Focus peeking. Yeah. Puts the outline around to show me that stuff is in focus
+**Dave Jones:** There we go. We got some more stuff with it. Yay. Y. All right. And Okay. Postcard dirt. Next. Single take. Unbelievable. Open here. Oh, it's got to open here.
 
-**Dave Jones:** and um yeah, sometimes that uh adds some pixels and you can't see detail on the screen. Anyway, that's just a little video blogging thing. So, um yeah, we'll take a closer up look at that. I believe we're seeing he's a year 10 student in
+**Dave Jones:** And it's from um Saurin or Sarin. Sarin. Uh yeah, Sarin or Saurin. Um I don't know. You could I think you can pronounce it either way. Anyway, it's from Texas.
 
-**Dave Jones:** North Sydney Boy High. He's planned to launch a Kickstarter. Excellent. Maybe launched um improvise improving the basis of many prototyping designs. is connected horizontal and bus rails. Awesome. Thank you very much, Ben. Um yeah, we'll take a closer look at that
+**Dave Jones:** Assuming it's a he again. Um sorry, just going with the odds, you know. Um okay, open here. Texas. Not from Houston, Texas, but Victoria, Texas. Oh. Oh, there fail button.
 
-**Dave Jones:** shortly. Goes straight to the straight to the floor. Straight to the pool room. All right. And we have a girl supposedly um and uh Cortis uh from Montreal, Quebec, Canada. We have another pull tab. Is it Can it also be pronounced Annie?
+**Dave Jones:** [Music] It's just not. This is definitely going to come in use. It had a proper pull tab on it and it didn't work. Unbelievable. There we go. Nothing beats the power of the knife.
 
-**Dave Jones:** A N E. Annie. Ann. I I would say that that's an to me. So yeah, I guess so. I suppose Annie would be a n i. Oh, it's got it's got to have the eye, I think. Yeah. Oh, we have a we have a nice big
+**Dave Jones:** Nope. What do we got? Oh, postcards. New Jersey Air Force. The mosquito. That's cute. And we've got a RF um thing on my Bob. What does it do? It's a Nintendo RF switch.
 
-**Dave Jones:** board. Can you open that? Here's a board I designed using AutoCAD. Wow. as a few people back in the day still use AutoCAD for that. I didn't know um uh many people still used AutoCAD to do PCBs. It's a Frecale thing. This was her um
+**Dave Jones:** Jeez, there won't be much in that 2minut tearown. Thank you very much. Um Saurin. Yeah, Saurin. Now take it apart. Excellent. Two-minute tear down. So, whack that over there with that.
 
-**Dave Jones:** first SMD design. Have a look and critique it at will. Apparently, uh this board came in a static shielding bag. It is a static shielding bag as opposed to an anti-static bag. There's a difference between static shielding. I've done a whole video on
+**Dave Jones:** And postcards. Lovely. Timberlane Campground in Philadelphia. Woohoo. Nothing beats the mosquito. Philly. Hi to uh Fran if she's watching. She's in Philly. Um I'll get to Philly one day.
 
-**Dave Jones:** that if you haven't seen it. Um, yes, because static cannot penetrate static shielding bags, hence the name shielding. They shield anything you put inside the bag. You can't zap it. But um, like this, this pink, here we go.
+**Dave Jones:** And that crazy Aussie lo. This is an Aussie post uh padded envelope. It's from Ben. Ben Wang. He's from Crow's Nest here. Thank you very much, Ben. This will work.
 
-**Dave Jones:** This pink is um, an anti-static bag. It's not static shielding. So, if this was my PCB, I could zap straight through that bag. And I've actually demoed that um on a previous video which I'll say I'll link in but I won't cuz I'll
+**Dave Jones:** This one because these are like what you know what sort of plastic is that? like it's a plasticky thing and it just the surface tension just didn't and it just failed.
 
-**Dave Jones:** forget. Yeah, I'll remind you. Anyway, and we'll take a closer look at Ann's board. Go straight to the floor. And we're getting through them. We're getting through them. We've got one from uh Max from Max Chan. He's from uh China
+**Dave Jones:** But this one Yeah, this one actually has the red line in under the bottom of it. So there you go. It's actually got the strip inside. I don't think that one had a strip.
 
-**Dave Jones:** and uh yeah, the People's Republic of China. So, let's let's open this up. Have you been to China before? Uh, no. Yeah. Have you been outside of Australia? No, I have not. No, you haven't been outside yet. No. I think
+**Dave Jones:** So that's a complete fail. So let's see what Ben sent in. There we go. Just look like a trip. Now we need a success button. And these are uh Perf boards.
 
-**Dave Jones:** one place I would want to go to though is Italy. Italy. Yeah, Italy is nice. Italy is very nice. Been there. Rome is great and uh, you know, places around there. So, we got a little teeny weeny board. You want to open that?
+**Dave Jones:** No. Oh, we've seen these before. Haven't we seen these before? I think these are these uh and I think we critiqued it and Oh, I can still see myself through that.
 
-**Dave Jones:** See what Max has sent. He uh tweeted me the other day. I am Max from Shanghai. College student majoring in computer engineering. Dabbles in electronics. First a QSL of your YouTube channel. He has difficulties watching my videos in China. Yeah, not surprising.
+**Dave Jones:** Can I? Well, it's a mess board. What did you expect? I I It's Sometimes it's a bit hard to see things on here because in detail because I've got the um the focus um uh peing on.
 
-**Dave Jones:** Um they don't work. Yeah, he's got a few tricks to watch my videos, but they don't work 100% of the time. Is it possible to syndicate my video on yuku or tudo? I've never heard of Tudo or whatever. Um, apparently a lot of my
+**Dave Jones:** Uh sorry, the Yeah. Uh yeah, focus. Yeah. fail. Focus peeking. Yeah. Puts the outline around to show me that stuff is in focus and um yeah, sometimes that uh adds some pixels and you can't see detail on the screen.
 
-**Dave Jones:** videos are already on yuku. Um, somebody asked that the other day and I looked and apparently like there's a whole bunch on there. Um, so I don't know who's posting them. Um, so yeah, I'm not sure what the uh deal is there, but you
+**Dave Jones:** Anyway, that's just a little video blogging thing. So, um yeah, we'll take a closer up look at that. I believe we're seeing he's a year 10 student in North Sydney Boy High.
 
-**Dave Jones:** know, I can't stop people doing that. I don't get revenue from it, but as long as they don't modify them, I don't. Can you please take this? Cuz this cuz this tiny package is saying caution static sensitive devices. That's all right. Not
+**Dave Jones:** He's planned to launch a Kickstarter. Excellent. Maybe launched um improvise improving the basis of many prototyping designs. is connected horizontal and bus rails. Awesome. Thank you very much, Ben.
 
-**Dave Jones:** to be handled by unauthorized personnel. Ah, they say that for everything. I'm not unauthorized. They say that for everything. All right. So, we'll take a look at little doodad in the next segment. Oh, there we go. It's a USB to serial thing. Is it last
+**Dave Jones:** Um yeah, we'll take a closer look at that shortly. Goes straight to the straight to the floor. Straight to the pool room. All right. And we have a girl supposedly um and uh Cortis uh from Montreal, Quebec, Canada.
 
-**Dave Jones:** one? Well, last one that we picked off the shelf here. Anyway, yeah, how long we've been running for? Does it say? No, it doesn't have a bloody timer on it. This Sony Nex VG30 camera. Anyway, oh, sorry. This one's
+**Dave Jones:** We have another pull tab. Is it Can it also be pronounced Annie? A N E. Annie. Ann. I I would say that that's an to me. So yeah, I guess so.
 
-**Dave Jones:** from Doesn't say. Yeah, doesn't say. They sent it to my storage locker. So, by the way, if it's from Ganzoo in China um by the way, I do have two addresses, but the PO box you cannot get cur like squished. Can we Yeah.
+**Dave Jones:** I suppose Annie would be a n i. Oh, it's got it's got to have the eye, I think. Yeah. Oh, we have a we have a nice big board.
 
-**Dave Jones:** Yeah, cordless wrist strap. Well, it's a box for a cordless wrist strap. It is a cordless wrist strap. Okay, somebody sent me a cordless wrist strap. Thank you very much. Can never have too many wrist straps. They're like
+**Dave Jones:** Can you open that? Here's a board I designed using AutoCAD. Wow. as a few people back in the day still use AutoCAD for that. I didn't know um uh many people still used AutoCAD to do PCBs.
 
-**Dave Jones:** pens. Wrist straps are the e equivalent of pens in an office. You can never find one. They like disappear into um a mysterious uh void. And um there you go. It's a anti-thetic wrist strap. Thanks, Nameless person. All right. Can never have too many.
+**Dave Jones:** It's a Frecale thing. This was her um first SMD design. Have a look and critique it at will. Apparently, uh this board came in a static shielding bag. It is a static shielding bag as opposed to an anti-static bag.
 
-**Dave Jones:** That's it. Yeah, we cleared the desk. Probably get some more. Sure, why not? Couple more. Why not? Yeah, we've got sort of like bigish newish ones left. Yeah, we got a couple of days ago if I don't get away. Uh Josup uh Med V, he's
+**Dave Jones:** There's a difference between static shielding. I've done a whole video on that if you haven't seen it. Um, yes, because static cannot penetrate static shielding bags, hence the name shielding.
 
-**Dave Jones:** having another sucker to save cuz he's been on the blog before. You should know Josip. And what's he sent in this time? If you are reading this mailbag address is still not crazy enough. Um, oh, he sent it to the Vienna Choir Boys. I
+**Dave Jones:** They shield anything you put inside the bag. You can't zap it. But um, like this, this pink, here we go. This pink is um, an anti-static bag. It's not static shielding.
 
-**Dave Jones:** don't get it. Does that ring a bell? Uh, Vienna Choir Boys. Is that like a joke that's just gone whoosh straight over my head? Yeah. I don't know. For some reason, it just reminds me of One Direction. Okay. All right. No, I don't
+**Dave Jones:** So, if this was my PCB, I could zap straight through that bag. And I've actually demoed that um on a previous video which I'll say I'll link in but I won't cuz I'll forget.
 
-**Dave Jones:** know anything about that. I'm too old, obviously. Um, this is the ESP 8266. uh USB board and module. So, it's shaped like a little dude. It's actually made out of a board if you look inside. Just there. Yeah. Oh, well, no. Well, there's
+**Dave Jones:** Yeah, I'll remind you. Anyway, and we'll take a closer look at Ann's board. Go straight to the floor. And we're getting through them. We're getting through them. We've got one from uh Max from Max Chan.
 
-**Dave Jones:** a board inside it. There's a board inside the little dude. So, thank you very much, Jossip.
+**Dave Jones:** He's from uh China and uh yeah, the People's Republic of China. So, let's let's open this up. Have you been to China before? Uh, no. Yeah. Have you been outside of Australia?
 
-**Dave Jones:** You're cutting his butt off. I am. I'm going in from the rear, folks. That sucks. Come on. That sucked. That just sounded bad.
+**Dave Jones:** No, I have not. No, you haven't been outside yet. No. I think one place I would want to go to though is Italy. Italy. Yeah, Italy is nice. Italy is very nice.
 
-**Dave Jones:** Dear dear. Oh, this is this is getting fiddly now. This is getting fiddly. Um Yeah. Right. So, it's one of those little um Yep. That's the um little uh Bluetoothy and USB thing. I I actually uh wanted one of
+**Dave Jones:** Been there. Rome is great and uh, you know, places around there. So, we got a little teeny weeny board. You want to open that? See what Max has sent.
 
-**Dave Jones:** those. I was going to experiment with those cuz you can pick up these um little um Bluetooth modules for like three bucks or something like assembled. They're crazy. So um excellent. Thank you very much, Jos. That's excellent. We'll once again put that down there and
+**Dave Jones:** He uh tweeted me the other day. I am Max from Shanghai. College student majoring in computer engineering. Dabbles in electronics. First a QSL of your YouTube channel. He has difficulties watching my videos in China.
 
-**Dave Jones:** we can have a little squis at that up close in a minute. And this one is from ah PCB grip. Oops. Sorry, PCB grip.
+**Dave Jones:** Yeah, not surprising. Um they don't work. Yeah, he's got a few tricks to watch my videos, but they don't work 100% of the time. Is it possible to syndicate my video on yuku or tudo?
 
-**Dave Jones:** I still have my PCB grip sitting here waiting to be assembled in all the parts. I really want to do this. I probably should have got you to do this while you're here. It's a real sexy uh PCB holder. It was a Kickstarter, I
+**Dave Jones:** I've never heard of Tudo or whatever. Um, apparently a lot of my videos are already on yuku. Um, somebody asked that the other day and I looked and apparently like there's a whole bunch on there.
 
-**Dave Jones:** think. Um it was some crowdfunded um campaign. And uh yeah. Oops. Um yeah, it's just got lots of really nice funky anodized aluminium um parts and rods and everything for holding together PCBs. And I I've had this like for it must be
+**Dave Jones:** Um, so I don't know who's posting them. Um, so yeah, I'm not sure what the uh deal is there, but you know, I can't stop people doing that. I don't get revenue from it, but as long as they don't modify them, I don't.
 
-**Dave Jones:** at least 6 months. And um Oh, right. I think that's right. Uh what he's um sent in um sorry I forget your name.
+**Dave Jones:** Can you please take this? Cuz this cuz this tiny package is saying caution static sensitive devices. That's all right. Not to be handled by unauthorized personnel. Ah, they say that for everything.
 
-**Dave Jones:** Jason. Yes. Um, Miss M. Can you pronounce that? Missoga. Missoga. That's pretty good. I reckon I I reckon it's Missoga in Ontario in Canada. Um, just west of Toronto. There you go. Um, I have included a couple of
+**Dave Jones:** I'm not unauthorized. They say that for everything. All right. So, we'll take a look at little doodad in the next segment. Oh, there we go. It's a USB to serial thing.
 
-**Dave Jones:** uh probe clamps. Yes. And goose necks for use with this system. So, what you can do, These are really cool. Oh, wait. Yeah, you can um screw in these little They're little uh goose necks, right? Oh, black on black. Bad video blogging,
+**Dave Jones:** Is it last one? Well, last one that we picked off the shelf here. Anyway, yeah, how long we've been running for? Does it say? No, it doesn't have a bloody timer on it.
 
-**Dave Jones:** but yeah, you can see these goose necks, right? Very nice, flexible, tiny gooseenecks there. They sex on a stick. They are. Wow. Getting excited. Really looks like a stick. Yeah, it's Yeah, but they're goose necks. And so, you put
+**Dave Jones:** This Sony Nex VG30 camera. Anyway, oh, sorry. This one's from Doesn't say. Yeah, doesn't say. They sent it to my storage locker. So, by the way, if it's from Ganzoo in China um by the way, I do have two addresses, but the PO box you cannot get cur like squished.
 
-**Dave Jones:** them into the PC. So, you put your PCB in this PCB grip holder. might even try and edit in a photo if he's got one um on his website. So, you hold your PCB in there and then you can use these
+**Dave Jones:** Can we Yeah. Yeah, cordless wrist strap. Well, it's a box for a cordless wrist strap. It is a cordless wrist strap. Okay, somebody sent me a cordless wrist strap.
 
-**Dave Jones:** attachments as probe holders. So, you screw this into the end of it. So, your boards in there. Oh, we don't have a board. We put them all down there. That's all right. So, you put a board down there and then you can put these
+**Dave Jones:** Thank you very much. Can never have too many wrist straps. They're like pens. Wrist straps are the e equivalent of pens in an office. You can never find one.
 
-**Dave Jones:** and you can actually position micro position your probe so it holds your probes and you can actually probe your board. They're very cool, very useful. um items. So, thank you very much. Add those to the collection. Add those to
+**Dave Jones:** They like disappear into um a mysterious uh void. And um there you go. It's a anti-thetic wrist strap. Thanks, Nameless person. All right. Can never have too many. That's it.
 
-**Dave Jones:** the collection there. I've got to build that cuz I really need a decent PCB stand around here. Oh, you can always invite me back if the audience likes me. There we go. Oh, yeah. Before I forget, I just wanted to take a quick moment to
+**Dave Jones:** Yeah, we cleared the desk. Probably get some more. Sure, why not? Couple more. Why not? Yeah, we've got sort of like bigish newish ones left. Yeah, we got a couple of days ago if I don't get away.
 
-**Dave Jones:** say thank you to everyone for for the nice comments in the most recent mail bag about me. You were so kind and I really do thank you for the welcome invite to YouTube, too. Well done. Excellent. Always thank your audience.
+**Dave Jones:** Uh Josup uh Med V, he's having another sucker to save cuz he's been on the blog before. You should know Josip. And what's he sent in this time? If you are reading this mailbag address is still not crazy enough.
 
-**Dave Jones:** Thanks audience. You're great. Yeah, there's the occasional you know, but Yeah, you know, screw them. Yeah, absolutely. Um Oh, is that it? Oh, no, no, no. There's one more which I've had this one. This one's like ancient. Um Yeah. And cuz I opened this,
+**Dave Jones:** Um, oh, he sent it to the Vienna Choir Boys. I don't get it. Does that ring a bell? Uh, Vienna Choir Boys. Is that like a joke that's just gone whoosh straight over my head?
 
-**Dave Jones:** pre-opened it cuz I thought it it came from Amazon, so I thought it was like something that I ordered, but it's not. So, uh it's from Bart. Good day, Bart. It's a gift. Um, hi that crazy Aussie Blake. Love your videos, especially the
+**Dave Jones:** Yeah. I don't know. For some reason, it just reminds me of One Direction. Okay. All right. No, I don't know anything about that. I'm too old, obviously. Um, this is the ESP 8266.
 
-**Dave Jones:** teardens. Hope you can put this U2F key to good use. Best regards, but or have I or have I opened this on the mailbag before and I put it back? Anyway, it's made in USA. It's one of these uh
+**Dave Jones:** uh USB board and module. So, it's shaped like a little dude. It's actually made out of a board if you look inside. Just there. Yeah. Oh, well, no. Well, there's a board inside it.
 
-**Dave Jones:** security key sticks. It's a USB security stick. Cute. So, um, yeah. Not exactly sure how they work, but I'll figure it out. Thanks, B. Well, it's got to have something to do with security, seeing how it's got a key on it. It's got a
+**Dave Jones:** There's a board inside the little dude. So, thank you very much, Jossip. You're cutting his butt off. I am. I'm going in from the rear, folks. That sucks. Come on.
 
-**Dave Jones:** key. It's locked. It's like Yeah, it's got encryption or something like that. Awesome. We were going to call it quits, but we just found one from what? March. Oops. Yeah. Yeah. Yeah. It comes from um Matt Matt Rene. Thank you very much, Matt.
+**Dave Jones:** That sucked. That just sounded bad. Dear dear. Oh, this is this is getting fiddly now. This is getting fiddly. Um Yeah. Right. So, it's one of those little um Yep.
 
-**Dave Jones:** Sorry for the delay. It is. What? Tada. What is that? All I see is electronics. I know exactly what that is looking at the board. It's a LAR module. I cheated. It says that on the box. Not that smart. Yeah. I can't tell just by
+**Dave Jones:** That's the um little uh Bluetoothy and USB thing. I I actually uh wanted one of those. I was going to experiment with those cuz you can pick up these um little um Bluetooth modules for like three bucks or something like assembled.
 
-**Dave Jones:** looking at the board. It's got a uh it's got a processor and uh a couple of two processory type things. And yeah, it's a lighter module. Yeah. Must be pretty dangerous. High voltage. Caution. High voltage. No, that'll just be for the
+**Dave Jones:** They're crazy. So um excellent. Thank you very much, Jos. That's excellent. We'll once again put that down there and we can have a little squis at that up close in a minute.
 
-**Dave Jones:** It'll just be for like the backlight or something, possibly. Anyway, cool. We'll take a quick two-minute tear down. The bubble. Uh, was there a No, there there was no note with that, was there? Uh, no, there wasn't. Nothing inside the
+**Dave Jones:** And this one is from ah PCB grip. Oops. Sorry, PCB grip. I still have my PCB grip sitting here waiting to be assembled in all the parts. I really want to do this.
 
-**Dave Jones:** box. Um, I can double check. Uh, there is. Okay. Yeah, we should both press that at the same time since there was something else. Oh, in this All right, we're pressing this at the same time. Yeah. No, just what? We'll press it at
+**Dave Jones:** I probably should have got you to do this while you're here. It's a real sexy uh PCB holder. It was a Kickstarter, I think. Um it was some crowdfunded um campaign.
 
-**Dave Jones:** the same time. [Music] Toss the box on the floor and there was um the actual module itself. So, yeah. Oops. That's embarrassing. Matt enclosed is a pulse light 3D lightar light module that works fine in PWM mode but useless in the I squed C
+**Dave Jones:** And uh yeah. Oops. Um yeah, it's just got lots of really nice funky anodized aluminium um parts and rods and everything for holding together PCBs. And I I've had this like for it must be at least 6 months.
 
-**Dave Jones:** mode because of knack it sends as a busy weight that's interesting which works great for Arduino hippies love it um however not a real SBC plus Linux plus beagle bone which will confuse the bus and cause timeouts ah
+**Dave Jones:** And um Oh, right. I think that's right. Uh what he's um sent in um sorry I forget your name. Jason. Yes. Um, Miss M. Can you pronounce that? Missoga.
 
-**Dave Jones:** there you go so yes it's a pulse lighter Ah, awesome. If it works, we can we can have a good play around with that. Excellent. So, there you go. Whack that down there. Just let it stress relief. Now, I got one from uh Jonathan Ho ho.
+**Dave Jones:** Missoga. That's pretty good. I reckon I I reckon it's Missoga in Ontario in Canada. Um, just west of Toronto. There you go. Um, I have included a couple of uh probe clamps.
 
-**Dave Jones:** Jonathan Ho ho ho ho. And um yeah, this is how it came. I tweeted a photo of this at the time. I found this in my PO box. And yeah, um if you're going to send something like that. Yeah, bubble
+**Dave Jones:** Yes. And goose necks for use with this system. So, what you can do, These are really cool. Oh, wait. Yeah, you can um screw in these little They're little uh goose necks, right?
 
-**Dave Jones:** wrappers not magic. Um if you just do one layer and it's a um that looks like a tripler um from um it's a you know a flybacking, you know, I don't know my TV stuff. Any It's a Yeah, from TV. What am I going to
+**Dave Jones:** Oh, black on black. Bad video blogging, but yeah, you can see these goose necks, right? Very nice, flexible, tiny gooseenecks there. They sex on a stick. They are. Wow.
 
-**Dave Jones:** do with that? Um they I can't really tear them down because they're potted. See, they're potted. Can't really do a tear down of a potted um uh yeah, high voltage TV stuff, I'm afraid. So, I can't do anything. That's a focus and screen and
+**Dave Jones:** Getting excited. Really looks like a stick. Yeah, it's Yeah, but they're goose necks. And so, you put them into the PC. So, you put your PCB in this PCB grip holder.
 
-**Dave Jones:** yep, that's from Murada. And uh no, unfortunately, that pod in just does not come out. It's evil stuff. Thank you very much, Jonathan. But I'm afraid we can't do anything with it. You try. No one can't say you try. You know, you can
+**Dave Jones:** might even try and edit in a photo if he's got one um on his website. So, you hold your PCB in there and then you can use these attachments as probe holders.
 
-**Dave Jones:** get a data sheet and try and wire it up and I don't know, blow the out or something, but why not? I like to blow stuff up. Well, I wish I want to. That that gets lots of views on YouTube. You
+**Dave Jones:** So, you screw this into the end of it. So, your boards in there. Oh, we don't have a board. We put them all down there. That's all right. So, you put a board down there and then you can put these and you can actually position micro position your probe so it holds your probes and you can actually probe your board.
 
-**Dave Jones:** just blow up. Yeah, I think that's why Mythbusters is popular. It is. H All right, that's it for mailbag. Bye. And yeah, also you know how you was telling me that that had AA batteries? Ah, yeah. It the fail button has AAA batteries
+**Dave Jones:** They're very cool, very useful. um items. So, thank you very much. Add those to the collection. Add those to the collection there. I've got to build that cuz I really need a decent PCB stand around here.
 
-**Dave Jones:** apparently. It looked I swear it looked big. It looked like it had double A batteries in it. He'll see you next time. [Music] And here it is. And I'm sure we've seen this before on the blog. Maybe more than
+**Dave Jones:** Oh, you can always invite me back if the audience likes me. There we go. Oh, yeah. Before I forget, I just wanted to take a quick moment to say thank you to everyone for for the nice comments in the most recent mail bag about me.
 
-**Dave Jones:** one pe one person's uh doing this thing now. Anyway, it's like a Vero board, but it's not the same. You have to join the individual uh pads over to the strip. Let me get a closeup. So you can see
+**Dave Jones:** You were so kind and I really do thank you for the welcome invite to YouTube, too. Well done. Excellent. Always thank your audience. Thanks audience. You're great. Yeah, there's the occasional you know, but Yeah, you know, screw them.
 
-**Dave Jones:** that you solder your component, your throughhole part into there and then you can just uh bridge across there. Should be able to solder bridge very easily. So this has its trade-offs with a regular Vera board. If you want to join, you
+**Dave Jones:** Yeah, absolutely. Um Oh, is that it? Oh, no, no, no. There's one more which I've had this one. This one's like ancient. Um Yeah. And cuz I opened this, pre-opened it cuz I thought it it came from Amazon, so I thought it was like something that I ordered, but it's not.
 
-**Dave Jones:** know, six of these together, then you've got to do six solder bridges like that as opposed to verarboard which already has the trace joining them and then you got to cut it. So in this case, you wanted to join six and then cut. Well,
+**Dave Jones:** So, uh it's from Bart. Good day, Bart. It's a gift. Um, hi that crazy Aussie Blake. Love your videos, especially the teardens. Hope you can put this U2F key to good use.
 
-**Dave Jones:** you've got to make six solder joints and then cut and cut. Whereas on a regular ver Vera board, you only have to go cut and cut. But it adds advantages in that if you don't want to if you want to join
+**Dave Jones:** Best regards, but or have I or have I opened this on the mailbag before and I put it back? Anyway, it's made in USA. It's one of these uh security key sticks.
 
-**Dave Jones:** this one and this one and skip this one, then it's actually a lot easier. So yeah, it has its pros and cons. Depends on the uh circuit configuration you want to actually hook up. And we have this side all horizontal like that. And of
+**Dave Jones:** It's a USB security stick. Cute. So, um, yeah. Not exactly sure how they work, but I'll figure it out. Thanks, B. Well, it's got to have something to do with security, seeing how it's got a key on it.
 
-**Dave Jones:** course the other side just like old school double-sided layouts. Tada. Vertical cuz that's how they used to route. um boards back in the day. One side would be all horizontal traces and the other side would be vertical. So,
+**Dave Jones:** It's got a key. It's locked. It's like Yeah, it's got encryption or something like that. Awesome. We were going to call it quits, but we just found one from what?
 
-**Dave Jones:** you know, these could be quite versatile. I like it. And here's the PCB done in AutoCAD. Do you believe it? Well, yeah. It's from uh 13 years ago or something. If we have a look at the uh date, we're looking at uh 2003.
+**Dave Jones:** March. Oops. Yeah. Yeah. Yeah. It comes from um Matt Matt Rene. Thank you very much, Matt. Sorry for the delay. It is. What? Tada. What is that? All I see is electronics.
 
-**Dave Jones:** So, 12 odd years ago. Ah jeez, that's ancient now. And yeah, it's not bad. We've got our crosshatch um ground plane. There's nothing to a cross-hatch ground plane. If you want to get into the RF side of things, you then you need
+**Dave Jones:** I know exactly what that is looking at the board. It's a LAR module. I cheated. It says that on the box. Not that smart. Yeah. I can't tell just by looking at the board.
 
-**Dave Jones:** to have a certain um minimum spacing for your crosshatch uh ground plane. Anyway, we won't go there. There's no uh I doesn't look like there's any high-speed uh differential or anything else on here. So, the uh cross-hatch ground
+**Dave Jones:** It's got a uh it's got a processor and uh a couple of two processory type things. And yeah, it's a lighter module. Yeah. Must be pretty dangerous. High voltage.
 
-**Dave Jones:** planes used to be to stop uh PCB warping and stuff like that. So, but you know these days the manufacturing processes doesn't matter. So, people mostly don't use crosshatch uh ground fuels these days. It's not really a big deal, but
+**Dave Jones:** Caution. High voltage. No, that'll just be for the It'll just be for like the backlight or something, possibly. Anyway, cool. We'll take a quick two-minute tear down. The bubble.
 
-**Dave Jones:** that's not a bad little layout there. And by the way, if you want to know all about this uh RF and crosshatch ground pling, uh go listen to the recent amp hour episode we did with Eric um Bogurtton from Be the Signal. He talks
+**Dave Jones:** Uh, was there a No, there there was no note with that, was there? Uh, no, there wasn't. Nothing inside the box. Um, I can double check. Uh, there is.
 
-**Dave Jones:** all about this sort of stuff. It was a fantastic episode. Go check it out. So, here's this little uh canvas board. It's got some MOSFETs and things on it to drive things like uh the, you know, the brake lights and stuff like that on
+**Dave Jones:** Okay. Yeah, we should both press that at the same time since there was something else. Oh, in this All right, we're pressing this at the same time. Yeah. No, just what?
 
-**Dave Jones:** their electric car. So, that's Hey, is that their little symbol? Neat. And once again, we got a solid ground plane here from the crosshatch one we had previously. That looks like not a bad layout whatsoever. It is indeed their
+**Dave Jones:** We'll press it at the same time. [Music] Toss the box on the floor and there was um the actual module itself. So, yeah. Oops. That's embarrassing. Matt enclosed is a pulse light 3D lightar light module that works fine in PWM mode but useless in the I squed C mode because of knack it sends as a busy weight that's interesting which works great for Arduino hippies love it um however not a real SBC plus
 
-**Dave Jones:** symbol. There it is. That lion head, the London University Formula Student Engineering Team. Nice. They've really gone to town on their inputs there. Here they've got an uh lowass uh filter here. They've got a zeno diode protection. That's not usual uh way you do it. Um
+**Dave Jones:** Linux plus beagle bone which will confuse the bus and cause timeouts ah there you go so yes it's a pulse lighter Ah, awesome. If it works, we can we can have a good play around with that.
 
-**Dave Jones:** unless they needed the uh pullup uh for some reason. You usually just do diode uh clamping there to positive and negative rail. And then they've got another small RC filter in here. And of course the series uh resistors of course
+**Dave Jones:** Excellent. So, there you go. Whack that down there. Just let it stress relief. Now, I got one from uh Jonathan Ho ho. Jonathan Ho ho ho ho. And um yeah, this is how it came.
 
-**Dave Jones:** help protect the input uh limit the input uh current so you don't get uh uh damage the chip from maximum. So yeah we got filtering plus protection there. And then our output. Yep. They just got a low side
+**Dave Jones:** I tweeted a photo of this at the time. I found this in my PO box. And yeah, um if you're going to send something like that. Yeah, bubble wrappers not magic.
 
-**Dave Jones:** uh end channel MOSFET there. They got some lowass filtering on the gate and Bob's your uncle. And then of course you got to have the back EMF diode there for your motor drive if you're driving motors. Too easy. The only issue I'd
+**Dave Jones:** Um if you just do one layer and it's a um that looks like a tripler um from um it's a you know a flybacking, you know, I don't know my TV stuff.
 
-**Dave Jones:** have here is maybe the pullback on their ground plane. The ground plane looks really close to everything. Uh when they flood filled this ground plane, they probably didn't change their DRC uh rules for that. Like you know, like
+**Dave Jones:** Any It's a Yeah, from TV. What am I going to do with that? Um they I can't really tear them down because they're potted. See, they're potted. Can't really do a tear down of a potted um uh yeah, high voltage TV stuff, I'm afraid.
 
-**Dave Jones:** you might use say like an eighth hour 8th hour rule when uh like laying out all your traces. Then when you go to do your uh ground playing, you don't necessarily have to stick with that eighth hour rule. You can change it, you
+**Dave Jones:** So, I can't do anything. That's a focus and screen and yep, that's from Murada. And uh no, unfortunately, that pod in just does not come out. It's evil stuff.
 
-**Dave Jones:** know, bump it up to 10 or 15 thou and get pull back unless you actually want flood fill between your uh pads and you know, certain pads and things like that. But generally, uh you would pull it back
+**Dave Jones:** Thank you very much, Jonathan. But I'm afraid we can't do anything with it. You try. No one can't say you try. You know, you can get a data sheet and try and wire it up and I don't know, blow the out or something, but why not?
 
-**Dave Jones:** what's that's the term used. You would pull back your ground plane uh spacing. You'd set your DRC before you flood fill it. You'd pull it back to a certain value that's acceptable where the uh minimum spacing if you needed to flood
+**Dave Jones:** I like to blow stuff up. Well, I wish I want to. That that gets lots of views on YouTube. You just blow up. Yeah, I think that's why Mythbusters is popular.
 
-**Dave Jones:** fill between pads and things like that. So, you know, that's generally it's it's a board to board layout to layout specific thing. But yeah, that's the only criticism I'd have there. Just looks a bit close, that's all. And this,
+**Dave Jones:** It is. H All right, that's it for mailbag. Bye. And yeah, also you know how you was telling me that that had AA batteries? Ah, yeah. It the fail button has AAA batteries apparently.
 
-**Dave Jones:** folks, is very, very cool. Check it out from nicod drone.com. It's the EPN 688 and it's electro magnet. And as you can see, if we flip it over, look, we've got some magnets on the back, right? Nothing incredibly
+**Dave Jones:** It looked I swear it looked big. It looked like it had double A batteries in it. He'll see you next time. [Music] And here it is. And I'm sure we've seen this before on the blog.
 
-**Dave Jones:** fancy there. Um, he calls these uh Alico magnets, but I've never heard of that. There's al no with an N, and I think that it's a type of composite uh magnet. And basically what it is an an a
+**Dave Jones:** Maybe more than one pe one person's uh doing this thing now. Anyway, it's like a Vero board, but it's not the same. You have to join the individual uh pads over to the strip.
 
-**Dave Jones:** latching electromagnet. So you can actually turn either magnetize it or demagnetize these things uh based on pulseed current that you send to it. So you can magnetize it and then it doesn't need any power to keep it magnetized. He said some of the uh
+**Dave Jones:** Let me get a closeup. So you can see that you solder your component, your throughhole part into there and then you can just uh bridge across there. Should be able to solder bridge very easily.
 
-**Dave Jones:** applications for this well one I love cargo lifting for quadcopters and UAVs and things like that. So you know your quadcopter flies over and you know flies in and then sends a pulse and uh you charge up these capacitors and then you
+**Dave Jones:** So this has its trade-offs with a regular Vera board. If you want to join, you know, six of these together, then you've got to do six solder bridges like that as opposed to verarboard which already has the trace joining them and then you got to cut it.
 
-**Dave Jones:** can uh pulse the coil which is inside here. That's probably all that metal backing in there. It's probably embedded in there like that. So, there's some coil in there which then can magnetize uh very high current up to he claims 300
+**Dave Jones:** So in this case, you wanted to join six and then cut. Well, you've got to make six solder joints and then cut and cut. Whereas on a regular ver Vera board, you only have to go cut and cut.
 
-**Dave Jones:** uh amps. But how are you going to get 300 amps out of these little uh caps here? I don't know. So, I'm not sure what the deal is there. But, uh yeah. Anyway, you put a pulse current through
+**Dave Jones:** But it adds advantages in that if you don't want to if you want to join this one and this one and skip this one, then it's actually a lot easier.
 
-**Dave Jones:** and you can magnetize or demagnetize permanently these magnets on the bottom. This is awesome. So, cargo lifting for like your quadcopter can fly in and just lift up, pulse the current and lift up cargo, any sort of magnetic uh cargo
+**Dave Jones:** So yeah, it has its pros and cons. Depends on the uh circuit configuration you want to actually hook up. And we have this side all horizontal like that. And of course the other side just like old school double-sided layouts.
 
-**Dave Jones:** carried away. This thing's capable of holding up to 5 kilos apparently. And uh well, let's give it a bow. I'll show you. Right. So, it's just powered from 5 volts. Just got 5 volts going in there. There's a button here which magnetizes
+**Dave Jones:** Tada. Vertical cuz that's how they used to route. um boards back in the day. One side would be all horizontal traces and the other side would be vertical. So, you know, these could be quite versatile.
 
-**Dave Jones:** and demagnetizes those magnets based on charging and discharging these capacitors here. And well, look right, it doesn't it's well, it's got a little bit of residual, but it's basically it's not picking up that at all. Okay, so it's
+**Dave Jones:** I like it. And here's the PCB done in AutoCAD. Do you believe it? Well, yeah. It's from uh 13 years ago or something. If we have a look at the uh date, we're looking at uh 2003.
 
-**Dave Jones:** it's on. Okay, we got our 5 volts. Let's push this. It uh takes about 1.7 seconds. It actually sends uh six pulses through to the coil. It'll pulse it like six times and it magnetizes those magnets. So, let's press it. And you you
+**Dave Jones:** So, 12 odd years ago. Ah jeez, that's ancient now. And yeah, it's not bad. We've got our crosshatch um ground plane. There's nothing to a cross-hatch ground plane. If you want to get into the RF side of things, you then you need to have a certain um minimum spacing for your crosshatch uh ground plane.
 
-**Dave Jones:** can actually hear it, but you're probably the microphone probably won't pick it up. So, oh, it was actually four, I think. And bingo, it's now magnetized. Let's press it again to demagnetize it. In fact, we have to do that twice, I
+**Dave Jones:** Anyway, we won't go there. There's no uh I doesn't look like there's any high-speed uh differential or anything else on here. So, the uh cross-hatch ground planes used to be to stop uh PCB warping and stuff like that.
 
-**Dave Jones:** believe. And there we go. It's gone. There you go. And then we can just pulse it again. You might have heard the faint little clicks there. And tada. Fantastic. Works a treat. It's brilliant. And it's permanent. I can just disable that and
+**Dave Jones:** So, but you know these days the manufacturing processes doesn't matter. So, people mostly don't use crosshatch uh ground fuels these days. It's not really a big deal, but that's not a bad little layout there.
 
-**Dave Jones:** it is still a permanent magnet. It's a latching electromagnet. Oh, winner winner chicken dinner. So, this is very cool. And look what he claims that yeah, Alico magnets are aligned in a particular orientation as the form magnet circuit with a ferris
+**Dave Jones:** And by the way, if you want to know all about this uh RF and crosshatch ground pling, uh go listen to the recent amp hour episode we did with Eric um Bogurtton from Be the Signal.
 
-**Dave Jones:** target plate. A short 20 microcond pulse current of 300 amps. As I said, I'm not sure how they're getting 300 amps out of these uh these little um SMD caps here. But anyway, uh by discharging the main capacitor through a thyrista full bridge
+**Dave Jones:** He talks all about this sort of stuff. It was a fantastic episode. Go check it out. So, here's this little uh canvas board. It's got some MOSFETs and things on it to drive things like uh the, you know, the brake lights and stuff like that on their electric car.
 
-**Dave Jones:** into a copper winding generating a field of 700 um kam, this field is used to align the domains. is a key advantage. Very strong electromator does not consume any energy during the steady state operation only during the cycling.
+**Dave Jones:** So, that's Hey, is that their little symbol? Neat. And once again, we got a solid ground plane here from the crosshatch one we had previously. That looks like not a bad layout whatsoever.
 
-**Dave Jones:** So it's brilliant. Unbelievable. You can just remove the power not consuming any power at all to hold that electromagnet in place. That's pretty groundbreaking stuff. How many people are doing this sort of thing? I don't know. But jeez,
+**Dave Jones:** It is indeed their symbol. There it is. That lion head, the London University Formula Student Engineering Team. Nice. They've really gone to town on their inputs there. Here they've got an uh lowass uh filter here.
 
-**Dave Jones:** it's terrific. And it's got um a little pick 12F on board access to the um incircuit serial mode for that. And you control it either with the button or with an external uh PWM uh signal. And yes, it is actually uh conformally uh
+**Dave Jones:** They've got a zeno diode protection. That's not usual uh way you do it. Um unless they needed the uh pullup uh for some reason. You usually just do diode uh clamping there to positive and negative rail.
 
-**Dave Jones:** coated in there as well. Yeah, you can see the shine on that conformal coating there. And uh yeah, it looks like they've got a metal uh uh the coil embedded in a metal base plate there on the back of the board. And then all
+**Dave Jones:** And then they've got another small RC filter in here. And of course the series uh resistors of course help protect the input uh limit the input uh current so you don't get uh uh damage the chip from maximum.
 
-**Dave Jones:** those magnets just potted in place. He's absolutely brilliant. I love that. Could have some fun with that. Definitely. Thank you very much, nicones.com. Definitely linking those down below. Go check it out. Get one of these puppies. Have a play. That's brilliant. And
+**Dave Jones:** So yeah we got filtering plus protection there. And then our output. Yep. They just got a low side uh end channel MOSFET there. They got some lowass filtering on the gate and Bob's your uncle.
 
-**Dave Jones:** here's the full bidge uh thyrista circuit. You see the uh coil in there. So, it pulses that it says six, but I'm sure I only heard four. Anyway, um copper coil making up the magnetic assembly. It creates a 300 amp current
+**Dave Jones:** And then of course you got to have the back EMF diode there for your motor drive if you're driving motors. Too easy. The only issue I'd have here is maybe the pullback on their ground plane.
 
-**Dave Jones:** through that sucker. This will be less than a two-minute tear down. There's inside the 1985 Nintendo RF switch. You got your antenna uh coming in here, of course. And then it can uh just splice in the um RF output. That's not a
+**Dave Jones:** The ground plane looks really close to everything. Uh when they flood filled this ground plane, they probably didn't change their DRC uh rules for that. Like you know, like you might use say like an eighth hour 8th hour rule when uh like laying out all your traces.
 
-**Dave Jones:** composite. That's an RF uh output um from the uh Nintendo game console. And that's it. Bob's your uncle. Not much. They got some weirdass uh transistor packages there. Little three pin single inline jobs. Anyway, not much to it. And
+**Dave Jones:** Then when you go to do your uh ground playing, you don't necessarily have to stick with that eighth hour rule. You can change it, you know, bump it up to 10 or 15 thou and get pull back unless you actually want flood fill between your uh pads and you know, certain pads and things like that.
 
-**Dave Jones:** this is Max's little USB to serial adapter based on the CH340G uh chipset. He did this in response to the FTDI gate thing. So, boycotted FTDI uh chipsets. And um yeah, it just has a uh a 500 milliamp uh poly
+**Dave Jones:** But generally, uh you would pull it back what's that's the term used. You would pull back your ground plane uh spacing. You'd set your DRC before you flood fill it.
 
-**Dave Jones:** um polyfuse in there. And uh that's it. Bob's your uncle. Why is using the A type USB connector? I don't know. I would have been like, nobody uses the A, do they? And unless you have a specific requirement, um it would either be a
+**Dave Jones:** You'd pull it back to a certain value that's acceptable where the uh minimum spacing if you needed to flood fill between pads and things like that. So, you know, that's generally it's it's a board to board layout to layout specific thing.
 
-**Dave Jones:** mini B or a uh micro uh USB connector usually. Anyway, um he's selling this on Tindy. So, thank you very much, Max. I'll link in the Tindy store down below for those who want an FTDI gate free device. And on a
+**Dave Jones:** But yeah, that's the only criticism I'd have there. Just looks a bit close, that's all. And this, folks, is very, very cool. Check it out from nicod drone.com. It's the EPN 688 and it's electro magnet.
 
-**Dave Jones:** similar note, Josip has uh sent in this little uh board which is a um just a serial uh USB uh interface for these little um neat little tiny uh Bluetooth adapter boards, which as I said, you can get these puppies for like three bucks
+**Dave Jones:** And as you can see, if we flip it over, look, we've got some magnets on the back, right? Nothing incredibly fancy there. Um, he calls these uh Alico magnets, but I've never heard of that.
 
-**Dave Jones:** or something. You can include Bluetooth in almost anything these days like and that's like assembled. It's absolutely incredible. And as Joset pointed out, yes, the FTDI serial chip costs more than the entire assembled Bluetooth board. Unbelievable. I should have actually read that letter
+**Dave Jones:** There's al no with an N, and I think that it's a type of composite uh magnet. And basically what it is an an a latching electromagnet. So you can actually turn either magnetize it or demagnetize these things uh based on pulseed current that you send to it.
 
-**Dave Jones:** closely because this itself is the uh complete LAR uh pulse light LAR module. The other thing is just a random thing he had in his junk bin. Anyway, there you go. Class one laser, all that sort of uh jazz. And yeah, it's a complete
+**Dave Jones:** So you can magnetize it and then it doesn't need any power to keep it magnetized. He said some of the uh applications for this well one I love cargo lifting for quadcopters and UAVs and things like that.
 
-**Dave Jones:** interface. You can just It's got this little weird ass custom connector on it. But uh it does have that. And we could well if we wanted to. Unfortunately don't have time for the mailbag now. I've got to get this edited and
+**Dave Jones:** So you know your quadcopter flies over and you know flies in and then sends a pulse and uh you charge up these capacitors and then you can uh pulse the coil which is inside here.
 
-**Dave Jones:** uploaded. But we could um power that thing up. Okay. So this puppy's designed for uh UAVs and uh other things which are designed for uh you know like 0 to 20 m for the lead emitter, 0 to 60 m for
+**Dave Jones:** That's probably all that metal backing in there. It's probably embedded in there like that. So, there's some coil in there which then can magnetize uh very high current up to he claims 300 uh amps.
 
-**Dave Jones:** the laser emitter. accuracy. Uh there we go. Like a 25 25 millimeters there. That's not too bad, you know, for UAVs and uh things like that. And uh from adjustable from 1 to 100 hertz and uh pretty short acquisition time. Draws uh
+**Dave Jones:** But how are you going to get 300 amps out of these little uh caps here? I don't know. So, I'm not sure what the deal is there. But, uh yeah.
 
-**Dave Jones:** what half a watt or so uh 100 milliamps of 5 volts DC. So there you go. That is uh I'm sure you can buy these off the shelf and uh use these and make a projects. Wow. Okay. So there this might
+**Dave Jones:** Anyway, you put a pulse current through and you can magnetize or demagnetize permanently these magnets on the bottom. This is awesome. So, cargo lifting for like your quadcopter can fly in and just lift up, pulse the current and lift up cargo, any sort of magnetic uh cargo carried away.
 
-**Dave Jones:** come in handy. He says it works in PWM uh mode. The standard detector based on a silicon pin diode. Yeah. Could support a avalanche photo diode for greater sensitivity and range. So that seems like an interesting and useful little
+**Dave Jones:** This thing's capable of holding up to 5 kilos apparently. And uh well, let's give it a bow. I'll show you. Right. So, it's just powered from 5 volts. Just got 5 volts going in there.
 
-**Dave Jones:** puppy. Might be able to use that for uh roeniz quadcopter perhaps. H I like the look of that. Going to have to investigate that. Thank you very much Matt. He also said this random thing is. He has no idea what it is, but uh well,
+**Dave Jones:** There's a button here which magnetizes and demagnetizes those magnets based on charging and discharging these capacitors here. And well, look right, it doesn't it's well, it's got a little bit of residual, but it's basically it's not picking up that at all.
 
-**Dave Jones:** can you guess what it is? My guess would be it's some sort of security monitor thing. I mean, we've obviously got an LCD graphic display. Video out. Oh, actually, video out. H I was thinking that might be video in from the uh like
+**Dave Jones:** Okay, so it's it's on. Okay, we got our 5 volts. Let's push this. It uh takes about 1.7 seconds. It actually sends uh six pulses through to the coil.
 
-**Dave Jones:** from a security camera because it's got infrared as well. So, IR up and down. Um, and gain adjustments in LCD. Interesting. I don't know. Any guesses? So, thank you very much for joining me for another Mailbag Monday if you're
+**Dave Jones:** It'll pulse it like six times and it magnetizes those magnets. So, let's press it. And you you can actually hear it, but you're probably the microphone probably won't pick it up.
 
-**Dave Jones:** still watching. Yeah, we changed that up uh the arrangement up a bit there cuz you know Ryan was still here. Thank you very much, Ryan, for helping out for the week. He was cool. And we should be back
+**Dave Jones:** So, oh, it was actually four, I think. And bingo, it's now magnetized. Let's press it again to demagnetize it. In fact, we have to do that twice, I believe.
 
-**Dave Jones:** to sort of probably the normal mailbag segment last time. We just had to get through a whole bunch of them this time. So anyway, as always, links down below and thank you for everyone who sent stuff in. Sorry if I haven't gotten
+**Dave Jones:** And there we go. It's gone. There you go. And then we can just pulse it again. You might have heard the faint little clicks there. And tada. Fantastic. Works a treat.
 
-**Dave Jones:** around to your stuff yet. I eventually will, I hope. Catch you next time.
+**Dave Jones:** It's brilliant. And it's permanent. I can just disable that and it is still a permanent magnet. It's a latching electromagnet. Oh, winner winner chicken dinner. So, this is very cool.
+
+**Dave Jones:** And look what he claims that yeah, Alico magnets are aligned in a particular orientation as the form magnet circuit with a ferris target plate. A short 20 microcond pulse current of 300 amps.
+
+**Dave Jones:** As I said, I'm not sure how they're getting 300 amps out of these uh these little um SMD caps here. But anyway, uh by discharging the main capacitor through a thyrista full bridge into a copper winding generating a field of 700 um kam, this field is used to align the domains.
+
+**Dave Jones:** is a key advantage. Very strong electromator does not consume any energy during the steady state operation only during the cycling. So it's brilliant. Unbelievable. You can just remove the power not consuming any power at all to hold that electromagnet in place.
+
+**Dave Jones:** That's pretty groundbreaking stuff. How many people are doing this sort of thing? I don't know. But jeez, it's terrific. And it's got um a little pick 12F on board access to the um incircuit serial mode for that.
+
+**Dave Jones:** And you control it either with the button or with an external uh PWM uh signal. And yes, it is actually uh conformally uh coated in there as well. Yeah, you can see the shine on that conformal coating there.
+
+**Dave Jones:** And uh yeah, it looks like they've got a metal uh uh the coil embedded in a metal base plate there on the back of the board. And then all those magnets just potted in place.
+
+**Dave Jones:** He's absolutely brilliant. I love that. Could have some fun with that. Definitely. Thank you very much, nicones.com. Definitely linking those down below. Go check it out. Get one of these puppies.
+
+**Dave Jones:** Have a play. That's brilliant. And here's the full bidge uh thyrista circuit. You see the uh coil in there. So, it pulses that it says six, but I'm sure I only heard four.
+
+**Dave Jones:** Anyway, um copper coil making up the magnetic assembly. It creates a 300 amp current through that sucker. This will be less than a two-minute tear down. There's inside the 1985 Nintendo RF switch.
+
+**Dave Jones:** You got your antenna uh coming in here, of course. And then it can uh just splice in the um RF output. That's not a composite. That's an RF uh output um from the uh Nintendo game console.
+
+**Dave Jones:** And that's it. Bob's your uncle. Not much. They got some weirdass uh transistor packages there. Little three pin single inline jobs. Anyway, not much to it. And this is Max's little USB to serial adapter based on the CH340G uh chipset.
+
+**Dave Jones:** He did this in response to the FTDI gate thing. So, boycotted FTDI uh chipsets. And um yeah, it just has a uh a 500 milliamp uh poly um polyfuse in there.
+
+**Dave Jones:** And uh that's it. Bob's your uncle. Why is using the A type USB connector? I don't know. I would have been like, nobody uses the A, do they? And unless you have a specific requirement, um it would either be a mini B or a uh micro uh USB connector usually.
+
+**Dave Jones:** Anyway, um he's selling this on Tindy. So, thank you very much, Max. I'll link in the Tindy store down below for those who want an FTDI gate free device.
+
+**Dave Jones:** And on a similar note, Josip has uh sent in this little uh board which is a um just a serial uh USB uh interface for these little um neat little tiny uh Bluetooth adapter boards, which as I said, you can get these puppies for like three bucks or something.
+
+**Dave Jones:** You can include Bluetooth in almost anything these days like and that's like assembled. It's absolutely incredible. And as Joset pointed out, yes, the FTDI serial chip costs more than the entire assembled Bluetooth board.
+
+**Dave Jones:** Unbelievable. I should have actually read that letter closely because this itself is the uh complete LAR uh pulse light LAR module. The other thing is just a random thing he had in his junk bin.
+
+**Dave Jones:** Anyway, there you go. Class one laser, all that sort of uh jazz. And yeah, it's a complete interface. You can just It's got this little weird ass custom connector on it.
+
+**Dave Jones:** But uh it does have that. And we could well if we wanted to. Unfortunately don't have time for the mailbag now. I've got to get this edited and uploaded.
+
+**Dave Jones:** But we could um power that thing up. Okay. So this puppy's designed for uh UAVs and uh other things which are designed for uh you know like 0 to 20 m for the lead emitter, 0 to 60 m for the laser emitter.
+
+**Dave Jones:** accuracy. Uh there we go. Like a 25 25 millimeters there. That's not too bad, you know, for UAVs and uh things like that. And uh from adjustable from 1 to 100 hertz and uh pretty short acquisition time.
+
+**Dave Jones:** Draws uh what half a watt or so uh 100 milliamps of 5 volts DC. So there you go. That is uh I'm sure you can buy these off the shelf and uh use these and make a projects.
+
+**Dave Jones:** Wow. Okay. So there this might come in handy. He says it works in PWM uh mode. The standard detector based on a silicon pin diode. Yeah. Could support a avalanche photo diode for greater sensitivity and range.
+
+**Dave Jones:** So that seems like an interesting and useful little puppy. Might be able to use that for uh roeniz quadcopter perhaps. H I like the look of that. Going to have to investigate that.
+
+**Dave Jones:** Thank you very much Matt. He also said this random thing is. He has no idea what it is, but uh well, can you guess what it is? My guess would be it's some sort of security monitor thing.
+
+**Dave Jones:** I mean, we've obviously got an LCD graphic display. Video out. Oh, actually, video out. H I was thinking that might be video in from the uh like from a security camera because it's got infrared as well.
+
+**Dave Jones:** So, IR up and down. Um, and gain adjustments in LCD. Interesting. I don't know. Any guesses? So, thank you very much for joining me for another Mailbag Monday if you're still watching.
+
+**Dave Jones:** Yeah, we changed that up uh the arrangement up a bit there cuz you know Ryan was still here. Thank you very much, Ryan, for helping out for the week.
+
+**Dave Jones:** He was cool. And we should be back to sort of probably the normal mailbag segment last time. We just had to get through a whole bunch of them this time.
+
+**Dave Jones:** So anyway, as always, links down below and thank you for everyone who sent stuff in. Sorry if I haven't gotten around to your stuff yet. I eventually will, I hope.
+
+**Dave Jones:** Catch you next time.

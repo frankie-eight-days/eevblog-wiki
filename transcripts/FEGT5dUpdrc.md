@@ -3,211 +3,215 @@ video_id: FEGT5dUpdrc
 title: EEVblog #516 - LTSPICE Tutorial - DC Operating Point Analysis
 url: https://www.youtube.com/watch?v=FEGT5dUpdrc
 source: youtube-asr
-timestamps: {"0": 1, "1": 18, "2": 32, "3": 45, "4": 63, "5": 85, "6": 102, "7": 117, "8": 133, "9": 149, "10": 168, "11": 184, "12": 199, "13": 212, "14": 229, "15": 240, "16": 258, "17": 272, "18": 287, "19": 305, "20": 317, "21": 334, "22": 347, "23": 362, "24": 371, "25": 387, "26": 402, "27": 416, "28": 429, "29": 440, "30": 451, "31": 467, "32": 480, "33": 493, "34": 507, "35": 519, "36": 534, "37": 547, "38": 562, "39": 578, "40": 593, "41": 611, "42": 626, "43": 641, "44": 653, "45": 666, "46": 683, "47": 699, "48": 714, "49": 728, "50": 743, "51": 758, "52": 771, "53": 790, "54": 806, "55": 822, "56": 838, "57": 849, "58": 867, "59": 879, "60": 897, "61": 909, "62": 923, "63": 936, "64": 951, "65": 963, "66": 976, "67": 992, "68": 1006, "69": 1022, "70": 1039, "71": 1052, "72": 1066, "73": 1085, "74": 1098, "75": 1109, "76": 1123, "77": 1138, "78": 1149, "79": 1163, "80": 1185, "81": 1199, "82": 1214, "83": 1228, "84": 1241, "85": 1255, "86": 1272, "87": 1287, "88": 1304, "89": 1319, "90": 1336, "91": 1351, "92": 1364, "93": 1381, "94": 1395, "95": 1407, "96": 1422, "97": 1438, "98": 1455, "99": 1469, "100": 1484, "101": 1499, "102": 1512}
+timestamps: {"0": 1, "1": 24, "2": 42, "3": 56, "4": 73, "5": 87, "6": 100, "7": 119, "8": 133, "9": 156, "10": 168, "11": 182, "12": 197, "13": 205, "14": 217, "15": 232, "16": 244, "17": 264, "18": 276, "19": 287, "20": 313, "21": 329, "22": 340, "23": 350, "24": 359, "25": 381, "26": 390, "27": 409, "28": 419, "29": 433, "30": 441, "31": 451, "32": 463, "33": 480, "34": 498, "35": 514, "36": 536, "37": 562, "38": 578, "39": 591, "40": 611, "41": 623, "42": 637, "43": 648, "44": 662, "45": 679, "46": 690, "47": 705, "48": 719, "49": 731, "50": 743, "51": 765, "52": 775, "53": 801, "54": 815, "55": 827, "56": 849, "57": 867, "58": 875, "59": 887, "60": 904, "61": 916, "62": 927, "63": 941, "64": 952, "65": 968, "66": 978, "67": 994, "68": 1006, "69": 1022, "70": 1046, "71": 1058, "72": 1073, "73": 1088, "74": 1100, "75": 1109, "76": 1123, "77": 1140, "78": 1149, "79": 1158, "80": 1174, "81": 1188, "82": 1203, "83": 1218, "84": 1228, "85": 1237, "86": 1253, "87": 1269, "88": 1281, "89": 1293, "90": 1304, "91": 1320, "92": 1334, "93": 1358, "94": 1374, "95": 1388, "96": 1397, "97": 1410, "98": 1434, "99": 1444, "100": 1459, "101": 1473, "102": 1488, "103": 1501, "104": 1512}
 ---
 
-**Dave Jones:** Hi, I thought I'd do a short tutorial series on how to use a circuit simulator. In this case LTspice, it's a simulator based on the spice circuit engine. I've done a few videos in the past on using LTspice for doing various
+**Dave Jones:** Hi, I thought I'd do a short tutorial series on how to use a circuit simulator. In this case LTspice, it's a simulator based on the spice circuit engine. I've done a few videos in the past on using LTspice for doing various little niche simulation things I wanted to do at the time, but I haven't done a complete beginners thing from the very start.
 
-**Dave Jones:** little niche simulation things I wanted to do at the time, but I haven't done a complete beginners thing from the very start. There are lots of these sorts of videos, beginners videos and tutorials on LTspice out there, but I thought I'd
+**Dave Jones:** There are lots of these sorts of videos, beginners videos and tutorials on LTspice out there, but I thought I'd throw my own hat into the ring. Now, the good thing about LTspice, which is one of my favorite circuit spice simulators at the moment, I because it's free, which is always fantastic.
 
-**Dave Jones:** throw my own hat into the ring. Now, the good thing about LTspice, which is one of my favorite circuit spice simulators at the moment, I because it's free, which is always fantastic. B, as I said, tons of support
+**Dave Jones:** B, as I said, tons of support out there for it. And C, it does actually work fairly well as a circuit simulator. Now, unfortunately, LTspice is not the easiest to use circuit simulator out there.
 
-**Dave Jones:** out there for it. And C, it does actually work fairly well as a circuit simulator. Now, unfortunately, LTspice is not the easiest to use circuit simulator out there. So, if you want a real dummies version that just allows you to do some real basic stuff,
+**Dave Jones:** So, if you want a real dummies version that just allows you to do some real basic stuff, LTspice probably isn't for you. It's designed as a a very powerful in-depth professional spice tool.
 
-**Dave Jones:** LTspice probably isn't for you. It's designed as a a very powerful in-depth professional spice tool. So, really, there are quite a few traps in these things because actually, which comes from its name, its name is spice mean is an acronym for simulation
+**Dave Jones:** So, really, there are quite a few traps in these things because actually, which comes from its name, its name is spice mean is an acronym for simulation program with integrated circuit emphasis.
 
-**Dave Jones:** program with integrated circuit emphasis. And hence the name, there is an emphasis for integrated circuit silicon level simulation. Now, spice started in the mid 70s to do just that because people couldn't breadboard their integrated circuits, right? You can't
+**Dave Jones:** And hence the name, there is an emphasis for integrated circuit silicon level simulation. Now, spice started in the mid 70s to do just that because people couldn't breadboard their integrated circuits, right?
 
-**Dave Jones:** breadboard your your silicon stuff. So, they developed this to try and simulate it. And as such, actually, a lot of people don't know, but spice simulators out of the box are not entirely optimized for the top level stuff which most people use it
+**Dave Jones:** You can't breadboard your your silicon stuff. So, they developed this to try and simulate it. And as such, actually, a lot of people don't know, but spice simulators out of the box are not entirely optimized for the top level stuff which most people use it for the board level stuff.
 
-**Dave Jones:** for the board level stuff. You know, your op-amps, your switching regulators and all that sort of thing. It's out of the box. It's it doesn't what's called a lot of the time it won't converge or generate a new or be able to
+**Dave Jones:** You know, your op-amps, your switching regulators and all that sort of thing. It's out of the box. It's it doesn't what's called a lot of the time it won't converge or generate a new or be able to solve your particular circuit.
 
-**Dave Jones:** solve your particular circuit. You really got to tweak this and tweak that. Now, the good thing about LTSpice is that as you get it out of the package it has actually been tweaked and optimized for pretty good convergence for board level
+**Dave Jones:** You really got to tweak this and tweak that. Now, the good thing about LTSpice is that as you get it out of the package it has actually been tweaked and optimized for pretty good convergence for board level circuits and in the case of LTSpice more specifically designed for power switching regulator simulation and stuff like that.
 
-**Dave Jones:** circuits and in the case of LTSpice more specifically designed for power switching regulator simulation and stuff like that. But as a general purpose simulator it does work really well. So, the majority of circuit simulators out there use some variation of the open source spice
+**Dave Jones:** But as a general purpose simulator it does work really well. So, the majority of circuit simulators out there use some variation of the open source spice engine and LTSpice is no exception.
 
-**Dave Jones:** engine and LTSpice is no exception. Now, spice was and still is traditionally a command line driven program that you put you write your spice code, your spice script, you feed it in and it gives you a solution. Now, what
+**Dave Jones:** Now, spice was and still is traditionally a command line driven program that you put you write your spice code, your spice script, you feed it in and it gives you a solution.
 
-**Dave Jones:** LTSpice and all the other circuit most the other circuit simulators are is a big nice graphical user interface wrapper around the spice engine. So, you can actually see you can draw your schematic and see the components. You can
+**Dave Jones:** Now, what LTSpice and all the other circuit most the other circuit simulators are is a big nice graphical user interface wrapper around the spice engine. So, you can actually see you can draw your schematic and see the components.
 
-**Dave Jones:** you know, do all that sort of stuff. You can draw graphs and you can interact with the circuit and probe things and all that sort of stuff. So, that's what LTSpice allows you to do. So, we're going to start with a new schematic here
+**Dave Jones:** You can you know, do all that sort of stuff. You can draw graphs and you can interact with the circuit and probe things and all that sort of stuff.
 
-**Dave Jones:** and pretty much these are all your tools up the top that you use to draw your circuit. Now, what every single spice circuit must have is a ground point. It must have a known reference ground point like that. If it doesn't
+**Dave Jones:** So, that's what LTSpice allows you to do. So, we're going to start with a new schematic here and pretty much these are all your tools up the top that you use to draw your circuit.
 
-**Dave Jones:** have that it just screws up and it's not going to work for you. So, a lot of the a lot of beginners um fall into the trap of not putting a ground point. Now, here's the other uh components,
+**Dave Jones:** Now, what every single spice circuit must have is a ground point. It must have a known reference ground point like that. If it doesn't have that it just screws up and it's not going to work for you.
 
-**Dave Jones:** resistors, capacitors, inductors, diodes, and then you're more uh you know, big selection of components. So, we can start out by just putting a couple of resistors in here like this. You can press control R to rotate like that. And we can have our little merry
+**Dave Jones:** So, a lot of the a lot of beginners um fall into the trap of not putting a ground point. Now, here's the other uh components, resistors, capacitors, inductors, diodes, and then you're more uh you know, big selection of components.
 
-**Dave Jones:** circuit in there and we can draw our selves, you know, something like your traditional resistor uh puzzle or something like that. Now, then you can go in there with the wiring tool and you can just wire things up like that and it
+**Dave Jones:** So, we can start out by just putting a couple of resistors in here like this. You can press control R to rotate like that. And we can have our little merry circuit in there and we can draw our selves, you know, something like your traditional resistor uh puzzle or something like that.
 
-**Dave Jones:** is quite easy to use. You'll notice that little box around the point on the end of the resistor there. That indicates that that node is not connected. So, if you see any of those boxes on your uh schematics at all, then you will know
+**Dave Jones:** Now, then you can go in there with the wiring tool and you can just wire things up like that and it is quite easy to use. You'll notice that little box around the point on the end of the resistor there.
 
-**Dave Jones:** that uh that point is unconnected. So, and it automatically puts the junctions in there and it is fairly easy to just draw up your circuit like this. No problems whatsoever. Now, a uh spice engine like this really, you know,
+**Dave Jones:** That indicates that that node is not connected. So, if you see any of those boxes on your uh schematics at all, then you will know that uh that point is unconnected.
 
-**Dave Jones:** you can't just go run and solve and put the values in there and it's not going to tell you the total resistance of this circuit like a resistor cube or or something like that. It's not really designed to do that. Uh spice engines
+**Dave Jones:** So, and it automatically puts the junctions in there and it is fairly easy to just draw up your circuit like this. No problems whatsoever. Now, a uh spice engine like this really, you know, you can't just go run and solve and put the values in there and it's not going to tell you the total resistance of this circuit like a resistor cube or or something like that.
 
-**Dave Jones:** are designed to operate with various um uh sources, voltage sources, and we'll look at the different uh types of sources in various videos and we'll also look at uh the different types of simulation. So, this video will only show one type of uh simulation
+**Dave Jones:** It's not really designed to do that. Uh spice engines are designed to operate with various um uh sources, voltage sources, and we'll look at the different uh types of sources in various videos and we'll also look at uh the different types of simulation.
 
-**Dave Jones:** today, the the very simplest one. But, basically, we need to go up there and put a voltage source in. So, we can go up to components here and here are all of our components. We've got all different categories. There's
+**Dave Jones:** So, this video will only show one type of uh simulation today, the the very simplest one. But, basically, we need to go up there and put a voltage source in.
 
-**Dave Jones:** all different types. We've got transmission lines, we've got transistors, all sorts of stuff. But what we want is a voltage over here. So, that can give us our voltage source. But the voltage source is actually very powerful when we go in there. We can set
+**Dave Jones:** So, we can go up to components here and here are all of our components. We've got all different categories. There's all different types. We've got transmission lines, we've got transistors, all sorts of stuff.
 
-**Dave Jones:** the value to 1 V by right clicking on that. But uh if we go into the advanced tab, you can see that's not just a voltage source, but we can have not just a DC voltage source, but it can be a
+**Dave Jones:** But what we want is a voltage over here. So, that can give us our voltage source. But the voltage source is actually very powerful when we go in there.
 
-**Dave Jones:** sinusoidal source, it can be a pulse source, it can be a um uh piecewise uh linear source and all sorts of stuff. But uh we're just going to use it as a DC source in this one. And we can just
+**Dave Jones:** We can set the value to 1 V by right clicking on that. But uh if we go into the advanced tab, you can see that's not just a voltage source, but we can have not just a DC voltage source, but it can be a sinusoidal source, it can be a pulse source, it can be a um uh piecewise uh linear source and all sorts of stuff.
 
-**Dave Jones:** wire that up, and it's pretty easy to draw your circuit like that. And once again, you've got to connect that ground to some point in there. But bingo, we have a simple circuit. Now, at the very least, each component is going to have a
+**Dave Jones:** But uh we're just going to use it as a DC source in this one. And we can just wire that up, and it's pretty easy to draw your circuit like that.
 
-**Dave Jones:** reference designator, in this case R1 here and V1 up here, just like you're used to in your traditional uh schematic editor. And it's going to have a value uh associated with it. In terms of the voltage source over here, we've got 1 V
+**Dave Jones:** And once again, you've got to connect that ground to some point in there. But bingo, we have a simple circuit. Now, at the very least, each component is going to have a reference designator, in this case R1 here and V1 up here, just like you're used to in your traditional uh schematic editor.
 
-**Dave Jones:** DC. And this resistor here, we can just right click on that uh value. And here is a the one of the first traps is uh you can type in, of course, um the resistance is going to be in ohms,
+**Dave Jones:** And it's going to have a value uh associated with it. In terms of the voltage source over here, we've got 1 V DC. And this resistor here, we can just right click on that uh value.
 
-**Dave Jones:** and uh the capacitance will be in farads, inductance will be in henries. So, you have to put in the right units. You can, of course, put in 1,000 ohms like that, but you can put in 1 K like
+**Dave Jones:** And here is a the one of the first traps is uh you can type in, of course, um the resistance is going to be in ohms, and uh the capacitance will be in farads, inductance will be in henries.
 
-**Dave Jones:** that, and it's going to recognize upper or lower case. It's going to recognize that. But a lot of people, uh a lot of beginners, the first thing they fall into is they go 1 meg like that. That is
+**Dave Jones:** So, you have to put in the right units. You can, of course, put in 1,000 ohms like that, but you can put in 1 K like that, and it's going to recognize upper or lower case.
 
-**Dave Jones:** not 1 meg. Okay? You see how it's convert I typed in uppercase M, and it's converted it to lowercase M there. It that that's actually 1 milli. All of the spice the spice engines recognize M as milli not as meg. So if
+**Dave Jones:** It's going to recognize that. But a lot of people, uh a lot of beginners, the first thing they fall into is they go 1 meg like that. That is not 1 meg.
 
-**Dave Jones:** you want meg you've got to actually type in one meg like that. I know it's crazy but that's what you have to do and if you don't do that you're going to be out by orders of magnitude and that's a trap almost every
+**Dave Jones:** Okay? You see how it's convert I typed in uppercase M, and it's converted it to lowercase M there. It that that's actually 1 milli. All of the spice the spice engines recognize M as milli not as meg.
 
-**Dave Jones:** beginner falls into. So there you go. We're going to try K there like that and uh And of course if you want one micro say you've got a resistance isn't going to be that low generally but a capacitor
+**Dave Jones:** So if you want meg you've got to actually type in one meg like that. I know it's crazy but that's what you have to do and if you don't do that you're going to be out by orders of magnitude and that's a trap almost every beginner falls into.
 
-**Dave Jones:** you can put in you like that and it will you notice how it's turned the U into the mu symbol which is one micro. So let's change that back to 1K and now we have a silly little resistor puzzle here
+**Dave Jones:** So there you go. We're going to try K there like that and uh And of course if you want one micro say you've got a resistance isn't going to be that low generally but a capacitor you can put in you like that and it will you notice how it's turned the U into the mu symbol which is one micro.
 
-**Dave Jones:** and how do we solve it? Now the next thing well what we do now is what we want to do is go into simulate and the edit simulation command here. Now we haven't had it added what's called any
+**Dave Jones:** So let's change that back to 1K and now we have a silly little resistor puzzle here and how do we solve it? Now the next thing well what we do now is what we want to do is go into simulate and the edit simulation command here.
 
-**Dave Jones:** spice directives yet. We haven't told the spice engine what to actually do and here's where we can do this. We've got two four six different types of simulation and I'll have to do a separate video on each one of these cuz
+**Dave Jones:** Now we haven't had it added what's called any spice directives yet. We haven't told the spice engine what to actually do and here's where we can do this. We've got two four six different types of simulation and I'll have to do a separate video on each one of these cuz they're very important the different types of simulations you can do.
 
-**Dave Jones:** they're very important the different types of simulations you can do. Now there's actually more than these six here or you can do actually do various combinations of things and we'll go into these in future videos but the main ones
+**Dave Jones:** Now there's actually more than these six here or you can do actually do various combinations of things and we'll go into these in future videos but the main ones that most people are going to use are transient analysis and that is your traditional time domain I a your oscilloscope type view you'll be able to view waveform probe your circuit view waveforms as it starts as the circuit
 
-**Dave Jones:** that most people are going to use are transient analysis and that is your traditional time domain I a your oscilloscope type view you'll be able to view waveform probe your circuit view waveforms as it starts as the circuit
+**Dave Jones:** starts up over time just like an oscilloscope and then we've got AC analysis which allows you to do AC frequency sweeps of your circuit like if you've got a filter for example you can sweep it over a frequency range, and you can get a bode plot.
 
-**Dave Jones:** starts up over time just like an oscilloscope and then we've got AC analysis which allows you to do AC frequency sweeps of your circuit like if you've got a filter for example you can sweep it over a frequency range, and you can get a bode
+**Dave Jones:** Uh then we've got various DC sweeps where we can sweep and change the DC operating point, which is a more advanced version of the very simple DC operating point we're going to look at today.
 
-**Dave Jones:** plot. Uh then we've got various DC sweeps where we can sweep and change the DC operating point, which is a more advanced version of the very simple DC operating point we're going to look at today. And then you can do noise
+**Dave Jones:** And then you can do noise analysis, DC transfer analysis. There more advanced type stuff that we'll get into much, much later on. But the one we're going to look at is DC operating point, and this is the absolute simplest bare-bones spice simulation you can do.
 
-**Dave Jones:** analysis, DC transfer analysis. There more advanced type stuff that we'll get into much, much later on. But the one we're going to look at is DC operating point, and this is the absolute simplest bare-bones spice simulation you can do.
+**Dave Jones:** All it does is it tells you it computes the DC operating point treating capacitances as open circuits and inductances as as short circuits because at DC that's exactly what those components are going to do.
 
-**Dave Jones:** All it does is it tells you it computes the DC operating point treating capacitances as open circuits and inductances as as short circuits because at DC that's exactly what those components are going to do. So, in this case we've got
+**Dave Jones:** So, in this case we've got no nonlinear active components like op-amps or anything. All we got is some resistors on here. So, our DC operating our DC operating point simulation will work just fine.
 
-**Dave Jones:** no nonlinear active components like op-amps or anything. All we got is some resistors on here. So, our DC operating our DC operating point simulation will work just fine. So, if we press okay there, you'll notice that it's got the
+**Dave Jones:** So, if we press okay there, you'll notice that it's got the syntax down here, and that is the syntax for what's called the spice directive. And then it lets you put that on the circuit, and there it is down there.
 
-**Dave Jones:** syntax down here, and that is the syntax for what's called the spice directive. And then it lets you put that on the circuit, and there it is down there. You can put it anywhere on the circuit you like, but it's got to be on there. And
+**Dave Jones:** You can put it anywhere on the circuit you like, but it's got to be on there. And this is just the way LTspice happens to work. In your more traditional command line approach, then you'd be, you know, typing in these commands {dot} OP, which means operating point analysis.
 
-**Dave Jones:** this is just the way LTspice happens to work. In your more traditional command line approach, then you'd be, you know, typing in these commands {dot} OP, which means operating point analysis. But because we've got that on our circuit
+**Dave Jones:** But because we've got that on our circuit now, that now tells LTspice when we go up here to run the simulation, here it is, simulate run, it knows that it reads those spice directives, and it knows exactly what to do.
 
-**Dave Jones:** now, that now tells LTspice when we go up here to run the simulation, here it is, simulate run, it knows that it reads those spice directives, and it knows exactly what to do. Now, in the case of the DC operating
+**Dave Jones:** Now, in the case of the DC operating point here, this will not show any waveforms at all cuz there's nothing to graph, there's nothing to plot, there's no frequency responses, there's nothing.
 
-**Dave Jones:** point here, this will not show any waveforms at all cuz there's nothing to graph, there's nothing to plot, there's no frequency responses, there's nothing. All it will do is give us a text box of the various voltages and currents
+**Dave Jones:** All it will do is give us a text box of the various voltages and currents in this circuit. So, let's actually run it. Here we go. We're going to run our first DC operating point simulation.
 
-**Dave Jones:** in this circuit. So, let's actually run it. Here we go. We're going to run our first DC operating point simulation. Run. Bang. And there it is. All it gave us is this list. But this list is actually very handy and very powerful
+**Dave Jones:** Run. Bang. And there it is. All it gave us is this list. But this list is actually very handy and very powerful for lots of different circuits, not just simple little resistor puzzle things like this.
 
-**Dave Jones:** for lots of different circuits, not just simple little resistor puzzle things like this. And here it is. It gives us the voltage at each of the nodes. So, we have to know about nodes and each of the resistors is the current through
+**Dave Jones:** And here it is. It gives us the voltage at each of the nodes. So, we have to know about nodes and each of the resistors is the current through each of the resistors down there from R1 through to R9 there.
 
-**Dave Jones:** each of the resistors down there from R1 through to R9 there. And you'll notice that some of them are negative. You'll notice that say R9 for example is negative. Why is that the case? It's not necessarily because the current's
+**Dave Jones:** And you'll notice that some of them are negative. You'll notice that say R9 for example is negative. Why is that the case? It's not necessarily because the current's running in the opposite direction.
 
-**Dave Jones:** running in the opposite direction. It actually depends on Where's R9 here? Here it is. It depends on which way around you've put the resistor. And here's one of the first traps. Now, it it doesn't actually tell you on There's
+**Dave Jones:** It actually depends on Where's R9 here? Here it is. It depends on which way around you've put the resistor. And here's one of the first traps. Now, it it doesn't actually tell you on There's no indicator on there of which way the current's actually going to flow in this thing here.
 
-**Dave Jones:** no indicator on there of which way the current's actually going to flow in this thing here. So, what we need to do What we're going to do is we're just going to move this resistor and we'll rotate that
+**Dave Jones:** So, what we need to do What we're going to do is we're just going to move this resistor and we'll rotate that around. And if we run that again, you'll notice R9, bingo, is now positive.
 
-**Dave Jones:** around. And if we run that again, you'll notice R9, bingo, is now positive. And once again, for R7 there and R3. So, R7 and R3, we can rotate them as well. R7 and R3. But once again, you know, you can
+**Dave Jones:** And once again, for R7 there and R3. So, R7 and R3, we can rotate them as well. R7 and R3. But once again, you know, you can muck around with this and and get those values or you can just leave it as it is if But just understand that the component like a resistor has a particular direction.
 
-**Dave Jones:** muck around with this and and get those values or you can just leave it as it is if But just understand that the component like a resistor has a particular direction. It's not just, you know, it's not just a random pin
+**Dave Jones:** It's not just, you know, it's not just a random pin allocation. It treats the current flowing through in a certain direction like that. So, we can run that and we should now get all positive currents there flowing through our resistors.
 
-**Dave Jones:** allocation. It treats the current flowing through in a certain direction like that. So, we can run that and we should now get all positive currents there flowing through our resistors. Too easy. Bingo, we've done our first simulation that's DC operating point
+**Dave Jones:** Too easy. Bingo, we've done our first simulation that's DC operating point analysis. But, the interesting thing is once we've run that simulation, all that data is in memory in LTSpice.
 
-**Dave Jones:** analysis. But, the interesting thing is once we've run that simulation, all that data is in memory in LTSpice. And if we move our cursor over the individual components like this, look, if you move it over R1, you'll notice down in the
+**Dave Jones:** And if we move our cursor over the individual components like this, look, if you move it over R1, you'll notice down in the bottom here, sorry, I can't move my cursor towards it, but down in the bottom left corner, you'll notice that it shows you the DC operating point there is 1 mA, and it shows you the power dissipation in that resistor as well.
 
-**Dave Jones:** bottom here, sorry, I can't move my cursor towards it, but down in the bottom left corner, you'll notice that it shows you the DC operating point there is 1 mA, and it shows you the power dissipation in that resistor as
+**Dave Jones:** And then likewise say for R3 up here, there it is, 333 microamps flowing flowing through that resistor with 111 microwatts power dissipation. And this one down here, you'll notice there's no current at all flowing through R5 and R6 here.
 
-**Dave Jones:** well. And then likewise say for R3 up here, there it is, 333 microamps flowing flowing through that resistor with 111 microwatts power dissipation. And this one down here, you'll notice there's no current at all flowing through R5 and R6
+**Dave Jones:** And the next thing we can do is once again, it's got all that data in that simulation data in that's run the simulation, it's finished, has all that DC operating point data.
 
-**Dave Jones:** here. And the next thing we can do is once again, it's got all that data in that simulation data in that's run the simulation, it's finished, has all that DC operating point data. We can just click on individual nodes here. Watch
+**Dave Jones:** We can just click on individual nodes here. Watch this. And we can get a value. Look at that, 1 V. Look at that, 666 mV on that particular node there.
 
-**Dave Jones:** this. And we can get a value. Look at that, 1 V. Look at that, 666 mV on that particular node there. And this one up here, 666. And so forth and well, so on. Oops, we accidentally moved it off there. Don't
+**Dave Jones:** And this one up here, 666. And so forth and well, so on. Oops, we accidentally moved it off there. Don't move it off. And now that we have our voltages on there, what we can do is we can actually go in and change some values.
 
-**Dave Jones:** move it off. And now that we have our voltages on there, what we can do is we can actually go in and change some values. Let's say we we want to tweak that value there. Let's say it's 500
+**Dave Jones:** Let's say we we want to tweak that value there. Let's say it's 500 ohms now. And then we just run our simulation again. And bingo, look at that, our values have changed.
 
-**Dave Jones:** ohms now. And then we just run our simulation again. And bingo, look at that, our values have changed. Now, the next thing you might want to do on a complex circuit that you're probing and things like that, you might want to
+**Dave Jones:** Now, the next thing you might want to do on a complex circuit that you're probing and things like that, you might want to label your nets. So, you can just right-click on a net there, and you can just label that net.
 
-**Dave Jones:** label your nets. So, you can just right-click on a net there, and you can just label that net. You know, you might call it, I don't know, net five or something like that. But, that just allows you to put meaningful labels that
+**Dave Jones:** You know, you might call it, I don't know, net five or something like that. But, that just allows you to put meaningful labels that will then show up on your plots and stuff like that when you probe them.
 
-**Dave Jones:** will then show up on your plots and stuff like that when you probe them. So, in this case, if we go and run our simulation, bingo, it'll show net five. There it is. It's automatically added in there. It's just
+**Dave Jones:** So, in this case, if we go and run our simulation, bingo, it'll show net five. There it is. It's automatically added in there. It's just more sensible when you've got a large circuit.
 
-**Dave Jones:** more sensible when you've got a large circuit. Say you're, you know, like node four doesn't mean anything, right? Node three, because they're not actually showing on the circuit. So, it's good to go in there and actually label them, so
+**Dave Jones:** Say you're, you know, like node four doesn't mean anything, right? Node three, because they're not actually showing on the circuit. So, it's good to go in there and actually label them, so you know exactly what is what value is associated with what node.
 
-**Dave Jones:** you know exactly what is what value is associated with what node. But, of course, because this is a nice GUI interface, it allows you to put things like those voltages right on those nodes there. So, you can sort
+**Dave Jones:** But, of course, because this is a nice GUI interface, it allows you to put things like those voltages right on those nodes there. So, you can sort of say it's a bit more interactive within the circuit.
 
-**Dave Jones:** of say it's a bit more interactive within the circuit. Now, of course, these voltage sources over here, you can actually enter all sorts of parametric information in them. In this case, in terms of a simple DC voltage source, there's the series resistance
+**Dave Jones:** Now, of course, these voltage sources over here, you can actually enter all sorts of parametric information in them. In this case, in terms of a simple DC voltage source, there's the series resistance value down in here, which is basic one.
 
-**Dave Jones:** value down in here, which is basic one. But, let's say that battery we were using, you know, a CR2032 coin cell battery or something, you know, and it's got a typical 10 ohm, you know, it might have a 10 ohms
+**Dave Jones:** But, let's say that battery we were using, you know, a CR2032 coin cell battery or something, you know, and it's got a typical 10 ohm, you know, it might have a 10 ohms series resistance in in the cell.
 
-**Dave Jones:** series resistance in in the cell. So, we can put that in, and it's displayed that R series equals 10. And we can run that again, and you'll notice that things are a little bit different, cuz it's now taking into account the internal series
+**Dave Jones:** So, we can put that in, and it's displayed that R series equals 10. And we can run that again, and you'll notice that things are a little bit different, cuz it's now taking into account the internal series resistance in that voltage source.
 
-**Dave Jones:** resistance in that voltage source. So, this is where you can start doing some real practical circuit implementations. And then, inside the resistor, you can specify the tolerance in there, the power rating, and in future videos we'll get on to where those things will
+**Dave Jones:** So, this is where you can start doing some real practical circuit implementations. And then, inside the resistor, you can specify the tolerance in there, the power rating, and in future videos we'll get on to where those things will actually come into play in terms of various types of advanced analysis and temperature sweeping and all sorts of stuff like that.
 
-**Dave Jones:** actually come into play in terms of various types of advanced analysis and temperature sweeping and all sorts of stuff like that. Now, we can actually put more advanced information on this circuit. Let's say we wanted to get the
+**Dave Jones:** Now, we can actually put more advanced information on this circuit. Let's say we wanted to get the current going through R7 here. Well, we click on this node again, and we can put the information by default.
 
-**Dave Jones:** current going through R7 here. Well, we click on this node again, and we can put the information by default. It's just popped up there with that same node voltage we had before, but now we can actually right-click on that, and here's
+**Dave Jones:** It's just popped up there with that same node voltage we had before, but now we can actually right-click on that, and here's an expression editor which allows us to pretty much display anything we like.
 
-**Dave Jones:** an expression editor which allows us to pretty much display anything we like. And in this case, we can change it R7 there. We want the current through IR7. Like that. Bingo. We've just now displayed the current through that
+**Dave Jones:** And in this case, we can change it R7 there. We want the current through IR7. Like that. Bingo. We've just now displayed the current through that resistor there. And let's say we wanted to display something simple like the voltage across R7 here.
 
-**Dave Jones:** resistor there. And let's say we wanted to display something simple like the voltage across R7 here. Well, that's not as easy as some other circuit simulation program. Some of those other simpler ones for beginners might have like a
+**Dave Jones:** Well, that's not as easy as some other circuit simulation program. Some of those other simpler ones for beginners might have like a multimeter tool, and you drag in the multimeter.
 
-**Dave Jones:** multimeter tool, and you drag in the multimeter. It has a little It looks like a multimeter. It has a little multimeter display, little probes, and then you hook it up across R7, and you can actually measure the value across
+**Dave Jones:** It has a little It looks like a multimeter. It has a little multimeter display, little probes, and then you hook it up across R7, and you can actually measure the value across that.
 
-**Dave Jones:** that. But, LTSpice isn't catering to that sort of real ultra beginner market. It's more of just your, you know, professional traditional spice circuit simulation. Well, the way you do it is I've labeled this net up here net five,
+**Dave Jones:** But, LTSpice isn't catering to that sort of real ultra beginner market. It's more of just your, you know, professional traditional spice circuit simulation. Well, the way you do it is I've labeled this net up here net five, and this net down here net four.
 
-**Dave Jones:** and this net down here net four. So, the voltage across R7 in this case, if you wanted positive up here and negative down here, it'd be net five minus net four. So, once again, we can just left-click or click on
+**Dave Jones:** So, the voltage across R7 in this case, if you wanted positive up here and negative down here, it'd be net five minus net four. So, once again, we can just left-click or click on that node there, and it's given us a voltage by default.
 
-**Dave Jones:** that node there, and it's given us a voltage by default. We go into the expression editor, and you'll notice that it's only given us voltage and current for various voltage for all the nodes and the current through all the
+**Dave Jones:** We go into the expression editor, and you'll notice that it's only given us voltage and current for various voltage for all the nodes and the current through all the resistors.
 
-**Dave Jones:** resistors. And that will depend on the circuit you have. That's the available data that it has. So, that's the only data you have to work from. But, we want net five. We want our expression whoop. I was in doing too many clicks. We want
+**Dave Jones:** And that will depend on the circuit you have. That's the available data that it has. So, that's the only data you have to work from. But, we want net five.
 
-**Dave Jones:** net five minus net four like that. Very simple expression and bingo, that is now the voltage across that resistor. Beautiful. And you can see that you know, it's taken us some time to just sort of you know, prepare our circuit and get nodes,
+**Dave Jones:** We want our expression whoop. I was in doing too many clicks. We want net five minus net four like that. Very simple expression and bingo, that is now the voltage across that resistor.
 
-**Dave Jones:** net names, nodes, and information and stuff like that. But, once you've done that and you set it all up, then you can go in and play with all your values and then rerun the simulator. You know, if we change this value down here to you
+**Dave Jones:** Beautiful. And you can see that you know, it's taken us some time to just sort of you know, prepare our circuit and get nodes, net names, nodes, and information and stuff like that.
 
-**Dave Jones:** know, 850 ohms or something like that, then that's going to change all our values again. And bingo, there we go. They've all changed. So, don't get frustrated with these tools that they you know, they don't give you absolute immediate results.
+**Dave Jones:** But, once you've done that and you set it all up, then you can go in and play with all your values and then rerun the simulator. You know, if we change this value down here to you know, 850 ohms or something like that, then that's going to change all our values again.
 
-**Dave Jones:** You've got to work at it a bit and you've got to set them up to present the information. And we're only using the most basic DC operating point analysis here. We haven't even got into the probing and the graphs and all that sort
+**Dave Jones:** And bingo, there we go. They've all changed. So, don't get frustrated with these tools that they you know, they don't give you absolute immediate results. You've got to work at it a bit and you've got to set them up to present the information.
 
-**Dave Jones:** of stuff set up yet. This is very, very simple. But, yeah, as you can see, not as user-friendly as some other spice engines out there for beginners, but it's not that hard to learn at all. And once you know how to use it, you can get
+**Dave Jones:** And we're only using the most basic DC operating point analysis here. We haven't even got into the probing and the graphs and all that sort of stuff set up yet.
 
-**Dave Jones:** it to present the information that you want. And even for more complex circuits like this audio transistor-based audio amplifier that comes with LTspice, comes with lots of example circuits by the way already set up, ready to run. They've
+**Dave Jones:** This is very, very simple. But, yeah, as you can see, not as user-friendly as some other spice engines out there for beginners, but it's not that hard to learn at all.
 
-**Dave Jones:** already got the various spice simulation directives down here to do look some furious stuff and you know, transfer function, all sorts of things like that. But, let's But, one thing it doesn't have is a DC operating point. So, let's go up there
+**Dave Jones:** And once you know how to use it, you can get it to present the information that you want. And even for more complex circuits like this audio transistor-based audio amplifier that comes with LTspice, comes with lots of example circuits by the way already set up, ready to run.
 
-**Dave Jones:** and we'll edit our simulation command, DC operating point, and we can just use our operating point command. And we can place that there. Doesn't have to be there. It can be anywhere on our circuit. And then we can just run that, and that will
+**Dave Jones:** They've already got the various spice simulation directives down here to do look some furious stuff and you know, transfer function, all sorts of things like that. But, let's But, one thing it doesn't have is a DC operating point.
 
-**Dave Jones:** provide, once again, all those DC operating points for all of our transistor amplifier there. And once again, we can do the same thing, and we can go in there, and we can put the various voltages on those various nodes in there. So, that's our
+**Dave Jones:** So, let's go up there and we'll edit our simulation command, DC operating point, and we can just use our operating point command. And we can place that there. Doesn't have to be there.
 
-**Dave Jones:** DC operating point stuff. Very handy. And when you get to more complex circuits like this that have more than just your passive components, they've got transistors and op-amps and things like that, then you need a then you need to pick the particular
+**Dave Jones:** It can be anywhere on our circuit. And then we can just run that, and that will provide, once again, all those DC operating points for all of our transistor amplifier there.
 
-**Dave Jones:** type of component that you want. Now, they can be generic ones, but in this case, you can pick various transistors in LTSpice. For example, comes with, you know, a whole bunch of, you know, basic transistors. It may not have the exact
+**Dave Jones:** And once again, we can do the same thing, and we can go in there, and we can put the various voltages on those various nodes in there. So, that's our DC operating point stuff.
 
-**Dave Jones:** one you have, and we'll do a separate video on how to add external spice models. But, you'll see that it has the all the spice model information all pre-programmed into files, which you can get access to, but they're basically
+**Dave Jones:** Very handy. And when you get to more complex circuits like this that have more than just your passive components, they've got transistors and op-amps and things like that, then you need a then you need to pick the particular type of component that you want.
 
-**Dave Jones:** just hidden away in there with all the detailed spice information and all this gobbledygook, which probably means, you know, very little to you. And some of these spice models can get very advanced because they're, as I said right at the
+**Dave Jones:** Now, they can be generic ones, but in this case, you can pick various transistors in LTSpice. For example, comes with, you know, a whole bunch of, you know, basic transistors.
 
-**Dave Jones:** start, designed for semiconductor modeling, you know, silicon level modeling. So, you can get into the whole physics of and the manufacturing processes. And these spice engines let you go into as deep a model as you require for your
+**Dave Jones:** It may not have the exact one you have, and we'll do a separate video on how to add external spice models. But, you'll see that it has the all the spice model information all pre-programmed into files, which you can get access to, but they're basically just hidden away in there with all the detailed spice information and all this gobbledygook, which probably means, you know, very little to you.
 
-**Dave Jones:** particular type of component, but it does come with a good selection of basic or usable selection of basic transistors, for example. And then, if you go into op amps, I mean, if we go up here, these will be separate tutorials,
+**Dave Jones:** And some of these spice models can get very advanced because they're, as I said right at the start, designed for semiconductor modeling, you know, silicon level modeling. So, you can get into the whole physics of and the manufacturing processes.
 
-**Dave Jones:** of course, but we can go over here and then op amps. And of course, LTSpice only comes with all the LT ones. It doesn't have, you know, you won't find an LM741 in there, for example, but it does have
+**Dave Jones:** And these spice engines let you go into as deep a model as you require for your particular type of component, but it does come with a good selection of basic or usable selection of basic transistors, for example.
 
-**Dave Jones:** generic ones like just a jelly bean op amp like that. And that becomes a very important part of any spice model, whether you're using just the generic one like this, which is basically an ideal model op amp. You know, it doesn't have all
+**Dave Jones:** And then, if you go into op amps, I mean, if we go up here, these will be separate tutorials, of course, but we can go over here and then op amps.
 
-**Dave Jones:** the, you know, the real world information programmed into them as these other ones do, you know, there's the specific LT, you know, that's a 2.7 GHz low noise rail-to-rail differential amplifier driver. That looks pretty good, actually. I like the look of that
+**Dave Jones:** And of course, LTSpice only comes with all the LT ones. It doesn't have, you know, you won't find an LM741 in there, for example, but it does have generic ones like just a jelly bean op amp like that.
 
-**Dave Jones:** one, but that'll have And then you can open the models test fixture. And man, it's just, you know, you can test the individual parts. And woo, these circuit simulation spice things, they can they've got so much depth to them. I
+**Dave Jones:** And that becomes a very important part of any spice model, whether you're using just the generic one like this, which is basically an ideal model op amp. You know, it doesn't have all the, you know, the real world information programmed into them as these other ones do, you know, there's the specific LT, you know, that's a 2.7 GHz low noise rail-to-rail differential amplifier driver.
 
-**Dave Jones:** could probably do a hundred videos and I'm still not going to cover everything. There's so there's always something new to learn when you're playing around with circuit simulators like this. Trust me. So that was a basic look at the simplest
+**Dave Jones:** That looks pretty good, actually. I like the look of that one, but that'll have And then you can open the models test fixture. And man, it's just, you know, you can test the individual parts.
 
-**Dave Jones:** spice simulation analysis you can do, DC operating point analysis. And so many tutorials out there just completely skip that first basic step. They go straight into transient analysis, which allows you to, you know, because it has the eye
+**Dave Jones:** And woo, these circuit simulation spice things, they can they've got so much depth to them. I could probably do a hundred videos and I'm still not going to cover everything.
 
-**Dave Jones:** candy, it allows you to probe wave forms and see your like oscilloscope like wave forms around your circuit. But really, that is a more advanced analysis feature than your basic DC operating point stuff. So this is very important to know
+**Dave Jones:** There's so there's always something new to learn when you're playing around with circuit simulators like this. Trust me. So that was a basic look at the simplest spice simulation analysis you can do, DC operating point analysis.
 
-**Dave Jones:** and as a first step to your spice analysis. Yes, it's not very sexy, but it's vital to know. So, I hope you found that useful and there will be a follow-up videos with all sorts of different types of analysis
+**Dave Jones:** And so many tutorials out there just completely skip that first basic step. They go straight into transient analysis, which allows you to, you know, because it has the eye candy, it allows you to probe wave forms and see your like oscilloscope like wave forms around your circuit.
 
-**Dave Jones:** options. Catch you next time.
+**Dave Jones:** But really, that is a more advanced analysis feature than your basic DC operating point stuff. So this is very important to know and as a first step to your spice analysis.
+
+**Dave Jones:** Yes, it's not very sexy, but it's vital to know. So, I hope you found that useful and there will be a follow-up videos with all sorts of different types of analysis options.
+
+**Dave Jones:** Catch you next time.

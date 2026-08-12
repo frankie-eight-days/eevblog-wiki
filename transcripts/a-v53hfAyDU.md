@@ -3,303 +3,343 @@ video_id: a-v53hfAyDU
 title: EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY
 url: https://www.youtube.com/watch?v=a-v53hfAyDU
 source: youtube-asr
-timestamps: {"0": 0, "1": 11, "2": 28, "3": 40, "4": 53, "5": 70, "6": 85, "7": 98, "8": 115, "9": 127, "10": 143, "11": 154, "12": 168, "13": 180, "14": 194, "15": 211, "16": 226, "17": 241, "18": 254, "19": 270, "20": 287, "21": 305, "22": 322, "23": 339, "24": 354, "25": 367, "26": 379, "27": 391, "28": 406, "29": 422, "30": 437, "31": 451, "32": 467, "33": 482, "34": 498, "35": 513, "36": 528, "37": 541, "38": 555, "39": 566, "40": 578, "41": 595, "42": 608, "43": 621, "44": 636, "45": 651, "46": 667, "47": 683, "48": 697, "49": 712, "50": 727, "51": 740, "52": 755, "53": 771, "54": 790, "55": 804, "56": 822, "57": 836, "58": 855, "59": 871, "60": 883, "61": 897, "62": 918, "63": 933, "64": 946, "65": 959, "66": 970, "67": 982, "68": 995, "69": 1007, "70": 1019, "71": 1031, "72": 1042, "73": 1053, "74": 1064, "75": 1079, "76": 1090, "77": 1104, "78": 1118, "79": 1130, "80": 1150, "81": 1164, "82": 1180, "83": 1196, "84": 1209, "85": 1223, "86": 1236, "87": 1249, "88": 1263, "89": 1276, "90": 1293, "91": 1306, "92": 1322, "93": 1338, "94": 1357, "95": 1375, "96": 1389, "97": 1404, "98": 1418, "99": 1431, "100": 1447, "101": 1460, "102": 1475, "103": 1490, "104": 1509, "105": 1525, "106": 1543, "107": 1556, "108": 1570, "109": 1585, "110": 1599, "111": 1611, "112": 1626, "113": 1643, "114": 1658, "115": 1671, "116": 1686, "117": 1698, "118": 1711, "119": 1727, "120": 1738, "121": 1751, "122": 1765, "123": 1783, "124": 1797, "125": 1808, "126": 1821, "127": 1833, "128": 1848, "129": 1864, "130": 1880, "131": 1892, "132": 1906, "133": 1923, "134": 1936, "135": 1951, "136": 1962, "137": 1979, "138": 1995, "139": 2011, "140": 2024, "141": 2036, "142": 2049, "143": 2065, "144": 2080, "145": 2095, "146": 2106, "147": 2122, "148": 2136}
+timestamps: {"0": 0, "1": 9, "2": 19, "3": 35, "4": 45, "5": 58, "6": 72, "7": 90, "8": 100, "9": 115, "10": 127, "11": 138, "12": 151, "13": 166, "14": 175, "15": 185, "16": 196, "17": 208, "18": 221, "19": 229, "20": 242, "21": 254, "22": 272, "23": 289, "24": 305, "25": 319, "26": 333, "27": 347, "28": 359, "29": 371, "30": 381, "31": 391, "32": 403, "33": 418, "34": 431, "35": 442, "36": 453, "37": 480, "38": 489, "39": 502, "40": 513, "41": 533, "42": 546, "43": 558, "44": 566, "45": 578, "46": 591, "47": 603, "48": 619, "49": 634, "50": 649, "51": 665, "52": 673, "53": 687, "54": 699, "55": 709, "56": 727, "57": 742, "58": 753, "59": 769, "60": 783, "61": 798, "62": 812, "63": 826, "64": 844, "65": 855, "66": 872, "67": 881, "68": 890, "69": 907, "70": 920, "71": 933, "72": 957, "73": 972, "74": 979, "75": 988, "76": 1001, "77": 1011, "78": 1022, "79": 1031, "80": 1040, "81": 1056, "82": 1066, "83": 1082, "84": 1090, "85": 1100, "86": 1113, "87": 1125, "88": 1139, "89": 1154, "90": 1164, "91": 1176, "92": 1188, "93": 1196, "94": 1207, "95": 1219, "96": 1228, "97": 1238, "98": 1250, "99": 1258, "100": 1267, "101": 1284, "102": 1295, "103": 1304, "104": 1318, "105": 1327, "106": 1347, "107": 1360, "108": 1375, "109": 1385, "110": 1395, "111": 1408, "112": 1423, "113": 1439, "114": 1453, "115": 1463, "116": 1475, "117": 1488, "118": 1497, "119": 1514, "120": 1525, "121": 1541, "122": 1554, "123": 1570, "124": 1582, "125": 1595, "126": 1606, "127": 1617, "128": 1626, "129": 1643, "130": 1658, "131": 1676, "132": 1690, "133": 1698, "134": 1711, "135": 1727, "136": 1743, "137": 1754, "138": 1768, "139": 1785, "140": 1796, "141": 1806, "142": 1815, "143": 1827, "144": 1842, "145": 1861, "146": 1877, "147": 1886, "148": 1897, "149": 1910, "150": 1923, "151": 1933, "152": 1945, "153": 1956, "154": 1969, "155": 1980, "156": 1998, "157": 2011, "158": 2022, "159": 2031, "160": 2039, "161": 2052, "162": 2065, "163": 2075, "164": 2088, "165": 2098, "166": 2116, "167": 2125, "168": 2136}
 ---
 
-**Dave Jones:** Hi, it's teardown time again. We've got another bit of Rohde & Schwarz power supply kit and we love looking at these things. I've had this one for quite a while. I was going to do a video when it
+**Dave Jones:** Hi, it's teardown time again. We've got another bit of Rohde & Schwarz power supply kit and we love looking at these things. I've had this one for quite a while.
 
-**Dave Jones:** was released back in April, but unfortunately, things got in the way. And we have seen the NGE100 teardown before. I'll link that in up here if you haven't seen it. And it is a cute little smallish form factor triple output
+**Dave Jones:** I was going to do a video when it was released back in April, but unfortunately, things got in the way. And we have seen the NGE100 teardown before. I'll link that in up here if you haven't seen it.
 
-**Dave Jones:** 33 watt per channel power supply and this is part of their basic series power supplies, but they've released this new NGA100 series. It's not designed to replace this. It's designed to supplement it and it's a bit of a
+**Dave Jones:** And it is a cute little smallish form factor triple output 33 watt per channel power supply and this is part of their basic series power supplies, but they've released this new NGA100 series.
 
-**Dave Jones:** different beast. It either comes in a single or a dual output. There's no triple output version of this. Now, it's advertised as a linear power supply whether or not it's a linear output stage like this with a switching
+**Dave Jones:** It's not designed to replace this. It's designed to supplement it and it's a bit of a different beast. It either comes in a single or a dual output. There's no triple output version of this.
 
-**Dave Jones:** tracking pre-regulator that remains to be seen, but it is significantly bigger. Check that out. It is much deeper for actually less output. This is only 40 watts per channel, so 80 watts total. So, technically, this is less total
+**Dave Jones:** Now, it's advertised as a linear power supply whether or not it's a linear output stage like this with a switching tracking pre-regulator that remains to be seen, but it is significantly bigger.
 
-**Dave Jones:** power output than this series up here. So, it could be completely linear. There's a reason for the size in these suckers. Anyway, exactly the same look and feel form factor. These actually fit in a 19 inch rack mount, so you can
+**Dave Jones:** Check that out. It is much deeper for actually less output. This is only 40 watts per channel, so 80 watts total. So, technically, this is less total power output than this series up here.
 
-**Dave Jones:** actually get a rack mount kit to mount like two of them side by side in a 19 inch rack. So, that's very nice, but they do come with the tilting bail feet on them. And even though it's part of the basic series
+**Dave Jones:** So, it could be completely linear. There's a reason for the size in these suckers. Anyway, exactly the same look and feel form factor. These actually fit in a 19 inch rack mount, so you can actually get a rack mount kit to mount like two of them side by side in a 19 inch rack.
 
-**Dave Jones:** supplies, here's where it fits into the overall scheme of things. It's, you know, got some pretty advanced stuff in terms of like low current measurement and resolution and accuracy. It's like 0.02%. It's absolutely crazy and you'll get 1 microamp current resolution out of
+**Dave Jones:** So, that's very nice, but they do come with the tilting bail feet on them. And even though it's part of the basic series supplies, here's where it fits into the overall scheme of things.
 
-**Dave Jones:** this thing. So, I'm really looking forward to powering this thing up and having a play around with that. Anyway, we'll do that at the end because, you know, as we say here on the EEVblog, don't turn it on, take it apart.
+**Dave Jones:** It's, you know, got some pretty advanced stuff in terms of like low current measurement and resolution and accuracy. It's like 0.02%. It's absolutely crazy and you'll get 1 microamp current resolution out of this thing.
 
-**Dave Jones:** But, it comes in two different models. The one we're looking at, this is the NGA142. This is a two-output 0 to 100 V per channel. So, this is rather novel. There's not many power supplies that'll do 0 to 100 V and this will do 0 to 100
+**Dave Jones:** So, I'm really looking forward to powering this thing up and having a play around with that. Anyway, we'll do that at the end because, you know, as we say here on the EEVblog, don't turn it on, take it apart.
 
-**Dave Jones:** V at 2 A per channel. And of course, you can put them in series to do 0 to 200 V at 2 A or you can put them in parallel to do 0 to 100 V at 4 A. The other
+**Dave Jones:** But, it comes in two different models. The one we're looking at, this is the NGA142. This is a two-output 0 to 100 V per channel. So, this is rather novel.
 
-**Dave Jones:** model, the NGE102, that is the 35 V supply and that'll do up to 6 A. And as you can see, they use the same terminals that they used on the NGE series up here. I'm not a fan of these.
+**Dave Jones:** There's not many power supplies that'll do 0 to 100 V and this will do 0 to 100 V at 2 A per channel. And of course, you can put them in series to do 0 to 200 V at 2 A or you can put them in parallel to do 0 to 100 V at 4 A.
 
-**Dave Jones:** They don't open very wide. If you have a look there, it's really difficult to get There is a hole down through the threading there. You can get your wire, but I Yeah, I I really don't I'm not a
+**Dave Jones:** The other model, the NGE102, that is the 35 V supply and that'll do up to 6 A. And as you can see, they use the same terminals that they used on the NGE series up here.
 
-**Dave Jones:** fan of these terminals. Look, you can't open them very wide. There's the hole. Maybe you can see it down in there. And I I don't know. And they're red and blue. That's that European rubbish color code. So, I Yeah, I don't know. I prefer
+**Dave Jones:** I'm not a fan of these. They don't open very wide. If you have a look there, it's really difficult to get There is a hole down through the threading there.
 
-**Dave Jones:** red and black. Call me old-fashioned. And thanks to Rohde & Schwarz, I actually have two of these to give away. I've got one 142 model, the 0 to 100 V, and one 102 model, the two-channel 0 to 35 V model. So, stick around for the end
+**Dave Jones:** You can get your wire, but I Yeah, I I really don't I'm not a fan of these terminals. Look, you can't open them very wide. There's the hole. Maybe you can see it down in there.
 
-**Dave Jones:** of the video for details on that giveaway. Everyone loves a giveaway. Now, on the back, which we didn't get on the NGE model, we've got the sense inputs as well. Rear channel sense on the back. That's really nice for doing
+**Dave Jones:** And I I don't know. And they're red and blue. That's that European rubbish color code. So, I Yeah, I don't know. I prefer red and black. Call me old-fashioned.
 
-**Dave Jones:** remote sensing on loads and stuff like that. So, even though it's a basic series, Um, added that. Fantastic. And then we've got uh digital IO trigger as well. Really great for production to automated production test systems, which I've done a lot of in my career. Anyway,
+**Dave Jones:** And thanks to Rohde & Schwarz, I actually have two of these to give away. I've got one 142 model, the 0 to 100 V, and one 102 model, the two-channel 0 to 35 V model.
 
-**Dave Jones:** it's got the LANs and the USBs, and there's a Wi-Fi option as well. Oh, look at the big bolt for the toroidal transformer. Ho ho, everyone's getting a bit moist now. And uh interestingly, they got the voltage selection on the
+**Dave Jones:** So, stick around for the end of the video for details on that giveaway. Everyone loves a giveaway. Now, on the back, which we didn't get on the NGE model, we've got the sense inputs as well.
 
-**Dave Jones:** bottom here. Good old-fashioned switches. Nice. I like it. Warranty expires if broken. Not one stuff given. All right, so let's get this bad boy open. And even though this is the basic series, uh don't get excited that you're going to be able to
+**Dave Jones:** Rear channel sense on the back. That's really nice for doing remote sensing on loads and stuff like that. So, even though it's a basic series, Um, added that. Fantastic.
 
-**Dave Jones:** get a Rohde & Schwarz power supply for a couple of hundred bucks. Um, this is still an advanced uh bit of kit. And it's, I think, um the price, like retail uh price is still like 1,500 Yankee bucks or something. So, it's not cheap,
+**Dave Jones:** And then we've got uh digital IO trigger as well. Really great for production to automated production test systems, which I've done a lot of in my career. Anyway, it's got the LANs and the USBs, and there's a Wi-Fi option as well.
 
-**Dave Jones:** but Rohde & Schwarz don't make cheap bits of kit. That's why it's going to be really nice inside. So, can we lift this off? Whoa, we're in. Oh, look at that. Beautiful. Oh, very different. Very different to the uh NGE series, which
+**Dave Jones:** Oh, look at the big bolt for the toroidal transformer. Ho ho, everyone's getting a bit moist now. And uh interestingly, they got the voltage selection on the bottom here.
 
-**Dave Jones:** was a real compact uh beast. Um, this one actually has a fair bit of uh space inside, and obviously, it looks like it's a full linear jobby. Cuz look at the size of these power supplies. Whereas the NGE series, uh that was a
+**Dave Jones:** Good old-fashioned switches. Nice. I like it. Warranty expires if broken. Not one stuff given. All right, so let's get this bad boy open. And even though this is the basic series, uh don't get excited that you're going to be able to get a Rohde & Schwarz power supply for a couple of hundred bucks.
 
-**Dave Jones:** linear output stage. Here's a photo inside that with a little itty-bitty tiny output uh heat sink on the uh series pass uh linear element on the output. But then it had a tracking pre-regulator, which um pre-regulates like just just like a volt above the
+**Dave Jones:** Um, this is still an advanced uh bit of kit. And it's, I think, um the price, like retail uh price is still like 1,500 Yankee bucks or something. So, it's not cheap, but Rohde & Schwarz don't make cheap bits of kit.
 
-**Dave Jones:** output or something like that. So, you don't need need much output heat sinking, but yep, sure enough, this bad boy looks completely linear. And that toroidal transformer, oh, absolutely brilliant. And one complaint I had about the previous one is that if
+**Dave Jones:** That's why it's going to be really nice inside. So, can we lift this off? Whoa, we're in. Oh, look at that. Beautiful. Oh, very different. Very different to the uh NGE series, which was a real compact uh beast.
 
-**Dave Jones:** you short out that bolt there, then of course you can get a shorted turn on the thing. So, if that that's a trap for young players. So, if that's actually too close to the top case, then you're going to come a gutter. But this one,
+**Dave Jones:** Um, this one actually has a fair bit of uh space inside, and obviously, it looks like it's a full linear jobby. Cuz look at the size of these power supplies.
 
-**Dave Jones:** nah, that's that feels like it that's got a whole finger width in there, so no worries. Oh, you can see you're getting your money's worth inside there. So, all the output is sleeved. Look at the Oh, it feels
+**Dave Jones:** Whereas the NGE series, uh that was a linear output stage. Here's a photo inside that with a little itty-bitty tiny output uh heat sink on the uh series pass uh linear element on the output.
 
-**Dave Jones:** Oh, that feels It's not field of vision. Beautiful sleeving on that. And of course all the processing's on the front. We're not too fussed about the processing. There is the Wi-Fi option. I I think that's like a I don't think it
+**Dave Jones:** But then it had a tracking pre-regulator, which um pre-regulates like just just like a volt above the output or something like that. So, you don't need need much output heat sinking, but yep, sure enough, this bad boy looks completely linear.
 
-**Dave Jones:** comes standard. Don't quote me. Um but yeah, it might be like a software option. But there it is. So, I'm not too fussed. There's an Atmel something or other processor down in there for those playing along at home. Not too fussed,
+**Dave Jones:** And that toroidal transformer, oh, absolutely brilliant. And one complaint I had about the previous one is that if you short out that bolt there, then of course you can get a shorted turn on the thing.
 
-**Dave Jones:** but yeah, that's the complete controller board down in there. Got the battery back up for the real time clock. It'll have really advanced ADCs on it cuz as I said, we're talking about .02% accuracy. We're talking about 1 microamp
+**Dave Jones:** So, if that that's a trap for young players. So, if that's actually too close to the top case, then you're going to come a gutter. But this one, nah, that's that feels like it that's got a whole finger width in there, so no worries.
 
-**Dave Jones:** current resolution on the 200 milliamp range. So, you know, as we'll see when we power this up, it's got lots of digits for for current measurement. So, if you're a current measurement fanboy, ooh, this is a really It's going to be a
+**Dave Jones:** Oh, you can see you're getting your money's worth inside there. So, all the output is sleeved. Look at the Oh, it feels Oh, that feels It's not field of vision.
 
-**Dave Jones:** really nice option for you for measuring like low power devices. And there's our output board down in there. Nippon Chemicon, of course, when you pay this sort of money for a power supply, even their basic series uses Nippon Chemicon
+**Dave Jones:** Beautiful sleeving on that. And of course all the processing's on the front. We're not too fussed about the processing. There is the Wi-Fi option. I I think that's like a I don't think it comes standard.
 
-**Dave Jones:** caps. Absolutely very nice. So, we've only got 22 microfarads output cap. Plus I think there's I see some ceramic surface mount jobbies on the back of as well. but I won't uh take that out. But uh yeah, as with all lab power supplies, you want
+**Dave Jones:** Don't quote me. Um but yeah, it might be like a software option. But there it is. So, I'm not too fussed. There's an Atmel something or other processor down in there for those playing along at home.
 
-**Dave Jones:** to minimize the amount of output capacitance because when you switch uh from constant current to constant voltage mode and vice versa, you don't want the energy in these capacitors cuz this is these are after their the current regulation uh circuitry. So, you
+**Dave Jones:** Not too fussed, but yeah, that's the complete controller board down in there. Got the battery back up for the real time clock. It'll have really advanced ADCs on it cuz as I said, we're talking about .02% accuracy.
 
-**Dave Jones:** don't want a huge amount of output capacitance cuz then that can dump current into your load above your uh current your current setting. So, yeah, um so that's good. 22 mic plus uh whatever, you know, a 10 mic ceramic or
+**Dave Jones:** We're talking about 1 microamp current resolution on the 200 milliamp range. So, you know, as we'll see when we power this up, it's got lots of digits for for current measurement.
 
-**Dave Jones:** something on the back or 1 mic or something like that. So, nice low output capacitance, very nice. And this supply has uh supposedly really fast uh transients as well. So, fantastic for all sorts of production testing. Check out those beasts. Look at them, 6,800
+**Dave Jones:** So, if you're a current measurement fanboy, ooh, this is a really It's going to be a really nice option for you for measuring like low power devices. And there's our output board down in there.
 
-**Dave Jones:** mic a pop, 80 volts uh Nichicons. So, uh they must uh I 80 volts, it's got a 100 volt output. So, I assume that they're in series, are they? Let me just adjust the exposure here cuz those heat sinks
+**Dave Jones:** Nippon Chemicon, of course, when you pay this sort of money for a power supply, even their basic series uses Nippon Chemicon caps. Absolutely very nice. So, we've only got 22 microfarads output cap.
 
-**Dave Jones:** uh really like can cause the camera to uh uh under expose for the rest of it. So, yeah, so we've got two banks of these. Um you might be wondering why we've got three heat sinks here when we've only
+**Dave Jones:** Plus I think there's I see some ceramic surface mount jobbies on the back of as well. but I won't uh take that out. But uh yeah, as with all lab power supplies, you want to minimize the amount of output capacitance because when you switch uh from constant current to constant voltage mode and vice versa, you don't want the energy in these capacitors cuz this is these are after their the
 
-**Dave Jones:** got a two-channel regulator. Well, one of them, if you have a look down there, is for the bridge rectifier. So, yeah, just one alone for the bridge rectifier. And we've got a uh fan on the back. Uh of course, the uh heat sinks are all
+**Dave Jones:** current regulation uh circuitry. So, you don't want a huge amount of output capacitance cuz then that can dump current into your load above your uh current your current setting.
 
-**Dave Jones:** finned correctly to get uh the air flow through here. So, we've got the vents on the side at the front here. So, the air's drawn in here and then goes over the uh fins of the heat sink and
+**Dave Jones:** So, yeah, um so that's good. 22 mic plus uh whatever, you know, a 10 mic ceramic or something on the back or 1 mic or something like that. So, nice low output capacitance, very nice.
 
-**Dave Jones:** extracted out the back there. So, not a particularly large fan. It is uh temperature controlled cuz when you turn it on, it does go and then it eventually uh switches off. And only if you do high loads will that
+**Dave Jones:** And this supply has uh supposedly really fast uh transients as well. So, fantastic for all sorts of production testing. Check out those beasts. Look at them, 6,800 mic a pop, 80 volts uh Nichicons.
 
-**Dave Jones:** come on. Nice attention to detail with this little heat sink down here. They've just got some Well, that's actually Oh, that's really hard. It's not really silastic. It's something else. Anyway, they're rigidly mounting on those. So, any vibration on the board won't cause
+**Dave Jones:** So, uh they must uh I 80 volts, it's got a 100 volt output. So, I assume that they're in series, are they? Let me just adjust the exposure here cuz those heat sinks uh really like can cause the camera to uh uh under expose for the rest of it.
 
-**Dave Jones:** these things to flap around in the breeze and vibrate loose and hit a resonant point and break off. Very nice. It looks like the code name for this project is Stingray. It's a Stingray motherboard. There you go. There's our
+**Dave Jones:** So, yeah, so we've got two banks of these. Um you might be wondering why we've got three heat sinks here when we've only got a two-channel regulator. Well, one of them, if you have a look down there, is for the bridge rectifier.
 
-**Dave Jones:** mains input down there, beautifully crimped and screwed down to the chassis there. And that Yes, that is an Ethernet cable going from the Ethernet port on the back through to the Ethernet connector on the front panel board. I
+**Dave Jones:** So, yeah, just one alone for the bridge rectifier. And we've got a uh fan on the back. Uh of course, the uh heat sinks are all finned correctly to get uh the air flow through here.
 
-**Dave Jones:** don't know what times 1600 means and this is has times 1601. So, I'm not I'm not sure what that's for. Buela Buela. So, our mains cable is heat shrunk like that and that goes over to Here's our input down here. There's
+**Dave Jones:** So, we've got the vents on the side at the front here. So, the air's drawn in here and then goes over the uh fins of the heat sink and extracted out the back there.
 
-**Dave Jones:** our common mode choke and our protection and our X and Y class filtering. So, that's very nice. Can I get the rest of that out? And there's our main switch, real clunking main switch on the front. Nice. And I assume that this tap on the
+**Dave Jones:** So, not a particularly large fan. It is uh temperature controlled cuz when you turn it on, it does go and then it eventually uh switches off. And only if you do high loads will that come on.
 
-**Dave Jones:** transformer here with this little power supply part, that's probably just for powering the front panel digital board, I'd say. And there's our voltage selection main switches down on the bottom of the case. I like how this is just all one big
+**Dave Jones:** Nice attention to detail with this little heat sink down here. They've just got some Well, that's actually Oh, that's really hard. It's not really silastic. It's something else. Anyway, they're rigidly mounting on those.
 
-**Dave Jones:** single board construction. Of course, you got to have the front panel separate because that's a totally different technology and it's isolated. And by totally different technology, I mean much higher layer count, everything else for the BGA packages and all the digital
+**Dave Jones:** So, any vibration on the board won't cause these things to flap around in the breeze and vibrate loose and hit a resonant point and break off. Very nice. It looks like the code name for this project is Stingray.
 
-**Dave Jones:** whatnots. But, this one down here, just one big analog jobby. Now, I can't read this detail on the screen here, but that looks like most of the control stuff for one of the channels. It's duplicated on the other
+**Dave Jones:** It's a Stingray motherboard. There you go. There's our mains input down there, beautifully crimped and screwed down to the chassis there. And that Yes, that is an Ethernet cable going from the Ethernet port on the back through to the Ethernet connector on the front panel board.
 
-**Dave Jones:** side, so we don't need to see the other side there. So, yeah, it looks like we've got two shunt resistors here. They look like a couple of MOSFETs, are they? Yep, so they'd be doing your range current range switching. Is that your
+**Dave Jones:** I don't know what times 1600 means and this is has times 1601. So, I'm not I'm not sure what that's for. Buela Buela. So, our mains cable is heat shrunk like that and that goes over to Here's our input down here.
 
-**Dave Jones:** ADC down there? Not entirely sure. If we move over to here, this is the input of course coming from our transformer tap here. We've got input surface mount fusing down there, but that's not designed for protecting your output of
+**Dave Jones:** There's our common mode choke and our protection and our X and Y class filtering. So, that's very nice. Can I get the rest of that out? And there's our main switch, real clunking main switch on the front.
 
-**Dave Jones:** course. That only pops in case of circuit failure. Now, in terms of the output here, of course they're going to have the current sense there. You can see the extra sense wire on so the main drive and then the main and then sense
+**Dave Jones:** Nice. And I assume that this tap on the transformer here with this little power supply part, that's probably just for powering the front panel digital board, I'd say. And there's our voltage selection main switches down on the bottom of the case.
 
-**Dave Jones:** wire coming back for the positive and negative. They snake all the way along the back of the case over to a relay over here. So, that relay there, that could be for doing your series parallel stuff. So, I'd say that's the
+**Dave Jones:** I like how this is just all one big single board construction. Of course, you got to have the front panel separate because that's a totally different technology and it's isolated.
 
-**Dave Jones:** case there, and of course that's right near our output sense connections as well. Not sure what's happening down in there. Hard to get the right light at the right angle to see a part number on that jobby. Once again, can't read that part number
+**Dave Jones:** And by totally different technology, I mean much higher layer count, everything else for the BGA packages and all the digital whatnots. But, this one down here, just one big analog jobby.
 
-**Dave Jones:** from my camcorder screen, but something's going on there, which is interesting. That's smack in the middle of the design, so it's like shared both, but then we've got jumper settings there. Once again, with the X designator, so not sure what what setting that's got.
+**Dave Jones:** Now, I can't read this detail on the screen here, but that looks like most of the control stuff for one of the channels. It's duplicated on the other side, so we don't need to see the other side there.
 
-**Dave Jones:** Here's our bridge rectifier. There's actually another one next to it. It's hard to see in there, but it's a smaller one, and that's duplicated on the other side as well. So, this one heatsink handles four bridge rectifiers. So, one would be
+**Dave Jones:** So, yeah, it looks like we've got two shunt resistors here. They look like a couple of MOSFETs, are they? Yep, so they'd be doing your range current range switching.
 
-**Dave Jones:** the main power bridge rectifier, another one would be a secondary one for pairing something else, like the control stuff. And there is our main output MOSFETs with a nice-looking temperature sensor on the heat sink there. That's very schmick, of course. Any decent power
+**Dave Jones:** Is that your ADC down there? Not entirely sure. If we move over to here, this is the input of course coming from our transformer tap here. We've got input surface mount fusing down there, but that's not designed for protecting your output of course.
 
-**Dave Jones:** supply, especially in this sort of price class, even though it's a basic, in quote marks, model. Yep, nice. This thing would be bulletproof. So, there you have it. That's a teardown inside this bad boy, and uh very impressive, of
+**Dave Jones:** That only pops in case of circuit failure. Now, in terms of the output here, of course they're going to have the current sense there. You can see the extra sense wire on so the main drive and then the main and then sense wire coming back for the positive and negative.
 
-**Dave Jones:** course. Very high-quality construction, high-quality components used, and and it'd be lots of precision parts as well. As I said, we're talking about 0.02% class accuracy with uh yeah, it'd have a really high resolution ADC in this thing, and current range switching and
+**Dave Jones:** They snake all the way along the back of the case over to a relay over here. So, that relay there, that could be for doing your series parallel stuff.
 
-**Dave Jones:** stuff like that. Let's actually uh put this thing back together, power it up, and I'll show you the resolution on this, which is really quite remarkable for like the bottom-of-the-range instrument. Okay, so let's turn it on, and as with the uh NGE series, you turn
+**Dave Jones:** So, I'd say that's the case there, and of course that's right near our output sense connections as well. Not sure what's happening down in there. Hard to get the right light at the right angle to see a part number on that jobby.
 
-**Dave Jones:** it on. Don't know if you can You can probably hear that, but trust me, that is really loud. I don't know why they have to default to like maximum turn on for the fan. It's really annoying. I know the
+**Dave Jones:** Once again, can't read that part number from my camcorder screen, but something's going on there, which is interesting. That's smack in the middle of the design, so it's like shared both, but then we've got jumper settings there.
 
-**Dave Jones:** process is not booted up yet, so the fan just defaults to, you know, 100% on, but if there was some way that they could fix that, that'd be really nice. Anyway, oh. Oh. Straight off the bat, everyone's soiling their pants. Look at the
+**Dave Jones:** Once again, with the X designator, so not sure what what setting that's got. Here's our bridge rectifier. There's actually another one next to it. It's hard to see in there, but it's a smaller one, and that's duplicated on the other side as well.
 
-**Dave Jones:** resolution on that current. We're talking six-digit resolution. This is incredible. That's 10 microamps there on like the full 2-amp range. So, let's change the current here, and sure enough, oh no. No, okay. So, the set current, we can only go to 1 mA. Yeah, I
+**Dave Jones:** So, this one heatsink handles four bridge rectifiers. So, one would be the main power bridge rectifier, another one would be a secondary one for pairing something else, like the control stuff.
 
-**Dave Jones:** believe I read that in the manual somewhere. That's all right. But, uh the readback current, I assume, unless these are two digits on the end are fake, then yeah, we should be able to read 10 microamps resolution on the 2 amp range.
+**Dave Jones:** And there is our main output MOSFETs with a nice-looking temperature sensor on the heat sink there. That's very schmick, of course. Any decent power supply, especially in this sort of price class, even though it's a basic, in quote marks, model.
 
-**Dave Jones:** That'd be incredible. That's amazing dynamic range. You know, if you're developing like a Wi-Fi product or something like that, you can like just keep it on the 2 amp measurement range and measure, you know, like an amp when
+**Dave Jones:** Yep, nice. This thing would be bulletproof. So, there you have it. That's a teardown inside this bad boy, and uh very impressive, of course. Very high-quality construction, high-quality components used, and and it'd be lots of precision parts as well.
 
-**Dave Jones:** it's transmitting or you know, you got a some high-powered product uh doing something like uh transmitting a decent amount of RF or whatnot, and then you uh and then when it goes to sleep um or just, you know, background idle or
+**Dave Jones:** As I said, we're talking about 0.02% class accuracy with uh yeah, it'd have a really high resolution ADC in this thing, and current range switching and stuff like that.
 
-**Dave Jones:** whatever, and it's drawing, you know, 100 microamps or something, you can still get decent resolution on that. Nice. Yeah, so the minimum we can go there for our constant current mode is 1 milliamp, but of course, that's like
+**Dave Jones:** Let's actually uh put this thing back together, power it up, and I'll show you the resolution on this, which is really quite remarkable for like the bottom-of-the-range instrument. Okay, so let's turn it on, and as with the uh NGE series, you turn it on.
 
-**Dave Jones:** plenty. So, let's just uh switch that output on, right? So, we'll set it to 20 volts. What it Well, look, we can I can show you that uh it can actually go much higher than that. There you go. 100.05
+**Dave Jones:** Don't know if you can You can probably hear that, but trust me, that is really loud. I don't know why they have to default to like maximum turn on for the fan.
 
-**Dave Jones:** volts maximum. Not too many power supplies on the market can do uh you know, 0 to 100 volts. As I said, uh this is the 142 model. The 102 model actually has uh 35 volts maximum output, I believe.
+**Dave Jones:** It's really annoying. I know the process is not booted up yet, so the fan just defaults to, you know, 100% on, but if there was some way that they could fix that, that'd be really nice.
 
-**Dave Jones:** You know, your more traditional uh voltage range power supply. But, with that, of course, you get extra current. You get 6 amps instead of 2 amps maximum. So, the uh key layout's all the same. The operation is the same as the
+**Dave Jones:** Anyway, oh. Oh. Straight off the bat, everyone's soiling their pants. Look at the resolution on that current. We're talking six-digit resolution. This is incredible. That's 10 microamps there on like the full 2-amp range.
 
-**Dave Jones:** previous one, except uh of course, the display is uh significantly different to the previous one. As you can see, the uh display is uh significantly different. This uh new NGA one actually has a lot more information. It's got your P min
+**Dave Jones:** So, let's change the current here, and sure enough, oh no. No, okay. So, the set current, we can only go to 1 mA. Yeah, I believe I read that in the manual somewhere.
 
-**Dave Jones:** and P max uh here, and of course, your V min and V max. Uh and of course, it's only uh dual output, and that's why I guess it can display more, but this one could have uh displayed the same sort of
+**Dave Jones:** That's all right. But, uh the readback current, I assume, unless these are two digits on the end are fake, then yeah, we should be able to read 10 microamps resolution on the 2 amp range.
 
-**Dave Jones:** info. So, I they do have a new like they've got a B model of this or something, I believe now. I'm not sure what the uh differences are, but yeah, because this one's been out for quite some time. But yeah,
+**Dave Jones:** That'd be incredible. That's amazing dynamic range. You know, if you're developing like a Wi-Fi product or something like that, you can like just keep it on the 2 amp measurement range and measure, you know, like an amp when it's transmitting or you know, you got a some high-powered product uh doing something like uh transmitting a decent amount of RF or whatnot, and then you uh and then when it goes to sleep um or
 
-**Dave Jones:** that is a nice display. Not as big. I guess it would be nice if it had like options to like make the display a bit bigger or something like that like the fonts a bit bigger and maybe if you
+**Dave Jones:** just, you know, background idle or whatever, and it's drawing, you know, 100 microamps or something, you can still get decent resolution on that. Nice. Yeah, so the minimum we can go there for our constant current mode is 1 milliamp, but of course, that's like plenty.
 
-**Dave Jones:** didn't need this other stuff, you could have like a bigger display like up here or something like that. But as I said, this has got more digities, more goodness. But look at the resolution difference. I mean, this is only like
+**Dave Jones:** So, let's just uh switch that output on, right? So, we'll set it to 20 volts. What it Well, look, we can I can show you that uh it can actually go much higher than that.
 
-**Dave Jones:** three digits for the voltage, four digits resolution for the current. This is six digits for the voltage and six digits for the current. You know, no contest. But of course, there's a reason why both of these models exist. Like
+**Dave Jones:** There you go. 100.05 volts maximum. Not too many power supplies on the market can do uh you know, 0 to 100 volts. As I said, uh this is the 142 model.
 
-**Dave Jones:** this one it might be more suitable for some tasks and this one's more suitable for other tasks. So, it's not like this one is just better in every respect than this one here. It's you know, pros and cons. Go and read the data sheet for
+**Dave Jones:** The 102 model actually has uh 35 volts maximum output, I believe. You know, your more traditional uh voltage range power supply. But, with that, of course, you get extra current.
 
-**Dave Jones:** yourself. I mean, this is triple output for starters, smaller form factor. You know, it's significantly different. So, let's switch on our output here and see if we do get the extra two digits measurement resolution there. So, let's see if we go down to 10 microamps and we
+**Dave Jones:** You get 6 amps instead of 2 amps maximum. So, the uh key layout's all the same. The operation is the same as the previous one, except uh of course, the display is uh significantly different to the previous one.
 
-**Dave Jones:** do. Yep. Yep, that's incrementing by single digits there. Like so, we're down in the noise. Like so, it's even though we've got no load on this thing. Can we actually zero that out? I'm not I'm not sure if
+**Dave Jones:** As you can see, the uh display is uh significantly different. This uh new NGA one actually has a lot more information. It's got your P min and P max uh here, and of course, your V min and V max.
 
-**Dave Jones:** they have the ability to do that. That'd be nice, wouldn't it? Given that you know, they advertise the capability of this thing to measure like down to one microamp. So, apparently there is a 200 milliamp range we can
+**Dave Jones:** Uh and of course, it's only uh dual output, and that's why I guess it can display more, but this one could have uh displayed the same sort of info.
 
-**Dave Jones:** switch to and we get an extra digit yet again. Now, this is interesting though. Like it's given us like V min 16.5 volts here. So, is that like what it's actually measured? Minimum? Like that doesn't seem to Is that changing? No, it's 16.5 volts
+**Dave Jones:** So, I they do have a new like they've got a B model of this or something, I believe now. I'm not sure what the uh differences are, but yeah, because this one's been out for quite some time.
 
-**Dave Jones:** minimum. That doesn't make sense. And 3.77 W maximum? I've got this uh set to 100 mA. It would have been nice to put the display here and show what our current uh limit is. With, you know, I've set
+**Dave Jones:** But yeah, that is a nice display. Not as big. I guess it would be nice if it had like options to like make the display a bit bigger or something like that like the fonts a bit bigger and maybe if you didn't need this other stuff, you could have like a bigger display like up here or something like that.
 
-**Dave Jones:** that. There it is there. I set it to 100 mA current limit, but they don't actually uh display that. Which with all the information on the screen, like why not? Yeah, I don't get this at all. Look, I've been playing around with this and
+**Dave Jones:** But as I said, this has got more digities, more goodness. But look at the resolution difference. I mean, this is only like three digits for the voltage, four digits resolution for the current.
 
-**Dave Jones:** uh look, it's I've got no load on here and it's showing me like P max equals .36 W. Where did it get that from? And uh as you saw before, it was like 16 V from 100 V. What was it measuring that
+**Dave Jones:** This is six digits for the voltage and six digits for the current. You know, no contest. But of course, there's a reason why both of these models exist. Like this one it might be more suitable for some tasks and this one's more suitable for other tasks.
 
-**Dave Jones:** minimum when it was ramping down? When I actually switched the output off like that, on and off. If I just I don't know. Keep doing that a number of times. Will it is it like glitching or something? Or,
+**Dave Jones:** So, it's not like this one is just better in every respect than this one here. It's you know, pros and cons. Go and read the data sheet for yourself.
 
-**Dave Jones:** you know, taking the measurement at the inappropriate time when it's But how it does that for like current? I I don't know. Like I maximum, like 21 mA. Or where's it drawing 21 mA? I've got no load. Don't get it. So, anyway, yeah,
+**Dave Jones:** I mean, this is triple output for starters, smaller form factor. You know, it's significantly different. So, let's switch on our output here and see if we do get the extra two digits measurement resolution there.
 
-**Dave Jones:** these V min V max, these are operating like your digital multimeter min max mode. Oh, and P min max as well. Um, so it's like historical uh data to show you, but I can't I had a look at the
+**Dave Jones:** So, let's see if we go down to 10 microamps and we do. Yep. Yep, that's incrementing by single digits there. Like so, we're down in the noise. Like so, it's even though we've got no load on this thing.
 
-**Dave Jones:** manual and I can't see where it like it doesn't it just mentions this. It doesn't sh- uh tell you where to reset it or anything like that. I mean, you know, you go into menu and it's like, "Well, where do you reset that?" I don't
+**Dave Jones:** Can we actually zero that out? I'm not I'm not sure if they have the ability to do that. That'd be nice, wouldn't it? Given that you know, they advertise the capability of this thing to measure like down to one microamp.
 
-**Dave Jones:** I don't get it. So, yeah, that's that's strange. I don't like they've got all this uh min max information here. Like there should be like a min max enable button on the front panel. Um, really? I mean, electronic fuse button? Like, you know,
+**Dave Jones:** So, apparently there is a 200 milliamp range we can switch to and we get an extra digit yet again. Now, this is interesting though. Like it's given us like V min 16.5 volts here.
 
-**Dave Jones:** that's you could argue you should be like buried away in the menu or remote well remote local that's okay. A log button of course and yes we do actually have USB logging but got no stick. If we plug
+**Dave Jones:** So, is that like what it's actually measured? Minimum? Like that doesn't seem to Is that changing? No, it's 16.5 volts minimum. That doesn't make sense. And 3.77 W maximum?
 
-**Dave Jones:** in a sticky duder, is it going to just automatically log that and it does 10 readings per second detecting USB. Come on. What? Finally got a USB stick that works. Supports FAT32 only but yeah, there we go logging started. So
+**Dave Jones:** I've got this uh set to 100 mA. It would have been nice to put the display here and show what our current uh limit is. With, you know, I've set that.
 
-**Dave Jones:** presumably it like logs all the voltage and current and everything else. I'll overlay what I've got here anyway. So even I've got no load but it should get something. Should log voltage and current for both the channels continuously at 10 times per second. So
+**Dave Jones:** There it is there. I set it to 100 mA current limit, but they don't actually uh display that. Which with all the information on the screen, like why not?
 
-**Dave Jones:** that's really nice. Anyway, let's go into our menu here and have a look. Yeah, similar sort of thing. Output protection fuse easy arb easy ramp. There's some features for doing programmability. Current range, there it is current range. So yeah, it's not
+**Dave Jones:** Yeah, I don't get this at all. Look, I've been playing around with this and uh look, it's I've got no load on here and it's showing me like P max equals .36 W.
 
-**Dave Jones:** automatic. We have to go in there and select that. Current range ah, there you go. Current measuring you set it separately for each channel. So let's go low there. And boom and get out of that. Boom, look at that. One micro amp
+**Dave Jones:** Where did it get that from? And uh as you saw before, it was like 16 V from 100 V. What was it measuring that minimum when it was ramping down?
 
-**Dave Jones:** resolution. Thank you very much. And once again, we're just seeing the like the current noise floor here basically. And ripple and noise here over 20 MHz bandwidth, we're only talking like 150 microvolts RMS. This is no load at 10
+**Dave Jones:** When I actually switched the output off like that, on and off. If I just I don't know. Keep doing that a number of times. Will it is it like glitching or something?
 
-**Dave Jones:** volts. It's spec for the 142 is less than 1.5 millivolts. So it's like an order of magnitude under that with no load. The 102 models actually 500 microvolts ripple and noise RMS. And ripple and noise at 3.3 volts at 1.5
+**Dave Jones:** Or, you know, taking the measurement at the inappropriate time when it's But how it does that for like current? I I don't know. Like I maximum, like 21 mA.
 
-**Dave Jones:** amps. I had to set my current range to auto like the current resolution there to auto. You can actually set it and it jumps up. Otherwise, it yeah, you can come a cropper. Anyway, 5 watts there. I've only got like a little in load on
+**Dave Jones:** Or where's it drawing 21 mA? I've got no load. Don't get it. So, anyway, yeah, these V min V max, these are operating like your digital multimeter min max mode.
 
-**Dave Jones:** it. 12 millivolts peak to peak, but still well under spec at 750 microvolts. Anyway, this is not a review. I'm not going to go to town actually reviewing the performance specifications on this thing. I'm sure it meets every single
+**Dave Jones:** Oh, and P min max as well. Um, so it's like historical uh data to show you, but I can't I had a look at the manual and I can't see where it like it doesn't it just mentions this.
 
-**Dave Jones:** one of them. It's a Rohde & Schwarz. Okay, let's single shot capture this into a 2 ohm load. So, 3.3 volts into a 2 ohm load with 2 amp current limit. We'll just switch that on and boom, that
+**Dave Jones:** It doesn't sh- uh tell you where to reset it or anything like that. I mean, you know, you go into menu and it's like, "Well, where do you reset that?" I don't I don't get it.
 
-**Dave Jones:** ramped up nicely. You can see it doing some Yeah, it looks like Is it doing some hunting in there? But as always, we're looking for overshoots there and there aren't any. So, yep, that is clean. Although, it's almost as if that
+**Dave Jones:** So, yeah, that's that's strange. I don't like they've got all this uh min max information here. Like there should be like a min max enable button on the front panel.
 
-**Dave Jones:** is a deliberate ramp on. I wonder if there's like that's part of the No, that wouldn't be part of the easy ramp thing, would it? No. No, it's Anyway, that's only like 2 milliseconds there. So, yeah, no worries.
+**Dave Jones:** Um, really? I mean, electronic fuse button? Like, you know, that's you could argue you should be like buried away in the menu or remote well remote local that's okay.
 
-**Dave Jones:** Doesn't overshoot. That's the main thing. All right, so what I'm going to do now is just test the transient with constant current. So, I've lowered it to 1 amp here. So, how quickly will it go into constant current mode? Will it
+**Dave Jones:** A log button of course and yes we do actually have USB logging but got no stick. If we plug in a sticky duder, is it going to just automatically log that and it does 10 readings per second detecting USB.
 
-**Dave Jones:** detect that there's an over current and will it go in? So, let's yep, let's set that up and boom, there you go. That's interesting. So, there you go. You can see it ramp up like it did before. It went to its 3.3
+**Dave Jones:** Come on. What? Finally got a USB stick that works. Supports FAT32 only but yeah, there we go logging started. So presumably it like logs all the voltage and current and everything else.
 
-**Dave Jones:** volts. So, it went to the output voltage and then it took 5 milliseconds. It took like 8 milliseconds or something, 7-8 milliseconds to realize that Oh, I need to go into constant current mode. So, it's over volted on that and
+**Dave Jones:** I'll overlay what I've got here anyway. So even I've got no load but it should get something. Should log voltage and current for both the channels continuously at 10 times per second.
 
-**Dave Jones:** there's a little That's interesting little blip in there before it realized No, I need to go into constant current. Thank you very much. So, is that a problem? Well, potentially. You know, it depends on your application. So, okay, for comparison, let's see how this
+**Dave Jones:** So that's really nice. Anyway, let's go into our menu here and have a look. Yeah, similar sort of thing. Output protection fuse easy arb easy ramp. There's some features for doing programmability.
 
-**Dave Jones:** new Keysight EDU triple output power supply does under exactly the same circumstances. 3.3 volts with 1 amp current limit into my 2 amp resistive load here. So, let's give that a whirl. And switch it on. I've got exactly the
+**Dave Jones:** Current range, there it is current range. So yeah, it's not automatic. We have to go in there and select that. Current range ah, there you go. Current measuring you set it separately for each channel.
 
-**Dave Jones:** same time base as before. I don't think I've touched that. Lower the trigger level down here. And There you go. That is significantly different. But that one doesn't overshoot in terms of voltage, does it? So, once again, it's got an interesting
+**Dave Jones:** So let's go low there. And boom and get out of that. Boom, look at that. One micro amp resolution. Thank you very much. And once again, we're just seeing the like the current noise floor here basically.
 
-**Dave Jones:** characteristic response here that just so happens to be near the That's just a coincidence that it's near my trigger level here. Of course, if I increase my trigger level up above that, we can do that again. There you go.
+**Dave Jones:** And ripple and noise here over 20 MHz bandwidth, we're only talking like 150 microvolts RMS. This is no load at 10 volts. It's spec for the 142 is less than 1.5 millivolts.
 
-**Dave Jones:** So, yeah, that's got an interesting response there. But this one doesn't over volt. So, yeah, it's got a bloop bloop. Yeah, so the Rohde & Schwarz one is not that good in terms of its constant current at switch on
+**Dave Jones:** So it's like an order of magnitude under that with no load. The 102 models actually 500 microvolts ripple and noise RMS. And ripple and noise at 3.3 volts at 1.5 amps.
 
-**Dave Jones:** capability. So, I'm wondering if they can, you know, tweak that in software or something. Because yeah, that's a potential issue. You don't want your Technically, cuz because you're over voltage in there, you are also over currenting. Cuz it's
+**Dave Jones:** I had to set my current range to auto like the current resolution there to auto. You can actually set it and it jumps up. Otherwise, it yeah, you can come a cropper.
 
-**Dave Jones:** simple Ohm's law. Voltage at 3.3 volts into your 2 ohms is above your 2 amp your 1 amp current limit, of course. So, yeah, so you're over over currenting here. Whereas the Keysight one won't do that. And I'm sure if we
+**Dave Jones:** Anyway, 5 watts there. I've only got like a little in load on it. 12 millivolts peak to peak, but still well under spec at 750 microvolts. Anyway, this is not a review.
 
-**Dave Jones:** measure a whole bunch of lab power supplies, they're all going to operate they're all going to have their own characteristic response for something like that. But yeah, um that's a bit disappointing that that overshoots. It may be interesting Let me
+**Dave Jones:** I'm not going to go to town actually reviewing the performance specifications on this thing. I'm sure it meets every single one of them. It's a Rohde & Schwarz. Okay, let's single shot capture this into a 2 ohm load.
 
-**Dave Jones:** try the NGE series and see what happens on that. There you go, 3.3 volts, 1 amp. Let's give it a whirl, see what we get. There's our previous Keysight one, and let's single shot capture that. I've gone back to 5 milliseconds per
+**Dave Jones:** So, 3.3 volts into a 2 ohm load with 2 amp current limit. We'll just switch that on and boom, that ramped up nicely. You can see it doing some Yeah, it looks like Is it doing some hunting in there?
 
-**Dave Jones:** division. Oh, there you go. Once again, see, significantly different response. 5 milliseconds per division. So, it takes much longer, and it has a different kind of there once again, there it's ramping up. There is some overshoot, and it
+**Dave Jones:** But as always, we're looking for overshoots there and there aren't any. So, yep, that is clean. Although, it's almost as if that is a deliberate ramp on. I wonder if there's like that's part of the No, that wouldn't be part of the easy ramp thing, would it?
 
-**Dave Jones:** eventually comes back. Let's just run that again. And I've got positive edge trigger, so I can just switch it off and on. There you go. Once again, it's overshooting like that. So, yeah, both of these Rohde & Schwarz supplies have a problem with
+**Dave Jones:** No. No, it's Anyway, that's only like 2 milliseconds there. So, yeah, no worries. Doesn't overshoot. That's the main thing. All right, so what I'm going to do now is just test the transient with constant current.
 
-**Dave Jones:** constant current overshooting. No no problems at all with constant voltage, of course, when you switch that on, it's just hunky-dory, but yeah, that's something that they might want to look into. So, I don't know if this would be
+**Dave Jones:** So, I've lowered it to 1 amp here. So, how quickly will it go into constant current mode? Will it detect that there's an over current and will it go in?
 
-**Dave Jones:** a real-time software response loop doing that, or whether or not it's a you know, an analog loop in the supply. But anyway, I hope they can fix that, cuz that's that's certainly something to consider, cuz technically, that is
+**Dave Jones:** So, let's yep, let's set that up and boom, there you go. That's interesting. So, there you go. You can see it ramp up like it did before. It went to its 3.3 volts.
 
-**Dave Jones:** overcurrenting. Not by much, but yeah, both of them do just do that. Interesting. Now, check this out. What I'm going to do is I'm going to actually change this to 20 volts. Let's just mucking around with it, and I discovered
+**Dave Jones:** So, it went to the output voltage and then it took 5 milliseconds. It took like 8 milliseconds or something, 7-8 milliseconds to realize that Oh, I need to go into constant current mode.
 
-**Dave Jones:** this. Okay, I've got the same 1 amp current limit, so you'd expect to it to have the same result. We've seen some overshoot already in voltage, but on the 20 volt range, this didn't happen on like the lower voltage ranges, but 20
+**Dave Jones:** So, it's over volted on that and there's a little That's interesting little blip in there before it realized No, I need to go into constant current. Thank you very much.
 
-**Dave Jones:** volts. Nothing else has changed. Okay, watch this. Ta-da! Look at that. It ramps up, and it like it it goes up, right? We're 10 milliseconds per division, so after like 6 7 milliseconds or something, it determines, "Oh, I need to current
+**Dave Jones:** So, is that a problem? Well, potentially. You know, it depends on your application. So, okay, for comparison, let's see how this new Keysight EDU triple output power supply does under exactly the same circumstances.
 
-**Dave Jones:** limit, right? So, it's it's headed all the way to it's uh 20 volts and uh then it's come back down and it's it's sort of, you know, clipped it at 4 volts there and then it goes, "Oh, if it like
+**Dave Jones:** 3.3 volts with 1 amp current limit into my 2 amp resistive load here. So, let's give that a whirl. And switch it on. I've got exactly the same time base as before.
 
-**Dave Jones:** for another uh you know, 10 milliseconds, 11 milliseconds." Then it goes, "Oops, nope, I'm still over voltage. I need to um like current that down to limit the current." So, that's interesting. But, if we do that at I'll
+**Dave Jones:** I don't think I've touched that. Lower the trigger level down here. And There you go. That is significantly different. But that one doesn't overshoot in terms of voltage, does it?
 
-**Dave Jones:** go back to uh 3.3. Okay, so I'm going to take a 3.3. Single shot capture that again and boom, we got it. Uh once again, it's it's clamped like that, but at a different voltage again now. So, that's
+**Dave Jones:** So, once again, it's got an interesting characteristic response here that just so happens to be near the That's just a coincidence that it's near my trigger level here. Of course, if I increase my trigger level up above that, we can do that again.
 
-**Dave Jones:** interesting. And if I go to 10 volts, let's try that again. Single shot capture, output. And they are we can see it's sort of starting to do the thing there, but it then goes back down aggressively. So, that that really depends on the uh
+**Dave Jones:** There you go. So, yeah, that's got an interesting response there. But this one doesn't over volt. So, yeah, it's got a bloop bloop. Yeah, so the Rohde & Schwarz one is not that good in terms of its constant current at switch on capability.
 
-**Dave Jones:** voltage range that we're actually got there. And another interesting thing, check check this out, right? If we're going to voltage and I'm twiddling this, I'm still in constant current mode, but you'll actually see this go green. Whoop, you see?
+**Dave Jones:** So, I'm wondering if they can, you know, tweak that in software or something. Because yeah, that's a potential issue. You don't want your Technically, cuz because you're over voltage in there, you are also over currenting.
 
-**Dave Jones:** It goes green like that and it not sure what the deal is there. So, is it jumping out of constant current mode? Um maybe we need like a live uh display. Okay, so I've got it in roll mode now
+**Dave Jones:** Cuz it's simple Ohm's law. Voltage at 3.3 volts into your 2 ohms is above your 2 amp your 1 amp current limit, of course. So, yeah, so you're over over currenting here.
 
-**Dave Jones:** and we're in current limit down here. So, let's see what happens if we change this voltage again. Let's go see if it jumps out of constant current mode. Oh, yeah, look look look at that. Look at that, it's jumping out
+**Dave Jones:** Whereas the Keysight one won't do that. And I'm sure if we measure a whole bunch of lab power supplies, they're all going to operate they're all going to have their own characteristic response for something like that.
 
-**Dave Jones:** of constant current mode. That's interesting, isn't it? WOW, WE should be able to single shot capture that. Actually, let me get out of roll mode. All right, so let's see if we can capture this. I've got uh 10
+**Dave Jones:** But yeah, um that's a bit disappointing that that overshoots. It may be interesting Let me try the NGE series and see what happens on that. There you go, 3.3 volts, 1 amp.
 
-**Dave Jones:** milli sample milliseconds per division. Okay, I'll go into I'll adjust the voltage while we're in constant current mode, remember that, and you watch it, it's going to jump. We saw those little spikes. Now we'll zoom in and we'll capture those spikes.
+**Dave Jones:** Let's give it a whirl, see what we get. There's our previous Keysight one, and let's single shot capture that. I've gone back to 5 milliseconds per division. Oh, there you go.
 
-**Dave Jones:** Can up. No, it just went out there. There we go. Bingo. Captured. It It lasts for like, you know, 12 milliseconds or something like that, and it's jumped out of constant current mode when we adjust the voltage. That's very
+**Dave Jones:** Once again, see, significantly different response. 5 milliseconds per division. So, it takes much longer, and it has a different kind of there once again, there it's ramping up. There is some overshoot, and it eventually comes back.
 
-**Dave Jones:** interesting. Why is it doing that? Oh, it's not a consistent time. That's a bit nasty, isn't it? Wow. Yeah, um like you shouldn't It shouldn't jump out of constant current mode when you adjust the voltage like that. Uh I
+**Dave Jones:** Let's just run that again. And I've got positive edge trigger, so I can just switch it off and on. There you go. Once again, it's overshooting like that. So, yeah, both of these Rohde & Schwarz supplies have a problem with constant current overshooting.
 
-**Dave Jones:** think we have a glitch. Anyway, this isn't going to be a review. There's going to be like this has a whole stuff a whole bunch of stuff. As I said, uh it's got the arbitrary waveform stuff. It does the easy ramp, which is I think
+**Dave Jones:** No no problems at all with constant voltage, of course, when you switch that on, it's just hunky-dory, but yeah, that's something that they might want to look into. So, I don't know if this would be a real-time software response loop doing that, or whether or not it's a you know, an analog loop in the supply.
 
-**Dave Jones:** I've had a look at that in previous videos on the previous model, haven't I? But uh yeah, of course you can turn on remote sensing here, channel fusion. I assume that's parallel and series, cuz that's hilarious. Channel fusion.
+**Dave Jones:** But anyway, I hope they can fix that, cuz that's that's certainly something to consider, cuz technically, that is overcurrenting. Not by much, but yeah, both of them do just do that.
 
-**Dave Jones:** Connection mode. Yeah, that'll be series parallel, surely. Oh. Can we Can we Oh, yeah. Yeah, there Yeah, series parallel. Channel fusion. I love it. Germans. I'm sure if you want to look into this, there's a whole bunch of stuff that you
+**Dave Jones:** Interesting. Now, check this out. What I'm going to do is I'm going to actually change this to 20 volts. Let's just mucking around with it, and I discovered this.
 
-**Dave Jones:** can play around with. Ethernet, the wireless LANs, the digital IO, and stuff like that. What can we do with our digital IO? Uh that's It's just trigger, I believe. I don't think it's uh uh output on condition, output on. See,
+**Dave Jones:** Okay, I've got the same 1 amp current limit, so you'd expect to it to have the same result. We've seen some overshoot already in voltage, but on the 20 volt range, this didn't happen on like the lower voltage ranges, but 20 volts.
 
-**Dave Jones:** there you go. So, when it's receives a digital input trigger on channel one or whatever, you can, you know, make it do stuff. You can make it I don't know. Can you condition like that. Let's have a look.
+**Dave Jones:** Nothing else has changed. Okay, watch this. Ta-da! Look at that. It ramps up, and it like it it goes up, right? We're 10 milliseconds per division, so after like 6 7 milliseconds or something, it determines, "Oh, I need to current limit, right?
 
-**Dave Jones:** What options do we have? Output on, output off, fuse trip. There you go. Constant current mode, voltage level. There you go. So, critical event, easy arb active, so you can turn on your arbitrary mode. I was hoping it would do
+**Dave Jones:** So, it's it's headed all the way to it's uh 20 volts and uh then it's come back down and it's it's sort of, you know, clipped it at 4 volts there and then it goes, "Oh, if it like for another uh you know, 10 milliseconds, 11 milliseconds." Then it goes, "Oops, nope, I'm still over voltage.
 
-**Dave Jones:** that. So, yeah, that's that's pretty flexible stuff. Utilities, system test, update, service, all that sort of jazz. Anyway, there you go. That is very cool. That's I like the current resolution on this thing. Um absolutely amazing. I can't
+**Dave Jones:** I need to um like current that down to limit the current." So, that's interesting. But, if we do that at I'll go back to uh 3.3. Okay, so I'm going to take a 3.3.
 
-**Dave Jones:** remember the specs on the current. Hang on. It's actually uh 0.03% of the current, which sounds impressive, but it's got a little uh plus 500 microamps next to it. So, the uh low current stuff, absolute accuracy, you get the resolution uh of
+**Dave Jones:** Single shot capture that again and boom, we got it. Uh once again, it's it's clamped like that, but at a different voltage again now. So, that's interesting. And if I go to 10 volts, let's try that again.
 
-**Dave Jones:** course, which is down to 1 microamp. Accuracy not necessarily there, but still, to get that sort of resolution on a uh you know, basic series power supply like this is really quite incredible. So, 0 to 100 uh volts, very versatile.
+**Dave Jones:** Single shot capture, output. And they are we can see it's sort of starting to do the thing there, but it then goes back down aggressively. So, that that really depends on the uh voltage range that we're actually got there.
 
-**Dave Jones:** Go up to 200 volts in series with uh that sort of current resolution. Very versatile supply. Or you can get the uh 102 version, which is the uh zero, you know, your more traditional uh 35-V model. Anyway, if you want me to do any
+**Dave Jones:** And another interesting thing, check check this out, right? If we're going to voltage and I'm twiddling this, I'm still in constant current mode, but you'll actually see this go green.
 
-**Dave Jones:** specific uh tests on this, I can, and just dump it on my EVblog2 channel. About to hit 100,000 subscribers on there. So, definitely go check out and subscribe to EVblog2 and set the bell notification, all that sort of wanky
+**Dave Jones:** Whoop, you see? It goes green like that and it not sure what the deal is there. So, is it jumping out of constant current mode? Um maybe we need like a live uh display.
 
-**Dave Jones:** business. And as I said, I've got uh two of these bad boys to give away. One is the 104 model you see here, the 100-V. One is the 102 model, the 35-V uh 6-A jobby. So, what I'm going to do, because
+**Dave Jones:** Okay, so I've got it in roll mode now and we're in current limit down here. So, let's see what happens if we change this voltage again. Let's go see if it jumps out of constant current mode.
 
-**Dave Jones:** the uh YouTube uh comment system is always a show. Um I'm just like, no. I'm going to go I'm going to create threads over on the EVblog forum, and one of them will be a random draw. So, I'll link to a EVblog thread down below.
+**Dave Jones:** Oh, yeah, look look look at that. Look at that, it's jumping out of constant current mode. That's interesting, isn't it? WOW, WE should be able to single shot capture that.
 
-**Dave Jones:** Check it out. You have to be a an existing EVblog forum user. You can't just join now and one post and you know, enter. Sorry, but you know, it's for those who contribute to the site. I think that's fair enough. And I'll also
+**Dave Jones:** Actually, let me get out of roll mode. All right, so let's see if we can capture this. I've got uh 10 milli sample milliseconds per division. Okay, I'll go into I'll adjust the voltage while we're in constant current mode, remember that, and you watch it, it's going to jump.
 
-**Dave Jones:** give one away to a hacker space, maker space, school, something like that. So, that will be judged by me. So, I'll have a separate thread for that. Put in your you know, submit a video entry or whatever. Submit, I don't know. I'm just
+**Dave Jones:** We saw those little spikes. Now we'll zoom in and we'll capture those spikes. Can up. No, it just went out there. There we go. Bingo. Captured. It It lasts for like, you know, 12 milliseconds or something like that, and it's jumped out of constant current mode when we adjust the voltage.
 
-**Dave Jones:** yeah, we're a hacker space and we need one of these things and I don't know. I'll choose a worthy winner. So, thank you very much Rohde & Schwarz for providing these to give away to my audience. That's fantastic and an
+**Dave Jones:** That's very interesting. Why is it doing that? Oh, it's not a consistent time. That's a bit nasty, isn't it? Wow. Yeah, um like you shouldn't It shouldn't jump out of constant current mode when you adjust the voltage like that.
 
-**Dave Jones:** interesting look inside a completely linear supply this time instead of the combined tracking switching pre-regulator which you get in this. But, of course, you get advantages in that it is more powerful. It's got triple channel, of course, more
+**Dave Jones:** Uh I think we have a glitch. Anyway, this isn't going to be a review. There's going to be like this has a whole stuff a whole bunch of stuff.
 
-**Dave Jones:** total output power, a smaller form factor, all that sort of jazz. But, yeah, if you want a nicer cleaner linear supply like this, then check it out. Link down below. So, if you like the video, give it a big
+**Dave Jones:** As I said, uh it's got the arbitrary waveform stuff. It does the easy ramp, which is I think I've had a look at that in previous videos on the previous model, haven't I?
 
-**Dave Jones:** thumbs up. As always, discuss down below. Catch you next time.
+**Dave Jones:** But uh yeah, of course you can turn on remote sensing here, channel fusion. I assume that's parallel and series, cuz that's hilarious. Channel fusion. Connection mode. Yeah, that'll be series parallel, surely.
+
+**Dave Jones:** Oh. Can we Can we Oh, yeah. Yeah, there Yeah, series parallel. Channel fusion. I love it. Germans. I'm sure if you want to look into this, there's a whole bunch of stuff that you can play around with.
+
+**Dave Jones:** Ethernet, the wireless LANs, the digital IO, and stuff like that. What can we do with our digital IO? Uh that's It's just trigger, I believe. I don't think it's uh uh output on condition, output on.
+
+**Dave Jones:** See, there you go. So, when it's receives a digital input trigger on channel one or whatever, you can, you know, make it do stuff. You can make it I don't know.
+
+**Dave Jones:** Can you condition like that. Let's have a look. What options do we have? Output on, output off, fuse trip. There you go. Constant current mode, voltage level. There you go.
+
+**Dave Jones:** So, critical event, easy arb active, so you can turn on your arbitrary mode. I was hoping it would do that. So, yeah, that's that's pretty flexible stuff. Utilities, system test, update, service, all that sort of jazz.
+
+**Dave Jones:** Anyway, there you go. That is very cool. That's I like the current resolution on this thing. Um absolutely amazing. I can't remember the specs on the current. Hang on.
+
+**Dave Jones:** It's actually uh 0.03% of the current, which sounds impressive, but it's got a little uh plus 500 microamps next to it. So, the uh low current stuff, absolute accuracy, you get the resolution uh of course, which is down to 1 microamp.
+
+**Dave Jones:** Accuracy not necessarily there, but still, to get that sort of resolution on a uh you know, basic series power supply like this is really quite incredible. So, 0 to 100 uh volts, very versatile.
+
+**Dave Jones:** Go up to 200 volts in series with uh that sort of current resolution. Very versatile supply. Or you can get the uh 102 version, which is the uh zero, you know, your more traditional uh 35-V model.
+
+**Dave Jones:** Anyway, if you want me to do any specific uh tests on this, I can, and just dump it on my EVblog2 channel. About to hit 100,000 subscribers on there.
+
+**Dave Jones:** So, definitely go check out and subscribe to EVblog2 and set the bell notification, all that sort of wanky business. And as I said, I've got uh two of these bad boys to give away.
+
+**Dave Jones:** One is the 104 model you see here, the 100-V. One is the 102 model, the 35-V uh 6-A jobby. So, what I'm going to do, because the uh YouTube uh comment system is always a show.
+
+**Dave Jones:** Um I'm just like, no. I'm going to go I'm going to create threads over on the EVblog forum, and one of them will be a random draw. So, I'll link to a EVblog thread down below.
+
+**Dave Jones:** Check it out. You have to be a an existing EVblog forum user. You can't just join now and one post and you know, enter. Sorry, but you know, it's for those who contribute to the site.
+
+**Dave Jones:** I think that's fair enough. And I'll also give one away to a hacker space, maker space, school, something like that. So, that will be judged by me. So, I'll have a separate thread for that.
+
+**Dave Jones:** Put in your you know, submit a video entry or whatever. Submit, I don't know. I'm just yeah, we're a hacker space and we need one of these things and I don't know.
+
+**Dave Jones:** I'll choose a worthy winner. So, thank you very much Rohde & Schwarz for providing these to give away to my audience. That's fantastic and an interesting look inside a completely linear supply this time instead of the combined tracking switching pre-regulator which you get in this.
+
+**Dave Jones:** But, of course, you get advantages in that it is more powerful. It's got triple channel, of course, more total output power, a smaller form factor, all that sort of jazz.
+
+**Dave Jones:** But, yeah, if you want a nicer cleaner linear supply like this, then check it out. Link down below. So, if you like the video, give it a big thumbs up.
+
+**Dave Jones:** As always, discuss down below. Catch you next time.

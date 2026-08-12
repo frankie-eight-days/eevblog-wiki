@@ -1,0 +1,333 @@
+---
+video_id: 27KRtJ-2sVY
+title: EEVblog #836 - Tour Of The Australian Synchrotron
+url: https://www.youtube.com/watch?v=27KRtJ-2sVY
+source: youtube-asr
+timestamps: {"0": 119, "1": 139, "2": 168, "3": 193, "4": 210, "5": 230, "6": 267, "7": 298, "8": 319, "9": 334, "10": 354, "11": 372, "12": 386, "13": 403, "14": 424, "15": 440, "16": 473, "17": 491, "18": 516, "19": 550, "20": 569, "21": 597, "22": 617, "23": 653, "24": 672, "25": 693, "26": 716, "27": 741, "28": 760, "29": 781, "30": 793, "31": 827, "32": 855, "33": 879, "34": 919, "35": 937, "36": 969, "37": 989, "38": 1015, "39": 1034, "40": 1069, "41": 1088, "42": 1116, "43": 1144, "44": 1161, "45": 1174, "46": 1188, "47": 1226, "48": 1238, "49": 1260, "50": 1279, "51": 1304, "52": 1346, "53": 1363, "54": 1387, "55": 1404, "56": 1425, "57": 1444, "58": 1465, "59": 1486, "60": 1505, "61": 1530, "62": 1550, "63": 1571, "64": 1594, "65": 1610, "66": 1630, "67": 1657, "68": 1680, "69": 1705, "70": 1732, "71": 1747, "72": 1764, "73": 1786, "74": 1800, "75": 1818, "76": 1834, "77": 1852, "78": 1873, "79": 1903, "80": 1920, "81": 1941, "82": 1957, "83": 1978, "84": 2000, "85": 2013, "86": 2037, "87": 2052, "88": 2098, "89": 2114, "90": 2130, "91": 2147, "92": 2174, "93": 2199, "94": 2226, "95": 2240, "96": 2261, "97": 2275, "98": 2298, "99": 2316, "100": 2331, "101": 2376, "102": 2392, "103": 2406, "104": 2426, "105": 2443, "106": 2459, "107": 2476, "108": 2496, "109": 2517, "110": 2539, "111": 2562, "112": 2580, "113": 2597, "114": 2616, "115": 2645, "116": 2661, "117": 2675, "118": 2692, "119": 2707, "120": 2732, "121": 2761, "122": 2786, "123": 2805, "124": 2820, "125": 2840, "126": 2856, "127": 2877, "128": 2905, "129": 2925, "130": 2943, "131": 2963, "132": 2991, "133": 3007, "134": 3019, "135": 3039, "136": 3058, "137": 3089, "138": 3112, "139": 3130, "140": 3160, "141": 3184, "142": 3203, "143": 3228, "144": 3247, "145": 3264, "146": 3297, "147": 3311, "148": 3326, "149": 3361, "150": 3397, "151": 3414, "152": 3435, "153": 3474, "154": 3496, "155": 3518, "156": 3542, "157": 3558, "158": 3587, "159": 3612, "160": 3627, "161": 3646, "162": 3675}
+---
+
+**Dave Jones:** Mhm. Oh, okay. So, this red floor is actually disconnected from the rest of it. Yes, this is the isolation joint here. And the red floor is part of the office and the lab space and is connected to the building. And then the white floor is a lot thicker.
+
+**Dave Jones:** Right. And that's the the floating slab. What's the difference between a synchrotron and a cyclotron? The cyclotron doesn't store the beam, whereas the the synchrotron can ramp up in energy and and store the beam. Got it. So, you will see a lot of cyclotrons in hospitals where they just need to generate a energetic beam to produce uh radio pharmaceuticals. So, there they actually don't need to store the beam.
+
+**Dave Jones:** What they need to do is smash the beam into uh material and make it radioactive so they can inject it into the patient to do imaging and diagnosis. Right. Whereas here we want to store the beam because we want to use the photons that are emitted by the beam as they circulate. So, the acceleration in the circle generates synchrotron radiation, which is what we what we use.
+
+**Dave Jones:** Whereas the other facilities, by and large, want to smash particles And and into into a target. And that's the Large Hadron Collider. Large Hadron Collider are the ones to smash particles into particles. And medical facilities, here's an example of a cyclotron Yep.
+
+**Dave Jones:** where the beam spirals out. Ah, right. you have a an energetic beam and you smash it into a target. Got it. Whereas with a storage ring, you and a and a synchrotron, you ramp up the energy to some value and then you keep it at that value because you're looking at the radiation that's emitted by the stored beam, not smashing into anything.
+
+**Dave Jones:** And what is synchrotron radiation? Can you give a dummy's guide for what synchrotron radiation is? What it is it's essentially like you think of the radiation emitted from a radio transmitter. It's it's the same principle in radio transmitter. You're accelerating an electric charge and you're disturbing the field lines of that charge. So, if you have a static charge, you just have a a charge and you have field lines coming off that. And so, there's no change in those field lines. As soon as you move that charge,
+
+**Dave Jones:** the field lines change. And what are oscillating field lines? Well, an electromagnetic wave. Oscillating electric and magnetic. So, as soon as you move a charge, you generate radiation. So, synchrotron radiation specifically refers to in in most cases a relativistic charge generating high energy radiation. So, but it In terms of the physics, it's more or less the same principle as a radio transmitter.
+
+**Dave Jones:** Got it. And it's But but the term synchrotron radiation is used in astrophysics with a high energy processes out there in the in the universe and also with particle accelerators for high energy beams. From here we can see very interestingly the different types of radiation that's produced by the Australian Synchrotron.
+
+**Dave Jones:** In front of us here we have a conventional style infrared lab. We get a very nice small spot in our infrared so we can get very high resolution infrared scans. So, that's one of the advantages you have with a synchrotron.
+
+**Dave Jones:** How do they scan? How do they scan? Do they beam it? Oh, they just just mechanically move the sample. That's it. But I thought it had like a resolution of nanometers or something. But this is a long wavelength infrared so, it doesn't make sense to have nanometers because that's not your The other ones The other ones do. They have 100 nm resolution.
+
+**Dave Jones:** they steer those? Would they still do it actually the physically mechanically move They mechanically move the sample. The The beam The beam would jerk around too much, but you can get very stable mechanical stages. Yeah. Plus, if you steer it for one, then it's not the right steering for the other, and we've got 14 stations to consider.
+
+**Dave Jones:** Ah, I got it. I I thought each beamline would be able to steer its own once it comes out. No. It'd be able to steer at its Not entirely. Yeah. Yeah, it turns out that it's more stable moving the sample.
+
+**Dave Jones:** Got it. Okay. And then you can see that going up higher up in energy, there's a ultraviolet and soft x-ray beamline over there, and that doesn't require much shielding either cuz the x-rays are absorbed by only a few millimeters of stainless steel.
+
+**Dave Jones:** And then over there, the big aqua turquoise uh lead box, that contains a beamline which does protein crystallography where you shine a beam straight through your sample, and that's in the hard x-ray regime. So, you get the long wavelength, shorter wavelength, and then the shortest wavelength.
+
+**Dave Jones:** We can go over and have a look at the end station of the soft x-ray in a little more detail. Can they be Can those beamlines be positioned effectively anywhere along the uh uh around the uh storage ring, or do they have to be in specific locations for specific reasons?
+
+**Dave Jones:** They're They're more or less anywhere, but they they are driven by special magnet arrays. So, there's a set of magnets which store the beam and confine the beam, and then in between those magnets, you can generate interesting paths for the beam to go on as long as you preserve the symmetry coming in and the symmetry going out, you can actually wiggle the the beam back and forth in interesting ways and generate a particular wavelength that you're interested in, or you can tune the wavelength coming down your beam line,
+
+**Dave Jones:** so it doesn't disturb the wavelengths coming down the other beam lines. That's why we in the optical what Tom's optical one before we saw that yes, they were able to change the wavelength into optical for use. Exactly. To determine the quality of the Now, this is some impressive shiny metal.
+
+**Dave Jones:** We love this stuff. Tell us about this. This is essentially taking advantage of Einstein's photoelectric effect. So, you put a sample in vacuum in one of these chambers, you shine the soft x-rays onto the surface of the material. That material will then emit electrons via the photoelectric effect. So, electrons are bound in an atom.
+
+**Dave Jones:** You add energy through an x-ray, that then liberates the electron from the material, and then it goes through this electron energy spectrum analyzer. So, this is this hemispherical detector there Right. will measure the energy of the electron that comes off the sample. So, you have a known energy of photon coming in onto your sample, a known energy of of the electron coming out, and from that then you can then deduce what's going on in your sample. So, you you measure the known known properties, and then you
+
+**Dave Jones:** can determine some unknown properties of material. Right. Because effectively what this whole facility synchrotron facility is is just a light generator, basically. Isn't it? Is that a correct term to use? Light in a very Light over all. What what wavelengths can you go from?
+
+**Dave Jones:** Infrared up to So, to be to to use the physics term, you're taking a a slice of the electromagnetic spectrum. Yes. So, you're going from the long wavelength end of the spectrum at infrared all the way up to the hard x-ray end of the spectrum. So, you're going from uh less than eV up to hundreds of uh keV in in energy and and everywhere in between.
+
+**Dave Jones:** And you can tune these magnets that are dedicated to the insertion device beam lines and adjust the energy of photons that are that are coming out. So, photon again, photon is physics term for a packet of energy. It's light. It's electromagnetic.
+
+**Dave Jones:** So, we use kind of interchangeably light, photons, x-rays, infrared. It's more or less the same stuff. You just have to modify how you analyze it and what type of information you're going to get out of your experiment and how you probe matter. So, if you want to just look at the surface of the things, you use the low energy photons. And if you want to do some more uh penetrative work or do some uh some imaging or uh do some other um uh x-ray fluorescence analysis, then you
+
+**Dave Jones:** need to have the higher energy x-rays. Because you can do 3D x-ray imaging with this thing, can't you? You can. And in fact, we've done that on our medical imaging beam line. Yep. But once again, that's done by moving the physical object around to scan it and then that gives you a 2D result and then they process it into 3D. Is that correct?
+
+**Dave Jones:** Yes. So, you you just do the mathematics of uh of the CT analysis. Right. And uh the yeah. Computer tomography. So, if you get if you get information along along a line in your sample and you move that that sample around, then you can combine all the other bits of information to deduce what's happening in in three dimensions.
+
+**Dave Jones:** Got it. And all of that's done with the one storage ring. You can do all these different experiments off the one ring without having to change what's in the ring. Yeah, because the ring the ring has it have has its constraints to store the beam stably, but then you have some degrees of freedom on each of the individual beam lines and on the end stations looking at the photon beam.
+
+**Dave Jones:** And in fact on one beam line they've done four-dimensional imaging where the fourth dimension is the elemental composition. So, not only do you get uh a density profile and so you could probably call it five dimensions. So, you get you get a dent you get density and you also get elemental composition.
+
+**Dave Jones:** And you get all that over time as well with You unfortunately you need a static sample because it takes too long to take all the images from all the angles to have the sample also being dynamic cuz as soon as that sample is is dynamic and it's not stable on a time scale of of days Ah, you need days to take a measurement sometimes.
+
+**Dave Jones:** many hours. So, the the sample needs to be static on the time scale of more than days. Otherwise, this the time over which you're imaging it it's not it's not valid then the mathematics won't be valid because you you took this angle at one time, this angle another time. If you if you don't make the assumption that you're looking at the same thing, then the math doesn't work.
+
+**Dave Jones:** Cuz if something's moved, then you saw it it from one angle and then you saw it from another angle and you don't know which way it will have moved. So, it needs to be start So, there are you know, time limitations as well.
+
+**Dave Jones:** And for those really fine surface measurements where you're moving the sample, how do you ensure it doesn't move over the course of a couple of hours? Like you know, if you get minor little earthquakes somewhere, can that sort of or if you really got good anti-vibration tables and a lot of really good anti-vibration tables and you can see you can see even here with these pumps on the ground here they can isolate those vibration. You can see there's various isolation joints and and springs and You got it because they
+
+**Dave Jones:** they would certainly couple a lot of even even the fans in the you know some fans in racks and things like that. You'd have to be very careful about. So yeah, you just have to be careful about how you engineer it. So it's just very well engineered and precision controlled so that you can within the the time scale of your your measurement you can ensure that that's not a limiting factor that the vibration is not a limiting factor in able being able to make the measurement.
+
+**Dave Jones:** And who sets up these beamline projects? Do universities bid or do companies bid or any of them private or are they It's a it's a collaboration. So there's there's in-house knowledge as to how the beamline can perform, what the parameters are, what type of samples can be used and just uh uh experience with doing scientific experiments.
+
+**Dave Jones:** Then there are universities predominantly that come up with the ideas for the experiments and what often happens is that the universities and the researchers there have the research groups that are working on the the implications or the the applications or the use of the data that's generated here. So sometimes the scientists who are doing the measurement here, they will know how to take the data and and and generate the information that they need and then the researchers will then apply that to their particular area of research and
+
+**Dave Jones:** turn that information and data into new knowledge. So, often the users here uh they they use the scientists here to to get their data, but then they take that data away to their lab and analyze it and apply it to their particular project that they're working on.
+
+**Dave Jones:** And the same data could have broad application. Potentially, sometimes. It could, but because of because there are so many settings and so many parameters and so many variables that it's it's very hard for the researchers themselves even to keep track of that, let alone for that to be communicated for someone else to use that data. There are some ex- exceptions, like uh you also asked about industry. There are some uh industry, and the the most uh obvious ones are the mining industry and the pharmaceutical industry. They could come
+
+**Dave Jones:** in with a very standard type of measurement, you know, what's the elements in in the sample? Uh you know, where are the proteins in this particular sample? And then they can go off and say, "Right, we've got, you know, gold in them there hills." Or we have this particular type of protein which we know does XYZ in a biological system.
+
+**Dave Jones:** And if they want to just to have that information, walk in, have the service done, walk away, and keep all that information for themselves, they have to pay for that. There's only a a small percentage of of people that do that. Most of them are pie-in-the-sky research projects where they come in with a grand idea, it gets reviewed, gets given some beam time, and then they walk off, and they may or may not come up with a great discovery. And uh it's just part of fundamental
+
+**Dave Jones:** research that we try and discover what's going on in nature, and we use these fine bits of equipment here to to study in as good a detail as we can what's happening out out there in in nature. How how does this facility compare with other uh synchrotrons around the world?
+
+**Dave Jones:** It's very hard to do a direct comparison because each each lab will have their particular world-beating technique or world-beating because it covers such a breadth of photon range, such a breadth of science discipline, such a breadth of equipment that it's very hard to come up with an all-encompassing response to that. I can highlight a couple of things. For example, on the accelerator, we've set a a world record low vertical beam emittance, more or less the beam size, and that's down to about a picometer beam size. So, when we
+
+**Dave Jones:** specially adjust our skew quadrupoles and really tune our our beam stability, we can get a world record low beam, which is about a picometer. That's the thickness of the of the beam. The the thickness or the diameter? It's a It's a It's a one sigma thickness of the beam.
+
+**Dave Jones:** Right. Got it. And that's all to do with the magnetics, essentially. Yes. Yes, tuning tuning the accelerator. On another example on the on the beamline, there they have a a very clever detector which can detect in less than a few milliseconds on maybe a few hundred nanometer spot size, it can detect the the the elemental composition on that particular point on a sample.
+
+**Dave Jones:** Wow. And so could scan the sample. And so you scan the sample, and so you can get in kind of 100 nanometer steps, Wow. figure out what percentage of what element is on each on each point. And so you can get up come up with these elemental composition maps on an incredibly fine scale. One of the things that they're using that for is to look at where the micronutrients is in grains. So, you take a bit piece of a piece of rice, say, slice it up, put it
+
+**Dave Jones:** in the beam, and scan the the sample along the beam and find out where the the The nutrients are in that grain, and then you will in your agricultural research, you will then try and optimize and get the most nutrients into the the grain that people are going to ingest.
+
+**Dave Jones:** Because you might find that 90% of it is nothing. It's just useless. Well, the problem is that most of it's in the husk. All right. And it's kind of culturally the case where you take the husk away and you eat the the white rice.
+
+**Dave Jones:** All right, I'm here with Tom, and he's working on one of the beam lines, the visible light beam line. Is that correct? Yes. This is Tell us what you do here. So, this is the the optics beam line at the Australian Synchrotron.
+
+**Dave Jones:** So, we use this beam line for diagnostic purposes. This is What what sort of diagnostics? So, we these we use diagnostics to find different properties of the the electron beam. Right. Which is located behind behind this wall. We have um From the the Synchrotron itself, you one of the properties of of electron beams, and even proton beams when they get high enough energies, is that they will actually output radiation when they are put in inside a magnetic field.
+
+**Dave Jones:** Yep. So, this radiation And go around a bend? When they go They they have to be going around a bend, don't they? Well, they are we with the application of a magnetic field, they'll generally be accelerating in one form or another.
+
+**Dave Jones:** So, as it can be seen that the Yeah. the radiation is output in as we said earlier in the visible spectrum here. We use the visible spectrum because it's easier for diagnostic purposes. It's quite hard to use the IR, UV, and X-ray regions for diagnostic purposes, and Okay.
+
+**Dave Jones:** can be a bit dangerous if Right. if you go into those higher energy. Sure. So, this beam can then be used to actually diagnose different uh properties of the the electron beam itself in the synchrotron. So, this beam can be output onto our optics bench, which we have here.
+
+**Dave Jones:** Yep. And this uh these optics benches have to be very precisely leveled. They They and and vibration free as well? Vibration free. We are actually the floor we are standing on of the whole facility is actually damped, so that's Oh, wow. How do they do that? Do they Is it spring-based or It is I think it's floating on uh a form of a form of fire.
+
+**Dave Jones:** Oh. I don't recall Interesting. I I'm not 100% sure about that one, but from what I recall it here. But, this beam is can be um output onto any of these and using these different um like optical um optical mechanics and lenses, we can find things like the different the the field pattern of the machine itself. The field pattern is the the amount of electrons in a given bunch um throughout the throughout the machine. We can also find the We can diagnose instabilities in the bunch. So, if if we find that there's an
+
+**Dave Jones:** instability, we can either correct we can correct these before we lose the beam. And it is important not to have any of these instabilities because uh uh they the beam lines want to have as as constant um synchrotron radiation Yep.
+
+**Dave Jones:** output generally in the X-ray um UV and IR region for the for the actual um for the actual biological purposes. Mhm. And How do they change the wavelength of what's coming out of the synchrotron? Is it one can Is it one wavelength in the synchrotron then you can change it when it comes out of the beam line, or how does it How does that work?
+
+**Dave Jones:** Each of the beam lines uses a device called an insertion device to produce the actual radiation. The insertion device itself is effectively There There are actually multiple types. There's a wiggler, there's an undulator, and then there's bending magnets.
+
+**Dave Jones:** Got it. We use bending magnets here in the the optics beam line. The We've actually just installed the the superconducting wiggler Excellent. actually in the the last the last week or so. Great t-shirt slogan, superconducting wiggler. So, that's So, um that that's just been installed.
+
+**Dave Jones:** So, a wiggler is actually just a an insertion device. So, instead of a bending magnet, which has a single magnet, which will which will bend the beam, this will undulate the beam backwards and forwards. Right. And this will produce kind of waves of electromagnetic radiation.
+
+**Dave Jones:** At the specific frequency you require. at a specific frequency. Got it. With the the higher the the actual magnetic field, the higher the energy, because it's going to bend on a shorter um a shorter bending radius. And this one's designed to produce visible light at what uh And it's pulsed, isn't it?
+
+**Dave Jones:** It is pulsed. The beam The beam is pulsed at approximately 1 GHz. Mhm. And each bunch length is 23 picoseconds. 23 picoseconds. So, it takes quite advanced equipment to to pick up Can imagine. uh different properties of those of those 23 picosecond bunches.
+
+**Dave Jones:** Mhm. We can see here that we've got a um picosecond digitizer. Yep. So, you can with this uh beam line in this gear, you can determine the quality of the of the beam of the beam itself in the synchrotron.
+
+**Dave Jones:** That's what this room's for, basically. Exactly. Okay. And is that an ongoing measurement, or do you still periodically, or before a critical It's We do a lot of things ongoing. Yeah. We have a control room, which is located on the other side of the facility, and they will use, generally, uh electro um electro trade pickups that are actually placed in the beam itself.
+
+**Dave Jones:** Oh, okay. But we can use also the optics bench, and mainly, we use the optics bench for developing new types of new types of um systems to actually take these measurements. Uh and yeah, and then we can go have a look at some data that I've taken out of Excellent. Let's do it.
+
+**Dave Jones:** the front itself. All right. You can give us a look at some data. Okay. So, what we've got here is the the outside of the the optics beam line. So, we can uh we use all these here to process all all the data, and as you can see over here, we've got a few different outputs from the beam itself.
+
+**Dave Jones:** Yeah. So, these are actual These are from pickups that are placed inside the inside the beam. Got it. So, each of the beams will have different things like a beam position monitor, and other devices that can detect uh different like electric uh electric and magnetic fields actually um produced by the the electron beam.
+
+**Dave Jones:** Right. So, as you can see here, we've got this one, which is the amount of This is a loss detector, apparently, the according to its label. according to its label, which is being picked up on this scope here.
+
+**Dave Jones:** Yeah. This is the oscilloscope. So, this is uh um these are are the general um general oscilloscopes we're using at 600 MHz oscilloscopes. Toy stuff. Exactly. So, we have a a slightly a slightly larger oscilloscope over there. And these are all signal amplifiers, are they?
+
+**Dave Jones:** So, each of these uh a lot of this is actually timing. So, a lot of these will be you can use these triggers for the for each year of the samples that you're taking out. Got it. So, you can get from here the the trigger for the actual revolution frequency and then you can get different you can get different triggers to to help you clean up your sample of it.
+
+**Dave Jones:** Right. Beautiful. Then Okay, so what we've got here is um one of the computers that's we uh used to uh for diagnostic purposes. So, as you can see here, there are a few different uh GUIs to keep a um to keep an eye on different of the um parameters of the beam.
+
+**Dave Jones:** Yep. As you can see here, we've got the the beam current, the um current per injection because we're uh currently at a a mode where we're constantly injecting rather than allowing the beam to um reduce in energy and then doing a a much larger injection cuz it it produces a much nicer beam for the for the different beam lines.
+
+**Dave Jones:** But the but the beam current is still 200 milliamps. 200 mA. So, is that uh are the injection ones modulated on top of that or how does that So, they So, that effectively you you lose the actual beam due to um different like I'm trying to think of the word. It's It's like attenuation, but it's the It's the the non-physics word for attenuation.
+
+**Dave Jones:** Oh, okay. Um And what have we got here? This is So, what we got here is the um the the beam current being displayed over a a time scale of hours. So, as you can see have a little sawtooth pattern in it?
+
+**Dave Jones:** So, the sawtooth is due to the the loss of the the slowly reduction of the actual the current because and which will be lost due to the the fact that the um vacuum isn't actually a perfect vacuum. There are particles in the in the beam.
+
+**Dave Jones:** Okay, so there's lot But if it was perfect, then you it would be Well, it would be continuous, wouldn't it? It'd be lossless. It would be lossless. Yeah. Though that there's always going to be different things which can uh remove it, including instabilities as well. They can also result in loss of loss of beam current.
+
+**Dave Jones:** So, we then that beam So, does the one the one beam is used for all the different uh beam line projects, isn't it? So, yes. We have they all tap off the one They all tap off the one beam.
+
+**Dave Jones:** Yeah. We have one We can actually go to this diagram here. Which displays the the synchrotron we have here. So, we can move that one across. Yeah. So, what we have is the the beam starts right here Yep.
+
+**Dave Jones:** at the electron gun. The electron gun puts it out at 90 kV. 90 kV, yeah. It's about three times a regular TV CRT or something like that. About that, yeah. And then we go into the the linac, which is the linear accelerator.
+
+**Dave Jones:** This will accelerate using a bunch of RF cavities up to 100 MeV. Yep. We then pass through to the the um the LINAC to booster ring. The booster ring is the actual synchrotron itself. Right. The the outer ring is actually not a synchrotron.
+
+**Dave Jones:** Oh, it's a storage ring, isn't it? ring, yeah. So. Yep. What the the electrons then pass into this booster ring and they are um they are are given energy up to 3 GeV. And once they achieve this 3 GeV energy, they can be um inserted into they're injected into the storage ring itself.
+
+**Dave Jones:** Yep. And then the the electron beam will continue to pass around this storage ring being given a um a given amount of energy each revolution to account for energy loss. Mhm. Due to the vacuum only. Is that Is that the only loss or do you get loss around bends and loss around bends which and that's that loss in energy is actually the synchrotron radiation itself. Energy must be conserved. Yeah, energy's got to come out, right? You're extracting energy from it.
+
+**Dave Jones:** But in theory, if you had a perfect storage ring, you could put a pulse of you could store it in there in indefinitely if you didn't extract any energy from it. If synchrotron radiation didn't exist. exist and didn't happen, but it happens on anytime you bend Anytime a charged particle is bent.
+
+**Dave Jones:** Is bent. Right. And bent is another word for accelerated in physics, isn't it? Accelerate's not actually accelerating in speed. It's It's changing in It's effectively changing in direction, yeah. It's an acceleration in any axis. So, what we've got here is the each of the beam lines Mhm.
+
+**Dave Jones:** that um can be installed. So, we currently have uh nine beam lines with the newest one being input lately. Right. The which if we just back up a bit, we can actually see the the new medical beam line.
+
+**Dave Jones:** Oh, okay. So, That's the radiotherapy? So, next to Oh, no. Yeah. See this the the imaging and medical beam line? This is where we've just installed our latest insertion device, which is a superconducting wigler. Superconducting wigler. Woohoo! Which is cooled using liquid helium Excellent.
+
+**Dave Jones:** at -270° C. Fantastic. Very cool, as a lot of people will have visited And I take it that light on the outside is to tell you that uh That's it's in operation? So, each of the lights, it's just tells you what stage it's in. So, if it's green we would or people can go in.
+
+**Dave Jones:** Yep. And the the orange is more of a caution. That's Like you don't go in. Don't go in unless you have to. Yeah. And red means the beam's on. Got it. So, as you can see the the red light over here.
+
+**Dave Jones:** Okay, so you can't go in those rooms when the beam's on. Can't go in those rooms. But we can go in the one but the optic one we were just in here. But we can go in the optic one because it is at the the end of the beam line itself. It is actually not next to the the the storage ring itself. So, between there and the storage ring there there is thick sheets of cement to protect us from the radiation.
+
+**Dave Jones:** Right. Cement is better than lead? Or something? Uh cement is cheaper and lighter than lead. Cheaper and lighter than lead. Got it. Why do you use electrons in there? You said you could use positrons. You can you can use our protons.
+
+**Dave Jones:** Ah, sorry. Protons. You can use protons, but uh electrons, due to their their much lower mass, actually produce synchrotron radiation at much lower energies. So, if the the amount of radiation produced is inversely proportional to their mass by a factor of m to the four or a e to the four because e and m are proportional. So, we um therefore using an an electron which has a a rest mass energy of 511 511 kV is better than using the the 1 g the 1 g v proton.
+
+**Dave Jones:** Got it. And this is And this facility is a three gig electron volt facility. How How does that uh fare in the world scheme of synchrotrons? Is it a So, three three g v for a light source is quite a common quite a common energy.
+
+**Dave Jones:** Right. So, most third generation light sources are around three g v. You can get some much higher energies up to like nine g v. Though for the the LHC which is over there which is That's terrible, isn't it?
+
+**Dave Jones:** Which is accelerating the protons, they are working up to 14 tera electron volts. 14 tera electron. Incredible. And that's a great t-shirt, by the way. Physics is the bomb. I love it. And we have some engine big engineering here. Tell us about it.
+
+**Dave Jones:** we do. These are the magnets that actually used inside the storage ring. So, each of these has a specific purpose for the beam. We've got the the dipoles which are used for the of the the beam. Right. So, these are the dipoles are also known as the bending magnets. So, they allow the beam to actually continue in the approximately circular path.
+
+**Dave Jones:** Yeah, it's not actually That's a It's circular. It's a misnomer. It's straight bend straight bend right. It's a very very excessively 50 cent piece like structure. Right. yes. So, these are the the quadrupole magnets. The quadrupole magnets are used for focusing and and defocusing the same way in which an optical lens focuses.
+
+**Dave Jones:** Though, with a magnet with a quadrupole magnet, when a beam passes through there, you can't actually focus in each axis at the same time. You must focus in one and defocus in the other. All right. Due to the way the electric fields are, but we can still use the the common optics principles that if you focus, defocus, and focus again, you can actually decrease the the beam itself.
+
+**Dave Jones:** So, then Sorry? Then we also have the sextupole magnet, which is used for higher order effects on the beam. And these are used for changing things like the chromaticity beam, which is actually the the spread of the energy.
+
+**Dave Jones:** Right. That's what chromaticity is. That's what chromaticity is. Right. And these are They're So, there's not many turns in these, but they're like almost bus bar like um Yeah. How much current goes through these? Do you have any idea?
+
+**Dave Jones:** Mark's going to tell us. I think they're about about 2 and over 100. Depends on the Depends on which set of coils. Right. I'd say over 100 amps. Cuz you might you might see that they're actually different sets of windings.
+
+**Dave Jones:** Yep. So, there's the primary set of windings under here. And then there are these different set of windings with different number of turns. All right. magnets can also be used to generate a a dipole field in this direction, a dipole field in this direction, and a skew quadrupole field, which is a quadrupole like the normal ones over there, but rotated.
+
+**Dave Jones:** Got it. So, you can do coupling correction when the beam is meant to be oscillating purely up and down and purely left and right, sometimes you get coupling where it spirals round, oscillates in one plane and then goes into the other plane. You can then correct that.
+
+**Dave Jones:** Got it. You can fix that in in real time. Fix that dynamically in real time. uh it's a static it's a static setting. Oh it's a static setting, right. Okay. You set it and basically what you're doing is if the magnet isn't installed properly, it might be slightly off axis.
+
+**Dave Jones:** Mhm. So instead of focusing the the beam in this in in in the true vertical plane, it would focus it slightly in that plane and so you would then wire up these coils to slightly correct that.
+
+**Dave Jones:** Here we've got the uh the the linac, which is the where the beam starts. So as was said before, there we've got the electron gun Mhm. inside here, which will output at the 7 uh the 19 kV beam.
+
+**Dave Jones:** That's uh so that's uh thermal. It's just uh heats up the cathode and right. Yeah, so it's thermionic thermionic emission. Just a That's pretty boring, I guess. It's just a little cathode and It's an old TV. Yeah, right. Okay.
+
+**Dave Jones:** So the the cathode then will output that and that goes is injected into the the linear accelerator, which we've got here. So we've got Here you can see the the bunch of keys. So, Mhm. nobody can go into the LINAC and get stuck in there while we turn the machine on.
+
+**Dave Jones:** Right. So, it's actually dangerous technically inside the inside the LINAC. it's throughout the the machine there is radiation being produced. Right. So, and this is what all the the large thick walls that we have surrounding the facility are for to absorb all this radiation.
+
+**Dave Jones:** Okay. So, these are all the thick concrete walls. So, yep. as you can see around here, Got it. This allows us to reduce the amount of the the dose that the people that work at the facility get. Okay.
+
+**Dave Jones:** Is there a maximum amount of time that they're allowed to spend in the facility like around here or There we go. Hey, we can see inside. Woo. I'm being irradiated right now.
+
+**Dave Jones:** Terrific. Oh, I better cover my uh private parts as I walk past. Could be in trouble. So, there Right. So, we can actually Why it's blue in there. I can see like I can't get it on camera, but it's It's just a blue light. It's It's not It's Oh, come on.
+
+**Dave Jones:** Just a blue light, folks. That's boring. So, there is a a limit to the the amount of dose allowed to get per year. Per per year, right. Okay. So, you might might just say that these two things What sort These are These are klystrons RF amplifiers.
+
+**Dave Jones:** I don't know much about them. So, you just repeat what I say. So, these are These are klystrons RF amplifiers. And they have a peak power of 35 MW each. Ooh. I can say that. So, what we've got here is a klystron amplifiers and they have a peak power of 35 MW.
+
+**Dave Jones:** 35 MW? That's ridiculous. That's incredible. So, these are the the the actual power source for the the RF systems in the uh linear accelerator and allowing the beam to be accelerated from 90 kV up to 100 million electron volts or 100 mega electron volts.
+
+**Dave Jones:** Right. And it does add in what, 10 or 15 m or something? Approximately 10 m. Right. Got it. And obviously these are very efficient, I would presume. Statement because if you're producing that much energy, any percentage waste is going to come out as heat.
+
+**Dave Jones:** So. So, that's what happens. Right. And then they're not that hot, folks. There's a bit of warmth coming out of there, but um The heat the heat's dissipated in the copper accelerating structures in the LINAC. Got it. These only come on for 10 microsecond.
+
+**Dave Jones:** Uh burst. Okay. it's a peak power that's so high, but the duty cycle is very low. Right. So, the average power is actually relatively low. Got it. And these are all uh power supplies, are they? Power supply systems or control racks?
+
+**Dave Jones:** Yeah. Yeah, so So, there are 14 sectors. Yep. Each sector has power supply rack for the multipole magnets, Right. the electronics for the beam position monitoring, and the vacuum monitoring and control system. Got it. And there's So, there'll be 14 of these stations all up.
+
+**Dave Jones:** 14 for in the storage ring Right. Another set for the linac and booster ring. Got it. Because this outside ring, this is the storage ring on the outside. Correct? And then on the inside here is our Linac. booster linac and the booster ring.
+
+**Dave Jones:** It's got to go on top of the booster and the linac. All right. All right. Up we go.
+
+**Dave Jones:** Yeah, the linac is pointing towards us underneath the Oh, I see. Right. concrete in the vault. Yep. And then it goes down underneath our feet. And around and into the booster. Right. So, this Yep. So, that's the inner circular booster ring.
+
+**Dave Jones:** And then where does it shoot out into the uh into the storage ring? On the far side where that blue Right. light is. Oh, got it. Okay. And then it connects to the storage ring. Mhm. Over there. Got it.
+
+**Dave Jones:** So, we could build a linear accelerator which is 30 times as long as the one we have here Right. and get to 3 GeV. But what we've done is we've done a more efficient technique where we've put it through this booster ring where every lap it does it gains a little bit of energy. And so, you keep passing it through the same RF field. So, it would do probably uh million laps.
+
+**Dave Jones:** A million laps in a couple of seconds? half a second. That's right. Yep. And then get extracted into the storage ring where it can stay for days at a time. All right. What What have we got here? Okay. So, what we got here is uh the outputs of some of the um beam position monitors that we have inside the the storage ring itself. So, we can see each of these will have an output signal which you can which is indicated about here.
+
+**Dave Jones:** Mhm. So, these can be used and are used primarily to to know the beam's position, to know to make sure the beam isn't going to actually run into any of the the walls of the beam pipe itself. So, which is always What diameter is the beam pipe? It's stainless steel, isn't it? It's stainless steel. And it is approximately a couple of centimeters.
+
+**Dave Jones:** Right. Does it need really thick walls on it or just like a regular size aluminum tube? It's it's a pretty regular regular thickness, like a couple of mil thickness. So, there's no need for a lot for extremely thick walls. And and they're all straight sections, correct?
+
+**Dave Jones:** So, the the sections in here are all straight. And the the actual curvature itself comes from the the parts inside the dipoles. Right. And so, you could actually build this facility as a straight line if you really wanted to.
+
+**Dave Jones:** Yes, there are facilities around the world where there are completely straight facilities, like the one in Stanford. Oh, okay. It's a good example where you effectively use the the what the principle in the linear accelerator and continue that on for many many kilometers.
+
+**Dave Jones:** But, this is I guess more space efficient. Much more space efficient, yes. Got it. But, does it would it cost more a facility like this because you have to have the you have to have the curvature in it?
+
+**Dave Jones:** I would you would I would say that the the circular facility is actually costs a fair bit less because of the the much smaller region that actually have to cover. The the linear accelerators in like Stanford is four or so kilometers long from what I recall. So, it's it it's quite a large facility.
+
+**Dave Jones:** Right. And so you can imagine the the cost of making the tunnels everything like that. So they actually that's they actually bury that one underground. They actually tunnel that out. A lot of that is underground. Yeah. Okay. Why is that? Is there any reason why it has to be underground or Is it a cosmic radiation thing or is it a It's I think it's to put it on the the clay for stability but I'm I'm not sure.
+
+**Dave Jones:** that makes sense. And So what we got here is actually a bit of a rubbish signal cuz I don't have anything Oh and And check it out folks. Yes, at this multi hundred million dollar facility we have a breadboard.
+
+**Dave Jones:** Brilliant. a quick prototype I've I've been making lately. And let me guess it it uses a 741 op amp and a 555 timer. Ah, no. No? Ah, damn it. Come on. We need to have a 555 timer here.
+
+**Dave Jones:** So what we can actually see here is the the signal from one of the beam position monitors itself. Mhm. Each one of these is an indication of the the amount of electrons Right. in in each of the bunches. So and for each of these is one revolution.
+
+**Dave Jones:** Mhm. Oh okay. It's done a full cycle of the storage ring. storage ring. Yeah. Right. So the frequency at which each of these large bunches occur is 1.38 megahertz. Right. So if we can we can actually zoom in and see to a to an extent due to the the bandwidth of the scope.
+
+**Dave Jones:** Right. The each of the different bunches inside it. You can't see them as well just So, they're the individual bunches and of course they're the individual bunches of 1 nanosecond. Of of one of the 23 picoseconds. 23 picoseconds.
+
+**Dave Jones:** Right. The 600 MHz scope will never be able to pick them up. But would the even would the sensors be able to pick them up? A lot of the sensors can't pick them up. Right. No, I was going to say they wouldn't.
+
+**Dave Jones:** Apparently well we have built one of my my fellow colleagues has actually built a a system which works on synchrotron radiation to pick up these 23 picosecond bunches. Wow, that's impressive physics in its own right, isn't it? Because It's a it's quite an impressive bandwidth that we're working at.
+
+**Dave Jones:** So, it's art and science just to design the detectors just to see the position of these things flying around let alone the equipment in the beamlines that's designed to analyze the Exactly. They're It's incredible. A lot of this we we end up doing blind to a lot of the things on the very small scale.
+
+**Dave Jones:** Right. Okay. Part of it like I just a low pass filter I'm putting in my system. And then we'll be Right. So, it's just an op-amp low pass filter and that's it. Yep. Oh, and then there's it'll be what it's going to actually do is find um find the the difference changes in the the amplitudes in in each of the the single bunches.
+
+**Dave Jones:** Yep. And this will be able to take what's called a a tune which is a it's the a tune is the re-actual oscillation which is the the beam oscillates at. So, this will be able to detect the tune without the necessity which at the moment we actually have to uh to undulate to do a small perturbation of the beam.
+
+**Dave Jones:** Mhm. So, this will allow us to actually pick pick up completely passively. Right. Which is it's important for the the actual synchrotron radiation output. Because if you're continually uh perturbating the beam, you get the you get the people with the beamlines not too happy about the the flickering light.
+
+**Dave Jones:** I was just about to ask what because you've got so many potential up to what 14 potential scientists all working on their own little project at the end of it at their individual beamlines, or nine, I think you said. Um Yeah, I mean, how can you just go in and change the main storage So thing, you know, you're going to upset their experiments if you do that. So, I assume it has to be well planned, agreed by all parties involved, and We've got a very we've got quite a
+
+**Dave Jones:** well-planned structure. Uh we'll have different times for the users. At the moment, we're currently in user beam. We have times for machine studies, which is generally the the the physics and the operations group Got it. for us to use the machine and to do diagnostic purposes And play around with breadboards and around with breadboards breadboards and stuff like that.
+
+**Dave Jones:** um to fix any any problems with the machines is around the same time as maintenance and machine studies generally overlap a bit. Yep. So Yeah, and to then also to have personalized beam, so that we aren't always using the 200 milliamp beam.
+
+**Dave Jones:** So, a lot of um the stuff I'm working on uses um we use single bunch beams. So, which gets in rather than having 200 um 200 milliamps uh spread out over approximately a microsecond or so, we're talking about about um, 10 milliamps spread out over a nanosecond.
+
+**Dave Jones:** Right. So, it's quite So, that is the storage capacity of the ring, 200 milliamps. Is that 200 milliamps. So, that's the maximum storage capacity. It we can go slightly higher, but that's the the maximum which it's it's safe safe and right that we we know that nothing will go wrong.
+
+**Dave Jones:** Why is it specified in milliamps like that? Cuz I That's the first time I've heard that term used. Is it only used for these storage rings or is it Is that terminology also used for the the accelerators where they smash the atoms together?
+
+**Dave Jones:** So, we I think we mainly use milliamps just due to the fact that it's um, electron It's a flow of electrons, isn't it? It's a continuous flow of electrons. Except it's in a vacuum instead of Exactly. Yep. rather than in the the the medium of um, but Yes, like places like the LHC do use intensities and stuff like that rather than rather than milliamp current. Cuz I noticed you've got a real-time display on your website that displays the current sitting and it's all in milliamps. It's like cuz 200 milliamps
+
+**Dave Jones:** sounds like nothing to us engineers, right? it's it's quite small in comparison to what comes out of the wall, but this is also in a vacuum and it's it's quite a different Yep. It's a different ballgame. Got it.
+
+**Dave Jones:** Yeah. It's also 3 giga electron volts. Yes. Which is 3 billion volts for pulsed, of course. Yes. So, yeah, it's not continuous. Otherwise, we'd be powering the whole city of Melbourne. It was continuous? Maybe. It'd be far off.
+
+**Dave Jones:** I don't know. How How much energy does this whole facility use? Uh, Do we know? About four four megawatts. Four megawatts. Four megawatts, yeah. Do you have to have an onsite power assistant? Out the Out the back there is a There's a power generator and a a backup for if we if we lose power, so uh And that is blue for no other reason than that it looks cool, right?
+
+**Dave Jones:** I believe so, yes. I've never actually been told why it's blue. Just to scare people when they come Yeah, yeah, exactly. They they think, "Ooh, it's radiation," you know. These are the booster ramping magnets. All right. Based on a principle that was actually invented by an Australian physicist, Mark Oliphant. And he invented the synchrotron acceleration principle, whereby you synchronously ramp the magnetic field as you increase the energy of the particle, so it stays on a fixed radius.
+
+**Dave Jones:** And that That way you don't need a big long accelerator. You can top the energy up on each revolution because as you increase the energy of the particle, you also increase the magnetic field, so that stays on a fixed radius.
+
+**Dave Jones:** So these are all uh diagnostic and power supply racks. They These are also used uh They've got um some of the supplies for the the cooling. As you can see from the the orange pipes. All right.
+
+**Dave Jones:** So a lot of the acquisition system is all through here. It's a bit noisy in here, folks. We have a lot of uh a lot of rack equipment. So we can also um this is where some of the the outputs from Mhm. the the BPMs inside the the beam. So we've got these are the strip line BPMs and then we've got the button BPMs which were not on this one.
+
+**Dave Jones:** That's a lot of gear. Current transformer that's measuring the amount of current that's in the storage ring. Oh okay, so that that box there is the storage ring. Yeah, one's storage ring, one's the booster. So you can see there's the storage ring direct current to current transformer measurement and the booster one and the spare.
+
+**Dave Jones:** Right, okay. How often does this uh How often does the facility stay up and running? Is there like fires very often or We're up and running essentially 99% of the time that we schedule. So we've got one of the best records in the world for maintaining the beam availability.
+
+**Dave Jones:** That's impressive. The other thing we've just done middle of last year is to introduce a continuous top up where instead of allowing the the beam to slowly decay in the storage ring every couple of minutes we just trickle feed a little bit of current into the storage ring and so the current stays essentially constant at 200 milliamps.
+
+**Dave Jones:** Oh I we noticed that on the waveform before there was like a sawtooth waveform and that's what it is. It decays right in you can see the sawtooth. If you zoom out over a day it looks looks flat and if you don't do continuous top up in about 8 hours it decays by about 40%.
+
+**Dave Jones:** Right, okay. At what level is it still actually usable for something? It's it's usable even at very low currents but the problem is that you get these thermal drifts, and so you have to either keep adjusting your equipment because with a very high heat load of uh 200 milliamps with all the x-rays on your say your mirror or your sample, then you have to uh adjust it as the heat load decreases or increases.
+
+**Dave Jones:** Whereas, if you keep it constant, then it'll reach thermal equilibrium, and it'll be much more stable. Right. Here we're standing on top of the transfer line where the two rings meet. Right. And the booster ring extracts the beam at 3 GeV and injects it into the storage ring where it stays stored for up to a week if everything goes well.
+
+**Dave Jones:** everything goes And then we have to stop for maintenance and give things a bit of a you know, look under the bonnet and kick the tires. And Tom said this whole facility is uh floating or is damped in some way.
+
+**Dave Jones:** So, if you look at the pylons here, Yep. they uh connected deep down into the earth on one end and up into the building on the other end, but they are decoupled from the concrete floor where the accelerator sits.
+
+**Dave Jones:** Got it. So, if the building vibrates, then that vibration is damped by what is serendipitously a clay A clay surface. uh clay soil underneath, and that also damps out any road noise. And the concrete slab that is over the top of the that that that's um uh that the building is over the top of, that is not connected to anything. It's just floating on that Right.
+
+**Dave Jones:** uh clay bedding. And so, as that dries and as that that moves and slips around as much as the as much as it can given the constraints of the of the pylons, then we we just readjust to that that movement, but it's not directly coupled to any of the other structures to isolate the floor vibration.

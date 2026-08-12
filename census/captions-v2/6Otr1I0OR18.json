@@ -1,0 +1,1555 @@
+{
+ "episode": null,
+ "title": "EEVblog #222 - Lab Power Supply Design - Part 2",
+ "url": "https://www.youtube.com/watch?v=6Otr1I0OR18",
+ "file": "6Otr1I0OR18.md",
+ "main_topics": [
+  "lt3080",
+  "linear-voltage-regulator",
+  "power-supply-design"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 28,
+   "depth": "explains",
+   "context_snippet": "take a look at the LT 3080 data sheet because we might find some practical considerations"
+  },
+  {
+   "concept": "lt3080-data-sheet",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 43,
+   "depth": "explains",
+   "context_snippet": "the LT 3080 data sheet because we might find some practical considerations"
+  },
+  {
+   "concept": "power-supply-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 243,
+   "depth": "explains",
+   "context_snippet": "actually build this thing as opposed to just doing a conceptual type top-level design schematic"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 396,
+   "depth": "opinion",
+   "context_snippet": "I really like this device because it does just exactly what we want"
+  },
+  {
+   "concept": "output-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 510,
+   "depth": "explains",
+   "context_snippet": "Our output current up to 1.1 amp"
+  },
+  {
+   "concept": "to-220-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 582,
+   "depth": "mention",
+   "context_snippet": "the TO220 package of this"
+  },
+  {
+   "concept": "dfn-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 653,
+   "depth": "mention",
+   "context_snippet": "a DFN"
+  },
+  {
+   "concept": "dpak-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 660,
+   "depth": "mention",
+   "context_snippet": "a DPAK"
+  },
+  {
+   "concept": "sot-223-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 672,
+   "depth": "mention",
+   "context_snippet": "a SOT-223 version"
+  },
+  {
+   "concept": "msop-package",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 716,
+   "depth": "mention",
+   "context_snippet": "an MSOP package"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 903,
+   "depth": "explains",
+   "context_snippet": "a single resistor programs the output voltage"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 903,
+   "depth": "mention",
+   "context_snippet": "a single resistor programs the output voltage"
+  },
+  {
+   "concept": "lm317",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1116,
+   "depth": "explains",
+   "context_snippet": "unlike the LM317 where you got to do use two resistors"
+  },
+  {
+   "concept": "output-voltage-setting",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1207,
+   "depth": "explains",
+   "context_snippet": "This one only needs one"
+  },
+  {
+   "concept": "output-voltage-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1268,
+   "depth": "explains",
+   "context_snippet": "Low output voltage noise is only 40 microvolts RMS"
+  },
+  {
+   "concept": "input-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1362,
+   "depth": "explains",
+   "context_snippet": "supports input voltages up to 36 volts"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1543,
+   "depth": "explains",
+   "context_snippet": "dropout voltage that will be at full load is only 350 millivolts"
+  },
+  {
+   "concept": "load-regulation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1668,
+   "depth": "mention",
+   "context_snippet": "Less than 1 millivolt load regulation"
+  },
+  {
+   "concept": "line-regulation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1724,
+   "depth": "mention",
+   "context_snippet": "Line regulation's awesome"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1767,
+   "depth": "explains",
+   "context_snippet": "minimum load current, there it is. 0.5 milliamps, we have to worry about that"
+  },
+  {
+   "concept": "ceramic-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1855,
+   "depth": "explains",
+   "context_snippet": "stable with 2.2 mic ceramic output capacitors"
+  },
+  {
+   "concept": "current-limiting",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2049,
+   "depth": "mention",
+   "context_snippet": "full back current limiting and over temperature"
+  },
+  {
+   "concept": "thermal-shutdown",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2080,
+   "depth": "mention",
+   "context_snippet": "over temperature"
+  },
+  {
+   "concept": "series-pass-transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2249,
+   "depth": "explains",
+   "context_snippet": "You've got a series pass transistor, the error amp connected straight through"
+  },
+  {
+   "concept": "error-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2286,
+   "depth": "mention",
+   "context_snippet": "the error amp connected straight through"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2332,
+   "depth": "explains",
+   "context_snippet": "instead of having an internal voltage reference like the LM317"
+  },
+  {
+   "concept": "constant-current-source",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2396,
+   "depth": "explains",
+   "context_snippet": "it's got an internal constant current generator"
+  },
+  {
+   "concept": "bell-curve",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2591,
+   "depth": "mention",
+   "context_snippet": "we've been talking about bell curves recently"
+  },
+  {
+   "concept": "set-pin-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 13,
+   "char_start": 3349,
+   "depth": "explains",
+   "context_snippet": "set pin current as we've said is 10 microamps"
+  },
+  {
+   "concept": "vset-pin",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 3997,
+   "depth": "explains",
+   "context_snippet": "what you're driving into that Vset pin in this case"
+  },
+  {
+   "concept": "junction-temperature",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 4980,
+   "depth": "explains",
+   "context_snippet": "It's going to be the junction temperature of the device itself"
+  },
+  {
+   "concept": "heat-sink",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 5101,
+   "depth": "explains",
+   "context_snippet": "your heat sink's gone up to 60°"
+  },
+  {
+   "concept": "silicon-die",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 23,
+   "char_start": 5390,
+   "depth": "explains",
+   "context_snippet": "the die used, the silicon die, is going to be different in these smaller packages"
+  },
+  {
+   "concept": "parallel-voltage-regulator",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 25,
+   "char_start": 5815,
+   "depth": "explains",
+   "context_snippet": "when you parallel devices up and this is how you going to increase the output current"
+  },
+  {
+   "concept": "ballast-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 26,
+   "char_start": 6099,
+   "depth": "explains",
+   "context_snippet": "include a series ballast resistor like this"
+  },
+  {
+   "concept": "lt1080-1",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 27,
+   "char_start": 6244,
+   "depth": "mention",
+   "context_snippet": "there is an alternative device, the LT1080-1"
+  },
+  {
+   "concept": "pcb-trace",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 29,
+   "char_start": 6938,
+   "depth": "explains",
+   "context_snippet": "good enough to actually use a PCB trace for that"
+  },
+  {
+   "concept": "copper-weight",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 30,
+   "char_start": 7167,
+   "depth": "explains",
+   "context_snippet": "1 oz is your normal weight copper"
+  },
+  {
+   "concept": "bill-of-materials",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7386,
+   "depth": "explains",
+   "context_snippet": "There's no bill of extra bill of materials on them"
+  },
+  {
+   "concept": "voltage-drop",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 7690,
+   "depth": "explains",
+   "context_snippet": "you can't make it too high cuz then you get a voltage drop"
+  },
+  {
+   "concept": "parallel-device-footprint",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8209,
+   "depth": "explains",
+   "context_snippet": "leave one of the footprints unpopulated"
+  },
+  {
+   "concept": "kit-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 8383,
+   "depth": "mention",
+   "context_snippet": "you're designing a kit or something"
+  },
+  {
+   "concept": "load-regulation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 8647,
+   "depth": "explains",
+   "context_snippet": "Load regulation is going to be excellent from 1 mA up to"
+  },
+  {
+   "concept": "line-regulation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 8759,
+   "depth": "explains",
+   "context_snippet": "Line regulation up to 25 V input"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 8983,
+   "depth": "explains",
+   "context_snippet": "We need to take that maximum figure there, 500 microamps or half a milliamp"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 9291,
+   "depth": "explains",
+   "context_snippet": "it's going to have a larger dropout voltage"
+  },
+  {
+   "concept": "power-supply-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9592,
+   "depth": "explains",
+   "context_snippet": "we have to somehow um get a minimum load current"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 9614,
+   "depth": "explains",
+   "context_snippet": "get a minimum load current over uh our uh minimum load current of 1/2 a mA over our entire voltage range"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9855,
+   "depth": "explains",
+   "context_snippet": "minimum load current, yada yada, quiescent current"
+  },
+  {
+   "concept": "quiescent-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9855,
+   "depth": "mention",
+   "context_snippet": "minimum load current, yada yada, quiescent current"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9932,
+   "depth": "explains",
+   "context_snippet": "the minimum load current required to maintain regulation"
+  },
+  {
+   "concept": "linear-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10116,
+   "depth": "explains",
+   "context_snippet": "the dropout voltage of this part is interesting cuz it specifies it in two different ways"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10207,
+   "depth": "explains",
+   "context_snippet": "There's V control pin dropout voltage and VIN dropout voltage"
+  },
+  {
+   "concept": "v-control-pin",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10207,
+   "depth": "mention",
+   "context_snippet": "There's V control pin dropout voltage and VIN dropout voltage"
+  },
+  {
+   "concept": "vin",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 10312,
+   "depth": "mention",
+   "context_snippet": "it's got VIN and V control"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 10445,
+   "depth": "explains",
+   "context_snippet": "if you want a really low dropout voltage of this part"
+  },
+  {
+   "concept": "v-control-pin",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 10679,
+   "depth": "explains",
+   "context_snippet": "you can take advantage of that and get a lower dropout voltage"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 10759,
+   "depth": "explains",
+   "context_snippet": "from into out by tying V control up to a higher voltage"
+  },
+  {
+   "concept": "v-control-pin",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 10884,
+   "depth": "mention",
+   "context_snippet": "not all parts uh have the extra V control pin"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 45,
+   "char_start": 11094,
+   "depth": "explains",
+   "context_snippet": "we need to take the worst-case version of that because we're tying them together"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 11343,
+   "depth": "explains",
+   "context_snippet": "our input voltage has to be at least 1.6 V above our output voltage"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 11570,
+   "depth": "explains",
+   "context_snippet": "if we are using a 1-ohm resistor and we're drawing an amp"
+  },
+  {
+   "concept": "current-limit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 11739,
+   "depth": "opinion",
+   "context_snippet": "the current limit here or a maximum output voltage, typical 1.4 amps"
+  },
+  {
+   "concept": "output-current-rating",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 11913,
+   "depth": "explains",
+   "context_snippet": "when you're designing and you want to set your maximum figure"
+  },
+  {
+   "concept": "error-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 12470,
+   "depth": "mention",
+   "context_snippet": "40 microvolts RMS for the error amplifier noise"
+  },
+  {
+   "concept": "error-amplifier-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 12700,
+   "depth": "explains",
+   "context_snippet": "all of the noise is going to be generated by the internal current source and the error amplifier"
+  },
+  {
+   "concept": "error-amplifier-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 12836,
+   "depth": "explains",
+   "context_snippet": "all the noise internally is going to be that 40 microvolts RMS"
+  },
+  {
+   "concept": "feedback-loop",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 13128,
+   "depth": "explains",
+   "context_snippet": "this is a direct feedback loop and whatever voltage you put on here comes out here"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 13423,
+   "depth": "mention",
+   "context_snippet": "if you're driving your circuit with a pot like this"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 13558,
+   "depth": "opinion",
+   "context_snippet": "a 2.5 volt voltage reference you know a really quiet low noise voltage reference"
+  },
+  {
+   "concept": "pwm",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 13769,
+   "depth": "explains",
+   "context_snippet": "if you're doing a PWM signal and you're feeding that through your RC filter"
+  },
+  {
+   "concept": "rc-filter",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 13802,
+   "depth": "explains",
+   "context_snippet": "you're feeding that through your RC filter"
+  },
+  {
+   "concept": "buffer-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 13859,
+   "depth": "mention",
+   "context_snippet": "then you're driving that with a buffer"
+  },
+  {
+   "concept": "pwm-filtering",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 57,
+   "char_start": 14154,
+   "depth": "explains",
+   "context_snippet": "filtering if you're using microcontroller control filtering of your pulse width modulation modulated signal is important"
+  },
+  {
+   "concept": "ripple-rejection",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 58,
+   "char_start": 14509,
+   "depth": "explains",
+   "context_snippet": "if you want to care about the ripple rejection then you have to figure out what 75 dB is"
+  },
+  {
+   "concept": "bridge-rectifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 59,
+   "char_start": 14742,
+   "depth": "mention",
+   "context_snippet": "and a bridge rectifier and a and a filter cap"
+  },
+  {
+   "concept": "filter-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 59,
+   "char_start": 14765,
+   "depth": "mention",
+   "context_snippet": "and a and a filter cap"
+  },
+  {
+   "concept": "ac-mains-ripple",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 63,
+   "char_start": 15767,
+   "depth": "explains",
+   "context_snippet": "That's for ripple AC mains ripple"
+  },
+  {
+   "concept": "dc-dc-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16061,
+   "depth": "explains",
+   "context_snippet": "the LT3080 is being powered from a DC-to-DC converter"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16061,
+   "depth": "mention",
+   "context_snippet": "the LT3080 is being powered from a DC-to-DC converter"
+  },
+  {
+   "concept": "switching-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 16207,
+   "depth": "explains",
+   "context_snippet": "a very high efficiency uh switching regulator might be up near a megahertz"
+  },
+  {
+   "concept": "decibel",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 16583,
+   "depth": "explains",
+   "context_snippet": "dB equals 20 log"
+  },
+  {
+   "concept": "input-noise-filtering",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 70,
+   "char_start": 17241,
+   "depth": "explains",
+   "context_snippet": "you haven't adequately filtered your input noise like that"
+  },
+  {
+   "concept": "set-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 70,
+   "char_start": 17403,
+   "depth": "mention",
+   "context_snippet": "you were relying upon the uh pin uh set current at 10 microamps"
+  },
+  {
+   "concept": "junction-temperature",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 17934,
+   "depth": "explains",
+   "context_snippet": "This is the junction temperature of the actual uh device itself, the die temperature"
+  },
+  {
+   "concept": "thermal-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 18083,
+   "depth": "explains",
+   "context_snippet": "that junction temperature could easily get up to 100°, depending on how you do your thermal design"
+  },
+  {
+   "concept": "thermal-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 18260,
+   "depth": "explains",
+   "context_snippet": "you need to take that sort of thing or any power system that dissipates power"
+  },
+  {
+   "concept": "output-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 18538,
+   "depth": "explains",
+   "context_snippet": "the output offset voltage in millivolts is actually going to uh drop based on the output load current"
+  },
+  {
+   "concept": "junction-temperature",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 76,
+   "char_start": 18765,
+   "depth": "explains",
+   "context_snippet": "the temperature of the junction, not just the ambient uh temperature"
+  },
+  {
+   "concept": "output-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 19019,
+   "depth": "explains",
+   "context_snippet": "if your junction's up to 125, 0.75 millivolts uh offset"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19317,
+   "depth": "explains",
+   "context_snippet": "at a input to output differential of 1.5 volts, then you know, your your minimum load current only needs to be 0.3 milliamps"
+  },
+  {
+   "concept": "input-output-differential-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 19317,
+   "depth": "explains",
+   "context_snippet": "at a input to output differential of 1.5 volts"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 19560,
+   "depth": "explains",
+   "context_snippet": "your minimum load current needs to be higher"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 19728,
+   "depth": "opinion",
+   "context_snippet": "you might say design it for a milliamp just to be on the safe side"
+  },
+  {
+   "concept": "load-transient-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19878,
+   "depth": "explains",
+   "context_snippet": "this load transient response here, we do want to consider this"
+  },
+  {
+   "concept": "output-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 20024,
+   "depth": "explains",
+   "context_snippet": "Here's the output load current in hundreds of milliamps"
+  },
+  {
+   "concept": "output-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 20114,
+   "depth": "explains",
+   "context_snippet": "a 200 milliamp jump in the load current"
+  },
+  {
+   "concept": "load-transient-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 20237,
+   "depth": "explains",
+   "context_snippet": "what the output voltage, how it deviates because these regulators aren't perfect"
+  },
+  {
+   "concept": "transient-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20342,
+   "depth": "explains",
+   "context_snippet": "They have a transient response when your output current suddenly changes"
+  },
+  {
+   "concept": "ceramic-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20462,
+   "depth": "explains",
+   "context_snippet": "if you've only got 2.2 microfarad ceramic cap"
+  },
+  {
+   "concept": "output-voltage-droop",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 20509,
+   "depth": "explains",
+   "context_snippet": "You can expect it to change by 50 millivolts output"
+  },
+  {
+   "concept": "ceramic-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 20658,
+   "depth": "explains",
+   "context_snippet": "if you use a 10 microfarad ceramic"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 20923,
+   "depth": "explains",
+   "context_snippet": "the greater the output capacitance on your regulator"
+  },
+  {
+   "concept": "load-transient-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 20977,
+   "depth": "explains",
+   "context_snippet": "the better your load transient response can become"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 21067,
+   "depth": "explains",
+   "context_snippet": "You don't want to put a massive amount of capacitance on the output"
+  },
+  {
+   "concept": "constant-current-power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 21138,
+   "depth": "explains",
+   "context_snippet": "a constant current power supply like this"
+  },
+  {
+   "concept": "constant-current-mode",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 21445,
+   "depth": "explains",
+   "context_snippet": "when this thing switches into constant current mode"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 21520,
+   "depth": "explains",
+   "context_snippet": "it's still got all this energy in the cap that can get dumped high current"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 21761,
+   "depth": "explains",
+   "context_snippet": "you want to keep the output output capacitance as low as possible"
+  },
+  {
+   "concept": "regulator-stability",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 21827,
+   "depth": "explains",
+   "context_snippet": "just to ensure stability in your regulator"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 89,
+   "char_start": 22060,
+   "depth": "opinion",
+   "context_snippet": "you kind of want to keep that thing the output capacitance low"
+  },
+  {
+   "concept": "regulator-stability",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 22220,
+   "depth": "explains",
+   "context_snippet": "the recommended uh value just to be on the safe side that it recommends for stability"
+  },
+  {
+   "concept": "line-transient-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 91,
+   "char_start": 22395,
+   "depth": "explains",
+   "context_snippet": "you've also got line transient response"
+  },
+  {
+   "concept": "line-transient-response",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 93,
+   "char_start": 22985,
+   "depth": "explains",
+   "context_snippet": "it's got a 3-V step in your input voltage to your voltage regulator"
+  },
+  {
+   "concept": "voltage-overshoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 23383,
+   "depth": "explains",
+   "context_snippet": "You don't want it to overshoot by a massive amount"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 97,
+   "char_start": 23928,
+   "depth": "explains",
+   "context_snippet": "if you don't meet that minimum load current requirement"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 24244,
+   "depth": "explains",
+   "context_snippet": "but only with a minimum amount of output current"
+  },
+  {
+   "concept": "output-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 101,
+   "char_start": 24598,
+   "depth": "explains",
+   "context_snippet": "if you've got a 2k output resistor with an input voltage of 5 V"
+  },
+  {
+   "concept": "set-pin",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 101,
+   "char_start": 24693,
+   "depth": "explains",
+   "context_snippet": "you see the set pin is, uh, grounded here"
+  },
+  {
+   "concept": "output-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 103,
+   "char_start": 25157,
+   "depth": "explains",
+   "context_snippet": "if you've got a 1 K output resistor nominal on there"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 104,
+   "char_start": 25345,
+   "depth": "explains",
+   "context_snippet": "How do we get a minimum output load current here on an adjustable power supply?"
+  },
+  {
+   "concept": "output-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 104,
+   "char_start": 25470,
+   "depth": "explains",
+   "context_snippet": "stick a resistor here on our circuit down to ground"
+  },
+  {
+   "concept": "minimum-load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 105,
+   "char_start": 25685,
+   "depth": "explains",
+   "context_snippet": "That easily meets our minimum load requirement of 1/2 mA"
+  },
+  {
+   "concept": "power-dissipation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 107,
+   "char_start": 25963,
+   "depth": "explains",
+   "context_snippet": "we're effectively pissing away 10 mA there just on that output resistor"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 109,
+   "char_start": 26501,
+   "depth": "explains",
+   "context_snippet": "your microcontroller over here that's driving all this thing"
+  },
+  {
+   "concept": "output-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 110,
+   "char_start": 26690,
+   "depth": "explains",
+   "context_snippet": "it will have to know that loads 1K and then take that into account"
+  },
+  {
+   "concept": "current-compensation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 112,
+   "char_start": 27243,
+   "depth": "explains",
+   "context_snippet": "you have to actually compensate and set this one to 15 millivolts"
+  },
+  {
+   "concept": "led",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 113,
+   "char_start": 27638,
+   "depth": "explains",
+   "context_snippet": "you might want to add an LED in there like that and that could be your power LED"
+  },
+  {
+   "concept": "power-led",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 27886,
+   "depth": "explains",
+   "context_snippet": "you can use it as an output LED or something like that"
+  },
+  {
+   "concept": "fixed-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 115,
+   "char_start": 28122,
+   "depth": "opinion",
+   "context_snippet": "we need to find a better solution than the fixed resistor"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 116,
+   "char_start": 28286,
+   "depth": "explains",
+   "context_snippet": "the classic LM334 constant current source"
+  },
+  {
+   "concept": "constant-current-source",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 116,
+   "char_start": 28329,
+   "depth": "explains",
+   "context_snippet": "It's a single resistor. It's available in TO-92 package"
+  },
+  {
+   "concept": "to-92-package",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 116,
+   "char_start": 28353,
+   "depth": "mention",
+   "context_snippet": "It's available in TO-92 package"
+  },
+  {
+   "concept": "constant-current-source",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 28417,
+   "depth": "explains",
+   "context_snippet": "Goes down to very low currents up to 10 milliamps maximum"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 28542,
+   "depth": "explains",
+   "context_snippet": "the LM334 has been around since pretty much the dawn of time"
+  },
+  {
+   "concept": "current-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 118,
+   "char_start": 28694,
+   "depth": "explains",
+   "context_snippet": "It operates from 1 volt up to 40 volts. It's got good current regulation."
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 118,
+   "char_start": 28768,
+   "depth": "explains",
+   "context_snippet": "You can program a current from 1 microamp to 10 milliamps, two terminal operation"
+  },
+  {
+   "concept": "to-92-package",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 29028,
+   "depth": "mention",
+   "context_snippet": "it's available in you know a TO-92 package"
+  },
+  {
+   "concept": "soic-8-package",
+   "type": "manufacturing",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 29071,
+   "depth": "mention",
+   "context_snippet": "or an SO8"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 29184,
+   "depth": "explains",
+   "context_snippet": "its minimum operating voltage of typically 0.9 volts up to 1 milliamp"
+  },
+  {
+   "concept": "minimum-operating-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 121,
+   "char_start": 29374,
+   "depth": "explains",
+   "context_snippet": "it's only going to operate down to about 0.9 maybe 0.8"
+  },
+  {
+   "concept": "lm317",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 121,
+   "char_start": 29536,
+   "depth": "opinion",
+   "context_snippet": "better than the 1.25 volts you might get on an LM317"
+  },
+  {
+   "concept": "high-impedance-load",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 122,
+   "char_start": 29742,
+   "depth": "explains",
+   "context_snippet": "you can't use like a high impedance load actually below 0.9 volts"
+  },
+  {
+   "concept": "alkaline-battery",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 29956,
+   "depth": "explains",
+   "context_snippet": "a single cell battery a single cell you know D cell or double A alkaline"
+  },
+  {
+   "concept": "low-voltage-power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 30148,
+   "depth": "opinion",
+   "context_snippet": "a power supply that can go down that low is pretty good"
+  },
+  {
+   "concept": "set-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 125,
+   "char_start": 30371,
+   "depth": "mention",
+   "context_snippet": "you just have a single set resistor like this"
+  },
+  {
+   "concept": "resistor-value-calculation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 126,
+   "char_start": 30627,
+   "depth": "opinion",
+   "context_snippet": "you can go through all sorts of uh formulas and take into account bias currents"
+  },
+  {
+   "concept": "e12-resistor-series",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 127,
+   "char_start": 30924,
+   "depth": "mention",
+   "context_snippet": "68 ohms is a nice E12 resistor value"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 128,
+   "char_start": 31012,
+   "depth": "explains",
+   "context_snippet": "it operates down to uh 0.8 volts, no problems"
+  },
+  {
+   "concept": "set-pin-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 133,
+   "char_start": 32278,
+   "depth": "explains",
+   "context_snippet": "this 10 microamps current we've talked about quite a few times from this set pin"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 133,
+   "char_start": 32362,
+   "depth": "mention",
+   "context_snippet": "this LT3080"
+  },
+  {
+   "concept": "constant-current-source",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 134,
+   "char_start": 32484,
+   "depth": "explains",
+   "context_snippet": "It's a constant current generator. So, it's got to flow out of that pin into that resistor"
+  },
+  {
+   "concept": "ohms-law",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 136,
+   "char_start": 32947,
+   "depth": "explains",
+   "context_snippet": "Ohm's law, do the math. 10 microamps through 2K there is 20 mV."
+  },
+  {
+   "concept": "output-voltage-error",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 136,
+   "char_start": 33101,
+   "depth": "explains",
+   "context_snippet": "that's a 2% error"
+  },
+  {
+   "concept": "resistor-value-selection",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 137,
+   "char_start": 33252,
+   "depth": "explains",
+   "context_snippet": "the obvious one of course, is to lower these values until it gets to a point where you don't care"
+  },
+  {
+   "concept": "excess-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 139,
+   "char_start": 33669,
+   "depth": "explains",
+   "context_snippet": "you're going to have a lot of excess current flowing out of there"
+  },
+  {
+   "concept": "op-amp-feedback-loop",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 140,
+   "char_start": 33882,
+   "depth": "explains",
+   "context_snippet": "put it in the feedback loop of this op amp and compensate for it"
+  },
+  {
+   "concept": "output-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 141,
+   "char_start": 34080,
+   "depth": "explains",
+   "context_snippet": "a pretty standard technique if you want to increase the output impedance of your buffer"
+  },
+  {
+   "concept": "operational-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 142,
+   "char_start": 34376,
+   "depth": "explains",
+   "context_snippet": "due to op amp action, this voltage here will be equal to this voltage here"
+  },
+  {
+   "concept": "feedback-compensation",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 34545,
+   "depth": "explains",
+   "context_snippet": "you've effectively eliminated the output voltage drop across that resistor"
+  },
+  {
+   "concept": "ad620",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 152,
+   "char_start": 36620,
+   "depth": "mention",
+   "context_snippet": "a proper instrumentation amplifier like I mentioned before, like an AD620"
+  },
+  {
+   "concept": "high-side-current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 153,
+   "char_start": 36790,
+   "depth": "explains",
+   "context_snippet": "high-side current monitor uh chips, monitor amplifier chips you can get specifically for high-side current sensing"
+  },
+  {
+   "concept": "precision-op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 153,
+   "char_start": 36991,
+   "depth": "mention",
+   "context_snippet": "a fairly uh jelly bean uh sort of low-end precision uh op-amp"
+  },
+  {
+   "concept": "current-sensing-accuracy",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 154,
+   "char_start": 37133,
+   "depth": "explains",
+   "context_snippet": "You can get down to milliamp uh accuracy on this type of thing"
+  },
+  {
+   "concept": "shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 154,
+   "char_start": 37254,
+   "depth": "explains",
+   "context_snippet": "reduce your voltage drop across there and use 0.1 ohms or something like that"
+  },
+  {
+   "concept": "low-side-current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 155,
+   "char_start": 37541,
+   "depth": "explains",
+   "context_snippet": "you can uh do low-side current sensing as well"
+  },
+  {
+   "concept": "ground-return-path",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37683,
+   "depth": "explains",
+   "context_snippet": "If we include the resistor on the ground return path"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37737,
+   "depth": "explains",
+   "context_snippet": "the current shunt resistor on that ground return path from the output"
+  },
+  {
+   "concept": "voltage-drop",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 37808,
+   "depth": "explains",
+   "context_snippet": "you get the voltage drop there"
+  },
+  {
+   "concept": "high-side-current-monitoring",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 37921,
+   "depth": "opinion",
+   "context_snippet": "Stick with the high-side current monitor, and we're sweet"
+  },
+  {
+   "concept": "high-side-current-monitoring",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 37980,
+   "depth": "opinion",
+   "context_snippet": "So, I like that. Let's build it up"
+  }
+ ]
+}

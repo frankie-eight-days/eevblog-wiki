@@ -1,0 +1,1591 @@
+{
+ "episode": null,
+ "title": "EEVblog #224 - Lab Power Supply Design - Part 3",
+ "url": "https://www.youtube.com/watch?v=8-qar5vgnbc",
+ "file": "8-qar5vgnbc.md",
+ "main_topics": [
+  "constant-current-power-supply",
+  "linear-voltage-regulator",
+  "current-sensing"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": "The frontmatter is missing an episode number.",
+ "mentions": [
+  {
+   "concept": "constant-current-power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 38,
+   "depth": "explains",
+   "context_snippet": "build up the constant current power supply which I've described in the previous two episodes"
+  },
+  {
+   "concept": "breadboard",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 132,
+   "depth": "mention",
+   "context_snippet": "I've got it up here on built on the breadboard"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 356,
+   "depth": "opinion",
+   "context_snippet": "I've got current and voltage pots here. These are only cheap crap single turn ones"
+  },
+  {
+   "concept": "constant-current-load",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 550,
+   "depth": "mention",
+   "context_snippet": "I've got my constant current load over here which you've seen described before"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 672,
+   "depth": "mention",
+   "context_snippet": "I've just got a resistor for a dummy load here"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 760,
+   "depth": "mention",
+   "context_snippet": "I've got the LT3080 mounted on a heat sink here"
+  },
+  {
+   "concept": "heat-sink",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 780,
+   "depth": "mention",
+   "context_snippet": "mounted on a heat sink here which is the same heat sink I plan to use"
+  },
+  {
+   "concept": "current-limit-indicator",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1217,
+   "depth": "explains",
+   "context_snippet": "when the output of the current limiter goes high and turns on the transistor and goes into current limit mode, it also lights an LED"
+  },
+  {
+   "concept": "led",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1328,
+   "depth": "mention",
+   "context_snippet": "it also lights an LED"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1556,
+   "depth": "explains",
+   "context_snippet": "a power supply is no and power supply is only as good as its voltage reference"
+  },
+  {
+   "concept": "lt1009",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1753,
+   "depth": "mention",
+   "context_snippet": "I've used an LT1009 here"
+  },
+  {
+   "concept": "pic-microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 1907,
+   "depth": "mention",
+   "context_snippet": "drive the voltage reference input of a PIC microcontroller"
+  },
+  {
+   "concept": "digital-panel-meter",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 2008,
+   "depth": "mention",
+   "context_snippet": "use for our digital panel metering"
+  },
+  {
+   "concept": "lm336",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2124,
+   "depth": "mention",
+   "context_snippet": "you can just use an LM336 or something like that"
+  },
+  {
+   "concept": "dropper-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2215,
+   "depth": "explains",
+   "context_snippet": "another dropper resistor in here to give our current range from 0 to 1 amp"
+  },
+  {
+   "concept": "voltage-gain",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 9,
+   "char_start": 2329,
+   "depth": "explains",
+   "context_snippet": "I've added uh some gain here with these two resistors"
+  },
+  {
+   "concept": "current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 10,
+   "char_start": 2572,
+   "depth": "explains",
+   "context_snippet": "for our current shunt measurement, I've um actually matched these 10k resistors here"
+  },
+  {
+   "concept": "resistor-tolerance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 2939,
+   "depth": "explains",
+   "context_snippet": "So much better than the standard 1% tolerance which is what these resistors are marked as"
+  },
+  {
+   "concept": "tlc2272",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 11,
+   "char_start": 3034,
+   "depth": "mention",
+   "context_snippet": "the op amps we'll be using today are TLC2272s"
+  },
+  {
+   "concept": "lm324",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 3241,
+   "depth": "mention",
+   "context_snippet": "a generic jelly bean LM324"
+  },
+  {
+   "concept": "op-amp-offset-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 13,
+   "char_start": 3391,
+   "depth": "explains",
+   "context_snippet": "the voltage offsets probably going to be too uh too high for that"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 3901,
+   "depth": "mention",
+   "context_snippet": "a constant current load, the LM334 here"
+  },
+  {
+   "concept": "current-limiting-transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 15,
+   "char_start": 3954,
+   "depth": "mention",
+   "context_snippet": "that's our our current limiting transistor"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 4057,
+   "depth": "explains",
+   "context_snippet": "our current shunt resistor there. It's only a quarter watt one, 1 ohm"
+  },
+  {
+   "concept": "jaycar",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4189,
+   "depth": "mention",
+   "context_snippet": "I have to go to Jaycar quickly to pick up a higher wattage one"
+  },
+  {
+   "concept": "output-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4292,
+   "depth": "mention",
+   "context_snippet": "there's our output caps"
+  },
+  {
+   "concept": "bypass-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4328,
+   "depth": "explains",
+   "context_snippet": "our cap which bypasses the adjust pin on the LM3080"
+  },
+  {
+   "concept": "external-power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 4701,
+   "depth": "mention",
+   "context_snippet": "I've got it powered from about 8 volts from an external supply"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6588,
+   "depth": "explains",
+   "context_snippet": "let's check the output on the scope to see if it's clean, to see if it's oscillating or not"
+  },
+  {
+   "concept": "oscillation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 6646,
+   "depth": "explains",
+   "context_snippet": "to see if it's oscillating or not"
+  },
+  {
+   "concept": "ac-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 30,
+   "char_start": 6991,
+   "depth": "explains",
+   "context_snippet": "let's switch that to AC coupling on the input"
+  },
+  {
+   "concept": "output-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 31,
+   "char_start": 7173,
+   "depth": "explains",
+   "context_snippet": "this is the output noise here. As you can see, 10 millivolts per division"
+  },
+  {
+   "concept": "linear-voltage-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 7937,
+   "depth": "explains",
+   "context_snippet": "as you'd expect from a linear voltage regulator with a rated 40 microvolts output noise"
+  },
+  {
+   "concept": "noise-measurement",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 35,
+   "char_start": 8052,
+   "depth": "opinion",
+   "context_snippet": "I don't have the gear to measure 40 microvolts output noise"
+  },
+  {
+   "concept": "ground-noise-measurement",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 36,
+   "char_start": 8411,
+   "depth": "explains",
+   "context_snippet": "I'm now probing the ground of the circuit"
+  },
+  {
+   "concept": "resistor-power-rating",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 8622,
+   "depth": "explains",
+   "context_snippet": "that's in theory the limit of our quarter watt resistor there"
+  },
+  {
+   "concept": "power-dissipation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 8702,
+   "depth": "explains",
+   "context_snippet": "We'll now be dissipating a quarter watt in that 1 ohm current sense resistor"
+  },
+  {
+   "concept": "output-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 39,
+   "char_start": 8904,
+   "depth": "explains",
+   "context_snippet": "And then measuring the output noise. Again, let's go down to minimum."
+  },
+  {
+   "concept": "output-voltage-regulation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9157,
+   "depth": "opinion",
+   "context_snippet": "It's working exactly as I expected in terms of uh output voltage regulation."
+  },
+  {
+   "concept": "current-limit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 9251,
+   "depth": "mention",
+   "context_snippet": "now we'll check our basic current limit"
+  },
+  {
+   "concept": "current-limit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 9312,
+   "depth": "mention",
+   "context_snippet": "up until now we've had our current limit up on uh maximum"
+  },
+  {
+   "concept": "constant-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 9533,
+   "depth": "explains",
+   "context_snippet": "we drawing 250 milliamps constant current on the output"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 9594,
+   "depth": "explains",
+   "context_snippet": "let's wind our pot down until we start"
+  },
+  {
+   "concept": "current-limit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 10161,
+   "depth": "explains",
+   "context_snippet": "which sets the threshold where it goes into current limit mode."
+  },
+  {
+   "concept": "current-sense-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 10970,
+   "depth": "mention",
+   "context_snippet": "our current, uh, sense amp."
+  },
+  {
+   "concept": "current-limit",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 11040,
+   "depth": "mention",
+   "context_snippet": "what that's doing when it enters current, uh, output, uh, current limit mode."
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 49,
+   "char_start": 11118,
+   "depth": "mention",
+   "context_snippet": "I've got it, uh, set to 1 V per division here."
+  },
+  {
+   "concept": "led",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 52,
+   "char_start": 11724,
+   "depth": "explains",
+   "context_snippet": "only when it gets to about 2 V is it going to turn on our LED there."
+  },
+  {
+   "concept": "comparator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 11865,
+   "depth": "explains",
+   "context_snippet": "it's still acting like a comparator, it's doing the job of a comparator"
+  },
+  {
+   "concept": "feedback-loop",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 12038,
+   "depth": "explains",
+   "context_snippet": "it's in the feedback loop here via the, uh, current limit transistor"
+  },
+  {
+   "concept": "current-limit-transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 12069,
+   "depth": "mention",
+   "context_snippet": "via the, uh, current limit transistor"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 54,
+   "char_start": 12108,
+   "depth": "mention",
+   "context_snippet": "via the LT3080"
+  },
+  {
+   "concept": "linear-operation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 12223,
+   "depth": "explains",
+   "context_snippet": "it's linear, it's working in in a linear type, uh, region now in the feedback configuration."
+  },
+  {
+   "concept": "control-loop",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 55,
+   "char_start": 12385,
+   "depth": "explains",
+   "context_snippet": "remove the loop there, the control loop"
+  },
+  {
+   "concept": "comparator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 57,
+   "char_start": 12916,
+   "depth": "explains",
+   "context_snippet": "it switches bang like a true comparator cuz there's no feedback happening there."
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 59,
+   "char_start": 13324,
+   "depth": "mention",
+   "context_snippet": "we've got a spare op-amp here."
+  },
+  {
+   "concept": "op-amp-input-offset",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 64,
+   "char_start": 14380,
+   "depth": "explains",
+   "context_snippet": "It depends on slight offset voltages and things inside the op-amp."
+  },
+  {
+   "concept": "input-margin",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 64,
+   "char_start": 14538,
+   "depth": "explains",
+   "context_snippet": "All we want to do is just change the margin on this input just a smidge."
+  },
+  {
+   "concept": "non-inverting-input",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 65,
+   "char_start": 14654,
+   "depth": "explains",
+   "context_snippet": "lower the voltage on this non-inverting input just a tiny little fraction"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 15220,
+   "depth": "explains",
+   "context_snippet": "I've used a 10K and a 2 meg 2 here."
+  },
+  {
+   "concept": "voltage-margin",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 15256,
+   "depth": "explains",
+   "context_snippet": "That'll give us about 4.5 mV uh margin at a full-scale volt input"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 68,
+   "char_start": 15532,
+   "depth": "mention",
+   "context_snippet": "I've added the uh 10K in there"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 68,
+   "char_start": 15591,
+   "depth": "mention",
+   "context_snippet": "I've added the extra uh 2 meg 2 going to ground there."
+  },
+  {
+   "concept": "noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 71,
+   "char_start": 16094,
+   "depth": "explains",
+   "context_snippet": "there's probably some noise on there which is causing us an issue"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 72,
+   "char_start": 16307,
+   "depth": "mention",
+   "context_snippet": "let's replace that with a 470K"
+  },
+  {
+   "concept": "microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 16448,
+   "depth": "explains",
+   "context_snippet": "you can take that uh current limit output off to a uh digital pic uh input to your controller"
+  },
+  {
+   "concept": "pic-microcontroller",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 16497,
+   "depth": "mention",
+   "context_snippet": "a uh digital pic uh input to your controller"
+  },
+  {
+   "concept": "atmel",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 16712,
+   "depth": "mention",
+   "context_snippet": "a digital controller like a pic or an Atmel"
+  },
+  {
+   "concept": "output-voltage-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 16921,
+   "depth": "explains",
+   "context_snippet": "you would of course read the output voltage back off"
+  },
+  {
+   "concept": "output-current-sensing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 16978,
+   "depth": "explains",
+   "context_snippet": "you'd read the output current back off as well"
+  },
+  {
+   "concept": "lm334",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 17354,
+   "depth": "explains",
+   "context_snippet": "LM334 is actually 1 milliamp"
+  },
+  {
+   "concept": "sense-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 17393,
+   "depth": "explains",
+   "context_snippet": "with our 68 ohm sense resistor there"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18057,
+   "depth": "explains",
+   "context_snippet": "my output capacitance here although the data sheet says 2.2 microfarads minimum to make it stable"
+  },
+  {
+   "concept": "datasheet",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18093,
+   "depth": "explains",
+   "context_snippet": "the data sheet says 2.2 microfarads minimum to make it stable"
+  },
+  {
+   "concept": "ceramic-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 77,
+   "char_start": 18155,
+   "depth": "mention",
+   "context_snippet": "I'm only actually using one microfarad not even using a ceramic either"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 78,
+   "char_start": 18516,
+   "depth": "explains",
+   "context_snippet": "let's actually remove the output capacitance all together and see what happens."
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 18619,
+   "depth": "explains",
+   "context_snippet": "that's with no output capacitance at around about 2 volts"
+  },
+  {
+   "concept": "bypass-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 18880,
+   "depth": "explains",
+   "context_snippet": "the point 47 microfarad bypass cap on there"
+  },
+  {
+   "concept": "load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 18943,
+   "depth": "explains",
+   "context_snippet": "this is at 0.2 amps load"
+  },
+  {
+   "concept": "load-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 18998,
+   "depth": "explains",
+   "context_snippet": "I am driving 200 milliamps"
+  },
+  {
+   "concept": "low-dropout-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 19148,
+   "depth": "explains",
+   "context_snippet": "as you'd expect for a low drop out voltage regulator like this"
+  },
+  {
+   "concept": "ceramic-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 19398,
+   "depth": "explains",
+   "context_snippet": "the recommended 2.2 microfarad ceramic output capacitance"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 19549,
+   "depth": "explains",
+   "context_snippet": "let's test the drop out voltage at no load"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 19771,
+   "depth": "explains",
+   "context_snippet": "with these single turn pots really dicky. That's why you need a 10 turn pot"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 84,
+   "char_start": 19864,
+   "depth": "opinion",
+   "context_snippet": "any good lab power supply should have 10 turn pot"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 85,
+   "char_start": 20075,
+   "depth": "explains",
+   "context_snippet": "The green is the input voltage here on the scope"
+  },
+  {
+   "concept": "ground-reference",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 20187,
+   "depth": "explains",
+   "context_snippet": "The red ground reference is right on the bottom graticule"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 20466,
+   "depth": "explains",
+   "context_snippet": "we're talking 1.25 V or thereabouts drop out voltage at no load"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 20623,
+   "depth": "explains",
+   "context_snippet": "I'm probing that directly on the input pin of the LT 3080"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 89,
+   "char_start": 20921,
+   "depth": "explains",
+   "context_snippet": "And see where the output starts to drop. There we go. Around about 6.8 V"
+  },
+  {
+   "concept": "dropout-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 21061,
+   "depth": "explains",
+   "context_snippet": "that's about 1.35 to 1.4 V drop out voltage"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 21261,
+   "depth": "explains",
+   "context_snippet": "we've tied the V control pin and V in pin together"
+  },
+  {
+   "concept": "power-up-performance",
+   "type": "engineering-practice",
+   "speaker": "Dave Jones",
+   "paragraph_index": 92,
+   "char_start": 21576,
+   "depth": "explains",
+   "context_snippet": "we really want to check is the power up performance of this"
+  },
+  {
+   "concept": "overshoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 93,
+   "char_start": 21812,
+   "depth": "explains",
+   "context_snippet": "you don't want a big spike like that and then it to, you know, level back down"
+  },
+  {
+   "concept": "power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 94,
+   "char_start": 21916,
+   "depth": "explains",
+   "context_snippet": "You want it to ramp up nicely and then go rock steady at 5 V"
+  },
+  {
+   "concept": "rc-filter",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 22145,
+   "depth": "explains",
+   "context_snippet": "it's going through an RC filter here with the current shunt resistor"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 22182,
+   "depth": "mention",
+   "context_snippet": "with the current shunt resistor"
+  },
+  {
+   "concept": "lt1080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 95,
+   "char_start": 22259,
+   "depth": "mention",
+   "context_snippet": "the voltage is going to go straight through to power the uh LT1080"
+  },
+  {
+   "concept": "voltage-reference",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 96,
+   "char_start": 22407,
+   "depth": "mention",
+   "context_snippet": "around our voltage adjust pot or anything like that um or our voltage reference"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 97,
+   "char_start": 22578,
+   "depth": "explains",
+   "context_snippet": "This op amp's going to turn on instantly and it's going to try and drive the set pin"
+  },
+  {
+   "concept": "rc-time-constant",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 99,
+   "char_start": 23055,
+   "depth": "explains",
+   "context_snippet": "our turn-on RC time constant is going to be there"
+  },
+  {
+   "concept": "digital-oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 101,
+   "char_start": 23623,
+   "depth": "mention",
+   "context_snippet": "capture that on the digital scope"
+  },
+  {
+   "concept": "gain-setting-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 103,
+   "char_start": 24280,
+   "depth": "explains",
+   "context_snippet": "the gain setting resistors here are fairly low value"
+  },
+  {
+   "concept": "single-shot-mode",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 108,
+   "char_start": 25291,
+   "depth": "mention",
+   "context_snippet": "Put it into single shot mode"
+  },
+  {
+   "concept": "overshoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 110,
+   "char_start": 25782,
+   "depth": "explains",
+   "context_snippet": "all we care about with switch on power supply is that it ramps up cleanly and doesn't overshoot"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 111,
+   "char_start": 26031,
+   "depth": "explains",
+   "context_snippet": "Our op-amp response of course it's it's got to do things cuz it's an active loop"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 114,
+   "char_start": 26661,
+   "depth": "explains",
+   "context_snippet": "This op-amp is going to be higher than that"
+  },
+  {
+   "concept": "single-shot-mode",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 27403,
+   "depth": "mention",
+   "context_snippet": "Let's capture that again single shot mode"
+  },
+  {
+   "concept": "rc-curve",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 27603,
+   "depth": "explains",
+   "context_snippet": "that is actually the start of the um exponential RC curve"
+  },
+  {
+   "concept": "exponential-rc-curve",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 117,
+   "char_start": 27620,
+   "depth": "explains",
+   "context_snippet": "the start of the um exponential RC curve"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 118,
+   "char_start": 27692,
+   "depth": "explains",
+   "context_snippet": "that active op-amp there is driving it faster than a normal RC curve"
+  },
+  {
+   "concept": "rc-curve",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 118,
+   "char_start": 27731,
+   "depth": "opinion",
+   "context_snippet": "faster than a normal RC curve"
+  },
+  {
+   "concept": "linear-regulator",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 27913,
+   "depth": "explains",
+   "context_snippet": "what our regulator is capable going down to with no load"
+  },
+  {
+   "concept": "lt3080",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 27918,
+   "depth": "explains",
+   "context_snippet": "our regulator is capable going down to with no load. So, there's some turn-on mechanism there internally to the LT3080 device"
+  },
+  {
+   "concept": "turn-on-mechanism",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 119,
+   "char_start": 27975,
+   "depth": "explains",
+   "context_snippet": "there's some turn-on mechanism there internally to the LT3080 device"
+  },
+  {
+   "concept": "knee-characteristic",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 28268,
+   "depth": "explains",
+   "context_snippet": "it's got this little knee characteristic uh switch on like that"
+  },
+  {
+   "concept": "overshoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 120,
+   "char_start": 28337,
+   "depth": "opinion",
+   "context_snippet": "it's not a problem because it doesn't overshoot"
+  },
+  {
+   "concept": "sense-point",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 123,
+   "char_start": 28908,
+   "depth": "explains",
+   "context_snippet": "temporarily move this uh sense point back to here"
+  },
+  {
+   "concept": "time-constant",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 124,
+   "char_start": 29058,
+   "depth": "explains",
+   "context_snippet": "the time constant will be longer and match the math exactly for 1 K and 22 microfarads"
+  },
+  {
+   "concept": "rc-time-constant",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 125,
+   "char_start": 29435,
+   "depth": "explains",
+   "context_snippet": "there's no RC time constant in the feedback loop anymore"
+  },
+  {
+   "concept": "constant-current-source",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 127,
+   "char_start": 29753,
+   "depth": "explains",
+   "context_snippet": "that's probably due to the constant current source in there"
+  },
+  {
+   "concept": "rise-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 129,
+   "char_start": 30116,
+   "depth": "explains",
+   "context_snippet": "Much faster rise time but still that exponential curve"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 129,
+   "char_start": 30217,
+   "depth": "explains",
+   "context_snippet": "the op-amp of course has to compensate for it all"
+  },
+  {
+   "concept": "ringing",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 130,
+   "char_start": 30339,
+   "depth": "explains",
+   "context_snippet": "the output of the op-amp rings a little"
+  },
+  {
+   "concept": "undershoot",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 130,
+   "char_start": 30435,
+   "depth": "explains",
+   "context_snippet": "There's a little bit of undershoot and recovery there"
+  },
+  {
+   "concept": "capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 132,
+   "char_start": 30701,
+   "depth": "explains",
+   "context_snippet": "we do need some capacitance on there just to lower the output noise"
+  },
+  {
+   "concept": "output-noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 132,
+   "char_start": 30738,
+   "depth": "explains",
+   "context_snippet": "just to lower the output noise"
+  },
+  {
+   "concept": "current-limit",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 132,
+   "char_start": 30773,
+   "depth": "mention",
+   "context_snippet": "we'll need it for our current limit"
+  },
+  {
+   "concept": "ringing",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 135,
+   "char_start": 31392,
+   "depth": "opinion",
+   "context_snippet": "Check out the ringing on the op amp"
+  },
+  {
+   "concept": "op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 135,
+   "char_start": 31402,
+   "depth": "mention",
+   "context_snippet": "the ringing on the op amp"
+  },
+  {
+   "concept": "current-limit-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 138,
+   "char_start": 32039,
+   "depth": "explains",
+   "context_snippet": "let's try to see what happens in current limit mode"
+  },
+  {
+   "concept": "trigger-slope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 138,
+   "char_start": 32179,
+   "depth": "explains",
+   "context_snippet": "we'll trigger on the negative slope"
+  },
+  {
+   "concept": "constant-current-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 138,
+   "char_start": 32223,
+   "depth": "explains",
+   "context_snippet": "when it goes into constant current mode, the output voltage is going to fall"
+  },
+  {
+   "concept": "constant-current-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 33147,
+   "depth": "explains",
+   "context_snippet": "when it goes into constant current mode like that"
+  },
+  {
+   "concept": "transistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 33204,
+   "depth": "explains",
+   "context_snippet": "it, uh, switches on this transistor, which then discharges this 22 microfarad cap"
+  },
+  {
+   "concept": "capacitor-discharge",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 143,
+   "char_start": 33252,
+   "depth": "explains",
+   "context_snippet": "discharges this 22 microfarad cap through that 1K to ground"
+  },
+  {
+   "concept": "output-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 144,
+   "char_start": 33619,
+   "depth": "explains",
+   "context_snippet": "we can, uh, short, uh, short out the cap directly"
+  },
+  {
+   "concept": "constant-current-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 145,
+   "char_start": 33736,
+   "depth": "opinion",
+   "context_snippet": "very well-behaved, uh, in, uh, current, um, in in switchover to constant current mode"
+  },
+  {
+   "concept": "op-amp-oscillation",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 150,
+   "char_start": 34857,
+   "depth": "explains",
+   "context_snippet": "you can see that it is actually oscillating like that"
+  },
+  {
+   "concept": "high-resolution-mode",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 153,
+   "char_start": 35609,
+   "depth": "explains",
+   "context_snippet": "I think that is possibly because we're in high res mode"
+  },
+  {
+   "concept": "oscilloscope-rolling-average",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 154,
+   "char_start": 35832,
+   "depth": "explains",
+   "context_snippet": "You can see the rolling average done in high res mode on the scope"
+  },
+  {
+   "concept": "output-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 155,
+   "char_start": 36076,
+   "depth": "opinion",
+   "context_snippet": "much cleaner response with the 22 microfarads"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36177,
+   "depth": "explains",
+   "context_snippet": "with the uh 100 n. There it is. As I turn it down, bang. Look at that. Terrible."
+  },
+  {
+   "concept": "noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36258,
+   "depth": "opinion",
+   "context_snippet": "And with no capacitor at all, by the way, it's an absolute shocker."
+  },
+  {
+   "concept": "output-capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 156,
+   "char_start": 36262,
+   "depth": "opinion",
+   "context_snippet": "with no capacitor at all, by the way, it's an absolute shocker"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 36380,
+   "depth": "explains",
+   "context_snippet": "put that 22 mic back in. Bang. Clean as a whistle."
+  },
+  {
+   "concept": "ac-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 36482,
+   "depth": "explains",
+   "context_snippet": "I've put it to AC coupling 10 mV per division"
+  },
+  {
+   "concept": "noise",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 157,
+   "char_start": 36529,
+   "depth": "mention",
+   "context_snippet": "and that's the noise"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 36584,
+   "depth": "mention",
+   "context_snippet": "I'm adjusting the pot there"
+  },
+  {
+   "concept": "voltage-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 36632,
+   "depth": "mention",
+   "context_snippet": "That's in voltage mode"
+  },
+  {
+   "concept": "current-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 36660,
+   "depth": "mention",
+   "context_snippet": "we switch to current mode"
+  },
+  {
+   "concept": "switch-off-transient",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 158,
+   "char_start": 36728,
+   "depth": "explains",
+   "context_snippet": "we'll measure this switch off transient now"
+  },
+  {
+   "concept": "operational-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 159,
+   "char_start": 36930,
+   "depth": "mention",
+   "context_snippet": "the green trace again is our is our control op amp output"
+  },
+  {
+   "concept": "electronic-switch",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 160,
+   "char_start": 37084,
+   "depth": "opinion",
+   "context_snippet": "Normally, you'd electronic switches."
+  },
+  {
+   "concept": "load",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 160,
+   "char_start": 37132,
+   "depth": "mention",
+   "context_snippet": "just disconnect that real quick"
+  },
+  {
+   "concept": "operational-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 161,
+   "char_start": 37382,
+   "depth": "explains",
+   "context_snippet": "the op amp kicks in and controls it all, and all settles back down nicely"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 162,
+   "char_start": 37596,
+   "depth": "explains",
+   "context_snippet": "that's with our 1 microfarad output capacitance"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 163,
+   "char_start": 37733,
+   "depth": "mention",
+   "context_snippet": "I'll get an extra 47 microfarads, and I'll whack that on the output"
+  },
+  {
+   "concept": "output-transient",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 164,
+   "char_start": 37997,
+   "depth": "explains",
+   "context_snippet": "Much smaller output transient this time cuz we've got greater output capacitance."
+  },
+  {
+   "concept": "constant-current-mode",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 165,
+   "char_start": 38241,
+   "depth": "explains",
+   "context_snippet": "when it switches into constant current mode"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 165,
+   "char_start": 38286,
+   "depth": "explains",
+   "context_snippet": "all that energy from the output capacitance can be dumped into the load"
+  },
+  {
+   "concept": "switch-on-transient",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 166,
+   "char_start": 38453,
+   "depth": "mention",
+   "context_snippet": "we'll check the load when we do the switch on transient"
+  },
+  {
+   "concept": "switch-on-transient",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 168,
+   "char_start": 38811,
+   "depth": "explains",
+   "context_snippet": "There's our switch on transient. 100 mV, uh round about two divisions."
+  },
+  {
+   "concept": "operational-amplifier",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 168,
+   "char_start": 38891,
+   "depth": "explains",
+   "context_snippet": "you can see the op amp recovering there. And stabilizing."
+  },
+  {
+   "concept": "multimeter",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 172,
+   "char_start": 39730,
+   "depth": "mention",
+   "context_snippet": "the burden voltage in my multimeter is in place there"
+  },
+  {
+   "concept": "burden-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 172,
+   "char_start": 39730,
+   "depth": "explains",
+   "context_snippet": "the burden voltage in my multimeter is in place there"
+  },
+  {
+   "concept": "voltage-drop",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 172,
+   "char_start": 39803,
+   "depth": "explains",
+   "context_snippet": "the voltage drop in the wiring and the breadboard"
+  },
+  {
+   "concept": "to-220",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 173,
+   "char_start": 39970,
+   "depth": "mention",
+   "context_snippet": "the tab of my TO220 device"
+  },
+  {
+   "concept": "current-shunt-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 174,
+   "char_start": 40177,
+   "depth": "mention",
+   "context_snippet": "I've replaced the current shunt resistor with just a jumper link"
+  },
+  {
+   "concept": "jumper-link",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 174,
+   "char_start": 40218,
+   "depth": "mention",
+   "context_snippet": "with just a jumper link to get us greater output current capability"
+  },
+  {
+   "concept": "thermal-overload",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 177,
+   "char_start": 40680,
+   "depth": "opinion",
+   "context_snippet": "Maybe the uh thermal overload's kicking something's kicking in"
+  },
+  {
+   "concept": "heatsink",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 178,
+   "char_start": 40942,
+   "depth": "mention",
+   "context_snippet": "we'll measure that heat sink temperature"
+  },
+  {
+   "concept": "temperature-measurement",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 178,
+   "char_start": 41063,
+   "depth": "explains",
+   "context_snippet": "let's probe that case and see what it's at"
+  },
+  {
+   "concept": "breadboard",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 179,
+   "char_start": 41355,
+   "depth": "opinion",
+   "context_snippet": "but I I think it passed with uh, flying colors on the uh, breadboard"
+  },
+  {
+   "concept": "pcb-layout",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 180,
+   "char_start": 41522,
+   "depth": "mention",
+   "context_snippet": "get on to uh, laying out the board and building this thing up"
+  }
+ ]
+}
