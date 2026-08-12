@@ -79,7 +79,12 @@ def fetch(vid):
     r = subprocess.run(cmd, capture_output=True, text=True)
     got = [p for p in WORK.glob(f"{vid}.*") if p.suffix != ".ogg"]
     if not got:
-        raise RuntimeError(f"download failed: {r.stderr.strip()[-200:]}")
+        # Keep the WHOLE stderr. yt-dlp puts "Sign in to confirm you're not a bot"
+        # at the START of a long error that ends with a wiki URL, so the old
+        # [-200:] tail cut the marker off, BOT_BLOCK never matched, and instead of
+        # pausing 30 minutes the run would have burned through all 748 videos
+        # marking them failed. Truncate at the log line, never before the match.
+        raise RuntimeError(f"download failed: {r.stderr.strip()}")
     src = got[0]
     # 16 kHz mono opus: exactly what Whisper resamples to internally, and ~7x
     # smaller than source, which is what makes the upload tractable.
@@ -114,7 +119,12 @@ def transcribe(path):
     req = urllib.request.Request(API, data=bytes(body), method="POST")
     req.add_header("Authorization", f"Bearer {KEY}")
     req.add_header("Content-Type", f"multipart/form-data; boundary={b}")
-    with urllib.request.urlopen(req, timeout=1800) as resp:
+    # NOT 1800. A 40-minute video is ~5 MB of 16 kHz opus and answers in under a
+    # minute; anything past a few minutes is a hung socket, not slow work. At 1800
+    # a bad patch on OpenAI's side (504s, broken pipes) parked all six workers for
+    # half an hour each, the 8-slot ready queue filled, and the single downloader
+    # blocked forever in put() -- the whole run deadlocked with an empty work dir.
+    with urllib.request.urlopen(req, timeout=240) as resp:
         return json.loads(resp.read())
 
 
@@ -171,7 +181,7 @@ def downloader(work_q, ready_q, total):
             work_q.task_done()
 
 
-def worker(ready_q, total):
+def worker(ready_q, total, work_q):
     while not STOP.is_set():
         try:
             row, ogg = ready_q.get(timeout=10)
@@ -191,8 +201,17 @@ def worker(ready_q, total):
             log(f"[{n}/{total}] {vid} {mins:5.1f}min  ${_st['mins']*PRICE_PER_MIN:6.2f} "
                 f"spent  {n/max(el,.01):4.0f}/h  {row['title'][:44]}")
         except Exception as e:                                  # noqa: BLE001
-            log(f"API FAIL {vid}: {type(e).__name__} {str(e)[-120:]}")
-            with _lock: _st["failed"] += 1
+            # A transcription failure used to drop the video on the floor -- the
+            # audio was deleted and nothing ever re-queued it, so a transient 504
+            # cost a video permanently. Put it back and let the downloader refetch.
+            tries = row.get("_a", 0) + 1
+            row["_a"] = tries
+            if tries <= 2:
+                log(f"API RETRY {vid} ({tries}/2): {type(e).__name__} {str(e)[-90:]}")
+                work_q.put(row)
+            else:
+                log(f"API FAIL {vid}: {type(e).__name__} {str(e)[-120:]}")
+                with _lock: _st["failed"] += 1
         finally:
             ogg.unlink(missing_ok=True)
             ready_q.task_done()
@@ -213,7 +232,8 @@ def main():
     for r in rows:
         work_q.put(r)
     threads = [threading.Thread(target=downloader, args=(work_q, ready_q, total), daemon=True)]
-    threads += [threading.Thread(target=worker, args=(ready_q, total), daemon=True)
+    threads += [threading.Thread(target=worker, args=(ready_q, total, work_q),
+                                 daemon=True)
                 for _ in range(N_API)]
     for t in threads: t.start()
     try:
