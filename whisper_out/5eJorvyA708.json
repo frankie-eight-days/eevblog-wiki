@@ -1,0 +1,219 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"mels": 128,
+		"ftype": 8
+	},
+	"params": {
+		"model": "/Users/frankwalsh/eevblog_local/models/ggml-large-v3-q5_0.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:29,380"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 29380
+			},
+			"text": " Hi, I wanted to just show you what I think I've found a bug in Altium Designer 17. This is the absolute latest release as of the release date of this video and I was just actually making a video on ERC, Electrical Rules Checking in Schematics, and I was trying to like force an error and it wasn't being detected and this is really rather unusual, okay?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:29,380",
+				"to": "00:00:58,760"
+			},
+			"offsets": {
+				"from": 29380,
+				"to": 58760
+			},
+			"text": " So what I've got here is I've deliberately introduced several errors into this schematic here. One is a data out, an output pin of this chip is connected over to another output here, okay? So two outputs shorted together, it should detect that, you know, as a fail, okay? And then I've got, well, I've got two floating, I've got a floating input here, so two inputs connected together with no driving source, okay?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:58,760",
+				"to": "00:01:28,140"
+			},
+			"offsets": {
+				"from": 58760,
+				"to": 88140
+			},
+			"text": " It should detect that and I've got another one here where the data output pin is connected through to ground, so it's connected to a power net. Once again, a really bad error which should be picked up by an ERC. So, hey, look, I'll go into my out job here, okay? I've got my out job set for my Nixie Tube display project, here we go, and I'll run that and bingo, look, okay, I've got a couple that are saying there's no driving source, okay?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:28,140",
+				"to": "00:01:57,520"
+			},
+			"offsets": {
+				"from": 88140,
+				"to": 117520
+			},
+			"text": " That's fine, net's hidden, but there is no warning or error flagged for two output pins shorted together or for an output pin shorted to a ground, like a power net, okay? And just to prove that it's all hunky-dory, I'll go into my project options here, my connection matrix, look, here it is, output pin to output pin, shorted together, so there it is, output pin to output pin generates an error."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:57,520",
+				"to": "00:02:26,900"
+			},
+			"offsets": {
+				"from": 117520,
+				"to": 146900
+			},
+			"text": " It should generate an error, you can have a no report, a warning, an error or a fatal error and trust me, I've experimented with this, doesn't matter what you set here, it does not detect it and power nets and everything else by default should actually detect this sort of stuff and you go, okay, don't use an out job, but hey, an out job is supposed to be the final step, critical design step before you manufacture or do anything else."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,900",
+				"to": "00:02:45,860"
+			},
+			"offsets": {
+				"from": 146900,
+				"to": 165860
+			},
+			"text": " So there's something wrong, I'm not sure where it's getting and if I just, where it's getting those options from, whether or not it's a bug that's missing it or it's getting some ERC options, matrix options from somewhere else, I don't know."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:45,860",
+				"to": "00:03:15,240"
+			},
+			"offsets": {
+				"from": 165860,
+				"to": 195240
+			},
+			"text": " So anyway, if I go to the schematic document over here and I right click and I compile that document, which is the same thing as doing that ERC and I'm specifically, I want to compile this one sheet like this, so I compile that Nixie sheet like that and sorry, it didn't pop up, there's a window here, there's a display window, a messages window, I'll actually clear that and I'll run that again, okay, compile, boom, there you go, it's done."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,240",
+				"to": "00:03:24,120"
+			},
+			"offsets": {
+				"from": 195240,
+				"to": 204120
+			},
+			"text": " And it, look, compile successful, no errors found, it did not even warn that those two outputs are connected together."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:24,360",
+				"to": "00:03:40,680"
+			},
+			"offsets": {
+				"from": 204360,
+				"to": 220680
+			},
+			"text": " Now the only way to make this work and I spoke to Altium and they said, yeah, do this and it'll work and sure enough, it does, I haven't used Altium 17 before, my previous version was Altium 10, so yeah, I'm a newbie to Altium 17 here."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,680",
+				"to": "00:03:45,020"
+			},
+			"offsets": {
+				"from": 220680,
+				"to": 225020
+			},
+			"text": " So let's go over to here, if I go compile PCB."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:45,240",
+				"to": "00:04:14,240"
+			},
+			"offsets": {
+				"from": 225240,
+				"to": 254240
+			},
+			"text": " Project, now the project, which contains a blank PCB, it doesn't matter, but if I do compile the PCB project, bingo, it finds it, okay, exactly what you want, here we go, no dry, ground, there it is, ground contains output pin, blah, blah, blah, blah, blah, okay, so it's found it, I don't like the fact that it really doesn't highlight, you know, you've got to like search through, where is it, where is it, well, there it is in there."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,240",
+				"to": "00:04:32,700"
+			},
+			"offsets": {
+				"from": 255240,
+				"to": 272700
+			},
+			"text": " Yeah, so it doesn't, anyway, and of course, it, and it's generated other warnings here, like component has unused subparts, which we didn't see before and things like that, so clearly it's getting rules from somewhere else and here's the multiple output pin error, for example."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:32,700",
+				"to": "00:04:45,200"
+			},
+			"offsets": {
+				"from": 272700,
+				"to": 285200
+			},
+			"text": " So it has now detected it, it's detected it just fine, multiple output pins, exactly as you would expect it to when you do an ERC, but if you go like this."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,240",
+				"to": "00:05:14,780"
+			},
+			"offsets": {
+				"from": 285240,
+				"to": 314780
+			},
+			"text": " And compile that, where, look, it's not there, it's not there, that to me has got to be a bug, there's no way that you can miss critical errors on a schematic, I want to check that one schematic, I'm asking it to do that, and once again, the out job will do exactly the same thing, it'll miss those errors, so what the, like here's the, like if I put that to a PDF report, I could,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:15,240",
+				"to": "00:05:44,940"
+			},
+			"offsets": {
+				"from": 315240,
+				"to": 344940
+			},
+			"text": " feed that to a PDF report, give that to management and say, hey, look, it's passed ERC, no worries whatsoever, let me go onto the PCB layout, and they'll go, yeah, no worries, and my schematic contains, like, really gross errors that are going to release the magic smoke from these chips, I mean, it's just, nah, there's something seriously wrong here, so I want to know where it's getting the rules from to do that compile document there,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,940",
+				"to": "00:06:14,640"
+			},
+			"offsets": {
+				"from": 344940,
+				"to": 374640
+			},
+			"text": " because it's certainly not coming from the project option, and fair enough, the, when I do the project compile, the project options uses the connection matrix, but where else is it getting the rules from to do the compile, so if it might be some legacy thing, because Altium's full of legacy stuff and things like that, but please comment below if you think this is, like, a genuine bug, or you know some way around it, or I'm doing something dumb, I'm still talking about it,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,640",
+				"to": "00:06:39,380"
+			},
+			"offsets": {
+				"from": 374640,
+				"to": 399380
+			},
+			"text": " I'm still talking with Altium on this, so I'm sort of, like, prematurely releasing this, but I just wanted to document that issue, so there you go, I think that is a major issue, if I compile a document, or do an out job, especially an out job ERC, like, you know, there it is, electrical rules check, thank you very much, I expect it to catch all those errors and it doesn't, anyway, enough rambling, catch you next time."
+		}
+	]
+}

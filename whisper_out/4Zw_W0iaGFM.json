@@ -1,0 +1,3486 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"mels": 128,
+		"ftype": 8
+	},
+	"params": {
+		"model": "/Users/frankwalsh/eevblog/models/ggml-large-v3-q5_0.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:06,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 6280
+			},
+			"text": " Hey, so I'm going to be kind of going into the reverse engineering of the PMS-150C programming interface."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:06,460",
+				"to": "00:00:11,900"
+			},
+			"offsets": {
+				"from": 6460,
+				"to": 11900
+			},
+			"text": " This might be very difficult, it might be very easy, but I suspect it's going to be quite obscure."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:12,240",
+				"to": "00:00:14,100"
+			},
+			"offsets": {
+				"from": 12240,
+				"to": 14100
+			},
+			"text": " So, let's just look at what we've got."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:14,500",
+				"to": "00:00:17,240"
+			},
+			"offsets": {
+				"from": 14500,
+				"to": 17240
+			},
+			"text": " So, first things first, I have this SOIC-8."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,520",
+				"to": "00:00:20,400"
+			},
+			"offsets": {
+				"from": 17520,
+				"to": 20400
+			},
+			"text": " When I talk about a pin, I'm going to be talking about the numbers."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:20,560",
+				"to": "00:00:24,000"
+			},
+			"offsets": {
+				"from": 20560,
+				"to": 24000
+			},
+			"text": " The numbers go round anticlockwise."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:24,240",
+				"to": "00:00:27,760"
+			},
+			"offsets": {
+				"from": 24240,
+				"to": 27760
+			},
+			"text": " So, 1, 2, 3, 4, 5, 6, 7, 8."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:27,760",
+				"to": "00:00:29,700"
+			},
+			"offsets": {
+				"from": 27760,
+				"to": 29700
+			},
+			"text": " Now, I've made some assumptions with this."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:29,840",
+				"to": "00:00:32,420"
+			},
+			"offsets": {
+				"from": 29840,
+				"to": 32420
+			},
+			"text": " So, I'm going to assume that this is ground and this is power."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,600",
+				"to": "00:00:37,140"
+			},
+			"offsets": {
+				"from": 32600,
+				"to": 37140
+			},
+			"text": " I'm also going to assume that reset is still reset."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:37,580",
+				"to": "00:00:44,100"
+			},
+			"offsets": {
+				"from": 37580,
+				"to": 44100
+			},
+			"text": " So, and I'm also going to assume that reset is active low."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:44,560",
+				"to": "00:00:47,580"
+			},
+			"offsets": {
+				"from": 44560,
+				"to": 47580
+			},
+			"text": " So, it's resetting when it's at ground."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:48,000",
+				"to": "00:00:51,700"
+			},
+			"offsets": {
+				"from": 48000,
+				"to": 51700
+			},
+			"text": " So, it's running when it's at power rail or something."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:51,840",
+				"to": "00:00:52,900"
+			},
+			"offsets": {
+				"from": 51840,
+				"to": 52900
+			},
+			"text": " High, logic high."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:53,480",
+				"to": "00:00:57,600"
+			},
+			"offsets": {
+				"from": 53480,
+				"to": 57600
+			},
+			"text": " So, that leaves us with five pins to analyze for."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:57,760",
+				"to": "00:01:03,360"
+			},
+			"offsets": {
+				"from": 57760,
+				"to": 63360
+			},
+			"text": " Data and clocks and things like that, which could potentially be to do with programming."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:03,900",
+				"to": "00:01:05,240"
+			},
+			"offsets": {
+				"from": 63900,
+				"to": 65240
+			},
+			"text": " Now, why would you want to do this?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:05,300",
+				"to": "00:01:07,540"
+			},
+			"offsets": {
+				"from": 65300,
+				"to": 67540
+			},
+			"text": " Why would you not just use the existing programmer?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,660",
+				"to": "00:01:10,900"
+			},
+			"offsets": {
+				"from": 67660,
+				"to": 70900
+			},
+			"text": " It is pretty cheap, and I think you probably should use the existing programmer."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:10,900",
+				"to": "00:01:18,520"
+			},
+			"offsets": {
+				"from": 70900,
+				"to": 78520
+			},
+			"text": " But you might have a specific application where you simply want to program it in the field or in the device itself."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:18,880",
+				"to": "00:01:26,640"
+			},
+			"offsets": {
+				"from": 78880,
+				"to": 86640
+			},
+			"text": " Or you don't have the ability to cart around this huge blue thing, which may well be the case."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:27,440",
+				"to": "00:01:31,640"
+			},
+			"offsets": {
+				"from": 87440,
+				"to": 91640
+			},
+			"text": " And it might be that you just want to get rid of a production step."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:31,640",
+				"to": "00:01:41,520"
+			},
+			"offsets": {
+				"from": 91640,
+				"to": 101520
+			},
+			"text": " Maybe your device has the required power rails, and all it would cost is a MOSFET or something to be able to program it when it's in the device itself."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:41,880",
+				"to": "00:01:44,940"
+			},
+			"offsets": {
+				"from": 101880,
+				"to": 104940
+			},
+			"text": " Or even just programming it from test points."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:45,500",
+				"to": "00:01:46,400"
+			},
+			"offsets": {
+				"from": 105500,
+				"to": 106400
+			},
+			"text": " Maybe you want to do that."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:46,680",
+				"to": "00:01:48,340"
+			},
+			"offsets": {
+				"from": 106680,
+				"to": 108340
+			},
+			"text": " Let's probably just get started."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:48,560",
+				"to": "00:01:51,140"
+			},
+			"offsets": {
+				"from": 108560,
+				"to": 111140
+			},
+			"text": " What I have here is the analog discovery."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:52,520",
+				"to": "00:01:54,320"
+			},
+			"offsets": {
+				"from": 112520,
+				"to": 114320
+			},
+			"text": " And I have the programmer."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,600",
+				"to": "00:01:56,640"
+			},
+			"offsets": {
+				"from": 114600,
+				"to": 116640
+			},
+			"text": " And I'm basically just hooking up the..."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:57,120",
+				"to": "00:02:05,680"
+			},
+			"offsets": {
+				"from": 117120,
+				"to": 125680
+			},
+			"text": " ...the analog pins of the programmer to the oscilloscope section of the analog discovery."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:06,640",
+				"to": "00:02:11,320"
+			},
+			"offsets": {
+				"from": 126640,
+				"to": 131320
+			},
+			"text": " So, I'm going to be looking at the power pin and I'm going to look at the reset pin."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:11,320",
+				"to": "00:02:16,000"
+			},
+			"offsets": {
+				"from": 131320,
+				"to": 136000
+			},
+			"text": " To make sure that things actually make some sense, we're going to need to actually sanity check this."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:16,000",
+				"to": "00:02:20,300"
+			},
+			"offsets": {
+				"from": 136000,
+				"to": 140300
+			},
+			"text": " So, the yellow waveform, strangely enough, is the power supply."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:20,300",
+				"to": "00:02:26,440"
+			},
+			"offsets": {
+				"from": 140300,
+				"to": 146440
+			},
+			"text": " Now, this might look a bit strange because it's got all these levels, and these I suspect are just programming voltages."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,800",
+				"to": "00:02:36,040"
+			},
+			"offsets": {
+				"from": 146800,
+				"to": 156040
+			},
+			"text": " If you look at the far left over here, the section that I am circling, you have these on/off moments."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:36,040",
+				"to": "00:02:37,840"
+			},
+			"offsets": {
+				"from": 156040,
+				"to": 157840
+			},
+			"text": " And I'm not really sure what's happening here."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:37,840",
+				"to": "00:02:46,240"
+			},
+			"offsets": {
+				"from": 157840,
+				"to": 166240
+			},
+			"text": " It's probably entering some kind of initialization mode, although the power line is being turned off, so I'm not really sure."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:46,240",
+				"to": "00:02:48,200"
+			},
+			"offsets": {
+				"from": 166240,
+				"to": 168200
+			},
+			"text": " And reset is being thrown."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:48,200",
+				"to": "00:02:56,480"
+			},
+			"offsets": {
+				"from": 168200,
+				"to": 176480
+			},
+			"text": " But after that point, we have this long section, and I suspect this is where the real initialization happens, where it's getting ready to program..."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,480",
+				"to": "00:03:02,880"
+			},
+			"offsets": {
+				"from": 176480,
+				"to": 182880
+			},
+			"text": " It has to enter some kind of programming mode, this device can't just always be in programming mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:02,880",
+				"to": "00:03:08,620"
+			},
+			"offsets": {
+				"from": 182880,
+				"to": 188620
+			},
+			"text": " It uses the pins that would normally be I/O for programming."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:08,620",
+				"to": "00:03:15,320"
+			},
+			"offsets": {
+				"from": 188620,
+				"to": 195320
+			},
+			"text": " So, it probably has to enter that mode, or it is also possible that it's always in that mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,320",
+				"to": "00:03:23,320"
+			},
+			"offsets": {
+				"from": 195320,
+				"to": 203320
+			},
+			"text": " It could be in that mode initially, and because it's one-time programmable, the first time you program it, it exits that mode forever."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:23,320",
+				"to": "00:03:26,160"
+			},
+			"offsets": {
+				"from": 203320,
+				"to": 206160
+			},
+			"text": " So, that could well be the case."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:26,160",
+				"to": "00:03:28,840"
+			},
+			"offsets": {
+				"from": 206160,
+				"to": 208840
+			},
+			"text": " Because of the shape of this waveform, I'm going to assume it's not."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:28,840",
+				"to": "00:03:33,760"
+			},
+			"offsets": {
+				"from": 208840,
+				"to": 213760
+			},
+			"text": " I think there is an initialization section, could be wrong, but I don't know."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,760",
+				"to": "00:03:35,960"
+			},
+			"offsets": {
+				"from": 213760,
+				"to": 215960
+			},
+			"text": " The next section, we get this high voltage section."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:35,960",
+				"to": "00:03:40,500"
+			},
+			"offsets": {
+				"from": 215960,
+				"to": 220500
+			},
+			"text": " Now, this is about 6.5 volts up here."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,500",
+				"to": "00:03:46,680"
+			},
+			"offsets": {
+				"from": 220500,
+				"to": 226680
+			},
+			"text": " This is probably the section where the PROM itself is being programmed."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,680",
+				"to": "00:03:53,920"
+			},
+			"offsets": {
+				"from": 226680,
+				"to": 233920
+			},
+			"text": " And I suspect we have some kind of verification happening over here, programming again, and some more verification."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:53,920",
+				"to": "00:03:55,840"
+			},
+			"offsets": {
+				"from": 233920,
+				"to": 235840
+			},
+			"text": " What's going on with the reset line?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:55,840",
+				"to": "00:03:59,360"
+			},
+			"offsets": {
+				"from": 235840,
+				"to": 239360
+			},
+			"text": " After each section, it appears that a reset takes place."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:59,360",
+				"to": "00:04:13,800"
+			},
+			"offsets": {
+				"from": 239360,
+				"to": 253800
+			},
+			"text": " So, I'm thinking now, the device must be stateful, meaning that after each stage in the programming, it must retain some state, it must know where it is up to."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:13,800",
+				"to": "00:04:25,520"
+			},
+			"offsets": {
+				"from": 253800,
+				"to": 265520
+			},
+			"text": " So, those states aren't lost between these resets, because if they were, you would have to start the programming process all over again, and that would be not very useful."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:25,520",
+				"to": "00:04:26,480"
+			},
+			"offsets": {
+				"from": 265520,
+				"to": 266480
+			},
+			"text": " So, yeah."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,480",
+				"to": "00:04:29,360"
+			},
+			"offsets": {
+				"from": 266480,
+				"to": 269360
+			},
+			"text": " What kinds of things do we need to look at here?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:29,360",
+				"to": "00:04:35,800"
+			},
+			"offsets": {
+				"from": 269360,
+				"to": 275800
+			},
+			"text": " Well, from the start to the start of the programming is about 244 milliseconds."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:35,800",
+				"to": "00:04:40,320"
+			},
+			"offsets": {
+				"from": 275800,
+				"to": 280320
+			},
+			"text": " We're going to be looking for the data at 244 milliseconds, approximately."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:40,320",
+				"to": "00:04:45,520"
+			},
+			"offsets": {
+				"from": 280320,
+				"to": 285520
+			},
+			"text": " It should be pretty obvious when it is, because there should be a fair bit of data."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,520",
+				"to": "00:04:53,200"
+			},
+			"offsets": {
+				"from": 285520,
+				"to": 293200
+			},
+			"text": " And the data to this, what I think is initialization section, is 68 milliseconds."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:53,200",
+				"to": "00:04:55,200"
+			},
+			"offsets": {
+				"from": 293200,
+				"to": 295200
+			},
+			"text": " So, let's have a look at what I think the clock pin is."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,200",
+				"to": "00:05:02,200"
+			},
+			"offsets": {
+				"from": 295200,
+				"to": 302200
+			},
+			"text": " Let's see if the clock pin resides inside, when the reset pin is up or down."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:02,200",
+				"to": "00:05:08,200"
+			},
+			"offsets": {
+				"from": 302200,
+				"to": 308200
+			},
+			"text": " Now, this will help us determine whether that really is a reset pin, and whether that power pin is really the power pin."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,200",
+				"to": "00:05:09,200"
+			},
+			"offsets": {
+				"from": 308200,
+				"to": 309200
+			},
+			"text": " We don't know."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:09,200",
+				"to": "00:05:11,200"
+			},
+			"offsets": {
+				"from": 309200,
+				"to": 311200
+			},
+			"text": " It's not actually guaranteed."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:11,200",
+				"to": "00:05:18,200"
+			},
+			"offsets": {
+				"from": 311200,
+				"to": 318200
+			},
+			"text": " Until the device is programmed, that spec sheet, the data sheet, doesn't really come into play."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:18,200",
+				"to": "00:05:23,200"
+			},
+			"offsets": {
+				"from": 318200,
+				"to": 323200
+			},
+			"text": " It could burn some fuses and change the pins altogether."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:23,200",
+				"to": "00:05:24,880"
+			},
+			"offsets": {
+				"from": 323200,
+				"to": 324880
+			},
+			"text": " Let's have a look."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:24,880",
+				"to": "00:05:28,880"
+			},
+			"offsets": {
+				"from": 324880,
+				"to": 328880
+			},
+			"text": " Ooh, that does look like a clock line."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:28,880",
+				"to": "00:05:35,880"
+			},
+			"offsets": {
+				"from": 328880,
+				"to": 335880
+			},
+			"text": " Now, we're getting a lot of aliasing, because the sample rate of the ADC on the analog discovery sucks."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:35,880",
+				"to": "00:05:39,880"
+			},
+			"offsets": {
+				"from": 335880,
+				"to": 339880
+			},
+			"text": " But, we can zoom in, and I'm going to."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:39,880",
+				"to": "00:05:43,880"
+			},
+			"offsets": {
+				"from": 339880,
+				"to": 343880
+			},
+			"text": " I'm just adding some hold-offs, so it doesn't re-trigger immediately."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:43,880",
+				"to": "00:05:45,880"
+			},
+			"offsets": {
+				"from": 343880,
+				"to": 345880
+			},
+			"text": " That's really annoying."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:45,880",
+				"to": "00:05:49,880"
+			},
+			"offsets": {
+				"from": 345880,
+				"to": 349880
+			},
+			"text": " Okay, so here we go, we're at 244 milliseconds, thereabouts."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:49,880",
+				"to": "00:05:51,880"
+			},
+			"offsets": {
+				"from": 349880,
+				"to": 351880
+			},
+			"text": " I'm having to reprogram it every time."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:51,880",
+				"to": "00:05:54,560"
+			},
+			"offsets": {
+				"from": 351880,
+				"to": 354560
+			},
+			"text": " Now, this is a one-time programmable feature."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:54,560",
+				"to": "00:06:04,560"
+			},
+			"offsets": {
+				"from": 354560,
+				"to": 364560
+			},
+			"text": " And, because it takes a while to actually swap the device out, I'm only analyzing the data that's sent when it's already programmed."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:04,560",
+				"to": "00:06:06,560"
+			},
+			"offsets": {
+				"from": 364560,
+				"to": 366560
+			},
+			"text": " The device doesn't seem to know the difference."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:06,560",
+				"to": "00:06:08,560"
+			},
+			"offsets": {
+				"from": 366560,
+				"to": 368560
+			},
+			"text": " It can't tell whether it's already programmed."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:08,560",
+				"to": "00:06:12,560"
+			},
+			"offsets": {
+				"from": 368560,
+				"to": 372560
+			},
+			"text": " So, I'm only analyzing that data, because otherwise it would take forever."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:12,560",
+				"to": "00:06:14,560"
+			},
+			"offsets": {
+				"from": 372560,
+				"to": 374560
+			},
+			"text": " Now, there are probably some differences."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,560",
+				"to": "00:06:16,560"
+			},
+			"offsets": {
+				"from": 374560,
+				"to": 376560
+			},
+			"text": " We've got the power, and what I believe to be the data."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:16,560",
+				"to": "00:06:20,560"
+			},
+			"offsets": {
+				"from": 376560,
+				"to": 380560
+			},
+			"text": " So, we should be able to look at a clock, if we zoom into here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:20,560",
+				"to": "00:06:24,240"
+			},
+			"offsets": {
+				"from": 380560,
+				"to": 384240
+			},
+			"text": " Now, annoyingly, this device isn't perfect."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:24,240",
+				"to": "00:06:26,240"
+			},
+			"offsets": {
+				"from": 384240,
+				"to": 386240
+			},
+			"text": " It isn't perfectly timed."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:26,240",
+				"to": "00:06:30,240"
+			},
+			"offsets": {
+				"from": 386240,
+				"to": 390240
+			},
+			"text": " You'll notice that the relative timings change slightly."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:30,240",
+				"to": "00:06:34,240"
+			},
+			"offsets": {
+				"from": 390240,
+				"to": 394240
+			},
+			"text": " And, that has made this more difficult."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:34,240",
+				"to": "00:06:38,240"
+			},
+			"offsets": {
+				"from": 394240,
+				"to": 398240
+			},
+			"text": " You'll notice, see, right now, totally got a wrong section."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:38,240",
+				"to": "00:06:46,240"
+			},
+			"offsets": {
+				"from": 398240,
+				"to": 406240
+			},
+			"text": " Okay, so, it does appear that it clocks when the power line is high, which is exactly expected."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:46,240",
+				"to": "00:06:53,920"
+			},
+			"offsets": {
+				"from": 406240,
+				"to": 413920
+			},
+			"text": " And, if we look at the reset pin, we should see basically the same thing, and we do."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:53,920",
+				"to": "00:06:55,920"
+			},
+			"offsets": {
+				"from": 413920,
+				"to": 415920
+			},
+			"text": " So, that's great."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:57,920",
+				"to": "00:06:59,920"
+			},
+			"offsets": {
+				"from": 417920,
+				"to": 419920
+			},
+			"text": " So, what now?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:59,920",
+				"to": "00:07:01,920"
+			},
+			"offsets": {
+				"from": 419920,
+				"to": 421920
+			},
+			"text": " Well, we've got the clock line."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:01,920",
+				"to": "00:07:03,920"
+			},
+			"offsets": {
+				"from": 421920,
+				"to": 423920
+			},
+			"text": " Now, we need to find the data line."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:03,920",
+				"to": "00:07:05,920"
+			},
+			"offsets": {
+				"from": 423920,
+				"to": 425920
+			},
+			"text": " Now, I believe it to be the next pin."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:05,920",
+				"to": "00:07:09,920"
+			},
+			"offsets": {
+				"from": 425920,
+				"to": 429920
+			},
+			"text": " It usually, they're usually right next to each other."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:09,920",
+				"to": "00:07:13,920"
+			},
+			"offsets": {
+				"from": 429920,
+				"to": 433920
+			},
+			"text": " And, from previous probing around, it looks like the data line."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:13,920",
+				"to": "00:07:15,920"
+			},
+			"offsets": {
+				"from": 433920,
+				"to": 435920
+			},
+			"text": " So, let's go ahead and find that."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:15,920",
+				"to": "00:07:17,920"
+			},
+			"offsets": {
+				"from": 435920,
+				"to": 437920
+			},
+			"text": " Ooh!"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:17,920",
+				"to": "00:07:21,920"
+			},
+			"offsets": {
+				"from": 437920,
+				"to": 441920
+			},
+			"text": " So, this is the 244 ms section."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:21,920",
+				"to": "00:07:23,600"
+			},
+			"offsets": {
+				"from": 441920,
+				"to": 443600
+			},
+			"text": " And, this looks like data."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:23,600",
+				"to": "00:07:29,600"
+			},
+			"offsets": {
+				"from": 443600,
+				"to": 449600
+			},
+			"text": " So, with that assumption, I'm going to move the reset line over to the clock line."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:29,600",
+				"to": "00:07:33,600"
+			},
+			"offsets": {
+				"from": 449600,
+				"to": 453600
+			},
+			"text": " So, channel 1, the yellow one, will now be a clock."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:33,600",
+				"to": "00:07:35,600"
+			},
+			"offsets": {
+				"from": 453600,
+				"to": 455600
+			},
+			"text": " There we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:35,600",
+				"to": "00:07:37,600"
+			},
+			"offsets": {
+				"from": 455600,
+				"to": 457600
+			},
+			"text": " So, if I had some good probes, I probably wouldn't do this at all."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:37,600",
+				"to": "00:07:39,600"
+			},
+			"offsets": {
+				"from": 457600,
+				"to": 459600
+			},
+			"text": " Okay, so, let's have a look."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:39,600",
+				"to": "00:07:43,600"
+			},
+			"offsets": {
+				"from": 459600,
+				"to": 463600
+			},
+			"text": " Well, if you look at this, let's look at this one data pulse, and compare it to the clock."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:43,600",
+				"to": "00:07:47,600"
+			},
+			"offsets": {
+				"from": 463600,
+				"to": 467600
+			},
+			"text": " The clock goes up and down in that data pulse."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:47,600",
+				"to": "00:07:49,600"
+			},
+			"offsets": {
+				"from": 467600,
+				"to": 469600
+			},
+			"text": " Now, it's important. It doesn't always do that."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:49,600",
+				"to": "00:07:51,600"
+			},
+			"offsets": {
+				"from": 469600,
+				"to": 471600
+			},
+			"text": " You could just have a rising edge inside a data."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:51,600",
+				"to": "00:07:53,280"
+			},
+			"offsets": {
+				"from": 471600,
+				"to": 473280
+			},
+			"text": " Um, so,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:53,280",
+				"to": "00:07:55,280"
+			},
+			"offsets": {
+				"from": 473280,
+				"to": 475280
+			},
+			"text": " that will change how we interpret the data."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:55,280",
+				"to": "00:07:57,280"
+			},
+			"offsets": {
+				"from": 475280,
+				"to": 477280
+			},
+			"text": " So, I believe this section to"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:57,280",
+				"to": "00:07:59,280"
+			},
+			"offsets": {
+				"from": 477280,
+				"to": 479280
+			},
+			"text": " represent"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:59,280",
+				"to": "00:08:01,280"
+			},
+			"offsets": {
+				"from": 479280,
+				"to": 481280
+			},
+			"text": " 1"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:01,280",
+				"to": "00:08:03,280"
+			},
+			"offsets": {
+				"from": 481280,
+				"to": 483280
+			},
+			"text": " 0"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:03,280",
+				"to": "00:08:05,280"
+			},
+			"offsets": {
+				"from": 483280,
+				"to": 485280
+			},
+			"text": " 0"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:05,280",
+				"to": "00:08:07,280"
+			},
+			"offsets": {
+				"from": 485280,
+				"to": 487280
+			},
+			"text": " 1"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:07,280",
+				"to": "00:08:09,280"
+			},
+			"offsets": {
+				"from": 487280,
+				"to": 489280
+			},
+			"text": " 1"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:09,280",
+				"to": "00:08:13,280"
+			},
+			"offsets": {
+				"from": 489280,
+				"to": 493280
+			},
+			"text": " So, I think that's sort of how the serial protocol is working here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:13,280",
+				"to": "00:08:15,280"
+			},
+			"offsets": {
+				"from": 493280,
+				"to": 495280
+			},
+			"text": " And, I don't know whether it's clocking in or"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:15,280",
+				"to": "00:08:17,280"
+			},
+			"offsets": {
+				"from": 495280,
+				"to": 497280
+			},
+			"text": " I don't know whether it's"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:17,280",
+				"to": "00:08:19,280"
+			},
+			"offsets": {
+				"from": 497280,
+				"to": 499280
+			},
+			"text": " clocking in and out on the rising or falling edge."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:19,280",
+				"to": "00:08:21,280"
+			},
+			"offsets": {
+				"from": 499280,
+				"to": 501280
+			},
+			"text": " But, because they're both inside every data,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:21,280",
+				"to": "00:08:22,960"
+			},
+			"offsets": {
+				"from": 501280,
+				"to": 502960
+			},
+			"text": " it probably doesn't matter so much."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:22,960",
+				"to": "00:08:24,960"
+			},
+			"offsets": {
+				"from": 502960,
+				"to": 504960
+			},
+			"text": " Does that make sense? I don't know."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:24,960",
+				"to": "00:08:26,960"
+			},
+			"offsets": {
+				"from": 504960,
+				"to": 506960
+			},
+			"text": " Now, there's something to notice."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:26,960",
+				"to": "00:08:28,960"
+			},
+			"offsets": {
+				"from": 506960,
+				"to": 508960
+			},
+			"text": " There is this section here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:28,960",
+				"to": "00:08:30,960"
+			},
+			"offsets": {
+				"from": 508960,
+				"to": 510960
+			},
+			"text": " It's a slower clock rate. Don't know what's happening here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:30,960",
+				"to": "00:08:32,960"
+			},
+			"offsets": {
+				"from": 510960,
+				"to": 512960
+			},
+			"text": " I have tried to figure it out."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:32,960",
+				"to": "00:08:34,960"
+			},
+			"offsets": {
+				"from": 512960,
+				"to": 514960
+			},
+			"text": " I have no idea. I can't get it to do anything"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:34,960",
+				"to": "00:08:36,960"
+			},
+			"offsets": {
+				"from": 514960,
+				"to": 516960
+			},
+			"text": " in that section, so I don't know why it's clocking."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:36,960",
+				"to": "00:08:38,960"
+			},
+			"offsets": {
+				"from": 516960,
+				"to": 518960
+			},
+			"text": " So, over here, it's still pulsing"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:38,960",
+				"to": "00:08:40,960"
+			},
+			"offsets": {
+				"from": 518960,
+				"to": 520960
+			},
+			"text": " in the high frequency section."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:40,960",
+				"to": "00:08:42,960"
+			},
+			"offsets": {
+				"from": 520960,
+				"to": 522960
+			},
+			"text": " So, no different than before."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:42,960",
+				"to": "00:08:44,960"
+			},
+			"offsets": {
+				"from": 522960,
+				"to": 524960
+			},
+			"text": " Okay, so I've thought about this since,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:44,960",
+				"to": "00:08:46,960"
+			},
+			"offsets": {
+				"from": 524960,
+				"to": 526960
+			},
+			"text": " and I've seen this a little bit before."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:46,960",
+				"to": "00:08:48,960"
+			},
+			"offsets": {
+				"from": 526960,
+				"to": 528960
+			},
+			"text": " Um, this could be, um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:48,960",
+				"to": "00:08:50,960"
+			},
+			"offsets": {
+				"from": 528960,
+				"to": 530960
+			},
+			"text": " the clock pulses required"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:50,960",
+				"to": "00:08:52,960"
+			},
+			"offsets": {
+				"from": 530960,
+				"to": 532960
+			},
+			"text": " to actually process the command."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:52,960",
+				"to": "00:08:54,960"
+			},
+			"offsets": {
+				"from": 532960,
+				"to": 534960
+			},
+			"text": " by the, um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:54,960",
+				"to": "00:08:56,960"
+			},
+			"offsets": {
+				"from": 534960,
+				"to": 536960
+			},
+			"text": " by the PMS150C."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:56,960",
+				"to": "00:08:58,960"
+			},
+			"offsets": {
+				"from": 536960,
+				"to": 538960
+			},
+			"text": " So, it could take 12 clock pulses"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:58,960",
+				"to": "00:09:00,960"
+			},
+			"offsets": {
+				"from": 538960,
+				"to": 540960
+			},
+			"text": " to process a word."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:00,960",
+				"to": "00:09:02,960"
+			},
+			"offsets": {
+				"from": 540960,
+				"to": 542960
+			},
+			"text": " Perhaps those pulses are required to shift it"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:02,960",
+				"to": "00:09:04,960"
+			},
+			"offsets": {
+				"from": 542960,
+				"to": 544960
+			},
+			"text": " out of the, out of one"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:04,960",
+				"to": "00:09:06,960"
+			},
+			"offsets": {
+				"from": 544960,
+				"to": 546960
+			},
+			"text": " register into another."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:06,960",
+				"to": "00:09:08,960"
+			},
+			"offsets": {
+				"from": 546960,
+				"to": 548960
+			},
+			"text": " Who knows? But,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:08,960",
+				"to": "00:09:10,960"
+			},
+			"offsets": {
+				"from": 548960,
+				"to": 550960
+			},
+			"text": " I suspect those"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:10,960",
+				"to": "00:09:12,960"
+			},
+			"offsets": {
+				"from": 550960,
+				"to": 552960
+			},
+			"text": " slow frequency pulses, they're lower frequency"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:12,960",
+				"to": "00:09:14,960"
+			},
+			"offsets": {
+				"from": 552960,
+				"to": 554960
+			},
+			"text": " because that's, um, how much time"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:14,960",
+				"to": "00:09:16,960"
+			},
+			"offsets": {
+				"from": 554960,
+				"to": 556960
+			},
+			"text": " it needs to process things."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:16,960",
+				"to": "00:09:18,960"
+			},
+			"offsets": {
+				"from": 556960,
+				"to": 558960
+			},
+			"text": " And, they're also,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:18,960",
+				"to": "00:09:20,960"
+			},
+			"offsets": {
+				"from": 558960,
+				"to": 560960
+			},
+			"text": " um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:20,960",
+				"to": "00:09:22,960"
+			},
+			"offsets": {
+				"from": 560960,
+				"to": 562960
+			},
+			"text": " they're also required to actually process"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:22,960",
+				"to": "00:09:24,960"
+			},
+			"offsets": {
+				"from": 562960,
+				"to": 564960
+			},
+			"text": " it. So, I'm not really sure what that low frequency"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:24,960",
+				"to": "00:09:26,960"
+			},
+			"offsets": {
+				"from": 564960,
+				"to": 566960
+			},
+			"text": " clock section does."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:26,960",
+				"to": "00:09:28,960"
+			},
+			"offsets": {
+				"from": 566960,
+				"to": 568960
+			},
+			"text": " So, if we look at this, we do have these"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:28,960",
+				"to": "00:09:30,960"
+			},
+			"offsets": {
+				"from": 568960,
+				"to": 570960
+			},
+			"text": " sections, and,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:30,960",
+				"to": "00:09:32,960"
+			},
+			"offsets": {
+				"from": 570960,
+				"to": 572960
+			},
+			"text": " um, they sort of"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:32,960",
+				"to": "00:09:34,960"
+			},
+			"offsets": {
+				"from": 572960,
+				"to": 574960
+			},
+			"text": " seem to align"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:34,960",
+				"to": "00:09:36,960"
+			},
+			"offsets": {
+				"from": 574960,
+				"to": 576960
+			},
+			"text": " like this."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:36,960",
+				"to": "00:09:38,960"
+			},
+			"offsets": {
+				"from": 576960,
+				"to": 578960
+			},
+			"text": " What could this be?"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:38,960",
+				"to": "00:09:40,960"
+			},
+			"offsets": {
+				"from": 578960,
+				"to": 580960
+			},
+			"text": " Well,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:40,960",
+				"to": "00:09:42,960"
+			},
+			"offsets": {
+				"from": 580960,
+				"to": 582960
+			},
+			"text": " this could be the data direction."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:42,960",
+				"to": "00:09:44,960"
+			},
+			"offsets": {
+				"from": 582960,
+				"to": 584960
+			},
+			"text": " Um, the only reason I'd think that is because"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:44,960",
+				"to": "00:09:46,960"
+			},
+			"offsets": {
+				"from": 584960,
+				"to": 586960
+			},
+			"text": " we have some"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:46,960",
+				"to": "00:09:48,960"
+			},
+			"offsets": {
+				"from": 586960,
+				"to": 588960
+			},
+			"text": " clocks when it's high, and usually"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:48,960",
+				"to": "00:09:50,960"
+			},
+			"offsets": {
+				"from": 588960,
+				"to": 590960
+			},
+			"text": " you wouldn't have clocks when it's high and you've got a chip select."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:50,960",
+				"to": "00:09:52,960"
+			},
+			"offsets": {
+				"from": 590960,
+				"to": 592960
+			},
+			"text": " If it is a chip select,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:52,960",
+				"to": "00:09:54,960"
+			},
+			"offsets": {
+				"from": 592960,
+				"to": 594960
+			},
+			"text": " you wouldn't have a chip select at all."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:54,960",
+				"to": "00:09:56,960"
+			},
+			"offsets": {
+				"from": 594960,
+				"to": 596960
+			},
+			"text": " Um, so, data direction, clock when high makes"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:56,960",
+				"to": "00:09:58,960"
+			},
+			"offsets": {
+				"from": 596960,
+				"to": 598960
+			},
+			"text": " a lot of sense. But,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:58,960",
+				"to": "00:10:00,960"
+			},
+			"offsets": {
+				"from": 598960,
+				"to": 600960
+			},
+			"text": " um, then again,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:00,960",
+				"to": "00:10:02,960"
+			},
+			"offsets": {
+				"from": 600960,
+				"to": 602960
+			},
+			"text": " it could just be always clocking, and"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:02,960",
+				"to": "00:10:04,960"
+			},
+			"offsets": {
+				"from": 602960,
+				"to": 604960
+			},
+			"text": " this whole region could be a"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:04,960",
+				"to": "00:10:06,960"
+			},
+			"offsets": {
+				"from": 604960,
+				"to": 606960
+			},
+			"text": " big, a big chip select."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:06,960",
+				"to": "00:10:08,960"
+			},
+			"offsets": {
+				"from": 606960,
+				"to": 608960
+			},
+			"text": " Um, why would I think that? Well, it's very"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:08,960",
+				"to": "00:10:10,960"
+			},
+			"offsets": {
+				"from": 608960,
+				"to": 610960
+			},
+			"text": " periodic. Um, if you look at it"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:10,960",
+				"to": "00:10:12,960"
+			},
+			"offsets": {
+				"from": 610960,
+				"to": 612960
+			},
+			"text": " again, it's almost"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:12,960",
+				"to": "00:10:14,960"
+			},
+			"offsets": {
+				"from": 612960,
+				"to": 614960
+			},
+			"text": " perfect. Keep zooming out."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:16,960",
+				"to": "00:10:18,960"
+			},
+			"offsets": {
+				"from": 616960,
+				"to": 618960
+			},
+			"text": " So, I think,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:18,960",
+				"to": "00:10:20,960"
+			},
+			"offsets": {
+				"from": 618960,
+				"to": 620960
+			},
+			"text": " I think our best bet is some form of"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:20,960",
+				"to": "00:10:22,960"
+			},
+			"offsets": {
+				"from": 620960,
+				"to": 622960
+			},
+			"text": " chip select in pin 3."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:22,960",
+				"to": "00:10:26,960"
+			},
+			"offsets": {
+				"from": 622960,
+				"to": 626960
+			},
+			"text": " ..."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:26,960",
+				"to": "00:10:28,960"
+			},
+			"offsets": {
+				"from": 626960,
+				"to": 628960
+			},
+			"text": " Okay, so I now have a rough idea"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:28,960",
+				"to": "00:10:30,960"
+			},
+			"offsets": {
+				"from": 628960,
+				"to": 630960
+			},
+			"text": " of what the data, clock,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:30,960",
+				"to": "00:10:32,960"
+			},
+			"offsets": {
+				"from": 630960,
+				"to": 632960
+			},
+			"text": " power, ground, and recent"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:32,960",
+				"to": "00:10:34,960"
+			},
+			"offsets": {
+				"from": 632960,
+				"to": 634960
+			},
+			"text": " pins are. But, what about pin 2"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:34,960",
+				"to": "00:10:36,960"
+			},
+			"offsets": {
+				"from": 634960,
+				"to": 636960
+			},
+			"text": " and pin 7? It doesn't really seem like they have"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:36,960",
+				"to": "00:10:38,960"
+			},
+			"offsets": {
+				"from": 636960,
+				"to": 638960
+			},
+			"text": " a purpose, so I'm about to investigate that."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:38,960",
+				"to": "00:10:40,960"
+			},
+			"offsets": {
+				"from": 638960,
+				"to": 640960
+			},
+			"text": " Pin 2 is one of our possibilities,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:40,960",
+				"to": "00:10:42,960"
+			},
+			"offsets": {
+				"from": 640960,
+				"to": 642960
+			},
+			"text": " and I've looked at this"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:42,960",
+				"to": "00:10:44,960"
+			},
+			"offsets": {
+				"from": 642960,
+				"to": 644960
+			},
+			"text": " before, and it is a bit weird."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:44,960",
+				"to": "00:10:46,960"
+			},
+			"offsets": {
+				"from": 644960,
+				"to": 646960
+			},
+			"text": " It, now this one doesn't,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:46,960",
+				"to": "00:10:48,960"
+			},
+			"offsets": {
+				"from": 646960,
+				"to": 648960
+			},
+			"text": " isn't at all interesting when the device is being"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:48,960",
+				"to": "00:10:50,960"
+			},
+			"offsets": {
+				"from": 648960,
+				"to": 650960
+			},
+			"text": " programmed. It's actually,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:50,960",
+				"to": "00:10:52,960"
+			},
+			"offsets": {
+				"from": 650960,
+				"to": 652960
+			},
+			"text": " it does nothing. Um, but when it's"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:52,960",
+				"to": "00:10:54,960"
+			},
+			"offsets": {
+				"from": 652960,
+				"to": 654960
+			},
+			"text": " not being programmed, there"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:54,960",
+				"to": "00:10:56,960"
+			},
+			"offsets": {
+				"from": 654960,
+				"to": 656960
+			},
+			"text": " are these constant pulses."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:56,960",
+				"to": "00:10:58,960"
+			},
+			"offsets": {
+				"from": 656960,
+				"to": 658960
+			},
+			"text": " What are they? So I've"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:58,960",
+				"to": "00:11:00,960"
+			},
+			"offsets": {
+				"from": 658960,
+				"to": 660960
+			},
+			"text": " got, this is the, um, this is"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:00,960",
+				"to": "00:11:02,960"
+			},
+			"offsets": {
+				"from": 660960,
+				"to": 662960
+			},
+			"text": " pin 6 now. It appears to have"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:02,960",
+				"to": "00:11:04,960"
+			},
+			"offsets": {
+				"from": 662960,
+				"to": 664960
+			},
+			"text": " a delay after that initial pin 2 pulse."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:04,960",
+				"to": "00:11:06,960"
+			},
+			"offsets": {
+				"from": 664960,
+				"to": 666960
+			},
+			"text": " So pin, this is pin 5."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:06,960",
+				"to": "00:11:08,960"
+			},
+			"offsets": {
+				"from": 666960,
+				"to": 668960
+			},
+			"text": " Now."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:08,960",
+				"to": "00:11:10,960"
+			},
+			"offsets": {
+				"from": 668960,
+				"to": 670960
+			},
+			"text": " Pin 5 is basically synchronized"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:10,960",
+				"to": "00:11:12,960"
+			},
+			"offsets": {
+				"from": 670960,
+				"to": 672960
+			},
+			"text": " with pin 6, so it doesn't seem to do anything."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:12,960",
+				"to": "00:11:14,960"
+			},
+			"offsets": {
+				"from": 672960,
+				"to": 674960
+			},
+			"text": " Pin 7, what does that"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:14,960",
+				"to": "00:11:16,960"
+			},
+			"offsets": {
+				"from": 674960,
+				"to": 676960
+			},
+			"text": " do? Well, it seems"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:16,960",
+				"to": "00:11:18,960"
+			},
+			"offsets": {
+				"from": 676960,
+				"to": 678960
+			},
+			"text": " to be doing the same thing again."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:18,960",
+				"to": "00:11:20,960"
+			},
+			"offsets": {
+				"from": 678960,
+				"to": 680960
+			},
+			"text": " Are pins 7 and"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:20,960",
+				"to": "00:11:22,960"
+			},
+			"offsets": {
+				"from": 680960,
+				"to": 682960
+			},
+			"text": " 6 and 5 synchronized?"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:22,960",
+				"to": "00:11:24,960"
+			},
+			"offsets": {
+				"from": 682960,
+				"to": 684960
+			},
+			"text": " Let's see. Maybe there's a timing."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:24,960",
+				"to": "00:11:26,960"
+			},
+			"offsets": {
+				"from": 684960,
+				"to": 686960
+			},
+			"text": " Now, I'm going to have to move these"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:26,960",
+				"to": "00:11:28,960"
+			},
+			"offsets": {
+				"from": 686960,
+				"to": 688960
+			},
+			"text": " channels closer to figure it out."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:28,960",
+				"to": "00:11:30,960"
+			},
+			"offsets": {
+				"from": 688960,
+				"to": 690960
+			},
+			"text": " No, they're not. They're not in line."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:30,960",
+				"to": "00:11:32,960"
+			},
+			"offsets": {
+				"from": 690960,
+				"to": 692960
+			},
+			"text": " So, let's have a look. What's going on?"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:32,960",
+				"to": "00:11:34,960"
+			},
+			"offsets": {
+				"from": 692960,
+				"to": 694960
+			},
+			"text": " Oooh."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:34,960",
+				"to": "00:11:36,960"
+			},
+			"offsets": {
+				"from": 694960,
+				"to": 696960
+			},
+			"text": " They're one clock apart, each of them."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:36,960",
+				"to": "00:11:38,960"
+			},
+			"offsets": {
+				"from": 696960,
+				"to": 698960
+			},
+			"text": " So what"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:38,960",
+				"to": "00:11:40,960"
+			},
+			"offsets": {
+				"from": 698960,
+				"to": 700960
+			},
+			"text": " does that mean? The program is"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:40,960",
+				"to": "00:11:42,960"
+			},
+			"offsets": {
+				"from": 700960,
+				"to": 702960
+			},
+			"text": " checking for, um, open circuit."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:42,960",
+				"to": "00:11:44,960"
+			},
+			"offsets": {
+				"from": 702960,
+				"to": 704960
+			},
+			"text": " It's constantly doing that. If I,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:44,960",
+				"to": "00:11:46,960"
+			},
+			"offsets": {
+				"from": 704960,
+				"to": 706960
+			},
+			"text": " if I connect, um, the"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:46,960",
+				"to": "00:11:48,960"
+			},
+			"offsets": {
+				"from": 706960,
+				"to": 708960
+			},
+			"text": " ground of my logic"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:48,960",
+				"to": "00:11:50,960"
+			},
+			"offsets": {
+				"from": 708960,
+				"to": 710960
+			},
+			"text": " analyzer to it, it beeps and tells me"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:50,960",
+				"to": "00:11:52,960"
+			},
+			"offsets": {
+				"from": 710960,
+				"to": 712960
+			},
+			"text": " it won't work. And it also won't program."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:52,960",
+				"to": "00:11:54,960"
+			},
+			"offsets": {
+				"from": 712960,
+				"to": 714960
+			},
+			"text": " So, I know it is checking for"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:54,960",
+				"to": "00:11:56,960"
+			},
+			"offsets": {
+				"from": 714960,
+				"to": 716960
+			},
+			"text": " open circuit, and these checks,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:56,960",
+				"to": "00:11:58,960"
+			},
+			"offsets": {
+				"from": 716960,
+				"to": 718960
+			},
+			"text": " these strobing"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:58,960",
+				"to": "00:12:00,960"
+			},
+			"offsets": {
+				"from": 718960,
+				"to": 720960
+			},
+			"text": " of every single pin,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:00,960",
+				"to": "00:12:02,960"
+			},
+			"offsets": {
+				"from": 720960,
+				"to": 722960
+			},
+			"text": " each pin individually, will do"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:02,960",
+				"to": "00:12:04,960"
+			},
+			"offsets": {
+				"from": 722960,
+				"to": 724960
+			},
+			"text": " that. It will be able to tell if"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:04,960",
+				"to": "00:12:06,960"
+			},
+			"offsets": {
+				"from": 724960,
+				"to": 726960
+			},
+			"text": " if it has a,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:06,960",
+				"to": "00:12:08,960"
+			},
+			"offsets": {
+				"from": 726960,
+				"to": 728960
+			},
+			"text": " um, a shorted pin"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:08,960",
+				"to": "00:12:10,960"
+			},
+			"offsets": {
+				"from": 728960,
+				"to": 730960
+			},
+			"text": " because it won't be able to drive it high."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:10,960",
+				"to": "00:12:12,960"
+			},
+			"offsets": {
+				"from": 730960,
+				"to": 732960
+			},
+			"text": " So, perhaps it's doing that."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:12,960",
+				"to": "00:12:14,960"
+			},
+			"offsets": {
+				"from": 732960,
+				"to": 734960
+			},
+			"text": " But also, perhaps"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:14,960",
+				"to": "00:12:16,960"
+			},
+			"offsets": {
+				"from": 734960,
+				"to": 736960
+			},
+			"text": " it is doing some kind of ID check."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:16,960",
+				"to": "00:12:18,960"
+			},
+			"offsets": {
+				"from": 736960,
+				"to": 738960
+			},
+			"text": " Something is embedded in this signal"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:18,960",
+				"to": "00:12:20,960"
+			},
+			"offsets": {
+				"from": 738960,
+				"to": 740960
+			},
+			"text": " that allows the programmer"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:20,960",
+				"to": "00:12:22,960"
+			},
+			"offsets": {
+				"from": 740960,
+				"to": 742960
+			},
+			"text": " to tell what chip it is. Perhaps"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:22,960",
+				"to": "00:12:24,960"
+			},
+			"offsets": {
+				"from": 742960,
+				"to": 744960
+			},
+			"text": " it's that, perhaps it's the"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:24,960",
+				"to": "00:12:26,960"
+			},
+			"offsets": {
+				"from": 744960,
+				"to": 746960
+			},
+			"text": " timing of it. Perhaps it's"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:26,960",
+				"to": "00:12:28,960"
+			},
+			"offsets": {
+				"from": 746960,
+				"to": 748960
+			},
+			"text": " um, the order"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:28,960",
+				"to": "00:12:30,960"
+			},
+			"offsets": {
+				"from": 748960,
+				"to": 750960
+			},
+			"text": " of the pins if the micro"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:30,960",
+				"to": "00:12:32,960"
+			},
+			"offsets": {
+				"from": 750960,
+				"to": 752960
+			},
+			"text": " is the host of this process."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:32,960",
+				"to": "00:12:34,960"
+			},
+			"offsets": {
+				"from": 752960,
+				"to": 754960
+			},
+			"text": " I don't know. So, I will"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:34,960",
+				"to": "00:12:36,960"
+			},
+			"offsets": {
+				"from": 754960,
+				"to": 756960
+			},
+			"text": " just go through a few of the problems that"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:36,960",
+				"to": "00:12:38,960"
+			},
+			"offsets": {
+				"from": 756960,
+				"to": 758960
+			},
+			"text": " I have with this"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:38,960",
+				"to": "00:12:40,960"
+			},
+			"offsets": {
+				"from": 758960,
+				"to": 760960
+			},
+			"text": " device in decoding the protocol."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:40,960",
+				"to": "00:12:42,960"
+			},
+			"offsets": {
+				"from": 760960,
+				"to": 762960
+			},
+			"text": " Um, and there are"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:42,960",
+				"to": "00:12:44,960"
+			},
+			"offsets": {
+				"from": 762960,
+				"to": 764960
+			},
+			"text": " a lot. This is a really weird"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:44,960",
+				"to": "00:12:46,960"
+			},
+			"offsets": {
+				"from": 764960,
+				"to": 766960
+			},
+			"text": " protocol. Um, the voltage"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:46,960",
+				"to": "00:12:48,960"
+			},
+			"offsets": {
+				"from": 766960,
+				"to": 768960
+			},
+			"text": " changes for everything."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:48,960",
+				"to": "00:12:50,960"
+			},
+			"offsets": {
+				"from": 768960,
+				"to": 770960
+			},
+			"text": " Um, so, this is the"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:50,960",
+				"to": "00:12:52,960"
+			},
+			"offsets": {
+				"from": 770960,
+				"to": 772960
+			},
+			"text": " chip select and the, um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:52,960",
+				"to": "00:12:54,960"
+			},
+			"offsets": {
+				"from": 772960,
+				"to": 774960
+			},
+			"text": " the clock line. And you'll notice that"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:54,960",
+				"to": "00:12:56,960"
+			},
+			"offsets": {
+				"from": 774960,
+				"to": 776960
+			},
+			"text": " the voltage envelope is the same."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:56,960",
+				"to": "00:12:58,960"
+			},
+			"offsets": {
+				"from": 776960,
+				"to": 778960
+			},
+			"text": " So, but it's not constant."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:58,960",
+				"to": "00:13:00,960"
+			},
+			"offsets": {
+				"from": 778960,
+				"to": 780960
+			},
+			"text": " Um, around here it's like"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:00,960",
+				"to": "00:13:02,960"
+			},
+			"offsets": {
+				"from": 780960,
+				"to": 782960
+			},
+			"text": " 2 point something volts at max."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:02,960",
+				"to": "00:13:04,960"
+			},
+			"offsets": {
+				"from": 782960,
+				"to": 784960
+			},
+			"text": " And up here it goes up to 6.5"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:04,960",
+				"to": "00:13:06,960"
+			},
+			"offsets": {
+				"from": 784960,
+				"to": 786960
+			},
+			"text": " we saw much earlier. So, it is still"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:06,960",
+				"to": "00:13:08,960"
+			},
+			"offsets": {
+				"from": 786960,
+				"to": 788960
+			},
+			"text": " quite mysterious what this protocol is doing."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:08,960",
+				"to": "00:13:10,960"
+			},
+			"offsets": {
+				"from": 788960,
+				"to": 790960
+			},
+			"text": " Um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:10,960",
+				"to": "00:13:12,960"
+			},
+			"offsets": {
+				"from": 790960,
+				"to": 792960
+			},
+			"text": " there's so many things that"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:12,960",
+				"to": "00:13:14,960"
+			},
+			"offsets": {
+				"from": 792960,
+				"to": 794960
+			},
+			"text": " are strange about this. And"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:14,960",
+				"to": "00:13:16,960"
+			},
+			"offsets": {
+				"from": 794960,
+				"to": 796960
+			},
+			"text": " between programming runs,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:16,960",
+				"to": "00:13:18,960"
+			},
+			"offsets": {
+				"from": 796960,
+				"to": 798960
+			},
+			"text": " there is slight variation in the timing."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:18,960",
+				"to": "00:13:20,960"
+			},
+			"offsets": {
+				"from": 798960,
+				"to": 800960
+			},
+			"text": " Um, which makes it very difficult"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:20,960",
+				"to": "00:13:22,960"
+			},
+			"offsets": {
+				"from": 800960,
+				"to": 802960
+			},
+			"text": " to correlate multiple"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:22,960",
+				"to": "00:13:24,960"
+			},
+			"offsets": {
+				"from": 802960,
+				"to": 804960
+			},
+			"text": " all the pins, all the"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:24,960",
+				"to": "00:13:26,960"
+			},
+			"offsets": {
+				"from": 804960,
+				"to": 806960
+			},
+			"text": " data from each of the pins"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:26,960",
+				"to": "00:13:28,960"
+			},
+			"offsets": {
+				"from": 806960,
+				"to": 808960
+			},
+			"text": " without something like a 5 channel"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:28,960",
+				"to": "00:13:30,960"
+			},
+			"offsets": {
+				"from": 808960,
+				"to": 810960
+			},
+			"text": " um, a scope"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:30,960",
+				"to": "00:13:32,960"
+			},
+			"offsets": {
+				"from": 810960,
+				"to": 812960
+			},
+			"text": " with a very deep"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:32,960",
+				"to": "00:13:34,960"
+			},
+			"offsets": {
+				"from": 812960,
+				"to": 814960
+			},
+			"text": " um, deep memory. Um, because I would"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:34,960",
+				"to": "00:13:36,960"
+			},
+			"offsets": {
+				"from": 814960,
+				"to": 816960
+			},
+			"text": " need to record the whole programming process"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:36,960",
+				"to": "00:13:38,960"
+			},
+			"offsets": {
+				"from": 816960,
+				"to": 818960
+			},
+			"text": " to be able to decode it. Um, so"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:38,960",
+				"to": "00:13:40,960"
+			},
+			"offsets": {
+				"from": 818960,
+				"to": 820960
+			},
+			"text": " if anyone has any ideas, or this looks familiar"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:40,960",
+				"to": "00:13:42,960"
+			},
+			"offsets": {
+				"from": 820960,
+				"to": 822960
+			},
+			"text": " to you, um, leave it in the comments."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:42,960",
+				"to": "00:13:44,960"
+			},
+			"offsets": {
+				"from": 822960,
+				"to": 824960
+			},
+			"text": " Maybe it is some kind of rip-off"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:44,960",
+				"to": "00:13:46,960"
+			},
+			"offsets": {
+				"from": 824960,
+				"to": 826960
+			},
+			"text": " of an existing protocol. There were some ideas"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:46,960",
+				"to": "00:13:48,960"
+			},
+			"offsets": {
+				"from": 826960,
+				"to": 828960
+			},
+			"text": " that it was from the old picprom"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:48,960",
+				"to": "00:13:50,960"
+			},
+			"offsets": {
+				"from": 828960,
+				"to": 830960
+			},
+			"text": " programmers, but I'm not so sure. Um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:50,960",
+				"to": "00:13:52,960"
+			},
+			"offsets": {
+				"from": 830960,
+				"to": 832960
+			},
+			"text": " but"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:52,960",
+				"to": "00:13:54,960"
+			},
+			"offsets": {
+				"from": 832960,
+				"to": 834960
+			},
+			"text": " yeah, um, mystery"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:54,960",
+				"to": "00:13:56,960"
+			},
+			"offsets": {
+				"from": 834960,
+				"to": 836960
+			},
+			"text": " to me. I couldn't use a logic analyzer"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:56,960",
+				"to": "00:13:58,960"
+			},
+			"offsets": {
+				"from": 836960,
+				"to": 838960
+			},
+			"text": " because the threshold changes"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:58,960",
+				"to": "00:14:00,960"
+			},
+			"offsets": {
+				"from": 838960,
+				"to": 840960
+			},
+			"text": " because the voltage changes with"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:00,960",
+				"to": "00:14:02,960"
+			},
+			"offsets": {
+				"from": 840960,
+				"to": 842960
+			},
+			"text": " the, um, programming"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:02,960",
+				"to": "00:14:04,960"
+			},
+			"offsets": {
+				"from": 842960,
+				"to": 844960
+			},
+			"text": " stage. So, during the"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:04,960",
+				"to": "00:14:06,960"
+			},
+			"offsets": {
+				"from": 844960,
+				"to": 846960
+			},
+			"text": " prom programming stage is a higher voltage."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:06,960",
+				"to": "00:14:08,960"
+			},
+			"offsets": {
+				"from": 846960,
+				"to": 848960
+			},
+			"text": " Um, and it's also a voltage which is above"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:08,960",
+				"to": "00:14:10,960"
+			},
+			"offsets": {
+				"from": 848960,
+				"to": 850960
+			},
+			"text": " the range of the logic analyzer. And if I use a"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:10,960",
+				"to": "00:14:12,960"
+			},
+			"offsets": {
+				"from": 850960,
+				"to": 852960
+			},
+			"text": " voltage divider, which I did before,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:12,960",
+				"to": "00:14:14,960"
+			},
+			"offsets": {
+				"from": 852960,
+				"to": 854960
+			},
+			"text": " I actually lose the data from the previous"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:14,960",
+				"to": "00:14:16,960"
+			},
+			"offsets": {
+				"from": 854960,
+				"to": 856960
+			},
+			"text": " samples, um, because"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:16,960",
+				"to": "00:14:18,960"
+			},
+			"offsets": {
+				"from": 856960,
+				"to": 858960
+			},
+			"text": " they're below the threshold."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:18,960",
+				"to": "00:14:20,960"
+			},
+			"offsets": {
+				"from": 858960,
+				"to": 860960
+			},
+			"text": " If it is a chip"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:20,960",
+				"to": "00:14:22,960"
+			},
+			"offsets": {
+				"from": 860960,
+				"to": 862960
+			},
+			"text": " select, it doesn't have an easily distinguishable"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:22,960",
+				"to": "00:14:24,960"
+			},
+			"offsets": {
+				"from": 862960,
+				"to": 864960
+			},
+			"text": " word length. Um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:24,960",
+				"to": "00:14:26,960"
+			},
+			"offsets": {
+				"from": 864960,
+				"to": 866960
+			},
+			"text": " it also has four programming voltages."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:26,960",
+				"to": "00:14:28,960"
+			},
+			"offsets": {
+				"from": 866960,
+				"to": 868960
+			},
+			"text": " Ground. Two volts. Four volts."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:28,960",
+				"to": "00:14:30,960"
+			},
+			"offsets": {
+				"from": 868960,
+				"to": 870960
+			},
+			"text": " Five volts. Seven and a half volts."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:30,960",
+				"to": "00:14:32,960"
+			},
+			"offsets": {
+				"from": 870960,
+				"to": 872960
+			},
+			"text": " No! Six and a half volts too!"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:32,960",
+				"to": "00:14:34,960"
+			},
+			"offsets": {
+				"from": 872960,
+				"to": 874960
+			},
+			"text": " Yeah, it's got tons of levels."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:34,960",
+				"to": "00:14:36,960"
+			},
+			"offsets": {
+				"from": 874960,
+				"to": 876960
+			},
+			"text": " Don't know what's going on. Um,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:36,960",
+				"to": "00:14:38,960"
+			},
+			"offsets": {
+				"from": 876960,
+				"to": 878960
+			},
+			"text": " ah! I hope this was"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:38,960",
+				"to": "00:14:40,960"
+			},
+			"offsets": {
+				"from": 878960,
+				"to": 880960
+			},
+			"text": " interesting to someone. Either way,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:40,960",
+				"to": "00:14:42,960"
+			},
+			"offsets": {
+				"from": 880960,
+				"to": 882960
+			},
+			"text": " have a good day. See ya."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:52,960",
+				"to": "00:14:54,960"
+			},
+			"offsets": {
+				"from": 892960,
+				"to": 894960
+			},
+			"text": " *sad music*"
+		}
+	]
+}

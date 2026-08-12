@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""Finish the corpus with the Whisper API.
+
+Same skeleton as whisper_daemon.py -- resumable from disk, atomic writes,
+throttled fetching, bot-check circuit breaker -- with the local whisper.cpp
+call swapped for the API.
+
+The bottleneck moves. Locally the GPU was the constraint and downloads were
+free; here transcription is effectively instant and YOUTUBE DOWNLOADS ARE THE
+ONLY LIMIT. There is therefore no point running more than one fetcher, and no
+point putting a second machine on it: the block is per-IP, and both machines
+sit behind one home connection. More concurrency would only spend the same
+budget faster, which is what earned us an 85-minute block.
+
+Output is written in the same shape whisper.cpp produces ({"transcription":
+[{offsets, text}]}) so whisper_to_transcript.py needs no second code path and
+the two halves of the corpus stay interchangeable.
+"""
+import csv, json, os, pathlib, queue, re, subprocess, sys, threading, time
+import urllib.request
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+OUT = ROOT / "whisper_out"
+WORK = ROOT / "scratch/api_work"
+LOGS = ROOT / "logs"
+QUEUE = ROOT / "meta/whisper_queue_pruned.tsv"
+COOKIES = ROOT / "secrets/yt_cookies.txt"
+KEY = (ROOT / "tools/census/openai_key").read_text().strip()
+
+API = "https://api.openai.com/v1/audio/transcriptions"
+MODEL = "whisper-1"
+PRICE_PER_MIN = 0.006
+MAX_BYTES = 25 * 1024 * 1024
+
+N_API = 6                 # transcription is not the constraint; this is plenty
+DOWNLOAD_GAP_S = 15       # authenticated, but still deliberately unhurried
+BOT_BLOCK = re.compile(r"not a bot|HTTP Error 429|Too Many Requests|"
+                       r"Sign in to confirm you[’']?re", re.I)
+COOLDOWN_S = 1800
+COOLDOWN_MAX = 10800
+
+STYLE_PROMPT = (
+    "Hi, welcome to the EEVblog. I'm your host, Dave Jones. Today we're going "
+    "to tear down some test gear and look at the PCB, the MOSFET, the LED "
+    "driver and the oscilloscope. Now, that's a really interesting design "
+    "decision, isn't it?")
+
+_lock = threading.Lock()
+_st = {"done": 0, "failed": 0, "mins": 0.0, "blocks": 0, "t0": time.time()}
+_cool = {"s": COOLDOWN_S}
+STOP = threading.Event()
+
+
+def log(m):
+    line = f"{time.strftime('%H:%M:%S')} {m}"
+    with _lock:
+        print(line, flush=True)
+        LOGS.mkdir(exist_ok=True)
+        with (LOGS / "api_run.log").open("a") as fh:
+            fh.write(line + "\n")
+
+
+def fetch(vid):
+    src = WORK / f"{vid}.src"
+    ogg = WORK / f"{vid}.ogg"
+    if ogg.exists():
+        return ogg
+    cmd = ["nice", "-n", "10", "yt-dlp", "-f", "bestaudio", "--no-progress",
+           "--retries", "3", "-o", str(src),
+           f"https://www.youtube.com/watch?v={vid}"]
+    if COOKIES.exists():
+        cmd[5:5] = ["--cookies", str(COOKIES)]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if not src.exists():
+        raise RuntimeError(f"download failed: {r.stderr.strip()[-200:]}")
+    # 16 kHz mono opus: exactly what Whisper resamples to internally, and ~7x
+    # smaller than source, which is what makes the upload tractable.
+    r = subprocess.run(["nice", "-n", "10", "ffmpeg", "-y", "-loglevel", "error",
+                        "-threads", "2", "-i", str(src), "-ac", "1",
+                        "-ar", "16000", "-c:a", "libopus", "-b:a", "16k",
+                        str(ogg)], capture_output=True, text=True)
+    src.unlink(missing_ok=True)
+    if not ogg.exists():
+        raise RuntimeError(f"transcode failed: {r.stderr.strip()[-200:]}")
+    return ogg
+
+
+def transcribe(path):
+    b = "----eevapi7f2c1"
+    body = bytearray()
+
+    def field(n, v):
+        body.extend(f"--{b}\r\n".encode())
+        body.extend(f'Content-Disposition: form-data; name="{n}"\r\n\r\n'.encode())
+        body.extend(f"{v}\r\n".encode())
+
+    field("model", MODEL)
+    field("response_format", "verbose_json")
+    field("prompt", STYLE_PROMPT)
+    body.extend(f"--{b}\r\n".encode())
+    body.extend(f'Content-Disposition: form-data; name="file"; '
+                f'filename="{path.name}"\r\n'.encode())
+    body.extend(b"Content-Type: audio/ogg\r\n\r\n")
+    body.extend(path.read_bytes())
+    body.extend(f"\r\n--{b}--\r\n".encode())
+    req = urllib.request.Request(API, data=bytes(body), method="POST")
+    req.add_header("Authorization", f"Bearer {KEY}")
+    req.add_header("Content-Type", f"multipart/form-data; boundary={b}")
+    with urllib.request.urlopen(req, timeout=1800) as resp:
+        return json.loads(resp.read())
+
+
+def to_whispercpp_shape(doc):
+    """Match whisper.cpp's on-disk shape so the 286 local transcripts and these
+    are indistinguishable downstream."""
+    segs = []
+    for s in doc.get("segments") or []:
+        segs.append({"offsets": {"from": int(float(s.get("start", 0)) * 1000),
+                                 "to": int(float(s.get("end", 0)) * 1000)},
+                     "text": s.get("text", "")})
+    if not segs and doc.get("text"):
+        segs = [{"offsets": {"from": 0, "to": 0}, "text": doc["text"]}]
+    return {"transcription": segs, "source": "whisper-1-api"}
+
+
+def downloader(work_q, ready_q, total):
+    while not STOP.is_set():
+        try:
+            row = work_q.get(timeout=3)
+        except queue.Empty:
+            return
+        vid = row["id"]
+        try:
+            ogg = fetch(vid)
+            if ogg.stat().st_size > MAX_BYTES:
+                log(f"TOO BIG {vid} ({ogg.stat().st_size/1e6:.0f} MB) - needs chunking, skipped")
+                ogg.unlink(missing_ok=True)
+                with _lock: _st["failed"] += 1
+            else:
+                ready_q.put((row, ogg))
+            _cool["s"] = COOLDOWN_S
+            time.sleep(DOWNLOAD_GAP_S)
+        except Exception as e:                                  # noqa: BLE001
+            msg = str(e)
+            if BOT_BLOCK.search(msg):
+                work_q.put(row)
+                wait = _cool["s"]
+                with _lock: _st["blocks"] += 1
+                log(f"BOT-CHECK - pausing fetches {wait//60} min (queue intact)")
+                slept = 0
+                while slept < wait and not STOP.is_set():
+                    time.sleep(10); slept += 10
+                _cool["s"] = min(wait * 2, COOLDOWN_MAX)
+            else:
+                tries = row.get("_t", 0) + 1
+                row["_t"] = tries
+                if tries <= 2:
+                    time.sleep(30 * tries); work_q.put(row)
+                else:
+                    log(f"FETCH FAIL {vid}: {msg[-120:]}")
+                    with _lock: _st["failed"] += 1
+        finally:
+            work_q.task_done()
+
+
+def worker(ready_q, total):
+    while not STOP.is_set():
+        try:
+            row, ogg = ready_q.get(timeout=10)
+        except queue.Empty:
+            if STOP.is_set(): return
+            continue
+        vid = row["id"]
+        try:
+            doc = transcribe(ogg)
+            tmp = OUT / f"{vid}.json.part"
+            tmp.write_text(json.dumps(to_whispercpp_shape(doc)))
+            tmp.rename(OUT / f"{vid}.json")          # atomic
+            mins = float(doc.get("duration") or int(row["duration_s"])) / 60
+            with _lock:
+                _st["done"] += 1; _st["mins"] += mins; n = _st["done"]
+            el = (time.time() - _st["t0"]) / 3600
+            log(f"[{n}/{total}] {vid} {mins:5.1f}min  ${_st['mins']*PRICE_PER_MIN:6.2f} "
+                f"spent  {n/max(el,.01):4.0f}/h  {row['title'][:44]}")
+        except Exception as e:                                  # noqa: BLE001
+            log(f"API FAIL {vid}: {type(e).__name__} {str(e)[-120:]}")
+            with _lock: _st["failed"] += 1
+        finally:
+            ogg.unlink(missing_ok=True)
+            ready_q.task_done()
+
+
+def main():
+    OUT.mkdir(exist_ok=True); WORK.mkdir(parents=True, exist_ok=True); LOGS.mkdir(exist_ok=True)
+    have = {p.stem for p in OUT.glob("*.json")}
+    rows = [r for r in csv.DictReader(open(QUEUE), delimiter="\t")
+            if r["id"] not in have and int(r["duration_s"]) <= 240 * 60]
+    total = len(rows)
+    hrs = sum(int(r["duration_s"]) for r in rows) / 3600
+    log(f"START: {total} videos, {hrs:.0f} h, est ${hrs*60*PRICE_PER_MIN:.0f}, "
+        f"cookies={'yes' if COOKIES.exists() else 'NO'}")
+    if not total:
+        return 0
+    work_q, ready_q = queue.Queue(), queue.Queue(maxsize=8)
+    for r in rows:
+        work_q.put(r)
+    threads = [threading.Thread(target=downloader, args=(work_q, ready_q, total), daemon=True)]
+    threads += [threading.Thread(target=worker, args=(ready_q, total), daemon=True)
+                for _ in range(N_API)]
+    for t in threads: t.start()
+    try:
+        while any(t.is_alive() for t in threads):
+            if work_q.empty() and ready_q.empty():
+                time.sleep(30)
+                if work_q.empty() and ready_q.empty(): break
+            time.sleep(15)
+    except KeyboardInterrupt:
+        log("interrupted")
+    STOP.set()
+    el = (time.time() - _st["t0"]) / 3600
+    log(f"DONE: {_st['done']} transcribed, {_st['failed']} failed, "
+        f"{_st['blocks']} bot-blocks, ${_st['mins']*PRICE_PER_MIN:.2f} spent, {el:.1f} h")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

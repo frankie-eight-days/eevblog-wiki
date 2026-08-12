@@ -1,0 +1,4399 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"mels": 128,
+		"ftype": 8
+	},
+	"params": {
+		"model": "/Users/frankwalsh/eevblog/models/ggml-large-v3-q5_0.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:05,100"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 5100
+			},
+			"text": " Hi, welcome to part three in the Paduk 3-cent microcontroller programming series,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,260",
+				"to": "00:00:12,240"
+			},
+			"offsets": {
+				"from": 5260,
+				"to": 12240
+			},
+			"text": " where we build up open-source hardware and software to program these 3-cent microcontrollers."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:12,300",
+				"to": "00:00:17,720"
+			},
+			"offsets": {
+				"from": 12300,
+				"to": 17720
+			},
+			"text": " Now, in part two, we looked at actually assembling this PCB, but you plug it in, it doesn't do anything."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,960",
+				"to": "00:00:21,520"
+			},
+			"offsets": {
+				"from": 17960,
+				"to": 21520
+			},
+			"text": " It's dumb, because the Atmel processor on here is completely blank."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:21,520",
+				"to": "00:00:26,560"
+			},
+			"offsets": {
+				"from": 21520,
+				"to": 26560
+			},
+			"text": " So we have to program the firmware into this thing, but without using an Atmel programmer."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:26,700",
+				"to": "00:00:31,060"
+			},
+			"offsets": {
+				"from": 26700,
+				"to": 31060
+			},
+			"text": " We're going to use what's called DFU, or Device Firmware Upgrade, via the USB."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:31,480",
+				"to": "00:00:36,120"
+			},
+			"offsets": {
+				"from": 31480,
+				"to": 36120
+			},
+			"text": " And it sounds easy, but there's a few traps for young players. Let's go."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:36,620",
+				"to": "00:00:42,960"
+			},
+			"offsets": {
+				"from": 36620,
+				"to": 42960
+			},
+			"text": " Okay, we've got our board assembled, and yes, I do have a little SO8 SMD adapter for that."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:43,300",
+				"to": "00:00:47,080"
+			},
+			"offsets": {
+				"from": 43300,
+				"to": 47080
+			},
+			"text": " I actually did have one. You can see a little SO8 chip in there at the moment."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:47,180",
+				"to": "00:00:50,980"
+			},
+			"offsets": {
+				"from": 47180,
+				"to": 50980
+			},
+			"text": " I just happened to have one that was lying around. I forgot to order one, but I did actually have one."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:50,980",
+				"to": "00:00:55,400"
+			},
+			"offsets": {
+				"from": 50980,
+				"to": 55400
+			},
+			"text": " So, no wuckers. I could have just bodged in an SMD adapter board anyway."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:55,580",
+				"to": "00:00:56,440"
+			},
+			"offsets": {
+				"from": 55580,
+				"to": 56440
+			},
+			"text": " Anyway, doesn't matter."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:56,700",
+				"to": "00:01:01,600"
+			},
+			"offsets": {
+				"from": 56700,
+				"to": 61600
+			},
+			"text": " What we want to do now is actually program the STM32 Micro on this thing,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:01,660",
+				"to": "00:01:06,940"
+			},
+			"offsets": {
+				"from": 61660,
+				"to": 66940
+			},
+			"text": " which is an STM32F072C8T6, for those playing along at home."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,120",
+				"to": "00:01:12,980"
+			},
+			"offsets": {
+				"from": 67120,
+				"to": 72980
+			},
+			"text": " And if you actually plug this in, it's not going to do anything, because it's not programmed."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:13,420",
+				"to": "00:01:18,800"
+			},
+			"offsets": {
+				"from": 73420,
+				"to": 78800
+			},
+			"text": " There's no bloop in Windows to tell you that this thing's actually plugged in, because it's not."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:18,800",
+				"to": "00:01:19,960"
+			},
+			"offsets": {
+				"from": 78800,
+				"to": 79960
+			},
+			"text": " Well, it's not doing anything."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:20,200",
+				"to": "00:01:24,020"
+			},
+			"offsets": {
+				"from": 80200,
+				"to": 84020
+			},
+			"text": " So the first thing we want to do is actually measure the voltage regulator on here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,080",
+				"to": "00:01:26,680"
+			},
+			"offsets": {
+				"from": 84080,
+				"to": 86680
+			},
+			"text": " because we do have a 3.3 volt voltage regulator."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:26,760",
+				"to": "00:01:30,100"
+			},
+			"offsets": {
+				"from": 86760,
+				"to": 90100
+			},
+			"text": " So we just want to measure across one of these bypass caps here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:30,500",
+				"to": "00:01:34,480"
+			},
+			"offsets": {
+				"from": 90500,
+				"to": 94480
+			},
+			"text": " just, you know, surrounding the micro, just to make sure we get 3.3 volts."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:34,900",
+				"to": "00:01:38,700"
+			},
+			"offsets": {
+				"from": 94900,
+				"to": 98700
+			},
+			"text": " So I can't easily put this on screen, so you have to trust me."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:38,780",
+				"to": "00:01:43,260"
+			},
+			"offsets": {
+				"from": 98780,
+				"to": 103260
+			},
+			"text": " I'm probing it. Yep, minus 3.3 volts, because I had my probes backwards."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:43,580",
+				"to": "00:01:47,860"
+			},
+			"offsets": {
+				"from": 103580,
+				"to": 107860
+			},
+			"text": " But yeah, so we've got 3.3 volts. So there's 3.3 volts going to the micro."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:48,040",
+				"to": "00:01:54,820"
+			},
+			"offsets": {
+				"from": 108040,
+				"to": 114820
+			},
+			"text": " Now, we can't actually measure this other stuff down here, like 6.6 and 13 volts programming."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,820",
+				"to": "00:01:55,980"
+			},
+			"offsets": {
+				"from": 114820,
+				"to": 115980
+			},
+			"text": " These are the programming."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:56,700",
+				"to": "00:02:01,100"
+			},
+			"offsets": {
+				"from": 116700,
+				"to": 121100
+			},
+			"text": " So the VDD and the programming voltages down here that go off to the micro,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:01,220",
+				"to": "00:02:03,460"
+			},
+			"offsets": {
+				"from": 121220,
+				"to": 123460
+			},
+			"text": " because these need to be enabled and things like that."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:03,520",
+				"to": "00:02:07,020"
+			},
+			"offsets": {
+				"from": 123520,
+				"to": 127020
+			},
+			"text": " Now, program, I don't know, we could try, but it doesn't matter."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:07,080",
+				"to": "00:02:07,880"
+			},
+			"offsets": {
+				"from": 127080,
+				"to": 127880
+			},
+			"text": " We can do that later."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:08,580",
+				"to": "00:02:12,020"
+			},
+			"offsets": {
+				"from": 128580,
+				"to": 132020
+			},
+			"text": " All we care about is getting our micro working, 3.3 volts on there,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:12,240",
+				"to": "00:02:17,800"
+			},
+			"offsets": {
+				"from": 132240,
+				"to": 137800
+			},
+			"text": " and that our USB is connected here, and it's going through,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:18,020",
+				"to": "00:02:20,220"
+			},
+			"offsets": {
+				"from": 138020,
+				"to": 140220
+			},
+			"text": " and then it goes through, and it actually programs."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:20,340",
+				"to": "00:02:23,140"
+			},
+			"offsets": {
+				"from": 140340,
+				"to": 143140
+			},
+			"text": " Now, we're not actually going to use this header here to program."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:23,140",
+				"to": "00:02:25,860"
+			},
+			"offsets": {
+				"from": 143140,
+				"to": 145860
+			},
+			"text": " We actually could using the STM tools,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,000",
+				"to": "00:02:30,320"
+			},
+			"offsets": {
+				"from": 146000,
+				"to": 150320
+			},
+			"text": " but the good thing about the STM32 processors, and a lot of other processors,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:30,320",
+				"to": "00:02:34,320"
+			},
+			"offsets": {
+				"from": 150320,
+				"to": 154320
+			},
+			"text": " is that they have a built-in serial bootloader in them,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:35,320",
+				"to": "00:02:39,380"
+			},
+			"offsets": {
+				"from": 155320,
+				"to": 159380
+			},
+			"text": " which means you can just connect straight up to the USB and talk to the thing,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:39,380",
+				"to": "00:02:42,220"
+			},
+			"offsets": {
+				"from": 159380,
+				"to": 162220
+			},
+			"text": " and program that using programming software."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:42,220",
+				"to": "00:02:47,480"
+			},
+			"offsets": {
+				"from": 162220,
+				"to": 167480
+			},
+			"text": " It's called DFU, and DFU mode stands for Device Firmware Upgrade,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:47,480",
+				"to": "00:02:50,760"
+			},
+			"offsets": {
+				"from": 167480,
+				"to": 170760
+			},
+			"text": " and it supports like several different processes support the same thing."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:50,760",
+				"to": "00:02:55,640"
+			},
+			"offsets": {
+				"from": 170760,
+				"to": 175640
+			},
+			"text": " So the one DFU programming software can potentially support multiple different programmers."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:55,640",
+				"to": "00:02:59,960"
+			},
+			"offsets": {
+				"from": 175640,
+				"to": 179960
+			},
+			"text": " STM32 being one of them, because you saw I just plugged it in,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:00,040",
+				"to": "00:03:03,120"
+			},
+			"offsets": {
+				"from": 180040,
+				"to": 183120
+			},
+			"text": " and Windows didn't detect it at all, because there's nothing in there."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:03,320",
+				"to": "00:03:06,500"
+			},
+			"offsets": {
+				"from": 183320,
+				"to": 186500
+			},
+			"text": " What you have to do, and on here, I'll take off that SO8 adapter."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,740",
+				"to": "00:03:11,040"
+			},
+			"offsets": {
+				"from": 186740,
+				"to": 191040
+			},
+			"text": " There's a little button on here, which you have to press down, hold down,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:11,100",
+				"to": "00:03:15,260"
+			},
+			"offsets": {
+				"from": 191100,
+				"to": 195260
+			},
+			"text": " and then when you plug it in, hopefully, fingers crossed, we'll get the Windows."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:16,260",
+				"to": "00:03:18,800"
+			},
+			"offsets": {
+				"from": 196260,
+				"to": 198800
+			},
+			"text": " There it is."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,880",
+				"to": "00:03:19,780"
+			},
+			"offsets": {
+				"from": 198880,
+				"to": 199780
+			},
+			"text": " Hopefully, you heard that."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:19,780",
+				"to": "00:03:25,540"
+			},
+			"offsets": {
+				"from": 199780,
+				"to": 205540
+			},
+			"text": " If we go over to Device Manager, and there it is, other devices, STM32."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,640",
+				"to": "00:03:28,080"
+			},
+			"offsets": {
+				"from": 205640,
+				"to": 208080
+			},
+			"text": " Bootloader, winner, winner, chicken dinner."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:28,080",
+				"to": "00:03:33,820"
+			},
+			"offsets": {
+				"from": 208080,
+				"to": 213820
+			},
+			"text": " That means, oh, whoa, it's gone, aha, and that looks like it's Windows."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,820",
+				"to": "00:03:36,360"
+			},
+			"offsets": {
+				"from": 213820,
+				"to": 216360
+			},
+			"text": " That's gone over to here, rather than other devices."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,360",
+				"to": "00:03:40,160"
+			},
+			"offsets": {
+				"from": 216360,
+				"to": 220160
+			},
+			"text": " It's now, Windows probably just installed the driver-y thing for it,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,200",
+				"to": "00:03:46,320"
+			},
+			"offsets": {
+				"from": 220200,
+				"to": 226320
+			},
+			"text": " and now it's a universal serial bus controller, and it's the STM device in DFU mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,460",
+				"to": "00:03:48,680"
+			},
+			"offsets": {
+				"from": 226460,
+				"to": 228680
+			},
+			"text": " So Windows automatically knows about this."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:48,760",
+				"to": "00:03:50,620"
+			},
+			"offsets": {
+				"from": 228760,
+				"to": 230620
+			},
+			"text": " I don't know about Linux and Mac or whatever."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:51,080",
+				"to": "00:03:51,700"
+			},
+			"offsets": {
+				"from": 231080,
+				"to": 231700
+			},
+			"text": " I don't know."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:52,380",
+				"to": "00:03:54,180"
+			},
+			"offsets": {
+				"from": 232380,
+				"to": 234180
+			},
+			"text": " You're on your own, but STM device."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,180",
+				"to": "00:03:55,520"
+			},
+			"offsets": {
+				"from": 234180,
+				"to": 235520
+			},
+			"text": " So that means that our..."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:55,640",
+				"to": "00:04:00,100"
+			},
+			"offsets": {
+				"from": 235640,
+				"to": 240100
+			},
+			"text": " Micro is soldered correctly, our 3.3-volt voltage regulator here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:00,260",
+				"to": "00:04:05,480"
+			},
+			"offsets": {
+				"from": 240260,
+				"to": 245480
+			},
+			"text": " U2 is all working, and our resistance, you know, there's no shorts on the data lines."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:05,540",
+				"to": "00:04:08,120"
+			},
+			"offsets": {
+				"from": 245540,
+				"to": 248120
+			},
+			"text": " Our USB connector is soldered correctly, and, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:08,160",
+				"to": "00:04:11,020"
+			},
+			"offsets": {
+				"from": 248160,
+				"to": 251020
+			},
+			"text": " because there's a lot of little, you know, tiny little joints in there."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:11,080",
+				"to": "00:04:14,080"
+			},
+			"offsets": {
+				"from": 251080,
+				"to": 254080
+			},
+			"text": " You can get a little, you know, hairline short or something like that"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:14,080",
+				"to": "00:04:16,640"
+			},
+			"offsets": {
+				"from": 254080,
+				"to": 256640
+			},
+			"text": " between one of the data lines, and it just wouldn't do anything."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:17,140",
+				"to": "00:04:20,340"
+			},
+			"offsets": {
+				"from": 257140,
+				"to": 260340
+			},
+			"text": " And I was hoping that it wouldn't work, so I'd have to do some troubleshooting,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:20,480",
+				"to": "00:04:22,960"
+			},
+			"offsets": {
+				"from": 260480,
+				"to": 262960
+			},
+			"text": " but, yeah, can't always win them."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:22,960",
+				"to": "00:04:24,960"
+			},
+			"offsets": {
+				"from": 262960,
+				"to": 264960
+			},
+			"text": " Anyway, I hope yours doesn't work."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:25,640",
+				"to": "00:04:28,280"
+			},
+			"offsets": {
+				"from": 265640,
+				"to": 268280
+			},
+			"text": " I hope you've handled this up, or your next project doesn't work,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:28,280",
+				"to": "00:04:31,660"
+			},
+			"offsets": {
+				"from": 268280,
+				"to": 271660
+			},
+			"text": " so you have to troubleshoot it, because you learn a lot when things fail,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:31,660",
+				"to": "00:04:33,040"
+			},
+			"offsets": {
+				"from": 271660,
+				"to": 273040
+			},
+			"text": " and you have to troubleshoot them."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:33,040",
+				"to": "00:04:35,280"
+			},
+			"offsets": {
+				"from": 273040,
+				"to": 275280
+			},
+			"text": " If these work first go, okay, you've learned how to solder,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:35,280",
+				"to": "00:04:37,400"
+			},
+			"offsets": {
+				"from": 275280,
+				"to": 277400
+			},
+			"text": " but, you know, you haven't learned how to troubleshoot."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:37,400",
+				"to": "00:04:39,640"
+			},
+			"offsets": {
+				"from": 277400,
+				"to": 279640
+			},
+			"text": " Anyway, so this micro is now talking."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:39,640",
+				"to": "00:04:45,640"
+			},
+			"offsets": {
+				"from": 279640,
+				"to": 285640
+			},
+			"text": " So now we can download the DFU programmer software."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,640",
+				"to": "00:04:50,400"
+			},
+			"offsets": {
+				"from": 285640,
+				"to": 290400
+			},
+			"text": " So now if we go to the GitHub's software sources can be found,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:50,400",
+				"to": "00:04:54,520"
+			},
+			"offsets": {
+				"from": 290400,
+				"to": 294520
+			},
+			"text": " Easy PDK Programmer Software, and if we go into Firmware here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:54,520",
+				"to": "00:04:56,520"
+			},
+			"offsets": {
+				"from": 294520,
+				"to": 296520
+			},
+			"text": " we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:56,520",
+				"to": "00:04:58,520"
+			},
+			"offsets": {
+				"from": 296520,
+				"to": 298520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:58,520",
+				"to": "00:05:00,520"
+			},
+			"offsets": {
+				"from": 298520,
+				"to": 300520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:00,520",
+				"to": "00:05:02,520"
+			},
+			"offsets": {
+				"from": 300520,
+				"to": 302520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:02,520",
+				"to": "00:05:04,520"
+			},
+			"offsets": {
+				"from": 302520,
+				"to": 304520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:04,520",
+				"to": "00:05:06,520"
+			},
+			"offsets": {
+				"from": 304520,
+				"to": 306520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:06,520",
+				"to": "00:05:08,520"
+			},
+			"offsets": {
+				"from": 306520,
+				"to": 308520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,520",
+				"to": "00:05:10,520"
+			},
+			"offsets": {
+				"from": 308520,
+				"to": 310520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:10,520",
+				"to": "00:05:12,520"
+			},
+			"offsets": {
+				"from": 310520,
+				"to": 312520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:12,520",
+				"to": "00:05:14,520"
+			},
+			"offsets": {
+				"from": 312520,
+				"to": 314520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:14,520",
+				"to": "00:05:16,520"
+			},
+			"offsets": {
+				"from": 314520,
+				"to": 316520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:16,520",
+				"to": "00:05:18,520"
+			},
+			"offsets": {
+				"from": 316520,
+				"to": 318520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:18,520",
+				"to": "00:05:20,520"
+			},
+			"offsets": {
+				"from": 318520,
+				"to": 320520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:20,520",
+				"to": "00:05:22,520"
+			},
+			"offsets": {
+				"from": 320520,
+				"to": 322520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,520",
+				"to": "00:05:24,520"
+			},
+			"offsets": {
+				"from": 322520,
+				"to": 324520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:24,520",
+				"to": "00:05:26,520"
+			},
+			"offsets": {
+				"from": 324520,
+				"to": 326520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:26,520",
+				"to": "00:05:28,520"
+			},
+			"offsets": {
+				"from": 326520,
+				"to": 328520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:28,520",
+				"to": "00:05:30,520"
+			},
+			"offsets": {
+				"from": 328520,
+				"to": 330520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:30,520",
+				"to": "00:05:32,520"
+			},
+			"offsets": {
+				"from": 330520,
+				"to": 332520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:32,520",
+				"to": "00:05:34,520"
+			},
+			"offsets": {
+				"from": 332520,
+				"to": 334520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:34,520",
+				"to": "00:05:36,520"
+			},
+			"offsets": {
+				"from": 334520,
+				"to": 336520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:36,520",
+				"to": "00:05:38,520"
+			},
+			"offsets": {
+				"from": 336520,
+				"to": 338520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:38,520",
+				"to": "00:05:40,520"
+			},
+			"offsets": {
+				"from": 338520,
+				"to": 340520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:40,520",
+				"to": "00:05:42,520"
+			},
+			"offsets": {
+				"from": 340520,
+				"to": 342520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:42,520",
+				"to": "00:05:44,520"
+			},
+			"offsets": {
+				"from": 342520,
+				"to": 344520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,520",
+				"to": "00:05:46,520"
+			},
+			"offsets": {
+				"from": 344520,
+				"to": 346520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:46,520",
+				"to": "00:05:48,520"
+			},
+			"offsets": {
+				"from": 346520,
+				"to": 348520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:48,520",
+				"to": "00:05:50,520"
+			},
+			"offsets": {
+				"from": 348520,
+				"to": 350520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:50,520",
+				"to": "00:05:52,520"
+			},
+			"offsets": {
+				"from": 350520,
+				"to": 352520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:52,520",
+				"to": "00:05:54,520"
+			},
+			"offsets": {
+				"from": 352520,
+				"to": 354520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:54,520",
+				"to": "00:05:56,520"
+			},
+			"offsets": {
+				"from": 354520,
+				"to": 356520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:56,520",
+				"to": "00:05:58,520"
+			},
+			"offsets": {
+				"from": 356520,
+				"to": 358520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:58,520",
+				"to": "00:06:00,520"
+			},
+			"offsets": {
+				"from": 358520,
+				"to": 360520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:00,520",
+				"to": "00:06:02,520"
+			},
+			"offsets": {
+				"from": 360520,
+				"to": 362520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:02,520",
+				"to": "00:06:04,520"
+			},
+			"offsets": {
+				"from": 362520,
+				"to": 364520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:04,520",
+				"to": "00:06:06,520"
+			},
+			"offsets": {
+				"from": 364520,
+				"to": 366520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:06,520",
+				"to": "00:06:08,520"
+			},
+			"offsets": {
+				"from": 366520,
+				"to": 368520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:08,520",
+				"to": "00:06:10,520"
+			},
+			"offsets": {
+				"from": 368520,
+				"to": 370520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:10,520",
+				"to": "00:06:12,520"
+			},
+			"offsets": {
+				"from": 370520,
+				"to": 372520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:12,520",
+				"to": "00:06:14,520"
+			},
+			"offsets": {
+				"from": 372520,
+				"to": 374520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,520",
+				"to": "00:06:16,520"
+			},
+			"offsets": {
+				"from": 374520,
+				"to": 376520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:16,520",
+				"to": "00:06:18,520"
+			},
+			"offsets": {
+				"from": 376520,
+				"to": 378520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:18,520",
+				"to": "00:06:20,520"
+			},
+			"offsets": {
+				"from": 378520,
+				"to": 380520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:20,520",
+				"to": "00:06:22,520"
+			},
+			"offsets": {
+				"from": 380520,
+				"to": 382520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:22,520",
+				"to": "00:06:24,520"
+			},
+			"offsets": {
+				"from": 382520,
+				"to": 384520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:24,520",
+				"to": "00:06:26,520"
+			},
+			"offsets": {
+				"from": 384520,
+				"to": 386520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:26,520",
+				"to": "00:06:28,520"
+			},
+			"offsets": {
+				"from": 386520,
+				"to": 388520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:28,520",
+				"to": "00:06:30,520"
+			},
+			"offsets": {
+				"from": 388520,
+				"to": 390520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:30,520",
+				"to": "00:06:32,520"
+			},
+			"offsets": {
+				"from": 390520,
+				"to": 392520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:32,520",
+				"to": "00:06:34,520"
+			},
+			"offsets": {
+				"from": 392520,
+				"to": 394520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:34,520",
+				"to": "00:06:36,520"
+			},
+			"offsets": {
+				"from": 394520,
+				"to": 396520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:36,520",
+				"to": "00:06:38,520"
+			},
+			"offsets": {
+				"from": 396520,
+				"to": 398520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:38,520",
+				"to": "00:06:40,520"
+			},
+			"offsets": {
+				"from": 398520,
+				"to": 400520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:40,520",
+				"to": "00:06:42,520"
+			},
+			"offsets": {
+				"from": 400520,
+				"to": 402520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:42,520",
+				"to": "00:06:44,520"
+			},
+			"offsets": {
+				"from": 402520,
+				"to": 404520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:44,520",
+				"to": "00:06:46,520"
+			},
+			"offsets": {
+				"from": 404520,
+				"to": 406520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:46,520",
+				"to": "00:06:48,520"
+			},
+			"offsets": {
+				"from": 406520,
+				"to": 408520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:48,520",
+				"to": "00:06:50,520"
+			},
+			"offsets": {
+				"from": 408520,
+				"to": 410520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:50,520",
+				"to": "00:06:52,520"
+			},
+			"offsets": {
+				"from": 410520,
+				"to": 412520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:52,520",
+				"to": "00:06:54,520"
+			},
+			"offsets": {
+				"from": 412520,
+				"to": 414520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:54,520",
+				"to": "00:06:56,520"
+			},
+			"offsets": {
+				"from": 414520,
+				"to": 416520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:56,520",
+				"to": "00:06:58,520"
+			},
+			"offsets": {
+				"from": 416520,
+				"to": 418520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:58,520",
+				"to": "00:07:00,520"
+			},
+			"offsets": {
+				"from": 418520,
+				"to": 420520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:00,520",
+				"to": "00:07:02,520"
+			},
+			"offsets": {
+				"from": 420520,
+				"to": 422520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:02,520",
+				"to": "00:07:04,520"
+			},
+			"offsets": {
+				"from": 422520,
+				"to": 424520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:04,520",
+				"to": "00:07:06,520"
+			},
+			"offsets": {
+				"from": 424520,
+				"to": 426520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:06,520",
+				"to": "00:07:08,520"
+			},
+			"offsets": {
+				"from": 426520,
+				"to": 428520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:08,520",
+				"to": "00:07:10,520"
+			},
+			"offsets": {
+				"from": 428520,
+				"to": 430520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:10,520",
+				"to": "00:07:12,520"
+			},
+			"offsets": {
+				"from": 430520,
+				"to": 432520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:12,520",
+				"to": "00:07:14,520"
+			},
+			"offsets": {
+				"from": 432520,
+				"to": 434520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:14,520",
+				"to": "00:07:16,520"
+			},
+			"offsets": {
+				"from": 434520,
+				"to": 436520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:16,520",
+				"to": "00:07:18,520"
+			},
+			"offsets": {
+				"from": 436520,
+				"to": 438520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:18,520",
+				"to": "00:07:20,520"
+			},
+			"offsets": {
+				"from": 438520,
+				"to": 440520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:20,520",
+				"to": "00:07:22,520"
+			},
+			"offsets": {
+				"from": 440520,
+				"to": 442520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:22,520",
+				"to": "00:07:24,520"
+			},
+			"offsets": {
+				"from": 442520,
+				"to": 444520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:24,520",
+				"to": "00:07:26,520"
+			},
+			"offsets": {
+				"from": 444520,
+				"to": 446520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:26,520",
+				"to": "00:07:28,520"
+			},
+			"offsets": {
+				"from": 446520,
+				"to": 448520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:28,520",
+				"to": "00:07:30,520"
+			},
+			"offsets": {
+				"from": 448520,
+				"to": 450520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:30,520",
+				"to": "00:07:32,520"
+			},
+			"offsets": {
+				"from": 450520,
+				"to": 452520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:32,520",
+				"to": "00:07:34,520"
+			},
+			"offsets": {
+				"from": 452520,
+				"to": 454520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:34,520",
+				"to": "00:07:36,520"
+			},
+			"offsets": {
+				"from": 454520,
+				"to": 456520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:36,520",
+				"to": "00:07:38,520"
+			},
+			"offsets": {
+				"from": 456520,
+				"to": 458520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:38,520",
+				"to": "00:07:40,520"
+			},
+			"offsets": {
+				"from": 458520,
+				"to": 460520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:40,520",
+				"to": "00:07:42,520"
+			},
+			"offsets": {
+				"from": 460520,
+				"to": 462520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:42,520",
+				"to": "00:07:44,520"
+			},
+			"offsets": {
+				"from": 462520,
+				"to": 464520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:44,520",
+				"to": "00:07:46,520"
+			},
+			"offsets": {
+				"from": 464520,
+				"to": 466520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:46,520",
+				"to": "00:07:48,520"
+			},
+			"offsets": {
+				"from": 466520,
+				"to": 468520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:48,520",
+				"to": "00:07:50,520"
+			},
+			"offsets": {
+				"from": 468520,
+				"to": 470520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:50,520",
+				"to": "00:07:52,520"
+			},
+			"offsets": {
+				"from": 470520,
+				"to": 472520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:52,520",
+				"to": "00:07:54,520"
+			},
+			"offsets": {
+				"from": 472520,
+				"to": 474520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:54,520",
+				"to": "00:07:56,520"
+			},
+			"offsets": {
+				"from": 474520,
+				"to": 476520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:56,520",
+				"to": "00:07:58,520"
+			},
+			"offsets": {
+				"from": 476520,
+				"to": 478520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:58,520",
+				"to": "00:08:00,520"
+			},
+			"offsets": {
+				"from": 478520,
+				"to": 480520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:00,520",
+				"to": "00:08:02,520"
+			},
+			"offsets": {
+				"from": 480520,
+				"to": 482520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:02,520",
+				"to": "00:08:04,520"
+			},
+			"offsets": {
+				"from": 482520,
+				"to": 484520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:04,520",
+				"to": "00:08:06,520"
+			},
+			"offsets": {
+				"from": 484520,
+				"to": 486520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:06,520",
+				"to": "00:08:08,520"
+			},
+			"offsets": {
+				"from": 486520,
+				"to": 488520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:08,520",
+				"to": "00:08:10,520"
+			},
+			"offsets": {
+				"from": 488520,
+				"to": 490520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:10,520",
+				"to": "00:08:12,520"
+			},
+			"offsets": {
+				"from": 490520,
+				"to": 492520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:12,520",
+				"to": "00:08:14,520"
+			},
+			"offsets": {
+				"from": 492520,
+				"to": 494520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:14,520",
+				"to": "00:08:16,520"
+			},
+			"offsets": {
+				"from": 494520,
+				"to": 496520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:16,520",
+				"to": "00:08:18,520"
+			},
+			"offsets": {
+				"from": 496520,
+				"to": 498520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:18,520",
+				"to": "00:08:20,520"
+			},
+			"offsets": {
+				"from": 498520,
+				"to": 500520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:20,520",
+				"to": "00:08:22,520"
+			},
+			"offsets": {
+				"from": 500520,
+				"to": 502520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:22,520",
+				"to": "00:08:24,520"
+			},
+			"offsets": {
+				"from": 502520,
+				"to": 504520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:24,520",
+				"to": "00:08:26,520"
+			},
+			"offsets": {
+				"from": 504520,
+				"to": 506520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:26,520",
+				"to": "00:08:28,520"
+			},
+			"offsets": {
+				"from": 506520,
+				"to": 508520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:28,520",
+				"to": "00:08:30,520"
+			},
+			"offsets": {
+				"from": 508520,
+				"to": 510520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:30,520",
+				"to": "00:08:32,520"
+			},
+			"offsets": {
+				"from": 510520,
+				"to": 512520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:32,520",
+				"to": "00:08:34,520"
+			},
+			"offsets": {
+				"from": 512520,
+				"to": 514520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:34,520",
+				"to": "00:08:36,520"
+			},
+			"offsets": {
+				"from": 514520,
+				"to": 516520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:36,520",
+				"to": "00:08:38,520"
+			},
+			"offsets": {
+				"from": 516520,
+				"to": 518520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:38,520",
+				"to": "00:08:40,520"
+			},
+			"offsets": {
+				"from": 518520,
+				"to": 520520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:40,520",
+				"to": "00:08:42,520"
+			},
+			"offsets": {
+				"from": 520520,
+				"to": 522520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:42,520",
+				"to": "00:08:44,520"
+			},
+			"offsets": {
+				"from": 522520,
+				"to": 524520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:44,520",
+				"to": "00:08:46,520"
+			},
+			"offsets": {
+				"from": 524520,
+				"to": 526520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:46,520",
+				"to": "00:08:48,520"
+			},
+			"offsets": {
+				"from": 526520,
+				"to": 528520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:48,520",
+				"to": "00:08:50,520"
+			},
+			"offsets": {
+				"from": 528520,
+				"to": 530520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:50,520",
+				"to": "00:08:52,520"
+			},
+			"offsets": {
+				"from": 530520,
+				"to": 532520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:52,520",
+				"to": "00:08:54,520"
+			},
+			"offsets": {
+				"from": 532520,
+				"to": 534520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:54,520",
+				"to": "00:08:56,520"
+			},
+			"offsets": {
+				"from": 534520,
+				"to": 536520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:56,520",
+				"to": "00:08:58,520"
+			},
+			"offsets": {
+				"from": 536520,
+				"to": 538520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:58,520",
+				"to": "00:09:00,520"
+			},
+			"offsets": {
+				"from": 538520,
+				"to": 540520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:00,520",
+				"to": "00:09:02,520"
+			},
+			"offsets": {
+				"from": 540520,
+				"to": 542520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:02,520",
+				"to": "00:09:04,520"
+			},
+			"offsets": {
+				"from": 542520,
+				"to": 544520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:04,520",
+				"to": "00:09:06,520"
+			},
+			"offsets": {
+				"from": 544520,
+				"to": 546520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:06,520",
+				"to": "00:09:08,520"
+			},
+			"offsets": {
+				"from": 546520,
+				"to": 548520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:08,520",
+				"to": "00:09:10,520"
+			},
+			"offsets": {
+				"from": 548520,
+				"to": 550520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:10,520",
+				"to": "00:09:12,520"
+			},
+			"offsets": {
+				"from": 550520,
+				"to": 552520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:12,520",
+				"to": "00:09:14,520"
+			},
+			"offsets": {
+				"from": 552520,
+				"to": 554520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:14,520",
+				"to": "00:09:16,520"
+			},
+			"offsets": {
+				"from": 554520,
+				"to": 556520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:16,520",
+				"to": "00:09:18,520"
+			},
+			"offsets": {
+				"from": 556520,
+				"to": 558520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:18,520",
+				"to": "00:09:20,520"
+			},
+			"offsets": {
+				"from": 558520,
+				"to": 560520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:20,520",
+				"to": "00:09:22,520"
+			},
+			"offsets": {
+				"from": 560520,
+				"to": 562520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:22,520",
+				"to": "00:09:24,520"
+			},
+			"offsets": {
+				"from": 562520,
+				"to": 564520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:24,520",
+				"to": "00:09:26,520"
+			},
+			"offsets": {
+				"from": 564520,
+				"to": 566520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:26,520",
+				"to": "00:09:28,520"
+			},
+			"offsets": {
+				"from": 566520,
+				"to": 568520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:28,520",
+				"to": "00:09:30,520"
+			},
+			"offsets": {
+				"from": 568520,
+				"to": 570520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:30,520",
+				"to": "00:09:32,520"
+			},
+			"offsets": {
+				"from": 570520,
+				"to": 572520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:32,520",
+				"to": "00:09:34,520"
+			},
+			"offsets": {
+				"from": 572520,
+				"to": 574520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:34,520",
+				"to": "00:09:36,520"
+			},
+			"offsets": {
+				"from": 574520,
+				"to": 576520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:36,520",
+				"to": "00:09:38,520"
+			},
+			"offsets": {
+				"from": 576520,
+				"to": 578520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:38,520",
+				"to": "00:09:40,520"
+			},
+			"offsets": {
+				"from": 578520,
+				"to": 580520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:40,520",
+				"to": "00:09:42,520"
+			},
+			"offsets": {
+				"from": 580520,
+				"to": 582520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:42,520",
+				"to": "00:09:44,520"
+			},
+			"offsets": {
+				"from": 582520,
+				"to": 584520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:44,520",
+				"to": "00:09:46,520"
+			},
+			"offsets": {
+				"from": 584520,
+				"to": 586520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:46,520",
+				"to": "00:09:48,520"
+			},
+			"offsets": {
+				"from": 586520,
+				"to": 588520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:48,520",
+				"to": "00:09:50,520"
+			},
+			"offsets": {
+				"from": 588520,
+				"to": 590520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:50,520",
+				"to": "00:09:52,520"
+			},
+			"offsets": {
+				"from": 590520,
+				"to": 592520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:52,520",
+				"to": "00:09:54,520"
+			},
+			"offsets": {
+				"from": 592520,
+				"to": 594520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:54,520",
+				"to": "00:09:56,520"
+			},
+			"offsets": {
+				"from": 594520,
+				"to": 596520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:56,520",
+				"to": "00:09:58,520"
+			},
+			"offsets": {
+				"from": 596520,
+				"to": 598520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:58,520",
+				"to": "00:10:00,520"
+			},
+			"offsets": {
+				"from": 598520,
+				"to": 600520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:00,520",
+				"to": "00:10:02,520"
+			},
+			"offsets": {
+				"from": 600520,
+				"to": 602520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:02,520",
+				"to": "00:10:04,520"
+			},
+			"offsets": {
+				"from": 602520,
+				"to": 604520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:04,520",
+				"to": "00:10:06,520"
+			},
+			"offsets": {
+				"from": 604520,
+				"to": 606520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:06,520",
+				"to": "00:10:08,520"
+			},
+			"offsets": {
+				"from": 606520,
+				"to": 608520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:08,520",
+				"to": "00:10:10,520"
+			},
+			"offsets": {
+				"from": 608520,
+				"to": 610520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:10,520",
+				"to": "00:10:12,520"
+			},
+			"offsets": {
+				"from": 610520,
+				"to": 612520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:12,520",
+				"to": "00:10:14,520"
+			},
+			"offsets": {
+				"from": 612520,
+				"to": 614520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:14,520",
+				"to": "00:10:16,520"
+			},
+			"offsets": {
+				"from": 614520,
+				"to": 616520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:16,520",
+				"to": "00:10:18,520"
+			},
+			"offsets": {
+				"from": 616520,
+				"to": 618520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:18,520",
+				"to": "00:10:20,520"
+			},
+			"offsets": {
+				"from": 618520,
+				"to": 620520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:20,520",
+				"to": "00:10:22,520"
+			},
+			"offsets": {
+				"from": 620520,
+				"to": 622520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:22,520",
+				"to": "00:10:24,520"
+			},
+			"offsets": {
+				"from": 622520,
+				"to": 624520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:24,520",
+				"to": "00:10:26,520"
+			},
+			"offsets": {
+				"from": 624520,
+				"to": 626520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:26,520",
+				"to": "00:10:28,520"
+			},
+			"offsets": {
+				"from": 626520,
+				"to": 628520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:28,520",
+				"to": "00:10:30,520"
+			},
+			"offsets": {
+				"from": 628520,
+				"to": 630520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:30,520",
+				"to": "00:10:32,520"
+			},
+			"offsets": {
+				"from": 630520,
+				"to": 632520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:32,520",
+				"to": "00:10:34,520"
+			},
+			"offsets": {
+				"from": 632520,
+				"to": 634520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:34,520",
+				"to": "00:10:36,520"
+			},
+			"offsets": {
+				"from": 634520,
+				"to": 636520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:36,520",
+				"to": "00:10:38,520"
+			},
+			"offsets": {
+				"from": 636520,
+				"to": 638520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:38,520",
+				"to": "00:10:40,520"
+			},
+			"offsets": {
+				"from": 638520,
+				"to": 640520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:40,520",
+				"to": "00:10:42,520"
+			},
+			"offsets": {
+				"from": 640520,
+				"to": 642520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:42,520",
+				"to": "00:10:44,520"
+			},
+			"offsets": {
+				"from": 642520,
+				"to": 644520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:44,520",
+				"to": "00:10:46,520"
+			},
+			"offsets": {
+				"from": 644520,
+				"to": 646520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:46,520",
+				"to": "00:10:48,520"
+			},
+			"offsets": {
+				"from": 646520,
+				"to": 648520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:48,520",
+				"to": "00:10:50,520"
+			},
+			"offsets": {
+				"from": 648520,
+				"to": 650520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:50,520",
+				"to": "00:10:52,520"
+			},
+			"offsets": {
+				"from": 650520,
+				"to": 652520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:52,520",
+				"to": "00:10:54,520"
+			},
+			"offsets": {
+				"from": 652520,
+				"to": 654520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:54,520",
+				"to": "00:10:56,520"
+			},
+			"offsets": {
+				"from": 654520,
+				"to": 656520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:56,520",
+				"to": "00:10:58,520"
+			},
+			"offsets": {
+				"from": 656520,
+				"to": 658520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:58,520",
+				"to": "00:11:00,520"
+			},
+			"offsets": {
+				"from": 658520,
+				"to": 660520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:00,520",
+				"to": "00:11:02,520"
+			},
+			"offsets": {
+				"from": 660520,
+				"to": 662520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:02,520",
+				"to": "00:11:04,520"
+			},
+			"offsets": {
+				"from": 662520,
+				"to": 664520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:04,520",
+				"to": "00:11:06,520"
+			},
+			"offsets": {
+				"from": 664520,
+				"to": 666520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:06,520",
+				"to": "00:11:08,520"
+			},
+			"offsets": {
+				"from": 666520,
+				"to": 668520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:08,520",
+				"to": "00:11:10,520"
+			},
+			"offsets": {
+				"from": 668520,
+				"to": 670520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:10,520",
+				"to": "00:11:12,520"
+			},
+			"offsets": {
+				"from": 670520,
+				"to": 672520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:12,520",
+				"to": "00:11:14,520"
+			},
+			"offsets": {
+				"from": 672520,
+				"to": 674520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:14,520",
+				"to": "00:11:16,520"
+			},
+			"offsets": {
+				"from": 674520,
+				"to": 676520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:16,520",
+				"to": "00:11:18,520"
+			},
+			"offsets": {
+				"from": 676520,
+				"to": 678520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:18,520",
+				"to": "00:11:20,520"
+			},
+			"offsets": {
+				"from": 678520,
+				"to": 680520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:20,520",
+				"to": "00:11:22,520"
+			},
+			"offsets": {
+				"from": 680520,
+				"to": 682520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:22,520",
+				"to": "00:11:24,520"
+			},
+			"offsets": {
+				"from": 682520,
+				"to": 684520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:24,520",
+				"to": "00:11:26,520"
+			},
+			"offsets": {
+				"from": 684520,
+				"to": 686520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:26,520",
+				"to": "00:11:28,520"
+			},
+			"offsets": {
+				"from": 686520,
+				"to": 688520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:28,520",
+				"to": "00:11:30,520"
+			},
+			"offsets": {
+				"from": 688520,
+				"to": 690520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:30,520",
+				"to": "00:11:32,520"
+			},
+			"offsets": {
+				"from": 690520,
+				"to": 692520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:32,520",
+				"to": "00:11:34,520"
+			},
+			"offsets": {
+				"from": 692520,
+				"to": 694520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:34,520",
+				"to": "00:11:36,520"
+			},
+			"offsets": {
+				"from": 694520,
+				"to": 696520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:36,520",
+				"to": "00:11:38,520"
+			},
+			"offsets": {
+				"from": 696520,
+				"to": 698520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:38,520",
+				"to": "00:11:40,520"
+			},
+			"offsets": {
+				"from": 698520,
+				"to": 700520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:40,520",
+				"to": "00:11:42,520"
+			},
+			"offsets": {
+				"from": 700520,
+				"to": 702520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:42,520",
+				"to": "00:11:44,520"
+			},
+			"offsets": {
+				"from": 702520,
+				"to": 704520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:44,520",
+				"to": "00:11:46,520"
+			},
+			"offsets": {
+				"from": 704520,
+				"to": 706520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:46,520",
+				"to": "00:11:48,520"
+			},
+			"offsets": {
+				"from": 706520,
+				"to": 708520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:48,520",
+				"to": "00:11:50,520"
+			},
+			"offsets": {
+				"from": 708520,
+				"to": 710520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:50,520",
+				"to": "00:11:52,520"
+			},
+			"offsets": {
+				"from": 710520,
+				"to": 712520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:52,520",
+				"to": "00:11:54,520"
+			},
+			"offsets": {
+				"from": 712520,
+				"to": 714520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:54,520",
+				"to": "00:11:56,520"
+			},
+			"offsets": {
+				"from": 714520,
+				"to": 716520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:56,520",
+				"to": "00:11:58,520"
+			},
+			"offsets": {
+				"from": 716520,
+				"to": 718520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:58,520",
+				"to": "00:12:00,520"
+			},
+			"offsets": {
+				"from": 718520,
+				"to": 720520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:00,520",
+				"to": "00:12:02,520"
+			},
+			"offsets": {
+				"from": 720520,
+				"to": 722520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:02,520",
+				"to": "00:12:04,520"
+			},
+			"offsets": {
+				"from": 722520,
+				"to": 724520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:04,520",
+				"to": "00:12:06,520"
+			},
+			"offsets": {
+				"from": 724520,
+				"to": 726520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:06,520",
+				"to": "00:12:08,520"
+			},
+			"offsets": {
+				"from": 726520,
+				"to": 728520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:08,520",
+				"to": "00:12:10,520"
+			},
+			"offsets": {
+				"from": 728520,
+				"to": 730520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:10,520",
+				"to": "00:12:12,520"
+			},
+			"offsets": {
+				"from": 730520,
+				"to": 732520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:12,520",
+				"to": "00:12:14,520"
+			},
+			"offsets": {
+				"from": 732520,
+				"to": 734520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:14,520",
+				"to": "00:12:16,520"
+			},
+			"offsets": {
+				"from": 734520,
+				"to": 736520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:16,520",
+				"to": "00:12:18,520"
+			},
+			"offsets": {
+				"from": 736520,
+				"to": 738520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:18,520",
+				"to": "00:12:20,520"
+			},
+			"offsets": {
+				"from": 738520,
+				"to": 740520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:20,520",
+				"to": "00:12:22,520"
+			},
+			"offsets": {
+				"from": 740520,
+				"to": 742520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:22,520",
+				"to": "00:12:24,520"
+			},
+			"offsets": {
+				"from": 742520,
+				"to": 744520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:24,520",
+				"to": "00:12:26,520"
+			},
+			"offsets": {
+				"from": 744520,
+				"to": 746520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:26,520",
+				"to": "00:12:28,520"
+			},
+			"offsets": {
+				"from": 746520,
+				"to": 748520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:28,520",
+				"to": "00:12:30,520"
+			},
+			"offsets": {
+				"from": 748520,
+				"to": 750520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:30,520",
+				"to": "00:12:32,520"
+			},
+			"offsets": {
+				"from": 750520,
+				"to": 752520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:32,520",
+				"to": "00:12:34,520"
+			},
+			"offsets": {
+				"from": 752520,
+				"to": 754520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:34,520",
+				"to": "00:12:36,520"
+			},
+			"offsets": {
+				"from": 754520,
+				"to": 756520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:36,520",
+				"to": "00:12:38,520"
+			},
+			"offsets": {
+				"from": 756520,
+				"to": 758520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:38,520",
+				"to": "00:12:40,520"
+			},
+			"offsets": {
+				"from": 758520,
+				"to": 760520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:40,520",
+				"to": "00:12:42,520"
+			},
+			"offsets": {
+				"from": 760520,
+				"to": 762520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:42,520",
+				"to": "00:12:44,520"
+			},
+			"offsets": {
+				"from": 762520,
+				"to": 764520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:44,520",
+				"to": "00:12:46,520"
+			},
+			"offsets": {
+				"from": 764520,
+				"to": 766520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:46,520",
+				"to": "00:12:48,520"
+			},
+			"offsets": {
+				"from": 766520,
+				"to": 768520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:48,520",
+				"to": "00:12:50,520"
+			},
+			"offsets": {
+				"from": 768520,
+				"to": 770520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:50,520",
+				"to": "00:12:52,520"
+			},
+			"offsets": {
+				"from": 770520,
+				"to": 772520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:52,520",
+				"to": "00:12:54,520"
+			},
+			"offsets": {
+				"from": 772520,
+				"to": 774520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:54,520",
+				"to": "00:12:56,520"
+			},
+			"offsets": {
+				"from": 774520,
+				"to": 776520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:56,520",
+				"to": "00:12:58,520"
+			},
+			"offsets": {
+				"from": 776520,
+				"to": 778520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:58,520",
+				"to": "00:13:00,520"
+			},
+			"offsets": {
+				"from": 778520,
+				"to": 780520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:00,520",
+				"to": "00:13:02,520"
+			},
+			"offsets": {
+				"from": 780520,
+				"to": 782520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:02,520",
+				"to": "00:13:04,520"
+			},
+			"offsets": {
+				"from": 782520,
+				"to": 784520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:04,520",
+				"to": "00:13:06,520"
+			},
+			"offsets": {
+				"from": 784520,
+				"to": 786520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:06,520",
+				"to": "00:13:08,520"
+			},
+			"offsets": {
+				"from": 786520,
+				"to": 788520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:08,520",
+				"to": "00:13:10,520"
+			},
+			"offsets": {
+				"from": 788520,
+				"to": 790520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:10,520",
+				"to": "00:13:12,520"
+			},
+			"offsets": {
+				"from": 790520,
+				"to": 792520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:12,520",
+				"to": "00:13:14,520"
+			},
+			"offsets": {
+				"from": 792520,
+				"to": 794520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:14,520",
+				"to": "00:13:16,520"
+			},
+			"offsets": {
+				"from": 794520,
+				"to": 796520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:16,520",
+				"to": "00:13:18,520"
+			},
+			"offsets": {
+				"from": 796520,
+				"to": 798520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:18,520",
+				"to": "00:13:20,520"
+			},
+			"offsets": {
+				"from": 798520,
+				"to": 800520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:20,520",
+				"to": "00:13:22,520"
+			},
+			"offsets": {
+				"from": 800520,
+				"to": 802520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:22,520",
+				"to": "00:13:24,520"
+			},
+			"offsets": {
+				"from": 802520,
+				"to": 804520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:24,520",
+				"to": "00:13:26,520"
+			},
+			"offsets": {
+				"from": 804520,
+				"to": 806520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:26,520",
+				"to": "00:13:28,520"
+			},
+			"offsets": {
+				"from": 806520,
+				"to": 808520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:28,520",
+				"to": "00:13:30,520"
+			},
+			"offsets": {
+				"from": 808520,
+				"to": 810520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:30,520",
+				"to": "00:13:32,520"
+			},
+			"offsets": {
+				"from": 810520,
+				"to": 812520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:32,520",
+				"to": "00:13:34,520"
+			},
+			"offsets": {
+				"from": 812520,
+				"to": 814520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:34,520",
+				"to": "00:13:36,520"
+			},
+			"offsets": {
+				"from": 814520,
+				"to": 816520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:36,520",
+				"to": "00:13:38,520"
+			},
+			"offsets": {
+				"from": 816520,
+				"to": 818520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:38,520",
+				"to": "00:13:40,520"
+			},
+			"offsets": {
+				"from": 818520,
+				"to": 820520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:40,520",
+				"to": "00:13:42,520"
+			},
+			"offsets": {
+				"from": 820520,
+				"to": 822520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:42,520",
+				"to": "00:13:44,520"
+			},
+			"offsets": {
+				"from": 822520,
+				"to": 824520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:44,520",
+				"to": "00:13:46,520"
+			},
+			"offsets": {
+				"from": 824520,
+				"to": 826520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:46,520",
+				"to": "00:13:48,520"
+			},
+			"offsets": {
+				"from": 826520,
+				"to": 828520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:48,520",
+				"to": "00:13:50,520"
+			},
+			"offsets": {
+				"from": 828520,
+				"to": 830520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:50,520",
+				"to": "00:13:52,520"
+			},
+			"offsets": {
+				"from": 830520,
+				"to": 832520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:52,520",
+				"to": "00:13:54,520"
+			},
+			"offsets": {
+				"from": 832520,
+				"to": 834520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:54,520",
+				"to": "00:13:56,520"
+			},
+			"offsets": {
+				"from": 834520,
+				"to": 836520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:56,520",
+				"to": "00:13:58,520"
+			},
+			"offsets": {
+				"from": 836520,
+				"to": 838520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:58,520",
+				"to": "00:14:00,520"
+			},
+			"offsets": {
+				"from": 838520,
+				"to": 840520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:00,520",
+				"to": "00:14:02,520"
+			},
+			"offsets": {
+				"from": 840520,
+				"to": 842520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:02,520",
+				"to": "00:14:04,520"
+			},
+			"offsets": {
+				"from": 842520,
+				"to": 844520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:04,520",
+				"to": "00:14:06,520"
+			},
+			"offsets": {
+				"from": 844520,
+				"to": 846520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:06,520",
+				"to": "00:14:08,520"
+			},
+			"offsets": {
+				"from": 846520,
+				"to": 848520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:08,520",
+				"to": "00:14:10,520"
+			},
+			"offsets": {
+				"from": 848520,
+				"to": 850520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:10,520",
+				"to": "00:14:12,520"
+			},
+			"offsets": {
+				"from": 850520,
+				"to": 852520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:12,520",
+				"to": "00:14:14,520"
+			},
+			"offsets": {
+				"from": 852520,
+				"to": 854520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:14,520",
+				"to": "00:14:16,520"
+			},
+			"offsets": {
+				"from": 854520,
+				"to": 856520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:16,520",
+				"to": "00:14:18,520"
+			},
+			"offsets": {
+				"from": 856520,
+				"to": 858520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:18,520",
+				"to": "00:14:20,520"
+			},
+			"offsets": {
+				"from": 858520,
+				"to": 860520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:20,520",
+				"to": "00:14:22,520"
+			},
+			"offsets": {
+				"from": 860520,
+				"to": 862520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:22,520",
+				"to": "00:14:24,520"
+			},
+			"offsets": {
+				"from": 862520,
+				"to": 864520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:24,520",
+				"to": "00:14:26,520"
+			},
+			"offsets": {
+				"from": 864520,
+				"to": 866520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:26,520",
+				"to": "00:14:28,520"
+			},
+			"offsets": {
+				"from": 866520,
+				"to": 868520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:28,520",
+				"to": "00:14:30,520"
+			},
+			"offsets": {
+				"from": 868520,
+				"to": 870520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:30,520",
+				"to": "00:14:32,520"
+			},
+			"offsets": {
+				"from": 870520,
+				"to": 872520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:32,520",
+				"to": "00:14:34,520"
+			},
+			"offsets": {
+				"from": 872520,
+				"to": 874520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:34,520",
+				"to": "00:14:36,520"
+			},
+			"offsets": {
+				"from": 874520,
+				"to": 876520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:36,520",
+				"to": "00:14:38,520"
+			},
+			"offsets": {
+				"from": 876520,
+				"to": 878520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:38,520",
+				"to": "00:14:40,520"
+			},
+			"offsets": {
+				"from": 878520,
+				"to": 880520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:40,520",
+				"to": "00:14:42,520"
+			},
+			"offsets": {
+				"from": 880520,
+				"to": 882520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:42,520",
+				"to": "00:14:44,520"
+			},
+			"offsets": {
+				"from": 882520,
+				"to": 884520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:44,520",
+				"to": "00:14:46,520"
+			},
+			"offsets": {
+				"from": 884520,
+				"to": 886520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:46,520",
+				"to": "00:14:48,520"
+			},
+			"offsets": {
+				"from": 886520,
+				"to": 888520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:48,520",
+				"to": "00:14:50,520"
+			},
+			"offsets": {
+				"from": 888520,
+				"to": 890520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:50,520",
+				"to": "00:14:52,520"
+			},
+			"offsets": {
+				"from": 890520,
+				"to": 892520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:52,520",
+				"to": "00:14:54,520"
+			},
+			"offsets": {
+				"from": 892520,
+				"to": 894520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:54,520",
+				"to": "00:14:56,520"
+			},
+			"offsets": {
+				"from": 894520,
+				"to": 896520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:56,520",
+				"to": "00:14:58,520"
+			},
+			"offsets": {
+				"from": 896520,
+				"to": 898520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:58,520",
+				"to": "00:15:00,520"
+			},
+			"offsets": {
+				"from": 898520,
+				"to": 900520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:00,520",
+				"to": "00:15:02,520"
+			},
+			"offsets": {
+				"from": 900520,
+				"to": 902520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:02,520",
+				"to": "00:15:04,520"
+			},
+			"offsets": {
+				"from": 902520,
+				"to": 904520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:04,520",
+				"to": "00:15:06,520"
+			},
+			"offsets": {
+				"from": 904520,
+				"to": 906520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:06,520",
+				"to": "00:15:08,520"
+			},
+			"offsets": {
+				"from": 906520,
+				"to": 908520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:08,520",
+				"to": "00:15:10,520"
+			},
+			"offsets": {
+				"from": 908520,
+				"to": 910520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:10,520",
+				"to": "00:15:12,520"
+			},
+			"offsets": {
+				"from": 910520,
+				"to": 912520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:12,520",
+				"to": "00:15:14,520"
+			},
+			"offsets": {
+				"from": 912520,
+				"to": 914520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:14,520",
+				"to": "00:15:16,520"
+			},
+			"offsets": {
+				"from": 914520,
+				"to": 916520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:16,520",
+				"to": "00:15:18,520"
+			},
+			"offsets": {
+				"from": 916520,
+				"to": 918520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:18,520",
+				"to": "00:15:20,520"
+			},
+			"offsets": {
+				"from": 918520,
+				"to": 920520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:20,520",
+				"to": "00:15:22,520"
+			},
+			"offsets": {
+				"from": 920520,
+				"to": 922520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:22,520",
+				"to": "00:15:24,520"
+			},
+			"offsets": {
+				"from": 922520,
+				"to": 924520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:24,520",
+				"to": "00:15:26,520"
+			},
+			"offsets": {
+				"from": 924520,
+				"to": 926520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:26,520",
+				"to": "00:15:28,520"
+			},
+			"offsets": {
+				"from": 926520,
+				"to": 928520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:28,520",
+				"to": "00:15:30,520"
+			},
+			"offsets": {
+				"from": 928520,
+				"to": 930520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:30,520",
+				"to": "00:15:32,520"
+			},
+			"offsets": {
+				"from": 930520,
+				"to": 932520
+			},
+			"text": " So we can see that we've got a lot of stuff here."
+		}
+	]
+}

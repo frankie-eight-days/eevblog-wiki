@@ -1,0 +1,2100 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"mels": 128,
+		"ftype": 8
+	},
+	"params": {
+		"model": "/Users/frankwalsh/eevblog/models/ggml-large-v3-q5_0.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:22,940"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 22940
+			},
+			"text": " Hi, today we're going to take a look at the BATLAB-1. Here it is. It's a battery profiling tool, which was sent in by the designer, Doug, thank you very much, to the mailbag, but I thought I'd do a separate video because these things are rather interesting, unlike, say, the microcurrent and other current measurement tools."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:22,940",
+				"to": "00:00:35,800"
+			},
+			"offsets": {
+				"from": 22940,
+				"to": 35800
+			},
+			"text": " This one is, like, specifically targeted to actually power the product under test, i.e., you've got your little widget thing and, you know, it's going to be battery powered and you want to, like, estimate the battery life."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,860",
+				"to": "00:00:40,900"
+			},
+			"offsets": {
+				"from": 35860,
+				"to": 40900
+			},
+			"text": " You want to measure the current consumption, but it's got all sorts of different modes and you want to sort of, like, estimate the battery life."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:40,900",
+				"to": "00:00:52,920"
+			},
+			"offsets": {
+				"from": 40900,
+				"to": 52920
+			},
+			"text": " And for battery powered products, you know, that take, like, hundreds of hours battery life or even more, often it's very difficult to do, like, long-term testing of those to actually get real results."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:52,940",
+				"to": "00:01:06,480"
+			},
+			"offsets": {
+				"from": 52940,
+				"to": 66480
+			},
+			"text": " So you can just, like, use a microcurrent or other similar current measurement device to just estimate the current and go, oh, yeah, it only wakes up occasionally, but its base sleep current is this or its base operational current is this."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:06,700",
+				"to": "00:01:19,400"
+			},
+			"offsets": {
+				"from": 66700,
+				"to": 79400
+			},
+			"text": " You can kind of sort of guesstimate, you know, squint, hold your tongue at the right angle, look at the battery discharge curve for the type of battery that you've got and things like that, and kind of guesstimate what the battery life is going to be."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:19,400",
+				"to": "00:01:22,880"
+			},
+			"offsets": {
+				"from": 79400,
+				"to": 82880
+			},
+			"text": " Or you can spend hundreds of hours, like, actually powering your product to see."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:23,200",
+				"to": "00:01:31,780"
+			},
+			"offsets": {
+				"from": 83200,
+				"to": 91780
+			},
+			"text": " How long it actually lasts, but specific tools like this do it with a bit, well, a lot more finesse than just guesstimating."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:32,060",
+				"to": "00:01:33,620"
+			},
+			"offsets": {
+				"from": 92060,
+				"to": 93620
+			},
+			"text": " So let's take a look at it."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,680",
+				"to": "00:01:36,980"
+			},
+			"offsets": {
+				"from": 93680,
+				"to": 96980
+			},
+			"text": " So thank you very much, Doug Peters from Bluebird Labs."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:37,060",
+				"to": "00:01:39,180"
+			},
+			"offsets": {
+				"from": 97060,
+				"to": 99180
+			},
+			"text": " I'll link all this down below if you want to check it out."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:39,260",
+				"to": "00:01:42,540"
+			},
+			"offsets": {
+				"from": 99260,
+				"to": 102540
+			},
+			"text": " Yes, it's open source hardware and open source software."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:42,860",
+				"to": "00:01:46,820"
+			},
+			"offsets": {
+				"from": 102860,
+				"to": 106820
+			},
+			"text": " If we take a look at the product specifications here, what do we got?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:46,820",
+				"to": "00:01:51,620"
+			},
+			"offsets": {
+				"from": 106820,
+				"to": 111620
+			},
+			"text": " Spend more time on design and less time setting up test scenarios to measure battery life."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:51,860",
+				"to": "00:01:52,900"
+			},
+			"offsets": {
+				"from": 111860,
+				"to": 112900
+			},
+			"text": " And, yep, Doug realized."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:52,980",
+				"to": "00:01:56,660"
+			},
+			"offsets": {
+				"from": 112980,
+				"to": 116660
+			},
+			"text": " The process of measuring an estimated battery life can be very labor-intensive."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:56,840",
+				"to": "00:02:00,560"
+			},
+			"offsets": {
+				"from": 116840,
+				"to": 120560
+			},
+			"text": " It can indeed be tedious, multiple tests, blah, blah, and all sorts of things."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:00,800",
+				"to": "00:02:03,120"
+			},
+			"offsets": {
+				"from": 120800,
+				"to": 123120
+			},
+			"text": " So this is not the only one on the market."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:03,200",
+				"to": "00:02:09,280"
+			},
+			"offsets": {
+				"from": 123200,
+				"to": 129280
+			},
+			"text": " I think I may have even looked at one before, one or two before, battery estimating tools."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:09,420",
+				"to": "00:02:12,020"
+			},
+			"offsets": {
+				"from": 129420,
+				"to": 132020
+			},
+			"text": " But anyway, we don't even have to do a teardown of this."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:12,400",
+				"to": "00:02:15,760"
+			},
+			"offsets": {
+				"from": 132400,
+				"to": 135760
+			},
+			"text": " And Doug's already torn it down for us, which is fantastic."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:15,760",
+				"to": "00:02:20,140"
+			},
+			"offsets": {
+				"from": 135760,
+				"to": 140140
+			},
+			"text": " So what we've got here, you might immediately think that the screw terminals, aha, that's to measure the current."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:20,260",
+				"to": "00:02:22,860"
+			},
+			"offsets": {
+				"from": 140260,
+				"to": 142860
+			},
+			"text": " No, this is actually to supply power to your product."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:22,940",
+				"to": "00:02:25,340"
+			},
+			"offsets": {
+				"from": 142940,
+				"to": 145340
+			},
+			"text": " I believe we can supply up to 500 milliamps."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:25,480",
+				"to": "00:02:26,800"
+			},
+			"offsets": {
+				"from": 145480,
+				"to": 146800
+			},
+			"text": " Have a look at the specs in a minute."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:27,020",
+				"to": "00:02:32,080"
+			},
+			"offsets": {
+				"from": 147020,
+				"to": 152080
+			},
+			"text": " So it supplies current to your product, so you don't have to dick around with power supplies or anything like that."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:32,260",
+				"to": "00:02:36,240"
+			},
+			"offsets": {
+				"from": 152260,
+				"to": 156240
+			},
+			"text": " This thing will source the power and also measure it as well."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:36,380",
+				"to": "00:02:38,700"
+			},
+			"offsets": {
+				"from": 156380,
+				"to": 158700
+			},
+			"text": " And we'll see the software tools are very versatile."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:39,120",
+				"to": "00:02:44,600"
+			},
+			"offsets": {
+				"from": 159120,
+				"to": 164600
+			},
+			"text": " So we've got a USB interface, and this here is not an oscilloscope output,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:44,600",
+				"to": "00:02:49,260"
+			},
+			"offsets": {
+				"from": 164600,
+				"to": 169260
+			},
+			"text": " as I thought it might be when I first got this in the mailbag, but it's actually a trigger input."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,520",
+				"to": "00:02:52,860"
+			},
+			"offsets": {
+				"from": 169520,
+				"to": 172860
+			},
+			"text": " Now, a trigger input can be very handy because you might,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:52,880",
+				"to": "00:02:57,540"
+			},
+			"offsets": {
+				"from": 172880,
+				"to": 177540
+			},
+			"text": " want to actually program your little gadget here, use a spare pin,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:57,540",
+				"to": "00:03:03,500"
+			},
+			"offsets": {
+				"from": 177540,
+				"to": 183500
+			},
+			"text": " always like have a spare pin available just for these kind of scenarios where you can actually during development,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:03,500",
+				"to": "00:03:07,600"
+			},
+			"offsets": {
+				"from": 183500,
+				"to": 187600
+			},
+			"text": " you can actually program that pin to like output a trigger signal,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:07,600",
+				"to": "00:03:10,920"
+			},
+			"offsets": {
+				"from": 187600,
+				"to": 190920
+			},
+			"text": " which you can go into a product like this, or it can go into an oscilloscope."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:10,920",
+				"to": "00:03:15,840"
+			},
+			"offsets": {
+				"from": 190920,
+				"to": 195840
+			},
+			"text": " It can go into any logic analyzer, any other tool you need to do debugging and capturing."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,840",
+				"to": "00:03:22,820"
+			},
+			"offsets": {
+				"from": 195840,
+				"to": 202820
+			},
+			"text": " In this case, it can say when the thing wakes up, for example, from sleep mode, or when it goes to sleep mode,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,820",
+				"to": "00:03:26,840"
+			},
+			"offsets": {
+				"from": 202820,
+				"to": 206840
+			},
+			"text": " it goes into a particular high intensive processing mode or something like that."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:26,960",
+				"to": "00:03:31,260"
+			},
+			"offsets": {
+				"from": 206960,
+				"to": 211260
+			},
+			"text": " You may set software firmware in your product to actually output a trigger signal,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:31,260",
+				"to": "00:03:36,200"
+			},
+			"offsets": {
+				"from": 211260,
+				"to": 216200
+			},
+			"text": " and this thing can then detect it and then like time correlate when that happens and,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,340",
+				"to": "00:03:39,200"
+			},
+			"offsets": {
+				"from": 216340,
+				"to": 219200
+			},
+			"text": " you know, start sampling or do whatever you need to do."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:39,200",
+				"to": "00:03:42,200"
+			},
+			"offsets": {
+				"from": 219200,
+				"to": 222200
+			},
+			"text": " Like if you got hooked up to an oscilloscope or a logic analyzer or something,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:42,340",
+				"to": "00:03:46,580"
+			},
+			"offsets": {
+				"from": 222340,
+				"to": 226580
+			},
+			"text": " it can trigger that and then you can capture all the data or in this particular case,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,580",
+				"to": "00:03:49,780"
+			},
+			"offsets": {
+				"from": 226580,
+				"to": 229780
+			},
+			"text": " um, the, like the power consumption, the current basically."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:49,940",
+				"to": "00:03:52,760"
+			},
+			"offsets": {
+				"from": 229940,
+				"to": 232760
+			},
+			"text": " So yeah, and it can simulate batteries as well."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:52,760",
+				"to": "00:03:57,140"
+			},
+			"offsets": {
+				"from": 232760,
+				"to": 237140
+			},
+			"text": " Uh, and of course, uh, yes, it's optically isolated USB interface,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:57,140",
+				"to": "00:04:01,240"
+			},
+			"offsets": {
+				"from": 237140,
+				"to": 241240
+			},
+			"text": " 'cause I've done a whole video on how not to blow up your oscilloscope or blow up your PC"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:01,240",
+				"to": "00:04:04,140"
+			},
+			"offsets": {
+				"from": 241240,
+				"to": 244140
+			},
+			"text": " because you're, like, it's not optically isolated."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:04,140",
+				"to": "00:04:09,640"
+			},
+			"offsets": {
+				"from": 244140,
+				"to": 249640
+			},
+			"text": " So, very nice, um, it's got two ranges by looks of it, two range current, uh, sense resistors,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:09,640",
+				"to": "00:04:15,740"
+			},
+			"offsets": {
+				"from": 249640,
+				"to": 255740
+			},
+			"text": " and it's got an MSP430 for all you MSP fanboys, uh, provides voltage fixed, uh, like, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,740",
+				"to": "00:04:22,700"
+			},
+			"offsets": {
+				"from": 255740,
+				"to": 262700
+			},
+			"text": " all your nominal voltage, uh, typical voltage rails, perfect for measuring ESP, uh, 8266 devices and stuff,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:22,700",
+				"to": "00:04:28,280"
+			},
+			"offsets": {
+				"from": 262700,
+				"to": 268280
+			},
+			"text": " like that, um, so, yeah, it looks like for, up to, from 10 microamps to 500 milliamps."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:28,280",
+				"to": "00:04:34,640"
+			},
+			"offsets": {
+				"from": 268280,
+				"to": 274640
+			},
+			"text": " So if your device, like, requires, like, like an amp or two, like, surge current or something like that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:34,640",
+				"to": "00:04:40,080"
+			},
+			"offsets": {
+				"from": 274640,
+				"to": 280080
+			},
+			"text": " this thing may not be suitable for, but for most little, um, you know, internet-y thingies, gadgets,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:40,080",
+				"to": "00:04:44,960"
+			},
+			"offsets": {
+				"from": 280080,
+				"to": 284960
+			},
+			"text": " or whatever, like little lower power products, which are typically powering from a battery anyway,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:44,960",
+				"to": "00:04:46,860"
+			},
+			"offsets": {
+				"from": 284960,
+				"to": 286860
+			},
+			"text": " um, 500 milliamps should be enough."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:46,860",
+				"to": "00:04:52,640"
+			},
+			"offsets": {
+				"from": 286860,
+				"to": 292640
+			},
+			"text": " So it's got, uh, 16-bit, uh, Delta Sigma ADC and 1 kilohertz sample rate, yep, no worries, so it's not gonna"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:52,640",
+				"to": "00:04:57,600"
+			},
+			"offsets": {
+				"from": 292640,
+				"to": 297600
+			},
+			"text": " capture, like, really short pulses and things like that, but often you can, sort of, neglect those,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:57,600",
+				"to": "00:05:02,400"
+			},
+			"offsets": {
+				"from": 297600,
+				"to": 302400
+			},
+			"text": " because, unless they're happening, like, all the time, uh, yeah, you typically, they're not gonna"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:02,400",
+				"to": "00:05:06,300"
+			},
+			"offsets": {
+				"from": 302400,
+				"to": 306300
+			},
+			"text": " impact your consumption, like, your average consumption over time too much."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:06,300",
+				"to": "00:05:11,760"
+			},
+			"offsets": {
+				"from": 306300,
+				"to": 311760
+			},
+			"text": " Can capture from seconds to hours, uh, extremely low burden voltage, because it essentially has none,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:11,760",
+				"to": "00:05:16,700"
+			},
+			"offsets": {
+				"from": 311760,
+				"to": 316700
+			},
+			"text": " because it's essentially providing the power, although we'll have a look at the schematic in a minute."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:16,700",
+				"to": "00:05:22,580"
+			},
+			"offsets": {
+				"from": 316700,
+				"to": 322580
+			},
+			"text": " Uh, what if optimization will improve, uh, design, features the ability, like, if you go, oh, if I,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,580",
+				"to": "00:05:29,340"
+			},
+			"offsets": {
+				"from": 322580,
+				"to": 329340
+			},
+			"text": " change from AA to AAA batteries, how much do, you know, life does that, uh, how much increased product life"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:29,340",
+				"to": "00:05:31,340"
+			},
+			"offsets": {
+				"from": 329340,
+				"to": 331340
+			},
+			"text": " can I get, so that's, you know, it's pretty handy."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:31,340",
+				"to": "00:05:35,500"
+			},
+			"offsets": {
+				"from": 331340,
+				"to": 335500
+			},
+			"text": " And open source hardware and software, we'll have a look at the software in a minute, looks pretty comprehensive,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:35,500",
+				"to": "00:05:37,780"
+			},
+			"offsets": {
+				"from": 335500,
+				"to": 337780
+			},
+			"text": " and he sells it on Tindie, LinkedIn down below."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:37,780",
+				"to": "00:05:42,840"
+			},
+			"offsets": {
+				"from": 337780,
+				"to": 342840
+			},
+			"text": " Now, it's available on the Git Hubs, and I did actually go over the GitHub, and I downloaded all this,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:42,840",
+				"to": "00:05:48,020"
+			},
+			"offsets": {
+				"from": 342840,
+				"to": 348020
+			},
+			"text": " and I thought, oh, it's just a Python script and things like that, but then I looked at the, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:48,020",
+				"to": "00:05:52,520"
+			},
+			"offsets": {
+				"from": 348020,
+				"to": 352520
+			},
+			"text": " quick start manual, and it mentioned, like, an XE, like a Windows XE, um, execute,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:52,520",
+				"to": "00:05:58,340"
+			},
+			"offsets": {
+				"from": 352520,
+				"to": 358340
+			},
+			"text": " so I was wondering where that was, it wasn't, uh, immediately obvious, it's actually over here in this"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:58,340",
+				"to": "00:06:03,900"
+			},
+			"offsets": {
+				"from": 358340,
+				"to": 363900
+			},
+			"text": " production version like this, and you download that, so I've downloaded, uh, all the software,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:03,900",
+				"to": "00:06:08,960"
+			},
+			"offsets": {
+				"from": 363900,
+				"to": 368960
+			},
+			"text": " and it's got a user manual as well, it's not that long, but it looks like it covers most of the, like,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:08,960",
+				"to": "00:06:14,780"
+			},
+			"offsets": {
+				"from": 368960,
+				"to": 374780
+			},
+			"text": " options and things, and what they do in there, and yes, I'm not using floating green t-shirt Dave head,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,780",
+				"to": "00:06:20,460"
+			},
+			"offsets": {
+				"from": 374780,
+				"to": 380460
+			},
+			"text": " um, and it's, uh, well, a lot of people liked it, some people didn't, so I'll switch back to my original,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:20,460",
+				"to": "00:06:22,460"
+			},
+			"offsets": {
+				"from": 380460,
+				"to": 382460
+			},
+			"text": " like, you know, head and shoulders Dave."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:22,460",
+				"to": "00:06:28,700"
+			},
+			"offsets": {
+				"from": 382460,
+				"to": 388700
+			},
+			"text": " So what we've got here is we've got, uh, the schematic, uh, various Python, uh, things that it's written in,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:28,700",
+				"to": "00:06:35,220"
+			},
+			"offsets": {
+				"from": 388700,
+				"to": 395220
+			},
+			"text": " the MSP430 firmware, stuff like that, so let's have a, just a quick squeeze at the schematic out of, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:35,220",
+				"to": "00:06:40,720"
+			},
+			"offsets": {
+				"from": 395220,
+				"to": 400720
+			},
+			"text": " curiosity, unfortunately it's not in the highest resolution, so some things are a little bit hard to read,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:40,720",
+				"to": "00:06:47,900"
+			},
+			"offsets": {
+				"from": 400720,
+				"to": 407900
+			},
+			"text": " anyway, um, MSP430 up here, we've got an FTDI RS-232 serial interface, 'cause that's how it works,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:47,900",
+				"to": "00:06:52,400"
+			},
+			"offsets": {
+				"from": 407900,
+				"to": 412400
+			},
+			"text": " we've got some USB protection over here, uh, we've got a, uh, that's our isolator,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:52,400",
+				"to": "00:06:59,660"
+			},
+			"offsets": {
+				"from": 412400,
+				"to": 419660
+			},
+			"text": " uh, power supply here, and then we've got a, uh, you know, a serial isolator here, another isolator up here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:59,660",
+				"to": "00:07:07,240"
+			},
+			"offsets": {
+				"from": 419660,
+				"to": 427240
+			},
+			"text": " and then this looks like an, what was it, a, um, INA, uh, can't read that, but anyway, instrumentation amplifier,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:07,240",
+				"to": "00:07:12,560"
+			},
+			"offsets": {
+				"from": 427240,
+				"to": 432560
+			},
+			"text": " you saw that before, and that's reading the, or sensing the voltage across our current shunts,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:12,560",
+				"to": "00:07:17,840"
+			},
+			"offsets": {
+				"from": 432560,
+				"to": 437840
+			},
+			"text": " and we've got two current shunts here, we've got a 0.100 milli-ohms here, and we've got a 100-ohm,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:17,840",
+				"to": "00:07:22,340"
+			},
+			"offsets": {
+				"from": 437840,
+				"to": 442340
+			},
+			"text": " and then we've got a MOSFET actually just shorting out the 100-ohm, now, uh, he's just,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:22,340",
+				"to": "00:07:28,980"
+			},
+			"offsets": {
+				"from": 442340,
+				"to": 448980
+			},
+			"text": " he's just gone with measuring the voltage across both resistors like that, so when you short out the MOSFET,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:28,980",
+				"to": "00:07:36,840"
+			},
+			"offsets": {
+				"from": 448980,
+				"to": 456840
+			},
+			"text": " you're going to include the RDS on of the MOSFET in series with the, uh, 100 milli-ohm current sense resistor here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:36,840",
+				"to": "00:07:42,380"
+			},
+			"offsets": {
+				"from": 456840,
+				"to": 462380
+			},
+			"text": " and you can, like, get rid of that in software and stuff like that, um, you know, I, ideally you'd have, like,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:42,380",
+				"to": "00:07:47,440"
+			},
+			"offsets": {
+				"from": 462380,
+				"to": 467440
+			},
+			"text": " a separate sense line coming out here, but then you gotta have a MUX to switch it, and, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:47,440",
+				"to": "00:07:52,280"
+			},
+			"offsets": {
+				"from": 467440,
+				"to": 472280
+			},
+			"text": " uh, stuff like that, so, yeah, often it's just easier, I can understand why I did that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:52,280",
+				"to": "00:07:57,180"
+			},
+			"offsets": {
+				"from": 472280,
+				"to": 477180
+			},
+			"text": " no worries, now, one thing I noticed is that it's got a thousand microfarads capacitance on the output,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:57,180",
+				"to": "00:08:04,520"
+			},
+			"offsets": {
+				"from": 477180,
+				"to": 484520
+			},
+			"text": " and that's actually quite a lot, so that when your little, uh, doodad under test actually takes a gulp of current,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:04,520",
+				"to": "00:08:10,480"
+			},
+			"offsets": {
+				"from": 484520,
+				"to": 490480
+			},
+			"text": " it's going to be supplied from this, uh, reservoir capacitor output capacity here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:10,480",
+				"to": "00:08:16,340"
+			},
+			"offsets": {
+				"from": 490480,
+				"to": 496340
+			},
+			"text": " instead of actually coming through the current sense resistors like this, so, you know, short pulses"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:16,340",
+				"to": "00:08:22,220"
+			},
+			"offsets": {
+				"from": 496340,
+				"to": 502220
+			},
+			"text": " won't actually register across there, but then it's, of course, you know, you've got to pay the piper,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:22,220",
+				"to": "00:08:28,420"
+			},
+			"offsets": {
+				"from": 502220,
+				"to": 508420
+			},
+			"text": " so if there's no free lunch here, then the current has to go back in and, you know, recharge the capacitor,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:28,420",
+				"to": "00:08:36,220"
+			},
+			"offsets": {
+				"from": 508420,
+				"to": 516220
+			},
+			"text": " so, you know, essentially, um, it does that, so it's, so then we're not really measuring, uh, current pulses in real time,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:36,220",
+				"to": "00:08:42,220"
+			},
+			"offsets": {
+				"from": 516220,
+				"to": 522220
+			},
+			"text": " and things like that, but for a product like this that measures your average current consumption and things like that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:42,220",
+				"to": "00:08:48,220"
+			},
+			"offsets": {
+				"from": 522220,
+				"to": 528220
+			},
+			"text": " you can get away with this, so, yep, that looks all groovy, all right, so I'm just gonna plug it in and see what we get,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:48,220",
+				"to": "00:08:52,160"
+			},
+			"offsets": {
+				"from": 528220,
+				"to": 532160
+			},
+			"text": " it's just got a regular FTDI chip in there, so it should just appear as a serial port,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:52,160",
+				"to": "00:08:58,160"
+			},
+			"offsets": {
+				"from": 532160,
+				"to": 538160
+			},
+			"text": " so if you download the production version I showed you before, you get access to the XE,"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:58,160",
+				"to": "00:09:06,160"
+			},
+			"offsets": {
+				"from": 538160,
+				"to": 546160
+			},
+			"text": " and it does take a while to load up, ah, we can't go to full screen on that, so it's just a fixed size like that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:06,160",
+				"to": "00:09:14,160"
+			},
+			"offsets": {
+				"from": 546160,
+				"to": 554160
+			},
+			"text": " I've just got a, uh, full HD, uh, 1920 by 1080 screen here, so, there you go, it's automatically detected COM12,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:14,160",
+				"to": "00:09:20,100"
+			},
+			"offsets": {
+				"from": 554160,
+				"to": 560100
+			},
+			"text": " that wasn't there before, and we're gonna connect, could not open COM12, permission accessed is denied,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:20,100",
+				"to": "00:09:22,100"
+			},
+			"offsets": {
+				"from": 560100,
+				"to": 562100
+			},
+			"text": " do we have to set the board rate?"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:22,100",
+				"to": "00:09:26,100"
+			},
+			"offsets": {
+				"from": 562100,
+				"to": 566100
+			},
+			"text": " I assume, you know, it'd be fixed, it, you know, it's only connecting to this,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:26,100",
+				"to": "00:09:32,100"
+			},
+			"offsets": {
+				"from": 566100,
+				"to": 572100
+			},
+			"text": " there's actually nothing in terms of options, which is good, you know, I don't like things being buried away in options,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:32,100",
+				"to": "00:09:36,100"
+			},
+			"offsets": {
+				"from": 572100,
+				"to": 576100
+			},
+			"text": " it's nice to have them all out here flapping around in the breeze so that you can play with them,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:36,100",
+				"to": "00:09:43,100"
+			},
+			"offsets": {
+				"from": 576100,
+				"to": 583100
+			},
+			"text": " sorry, I forgot to flip my Dave head, there you go, Dave head flipped, so now if I, I look the right direction now,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:43,100",
+				"to": "00:09:52,040"
+			},
+			"offsets": {
+				"from": 583100,
+				"to": 592040
+			},
+			"text": " oh no, now it says it's connected, COM12, oh, error number, batlab device connect, oh, right, I didn't see that before, I don't get it, anyway,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:52,040",
+				"to": "00:09:56,040"
+			},
+			"offsets": {
+				"from": 592040,
+				"to": 596040
+			},
+			"text": " are we connected, are we connected, I think we are, it says we're connected,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:56,040",
+				"to": "00:10:02,040"
+			},
+			"offsets": {
+				"from": 596040,
+				"to": 602040
+			},
+			"text": " anyway, we basically got a big graph here of, uh, milliamps versus, uh, time here, milliseconds,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:02,040",
+				"to": "00:10:07,040"
+			},
+			"offsets": {
+				"from": 602040,
+				"to": 607040
+			},
+			"text": " you know, I'm sure that'll automatically increment, can we, like, change the axes, I'm right-clicking on that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:07,040",
+				"to": "00:10:15,040"
+			},
+			"offsets": {
+				"from": 607040,
+				"to": 615040
+			},
+			"text": " I can't see, maybe, configure subplots, oh, oh, okay, oh, look, we can change the size of it, that's interesting,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:15,040",
+				"to": "00:10:21,980"
+			},
+			"offsets": {
+				"from": 615040,
+				"to": 621980
+			},
+			"text": " we can just stretch it and modify it, okay, cool, now, I like how this is, like, separated into steps here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:21,980",
+				"to": "00:10:30,980"
+			},
+			"offsets": {
+				"from": 621980,
+				"to": 630980
+			},
+			"text": " step one, step two, step three, step four, to give you your answer, which is how long will my battery last for my little widget here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:30,980",
+				"to": "00:10:38,980"
+			},
+			"offsets": {
+				"from": 630980,
+				"to": 638980
+			},
+			"text": " I assume I shouldn't have, like, I shouldn't have to hook anything up to it yet, um, to actually get this to just, you know, read out zero,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:38,980",
+				"to": "00:10:51,920"
+			},
+			"offsets": {
+				"from": 638980,
+				"to": 651920
+			},
+			"text": " it looks like it goes negative milliamps, um, does it, I don't think it supports that, um, in the hardware, so, um, yeah, it should just scale from zero, but maybe we can change that later,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:51,920",
+				"to": "00:11:21,860"
+			},
+			"offsets": {
+				"from": 651920,
+				"to": 681860
+			},
+			"text": " so, the first thing is, we're going to say, okay, we're going to power it from AA alkaline batteries, so, beauty, so, AA or AAA, there's no 9-volt there, but I guess you could just go, well, 9-volt is, like, 6, unfortunately, 9-volt is 6, 4A cells, not AAA, so, there's no support for a 9-volt battery there, um, that'd be nice to add, um, because people still think, power things from 9-volt batteries, I'm, I'm, you know, a new designer,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:21,860",
+				"to": "00:11:51,800"
+			},
+			"offsets": {
+				"from": 681860,
+				"to": 711800
+			},
+			"text": " microcurrent, I think it'll be 9-volt battery powered, um, so, yeah, that'd be nice, and battery capacity, well, I think a, a AA alkaline's normally 2,000 milliamp hours, isn't it, and the, uh, device under test cutoff voltage, let's say, you know, oh, one, one volt's a bit low, let's say, well, it's nice, I mean, if you can design your product to work down to 0.8 volts per cell, um, then it just, the, the capacity just drops off a cliff, pretty much, all right, this here, just, yeah, it pretty much just drops off a cliff, once you're, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:51,800",
+				"to": "00:12:21,740"
+			},
+			"offsets": {
+				"from": 711800,
+				"to": 741740
+			},
+			"text": " you know, that's the whole batterizer thing, right, then, once you get down to 0.8 volts, there's nothing left, there's nothing left, the PSU output voltage, you don't want 3.3, because the whole idea is that you power your product from the battery, this thing is simulating the battery, so, you know, you don't get a 3.3-volt battery, okay, I'm switching, I switched the output on, it looks like you can't change it after the fact, you have to switch it off, it won't let me change anything in here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:21,740",
+				"to": "00:12:51,680"
+			},
+			"offsets": {
+				"from": 741740,
+				"to": 771680
+			},
+			"text": " after I've set it, like, I've done my step, maybe, maybe if I refresh it, maybe reconnect it, something like that, it, like, starts again, does it, it now does not let me change, it only lets me change my cutoff voltage and my milliamp hours, my, my cell capacity, it doesn't let me change anything else, so that's a one-shot deal, not sure I like that, is there some way to, like, reset it, or do you simply have to restart it, it gave me the spark fund board, it's an ESP32 thing,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:51,680",
+				"to": "00:13:21,620"
+			},
+			"offsets": {
+				"from": 771680,
+				"to": 801620
+			},
+			"text": " whatever that is, I don't know, I assume he's, like, pre-programmed it with some, like, example where it goes, you know, start up, like, sleep mode, and then, uh, active mode, and, and stuff like that, so that's, I don't know what battery that's powered from, okay, so let's assume that we've got a lithium polymer, there we go, you just saw the, uh, curve change here, and let's say cut out, yeah, cutoff, I was gonna say around about, uh, 3 volts, uh, the PSU output voltage, 3.6 volts, okay, that's what this board, I think this board is designed to, I think it has a battery, that's"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:21,620",
+				"to": "00:13:51,560"
+			},
+			"offsets": {
+				"from": 801620,
+				"to": 831560
+			},
+			"text": " a battery connector, it's a battery charger thing, ha, it's a thing, get it, anyway, there it is, that's the, uh, our device under test, I assume Doug's pre-programmed that, one cell, 1600 milliamp hours, let's, let's change that to a thousand, I guess, to make the numbers easy, if we, you know, if we do actually use them, PSU output on, connected, active event current, uh, for duration for 10 seconds, okay, so this is how long it's gonna do the capture for,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:51,560",
+				"to": "00:14:21,500"
+			},
+			"offsets": {
+				"from": 831560,
+				"to": 861500
+			},
+			"text": " okay, so we've got two LEDs on, so it's powered, let's capture, yep, 10 seconds worth of active, capture active current, okay, so it's not gonna give us, it doesn't have, looks like it doesn't have any live updating mode, that, that would've been nice to have, like, just like a live button or something, perhaps, um, some sort of live mode, would've been cool, but because this is like a serial thing, like, it's not gonna, you know, it's not gonna be fast updating, not sure what the board rate is, but it's like, you know, 115, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:21,500",
+				"to": "00:14:51,440"
+			},
+			"offsets": {
+				"from": 861500,
+				"to": 891440
+			},
+			"text": " max or whatever, okay, let's capture active area, see if we can capture it, there we go, it's capturing, is our board doing anything, the LED, oh, the LED switched off, um, and we've got some sort of active current here, can we, if I move my mouse over that, I can't zoom in, can I draw a window, no, I have to use, okay, there we go, it's a specific mode, zoom to rectangle, don't worry about those spikes up there, you know, we're, we're not talking much,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:51,440",
+				"to": "00:15:21,380"
+			},
+			"offsets": {
+				"from": 891440,
+				"to": 921380
+			},
+			"text": " we're only talking 100 microamps, so it's obviously in sleep mode, and you can see that this is, uh, it didn't give us a range, did it, oh, no, 800 microamps to 500 milliamps, there you go, so we could've used this, uh, lower range down here, but it didn't give us the option to choose the range before we started, okay, I, I missed this, it says active event current, and then the step three is sleep event current, so watch"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:21,380",
+				"to": "00:15:51,320"
+			},
+			"offsets": {
+				"from": 921380,
+				"to": 951320
+			},
+			"text": " you have to do is effectively, uh, force your product into an active mode, capture the active current, force it into a sleep mode, capture the sleep mode, or you don't have to force it, maybe you can just, like, time the operation of it, or whatever, um, so that's why I said have spare pins on your microcontroller, and so you can have, like, a spare button on the board, if you've got real estate on your board, you can put, like, a, a test button where you can press it, so you can put it into different, force your product into different modes, you can build that into your debug, uh, development code, and then you"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:51,320",
+				"to": "00:16:21,260"
+			},
+			"offsets": {
+				"from": 951320,
+				"to": 981260
+			},
+			"text": " know, you can output your triggers, and, and do other stuff, but you can, like, force it into different modes, and things like this, and it's well worth it, it's like, you know, seconds of your time to just, you know, program in a few little modes to, you know, detect that button, and then, um, force it into a mode, so anyway, that's good, it looks like, yeah, in this mode, we're obviously in the 800 microamps to 500 milliamps, and because we're only measuring, yeah, 80, uh, microamps here, yeah, we're down in the bits, so we're down in the"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:21,260",
+				"to": "00:16:51,200"
+			},
+			"offsets": {
+				"from": 981260,
+				"to": 1011200
+			},
+			"text": " bit noise here, so that's why we've got these spikes, they're just, like, these are, you know, the least significant digits of the 16-bit delta sigma, uh, converter here, so we're on the wrong range, um, so you can't, looks like you can't choose a range for the active current, so it assumes the highest range, it assumes the 500 milliamp range, that's a bit inflexible, it'd be nice to be able to choose the range for both, because you might have a really ultra-low power product that only operates,"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:51,200",
+				"to": "00:17:21,140"
+			},
+			"offsets": {
+				"from": 1011200,
+				"to": 1041140
+			},
+			"text": " like, less than a milliamp, there are products like that, that, you know, don't draw more than the 800 microamps, or whatever, so there's a little bit of inflexibility there, uh, perhaps, all right, enough bumming around, I RTFM'd, and, uh, sure enough, this thing is programmed to, like, power up for 10, 15 seconds, and search for Wi-Fi networks and stuff like that, so it's going to be drawing, you know, hundreds of milliamps, and then it goes to sleep for a minute, so that's why, you know, I'll get"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:21,140",
+				"to": "00:17:51,080"
+			},
+			"offsets": {
+				"from": 1041140,
+				"to": 1071080
+			},
+			"text": " in weird things about, you know, if you don't time it properly, this is why the, uh, the trigger sections, the external trigger input, and also this, uh, trigger PSU on capture option here, um, means it can actually, when you trigger it, it powers it up, and then starts, uh, sampling, so, as I said, like, you either have to, uh, custom change your own, uh, product firmware to ensure that it changes modes at the right time, so it's synchronized with this, or you capture the"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:51,080",
+				"to": "00:18:13,340"
+			},
+			"offsets": {
+				"from": 1071080,
+				"to": 1093340
+			},
+			"text": " various, uh, you know, sampling modes of this, so that's what you gotta do. So, yeah, it's not some, you know, one-button magic thing, press button here, samples all your power consumption, and then estimates your battery consumption, this is specifically designed for products that have, in particular, like a power mode, and, like, an on mode, and a sleep mode, and you have to measure those things separately, so let's do that now, properly."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:21,020",
+				"to": "00:18:34,700"
+			},
+			"offsets": {
+				"from": 1101020,
+				"to": 1114700
+			},
+			"text": " I sampled it twice, and it seems to have, like, added on the data to the end of the buffer, but it's given, like, these lines, I'm not sure what's going on here, so there's some sort of weird sampling artifact thing here happening, I'm just gonna restart the software, see if that fixes it."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:34,820",
+				"to": "00:18:50,960"
+			},
+			"offsets": {
+				"from": 1114820,
+				"to": 1130960
+			},
+			"text": " Alright, so we're gonna say that we're powering our product from a lithium polymer battery here, it's one cell, let's say a thousand milliamp hours to make it nice and round, it will cut off at three volts, that's a, you know, a good cutoff voltage, if you can, uh, operate down to that, of course, because if you've got, say, the battery,"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:50,960",
+				"to": "00:19:20,900"
+			},
+			"offsets": {
+				"from": 1130960,
+				"to": 1160900
+			},
+			"text": " powering, like, a 3.3 volt voltage regulator, well, like, a low dropout one, then it's gonna be, like, 3.35, or something like that, and that will actually, right, if you've got 50 millivolts dropout there, that'll move your, uh, cutoff point to here, and then you're, you're pissing away, you're wasting half of your battery capacity, so a thousand milliamp hour battery, you'd be wasting it, because here's our voltage cutoff point at that red dot, so basically, the area under the curve extending down to zero volts,"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:20,900",
+				"to": "00:19:50,840"
+			},
+			"offsets": {
+				"from": 1160900,
+				"to": 1190840
+			},
+			"text": " here, um, is essentially the energy of the battery, so you can see it, you know, it's gonna be roughly, like, half-half, so you're wasting, like, 45 to 50 percent of the capacity of that battery if you used a, if you designed your product to power directly from a lithium, uh, polymer battery, a single cell lithium polymer battery, and have a dropout voltage of, you know, a linear regulator, so unless you've got a switching thing, but let's assume that your product can go down to three volts, shall we, and then it uses, like, almost all of the capacity of that battery,"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:50,840",
+				"to": "00:20:20,780"
+			},
+			"offsets": {
+				"from": 1190840,
+				"to": 1220780
+			},
+			"text": " like, there's naff all left under that curve there, you know, it's like, like, a few percent tops, now, what we want to do is, we want to trigger the power supply on capture, so when we turn this on, it will only turn the power on to the device under test when we push the capture button, so as soon as we push the capture button, it'll turn the power on, so that's, uh, good, because this thing will instantly, like, power up, consume a lot of current, do the Wi-Fi-y thing, and then go into sleep mode, so this is where it gets a bit complicated,"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:20,780",
+				"to": "00:20:50,720"
+			},
+			"offsets": {
+				"from": 1220780,
+				"to": 1250720
+			},
+			"text": " here, we have our active, uh, duration here, which we sample for, this is our sample time, now, you can, if your product's on for a minute, for example, has an on time of a minute before it goes to sleep, you don't have to capture that full minute, I believe, you can just capture, like, you know, 10, 20, 30 seconds of it, and then optimize down here for your active event duration, we're simply doing this to measure, to get a sample of, a representative sample of our"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:50,720",
+				"to": "00:21:20,340"
+			},
+			"offsets": {
+				"from": 1250720,
+				"to": 1280340
+			},
+			"text": " on current, right, so we could actually set that for 20 seconds, let's set it for 20, and then we'll capture part of the sleep mode as well, but because the sleep mode is so small, yeah, it's not gonna add really anything, but, uh, you don't have to capture the full thing, okay, so hopefully, we can see a LED, let's capture, there we go, the LED comes on, right, it's capturing, it's gonna capture 20 seconds of this, so we should see peaks in the hundreds of milliamps, this is capturing the on active duration current,"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:20,660",
+				"to": "00:21:50,600"
+			},
+			"offsets": {
+				"from": 1280660,
+				"to": 1310600
+			},
+			"text": " come on, you can do it, ta-da, there it is, beautiful, all right, so you can see, like, it started up there, it ramped up, it peaked at about 250 milliamps, uh, maximum, and then, you know, look, you got average peaks up there of, like, 175 or something like that, or 160, something like that, and then we can zoom into those peaks if we want, we can, you know, check them out, they're very short duration peaks up here, um, but as I said, that energy will be coming, that energy"
+		},
+		{
+			"timestamps": {
+				"from": "00:21:50,600",
+				"to": "00:22:20,540"
+			},
+			"offsets": {
+				"from": 1310600,
+				"to": 1340540
+			},
+			"text": " is what's going back into the reservoir capacitor, the peaks, um, could actually be higher than that, but the energy calculation is gonna come out in the wash, and with a 1 kilohertz sampling rate, it's, you know, it's gonna be fairly adequate, uh, for most tasks, so let's reset that, right, so that is now, we've captured our active current there, uh, active current, 112 milliamps, okay, now, the active, uh, event current here is fixed, it looks like it's"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:20,540",
+				"to": "00:22:50,480"
+			},
+			"offsets": {
+				"from": 1340540,
+				"to": 1370480
+			},
+			"text": " fixed range to the 500 milliamp range, I don't necessarily like this, because you may be designing a product that has, like, under 800 microamps, in which case, like, on current, there are products like low power products that do that, so really, um, that's a bit of a limitation, I, I, like, that's got a, like, that's really only a software limitation, really, so, uh, you know, I'd like to see the option to measure, to change the range to 10 microamps to 800 microamps for the active current,"
+		},
+		{
+			"timestamps": {
+				"from": "00:22:50,480",
+				"to": "00:23:20,240"
+			},
+			"offsets": {
+				"from": 1370480,
+				"to": 1400240
+			},
+			"text": " uh, as well, I don't know why, uh, you wouldn't have that option in there, anyway, now we have to measure our sleep current, so let's go to the 800 microamp range, because we know it's gonna be in the, you know, the, uh, like, 80 microamp range, or something like that, for our sleep current, so our sleep duration, let's just say 10 seconds, make sure the LED's not on, when we do it, I have to, this, once again, this is where you have to capture it, oh, sleep current out of range, nope, there you go, 870, we're just over,"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:20,420",
+				"to": "00:23:50,280"
+			},
+			"offsets": {
+				"from": 1400420,
+				"to": 1430280
+			},
+			"text": " bloody Murphy, capture sleep current again, overflow, urgh, no, that is so annoying, it's just out of, this is a bad example, it's just out of the range, now, this is silly, look, uh, sleep current out of range, try using the 800 microamp to 500 milliamp range, captured sleep current, 1.6 microamps, then why can't I use the 800 microamp range, uh, yeah, we got a few, a few issues here, okay, the manual"
+		},
+		{
+			"timestamps": {
+				"from": "00:23:50,360",
+				"to": "00:24:20,300"
+			},
+			"offsets": {
+				"from": 1430360,
+				"to": 1460300
+			},
+			"text": " says to capture 60 seconds worth on this range, maybe I've just got to do it in sequence, I'll, I'll just have to restart this, okay, unfortunately, I've caused it to lock up, because I hit reset during sampling, so, yeah, the software's got a few little bugs in it, all right, yeah, I'm gonna have to close the whole thing, all right, on, capture for 20, capture, go, now it's not capturing, what the heck, all right, now, now, the"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:20,300",
+				"to": "00:24:50,240"
+			},
+			"offsets": {
+				"from": 1460300,
+				"to": 1490240
+			},
+			"text": " whole thing's just crashed again, even though I restarted it, I'm gonna have to unplug the unit, yeah, I'm gonna have to unplug it, gonna have to, look, it's just active, active, active, nah, let's just, let's just start again, okay, lithium polymer, thousand, okay, 20 seconds, capture active current, there we go, now we're talking, okay, I'll do the 60 second capture thing straight after, there we go, winner, winner, chicken dinner,"
+		},
+		{
+			"timestamps": {
+				"from": "00:24:50,240",
+				"to": "00:25:19,940"
+			},
+			"offsets": {
+				"from": 1490240,
+				"to": 1519940
+			},
+			"text": " see, this is the timing thing, now, you can see it, yeah, drop off there, and we've used the right range, and now it's given us the 75 microamps, that is what it's supposed to be, unfortunately, it didn't get that large spike that we got there last time, so, anyway, let's just run with these numbers, these are pretty darn close, now, we can, now, as I said, there's a difference between the capture duration up here and here, and the optimized duration, okay, so, the optimized duration,"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:20,180",
+				"to": "00:25:50,120"
+			},
+			"offsets": {
+				"from": 1520180,
+				"to": 1550120
+			},
+			"text": " as I said, if your product's on for, let's go extreme, if your product's on for an hour continuously, you don't have to capture up here for an hour, you can only capture for, say, a minute or something like that, as long as the current doesn't really change, if it's consistent, you know, okay, I'll just capture it for a minute, and that's gonna be representative, and then you can change the numbers down here, and here's where you can do all the what if stuff, here's where, you know, once you've done, you captured your active product and your sleep current consumption,"
+		},
+		{
+			"timestamps": {
+				"from": "00:25:50,120",
+				"to": "00:26:20,060"
+			},
+			"offsets": {
+				"from": 1550120,
+				"to": 1580060
+			},
+			"text": " right, so, this is where it gives us our estimated battery life down here, so, this is for a thousand milliamp hour lithium polymer battery, so, as you can see, the captured and the optimized match precisely, because we haven't diddled the numbers here, right, we haven't had a fiddle fiddle with them, so, and then the statistics, average active current, 79 milliamps, see, I don't know where it's got 79 milliamps, oh, right, because that's the time, yeah, we probably should"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:20,060",
+				"to": "00:26:50,000"
+			},
+			"offsets": {
+				"from": 1580060,
+				"to": 1610000
+			},
+			"text": " have, yeah, because we sampled over 20 seconds, here's where, yeah, we've come a gutser a little bit on that, because the active, yeah, we should have only sampled 10 seconds of that, damn it, yeah, that extra off time there, because it's significant, unfortunately, that's gonna affect our average current, which then goes into our calculations, so, that's annoying, so, it looks like, yeah, don't do what I did and sample off"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:50,000",
+				"to": "00:27:19,940"
+			},
+			"offsets": {
+				"from": 1610000,
+				"to": 1639940
+			},
+			"text": " like that, sample off the cliff."
+		},
+		{
+			"timestamps": {
+				"from": "00:27:19,940",
+				"to": "00:27:49,880"
+			},
+			"offsets": {
+				"from": 1639940,
+				"to": 1669880
+			},
+			"text": " like active area on a do, because, like, if you trigger your PSU capture, so that when you turn it on, you may have to physically go and, you know, go to your product and physically turn on a soft button or something like that, and you don't want to capture and put into your calculation that off time when it actually took you to get to the product and turn it on, for example, so, yeah, I'd like to see some sort of gating function in there, I think that'd be really valuable, okay, so, I'm going to capture the first 10 seconds now, so, I'm going to capture the first 10 seconds, and then I'm going to go and do the test."
+		},
+		{
+			"timestamps": {
+				"from": "00:27:49,880",
+				"to": "00:28:19,820"
+			},
+			"offsets": {
+				"from": 1669880,
+				"to": 1699820
+			},
+			"text": " so, then it won't go into sleep mode, so, you want to make sure you only capture on the active mode and the sleep duration, change that range there and capture sleep, thank you, overflow again, okay, so, one more time, I'm going to capture 10 seconds worth trigger, lead comes on, lead is on, it's capturing, it's capturing, it's capturing, and we'll only capture the active period there, the lead's still on, we'll wait until the lead goes on,"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:19,820",
+				"to": "00:28:49,760"
+			},
+			"offsets": {
+				"from": 1699820,
+				"to": 1729760
+			},
+			"text": " we'll wait until the lead goes off, wait until it goes off, come on, go off, turn off, there we go, so, it's now in sleep mode, okay, we'll choose that, and then we'll capture our sleep mode, bingo, we're good to go, right, so, we've got our captured current down here, 112, yep, looks like 112 there, unfortunately, look, you go to capture your event sleep current, it doesn't give you your waveform for your sleep current, why, like, I want to see the waveform for my sleep current,"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:49,760",
+				"to": "00:29:19,700"
+			},
+			"offsets": {
+				"from": 1729760,
+				"to": 1759700
+			},
+			"text": " the hardware can do it, why can't I, like, why can't you have two graphs, and then you can, like, switch between them, I have a button here saying, you know, it should store both of them, like, active event current and then sleep event current, and I should be able to, you know, see between those two waveforms, okay, yeah, because you want to see the activity, you want to see what it's actually doing in sleep mode, as well as active mode, you know, sleep mode can be doing stuff, doesn't have to be just sleeping there at one, just, you know, thing, it might be waking up, you know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:19,700",
+				"to": "00:29:49,640"
+			},
+			"offsets": {
+				"from": 1759700,
+				"to": 1789640
+			},
+			"text": " every second to read a real-time clock, it could be doing, you know, something else, so, the software seems to be, have been initially written for, like, a very specific circumstances, it's, it's sort of not really taking into account more general usage scenarios, but, you know, I'm sure Doug will keep adding stuff, or add it yourself, it's open source software, but, anyway, here's where we can do the cool what-if calculations, we have all our captured data, and we have our optimized data here, here's where we"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:49,640",
+				"to": "00:29:54,360"
+			},
+			"offsets": {
+				"from": 1789640,
+				"to": 1794360
+			},
+			"text": " can fiddle with the numbers in the optimized part, now, at the moment, we've got our estimated battery"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:54,360",
+				"to": "00:29:59,260"
+			},
+			"offsets": {
+				"from": 1794360,
+				"to": 1799260
+			},
+			"text": " life down here, and the caption, the optimized matches the capture, because all the numbers are"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:59,260",
+				"to": "00:30:05,400"
+			},
+			"offsets": {
+				"from": 1799260,
+				"to": 1805400
+			},
+			"text": " the same, now, we can fiddle with the numbers, now, here's where I said, if you, if your product's on"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:05,400",
+				"to": "00:30:11,500"
+			},
+			"offsets": {
+				"from": 1805400,
+				"to": 1811500
+			},
+			"text": " for an hour, and you only captured, you know, 10 seconds, or a minute of it, or something, here's"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:11,500",
+				"to": "00:30:17,500"
+			},
+			"offsets": {
+				"from": 1811500,
+				"to": 1817500
+			},
+			"text": " where you can actually change the active event current duration, okay, so, you've captured the"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:17,500",
+				"to": "00:30:19,580"
+			},
+			"offsets": {
+				"from": 1817500,
+				"to": 1819580
+			},
+			"text": " current, so, you want to leave that the same, unless you want to"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:19,580",
+				"to": "00:30:25,220"
+			},
+			"offsets": {
+				"from": 1819580,
+				"to": 1825220
+			},
+			"text": " fiddle, manually fiddle with it, but we don't, but let's just say, well, we, we know it was like 15"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:25,220",
+				"to": "00:30:31,920"
+			},
+			"offsets": {
+				"from": 1825220,
+				"to": 1831920
+			},
+			"text": " seconds, round about there, right, so, let's go 15 seconds like that, and you'll see that that has"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:31,920",
+				"to": "00:30:37,600"
+			},
+			"offsets": {
+				"from": 1831920,
+				"to": 1837600
+			},
+			"text": " already changed our battery life from one point, you know, from two, two and a half days to one and"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:37,600",
+				"to": "00:30:43,300"
+			},
+			"offsets": {
+				"from": 1837600,
+				"to": 1843300
+			},
+			"text": " a half days, or, you know, 60 hours down to 43 hours, and, you know, you're the product designer, so, you'll"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:43,300",
+				"to": "00:30:49,520"
+			},
+			"offsets": {
+				"from": 1843300,
+				"to": 1849520
+			},
+			"text": " know exactly how long it's supposed to be on, of course, you know, so, you don't have to guesstimate that, so, now,"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:49,520",
+				"to": "00:30:55,820"
+			},
+			"offsets": {
+				"from": 1849520,
+				"to": 1855820
+			},
+			"text": " our sleep duration, let's just leave that at 60 seconds, but, if we wanted to, let's say it only woke up"
+		},
+		{
+			"timestamps": {
+				"from": "00:30:55,820",
+				"to": "00:31:03,180"
+			},
+			"offsets": {
+				"from": 1855820,
+				"to": 1863180
+			},
+			"text": " every, you know, thousand seconds, or something like that, okay, then, we can see, whoa, bingo, no, it"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:03,180",
+				"to": "00:31:11,300"
+			},
+			"offsets": {
+				"from": 1863180,
+				"to": 1871300
+			},
+			"text": " gone from 43 hours here, and, for a thousand, it's, whoa, we now get 560 days battery life, because we've"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:11,300",
+				"to": "00:31:19,460"
+			},
+			"offsets": {
+				"from": 1871300,
+				"to": 1879460
+			},
+			"text": " extended out the duration, so, the active on period is only a small little part of the entire, you know, longer it sleeps for"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:19,460",
+				"to": "00:31:49,400"
+			},
+			"offsets": {
+				"from": 1879460,
+				"to": 1909400
+			},
+			"text": " of course, the, you know, peak current is still the same, your on current's still the same, but, it's a, a proportion of the time, so, it's a small duty cycle of that, it's a small on time, so, the average current is gonna get smaller and smaller and smaller, and the average current gets smaller, your battery life goes up and up and up, and, this is where you can fiddle around with it, you know, you could do, oh, effective battery capacity, that's to do with, like, losses in the battery, or ESR, or other, you know, things like that, you know, losses in your system, um, and, yeah, you can just have a"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:49,400",
+				"to": "00:32:19,340"
+			},
+			"offsets": {
+				"from": 1909400,
+				"to": 1939340
+			},
+			"text": " fiddle around, and, of course, we can change those numbers, let's say, um, but, the point of measuring it is that, so, you don't have to fiddle with the numbers, because you've got actual measurements, but, if you know, you can actually override them, so, you can fiddle around to your heart's content here, and, you know, optimize your battery life, now, unfortunately, it doesn't, I, I assumed that when this, like, because this simulates a battery, it doesn't seem to simulate the discharge of the battery, now, I"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:19,340",
+				"to": "00:32:49,280"
+			},
+			"offsets": {
+				"from": 1939340,
+				"to": 1969280
+			},
+			"text": " would expect, I, and I'm sure, you know, this can be added, right, in, because it's just a software thing, the hardware can do it, uh, you know, there's no reason why that this thing couldn't actually simulate the discharge characteristic curve, uh, because, during development of products, you might want to test the performance over the discharge curve, uh, for example, so, it'd be nice if it had, like, some sort of mode where you could go, you know, simulate battery, or something like that, and it actually simulates the profile,"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:49,280",
+				"to": "00:33:19,220"
+			},
+			"offsets": {
+				"from": 1969280,
+				"to": 1999220
+			},
+			"text": " and then, it, and that allows you also to, like, uh, rapidly and easily, efficiently test your battery cutoff voltages, and what your product does when the battery cuts off, and things like that, you don't have to stick your batteries in, or, or, you know, get your power supply and tweak the knob, you know, until you get right down there, this can, like, simulate the discharge curve, but, unfortunately, the software, at the moment, it doesn't seem like it can do that, so, that would be a really nice addition, if it could do battery simulation, because that's the whole idea, this is, you know, purpose designed,"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:19,220",
+				"to": "00:33:49,160"
+			},
+			"offsets": {
+				"from": 1999220,
+				"to": 2029160
+			},
+			"text": " to, you know, effectively replace the battery in your product, so, the software should have the capability to, at least, follow the discharge profile of the particular battery that you've set, now, unfortunately, after we've captured all this data, okay, I can't then go up and change my battery type, I, like, oh, what if I put a lithium polymer in there, or what if I change it to alkalines, or what if I, you know, change it to some other, you know, type of cell, I'd like to be able to, after I've captured the data, experiment with, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:49,160",
+				"to": "00:34:19,100"
+			},
+			"offsets": {
+				"from": 2029160,
+				"to": 2059100
+			},
+			"text": " the battery chemistry here, unfortunately, the only thing we can, um, you know, experiment with is the, uh, is, is the capacity and the cutoff here, so, can we, whoop, 560, optimize, there you go, you've got to hit optimize again, and, you know, 1100 hours for twice the battery, uh, capacity, you know, and three times the battery capacity, well, bingo, 1680 hours and stuff like that, so, yeah, I would have liked to have been able to, you know, fiddle,"
+		},
+		{
+			"timestamps": {
+				"from": "00:34:19,100",
+				"to": "00:34:49,040"
+			},
+			"offsets": {
+				"from": 2059100,
+				"to": 2089040
+			},
+			"text": " with these, perhaps, um, that would have been nice, so, there you have it, that's a reasonable example of what the BatLab 1 can do, there's a few shortcomings in there, which, uh, but the hardware, I think, is, uh, capable of doing more, and the software, there's a few little bugs in there, so, I'm sure they'll get, uh, uh, fixed over time, a few little polished things, as I said, you know, display, uh, the sleep current, so, yeah, I did, you know, show me my sleep current, please, and not just the active current, so, yeah, this is just"
+		},
+		{
+			"timestamps": {
+				"from": "00:34:49,040",
+				"to": "00:35:18,980"
+			},
+			"offsets": {
+				"from": 2089040,
+				"to": 2118980
+			},
+			"text": " like a cool tool that allows you to just do, like, you know, what-if stuff, and play around, and optimize, um, for your battery current consumption, of course, you know, the real world is going to be, like, a little bit different to what you actually, uh, calculate here, the optimize, uh, value, I'm not sure I would have called it optimize, would you call it calculated, or something, so, yeah, this is already quite a useful, uh, tool, it's just, yeah, it'll grow, because it's only new, so, yeah, uh, bug fixes and other, and feature add-ons, and, uh, stuff like that, and it's all open source,"
+		},
+		{
+			"timestamps": {
+				"from": "00:35:18,980",
+				"to": "00:35:48,920"
+			},
+			"offsets": {
+				"from": 2118980,
+				"to": 2148920
+			},
+			"text": " so, yeah, um, somebody could just go berserk with this thing, that'd be great, okay, tell us the price, son, let's go to the Tindy, includes, uh, Batlab 1, includes software, well, the software you can just download, so I'm not sure why there's, oh, no enclosure, okay, but, yeah, it includes the software, so that's really quite nice value, um, really, I, yeah, that's, that's great, uh, like, you probably, at that price, you wouldn't bother building it yourself, um, unless you had a specific requirement to modify it, or something like that, but, again,"
+		},
+		{
+			"timestamps": {
+				"from": "00:35:48,920",
+				"to": "00:36:18,860"
+			},
+			"offsets": {
+				"from": 2148920,
+				"to": 2178860
+			},
+			"text": " the GitHubs, it's got, like, you know, the PCB, I assume it's got the, yeah, it's got the board file, and, uh, yep, the original, yep, the CAD files, um, so, yeah, and MIT license-based, and all that sort of stuff, so, uh, quite a useful little tool, the software, I, I think, you know, it could add some more flexibility, and stuff like that, but for basic starter stuff, um, that could be really useful, so there you go, that's the Batlab 1, I rather like that, that's gonna come in quite handy, I think, um, and really having a specific optimized tool"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:18,860",
+				"to": "00:36:48,800"
+			},
+			"offsets": {
+				"from": 2178860,
+				"to": 2208800
+			},
+			"text": " for the task like this, like having specific software that actually does this, yes, you can do all this with just your multimeter, if you want, you can force your product into sleep mode, you can, you know, put your multimeter into the, you know, low current mode, measure the sleep current, then you can, uh, put it into active mode, you can measure the current, and then you can get out the data sheets for the batteries, and then you can do the calculations, and then you can try and figure it all out, and you can, you know, do all this, but something like this just allows you to do, like, a what-if, uh, thing, you know, what-if I"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:48,800",
+				"to": "00:37:18,740"
+			},
+			"offsets": {
+				"from": 2208800,
+				"to": 2238740
+			},
+			"text": " change my battery chemistry, and stuff like that, what-if I change my cutoff voltage, as I said, you might want to re-optimize your design, you might, uh, change from a, a linear regulator to a switching converter to get lower dropout voltages, or something like that, um, this thing can tell you that, so that's, yeah, that's really quite good, and I love that it's all open source hardware and software, so I'm sure people will, uh, improve on this, and Doug will no doubt, uh, improve as well, he did ask for, uh, feedback, so thank you very much, Doug, for sending that in, that is really cool, so LinkedIn down by the"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:18,740",
+				"to": "00:37:23,720"
+			},
+			"offsets": {
+				"from": 2238740,
+				"to": 2243720
+			},
+			"text": " down below, leave your thoughts down below, uh, as well, and as always, discuss over on the EEV blog"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:23,720",
+				"to": "00:37:29,380"
+			},
+			"offsets": {
+				"from": 2243720,
+				"to": 2249380
+			},
+			"text": " forum, because that's where everyone discusses, like, test gear, like this, very cool, catch you next time."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:48,740",
+				"to": "00:38:18,720"
+			},
+			"offsets": {
+				"from": 2268740,
+				"to": 2298720
+			},
+			"text": " Thank you."
+		}
+	]
+}

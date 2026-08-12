@@ -1,0 +1,2947 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"mels": 128,
+		"ftype": 8
+	},
+	"params": {
+		"model": "/Users/frankwalsh/eevblog/models/ggml-large-v3-q5_0.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:25,780"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 25780
+			},
+			"text": " Hi, quite a few people asked for a follow-up to my LED flippering video, linked in down below at the end if you haven't seen it, and you should, where I tore down one of these dodgy, cheap-ass, bottom-of-the-barrel, constant current panel drivers here, and how it was causing bad flickering on my LED panel lights, and basically it was like 100% ripple on the output."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:25,780",
+				"to": "00:00:41,260"
+			},
+			"offsets": {
+				"from": 25780,
+				"to": 41260
+			},
+			"text": " And then I compared it with a ripple-free or flicker-free one. Granted, this one is twice the power, 48 watts versus 24 watts, but still, the cause was, of course, the lack of any output constant current regulation here."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,360",
+				"to": "00:00:54,740"
+			},
+			"offsets": {
+				"from": 41360,
+				"to": 54740
+			},
+			"text": " Constant current regulation is done from the primary side, and not only is there a lack of output filtering here compared to over here, but there's also a lack of input filtering, which might cause an issue as well."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:54,740",
+				"to": "00:01:03,940"
+			},
+			"offsets": {
+				"from": 54740,
+				"to": 63940
+			},
+			"text": " So, anyway, let's do a follow-up and see, quite a few people wanted to know how we could improve something like this, or how we could hack it to fix it."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:03,940",
+				"to": "00:01:23,100"
+			},
+			"offsets": {
+				"from": 63940,
+				"to": 83100
+			},
+			"text": " Now, I wouldn't recommend hacking these to fix it, because there's a lot of design considerations, thermal considerations with your diodes, for example, thermal considerations with your transformer and other things that you really don't want to mess with, because these things are cheap."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:23,100",
+				"to": "00:01:24,100"
+			},
+			"offsets": {
+				"from": 83100,
+				"to": 84100
+			},
+			"text": " I just recommend tossing..."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,740",
+				"to": "00:01:31,600"
+			},
+			"offsets": {
+				"from": 84740,
+				"to": 91600
+			},
+			"text": " I just recommend tossing something like this in the bin, and just getting a non-flicker-free or a ripple-free version of it."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:31,680",
+				"to": "00:01:35,620"
+			},
+			"offsets": {
+				"from": 91680,
+				"to": 95620
+			},
+			"text": " But anyway, let's just do some experiments with this and see what's what."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:35,780",
+				"to": "00:01:46,040"
+			},
+			"offsets": {
+				"from": 95780,
+				"to": 106040
+			},
+			"text": " Now, quite a few people commented that the input filter cap in quote marks was only 4.7 microfarads, and it was only a 50-volt jobby."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:46,040",
+				"to": "00:01:53,280"
+			},
+			"offsets": {
+				"from": 106040,
+				"to": 113280
+			},
+			"text": " Well, if it was a 50-volt job, and it was directly across full-wave bridge rectified mains, it would be toast."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,400",
+				"to": "00:01:54,240"
+			},
+			"offsets": {
+				"from": 113400,
+				"to": 114240
+			},
+			"text": " It would explode straight."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,740",
+				"to": "00:01:58,320"
+			},
+			"offsets": {
+				"from": 114740,
+				"to": 118320
+			},
+			"text": " But it's not actually across the mains."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,380",
+				"to": "00:01:59,360"
+			},
+			"offsets": {
+				"from": 118380,
+				"to": 119360
+			},
+			"text": " It's not doing the filtering."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:59,360",
+				"to": "00:02:03,540"
+			},
+			"offsets": {
+				"from": 119360,
+				"to": 123540
+			},
+			"text": " It's, well, it's filtering, but only for the controller chip."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:03,740",
+				"to": "00:02:05,200"
+			},
+			"offsets": {
+				"from": 123740,
+				"to": 125200
+			},
+			"text": " So here's the capacity here."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:05,420",
+				"to": "00:02:10,520"
+			},
+			"offsets": {
+				"from": 125420,
+				"to": 130520
+			},
+			"text": " Here's the full-wave bridge rectified diode after it goes through the common mode choke here."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:10,720",
+				"to": "00:02:14,000"
+			},
+			"offsets": {
+				"from": 130720,
+				"to": 134000
+			},
+			"text": " You can see that it goes through these two series resistors here."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:14,140",
+				"to": "00:02:22,460"
+			},
+			"offsets": {
+				"from": 134140,
+				"to": 142460
+			},
+			"text": " So there's nothing in the chip data sheet that says that has, like, an internal Zener to, like, clamp the voltage or anything like that across there."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:22,580",
+				"to": "00:02:24,360"
+			},
+			"offsets": {
+				"from": 142580,
+				"to": 144360
+			},
+			"text": " So it's actually getting..."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:24,740",
+				"to": "00:02:31,260"
+			},
+			"offsets": {
+				"from": 144740,
+				"to": 151260
+			},
+			"text": " It's power from the feedback coil here, which goes through this diode and then to the chip."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:31,340",
+				"to": "00:02:39,480"
+			},
+			"offsets": {
+				"from": 151340,
+				"to": 159480
+			},
+			"text": " So it's using that after it boots up to regulate the voltage across there, which will be the chip maximum is 40 volts in the data sheet."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:39,560",
+				"to": "00:02:41,900"
+			},
+			"offsets": {
+				"from": 159560,
+				"to": 161900
+			},
+			"text": " So it's something under 40 volts."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:41,980",
+				"to": "00:02:43,520"
+			},
+			"offsets": {
+				"from": 161980,
+				"to": 163520
+			},
+			"text": " So a 50-volt rated cap is fine."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:43,520",
+				"to": "00:02:49,260"
+			},
+			"offsets": {
+				"from": 163520,
+				"to": 169260
+			},
+			"text": " So that capacitor there has absolutely nothing to do with the input filtering."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,620",
+				"to": "00:02:54,320"
+			},
+			"offsets": {
+				"from": 169620,
+				"to": 174320
+			},
+			"text": " The only input capacitors we have are these two here."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:54,500",
+				"to": "00:02:54,620"
+			},
+			"offsets": {
+				"from": 174500,
+				"to": 174620
+			},
+			"text": " And they're..."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:54,740",
+				"to": "00:02:57,340"
+			},
+			"offsets": {
+				"from": 174740,
+				"to": 177340
+			},
+			"text": " They're basically being used as a..."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:57,340",
+				"to": "00:03:00,000"
+			},
+			"offsets": {
+				"from": 177340,
+				"to": 180000
+			},
+			"text": " As part of the common mode choke."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:00,280",
+				"to": "00:03:01,720"
+			},
+			"offsets": {
+				"from": 180280,
+				"to": 181720
+			},
+			"text": " Yeah, there's not much to it."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:01,860",
+				"to": "00:03:06,860"
+			},
+			"offsets": {
+				"from": 181860,
+				"to": 186860
+			},
+			"text": " For those playing along at home, both of those are 150 nanofarads."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,960",
+				"to": "00:03:11,440"
+			},
+			"offsets": {
+				"from": 186960,
+				"to": 191440
+			},
+			"text": " So two of those in parallel, well, yeah, 300 nanofarads."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:11,640",
+				"to": "00:03:12,220"
+			},
+			"offsets": {
+				"from": 191640,
+				"to": 192220
+			},
+			"text": " Not much."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:12,580",
+				"to": "00:03:20,800"
+			},
+			"offsets": {
+				"from": 192580,
+				"to": 200800
+			},
+			"text": " So a lot of people said, how about we just whack a big, of course, high-voltage rated filter cap on the input?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:20,800",
+				"to": "00:03:24,700"
+			},
+			"offsets": {
+				"from": 200800,
+				"to": 204700
+			},
+			"text": " Because, yeah, sure enough, for the load that we've got,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:24,740",
+				"to": "00:03:27,580"
+			},
+			"offsets": {
+				"from": 204740,
+				"to": 207580
+			},
+			"text": " then this amount of input filtering is going to do bugger all."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:27,660",
+				"to": "00:03:30,660"
+			},
+			"offsets": {
+				"from": 207660,
+				"to": 210660
+			},
+			"text": " So all your ripple is going to happen on your high side here."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:30,940",
+				"to": "00:03:33,620"
+			},
+			"offsets": {
+				"from": 210940,
+				"to": 213620
+			},
+			"text": " Well, okay, well, let's experiment with that."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,620",
+				"to": "00:03:40,560"
+			},
+			"offsets": {
+				"from": 213620,
+				"to": 220560
+			},
+			"text": " First thing we'll do is actually measure this bridge, the output of the bridge rectifier here, and see what our ripple is."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,920",
+				"to": "00:03:48,860"
+			},
+			"offsets": {
+				"from": 220920,
+				"to": 228860
+			},
+			"text": " And because we're measuring the ungrounded primary side of this instead of the isolated transformer secondary,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:49,160",
+				"to": "00:03:53,000"
+			},
+			"offsets": {
+				"from": 229160,
+				"to": 233000
+			},
+			"text": " you'll blow up your oscilloscope if you try and probe this side."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:53,120",
+				"to": "00:03:54,620"
+			},
+			"offsets": {
+				"from": 233120,
+				"to": 234620
+			},
+			"text": " So you need a proper high-voltage."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,620",
+				"to": "00:03:54,720"
+			},
+			"offsets": {
+				"from": 234620,
+				"to": 234720
+			},
+			"text": " So you need a proper high-voltage."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,720",
+				"to": "00:03:57,760"
+			},
+			"offsets": {
+				"from": 234720,
+				"to": 237760
+			},
+			"text": " High-voltage probe, available in the EEVBlog store, of course."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,080",
+				"to": "00:04:03,400"
+			},
+			"offsets": {
+				"from": 238080,
+				"to": 243400
+			},
+			"text": " Anyway, so we'll use this baby, and we can safely probe anything on the primary side here."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:03,760",
+				"to": "00:04:08,380"
+			},
+			"offsets": {
+				"from": 243760,
+				"to": 248380
+			},
+			"text": " So we'll probe directly across the output of the common mode filter there."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:08,480",
+				"to": "00:04:11,400"
+			},
+			"offsets": {
+				"from": 248480,
+				"to": 251400
+			},
+			"text": " I've got this set to my divide by 100 range."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:11,480",
+				"to": "00:04:16,460"
+			},
+			"offsets": {
+				"from": 251480,
+				"to": 256460
+			},
+			"text": " Of course, you set your scope to divide by 100 as well for your probe."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:16,900",
+				"to": "00:04:18,220"
+			},
+			"offsets": {
+				"from": 256900,
+				"to": 258220
+			},
+			"text": " And there we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:18,660",
+				"to": "00:04:24,220"
+			},
+			"offsets": {
+				"from": 258660,
+				"to": 264220
+			},
+			"text": " And we can see that we have a maximum peak there of 340."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:24,700",
+				"to": "00:04:26,660"
+			},
+			"offsets": {
+				"from": 264700,
+				"to": 266660
+			},
+			"text": " And we can see that we have a maximum peak there of 340."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,660",
+				"to": "00:04:27,740"
+			},
+			"offsets": {
+				"from": 266660,
+				"to": 267740
+			},
+			"text": " And we can see that we have a maximum peak there of 340."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:27,740",
+				"to": "00:04:29,700"
+			},
+			"offsets": {
+				"from": 267740,
+				"to": 269700
+			},
+			"text": " And bingo, look at that."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:29,920",
+				"to": "00:04:32,980"
+			},
+			"offsets": {
+				"from": 269920,
+				"to": 272980
+			},
+			"text": " We've got ourselves a full-wave rectified jobby."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:33,080",
+				"to": "00:04:34,320"
+			},
+			"offsets": {
+				"from": 273080,
+				"to": 274320
+			},
+			"text": " Of course, it's 100 hertz."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:34,420",
+				"to": "00:04:35,860"
+			},
+			"offsets": {
+				"from": 274420,
+				"to": 275860
+			},
+			"text": " It's full-wave rectified."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:36,180",
+				"to": "00:04:36,700"
+			},
+			"offsets": {
+				"from": 276180,
+				"to": 276700
+			},
+			"text": " So there you go."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:36,780",
+				"to": "00:04:41,460"
+			},
+			"offsets": {
+				"from": 276780,
+				"to": 281460
+			},
+			"text": " This is at the full 20-watt output load or whatever it is."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:41,600",
+				"to": "00:04:45,320"
+			},
+			"offsets": {
+				"from": 281600,
+				"to": 285320
+			},
+			"text": " So, yep, that 300 nanofarads, it ain't doing much, is it?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,620",
+				"to": "00:04:51,520"
+			},
+			"offsets": {
+				"from": 285620,
+				"to": 291520
+			},
+			"text": " But the good thing about having a small amount of input capacitance is that you're going to have a good power factor."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:51,520",
+				"to": "00:04:54,400"
+			},
+			"offsets": {
+				"from": 291520,
+				"to": 294400
+			},
+			"text": " And this thing, well, this chip, anyway,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:54,680",
+				"to": "00:04:59,260"
+			},
+			"offsets": {
+				"from": 294680,
+				"to": 299260
+			},
+			"text": " is designed or advertised as having good power factor."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:59,380",
+				"to": "00:05:04,240"
+			},
+			"offsets": {
+				"from": 299380,
+				"to": 304240
+			},
+			"text": " And that would be probably a requirement to get that New South Wales government contract."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:04,380",
+				"to": "00:05:09,300"
+			},
+			"offsets": {
+				"from": 304380,
+				"to": 309300
+			},
+			"text": " You couldn't have a poor power factor converter, most likely."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:09,340",
+				"to": "00:05:09,920"
+			},
+			"offsets": {
+				"from": 309340,
+				"to": 309920
+			},
+			"text": " I'm just guessing."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:10,000",
+				"to": "00:05:13,900"
+			},
+			"offsets": {
+				"from": 310000,
+				"to": 313900
+			},
+			"text": " I haven't looked into the requirements, legislation, and all that sort of crap."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:14,060",
+				"to": "00:05:16,740"
+			},
+			"offsets": {
+				"from": 314060,
+				"to": 316740
+			},
+			"text": " Just over 24 watts there."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:16,880",
+				"to": "00:05:19,660"
+			},
+			"offsets": {
+				"from": 316880,
+				"to": 319660
+			},
+			"text": " There you go, 245 volts here in the lab."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:19,660",
+				"to": "00:05:23,960"
+			},
+			"offsets": {
+				"from": 319660,
+				"to": 323960
+			},
+			"text": " It is near to as high side as you can get."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:24,240",
+				"to": "00:05:24,440"
+			},
+			"offsets": {
+				"from": 324240,
+				"to": 324440
+			},
+			"text": " Anyway,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:24,660",
+				"to": "00:05:32,000"
+			},
+			"offsets": {
+				"from": 324660,
+				"to": 332000
+			},
+			"text": " we've got 140 milliamps, so let's go PF power factor, 0.95."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:32,000",
+				"to": "00:05:33,620"
+			},
+			"offsets": {
+				"from": 332000,
+				"to": 333620
+			},
+			"text": " That's not too shabby at all."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:33,620",
+				"to": "00:05:35,960"
+			},
+			"offsets": {
+				"from": 333620,
+				"to": 335960
+			},
+			"text": " Any bureaucrat's going to be happy with that."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:35,960",
+				"to": "00:05:42,900"
+			},
+			"offsets": {
+				"from": 335960,
+				"to": 342900
+			},
+			"text": " So that low power factor is going to be a combination of the low input capacitance here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:42,900",
+				"to": "00:05:50,460"
+			},
+			"offsets": {
+				"from": 342900,
+				"to": 350460
+			},
+			"text": " plus power factor features of the chip there, which switches things at the zero point and stuff like that."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:50,460",
+				"to": "00:05:54,640"
+			},
+			"offsets": {
+				"from": 350460,
+				"to": 354640
+			},
+			"text": " So if we put our output toroidal so we can measure the current,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:54,640",
+				"to": "00:06:00,400"
+			},
+			"offsets": {
+				"from": 354640,
+				"to": 360400
+			},
+			"text": " we've got our current waveform there, at 200 milliamps per division."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:00,400",
+				"to": "00:06:05,180"
+			},
+			"offsets": {
+				"from": 360400,
+				"to": 365180
+			},
+			"text": " In fact, I've got that AC coupled, so we'll change that to DC."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:05,180",
+				"to": "00:06:07,900"
+			},
+			"offsets": {
+				"from": 365180,
+				"to": 367900
+			},
+			"text": " And you can see that there you go, there's the ground point."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:07,900",
+				"to": "00:06:12,960"
+			},
+			"offsets": {
+				"from": 367900,
+				"to": 372960
+			},
+			"text": " So it's 100% ripple, pretty horrible."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:12,960",
+				"to": "00:06:18,060"
+			},
+			"offsets": {
+				"from": 372960,
+				"to": 378060
+			},
+			"text": " So let's try a few experiments, add some input and output caps in various combinations,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:18,060",
+				"to": "00:06:22,740"
+			},
+			"offsets": {
+				"from": 378060,
+				"to": 382740
+			},
+			"text": " and see if we can improve that without killing our power factor."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:22,740",
+				"to": "00:06:24,620"
+			},
+			"offsets": {
+				"from": 382740,
+				"to": 384620
+			},
+			"text": " Okay, let's try some extra output caps."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:24,620",
+				"to": "00:06:28,840"
+			},
+			"offsets": {
+				"from": 384620,
+				"to": 388840
+			},
+			"text": " Not a huge increase, but we had a 330 mic, 50 volt before."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:28,840",
+				"to": "00:06:34,540"
+			},
+			"offsets": {
+				"from": 388840,
+				"to": 394540
+			},
+			"text": " We'll add a 470 mic, 50 volt before, salvaged from another bit of gear, of course."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:34,540",
+				"to": "00:06:36,000"
+			},
+			"offsets": {
+				"from": 394540,
+				"to": 396000
+			},
+			"text": " Hope I got the polarity right."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:36,000",
+				"to": "00:06:40,580"
+			},
+			"offsets": {
+				"from": 396000,
+				"to": 400580
+			},
+			"text": " If not, well, could go, whoop, there we go, look at that."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:40,580",
+				"to": "00:06:42,620"
+			},
+			"offsets": {
+				"from": 400580,
+				"to": 402620
+			},
+			"text": " We have improved it a bit."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:42,620",
+				"to": "00:06:46,620"
+			},
+			"offsets": {
+				"from": 402620,
+				"to": 406620
+			},
+			"text": " It's not going 100% to zero now, you see."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:46,620",
+				"to": "00:06:49,540"
+			},
+			"offsets": {
+				"from": 406620,
+				"to": 409540
+			},
+			"text": " It's improved it, not by a huge amount, but you know."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:49,540",
+				"to": "00:06:52,900"
+			},
+			"offsets": {
+				"from": 409540,
+				"to": 412900
+			},
+			"text": " And that really hasn't changed our power factor at all."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:52,900",
+				"to": "00:06:54,600"
+			},
+			"offsets": {
+				"from": 412900,
+				"to": 414600
+			},
+			"text": " And as I mentioned,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:54,600",
+				"to": "00:06:59,960"
+			},
+			"offsets": {
+				"from": 414600,
+				"to": 419960
+			},
+			"text": " thermals on things like your diode here are going to be a potential issue."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:59,960",
+				"to": "00:07:03,260"
+			},
+			"offsets": {
+				"from": 419960,
+				"to": 423260
+			},
+			"text": " So I've removed the output filter cap."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:03,260",
+				"to": "00:07:05,020"
+			},
+			"offsets": {
+				"from": 423260,
+				"to": 425020
+			},
+			"text": " I've had it running for a bit."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:05,020",
+				"to": "00:07:06,320"
+			},
+			"offsets": {
+				"from": 425020,
+				"to": 426320
+			},
+			"text": " Let's get the thermal camera on there."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:06,320",
+				"to": "00:07:10,660"
+			},
+			"offsets": {
+				"from": 426320,
+				"to": 430660
+			},
+			"text": " What do you know, the hotspot is that diode, and we're talking."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:10,660",
+				"to": "00:07:14,640"
+			},
+			"offsets": {
+				"from": 430660,
+				"to": 434640
+			},
+			"text": " Yep, 74, and rising."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:14,640",
+				"to": "00:07:18,140"
+			},
+			"offsets": {
+				"from": 434640,
+				"to": 438140
+			},
+			"text": " Maybe I haven't left it on there long enough, but it's, yeah, it's getting up there."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:18,140",
+				"to": "00:07:20,080"
+			},
+			"offsets": {
+				"from": 438140,
+				"to": 440080
+			},
+			"text": " Let's call it 74."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:20,080",
+				"to": "00:07:24,580"
+			},
+			"offsets": {
+				"from": 440080,
+				"to": 444580
+			},
+			"text": " Let's go overboard, 2200 mic, 63 volts, thank you very much."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:24,580",
+				"to": "00:07:30,160"
+			},
+			"offsets": {
+				"from": 444580,
+				"to": 450160
+			},
+			"text": " And bingo, there is our current waveform, sorry I've taken off the voltage probes."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:30,160",
+				"to": "00:07:34,380"
+			},
+			"offsets": {
+				"from": 450160,
+				"to": 454380
+			},
+			"text": " But you can see, it's much further away from ground now."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:34,380",
+				"to": "00:07:39,400"
+			},
+			"offsets": {
+				"from": 454380,
+				"to": 459400
+			},
+			"text": " So yeah, it's not, what is it, 50% ripple now instead of 100%."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:39,400",
+				"to": "00:07:42,800"
+			},
+			"offsets": {
+				"from": 459400,
+				"to": 462800
+			},
+			"text": " And by the way, we're still drawing 24 watts there."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:42,800",
+				"to": "00:07:46,820"
+			},
+			"offsets": {
+				"from": 462800,
+				"to": 466820
+			},
+			"text": " And let's have a look at our diode, our little diodee there."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:46,820",
+				"to": "00:07:52,100"
+			},
+			"offsets": {
+				"from": 466820,
+				"to": 472100
+			},
+			"text": " She's about the same, so there you go, there's no more stress on that diodee."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:52,100",
+				"to": "00:07:54,560"
+			},
+			"offsets": {
+				"from": 472100,
+				"to": 474560
+			},
+			"text": " Transformer is not."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:54,560",
+				"to": "00:07:58,800"
+			},
+			"offsets": {
+				"from": 474560,
+				"to": 478800
+			},
+			"text": " I, trust me, it's really not hugely hotter."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:58,800",
+				"to": "00:08:06,240"
+			},
+			"offsets": {
+				"from": 478800,
+				"to": 486240
+			},
+			"text": " So huge amount of increased output capacitance there, practically an order of magnitude increase."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:06,240",
+				"to": "00:08:13,000"
+			},
+			"offsets": {
+				"from": 486240,
+				"to": 493000
+			},
+			"text": " And pretty much overkill, like, you know, that is, you wouldn't make it that big on"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:13,000",
+				"to": "00:08:15,860"
+			},
+			"offsets": {
+				"from": 493000,
+				"to": 495860
+			},
+			"text": " a 24 watt panel like this."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:15,860",
+				"to": "00:08:21,260"
+			},
+			"offsets": {
+				"from": 495860,
+				"to": 501260
+			},
+			"text": " And it's still got, that's still like 50 odd percent, that's terrible Muriel."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:21,260",
+				"to": "00:08:24,540"
+			},
+			"offsets": {
+				"from": 501260,
+				"to": 504540
+			},
+			"text": " And no surprises for guessing, that hasn't changed our power factor."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:24,540",
+				"to": "00:08:24,820"
+			},
+			"offsets": {
+				"from": 504540,
+				"to": 504820
+			},
+			"text": " So we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:31,000",
+				"to": "00:08:38,000"
+			},
+			"offsets": {
+				"from": 511000,
+				"to": 518000
+			},
+			"text": " fixing the output capacitance like this, because we've got no secondary side conversion over here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:38,320",
+				"to": "00:08:45,200"
+			},
+			"offsets": {
+				"from": 518320,
+				"to": 525200
+			},
+			"text": " Nothing. It's all done via the primary side, and we've got bugger all input capacitance. So"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:45,200",
+				"to": "00:08:51,460"
+			},
+			"offsets": {
+				"from": 525200,
+				"to": 531460
+			},
+			"text": " let's add some input capacitance over here and see what's what. Once again, we're going an order"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:51,460",
+				"to": "00:08:56,140"
+			},
+			"offsets": {
+				"from": 531460,
+				"to": 536140
+			},
+			"text": " of magnitude. You've got to love orders of magnitude in engineering. Nippon Chemicon for the win. Once"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:56,140",
+				"to": "00:09:02,600"
+			},
+			"offsets": {
+				"from": 536140,
+				"to": 542600
+			},
+			"text": " again, salvaged from an old board, and you should always have like scrap boards lying around so that"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:02,600",
+				"to": "00:09:07,100"
+			},
+			"offsets": {
+				"from": 542600,
+				"to": 547100
+			},
+			"text": " you can salvage parts like this, because not everyone's going to keep like a component bin"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:07,100",
+				"to": "00:09:13,400"
+			},
+			"offsets": {
+				"from": 547100,
+				"to": 553400
+			},
+			"text": " full of various size and rating caps like this, especially on the mains input side, unless you're"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:13,400",
+				"to": "00:09:18,100"
+			},
+			"offsets": {
+				"from": 553400,
+				"to": 558100
+			},
+			"text": " working on that sort of stuff daily. But okay, I found a hole to put that into. Unfortunately,"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:18,220",
+				"to": "00:09:22,200"
+			},
+			"offsets": {
+				"from": 558220,
+				"to": 562200
+			},
+			"text": " the pitch wasn't correct, and there's not enough clearance around there. Let's put a jumper over."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:22,400",
+				"to": "00:09:25,940"
+			},
+			"offsets": {
+				"from": 562400,
+				"to": 565940
+			},
+			"text": " Definitely got that correct. That's a negative on the"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:25,940",
+				"to": "00:09:26,120"
+			},
+			"offsets": {
+				"from": 565940,
+				"to": 566120
+			},
+			"text": " board."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:26,140",
+				"to": "00:09:31,020"
+			},
+			"offsets": {
+				"from": 566140,
+				"to": 571020
+			},
+			"text": " Bridge rectifier, and I've confirmed that with the voltmeter as well. That's going to the negative"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:31,020",
+				"to": "00:09:37,620"
+			},
+			"offsets": {
+				"from": 571020,
+				"to": 577620
+			},
+			"text": " of the cap. Don't want to screw the pooch on that one. Anyway, let's power that up and give her a"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:37,620",
+				"to": "00:09:42,080"
+			},
+			"offsets": {
+				"from": 577620,
+				"to": 582080
+			},
+			"text": " ball. Oh, and by the way, I've disconnected the output cap again. So we're in the original"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:42,080",
+				"to": "00:09:51,280"
+			},
+			"offsets": {
+				"from": 582080,
+				"to": 591280
+			},
+			"text": " configuration, just adding 33 mic input capacitance. And ta-da! Look at that. That"
+		},
+		{
+			"timestamps": {
+				"from": "00:09:51,280",
+				"to": "00:09:56,060"
+			},
+			"offsets": {
+				"from": 591280,
+				"to": 596060
+			},
+			"text": " fixed it like a winner, winner, chicken dinner. No worries whatsoever."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:56,140",
+				"to": "00:10:02,180"
+			},
+			"offsets": {
+				"from": 596140,
+				"to": 602180
+			},
+			"text": " And our output ripple is pretty decent. And look at our input voltage. Look at that. There's not,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:02,320",
+				"to": "00:10:06,380"
+			},
+			"offsets": {
+				"from": 602320,
+				"to": 606380
+			},
+			"text": " you know, there's a bit of ripple on that, but no worries. You know how it was going almost down"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:06,380",
+				"to": "00:10:12,960"
+			},
+			"offsets": {
+				"from": 606380,
+				"to": 612960
+			},
+			"text": " to ground before, because there was only 330 nanofarads there. So the input capacitance is"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:12,960",
+				"to": "00:10:19,540"
+			},
+			"offsets": {
+				"from": 612960,
+				"to": 619540
+			},
+			"text": " the, well, it fixes the problem. And our output ripple is really quite nice, even with the original,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:19,900",
+				"to": "00:10:25,560"
+			},
+			"offsets": {
+				"from": 619900,
+				"to": 625560
+			},
+			"text": " uh, was it 330 microfarad output cap. So we're still drawing our 24 watts."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:26,140",
+				"to": "00:10:33,600"
+			},
+			"offsets": {
+				"from": 626140,
+				"to": 633600
+			},
+			"text": " But our power factor, uh, wah, wah, wah, wah. Thanks for playing. It's dropped down to 0.58."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:33,880",
+				"to": "00:10:40,780"
+			},
+			"offsets": {
+				"from": 633880,
+				"to": 640780
+			},
+			"text": " That is a horrible, horrible power factor. So really from the utility, you're drawing almost"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:40,780",
+				"to": "00:10:47,440"
+			},
+			"offsets": {
+				"from": 640780,
+				"to": 647440
+			},
+			"text": " double the amount of, uh, current through the network copper, even if you're not being charged"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:47,440",
+				"to": "00:10:50,960"
+			},
+			"offsets": {
+				"from": 647440,
+				"to": 650960
+			},
+			"text": " for it. I've done a whole video on that, linked in at the end and down below, if I remember to do it."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:50,960",
+				"to": "00:10:55,680"
+			},
+			"offsets": {
+				"from": 650960,
+				"to": 655680
+			},
+			"text": " Um, that's really bad. And the, if the government knew about that, uh, well,"
+		},
+		{
+			"timestamps": {
+				"from": "00:10:56,140",
+				"to": "00:11:00,940"
+			},
+			"offsets": {
+				"from": 656140,
+				"to": 660940
+			},
+			"text": " probably wouldn't approve. So you might not be able to sell that, uh, with a power factor of"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:00,940",
+				"to": "00:11:07,180"
+			},
+			"offsets": {
+				"from": 660940,
+				"to": 667180
+			},
+			"text": " 0.58 or, you know, under 0.6. That's pretty terrible compared to what 0.95 or whatever we"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:07,180",
+				"to": "00:11:14,260"
+			},
+			"offsets": {
+				"from": 667180,
+				"to": 674260
+			},
+			"text": " had before. So yeah, that fixes our flicker problem essentially. And I turned off my studio"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:14,260",
+				"to": "00:11:20,420"
+			},
+			"offsets": {
+				"from": 674260,
+				"to": 680420
+			},
+			"text": " lights. And as you can see, can't get any, pick up any real flicker on this anymore. Whereas if I"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:20,420",
+				"to": "00:11:24,860"
+			},
+			"offsets": {
+				"from": 680420,
+				"to": 684860
+			},
+			"text": " look at the lights up there, they're the existing ones. I'll switch my main lights on. There you go."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:26,140",
+				"to": "00:11:31,320"
+			},
+			"offsets": {
+				"from": 686140,
+				"to": 691320
+			},
+			"text": " This one ain't, cause we're getting, you know, not much ripple on that. It is still,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:31,580",
+				"to": "00:11:35,980"
+			},
+			"offsets": {
+				"from": 691580,
+				"to": 695980
+			},
+			"text": " if you had decent measurement, uh, gear, you know, you could measure the, uh, flicker on that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:36,040",
+				"to": "00:11:39,940"
+			},
+			"offsets": {
+				"from": 696040,
+				"to": 699940
+			},
+			"text": " uh, probably, but you know, it's, it's basically fixed. It's low ripple."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:40,220",
+				"to": "00:11:48,080"
+			},
+			"offsets": {
+				"from": 700220,
+				"to": 708080
+			},
+			"text": " Once again, the output, uh, bridge rectifier there, 75, the, uh, the main switch in chippy"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:48,080",
+				"to": "00:11:52,640"
+			},
+			"offsets": {
+				"from": 708080,
+				"to": 712640
+			},
+			"text": " down in there, even though it's on the backside of the board, bridge rectifier there, neither,"
+		},
+		{
+			"timestamps": {
+				"from": "00:11:52,640",
+				"to": "00:11:55,840"
+			},
+			"offsets": {
+				"from": 712640,
+				"to": 715840
+			},
+			"text": " we're talking about the center spot there. It's neither here nor there."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:56,140",
+				"to": "00:12:01,400"
+			},
+			"offsets": {
+				"from": 716140,
+				"to": 721400
+			},
+			"text": " And our tranny under the bottom, it's doing all right. So really, uh, the only effect of, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:01,400",
+				"to": "00:12:05,760"
+			},
+			"offsets": {
+				"from": 721400,
+				"to": 725760
+			},
+			"text": " increasing the input filter cap is not only, uh, you make it physically, uh, larger, of course,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:06,060",
+				"to": "00:12:10,900"
+			},
+			"offsets": {
+				"from": 726060,
+				"to": 730900
+			},
+			"text": " more expensive increases your bomb costs, but it kills your power factor and that could"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:10,900",
+				"to": "00:12:17,220"
+			},
+			"offsets": {
+				"from": 730900,
+				"to": 737220
+			},
+			"text": " kill your lucrative government contract. And if you think that the, uh, flicker free version,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:17,500",
+				"to": "00:12:22,080"
+			},
+			"offsets": {
+				"from": 737500,
+				"to": 742080
+			},
+			"text": " uh, solves the problem by input capacitance, nope, it doesn't. There you go. It's a little"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:22,300",
+				"to": "00:12:25,420"
+			},
+			"offsets": {
+				"from": 742300,
+				"to": 745420
+			},
+			"text": " piddly. You can barely see it, but 4.7 microfarad,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:25,660",
+				"to": "00:12:26,120"
+			},
+			"offsets": {
+				"from": 745660,
+				"to": 746120
+			},
+			"text": " 400."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:26,140",
+				"to": "00:12:32,540"
+			},
+			"offsets": {
+				"from": 746140,
+				"to": 752540
+			},
+			"text": " Volt there. It's solving it because it actually does proper secondary side current regulation"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:32,540",
+				"to": "00:12:38,980"
+			},
+			"offsets": {
+				"from": 752540,
+				"to": 758980
+			},
+			"text": " over here. Quite a significant topological differences between these, this one and this"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:38,980",
+				"to": "00:12:43,560"
+			},
+			"offsets": {
+				"from": 758980,
+				"to": 763560
+			},
+			"text": " cheap ass jobby. And if you want to know what the power factor of, uh, this particular one is,"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:43,720",
+				"to": "00:12:49,600"
+			},
+			"offsets": {
+				"from": 763720,
+				"to": 769600
+			},
+			"text": " it's even better than the other one. 0.974. Thank you very much. Now, of course we could try and"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:49,600",
+				"to": "00:12:55,620"
+			},
+			"offsets": {
+				"from": 769600,
+				"to": 775620
+			},
+			"text": " correct this power factor correction problem by, uh, but passive means, uh, using some"
+		},
+		{
+			"timestamps": {
+				"from": "00:12:55,660",
+				"to": "00:13:02,700"
+			},
+			"offsets": {
+				"from": 775660,
+				"to": 782700
+			},
+			"text": " inductors, uh, for example, but it's kind of like polishing a turd pretty much because we don't know,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:02,700",
+				"to": "00:13:08,040"
+			},
+			"offsets": {
+				"from": 782700,
+				"to": 788040
+			},
+			"text": " uh, the, what impact this, these mods have had to the efficiency of something like this. We saw"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:08,040",
+				"to": "00:13:13,260"
+			},
+			"offsets": {
+				"from": 788040,
+				"to": 793260
+			},
+			"text": " that potentially the, uh, main switching debate IC is potentially getting hotter. There's internal"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:13,260",
+				"to": "00:13:16,960"
+			},
+			"offsets": {
+				"from": 793260,
+				"to": 796960
+			},
+			"text": " losses in the switching transistor and stuff. Don't know what's going on there. You'd have to"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:16,960",
+				"to": "00:13:25,640"
+			},
+			"offsets": {
+				"from": 796960,
+				"to": 805640
+			},
+			"text": " have to characterize the whole thing. And it's just, no, you are polishing a turd and you could do it as a,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:25,660",
+				"to": "00:13:30,660"
+			},
+			"offsets": {
+				"from": 805660,
+				"to": 810660
+			},
+			"text": " uh, academic exercise, of course, but as a practical solution, no, it's just easier to go"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:30,660",
+				"to": "00:13:36,520"
+			},
+			"offsets": {
+				"from": 810660,
+				"to": 816520
+			},
+			"text": " out and buy a proper flicker free version. Now I actually found this, uh, TI part, which is a TPS"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:36,520",
+				"to": "00:13:42,480"
+			},
+			"offsets": {
+				"from": 816520,
+				"to": 822480
+			},
+			"text": " 92, 3, 1, 4 for those playing along at home. And it does look to be a near identical part to the"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:42,480",
+				"to": "00:13:48,180"
+			},
+			"offsets": {
+				"from": 822480,
+				"to": 828180
+			},
+			"text": " on bright one. In fact, the look at the typical application schematic, it's practically identical"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:48,180",
+				"to": "00:13:53,280"
+			},
+			"offsets": {
+				"from": 828180,
+				"to": 833280
+			},
+			"text": " and it's got all the same stuff, offline primary side sensing controller. But this one says, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:13:53,280",
+				"to": "00:14:00,980"
+			},
+			"offsets": {
+				"from": 833280,
+				"to": 840980
+			},
+			"text": " with a PFC or power factor correction. Now with inherent in it, when they have to use the word"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:00,980",
+				"to": "00:14:07,300"
+			},
+			"offsets": {
+				"from": 840980,
+				"to": 847300
+			},
+			"text": " inherent PFC, it means it's, it kind of does PFC like our existing design here. It actually had a"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:07,300",
+				"to": "00:14:12,780"
+			},
+			"offsets": {
+				"from": 847300,
+				"to": 852780
+			},
+			"text": " good power factor correction because it does inherently do that, but at the expense, but"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:12,780",
+				"to": "00:14:17,380"
+			},
+			"offsets": {
+				"from": 852780,
+				"to": 857380
+			},
+			"text": " because it's a single stage converter, it's essentially going to have that trade-off"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:17,380",
+				"to": "00:14:22,980"
+			},
+			"offsets": {
+				"from": 857380,
+				"to": 862980
+			},
+			"text": " limitation between your output ripple current and your power factor correction."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:23,280",
+				"to": "00:14:28,620"
+			},
+			"offsets": {
+				"from": 863280,
+				"to": 868620
+			},
+			"text": " So, you know, it's, it's not that great. So if, but this part, the good thing about this is that"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:28,620",
+				"to": "00:14:32,960"
+			},
+			"offsets": {
+				"from": 868620,
+				"to": 872960
+			},
+			"text": " look, there's a few extra things in here. See, it's got some additional clamping across the"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:32,960",
+				"to": "00:14:38,740"
+			},
+			"offsets": {
+				"from": 872960,
+				"to": 878740
+			},
+			"text": " primary side, uh, transformer tap here. It's got a, uh, Zener diode clamped, but it's essentially"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:38,740",
+				"to": "00:14:46,500"
+			},
+			"offsets": {
+				"from": 878740,
+				"to": 886500
+			},
+			"text": " the same. We've got our auxiliary winding here and just a single, uh, half wave rectifier output."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:46,500",
+				"to": "00:14:51,980"
+			},
+			"offsets": {
+				"from": 886500,
+				"to": 891980
+			},
+			"text": " And it does exactly the same thing. It's got all the same stuff. It's got quasi resonance switching"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:51,980",
+				"to": "00:14:53,260"
+			},
+			"offsets": {
+				"from": 891980,
+				"to": 893260
+			},
+			"text": " and you know, all the same stuff. So it's got all the same stuff. So it's got all the same stuff."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:53,280",
+				"to": "00:14:54,860"
+			},
+			"offsets": {
+				"from": 893280,
+				"to": 894860
+			},
+			"text": " So it's got all the same stuff. So it's got all the same stuff. So it's got all the same sort of stuff that the, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:14:54,860",
+				"to": "00:15:00,500"
+			},
+			"offsets": {
+				"from": 894860,
+				"to": 900500
+			},
+			"text": " on bright one says. And if we have a look and it does actually have a complete schematic down here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:00,500",
+				"to": "00:15:06,200"
+			},
+			"offsets": {
+				"from": 900500,
+				"to": 906200
+			},
+			"text": " uh, well, you know, a complete application example, uh, schematic, we've got some additional,"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:06,200",
+				"to": "00:15:10,700"
+			},
+			"offsets": {
+				"from": 906200,
+				"to": 910700
+			},
+			"text": " uh, filtering in here, but apart from that, that looks pretty much the same."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:10,960",
+				"to": "00:15:16,840"
+			},
+			"offsets": {
+				"from": 910960,
+				"to": 916840
+			},
+			"text": " Here's the compensation capacitor down here. And that value there does the, or attempts to do"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:16,840",
+				"to": "00:15:23,000"
+			},
+			"offsets": {
+				"from": 916840,
+				"to": 923000
+			},
+			"text": " the power factor correction. So maybe we could tweak something like that on our on bright, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:23,280",
+				"to": "00:15:27,300"
+			},
+			"offsets": {
+				"from": 923280,
+				"to": 927300
+			},
+			"text": " blind perhaps, but, uh, we don't have the relevant data sheet doesn't have the relevant"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:27,300",
+				"to": "00:15:33,600"
+			},
+			"offsets": {
+				"from": 927300,
+				"to": 933600
+			},
+			"text": " information on that. And it's given us a typical output, uh, capacitance figures as well. Once"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:33,600",
+				"to": "00:15:39,560"
+			},
+			"offsets": {
+				"from": 933600,
+				"to": 939560
+			},
+			"text": " again, uh, input capacitance is only 47 nanofarads. And the good, the other good thing is that it"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:39,560",
+				"to": "00:15:45,780"
+			},
+			"offsets": {
+				"from": 939560,
+				"to": 945780
+			},
+			"text": " lets us calculate the output capacitance and ripple. So it gives you the example here of,"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:45,780",
+				"to": "00:15:53,260"
+			},
+			"offsets": {
+				"from": 945780,
+				"to": 953260
+			},
+			"text": " uh, for 30% ripple current, which is a heck of a lot, right? And you still need 400,"
+		},
+		{
+			"timestamps": {
+				"from": "00:15:53,280",
+				"to": "00:15:59,900"
+			},
+			"offsets": {
+				"from": 953280,
+				"to": 959900
+			},
+			"text": " 480, you know, 470 microfarads, uh, on the output. And that still gives you 30% ripple current."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,900",
+				"to": "00:16:03,700"
+			},
+			"offsets": {
+				"from": 959900,
+				"to": 963700
+			},
+			"text": " So yeah, you get your nice power factor correction, but your ripple, it sucks."
+		},
+		{
+			"timestamps": {
+				"from": "00:16:04,500",
+				"to": "00:16:09,680"
+			},
+			"offsets": {
+				"from": 964500,
+				"to": 969680
+			},
+			"text": " So really, if you want to do this properly, you need a two stage converter instead of a single"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:09,680",
+				"to": "00:16:14,000"
+			},
+			"offsets": {
+				"from": 969680,
+				"to": 974000
+			},
+			"text": " stage converter. And you might get something, this is maybe a bit overkill. You can get low"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:14,000",
+				"to": "00:16:20,480"
+			},
+			"offsets": {
+				"from": 974000,
+				"to": 980480
+			},
+			"text": " cost ones in this, but this is a, the LM 3450, for example, is a lead driver with active power"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:20,480",
+				"to": "00:16:23,260"
+			},
+			"offsets": {
+				"from": 980480,
+				"to": 983260
+			},
+			"text": " factor correction. None of this inherent power factor correction. So you can get a lot of power"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:23,280",
+				"to": "00:16:27,660"
+			},
+			"offsets": {
+				"from": 983280,
+				"to": 987660
+			},
+			"text": " factor correction, rummage, and, and you can do a phase dimming. So you can do like phase control,"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:27,660",
+				"to": "00:16:34,680"
+			},
+			"offsets": {
+				"from": 987660,
+				"to": 994680
+			},
+			"text": " uh, dimming of the thing as well. And, uh, you can implement it as a single stage or a two stage"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:34,680",
+				"to": "00:16:40,740"
+			},
+			"offsets": {
+				"from": 994680,
+				"to": 1000740
+			},
+			"text": " design here. And here's the, basically, this is what we're doing here. Here's our secondary"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:40,740",
+				"to": "00:16:47,020"
+			},
+			"offsets": {
+				"from": 1000740,
+				"to": 1007020
+			},
+			"text": " lead driver. And that is essentially what I said of having the constant current regulation on the"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:47,020",
+				"to": "00:16:53,260"
+			},
+			"offsets": {
+				"from": 1007020,
+				"to": 1013260
+			},
+			"text": " secondary side. You're doing it as a second stage. And this does active power correction. So you can"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:53,280",
+				"to": "00:16:58,340"
+			},
+			"offsets": {
+				"from": 1013280,
+				"to": 1018340
+			},
+			"text": " do some active power factor correction. You'll notice here's the main switching FET down here,"
+		},
+		{
+			"timestamps": {
+				"from": "00:16:58,460",
+				"to": "00:17:05,300"
+			},
+			"offsets": {
+				"from": 1018460,
+				"to": 1025300
+			},
+			"text": " and they've got another switching FET here that is doing some active power factor correction. So"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:05,300",
+				"to": "00:17:09,540"
+			},
+			"offsets": {
+				"from": 1025300,
+				"to": 1029540
+			},
+			"text": " this is the puppy you want if you want to do it properly. But of course, it's much higher cost"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:09,540",
+				"to": "00:17:15,200"
+			},
+			"offsets": {
+				"from": 1029540,
+				"to": 1035200
+			},
+			"text": " than the simple single stage solution designs. Internal block diagram, but pretty comprehensive"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:15,200",
+				"to": "00:17:20,800"
+			},
+			"offsets": {
+				"from": 1035200,
+				"to": 1040800
+			},
+			"text": " and complicated. We won't go into the details. This is not, uh, the place to do it, but you can"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:20,800",
+				"to": "00:17:26,780"
+			},
+			"offsets": {
+				"from": 1040800,
+				"to": 1046780
+			},
+			"text": " actually implement it, as I said, as a, just a single, you know, this typical, uh, single stage"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:26,780",
+				"to": "00:17:31,340"
+			},
+			"offsets": {
+				"from": 1046780,
+				"to": 1051340
+			},
+			"text": " design, typical flyback application like that. And we won't get into power factor correction"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:31,340",
+				"to": "00:17:36,220"
+			},
+			"offsets": {
+				"from": 1051340,
+				"to": 1056220
+			},
+			"text": " because I've done that in another video. But suffice to say, this one uses active power"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:36,220",
+				"to": "00:17:40,120"
+			},
+			"offsets": {
+				"from": 1056220,
+				"to": 1060120
+			},
+			"text": " factor correction. And here you go. They specifically tell you single stage design,"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:40,200",
+				"to": "00:17:44,180"
+			},
+			"offsets": {
+				"from": 1060200,
+				"to": 1064180
+			},
+			"text": " low cost downlight. So you want the high end downlight, you go for the two stage design,"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:44,300",
+				"to": "00:17:50,460"
+			},
+			"offsets": {
+				"from": 1064300,
+				"to": 1070460
+			},
+			"text": " which is more expensive. And here's the two stage lead driver. Look at this. It's even got soft start,"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:50,800",
+				"to": "00:17:56,580"
+			},
+			"offsets": {
+				"from": 1070800,
+				"to": 1076580
+			},
+			"text": " fantastic. We've got, uh, EMI filter up here. Very nice. And then we've got all the active, uh,"
+		},
+		{
+			"timestamps": {
+				"from": "00:17:56,580",
+				"to": "00:18:01,160"
+			},
+			"offsets": {
+				"from": 1076580,
+				"to": 1081160
+			},
+			"text": " power factor correction and drive. We've got control feedback. And then we've got the second"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:01,160",
+				"to": "00:18:05,040"
+			},
+			"offsets": {
+				"from": 1081160,
+				"to": 1085040
+			},
+			"text": " stage lead driver here. They're using, and of course they're pushing their own parts and I'm,"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:05,240",
+				"to": "00:18:10,160"
+			},
+			"offsets": {
+				"from": 1085240,
+				"to": 1090160
+			},
+			"text": " uh, 3409, but you can use any constant current, uh, lead driver you like. And that just inherently"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:10,160",
+				"to": "00:18:14,760"
+			},
+			"offsets": {
+				"from": 1090160,
+				"to": 1094760
+			},
+			"text": " gets rid of all the ripple and it solves the problem. And here's your opto coupler feedback"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:14,760",
+				"to": "00:18:19,920"
+			},
+			"offsets": {
+				"from": 1094760,
+				"to": 1099920
+			},
+			"text": " here, but that's expensive. As, uh, it said in the on bright one, I think you need the opto coupler."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:19,920",
+				"to": "00:18:20,720"
+			},
+			"offsets": {
+				"from": 1099920,
+				"to": 1100720
+			},
+			"text": " You need an LM."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:20,800",
+				"to": "00:18:26,700"
+			},
+			"offsets": {
+				"from": 1100800,
+				"to": 1106700
+			},
+			"text": " V four, three, one typically. And then you need to buy the, uh, constant current lead driver. And"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:26,700",
+				"to": "00:18:31,700"
+			},
+			"offsets": {
+				"from": 1106700,
+				"to": 1111700
+			},
+			"text": " well, there, there's some extra stuff for dimming if you're doing that, but all of that adds"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:31,700",
+				"to": "00:18:37,140"
+			},
+			"offsets": {
+				"from": 1111700,
+				"to": 1117140
+			},
+			"text": " significant costs as well as the active, uh, power factor correction, uh, stuff adds very"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:37,140",
+				"to": "00:18:42,040"
+			},
+			"offsets": {
+				"from": 1117140,
+				"to": 1122040
+			},
+			"text": " significant costs. You could easily triple your bomb cost or something like that by, uh, adding"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:42,040",
+				"to": "00:18:46,020"
+			},
+			"offsets": {
+				"from": 1122040,
+				"to": 1126020
+			},
+			"text": " in these parts. And by the way, this schematic might look a bit weird. It might look like"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:46,020",
+				"to": "00:18:50,740"
+			},
+			"offsets": {
+				"from": 1126020,
+				"to": 1130740
+			},
+			"text": " all this stuff is physically on the primary side, but it's not, you will notice V out here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:50,800",
+				"to": "00:18:56,640"
+			},
+			"offsets": {
+				"from": 1130800,
+				"to": 1136640
+			},
+			"text": " It is connected to V out here, which is on the isolated side of the transformer. So they just"
+		},
+		{
+			"timestamps": {
+				"from": "00:18:56,640",
+				"to": "00:19:02,580"
+			},
+			"offsets": {
+				"from": 1136640,
+				"to": 1142580
+			},
+			"text": " didn't have a landscape format schematic. So that's just a good, well, a poor example of"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:02,580",
+				"to": "00:19:08,820"
+			},
+			"offsets": {
+				"from": 1142580,
+				"to": 1148820
+			},
+			"text": " laying out a schematic. Well, you, you kind of, I, I would have like physically put some dashes"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:08,820",
+				"to": "00:19:14,340"
+			},
+			"offsets": {
+				"from": 1148820,
+				"to": 1154340
+			},
+			"text": " down here to sort of like, you know, show that it's primary side, secondary side. I would have"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:14,340",
+				"to": "00:19:20,100"
+			},
+			"offsets": {
+				"from": 1154340,
+				"to": 1160100
+			},
+			"text": " added that, those, uh, notes to the schematic there, but anyway, yeah, two stage output current"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:20,100",
+				"to": "00:19:20,640"
+			},
+			"offsets": {
+				"from": 1160100,
+				"to": 1160640
+			},
+			"text": " regulation."
+		},
+		{
+			"timestamps": {
+				"from": "00:19:20,800",
+				"to": "00:19:26,000"
+			},
+			"offsets": {
+				"from": 1160800,
+				"to": 1166000
+			},
+			"text": " So as for our on bright turd here, well, you know, it's, it's probably equivalent to that,"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:26,000",
+				"to": "00:19:30,620"
+			},
+			"offsets": {
+				"from": 1166000,
+				"to": 1170620
+			},
+			"text": " uh, TI, uh, part. You're not going to get any better. Once again, there is that compensation"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:30,620",
+				"to": "00:19:35,120"
+			},
+			"offsets": {
+				"from": 1170620,
+				"to": 1175120
+			},
+			"text": " capping there. So you could try and experiment with that. And they've got some detail on that."
+		},
+		{
+			"timestamps": {
+				"from": "00:19:35,240",
+				"to": "00:19:40,600"
+			},
+			"offsets": {
+				"from": 1175240,
+				"to": 1180600
+			},
+			"text": " The duration of the turn on period T on is generated by comparing the internal fixed"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:40,600",
+				"to": "00:19:45,320"
+			},
+			"offsets": {
+				"from": 1180600,
+				"to": 1185320
+			},
+			"text": " sort of way with the voltage on the, uh, comp pin during steady state operation voltage on"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:45,320",
+				"to": "00:19:49,740"
+			},
+			"offsets": {
+				"from": 1185320,
+				"to": 1189740
+			},
+			"text": " the comp in V comp is slowly varying due to a large external capacitor connected to the"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:49,740",
+				"to": "00:19:50,780"
+			},
+			"offsets": {
+				"from": 1189740,
+				"to": 1190780
+			},
+			"text": " comp in there for the turn on."
+		},
+		{
+			"timestamps": {
+				"from": "00:19:50,800",
+				"to": "00:19:55,580"
+			},
+			"offsets": {
+				"from": 1190800,
+				"to": 1195580
+			},
+			"text": " Time T on is constant in a flyback topology, which is what we've got, uh, constant turn"
+		},
+		{
+			"timestamps": {
+				"from": "00:19:55,580",
+				"to": "00:20:01,800"
+			},
+			"offsets": {
+				"from": 1195580,
+				"to": 1201800
+			},
+			"text": " on time and quasi resonant operation provide higher power factor and low THD. Yeah. Okay."
+		},
+		{
+			"timestamps": {
+				"from": "00:20:02,420",
+				"to": "00:20:08,360"
+			},
+			"offsets": {
+				"from": 1202420,
+				"to": 1208360
+			},
+			"text": " How do we calculate that? They don't tell you. No, there's just, there's, there's nothing"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:08,360",
+				"to": "00:20:13,020"
+			},
+			"offsets": {
+				"from": 1208360,
+				"to": 1213020
+			},
+			"text": " in here. There's nothing in here to tell you how to calculate that compensation capacitor,"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:13,020",
+				"to": "00:20:18,880"
+			},
+			"offsets": {
+				"from": 1213020,
+				"to": 1218880
+			},
+			"text": " unlike the TI document. So, you know, what are you supposed to do? Like, yeah, you can"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:18,880",
+				"to": "00:20:20,300"
+			},
+			"offsets": {
+				"from": 1218880,
+				"to": 1220300
+			},
+			"text": " just suck it and see."
+		},
+		{
+			"timestamps": {
+				"from": "00:20:20,800",
+				"to": "00:20:27,080"
+			},
+			"offsets": {
+				"from": 1220800,
+				"to": 1227080
+			},
+			"text": " I don't know. I'm not going to polish this turd. It's done. And just like get a proper"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:27,080",
+				"to": "00:20:32,820"
+			},
+			"offsets": {
+				"from": 1227080,
+				"to": 1232820
+			},
+			"text": " flicker free one. Yeah. You can probably shoehorn this thing to work, but no, I don't recommend"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:32,820",
+				"to": "00:20:36,740"
+			},
+			"offsets": {
+				"from": 1232820,
+				"to": 1236740
+			},
+			"text": " it. As I said, you'd probably have to do full characterization. Again, I wouldn't want to"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:36,740",
+				"to": "00:20:40,380"
+			},
+			"offsets": {
+				"from": 1236740,
+				"to": 1240380
+			},
+			"text": " put these things up, you know, a dozen of these things up in my roof that are hacked"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:40,380",
+				"to": "00:20:43,800"
+			},
+			"offsets": {
+				"from": 1240380,
+				"to": 1243800
+			},
+			"text": " and just, oh, it's, it measures okay in the bench when you put it up on the roof and the"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:43,800",
+				"to": "00:20:49,820"
+			},
+			"offsets": {
+				"from": 1243800,
+				"to": 1249820
+			},
+			"text": " overheats and does what it, no, no thanks. No, no, just don't do it. So I hope you like"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:49,820",
+				"to": "00:20:50,780"
+			},
+			"offsets": {
+				"from": 1249820,
+				"to": 1250780
+			},
+			"text": " this, uh, relatively."
+		},
+		{
+			"timestamps": {
+				"from": "00:20:50,800",
+				"to": "00:20:54,640"
+			},
+			"offsets": {
+				"from": 1250800,
+				"to": 1254640
+			},
+			"text": " Lovely quick second video looking at this again. If you did, please give it a big thumbs"
+		},
+		{
+			"timestamps": {
+				"from": "00:20:54,640",
+				"to": "00:20:59,320"
+			},
+			"offsets": {
+				"from": 1254640,
+				"to": 1259320
+			},
+			"text": " up as always. You can discuss it down below in the comments or over on the EEV blog forum."
+		},
+		{
+			"timestamps": {
+				"from": "00:20:59,320",
+				"to": "00:21:01,620"
+			},
+			"offsets": {
+				"from": 1259320,
+				"to": 1261620
+			},
+			"text": " Catch you next time."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:20,800",
+				"to": "00:21:21,800"
+			},
+			"offsets": {
+				"from": 1280800,
+				"to": 1281800
+			},
+			"text": " ."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:21,800",
+				"to": "00:21:22,800"
+			},
+			"offsets": {
+				"from": 1281800,
+				"to": 1282800
+			},
+			"text": " ."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:22,800",
+				"to": "00:21:23,800"
+			},
+			"offsets": {
+				"from": 1282800,
+				"to": 1283800
+			},
+			"text": " ."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:23,800",
+				"to": "00:21:24,800"
+			},
+			"offsets": {
+				"from": 1283800,
+				"to": 1284800
+			},
+			"text": " ."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:24,800",
+				"to": "00:21:25,800"
+			},
+			"offsets": {
+				"from": 1284800,
+				"to": 1285800
+			},
+			"text": " ."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:25,800",
+				"to": "00:21:26,800"
+			},
+			"offsets": {
+				"from": 1285800,
+				"to": 1286800
+			},
+			"text": " ."
+		}
+	]
+}

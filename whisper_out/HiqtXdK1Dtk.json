@@ -1,0 +1,8623 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "large",
+		"multilingual": true,
+		"vocab": 51866,
+		"audio": {
+			"ctx": 1500,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"text": {
+			"ctx": 448,
+			"state": 1280,
+			"head": 20,
+			"layer": 32
+		},
+		"mels": 128,
+		"ftype": 8
+	},
+	"params": {
+		"model": "/Users/frankwalsh/eevblog_local/models/ggml-large-v3-q5_0.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:29,820"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 29820
+			},
+			"text": " Hi. Now, you've seen this little baby in several previous videos, the Roden-Schwarz HMO 1202 series scopes, and click here if you want to have a look at the, I've done a teardown video of this thing. I've also done videos for comparing the FFT mode, which I really like on this thing, and things like that. It's a really nice little compact professional scope. So there's really a lot to love about this thing. It's whisper quiet, it's small and compact, one of the smallest"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:30,000",
+				"to": "00:00:59,980"
+			},
+			"offsets": {
+				"from": 30000,
+				"to": 59980
+			},
+			"text": " scopes on the market, and it's great and responsive and fast and everything else, and it's fairly decent value for a, you know, a real top shelf brand like Roden-Schwarz. And it's a mixed signal scope, of course, and it, probably it's only major downside is that it's only two channels, but hey, you know, it's, for this sort of compact scope, it's just fine. So I love this little thing. And you'll notice that up the top here, it does not have a band"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:59,980",
+				"to": "00:01:28,780"
+			},
+			"offsets": {
+				"from": 59980,
+				"to": 88780
+			},
+			"text": " width listed on it, which is quite unusual. And the reason they do that is because this is a software upgradeable band width scope, as many on the market are nowadays, probably the, you know, a good majority of them actually have the full band width inside them in the vertical amplifiers here. The band width is actually there, but then they software limit you via license keys and everything else to various band widths. Now this one is available in 100 megahertz as the base band width. That's about, goes current"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:29,960",
+				"to": "00:01:59,940"
+			},
+			"offsets": {
+				"from": 89960,
+				"to": 119940
+			},
+			"text": " price is about 1300 US dollars for that one. And there's also a 200 megahertz version and my one here is the 300 megahertz version, but you shouldn't, wouldn't know it by looking at the front panel because you've got, it's just a license key inside which upgrades the bandwidth. So even the base model 100 megahertz unit you buy for, you know, 12, 1300 bucks or something like that is, has the full 300 megahertz bandwidth in here. So I thought just for educational purposes, we will crack this thing open yet again and"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:59,940",
+				"to": "00:02:29,920"
+			},
+			"offsets": {
+				"from": 119940,
+				"to": 149920
+			},
+			"text": " we'll have a look at the front end here yet again and see what chip it's using, what topology it's using, and see if there's any little tweaks that we can make to potentially get greater bandwidth out of the base model unit. Unfortunately, I've actually got, unfortunately, in quote marks, I've got the 300 megahertz license keys already installed for this one, but it's full bandwidth, but we should be able to probe some things and have a look at how they're actually"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:29,920",
+				"to": "00:02:59,540"
+			},
+			"offsets": {
+				"from": 149920,
+				"to": 179540
+			},
+			"text": " doing that. Should be fun. Let's go. And the only thing that tells me this is a 300 megahertz version is just this sticker on the back they've got here. So they've obviously, this is done at the factory, they've whacked the sticker on, but you can actually buy the license upgrade later. So here's inside the unit as we've seen in the previous teardown video. I've got metal cans on the top here for our two analog channels and unfortunately metal cans on the bottom, which are even more unfortunately soldered in place, but there's only one point there."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:59,900",
+				"to": "00:03:29,120"
+			},
+			"offsets": {
+				"from": 179900,
+				"to": 209120
+			},
+			"text": " One solder point. So I can desolder that and lift this can off without having to take the board out. So yeah, okay, small win. Now if we have a look at the front end here, I've got that bottom side can off, then there's our BNC, we've got some attenuation switching relays, and these transistors down in here, they're probably, well, those S-SOT23 packages, they're likely transistors, they're probably the JFET"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:29,880",
+				"to": "00:03:59,860"
+			},
+			"offsets": {
+				"from": 209880,
+				"to": 239860
+			},
+			"text": " and the BJT or something like that. And apart from that, and I've got, here's a photo of the other side of the board, I won't bother taking the other side of the board, I think you have to get the whole board out to get that out. But yeah, I've got a photo of that side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:59,860",
+				"to": "00:04:29,840"
+			},
+			"offsets": {
+				"from": 239860,
+				"to": 269840
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:29,840",
+				"to": "00:04:59,820"
+			},
+			"offsets": {
+				"from": 269840,
+				"to": 299820
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:59,820",
+				"to": "00:05:29,800"
+			},
+			"offsets": {
+				"from": 299820,
+				"to": 329800
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:29,800",
+				"to": "00:05:59,780"
+			},
+			"offsets": {
+				"from": 329800,
+				"to": 359780
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:59,780",
+				"to": "00:06:29,760"
+			},
+			"offsets": {
+				"from": 359780,
+				"to": 389760
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:29,760",
+				"to": "00:06:59,740"
+			},
+			"offsets": {
+				"from": 389760,
+				"to": 419740
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:59,740",
+				"to": "00:07:29,720"
+			},
+			"offsets": {
+				"from": 419740,
+				"to": 449720
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:29,720",
+				"to": "00:07:59,700"
+			},
+			"offsets": {
+				"from": 449720,
+				"to": 479700
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:59,700",
+				"to": "00:08:29,680"
+			},
+			"offsets": {
+				"from": 479700,
+				"to": 509680
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:29,680",
+				"to": "00:08:59,660"
+			},
+			"offsets": {
+				"from": 509680,
+				"to": 539660
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:08:59,660",
+				"to": "00:09:29,640"
+			},
+			"offsets": {
+				"from": 539660,
+				"to": 569640
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:29,640",
+				"to": "00:09:59,620"
+			},
+			"offsets": {
+				"from": 569640,
+				"to": 599620
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:09:59,620",
+				"to": "00:10:29,600"
+			},
+			"offsets": {
+				"from": 599620,
+				"to": 629600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:29,600",
+				"to": "00:10:59,580"
+			},
+			"offsets": {
+				"from": 629600,
+				"to": 659580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:10:59,580",
+				"to": "00:11:29,560"
+			},
+			"offsets": {
+				"from": 659580,
+				"to": 689560
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:29,560",
+				"to": "00:11:59,540"
+			},
+			"offsets": {
+				"from": 689560,
+				"to": 719540
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:59,540",
+				"to": "00:11:59,580"
+			},
+			"offsets": {
+				"from": 719540,
+				"to": 719580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:59,580",
+				"to": "00:11:59,580"
+			},
+			"offsets": {
+				"from": 719580,
+				"to": 719580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:59,580",
+				"to": "00:11:59,580"
+			},
+			"offsets": {
+				"from": 719580,
+				"to": 719580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:59,580",
+				"to": "00:11:59,600"
+			},
+			"offsets": {
+				"from": 719580,
+				"to": 719600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:11:59,600",
+				"to": "00:11:59,620"
+			},
+			"offsets": {
+				"from": 719600,
+				"to": 719620
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:29,540",
+				"to": "00:12:59,520"
+			},
+			"offsets": {
+				"from": 749540,
+				"to": 779520
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:59,520",
+				"to": "00:12:59,660"
+			},
+			"offsets": {
+				"from": 779520,
+				"to": 779660
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:59,660",
+				"to": "00:12:59,680"
+			},
+			"offsets": {
+				"from": 779660,
+				"to": 779680
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:59,680",
+				"to": "00:12:59,700"
+			},
+			"offsets": {
+				"from": 779680,
+				"to": 779700
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:59,700",
+				"to": "00:12:59,740"
+			},
+			"offsets": {
+				"from": 779700,
+				"to": 779740
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:12:59,740",
+				"to": "00:12:59,760"
+			},
+			"offsets": {
+				"from": 779740,
+				"to": 779760
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:29,520",
+				"to": "00:13:59,500"
+			},
+			"offsets": {
+				"from": 809520,
+				"to": 839500
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:13:59,500",
+				"to": "00:14:29,480"
+			},
+			"offsets": {
+				"from": 839500,
+				"to": 869480
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:29,480",
+				"to": "00:14:59,460"
+			},
+			"offsets": {
+				"from": 869480,
+				"to": 899460
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:14:59,460",
+				"to": "00:15:29,440"
+			},
+			"offsets": {
+				"from": 899460,
+				"to": 929440
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:29,440",
+				"to": "00:15:59,420"
+			},
+			"offsets": {
+				"from": 929440,
+				"to": 959420
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,420",
+				"to": "00:15:59,500"
+			},
+			"offsets": {
+				"from": 959420,
+				"to": 959500
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,500",
+				"to": "00:15:59,580"
+			},
+			"offsets": {
+				"from": 959500,
+				"to": 959580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,580",
+				"to": "00:15:59,600"
+			},
+			"offsets": {
+				"from": 959580,
+				"to": 959600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,600",
+				"to": "00:15:59,660"
+			},
+			"offsets": {
+				"from": 959600,
+				"to": 959660
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,660",
+				"to": "00:15:59,760"
+			},
+			"offsets": {
+				"from": 959660,
+				"to": 959760
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:15:59,760",
+				"to": "00:16:29,740"
+			},
+			"offsets": {
+				"from": 959760,
+				"to": 989740
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:16:29,740",
+				"to": "00:16:59,720"
+			},
+			"offsets": {
+				"from": 989740,
+				"to": 1019720
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:16:59,720",
+				"to": "00:17:29,700"
+			},
+			"offsets": {
+				"from": 1019720,
+				"to": 1049700
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:17:29,700",
+				"to": "00:17:59,680"
+			},
+			"offsets": {
+				"from": 1049700,
+				"to": 1079680
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:17:59,680",
+				"to": "00:17:59,780"
+			},
+			"offsets": {
+				"from": 1079680,
+				"to": 1079780
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:17:59,780",
+				"to": "00:18:29,660"
+			},
+			"offsets": {
+				"from": 1079780,
+				"to": 1109660
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:29,660",
+				"to": "00:18:29,760"
+			},
+			"offsets": {
+				"from": 1109660,
+				"to": 1109760
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:29,760",
+				"to": "00:18:29,780"
+			},
+			"offsets": {
+				"from": 1109760,
+				"to": 1109780
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:29,780",
+				"to": "00:18:29,780"
+			},
+			"offsets": {
+				"from": 1109780,
+				"to": 1109780
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:29,780",
+				"to": "00:18:29,820"
+			},
+			"offsets": {
+				"from": 1109780,
+				"to": 1109820
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:29,820",
+				"to": "00:18:29,860"
+			},
+			"offsets": {
+				"from": 1109820,
+				"to": 1109860
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:18:59,660",
+				"to": "00:19:29,640"
+			},
+			"offsets": {
+				"from": 1139660,
+				"to": 1169640
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:19:29,640",
+				"to": "00:19:59,620"
+			},
+			"offsets": {
+				"from": 1169640,
+				"to": 1199620
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:19:59,620",
+				"to": "00:20:29,600"
+			},
+			"offsets": {
+				"from": 1199620,
+				"to": 1229600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:20:29,600",
+				"to": "00:20:59,580"
+			},
+			"offsets": {
+				"from": 1229600,
+				"to": 1259580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:20:59,580",
+				"to": "00:21:29,560"
+			},
+			"offsets": {
+				"from": 1259580,
+				"to": 1289560
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:29,560",
+				"to": "00:21:59,540"
+			},
+			"offsets": {
+				"from": 1289560,
+				"to": 1319540
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:59,540",
+				"to": "00:21:59,560"
+			},
+			"offsets": {
+				"from": 1319540,
+				"to": 1319560
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:59,560",
+				"to": "00:21:59,560"
+			},
+			"offsets": {
+				"from": 1319560,
+				"to": 1319560
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:59,560",
+				"to": "00:21:59,580"
+			},
+			"offsets": {
+				"from": 1319560,
+				"to": 1319580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:59,580",
+				"to": "00:21:59,580"
+			},
+			"offsets": {
+				"from": 1319580,
+				"to": 1319580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:21:59,580",
+				"to": "00:21:59,600"
+			},
+			"offsets": {
+				"from": 1319580,
+				"to": 1319600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:22:29,540",
+				"to": "00:22:59,520"
+			},
+			"offsets": {
+				"from": 1349540,
+				"to": 1379520
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:22:59,520",
+				"to": "00:22:59,620"
+			},
+			"offsets": {
+				"from": 1379520,
+				"to": 1379620
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:22:59,620",
+				"to": "00:22:59,640"
+			},
+			"offsets": {
+				"from": 1379620,
+				"to": 1379640
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:22:59,640",
+				"to": "00:22:59,660"
+			},
+			"offsets": {
+				"from": 1379640,
+				"to": 1379660
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:22:59,660",
+				"to": "00:22:59,680"
+			},
+			"offsets": {
+				"from": 1379660,
+				"to": 1379680
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:22:59,680",
+				"to": "00:22:59,720"
+			},
+			"offsets": {
+				"from": 1379680,
+				"to": 1379720
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:23:29,520",
+				"to": "00:23:59,500"
+			},
+			"offsets": {
+				"from": 1409520,
+				"to": 1439500
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:23:59,500",
+				"to": "00:24:29,480"
+			},
+			"offsets": {
+				"from": 1439500,
+				"to": 1469480
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:29,480",
+				"to": "00:24:29,580"
+			},
+			"offsets": {
+				"from": 1469480,
+				"to": 1469580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:29,580",
+				"to": "00:24:29,600"
+			},
+			"offsets": {
+				"from": 1469580,
+				"to": 1469600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:29,600",
+				"to": "00:24:29,640"
+			},
+			"offsets": {
+				"from": 1469600,
+				"to": 1469640
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:29,640",
+				"to": "00:24:29,660"
+			},
+			"offsets": {
+				"from": 1469640,
+				"to": 1469660
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:29,660",
+				"to": "00:24:29,720"
+			},
+			"offsets": {
+				"from": 1469660,
+				"to": 1469720
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:59,480",
+				"to": "00:24:59,580"
+			},
+			"offsets": {
+				"from": 1499480,
+				"to": 1499580
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:59,580",
+				"to": "00:24:59,600"
+			},
+			"offsets": {
+				"from": 1499580,
+				"to": 1499600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:59,600",
+				"to": "00:24:59,600"
+			},
+			"offsets": {
+				"from": 1499600,
+				"to": 1499600
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:59,600",
+				"to": "00:24:59,620"
+			},
+			"offsets": {
+				"from": 1499600,
+				"to": 1499620
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:24:59,620",
+				"to": "00:24:59,640"
+			},
+			"offsets": {
+				"from": 1499620,
+				"to": 1499640
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:25:29,480",
+				"to": "00:25:29,640"
+			},
+			"offsets": {
+				"from": 1529480,
+				"to": 1529640
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:25:29,640",
+				"to": "00:25:29,720"
+			},
+			"offsets": {
+				"from": 1529640,
+				"to": 1529720
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:25:29,720",
+				"to": "00:25:29,780"
+			},
+			"offsets": {
+				"from": 1529720,
+				"to": 1529780
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:25:29,780",
+				"to": "00:25:29,840"
+			},
+			"offsets": {
+				"from": 1529780,
+				"to": 1529840
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:25:29,840",
+				"to": "00:25:29,940"
+			},
+			"offsets": {
+				"from": 1529840,
+				"to": 1529940
+			},
+			"text": " And apart from that, and I've got a photo of the other side, and there's nothing terribly interesting there. The part we are interested in is, however, right here."
+		},
+		{
+			"timestamps": {
+				"from": "00:25:59,480",
+				"to": "00:26:29,460"
+			},
+			"offsets": {
+				"from": 1559480,
+				"to": 1589460
+			},
+			"text": " that's basically the only thing that we capture there. And it's got this one here, and it's got this one here. Now this one here is 24 bits long, is exactly what it shows in the datasheet. So if we have a look here at the write operation, you can see that this is a single access cycle, and the chip select is supposed to go low of course, but it doesn't, so we're not sure what's going on there. And this shows that the data bits are sampled on the"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:29,480",
+				"to": "00:26:59,460"
+			},
+			"offsets": {
+				"from": 1589480,
+				"to": 1619460
+			},
+			"text": " positive going edge of S-clock here, and it shows that there's 24 bits total in there. So that's exactly what I counted in there. So there's a command field of 8 bits, so there's 8 bits command and 16 bits data. And here is that 16 bit data field, and you can see D6, D7, D8 here, see table 6, and this is the bit that should change. So I'd expect a D6 to change from 20 to"
+		},
+		{
+			"timestamps": {
+				"from": "00:26:59,480",
+				"to": "00:27:23,060"
+			},
+			"offsets": {
+				"from": 1619480,
+				"to": 1643060
+			},
+			"text": " This bit to change from 20 to 350, so D8 and D6, I'd expect those to toggle on the different write operations when we toggle that bandwidth limit button off and on. Or at least go between 1 and 0 here, between 20 and full for example. So yeah, but we're not seeing that. We're seeing no data change at all. It's weird."
+		},
+		{
+			"timestamps": {
+				"from": "00:27:23,060",
+				"to": "00:27:29,460"
+			},
+			"offsets": {
+				"from": 1643060,
+				"to": 1649460
+			},
+			"text": " Now there's something very, very strange going on here. I just know that chip select line must be positive."
+		},
+		{
+			"timestamps": {
+				"from": "00:27:29,480",
+				"to": "00:27:59,460"
+			},
+			"offsets": {
+				"from": 1649480,
+				"to": 1679460
+			},
+			"text": " So what I've done is I've hooked up a second scope here, and sure enough, to the chip select line, look, there it is. I can re-trigger, here we go, I'll show you in the one shot, I'll re-trigger this thing, oh here we go, single shot capture, okay, and I press the bandwidth limit button, bingo, there's the chip select line. I'm probing it, and I'm probing the exact same line on the Rodenschwartz scope itself, and I've got a"
+		},
+		{
+			"timestamps": {
+				"from": "00:27:59,480",
+				"to": "00:28:19,680"
+			},
+			"offsets": {
+				"from": 1679480,
+				"to": 1699680
+			},
+			"text": " And it's just, like, it's not, it's not doing anything. It's not doing anything. Look, type, trigger, edge, no worries, source, channel 1, we're in channel 1, negative slope, positive negative slope doesn't matter, it should capture something, and it's not capturing a damn thing."
+		},
+		{
+			"timestamps": {
+				"from": "00:28:19,680",
+				"to": "00:28:29,120"
+			},
+			"offsets": {
+				"from": 1699680,
+				"to": 1709120
+			},
+			"text": " It doesn't help that the single mode works back to front, it's really weird. Anyway, auto normal thing, like, it just, it stays high."
+		},
+		{
+			"timestamps": {
+				"from": "00:28:29,480",
+				"to": "00:28:31,060"
+			},
+			"offsets": {
+				"from": 1709480,
+				"to": 1711060
+			},
+			"text": " That's it, what the hell?"
+		},
+		{
+			"timestamps": {
+				"from": "00:28:31,220",
+				"to": "00:28:50,260"
+			},
+			"offsets": {
+				"from": 1711220,
+				"to": 1730260
+			},
+			"text": " I've changed probes to the genuine Haymeg slash Rodenschwartz one, and it's the same thing, but this is the data line now, I was getting the same thing on chip select, just wasn't there, and now I'm getting this on the data line, which coincidentally is just continuously triggering now."
+		},
+		{
+			"timestamps": {
+				"from": "00:28:50,260",
+				"to": "00:28:59,260"
+			},
+			"offsets": {
+				"from": 1730260,
+				"to": 1739260
+			},
+			"text": " So, yeah, go figure, but you put it in, let's go over to channel 1 here, it still triggers, let's go into..."
+		},
+		{
+			"timestamps": {
+				"from": "00:28:59,480",
+				"to": "00:29:10,200"
+			},
+			"offsets": {
+				"from": 1739480,
+				"to": 1750200
+			},
+			"text": " I don't know, another menu, it's still automatically triggering, whereas we weren't seeing that before, but something's weird going on, this thing just will not probe the chip select line for some bizarre reason."
+		},
+		{
+			"timestamps": {
+				"from": "00:29:10,220",
+				"to": "00:29:26,340"
+			},
+			"offsets": {
+				"from": 1750220,
+				"to": 1766340
+			},
+			"text": " And here's this average trap that I did in a previous video just recently, if I actually trigger this thing, here we go, this is my chip select line, and you'll think, oh, something's weird, something weird's happened to the chip select line, but it's not."
+		},
+		{
+			"timestamps": {
+				"from": "00:29:26,340",
+				"to": "00:29:29,340"
+			},
+			"offsets": {
+				"from": 1766340,
+				"to": 1769340
+			},
+			"text": " I guarantee you, if I go over here, silly me."
+		},
+		{
+			"timestamps": {
+				"from": "00:29:29,480",
+				"to": "00:29:35,720"
+			},
+			"offsets": {
+				"from": 1769480,
+				"to": 1775720
+			},
+			"text": " It's still got average in mode on, I was just playing around with that this morning, somebody asked if I could do that."
+		},
+		{
+			"timestamps": {
+				"from": "00:29:35,800",
+				"to": "00:29:44,040"
+			},
+			"offsets": {
+				"from": 1775800,
+				"to": 1784040
+			},
+			"text": " Anyway, here we go, there we go, there's our chip select line, I'm just, it's not, the chip select line is not continuously triggering, okay?"
+		},
+		{
+			"timestamps": {
+				"from": "00:29:44,040",
+				"to": "00:29:58,040"
+			},
+			"offsets": {
+				"from": 1784040,
+				"to": 1798040
+			},
+			"text": " So, you'll see it's not updating there at all, but if I press the bandwidth limit button, bingo, it updates, and then it just updated again, and, you know, so it's like, but..."
+		},
+		{
+			"timestamps": {
+				"from": "00:29:59,480",
+				"to": "00:30:03,480"
+			},
+			"offsets": {
+				"from": 1799480,
+				"to": 1803480
+			},
+			"text": " That data, on the data line, just keeps coming out."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:03,480",
+				"to": "00:30:15,480"
+			},
+			"offsets": {
+				"from": 1803480,
+				"to": 1815480
+			},
+			"text": " So this has got to be a peb cac, I'm just trying to sanity check to figure out what's going on here, sorry about all this, this is like real time, you know, this is a real problem I'm encountering here, so I'm gonna show it."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:15,480",
+				"to": "00:30:27,480"
+			},
+			"offsets": {
+				"from": 1815480,
+				"to": 1827480
+			},
+			"text": " Um, and, look, I'm probing the data line on both of them, so it's like, it's auto updating, no problems whatsoever, right, everything's, everything's fine, for whatever reason it's auto updating at the moment, or sending data on that line, although there's no chip select line, so it's fine."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:27,480",
+				"to": "00:30:31,480"
+			},
+			"offsets": {
+				"from": 1827480,
+				"to": 1831480
+			},
+			"text": " So I've got both probes on exactly the same point with two scopes, let me now change, do that exact same thing, but move the probes to the chip select line."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:31,480",
+				"to": "00:30:35,480"
+			},
+			"offsets": {
+				"from": 1831480,
+				"to": 1835480
+			},
+			"text": " I'm pressing the bandwidth limit button there, okay, I've got both scopes set to normal mode, so it will only, um, trigger, you'll notice there's, there's small changes in the width of that, but I, I'm getting nothing there, I swear, I swear I'm probing exactly the same damn point, down there."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:35,480",
+				"to": "00:30:53,480"
+			},
+			"offsets": {
+				"from": 1835480,
+				"to": 1853480
+			},
+			"text": " I'm pressing the bandwidth limit button there, okay, I've got both scopes set to normal mode, so it will only, um, trigger, you'll notice there's, there's small changes in the width of that, but I, I'm getting nothing there, I swear, I swear I'm probing exactly the same damn point, down there."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:53,480",
+				"to": "00:30:57,480"
+			},
+			"offsets": {
+				"from": 1853480,
+				"to": 1857480
+			},
+			"text": " I'm pressing the bandwidth limit button there, okay, I've got both scopes set to normal mode, so it will only, um, trigger, you'll notice there's, there's small changes in the width of that, but I, I'm getting nothing there, I swear I'm probing exactly the same damn point, down there."
+		},
+		{
+			"timestamps": {
+				"from": "00:30:57,480",
+				"to": "00:31:21,480"
+			},
+			"offsets": {
+				"from": 1857480,
+				"to": 1881480
+			},
+			"text": " There's the probes, look, probing exactly the same point, and, like, what? What? That is one of the weirdest things that I've ever seen, it's not like this scope is incapable of probing itself, the analog front end does not matter, it should not matter, it can't matter where it's hooked up to, as long as, you know, you don't short anything out with ground issues or anything like that."
+		},
+		{
+			"timestamps": {
+				"from": "00:31:21,480",
+				"to": "00:31:35,480"
+			},
+			"offsets": {
+				"from": 1881480,
+				"to": 1895480
+			},
+			"text": " I'm going to the chassis ground, it shouldn't care where the signal's coming from, it's relative to that ground, it's exactly the same point, it, it should work, and it works for one of the lines on the SPA boss, but it doesn't work for, on the other."
+		},
+		{
+			"timestamps": {
+				"from": "00:31:35,480",
+				"to": "00:31:43,480"
+			},
+			"offsets": {
+				"from": 1895480,
+				"to": 1903480
+			},
+			"text": " What? There's gotta be some sort of pep cack with this thing, it, it's gotta be me, what the hell am I doing?"
+		},
+		{
+			"timestamps": {
+				"from": "00:31:43,480",
+				"to": "00:31:49,480"
+			},
+			"offsets": {
+				"from": 1903480,
+				"to": 1909480
+			},
+			"text": " I've resorted to the manual, this is bad, it really is, I don't know what's going on with this scope."
+		},
+		{
+			"timestamps": {
+				"from": "00:31:49,480",
+				"to": "00:31:51,480"
+			},
+			"offsets": {
+				"from": 1909480,
+				"to": 1911480
+			},
+			"text": " No, I'm at a loss."
+		},
+		{
+			"timestamps": {
+				"from": "00:31:51,480",
+				"to": "00:32:13,480"
+			},
+			"offsets": {
+				"from": 1911480,
+				"to": 1933480
+			},
+			"text": " I'm at a loss here, look, I'm, I've got the correct type, I've got edge triggering, I'm at the correct source, channel one, which is what I'm using, the slope, positive, negative, both, it makes absolutely no difference to what happens, and then the filter, we're on DC, so we can set our level here, okay?"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:13,480",
+				"to": "00:32:27,480"
+			},
+			"offsets": {
+				"from": 1933480,
+				"to": 1947480
+			},
+			"text": " And here is the thing, right, we put it in auto mode, okay, so here's our level, it's positive, trigger level is smack in the middle, right, here's our ground point down here, everything's hunky-dory, this should work, you put it in normal mode, okay?"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:27,480",
+				"to": "00:32:41,480"
+			},
+			"offsets": {
+				"from": 1947480,
+				"to": 1961480
+			},
+			"text": " The trigger goes like this, and if I go to channel two, here, and change the bandwidth, look, it triggered, it triggered, but it didn't capture and display any data."
+		},
+		{
+			"timestamps": {
+				"from": "00:32:41,480",
+				"to": "00:32:43,480"
+			},
+			"offsets": {
+				"from": 1961480,
+				"to": 1963480
+			},
+			"text": " What the hell?"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:43,480",
+				"to": "00:32:45,480"
+			},
+			"offsets": {
+				"from": 1963480,
+				"to": 1965480
+			},
+			"text": " What is going on?"
+		},
+		{
+			"timestamps": {
+				"from": "00:32:45,480",
+				"to": "00:32:57,480"
+			},
+			"offsets": {
+				"from": 1965480,
+				"to": 1977480
+			},
+			"text": " Yet, if I go over to my keysight scope here, and I do the same normal mode, and I press that bandwidth limit button, it's capturing that, the probes are on the exact same point."
+		},
+		{
+			"timestamps": {
+				"from": "00:32:57,480",
+				"to": "00:33:03,480"
+			},
+			"offsets": {
+				"from": 1977480,
+				"to": 1983480
+			},
+			"text": " There is something seriously wrong with this scope, and I don't know what."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:03,480",
+				"to": "00:33:05,480"
+			},
+			"offsets": {
+				"from": 1983480,
+				"to": 1985480
+			},
+			"text": " Have I got some sort of weird software bug?"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:05,480",
+				"to": "00:33:08,480"
+			},
+			"offsets": {
+				"from": 1985480,
+				"to": 1988480
+			},
+			"text": " If I have, it's bloody well major."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:08,480",
+				"to": "00:33:11,480"
+			},
+			"offsets": {
+				"from": 1988480,
+				"to": 1991480
+			},
+			"text": " People are probably screaming at me right now, it's obvious."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:11,480",
+				"to": "00:33:13,480"
+			},
+			"offsets": {
+				"from": 1991480,
+				"to": 1993480
+			},
+			"text": " But unbelievable."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:13,480",
+				"to": "00:33:37,480"
+			},
+			"offsets": {
+				"from": 1993480,
+				"to": 2017480
+			},
+			"text": " Okay, so it's clearly, this trigger thing here is resetting, whenever I push this bandwidth limit, I can actually disconnect my input here, right, we just triggered, and I can push this bandwidth limit, and it resets that, and there's no triggered light here, which is like a latched, you know, a pulse-stretched triggered light, so it's obvious."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:37,480",
+				"to": "00:33:41,480"
+			},
+			"offsets": {
+				"from": 2017480,
+				"to": 2021480
+			},
+			"text": " It is not triggering, right, so okay, it's not triggering."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:41,480",
+				"to": "00:33:44,480"
+			},
+			"offsets": {
+				"from": 2021480,
+				"to": 2024480
+			},
+			"text": " That's why our data is not coming up."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:44,480",
+				"to": "00:33:48,480"
+			},
+			"offsets": {
+				"from": 2024480,
+				"to": 2028480
+			},
+			"text": " Okay, fair enough, but why the hell is it not triggering?"
+		},
+		{
+			"timestamps": {
+				"from": "00:33:48,480",
+				"to": "00:33:50,480"
+			},
+			"offsets": {
+				"from": 2028480,
+				"to": 2030480
+			},
+			"text": " That signal is there."
+		},
+		{
+			"timestamps": {
+				"from": "00:33:50,480",
+				"to": "00:34:06,480"
+			},
+			"offsets": {
+				"from": 2030480,
+				"to": 2046480
+			},
+			"text": " Look, I'll, here we go, look, I'll plug this same thing over to here, okay, and let's do the bandwidth thing, there we go, there we go, look at that."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:06,480",
+				"to": "00:34:09,480"
+			},
+			"offsets": {
+				"from": 2046480,
+				"to": 2049480
+			},
+			"text": " Okay, so that needs compensation, obviously, that's, you know, it's poorly compensated."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:09,480",
+				"to": "00:34:17,480"
+			},
+			"offsets": {
+				"from": 2049480,
+				"to": 2057480
+			},
+			"text": " But it works, yet I plug it on this scope, and it doesn't."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:17,480",
+				"to": "00:34:33,480"
+			},
+			"offsets": {
+				"from": 2057480,
+				"to": 2073480
+			},
+			"text": " And the exact same thing happens on channel two, when I set the source to there, and I've set it up, and look, if I actually plug in a signal here, there we go, I'm plugging in like a one mega square wave, it triggers."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:33,480",
+				"to": "00:34:36,480"
+			},
+			"offsets": {
+				"from": 2073480,
+				"to": 2076480
+			},
+			"text": " No problems at all."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:36,480",
+				"to": "00:34:37,480"
+			},
+			"offsets": {
+				"from": 2076480,
+				"to": 2077480
+			},
+			"text": " And, like, if I go back to channel one, it's the same thing."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:37,480",
+				"to": "00:34:39,480"
+			},
+			"offsets": {
+				"from": 2077480,
+				"to": 2079480
+			},
+			"text": " If I go back to channel one, it's there."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:39,480",
+				"to": "00:34:44,480"
+			},
+			"offsets": {
+				"from": 2079480,
+				"to": 2084480
+			},
+			"text": " So bugger it, I've had enough of using this thing to probe its own clacker."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:44,480",
+				"to": "00:34:48,480"
+			},
+			"offsets": {
+				"from": 2084480,
+				"to": 2088480
+			},
+			"text": " Let's have a look now at hooking up the SPI line here."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:48,480",
+				"to": "00:34:50,480"
+			},
+			"offsets": {
+				"from": 2088480,
+				"to": 2090480
+			},
+			"text": " So I've got all three channels coming in."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:50,480",
+				"to": "00:34:59,480"
+			},
+			"offsets": {
+				"from": 2090480,
+				"to": 2099480
+			},
+			"text": " By the way, it is not a true SPI as you know it, because SPI, if we go in here, is normally a four-wire thing."
+		},
+		{
+			"timestamps": {
+				"from": "00:34:59,480",
+				"to": "00:35:05,480"
+			},
+			"offsets": {
+				"from": 2099480,
+				"to": 2105480
+			},
+			"text": " We've got our clock, our, whoop, bloody touchscreen, our MOSI, and our MISO, i.e. input."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:05,480",
+				"to": "00:35:08,480"
+			},
+			"offsets": {
+				"from": 2105480,
+				"to": 2108480
+			},
+			"text": " And output data signals and chip select."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:08,480",
+				"to": "00:35:12,480"
+			},
+			"offsets": {
+				"from": 2108480,
+				"to": 2112480
+			},
+			"text": " But in this case, it's actually a three-wire SPI interface."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:12,480",
+				"to": "00:35:14,480"
+			},
+			"offsets": {
+				"from": 2112480,
+				"to": 2114480
+			},
+			"text": " It's still SPI, but it's three-wire."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:14,480",
+				"to": "00:35:16,480"
+			},
+			"offsets": {
+				"from": 2114480,
+				"to": 2116480
+			},
+			"text": " So it shares, it's bi-directional here."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:16,480",
+				"to": "00:35:18,480"
+			},
+			"offsets": {
+				"from": 2116480,
+				"to": 2118480
+			},
+			"text": " So it's not as great a throughput."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:18,480",
+				"to": "00:35:20,480"
+			},
+			"offsets": {
+				"from": 2118480,
+				"to": 2120480
+			},
+			"text": " It goes tri-state and everything else."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:20,480",
+				"to": "00:35:23,480"
+			},
+			"offsets": {
+				"from": 2120480,
+				"to": 2123480
+			},
+			"text": " So anyway, we don't actually have specific support for that."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:23,480",
+				"to": "00:35:25,480"
+			},
+			"offsets": {
+				"from": 2123480,
+				"to": 2125480
+			},
+			"text": " So I've just set it up here."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:25,480",
+				"to": "00:35:30,480"
+			},
+			"offsets": {
+				"from": 2125480,
+				"to": 2130480
+			},
+			"text": " I haven't set up the bits yet, but let's just trigger this thing and have a look."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:30,480",
+				"to": "00:35:32,480"
+			},
+			"offsets": {
+				"from": 2130480,
+				"to": 2132480
+			},
+			"text": " I'll press the bandwidth button."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:32,480",
+				"to": "00:35:33,480"
+			},
+			"offsets": {
+				"from": 2132480,
+				"to": 2133480
+			},
+			"text": " And there we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:33,480",
+				"to": "00:35:34,480"
+			},
+			"offsets": {
+				"from": 2133480,
+				"to": 2134480
+			},
+			"text": " Look at this."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:34,480",
+				"to": "00:35:35,480"
+			},
+			"offsets": {
+				"from": 2134480,
+				"to": 2135480
+			},
+			"text": " We've got our clock."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:35,480",
+				"to": "00:35:36,480"
+			},
+			"offsets": {
+				"from": 2135480,
+				"to": 2136480
+			},
+			"text": " We've got our data."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:36,480",
+				"to": "00:35:38,480"
+			},
+			"offsets": {
+				"from": 2136480,
+				"to": 2138480
+			},
+			"text": " And now we have our chip select."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:38,480",
+				"to": "00:35:39,480"
+			},
+			"offsets": {
+				"from": 2138480,
+				"to": 2139480
+			},
+			"text": " Yay."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:39,480",
+				"to": "00:35:43,480"
+			},
+			"offsets": {
+				"from": 2139480,
+				"to": 2143480
+			},
+			"text": " Now the most interesting thing about this is, look, we're getting our 24 clocks."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:43,480",
+				"to": "00:35:45,480"
+			},
+			"offsets": {
+				"from": 2143480,
+				"to": 2145480
+			},
+			"text": " Exactly what we expect before."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:45,480",
+				"to": "00:35:50,480"
+			},
+			"offsets": {
+				"from": 2145480,
+				"to": 2150480
+			},
+			"text": " And if I zoom right out, okay, just what we were doing way, way back, and I press it."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:50,480",
+				"to": "00:35:54,480"
+			},
+			"offsets": {
+				"from": 2150480,
+				"to": 2154480
+			},
+			"text": " Look, we're getting none of that double rubbish that we were getting before."
+		},
+		{
+			"timestamps": {
+				"from": "00:35:54,480",
+				"to": "00:36:01,480"
+			},
+			"offsets": {
+				"from": 2154480,
+				"to": 2161480
+			},
+			"text": " You remember the one that had the 50 or 60 clocks or whatever?"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:01,480",
+				"to": "00:36:05,480"
+			},
+			"offsets": {
+				"from": 2161480,
+				"to": 2165480
+			},
+			"text": " We're getting exactly what we expect as per the data sheet."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:05,480",
+				"to": "00:36:07,480"
+			},
+			"offsets": {
+				"from": 2165480,
+				"to": 2167480
+			},
+			"text": " So it's bizarre."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:07,480",
+				"to": "00:36:08,480"
+			},
+			"offsets": {
+				"from": 2167480,
+				"to": 2168480
+			},
+			"text": " I've got no idea."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:08,480",
+				"to": "00:36:10,480"
+			},
+			"offsets": {
+				"from": 2168480,
+				"to": 2170480
+			},
+			"text": " This is exactly what we expect."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:10,480",
+				"to": "00:36:13,480"
+			},
+			"offsets": {
+				"from": 2170480,
+				"to": 2173480
+			},
+			"text": " And let's just have a look to see if this data now here changes."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:13,480",
+				"to": "00:36:14,480"
+			},
+			"offsets": {
+				"from": 2173480,
+				"to": 2174480
+			},
+			"text": " I haven't tried it."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:14,480",
+				"to": "00:36:15,480"
+			},
+			"offsets": {
+				"from": 2174480,
+				"to": 2175480
+			},
+			"text": " Okay."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:15,480",
+				"to": "00:36:20,480"
+			},
+			"offsets": {
+				"from": 2175480,
+				"to": 2180480
+			},
+			"text": " So we're in, let's go to normal mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:20,480",
+				"to": "00:36:22,480"
+			},
+			"offsets": {
+				"from": 2180480,
+				"to": 2182480
+			},
+			"text": " So we're in normal mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:22,480",
+				"to": "00:36:23,480"
+			},
+			"offsets": {
+				"from": 2182480,
+				"to": 2183480
+			},
+			"text": " Let's see."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:23,480",
+				"to": "00:36:24,480"
+			},
+			"offsets": {
+				"from": 2183480,
+				"to": 2184480
+			},
+			"text": " Normal mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:24,480",
+				"to": "00:36:26,480"
+			},
+			"offsets": {
+				"from": 2184480,
+				"to": 2186480
+			},
+			"text": " So let's go to a quiet, yeah, we're in normal mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:26,480",
+				"to": "00:36:27,480"
+			},
+			"offsets": {
+				"from": 2186480,
+				"to": 2187480
+			},
+			"text": " Okay."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:27,480",
+				"to": "00:36:28,480"
+			},
+			"offsets": {
+				"from": 2187480,
+				"to": 2188480
+			},
+			"text": " So we're going to run it."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:28,480",
+				"to": "00:36:30,480"
+			},
+			"offsets": {
+				"from": 2188480,
+				"to": 2190480
+			},
+			"text": " Here we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:30,480",
+				"to": "00:36:31,480"
+			},
+			"offsets": {
+				"from": 2190480,
+				"to": 2191480
+			},
+			"text": " So I press it."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:31,480",
+				"to": "00:36:33,480"
+			},
+			"offsets": {
+				"from": 2191480,
+				"to": 2193480
+			},
+			"text": " Let's press it again."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:33,480",
+				"to": "00:36:34,480"
+			},
+			"offsets": {
+				"from": 2193480,
+				"to": 2194480
+			},
+			"text": " Look."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:34,480",
+				"to": "00:36:35,480"
+			},
+			"offsets": {
+				"from": 2194480,
+				"to": 2195480
+			},
+			"text": " Bingo."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:35,480",
+				"to": "00:36:36,480"
+			},
+			"offsets": {
+				"from": 2195480,
+				"to": 2196480
+			},
+			"text": " There we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:36,480",
+				"to": "00:36:37,480"
+			},
+			"offsets": {
+				"from": 2196480,
+				"to": 2197480
+			},
+			"text": " Wow."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:37,480",
+				"to": "00:36:41,480"
+			},
+			"offsets": {
+				"from": 2197480,
+				"to": 2201480
+			},
+			"text": " I could have saved like half an hour of video or something."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:41,480",
+				"to": "00:36:42,480"
+			},
+			"offsets": {
+				"from": 2201480,
+				"to": 2202480
+			},
+			"text": " Look."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:42,480",
+				"to": "00:36:43,480"
+			},
+			"offsets": {
+				"from": 2202480,
+				"to": 2203480
+			},
+			"text": " That's it."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:43,480",
+				"to": "00:36:49,480"
+			},
+			"offsets": {
+				"from": 2203480,
+				"to": 2209480
+			},
+			"text": " The bit is shifting exactly what I expected from the get go."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:49,480",
+				"to": "00:36:52,480"
+			},
+			"offsets": {
+				"from": 2209480,
+				"to": 2212480
+			},
+			"text": " And, like, why we could, why?"
+		},
+		{
+			"timestamps": {
+				"from": "00:36:52,480",
+				"to": "00:36:57,480"
+			},
+			"offsets": {
+				"from": 2212480,
+				"to": 2217480
+			},
+			"text": " That's a problem with the Roden Schwartz measuring its own clacker."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:57,480",
+				"to": "00:36:58,480"
+			},
+			"offsets": {
+				"from": 2217480,
+				"to": 2218480
+			},
+			"text": " I don't know."
+		},
+		{
+			"timestamps": {
+				"from": "00:36:58,480",
+				"to": "00:37:00,480"
+			},
+			"offsets": {
+				"from": 2218480,
+				"to": 2220480
+			},
+			"text": " I honestly do not know."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:00,480",
+				"to": "00:37:03,480"
+			},
+			"offsets": {
+				"from": 2220480,
+				"to": 2223480
+			},
+			"text": " So now we can get in there and actually decode the bit."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:03,480",
+				"to": "00:37:05,480"
+			},
+			"offsets": {
+				"from": 2223480,
+				"to": 2225480
+			},
+			"text": " That's exactly what I expect."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:05,480",
+				"to": "00:37:08,480"
+			},
+			"offsets": {
+				"from": 2225480,
+				"to": 2228480
+			},
+			"text": " It's exactly as per the data sheet."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:08,480",
+				"to": "00:37:09,480"
+			},
+			"offsets": {
+				"from": 2228480,
+				"to": 2229480
+			},
+			"text": " Here it is."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:09,480",
+				"to": "00:37:15,480"
+			},
+			"offsets": {
+				"from": 2229480,
+				"to": 2235480
+			},
+			"text": " It's exactly what we expected with the 24 bits or whatever."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:15,480",
+				"to": "00:37:16,480"
+			},
+			"offsets": {
+				"from": 2235480,
+				"to": 2236480
+			},
+			"text": " Here we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:16,480",
+				"to": "00:37:19,480"
+			},
+			"offsets": {
+				"from": 2236480,
+				"to": 2239480
+			},
+			"text": " Write operation."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:19,480",
+				"to": "00:37:20,480"
+			},
+			"offsets": {
+				"from": 2239480,
+				"to": 2240480
+			},
+			"text": " There we go."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:20,480",
+				"to": "00:37:21,480"
+			},
+			"offsets": {
+				"from": 2240480,
+				"to": 2241480
+			},
+			"text": " It's supposed to send 24 bits."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:21,480",
+				"to": "00:37:22,480"
+			},
+			"offsets": {
+				"from": 2241480,
+				"to": 2242480
+			},
+			"text": " The command and then the data field."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:22,480",
+				"to": "00:37:23,480"
+			},
+			"offsets": {
+				"from": 2242480,
+				"to": 2243480
+			},
+			"text": " And we have the data for that."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:23,480",
+				"to": "00:37:24,480"
+			},
+			"offsets": {
+				"from": 2243480,
+				"to": 2244480
+			},
+			"text": " And we can see the bit changing."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:24,480",
+				"to": "00:37:25,480"
+			},
+			"offsets": {
+				"from": 2244480,
+				"to": 2245480
+			},
+			"text": " Yeah."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:25,480",
+				"to": "00:37:26,480"
+			},
+			"offsets": {
+				"from": 2245480,
+				"to": 2246480
+			},
+			"text": " It's somewhere over here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:26,480",
+				"to": "00:37:27,480"
+			},
+			"offsets": {
+				"from": 2246480,
+				"to": 2247480
+			},
+			"text": " Yep."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:27,480",
+				"to": "00:37:28,480"
+			},
+			"offsets": {
+				"from": 2247480,
+				"to": 2248480
+			},
+			"text": " If you correlate it, look."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:28,480",
+				"to": "00:37:29,480"
+			},
+			"offsets": {
+				"from": 2248480,
+				"to": 2249480
+			},
+			"text": " It looks to be in the right spot to have the D6, D7 and D8, which is our filter selection"
+		},
+		{
+			"timestamps": {
+				"from": "00:37:29,480",
+				"to": "00:37:30,480"
+			},
+			"offsets": {
+				"from": 2249480,
+				"to": 2250480
+			},
+			"text": " field."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:30,480",
+				"to": "00:37:31,480"
+			},
+			"offsets": {
+				"from": 2250480,
+				"to": 2251480
+			},
+			"text": " All right."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:31,480",
+				"to": "00:37:32,480"
+			},
+			"offsets": {
+				"from": 2251480,
+				"to": 2252480
+			},
+			"text": " So let's just have a look at the first section, which is the command section here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:32,480",
+				"to": "00:37:33,480"
+			},
+			"offsets": {
+				"from": 2252480,
+				"to": 2253480
+			},
+			"text": " And we'll just expand that out."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:33,480",
+				"to": "00:37:34,480"
+			},
+			"offsets": {
+				"from": 2253480,
+				"to": 2254480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:34,480",
+				"to": "00:37:35,480"
+			},
+			"offsets": {
+				"from": 2254480,
+				"to": 2255480
+			},
+			"text": " And the command to write is here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:35,480",
+				"to": "00:37:36,480"
+			},
+			"offsets": {
+				"from": 2255480,
+				"to": 2256480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:36,480",
+				"to": "00:37:37,480"
+			},
+			"offsets": {
+				"from": 2256480,
+				"to": 2257480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:37,480",
+				"to": "00:37:38,480"
+			},
+			"offsets": {
+				"from": 2257480,
+				"to": 2258480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:38,480",
+				"to": "00:37:39,480"
+			},
+			"offsets": {
+				"from": 2258480,
+				"to": 2259480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:39,480",
+				"to": "00:37:40,480"
+			},
+			"offsets": {
+				"from": 2259480,
+				"to": 2260480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:40,480",
+				"to": "00:37:41,480"
+			},
+			"offsets": {
+				"from": 2260480,
+				"to": 2261480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:41,480",
+				"to": "00:37:42,480"
+			},
+			"offsets": {
+				"from": 2261480,
+				"to": 2262480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:42,480",
+				"to": "00:37:43,480"
+			},
+			"offsets": {
+				"from": 2262480,
+				"to": 2263480
+			},
+			"text": " All right."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:43,480",
+				"to": "00:37:44,480"
+			},
+			"offsets": {
+				"from": 2263480,
+				"to": 2264480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:44,480",
+				"to": "00:37:45,480"
+			},
+			"offsets": {
+				"from": 2264480,
+				"to": 2265480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:45,480",
+				"to": "00:37:46,480"
+			},
+			"offsets": {
+				"from": 2265480,
+				"to": 2266480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:46,480",
+				"to": "00:37:47,480"
+			},
+			"offsets": {
+				"from": 2266480,
+				"to": 2267480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:47,480",
+				"to": "00:37:48,480"
+			},
+			"offsets": {
+				"from": 2267480,
+				"to": 2268480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:48,480",
+				"to": "00:37:49,480"
+			},
+			"offsets": {
+				"from": 2268480,
+				"to": 2269480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:49,480",
+				"to": "00:37:50,480"
+			},
+			"offsets": {
+				"from": 2269480,
+				"to": 2270480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:50,480",
+				"to": "00:37:51,480"
+			},
+			"offsets": {
+				"from": 2270480,
+				"to": 2271480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:51,480",
+				"to": "00:37:52,480"
+			},
+			"offsets": {
+				"from": 2271480,
+				"to": 2272480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:52,480",
+				"to": "00:37:53,480"
+			},
+			"offsets": {
+				"from": 2272480,
+				"to": 2273480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:53,480",
+				"to": "00:37:54,480"
+			},
+			"offsets": {
+				"from": 2273480,
+				"to": 2274480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:54,480",
+				"to": "00:37:55,480"
+			},
+			"offsets": {
+				"from": 2274480,
+				"to": 2275480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:55,480",
+				"to": "00:37:56,480"
+			},
+			"offsets": {
+				"from": 2275480,
+				"to": 2276480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:56,480",
+				"to": "00:37:57,480"
+			},
+			"offsets": {
+				"from": 2276480,
+				"to": 2277480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:57,480",
+				"to": "00:37:58,480"
+			},
+			"offsets": {
+				"from": 2277480,
+				"to": 2278480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:58,480",
+				"to": "00:37:59,480"
+			},
+			"offsets": {
+				"from": 2278480,
+				"to": 2279480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:37:59,480",
+				"to": "00:38:00,480"
+			},
+			"offsets": {
+				"from": 2279480,
+				"to": 2280480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:00,480",
+				"to": "00:38:01,480"
+			},
+			"offsets": {
+				"from": 2280480,
+				"to": 2281480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:01,480",
+				"to": "00:38:02,480"
+			},
+			"offsets": {
+				"from": 2281480,
+				"to": 2282480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:02,480",
+				"to": "00:38:03,480"
+			},
+			"offsets": {
+				"from": 2282480,
+				"to": 2283480
+			},
+			"text": " And here's where it starts here."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:03,480",
+				"to": "00:38:04,480"
+			},
+			"offsets": {
+				"from": 2283480,
+				"to": 2284480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:04,480",
+				"to": "00:38:05,480"
+			},
+			"offsets": {
+				"from": 2284480,
+				"to": 2285480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:05,480",
+				"to": "00:38:06,480"
+			},
+			"offsets": {
+				"from": 2285480,
+				"to": 2286480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:06,480",
+				"to": "00:38:07,480"
+			},
+			"offsets": {
+				"from": 2286480,
+				"to": 2287480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:07,480",
+				"to": "00:38:08,480"
+			},
+			"offsets": {
+				"from": 2287480,
+				"to": 2288480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:08,480",
+				"to": "00:38:09,480"
+			},
+			"offsets": {
+				"from": 2288480,
+				"to": 2289480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:09,480",
+				"to": "00:38:10,480"
+			},
+			"offsets": {
+				"from": 2289480,
+				"to": 2290480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:10,480",
+				"to": "00:38:11,480"
+			},
+			"offsets": {
+				"from": 2290480,
+				"to": 2291480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:11,480",
+				"to": "00:38:12,480"
+			},
+			"offsets": {
+				"from": 2291480,
+				"to": 2292480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:12,480",
+				"to": "00:38:13,480"
+			},
+			"offsets": {
+				"from": 2292480,
+				"to": 2293480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:13,480",
+				"to": "00:38:14,480"
+			},
+			"offsets": {
+				"from": 2293480,
+				"to": 2294480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:14,480",
+				"to": "00:38:15,480"
+			},
+			"offsets": {
+				"from": 2294480,
+				"to": 2295480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:15,480",
+				"to": "00:38:16,480"
+			},
+			"offsets": {
+				"from": 2295480,
+				"to": 2296480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:16,480",
+				"to": "00:38:17,480"
+			},
+			"offsets": {
+				"from": 2296480,
+				"to": 2297480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:17,480",
+				"to": "00:38:18,480"
+			},
+			"offsets": {
+				"from": 2297480,
+				"to": 2298480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:18,480",
+				"to": "00:38:19,480"
+			},
+			"offsets": {
+				"from": 2298480,
+				"to": 2299480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:19,480",
+				"to": "00:38:20,480"
+			},
+			"offsets": {
+				"from": 2299480,
+				"to": 2300480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:20,480",
+				"to": "00:38:21,480"
+			},
+			"offsets": {
+				"from": 2300480,
+				"to": 2301480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:21,480",
+				"to": "00:38:22,480"
+			},
+			"offsets": {
+				"from": 2301480,
+				"to": 2302480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:22,480",
+				"to": "00:38:23,480"
+			},
+			"offsets": {
+				"from": 2302480,
+				"to": 2303480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:23,480",
+				"to": "00:38:24,480"
+			},
+			"offsets": {
+				"from": 2303480,
+				"to": 2304480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:34,480",
+				"to": "00:38:35,480"
+			},
+			"offsets": {
+				"from": 2314480,
+				"to": 2315480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:35,480",
+				"to": "00:38:36,480"
+			},
+			"offsets": {
+				"from": 2315480,
+				"to": 2316480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:36,480",
+				"to": "00:38:37,480"
+			},
+			"offsets": {
+				"from": 2316480,
+				"to": 2317480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:37,480",
+				"to": "00:38:38,480"
+			},
+			"offsets": {
+				"from": 2317480,
+				"to": 2318480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:38,480",
+				"to": "00:38:39,480"
+			},
+			"offsets": {
+				"from": 2318480,
+				"to": 2319480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:39,480",
+				"to": "00:38:40,480"
+			},
+			"offsets": {
+				"from": 2319480,
+				"to": 2320480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:40,480",
+				"to": "00:38:41,480"
+			},
+			"offsets": {
+				"from": 2320480,
+				"to": 2321480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:41,480",
+				"to": "00:38:42,480"
+			},
+			"offsets": {
+				"from": 2321480,
+				"to": 2322480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:42,480",
+				"to": "00:38:43,480"
+			},
+			"offsets": {
+				"from": 2322480,
+				"to": 2323480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:43,480",
+				"to": "00:38:44,480"
+			},
+			"offsets": {
+				"from": 2323480,
+				"to": 2324480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:44,480",
+				"to": "00:38:45,480"
+			},
+			"offsets": {
+				"from": 2324480,
+				"to": 2325480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:45,480",
+				"to": "00:38:46,480"
+			},
+			"offsets": {
+				"from": 2325480,
+				"to": 2326480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:46,480",
+				"to": "00:38:47,480"
+			},
+			"offsets": {
+				"from": 2326480,
+				"to": 2327480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:47,480",
+				"to": "00:38:48,480"
+			},
+			"offsets": {
+				"from": 2327480,
+				"to": 2328480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:48,480",
+				"to": "00:38:49,480"
+			},
+			"offsets": {
+				"from": 2328480,
+				"to": 2329480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:49,480",
+				"to": "00:38:50,480"
+			},
+			"offsets": {
+				"from": 2329480,
+				"to": 2330480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:50,480",
+				"to": "00:38:51,480"
+			},
+			"offsets": {
+				"from": 2330480,
+				"to": 2331480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:51,480",
+				"to": "00:38:52,480"
+			},
+			"offsets": {
+				"from": 2331480,
+				"to": 2332480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:52,480",
+				"to": "00:38:53,480"
+			},
+			"offsets": {
+				"from": 2332480,
+				"to": 2333480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:38:53,480",
+				"to": "00:38:54,480"
+			},
+			"offsets": {
+				"from": 2333480,
+				"to": 2334480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:04,480",
+				"to": "00:39:05,480"
+			},
+			"offsets": {
+				"from": 2344480,
+				"to": 2345480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:05,480",
+				"to": "00:39:06,480"
+			},
+			"offsets": {
+				"from": 2345480,
+				"to": 2346480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:06,480",
+				"to": "00:39:07,480"
+			},
+			"offsets": {
+				"from": 2346480,
+				"to": 2347480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:07,480",
+				"to": "00:39:08,480"
+			},
+			"offsets": {
+				"from": 2347480,
+				"to": 2348480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:08,480",
+				"to": "00:39:09,480"
+			},
+			"offsets": {
+				"from": 2348480,
+				"to": 2349480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:09,480",
+				"to": "00:39:10,480"
+			},
+			"offsets": {
+				"from": 2349480,
+				"to": 2350480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:10,480",
+				"to": "00:39:11,480"
+			},
+			"offsets": {
+				"from": 2350480,
+				"to": 2351480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:11,480",
+				"to": "00:39:12,480"
+			},
+			"offsets": {
+				"from": 2351480,
+				"to": 2352480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:12,480",
+				"to": "00:39:13,480"
+			},
+			"offsets": {
+				"from": 2352480,
+				"to": 2353480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:13,480",
+				"to": "00:39:14,480"
+			},
+			"offsets": {
+				"from": 2353480,
+				"to": 2354480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:14,480",
+				"to": "00:39:15,480"
+			},
+			"offsets": {
+				"from": 2354480,
+				"to": 2355480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:15,480",
+				"to": "00:39:16,480"
+			},
+			"offsets": {
+				"from": 2355480,
+				"to": 2356480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:16,480",
+				"to": "00:39:17,480"
+			},
+			"offsets": {
+				"from": 2356480,
+				"to": 2357480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:17,480",
+				"to": "00:39:18,480"
+			},
+			"offsets": {
+				"from": 2357480,
+				"to": 2358480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:18,480",
+				"to": "00:39:19,480"
+			},
+			"offsets": {
+				"from": 2358480,
+				"to": 2359480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:19,480",
+				"to": "00:39:20,480"
+			},
+			"offsets": {
+				"from": 2359480,
+				"to": 2360480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:20,480",
+				"to": "00:39:21,480"
+			},
+			"offsets": {
+				"from": 2360480,
+				"to": 2361480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:21,480",
+				"to": "00:39:22,480"
+			},
+			"offsets": {
+				"from": 2361480,
+				"to": 2362480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:22,480",
+				"to": "00:39:23,480"
+			},
+			"offsets": {
+				"from": 2362480,
+				"to": 2363480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:23,480",
+				"to": "00:39:24,480"
+			},
+			"offsets": {
+				"from": 2363480,
+				"to": 2364480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:34,480",
+				"to": "00:39:35,480"
+			},
+			"offsets": {
+				"from": 2374480,
+				"to": 2375480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:35,480",
+				"to": "00:39:36,480"
+			},
+			"offsets": {
+				"from": 2375480,
+				"to": 2376480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:36,480",
+				"to": "00:39:37,480"
+			},
+			"offsets": {
+				"from": 2376480,
+				"to": 2377480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:37,480",
+				"to": "00:39:38,480"
+			},
+			"offsets": {
+				"from": 2377480,
+				"to": 2378480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:38,480",
+				"to": "00:39:39,480"
+			},
+			"offsets": {
+				"from": 2378480,
+				"to": 2379480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:39,480",
+				"to": "00:39:40,480"
+			},
+			"offsets": {
+				"from": 2379480,
+				"to": 2380480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:40,480",
+				"to": "00:39:41,480"
+			},
+			"offsets": {
+				"from": 2380480,
+				"to": 2381480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:41,480",
+				"to": "00:39:42,480"
+			},
+			"offsets": {
+				"from": 2381480,
+				"to": 2382480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:42,480",
+				"to": "00:39:43,480"
+			},
+			"offsets": {
+				"from": 2382480,
+				"to": 2383480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:43,480",
+				"to": "00:39:44,480"
+			},
+			"offsets": {
+				"from": 2383480,
+				"to": 2384480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:44,480",
+				"to": "00:39:45,480"
+			},
+			"offsets": {
+				"from": 2384480,
+				"to": 2385480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:45,480",
+				"to": "00:39:46,480"
+			},
+			"offsets": {
+				"from": 2385480,
+				"to": 2386480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:46,480",
+				"to": "00:39:47,480"
+			},
+			"offsets": {
+				"from": 2386480,
+				"to": 2387480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:47,480",
+				"to": "00:39:48,480"
+			},
+			"offsets": {
+				"from": 2387480,
+				"to": 2388480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:48,480",
+				"to": "00:39:49,480"
+			},
+			"offsets": {
+				"from": 2388480,
+				"to": 2389480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:49,480",
+				"to": "00:39:50,480"
+			},
+			"offsets": {
+				"from": 2389480,
+				"to": 2390480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:50,480",
+				"to": "00:39:51,480"
+			},
+			"offsets": {
+				"from": 2390480,
+				"to": 2391480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:51,480",
+				"to": "00:39:52,480"
+			},
+			"offsets": {
+				"from": 2391480,
+				"to": 2392480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:52,480",
+				"to": "00:39:53,480"
+			},
+			"offsets": {
+				"from": 2392480,
+				"to": 2393480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:39:53,480",
+				"to": "00:39:54,480"
+			},
+			"offsets": {
+				"from": 2393480,
+				"to": 2394480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:04,480",
+				"to": "00:40:05,480"
+			},
+			"offsets": {
+				"from": 2404480,
+				"to": 2405480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:05,480",
+				"to": "00:40:06,480"
+			},
+			"offsets": {
+				"from": 2405480,
+				"to": 2406480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:06,480",
+				"to": "00:40:07,480"
+			},
+			"offsets": {
+				"from": 2406480,
+				"to": 2407480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:07,480",
+				"to": "00:40:08,480"
+			},
+			"offsets": {
+				"from": 2407480,
+				"to": 2408480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:08,480",
+				"to": "00:40:09,480"
+			},
+			"offsets": {
+				"from": 2408480,
+				"to": 2409480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:09,480",
+				"to": "00:40:10,480"
+			},
+			"offsets": {
+				"from": 2409480,
+				"to": 2410480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:10,480",
+				"to": "00:40:11,480"
+			},
+			"offsets": {
+				"from": 2410480,
+				"to": 2411480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:11,480",
+				"to": "00:40:12,480"
+			},
+			"offsets": {
+				"from": 2411480,
+				"to": 2412480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:12,480",
+				"to": "00:40:13,480"
+			},
+			"offsets": {
+				"from": 2412480,
+				"to": 2413480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:13,480",
+				"to": "00:40:14,480"
+			},
+			"offsets": {
+				"from": 2413480,
+				"to": 2414480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:14,480",
+				"to": "00:40:15,480"
+			},
+			"offsets": {
+				"from": 2414480,
+				"to": 2415480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:15,480",
+				"to": "00:40:16,480"
+			},
+			"offsets": {
+				"from": 2415480,
+				"to": 2416480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:16,480",
+				"to": "00:40:17,480"
+			},
+			"offsets": {
+				"from": 2416480,
+				"to": 2417480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:17,480",
+				"to": "00:40:18,480"
+			},
+			"offsets": {
+				"from": 2417480,
+				"to": 2418480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:18,480",
+				"to": "00:40:19,480"
+			},
+			"offsets": {
+				"from": 2418480,
+				"to": 2419480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:19,480",
+				"to": "00:40:20,480"
+			},
+			"offsets": {
+				"from": 2419480,
+				"to": 2420480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:20,480",
+				"to": "00:40:21,480"
+			},
+			"offsets": {
+				"from": 2420480,
+				"to": 2421480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:21,480",
+				"to": "00:40:22,480"
+			},
+			"offsets": {
+				"from": 2421480,
+				"to": 2422480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:22,480",
+				"to": "00:40:23,480"
+			},
+			"offsets": {
+				"from": 2422480,
+				"to": 2423480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:23,480",
+				"to": "00:40:24,480"
+			},
+			"offsets": {
+				"from": 2423480,
+				"to": 2424480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:34,480",
+				"to": "00:40:35,480"
+			},
+			"offsets": {
+				"from": 2434480,
+				"to": 2435480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:35,480",
+				"to": "00:40:36,480"
+			},
+			"offsets": {
+				"from": 2435480,
+				"to": 2436480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:36,480",
+				"to": "00:40:37,480"
+			},
+			"offsets": {
+				"from": 2436480,
+				"to": 2437480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:37,480",
+				"to": "00:40:38,480"
+			},
+			"offsets": {
+				"from": 2437480,
+				"to": 2438480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:38,480",
+				"to": "00:40:39,480"
+			},
+			"offsets": {
+				"from": 2438480,
+				"to": 2439480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:39,480",
+				"to": "00:40:40,480"
+			},
+			"offsets": {
+				"from": 2439480,
+				"to": 2440480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:40,480",
+				"to": "00:40:41,480"
+			},
+			"offsets": {
+				"from": 2440480,
+				"to": 2441480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:41,480",
+				"to": "00:40:42,480"
+			},
+			"offsets": {
+				"from": 2441480,
+				"to": 2442480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:42,480",
+				"to": "00:40:43,480"
+			},
+			"offsets": {
+				"from": 2442480,
+				"to": 2443480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:43,480",
+				"to": "00:40:44,480"
+			},
+			"offsets": {
+				"from": 2443480,
+				"to": 2444480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:44,480",
+				"to": "00:40:45,480"
+			},
+			"offsets": {
+				"from": 2444480,
+				"to": 2445480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:45,480",
+				"to": "00:40:46,480"
+			},
+			"offsets": {
+				"from": 2445480,
+				"to": 2446480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:46,480",
+				"to": "00:40:47,480"
+			},
+			"offsets": {
+				"from": 2446480,
+				"to": 2447480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:47,480",
+				"to": "00:40:48,480"
+			},
+			"offsets": {
+				"from": 2447480,
+				"to": 2448480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:48,480",
+				"to": "00:40:49,480"
+			},
+			"offsets": {
+				"from": 2448480,
+				"to": 2449480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:49,480",
+				"to": "00:40:50,480"
+			},
+			"offsets": {
+				"from": 2449480,
+				"to": 2450480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:50,480",
+				"to": "00:40:51,480"
+			},
+			"offsets": {
+				"from": 2450480,
+				"to": 2451480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:51,480",
+				"to": "00:40:52,480"
+			},
+			"offsets": {
+				"from": 2451480,
+				"to": 2452480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:52,480",
+				"to": "00:40:53,480"
+			},
+			"offsets": {
+				"from": 2452480,
+				"to": 2453480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:40:53,480",
+				"to": "00:40:54,480"
+			},
+			"offsets": {
+				"from": 2453480,
+				"to": 2454480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:04,480",
+				"to": "00:41:05,480"
+			},
+			"offsets": {
+				"from": 2464480,
+				"to": 2465480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:05,480",
+				"to": "00:41:06,480"
+			},
+			"offsets": {
+				"from": 2465480,
+				"to": 2466480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:06,480",
+				"to": "00:41:07,480"
+			},
+			"offsets": {
+				"from": 2466480,
+				"to": 2467480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:07,480",
+				"to": "00:41:08,480"
+			},
+			"offsets": {
+				"from": 2467480,
+				"to": 2468480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:08,480",
+				"to": "00:41:09,480"
+			},
+			"offsets": {
+				"from": 2468480,
+				"to": 2469480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:09,480",
+				"to": "00:41:10,480"
+			},
+			"offsets": {
+				"from": 2469480,
+				"to": 2470480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:10,480",
+				"to": "00:41:11,480"
+			},
+			"offsets": {
+				"from": 2470480,
+				"to": 2471480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:11,480",
+				"to": "00:41:12,480"
+			},
+			"offsets": {
+				"from": 2471480,
+				"to": 2472480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:12,480",
+				"to": "00:41:13,480"
+			},
+			"offsets": {
+				"from": 2472480,
+				"to": 2473480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:13,480",
+				"to": "00:41:14,480"
+			},
+			"offsets": {
+				"from": 2473480,
+				"to": 2474480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:14,480",
+				"to": "00:41:15,480"
+			},
+			"offsets": {
+				"from": 2474480,
+				"to": 2475480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:15,480",
+				"to": "00:41:16,480"
+			},
+			"offsets": {
+				"from": 2475480,
+				"to": 2476480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:16,480",
+				"to": "00:41:17,480"
+			},
+			"offsets": {
+				"from": 2476480,
+				"to": 2477480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:17,480",
+				"to": "00:41:18,480"
+			},
+			"offsets": {
+				"from": 2477480,
+				"to": 2478480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:18,480",
+				"to": "00:41:19,480"
+			},
+			"offsets": {
+				"from": 2478480,
+				"to": 2479480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:19,480",
+				"to": "00:41:20,480"
+			},
+			"offsets": {
+				"from": 2479480,
+				"to": 2480480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:20,480",
+				"to": "00:41:21,480"
+			},
+			"offsets": {
+				"from": 2480480,
+				"to": 2481480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:21,480",
+				"to": "00:41:22,480"
+			},
+			"offsets": {
+				"from": 2481480,
+				"to": 2482480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:22,480",
+				"to": "00:41:23,480"
+			},
+			"offsets": {
+				"from": 2482480,
+				"to": 2483480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:23,480",
+				"to": "00:41:24,480"
+			},
+			"offsets": {
+				"from": 2483480,
+				"to": 2484480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:34,480",
+				"to": "00:41:35,480"
+			},
+			"offsets": {
+				"from": 2494480,
+				"to": 2495480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:35,480",
+				"to": "00:41:36,480"
+			},
+			"offsets": {
+				"from": 2495480,
+				"to": 2496480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:36,480",
+				"to": "00:41:37,480"
+			},
+			"offsets": {
+				"from": 2496480,
+				"to": 2497480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:37,480",
+				"to": "00:41:38,480"
+			},
+			"offsets": {
+				"from": 2497480,
+				"to": 2498480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:38,480",
+				"to": "00:41:39,480"
+			},
+			"offsets": {
+				"from": 2498480,
+				"to": 2499480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:39,480",
+				"to": "00:41:40,480"
+			},
+			"offsets": {
+				"from": 2499480,
+				"to": 2500480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:40,480",
+				"to": "00:41:41,480"
+			},
+			"offsets": {
+				"from": 2500480,
+				"to": 2501480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:41,480",
+				"to": "00:41:42,480"
+			},
+			"offsets": {
+				"from": 2501480,
+				"to": 2502480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:42,480",
+				"to": "00:41:43,480"
+			},
+			"offsets": {
+				"from": 2502480,
+				"to": 2503480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:43,480",
+				"to": "00:41:44,480"
+			},
+			"offsets": {
+				"from": 2503480,
+				"to": 2504480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:44,480",
+				"to": "00:41:45,480"
+			},
+			"offsets": {
+				"from": 2504480,
+				"to": 2505480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:45,480",
+				"to": "00:41:46,480"
+			},
+			"offsets": {
+				"from": 2505480,
+				"to": 2506480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:46,480",
+				"to": "00:41:47,480"
+			},
+			"offsets": {
+				"from": 2506480,
+				"to": 2507480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:47,480",
+				"to": "00:41:48,480"
+			},
+			"offsets": {
+				"from": 2507480,
+				"to": 2508480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:48,480",
+				"to": "00:41:49,480"
+			},
+			"offsets": {
+				"from": 2508480,
+				"to": 2509480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:49,480",
+				"to": "00:41:50,480"
+			},
+			"offsets": {
+				"from": 2509480,
+				"to": 2510480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:50,480",
+				"to": "00:41:51,480"
+			},
+			"offsets": {
+				"from": 2510480,
+				"to": 2511480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:51,480",
+				"to": "00:41:52,480"
+			},
+			"offsets": {
+				"from": 2511480,
+				"to": 2512480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:52,480",
+				"to": "00:41:53,480"
+			},
+			"offsets": {
+				"from": 2512480,
+				"to": 2513480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:41:53,480",
+				"to": "00:41:54,480"
+			},
+			"offsets": {
+				"from": 2513480,
+				"to": 2514480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:04,480",
+				"to": "00:42:05,480"
+			},
+			"offsets": {
+				"from": 2524480,
+				"to": 2525480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:05,480",
+				"to": "00:42:06,480"
+			},
+			"offsets": {
+				"from": 2525480,
+				"to": 2526480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:06,480",
+				"to": "00:42:07,480"
+			},
+			"offsets": {
+				"from": 2526480,
+				"to": 2527480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:07,480",
+				"to": "00:42:08,480"
+			},
+			"offsets": {
+				"from": 2527480,
+				"to": 2528480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:08,480",
+				"to": "00:42:09,480"
+			},
+			"offsets": {
+				"from": 2528480,
+				"to": 2529480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:09,480",
+				"to": "00:42:10,480"
+			},
+			"offsets": {
+				"from": 2529480,
+				"to": 2530480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:10,480",
+				"to": "00:42:11,480"
+			},
+			"offsets": {
+				"from": 2530480,
+				"to": 2531480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:11,480",
+				"to": "00:42:12,480"
+			},
+			"offsets": {
+				"from": 2531480,
+				"to": 2532480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:12,480",
+				"to": "00:42:13,480"
+			},
+			"offsets": {
+				"from": 2532480,
+				"to": 2533480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:13,480",
+				"to": "00:42:14,480"
+			},
+			"offsets": {
+				"from": 2533480,
+				"to": 2534480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:14,480",
+				"to": "00:42:15,480"
+			},
+			"offsets": {
+				"from": 2534480,
+				"to": 2535480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:15,480",
+				"to": "00:42:16,480"
+			},
+			"offsets": {
+				"from": 2535480,
+				"to": 2536480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:16,480",
+				"to": "00:42:17,480"
+			},
+			"offsets": {
+				"from": 2536480,
+				"to": 2537480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:17,480",
+				"to": "00:42:18,480"
+			},
+			"offsets": {
+				"from": 2537480,
+				"to": 2538480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:18,480",
+				"to": "00:42:19,480"
+			},
+			"offsets": {
+				"from": 2538480,
+				"to": 2539480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:19,480",
+				"to": "00:42:20,480"
+			},
+			"offsets": {
+				"from": 2539480,
+				"to": 2540480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:20,480",
+				"to": "00:42:21,480"
+			},
+			"offsets": {
+				"from": 2540480,
+				"to": 2541480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:21,480",
+				"to": "00:42:22,480"
+			},
+			"offsets": {
+				"from": 2541480,
+				"to": 2542480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:22,480",
+				"to": "00:42:23,480"
+			},
+			"offsets": {
+				"from": 2542480,
+				"to": 2543480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:23,480",
+				"to": "00:42:24,480"
+			},
+			"offsets": {
+				"from": 2543480,
+				"to": 2544480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:34,480",
+				"to": "00:42:35,480"
+			},
+			"offsets": {
+				"from": 2554480,
+				"to": 2555480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:35,480",
+				"to": "00:42:36,480"
+			},
+			"offsets": {
+				"from": 2555480,
+				"to": 2556480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:36,480",
+				"to": "00:42:37,480"
+			},
+			"offsets": {
+				"from": 2556480,
+				"to": 2557480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:37,480",
+				"to": "00:42:38,480"
+			},
+			"offsets": {
+				"from": 2557480,
+				"to": 2558480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:38,480",
+				"to": "00:42:39,480"
+			},
+			"offsets": {
+				"from": 2558480,
+				"to": 2559480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:39,480",
+				"to": "00:42:40,480"
+			},
+			"offsets": {
+				"from": 2559480,
+				"to": 2560480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:40,480",
+				"to": "00:42:41,480"
+			},
+			"offsets": {
+				"from": 2560480,
+				"to": 2561480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:41,480",
+				"to": "00:42:42,480"
+			},
+			"offsets": {
+				"from": 2561480,
+				"to": 2562480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:42,480",
+				"to": "00:42:43,480"
+			},
+			"offsets": {
+				"from": 2562480,
+				"to": 2563480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:43,480",
+				"to": "00:42:44,480"
+			},
+			"offsets": {
+				"from": 2563480,
+				"to": 2564480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:44,480",
+				"to": "00:42:45,480"
+			},
+			"offsets": {
+				"from": 2564480,
+				"to": 2565480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:45,480",
+				"to": "00:42:46,480"
+			},
+			"offsets": {
+				"from": 2565480,
+				"to": 2566480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:46,480",
+				"to": "00:42:47,480"
+			},
+			"offsets": {
+				"from": 2566480,
+				"to": 2567480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:47,480",
+				"to": "00:42:48,480"
+			},
+			"offsets": {
+				"from": 2567480,
+				"to": 2568480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:48,480",
+				"to": "00:42:49,480"
+			},
+			"offsets": {
+				"from": 2568480,
+				"to": 2569480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:49,480",
+				"to": "00:42:50,480"
+			},
+			"offsets": {
+				"from": 2569480,
+				"to": 2570480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:50,480",
+				"to": "00:42:51,480"
+			},
+			"offsets": {
+				"from": 2570480,
+				"to": 2571480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:51,480",
+				"to": "00:42:52,480"
+			},
+			"offsets": {
+				"from": 2571480,
+				"to": 2572480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:52,480",
+				"to": "00:42:53,480"
+			},
+			"offsets": {
+				"from": 2572480,
+				"to": 2573480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:42:53,480",
+				"to": "00:42:54,480"
+			},
+			"offsets": {
+				"from": 2573480,
+				"to": 2574480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:04,480",
+				"to": "00:43:05,480"
+			},
+			"offsets": {
+				"from": 2584480,
+				"to": 2585480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:05,480",
+				"to": "00:43:06,480"
+			},
+			"offsets": {
+				"from": 2585480,
+				"to": 2586480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:06,480",
+				"to": "00:43:07,480"
+			},
+			"offsets": {
+				"from": 2586480,
+				"to": 2587480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:07,480",
+				"to": "00:43:08,480"
+			},
+			"offsets": {
+				"from": 2587480,
+				"to": 2588480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:08,480",
+				"to": "00:43:09,480"
+			},
+			"offsets": {
+				"from": 2588480,
+				"to": 2589480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:09,480",
+				"to": "00:43:10,480"
+			},
+			"offsets": {
+				"from": 2589480,
+				"to": 2590480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:10,480",
+				"to": "00:43:11,480"
+			},
+			"offsets": {
+				"from": 2590480,
+				"to": 2591480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:11,480",
+				"to": "00:43:12,480"
+			},
+			"offsets": {
+				"from": 2591480,
+				"to": 2592480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:12,480",
+				"to": "00:43:13,480"
+			},
+			"offsets": {
+				"from": 2592480,
+				"to": 2593480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:13,480",
+				"to": "00:43:14,480"
+			},
+			"offsets": {
+				"from": 2593480,
+				"to": 2594480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:14,480",
+				"to": "00:43:15,480"
+			},
+			"offsets": {
+				"from": 2594480,
+				"to": 2595480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:15,480",
+				"to": "00:43:16,480"
+			},
+			"offsets": {
+				"from": 2595480,
+				"to": 2596480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:16,480",
+				"to": "00:43:17,480"
+			},
+			"offsets": {
+				"from": 2596480,
+				"to": 2597480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:17,480",
+				"to": "00:43:18,480"
+			},
+			"offsets": {
+				"from": 2597480,
+				"to": 2598480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:18,480",
+				"to": "00:43:19,480"
+			},
+			"offsets": {
+				"from": 2598480,
+				"to": 2599480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:19,480",
+				"to": "00:43:20,480"
+			},
+			"offsets": {
+				"from": 2599480,
+				"to": 2600480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:20,480",
+				"to": "00:43:21,480"
+			},
+			"offsets": {
+				"from": 2600480,
+				"to": 2601480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:21,480",
+				"to": "00:43:22,480"
+			},
+			"offsets": {
+				"from": 2601480,
+				"to": 2602480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:22,480",
+				"to": "00:43:23,480"
+			},
+			"offsets": {
+				"from": 2602480,
+				"to": 2603480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:23,480",
+				"to": "00:43:24,480"
+			},
+			"offsets": {
+				"from": 2603480,
+				"to": 2604480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:34,480",
+				"to": "00:43:35,480"
+			},
+			"offsets": {
+				"from": 2614480,
+				"to": 2615480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:35,480",
+				"to": "00:43:36,480"
+			},
+			"offsets": {
+				"from": 2615480,
+				"to": 2616480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:36,480",
+				"to": "00:43:37,480"
+			},
+			"offsets": {
+				"from": 2616480,
+				"to": 2617480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:37,480",
+				"to": "00:43:38,480"
+			},
+			"offsets": {
+				"from": 2617480,
+				"to": 2618480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:38,480",
+				"to": "00:43:39,480"
+			},
+			"offsets": {
+				"from": 2618480,
+				"to": 2619480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:39,480",
+				"to": "00:43:40,480"
+			},
+			"offsets": {
+				"from": 2619480,
+				"to": 2620480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:40,480",
+				"to": "00:43:41,480"
+			},
+			"offsets": {
+				"from": 2620480,
+				"to": 2621480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:41,480",
+				"to": "00:43:42,480"
+			},
+			"offsets": {
+				"from": 2621480,
+				"to": 2622480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:42,480",
+				"to": "00:43:43,480"
+			},
+			"offsets": {
+				"from": 2622480,
+				"to": 2623480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:43,480",
+				"to": "00:43:44,480"
+			},
+			"offsets": {
+				"from": 2623480,
+				"to": 2624480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:44,480",
+				"to": "00:43:45,480"
+			},
+			"offsets": {
+				"from": 2624480,
+				"to": 2625480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:45,480",
+				"to": "00:43:46,480"
+			},
+			"offsets": {
+				"from": 2625480,
+				"to": 2626480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:46,480",
+				"to": "00:43:47,480"
+			},
+			"offsets": {
+				"from": 2626480,
+				"to": 2627480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:47,480",
+				"to": "00:43:48,480"
+			},
+			"offsets": {
+				"from": 2627480,
+				"to": 2628480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:48,480",
+				"to": "00:43:49,480"
+			},
+			"offsets": {
+				"from": 2628480,
+				"to": 2629480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:49,480",
+				"to": "00:43:50,480"
+			},
+			"offsets": {
+				"from": 2629480,
+				"to": 2630480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:50,480",
+				"to": "00:43:51,480"
+			},
+			"offsets": {
+				"from": 2630480,
+				"to": 2631480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:51,480",
+				"to": "00:43:52,480"
+			},
+			"offsets": {
+				"from": 2631480,
+				"to": 2632480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:52,480",
+				"to": "00:43:53,480"
+			},
+			"offsets": {
+				"from": 2632480,
+				"to": 2633480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:43:53,480",
+				"to": "00:43:54,480"
+			},
+			"offsets": {
+				"from": 2633480,
+				"to": 2634480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:04,480",
+				"to": "00:44:05,480"
+			},
+			"offsets": {
+				"from": 2644480,
+				"to": 2645480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:05,480",
+				"to": "00:44:06,480"
+			},
+			"offsets": {
+				"from": 2645480,
+				"to": 2646480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:06,480",
+				"to": "00:44:07,480"
+			},
+			"offsets": {
+				"from": 2646480,
+				"to": 2647480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:07,480",
+				"to": "00:44:08,480"
+			},
+			"offsets": {
+				"from": 2647480,
+				"to": 2648480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:08,480",
+				"to": "00:44:09,480"
+			},
+			"offsets": {
+				"from": 2648480,
+				"to": 2649480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:09,480",
+				"to": "00:44:10,480"
+			},
+			"offsets": {
+				"from": 2649480,
+				"to": 2650480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:10,480",
+				"to": "00:44:11,480"
+			},
+			"offsets": {
+				"from": 2650480,
+				"to": 2651480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:11,480",
+				"to": "00:44:12,480"
+			},
+			"offsets": {
+				"from": 2651480,
+				"to": 2652480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:12,480",
+				"to": "00:44:13,480"
+			},
+			"offsets": {
+				"from": 2652480,
+				"to": 2653480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:13,480",
+				"to": "00:44:14,480"
+			},
+			"offsets": {
+				"from": 2653480,
+				"to": 2654480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:14,480",
+				"to": "00:44:15,480"
+			},
+			"offsets": {
+				"from": 2654480,
+				"to": 2655480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:15,480",
+				"to": "00:44:16,480"
+			},
+			"offsets": {
+				"from": 2655480,
+				"to": 2656480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:16,480",
+				"to": "00:44:17,480"
+			},
+			"offsets": {
+				"from": 2656480,
+				"to": 2657480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:17,480",
+				"to": "00:44:18,480"
+			},
+			"offsets": {
+				"from": 2657480,
+				"to": 2658480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:18,480",
+				"to": "00:44:19,480"
+			},
+			"offsets": {
+				"from": 2658480,
+				"to": 2659480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:19,480",
+				"to": "00:44:20,480"
+			},
+			"offsets": {
+				"from": 2659480,
+				"to": 2660480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:20,480",
+				"to": "00:44:21,480"
+			},
+			"offsets": {
+				"from": 2660480,
+				"to": 2661480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:21,480",
+				"to": "00:44:22,480"
+			},
+			"offsets": {
+				"from": 2661480,
+				"to": 2662480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:22,480",
+				"to": "00:44:23,480"
+			},
+			"offsets": {
+				"from": 2662480,
+				"to": 2663480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:23,480",
+				"to": "00:44:24,480"
+			},
+			"offsets": {
+				"from": 2663480,
+				"to": 2664480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:34,480",
+				"to": "00:44:35,480"
+			},
+			"offsets": {
+				"from": 2674480,
+				"to": 2675480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:35,480",
+				"to": "00:44:36,480"
+			},
+			"offsets": {
+				"from": 2675480,
+				"to": 2676480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:36,480",
+				"to": "00:44:37,480"
+			},
+			"offsets": {
+				"from": 2676480,
+				"to": 2677480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:37,480",
+				"to": "00:44:38,480"
+			},
+			"offsets": {
+				"from": 2677480,
+				"to": 2678480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:38,480",
+				"to": "00:44:39,480"
+			},
+			"offsets": {
+				"from": 2678480,
+				"to": 2679480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:39,480",
+				"to": "00:44:40,480"
+			},
+			"offsets": {
+				"from": 2679480,
+				"to": 2680480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:40,480",
+				"to": "00:44:41,480"
+			},
+			"offsets": {
+				"from": 2680480,
+				"to": 2681480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:41,480",
+				"to": "00:44:42,480"
+			},
+			"offsets": {
+				"from": 2681480,
+				"to": 2682480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:42,480",
+				"to": "00:44:43,480"
+			},
+			"offsets": {
+				"from": 2682480,
+				"to": 2683480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:43,480",
+				"to": "00:44:44,480"
+			},
+			"offsets": {
+				"from": 2683480,
+				"to": 2684480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:44,480",
+				"to": "00:44:45,480"
+			},
+			"offsets": {
+				"from": 2684480,
+				"to": 2685480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:45,480",
+				"to": "00:44:46,480"
+			},
+			"offsets": {
+				"from": 2685480,
+				"to": 2686480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:46,480",
+				"to": "00:44:47,480"
+			},
+			"offsets": {
+				"from": 2686480,
+				"to": 2687480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:47,480",
+				"to": "00:44:48,480"
+			},
+			"offsets": {
+				"from": 2687480,
+				"to": 2688480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:48,480",
+				"to": "00:44:49,480"
+			},
+			"offsets": {
+				"from": 2688480,
+				"to": 2689480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:49,480",
+				"to": "00:44:50,480"
+			},
+			"offsets": {
+				"from": 2689480,
+				"to": 2690480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:50,480",
+				"to": "00:44:51,480"
+			},
+			"offsets": {
+				"from": 2690480,
+				"to": 2691480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:51,480",
+				"to": "00:44:52,480"
+			},
+			"offsets": {
+				"from": 2691480,
+				"to": 2692480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:52,480",
+				"to": "00:44:53,480"
+			},
+			"offsets": {
+				"from": 2692480,
+				"to": 2693480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:44:53,480",
+				"to": "00:44:54,480"
+			},
+			"offsets": {
+				"from": 2693480,
+				"to": 2694480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:04,480",
+				"to": "00:45:05,480"
+			},
+			"offsets": {
+				"from": 2704480,
+				"to": 2705480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:05,480",
+				"to": "00:45:06,480"
+			},
+			"offsets": {
+				"from": 2705480,
+				"to": 2706480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:06,480",
+				"to": "00:45:07,480"
+			},
+			"offsets": {
+				"from": 2706480,
+				"to": 2707480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:07,480",
+				"to": "00:45:08,480"
+			},
+			"offsets": {
+				"from": 2707480,
+				"to": 2708480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:08,480",
+				"to": "00:45:09,480"
+			},
+			"offsets": {
+				"from": 2708480,
+				"to": 2709480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:09,480",
+				"to": "00:45:10,480"
+			},
+			"offsets": {
+				"from": 2709480,
+				"to": 2710480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:10,480",
+				"to": "00:45:11,480"
+			},
+			"offsets": {
+				"from": 2710480,
+				"to": 2711480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:11,480",
+				"to": "00:45:12,480"
+			},
+			"offsets": {
+				"from": 2711480,
+				"to": 2712480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:12,480",
+				"to": "00:45:13,480"
+			},
+			"offsets": {
+				"from": 2712480,
+				"to": 2713480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:13,480",
+				"to": "00:45:14,480"
+			},
+			"offsets": {
+				"from": 2713480,
+				"to": 2714480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:14,480",
+				"to": "00:45:15,480"
+			},
+			"offsets": {
+				"from": 2714480,
+				"to": 2715480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:15,480",
+				"to": "00:45:16,480"
+			},
+			"offsets": {
+				"from": 2715480,
+				"to": 2716480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:16,480",
+				"to": "00:45:17,480"
+			},
+			"offsets": {
+				"from": 2716480,
+				"to": 2717480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:17,480",
+				"to": "00:45:18,480"
+			},
+			"offsets": {
+				"from": 2717480,
+				"to": 2718480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:18,480",
+				"to": "00:45:19,480"
+			},
+			"offsets": {
+				"from": 2718480,
+				"to": 2719480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:19,480",
+				"to": "00:45:20,480"
+			},
+			"offsets": {
+				"from": 2719480,
+				"to": 2720480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:20,480",
+				"to": "00:45:21,480"
+			},
+			"offsets": {
+				"from": 2720480,
+				"to": 2721480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:21,480",
+				"to": "00:45:22,480"
+			},
+			"offsets": {
+				"from": 2721480,
+				"to": 2722480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:22,480",
+				"to": "00:45:23,480"
+			},
+			"offsets": {
+				"from": 2722480,
+				"to": 2723480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:23,480",
+				"to": "00:45:24,480"
+			},
+			"offsets": {
+				"from": 2723480,
+				"to": 2724480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:34,480",
+				"to": "00:45:35,480"
+			},
+			"offsets": {
+				"from": 2734480,
+				"to": 2735480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:35,480",
+				"to": "00:45:36,480"
+			},
+			"offsets": {
+				"from": 2735480,
+				"to": 2736480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:36,480",
+				"to": "00:45:37,480"
+			},
+			"offsets": {
+				"from": 2736480,
+				"to": 2737480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:37,480",
+				"to": "00:45:38,480"
+			},
+			"offsets": {
+				"from": 2737480,
+				"to": 2738480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:38,480",
+				"to": "00:45:39,480"
+			},
+			"offsets": {
+				"from": 2738480,
+				"to": 2739480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:39,480",
+				"to": "00:45:40,480"
+			},
+			"offsets": {
+				"from": 2739480,
+				"to": 2740480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:40,480",
+				"to": "00:45:41,480"
+			},
+			"offsets": {
+				"from": 2740480,
+				"to": 2741480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:41,480",
+				"to": "00:45:42,480"
+			},
+			"offsets": {
+				"from": 2741480,
+				"to": 2742480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:42,480",
+				"to": "00:45:43,480"
+			},
+			"offsets": {
+				"from": 2742480,
+				"to": 2743480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:43,480",
+				"to": "00:45:44,480"
+			},
+			"offsets": {
+				"from": 2743480,
+				"to": 2744480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:44,480",
+				"to": "00:45:45,480"
+			},
+			"offsets": {
+				"from": 2744480,
+				"to": 2745480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:45,480",
+				"to": "00:45:46,480"
+			},
+			"offsets": {
+				"from": 2745480,
+				"to": 2746480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:46,480",
+				"to": "00:45:47,480"
+			},
+			"offsets": {
+				"from": 2746480,
+				"to": 2747480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:47,480",
+				"to": "00:45:48,480"
+			},
+			"offsets": {
+				"from": 2747480,
+				"to": 2748480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:48,480",
+				"to": "00:45:49,480"
+			},
+			"offsets": {
+				"from": 2748480,
+				"to": 2749480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:49,480",
+				"to": "00:45:50,480"
+			},
+			"offsets": {
+				"from": 2749480,
+				"to": 2750480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:50,480",
+				"to": "00:45:51,480"
+			},
+			"offsets": {
+				"from": 2750480,
+				"to": 2751480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:51,480",
+				"to": "00:45:52,480"
+			},
+			"offsets": {
+				"from": 2751480,
+				"to": 2752480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:52,480",
+				"to": "00:45:53,480"
+			},
+			"offsets": {
+				"from": 2752480,
+				"to": 2753480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:45:53,480",
+				"to": "00:45:54,480"
+			},
+			"offsets": {
+				"from": 2753480,
+				"to": 2754480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:04,480",
+				"to": "00:46:05,480"
+			},
+			"offsets": {
+				"from": 2764480,
+				"to": 2765480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:05,480",
+				"to": "00:46:06,480"
+			},
+			"offsets": {
+				"from": 2765480,
+				"to": 2766480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:06,480",
+				"to": "00:46:07,480"
+			},
+			"offsets": {
+				"from": 2766480,
+				"to": 2767480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:07,480",
+				"to": "00:46:08,480"
+			},
+			"offsets": {
+				"from": 2767480,
+				"to": 2768480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:08,480",
+				"to": "00:46:09,480"
+			},
+			"offsets": {
+				"from": 2768480,
+				"to": 2769480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:09,480",
+				"to": "00:46:10,480"
+			},
+			"offsets": {
+				"from": 2769480,
+				"to": 2770480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:10,480",
+				"to": "00:46:11,480"
+			},
+			"offsets": {
+				"from": 2770480,
+				"to": 2771480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:11,480",
+				"to": "00:46:12,480"
+			},
+			"offsets": {
+				"from": 2771480,
+				"to": 2772480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:12,480",
+				"to": "00:46:13,480"
+			},
+			"offsets": {
+				"from": 2772480,
+				"to": 2773480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:13,480",
+				"to": "00:46:14,480"
+			},
+			"offsets": {
+				"from": 2773480,
+				"to": 2774480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:14,480",
+				"to": "00:46:15,480"
+			},
+			"offsets": {
+				"from": 2774480,
+				"to": 2775480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:15,480",
+				"to": "00:46:16,480"
+			},
+			"offsets": {
+				"from": 2775480,
+				"to": 2776480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:16,480",
+				"to": "00:46:17,480"
+			},
+			"offsets": {
+				"from": 2776480,
+				"to": 2777480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:17,480",
+				"to": "00:46:18,480"
+			},
+			"offsets": {
+				"from": 2777480,
+				"to": 2778480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:18,480",
+				"to": "00:46:19,480"
+			},
+			"offsets": {
+				"from": 2778480,
+				"to": 2779480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:19,480",
+				"to": "00:46:20,480"
+			},
+			"offsets": {
+				"from": 2779480,
+				"to": 2780480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:20,480",
+				"to": "00:46:21,480"
+			},
+			"offsets": {
+				"from": 2780480,
+				"to": 2781480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:21,480",
+				"to": "00:46:22,480"
+			},
+			"offsets": {
+				"from": 2781480,
+				"to": 2782480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:22,480",
+				"to": "00:46:23,480"
+			},
+			"offsets": {
+				"from": 2782480,
+				"to": 2783480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:23,480",
+				"to": "00:46:24,480"
+			},
+			"offsets": {
+				"from": 2783480,
+				"to": 2784480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:34,480",
+				"to": "00:46:35,480"
+			},
+			"offsets": {
+				"from": 2794480,
+				"to": 2795480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:35,480",
+				"to": "00:46:36,480"
+			},
+			"offsets": {
+				"from": 2795480,
+				"to": 2796480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:36,480",
+				"to": "00:46:37,480"
+			},
+			"offsets": {
+				"from": 2796480,
+				"to": 2797480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:37,480",
+				"to": "00:46:38,480"
+			},
+			"offsets": {
+				"from": 2797480,
+				"to": 2798480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:38,480",
+				"to": "00:46:39,480"
+			},
+			"offsets": {
+				"from": 2798480,
+				"to": 2799480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:39,480",
+				"to": "00:46:40,480"
+			},
+			"offsets": {
+				"from": 2799480,
+				"to": 2800480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:40,480",
+				"to": "00:46:41,480"
+			},
+			"offsets": {
+				"from": 2800480,
+				"to": 2801480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:41,480",
+				"to": "00:46:42,480"
+			},
+			"offsets": {
+				"from": 2801480,
+				"to": 2802480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:42,480",
+				"to": "00:46:43,480"
+			},
+			"offsets": {
+				"from": 2802480,
+				"to": 2803480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:43,480",
+				"to": "00:46:44,480"
+			},
+			"offsets": {
+				"from": 2803480,
+				"to": 2804480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:44,480",
+				"to": "00:46:45,480"
+			},
+			"offsets": {
+				"from": 2804480,
+				"to": 2805480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:45,480",
+				"to": "00:46:46,480"
+			},
+			"offsets": {
+				"from": 2805480,
+				"to": 2806480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:46,480",
+				"to": "00:46:47,480"
+			},
+			"offsets": {
+				"from": 2806480,
+				"to": 2807480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:47,480",
+				"to": "00:46:48,480"
+			},
+			"offsets": {
+				"from": 2807480,
+				"to": 2808480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:48,480",
+				"to": "00:46:49,480"
+			},
+			"offsets": {
+				"from": 2808480,
+				"to": 2809480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:49,480",
+				"to": "00:46:50,480"
+			},
+			"offsets": {
+				"from": 2809480,
+				"to": 2810480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:50,480",
+				"to": "00:46:51,480"
+			},
+			"offsets": {
+				"from": 2810480,
+				"to": 2811480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:51,480",
+				"to": "00:46:52,480"
+			},
+			"offsets": {
+				"from": 2811480,
+				"to": 2812480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:52,480",
+				"to": "00:46:53,480"
+			},
+			"offsets": {
+				"from": 2812480,
+				"to": 2813480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:46:53,480",
+				"to": "00:46:54,480"
+			},
+			"offsets": {
+				"from": 2813480,
+				"to": 2814480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:04,480",
+				"to": "00:47:05,480"
+			},
+			"offsets": {
+				"from": 2824480,
+				"to": 2825480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:05,480",
+				"to": "00:47:06,480"
+			},
+			"offsets": {
+				"from": 2825480,
+				"to": 2826480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:06,480",
+				"to": "00:47:07,480"
+			},
+			"offsets": {
+				"from": 2826480,
+				"to": 2827480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:07,480",
+				"to": "00:47:08,480"
+			},
+			"offsets": {
+				"from": 2827480,
+				"to": 2828480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:08,480",
+				"to": "00:47:09,480"
+			},
+			"offsets": {
+				"from": 2828480,
+				"to": 2829480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:09,480",
+				"to": "00:47:10,480"
+			},
+			"offsets": {
+				"from": 2829480,
+				"to": 2830480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:10,480",
+				"to": "00:47:11,480"
+			},
+			"offsets": {
+				"from": 2830480,
+				"to": 2831480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:11,480",
+				"to": "00:47:12,480"
+			},
+			"offsets": {
+				"from": 2831480,
+				"to": 2832480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:12,480",
+				"to": "00:47:13,480"
+			},
+			"offsets": {
+				"from": 2832480,
+				"to": 2833480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:13,480",
+				"to": "00:47:14,480"
+			},
+			"offsets": {
+				"from": 2833480,
+				"to": 2834480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:14,480",
+				"to": "00:47:15,480"
+			},
+			"offsets": {
+				"from": 2834480,
+				"to": 2835480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:15,480",
+				"to": "00:47:16,480"
+			},
+			"offsets": {
+				"from": 2835480,
+				"to": 2836480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:16,480",
+				"to": "00:47:17,480"
+			},
+			"offsets": {
+				"from": 2836480,
+				"to": 2837480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:17,480",
+				"to": "00:47:18,480"
+			},
+			"offsets": {
+				"from": 2837480,
+				"to": 2838480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:18,480",
+				"to": "00:47:19,480"
+			},
+			"offsets": {
+				"from": 2838480,
+				"to": 2839480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:19,480",
+				"to": "00:47:20,480"
+			},
+			"offsets": {
+				"from": 2839480,
+				"to": 2840480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:20,480",
+				"to": "00:47:21,480"
+			},
+			"offsets": {
+				"from": 2840480,
+				"to": 2841480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:21,480",
+				"to": "00:47:22,480"
+			},
+			"offsets": {
+				"from": 2841480,
+				"to": 2842480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:22,480",
+				"to": "00:47:23,480"
+			},
+			"offsets": {
+				"from": 2842480,
+				"to": 2843480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:23,480",
+				"to": "00:47:24,480"
+			},
+			"offsets": {
+				"from": 2843480,
+				"to": 2844480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:34,480",
+				"to": "00:47:35,480"
+			},
+			"offsets": {
+				"from": 2854480,
+				"to": 2855480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:35,480",
+				"to": "00:47:36,480"
+			},
+			"offsets": {
+				"from": 2855480,
+				"to": 2856480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:36,480",
+				"to": "00:47:37,480"
+			},
+			"offsets": {
+				"from": 2856480,
+				"to": 2857480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:37,480",
+				"to": "00:47:38,480"
+			},
+			"offsets": {
+				"from": 2857480,
+				"to": 2858480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:38,480",
+				"to": "00:47:39,480"
+			},
+			"offsets": {
+				"from": 2858480,
+				"to": 2859480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:39,480",
+				"to": "00:47:40,480"
+			},
+			"offsets": {
+				"from": 2859480,
+				"to": 2860480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:40,480",
+				"to": "00:47:41,480"
+			},
+			"offsets": {
+				"from": 2860480,
+				"to": 2861480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:41,480",
+				"to": "00:47:42,480"
+			},
+			"offsets": {
+				"from": 2861480,
+				"to": 2862480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:42,480",
+				"to": "00:47:43,480"
+			},
+			"offsets": {
+				"from": 2862480,
+				"to": 2863480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:43,480",
+				"to": "00:47:44,480"
+			},
+			"offsets": {
+				"from": 2863480,
+				"to": 2864480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:44,480",
+				"to": "00:47:45,480"
+			},
+			"offsets": {
+				"from": 2864480,
+				"to": 2865480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:45,480",
+				"to": "00:47:46,480"
+			},
+			"offsets": {
+				"from": 2865480,
+				"to": 2866480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:46,480",
+				"to": "00:47:47,480"
+			},
+			"offsets": {
+				"from": 2866480,
+				"to": 2867480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:47,480",
+				"to": "00:47:48,480"
+			},
+			"offsets": {
+				"from": 2867480,
+				"to": 2868480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:48,480",
+				"to": "00:47:49,480"
+			},
+			"offsets": {
+				"from": 2868480,
+				"to": 2869480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:49,480",
+				"to": "00:47:50,480"
+			},
+			"offsets": {
+				"from": 2869480,
+				"to": 2870480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:50,480",
+				"to": "00:47:51,480"
+			},
+			"offsets": {
+				"from": 2870480,
+				"to": 2871480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:51,480",
+				"to": "00:47:52,480"
+			},
+			"offsets": {
+				"from": 2871480,
+				"to": 2872480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:52,480",
+				"to": "00:47:53,480"
+			},
+			"offsets": {
+				"from": 2872480,
+				"to": 2873480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:47:53,480",
+				"to": "00:47:54,480"
+			},
+			"offsets": {
+				"from": 2873480,
+				"to": 2874480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:04,480",
+				"to": "00:48:05,480"
+			},
+			"offsets": {
+				"from": 2884480,
+				"to": 2885480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:05,480",
+				"to": "00:48:06,480"
+			},
+			"offsets": {
+				"from": 2885480,
+				"to": 2886480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:06,480",
+				"to": "00:48:07,480"
+			},
+			"offsets": {
+				"from": 2886480,
+				"to": 2887480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:07,480",
+				"to": "00:48:08,480"
+			},
+			"offsets": {
+				"from": 2887480,
+				"to": 2888480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:08,480",
+				"to": "00:48:09,480"
+			},
+			"offsets": {
+				"from": 2888480,
+				"to": 2889480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:09,480",
+				"to": "00:48:10,480"
+			},
+			"offsets": {
+				"from": 2889480,
+				"to": 2890480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:10,480",
+				"to": "00:48:11,480"
+			},
+			"offsets": {
+				"from": 2890480,
+				"to": 2891480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:11,480",
+				"to": "00:48:12,480"
+			},
+			"offsets": {
+				"from": 2891480,
+				"to": 2892480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:12,480",
+				"to": "00:48:13,480"
+			},
+			"offsets": {
+				"from": 2892480,
+				"to": 2893480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:13,480",
+				"to": "00:48:14,480"
+			},
+			"offsets": {
+				"from": 2893480,
+				"to": 2894480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:14,480",
+				"to": "00:48:15,480"
+			},
+			"offsets": {
+				"from": 2894480,
+				"to": 2895480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:15,480",
+				"to": "00:48:16,480"
+			},
+			"offsets": {
+				"from": 2895480,
+				"to": 2896480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:16,480",
+				"to": "00:48:17,480"
+			},
+			"offsets": {
+				"from": 2896480,
+				"to": 2897480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:17,480",
+				"to": "00:48:18,480"
+			},
+			"offsets": {
+				"from": 2897480,
+				"to": 2898480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:18,480",
+				"to": "00:48:19,480"
+			},
+			"offsets": {
+				"from": 2898480,
+				"to": 2899480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:19,480",
+				"to": "00:48:20,480"
+			},
+			"offsets": {
+				"from": 2899480,
+				"to": 2900480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:20,480",
+				"to": "00:48:21,480"
+			},
+			"offsets": {
+				"from": 2900480,
+				"to": 2901480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:21,480",
+				"to": "00:48:22,480"
+			},
+			"offsets": {
+				"from": 2901480,
+				"to": 2902480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:22,480",
+				"to": "00:48:23,480"
+			},
+			"offsets": {
+				"from": 2902480,
+				"to": 2903480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:23,480",
+				"to": "00:48:24,480"
+			},
+			"offsets": {
+				"from": 2903480,
+				"to": 2904480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:34,480",
+				"to": "00:48:35,480"
+			},
+			"offsets": {
+				"from": 2914480,
+				"to": 2915480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:35,480",
+				"to": "00:48:36,480"
+			},
+			"offsets": {
+				"from": 2915480,
+				"to": 2916480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:36,480",
+				"to": "00:48:37,480"
+			},
+			"offsets": {
+				"from": 2916480,
+				"to": 2917480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:37,480",
+				"to": "00:48:38,480"
+			},
+			"offsets": {
+				"from": 2917480,
+				"to": 2918480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:38,480",
+				"to": "00:48:39,480"
+			},
+			"offsets": {
+				"from": 2918480,
+				"to": 2919480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:39,480",
+				"to": "00:48:40,480"
+			},
+			"offsets": {
+				"from": 2919480,
+				"to": 2920480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:40,480",
+				"to": "00:48:41,480"
+			},
+			"offsets": {
+				"from": 2920480,
+				"to": 2921480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:41,480",
+				"to": "00:48:42,480"
+			},
+			"offsets": {
+				"from": 2921480,
+				"to": 2922480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:42,480",
+				"to": "00:48:43,480"
+			},
+			"offsets": {
+				"from": 2922480,
+				"to": 2923480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:43,480",
+				"to": "00:48:44,480"
+			},
+			"offsets": {
+				"from": 2923480,
+				"to": 2924480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:44,480",
+				"to": "00:48:45,480"
+			},
+			"offsets": {
+				"from": 2924480,
+				"to": 2925480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:45,480",
+				"to": "00:48:46,480"
+			},
+			"offsets": {
+				"from": 2925480,
+				"to": 2926480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:46,480",
+				"to": "00:48:47,480"
+			},
+			"offsets": {
+				"from": 2926480,
+				"to": 2927480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:47,480",
+				"to": "00:48:48,480"
+			},
+			"offsets": {
+				"from": 2927480,
+				"to": 2928480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:48,480",
+				"to": "00:48:49,480"
+			},
+			"offsets": {
+				"from": 2928480,
+				"to": 2929480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:49,480",
+				"to": "00:48:50,480"
+			},
+			"offsets": {
+				"from": 2929480,
+				"to": 2930480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:50,480",
+				"to": "00:48:51,480"
+			},
+			"offsets": {
+				"from": 2930480,
+				"to": 2931480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:51,480",
+				"to": "00:48:52,480"
+			},
+			"offsets": {
+				"from": 2931480,
+				"to": 2932480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:52,480",
+				"to": "00:48:53,480"
+			},
+			"offsets": {
+				"from": 2932480,
+				"to": 2933480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:48:53,480",
+				"to": "00:48:54,480"
+			},
+			"offsets": {
+				"from": 2933480,
+				"to": 2934480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:04,480",
+				"to": "00:49:05,480"
+			},
+			"offsets": {
+				"from": 2944480,
+				"to": 2945480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:05,480",
+				"to": "00:49:06,480"
+			},
+			"offsets": {
+				"from": 2945480,
+				"to": 2946480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:06,480",
+				"to": "00:49:07,480"
+			},
+			"offsets": {
+				"from": 2946480,
+				"to": 2947480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:07,480",
+				"to": "00:49:08,480"
+			},
+			"offsets": {
+				"from": 2947480,
+				"to": 2948480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:08,480",
+				"to": "00:49:09,480"
+			},
+			"offsets": {
+				"from": 2948480,
+				"to": 2949480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:09,480",
+				"to": "00:49:10,480"
+			},
+			"offsets": {
+				"from": 2949480,
+				"to": 2950480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:10,480",
+				"to": "00:49:11,480"
+			},
+			"offsets": {
+				"from": 2950480,
+				"to": 2951480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:11,480",
+				"to": "00:49:12,480"
+			},
+			"offsets": {
+				"from": 2951480,
+				"to": 2952480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:12,480",
+				"to": "00:49:13,480"
+			},
+			"offsets": {
+				"from": 2952480,
+				"to": 2953480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:13,480",
+				"to": "00:49:14,480"
+			},
+			"offsets": {
+				"from": 2953480,
+				"to": 2954480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:14,480",
+				"to": "00:49:15,480"
+			},
+			"offsets": {
+				"from": 2954480,
+				"to": 2955480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:15,480",
+				"to": "00:49:16,480"
+			},
+			"offsets": {
+				"from": 2955480,
+				"to": 2956480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:16,480",
+				"to": "00:49:17,480"
+			},
+			"offsets": {
+				"from": 2956480,
+				"to": 2957480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:17,480",
+				"to": "00:49:18,480"
+			},
+			"offsets": {
+				"from": 2957480,
+				"to": 2958480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:18,480",
+				"to": "00:49:19,480"
+			},
+			"offsets": {
+				"from": 2958480,
+				"to": 2959480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:19,480",
+				"to": "00:49:20,480"
+			},
+			"offsets": {
+				"from": 2959480,
+				"to": 2960480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:20,480",
+				"to": "00:49:21,480"
+			},
+			"offsets": {
+				"from": 2960480,
+				"to": 2961480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:21,480",
+				"to": "00:49:22,480"
+			},
+			"offsets": {
+				"from": 2961480,
+				"to": 2962480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:22,480",
+				"to": "00:49:23,480"
+			},
+			"offsets": {
+				"from": 2962480,
+				"to": 2963480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:23,480",
+				"to": "00:49:24,480"
+			},
+			"offsets": {
+				"from": 2963480,
+				"to": 2964480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:34,480",
+				"to": "00:49:35,480"
+			},
+			"offsets": {
+				"from": 2974480,
+				"to": 2975480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:35,480",
+				"to": "00:49:36,480"
+			},
+			"offsets": {
+				"from": 2975480,
+				"to": 2976480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:36,480",
+				"to": "00:49:37,480"
+			},
+			"offsets": {
+				"from": 2976480,
+				"to": 2977480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:37,480",
+				"to": "00:49:38,480"
+			},
+			"offsets": {
+				"from": 2977480,
+				"to": 2978480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:38,480",
+				"to": "00:49:39,480"
+			},
+			"offsets": {
+				"from": 2978480,
+				"to": 2979480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:39,480",
+				"to": "00:49:40,480"
+			},
+			"offsets": {
+				"from": 2979480,
+				"to": 2980480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:40,480",
+				"to": "00:49:41,480"
+			},
+			"offsets": {
+				"from": 2980480,
+				"to": 2981480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:41,480",
+				"to": "00:49:42,480"
+			},
+			"offsets": {
+				"from": 2981480,
+				"to": 2982480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:42,480",
+				"to": "00:49:43,480"
+			},
+			"offsets": {
+				"from": 2982480,
+				"to": 2983480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:43,480",
+				"to": "00:49:44,480"
+			},
+			"offsets": {
+				"from": 2983480,
+				"to": 2984480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:44,480",
+				"to": "00:49:45,480"
+			},
+			"offsets": {
+				"from": 2984480,
+				"to": 2985480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:45,480",
+				"to": "00:49:46,480"
+			},
+			"offsets": {
+				"from": 2985480,
+				"to": 2986480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:46,480",
+				"to": "00:49:47,480"
+			},
+			"offsets": {
+				"from": 2986480,
+				"to": 2987480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:47,480",
+				"to": "00:49:48,480"
+			},
+			"offsets": {
+				"from": 2987480,
+				"to": 2988480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:48,480",
+				"to": "00:49:49,480"
+			},
+			"offsets": {
+				"from": 2988480,
+				"to": 2989480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:49,480",
+				"to": "00:49:50,480"
+			},
+			"offsets": {
+				"from": 2989480,
+				"to": 2990480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:50,480",
+				"to": "00:49:51,480"
+			},
+			"offsets": {
+				"from": 2990480,
+				"to": 2991480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:51,480",
+				"to": "00:49:52,480"
+			},
+			"offsets": {
+				"from": 2991480,
+				"to": 2992480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:52,480",
+				"to": "00:49:53,480"
+			},
+			"offsets": {
+				"from": 2992480,
+				"to": 2993480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:49:53,480",
+				"to": "00:49:54,480"
+			},
+			"offsets": {
+				"from": 2993480,
+				"to": 2994480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:04,480",
+				"to": "00:50:05,480"
+			},
+			"offsets": {
+				"from": 3004480,
+				"to": 3005480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:05,480",
+				"to": "00:50:06,480"
+			},
+			"offsets": {
+				"from": 3005480,
+				"to": 3006480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:06,480",
+				"to": "00:50:07,480"
+			},
+			"offsets": {
+				"from": 3006480,
+				"to": 3007480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:07,480",
+				"to": "00:50:08,480"
+			},
+			"offsets": {
+				"from": 3007480,
+				"to": 3008480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:08,480",
+				"to": "00:50:09,480"
+			},
+			"offsets": {
+				"from": 3008480,
+				"to": 3009480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:09,480",
+				"to": "00:50:10,480"
+			},
+			"offsets": {
+				"from": 3009480,
+				"to": 3010480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:10,480",
+				"to": "00:50:11,480"
+			},
+			"offsets": {
+				"from": 3010480,
+				"to": 3011480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:11,480",
+				"to": "00:50:12,480"
+			},
+			"offsets": {
+				"from": 3011480,
+				"to": 3012480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:12,480",
+				"to": "00:50:13,480"
+			},
+			"offsets": {
+				"from": 3012480,
+				"to": 3013480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:13,480",
+				"to": "00:50:14,480"
+			},
+			"offsets": {
+				"from": 3013480,
+				"to": 3014480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:14,480",
+				"to": "00:50:15,480"
+			},
+			"offsets": {
+				"from": 3014480,
+				"to": 3015480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:15,480",
+				"to": "00:50:16,480"
+			},
+			"offsets": {
+				"from": 3015480,
+				"to": 3016480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:16,480",
+				"to": "00:50:17,480"
+			},
+			"offsets": {
+				"from": 3016480,
+				"to": 3017480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:17,480",
+				"to": "00:50:18,480"
+			},
+			"offsets": {
+				"from": 3017480,
+				"to": 3018480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:18,480",
+				"to": "00:50:19,480"
+			},
+			"offsets": {
+				"from": 3018480,
+				"to": 3019480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:19,480",
+				"to": "00:50:20,480"
+			},
+			"offsets": {
+				"from": 3019480,
+				"to": 3020480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:20,480",
+				"to": "00:50:21,480"
+			},
+			"offsets": {
+				"from": 3020480,
+				"to": 3021480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:21,480",
+				"to": "00:50:22,480"
+			},
+			"offsets": {
+				"from": 3021480,
+				"to": 3022480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:22,480",
+				"to": "00:50:23,480"
+			},
+			"offsets": {
+				"from": 3022480,
+				"to": 3023480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:23,480",
+				"to": "00:50:24,480"
+			},
+			"offsets": {
+				"from": 3023480,
+				"to": 3024480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:34,480",
+				"to": "00:50:35,480"
+			},
+			"offsets": {
+				"from": 3034480,
+				"to": 3035480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:35,480",
+				"to": "00:50:36,480"
+			},
+			"offsets": {
+				"from": 3035480,
+				"to": 3036480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:36,480",
+				"to": "00:50:37,480"
+			},
+			"offsets": {
+				"from": 3036480,
+				"to": 3037480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:37,480",
+				"to": "00:50:38,480"
+			},
+			"offsets": {
+				"from": 3037480,
+				"to": 3038480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:38,480",
+				"to": "00:50:39,480"
+			},
+			"offsets": {
+				"from": 3038480,
+				"to": 3039480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:39,480",
+				"to": "00:50:40,480"
+			},
+			"offsets": {
+				"from": 3039480,
+				"to": 3040480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:40,480",
+				"to": "00:50:41,480"
+			},
+			"offsets": {
+				"from": 3040480,
+				"to": 3041480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:41,480",
+				"to": "00:50:42,480"
+			},
+			"offsets": {
+				"from": 3041480,
+				"to": 3042480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:42,480",
+				"to": "00:50:43,480"
+			},
+			"offsets": {
+				"from": 3042480,
+				"to": 3043480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:43,480",
+				"to": "00:50:44,480"
+			},
+			"offsets": {
+				"from": 3043480,
+				"to": 3044480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:44,480",
+				"to": "00:50:45,480"
+			},
+			"offsets": {
+				"from": 3044480,
+				"to": 3045480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:45,480",
+				"to": "00:50:46,480"
+			},
+			"offsets": {
+				"from": 3045480,
+				"to": 3046480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:46,480",
+				"to": "00:50:47,480"
+			},
+			"offsets": {
+				"from": 3046480,
+				"to": 3047480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:47,480",
+				"to": "00:50:48,480"
+			},
+			"offsets": {
+				"from": 3047480,
+				"to": 3048480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:48,480",
+				"to": "00:50:49,480"
+			},
+			"offsets": {
+				"from": 3048480,
+				"to": 3049480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:49,480",
+				"to": "00:50:50,480"
+			},
+			"offsets": {
+				"from": 3049480,
+				"to": 3050480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:50,480",
+				"to": "00:50:51,480"
+			},
+			"offsets": {
+				"from": 3050480,
+				"to": 3051480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:51,480",
+				"to": "00:50:52,480"
+			},
+			"offsets": {
+				"from": 3051480,
+				"to": 3052480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:52,480",
+				"to": "00:50:53,480"
+			},
+			"offsets": {
+				"from": 3052480,
+				"to": 3053480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:50:53,480",
+				"to": "00:50:54,480"
+			},
+			"offsets": {
+				"from": 3053480,
+				"to": 3054480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:04,480",
+				"to": "00:51:05,480"
+			},
+			"offsets": {
+				"from": 3064480,
+				"to": 3065480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:05,480",
+				"to": "00:51:06,480"
+			},
+			"offsets": {
+				"from": 3065480,
+				"to": 3066480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:06,480",
+				"to": "00:51:07,480"
+			},
+			"offsets": {
+				"from": 3066480,
+				"to": 3067480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:07,480",
+				"to": "00:51:08,480"
+			},
+			"offsets": {
+				"from": 3067480,
+				"to": 3068480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:08,480",
+				"to": "00:51:09,480"
+			},
+			"offsets": {
+				"from": 3068480,
+				"to": 3069480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:09,480",
+				"to": "00:51:10,480"
+			},
+			"offsets": {
+				"from": 3069480,
+				"to": 3070480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:10,480",
+				"to": "00:51:11,480"
+			},
+			"offsets": {
+				"from": 3070480,
+				"to": 3071480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:11,480",
+				"to": "00:51:12,480"
+			},
+			"offsets": {
+				"from": 3071480,
+				"to": 3072480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:12,480",
+				"to": "00:51:13,480"
+			},
+			"offsets": {
+				"from": 3072480,
+				"to": 3073480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:13,480",
+				"to": "00:51:14,480"
+			},
+			"offsets": {
+				"from": 3073480,
+				"to": 3074480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:14,480",
+				"to": "00:51:15,480"
+			},
+			"offsets": {
+				"from": 3074480,
+				"to": 3075480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:15,480",
+				"to": "00:51:16,480"
+			},
+			"offsets": {
+				"from": 3075480,
+				"to": 3076480
+			},
+			"text": " And the command to write is a 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:51:16,480",
+				"to": "00:51:17,480"
+			},
+			"offsets": {
+				"from": 3076480,
+				"to": 3077480
+			},
+			"text": " And the command to write is a 0."
+		}
+	]
+}
