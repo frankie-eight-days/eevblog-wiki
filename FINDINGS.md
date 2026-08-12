@@ -415,16 +415,31 @@ keeping both transcription paths rather than standardising early.
 communities against the Amp Hour's 26. Aggregating each community to a super-node
 and re-running gives 49.
 
-## YouTube throttling: the fast setting is the slow setting
+## YouTube throttling: it is a volume quota, not a rate limit
 
-| gap | burst rate | blocks | effective |
-|---|---|---|---|
-| 15s | ~100/h | 5 in 5h (30+60+120 min cooldowns) | **~16/h** |
-| 75s | ~42/h | none so far | **~42/h** |
+**This corrects an earlier conclusion in this file.** I first read the blocks as
+rate-triggered and slowed the downloader from a 15s gap to 75s. It ran clean for
+two and a half hours and then blocked anyway. Measuring every window in the log:
 
-It is the burst rate that trips the bot check, not the daily total. Backing off
-cleared a block that had held for two hours — so it is rate-triggered, not an IP
-ban. The local run's 90s gap sustained ten hours with one block.
+| videos before block | rate during window |
+|---|---|
+| 99 | 63/h |
+| 79 | 89/h |
+| 87 | 37/h |
+
+The block lands at **~85 videos whatever the pace**. 37/h and 89/h hit the same
+wall. Slowing down buys nothing — it stretches one quota over three times the
+wall-clock:
+
+    15s gap: ~85 videos in ~50 min + 30 min cooldown  -> ~64/h
+    75s gap: ~87 videos in 141 min + 30 min cooldown  -> ~30/h
+
+So spend the quota fast and wait out the cooldown. What misled me the first time
+was cooldown ESCALATION: resuming while the quota was still exhausted re-blocked
+instantly and doubled the wait (30 -> 60 -> 120), which looked like the fast
+setting being punished. It was the resume timing, not the gap.
+
+Blocks are not IP bans — every one has cleared on its own within 30-120 minutes.
 
 Two `api_run.py` bugs found the hard way:
 - `urlopen(timeout=1800)` — a hung socket parked each of 6 workers for 30 minutes,

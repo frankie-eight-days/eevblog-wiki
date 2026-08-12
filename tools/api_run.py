@@ -33,13 +33,18 @@ PRICE_PER_MIN = 0.006
 MAX_BYTES = 25 * 1024 * 1024
 
 N_API = 6                 # transcription is not the constraint; this is plenty
-# Measured, not guessed. The local whisper run used a 90s gap and took one block
-# in ten hours (~29 videos/h sustained). This run started at 15s, managed ~100/h,
-# and took five blocks in five hours -- each costing 30, then 60, then 120 minutes
-# of nothing. Averaged over the cooldowns the fast setting is SLOWER, and it is
-# the burst rate that trips the check, not the daily total. 75s splits the two and
-# should sustain ~40/h without stopping.
-DOWNLOAD_GAP_S = 75
+# It is a VOLUME quota, not a rate limit. Measured across four windows in this
+# log: 99 videos at 63/h, 79 at 89/h, 87 at 37/h -- the block lands at ~85 videos
+# whatever the pace. Slowing down therefore buys nothing; it stretches the same
+# quota over three times the wall-clock.
+#
+#   15s gap: ~85 videos in ~50 min + 30 min cooldown  -> ~64/h
+#   75s gap: ~87 videos in 141 min + 30 min cooldown  -> ~30/h
+#
+# So spend the quota fast and wait it out. (An earlier version of this comment
+# claimed the opposite -- "the fast setting is the slow setting" -- from a run
+# where cooldown escalation was mistaken for rate sensitivity.)
+DOWNLOAD_GAP_S = 15
 BOT_BLOCK = re.compile(r"not a bot|HTTP Error 429|Too Many Requests|"
                        r"Sign in to confirm you[’']?re", re.I)
 COOLDOWN_S = 1800
