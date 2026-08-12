@@ -3,6 +3,7 @@ video_id: Z8-oeMNQE_s
 title: Norwest Townhouse vs House Prices
 url: https://www.youtube.com/watch?v=Z8-oeMNQE_s
 source: youtube-asr
+timestamps: {"0": 3, "1": 17, "2": 33, "3": 50, "4": 64, "5": 78, "6": 92, "7": 107, "8": 120, "9": 135, "10": 148, "11": 163, "12": 175, "13": 191, "14": 204, "15": 221, "16": 233, "17": 249, "18": 260, "19": 273, "20": 289, "21": 303, "22": 315, "23": 332, "24": 346, "25": 358, "26": 374, "27": 385, "28": 402, "29": 416, "30": 428, "31": 439, "32": 451, "33": 463, "34": 480, "35": 496, "36": 510, "37": 530, "38": 545, "39": 560, "40": 576, "41": 592, "42": 610, "43": 622, "44": 637, "45": 649, "46": 662, "47": 672, "48": 686, "49": 700, "50": 714, "51": 729, "52": 740, "53": 759, "54": 776, "55": 791, "56": 803, "57": 816, "58": 835, "59": 847, "60": 861}
 ---
 
 **Dave Jones:** Hi. Someone in my recent bike ride video asked, "How much does it cost for a townhouse in Norwest, which is uh the business park that I'm in?" It's not just a business park now. A ton of people live here. It's huge up and

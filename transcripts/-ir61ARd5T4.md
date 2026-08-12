@@ -3,6 +3,7 @@ video_id: -ir61ARd5T4
 title: WTF is Wrong with my Rigol DL3021 Electronic Load?
 url: https://www.youtube.com/watch?v=-ir61ARd5T4
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 34, "3": 43, "4": 57, "5": 72, "6": 86, "7": 99, "8": 111, "9": 124, "10": 136, "11": 153, "12": 168, "13": 182, "14": 199, "15": 213, "16": 229, "17": 242, "18": 260, "19": 276, "20": 292, "21": 307, "22": 321, "23": 335, "24": 352, "25": 369, "26": 378, "27": 393, "28": 409, "29": 427, "30": 446, "31": 462, "32": 476}
 ---
 
 **Dave Jones:** Hi, yet another follow up video on this Goal Zero Yeti battery, but this one isn't really about that. It's about this Ryobi deal 3021 electronic load here, and it's a rather interesting problem. Look at this. So, I was just going to

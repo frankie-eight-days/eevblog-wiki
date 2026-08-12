@@ -3,6 +3,7 @@ video_id: ohr6tJTYnN8
 title: EEVblog #277 - Mailbag - Elektor / Matrix Multimedia E-Blocks
 url: https://www.youtube.com/watch?v=ohr6tJTYnN8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 49, "3": 73, "4": 87, "5": 104, "6": 120, "7": 131, "8": 149, "9": 164, "10": 174, "11": 190, "12": 208, "13": 229, "14": 244, "15": 263, "16": 279, "17": 294, "18": 310, "19": 328, "20": 344, "21": 359, "22": 372, "23": 387, "24": 402, "25": 415, "26": 429, "27": 447, "28": 461, "29": 479, "30": 501, "31": 515, "32": 530, "33": 549, "34": 564, "35": 580, "36": 600, "37": 622, "38": 636, "39": 652, "40": 666, "41": 678, "42": 697, "43": 712, "44": 726, "45": 743, "46": 756, "47": 775, "48": 792, "49": 808, "50": 823, "51": 836, "52": 850, "53": 865, "54": 881, "55": 898, "56": 912, "57": 929, "58": 942, "59": 960, "60": 973, "61": 988}
 ---
 
 **Dave Jones:** And here we have a box from Elector. I was clued up that this one would be coming and apparently it's uh some sort of uh educational uh kit or something that they've got something to that effect. Anyway, but uh

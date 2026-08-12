@@ -3,6 +3,7 @@ video_id: RIiiGReUZ3A
 title: EEVblog 1389 - Spanish Solar Pavement STUPIDITY
 url: https://www.youtube.com/watch?v=RIiiGReUZ3A
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 54, "4": 81, "5": 95, "6": 112, "7": 125, "8": 140, "9": 153, "10": 165, "11": 181, "12": 195, "13": 208, "14": 222, "15": 239, "16": 252, "17": 264, "18": 275, "19": 292, "20": 313, "21": 324, "22": 336, "23": 350, "24": 368, "25": 381, "26": 395, "27": 407, "28": 421, "29": 439, "30": 450, "31": 466, "32": 479, "33": 492, "34": 509, "35": 524, "36": 539, "37": 551, "38": 564, "39": 583, "40": 596, "41": 611, "42": 631, "43": 646, "44": 666, "45": 681, "46": 698, "47": 717, "48": 731, "49": 745, "50": 760, "51": 775, "52": 787, "53": 800, "54": 815, "55": 828, "56": 846, "57": 859, "58": 871, "59": 888, "60": 907, "61": 924, "62": 945, "63": 964, "64": 979, "65": 995, "66": 1009, "67": 1023, "68": 1035, "69": 1047, "70": 1058, "71": 1068, "72": 1087}
 ---
 
 **Dave Jones:** Hi. Yes, it's time to have a quick laugh at solar roadways again or solar pavement because it's just the gift that keeps on giving here on the EEV blog. This time, Spain. Hi to all my Spanish viewers in Barcelona in particular.

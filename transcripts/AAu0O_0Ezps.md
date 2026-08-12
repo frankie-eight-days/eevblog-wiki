@@ -3,6 +3,7 @@ video_id: AAu0O_0Ezps
 title: EEVblog #185 - Fluke 87V Multimeter GSM Fix!
 url: https://www.youtube.com/watch?v=AAu0O_0Ezps
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 31, "3": 46, "4": 61, "5": 80, "6": 91, "7": 104, "8": 119, "9": 134, "10": 149, "11": 164, "12": 178, "13": 197, "14": 215, "15": 232, "16": 247, "17": 262, "18": 282, "19": 296, "20": 313, "21": 330, "22": 343, "23": 360, "24": 374, "25": 390, "26": 404, "27": 417, "28": 432, "29": 447, "30": 461, "31": 478, "32": 490, "33": 501, "34": 519, "35": 533, "36": 549, "37": 564, "38": 580, "39": 597, "40": 609, "41": 622, "42": 635, "43": 655, "44": 672, "45": 687, "46": 712, "47": 725, "48": 739, "49": 755, "50": 771, "51": 793, "52": 812, "53": 826, "54": 837, "55": 852, "56": 870, "57": 886, "58": 904, "59": 921, "60": 936, "61": 949, "62": 966, "63": 981, "64": 995, "65": 1008, "66": 1032}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, back in October last year, quite a while ago, I showed the GSM mobile phone phone Fluke video thing,

@@ -3,6 +3,7 @@ video_id: s-oMJHYo8Sg
 title: Dumpster Diving Haul
 url: https://www.youtube.com/watch?v=s-oMJHYo8Sg
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 38, "3": 53, "4": 66, "5": 80, "6": 93, "7": 109, "8": 123, "9": 140, "10": 158, "11": 173, "12": 188, "13": 206, "14": 221, "15": 238, "16": 251, "17": 265}
 ---
 
 **Dave Jones:** Hi. Today in the dumpster room, we have a Panasonic Blu-ray player. Looks pretty good. Don't know what that plug pack's for. Looks like there's a one like a free view cable TV thing. I haven't even looked at Oh, subwoofer.

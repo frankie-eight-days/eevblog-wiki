@@ -3,6 +3,7 @@ video_id: rOdjN8ROrNI
 title: EEVblog #898 - LCD Contrast Experiments
 url: https://www.youtube.com/watch?v=rOdjN8ROrNI
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 27, "3": 44, "4": 60, "5": 75, "6": 89, "7": 106, "8": 119, "9": 131, "10": 146, "11": 162, "12": 175, "13": 186, "14": 201, "15": 216, "16": 233, "17": 250, "18": 263, "19": 274, "20": 290, "21": 303, "22": 321, "23": 335, "24": 351, "25": 366, "26": 381, "27": 395, "28": 411, "29": 423, "30": 441, "31": 457, "32": 470, "33": 489, "34": 503, "35": 514, "36": 526, "37": 543, "38": 560, "39": 577, "40": 594, "41": 613, "42": 622, "43": 635, "44": 651, "45": 665, "46": 679, "47": 693, "48": 707, "49": 725, "50": 742, "51": 759, "52": 775, "53": 788, "54": 801, "55": 815, "56": 826, "57": 838, "58": 855, "59": 868}
 ---
 
 **Dave Jones:** Hi, just going to do a quick video taking a look at an issue that some people have had with the EVBlog BM235 multimeter and that is the viewing angle of the LCD. So, I've got three other meters here just you know randomly

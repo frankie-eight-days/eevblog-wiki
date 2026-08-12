@@ -3,6 +3,7 @@ video_id: yMFGECYmXfc
 title: How Coins Are Made at the Royal Australian Mint
 url: https://www.youtube.com/watch?v=yMFGECYmXfc
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 31, "3": 47, "4": 63, "5": 79, "6": 95, "7": 112, "8": 128, "9": 148, "10": 166, "11": 177, "12": 192, "13": 212, "14": 232, "15": 247, "16": 265, "17": 283, "18": 296, "19": 314, "20": 332, "21": 349, "22": 364, "23": 380, "24": 397, "25": 412, "26": 426, "27": 440, "28": 459, "29": 475, "30": 488, "31": 501, "32": 520, "33": 537, "34": 555, "35": 570, "36": 588, "37": 604, "38": 619, "39": 634, "40": 649, "41": 667, "42": 682, "43": 703, "44": 724, "45": 740, "46": 754, "47": 770, "48": 789, "49": 808, "50": 826, "51": 840, "52": 856, "53": 870, "54": 881, "55": 898, "56": 918, "57": 933, "58": 951, "59": 965, "60": 979, "61": 995, "62": 1011, "63": 1024, "64": 1046, "65": 1062, "66": 1081}
 ---
 
 **Dave Jones:** I'm ready. Hi, I just want to uh take you for a little short tour through the Royal Australian Mint. This is where we make all of our uh coins and this is actually the production floor where it all

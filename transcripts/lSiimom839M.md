@@ -3,6 +3,7 @@ video_id: lSiimom839M
 title: CRAZY Fees Importing Into Australia!
 url: https://www.youtube.com/watch?v=lSiimom839M
 source: youtube-asr
+timestamps: {"0": 3, "1": 17, "2": 32, "3": 45, "4": 59, "5": 75, "6": 94, "7": 110, "8": 131, "9": 145, "10": 155, "11": 174, "12": 194, "13": 215, "14": 229, "15": 247, "16": 265, "17": 286, "18": 297, "19": 315, "20": 332, "21": 351, "22": 372, "23": 384, "24": 403, "25": 417, "26": 434, "27": 452, "28": 467, "29": 483, "30": 497, "31": 512, "32": 524, "33": 539, "34": 552}
 ---
 
 **Dave Jones:** Hi, just a quick second channel video because I thought this is rather interesting that a lot of people don't get to deal with this uh sort of thing. It's importing products into Australia here. In this case, uh the EEVblog 121

@@ -3,6 +3,7 @@ video_id: CK5nbC_dBWk
 title: Siglent Signal Generator FAIL
 url: https://www.youtube.com/watch?v=CK5nbC_dBWk
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 51, "4": 65, "5": 83, "6": 103, "7": 118, "8": 134, "9": 147, "10": 163, "11": 181, "12": 194, "13": 207, "14": 223, "15": 240, "16": 258, "17": 271, "18": 290, "19": 304, "20": 324, "21": 341, "22": 361, "23": 378, "24": 392, "25": 407, "26": 420, "27": 434, "28": 453, "29": 471, "30": 482, "31": 497, "32": 508, "33": 520, "34": 530, "35": 542, "36": 559, "37": 573, "38": 589, "39": 608, "40": 625, "41": 643, "42": 658, "43": 671, "44": 686, "45": 704, "46": 721, "47": 743, "48": 758}
 ---
 
 **Dave Jones:** Hi, check this out. We've got the Siglent SDG 2122X uh true waveform generator. It's pretty cool little uh value for money bang per buck device. You've seen me do a teardown of this, which I'll link in down below or whatever, but check this

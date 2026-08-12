@@ -3,6 +3,7 @@ video_id: AzIuayXzCvs
 title: Brymen / EEVblog BM235 Multimeter Unboxing
 url: https://www.youtube.com/watch?v=AzIuayXzCvs
 source: youtube-asr
+timestamps: {"0": 2, "1": 18, "2": 32, "3": 49, "4": 64, "5": 80, "6": 99, "7": 110, "8": 124, "9": 135, "10": 146, "11": 161, "12": 174, "13": 187, "14": 199, "15": 216, "16": 228, "17": 239, "18": 253, "19": 266, "20": 279, "21": 293, "22": 307, "23": 321, "24": 332, "25": 345, "26": 361, "27": 373, "28": 389, "29": 403, "30": 415, "31": 432, "32": 448, "33": 463, "34": 478, "35": 488, "36": 499, "37": 523, "38": 538, "39": 550, "40": 571, "41": 587, "42": 601, "43": 612, "44": 624, "45": 635, "46": 649, "47": 665, "48": 686, "49": 699, "50": 717, "51": 728, "52": 744, "53": 757, "54": 771, "55": 784, "56": 796, "57": 810, "58": 825, "59": 838, "60": 851}
 ---
 
 **Dave Jones:** Hi, I just thought I'd shoot a video unboxing my new EEVblog branded product which I'm sure I've mentioned before definitely on the forum. It's a re- basically a re-badged well well it is a re-badged Brymen multimeter. It's a

@@ -3,6 +3,7 @@ video_id: Ev121xAt_k4
 title: EEVblog #13 Part 2 of 2 - Comparison of PC Based Oscilloscopes
 url: https://www.youtube.com/watch?v=Ev121xAt_k4
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 41, "3": 57, "4": 74, "5": 97, "6": 117, "7": 134, "8": 150, "9": 166, "10": 181, "11": 193, "12": 212, "13": 226, "14": 242, "15": 259, "16": 274, "17": 293, "18": 307, "19": 325, "20": 340, "21": 357, "22": 371, "23": 391, "24": 404, "25": 418, "26": 433, "27": 447, "28": 468, "29": 486, "30": 499, "31": 519, "32": 535, "33": 550, "34": 571, "35": 588}
 ---
 
 **Dave Jones:** Many people have asked me, over the years and in particularly in recent times with these blogs, is it worth buying a PC based oscilloscope? And in general, the answer is no. I wouldn't waste your money buying a PC based oscilloscope. Now,

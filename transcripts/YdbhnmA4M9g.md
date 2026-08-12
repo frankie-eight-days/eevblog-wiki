@@ -3,6 +3,7 @@ video_id: YdbhnmA4M9g
 title: EEVblog #1009 - DC Fundamentals Part 1: Voltage vs Power vs Energy
 url: https://www.youtube.com/watch?v=YdbhnmA4M9g
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 43, "4": 60, "5": 75, "6": 92, "7": 106, "8": 125, "9": 138, "10": 152, "11": 166, "12": 181, "13": 196, "14": 213, "15": 231, "16": 247, "17": 262, "18": 278, "19": 295, "20": 307, "21": 325, "22": 342, "23": 363, "24": 384, "25": 404, "26": 415, "27": 431, "28": 450, "29": 467, "30": 480, "31": 494, "32": 511, "33": 526, "34": 538, "35": 552, "36": 569, "37": 585, "38": 598, "39": 612, "40": 628, "41": 644, "42": 660, "43": 676, "44": 691, "45": 707, "46": 724, "47": 739, "48": 757, "49": 770, "50": 788, "51": 805, "52": 817, "53": 833, "54": 849, "55": 862, "56": 879, "57": 894, "58": 911, "59": 923}
 ---
 
 **Dave Jones:** Hi, today we're going to take a look at what I think is one of the most misunderstood and misused terms in all of engineering. We're going to look at the difference between voltage, power, and energy because people mix these up

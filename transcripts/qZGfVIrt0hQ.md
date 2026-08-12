@@ -3,6 +3,7 @@ video_id: qZGfVIrt0hQ
 title: EEVblog Contest Announcement
 url: https://www.youtube.com/watch?v=qZGfVIrt0hQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 32, "3": 49, "4": 66, "5": 78, "6": 92, "7": 105, "8": 120, "9": 135, "10": 146, "11": 157, "12": 170}
 ---
 
 **Dave Jones:** Hi guys, quick announcement video. Yes, we've got another contest. It's been a while, but I thought, hey, we'll have another giveaway. So, yes, we've got the Fluke CNX multimeter again. But not just one this time. We've got two of these to

@@ -3,6 +3,7 @@ video_id: Rp7Od3ujsWQ
 title: Dumpster Dive Canon Printer
 url: https://www.youtube.com/watch?v=Rp7Od3ujsWQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 34, "3": 52, "4": 71, "5": 87, "6": 114, "7": 128, "8": 142, "9": 165, "10": 180, "11": 190, "12": 210, "13": 225, "14": 240}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time again. I found a this big Canon jobbie. Oh, it's well, it's tall, but it's actually very slim. Um I rather like it actually and it's got uh the two paper trays and it even comes with paper. That's handy

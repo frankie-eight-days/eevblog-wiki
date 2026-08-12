@@ -3,6 +3,7 @@ video_id: 4YQQ7oaRzM4
 title: Enphase Microinverters Temporary Removal
 url: https://www.youtube.com/watch?v=4YQQ7oaRzM4
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 33, "3": 48, "4": 67}
 ---
 
 **Dave Jones:** Hi, up on the roof just taking out the microinverters for the Nphase array here, 14 of them and uh I haven't cleaned them all. I just wanted to show you what condition they're in after they've been up here

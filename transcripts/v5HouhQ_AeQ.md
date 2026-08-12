@@ -3,6 +3,7 @@ video_id: v5HouhQ_AeQ
 title: EEVblog #307 - Lab Lighting & Measurement
 url: https://www.youtube.com/watch?v=v5HouhQ_AeQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 46, "4": 62, "5": 73, "6": 88, "7": 102, "8": 119, "9": 133, "10": 144, "11": 159, "12": 173, "13": 189, "14": 208, "15": 222, "16": 238, "17": 254, "18": 273, "19": 289, "20": 303, "21": 319, "22": 333, "23": 346, "24": 367, "25": 380, "26": 398, "27": 414, "28": 427, "29": 442, "30": 454, "31": 472, "32": 487, "33": 505, "34": 524, "35": 539, "36": 555, "37": 568, "38": 584, "39": 598, "40": 616, "41": 630, "42": 642, "43": 659, "44": 673, "45": 690, "46": 703, "47": 716, "48": 733, "49": 748, "50": 762, "51": 779, "52": 796, "53": 812, "54": 830, "55": 845, "56": 865, "57": 881, "58": 906, "59": 932, "60": 951, "61": 965, "62": 992, "63": 1010, "64": 1026}
 ---
 
 **Dave Jones:** Hi, just a quick one. Not really electronics related as such, but uh you know, I figure I'd at least shoot a video about it. Now, this is my lab, obviously, and the lighting in here is actually pretty piss poor. And if you've

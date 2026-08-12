@@ -3,6 +3,7 @@ video_id: m_8jh_MpWBE
 title: EEVblog 1581 - Tesla Roadster now OPEN SOURCE?
 url: https://www.youtube.com/watch?v=m_8jh_MpWBE
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 48, "4": 66, "5": 80, "6": 95, "7": 106, "8": 127, "9": 144, "10": 159, "11": 174, "12": 191, "13": 207, "14": 225, "15": 236, "16": 252, "17": 271, "18": 287, "19": 300, "20": 314, "21": 335, "22": 352, "23": 365, "24": 379, "25": 395, "26": 411, "27": 428, "28": 438, "29": 456, "30": 470, "31": 485, "32": 504, "33": 523, "34": 533, "35": 550, "36": 570, "37": 583, "38": 599, "39": 614, "40": 636, "41": 649, "42": 665, "43": 681, "44": 696, "45": 716, "46": 729, "47": 745, "48": 756, "49": 773, "50": 786, "51": 803, "52": 816, "53": 831, "54": 847, "55": 861, "56": 876, "57": 887, "58": 901, "59": 916, "60": 933, "61": 947, "62": 960, "63": 975, "64": 987, "65": 998, "66": 1009, "67": 1022}
 ---
 
 **Dave Jones:** Hi, Elon Musk has just posted or tweeted, "Our old design and engineering of the original Tesla Roadster is now fully open source. Whatever we have, you now have. service.tesla.com/roadster." Okay, I thought we'd check it out. Do you Do we actually get everything? Cuz,

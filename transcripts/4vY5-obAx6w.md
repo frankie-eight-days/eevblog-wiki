@@ -3,6 +3,7 @@ video_id: 4vY5-obAx6w
 title: Deye Hybrid Solar Inverter RTC FAIL!
 url: https://www.youtube.com/watch?v=4vY5-obAx6w
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 35, "3": 52, "4": 69, "5": 81, "6": 97, "7": 114, "8": 129, "9": 148, "10": 161, "11": 175, "12": 192, "13": 208, "14": 223, "15": 235, "16": 251, "17": 264, "18": 276, "19": 291, "20": 303, "21": 315, "22": 328, "23": 340, "24": 355, "25": 371, "26": 385, "27": 397, "28": 411, "29": 424, "30": 437, "31": 452, "32": 470}
 ---
 
 **Dave Jones:** Hi, it's time for another problem with my DIY hybrid solar inverter here. Um yes, again. And this one is really freaking annoying. It's practically a showstopper at the moment um because I just changed my electricity plan and I've now got uh three

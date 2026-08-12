@@ -3,6 +3,7 @@ video_id: lYmfVMWbIHQ
 title: EEVblog #1273 - EMC Near Field vs Far Field Explained
 url: https://www.youtube.com/watch?v=lYmfVMWbIHQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 32, "3": 42, "4": 55, "5": 67, "6": 79, "7": 92, "8": 107, "9": 123, "10": 137, "11": 155, "12": 171, "13": 187, "14": 201, "15": 214, "16": 230, "17": 245, "18": 255, "19": 272, "20": 283, "21": 296, "22": 308, "23": 322, "24": 335, "25": 349, "26": 362, "27": 380, "28": 394, "29": 409, "30": 423, "31": 436, "32": 451, "33": 465, "34": 479, "35": 494, "36": 507, "37": 522, "38": 533, "39": 548, "40": 566, "41": 579, "42": 592, "43": 604, "44": 619, "45": 636, "46": 651, "47": 665, "48": 679, "49": 696, "50": 708, "51": 726, "52": 743, "53": 761, "54": 776, "55": 792, "56": 807, "57": 825, "58": 837, "59": 854, "60": 870, "61": 887, "62": 903, "63": 917, "64": 936, "65": 952}
 ---
 
 **Dave Jones:** Hi, I recently needed to find some of my own content actually, which is not quite unusual. I needed to link to it and it turns out it was I wanted my explanation of near field versus far field EMC or electromagnetic

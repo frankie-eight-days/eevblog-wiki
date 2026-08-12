@@ -3,6 +3,7 @@ video_id: mK8WrWCavW0
 title: Another i7 Dumpster PC - Best CPU yet!
 url: https://www.youtube.com/watch?v=mK8WrWCavW0
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 34, "3": 58, "4": 77, "5": 91, "6": 107, "7": 124, "8": 144, "9": 159, "10": 173, "11": 186, "12": 205}
 ---
 
 **Dave Jones:** Hi, just a quick second channel video, another dumpster PC. This came with the one I the Lenovo all-in-one PC I found on the main channel. This is a HP Pavilion thing. Doesn't look anything spectacular. Intel inside Core i7. Does

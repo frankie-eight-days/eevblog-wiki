@@ -3,6 +3,7 @@ video_id: BhnoSREmWVY
 title: EEVblog #881 - Fontus Self Filling Water Bottle BUSTED!
 url: https://www.youtube.com/watch?v=BhnoSREmWVY
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 38, "3": 53, "4": 65, "5": 83, "6": 95, "7": 109, "8": 125, "9": 137, "10": 151, "11": 165, "12": 181, "13": 193, "14": 207, "15": 225, "16": 242, "17": 257, "18": 274, "19": 290, "20": 307, "21": 320, "22": 335, "23": 353, "24": 367, "25": 381, "26": 397, "27": 416, "28": 434, "29": 451, "30": 465, "31": 479, "32": 494, "33": 507, "34": 518, "35": 534, "36": 546, "37": 562, "38": 580, "39": 597, "40": 610, "41": 624, "42": 639, "43": 657, "44": 678, "45": 689, "46": 704, "47": 717, "48": 729, "49": 743, "50": 761, "51": 775, "52": 790, "53": 803, "54": 816, "55": 828, "56": 842, "57": 857, "58": 872, "59": 885, "60": 899, "61": 910, "62": 929}
 ---
 
 **Dave Jones:** Hi, it's Shonky Product Bustin Time again with love this year on the EE blog. I got many requests for this one and it's been discussed on the forum and various places. It's the Fontus, the self-filling water bottle on the

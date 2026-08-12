@@ -3,6 +3,7 @@ video_id: 6mLLSF3he28
 title: Today in the Dumpster
 url: https://www.youtube.com/watch?v=6mLLSF3he28
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 53, "4": 71, "5": 88, "6": 104, "7": 116, "8": 135, "9": 148, "10": 164, "11": 178, "12": 195, "13": 210, "14": 222}
 ---
 
 **Dave Jones:** Hi, another dumpster diving video and tada the same dumpster as yesterday. It's a whole bunch of keyboards. Um Oh, is that a Is that a toaster? I think that's a toaster. Another keyboard and it looks like a Wi-Fi router, D-Link

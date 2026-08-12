@@ -3,6 +3,7 @@ video_id: 9jDsNe_bmtE
 title: EEVblog #42 - Exploding Capacitors in High Speed
 url: https://www.youtube.com/watch?v=9jDsNe_bmtE
 source: youtube-asr
+timestamps: {"0": 11, "1": 23, "2": 38, "3": 53, "4": 67, "5": 85, "6": 102, "7": 117, "8": 129, "9": 144, "10": 197, "11": 232, "12": 251, "13": 267, "14": 279, "15": 298, "16": 310, "17": 325, "18": 340, "19": 353, "20": 374}
 ---
 
 **Dave Jones:** As I said, I've got this new camcorder. It does It's got this mode. It's 300 frames per second. Wow, this high-speed video mode. And it's It's not full HD. It can't do full HD at that. In fact, it

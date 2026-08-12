@@ -3,6 +3,7 @@ video_id: HicV3Z6XLFA
 title: EEVblog #954 - How To Setup An Electronics Lab For $300
 url: https://www.youtube.com/watch?v=HicV3Z6XLFA
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 23, "3": 35, "4": 45, "5": 57, "6": 74, "7": 89, "8": 100, "9": 114, "10": 128, "11": 143, "12": 158, "13": 171, "14": 183, "15": 197, "16": 210, "17": 220, "18": 234, "19": 250, "20": 261, "21": 271, "22": 284, "23": 294, "24": 310, "25": 323, "26": 334, "27": 346, "28": 356, "29": 368, "30": 380, "31": 390, "32": 403, "33": 413, "34": 424, "35": 436, "36": 449, "37": 460, "38": 471, "39": 484, "40": 497, "41": 508, "42": 522, "43": 538, "44": 552, "45": 567, "46": 580, "47": 594, "48": 607, "49": 620, "50": 633, "51": 645, "52": 660, "53": 678, "54": 691, "55": 702, "56": 714}
 ---
 
 **Dave Jones:** Hi, one of my most popular videos is how to set up an electronics lab or a decent electronics lab. It's got over half a million views and I'll link it in down below if you haven't seen it. Now, there

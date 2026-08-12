@@ -3,6 +3,7 @@ video_id: S0xKYgWgrc8
 title: Hunter WarBirds Museum - Top View
 url: https://www.youtube.com/watch?v=S0xKYgWgrc8
 source: youtube-asr
+timestamps: {"0": 2, "1": 23, "2": 42, "3": 61, "4": 79}
 ---
 
 **Dave Jones:** Hi, just an extra video from the scone warbirds Aviation Museum here. Just a look from the top for those who want to see the lineup from up here. Might upload this as a second video, but it's very cool. And that Spitfire down

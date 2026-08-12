@@ -3,6 +3,7 @@ video_id: sO5iGwHpmHc
 title: EEVblog #37 - Rigol DS1052E Oscilloscope Teardown
 url: https://www.youtube.com/watch?v=sO5iGwHpmHc
 source: youtube-asr
+timestamps: {"0": 11, "1": 26, "2": 41, "3": 56, "4": 71, "5": 92, "6": 112, "7": 127, "8": 144, "9": 158, "10": 174, "11": 186, "12": 206, "13": 225, "14": 237, "15": 252, "16": 267, "17": 280, "18": 297, "19": 311, "20": 329, "21": 342, "22": 357, "23": 368, "24": 384, "25": 396, "26": 413, "27": 425, "28": 440, "29": 456, "30": 470, "31": 491, "32": 507, "33": 522, "34": 536, "35": 551, "36": 568, "37": 583}
 ---
 
 **Dave Jones:** Hi, welcome to the blog. I'm your host Dave Jones. And this time around we've got an old friend we're going to revisit, the Rigol DS1052E oscilloscope. I've reviewed this before. People can't get enough of it. We've looked at it a couple of times in

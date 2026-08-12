@@ -3,6 +3,7 @@ video_id: WzCVyOnota8
 title: EEVblog #280-5 - Talking Electronics - Old Hardware - Part 5 of 5
 url: https://www.youtube.com/watch?v=WzCVyOnota8
 source: youtube-asr
+timestamps: {"0": 10, "1": 22, "2": 34, "3": 48, "4": 56, "5": 69, "6": 83, "7": 100, "8": 119, "9": 134, "10": 150, "11": 163, "12": 180, "13": 192, "14": 206, "15": 222, "16": 236, "17": 246, "18": 261, "19": 274, "20": 290, "21": 304, "22": 319, "23": 332, "24": 343, "25": 359, "26": 375, "27": 392, "28": 403, "29": 415, "30": 432, "31": 447, "32": 458, "33": 469, "34": 487, "35": 501, "36": 519, "37": 532, "38": 545, "39": 561, "40": 572, "41": 587, "42": 601, "43": 617, "44": 631, "45": 642}
 ---
 
 **Dave Jones:** And you've got some goodies to show us. Well, I did look I've just brought one box of items. It's a mixture of different things but Yep. people will remember some of the things from the magazine. All right. I'm going to get some

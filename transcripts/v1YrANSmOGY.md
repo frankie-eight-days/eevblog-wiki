@@ -3,6 +3,7 @@ video_id: v1YrANSmOGY
 title: EEVblog #25 - The Infinite Resistor Puzzle
 url: https://www.youtube.com/watch?v=v1YrANSmOGY
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 50, "4": 65, "5": 82, "6": 95, "7": 116, "8": 127, "9": 143, "10": 163, "11": 176, "12": 191, "13": 199, "14": 218, "15": 232, "16": 249, "17": 262, "18": 279, "19": 290, "20": 303, "21": 318, "22": 335, "23": 353, "24": 369, "25": 390, "26": 407, "27": 420, "28": 440, "29": 460, "30": 479, "31": 496, "32": 509, "33": 525, "34": 540}
 ---
 
 **Dave Jones:** Hi, welcome to the AEV blog. I'm your host, Dave Jones, and this is episode number 25. I was reading the sci-electronics design newsgroup the other day, like I normally do, and somebody posted a question. It's a classic question that's been

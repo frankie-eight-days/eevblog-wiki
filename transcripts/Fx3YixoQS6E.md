@@ -3,6 +3,7 @@ video_id: Fx3YixoQS6E
 title: Improving the Rigol MHO98 Boot Time + Low Power Mode
 url: https://www.youtube.com/watch?v=Fx3YixoQS6E
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 33, "3": 55, "4": 76, "5": 89, "6": 120, "7": 134, "8": 147, "9": 159, "10": 174, "11": 188, "12": 204, "13": 217}
 ---
 
 **Dave Jones:** Hi, just a quick video on the new Rigol MHO 980 series. Somebody mentioned that maybe the slow boot time is due to the SD card used. And this is a Lexar jobby. It's a class one or whatever it is.

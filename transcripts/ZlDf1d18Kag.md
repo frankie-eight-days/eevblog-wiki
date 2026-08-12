@@ -3,6 +3,7 @@ video_id: ZlDf1d18Kag
 title: Another Horror Alkaline Battery Leakage Teardown. RIP Magellen GPS
 url: https://www.youtube.com/watch?v=ZlDf1d18Kag
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 43, "4": 64, "5": 81, "6": 98, "7": 108, "8": 132, "9": 148, "10": 164, "11": 186, "12": 205, "13": 226, "14": 241, "15": 260, "16": 272, "17": 288, "18": 306, "19": 326, "20": 341, "21": 354, "22": 371, "23": 388, "24": 405, "25": 420, "26": 441, "27": 461, "28": 479, "29": 496, "30": 510, "31": 520, "32": 543, "33": 565, "34": 584, "35": 606, "36": 625, "37": 644, "38": 663, "39": 678, "40": 698, "41": 713, "42": 729}
 ---
 
 **Dave Jones:** Hi, got another repair video. This is a GPS. One of those old school GPS's, you know, before we had those new fangled shoe phones uh that have the GPS built-in. It used to have a GPS like this. Although I was a Garmin ER man. I

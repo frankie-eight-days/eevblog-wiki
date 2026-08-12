@@ -3,6 +3,7 @@ video_id: nN8uYDQHvpI
 title: EEVblog #551 - Sydney Mini Maker Faire 2013
 url: https://www.youtube.com/watch?v=nN8uYDQHvpI
 source: youtube-asr
+timestamps: {"0": 20, "1": 32, "2": 45, "3": 56, "4": 70, "5": 80, "6": 109, "7": 126, "8": 142, "9": 170, "10": 189, "11": 207, "12": 224, "13": 241, "14": 263, "15": 278, "16": 292, "17": 306, "18": 347, "19": 360, "20": 373, "21": 395, "22": 404, "23": 418, "24": 454, "25": 477, "26": 501, "27": 518, "28": 531, "29": 550, "30": 565, "31": 609, "32": 624, "33": 640, "34": 655, "35": 686, "36": 701, "37": 720, "38": 738, "39": 754, "40": 768, "41": 779, "42": 790, "43": 806}
 ---
 
 **Dave Jones:** didn't want to do a controller. And tell us about the Aru phone. This is the latest prototype. You just got it. It is. So, this is an Arduino compatible board. If you ignore this part of it, it looks just like an Arduino. In fact, if

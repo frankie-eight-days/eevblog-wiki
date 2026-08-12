@@ -3,6 +3,7 @@ video_id: 8MC93KxPTHA
 title: Dumpster Diving Fire Resistant Safe
 url: https://www.youtube.com/watch?v=8MC93KxPTHA
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 47, "4": 60, "5": 75, "6": 89, "7": 103, "8": 117, "9": 132, "10": 156, "11": 174, "12": 191, "13": 203, "14": 220, "15": 235, "16": 253, "17": 267, "18": 277, "19": 295, "20": 303, "21": 319, "22": 333, "23": 349, "24": 366, "25": 386, "26": 405, "27": 420, "28": 433, "29": 448, "30": 464, "31": 477, "32": 492, "33": 506, "34": 521, "35": 535, "36": 546, "37": 558, "38": 575, "39": 587, "40": 599, "41": 612, "42": 626, "43": 639, "44": 659, "45": 673, "46": 687, "47": 704, "48": 720, "49": 733, "50": 750, "51": 760, "52": 777, "53": 791, "54": 804}
 ---
 
 **Dave Jones:** Hi, check out what I found in the dumpster. It's a safe, and I'm using the word quote marks because I've done quite a few videos on safes, how to crack into cheap safes five different ways. I've done videos doing teardowns and

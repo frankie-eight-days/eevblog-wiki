@@ -3,6 +3,7 @@ video_id: MFQ0jO6gtQI
 title: MORE Peter Popoff SCAM MAIL!
 url: https://www.youtube.com/watch?v=MFQ0jO6gtQI
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 33, "3": 50, "4": 68, "5": 84, "6": 97, "7": 110, "8": 126, "9": 138, "10": 152, "11": 173, "12": 185, "13": 196, "14": 211, "15": 223, "16": 239, "17": 255, "18": 269, "19": 286, "20": 303, "21": 320, "22": 339, "23": 350, "24": 368, "25": 382, "26": 400, "27": 413, "28": 429, "29": 442, "30": 458, "31": 471, "32": 487, "33": 500, "34": 519, "35": 533, "36": 552, "37": 562, "38": 579}
 ---
 
 **Dave Jones:** And here we go again, more Peter Popoff scam [ __ ] Um, and yes, look at all that. It's ridiculous. What an absolute reprehensible human uh this Peter Popoff is. He's still around. I'm like I've done previous videos on this. Anyway, I got a couple

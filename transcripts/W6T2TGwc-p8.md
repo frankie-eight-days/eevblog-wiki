@@ -3,6 +3,7 @@ video_id: W6T2TGwc-p8
 title: AI Slop of the Day - Award Winner (Multimeters)
 url: https://www.youtube.com/watch?v=W6T2TGwc-p8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 33, "3": 46, "4": 61, "5": 76, "6": 90, "7": 107, "8": 125, "9": 146, "10": 162, "11": 175, "12": 188, "13": 203, "14": 217, "15": 233, "16": 248, "17": 263, "18": 278, "19": 293, "20": 309, "21": 321, "22": 333, "23": 354, "24": 370, "25": 382, "26": 398, "27": 408, "28": 424, "29": 437, "30": 449, "31": 468, "32": 482, "33": 497, "34": 511, "35": 525, "36": 539, "37": 564, "38": 576, "39": 596, "40": 614, "41": 630, "42": 645, "43": 659, "44": 671, "45": 690, "46": 710, "47": 724, "48": 741, "49": 754, "50": 770}
 ---
 
 **Dave Jones:** Hi, it's AI slop of the daytime. This one showed it up in my recommendations and I thought I'd share it with you because they're muscling in on my turf or us YouTubers turf and it's the $15 versus $30

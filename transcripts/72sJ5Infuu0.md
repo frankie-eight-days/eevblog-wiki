@@ -3,6 +3,7 @@ video_id: 72sJ5Infuu0
 title: EEVblog #365 - ESR Meter Bad Cap Monitor Repair
 url: https://www.youtube.com/watch?v=72sJ5Infuu0
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 34, "3": 50, "4": 76, "5": 98, "6": 115, "7": 130, "8": 145, "9": 158, "10": 171, "11": 185, "12": 201, "13": 218, "14": 233, "15": 253, "16": 273, "17": 290, "18": 307, "19": 322, "20": 338, "21": 358, "22": 375, "23": 390, "24": 408, "25": 424, "26": 441, "27": 456, "28": 477, "29": 499, "30": 512, "31": 532, "32": 544, "33": 558, "34": 573, "35": 594, "36": 606, "37": 624, "38": 640, "39": 653, "40": 670, "41": 686, "42": 704, "43": 726, "44": 738, "45": 753, "46": 769, "47": 783, "48": 804, "49": 820, "50": 839, "51": 853, "52": 874, "53": 892, "54": 908, "55": 926, "56": 943, "57": 963}
 ---
 
 **Dave Jones:** And it's junk been time again, and yes, you guessed it, it's another monitor, another non-working one. I found this one inside a box for a new monitor. I saw the empty box there and I thought, "Oh, I wonder if there's anything in

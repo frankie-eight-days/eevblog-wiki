@@ -3,6 +3,7 @@ video_id: Dv5d2oIAjZ8
 title: Abloy Protec2 - Challenge to The Lockpicking Lawyer
 url: https://www.youtube.com/watch?v=Dv5d2oIAjZ8
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 27, "3": 45, "4": 63, "5": 78, "6": 95, "7": 110, "8": 123, "9": 141, "10": 153, "11": 167, "12": 181, "13": 198, "14": 211, "15": 228, "16": 242, "17": 261, "18": 273, "19": 293, "20": 312, "21": 328, "22": 343, "23": 360, "24": 378, "25": 391, "26": 409, "27": 423, "28": 435, "29": 450, "30": 463, "31": 478, "32": 492, "33": 511, "34": 524, "35": 541, "36": 561}
 ---
 
 **Dave Jones:** Hi, just a quick one. I'm down here in the dungeon and it probably sounds like a dungeon. Down in the EV log lab buildings in my new store room and I thought I would actually replace the lock here to match

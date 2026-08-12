@@ -3,6 +3,7 @@ video_id: WHO8NBfpaO0
 title: eevBLAB 102 - Last Mile Autonomous Robot Deliveries WILL FAIL
 url: https://www.youtube.com/watch?v=WHO8NBfpaO0
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 35, "3": 49, "4": 61, "5": 75, "6": 91, "7": 106, "8": 120, "9": 133, "10": 146, "11": 159, "12": 169, "13": 184, "14": 196, "15": 208, "16": 219, "17": 231, "18": 250, "19": 264, "20": 275, "21": 287, "22": 299, "23": 310, "24": 322, "25": 337, "26": 348, "27": 366, "28": 378, "29": 391, "30": 403, "31": 416, "32": 432, "33": 444, "34": 458, "35": 469, "36": 486, "37": 499, "38": 513, "39": 525, "40": 536, "41": 547, "42": 558, "43": 570, "44": 579, "45": 591, "46": 604, "47": 618, "48": 627, "49": 639, "50": 655, "51": 667, "52": 678, "53": 689, "54": 700, "55": 713, "56": 727}
 ---
 
 **Dave Jones:** Hi, let's talk about this last mile delivery thing. I've got something here popped up today on Reuters Science News. We'll talk about this a pizza delivery autonomous thing. But this whole last mile delivery problem has been around for like a decade now. And all these

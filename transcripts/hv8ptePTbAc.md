@@ -3,6 +3,7 @@ video_id: hv8ptePTbAc
 title: R&S RTB2004 Firmware Update
 url: https://www.youtube.com/watch?v=hv8ptePTbAc
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 49, "4": 64, "5": 77, "6": 96, "7": 109, "8": 125, "9": 147, "10": 158, "11": 170, "12": 184, "13": 200, "14": 213, "15": 230, "16": 247, "17": 269, "18": 283, "19": 300, "20": 312, "21": 329, "22": 346, "23": 361}
 ---
 
 **Dave Jones:** Hi, just a quick video updating the Rohde & Schwarz RTB2004 oscilloscope here because they've come out with some new version 3 firmware. I've been running version 2.4 on this I think it is and they've added some new features 7 years later which is you know

@@ -3,6 +3,7 @@ video_id: 2OHMNGi1RUY
 title: EEVblog #457 - Oscillator Calibration Followup
 url: https://www.youtube.com/watch?v=2OHMNGi1RUY
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 36, "3": 54, "4": 71, "5": 87, "6": 101, "7": 113, "8": 127, "9": 140, "10": 155, "11": 174, "12": 187, "13": 200, "14": 211, "15": 226, "16": 241, "17": 260, "18": 274, "19": 287, "20": 299, "21": 311, "22": 335, "23": 352, "24": 369, "25": 383, "26": 399, "27": 417, "28": 431, "29": 445, "30": 458, "31": 469, "32": 485, "33": 501, "34": 515, "35": 531, "36": 548, "37": 564, "38": 577, "39": 598, "40": 613, "41": 631, "42": 647, "43": 663}
 ---
 
 **Dave Jones:** Hi, just another very quick follow-up video from the previous one. If you haven't seen it, click here and you'll be able to watch that where I adjusted this Agilent frequency counter I've got that's just got its built-in 5 ppm standard. I adjusted the

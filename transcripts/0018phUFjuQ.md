@@ -3,6 +3,7 @@ video_id: 0018phUFjuQ
 title: Citizen EcoDrive Watch Battery Replacement
 url: https://www.youtube.com/watch?v=0018phUFjuQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 47, "4": 62, "5": 77, "6": 89, "7": 108, "8": 120, "9": 142, "10": 156, "11": 170, "12": 187, "13": 207, "14": 223, "15": 241, "16": 255, "17": 271, "18": 281, "19": 298, "20": 315, "21": 339, "22": 356, "23": 369, "24": 385, "25": 400, "26": 415, "27": 431, "28": 448, "29": 463, "30": 476, "31": 489, "32": 503}
 ---
 
 **Dave Jones:** Hi, it's time for a quick battery replacement. Mrs. EVBlog has tasked me, so it must be done. Um, don't think I can do it today because we have something a little bit special today. This is a Citizen Eco-Drive. Look at

@@ -3,6 +3,7 @@ video_id: hVIo7vmIExw
 title: Mystery Dumpster Teardown - 2020-06-12
 url: https://www.youtube.com/watch?v=hVIo7vmIExw
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 43, "4": 56, "5": 73, "6": 92, "7": 108, "8": 120, "9": 137, "10": 154, "11": 170, "12": 183, "13": 198, "14": 211, "15": 224, "16": 237, "17": 251, "18": 264, "19": 279, "20": 293, "21": 307, "22": 321, "23": 333, "24": 348, "25": 365, "26": 384, "27": 401, "28": 417, "29": 433, "30": 446, "31": 462, "32": 475, "33": 492, "34": 509, "35": 525, "36": 539, "37": 551, "38": 565, "39": 580, "40": 594, "41": 609, "42": 623, "43": 638, "44": 654, "45": 668, "46": 684, "47": 702, "48": 724, "49": 738, "50": 754, "51": 765, "52": 782, "53": 804, "54": 815, "55": 826}
 ---
 
 **Dave Jones:** Hi, it's mystery dumpster teardown time again cuz this seems to be a very popular thing. I mean even I've done it quite a few times in the past, but recently one of my dumpster mystery teardowns got 55,000 views on the second

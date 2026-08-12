@@ -3,6 +3,7 @@ video_id: PWX71U_YG6g
 title: EEVblog 1687 - A Pointless Alkaline Battery LEAKAGE Repair
 url: https://www.youtube.com/watch?v=PWX71U_YG6g
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 52, "4": 67, "5": 84, "6": 100, "7": 117, "8": 133, "9": 147, "10": 162, "11": 175, "12": 191, "13": 208, "14": 225, "15": 239, "16": 259, "17": 276, "18": 292, "19": 311, "20": 326, "21": 341, "22": 355, "23": 368, "24": 384, "25": 400, "26": 424, "27": 448, "28": 461, "29": 480, "30": 497, "31": 510, "32": 525, "33": 532, "34": 546, "35": 564, "36": 578, "37": 594, "38": 609, "39": 625, "40": 640, "41": 655, "42": 671, "43": 685, "44": 700, "45": 714, "46": 731, "47": 740, "48": 752, "49": 766}
 ---
 
 **Dave Jones:** Hi, we've got another unfortunate incident here. I was uh playing around with my Agilent/Keysight um it should be HP, not that Keysight or Agilent rubbish, uh Bluetooth adapter here for their um series of multimeters. It's got the IR uh serial interface

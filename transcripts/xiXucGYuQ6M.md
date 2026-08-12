@@ -3,6 +3,7 @@ video_id: xiXucGYuQ6M
 title: Australian Right to Repair Inquiry with Productivity Commissioner Paul Lindwall
 url: https://www.youtube.com/watch?v=xiXucGYuQ6M
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 32, "3": 46, "4": 60, "5": 74, "6": 86, "7": 99, "8": 114, "9": 128, "10": 147, "11": 162, "12": 178, "13": 191, "14": 203, "15": 218, "16": 238, "17": 254, "18": 269, "19": 286, "20": 301, "21": 313, "22": 325, "23": 341, "24": 356, "25": 372, "26": 386, "27": 405, "28": 421, "29": 434, "30": 453, "31": 474, "32": 494, "33": 513, "34": 530, "35": 546, "36": 561, "37": 578, "38": 595, "39": 610, "40": 627, "41": 641, "42": 658, "43": 675, "44": 695, "45": 712, "46": 727, "47": 744, "48": 761, "49": 779, "50": 794, "51": 810, "52": 823, "53": 841, "54": 854, "55": 874, "56": 891, "57": 909, "58": 926, "59": 940, "60": 960, "61": 977, "62": 996, "63": 1014, "64": 1031, "65": 1049, "66": 1069, "67": 1084, "68": 1102, "69": 1116, "70": 1129, "71": 1149, "72": 1168, "73": 1186, "74": 1203, "75": 1217, "76": 1234, "77": 1250, "78": 1263, "79": 1278}
 ---
 
 **Dave Jones:** Um, next I would like to invite Commissioner Paul Lindwall from the Productivity Commission to come and speak about the um, Productivity Commission's right to repair inquiry. I'd like to also acknowledge um, Commissioner Julie Abramson who's here as well. So, thank you very much for

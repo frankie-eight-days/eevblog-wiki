@@ -3,6 +3,7 @@ video_id: GMRvEA8rgJs
 title: EEVblog #640 - How To Build An Electronics Work Bench
 url: https://www.youtube.com/watch?v=GMRvEA8rgJs
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 32, "3": 42, "4": 63, "5": 77, "6": 90, "7": 105, "8": 120, "9": 135, "10": 237, "11": 288, "12": 303, "13": 329, "14": 342, "15": 353, "16": 366, "17": 380, "18": 398, "19": 410, "20": 421, "21": 435, "22": 448, "23": 462, "24": 473, "25": 486, "26": 501, "27": 515}
 ---
 
 **Dave Jones:** Hi guys. Yes, I'm about to build a yet another bench for the lab. I've spoken about this one before and I thought I was going to change things around a bit by putting up these shelves which you've seen in a previous video, but I've now

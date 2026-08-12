@@ -3,6 +3,7 @@ video_id: bKQ4yaTlsIA
 title: EEVblog #23 - GSM mobile phone audio design
 url: https://www.youtube.com/watch?v=bKQ4yaTlsIA
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 35, "3": 51, "4": 69, "5": 85, "6": 101, "7": 120, "8": 139, "9": 159, "10": 179, "11": 196, "12": 213, "13": 235, "14": 252, "15": 264, "16": 275, "17": 287, "18": 304, "19": 321, "20": 334, "21": 346, "22": 358, "23": 370, "24": 385, "25": 397, "26": 412, "27": 429, "28": 444, "29": 466, "30": 480, "31": 498, "32": 512, "33": 536, "34": 551, "35": 569, "36": 579}
 ---
 
 **Dave Jones:** Hi, welcome to the EE blog. I'm your host, Dave Jones, and this is episode number 23. Uh just a couple of weeks back I was um working on uh the front end for for the design of a uh GSM um mobile phone. It

@@ -3,6 +3,7 @@ video_id: 2rSQnRV5ztI
 title: EEVblog 1532 - Another $2.8M WiGL Wireless Power Grift BUSTED (Part 3)
 url: https://www.youtube.com/watch?v=2rSQnRV5ztI
 source: youtube-asr
+timestamps: {"0": 0, "1": 26, "2": 39, "3": 54, "4": 71, "5": 91, "6": 109, "7": 122, "8": 138, "9": 150, "10": 166, "11": 183, "12": 198, "13": 217, "14": 231, "15": 249, "16": 267, "17": 280, "18": 299, "19": 318, "20": 331, "21": 344, "22": 357, "23": 376, "24": 390, "25": 401, "26": 416, "27": 433, "28": 446, "29": 462, "30": 481, "31": 497, "32": 512, "33": 525, "34": 539, "35": 555, "36": 577, "37": 594, "38": 608, "39": 624, "40": 639, "41": 653, "42": 666, "43": 684, "44": 699, "45": 712, "46": 726, "47": 739, "48": 757, "49": 769, "50": 783, "51": 796, "52": 810, "53": 826, "54": 839, "55": 850, "56": 862, "57": 878, "58": 892, "59": 912, "60": 922, "61": 938, "62": 953, "63": 964, "64": 981, "65": 996, "66": 1010, "67": 1025, "68": 1037, "69": 1053, "70": 1068, "71": 1087, "72": 1102, "73": 1116, "74": 1134, "75": 1147, "76": 1162, "77": 1174}
 ---
 
 **Dave Jones:** Hi, it's 2023 and the new year wouldn't be complete without yet another wireless charging grift duping people out of their money on StartEngine which is a equity crowdfunding campaign website. And yes, you've seen this before. It's Wiggle time again.

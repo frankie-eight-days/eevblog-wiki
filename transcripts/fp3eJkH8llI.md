@@ -3,6 +3,7 @@ video_id: fp3eJkH8llI
 title: EEVblog #1182 - Mains Interference Simulator Teardown
 url: https://www.youtube.com/watch?v=fp3eJkH8llI
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 49, "4": 65, "5": 80, "6": 93, "7": 108, "8": 123, "9": 139, "10": 154, "11": 168, "12": 182, "13": 196, "14": 207, "15": 221, "16": 233, "17": 247, "18": 268, "19": 285, "20": 300, "21": 320, "22": 329, "23": 345, "24": 362, "25": 377, "26": 400, "27": 415, "28": 431, "29": 453, "30": 474, "31": 490, "32": 506, "33": 520, "34": 534, "35": 553, "36": 572, "37": 584, "38": 601, "39": 619, "40": 634, "41": 657, "42": 674, "43": 693, "44": 707, "45": 723, "46": 742, "47": 756, "48": 772, "49": 787, "50": 803, "51": 815, "52": 833, "53": 849, "54": 868, "55": 882, "56": 901, "57": 920, "58": 935, "59": 952, "60": 968, "61": 984, "62": 999, "63": 1016, "64": 1033, "65": 1045, "66": 1061, "67": 1080, "68": 1096, "69": 1110, "70": 1126, "71": 1139, "72": 1151}
 ---
 
 **Dave Jones:** Hi, got a real interesting bit of kit for teardown for you today. This is a Schaffner made in Switzerland. Hi to all my Swiss viewers. The NSG 200 mains interference simulation system and I scored this from the that big dumpster

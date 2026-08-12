@@ -3,6 +3,7 @@ video_id: mdw04pjDfjo
 title: Bunker Internet Achievement Unlocked
 url: https://www.youtube.com/watch?v=mdw04pjDfjo
 source: youtube-asr
+timestamps: {"0": 1, "1": 23, "2": 41, "3": 54, "4": 68, "5": 86, "6": 98, "7": 109, "8": 122, "9": 138, "10": 153, "11": 167, "12": 179, "13": 195, "14": 209, "15": 222, "16": 236, "17": 250, "18": 264, "19": 277, "20": 291, "21": 304, "22": 317, "23": 332, "24": 348, "25": 363}
 ---
 
 **Dave Jones:** Hi, for those playing along at home who've been following in on my bunker internet thing, you're not going to believe it, but I actually now have internet. Check this out. I've just got one of these Inseego things. It's a 5G

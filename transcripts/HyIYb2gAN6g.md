@@ -3,6 +3,7 @@ video_id: HyIYb2gAN6g
 title: EEVblog 1694 - Scarlet Rae Teardown + Design Discussion with Xentronics
 url: https://www.youtube.com/watch?v=HyIYb2gAN6g
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 24, "3": 42, "4": 54, "5": 67, "6": 78, "7": 90, "8": 100, "9": 112, "10": 123, "11": 137, "12": 153, "13": 166, "14": 182, "15": 196, "16": 211, "17": 225, "18": 236, "19": 249, "20": 262, "21": 276, "22": 289, "23": 301, "24": 314, "25": 325, "26": 339, "27": 347, "28": 360, "29": 371, "30": 384, "31": 399, "32": 412, "33": 424, "34": 437, "35": 452, "36": 466, "37": 480, "38": 495, "39": 508, "40": 521, "41": 534, "42": 547, "43": 562, "44": 575, "45": 585, "46": 598, "47": 608, "48": 621, "49": 633, "50": 647, "51": 659, "52": 669, "53": 682, "54": 696, "55": 709, "56": 722, "57": 735, "58": 746}
 ---
 
 **Dave Jones:** Hey, and I'm here with Scott Williams from Sentronics. He's been on the Amp Hour and in the previous episode, so I'll link those in if you haven't seen it. Um he's from Melbourne, guys, so we won't hold that against him.

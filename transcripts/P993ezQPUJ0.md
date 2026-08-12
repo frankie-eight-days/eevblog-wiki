@@ -3,6 +3,7 @@ video_id: P993ezQPUJ0
 title: EEVblog 1760 - Today in the Dumpster (July 12th, 2026)
 url: https://www.youtube.com/watch?v=P993ezQPUJ0
 source: youtube-asr
+timestamps: {"0": 1, "1": 23, "2": 40, "3": 59, "4": 83, "5": 102, "6": 117, "7": 130, "8": 147, "9": 162, "10": 180, "11": 197, "12": 213, "13": 228, "14": 243, "15": 256, "16": 276, "17": 302, "18": 324, "19": 342, "20": 359, "21": 375, "22": 391, "23": 406, "24": 419, "25": 432, "26": 446, "27": 457, "28": 472, "29": 487, "30": 500, "31": 520, "32": 534, "33": 553, "34": 568, "35": 584, "36": 599, "37": 621, "38": 643, "39": 665, "40": 677, "41": 690}
 ---
 
 **Dave Jones:** Hi. In the dumpster room again, recycling. What have we got? Uh yeah. Uh that's uh not the greatest find, but uh what is this? We have a Oh, it's a TCL. Um nothing to write home to your mom about, but it looks big and

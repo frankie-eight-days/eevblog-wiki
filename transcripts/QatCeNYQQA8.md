@@ -3,6 +3,7 @@ video_id: QatCeNYQQA8
 title: EEVblog 1763 - Meet Dylan
 url: https://www.youtube.com/watch?v=QatCeNYQQA8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 29, "3": 42, "4": 56, "5": 70, "6": 81, "7": 93, "8": 109, "9": 121, "10": 131, "11": 142, "12": 155, "13": 167, "14": 178, "15": 190, "16": 205, "17": 216, "18": 229, "19": 239, "20": 250, "21": 262, "22": 274, "23": 285, "24": 295, "25": 307, "26": 318, "27": 331, "28": 340, "29": 354, "30": 366, "31": 376}
 ---
 
 **Dave Jones:** Hi. You know how I recently uh put out a job advert for someone to join me here in the EE blog? Well, he's here somewhere. Here he is. >> Hi. >> Say hi to Dylan. >> I'm me. >> You're me. Excellent. Welcome. Me.

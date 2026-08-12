@@ -3,6 +3,7 @@ video_id: c0evM3-GTAw
 title: Weird Uni-T UDP6731 PSU Fault FIXED. I got a DUD?
 url: https://www.youtube.com/watch?v=c0evM3-GTAw
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 28, "3": 41, "4": 53, "5": 68, "6": 84, "7": 98, "8": 112, "9": 129, "10": 145, "11": 161, "12": 174, "13": 186, "14": 207, "15": 220, "16": 238, "17": 250, "18": 260, "19": 270, "20": 288, "21": 302, "22": 320, "23": 333, "24": 352, "25": 365, "26": 380, "27": 393, "28": 409, "29": 422, "30": 434, "31": 449, "32": 462, "33": 475, "34": 487, "35": 500, "36": 517, "37": 531}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on this UT UDP 6731 power supply. The review I did a full review of that. It was quite popular. But there was one issue with it and that was the Lister mode here. So we've got

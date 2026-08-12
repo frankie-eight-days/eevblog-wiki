@@ -3,6 +3,7 @@ video_id: 7FFrZl9ymFw
 title: EEVblog #250 - Anti-Static Mat Myth
 url: https://www.youtube.com/watch?v=7FFrZl9ymFw
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 42, "4": 58, "5": 74, "6": 89, "7": 104, "8": 117, "9": 133, "10": 152, "11": 166, "12": 183, "13": 198, "14": 213, "15": 229, "16": 241, "17": 256, "18": 271, "19": 283, "20": 298, "21": 317, "22": 333, "23": 351, "24": 369, "25": 384, "26": 402, "27": 420, "28": 440, "29": 460, "30": 477, "31": 491, "32": 510, "33": 528}
 ---
 
 **Dave Jones:** Hi, it's myth busting time again. Why? Because every time I do a video measuring something on one of these blue anti-static work mats, I get a whole bunch of email, whole bunch of comments, people saying, "Oh, that's why it's

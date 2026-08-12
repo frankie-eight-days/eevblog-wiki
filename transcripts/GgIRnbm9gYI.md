@@ -3,6 +3,7 @@ video_id: GgIRnbm9gYI
 title: Chinese Packaging Madness!
 url: https://www.youtube.com/watch?v=GgIRnbm9gYI
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 25, "3": 47, "4": 62, "5": 80, "6": 102, "7": 122, "8": 137, "9": 155}
 ---
 
 **Dave Jones:** Hi. Well, I've seen some wasted packaging in my time, but this is a first. I ordered some replacement LED strips, LED strips for that TV that I'm dumpster TV that I'm repairing. If you've seen that video, you know, I

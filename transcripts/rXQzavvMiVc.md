@@ -3,6 +3,7 @@ video_id: rXQzavvMiVc
 title: EEVblog 1712 - CSIRO Mobile Space Mission Control Centre
 url: https://www.youtube.com/watch?v=rXQzavvMiVc
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 39, "3": 65, "4": 82, "5": 102, "6": 118, "7": 133, "8": 142, "9": 155, "10": 170, "11": 182, "12": 192, "13": 204, "14": 217, "15": 229, "16": 241, "17": 256, "18": 270, "19": 282, "20": 293, "21": 303, "22": 316, "23": 329, "24": 342, "25": 361, "26": 372, "27": 383, "28": 394, "29": 406, "30": 417, "31": 433, "32": 445, "33": 455, "34": 466, "35": 481, "36": 495, "37": 506, "38": 518, "39": 531}
 ---
 
 **Dave Jones:** Hi, so I thought I'd take you just for a quick look through this mobile mission operations center that's just been built I believe with my tax dollars it's being huge B double trailer and designed to support space missions and will take you for a

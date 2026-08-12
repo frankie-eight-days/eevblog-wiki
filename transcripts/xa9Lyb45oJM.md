@@ -3,6 +3,7 @@ video_id: xa9Lyb45oJM
 title: EEVblog #258 - PSU Housing Design - Part 11
 url: https://www.youtube.com/watch?v=xa9Lyb45oJM
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 39, "4": 56, "5": 71, "6": 81, "7": 95, "8": 110, "9": 124, "10": 139, "11": 159, "12": 178, "13": 194, "14": 207, "15": 223, "16": 237, "17": 251, "18": 266, "19": 282, "20": 296, "21": 309, "22": 325, "23": 338, "24": 352, "25": 367, "26": 384, "27": 397, "28": 407, "29": 417, "30": 431, "31": 445, "32": 460, "33": 475, "34": 489, "35": 505, "36": 520, "37": 533, "38": 547, "39": 561, "40": 572, "41": 583, "42": 594, "43": 608, "44": 620, "45": 633, "46": 648, "47": 664, "48": 677, "49": 692, "50": 705, "51": 723, "52": 739, "53": 751, "54": 769, "55": 782, "56": 800, "57": 815, "58": 831, "59": 846, "60": 860, "61": 874}
 ---
 
 **Dave Jones:** Hi, it's time for another installment in the power supply series and yes, it's another revision schematic. I've got some changes, not surprising because when you work on these projects long enough, one thing leads to another, you start thinking things and you start refining

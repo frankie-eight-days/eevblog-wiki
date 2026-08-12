@@ -3,6 +3,7 @@ video_id: M4IiR4vW0aY
 title: I don't have a problem. I only have 4 Solar Monitoring Systems
 url: https://www.youtube.com/watch?v=M4IiR4vW0aY
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 38, "3": 56, "4": 68, "5": 82, "6": 97, "7": 108, "8": 123, "9": 135, "10": 151, "11": 165, "12": 180, "13": 191, "14": 209, "15": 225, "16": 238, "17": 256, "18": 271, "19": 286, "20": 298, "21": 311, "22": 325, "23": 339, "24": 350, "25": 366, "26": 378, "27": 390, "28": 405, "29": 417, "30": 436, "31": 451, "32": 469, "33": 485, "34": 498, "35": 513, "36": 527, "37": 541, "38": 552, "39": 568, "40": 584, "41": 601, "42": 615, "43": 628, "44": 641, "45": 657, "46": 672, "47": 690, "48": 707, "49": 724, "50": 741, "51": 758, "52": 771, "53": 784, "54": 800, "55": 817, "56": 837, "57": 851, "58": 865, "59": 878, "60": 890, "61": 902, "62": 914, "63": 927, "64": 942, "65": 951, "66": 961, "67": 977, "68": 989, "69": 1005, "70": 1028, "71": 1042, "72": 1055, "73": 1067, "74": 1078, "75": 1091}
 ---
 
 **Dave Jones:** Hi, I just wanted to discuss my solar home solar monitoring systems cuz now I've actually got no less than four solar monitoring systems. It's like you think test equipment anonymous is a thing. Um yeah, okay. Once you have a

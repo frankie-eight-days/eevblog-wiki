@@ -3,6 +3,7 @@ video_id: _HrvuHSywms
 title: EEVblog #404 - Korad PSU Followup
 url: https://www.youtube.com/watch?v=_HrvuHSywms
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 36, "3": 53, "4": 71, "5": 92, "6": 110, "7": 126, "8": 145, "9": 160, "10": 176, "11": 189, "12": 204}
 ---
 
 **Dave Jones:** All right, hi guys. Just a quick video. This is the Korad power supply follow-up. This is the new version with the fixed board and here's the old board. Let's have a look at the processor board here. Here's the old board and

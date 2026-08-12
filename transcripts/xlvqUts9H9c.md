@@ -3,6 +3,7 @@ video_id: xlvqUts9H9c
 title: EEVblog #33 1of2 - Capacitor Tutorial (Electrolytic, Tantalum, & Plastic Film)
 url: https://www.youtube.com/watch?v=xlvqUts9H9c
 source: youtube-asr
+timestamps: {"0": 11, "1": 30, "2": 47, "3": 67, "4": 82, "5": 97, "6": 112, "7": 126, "8": 140, "9": 154, "10": 169, "11": 185, "12": 198, "13": 213, "14": 231, "15": 246, "16": 261, "17": 277, "18": 290, "19": 307, "20": 322, "21": 339, "22": 353, "23": 369, "24": 381, "25": 395, "26": 413, "27": 429, "28": 444, "29": 460, "30": 476, "31": 494, "32": 510, "33": 528, "34": 543, "35": 559, "36": 573, "37": 586, "38": 598}
 ---
 
 **Dave Jones:** Hi, this blog is going to be all about capacitors. The what, why, how, and where of using capacitors. I've got 10 minutes. Let's start now. Okay, the first type of capacitor is the electrolytic capacitor. You've seen them before, these things in the metal cans.

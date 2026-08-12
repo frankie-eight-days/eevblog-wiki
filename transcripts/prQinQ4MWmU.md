@@ -3,6 +3,7 @@ video_id: prQinQ4MWmU
 title: EEVblog 1456 - Sega Toys Homestar Planetarium REPAIR
 url: https://www.youtube.com/watch?v=prQinQ4MWmU
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 47, "4": 60, "5": 75, "6": 93, "7": 107, "8": 120, "9": 134, "10": 147, "11": 162, "12": 173, "13": 189, "14": 203, "15": 221, "16": 238, "17": 256, "18": 274, "19": 293, "20": 309, "21": 323, "22": 335, "23": 351, "24": 371, "25": 389, "26": 407, "27": 425, "28": 440, "29": 457, "30": 478, "31": 488, "32": 506, "33": 521, "34": 538, "35": 551, "36": 564, "37": 578, "38": 596, "39": 614, "40": 633, "41": 647, "42": 666, "43": 682, "44": 696, "45": 709, "46": 727, "47": 739, "48": 755, "49": 773, "50": 788, "51": 807, "52": 822, "53": 839, "54": 853, "55": 869}
 ---
 
 **Dave Jones:** Hi, it's repair time. No, it's not a Death Star or a droid. It's a Sega Toys planetarium. It's actually a really awesome planetarium. I think it's like one of, if not one of the best on the market. What it does, of course, is it

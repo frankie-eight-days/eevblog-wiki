@@ -3,6 +3,7 @@ video_id: EXg5MdYMbHs
 title: EEVblog #466 - Dumpster Dive Night Raid
 url: https://www.youtube.com/watch?v=EXg5MdYMbHs
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 29, "3": 43, "4": 58, "5": 75, "6": 92, "7": 108, "8": 124, "9": 144, "10": 162, "11": 188, "12": 206, "13": 222, "14": 240, "15": 254, "16": 271, "17": 285, "18": 301, "19": 324, "20": 336, "21": 351, "22": 370, "23": 383, "24": 401, "25": 414, "26": 428, "27": 447, "28": 466, "29": 480, "30": 491}
 ---
 
 **Dave Jones:** Hi guys. Yes, it's night time here. We're going on a stealth raid to the garbage room, some dumpster diving and night time stuff. Secret squirrel. Uh one of my uh viewers uh from Germany, Kristoff, he was here today visiting in

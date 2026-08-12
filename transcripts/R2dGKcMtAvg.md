@@ -3,6 +3,7 @@ video_id: R2dGKcMtAvg
 title: EEVblog #77 - Rigol DS1052E DS1102E Oscilloscope Hack Update
 url: https://www.youtube.com/watch?v=R2dGKcMtAvg
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 38, "3": 54, "4": 70, "5": 87, "6": 106, "7": 120, "8": 140, "9": 161, "10": 182, "11": 200, "12": 242, "13": 261, "14": 276, "15": 300, "16": 319, "17": 369, "18": 391, "19": 415, "20": 432, "21": 451, "22": 480, "23": 501, "24": 517, "25": 533, "26": 563, "27": 578, "28": 595, "29": 610, "30": 625, "31": 641, "32": 658}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, just a quick update on the 100 MHz Rigol DS1052E hack. Now, I reported on the forum that

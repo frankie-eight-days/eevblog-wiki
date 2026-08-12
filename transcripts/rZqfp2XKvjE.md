@@ -3,6 +3,7 @@ video_id: rZqfp2XKvjE
 title: BM786 Magnetic Quirk
 url: https://www.youtube.com/watch?v=rZqfp2XKvjE
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 31, "3": 44, "4": 58, "5": 76, "6": 91, "7": 108, "8": 121, "9": 133, "10": 152, "11": 167, "12": 181, "13": 195, "14": 208}
 ---
 
 **Dave Jones:** Hi, just a quick video response to somebody on the EE blog forum who found that there's an issue with the BM786 meter with the magnetic hanger on the back which is designed to hang into here. It's got a like a strap hanger

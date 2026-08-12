@@ -3,6 +3,7 @@ video_id: qmcSEJehqZM
 title: Energizer Battery Leak Fluke 3000 Multimeter "Repair"
 url: https://www.youtube.com/watch?v=qmcSEJehqZM
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 41, "4": 64, "5": 81, "6": 97, "7": 111, "8": 128, "9": 141, "10": 158, "11": 172, "12": 186, "13": 201, "14": 215, "15": 233, "16": 244, "17": 261, "18": 273, "19": 285, "20": 300, "21": 315, "22": 330, "23": 343, "24": 362, "25": 377, "26": 392, "27": 407, "28": 433, "29": 454, "30": 477, "31": 493, "32": 512, "33": 527, "34": 546, "35": 560, "36": 574, "37": 591, "38": 606, "39": 619, "40": 633, "41": 645, "42": 658, "43": 672, "44": 686, "45": 703, "46": 716, "47": 725, "48": 736, "49": 751, "50": 770, "51": 786, "52": 799, "53": 811, "54": 825, "55": 837, "56": 849, "57": 861}
 ---
 
 **Dave Jones:** Hi, seems that I can't copper break when it comes to repairs. This Fluke 3000 multimeter that you saw in the video that had the leaky Energizers in it. Um, well, I went to do a repair start a repair

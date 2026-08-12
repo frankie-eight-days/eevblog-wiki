@@ -3,6 +3,7 @@ video_id: cejuuK4v_HY
 title: Youtube Comment Crypto Spam SCAM
 url: https://www.youtube.com/watch?v=cejuuK4v_HY
 source: youtube-asr
+timestamps: {"0": 2, "1": 16, "2": 34, "3": 54, "4": 65, "5": 85, "6": 103, "7": 114, "8": 129, "9": 140, "10": 153, "11": 165, "12": 180, "13": 196, "14": 207, "15": 222, "16": 237, "17": 249, "18": 263, "19": 277, "20": 288, "21": 304, "22": 319, "23": 332}
 ---
 
 **Dave Jones:** Hi, I just wanted to show you some YouTube spam which I got within like a minute of uploading a video and this is so common these days and YouTube I don't think they said they're working on it but

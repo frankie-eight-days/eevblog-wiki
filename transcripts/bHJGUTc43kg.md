@@ -3,6 +3,7 @@ video_id: bHJGUTc43kg
 title: New Youtube Self-Rating Monetization Feature
 url: https://www.youtube.com/watch?v=bHJGUTc43kg
 source: youtube-asr
+timestamps: {"0": 3, "1": 17, "2": 33, "3": 42, "4": 63, "5": 82, "6": 95, "7": 110, "8": 124, "9": 136, "10": 150, "11": 166, "12": 182, "13": 199, "14": 215, "15": 233, "16": 251, "17": 264, "18": 278, "19": 292, "20": 307, "21": 320, "22": 334, "23": 348, "24": 361, "25": 382, "26": 392, "27": 404, "28": 416, "29": 429, "30": 442, "31": 460, "32": 480, "33": 497, "34": 510, "35": 527, "36": 537, "37": 558, "38": 572, "39": 591, "40": 611, "41": 628, "42": 643, "43": 666, "44": 684, "45": 702, "46": 718, "47": 733, "48": 749, "49": 760, "50": 774, "51": 786, "52": 796, "53": 811, "54": 831, "55": 846, "56": 863, "57": 886, "58": 902, "59": 914, "60": 929, "61": 944, "62": 957, "63": 971, "64": 986, "65": 998, "66": 1012, "67": 1028, "68": 1045}
 ---
 
 **Dave Jones:** Hi, it looks like YouTube have changed things again. I did say regular occurrence. It's been a regular occurrence for the last a decade, but this change might actually be good. I I haven't read I haven't fully grasped the

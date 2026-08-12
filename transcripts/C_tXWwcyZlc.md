@@ -3,6 +3,7 @@ video_id: C_tXWwcyZlc
 title: Dumpster HP3488A Switch Teardown + Silverbrook STORY
 url: https://www.youtube.com/watch?v=C_tXWwcyZlc
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 33, "3": 54, "4": 70, "5": 84, "6": 99, "7": 122, "8": 138, "9": 154, "10": 168, "11": 184, "12": 198, "13": 210, "14": 222, "15": 235, "16": 248, "17": 259, "18": 274, "19": 286, "20": 300, "21": 313, "22": 330, "23": 345, "24": 360, "25": 374, "26": 388, "27": 405, "28": 418, "29": 430, "30": 444, "31": 458, "32": 472, "33": 487, "34": 501, "35": 512, "36": 529, "37": 549, "38": 562, "39": 577, "40": 592, "41": 607, "42": 622, "43": 639, "44": 656, "45": 673, "46": 689, "47": 706, "48": 717, "49": 734, "50": 752, "51": 768, "52": 782, "53": 799, "54": 816, "55": 832, "56": 848, "57": 862, "58": 877, "59": 889, "60": 902, "61": 916, "62": 932, "63": 946, "64": 958, "65": 970}
 ---
 
 **Dave Jones:** Hi, it's mystery dumpster teardown time again and this one comes from the archives in the bunker. I actually got two of these down here. What is it? It's Hewlett Packard. None of that Agilent or Keysight rubbish. 3488A switch control unit. Yes, it does look

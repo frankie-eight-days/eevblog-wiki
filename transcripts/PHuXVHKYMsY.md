@@ -3,6 +3,7 @@ video_id: PHuXVHKYMsY
 title: EEVblog 1625 - Electronex: Scope Wars: The Rise of Uni-T
 url: https://www.youtube.com/watch?v=PHuXVHKYMsY
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 42, "4": 59, "5": 75, "6": 89, "7": 102, "8": 116, "9": 130, "10": 148, "11": 160, "12": 174, "13": 190, "14": 202, "15": 215, "16": 230, "17": 246, "18": 260, "19": 272, "20": 286, "21": 301, "22": 316, "23": 331, "24": 346, "25": 361, "26": 373, "27": 384, "28": 398, "29": 411, "30": 424, "31": 436, "32": 450, "33": 467, "34": 482, "35": 495, "36": 509, "37": 523, "38": 538, "39": 552, "40": 563, "41": 582, "42": 598, "43": 615, "44": 633, "45": 648, "46": 662}
 ---
 
 **Dave Jones:** Hi, I'm here at the Rapid Tech uh stand and we've got Mark and uh Hi, Dave. Yeah, and who's been through various companies over the years. So, I've got Rapid Tech, right? Um and we're taking a look at some Uni-T um stuff here cuz

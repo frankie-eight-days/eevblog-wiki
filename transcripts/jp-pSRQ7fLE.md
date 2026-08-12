@@ -3,6 +3,7 @@ video_id: jp-pSRQ7fLE
 title: eevBLAB 134 - The End of OG Youtube?
 url: https://www.youtube.com/watch?v=jp-pSRQ7fLE
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 32, "3": 48, "4": 61, "5": 78, "6": 95, "7": 113, "8": 131, "9": 143, "10": 158, "11": 174, "12": 190, "13": 204, "14": 217, "15": 230, "16": 248, "17": 260, "18": 274, "19": 290, "20": 304, "21": 321, "22": 341, "23": 355, "24": 370, "25": 386, "26": 402, "27": 415, "28": 434, "29": 446, "30": 461, "31": 477, "32": 489, "33": 502, "34": 519, "35": 534, "36": 548, "37": 565, "38": 580, "39": 593, "40": 603, "41": 617, "42": 631, "43": 646, "44": 659, "45": 674, "46": 685, "47": 699, "48": 713, "49": 733, "50": 746, "51": 762, "52": 777, "53": 794, "54": 806, "55": 821, "56": 840, "57": 853}
 ---
 
 **Dave Jones:** Hi, it was just 3 months ago that it looked like there was light at the end of the YouTube tunnel. I did a video on this. YouTube are finally demonetizing AI slop channels. They came out and they did an announcement that they would de-

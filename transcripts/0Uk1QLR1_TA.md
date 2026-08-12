@@ -3,6 +3,7 @@ video_id: 0Uk1QLR1_TA
 title: Today in the dumpster
 url: https://www.youtube.com/watch?v=0Uk1QLR1_TA
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 36}
 ---
 
 **Dave Jones:** Hi. Today in the dumpster room, I've got this. It's a Studio Rack S4. I don't know what it is, but I'm not 100% sure, but on the back got some fans. We've got some that looks like fire wire. So, USB. Um, this thing is

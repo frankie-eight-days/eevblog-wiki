@@ -3,6 +3,7 @@ video_id: 1vYJq4GeXPM
 title: EEVblog #971 - Zero Standby Power TV - BUSTED!
 url: https://www.youtube.com/watch?v=1vYJq4GeXPM
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 33, "3": 49, "4": 62, "5": 75, "6": 89, "7": 103, "8": 117, "9": 135, "10": 150, "11": 166, "12": 182, "13": 196, "14": 213, "15": 226, "16": 241, "17": 257, "18": 274, "19": 287, "20": 303, "21": 320, "22": 334, "23": 349, "24": 363, "25": 379, "26": 399, "27": 416, "28": 431, "29": 443, "30": 459, "31": 468, "32": 481, "33": 497, "34": 513, "35": 528, "36": 543, "37": 558, "38": 571, "39": 591, "40": 604, "41": 621, "42": 638, "43": 655, "44": 675, "45": 686, "46": 699, "47": 712, "48": 725, "49": 739, "50": 751, "51": 766, "52": 786, "53": 801, "54": 816, "55": 831, "56": 848, "57": 862, "58": 880, "59": 894, "60": 908, "61": 927, "62": 946, "63": 961, "64": 979, "65": 994, "66": 1011, "67": 1022, "68": 1037, "69": 1057}
 ---
 
 **Dave Jones:** Hi, you know what I hate? Marketing You know what I hate worse? When it comes from a university who should know better. Uh, here we go. Let's take a look at the University of Bristol's pioneering chip that extends sensors battery life. A

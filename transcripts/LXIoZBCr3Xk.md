@@ -3,6 +3,7 @@ video_id: LXIoZBCr3Xk
 title: EEVblog #51 - A tour of the EEVblog Electronics Lab
 url: https://www.youtube.com/watch?v=LXIoZBCr3Xk
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 45, "4": 60, "5": 76, "6": 90, "7": 109, "8": 124, "9": 136, "10": 150, "11": 165, "12": 180, "13": 194, "14": 206, "15": 219, "16": 234, "17": 249, "18": 266, "19": 282, "20": 295, "21": 308, "22": 322, "23": 336, "24": 352, "25": 368, "26": 384, "27": 397, "28": 412, "29": 427, "30": 441, "31": 456, "32": 468, "33": 487, "34": 504, "35": 521, "36": 537, "37": 552, "38": 572, "39": 589, "40": 605, "41": 618, "42": 632, "43": 651, "44": 672, "45": 693, "46": 710, "47": 729, "48": 748, "49": 765}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I've had a lot of comments of ever since I started the blog, people wanting to see

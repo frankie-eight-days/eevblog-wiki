@@ -3,6 +3,7 @@ video_id: JTG6jWL0ZqA
 title: EEVblog #13 Part 1 of 2 - Digital storage Oscilloscope Tutorial
 url: https://www.youtube.com/watch?v=JTG6jWL0ZqA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 37, "3": 52, "4": 71, "5": 93, "6": 111, "7": 130, "8": 146, "9": 162, "10": 181, "11": 200, "12": 219, "13": 236, "14": 253, "15": 271, "16": 289, "17": 306, "18": 320, "19": 341, "20": 355, "21": 372, "22": 393, "23": 412, "24": 432, "25": 449, "26": 465, "27": 478, "28": 494, "29": 509, "30": 524, "31": 545, "32": 565, "33": 582}
 ---
 
 **Dave Jones:** Welcome to the AEV blog. I'm your host, Dave Jones, and this is episode number lucky 13. Now, one of the things I get the most comments about on my blog, apart from the cheap Chinese multimeter blog, which created an absolute furor, and

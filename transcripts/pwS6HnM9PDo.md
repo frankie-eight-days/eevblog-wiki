@@ -3,6 +3,7 @@ video_id: pwS6HnM9PDo
 title: The Rigol DHO800 Fan(boys) Go Wild
 url: https://www.youtube.com/watch?v=pwS6HnM9PDo
 source: youtube-asr
+timestamps: {"0": 0, "1": 10, "2": 27, "3": 45, "4": 60, "5": 75, "6": 88, "7": 102, "8": 116, "9": 131, "10": 147, "11": 158, "12": 176, "13": 187, "14": 200, "15": 213, "16": 227, "17": 240, "18": 252, "19": 268, "20": 281, "21": 292, "22": 305, "23": 319, "24": 332, "25": 343, "26": 356}
 ---
 
 **Dave Jones:** Hi, there's been some talk, well, a lot of talk, actually, on the EV blog forum about the DHO 800. I'll link in the thread, but there's been a lot of talk, in particular, about the fan in here and

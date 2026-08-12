@@ -3,6 +3,7 @@ video_id: tV25auv4SAE
 title: EEVblog #753 - Inventables X-Carve Milling Machine Unboxing
 url: https://www.youtube.com/watch?v=tV25auv4SAE
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 42, "4": 57, "5": 74, "6": 97, "7": 117, "8": 131, "9": 146, "10": 163, "11": 182, "12": 199, "13": 218, "14": 238, "15": 251, "16": 270, "17": 283, "18": 297, "19": 309, "20": 321, "21": 335, "22": 352, "23": 365, "24": 382, "25": 398, "26": 416, "27": 430, "28": 444, "29": 456, "30": 469, "31": 482, "32": 494, "33": 511, "34": 528, "35": 544, "36": 562, "37": 578, "38": 592, "39": 605, "40": 620, "41": 642, "42": 664, "43": 681, "44": 698, "45": 711, "46": 723, "47": 734, "48": 747}
 ---
 
 **Dave Jones:** Hi, welcome to another exciting unboxing. Just like we had the pick and place machine the other day, I've got a carving/milling machine, whatever you want to call it. This is the Xcarve from Inventable. So, thank you very much,

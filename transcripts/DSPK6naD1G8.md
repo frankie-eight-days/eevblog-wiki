@@ -3,6 +3,7 @@ video_id: DSPK6naD1G8
 title: EEVblog #80 - Nokia E71 + Garmin Mobile XT = Embedded Hell
 url: https://www.youtube.com/watch?v=DSPK6naD1G8
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 50, "4": 65, "5": 78, "6": 92, "7": 104, "8": 116, "9": 129, "10": 142, "11": 153, "12": 165, "13": 178, "14": 190, "15": 205, "16": 217, "17": 235, "18": 252, "19": 266, "20": 281, "21": 295, "22": 309, "23": 320, "24": 338, "25": 353, "26": 366, "27": 383, "28": 399, "29": 411, "30": 426, "31": 444, "32": 458, "33": 478, "34": 491, "35": 507, "36": 526, "37": 544, "38": 555, "39": 572, "40": 584, "41": 598, "42": 611, "43": 630, "44": 646}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's time for a short rant. Now, about 2 years ago or something, my company offered me a free mobile phone

@@ -3,6 +3,7 @@ video_id: pXMhpEi_wPU
 title: EEVblog #567 - Precision 1A Current Source
 url: https://www.youtube.com/watch?v=pXMhpEi_wPU
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 28, "3": 46, "4": 69, "5": 87, "6": 103, "7": 119, "8": 134, "9": 146, "10": 164, "11": 179, "12": 193, "13": 206, "14": 218, "15": 233, "16": 247, "17": 264, "18": 276, "19": 293, "20": 308, "21": 322, "22": 337, "23": 354, "24": 368, "25": 383, "26": 397, "27": 415, "28": 432, "29": 448, "30": 464, "31": 476, "32": 490, "33": 503, "34": 516, "35": 529, "36": 545, "37": 558, "38": 569, "39": 585, "40": 598, "41": 622, "42": 639, "43": 653, "44": 668, "45": 683, "46": 697, "47": 713, "48": 724, "49": 738, "50": 756, "51": 773, "52": 788, "53": 805, "54": 820, "55": 839, "56": 852, "57": 869, "58": 892, "59": 909, "60": 924, "61": 942, "62": 955, "63": 968, "64": 978, "65": 992, "66": 1004, "67": 1018, "68": 1032}
 ---
 
 **Dave Jones:** Hi, just a quick video on a little circuit that I thought I'd build up and breadboard test here. It is a precision 1 amp current generator and well, I thought well, you know, in theory it should work, but in practice I thought

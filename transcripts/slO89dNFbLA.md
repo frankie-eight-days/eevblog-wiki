@@ -3,6 +3,7 @@ video_id: slO89dNFbLA
 title: Zoetrope Annimation
 url: https://www.youtube.com/watch?v=slO89dNFbLA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 46, "3": 66, "4": 78, "5": 96}
 ---
 
 **Dave Jones:** I'm looking through the puddles. like there's little mice jumping in the puddles and you've got a kangaroo with a thing with a boomerang. Frog. Cockatoo and platypus diving into the water tank. All right. It'll start up in a minute.

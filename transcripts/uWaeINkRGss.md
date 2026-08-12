@@ -3,6 +3,7 @@ video_id: uWaeINkRGss
 title: EEVblog 1706 - K8 Wrist Worn Multimeter REVIEW
 url: https://www.youtube.com/watch?v=uWaeINkRGss
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 33, "3": 49, "4": 75, "5": 95, "6": 109, "7": 127, "8": 147, "9": 168, "10": 182, "11": 199, "12": 211, "13": 225, "14": 245, "15": 257, "16": 271, "17": 292, "18": 321, "19": 339, "20": 353, "21": 370, "22": 384, "23": 400, "24": 417, "25": 435, "26": 454, "27": 471, "28": 482, "29": 499, "30": 513, "31": 528, "32": 545, "33": 557, "34": 572, "35": 586, "36": 597, "37": 611, "38": 626, "39": 644, "40": 661, "41": 678, "42": 691, "43": 703, "44": 714, "45": 728, "46": 745, "47": 756, "48": 769, "49": 784, "50": 800, "51": 818, "52": 833, "53": 846, "54": 859, "55": 871, "56": 886, "57": 902, "58": 919, "59": 933, "60": 947, "61": 966, "62": 979, "63": 994, "64": 1006, "65": 1016, "66": 1034, "67": 1046, "68": 1060}
 ---
 
 **Dave Jones:** Hi, if you thought this thing from the depths of design hell was bad, well, I might have another contender for you. I present the wrist worn auto range smart digital multimeter from I don't know, someone on AliExpress. It doesn't look

@@ -3,6 +3,7 @@ video_id: 7Br3L1B80ow
 title: EEVblog #1020 - Is A $7 LCR / Component Tester Any Good?
 url: https://www.youtube.com/watch?v=7Br3L1B80ow
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 45, "4": 62, "5": 78, "6": 93, "7": 105, "8": 118, "9": 134, "10": 149, "11": 165, "12": 180, "13": 198, "14": 210, "15": 227, "16": 242, "17": 258, "18": 275, "19": 290, "20": 304, "21": 317, "22": 330, "23": 343, "24": 359, "25": 368, "26": 382, "27": 406, "28": 418, "29": 432, "30": 447, "31": 461, "32": 477, "33": 493, "34": 513, "35": 528, "36": 549, "37": 568, "38": 582, "39": 601, "40": 620, "41": 639, "42": 659, "43": 673, "44": 687, "45": 701, "46": 718, "47": 736, "48": 750, "49": 762, "50": 776, "51": 790, "52": 804, "53": 819, "54": 831, "55": 839, "56": 853, "57": 869, "58": 881, "59": 894, "60": 908, "61": 923}
 ---
 
 **Dave Jones:** Hi, this is going to be a follow-up video to my previous mailbag one where right at the end of the mailbag somebody sent in this thing which looked like just some no-name generic tester board from eBay. There were like no

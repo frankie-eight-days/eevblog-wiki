@@ -3,6 +3,7 @@ video_id: Ewyf9mzIfi0
 title: EEVblog #94 - Near Death Multimeter Experience
 url: https://www.youtube.com/watch?v=Ewyf9mzIfi0
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 36, "3": 49, "4": 67, "5": 82, "6": 95, "7": 108, "8": 123, "9": 137, "10": 151, "11": 164, "12": 180, "13": 195, "14": 205, "15": 217, "16": 233, "17": 246, "18": 262, "19": 280, "20": 300, "21": 313, "22": 327, "23": 339, "24": 354, "25": 365, "26": 378, "27": 392, "28": 408, "29": 423, "30": 436, "31": 454, "32": 476, "33": 490, "34": 503, "35": 519, "36": 535, "37": 550, "38": 567, "39": 581, "40": 602, "41": 618, "42": 636, "43": 649, "44": 662, "45": 676, "46": 691, "47": 705, "48": 720, "49": 733}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, now I was going to do an equipment review of this cute little Extech RC200 tweezer type multimeter. Check it out,

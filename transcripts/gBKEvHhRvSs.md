@@ -3,6 +3,7 @@ video_id: gBKEvHhRvSs
 title: eevBLAB 139 - The Youtube Copyright System is BROKEN
 url: https://www.youtube.com/watch?v=gBKEvHhRvSs
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 50, "4": 69, "5": 90, "6": 102, "7": 115, "8": 126, "9": 140, "10": 152, "11": 165, "12": 180, "13": 193, "14": 210, "15": 221, "16": 238, "17": 255, "18": 268, "19": 283, "20": 302, "21": 316, "22": 330, "23": 342, "24": 353, "25": 365, "26": 378, "27": 396, "28": 411, "29": 426, "30": 441, "31": 459, "32": 476, "33": 493, "34": 515, "35": 535, "36": 556, "37": 569, "38": 586, "39": 600, "40": 615, "41": 629, "42": 644, "43": 658, "44": 674, "45": 692, "46": 705, "47": 718, "48": 730, "49": 744, "50": 760, "51": 777, "52": 796, "53": 818}
 ---
 
 **Dave Jones:** Hi, one of the true joys of being a YouTuber is waking up in the morning, reading your email, and you get one of these messages from YouTube. Video cannot be monetized because some idiot or some algorithm has flagged your one

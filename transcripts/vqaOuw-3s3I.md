@@ -3,6 +3,7 @@ video_id: vqaOuw-3s3I
 title: Schrödinger's Dumpster
 url: https://www.youtube.com/watch?v=vqaOuw-3s3I
 source: youtube-asr
+timestamps: {"0": 2, "1": 22, "2": 38, "3": 55, "4": 74, "5": 90, "6": 109, "7": 124, "8": 136, "9": 152}
 ---
 
 **Dave Jones:** Hi, it's dumpster room time again and we've got some like looks like really ancient based on the size of this AC adapter here some um ancient sort of like Sony stand sort of like surround sound speakery things as

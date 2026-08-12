@@ -3,6 +3,7 @@ video_id: lDQdA4Ml5GA
 title: What do I sound like with my pitch lowered?
 url: https://www.youtube.com/watch?v=lDQdA4Ml5GA
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 44, "4": 55, "5": 71, "6": 85, "7": 98, "8": 111, "9": 122, "10": 137, "11": 149, "12": 160, "13": 175, "14": 191, "15": 206, "16": 218, "17": 234, "18": 247, "19": 259, "20": 271, "21": 287, "22": 302, "23": 315, "24": 327, "25": 343, "26": 357, "27": 367, "28": 382, "29": 396, "30": 408, "31": 426, "32": 438, "33": 452, "34": 463, "35": 475, "36": 487, "37": 500, "38": 514, "39": 527, "40": 538, "41": 552, "42": 565, "43": 578, "44": 592, "45": 608}
 ---
 
 **Dave Jones:** Hi, it's quantum computer news time. The Microsoft CEO just dropped uh this a couple of reflections on the quantum computing breakthrough we just announced. Most of us grew up learning there are three types of main types of matter, solid, liquid, and gas. Today,

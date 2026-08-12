@@ -3,6 +3,7 @@ video_id: Mp0n-Gu0aKk
 title: EEVblog #234 - Agilent U1733C LCR Meter Teardown
 url: https://www.youtube.com/watch?v=Mp0n-Gu0aKk
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 46, "4": 62, "5": 76, "6": 91, "7": 105, "8": 126, "9": 141, "10": 153, "11": 163, "12": 185, "13": 199, "14": 214, "15": 228, "16": 244, "17": 256, "18": 271, "19": 284, "20": 296, "21": 309, "22": 324, "23": 335, "24": 351, "25": 368, "26": 382, "27": 403, "28": 420, "29": 436, "30": 455, "31": 470, "32": 486, "33": 498, "34": 512, "35": 527, "36": 539, "37": 550, "38": 567, "39": 584, "40": 602, "41": 618, "42": 632, "43": 649, "44": 670, "45": 686, "46": 703, "47": 717, "48": 739, "49": 755, "50": 765, "51": 776, "52": 786, "53": 802, "54": 817, "55": 829, "56": 844, "57": 860}
 ---
 
 **Dave Jones:** Hi, it's another teardown. Yes, it's another LCR meter. We love them. This time it's the Agilent U1733C. It's the new C model as opposed to the B model which I just happen to have. So, we'll do a side-by-side teardown

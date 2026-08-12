@@ -3,6 +3,7 @@ video_id: _yuhitexdyM
 title: Engineering Brain Farts (BM787BT)
 url: https://www.youtube.com/watch?v=_yuhitexdyM
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 31, "3": 44, "4": 66, "5": 83, "6": 98, "7": 111, "8": 131, "9": 142, "10": 162, "11": 186, "12": 206, "13": 221, "14": 243, "15": 261, "16": 281, "17": 295, "18": 308, "19": 324, "20": 345, "21": 357, "22": 372, "23": 387, "24": 397, "25": 412, "26": 427, "27": 447, "28": 467, "29": 482, "30": 501, "31": 520, "32": 529, "33": 546, "34": 559, "35": 573, "36": 588, "37": 607, "38": 623, "39": 637, "40": 653, "41": 684, "42": 702, "43": 711, "44": 731, "45": 749, "46": 769}
 ---
 
 **Dave Jones:** Well, it's one of those bloody days again. Um I was putting back together the BM787BT multimeter, the new one, um after I did some high-res photos of it, and it didn't work. So, you know, it's not the first time that's happened. Um like it

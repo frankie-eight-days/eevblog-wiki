@@ -3,6 +3,7 @@ video_id: p5BjSoLgIoE
 title: NASA Artemis II Launch LIVE REACTION - EEVBlog
 url: https://www.youtube.com/watch?v=p5BjSoLgIoE
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 42, "4": 55, "5": 67, "6": 82, "7": 102, "8": 120, "9": 135, "10": 151, "11": 163, "12": 183, "13": 198, "14": 218, "15": 230, "16": 251, "17": 267, "18": 287, "19": 304, "20": 319, "21": 335, "22": 353, "23": 373, "24": 384, "25": 402, "26": 419, "27": 432, "28": 455, "29": 467, "30": 486, "31": 501, "32": 512, "33": 526, "34": 540, "35": 555, "36": 571, "37": 581, "38": 594, "39": 607, "40": 618, "41": 631, "42": 645, "43": 661, "44": 675, "45": 691, "46": 701, "47": 716, "48": 731, "49": 747, "50": 760, "51": 770, "52": 783, "53": 798, "54": 818, "55": 835, "56": 850, "57": 865, "58": 875, "59": 887, "60": 904, "61": 921}
 ---
 
 **Dave Jones:** We are live. Artemis 2 launch. It looks like it's actually going to launch. Go, you little beauty. Look at that bad boy. Say all you want about Artemis. It looks like a moon rocket. What a Bobby dazzler. Look at it. I've

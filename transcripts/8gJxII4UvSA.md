@@ -3,6 +3,7 @@ video_id: 8gJxII4UvSA
 title: EEVblog #989 - FLIR ETS320 Thermal Camera Teardown
 url: https://www.youtube.com/watch?v=8gJxII4UvSA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 27, "3": 49, "4": 67, "5": 77, "6": 98, "7": 114, "8": 133, "9": 150, "10": 164, "11": 181, "12": 199, "13": 216, "14": 233, "15": 244, "16": 260, "17": 277, "18": 293, "19": 302, "20": 317, "21": 329, "22": 343, "23": 358, "24": 372, "25": 393, "26": 411, "27": 432, "28": 449, "29": 461, "30": 484, "31": 505, "32": 520, "33": 550, "34": 566, "35": 585, "36": 602, "37": 624, "38": 638, "39": 656, "40": 673, "41": 690, "42": 711, "43": 725, "44": 739, "45": 753, "46": 766}
 ---
 
 **Dave Jones:** Hi, it's teardown time. This is the brand spanking new just released FLIR ETS320 thermal imaging camera, 320 by 240 screen resolution screen. Screen, I've done a review on this. So, if you want to have a look at that, it'll be up in

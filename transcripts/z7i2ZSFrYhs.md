@@ -3,6 +3,7 @@ video_id: z7i2ZSFrYhs
 title: EEVblog #374 - DIY Multimeter Calibration
 url: https://www.youtube.com/watch?v=z7i2ZSFrYhs
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 38, "3": 55, "4": 76, "5": 93, "6": 119, "7": 136, "8": 151, "9": 167, "10": 184, "11": 200, "12": 218, "13": 233, "14": 249, "15": 262, "16": 276, "17": 298, "18": 316, "19": 330, "20": 350, "21": 363, "22": 379, "23": 394, "24": 409, "25": 424, "26": 441, "27": 459, "28": 474, "29": 494, "30": 509, "31": 524, "32": 540, "33": 555, "34": 570, "35": 587, "36": 607, "37": 622, "38": 640, "39": 654, "40": 670, "41": 684, "42": 702, "43": 718, "44": 733, "45": 748, "46": 761, "47": 777, "48": 791, "49": 805, "50": 819}
 ---
 
 **Dave Jones:** Hi, I've had a few people ask if I can do a video on how I maintain the calibration of my multimeters I've got here in the EVblog lab. Now, I've mentioned before that I don't actually maintain these meters like I

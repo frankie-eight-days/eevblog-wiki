@@ -3,6 +3,7 @@ video_id: Q_RYG_5cQk8
 title: Brymen BM787BT BLE Module Replacement
 url: https://www.youtube.com/watch?v=Q_RYG_5cQk8
 source: youtube-asr
+timestamps: {"0": 0, "1": 22, "2": 37, "3": 50, "4": 66, "5": 79, "6": 97, "7": 113, "8": 130, "9": 153, "10": 170, "11": 184, "12": 207, "13": 223, "14": 241, "15": 254, "16": 271, "17": 288, "18": 304, "19": 323, "20": 340, "21": 354, "22": 369, "23": 383, "24": 398, "25": 413, "26": 433, "27": 457, "28": 474, "29": 491, "30": 508, "31": 523, "32": 536, "33": 554, "34": 569, "35": 582, "36": 595, "37": 617, "38": 631, "39": 644, "40": 656, "41": 672, "42": 683, "43": 694, "44": 710, "45": 719}
 ---
 
 **Dave Jones:** Hi, just an update video on the BM787 BT. Just trying to finalize a thing and issue I've got with the app. I've got version 1.2 in the BLE firmware chip in here. So, Brian and have sent me a new BLE module. There it is. There we

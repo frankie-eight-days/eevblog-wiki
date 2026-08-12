@@ -3,6 +3,7 @@ video_id: mkZFHEeQkQI
 title: Unusual Repair - Part 2 - Thermal Boogaloo
 url: https://www.youtube.com/watch?v=mkZFHEeQkQI
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 26, "3": 41, "4": 52, "5": 67, "6": 86, "7": 97, "8": 109, "9": 123, "10": 133, "11": 151, "12": 161, "13": 175, "14": 185, "15": 196, "16": 211, "17": 226, "18": 238, "19": 253, "20": 268, "21": 281, "22": 299, "23": 320, "24": 337, "25": 355, "26": 370, "27": 384, "28": 401, "29": 416}
 ---
 
 **Dave Jones:** Hi, you might have seen this BM786, which was returned from a customer. It was brand new. Still got the wrapper on the screen in a recent video where it had a firmware issue where it you would turn it on and it would just stay on

@@ -3,6 +3,7 @@ video_id: UlJB3t55u_c
 title: EEVblog #1350 - Fake Energizer Batteries?
 url: https://www.youtube.com/watch?v=UlJB3t55u_c
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 29, "3": 46, "4": 59, "5": 72, "6": 87, "7": 100, "8": 119, "9": 134, "10": 152, "11": 166, "12": 179, "13": 192, "14": 206, "15": 223, "16": 235, "17": 250, "18": 268, "19": 284, "20": 297, "21": 313, "22": 327, "23": 341, "24": 363, "25": 383, "26": 397, "27": 417, "28": 435, "29": 452, "30": 466, "31": 478, "32": 490, "33": 505, "34": 522, "35": 540, "36": 555, "37": 571, "38": 584, "39": 602, "40": 614, "41": 629, "42": 644, "43": 661, "44": 671, "45": 685, "46": 703, "47": 723, "48": 744, "49": 760, "50": 776, "51": 796, "52": 810, "53": 825, "54": 839, "55": 855, "56": 870, "57": 883, "58": 894, "59": 906, "60": 919, "61": 935, "62": 952, "63": 967, "64": 978, "65": 991}
 ---
 
 **Dave Jones:** Hi, in a previous video, linked in at the end of down below if you haven't seen it, we took a look at some leaking Energizer Max Plus batteries and this is this something that I hadn't seen before. I've done a whole video on

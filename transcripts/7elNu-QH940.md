@@ -3,6 +3,7 @@ video_id: 7elNu-QH940
 title: Copper Block Energy Flow Riddle
 url: https://www.youtube.com/watch?v=7elNu-QH940
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 32, "3": 51}
 ---
 
 **Dave Jones:** Hi, I've got a puzzle for you. Look at this. Riddle me this. I've got a fiveB copper block. Isn't it beautiful thing of beauty? Joy forever. On one side, I've got just a red LED here. And I've got a the positive wire going over to a

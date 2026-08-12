@@ -3,6 +3,7 @@ video_id: x14bCIuQO1Q
 title: eevBLAB 125 - Deep Cycle Systems DCS Defamation Lawsuit WIN!
 url: https://www.youtube.com/watch?v=x14bCIuQO1Q
 source: youtube-asr
+timestamps: {"0": 2, "1": 24, "2": 40, "3": 59, "4": 77, "5": 92, "6": 107, "7": 124, "8": 141, "9": 161, "10": 174, "11": 191, "12": 206, "13": 222, "14": 243, "15": 260, "16": 278, "17": 298, "18": 319, "19": 338, "20": 357, "21": 371, "22": 384, "23": 402, "24": 419, "25": 435, "26": 452}
 ---
 
 **Dave Jones:** Hi, we've got an update in the Stefan Fischer versus DCS defamation lawsuit, which I did a video on 7 months ago now, and we have an update. He won. Stefan actually won. The court has ruled that basically the they couldn't sue him for

@@ -3,6 +3,7 @@ video_id: IbYtn420QBM
 title: Rayton Solar + Bill Nye = Questionable Solar Technology?
 url: https://www.youtube.com/watch?v=IbYtn420QBM
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 44, "4": 59, "5": 78, "6": 95, "7": 107, "8": 123, "9": 137, "10": 157, "11": 171, "12": 183, "13": 196, "14": 213, "15": 228, "16": 242, "17": 262, "18": 281, "19": 296, "20": 311, "21": 324, "22": 341, "23": 356, "24": 374, "25": 389, "26": 404, "27": 420, "28": 435, "29": 446, "30": 460, "31": 476, "32": 492, "33": 504, "34": 520, "35": 534, "36": 552, "37": 569, "38": 583, "39": 598, "40": 615, "41": 633, "42": 648, "43": 663, "44": 678, "45": 693, "46": 709, "47": 727, "48": 739, "49": 754, "50": 770, "51": 781, "52": 796, "53": 808, "54": 826, "55": 838, "56": 853, "57": 868, "58": 879, "59": 892, "60": 905, "61": 919, "62": 934, "63": 954, "64": 969, "65": 985, "66": 997, "67": 1012, "68": 1021, "69": 1038}
 ---
 
 **Dave Jones:** Hi, this one popped up on the EV blog forum. It's a new solar cell manufacturing technology and I love renewable energy solar power. I've got my own a solar rooftop system. I've done a ton of videos on it. So,

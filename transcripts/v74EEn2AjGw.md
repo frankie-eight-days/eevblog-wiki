@@ -3,6 +3,7 @@ video_id: v74EEn2AjGw
 title: eevBLAB 108 - Will AI Quality Eventually Destroy Itself?
 url: https://www.youtube.com/watch?v=v74EEn2AjGw
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 47, "4": 63, "5": 78, "6": 91, "7": 103, "8": 114, "9": 131, "10": 144, "11": 155, "12": 168, "13": 185, "14": 199, "15": 213, "16": 223, "17": 234, "18": 245, "19": 261, "20": 275, "21": 290, "22": 301, "23": 315, "24": 328, "25": 341, "26": 355, "27": 369, "28": 382, "29": 395, "30": 406, "31": 417, "32": 428, "33": 439, "34": 457, "35": 469, "36": 481, "37": 493, "38": 510, "39": 523, "40": 534, "41": 550, "42": 565, "43": 579, "44": 593, "45": 607, "46": 620, "47": 630}
 ---
 
 **Dave Jones:** Hi, let's talk about AI again. Chat GPT if you will. I asked this question on Twitter. Will AI results reach a peak inflection point where the quality, i.e. the human perceived quality of the results that the AI produce, will that

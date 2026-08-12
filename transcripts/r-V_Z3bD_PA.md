@@ -3,6 +3,7 @@ video_id: r-V_Z3bD_PA
 title: EEVblog #1107 - Shocking 4K BENQ Monitor Problem!
 url: https://www.youtube.com/watch?v=r-V_Z3bD_PA
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 33, "3": 50, "4": 67, "5": 78, "6": 91, "7": 105, "8": 120, "9": 134, "10": 148, "11": 162, "12": 175, "13": 189, "14": 211, "15": 227, "16": 247, "17": 260, "18": 275, "19": 296, "20": 316, "21": 336, "22": 350, "23": 363, "24": 378, "25": 392, "26": 406, "27": 423, "28": 439, "29": 452, "30": 474, "31": 489, "32": 503, "33": 514, "34": 526, "35": 540, "36": 552, "37": 565, "38": 596}
 ---
 
 **Dave Jones:** Hi, please excuse the crudity of this video. I didn't have time to build it to scale or to paint it. I just found an interesting thing which goes way back to a video I done which I'll probably have

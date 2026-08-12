@@ -3,6 +3,7 @@ video_id: A_saS93Clgk
 title: C++ for the Embedded Programmer
 url: https://www.youtube.com/watch?v=A_saS93Clgk
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 33, "3": 47, "4": 57, "5": 68, "6": 81, "7": 94, "8": 107, "9": 121, "10": 135, "11": 146, "12": 156, "13": 169, "14": 183, "15": 198, "16": 213, "17": 224, "18": 241, "19": 259, "20": 272, "21": 285, "22": 308, "23": 320, "24": 334, "25": 350, "26": 362, "27": 377, "28": 395, "29": 408, "30": 420, "31": 435, "32": 451, "33": 463, "34": 478, "35": 490, "36": 505, "37": 516, "38": 528, "39": 547, "40": 561, "41": 574, "42": 587, "43": 600, "44": 612, "45": 626, "46": 637, "47": 651, "48": 668, "49": 679, "50": 694, "51": 706, "52": 721, "53": 734, "54": 748, "55": 762, "56": 777, "57": 797, "58": 812, "59": 828, "60": 842, "61": 855, "62": 870, "63": 884, "64": 899, "65": 914}
 ---
 
 **Dave Jones:** Hello. So, here we have something I wanted to show you. I think it's quite cool, and I hope other people do, too. What I am going to show you is a an interesting way using C++ and a few techniques to simplify

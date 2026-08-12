@@ -3,6 +3,7 @@ video_id: eCKRl_Txa18
 title: Is This Dumpster Hisense TV Worth Repairing?
 url: https://www.youtube.com/watch?v=eCKRl_Txa18
 source: youtube-asr
+timestamps: {"0": 0, "1": 24, "2": 42, "3": 56, "4": 67, "5": 77, "6": 90, "7": 101, "8": 119, "9": 135, "10": 148, "11": 160, "12": 179, "13": 196, "14": 212, "15": 224, "16": 240, "17": 252, "18": 264, "19": 281, "20": 297, "21": 311, "22": 324, "23": 337, "24": 347, "25": 360, "26": 379, "27": 398, "28": 421, "29": 434, "30": 455, "31": 476, "32": 498, "33": 516, "34": 533, "35": 548, "36": 566, "37": 582, "38": 599, "39": 613, "40": 625, "41": 640, "42": 654, "43": 669, "44": 679}
 ---
 
 **Dave Jones:** Hi, yet another dumpster LCD monitor here. Dodgy brand, Hisense, and well, screen's not cracked, but look what it's doing. I'm going to guess that's not right. So, yeah, I'm thinking yeah, power supply, of course. That's a natural one. It is old, it's dodgy,

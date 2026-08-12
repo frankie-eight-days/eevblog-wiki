@@ -3,6 +3,7 @@ video_id: I_sX7jRd7bA
 title: Climbing Bald Rock
 url: https://www.youtube.com/watch?v=I_sX7jRd7bA
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 58, "4": 81, "5": 96, "6": 108, "7": 123, "8": 138, "9": 156, "10": 193, "11": 219, "12": 237, "13": 250, "14": 273, "15": 286, "16": 298, "17": 310, "18": 332, "19": 353}
 ---
 
 **Dave Jones:** Hi, I'm in Bald Rock National Park outside of Tenterfield and going to do the summit walk. Bald Rock summit walk is the well, it's basically Bald Rock is the biggest rock second biggest rock in Australia. It's the biggest one now that

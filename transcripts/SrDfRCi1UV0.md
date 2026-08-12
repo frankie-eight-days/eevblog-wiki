@@ -3,6 +3,7 @@ video_id: SrDfRCi1UV0
 title: EEVblog #716 - Raspberry Pi 2 Xenon Flash Problem Explained
 url: https://www.youtube.com/watch?v=SrDfRCi1UV0
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 50, "4": 67, "5": 81, "6": 98, "7": 115, "8": 134, "9": 150, "10": 166, "11": 179, "12": 193, "13": 206, "14": 227, "15": 245, "16": 261, "17": 277, "18": 292, "19": 304, "20": 319, "21": 330, "22": 345, "23": 359, "24": 373, "25": 388, "26": 403, "27": 422, "28": 436, "29": 453, "30": 468, "31": 482, "32": 497, "33": 514, "34": 530, "35": 545, "36": 558, "37": 573, "38": 590, "39": 605, "40": 621, "41": 632, "42": 648, "43": 663, "44": 675, "45": 689, "46": 705, "47": 717, "48": 732, "49": 746, "50": 760, "51": 774, "52": 786, "53": 799, "54": 815, "55": 828, "56": 841, "57": 854, "58": 869, "59": 885, "60": 899, "61": 909, "62": 924, "63": 938, "64": 955, "65": 966, "66": 980, "67": 995, "68": 1010, "69": 1023, "70": 1035, "71": 1049, "72": 1065, "73": 1079, "74": 1099, "75": 1115, "76": 1132, "77": 1148, "78": 1167, "79": 1182}
 ---
 
 **Dave Jones:** Hi, this is the new Raspberry Pi 2, just released very recently and a user by the name of Peter Onion discovered something very interesting with this board. Let's take a photo of this lovely little board with a camera with a xenon photo flash

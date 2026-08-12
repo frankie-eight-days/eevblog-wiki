@@ -3,6 +3,7 @@ video_id: G5aKdUed5so
 title: eevBLAB 116 - The SEC Killed LBRY Inc. What happens to Odysee?
 url: https://www.youtube.com/watch?v=G5aKdUed5so
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 34, "3": 49, "4": 66, "5": 80, "6": 97, "7": 110, "8": 123, "9": 136, "10": 151, "11": 168, "12": 184, "13": 203, "14": 215, "15": 228, "16": 241, "17": 256, "18": 270, "19": 284, "20": 299, "21": 316, "22": 328, "23": 343, "24": 358, "25": 370, "26": 386, "27": 402, "28": 418, "29": 429, "30": 448, "31": 459, "32": 471, "33": 486, "34": 500, "35": 515, "36": 531, "37": 544, "38": 557, "39": 569, "40": 583, "41": 595, "42": 609, "43": 625, "44": 635, "45": 652, "46": 666, "47": 682, "48": 695, "49": 710, "50": 724, "51": 735, "52": 749, "53": 761, "54": 776, "55": 790, "56": 803, "57": 817, "58": 834, "59": 848, "60": 860, "61": 874}
 ---
 
 **Dave Jones:** Hi. Unfortunately, it's a rather sad day in the content creation community because uh it's the end of Library Inc. LBR Y incororated. Uh they just posted this uh a few hours ago and this will be their last post. If you're not aware, um

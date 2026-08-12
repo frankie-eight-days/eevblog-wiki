@@ -3,6 +3,7 @@ video_id: WBfAEeEzDlg
 title: EEVBlog #819 - DC Fundamentals Part 4: Kirchhoff's Laws Tutorial
 url: https://www.youtube.com/watch?v=WBfAEeEzDlg
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 44, "4": 58, "5": 72, "6": 85, "7": 101, "8": 115, "9": 129, "10": 143, "11": 156, "12": 172, "13": 187, "14": 201, "15": 223, "16": 240, "17": 256, "18": 268, "19": 280, "20": 292, "21": 307, "22": 323, "23": 335, "24": 351, "25": 370, "26": 386, "27": 400, "28": 412, "29": 423, "30": 439, "31": 453, "32": 466, "33": 481, "34": 493, "35": 513, "36": 525, "37": 537, "38": 552, "39": 563, "40": 575, "41": 586, "42": 600, "43": 617, "44": 630, "45": 652, "46": 667, "47": 684, "48": 698, "49": 716, "50": 730, "51": 743, "52": 761, "53": 783, "54": 803, "55": 818, "56": 837, "57": 852, "58": 865, "59": 879, "60": 892, "61": 905, "62": 917, "63": 932, "64": 944, "65": 957}
 ---
 
 **Dave Jones:** Hi, welcome to Fundamentals Friday. Today we're going to take a look at one of the most fundamental laws in electronics, as fundamental as Ohm's law. It's called Kirchhoff's laws, or more specifically, Kirchhoff's current law and Kirchhoff's voltage law. Now,

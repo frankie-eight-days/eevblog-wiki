@@ -3,6 +3,7 @@ video_id: shSoVLSPbaQ
 title: eevBLAB #23 - Interorbital Systems TubeSat vs Australia Post
 url: https://www.youtube.com/watch?v=shSoVLSPbaQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 35, "3": 49, "4": 61, "5": 73, "6": 93, "7": 110, "8": 121, "9": 140, "10": 155, "11": 169, "12": 183, "13": 198, "14": 212}
 ---
 
 **Dave Jones:** Hi, just a quick blab video. I wanted to show you this because I thought it was quite interesting and funny. Uh I got my monthly bill from Australia Post for all my packing and shipping stuff for my multimeters and microcurrens and stuff.

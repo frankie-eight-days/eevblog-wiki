@@ -3,6 +3,7 @@ video_id: OouUyaUR250
 title: Deye Hybrid Inverter Grid Failure
 url: https://www.youtube.com/watch?v=OouUyaUR250
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 36, "3": 58, "4": 79, "5": 94, "6": 107, "7": 124, "8": 138, "9": 152, "10": 167}
 ---
 
 **Dave Jones:** Hi, something's gone wrong with my DI inverter again. Look, it says off grid there, top right-hand corner. And last night I was looking at my solar analytics and it was showing zero grid voltage and of course it wasn't

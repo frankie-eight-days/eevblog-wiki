@@ -3,6 +3,7 @@ video_id: nJxQZr4dz3g
 title: New EEVblog Lab VDSL2 Internet Connection
 url: https://www.youtube.com/watch?v=nJxQZr4dz3g
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 31, "3": 46, "4": 61, "5": 73, "6": 90, "7": 106, "8": 120, "9": 131, "10": 143, "11": 157, "12": 170, "13": 180, "14": 192, "15": 206, "16": 221, "17": 233, "18": 248, "19": 265, "20": 279, "21": 293, "22": 307, "23": 318, "24": 335, "25": 347, "26": 365, "27": 380, "28": 399, "29": 412, "30": 430, "31": 443, "32": 462, "33": 474, "34": 491, "35": 518, "36": 536, "37": 555, "38": 569, "39": 586, "40": 610, "41": 624, "42": 637, "43": 650, "44": 667, "45": 687, "46": 700, "47": 722, "48": 739, "49": 754, "50": 763, "51": 775, "52": 795}
 ---
 
 **Dave Jones:** Hi guys, just a very quick impromptu video because as I've mentioned before I'm I was getting new internet access in the lab. Well, it's here. They just installed it and woohoo, haven't tested it tested the speed yet. Browser works,

@@ -3,6 +3,7 @@ video_id: uE0x8YR7nMg
 title: Enphase Envoy S FAILING?
 url: https://www.youtube.com/watch?v=uE0x8YR7nMg
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 37, "3": 53, "4": 69, "5": 86, "6": 106, "7": 120, "8": 133, "9": 148, "10": 163, "11": 176, "12": 192, "13": 207, "14": 226, "15": 238, "16": 253, "17": 271, "18": 284, "19": 298, "20": 320, "21": 342, "22": 357, "23": 371, "24": 387, "25": 403, "26": 420, "27": 437, "28": 451, "29": 470, "30": 487, "31": 499, "32": 515, "33": 529, "34": 547, "35": 565, "36": 579}
 ---
 
 **Dave Jones:** Hi, my Enphase Envoy gateway system, it stopped communicating today. I think it was about, according to the data, about like 1:00 a.m. this morning or something. And I just repowered the whole thing, both the main inverter switch and the Envoy.

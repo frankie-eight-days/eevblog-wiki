@@ -3,6 +3,7 @@ video_id: sEOxix7-kXk
 title: Analog TV Transmitter Teardown Teaser
 url: https://www.youtube.com/watch?v=sEOxix7-kXk
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 27, "3": 41, "4": 54, "5": 77, "6": 101, "7": 122, "8": 138, "9": 152, "10": 170, "11": 199}
 ---
 
 **Dave Jones:** Hi. Why am I in the car? Well, it's road trip time. Beauty. I'm getting out of the lab for a change. Awesome. Now, I did a video a little while ago on how Australia is switching off their analog

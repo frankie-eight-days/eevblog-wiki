@@ -3,6 +3,7 @@ video_id: iavM2IqueM8
 title: Heat Pump Hot Water System vs Gas Hot Water
 url: https://www.youtube.com/watch?v=iavM2IqueM8
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 26, "3": 42, "4": 55, "5": 69, "6": 81, "7": 92, "8": 104, "9": 116, "10": 128, "11": 141, "12": 153, "13": 164, "14": 177, "15": 188, "16": 200, "17": 212, "18": 224, "19": 234, "20": 248, "21": 262, "22": 277, "23": 293, "24": 306, "25": 320, "26": 333, "27": 351, "28": 365, "29": 376, "30": 388, "31": 400, "32": 411, "33": 424, "34": 437, "35": 454, "36": 467, "37": 483, "38": 499, "39": 512, "40": 524, "41": 539, "42": 553, "43": 566, "44": 581, "45": 594, "46": 607, "47": 619, "48": 635, "49": 649, "50": 660, "51": 678, "52": 693, "53": 704, "54": 713, "55": 726, "56": 740, "57": 752, "58": 768, "59": 780, "60": 794, "61": 807, "62": 818, "63": 831, "64": 842, "65": 853, "66": 864}
 ---
 
 **Dave Jones:** Hi, next week at my house I'm going to get installed a heat pump hot water system to replace our existing gas hot water system. So, I thought I'd run through the numbers here because we're essentially going to use this as a

@@ -3,6 +3,7 @@ video_id: rNZIjCyQapg
 title: EEVblog 1682 - Enphase Microinverter FAIL & Warranty Install
 url: https://www.youtube.com/watch?v=rNZIjCyQapg
 source: youtube-asr
+timestamps: {"0": 6, "1": 23, "2": 35, "3": 51, "4": 63, "5": 81, "6": 96, "7": 111, "8": 128, "9": 157, "10": 172, "11": 190, "12": 204, "13": 221, "14": 238, "15": 250, "16": 261, "17": 274, "18": 288, "19": 299, "20": 312, "21": 327, "22": 340, "23": 350, "24": 366, "25": 388, "26": 410, "27": 422, "28": 438, "29": 451, "30": 464, "31": 478, "32": 489, "33": 501, "34": 517, "35": 531, "36": 541, "37": 556, "38": 571, "39": 584, "40": 599, "41": 612, "42": 626, "43": 640, "44": 652, "45": 667, "46": 684, "47": 701, "48": 718, "49": 733, "50": 752, "51": 775}
 ---
 
 **Dave Jones:** Hi. W potentially um with my Nphase um solar system. I had this installed uh it's almost 4 years ago now in April. I think four years. Um and I've had no issues at all with my Nphase micro inverter uh

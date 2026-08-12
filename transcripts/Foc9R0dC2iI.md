@@ -3,6 +3,7 @@ video_id: Foc9R0dC2iI
 title: EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit
 url: https://www.youtube.com/watch?v=Foc9R0dC2iI
 source: youtube-asr
+timestamps: {"0": 2, "1": 15, "2": 29, "3": 42, "4": 56, "5": 69, "6": 81, "7": 93, "8": 108, "9": 119, "10": 134, "11": 150, "12": 165, "13": 178, "14": 192, "15": 205, "16": 220, "17": 236, "18": 249, "19": 264, "20": 278, "21": 292, "22": 306, "23": 321, "24": 336, "25": 352, "26": 367, "27": 384, "28": 396, "29": 411, "30": 425, "31": 438, "32": 455, "33": 468, "34": 487, "35": 505, "36": 516, "37": 530, "38": 544, "39": 561, "40": 576, "41": 589, "42": 604, "43": 621, "44": 633, "45": 648, "46": 660, "47": 676, "48": 686, "49": 701, "50": 721, "51": 738, "52": 757, "53": 770, "54": 783, "55": 801, "56": 813, "57": 828, "58": 847, "59": 862, "60": 879, "61": 895, "62": 908, "63": 924, "64": 937, "65": 951, "66": 968, "67": 984, "68": 997, "69": 1009, "70": 1025, "71": 1036, "72": 1051}
 ---
 
 **Dave Jones:** Hi, the humble toggle switch. You've seen them. You've used them on your projects to switch your projects off and on and seems pretty obvious when you design a product, well, I need to switch the power off and on, use a toggle

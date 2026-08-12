@@ -3,6 +3,7 @@ video_id: WW_-Clzs2Bo
 title: Dungeon Benches and Lighting
 url: https://www.youtube.com/watch?v=WW_-Clzs2Bo
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 49, "4": 61, "5": 72, "6": 91, "7": 103, "8": 120, "9": 132, "10": 145, "11": 162, "12": 172, "13": 188}
 ---
 
 **Dave Jones:** Hi, down in the dungeon. Just an update on that uh PC bench that I was uh building. I've installed my lighting now. Check it out. I've got my old really old soft boxes. Well, sorry. They Yeah, they're mounted on a big uh swing

@@ -3,6 +3,7 @@ video_id: M6ZVF8jeqcs
 title: EEVBlog WebNX Data Center Server FIRE!
 url: https://www.youtube.com/watch?v=M6ZVF8jeqcs
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 35, "3": 50, "4": 66, "5": 83, "6": 100, "7": 112, "8": 126, "9": 139, "10": 156, "11": 173, "12": 183, "13": 200, "14": 219, "15": 234, "16": 252, "17": 266, "18": 283, "19": 296, "20": 309, "21": 323, "22": 337, "23": 353, "24": 369, "25": 381, "26": 395, "27": 408, "28": 421, "29": 434, "30": 447, "31": 462, "32": 478, "33": 493, "34": 507, "35": 526, "36": 540, "37": 557, "38": 571, "39": 585, "40": 596, "41": 611, "42": 625, "43": 635, "44": 646, "45": 659, "46": 677, "47": 690, "48": 699, "49": 711}
 ---
 
 **Dave Jones:** Hi, just a quick update a video because you might have noticed that uh what what what what the EEVblog website is down. That means the center of the universe is down, which is the EEVblog forum. Um everyone's getting withdrawal

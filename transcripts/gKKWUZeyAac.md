@@ -3,6 +3,7 @@ video_id: gKKWUZeyAac
 title: EEVblog #586 - Open Source Hardware uARM 4-Axis Desktop Robotic Arm Kickstarter
 url: https://www.youtube.com/watch?v=gKKWUZeyAac
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 30, "3": 44, "4": 59, "5": 75, "6": 88, "7": 105, "8": 116, "9": 132, "10": 146, "11": 157, "12": 167, "13": 181, "14": 194, "15": 206, "16": 219, "17": 232, "18": 246, "19": 260, "20": 276, "21": 292, "22": 308, "23": 323, "24": 334, "25": 346, "26": 358, "27": 371, "28": 386, "29": 402, "30": 419, "31": 436, "32": 449, "33": 461, "34": 478, "35": 490, "36": 506, "37": 520, "38": 533, "39": 550, "40": 566, "41": 580, "42": 597, "43": 612, "44": 625, "45": 640, "46": 656, "47": 674, "48": 691, "49": 708, "50": 722, "51": 738, "52": 750, "53": 764, "54": 780, "55": 791, "56": 809, "57": 821, "58": 834, "59": 848, "60": 861}
 ---
 
 **Dave Jones:** Hi, we're going to take a quick look at the UFactory uArm 4-axis robotic arm. It's a Kickstarter project and you have seen this on my mailbag segment before. I have shown it briefly. We'll take a little bit more

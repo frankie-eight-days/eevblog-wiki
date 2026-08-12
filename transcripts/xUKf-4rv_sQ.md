@@ -3,6 +3,7 @@ video_id: xUKf-4rv_sQ
 title: EEVacademy #8 - Howland Current Pump
 url: https://www.youtube.com/watch?v=xUKf-4rv_sQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 46, "4": 63, "5": 86, "6": 103, "7": 121, "8": 134, "9": 150, "10": 167, "11": 184, "12": 199, "13": 218, "14": 236, "15": 254, "16": 269, "17": 284, "18": 296, "19": 314, "20": 332, "21": 342, "22": 361, "23": 380, "24": 410, "25": 422, "26": 436, "27": 453, "28": 468, "29": 485, "30": 496, "31": 509}
 ---
 
 **Dave Jones:** Okay, so today we're going to be talking about the improved Howland current pump. Um it's a op-amp circuit with five resistors and a voltage reference which can be used to generate a constant current for a few milliamps, tens of

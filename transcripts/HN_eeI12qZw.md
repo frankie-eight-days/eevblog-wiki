@@ -3,6 +3,7 @@ video_id: HN_eeI12qZw
 title: The R&S MXO4 is too powerful for its own good (and Dave's sanity)
 url: https://www.youtube.com/watch?v=HN_eeI12qZw
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 48, "4": 61, "5": 75, "6": 95, "7": 110, "8": 130, "9": 151, "10": 168, "11": 187, "12": 198, "13": 215, "14": 237, "15": 258, "16": 278, "17": 292, "18": 305, "19": 319, "20": 335, "21": 351, "22": 370, "23": 386, "24": 405, "25": 418, "26": 432, "27": 444, "28": 457, "29": 471, "30": 489, "31": 506, "32": 523}
 ---
 
 **Dave Jones:** Uh, this is really annoying. I press run, of course. I'm running. I'm measuring a signal here. I press stop. It stops, right? It still shows the uh historical waveform, but then you can if you change the horizontal um it

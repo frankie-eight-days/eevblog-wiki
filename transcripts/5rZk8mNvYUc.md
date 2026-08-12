@@ -3,6 +3,7 @@ video_id: 5rZk8mNvYUc
 title: 2020 Hyundai IONIQ AC Charger FAIL?
 url: https://www.youtube.com/watch?v=5rZk8mNvYUc
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 35, "3": 49, "4": 67, "5": 81, "6": 94, "7": 112, "8": 124, "9": 138, "10": 161, "11": 173, "12": 188, "13": 200, "14": 216, "15": 231, "16": 246, "17": 258}
 ---
 
 **Dave Jones:** Hi, I've got a big problem with my 2020 Hyundai Ionic. Uh, it's not charging. It actually now um just does not engage charging at all. I've tried three different well chargers in quote marks because the EVSE aren't charges. They're

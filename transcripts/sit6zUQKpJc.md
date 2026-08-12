@@ -3,6 +3,7 @@ video_id: sit6zUQKpJc
 title: EEVblog #825 - Your Printer Is Spying On You!
 url: https://www.youtube.com/watch?v=sit6zUQKpJc
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 32, "3": 47, "4": 60, "5": 72, "6": 87, "7": 105, "8": 121, "9": 136, "10": 149, "11": 163, "12": 177, "13": 192, "14": 206, "15": 221, "16": 238, "17": 255, "18": 268, "19": 281, "20": 296, "21": 308, "22": 321, "23": 333, "24": 346, "25": 359, "26": 371, "27": 384, "28": 401, "29": 412, "30": 426, "31": 440}
 ---
 
 **Dave Jones:** Hi. Would you believe me if I told you that every time you print something out on a color laser printer like this, that there's actually a secret hidden code embedded on each and every printout that the government or whoever can use to

@@ -3,6 +3,7 @@ video_id: jjvIy04PwYI
 title: EEVblog #286 - Orders Of Magnitude
 url: https://www.youtube.com/watch?v=jjvIy04PwYI
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 28, "3": 44, "4": 57, "5": 72, "6": 89, "7": 103, "8": 119, "9": 136, "10": 153, "11": 169, "12": 184, "13": 197, "14": 210, "15": 227, "16": 240, "17": 256, "18": 269, "19": 283, "20": 301, "21": 317, "22": 331, "23": 349, "24": 364, "25": 381, "26": 394, "27": 413, "28": 428, "29": 445, "30": 466, "31": 482, "32": 502, "33": 524, "34": 542, "35": 560, "36": 577, "37": 597, "38": 614, "39": 631, "40": 644, "41": 656, "42": 672, "43": 688, "44": 702, "45": 716, "46": 728, "47": 741, "48": 755, "49": 769, "50": 783, "51": 799, "52": 814, "53": 829, "54": 848, "55": 863, "56": 877, "57": 893, "58": 906, "59": 918, "60": 931, "61": 942, "62": 972}
 ---
 
 **Dave Jones:** Hi, it's engineering terminology time. We're going to talk about orders of magnitude. And you hear me say it all the time, not just me, but it's a very common term in electronics and other engineering and science for that matter.

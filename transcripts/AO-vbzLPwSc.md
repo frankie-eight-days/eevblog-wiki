@@ -3,6 +3,7 @@ video_id: AO-vbzLPwSc
 title: EEVblog #719 - Sony Low Noise Audiophile SDXC Memory Card
 url: https://www.youtube.com/watch?v=AO-vbzLPwSc
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 32, "3": 49, "4": 65, "5": 80, "6": 96, "7": 112, "8": 126, "9": 138, "10": 150, "11": 172, "12": 197, "13": 215, "14": 231, "15": 249, "16": 260, "17": 274, "18": 290}
 ---
 
 **Dave Jones:** Hi, I'm really excited. Why? Because Sony have released a fantastic, technically innovative new product I'd love to tell you about and explain how it works in minute technical detail on the whiteboard here. But, before we do that, I think it's important to explain

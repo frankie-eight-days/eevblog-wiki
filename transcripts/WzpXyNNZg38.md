@@ -3,6 +3,7 @@ video_id: WzpXyNNZg38
 title: eevBLAB #64 - Tesla Solar City Panels Are CATCHING ON FIRE!
 url: https://www.youtube.com/watch?v=WzpXyNNZg38
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 42, "4": 58, "5": 70, "6": 81, "7": 95, "8": 107, "9": 123, "10": 137, "11": 148, "12": 167, "13": 182, "14": 198, "15": 219, "16": 235, "17": 247, "18": 259, "19": 277, "20": 290, "21": 309, "22": 324, "23": 340, "24": 356, "25": 368, "26": 380, "27": 393, "28": 408, "29": 418, "30": 432, "31": 445, "32": 457, "33": 473, "34": 488, "35": 503, "36": 519, "37": 533, "38": 550, "39": 570, "40": 584, "41": 601, "42": 617, "43": 630}
 ---
 
 **Dave Jones:** Hi, keeping everyone up to date on the solar industry. Because well, I'm into solar and um everyone seems to like my solar power videos. Anyway, second channel video. Let's do it. Um Elon Musk tweeted August a couple of days ago, was it?

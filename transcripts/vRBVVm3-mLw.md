@@ -3,6 +3,7 @@ video_id: vRBVVm3-mLw
 title: Tin Collection Culling - It's yours if you want it.
 url: https://www.youtube.com/watch?v=vRBVVm3-mLw
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 34, "3": 47, "4": 66, "5": 80, "6": 98, "7": 123, "8": 137, "9": 150}
 ---
 
 **Dave Jones:** I have some keepers. I've got five couch feet. All hail the legendary couch feet. Um um um um The couch feet um yeah, and there's a couple just a couple of other miscellaneous keepers maybe, but we have an entire box discarded. Oh, should I

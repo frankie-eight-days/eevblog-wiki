@@ -3,6 +3,7 @@ video_id: VEWTwdG7dy8
 title: eevBLAB 135 - SNEAKY Gmail is Training AI with YOUR Emails
 url: https://www.youtube.com/watch?v=VEWTwdG7dy8
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 31, "3": 49, "4": 65, "5": 79, "6": 97, "7": 109, "8": 124, "9": 140, "10": 152, "11": 166, "12": 182, "13": 198, "14": 212, "15": 226, "16": 238}
 ---
 
 **Dave Jones:** Hi, just a very important message for everyone who uses Gmail. It turns out that you're automatically opted in for Gmail/Google/Alphabet to use all of your to use and read all of your personal messages and attachments to train their AI models and

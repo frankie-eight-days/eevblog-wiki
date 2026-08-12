@@ -3,6 +3,7 @@ video_id: hFvqEfZfMtA
 title: EEVacademy | Digital Design Series Part 2 - Digital Logic Boolean & Demorgan's Theorems
 url: https://www.youtube.com/watch?v=hFvqEfZfMtA
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 29, "3": 48, "4": 66, "5": 82, "6": 98, "7": 117, "8": 133, "9": 149, "10": 168, "11": 185, "12": 209, "13": 227, "14": 241, "15": 259, "16": 275, "17": 289, "18": 304, "19": 320, "20": 337, "21": 350, "22": 365, "23": 383, "24": 402, "25": 417, "26": 431, "27": 447, "28": 463, "29": 477, "30": 499, "31": 516, "32": 536, "33": 553, "34": 566, "35": 579, "36": 597, "37": 611, "38": 626, "39": 643, "40": 670, "41": 684, "42": 700, "43": 714, "44": 729, "45": 744, "46": 767, "47": 782, "48": 800, "49": 816, "50": 834, "51": 848, "52": 862}
 ---
 
 **Dave Jones:** Hi, in a previous video we took a look at basic digital logic gates, truth tables, and basic Boolean algebra. Now it's time to move on to theorems. More specifically, Boolean and De Morgan's theorems which allow us to do circuit or

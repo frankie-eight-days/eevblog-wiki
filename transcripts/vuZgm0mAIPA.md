@@ -3,6 +3,7 @@ video_id: vuZgm0mAIPA
 title: EEVblog #992 (Part 2) - How To Clean & Service A Microscope
 url: https://www.youtube.com/watch?v=vuZgm0mAIPA
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 25, "3": 35, "4": 52, "5": 68, "6": 88, "7": 108, "8": 122, "9": 134, "10": 148, "11": 160, "12": 180, "13": 198, "14": 214, "15": 228, "16": 245, "17": 258, "18": 282, "19": 294, "20": 304, "21": 314, "22": 325, "23": 342, "24": 358, "25": 372, "26": 387, "27": 398, "28": 411, "29": 421, "30": 435, "31": 448, "32": 462, "33": 475, "34": 489, "35": 507, "36": 523, "37": 535, "38": 551, "39": 567, "40": 586, "41": 600, "42": 611, "43": 624, "44": 637, "45": 651, "46": 666, "47": 682, "48": 696, "49": 710, "50": 730, "51": 752, "52": 772, "53": 787, "54": 803, "55": 819, "56": 831, "57": 849, "58": 858, "59": 875, "60": 889, "61": 901, "62": 916, "63": 933, "64": 946}
 ---
 
 **Dave Jones:** Hi everyone. So, we have a nice Olympus microscope made in Japan and we're going to clean it up and um fabricate a light to replace the uh blown bulb here. We're going to fix it up and let's see how we

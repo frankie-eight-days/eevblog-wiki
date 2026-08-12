@@ -3,6 +3,7 @@ video_id: fhPM_e0FZs8
 title: EEVblog #276 - Mailbag
 url: https://www.youtube.com/watch?v=fhPM_e0FZs8
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 30, "3": 45, "4": 58, "5": 72, "6": 91, "7": 105, "8": 122, "9": 139, "10": 153, "11": 165, "12": 180, "13": 196, "14": 216, "15": 227, "16": 241, "17": 259, "18": 275, "19": 295, "20": 314, "21": 328, "22": 344, "23": 359, "24": 373, "25": 391, "26": 405, "27": 419, "28": 438, "29": 454, "30": 470, "31": 492, "32": 508, "33": 521, "34": 535, "35": 546, "36": 560, "37": 578, "38": 591, "39": 607, "40": 623, "41": 636}
 ---
 
 **Dave Jones:** Hi, welcome to the mail bag segment again. Yes, I can't believe the popularity of this mail bag thing. People seem to love it. The number of views is massive. The last one got like 17,000 views or something incredible

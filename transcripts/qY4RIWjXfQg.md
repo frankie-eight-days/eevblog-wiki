@@ -3,6 +3,7 @@ video_id: qY4RIWjXfQg
 title: EEVblog #739 - AMAZING Ebay Hardware Tin Collection
 url: https://www.youtube.com/watch?v=qY4RIWjXfQg
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 46, "4": 67, "5": 82, "6": 96, "7": 111, "8": 129, "9": 149, "10": 167, "11": 181, "12": 199, "13": 222, "14": 239, "15": 261, "16": 281, "17": 299, "18": 314, "19": 333, "20": 354, "21": 380, "22": 401, "23": 424, "24": 436, "25": 450, "26": 473, "27": 488, "28": 503, "29": 521, "30": 545, "31": 562, "32": 583, "33": 605, "34": 630, "35": 643, "36": 658, "37": 673, "38": 686, "39": 696, "40": 707, "41": 720, "42": 732, "43": 744, "44": 756, "45": 769, "46": 781, "47": 793, "48": 807, "49": 824, "50": 836, "51": 850}
 ---
 
 **Dave Jones:** Hi, welcome to another video on the David Sparks collection. Click here or down below or click around here somewhere if you haven't seen a previous video I've done on an amazing component collection from a guy named David Sparks. Now, I managed to score some of

@@ -3,6 +3,7 @@ video_id: KMHnkjWP1yU
 title: Remove Green Screen Background using GIMP
 url: https://www.youtube.com/watch?v=KMHnkjWP1yU
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 46, "4": 58, "5": 72, "6": 87, "7": 101, "8": 113, "9": 128, "10": 139, "11": 154, "12": 167, "13": 179, "14": 191, "15": 209, "16": 223, "17": 238, "18": 250, "19": 266, "20": 279, "21": 291, "22": 302, "23": 316, "24": 329}
 ---
 
 **Dave Jones:** Hi, I'm just going to show you how to remove a green screen background, which is what I've got here. This is how I'm doing this video, a green screen background from an image using so that you can create a transparent PNG

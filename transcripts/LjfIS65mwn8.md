@@ -3,6 +3,7 @@ video_id: LjfIS65mwn8
 title: EEVblog #39 - Microchip PICkit 3 Programmer/Debugger Review
 url: https://www.youtube.com/watch?v=LjfIS65mwn8
 source: youtube-asr
+timestamps: {"0": 10, "1": 28, "2": 40, "3": 55, "4": 69, "5": 85, "6": 98, "7": 110, "8": 126, "9": 139, "10": 151, "11": 163, "12": 179, "13": 193, "14": 209, "15": 221, "16": 232, "17": 244, "18": 258, "19": 270, "20": 280, "21": 295, "22": 309, "23": 323, "24": 335, "25": 352, "26": 370, "27": 382, "28": 395, "29": 408, "30": 423, "31": 436, "32": 455, "33": 468, "34": 482, "35": 495, "36": 510, "37": 524, "38": 540, "39": 554, "40": 569, "41": 581}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog. I'm your host, Dave Jones. It's equipment review time. Well, not so much equipment, but this week we've got the Microchip PICkit 3 uh debugger / programmer. Let's check it out. Uh it's $45 just on its own as

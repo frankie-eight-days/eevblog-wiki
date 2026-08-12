@@ -3,6 +3,7 @@ video_id: WtGlolw-BxA
 title: Reclaim Heat Pump Hot Water Solar Energy Usage UPDATE
 url: https://www.youtube.com/watch?v=WtGlolw-BxA
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 30, "3": 46, "4": 59, "5": 75, "6": 88, "7": 103, "8": 119, "9": 136, "10": 149, "11": 164, "12": 178, "13": 192, "14": 207, "15": 220, "16": 235, "17": 249, "18": 260, "19": 272, "20": 286, "21": 302, "22": 315, "23": 329, "24": 345, "25": 358, "26": 371, "27": 383, "28": 394, "29": 405, "30": 419, "31": 429, "32": 443, "33": 461, "34": 476, "35": 488, "36": 504, "37": 514, "38": 528, "39": 545, "40": 557, "41": 574, "42": 591}
 ---
 
 **Dave Jones:** Hi, just a quick update on my Reclaim heat pump hot water system that I installed to replace my gas hot water system. You've no doubt seen the videos and I've got some additional data in addition to the main installation and

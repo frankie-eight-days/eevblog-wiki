@@ -3,6 +3,7 @@ video_id: LbqnHtNPt9Y
 title: Siglent Oscilloscope - Function Gen USB Connection Test
 url: https://www.youtube.com/watch?v=LbqnHtNPt9Y
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 28, "3": 38, "4": 56, "5": 74, "6": 90, "7": 106, "8": 119, "9": 130, "10": 143, "11": 159, "12": 172, "13": 183, "14": 198, "15": 212, "16": 225, "17": 240, "18": 257, "19": 271, "20": 284, "21": 294, "22": 306, "23": 321, "24": 339, "25": 353, "26": 365, "27": 380, "28": 393, "29": 403, "30": 415, "31": 428, "32": 445, "33": 460}
 ---
 
 **Dave Jones:** Hi, I just thought I'd show you something cool with uh Siglent uh gear here. You can probably do it with other uh manufacturers as well, but I think this is really cool. Now, it I didn't know that this was possible, but it only

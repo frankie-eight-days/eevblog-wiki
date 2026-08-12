@@ -3,6 +3,7 @@ video_id: y3WlxxgZwcs
 title: Space Shuttle Magnetic Core Memory
 url: https://www.youtube.com/watch?v=y3WlxxgZwcs
 source: youtube-asr
+timestamps: {"0": 5, "1": 24, "2": 44, "3": 57, "4": 73, "5": 89, "6": 100, "7": 113, "8": 131, "9": 143, "10": 157, "11": 171, "12": 189, "13": 204, "14": 216, "15": 233, "16": 246, "17": 260, "18": 275, "19": 285, "20": 298, "21": 311, "22": 328, "23": 339, "24": 356, "25": 370, "26": 386, "27": 402, "28": 421, "29": 441, "30": 465, "31": 478, "32": 497, "33": 517, "34": 534, "35": 548, "36": 564, "37": 581, "38": 600, "39": 620, "40": 633, "41": 650, "42": 663, "43": 676, "44": 696, "45": 712}
 ---
 
 **Dave Jones:** Next up we have a huge one and it's been here for a while. Sorry Josh Parker. He's from um Orange in California. Just Orange, not Orange County or just Orange. Let's crack into this. Came in an Amazon box. Let's get rid of that.

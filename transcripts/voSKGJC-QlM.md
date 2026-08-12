@@ -3,6 +3,7 @@ video_id: voSKGJC-QlM
 title: EEVblog 1680 - Free Energy from the Earth's Magnetic Field?
 url: https://www.youtube.com/watch?v=voSKGJC-QlM
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 31, "3": 43, "4": 56, "5": 67, "6": 83, "7": 95, "8": 110, "9": 121, "10": 133, "11": 149, "12": 162, "13": 172, "14": 190, "15": 203, "16": 215, "17": 231, "18": 243, "19": 261, "20": 283, "21": 299, "22": 314, "23": 326, "24": 340, "25": 357, "26": 372, "27": 385, "28": 399, "29": 413, "30": 428, "31": 440, "32": 455, "33": 472, "34": 482, "35": 495, "36": 515, "37": 530, "38": 541, "39": 555, "40": 565, "41": 577, "42": 590, "43": 604, "44": 622, "45": 631, "46": 649, "47": 662, "48": 679, "49": 698, "50": 712, "51": 727, "52": 744, "53": 760, "54": 781, "55": 803, "56": 816, "57": 842, "58": 855, "59": 872, "60": 888, "61": 904, "62": 919, "63": 934, "64": 953}
 ---
 
 **Dave Jones:** Hi. All right, you can stop messaging me. I'll do a video on this thing. Physicists think they found a way to harness energy from the Earth's rotation, AND IT MIGHT JUST be crazy enough to work. Attempt to harness

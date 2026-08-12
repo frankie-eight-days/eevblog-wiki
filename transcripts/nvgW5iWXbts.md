@@ -3,6 +3,7 @@ video_id: nvgW5iWXbts
 title: EEVblog #768 - Cordless Anti-Static Wristbands BUSTED!
 url: https://www.youtube.com/watch?v=nvgW5iWXbts
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 40, "3": 57, "4": 73, "5": 86, "6": 109, "7": 124, "8": 139, "9": 153, "10": 166, "11": 183, "12": 194, "13": 206, "14": 220, "15": 230, "16": 242, "17": 256, "18": 267, "19": 284, "20": 297, "21": 308, "22": 320, "23": 334, "24": 348, "25": 360, "26": 375, "27": 390, "28": 403, "29": 418, "30": 431, "31": 451, "32": 467, "33": 484, "34": 495, "35": 508, "36": 522, "37": 534, "38": 547, "39": 563, "40": 584, "41": 607, "42": 621, "43": 641, "44": 654, "45": 669, "46": 682, "47": 704}
 ---
 
 **Dave Jones:** Hi. What time is it? It's myth-busting time. Yes, cordless antistatic wristbands. None of this rubbish. What do you want one of these annoying uh antistatic wristband cords for? Screw that. You can buy these on eBay for a buck. They're cordless. They're supposed

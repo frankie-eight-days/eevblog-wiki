@@ -3,6 +3,7 @@ video_id: ILIO5b1BliE
 title: Why Use AA's Instead of 9V Batteries in Multimeters?
 url: https://www.youtube.com/watch?v=ILIO5b1BliE
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 35, "3": 53, "4": 69, "5": 80, "6": 92, "7": 106, "8": 125, "9": 139, "10": 154, "11": 171, "12": 184, "13": 199, "14": 216, "15": 227, "16": 242, "17": 253, "18": 265, "19": 279, "20": 291, "21": 307, "22": 319, "23": 333, "24": 351, "25": 363, "26": 373, "27": 385, "28": 401, "29": 415, "30": 430, "31": 441, "32": 454, "33": 465, "34": 478, "35": 491, "36": 506, "37": 520, "38": 531, "39": 544, "40": 559, "41": 573, "42": 587, "43": 599, "44": 616, "45": 631, "46": 645, "47": 656, "48": 666}
 ---
 
 **Dave Jones:** Hi, I thought I'd answer an EEVblog forum question cuz it's kind of a little bit technical and it involves the 121GW multimeter. The post is from a member called Ixzod. I X O D, something like that. So, thank

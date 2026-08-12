@@ -3,6 +3,7 @@ video_id: hoLf8gvvXXU
 title: EEVblog #997 - How To Solder Surface Mount Components
 url: https://www.youtube.com/watch?v=hoLf8gvvXXU
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 45, "4": 55, "5": 68, "6": 81, "7": 93, "8": 105, "9": 119, "10": 130, "11": 143, "12": 159, "13": 172, "14": 190, "15": 204, "16": 220, "17": 235, "18": 246, "19": 259, "20": 273, "21": 286, "22": 300, "23": 314, "24": 327, "25": 339, "26": 352, "27": 362, "28": 372, "29": 382, "30": 392, "31": 406, "32": 418, "33": 431, "34": 443, "35": 460, "36": 477, "37": 490, "38": 504, "39": 515, "40": 528, "41": 542, "42": 552, "43": 565, "44": 578, "45": 594, "46": 604, "47": 621, "48": 632, "49": 648, "50": 671, "51": 687, "52": 701, "53": 715, "54": 728, "55": 743, "56": 762, "57": 776, "58": 794, "59": 818, "60": 831, "61": 846, "62": 860, "63": 872, "64": 886, "65": 901, "66": 912, "67": 924, "68": 939, "69": 951, "70": 984, "71": 998, "72": 1014, "73": 1028}
 ---
 
 **Dave Jones:** Hi, time for another installment in the Nixie tube design video. We've received our PCBs from Elecrow. So, we'll just take a quick look at this before we actually assemble it. I got a 48-hour turnaround on these. I think they made it. I

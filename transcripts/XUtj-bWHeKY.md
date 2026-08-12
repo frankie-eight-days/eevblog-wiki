@@ -3,6 +3,7 @@ video_id: XUtj-bWHeKY
 title: EEVblog #1160 - Weller Responds!
 url: https://www.youtube.com/watch?v=XUtj-bWHeKY
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 47, "4": 70, "5": 81, "6": 96, "7": 114, "8": 130, "9": 145, "10": 161, "11": 200, "12": 212, "13": 224, "14": 242, "15": 257, "16": 273, "17": 291, "18": 307, "19": 317, "20": 336, "21": 351, "22": 370, "23": 385, "24": 401, "25": 419, "26": 437, "27": 449, "28": 467, "29": 486, "30": 500}
 ---
 
 **Dave Jones:** Hi, in a recent video we took a look at this Weller WE1010 soldering iron and how it released the magic smoke when accidentally plugged into 240 volts for a 120 volt unit. And after doing a teardown of this, we

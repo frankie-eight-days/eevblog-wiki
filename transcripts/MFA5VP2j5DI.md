@@ -3,6 +3,7 @@ video_id: MFA5VP2j5DI
 title: Dumpster Diving PC's
 url: https://www.youtube.com/watch?v=MFA5VP2j5DI
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 33, "3": 48, "4": 61, "5": 79, "6": 100, "7": 120, "8": 135, "9": 150, "10": 166, "11": 184, "12": 199, "13": 216, "14": 231, "15": 242}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room again and it's pretty clean. Uh those monitors are still there. Check those out. Um yeah, they do work but got too many monitors but in here check it out. I've got bunch of PCs so can't reach down.

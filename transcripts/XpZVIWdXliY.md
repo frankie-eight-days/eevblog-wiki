@@ -3,6 +3,7 @@ video_id: XpZVIWdXliY
 title: Fluke OneTouch Network Tester Battery Restoration Attempt
 url: https://www.youtube.com/watch?v=XpZVIWdXliY
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 29, "3": 44, "4": 57, "5": 70, "6": 85, "7": 100, "8": 116, "9": 129, "10": 143, "11": 157, "12": 170, "13": 180, "14": 191, "15": 206, "16": 220, "17": 233, "18": 250, "19": 263, "20": 275, "21": 290, "22": 306, "23": 321, "24": 337, "25": 356, "26": 378, "27": 398, "28": 415, "29": 432, "30": 446, "31": 458, "32": 473, "33": 497, "34": 518, "35": 538, "36": 552, "37": 570, "38": 587, "39": 603, "40": 621, "41": 635, "42": 657, "43": 668}
 ---
 
 **Dave Jones:** Hi, just a follow-up video to my box of multimeters from the bunker. I've got this Fluke one touch 10 100 network assistant thing. Apparently, it was like a high-end tester back in its day. It's got the ethernet and it's got a serial

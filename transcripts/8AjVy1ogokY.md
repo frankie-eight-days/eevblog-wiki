@@ -3,6 +3,7 @@ video_id: 8AjVy1ogokY
 title: Rode NTG-1 vs Audio-Technica ATR6550xAudio-Technica ATR6550x
 url: https://www.youtube.com/watch?v=8AjVy1ogokY
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 48, "4": 63, "5": 76, "6": 87, "7": 106, "8": 119, "9": 132, "10": 145, "11": 155, "12": 169, "13": 181, "14": 194, "15": 204, "16": 216, "17": 231, "18": 248, "19": 263, "20": 276, "21": 289, "22": 304, "23": 320, "24": 335}
 ---
 
 **Dave Jones:** OH, AND A SHOTTY. WOW, A SHOTTY AS WELL AT THE MOMENT. I'M shooting this with the Rode NTG1 shotgun mic. So, I can compare it. In fact, I'll do that right now. I'll plug this in. Oh, okay. It's one double A

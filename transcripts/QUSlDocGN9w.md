@@ -3,6 +3,7 @@ video_id: QUSlDocGN9w
 title: Dumpster Diving Workbench
 url: https://www.youtube.com/watch?v=QUSlDocGN9w
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 35, "3": 51, "4": 68, "5": 84, "6": 98, "7": 110}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room. What I've got for you today is some furniture. Check this out. We've got some uh desks here which uh could be used very for some very handy little workbenches. They're very um very solid. So, yeah,

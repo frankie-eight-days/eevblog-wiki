@@ -3,6 +3,7 @@ video_id: kypSsA6EZzc
 title: EEVblog #1139 - OCXO Oven Oscillator Repair
 url: https://www.youtube.com/watch?v=kypSsA6EZzc
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 29, "3": 43, "4": 57, "5": 68, "6": 84, "7": 98, "8": 113, "9": 124, "10": 136, "11": 146, "12": 158, "13": 171, "14": 182, "15": 200, "16": 222, "17": 234, "18": 248, "19": 270, "20": 287, "21": 309, "22": 324, "23": 338, "24": 354, "25": 368, "26": 383, "27": 401, "28": 417, "29": 433, "30": 446, "31": 459, "32": 476, "33": 490, "34": 507, "35": 526, "36": 542, "37": 559, "38": 576, "39": 591, "40": 602, "41": 618, "42": 634, "43": 648, "44": 664, "45": 677, "46": 691, "47": 703, "48": 717, "49": 733, "50": 746, "51": 760, "52": 774, "53": 788, "54": 802, "55": 814, "56": 827}
 ---
 
 **Dave Jones:** Hi, in a previous video, which I'll link in down below and at the end if you haven't seen it, we took a look at this Australian-made Systron Donner from the early 70s. It's a timer counter / frequency counter, but it's not just a

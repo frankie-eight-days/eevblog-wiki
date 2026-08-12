@@ -43,20 +43,29 @@ def events(path):
 
 
 def paragraphs(path):
-    out, cur, words, prev_end = [], [], 0, None
+    """-> [(start_seconds, text)].
+
+    The start time is carried through so every paragraph can deep-link to the
+    second it was spoken (youtube.com/watch?v=<id>&t=<s>). The whisper path
+    always did this; the caption path used to discard it, which would have left
+    two thirds of the transcript pages with no timestamps.
+    """
+    out, cur, words, prev_end, start_s = [], [], 0, None, None
     for start, dur, text in events(path):
         gap = start - prev_end if prev_end is not None else 0
         ends_sentence = bool(cur) and re.search(r"[.!?]\s*$", "".join(cur).strip())
         if cur and ((gap >= GAP_MS and words >= MIN_WORDS and ends_sentence)
                     or words >= MAX_WORDS):
-            out.append("".join(cur).strip())
-            cur, words = [], 0
+            out.append((start_s or 0, "".join(cur).strip()))
+            cur, words, start_s = [], 0, None
+        if start_s is None:
+            start_s = start // 1000
         cur.append(text)
         words += len(text.split())
         prev_end = start + dur
     if cur:
-        out.append("".join(cur).strip())
-    return [re.sub(r"\s+", " ", p) for p in out if p.strip()]
+        out.append((start_s or 0, "".join(cur).strip()))
+    return [(s, re.sub(r"\s+", " ", p)) for s, p in out if p.strip()]
 
 
 def convert(vid, title, url, outdir, capdir):
@@ -66,14 +75,15 @@ def convert(vid, title, url, outdir, capdir):
     paras = paragraphs(src)
     if not paras:
         return None
+    stamps = {i: s for i, (s, _) in enumerate(paras)}
     fm = (f"---\nvideo_id: {vid}\ntitle: {title}\nurl: {url}\n"
-          f"source: youtube-asr\n---\n")
+          f"source: youtube-asr\ntimestamps: {json.dumps(stamps)}\n---\n")
     # NOTE: census_lib.parse_transcript requires the body to begin with exactly
     # one newline then '**' -- do not tidy this join.
-    body = "\n" + "\n\n".join(f"**Dave Jones:** {p}" for p in paras) + "\n"
+    body = "\n" + "\n\n".join(f"**Dave Jones:** {p}" for _, p in paras) + "\n"
     dest = outdir / f"{vid}.md"
     dest.write_text(fm + body)
-    return dest, len(paras), sum(len(p.split()) for p in paras)
+    return dest, len(paras), sum(len(p.split()) for _, p in paras)
 
 
 def main():

@@ -3,6 +3,7 @@ video_id: 7v-WfiFrFMM
 title: Tutorial: Casio Calculator R-P and P-R Functions
 url: https://www.youtube.com/watch?v=7v-WfiFrFMM
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 51, "4": 65, "5": 79, "6": 93, "7": 108, "8": 121, "9": 134, "10": 148, "11": 160, "12": 172, "13": 183, "14": 203, "15": 216, "16": 234, "17": 249}
 ---
 
 **Dave Jones:** Hi, I'm going to show you how do you use your Casio calculator to convert between uh rectangular and polar form and polar to rectangular form. And of course, you might want to do this if you're doing any uh complex number uh maths in say AC

@@ -3,6 +3,7 @@ video_id: 4ANGcEJbrTE
 title: $260 NerdQaxe++ Open Source Solo Bitcoin Miner REVIEW
 url: https://www.youtube.com/watch?v=4ANGcEJbrTE
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 53, "4": 68, "5": 88, "6": 100, "7": 117, "8": 132, "9": 146, "10": 160, "11": 176, "12": 189, "13": 204, "14": 216, "15": 229, "16": 243, "17": 259, "18": 274, "19": 285, "20": 299, "21": 315, "22": 326, "23": 340, "24": 355, "25": 373, "26": 385, "27": 396, "28": 413, "29": 429, "30": 443, "31": 461, "32": 474, "33": 490, "34": 504, "35": 521, "36": 535, "37": 549, "38": 567, "39": 583, "40": 593, "41": 607, "42": 621, "43": 633, "44": 645, "45": 659, "46": 676, "47": 690, "48": 704, "49": 728, "50": 746, "51": 759, "52": 771, "53": 785, "54": 798}
 ---
 
 **Dave Jones:** Hi, my previous video on the Bitaxe solo Bitcoin miner seemed quite popular. So, I thought I'd take a look at another one here. It's another open source variant of the Bitaxe. It's called the Nerd QX++. You got to add the plus plus on there

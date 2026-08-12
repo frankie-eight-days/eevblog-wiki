@@ -3,6 +3,7 @@ video_id: zF2pH5Bfstg
 title: Emerald Lake Model Railway
 url: https://www.youtube.com/watch?v=zF2pH5Bfstg
 source: youtube-asr
+timestamps: {"0": 0, "1": 24, "2": 41, "3": 59, "4": 80, "5": 110, "6": 125, "7": 146, "8": 193, "9": 218, "10": 236, "11": 273}
 ---
 
 **Dave Jones:** Here we are at Emerald Lake model railway. It's got over 2,000 meters of track. So, all ho gauge, of course. And uh let's have a look some of the detail here. Oh, there we go. There's one. [Music] And it's uh

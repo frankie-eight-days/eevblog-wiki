@@ -3,6 +3,7 @@ video_id: 0Z32_MYxYhc
 title: EEVblog #1121 - Fontus goes BANKRUPT!
 url: https://www.youtube.com/watch?v=0Z32_MYxYhc
 source: youtube-asr
+timestamps: {"0": 1, "1": 24, "2": 36, "3": 57, "4": 72, "5": 87, "6": 104, "7": 118, "8": 136, "9": 153, "10": 169, "11": 189, "12": 205, "13": 224, "14": 236, "15": 249, "16": 262, "17": 274, "18": 286, "19": 297, "20": 314, "21": 327, "22": 343, "23": 357, "24": 373, "25": 390, "26": 403, "27": 418, "28": 433, "29": 443, "30": 457, "31": 468, "32": 481, "33": 497, "34": 509, "35": 526, "36": 540, "37": 552, "38": 565, "39": 578, "40": 595, "41": 613, "42": 625, "43": 639, "44": 655, "45": 676, "46": 688, "47": 709, "48": 727, "49": 745, "50": 763, "51": 779, "52": 792, "53": 808, "54": 824, "55": 846, "56": 865, "57": 877, "58": 894, "59": 910, "60": 926, "61": 942, "62": 957, "63": 977, "64": 994, "65": 1014, "66": 1029, "67": 1045, "68": 1060, "69": 1080, "70": 1095, "71": 1109, "72": 1126, "73": 1141, "74": 1155, "75": 1173, "76": 1186}
 ---
 
 **Dave Jones:** Hi, you remember Fontus? Explore nature without worrying about drinking water. The world's first self-filling water bottle. Look at its solar panel, look at the tiny little solar cell there and it just look, refills itself magically. You're in the middle of nowhere, no worries.

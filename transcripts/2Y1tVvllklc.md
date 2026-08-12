@@ -3,6 +3,7 @@ video_id: 2Y1tVvllklc
 title: 9V Duracell Alkaline Battery Leakage
 url: https://www.youtube.com/watch?v=2Y1tVvllklc
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 36, "3": 52, "4": 68, "5": 82, "6": 93, "7": 108, "8": 124, "9": 141, "10": 153, "11": 164, "12": 176, "13": 192, "14": 210, "15": 224, "16": 244, "17": 262, "18": 280, "19": 297, "20": 313, "21": 329, "22": 349, "23": 366, "24": 385, "25": 403, "26": 417, "27": 434, "28": 450, "29": 466, "30": 480, "31": 496}
 ---
 
 **Dave Jones:** Hi, yes, we've got another crusty burger Duracell. This one 9 volts. You don't see the the old 9 volts leak that often, but yeah, I've done a video or two on the Duracells leaking and well, there it is. This one comes from the bunker. Made

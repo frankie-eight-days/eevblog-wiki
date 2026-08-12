@@ -3,6 +3,7 @@ video_id: pH-FySpUk84
 title: EEVblog 1431 - Keysight EDU33212A Function Generator Teardown
 url: https://www.youtube.com/watch?v=pH-FySpUk84
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 34, "3": 47, "4": 60, "5": 74, "6": 90, "7": 106, "8": 121, "9": 137, "10": 149, "11": 166, "12": 182, "13": 193, "14": 205, "15": 219, "16": 237, "17": 250, "18": 265, "19": 281, "20": 299, "21": 314, "22": 335, "23": 351, "24": 369, "25": 382, "26": 396, "27": 411, "28": 426, "29": 439, "30": 456, "31": 470, "32": 489, "33": 504, "34": 520, "35": 535, "36": 547, "37": 558, "38": 573, "39": 596, "40": 613, "41": 627, "42": 644, "43": 657, "44": 674, "45": 687, "46": 702, "47": 723, "48": 737, "49": 753, "50": 770, "51": 788, "52": 805, "53": 817, "54": 833, "55": 849, "56": 862, "57": 882, "58": 896, "59": 913, "60": 929, "61": 943, "62": 957, "63": 966, "64": 979, "65": 988, "66": 1003}
 ---
 
 **Dave Jones:** Hi, quite a few people have asked me for the teardown of the Keysight EDU33212A waveform generator, 20 megahertz dual channel jobbie. So, let's tear it down. This will be in 4K resolution for those playing along at home. This is part of

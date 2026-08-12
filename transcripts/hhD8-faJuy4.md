@@ -3,6 +3,7 @@ video_id: hhD8-faJuy4
 title: EEVblog #1156 - Focal Professional CMS40 Studio Monitor Teardown
 url: https://www.youtube.com/watch?v=hhD8-faJuy4
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 36, "3": 55, "4": 71, "5": 85, "6": 104, "7": 117, "8": 135, "9": 151, "10": 168, "11": 185, "12": 199, "13": 213, "14": 229, "15": 250, "16": 268, "17": 286, "18": 300, "19": 315, "20": 333, "21": 351, "22": 363, "23": 379, "24": 395, "25": 408, "26": 424, "27": 441, "28": 454, "29": 472, "30": 487, "31": 503, "32": 518, "33": 534, "34": 548, "35": 562, "36": 575, "37": 587, "38": 601, "39": 621, "40": 635, "41": 644, "42": 659, "43": 675, "44": 693, "45": 705, "46": 715, "47": 729, "48": 743, "49": 761, "50": 775, "51": 790, "52": 803}
 ---
 
 **Dave Jones:** Hi, I thought we'd do a quick tear-down of my new Well, they're not new, they're second-hand studio monitor speakers. These are a Focal Professional CMS 40 and by a lot of accounts they are a very highly regarded studio monitor 4-in job. So,

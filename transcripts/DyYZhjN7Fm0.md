@@ -3,6 +3,7 @@ video_id: DyYZhjN7Fm0
 title: eevBLAB 140 - Facebook Tutorial Views WTF?
 url: https://www.youtube.com/watch?v=DyYZhjN7Fm0
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 38, "3": 56, "4": 69, "5": 88, "6": 106, "7": 120, "8": 135, "9": 148, "10": 166, "11": 182, "12": 207, "13": 226, "14": 244, "15": 256, "16": 269, "17": 283, "18": 295, "19": 315, "20": 329, "21": 347, "22": 361, "23": 377, "24": 392, "25": 410, "26": 424, "27": 441, "28": 452, "29": 468, "30": 484, "31": 505}
 ---
 
 **Dave Jones:** Hi, want to show you something very interesting about my audience across different platforms. Now, this is YouTube. Here's a look at my recent videos on YouTube. You can see right 13 well, let's not worry about the latest one, but you know, 20,000 views for the

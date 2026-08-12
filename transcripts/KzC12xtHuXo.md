@@ -3,6 +3,7 @@ video_id: KzC12xtHuXo
 title: Just Soldering an SMD Adapter
 url: https://www.youtube.com/watch?v=KzC12xtHuXo
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 37, "3": 47, "4": 62, "5": 79, "6": 98, "7": 116, "8": 133, "9": 158, "10": 170, "11": 188, "12": 204, "13": 217, "14": 234, "15": 253, "16": 286, "17": 302, "18": 316}
 ---
 
 **Dave Jones:** Hi, just a quick little video I thought I'd shoot because I'm just soldering on this little cute little max 4239 here onto a little adapter here. So we've got a 6-pin sot23 jobby, but I want to mount it on a

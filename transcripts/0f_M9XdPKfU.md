@@ -3,6 +3,7 @@ video_id: 0f_M9XdPKfU
 title: Another STUPID Youtube Copyright Claim on NASA Archive Footage
 url: https://www.youtube.com/watch?v=0f_M9XdPKfU
 source: youtube-asr
+timestamps: {"0": 2, "1": 24, "2": 38, "3": 55, "4": 70, "5": 81, "6": 94, "7": 110, "8": 123, "9": 135, "10": 150, "11": 171, "12": 190, "13": 207, "14": 224, "15": 243, "16": 261, "17": 278, "18": 296, "19": 309, "20": 326, "21": 340, "22": 353, "23": 369, "24": 380, "25": 395, "26": 407}
 ---
 
 **Dave Jones:** Hi, another day, another YouTube copyright claim. Let's take a look at it. Video copyright details, it's my video tracking Apollo 11. It's from a few years back for the 50th anniversary of the Apollo landing, which I have a sticker on my microphone here.

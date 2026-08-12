@@ -3,6 +3,7 @@ video_id: GRRvGj8OT_A
 title: EEVblog 1604 - BEWARE! Multimeter Burden Voltage
 url: https://www.youtube.com/watch?v=GRRvGj8OT_A
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 28, "3": 42, "4": 53, "5": 73, "6": 89, "7": 102, "8": 115, "9": 126, "10": 139, "11": 154, "12": 169, "13": 180, "14": 192, "15": 206, "16": 220, "17": 238, "18": 254, "19": 269, "20": 285, "21": 301, "22": 316, "23": 327, "24": 340, "25": 354, "26": 369}
 ---
 
 **Dave Jones:** Hi, let's talk about burden voltage in multimeters and it's something you might not be aware of. Now, I've done videos on this in the past, but I haven't done a short concise video to show you what burden voltage is and the you can really

@@ -3,6 +3,7 @@ video_id: xCJ5LlEh5fg
 title: Another Day ANother Dumpster Diving PC Haul
 url: https://www.youtube.com/watch?v=xCJ5LlEh5fg
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 36, "3": 48, "4": 63, "5": 77, "6": 91, "7": 108, "8": 121, "9": 136, "10": 149, "11": 166, "12": 179, "13": 192, "14": 209, "15": 223, "16": 237, "17": 250, "18": 263, "19": 279, "20": 290, "21": 309, "22": 321, "23": 344, "24": 364, "25": 380, "26": 400, "27": 412, "28": 427, "29": 442, "30": 458, "31": 472, "32": 488, "33": 503, "34": 519, "35": 535, "36": 553, "37": 571, "38": 588, "39": 599}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room again. Yes, all this stuff is uh still here. People didn't take those speakers and the troughs are still here. But uh today's find is a couple of Dell Inspirons. These are like little mini

@@ -3,6 +3,7 @@ video_id: iFyEqcVpKLI
 title: EEVblog #597 - Fluke 114 Kit Multimeter + Sparkfun/Fluke Rant
 url: https://www.youtube.com/watch?v=iFyEqcVpKLI
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 29, "3": 45, "4": 59, "5": 75, "6": 88, "7": 102, "8": 116, "9": 133, "10": 145, "11": 159, "12": 173, "13": 188, "14": 203, "15": 222, "16": 236, "17": 251, "18": 264, "19": 277, "20": 290, "21": 304, "22": 318, "23": 329, "24": 341, "25": 354, "26": 370, "27": 385, "28": 399, "29": 418, "30": 440, "31": 455, "32": 474, "33": 489, "34": 503, "35": 517, "36": 534, "37": 546, "38": 561, "39": 580, "40": 595, "41": 612, "42": 626, "43": 644, "44": 656, "45": 668, "46": 684, "47": 698, "48": 717, "49": 729, "50": 744, "51": 757, "52": 783, "53": 797, "54": 813, "55": 830, "56": 843, "57": 856, "58": 871, "59": 884, "60": 901, "61": 913, "62": 932, "63": 947, "64": 962, "65": 974, "66": 990, "67": 1003, "68": 1018, "69": 1029, "70": 1042}
 ---
 
 **Dave Jones:** Hi. Now, unless you were living under a rock a couple of weeks back, you would have no doubt heard about the big to-do between SparkFun and Fluke. And well, I'll briefly recap if you were living under a rock, uh SparkFun tried to

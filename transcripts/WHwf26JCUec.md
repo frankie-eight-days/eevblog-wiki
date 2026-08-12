@@ -3,6 +3,7 @@ video_id: WHwf26JCUec
 title: Tektronix TDS540D Repair Part 1
 url: https://www.youtube.com/watch?v=WHwf26JCUec
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 39, "4": 58, "5": 73, "6": 85, "7": 97, "8": 109, "9": 123, "10": 144, "11": 163, "12": 177, "13": 190, "14": 204, "15": 222, "16": 234, "17": 251, "18": 266, "19": 286, "20": 303, "21": 316, "22": 328, "23": 343, "24": 360, "25": 378}
 ---
 
 **Dave Jones:** Hi, this is a follow-up video to my previous one which I'll link in if you haven't seen it, the Tektronix TDS 540D that I found in the dumpster. It's a four-channel 500 megascope. It's, you know, it's almost practically 20 years

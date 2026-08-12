@@ -3,6 +3,7 @@ video_id: RnazibcEJCw
 title: EEVblog #1257 - MORE! $9 0.02% AIMO Process Calibrator
 url: https://www.youtube.com/watch?v=RnazibcEJCw
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 53, "4": 67, "5": 80, "6": 94, "7": 106, "8": 118, "9": 131, "10": 148, "11": 164, "12": 180, "13": 193, "14": 207, "15": 227, "16": 243, "17": 256, "18": 270, "19": 283, "20": 302, "21": 323, "22": 338, "23": 358, "24": 373, "25": 386, "26": 408, "27": 424, "28": 441, "29": 458, "30": 472, "31": 486, "32": 498, "33": 517, "34": 536, "35": 557, "36": 566, "37": 582, "38": 603, "39": 620, "40": 631, "41": 642, "42": 653, "43": 670, "44": 684, "45": 698, "46": 714, "47": 729, "48": 743, "49": 755, "50": 773, "51": 787}
 ---
 
 **Dave Jones:** Hi, just an update on the $9 AMO process meter AliExpress bargain. I actually ordered two more units. I think a couple of hours or something after I released the video. Once again, from My Cozy Store on AliExpress and they they finally showed

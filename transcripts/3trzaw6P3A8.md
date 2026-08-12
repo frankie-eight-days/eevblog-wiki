@@ -3,6 +3,7 @@ video_id: 3trzaw6P3A8
 title: Installing OPNsense. Same stupid ACPI error.
 url: https://www.youtube.com/watch?v=3trzaw6P3A8
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 32, "3": 48, "4": 61, "5": 77, "6": 92, "7": 102, "8": 122}
 ---
 
 **Dave Jones:** Hi. You probably saw the previous video, failed attempt to install pfsense on this little uh Beink uh mini PC here. Well, yeah, that didn't go very well. So, um I am going to install uh Open Sense. Um I'll give it a try. People

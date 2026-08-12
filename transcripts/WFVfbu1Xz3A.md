@@ -3,6 +3,7 @@ video_id: WFVfbu1Xz3A
 title: Solar Analytics 4G Solar Monitor TEARDOWN
 url: https://www.youtube.com/watch?v=WFVfbu1Xz3A
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 38, "3": 56, "4": 72, "5": 87, "6": 101, "7": 113, "8": 125, "9": 138, "10": 147, "11": 159, "12": 170, "13": 184, "14": 195, "15": 209, "16": 220, "17": 233, "18": 243, "19": 254, "20": 265, "21": 279, "22": 291, "23": 304, "24": 314, "25": 327, "26": 338, "27": 350, "28": 365, "29": 381, "30": 399, "31": 415, "32": 424, "33": 442, "34": 455, "35": 472, "36": 489, "37": 503, "38": 518, "39": 539, "40": 557, "41": 570, "42": 587, "43": 598, "44": 611, "45": 628, "46": 643, "47": 660, "48": 678, "49": 690, "50": 707, "51": 719, "52": 737, "53": 750, "54": 763, "55": 780, "56": 794}
 ---
 
 **Dave Jones:** Hi, you remember the Solar Analytics monitoring system that failed? It was the super cap. This is for monitoring my home solar system of multiple solar power systems at home, and it was one of these caps which we've removed. It was one of these

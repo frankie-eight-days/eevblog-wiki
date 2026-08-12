@@ -3,6 +3,7 @@ video_id: NLwgFYt1pjA
 title: Dumpster HP ProOne 400 PC Touch Screen
 url: https://www.youtube.com/watch?v=NLwgFYt1pjA
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 29, "3": 43, "4": 57, "5": 74, "6": 88, "7": 104, "8": 123, "9": 140, "10": 155, "11": 168, "12": 186, "13": 202, "14": 214, "15": 234, "16": 246, "17": 268, "18": 290, "19": 316, "20": 330}
 ---
 
 **Dave Jones:** Hi, just a quick uh second channel follow-up on my uh video on this um HP uh 400 dumpster uh PC and how the touch screen didn't work. Well, I opened it back up. I found another 8 gig um stick

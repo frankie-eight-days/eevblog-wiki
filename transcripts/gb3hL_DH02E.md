@@ -3,6 +3,7 @@ video_id: gb3hL_DH02E
 title: EEVblog #192 - Agilent Oscilloscope LOST Easter Egg
 url: https://www.youtube.com/watch?v=gb3hL_DH02E
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 38, "3": 54, "4": 70, "5": 94, "6": 120, "7": 139, "8": 157}
 ---
 
 **Dave Jones:** Hi, there's an Easter egg in the new Agilent 1.2 firmware for the 3000 series and the 2000 series scope. And I finally found it. Needle needed the clues from Agilent to actually do it. It's based on the TV series Lost. I love Lost until

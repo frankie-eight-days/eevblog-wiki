@@ -3,6 +3,7 @@ video_id: Uyxl0KZysRA
 title: EEVblog 1764 - Can I Retire Now?
 url: https://www.youtube.com/watch?v=Uyxl0KZysRA
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 35, "3": 47, "4": 62, "5": 74, "6": 90, "7": 102, "8": 111, "9": 124, "10": 136, "11": 152, "12": 167, "13": 180, "14": 193, "15": 212, "16": 234, "17": 251, "18": 269, "19": 281, "20": 294, "21": 307, "22": 321, "23": 332, "24": 346, "25": 356, "26": 371, "27": 383, "28": 395, "29": 408, "30": 422, "31": 433, "32": 446, "33": 462, "34": 476, "35": 491, "36": 502, "37": 517, "38": 530, "39": 545, "40": 560, "41": 577, "42": 587, "43": 603, "44": 615, "45": 629, "46": 645, "47": 659, "48": 674}
 ---
 
 **Dave Jones:** Hi. Well, it's been 17 over 17 years I've been in this YouTube game and I became the first full-time engineering YouTuber, pioneer this whatever it is we do. And um about the same date, it was about April 4th, 2011. So, 2 years later

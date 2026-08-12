@@ -3,6 +3,7 @@ video_id: -13Q-UsXKQM
 title: EEVblog #112 - GSM vs The Fluke 87V Multimeter
 url: https://www.youtube.com/watch?v=-13Q-UsXKQM
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 39, "3": 55, "4": 70, "5": 88, "6": 104, "7": 118, "8": 134, "9": 153, "10": 168, "11": 180, "12": 198, "13": 211, "14": 226, "15": 240, "16": 255, "17": 271, "18": 285, "19": 305, "20": 327, "21": 353, "22": 370, "23": 384, "24": 395, "25": 423, "26": 447, "27": 460, "28": 479, "29": 495, "30": 515, "31": 543, "32": 559, "33": 578, "34": 596, "35": 609, "36": 627, "37": 641, "38": 661, "39": 679, "40": 694, "41": 717, "42": 740, "43": 760, "44": 774, "45": 794, "46": 818, "47": 833, "48": 847, "49": 861, "50": 884}
 ---
 
 **Dave Jones:** Hi, welcome to the blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi. Why do I have the lab coat on today? Well, it's myth busting time. Okay, not so much a myth really because

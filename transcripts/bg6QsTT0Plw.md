@@ -3,6 +3,7 @@ video_id: bg6QsTT0Plw
 title: Laser Driver PCB & Circuit Review
 url: https://www.youtube.com/watch?v=bg6QsTT0Plw
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 36, "4": 54, "5": 66, "6": 81, "7": 96, "8": 112, "9": 130, "10": 142, "11": 159, "12": 171, "13": 183, "14": 197, "15": 213, "16": 227, "17": 244, "18": 258, "19": 271, "20": 289, "21": 306, "22": 322, "23": 335, "24": 348, "25": 364, "26": 379, "27": 392, "28": 404, "29": 419, "30": 427}
 ---
 
 **Dave Jones:** This is cool. It's a prototype for a battery-powered laser driver to be part of a microgravity experiment we'll be flying on a Blue Origin flight. We hope to laser ablate materials in a microgravity environment and observe the results using cameras. That's cool. I

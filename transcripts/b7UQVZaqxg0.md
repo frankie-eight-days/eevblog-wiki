@@ -3,6 +3,7 @@ video_id: b7UQVZaqxg0
 title: EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans
 url: https://www.youtube.com/watch?v=b7UQVZaqxg0
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 39, "3": 54, "4": 72, "5": 87, "6": 106, "7": 119, "8": 133, "9": 147, "10": 157, "11": 177, "12": 190, "13": 206, "14": 223, "15": 236, "16": 250, "17": 266, "18": 281, "19": 298, "20": 316, "21": 335, "22": 349, "23": 365, "24": 377, "25": 393, "26": 405, "27": 422, "28": 437, "29": 451, "30": 467, "31": 483, "32": 499, "33": 513, "34": 526, "35": 542, "36": 564, "37": 583, "38": 601, "39": 617, "40": 636, "41": 656, "42": 675, "43": 691, "44": 708, "45": 726, "46": 741, "47": 757, "48": 773, "49": 788, "50": 804, "51": 814, "52": 827, "53": 843, "54": 855, "55": 872, "56": 886, "57": 898, "58": 910, "59": 922}
 ---
 
 **Dave Jones:** Hi, welcome to the AAVlog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, now a couple of episodes ago, I showed you a standard linear regulator circuit and how it wasn't that

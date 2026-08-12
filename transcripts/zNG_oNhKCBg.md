@@ -3,6 +3,7 @@ video_id: zNG_oNhKCBg
 title: Lenovo Legion 5 Laptop M.2 SSD Memory
 url: https://www.youtube.com/watch?v=zNG_oNhKCBg
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 29, "3": 43, "4": 60, "5": 72, "6": 86, "7": 103, "8": 120, "9": 133, "10": 146, "11": 163, "12": 177, "13": 192, "14": 203, "15": 223, "16": 239, "17": 258, "18": 275, "19": 287, "20": 304, "21": 316, "22": 327, "23": 340, "24": 352, "25": 364, "26": 381, "27": 393, "28": 406, "29": 420, "30": 434, "31": 447, "32": 459, "33": 476, "34": 492}
 ---
 
 **Dave Jones:** Hi, I just thought I'd show you inside my uh laptop here. It's a Legion 5. Um it's got like an RTX 2060 graphics card in it. It's got an AMD uh process, you know, a pretty schmick AMD processor in

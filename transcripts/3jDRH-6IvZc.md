@@ -3,6 +3,7 @@ video_id: 3jDRH-6IvZc
 title: Analog VS Digital Scopes for Glitch Captue
 url: https://www.youtube.com/watch?v=3jDRH-6IvZc
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 25, "3": 39, "4": 51, "5": 66, "6": 80, "7": 92, "8": 103, "9": 118, "10": 135, "11": 147, "12": 164, "13": 182, "14": 194, "15": 206, "16": 220, "17": 233, "18": 248, "19": 261, "20": 274, "21": 286, "22": 302, "23": 317, "24": 329, "25": 342, "26": 353, "27": 366, "28": 376, "29": 392, "30": 407, "31": 418, "32": 429, "33": 441, "34": 450, "35": 463, "36": 479, "37": 492, "38": 509, "39": 520, "40": 532, "41": 544, "42": 557, "43": 572, "44": 587, "45": 600, "46": 614, "47": 628, "48": 641, "49": 653, "50": 668}
 ---
 
 **Dave Jones:** Hi, in a previous main channel video, we took a look at waveform update rates on the new Tektronix 2 series scope and compared it with various other brands. And as it turns out, the 2 series scope is well, he's just captured one then.

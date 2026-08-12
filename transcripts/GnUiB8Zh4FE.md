@@ -3,6 +3,7 @@ video_id: GnUiB8Zh4FE
 title: They Just Increased My Lab Electricity Rates
 url: https://www.youtube.com/watch?v=GnUiB8Zh4FE
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 42, "4": 57, "5": 71, "6": 90, "7": 104, "8": 118, "9": 128, "10": 140, "11": 155, "12": 170, "13": 186, "14": 199, "15": 212, "16": 225, "17": 236, "18": 248, "19": 259, "20": 272, "21": 284, "22": 300, "23": 314, "24": 330, "25": 341, "26": 352, "27": 366, "28": 377, "29": 391, "30": 404, "31": 415, "32": 428, "33": 442, "34": 452, "35": 467, "36": 483, "37": 498, "38": 510, "39": 524, "40": 538, "41": 553, "42": 577, "43": 595, "44": 609, "45": 623, "46": 635, "47": 647, "48": 661, "49": 676}
 ---
 
 **Dave Jones:** Hi, it's electricity price time because I live in Australia, one of the most expensive countries in the world for energy. Um, don't ask why, just read the comments down below. Anyway, yeah, we have the world's biggest supply of

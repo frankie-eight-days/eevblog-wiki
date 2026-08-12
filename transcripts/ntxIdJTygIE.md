@@ -3,6 +3,7 @@ video_id: ntxIdJTygIE
 title: EEVblog #431 - PCB Wave Soldering
 url: https://www.youtube.com/watch?v=ntxIdJTygIE
 source: youtube-asr
+timestamps: {"0": 10, "1": 24, "2": 39, "3": 53, "4": 66, "5": 78, "6": 93, "7": 108, "8": 121, "9": 134, "10": 151, "11": 166, "12": 183, "13": 199, "14": 215, "15": 225, "16": 239, "17": 256, "18": 274, "19": 289, "20": 305, "21": 319, "22": 336, "23": 355, "24": 370, "25": 384}
 ---
 
 **Dave Jones:** And incidentally, you'll notice the larger solder pads on these outer pins of all of these chips. And they're uh solder thieves. Uh they go under various uh names, but this is designed to be wave soldered. And you can tell this

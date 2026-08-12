@@ -3,6 +3,7 @@ video_id: xb-uEIz_XKo
 title: 2020 Hyundai IONIQ Recall + Mysterious Relay Clicking
 url: https://www.youtube.com/watch?v=xb-uEIz_XKo
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 54, "4": 66, "5": 97, "6": 112, "7": 124}
 ---
 
 **Dave Jones:** Hi, I'm in my 2020 Hyundai Ioniq, which I just got serviced. It had a recall on it actually. If you've been following me on X, you would have heard about that, but yeah, it recalled because well, apparently the software in

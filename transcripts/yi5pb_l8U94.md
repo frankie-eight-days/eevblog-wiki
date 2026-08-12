@@ -3,6 +3,7 @@ video_id: yi5pb_l8U94
 title: Weller Zero Smoke EL Fume Extractor - Part 2
 url: https://www.youtube.com/watch?v=yi5pb_l8U94
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 35, "3": 47, "4": 61, "5": 77, "6": 93, "7": 111, "8": 129, "9": 145, "10": 165, "11": 181, "12": 197, "13": 215, "14": 234, "15": 251, "16": 270, "17": 285, "18": 299, "19": 315, "20": 327, "21": 343, "22": 358, "23": 372, "24": 385}
 ---
 
 **Dave Jones:** Hi, just a quick follow up on this weller zero smog EL fume extractor here. And in the previous well main channel video, I had it like actually elevated right up here off my togar and tied on to my togar

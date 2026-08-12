@@ -3,6 +3,7 @@ video_id: o0bkyAntDHo
 title: EEVblog #280-4 - Talking Electronics - The Internet And Learning - Part 4 of 5
 url: https://www.youtube.com/watch?v=o0bkyAntDHo
 source: youtube-asr
+timestamps: {"0": 10, "1": 27, "2": 45, "3": 63, "4": 78, "5": 88, "6": 102, "7": 115, "8": 127, "9": 138, "10": 150, "11": 166, "12": 179, "13": 193, "14": 205, "15": 218, "16": 228, "17": 242, "18": 254, "19": 267, "20": 282, "21": 293, "22": 306, "23": 319, "24": 333, "25": 346, "26": 360, "27": 374, "28": 384, "29": 396}
 ---
 
 **Dave Jones:** Do you think that there's any chance that anyone would it an online electronics magazine would be successful? Do you see any any like as a PDF or something like that? Can you see sort of that magazine style taking off again or has the

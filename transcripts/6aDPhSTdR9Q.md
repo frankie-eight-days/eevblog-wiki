@@ -3,6 +3,7 @@ video_id: 6aDPhSTdR9Q
 title: Today in the Dumpster Room
 url: https://www.youtube.com/watch?v=6aDPhSTdR9Q
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 40, "3": 63, "4": 83, "5": 99}
 ---
 
 **Dave Jones:** Hi, back in the dumpster room and this is interesting. Looks like they've upgraded the signage. Recycle computer and electronics here and we have a bunch of monitors. One of which is heavy. I don't know why. That's a BenQ

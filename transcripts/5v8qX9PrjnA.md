@@ -3,6 +3,7 @@ video_id: 5v8qX9PrjnA
 title: Brymen BM257 vs BM235 Multimeter IR Serial Protocol
 url: https://www.youtube.com/watch?v=5v8qX9PrjnA
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 34, "3": 52, "4": 73, "5": 88, "6": 103, "7": 118, "8": 134, "9": 147, "10": 166, "11": 181, "12": 197, "13": 211, "14": 230, "15": 243, "16": 259, "17": 274, "18": 293, "19": 308, "20": 323, "21": 337, "22": 350, "23": 369}
 ---
 
 **Dave Jones:** Hi, I just wanted to do a quick video looking at a potential hack for the EVBlog BM235 meter to give it PC com capability PC serial RS232 communications that you could get on the BM257 and the two meters are

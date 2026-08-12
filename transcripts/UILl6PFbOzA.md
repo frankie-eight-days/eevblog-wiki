@@ -3,6 +3,7 @@ video_id: UILl6PFbOzA
 title: EEVblog #920 - World's First Transistor Watch! - Bulova Accutron Spaceview
 url: https://www.youtube.com/watch?v=UILl6PFbOzA
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 39, "3": 59, "4": 78, "5": 92, "6": 108, "7": 126, "8": 139, "9": 155, "10": 170, "11": 187, "12": 202, "13": 216, "14": 233, "15": 248, "16": 262, "17": 281, "18": 296, "19": 314, "20": 332, "21": 348, "22": 367, "23": 382, "24": 396, "25": 410, "26": 428, "27": 441, "28": 454, "29": 467, "30": 477, "31": 490, "32": 507, "33": 522, "34": 538, "35": 553, "36": 566, "37": 582, "38": 597, "39": 609, "40": 624, "41": 633, "42": 650, "43": 664, "44": 676, "45": 693, "46": 707, "47": 719, "48": 730, "49": 750, "50": 771, "51": 785, "52": 798, "53": 818, "54": 836, "55": 852, "56": 867, "57": 883, "58": 897, "59": 918, "60": 935, "61": 953, "62": 968}
 ---
 
 **Dave Jones:** Hi, check this out. I'm very excited about this. This is a Bulova Accutron Spaceview watch. Space age technology right out of the 1960s. Isn't it just gorgeous? This particular model is actually almost 50 years old. It's a 1968 model or what's called the M8 model

@@ -3,6 +3,7 @@ video_id: rgE_luQ8SVY
 title: EEVblog #293 - Fluke Multimeter Birthday Cake
 url: https://www.youtube.com/watch?v=rgE_luQ8SVY
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 34, "3": 48, "4": 67, "5": 86, "6": 100, "7": 120, "8": 154}
 ---
 
 **Dave Jones:** Hi, just a quick one. I had to show you this because it is absolutely brilliant. No, it's not a Fluke 87. You're no doubt familiar with that. What it is is we've got the world's coolest cake. It's a

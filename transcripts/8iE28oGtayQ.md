@@ -3,6 +3,7 @@ video_id: 8iE28oGtayQ
 title: EEVblog #1226 - Get Better Accuracy On Your Oscilloscope
 url: https://www.youtube.com/watch?v=8iE28oGtayQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 42, "4": 55, "5": 67, "6": 80, "7": 94, "8": 107, "9": 123, "10": 136, "11": 147, "12": 161, "13": 176, "14": 190, "15": 206, "16": 218, "17": 233, "18": 250, "19": 263, "20": 278, "21": 294, "22": 309, "23": 322, "24": 337, "25": 355, "26": 369, "27": 387, "28": 402, "29": 418, "30": 432, "31": 445, "32": 459, "33": 472, "34": 490, "35": 508, "36": 523, "37": 543, "38": 557, "39": 570, "40": 586, "41": 598, "42": 614, "43": 632, "44": 652, "45": 670, "46": 685, "47": 697, "48": 709, "49": 727, "50": 744, "51": 758, "52": 772, "53": 786, "54": 801, "55": 816, "56": 833, "57": 850}
 ---
 
 **Dave Jones:** Hi, there's a control on your oscilloscope that you're almost certainly familiar with, but you may not know two advantages to actually using it. And it's what's called a fine vernier control on your vertical channel, and you'll see that it says

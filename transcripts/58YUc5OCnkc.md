@@ -3,6 +3,7 @@ video_id: 58YUc5OCnkc
 title: How To Bend Stainless Steel Rod
 url: https://www.youtube.com/watch?v=58YUc5OCnkc
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 43, "4": 59, "5": 71, "6": 85, "7": 95, "8": 110, "9": 124, "10": 139, "11": 156, "12": 172, "13": 189, "14": 208, "15": 225, "16": 244, "17": 255, "18": 273, "19": 286}
 ---
 
 **Dave Jones:** Hi, just a quick video, showing you how to bend some stainless steel rod to match a template here. Under strict instructions from Mrs. EVBlog, I've got to manufacture a couple of dozen of duplicates of this, which you can't buy anymore. It's for a

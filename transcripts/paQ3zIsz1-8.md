@@ -3,6 +3,7 @@ video_id: paQ3zIsz1-8
 title: Magnetic Core Memory
 url: https://www.youtube.com/watch?v=paQ3zIsz1-8
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 42, "3": 58, "4": 74, "5": 94, "6": 110, "7": 123, "8": 137, "9": 153, "10": 173, "11": 189, "12": 205, "13": 224, "14": 240, "15": 252, "16": 268, "17": 285, "18": 301, "19": 315, "20": 332, "21": 348, "22": 368, "23": 382, "24": 398, "25": 413, "26": 428, "27": 445, "28": 459, "29": 471}
 ---
 
 **Dave Jones:** And next up, we have a pretty big post pack here from Stefan Kieboom. Geez, why can't everyone just be called Bruce? Anyway, for those who know your money python, he's from Poway in California, USA. So, thank you very much. Oh, it says it's

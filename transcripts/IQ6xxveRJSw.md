@@ -3,6 +3,7 @@ video_id: IQ6xxveRJSw
 title: Amazon Kindle Fire Tablet Teardown - EEVblog #219
 url: https://www.youtube.com/watch?v=IQ6xxveRJSw
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 42, "4": 59, "5": 73, "6": 99, "7": 113, "8": 128, "9": 141, "10": 153, "11": 165, "12": 177, "13": 191, "14": 204, "15": 222, "16": 237, "17": 251, "18": 263, "19": 279, "20": 297, "21": 314, "22": 330, "23": 347, "24": 359, "25": 372, "26": 389, "27": 406, "28": 425, "29": 452, "30": 461, "31": 485, "32": 502, "33": 519, "34": 537, "35": 551, "36": 566, "37": 581, "38": 594, "39": 608, "40": 620, "41": 632, "42": 649, "43": 669, "44": 689, "45": 708, "46": 722, "47": 739, "48": 756, "49": 773, "50": 790, "51": 806, "52": 819, "53": 833, "54": 850, "55": 863, "56": 876, "57": 888, "58": 905, "59": 922, "60": 937, "61": 951, "62": 968, "63": 1038, "64": 1056}
 ---
 
 **Dave Jones:** Hi, we've got the new Amazon Kindle Fire. 199 US bucks worth of loss leading technology. You know what we say here on the EEVblog, don't turn it on, take it apart. And of course I've already done a very

@@ -3,6 +3,7 @@ video_id: UESc7ms4efo
 title: EEVblog #588 - How To Do PCB Production Testing
 url: https://www.youtube.com/watch?v=UESc7ms4efo
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 33, "3": 50, "4": 60, "5": 73, "6": 82, "7": 95, "8": 108, "9": 119, "10": 132, "11": 148, "12": 160, "13": 173, "14": 187, "15": 201, "16": 213, "17": 228, "18": 237, "19": 249, "20": 263, "21": 274, "22": 290, "23": 300, "24": 314, "25": 327, "26": 340, "27": 355, "28": 366, "29": 379, "30": 393, "31": 407, "32": 418, "33": 430, "34": 443, "35": 456, "36": 513, "37": 528, "38": 542, "39": 555, "40": 571, "41": 585, "42": 604, "43": 618, "44": 631, "45": 645, "46": 660, "47": 679, "48": 693, "49": 706, "50": 722, "51": 739, "52": 756, "53": 769, "54": 784, "55": 797, "56": 808, "57": 822, "58": 836, "59": 849}
 ---
 
 **Dave Jones:** Just a very quick video showing you testing of my new production microcurrent PCB panels because it's actually quite important. Up until now, I've been testing these myself, but I'm going to manufacture another 1,800 of these and well, testing them all myself

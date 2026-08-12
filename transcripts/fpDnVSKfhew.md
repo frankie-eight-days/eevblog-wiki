@@ -3,6 +3,7 @@ video_id: fpDnVSKfhew
 title: Raspberry Pi Compute Module CM4 FAILURE
 url: https://www.youtube.com/watch?v=fpDnVSKfhew
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 26, "3": 39, "4": 49, "5": 64, "6": 75, "7": 87, "8": 98, "9": 110, "10": 122, "11": 136, "12": 148, "13": 162, "14": 175, "15": 188, "16": 203, "17": 218, "18": 232, "19": 245, "20": 255, "21": 269, "22": 280, "23": 291, "24": 305, "25": 319, "26": 330, "27": 340, "28": 355, "29": 367, "30": 384, "31": 401, "32": 412, "33": 429, "34": 444, "35": 454, "36": 468, "37": 481, "38": 496, "39": 509, "40": 526, "41": 540, "42": 554, "43": 571, "44": 584, "45": 599, "46": 612, "47": 626, "48": 637, "49": 651, "50": 667, "51": 679, "52": 693, "53": 707, "54": 720, "55": 734}
 ---
 
 **Dave Jones:** Hi, I just wanted to show you a video and document this a failure in a Raspberry Pi compute module 4. So, it's a uh CM 4 as they call it. There it is. Is it the latest? Have they got the CM5

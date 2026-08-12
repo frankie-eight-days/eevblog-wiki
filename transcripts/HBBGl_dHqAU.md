@@ -3,6 +3,7 @@ video_id: HBBGl_dHqAU
 title: EEVblog #1100 - Dumpster Photocopier Repair
 url: https://www.youtube.com/watch?v=HBBGl_dHqAU
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 36, "3": 54, "4": 74, "5": 86, "6": 101, "7": 121, "8": 138, "9": 160, "10": 180, "11": 198, "12": 216, "13": 232, "14": 251, "15": 264, "16": 279, "17": 296, "18": 312, "19": 324, "20": 343, "21": 368, "22": 385, "23": 399, "24": 421, "25": 434, "26": 448, "27": 468, "28": 484, "29": 500, "30": 517, "31": 528, "32": 539, "33": 555, "34": 568, "35": 583, "36": 599, "37": 614, "38": 625, "39": 640, "40": 654, "41": 665, "42": 680, "43": 697, "44": 711, "45": 730, "46": 743, "47": 759, "48": 776, "49": 793, "50": 812, "51": 826, "52": 838, "53": 855, "54": 872, "55": 893, "56": 910, "57": 923, "58": 938, "59": 953, "60": 970, "61": 985, "62": 1000, "63": 1024, "64": 1038, "65": 1055, "66": 1074, "67": 1095, "68": 1106, "69": 1118, "70": 1134, "71": 1149, "72": 1159}
 ---
 
 **Dave Jones:** Hi, check out my latest dumpster find. It's a Fuji Xerox Apeos Port, whatever on earth that means, 3 C2201 for those playing along at home, and it's a gigantic A3 photocopier. And the great thing about these is that they all they they weigh a

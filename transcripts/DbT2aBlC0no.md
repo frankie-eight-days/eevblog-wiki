@@ -3,6 +3,7 @@ video_id: DbT2aBlC0no
 title: EEVblog #1088 - Uber Autonomous Car Accident Report
 url: https://www.youtube.com/watch?v=DbT2aBlC0no
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 50, "4": 62, "5": 78, "6": 94, "7": 110, "8": 124, "9": 141, "10": 151, "11": 164, "12": 177, "13": 194, "14": 208, "15": 227, "16": 246, "17": 262, "18": 277, "19": 292, "20": 305, "21": 316, "22": 333, "23": 350, "24": 374, "25": 387, "26": 399, "27": 414, "28": 438, "29": 458, "30": 474, "31": 486, "32": 502, "33": 516, "34": 528, "35": 542, "36": 558, "37": 576, "38": 594, "39": 610, "40": 628, "41": 642, "42": 656, "43": 671, "44": 686, "45": 699, "46": 716, "47": 732, "48": 746, "49": 759, "50": 773, "51": 792, "52": 808, "53": 819, "54": 830, "55": 853, "56": 868}
 ---
 
 **Dave Jones:** Hi, in two previous videos, which I'll link in at the end of this video and down below, we looked at the Uber autonomous self-driving car fatality that happened when was it? Back in March. And if you're not familiar with

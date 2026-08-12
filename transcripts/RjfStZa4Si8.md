@@ -3,6 +3,7 @@ video_id: RjfStZa4Si8
 title: AERL Battery Firmware Update
 url: https://www.youtube.com/watch?v=RjfStZa4Si8
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 35, "3": 54, "4": 66, "5": 87, "6": 100, "7": 117, "8": 135, "9": 148, "10": 163, "11": 178, "12": 194, "13": 208, "14": 220, "15": 237, "16": 249, "17": 264, "18": 281}
 ---
 
 **Dave Jones:** Hi, an update on the AIRL batteries here. I finally, well, we um Peter from AERL uh who remote desktopped in today um to fix that Raspberry Pi uh compute module that was on the uh you know that was on this board here. Anyway, uh we've

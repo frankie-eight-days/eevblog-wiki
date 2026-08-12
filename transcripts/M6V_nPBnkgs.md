@@ -3,6 +3,7 @@ video_id: M6V_nPBnkgs
 title: EEVblog 1756 - Sharp 1980's Boombox Bodge Repair
 url: https://www.youtube.com/watch?v=M6V_nPBnkgs
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 29, "3": 42, "4": 55, "5": 68, "6": 82, "7": 98, "8": 111, "9": 125, "10": 139, "11": 155, "12": 168, "13": 179, "14": 194, "15": 207, "16": 227, "17": 242, "18": 261, "19": 274, "20": 288, "21": 299, "22": 318, "23": 334, "24": 357, "25": 373, "26": 387, "27": 412, "28": 428, "29": 443, "30": 461, "31": 473, "32": 491, "33": 511, "34": 527, "35": 546, "36": 562, "37": 576, "38": 589, "39": 600, "40": 613, "41": 627, "42": 637, "43": 648, "44": 670, "45": 683, "46": 701, "47": 717, "48": 738, "49": 754, "50": 772, "51": 792, "52": 805, "53": 818}
 ---
 
 **Dave Jones:** Hi, it's impromptu 1980s retro bodgege repair time. This is the boom box from the 1980s. The classic Sharp GF7600. I've done a video on this boom box before. If you want to see that, I'll link it in down below. Yes, they're also

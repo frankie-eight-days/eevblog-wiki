@@ -3,6 +3,7 @@ video_id: J7Ks2FEzYMY
 title: Bunker Internet Access
 url: https://www.youtube.com/watch?v=J7Ks2FEzYMY
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 40, "3": 55, "4": 70, "5": 86, "6": 102}
 ---
 
 **Dave Jones:** Hi, just a quick video showing the ventilation for my bunker. You can see that's the inlet there and it's on a external grill outside of the uh building there. And if we go across here, we can see the fan. There's the

@@ -3,6 +3,7 @@ video_id: BXVgk-uoxn8
 title: Hoymiles Solar Microinverter Install + Deye Gen Connection
 url: https://www.youtube.com/watch?v=BXVgk-uoxn8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 49, "4": 60, "5": 71, "6": 89, "7": 100, "8": 111, "9": 131, "10": 143, "11": 161, "12": 178, "13": 195, "14": 208, "15": 225, "16": 241, "17": 258, "18": 272, "19": 285, "20": 297, "21": 312, "22": 328, "23": 338, "24": 350, "25": 364, "26": 376, "27": 398, "28": 416, "29": 429, "30": 441, "31": 455, "32": 470, "33": 484, "34": 499, "35": 513, "36": 525, "37": 534, "38": 548, "39": 561, "40": 577, "41": 589, "42": 601, "43": 612, "44": 627, "45": 640, "46": 656, "47": 667, "48": 678, "49": 690, "50": 701, "51": 711, "52": 723, "53": 739, "54": 758, "55": 768, "56": 786, "57": 799, "58": 815, "59": 833, "60": 848, "61": 860, "62": 872, "63": 881, "64": 898, "65": 913, "66": 925, "67": 939, "68": 953, "69": 972}
 ---
 
 **Dave Jones:** Hi, I'm going to uh install two bonus panels, 440 W Trina jobbies. You've seen these in the uh previous video. Uh mounted these on the pergola roof here. And uh yes, I do have room for uh one more, but uh yeah, I can't um cover up

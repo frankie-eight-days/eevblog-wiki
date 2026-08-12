@@ -3,6 +3,7 @@ video_id: Ij6r6uXr2Mo
 title: Flashing the eMMC on a Raspberry Pi CM4 Compute Module
 url: https://www.youtube.com/watch?v=Ij6r6uXr2Mo
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 25, "3": 44, "4": 58, "5": 73, "6": 82, "7": 98, "8": 111, "9": 120, "10": 134, "11": 151, "12": 164, "13": 177, "14": 190, "15": 205, "16": 218, "17": 236, "18": 253, "19": 269, "20": 287, "21": 308, "22": 324, "23": 335, "24": 351, "25": 371, "26": 381, "27": 401, "28": 415, "29": 432, "30": 448, "31": 462, "32": 477, "33": 490}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up VIDEO ON THE RASPBERRY PI Compute Module. You will see that I have a, well, it's not a new one. It's out of the other unit that I have, uh, which unfortunately, uh, like it's an old

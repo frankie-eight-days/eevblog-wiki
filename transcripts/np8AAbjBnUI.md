@@ -3,6 +3,7 @@ video_id: np8AAbjBnUI
 title: EEVblog 1616 - Weller Zero Smog Fume Extractor Review
 url: https://www.youtube.com/watch?v=np8AAbjBnUI
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 31, "3": 42, "4": 56, "5": 74, "6": 89, "7": 108, "8": 122, "9": 137, "10": 157, "11": 177, "12": 193, "13": 206, "14": 218, "15": 233, "16": 249, "17": 267, "18": 283, "19": 295, "20": 317, "21": 336, "22": 353, "23": 365, "24": 384, "25": 401, "26": 421, "27": 437, "28": 451, "29": 467, "30": 486, "31": 503, "32": 518, "33": 532, "34": 546, "35": 561, "36": 574, "37": 589, "38": 603, "39": 617, "40": 635, "41": 652, "42": 665, "43": 685, "44": 702, "45": 714, "46": 730, "47": 745, "48": 762, "49": 772, "50": 786, "51": 801, "52": 815, "53": 830, "54": 847, "55": 863, "56": 877, "57": 897, "58": 907, "59": 921, "60": 939, "61": 954, "62": 970, "63": 987, "64": 1003, "65": 1019, "66": 1037, "67": 1049, "68": 1063, "69": 1077, "70": 1090, "71": 1108, "72": 1123}
 ---
 
 **Dave Jones:** Check out what I got. It's a Weller Zero Smog um fume extractor. Got this for like a quarter of the retail price. Super duper cheap from a uh Element 14 clearance sale. Let's check it out. This is probably one of the best uh soldering

@@ -3,6 +3,7 @@ video_id: ImyUB3_n9fw
 title: EEVblog #442 - Analog Vs Digital Oscilloscope Noise
 url: https://www.youtube.com/watch?v=ImyUB3_n9fw
 source: youtube-asr
+timestamps: {"0": 10, "1": 23, "2": 35, "3": 52, "4": 65, "5": 78, "6": 92, "7": 106, "8": 122, "9": 139, "10": 153, "11": 166, "12": 185, "13": 203, "14": 217, "15": 229, "16": 247, "17": 265, "18": 281}
 ---
 
 **Dave Jones:** Now digital scopes have this uh reputation of being higher in noise than analog scopes, for example, but that's not necessarily uh the case. It's just that with their update uh rate and capture, they're actually capable of displaying more of the noise than a

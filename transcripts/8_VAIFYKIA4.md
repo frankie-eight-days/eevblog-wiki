@@ -3,6 +3,7 @@ video_id: 8_VAIFYKIA4
 title: 555 or 556?
 url: https://www.youtube.com/watch?v=8_VAIFYKIA4
 source: youtube-asr
+timestamps: {"0": 2, "1": 16, "2": 30, "3": 45, "4": 57, "5": 74, "6": 87, "7": 94, "8": 117, "9": 134, "10": 153, "11": 169, "12": 186, "13": 209}
 ---
 
 **Dave Jones:** Hi, just wanted to show you something here which is ironically unusual because I tried to make my 555 timer video obviously 5 minutes and 55 seconds long and I originally rendered it 5 minutes 55 seconds long and I uploaded to

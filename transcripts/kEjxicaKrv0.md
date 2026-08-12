@@ -3,6 +3,7 @@ video_id: kEjxicaKrv0
 title: Dumpster Diving APC UPS
 url: https://www.youtube.com/watch?v=kEjxicaKrv0
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 46, "4": 69, "5": 83, "6": 96, "7": 108, "8": 122, "9": 139, "10": 153}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room and what have we got today? I showed this the other day on Twitter. It's just an old uh Studio Rack S4 um like firewire interface thing. Nothing burger. But what turned up today is this APC smart

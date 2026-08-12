@@ -3,6 +3,7 @@ video_id: 4dsUuqM1fh4
 title: EEVblog #68 - I should be Selling Oscilloscopes
 url: https://www.youtube.com/watch?v=4dsUuqM1fh4
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 36, "3": 53, "4": 70, "5": 81, "6": 93, "7": 102, "8": 122, "9": 141, "10": 156, "11": 177, "12": 191, "13": 207, "14": 224, "15": 236, "16": 253, "17": 268, "18": 281, "19": 294, "20": 308, "21": 328}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's time for another drive time rant. I'm on my way to work and here we

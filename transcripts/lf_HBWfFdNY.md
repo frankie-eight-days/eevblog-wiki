@@ -3,6 +3,7 @@ video_id: lf_HBWfFdNY
 title: EEVblog 1729 - AC Basics Tutorial Part 7: AC Ohms Law
 url: https://www.youtube.com/watch?v=lf_HBWfFdNY
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 28, "3": 43, "4": 58, "5": 73, "6": 89, "7": 106, "8": 120, "9": 135, "10": 152, "11": 169, "12": 182, "13": 195, "14": 207, "15": 220, "16": 232, "17": 248, "18": 265, "19": 281, "20": 301, "21": 319, "22": 336, "23": 352, "24": 368, "25": 390, "26": 403, "27": 416, "28": 431, "29": 444, "30": 457, "31": 468, "32": 482, "33": 502, "34": 516, "35": 535, "36": 553, "37": 569, "38": 586, "39": 602, "40": 618, "41": 632, "42": 645, "43": 657, "44": 669}
 ---
 
 **Dave Jones:** Hi, welcome to part seven in the AC basics tutorial series. This one we're going to look at Ohm's law for AC and other things, not just Ohm's law. And the great thing about this video is you already know it. You've already learned

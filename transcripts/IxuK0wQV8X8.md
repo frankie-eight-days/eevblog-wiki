@@ -3,6 +3,7 @@ video_id: IxuK0wQV8X8
 title: Occupation UNACCEPTABLE!
 url: https://www.youtube.com/watch?v=IxuK0wQV8X8
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 49, "4": 63, "5": 78, "6": 92, "7": 110, "8": 128, "9": 142, "10": 158, "11": 172, "12": 186, "13": 202, "14": 219, "15": 236, "16": 249, "17": 263, "18": 278, "19": 290, "20": 310, "21": 321, "22": 333, "23": 351, "24": 364, "25": 375, "26": 388, "27": 404, "28": 416, "29": 424, "30": 436, "31": 447, "32": 461, "33": 475, "34": 485, "35": 496, "36": 510, "37": 523, "38": 534, "39": 547, "40": 562, "41": 574, "42": 588, "43": 600, "44": 613, "45": 623, "46": 636, "47": 645, "48": 659, "49": 670, "50": 687, "51": 701, "52": 714, "53": 727, "54": 741, "55": 755, "56": 768, "57": 782, "58": 797, "59": 813}
 ---
 
 **Dave Jones:** Hi, I haven't done a business finances video for probably a couple of years now, I think. Um ever since probably maybe since I moved back into the lab here. Anyway, um I just had to pay my yearly business insurance today and um

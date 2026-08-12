@@ -3,6 +3,7 @@ video_id: WJgiC5jMqrw
 title: Keithley 2400 SMU Wobbly's
 url: https://www.youtube.com/watch?v=WJgiC5jMqrw
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 44, "4": 61, "5": 83, "6": 99, "7": 111, "8": 128, "9": 143, "10": 158, "11": 173, "12": 190}
 ---
 
 **Dave Jones:** Hi, check this out. I was just playing around doing some precision micro current stuff and I had my Keithley my two Keithleys set up here and I was hearing sitting over at my desk. I've had them actually powered up all night. I was

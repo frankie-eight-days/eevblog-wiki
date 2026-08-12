@@ -3,6 +3,7 @@ video_id: VZuebPVrzI8
 title: Fluke 1AC Voltage Detection Stick Repair
 url: https://www.youtube.com/watch?v=VZuebPVrzI8
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 25, "3": 42, "4": 55, "5": 66, "6": 85, "7": 97, "8": 110, "9": 127, "10": 140, "11": 153, "12": 166, "13": 180, "14": 194, "15": 205, "16": 217, "17": 229, "18": 246, "19": 259, "20": 273, "21": 292, "22": 312, "23": 328, "24": 342, "25": 361, "26": 376, "27": 393, "28": 407, "29": 421, "30": 435, "31": 451, "32": 469, "33": 489, "34": 511, "35": 527, "36": 542, "37": 557, "38": 573, "39": 584, "40": 604, "41": 623, "42": 642, "43": 658, "44": 670, "45": 688, "46": 706, "47": 721, "48": 735, "49": 753, "50": 768, "51": 782, "52": 795, "53": 805, "54": 821, "55": 835, "56": 850, "57": 861, "58": 878, "59": 898, "60": 909, "61": 924, "62": 936, "63": 952, "64": 966, "65": 981}
 ---
 
 **Dave Jones:** Hi, just a quick video looking at this Fluke 1AC Volt Alert the voltage stick and it's an excellent voltage stick. If you haven't looked at it, it's got all the I got this I don't know when I got

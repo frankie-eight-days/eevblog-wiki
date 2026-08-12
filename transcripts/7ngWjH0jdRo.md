@@ -3,6 +3,7 @@ video_id: 7ngWjH0jdRo
 title: EEVblog #1234 - MORE Epic Solar Roadways FAIL!
 url: https://www.youtube.com/watch?v=7ngWjH0jdRo
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 33, "3": 49, "4": 62, "5": 74, "6": 91, "7": 101, "8": 116, "9": 131, "10": 145, "11": 158, "12": 174, "13": 189, "14": 209, "15": 221, "16": 233, "17": 243, "18": 257, "19": 272, "20": 287, "21": 302, "22": 317, "23": 332, "24": 351, "25": 365, "26": 384, "27": 396, "28": 408, "29": 420, "30": 436, "31": 449, "32": 463, "33": 477, "34": 491, "35": 505, "36": 518, "37": 534, "38": 552, "39": 567, "40": 578, "41": 595, "42": 609, "43": 623, "44": 637, "45": 651, "46": 666, "47": 685, "48": 707, "49": 725, "50": 741, "51": 754, "52": 769, "53": 782, "54": 796, "55": 809, "56": 827, "57": 844, "58": 862, "59": 877, "60": 891, "61": 913, "62": 932, "63": 954}
 ---
 
 **Dave Jones:** Hi, I thought I was done and dusted on Solar Roadways after all these years debunking this rubbish. I I thought that was it, but unfortunately, I've had to do another video now. Just It's like the next one. I just did one on the the

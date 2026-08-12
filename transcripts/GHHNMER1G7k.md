@@ -3,6 +3,7 @@ video_id: GHHNMER1G7k
 title: Bodged Stand-up Desk
 url: https://www.youtube.com/watch?v=GHHNMER1G7k
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 28}
 ---
 
 **Dave Jones:** Hi, I've got a bit of a gym back injury at the moment. Trying to recover from that. So, I needed an impromptu standup desk. I don't have one of those uh well, I've got one at home. Don't have one

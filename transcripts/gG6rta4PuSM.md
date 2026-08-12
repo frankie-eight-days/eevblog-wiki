@@ -3,6 +3,7 @@ video_id: gG6rta4PuSM
 title: EEVblog #35 - Inside the Varta 15 minute NiMH Battery Charger
 url: https://www.youtube.com/watch?v=gG6rta4PuSM
 source: youtube-asr
+timestamps: {"0": 10, "1": 22, "2": 39, "3": 64, "4": 78, "5": 94, "6": 116, "7": 135, "8": 156, "9": 178, "10": 195, "11": 208, "12": 226, "13": 241, "14": 260, "15": 273, "16": 290, "17": 305, "18": 324, "19": 337, "20": 356, "21": 370, "22": 382, "23": 395, "24": 413, "25": 429, "26": 444, "27": 458, "28": 475, "29": 486, "30": 503}
 ---
 
 **Dave Jones:** Hi, today we're going to talk about battery chargers. Why? Well, I was at work the other day and we needed to power something from some rechargeable batteries and we needed a solution really quick and we didn't have anything

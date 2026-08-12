@@ -3,6 +3,7 @@ video_id: L9DTOvLmjaQ
 title: The EEVblog is HIRING!
 url: https://www.youtube.com/watch?v=L9DTOvLmjaQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 42, "4": 55, "5": 65, "6": 80}
 ---
 
 **Dave Jones:** Hi, just a quick announcement that I am hiring again. I'm after someone either full-time or part-time to work here in the EV blog lab as my sidekick making videos. And yes, this will be an on-camera role as well. You can get to

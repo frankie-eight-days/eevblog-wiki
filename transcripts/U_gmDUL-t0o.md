@@ -3,6 +3,7 @@ video_id: U_gmDUL-t0o
 title: Commercial Real Estate Office TOUR - 96sqm?
 url: https://www.youtube.com/watch?v=U_gmDUL-t0o
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 44, "4": 55, "5": 70, "6": 84, "7": 97, "8": 112, "9": 125, "10": 140, "11": 154, "12": 167, "13": 178, "14": 188, "15": 200, "16": 216, "17": 233, "18": 254, "19": 271, "20": 288, "21": 305, "22": 322, "23": 342, "24": 355, "25": 370, "26": 385, "27": 398, "28": 409, "29": 421, "30": 433, "31": 447, "32": 459, "33": 468, "34": 480, "35": 495, "36": 507, "37": 518, "38": 531, "39": 542, "40": 555, "41": 568, "42": 585, "43": 597, "44": 611, "45": 625, "46": 636, "47": 648, "48": 666, "49": 678, "50": 691, "51": 702, "52": 718, "53": 732, "54": 746, "55": 760, "56": 772, "57": 785, "58": 798, "59": 811, "60": 825, "61": 839}
 ---
 
 **Dave Jones:** Hi, it's commercial real estate time again. And yes, you know, ever since I actually got this lab, um 14 years ago now, jeez, that's scary or something like that. Um I've always been sort of uh you know, keeping my ear to the

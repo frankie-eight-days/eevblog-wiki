@@ -3,6 +3,7 @@ video_id: 17Y6XEoGuLw
 title: Logitech C920 vs C922 Pro Stream Webcam Shootout
 url: https://www.youtube.com/watch?v=17Y6XEoGuLw
 source: youtube-asr
+timestamps: {"0": 3, "1": 16, "2": 29, "3": 42, "4": 56, "5": 74, "6": 90, "7": 102, "8": 117, "9": 134, "10": 153, "11": 170, "12": 189, "13": 204, "14": 225, "15": 239, "16": 254, "17": 268, "18": 283, "19": 298, "20": 316, "21": 332, "22": 353, "23": 372, "24": 396, "25": 412, "26": 431, "27": 450, "28": 465, "29": 479, "30": 497, "31": 511, "32": 529, "33": 545}
 ---
 
 **Dave Jones:** Hi, just a little quick review comparison between the Logitech C920, which is the being the industry standard top of the line webcam for I don't know how many years, but it's like a pretty much the best in the business. It's the

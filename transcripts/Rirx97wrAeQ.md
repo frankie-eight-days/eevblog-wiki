@@ -3,6 +3,7 @@ video_id: Rirx97wrAeQ
 title: Lenovo Legion 5 Laptop M.2 - Part 2 Electric Boogaloo
 url: https://www.youtube.com/watch?v=Rirx97wrAeQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 38, "3": 56, "4": 75, "5": 90, "6": 105, "7": 124, "8": 136, "9": 151}
 ---
 
 **Dave Jones:** And that was dumb. Dumbass Dave um didn't see the previous video. Thank you for the person who commented that uh the mounting the missing mounting slot for the M.2 um expansion here is actually up there next to the battery. There you go. So

@@ -3,6 +3,7 @@ video_id: 8cNc5An0DLw
 title: EEVblog #6 - Part 2 of 2 - Why cheap multimeters suck
 url: https://www.youtube.com/watch?v=8cNc5An0DLw
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 37, "3": 52, "4": 67, "5": 82, "6": 96, "7": 107, "8": 120, "9": 142, "10": 159, "11": 177, "12": 193, "13": 210, "14": 226, "15": 243, "16": 259, "17": 274, "18": 299, "19": 316, "20": 328}
 ---
 
 **Dave Jones:** Now, I was going to tell you about these cheap Chinese multimeters and why they're a load of garbage. Now, the main reason is that uh the build quality is absolutely atrocious. And I'll take one apart in a minute and show you.

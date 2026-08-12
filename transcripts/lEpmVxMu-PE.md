@@ -3,6 +3,7 @@ video_id: lEpmVxMu-PE
 title: Zelda Watch Bodge Repair After Chlorine Pool Dunking
 url: https://www.youtube.com/watch?v=lEpmVxMu-PE
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 47, "4": 63, "5": 80, "6": 93, "7": 108, "8": 121, "9": 146, "10": 164, "11": 181, "12": 200, "13": 211, "14": 229, "15": 244, "16": 257, "17": 280, "18": 295, "19": 314, "20": 329, "21": 346, "22": 361, "23": 374, "24": 389, "25": 402, "26": 418, "27": 437, "28": 454, "29": 473, "30": 494, "31": 510, "32": 531, "33": 546, "34": 564, "35": 585, "36": 606, "37": 619, "38": 634, "39": 648, "40": 659, "41": 682, "42": 696, "43": 710, "44": 723, "45": 735, "46": 754, "47": 766, "48": 779, "49": 795, "50": 810, "51": 824, "52": 838, "53": 853, "54": 870}
 ---
 
 **Dave Jones:** Hi. Calling International Watch Rescue. Calling International Watch Rescue. Um, we have a watch here. This is a For those um who are familiar with The Legend of Zelda, you might recognize this. This is the official uh Legend of

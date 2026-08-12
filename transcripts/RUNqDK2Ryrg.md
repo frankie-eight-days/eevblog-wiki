@@ -3,6 +3,7 @@ video_id: RUNqDK2Ryrg
 title: EEVblog #40 - Dilbert and the world of micro managed Engineering
 url: https://www.youtube.com/watch?v=RUNqDK2Ryrg
 source: youtube-asr
+timestamps: {"0": 10, "1": 24, "2": 37, "3": 48, "4": 61, "5": 76, "6": 92, "7": 109, "8": 123, "9": 135, "10": 147, "11": 160, "12": 175, "13": 186, "14": 198, "15": 210, "16": 227, "17": 244, "18": 260, "19": 275, "20": 290, "21": 304, "22": 318, "23": 333, "24": 350, "25": 365, "26": 380, "27": 397, "28": 410, "29": 429, "30": 442, "31": 457, "32": 470, "33": 484, "34": 501, "35": 516, "36": 533, "37": 547, "38": 563, "39": 577, "40": 594}
 ---
 
 **Dave Jones:** I'm going to let you in on a little secret. Everyone's favorite electrical engineer from MIT, Dilbert, he's right on the money when it comes to how engineering companies operate in the real world. So, here we go. Now, if you

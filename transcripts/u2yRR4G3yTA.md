@@ -3,6 +3,7 @@ video_id: u2yRR4G3yTA
 title: EEVblog #2 - Burden Voltage, HP Multimeter review
 url: https://www.youtube.com/watch?v=u2yRR4G3yTA
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 36, "3": 60, "4": 77, "5": 91, "6": 112, "7": 129, "8": 142, "9": 160, "10": 172, "11": 186, "12": 204, "13": 226, "14": 247, "15": 264, "16": 283, "17": 304, "18": 321, "19": 335, "20": 348, "21": 370, "22": 400, "23": 420, "24": 437, "25": 454, "26": 471, "27": 491, "28": 513, "29": 526, "30": 541, "31": 556, "32": 572, "33": 589}
 ---
 
 **Dave Jones:** Hi, I'm Dave Jones again. And this is the second EEVblog, the Electronics Engineering Video Blog. I had a ton of feedback from the first one, so number two, here it is. Now, there are a few people who suggested that I change the drab office

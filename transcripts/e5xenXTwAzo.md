@@ -3,6 +3,7 @@ video_id: e5xenXTwAzo
 title: EEVblog #616 - How Microphone Phantom Powering Works
 url: https://www.youtube.com/watch?v=e5xenXTwAzo
 source: youtube-asr
+timestamps: {"0": 11, "1": 29, "2": 48, "3": 70, "4": 96, "5": 115, "6": 132, "7": 153, "8": 172, "9": 188, "10": 206, "11": 222, "12": 241, "13": 259, "14": 284, "15": 302, "16": 325, "17": 345, "18": 358, "19": 370, "20": 390, "21": 411, "22": 428, "23": 447, "24": 469, "25": 494, "26": 510, "27": 525, "28": 548, "29": 573, "30": 592, "31": 607, "32": 623, "33": 640, "34": 665, "35": 686, "36": 703, "37": 722, "38": 744, "39": 764, "40": 784, "41": 801, "42": 819, "43": 840, "44": 857, "45": 871, "46": 888, "47": 912, "48": 930, "49": 945, "50": 962, "51": 976, "52": 993, "53": 1013, "54": 1029, "55": 1046, "56": 1067, "57": 1084, "58": 1095, "59": 1112, "60": 1127, "61": 1147, "62": 1163, "63": 1181}
 ---
 
 **Dave Jones:** I think that the next thing we'll have a look at is some real microphone designs. Some mine, some legacy designs. In order to do this, we'll probably want to have a look at phantom powering. Phantom powering of microphones has been

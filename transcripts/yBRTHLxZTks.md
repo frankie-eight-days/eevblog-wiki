@@ -3,6 +3,7 @@ video_id: yBRTHLxZTks
 title: EEVblog #147 - Agilent 3000 $12000 Smoke
 url: https://www.youtube.com/watch?v=yBRTHLxZTks
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 53, "4": 65, "5": 88, "6": 112, "7": 130, "8": 149, "9": 161, "10": 172}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Uh-oh, looks like we have something wrong. I was just playing around with this new Agyant 3000 series, and look,

@@ -3,6 +3,7 @@ video_id: ZdgsgT2SxCA
 title: EEVblog #1008 - Mystery Teardown
 url: https://www.youtube.com/watch?v=ZdgsgT2SxCA
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 35, "3": 54, "4": 74, "5": 89, "6": 105, "7": 125, "8": 139, "9": 155, "10": 170, "11": 183, "12": 198, "13": 215, "14": 228, "15": 238, "16": 254, "17": 268, "18": 284, "19": 297, "20": 312, "21": 322, "22": 336, "23": 352, "24": 366, "25": 380, "26": 395, "27": 410, "28": 430, "29": 446, "30": 460, "31": 476, "32": 494, "33": 506, "34": 519, "35": 536, "36": 553, "37": 569, "38": 587, "39": 601, "40": 610, "41": 627, "42": 646, "43": 659, "44": 673, "45": 689, "46": 705, "47": 720, "48": 733, "49": 748, "50": 765, "51": 781, "52": 799, "53": 810, "54": 823, "55": 840, "56": 855, "57": 868, "58": 886, "59": 901, "60": 917, "61": 931, "62": 941, "63": 953, "64": 969, "65": 985, "66": 1000, "67": 1014, "68": 1025, "69": 1039}
 ---
 
 **Dave Jones:** Hi, and welcome to a mystery teardown. Thank you very much for Eli Kaminsky for sending this one in. He's from Washington in the USA, and what it is is a defibrillator analyzer for analyzing defibrillators. Go figure. Specialized bit of kit where like you've seen these

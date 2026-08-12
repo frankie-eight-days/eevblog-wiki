@@ -3,6 +3,7 @@ video_id: lD-wPmowR-Y
 title: Amazon Kindle 3 3G/GSM/WiFi 6" TEARDOWN - EEVblog #109
 url: https://www.youtube.com/watch?v=lD-wPmowR-Y
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 52, "4": 66, "5": 77, "6": 90, "7": 101, "8": 116, "9": 134, "10": 152, "11": 163, "12": 178, "13": 195, "14": 214, "15": 230, "16": 247, "17": 265, "18": 283, "19": 299, "20": 316, "21": 338, "22": 352, "23": 366, "24": 382, "25": 397, "26": 413, "27": 429, "28": 448, "29": 462, "30": 479, "31": 494, "32": 510, "33": 525, "34": 546, "35": 562, "36": 578, "37": 598, "38": 609, "39": 622, "40": 635, "41": 652, "42": 673, "43": 690, "44": 711, "45": 734, "46": 747, "47": 764, "48": 781, "49": 795, "50": 811, "51": 826, "52": 840, "53": 858, "54": 876, "55": 893, "56": 910, "57": 923, "58": 944, "59": 959, "60": 974}
 ---
 
 **Dave Jones:** Hi, welcome to the AEV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, in the previous video, I reviewed this new 3G third generation Kindle 3 ebook reader. And it's really cool, 6-in

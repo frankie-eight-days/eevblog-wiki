@@ -3,6 +3,7 @@ video_id: o4S-TkTuHZs
 title: Samsung Galaxy Tab A Troubleshooting
 url: https://www.youtube.com/watch?v=o4S-TkTuHZs
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 37, "3": 54, "4": 76, "5": 106, "6": 126, "7": 143, "8": 157, "9": 177, "10": 194, "11": 208, "12": 222, "13": 239, "14": 249, "15": 268, "16": 289, "17": 303, "18": 318, "19": 332, "20": 349, "21": 365, "22": 392, "23": 410, "24": 435, "25": 452, "26": 471, "27": 486, "28": 499, "29": 515, "30": 531, "31": 548, "32": 562, "33": 576, "34": 587, "35": 599, "36": 614}
 ---
 
 **Dave Jones:** Hi, just a quick video looking at this uh tablet here. It's one of the kids' tablets. I don't know what model it is. There you go. Whatever that is that's an SMT510. It's a Samsung jobbie manufactured in Vietnam. Hi to all my viewers in

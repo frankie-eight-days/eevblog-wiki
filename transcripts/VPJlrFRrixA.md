@@ -3,6 +3,7 @@ video_id: VPJlrFRrixA
 title: eevBLAB 131 - Australian Government Advice: Online Privacy
 url: https://www.youtube.com/watch?v=VPJlrFRrixA
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 37, "3": 50, "4": 62, "5": 76, "6": 90, "7": 105, "8": 117, "9": 129, "10": 143, "11": 154, "12": 168, "13": 183, "14": 195, "15": 207, "16": 219, "17": 232, "18": 247, "19": 260, "20": 275, "21": 291, "22": 303, "23": 316, "24": 330, "25": 345, "26": 358, "27": 373, "28": 393, "29": 407, "30": 420, "31": 436, "32": 450, "33": 464, "34": 479, "35": 493, "36": 508, "37": 518, "38": 537, "39": 553, "40": 572, "41": 588}
 ---
 
 **Dave Jones:** Hi, temporal displacement uh time 300 p.m. on Thursday 7th of August 2025. And I think it's very important uh to protect your privacy online. So I'm going to get official advice from the government of how I can protect myself

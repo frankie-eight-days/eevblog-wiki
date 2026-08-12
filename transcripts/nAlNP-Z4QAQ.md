@@ -3,6 +3,7 @@ video_id: nAlNP-Z4QAQ
 title: EEVblog #44 - Part 2 - Logic Analyzer Tutorial
 url: https://www.youtube.com/watch?v=nAlNP-Z4QAQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 38, "3": 55, "4": 73, "5": 90, "6": 110, "7": 128, "8": 145, "9": 166, "10": 184, "11": 200, "12": 212, "13": 228, "14": 244, "15": 262, "16": 278, "17": 294, "18": 308, "19": 323, "20": 343, "21": 359, "22": 377, "23": 394, "24": 413, "25": 426, "26": 440, "27": 455, "28": 472, "29": 490, "30": 504, "31": 519, "32": 532}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. So, a logic analyzer with compression sampling is extremely valuable. It makes it maximizes your use of memory. Now,

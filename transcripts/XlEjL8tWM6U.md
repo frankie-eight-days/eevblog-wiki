@@ -3,6 +3,7 @@ video_id: XlEjL8tWM6U
 title: The Youtube Aug10th View Drop Theory
 url: https://www.youtube.com/watch?v=XlEjL8tWM6U
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 28, "3": 41, "4": 55, "5": 71, "6": 86, "7": 100, "8": 118, "9": 134, "10": 149, "11": 164, "12": 177, "13": 189, "14": 202, "15": 216, "16": 230, "17": 243, "18": 258, "19": 273, "20": 284, "21": 297, "22": 313, "23": 331, "24": 344, "25": 361, "26": 376, "27": 391, "28": 403, "29": 416, "30": 429, "31": 440, "32": 453, "33": 468, "34": 484, "35": 498, "36": 510, "37": 525, "38": 538, "39": 554, "40": 568, "41": 583, "42": 600, "43": 620}
 ---
 
 **Dave Jones:** Hi, just a quick video looking at my YouTube stats, which I normally do not do at all for many many years now. I just basically ignore my YouTube um stats. It's just not a thing that interests me um anymore. But um

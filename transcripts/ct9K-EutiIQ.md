@@ -3,6 +3,7 @@ video_id: ct9K-EutiIQ
 title: JLCPCB Prototype Inspection
 url: https://www.youtube.com/watch?v=ct9K-EutiIQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 33, "3": 47, "4": 58, "5": 73, "6": 96, "7": 114, "8": 129, "9": 144, "10": 160, "11": 174, "12": 191, "13": 205, "14": 223, "15": 240, "16": 255, "17": 267, "18": 281, "19": 293, "20": 309, "21": 322, "22": 339, "23": 356, "24": 374, "25": 389, "26": 405, "27": 423, "28": 437, "29": 451, "30": 469, "31": 486, "32": 500, "33": 511, "34": 524, "35": 537, "36": 551, "37": 563, "38": 577, "39": 590, "40": 607, "41": 620, "42": 634, "43": 646}
 ---
 
 **Dave Jones:** Hi, just a quick uh second channel video. Uh thought we'd take a look at um the prototype four-layer PCBs from JLCPCB, which is the one of China's biggest um and one of the lowest cost. Uh depends on what type of service uh you want, but

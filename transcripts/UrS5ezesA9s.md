@@ -3,6 +3,7 @@ video_id: UrS5ezesA9s
 title: EEVblog 1465 - Your Multimeter Can Measure Inductors
 url: https://www.youtube.com/watch?v=UrS5ezesA9s
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 26, "3": 41, "4": 54, "5": 71, "6": 86, "7": 99, "8": 111, "9": 127, "10": 140, "11": 157, "12": 174, "13": 184, "14": 202, "15": 216, "16": 232, "17": 246, "18": 262, "19": 278, "20": 292, "21": 306, "22": 320, "23": 336, "24": 351, "25": 365, "26": 382, "27": 400, "28": 419, "29": 437, "30": 452, "31": 466, "32": 485, "33": 504, "34": 523, "35": 536, "36": 548, "37": 561, "38": 577}
 ---
 
 **Dave Jones:** Hi, I'm going to show you a neat little feature in multimeters you probably weren't aware of. Now, most multimeters these days have a capacitance mode either single on the dial like that or switch through typically on the ohms range like

@@ -3,6 +3,7 @@ video_id: x-LQ-T49Vos
 title: EEVblog #433 - Mailbag
 url: https://www.youtube.com/watch?v=x-LQ-T49Vos
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 44, "3": 54, "4": 66, "5": 83, "6": 97, "7": 116, "8": 128, "9": 143, "10": 158, "11": 172, "12": 193, "13": 211, "14": 228, "15": 244, "16": 260, "17": 273, "18": 289, "19": 303, "20": 320, "21": 335, "22": 350, "23": 369, "24": 380, "25": 393, "26": 408, "27": 422, "28": 434, "29": 450, "30": 467, "31": 480, "32": 498, "33": 512, "34": 531, "35": 545, "36": 563, "37": 577, "38": 593, "39": 610, "40": 629, "41": 643, "42": 655, "43": 679, "44": 698, "45": 715, "46": 735, "47": 753, "48": 766, "49": 776, "50": 794, "51": 809, "52": 821, "53": 836, "54": 860, "55": 883, "56": 899, "57": 910, "58": 924, "59": 938, "60": 954, "61": 968, "62": 984, "63": 1001}
 ---
 
 **Dave Jones:** Next up, we have something from Lelay Chi. Thank you very much, Lei. He's from Malaysia, Paneang in Malaysia. Don't forget to look at the Malaysian stamps again. Okay, not a problem. Lovely birds, fruit, and flowers. Beautiful. All right, this one is a uh rather

@@ -3,6 +3,7 @@ video_id: bs-r8BtWIAk
 title: The Mysterious Bat Phone
 url: https://www.youtube.com/watch?v=bs-r8BtWIAk
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 28, "3": 43, "4": 62, "5": 77, "6": 88, "7": 99, "8": 115, "9": 128, "10": 141, "11": 153, "12": 171, "13": 194, "14": 205, "15": 220, "16": 236, "17": 252, "18": 267, "19": 278}
 ---
 
 **Dave Jones:** Hi, I just posted on X that I was just sitting here at my computer and I swear that I heard a phone ring on my bench here and I don't have a phone anywhere in this vicinity at all. My shoe phone

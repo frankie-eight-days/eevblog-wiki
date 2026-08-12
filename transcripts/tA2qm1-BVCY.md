@@ -3,6 +3,7 @@ video_id: tA2qm1-BVCY
 title: Pool Heat Pump Calibration Explained (Madimack)
 url: https://www.youtube.com/watch?v=tA2qm1-BVCY
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 31, "3": 46, "4": 58, "5": 71, "6": 85, "7": 101, "8": 112, "9": 130, "10": 151, "11": 173, "12": 186, "13": 202, "14": 215, "15": 225, "16": 241, "17": 257, "18": 273, "19": 283, "20": 301, "21": 316, "22": 328, "23": 344, "24": 360, "25": 378, "26": 395, "27": 407, "28": 426, "29": 442, "30": 456, "31": 475, "32": 489, "33": 504, "34": 516, "35": 533, "36": 546, "37": 560, "38": 575, "39": 587, "40": 600, "41": 616, "42": 631, "43": 647, "44": 658, "45": 674, "46": 690, "47": 708, "48": 724, "49": 737, "50": 751, "51": 765, "52": 778, "53": 793, "54": 805, "55": 821, "56": 834, "57": 847}
 ---
 
 **Dave Jones:** Hi, I'm here with another pool update and we had another excellent day here. It was just raining before and well, as you can see, it was raining. And I'm going to talk about heat pumps cuz heat pumps are rather interesting. I've done

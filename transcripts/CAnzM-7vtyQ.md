@@ -3,6 +3,7 @@ video_id: CAnzM-7vtyQ
 title: Today in the Dumpster...
 url: https://www.youtube.com/watch?v=CAnzM-7vtyQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 23, "2": 46, "3": 63}
 ---
 
 **Dave Jones:** Hi, it's dumpster room time again. And a TV. Conveniently right near the power point. Um, I assume uh it's a it's a big jobbie. Um, it's thick, so can't be that modern. It's not 4K. Let me plug it in and

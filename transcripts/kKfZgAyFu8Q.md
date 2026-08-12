@@ -3,6 +3,7 @@ video_id: kKfZgAyFu8Q
 title: Solis Hybrid Inverter
 url: https://www.youtube.com/watch?v=kKfZgAyFu8Q
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 36, "3": 48, "4": 61, "5": 77, "6": 92, "7": 102, "8": 117, "9": 129, "10": 143, "11": 161, "12": 182, "13": 197, "14": 215, "15": 226, "16": 241, "17": 253, "18": 263, "19": 275, "20": 292, "21": 304, "22": 322, "23": 338, "24": 350, "25": 365, "26": 377, "27": 391, "28": 404, "29": 418, "30": 431, "31": 445, "32": 461, "33": 481, "34": 495, "35": 511, "36": 527, "37": 546, "38": 561, "39": 577, "40": 591, "41": 606, "42": 621, "43": 631, "44": 645, "45": 659, "46": 671, "47": 687}
 ---
 
 **Dave Jones:** Hi, it's hybrid inverter time again. Uh yes, I'm upgrading my hybrid inverter from that DI inverter that I've had for probably a year now, and that's been a bit little bit how you doing. Had quite a few issues with it, but that's not the

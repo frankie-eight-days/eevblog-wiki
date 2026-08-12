@@ -3,6 +3,7 @@ video_id: HLmty8KcOd4
 title: EEVblog 1743 - Mechanical Vibration Detection with your Oscilloscope Probe
 url: https://www.youtube.com/watch?v=HLmty8KcOd4
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 50, "4": 63, "5": 80, "6": 94, "7": 111, "8": 125, "9": 136, "10": 149, "11": 166, "12": 178, "13": 194, "14": 211, "15": 227, "16": 244, "17": 268, "18": 284, "19": 295, "20": 314, "21": 330, "22": 345, "23": 357, "24": 371, "25": 386, "26": 400, "27": 420, "28": 442, "29": 456, "30": 473, "31": 487, "32": 500, "33": 512, "34": 527, "35": 537}
 ---
 
 **Dave Jones:** Hi, I want to show you something interesting with oscilloscope probes, but before we get to that, we're going to have a look at multi-layer ceramic capacitors, MLCCs. You've seen these before. They come in all shapes and sizes. I've got rather

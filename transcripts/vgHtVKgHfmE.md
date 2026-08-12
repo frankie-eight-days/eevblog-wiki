@@ -3,6 +3,7 @@ video_id: vgHtVKgHfmE
 title: Canon HF G30 vs Sony NEX VG30
 url: https://www.youtube.com/watch?v=vgHtVKgHfmE
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 34, "3": 47, "4": 61, "5": 81, "6": 95, "7": 109, "8": 124, "9": 141, "10": 157, "11": 169, "12": 187, "13": 217, "14": 237, "15": 249, "16": 270, "17": 288, "18": 303, "19": 318, "20": 338, "21": 353, "22": 369, "23": 393, "24": 409, "25": 423, "26": 444, "27": 463, "28": 476, "29": 490, "30": 506, "31": 520, "32": 532, "33": 547}
 ---
 
 **Dave Jones:** Hi, this is just going to be a quick video for my own use really. Uh just comparing this um Sony Nex VG30 camera with a 30 mm macro uh lens attachment. I got this one super cheap on eBay uh

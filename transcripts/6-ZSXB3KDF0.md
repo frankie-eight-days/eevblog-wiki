@@ -3,6 +3,7 @@ video_id: 6-ZSXB3KDF0
 title: EEVblog #743 - Solar Roadways Test Results
 url: https://www.youtube.com/watch?v=6-ZSXB3KDF0
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 34, "3": 52, "4": 64, "5": 79, "6": 97, "7": 110, "8": 125, "9": 139, "10": 152, "11": 164, "12": 177, "13": 192, "14": 208, "15": 224, "16": 240, "17": 253, "18": 266, "19": 277, "20": 291, "21": 310, "22": 332, "23": 345, "24": 361, "25": 375, "26": 387, "27": 403, "28": 420, "29": 431, "30": 447, "31": 466, "32": 481, "33": 499, "34": 518, "35": 532, "36": 543, "37": 555, "38": 573, "39": 586, "40": 602, "41": 616, "42": 636, "43": 649, "44": 665, "45": 682, "46": 695, "47": 710, "48": 726, "49": 742, "50": 759, "51": 772, "52": 788}
 ---
 
 **Dave Jones:** Hi, welcome to another Solar Roadways video. I've done two previous videos on debunking Solar freaking Roadways was the first one and then the second one was pretty much a debunking the results, the initial prototype test results from a prototype Solar Pathway. It's not a

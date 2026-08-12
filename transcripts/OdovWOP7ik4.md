@@ -3,6 +3,7 @@ video_id: OdovWOP7ik4
 title: OF COURSE this happened
 url: https://www.youtube.com/watch?v=OdovWOP7ik4
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 28, "3": 43, "4": 61, "5": 74, "6": 91, "7": 106, "8": 122, "9": 135, "10": 146, "11": 163, "12": 178, "13": 196, "14": 212, "15": 227, "16": 241, "17": 265, "18": 283, "19": 298, "20": 312, "21": 324, "22": 340, "23": 357, "24": 374, "25": 389, "26": 408, "27": 423, "28": 434, "29": 452, "30": 467, "31": 475, "32": 493, "33": 507, "34": 525, "35": 541, "36": 558, "37": 578, "38": 592, "39": 607, "40": 621, "41": 637, "42": 652, "43": 670, "44": 685, "45": 699, "46": 713, "47": 731, "48": 756, "49": 771, "50": 852}
 ---
 
 **Dave Jones:** Hi, it's repair time. This is a dumpster 43-in LG LCD TV, 4K, that I found in the dumpster if you follow me on the dumpster diving on the EV blog 2 channel. Oh, hang on. Is that plastic sticking out there?

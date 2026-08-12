@@ -3,6 +3,7 @@ video_id: fqnHbpQY6EM
 title: XMAS Lights
 url: https://www.youtube.com/watch?v=fqnHbpQY6EM
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 41, "3": 64, "4": 81, "5": 96, "6": 113, "7": 134, "8": 152, "9": 169}
 ---
 
 **Dave Jones:** Hi, I'm at Gooding Street in Borham Hills and check it out. Um, they've gone to quite >> quite the effort. Raid it in the comments down below. It's pretty impressive. Uh, I don't see a snow machine, but uh,

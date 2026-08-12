@@ -3,6 +3,7 @@ video_id: q95mfnmMdwA
 title: eevBLAB #16 - 4K Render Youtube Experiment - 1080p Version
 url: https://www.youtube.com/watch?v=q95mfnmMdwA
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 40, "4": 53, "5": 71, "6": 86, "7": 99, "8": 113, "9": 125, "10": 140, "11": 154, "12": 171, "13": 186, "14": 203, "15": 217, "16": 234, "17": 247, "18": 259, "19": 271, "20": 287}
 ---
 
 **Dave Jones:** Actually, there's a quick thing I wanted to mention with this video. I'm actually doing an experiment with 4K. Now, I don't actually have a 4K resolution capable camera. I'm still uh shot this thing and I'm shooting this now with my

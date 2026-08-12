@@ -3,6 +3,7 @@ video_id: MvFf9RSJUhk
 title: EEVblog 1458 - Microscope Polarising MAGIC!
 url: https://www.youtube.com/watch?v=MvFf9RSJUhk
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 44, "4": 59, "5": 73, "6": 90, "7": 103, "8": 118, "9": 139, "10": 154, "11": 169, "12": 188, "13": 205, "14": 220, "15": 235, "16": 246, "17": 262, "18": 275, "19": 289, "20": 306, "21": 322, "22": 335, "23": 354, "24": 362, "25": 379, "26": 390, "27": 406, "28": 421, "29": 438, "30": 453, "31": 468, "32": 482, "33": 498, "34": 511, "35": 527, "36": 539, "37": 551, "38": 563, "39": 574, "40": 585, "41": 602, "42": 616, "43": 627, "44": 639, "45": 652, "46": 666, "47": 678, "48": 694, "49": 707, "50": 723, "51": 737, "52": 749, "53": 763, "54": 779, "55": 794, "56": 811, "57": 825, "58": 839, "59": 854, "60": 868, "61": 882, "62": 894, "63": 904, "64": 919}
 ---
 
 **Dave Jones:** Hi, yes, you get two names for the price of one today. Now, people were sending me this on Twitter because their minds were absolutely blown away. Now, if you've ever looked at used a microscope like this to Ghana or whatever

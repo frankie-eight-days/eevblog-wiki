@@ -3,6 +3,7 @@ video_id: 305EVbcCub4
 title: EEVblog 1556 - SolaRoad Solar Cycleway FAILS, AGAIN!
 url: https://www.youtube.com/watch?v=305EVbcCub4
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 28, "3": 52, "4": 68, "5": 86, "6": 101, "7": 121, "8": 134, "9": 151, "10": 168, "11": 183, "12": 193, "13": 207, "14": 219, "15": 236, "16": 261, "17": 277, "18": 292, "19": 305, "20": 317, "21": 331, "22": 345, "23": 360, "24": 376, "25": 390, "26": 404, "27": 419, "28": 433, "29": 447, "30": 462, "31": 477, "32": 490, "33": 502, "34": 515, "35": 528, "36": 543, "37": 562, "38": 578, "39": 597, "40": 609, "41": 621, "42": 639, "43": 657, "44": 674, "45": 690, "46": 708, "47": 723, "48": 738, "49": 753, "50": 767, "51": 780, "52": 792, "53": 807, "54": 822, "55": 841, "56": 853, "57": 869, "58": 884}
 ---
 
 **Dave Jones:** Hi. Yes, I've got that Solar freaking Roadways smile again. Thank you to all the viewers who pointed out yet another epic failure again in Solar freaking Roadways or in this case Solar freaking Bikeways in the Netherlands, the Nether regions. Hi to

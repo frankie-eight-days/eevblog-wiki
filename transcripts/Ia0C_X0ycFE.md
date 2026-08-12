@@ -3,6 +3,7 @@ video_id: Ia0C_X0ycFE
 title: EEVblog 1543 - Mailbag FNIRSI HS-01 USB Portable Soldering Iron
 url: https://www.youtube.com/watch?v=Ia0C_X0ycFE
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 35, "3": 46, "4": 61, "5": 74, "6": 88, "7": 102, "8": 115, "9": 132, "10": 142, "11": 161, "12": 175, "13": 188, "14": 204, "15": 214, "16": 228, "17": 239, "18": 258, "19": 274, "20": 289, "21": 301, "22": 323, "23": 338, "24": 350, "25": 367, "26": 377, "27": 394, "28": 409, "29": 423, "30": 436, "31": 449, "32": 460, "33": 473, "34": 484, "35": 495, "36": 508, "37": 522, "38": 534, "39": 549, "40": 561, "41": 573}
 ---
 
 **Dave Jones:** And let's check out the HS01 intelligent electric soldering iron. This thing's priced at only 30 bucks. For the portable USB iron, you get one little crappy conical tip. I recommend not using conical tips. You get a cute little bit rather dinky stand. And you

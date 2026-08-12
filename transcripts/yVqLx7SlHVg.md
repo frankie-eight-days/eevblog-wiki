@@ -3,6 +3,7 @@ video_id: yVqLx7SlHVg
 title: EEVblog #622 - How To See Through Objects With A Thermal Camera
 url: https://www.youtube.com/watch?v=yVqLx7SlHVg
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 26, "3": 39, "4": 53, "5": 66, "6": 81, "7": 96, "8": 110, "9": 126, "10": 139, "11": 152, "12": 165, "13": 179, "14": 193, "15": 205, "16": 219, "17": 231, "18": 247, "19": 261, "20": 272, "21": 285, "22": 296, "23": 311, "24": 326, "25": 336, "26": 352, "27": 369, "28": 385, "29": 399, "30": 413, "31": 427, "32": 440, "33": 462, "34": 476, "35": 493, "36": 509, "37": 528, "38": 541, "39": 555, "40": 571, "41": 586, "42": 601, "43": 613, "44": 623, "45": 645, "46": 658, "47": 676, "48": 695, "49": 713, "50": 729, "51": 741, "52": 756, "53": 773, "54": 788, "55": 805, "56": 817, "57": 830, "58": 846, "59": 861, "60": 879}
 ---
 
 **Dave Jones:** Hi. Now, it's a very common thing in the electronics design industry to measure the thermal performance of a product, especially when you've got like a reasonably large system like uh something like this that's got fans in it and you've got to manage the thermal

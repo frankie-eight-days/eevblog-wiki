@@ -3,6 +3,7 @@ video_id: Zzj2beIYmRw
 title: CH7 Sydney 300W NEC TV Transmitter Teardown
 url: https://www.youtube.com/watch?v=Zzj2beIYmRw
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 27, "3": 40, "4": 54, "5": 70, "6": 88, "7": 103, "8": 114, "9": 132, "10": 147, "11": 163, "12": 177, "13": 191, "14": 204}
 ---
 
 **Dave Jones:** future. Now, everyone loves teardowns on the EV blog and I got something special. Let's check it out. Woohoo! You might have seen this on a previous video, which I'll link in down below where I did the Channel 7

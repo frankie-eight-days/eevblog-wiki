@@ -3,6 +3,7 @@ video_id: RRTrIvA92pw
 title: eevBLAB 104 - Established Titles Youtube SCAM!
 url: https://www.youtube.com/watch?v=RRTrIvA92pw
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 35, "3": 48, "4": 60, "5": 75, "6": 88, "7": 104, "8": 119, "9": 132, "10": 145, "11": 155, "12": 167, "13": 180, "14": 192, "15": 205, "16": 216, "17": 234, "18": 246, "19": 259, "20": 271, "21": 281, "22": 295, "23": 310, "24": 322, "25": 341, "26": 355, "27": 369, "28": 385, "29": 396, "30": 411, "31": 425, "32": 444, "33": 460, "34": 478, "35": 493, "36": 511, "37": 525, "38": 536, "39": 550, "40": 563, "41": 577, "42": 589, "43": 606, "44": 616, "45": 628, "46": 639, "47": 650, "48": 661, "49": 672, "50": 690, "51": 701, "52": 714, "53": 725, "54": 736, "55": 750, "56": 764, "57": 775, "58": 791, "59": 805}
 ---
 
 **Dave Jones:** Hi, it's YouTube scam time. Now, this is not a regular debunking video. It actually involves a whole bunch of like big name YouTubers who have been taking a sponsorship from a company called Established Titles and also Kamikoto knives as well. And you might

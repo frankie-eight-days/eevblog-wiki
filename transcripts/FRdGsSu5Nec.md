@@ -3,6 +3,7 @@ video_id: FRdGsSu5Nec
 title: EEVblog #236 - FE-5680A Rubidium Standard Teardown
 url: https://www.youtube.com/watch?v=FRdGsSu5Nec
 source: youtube-asr
+timestamps: {"0": 16, "1": 32, "2": 45, "3": 56, "4": 68, "5": 87, "6": 107, "7": 127, "8": 141, "9": 164, "10": 180, "11": 193, "12": 209, "13": 225, "14": 241, "15": 257, "16": 271, "17": 289, "18": 304, "19": 322, "20": 341, "21": 357, "22": 371, "23": 387, "24": 402, "25": 423, "26": 439, "27": 457, "28": 471, "29": 493, "30": 510, "31": 523, "32": 538}
 ---
 
 **Dave Jones:** Here's a first look inside. I took the bottom plate off. That was relatively easy and they've got a custom cut mylar sheet here presumably to stop any shorts or anything like that. And tada! And there's your magic physics package and

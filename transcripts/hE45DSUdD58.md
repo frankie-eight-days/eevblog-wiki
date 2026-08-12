@@ -3,6 +3,7 @@ video_id: hE45DSUdD58
 title: How Gravity Can Change Your Watch's Time!
 url: https://www.youtube.com/watch?v=hE45DSUdD58
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 39, "3": 56, "4": 71, "5": 87, "6": 102, "7": 118, "8": 142, "9": 163, "10": 178, "11": 191, "12": 205, "13": 223, "14": 239, "15": 250, "16": 271, "17": 290, "18": 306, "19": 324, "20": 339, "21": 358, "22": 378, "23": 391, "24": 407, "25": 423, "26": 440, "27": 457, "28": 473, "29": 491, "30": 512, "31": 523, "32": 536, "33": 550, "34": 561, "35": 577, "36": 597, "37": 612, "38": 629, "39": 642, "40": 656, "41": 670, "42": 682, "43": 705}
 ---
 
 **Dave Jones:** I'm going to give you a really interesting example here, which even a lot of engineers don't know this. This is really interesting. Take your watch, for example, analog watch, digital watch like this. They use what's called a quartz crystal in them. Now,

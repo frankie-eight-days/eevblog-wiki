@@ -3,6 +3,7 @@ video_id: 95jpp3txM0o
 title: Using an Oscilloscope on an Apple Vision Pro
 url: https://www.youtube.com/watch?v=95jpp3txM0o
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 38, "4": 52, "5": 70, "6": 82, "7": 98, "8": 111, "9": 128, "10": 145, "11": 158, "12": 174, "13": 186, "14": 199, "15": 213, "16": 225, "17": 239, "18": 253, "19": 264, "20": 276, "21": 292, "22": 306, "23": 316, "24": 333, "25": 344, "26": 357, "27": 367, "28": 382, "29": 398, "30": 411, "31": 423, "32": 435, "33": 445, "34": 460, "35": 472, "36": 485, "37": 498, "38": 514, "39": 528}
 ---
 
 **Dave Jones:** Yes, I am trying an Apple Vision Pro this. And yes, it is embarrassing. Thank you very much for embarrassing me. All right. All right. Here we go. Yep. So, what am I supposed to be seeing? I can see you guys at the moment. Yeah. So, if

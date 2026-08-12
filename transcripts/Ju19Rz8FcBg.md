@@ -3,6 +3,7 @@ video_id: Ju19Rz8FcBg
 title: Sagan CORRECTING Dave!
 url: https://www.youtube.com/watch?v=Ju19Rz8FcBg
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 42, "3": 60}
 ---
 
 **Dave Jones:** the waveform is repeated so our period is not 2 pi anymore it's just pi like this so it's 1 plus 1 area of a plus area b divided by pi which is 0.636 wait wait no that's isn't that

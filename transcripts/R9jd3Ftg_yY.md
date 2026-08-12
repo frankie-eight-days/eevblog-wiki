@@ -3,6 +3,7 @@ video_id: R9jd3Ftg_yY
 title: EEVblog 1674 - Dumpster Diving HAUL!
 url: https://www.youtube.com/watch?v=R9jd3Ftg_yY
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 44, "4": 60, "5": 79, "6": 94, "7": 111, "8": 123, "9": 136, "10": 149, "11": 163, "12": 179, "13": 194, "14": 212, "15": 227, "16": 240, "17": 252, "18": 265, "19": 280, "20": 294, "21": 312, "22": 326, "23": 340, "24": 354, "25": 370, "26": 388, "27": 402, "28": 417, "29": 429, "30": 446, "31": 460, "32": 474, "33": 486, "34": 496, "35": 509, "36": 522, "37": 537, "38": 552, "39": 565, "40": 577, "41": 592, "42": 607, "43": 619, "44": 634, "45": 645, "46": 661, "47": 671, "48": 682, "49": 692}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room and check this out. I haven't had a mother lode like this in a long time. Look at this, monitors, a whole bunch of AOC Acer monitors. They look, you know, I mean, I've got a ton

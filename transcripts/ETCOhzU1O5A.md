@@ -3,6 +3,7 @@ video_id: ETCOhzU1O5A
 title: EEVblog #703 - Rigol DS1054Z Oscilloscope Review Summary
 url: https://www.youtube.com/watch?v=ETCOhzU1O5A
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 34, "3": 49, "4": 62, "5": 76, "6": 90, "7": 106, "8": 120, "9": 136, "10": 145, "11": 162, "12": 176, "13": 187, "14": 199, "15": 216, "16": 228, "17": 243, "18": 255, "19": 269, "20": 281, "21": 296, "22": 308, "23": 325, "24": 341, "25": 354, "26": 366, "27": 382, "28": 395, "29": 410, "30": 426, "31": 435, "32": 451, "33": 464, "34": 477, "35": 491, "36": 504, "37": 517, "38": 529, "39": 542, "40": 555, "41": 569, "42": 587, "43": 603, "44": 619, "45": 634, "46": 647, "47": 660, "48": 672, "49": 689, "50": 706, "51": 717}
 ---
 
 **Dave Jones:** Hi, it's product review time. Now, for the last 6 years or so, the Rigol DS1052E here has been pretty much the benchmark standard for entry-level scopes. It couldn't be beat for quite a long time, and there's quite a lot of competition

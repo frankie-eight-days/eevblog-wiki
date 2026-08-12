@@ -3,6 +3,7 @@ video_id: l6n8UEKZies
 title: EEVblog #1276 - Solar Roadways Surface TESTED!
 url: https://www.youtube.com/watch?v=l6n8UEKZies
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 35, "3": 53, "4": 65, "5": 83, "6": 91, "7": 111, "8": 127, "9": 139, "10": 156, "11": 170, "12": 184, "13": 199, "14": 217, "15": 230, "16": 245, "17": 261, "18": 272, "19": 283, "20": 298, "21": 308, "22": 320, "23": 335, "24": 347, "25": 361, "26": 373, "27": 394, "28": 413, "29": 431, "30": 444, "31": 459, "32": 475, "33": 492, "34": 515, "35": 532, "36": 546, "37": 561, "38": 579, "39": 597, "40": 615, "41": 631, "42": 644, "43": 664, "44": 677, "45": 689, "46": 702, "47": 719, "48": 735, "49": 750, "50": 762, "51": 776, "52": 794, "53": 810, "54": 824, "55": 839, "56": 855, "57": 870, "58": 883, "59": 896, "60": 929}
 ---
 
 **Dave Jones:** Hello all my viewers in the Netherlands and other regions. I'm open carefully contains face palm doll material apparently, so open carefully. Open very very carefully.

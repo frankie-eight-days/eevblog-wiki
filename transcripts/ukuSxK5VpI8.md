@@ -3,6 +3,7 @@ video_id: ukuSxK5VpI8
 title: EEVblog 1411 - Tesla Victoria Big Battery FIRE!
 url: https://www.youtube.com/watch?v=ukuSxK5VpI8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 47, "4": 59, "5": 79, "6": 94, "7": 106, "8": 118, "9": 129, "10": 142, "11": 159, "12": 174, "13": 190, "14": 203, "15": 218, "16": 230, "17": 244, "18": 258, "19": 271, "20": 285, "21": 299, "22": 312, "23": 326, "24": 338, "25": 353, "26": 370, "27": 383, "28": 397, "29": 413, "30": 426, "31": 440, "32": 454, "33": 470, "34": 483, "35": 499, "36": 510, "37": 523, "38": 536, "39": 550, "40": 564, "41": 574, "42": 588, "43": 600, "44": 615, "45": 626, "46": 640, "47": 654, "48": 666, "49": 678, "50": 694, "51": 707, "52": 720, "53": 733, "54": 744, "55": 758, "56": 772, "57": 785, "58": 800, "59": 814, "60": 827, "61": 846, "62": 858, "63": 873, "64": 888, "65": 902, "66": 913, "67": 930}
 ---
 
 **Dave Jones:** Hi, welcome to EV blog breaking news D straight off the teletype. Uh we've got a battery fire, a Tesla battery fire. Check it out. This comes from just tweeted from 7 News. Look at this. H doesn't look good. Um called the

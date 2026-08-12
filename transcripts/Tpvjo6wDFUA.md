@@ -3,6 +3,7 @@ video_id: Tpvjo6wDFUA
 title: EEVblog #1122 - Raspberry Pi 3 PoE Hat FAIL Investigation
 url: https://www.youtube.com/watch?v=Tpvjo6wDFUA
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 32, "3": 48, "4": 63, "5": 79, "6": 93, "7": 105, "8": 119, "9": 136, "10": 151, "11": 164, "12": 178, "13": 192, "14": 206, "15": 219, "16": 233, "17": 250, "18": 265, "19": 281, "20": 295, "21": 310, "22": 326, "23": 341, "24": 354, "25": 367, "26": 384, "27": 398, "28": 415, "29": 431, "30": 448, "31": 463, "32": 483, "33": 498, "34": 514, "35": 537, "36": 552, "37": 569, "38": 584, "39": 604, "40": 619, "41": 634, "42": 653, "43": 669, "44": 689, "45": 705, "46": 720, "47": 735, "48": 752, "49": 769, "50": 785, "51": 800, "52": 820, "53": 835, "54": 855, "55": 871, "56": 888, "57": 907, "58": 921, "59": 936, "60": 956, "61": 970, "62": 984, "63": 1004, "64": 1021, "65": 1041, "66": 1057, "67": 1081, "68": 1095, "69": 1110, "70": 1127}
 ---
 
 **Dave Jones:** Hi, this is the new Raspberry Pi Model 3B Plus and it's got the new power over Ethernet capability. That's what this little pin header is here. So, you can get the new ta-da, Raspberry Pi official Raspberry Pi power over Ethernet HAT,

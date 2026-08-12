@@ -3,6 +3,7 @@ video_id: kdjpbWLi7UI
 title: Full Review of the Rigol DS1052E  Oscilloscope
 url: https://www.youtube.com/watch?v=kdjpbWLi7UI
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 36, "3": 60, "4": 77, "5": 94, "6": 108, "7": 123, "8": 140, "9": 159, "10": 174, "11": 187, "12": 202, "13": 220, "14": 234, "15": 246, "16": 263, "17": 283}
 ---
 
 **Dave Jones:** Today is the Rigol 1000 E series oscilloscope. It's It's a pretty new series, not to be confused with the 1000 B series or the 1000 A series. They're all different. So, just be careful. It's a bit confusing. This is the This is the

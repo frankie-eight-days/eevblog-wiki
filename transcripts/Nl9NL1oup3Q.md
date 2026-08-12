@@ -3,6 +3,7 @@ video_id: Nl9NL1oup3Q
 title: EEVblog 1603 - Colas Wattway Solar Roadways is DEAD
 url: https://www.youtube.com/watch?v=Nl9NL1oup3Q
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 55, "4": 68, "5": 87, "6": 100, "7": 115, "8": 135, "9": 148, "10": 161, "11": 175, "12": 191, "13": 206, "14": 218, "15": 235, "16": 251, "17": 268, "18": 285, "19": 301, "20": 314, "21": 327, "22": 345, "23": 358, "24": 372, "25": 385, "26": 396, "27": 410, "28": 423, "29": 438, "30": 447, "31": 463, "32": 480, "33": 495, "34": 508, "35": 523, "36": 538, "37": 556, "38": 570, "39": 583, "40": 597, "41": 614, "42": 629, "43": 640, "44": 653, "45": 669, "46": 683, "47": 699, "48": 719, "49": 742, "50": 755, "51": 774, "52": 791, "53": 809, "54": 823, "55": 835, "56": 851, "57": 862, "58": 878, "59": 898, "60": 913, "61": 930, "62": 940, "63": 954, "64": 972, "65": 985, "66": 1004, "67": 1023, "68": 1039}
 ---
 
 **Dave Jones:** Oh, no. This solar road, which cost the state 5 million euros, will be dismantled. Oh, no. Anyway, last week You could mean the one that was in Time magazine, the world's first solar road opens in France. The 1 km long solar

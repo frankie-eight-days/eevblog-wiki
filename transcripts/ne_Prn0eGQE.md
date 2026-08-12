@@ -3,6 +3,7 @@ video_id: ne_Prn0eGQE
 title: EEVblog #376 - Multimeter Fuse Diode Followup
 url: https://www.youtube.com/watch?v=ne_Prn0eGQE
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 28, "3": 47, "4": 68, "5": 82, "6": 95, "7": 113, "8": 127, "9": 141, "10": 155, "11": 173, "12": 189, "13": 201, "14": 216, "15": 234, "16": 248, "17": 264, "18": 284, "19": 299, "20": 316, "21": 329, "22": 344, "23": 360, "24": 376, "25": 392, "26": 408, "27": 425, "28": 438, "29": 455, "30": 473, "31": 488, "32": 504, "33": 524, "34": 543, "35": 560, "36": 573, "37": 587, "38": 603, "39": 616, "40": 631, "41": 644, "42": 657, "43": 673, "44": 692, "45": 706, "46": 724, "47": 743, "48": 756, "49": 768, "50": 782, "51": 797, "52": 811, "53": 819}
 ---
 
 **Dave Jones:** Hi, this is just a quick follow-up video to the multimeter input protection video I did before and I'll link to it uh down below if you haven't seen that. It won't make any sense otherwise. Now, a lot of

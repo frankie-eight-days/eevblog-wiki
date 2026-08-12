@@ -3,6 +3,7 @@ video_id: IvcOOCTxLes
 title: How to Bypass/Recover an Apple iMac password
 url: https://www.youtube.com/watch?v=IvcOOCTxLes
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 32, "3": 46, "4": 65, "5": 85, "6": 108, "7": 131, "8": 148, "9": 162, "10": 175, "11": 188, "12": 201, "13": 213, "14": 227, "15": 242, "16": 258, "17": 275, "18": 293, "19": 314, "20": 334, "21": 350, "22": 370, "23": 390, "24": 408, "25": 424, "26": 436, "27": 451, "28": 467, "29": 487, "30": 500, "31": 520, "32": 535, "33": 549, "34": 567, "35": 578}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up on this dumpster dive iMac find and I tried various passwords and stuff to get into this thing, but none of them worked. So, thanks to viewer Let's Make Games actually told me how to get into this. A

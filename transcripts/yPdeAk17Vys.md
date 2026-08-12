@@ -3,6 +3,7 @@ video_id: yPdeAk17Vys
 title: EEVblog #134 - The Maxim Manipulation
 url: https://www.youtube.com/watch?v=yPdeAk17Vys
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 32, "3": 51, "4": 65, "5": 79, "6": 94, "7": 108, "8": 120, "9": 133, "10": 149, "11": 162, "12": 175, "13": 188, "14": 204, "15": 217, "16": 231, "17": 245, "18": 257, "19": 272, "20": 284, "21": 298, "22": 312, "23": 324, "24": 337, "25": 355, "26": 370, "27": 382, "28": 394, "29": 409, "30": 424, "31": 436, "32": 450, "33": 466, "34": 483, "35": 499, "36": 510, "37": 523, "38": 533, "39": 545, "40": 558, "41": 576, "42": 595, "43": 612, "44": 626, "45": 639, "46": 653, "47": 667, "48": 679, "49": 692, "50": 709, "51": 723, "52": 733, "53": 746, "54": 760, "55": 774, "56": 787, "57": 802, "58": 814, "59": 826, "60": 840, "61": 854, "62": 868, "63": 881, "64": 895, "65": 907}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host Dave Jones. Hi, it's industry story time. Now, let me set the scene for you. Okay, we've got a couple of thousand boards going

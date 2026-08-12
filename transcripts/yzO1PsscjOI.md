@@ -3,6 +3,7 @@ video_id: yzO1PsscjOI
 title: WENS 540 Handheld 10MHz Oscilloscope and Debug Meter
 url: https://www.youtube.com/watch?v=yzO1PsscjOI
 source: youtube-asr
+timestamps: {"0": 1, "1": 12, "2": 27, "3": 39, "4": 54, "5": 68, "6": 81, "7": 93, "8": 108, "9": 121, "10": 134, "11": 146, "12": 157, "13": 172, "14": 182, "15": 201, "16": 217, "17": 229, "18": 241, "19": 251, "20": 263, "21": 274, "22": 287}
 ---
 
 **Dave Jones:** And you know this guy Charles from not Trio SmartCal anymore. Trio test and measurement. Trio test and measurement. And he's got something new. Yeah, we're in the test and measurement business and that's what the company's called. And you've just released this thing.

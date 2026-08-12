@@ -3,6 +3,7 @@ video_id: UE_srZZdPjM
 title: Radiacode 103 Gamma Ray Spectrometer
 url: https://www.youtube.com/watch?v=UE_srZZdPjM
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 32, "3": 45, "4": 62, "5": 73, "6": 88, "7": 107, "8": 123, "9": 139, "10": 153, "11": 167, "12": 181, "13": 197, "14": 207, "15": 221, "16": 235, "17": 248, "18": 262, "19": 274, "20": 289, "21": 303, "22": 315, "23": 331, "24": 343, "25": 366, "26": 377, "27": 391, "28": 406, "29": 419, "30": 437, "31": 450, "32": 465, "33": 477, "34": 494, "35": 507, "36": 519, "37": 539, "38": 555, "39": 572, "40": 591, "41": 605, "42": 617, "43": 637, "44": 654, "45": 667, "46": 685, "47": 699, "48": 716, "49": 730, "50": 743, "51": 755, "52": 765, "53": 782, "54": 796}
 ---
 
 **Dave Jones:** Hi, I just did a mail bag video briefly looking at this radio code 103 radiation detector. And it's more than that though and quite a few people mentioned that I didn't look at the most interesting aspect of this thing, which is the gamma ray

@@ -3,6 +3,7 @@ video_id: -04CQ0Mug1o
 title: EEVblog #166 - HP Agilent E3610A Lab Power Supply
 url: https://www.youtube.com/watch?v=-04CQ0Mug1o
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 47, "4": 60, "5": 75, "6": 88, "7": 106, "8": 119, "9": 131, "10": 141, "11": 158, "12": 175, "13": 190, "14": 203, "15": 217, "16": 228, "17": 241, "18": 258, "19": 270, "20": 284, "21": 297, "22": 311, "23": 322, "24": 336, "25": 348, "26": 360, "27": 377, "28": 391, "29": 408, "30": 423, "31": 436, "32": 447, "33": 480, "34": 500, "35": 523, "36": 536, "37": 556, "38": 572, "39": 586, "40": 606, "41": 623, "42": 639, "43": 653, "44": 669, "45": 689, "46": 704, "47": 721, "48": 740, "49": 751, "50": 789, "51": 806, "52": 819, "53": 833, "54": 848, "55": 859, "56": 873, "57": 891, "58": 901, "59": 913, "60": 926, "61": 945, "62": 960, "63": 972}
 ---
 
 **Dave Jones:** Hi, welcome to the AEV blog and electronic engineering video blog of interest to anyone involved in electronic design. I'm your host, Dave Jones. Hi, it's product review time again and might actually be considered a bit of a second-hand, almost retro product

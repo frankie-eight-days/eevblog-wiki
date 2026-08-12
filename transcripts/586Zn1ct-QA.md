@@ -3,6 +3,7 @@ video_id: 586Zn1ct-QA
 title: EEVblog 1547 (Part 1) - Contacting the Voyager 2 Space Probe
 url: https://www.youtube.com/watch?v=586Zn1ct-QA
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 47, "3": 66, "4": 85, "5": 102, "6": 119, "7": 133, "8": 152, "9": 171, "10": 188, "11": 204, "12": 220, "13": 236, "14": 252, "15": 267, "16": 283, "17": 298, "18": 315, "19": 334, "20": 350, "21": 366, "22": 382, "23": 405, "24": 419, "25": 435, "26": 448, "27": 462, "28": 477, "29": 490, "30": 508, "31": 521, "32": 537, "33": 551, "34": 568, "35": 585, "36": 597, "37": 611, "38": 625, "39": 639, "40": 651, "41": 667, "42": 681, "43": 697, "44": 714, "45": 730, "46": 745, "47": 765, "48": 780, "49": 790, "50": 803, "51": 821, "52": 837, "53": 854, "54": 874, "55": 889, "56": 907, "57": 922, "58": 939, "59": 956, "60": 971, "61": 985, "62": 999, "63": 1013, "64": 1029, "65": 1046, "66": 1062, "67": 1078, "68": 1093, "69": 1106, "70": 1119, "71": 1131, "72": 1143, "73": 1155, "74": 1164, "75": 1176}
 ---
 
 **Dave Jones:** Hi, currently the furthest man-made objects from Earth are the Voyager space probes launched in 1977. Voyager 2 is currently 17 billion kilometers from Earth. That's like going to Pluto and back and then back to Pluto again at roughly. And we can still contact it.

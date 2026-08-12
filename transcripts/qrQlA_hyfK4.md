@@ -3,6 +3,7 @@ video_id: qrQlA_hyfK4
 title: AmpHour #88.5 Telematic Tested Tacenda
 url: https://www.youtube.com/watch?v=qrQlA_hyfK4
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 26, "3": 37, "4": 49, "5": 62, "6": 77, "7": 91, "8": 101, "9": 118, "10": 126, "11": 137, "12": 149, "13": 164, "14": 174, "15": 189, "16": 199, "17": 216, "18": 229, "19": 247, "20": 264, "21": 277, "22": 289, "23": 304, "24": 317, "25": 330, "26": 343, "27": 355, "28": 367, "29": 381, "30": 394, "31": 410}
 ---
 
 **Dave Jones:** Welcome to the Amp hour. I'm Dave Jones from the EEV blog. And I'm Chris Gaml of Chris Gaml's Analog Life. Hey Chris, we're trying out the video thing again. Yeah, we are. Um, it's kind of different. What are we doing that for?

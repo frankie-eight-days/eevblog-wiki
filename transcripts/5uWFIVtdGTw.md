@@ -3,6 +3,7 @@ video_id: 5uWFIVtdGTw
 title: Hot Label A300 300dpi Thermal Printer vs Zebra 203dpi
 url: https://www.youtube.com/watch?v=5uWFIVtdGTw
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 39, "3": 52, "4": 67, "5": 82, "6": 95, "7": 107, "8": 122, "9": 138, "10": 151, "11": 163, "12": 175, "13": 186, "14": 201, "15": 222, "16": 243, "17": 254, "18": 265, "19": 280, "20": 295, "21": 310, "22": 325, "23": 338, "24": 353, "25": 367, "26": 377, "27": 388, "28": 400, "29": 417, "30": 432, "31": 445, "32": 462, "33": 474, "34": 486, "35": 498, "36": 510, "37": 525, "38": 537, "39": 548, "40": 563, "41": 578, "42": 589}
 ---
 
 **Dave Jones:** Hi, just wanted to do a quick review of this hotlabel.co branded thermal label printer compared to pretty much the industry standard Zebra printers here. And these are, you know, high-end industrial type ones. And it's the I've got the

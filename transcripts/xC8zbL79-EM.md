@@ -3,6 +3,7 @@ video_id: xC8zbL79-EM
 title: Nissan Dualis ABS Modulator Failure Update
 url: https://www.youtube.com/watch?v=xC8zbL79-EM
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 38, "3": 58, "4": 76, "5": 91, "6": 109, "7": 123, "8": 137, "9": 150, "10": 162, "11": 176, "12": 194, "13": 211, "14": 224, "15": 242}
 ---
 
 **Dave Jones:** Hi, little update for those playing along at home. The 2010 Nissan Dualis with the ABS failure down there. There's the ABS system and it failed. The symptom was is that it continually the pump in there continue motor thing continually comes

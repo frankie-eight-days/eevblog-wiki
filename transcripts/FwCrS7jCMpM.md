@@ -3,6 +3,7 @@ video_id: FwCrS7jCMpM
 title: EEVblog #387 - Oscilloscope Trigger Jitter
 url: https://www.youtube.com/watch?v=FwCrS7jCMpM
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 27, "3": 40, "4": 58, "5": 72, "6": 88, "7": 105, "8": 117, "9": 131, "10": 145, "11": 159, "12": 172, "13": 188, "14": 211, "15": 226, "16": 241, "17": 257, "18": 270, "19": 285, "20": 300, "21": 315, "22": 333, "23": 347, "24": 359, "25": 376, "26": 391, "27": 404, "28": 424, "29": 442, "30": 459, "31": 475, "32": 488, "33": 499, "34": 516, "35": 530, "36": 544, "37": 556}
 ---
 
 **Dave Jones:** Hi, just a quick video, and yes, this one will actually be quick. I'll try and do it in a single take. This is a follow-up to my last video, which was the second delay line video, where I was

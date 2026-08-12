@@ -3,6 +3,7 @@ video_id: 4n7iE7pw_WQ
 title: EEVblog #1172 - TRIAC Testing (WEP Meltdown Part 2)
 url: https://www.youtube.com/watch?v=4n7iE7pw_WQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 34, "3": 50, "4": 63, "5": 80, "6": 96, "7": 114, "8": 129, "9": 142, "10": 154, "11": 170, "12": 185, "13": 198, "14": 213, "15": 227, "16": 243, "17": 255, "18": 267, "19": 282, "20": 297, "21": 309, "22": 327, "23": 343, "24": 355, "25": 373, "26": 392, "27": 407, "28": 425, "29": 440, "30": 456, "31": 470, "32": 487, "33": 501, "34": 515, "35": 530, "36": 543, "37": 555, "38": 568, "39": 584, "40": 596, "41": 608, "42": 624, "43": 637, "44": 653, "45": 669, "46": 683, "47": 696, "48": 711, "49": 730, "50": 745, "51": 760, "52": 768, "53": 783, "54": 803, "55": 820, "56": 842, "57": 856, "58": 871, "59": 888, "60": 903, "61": 919, "62": 931, "63": 947, "64": 956, "65": 972}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to this web/yihua 898D plus soldering station that melted down. This SMD rework station I'll link to the previous video if you haven't seen it. And we sort of came to the conclusion that it

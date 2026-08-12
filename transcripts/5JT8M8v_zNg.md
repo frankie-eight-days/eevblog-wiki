@@ -3,6 +3,7 @@ video_id: 5JT8M8v_zNg
 title: EcoFlow Delta Pro - RTFM Dummy!
 url: https://www.youtube.com/watch?v=5JT8M8v_zNg
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 32, "3": 48, "4": 63, "5": 79, "6": 93, "7": 109, "8": 127, "9": 141, "10": 160, "11": 177, "12": 191, "13": 205, "14": 219, "15": 232, "16": 249, "17": 263, "18": 280, "19": 297, "20": 312, "21": 330, "22": 346, "23": 361, "24": 373, "25": 385, "26": 399, "27": 414, "28": 431, "29": 447, "30": 461, "31": 470, "32": 483, "33": 495, "34": 515, "35": 528, "36": 540, "37": 550, "38": 563, "39": 576, "40": 585, "41": 597, "42": 610, "43": 623, "44": 640, "45": 655, "46": 674, "47": 689, "48": 702, "49": 715, "50": 728, "51": 738, "52": 755, "53": 767}
 ---
 
 **Dave Jones:** Hi, I'm back in the old garage lab here where I've got the EcoFlow Pro battery here which you've seen the teardown video of. And if you see my recent AC transfer switch video, you'll know that I was going to install that to

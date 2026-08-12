@@ -3,6 +3,7 @@ video_id: cKd3UyFDJl4
 title: Colonel Sanders vs Ronald McDonald - 2025 Raw Challenge
 url: https://www.youtube.com/watch?v=cKd3UyFDJl4
 source: youtube-asr
+timestamps: {"0": 2, "1": 28, "2": 44, "3": 62, "4": 80, "5": 94}
 ---
 
 **Dave Jones:** Oh, there's there's Ronald McDonald and the Colonel that I told you about. There he is. Hey guys, how you doing? Colonel, >> good work, Colonel. All right, and Ronald. Good day, Ronald. >> Good work, guys. >> Fantastic. >> There you go. That was Ronald and woo,

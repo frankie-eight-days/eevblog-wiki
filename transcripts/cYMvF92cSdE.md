@@ -3,6 +3,7 @@ video_id: cYMvF92cSdE
 title: Electronex Sydney 2026 Birds Eye View Walkaround
 url: https://www.youtube.com/watch?v=cYMvF92cSdE
 source: youtube-asr
+timestamps: {"0": 2, "1": 18, "2": 110, "3": 315}
 ---
 
 **Dave Jones:** I know. >> It's all right. >> It's like my place. >> I'll come here.

@@ -3,6 +3,7 @@ video_id: uiHk1jY1Cxo
 title: EEVblog #1192 - Power Meter LCD Repair
 url: https://www.youtube.com/watch?v=uiHk1jY1Cxo
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 45, "4": 58, "5": 73, "6": 89, "7": 103, "8": 115, "9": 131, "10": 143, "11": 153, "12": 170, "13": 189, "14": 205, "15": 217, "16": 231, "17": 249, "18": 263, "19": 277, "20": 290, "21": 305, "22": 321, "23": 333, "24": 348, "25": 360, "26": 374, "27": 389, "28": 402, "29": 422, "30": 437, "31": 453, "32": 469, "33": 489, "34": 502, "35": 519, "36": 534, "37": 550, "38": 565, "39": 585, "40": 599, "41": 616, "42": 633, "43": 646, "44": 667, "45": 681, "46": 698, "47": 714, "48": 726, "49": 739, "50": 755}
 ---
 
 **Dave Jones:** Hi, some people wanted to see a repair video in quote marks on my three-phase power analyzer here because the LCD has missing segments and it does seem to vary. In the previous video short you saw it had two lines out and then at the

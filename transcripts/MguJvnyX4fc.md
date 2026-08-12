@@ -3,6 +3,7 @@ video_id: MguJvnyX4fc
 title: Tektronix TBS2000 Oscilloscope
 url: https://www.youtube.com/watch?v=MguJvnyX4fc
 source: youtube-asr
+timestamps: {"0": 2, "1": 14, "2": 28, "3": 42, "4": 56, "5": 69, "6": 82, "7": 95, "8": 110, "9": 127, "10": 144, "11": 158, "12": 176, "13": 190, "14": 209, "15": 228, "16": 248}
 ---
 
 **Dave Jones:** All right, I'm here at the Tektronix stand at Electronics and you've seen all this before. You've seen all this before. That's a nice uh arb waveform gen, but if you uh have to ask the price, you probably can't afford it. But

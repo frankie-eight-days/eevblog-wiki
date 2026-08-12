@@ -3,6 +3,7 @@ video_id: DMXiD3dKYJc
 title: EEVblog #778 - Oscilloscope Vertical Confusion
 url: https://www.youtube.com/watch?v=DMXiD3dKYJc
 source: youtube-asr
+timestamps: {"0": 1, "1": 12, "2": 26, "3": 40, "4": 52, "5": 65, "6": 81, "7": 93, "8": 106, "9": 119, "10": 133, "11": 144, "12": 158, "13": 171, "14": 182, "15": 198, "16": 212, "17": 225, "18": 239, "19": 252, "20": 267, "21": 280, "22": 293, "23": 306, "24": 322, "25": 336, "26": 351, "27": 364, "28": 377, "29": 391, "30": 405, "31": 421, "32": 436, "33": 448, "34": 459, "35": 471, "36": 483, "37": 496, "38": 509, "39": 522, "40": 536, "41": 549, "42": 562, "43": 578, "44": 591, "45": 606, "46": 620, "47": 635}
 ---
 
 **Dave Jones:** Hi, this is a quick beginner tutorial that answers a question from a new user called never die on the EV blog at forum. And I actually see this one quite a lot. When they get an like one of

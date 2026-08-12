@@ -3,6 +3,7 @@ video_id: 67qsHqfd5Cw
 title: DUMPSTER DIVING: Samsung 4K TV
 url: https://www.youtube.com/watch?v=67qsHqfd5Cw
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 38, "3": 51, "4": 69, "5": 83, "6": 106, "7": 122, "8": 137, "9": 150, "10": 164, "11": 177, "12": 199, "13": 218}
 ---
 
 **Dave Jones:** Hi, I'm down in the dumpster room and it's been a while since I found one of these LCD TV. Um, it's Yes. What is it? It's a Oh, it's a Samsung Jobby. Hello. So, pretty thin. It's got the stands.

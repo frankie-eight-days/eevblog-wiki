@@ -3,6 +3,7 @@ video_id: 7nXQ5BhNdkk
 title: EEVblog #98 - Microsoft InstaLoad Battery Technology - Patent Busting Time?
 url: https://www.youtube.com/watch?v=7nXQ5BhNdkk
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 37, "3": 57, "4": 75, "5": 93, "6": 109, "7": 123, "8": 138, "9": 154, "10": 167, "11": 182, "12": 196, "13": 205, "14": 219, "15": 234, "16": 249, "17": 264, "18": 278, "19": 293, "20": 306, "21": 325, "22": 338, "23": 354, "24": 371, "25": 387, "26": 401, "27": 416, "28": 433, "29": 446, "30": 459, "31": 476, "32": 491, "33": 504, "34": 520, "35": 532, "36": 546, "37": 565, "38": 581, "39": 595, "40": 609, "41": 623, "42": 637, "43": 649, "44": 663, "45": 676, "46": 686, "47": 701, "48": 714}
 ---
 
 **Dave Jones:** Hi, welcome to the AEVlog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Once in every blue moon, along comes an idea, a concept, a product so gobsmackingly simple, you just want to

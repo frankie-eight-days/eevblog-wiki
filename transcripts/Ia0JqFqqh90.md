@@ -3,6 +3,7 @@ video_id: Ia0JqFqqh90
 title: Walking with Llama's
 url: https://www.youtube.com/watch?v=Ia0JqFqqh90
 source: youtube-asr
+timestamps: {"0": 0, "1": 25}
 ---
 
 **Dave Jones:** Hi. Yes, I am walking with a llama. This is my llama Whistler. Say hi, Whistler. Yep. And there's little Huxley over there with Warlock. Wave hats. And yes. Oh, we're walking with llamas. Cool, huh? Lovely animals. Llamas. You

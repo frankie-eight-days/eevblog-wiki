@@ -3,6 +3,7 @@ video_id: BScnU4BT4xk
 title: EEVblog 1508 - We FINALLY Got Alkaline Battery LEAKAGE!
 url: https://www.youtube.com/watch?v=BScnU4BT4xk
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 47, "4": 63, "5": 77, "6": 88, "7": 101, "8": 113, "9": 125, "10": 137, "11": 150, "12": 163, "13": 178, "14": 193, "15": 207, "16": 220, "17": 232, "18": 245, "19": 257, "20": 271, "21": 289, "22": 303, "23": 317, "24": 328, "25": 339, "26": 361, "27": 378, "28": 389, "29": 403, "30": 419, "31": 431, "32": 447, "33": 460, "34": 471, "35": 484, "36": 500, "37": 518, "38": 531, "39": 546, "40": 561, "41": 578, "42": 591, "43": 602, "44": 620, "45": 635, "46": 651, "47": 666, "48": 681, "49": 698, "50": 712, "51": 729, "52": 750, "53": 766, "54": 779, "55": 799, "56": 816, "57": 830, "58": 845, "59": 859, "60": 872, "61": 884, "62": 898, "63": 910, "64": 926, "65": 938}
 ---
 
 **Dave Jones:** Hi, if you remember back in March 2019, jeez, that was a long time ago now, I started a long-term battery leakage experiment where I got seven different brands of batteries and I discharged them in various ways to see if we can

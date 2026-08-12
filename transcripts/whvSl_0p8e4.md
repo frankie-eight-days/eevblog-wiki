@@ -3,6 +3,7 @@ video_id: whvSl_0p8e4
 title: EEVblog #10 Part 2 of 2 - Fluke 87 V Multimeter Review
 url: https://www.youtube.com/watch?v=whvSl_0p8e4
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 46, "4": 59, "5": 74, "6": 88, "7": 101, "8": 114, "9": 130, "10": 150, "11": 164, "12": 177, "13": 191, "14": 205, "15": 221, "16": 236, "17": 247, "18": 260, "19": 274, "20": 292, "21": 308, "22": 323, "23": 341, "24": 359, "25": 379, "26": 396, "27": 411, "28": 427, "29": 439, "30": 457, "31": 470, "32": 486, "33": 497, "34": 510, "35": 523, "36": 544, "37": 558}
 ---
 
 **Dave Jones:** Now the accuracy of this new unit is quoted as basic DC voltage .05% plus one digit and that's really very good. That's a very high spec and it certainly meets it. It certainly meets it by a mile and the

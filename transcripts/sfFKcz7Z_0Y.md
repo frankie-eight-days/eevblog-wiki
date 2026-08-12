@@ -3,6 +3,7 @@ video_id: sfFKcz7Z_0Y
 title: Electronex 2012 - EEVblog
 url: https://www.youtube.com/watch?v=sfFKcz7Z_0Y
 source: youtube-asr
+timestamps: {"0": 2, "1": 22, "2": 39, "3": 53, "4": 69, "5": 79, "6": 95, "7": 107, "8": 119, "9": 134, "10": 149, "11": 162, "12": 180, "13": 193, "14": 208, "15": 222, "16": 241, "17": 257}
 ---
 
 **Dave Jones:** Hi, thought I'd do a walk time video with someone in tow. Anyway, um I wanted to talk about the upcoming electronics uh exhibition here in Sydney. It's Australia's biggest electronics um show slashexhibition and it's been running for this is the third

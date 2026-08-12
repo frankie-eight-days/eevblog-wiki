@@ -3,6 +3,7 @@ video_id: ay9wFQAW19Y
 title: eevBLAB 91 - Why Are Fluke Meters So EXPENSIVE?
 url: https://www.youtube.com/watch?v=ay9wFQAW19Y
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 37, "3": 55, "4": 67, "5": 83, "6": 97, "7": 110, "8": 125, "9": 136, "10": 150, "11": 164, "12": 179, "13": 195, "14": 208, "15": 223, "16": 236, "17": 250, "18": 267, "19": 283, "20": 296, "21": 310, "22": 322, "23": 341, "24": 359, "25": 375, "26": 392, "27": 405, "28": 420, "29": 434, "30": 453, "31": 467, "32": 484, "33": 499, "34": 510, "35": 526, "36": 540, "37": 552, "38": 567, "39": 582, "40": 595, "41": 609, "42": 620, "43": 634, "44": 647, "45": 663, "46": 679, "47": 690, "48": 702, "49": 714, "50": 728, "51": 743, "52": 764, "53": 779, "54": 793, "55": 805, "56": 818, "57": 833, "58": 846, "59": 860, "60": 876, "61": 887, "62": 901, "63": 912, "64": 925, "65": 940, "66": 952, "67": 962, "68": 976, "69": 990, "70": 1003, "71": 1016, "72": 1028, "73": 1041}
 ---
 
 **Dave Jones:** Hi, a common question that gets asked in the test equipment industry is why do Fluke multimeters cost so much money? And like how can they still sell them at the massive prices that they do? Well, the reasons might actually surprise you.

@@ -3,6 +3,7 @@ video_id: WUFrTDo03uA
 title: EEVblog #43 - Fluke 233 Multimeter Review
 url: https://www.youtube.com/watch?v=WUFrTDo03uA
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 49, "4": 62, "5": 77, "6": 96, "7": 110, "8": 127, "9": 145, "10": 159, "11": 180, "12": 200, "13": 214, "14": 229, "15": 247, "16": 260, "17": 275, "18": 288, "19": 300, "20": 311, "21": 331, "22": 345, "23": 361, "24": 373, "25": 391, "26": 406, "27": 422, "28": 433, "29": 444, "30": 456, "31": 469, "32": 483, "33": 495, "34": 508, "35": 521, "36": 536, "37": 551, "38": 566, "39": 581}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. It's equipment review time again. And yes, we've got another moldy meter. Check it out. It's the Fluke, the brand

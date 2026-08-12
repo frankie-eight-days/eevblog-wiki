@@ -3,6 +3,7 @@ video_id: 671sxivgq6A
 title: EEVblog 1528 - I found a bin FULL of Dumpster Bio Lab Devices!
 url: https://www.youtube.com/watch?v=671sxivgq6A
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 34, "3": 45, "4": 67, "5": 83, "6": 100, "7": 114, "8": 128, "9": 140, "10": 156, "11": 169, "12": 187, "13": 199, "14": 215, "15": 232, "16": 249, "17": 260, "18": 284, "19": 302, "20": 317, "21": 332, "22": 345, "23": 364, "24": 384, "25": 402, "26": 418, "27": 437, "28": 452, "29": 468, "30": 483, "31": 496, "32": 506, "33": 521, "34": 534, "35": 551, "36": 564, "37": 588, "38": 604, "39": 622, "40": 641, "41": 659, "42": 672, "43": 691, "44": 705, "45": 719, "46": 732, "47": 752, "48": 767, "49": 784, "50": 799, "51": 814, "52": 827, "53": 837, "54": 853, "55": 870, "56": 884}
 ---
 
 **Dave Jones:** Hi, I took a wheelie bin full of our stuff down to the dumpster room and I came back with well, a more than full wheelie bin full of what looks like medical type equipment in like original boxes and stuff. So, well, let's go

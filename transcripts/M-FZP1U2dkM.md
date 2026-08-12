@@ -3,6 +3,7 @@ video_id: M-FZP1U2dkM
 title: EEVblog #84 - High Energy Multimeter Destruction
 url: https://www.youtube.com/watch?v=M-FZP1U2dkM
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 53, "4": 77, "5": 92, "6": 109, "7": 134, "8": 150, "9": 170, "10": 190, "11": 210, "12": 251, "13": 265, "14": 283, "15": 325, "16": 339, "17": 352, "18": 371, "19": 390, "20": 406, "21": 420, "22": 444, "23": 457, "24": 470, "25": 487, "26": 510, "27": 526, "28": 540, "29": 552, "30": 569, "31": 586, "32": 601, "33": 617, "34": 636, "35": 653, "36": 667, "37": 682, "38": 699, "39": 714, "40": 730}
 ---
 
 **Dave Jones:** Hi, welcome to the EE Vlog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. No, we're not in the EE Vlog Lab today. We're here in Doug's shed. This is my

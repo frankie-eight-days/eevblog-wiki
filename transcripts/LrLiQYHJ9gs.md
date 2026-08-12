@@ -3,6 +3,7 @@ video_id: LrLiQYHJ9gs
 title: Creality K1 Max Blocked Nozzle Replacement FAIL
 url: https://www.youtube.com/watch?v=LrLiQYHJ9gs
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 30, "3": 46, "4": 61, "5": 78, "6": 93, "7": 112, "8": 128, "9": 141, "10": 158, "11": 175, "12": 189, "13": 203, "14": 220, "15": 240, "16": 250, "17": 266, "18": 283, "19": 302, "20": 320, "21": 332, "22": 349, "23": 372, "24": 393, "25": 418, "26": 431}
 ---
 
 **Dave Jones:** Hi, just a quick video looking at uh taking out the print head from my Creality K1 here, which is completely clogged itself, and absolutely nothing I can do can get this thing working again. So, this packet came with it.

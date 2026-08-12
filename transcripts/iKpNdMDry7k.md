@@ -3,6 +3,7 @@ video_id: iKpNdMDry7k
 title: I Found My Calculator Collection!
 url: https://www.youtube.com/watch?v=iKpNdMDry7k
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 36, "3": 53, "4": 73, "5": 90, "6": 105, "7": 122, "8": 139, "9": 158, "10": 172, "11": 190, "12": 208, "13": 225, "14": 242, "15": 261, "16": 277, "17": 289, "18": 305, "19": 323, "20": 338, "21": 352, "22": 367, "23": 384, "24": 401, "25": 419, "26": 434, "27": 452, "28": 466, "29": 484, "30": 499, "31": 516, "32": 530, "33": 546, "34": 560, "35": 579, "36": 595, "37": 613, "38": 632, "39": 647, "40": 661, "41": 677, "42": 698, "43": 716, "44": 737, "45": 752, "46": 771, "47": 781, "48": 797, "49": 814, "50": 827, "51": 851, "52": 865, "53": 882, "54": 899, "55": 913, "56": 931, "57": 947, "58": 957, "59": 969, "60": 987, "61": 1001, "62": 1013, "63": 1026}
 ---
 
 **Dave Jones:** Hi, you're not going to believe it. I found it. My other box of calculators I've been looking for for an embarrassingly long amount of time. If you follow me on Twitter, you might remember me complaining about not being able to find this box and

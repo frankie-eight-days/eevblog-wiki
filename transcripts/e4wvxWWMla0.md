@@ -3,6 +3,7 @@ video_id: e4wvxWWMla0
 title: Rohde & Schwarz HMO1202 - Like a Bought One
 url: https://www.youtube.com/watch?v=e4wvxWWMla0
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 25, "3": 35, "4": 52, "5": 67, "6": 83, "7": 99, "8": 110, "9": 125, "10": 139, "11": 152, "12": 165, "13": 176, "14": 190, "15": 206, "16": 219, "17": 233, "18": 247, "19": 260, "20": 274, "21": 286, "22": 305, "23": 323, "24": 338, "25": 346, "26": 360, "27": 373}
 ---
 
 **Dave Jones:** Hi, you saw in a previous video how dumb-ass Dave left the uh shielding can off this Rohde & Schwarz HMO 1202 series scope when I did a um hack-in video on the uh SPI bus uh for the front end to

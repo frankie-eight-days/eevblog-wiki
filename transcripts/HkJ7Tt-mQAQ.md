@@ -3,6 +3,7 @@ video_id: HkJ7Tt-mQAQ
 title: EEVblog #1102 - Casio FX730P 1980's BASIC Scientific Computer
 url: https://www.youtube.com/watch?v=HkJ7Tt-mQAQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 29, "3": 44, "4": 60, "5": 76, "6": 86, "7": 103, "8": 118, "9": 133, "10": 144, "11": 156, "12": 167, "13": 180, "14": 197, "15": 211, "16": 228, "17": 242, "18": 257, "19": 275, "20": 289, "21": 306, "22": 319, "23": 330, "24": 344, "25": 360, "26": 376, "27": 393, "28": 414, "29": 430, "30": 451, "31": 465, "32": 478, "33": 499, "34": 524, "35": 538, "36": 554, "37": 570, "38": 588, "39": 608, "40": 622, "41": 634, "42": 657, "43": 673, "44": 692, "45": 713, "46": 730, "47": 751, "48": 768, "49": 783, "50": 800, "51": 816, "52": 828, "53": 845, "54": 857}
 ---
 
 **Dave Jones:** Hi, welcome to another vintage computer / calculator teardown. Very excited about this one, the FX-730P. I had this one on my eBay watch list for a while because, you know, I'm a scientific calculator fanboy. Oh, check it out. Not only does

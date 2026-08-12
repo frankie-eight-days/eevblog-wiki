@@ -3,6 +3,7 @@ video_id: yKOH0DyRWRU
 title: EEVblog #608 - Condenser & Electret Microphone Construction
 url: https://www.youtube.com/watch?v=yKOH0DyRWRU
 source: youtube-asr
+timestamps: {"0": 10, "1": 30, "2": 46, "3": 64, "4": 79, "5": 96, "6": 114, "7": 129, "8": 144, "9": 158, "10": 174, "11": 191, "12": 206, "13": 221, "14": 236, "15": 251, "16": 271, "17": 286, "18": 305, "19": 328, "20": 348, "21": 365, "22": 382, "23": 398, "24": 413, "25": 434, "26": 452, "27": 465, "28": 485, "29": 499, "30": 517, "31": 536, "32": 554, "33": 569, "34": 589, "35": 606, "36": 624, "37": 641, "38": 658, "39": 672, "40": 684, "41": 701, "42": 721, "43": 737, "44": 751}
 ---
 
 **Dave Jones:** Okay, so back to our omni microphone. I've drawn the diaphragm there and the back plate there because this is generally a condenser type microphone whether electric or externally polarized. There is an issue here if this is a truly sealed

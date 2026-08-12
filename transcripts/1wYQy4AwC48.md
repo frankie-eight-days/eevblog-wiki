@@ -3,6 +3,7 @@ video_id: 1wYQy4AwC48
 title: EEVblog 1658 - TUTORIAL: Mean vs Median
 url: https://www.youtube.com/watch?v=1wYQy4AwC48
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 35, "3": 50, "4": 65, "5": 82, "6": 94, "7": 109, "8": 126, "9": 142, "10": 159, "11": 172, "12": 186, "13": 202, "14": 215, "15": 230, "16": 249, "17": 262, "18": 276, "19": 293, "20": 307, "21": 319, "22": 331, "23": 345, "24": 361, "25": 373, "26": 385, "27": 398, "28": 409, "29": 424, "30": 437, "31": 451, "32": 468, "33": 481, "34": 496, "35": 509, "36": 522, "37": 535, "38": 547, "39": 563, "40": 574, "41": 588, "42": 603, "43": 617, "44": 632, "45": 647, "46": 661, "47": 677, "48": 693, "49": 707, "50": 719, "51": 734, "52": 746, "53": 761, "54": 772, "55": 786, "56": 802, "57": 815, "58": 825, "59": 839, "60": 857}
 ---
 
 **Dave Jones:** Hi, just a quick tutorial video on the difference between mean, median, and average. Because if you don't get this right, you can sound like a real dolt, or people can take advantage of you by manipulating numbers. As Mark Twain

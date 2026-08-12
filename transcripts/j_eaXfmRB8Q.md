@@ -3,6 +3,7 @@ video_id: j_eaXfmRB8Q
 title: Alkaline Battery Leakage Testing - Part 1
 url: https://www.youtube.com/watch?v=j_eaXfmRB8Q
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 36, "3": 59, "4": 76, "5": 88, "6": 109, "7": 123, "8": 137, "9": 154, "10": 170, "11": 187, "12": 204, "13": 222, "14": 241, "15": 259, "16": 277, "17": 289, "18": 303, "19": 320, "20": 333, "21": 347, "22": 363, "23": 375, "24": 391, "25": 410, "26": 431, "27": 446, "28": 459, "29": 472, "30": 486, "31": 503, "32": 518, "33": 531, "34": 544, "35": 558, "36": 572}
 ---
 
 **Dave Jones:** Hi, have you ever had a product where you've opened it up to change the batteries only to remember, "Oh, I've they've been in there a long time and maybe I left it switched on perhaps and oops, I hope the batteries

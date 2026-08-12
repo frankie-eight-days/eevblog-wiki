@@ -3,6 +3,7 @@ video_id: oGNyQ_A5kZI
 title: Winner Winner Dumpster Dinner
 url: https://www.youtube.com/watch?v=oGNyQ_A5kZI
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 35, "3": 54, "4": 71, "5": 83, "6": 99}
 ---
 
 **Dave Jones:** Winner, winner, chicken dinner. Just an update on this enormous Cooler Master dumpster PC that I found and um it did work. So, what did I do to it? Well, nothing really. All I did was replace the CPU and put new thermal

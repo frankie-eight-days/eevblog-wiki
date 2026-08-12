@@ -3,6 +3,7 @@ video_id: oQi2CKSbMtk
 title: EEVblog #10 Part 1 of 2 - How a rubber band cost millions of dollars
 url: https://www.youtube.com/watch?v=oQi2CKSbMtk
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 47, "4": 65, "5": 82, "6": 97, "7": 111, "8": 128, "9": 140, "10": 152, "11": 168, "12": 185, "13": 202, "14": 220, "15": 237, "16": 256, "17": 272, "18": 284, "19": 297, "20": 314, "21": 329, "22": 347, "23": 362, "24": 376, "25": 388, "26": 402, "27": 416, "28": 429, "29": 446, "30": 461, "31": 477, "32": 498, "33": 514, "34": 530, "35": 551, "36": 563, "37": 578, "38": 593}
 ---
 
 **Dave Jones:** Welcome to the AE VLOG. I'm your host Dave Jones and this is episode number 10. Double digits. Woohoo! Now my previous blog on cheap Chinese molding meters and why they're so crap, um that you know it stirred up a bit of

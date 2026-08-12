@@ -3,6 +3,7 @@ video_id: x_JFwNFPqlM
 title: EEVblog #156 - HTC Desire Mobile Phone FAIL
 url: https://www.youtube.com/watch?v=x_JFwNFPqlM
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 34, "3": 51, "4": 76, "5": 97}
 ---
 
 **Dave Jones:** Hi. If you know me, you know there's one thing that I really hate, and that's bad product design. But there's one thing I hate even worse than that, and that's ironically bad product design. Now, I found a classic example of this in my

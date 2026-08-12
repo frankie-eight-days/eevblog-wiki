@@ -3,6 +3,7 @@ video_id: k7FlF0ON1VM
 title: Carbon Dioxide CO2 Levels in the Lab?
 url: https://www.youtube.com/watch?v=k7FlF0ON1VM
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 32, "3": 49, "4": 62, "5": 76, "6": 90, "7": 104, "8": 117, "9": 127, "10": 141, "11": 152, "12": 163, "13": 175, "14": 188, "15": 204, "16": 214, "17": 225, "18": 241, "19": 253, "20": 265, "21": 283, "22": 298, "23": 317, "24": 331, "25": 343, "26": 358, "27": 370, "28": 387, "29": 399, "30": 411, "31": 423, "32": 436, "33": 449, "34": 461, "35": 478, "36": 492, "37": 507, "38": 522, "39": 537, "40": 549, "41": 562, "42": 575, "43": 589, "44": 602, "45": 616, "46": 629, "47": 642, "48": 654, "49": 666, "50": 685, "51": 699, "52": 712, "53": 723, "54": 737, "55": 751, "56": 766}
 ---
 
 **Dave Jones:** Hi, just a quick look at the CO2 or carbon dioxide levels here in the EV blog lab because I've got a micro red radiation monitor. I'll link it in down below. I've had this running for donkey's years and I've got real-time 24/7 monitoring

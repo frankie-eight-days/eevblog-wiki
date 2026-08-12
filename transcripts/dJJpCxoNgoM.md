@@ -3,6 +3,7 @@ video_id: dJJpCxoNgoM
 title: My Automated Handbrake Video Conversion Batch File Script
 url: https://www.youtube.com/watch?v=dJJpCxoNgoM
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 35, "3": 50, "4": 64, "5": 79, "6": 95, "7": 109, "8": 121, "9": 139, "10": 154, "11": 167, "12": 187, "13": 208, "14": 221, "15": 234, "16": 247, "17": 260, "18": 271, "19": 290, "20": 308, "21": 323, "22": 336, "23": 351, "24": 364, "25": 384, "26": 405, "27": 418, "28": 430, "29": 447, "30": 462, "31": 475, "32": 490, "33": 504, "34": 518, "35": 531, "36": 542, "37": 560, "38": 571, "39": 585, "40": 599, "41": 613, "42": 629, "43": 644, "44": 657, "45": 669, "46": 683, "47": 696, "48": 714, "49": 726, "50": 742, "51": 757, "52": 772, "53": 784, "54": 796, "55": 810, "56": 824, "57": 838, "58": 855, "59": 867, "60": 881, "61": 894, "62": 907, "63": 923, "64": 938, "65": 951, "66": 960}
 ---
 
 **Dave Jones:** Hi, I just want to do show you my transcoding process with HandBrake cuz I'm actually in the middle at the moment. I'm on my to go on a microscope streaming machine here and I've put in my old Nvidia RTX 2060 card into here

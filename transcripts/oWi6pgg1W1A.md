@@ -3,6 +3,7 @@ video_id: oWi6pgg1W1A
 title: Pool Heat Pump Sizing
 url: https://www.youtube.com/watch?v=oWi6pgg1W1A
 source: youtube-asr
+timestamps: {"0": 2, "1": 18, "2": 34, "3": 47, "4": 65, "5": 83, "6": 93, "7": 112, "8": 126, "9": 139, "10": 152, "11": 164, "12": 180, "13": 194, "14": 206, "15": 217, "16": 235, "17": 249, "18": 261, "19": 274, "20": 287, "21": 303, "22": 318, "23": 331, "24": 345, "25": 362, "26": 373, "27": 384, "28": 399, "29": 411, "30": 423, "31": 438, "32": 454, "33": 466, "34": 483, "35": 495, "36": 508, "37": 523, "38": 533, "39": 547, "40": 561, "41": 579, "42": 589, "43": 604, "44": 622, "45": 637, "46": 657, "47": 670, "48": 686, "49": 700, "50": 713, "51": 728, "52": 738, "53": 755, "54": 769, "55": 781}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to my previous heat pump video cuz someone in the comments said that commented that my heat pump is too small and it's going to be basically useless in the cooler months of the year

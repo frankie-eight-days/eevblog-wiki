@@ -3,6 +3,7 @@ video_id: DCjX4jmSCRo
 title: AI Music Videos Have a Long Way to Go - Producer AI
 url: https://www.youtube.com/watch?v=DCjX4jmSCRo
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 26, "3": 41, "4": 55, "5": 67, "6": 83, "7": 96, "8": 109, "9": 122, "10": 141, "11": 159, "12": 176, "13": 190, "14": 203, "15": 218, "16": 233, "17": 252, "18": 268, "19": 281, "20": 296, "21": 313, "22": 327, "23": 346, "24": 367, "25": 383, "26": 404, "27": 421, "28": 437, "29": 452, "30": 465, "31": 477, "32": 497, "33": 511, "34": 528, "35": 542, "36": 555, "37": 572, "38": 586, "39": 598, "40": 611, "41": 626, "42": 639, "43": 656, "44": 673, "45": 688, "46": 705, "47": 726, "48": 741, "49": 754, "50": 769, "51": 782}
 ---
 
 **Dave Jones:** Hi, I was having some fun with an automated AI video production tool on X and I thought we just have a look at the results here to see uh what this thing's capable of. It's uh a company called

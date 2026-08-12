@@ -3,6 +3,7 @@ video_id: U7soJAFbKwY
 title: EEVblog #782 - The Dangers Of Reflow Soldering
 url: https://www.youtube.com/watch?v=U7soJAFbKwY
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 41, "3": 57, "4": 71, "5": 87, "6": 102, "7": 118, "8": 134, "9": 153, "10": 170, "11": 184, "12": 197, "13": 213, "14": 228, "15": 244, "16": 255, "17": 273, "18": 287, "19": 305, "20": 318, "21": 334, "22": 348, "23": 364, "24": 376, "25": 391, "26": 401, "27": 419, "28": 431, "29": 442, "30": 454, "31": 470, "32": 487, "33": 500, "34": 519, "35": 537, "36": 553, "37": 566, "38": 582, "39": 595, "40": 610, "41": 626, "42": 642, "43": 659, "44": 669, "45": 683, "46": 697}
 ---
 
 **Dave Jones:** Hi, here's a real trap for young players. Look what can happen to an already populated PCB if you try and reflow it in a thermal oven. Hmm, I don't think our connector's going to fit anymore. Oops. Look what's happened to all these

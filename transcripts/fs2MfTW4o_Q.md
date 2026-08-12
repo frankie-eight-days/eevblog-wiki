@@ -3,6 +3,7 @@ video_id: fs2MfTW4o_Q
 title: EEVblog #38 - LCR Meters, Transmission Lines, and Moving goal posts
 url: https://www.youtube.com/watch?v=fs2MfTW4o_Q
 source: youtube-asr
+timestamps: {"0": 10, "1": 22, "2": 41, "3": 58, "4": 71, "5": 84, "6": 100, "7": 112, "8": 127, "9": 140, "10": 156, "11": 170, "12": 185, "13": 202, "14": 219, "15": 238, "16": 258, "17": 276, "18": 293, "19": 310, "20": 326, "21": 339, "22": 350, "23": 368, "24": 382, "25": 398, "26": 415, "27": 428, "28": 442, "29": 455, "30": 470, "31": 481, "32": 495, "33": 511, "34": 524, "35": 539, "36": 551, "37": 567, "38": 579, "39": 593}
 ---
 
 **Dave Jones:** I'm going to give you the answer to the hardware puzzle that I proposed a blog or two back. I gave you this board and I said what is it? Try and figure it out. What does it do? And three people

@@ -3,6 +3,7 @@ video_id: xmvbpoDYhzg
 title: EEVblog #838 - More Dumpster Server PC's
 url: https://www.youtube.com/watch?v=xmvbpoDYhzg
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 42, "4": 57, "5": 70, "6": 86, "7": 101, "8": 114, "9": 130, "10": 144, "11": 161, "12": 171, "13": 191, "14": 206, "15": 217, "16": 232, "17": 244, "18": 260, "19": 284, "20": 302, "21": 319, "22": 333, "23": 349, "24": 366, "25": 383, "26": 397, "27": 413, "28": 433, "29": 457, "30": 472, "31": 488, "32": 501, "33": 513, "34": 525, "35": 540, "36": 552, "37": 572, "38": 586, "39": 603, "40": 616, "41": 632, "42": 645}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time dive. Dumpster diving time sake. And we got this from the dumpster, didn't we? We got a couple of computers, didn't we? These are rack mount computers. Yeah. Let's check them out. What? They're um

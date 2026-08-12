@@ -3,6 +3,7 @@ video_id: 2o8MDCIlOEk
 title: EEVblog #822 - World's Worst Tablet Computer Teardown
 url: https://www.youtube.com/watch?v=2o8MDCIlOEk
 source: youtube-asr
+timestamps: {"0": 10, "1": 23, "2": 37, "3": 60, "4": 79, "5": 96, "6": 111, "7": 126, "8": 140, "9": 155, "10": 175, "11": 188, "12": 209, "13": 223, "14": 239, "15": 257, "16": 272, "17": 284, "18": 304, "19": 320, "20": 334, "21": 351, "22": 374, "23": 403, "24": 424, "25": 442, "26": 454, "27": 467, "28": 484, "29": 500, "30": 513, "31": 532, "32": 544, "33": 557, "34": 573, "35": 593, "36": 636, "37": 645, "38": 663}
 ---
 
 **Dave Jones:** And he's this tablet computer that he got from a company 10 km away from him. They went bankrupt and he got tons of stuff for scrap metal prices. Um, it was designed for hospitals to display all kinds of

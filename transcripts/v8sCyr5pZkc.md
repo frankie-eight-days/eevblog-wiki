@@ -3,6 +3,7 @@ video_id: v8sCyr5pZkc
 title: EEVblog #1324 - Oscilloscope Reference Waveforms are USEFUL
 url: https://www.youtube.com/watch?v=v8sCyr5pZkc
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 45, "4": 62, "5": 74, "6": 86, "7": 102, "8": 116, "9": 129, "10": 141, "11": 153, "12": 167, "13": 183, "14": 197, "15": 209, "16": 227, "17": 240, "18": 258, "19": 272, "20": 289, "21": 305, "22": 319, "23": 331, "24": 346, "25": 362, "26": 377, "27": 388, "28": 401, "29": 413, "30": 430, "31": 444, "32": 454, "33": 471, "34": 484, "35": 500, "36": 513, "37": 525, "38": 538, "39": 552, "40": 568, "41": 582, "42": 598, "43": 611, "44": 626, "45": 638}
 ---
 
 **Dave Jones:** Hi, just a quick oscilloscope tip video. Now, modern digital scopes are of course very handy because they've got single shot capture capability and allows you to capture multiple waveforms and display them on the screen and of course get time correlated information of how

@@ -3,6 +3,7 @@ video_id: ddQF9U5CRNA
 title: New Grey ESD Mat & Camera Exposure
 url: https://www.youtube.com/watch?v=ddQF9U5CRNA
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 29, "3": 44, "4": 60, "5": 72, "6": 91, "7": 107, "8": 121, "9": 135, "10": 149, "11": 161, "12": 173, "13": 186, "14": 201, "15": 215, "16": 228, "17": 244, "18": 261, "19": 280, "20": 294, "21": 309, "22": 322, "23": 337, "24": 351}
 ---
 
 **Dave Jones:** Hi, I just wanted to show you a new ESD mat that I got for the soldering bench. And yeah, sorry about my voice. It is as bad as it sounds. Now, the reason I went with a gray mat this time is because of

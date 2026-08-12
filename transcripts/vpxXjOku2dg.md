@@ -3,6 +3,7 @@ video_id: vpxXjOku2dg
 title: Star Wars Episode VII The Force Awakens Trailer 3 Reaction
 url: https://www.youtube.com/watch?v=vpxXjOku2dg
 source: youtube-asr
+timestamps: {"0": 3, "1": 20, "2": 34, "3": 46, "4": 57, "5": 71, "6": 83, "7": 111, "8": 124, "9": 147, "10": 180, "11": 197, "12": 211, "13": 229, "14": 249, "15": 267, "16": 288, "17": 305, "18": 333, "19": 354, "20": 369, "21": 382, "22": 402, "23": 424, "24": 435, "25": 451, "26": 465, "27": 482, "28": 497, "29": 514, "30": 528}
 ---
 
 **Dave Jones:** and I'm recording hopefully. Hi guys. I thought I'd do another uh movie trailer reaction. It's Star Wars the new one. They've got the um third trailer out and uh can't wait to see it. So, I thought I'd just do a first reaction of me uh

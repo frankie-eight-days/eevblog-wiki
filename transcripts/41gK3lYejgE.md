@@ -3,6 +3,7 @@ video_id: 41gK3lYejgE
 title: Microsoft Just Open Sourced GWBASIC !
 url: https://www.youtube.com/watch?v=41gK3lYejgE
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 35, "3": 51, "4": 71, "5": 86, "6": 103, "7": 116, "8": 131, "9": 149, "10": 165, "11": 181, "12": 198, "13": 214, "14": 230, "15": 247, "16": 264, "17": 284, "18": 297, "19": 315, "20": 333, "21": 351, "22": 363, "23": 379, "24": 396, "25": 418, "26": 438, "27": 450, "28": 463, "29": 476, "30": 489, "31": 505, "32": 523, "33": 540, "34": 555, "35": 570, "36": 585, "37": 602, "38": 618, "39": 639, "40": 653, "41": 669, "42": 684, "43": 700, "44": 714, "45": 728, "46": 749, "47": 767, "48": 782, "49": 795, "50": 813, "51": 830, "52": 844, "53": 865, "54": 881, "55": 895, "56": 911, "57": 925, "58": 937, "59": 949, "60": 966, "61": 979, "62": 997, "63": 1010, "64": 1021, "65": 1034, "66": 1046, "67": 1058, "68": 1071, "69": 1089}
 ---
 
 **Dave Jones:** Hi, this is going to be an interesting one. Well, interesting from a historical perspective for me anyway. Microsoft have just announced that they've open-sourced the original GW-BASIC from 1983. I'm not sure which version it Actually, did GW-BASIC even have versions back

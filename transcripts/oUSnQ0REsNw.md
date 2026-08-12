@@ -3,6 +3,7 @@ video_id: oUSnQ0REsNw
 title: EEVblog #447 - Samsung Plasma Followup
 url: https://www.youtube.com/watch?v=oUSnQ0REsNw
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 33, "3": 48, "4": 65, "5": 78, "6": 94, "7": 109, "8": 130, "9": 145, "10": 159, "11": 176, "12": 188, "13": 202, "14": 220, "15": 233, "16": 249, "17": 263, "18": 282, "19": 298, "20": 314, "21": 330, "22": 344, "23": 369, "24": 387, "25": 402, "26": 415, "27": 428, "28": 442, "29": 457, "30": 471, "31": 486, "32": 495, "33": 511, "34": 531, "35": 547, "36": 563, "37": 582, "38": 594, "39": 610, "40": 628, "41": 648, "42": 660, "43": 676, "44": 691, "45": 704, "46": 724, "47": 736, "48": 753, "49": 771, "50": 785, "51": 800, "52": 816, "53": 830, "54": 844, "55": 858, "56": 871, "57": 881, "58": 893, "59": 905}
 ---
 
 **Dave Jones:** Hi, this is just going to be a quick follow-up on this Samsung plasma TV because I wanted to test a few more things. Didn't have enough time last time, so we'll check this sucker out, shall we? See if we can at least

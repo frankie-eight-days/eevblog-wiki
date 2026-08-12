@@ -3,6 +3,7 @@ video_id: UX7xmA7F5bc
 title: EEVblog #252 - Multimeter Ohms Overload
 url: https://www.youtube.com/watch?v=UX7xmA7F5bc
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 46, "4": 64, "5": 74, "6": 93, "7": 109, "8": 126, "9": 142, "10": 157, "11": 177, "12": 187, "13": 211, "14": 225, "15": 240, "16": 260, "17": 274, "18": 290, "19": 307, "20": 321, "21": 335, "22": 354, "23": 368, "24": 382, "25": 398, "26": 409, "27": 429, "28": 450, "29": 478, "30": 492, "31": 510, "32": 527, "33": 537, "34": 565, "35": 586, "36": 601, "37": 614}
 ---
 
 **Dave Jones:** Hi, on the Agilent U1272A meter review I just did, I showed how if you put 240 volts mains on the ohms range, that this thing, while it would survive and that's good, it would take some time to recover, uh possibly many, many minutes

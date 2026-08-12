@@ -3,6 +3,7 @@ video_id: mGFJQxAbWeY
 title: EEVblog #582 - HP41CV Calculator Teardown
 url: https://www.youtube.com/watch?v=mGFJQxAbWeY
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 42, "3": 58, "4": 72, "5": 88, "6": 103, "7": 121, "8": 136, "9": 155, "10": 169, "11": 187, "12": 203, "13": 221, "14": 236, "15": 252, "16": 266, "17": 283, "18": 300, "19": 311, "20": 325, "21": 337, "22": 351, "23": 369, "24": 383, "25": 396, "26": 412, "27": 428, "28": 441, "29": 457, "30": 471, "31": 486, "32": 498, "33": 511, "34": 522, "35": 534, "36": 552, "37": 568, "38": 583, "39": 600, "40": 615, "41": 632, "42": 650, "43": 668, "44": 684, "45": 704, "46": 719, "47": 736, "48": 749, "49": 766, "50": 782, "51": 800, "52": 813, "53": 829, "54": 844, "55": 858, "56": 877, "57": 895, "58": 910, "59": 925, "60": 938, "61": 955, "62": 971, "63": 986, "64": 1003, "65": 1012, "66": 1027, "67": 1040, "68": 1058, "69": 1078, "70": 1094, "71": 1113}
 ---
 
 **Dave Jones:** Hi. Welcome to Teardown Tuesday. And yes, vintage calculator time. You know I love vintage calculators and I love HP calculators. And Dana kindly sent this in in the previous mailbag segment. And it is the classic Hewlett-Packard 41CV calculator. The one that well, the

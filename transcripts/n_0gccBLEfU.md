@@ -3,6 +3,7 @@ video_id: n_0gccBLEfU
 title: Pointless Lenovo Legion 5i Keyboard Upgrade?
 url: https://www.youtube.com/watch?v=n_0gccBLEfU
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 28, "3": 47, "4": 61, "5": 75, "6": 90, "7": 106, "8": 119, "9": 134, "10": 149, "11": 164, "12": 180, "13": 193, "14": 208, "15": 222, "16": 236, "17": 253, "18": 268, "19": 279, "20": 294, "21": 305, "22": 321, "23": 339, "24": 358, "25": 377, "26": 392, "27": 406, "28": 419, "29": 430, "30": 444, "31": 461, "32": 473, "33": 485, "34": 502, "35": 519}
 ---
 
 **Dave Jones:** Hi, this is my Lenovo Legion uh 5i laptop. You've seen another video. I'll link it in up here and down below if you haven't seen it. I did like an unboxing video and a brief um teardown of it. And

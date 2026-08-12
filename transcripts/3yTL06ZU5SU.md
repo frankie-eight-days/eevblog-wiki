@@ -3,6 +3,7 @@ video_id: 3yTL06ZU5SU
 title: EEVblog #423 - HP5061A Atomic Clock Cesium Beam Frequency Standard
 url: https://www.youtube.com/watch?v=3yTL06ZU5SU
 source: youtube-asr
+timestamps: {"0": 10, "1": 25, "2": 44, "3": 63, "4": 79, "5": 94, "6": 110, "7": 125, "8": 135, "9": 149, "10": 163, "11": 178, "12": 193, "13": 204, "14": 219, "15": 233, "16": 253, "17": 271, "18": 286, "19": 297, "20": 313, "21": 327, "22": 341, "23": 357, "24": 373, "25": 391, "26": 408, "27": 422, "28": 435, "29": 454, "30": 469, "31": 483, "32": 497, "33": 509, "34": 521}
 ---
 
 **Dave Jones:** Hi, I'm at here in Melbourne at Agilent Technologies and I got Peter Daley with us and we've got something absolutely fascinating here. Peter has bit of well, a lot of history behind this, right Pete? Yeah, a brief a brief history of Agilent

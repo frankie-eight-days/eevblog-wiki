@@ -3,6 +3,7 @@ video_id: pa8j-Lje_2o
 title: RAW Batteriser MP3 Player Test
 url: https://www.youtube.com/watch?v=pa8j-Lje_2o
 source: youtube-asr
+timestamps: {"0": 2, "1": 20, "2": 39, "3": 53, "4": 71, "5": 87, "6": 102, "7": 113, "8": 130, "9": 147, "10": 162, "11": 181, "12": 202, "13": 222, "14": 235, "15": 250, "16": 272, "17": 294, "18": 307, "19": 326, "20": 340, "21": 360, "22": 383, "23": 411, "24": 423, "25": 440, "26": 460, "27": 486, "28": 501, "29": 514, "30": 535, "31": 558, "32": 576, "33": 597, "34": 620, "35": 643, "36": 659, "37": 679, "38": 694, "39": 711, "40": 732, "41": 749, "42": 764, "43": 778, "44": 791}
 ---
 
 **Dave Jones:** All right, I finally got my batterizer sleeves uh many days after doing the first uh discharge test on my Creative Muo TXM here. And these are the two batteries that I got uh number three and number two. There they are. So, I can

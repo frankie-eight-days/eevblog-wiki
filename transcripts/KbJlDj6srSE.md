@@ -3,6 +3,7 @@ video_id: KbJlDj6srSE
 title: EEVblog #1345 - HP DV7 Laptop Repair
 url: https://www.youtube.com/watch?v=KbJlDj6srSE
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 34, "3": 50, "4": 67, "5": 83, "6": 97, "7": 109, "8": 119, "9": 132, "10": 145, "11": 155, "12": 167, "13": 179, "14": 191, "15": 206, "16": 219, "17": 235, "18": 250, "19": 266, "20": 284, "21": 303, "22": 324, "23": 344, "24": 360, "25": 380, "26": 395, "27": 415, "28": 434, "29": 451, "30": 471, "31": 498, "32": 516, "33": 533, "34": 552, "35": 572, "36": 593, "37": 603, "38": 620, "39": 635, "40": 652, "41": 664, "42": 678, "43": 689, "44": 711, "45": 725, "46": 743, "47": 758, "48": 776, "49": 794, "50": 809, "51": 825, "52": 840, "53": 857, "54": 874, "55": 887, "56": 900, "57": 912, "58": 927, "59": 942}
 ---
 
 **Dave Jones:** Hi, no, this isn't a dumpster PC. This is actually my old editing machine, believe it or not. Um, probably dates from like nine years ago or something. It's a HP, uh, Pavilion DV7. For those playing along at home, it's

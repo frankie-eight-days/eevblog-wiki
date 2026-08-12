@@ -3,6 +3,7 @@ video_id: NXUuEepfjG0
 title: Bunker Power & Lighting Upgrade
 url: https://www.youtube.com/watch?v=NXUuEepfjG0
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 29, "3": 44, "4": 64, "5": 78, "6": 95, "7": 110, "8": 125, "9": 137, "10": 153, "11": 167, "12": 183}
 ---
 
 **Dave Jones:** Hi, I'm in the bunker here. I just wanted to show you I just got a power and lighting upgrade here in the bunker. I've originally only had the one power point here for this whole thing cuz all these benches, I didn't build them.

@@ -3,6 +3,7 @@ video_id: wEXKHmJmVBY
 title: EEVblog 1742 - Today in the Dumpster Room
 url: https://www.youtube.com/watch?v=wEXKHmJmVBY
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 38, "3": 57, "4": 71, "5": 90, "6": 105, "7": 122, "8": 138, "9": 153, "10": 169, "11": 188, "12": 203, "13": 223, "14": 240, "15": 254, "16": 284, "17": 302, "18": 315, "19": 328, "20": 340, "21": 357, "22": 379, "23": 391, "24": 405, "25": 417, "26": 435, "27": 449, "28": 460}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time again. Gigantic bales. Look what we have here. We have a box. And I thought I was just going to score some monitors. But anyway, they're all bubble wrapped up for our protection. This is what I noticed.

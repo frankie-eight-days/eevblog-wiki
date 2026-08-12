@@ -3,6 +3,7 @@ video_id: afErPINq8qc
 title: Mini Arcade Game Console Repair OOPSIE!
 url: https://www.youtube.com/watch?v=afErPINq8qc
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 39, "3": 55, "4": 70, "5": 83, "6": 99, "7": 113, "8": 127, "9": 142, "10": 156, "11": 169, "12": 180, "13": 195, "14": 210, "15": 223, "16": 239, "17": 265, "18": 286, "19": 307, "20": 323, "21": 345, "22": 361, "23": 380, "24": 395, "25": 408, "26": 427, "27": 442, "28": 457, "29": 476, "30": 494, "31": 519, "32": 541, "33": 554, "34": 573, "35": 592, "36": 611, "37": 625}
 ---
 
 **Dave Jones:** Hi, it's time for our pair video. I've got a little one of Sagan's little toys here. It's one of these little mini arcades and mini arcade cabinet. Not like my real one I've got here, but yeah, it's like got 50 games in one or

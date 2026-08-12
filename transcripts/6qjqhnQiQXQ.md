@@ -3,6 +3,7 @@ video_id: 6qjqhnQiQXQ
 title: How to Measure Oscilloscope ADC Dynamic Range
 url: https://www.youtube.com/watch?v=6qjqhnQiQXQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 26, "3": 42, "4": 54, "5": 71, "6": 84, "7": 98, "8": 110, "9": 124, "10": 139, "11": 151, "12": 168, "13": 184, "14": 195, "15": 207, "16": 222, "17": 234, "18": 245, "19": 257, "20": 268, "21": 286, "22": 300, "23": 311, "24": 324, "25": 338, "26": 354, "27": 371, "28": 383, "29": 402, "30": 418, "31": 429, "32": 450, "33": 462, "34": 474, "35": 488, "36": 502, "37": 516, "38": 529, "39": 540, "40": 553, "41": 566, "42": 577, "43": 590, "44": 600, "45": 613, "46": 623, "47": 637, "48": 647, "49": 662, "50": 673, "51": 689, "52": 699, "53": 713}
 ---
 
 **Dave Jones:** Hi, I'm going to show you how to measure the dynamic range of an oscilloscope. Now, this actually might be important because when you're analyzing, especially if you're a nerd on the EV blog forum like there are plenty of, um

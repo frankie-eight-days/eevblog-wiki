@@ -3,6 +3,7 @@ video_id: X83SPqsf5kY
 title: Smart Meter Installed!
 url: https://www.youtube.com/watch?v=X83SPqsf5kY
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 35, "3": 50, "4": 64, "5": 78, "6": 95, "7": 107, "8": 120, "9": 134, "10": 145, "11": 159, "12": 175, "13": 187, "14": 199, "15": 215, "16": 227, "17": 243, "18": 255, "19": 269, "20": 285, "21": 300, "22": 314, "23": 330}
 ---
 
 **Dave Jones:** Hi. You might notice something different with my home switchboard. Check it out. Uh hi. There seems to be a lot more room magically in here, and there's a few things missing. Spot the before and after. Um here you go. No, I haven't had the

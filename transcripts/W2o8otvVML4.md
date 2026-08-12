@@ -3,6 +3,7 @@ video_id: W2o8otvVML4
 title: ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter
 url: https://www.youtube.com/watch?v=W2o8otvVML4
 source: youtube-asr
+timestamps: {"0": 2, "1": 20, "2": 38, "3": 57, "4": 71, "5": 89, "6": 105, "7": 122, "8": 141, "9": 158, "10": 173, "11": 186, "12": 202, "13": 214, "14": 230, "15": 245, "16": 261, "17": 273, "18": 287, "19": 300, "20": 315, "21": 332, "22": 346, "23": 362, "24": 375, "25": 389, "26": 407, "27": 419, "28": 434, "29": 452, "30": 467, "31": 482, "32": 496, "33": 509}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on this MHO14 Mixig tablet oscilloscope / multimeter thingo. And I can't believe I completely forgot this. Somebody mentioned it in the comments. Thank you very much. I like brain fart. Um, cuz you know I like to talk about input

@@ -3,6 +3,7 @@ video_id: zfkqOB3c86U
 title: Rode NT1A vs NTG1 Microphone Comparison & Testing
 url: https://www.youtube.com/watch?v=zfkqOB3c86U
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 37, "3": 55, "4": 72, "5": 85, "6": 100, "7": 112, "8": 124, "9": 137, "10": 150, "11": 170, "12": 184, "13": 198, "14": 213, "15": 227, "16": 243, "17": 258, "18": 272, "19": 287, "20": 299, "21": 313, "22": 329, "23": 349, "24": 362, "25": 379, "26": 392, "27": 409, "28": 421, "29": 432, "30": 444, "31": 460, "32": 474, "33": 491, "34": 510, "35": 530, "36": 548}
 ---
 
 **Dave Jones:** Check, check, check one, two. This is going to be a microphone comparison between the Rode NT1 and the NTG1. The NT1 is my standard one I'm using here with the pop filter. It's the 1-in condenser jobby. I usually have it

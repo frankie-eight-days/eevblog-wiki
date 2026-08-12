@@ -3,6 +3,7 @@ video_id: orYJFKQDZLo
 title: EEVblog #540 - HP35670A DSA Repair - Part 3
 url: https://www.youtube.com/watch?v=orYJFKQDZLo
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 36, "3": 50, "4": 65, "5": 76, "6": 87, "7": 105, "8": 117, "9": 129, "10": 142, "11": 155, "12": 169, "13": 182, "14": 200, "15": 217, "16": 231, "17": 244, "18": 260, "19": 272, "20": 290, "21": 306, "22": 319, "23": 335, "24": 350, "25": 366, "26": 389, "27": 406, "28": 427, "29": 439, "30": 455, "31": 470, "32": 485, "33": 500, "34": 514, "35": 527, "36": 538, "37": 552, "38": 564, "39": 579, "40": 594, "41": 610, "42": 625, "43": 645, "44": 666, "45": 680, "46": 694, "47": 708, "48": 721, "49": 733, "50": 748, "51": 765, "52": 779, "53": 790, "54": 810, "55": 823, "56": 837, "57": 852, "58": 867, "59": 886, "60": 899, "61": 910, "62": 923, "63": 937, "64": 951, "65": 964, "66": 981, "67": 994, "68": 1011, "69": 1024, "70": 1041}
 ---
 
 **Dave Jones:** Hi, part three in the HP 35670A DSA repair. Previous two videos will be linked down below if you haven't seen them. Last time we finally found that there were three failed negative voltage regulators in this thing and it still

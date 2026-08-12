@@ -3,6 +3,7 @@ video_id: N60WSQc-G_8
 title: EEVblog #313 - Bus Pirate LCD Debugging
 url: https://www.youtube.com/watch?v=N60WSQc-G_8
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 56, "4": 68, "5": 84, "6": 97, "7": 113, "8": 133, "9": 145, "10": 162, "11": 180, "12": 194, "13": 210, "14": 225, "15": 240, "16": 256, "17": 270, "18": 286, "19": 301, "20": 316, "21": 331, "22": 346, "23": 361, "24": 377, "25": 405, "26": 425, "27": 438, "28": 460, "29": 483, "30": 499, "31": 514, "32": 530, "33": 551, "34": 565, "35": 581, "36": 598, "37": 616, "38": 632, "39": 651, "40": 671, "41": 685, "42": 705, "43": 724, "44": 742, "45": 754, "46": 769, "47": 787, "48": 804, "49": 817, "50": 832, "51": 859, "52": 875, "53": 893, "54": 907, "55": 923, "56": 938, "57": 957, "58": 974, "59": 991, "60": 1003, "61": 1019, "62": 1035}
 ---
 
 **Dave Jones:** Hi, I thought I'd do a little video on LCD. I've got here it's an 8 by 2 standard footprint LCD. It's from Newhaven display and I thought I'd just show powering the thing up and see what it looks like. It's a nice compact little 8

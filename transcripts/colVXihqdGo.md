@@ -3,6 +3,7 @@ video_id: colVXihqdGo
 title: EEVblog #799 - How To Remove Warranty Void Security Stickers
 url: https://www.youtube.com/watch?v=colVXihqdGo
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 25, "3": 37, "4": 54, "5": 71, "6": 92, "7": 103, "8": 117}
 ---
 
 **Dave Jones:** Hi, welcome to a twominute tech tip. What do you do if you got a product that you want to open up and have a look inside? And well, why the hell wouldn't you? But it's got one of these pesky

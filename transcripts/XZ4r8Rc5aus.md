@@ -3,6 +3,7 @@ video_id: XZ4r8Rc5aus
 title: EEVblog#160 - 555 Timer Easter Egg?
 url: https://www.youtube.com/watch?v=XZ4r8Rc5aus
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 29, "3": 41, "4": 53, "5": 68, "6": 83, "7": 97, "8": 116, "9": 130, "10": 145, "11": 160, "12": 175, "13": 189, "14": 199, "15": 213, "16": 226, "17": 237, "18": 254, "19": 272, "20": 288, "21": 308, "22": 324, "23": 344, "24": 358, "25": 375, "26": 396, "27": 408, "28": 431, "29": 445, "30": 469, "31": 486, "32": 502, "33": 519, "34": 537, "35": 556, "36": 572, "37": 592, "38": 616, "39": 627, "40": 648, "41": 664, "42": 681, "43": 698, "44": 709, "45": 720, "46": 736, "47": 755, "48": 774, "49": 788}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, as you may know, I've been involved a little bit in the 555 design contest that

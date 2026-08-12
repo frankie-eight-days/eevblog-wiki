@@ -3,6 +3,7 @@ video_id: uw_rsjekusk
 title: Today in the Dumpster
 url: https://www.youtube.com/watch?v=uw_rsjekusk
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 37, "3": 53, "4": 72, "5": 91, "6": 108, "7": 122, "8": 138, "9": 155, "10": 172, "11": 187, "12": 204, "13": 219, "14": 237, "15": 252, "16": 268, "17": 290, "18": 307, "19": 322, "20": 339, "21": 359, "22": 378, "23": 395, "24": 415, "25": 428, "26": 448, "27": 468, "28": 488, "29": 506}
 ---
 
 **Dave Jones:** Hi, down in the dumpster room again. Uh looks like this new sign that's gone up. Someone's ignored it. Because oh no, wrong wrong bin. Um we have Hey, I had to remove a couple of bags here, but there is a HP and

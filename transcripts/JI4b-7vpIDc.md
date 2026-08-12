@@ -3,6 +3,7 @@ video_id: JI4b-7vpIDc
 title: An Unusual Repair
 url: https://www.youtube.com/watch?v=JI4b-7vpIDc
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 33, "3": 49, "4": 65, "5": 78, "6": 109, "7": 126, "8": 140, "9": 152, "10": 168, "11": 178, "12": 191, "13": 206, "14": 226, "15": 246, "16": 261, "17": 282, "18": 301, "19": 317, "20": 333, "21": 350, "22": 369, "23": 385, "24": 397, "25": 412}
 ---
 
 **Dave Jones:** Hi, we're going to take a look at a returned BM787BT, the new Bluetooth version I believe it is. Think it's the first returned one I've actually had like failed like a new customer. So, let's have a look at it

@@ -3,6 +3,7 @@ video_id: eyT1WyQqmYA
 title: Dumpster Dive Professional Reference Colour Monitor!
 url: https://www.youtube.com/watch?v=eyT1WyQqmYA
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 34, "3": 53, "4": 71, "5": 82, "6": 97, "7": 113, "8": 125, "9": 137, "10": 151, "11": 170, "12": 193, "13": 206, "14": 220, "15": 235, "16": 252, "17": 265, "18": 277, "19": 289, "20": 300, "21": 316, "22": 327, "23": 339, "24": 354, "25": 368, "26": 384, "27": 398, "28": 411}
 ---
 
 **Dave Jones:** Hi, I'm just in the dumpster room and uh by the way people are being nice and they're leaving notes now. Do not use burning smell coming from motor. Warning for the dumpster divers. Anyway, yeah, I don't think um I'm not going to accept

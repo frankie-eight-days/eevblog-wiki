@@ -3,6 +3,7 @@ video_id: Qy1IWJcwwSc
 title: Home Assistant Install 2 - Electric Boogaloo
 url: https://www.youtube.com/watch?v=Qy1IWJcwwSc
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 33, "3": 47, "4": 68, "5": 82, "6": 100, "7": 115, "8": 128, "9": 141, "10": 151, "11": 167, "12": 182, "13": 198, "14": 211, "15": 226, "16": 240, "17": 256, "18": 271, "19": 284, "20": 300, "21": 317, "22": 339, "23": 360, "24": 377, "25": 390, "26": 410, "27": 433, "28": 444, "29": 461, "30": 472, "31": 488, "32": 503}
 ---
 
 **Dave Jones:** Hi, just a quick follow up to the previous video on the home assistant install. I've got it running no problems. I'll tell you how in a second. It is drawing what it just JUMPED UP. I SWEAR IT WAS SITTING AT 8 THERE WE GO.

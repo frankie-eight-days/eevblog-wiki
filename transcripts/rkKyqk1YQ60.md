@@ -3,6 +3,7 @@ video_id: rkKyqk1YQ60
 title: EEVblog 1395 - Onkyo Repair SUCCESS
 url: https://www.youtube.com/watch?v=rkKyqk1YQ60
 source: youtube-asr
+timestamps: {"0": 0, "1": 23, "2": 38, "3": 57, "4": 76, "5": 89, "6": 104, "7": 116, "8": 128, "9": 143, "10": 157, "11": 172, "12": 184, "13": 196, "14": 210, "15": 224, "16": 237, "17": 252, "18": 264, "19": 279, "20": 294, "21": 311, "22": 326, "23": 350, "24": 364, "25": 377, "26": 390, "27": 407, "28": 419, "29": 432, "30": 447, "31": 465, "32": 478, "33": 490, "34": 504, "35": 519, "36": 534, "37": 547, "38": 561, "39": 575, "40": 586, "41": 599, "42": 621, "43": 632, "44": 649, "45": 668, "46": 686, "47": 698, "48": 711, "49": 725, "50": 741, "51": 756, "52": 769, "53": 785, "54": 799, "55": 814, "56": 831, "57": 844, "58": 856, "59": 869, "60": 881, "61": 893, "62": 906, "63": 918, "64": 932}
 ---
 
 **Dave Jones:** Hi, in our previous episode, our intrepid adventurer was repairing an Onkyo TX-SR607 surround sound thingamajig receiver, and it had a non-working vacuum fluorescent display on the front, VFT. Although like the audio section worked, and everything was fine, and all the power supplies

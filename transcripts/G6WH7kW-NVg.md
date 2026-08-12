@@ -3,6 +3,7 @@ video_id: G6WH7kW-NVg
 title: EEVblog #19 - Rigol caught with their pants down!
 url: https://www.youtube.com/watch?v=G6WH7kW-NVg
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 54, "4": 73, "5": 90, "6": 108, "7": 123, "8": 140, "9": 169, "10": 185, "11": 201, "12": 221, "13": 234, "14": 247, "15": 262, "16": 275, "17": 294, "18": 309, "19": 332, "20": 347, "21": 362, "22": 378, "23": 392, "24": 405, "25": 421, "26": 434, "27": 454, "28": 468, "29": 482, "30": 495, "31": 508, "32": 521, "33": 535, "34": 548, "35": 564, "36": 581}
 ---
 
 **Dave Jones:** Hi, welcome to the EE blog. I'm your host Dave Jones and this is episode number 19. Now in previous blogs I've mentioned the Rigol DS1052E oscilloscope and what great value for money it is in the bottom range end of

@@ -3,6 +3,7 @@ video_id: Iq4QlfH-oqk
 title: EEVblog #926 - Introduction To The Oscilloscope
 url: https://www.youtube.com/watch?v=Iq4QlfH-oqk
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 27, "3": 44, "4": 57, "5": 72, "6": 88, "7": 100, "8": 114, "9": 129, "10": 144, "11": 158, "12": 172, "13": 189, "14": 205, "15": 220, "16": 232, "17": 245, "18": 258, "19": 273, "20": 286, "21": 300, "22": 316, "23": 330, "24": 346, "25": 363, "26": 380, "27": 391, "28": 404, "29": 418, "30": 429, "31": 441, "32": 454, "33": 472, "34": 487, "35": 502, "36": 516, "37": 534, "38": 548, "39": 562, "40": 578, "41": 593, "42": 603, "43": 619, "44": 630, "45": 645, "46": 659, "47": 674, "48": 686, "49": 698, "50": 711, "51": 725, "52": 741, "53": 755}
 ---
 
 **Dave Jones:** Hi, let's check out this cool looking device, the humble oscilloscope, the most essential tool in all of electronics. What is it? Why do you need one and how does it work? Let's go. But before we take a look at the

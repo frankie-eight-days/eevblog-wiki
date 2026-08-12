@@ -3,6 +3,7 @@ video_id: zILwgQhjC_Q
 title: EEVblog #646 - Gravity Detection Using A Frequency Counter!
 url: https://www.youtube.com/watch?v=zILwgQhjC_Q
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 38, "3": 57, "4": 71, "5": 87, "6": 101, "7": 115, "8": 132, "9": 152, "10": 169, "11": 183, "12": 200, "13": 214, "14": 228, "15": 245, "16": 263, "17": 280, "18": 295, "19": 309, "20": 324, "21": 340, "22": 355, "23": 371, "24": 383, "25": 396, "26": 410, "27": 424, "28": 440, "29": 458, "30": 474, "31": 488, "32": 503, "33": 515, "34": 531, "35": 543, "36": 560, "37": 574}
 ---
 
 **Dave Jones:** Hi, here's something I bet you didn't know. Your humble frequency counter here can actually change frequency depending upon its orientation. Don't believe me? Let me show you. I've got my Agyant 53131A frequency counter here. An excellent frequency counter. It's got a built-in

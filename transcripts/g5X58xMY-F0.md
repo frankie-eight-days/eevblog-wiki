@@ -3,6 +3,7 @@ video_id: g5X58xMY-F0
 title: Zig Zag Railway stream locomotive
 url: https://www.youtube.com/watch?v=g5X58xMY-F0
 source: youtube-asr
+timestamps: {"0": 2, "1": 29, "2": 40}
 ---
 
 **Dave Jones:** Yeah. Fantastic. That was the Zig Zag Railway. That was the steam loco for the Zig Zag Railway. Uh up here in the the Blue Mountains and it's going to go they have to swap it because it does zig and zag down the

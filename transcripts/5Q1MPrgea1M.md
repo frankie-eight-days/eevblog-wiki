@@ -3,6 +3,7 @@ video_id: 5Q1MPrgea1M
 title: EEVblog #1200 - BUSTED! - Energizer & Duracell NiMH
 url: https://www.youtube.com/watch?v=5Q1MPrgea1M
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 57, "4": 76, "5": 91, "6": 107, "7": 122, "8": 136, "9": 153, "10": 178, "11": 200, "12": 216, "13": 236, "14": 261, "15": 282, "16": 298, "17": 319, "18": 334, "19": 349, "20": 366, "21": 378, "22": 392, "23": 405, "24": 419, "25": 437, "26": 450, "27": 467, "28": 484, "29": 501, "30": 515, "31": 532, "32": 551, "33": 568, "34": 584, "35": 597, "36": 612, "37": 625, "38": 641, "39": 655, "40": 669, "41": 686, "42": 700, "43": 717, "44": 737, "45": 753, "46": 769, "47": 785, "48": 802, "49": 819, "50": 837, "51": 857, "52": 879, "53": 896, "54": 912, "55": 928, "56": 942, "57": 959, "58": 971, "59": 987, "60": 1005, "61": 1019, "62": 1031, "63": 1046, "64": 1061, "65": 1074, "66": 1088, "67": 1102, "68": 1114, "69": 1129, "70": 1144}
 ---
 
 **Dave Jones:** Hi, check this out. We've got three rechargeable D cells here, nickel metal hydride, old school, none of this newfangled lithium rubbish. We've got one from RS components here. RS don't manufacture it, of course. I'm not sure who actually manufactures this

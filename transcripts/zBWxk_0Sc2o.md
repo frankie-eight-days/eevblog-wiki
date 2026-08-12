@@ -3,6 +3,7 @@ video_id: zBWxk_0Sc2o
 title: Dumpster Diving TV
 url: https://www.youtube.com/watch?v=zBWxk_0Sc2o
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 40, "3": 60, "4": 73, "5": 86, "6": 101}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time again. I just scored this one. Here's a photo of it from the dumpster room. I haven't found a TV in a while. It's a Sceptre brand. Yeah, it's like bottom of the barrel stuff. 48-in It's only full HD. It's not

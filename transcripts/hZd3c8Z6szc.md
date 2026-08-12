@@ -3,6 +3,7 @@ video_id: hZd3c8Z6szc
 title: Captain Thunderbolt's Hideout
 url: https://www.youtube.com/watch?v=hZd3c8Z6szc
 source: youtube-asr
+timestamps: {"0": 1, "1": 26, "2": 42, "3": 64, "4": 86, "5": 105, "6": 135, "7": 170, "8": 198, "9": 223, "10": 242, "11": 260, "12": 272, "13": 289, "14": 301, "15": 321, "16": 334, "17": 352, "18": 371}
 ---
 
 **Dave Jones:** Hi, I'm going to walk about to find Thunderbolt's hideout. Captain Thunderbolt was a uh very famous Australian bushranger who was actually the uh longest um surviving bushranger. And he famously escaped from Cockatoo Island, I believe. And uh needless to say, this grave wasn't here

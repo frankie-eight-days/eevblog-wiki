@@ -3,6 +3,7 @@ video_id: Z7FP80uPJPY
 title: Wiha SpeedE Electric Screwdriver follow-up
 url: https://www.youtube.com/watch?v=Z7FP80uPJPY
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 32, "3": 53, "4": 67, "5": 80, "6": 96, "7": 111, "8": 128, "9": 140, "10": 150, "11": 164, "12": 180, "13": 193, "14": 211, "15": 225, "16": 242, "17": 256, "18": 269, "19": 284}
 ---
 
 **Dave Jones:** Hi, this is just a quick follow-up video to this Wiha speedy electric screwdriver showed in a previous mailbag. Very nice sort of like a traditional electric screwdriver, well, traditional form factor screwdriver, but it's electric. You just spin it like that and it turns

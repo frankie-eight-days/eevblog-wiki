@@ -3,6 +3,7 @@ video_id: ZTwVQmUm6NY
 title: eevBLAB 95 - Why Are Youtube Playlists So BAD?
 url: https://www.youtube.com/watch?v=ZTwVQmUm6NY
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 49, "4": 61, "5": 78, "6": 92, "7": 108, "8": 123, "9": 138, "10": 152, "11": 171, "12": 184, "13": 197, "14": 216, "15": 230, "16": 249, "17": 263, "18": 277, "19": 293, "20": 310, "21": 324, "22": 337, "23": 351, "24": 362, "25": 372, "26": 386, "27": 399, "28": 412, "29": 426, "30": 443, "31": 458, "32": 473, "33": 488, "34": 501, "35": 511, "36": 523, "37": 535, "38": 549, "39": 563, "40": 577, "41": 593, "42": 608, "43": 621, "44": 635, "45": 651, "46": 668, "47": 680, "48": 694, "49": 708, "50": 721, "51": 735, "52": 746, "53": 760, "54": 775, "55": 788, "56": 806, "57": 819, "58": 833, "59": 846}
 ---
 
 **Dave Jones:** Hi, I'm going to have a rant about YouTube playlist cuz as a content creator it is one of the most frustrating features or lack of or underutilized features in all of YouTube and it just it just annoys me so much that YouTube are

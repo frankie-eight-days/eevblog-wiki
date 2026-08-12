@@ -3,6 +3,7 @@ video_id: I0HOgcbtmws
 title: Open Source Hardware Explained - EEVblog #195
 url: https://www.youtube.com/watch?v=I0HOgcbtmws
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 52, "4": 78, "5": 98, "6": 117, "7": 135, "8": 151, "9": 165, "10": 179, "11": 196, "12": 212, "13": 223, "14": 240, "15": 256, "16": 270, "17": 284, "18": 302, "19": 315, "20": 334, "21": 350, "22": 362, "23": 377, "24": 392, "25": 409, "26": 424, "27": 442, "28": 453, "29": 471, "30": 486, "31": 501, "32": 513, "33": 529, "34": 539, "35": 554, "36": 571, "37": 590, "38": 604, "39": 621, "40": 633, "41": 649, "42": 664, "43": 680, "44": 695, "45": 709, "46": 723, "47": 736, "48": 751, "49": 768}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I thought I'd talk about open-source hardware or open hardware because there seems to be a lot of confusion out

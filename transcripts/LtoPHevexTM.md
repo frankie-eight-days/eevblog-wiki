@@ -3,6 +3,7 @@ video_id: LtoPHevexTM
 title: EEVblog #483 - Microcontroller Voltage Inverter Tutorial
 url: https://www.youtube.com/watch?v=LtoPHevexTM
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 29, "3": 43, "4": 58, "5": 81, "6": 98, "7": 114, "8": 129, "9": 143, "10": 157, "11": 170, "12": 187, "13": 204, "14": 218, "15": 236, "16": 252, "17": 266, "18": 281, "19": 300, "20": 321, "21": 338, "22": 353, "23": 369, "24": 386, "25": 403, "26": 420, "27": 435, "28": 449, "29": 465, "30": 481, "31": 495, "32": 511, "33": 524, "34": 543, "35": 554, "36": 572, "37": 591, "38": 609, "39": 623, "40": 639, "41": 655, "42": 668, "43": 683, "44": 696, "45": 708, "46": 723, "47": 737, "48": 752, "49": 766, "50": 784, "51": 795, "52": 812, "53": 827, "54": 846, "55": 865, "56": 883, "57": 901, "58": 916, "59": 929, "60": 945, "61": 959, "62": 976, "63": 995, "64": 1011, "65": 1026, "66": 1037, "67": 1050, "68": 1065, "69": 1079, "70": 1094, "71": 1110, "72": 1123, "73": 1139, "74": 1156, "75": 1170}
 ---
 
 **Dave Jones:** Hi, welcome to Fundamentals Friday. Couple of episodes back we looked at the microcontroller voltage doubler, otherwise known as the Dickson doubler, or the diode charge pump voltage doubler. And quite a few people asked about the inverter configuration of

@@ -3,6 +3,7 @@ video_id: lx8VlHM1cFI
 title: Wireless Mic Comparison - Sennheiser, Rode, DJI
 url: https://www.youtube.com/watch?v=lx8VlHM1cFI
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 28, "3": 40, "4": 54, "5": 65, "6": 78, "7": 89, "8": 103, "9": 113, "10": 126, "11": 140, "12": 150, "13": 166, "14": 177, "15": 190, "16": 206, "17": 225, "18": 234, "19": 246, "20": 258, "21": 274, "22": 289, "23": 305, "24": 317, "25": 331, "26": 342, "27": 352}
 ---
 
 **Dave Jones:** Hi, this is a response video to one I just saw on uh Fran's channel. It's actually on her uh Patreon at the moment. Don't know if it's publicly released yet, but I'll link it in when it's released. Um, and she was talking

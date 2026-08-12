@@ -3,6 +3,7 @@ video_id: FOa783WeDPU
 title: EEVblog #1113 - Is a $5 USB Soldering Iron Useful?
 url: https://www.youtube.com/watch?v=FOa783WeDPU
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 31, "3": 48, "4": 64, "5": 78, "6": 93, "7": 105, "8": 119, "9": 130, "10": 143, "11": 157, "12": 168, "13": 184, "14": 199, "15": 212, "16": 224, "17": 236, "18": 251, "19": 264, "20": 285, "21": 300, "22": 314, "23": 334, "24": 347, "25": 364, "26": 381, "27": 399, "28": 419, "29": 431, "30": 449, "31": 460, "32": 477, "33": 494, "34": 511, "35": 525, "36": 536, "37": 548, "38": 566, "39": 585, "40": 602, "41": 618, "42": 636, "43": 654, "44": 669, "45": 683, "46": 705, "47": 717, "48": 732, "49": 747, "50": 763, "51": 776, "52": 792, "53": 809, "54": 825, "55": 840, "56": 857, "57": 873, "58": 889, "59": 900, "60": 912, "61": 925, "62": 938}
 ---
 
 **Dave Jones:** Hi, in a recent video I got this little portable USB soldering iron in the mailbag and I kind of like just dismissed it like like why is this a thing? But quite a lot of people said, "Hey Dave, give it a

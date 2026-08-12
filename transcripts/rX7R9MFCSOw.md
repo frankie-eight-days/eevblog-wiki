@@ -3,6 +3,7 @@ video_id: rX7R9MFCSOw
 title: Canberra Deep Space Communications Complex Visitor Centre
 url: https://www.youtube.com/watch?v=rX7R9MFCSOw
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 34, "3": 50, "4": 73, "5": 95, "6": 115, "7": 138, "8": 153, "9": 167, "10": 192, "11": 218, "12": 238}
 ---
 
 **Dave Jones:** We're at the CRA Deep Space Network. And here's a mini computer 1970 is a telemetry processor assembly. It was used at the deep 128K of memory. Diablo disc drives provided 2 MGB of storage. Wow. It was replaced in 1993. It still

@@ -3,6 +3,7 @@ video_id: YX0MJjq9MuU
 title: EEVblog #1134 - Dumpster Diving Teardown Tuesday
 url: https://www.youtube.com/watch?v=YX0MJjq9MuU
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 38, "3": 52, "4": 70, "5": 94, "6": 109, "7": 129, "8": 145, "9": 160, "10": 185, "11": 203, "12": 218, "13": 233, "14": 247, "15": 264, "16": 277, "17": 294, "18": 311, "19": 331, "20": 348, "21": 366, "22": 382, "23": 403, "24": 421, "25": 439, "26": 453, "27": 466, "28": 484, "29": 500, "30": 514, "31": 528, "32": 544, "33": 559, "34": 575, "35": 586, "36": 602, "37": 619, "38": 634, "39": 652, "40": 669, "41": 685, "42": 699, "43": 714, "44": 727, "45": 746, "46": 760, "47": 775, "48": 787, "49": 805, "50": 820, "51": 834, "52": 847}
 ---
 
 **Dave Jones:** Hi, I was just about to shoot a teardown Tuesday when I got a tip-off that there's a dumpster full of gear right to the brim, overflowing with gear that's about to be tossed out. So, I thought I'd check it out. Heard that a lot of

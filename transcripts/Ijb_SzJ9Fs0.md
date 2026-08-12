@@ -3,6 +3,7 @@ video_id: Ijb_SzJ9Fs0
 title: EEVBlog #805 - Siglent SDG2122X Arb Generator Teardown
 url: https://www.youtube.com/watch?v=Ijb_SzJ9Fs0
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 46, "4": 62, "5": 78, "6": 94, "7": 110, "8": 123, "9": 137, "10": 155, "11": 167, "12": 182, "13": 198, "14": 210, "15": 225, "16": 238, "17": 253, "18": 267, "19": 280, "20": 294, "21": 308, "22": 321, "23": 331, "24": 344, "25": 357, "26": 369, "27": 382, "28": 399, "29": 414, "30": 428, "31": 443, "32": 460, "33": 475, "34": 489, "35": 503, "36": 519, "37": 536, "38": 554, "39": 568, "40": 584, "41": 598, "42": 614, "43": 629, "44": 643, "45": 660, "46": 678, "47": 692, "48": 706, "49": 722, "50": 741, "51": 755, "52": 773, "53": 787, "54": 803, "55": 823, "56": 836, "57": 852, "58": 864, "59": 877, "60": 893, "61": 914, "62": 933, "63": 950, "64": 968, "65": 986, "66": 1003, "67": 1022, "68": 1033, "69": 1049, "70": 1061}
 ---
 
 **Dave Jones:** Hi, welcome to another test equipment teardown. This is the brand spanking new barely released Siglent SDG 2100 X series. I believe this is once again the only one in the country and thanks to Charles from Trio Test and Measurement

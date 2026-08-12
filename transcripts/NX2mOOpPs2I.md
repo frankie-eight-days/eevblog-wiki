@@ -3,6 +3,7 @@ video_id: NX2mOOpPs2I
 title: eevBLAB 119 - The History of the EEVBlog "Hand" Photo
 url: https://www.youtube.com/watch?v=NX2mOOpPs2I
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 41, "4": 52, "5": 69, "6": 86, "7": 105, "8": 119, "9": 142, "10": 158, "11": 175, "12": 187, "13": 199, "14": 210, "15": 224, "16": 238, "17": 251, "18": 262, "19": 273, "20": 288, "21": 303, "22": 317, "23": 330, "24": 341, "25": 360, "26": 373, "27": 386, "28": 399, "29": 412, "30": 426, "31": 439, "32": 455, "33": 468, "34": 481, "35": 492, "36": 505, "37": 519, "38": 532, "39": 546, "40": 559, "41": 572, "42": 584, "43": 598, "44": 609, "45": 622, "46": 636, "47": 650, "48": 663, "49": 680, "50": 695, "51": 706, "52": 722, "53": 736, "54": 754, "55": 767, "56": 781, "57": 799, "58": 813, "59": 827, "60": 838, "61": 855, "62": 867, "63": 879, "64": 891}
 ---
 
 **Dave Jones:** Hi. I thought I'd answer an interesting comment somebody left on my recent a second channel video here. Thank you very much, Cal Holly. Dave, can you make a quick video to tell a story about your profile image? The famous hand one. Um

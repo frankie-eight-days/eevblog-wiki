@@ -3,6 +3,7 @@ video_id: i8LAccDzLCI
 title: Rigol DHO800 Oscilloscope Size Comparison - WOW!
 url: https://www.youtube.com/watch?v=i8LAccDzLCI
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 32, "3": 45, "4": 61, "5": 74, "6": 93, "7": 110, "8": 127, "9": 143, "10": 159, "11": 173, "12": 186, "13": 209, "14": 226, "15": 241, "16": 255, "17": 270, "18": 282, "19": 297, "20": 311, "21": 326, "22": 342, "23": 356}
 ---
 
 **Dave Jones:** Hi, just a quick video because I just wanted to show you this novel little scope that I got from Rigol. It's the DHO800 series and there's an unboxing and first impressions of this over on my EVblog website. You won't find it on my YouTube

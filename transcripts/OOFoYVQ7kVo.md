@@ -3,6 +3,7 @@ video_id: OOFoYVQ7kVo
 title: Rohde & Schwarz NGA100 PSU FAIL - PLEASE EXPLAIN
 url: https://www.youtube.com/watch?v=OOFoYVQ7kVo
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 31, "3": 43, "4": 57, "5": 76, "6": 99, "7": 112, "8": 132, "9": 145, "10": 155, "11": 167, "12": 185, "13": 204, "14": 217}
 ---
 
 **Dave Jones:** Hi, check this out. There's something very strange happening with my Rohde & Schwarz NGA100. This is like the coolest supply I have here in the lab. I've got like bigger ones and higher power, but this one's like a really like a super precision. Um

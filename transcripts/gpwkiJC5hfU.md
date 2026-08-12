@@ -3,6 +3,7 @@ video_id: gpwkiJC5hfU
 title: EEVblog #1266 - PSU Probing Screw Up!
 url: https://www.youtube.com/watch?v=gpwkiJC5hfU
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 46, "4": 64, "5": 79, "6": 98, "7": 112, "8": 126, "9": 139, "10": 152, "11": 167, "12": 183, "13": 197, "14": 211, "15": 226, "16": 241, "17": 257, "18": 275, "19": 289, "20": 303, "21": 317, "22": 331, "23": 348, "24": 366, "25": 378, "26": 392, "27": 408, "28": 421, "29": 433, "30": 448, "31": 466, "32": 482, "33": 495, "34": 514, "35": 528, "36": 543, "37": 555, "38": 572, "39": 592, "40": 604, "41": 621, "42": 638, "43": 654, "44": 670, "45": 688, "46": 702, "47": 722, "48": 739, "49": 754, "50": 770, "51": 782, "52": 799, "53": 810, "54": 825, "55": 840, "56": 858, "57": 870, "58": 881, "59": 905, "60": 920, "61": 934, "62": 947, "63": 962, "64": 974, "65": 988, "66": 1000}
 ---
 
 **Dave Jones:** Hi. Well, I completely come a cropper on the previous video where I measured the noise on this Ryden RD6006 power supply here. And I was measuring much higher than spec here. I was measuring in the order of, you know,

@@ -3,6 +3,7 @@ video_id: 1nzx7O7ndfI
 title: EEVblog #27 - More Engineering Job Interview Tips!
 url: https://www.youtube.com/watch?v=1nzx7O7ndfI
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 46, "4": 59, "5": 74, "6": 88, "7": 98, "8": 113, "9": 125, "10": 139, "11": 152, "12": 170, "13": 184, "14": 199, "15": 212, "16": 228, "17": 242, "18": 257, "19": 270, "20": 283, "21": 294, "22": 307, "23": 321, "24": 338, "25": 353, "26": 368, "27": 379, "28": 394, "29": 408, "30": 424, "31": 437, "32": 452, "33": 465, "34": 476, "35": 488, "36": 502, "37": 517, "38": 529, "39": 541, "40": 557, "41": 569, "42": 581, "43": 590}
 ---
 
 **Dave Jones:** Welcome to the AEV blog. I'm your host, Dave Jones, and this is episode number 27. There are very few of my blogs that have generated more interest and more feedback than the one I did quite some time ago on uh engineering job interview

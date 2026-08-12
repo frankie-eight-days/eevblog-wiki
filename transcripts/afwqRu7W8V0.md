@@ -3,6 +3,7 @@ video_id: afwqRu7W8V0
 title: Apple Powerbook 165C Vinegar Syndrome Repair Attempt
 url: https://www.youtube.com/watch?v=afwqRu7W8V0
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 49, "4": 63, "5": 81, "6": 95, "7": 110, "8": 127, "9": 141, "10": 153, "11": 166, "12": 184, "13": 199, "14": 214, "15": 228, "16": 240, "17": 260, "18": 281, "19": 302, "20": 319, "21": 335, "22": 353, "23": 365, "24": 380, "25": 393, "26": 412, "27": 428, "28": 445, "29": 466, "30": 485, "31": 500, "32": 520, "33": 539, "34": 554, "35": 572, "36": 585, "37": 599, "38": 612, "39": 630, "40": 648, "41": 665, "42": 682, "43": 696, "44": 713, "45": 730, "46": 742}
 ---
 
 **Dave Jones:** Hi, let's take apart this uh failed Macintosh PowerBook 165c, the color jobby, 33-year-old laptop that I've seen in a previous video has a failed uh polarizer on the screen. The screen still works, the hard drive still works, still boots,

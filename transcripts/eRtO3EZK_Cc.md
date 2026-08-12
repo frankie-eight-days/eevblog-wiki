@@ -3,6 +3,7 @@ video_id: eRtO3EZK_Cc
 title: EEVblog #301 - LTspice Temperature Sweep Tutorial
 url: https://www.youtube.com/watch?v=eRtO3EZK_Cc
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 39, "3": 55, "4": 73, "5": 89, "6": 107, "7": 121, "8": 136, "9": 153, "10": 171, "11": 185, "12": 206, "13": 221, "14": 234, "15": 257, "16": 275, "17": 291, "18": 305, "19": 316, "20": 333, "21": 349, "22": 361, "23": 375, "24": 389, "25": 406, "26": 420, "27": 436, "28": 454, "29": 472, "30": 484, "31": 501, "32": 514, "33": 533, "34": 552, "35": 574, "36": 588, "37": 605, "38": 623, "39": 639, "40": 651, "41": 668, "42": 683, "43": 697, "44": 710, "45": 725, "46": 740, "47": 758, "48": 774, "49": 790, "50": 804, "51": 824, "52": 839, "53": 860, "54": 875, "55": 889, "56": 902, "57": 919, "58": 939, "59": 959, "60": 978, "61": 993, "62": 1014, "63": 1031, "64": 1043, "65": 1060, "66": 1074}
 ---
 
 **Dave Jones:** Hi, I thought I'd just run you through a quick little tutorial here in LTspice showing you a very valuable technique called temperature sweeps. And that's analyzing your circuit not just in the regular domains but over temperature variations. And it's not really obvious

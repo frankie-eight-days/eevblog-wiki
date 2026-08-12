@@ -3,6 +3,7 @@ video_id: Xh9FNRpta9s
 title: EEVblog #86 - Buy a real Analog Oscilloscope PLEASE!
 url: https://www.youtube.com/watch?v=Xh9FNRpta9s
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 37, "3": 59, "4": 77, "5": 93, "6": 112, "7": 125, "8": 142, "9": 159, "10": 177, "11": 191, "12": 207, "13": 221, "14": 237, "15": 252, "16": 266, "17": 282, "18": 297, "19": 315, "20": 330, "21": 348, "22": 365, "23": 377, "24": 389, "25": 403, "26": 414, "27": 427, "28": 443, "29": 456, "30": 477, "31": 492, "32": 506}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's time for another stream of consciousness drive time rant. Once again, this one comes from the forum

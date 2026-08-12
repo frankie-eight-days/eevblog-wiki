@@ -3,6 +3,7 @@ video_id: b7t20v9Pu6o
 title: (Fitness) Goals are for Losers
 url: https://www.youtube.com/watch?v=b7t20v9Pu6o
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 29, "3": 44, "4": 62, "5": 73, "6": 82, "7": 97, "8": 106, "9": 117, "10": 129, "11": 137, "12": 152, "13": 165, "14": 177, "15": 191, "16": 207, "17": 218, "18": 233, "19": 253, "20": 269, "21": 284, "22": 302, "23": 322, "24": 333, "25": 345, "26": 358, "27": 370, "28": 383, "29": 396}
 ---
 
 **Dave Jones:** What age did I start gymming? Looking to use it as a good way to de-stress from work. Not sure if I reckon it's worth worth it with that um goal. You You don't want a goal. Goals are for losers.

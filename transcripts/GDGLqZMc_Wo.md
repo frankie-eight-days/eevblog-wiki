@@ -3,6 +3,7 @@ video_id: GDGLqZMc_Wo
 title: WHY Does Dryer Lint Always Look Gray?
 url: https://www.youtube.com/watch?v=GDGLqZMc_Wo
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 32, "3": 46, "4": 63, "5": 80, "6": 93, "7": 108, "8": 129, "9": 146, "10": 162, "11": 173, "12": 188, "13": 204}
 ---
 
 **Dave Jones:** Hi, I've got an interesting question for you about dryer lint. Humble dryer lint. You're no doubt familiar with this. It comes from the filter in your clothes dryer. And the question is why does it always look like this? Why

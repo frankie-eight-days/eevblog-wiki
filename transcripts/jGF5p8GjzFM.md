@@ -3,6 +3,7 @@ video_id: jGF5p8GjzFM
 title: EEVblog #233 - Lab Power Supply Design Part 6 - LT3080 Testing
 url: https://www.youtube.com/watch?v=jGF5p8GjzFM
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 41, "4": 60, "5": 79, "6": 94, "7": 108, "8": 125, "9": 142, "10": 157, "11": 170, "12": 182, "13": 197, "14": 218, "15": 239, "16": 253, "17": 271, "18": 289, "19": 306, "20": 323, "21": 345, "22": 362, "23": 385, "24": 399, "25": 417, "26": 433, "27": 451, "28": 465, "29": 477, "30": 494, "31": 509, "32": 526, "33": 539, "34": 554, "35": 572, "36": 585, "37": 598, "38": 614, "39": 630, "40": 649, "41": 669, "42": 686, "43": 699, "44": 716, "45": 732, "46": 748, "47": 767, "48": 781, "49": 794, "50": 809, "51": 824, "52": 840, "53": 857, "54": 875, "55": 891, "56": 908, "57": 927, "58": 944, "59": 958, "60": 971, "61": 989, "62": 1007, "63": 1027, "64": 1050}
 ---
 
 **Dave Jones:** Hi, just a quick aside on the power supply. A few people mentioned what happens if you say charging a battery with this power supply and you disconnect the input voltage while you still got that battery on the output. I

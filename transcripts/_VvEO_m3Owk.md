@@ -3,6 +3,7 @@ video_id: _VvEO_m3Owk
 title: EEVblog #389 - Casio Calculator Investigation
 url: https://www.youtube.com/watch?v=_VvEO_m3Owk
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 44, "4": 63, "5": 77, "6": 91, "7": 109, "8": 126, "9": 143, "10": 157, "11": 172, "12": 185, "13": 205, "14": 222, "15": 237, "16": 250, "17": 263, "18": 277, "19": 295, "20": 311, "21": 325, "22": 337, "23": 352, "24": 366, "25": 383, "26": 399, "27": 419, "28": 433, "29": 451, "30": 467, "31": 489, "32": 512, "33": 529, "34": 546, "35": 559, "36": 573, "37": 589, "38": 603, "39": 622, "40": 640, "41": 658, "42": 677, "43": 691, "44": 708, "45": 725, "46": 742, "47": 758, "48": 773, "49": 793, "50": 816, "51": 835, "52": 857, "53": 868, "54": 886, "55": 905, "56": 922, "57": 937, "58": 953}
 ---
 
 **Dave Jones:** Hi, I've done a video quite a long time ago called solar power hope where I looked at solar cells and did some measurements because I was looking at developing a solar powered calculator but as it turns out this piss

@@ -3,6 +3,7 @@ video_id: rtQ2vTdYBn4
 title: Another Dumpster Dive PC
 url: https://www.youtube.com/watch?v=rtQ2vTdYBn4
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 28, "3": 39, "4": 56, "5": 68, "6": 82, "7": 97, "8": 114, "9": 129, "10": 144, "11": 162, "12": 177, "13": 203, "14": 223, "15": 236, "16": 249, "17": 275, "18": 290, "19": 304, "20": 317, "21": 328, "22": 345, "23": 359, "24": 373, "25": 387, "26": 399, "27": 414, "28": 431}
 ---
 
 **Dave Jones:** Hi. Yes, it's another dumpster dive. I couldn't help myself. Um, this was down in the dumpster and uh it looks like it's um either a Core i5 or a Core i7. And if you haven't seen my previous uh

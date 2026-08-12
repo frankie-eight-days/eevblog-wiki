@@ -3,6 +3,7 @@ video_id: E1IqcGcZKHE
 title: RPi CM4 Compute Module FAILURE Part 2: Thermal Boogaloo
 url: https://www.youtube.com/watch?v=E1IqcGcZKHE
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 30, "3": 41, "4": 59, "5": 76, "6": 88, "7": 103, "8": 119, "9": 133, "10": 148, "11": 161, "12": 174, "13": 184, "14": 198, "15": 209, "16": 222, "17": 234, "18": 246, "19": 257, "20": 276, "21": 295, "22": 312, "23": 325, "24": 336, "25": 348, "26": 366, "27": 378, "28": 390, "29": 401, "30": 414, "31": 428, "32": 444, "33": 457, "34": 475, "35": 497, "36": 514, "37": 527, "38": 538, "39": 554, "40": 579, "41": 597, "42": 612, "43": 625, "44": 649, "45": 665, "46": 680, "47": 695, "48": 710, "49": 726, "50": 741, "51": 755, "52": 780, "53": 795, "54": 818, "55": 846, "56": 860, "57": 873, "58": 887, "59": 900, "60": 913, "61": 929, "62": 943, "63": 954}
 ---
 
 **Dave Jones:** Hi, just another follow-up video on this uh failed Raspberry Pi compute module 4 here and how the Ethernet chippy, this broadcom jobby down here looks like it's failed and it's getting redot. Ernie Bernie. Um now a few people asked uh

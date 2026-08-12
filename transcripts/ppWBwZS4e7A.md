@@ -3,6 +3,7 @@ video_id: ppWBwZS4e7A
 title: EEVblog #486 - Does Current Flow Through A Capacitor?
 url: https://www.youtube.com/watch?v=ppWBwZS4e7A
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 35, "3": 51, "4": 70, "5": 85, "6": 103, "7": 118, "8": 131, "9": 148, "10": 162, "11": 178, "12": 196, "13": 212, "14": 229, "15": 245, "16": 259, "17": 276, "18": 292, "19": 305, "20": 322, "21": 341, "22": 354, "23": 368, "24": 383, "25": 404, "26": 423, "27": 439, "28": 456, "29": 468, "30": 485, "31": 499, "32": 513, "33": 530, "34": 550, "35": 566, "36": 583, "37": 604, "38": 619, "39": 638, "40": 654, "41": 671, "42": 686, "43": 699, "44": 713, "45": 732, "46": 749, "47": 765, "48": 781, "49": 797, "50": 812, "51": 825, "52": 843, "53": 858, "54": 869, "55": 883, "56": 899, "57": 915, "58": 936, "59": 951, "60": 964, "61": 980, "62": 996, "63": 1013}
 ---
 
 **Dave Jones:** Hi, welcome to Fundamentals Friday. This one comes about because of something I said in a previous video. I mentioned that current flows through a capacitor and I had a couple of people comment that "No, that's wrong. Current doesn't

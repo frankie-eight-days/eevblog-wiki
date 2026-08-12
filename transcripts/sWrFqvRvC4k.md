@@ -3,6 +3,7 @@ video_id: sWrFqvRvC4k
 title: EEVblog #428 - Wyong Field Day 2013
 url: https://www.youtube.com/watch?v=sWrFqvRvC4k
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 26, "3": 40, "4": 53, "5": 71, "6": 87, "7": 114, "8": 134, "9": 158, "10": 183, "11": 192, "12": 211, "13": 233, "14": 245, "15": 257, "16": 268, "17": 278, "18": 292, "19": 304, "20": 323, "21": 352, "22": 373, "23": 395, "24": 415, "25": 438, "26": 464, "27": 489, "28": 509, "29": 532, "30": 547, "31": 568, "32": 598, "33": 627, "34": 647, "35": 669, "36": 694, "37": 708, "38": 726, "39": 751, "40": 771, "41": 793, "42": 819, "43": 839, "44": 860, "45": 880, "46": 898, "47": 921, "48": 943, "49": 962, "50": 987, "51": 1005, "52": 1023, "53": 1042, "54": 1072, "55": 1090, "56": 1109, "57": 1128, "58": 1150, "59": 1173, "60": 1185, "61": 1197, "62": 1209}
 ---
 
 **Dave Jones:** Hi guys, I'm at the Wyong Field Day, amateur radio field day. About an hour north of uh Sydney. Missed it for the last couple years. Thought I'd come check it out, even though I'm not an amateur radio guy. Lots of cool stuff

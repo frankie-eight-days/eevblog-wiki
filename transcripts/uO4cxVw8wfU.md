@@ -3,6 +3,7 @@ video_id: uO4cxVw8wfU
 title: 2013 Australian NBN Internet Federal Election Rant
 url: https://www.youtube.com/watch?v=uO4cxVw8wfU
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 39, "3": 57, "4": 74, "5": 89, "6": 100, "7": 115, "8": 131, "9": 148, "10": 170, "11": 190, "12": 205, "13": 224, "14": 243, "15": 259, "16": 277, "17": 292, "18": 309, "19": 324, "20": 339, "21": 353, "22": 367, "23": 379, "24": 394, "25": 410, "26": 428, "27": 444}
 ---
 
 **Dave Jones:** Hi. Sorry to all my international viewers, but this little video rant is directed at my Australian viewers only and it involves politics. Yes. Now, as you may know, uh this Saturday, September 7th, is the federal election. Now, normally I wouldn't do a video on

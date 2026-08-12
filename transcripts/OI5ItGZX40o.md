@@ -3,6 +3,7 @@ video_id: OI5ItGZX40o
 title: EEVblog 1629 - Dumpster Find: A3 Colour Photocopier!
 url: https://www.youtube.com/watch?v=OI5ItGZX40o
 source: youtube-asr
+timestamps: {"0": 0, "1": 24, "2": 41, "3": 58, "4": 72, "5": 85, "6": 98, "7": 111, "8": 128, "9": 141, "10": 157, "11": 170, "12": 188, "13": 201, "14": 217, "15": 236, "16": 253, "17": 270, "18": 286, "19": 299, "20": 317, "21": 339, "22": 351, "23": 364, "24": 374, "25": 390, "26": 403, "27": 425, "28": 445, "29": 459, "30": 475, "31": 489, "32": 502, "33": 521, "34": 533, "35": 557, "36": 570, "37": 589, "38": 609, "39": 628, "40": 644, "41": 665, "42": 683, "43": 702, "44": 718, "45": 733, "46": 747, "47": 762, "48": 775, "49": 800, "50": 821, "51": 835, "52": 851, "53": 864, "54": 877}
 ---
 
 **Dave Jones:** Hi, down in the dumpster room. Today's find is ta-da, a Konica Minolta bizhub C284e. Um, yeah. Look at that. That looks fancy pantsy. Might wheel that back to the dungeon and uh see if she works. Unbelievable. I assume it's on wheels.

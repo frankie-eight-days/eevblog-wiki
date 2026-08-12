@@ -3,6 +3,7 @@ video_id: Dez9KG6whb0
 title: CMRR Followup Micsig DP10007 vs HVP70
 url: https://www.youtube.com/watch?v=Dez9KG6whb0
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 32, "3": 45, "4": 56, "5": 67, "6": 81, "7": 96, "8": 112, "9": 130, "10": 143, "11": 162, "12": 176, "13": 187, "14": 201, "15": 212, "16": 226, "17": 243, "18": 254, "19": 268, "20": 285, "21": 297, "22": 312, "23": 328, "24": 341, "25": 352, "26": 366, "27": 381, "28": 393, "29": 406, "30": 419, "31": 434, "32": 449, "33": 462, "34": 477, "35": 494, "36": 507, "37": 518, "38": 533, "39": 545, "40": 557, "41": 568, "42": 585, "43": 598, "44": 616, "45": 635, "46": 655, "47": 674, "48": 692, "49": 707, "50": 721, "51": 731, "52": 754, "53": 768, "54": 785, "55": 798, "56": 813, "57": 829, "58": 853, "59": 872, "60": 894, "61": 912, "62": 928, "63": 950, "64": 964, "65": 982, "66": 994}
 ---
 
 **Dave Jones:** Hi, this is just a quick follow-up to my main channel video on the common mode rejection ratio and how to use an oscilloscope to actually measure that and also get a use the frequency response analyzer to get a response plot

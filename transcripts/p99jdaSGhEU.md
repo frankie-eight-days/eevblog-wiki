@@ -3,6 +3,7 @@ video_id: p99jdaSGhEU
 title: Vivid Sydney 2015 Light Festival Building Projection
 url: https://www.youtube.com/watch?v=p99jdaSGhEU
 source: youtube-asr
+timestamps: {"0": 0, "1": 56, "2": 281, "3": 451, "4": 508}
 ---
 
 **Dave Jones:** To [music] things this for the sick and And at least first Kay o.v. o.v.

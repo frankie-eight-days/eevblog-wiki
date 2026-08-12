@@ -3,6 +3,7 @@ video_id: K1vt6t0P81g
 title: Passive Home Heat Recovery & Ventilation System
 url: https://www.youtube.com/watch?v=K1vt6t0P81g
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 50, "4": 67, "5": 84, "6": 97, "7": 110, "8": 123, "9": 141, "10": 155, "11": 169, "12": 183, "13": 202, "14": 217, "15": 229, "16": 239, "17": 253, "18": 267, "19": 282, "20": 294, "21": 305, "22": 316, "23": 329, "24": 341, "25": 355, "26": 370, "27": 384, "28": 394, "29": 408, "30": 419, "31": 432, "32": 445, "33": 465, "34": 479, "35": 491, "36": 506, "37": 523, "38": 538, "39": 550, "40": 565, "41": 583, "42": 599, "43": 609, "44": 624, "45": 639, "46": 652, "47": 672, "48": 685, "49": 701, "50": 718, "51": 731, "52": 743}
 ---
 
 **Dave Jones:** Hi, I'm in the old garage lab, which is well, no longer a lab. It's just some I'm shelving and stuff, but here's the latest addition to our effectively passive house that we've got now cuz we've slowly been upgrading the

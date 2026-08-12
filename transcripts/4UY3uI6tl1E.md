@@ -3,6 +3,7 @@ video_id: 4UY3uI6tl1E
 title: eevBLAB 121 - NEW Fluke 87VI Multimeter! MAYBE?
 url: https://www.youtube.com/watch?v=4UY3uI6tl1E
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 35, "3": 47, "4": 62, "5": 76, "6": 90, "7": 103, "8": 117, "9": 131, "10": 145, "11": 158, "12": 169, "13": 181, "14": 195, "15": 209, "16": 221, "17": 236, "18": 254, "19": 269, "20": 285, "21": 296, "22": 315, "23": 334, "24": 347, "25": 362, "26": 374, "27": 391}
 ---
 
 **Dave Jones:** Hi. What's this? A Fluke 87 6. No more of that Fluke 87 5 rubbish. The Fluke 87 6. It just dropped. I saw it on Twitter. It must be real. Uh maybe not. Because this is weird. Right. So, yeah,

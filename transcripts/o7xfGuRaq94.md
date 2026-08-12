@@ -3,6 +3,7 @@ video_id: o7xfGuRaq94
 title: EEVblog 1485 - PedalCell CadenceX Bike Generator LOL FAIL!
 url: https://www.youtube.com/watch?v=o7xfGuRaq94
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 47, "4": 62, "5": 77, "6": 94, "7": 107, "8": 122, "9": 138, "10": 149, "11": 164, "12": 182, "13": 200, "14": 214, "15": 231, "16": 248, "17": 267, "18": 282, "19": 295, "20": 309, "21": 327, "22": 344, "23": 360, "24": 376, "25": 393, "26": 408, "27": 425, "28": 444, "29": 460, "30": 480, "31": 496, "32": 513, "33": 531, "34": 548, "35": 569, "36": 589, "37": 605, "38": 620, "39": 635, "40": 650, "41": 668, "42": 686, "43": 702, "44": 720, "45": 733, "46": 746, "47": 762, "48": 776, "49": 789, "50": 807, "51": 821, "52": 834, "53": 844, "54": 863, "55": 878, "56": 892, "57": 905, "58": 918, "59": 931, "60": 950, "61": 967, "62": 980, "63": 990, "64": 1005, "65": 1017}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to a mailbag item that I got, which is a Pedalsel bicycle generator USB thing. So, it's basically a generator here, which goes onto your rim here, spins around, and puts some charge into some

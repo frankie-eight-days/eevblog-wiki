@@ -3,6 +3,7 @@ video_id: fPejBipLuFo
 title: EEVblog 1738 - Solar Freakin' Roadways NEW FUNDING!
 url: https://www.youtube.com/watch?v=fPejBipLuFo
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 35, "3": 52, "4": 72, "5": 87, "6": 103, "7": 118, "8": 132, "9": 147, "10": 162, "11": 174, "12": 187, "13": 197, "14": 212, "15": 234, "16": 250, "17": 263, "18": 279, "19": 293, "20": 308, "21": 325, "22": 339, "23": 355, "24": 368, "25": 386, "26": 403, "27": 418, "28": 433, "29": 446, "30": 460, "31": 471, "32": 483, "33": 497, "34": 511, "35": 523, "36": 541, "37": 555, "38": 572, "39": 586, "40": 600, "41": 614, "42": 626, "43": 642, "44": 658, "45": 671, "46": 685, "47": 699, "48": 709, "49": 724, "50": 743, "51": 755, "52": 768, "53": 785, "54": 803, "55": 829, "56": 847, "57": 862, "58": 878, "59": 891, "60": 908, "61": 921, "62": 935, "63": 955, "64": 971, "65": 985, "66": 1001}
 ---
 
 **Dave Jones:** Hi, I bet you thought that Solar freaking Roadways, the OG of Solar Roadways, our friends Scott and Julie Brusaw would not deliver for 2026, but you're wrong. It's a Solar freaking Roadways update. Yes, moose and all. Let's have a look. Solar freaking

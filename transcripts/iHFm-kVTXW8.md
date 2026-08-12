@@ -3,6 +3,7 @@ video_id: iHFm-kVTXW8
 title: EEVblog #45 - Arduino, PICAXE, and idiot assembler programmers
 url: https://www.youtube.com/watch?v=iHFm-kVTXW8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 32, "3": 46, "4": 58, "5": 77, "6": 95, "7": 115, "8": 133, "9": 151, "10": 167, "11": 181, "12": 196, "13": 216, "14": 228, "15": 244, "16": 256, "17": 272, "18": 288, "19": 302, "20": 320, "21": 334, "22": 348, "23": 361, "24": 377, "25": 390, "26": 407, "27": 421, "28": 438, "29": 452, "30": 465, "31": 478, "32": 496, "33": 508, "34": 525, "35": 538, "36": 553, "37": 569, "38": 586, "39": 599, "40": 622, "41": 638, "42": 653, "43": 669, "44": 683, "45": 702, "46": 716, "47": 731, "48": 746, "49": 762, "50": 777, "51": 791, "52": 807, "53": 822, "54": 835, "55": 853, "56": 868, "57": 884, "58": 896, "59": 908, "60": 922, "61": 935, "62": 945, "63": 957, "64": 971, "65": 983, "66": 997, "67": 1007, "68": 1019, "69": 1033, "70": 1047, "71": 1059, "72": 1072, "73": 1086, "74": 1101, "75": 1113, "76": 1127, "77": 1141}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host Dave Jones. Hi, today we're going to talk about microcontrollers, but not just any microcontrollers. We're going to talk about a revolution that's

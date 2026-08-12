@@ -3,6 +3,7 @@ video_id: I1qnZa8whPc
 title: EEVblog 1708 - What's This SMD Part?
 url: https://www.youtube.com/watch?v=I1qnZa8whPc
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 26, "3": 40, "4": 53, "5": 69, "6": 85, "7": 97, "8": 109, "9": 121, "10": 137, "11": 157, "12": 175, "13": 192, "14": 205, "15": 221, "16": 236, "17": 260, "18": 273, "19": 292, "20": 303, "21": 327, "22": 344, "23": 360, "24": 378, "25": 389, "26": 401, "27": 418, "28": 429, "29": 442, "30": 460, "31": 475, "32": 491, "33": 504, "34": 516, "35": 526}
 ---
 
 **Dave Jones:** Hi, just a quick answer to one of my followers on X and I thought other people might find it interesting as well. Well, I've done many of these like Dave, can you identify this part? Um, so let's do this again. This comes from

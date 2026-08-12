@@ -3,6 +3,7 @@ video_id: CqyMr98_XL0
 title: Can a Partially Colour Blind 14yo Read Resistor Colour Codes?
 url: https://www.youtube.com/watch?v=CqyMr98_XL0
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 26, "3": 37, "4": 50, "5": 61, "6": 82, "7": 94, "8": 108, "9": 137, "10": 152, "11": 163, "12": 178, "13": 198, "14": 212, "15": 224, "16": 233, "17": 246, "18": 259, "19": 273, "20": 292, "21": 304, "22": 323, "23": 344, "24": 362, "25": 376, "26": 389, "27": 404, "28": 424, "29": 440, "30": 455, "31": 466, "32": 479, "33": 494, "34": 511, "35": 527, "36": 544, "37": 559, "38": 573, "39": 587, "40": 606, "41": 622, "42": 636, "43": 652, "44": 668, "45": 685, "46": 703, "47": 721, "48": 732, "49": 746, "50": 761, "51": 772, "52": 783, "53": 797, "54": 810, "55": 827, "56": 841, "57": 859, "58": 873, "59": 895, "60": 915, "61": 929, "62": 952, "63": 967, "64": 977, "65": 988, "66": 1007, "67": 1017}
 ---
 
 **Dave Jones:** Hi, I'm here with Sean. You know Sean, we're gonna Sean, you're color blind. >> Okay. Well, I'm not color blind. >> Tell us about your color blindness. >> Tell the difference between reds and browns if they're close enough in color.

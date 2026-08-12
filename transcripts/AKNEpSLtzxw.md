@@ -3,6 +3,7 @@ video_id: AKNEpSLtzxw
 title: 2025 Spartan Stadion Obstacle Race - Wollongong
 url: https://www.youtube.com/watch?v=AKNEpSLtzxw
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 27, "3": 41, "4": 56, "5": 71, "6": 84, "7": 96, "8": 112, "9": 128, "10": 143, "11": 160, "12": 179, "13": 192, "14": 213, "15": 228, "16": 260, "17": 285, "18": 305, "19": 326, "20": 345, "21": 377, "22": 399, "23": 413, "24": 434, "25": 454, "26": 464, "27": 495, "28": 541, "29": 572, "30": 581, "31": 593, "32": 653, "33": 676, "34": 691, "35": 703, "36": 718, "37": 743, "38": 774, "39": 797, "40": 814, "41": 831, "42": 844, "43": 854, "44": 867, "45": 880}
 ---
 
 **Dave Jones:** Hi, I'm at the 2025 Spartan Stadium obstacle race down in Wollongong, which is about an hour and a half south of Sydney. And yes, it's actually in It's called stadium because it's in a stadium. We're in Win Stadium here,

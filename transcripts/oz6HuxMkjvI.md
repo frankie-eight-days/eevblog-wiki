@@ -3,6 +3,7 @@ video_id: oz6HuxMkjvI
 title: EEVblog 1661 - AC Basics Tutorial Part 5: Time Domain vs Frequency Domain
 url: https://www.youtube.com/watch?v=oz6HuxMkjvI
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 42, "4": 60, "5": 74, "6": 89, "7": 106, "8": 125, "9": 141, "10": 160, "11": 173, "12": 191, "13": 207, "14": 223, "15": 239, "16": 256, "17": 270, "18": 284, "19": 297, "20": 312, "21": 327, "22": 344, "23": 362, "24": 379, "25": 395, "26": 412, "27": 429, "28": 445, "29": 463, "30": 478, "31": 491, "32": 506, "33": 523, "34": 540, "35": 555, "36": 567, "37": 579, "38": 601, "39": 617, "40": 637, "41": 649, "42": 663, "43": 678, "44": 691, "45": 703, "46": 714}
 ---
 
 **Dave Jones:** Hi, this is part five in the AC basics tutorial series. Last time we took a look at resistors, inductors, and capacitors uh alone in circuit. What we're going to look at briefly this time is what's called time domain versus frequency

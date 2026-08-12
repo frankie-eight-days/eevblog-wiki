@@ -3,6 +3,7 @@ video_id: qE-SwtYQM6E
 title: Tektronix 2 Series Oscilloscope Pattern Generator
 url: https://www.youtube.com/watch?v=qE-SwtYQM6E
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 30, "3": 48, "4": 61, "5": 80, "6": 96, "7": 108, "8": 124, "9": 138, "10": 157, "11": 173, "12": 186, "13": 200, "14": 221, "15": 234, "16": 247, "17": 260, "18": 273, "19": 285, "20": 300, "21": 311, "22": 326, "23": 340, "24": 355, "25": 373, "26": 392, "27": 401, "28": 413, "29": 431, "30": 451, "31": 468, "32": 486, "33": 499, "34": 514, "35": 528, "36": 540, "37": 557, "38": 573, "39": 589, "40": 605, "41": 617, "42": 631, "43": 645, "44": 656, "45": 670, "46": 687, "47": 701, "48": 716, "49": 731, "50": 745, "51": 763, "52": 783, "53": 799, "54": 817, "55": 836, "56": 852, "57": 867}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on the Tektronix 2 Series scope. They finally sent me some new firmware which enables the digital Oh, there we go. Firmware's upgraded. The digital pattern generator and also the digital inputs on the

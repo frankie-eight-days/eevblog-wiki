@@ -3,6 +3,7 @@ video_id: 61xuDDVCPx8
 title: EEVblog 1650 - Sequre HT-140 SMD Desoldering Tweezers REVIEW
 url: https://www.youtube.com/watch?v=61xuDDVCPx8
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 33, "3": 46, "4": 61, "5": 72, "6": 85, "7": 100, "8": 121, "9": 136, "10": 149, "11": 163, "12": 174, "13": 189, "14": 200, "15": 216, "16": 234, "17": 247, "18": 261, "19": 274, "20": 290, "21": 304, "22": 319, "23": 333, "24": 350, "25": 368, "26": 382, "27": 395, "28": 408, "29": 425, "30": 446, "31": 464, "32": 481, "33": 498, "34": 515, "35": 529, "36": 541, "37": 552, "38": 566, "39": 578, "40": 595, "41": 617, "42": 632, "43": 650, "44": 664, "45": 682, "46": 697, "47": 713, "48": 726, "49": 739, "50": 754, "51": 774, "52": 791, "53": 805, "54": 818, "55": 835, "56": 852, "57": 865, "58": 877, "59": 892, "60": 904, "61": 914, "62": 930, "63": 944, "64": 958, "65": 971, "66": 986, "67": 997, "68": 1013, "69": 1026, "70": 1038, "71": 1052, "72": 1064, "73": 1078, "74": 1093, "75": 1104}
 ---
 
 **Dave Jones:** Hi, it's soldering tool time again. This one was sent into the mailbag. Thank you very much Secure, if I'm pronouncing that correctly. They mostly sell like drone type parts and things like that, but they also make soldering gear and I

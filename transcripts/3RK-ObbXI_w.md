@@ -3,6 +3,7 @@ video_id: 3RK-ObbXI_w
 title: EEVblog 1618 - The Equation For Energy In A Capacitor
 url: https://www.youtube.com/watch?v=3RK-ObbXI_w
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 28, "3": 45, "4": 60, "5": 77, "6": 92, "7": 108, "8": 127}
 ---
 
 **Dave Jones:** We have a current source like this. We have a capacitor like this and we go like this. This is C. The energy in joules, so I'll put a little J there. It equals half CV squared in joules. So,

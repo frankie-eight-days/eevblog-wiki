@@ -3,6 +3,7 @@ video_id: XRyDyOANQhc
 title: Guest Video: The Defpom - Fluke Calibrator Repair
 url: https://www.youtube.com/watch?v=XRyDyOANQhc
 source: youtube-asr
+timestamps: {"0": 12, "1": 25, "2": 36, "3": 50, "4": 65, "5": 75, "6": 90, "7": 101, "8": 112, "9": 124, "10": 135, "11": 146, "12": 160, "13": 178, "14": 194, "15": 207, "16": 222, "17": 238, "18": 254, "19": 269, "20": 285, "21": 299, "22": 313, "23": 324, "24": 334, "25": 346, "26": 364, "27": 383, "28": 402, "29": 421, "30": 438, "31": 460, "32": 477, "33": 499, "34": 519, "35": 538, "36": 556, "37": 575, "38": 605, "39": 624, "40": 648, "41": 667, "42": 686, "43": 703, "44": 716, "45": 730, "46": 745, "47": 769, "48": 786, "49": 804, "50": 822, "51": 843, "52": 859, "53": 875, "54": 893, "55": 905, "56": 923, "57": 937, "58": 949, "59": 967, "60": 982, "61": 998, "62": 1016, "63": 1031, "64": 1042, "65": 1052, "66": 1065, "67": 1077, "68": 1089, "69": 1101, "70": 1113, "71": 1126}
 ---
 
 **Dave Jones:** Hello everyone. I'm the Defpom. First name Scott. Hopefully Dave chooses this video for his guest spot while he's away on holiday. And uh I thought I'd just tell you a bit bit about me and about my channel and what I

@@ -3,6 +3,7 @@ video_id: uT4hKd66UY4
 title: EEVblog #141 - AA Alkaline Battery Capacity Measurement
 url: https://www.youtube.com/watch?v=uT4hKd66UY4
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 37, "3": 50, "4": 65, "5": 78, "6": 93, "7": 108, "8": 125, "9": 141, "10": 154, "11": 171, "12": 187, "13": 197, "14": 210, "15": 223, "16": 239, "17": 250, "18": 263, "19": 276, "20": 294, "21": 310, "22": 326, "23": 340, "24": 355, "25": 368, "26": 384, "27": 400, "28": 415, "29": 427, "30": 445, "31": 459, "32": 473, "33": 487, "34": 503, "35": 518, "36": 533, "37": 552, "38": 570, "39": 588, "40": 604, "41": 617, "42": 632, "43": 650, "44": 676, "45": 691, "46": 706, "47": 720, "48": 740, "49": 758, "50": 777, "51": 793, "52": 811, "53": 826, "54": 842, "55": 857, "56": 872, "57": 890, "58": 906, "59": 922, "60": 939, "61": 951, "62": 966, "63": 981, "64": 993, "65": 1007, "66": 1023, "67": 1039, "68": 1052, "69": 1068, "70": 1083, "71": 1096, "72": 1109, "73": 1125, "74": 1136, "75": 1151, "76": 1167}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi. The previous blog was a tutorial on battery capacity. Now, I thought I'd follow that up just quickly

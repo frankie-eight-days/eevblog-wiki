@@ -3,6 +3,7 @@ video_id: nEmO8DcOap4
 title: EEVblog 1595 - 50 Year Chinese Nuclear Diamond Battery!
 url: https://www.youtube.com/watch?v=nEmO8DcOap4
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 37, "3": 56, "4": 73, "5": 89, "6": 103, "7": 114, "8": 126, "9": 142, "10": 156, "11": 168, "12": 180, "13": 198, "14": 212, "15": 226, "16": 237, "17": 254, "18": 267, "19": 278, "20": 292, "21": 307, "22": 327, "23": 342, "24": 355, "25": 371, "26": 383, "27": 400, "28": 412, "29": 429, "30": 444, "31": 458, "32": 472, "33": 483, "34": 495, "35": 511, "36": 527, "37": 540, "38": 559, "39": 576, "40": 588, "41": 605, "42": 622, "43": 638, "44": 650, "45": 664, "46": 678, "47": 689, "48": 703, "49": 717, "50": 730, "51": 743, "52": 758, "53": 770, "54": 784, "55": 800, "56": 815, "57": 831, "58": 843, "59": 855, "60": 869, "61": 881, "62": 893, "63": 905, "64": 917, "65": 930, "66": 944, "67": 956, "68": 971, "69": 984, "70": 998, "71": 1008, "72": 1021, "73": 1036}
 ---
 
 **Dave Jones:** Hi. Yes, it's beta voltaic battery time again. Ah, tech journalists, can you please stop getting excited about this sort of stuff? It's just absolute rubbish. Headlines everywhere, everyone flooded my inbox with links to this. Uh, BetaVolt says its diamond nuclear

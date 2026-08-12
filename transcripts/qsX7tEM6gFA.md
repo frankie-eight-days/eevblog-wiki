@@ -3,6 +3,7 @@ video_id: qsX7tEM6gFA
 title: Pro Tip: DIY Hand Sanitiser
 url: https://www.youtube.com/watch?v=qsX7tEM6gFA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 50, "4": 63, "5": 83, "6": 97, "7": 111, "8": 123, "9": 133, "10": 146, "11": 161, "12": 179, "13": 202, "14": 214, "15": 229, "16": 246, "17": 260, "18": 270, "19": 284, "20": 301, "21": 315, "22": 329, "23": 342, "24": 353, "25": 363, "26": 376, "27": 389, "28": 401, "29": 416, "30": 430, "31": 445, "32": 461, "33": 472, "34": 491, "35": 505, "36": 518, "37": 535, "38": 549, "39": 561, "40": 573, "41": 585, "42": 599, "43": 610, "44": 624, "45": 635, "46": 648, "47": 659, "48": 671, "49": 682, "50": 697}
 ---
 
 **Dave Jones:** Hi, with all the mass hysteria surrounding the novel coronavirus or COVID-19. Dogs and cats living together, mass hysteria. I thought I'd show you how to make your own hand sanitizer like this with uh stuff you should have lying around your

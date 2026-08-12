@@ -3,6 +3,7 @@ video_id: J9_JxRiuS5A
 title: Tektronix MDO4000 Oscilloscope Teardown - EEVblog #199
 url: https://www.youtube.com/watch?v=J9_JxRiuS5A
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 40, "3": 54, "4": 92, "5": 107, "6": 125, "7": 145, "8": 161, "9": 173, "10": 185, "11": 199, "12": 213, "13": 227, "14": 241, "15": 256, "16": 274, "17": 294, "18": 307, "19": 322, "20": 340, "21": 357, "22": 370, "23": 387, "24": 403, "25": 420, "26": 434, "27": 449, "28": 465, "29": 479, "30": 493, "31": 507, "32": 521, "33": 533, "34": 571, "35": 586, "36": 599, "37": 619, "38": 637, "39": 655, "40": 671, "41": 687, "42": 700, "43": 712, "44": 732, "45": 757, "46": 782, "47": 824, "48": 848, "49": 860, "50": 877, "51": 894, "52": 924, "53": 939, "54": 961, "55": 976, "56": 991, "57": 1003, "58": 1022, "59": 1040, "60": 1059, "61": 1072, "62": 1085, "63": 1101, "64": 1122, "65": 1191, "66": 1203, "67": 1217, "68": 1343}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. 30,000 bucks worth of brand new Tektronix MDO4000 series oscilloscope. You know what we say here on the

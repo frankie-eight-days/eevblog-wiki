@@ -3,6 +3,7 @@ video_id: QvyHNVQZcHw
 title: EEVblog #133 - Dodgy Digikey Components
 url: https://www.youtube.com/watch?v=QvyHNVQZcHw
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 49, "4": 65, "5": 76, "6": 93, "7": 107, "8": 123, "9": 140, "10": 162, "11": 174, "12": 188, "13": 210, "14": 226, "15": 241, "16": 261, "17": 277, "18": 297, "19": 309, "20": 325, "21": 339, "22": 362, "23": 378, "24": 394, "25": 412, "26": 435, "27": 448, "28": 459, "29": 472, "30": 487, "31": 503, "32": 522, "33": 544, "34": 559, "35": 574, "36": 588, "37": 603, "38": 619, "39": 636, "40": 648, "41": 665, "42": 679, "43": 696, "44": 709, "45": 725, "46": 743, "47": 757, "48": 771, "49": 782, "50": 794, "51": 812, "52": 830, "53": 843, "54": 856, "55": 871, "56": 885, "57": 898, "58": 914, "59": 931, "60": 946, "61": 969, "62": 990, "63": 1005, "64": 1018, "65": 1033, "66": 1046}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I've had a bit of a problem with my micro current project and I'm a bit

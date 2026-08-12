@@ -3,6 +3,7 @@ video_id: mWHiXTfsUP8
 title: EEVblog #308 - Agilent 81160A Function Generator Teardown
 url: https://www.youtube.com/watch?v=mWHiXTfsUP8
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 38, "3": 58, "4": 78, "5": 94, "6": 107, "7": 119, "8": 135, "9": 153, "10": 175, "11": 207, "12": 227, "13": 248, "14": 268, "15": 289, "16": 305, "17": 321, "18": 335, "19": 358, "20": 371, "21": 384, "22": 402, "23": 424, "24": 441, "25": 457, "26": 474, "27": 493, "28": 511, "29": 525, "30": 540, "31": 560, "32": 581, "33": 602, "34": 626, "35": 641, "36": 657, "37": 671, "38": 687, "39": 703, "40": 719, "41": 735, "42": 752, "43": 777, "44": 797, "45": 814, "46": 826, "47": 841, "48": 854, "49": 873}
 ---
 
 **Dave Jones:** Hi, welcome to Teardown Tuesday. Got a real high-end bit of kit for you today. Ho ho, here we go. It's the Agilent 81160A pulse function arbitrary noise generator, or more affectionately known as the P Fang, or maybe just Fang with a

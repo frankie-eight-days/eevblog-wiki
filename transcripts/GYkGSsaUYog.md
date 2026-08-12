@@ -3,6 +3,7 @@ video_id: GYkGSsaUYog
 title: Mount York Abseil Practice Gully
 url: https://www.youtube.com/watch?v=GYkGSsaUYog
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 27, "3": 38, "4": 53, "5": 68, "6": 82, "7": 100, "8": 119, "9": 133, "10": 149}
 ---
 
 **Dave Jones:** Hi, I'm at the Mount York abseil practice spot. Just wanted to show you couple of the drops here where they are down there. There's a big tree there and you can go a little 5 m drop off there,

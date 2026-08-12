@@ -3,6 +3,7 @@ video_id: bEo7HTngCkU
 title: Robots & Dinosaurs Visit
 url: https://www.youtube.com/watch?v=bEo7HTngCkU
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 37, "3": 53, "4": 69, "5": 83, "6": 99, "7": 116, "8": 133, "9": 148, "10": 163, "11": 175, "12": 190, "13": 201, "14": 215, "15": 224, "16": 234, "17": 247, "18": 261, "19": 273}
 ---
 
 **Dave Jones:** Hi, guess where I am. Check it out. Robots and dinosaurs, which is the uh Sydney R&D hacker space. Let's go check it out. I haven't actually been here before. Um but uh yeah, even though I'm in Sydney, go figure. It's not a big place, but

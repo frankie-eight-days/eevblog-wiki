@@ -3,6 +3,7 @@ video_id: 9FEOvQaBCcs
 title: eevBLAB 136: Australian Government eSafety Office RECOMMENDS a VPN
 url: https://www.youtube.com/watch?v=9FEOvQaBCcs
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 47, "4": 59, "5": 73, "6": 88, "7": 102, "8": 113, "9": 125, "10": 136, "11": 149, "12": 161, "13": 176, "14": 189, "15": 204, "16": 216, "17": 228, "18": 242, "19": 260, "20": 277, "21": 295, "22": 314}
 ---
 
 **Dave Jones:** Hi, it's the 9th of December, 2025, and it's more important than ever to protect your privacy online. So, let's go to the official Australian eSafety Office website. Here it is here, and their advanced online security to see what

@@ -3,6 +3,7 @@ video_id: lfOmlhnwTug
 title: EEVblog #770 - Rockband 3 Stratocaster Guitar Teardown
 url: https://www.youtube.com/watch?v=lfOmlhnwTug
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 27, "3": 43, "4": 58, "5": 73, "6": 89, "7": 106, "8": 121, "9": 137, "10": 153, "11": 168, "12": 184, "13": 201, "14": 212, "15": 226, "16": 240, "17": 257, "18": 272, "19": 285, "20": 301, "21": 316, "22": 340, "23": 361, "24": 379, "25": 393, "26": 409, "27": 424, "28": 439, "29": 450, "30": 464, "31": 476, "32": 489, "33": 507, "34": 525, "35": 540, "36": 552, "37": 567, "38": 578, "39": 588, "40": 604, "41": 620, "42": 635, "43": 647, "44": 660, "45": 674, "46": 694, "47": 712, "48": 725, "49": 741, "50": 754, "51": 768, "52": 783, "53": 796, "54": 807, "55": 824, "56": 839, "57": 853, "58": 868, "59": 886, "60": 900, "61": 911, "62": 923, "63": 936, "64": 948, "65": 965}
 ---
 
 **Dave Jones:** All right, so let's whip this baby apart and see what's inside. Like, I don't exactly know. I have never played this Rock Band thing, so I don't know like if um you know, what type of sensor they got on the string whether they have like

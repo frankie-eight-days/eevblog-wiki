@@ -3,6 +3,7 @@ video_id: zoyaHOqp9gI
 title: Rigol DHO800 Oscilloscope Fan Upgrade Experiment
 url: https://www.youtube.com/watch?v=zoyaHOqp9gI
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 36, "3": 52, "4": 65, "5": 79, "6": 93, "7": 108, "8": 124, "9": 140, "10": 156, "11": 171, "12": 183, "13": 200, "14": 216, "15": 229, "16": 242, "17": 260, "18": 275, "19": 286, "20": 296, "21": 309, "22": 328, "23": 344, "24": 364, "25": 377, "26": 393, "27": 407, "28": 419, "29": 430, "30": 450, "31": 465, "32": 484, "33": 495, "34": 514, "35": 531, "36": 549, "37": 568, "38": 589, "39": 599, "40": 614, "41": 626, "42": 638, "43": 654, "44": 667, "45": 685, "46": 699, "47": 717, "48": 729, "49": 750, "50": 759, "51": 778, "52": 790, "53": 805, "54": 817, "55": 829, "56": 844, "57": 857, "58": 876, "59": 888, "60": 899, "61": 912, "62": 924}
 ---
 
 **Dave Jones:** Hi, just a quick video looking at a potential fan upgrade for the Rigol DHO800 and 900 series scope cuz there's a lot of talk about the fan noise which might annoy some people. It's you know, you can hear it. Anyway, this is the fan

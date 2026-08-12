@@ -3,6 +3,7 @@ video_id: 4tLpWeC1FL4
 title: Miniature SMD Production Line
 url: https://www.youtube.com/watch?v=4tLpWeC1FL4
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 29, "3": 44, "4": 55, "5": 70, "6": 84, "7": 98, "8": 111, "9": 128, "10": 140, "11": 154, "12": 168, "13": 180, "14": 193, "15": 205, "16": 214, "17": 226, "18": 242, "19": 254}
 ---
 
 **Dave Jones:** I'm here at the Hawker Richardson's stand, and here with Jim. Good day, Jim. Haven't seen him. He's He's been in previous years. He's going to tell us all about this amazing miniature SMD production line, which their marketing manager 3D printed and then

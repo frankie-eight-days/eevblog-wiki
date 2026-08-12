@@ -3,6 +3,7 @@ video_id: r4XQOMBmuKw
 title: Pavegen Footstep Energy Harvesting - Pre-Bust
 url: https://www.youtube.com/watch?v=r4XQOMBmuKw
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 43, "4": 59, "5": 70, "6": 80, "7": 93, "8": 104, "9": 118, "10": 130, "11": 140, "12": 158, "13": 173, "14": 189}
 ---
 
 **Dave Jones:** Ah, Pave Jen. Yeah, Pave Jen. A lot of like it just reared its ugly head again because it was on some um channel. What's his name? Sorry, I forget his name. Um his his YouTube channel actually promoted, but it's been going

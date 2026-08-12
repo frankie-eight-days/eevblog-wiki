@@ -3,6 +3,7 @@ video_id: DVXPGj0Pjyc
 title: EEVblog #933 - Keysight U1272A EMC Issue
 url: https://www.youtube.com/watch?v=DVXPGj0Pjyc
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 36, "3": 53, "4": 72, "5": 86, "6": 102, "7": 120, "8": 140, "9": 156, "10": 176, "11": 197, "12": 215, "13": 231, "14": 248, "15": 263, "16": 292, "17": 308, "18": 323, "19": 343, "20": 361, "21": 380, "22": 396, "23": 408, "24": 424, "25": 439, "26": 454, "27": 470, "28": 487, "29": 503, "30": 514, "31": 530, "32": 554, "33": 571, "34": 592, "35": 609, "36": 625, "37": 641, "38": 665, "39": 677, "40": 693, "41": 711, "42": 727, "43": 742, "44": 757, "45": 776, "46": 788, "47": 805, "48": 823, "49": 840}
 ---
 
 **Dave Jones:** Hi, just a quick blab video with a potential issue with the Keysight U1272A multimeter here. One of my viewers, Bernard Ruff, was measuring using this meter to measure the current on his power supply like a project or whatever and

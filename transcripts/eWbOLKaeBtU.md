@@ -3,6 +3,7 @@ video_id: eWbOLKaeBtU
 title: Geekom IT13 Mini PC Review + AI Fun Stuff!
 url: https://www.youtube.com/watch?v=eWbOLKaeBtU
 source: youtube-asr
+timestamps: {"0": 2, "1": 12, "2": 33, "3": 84, "4": 99, "5": 114, "6": 126, "7": 140, "8": 171, "9": 188, "10": 205, "11": 220, "12": 235, "13": 250, "14": 269, "15": 287, "16": 299, "17": 315, "18": 331, "19": 353, "20": 366, "21": 382, "22": 395, "23": 412, "24": 430, "25": 443, "26": 457, "27": 472, "28": 488, "29": 503, "30": 517, "31": 534, "32": 550, "33": 565, "34": 581, "35": 600, "36": 617, "37": 633, "38": 649, "39": 666, "40": 682, "41": 696, "42": 710, "43": 725, "44": 747, "45": 766, "46": 783, "47": 797, "48": 816, "49": 833, "50": 846, "51": 859, "52": 872, "53": 890, "54": 908, "55": 928}
 ---
 
 **Dave Jones:** Hi, I'm May and today we're going to look at the Geekom's IT series mini computer. They sent it in on the mail bag. We're going to do a teardown and check out the specs on it. Now, I may

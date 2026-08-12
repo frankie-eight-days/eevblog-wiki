@@ -3,6 +3,7 @@ video_id: KbFogh7XqBQ
 title: eevBLAB 129 - WARNING: New Youtube Creator Channel Hijack Scam
 url: https://www.youtube.com/watch?v=KbFogh7XqBQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 45, "4": 55, "5": 69, "6": 81, "7": 92, "8": 103, "9": 113, "10": 126, "11": 145, "12": 161, "13": 173, "14": 186, "15": 200, "16": 215, "17": 229, "18": 243, "19": 255, "20": 269, "21": 286, "22": 299, "23": 312, "24": 322, "25": 339, "26": 357, "27": 370, "28": 384, "29": 402, "30": 417, "31": 433, "32": 453, "33": 476, "34": 491, "35": 504, "36": 520, "37": 537, "38": 552, "39": 564, "40": 577, "41": 592, "42": 609, "43": 623, "44": 636}
 ---
 
 **Dave Jones:** Hi, I want to share with you and in particular fellow YouTube content creators out there the latest innovation in YouTube channel hijacking. So, let's check it out now. Uh you might know I've previously done a video on how YouTube channels get

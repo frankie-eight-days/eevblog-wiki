@@ -3,6 +3,7 @@ video_id: AqV7MERFExs
 title: Another STUPID Youtube Creator Change (Like/Dislike Ratio)
 url: https://www.youtube.com/watch?v=AqV7MERFExs
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 29, "3": 46, "4": 63, "5": 82, "6": 93, "7": 107, "8": 121, "9": 137, "10": 153, "11": 168, "12": 184, "13": 197, "14": 210, "15": 226, "16": 242, "17": 257, "18": 269, "19": 282, "20": 298, "21": 312, "22": 325, "23": 339, "24": 355, "25": 367, "26": 380, "27": 396, "28": 410, "29": 422, "30": 433, "31": 445, "32": 466}
 ---
 
 **Dave Jones:** Hi, YouTube's been making changes again to this time to the creator back end that us creators get if you're not a creating YouTube channels, this is what it looks like when we log into our account thing here and view our content.

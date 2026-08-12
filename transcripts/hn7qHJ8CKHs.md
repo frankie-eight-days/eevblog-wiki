@@ -3,6 +3,7 @@ video_id: hn7qHJ8CKHs
 title: Myenergi Zappi EV Charger BUG?
 url: https://www.youtube.com/watch?v=hn7qHJ8CKHs
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 44, "4": 60, "5": 71, "6": 86, "7": 102, "8": 118, "9": 134, "10": 150, "11": 166, "12": 182, "13": 197, "14": 210, "15": 222, "16": 233, "17": 246, "18": 258, "19": 270, "20": 283}
 ---
 
 **Dave Jones:** Hi, I think I might have found a bug in my Zappi charger here. Um, it was I just came home. I it was in stop mode. Okay, the sun's shining, beautiful day outside, so I don't know how much uh

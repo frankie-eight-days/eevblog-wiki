@@ -3,6 +3,7 @@ video_id: C0mOtAQRLU4
 title: SpaceX Starship 7th Flight Booster CATCH Live Reaction
 url: https://www.youtube.com/watch?v=C0mOtAQRLU4
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 29, "3": 52, "4": 77, "5": 94, "6": 113, "7": 131, "8": 145, "9": 157, "10": 169, "11": 185, "12": 201, "13": 219, "14": 239, "15": 253, "16": 268, "17": 282, "18": 302, "19": 316, "20": 329, "21": 346, "22": 357, "23": 375, "24": 387, "25": 396, "26": 411, "27": 430, "28": 443, "29": 463, "30": 487, "31": 505, "32": 522, "33": 539, "34": 559, "35": 576, "36": 596, "37": 611, "38": 632, "39": 644, "40": 658, "41": 673, "42": 688, "43": 702, "44": 721, "45": 737, "46": 750, "47": 763, "48": 774, "49": 789, "50": 802, "51": 818, "52": 831, "53": 842, "54": 853, "55": 869, "56": 890, "57": 913, "58": 934, "59": 946, "60": 958, "61": 971, "62": 983, "63": 996, "64": 1011}
 ---
 
 **Dave Jones:** That's it. Okay, I haven't given my prediction. My prediction is I'm 90% confident that it's going to do the full mission profile whether or not it does the catch. It's it's really up to the sensors like anything. There's so many interlocks in

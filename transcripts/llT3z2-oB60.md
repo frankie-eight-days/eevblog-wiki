@@ -3,6 +3,7 @@ video_id: llT3z2-oB60
 title: Timex vs Citizen - Watch Shootout
 url: https://www.youtube.com/watch?v=llT3z2-oB60
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 41, "4": 56, "5": 71, "6": 86, "7": 99, "8": 114, "9": 129, "10": 144, "11": 154, "12": 171, "13": 183, "14": 197, "15": 211, "16": 225, "17": 240, "18": 256, "19": 270, "20": 284, "21": 299, "22": 314, "23": 326, "24": 339, "25": 357, "26": 370, "27": 386, "28": 404, "29": 417}
 ---
 
 **Dave Jones:** Hi there, all you watch aficionados. I've got a new potential daily driver watch today. Let's take a look at it. It's a Timex jobbie. And this is my current daily driver. This is a Citizen Eco-Drive. I'll put up the exact number

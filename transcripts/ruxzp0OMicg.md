@@ -3,6 +3,7 @@ video_id: ruxzp0OMicg
 title: Brymen BM787BT Bluetooth App First Impressions
 url: https://www.youtube.com/watch?v=ruxzp0OMicg
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 36, "3": 55, "4": 73, "5": 98, "6": 114, "7": 136, "8": 152, "9": 166, "10": 183, "11": 197, "12": 213, "13": 222, "14": 235, "15": 256, "16": 274, "17": 291, "18": 309, "19": 327, "20": 350, "21": 365, "22": 386, "23": 397, "24": 413, "25": 427, "26": 442, "27": 457, "28": 475, "29": 487, "30": 503, "31": 532, "32": 549, "33": 566, "34": 583, "35": 598, "36": 616, "37": 630, "38": 645, "39": 658, "40": 676, "41": 692, "42": 705, "43": 726, "44": 740, "45": 754, "46": 769, "47": 785, "48": 800, "49": 814, "50": 829, "51": 845, "52": 862, "53": 882, "54": 899, "55": 917, "56": 934, "57": 950}
 ---
 
 **Dave Jones:** Okay. Shoe phone. Data. Okay, we're in data mode. Please connect this device. See, this is where this is the app, right? And this is why I thought that you needed You obviously needed to pair it with the Bluetooth thing. I mean, I won't go into

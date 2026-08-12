@@ -3,6 +3,7 @@ video_id: NnyxViErSYg
 title: Lake Mckenzie - One of the best swimming beaches in the world!
 url: https://www.youtube.com/watch?v=NnyxViErSYg
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 27, "3": 44, "4": 68, "5": 84, "6": 105, "7": 122, "8": 140, "9": 159, "10": 182, "11": 212, "12": 231, "13": 246}
 ---
 
 **Dave Jones:** Welcome to Australia. Dingo took my baby. Aggressive dingo behavior. We're headed down towards Lake McKenzie.

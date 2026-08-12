@@ -3,6 +3,7 @@ video_id: pG9m4fN71rQ
 title: EEVblog 1713 - CRAZY Density Magnetic Core Memory from Space Shuttle!
 url: https://www.youtube.com/watch?v=pG9m4fN71rQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 54, "4": 70, "5": 89, "6": 103, "7": 115, "8": 130, "9": 141, "10": 154, "11": 168, "12": 183, "13": 197, "14": 207, "15": 217, "16": 229, "17": 246, "18": 258, "19": 267, "20": 280, "21": 297, "22": 309, "23": 322, "24": 337, "25": 351, "26": 363, "27": 376, "28": 389, "29": 406, "30": 425, "31": 441, "32": 453, "33": 471, "34": 485, "35": 499, "36": 513, "37": 531, "38": 548, "39": 566, "40": 580, "41": 599, "42": 612, "43": 623, "44": 637, "45": 655, "46": 676, "47": 692, "48": 707, "49": 722, "50": 741, "51": 758, "52": 772, "53": 786, "54": 801, "55": 816, "56": 836, "57": 851, "58": 866, "59": 880, "60": 896, "61": 917, "62": 930, "63": 944, "64": 955, "65": 971, "66": 984, "67": 999}
 ---
 
 **Dave Jones:** Hi, long time viewers will recognize this board. This is a magnetic core memory from about 1970 and I did a video on this 8 years ago looking at this. It was originally a mail bag one, but then I spun the video out onto my second

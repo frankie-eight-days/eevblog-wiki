@@ -3,6 +3,7 @@ video_id: T2aa3X8Y0xs
 title: EEVblog1541 - What is this Blown SMD Component? Redux
 url: https://www.youtube.com/watch?v=T2aa3X8Y0xs
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 38, "4": 49, "5": 64, "6": 81, "7": 93, "8": 108, "9": 121, "10": 137, "11": 152, "12": 164, "13": 177, "14": 189, "15": 201, "16": 215, "17": 227, "18": 240, "19": 254, "20": 267, "21": 278, "22": 289, "23": 302, "24": 315, "25": 329, "26": 345, "27": 357, "28": 371, "29": 387, "30": 403, "31": 419, "32": 436, "33": 452, "34": 467, "35": 485, "36": 503, "37": 517, "38": 533, "39": 549, "40": 567, "41": 584, "42": 596, "43": 606, "44": 619, "45": 634, "46": 647, "47": 660, "48": 674, "49": 689, "50": 701, "51": 718, "52": 736, "53": 751, "54": 766, "55": 780, "56": 797, "57": 811, "58": 823, "59": 837, "60": 850, "61": 864, "62": 881, "63": 895, "64": 909, "65": 926}
 ---
 
 **Dave Jones:** Hi, we have another failed part search video cuz the last one was reasonably popular that I did back here and I'll link it in if you haven't seen it from uh Pooriya Solutions LLC. Well, as it turns out,

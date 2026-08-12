@@ -3,6 +3,7 @@ video_id: tqp0lEfUKTM
 title: EEVblog 1641 - How DC Solar Isolators Work (TEARDOWN)
 url: https://www.youtube.com/watch?v=tqp0lEfUKTM
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 34, "3": 46, "4": 58, "5": 75, "6": 90, "7": 105, "8": 118, "9": 131, "10": 145, "11": 160, "12": 172, "13": 184, "14": 199, "15": 217, "16": 231, "17": 247, "18": 261, "19": 271, "20": 287, "21": 299, "22": 311, "23": 324, "24": 340, "25": 351, "26": 364, "27": 377, "28": 391, "29": 403, "30": 415, "31": 428, "32": 445, "33": 456, "34": 474, "35": 491, "36": 503, "37": 517, "38": 530, "39": 543, "40": 559, "41": 572, "42": 583, "43": 601, "44": 616, "45": 630, "46": 645, "47": 661, "48": 675, "49": 693, "50": 707, "51": 722, "52": 733, "53": 748, "54": 761, "55": 775, "56": 794, "57": 808, "58": 824, "59": 839, "60": 852, "61": 863, "62": 877}
 ---
 
 **Dave Jones:** Hi, I thought we'd do a quick teardown of a DC solar isolator switch. This one actually comes from my old installation here. It's a Benedict jobbie an LS25 PFLH4 for those playing along at home. You can see here it's a four pole single

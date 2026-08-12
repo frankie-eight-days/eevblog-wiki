@@ -3,6 +3,7 @@ video_id: 9WHd7bbxltI
 title: AI Data Centre Construction Environmental Runoff
 url: https://www.youtube.com/watch?v=9WHd7bbxltI
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 39, "3": 56, "4": 71}
 ---
 
 **Dave Jones:** Hi, check it out on at Norwest Lake and I don't know about you but this does not seem normal. We have some spill off overflow from I don't know something that they're doing some sort of cleaning or something Upstream is

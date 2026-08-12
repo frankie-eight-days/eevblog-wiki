@@ -3,6 +3,7 @@ video_id: GcECR1FRnb8
 title: eevBLAB #61 - The Demise Of Electronics Australia
 url: https://www.youtube.com/watch?v=GcECR1FRnb8
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 33, "3": 52, "4": 70, "5": 81, "6": 95, "7": 115, "8": 129, "9": 143, "10": 157, "11": 171, "12": 182, "13": 198, "14": 215, "15": 230, "16": 250, "17": 269, "18": 292, "19": 307, "20": 324, "21": 344, "22": 358, "23": 375, "24": 391, "25": 405, "26": 420, "27": 436, "28": 453, "29": 466, "30": 482, "31": 494, "32": 506, "33": 519, "34": 531, "35": 547, "36": 565, "37": 584, "38": 601, "39": 617, "40": 632, "41": 648, "42": 667, "43": 687, "44": 703, "45": 718, "46": 730, "47": 747}
 ---
 
 **Dave Jones:** Hi, I'm in the old EV blog lab. Please forgive the audio. Um yes, it is completely empty. Yeah. This used to be the old lab apart from an old MakerBot and a couple of magazines. I was just clearing out the

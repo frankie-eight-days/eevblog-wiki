@@ -3,6 +3,7 @@ video_id: qDcIgWGpuGw
 title: Dumpster Diving Oki Printer
 url: https://www.youtube.com/watch?v=qDcIgWGpuGw
 source: youtube-asr
+timestamps: {"0": 2, "1": 24, "2": 38, "3": 53, "4": 67, "5": 85, "6": 101, "7": 119, "8": 130, "9": 143, "10": 157, "11": 172, "12": 188, "13": 205, "14": 220, "15": 237, "16": 252, "17": 265, "18": 284, "19": 305, "20": 320, "21": 341, "22": 355, "23": 370, "24": 389, "25": 404, "26": 422, "27": 435, "28": 453, "29": 468, "30": 484, "31": 495, "32": 509, "33": 520, "34": 530, "35": 544, "36": 556, "37": 573, "38": 584}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room and well everything's breeding. The cardboard boxes are breeding, the chairs are breeding and somebody has put a looks like an Oki um laser printer. So, I love it. I do love it when they actually include the looks

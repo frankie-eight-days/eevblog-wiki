@@ -3,6 +3,7 @@ video_id: JqKC1PRvJ-Y
 title: Kangaroo Island - Remarkable Rocks
 url: https://www.youtube.com/watch?v=JqKC1PRvJ-Y
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 37, "3": 55, "4": 71, "5": 91, "6": 106, "7": 124, "8": 140, "9": 168, "10": 187, "11": 210, "12": 231, "13": 251, "14": 265, "15": 291, "16": 311, "17": 318, "18": 336, "19": 362, "20": 378, "21": 400, "22": 417, "23": 431, "24": 448, "25": 464, "26": 480}
 ---
 
 **Dave Jones:** Hi, I'm at uh Kangaroo Island. Check it out. These are the remarkable rocks, and they are quite remarkable. So, formed over a couple hundred million years. Wind, rain, salt, all that sort of stuff. So, we're going to go check it out.

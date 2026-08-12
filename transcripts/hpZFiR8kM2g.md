@@ -3,6 +3,7 @@ video_id: hpZFiR8kM2g
 title: EEVblog #58 - Warm and Fuzzy FPGA Troubleshooting
 url: https://www.youtube.com/watch?v=hpZFiR8kM2g
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 44, "4": 66, "5": 82, "6": 97, "7": 114, "8": 129, "9": 145, "10": 160, "11": 181, "12": 205, "13": 218, "14": 232, "15": 246, "16": 261, "17": 272, "18": 285, "19": 299, "20": 314, "21": 326, "22": 342, "23": 358, "24": 373, "25": 389, "26": 402, "27": 417, "28": 431, "29": 446, "30": 461, "31": 475, "32": 488, "33": 503, "34": 518, "35": 535, "36": 549, "37": 563, "38": 578, "39": 596, "40": 619, "41": 636, "42": 652, "43": 674, "44": 691, "45": 714, "46": 733, "47": 750, "48": 766, "49": 784, "50": 801, "51": 820, "52": 840, "53": 856, "54": 872, "55": 885, "56": 899, "57": 912, "58": 927, "59": 939, "60": 958, "61": 974}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog and electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's industry story time again. I was working on something at work the other day and it was a real interesting

@@ -3,6 +3,7 @@ video_id: 6H5UymGEmvs
 title: Return Youtube Dislike Count Plugin TESTED - Is it accurate?
 url: https://www.youtube.com/watch?v=6H5UymGEmvs
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 38, "3": 51, "4": 65, "5": 77, "6": 85, "7": 98, "8": 113, "9": 128, "10": 143, "11": 158, "12": 171, "13": 184, "14": 197, "15": 212, "16": 226, "17": 239, "18": 254, "19": 270, "20": 282, "21": 298, "22": 309, "23": 326, "24": 343, "25": 357, "26": 370, "27": 384, "28": 397, "29": 411, "30": 421, "31": 430, "32": 446, "33": 460, "34": 475, "35": 488, "36": 503, "37": 516, "38": 533, "39": 551, "40": 564, "41": 576, "42": 588, "43": 601, "44": 615, "45": 630, "46": 646, "47": 661, "48": 675, "49": 690, "50": 705, "51": 722, "52": 736, "53": 747, "54": 760, "55": 774}
 ---
 
 **Dave Jones:** Hi, you remember when that YouTube removed the dislike count? They kept the dislike count button, but yeah, they hid the count and Mr. Shiteating grin here announced it all and well, yeah, it wasn't very well received, but as you know, many people can still

@@ -3,6 +3,7 @@ video_id: i3XjdT4mIbQ
 title: EEVblog #584 - What Effect Does Your Multimeter Input Impedance Have?
 url: https://www.youtube.com/watch?v=i3XjdT4mIbQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 26, "3": 41, "4": 61, "5": 79, "6": 94, "7": 109, "8": 125, "9": 139, "10": 151, "11": 164, "12": 182, "13": 198, "14": 213, "15": 233, "16": 247, "17": 262, "18": 276, "19": 288, "20": 304, "21": 317, "22": 346, "23": 362, "24": 380, "25": 401, "26": 417, "27": 433, "28": 451, "29": 468, "30": 481, "31": 493, "32": 505, "33": 524, "34": 538, "35": 549, "36": 563, "37": 580, "38": 592, "39": 609, "40": 629, "41": 646, "42": 659, "43": 671, "44": 687, "45": 707, "46": 720, "47": 735, "48": 748, "49": 762, "50": 773, "51": 787, "52": 799, "53": 811, "54": 826, "55": 840, "56": 859, "57": 871, "58": 887, "59": 900, "60": 910}
 ---
 
 **Dave Jones:** Hi, I thought I'd show you a little trap for young players here about how the input resistance of your multimeter can really have an effect and really matter in some specific circumstances. Now, what I've got here is my little

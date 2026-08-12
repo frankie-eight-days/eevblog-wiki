@@ -3,6 +3,7 @@ video_id: q7VQfhkOLm8
 title: Dumpster Dell Latitude 5490 Laptop Battery Upgrade
 url: https://www.youtube.com/watch?v=q7VQfhkOLm8
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 35, "3": 49, "4": 63, "5": 77, "6": 90, "7": 105, "8": 118, "9": 134, "10": 149, "11": 163, "12": 177, "13": 192, "14": 206, "15": 224, "16": 238, "17": 251, "18": 265, "19": 276, "20": 290, "21": 308, "22": 323, "23": 338, "24": 352, "25": 369, "26": 385, "27": 401, "28": 429, "29": 443, "30": 471, "31": 486, "32": 503, "33": 520, "34": 532, "35": 543, "36": 559, "37": 569}
 ---
 
 **Dave Jones:** Hi, in the recent main channel dumpster diving video, we found this beautiful Dell laptop in the dumpster and it's a reasonably modern beast. It's probably worth about like 400 bucks used. It's actually a touchscreen. Yes, we've installed Mint on it and Huxley has

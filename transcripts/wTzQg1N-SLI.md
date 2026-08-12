@@ -3,6 +3,7 @@ video_id: wTzQg1N-SLI
 title: eevBLAB 127 - Starlink as a Satellite Energy Utility?
 url: https://www.youtube.com/watch?v=wTzQg1N-SLI
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 40, "4": 55, "5": 70, "6": 91, "7": 107, "8": 118, "9": 129, "10": 142, "11": 156, "12": 166, "13": 182, "14": 197, "15": 209, "16": 221, "17": 232, "18": 247, "19": 262, "20": 279, "21": 294, "22": 307, "23": 321, "24": 335, "25": 353, "26": 368, "27": 380, "28": 399, "29": 409, "30": 425, "31": 443, "32": 458, "33": 472, "34": 487, "35": 503, "36": 516, "37": 526, "38": 542, "39": 556, "40": 569, "41": 581, "42": 595, "43": 610, "44": 619, "45": 631}
 ---
 
 **Dave Jones:** Hi, I've got an email from a viewer, and I thought it'd be fun to go through a few back of the envelope calculations whether or not it's possible to actually use the Starlink satellite system to actually capture solar power and beam it

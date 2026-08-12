@@ -3,6 +3,7 @@ video_id: yw6mf2sWk2k
 title: EEVblog #1191 - Digital Energy Savers BUSTED!
 url: https://www.youtube.com/watch?v=yw6mf2sWk2k
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 47, "4": 67, "5": 85, "6": 102, "7": 117, "8": 131, "9": 145, "10": 160, "11": 175, "12": 200, "13": 221, "14": 236, "15": 250, "16": 266, "17": 279, "18": 293, "19": 314, "20": 332, "21": 349, "22": 365, "23": 382, "24": 395, "25": 412, "26": 429, "27": 446, "28": 461, "29": 474, "30": 491, "31": 507, "32": 524, "33": 544, "34": 559, "35": 581, "36": 598, "37": 613, "38": 636, "39": 652, "40": 668, "41": 684, "42": 696, "43": 710, "44": 729, "45": 746, "46": 762, "47": 777, "48": 791, "49": 806, "50": 822, "51": 837, "52": 852, "53": 862, "54": 881, "55": 902, "56": 921, "57": 937, "58": 948, "59": 964, "60": 977, "61": 991, "62": 1012, "63": 1032, "64": 1046, "65": 1064}
 ---
 
 **Dave Jones:** Hi, yes, it's magic woo-woo debunking time again. We've got one of these power saving devices. 30 bucks on eBay buys you this wiz-bang magical woo-woo device that apparently saves you up to 50% on your power bills. And if it sounds

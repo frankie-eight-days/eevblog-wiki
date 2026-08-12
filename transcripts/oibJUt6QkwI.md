@@ -3,6 +3,7 @@ video_id: oibJUt6QkwI
 title: EEVblog #24 - Chopper Operational Amplifiers
 url: https://www.youtube.com/watch?v=oibJUt6QkwI
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 38, "3": 53, "4": 75, "5": 92, "6": 108, "7": 121, "8": 136, "9": 151, "10": 167, "11": 186, "12": 202, "13": 222, "14": 241, "15": 262, "16": 283, "17": 305, "18": 326, "19": 342, "20": 358, "21": 378, "22": 397, "23": 417, "24": 439, "25": 450, "26": 464, "27": 479, "28": 497, "29": 516, "30": 530, "31": 551, "32": 576, "33": 594}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog. I'm your host, Dave Jones, and this is episode number 24. Right, this week I thought I'd talk about component which not many people are typically know about or use all that often. It's the chopper amplifier. The

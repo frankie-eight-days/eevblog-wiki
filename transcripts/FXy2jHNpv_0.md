@@ -3,6 +3,7 @@ video_id: FXy2jHNpv_0
 title: EEVblog #52 - Panasonic Plasma TV's Suck (and a Teardown)
 url: https://www.youtube.com/watch?v=FXy2jHNpv_0
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 38, "3": 54, "4": 67, "5": 85, "6": 99, "7": 116, "8": 131, "9": 142, "10": 152, "11": 169, "12": 182, "13": 193, "14": 207, "15": 223, "16": 237, "17": 253, "18": 270, "19": 283, "20": 297, "21": 313, "22": 329, "23": 344, "24": 366, "25": 385, "26": 398, "27": 412, "28": 425, "29": 440, "30": 459, "31": 479, "32": 497, "33": 515, "34": 530, "35": 547, "36": 564, "37": 578, "38": 593, "39": 604, "40": 618, "41": 632, "42": 645, "43": 660, "44": 673, "45": 690, "46": 708, "47": 722, "48": 737, "49": 751, "50": 765, "51": 778}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's time for something that ticks me off again. What is it this time? Well, it's plasma TVs. In this case,

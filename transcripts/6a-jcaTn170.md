@@ -3,6 +3,7 @@ video_id: 6a-jcaTn170
 title: How to Entertain a Nerd
 url: https://www.youtube.com/watch?v=6a-jcaTn170
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 57, "4": 82}
 ---
 
 **Dave Jones:** Hi, I'm Dave Jones from the EEVblog and my secret talent's a bit unusual. Every week I educate and entertain nerds like me on YouTube and trust me, that takes a lot of talent. Roll the tape. Let's blow some [ __ ] up.

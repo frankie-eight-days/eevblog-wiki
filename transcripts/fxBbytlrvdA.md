@@ -3,6 +3,7 @@ video_id: fxBbytlrvdA
 title: Return Of The Tagarno
 url: https://www.youtube.com/watch?v=fxBbytlrvdA
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 47, "4": 62, "5": 74, "6": 88, "7": 99, "8": 110, "9": 126, "10": 141, "11": 155, "12": 168, "13": 179, "14": 195, "15": 206, "16": 222, "17": 233, "18": 245, "19": 260, "20": 277, "21": 290, "22": 304, "23": 316, "24": 328, "25": 339, "26": 350, "27": 371, "28": 385, "29": 398, "30": 409, "31": 422, "32": 440, "33": 456, "34": 470, "35": 483}
 ---
 
 **Dave Jones:** Hi, you might have seen a recent video where I am had issues with what turned out to be my Tagarno microscope, we think. I originally thought I discovered this on a live stream, usually every Saturday by the way, I

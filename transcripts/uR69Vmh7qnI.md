@@ -3,6 +3,7 @@ video_id: uR69Vmh7qnI
 title: NeoDen Pick & Place Machine
 url: https://www.youtube.com/watch?v=uR69Vmh7qnI
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 32, "3": 43, "4": 59, "5": 72, "6": 83, "7": 97, "8": 109, "9": 123, "10": 135, "11": 145, "12": 159, "13": 169, "14": 184, "15": 202, "16": 213, "17": 225, "18": 245, "19": 259, "20": 273, "21": 285, "22": 300, "23": 317, "24": 330, "25": 351, "26": 362, "27": 378, "28": 393}
 ---
 
 **Dave Jones:** Now, if you're after an affordable uh pick and place machine, affordable in quote marks, well, it is. Um this one's about 15,000 Australian. About 15, about 10K US. It's the NeoDen. Everyone's raving about this thing um because it is

@@ -3,6 +3,7 @@ video_id: pNqlUSYnp78
 title: Pro Tip: Don't Spam Your Resume
 url: https://www.youtube.com/watch?v=pNqlUSYnp78
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 31, "3": 49, "4": 62, "5": 75, "6": 86, "7": 98, "8": 114, "9": 127, "10": 142, "11": 161, "12": 176, "13": 189, "14": 202, "15": 216, "16": 231, "17": 243, "18": 259, "19": 274, "20": 287, "21": 301, "22": 314, "23": 328, "24": 341, "25": 352, "26": 366, "27": 379, "28": 394, "29": 406, "30": 418, "31": 430, "32": 440, "33": 451, "34": 463, "35": 475, "36": 491, "37": 501, "38": 514, "39": 527, "40": 543, "41": 556, "42": 567, "43": 583, "44": 595, "45": 605, "46": 619, "47": 630, "48": 642, "49": 653, "50": 665, "51": 680, "52": 692, "53": 704, "54": 717, "55": 728, "56": 741, "57": 755, "58": 768, "59": 781}
 ---
 
 **Dave Jones:** Hi. Pro-tip, don't spam your resume. Now, you know I've done quite a few videos on resume job tips and all sorts of stuff like that. And as it turns out, somebody saw one of my YouTube videos, not on the job interview

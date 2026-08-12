@@ -3,6 +3,7 @@ video_id: wSdkpx4BjzY
 title: BM787BT Apple Shoe Phone Test
 url: https://www.youtube.com/watch?v=wSdkpx4BjzY
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 42, "4": 59, "5": 71, "6": 87, "7": 101, "8": 114, "9": 131, "10": 145, "11": 163, "12": 176, "13": 193, "14": 206, "15": 219, "16": 233, "17": 246, "18": 263, "19": 280}
 ---
 
 **Dave Jones:** Hi, I'm going to be testing the new BM786BT, the Bluetooth uh meter, and I'll be getting them, I don't know, soonish, I guess. Um, anyway, I wanted to try out the Bluetooth feature with an Apple shoe phone. So, I got myself a secondhand

@@ -3,6 +3,7 @@ video_id: yGRZmoc02Fs
 title: Sydney Mini Maker Faire 2014 - Announcement
 url: https://www.youtube.com/watch?v=yGRZmoc02Fs
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 45, "4": 55, "5": 68}
 ---
 
 **Dave Jones:** Hi, just a quick announcement uh video about the Sydney Mini Maker Fair. Yes, it's on again. Yes, it's back at the Power the awesome Powerhouse Museum here in Sydney and it's on this weekend. That's the uh 16th and 17th of August.

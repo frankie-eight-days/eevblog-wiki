@@ -3,6 +3,7 @@ video_id: SKuZ4_cZjDU
 title: MYSTERY Box of Multimeters
 url: https://www.youtube.com/watch?v=SKuZ4_cZjDU
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 41, "4": 55, "5": 70, "6": 81, "7": 102, "8": 111, "9": 129, "10": 150, "11": 166, "12": 183, "13": 196, "14": 217, "15": 231, "16": 251, "17": 270, "18": 280, "19": 299, "20": 313, "21": 334, "22": 351, "23": 362, "24": 376, "25": 391, "26": 409, "27": 422, "28": 436, "29": 447, "30": 469, "31": 491, "32": 503, "33": 523, "34": 542, "35": 553, "36": 567, "37": 586, "38": 598, "39": 619, "40": 631, "41": 660, "42": 671, "43": 688, "44": 701, "45": 714, "46": 728, "47": 744, "48": 761, "49": 773, "50": 787, "51": 804, "52": 818, "53": 829, "54": 841, "55": 856}
 ---
 
 **Dave Jones:** Hi, when you're in the business I'm in, you tend to accumulate multimeters. And I actually have a box of multimeters here in the lab. It's just a box of random multimeters. And I was looking for my BM869 the other day and

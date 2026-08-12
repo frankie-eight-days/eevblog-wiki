@@ -3,6 +3,7 @@ video_id: v3cnEr1sriQ
 title: EEVblog #327 - Makerbot Replicator Troubleshooting
 url: https://www.youtube.com/watch?v=v3cnEr1sriQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 44, "4": 61, "5": 76, "6": 88, "7": 102, "8": 114, "9": 133, "10": 152, "11": 171, "12": 188, "13": 202, "14": 221, "15": 236, "16": 251, "17": 266, "18": 282, "19": 303, "20": 326, "21": 343, "22": 357, "23": 372, "24": 389, "25": 413, "26": 430, "27": 444, "28": 460, "29": 483, "30": 498, "31": 511, "32": 528, "33": 543, "34": 552, "35": 566, "36": 581, "37": 593, "38": 606, "39": 617, "40": 633, "41": 648, "42": 662, "43": 678, "44": 695, "45": 709, "46": 719, "47": 734, "48": 751, "49": 764, "50": 782, "51": 797, "52": 816, "53": 829, "54": 848, "55": 867, "56": 885, "57": 900, "58": 917, "59": 930, "60": 945, "61": 961, "62": 975, "63": 990, "64": 1014, "65": 1025}
 ---
 
 **Dave Jones:** Hi. If you've been following my tweets and on the forum, then you may have known that I had a few issues with my new MakerBot Replicator here. And um in the unboxing, I uh complained that I couldn't find the SD card where I

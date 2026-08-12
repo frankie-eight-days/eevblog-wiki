@@ -3,6 +3,7 @@ video_id: aLcdm6gB6eE
 title: DragonFly $300,000 3D PCB Printer Prototype
 url: https://www.youtube.com/watch?v=aLcdm6gB6eE
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 26, "3": 43, "4": 54, "5": 69, "6": 82, "7": 96, "8": 109, "9": 123, "10": 135, "11": 151, "12": 169, "13": 182}
 ---
 
 **Dave Jones:** All right. Everyone remembers John. Hi everyone. He's from Immuta. He's going to show us this thing, which is the Nano Dimension is the company. Yep, correct. It's an Australian company. 3D printer multi-layer PCB. They're an Israeli company, and he doesn't have one

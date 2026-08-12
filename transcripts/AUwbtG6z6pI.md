@@ -3,6 +3,7 @@ video_id: AUwbtG6z6pI
 title: EEVblog #1 - Rigol DS1052E Oscilloscope Review
 url: https://www.youtube.com/watch?v=AUwbtG6z6pI
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 49, "4": 71, "5": 93, "6": 112, "7": 129, "8": 146, "9": 168, "10": 184, "11": 198, "12": 215, "13": 236, "14": 257, "15": 269, "16": 284, "17": 301, "18": 322, "19": 338, "20": 353, "21": 378, "22": 400, "23": 417, "24": 436, "25": 453, "26": 473, "27": 491, "28": 504, "29": 520, "30": 535, "31": 552, "32": 566, "33": 584}
 ---
 
 **Dave Jones:** Hi, I'm Dave Jones. I was speaking to a colleague the other day and we were talking about video blogs and you know, all that online stuff. And he said, "Why isn't there a blog for engineers like us?" And

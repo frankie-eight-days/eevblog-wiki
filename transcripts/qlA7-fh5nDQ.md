@@ -3,6 +3,7 @@ video_id: qlA7-fh5nDQ
 title: EEVblog #66 - Death & Destruction of a Fluke Multimeter
 url: https://www.youtube.com/watch?v=qlA7-fh5nDQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 32, "3": 76, "4": 207, "5": 315, "6": 326, "7": 341, "8": 357, "9": 379, "10": 395, "11": 414, "12": 440, "13": 467, "14": 494, "15": 530, "16": 571, "17": 591, "18": 602, "19": 613, "20": 627, "21": 650, "22": 665, "23": 678, "24": 694, "25": 704, "26": 718, "27": 731, "28": 756, "29": 776, "30": 826, "31": 841, "32": 879, "33": 904, "34": 920, "35": 933, "36": 948, "37": 964, "38": 980, "39": 993}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host Dave Jones. Hi. In the previous blog, I promised I'd take this brand spanking new Fluke 28 series 2 multimeter and

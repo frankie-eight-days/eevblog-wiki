@@ -3,6 +3,7 @@ video_id: W91qP8GpgjM
 title: Apple Powerbook 165C Laptop
 url: https://www.youtube.com/watch?v=W91qP8GpgjM
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 32, "3": 45, "4": 56, "5": 70, "6": 81, "7": 98, "8": 114, "9": 128, "10": 142, "11": 153, "12": 168, "13": 182, "14": 198, "15": 215, "16": 230, "17": 245, "18": 261, "19": 276, "20": 292, "21": 312, "22": 328, "23": 344, "24": 364, "25": 378, "26": 394, "27": 410, "28": 429, "29": 448, "30": 468, "31": 487, "32": 502, "33": 517, "34": 539}
 ---
 
 **Dave Jones:** Hi, I was digging around in the bowels of the dumpster and check out what I found here. I had no idea I had this. It's Look, there it is. It's got the fruity logo, a tiny fruity logo, but

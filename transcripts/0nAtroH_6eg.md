@@ -3,6 +3,7 @@ video_id: 0nAtroH_6eg
 title: Bulova Accutron II Watch Repair - PART 1
 url: https://www.youtube.com/watch?v=0nAtroH_6eg
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 38, "3": 56, "4": 70, "5": 86, "6": 101, "7": 112, "8": 129, "9": 147, "10": 170, "11": 188, "12": 208, "13": 230, "14": 246, "15": 261, "16": 277, "17": 295, "18": 310, "19": 325, "20": 342, "21": 358, "22": 373, "23": 391, "24": 412, "25": 425, "26": 439, "27": 462, "28": 484, "29": 503, "30": 515, "31": 534, "32": 548, "33": 562, "34": 575, "35": 588, "36": 603, "37": 619, "38": 638, "39": 650, "40": 664, "41": 678, "42": 690}
 ---
 
 **Dave Jones:** Hi, I've got another watch video for you. This is from my collection. It's the Bulova Accutron II. Not that Accutron I one rubbish. Very a beautiful watch. It's got the high frequency 262 kHz. There it is. It even tells you.

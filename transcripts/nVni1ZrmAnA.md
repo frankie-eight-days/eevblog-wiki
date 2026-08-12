@@ -3,6 +3,7 @@ video_id: nVni1ZrmAnA
 title: Flooded Logitech Keyboard Teardown
 url: https://www.youtube.com/watch?v=nVni1ZrmAnA
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 31, "3": 51, "4": 69, "5": 82, "6": 101, "7": 114, "8": 135, "9": 167, "10": 183, "11": 202, "12": 225, "13": 244, "14": 261, "15": 278, "16": 293, "17": 309, "18": 321, "19": 336, "20": 352, "21": 369, "22": 389, "23": 407}
 ---
 
 **Dave Jones:** Hi, thought we'd just take a quick look inside this Logitech keyboard which was like on the table on the bench directly under where all the water fell out of the roof. So I believe this thing got absolutely flooded in the EE

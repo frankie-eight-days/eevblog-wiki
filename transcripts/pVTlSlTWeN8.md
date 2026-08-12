@@ -3,6 +3,7 @@ video_id: pVTlSlTWeN8
 title: Marble Run Time Lapse Build
 url: https://www.youtube.com/watch?v=pVTlSlTWeN8
 source: youtube-asr
+timestamps: {"0": 0, "1": 138, "2": 154, "3": 168, "4": 195, "5": 213, "6": 232, "7": 253, "8": 274, "9": 297, "10": 316, "11": 338, "12": 354, "13": 367, "14": 383}
 ---
 
 **Dave Jones:** Heat. [Applause] Heat. You're getting [Music] [Music] [Music] Actually, I think we are Finished. I think we can technically get it to go now. Yeah. What do you think? Yes. Yeah. I got the marble to here, Daddy. All right. Give me a high five. We finished

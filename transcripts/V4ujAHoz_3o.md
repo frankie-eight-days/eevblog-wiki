@@ -3,6 +3,7 @@ video_id: V4ujAHoz_3o
 title: Zebra 203dpi vs 300dpi Thermal Label Printer - PART 2
 url: https://www.youtube.com/watch?v=V4ujAHoz_3o
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 33, "3": 49, "4": 67, "5": 82, "6": 98, "7": 115, "8": 134, "9": 155, "10": 171, "11": 187, "12": 204, "13": 221, "14": 233, "15": 244, "16": 259, "17": 275, "18": 294, "19": 309, "20": 325, "21": 337, "22": 352, "23": 371, "24": 385, "25": 399, "26": 414, "27": 428, "28": 445}
 ---
 
 **Dave Jones:** Hi, just a quick follow up video on the 203 DPI versus 300 DPI Zebra or 203 DPI Zebra versus the 300 DPI hot label over here. And yes, I know there are two issues at play here. Sorry I didn't

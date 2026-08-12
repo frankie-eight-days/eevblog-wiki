@@ -3,6 +3,7 @@ video_id: F-ZDiGmLvTs
 title: EEVblog #306 - Jim Williams Pulse Generator
 url: https://www.youtube.com/watch?v=F-ZDiGmLvTs
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 28, "3": 46, "4": 60, "5": 77, "6": 93, "7": 110, "8": 125, "9": 144, "10": 158, "11": 176, "12": 189, "13": 206, "14": 222, "15": 236, "16": 249, "17": 265, "18": 278, "19": 293, "20": 308, "21": 327, "22": 342, "23": 356, "24": 370, "25": 383, "26": 400, "27": 417, "28": 437, "29": 453, "30": 466, "31": 483, "32": 501, "33": 514, "34": 526, "35": 538, "36": 553, "37": 566, "38": 580, "39": 595, "40": 611, "41": 625, "42": 642, "43": 662, "44": 674, "45": 691, "46": 702, "47": 718, "48": 732, "49": 745, "50": 760, "51": 773, "52": 784, "53": 795, "54": 809, "55": 824, "56": 841, "57": 857, "58": 873, "59": 890, "60": 908, "61": 923}
 ---
 
 **Dave Jones:** Hi. Now, this is a bit of a follow-on from my mailbag uh segment. Decided to make this as a separate video. We're actually using a uh pulse generator here from Minoot. Thank you very much, Minoot, who uh sent me this, and I'll

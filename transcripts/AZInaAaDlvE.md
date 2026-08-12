@@ -3,6 +3,7 @@ video_id: AZInaAaDlvE
 title: EEVblog #635 - FPGA's Vs Microcontrollers
 url: https://www.youtube.com/watch?v=AZInaAaDlvE
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 32, "3": 46, "4": 61, "5": 74, "6": 90, "7": 105, "8": 123, "9": 136, "10": 146, "11": 160, "12": 175, "13": 192, "14": 208, "15": 219, "16": 234, "17": 248, "18": 266, "19": 280, "20": 292, "21": 304, "22": 317, "23": 328, "24": 340, "25": 353, "26": 367, "27": 380, "28": 395, "29": 412, "30": 428, "31": 449, "32": 466, "33": 481, "34": 496, "35": 507, "36": 523}
 ---
 
 **Dave Jones:** Hi, in this video we're going to take a look at a couple of affordable FPGA starter kits to get you into FPGAs. But before I jump into that, I thought I'd just do a quick little primer here on

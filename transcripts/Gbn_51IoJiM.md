@@ -3,6 +3,7 @@ video_id: Gbn_51IoJiM
 title: Amiga 2000 Teardown & Power Up
 url: https://www.youtube.com/watch?v=Gbn_51IoJiM
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 46, "4": 60, "5": 75, "6": 89, "7": 106, "8": 117, "9": 129, "10": 144, "11": 153, "12": 173, "13": 188, "14": 199, "15": 210, "16": 222, "17": 240, "18": 256, "19": 273, "20": 288, "21": 302, "22": 316, "23": 336, "24": 349, "25": 363, "26": 376, "27": 394, "28": 409, "29": 424, "30": 439, "31": 455, "32": 471, "33": 488, "34": 508, "35": 523, "36": 539, "37": 554, "38": 574, "39": 588, "40": 607, "41": 620, "42": 638, "43": 660, "44": 675, "45": 690, "46": 707, "47": 727}
 ---
 
 **Dave Jones:** Hi, yes, it's vintage computer time again. We've got the classic Commodore Amiga 2000. All the fanboys go wild. Um, this is actually a very requested uh video to take a look at an Amiga um whether it any sort of Amiga cuz if

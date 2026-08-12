@@ -3,6 +3,7 @@ video_id: 6GIscUsnlM0
 title: EEVblog #568 - Solderless Breadboard Capacitance
 url: https://www.youtube.com/watch?v=6GIscUsnlM0
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 29, "3": 41, "4": 57, "5": 71, "6": 85, "7": 97, "8": 115, "9": 131, "10": 147, "11": 160, "12": 174, "13": 191, "14": 205, "15": 222, "16": 237, "17": 250, "18": 264, "19": 279, "20": 292, "21": 305, "22": 321, "23": 334, "24": 346, "25": 359, "26": 371, "27": 390, "28": 405, "29": 419, "30": 435, "31": 449, "32": 463, "33": 476, "34": 490, "35": 505, "36": 519, "37": 537, "38": 552, "39": 566, "40": 579, "41": 595, "42": 611, "43": 626, "44": 638, "45": 658, "46": 670, "47": 688, "48": 702, "49": 716, "50": 730, "51": 744}
 ---
 
 **Dave Jones:** Hi, the humble breadboard. Yes, you've no doubt got one in your kit and you've no doubt used it before. It is one of the most popular tools for quick circuit prototyping and well, for good reason because you can just plug components in,

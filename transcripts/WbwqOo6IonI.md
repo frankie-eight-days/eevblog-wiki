@@ -3,6 +3,7 @@ video_id: WbwqOo6IonI
 title: EEVblog 1745 - Part 2 - BM2257 Buzzer Boogaloo
 url: https://www.youtube.com/watch?v=WbwqOo6IonI
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 36, "3": 51, "4": 66, "5": 81, "6": 97, "7": 117, "8": 131, "9": 146, "10": 168, "11": 183, "12": 196, "13": 212, "14": 238, "15": 256, "16": 270, "17": 285, "18": 299, "19": 311, "20": 325}
 ---
 
 **Dave Jones:** Hi, just a quick follow up video to my main channel video about testing the BM2257 because there's always people who complain about these sort of things. I'm going to repeat the experiment here in my lab. So entirely different

@@ -3,6 +3,7 @@ video_id: UJ6JG4eV0nY
 title: BM036 Clamp Meter Magnetisation Test
 url: https://www.youtube.com/watch?v=UJ6JG4eV0nY
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 42, "3": 57, "4": 74, "5": 84, "6": 101, "7": 119, "8": 132, "9": 144, "10": 160, "11": 170, "12": 181, "13": 194, "14": 212, "15": 227, "16": 238, "17": 249, "18": 268, "19": 281, "20": 290, "21": 309, "22": 326, "23": 340, "24": 362, "25": 378, "26": 392, "27": 412, "28": 424, "29": 439, "30": 452, "31": 474, "32": 490, "33": 508, "34": 519, "35": 533, "36": 547, "37": 563, "38": 577, "39": 595}
 ---
 
 **Dave Jones:** Hi, just a quick update video on this BM036 that was returned from a customer and on DC amps only, it's got an offset here. It's like actually off the scale. Here I'll link in the only on DC. It's otherwise working. And we had a

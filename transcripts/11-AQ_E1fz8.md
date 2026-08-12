@@ -3,6 +3,7 @@ video_id: 11-AQ_E1fz8
 title: Siglent SDS1000X-E Serial Decoding
 url: https://www.youtube.com/watch?v=11-AQ_E1fz8
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 33, "3": 47, "4": 61, "5": 80, "6": 95, "7": 107, "8": 119, "9": 134, "10": 143, "11": 159, "12": 171, "13": 189, "14": 205, "15": 218, "16": 232, "17": 246, "18": 259, "19": 271, "20": 282, "21": 295, "22": 309, "23": 321, "24": 334}
 ---
 
 **Dave Jones:** Hi, uh just a sneak peek at the new uh unreleased Siglent SDS 1202X E series. It's not available in the 1102, only comes in 200 meg, and a lot of people have asked about the serial decoding in this thing. So, I'll

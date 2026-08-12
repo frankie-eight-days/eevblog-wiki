@@ -3,6 +3,7 @@ video_id: LeVZ5n3K2io
 title: eevBLAB 111 - The TMA Banning x1/x10 Switchable Probes?
 url: https://www.youtube.com/watch?v=LeVZ5n3K2io
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 52, "4": 69, "5": 92, "6": 113, "7": 130, "8": 145, "9": 159, "10": 173, "11": 190, "12": 201, "13": 217, "14": 230, "15": 246, "16": 262, "17": 276, "18": 289, "19": 303, "20": 317, "21": 330, "22": 345, "23": 361, "24": 380, "25": 394, "26": 405, "27": 418, "28": 429, "29": 445}
 ---
 
 **Dave Jones:** Hi, just a quick video to share an announcement here which showed up on my Twitter timeline. So I thanks to the viewer that pointed me to this. It's just released. The TMA announces retirement of times 1 times 10 switchable oscilloscope probes

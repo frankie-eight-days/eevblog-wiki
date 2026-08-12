@@ -3,6 +3,7 @@ video_id: 5M5MF6KE-jY
 title: EEVblog 1579 - Nuclear Diamond Battery FRAUD Lawsuit by SEC!
 url: https://www.youtube.com/watch?v=5M5MF6KE-jY
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 33, "3": 45, "4": 60, "5": 77, "6": 96, "7": 113, "8": 128, "9": 147, "10": 163, "11": 175, "12": 189, "13": 207, "14": 224, "15": 241, "16": 257, "17": 271, "18": 283, "19": 297, "20": 311, "21": 323, "22": 337, "23": 350, "24": 360, "25": 372, "26": 388, "27": 404, "28": 424, "29": 438, "30": 457, "31": 470, "32": 483, "33": 495, "34": 511, "35": 524, "36": 536, "37": 548, "38": 563, "39": 574, "40": 589, "41": 600, "42": 615, "43": 626, "44": 642, "45": 657, "46": 671, "47": 688, "48": 704, "49": 716, "50": 733, "51": 746, "52": 760, "53": 777, "54": 792, "55": 803, "56": 818, "57": 832, "58": 845, "59": 859, "60": 878, "61": 892, "62": 910, "63": 929, "64": 940, "65": 957, "66": 970, "67": 985, "68": 999, "69": 1010, "70": 1023, "71": 1038, "72": 1054}
 ---
 
 **Dave Jones:** Hi. Do you remember EVlog number 1333? Nano diamond self-charging batteries could disrupt energy as we know it. And I did a debunking video on that and how that was basically marketing Now, and not that these things aren't real. Um like these beta voltaic

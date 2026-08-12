@@ -3,6 +3,7 @@ video_id: YkgCcYG29nk
 title: Siglent SDS1000X HD Display Update Rate + Web Interface
 url: https://www.youtube.com/watch?v=YkgCcYG29nk
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 32, "3": 50, "4": 62, "5": 75, "6": 88, "7": 100, "8": 118, "9": 132, "10": 146, "11": 166, "12": 177, "13": 189, "14": 205, "15": 218, "16": 232, "17": 247, "18": 260, "19": 275, "20": 293, "21": 308, "22": 323, "23": 337, "24": 350, "25": 365, "26": 378, "27": 392, "28": 410, "29": 424, "30": 436, "31": 449, "32": 460, "33": 473, "34": 486, "35": 499, "36": 514, "37": 528, "38": 543, "39": 556, "40": 567, "41": 584}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up on this uh Siglent SDS uh 1204 X HD as compared to uh the 2354 XR HD. So, So, basically the 1000 X HD versus the 2000 XR HD. And you know how I noted in the video, sorry about my

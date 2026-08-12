@@ -3,6 +3,7 @@ video_id: xc2HKX6XwiA
 title: EEVblog #649 - Power Designs 2005 PSU Teardown
 url: https://www.youtube.com/watch?v=xc2HKX6XwiA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 50, "4": 67, "5": 85, "6": 100, "7": 114, "8": 125, "9": 141, "10": 155, "11": 171, "12": 183, "13": 197, "14": 210, "15": 225, "16": 239, "17": 251, "18": 264, "19": 280, "20": 300, "21": 317, "22": 337, "23": 351, "24": 365, "25": 379, "26": 395, "27": 412, "28": 429, "29": 447, "30": 464, "31": 478, "32": 495, "33": 510, "34": 528, "35": 543, "36": 558, "37": 573, "38": 588, "39": 602, "40": 614, "41": 628, "42": 641, "43": 657, "44": 671, "45": 685, "46": 703, "47": 719, "48": 740, "49": 755, "50": 771, "51": 786, "52": 799, "53": 815, "54": 827, "55": 848, "56": 866, "57": 881, "58": 894, "59": 907, "60": 924, "61": 942, "62": 960, "63": 974, "64": 991, "65": 1006, "66": 1018, "67": 1033, "68": 1048, "69": 1061}
 ---
 
 **Dave Jones:** Hi, welcome to Teardown Tuesday. We're going to take a look at an interesting power supply today. It's from a company called Power Designs Inc. in New York and it's a precision power source. It's a model 2005 and just as the name suggests it is a

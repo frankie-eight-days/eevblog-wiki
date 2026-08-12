@@ -3,6 +3,7 @@ video_id: y-a5rJ2ql10
 title: I was attacked on the street by a crazed fan
 url: https://www.youtube.com/watch?v=y-a5rJ2ql10
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 30, "3": 44, "4": 61, "5": 76}
 ---
 
 **Dave Jones:** Hi, I'm out and about and I thought I'd take you on a tour of something really cool. Let's check it out. I hope you find it as interesting as I do. So, yeah, let's go. We'll go on a tour. It's

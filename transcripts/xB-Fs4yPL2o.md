@@ -3,6 +3,7 @@ video_id: xB-Fs4yPL2o
 title: EEVblog #1096 - ANENG Q1 Multimeter Teardown (Now in 4K!)
 url: https://www.youtube.com/watch?v=xB-Fs4yPL2o
 source: youtube-asr
+timestamps: {"0": 8, "1": 20, "2": 31, "3": 44, "4": 58, "5": 74, "6": 89, "7": 102, "8": 114, "9": 129, "10": 145, "11": 157, "12": 170, "13": 184, "14": 196, "15": 210, "16": 223, "17": 241, "18": 256, "19": 266, "20": 277, "21": 296, "22": 310, "23": 325, "24": 338, "25": 352, "26": 366, "27": 381, "28": 395, "29": 409, "30": 426, "31": 443, "32": 457, "33": 470, "34": 483, "35": 497, "36": 510, "37": 522, "38": 535, "39": 551, "40": 591}
 ---
 
 **Dave Jones:** Anyway, let's take a look inside this thing. I don't particularly like the children bail. It just like comes out every time you got to dick it around to put back in. They do have metal threaded insert though, but the screw comes out

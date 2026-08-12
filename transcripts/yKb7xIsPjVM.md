@@ -3,6 +3,7 @@ video_id: yKb7xIsPjVM
 title: EEVblog 1379 - What's all this NPLC Stuff Anyhow?
 url: https://www.youtube.com/watch?v=yKb7xIsPjVM
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 25, "3": 38, "4": 56, "5": 72, "6": 85, "7": 101, "8": 114, "9": 128, "10": 144, "11": 160, "12": 176, "13": 194, "14": 207, "15": 221, "16": 237, "17": 252, "18": 267, "19": 279, "20": 295, "21": 310, "22": 326, "23": 339, "24": 353, "25": 371, "26": 381, "27": 400, "28": 417, "29": 432, "30": 445, "31": 460, "32": 477, "33": 494, "34": 510, "35": 524, "36": 542, "37": 555, "38": 568, "39": 582, "40": 599, "41": 611, "42": 626, "43": 636, "44": 650, "45": 664, "46": 675, "47": 687, "48": 700, "49": 714, "50": 727, "51": 742, "52": 753, "53": 767, "54": 779, "55": 796, "56": 809, "57": 822, "58": 837, "59": 852, "60": 866, "61": 882, "62": 897, "63": 910, "64": 924, "65": 940, "66": 953, "67": 967, "68": 982, "69": 993, "70": 1007, "71": 1024, "72": 1037, "73": 1049, "74": 1061, "75": 1074}
 ---
 
 **Dave Jones:** Hi, this is your humble multimeter and you used to it just on DC volts here reading zero volts when you're just got your probes sitting there on the bench. It's reading nothing and you might be familiar of course. You switch it over

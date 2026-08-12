@@ -3,6 +3,7 @@ video_id: 8P8Af5SR57U
 title: Goal Zero Yeti 400 Lithium Battery Follow--up
 url: https://www.youtube.com/watch?v=8P8Af5SR57U
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 32, "3": 50, "4": 68, "5": 85, "6": 98, "7": 112, "8": 124, "9": 136, "10": 154, "11": 167, "12": 183, "13": 199, "14": 212, "15": 224, "16": 237, "17": 250}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on this uh Go Zero Yeti 400 uh power supply. Uh it's the next day now and I didn't deliberately didn't leave it um charging uh overnight. So, it's still at 38% where I left it yesterday. Uh I just

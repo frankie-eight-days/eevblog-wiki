@@ -3,6 +3,7 @@ video_id: Bz9HkfPSCDo
 title: EEVblog #6 - Part 1 of 2 - Meterman 37XR Multimeter review
 url: https://www.youtube.com/watch?v=Bz9HkfPSCDo
 source: youtube-asr
+timestamps: {"0": 0, "1": 23, "2": 42, "3": 60, "4": 81, "5": 97, "6": 115, "7": 132, "8": 148, "9": 163, "10": 181, "11": 200, "12": 218, "13": 237, "14": 252, "15": 268, "16": 287, "17": 306, "18": 325, "19": 337, "20": 353, "21": 374, "22": 390, "23": 402, "24": 419, "25": 430, "26": 442, "27": 455, "28": 467, "29": 480, "30": 495, "31": 514, "32": 531, "33": 545, "34": 563, "35": 576}
 ---
 
 **Dave Jones:** Hi, welcome to the EE Vblog. I'm your host, Dave Jones, and this is episode number six. Now, I had a comment on the number five blog from a person called Brack, and he said, "How about I name some microchip devices that I really

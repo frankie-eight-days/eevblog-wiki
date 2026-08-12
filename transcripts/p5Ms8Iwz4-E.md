@@ -3,6 +3,7 @@ video_id: p5Ms8Iwz4-E
 title: Wafer Microscope Weirdness!
 url: https://www.youtube.com/watch?v=p5Ms8Iwz4-E
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 25, "3": 42, "4": 67, "5": 84, "6": 97, "7": 113, "8": 132, "9": 143, "10": 154, "11": 165, "12": 177, "13": 194, "14": 207, "15": 221, "16": 240, "17": 255, "18": 275, "19": 287, "20": 299, "21": 316, "22": 331, "23": 344, "24": 364, "25": 379, "26": 392, "27": 407}
 ---
 
 **Dave Jones:** Hi. Yet another quick second channel video. Second channel is going gang busters at the moment. Um we're we're just setting up the Olympus microscope over here. And uh we try and move the uh stage there, David. Yeah, like like if

@@ -3,6 +3,7 @@ video_id: tM2j9zuBiRQ
 title: Siglent Signal Generator Fix
 url: https://www.youtube.com/watch?v=tM2j9zuBiRQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 32, "3": 49, "4": 65, "5": 83, "6": 98, "7": 114, "8": 138, "9": 149, "10": 162, "11": 178, "12": 204, "13": 221, "14": 239, "15": 261, "16": 281, "17": 299}
 ---
 
 **Dave Jones:** Hi, just a follow-up to this Siglent SDG2122X generator that failed. What what what what and I figured it might have been like, you know, the file system OS or something like that. I can't remember the details. Original video linked in down below.

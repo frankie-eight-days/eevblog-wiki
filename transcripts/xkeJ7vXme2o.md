@@ -3,6 +3,7 @@ video_id: xkeJ7vXme2o
 title: Laugh as Dave FAILS to Install pfSense
 url: https://www.youtube.com/watch?v=xkeJ7vXme2o
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 26, "3": 40, "4": 55, "5": 68, "6": 81, "7": 95, "8": 108, "9": 121, "10": 134, "11": 148, "12": 158, "13": 172, "14": 183, "15": 198, "16": 214, "17": 236, "18": 253, "19": 266, "20": 278, "21": 292, "22": 310, "23": 327, "24": 340, "25": 361, "26": 380, "27": 397, "28": 413, "29": 431, "30": 452, "31": 468, "32": 484, "33": 500, "34": 521, "35": 540, "36": 555, "37": 569, "38": 582, "39": 601, "40": 621, "41": 634, "42": 659}
 ---
 
 **Dave Jones:** Hi, I'm going to be doing some penguiny stuff today. And you know what an absolute guru I am with penguin computer stuff. Um, I'm going to be repurposing this uh BeeLink, which you've seen in the mailbag, the EQI12.

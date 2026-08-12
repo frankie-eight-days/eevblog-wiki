@@ -3,6 +3,7 @@ video_id: jey8NmffhTo
 title: EEVblog #1158 - How To Create PCB Mod Boards
 url: https://www.youtube.com/watch?v=jey8NmffhTo
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 32, "3": 51, "4": 65, "5": 78, "6": 93, "7": 105, "8": 125, "9": 137, "10": 153, "11": 167, "12": 181, "13": 198, "14": 211, "15": 222, "16": 236, "17": 247, "18": 262, "19": 275, "20": 293, "21": 307, "22": 321, "23": 333, "24": 345, "25": 360, "26": 372, "27": 384, "28": 397, "29": 410, "30": 424, "31": 435, "32": 450, "33": 465, "34": 481, "35": 493, "36": 507, "37": 519, "38": 531, "39": 542, "40": 556, "41": 570, "42": 583, "43": 595, "44": 610, "45": 623, "46": 633, "47": 647, "48": 660, "49": 677, "50": 692, "51": 706, "52": 716, "53": 730, "54": 744, "55": 755, "56": 771, "57": 786, "58": 808, "59": 822, "60": 833, "61": 847, "62": 862, "63": 873, "64": 887, "65": 900, "66": 913, "67": 928, "68": 942, "69": 956, "70": 968, "71": 979, "72": 993, "73": 1002}
 ---
 
 **Dave Jones:** Hi, quite often in product design, product manufacture, production, repair, you might have to upgrade things in the field, you might find a fault in your product after you released it, or you might want to upgrade its performance, you want to make some changes, things

@@ -3,6 +3,7 @@ video_id: 6ctqMFtjO1c
 title: RIP Steve Jobs - The Magic is Gone - EEVblog #206
 url: https://www.youtube.com/watch?v=6ctqMFtjO1c
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 38, "3": 56, "4": 75, "5": 92, "6": 114, "7": 130, "8": 149, "9": 166, "10": 181, "11": 198, "12": 220, "13": 322, "14": 336, "15": 351, "16": 365, "17": 383, "18": 398, "19": 415, "20": 434, "21": 453, "22": 469, "23": 484, "24": 501}
 ---
 
 **Dave Jones:** Hi, it's been a while since I've done a drive-time rant and considering that I don't drive anymore, I thought I'd do a walk-time rant. So, here we go. Start out with some news. Huge, very sad news if you haven't heard it. I'm sure

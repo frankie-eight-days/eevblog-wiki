@@ -3,6 +3,7 @@ video_id: aTpm62ToNOM
 title: eevBLAB #82 - Kickstarter Over-unity Gravitational Power Generator!
 url: https://www.youtube.com/watch?v=aTpm62ToNOM
 source: youtube-asr
+timestamps: {"0": 1, "1": 23, "2": 40, "3": 55, "4": 72, "5": 86, "6": 101, "7": 115, "8": 130, "9": 143, "10": 159, "11": 171, "12": 183, "13": 196, "14": 207, "15": 220, "16": 233, "17": 246, "18": 261, "19": 272, "20": 292, "21": 306, "22": 319, "23": 332, "24": 346, "25": 361, "26": 376, "27": 388, "28": 407, "29": 419, "30": 436, "31": 452, "32": 471, "33": 484, "34": 498, "35": 516, "36": 532, "37": 547, "38": 560, "39": 574, "40": 586, "41": 598, "42": 612, "43": 627, "44": 642, "45": 653, "46": 667, "47": 679, "48": 695, "49": 710, "50": 729, "51": 741, "52": 756, "53": 769, "54": 787, "55": 803, "56": 821, "57": 838, "58": 853, "59": 866, "60": 881, "61": 896, "62": 911, "63": 927, "64": 938, "65": 952, "66": 964, "67": 976, "68": 988, "69": 1004, "70": 1016, "71": 1029, "72": 1043, "73": 1061, "74": 1077, "75": 1092, "76": 1111}
 ---
 
 **Dave Jones:** Hi, yes, it's dodgy Kickstarter time again, but this isn't really a busted video because I don't have to do anything except read the page and read their own patent to see that this is fundamentally busted. Yes, it's free energy, the gravitational

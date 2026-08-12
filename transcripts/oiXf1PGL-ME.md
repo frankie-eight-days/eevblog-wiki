@@ -3,6 +3,7 @@ video_id: oiXf1PGL-ME
 title: EEVblog #214 - Commander Phone System Teardown
 url: https://www.youtube.com/watch?v=oiXf1PGL-ME
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 32, "3": 53, "4": 70, "5": 87, "6": 101, "7": 117, "8": 132, "9": 154}
 ---
 
 **Dave Jones:** Okay, why not? Here's an impromptu tear down. And here's why you should always carry some tools with you. My little uh Vtorox um Mini Champ there. And I've got the uh Vtoronox Cyber Tool. I always carry that in my bag just in case. But

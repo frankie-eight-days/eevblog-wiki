@@ -3,6 +3,7 @@ video_id: e98cYNPUxcg
 title: Fluke PM3370B Solder Joint Inspection
 url: https://www.youtube.com/watch?v=e98cYNPUxcg
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 28, "3": 41, "4": 52, "5": 66, "6": 78, "7": 91, "8": 104, "9": 120, "10": 134, "11": 149, "12": 162, "13": 175, "14": 190, "15": 204, "16": 220, "17": 233, "18": 250, "19": 264, "20": 277, "21": 289, "22": 304, "23": 315, "24": 328, "25": 342, "26": 360, "27": 375, "28": 388, "29": 400, "30": 416, "31": 433, "32": 446, "33": 462, "34": 478, "35": 494, "36": 514, "37": 528, "38": 543, "39": 560, "40": 579, "41": 593, "42": 606, "43": 617, "44": 630, "45": 644, "46": 658, "47": 672, "48": 688, "49": 708, "50": 726, "51": 737, "52": 748, "53": 760, "54": 771}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on the Fluke PM3370B scope. I It has not failed. I've had this like running for like a day and a bit continuously except when I go home. I don't want to leave it overnight just in

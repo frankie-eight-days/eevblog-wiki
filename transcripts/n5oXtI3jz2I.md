@@ -3,6 +3,7 @@ video_id: n5oXtI3jz2I
 title: EEVblog 1728 - AC Basics Tutorial Part 6: Impedance, Conductance, Susceptance, Admittance
 url: https://www.youtube.com/watch?v=n5oXtI3jz2I
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 25, "3": 40, "4": 57, "5": 76, "6": 93, "7": 111, "8": 130, "9": 146, "10": 162, "11": 178, "12": 195, "13": 210, "14": 224, "15": 241, "16": 260, "17": 273, "18": 288, "19": 301, "20": 319, "21": 333, "22": 345, "23": 360, "24": 373, "25": 392, "26": 412, "27": 428, "28": 445, "29": 461, "30": 479, "31": 495, "32": 509, "33": 524, "34": 541, "35": 557, "36": 569, "37": 585, "38": 600, "39": 614, "40": 629, "41": 644, "42": 658, "43": 674, "44": 689, "45": 705, "46": 717, "47": 733, "48": 750, "49": 769, "50": 788, "51": 811, "52": 830, "53": 851, "54": 866, "55": 885, "56": 904, "57": 918, "58": 932, "59": 945}
 ---
 
 **Dave Jones:** Hi, welcome to part six in the AC basics tutorial series. This one actually follows on from part four, so linked in down below. The entire playlist is linked in down below if you haven't seen it. You've got to watch the previous

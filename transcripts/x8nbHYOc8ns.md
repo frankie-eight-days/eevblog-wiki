@@ -3,6 +3,7 @@ video_id: x8nbHYOc8ns
 title: EEVblog #737 - World's Biggest Collection Of Electronics Components
 url: https://www.youtube.com/watch?v=x8nbHYOc8ns
 source: youtube-asr
+timestamps: {"0": 1, "1": 12, "2": 32, "3": 52, "4": 73, "5": 93, "6": 115, "7": 137, "8": 158, "9": 179, "10": 204, "11": 233, "12": 251, "13": 275, "14": 300, "15": 326, "16": 357, "17": 380, "18": 390, "19": 408, "20": 417, "21": 436, "22": 467, "23": 481, "24": 501, "25": 521, "26": 537, "27": 556, "28": 571, "29": 588, "30": 602, "31": 617, "32": 633, "33": 656, "34": 678, "35": 692, "36": 708, "37": 725, "38": 750, "39": 768, "40": 795, "41": 814, "42": 825, "43": 837, "44": 849, "45": 865, "46": 880, "47": 899, "48": 915, "49": 932, "50": 947, "51": 964, "52": 981, "53": 994, "54": 1009}
 ---
 
 **Dave Jones:** Hi guys, I'm out on a rural property here at Maroota in Western Sydney and I scored something on eBay just here to pick it up and I thought that's pretty much all they had but which is it's pretty good in its own

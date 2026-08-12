@@ -3,6 +3,7 @@ video_id: Ia4xB9wk80o
 title: Dumpster Diving 86" LG 4K LCD TV
 url: https://www.youtube.com/watch?v=Ia4xB9wk80o
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 43, "4": 63, "5": 78, "6": 94, "7": 109, "8": 124, "9": 136, "10": 148, "11": 162, "12": 178, "13": 194, "14": 211, "15": 229, "16": 243, "17": 260, "18": 276, "19": 291, "20": 307, "21": 325, "22": 342, "23": 357, "24": 370, "25": 396, "26": 417, "27": 433, "28": 452, "29": 470, "30": 483, "31": 503, "32": 518, "33": 532, "34": 549, "35": 564, "36": 579, "37": 597, "38": 614, "39": 629, "40": 643, "41": 657, "42": 681, "43": 696, "44": 720, "45": 736, "46": 749, "47": 761, "48": 775, "49": 789}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room, and well, this has to be the biggest TV I've ever seen. Look at this thing. I haven't moved it at all yet. It's got like a some sort of I don't know, is it a

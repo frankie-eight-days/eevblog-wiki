@@ -3,6 +3,7 @@ video_id: PFC0WxTuNzU
 title: Youtube Silver DISLIKE Button Award !
 url: https://www.youtube.com/watch?v=PFC0WxTuNzU
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 33, "3": 46, "4": 59, "5": 71, "6": 90, "7": 109, "8": 125, "9": 143, "10": 165, "11": 182, "12": 202, "13": 215, "14": 229, "15": 242, "16": 258, "17": 269, "18": 282, "19": 295, "20": 306, "21": 322, "22": 341, "23": 358, "24": 369, "25": 384}
 ---
 
 **Dave Jones:** Hi, thanks to everyone who subscribed to my EVBlog 2 channel, my second channel. Click up here and somewhere or up here, down below, whatever. If you haven't subscribed to EVBlog 2, but thank you to everyone who has in the past and I

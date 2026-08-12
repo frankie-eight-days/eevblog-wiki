@@ -3,6 +3,7 @@ video_id: P_vM1_FAYHA
 title: EEVblog #621- Stanford Research SR650 Repair - Part 2
 url: https://www.youtube.com/watch?v=P_vM1_FAYHA
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 31, "3": 44, "4": 58, "5": 75, "6": 90, "7": 107, "8": 121, "9": 132, "10": 145, "11": 158, "12": 171, "13": 185, "14": 199, "15": 212, "16": 224, "17": 239, "18": 253, "19": 265, "20": 278, "21": 303, "22": 317, "23": 331, "24": 349, "25": 363, "26": 375, "27": 387, "28": 399, "29": 412, "30": 424, "31": 438, "32": 452, "33": 465, "34": 479, "35": 492, "36": 506, "37": 521, "38": 530, "39": 542, "40": 557, "41": 570, "42": 591, "43": 602, "44": 616, "45": 629, "46": 643, "47": 657, "48": 670, "49": 683, "50": 699, "51": 715, "52": 730, "53": 745, "54": 758, "55": 772, "56": 785, "57": 798, "58": 810, "59": 823, "60": 838, "61": 853, "62": 871, "63": 885, "64": 898, "65": 913, "66": 926, "67": 941, "68": 955, "69": 968, "70": 981, "71": 993}
 ---
 
 **Dave Jones:** Hi, in the previous video, we took a look at repairing the Stanford Research SR650 eight-pole elliptical filter I scored on eBay real cheap, and it turned out to be the mains filter at the back had a fire in it. And once I fixed that,

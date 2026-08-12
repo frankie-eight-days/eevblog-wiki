@@ -3,6 +3,7 @@ video_id: gUpPJ8HLEEA
 title: EEVblog #173 - Gossen Metrahit Energy Multimeter Teardown
 url: https://www.youtube.com/watch?v=gUpPJ8HLEEA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 48, "4": 63, "5": 77, "6": 91, "7": 121, "8": 134, "9": 151, "10": 165, "11": 181, "12": 195, "13": 212, "14": 226, "15": 241, "16": 254, "17": 267, "18": 283, "19": 297, "20": 313, "21": 331, "22": 345, "23": 361, "24": 377, "25": 395, "26": 410, "27": 430, "28": 447, "29": 458, "30": 473, "31": 490, "32": 503, "33": 515, "34": 530, "35": 545, "36": 561, "37": 581, "38": 599, "39": 612, "40": 628, "41": 644, "42": 659, "43": 674, "44": 687, "45": 707, "46": 729, "47": 745, "48": 759, "49": 774, "50": 788, "51": 804, "52": 821, "53": 834, "54": 848, "55": 863, "56": 881, "57": 900, "58": 914, "59": 930, "60": 947}
 ---
 
 **Dave Jones:** Hi, welcome to the AAV blog and electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's product review time again. Yep, it's another multimeter and we haven't had one of these for a while. It's a

@@ -3,6 +3,7 @@ video_id: UgpHZisG1PQ
 title: EEVblog 1573 - TEARDOWN: How a Rotary (Angle) Pulse Encoder Works
 url: https://www.youtube.com/watch?v=UgpHZisG1PQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 37, "3": 55, "4": 67, "5": 79, "6": 94, "7": 108, "8": 124, "9": 138, "10": 152, "11": 165, "12": 184, "13": 195, "14": 210, "15": 225, "16": 239, "17": 255, "18": 272, "19": 289, "20": 302, "21": 314, "22": 331, "23": 350, "24": 367, "25": 380, "26": 397, "27": 410, "28": 434, "29": 449, "30": 462, "31": 473, "32": 486, "33": 503, "34": 516, "35": 536, "36": 552, "37": 565, "38": 576, "39": 594, "40": 609, "41": 624, "42": 638, "43": 652, "44": 669, "45": 684, "46": 701, "47": 717, "48": 730, "49": 748, "50": 766, "51": 781, "52": 799, "53": 816, "54": 831, "55": 851, "56": 862, "57": 877, "58": 884, "59": 897, "60": 913, "61": 928, "62": 943, "63": 960, "64": 974, "65": 986, "66": 1001}
 ---
 
 **Dave Jones:** Hi, by popular request, we're going to attempt to take apart this rotary encoder, this oddball rotary encoder from the Haefely Trench PE SD 1600 gun that I've got. And of course, I've done I'll link in the video if you haven't seen it. Somebody

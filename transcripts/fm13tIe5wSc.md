@@ -3,6 +3,7 @@ video_id: fm13tIe5wSc
 title: EEVacademy #4 -  I²C (I2C) Bit Banging
 url: https://www.youtube.com/watch?v=fm13tIe5wSc
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 45, "4": 58, "5": 77, "6": 92, "7": 109, "8": 127, "9": 144, "10": 157, "11": 172, "12": 186, "13": 199, "14": 214, "15": 225, "16": 236, "17": 248, "18": 259, "19": 275, "20": 290, "21": 305, "22": 318, "23": 330, "24": 342, "25": 355, "26": 366, "27": 378, "28": 392, "29": 406, "30": 420, "31": 433, "32": 450, "33": 463, "34": 472, "35": 483, "36": 496, "37": 506, "38": 518, "39": 531, "40": 544, "41": 559, "42": 572, "43": 594, "44": 607, "45": 621, "46": 637}
 ---
 
 **Dave Jones:** I2C and the very similar SMBus are in almost everything. You'll even find it as a major part of computer motherboards. The interface allows communication with up to 127 devices with only two wires. For many sensors, I2C is the standard

@@ -3,6 +3,7 @@ video_id: qfVzDVEVMlc
 title: EEVblog 1553 - World's First Commercial Solar Power Station
 url: https://www.youtube.com/watch?v=qfVzDVEVMlc
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 31, "3": 45, "4": 58, "5": 72, "6": 89, "7": 104, "8": 120, "9": 134, "10": 150, "11": 162, "12": 174, "13": 189, "14": 202, "15": 218, "16": 230, "17": 242, "18": 257, "19": 270, "20": 289, "21": 305, "22": 322, "23": 339, "24": 353, "25": 366, "26": 380, "27": 394, "28": 409, "29": 421, "30": 434, "31": 446, "32": 461, "33": 475, "34": 488, "35": 502, "36": 515, "37": 530, "38": 541, "39": 556, "40": 573, "41": 588, "42": 606}
 ---
 
 **Dave Jones:** Hi, I'm about 11 hours from Sydney in Outback, Australia, complete with the red dirt. I might show you that up close. Anyway, I'm here at a little tiny town called White Cliffs, which is an old opal mining town. And we're going to

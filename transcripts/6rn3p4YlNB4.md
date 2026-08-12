@@ -3,6 +3,7 @@ video_id: 6rn3p4YlNB4
 title: EEVblog #1151 - Dumpster Dive Yamaha Receiver
 url: https://www.youtube.com/watch?v=6rn3p4YlNB4
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 34, "3": 54, "4": 76, "5": 95, "6": 111, "7": 125, "8": 145, "9": 164, "10": 182, "11": 201, "12": 220, "13": 233, "14": 246, "15": 257, "16": 273, "17": 290, "18": 302, "19": 320, "20": 337, "21": 354, "22": 371, "23": 386, "24": 399, "25": 416, "26": 431, "27": 446, "28": 459, "29": 471, "30": 487, "31": 502, "32": 523, "33": 535, "34": 552, "35": 571, "36": 582, "37": 602, "38": 616, "39": 633, "40": 649, "41": 664, "42": 679, "43": 701, "44": 720, "45": 740, "46": 759, "47": 771, "48": 784, "49": 796}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room again. Um, somebody's been uh moving in. They got a bunch of stuff. Oh, is there a There's a microwave behind there. Throwing out some old stuff. Anyway, some carpet's gone. Someone's uh Someone's renovating.

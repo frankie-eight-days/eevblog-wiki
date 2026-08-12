@@ -3,6 +3,7 @@ video_id: 4oe6c2uaepM
 title: Brymen BM787BT iPhone App Update
 url: https://www.youtube.com/watch?v=4oe6c2uaepM
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 32, "3": 46, "4": 61, "5": 78, "6": 95, "7": 113, "8": 126, "9": 140, "10": 156, "11": 168, "12": 183, "13": 197, "14": 209, "15": 223, "16": 243, "17": 257, "18": 271, "19": 286, "20": 298, "21": 314, "22": 331, "23": 346, "24": 358, "25": 371, "26": 384, "27": 403, "28": 419, "29": 433, "30": 447, "31": 462, "32": 477, "33": 492, "34": 506}
 ---
 
 **Dave Jones:** Hi, just a quick update video on the BM787 Bluetooth multimeter app. Yes, it's coming very shortly, hopefully. They've been working on the app. There's been a lot of bugs and things. Both myself and Joe Smith have been working on this. Joe Smith has been

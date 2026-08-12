@@ -3,6 +3,7 @@ video_id: 1JgdM0GsCjk
 title: Sunny Boy Solar Inverter Removal
 url: https://www.youtube.com/watch?v=1JgdM0GsCjk
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 25, "3": 42, "4": 58, "5": 69, "6": 85, "7": 98, "8": 112, "9": 126, "10": 141, "11": 154, "12": 172, "13": 189, "14": 206, "15": 223, "16": 242, "17": 255, "18": 279, "19": 295, "20": 311, "21": 327, "22": 342}
 ---
 
 **Dave Jones:** Hi, just a quick video. I'm going to uh remove my Sunny Boy inverter that's been up here for over a decade now. Been a solid performer. Um and so I'm going to take it off cuz uh going to install the

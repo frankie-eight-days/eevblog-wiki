@@ -3,6 +3,7 @@ video_id: PfzgOuBHJFM
 title: Brymen BM786 vs BM869 DC Current
 url: https://www.youtube.com/watch?v=PfzgOuBHJFM
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 31, "3": 49, "4": 63, "5": 84, "6": 100, "7": 118, "8": 137, "9": 156, "10": 172, "11": 189, "12": 204, "13": 220, "14": 237, "15": 253}
 ---
 
 **Dave Jones:** Hi, just a quick video uh for those on the EEVblog forum because it's where all the test equipment nerds hang out and they love their multimeters and uh the discussion came up between the Brymen 869 here. I've got the original, it's

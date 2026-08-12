@@ -3,6 +3,7 @@ video_id: jUvSP3BQpvs
 title: EEVblog #85 - High Voltage Oscilloscope Probe Design
 url: https://www.youtube.com/watch?v=jUvSP3BQpvs
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 35, "3": 57, "4": 78, "5": 92, "6": 111, "7": 132, "8": 152, "9": 174, "10": 191, "11": 211, "12": 230, "13": 247}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. All right, go for your life. Okay, um the probe I was after had to measure voltages up to about 5 kV and I didn't

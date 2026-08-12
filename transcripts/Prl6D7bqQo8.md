@@ -3,6 +3,7 @@ video_id: Prl6D7bqQo8
 title: EEVblog #116 - Retro Teardown - Tandy Radio Shack TRS-80 Model 100
 url: https://www.youtube.com/watch?v=Prl6D7bqQo8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 35, "3": 56, "4": 69, "5": 83, "6": 101, "7": 119, "8": 136, "9": 157, "10": 170, "11": 187, "12": 206, "13": 221, "14": 236, "15": 250, "16": 263, "17": 279, "18": 295, "19": 312, "20": 331, "21": 350, "22": 368, "23": 384, "24": 402, "25": 412, "26": 431, "27": 448, "28": 463, "29": 480, "30": 502, "31": 520, "32": 537, "33": 552, "34": 565, "35": 580, "36": 598, "37": 614, "38": 630, "39": 652, "40": 674, "41": 692, "42": 707, "43": 721, "44": 739, "45": 754, "46": 769, "47": 783, "48": 798, "49": 812, "50": 832, "51": 848, "52": 869, "53": 887, "54": 906, "55": 922, "56": 938, "57": 956, "58": 975, "59": 988, "60": 1002, "61": 1017, "62": 1036, "63": 1054, "64": 1067, "65": 1083, "66": 1094, "67": 1109, "68": 1124, "69": 1138, "70": 1159, "71": 1174, "72": 1188, "73": 1202, "74": 1216, "75": 1231}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's product teardown time today. Yes, not product review, cuz I I didn't really think it was appropriate to

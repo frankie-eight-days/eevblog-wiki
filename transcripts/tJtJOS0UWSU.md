@@ -3,6 +3,7 @@ video_id: tJtJOS0UWSU
 title: EEVblog #429 - TurtleBot & CineMoco
 url: https://www.youtube.com/watch?v=tJtJOS0UWSU
 source: youtube-asr
+timestamps: {"0": 10, "1": 24, "2": 38, "3": 51, "4": 62, "5": 76, "6": 90, "7": 103, "8": 117, "9": 129, "10": 145, "11": 159, "12": 176, "13": 190, "14": 201, "15": 214, "16": 224, "17": 239}
 ---
 
 **Dave Jones:** Gav's uh we can come to Gav's car and he's got look at this. It's a toys turtlebot folks. I love it. This is I don't think they've officially finished this yet. I pre-ordered on the hardware and I'm still waiting on the software

@@ -3,6 +3,7 @@ video_id: imdtXcnywb8
 title: EEVblog #247 - Anti Static Bag Myth Revisted
 url: https://www.youtube.com/watch?v=imdtXcnywb8
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 38, "3": 53, "4": 71, "5": 85, "6": 100, "7": 114, "8": 129, "9": 146, "10": 162, "11": 178, "12": 194, "13": 209, "14": 222, "15": 234, "16": 251, "17": 266, "18": 281, "19": 292, "20": 311, "21": 328, "22": 343, "23": 357, "24": 372, "25": 388, "26": 404, "27": 420, "28": 433, "29": 450, "30": 470, "31": 487, "32": 504, "33": 520, "34": 535, "35": 548, "36": 563, "37": 583, "38": 596, "39": 612, "40": 629, "41": 649, "42": 664, "43": 683, "44": 704, "45": 721, "46": 741, "47": 758, "48": 774, "49": 792, "50": 814, "51": 831, "52": 853, "53": 881, "54": 903, "55": 923, "56": 943, "57": 956, "58": 978, "59": 997, "60": 1011, "61": 1023, "62": 1037, "63": 1051, "64": 1061, "65": 1075}
 ---
 
 **Dave Jones:** Hi. Why am I wearing the lab coat? Well, it's myth busting time. Going to revisit an old myth I did back right in episode number three. It's the pink antistatic bag myth. Now, as the myth goes, these pink antistatic bags and also these

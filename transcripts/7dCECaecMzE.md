@@ -3,6 +3,7 @@ video_id: 7dCECaecMzE
 title: Aputure Amaran 60X-S Studio Light 60W COB LED under the Microscope
 url: https://www.youtube.com/watch?v=7dCECaecMzE
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 32, "3": 45, "4": 56, "5": 69, "6": 82, "7": 103, "8": 114, "9": 127, "10": 139, "11": 148, "12": 165, "13": 179, "14": 191, "15": 207, "16": 222, "17": 236, "18": 249, "19": 269, "20": 286, "21": 306, "22": 318, "23": 337, "24": 353, "25": 368, "26": 388, "27": 400, "28": 410, "29": 419, "30": 435, "31": 448, "32": 462, "33": 473}
 ---
 
 **Dave Jones:** Hi, I just got this uh new Aperture Amaran uh 60XS studio light here. Um it's a very cool um very cost effective um thing. It's only about 250 Aussie bucks and this is a 60 watt, hence the uh 60 I guess. Um

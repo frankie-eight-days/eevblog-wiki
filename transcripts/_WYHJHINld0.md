@@ -3,6 +3,7 @@ video_id: _WYHJHINld0
 title: ACES Hardware Meetup at Morse Micro
 url: https://www.youtube.com/watch?v=_WYHJHINld0
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 35, "3": 53, "4": 67, "5": 82, "6": 97, "7": 112, "8": 124, "9": 137, "10": 148, "11": 166, "12": 183, "13": 197, "14": 211, "15": 229, "16": 241, "17": 264, "18": 278, "19": 292, "20": 314, "21": 335, "22": 353, "23": 367, "24": 383, "25": 402, "26": 417, "27": 433, "28": 449, "29": 464, "30": 476, "31": 495}
 ---
 
 **Dave Jones:** Hi, I'm in Sydney uh CBD and I'm at the Aces Hardware Meetup. This is the seventh meet up and uh here's the room. I'm giving a talk here tonight and uh there's quite a few no shortage people here. So, they've got uh pizza of

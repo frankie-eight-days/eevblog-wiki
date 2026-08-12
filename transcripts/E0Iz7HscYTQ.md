@@ -3,6 +3,7 @@ video_id: E0Iz7HscYTQ
 title: Electroboom Style ELCB Test & (Hager) Failure
 url: https://www.youtube.com/watch?v=E0Iz7HscYTQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 45, "4": 57, "5": 72, "6": 88, "7": 107, "8": 124, "9": 139, "10": 155, "11": 171, "12": 185, "13": 196, "14": 210, "15": 222, "16": 245, "17": 263, "18": 275}
 ---
 
 **Dave Jones:** Hi. As it turns out, I've got a legitimate uh electro boom style test I have to do here. I've got to um I suspect that I've got a faulty um earth leakage uh circuit breaker out in my box

@@ -3,6 +3,7 @@ video_id: 8q_S0Fk3dyM
 title: The End Of Australian Analog TV - Switching Off
 url: https://www.youtube.com/watch?v=8q_S0Fk3dyM
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 32, "3": 47, "4": 62, "5": 79, "6": 94, "7": 108, "8": 124, "9": 137, "10": 150, "11": 205, "12": 222, "13": 263, "14": 277, "15": 292, "16": 316, "17": 330}
 ---
 
 **Dave Jones:** Hi guys. Why am I in my house sitting in front of the idiot box here? Well, today is December 3rd, 2013. A bit of an historic day because they're going to finally switch off the analog TV transmission that's been going since

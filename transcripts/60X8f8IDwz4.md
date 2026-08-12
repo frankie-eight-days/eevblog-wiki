@@ -3,6 +3,7 @@ video_id: 60X8f8IDwz4
 title: EEVblog #405 - Lecroy 9384C Oscilloscope Repair - Part 3
 url: https://www.youtube.com/watch?v=60X8f8IDwz4
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 44, "4": 63, "5": 80, "6": 103, "7": 121, "8": 140, "9": 157, "10": 172, "11": 189, "12": 204, "13": 220, "14": 241, "15": 256, "16": 273, "17": 290, "18": 308, "19": 322, "20": 335, "21": 351, "22": 366, "23": 379, "24": 394, "25": 408, "26": 421, "27": 436, "28": 452, "29": 465, "30": 485, "31": 501, "32": 537, "33": 551, "34": 566, "35": 579, "36": 592, "37": 607, "38": 623, "39": 638, "40": 659, "41": 688, "42": 704, "43": 717, "44": 732, "45": 749, "46": 767, "47": 785, "48": 802, "49": 817, "50": 831, "51": 845, "52": 857, "53": 875, "54": 887, "55": 903, "56": 914, "57": 930, "58": 941, "59": 955}
 ---
 
 **Dave Jones:** Hi. Yes, it's the LeCroy 9384C oscilloscope repair again because people just could not let this one go. Um if you haven't seen the previous videos, please do. Otherwise, this uh won't make much sense to you. I'll link them in

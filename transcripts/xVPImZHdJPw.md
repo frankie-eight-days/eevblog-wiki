@@ -3,6 +3,7 @@ video_id: xVPImZHdJPw
 title: Today in the Dumpster Room
 url: https://www.youtube.com/watch?v=xVPImZHdJPw
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 33, "3": 49}
 ---
 
 **Dave Jones:** Hi, today in the dumpster room we have something I've never seen before. Check this out. Yes, the giant wreck is still there. Um Look at this. It's a um I didn't know what it was at first, but it looks like

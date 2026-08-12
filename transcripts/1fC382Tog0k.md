@@ -3,6 +3,7 @@ video_id: 1fC382Tog0k
 title: EEVblog #170 - Agilent U1272A Multimeter FAIL
 url: https://www.youtube.com/watch?v=1fC382Tog0k
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 31, "3": 42, "4": 58, "5": 72, "6": 86, "7": 100, "8": 119, "9": 136, "10": 154, "11": 175, "12": 198, "13": 209, "14": 228, "15": 242, "16": 262, "17": 285, "18": 300, "19": 316, "20": 327, "21": 343, "22": 361, "23": 374}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I just finished shooting a teardown of this new Agilent U1272A multimeter and I was pretty darn

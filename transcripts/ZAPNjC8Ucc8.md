@@ -3,6 +3,7 @@ video_id: ZAPNjC8Ucc8
 title: Roadside Trash 50" 4K TV Monitor
 url: https://www.youtube.com/watch?v=ZAPNjC8Ucc8
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 36, "3": 51, "4": 65, "5": 85, "6": 101, "7": 117, "8": 131, "9": 150, "10": 172, "11": 188, "12": 204}
 ---
 
 **Dave Jones:** Hi, it's well, not quite dumpster diving time again. It's a roadside collection diving. Um yes, I found this one on the uh side of the road. It's a 50-in Hisense uh jobbie. Looks like we've got some uh bass output down there. Got a

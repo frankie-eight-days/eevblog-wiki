@@ -3,6 +3,7 @@ video_id: OomIkXYHmTY
 title: MORE Asymmetrical Dumpster PC Stacking
 url: https://www.youtube.com/watch?v=OomIkXYHmTY
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 37, "3": 51, "4": 72, "5": 85, "6": 98, "7": 114, "8": 129, "9": 148, "10": 162, "11": 176, "12": 190, "13": 204, "14": 219, "15": 235, "16": 252, "17": 271, "18": 284, "19": 302, "20": 314, "21": 331, "22": 349, "23": 366, "24": 380, "25": 399, "26": 419, "27": 431, "28": 447, "29": 460, "30": 471, "31": 485}
 ---
 
 **Dave Jones:** Hi, it's dumpster room time again. I come back from couple of days walk about and yep, symmetrical PC stacking. No human could possibly stack PCs like this. Bunch of monitors, they look at least 22 inch jobbies. They're all Samsungs.

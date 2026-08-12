@@ -3,6 +3,7 @@ video_id: Tdge8vEODeY
 title: EEVblog 1467 - Stanford Solar Power at Nightime!  BUSTED
 url: https://www.youtube.com/watch?v=Tdge8vEODeY
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 35, "3": 49, "4": 62, "5": 77, "6": 94, "7": 113, "8": 126, "9": 141, "10": 157, "11": 172, "12": 188, "13": 199, "14": 210, "15": 226, "16": 238, "17": 256, "18": 274, "19": 285, "20": 296, "21": 312, "22": 323, "23": 337, "24": 351, "25": 364, "26": 375, "27": 385, "28": 399, "29": 414, "30": 431, "31": 443, "32": 455, "33": 470, "34": 486, "35": 502, "36": 515, "37": 535, "38": 552, "39": 562, "40": 578, "41": 592, "42": 607, "43": 620, "44": 635, "45": 647, "46": 659, "47": 674, "48": 692, "49": 707, "50": 718, "51": 731, "52": 743, "53": 756, "54": 767, "55": 784, "56": 799, "57": 810}
 ---
 
 **Dave Jones:** Hi, everyone knows one of the major problems with solar power is that well, when the sun goes down it doesn't generate any more power, but that is so 2021 thinking. This is 2022. We now have solar panels that generate electricity

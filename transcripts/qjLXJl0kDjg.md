@@ -3,6 +3,7 @@ video_id: qjLXJl0kDjg
 title: How to fix Windows blurry font scaling problems
 url: https://www.youtube.com/watch?v=qjLXJl0kDjg
 source: youtube-asr
+timestamps: {"0": 2, "1": 18, "2": 34, "3": 49, "4": 66, "5": 81, "6": 94, "7": 113, "8": 133, "9": 150, "10": 167, "11": 178, "12": 192, "13": 208, "14": 224, "15": 239, "16": 256, "17": 266, "18": 288, "19": 302, "20": 319, "21": 331, "22": 345, "23": 357, "24": 373, "25": 391, "26": 409, "27": 421, "28": 437, "29": 450, "30": 465, "31": 482, "32": 493, "33": 515, "34": 528, "35": 544, "36": 560, "37": 578, "38": 592, "39": 608, "40": 628, "41": 651, "42": 664, "43": 678, "44": 693, "45": 710, "46": 722, "47": 735, "48": 749, "49": 764, "50": 776, "51": 791, "52": 811}
 ---
 
 **Dave Jones:** Hi, just a follow-up on my new 4K monitor that I've got and the problems that I'm having. If you're not aware, I do run a three monitor system here for my video editing and screen capture and everything else. I've

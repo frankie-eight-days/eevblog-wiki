@@ -3,6 +3,7 @@ video_id: aANZNwmnC_4
 title: AERL Lithium Home Storage Battery - Cloud Data
 url: https://www.youtube.com/watch?v=aANZNwmnC_4
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 40, "4": 51, "5": 64, "6": 82, "7": 97, "8": 114, "9": 124, "10": 137, "11": 151, "12": 162, "13": 177, "14": 190, "15": 202, "16": 213, "17": 228, "18": 244, "19": 260, "20": 274, "21": 287, "22": 304, "23": 320, "24": 336, "25": 347, "26": 362, "27": 376, "28": 388, "29": 404, "30": 421, "31": 435, "32": 452, "33": 468, "34": 481, "35": 496, "36": 510, "37": 522, "38": 536, "39": 545, "40": 556, "41": 569, "42": 583, "43": 598, "44": 609, "45": 623, "46": 636}
 ---
 
 **Dave Jones:** Hi, a big update on my ARL home storage battery. Finally sorted out the issues with the uh gateway. You've seen the videos on that. But now I now I have access to the individual battery like data and I can see all the live data.

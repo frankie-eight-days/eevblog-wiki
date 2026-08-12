@@ -3,6 +3,7 @@ video_id: pza_gt3f3RM
 title: Dave rants about video playback on video cameras
 url: https://www.youtube.com/watch?v=pza_gt3f3RM
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 36, "3": 47, "4": 57}
 ---
 
 **Dave Jones:** You want to know what pisses me off? Freaking video cameras. Like the one I'm shooting this Canon HFG30, but Canon HFG10 or this uh Sony NextVG30. Doesn't matter which bloody camera it is. None of them can play back the last video

@@ -3,6 +3,7 @@ video_id: 7mDglCZTC9o
 title: Dumpster PC Find
 url: https://www.youtube.com/watch?v=7mDglCZTC9o
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 33, "3": 51, "4": 66, "5": 80, "6": 96, "7": 116, "8": 132, "9": 148, "10": 168, "11": 186, "12": 205, "13": 222, "14": 237, "15": 252, "16": 268, "17": 284, "18": 300, "19": 318, "20": 336, "21": 349, "22": 362, "23": 377, "24": 389, "25": 404, "26": 418, "27": 430, "28": 445, "29": 459, "30": 469}
 ---
 
 **Dave Jones:** Hi, just down in the dumpster room. There's a crappy old Acer monitor there. Please put in the bin. It's broken. Anyway, this looks Cooler Master case. It looks There's RAM in there. Processor. I don't looks relatively recent. So, I'm going to take this back and

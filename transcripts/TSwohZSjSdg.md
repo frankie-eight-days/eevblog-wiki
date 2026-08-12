@@ -3,6 +3,7 @@ video_id: TSwohZSjSdg
 title: EEVblog #1329 - Magnetic Field Shielding DEMONSTRATED
 url: https://www.youtube.com/watch?v=TSwohZSjSdg
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 44, "4": 61, "5": 75, "6": 92, "7": 111, "8": 135, "9": 155, "10": 175, "11": 185, "12": 196, "13": 210, "14": 229, "15": 247, "16": 260, "17": 279, "18": 289, "19": 308, "20": 326, "21": 343, "22": 358, "23": 376, "24": 392, "25": 410, "26": 425, "27": 439, "28": 451, "29": 466, "30": 485, "31": 503, "32": 519, "33": 536, "34": 551, "35": 568, "36": 582, "37": 599, "38": 615, "39": 632, "40": 648, "41": 663, "42": 675}
 ---
 
 **Dave Jones:** Hi, just a quick and interesting follow-up video here to my one where I measured the noise of the micro current with the OPA189 op amp using my HP dynamic signal analyzer using the power spectral density to get the

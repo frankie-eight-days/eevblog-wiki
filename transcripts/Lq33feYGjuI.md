@@ -3,6 +3,7 @@ video_id: Lq33feYGjuI
 title: BETTER Green Screen Background Removal using GIMP
 url: https://www.youtube.com/watch?v=Lq33feYGjuI
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 29, "3": 40, "4": 54, "5": 68, "6": 80, "7": 92, "8": 103, "9": 118, "10": 130, "11": 145, "12": 157, "13": 173, "14": 183, "15": 196, "16": 206, "17": 219, "18": 231, "19": 244, "20": 257, "21": 269, "22": 283, "23": 298, "24": 309, "25": 319, "26": 333, "27": 348, "28": 361, "29": 372, "30": 386}
 ---
 
 **Dave Jones:** Hi, in a previous video, I showed you a very quick simple method to remove a green screen or other colored background from an image so you can use it as a thumbnail for your videos or whatever it is you want to use it for. So, how do we

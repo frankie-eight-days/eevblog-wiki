@@ -3,6 +3,7 @@ video_id: fUV8QQwCrh4
 title: EEVblog 1400 - Hard Drive Micro Actuators are AMAZING!
 url: https://www.youtube.com/watch?v=fUV8QQwCrh4
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 34, "3": 50, "4": 66, "5": 80, "6": 95, "7": 111, "8": 125, "9": 138, "10": 152, "11": 165, "12": 184, "13": 195, "14": 208, "15": 222, "16": 238, "17": 251, "18": 268, "19": 281, "20": 294, "21": 309, "22": 323, "23": 335, "24": 347, "25": 361, "26": 375, "27": 392, "28": 409, "29": 428, "30": 447, "31": 463, "32": 480, "33": 493, "34": 509, "35": 521, "36": 533, "37": 553, "38": 570, "39": 582, "40": 597, "41": 614, "42": 629, "43": 645, "44": 658, "45": 673, "46": 689, "47": 701, "48": 720, "49": 737, "50": 754, "51": 774, "52": 794, "53": 807, "54": 822, "55": 840, "56": 858, "57": 873, "58": 892, "59": 909, "60": 922, "61": 937}
 ---
 
 **Dave Jones:** Hi, in a previous video we tore down a Western Digital Red 6 terabyte hard drive and we looked at the absolutely amazing technology inside modern hard drives and in particular we looked at the actuator head like this. It's

@@ -3,6 +3,7 @@ video_id: PrYRxFA8L0o
 title: Grokipedia Creative Commons BUG
 url: https://www.youtube.com/watch?v=PrYRxFA8L0o
 source: youtube-asr
+timestamps: {"0": 2, "1": 16, "2": 27, "3": 44, "4": 59, "5": 74, "6": 92, "7": 105, "8": 120, "9": 135, "10": 149}
 ---
 
 **Dave Jones:** Hi, there seems to be quite a lot of people out there who don't seem to understand that there's a bug in Grochipedia that was just released yesterday. This is version.01. And uh let me go to a page here. This is

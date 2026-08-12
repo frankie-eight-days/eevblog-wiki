@@ -3,6 +3,7 @@ video_id: uHJzhgqhp38
 title: EEVblog727 HowToKillAnOpamp 1920x1080
 url: https://www.youtube.com/watch?v=uHJzhgqhp38
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 31, "3": 46, "4": 61, "5": 77, "6": 96, "7": 113, "8": 127, "9": 142, "10": 159, "11": 174, "12": 189, "13": 202, "14": 217, "15": 233, "16": 251, "17": 279, "18": 294, "19": 308, "20": 321, "21": 343, "22": 355, "23": 367, "24": 381}
 ---
 
 **Dave Jones:** Hi. You ever had one of those bad days when you just do something incredibly face palm stupid? Well, yeah. That just happened to me today. I was um just checking the calibration of my little uh microcurren um uh test jig

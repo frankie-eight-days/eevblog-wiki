@@ -3,6 +3,7 @@ video_id: m7ERMu825m4
 title: EEVblog #29 - Audiophile Audiophoolery
 url: https://www.youtube.com/watch?v=m7ERMu825m4
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 31, "3": 52, "4": 72, "5": 87, "6": 100, "7": 119, "8": 135, "9": 150, "10": 164, "11": 181, "12": 200, "13": 218, "14": 231, "15": 242, "16": 257, "17": 273, "18": 287, "19": 295, "20": 308, "21": 321, "22": 335, "23": 351, "24": 364, "25": 384, "26": 398, "27": 414, "28": 434, "29": 450, "30": 473, "31": 485, "32": 496, "33": 509, "34": 521, "35": 538, "36": 548, "37": 561, "38": 572, "39": 585}
 ---
 
 **Dave Jones:** Welcome to the EEV blog. I'm your host, Dave Jones, and this is episode number 29. In the last blog, I spoke about product design that really ticks me off, and I'm kind of have going to have to do

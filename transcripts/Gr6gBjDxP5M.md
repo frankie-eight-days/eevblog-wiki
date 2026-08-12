@@ -3,6 +3,7 @@ video_id: Gr6gBjDxP5M
 title: EEVblog 1653 - Alkaline Battery Leakage Testing 2 - Electric Boogaloo
 url: https://www.youtube.com/watch?v=Gr6gBjDxP5M
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 28, "3": 41, "4": 54, "5": 69, "6": 83, "7": 94, "8": 110, "9": 129, "10": 144, "11": 160, "12": 173, "13": 185, "14": 199, "15": 213, "16": 226, "17": 241, "18": 258, "19": 272, "20": 290, "21": 303, "22": 317, "23": 330, "24": 344, "25": 360, "26": 377, "27": 393, "28": 404, "29": 416, "30": 430, "31": 442, "32": 457, "33": 471, "34": 484, "35": 497, "36": 513, "37": 530, "38": 544, "39": 556, "40": 571, "41": 583, "42": 597, "43": 611, "44": 624, "45": 638, "46": 653, "47": 669, "48": 684, "49": 698, "50": 711, "51": 729, "52": 743, "53": 758, "54": 772, "55": 785, "56": 796, "57": 804, "58": 817, "59": 830, "60": 837, "61": 852, "62": 866, "63": 878, "64": 888}
 ---
 
 **Dave Jones:** Hi, it's battery leakage time again. Ah, you remember my battery leakage test? This was many years ago now, and it basically failed. I got a whole bunch of different brands of batteries. I put them under a constant load of 1K or

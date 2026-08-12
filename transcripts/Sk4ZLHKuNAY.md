@@ -3,6 +3,7 @@ video_id: Sk4ZLHKuNAY
 title: EEVblog #177 - Baby Scale Calibration
 url: https://www.youtube.com/watch?v=Sk4ZLHKuNAY
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 28, "3": 42, "4": 55, "5": 69, "6": 83, "7": 96, "8": 113, "9": 124, "10": 139, "11": 158, "12": 178, "13": 196, "14": 208}
 ---
 
 **Dave Jones:** Hi, what do you do when you got a new baby and you got a set of scales and you don't know if they're reading spot on? Well, you come to a Cal Lab, a NATA certified Cal Lab, and you check it out.

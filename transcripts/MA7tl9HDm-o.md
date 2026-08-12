@@ -3,6 +3,7 @@ video_id: MA7tl9HDm-o
 title: The Australian Mandatory Internet Filter Folly
 url: https://www.youtube.com/watch?v=MA7tl9HDm-o
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 29, "3": 46, "4": 65, "5": 79, "6": 97, "7": 112, "8": 131, "9": 148, "10": 161, "11": 180, "12": 199, "13": 220, "14": 238, "15": 258, "16": 279, "17": 296, "18": 316, "19": 333, "20": 351, "21": 365, "22": 387, "23": 403, "24": 419, "25": 436, "26": 455, "27": 472, "28": 486, "29": 506, "30": 523, "31": 541, "32": 560, "33": 575, "34": 592, "35": 608, "36": 622, "37": 642, "38": 657, "39": 678, "40": 695, "41": 713, "42": 728, "43": 746, "44": 763, "45": 777, "46": 794, "47": 817, "48": 831, "49": 845, "50": 859, "51": 873}
 ---
 
 **Dave Jones:** Hi, I'm Dane Jones. Normally, I run a niche little technical video blog, and I don't get involved in political issues and social commentary and stuff like that. I just sit back and take government decisions up the ass like

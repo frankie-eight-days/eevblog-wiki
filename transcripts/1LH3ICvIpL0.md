@@ -3,6 +3,7 @@ video_id: 1LH3ICvIpL0
 title: EEVblog 1622 - The BIG BEGINNER MISTAKE with Multimeters
 url: https://www.youtube.com/watch?v=1LH3ICvIpL0
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 46, "4": 64, "5": 77, "6": 91, "7": 105, "8": 122, "9": 143, "10": 161, "11": 176, "12": 193, "13": 219, "14": 233, "15": 248, "16": 262, "17": 276, "18": 290, "19": 307, "20": 319, "21": 334, "22": 351, "23": 367, "24": 382, "25": 396, "26": 413, "27": 429, "28": 445, "29": 462, "30": 477, "31": 493, "32": 508, "33": 521, "34": 536, "35": 549, "36": 559, "37": 574, "38": 588, "39": 603, "40": 616, "41": 629, "42": 643, "43": 655, "44": 668, "45": 681, "46": 694, "47": 708, "48": 721, "49": 734}
 ---
 
 **Dave Jones:** Hi, I just had one of my BM5235 multimeters returned from a customer saying that they believe it's faulty because here's a photo, they had an old multimeter measuring a CAN bus and it was measuring the 60 ohm load on the CAN

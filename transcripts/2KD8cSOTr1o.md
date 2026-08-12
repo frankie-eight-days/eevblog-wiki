@@ -3,6 +3,7 @@ video_id: 2KD8cSOTr1o
 title: Youtube Stats
 url: https://www.youtube.com/watch?v=2KD8cSOTr1o
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 45, "4": 61, "5": 75, "6": 89, "7": 105, "8": 120, "9": 128, "10": 140, "11": 151, "12": 164, "13": 176, "14": 189, "15": 200, "16": 211, "17": 222, "18": 236, "19": 248, "20": 258, "21": 271, "22": 284, "23": 298, "24": 307, "25": 324, "26": 343, "27": 355, "28": 368, "29": 383, "30": 397, "31": 410, "32": 422, "33": 437, "34": 451, "35": 464, "36": 479, "37": 495, "38": 510, "39": 527, "40": 541, "41": 553, "42": 566, "43": 581, "44": 593, "45": 602, "46": 613, "47": 627, "48": 645, "49": 660, "50": 674, "51": 685, "52": 698}
 ---
 
 **Dave Jones:** Hi, just a quick video on my main channel stats here. I don't often look at my stats these days, so I thought it'd be interesting. I just saw a video on Fran's Patreon. It's not released yet, so I'll link it down below when it

@@ -3,6 +3,7 @@ video_id: ehZvnvhtJMo
 title: The Dumpster Room is REAL: A Tour
 url: https://www.youtube.com/watch?v=ehZvnvhtJMo
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 35, "3": 51, "4": 68, "5": 86, "6": 105, "7": 119, "8": 132, "9": 146, "10": 158, "11": 175, "12": 190, "13": 202, "14": 215, "15": 229, "16": 247, "17": 260, "18": 278, "19": 296, "20": 310, "21": 327, "22": 341, "23": 355, "24": 369}
 ---
 
 **Dave Jones:** Hi, I thought I'd take you on a tour of the infamous the famous dumpster room here cuz there's a lot of people who believe that it doesn't exist. And there are rules to the dumpster room. There you go. Up CCTV in operation and you

@@ -3,6 +3,7 @@ video_id: RuIBgQP5tAQ
 title: Rohde & Schwarz RTB2004 Oscilloscope Slow Timebase Trigger is Cool
 url: https://www.youtube.com/watch?v=RuIBgQP5tAQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 26, "3": 42, "4": 53, "5": 67, "6": 80, "7": 94, "8": 108, "9": 124, "10": 137, "11": 149, "12": 166, "13": 179, "14": 194, "15": 207, "16": 218, "17": 230, "18": 242, "19": 257, "20": 271, "21": 284, "22": 297, "23": 311, "24": 321, "25": 339, "26": 352}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to the recent one on the main channel about slow time base triggering on oscilloscopes and got lots of great feedback on this on this and yeah, a lot of people are in a similar position like

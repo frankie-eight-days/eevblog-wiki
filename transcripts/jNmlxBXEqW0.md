@@ -3,6 +3,7 @@ video_id: jNmlxBXEqW0
 title: EEVblog #919 - How To Charge Li-Ion/LiPo Batteries With A Power Supply
 url: https://www.youtube.com/watch?v=jNmlxBXEqW0
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 28, "3": 45, "4": 60, "5": 74, "6": 87, "7": 101, "8": 116, "9": 128, "10": 140, "11": 152, "12": 164, "13": 180, "14": 194, "15": 208, "16": 226, "17": 244, "18": 256, "19": 270, "20": 283, "21": 296, "22": 309, "23": 325, "24": 337, "25": 354, "26": 369, "27": 384, "28": 398, "29": 414, "30": 427, "31": 439, "32": 454, "33": 467, "34": 478, "35": 492, "36": 503, "37": 514, "38": 529, "39": 543, "40": 554, "41": 566, "42": 581, "43": 593, "44": 609, "45": 624, "46": 637, "47": 659, "48": 672, "49": 688, "50": 703, "51": 714, "52": 725, "53": 737, "54": 750, "55": 763, "56": 777, "57": 794, "58": 806}
 ---
 
 **Dave Jones:** Hi, I've got a bit of a problem. I've got one of these 18650 rechargeable lithium ion batteries. You're no doubt familiar with these. They're used inside torches and laptops and all sorts of products these days. But actually, I got

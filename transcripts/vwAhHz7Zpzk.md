@@ -3,6 +3,7 @@ video_id: vwAhHz7Zpzk
 title: Guest Video - Karl Adams - Audio Distortion Measurement
 url: https://www.youtube.com/watch?v=vwAhHz7Zpzk
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 25, "3": 41, "4": 57, "5": 73, "6": 89, "7": 103, "8": 121, "9": 137, "10": 159, "11": 176, "12": 196, "13": 217, "14": 237, "15": 258, "16": 278, "17": 295, "18": 310, "19": 329, "20": 344, "21": 366, "22": 390, "23": 415, "24": 434, "25": 458, "26": 472, "27": 494, "28": 511, "29": 533, "30": 559, "31": 582, "32": 598, "33": 613, "34": 629, "35": 648}
 ---
 
 **Dave Jones:** Good day. I'm Carl Adams, and I'm here because of Dave's incredible generosity in sharing this channel with folks like me. So, if you're not familiar with my channel and its content, audio is my thing. Do a lot of audio

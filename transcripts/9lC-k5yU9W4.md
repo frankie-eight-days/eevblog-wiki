@@ -3,6 +3,7 @@ video_id: 9lC-k5yU9W4
 title: EEVblog 1671 - Beware of Multimeter Continuity Latching
 url: https://www.youtube.com/watch?v=9lC-k5yU9W4
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 31, "3": 47, "4": 62, "5": 84, "6": 103, "7": 122, "8": 143, "9": 158, "10": 175, "11": 194, "12": 213, "13": 227, "14": 241, "15": 256, "16": 268, "17": 283, "18": 294, "19": 307, "20": 318, "21": 331, "22": 344, "23": 360, "24": 372, "25": 384, "26": 399, "27": 412, "28": 427, "29": 443, "30": 461, "31": 478, "32": 492, "33": 501, "34": 518, "35": 531, "36": 543, "37": 563, "38": 580, "39": 593, "40": 614, "41": 638, "42": 657, "43": 675, "44": 693, "45": 709, "46": 719, "47": 734, "48": 746, "49": 757, "50": 772, "51": 784}
 ---
 
 **Dave Jones:** Hi, in a previous quick video looking at a new experimental firmware version for the BM786 multimeter, like making a change to the continuity tester in it and how it changed to a basically from a latched version to an

@@ -3,6 +3,7 @@ video_id: ru7pjXorejE
 title: EEVblog #459 - Counter Shenanigans
 url: https://www.youtube.com/watch?v=ru7pjXorejE
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 35, "3": 51, "4": 67, "5": 76, "6": 89, "7": 102, "8": 116, "9": 133, "10": 152, "11": 171, "12": 188, "13": 203, "14": 221, "15": 241, "16": 256, "17": 272, "18": 287, "19": 302, "20": 318, "21": 338, "22": 354, "23": 372, "24": 391, "25": 409, "26": 422, "27": 440, "28": 466, "29": 483, "30": 499, "31": 511, "32": 527, "33": 540}
 ---
 
 **Dave Jones:** Hi. Yes, it's just another quick video on this rubidium standard and frequency counter because Nitro 2001 on the uh 4EV Blog forum, a user on there asked, "What happens if we feed the rubidium reference external input up the

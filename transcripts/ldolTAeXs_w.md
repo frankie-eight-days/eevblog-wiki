@@ -3,6 +3,7 @@ video_id: ldolTAeXs_w
 title: EEVblog #1297 - Turn an LCD into E-Paper!
 url: https://www.youtube.com/watch?v=ldolTAeXs_w
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 28, "3": 42, "4": 59, "5": 74, "6": 88, "7": 107, "8": 119, "9": 133, "10": 144, "11": 157, "12": 171, "13": 183, "14": 196, "15": 212, "16": 227, "17": 241, "18": 254, "19": 268, "20": 286, "21": 304, "22": 315, "23": 332, "24": 343, "25": 358, "26": 371, "27": 386, "28": 399, "29": 416, "30": 427, "31": 438, "32": 453}
 ---
 
 **Dave Jones:** Hi, for those who aren't subscribed to my EEVblog 2 channel and you really should be because you'll miss interesting art stuff like this. And so I'll link in my EEVblog 2 channel down below and at the end if you're not

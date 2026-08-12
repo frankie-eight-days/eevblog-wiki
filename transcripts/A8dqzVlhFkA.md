@@ -3,6 +3,7 @@ video_id: A8dqzVlhFkA
 title: EEVblog #1001 - uBeam Ultrasonic Wireless Charging DEBUNKED!
 url: https://www.youtube.com/watch?v=A8dqzVlhFkA
 source: youtube-asr
+timestamps: {"0": 9, "1": 25, "2": 41, "3": 55, "4": 72, "5": 88, "6": 106, "7": 122, "8": 136, "9": 155, "10": 170, "11": 186, "12": 199, "13": 212, "14": 226, "15": 241, "16": 256, "17": 270, "18": 285, "19": 304, "20": 322, "21": 335, "22": 352, "23": 365, "24": 380, "25": 391, "26": 404, "27": 413, "28": 430, "29": 444, "30": 459, "31": 470, "32": 488, "33": 501, "34": 514, "35": 530, "36": 542, "37": 552, "38": 570, "39": 589, "40": 603, "41": 617, "42": 630, "43": 644, "44": 660, "45": 673, "46": 688, "47": 700, "48": 720, "49": 733, "50": 748, "51": 763, "52": 777, "53": 791, "54": 808, "55": 823, "56": 838, "57": 852, "58": 865, "59": 877, "60": 893}
 ---
 
 **Dave Jones:** Right, which product is going to win the product of the century award cuz century is only 17 years old. So, well, there's a lot of contenders, isn't there? You know, batterizers, solar freaking roadways, and all sorts of stuff, but this one I think takes the

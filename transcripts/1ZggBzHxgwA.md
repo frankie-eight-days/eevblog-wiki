@@ -3,6 +3,7 @@ video_id: 1ZggBzHxgwA
 title: PRO TIP: How to re-screw screws into plastic (Fluke Multimeters)
 url: https://www.youtube.com/watch?v=1ZggBzHxgwA
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 27, "3": 39, "4": 51}
 ---
 
 **Dave Jones:** Just a little pro tip. When you're putting uh selftapper screws back into plastic like this, the correct way to do it is not just go willy-nilly and screw it up. Is to actually turn it counterclockwise until you feel it. This

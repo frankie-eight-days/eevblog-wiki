@@ -3,6 +3,7 @@ video_id: I7wMkLJgnko
 title: Home Solar Power System Re-install is now completely working!
 url: https://www.youtube.com/watch?v=I7wMkLJgnko
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 35, "3": 46, "4": 60, "5": 73, "6": 89, "7": 104, "8": 119, "9": 131, "10": 145, "11": 157, "12": 172, "13": 185, "14": 200, "15": 215, "16": 232, "17": 246, "18": 261, "19": 277, "20": 296, "21": 315, "22": 332, "23": 342, "24": 356, "25": 369, "26": 383, "27": 395, "28": 406, "29": 419, "30": 436, "31": 448, "32": 461, "33": 476, "34": 490, "35": 506, "36": 516, "37": 530, "38": 541, "39": 556, "40": 571}
 ---
 
 **Dave Jones:** Hi, just a quick solar update video for those playing along at home. Um, it's fixed. It's fixed. The solar guys were just out to troubleshoot what happened to the second string on the new DI inverter and um, here it is. Live

@@ -3,6 +3,7 @@ video_id: 2GJZrRL75uA
 title: eevBLAB 132 - Insta360 Ace Pro 2 Camera RANSOMWARE
 url: https://www.youtube.com/watch?v=2GJZrRL75uA
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 34, "3": 50, "4": 64, "5": 78, "6": 93, "7": 106, "8": 122, "9": 134, "10": 148, "11": 162, "12": 173, "13": 195, "14": 213, "15": 225, "16": 241, "17": 252, "18": 263, "19": 276, "20": 288, "21": 301, "22": 320, "23": 333, "24": 347, "25": 361, "26": 376, "27": 389, "28": 402, "29": 417, "30": 430, "31": 444, "32": 457, "33": 471, "34": 486, "35": 500}
 ---
 
 **Dave Jones:** Hi. Welcome to the internet of and a new product I just got which I want to show you. You might remember 4 years ago I did this Blab video. I'll link it in if you haven't seen it. DJI Pocket 2

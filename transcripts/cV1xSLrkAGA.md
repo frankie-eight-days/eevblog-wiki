@@ -3,6 +3,7 @@ video_id: cV1xSLrkAGA
 title: EEVblog #1214 - Insanely Fast Slot Cars!
 url: https://www.youtube.com/watch?v=cV1xSLrkAGA
 source: youtube-asr
+timestamps: {"0": 3, "1": 26, "2": 42, "3": 56, "4": 73, "5": 88, "6": 102, "7": 115, "8": 130, "9": 147, "10": 163, "11": 177, "12": 194, "13": 211, "14": 227, "15": 249, "16": 269, "17": 292, "18": 306, "19": 323, "20": 336, "21": 353, "22": 368, "23": 386, "24": 405, "25": 420, "26": 439, "27": 471, "28": 492, "29": 512, "30": 528, "31": 546, "32": 566, "33": 580, "34": 600, "35": 618, "36": 638}
 ---
 
 **Dave Jones:** Check it out. I'm at uh Hornby Slot Cars, which holds the um uh national slot car championships every 4 years. And uh it's pretty cool. They got two circuits here. So, all you slot car aficionados and I'll try and get some

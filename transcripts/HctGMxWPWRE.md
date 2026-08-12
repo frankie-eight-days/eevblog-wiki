@@ -3,6 +3,7 @@ video_id: HctGMxWPWRE
 title: Deye Hybrid Inverter Time Sync Issue UPDATE + Battery News
 url: https://www.youtube.com/watch?v=HctGMxWPWRE
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 50, "4": 67, "5": 82, "6": 98, "7": 113, "8": 127, "9": 142, "10": 158, "11": 172, "12": 188, "13": 199, "14": 211, "15": 225, "16": 239, "17": 254, "18": 269, "19": 282, "20": 296, "21": 311, "22": 324, "23": 334, "24": 347, "25": 362, "26": 376, "27": 388}
 ---
 
 **Dave Jones:** Hi, just an update on my DI uh hybrid inverter here. I solved the uh issue with the clock or mostly. Um I've installed I found I finally found it and installed the Wi-Fi uh dongle there as you can see. Um instead of the RS232

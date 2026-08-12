@@ -3,6 +3,7 @@ video_id: EXHFBQMTXWM
 title: Home Ventilation System Troubleshooting
 url: https://www.youtube.com/watch?v=EXHFBQMTXWM
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 35, "3": 54, "4": 73, "5": 88, "6": 104, "7": 120, "8": 137, "9": 151, "10": 167, "11": 185, "12": 200, "13": 214, "14": 225, "15": 237, "16": 254, "17": 264, "18": 281, "19": 294, "20": 308, "21": 322, "22": 333, "23": 347, "24": 359, "25": 373, "26": 387, "27": 400, "28": 410, "29": 422, "30": 439, "31": 453, "32": 469, "33": 486, "34": 500, "35": 515, "36": 528, "37": 547, "38": 563}
 ---
 
 **Dave Jones:** Hi. You've seen this before. I've done a video covering the uh installation and how this uh thing works. It's the Brink Flare 400 home air ventilation and heat recovery system. So, this uh when we were renovating the roof on the house, we had

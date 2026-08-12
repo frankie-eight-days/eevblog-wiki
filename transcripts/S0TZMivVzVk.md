@@ -3,6 +3,7 @@ video_id: S0TZMivVzVk
 title: EEVblog #16 - CMOS SCR Latchup Tutorial
 url: https://www.youtube.com/watch?v=S0TZMivVzVk
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 39, "3": 61, "4": 77, "5": 95, "6": 112, "7": 128, "8": 146, "9": 161, "10": 177, "11": 197, "12": 215, "13": 235, "14": 247, "15": 266, "16": 281, "17": 298, "18": 316, "19": 338, "20": 361, "21": 378, "22": 392, "23": 413, "24": 430, "25": 451, "26": 468, "27": 489, "28": 503, "29": 520, "30": 534, "31": 550, "32": 564, "33": 580, "34": 596}
 ---
 
 **Dave Jones:** Welcome to the AEV blog. I'm your host, Dave Jones, and this is episode number 16. I'm going to talk about a major problem in electronics design that you've almost certainly come across, you know, given enough time, but you may not be aware of

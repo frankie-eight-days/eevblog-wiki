@@ -3,6 +3,7 @@ video_id: YfpUggLais4
 title: EEVblog #1299 - Dumpster Laptop REPAIR
 url: https://www.youtube.com/watch?v=YfpUggLais4
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 31, "3": 44, "4": 57, "5": 75, "6": 92, "7": 110, "8": 126, "9": 139, "10": 154, "11": 170, "12": 183, "13": 198, "14": 212, "15": 227, "16": 243, "17": 256, "18": 267, "19": 280, "20": 293, "21": 304, "22": 315, "23": 325, "24": 343, "25": 357, "26": 372, "27": 386, "28": 401, "29": 414, "30": 430, "31": 446, "32": 463, "33": 477, "34": 493, "35": 505, "36": 523, "37": 538, "38": 552, "39": 571, "40": 588, "41": 602, "42": 623, "43": 643, "44": 656, "45": 671, "46": 685, "47": 701, "48": 714, "49": 730, "50": 750, "51": 762, "52": 773, "53": 787, "54": 804, "55": 815, "56": 828, "57": 846, "58": 861, "59": 876, "60": 890, "61": 904, "62": 916, "63": 933, "64": 949, "65": 968, "66": 983, "67": 999, "68": 1014, "69": 1029, "70": 1042, "71": 1055, "72": 1069, "73": 1084}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time again, just on the second channel because this is not like a huge score like I got last time with that touchscreen Lenovo thing which we're using it Sagan's using at home by the way and we're using it as a

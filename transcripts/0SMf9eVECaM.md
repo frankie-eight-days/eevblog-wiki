@@ -3,6 +3,7 @@ video_id: 0SMf9eVECaM
 title: Hydro Power Turbine Generator
 url: https://www.youtube.com/watch?v=0SMf9eVECaM
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 36, "3": 50, "4": 65, "5": 86, "6": 99}
 ---
 
 **Dave Jones:** Hi, check out what I found in the middle of the Tasmanian rainforest. It's a hydro generator. There we go, smart hydro power generator and three-bladed design by the looks of it. And it's got a like a larger inlet

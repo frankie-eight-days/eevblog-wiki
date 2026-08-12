@@ -3,6 +3,7 @@ video_id: YaTldV7-uXo
 title: When Safety Goes Out The Window
 url: https://www.youtube.com/watch?v=YaTldV7-uXo
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 31, "3": 48, "4": 64, "5": 78, "6": 92, "7": 107, "8": 126, "9": 139, "10": 158, "11": 176, "12": 196, "13": 207, "14": 222, "15": 237, "16": 249}
 ---
 
 **Dave Jones:** Hi, if you've been following me on Twitter / X, you might have seen photos of this bad boy, which was left in our building here by a contractor who was I don't know, probably doing some renovation work or something like that.

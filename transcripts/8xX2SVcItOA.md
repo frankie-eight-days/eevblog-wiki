@@ -3,6 +3,7 @@ video_id: 8xX2SVcItOA
 title: EEVblog #102 - DIY Constant Current Dummy Load for Power Supply and Battery Testing
 url: https://www.youtube.com/watch?v=8xX2SVcItOA
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 38, "3": 51, "4": 64, "5": 79, "6": 96, "7": 115, "8": 129, "9": 145, "10": 163, "11": 181, "12": 199, "13": 213, "14": 231, "15": 242, "16": 254, "17": 269, "18": 282, "19": 295, "20": 310, "21": 322, "22": 333, "23": 353, "24": 370, "25": 385, "26": 399, "27": 415, "28": 426, "29": 439, "30": 451, "31": 463, "32": 481, "33": 498, "34": 513, "35": 528, "36": 545, "37": 564, "38": 578, "39": 594, "40": 606, "41": 621, "42": 632, "43": 647, "44": 662, "45": 680, "46": 696, "47": 709, "48": 724, "49": 736, "50": 750, "51": 761, "52": 772, "53": 792, "54": 807, "55": 822, "56": 837, "57": 852, "58": 872, "59": 887, "60": 903, "61": 919, "62": 933, "63": 952, "64": 965, "65": 979, "66": 994, "67": 1007, "68": 1022, "69": 1037, "70": 1049, "71": 1063, "72": 1078, "73": 1093, "74": 1108, "75": 1119, "76": 1133}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it seems like I'm always designing a little switch mode power supply for whatever a project it is, for whatever

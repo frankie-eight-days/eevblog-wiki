@@ -3,6 +3,7 @@ video_id: sxUnA5dn3AU
 title: Zelda Watch Bodge Repair 2 - Electric Boogaloo
 url: https://www.youtube.com/watch?v=sxUnA5dn3AU
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 38, "3": 51, "4": 66, "5": 81, "6": 97, "7": 110, "8": 123, "9": 137, "10": 149, "11": 166, "12": 180, "13": 195, "14": 210, "15": 224, "16": 238, "17": 251, "18": 265, "19": 279, "20": 293, "21": 306, "22": 322, "23": 336, "24": 354, "25": 373, "26": 386, "27": 404, "28": 415, "29": 430, "30": 446, "31": 465, "32": 478, "33": 490, "34": 504, "35": 517, "36": 529, "37": 542, "38": 559}
 ---
 
 **Dave Jones:** Hi, it's watch repair 2 electric booaloo time and didn't I open a hornets's nest. Um, all the watch afficionados came out of the woodwork and were horrified at my video. Um, I'll link it in if you haven't seen it. That that's part one

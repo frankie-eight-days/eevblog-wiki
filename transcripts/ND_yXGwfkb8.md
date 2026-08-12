@@ -3,6 +3,7 @@ video_id: ND_yXGwfkb8
 title: Old Parliament House ABC News Room Tour
 url: https://www.youtube.com/watch?v=ND_yXGwfkb8
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 34, "3": 49, "4": 66, "5": 82, "6": 98, "7": 116, "8": 139, "9": 155, "10": 171, "11": 185, "12": 202, "13": 216, "14": 232, "15": 257}
 ---
 
 **Dave Jones:** Hi, I'm underneath the old uh Parliament House here in Canberra and I thought I'd show you just a tour of the um ABC room. Uh cuz this was used in fact got a timeline here. I think public broadcasting. This is the ABC uh

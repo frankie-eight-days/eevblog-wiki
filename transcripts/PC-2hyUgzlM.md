@@ -3,6 +3,7 @@ video_id: PC-2hyUgzlM
 title: EEVblog 1630 - Solar Panels for Water Pre-Heating?
 url: https://www.youtube.com/watch?v=PC-2hyUgzlM
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 27, "3": 39, "4": 53, "5": 65, "6": 82, "7": 91, "8": 108, "9": 124, "10": 136, "11": 148, "12": 159, "13": 175, "14": 188, "15": 202, "16": 219, "17": 231, "18": 245, "19": 256, "20": 271, "21": 286, "22": 297, "23": 307, "24": 321, "25": 336, "26": 352, "27": 364, "28": 375, "29": 388, "30": 408, "31": 423, "32": 439, "33": 454, "34": 469, "35": 484, "36": 499, "37": 515, "38": 530, "39": 546, "40": 557, "41": 572, "42": 583, "43": 597, "44": 611, "45": 625, "46": 642, "47": 654, "48": 667, "49": 680, "50": 698, "51": 711, "52": 722, "53": 737, "54": 749, "55": 758, "56": 770, "57": 788, "58": 799, "59": 811}
 ---
 
 **Dave Jones:** Hi, just a quick video. I'm responding to a Twitter comment. In fact, a couple of people commented on this with exactly the same thing. I'm always posting updates on Twitter X about, you know, my solar all sorts of

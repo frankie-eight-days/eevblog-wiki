@@ -3,6 +3,7 @@ video_id: PyyWlO067pY
 title: Hunter WarBirds Museum
 url: https://www.youtube.com/watch?v=PyyWlO067pY
 source: youtube-asr
+timestamps: {"0": 3, "1": 23, "2": 43, "3": 59, "4": 78, "5": 93, "6": 104, "7": 127, "8": 143, "9": 158, "10": 173, "11": 187, "12": 207, "13": 227, "14": 242, "15": 267, "16": 288, "17": 309, "18": 324, "19": 344, "20": 361, "21": 378, "22": 395, "23": 412, "24": 428, "25": 460, "26": 483, "27": 499, "28": 512, "29": 535, "30": 553, "31": 569, "32": 582, "33": 592, "34": 610, "35": 636, "36": 647, "37": 666, "38": 690, "39": 713, "40": 725, "41": 751, "42": 765, "43": 780, "44": 790, "45": 806, "46": 824, "47": 840, "48": 856, "49": 868, "50": 880, "51": 893, "52": 906, "53": 933, "54": 949, "55": 964, "56": 977, "57": 998}
 ---
 
 **Dave Jones:** Hi, I'm in Scone, which is um north of uh Sydney, still in New South Wales, and I'm at the uh Hunter Warbirds um aviation military museum. So, I'll give you a walk around. Let's go. And I've not been around yet, so I'll have to go

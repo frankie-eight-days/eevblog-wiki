@@ -3,6 +3,7 @@ video_id: y5rgopC4MVg
 title: Judging the Hack-A-Day Prize
 url: https://www.youtube.com/watch?v=y5rgopC4MVg
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 32, "3": 51, "4": 70, "5": 85, "6": 105, "7": 118, "8": 132}
 ---
 
 **Dave Jones:** Hi, I'm Dave Jones from the EEV blog, one of the judges in the Hacker Day prize. And well, I'm about to judge uh all 42 finalists here to uh in conjunction with the other judges to then get a list of the final five who go

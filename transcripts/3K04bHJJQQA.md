@@ -3,6 +3,7 @@ video_id: 3K04bHJJQQA
 title: EEVblog #187 - Tektronix TDS2024C Oscilloscope Teardown
 url: https://www.youtube.com/watch?v=3K04bHJJQQA
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 50, "4": 66, "5": 81, "6": 101, "7": 115, "8": 129, "9": 141, "10": 156, "11": 170, "12": 186, "13": 202, "14": 221, "15": 234, "16": 249, "17": 264, "18": 278, "19": 290, "20": 304, "21": 339, "22": 350, "23": 366, "24": 383, "25": 401, "26": 419, "27": 435, "28": 447, "29": 463, "30": 484, "31": 498, "32": 517, "33": 531, "34": 544, "35": 561, "36": 574, "37": 591, "38": 602, "39": 615, "40": 631, "41": 644, "42": 660, "43": 674, "44": 736, "45": 752, "46": 768, "47": 821, "48": 840, "49": 854, "50": 875, "51": 892, "52": 908, "53": 925, "54": 941, "55": 956, "56": 974, "57": 988, "58": 1001, "59": 1026, "60": 1041, "61": 1054, "62": 1066, "63": 1086, "64": 1102, "65": 1120, "66": 1137, "67": 1154, "68": 1170, "69": 1181, "70": 1198, "71": 1309}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's product teardown time and it's another oscilloscope. Just so happened to have this Tektronix TDS 2024C.

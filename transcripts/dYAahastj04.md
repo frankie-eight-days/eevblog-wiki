@@ -3,6 +3,7 @@ video_id: dYAahastj04
 title: Dumpster Instrument Cart REPAIRED
 url: https://www.youtube.com/watch?v=dYAahastj04
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 50, "4": 62, "5": 76, "6": 92, "7": 113}
 ---
 
 **Dave Jones:** I'm going to fix the wheel for that dumpster instrument cart slash tool cart that I found. Luckily, I have a few tins of various stuff. So, going to go down to nuts here and well, I can't hold the camera at the same time,

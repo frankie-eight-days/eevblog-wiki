@@ -3,6 +3,7 @@ video_id: kp63MZ6RudE
 title: EEVblog #889 - Credit Card RFID/NFC Theft Protection Tested
 url: https://www.youtube.com/watch?v=kp63MZ6RudE
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 28, "3": 43, "4": 55, "5": 69, "6": 87, "7": 105, "8": 118, "9": 131, "10": 145, "11": 154, "12": 170, "13": 183, "14": 201, "15": 218, "16": 232, "17": 247, "18": 261, "19": 275, "20": 288, "21": 304, "22": 315, "23": 326, "24": 337, "25": 350, "26": 365, "27": 382, "28": 399, "29": 415, "30": 428, "31": 445, "32": 460, "33": 474, "34": 488, "35": 503, "36": 517, "37": 532, "38": 546, "39": 558, "40": 570, "41": 582, "42": 596, "43": 607, "44": 618, "45": 634, "46": 651, "47": 663, "48": 677, "49": 694, "50": 708, "51": 728, "52": 741, "53": 755, "54": 769, "55": 784, "56": 799, "57": 815, "58": 827, "59": 839, "60": 853, "61": 866, "62": 883, "63": 896, "64": 911, "65": 924, "66": 936, "67": 948, "68": 959, "69": 970, "70": 979, "71": 991, "72": 1008, "73": 1024, "74": 1039}
 ---
 
 **Dave Jones:** Hi. You know doubt familiar with modern credit cards like this one that have an RFID chip embedded in them or tap and go as it's called here in Australia. It might be called different things in other countries. They actually contain a

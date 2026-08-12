@@ -3,6 +3,7 @@ video_id: d_S9YsD9Y0c
 title: EEVblog #984 - World's Best Dumpster Find! ($300k!)
 url: https://www.youtube.com/watch?v=d_S9YsD9Y0c
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 30, "3": 49, "4": 69, "5": 87, "6": 109, "7": 122, "8": 138, "9": 157, "10": 171, "11": 185, "12": 197, "13": 221, "14": 233, "15": 250, "16": 264, "17": 283, "18": 294, "19": 310, "20": 327, "21": 346, "22": 359, "23": 387, "24": 399, "25": 418, "26": 433, "27": 449, "28": 466, "29": 484, "30": 499, "31": 518, "32": 539, "33": 567, "34": 584, "35": 597, "36": 614, "37": 635, "38": 648, "39": 665, "40": 681, "41": 694, "42": 707, "43": 721, "44": 736, "45": 747, "46": 761}
 ---
 
 **Dave Jones:** Hi guys, down in the dumpster room. Sorry about the crap crap quality. Shooting this on the phone. Didn't have time to go get my good camera. So, audio and video is probably going to suck, BUT CHECK OUT WHAT I FOUND IN THE DUMPSTER.

@@ -3,6 +3,7 @@ video_id: ujs7qws1Pgo
 title: eevBLAB #57 - Solar Freakin' Cruise Ships! & Critical Thinking
 url: https://www.youtube.com/watch?v=ujs7qws1Pgo
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 38, "3": 52, "4": 70, "5": 88, "6": 100, "7": 114, "8": 126, "9": 138, "10": 155, "11": 171, "12": 187, "13": 206, "14": 223, "15": 238, "16": 254, "17": 266, "18": 281, "19": 293, "20": 304, "21": 319, "22": 334, "23": 349, "24": 362, "25": 377, "26": 389, "27": 402, "28": 416, "29": 432, "30": 450, "31": 468, "32": 480, "33": 495, "34": 511, "35": 523, "36": 539, "37": 551, "38": 563, "39": 578, "40": 592, "41": 607, "42": 623, "43": 636, "44": 650, "45": 662, "46": 678, "47": 698, "48": 716, "49": 734, "50": 746}
 ---
 
 **Dave Jones:** Hi, it's time for a walk time a rant. I thought I'd do one on debunking and critical thinking because what brought this up is a recent video that involves our old friend Solar Roadways. There was a video released back in September, so

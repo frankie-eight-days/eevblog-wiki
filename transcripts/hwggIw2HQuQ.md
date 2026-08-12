@@ -3,6 +3,7 @@ video_id: hwggIw2HQuQ
 title: eevBLAB 96 - BUSTED! - Dymo Gets WORSE!
 url: https://www.youtube.com/watch?v=hwggIw2HQuQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 35, "3": 52, "4": 65, "5": 84, "6": 101, "7": 113, "8": 131, "9": 146, "10": 161, "11": 181, "12": 198, "13": 217, "14": 227, "15": 240, "16": 257, "17": 272, "18": 285, "19": 300, "20": 314, "21": 334}
 ---
 
 **Dave Jones:** Hi, just an update to my main channel video I just did. I'll link it in if you haven't seen it about how a Dymo have absolutely destroyed their reputation and business by being the first in the industry to introduce DRM digital rights

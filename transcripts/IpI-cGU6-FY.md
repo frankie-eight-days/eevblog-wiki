@@ -3,6 +3,7 @@ video_id: IpI-cGU6-FY
 title: EEVblog #1104 - Omicron Labs Bode 100 Teardown
 url: https://www.youtube.com/watch?v=IpI-cGU6-FY
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 52, "4": 72, "5": 85, "6": 98, "7": 119, "8": 132, "9": 155, "10": 171, "11": 185, "12": 203, "13": 218, "14": 233, "15": 249, "16": 263, "17": 277, "18": 290, "19": 302, "20": 317, "21": 330, "22": 345, "23": 362, "24": 380, "25": 395, "26": 412, "27": 426, "28": 443, "29": 459, "30": 476, "31": 495, "32": 514, "33": 532, "34": 548, "35": 563, "36": 579, "37": 600, "38": 624, "39": 642, "40": 660, "41": 678, "42": 696, "43": 712, "44": 730, "45": 748, "46": 765, "47": 780, "48": 802, "49": 822, "50": 841, "51": 858, "52": 876, "53": 897, "54": 915, "55": 932, "56": 947, "57": 963, "58": 977, "59": 995, "60": 1012, "61": 1024, "62": 1041, "63": 1059}
 ---
 
 **Dave Jones:** Hi, in a previous video, which I'll link in down below and at the end, we took a look at this Omicron Lab Bode 100 frequency response analyzer / vector network analyzer. Whatever you want to call it. It's brilliant. But, let's do a teardown of

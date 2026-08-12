@@ -3,6 +3,7 @@ video_id: oUiEeOp8ynY
 title: EEVblog #316 - More PFANG, More 13GHz Scope, & More Pulser
 url: https://www.youtube.com/watch?v=oUiEeOp8ynY
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 32, "3": 42, "4": 54, "5": 67, "6": 84, "7": 103, "8": 123, "9": 138, "10": 148, "11": 167, "12": 187, "13": 198, "14": 211, "15": 233, "16": 246, "17": 265, "18": 280, "19": 298, "20": 311, "21": 326, "22": 342, "23": 359, "24": 378, "25": 394, "26": 409, "27": 422, "28": 440, "29": 458, "30": 471, "31": 489, "32": 505, "33": 517, "34": 531, "35": 546, "36": 568, "37": 580, "38": 594, "39": 607, "40": 622, "41": 636, "42": 653, "43": 669, "44": 687, "45": 699, "46": 719, "47": 732, "48": 748, "49": 761, "50": 782, "51": 799, "52": 813, "53": 831, "54": 853, "55": 869, "56": 886, "57": 902, "58": 912, "59": 925, "60": 943, "61": 962, "62": 976, "63": 993, "64": 1008, "65": 1031, "66": 1043, "67": 1058, "68": 1072, "69": 1086}
 ---
 
 **Dave Jones:** Hi. No, it's not quite a mailb bag. Oh, I guess it kind of is. There's the real stuff there. Waiting for the mailbag, but uh I just got something from Chris Jones. Thank you very much, Chris. Uh from the ACT Lions in the ACT. I know

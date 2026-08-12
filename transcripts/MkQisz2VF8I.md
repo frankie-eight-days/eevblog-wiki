@@ -3,6 +3,7 @@ video_id: MkQisz2VF8I
 title: EEVblog 1739 - UNUSUAL FAULT! in a Beelink Ryzen 9 Mini PC
 url: https://www.youtube.com/watch?v=MkQisz2VF8I
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 32, "3": 48, "4": 62, "5": 77, "6": 92, "7": 106, "8": 120, "9": 139, "10": 157, "11": 174, "12": 192, "13": 207, "14": 223, "15": 239, "16": 254, "17": 271, "18": 281, "19": 298, "20": 313, "21": 325, "22": 344, "23": 369, "24": 389, "25": 408, "26": 427, "27": 438, "28": 456, "29": 470, "30": 484, "31": 499, "32": 519, "33": 533, "34": 553, "35": 568, "36": 580, "37": 592, "38": 607, "39": 616, "40": 636, "41": 652, "42": 669, "43": 686, "44": 703, "45": 722, "46": 737, "47": 747, "48": 759, "49": 771, "50": 788, "51": 805, "52": 817, "53": 828, "54": 842, "55": 855, "56": 867, "57": 882}
 ---
 
 **Dave Jones:** Hi. Yes, my camera looks a bit different today because I had to budge in a little old SJCAM 5000 webcam thing because I normally use this Canon HFM 400 which was my old B-roll camera, but the stupid plug pack

@@ -3,6 +3,7 @@ video_id: WTkrk2blxhY
 title: EEVblog #547 - Dumpster Phone Teardown
 url: https://www.youtube.com/watch?v=WTkrk2blxhY
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 27, "3": 38, "4": 54, "5": 67, "6": 81, "7": 95, "8": 108, "9": 119, "10": 134, "11": 148, "12": 159, "13": 171, "14": 186, "15": 200, "16": 220, "17": 235, "18": 247, "19": 262, "20": 279, "21": 292, "22": 305, "23": 320, "24": 331, "25": 349, "26": 366, "27": 379, "28": 396, "29": 412, "30": 425, "31": 445, "32": 463, "33": 475, "34": 487, "35": 497, "36": 510, "37": 523, "38": 534, "39": 548, "40": 560, "41": 572, "42": 585, "43": 599, "44": 611, "45": 628, "46": 645, "47": 662, "48": 677, "49": 693, "50": 706, "51": 717, "52": 736, "53": 750, "54": 766, "55": 780, "56": 793, "57": 809, "58": 826, "59": 845, "60": 861, "61": 877, "62": 890, "63": 905, "64": 925}
 ---
 
 **Dave Jones:** Hi, welcome to some dumpster diving teardown / salvage time. We've got some uh various office phone and internet uh protocol IP phones here courtesy of uh John who sent them into the previous mailbag video which I'll link in down

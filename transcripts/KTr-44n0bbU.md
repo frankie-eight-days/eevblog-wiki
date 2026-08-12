@@ -3,6 +3,7 @@ video_id: KTr-44n0bbU
 title: Garmin GPS Battery Kickstarting
 url: https://www.youtube.com/watch?v=KTr-44n0bbU
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 35, "3": 53, "4": 67, "5": 79, "6": 93, "7": 108, "8": 125, "9": 136, "10": 150, "11": 161, "12": 178, "13": 190, "14": 204, "15": 221, "16": 243, "17": 256, "18": 270, "19": 282, "20": 296, "21": 309, "22": 325, "23": 336, "24": 351, "25": 370, "26": 387, "27": 400, "28": 414, "29": 429, "30": 450, "31": 464, "32": 482, "33": 500, "34": 513, "35": 527, "36": 548, "37": 561, "38": 577, "39": 593, "40": 607, "41": 621, "42": 638, "43": 647, "44": 662, "45": 677, "46": 688}
 ---
 
 **Dave Jones:** Hi. Just a little look at this uh Garmin GPS unit uh that I've got that is um not doing anything. It's uh it's not charging. It's not uh turning on or doing anything like that. So, I've taken out the uh four screws here. And here's

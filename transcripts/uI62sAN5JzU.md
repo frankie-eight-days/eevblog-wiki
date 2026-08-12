@@ -3,6 +3,7 @@ video_id: uI62sAN5JzU
 title: The Mysterious Buga Sphere Transmits LF Waves! (Alien Origin?)
 url: https://www.youtube.com/watch?v=uI62sAN5JzU
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 33, "3": 51, "4": 62, "5": 79, "6": 91, "7": 108, "8": 122, "9": 142, "10": 164, "11": 180, "12": 192, "13": 203, "14": 217, "15": 229, "16": 244, "17": 259, "18": 271, "19": 287, "20": 299, "21": 314, "22": 328, "23": 343, "24": 360, "25": 377, "26": 391}
 ---
 
 **Dave Jones:** Hi, this is the bugger sphere which has been doing all the rounds on the uh social medias the last couple of months probably I uh think. But anyway um this just uh popped up today and look breaking breaking news

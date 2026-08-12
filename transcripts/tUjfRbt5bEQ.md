@@ -3,6 +3,7 @@ video_id: tUjfRbt5bEQ
 title: EEVblog #599 - 5 years of the EEVblog
 url: https://www.youtube.com/watch?v=tUjfRbt5bEQ
 source: youtube-asr
+timestamps: {"0": 2, "1": 22, "2": 37, "3": 52, "4": 64, "5": 79, "6": 94, "7": 111, "8": 126, "9": 140, "10": 151, "11": 165, "12": 181, "13": 201, "14": 213, "15": 227, "16": 243, "17": 254, "18": 271, "19": 289, "20": 303, "21": 316, "22": 329, "23": 340, "24": 358, "25": 370, "26": 384, "27": 398, "28": 412, "29": 425, "30": 438, "31": 450, "32": 463}
 ---
 
 **Dave Jones:** Hi. Yes, it's the 4th of April, 2014. Why is that date significant, I hear you ask? Well, as you probably know from the title of the video, this is my fifth year doing the EE blog 5 years ago. Today, I decided, well, I'm going

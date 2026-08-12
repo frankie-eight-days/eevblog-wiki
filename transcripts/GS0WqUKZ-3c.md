@@ -3,6 +3,7 @@ video_id: GS0WqUKZ-3c
 title: PCBite Handsfree Oscilloscope Probe!
 url: https://www.youtube.com/watch?v=GS0WqUKZ-3c
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 25, "3": 39, "4": 54, "5": 71, "6": 85, "7": 103, "8": 114, "9": 129, "10": 145, "11": 159, "12": 178, "13": 193, "14": 205, "15": 217, "16": 230, "17": 243, "18": 257, "19": 272, "20": 286, "21": 299, "22": 312, "23": 331, "24": 343, "25": 357, "26": 369, "27": 380, "28": 391, "29": 402, "30": 419, "31": 430, "32": 443, "33": 458, "34": 471, "35": 483, "36": 498, "37": 511, "38": 526, "39": 539, "40": 552, "41": 568, "42": 582, "43": 595, "44": 618, "45": 633, "46": 647, "47": 663, "48": 676, "49": 695, "50": 711, "51": 726, "52": 739, "53": 751, "54": 764, "55": 776, "56": 793, "57": 805, "58": 820, "59": 831, "60": 842, "61": 853, "62": 867, "63": 884, "64": 894, "65": 904, "66": 918, "67": 932, "68": 943, "69": 957, "70": 970, "71": 983, "72": 998, "73": 1009, "74": 1023}
 ---
 
 **Dave Jones:** Thank you very much Anthony from Kynar Electronics in Southwest Sydney here. We are a father and son duo awesome and our passion for hobby electronics and robotics and we want to share that passion with students, hobbyist, and makers around the world. We've noticed

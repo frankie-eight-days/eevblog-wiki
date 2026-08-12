@@ -3,6 +3,7 @@ video_id: Ong91Ji3iDk
 title: EEVblog #1159 - World's Most Precise Pocket Calculator
 url: https://www.youtube.com/watch?v=Ong91Ji3iDk
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 36, "3": 54, "4": 71, "5": 89, "6": 108, "7": 124, "8": 139, "9": 155, "10": 172, "11": 191, "12": 204, "13": 217, "14": 234, "15": 249, "16": 265, "17": 280, "18": 294, "19": 311, "20": 325, "21": 344, "22": 362, "23": 376, "24": 393, "25": 405, "26": 420, "27": 433, "28": 452, "29": 473, "30": 488, "31": 508, "32": 520, "33": 539, "34": 551, "35": 566, "36": 584, "37": 599, "38": 617, "39": 631, "40": 647, "41": 666, "42": 682, "43": 698, "44": 714, "45": 727, "46": 741, "47": 755, "48": 769, "49": 782, "50": 801, "51": 816, "52": 831, "53": 844, "54": 862, "55": 877, "56": 890, "57": 908, "58": 922, "59": 937, "60": 955, "61": 972, "62": 990, "63": 1006, "64": 1020, "65": 1035}
 ---
 
 **Dave Jones:** Hi, welcome to a one item mailbag because I'm so excited about this one. I'm not going to bother opening anything else. Thank you very much to Swiss Micros for sending in the DM42. Oh, spoiler alert. Sorry. For all you

@@ -3,6 +3,7 @@ video_id: 6ZH2KeplSrs
 title: DIY Product/PCB Photography Light Box - Part 3
 url: https://www.youtube.com/watch?v=6ZH2KeplSrs
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 44, "4": 58, "5": 69, "6": 87, "7": 103, "8": 116, "9": 131, "10": 145, "11": 159, "12": 171, "13": 188, "14": 204, "15": 218, "16": 231, "17": 241, "18": 259, "19": 275, "20": 289, "21": 301, "22": 311, "23": 321, "24": 333, "25": 345, "26": 356, "27": 370, "28": 381, "29": 392, "30": 406, "31": 416, "32": 428, "33": 440}
 ---
 
 **Dave Jones:** Hi, I just wanted to update you on the do-it-yourself light box. I've already done two videos, I think it is, on actually uh constructing this do-it-yourself light box with a recycled Amazon uh box here and some recycled uh high

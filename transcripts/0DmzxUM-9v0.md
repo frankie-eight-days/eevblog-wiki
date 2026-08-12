@@ -3,6 +3,7 @@ video_id: 0DmzxUM-9v0
 title: EEVblog #994 - CERN/Fermilab Particle Accelerator Boards!
 url: https://www.youtube.com/watch?v=0DmzxUM-9v0
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 28, "3": 45, "4": 55, "5": 72, "6": 88, "7": 108, "8": 126, "9": 143, "10": 162, "11": 183, "12": 204, "13": 223, "14": 238, "15": 254, "16": 271, "17": 290, "18": 307, "19": 319, "20": 331, "21": 349, "22": 360, "23": 372, "24": 387, "25": 403, "26": 425, "27": 441, "28": 463, "29": 478, "30": 496, "31": 513, "32": 528, "33": 542, "34": 560, "35": 576, "36": 590, "37": 619, "38": 635, "39": 650, "40": 664, "41": 683, "42": 696, "43": 713, "44": 730, "45": 745, "46": 761, "47": 772, "48": 792, "49": 807, "50": 823, "51": 839, "52": 856, "53": 874, "54": 892, "55": 913, "56": 932, "57": 951, "58": 967, "59": 981, "60": 994, "61": 1005, "62": 1018, "63": 1029}
 ---
 
 **Dave Jones:** I am going to have to profusely apologize to you Zimmerman if that's correct pronunciation from Germany. This one has been sitting here for does it have a date on it? I I don't even want to read the date cuz it's going to

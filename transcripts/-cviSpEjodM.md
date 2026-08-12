@@ -3,6 +3,7 @@ video_id: -cviSpEjodM
 title: Diddled by the Dumpster
 url: https://www.youtube.com/watch?v=-cviSpEjodM
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 29, "3": 49, "4": 66, "5": 82, "6": 95, "7": 109, "8": 125, "9": 141, "10": 160, "11": 171, "12": 188, "13": 201, "14": 215, "15": 234, "16": 249, "17": 264, "18": 284, "19": 302, "20": 318, "21": 331, "22": 347, "23": 359, "24": 372, "25": 386}
 ---
 
 **Dave Jones:** Hi, for those who have been following me on Twitter, WHICH IS WHERE I POST ALL MY DUMPSTER find photos and stuff like that, you would have seen recently how the dumpster room was ABSOLUTELY CHOCK-A-BLOCK. It was nuts cuz

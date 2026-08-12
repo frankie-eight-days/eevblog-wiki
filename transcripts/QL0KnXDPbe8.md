@@ -3,6 +3,7 @@ video_id: QL0KnXDPbe8
 title: EEVblog #366 - USB PSU Troubleshooting
 url: https://www.youtube.com/watch?v=QL0KnXDPbe8
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 30, "3": 42, "4": 58, "5": 72, "6": 87, "7": 103, "8": 117, "9": 132, "10": 151, "11": 165, "12": 184, "13": 194, "14": 212, "15": 225, "16": 243, "17": 258, "18": 270, "19": 287, "20": 307, "21": 321, "22": 343, "23": 361, "24": 378, "25": 396, "26": 414, "27": 434, "28": 457, "29": 471, "30": 486, "31": 503, "32": 517, "33": 540, "34": 560, "35": 575, "36": 590, "37": 609, "38": 627, "39": 650, "40": 668, "41": 688, "42": 699, "43": 717, "44": 734, "45": 755, "46": 773, "47": 788, "48": 801, "49": 816, "50": 829, "51": 847, "52": 861, "53": 875}
 ---
 
 **Dave Jones:** Hi, just another quick video on the USB power supply. Now, I know this is completely out of order. I haven't done the schematic or I haven't been through the schematic and the design decisions and everything for this yet. Don't

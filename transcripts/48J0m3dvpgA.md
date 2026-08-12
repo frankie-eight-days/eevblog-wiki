@@ -3,6 +3,7 @@ video_id: 48J0m3dvpgA
 title: Multimeter Fridge Test
 url: https://www.youtube.com/watch?v=48J0m3dvpgA
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 34, "3": 55, "4": 77, "5": 93, "6": 113, "7": 127, "8": 145}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on the multimeter temperature trick thing how you can measure ambient temperature. I thought I'd put some multimeters in the fridge and actually see if they actually go right down. I've left them in there

@@ -3,6 +3,7 @@ video_id: cc_GqtBuP4c
 title: Hyundai IONIQ Keyfob Teardown + Battery Replacement
 url: https://www.youtube.com/watch?v=cc_GqtBuP4c
 source: youtube-asr
+timestamps: {"0": 2, "1": 20, "2": 35, "3": 50, "4": 64, "5": 79, "6": 94, "7": 107, "8": 122, "9": 132, "10": 148, "11": 163, "12": 181, "13": 194, "14": 224, "15": 245, "16": 256, "17": 280, "18": 303, "19": 322, "20": 344, "21": 363, "22": 400, "23": 424, "24": 439, "25": 457, "26": 476, "27": 492, "28": 513, "29": 529, "30": 548, "31": 565, "32": 580, "33": 602, "34": 623, "35": 638, "36": 651, "37": 662, "38": 673}
 ---
 
 **Dave Jones:** Hi, just a quick video replacing I believe the battery inside the 2020 Hyundai Ioniq key fob. This is Mrs. EV Blog's one. She said it's been progressively over the last week or two, the car does not recognize the key fob

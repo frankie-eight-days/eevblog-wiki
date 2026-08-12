@@ -3,6 +3,7 @@ video_id: 019eUy-vNhk
 title: EEVblog #1073 - MORE KRK Rokit Black Gunk Speaker Repair
 url: https://www.youtube.com/watch?v=019eUy-vNhk
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 49, "4": 67, "5": 82, "6": 97, "7": 113, "8": 125, "9": 139, "10": 154, "11": 169, "12": 182, "13": 193, "14": 213, "15": 228, "16": 244, "17": 260, "18": 276, "19": 291, "20": 306, "21": 322, "22": 339, "23": 356, "24": 373, "25": 388, "26": 402, "27": 414, "28": 430, "29": 444, "30": 464, "31": 479, "32": 497, "33": 513, "34": 527, "35": 537, "36": 554, "37": 572, "38": 587, "39": 598, "40": 611, "41": 628, "42": 641, "43": 656, "44": 675, "45": 692, "46": 704, "47": 717, "48": 734, "49": 754, "50": 769, "51": 794, "52": 809, "53": 823, "54": 841, "55": 860, "56": 877, "57": 894, "58": 907, "59": 920, "60": 933, "61": 943, "62": 957, "63": 974, "64": 990, "65": 1006, "66": 1019, "67": 1033}
 ---
 
 **Dave Jones:** Hi, in a previous video we took a look at this KRK systems Rokit 6 or Rocket 6 as some people pointed out it should be pronounced powered near field studio monitor speaker and how we repaired this by scraping off the infamous black gunk of

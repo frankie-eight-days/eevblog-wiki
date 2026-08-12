@@ -3,6 +3,7 @@ video_id: Z5PdouZJDUE
 title: EEVblog #355 - Dictaphone Dumpster Diving
 url: https://www.youtube.com/watch?v=Z5PdouZJDUE
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 38, "3": 52, "4": 68, "5": 83, "6": 100, "7": 116, "8": 130, "9": 149, "10": 162, "11": 177, "12": 195, "13": 213, "14": 227, "15": 235, "16": 253, "17": 274, "18": 289, "19": 306, "20": 325, "21": 340, "22": 355, "23": 370, "24": 385, "25": 401, "26": 416, "27": 430, "28": 446, "29": 462, "30": 482, "31": 508, "32": 528, "33": 543, "34": 559, "35": 575, "36": 590, "37": 609, "38": 631, "39": 649, "40": 665, "41": 684, "42": 702, "43": 719, "44": 739, "45": 760, "46": 772, "47": 787, "48": 802, "49": 822, "50": 840, "51": 860, "52": 874, "53": 889, "54": 903, "55": 916, "56": 929, "57": 946, "58": 964, "59": 985, "60": 999, "61": 1014, "62": 1031, "63": 1047, "64": 1067, "65": 1081}
 ---
 
 **Dave Jones:** Hi guys. I'm back in the garbage room here and it's Wednesday, so I might call this dumpster diving Wednesday. Doesn't really rhyme, but well, I found a box of stuff in here. Look at this. Just sitting here. Check this out.

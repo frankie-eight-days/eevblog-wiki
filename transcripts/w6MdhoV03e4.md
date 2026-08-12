@@ -3,6 +3,7 @@ video_id: w6MdhoV03e4
 title: EEVblog #310 - Cheap Siglent and Agilent scopes
 url: https://www.youtube.com/watch?v=w6MdhoV03e4
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 48, "4": 64, "5": 75, "6": 92, "7": 110, "8": 126, "9": 143, "10": 164, "11": 180, "12": 207, "13": 235, "14": 252, "15": 268, "16": 286, "17": 302, "18": 316, "19": 330, "20": 346, "21": 357, "22": 371, "23": 388, "24": 402, "25": 419, "26": 437, "27": 455, "28": 472, "29": 502, "30": 528, "31": 535, "32": 548, "33": 569, "34": 589, "35": 606, "36": 626, "37": 641, "38": 660, "39": 671, "40": 692, "41": 704, "42": 717, "43": 731, "44": 744, "45": 760, "46": 769, "47": 781, "48": 792, "49": 807, "50": 826, "51": 844, "52": 861, "53": 874, "54": 888, "55": 907, "56": 924}
 ---
 
 **Dave Jones:** Just a quick one. I'm here at uh Trio Smart Cal and uh just playing around with a couple of scopes here. We've got a couple of uh well, three Siglents uh slash A-10s and the new uh Rigol rebadged uh sorry, the new Agilent

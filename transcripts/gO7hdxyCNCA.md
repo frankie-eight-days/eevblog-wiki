@@ -3,6 +3,7 @@ video_id: gO7hdxyCNCA
 title: EEVblog 1721 - RIP Arduino (New T&C Deep Dive)
 url: https://www.youtube.com/watch?v=gO7hdxyCNCA
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 36, "3": 50, "4": 67, "5": 88, "6": 102, "7": 113, "8": 128, "9": 142, "10": 156, "11": 169, "12": 180, "13": 191, "14": 208, "15": 221, "16": 238, "17": 256, "18": 268, "19": 281, "20": 296, "21": 311, "22": 324, "23": 339, "24": 350, "25": 364, "26": 376, "27": 388, "28": 404, "29": 423, "30": 444, "31": 457, "32": 471, "33": 485, "34": 503, "35": 519, "36": 532, "37": 548, "38": 565, "39": 581, "40": 596, "41": 609, "42": 624, "43": 637, "44": 652, "45": 667, "46": 680, "47": 698, "48": 710, "49": 725, "50": 743, "51": 762, "52": 774, "53": 792, "54": 805, "55": 821, "56": 836, "57": 847}
 ---
 
 **Dave Jones:** Hi, you've probably heard the news about 6 weeks ago that Qualcomm acquired Arduino. Yes, completely gobbled up that bastion of open-source hardware that was Arduino. So, I and almost everyone else in the industry predicted, well, once that takeover happens, that big

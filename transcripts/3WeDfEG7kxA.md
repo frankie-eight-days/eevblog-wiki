@@ -3,6 +3,7 @@ video_id: 3WeDfEG7kxA
 title: EEVblog #151 - Extech Multimeter Canyon Trip
 url: https://www.youtube.com/watch?v=3WeDfEG7kxA
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 34, "3": 46, "4": 57, "5": 68, "6": 87, "7": 104, "8": 136, "9": 153, "10": 198, "11": 210, "12": 224, "13": 245, "14": 314, "15": 365, "16": 573, "17": 615, "18": 654, "19": 678, "20": 743, "21": 757, "22": 778, "23": 812, "24": 829, "25": 841, "26": 853, "27": 865, "28": 879, "29": 893, "30": 912, "31": 928, "32": 945, "33": 958, "34": 975, "35": 989, "36": 1005, "37": 1019, "38": 1037, "39": 1051, "40": 1063}
 ---
 
 **Dave Jones:** Hi, welcome to the AAV Blog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, you might remember the Extech EX505 multimeter I reviewed in the $100 shootout. Now, at the time I promised

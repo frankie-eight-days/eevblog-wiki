@@ -3,6 +3,7 @@ video_id: wQbCsk7UAFc
 title: eevBLAB 141 - Solar Analytics is a RIP OFF!
 url: https://www.youtube.com/watch?v=wQbCsk7UAFc
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 29, "3": 43, "4": 54, "5": 67, "6": 80, "7": 93, "8": 106, "9": 121, "10": 134, "11": 145, "12": 159, "13": 171, "14": 185, "15": 198, "16": 213, "17": 230, "18": 243, "19": 256, "20": 274, "21": 288, "22": 299, "23": 313, "24": 325, "25": 339, "26": 354, "27": 370, "28": 384, "29": 396, "30": 411, "31": 426, "32": 438, "33": 450, "34": 465, "35": 478, "36": 490, "37": 502, "38": 515, "39": 528, "40": 542, "41": 554, "42": 569, "43": 582, "44": 594, "45": 604, "46": 618, "47": 630, "48": 643, "49": 657, "50": 672, "51": 686, "52": 697, "53": 711, "54": 723, "55": 741, "56": 750, "57": 764, "58": 781, "59": 795, "60": 807, "61": 819, "62": 831, "63": 842, "64": 855, "65": 868, "66": 881, "67": 892, "68": 905}
 ---
 
 **Dave Jones:** Hi. If you've been following along on my home solar power things for the last what, I don't know, 13 years or something, I've had a home power solar system. I've done a ton of videos on it. And uh you might have seen me use many

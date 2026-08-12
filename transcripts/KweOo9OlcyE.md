@@ -3,6 +3,7 @@ video_id: KweOo9OlcyE
 title: Jaycar Relocation Dumpster Sale DREGS
 url: https://www.youtube.com/watch?v=KweOo9OlcyE
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 37, "3": 54, "4": 71, "5": 89, "6": 111, "7": 129, "8": 142, "9": 157, "10": 173, "11": 188, "12": 207, "13": 221, "14": 233, "15": 243, "16": 256, "17": 273, "18": 290, "19": 306, "20": 325, "21": 336, "22": 350, "23": 370, "24": 385, "25": 395, "26": 410, "27": 421, "28": 436, "29": 459, "30": 471, "31": 487, "32": 506, "33": 523, "34": 543, "35": 558, "36": 571, "37": 584, "38": 601, "39": 614, "40": 624, "41": 639, "42": 655, "43": 673, "44": 684, "45": 700, "46": 713, "47": 728, "48": 742, "49": 757, "50": 768, "51": 783, "52": 805}
 ---
 
 **Dave Jones:** Hi, I'm back at the sale on the last day and somebody's with me. He's Naruto running. Oh, excellent. Thanks, mate. Yeah, we've still got the fridge freezers. They're still here. They're still here. I've already picked up three. Oh, they've got

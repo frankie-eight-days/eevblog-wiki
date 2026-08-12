@@ -3,6 +3,7 @@ video_id: WvepxIvy45U
 title: EEVblog #793 - Rohde & Schwarz HMO1002 Oscilloscope Hands-On
 url: https://www.youtube.com/watch?v=WvepxIvy45U
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 33, "3": 50, "4": 72, "5": 88, "6": 103, "7": 117, "8": 132, "9": 145, "10": 158, "11": 172, "12": 183, "13": 198, "14": 214, "15": 228, "16": 241, "17": 255, "18": 272, "19": 289, "20": 307, "21": 319, "22": 332, "23": 348, "24": 361, "25": 375, "26": 391, "27": 410, "28": 428, "29": 443, "30": 455, "31": 467, "32": 482, "33": 497, "34": 509, "35": 522, "36": 539, "37": 553, "38": 572, "39": 586, "40": 611, "41": 623, "42": 640, "43": 659, "44": 684, "45": 704, "46": 719, "47": 734, "48": 751, "49": 765, "50": 780, "51": 797, "52": 810, "53": 829, "54": 847, "55": 861, "56": 876, "57": 893, "58": 908, "59": 923, "60": 935, "61": 952, "62": 966, "63": 987, "64": 1005, "65": 1023}
 ---
 
 **Dave Jones:** Hi, I'm at the Rohde & Schwarz stand here at Electronica 2015. I thought I'd just have a quick little impromptu check out of this Rohde & Schwarz HMO 1000 series. This is the HMO 1002. This is the 50 MHz model, 1 gig sample per

@@ -3,6 +3,7 @@ video_id: tnrazDCiTTc
 title: EEVblog 1696 - TUTORIAL: Wind Power Efficiency 101
 url: https://www.youtube.com/watch?v=tnrazDCiTTc
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 26, "3": 42, "4": 62, "5": 76, "6": 93, "7": 110, "8": 125, "9": 140, "10": 158, "11": 178, "12": 191, "13": 203, "14": 221, "15": 237, "16": 259, "17": 279, "18": 292, "19": 307, "20": 323, "21": 336, "22": 355, "23": 369, "24": 389, "25": 404, "26": 417, "27": 434, "28": 447, "29": 460}
 ---
 
 **Dave Jones:** So, please excuse the crudity of the model. Didn't have time to build it to scale or to paint it, but we've got a typical three-bladed wind turbine here. It doesn't matter how many blades, and we're going to calculate the energy or

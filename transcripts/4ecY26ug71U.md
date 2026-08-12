@@ -3,6 +3,7 @@ video_id: 4ecY26ug71U
 title: News Cameraman Explains His Camera Rig
 url: https://www.youtube.com/watch?v=4ecY26ug71U
 source: youtube-asr
+timestamps: {"0": 0, "1": 10, "2": 23, "3": 37, "4": 46, "5": 59, "6": 73, "7": 86, "8": 97, "9": 113, "10": 127, "11": 140, "12": 153, "13": 165, "14": 179, "15": 196, "16": 211, "17": 222, "18": 233, "19": 249, "20": 263, "21": 275, "22": 288, "23": 303, "24": 313, "25": 326, "26": 339, "27": 350, "28": 364, "29": 382, "30": 403, "31": 420, "32": 439, "33": 457}
 ---
 
 **Dave Jones:** All right, I'm here with Dave, and he's from uh Sky News. Wait, do you work for Sky News? I do work for Sky News, yeah. okay. And he's going to tell us all about his rig here. Go for it.

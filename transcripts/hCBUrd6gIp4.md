@@ -3,6 +3,7 @@ video_id: hCBUrd6gIp4
 title: Bulova Accutron II Battery Replacement
 url: https://www.youtube.com/watch?v=hCBUrd6gIp4
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 31, "3": 42, "4": 58, "5": 75, "6": 90, "7": 101, "8": 115, "9": 131, "10": 150, "11": 170, "12": 191, "13": 212, "14": 231, "15": 248, "16": 267, "17": 282, "18": 295, "19": 314, "20": 329, "21": 340, "22": 360, "23": 395, "24": 415, "25": 433, "26": 447, "27": 465, "28": 481}
 ---
 
 **Dave Jones:** Hi, it's teardown and battery replacement time. Well, may not be a full teardown. Uh depends. Anyway, I've got my uh Bulova Accutron II here. Check it out. Isn't it groovy? Here you go. Not Accu- Accutron Accutron I, 262

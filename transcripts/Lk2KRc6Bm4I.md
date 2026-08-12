@@ -3,6 +3,7 @@ video_id: Lk2KRc6Bm4I
 title: Mystery Dumpster Diving Teardown - 2020-07-11
 url: https://www.youtube.com/watch?v=Lk2KRc6Bm4I
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 35, "3": 56, "4": 68, "5": 81, "6": 101, "7": 114, "8": 131, "9": 145, "10": 159, "11": 175, "12": 189, "13": 203, "14": 218, "15": 233, "16": 249, "17": 265, "18": 281, "19": 297, "20": 310, "21": 324, "22": 342, "23": 363, "24": 377, "25": 393, "26": 406, "27": 420, "28": 435, "29": 450, "30": 463, "31": 476, "32": 489, "33": 502, "34": 517, "35": 528, "36": 543, "37": 559, "38": 575, "39": 592, "40": 604, "41": 618, "42": 632, "43": 646, "44": 657}
 ---
 
 **Dave Jones:** Hi, it's time for another mystery dumpster teardown that I got from that huge score. It's just been sitting in the bunker. Thought I'd get around to it. What is it? Well, let's have a little squeeze here. It's the Battery

@@ -3,6 +3,7 @@ video_id: -ON1AdmAMOY
 title: Vintage Tek Museum: Curve Bug Signal Debugger
 url: https://www.youtube.com/watch?v=-ON1AdmAMOY
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 26, "3": 38, "4": 51, "5": 66, "6": 82, "7": 93, "8": 113, "9": 126, "10": 140, "11": 153, "12": 169, "13": 182, "14": 196, "15": 211, "16": 227, "17": 243, "18": 256, "19": 270, "20": 284, "21": 297, "22": 312, "23": 325, "24": 338, "25": 352, "26": 367, "27": 379, "28": 392, "29": 407, "30": 420, "31": 433, "32": 447, "33": 461, "34": 478, "35": 487, "36": 502, "37": 518, "38": 535, "39": 551, "40": 564, "41": 574, "42": 584, "43": 595, "44": 610, "45": 621}
 ---
 
 **Dave Jones:** It's Oh, vintage tech museum. OH, IT'S THE CURVE BUG. OH, IT'S A curve tracer. It's a curve tracer. WE CAN GET OUT OUR OLD school Tektronix analog oscilloscope. Oh, touch nodes in the circuit and get a heuristic feel for the

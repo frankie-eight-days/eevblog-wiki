@@ -3,6 +3,7 @@ video_id: r5CQUy3OKL4
 title: EEVblog #870 - Shonky Z-Energeia Energy Saving Wipes
 url: https://www.youtube.com/watch?v=r5CQUy3OKL4
 source: youtube-asr
+timestamps: {"0": 2, "1": 19, "2": 32, "3": 48, "4": 68, "5": 84, "6": 106, "7": 121, "8": 138, "9": 156, "10": 170, "11": 189, "12": 208, "13": 224, "14": 247, "15": 267, "16": 285, "17": 303, "18": 315, "19": 330, "20": 347, "21": 365, "22": 385, "23": 405, "24": 429, "25": 457, "26": 478, "27": 495, "28": 513, "29": 526, "30": 540, "31": 553, "32": 569, "33": 584, "34": 601, "35": 615, "36": 632, "37": 651, "38": 670, "39": 688, "40": 704, "41": 725, "42": 741, "43": 758, "44": 775, "45": 790, "46": 808, "47": 826, "48": 843, "49": 858, "50": 876, "51": 892, "52": 909, "53": 922, "54": 948, "55": 968, "56": 979, "57": 999, "58": 1015, "59": 1033}
 ---
 
 **Dave Jones:** Hi, check this one out. I've got another GradeA Willy Wonka [ __ ] product for you. This one has to win the Shony product of 2016. Now, I've uh done some energy um saving once before. I've done a video on those mains energy savers

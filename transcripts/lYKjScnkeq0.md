@@ -3,6 +3,7 @@ video_id: lYKjScnkeq0
 title: Goal Zero Yeti 400 Lithium Battery: Capacity Test
 url: https://www.youtube.com/watch?v=lYKjScnkeq0
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 45, "4": 60, "5": 73, "6": 88, "7": 102, "8": 114, "9": 129, "10": 144, "11": 155, "12": 169, "13": 183, "14": 197, "15": 207, "16": 227, "17": 237, "18": 252, "19": 266, "20": 284, "21": 299, "22": 314, "23": 326, "24": 341, "25": 352, "26": 364, "27": 381, "28": 402, "29": 422, "30": 440, "31": 457, "32": 471, "33": 493, "34": 510, "35": 525, "36": 540, "37": 556, "38": 573, "39": 587, "40": 600, "41": 615, "42": 628, "43": 643, "44": 655, "45": 669, "46": 681, "47": 697, "48": 709, "49": 725, "50": 750, "51": 762, "52": 779, "53": 793, "54": 807, "55": 817, "56": 833, "57": 845, "58": 860, "59": 876, "60": 889, "61": 905, "62": 922}
 ---
 
 **Dave Jones:** Hi, I'm going to test the battery capacity of this Go Zero Yeti 400 that you've seen in videos. And uh yes, I am going to have to use this turd, the the Ry Gold DL 3021 with its issues of shorting the input,

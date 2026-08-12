@@ -3,6 +3,7 @@ video_id: nPNPTPn6H4A
 title: Dumpster PC - 1000W Crusty Jobbie
 url: https://www.youtube.com/watch?v=nPNPTPn6H4A
 source: youtube-asr
+timestamps: {"0": 0, "1": 24, "2": 41, "3": 57, "4": 74, "5": 90, "6": 104, "7": 119, "8": 132, "9": 147, "10": 161, "11": 170, "12": 185, "13": 195, "14": 208, "15": 225, "16": 241, "17": 255, "18": 269, "19": 291, "20": 305, "21": 320, "22": 337, "23": 352}
 ---
 
 **Dave Jones:** Hi. Somebody's obviously not given a rat's ass. Dumped a gigantic mattress. Anyway, today's PC find is this large looking beast. I got no idea, but check it out. 1,000 W silent power supply and a teeny tiny motherboard. So, let's take that back

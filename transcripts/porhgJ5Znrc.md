@@ -3,6 +3,7 @@ video_id: porhgJ5Znrc
 title: EEVblog #740 - LitePlacer Pick & Place Machine Kit Unboxing
 url: https://www.youtube.com/watch?v=porhgJ5Znrc
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 32, "3": 46, "4": 59, "5": 73, "6": 85, "7": 98, "8": 110, "9": 119, "10": 132, "11": 144, "12": 159, "13": 176, "14": 188, "15": 203, "16": 220, "17": 234, "18": 246, "19": 264, "20": 276, "21": 294, "22": 307, "23": 322, "24": 340, "25": 362, "26": 382, "27": 393, "28": 414, "29": 437, "30": 456, "31": 471, "32": 486, "33": 502, "34": 515, "35": 533, "36": 548, "37": 567, "38": 579, "39": 591, "40": 606, "41": 629, "42": 640, "43": 655}
 ---
 
 **Dave Jones:** Hi. Yes, I kind of look like Foo. Anyway, what we're going to take a look at today is a do-it-yourself pick and place machine from a company called lightplace.com. They've even kindly written it on the side of the box here.

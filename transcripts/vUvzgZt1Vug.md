@@ -3,6 +3,7 @@ video_id: vUvzgZt1Vug
 title: EEVblog 1547 (Part 2) - PINGing the Voyager 2 Space Probe!
 url: https://www.youtube.com/watch?v=vUvzgZt1Vug
 source: youtube-asr
+timestamps: {"0": 22, "1": 35, "2": 49, "3": 67, "4": 83, "5": 97, "6": 111, "7": 127, "8": 142, "9": 154, "10": 174, "11": 190, "12": 208, "13": 225, "14": 239, "15": 254, "16": 268, "17": 283, "18": 297, "19": 316, "20": 329, "21": 340, "22": 356, "23": 373, "24": 389, "25": 407, "26": 423, "27": 441, "28": 458, "29": 473, "30": 492, "31": 505, "32": 519, "33": 540, "34": 555, "35": 571, "36": 586, "37": 601, "38": 623, "39": 645, "40": 663, "41": 678, "42": 692, "43": 709, "44": 729, "45": 750}
 ---
 
 **Dave Jones:** Actually, so we only moved in last week. This is This is the new operations center for follow the sun where we start in November where Canberra will control Goldstone and Madrid antenna during daylight hours and that will rotate so

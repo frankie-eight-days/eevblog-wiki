@@ -3,6 +3,7 @@ video_id: 0bzo7FdIkjc
 title: EEVblog #28 - Product design drives me NUTS!
 url: https://www.youtube.com/watch?v=0bzo7FdIkjc
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 39, "4": 53, "5": 67, "6": 85, "7": 98, "8": 115, "9": 136, "10": 151, "11": 173, "12": 186, "13": 199, "14": 216, "15": 228, "16": 242, "17": 258, "18": 273, "19": 287, "20": 303, "21": 318, "22": 331, "23": 343, "24": 359, "25": 375, "26": 386, "27": 402, "28": 417, "29": 430, "30": 446, "31": 464, "32": 477, "33": 497, "34": 514, "35": 529, "36": 542, "37": 563, "38": 580}
 ---
 
 **Dave Jones:** Welcome to the AAV Blog. I'm your host, Dave Jones, and this is episode number 28. I've been filming this blog for quite some time now, and every time I do it, there's a really annoying thing about my DV camcorder which I'm using.

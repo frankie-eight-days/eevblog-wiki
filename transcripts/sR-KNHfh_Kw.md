@@ -3,6 +3,7 @@ video_id: sR-KNHfh_Kw
 title: Bella Vista Farm Light Show
 url: https://www.youtube.com/watch?v=sR-KNHfh_Kw
 source: youtube-asr
+timestamps: {"0": 1, "1": 24, "2": 42, "3": 56, "4": 74, "5": 95, "6": 113, "7": 140, "8": 162, "9": 178, "10": 214, "11": 228, "12": 251, "13": 271, "14": 286, "15": 305, "16": 321, "17": 336, "18": 358, "19": 400, "20": 431, "21": 448, "22": 466, "23": 483, "24": 502, "25": 522, "26": 541, "27": 551, "28": 582}
 ---
 
 **Dave Jones:** And it's nighttime at Bella Vista Farm and we're headed into a uh like light show like it's not just [music] a light show but some sort offormational thing. Um like a like it's a story thing. So Bella Vista Farm is a uh heritage farm

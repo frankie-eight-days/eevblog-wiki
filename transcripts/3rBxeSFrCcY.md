@@ -3,6 +3,7 @@ video_id: 3rBxeSFrCcY
 title: Turning a Diesel Locomotive by Hand
 url: https://www.youtube.com/watch?v=3rBxeSFrCcY
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 27, "3": 43, "4": 60, "5": 72, "6": 92, "7": 108, "8": 122, "9": 140, "10": 162, "11": 183}
 ---
 
 **Dave Jones:** All right, we're having a look at the turning around of the diesel locomotive from Strahan to Mount Lyell. And they've got a nice little turntable here. They should be able to turn this sucker by hand. By hand? I think so.

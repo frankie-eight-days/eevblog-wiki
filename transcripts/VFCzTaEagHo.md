@@ -3,6 +3,7 @@ video_id: VFCzTaEagHo
 title: Dumpster Diving Instrument Tool Cart
 url: https://www.youtube.com/watch?v=VFCzTaEagHo
 source: youtube-asr
+timestamps: {"0": 1, "1": 22, "2": 37, "3": 52, "4": 69, "5": 84, "6": 99, "7": 114, "8": 126, "9": 141, "10": 156}
 ---
 
 **Dave Jones:** Hi. Today in the dumpster room, uh, it's getting a little bit crowded in the dumpster room. Check it out. But look what we have here today. Tada. This looks like an instrument cart. Look at this. It's metal. It's welded metal. Look.

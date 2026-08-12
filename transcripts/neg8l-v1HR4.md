@@ -3,6 +3,7 @@ video_id: neg8l-v1HR4
 title: Yanga Woolshed Tour
 url: https://www.youtube.com/watch?v=neg8l-v1HR4
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 30, "3": 45, "4": 63, "5": 81, "6": 102, "7": 120, "8": 139, "9": 160, "10": 179, "11": 199, "12": 210, "13": 227, "14": 241, "15": 257, "16": 270, "17": 286, "18": 306, "19": 328, "20": 344, "21": 360, "22": 375, "23": 396, "24": 414, "25": 433, "26": 452, "27": 471, "28": 492, "29": 506, "30": 521, "31": 539, "32": 557, "33": 580, "34": 597, "35": 611, "36": 630, "37": 642}
 ---
 
 **Dave Jones:** Hi, I'm at Yanga Station, which is was one of Australia's largest cattle properties. And this is actually the wool shed. I thought I'd take you through an Aussie wool shed. So, let's go. It's no longer operational and we're

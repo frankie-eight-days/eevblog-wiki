@@ -3,6 +3,7 @@ video_id: VqDljuHjPrY
 title: EEVblog 1684 - Awesome Logging Software:  Test Controller
 url: https://www.youtube.com/watch?v=VqDljuHjPrY
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 41, "4": 56, "5": 70, "6": 80, "7": 102, "8": 115, "9": 130, "10": 146, "11": 160, "12": 174, "13": 190, "14": 200, "15": 214, "16": 229, "17": 243, "18": 258, "19": 271, "20": 286, "21": 299, "22": 312, "23": 324, "24": 336, "25": 353, "26": 368, "27": 381, "28": 399, "29": 411, "30": 423, "31": 436, "32": 449, "33": 460, "34": 471, "35": 485, "36": 498, "37": 510, "38": 521, "39": 534, "40": 549, "41": 562, "42": 575, "43": 588, "44": 600, "45": 617, "46": 629, "47": 642, "48": 657, "49": 669, "50": 681, "51": 694, "52": 707, "53": 727, "54": 742, "55": 760, "56": 778, "57": 799, "58": 816, "59": 837}
 ---
 
 **Dave Jones:** Hi, I want to show you a very cool program uh that can log data from a whole bunch of different multimeters and instruments. And uh it's it's really great. And they just released support for the uh new EEV blog

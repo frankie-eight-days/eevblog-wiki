@@ -3,6 +3,7 @@ video_id: ZA5vlDdpbkw
 title: EEVblog #1105 - $100 Custom LCD Design - Part 3 (µSupply Part 18)
 url: https://www.youtube.com/watch?v=ZA5vlDdpbkw
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 34, "3": 50, "4": 64, "5": 77, "6": 94, "7": 109, "8": 124, "9": 136, "10": 154, "11": 169, "12": 184, "13": 196, "14": 209, "15": 225, "16": 239, "17": 252, "18": 266, "19": 281, "20": 296, "21": 309, "22": 327, "23": 347, "24": 361, "25": 372, "26": 389, "27": 403, "28": 415, "29": 431, "30": 445, "31": 460, "32": 472, "33": 489, "34": 505, "35": 517, "36": 529, "37": 541, "38": 556, "39": 569, "40": 579, "41": 594, "42": 608, "43": 620, "44": 636, "45": 654, "46": 681, "47": 701, "48": 722, "49": 752, "50": 772, "51": 789, "52": 804, "53": 824, "54": 834, "55": 845, "56": 859, "57": 872, "58": 885, "59": 906, "60": 921, "61": 936, "62": 951, "63": 970, "64": 982, "65": 993, "66": 1004, "67": 1020, "68": 1034, "69": 1048}
 ---
 
 **Dave Jones:** Hi, welcome to part three in this custom LCD design tutorial and we have our finished product. Check this out. Now, if you haven't seen the two previous videos, I'll link them into the end and down below where we actually

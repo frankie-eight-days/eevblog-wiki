@@ -3,6 +3,7 @@ video_id: NvejiD5ngEM
 title: Australian Magpie ATTACK!
 url: https://www.youtube.com/watch?v=NvejiD5ngEM
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 29, "3": 44, "4": 63, "5": 82, "6": 98, "7": 120, "8": 132}
 ---
 
 **Dave Jones:** So, I That's the orchards, where where all those um you know, the garden was. So, that was all in there. Wow, magpie attack again. There he is. There he is, the bastard. Look at him. Look at him. There he is, up in the

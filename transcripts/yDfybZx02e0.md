@@ -3,6 +3,7 @@ video_id: yDfybZx02e0
 title: The Art of Custom PCB Test Jigs
 url: https://www.youtube.com/watch?v=yDfybZx02e0
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 37, "3": 50, "4": 64, "5": 78, "6": 88, "7": 104, "8": 113, "9": 129, "10": 140, "11": 157, "12": 172, "13": 189, "14": 202, "15": 216, "16": 227, "17": 238, "18": 251, "19": 265, "20": 276, "21": 288, "22": 301, "23": 315, "24": 329, "25": 345, "26": 354, "27": 367, "28": 380, "29": 394, "30": 411, "31": 421, "32": 431, "33": 441, "34": 453, "35": 467, "36": 481, "37": 495, "38": 509, "39": 523, "40": 534, "41": 548, "42": 562}
 ---
 
 **Dave Jones:** Here at Redback Test Services, and interesting bit of nails, custom bit of nails thing, and uh it's not much to see here at all. Um yeah, I No, there's nothing to see. Nothing to see here. So, we check out some of these uh

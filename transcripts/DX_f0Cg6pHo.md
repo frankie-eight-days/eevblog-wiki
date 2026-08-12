@@ -3,6 +3,7 @@ video_id: DX_f0Cg6pHo
 title: How a 4-20mA Process Control Current Loop Rotational Sensor Works
 url: https://www.youtube.com/watch?v=DX_f0Cg6pHo
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 36, "3": 53, "4": 65, "5": 82, "6": 97, "7": 111, "8": 126, "9": 139, "10": 150, "11": 165, "12": 177, "13": 191, "14": 204, "15": 213, "16": 226, "17": 239, "18": 253, "19": 265, "20": 275, "21": 290, "22": 302, "23": 319, "24": 333, "25": 346, "26": 361, "27": 377, "28": 390, "29": 403, "30": 417, "31": 429, "32": 444, "33": 458, "34": 472, "35": 488, "36": 502, "37": 518, "38": 530, "39": 544, "40": 559, "41": 577, "42": 590, "43": 602, "44": 616, "45": 633, "46": 647, "47": 663, "48": 676, "49": 687, "50": 703}
 ---
 
 **Dave Jones:** This one comes from Australia. Thank you very much Mark Vitnell from Sinusoid Proprietary Limited. I know this is and I think we're going to have Oh, that didn't Knife totally missed that. Um, I think you'll find this quite interesting.

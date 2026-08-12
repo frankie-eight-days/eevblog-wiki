@@ -3,6 +3,7 @@ video_id: zAgtLkFTEvY
 title: EEVblog #121 - gEDA Interview with DJ Delorie
 url: https://www.youtube.com/watch?v=zAgtLkFTEvY
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 28, "3": 41, "4": 56, "5": 72, "6": 86, "7": 103, "8": 116, "9": 131, "10": 144, "11": 159, "12": 173, "13": 191, "14": 210, "15": 219, "16": 229, "17": 242, "18": 257, "19": 272, "20": 288, "21": 302, "22": 314, "23": 326, "24": 338, "25": 352, "26": 363, "27": 374, "28": 388, "29": 403, "30": 415, "31": 427, "32": 438, "33": 450, "34": 463, "35": 473, "36": 485, "37": 496, "38": 507, "39": 516, "40": 528, "41": 538, "42": 550, "43": 561, "44": 575, "45": 589, "46": 599, "47": 612, "48": 623, "49": 640, "50": 653, "51": 670, "52": 685, "53": 700}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. I'm here with DJ Delorie. Thanks for joining us, DJ. Welcome. Glad to be here. Excellent. Tell us about who you are and

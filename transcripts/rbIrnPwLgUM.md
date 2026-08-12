@@ -3,6 +3,7 @@ video_id: rbIrnPwLgUM
 title: Dumpster Diving Rack Time
 url: https://www.youtube.com/watch?v=rbIrnPwLgUM
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 45, "4": 60, "5": 77, "6": 92, "7": 109, "8": 123, "9": 139, "10": 158, "11": 178, "12": 197, "13": 212, "14": 226, "15": 243, "16": 260}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room, and something new has appeared. Ta-da! Check this thing out. It's an auto baler for a paper and cardboard to crush it. I believe it's not designed for you know, just the regular Joe average

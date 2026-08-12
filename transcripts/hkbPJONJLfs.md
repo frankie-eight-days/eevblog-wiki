@@ -3,6 +3,7 @@ video_id: hkbPJONJLfs
 title: EEVblog #950 - Nixie Tube Display Project - Part 2
 url: https://www.youtube.com/watch?v=hkbPJONJLfs
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 32, "3": 48, "4": 62, "5": 75, "6": 90, "7": 105, "8": 121, "9": 161, "10": 175, "11": 191, "12": 207, "13": 223, "14": 239, "15": 253, "16": 268, "17": 283, "18": 297, "19": 312, "20": 327, "21": 343, "22": 355, "23": 374, "24": 386, "25": 399, "26": 418, "27": 435, "28": 447, "29": 466, "30": 481, "31": 500, "32": 515, "33": 528, "34": 541, "35": 554, "36": 568, "37": 583, "38": 594, "39": 609, "40": 624, "41": 637, "42": 651, "43": 665, "44": 684, "45": 705, "46": 719, "47": 736, "48": 751, "49": 770, "50": 785, "51": 797, "52": 812, "53": 825, "54": 840, "55": 855, "56": 868, "57": 881, "58": 897, "59": 915, "60": 930, "61": 943, "62": 957, "63": 974, "64": 988, "65": 1003, "66": 1018, "67": 1033, "68": 1044, "69": 1055, "70": 1072, "71": 1086, "72": 1100, "73": 1114, "74": 1129, "75": 1141, "76": 1154, "77": 1169}
 ---
 
 **Dave Jones:** Hi, welcome to part two of my Nixie tube display driver project. Uh let's have another little look at just driving these Nixie tubes cuz there's a couple of issues outstanding before we actually go into a a final solution that we make into a

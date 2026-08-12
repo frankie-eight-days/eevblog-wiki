@@ -3,6 +3,7 @@ video_id: kjOAkHqlQw0
 title: EEVblog 1614 - Circuit Design TIP: Crystal Oscillators
 url: https://www.youtube.com/watch?v=kjOAkHqlQw0
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 24, "3": 39, "4": 56, "5": 71, "6": 82, "7": 96, "8": 110, "9": 121, "10": 136, "11": 149, "12": 159, "13": 173, "14": 188, "15": 201, "16": 218, "17": 232, "18": 245, "19": 258, "20": 271, "21": 286, "22": 303, "23": 317, "24": 331, "25": 343, "26": 356, "27": 369, "28": 382, "29": 396, "30": 407, "31": 424, "32": 439, "33": 452, "34": 462, "35": 474}
 ---
 
 **Dave Jones:** Hi, just a quick circuit design tip. Thank you very much to uh Cyber City uh Circuits for actually prompting this one. He started a discussion on uh Twitter. I'll link it in down below, but that's what prompted this. So, as you

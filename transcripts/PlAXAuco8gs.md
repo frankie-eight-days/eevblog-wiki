@@ -3,6 +3,7 @@ video_id: PlAXAuco8gs
 title: EEVblog #332 - Mantis Elite Microscope Scratch'n'Sniff
 url: https://www.youtube.com/watch?v=PlAXAuco8gs
 source: youtube-asr
+timestamps: {"0": 7, "1": 26, "2": 40, "3": 54, "4": 72, "5": 85, "6": 100, "7": 124, "8": 146, "9": 163, "10": 189, "11": 203, "12": 218, "13": 241, "14": 251, "15": 265, "16": 279, "17": 293, "18": 308, "19": 320, "20": 342, "21": 360, "22": 374, "23": 401, "24": 430, "25": 450, "26": 466, "27": 486, "28": 498, "29": 511, "30": 524, "31": 541, "32": 556, "33": 574, "34": 589, "35": 606, "36": 619, "37": 634, "38": 645, "39": 663, "40": 676, "41": 691, "42": 709, "43": 723, "44": 734}
 ---
 
 **Dave Jones:** All right, this is a um This is the Mantis Vision Elite Stereo Viewing Head. Um So, thank you uh Vision Engineering. They uh kindly uh donated this for my use and for a review as well. Apparently, it's got the

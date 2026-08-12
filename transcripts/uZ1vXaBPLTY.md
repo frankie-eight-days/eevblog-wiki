@@ -3,6 +3,7 @@ video_id: uZ1vXaBPLTY
 title: BM235 Multimeter Faulty Switch FIXED + (OZ) GIVEAWAY
 url: https://www.youtube.com/watch?v=uZ1vXaBPLTY
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 33, "3": 47, "4": 59, "5": 77, "6": 91, "7": 110, "8": 145, "9": 161, "10": 171, "11": 186, "12": 208, "13": 229, "14": 248, "15": 267, "16": 288, "17": 305, "18": 321, "19": 339, "20": 356, "21": 376, "22": 392, "23": 405, "24": 423, "25": 438, "26": 457, "27": 479, "28": 497, "29": 515, "30": 528, "31": 543, "32": 556, "33": 577, "34": 599, "35": 620, "36": 636, "37": 648, "38": 662}
 ---
 
 **Dave Jones:** Hi, just to follow up on this uh failed switch BM 235. I found an old um junked case in the little in my junk box of uh multimeters over here. I'm not sure what happened uh to this one. Um I don't

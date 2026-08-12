@@ -3,6 +3,7 @@ video_id: 7cLWz1jZd2Q
 title: EEVblog #953 - What Is Schematic ERC?
 url: https://www.youtube.com/watch?v=7cLWz1jZd2Q
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 32, "3": 41, "4": 53, "5": 67, "6": 79, "7": 91, "8": 105, "9": 121, "10": 133, "11": 146, "12": 158, "13": 176, "14": 188, "15": 202, "16": 213, "17": 226, "18": 241, "19": 255, "20": 266, "21": 279, "22": 290, "23": 307, "24": 327, "25": 338, "26": 354, "27": 368, "28": 383, "29": 397, "30": 410, "31": 422, "32": 432, "33": 447, "34": 462, "35": 474, "36": 487, "37": 499, "38": 512, "39": 526, "40": 544, "41": 556, "42": 571, "43": 586, "44": 599, "45": 615, "46": 630, "47": 648, "48": 664, "49": 676, "50": 692, "51": 706, "52": 721, "53": 736, "54": 749, "55": 764, "56": 781, "57": 793, "58": 808}
 ---
 
 **Dave Jones:** Hi, this is just a little aside video from my Nixie Tube display driver videos I've been doing cuz I thought some people might find this just interesting in its own right. We're going to talk about electrical rules checking in

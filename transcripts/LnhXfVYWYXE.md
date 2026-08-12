@@ -3,6 +3,7 @@ video_id: LnhXfVYWYXE
 title: EEVblog #70 - Turn your Rigol DS1052E Oscilloscope into a 100MHz DS1102E (Hack)
 url: https://www.youtube.com/watch?v=LnhXfVYWYXE
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 50, "4": 65, "5": 75, "6": 90, "7": 108, "8": 123, "9": 140, "10": 156, "11": 171, "12": 184, "13": 196, "14": 213, "15": 228, "16": 245, "17": 263, "18": 280, "19": 294, "20": 318, "21": 346, "22": 363, "23": 384, "24": 398, "25": 420, "26": 440, "27": 454, "28": 467, "29": 481, "30": 495, "31": 514, "32": 531, "33": 547, "34": 564, "35": 578, "36": 593, "37": 607, "38": 618, "39": 631, "40": 642}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog and electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, back in an earlier blog when I did a teardown on the Rigol oscilloscope, I made the suggestion that it might be

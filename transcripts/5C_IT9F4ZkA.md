@@ -3,6 +3,7 @@ video_id: 5C_IT9F4ZkA
 title: eevBLAB 128 - Why Dont I Go OFF-GRID Solar/Battery?
 url: https://www.youtube.com/watch?v=5C_IT9F4ZkA
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 33, "3": 45, "4": 62, "5": 76, "6": 89, "7": 104, "8": 119, "9": 129, "10": 141, "11": 151, "12": 164, "13": 177, "14": 192, "15": 203, "16": 217, "17": 233, "18": 243, "19": 257, "20": 272, "21": 283, "22": 300, "23": 311, "24": 320, "25": 331, "26": 342, "27": 354, "28": 370, "29": 381, "30": 392, "31": 407, "32": 420, "33": 436, "34": 447, "35": 460, "36": 471, "37": 483, "38": 494, "39": 507, "40": 518, "41": 531, "42": 548, "43": 566, "44": 578, "45": 592, "46": 608, "47": 622, "48": 633, "49": 648, "50": 660, "51": 672, "52": 683, "53": 697, "54": 713, "55": 724, "56": 740, "57": 751, "58": 769, "59": 782, "60": 792, "61": 805, "62": 815, "63": 829}
 ---
 
 **Dave Jones:** Hi, I wanted to show you how home solar power systems and home battery storage solutions aren't magic. And I get asked all the time, "Dave, you've got a big solar power system. You've got over 10 kW on the house. You've got a really big

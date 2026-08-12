@@ -3,6 +3,7 @@ video_id: KFCRB4d991E
 title: EEVblog #162 - Ceramic Capacitor Piezoelectric Effect on an Oscilloscope
 url: https://www.youtube.com/watch?v=KFCRB4d991E
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 49, "4": 62, "5": 78, "6": 92, "7": 106, "8": 122, "9": 137, "10": 155, "11": 170, "12": 184, "13": 200, "14": 212, "15": 227, "16": 243, "17": 258, "18": 276, "19": 291, "20": 308, "21": 326, "22": 343, "23": 363, "24": 379, "25": 394, "26": 409, "27": 424, "28": 443, "29": 455, "30": 473, "31": 491, "32": 507, "33": 520, "34": 532, "35": 547, "36": 563}
 ---
 
 **Dave Jones:** Hi, welcome to the AAV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I'm Dave Jones. I've got my Tektronix oscilloscope here, and I'm going to show you a rather interesting

@@ -3,6 +3,7 @@ video_id: Z7BL1O0xCcY
 title: EEVblog #106 - Top 5 Tips To Bring Your Product to Market (and why Patents are a BAD idea)
 url: https://www.youtube.com/watch?v=Z7BL1O0xCcY
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 37, "3": 58, "4": 72, "5": 87, "6": 103, "7": 120, "8": 138, "9": 155, "10": 171, "11": 189, "12": 205, "13": 223, "14": 240, "15": 255, "16": 274, "17": 286, "18": 301, "19": 319, "20": 336, "21": 353, "22": 367, "23": 382, "24": 399, "25": 416, "26": 431, "27": 449, "28": 464, "29": 479, "30": 494, "31": 507, "32": 525, "33": 536, "34": 551, "35": 567, "36": 582, "37": 597, "38": 610, "39": 625, "40": 643, "41": 657, "42": 672, "43": 686, "44": 697, "45": 711, "46": 723, "47": 736, "48": 751}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Okay, so you're an electronics hobbyist, hacker, maker, inventor, midnight engineer, garage engineer, small businessman, whatever you want to call

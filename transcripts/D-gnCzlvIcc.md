@@ -3,6 +3,7 @@ video_id: D-gnCzlvIcc
 title: Dumpster Diving TV and 27" Monitor
 url: https://www.youtube.com/watch?v=D-gnCzlvIcc
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 49, "4": 63, "5": 79, "6": 95, "7": 111, "8": 129, "9": 150, "10": 165}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room. It's just after Christmas and let's have a look. There's nothing in the main bins here, but look what's in the paper and cardboard bin. Um, I don't think that's paper and cardboard. Can people not

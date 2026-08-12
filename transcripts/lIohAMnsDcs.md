@@ -3,6 +3,7 @@ video_id: lIohAMnsDcs
 title: eevBLAB 94 - Why Dont Companies DO THIS Anymore?
 url: https://www.youtube.com/watch?v=lIohAMnsDcs
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 28, "3": 44, "4": 58, "5": 71, "6": 85, "7": 102, "8": 114, "9": 130, "10": 142, "11": 157, "12": 171, "13": 183, "14": 196, "15": 208, "16": 223, "17": 236, "18": 247, "19": 260, "20": 273, "21": 286, "22": 300, "23": 317, "24": 332, "25": 345, "26": 357, "27": 372, "28": 388, "29": 400, "30": 410, "31": 423, "32": 433, "33": 445, "34": 455, "35": 469, "36": 484, "37": 495, "38": 507, "39": 524, "40": 539, "41": 552, "42": 564, "43": 578, "44": 592, "45": 603, "46": 620, "47": 635, "48": 647, "49": 658, "50": 671, "51": 684, "52": 697, "53": 709, "54": 723}
 ---
 
 **Dave Jones:** Hi, I mentioned this document in my previous video on the Philips/Fluke Combiscope that I scored on eBay. I'll link it up here and down below if you haven't seen it. And I came across this document while I was searching for

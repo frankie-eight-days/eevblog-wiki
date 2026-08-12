@@ -3,6 +3,7 @@ video_id: haImi4cWau0
 title: The Insanity Of Internet In Australia (NBN)
 url: https://www.youtube.com/watch?v=haImi4cWau0
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 35, "3": 51, "4": 69, "5": 83, "6": 100, "7": 114, "8": 131, "9": 144, "10": 159, "11": 173, "12": 190, "13": 206, "14": 221, "15": 238, "16": 254, "17": 273, "18": 287, "19": 299, "20": 311, "21": 328, "22": 341, "23": 359, "24": 375, "25": 388, "26": 402, "27": 416, "28": 431, "29": 446, "30": 458, "31": 473, "32": 490, "33": 511, "34": 525, "35": 540, "36": 555, "37": 570, "38": 585}
 ---
 
 **Dave Jones:** Hi, I'm inside the MDF room in my corporate office tower here and I thought I'd just show you around and the various internet options available. Now, MDF stands for main distribution frame, I believe. That's just what they call these

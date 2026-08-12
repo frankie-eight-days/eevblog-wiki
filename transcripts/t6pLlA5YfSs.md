@@ -3,6 +3,7 @@ video_id: t6pLlA5YfSs
 title: EEVblog #182 - Rode Videomic Shotgun Microphone Hack
 url: https://www.youtube.com/watch?v=t6pLlA5YfSs
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 30, "3": 49, "4": 65, "5": 80, "6": 92, "7": 103, "8": 117, "9": 129, "10": 142, "11": 154, "12": 168, "13": 183, "14": 196, "15": 213, "16": 225, "17": 238, "18": 252, "19": 266, "20": 279, "21": 295, "22": 309, "23": 325, "24": 335, "25": 351, "26": 366, "27": 381, "28": 394, "29": 406, "30": 419, "31": 433, "32": 450, "33": 463, "34": 478, "35": 490, "36": 504, "37": 519, "38": 538, "39": 561, "40": 575, "41": 590, "42": 603, "43": 616, "44": 630, "45": 642, "46": 656, "47": 673, "48": 694, "49": 707, "50": 720, "51": 731, "52": 742, "53": 758, "54": 773, "55": 788}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host Dave Jones. Hi. Now, this episode might sound a little bit different. It's because I'm not using my regular shotgun video mic

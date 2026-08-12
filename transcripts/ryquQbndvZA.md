@@ -3,6 +3,7 @@ video_id: ryquQbndvZA
 title: EEVblog #503 - RoboWars 2013
 url: https://www.youtube.com/watch?v=ryquQbndvZA
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 37, "3": 56, "4": 72, "5": 91, "6": 183, "7": 197, "8": 239, "9": 297, "10": 372, "11": 401, "12": 427, "13": 480, "14": 526, "15": 563, "16": 636, "17": 696, "18": 755, "19": 792, "20": 829, "21": 916, "22": 983, "23": 1056, "24": 1083, "25": 1099, "26": 1171, "27": 1236}
 ---
 
 **Dave Jones:** Hi guys. No, I'm not in the lab. I've gotten out and I'm at the 2013 Robo Wars competition here in Red Fern in Sydney at 107 Projects. It's actually an art gallery. Check it out. We got some really funky art in here, but of course

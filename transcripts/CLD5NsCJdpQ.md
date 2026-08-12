@@ -3,6 +3,7 @@ video_id: CLD5NsCJdpQ
 title: What are the BEST Electronics Side Cutters?
 url: https://www.youtube.com/watch?v=CLD5NsCJdpQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 41, "3": 58, "4": 69, "5": 83, "6": 98, "7": 115, "8": 129, "9": 143, "10": 155, "11": 167, "12": 185, "13": 203, "14": 218, "15": 230, "16": 243, "17": 257, "18": 271, "19": 289, "20": 306, "21": 323, "22": 335, "23": 350, "24": 366, "25": 384}
 ---
 
 **Dave Jones:** What are the best electronic side cutters you've used in terms of long life? Uh Wow. Lindstrom. Where the hell are my expensive I've got a really expensive pair of Lindstroms somewhere. Yeah, Lindstroms made in Sweden. Is it going to focus? Supposed to have

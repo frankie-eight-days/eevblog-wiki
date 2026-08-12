@@ -3,6 +3,7 @@ video_id: WUZuyL4eRCQ
 title: iRiver Story HD eBook Reader TEARDOWN - EEVblog #189
 url: https://www.youtube.com/watch?v=WUZuyL4eRCQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 31, "3": 47, "4": 79, "5": 92, "6": 103, "7": 117, "8": 130, "9": 141, "10": 157, "11": 171, "12": 188, "13": 204, "14": 219, "15": 234, "16": 254, "17": 266, "18": 290, "19": 309, "20": 326, "21": 339, "22": 351, "23": 369, "24": 386, "25": 405, "26": 423, "27": 439, "28": 455, "29": 470, "30": 485, "31": 501, "32": 514, "33": 529, "34": 543, "35": 555, "36": 568, "37": 583, "38": 598, "39": 611, "40": 625, "41": 642, "42": 660, "43": 673, "44": 690, "45": 705, "46": 724, "47": 741, "48": 760, "49": 778, "50": 796, "51": 817, "52": 847, "53": 861}
 ---
 
 **Dave Jones:** Hi. Welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi. What's more interesting than the new iriver Story HD ebook reader? Well, what's inside of it? That's what. You

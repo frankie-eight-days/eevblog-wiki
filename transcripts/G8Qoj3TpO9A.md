@@ -3,6 +3,7 @@ video_id: G8Qoj3TpO9A
 title: EEVblog #1223 - Oscilloscope Standard Deviation Noise Measurement
 url: https://www.youtube.com/watch?v=G8Qoj3TpO9A
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 33, "3": 46, "4": 62, "5": 82, "6": 100, "7": 112, "8": 126, "9": 141, "10": 155, "11": 172, "12": 183, "13": 202, "14": 216, "15": 231, "16": 251, "17": 268, "18": 280, "19": 297, "20": 315, "21": 330, "22": 341, "23": 354, "24": 371, "25": 388, "26": 407, "27": 419, "28": 439, "29": 455, "30": 472, "31": 488, "32": 502, "33": 514, "34": 530, "35": 544, "36": 555, "37": 570, "38": 587, "39": 604, "40": 617, "41": 632, "42": 646, "43": 659, "44": 676, "45": 691, "46": 705, "47": 718, "48": 734, "49": 744, "50": 762, "51": 776, "52": 790, "53": 808, "54": 823, "55": 839, "56": 852, "57": 872, "58": 888, "59": 906, "60": 926, "61": 942, "62": 960, "63": 976, "64": 988, "65": 1002, "66": 1016, "67": 1028}
 ---
 
 **Dave Jones:** Hi, in my previous video reviewing this 1 GHz Siglent SDS5000 series oscilloscope, I made a little bit of an oopsy in the noise measurement compared to the Rohde & Schwarz one over here, which I was just comparing the

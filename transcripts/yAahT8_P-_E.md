@@ -3,6 +3,7 @@ video_id: yAahT8_P-_E
 title: Sydney Mud Run 2014
 url: https://www.youtube.com/watch?v=yAahT8_P-_E
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 34, "3": 49, "4": 65, "5": 84, "6": 101, "7": 115, "8": 126, "9": 139, "10": 153, "11": 167, "12": 182, "13": 197, "14": 215, "15": 239, "16": 283, "17": 315, "18": 330, "19": 355, "20": 376, "21": 396, "22": 431, "23": 448, "24": 468, "25": 504, "26": 527, "27": 546, "28": 607, "29": 644, "30": 661, "31": 691, "32": 711, "33": 730, "34": 745, "35": 763, "36": 776, "37": 818, "38": 836, "39": 847, "40": 865, "41": 883, "42": 902, "43": 918, "44": 931, "45": 946, "46": 962, "47": 980, "48": 995, "49": 1011, "50": 1025, "51": 1046}
 ---
 
 **Dave Jones:** Hi. Yes, I'm at the 2014 Sydney Mud Run as promised. And thank you everyone for donating to the New South Wales Cancer Council. I'm going to go do the 7 km mud run to uh m raise money for cancer

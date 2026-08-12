@@ -3,6 +3,7 @@ video_id: YITrlQcKGPw
 title: EEVblog #1199 - Samson C01U USB Microphone Teardown
 url: https://www.youtube.com/watch?v=YITrlQcKGPw
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 25, "3": 39, "4": 55, "5": 67, "6": 82, "7": 97, "8": 107, "9": 116, "10": 130, "11": 143, "12": 155, "13": 172, "14": 188, "15": 203, "16": 216, "17": 231, "18": 245, "19": 260, "20": 272, "21": 285, "22": 298, "23": 313, "24": 326, "25": 341, "26": 355, "27": 375, "28": 387, "29": 404, "30": 421, "31": 437, "32": 455, "33": 467, "34": 479, "35": 492, "36": 508, "37": 524, "38": 541, "39": 555, "40": 576, "41": 591, "42": 601, "43": 614, "44": 630, "45": 643, "46": 657, "47": 674, "48": 690, "49": 702, "50": 719, "51": 733, "52": 750, "53": 764, "54": 779, "55": 796, "56": 811, "57": 826, "58": 842, "59": 854, "60": 872, "61": 888, "62": 902, "63": 914}
 ---
 
 **Dave Jones:** Hi, yes, my lab is kind of sort of getting back together after the flood and the new carpet moving everything. I had to move all these benches that I'm on by the way, if you want to have a

@@ -3,6 +3,7 @@ video_id: sUG_sjS67K4
 title: EEVblog #14 - An unusual oscilloscope phenomenon!
 url: https://www.youtube.com/watch?v=sUG_sjS67K4
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 32, "3": 56, "4": 70, "5": 87, "6": 102, "7": 125, "8": 142, "9": 156, "10": 174, "11": 188, "12": 204, "13": 216, "14": 226, "15": 238, "16": 258, "17": 280, "18": 298, "19": 311, "20": 328, "21": 355, "22": 374, "23": 389, "24": 410, "25": 432, "26": 453, "27": 477, "28": 496, "29": 512, "30": 526, "31": 541, "32": 557, "33": 570, "34": 585}
 ---
 
 **Dave Jones:** EEVblog, I'm your host, Dave Jones, and this is episode number 14. First up, I've got a rather interesting phenomenon I bet you haven't seen before. It's quite unusual and involves an oscilloscope again. We had an oscilloscope special last week, so

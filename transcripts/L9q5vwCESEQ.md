@@ -3,6 +3,7 @@ video_id: L9q5vwCESEQ
 title: EEVblog #317 - PCB Tinning Myth Busting
 url: https://www.youtube.com/watch?v=L9q5vwCESEQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 47, "4": 62, "5": 77, "6": 93, "7": 107, "8": 120, "9": 134, "10": 149, "11": 163, "12": 176, "13": 194, "14": 206, "15": 219, "16": 232, "17": 247, "18": 260, "19": 277, "20": 291, "21": 306, "22": 318, "23": 335, "24": 352, "25": 374, "26": 392, "27": 406, "28": 423, "29": 441, "30": 454, "31": 467, "32": 493, "33": 515, "34": 530, "35": 546, "36": 559, "37": 570, "38": 587, "39": 607, "40": 622, "41": 638, "42": 656, "43": 671, "44": 684, "45": 700, "46": 712, "47": 728, "48": 742, "49": 760, "50": 775, "51": 788, "52": 800, "53": 811, "54": 828}
 ---
 
 **Dave Jones:** Hi, in a recent, uh, teardown power supply teardown I mentioned, um, that a cheap, simple, and very common way to, um, decrease the resistance and increase the current handling capability of PCB traces is to leave the solder mask off

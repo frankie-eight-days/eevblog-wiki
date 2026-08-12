@@ -3,6 +3,7 @@ video_id: zyuRcsM0gjI
 title: eevBLAB #10 - Why Learn Basic Electronics?
 url: https://www.youtube.com/watch?v=zyuRcsM0gjI
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 30, "3": 53, "4": 70, "5": 84, "6": 100, "7": 118, "8": 130, "9": 145, "10": 158, "11": 174, "12": 186, "13": 202, "14": 216, "15": 231, "16": 244, "17": 257, "18": 277, "19": 290, "20": 307, "21": 317, "22": 335, "23": 348, "24": 361, "25": 377, "26": 388, "27": 403, "28": 418, "29": 436, "30": 452, "31": 466, "32": 479, "33": 492, "34": 507, "35": 521, "36": 540, "37": 553, "38": 567, "39": 580, "40": 595, "41": 607}
 ---
 
 **Dave Jones:** Hi, welcome to another EV Blab. This one comes from an Amp Hour listener on the Reddit forum and we actually answered this question on today's Amp Hour that we recorded this morning. So jump on over to the Amp Hour

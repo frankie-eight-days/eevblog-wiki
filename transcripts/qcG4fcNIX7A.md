@@ -3,6 +3,7 @@ video_id: qcG4fcNIX7A
 title: EEVblog #266 - Mailbag
 url: https://www.youtube.com/watch?v=qcG4fcNIX7A
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 40, "3": 57, "4": 72, "5": 94, "6": 113, "7": 125, "8": 145, "9": 161, "10": 178, "11": 191, "12": 204, "13": 222, "14": 246, "15": 265, "16": 288, "17": 302, "18": 327, "19": 347, "20": 364, "21": 377, "22": 393, "23": 412, "24": 426, "25": 444, "26": 459, "27": 473, "28": 488, "29": 503, "30": 518, "31": 533, "32": 551, "33": 571, "34": 584, "35": 608, "36": 627, "37": 643, "38": 656, "39": 674, "40": 694, "41": 714, "42": 734, "43": 753, "44": 765, "45": 784, "46": 800, "47": 815, "48": 840, "49": 855, "50": 870, "51": 886, "52": 903, "53": 925, "54": 953, "55": 966, "56": 984, "57": 998, "58": 1013, "59": 1029, "60": 1043}
 ---
 
 **Dave Jones:** Hi, yes, it's mail bag time again where I open my mail. People just send me stuff, random stuff and I'm going to open it here. So, I got five items actually. Let's check it out. First one is CircuitCellar. No surprise. I know

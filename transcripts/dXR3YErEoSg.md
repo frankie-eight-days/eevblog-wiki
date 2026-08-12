@@ -3,6 +3,7 @@ video_id: dXR3YErEoSg
 title: EEVblog #9 - Maxim/Dallas ThermoChron iButton
 url: https://www.youtube.com/watch?v=dXR3YErEoSg
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 39, "3": 58, "4": 75, "5": 88, "6": 104, "7": 121, "8": 137, "9": 154, "10": 169, "11": 189, "12": 204, "13": 220, "14": 234, "15": 248, "16": 260, "17": 273, "18": 288, "19": 301, "20": 317, "21": 332, "22": 341, "23": 355, "24": 369, "25": 382, "26": 395, "27": 412, "28": 432, "29": 450, "30": 466, "31": 480, "32": 492, "33": 506, "34": 521, "35": 541, "36": 557, "37": 577, "38": 591}
 ---
 
 **Dave Jones:** Welcome to the AAV blog. I'm your host, Dave Jones, and this is episode number nine. First up, some industry news. Uh Texas Instruments actually just bought Luminary Micro for an undisclosed sum. Now, if you haven't heard of Luminary

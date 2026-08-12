@@ -3,6 +3,7 @@ video_id: 2uhAaspMqq4
 title: EEVblog #846 - Solar Panel Micrometeorite Impact!
 url: https://www.youtube.com/watch?v=2uhAaspMqq4
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 33, "3": 47, "4": 62, "5": 80, "6": 96, "7": 112, "8": 128, "9": 146, "10": 158, "11": 172, "12": 188, "13": 206, "14": 222, "15": 240, "16": 255, "17": 273, "18": 289, "19": 309, "20": 329, "21": 344, "22": 360, "23": 378, "24": 395, "25": 412, "26": 424, "27": 445, "28": 460, "29": 482, "30": 504, "31": 526, "32": 548, "33": 568, "34": 586, "35": 598, "36": 609, "37": 630, "38": 648, "39": 664, "40": 680, "41": 693, "42": 707, "43": 723, "44": 738, "45": 756, "46": 775, "47": 795, "48": 812, "49": 828, "50": 842, "51": 858, "52": 875, "53": 886, "54": 905, "55": 923, "56": 935, "57": 952, "58": 966}
 ---
 
 **Dave Jones:** Hi, just a follow up on my shattered LG Mono X solar panel from my roof. And I've done previous videos on this, and people wanted me to actually investigate under the microscope the impact down here. So, that's exactly what we're

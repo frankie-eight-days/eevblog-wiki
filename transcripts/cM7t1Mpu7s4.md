@@ -3,6 +3,7 @@ video_id: cM7t1Mpu7s4
 title: EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial
 url: https://www.youtube.com/watch?v=cM7t1Mpu7s4
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 33, "3": 48, "4": 65, "5": 77, "6": 97, "7": 113, "8": 127, "9": 144, "10": 166, "11": 185, "12": 200, "13": 219, "14": 232, "15": 247, "16": 266, "17": 279, "18": 292, "19": 310, "20": 323, "21": 338, "22": 352, "23": 367, "24": 386, "25": 403, "26": 417, "27": 435, "28": 453, "29": 468, "30": 491, "31": 507, "32": 524, "33": 540, "34": 558, "35": 578, "36": 595, "37": 609, "38": 625, "39": 640, "40": 652, "41": 668, "42": 679, "43": 698, "44": 712, "45": 726, "46": 736, "47": 750, "48": 769, "49": 783, "50": 799, "51": 815, "52": 830, "53": 842, "54": 858, "55": 872, "56": 888, "57": 902, "58": 917, "59": 933, "60": 951, "61": 967, "62": 983, "63": 999, "64": 1012}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's time for another tutorial. This time around, it's switch mode power supplies. Why? Because, well, I keep

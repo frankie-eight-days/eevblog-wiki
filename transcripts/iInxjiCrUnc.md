@@ -3,6 +3,7 @@ video_id: iInxjiCrUnc
 title: Dumpster Plugpack Graveyard!
 url: https://www.youtube.com/watch?v=iInxjiCrUnc
 source: youtube-asr
+timestamps: {"0": 2, "1": 20, "2": 35, "3": 50, "4": 69}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room and well, seen some weird stuff in the dumpster in my time but this one's a bit of a doozy. Check this out. There's a dumpster full of chopped off mains plugs and adapters.

@@ -3,6 +3,7 @@ video_id: gAqRido1NOI
 title: EEVblog #4 - Calculator Design, Mr Bean, & FPGA's
 url: https://www.youtube.com/watch?v=gAqRido1NOI
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 52, "4": 72, "5": 84, "6": 97, "7": 115, "8": 137, "9": 156, "10": 175, "11": 195, "12": 222, "13": 249, "14": 270, "15": 291, "16": 317, "17": 335, "18": 357, "19": 370, "20": 385, "21": 402, "22": 422, "23": 440, "24": 456, "25": 469, "26": 486, "27": 501, "28": 515, "29": 533, "30": 550, "31": 568, "32": 583}
 ---
 
 **Dave Jones:** Hi, I'm Dave Jones, and welcome to the EE Vblog number four. As you might know, I've got a bit of an interest in calculators, and sometime back I noticed that Hewlett-Packard, um, they actually released the HP 20b financial calculator.

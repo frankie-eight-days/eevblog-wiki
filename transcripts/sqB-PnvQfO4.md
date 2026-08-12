@@ -3,6 +3,7 @@ video_id: sqB-PnvQfO4
 title: Samsung Galaxy Tab A 10.1" - REPAIR (Part 2 of 2)
 url: https://www.youtube.com/watch?v=sqB-PnvQfO4
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 30, "3": 43, "4": 57, "5": 70, "6": 85, "7": 99, "8": 116, "9": 130, "10": 148, "11": 160, "12": 182, "13": 192, "14": 207, "15": 221, "16": 246, "17": 263, "18": 284, "19": 303, "20": 319, "21": 337, "22": 357, "23": 381, "24": 398, "25": 419, "26": 441, "27": 456, "28": 475, "29": 496, "30": 509, "31": 524, "32": 538, "33": 555, "34": 568, "35": 584, "36": 601, "37": 618, "38": 631, "39": 644, "40": 663, "41": 676, "42": 686, "43": 700, "44": 719, "45": 733, "46": 748, "47": 761, "48": 773, "49": 785, "50": 799, "51": 811, "52": 824, "53": 835, "54": 847, "55": 859, "56": 873, "57": 894}
 ---
 
 **Dave Jones:** Hi, I'm back on this uh Samsung Galaxy Tab A which uh failed. Sorry, I can't fit it all on uh here. It failed because what what what what the ribbon cable here actually like broke off. It broke off and there it is still

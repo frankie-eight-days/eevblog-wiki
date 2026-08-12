@@ -3,6 +3,7 @@ video_id: st7H_vqSaQc
 title: EEVblog #949 - Australian Made Vintage Laptop Teardown!
 url: https://www.youtube.com/watch?v=st7H_vqSaQc
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 39, "3": 58, "4": 79, "5": 91, "6": 109, "7": 128, "8": 142, "9": 155, "10": 169, "11": 183, "12": 200, "13": 215, "14": 235, "15": 256, "16": 281, "17": 296, "18": 312, "19": 329, "20": 344, "21": 360, "22": 372, "23": 389, "24": 407, "25": 422, "26": 436, "27": 450, "28": 463, "29": 481, "30": 502, "31": 516, "32": 528, "33": 549, "34": 564, "35": 575, "36": 588, "37": 600, "38": 614, "39": 632, "40": 659, "41": 675, "42": 696, "43": 711, "44": 736, "45": 754, "46": 770, "47": 782, "48": 798, "49": 815, "50": 829, "51": 846, "52": 858, "53": 876, "54": 889, "55": 910, "56": 926, "57": 944, "58": 958, "59": 974, "60": 991, "61": 1009, "62": 1024}
 ---
 
 **Dave Jones:** Hi, welcome to Tear Down Tuesday. We love vintage computers here on the EE blog and I've got a real obscure one for you today. This is the only laptop manufactured in Australia. It's the Delmont Magnum, otherwise known as the

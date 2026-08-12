@@ -3,6 +3,7 @@ video_id: H2rGDGMXSes
 title: Trek FX Hybrid Bike Shimano Shifter/Derailleur Cable Replacement
 url: https://www.youtube.com/watch?v=H2rGDGMXSes
 source: youtube-asr
+timestamps: {"0": 0, "1": 22, "2": 39, "3": 61, "4": 79, "5": 94, "6": 113, "7": 125, "8": 137, "9": 154, "10": 168, "11": 185, "12": 200, "13": 217, "14": 233, "15": 248, "16": 262, "17": 278, "18": 294, "19": 313, "20": 336, "21": 349, "22": 366, "23": 379, "24": 393, "25": 408, "26": 425, "27": 440, "28": 454, "29": 468, "30": 487, "31": 503, "32": 518, "33": 531, "34": 547, "35": 562, "36": 580, "37": 598, "38": 611, "39": 624, "40": 636, "41": 659, "42": 671, "43": 684, "44": 705, "45": 716, "46": 731, "47": 747, "48": 766, "49": 781, "50": 797, "51": 810, "52": 821, "53": 836, "54": 853, "55": 866, "56": 881, "57": 896, "58": 911, "59": 928, "60": 943, "61": 959, "62": 973}
 ---
 
 **Dave Jones:** Hi, slightly different video to usual. I thought I'd do a bike repair. Not something that I always do, but my Trek FX 7.3 here, a nice lightweight aluminum, none of that aluminum rubbish, lightweight aluminum hybrid bike. So, it's designed for road

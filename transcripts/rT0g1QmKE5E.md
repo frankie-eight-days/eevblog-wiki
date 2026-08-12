@@ -3,6 +3,7 @@ video_id: rT0g1QmKE5E
 title: Brymen BM2257 MOV Leakage Testing
 url: https://www.youtube.com/watch?v=rT0g1QmKE5E
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 31, "3": 45, "4": 64, "5": 77, "6": 90, "7": 102, "8": 116, "9": 130, "10": 146, "11": 160, "12": 176, "13": 188, "14": 204, "15": 218, "16": 240, "17": 253, "18": 266, "19": 281, "20": 300, "21": 312, "22": 333, "23": 348, "24": 365, "25": 382, "26": 396, "27": 412, "28": 432, "29": 449, "30": 473}
 ---
 
 **Dave Jones:** Hi, some people on the EV blog forum have been talking about the leak of potential leakage current at high voltage in the new BM 2257 multimeter with the MOV configuration that I just released a video this morning on the

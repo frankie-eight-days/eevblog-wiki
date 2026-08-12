@@ -3,6 +3,7 @@ video_id: KKMrT2HeRsQ
 title: EEVblog 1589 - CCD Scanner Array
 url: https://www.youtube.com/watch?v=KKMrT2HeRsQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 36, "3": 53, "4": 66, "5": 82, "6": 99, "7": 114, "8": 127, "9": 145, "10": 158, "11": 178, "12": 196, "13": 213, "14": 229, "15": 243, "16": 258, "17": 274, "18": 286, "19": 299, "20": 313, "21": 324, "22": 338, "23": 352, "24": 367, "25": 385, "26": 402, "27": 416, "28": 433, "29": 448, "30": 462, "31": 482, "32": 495, "33": 510, "34": 531, "35": 544, "36": 559, "37": 571, "38": 585, "39": 602, "40": 618, "41": 634, "42": 651, "43": 664, "44": 676, "45": 692, "46": 710, "47": 727, "48": 742, "49": 759, "50": 781, "51": 796, "52": 811, "53": 824, "54": 837, "55": 852, "56": 863}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to my facts teardown, the dumpster facts I got. I forgot to I was going to include this in the video, I completely forgot. So, here's a separate video looking at the linear scan head inside this

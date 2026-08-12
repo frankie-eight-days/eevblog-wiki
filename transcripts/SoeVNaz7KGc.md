@@ -3,6 +3,7 @@ video_id: SoeVNaz7KGc
 title: EEVsmoke #2 - Magic Smoke Captured!
 url: https://www.youtube.com/watch?v=SoeVNaz7KGc
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 32, "3": 49, "4": 65, "5": 80, "6": 96, "7": 112, "8": 126, "9": 140, "10": 157, "11": 175, "12": 190, "13": 209, "14": 227, "15": 242, "16": 262, "17": 275, "18": 287, "19": 297, "20": 313, "21": 332, "22": 347, "23": 365, "24": 380, "25": 391, "26": 400, "27": 415, "28": 428, "29": 442, "30": 457, "31": 476, "32": 490, "33": 504, "34": 518, "35": 532, "36": 551, "37": 570, "38": 583, "39": 595, "40": 611, "41": 626, "42": 642, "43": 659, "44": 672, "45": 686, "46": 700}
 ---
 
 **Dave Jones:** Hi, welcome to the second episode of EV smoke, the best place to find magic smoke porn anywhere on the interwebs. We had 75,000 views on the first video and about a 90% thumbs up ratio. So, it'll be interesting to see the results

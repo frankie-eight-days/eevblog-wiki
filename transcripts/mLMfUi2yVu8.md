@@ -3,6 +3,7 @@ video_id: mLMfUi2yVu8
 title: EEVblog #49 - Decibels (dB's) for Engineers - A Tutorial
 url: https://www.youtube.com/watch?v=mLMfUi2yVu8
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 35, "3": 52, "4": 68, "5": 88, "6": 105, "7": 124, "8": 141, "9": 158, "10": 175, "11": 191, "12": 213, "13": 232, "14": 248, "15": 262, "16": 277, "17": 295, "18": 314, "19": 330, "20": 344, "21": 359, "22": 378, "23": 395, "24": 411, "25": 425, "26": 445, "27": 466, "28": 485, "29": 503, "30": 517, "31": 533, "32": 555, "33": 573, "34": 594, "35": 613, "36": 630, "37": 650, "38": 663, "39": 683, "40": 698, "41": 714, "42": 731, "43": 747, "44": 767, "45": 783, "46": 797, "47": 815, "48": 832, "49": 850, "50": 867, "51": 883, "52": 897, "53": 919, "54": 935, "55": 952, "56": 971, "57": 992, "58": 1009, "59": 1029, "60": 1049, "61": 1070, "62": 1083, "63": 1096, "64": 1110, "65": 1127, "66": 1145, "67": 1165, "68": 1181, "69": 1195, "70": 1209, "71": 1226, "72": 1243}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host Dave Jones. Hi, today we're going to talk about DBs, decibels, because I've had a few people comment about what exactly I mean when I

@@ -3,6 +3,7 @@ video_id: HZ21DX9kA7c
 title: Mobile Cell Phone Radiation SAR Testing - EEVblog #201
 url: https://www.youtube.com/watch?v=HZ21DX9kA7c
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 33, "3": 47, "4": 61, "5": 73, "6": 84, "7": 97, "8": 108, "9": 125, "10": 138, "11": 158, "12": 173, "13": 186, "14": 201, "15": 214, "16": 223, "17": 236, "18": 250, "19": 261, "20": 270, "21": 286, "22": 300, "23": 311, "24": 325, "25": 338, "26": 350, "27": 361, "28": 376, "29": 391, "30": 407, "31": 419, "32": 431, "33": 444, "34": 457, "35": 468, "36": 481}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones.

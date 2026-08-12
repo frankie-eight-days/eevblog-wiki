@@ -3,6 +3,7 @@ video_id: k8yKIdU_EEY
 title: Sony NEX VG30 Claytons Repair 2 Microphone Boogaloo
 url: https://www.youtube.com/watch?v=k8yKIdU_EEY
 source: youtube-asr
+timestamps: {"0": 1, "1": 24, "2": 39, "3": 53, "4": 67, "5": 83, "6": 97, "7": 107, "8": 120, "9": 134, "10": 147, "11": 160, "12": 175, "13": 187, "14": 200, "15": 212, "16": 224, "17": 241, "18": 256, "19": 272, "20": 288, "21": 307, "22": 328, "23": 343, "24": 359, "25": 378, "26": 401, "27": 419, "28": 435, "29": 450, "30": 465, "31": 481, "32": 495, "33": 509, "34": 523, "35": 535, "36": 548, "37": 563, "38": 578, "39": 589, "40": 601, "41": 617, "42": 637, "43": 651, "44": 664, "45": 675, "46": 686, "47": 705, "48": 725, "49": 743, "50": 753, "51": 767, "52": 780}
 ---
 
 **Dave Jones:** Hi. Yes, it's what what what what time again. My poor old speed up Sony NEX-VG30 camera, which is like my secondary B-roll camera, but I also use it as the main camera for like my mailbag videos and stuff. And I went

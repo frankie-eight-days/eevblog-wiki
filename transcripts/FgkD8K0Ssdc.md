@@ -3,6 +3,7 @@ video_id: FgkD8K0Ssdc
 title: Fluke 287 Repair - My Arse
 url: https://www.youtube.com/watch?v=FgkD8K0Ssdc
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 49, "4": 66, "5": 83, "6": 95, "7": 110, "8": 124, "9": 138, "10": 152, "11": 167, "12": 179, "13": 198, "14": 215, "15": 227, "16": 243, "17": 257, "18": 269, "19": 289, "20": 304, "21": 325, "22": 347, "23": 363, "24": 375, "25": 387, "26": 402, "27": 430, "28": 443, "29": 460, "30": 481, "31": 496, "32": 515, "33": 532, "34": 546, "35": 561, "36": 577}
 ---
 
 **Dave Jones:** Hi, it's potential repair video time. Um, I picked up this uh Fluke 287 at a quite reasonable price because it was advertised as faulty. It was malfunctioning. Uh, wasn't quite sure. Like it wasn't very clear in the uh ad

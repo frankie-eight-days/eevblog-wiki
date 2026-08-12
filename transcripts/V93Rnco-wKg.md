@@ -3,6 +3,7 @@ video_id: V93Rnco-wKg
 title: EEVblog 1414 - MicSig DP10007 High Voltage Probe - Turning it up to 11
 url: https://www.youtube.com/watch?v=V93Rnco-wKg
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 46, "4": 60, "5": 73, "6": 87, "7": 100, "8": 115, "9": 147, "10": 161, "11": 178, "12": 193, "13": 208, "14": 221, "15": 232, "16": 248, "17": 261, "18": 269, "19": 285, "20": 301, "21": 313, "22": 329, "23": 339, "24": 350, "25": 366, "26": 380, "27": 392, "28": 404, "29": 421, "30": 438, "31": 457, "32": 472, "33": 491, "34": 506, "35": 524, "36": 540, "37": 561, "38": 575, "39": 587, "40": 602, "41": 618, "42": 631, "43": 646, "44": 665, "45": 685, "46": 699, "47": 713, "48": 725, "49": 739, "50": 753, "51": 767, "52": 782, "53": 794, "54": 813, "55": 826, "56": 840, "57": 856, "58": 871, "59": 886, "60": 903, "61": 919, "62": 931}
 ---
 
 **Dave Jones:** Hi, you've no doubt seen the EVblog HVP7070 meg differential uh probe. It's been in many videos. I've been selling this on my store for many years. I do actually have it now, have it back in stock, by the way. So, you can actually get it.

@@ -3,6 +3,7 @@ video_id: c9JGfoLxVCo
 title: EEVblog #518 - 9V Alkaline Battery Construction
 url: https://www.youtube.com/watch?v=c9JGfoLxVCo
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 36, "3": 52, "4": 69, "5": 82, "6": 95, "7": 110, "8": 125, "9": 136, "10": 157, "11": 173, "12": 189, "13": 208, "14": 226, "15": 240, "16": 255, "17": 274, "18": 292, "19": 307, "20": 324, "21": 338, "22": 351, "23": 365, "24": 376, "25": 390, "26": 408, "27": 424, "28": 441, "29": 456, "30": 469, "31": 486, "32": 503, "33": 514, "34": 530, "35": 552, "36": 567, "37": 580, "38": 595, "39": 606, "40": 627, "41": 642, "42": 657, "43": 670, "44": 686, "45": 703, "46": 722, "47": 736, "48": 752, "49": 770, "50": 790, "51": 806, "52": 821, "53": 837, "54": 855, "55": 871, "56": 886, "57": 903, "58": 916, "59": 930, "60": 943, "61": 960, "62": 975, "63": 988, "64": 1004, "65": 1018, "66": 1036, "67": 1050}
 ---
 
 **Dave Jones:** Hi, in a previous video, which I will link down below if you haven't seen it, I uh did a little investigation on the ionic resistance of various 9-V batteries and I found a fairly surprising uh conclusion in that the

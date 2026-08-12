@@ -3,6 +3,7 @@ video_id: b-v3tz6beN4
 title: The Signal Path - Online vs Real World Education & Stories
 url: https://www.youtube.com/watch?v=b-v3tz6beN4
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 24, "3": 42, "4": 59, "5": 72, "6": 87, "7": 97, "8": 110, "9": 124, "10": 134, "11": 146, "12": 158, "13": 172, "14": 186, "15": 200, "16": 211, "17": 221, "18": 233, "19": 243, "20": 251, "21": 274, "22": 288, "23": 298, "24": 309, "25": 322, "26": 333, "27": 346, "28": 362, "29": 374, "30": 387, "31": 397, "32": 412, "33": 424, "34": 435, "35": 448, "36": 460, "37": 471, "38": 493, "39": 508, "40": 524, "41": 538, "42": 548, "43": 556, "44": 568, "45": 579, "46": 593, "47": 604, "48": 620, "49": 632, "50": 641, "51": 652, "52": 666, "53": 677, "54": 690, "55": 700, "56": 712, "57": 725, "58": 738, "59": 750, "60": 762, "61": 774, "62": 786, "63": 797, "64": 809, "65": 820, "66": 831, "67": 844, "68": 856, "69": 867, "70": 877, "71": 887, "72": 899, "73": 911, "74": 923, "75": 932, "76": 951, "77": 965, "78": 978}
 ---
 
 **Dave Jones:** Hey, Sharia. Hey, how are you? About some discussions about how electrical engineering field as a field is dying because the the number of the interest in the field has gone down and everybody went to software. And then there's also the discussion

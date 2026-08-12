@@ -3,6 +3,7 @@ video_id: m3sQHx5aMmU
 title: BM786 Switch Issue - Part 2
 url: https://www.youtube.com/watch?v=m3sQHx5aMmU
 source: youtube-asr
+timestamps: {"0": 2, "1": 19, "2": 41, "3": 58, "4": 76, "5": 98, "6": 111, "7": 125, "8": 142, "9": 161, "10": 178, "11": 198, "12": 210, "13": 230, "14": 251, "15": 269, "16": 287, "17": 306, "18": 319, "19": 336, "20": 354, "21": 369, "22": 393, "23": 405, "24": 419, "25": 434, "26": 454, "27": 471, "28": 490, "29": 502, "30": 522, "31": 538, "32": 550, "33": 566, "34": 579, "35": 593, "36": 609, "37": 625, "38": 636, "39": 649, "40": 659, "41": 672, "42": 689, "43": 709}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to the previous one on the BM786 multimeter switch issue. EVBlog forum member fungus actually pointed out something that he saw on the switch down in here. So, let's take a squeeze at it,

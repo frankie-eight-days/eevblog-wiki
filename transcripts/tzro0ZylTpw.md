@@ -3,6 +3,7 @@ video_id: tzro0ZylTpw
 title: Why Youtube SEO Title Keywords Matter (uBeam)
 url: https://www.youtube.com/watch?v=tzro0ZylTpw
 source: youtube-asr
+timestamps: {"0": 2, "1": 20, "2": 34, "3": 50, "4": 67, "5": 82, "6": 97, "7": 112, "8": 128, "9": 145, "10": 162, "11": 179, "12": 194, "13": 208, "14": 223, "15": 237, "16": 251, "17": 262, "18": 277, "19": 292, "20": 306, "21": 319, "22": 337, "23": 351, "24": 365, "25": 381, "26": 397}
 ---
 
 **Dave Jones:** Hi, just a quick video to clear up why I uploaded uh video number 101 as the Ubeam debunking because quite a few people have asked this. Hey, I just duplicated my content. And that's mostly true. I took uh the last part of my uh

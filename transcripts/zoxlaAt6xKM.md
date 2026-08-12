@@ -3,6 +3,7 @@ video_id: zoxlaAt6xKM
 title: Old IBM Data Center at Norwest moving to 110MW for AI
 url: https://www.youtube.com/watch?v=zoxlaAt6xKM
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 38, "3": 54, "4": 75, "5": 92, "6": 109, "7": 120, "8": 132, "9": 147, "10": 163}
 ---
 
 **Dave Jones:** Hi, I'm in Norwest Business Park and this is the old IBM data center. And before that, it used to be the Cathay Pacific headquarters. It was one of the first buildings here in Norwest and it used to handle all of

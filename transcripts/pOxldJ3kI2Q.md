@@ -3,6 +3,7 @@ video_id: pOxldJ3kI2Q
 title: Youtube LIED about Removing DISLIKES
 url: https://www.youtube.com/watch?v=pOxldJ3kI2Q
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 27, "3": 47, "4": 57, "5": 67, "6": 84, "7": 97, "8": 110, "9": 124, "10": 134, "11": 149, "12": 164, "13": 177, "14": 191, "15": 208}
 ---
 
 **Dave Jones:** Hi, you remember how YouTube removed the dislike account and how they got ratioed to hell? I can still see it because I've got a plugin, I'll link it in down below, which um still works for now, but they're going to I think probably remove

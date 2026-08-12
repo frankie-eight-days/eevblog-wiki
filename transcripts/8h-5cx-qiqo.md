@@ -3,6 +3,7 @@ video_id: 8h-5cx-qiqo
 title: Dumpster Diving Acer Aspire E1 Laptop Teardown
 url: https://www.youtube.com/watch?v=8h-5cx-qiqo
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 27, "3": 43, "4": 55, "5": 68, "6": 81, "7": 94, "8": 110, "9": 124, "10": 139, "11": 152, "12": 169, "13": 181, "14": 194}
 ---
 
 **Dave Jones:** Hi, just quick follow up uh teardown video of this uh Acer um Aspire What was it? Um E1 or something 522 laptop that I found in the dumpster. And I just did a very quick uh teardown of this cuz

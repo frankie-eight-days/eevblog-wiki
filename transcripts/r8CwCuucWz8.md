@@ -3,6 +3,7 @@ video_id: r8CwCuucWz8
 title: Copyright Struck on Artemis II Launch!
 url: https://www.youtube.com/watch?v=r8CwCuucWz8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 37, "3": 49, "4": 65, "5": 86, "6": 103, "7": 126, "8": 142, "9": 163, "10": 184, "11": 195}
 ---
 
 **Dave Jones:** Hi, I just edited and uploaded my Artemis 2 live launch reaction footage from my 2-hour live stream, you know, so I cut it down to like 15 minutes and I just went live on it went to release it and what what what

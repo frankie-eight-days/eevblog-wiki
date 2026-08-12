@@ -3,6 +3,7 @@ video_id: e2oogsffwwc
 title: FireFly Blue Ghost Lunar Lander - Fleet Seismometer
 url: https://www.youtube.com/watch?v=e2oogsffwwc
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 23, "3": 34, "4": 49, "5": 62, "6": 75, "7": 85, "8": 100, "9": 112, "10": 127, "11": 140, "12": 149, "13": 162, "14": 175, "15": 185, "16": 197, "17": 208, "18": 220, "19": 232, "20": 247, "21": 258, "22": 269, "23": 282, "24": 298, "25": 311, "26": 325, "27": 338, "28": 350, "29": 362, "30": 376, "31": 391, "32": 404, "33": 415, "34": 430, "35": 440, "36": 449, "37": 462, "38": 472, "39": 485, "40": 497}
 ---
 
 **Dave Jones:** And check this out. This is the Firefly uh Blue Ghost lander. And I'm here with Jeremy from Fleet. And you've got something on board this bad boy. You're an Australian company, right? >> Yeah, Fleet's an Australian company. Our

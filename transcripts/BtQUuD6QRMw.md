@@ -3,6 +3,7 @@ video_id: BtQUuD6QRMw
 title: Solar Panel Temperature Dependency
 url: https://www.youtube.com/watch?v=BtQUuD6QRMw
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 31, "3": 42, "4": 57, "5": 73, "6": 86, "7": 97, "8": 111, "9": 125, "10": 140, "11": 157, "12": 172, "13": 184, "14": 200, "15": 220, "16": 232, "17": 247, "18": 263, "19": 281, "20": 295, "21": 305, "22": 318, "23": 329, "24": 342, "25": 356, "26": 371, "27": 385, "28": 396, "29": 412, "30": 430, "31": 444, "32": 454, "33": 469, "34": 484, "35": 500, "36": 511, "37": 527, "38": 541, "39": 557, "40": 571, "41": 584, "42": 598, "43": 616, "44": 629, "45": 648, "46": 662, "47": 674, "48": 686, "49": 699, "50": 710, "51": 722, "52": 735, "53": 745, "54": 756, "55": 772, "56": 783, "57": 796, "58": 809, "59": 823, "60": 837, "61": 849, "62": 863, "63": 875, "64": 887, "65": 905, "66": 919, "67": 933, "68": 948, "69": 965, "70": 976, "71": 986, "72": 998, "73": 1012, "74": 1025, "75": 1039, "76": 1060, "77": 1078, "78": 1090, "79": 1102}
 ---
 
 **Dave Jones:** Hi, just a quick uh second channel follow-up video to a main channel video I just released hours ago on uh the inverter versus a panel and why uh you might potentially want to underrate your inverter compared or overrate your panels compared to your

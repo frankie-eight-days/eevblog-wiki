@@ -3,6 +3,7 @@ video_id: ZqrPCed1ss8
 title: BM235 Display Lag/Pause Testing
 url: https://www.youtube.com/watch?v=ZqrPCed1ss8
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 29, "3": 44, "4": 59, "5": 72, "6": 85, "7": 98, "8": 109, "9": 130, "10": 148, "11": 161, "12": 175, "13": 188, "14": 202}
 ---
 
 **Dave Jones:** Hi, just a quick video testing something with the BM235 compared to the BM2257 at a request of somebody who posted on the EV blog forum. I'll put the thread link down below. It's buried down in one of the threads. And um

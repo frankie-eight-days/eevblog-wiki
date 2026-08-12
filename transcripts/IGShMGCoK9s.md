@@ -3,6 +3,7 @@ video_id: IGShMGCoK9s
 title: Dumpster Diving: Today in the Dumpster Room!
 url: https://www.youtube.com/watch?v=IGShMGCoK9s
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 35, "3": 51, "4": 79}
 ---
 
 **Dave Jones:** Hi, it's dumpster time again and uh it's been cleared out and but look well chairs are multiplying again. We've got an Epson uh Workforce Pro thingy. No one wants that. Those inkjet jobies. But look, I got another photocopier printer

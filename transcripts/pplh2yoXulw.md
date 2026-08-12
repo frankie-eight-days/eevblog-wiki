@@ -3,6 +3,7 @@ video_id: pplh2yoXulw
 title: Can a 14yo Identify This Vintage Computer Relic?
 url: https://www.youtube.com/watch?v=pplh2yoXulw
 source: youtube-asr
+timestamps: {"0": 0, "1": 10, "2": 30, "3": 41, "4": 54, "5": 67, "6": 79, "7": 91, "8": 101, "9": 117, "10": 132, "11": 145, "12": 157, "13": 171, "14": 184, "15": 196, "16": 209, "17": 221, "18": 234}
 ---
 
 **Dave Jones:** It's Sagan. Say hi. I'm I'm going to give you something and you have to tell me what it is. >> I know. >> Here you go. I have not I have not clued him up on this. >> Uh

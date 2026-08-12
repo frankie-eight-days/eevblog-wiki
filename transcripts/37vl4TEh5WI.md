@@ -3,6 +3,7 @@ video_id: 37vl4TEh5WI
 title: eevBLAB 138 - The AI Supply Chain is INSANE!
 url: https://www.youtube.com/watch?v=37vl4TEh5WI
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 49, "4": 66, "5": 81, "6": 98, "7": 113, "8": 132, "9": 147, "10": 163, "11": 180, "12": 194, "13": 212, "14": 228, "15": 244, "16": 258, "17": 277, "18": 292, "19": 306, "20": 325, "21": 344, "22": 357, "23": 371, "24": 390, "25": 408, "26": 424, "27": 438, "28": 452, "29": 468, "30": 486, "31": 505, "32": 522, "33": 537, "34": 552, "35": 571, "36": 589, "37": 606, "38": 624, "39": 639, "40": 658, "41": 672, "42": 687, "43": 706, "44": 719, "45": 733, "46": 751, "47": 765, "48": 781, "49": 797, "50": 816, "51": 830, "52": 843, "53": 861, "54": 874, "55": 891, "56": 907, "57": 922, "58": 935, "59": 951, "60": 968, "61": 980, "62": 998, "63": 1011, "64": 1021, "65": 1033, "66": 1048, "67": 1062}
 ---
 
 **Dave Jones:** Hi, if there's one thing people don't understand and that includes the normies and also technical people like us can't fully comprehend supply chains and what it's required to actually produce the technology that we actually have today. Not only like basic stuff like, you

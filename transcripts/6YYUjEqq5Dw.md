@@ -3,6 +3,7 @@ video_id: 6YYUjEqq5Dw
 title: Optical Filter Followup
 url: https://www.youtube.com/watch?v=6YYUjEqq5Dw
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 31, "3": 46, "4": 59, "5": 73, "6": 90, "7": 105, "8": 121, "9": 138, "10": 155, "11": 174, "12": 192, "13": 207, "14": 226, "15": 244, "16": 258, "17": 280, "18": 303, "19": 321, "20": 341, "21": 359, "22": 374, "23": 391, "24": 405, "25": 420, "26": 440, "27": 458, "28": 475, "29": 486}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on these filters for the spectrophotometer that I did a mystery teardown of on the main channel. And I thought we'd like have a just a slightly better look at these because they must be very

@@ -3,6 +3,7 @@ video_id: fCs3rO0UYIg
 title: Ice Bath - Raw Challenge 2025
 url: https://www.youtube.com/watch?v=fCs3rO0UYIg
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 55}
 ---
 
 **Dave Jones:** Ah, the ice bath. >> Come on, guys. More. More. Thanks, guys. More ice. Let's go.

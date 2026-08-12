@@ -3,6 +3,7 @@ video_id: IVnOy8dYBkA
 title: EEVblog 1643 - DON'T BUY this Cheap 7kW 32A EV EVSE Charger
 url: https://www.youtube.com/watch?v=IVnOy8dYBkA
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 46, "4": 57, "5": 73, "6": 85, "7": 97, "8": 111, "9": 125, "10": 139, "11": 151, "12": 163, "13": 181, "14": 194, "15": 208, "16": 220, "17": 233, "18": 249, "19": 264, "20": 277, "21": 290, "22": 304, "23": 317, "24": 334, "25": 348, "26": 359, "27": 375, "28": 392, "29": 408, "30": 422, "31": 435, "32": 448, "33": 464, "34": 474, "35": 487, "36": 501, "37": 515, "38": 533}
 ---
 
 **Dave Jones:** Hi, it's teardown time of another super cheap EV charger here. And uh we've got a new energy charger. I think it goes under multiple brands. And this bobby dazzler cost me 190 Aussie bucks. Uh not sure how much it is in Yankee land, but

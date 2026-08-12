@@ -3,6 +3,7 @@ video_id: TWKY6W1C9yM
 title: EEVblog #44 Part 1 - Logic Analyzer Tutorial
 url: https://www.youtube.com/watch?v=TWKY6W1C9yM
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 43, "4": 56, "5": 74, "6": 91, "7": 105, "8": 122, "9": 140, "10": 155, "11": 170, "12": 182, "13": 197, "14": 206, "15": 221, "16": 235, "17": 251, "18": 268, "19": 281, "20": 297, "21": 311, "22": 324, "23": 341, "24": 360, "25": 378, "26": 396, "27": 409, "28": 425, "29": 438, "30": 451, "31": 468, "32": 483, "33": 499, "34": 512, "35": 527, "36": 542, "37": 561}
 ---
 
 **Dave Jones:** Hi, welcome to the EEV blog an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, today I'm going to talk about one of the least understood pieces of test gear

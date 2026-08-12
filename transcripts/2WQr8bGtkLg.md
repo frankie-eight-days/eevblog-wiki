@@ -3,6 +3,7 @@ video_id: 2WQr8bGtkLg
 title: EEVblog 1676 - Lab Timer HACK
 url: https://www.youtube.com/watch?v=2WQr8bGtkLg
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 42, "4": 54, "5": 66, "6": 78, "7": 92, "8": 109, "9": 122, "10": 135, "11": 149, "12": 160, "13": 172, "14": 186, "15": 199, "16": 210, "17": 223, "18": 236, "19": 251, "20": 263, "21": 278, "22": 292, "23": 304, "24": 314, "25": 328, "26": 339, "27": 353, "28": 367, "29": 380, "30": 394, "31": 406, "32": 422, "33": 432, "34": 445, "35": 456, "36": 469, "37": 482, "38": 494, "39": 506, "40": 522, "41": 541, "42": 557, "43": 574, "44": 595, "45": 612, "46": 632, "47": 649, "48": 669, "49": 685, "50": 699, "51": 715, "52": 731, "53": 746, "54": 759, "55": 776, "56": 793, "57": 809, "58": 819, "59": 833, "60": 860, "61": 875, "62": 885, "63": 897, "64": 910, "65": 922, "66": 933, "67": 947}
 ---
 
 **Dave Jones:** Hi, I was just working on a new video here, a part two to my fuse follow-up. I'll link it in if you haven't seen it, where I tested a 400 milliamp multimeter fuses. Very comprehensive, very interesting video, but I thought I'd

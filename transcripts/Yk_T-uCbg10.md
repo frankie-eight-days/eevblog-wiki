@@ -3,6 +3,7 @@ video_id: Yk_T-uCbg10
 title: Returned BM036 Clamp Meter Investigation
 url: https://www.youtube.com/watch?v=Yk_T-uCbg10
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 28, "3": 42, "4": 58, "5": 77, "6": 97, "7": 118, "8": 134, "9": 149, "10": 164, "11": 178, "12": 189, "13": 202, "14": 216, "15": 229, "16": 245, "17": 261, "18": 275, "19": 296, "20": 316, "21": 338, "22": 353, "23": 369, "24": 384, "25": 402, "26": 417, "27": 437, "28": 453, "29": 471, "30": 490, "31": 509, "32": 534, "33": 553, "34": 569, "35": 586, "36": 603, "37": 623, "38": 642, "39": 671, "40": 686, "41": 701, "42": 714, "43": 724, "44": 737}
 ---
 
 **Dave Jones:** Hi, just a quick look at a returned BM036 clamp meter here. I think this is the first one that I've had returned. I've sold quite a lot of these. It's a quite popular unit. Um, and uh what's the

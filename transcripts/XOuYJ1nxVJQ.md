@@ -3,6 +3,7 @@ video_id: XOuYJ1nxVJQ
 title: BM787BT Bluetooth CYBLE-212006-01 Fimware OTA Update
 url: https://www.youtube.com/watch?v=XOuYJ1nxVJQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 34, "3": 46, "4": 62, "5": 76, "6": 91, "7": 104, "8": 119, "9": 136, "10": 151, "11": 173, "12": 188, "13": 205, "14": 218, "15": 230, "16": 242, "17": 255, "18": 268, "19": 285, "20": 300, "21": 317, "22": 331, "23": 344, "24": 358, "25": 373, "26": 391, "27": 415, "28": 431, "29": 447, "30": 466, "31": 481, "32": 505, "33": 522}
 ---
 
 **Dave Jones:** Hi, just another update video on the uh BM787 BT Bluetooth multimeter. I'm going to be updating the firmware in the uh Bluetooth module remotely here. So, um I've got 1.03 and they've just released 1.04 to fix um like a long-term login

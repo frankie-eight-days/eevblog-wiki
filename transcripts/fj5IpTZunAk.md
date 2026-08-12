@@ -3,6 +3,7 @@ video_id: fj5IpTZunAk
 title: Cracking into a CMI Home Safe
 url: https://www.youtube.com/watch?v=fj5IpTZunAk
 source: youtube-asr
+timestamps: {"0": 14, "1": 28, "2": 38, "3": 52, "4": 74, "5": 88, "6": 101, "7": 112, "8": 125, "9": 139, "10": 151, "11": 167, "12": 181, "13": 194, "14": 204, "15": 216, "16": 229, "17": 241, "18": 252, "19": 273, "20": 291, "21": 309, "22": 330, "23": 352, "24": 368, "25": 381}
 ---
 
 **Dave Jones:** Hi, welcome to the AAV blog. Yes, I'm back in the old lab the garage here and I brought it here to see if we can drill through the sucker and try AND FIX IT. OH! LET'S GO. Considering that we've

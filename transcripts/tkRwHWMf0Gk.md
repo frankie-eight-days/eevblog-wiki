@@ -3,6 +3,7 @@ video_id: tkRwHWMf0Gk
 title: I Found the ANNOYING BEEP in my Lab!
 url: https://www.youtube.com/watch?v=tkRwHWMf0Gk
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 44, "4": 64, "5": 80, "6": 96, "7": 114, "8": 127, "9": 137, "10": 149, "11": 160, "12": 173, "13": 183, "14": 198, "15": 213, "16": 225, "17": 239, "18": 254}
 ---
 
 **Dave Jones:** Hi, for those who've been watching my recent videos or listening to my recent videos, you might have heard a beep in the background. And I originally thought it might have been a Bitaxe, Bitcoin little tiny Bitcoin miner that someone sent in the mailbag

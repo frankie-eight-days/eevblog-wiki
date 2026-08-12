@@ -3,6 +3,7 @@ video_id: 6JhK8iCQuqI
 title: EEVblog 1746 - The 555 is 55 Years Old!
 url: https://www.youtube.com/watch?v=6JhK8iCQuqI
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 47, "4": 60, "5": 71, "6": 84, "7": 98, "8": 112, "9": 129, "10": 146, "11": 161, "12": 175, "13": 189, "14": 202, "15": 218, "16": 237, "17": 252, "18": 270, "19": 289, "20": 305, "21": 322, "22": 338}
 ---
 
 **Dave Jones:** Hi, probably the most classic chip in all of electronics history, the triple five, the 555 timer, is 55 years old this year, or thereabouts. So, we're going to celebrate this milestone by releasing this video on May the 5th.

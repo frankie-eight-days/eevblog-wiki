@@ -3,6 +3,7 @@ video_id: 0eL_byioeqQ
 title: If it's worth doing, it's worth over doing. Lemon Battery
 url: https://www.youtube.com/watch?v=0eL_byioeqQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 35, "3": 51}
 ---
 
 **Dave Jones:** Hi, check out an experiment we're doing. High school uh physics experiment. We're measuring uh well various uh lemon uh type citrusy uh fruits battery. And if it's worth doing, it's worth overdoing. We've got two 7 and 1 halfdigit

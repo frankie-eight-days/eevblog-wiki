@@ -3,6 +3,7 @@ video_id: MC9_4mpqVgU
 title: eevBLAB #5 - Are Mixed Signal (MSO) Oscilloscopes Worth The Money?
 url: https://www.youtube.com/watch?v=MC9_4mpqVgU
 source: youtube-asr
+timestamps: {"0": 0, "1": 22, "2": 38, "3": 53, "4": 70, "5": 85, "6": 101, "7": 116, "8": 130, "9": 145, "10": 158, "11": 173, "12": 185, "13": 196, "14": 209, "15": 224, "16": 237, "17": 250, "18": 266, "19": 280, "20": 293, "21": 307, "22": 321, "23": 341, "24": 358, "25": 371, "26": 386, "27": 404, "28": 416, "29": 426, "30": 442, "31": 456, "32": 470, "33": 482, "34": 494, "35": 509, "36": 525, "37": 541, "38": 557, "39": 576, "40": 589, "41": 603, "42": 620, "43": 634, "44": 646, "45": 661, "46": 676, "47": 692, "48": 706, "49": 718, "50": 729, "51": 741, "52": 757, "53": 769, "54": 783, "55": 796, "56": 811, "57": 826}
 ---
 
 **Dave Jones:** Hi, welcome to another EV blog. This one comes from the EV blog forum from a user called Stevie G and he asked about the new Rigol DS1074Z or more specifically the MSO1074Z which has the mixed signal capability. MSO or the 16 digital channels with the

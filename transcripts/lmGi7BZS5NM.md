@@ -3,6 +3,7 @@ video_id: lmGi7BZS5NM
 title: EEVblog #178 - Agilent's U1272A Response
 url: https://www.youtube.com/watch?v=lmGi7BZS5NM
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 28, "3": 45, "4": 58, "5": 74, "6": 87, "7": 104, "8": 123, "9": 138, "10": 155, "11": 172, "12": 186, "13": 201, "14": 215, "15": 229, "16": 245, "17": 260, "18": 281, "19": 301}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up on the U1272A Agilent multimeter problem I had about just over 3 weeks ago now. I reported it. I showed a video. Basically, I found a problem where you would switch it on and it would lock up. And if you managed

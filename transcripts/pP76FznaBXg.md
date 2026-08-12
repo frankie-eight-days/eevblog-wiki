@@ -3,6 +3,7 @@ video_id: pP76FznaBXg
 title: Interesting Dumpster Find
 url: https://www.youtube.com/watch?v=pP76FznaBXg
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 34, "3": 51, "4": 72, "5": 89, "6": 104, "7": 123, "8": 141, "9": 154}
 ---
 
 **Dave Jones:** Hi. Yes, I'm in the dumpster room again and no office furniture, household items, or dumping of any other waste in this area. Anyway, um yeah, it's relatively free of any like home stuff at the moment. Here's yet another uh

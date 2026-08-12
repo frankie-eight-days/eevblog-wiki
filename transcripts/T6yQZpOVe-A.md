@@ -3,6 +3,7 @@ video_id: T6yQZpOVe-A
 title: eevBLAB 133 - YouTube Just Self Destructed (AI Shorts Integration)
 url: https://www.youtube.com/watch?v=T6yQZpOVe-A
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 36, "3": 52, "4": 70, "5": 85, "6": 100, "7": 114, "8": 126, "9": 138, "10": 153, "11": 166, "12": 183, "13": 197, "14": 212, "15": 226, "16": 238, "17": 252, "18": 264, "19": 274, "20": 294, "21": 305, "22": 317, "23": 330, "24": 344, "25": 356, "26": 370, "27": 379, "28": 392, "29": 403, "30": 414, "31": 426, "32": 443, "33": 459, "34": 474, "35": 488, "36": 499}
 ---
 
 **Dave Jones:** Hi, welcome to the fresh new hell that is YouTube AI shorts. If you thought AI was already bad enough and people producing AI slop on YouTube, well, unfortunately, it just got a hell of a lot easier. From YouTube creators just announced at Made

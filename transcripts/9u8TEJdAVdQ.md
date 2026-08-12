@@ -3,6 +3,7 @@ video_id: 9u8TEJdAVdQ
 title: Returned Faulty BM235 Switch Investigation
 url: https://www.youtube.com/watch?v=9u8TEJdAVdQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 26, "3": 40, "4": 56, "5": 70, "6": 83, "7": 98, "8": 112, "9": 136, "10": 151, "11": 169, "12": 192, "13": 203, "14": 220, "15": 232, "16": 249, "17": 265, "18": 282, "19": 297, "20": 312, "21": 333, "22": 349, "23": 366, "24": 382, "25": 396, "26": 414, "27": 426, "28": 445, "29": 459, "30": 472, "31": 492, "32": 509, "33": 525, "34": 544, "35": 562, "36": 577, "37": 591, "38": 611, "39": 629, "40": 647, "41": 666, "42": 682, "43": 698, "44": 711, "45": 723, "46": 739, "47": 753, "48": 765, "49": 778}
 ---
 
 **Dave Jones:** Hi, I thought we'd take a look at a returned BM235 multimeter cuz we don't get too many of them returned. I've done a at least one repair job on one of these before and it actually uncovered, I'll link it in, it's quite interesting.

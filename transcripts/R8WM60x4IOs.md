@@ -3,6 +3,7 @@ video_id: R8WM60x4IOs
 title: More Dumpster Diving PC's
 url: https://www.youtube.com/watch?v=R8WM60x4IOs
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 42, "3": 57, "4": 75, "5": 90, "6": 109, "7": 122, "8": 137, "9": 148, "10": 162, "11": 184, "12": 196, "13": 207}
 ---
 
 **Dave Jones:** Hi, it's dumpster time again and they're actually in the dumpster this time. Look at this. Various PCs and slimline form factor ones. They've got heatsinks over there and there's more big ones, big monster server things down in the dumpster.

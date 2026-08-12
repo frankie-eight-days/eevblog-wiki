@@ -3,6 +3,7 @@ video_id: MsNbK7kCcKA
 title: EEVblog #1149 - How An Electrostatic Whiteboard Works
 url: https://www.youtube.com/watch?v=MsNbK7kCcKA
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 28, "3": 45, "4": 59, "5": 74, "6": 91, "7": 114, "8": 127, "9": 137, "10": 153, "11": 170, "12": 187, "13": 203, "14": 220, "15": 232, "16": 250, "17": 265, "18": 277, "19": 293, "20": 306, "21": 318, "22": 336, "23": 350, "24": 367, "25": 382, "26": 399, "27": 416, "28": 434, "29": 452, "30": 474, "31": 492, "32": 506, "33": 520, "34": 534, "35": 553, "36": 568, "37": 582, "38": 595, "39": 608, "40": 625, "41": 641, "42": 656, "43": 669, "44": 684, "45": 701, "46": 718, "47": 732, "48": 749, "49": 764, "50": 781, "51": 797, "52": 813, "53": 827, "54": 841, "55": 856, "56": 867}
 ---
 
 **Dave Jones:** Hi, we're going to check out and do a teardown of a whiteboard. Yes, a whiteboard. Stick with me. Thank you very much to Jan De Plume who said, "Hey, I'm going to send something cool to your office." I had no idea what it

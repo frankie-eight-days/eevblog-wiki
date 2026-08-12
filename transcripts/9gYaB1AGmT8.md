@@ -3,6 +3,7 @@ video_id: 9gYaB1AGmT8
 title: Padauk 3 Cent Micro Programmer & ICE Unboxing
 url: https://www.youtube.com/watch?v=9gYaB1AGmT8
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 40, "3": 54, "4": 74, "5": 105, "6": 126, "7": 143, "8": 157, "9": 171, "10": 184, "11": 198, "12": 217, "13": 231, "14": 243, "15": 259, "16": 273, "17": 293, "18": 310, "19": 325}
 ---
 
 **Dave Jones:** Hi, just an impromptu unboxing because if you saw my 3 cent microcontroller video and it was very popular, 100,000 views or something, you might recognize the name, Paduc. Um, thank you very much, Paduc. They actually sent me They saw my video and they went,

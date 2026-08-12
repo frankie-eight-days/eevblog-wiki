@@ -3,6 +3,7 @@ video_id: oETWLF-MOfE
 title: EEVblog #283 - Agilent U1732B Contest Draw
 url: https://www.youtube.com/watch?v=oETWLF-MOfE
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 39, "4": 52, "5": 71, "6": 87, "7": 104, "8": 120, "9": 134, "10": 149, "11": 164, "12": 182, "13": 199, "14": 218, "15": 234, "16": 257, "17": 272, "18": 294, "19": 307}
 ---
 
 **Dave Jones:** Hi, it's contest time again and up for grabs is this Agyant U732B LCR meter. It's the uh older uh B series. Uh it's the one I did the uh tear down of and it's an excellent bit of kit. So, if you want to see inside

@@ -3,6 +3,7 @@ video_id: wjBV0JSV3xs
 title: eevBLAB #69 - The Problem With Bitchute
 url: https://www.youtube.com/watch?v=wjBV0JSV3xs
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 29, "3": 41, "4": 58, "5": 74, "6": 89, "7": 103, "8": 118, "9": 129, "10": 150, "11": 162, "12": 178, "13": 190, "14": 204, "15": 219, "16": 233, "17": 250, "18": 264, "19": 278, "20": 291, "21": 303, "22": 318, "23": 332, "24": 349, "25": 362, "26": 372, "27": 384, "28": 398, "29": 417, "30": 435, "31": 456, "32": 473, "33": 488, "34": 503, "35": 518, "36": 530, "37": 543, "38": 561, "39": 574, "40": 586, "41": 602, "42": 617, "43": 631, "44": 646, "45": 658, "46": 673, "47": 686, "48": 702, "49": 722, "50": 736, "51": 751, "52": 768, "53": 785, "54": 799, "55": 812, "56": 823, "57": 836, "58": 852, "59": 864}
 ---
 
 **Dave Jones:** Hi, I want to talk about BitChute because at present it's pretty much the only alternative viable alternative to YouTube. Now, I've been on BitChute practically when it started. I've got almost 1,000 subscribers. I'll link to my BitChute down channel down below and

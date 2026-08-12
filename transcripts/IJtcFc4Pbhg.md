@@ -3,6 +3,7 @@ video_id: IJtcFc4Pbhg
 title: Dumpster Diving Decompression
 url: https://www.youtube.com/watch?v=IJtcFc4Pbhg
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 44, "3": 59, "4": 75, "5": 85, "6": 111, "7": 129, "8": 142, "9": 169, "10": 184, "11": 201, "12": 221, "13": 237}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room again and today's find first time I've ever seen one of these. Check it out. Um, it looks like an air compressor GMC jobbie and there you go. I don't know oil level tank drain air in that filter operating

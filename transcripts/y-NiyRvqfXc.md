@@ -3,6 +3,7 @@ video_id: y-NiyRvqfXc
 title: Another Altium Designer ERC Bug
 url: https://www.youtube.com/watch?v=y-NiyRvqfXc
 source: youtube-asr
+timestamps: {"0": 3, "1": 19, "2": 32, "3": 46, "4": 59, "5": 76, "6": 96, "7": 113, "8": 128, "9": 141}
 ---
 
 **Dave Jones:** And it looks like I found another bug potentially. But uh just an update from the uh previous one. I um said well I updated the description for uh that bug. The issue seems to only be with the uh

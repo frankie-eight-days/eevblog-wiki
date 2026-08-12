@@ -3,6 +3,7 @@ video_id: kLJOI9HC-tQ
 title: EEVblog #3 - Static Myths, PIC Micro, Pocket Multimeter
 url: https://www.youtube.com/watch?v=kLJOI9HC-tQ
 source: youtube-asr
+timestamps: {"0": 7, "1": 22, "2": 42, "3": 59, "4": 74, "5": 92, "6": 109, "7": 127, "8": 145, "9": 164, "10": 183, "11": 197, "12": 212, "13": 236, "14": 254, "15": 269, "16": 285, "17": 301, "18": 322, "19": 340, "20": 359, "21": 376, "22": 394, "23": 411, "24": 424, "25": 438, "26": 460, "27": 476, "28": 495, "29": 507, "30": 521, "31": 539, "32": 556, "33": 567, "34": 581}
 ---
 
 **Dave Jones:** Hi, I'm Dave Jones and this is the AEV blog number First up, as usual, is a book review. Now, I don't actually have a physical hard copy book this week. The reason being is that it's available online as a

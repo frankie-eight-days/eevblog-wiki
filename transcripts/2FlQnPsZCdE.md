@@ -3,6 +3,7 @@ video_id: 2FlQnPsZCdE
 title: Scope WTF!
 url: https://www.youtube.com/watch?v=2FlQnPsZCdE
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 37, "3": 58, "4": 76, "5": 92, "6": 113, "7": 136, "8": 157, "9": 172, "10": 197, "11": 216, "12": 235, "13": 256, "14": 267, "15": 282, "16": 302, "17": 318}
 ---
 
 **Dave Jones:** Whoa, there's something very strange going on here. Look at this waveform, right? Which is fine on the other scopes. Okay, it's it's not the input waveform doing this, but look at all this Look at all this crap here. And it seems

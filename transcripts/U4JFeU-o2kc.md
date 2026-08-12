@@ -3,6 +3,7 @@ video_id: U4JFeU-o2kc
 title: EEVblog #26 - Multimeter Tutorial - Counts, Accuracy, Resolution & Calibration
 url: https://www.youtube.com/watch?v=U4JFeU-o2kc
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 53, "4": 69, "5": 82, "6": 101, "7": 116, "8": 131, "9": 149, "10": 168, "11": 179, "12": 200, "13": 218, "14": 231, "15": 246, "16": 265, "17": 283, "18": 299, "19": 319, "20": 337, "21": 358, "22": 379, "23": 401, "24": 423, "25": 445, "26": 462, "27": 476, "28": 495, "29": 508, "30": 523, "31": 539, "32": 554, "33": 570, "34": 583}
 ---
 
 **Dave Jones:** Hi, welcome to the EE Vblog. I'm your host, Dave Jones, and this is episode number 26. There was a comment on one of my earlier blogs from someone called Walter, and he had a question about multimeters and the counts, like you

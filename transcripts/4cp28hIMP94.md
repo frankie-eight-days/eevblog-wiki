@@ -3,6 +3,7 @@ video_id: 4cp28hIMP94
 title: EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load!
 url: https://www.youtube.com/watch?v=4cp28hIMP94
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 38, "3": 47, "4": 61, "5": 75, "6": 90, "7": 112, "8": 131, "9": 150, "10": 166, "11": 179, "12": 198, "13": 215, "14": 238, "15": 256, "16": 274, "17": 288, "18": 304, "19": 320, "20": 334, "21": 352, "22": 366, "23": 378, "24": 393, "25": 411, "26": 430, "27": 447, "28": 464, "29": 475, "30": 489, "31": 500, "32": 516, "33": 528, "34": 543, "35": 558, "36": 571, "37": 582, "38": 598, "39": 619, "40": 632, "41": 642, "42": 658, "43": 673, "44": 687, "45": 704, "46": 718, "47": 733, "48": 750, "49": 763, "50": 780, "51": 799, "52": 813, "53": 831, "54": 852}
 ---
 
 **Dave Jones:** Hi, have you ever wondered if there's any limit to how many of these double adapter or power board things that you can actually plug in series? Well, I found 283 of these in the dumpster, so I thought I'd try it. 283

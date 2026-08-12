@@ -3,6 +3,7 @@ video_id: nGL8X8FS4eQ
 title: EEVblog #1197 - DIY PCB Etching With Water
 url: https://www.youtube.com/watch?v=nGL8X8FS4eQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 11, "2": 23, "3": 42, "4": 58, "5": 73, "6": 92, "7": 107, "8": 123, "9": 138, "10": 151, "11": 164, "12": 179, "13": 191, "14": 203, "15": 212, "16": 227, "17": 239, "18": 252, "19": 267, "20": 283, "21": 297, "22": 312, "23": 327, "24": 342, "25": 355, "26": 380, "27": 397, "28": 414, "29": 431, "30": 444, "31": 459, "32": 474, "33": 496, "34": 506, "35": 518, "36": 533, "37": 547, "38": 566, "39": 585, "40": 598, "41": 622, "42": 642, "43": 674, "44": 693, "45": 708, "46": 726, "47": 735, "48": 749, "49": 778, "50": 792, "51": 809, "52": 824, "53": 840, "54": 853, "55": 872, "56": 883, "57": 898, "58": 912, "59": 925}
 ---
 
 **Dave Jones:** Hi, a lot of people have wanted me to do a video on etching your own PCBs and maybe I'll do that one day cuz I used to do that a lot. I used to make a lot of my own boards both personally and

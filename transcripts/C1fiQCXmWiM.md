@@ -3,6 +3,7 @@ video_id: C1fiQCXmWiM
 title: The State of The Dumpster Room
 url: https://www.youtube.com/watch?v=C1fiQCXmWiM
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 34, "3": 52, "4": 70, "5": 89, "6": 104}
 ---
 
 **Dave Jones:** Hi, I just thought I'd show you the current state of the dumpster room. Um Look at this. We did get uh brand new bins, by the way, which is uh terrific stuff. But, yeah, there's like it kind of resembles my lab in that like there

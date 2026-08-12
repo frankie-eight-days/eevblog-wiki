@@ -3,6 +3,7 @@ video_id: SVP7oPLCNuc
 title: eevBLAB 130 - Youtube Are FINALLY Demonetising AI Slop Channels?
 url: https://www.youtube.com/watch?v=SVP7oPLCNuc
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 52, "4": 68, "5": 82, "6": 100, "7": 117, "8": 132, "9": 149, "10": 162, "11": 177, "12": 189, "13": 203, "14": 217, "15": 230, "16": 243, "17": 256, "18": 270, "19": 283, "20": 297, "21": 312, "22": 327, "23": 338, "24": 353, "25": 368, "26": 392, "27": 410, "28": 426, "29": 444, "30": 457, "31": 472, "32": 487, "33": 501, "34": 515, "35": 526, "36": 539, "37": 552, "38": 565, "39": 582, "40": 594, "41": 609, "42": 625, "43": 640, "44": 650, "45": 665, "46": 678, "47": 692, "48": 705, "49": 720, "50": 733, "51": 745, "52": 758, "53": 773, "54": 792, "55": 807, "56": 823, "57": 838, "58": 852, "59": 870, "60": 883}
 ---
 
 **Dave Jones:** Hi, if you browse YouTube at all or you search for something, you've no doubt come across some of the latest AI slop content that's just completely AI generated from these AI generated channels. The entire channel and all the

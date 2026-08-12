@@ -3,6 +3,7 @@ video_id: FyTRrPWWF2s
 title: EEVblog 1669 - Agilent 53131A VFD to LED Display Upgrade MAILBAG
 url: https://www.youtube.com/watch?v=FyTRrPWWF2s
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 51, "4": 71, "5": 83, "6": 97, "7": 113, "8": 128, "9": 140, "10": 152, "11": 164, "12": 179, "13": 191, "14": 207, "15": 223, "16": 241, "17": 259, "18": 270, "19": 284, "20": 299, "21": 312, "22": 325, "23": 336, "24": 352, "25": 369, "26": 386, "27": 397, "28": 414, "29": 430, "30": 447, "31": 462, "32": 477, "33": 490, "34": 504, "35": 515, "36": 527, "37": 540, "38": 554, "39": 570, "40": 586, "41": 599, "42": 617, "43": 635, "44": 650, "45": 673, "46": 687, "47": 699, "48": 712, "49": 728, "50": 741, "51": 753, "52": 767, "53": 787, "54": 803, "55": 817, "56": 830, "57": 841, "58": 855, "59": 868}
 ---
 
 **Dave Jones:** Hi, it's mailbag time, I guess, because thank you very much to Demitro Mogilevsky from pronouncing that correctly from Palm Harbor in Florida. I've sent this into the mailbag, but I opened it up cuz it was a small seven-segment

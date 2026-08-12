@@ -3,6 +3,7 @@ video_id: igqZ77NXpyE
 title: eevBLAB #18 - Old Component Drawers
 url: https://www.youtube.com/watch?v=igqZ77NXpyE
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 39, "3": 55, "4": 66, "5": 83, "6": 103, "7": 115, "8": 134, "9": 151, "10": 165, "11": 178, "12": 199, "13": 220, "14": 243, "15": 262, "16": 279, "17": 300, "18": 312, "19": 324, "20": 341, "21": 354, "22": 371, "23": 387, "24": 401, "25": 417, "26": 437, "27": 453, "28": 467, "29": 488, "30": 509, "31": 527, "32": 543, "33": 557, "34": 570}
 ---
 
 **Dave Jones:** Hi, just a quick second channel blog video. I thought I'd show you some of my original parts drawers. In fact, the original parts drawer, the first one I ever got when I was a kid. And I'm I think I'm going to finally toss it out.

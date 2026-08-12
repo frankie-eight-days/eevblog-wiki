@@ -3,6 +3,7 @@ video_id: EICbskk-0dM
 title: EEVblog #1250 - World's Thinnest Wallet Review - Stealth Razor
 url: https://www.youtube.com/watch?v=EICbskk-0dM
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 33, "3": 46, "4": 63, "5": 73, "6": 87, "7": 101, "8": 115, "9": 128, "10": 142, "11": 155, "12": 166, "13": 180, "14": 196, "15": 208, "16": 223, "17": 235, "18": 249, "19": 260, "20": 274, "21": 288, "22": 299, "23": 313, "24": 330, "25": 345, "26": 359, "27": 371, "28": 387, "29": 399, "30": 410, "31": 420, "32": 431, "33": 442, "34": 457, "35": 469, "36": 482, "37": 493, "38": 501, "39": 516, "40": 530, "41": 544, "42": 558, "43": 571, "44": 584, "45": 603, "46": 617, "47": 631, "48": 647, "49": 662, "50": 680, "51": 695, "52": 709, "53": 724, "54": 735, "55": 746, "56": 760, "57": 774, "58": 788, "59": 802, "60": 814, "61": 827, "62": 841, "63": 853, "64": 865}
 ---
 
 **Dave Jones:** Hi, it's time for a review of a different kind. Not electronics this time, but one of these new fangled ultras slim wallets because this is my wallet here on the uh right. And well, you know, it's a little bit thick in my

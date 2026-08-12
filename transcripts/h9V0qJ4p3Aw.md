@@ -3,6 +3,7 @@ video_id: h9V0qJ4p3Aw
 title: 2010 Nissan Dualis Power Window "REPAIR"
 url: https://www.youtube.com/watch?v=h9V0qJ4p3Aw
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 29, "3": 44, "4": 55, "5": 72, "6": 88, "7": 102, "8": 114, "9": 135, "10": 150, "11": 165, "12": 178, "13": 196, "14": 215, "15": 231, "16": 246, "17": 256, "18": 271, "19": 284, "20": 300, "21": 311, "22": 323, "23": 338, "24": 352, "25": 370, "26": 385, "27": 409, "28": 423, "29": 437, "30": 460, "31": 478, "32": 493, "33": 506, "34": 517, "35": 530, "36": 546, "37": 565, "38": 584, "39": 602, "40": 618, "41": 631, "42": 646, "43": 664, "44": 677, "45": 695, "46": 711, "47": 726, "48": 739, "49": 757, "50": 771, "51": 782, "52": 794, "53": 818}
 ---
 
 **Dave Jones:** Hi. If you're following me on X, uh, then you would have seen that my 2010 Nissan Dualis Plus 2 model. Um, the power windows have stopped working on the thing. They've got like a like a master control here. They've got like a

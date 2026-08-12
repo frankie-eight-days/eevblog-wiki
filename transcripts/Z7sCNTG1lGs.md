@@ -3,6 +3,7 @@ video_id: Z7sCNTG1lGs
 title: EEVblog #1059 - Quick 861DW Hot Air Waveform Measurement
 url: https://www.youtube.com/watch?v=Z7sCNTG1lGs
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 41, "4": 54, "5": 70, "6": 86, "7": 98, "8": 112, "9": 127, "10": 140, "11": 153, "12": 168, "13": 181, "14": 196, "15": 209, "16": 221, "17": 235, "18": 247, "19": 259, "20": 271, "21": 285, "22": 301, "23": 316, "24": 331, "25": 347, "26": 362, "27": 375, "28": 391, "29": 406, "30": 421, "31": 436, "32": 451, "33": 464, "34": 479, "35": 492, "36": 508, "37": 524, "38": 538, "39": 551, "40": 565, "41": 577, "42": 589, "43": 602, "44": 616, "45": 629, "46": 643, "47": 658, "48": 674, "49": 690, "50": 705, "51": 723, "52": 737, "53": 753, "54": 765, "55": 781, "56": 792, "57": 802, "58": 817, "59": 833, "60": 843, "61": 860, "62": 874, "63": 884}
 ---
 
 **Dave Jones:** Hi, just a follow-up video on this quick 861 DW hot air re-soldering station. I'll link in the previous video down below if you haven't seen it cuz this might not make much sense. Cuz some people wanted me to do some measurements

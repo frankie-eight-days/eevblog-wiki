@@ -3,6 +3,7 @@ video_id: _ROhH9EkhtU
 title: EEVblog #35 2of2 - NiMH and NiCd Battery Charging Tutorial
 url: https://www.youtube.com/watch?v=_ROhH9EkhtU
 source: youtube-asr
+timestamps: {"0": 10, "1": 24, "2": 39, "3": 53, "4": 67, "5": 81, "6": 98, "7": 115, "8": 132, "9": 153, "10": 170, "11": 186, "12": 208, "13": 229, "14": 243, "15": 264, "16": 279, "17": 300, "18": 317, "19": 337, "20": 355, "21": 370, "22": 384, "23": 398, "24": 415, "25": 429}
 ---
 
 **Dave Jones:** Now, I thought while we're on the topic, we might as well do some basic battery charger theory. So, here we go. Now, the first technique is a very basic one for charging these things. Nickel metal hydrides and NiCads are typically

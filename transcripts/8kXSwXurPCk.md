@@ -3,6 +3,7 @@ video_id: 8kXSwXurPCk
 title: Lab Electricity 2 - Supply Charge Boogaloo
 url: https://www.youtube.com/watch?v=8kXSwXurPCk
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 35, "3": 52, "4": 65, "5": 80, "6": 96, "7": 113, "8": 127, "9": 145, "10": 163, "11": 177, "12": 194, "13": 205, "14": 222, "15": 236, "16": 248, "17": 261, "18": 282, "19": 296, "20": 312, "21": 324, "22": 337, "23": 350, "24": 362, "25": 379, "26": 393, "27": 405, "28": 416, "29": 428, "30": 444}
 ---
 
 **Dave Jones:** Hi, we have an update, ding-aling, on the electricity rates here in my lab in the commercial office building that I'm in here. I'll link in the previous video where I changed plans. I'll link in the video if you haven't seen it. This is

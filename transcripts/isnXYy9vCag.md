@@ -3,6 +3,7 @@ video_id: isnXYy9vCag
 title: Enphase Microinverter FAIL?
 url: https://www.youtube.com/watch?v=isnXYy9vCag
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 30, "3": 47, "4": 60, "5": 75, "6": 88, "7": 102, "8": 122, "9": 137, "10": 150, "11": 166, "12": 180, "13": 197, "14": 211, "15": 228, "16": 240, "17": 256, "18": 271, "19": 289, "20": 310, "21": 331, "22": 346, "23": 362, "24": 379, "25": 399, "26": 412, "27": 427, "28": 443, "29": 457, "30": 471, "31": 485, "32": 499, "33": 511, "34": 524, "35": 535}
 ---
 
 **Dave Jones:** Hi. What what what what potentially? Um with my Nphase um solar system, I had this installed uh it's almost 4 years ago now in April, I think, 4 years. Um and I've had no issues at all with my

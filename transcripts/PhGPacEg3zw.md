@@ -3,6 +3,7 @@ video_id: PhGPacEg3zw
 title: EEVblog 1585 - SCAM! Portable Kinetic Molecular Heater BUSTED
 url: https://www.youtube.com/watch?v=PhGPacEg3zw
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 36, "3": 46, "4": 62, "5": 84, "6": 98, "7": 110, "8": 131, "9": 145, "10": 161, "11": 174, "12": 185, "13": 201, "14": 212, "15": 228, "16": 243, "17": 257, "18": 271, "19": 288, "20": 310, "21": 321, "22": 338, "23": 356, "24": 372, "25": 382, "26": 395, "27": 410, "28": 421, "29": 436, "30": 454, "31": 468, "32": 479, "33": 495, "34": 506, "35": 521, "36": 537, "37": 552, "38": 574, "39": 595, "40": 610, "41": 624, "42": 638, "43": 652, "44": 666, "45": 677, "46": 688, "47": 701, "48": 718, "49": 731, "50": 746, "51": 764, "52": 778, "53": 793, "54": 807, "55": 818, "56": 832, "57": 847, "58": 864, "59": 877, "60": 891, "61": 901, "62": 922, "63": 934, "64": 952, "65": 967, "66": 980, "67": 994, "68": 1010, "69": 1029, "70": 1045, "71": 1060, "72": 1072, "73": 1085, "74": 1110, "75": 1125, "76": 1147}
 ---
 
 **Dave Jones:** Check this out. This is the Rayhong portable kinetic molecular heater. Uses dual loop molecular energy suspension technology designed by NASA. These dual loops spin to induce molecular rotation, thus releasing kinetic energy and heat. The molecular movement in here prevents

@@ -3,6 +3,7 @@ video_id: sOgKdzm6mK0
 title: Today in the Dumpster
 url: https://www.youtube.com/watch?v=sOgKdzm6mK0
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 39, "3": 60, "4": 79, "5": 93, "6": 110, "7": 128, "8": 141, "9": 162, "10": 185, "11": 203, "12": 221, "13": 235, "14": 250}
 ---
 
 **Dave Jones:** Hi. Today in the dumpster room in addition to not being able to get in here with all these bins, that's a long story. Um, we have a HP G6 or something server. Looks crusty. Asked about it on Twitter and a few

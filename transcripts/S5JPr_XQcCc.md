@@ -3,6 +3,7 @@ video_id: S5JPr_XQcCc
 title: Platy: The Madimack i60 AI Pool Cleaning Robot
 url: https://www.youtube.com/watch?v=S5JPr_XQcCc
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 32, "3": 49, "4": 63, "5": 75, "6": 88, "7": 108, "8": 119, "9": 130, "10": 140, "11": 155, "12": 169, "13": 184, "14": 197, "15": 211, "16": 226, "17": 239, "18": 251, "19": 266, "20": 279, "21": 290, "22": 304, "23": 318, "24": 334, "25": 348, "26": 360, "27": 378, "28": 389, "29": 403, "30": 416, "31": 432, "32": 446, "33": 463, "34": 473, "35": 486, "36": 499, "37": 509, "38": 526, "39": 538, "40": 552, "41": 566, "42": 582, "43": 593, "44": 610, "45": 624, "46": 637, "47": 651, "48": 668, "49": 685}
 ---
 
 **Dave Jones:** Hi. Pool update time. This is Pladdy. Meet Pladdy, our AI robot pool cleaner. It's He'll come up and show his show his model. It's an Aquamax. It's an i60. It's a Maddy Mac. It's the same as Here he

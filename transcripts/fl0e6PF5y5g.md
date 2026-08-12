@@ -3,6 +3,7 @@ video_id: fl0e6PF5y5g
 title: EEVblog #783 - Dumpster Dive Power Macs
 url: https://www.youtube.com/watch?v=fl0e6PF5y5g
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 34, "3": 50, "4": 68, "5": 88, "6": 102, "7": 117, "8": 129, "9": 147, "10": 164, "11": 182, "12": 196, "13": 212, "14": 228, "15": 246, "16": 261, "17": 275, "18": 288, "19": 300, "20": 315, "21": 327, "22": 344, "23": 356, "24": 373, "25": 389, "26": 406, "27": 419, "28": 437, "29": 450, "30": 469, "31": 485, "32": 501, "33": 517, "34": 533, "35": 552, "36": 570, "37": 585, "38": 597, "39": 612, "40": 625, "41": 647, "42": 662, "43": 678, "44": 693, "45": 710, "46": 723, "47": 735}
 ---
 
 **Dave Jones:** Check out what I scored in the dumpster. Three beautiful Apple Power Mac G5s. I know they're absolutely ancient. They date from about 2003 or thereabouts. So, a good 12 years old and pretty much useless today, but look at them. Aren't they beautiful?

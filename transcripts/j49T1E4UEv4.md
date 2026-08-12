@@ -3,6 +3,7 @@ video_id: j49T1E4UEv4
 title: Oscilloscope Alias Followup
 url: https://www.youtube.com/watch?v=j49T1E4UEv4
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 28, "3": 41, "4": 54, "5": 71, "6": 83, "7": 95, "8": 113, "9": 134, "10": 152, "11": 164, "12": 190, "13": 214, "14": 244, "15": 264, "16": 278, "17": 288, "18": 306, "19": 323, "20": 345, "21": 366, "22": 380, "23": 397, "24": 412, "25": 425, "26": 440, "27": 457, "28": 474, "29": 490, "30": 504, "31": 520, "32": 536, "33": 555, "34": 571, "35": 582, "36": 596, "37": 608, "38": 620, "39": 633, "40": 652, "41": 666, "42": 677, "43": 691, "44": 704}
 ---
 
 **Dave Jones:** Hi, in a quick video on the second channel which I'll link in if you haven't seen it. I just was playing around with different brands of oscilloscopes and showing to see it well to see if they alias with a 10 MHz

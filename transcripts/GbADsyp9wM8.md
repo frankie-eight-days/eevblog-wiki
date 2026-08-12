@@ -3,6 +3,7 @@ video_id: GbADsyp9wM8
 title: Failed Lucci Constant Current LED Driver Teardown
 url: https://www.youtube.com/watch?v=GbADsyp9wM8
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 31, "3": 48, "4": 65, "5": 81, "6": 95, "7": 109, "8": 123, "9": 135, "10": 151, "11": 170, "12": 185, "13": 200, "14": 215, "15": 232, "16": 244, "17": 254, "18": 271, "19": 283, "20": 296, "21": 311, "22": 323, "23": 338, "24": 354, "25": 369, "26": 382, "27": 398, "28": 417, "29": 432, "30": 449, "31": 464, "32": 481, "33": 500, "34": 519, "35": 537, "36": 549, "37": 563, "38": 578, "39": 593, "40": 609, "41": 626, "42": 639, "43": 656, "44": 675, "45": 691, "46": 702, "47": 715, "48": 728, "49": 742, "50": 756, "51": 769, "52": 782}
 ---
 
 **Dave Jones:** Hi, just thought I'd do a quick teardown of two LED constant current LED drivers that failed at home. These are 20 watt jobbies or at least we got the 20 watt nominal LED lights in there and these are

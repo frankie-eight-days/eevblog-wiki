@@ -3,6 +3,7 @@ video_id: B8wrKK5dui0
 title: Starship 12 Landing
 url: https://www.youtube.com/watch?v=B8wrKK5dui0
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 51, "4": 62}
 ---
 
 **Dave Jones:** Wow. It just It It just looks like a plane coming into land or something. It's great. Starship is turning for final approach to landing site. 5 K's, 470 km/h. Here we go. Full turn. Oh, this is amazing. It's going to do

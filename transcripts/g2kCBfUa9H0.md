@@ -3,6 +3,7 @@ video_id: g2kCBfUa9H0
 title: Will this $5 Oscilloscope Work?
 url: https://www.youtube.com/watch?v=g2kCBfUa9H0
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 26, "3": 39, "4": 53, "5": 68, "6": 85, "7": 98, "8": 112, "9": 124, "10": 146, "11": 166, "12": 185, "13": 201, "14": 220, "15": 237, "16": 253, "17": 268, "18": 287, "19": 306, "20": 321, "21": 337, "22": 359, "23": 371, "24": 384, "25": 399, "26": 412, "27": 432, "28": 447, "29": 463, "30": 474, "31": 488, "32": 502, "33": 513, "34": 534, "35": 549, "36": 564, "37": 582, "38": 593, "39": 608, "40": 631, "41": 647, "42": 662, "43": 674, "44": 687, "45": 700, "46": 710, "47": 725, "48": 738, "49": 749, "50": 767, "51": 784, "52": 798, "53": 810, "54": 826, "55": 841, "56": 855, "57": 869, "58": 888, "59": 903, "60": 917}
 ---
 
 **Dave Jones:** And I'm back. I'm back. And there are scopes here, apparently. Um there's a Digitech What is it? Show us Digitech 100 meg dual channel. I did That's a rebranded I don't know. Actually, [laughter] Han Tech or something? No idea. But uh yeah, I ran

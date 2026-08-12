@@ -3,6 +3,7 @@ video_id: zGyHTFXEtzg
 title: EEVblog 1748 - Dumpster iMac BONANZA!
 url: https://www.youtube.com/watch?v=zGyHTFXEtzg
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 39, "3": 61, "4": 80, "5": 94, "6": 112, "7": 133, "8": 147, "9": 162, "10": 174, "11": 188, "12": 208, "13": 218, "14": 235, "15": 250, "16": 266, "17": 280, "18": 296, "19": 310, "20": 320, "21": 333, "22": 350, "23": 366, "24": 381, "25": 396, "26": 413, "27": 427, "28": 443, "29": 460, "30": 478, "31": 491, "32": 506, "33": 529, "34": 547, "35": 564, "36": 580, "37": 596, "38": 613, "39": 625, "40": 640, "41": 655, "42": 670, "43": 686, "44": 699, "45": 715, "46": 732, "47": 745, "48": 758}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room again. And empty empty but look what's in here. No, I'm not that lucky. Unfortunately, they are empty but check out down here. Well, there's a printer but look at this. This looks like

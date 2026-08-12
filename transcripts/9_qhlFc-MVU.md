@@ -3,6 +3,7 @@ video_id: 9_qhlFc-MVU
 title: eevBLAB #1 - The EEVblog Is Hiring
 url: https://www.youtube.com/watch?v=9_qhlFc-MVU
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 30, "3": 46, "4": 60, "5": 74, "6": 86, "7": 102, "8": 115, "9": 128, "10": 139, "11": 154, "12": 166, "13": 182, "14": 198, "15": 210, "16": 222, "17": 233, "18": 248, "19": 260, "20": 275, "21": 285, "22": 296, "23": 309, "24": 323, "25": 340, "26": 355, "27": 366, "28": 377, "29": 388, "30": 401, "31": 417, "32": 432, "33": 445, "34": 457, "35": 469, "36": 481, "37": 494, "38": 508}
 ---
 
 **Dave Jones:** Hi, welcome to the first ever EEVblog Blab number one. Hence the title. You might have even missed it. You might have thought EEVblog number one. No, it's EEVblog Blab. It's an idea I've had for a while just to do

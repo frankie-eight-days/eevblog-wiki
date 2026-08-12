@@ -3,6 +3,7 @@ video_id: ti8mbPIAvbI
 title: New EEVblog Lab Tour (Incomplete Edition)
 url: https://www.youtube.com/watch?v=ti8mbPIAvbI
 source: youtube-asr
+timestamps: {"0": 2, "1": 15, "2": 28, "3": 42, "4": 54, "5": 69, "6": 90, "7": 104, "8": 116, "9": 127, "10": 143, "11": 156, "12": 168, "13": 182, "14": 194, "15": 205, "16": 220, "17": 235, "18": 246, "19": 262, "20": 273, "21": 286, "22": 301, "23": 314, "24": 327, "25": 344, "26": 363, "27": 382, "28": 395, "29": 405, "30": 417, "31": 430, "32": 442, "33": 457, "34": 469, "35": 481, "36": 492, "37": 502, "38": 517, "39": 533, "40": 550, "41": 563, "42": 577, "43": 590, "44": 605, "45": 616, "46": 629, "47": 648}
 ---
 
 **Dave Jones:** Hi, just a brief tour of the new EVblog lab. If you haven't seen my previous video, I'm moving my lab after what 7 and 1/2 years or something at least in the old 50 square meter lab. I've got

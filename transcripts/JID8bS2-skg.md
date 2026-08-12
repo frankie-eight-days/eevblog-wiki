@@ -3,6 +3,7 @@ video_id: JID8bS2-skg
 title: EEVblog #422 - How To Calibrate A Calibrator
 url: https://www.youtube.com/watch?v=JID8bS2-skg
 source: youtube-asr
+timestamps: {"0": 8, "1": 22, "2": 39, "3": 56, "4": 73, "5": 88, "6": 99, "7": 119, "8": 137, "9": 151, "10": 166, "11": 187, "12": 206, "13": 222, "14": 234, "15": 250, "16": 265, "17": 282, "18": 295, "19": 312, "20": 330, "21": 346, "22": 362, "23": 379, "24": 396, "25": 411, "26": 426}
 ---
 
 **Dave Jones:** Got it. Yes, and All right, take it away, Les. He's going to tell us all about the rack, which calibrates the calibrators. Yeah, well, basically, you've summed it up. Um a need a There was a need by a gentleman

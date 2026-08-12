@@ -3,6 +3,7 @@ video_id: J17zoPsYkGw
 title: The Electricity Supply Charge RUG PULL
 url: https://www.youtube.com/watch?v=J17zoPsYkGw
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 44, "4": 57, "5": 69, "6": 83, "7": 97, "8": 109, "9": 122, "10": 138, "11": 152, "12": 165, "13": 177, "14": 187, "15": 204, "16": 216, "17": 233, "18": 245, "19": 262, "20": 275, "21": 290, "22": 304, "23": 323, "24": 338, "25": 355, "26": 370, "27": 383, "28": 397, "29": 411, "30": 425, "31": 444, "32": 460, "33": 474, "34": 491, "35": 504, "36": 516, "37": 528, "38": 542, "39": 560, "40": 574, "41": 588, "42": 603, "43": 614, "44": 630, "45": 644, "46": 658, "47": 672, "48": 684, "49": 694, "50": 707, "51": 724, "52": 737, "53": 751, "54": 764, "55": 774, "56": 788, "57": 800, "58": 814, "59": 828, "60": 841}
 ---
 
 **Dave Jones:** Hi. Begun the electricity supply charge wars have. Yes, my electricity at the lab here has just um increased the supply charge. They've almost doubled the supply charge of the electricity here to the lab. So, let's take a look at it.

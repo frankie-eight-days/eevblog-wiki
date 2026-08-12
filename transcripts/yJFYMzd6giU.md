@@ -3,6 +3,7 @@ video_id: yJFYMzd6giU
 title: Overview of Sydney using a 3D Relief Map
 url: https://www.youtube.com/watch?v=yJFYMzd6giU
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 35, "3": 55, "4": 73, "5": 91, "6": 107, "7": 122, "8": 139, "9": 154, "10": 168, "11": 181, "12": 198, "13": 215, "14": 229, "15": 245, "16": 263, "17": 278, "18": 292, "19": 306, "20": 325, "21": 340, "22": 354, "23": 369, "24": 385, "25": 401, "26": 413, "27": 429, "28": 442, "29": 460, "30": 475, "31": 492, "32": 510, "33": 526, "34": 544, "35": 559, "36": 576, "37": 591, "38": 604}
 ---
 
 **Dave Jones:** Hi, I thought I'd just do a quick video showing you Sydney because a lot of people don't understand Sydney and how big Sydney actually is. So, I thought I'd use this three-dimensional raised relief map. Check this out. These

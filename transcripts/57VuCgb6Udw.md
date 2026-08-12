@@ -3,6 +3,7 @@ video_id: 57VuCgb6Udw
 title: EEVblog 1392 - No temp probe? No problem!
 url: https://www.youtube.com/watch?v=57VuCgb6Udw
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 40, "4": 54, "5": 66, "6": 80, "7": 95, "8": 107, "9": 126, "10": 142, "11": 155, "12": 166, "13": 181, "14": 194, "15": 206, "16": 219, "17": 232, "18": 247, "19": 260, "20": 273, "21": 288, "22": 300, "23": 315, "24": 328, "25": 346}
 ---
 
 **Dave Jones:** Hi, just a quick 2-minute tech tip video to do with multimeters and a feature you may not have known about with your multimeter and one you probably won't find in the manuals. Hmm, I should update my manuals to actually include

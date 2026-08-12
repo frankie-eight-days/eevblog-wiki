@@ -3,6 +3,7 @@ video_id: xABdbuoHKzw
 title: The times they are a changing...
 url: https://www.youtube.com/watch?v=xABdbuoHKzw
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 24, "3": 39, "4": 53, "5": 65, "6": 77, "7": 92, "8": 108, "9": 127, "10": 137, "11": 149}
 ---
 
 **Dave Jones:** Hi, this isn't a regular blog. It's just a very quick update I thought I'd share with you on some exciting news and some things that are happening. There are changes coming to the blog and I think they're going to be excellent. Now,

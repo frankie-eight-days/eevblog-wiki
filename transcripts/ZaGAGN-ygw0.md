@@ -3,6 +3,7 @@ video_id: ZaGAGN-ygw0
 title: EEVblog 1689 - ANOTHER Dumpster Diving A3 Colour Photocopier!
 url: https://www.youtube.com/watch?v=ZaGAGN-ygw0
 source: youtube-asr
+timestamps: {"0": 0, "1": 24, "2": 38, "3": 58, "4": 80, "5": 100, "6": 116, "7": 131, "8": 143, "9": 155, "10": 165, "11": 178, "12": 199, "13": 218, "14": 234, "15": 248, "16": 261, "17": 272, "18": 284, "19": 299, "20": 314, "21": 328, "22": 343, "23": 359, "24": 377, "25": 393, "26": 412, "27": 425, "28": 440, "29": 455, "30": 471, "31": 491, "32": 507, "33": 528, "34": 540, "35": 558, "36": 575}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time again. You can see they've cleared it out, although the chairs do actually multiply fairly quickly. Check this out. It's a uh A3 color laser copier. It's a Fuji Xerox Docu VC476. Somebody's secondary printer. And

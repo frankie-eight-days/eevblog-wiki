@@ -3,6 +3,7 @@ video_id: inxiPN9JXrg
 title: EEVblog 1762 - BIOHAZARD TEARDOWN!: Logitech Keyboard
 url: https://www.youtube.com/watch?v=inxiPN9JXrg
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 32, "3": 45, "4": 59, "5": 73, "6": 94, "7": 104, "8": 115, "9": 132, "10": 145, "11": 158, "12": 170, "13": 188, "14": 201, "15": 216, "16": 236, "17": 251, "18": 266, "19": 279, "20": 294, "21": 308, "22": 319, "23": 333, "24": 352, "25": 366, "26": 381, "27": 395, "28": 409, "29": 422, "30": 438, "31": 451, "32": 465, "33": 482, "34": 500, "35": 521, "36": 532, "37": 551, "38": 565, "39": 584, "40": 601, "41": 614, "42": 628, "43": 645, "44": 664, "45": 680, "46": 696, "47": 711, "48": 724, "49": 738, "50": 753}
 ---
 
 **Dave Jones:** Hi, just a totally random video. This has been my keyboard for the last probably 7 years maybe. I don't know exactly 7 8 years perhaps could even be longer. I don't know. Um time flies when you having fun at the EV blog and you

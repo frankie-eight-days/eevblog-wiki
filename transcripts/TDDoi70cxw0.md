@@ -3,6 +3,7 @@ video_id: TDDoi70cxw0
 title: EEVblog #33 2of2 - Capacitor Tutorial (Ceramics and impedance)
 url: https://www.youtube.com/watch?v=TDDoi70cxw0
 source: youtube-asr
+timestamps: {"0": 10, "1": 23, "2": 37, "3": 50, "4": 62, "5": 79, "6": 92, "7": 110, "8": 127, "9": 140, "10": 153, "11": 174, "12": 192, "13": 205, "14": 221, "15": 238, "16": 251, "17": 265, "18": 278, "19": 292, "20": 310, "21": 322, "22": 337, "23": 353, "24": 368}
 ---
 
 **Dave Jones:** Now, the next type of cap is ceramic. Now, this so tiny I'm not even going to show you, but the move to ceramics is almost complete. The The advances in ceramic technology over the years is just amazing and it keeps getting

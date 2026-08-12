@@ -3,6 +3,7 @@ video_id: t9o1xhAHREE
 title: Camping
 url: https://www.youtube.com/watch?v=t9o1xhAHREE
 source: youtube-asr
+timestamps: {"0": 1, "1": 15, "2": 36, "3": 53, "4": 69, "5": 86, "6": 101, "7": 116, "8": 134, "9": 150, "10": 169, "11": 186, "12": 225, "13": 242, "14": 259}
 ---
 
 **Dave Jones:** Hi, welcome to our home for the next few days. We've got the tent set up here and you've seen this tent in a previous well, a video quite a few years ago. We've had it for a while now. It's

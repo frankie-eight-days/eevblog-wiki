@@ -3,6 +3,7 @@ video_id: fF65DBtsaEo
 title: EEVBlog #1143 - Eakins Microscope Barlow Lenses
 url: https://www.youtube.com/watch?v=fF65DBtsaEo
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 26, "3": 38, "4": 50, "5": 61, "6": 77, "7": 92, "8": 105, "9": 118, "10": 133, "11": 152, "12": 170, "13": 183, "14": 197, "15": 212, "16": 226, "17": 245, "18": 263, "19": 277, "20": 298, "21": 312, "22": 327, "23": 348, "24": 367, "25": 387, "26": 404, "27": 426, "28": 442, "29": 456, "30": 472, "31": 487, "32": 502, "33": 520, "34": 539, "35": 551, "36": 568, "37": 580, "38": 594, "39": 609, "40": 619, "41": 631, "42": 642, "43": 657, "44": 670, "45": 683, "46": 698}
 ---
 
 **Dave Jones:** Hi, I'm supposed to be cleaning up the lab, but uh thought I'd do a video on the follow-up on the Eakins microscope here, cuz I said I'd do a video if I got some more lenses to it, and I've got a couple of

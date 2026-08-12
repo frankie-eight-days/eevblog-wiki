@@ -3,6 +3,7 @@ video_id: 9O-fyw8CyIY
 title: Dumpster Diving Monitors vs Chair
 url: https://www.youtube.com/watch?v=9O-fyw8CyIY
 source: youtube-asr
+timestamps: {"0": 1, "1": 23, "2": 38, "3": 54, "4": 73, "5": 88, "6": 105, "7": 120}
 ---
 
 **Dave Jones:** Hi, just a quick one today in the dumpster room. We have monitors. Look at this. Dual monitors. Um Samsung 24-in jobbies, SyncMaster B What is it? 244D or whatever. They look all right. Come with the stands. No HDMI, but DVI,

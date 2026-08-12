@@ -3,6 +3,7 @@ video_id: IoS_3Xj7uGs
 title: The ORIGINAL Eureka Stockade (Southern Cross) Flag
 url: https://www.youtube.com/watch?v=IoS_3Xj7uGs
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 36, "3": 55, "4": 71, "5": 82, "6": 97, "7": 117, "8": 136, "9": 152, "10": 170, "11": 187, "12": 202, "13": 220, "14": 237, "15": 250, "16": 266, "17": 282}
 ---
 
 **Dave Jones:** Hi, check it out. This is the Eureka Flag from the Eureka Stockade in 1854. It's wool and cotton and it is way way bigger than I expected. Check it out. It's absolutely enormous. And it was um torn down by uh John King who was a

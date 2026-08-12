@@ -3,6 +3,7 @@ video_id: 2J9Y1-gxxhE
 title: EEVblog #1040 - Caesium Beam Frequency Standards
 url: https://www.youtube.com/watch?v=2J9Y1-gxxhE
 source: youtube-asr
+timestamps: {"0": 6, "1": 23, "2": 37, "3": 55, "4": 67, "5": 78, "6": 89, "7": 99, "8": 113, "9": 127, "10": 144, "11": 158, "12": 173, "13": 189, "14": 200, "15": 214, "16": 226, "17": 244, "18": 254, "19": 269, "20": 285, "21": 301, "22": 316, "23": 331, "24": 353, "25": 371, "26": 393, "27": 405, "28": 420, "29": 431, "30": 448, "31": 462, "32": 477, "33": 492, "34": 507, "35": 515, "36": 527, "37": 546, "38": 566, "39": 579, "40": 595, "41": 608, "42": 622}
 ---
 
 **Dave Jones:** All right, and these are your primary time references. Tell us about them. Uh we've got 2571 alpha cesium beam references. We the plant number 183 is our prime primary standard here. Uh and this one's used as a cross

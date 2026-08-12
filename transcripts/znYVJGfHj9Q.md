@@ -3,6 +3,7 @@ video_id: znYVJGfHj9Q
 title: EEVblog Meetup Highlights
 url: https://www.youtube.com/watch?v=znYVJGfHj9Q
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 37, "3": 56, "4": 72, "5": 90, "6": 107, "7": 122, "8": 141, "9": 155, "10": 173, "11": 185, "12": 208, "13": 223, "14": 240, "15": 254, "16": 271, "17": 290, "18": 306, "19": 326, "20": 345, "21": 362, "22": 377, "23": 401, "24": 424, "25": 437, "26": 451, "27": 470, "28": 485, "29": 495, "30": 516, "31": 537, "32": 552, "33": 572, "34": 594, "35": 611, "36": 628, "37": 641, "38": 660, "39": 673, "40": 688, "41": 702, "42": 718, "43": 732, "44": 748, "45": 759, "46": 775, "47": 786, "48": 799}
 ---
 
 **Dave Jones:** Hi, I'm at the Peemont Bridge Hotel, which is just a Darling Harour, famous. And we're at the first ever Tada EV blog and Air Power meetup. Let me show you the digs that we got. Oh yeah, exclusive just for us.

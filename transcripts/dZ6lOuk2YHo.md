@@ -3,6 +3,7 @@ video_id: dZ6lOuk2YHo
 title: Dumpster Diving Guitar Amplifier
 url: https://www.youtube.com/watch?v=dZ6lOuk2YHo
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 34, "3": 55, "4": 73, "5": 87, "6": 103, "7": 122, "8": 136, "9": 152, "10": 168, "11": 191, "12": 213, "13": 229}
 ---
 
 **Dave Jones:** Hi, in the dumpster room. She's getting pretty full, by the way. Look at this. Haven't found a little portable amp. Like this. It's a What is it? Jordans, is it? A PGA 10 little amp. Isn't that groovy? I It looks pretty old, but that's

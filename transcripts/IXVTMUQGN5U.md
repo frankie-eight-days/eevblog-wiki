@@ -3,6 +3,7 @@ video_id: IXVTMUQGN5U
 title: Goal Zero Yeti 400 Lithium Battery Capacity Test #2
 url: https://www.youtube.com/watch?v=IXVTMUQGN5U
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 27, "3": 44, "4": 57, "5": 69, "6": 91, "7": 102, "8": 117, "9": 130, "10": 141, "11": 151, "12": 162, "13": 176, "14": 186, "15": 201, "16": 214, "17": 228, "18": 239, "19": 254, "20": 267, "21": 281, "22": 294, "23": 310, "24": 325, "25": 337, "26": 349, "27": 359, "28": 373}
 ---
 
 **Dave Jones:** Hi, just another very quick follow-up video on this Go Zero Yeti 400 here. How we got roughly 400 watt hour uh capacity out of this old thing. I thought I'd at 40 watts. Uh no, no, was it 50 at a

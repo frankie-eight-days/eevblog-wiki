@@ -3,6 +3,7 @@ video_id: AkMF_v_vNoE
 title: EEVblog #1258 - MORE Dumpster Wandel And Goltermann!
 url: https://www.youtube.com/watch?v=AkMF_v_vNoE
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 38, "3": 55, "4": 68, "5": 83, "6": 104, "7": 123, "8": 139, "9": 158, "10": 176, "11": 194, "12": 210, "13": 225, "14": 235, "15": 263, "16": 276, "17": 291, "18": 308, "19": 324, "20": 345, "21": 362, "22": 377, "23": 390, "24": 403, "25": 418, "26": 430, "27": 444, "28": 459, "29": 478, "30": 494, "31": 510, "32": 526, "33": 550, "34": 568, "35": 584, "36": 606, "37": 623, "38": 640, "39": 652, "40": 670, "41": 682, "42": 693, "43": 705, "44": 716, "45": 729, "46": 742, "47": 756, "48": 768, "49": 782, "50": 793, "51": 808, "52": 823, "53": 838, "54": 852, "55": 866, "56": 880, "57": 892, "58": 905, "59": 919, "60": 931, "61": 946, "62": 962, "63": 978, "64": 993, "65": 1016, "66": 1034, "67": 1049, "68": 1062, "69": 1076, "70": 1093, "71": 1106, "72": 1117, "73": 1129, "74": 1141, "75": 1154}
 ---
 
 **Dave Jones:** Hi, for those who saw my Wandell and Goltermann level meter teardown and if you haven't, you damn well should because it is gorgeous inside and everybody loved this teardown. It was just a beautiful example of spared no expense engineering back in 1980.

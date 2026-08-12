@@ -3,6 +3,7 @@ video_id: xYDUZkMPwoU
 title: The Martian Movie Trailer Reaction
 url: https://www.youtube.com/watch?v=xYDUZkMPwoU
 source: youtube-asr
+timestamps: {"0": 3, "1": 15, "2": 33, "3": 48, "4": 60, "5": 72, "6": 84, "7": 105, "8": 122, "9": 142, "10": 163, "11": 180, "12": 199, "13": 227, "14": 254, "15": 280, "16": 302, "17": 327, "18": 343, "19": 359, "20": 379, "21": 395, "22": 414, "23": 439, "24": 455, "25": 469, "26": 488, "27": 501, "28": 519, "29": 533}
 ---
 
 **Dave Jones:** Hi guys. Um, I am doing a bit of an unusual one today. I uh thought I would do my reaction to the new Martian trailer. I know it's not new. Um, but I haven't seen it yet. I've seen the

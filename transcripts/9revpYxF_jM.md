@@ -3,6 +3,7 @@ video_id: 9revpYxF_jM
 title: EEVblog #345 - Electronics Dumpster Diving
 url: https://www.youtube.com/watch?v=9revpYxF_jM
 source: youtube-asr
+timestamps: {"0": 1, "1": 23, "2": 38, "3": 49, "4": 70, "5": 83, "6": 103, "7": 117, "8": 129, "9": 145, "10": 160, "11": 180, "12": 195, "13": 211, "14": 227, "15": 245, "16": 263, "17": 282, "18": 298, "19": 312, "20": 331, "21": 348, "22": 365, "23": 380, "24": 393, "25": 409, "26": 427, "27": 442, "28": 458, "29": 472, "30": 492, "31": 509, "32": 523}
 ---
 
 **Dave Jones:** Hi, just a quick video. I thought I'd do on some stuff I found in the garbage room here in the EEVblog corporate headquarters here. I've got this um machine. It's a Dell XPS 420 and uh it is fully operational. Absolutely nothing

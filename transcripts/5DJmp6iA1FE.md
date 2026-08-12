@@ -3,6 +3,7 @@ video_id: 5DJmp6iA1FE
 title: EEVblog #539 - RFID Tag Card Repair
 url: https://www.youtube.com/watch?v=5DJmp6iA1FE
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 43, "4": 56, "5": 69, "6": 83, "7": 97, "8": 116, "9": 131, "10": 146, "11": 163, "12": 178, "13": 193, "14": 208, "15": 226, "16": 246, "17": 261, "18": 271, "19": 288, "20": 305, "21": 318, "22": 331, "23": 345, "24": 357, "25": 373, "26": 387, "27": 402, "28": 418, "29": 433, "30": 448, "31": 461, "32": 476, "33": 488, "34": 500, "35": 514, "36": 530, "37": 552, "38": 569, "39": 586, "40": 598, "41": 611, "42": 621, "43": 633, "44": 644, "45": 656, "46": 669, "47": 680, "48": 694, "49": 705, "50": 722, "51": 736, "52": 751}
 ---
 
 **Dave Jones:** Hi, just a quick impromptu teardown video of one of these RFID cards. This one is actually the card to access my lab here in the EV Blog corporate towers and it has been slowly failing over the last week or two if you've been

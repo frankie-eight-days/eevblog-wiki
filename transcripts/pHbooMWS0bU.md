@@ -3,6 +3,7 @@ video_id: pHbooMWS0bU
 title: EEVblog #707 - Rigol Oscilloscope Probe Performance
 url: https://www.youtube.com/watch?v=pHbooMWS0bU
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 32, "3": 50, "4": 67, "5": 86, "6": 102, "7": 118, "8": 134, "9": 148, "10": 162, "11": 175, "12": 190, "13": 202, "14": 217, "15": 232, "16": 247, "17": 261, "18": 276, "19": 288, "20": 303, "21": 316, "22": 332, "23": 343, "24": 359, "25": 375, "26": 390, "27": 404, "28": 422, "29": 441, "30": 453, "31": 470, "32": 484, "33": 501, "34": 510, "35": 527, "36": 543, "37": 559, "38": 572, "39": 586, "40": 599, "41": 615, "42": 630, "43": 648, "44": 662, "45": 677, "46": 693, "47": 714, "48": 729, "49": 743, "50": 759}
 ---
 
 **Dave Jones:** Hi, this is going to be a quick video. I know I always say that, but anyway, I'll do my best. This is in response to a thread on the EV blog forum from a user lightages and it concerns the Rigol

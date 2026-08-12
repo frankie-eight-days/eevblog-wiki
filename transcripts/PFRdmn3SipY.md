@@ -3,6 +3,7 @@ video_id: PFRdmn3SipY
 title: EEVblog 1749 - Werewolf VFLEX USB-C Power Supply Adapters - Very Cool!
 url: https://www.youtube.com/watch?v=PFRdmn3SipY
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 26, "3": 41, "4": 60, "5": 75, "6": 86, "7": 103, "8": 116, "9": 135, "10": 154, "11": 172, "12": 195, "13": 211, "14": 225, "15": 236, "16": 249, "17": 263, "18": 278, "19": 294, "20": 310, "21": 324, "22": 334, "23": 348, "24": 359, "25": 374, "26": 388, "27": 404, "28": 418, "29": 435, "30": 453, "31": 465, "32": 482, "33": 495, "34": 510, "35": 522, "36": 536, "37": 553, "38": 571, "39": 584, "40": 599, "41": 612, "42": 629, "43": 642, "44": 657, "45": 673, "46": 689, "47": 703, "48": 721, "49": 734, "50": 749, "51": 766, "52": 780, "53": 797, "54": 812, "55": 829, "56": 843, "57": 858, "58": 873, "59": 887, "60": 901, "61": 914}
 ---
 
 **Dave Jones:** Hi, this was originally sent into the mailbag segment, but I thought I'd spin it off as a separate video cuz it's rather interesting from a company called Werewolf. Thank you very much for sending it in. I don't know why they

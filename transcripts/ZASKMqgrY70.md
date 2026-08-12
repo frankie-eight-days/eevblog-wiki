@@ -3,6 +3,7 @@ video_id: ZASKMqgrY70
 title: EEVblog #1052 - BEWARE Crap Banana Plugs!
 url: https://www.youtube.com/watch?v=ZASKMqgrY70
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 29, "3": 44, "4": 59, "5": 77, "6": 90, "7": 108, "8": 124, "9": 139, "10": 156, "11": 169, "12": 184, "13": 196, "14": 216, "15": 230, "16": 245, "17": 258, "18": 268, "19": 284, "20": 303, "21": 319, "22": 343, "23": 361, "24": 376, "25": 393, "26": 408, "27": 422, "28": 435, "29": 451, "30": 469, "31": 483, "32": 499, "33": 517, "34": 535, "35": 549, "36": 562, "37": 576, "38": 587, "39": 600, "40": 617, "41": 632, "42": 648, "43": 663, "44": 683, "45": 696, "46": 711, "47": 725, "48": 737, "49": 753, "50": 772, "51": 790, "52": 805, "53": 822, "54": 835, "55": 850, "56": 862}
 ---
 
 **Dave Jones:** Hi, I want to show you a trap for young players. Look at this one. Um, I've got my LCR meter here. I've just got a short on there. I just two banana plugs with a, you know, a big copper short right

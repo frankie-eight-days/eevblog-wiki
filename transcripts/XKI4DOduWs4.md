@@ -3,6 +3,7 @@ video_id: XKI4DOduWs4
 title: EEVblog 1560 - TIP: Use Your Arb Gen as a High Resolution DC Voltage Source!
 url: https://www.youtube.com/watch?v=XKI4DOduWs4
 source: youtube-asr
+timestamps: {"0": 0, "1": 19, "2": 33, "3": 47, "4": 60, "5": 72, "6": 88, "7": 103, "8": 120, "9": 135, "10": 146, "11": 162, "12": 177, "13": 192, "14": 204, "15": 217, "16": 229, "17": 244, "18": 259, "19": 273, "20": 286, "21": 296, "22": 308, "23": 323, "24": 333, "25": 349, "26": 365, "27": 380, "28": 391, "29": 407, "30": 420, "31": 433, "32": 447, "33": 459, "34": 473, "35": 487, "36": 499}
 ---
 
 **Dave Jones:** Hi, just a quick 2 minute tech tip video. Have you ever needed to generate a precisely changing voltage in like small little increment steps? Like ordinarily, okay, you might use your fancy pantsy modern digital power supply like this, but typically that can even

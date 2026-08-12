@@ -3,6 +3,7 @@ video_id: cm1HFKOOCgo
 title: RTX4060 AV1 vs H.265 Encoder Using Handbrake
 url: https://www.youtube.com/watch?v=cm1HFKOOCgo
 source: youtube-asr
+timestamps: {"0": 2, "1": 23, "2": 36, "3": 50, "4": 61, "5": 78, "6": 92, "7": 115, "8": 132, "9": 152, "10": 162, "11": 178, "12": 191, "13": 207, "14": 220, "15": 236, "16": 249, "17": 266, "18": 283, "19": 303, "20": 322, "21": 338, "22": 358, "23": 373, "24": 393, "25": 410, "26": 429, "27": 443, "28": 461, "29": 480, "30": 495, "31": 508, "32": 522, "33": 536, "34": 554, "35": 573, "36": 589, "37": 603}
 ---
 
 **Dave Jones:** Hi, yet another video on a GPU rendering. I got myself a cheapest chips, the cheapest Nvidia RTX 4060 board that I could find. What is it is a Hang on. It's a It's a PNY card. It was absolutely cheapest cuz what I wanted

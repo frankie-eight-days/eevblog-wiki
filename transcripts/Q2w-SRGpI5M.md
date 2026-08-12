@@ -3,6 +3,7 @@ video_id: Q2w-SRGpI5M
 title: SpaceX Starship Flight 13 ABORT! (Failed Ignition)
 url: https://www.youtube.com/watch?v=Q2w-SRGpI5M
 source: youtube-asr
+timestamps: {"0": 0, "1": 22, "2": 50, "3": 62, "4": 76, "5": 92, "6": 103, "7": 115, "8": 128, "9": 145, "10": 158, "11": 177, "12": 194, "13": 211, "14": 228, "15": 243, "16": 258, "17": 275, "18": 289, "19": 307, "20": 323, "21": 340, "22": 354, "23": 367, "24": 382, "25": 402}
 ---
 
 **Dave Jones:** We are ready for lift off. Okay, go go go. Go. Oh, I totally goofed up this live stream. That's all right. I'll be able to upload this later. Bugger. They're launching.

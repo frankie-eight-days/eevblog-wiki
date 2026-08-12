@@ -3,6 +3,7 @@ video_id: 7dze5CnZnmk
 title: EEVblog 1497 - RIP Fluke. Thanks Energizer. NOT.
 url: https://www.youtube.com/watch?v=7dze5CnZnmk
 source: youtube-asr
+timestamps: {"0": 0, "1": 28, "2": 43, "3": 60, "4": 79, "5": 96, "6": 112, "7": 131, "8": 143, "9": 170, "10": 189, "11": 206, "12": 222, "13": 244, "14": 260, "15": 270, "16": 284, "17": 301, "18": 319, "19": 334, "20": 352, "21": 371, "22": 393, "23": 411, "24": 438, "25": 457, "26": 473, "27": 490, "28": 503, "29": 523, "30": 539, "31": 552, "32": 570, "33": 588, "34": 608, "35": 626, "36": 641, "37": 652, "38": 664, "39": 680, "40": 692, "41": 711, "42": 724, "43": 742, "44": 756, "45": 772, "46": 784, "47": 802, "48": 819, "49": 842, "50": 853, "51": 871, "52": 894, "53": 912, "54": 925, "55": 939, "56": 953, "57": 971, "58": 993, "59": 1006, "60": 1019, "61": 1034, "62": 1044, "63": 1055, "64": 1072, "65": 1087, "66": 1102, "67": 1120, "68": 1138, "69": 1152}
 ---
 
 **Dave Jones:** Hi. Unfortunately, um this Fluke 3000 FC multimeter has a problem. Um it doesn't switch on because, well, uh let's take the back off. Uh oh, what what what what? Look at that. Um not Duracells for once. We've got ourselves Energizers.

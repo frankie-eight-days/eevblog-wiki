@@ -3,6 +3,7 @@ video_id: DJgWhNlHHIs
 title: Schrodinger's 121GW Multimeter
 url: https://www.youtube.com/watch?v=DJgWhNlHHIs
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 29, "3": 46, "4": 58, "5": 73, "6": 89, "7": 106, "8": 123, "9": 141, "10": 157, "11": 173, "12": 195, "13": 212, "14": 230, "15": 251, "16": 264, "17": 280, "18": 296, "19": 314, "20": 328, "21": 342}
 ---
 
 **Dave Jones:** Hi, I've got a 121 GW meter returned from a fellow YouTuber, um, Adrian Smith. And we'll have a look at his, uh, channel in a minute. So, here it is. I don't know if he recorded the serial number, but, uh, there it is. So, it's a

@@ -3,6 +3,7 @@ video_id: bA_hGJVo3DY
 title: EEVblog #191 - Mouse Trap Triggering
 url: https://www.youtube.com/watch?v=bA_hGJVo3DY
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 47, "4": 60, "5": 76, "6": 92, "7": 107, "8": 123, "9": 133, "10": 148, "11": 160, "12": 176, "13": 189, "14": 208, "15": 226, "16": 241, "17": 257, "18": 282, "19": 299, "20": 316, "21": 353, "22": 375, "23": 398, "24": 417, "25": 434, "26": 449, "27": 465, "28": 481, "29": 497, "30": 512, "31": 525, "32": 538, "33": 554, "34": 566, "35": 584, "36": 596, "37": 613, "38": 627, "39": 641, "40": 654, "41": 670, "42": 686, "43": 700, "44": 715, "45": 729, "46": 747, "47": 763, "48": 779, "49": 797, "50": 812, "51": 825}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's a rather unusual one today. I've had a couple of people, not just one, but actually two people ask me a

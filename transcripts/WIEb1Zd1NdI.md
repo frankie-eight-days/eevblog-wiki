@@ -3,6 +3,7 @@ video_id: WIEb1Zd1NdI
 title: EEVblog 1586 -  Stranger Things Decade Resistor Box + Repair
 url: https://www.youtube.com/watch?v=WIEb1Zd1NdI
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 28, "3": 45, "4": 58, "5": 74, "6": 90, "7": 101, "8": 114, "9": 130, "10": 144, "11": 158, "12": 180, "13": 203, "14": 220, "15": 239, "16": 257, "17": 275, "18": 291, "19": 303, "20": 316, "21": 336, "22": 352, "23": 369, "24": 384, "25": 398, "26": 411, "27": 424, "28": 439, "29": 454, "30": 471, "31": 482, "32": 497, "33": 511, "34": 524, "35": 537, "36": 548, "37": 564, "38": 581, "39": 597, "40": 610, "41": 622, "42": 635, "43": 650, "44": 665, "45": 678, "46": 691, "47": 704, "48": 720, "49": 733, "50": 750, "51": 762, "52": 777, "53": 793, "54": 812, "55": 825, "56": 840, "57": 855, "58": 870, "59": 880, "60": 891, "61": 906, "62": 919, "63": 931, "64": 946, "65": 959}
 ---
 
 **Dave Jones:** Hi, just a very quick review and look at this six decade resistance box. And this is a bit of kit which basically every lab should have. You shouldn't be without one. And I'll link in up here and down below a video I did looking at

@@ -3,6 +3,7 @@ video_id: lXvXBdTP7Tg
 title: Haasoscope Pro - An Oscilloscope Space Oddity
 url: https://www.youtube.com/watch?v=lXvXBdTP7Tg
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 41, "4": 59, "5": 74, "6": 88, "7": 105, "8": 119, "9": 132, "10": 148, "11": 160, "12": 176, "13": 189, "14": 202, "15": 219, "16": 231, "17": 251, "18": 268, "19": 284, "20": 300, "21": 316, "22": 335, "23": 352, "24": 370, "25": 389, "26": 403, "27": 419, "28": 437, "29": 461, "30": 483, "31": 498, "32": 514, "33": 533, "34": 551, "35": 565}
 ---
 
 **Dave Jones:** All right, I downloaded the software from the GitHubs and the GitHubs has uh yeah, all sorts of uh all sorts of stuff. It's fully documented. Everything else absolutely fantastic. Um and it's got ADC board or ADC firmware uh board

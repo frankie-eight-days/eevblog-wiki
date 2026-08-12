@@ -3,6 +3,7 @@ video_id: yOJ7xPugsdc
 title: Hoymiles Microinverter Reverse Engineering CORRECTION
 url: https://www.youtube.com/watch?v=yOJ7xPugsdc
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 30, "3": 46, "4": 60, "5": 79, "6": 91, "7": 105, "8": 120, "9": 135, "10": 148, "11": 164, "12": 177, "13": 192, "14": 209, "15": 224, "16": 240, "17": 256, "18": 270, "19": 286, "20": 304, "21": 324, "22": 344, "23": 361, "24": 382, "25": 401, "26": 414, "27": 428, "28": 444, "29": 461, "30": 480, "31": 495, "32": 512, "33": 524, "34": 540, "35": 555, "36": 571}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video to the video I just released like a couple of hours ago. Um, which was the teardown and sort of like depoting and reverse engineering of the Hoymiles microinverter. And a couple of eagle-eyed uh viewers um spotted

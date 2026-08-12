@@ -3,6 +3,7 @@ video_id: S3R4r2xvVYQ
 title: EEVblog 1479 - Is Your Calculator WRONG?
 url: https://www.youtube.com/watch?v=S3R4r2xvVYQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 32, "3": 44, "4": 62, "5": 76, "6": 94, "7": 107, "8": 127, "9": 140, "10": 159, "11": 173, "12": 186, "13": 202, "14": 217, "15": 232, "16": 247, "17": 260, "18": 275, "19": 290, "20": 303, "21": 317, "22": 335, "23": 347, "24": 366, "25": 383, "26": 399, "27": 421, "28": 439, "29": 459, "30": 473, "31": 487, "32": 503, "33": 521, "34": 535, "35": 551, "36": 563, "37": 586, "38": 604, "39": 622, "40": 636, "41": 651, "42": 666, "43": 682, "44": 700, "45": 714, "46": 729, "47": 745, "48": 761, "49": 774, "50": 787, "51": 803, "52": 823, "53": 838, "54": 858, "55": 871, "56": 887, "57": 906, "58": 925, "59": 945, "60": 962, "61": 977, "62": 991, "63": 1007, "64": 1017, "65": 1030, "66": 1043}
 ---
 
 **Dave Jones:** Hi, it's calculator time and you know I love calculators. So, let's take a look at this Twitter question that popped up on my timeline from Nick's Craft who shows that like what the heck is going on here because the result from their

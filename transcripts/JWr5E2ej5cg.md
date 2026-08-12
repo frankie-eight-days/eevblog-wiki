@@ -3,6 +3,7 @@ video_id: JWr5E2ej5cg
 title: Part 2: Citizen EcoDrive Watch Battery Replacement
 url: https://www.youtube.com/watch?v=JWr5E2ej5cg
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 31, "3": 45, "4": 56, "5": 71, "6": 86, "7": 103, "8": 116, "9": 134, "10": 146, "11": 160, "12": 175, "13": 189, "14": 203, "15": 218, "16": 231, "17": 246, "18": 265, "19": 281, "20": 294, "21": 306, "22": 326, "23": 342, "24": 355, "25": 371, "26": 386, "27": 405, "28": 424, "29": 441, "30": 455}
 ---
 
 **Dave Jones:** Hi, just a quick follow-up video on Mrs. E Vlogs little solar powered eco-drive watch here. Japanese movement, very nice indeed. As I said, it is solar powered. That is a mother-of-pearl um face on it, but that is actually a

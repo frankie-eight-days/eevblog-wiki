@@ -3,6 +3,7 @@ video_id: 3hHG_WcJtQo
 title: Solis Cloud & Battery Charge Timer
 url: https://www.youtube.com/watch?v=3hHG_WcJtQo
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 29, "3": 48, "4": 65, "5": 79, "6": 91, "7": 104, "8": 118, "9": 130, "10": 144, "11": 156, "12": 170, "13": 181, "14": 195, "15": 208, "16": 220, "17": 231, "18": 247, "19": 261, "20": 277, "21": 291, "22": 306, "23": 322, "24": 340, "25": 359, "26": 374, "27": 387, "28": 401, "29": 419, "30": 432, "31": 443, "32": 458, "33": 471, "34": 484, "35": 501, "36": 516}
 ---
 
 **Dave Jones:** Hi, first look at my new Solace inverter Solace Cloud thing. I've got the thing installed, commissioned, and connected via the Wi-Fi dongle thing, which plugs into the bottom of the USB port, and it's connected to my home network,

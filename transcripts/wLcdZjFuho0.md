@@ -3,6 +3,7 @@ video_id: wLcdZjFuho0
 title: EEVblog #1312 - Siglent Oscilloscopes CRIPPLING History Mode!
 url: https://www.youtube.com/watch?v=wLcdZjFuho0
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 32, "3": 45, "4": 59, "5": 75, "6": 92, "7": 106, "8": 118, "9": 131, "10": 144, "11": 157, "12": 173, "13": 189, "14": 207, "15": 221, "16": 234, "17": 247, "18": 262, "19": 274, "20": 290, "21": 304, "22": 317, "23": 332, "24": 346, "25": 361, "26": 375, "27": 391, "28": 404, "29": 419, "30": 430, "31": 446, "32": 459, "33": 473, "34": 488, "35": 500, "36": 512, "37": 525, "38": 544}
 ---
 
 **Dave Jones:** Hi, this is just a quick follow-up video to my main channel video on the oscilloscope zoom out feature, I guess, which is on most scopes, but it's not on siglant scopes, and I believe Lacroy scopes work the same way as well, but I

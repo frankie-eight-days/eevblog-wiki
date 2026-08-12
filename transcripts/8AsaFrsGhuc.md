@@ -3,6 +3,7 @@ video_id: 8AsaFrsGhuc
 title: Burg Wachter PointSafe P1E Teardown
 url: https://www.youtube.com/watch?v=8AsaFrsGhuc
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 34, "3": 48, "4": 63, "5": 80, "6": 93, "7": 108, "8": 123, "9": 137, "10": 148, "11": 159, "12": 175, "13": 190, "14": 203, "15": 214, "16": 228, "17": 245, "18": 258, "19": 278, "20": 293, "21": 307, "22": 317, "23": 332, "24": 348, "25": 360, "26": 375, "27": 388, "28": 399, "29": 414, "30": 432, "31": 444, "32": 459, "33": 478, "34": 492, "35": 502, "36": 517, "37": 530, "38": 544, "39": 557, "40": 569, "41": 578, "42": 592, "43": 605, "44": 616, "45": 626, "46": 635, "47": 651, "48": 663, "49": 676, "50": 689, "51": 704, "52": 719, "53": 733, "54": 746, "55": 758, "56": 771, "57": 786, "58": 798}
 ---
 
 **Dave Jones:** Hi, just a quick Odyssey exclusive video. I'll make this a one take a jobby. I've got another safe for you. A really low end one, but it's a I guess a name brand. It's called a Burg Watcher. Really weird name. It's like bird

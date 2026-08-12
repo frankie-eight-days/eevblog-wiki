@@ -3,6 +3,7 @@ video_id: f58qoyCETAE
 title: Scope WTF Follow-Up - BEWARE Dodgy Connectors
 url: https://www.youtube.com/watch?v=f58qoyCETAE
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 34, "3": 51, "4": 70, "5": 87, "6": 105, "7": 128, "8": 147, "9": 159, "10": 180, "11": 197, "12": 220, "13": 240, "14": 257, "15": 268, "16": 284, "17": 304, "18": 323, "19": 344}
 ---
 
 **Dave Jones:** Hi, just a quick update video here on that issue that I was getting on the DHO 800. It's nothing to do with the scope. So, yeah, sorry Rigol for any implied issues and no, it wasn't uh the teardown. It looks like I can actually

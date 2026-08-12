@@ -3,6 +3,7 @@ video_id: kbEZNifcdd0
 title: NBN Update: Vodafone Internet Activation Hell Loop
 url: https://www.youtube.com/watch?v=kbEZNifcdd0
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 40, "4": 55, "5": 68, "6": 84, "7": 100, "8": 113, "9": 129, "10": 142, "11": 157, "12": 169, "13": 184, "14": 196, "15": 212, "16": 226, "17": 244, "18": 258, "19": 272, "20": 285, "21": 300, "22": 314, "23": 333, "24": 350, "25": 367, "26": 380, "27": 396, "28": 413, "29": 427, "30": 440, "31": 456, "32": 477, "33": 494, "34": 508, "35": 522, "36": 536}
 ---
 
 **Dave Jones:** Hi, let's enter the fresh new hell that is my internet connection. Yes, since I did my main channel a video yesterday like just 30 minutes after I went and shot that I got word that it was going to be like

@@ -3,6 +3,7 @@ video_id: 6TYtdpbFWuA
 title: EEVblog 1677 - Why Do Fuses Do This? (EXPERIMENT)
 url: https://www.youtube.com/watch?v=6TYtdpbFWuA
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 30, "3": 43, "4": 59, "5": 70, "6": 88, "7": 103, "8": 122, "9": 135, "10": 148, "11": 160, "12": 177, "13": 191, "14": 204, "15": 214, "16": 226, "17": 236, "18": 254, "19": 270, "20": 288, "21": 301, "22": 314, "23": 329, "24": 350, "25": 363, "26": 378, "27": 390, "28": 404, "29": 424, "30": 444, "31": 457, "32": 472, "33": 490, "34": 509, "35": 522, "36": 536, "37": 549, "38": 566, "39": 588, "40": 607, "41": 621, "42": 640, "43": 654, "44": 669, "45": 689, "46": 703, "47": 717, "48": 727, "49": 738, "50": 751, "51": 761, "52": 774, "53": 787, "54": 800, "55": 812}
 ---
 
 **Dave Jones:** Hi, I'm still working on the video part two of the unpredictability of fuses. I'll link in part one if you haven't seen it down below. It's very very interesting. Set up a little thing here. I've just modified the meter

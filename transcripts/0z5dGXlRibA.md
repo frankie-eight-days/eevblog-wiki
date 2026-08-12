@@ -3,6 +3,7 @@ video_id: 0z5dGXlRibA
 title: A Very Strange BM235 Fault
 url: https://www.youtube.com/watch?v=0z5dGXlRibA
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 31, "3": 48, "4": 64, "5": 79, "6": 98, "7": 120, "8": 134}
 ---
 
 **Dave Jones:** Hi, just a quick video looking at a returned BM235, which is about 6 months out of warranty or something like that, but I'm going to replace it anyway. Um, just have a look at this unusual fault that's been

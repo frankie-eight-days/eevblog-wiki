@@ -3,6 +3,7 @@ video_id: muMjiao5i0k
 title: Rigol HDO4000 PSU Teardown
 url: https://www.youtube.com/watch?v=muMjiao5i0k
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 24, "3": 40, "4": 55, "5": 69, "6": 82, "7": 95, "8": 108, "9": 121, "10": 135, "11": 150, "12": 167, "13": 186, "14": 202, "15": 216, "16": 232, "17": 249, "18": 263, "19": 278, "20": 293, "21": 306, "22": 320, "23": 334, "24": 348, "25": 362}
 ---
 
 **Dave Jones:** Hi, just a quick second channel video back on the Rigol HDO 4000 series oscilloscope. I completely forgot to tear down the power supply in it. And well, yeah, I thought that's a first, isn't it? Anyway, um cuz it's usually one of the

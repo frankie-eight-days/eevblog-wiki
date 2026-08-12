@@ -3,6 +3,7 @@ video_id: 7E2Pjcogrho
 title: EEVblog 121GW Custom Multimeter Prototype Unboxing
 url: https://www.youtube.com/watch?v=7E2Pjcogrho
 source: youtube-asr
+timestamps: {"0": 4, "1": 17, "2": 32, "3": 44, "4": 55, "5": 68, "6": 85, "7": 105, "8": 116, "9": 134, "10": 148, "11": 159, "12": 174, "13": 188, "14": 197, "15": 213, "16": 227, "17": 240, "18": 259, "19": 276, "20": 293, "21": 304, "22": 321, "23": 343, "24": 357, "25": 375, "26": 389, "27": 403, "28": 416, "29": 429, "30": 443, "31": 457, "32": 472, "33": 490, "34": 502, "35": 518, "36": 535, "37": 559, "38": 577, "39": 593, "40": 610, "41": 623, "42": 636, "43": 646, "44": 658, "45": 671}
 ---
 
 **Dave Jones:** Okay, just a quick unboxing video here. I'm very excited. I've got the new EV blog multi-meter prototype. This is the original. This is the first one that they sent me. I've had this for quite a few months now. Lots of functions didn't

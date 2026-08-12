@@ -3,6 +3,7 @@ video_id: mUbxjP2Vw3A
 title: EEVblog #1212 - Dumpster Diving PC Motherlode!
 url: https://www.youtube.com/watch?v=mUbxjP2Vw3A
 source: youtube-asr
+timestamps: {"0": 2, "1": 18, "2": 36, "3": 50, "4": 67, "5": 83, "6": 100, "7": 114, "8": 130, "9": 141, "10": 155, "11": 169, "12": 181, "13": 193, "14": 208, "15": 220, "16": 237, "17": 250, "18": 261, "19": 272, "20": 288, "21": 302, "22": 316, "23": 333, "24": 346, "25": 360, "26": 375, "27": 393, "28": 406, "29": 417, "30": 431, "31": 445, "32": 461, "33": 475, "34": 490, "35": 508, "36": 521, "37": 534, "38": 545, "39": 559, "40": 574, "41": 588, "42": 603, "43": 618, "44": 633, "45": 649, "46": 663, "47": 678, "48": 694, "49": 714, "50": 732, "51": 746, "52": 756, "53": 771, "54": 785, "55": 802, "56": 817, "57": 830, "58": 843, "59": 856, "60": 867, "61": 882, "62": 896, "63": 908, "64": 922, "65": 936, "66": 951}
 ---
 
 **Dave Jones:** Hi, I'm in the dumpster room again. Someone's got a whole bunch of new monitors. Decide to look over here. Ta-da! Look at this. It's the mother load of HPs. I've got a few of these. I'm running one of these at home. Haven't

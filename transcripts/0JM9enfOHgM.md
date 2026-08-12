@@ -3,6 +3,7 @@ video_id: 0JM9enfOHgM
 title: 2020 Hyundai IONIQ AC Charge Problem FIXED
 url: https://www.youtube.com/watch?v=0JM9enfOHgM
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 38, "3": 49, "4": 65, "5": 79, "6": 94, "7": 106, "8": 121, "9": 134, "10": 148, "11": 163, "12": 176, "13": 188, "14": 203, "15": 218, "16": 232, "17": 247, "18": 257, "19": 273, "20": 287, "21": 297, "22": 312, "23": 324}
 ---
 
 **Dave Jones:** Hi, just a quick update on my 2020 Hyundai Ioniq. The supposed AC charger fail that I thought it might possibly be a charging the charger module inside or whatever ICCU or something it's called inside the car because it was because today it

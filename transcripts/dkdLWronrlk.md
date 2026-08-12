@@ -3,6 +3,7 @@ video_id: dkdLWronrlk
 title: EEVblog #1089 - XTAL Oscillator Teardown
 url: https://www.youtube.com/watch?v=dkdLWronrlk
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 32, "3": 45, "4": 60, "5": 72, "6": 88, "7": 104, "8": 117, "9": 135, "10": 150, "11": 171, "12": 184, "13": 196, "14": 207, "15": 222, "16": 236, "17": 249, "18": 264, "19": 282, "20": 297, "21": 313, "22": 330, "23": 346, "24": 359, "25": 376, "26": 389, "27": 400, "28": 417, "29": 432, "30": 449, "31": 460, "32": 474, "33": 487, "34": 501, "35": 515, "36": 533, "37": 548, "38": 563, "39": 577, "40": 591, "41": 606, "42": 623, "43": 639, "44": 656, "45": 670, "46": 682, "47": 700, "48": 716, "49": 729, "50": 742, "51": 754, "52": 771, "53": 786, "54": 804, "55": 822, "56": 840, "57": 854, "58": 867, "59": 882, "60": 897, "61": 911, "62": 927, "63": 941, "64": 955, "65": 969, "66": 985, "67": 1002, "68": 1014}
 ---
 
 **Dave Jones:** Hi, it's time for a quick 2-minute teardown. We're going to teardown a crystal oscillator. No, this is not a crystal oscillator. This is a crystal in the classic HC49U package you should be familiar with. You see that it's just like a soldered

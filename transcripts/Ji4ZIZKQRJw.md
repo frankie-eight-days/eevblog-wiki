@@ -3,6 +3,7 @@ video_id: Ji4ZIZKQRJw
 title: eevBLAB #9 - Meet David
 url: https://www.youtube.com/watch?v=Ji4ZIZKQRJw
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 28, "3": 44, "4": 59, "5": 75, "6": 91, "7": 102, "8": 116, "9": 129, "10": 143, "11": 157, "12": 169, "13": 184, "14": 198, "15": 209, "16": 220, "17": 238, "18": 254, "19": 269}
 ---
 
 **Dave Jones:** Hi, just a quick EV blog because a lot of people have asked for this. You know how I started, I think it was in the first blog I announced that I was looking to hire someone here for the lab and well, thank you to everyone

@@ -3,6 +3,7 @@ video_id: VFqVeEs6iN4
 title: German Translation TEST - Tesla 4680 Battery
 url: https://www.youtube.com/watch?v=VFqVeEs6iN4
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 46, "4": 60, "5": 84, "6": 98, "7": 114, "8": 130, "9": 156, "10": 171, "11": 185, "12": 203, "13": 220, "14": 241, "15": 258, "16": 278, "17": 293}
 ---
 
 **Dave Jones:** Hello, yes, I'm back at the whiteboard, but more importantly, I'm back at the whiteboard in the old lab. Nice. Let's talk about the Tesla Battery event that just took place. Of course, everyone goes crazy every year because of Battery Day and all the

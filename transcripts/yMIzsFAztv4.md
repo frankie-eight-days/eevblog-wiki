@@ -3,6 +3,7 @@ video_id: yMIzsFAztv4
 title: EEVblog 1455 - Capacitors Produce Current During Reflow Soldering! WTF!
 url: https://www.youtube.com/watch?v=yMIzsFAztv4
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 32, "3": 46, "4": 63, "5": 82, "6": 100, "7": 112, "8": 128, "9": 145, "10": 161, "11": 174, "12": 188, "13": 204, "14": 223, "15": 236, "16": 252, "17": 264, "18": 279, "19": 292, "20": 306, "21": 322, "22": 335, "23": 351, "24": 363, "25": 377, "26": 393, "27": 405, "28": 417, "29": 433, "30": 451, "31": 465, "32": 480, "33": 498, "34": 511, "35": 526, "36": 543, "37": 555, "38": 568, "39": 585, "40": 599, "41": 615, "42": 627, "43": 639, "44": 652, "45": 666, "46": 679, "47": 692, "48": 705, "49": 717, "50": 733, "51": 747, "52": 761, "53": 774, "54": 787, "55": 802, "56": 816, "57": 830, "58": 842, "59": 855, "60": 870}
 ---
 
 **Dave Jones:** Hi, I saw this on Twitter. Some leads are lighting up when they go through the reflow oven. Uh What the What's going on here? A lead across a capacitor, heated up, it lights up. I got to check this out.

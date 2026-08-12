@@ -3,6 +3,7 @@ video_id: bN1y1my4gEE
 title: EEVblog #420 - What Is Calibration?
 url: https://www.youtube.com/watch?v=bN1y1my4gEE
 source: youtube-asr
+timestamps: {"0": 10, "1": 32, "2": 49, "3": 64, "4": 81, "5": 95, "6": 110, "7": 128, "8": 140, "9": 154, "10": 164, "11": 178, "12": 189, "13": 199, "14": 210, "15": 224, "16": 242, "17": 262, "18": 276, "19": 292, "20": 302, "21": 313, "22": 330, "23": 346, "24": 361, "25": 377, "26": 391, "27": 405, "28": 417, "29": 433, "30": 448, "31": 460, "32": 474, "33": 488, "34": 502, "35": 515}
 ---
 
 **Dave Jones:** Now, Pete's going to tell us what is calibration? Well, calibration calibration is is a measurement of a particular device against a reference. Now, that reference is normally traceable to a primary standard or to a natural measurements laboratory. And

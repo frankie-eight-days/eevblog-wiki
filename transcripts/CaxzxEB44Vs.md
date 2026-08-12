@@ -3,6 +3,7 @@ video_id: CaxzxEB44Vs
 title: EEVblog 1745 - Continuity Tester Spectral Probing
 url: https://www.youtube.com/watch?v=CaxzxEB44Vs
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 33, "3": 46, "4": 64, "5": 83, "6": 97, "7": 115, "8": 128, "9": 141, "10": 155, "11": 170, "12": 183, "13": 198, "14": 210, "15": 224, "16": 238, "17": 253, "18": 266, "19": 278, "20": 293, "21": 305, "22": 319, "23": 333, "24": 347, "25": 362, "26": 376, "27": 388, "28": 400, "29": 422, "30": 439, "31": 452, "32": 468, "33": 484, "34": 500, "35": 517, "36": 531, "37": 543, "38": 562, "39": 578, "40": 593, "41": 605, "42": 620, "43": 640, "44": 652, "45": 667, "46": 681, "47": 694, "48": 706, "49": 720, "50": 737, "51": 757, "52": 773, "53": 789, "54": 809, "55": 822, "56": 837, "57": 852, "58": 866, "59": 884, "60": 902, "61": 914, "62": 928, "63": 943, "64": 957, "65": 973, "66": 985, "67": 999, "68": 1015, "69": 1028, "70": 1039, "71": 1053, "72": 1077, "73": 1093, "74": 1125}
 ---
 
 **Dave Jones:** Hi, I'm down here in the bunker with a follow-up video to one a very quick one I posted on the EVblog 2 channel about the new stock BM2257 multimeter available on the EVblog.store. Down below, I'll even put a coupon code in the description so you

@@ -3,6 +3,7 @@ video_id: sdLm08zfE4g
 title: EEVblog #1361 - Dodgy Tactile Switch TEARDOWN
 url: https://www.youtube.com/watch?v=sdLm08zfE4g
 source: youtube-asr
+timestamps: {"0": 1, "1": 13, "2": 26, "3": 40, "4": 56, "5": 70, "6": 83, "7": 98, "8": 113, "9": 126, "10": 139, "11": 150, "12": 162, "13": 176, "14": 192, "15": 205, "16": 225, "17": 240, "18": 253, "19": 271, "20": 291, "21": 307, "22": 322, "23": 338, "24": 355, "25": 371, "26": 388, "27": 404, "28": 418, "29": 435, "30": 453, "31": 468, "32": 485, "33": 502, "34": 515, "35": 527, "36": 544, "37": 554, "38": 571, "39": 583, "40": 597, "41": 609, "42": 624, "43": 644, "44": 657, "45": 673, "46": 684, "47": 702, "48": 718, "49": 730, "50": 741, "51": 755, "52": 770, "53": 785, "54": 799, "55": 817, "56": 832, "57": 850, "58": 861}
 ---
 
 **Dave Jones:** Hi, quite a few people wanted me to do a teardown of this little pain in the ass button that failed on my aircon system. I'll link in the video if you haven't seen it. It was rather interesting and

@@ -3,6 +3,7 @@ video_id: q53uPn1mKc0
 title: EEVblog #181 - Dead Bug Prototype Soldering
 url: https://www.youtube.com/watch?v=q53uPn1mKc0
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 30, "3": 49, "4": 61, "5": 75, "6": 97, "7": 113, "8": 129, "9": 143, "10": 160, "11": 174, "12": 187, "13": 202, "14": 219, "15": 233, "16": 246, "17": 266, "18": 279, "19": 294, "20": 302, "21": 313, "22": 327, "23": 344, "24": 359, "25": 375, "26": 396, "27": 405, "28": 418, "29": 432, "30": 451, "31": 474, "32": 488, "33": 503, "34": 529, "35": 544, "36": 612, "37": 627, "38": 644, "39": 655}
 ---
 
 **Dave Jones:** Hi, welcome to the AAVW an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, just a quick one. This is not actually going to be part of my soldering tutorial. I just

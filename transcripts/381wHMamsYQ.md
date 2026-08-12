@@ -3,6 +3,7 @@ video_id: 381wHMamsYQ
 title: Sharp GF-7600 Boombox unboxing. THE Boombox of the 1980's!
 url: https://www.youtube.com/watch?v=381wHMamsYQ
 source: youtube-asr
+timestamps: {"0": 1, "1": 21, "2": 42, "3": 65, "4": 81, "5": 96, "6": 110, "7": 124, "8": 138, "9": 154, "10": 166, "11": 182, "12": 200, "13": 215, "14": 234, "15": 246, "16": 261, "17": 272, "18": 286, "19": 299, "20": 310, "21": 326, "22": 345, "23": 368, "24": 400, "25": 423, "26": 433, "27": 452, "28": 470, "29": 486, "30": 505, "31": 517, "32": 530, "33": 543, "34": 556, "35": 571, "36": 587}
 ---
 
 **Dave Jones:** Hi, just a quick behind the scenes video. Look what I scored. It is the 1980s boombox. Um, this is well, have a look. So, it's got gaffer tape. Let's unpack it, see what condition it's in. Oh, you can start to see it. You can

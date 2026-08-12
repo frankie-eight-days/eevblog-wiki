@@ -3,6 +3,7 @@ video_id: wi-b9k-0KfE
 title: EEVblog #388 - Fake Apple USB Charger Teardown
 url: https://www.youtube.com/watch?v=wi-b9k-0KfE
 source: youtube-asr
+timestamps: {"0": 1, "1": 23, "2": 36, "3": 53, "4": 70, "5": 86, "6": 103, "7": 121, "8": 137, "9": 157, "10": 176, "11": 193, "12": 208, "13": 227, "14": 250, "15": 265, "16": 280, "17": 298, "18": 314, "19": 332, "20": 350, "21": 366, "22": 385, "23": 400, "24": 416, "25": 438, "26": 451, "27": 467, "28": 482, "29": 497, "30": 515, "31": 534, "32": 555, "33": 569, "34": 588, "35": 605, "36": 624, "37": 640, "38": 654, "39": 672, "40": 690, "41": 708, "42": 724, "43": 742, "44": 757, "45": 777, "46": 790, "47": 806, "48": 822, "49": 840, "50": 854, "51": 873, "52": 892, "53": 909, "54": 928, "55": 946, "56": 962, "57": 979, "58": 993}
 ---
 
 **Dave Jones:** Hi, welcome to Teardown Tuesday. Yes, I'm finally getting around to tearing down these Apple or supposedly um Apple USB chargers. Universal uh mains input, you know, 110 to uh 240 volts at 5 watts output. So, they're quite remarkable devices for their size. And

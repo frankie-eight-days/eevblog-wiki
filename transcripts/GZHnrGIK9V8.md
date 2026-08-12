@@ -3,6 +3,7 @@ video_id: GZHnrGIK9V8
 title: EEVblog #1320 - Premature Oscilloscope Triggering
 url: https://www.youtube.com/watch?v=GZHnrGIK9V8
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 27, "3": 42, "4": 51, "5": 67, "6": 86, "7": 102, "8": 121, "9": 139, "10": 158, "11": 178, "12": 198, "13": 217, "14": 230, "15": 246, "16": 259, "17": 278, "18": 301, "19": 320, "20": 334, "21": 352, "22": 368, "23": 381, "24": 396, "25": 410, "26": 426, "27": 444, "28": 460, "29": 474, "30": 489, "31": 504, "32": 518, "33": 533, "34": 548, "35": 560, "36": 574, "37": 592, "38": 603, "39": 621, "40": 636, "41": 652, "42": 669, "43": 686, "44": 701, "45": 716, "46": 733, "47": 753, "48": 766, "49": 779, "50": 792, "51": 805, "52": 821, "53": 834, "54": 847, "55": 859, "56": 873, "57": 891, "58": 907, "59": 921, "60": 935, "61": 946, "62": 965, "63": 982, "64": 999, "65": 1014, "66": 1025, "67": 1036, "68": 1045, "69": 1059}
 ---
 
 **Dave Jones:** Hi, I wanted to show you a trap for young players about triggering on an oscilloscope and I found this while doing a repair video here which my uh patrons and subscribe star and uh forum supporters have already seen. I've done

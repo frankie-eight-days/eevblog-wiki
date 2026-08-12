@@ -3,6 +3,7 @@ video_id: vS4tJxqk00U
 title: EEVblog #1206 - Repair: Sony NEX VG30 Video Camera
 url: https://www.youtube.com/watch?v=vS4tJxqk00U
 source: youtube-asr
+timestamps: {"0": 5, "1": 25, "2": 42, "3": 55, "4": 70, "5": 86, "6": 105, "7": 124, "8": 143, "9": 156, "10": 170, "11": 182, "12": 196, "13": 216, "14": 232, "15": 246, "16": 261, "17": 273, "18": 286, "19": 302, "20": 320, "21": 332, "22": 344, "23": 359, "24": 374, "25": 390, "26": 404, "27": 420, "28": 436, "29": 453, "30": 465, "31": 483, "32": 496, "33": 512, "34": 528, "35": 543, "36": 555, "37": 565, "38": 576, "39": 590, "40": 601, "41": 613, "42": 628, "43": 642, "44": 658, "45": 671, "46": 685, "47": 699, "48": 715, "49": 728, "50": 743, "51": 759, "52": 774, "53": 788, "54": 803, "55": 820, "56": 836, "57": 852, "58": 869, "59": 882, "60": 898, "61": 911, "62": 944}
 ---
 
 **Dave Jones:** Um this is what happened to my secondary camera. This is not my primary camera. This is my Sony NEX-VG30 camera, uh which I often use for my like a mailbag stuff, my talking head mailbag videos. And yet, the um microphone is

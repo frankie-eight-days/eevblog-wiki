@@ -3,6 +3,7 @@ video_id: YlYM85tsi8o
 title: EEVblog #7 - Electronics Engineering Job Interview tips galore
 url: https://www.youtube.com/watch?v=YlYM85tsi8o
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 36, "3": 51, "4": 68, "5": 84, "6": 100, "7": 117, "8": 134, "9": 152, "10": 168, "11": 184, "12": 198, "13": 209, "14": 227, "15": 240, "16": 257, "17": 269, "18": 286, "19": 301, "20": 316, "21": 330, "22": 341, "23": 354, "24": 365, "25": 378, "26": 389, "27": 405, "28": 423, "29": 435, "30": 450, "31": 468, "32": 484, "33": 498, "34": 513, "35": 526, "36": 540, "37": 555, "38": 568, "39": 580}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog. I'm your host Dave Jones. This is episode number seven. Now for some updates from previous blogs. Back in blog number four, I criticized the Hewlett-Packard 20b financial calculator for its poor low-power battery design. Uh

@@ -3,6 +3,7 @@ video_id: j-AqRB8Q-9w
 title: The Dumpster Nikon D60 DSLR
 url: https://www.youtube.com/watch?v=j-AqRB8Q-9w
 source: youtube-asr
+timestamps: {"0": 0, "1": 13, "2": 29, "3": 42, "4": 60, "5": 75, "6": 92, "7": 106, "8": 126, "9": 140}
 ---
 
 **Dave Jones:** Hi, I have no doubt some people will want an update on this Nikon D60 and lens that I found in the dumpster. And I didn't have a charger for it cuz I don't have any Nikon cameras and it can't

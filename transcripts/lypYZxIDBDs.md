@@ -3,6 +3,7 @@ video_id: lypYZxIDBDs
 title: EEVblog #135 - Kindle Case Mythbusting
 url: https://www.youtube.com/watch?v=lypYZxIDBDs
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 32, "3": 44, "4": 59, "5": 75, "6": 91, "7": 105, "8": 121, "9": 135, "10": 151, "11": 166, "12": 181, "13": 196, "14": 210, "15": 224, "16": 239, "17": 249, "18": 267, "19": 278, "20": 292, "21": 306, "22": 324, "23": 341, "24": 353, "25": 368, "26": 383, "27": 397, "28": 409, "29": 427, "30": 440, "31": 459, "32": 474, "33": 485, "34": 500, "35": 513, "36": 526, "37": 541, "38": 557, "39": 573, "40": 587, "41": 599, "42": 619, "43": 631, "44": 645, "45": 660, "46": 676, "47": 693, "48": 702, "49": 716, "50": 731, "51": 744, "52": 758, "53": 775, "54": 788, "55": 805, "56": 821, "57": 840, "58": 854, "59": 869, "60": 885, "61": 900, "62": 914}
 ---
 
 **Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I've seen reports in the last couple of days about the Amazon Kindle 3. There's been a problem with it. People

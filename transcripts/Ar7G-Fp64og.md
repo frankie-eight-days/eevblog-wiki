@@ -3,6 +3,7 @@ video_id: Ar7G-Fp64og
 title: EEVblog #287 - Handifax 1000 Teardown
 url: https://www.youtube.com/watch?v=Ar7G-Fp64og
 source: youtube-asr
+timestamps: {"0": 0, "1": 24, "2": 40, "3": 54, "4": 67, "5": 84, "6": 103, "7": 119, "8": 134, "9": 148, "10": 171, "11": 191, "12": 220, "13": 243, "14": 260, "15": 279, "16": 300, "17": 340, "18": 360, "19": 372, "20": 389, "21": 406, "22": 424, "23": 444, "24": 459, "25": 474, "26": 485, "27": 502, "28": 519, "29": 538, "30": 551, "31": 568, "32": 584, "33": 600, "34": 614, "35": 629, "36": 639, "37": 655, "38": 669, "39": 683, "40": 697, "41": 713, "42": 728, "43": 743, "44": 758, "45": 775, "46": 792, "47": 807, "48": 821, "49": 834, "50": 849, "51": 862, "52": 877, "53": 891, "54": 910, "55": 929, "56": 945, "57": 958, "58": 973, "59": 989, "60": 1010, "61": 1025, "62": 1042, "63": 1059, "64": 1082, "65": 1098, "66": 1118, "67": 1133, "68": 1150}
 ---
 
 **Dave Jones:** Hi, it's teardown Tuesday again and we've got some vintage computer tech teardown for you. It's the Handyfax 1000. Check it out. It is a PDA personal digital assistant if you remember those / fax machine. Yes, it's an actual fax machine that you

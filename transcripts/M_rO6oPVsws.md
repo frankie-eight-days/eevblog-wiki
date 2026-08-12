@@ -3,6 +3,7 @@ video_id: M_rO6oPVsws
 title: EEVblog #346 - MLF/QFN SMD Reflow Soldering
 url: https://www.youtube.com/watch?v=M_rO6oPVsws
 source: youtube-asr
+timestamps: {"0": 1, "1": 20, "2": 38, "3": 56, "4": 78, "5": 95, "6": 111, "7": 125, "8": 141, "9": 158, "10": 175, "11": 193, "12": 210, "13": 231, "14": 245, "15": 256, "16": 272, "17": 287, "18": 305, "19": 318, "20": 333, "21": 349, "22": 366, "23": 385, "24": 401, "25": 416, "26": 429, "27": 448, "28": 467, "29": 483, "30": 503, "31": 522, "32": 539, "33": 555, "34": 574, "35": 598, "36": 615, "37": 633, "38": 657, "39": 676, "40": 699, "41": 715, "42": 727, "43": 739, "44": 753, "45": 766, "46": 778, "47": 793, "48": 807, "49": 820, "50": 834, "51": 847, "52": 863, "53": 880}
 ---
 
 **Dave Jones:** Hi, just a quick video. I got to solder on a tiny little MLF package on my new micro supply project board here and I thought I'd just shoot a little quick video of just how to solder this sucker on. And if we take

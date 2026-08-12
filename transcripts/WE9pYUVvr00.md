@@ -3,6 +3,7 @@ video_id: WE9pYUVvr00
 title: EEVblog #983 - A Shocking Oscilloscope Problem!
 url: https://www.youtube.com/watch?v=WE9pYUVvr00
 source: youtube-asr
+timestamps: {"0": 1, "1": 16, "2": 28, "3": 49, "4": 67, "5": 79, "6": 93, "7": 108, "8": 123, "9": 139, "10": 152, "11": 170, "12": 184, "13": 203, "14": 215, "15": 232, "16": 246, "17": 261, "18": 277, "19": 290, "20": 303, "21": 314, "22": 329, "23": 346, "24": 359, "25": 370, "26": 384, "27": 399, "28": 415, "29": 426, "30": 438, "31": 454, "32": 471, "33": 487, "34": 504, "35": 518, "36": 533, "37": 547, "38": 566, "39": 583, "40": 597, "41": 615, "42": 631, "43": 645, "44": 667, "45": 689, "46": 710, "47": 733, "48": 751, "49": 766, "50": 784, "51": 804, "52": 823, "53": 832, "54": 849, "55": 865, "56": 880, "57": 901, "58": 916, "59": 937, "60": 957, "61": 974, "62": 988, "63": 1005, "64": 1018, "65": 1026, "66": 1041, "67": 1056, "68": 1074, "69": 1095}
 ---
 
 **Dave Jones:** Hi, I was going to whack this as a quick video on my second channel like I just uploaded two videos on EV blog two with two little bugs I found in the new Rohde & Schwarz RTB2004 oscilloscope like five minutes after a

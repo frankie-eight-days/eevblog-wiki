@@ -3,6 +3,7 @@ video_id: uCuNyiseJ5g
 title: EEVblog #784 - Sydney Maker Faire 2015
 url: https://www.youtube.com/watch?v=uCuNyiseJ5g
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 54, "3": 67, "4": 85, "5": 112, "6": 138, "7": 165, "8": 183, "9": 225, "10": 266, "11": 282, "12": 300, "13": 322, "14": 337, "15": 357, "16": 378, "17": 397, "18": 415, "19": 440, "20": 495, "21": 511, "22": 525, "23": 537, "24": 549, "25": 570, "26": 600, "27": 650, "28": 663, "29": 676, "30": 687, "31": 697, "32": 711, "33": 741, "34": 761, "35": 774, "36": 791, "37": 809, "38": 835, "39": 848, "40": 875, "41": 926}
 ---
 
 **Dave Jones:** Hi, welcome to the 2015 Mini Maker Fair. It's at the awesome Powerhouse Museum once again, all in one huge hall this time. Let's go check it out.

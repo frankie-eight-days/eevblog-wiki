@@ -3,6 +3,7 @@ video_id: U7vQCZX7pI0
 title: More Peter Popoff Scam Mail!
 url: https://www.youtube.com/watch?v=U7vQCZX7pI0
 source: youtube-asr
+timestamps: {"0": 0, "1": 23, "2": 47, "3": 64, "4": 78, "5": 93, "6": 109, "7": 124, "8": 142, "9": 155, "10": 178, "11": 199, "12": 219, "13": 232, "14": 251, "15": 270, "16": 291, "17": 306, "18": 324, "19": 339, "20": 360, "21": 375, "22": 395, "23": 405, "24": 421, "25": 436, "26": 453, "27": 467, "28": 485, "29": 502, "30": 520, "31": 536, "32": 549, "33": 563}
 ---
 
 **Dave Jones:** Hi, you've seen in a previous video where I received all this mail from Prophet Peter Popoff my supernatural prosperity anointing oil and I received all this garbage from the master scam artist himself Peter Popoff who's been busted many many times over and what do

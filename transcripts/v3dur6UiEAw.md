@@ -3,6 +3,7 @@ video_id: v3dur6UiEAw
 title: EEVblog #1084 - Pocket Multimeter Shootout Part 2
 url: https://www.youtube.com/watch?v=v3dur6UiEAw
 source: youtube-asr
+timestamps: {"0": 0, "1": 10, "2": 27, "3": 41, "4": 57, "5": 79, "6": 95, "7": 105, "8": 123, "9": 137, "10": 150, "11": 164, "12": 178, "13": 194, "14": 210, "15": 228, "16": 246, "17": 258, "18": 273, "19": 292, "20": 305, "21": 320, "22": 339, "23": 358, "24": 371, "25": 387, "26": 399, "27": 413, "28": 433, "29": 449, "30": 465, "31": 480, "32": 497, "33": 516, "34": 527, "35": 541, "36": 557, "37": 570, "38": 579, "39": 594, "40": 609, "41": 624, "42": 637, "43": 650, "44": 665, "45": 677, "46": 690, "47": 703, "48": 714, "49": 726}
 ---
 
 **Dave Jones:** Hi, this is part two in a pocket multimeter shootout. I'll link in part one up here in a little YouTube card thing and also down below and at the end of this video if you haven't seen it cuz

@@ -3,6 +3,7 @@ video_id: cPuMgh-BElU
 title: Davinci Resolve 20: Automatic Silence Removal Tested
 url: https://www.youtube.com/watch?v=cPuMgh-BElU
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 30, "3": 45, "4": 62, "5": 78, "6": 90, "7": 101, "8": 113, "9": 125, "10": 135, "11": 148, "12": 160, "13": 171, "14": 184, "15": 197, "16": 208, "17": 219, "18": 231, "19": 242, "20": 254, "21": 265, "22": 278, "23": 290, "24": 300, "25": 312, "26": 324, "27": 338, "28": 353, "29": 366, "30": 382, "31": 396, "32": 411, "33": 427, "34": 443, "35": 468, "36": 482, "37": 497, "38": 518, "39": 537, "40": 553, "41": 570, "42": 587, "43": 601, "44": 613, "45": 635, "46": 651, "47": 668, "48": 687, "49": 703, "50": 718, "51": 734}
 ---
 
 **Dave Jones:** Hi, I've just upgraded my video editor here from uh Da Vinci Resolve 18.5 to the latest 20.2 version. And I've been I usually don't want to like update my video editing software. I've been doing this since like day one. I usually like

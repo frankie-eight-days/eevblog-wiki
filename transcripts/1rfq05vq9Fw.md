@@ -3,6 +3,7 @@ video_id: 1rfq05vq9Fw
 title: Ultimate Monkey Bars - RAW Challenge 2026 + Ice Bath
 url: https://www.youtube.com/watch?v=1rfq05vq9Fw
 source: youtube-asr
+timestamps: {"0": 0, "1": 21, "2": 39, "3": 62, "4": 93, "5": 117}
 ---
 
 **Dave Jones:** Okay, he says he'll make the monkey balls but not the rings. Let's see what he can do. Oh, oh. This is the guy who's some kind of professional elite. People oh, he's off. He's off.

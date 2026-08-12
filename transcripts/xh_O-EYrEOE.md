@@ -3,6 +3,7 @@ video_id: xh_O-EYrEOE
 title: IAC 2025 - Australian Stand
 url: https://www.youtube.com/watch?v=xh_O-EYrEOE
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 35, "3": 55, "4": 75, "5": 88, "6": 107, "7": 126, "8": 144, "9": 166, "10": 182, "11": 199, "12": 217}
 ---
 
 **Dave Jones:** I'm at the Australian Space Agency stand and let's go in and have a look because they got a couple of cool items in here. It's wins the best stand award. It's really impressive. A launch site for all. Anyway, um Woomer, this is um a uh

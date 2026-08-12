@@ -3,6 +3,7 @@ video_id: ESdqWYlLPbI
 title: EEVblog #325 - Rigol DG4162 Voice
 url: https://www.youtube.com/watch?v=ESdqWYlLPbI
 source: youtube-asr
+timestamps: {"0": 0, "1": 18, "2": 34, "3": 48, "4": 63, "5": 75, "6": 90, "7": 102, "8": 115, "9": 141, "10": 157, "11": 172, "12": 186, "13": 201, "14": 216, "15": 229, "16": 279, "17": 294, "18": 315, "19": 330, "20": 347, "21": 365, "22": 390, "23": 415, "24": 436, "25": 454, "26": 468, "27": 483, "28": 503, "29": 522, "30": 541, "31": 561, "32": 579, "33": 597, "34": 615, "35": 628, "36": 643, "37": 660, "38": 675, "39": 688}
 ---
 
 **Dave Jones:** Hi. All right, I've had so many damn complaints about that I didn't test the voice arbitrary capability of this Rigol DG4162. Fine, here it is. I'll do a quick video. Geez, hope it keeps everyone happy. All right, if you didn't know in the arb

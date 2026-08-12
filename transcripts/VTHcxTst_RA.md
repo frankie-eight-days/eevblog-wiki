@@ -3,6 +3,7 @@ video_id: VTHcxTst_RA
 title: Rohde & Schwarz MXO3 3 Phase Power Measurement
 url: https://www.youtube.com/watch?v=VTHcxTst_RA
 source: youtube-asr
+timestamps: {"0": 0, "1": 12, "2": 23, "3": 40, "4": 59, "5": 73, "6": 87, "7": 108, "8": 120, "9": 138, "10": 154, "11": 172, "12": 196, "13": 213, "14": 231, "15": 249, "16": 266, "17": 277, "18": 289, "19": 307, "20": 320, "21": 337, "22": 352, "23": 369, "24": 384, "25": 400, "26": 416, "27": 431, "28": 440, "29": 456, "30": 471, "31": 486, "32": 502, "33": 513, "34": 525, "35": 535, "36": 549, "37": 565, "38": 582}
 ---
 
 **Dave Jones:** All right, I'm here at the Rohde & Schwarz stand, and we've got a pretty impressive demo set up with the new MXO 3 series, the eight-channel jobbie. And I'm here with Tristan. You've seen Tristan on the channel before from Rohde

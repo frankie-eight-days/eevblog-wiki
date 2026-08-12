@@ -3,6 +3,7 @@ video_id: -2UtPzraRG4
 title: The Weird Western Australian Google Maps Anomaly!
 url: https://www.youtube.com/watch?v=-2UtPzraRG4
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 29, "3": 43, "4": 58, "5": 80, "6": 100, "7": 116, "8": 134, "9": 149, "10": 165, "11": 185, "12": 199, "13": 218, "14": 234, "15": 249}
 ---
 
 **Dave Jones:** Hi, I saw this Google Maps anomaly on X and I thought, "Hey, is that real?" I thought I'd check it out. Let's go here. We're in Australia, not Austria, and let's go over here to Western Australia, and to near Barrow Island over here. Let's

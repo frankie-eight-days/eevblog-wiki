@@ -3,6 +3,7 @@ video_id: gZIRPJt69sM
 title: EEVblog 1601 - How VFD (Vacuum Fluorescent) Displays Work
 url: https://www.youtube.com/watch?v=gZIRPJt69sM
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 42, "4": 56, "5": 69, "6": 83, "7": 96, "8": 107, "9": 122, "10": 137, "11": 152, "12": 166, "13": 178, "14": 193, "15": 207, "16": 223, "17": 238, "18": 255, "19": 268, "20": 279, "21": 294, "22": 310, "23": 328, "24": 339, "25": 353, "26": 366, "27": 380, "28": 396, "29": 412, "30": 426, "31": 438, "32": 454, "33": 468, "34": 479, "35": 495, "36": 507, "37": 527, "38": 539, "39": 551, "40": 564, "41": 576, "42": 589}
 ---
 
 **Dave Jones:** Hi. Today, we're going to take a look at vacuum fluorescent displays or VFDs. Now, this one was um sent into the mailbag uh segment. Sorry, I forgot who uh sent it in, but thank you very much. And it is a complete vacuum fluorescent

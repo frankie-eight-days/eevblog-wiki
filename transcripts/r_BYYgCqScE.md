@@ -3,6 +3,7 @@ video_id: r_BYYgCqScE
 title: Rigol DHO800 HDMI output & Touch Screen
 url: https://www.youtube.com/watch?v=r_BYYgCqScE
 source: youtube-asr
+timestamps: {"0": 1, "1": 18, "2": 33, "3": 50, "4": 63, "5": 77, "6": 93, "7": 110, "8": 126, "9": 138, "10": 155, "11": 169, "12": 182}
 ---
 
 **Dave Jones:** Hi, just a quick update video on the Rigol DHO800 here. Um, I just discovered that not only does it have HDMI output, of course, and it does seem to scale to the screen resolution. So, you can can actually hook it up to a 4K screen and

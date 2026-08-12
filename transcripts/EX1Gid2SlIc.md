@@ -3,6 +3,7 @@ video_id: EX1Gid2SlIc
 title: EEVblog 1607 - PSU Switching Noise Reduction via Vibration
 url: https://www.youtube.com/watch?v=EX1Gid2SlIc
 source: youtube-asr
+timestamps: {"0": 0, "1": 16, "2": 28, "3": 49, "4": 65, "5": 80, "6": 100, "7": 111, "8": 129, "9": 146, "10": 158, "11": 172, "12": 186, "13": 196, "14": 222, "15": 234, "16": 252, "17": 268, "18": 282, "19": 299, "20": 314, "21": 336, "22": 350, "23": 368, "24": 379, "25": 394, "26": 410, "27": 421, "28": 433, "29": 445}
 ---
 
 **Dave Jones:** Hi, just a quick but very interesting video showing you an interesting phenomenon here which came about cuz I was testing this little Alienware DP 100 power supply here. I'll link that in video if you haven't seen it down below.

@@ -3,6 +3,7 @@ video_id: -KSPOPz4VXk
 title: Alkaline Battery Leakage AGAIN
 url: https://www.youtube.com/watch?v=-KSPOPz4VXk
 source: youtube-asr
+timestamps: {"0": 4, "1": 21, "2": 37, "3": 56, "4": 68, "5": 85, "6": 99, "7": 121, "8": 139, "9": 158, "10": 176, "11": 189, "12": 205, "13": 220, "14": 234, "15": 250}
 ---
 
 **Dave Jones:** D'oh! >> [sighs] >> All right. We got another battery leak. Look at this. Golden Power Power Plus. Uh yeah, this is a bit crusty, isn't it? Uh yeah, damn it. Oh, yeah, that one over there as well. Dumb ass Dave has

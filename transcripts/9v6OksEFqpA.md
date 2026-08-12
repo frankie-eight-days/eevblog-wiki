@@ -3,6 +3,7 @@ video_id: 9v6OksEFqpA
 title: EEVblog #427 - HP 3478A Multimeter Teardown
 url: https://www.youtube.com/watch?v=9v6OksEFqpA
 source: youtube-asr
+timestamps: {"0": 1, "1": 19, "2": 37, "3": 54, "4": 69, "5": 81, "6": 97, "7": 109, "8": 125, "9": 139, "10": 151, "11": 167, "12": 182, "13": 197, "14": 211, "15": 225, "16": 241, "17": 255, "18": 269, "19": 290, "20": 305, "21": 319, "22": 334, "23": 347, "24": 363, "25": 379, "26": 395, "27": 411, "28": 431, "29": 445, "30": 462, "31": 477, "32": 493, "33": 512, "34": 526, "35": 541, "36": 555, "37": 568, "38": 584, "39": 605, "40": 618, "41": 631, "42": 647, "43": 658, "44": 674, "45": 687, "46": 705, "47": 719, "48": 729, "49": 746, "50": 759, "51": 776, "52": 787, "53": 800, "54": 818, "55": 834, "56": 848, "57": 862, "58": 878, "59": 893, "60": 906, "61": 930}
 ---
 
 **Dave Jones:** Hi, this is just going to be a quick follow-up video to my previous one on the HP 3457A multimeter. And you notice that I mentioned the 3478A multimeter that I was replacing with the 3458A. And I just realized I thought I had done a video

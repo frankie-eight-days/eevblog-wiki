@@ -3,6 +3,7 @@ video_id: 1H7IfwAC_rg
 title: WARNING! - Youtube Content ID Phishing SCAM!
 url: https://www.youtube.com/watch?v=1H7IfwAC_rg
 source: youtube-asr
+timestamps: {"0": 2, "1": 17, "2": 32, "3": 47, "4": 61, "5": 76, "6": 90, "7": 106, "8": 122, "9": 134, "10": 147, "11": 165, "12": 181, "13": 195, "14": 207, "15": 218, "16": 233, "17": 247, "18": 260, "19": 271, "20": 285, "21": 300, "22": 315, "23": 326, "24": 342}
 ---
 
 **Dave Jones:** Hi, just a heads-up and warning to fellow YouTube content creators. This one's important and I hadn't seen this before. We've got a very clever and very nasty phishing scam and this is not fishing, catching fish. This is the

@@ -3,6 +3,7 @@ video_id: 0N5CwjIM5mc
 title: EEVblog #31 - Microcontroller Datasheet Utopia
 url: https://www.youtube.com/watch?v=0N5CwjIM5mc
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 30, "3": 41, "4": 57, "5": 70, "6": 84, "7": 99, "8": 118, "9": 135, "10": 148, "11": 163, "12": 179, "13": 198, "14": 212, "15": 229, "16": 243, "17": 256, "18": 272, "19": 290, "20": 302, "21": 322, "22": 339, "23": 354, "24": 373, "25": 393, "26": 410, "27": 425, "28": 448, "29": 460}
 ---
 
 **Dave Jones:** Welcome to the AE blog. I'm your host, Dave Jones, and this is episode number 31. I was trolling some websites the other day looking for a 32-bit micro, as you do. And in fact, I was looking for the new

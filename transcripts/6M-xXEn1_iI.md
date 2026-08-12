@@ -3,6 +3,7 @@ video_id: 6M-xXEn1_iI
 title: FAILED PROJECT IDEA - 53131A Mod Board
 url: https://www.youtube.com/watch?v=6M-xXEn1_iI
 source: youtube-asr
+timestamps: {"0": 0, "1": 17, "2": 31, "3": 44, "4": 55, "5": 69, "6": 82, "7": 96, "8": 110, "9": 122, "10": 136, "11": 152, "12": 164, "13": 179, "14": 193, "15": 207, "16": 220, "17": 235, "18": 248, "19": 265, "20": 276, "21": 286, "22": 297, "23": 308, "24": 323, "25": 337, "26": 351, "27": 366, "28": 381, "29": 407, "30": 423, "31": 440, "32": 459, "33": 470, "34": 483, "35": 498, "36": 512, "37": 522, "38": 537, "39": 548, "40": 563, "41": 577, "42": 593, "43": 614, "44": 640, "45": 658, "46": 674, "47": 688, "48": 707, "49": 720, "50": 736}
 ---
 
 **Dave Jones:** Hi, it's project time. I want to upgrade uh my venerable Agilent, not that Keysight rubbish, uh 53131A universal frequency counter. And this is an awesome bit of kit. It's practically the industry standard uh frequency counter on the market. It always has

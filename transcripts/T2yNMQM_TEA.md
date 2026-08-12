@@ -3,6 +3,7 @@ video_id: T2yNMQM_TEA
 title: Deye Hybrid Solar Inverter Mains Dropout Test
 url: https://www.youtube.com/watch?v=T2yNMQM_TEA
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 30, "3": 45, "4": 59, "5": 70, "6": 88, "7": 105, "8": 118, "9": 135, "10": 149, "11": 165, "12": 179, "13": 194, "14": 209, "15": 224, "16": 236, "17": 251, "18": 267, "19": 280, "20": 293, "21": 303, "22": 315, "23": 331, "24": 345, "25": 365, "26": 380}
 ---
 
 **Dave Jones:** Hi, I'm back with the uh DIY hybrid inverter here and uh it is producing uh 2.1 kW for those playing along at home. It's a really nice sunny day here. Um first decent one we've got actually. Uh the P1's a bit down, which is the

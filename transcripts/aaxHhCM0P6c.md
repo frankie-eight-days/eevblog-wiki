@@ -3,6 +3,7 @@ video_id: aaxHhCM0P6c
 title: Dumpster Battery Bank
 url: https://www.youtube.com/watch?v=aaxHhCM0P6c
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 28, "3": 45, "4": 61, "5": 73, "6": 86, "7": 98, "8": 108, "9": 125, "10": 143, "11": 163, "12": 182, "13": 200, "14": 218, "15": 233, "16": 246, "17": 261, "18": 280, "19": 299, "20": 315, "21": 329, "22": 343, "23": 356, "24": 370, "25": 386}
 ---
 
 **Dave Jones:** Hi, it's dumpster diving time. Ordinarily, um I wouldn't show you something like this, which I found five of, um in original boxes, because I find these all the time. These are these uh notepad um things, you know, you can get

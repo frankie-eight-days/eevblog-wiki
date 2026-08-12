@@ -3,6 +3,7 @@ video_id: uMONqo-Ewug
 title: EEVblog #526 - Bank Note Acceptor Followup
 url: https://www.youtube.com/watch?v=uMONqo-Ewug
 source: youtube-asr
+timestamps: {"0": 1, "1": 14, "2": 32, "3": 43, "4": 58, "5": 71, "6": 84, "7": 101, "8": 113, "9": 123, "10": 137, "11": 152, "12": 168, "13": 185, "14": 201, "15": 215, "16": 230, "17": 241, "18": 255, "19": 271, "20": 287, "21": 306, "22": 322, "23": 340, "24": 353, "25": 369, "26": 380, "27": 394, "28": 403, "29": 416, "30": 427, "31": 440, "32": 454, "33": 465, "34": 476, "35": 498, "36": 513, "37": 528, "38": 539, "39": 555, "40": 570}
 ---
 
 **Dave Jones:** Hi, just a quick followup on this note validator that I did in the last video. If you haven't seen it, this won't make any sense whatsoever. And the link, it will be linked right here. So, just click here and watch it. And uh a couple

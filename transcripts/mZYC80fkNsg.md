@@ -3,6 +3,7 @@ video_id: mZYC80fkNsg
 title: EEVblog #1235 - How To Align Signals On A Digital Oscilloscope
 url: https://www.youtube.com/watch?v=mZYC80fkNsg
 source: youtube-asr
+timestamps: {"0": 0, "1": 15, "2": 29, "3": 42, "4": 57, "5": 70, "6": 83, "7": 100, "8": 110, "9": 126, "10": 142, "11": 159, "12": 175, "13": 188, "14": 205, "15": 220, "16": 236, "17": 252, "18": 272, "19": 287, "20": 301, "21": 315, "22": 328, "23": 345, "24": 358, "25": 374, "26": 389, "27": 403, "28": 417, "29": 431, "30": 443, "31": 456, "32": 468, "33": 481, "34": 495, "35": 512, "36": 529, "37": 545, "38": 560, "39": 574, "40": 588, "41": 607, "42": 626, "43": 642, "44": 656, "45": 669, "46": 687, "47": 706, "48": 722, "49": 743, "50": 760, "51": 778, "52": 795, "53": 811, "54": 824, "55": 836, "56": 853, "57": 868, "58": 887, "59": 904, "60": 923, "61": 939, "62": 954, "63": 970, "64": 986, "65": 1002, "66": 1014, "67": 1032, "68": 1053, "69": 1068, "70": 1079, "71": 1094, "72": 1108, "73": 1119, "74": 1133, "75": 1149, "76": 1159}
 ---
 
 **Dave Jones:** Hi, it's time for another oscilloscope tutorial and I've actually done, if you don't know, a whole bunch of oscilloscope tutorials. I've got a YouTube playlist which I'll link in at the end and down below. It's currently got about 30 videos on it for various

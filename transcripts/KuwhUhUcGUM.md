@@ -3,6 +3,7 @@ video_id: KuwhUhUcGUM
 title: EEVblog #1342 - Asymmetrical Dumpster PC Stacking
 url: https://www.youtube.com/watch?v=KuwhUhUcGUM
 source: youtube-asr
+timestamps: {"0": 0, "1": 20, "2": 38, "3": 51, "4": 66, "5": 84, "6": 100, "7": 114, "8": 129, "9": 144, "10": 156, "11": 171, "12": 188, "13": 204, "14": 218, "15": 236, "16": 252, "17": 272, "18": 283, "19": 297, "20": 313, "21": 327, "22": 343, "23": 361, "24": 376, "25": 391, "26": 401, "27": 423, "28": 435, "29": 449, "30": 466, "31": 477, "32": 492, "33": 508, "34": 519, "35": 539, "36": 559, "37": 572, "38": 587, "39": 599, "40": 614, "41": 626, "42": 638, "43": 657, "44": 668, "45": 680, "46": 693, "47": 705, "48": 718, "49": 730, "50": 745, "51": 755, "52": 769, "53": 784, "54": 795, "55": 808, "56": 823}
 ---
 
 **Dave Jones:** Hi, I'm down in the dumpster room and it's a computer stack. Symmetrical computer stacking. Fantastic. Um, I have seen higher than this. I've seen like multiple um piles actually taller than myself. There's probably a photo on Twitter um

@@ -3,6 +3,7 @@ video_id: pXtSybs9QRs
 title: Instant Electric Hot Water Heater vs Heat Pump Hot Water Tank System
 url: https://www.youtube.com/watch?v=pXtSybs9QRs
 source: youtube-asr
+timestamps: {"0": 0, "1": 11, "2": 22, "3": 39, "4": 50, "5": 66, "6": 77, "7": 89, "8": 103, "9": 114, "10": 127, "11": 141, "12": 151, "13": 161, "14": 171, "15": 185, "16": 196, "17": 213, "18": 228, "19": 239, "20": 255, "21": 272, "22": 283, "23": 297, "24": 307, "25": 322, "26": 335, "27": 346, "28": 359, "29": 375, "30": 385, "31": 395, "32": 405, "33": 415, "34": 431, "35": 445, "36": 458, "37": 471, "38": 482, "39": 496, "40": 509, "41": 523, "42": 536, "43": 544, "44": 558, "45": 570, "46": 580, "47": 591, "48": 607, "49": 623, "50": 635, "51": 647, "52": 662, "53": 673, "54": 685, "55": 699, "56": 709, "57": 723, "58": 736, "59": 748, "60": 758, "61": 771}
 ---
 
 **Dave Jones:** Hi, on a recent video on my channel I looked at heat pump hot water systems versus my gas hot water system that I've currently got and I'm going to install a heat pump hot water system and I'll link

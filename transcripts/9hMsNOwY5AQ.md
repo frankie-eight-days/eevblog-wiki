@@ -3,6 +3,7 @@ video_id: 9hMsNOwY5AQ
 title: EEVacademy #3 - Bit Banging & SPI Tutorial
 url: https://www.youtube.com/watch?v=9hMsNOwY5AQ
 source: youtube-asr
+timestamps: {"0": 0, "1": 14, "2": 28, "3": 41, "4": 51, "5": 64, "6": 77, "7": 100, "8": 119, "9": 134, "10": 145, "11": 159, "12": 176, "13": 188, "14": 199, "15": 213, "16": 227, "17": 240, "18": 252, "19": 270, "20": 282, "21": 293, "22": 308, "23": 325, "24": 340, "25": 358, "26": 372, "27": 388, "28": 399, "29": 413, "30": 427, "31": 441, "32": 460, "33": 479, "34": 494, "35": 512, "36": 523, "37": 539, "38": 556, "39": 573, "40": 587, "41": 599, "42": 613, "43": 628, "44": 644, "45": 655, "46": 666, "47": 683, "48": 697, "49": 714, "50": 727, "51": 742, "52": 755, "53": 766, "54": 778, "55": 793, "56": 809, "57": 821, "58": 835, "59": 848, "60": 859, "61": 871, "62": 884, "63": 896, "64": 910, "65": 927, "66": 944, "67": 956, "68": 967, "69": 982, "70": 995, "71": 1011, "72": 1027, "73": 1053}
 ---
 
 **Dave Jones:** Okay, today we're going to talk about bit banging. Bit banging is the process of using software to control hardware instead of using already existing hardware to output some kind of serial protocol. Bit banging is usually done in assembly or C or C++ and

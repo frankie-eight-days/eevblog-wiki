@@ -3,6 +3,7 @@ video_id: HWlpqSrabKs
 title: EEVblog #448 - New PICkit 4 & AVR Dragon
 url: https://www.youtube.com/watch?v=HWlpqSrabKs
 source: youtube-asr
+timestamps: {"0": 1, "1": 17, "2": 33, "3": 53, "4": 72, "5": 89, "6": 106, "7": 124, "8": 141, "9": 155, "10": 167, "11": 181, "12": 197, "13": 214, "14": 232, "15": 246, "16": 260, "17": 273, "18": 287, "19": 303, "20": 320, "21": 336, "22": 357, "23": 370, "24": 382, "25": 405, "26": 421, "27": 435, "28": 446, "29": 458, "30": 476, "31": 491, "32": 506, "33": 522, "34": 537, "35": 549, "36": 566, "37": 580}
 ---
 
 **Dave Jones:** Hi. You may have read in the last day or two about some news in the PIC and AVR camps, Microchip and Atmel for you fanboys out there. Pretty exciting stuff. Um, as you may know, Microchip actually tried to buy Atmel like, you know, 3 4
