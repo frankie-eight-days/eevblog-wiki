@@ -67,12 +67,18 @@ def convert(vid, title, url, src, outdir):
     stamps = {i: st for i, (st, _) in enumerate(paras)}
     fm = ["---", f"video_id: {vid}", f"title: {title}", f"url: {url}",
           "source: whisper-large-v3-q5_0",
-          f"timestamps: {json.dumps(stamps)}", "---", ""]
-    # census_lib.parse_transcript requires the body to start with exactly one
-    # newline then '**Speaker:**' -- do not tidy this join.
+          f"timestamps: {json.dumps(stamps)}", "---"]
+    # census_lib.parse_transcript consumes exactly ONE newline after the closing
+    # '---' and then requires the body to begin '\n**Speaker:**'. So the file
+    # needs a BLANK LINE between the delimiter and the first paragraph: the
+    # first newline terminates '---', the second becomes the body's leading
+    # newline that every char_start offset is measured from. Emitting only one
+    # newline here makes every spec-correct census validate as 100% invalid --
+    # census_lib documents this as a real, load-bearing bug, and this converter
+    # hit it on the first run.
     body = "\n".join(f"**Dave Jones:** {p}\n" for _, p in paras)
     dest = outdir / f"{vid}.md"
-    dest.write_text("\n".join(fm[:-1]) + "\n" + body)
+    dest.write_text("\n".join(fm) + "\n\n" + body)
     return dest, len(paras), sum(len(p.split()) for _, p in paras)
 
 
