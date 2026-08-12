@@ -47,7 +47,13 @@ N_API = 6                 # transcription is not the constraint; this is plenty
 DOWNLOAD_GAP_S = 15
 BOT_BLOCK = re.compile(r"not a bot|HTTP Error 429|Too Many Requests|"
                        r"Sign in to confirm you[’']?re", re.I)
-COOLDOWN_S = 1800
+# 45 minutes, not 30. Measured across every cycle in the log: a 30-minute wait was
+# too short three times out of four -- the retry re-blocked instantly and the
+# backoff doubled to 60 anyway, so the cycle cost 90 minutes of downtime instead
+# of one clean wait. A 40-minute gap succeeded when it was tried. Waiting longer
+# up front is strictly cheaper than spending an attempt to discover the quota has
+# not reset yet.
+COOLDOWN_S = 2700
 COOLDOWN_MAX = 10800
 
 STYLE_PROMPT = (

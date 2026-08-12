@@ -439,7 +439,21 @@ was cooldown ESCALATION: resuming while the quota was still exhausted re-blocked
 instantly and doubled the wait (30 -> 60 -> 120), which looked like the fast
 setting being punished. It was the resume timing, not the gap.
 
-Blocks are not IP bans — every one has cleared on its own within 30-120 minutes.
+Blocks are not permanent bans — every one has cleared on its own.
+
+**The block is IP-scoped, not account-scoped.** Probed the same video with and
+without `--cookies` while blocked: identical "Sign in to confirm you're not a bot"
+both times. So cookies neither cause nor cure it, and there is no account-level
+lever — only waiting, or a different network.
+
+**30 minutes is not long enough to clear it.** Three cycles out of four re-blocked
+on the first retry and then doubled to 60 anyway, costing 90 minutes where one
+clean wait would do. Base cooldown is now 45 minutes; a 40-minute gap succeeded
+when it was tried. Roughly 85 videos per window, then the wait.
+
+Cumulative volume matters too: after ~685 downloads in a day the windows get
+shorter and the blocks longer, which looks like a daily budget on top of the
+per-window one.
 
 Two `api_run.py` bugs found the hard way:
 - `urlopen(timeout=1800)` — a hung socket parked each of 6 workers for 30 minutes,
