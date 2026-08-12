@@ -26,7 +26,7 @@ what is in flight first. Remove it to resume. No signals, no lost work.
 
 PRIORITY. The queue is ordered: main channel first, then the second channel.
 """
-import json, os, pathlib, queue, shutil, subprocess, sys, threading, time, csv
+import json, os, pathlib, queue, re, shutil, subprocess, sys, threading, time, csv
 
 HOME = pathlib.Path.home()
 BASE = HOME / "eevblog"
@@ -61,6 +61,21 @@ N_TRANSCRIBE = 1
 N_DOWNLOAD = 1
 NICE = ["nice", "-n", "15"]
 READY_MAX = 2             # bounded, so disk stays ~300 MB
+
+# Downloading continuously for ~10 hours got this IP a "Sign in to confirm
+# you're not a bot" block from YouTube covering audio, captions AND metadata,
+# across every player client. Two defences:
+#
+# THROTTLE. A deliberate pause between downloads. The GPU consumes roughly one
+# video every 4 minutes, so even a slow fetch loop stays comfortably ahead --
+# downloading flat out bought nothing and cost us the block.
+DOWNLOAD_GAP_S = 90
+# CIRCUIT BREAKER. A bot-check is not a per-video failure; retrying it burns
+# through the queue marking good videos dead and keeps the block alive. Detect
+# it, stop fetching entirely for a long cooldown, and put the video back.
+BOT_BLOCK = re.compile(r"not a bot|Sign in to confirm|HTTP Error 429|Too Many Requests", re.I)
+BLOCK_COOLDOWN_S = 1800   # 30 min, doubling up to a cap
+BLOCK_COOLDOWN_MAX = 10800
 WHISPER = "/opt/homebrew/bin/whisper-cli"
 
 # Conditions the decoder toward punctuated output with the right vocabulary.
@@ -74,6 +89,7 @@ PROMPT = ("Hi, welcome to the EEVblog. I'm your host, Dave Jones. Today we're "
 _lock = threading.Lock()
 _stats = {"done": 0, "failed": 0, "secs_audio": 0.0, "started": time.time()}
 _inflight = {}
+_cooldown = {"s": BLOCK_COOLDOWN_S}
 STOP = threading.Event()
 
 
@@ -167,20 +183,34 @@ def downloader(work_q, ready_q):
             wav = fetch(row["id"])
             ready_q.put((row, wav))
             row.pop("_tries", None)
+            _cooldown["s"] = BLOCK_COOLDOWN_S      # success resets the backoff
+            time.sleep(DOWNLOAD_GAP_S)             # deliberate throttle
         except Exception as e:                       # noqa: BLE001
-            # YouTube hands out transient 403s, especially on the first requests
-            # of a session. Without a retry these videos would be silently
-            # skipped for the whole run and only picked up on the next restart.
-            tries = row.get("_tries", 0) + 1
-            row["_tries"] = tries
-            if tries <= 3:
-                log(f"fetch retry {tries}/3 {row['id']}: {str(e)[-90:]}")
-                time.sleep(min(60 * tries, 180))
+            msg = str(e)
+            if BOT_BLOCK.search(msg):
+                # Not this video's fault. Requeue it untouched and stop fetching
+                # for a while -- continuing to ask is what keeps the block on.
                 work_q.put(row)
+                wait = _cooldown["s"]
+                log(f"BOT-CHECK BLOCK from YouTube - pausing fetches for "
+                    f"{wait//60} min (queue intact, nothing marked failed)")
+                slept = 0
+                while slept < wait and not STOP.is_set():
+                    time.sleep(10); slept += 10
+                _cooldown["s"] = min(wait * 2, BLOCK_COOLDOWN_MAX)
             else:
-                log(f"FETCH FAIL {row['id']} after 3 tries: {e}")
-                with _lock:
-                    _stats["failed"] += 1
+                # YouTube also hands out transient 403s. Those ARE worth retrying
+                # per-video; without it they'd be skipped for the whole run.
+                tries = row.get("_tries", 0) + 1
+                row["_tries"] = tries
+                if tries <= 3:
+                    log(f"fetch retry {tries}/3 {row['id']}: {msg[-90:]}")
+                    time.sleep(min(60 * tries, 180))
+                    work_q.put(row)
+                else:
+                    log(f"FETCH FAIL {row['id']} after 3 tries: {msg[-120:]}")
+                    with _lock:
+                        _stats["failed"] += 1
         finally:
             work_q.task_done()
 
