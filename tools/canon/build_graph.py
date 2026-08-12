@@ -84,25 +84,16 @@ def _near(pa, pb):
     return False
 
 
-def louvain(nodes, edges, resolution, seed=7):
-    """Small self-contained modularity clustering -- one local-moving pass to
-    convergence. Enough for a "which topics cluster together" read; not trying to
-    be networkx."""
-    rnd = random.Random(seed)
-    adj = defaultdict(dict)
-    for (a, b), w in edges.items():
-        adj[a][b] = w
-        adj[b][a] = w
-    m2 = sum(sum(d.values()) for d in adj.values())          # 2m
-    if m2 == 0:
-        return {n: i for i, n in enumerate(nodes)}
+def _local_move(nodes, adj, selfw, m2, resolution, rnd):
+    """One local-moving phase: repeatedly move each node to the neighbouring
+    community that most improves modularity, until nothing moves."""
     comm = {n: i for i, n in enumerate(nodes)}
-    deg = {n: sum(adj[n].values()) for n in nodes}
+    deg = {n: sum(adj[n].values()) + 2 * selfw.get(n, 0) for n in nodes}
     ctot = defaultdict(float)
     for n in nodes:
         ctot[comm[n]] += deg[n]
     order = list(nodes)
-    for _ in range(12):
+    for _ in range(20):
         moved = 0
         rnd.shuffle(order)
         for n in order:
@@ -110,8 +101,10 @@ def louvain(nodes, edges, resolution, seed=7):
             ctot[cn] -= deg[n]
             links = defaultdict(float)
             for nb, w in adj[n].items():
-                links[comm[nb]] += w
-            best, gain = cn, links.get(cn, 0.0) - resolution * ctot[cn] * deg[n] / m2
+                if nb != n:
+                    links[comm[nb]] += w
+            best = cn
+            gain = links.get(cn, 0.0) - resolution * ctot[cn] * deg[n] / m2
             for c, w in links.items():
                 g = w - resolution * ctot[c] * deg[n] / m2
                 if g > gain:
@@ -121,8 +114,57 @@ def louvain(nodes, edges, resolution, seed=7):
             moved += best != cn
         if not moved:
             break
-    remap = {c: i for i, c in enumerate(sorted(set(comm.values())))}
-    return {n: remap[c] for n, c in comm.items()}
+    return comm
+
+
+def louvain(nodes, edges, resolution, seed=7):
+    """Multi-level Louvain: local moving, then AGGREGATE each community into a
+    single super-node and repeat on that smaller graph.
+
+    The aggregation phase is the whole algorithm. Local moving alone stops at the
+    first local optimum and leaves hundreds of small clusters -- this graph gave
+    312 communities without it, against the Amp Hour's 26 for a corpus of the same
+    shape. Collapsing and re-running lets whole clusters merge in one move, which
+    single-level moving can never do because no individual node improves by
+    jumping alone."""
+    rnd = random.Random(seed)
+    adj = defaultdict(lambda: defaultdict(float))
+    for (a, b), w in edges.items():
+        adj[a][b] += w
+        adj[b][a] += w
+    m2 = sum(sum(d.values()) for d in adj.values())
+    if m2 == 0:
+        return {n: i for i, n in enumerate(nodes)}
+
+    level_nodes = list(nodes)
+    selfw = defaultdict(float)
+    membership = {n: n for n in nodes}          # original node -> current super-node
+
+    for _ in range(10):
+        comm = _local_move(level_nodes, adj, selfw, m2, resolution, rnd)
+        if len(set(comm.values())) == len(level_nodes):
+            break                                # nothing merged; converged
+        membership = {n: comm[membership[n]] for n in nodes}
+        # rebuild the graph with one node per community, keeping intra-community
+        # weight as a self-loop so it still counts toward that node's degree
+        new_adj = defaultdict(lambda: defaultdict(float))
+        new_self = defaultdict(float)
+        for a, nbrs in adj.items():
+            ca = comm[a]
+            new_self[ca] += selfw.get(a, 0)
+            for b, w in nbrs.items():
+                cb = comm[b]
+                if ca == cb:
+                    new_self[ca] += w / 2
+                else:
+                    new_adj[ca][cb] += w
+        adj, selfw = new_adj, new_self
+        level_nodes = sorted(set(comm.values()))
+        if len(level_nodes) == 1:
+            break
+
+    remap = {c: i for i, c in enumerate(sorted(set(membership.values()), key=str))}
+    return {n: remap[membership[n]] for n in nodes}
 
 
 def main():
