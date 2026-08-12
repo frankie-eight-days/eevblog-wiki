@@ -1,0 +1,154 @@
+---
+video_id: 9hMsNOwY5AQ
+title: EEVacademy #3 - Bit Banging & SPI Tutorial
+url: https://www.youtube.com/watch?v=9hMsNOwY5AQ
+source: youtube-asr
+---
+
+**Dave Jones:** Okay, today we're going to talk about bit banging. Bit banging is the process of using software to control hardware instead of using already existing hardware to output some kind of serial protocol. Bit banging is usually done in assembly or C or C++ and
+
+**Dave Jones:** it's kind of a tortoise and the hare. It's really quite a slow process and it's not usually all that advisable. Um you often hear a lot of gray beards, you know, you haven't programmed embedded systems till you bit banged or whatever.
+
+**Dave Jones:** Bit banging is actually really simple. All you need to know about bit banging is basically all you're doing is setting and clearing pins. Um so in this little waveform up here, this this waveform up here, um all we're
+
+**Dave Jones:** going to be doing is, you know, we're going to set that point to one, set that point to zero, set that point to one, set that point to zero, set that to, you know, one, then we'll do it again to
+
+**Dave Jones:** one, and then we're going to set it to zero, and then to one. Um this is all bit banging is. You're setting the um the pins. And because this is the earliest time, because you're actually plotting this way,
+
+**Dave Jones:** um you would have set it in this order, this way. So to do this, you know, the lines of code would be really simple. All we would have done is we would have said, let's call the value up here V, and um let's
+
+**Dave Jones:** just say the lines of code are V equals zero, cuz it transitions down. V equals one, cuz it transitions up. V equals one, because it stays up. V equals zero, because it transitions down. And then V equals one,
+
+**Dave Jones:** cuz it transitions up. And then again V equals zero, because it transitions down. V equals one, because it transitions up. And then V equals one, because it stays up here. So usually it's more advisable to use the hardware in a microcontroller or
+
+**Dave Jones:** some embedded system than to bit bang. Hardware handles all of the protocol semantics and you don't really have to worry too much about it being overhead on your processor because it all happens in the background. Um bit banging is for
+
+**Dave Jones:** this reason inadvisable in many applications, but sometimes you just don't have enough serial ports or you don't have the type of serial port you want. So there is some things about bit banging that you need to know before we
+
+**Dave Jones:** really go into how you do it. On a microcontroller, each pin has the ability to drive the output high, low, or be high impedance. Usually when the pin is an input, it is high impedance and this is a trait that you exploit in
+
+**Dave Jones:** bit banging. Um this is a Microchip's uh PIC16F88 microcontroller um pin. And as you can see here, we've got some nifty stuff going on here. It's kind of cool. So we've got a P-FET here, an N-FET here, got some protection
+
+**Dave Jones:** diodes here, and the output pin just here. Um So what they're doing is they have a push-pull driver that sets the value of the output pin. Um so if you say, you know, be one, this push-pull driver just
+
+**Dave Jones:** sets the output to one. Um it just sets it to one. And that's what we're going to do in bit banging. Um if you set it to zero, it of course, you know, sets it to zero. But if you, for
+
+**Dave Jones:** example, wanted to make it high impedance, you wanted to disconnect this output, this is a bit weird, isn't it? So what Microchip's doing is they're using an XOR gate and an AND gate to exploit a trait of these push-pull
+
+**Dave Jones:** drivers that if they're opposite values, if they're not, you know, if they're not connected like this, then the outputs will be one of two things. They will be shorted, you know, power to ground, or both of them will be open circuit, which
+
+**Dave Jones:** is exactly what we want to happen. Because if this wire here is effectively connected to well, nothing if this isn't connected and this isn't connected, um then we basically have it as high impedance. So, what they're doing here
+
+**Dave Jones:** is using an XOR gate to XOR with the TRIS register. When the TRIS register on a PIC is set to one, they want the pin to be an input and when it's set to zero, they want it to be an output. So,
+
+**Dave Jones:** they're using this XOR gate to make sure that when this is one, this value here is the opposite to this. And that means that these pins end up being um open like we wanted. It makes the tri-state pin here. Um and that way we
+
+**Dave Jones:** get that trait. So, they're doing some niftyness here to make sure that the two power supply pins aren't shorted. They're using the AND gate and the XOR gate to make sure that you never have the condition where both the P-FET and
+
+**Dave Jones:** the N-FET are on. So, why would you want to make the pin high impedance? One of the reasons is the I2C interface requires that the pins be open drain. Um each of the pins is pulled up with a
+
+**Dave Jones:** resistor to the power supply and if we were just driving the pins, we wouldn't be meeting the protocol's spec. Um the only way we can do that is by having a open circuit here and allowing the resistor to pull the pin up to the power
+
+**Dave Jones:** supply. So, bit banging in general is usually like a tight loop. The loop is usually a uh series of bit sets and bit clears where between each bit you have some kind of clock. So, a clock line usually is very periodic, something like
+
+**Dave Jones:** this. And between each bit you set, you also have a clock signal so that the other device can clock in the data. Without the clock signal, um the slave device, that is the device that's not controlling the bus,
+
+**Dave Jones:** will not receive any commands at all. So, most serial protocols have a master-slave relationship where the master controls whether the slave is listening or responding or and it sends all the commands. The slave usually won't engage um in conversation. It will only respond.
+
+**Dave Jones:** Because there are very big differences in the way master and slave devices handle their protocol, it is really important to have separate implementations for their bit banging. And usually you wouldn't bit bang a slave. The reason is because if a slave
+
+**Dave Jones:** device is bit banging, then it must always be polling the bus. Otherwise, it might miss communication. And if it's always polling the bus, the program can't do anything else. Um there's no other task that the program can do while
+
+**Dave Jones:** it is polling the bus. So, when bit banging a slave device, they need to do a thing called polling. Polling is basically the process of checking the value of a pin over and over and over and over and
+
+**Dave Jones:** over. And when it changes, you respond. Um when you're bit banging a slave, this can take a lot of time. And it usually takes too much CPU time to make it viable. So, why would you use bit banging? Why would you ever bit banging?
+
+**Dave Jones:** It sounds like it's slow and just worse than using the existing hardware. Well, sometimes you simply can't use the existing hardware. Sometimes you just don't have enough serial ports. Sometimes you've got a few I2C devices um which is a serial protocol
+
+**Dave Jones:** which have the same address and you need to communicate with them. You You need to connect multiple uh multiple different I2C lines to separate them. Um it's either that or a multiplexing solution. And sometimes you just don't want to pay for the extra
+
+**Dave Jones:** chip. All right, it's time to learn about the serial peripheral interface or SPI. Um SPI is basically a four-wire interface, occasionally three, that has a clock line a chip select and two data lines. The data lines are basically data in and data out. SPI has
+
+**Dave Jones:** a master-slave relationship. That means that all the communications are coordinated by the single device, the master. The slave doesn't ever initiate communication. Um the only thing the slave can do is respond synchronously with the clock through the MISO line, the master input
+
+**Dave Jones:** slave output. The master sends data to the slave via the master output slave input. Occasionally, these are named differently, um but I believe this way is the best. The uh RX TX way of labeling is confusing and caused
+
+**Dave Jones:** pretty big problems with uh UART and other serial protocols. So, as I said before, there's four different wires, and um these four different wires are as follows here. And then, these wires only go in the single direction. The chip select, clock, and MOSI uh only
+
+**Dave Jones:** driven by the master. The only line that the slave does drive is the MISO. So, a typical SPI frame has a signal that looks like this. You have a clock line that goes up and down like this, and
+
+**Dave Jones:** then you have a uh select line, which is active low, and you have these data lines. The data lines are synchronized with the clock, and they could be synchronized with the rising edge or a falling edge. So, SPI isn't as basic as the previous
+
+**Dave Jones:** picture made it seem. It actually has a thing called polarity, which complicates this interface, which basically indicates the idle state, that's this line here, that the clock line returns to. That is the the logic level that the clock line is on when it's not
+
+**Dave Jones:** communicating with any devices. So, in this case, polarity is zero, and it is logic low before and after SPI frames. In the case where it's polarity one, the idle state is high, as you can see on this line. Um they are basically just
+
+**Dave Jones:** upside down. You can think of the polarity being one being the clock-line inversion. So, the first edge of polarity zero is actually a rising edge, and the first edge of polarity one is a falling edge. This means that when you
+
+**Dave Jones:** implement a protocol for this in bit-banging, or maybe you just want to look at your oscilloscope and try reverse-engineer what you're receiving, you need to know, you know, am I reading on a rising or a falling edge? Um
+
+**Dave Jones:** in this case, we have the middle of the byte, that's kind of when you want to read, um or clock in data, is right in the middle. So, we're reading on that rising and that falling edge. Strictly speaking, that isn't the
+
+**Dave Jones:** end of the complexity of SPI. So, as well as the polarity, the up-so-downness of the clock line, you also have the phase. And that basically is when are we clocking in and clocking out data. So, a phase of one is basically shifting the
+
+**Dave Jones:** data by half the period of the clock. See, the distance between these red lines is the period of the clock, and notice when phase is one, we've shifted the data across by half. In this case, the data is clocked out on this first
+
+**Dave Jones:** red line, and then it is read on this blue line here. That is when phase is one. When phase is zero, it's initially the data, and then it reads on this first line here, clocks out on the blue
+
+**Dave Jones:** line, reads on the red line, and you get the opposite for phase one. This can be a bit confusing in code, because it does make your code look a little higgledy-piggledy. is much more complicated to implement than the
+
+**Dave Jones:** polarity. Usually in bit-banging libraries, you have a very simple implementation. You don't need to usually implement all the different variations in polarity and phase. That's is because you usually have a very specific application in mind, and it's unlikely, and I've never seen it before,
+
+**Dave Jones:** that a chip implements simultaneously, for example, polarity zero and one. Chips do often have support for two different SPI modes, though, but it's not 0 and 1. It's often pairs um two after each other. So, for example, they
+
+**Dave Jones:** have support for everything with polarity zero or with polarity one. This is why in data sheets like this one you often see this type of list. You see a polarity is zero and zero or polarity is one and one. A common way you see the
+
+**Dave Jones:** SPI bus connected is as this diagram shows here. You have all the different devices connected to the same bus and selected with separate chip select lines. When the device isn't selected, these pins here go high impedance and it
+
+**Dave Jones:** is as if the master is communicating directly to the slave it chooses to. Okay, so to demonstrate bit banging, I've got a small library in C++ that basically emulates um a bit banged SPI port. And we're going to use this
+
+**Dave Jones:** library to test whether we've implemented the bit banging correctly. So, we're just going to run it now and it's spit out some data. We're transmitting the number 12 on the four different SPI modes. So, let's just copy all of that
+
+**Dave Jones:** and put it into a spreadsheet. So, we've pasted the data into a spreadsheet and this can be useful if you're you've only got an oscilloscope, not a logic analyzer. You can compare what the wave looks like on the oscilloscope to what
+
+**Dave Jones:** we have in a plot like this. So, in this case we do in fact have 12. So, as you can see on this this edge here, the uh the rising edge, we have one and on this edge here we have another one followed
+
+**Dave Jones:** by two zeros. And that is how the number 12 looks in binary. So, this is um what we expect and as you can see the polarity is different like we expect where the default value, the idle value, is
+
+**Dave Jones:** high when polarity is one and it is low when polarity is low. The phase is doing the same thing where the the waveform appears to be shifted by half the period. So, what does a write routine look for a bit banged spy port?
+
+**Dave Jones:** So, we've got to be talking with all the four pins to implement this and we have to transmit and receive eight bits. So, that means we need to have a loop that goes around eight times. But before and
+
+**Dave Jones:** after that loop, we need to select and deselect the line. So, that means to put it to logic low and then after the frame, bring it back to logic high. These two lines here and here handle all the chip select nonsense. And in the
+
+**Dave Jones:** middle, we can focus on the bits. So, the first thing we do is set the data pin the MOSI's value. If the the most significant bit of the input is one, then we want to set the pin to be one.
+
+**Dave Jones:** Following that, we do the first rising clock edge and then we input some data from the buffer. This is um a standard order to do this. And then we want to lower the clock edge again ready for the
+
+**Dave Jones:** next loop around. Before we go around again though, we need to make sure that our next bit that we send isn't the same bit. We need to move the second most significant bit to the position of the most significant bit. And we do this
+
+**Dave Jones:** with this shift operation. So, after then we go round to the top again and then we're sending the second most significant bit. And then it'll go round and round and round till we're at the the eighth bit in the byte and then it
+
+**Dave Jones:** will follow through here, return it to the the idle state and deselect the line. Okay, so here we are loading up Code Composer and um we're just going to show I'm just going to show that the code is exactly the same between
+
+**Dave Jones:** platforms. This is why the Visual Studio Excel testing thing is kind of okay. So, I'm just going to copy my Git for the Visual Studio code. Literally just copying it. Here we go. And now we're just going to go to the
+
+**Dave Jones:** I2C thing in this library here. I'm just going to paste over the top. Um There we go. So, now it's identical and we're going notice run it straight away. No changes. And yes, it builds and it's loading onto the
+
+**Dave Jones:** platform now. I'll um And uh before I start simulation, this is our setup. This is the Tiva uh C setup. It's a TM4 microcontroller. It's like from 2014, Texas Instruments device. Um and we've got a Saleae Logic Analyzer
+
+**Dave Jones:** um bringing feed back into the computer. We can read back the SPI frame in um the Saleae Logic um on the PC. So, we can confirm that our protocol is correct. Okay, we're just going to run it now.
+
+**Dave Jones:** And the application is configured to only transmit when I'm pressing the button. So, I'm just going to open up Saleae Logic. Okay, so we've set up the logic analyzer now. We're just going to start simulation. Okay, we've clearly collected too much
+
+**Dave Jones:** data, but here we have the SPI frame. So, we've got a few things um transmitting at once here. So, let's see if we can figure out what's happening. So, what we have here is um the SPI frame, a single SPI frame with a
+
+**Dave Jones:** uh clock line here and the chip select here and the data here. So, what are we transmitting? What number? So, in this case, we're writing a count. So, the port zero is sending the even numbers and port one will be sending odd
+
+**Dave Jones:** numbers. So, here we have the port zero up the top sending 42 and then we have port one sending 53, 45, 47, all the odd numbers and each of them going up by two and the port zero is doing the same, 42, 44, 46,
+
+**Dave Jones:** 48. So, we can confirm that it is receiving the frames correctly and Saleae Logic um the Saleae Logic Analyzer is correctly interpreting our frames. So, I hope you found that useful and I hope that you learned a little bit more about the SPI
+
+**Dave Jones:** protocol, bit banging, and how you can use, you know, simulations on the PC to help out in your debugging. Bye.
+
+**Dave Jones:** Mhm.

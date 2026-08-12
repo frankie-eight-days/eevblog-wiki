@@ -1,0 +1,320 @@
+---
+video_id: 4VTtkF5fzMM
+title: EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout
+url: https://www.youtube.com/watch?v=4VTtkF5fzMM
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, this video was inspired from a tweet that I got and it was from someone by the awesome name of Johnny Cage. I love us. Ferris tweets now. Fantastic. Absolute that's a winning name. I love it. Johnny Cage. Not this cash rubbish. It's Cage.
+
+**Dave Jones:** Anyway, and there's Ben. Hi Ben. He's in on the action, too. And basically the question started out being I'm seeing a lot of 4 8-bit digital computer project using TTL logic. Um from limited FPGA experience, I know that meeting timing is critical
+
+**Dave Jones:** for a functioning design. Yet on these simple projects, nobody seems to talk about this and talks about signal propagation delay through the wires is much faster than through digital logic. Can a design like this be routed that these constraint without the constraints
+
+**Dave Jones:** being violated? What frequency is this relevant? And he talks about that what could be problematic like routing a clock signal too far away from registers and other things where they have to go through other gates and take other paths on the PCB and it it
+
+**Dave Jones:** gets complicated. At what point does it become an issue and he'd like someone to clarify this. And Ben asked, "What's the question?" I guess the question is for simple slow 4 8-bit computers, for example, the Gigatron, is propagation delay for digital signals
+
+**Dave Jones:** an issue in the design layout of the board and at what clock frequency roughly would this become a big issue? Well, this opens a rather big can of worms. It's in some respects fairly easy to clarify. In other respects, well, no, we
+
+**Dave Jones:** have to chase a red herring down a rabbit hole yet again. But it's something a lot of people have asked me about over the years and that is what point do I have to start doing these serpentine traces
+
+**Dave Jones:** in a design, for example, to match the length of the traces going to memory and and stuff like that. Like, why and at what point and at what frequency do you do this? Well, I I kind of replied this in my tweet here. It
+
+**Dave Jones:** only becomes an issue really at sort of like DDR level speeds. Like, you know, when you start talking 100 MHz, couple hundred MHz of clock rates and stuff like that. But, not necessarily, but in generally for high-speed design like
+
+**Dave Jones:** this cuz most people are not going to design their own, you know, TTL computer like this. But, uh FPGA stuff, for example, has timing requirements and there are specific timing analysis tools that you can use inside FPGAs, but
+
+**Dave Jones:** that's a whole 'nother can do a year's worth of a series of videos on uh just that issue. But, it basically on DDR or double data rate memory, which if you don't know, uh DDR stands for double data rate, and
+
+**Dave Jones:** that's when uh data is actually clocked on both the positive and the negative edge. So, twice per clock cycle. And the first thing I mentioned in my tweet is the traditional rule of thumb, which you must know when you're designing
+
+**Dave Jones:** electronics, laying out boards, and stuff like that, is the signal propagation through a trace on a PCB is approximately 1 ns of propagation delay for every 15 cm or 6 in for you Yanks of uh PCB trace. So, you've got a a trace
+
+**Dave Jones:** which goes from here over to here, and it's 15 cm long, it takes 1 ns for that signal to travel across your board like that. So, if you've got your CPU over here and your memory over here, like 15
+
+**Dave Jones:** cm away, for example, then it's a 1 ns propagation propagation delay from your CPU to your chip. But, more importantly, and the difference with serpentine traces and trace length matching, which is what this video is really going to be about
+
+**Dave Jones:** and why you sometimes have to at what point you really think about having to do this sort of thing is that um often you can't route all your traces across. Ideally, you should you should prioritize when you're routing out PCBs,
+
+**Dave Jones:** you should prioritize high-speed memory buses and things like that. But let's just say for the extreme example I put in Twitter here is that if you had one of your signals for example, one of your data pins take an extra 15 cm path to
+
+**Dave Jones:** all your other data pins. So that's a real extreme example of a really bad constrained PCB layout, but even then that'd only be a 1 ns difference. So if you look at a 100 MHz DDR memory, which clocks on both cycles, so you've got 10
+
+**Dave Jones:** ns for one cycle, but because it clocks on both the positive and negative edge, it's half that or every 5 ns, you've got a 1 ns delay in there for your 5 ns uh you know, clocking intervals for your data. So
+
+**Dave Jones:** that really it starts to become a very significant issue uh at that point. But that's for 100 MHz, but that's for extreme case of 15 cm difference between your best-case signal and your worst-case signal. But it gets crazy
+
+**Dave Jones:** complicated with a design like the Gigatron, which is a TTL computer like this because well, okay, there's memory here and there's memory over here, but all these registers and everything else in the actual processor, it's all over the shop. And really, when you're laying
+
+**Dave Jones:** out something like this, you wouldn't put any thought into really the layout of this and optimizing it for speed. You may, if you're going after the absolute best possible speed you could for something like this, but generally you
+
+**Dave Jones:** wouldn't bother. You'd just end up with what you end up with. So, when you finish your design, your layout, you build it up, and it works. The thing with these sort of computers is you just want them to work, right? You don't care
+
+**Dave Jones:** whether it works at, you know, 9 MHz or 10 MHz, for example. Not really that important. It's going to work at several megs, for example. I think the Gigatron, I think I've tested it up to about 8 MHz, and it works. Works over that. Uh
+
+**Dave Jones:** you have to change the chips from 74 HC on here. I believe uh the designers of the Gigatron have used 74F series chips or fast TTL chips, um which reduces the propagation delay through the actual chip itself uh compared to the HC chips.
+
+**Dave Jones:** And I think they've gotten up to, don't quote me, it's like, you know, 15 megs or something like that. But really, like, nobody cares. In theory, it is possible to actually simulate this and work out, you know, the worst possible
+
+**Dave Jones:** propagation delay and at what point it would fail in your architecture of your processor and stuff like that, but uh god, you wouldn't bother. Really, that's just no. No. No. No. But it really becomes a big deal on a complex design like uh
+
+**Dave Jones:** something like this. This is a 12-layer open-source hardware. I'll link it in down below. It's um some Argentinian thing. Fantastic. Anyway, it's a Xilinx Kintex a 7 FPGA with two ARM Cortex A9 processors in it. It's got 1 gig of DDR3
+
+**Dave Jones:** memory. And if you have a look at here, it's a 12-layer board. It's got the It's got big-ass processor on here. Here's your DDR memory. Here's your expansion. And look look at all of these serpentining traces. They do this to
+
+**Dave Jones:** match the trace lengths, so there's no uh skew or difference between one data pin and another data pin or a clock pin and a or another clock pin or something like that. They even them out not only to memory but also to
+
+**Dave Jones:** this expansion like header up here as well. So, you know, it and not only between signals but also between individual pairs. We'll get into that as well. But as I said in my tweet, DDR3 well, DDR level memory is sort of once
+
+**Dave Jones:** you start getting into the hundreds of megahertz, this is where it really starts to matter. So, anyway, I thought we'd just do a little dive into some data sheets and stuff like that and just find out exactly why do you have to do
+
+**Dave Jones:** this and at what speed does it matter? Well, let's go into it. But unfortunately, there's some one thing I'm going to leave out of this video and I have to. That will be signal integrity because you'll notice that the these
+
+**Dave Jones:** these traces down here, these are thick traces. They are thicker than your other signal lines going signal lines going around here like this. This means that they're obviously doing like a controlled impedance trace cuz there's a big ground plane underneath here. So,
+
+**Dave Jones:** you can see see that there. So, signal integrity is another thing entirely even on this which I've done a video on like a removing bypass capacitors months in on a board like this. Does it have an effect? Well, on on something like this
+
+**Dave Jones:** DDR level memory on your computers that you're familiar with? Um yeah, it's a big deal. Signal termination, signal integrity, stuff like that. You'll see termination resistors. There's different techniques for termination and stuff like Oh yeah, have they got termination resistors at
+
+**Dave Jones:** the end here? Um I don't I haven't looked into this design. But anyway, that also factors into the equation of not just propagation delay of signals but signal integrity as well cuz then you can get reflections and I that.
+
+**Dave Jones:** Like, blah. Truly, if you want to analyze this sort of stuff properly, you're going to take signal integrity into account as well. But today, we're only going to look at signal propagation delay times. And set up and hold times and all that
+
+**Dave Jones:** sort of jazz. Let's get into it. So, this propagation delay rule-of-thumb which I've been talking about, it comes about because a propagation delay on a signal on a bit of copper on a PCB is different than it is through a wire or
+
+**Dave Jones:** free air because of the dielectric constant of the PCB material. What are the fiberglass that it's actually made up with? And you've maybe heard dielectric constant before. A typical FR4 PCB might be four or four and a half
+
+**Dave Jones:** dielectric constant. And there's formulas, I'll link in this down below. This is from uh just Sierra Circuits. And there's formulas where you can calculate this sort of stuff. And you can even go deeper down into the material science of it and things like
+
+**Dave Jones:** that. But basically, er is the dielectric material of constant of the material. But it basically comes down to here it is uh 6 in per nanosecond for a typical thing. That's what it is. But it varies between PCBs
+
+**Dave Jones:** cuz the materials vary. Like, standard FR4 can vary quite significantly in in its dielectric uh constant. And there's better materials. For example, Rogers Corporation make very expensive, very schmick PCB materials for RF applications and other controlled impedance applications. If you're doing
+
+**Dave Jones:** a a really high-end DDR4 memory board or something like that where the data rates are phenomenal, you know, high-speed FPGA and all sorts of, you know, memory interconnects and architecture and stuff like that. Well, you might be using a
+
+**Dave Jones:** more controlled impedance PCB cuz something like this, look, you can choose your dielectric constant from 3 to 10. Knock yourself out. Look at this. This one down here, it's PTFE ceramic dielectric constant 3 plus minus .04. Thank you very much. Real expensive
+
+**Dave Jones:** exotic materials you can really do your controlled impedance traces, but you know, for most designers, just a regular FR4 and just knowing roughly what the dielectric constant is and using a rule of thumb, good enough. And if we're
+
+**Dave Jones:** going to a PCB calculator like this Saturn one, which I highly recommend is the best out there, then we can have a look for a typical trace on top of your PCB like this, typical propagation delay. They have it for picoseconds in
+
+**Dave Jones:** centimeters and you'll enter your ER up here, your dielectric constant. Uh you know, like a typical 4.5 for example, and you solve and it's basically 57.6 picoseconds per centimeter propagation delay. And if you change that to four and it's changing from 57 to 54, even if
+
+**Dave Jones:** you go down to extreme three or something like that, you know, it's not varying by a huge amount. So, if your designs are that critical on your propagation delay to actually work, then either you're working on some bleeding
+
+**Dave Jones:** edge system at daylight speeds or you're just you're doing it wrong. You're You're being too critical on your design constraints. You're not being loosey-goosey enough. Yeah, you could come a gutser um and really you shouldn't on something like this. You should be operating with
+
+**Dave Jones:** reasonably good design margins where using a rule of thumb is more than enough. And you'll notice, of course, this doesn't change with frequency. There's 500 MHz, let's drop down to 100. Oh, that doesn't change any, does it? No, it doesn't because it makes
+
+**Dave Jones:** absolutely the frequency doesn't matter. It's the just the propagation delay the signal. And of course, that can change with how your signal's routed on your PCB. As I said, this one is on the top layer with your ground plane
+
+**Dave Jones:** underneath like this. Well, that's microstrip, of course, and I've I've actually tweaked my dielectric constant to give a spot-on almost spot-on 50 ohms 50 ohms I'm thinking impedance up here. No, 50 picoseconds per centimeter here. So, let's actually change that to
+
+**Dave Jones:** microstrip embedded. Oh, we've gone up to 55 because it's embedded inside your dielectric material. That's the green part there. And stripline like that, 59. So, look, it's you know, it's gone up fairly significantly. That's 20% difference right there in your
+
+**Dave Jones:** propagation delay just because you've put your signal in there. So, if you've got your 12-layer board like this one here, good luck trying to You can get simulators for this sort of stuff. You know, you can do it field solvers and like real
+
+**Dave Jones:** expensive uh software to do it. But, look Look at all these Look at all these serpentine squiggly traces in here. So, yeah, trying to figure out like exact propagation delays of all this sort of stuff. That's why you should be
+
+**Dave Jones:** designing with like a rule of thumb with margins kind of thing. Like it's it's just yeah, to try to analyze this. You might have to, as I said, bleeding-edge stuff. Yeah, maybe. Okay, knock yourself out. But, um generally, yeah, you
+
+**Dave Jones:** shouldn't have to. But, be aware. That matters. Even the weave of the PCB dielectric material, you'll notice like if you have a look at the construction of it, it's weaved like this. You know, it's a woven pattern. And if you run
+
+**Dave Jones:** your signal actually on top of one of the weaves and the or then like in the direction that it's going, you get a different dielectric constant than if you do if it's passing over the ones running in the other direction like that. That can
+
+**Dave Jones:** matter as well. That can change your propagation delay right there and your signal integrity and everything else. So, let's take a look at a a discrete design like this Gigatron. It uses the absolute classic 62256 SRAM, which has been around from day dot
+
+**Dave Jones:** 32K SRAM chip and it's available in fast access times from uh 45 up to 85 nanoseconds. So, let's take the fastest 45 nanoseconds. Right off the bat there, you've got the fastest design you can possibly get uh for your computer using
+
+**Dave Jones:** this um and nothing else considered is about 22.2 MHz. Um that's as fast as you can access the memory on this thing. You can't cycle it any quicker than that. So, right off the bat, you know your rule of thumb that 15 cm per 1
+
+**Dave Jones:** nanosecond. So, right off the bat, if you Please excuse the crudity of model. Didn't have time to build it scale or to paint it. Um let's say this is your 62256 chip here. This is the physical layout of board. Let's say this is your
+
+**Dave Jones:** processor chip over here. I know the address lines don't match up. You don't actually have to match up the address lines, by the way. Little routing trick there. You can actually Depends on the design. You can actually It doesn't
+
+**Dave Jones:** matter where in this memory you actually store something. Depends on the design. But, you can actually swap data and address lines because it's just a random array of It's just an array of It's just a memory array in there. Do you care
+
+**Dave Jones:** that it stores it in this part of the thing? No? No. You know, you've got some routing constraints like this. Uh this is what I was talking about before about prioritizing your layout. If you knew that memory speed was important, you
+
+**Dave Jones:** wouldn't whack memory on the other side of a processor over here, memory over here, for example, and then one corner in there you've got to cross the board and you've got to go all higgledy-piggledy with your traces and
+
+**Dave Jones:** everything else. You wouldn't do it. Anyway, but look, this trace here is just by natural layout is going to be half the length, less than half the length of the one on the outside here. That could be 30 cm. Let's say it's
+
+**Dave Jones:** extreme like that, right? That's only 2 ns out of our 45 ns. Whoop-dee-doo. It's not just the layout of the board is not going to affect a design like this. Not a chance. That's why computer designers in the '80s really
+
+**Dave Jones:** didn't have to take this into account in general sense. They They might have for various like like niche parts of the design, but overall in the basic scheme of things, no, you just didn't care. But of course, this is where you get up to
+
+**Dave Jones:** your setup and hold times and you can get into our way. Yeah, there's our Yeah, there's our read timing waveforms. Brilliant. If you're doing serious design, and maybe if you want me to do a video on how to read these kinds of
+
+**Dave Jones:** timing diagrams and things like that, please please let me know cuz that's an interesting thing. How do you What is all the What are these things mean? What is it What is all this? I don't get it. You know, anyway,
+
+**Dave Jones:** propagation delay like for example, the address or the data might have to be on the pins a certain amount of time before the clock pulse comes along and that's called your setup time. Your data or your address your input data to your
+
+**Dave Jones:** chip has to be set up before that clock edge comes along. But in this particular case, aha, of course, there's nothing in the read cycle for the setup, but if we go into write, address setup time, there you go. It's actually 0 ns. So there is
+
+**Dave Jones:** no address requirement. So your data has to doesn't have to be there. So you've got Well, let's say that your clock rate was 20 MHz for example, you've got a whole 50 ns to get all of your address signals
+
+**Dave Jones:** over there before you clock in uh that address cuz there's zero setup time required. But, depending on how your computer works, your processor, your processor architecture, or your FPGA, whatever it is that you're reading the data, okay, you can you request your
+
+**Dave Jones:** data, for example, it comes out of the chip, but it might be latched into the processor on one of the half cycles, for example, opposite clock edge to what you used to get it out of the chip. So, you
+
+**Dave Jones:** might only have your 25 nanoseconds to get your data across. And then there might be setup time on that particular uh data and things like that. So, yeah, you might have to go into that sort of detail. And when you're talking about a
+
+**Dave Jones:** TTL computer like this, where the processor is actually made up of all these chips, each individual chip, the register in your chip will have its own propagation delay time. And as I said, trying to analyze something like that is
+
+**Dave Jones:** just nuts. That's why you wouldn't bother. You'd go mentally insane. You'd have to call the white van and take you away because you just you build it up and you see if it works and then you adjust your clock up and oh, look, it
+
+**Dave Jones:** works up to 10 MHz. Beauty, but it doesn't work at 11. Nah, whatever. Like if you went in if you're a sane enough, you could go in and look at Let's go down, have a look at the propagation
+
+**Dave Jones:** delays. Here they are. You just scroll down until you see the nanoseconds-es. 12 nanoseconds, that's typical, but that's going to vary with voltage, with temperature, with all sorts of stuff. So, there you go. I like you know, right
+
+**Dave Jones:** there, you combine that with all the other dozens and dozens and dozens of chips on here. But, as I said, you could use a faster logic 74F, for example, it's going to have a faster propagation delay time than this. So, yeah, you
+
+**Dave Jones:** might be able to eke out a more speed more speed from your design by doing that. But, generally, yeah, you're going to be constrained in these TTL type designs drastically. All right, let's take a quick look at DDR memory. As I
+
+**Dave Jones:** said, on this uh processor board that which uses DDR4 memory. Now, this won't be a DDR3 tutorial cuz no, that's a 1-hour video in its own right. Um this we'll just have a quick look at the data sheet
+
+**Dave Jones:** here. So, here's our termination resistors over here, 40.2 ohms. They go to a specific midpoint termination voltage, and I won't go into the reasons why. It's a complex issue if you really want to get into termination of DDR memory and all that sort of jazz.
+
+**Dave Jones:** Anyway, you don't pull them high, you don't pull them low. It's It's a to a voltage series voltage source. Anyway, um yeah, this is the memory chip that we're using, DDR3. So, let's Here we go. It's a Micron jobbie, and it's you know,
+
+**Dave Jones:** it's it's pretty new tech. Let's Let's take a look at this thing. These are our cycle times down here. Look at this, 938 picoseconds. We're talking puffs here, none of this nanosecond rubbish, right? For the DDR3 2133. Not sure what value
+
+**Dave Jones:** we have on this design, but we're down into the 1-nanosecond class timing here, right? Then this is just cycle, let alone uh propagation delay and skew between signals. You'll hear me start talking more about skew rather than uh
+
+**Dave Jones:** propagation delay at this point. Because what we start talking about now is a difference between one signal and another. So, the skew between the signals. You want everything to be clocked all at the same time. You want all If you send out an address from your
+
+**Dave Jones:** processor to your memory chip, you want them all all the pins to arrive there at the same time. That's why you want a length match. And when you're down in cycle times like 1 nanosecond, it's really going to matter. And these data
+
+**Dave Jones:** sheets have 200-plus pages for a reason. I can't possibly go into all the details of driving and memory. I think just the state diagram is enough to scare you all away. Well, as always with these videos, I didn't actually plan before I went
+
+**Dave Jones:** ahead with this. I just pressed record and then and see what happens. And I started going through the data sheet and I'm just like my eyes are rolling. How do I increase the signal-to-noise ratio here and pull out the important stuff?
+
+**Dave Jones:** So I went, "Oh no, I look bugger it. Micron have probably got an app note that that that will make it a bit easier a little bit easier for us anyway. And sure enough they do. I'll link it in
+
+**Dave Jones:** down below. Point-to-point simulation process. And this talks about your timing budget, which is a big thing that you'll hear in these types of designs when you're like you wouldn't always do this. If you're laying out this board here, right? Like you wouldn't I would
+
+**Dave Jones:** not go in and do a timing budget for for something like this. I I just really wouldn't like waste my time doing Sometimes it's not a waste of time, but I really wouldn't bother. All I would know is that right, let's just match the
+
+**Dave Jones:** lengths of the traces and that's it. And and just be done with it, right? You don't have to worry about stuff like like how how close do I need to match? Just match them to within not like half
+
+**Dave Jones:** a bee's dick, you know, 5 mm or something like that. Set some constraint in there. Match all of the lines to the DDR together. And then and then you don't have to worry about doing the sorts of stuff which we're about to take a look
+
+**Dave Jones:** at here, looking at analyzing error budgets. There's a clock source, there's a transmitter which might be your processor {slash} FPGA. For example, there's data and strobe lines and there's receiver and these all have skew or propagation delay. Just think of skew
+
+**Dave Jones:** and propagation delay is the same they're effectively the same thing. They you've got the transmitter skew here. You've got the PCB skew, which is the thing we're interested in, and the receiver skew as well. Like the internal setup and hold propagation delay times
+
+**Dave Jones:** inside the chip and the transmitter as well when it's sending data back. So then they talk about the signal integrity process. As I said, we won't talk about signal integrity, but it does impact these things. So anyway, in this
+
+**Dave Jones:** particular case, they've got a 266 MHz period, which is a 3.75 ns half period because it's it's DDR, double data rate. So we've got a setup budget of 1.8 nano 1.875 ns cuz we're working 1,800 ps. We're now down in the picosecond region
+
+**Dave Jones:** here, right? This is This is real engineering. And then we've got our hold budget of 1875. And then they've they've pulled out the transmitter skew. Well, they tell you where they get it from, the vendor data sheet here. And then
+
+**Dave Jones:** they then they tell you that what budget do we have left over? We have 585 ps for our PCB skew. So that's the longest period that we can afford the biggest mismatch we can afford to have between the traces on our PCB. And it
+
+**Dave Jones:** it'll might tell you which traces we go down into, but basically setup and hold times are exactly the same. So right off the bat, we get our confuser here. And so 150 mm, none of that inches rubbish. 150 mm uh times 0.585
+
+**Dave Jones:** cuz it's a nano per nanosecond. So we're talking uh 87 mm, 87 mm difference that we can have, maximum difference, between Let's just say all of our traces for our chip. We don't know exactly which ones yet, but you know, let's just keep it
+
+**Dave Jones:** simple. So there you go. Up to 85 That that 87. That sounds like a lot. And we won't mention voltage margin and stuff like that. Let's just Let's just not go there. This is an interesting diagram. It shows the skew and how the the data's
+
+**Dave Jones:** only valid within side here. If your skew, let's say your skew is this big here, then it would start impacting into the squeeze in that the eye narrows. It's called the eye, and it narrows and narrows and narrows until well, your
+
+**Dave Jones:** operating valid window for your data is not full. And then your system just completely falls over. And the reason we don't go into signal integrity is because well, yeah. Just gets a bit complicated, don't it? But aha, the board skew budget, we have to
+
+**Dave Jones:** actually break that down even further. It gets more complicated. The components that make up the board skew budget include ISI, Vref noise, path length mismatch, which is the main thing that we're talking about, crosstalk, input capacitance mismatch, termination
+
+**Dave Jones:** resistor tolerance, the type of termination, where the termination resistors are. Nuts. So, we can look at the different components here, and they break them down, which is really good. First of all, we've got the ISI, which is intersymbol interference. What that
+
+**Dave Jones:** basically means is a symbol is is what's inside the eye here, right? The the type of data that you've got in there, and due to reflections on your PCB, you might have one data interfering the previous data interfering with the new
+
+**Dave Jones:** data because then you've got some overshoot, undershoot, some reflections coming back, and that can interfere. Sometimes, sometimes not. It doesn't always happen cuz your data's always changing. So, some symbols, some the combination of data may interfere with another combination of data if they're
+
+**Dave Jones:** in the right order, depending on termination. So, like it's it's to do with the data that you're actually transferring, not just the fact that you've got your termination right. Anyway, into symbol interference. And And that's what it tells you. It can
+
+**Dave Jones:** cause by the bus running faster than it can settle, basically. Um cuz you need time for it to settle before you send the next data so that your data doesn't interfere with from the previous data due to signal integrity issues. So,
+
+**Dave Jones:** anyway, that is a component of that. And then you got crosstalk between your signals because your signals are right next to each other and they're they're talking and they're coupling. And if you're routing them, they're typically running parallel like that. And when you
+
+**Dave Jones:** have traces running parallel like that with no ground shield in between them, you get capacitive coupling. If traces just cross like that, the crosstalk's very little because there's little mutual capacitance between them. But when you're running buses like this all
+
+**Dave Jones:** the way up, then the crosstalk can be very serious. And we won't go into differential mode, common mode. We get into signal integrity. Come on. And coupled circuits is all just part of that. We won't talk about crosstalk effects, blah blah blah.
+
+**Dave Jones:** VREF noise, that's a thing. As I said, the termination the volt is terminated to a mid-rail voltage reference. You can actually get specific voltage reference DDR termination chips that are actually designed to do this. And the noise of
+
+**Dave Jones:** these reference voltages impacts your budget for your timing budget for the amount of skew that you can have on your PCB, the difference in your traces. So, for example, with a 0.5 V per second edge rate and a 50 mV VREF noise, it's
+
+**Dave Jones:** it's 200 picoseconds of And there you go. It's extremely important aspect of DDR SDRAM design. When laying out the trace, it should be as wide as possible to reduce inductance on the line. So, really, here's where signal integrity
+
+**Dave Jones:** does matter just on getting your voltage reference. And I've done DDR designs where I've decoupled and inductor isolated the V ref to buggery because it it it matters. And then they tell you about the space into adjacent signals
+
+**Dave Jones:** from the V ref cuz you typically want to keep your V ref isolated from crosstalk from other signals as well. So, not only crosstalk between signals, but crosstalk between your signals and your voltage reference for your termination resistors. And this has a large impact
+
+**Dave Jones:** on your total timing budget. And here we were just going to talk about like propagation delay of traces. No, it's more than that. Then you've got input capacitance variation. Look at your data sheet. We could go in and see
+
+**Dave Jones:** what our input capacitance variation is. Should we do that? Oh, yeah, why not? Look at all this ODT sensitivity definition to do with the IO calibration. Oh. I found it. You search for capacitance and Bob's your uncle. Look
+
+**Dave Jones:** at this. Input-output capacitance. Ta-da! But look at this, the variation 1.4 to 2.5. That can ruin someone's day. And someone could be you. And would you like single-ended or differential fries with that, sir? So, anyway, yeah, that could matter.
+
+**Dave Jones:** Let's get down here. Here we go. Here's our timing budget, okay? So, this is You remember this was a transmitter skew, the receiver skew, and all of this stuff down here is the stuff that's made up is our budget for our total PCB skew,
+
+**Dave Jones:** basically. But, if you have a look here, the path length mismatch, that's all we got. That's all we got. Calculation from spec when you subtract all the other stuff from the total, what was it? The 580 or whatever picoseconds that we had,
+
+**Dave Jones:** when you take out crosstalk and and intersymbol interference and V ref noise, it it doesn't leave you much budget. 30 picoseconds. So, yeah. What's that? Get the confuser out again. So, average PCB at, you know, the our rule
+
+**Dave Jones:** of thumb, 150 uh millimeters uh times point uh 05, 50 picoseconds, we're talking 7.5 mm. There you go. So, 7.5 mm just just off the bat there is kind of like the worst case we could get if we were using
+
+**Dave Jones:** the laying out this board with this chip, and that would include the the, you know, the PCB weave uh problems, variation in the dielectric constant of the PCB material, stuff like that, right? We're not including any of that.
+
+**Dave Jones:** So, right off the bat there, seven and a half. So, good design prudence would say you would at least halve that to be on the safe side. So, you know, as I said, like you'd be down in the millimeters
+
+**Dave Jones:** before I kind of guessed, you know, did did say the lesson like 5 mm difference. There you go. That's why. Um because, right? So, you'd say, "Oh, like a couple of millimeters difference, for example." Because when when you're
+
+**Dave Jones:** laying out this kind of PCB, you can do it. I've done it without the uh the tools to automatically uh drag and do the, you know, when you drag your if you differential pair or your single uh pair
+
+**Dave Jones:** to match the lengths. I've done it without the automated tools to do that. But when you have a PCB tool, and I believe KiCad, although I haven't actually used it, believe KiCad actually does have route, here it is, tune track
+
+**Dave Jones:** length, tune uh differential pair length, and things like that. I haven't used it. Anyway, we can somehow tune that, and we can set the parameters and things like that. I haven't used this in KiCad. Um so, please forgive me. But
+
+**Dave Jones:** anyway, when you've got an automated tool to do it, you may as well set fairly precise constraints. You know, there's no reason why it can't be we a millimeter or two, something like that. So, you wouldn't go, "Oh, I've got 7.5
+
+**Dave Jones:** mm to play with cuz I calculated my timing budget. I'm a hero." And I spent a whole week working on my timing budget. And no, just just lay out your board so that you've got no skew between the signals. They're
+
+**Dave Jones:** matched to within a millimeter or two. So, anyway, that is why you see all of these little zigzaggy serpentine traces like this on boards is because they're trying to match the lengths. In this case, which is what's this signal? There
+
+**Dave Jones:** There you go. Yeah, this is DDR. So, this is actually a differential pair. Okay, so this is a the positive and negative. You can see it. The DQS3 negative and positive. So, they're actually So, this is why you're keeping
+
+**Dave Jones:** the pairs going like that. And this one is a good example. Just happens to be a good example because look, not only do you have to match the length of this pair here to data pair four and five and six and
+
+**Dave Jones:** seven, you match those lengths between the pairs, you also match the difference. This is why it's got an extra little kink in here. Look at this little kink going out here like this. And the other one doesn't have it
+
+**Dave Jones:** because you're matching the difference between uh D3 positive and negative. So, you match the length there. And your tool your automated tool can actually do this. And and you can do it manually. I've done lots of boards where I've had
+
+**Dave Jones:** to manually add in the squiggles. And it's a lot more work. So, why these tools are valuable in a PCB when you're laying out DDR memory is you know, it can save you a lot of time. Can do the
+
+**Dave Jones:** push and shove. And it does You just set it up, you know, I want this maximum difference between your pairs like this. So, it'll add in these little kinks. There's another little kink out here as well. You can see that. And and then
+
+**Dave Jones:** it'll also match those between the pairs as well when you when you manually laying them out. Or if you're auto routing, but don't auto route. Manually route. Anyway, that's why you have these two different types of serpentine traces
+
+**Dave Jones:** like this, both within a differential pair and between differential pairs or between single-ended traces like D0 and to D7 and A0 to A7 or whatever it is on your memory. So, that's it. There you go. So, yeah, this video's long enough. Sorry, but
+
+**Dave Jones:** that's basically what it comes down to is timing budgets. And timing budgets are critical, but as I said, you don't have to go in and do a timing budget. You're laying out a board with your DDR memory or whatever. You know it's
+
+**Dave Jones:** critical because I've told you so. Everyone's told you so. Micron's told you so. Every Tom, Dick, and Harry's told you so. And you can go in and analyze it yourself, but you don't have to. If I was laying
+
+**Dave Jones:** out this board, as I said, I would just set those constraints to a millimeter or something like that. Something reasonable. Don't set it to like 0.01 mm, half a bee's dick, cuz the software's just going to go can't do it. Sorry.
+
+**Dave Jones:** Yeah, it's Don't gild the lily there. But that's all you have to do. Just do that. Know it's critical. Put it in and then you've got other signal integrity things to worry about. In fact, it might tell you
+
+**Dave Jones:** that Yeah, it does. There you go. They talk about split return paths here. So, if you've got your never split your ground planes. If you add a little cut out in your ground plane like that, not a physical cut out, a routed out part of
+
+**Dave Jones:** your board, but if you if some reason didn't flood fill your ground under there, and it's going to take a longer path, you've just ruined your day right there again. You've ruined your timing budget. You've ruined your signal integrity. You've ruined
+
+**Dave Jones:** everything. And well, yeah, they're going to sack your ass because you didn't know how to lay out boards. So, there you go. I hope you liked that video. Can't as I said, can do video whole video series of just on signal
+
+**Dave Jones:** integrity, just on doing analyzing DDR timing budgets and and things like that. Anyway, I hope you learned something from the video. And if you did, please give it a big thumbs up. And if you want to see more videos of,
+
+**Dave Jones:** you know, more specific stuff like this thing, please let me know. And occasionally I see a tweet like that and it just goes, "Oh, yeah, I'll I'll do a video on that. I'll just press record and have a rant
+
+**Dave Jones:** for half an hour." Anyway, I hope you liked it. As always, discuss down below in the comments or over on the EEVblog forum. Catch you next time.

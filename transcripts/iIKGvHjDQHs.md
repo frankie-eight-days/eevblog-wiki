@@ -1,0 +1,372 @@
+---
+video_id: iIKGvHjDQHs
+title: Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204
+url: https://www.youtube.com/watch?v=iIKGvHjDQHs
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, welcome to the AAV blog and electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, I've been working on a project that's powered from a couple of well, two lithium-ion cells in series and I
+
+**Dave Jones:** thought I'd add like a little battery gauge type thing to it. Just a little LED bar graph or something, you know, that shows the level of how much battery life is left in the product. And there's quite a few ways to do this, but anyway,
+
+**Dave Jones:** I thought I'd build something up and try and get something working. So, it's breadboard time. Now, as I said, there's a couple of ways to do this. One is to go real high-tech and modern use one of these battery gauge ICs.
+
+**Dave Jones:** They're basically they basically measure the charge going into the battery and the charge coming out and you can read them out with, you know, they've got ADCs in them and little memory and micro and stuff. You can read the data out by
+
+**Dave Jones:** a serial bus to a micro and all that sort of stuff and it's all pretty fancy and I don't need something that fancy. I just need a simple basic bar graph that, you know, when the battery's full, when it's fully charged,
+
+**Dave Jones:** because this will be rechargeable, right? So, as the thing charges up, the bar graph goes up and when it gets to full, it shows that it's full. When you're using the product, the bar graph will start out at full and it'll drop
+
+**Dave Jones:** down to zero and maybe 10 LEDs would do, you know, one of those little 10 LED bar graph modules you can get for 50 cents. They're very cheap, readily available. Use something like that. Now, I could use a microcontroller to do this, you
+
+**Dave Jones:** know, it's got an ADC built in, a little picker or an AVR or something. But that's you know, that's the obvious solution these days. Just put a micro in it. I don't want that. I thought I'd go a bit
+
+**Dave Jones:** old school and it brought back memories. Well, how do I drive a little 10 LED? Bar graph. Of course, the LM3914, absolute classic IC. It's been around for decades and decades. I used it extensively when I was a kid. It's a
+
+**Dave Jones:** little special purpose analog chip from National Semiconductor, who's now been bought out by TI. Bloody hell, go figure. Anyway, LM3914, classic chip. It's right up there with like the triple five timer, in my opinion, in terms of nostalgia and just one of those special
+
+**Dave Jones:** purpose chips that just does its job really quite well. So, I thought I'd get out my old parts bin, get an LM3914 and prototype it up. Let's give it a go. Now, of course, we can't just jump into
+
+**Dave Jones:** breadboarding something without knowing our specs. Now, for this project, I'm going to be using two standard 18650 lithium ion cells. You're probably familiar with these. They're used in a ton of stuff these days, not only to make up bigger packs, but individually
+
+**Dave Jones:** as well. And by the way, as it says down here, this is a Panasonic data sheet. Okay, I've just, you know, a good brand one, a good data sheet. I almost certainly won't end up using a Panasonic battery, but they're all going
+
+**Dave Jones:** to be similar characteristics. So, I'm just using this as a representative example. Now, there's a safety note down here. I'll just mention. Basically, Panasonic will not sell the individual cells because they're unprotected. And as I've mentioned before, we've talked about lithium ion
+
+**Dave Jones:** cells, they can be dangerous. So, you should only use the lithium ion cells that are integrated with the appropriate safety circuitry built in. So, they're probably the majority of ones you can buy on the market, but make sure you get
+
+**Dave Jones:** the ones with the protection circuitry. It'll have a little PCB in there, as so it'll be slightly longer and it will have a PCB in there that actually protects the battery and stops um, uh, overcharge and over discharge and it
+
+**Dave Jones:** and, you know, a safety factor stop them exploding. Anyway, uh, that doesn't change any of the characteristics. That's just a side thing. Now, we will look at the, uh, characteristic discharge curves of this battery and see what we need in terms of specs for a
+
+**Dave Jones:** battery level gauge. And you may recognize this. This is the characteristic discharge curve of, in this case, the 18650, uh, lithium ion cell which we're looking at here. Now, because my project actually doesn't use one cell, it uses
+
+**Dave Jones:** two cells, uh, in series or a or a battery pack, uh, the voltage on the Y axis here, this is only for one cell. So, um, if we're talking, say, in terms of 4 V, we have to double that for all
+
+**Dave Jones:** of our calculations and all of our thinking, uh, because we've got a battery pack of two cells. And if we if it's 3 V, we'll be talking in terms of 6 V. Uh, so, you should be familiar with this.
+
+**Dave Jones:** I've talked about it in previous, uh, blogs. It's a standard, uh, characteristic discharge curve of the cell voltage versus time. In this case, they actually call call it the discharge capacity. They've done an extra calculation, but it's effectively, uh,
+
+**Dave Jones:** time here. We don't have to worry about the milliamp hour capacity, really. Now, they've got three characteristic, uh, curves here for different load currents. In this case, it's constant, uh, current and they're assuming a 3 V, uh, cut off, which is There it is. It's
+
+**Dave Jones:** 3 V. So, uh, pretty much you're only using the capacity between, say, there and there. So, you're not using all of the capacity of the battery, but you're using most of it. And that's good enough. So, my product will have a
+
+**Dave Jones:** battery, uh, cut off or a battery low voltage. I'll call it 3 V or, because I'm using two, it'll be 6 V. So, we know that we want a, uh, let's call it, uh, V low, equal to 6 V. Uh,
+
+**Dave Jones:** Okay, that'll be our low voltage for our bar graph. And, and of course this is a 4.2 V lithium ion cell. It has a constant voltage constant current, or constant voltage charge current, charge voltage of 4.2 V. So, when you
+
+**Dave Jones:** disconnect it's going to start at a 4.2. So, we need a V high, let's call it of 8.4 V, or two times that. So, we've determined what our upper and lower threshold voltages of our bar graph will be. So, if we've got our bar graph like
+
+**Dave Jones:** this that goes all the way down and you've got 10 LEDs like that, then this one will represent, you know, a maximum of 8.4 and that one will represent a low of 6 V like that. Now, uh, the, if you really want to be accurate
+
+**Dave Jones:** with a bar graph LED battery gauge like this, then you should take into account the fact that this curve is not perfectly linear. It doesn't just go straight down like that, but as you can see, it's not too far off.
+
+**Dave Jones:** Um, it's it's more linear when you get to the higher current levels. In this case, uh, 4.3 A, but it's 2 A, which is basically 1 C. Um, it, you know, it tapers off at the end here. So, you've got some gross
+
+**Dave Jones:** non-linearity at the end of the curve, but really that's good enough for my purposes. I'm not going to fuss over that. I don't want some intelligent uh, control, you know, micro controller, uh, thing that sort of, you know,
+
+**Dave Jones:** compensates for the graph and all that sort of stuff. It's good enough. It's fairly linear, you know, it's not too bad at all. And you can just, uh, mentally know that when it gets down the bottom it's a bit non-linear. So, that's
+
+**Dave Jones:** okay, but as the product's being used you will see the bar graph drop down like that. And that's good enough. So, we have our upper and lower threshold voltages. Excellent. Let's go design a circuit. And here we go, the data sheet for the
+
+**Dave Jones:** classic LM3914. And wow, this brings back some memories. It really does. As a kid, a a classic project you'd do is use an LM3914 or as a you know, a a audio level meter or something. This is actually a linear version. You can
+
+**Dave Jones:** actually get a logarithmic version specifically for audio VU meters and things like that, but it's a very versatile device that can be used a lot more than just a it's a dot bar display driver. So, basically it can actually be a dual
+
+**Dave Jones:** mode, a bar or a dot display mode, which is great. You can choose which one. In the case of this particular project, because it's battery powered, you might use the dot mode because you don't want the all of the LEDs lit up on your bar
+
+**Dave Jones:** graph because that might chew extra power. And really it doesn't give you any more information. It's just visually a bit nicer the bar graph. So, it's great that we've got that choice there. It can operate LEDs, vacuum tubes. It's
+
+**Dave Jones:** expandable to more than 10. It's a 10 digit bar or 10 LED bar graph driver. It's got an internal reference voltage which we'll make use of. It operates down to single supplies of 3 volts up to up to about 15 volts I think
+
+**Dave Jones:** it is. So, up to quite high voltages. So, it'll operate directly from the battery pack where we're going to use. And um the inputs operate down to ground. And you can and it's got programmable LED current. So, you don't actually need any dropper
+
+**Dave Jones:** resistors in this thing. It's great. You actually save uh component count with this thing. You can program it from 2 milliamps up to 30. Fantastic. We'll use uh 2 milliamps down around that level today because uh we want, you know, this
+
+**Dave Jones:** is a this takes power from the battery. So, we you know, we don't want to waste too much power. So, we want our LEDs, we don't want to operate them at 30 milliamps, that's crazy. We'll operate them down at 2 or 3 milliamps or so. Um
+
+**Dave Jones:** it can withstand overloads, all sorts of things. Anyway, I love this chip and uh we're going to use it. It's simple. Um well, it's not that simple, actually. Um you've got to tweak it a bit as we'll uh
+
+**Dave Jones:** no doubt uh find out. But, it's a very versatile chip. I highly recommend you uh check it out if you're after a um an LED bar graph of some form. Now, here's the chip in its uh standard configuration of a 0 to 5-V uh bar graph
+
+**Dave Jones:** meter. Now, um this is we don't want this, okay? Cuz we want to uh have our range. You remember we said that uh we would have a range from uh 6 V to uh 8.4 V. So, that is what's called
+
+**Dave Jones:** an expanded scale because you're not going from 0 to 5, you're actually expanding the scale. I I I know you're actually shortening it. It's actually the span is actually lower than uh say a typical 0 to 5, but you're expanding
+
+**Dave Jones:** because you're expanding above the ground reference level, which is the basic configuration of this thing. Now, they will have an application circuit for the expanded scale meter. Let's take a look at that. And here's the application circuit for the expanded
+
+**Dave Jones:** scale meter in dot or bar mode. So, there's actually a single uh pin switch on here, which actually can select between dot and bar mode. It's really quite easy. Don't worry about this um AC transformer and rectifier up here.
+
+**Dave Jones:** That's got nothing to do with it, and then they tell you that down here. It's just to show that it needs no uh hardly any filtering at all, and the thing still works. But, basically, our expanded scale meter, we can get away
+
+**Dave Jones:** with just a couple of resistors down here. Now, they're showing a couple of trim pots down here to sort of, you know, get in there and tweak the thing. But, I don't want to do that. We We want to learn a bit more
+
+**Dave Jones:** about this chip and how it works internally and see if we can actually calculate the values instead of just throwing in some pots and just tweaking it until we get our upper and lower voltage thresholds that we need.
+
+**Dave Jones:** And here's some more info on a greatly expanded scale bar mode. Only they're talking about Look at all this. You know, that looks That looks quite messy. I don't like There's the two trim pots in there, but there's other little
+
+**Dave Jones:** stopper resistors. There's another one here. Ah, it's all a bit messy. I don't like it. We're going to find a simpler solution than that and at the same time try and understand how this chip works internally. Now, here's the internal
+
+**Dave Jones:** block diagram of the device, and it does look pretty simple, but it's actually a bit more advanced than this. This is quite a simplified block diagram, but it'll It's quite functional and allows us to work out what's going on here. Now, as
+
+**Dave Jones:** you'll see, this is our voltage signal input, as they call it. It's got a diode clamp here for overvoltage and stuff like that. It's got a buffer, and it just drives a bunch of comparators, which are driven by this resistor This
+
+**Dave Jones:** internal resistor ladder here. Each one of these resistors is 1 K, and it gives you a typical value further on in the specs for the device, and they drive the LEDs over here. So, that's a very basic very basic just a window comparator or a
+
+**Dave Jones:** bar graph dot comparator type thing. And it's got an internal voltage reference, which we'll take a look at. It's got the power pin, ground pin, and not much else. Just the upper and lower threshold voltages, which go directly across
+
+**Dave Jones:** the directly across the divider resistors here, which determine the individual voltage thresholds for each of those comparators, and then in turn each of those LEDs. It's very basic stuff. You can build up something like this just using just using a bunch of comparators
+
+**Dave Jones:** yourself and and the resistors and things like that, but it's all built on the one chip. It's beautiful. Now, one of the keys here is this internal voltage reference source of 1.25 V. Now, one of the important things
+
+**Dave Jones:** to note about this is that it is not ground reference internally. It goes out to a separate pin, which they call ref adjust, which in the basic application it is showing that it's actually grounded here, but you don't have to ground it.
+
+**Dave Jones:** You can actually offset that by a certain voltage if you like. And you can do various things with it. And likewise, the lower the lower what they call low here, the pin low, is not tied to ground, but in
+
+**Dave Jones:** the standard circuit it is it is tied to ground, so the basic voltage ranges from 0 V upwards like that at each tap. So, you know, if it's 0 to 5 V, it might be 0, half a volt, 1, etc. etc. But because
+
+**Dave Jones:** that pin is effectively floating and so is this voltage reference, it's quite versatile in what you can do with it and allows you to do expanded scale displays by offsetting various voltages, which is what we're going to do here today. And they've been
+
+**Dave Jones:** very clever with this device as well. This resistor, which is the load for the voltage reference here, actually determines the LED brightness. So, it's sort of that's it's quite clever, but can actually be a pain in the butt because
+
+**Dave Jones:** then that interacts with your voltage offset voltage offset resistors as you'll see and things like that but it is quite clever. I like it. So that resistor effectively the load on there on the voltage reference effectively determines the LED brightness and that'll be a
+
+**Dave Jones:** based on a formula which will find it further on in the data sheet. Now they've got a nice little section here on the internal voltage reference and how it works and it's it basically works the voltage reference is internal like
+
+**Dave Jones:** that V positive negative it's inside like that and it always generates 1.25 volts pretty much regardless of how you've got it configured externally but it will generate 1.25 volts so if you hook let's call them well they're called R1 and R2 here and that's what
+
+**Dave Jones:** we'll call them in our circuit as well. Don't worry about it now we'll go into it later but that will generate 1.25 volts across that resistor there if you've got it wired if R1's wired directly across those pins so that you
+
+**Dave Jones:** can use Ohm's law 1.25 volts divided by R1 generates a current which goes down there and hence flows into here but there is also an what they call call an error term there's a leakage current for the for the voltage reference itself and
+
+**Dave Jones:** that will be an additional current there and they call it I adjust so that means this current here the total current I through here will be equal to I R1 plus I adjust like that and that's quite important we might have to take that
+
+**Dave Jones:** into account later when we build up our circuit. Right so let's start designing this thing and see what we can come up with. Now, as we uh determined before, we basically want our voltage reference range for our window uh here, we looked
+
+**Dave Jones:** at before, we wanted 8. 4 V up here. So, this um R uh high pin, which they call it, uh needs to be at 8.4 V. And we wanted uh 6 V down here on our uh low pin. If you do the math, if
+
+**Dave Jones:** you subtract 8.4 V from 6.4 V, what do you get? You get 2.4 V, okay? Now, what happens if you divide that by two? What do you get? I'm glad you asked. You get 1.2 V. Now, 1.2 V is
+
+**Dave Jones:** pretty darn close to the 1.25 V voltage reference here. So, I think we can use that. We can be clever and just use that as our uh voltage range for here. So, all we need to do is multiply that by
+
+**Dave Jones:** two to give us our range on these our voltage range on these two pins. So, we need a circuit external to here that sets these two pins at um basically half these values, or for a single cell, uh we need to be 4.2 V on
+
+**Dave Jones:** this particular pin, and we need to be down here, we need to be 3 V on this pin down here. And then, and in in our signal here, we can actually our input, we can use a voltage divider. Let's say
+
+**Dave Jones:** that's 10 K, and that one's 10 K as well. Our input signal, if we connect that to our plus V battery, if we connect it Oh, sorry. That was off the screen. If we connect it down to our V battery down
+
+**Dave Jones:** here, we can use a voltage divider to chop the battery voltage in half. Now, this I think is important because these inputs here to this chip won't go all the way to the voltage rail. Now, this is our voltage here, and if we
+
+**Dave Jones:** connect this to plus V bat as well, cuz we want to power this entire circuit from the battery underneath. We don't want to have to, you know, power from a separate supply. That's just silly. So, these inputs won't operate all the way
+
+**Dave Jones:** right up to this level of the battery. So, but if we have the battery voltage with the voltage divider here, we have it, then it should be within the workable range of the comparators and the rest of the
+
+**Dave Jones:** circuitry inside. And if you have that, as we said up here, it's we want a range of 1.2 V over which our LEDs light up. Or 1.25 is near enough for my purposes. So, ideally, all we want to do is connect
+
+**Dave Jones:** the voltage reference directly onto these pins here. And if we did that, if we actually did it as per the circuit that's shown here, if we grounded this, grounded this, and this connects to the Vref output there, then this would the chip
+
+**Dave Jones:** is designed to work over a range of 0 to 1.25 V. So, these LEDs will light up at 0. It would, you know, the first LED will light up, and then all the way up to 1.25 V. That's a standard circuit. But
+
+**Dave Jones:** as we've mentioned before, we want an expanded scale one. So, we have to offset this pin here. We have to offset low by the minimum range we want. So, So, have to add 3 V to this pin down
+
+**Dave Jones:** here. And that's what we need to accomplish somehow externally to here. So, how do we do that? Well, I'm glad you ask. First of all, let's get rid of that ground point there. We don't want that. Let's just get rid of that
+
+**Dave Jones:** resistor because it's in the way. We'll replace it with our own resistor. And let's draw in another resistor here. We want a resistor there. And let's tie it on to the ref adjust pin. We'll call that R1. And we want another resistor
+
+**Dave Jones:** down here, which we'll call R2. And we will ground that. Now, uh this R low down here, we want to get rid of that ground. And we want to connect R low up here to the bottom of that because we
+
+**Dave Jones:** know our range is 1.25 V or exactly the same as this voltage reference. And we can leave this also connected up to here. Okay? So, our uh R high up here is connected to the positive side of the voltage reference.
+
+**Dave Jones:** Uh R low down here is connected to the negative side of the voltage reference. And all we want to do is choose these resistors so that we get 3 V superimpose uh 3 V across there. And that will raise
+
+**Dave Jones:** our voltage up by the 3 V we need. Easy. And if you remember this circuit over here, there's actually a formula for the uh LED current. Now, this is something we need to consider up front. And it'll become obviously obvious why. Now, the
+
+**Dave Jones:** formula is uh the LED current is approximately equal to 12.5 on So, R1 we need to be um that basically uh 12.5 divided by our LED current, uh which in this case I said I'd like about 2 mA.
+
+**Dave Jones:** I'd like to be it as as low as possible, so it doesn't draw excess current from my battery. So, 12.5 / 2 milliamps, you whack that into the calculator, 12.5 / 2 milliamps, and you get roughly 6 250
+
+**Dave Jones:** ohms. And you can see the realization of that formula on this characteristic curve here of LED current versus the reference load current. And if you have a reference load current of 1 milliamp, you get an LED current of There it is,
+
+**Dave Jones:** 12.5. So, that's where that factor of 12.5 comes from, and it's fairly linear, not absolutely perfect, but close enough. So, So, we're actually going to have a current through uh R through R1 of 1.25 V, which is our
+
+**Dave Jones:** voltage reference on our 6,250 ohms, which is equal to 200 microamps. And if you have a look at the Translate that to the graph over here, of course, it all works out. So, all the math is nice, it all works out. And 200
+
+**Dave Jones:** microamps, this is 500 microamps here, so 200 just puts us on the bottom of that curve there, which is around about the 2-mA figure that we want. The curve doesn't actually extend that far, but it's near enough. So, there you go, it
+
+**Dave Jones:** all works out. So, over here, we want a current there there of 200 microamps, which will give us our LED current of, you know, near enough to 2 milliamps, basically. That's our target. But R1 here, curiously, right, which we
+
+**Dave Jones:** calculated the figure here of 6,250 ohms, that's great if nothing else was attached, but what do we have here? Check it out. Look, up here, we have this resistor divider network directly in parallel with R1. We've got these resistors in
+
+**Dave Jones:** here we have to take into account. So, we have to add these in parallel with our well, in parallel with R1. We haven't actually calculated true value of R1 yet. We want R1. Sure, we want R1 to be
+
+**Dave Jones:** 6,250, but we're not going to use a 6.25 K resistor in there because we've got all these other resistors in parallel. So, we need to calculate the true value of R1 when you include these ones in parallel. So, we need to find a target value of R1
+
+**Dave Jones:** here for that 6,250 ohms which we calculated before, but based on this resistor this resistor divider here in parallel. So, we need to know what value of R1 will give us the total resistance of 6,250 ohms here. And
+
+**Dave Jones:** I've done it down here. If you look at your standard parallel resistor formula R total equals 1 over 1 over R1 plus 1 over R2. That gives you total parallel resistance, but we need to find we know what value we want. We want 6,250
+
+**Dave Jones:** ohms as a total. So, we've got an unknown term in here. One of these terms is unknown and we know the other one which is the resistor divider. So, we just sort of rewrite that formula. So, we're trying to calculate R1 here which
+
+**Dave Jones:** is our value. And if you rearrange the formula, you'll actually get 1 on R1 which we calculated which is 6,250 ohms minus instead of plus it's now minus 1 on the voltage the resistance divider the value of the resistor divider. And if
+
+**Dave Jones:** you plug the numbers into the formula, it's 1 on 1 on 6,250 minus 1 on 12 K. Where did we get 12 K from I hear you ask? Well, if you look at the uh resistor ladder up here, there's only 10
+
+**Dave Jones:** there's only 10 resistors there and they're all marked 1 K. So, you might think it might be 12 K, but I don't know. You got to double check these things. Don't go by those block diagrams. Only go by the true electrical
+
+**Dave Jones:** characteristics. And sure enough, if you look elsewhere in the data sheet, um the voltage divider, there it is. The divider resistance total of pin 6 to pin 4 is a typical value of 12 K. So, it's not 10 K as you'd get
+
+**Dave Jones:** from the block diagram. Just be careful of that sort of thing. It can range anywhere from 8 to 17, but is it 12? I don't know. Let's plug uh 12 K into our formula and try it out. I don't think
+
+**Dave Jones:** it's going to be up near the maximum. It might be down near the minimum. Uh there's quite a large uh upside there on that, but we'll take a value of 12 K, which is what we've done here. Plug that
+
+**Dave Jones:** in and uh one is just over 13 K. There it is. So, we want to use a uh 13.04 K 13 K 04 there for R1. Doesn't need to be that precise. Why? Because it's only for the LED dropper resistor. That's it it's it
+
+**Dave Jones:** basically this resistor here is only calculating the LED uh current. So, it's not that vital really. Now, we have a value of the resistor we can use for R1. Our current down here hasn't changed. Uh we calculated that before at 200
+
+**Dave Jones:** microamps cuz it's 13 K in parallel with uh the resistor divider 6,250 ohms uh divided by 1 or 1.25 volts divided by 6,250 ohms is 200 microamps. So, we know we've got 200 microamps flowing down R1. And this is where we need to now
+
+**Dave Jones:** calculate R2, which actually increases uh our generates our voltage drop across it to raise up our low input voltage and create to 3 volts and create our expanded scale voltmeter. So, we need to calculate R2 for a 3 volt drop based on
+
+**Dave Jones:** current down here, but it's not just 200 microamps. Remember before, it's 200 microamps plus the error term here. And there you go. If you remember back to this diagram here, we talked about that R1, and we talked about that error term
+
+**Dave Jones:** being the leakage current of the voltage reference itself. So, we need to find that value in the data sheet to find out what this value actually is. And if you have a look here, it actually tells you since 120 microamp current
+
+**Dave Jones:** maximum from the adjust terminal. Well, that's it. Once again, don't take any of this application stuff for granted. Go over to your electrical characteristics table cuz this is the only one that matters. So, if you look for our voltage
+
+**Dave Jones:** reference here, we can find out there it is, adjust pin current. There it is, 75 microamps typical, and sure enough it is. They were correct. It is 120 microamps maximum. So, they weren't lying over there like they were with the
+
+**Dave Jones:** resistor divider up here. So, we'll take a typical value We'll take the typical value cuz I don't think it will be near to the upper maximum. It could be. If you want to design worst case, as we've explained in previous
+
+**Dave Jones:** blogs, you might have You might use the maximum, but I'm going to use the typical value and see what we get. See how far it is out. So, we will take this 70 that as I adjust equals 75
+
+**Dave Jones:** microamps. So, the total going down here through R2 is 200 microamps plus 75 microamps or 275 microamps total. So, if we now calculate R2 here, R2 is very simple. It's going to be our offset voltage we want on this pin of 3 V.
+
+**Dave Jones:** Okay? Cuz it's connected through to there. 3 V divided by Ohm's law, 275 microamps total current flowing through there gives us a value of 2,909 ohms. Bingo. We now have our two values there and there for our circuit. So, if we build up the
+
+**Dave Jones:** circuit, hopefully, we should get a working expanded scale voltmeter that operates from 3 V up to 4.2 V threshold voltage. But, because we've got the voltage divider down here, it'll be from a 6-V battery up to 8.4 V. Let's build it up
+
+**Dave Jones:** and try it. And here's our final circuit which we're going to build up on the breadboard using the LM3914. It's a two-cell lithium-ion battery gauge. Will it work? Let's try it. And here's R1 and R2 which we spent so much time around
+
+**Dave Jones:** calculating and we came out with around about 13k for R1 which will give us roughly 2 milliamps or so per LED. And R2 was 10.91k or 10.909. And it just so happens that that's exactly you can make that up
+
+**Dave Jones:** precisely using a 12k and a 120k in parallel. So, that's what I've built up here. And our input voltage divider here, two 10ks, they can be pretty much any odd value you like. 10k is not a bad value. It's all powered, you'll notice
+
+**Dave Jones:** the whole thing is powered from the battery under test. So, here it is. Ta-da! Let's see if it works. All right. What we've got here is we've got the uh Fluke 87 measuring the input voltage here, which uh it would come from our
+
+**Dave Jones:** battery, but in this case it's coming from a variable bench power supply. I've got my 10 LEDs built uh lined up here. They should actually line up in this direction. So, this is the low um end of the voltage range. This is
+
+**Dave Jones:** the high end, so we expect this one to turn on at around about uh 6 V, and this one up here to uh turn on at around about uh 8.4. So, I've got a bypass uh cap as well, which we uh didn't talk
+
+**Dave Jones:** about. I've got a uh it's just a half microfarad uh bypass cap in there. Anything will do fine. You'll notice that it doesn't need the lead dropper resistors. Really uh nice uh aspect to this. So, um there's my two input
+
+**Dave Jones:** divider resistors. Uh there's my uh 13 K there, and there's my um uh 10 K uh 909 there. And well, let's give it a go. Let's wind up the wick. So, the um power supply shows the exact uh battery
+
+**Dave Jones:** voltage. Let's see what happens. Of course, it's not designed to operate this low. Oh, look, they're all they're all coming on. There you go. There's a weird side effect, which uh you wouldn't know about unless you actually built
+
+**Dave Jones:** this up and breadboarded it at a very at a 2-V uh battery voltage they're all going to light up. So, you may actually think that's an error. That's actually an error condition because um it shows that you've got full battery voltage,
+
+**Dave Jones:** but you've only got 2 V. It's crazy. But uh you um your circuit should have cut out under that, so it's not a big deal, but there you go. That's just an interesting little side fact. It's designed to work from uh 3 V onwards,
+
+**Dave Jones:** the chip, so it looks like it is. No problems at all. Let's wind up the wick, and we shouldn't see any LEDs on at all until that 6-V mark, which is our battery low. Here we go. Oops, we're on
+
+**Dave Jones:** What we're smack on 6 V volts. It hasn't lit up yet. Obviously, we got a bit of There we go. 6.06 V bingo. And then as you go, you can wind up the wick like that and it looks
+
+**Dave Jones:** like it's doing a pretty good job. We should get around 8. Just It should turn on about 8.2. It does. There you go. So, the bingo it works. I'm actually quite uh surprised that um Well, not surprised. We did the calculations, but
+
+**Dave Jones:** I I expected some error in there with the error adjust term. We'll have to measure that. So, I didn't expect it to be uh spot on, but it is. It's pretty darn close. I'm I'm happy with that. I
+
+**Dave Jones:** wouldn't have to tweak those values at all. I'm I'm quite impressed with that. Let's wind the voltage up even more just to check that it still works. And it should work up to uh 15 V is the maximum
+
+**Dave Jones:** operating voltage of this chip. So, I just make sure it work works up to that. We won't take it any further. And I like it. It's a winner. Now, of course, that was set to bar graph display mode, which actually is
+
+**Dave Jones:** going to draw a lot of current if all those LEDs are on. It'll draw at least 2 mA per LED plus the quiescent current the operating current of the chip. So, let's convert that to bar mode to dot
+
+**Dave Jones:** mode. To do that, you just leave pin nine down there floating. So, we'll leave it floating and let's check that dot mode works as well. It's just over 6 V. There we go. Bang, it's on. And bingo, dot mode works. It's nice. Now,
+
+**Dave Jones:** one of the nice features of the LM3194 is that it doesn't have any dead spots. You'll notice there is no way that I can make I can make both LEDs come on, but I can't get an error condition where
+
+**Dave Jones:** no LED will come on. So, where the voltage threshold is right between the LEDs, because it's got um the data sheet I think claims a 1 mV uh threshold between or overlap between the LEDs. So, 1 mV overlap means
+
+**Dave Jones:** that you will never get an error condition where an LED is not actually switched on. So, dot mode, you can trust that you're not going to have any dead spots within there. That's built into the design of the LM3914, and you'll
+
+**Dave Jones:** notice it's just it beautifully toggles. You know, you might have two LEDs lit up, but that's just fine because you've got noise on there, and bingo, it's There you go, 8.3 and dot mode works just great. And once again,
+
+**Dave Jones:** we can take it up to 15. No problems at all. I declare that to be a winner, both dot and bar mode. And of course, if there's no LEDs on, you know it's under 6 V. All right, let's check our LED current.
+
+**Dave Jones:** As I we expected around about 2 mA, but it wouldn't surprise me if it's not, you know, if it's over or under that, because that's determined by that 13 K resistor which we had in the circuit, which remember is dependent
+
+**Dave Jones:** upon that very wide variable range of the resistor divider inside the chip. So, let's wind it up to 6 V till our LED turns on. Bingo, it does. Uh 2.8 mA. There you go. Um it's a bit over, so
+
+**Dave Jones:** it's not exactly the 2 mA we expected. So, you could actually tweak that uh 13 K value there if you wanted to, um just to adjust the uh LED current that you wanted. But as you can see, um
+
+**Dave Jones:** that LED is still uh reasonably bright enough um even at 2 mA. And these are 20-year-old LEDs I just had in my junk bin. So, if you use a modern uh high efficiency LED bar graph, they should be
+
+**Dave Jones:** more than bright enough at 2.8 milliamps. So, I'm happy with that. I don't need to tweak that at all. And what's the quiescent current of our circuit? Well, we've just under 5 6 volts there, so no LEDs are on. It's
+
+**Dave Jones:** around about 5 milliamps or so. And if we wind it down, you'll notice that uh yeah, no problems. So, that's So, it's going to consume at least 5 milliamps. And when you switch an LED on, it's going to go up to 6 volts. Get one on.
+
+**Dave Jones:** There we go. Bingo. It jumps up to 8 milliamps. And it doesn't matter. It's going to take around about 8 and 1/2 milliamps maximum, regardless of which LED You'll notice that it is slowly actually increasing as we go up in dot mode. So,
+
+**Dave Jones:** there you go. Looks like up to 9 milliamps maximum. I would I'd safely say around that to about 10 milliamps maximum current draw in dot mode. And in bar graph mode, of course, it's going to take considerably more than that. There we go. All the
+
+**Dave Jones:** LEDs lit up and 35 milliamps. So, as you can see, you pay a fairly hefty price premium there for using the bar display mode. And if this is measuring the consumption of your battery, then, you know, if you're only drawing low
+
+**Dave Jones:** currents from your battery, then 35 milliamps could be quite significant. But, if you're drawing, you know, if if your product draws a couple of amps or something like that, then you may not worry about that. And you may like the
+
+**Dave Jones:** effect of the bar graph display mode. And checking our reference voltage, there is 1.246 volts, pretty close to the nominal 1.25 volts claimed. And if you remember this error term here of 75 microamps that we included in our
+
+**Dave Jones:** calculations for the offset voltage here, how accurate is that? You cuz you remember it was a nominal value of 75 microamps. Could have could have been a maximum of 120 microamps. Well, let's measure the thing. There it is. I've
+
+**Dave Jones:** broken pin eight there. So, I've and I'm actually using my micro current adapter here just so that the meter doesn't introduce anything funny. And there it is. 56.5 microamps. So, it's low. So, technically our calculations would be slightly out
+
+**Dave Jones:** there because we assumed 75 microamps. But well, it's 56.5 microamps for this particular chip at this current temperature. How about we change the chip and see if it makes a difference. There you go. I actually changed the chip. It's exactly the same batch and
+
+**Dave Jones:** date code. So, I sorry I didn't have any different ones in my set. But there you go. It's almost the same. It's only out by half a microamp. And if you're interested in what type of chip I'm using, it is a genuine National
+
+**Dave Jones:** as well. I'm not aware of a second source ones for this. But you you probably can get gray market ones. There possibly is a second source somewhere. I don't know. But it's 1990 vintage. There you go. The 52nd week in 1990. So, this is over 20
+
+**Dave Jones:** years old. But you'll notice of course that this new chip doesn't hasn't switched on at 6 volts like the other one did. So, there you go. It's It's you know, the tolerances are slightly different because each chip So, it's going to be a
+
+**Dave Jones:** slightly different in terms of temperature coefficient absolute accuracy of the internal 1.25 volt voltage reference and other stuff. So, really you know, that's why they have the trim pots in the circuit because ultimately you may have to trim this thing if you want to
+
+**Dave Jones:** get accurate, but I I reckon you could you know for a rough battery gauge for for for my application anyway, I think I'm not going to worry about with the trim pots. I think I can get reasonably close with the fixed value resistors.
+
+**Dave Jones:** I'm not going to fuss over whether it's you know, it's 6.1 or 6.0 V. It's near enough. And if you're really keen, the data sheet does mention in the application notes area ways to keep your resistor values low so that the temperature
+
+**Dave Jones:** coefficient effects of the internal divider and things like that don't swamp your values and and stuff like that. So, you know, if you're doing really serious critical design with an LM3914, you've got to take that sort of stuff into
+
+**Dave Jones:** account especially over the temperature range. Now, if I adjust my input voltage so that first LED is just switched on fully and I'm using my micro current to measure that reference current leakage value, but let's try it without the
+
+**Dave Jones:** micro current meter and see what happens. We use the shunt inside the meter itself. So, it won't change anything. We'll just switch over to current mode here so we're no longer using the micro current. We're using the internal shunt in that meter and look,
+
+**Dave Jones:** the LED, it's the same 56 micro amps. The reading's exactly the same, but this shunt, the higher value shunt resistor inside the meter, the burden voltage is slightly higher than what the micro current is. So, it's caused that LED to
+
+**Dave Jones:** turn off. And if we switch it back to our micro current like that, bingo, it switches on. See? So, if we go like that and that is a demonstration of burden voltage in action. And if you're in Granted, it's
+
+**Dave Jones:** not that critical in a case like this, but if you've got some serious circuitry you're trying to measure, that can ruin your day. Now, just as a bit of a little aside here, a little uh tip for you. When
+
+**Dave Jones:** you're breadboarding stuff, beware of using resistors just pulling resistors straight off these uh bandolier things and putting them straight into the your breadboard. It can be a real pain in the neck, and I'll show you why. Watch this.
+
+**Dave Jones:** If you pull one of them out like that, you can end up with a whole bunch of glue on stuck on the end of your pin. So, if you've got that glue stuck on the end of your pin like that, and then you
+
+**Dave Jones:** just go try and uh shove it into your breadboard, you can end up with a bad contact or no contact at all. And that can really ruin your day. Uh especially if you're trying to put two resistors in
+
+**Dave Jones:** parallel like like you're trying to tweak a value or something. If you put two of them in parallel and one's not making contact that happens to be the higher value one, then uh your lower value one could be slightly out, and uh
+
+**Dave Jones:** can ruin your day. Trust me. So, it's actually uh sometimes beneficial to actually put resistors in series cuz then you'll have a gross failure because you know that the single resistor has failed. Anyway, the way to cure that is
+
+**Dave Jones:** simple. When you peel them off the bandolier, just make sure you snip off the end. Piece of cake. So, there you go. That's a nice little practical two-cell lithium-ion battery gauge. I like it. It works quite well. We measured its performance. Does pretty
+
+**Dave Jones:** much exactly what I want. Spot on. Beautiful. But uh and it is uh adjustable for um other uh types of battery chemistry, not just lithium-ion. You can adjust it. You can do all sorts of things with the LM3914.
+
+**Dave Jones:** I love it. It's a great chip. It's very s- flexible. Someone should do a contest for it. But if you want to adjust the circuit for other uh battery chemistries, other voltages, different number of cells, you can. Not a problem.
+
+**Dave Jones:** Just follow through the steps we went through to calculate the values. There's different configurations. You use the one we use is quite simplistic because we just so happened to have that 1.25 V range. It's exactly what we wanted. If
+
+**Dave Jones:** you want something lower than that, then R1 in the circuit here, if you've got R1 there, you have to actually put a voltage divider in there to get it smaller, and then you've got to tweak the voltage divider input, and you can
+
+**Dave Jones:** do all sorts of things, and you can offset, and you can till the cows come home. So, it's a very flexible circuit, but this implemented quite well. I'm quite happy with it. It uses four resistors, one capacitor, LM3914,
+
+**Dave Jones:** and it works as a complete two-cell lithium ion battery gauge. So, there you go. I hope that was fun and useful. Catch you next time, and don't forget to subscribe. There's a button somewhere. Leave comments. Whatever. Give it a
+
+**Dave Jones:** thumbs up. Beauty.

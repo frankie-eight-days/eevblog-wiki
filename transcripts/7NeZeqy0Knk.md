@@ -1,0 +1,176 @@
+---
+video_id: 7NeZeqy0Knk
+title: EEVblog 1697 - What's Up With Different Brand Op-Amps?
+url: https://www.youtube.com/watch?v=7NeZeqy0Knk
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, it's forum question time and I thought this was interesting enough to do a dedicated detailed video on here. And thank you very much Gamelot on the EV blog forum super contributor. It all happens over on the EV blog forum. If
+
+**Dave Jones:** you're not a member, um it relates to my latest review and teardown video of the Uni-T UDP6731 power supply and I did a follow-up video on the EV blog two channel about that as well. Like have I been done it cuz they sent
+
+**Dave Jones:** me a new one. Anyway, if you haven't seen it, I'll link it in. So Gamelot's referring to the teardown photos. We'll take a look at it in a minute because I had an issue with the this power supply
+
+**Dave Jones:** just in one particular listener mode and they've fixed that and we're kind of still left wondering well, what was the actual fault that actually caused that cuz Uni-T didn't know. They just said it was faulty and they sent me another one
+
+**Dave Jones:** and sure enough it works. Anyway, I'll link in that second channel video. So Gamelot's question is in reference to that, I believe. Why do they use two different types of LM358 from different manufacturers on the same board? Actually, great question. So this is my
+
+**Dave Jones:** detailed answer to it. So let's take a look at the board inside in question. This is the controller board inside just of on its own board here vertical riser board. There's several reasons why you might do that because the main board
+
+**Dave Jones:** looks like this and it's just like one big thing like that. And if you try and put a like this is all in the bottom side the through hole hole side on the other side has like all the big through
+
+**Dave Jones:** hole components on it. The big pass transistors, the heat sinks and big capacitors and everything else. So you know, to try and cram all the control circuitry on the bottom side, you've got this double sided load thing. It's not
+
+**Dave Jones:** the best idea. So you actually find this a very common inside switch mode power supplies, lab supplies like this one or commercial uh, ones or whatever. Um, I've done tons of tear downs, and you've no doubt seen these little vertical riser boards. And
+
+**Dave Jones:** the reason for it is because you can put all of the, uh, control circuits, as you can see, like there's like different op amps here, here, here, here, and there. They're near identical, but there's some differences, uh, between them. That's an
+
+**Dave Jones:** op07 precision op amp there. And then they've got the switching, uh, controller over here. And the reason you'd put these on one board is not only to free up, um, space from like the main board over here. It it just means that
+
+**Dave Jones:** you can actually test this board separately. So, you can design automated test jigs where you just plug this in, because it's just got the pin header, um, on the bottom here and over here, I think. Uh, where you can just plug it
+
+**Dave Jones:** in, and, you know, you can do all your detailed testing, and a pass fail, and stuff like that. And that's what this little mark here, somebody's marked that with a pen like that. And that's just to indicate that this one has, uh, passed
+
+**Dave Jones:** testing. And for something like a power supply like this, and, you know, any sort of switching supply, you know, all the all the magic sort of like happening on this board. It's also in software as well. But all the analog magic, right,
+
+**Dave Jones:** all the control loops and everything, are basically happening on, uh, this board. So, if anything goes wrong with that, and you want to like, tweak it a bit later, you want to modify the board a bit, it's just easier to modify a
+
+**Dave Jones:** smaller plug-in board like this than it is to, uh, like just re-spin the entire huge board like this. So, all of your stuff that you think might change, or you might want to tweak, you might want to test
+
+**Dave Jones:** separately, you put it on a daughter board like that. Anyway, that's just a little aside on why they did that. Anyway, the question asked, why are they different brands of LM358 chip? And you can see LM358 there. That's an ST. You can see, right? One of
+
+**Dave Jones:** the big huge names. That's an ST jobby, right? One of the big reputable manufacturers. Got another one down here. They're from an identical batch. M, uh, what is it what is that? MZ207. So, that'll would like a batch code,
+
+**Dave Jones:** thing, that you know, whatever that means. Every manufacturer has a different way of doing their batch code. You have to read the data sheet or sometimes it's not even in the data sheet. You get what you get and you
+
+**Dave Jones:** don't get upset. But yeah, they're basically from they would be from the same reel. They'd be on the same physical reel that you put on the pick and place machine. But look, this is also an LM358. It's from a company called Arts
+
+**Dave Jones:** Chip. Have you heard of Arts Chip before? PROBABLY NOT. RIGHT? Because the LM358 is what's called a jelly bean component. So I've done videos on jelly bean op amps. And look in the thumbnail, LM358. Because it is one of the jelly bean op
+
+**Dave Jones:** amps. Anyway, great series if you haven't seen it. If you want me to continue this series, I've done regulators, bipolar transistors, comparators, and op amps. So let me know if you want that to continue. Anyway, I'll link in that video if you haven't
+
+**Dave Jones:** seen it. A jelly bean component is basically one that is has been around forever. I'm talking 40, 50 years, right? Like the LM358 has. I don't know when it was introduced offhand, but it's probably in that video. Right? It's been
+
+**Dave Jones:** around for a long time. It's available everywhere. It is cheap as chips. Pun intended, I'm here a week. And it's available from dozens and dozens of different manufacturers. How many manufacturers? Let's go over to Digi-Key and search for
+
+**Dave Jones:** LM 358. And look, all these different manufacturers. 3PE, Diodes Incorporated, Evo, never heard of them. You know, all your old school ones, Fairchild, NatSemi, On Semi. And then there's Road, and then there's a Shenzhen one, ST Micro of course, TI,
+
+**Dave Jones:** UMW, never heard of them. Teijing. And then if you go over to a Asian, you know, the Asian Asian equivalent to these catalog supplies, LCSC. Then you got 3PE, Cosign, Chip Nobo, Diodes, so that'd be Diodes Inc, Doway, Elect
+
+**Dave Jones:** Super, Fushan, Blue Rocket Electric, Co GA, right? All of these different manufacturers, look at them, right? And then you're you know, mixing your STs and your TIs, your big Western names that you're familiar with and your on semis and whatnot. But they're available
+
+**Dave Jones:** from dozens and dozens and different Even this LCSC doesn't list this Arts chip. So you go over to the Arts chip website and sure enough, they make like tons of different analoggy stuff, right? And these are the op amps they make and
+
+**Dave Jones:** sure enough the LM358 is one of them and we can pull up a data sheet on that and we can pull up an ST data sheet here. But basically, what that jelly bean component means is that you select that
+
+**Dave Jones:** component cuz you just want a very basic op amp function. So what choosing a jelly bean component for your design means is that you're basically don't care too much what the specs are. You're choosing that jelly bean part because
+
+**Dave Jones:** it's available from dozens of different manufacturers. So when you go to manufacture your product, oh, you're not hit with some supply chain crisis where you can't get it because you're fixed locked into one manufacturer. You pick it because A, there's tons of different
+
+**Dave Jones:** manufacturers available, so you're guaranteed to get this part forever and also longevity of production. They've been selling it for 50 years, they're not going to suddenly stop, right? And then the next one is you don't really care too much about the specs. You don't
+
+**Dave Jones:** need high bandwidth, you don't need high precision and low offset and low noise and you know, all the other bells and whistles because there's literally what, thousands of different types of op amps out there to pick from. The reason
+
+**Dave Jones:** you're picking an LM358 is just cuz you need a jelly bean op amp to do a basic op amp function and nothing more. So pretty much, if you're doing a design and you care which brand LM358 or which
+
+**Dave Jones:** brand jelly bean component, be it a 75 7805 voltage regulator or a comparator, you know, LM339 comparator or something like that. If you care about the exact brand that goes in there, because one is slightly different like lower offset
+
+**Dave Jones:** voltage than the other, then you're doing your design wrong. The reason you pick these jelly bean components is because you shouldn't care. Your design shouldn't care. So, I am not the least bit surprised to see different brand LM358s on there because it shouldn't
+
+**Dave Jones:** matter a rat's ass whether or not you use an Alt's chip or an ST or any other one hung low brand component on there. Doesn't matter at all. And if you're serious about manufacturing your product, you're going to have a detailed
+
+**Dave Jones:** bill of materials. This is the bill of materials for my micro controller. This is actually from the assembler that I used to use to manufacture my micro controller. Yeah, everyone keeps asking am I going to bring it back? I don't
+
+**Dave Jones:** know. Anyway, we'll see. I don't have a specific example here, but this is how you would basically do it. You would have the part number that you want, you would have the manufacturer, you would have the description, you know, the
+
+**Dave Jones:** designator and everything. And then you would have the supplier that you're getting it from and the supplier's actual part number or manufacturer specific part number on there. And then you do this again for supply number two, supply number three, supply number four,
+
+**Dave Jones:** supply number five, and you can go as long as you want for something like an LM358. I don't have anything that generic on here. The only one was actually this LMV321. Where I'll link in the video. I haven't
+
+**Dave Jones:** watched it in a long time, but I did actually come when I changed the brand on this. That's not quite a jelly bean op amp, but I thought it was jelly bean-ish enough that I could change it. And like get it from a different
+
+**Dave Jones:** manufacturer. And it turns out no. I come a gutser on that one and that caused an issue. I've done a whole video on that. But anyway, the whole point is that you can have multiple suppliers in here. And then if you're a big company
+
+**Dave Jones:** like Uni TR for example, they're going to have like a purchasing manager, a purchasing team whose their job is to go out and find the cheapest supplier for these parts. Hopefully, they get it from a legitimate source, right? So, you tell
+
+**Dave Jones:** them where to get it from. Um this is part of you know, the the the designer has to do this, right? The designer is basically going to do the bill of materials cuz they're the ones who know the specifications for the components
+
+**Dave Jones:** and they've looked at the data sheets and they've evaluated all they've physically tested that part and they know it's good and then they can it can go into the official bill of materials and you can have multiple supplies in
+
+**Dave Jones:** there and then the purchasing officer's job, their job is to go out and purchase that exact part number there from whichever reputable supplier they can get it from and you know, hopefully they don't screw that up. Um but then they'll
+
+**Dave Jones:** have multiple choices in there for a lot of the parts that are jelly bean. Of course, you know, usually when you're building some product, you usually you have to specify in a single source part. You can't get around that. The holy
+
+**Dave Jones:** grail of any design is to have multiple supplies for absolutely everything. Something like, you know, like your passive components, your resistors, your transistors and stuff like that in most cases, they're going to be fairly generic jelly jelly bean. But because my
+
+**Dave Jones:** micro controller was very precise, for example, and I like bought high precision components, some of those resistors were several dollars each, right? So, I would actually specify, "Oh, I want a Susuma resistors here. I want this exact tolerance." And only if they can't get
+
+**Dave Jones:** it, would the manufacturer or supplier come back to me and say, "Hey, I can't get this one. Is this substitute okay?" And then you'd you know, you might test it, you look at the data sheets, compare and you go, "Yeah,
+
+**Dave Jones:** okay, that's okay. Add it to your supplier list in here." But yeah, this is how and when you're serious about manufacturing products, you're going to have multiple supplies in here. The bill of materials, very important. But that still doesn't explain on this one board
+
+**Dave Jones:** how these multiple brand chips ended up on there. Well, that's It's easy to explain. When you're getting your PCB manufactured at the assembler, they're going to have these massive pick and place machines like this Yamaha jobbie here, and you can see the feeders here,
+
+**Dave Jones:** right? They They're on big carts. So, all of your reels of components Your components come on reels of like, you know, 1,000 3,000 op amps or something like that will come on one reel. So, each one of your parts on here each one of these
+
+**Dave Jones:** like the op amp These are 10K resistors here, these capacitors here, this diode here, this um LED here, right? All these different components, they're all going to be on separate reels, and they have to be loaded into um these, you know?
+
+**Dave Jones:** So, if you have a look here, you can see that the reels are loaded in there, and they go in, and the machine might have, you know, a big machine might have like 60 feeders, 100 feeders. They might have
+
+**Dave Jones:** feeders on the other side as well. So, you know, there's ones hidden on the other side that you can't see. So, they might have like four of these carts that you can wheel in and out. And when you're doing high-volume manufacture,
+
+**Dave Jones:** it's, you know, delicate dance of getting these pick and place machines to not only to work optimally, but also efficient flow. So, depending on how many components, you know, like each board has, you have to sort of program
+
+**Dave Jones:** in all all your reels into the machine to actually have redundancy in the there so you don't run out. This say the op 07 here, okay? That's There's only one of those on the board, and there's only one
+
+**Dave Jones:** of the and there's two of these OP2202s here, for example. So, if you're manufacturing a run of a thousand of these boards, and say there's a thousand of these SO8 chips per reel, for example, then you're going to need one
+
+**Dave Jones:** entire reel just for that. You're going to need two reels installed for this part, right? Two different reels, and you're going to need three reels in loaded into the machine for the LM358. Otherwise, you're you're to run out halfway during your like you you run
+
+**Dave Jones:** and and your machines are typically in a huge line like this, okay? And you can put multiple pick and place machines in series like this. This a line here has like three physical pick and place machines all in series. So, this could
+
+**Dave Jones:** have, you know, 300 feeders or something like that, right? It can have a lot of feeders, but but some boards have a lot of parts on them. So, you have to load up all of these machines. And sometimes
+
+**Dave Jones:** you'll load up one one machine with just passive components like your resistors, your capacitors, your diodes, transistors, or whatever. And and the next machine you might have your specific, you know, really expensive ICs that you can't afford to waste and and
+
+**Dave Jones:** things like that. And so, you can load up machines all in different ways. But this is all up to the assembler and how they want to do things most optimally. But basically, yeah, you you're going to use three times as many LM358s as you
+
+**Dave Jones:** are OP07s over here. So, you've got to put more reels in that machine. And because, you know, you're manufacturing thousands, tens of thousands, sometimes hundreds of thousands, or millions of these boards, you have to keep feeding in all these reels cuz these machines
+
+**Dave Jones:** can spit out these boards pretty quick. So, you're constantly feeding these reels in multiple times a day, and you're getting from different sources. Your supplier number one might have run out that you had on your bill of materials, so they get it from supplier
+
+**Dave Jones:** number two. And you know, it it doesn't matter. If you've put that into your bill of materials that you can use any one of those suppliers, then really you have no guarantee which reel the assembler is going to insert in here
+
+**Dave Jones:** because to them it's exactly the same part. When your purchasing people send all the reels to the assembler, all the assembler can do often the parts supply, you know, they can do the parts supply for you, order them all. Then they're
+
+**Dave Jones:** going to put their barcodes on there, and that barcode for this reel of Arts chip LM358 is going to be exactly the same barcode as this these ST ones. So, to the assemblers, it makes absolutely no difference whatsoever. This is an
+
+**Dave Jones:** identical part. And that is how we've ended up with multiple LM358s on the one board, which you might think that's weird. What's going on there? Are they You know, that it does this do something that has a slightly different spec to
+
+**Dave Jones:** this one? No, it shouldn't. If they've designed it that way, then they've designed it very badly. Because the LM358 is not a is a jelly bean part and it's not a precision part and you just don't get you should not care about the
+
+**Dave Jones:** specifications. So, that's why it's just this is just an assembly house thing. They've they've treated that as exactly the same part and it's going to pass with flying colors. And I've done a video on that like I visited the local
+
+**Dave Jones:** nest, which is an alarm manufacturer here in Australia and this is their pick and place line. You can see that they've got multiple Yamaha machines and then it goes into well, and that that detracts like that and the boards
+
+**Dave Jones:** just go through all these multiple machines like this to load up and you can have probably reels on the other side as well. You can see the reels loaded into the feeders. These are the feeders that you plug in. Right, this
+
+**Dave Jones:** one has 50. I think yeah, 50 or 48 or 50 feeders or something like that. Might include some on the other side as well. You can see how it goes through the multiple machines, then it goes into your reflow oven here and there might be
+
+**Dave Jones:** optical inspection at the end and things like that. So, yeah, I'll link in that video if you haven't seen it, but that's a typical, you know, a smallish {slash} medium scale you know, pick and place manufacturing line. Now, we won't go
+
+**Dave Jones:** through the specifications in details here, but suffice it to say that you can go download these data sheets for yourself. I'll actually link them in directly and you can compare the ST to the arts chip one over here and the
+
+**Dave Jones:** offset voltages, you know, it's it's like very average as I said, yeah, like the slight differences. This one might be typical at two for example for just the basic grade that doesn't, you know, if you put A on the end, that can
+
+**Dave Jones:** actually be better. And you know, max of seven over here and this has a max of nine over here for the full range, for example. But as I said, if your design if you're worrying about these specs in
+
+**Dave Jones:** your design, then you shouldn't be using a jelly bean component like this op amp. You should be choosing a specific op amp with specific specifications to meet your need. That's why you can find thousands of different types of op amps.
+
+**Dave Jones:** You would not choose a jelly bean if you really cared about any of these specs. You might slightly care cuz it has like the voltage, you know, the wide voltage range required or something like that. But beyond that, you probably don't
+
+**Dave Jones:** care. You just go, "Oh, yeah, you know, 10 millivolts of offset, she'll be right. No worries." Um and yeah, you just don't care. So that's why I'm absolutely sure that Unity, the designers of this do not care whether or not it's an Arts chip or it's
+
+**Dave Jones:** an ST jobby. And that's how they ended up on there. So anyway, if you found that interesting, please give it a big thumbs up. As always, discuss down below in the EVBlog forum, of course, where there's tens of thousands of us over
+
+**Dave Jones:** there um chatting about every minute detail about everything possible. It's fantastic resource. Biggest on the interwebs. Catch you next time.

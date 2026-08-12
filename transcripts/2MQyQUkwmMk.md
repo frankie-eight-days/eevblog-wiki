@@ -1,0 +1,222 @@
+---
+video_id: 2MQyQUkwmMk
+title: EEVblog #626 - Ceramic Capacitor Voltage Dependency
+url: https://www.youtube.com/watch?v=2MQyQUkwmMk
+source: youtube-asr
+---
+
+**Dave Jones:** Hi. Welcome to Fundamentals Friday. Today we're going to take a look at a rather unusual and often little-known aspect of ceramic capacitors. In fact, it's a really undesirable aspect and a real trap for young and old players alike if you're not aware of it. So,
+
+**Dave Jones:** let's have a look at some basics first and then we'll very quickly then we'll jump over to the bench and I'll show you. So, I won't tell you what it is yet. I'll let you figure it out on your
+
+**Dave Jones:** own. But, uh you know, a capacitor, right? Simple RC charge circuit like this, very common application for capacitors. Uh RC time constant charges up, gets to a certain threshold and you can detect that and you can use them as timers. Very typical
+
+**Dave Jones:** uh application. Not that accurate because as we're aware, capacitors are not particularly high-tolerance devices. And if we take a look at uh some typical ceramic capacitors, we're only talking about ceramic capacitors here, then uh they're basically divided into several
+
+**Dave Jones:** classes. Class 1 capacitors are your NPO and your COG type and a couple of more obscure ones that you've probably heard of. And as you might know, they are actually very stable capacitances with temperature. Okay? So, once you've
+
+**Dave Jones:** actually measured them, then they stay pretty stable. They basically do not change with temperature. So, they're typically your low values, you know, your 1 nF and under you can get in these uh NPO COG types. But, your larger capacitance
+
+**Dave Jones:** values, you know, your hundreds of nF, your microfarads, all your modern ones, you know, you can get like hundreds of microfarads now in little surface-mount ceramic packages. The technology's absolutely incredible. Anyway, I won't go into a huge amount of detail, but
+
+**Dave Jones:** basically, you've heard of these codes before, things like uh X7R, for example. What does that mean? Well, uh there's a three-letter code like this that's part of the um EIA uh code system. And X, for example, uh the first
+
+**Dave Jones:** letter represents the low temperature, so minus 55 and the next digit here represents what the high temperature limit is. In the case of X7R, it'll be uh minus 55 to plus 125° C, and the R part is the tolerance of the
+
+**Dave Jones:** capacitor. This case, X7R, plus minus 15%. Pretty basic stuff. Or an X5R, for example, is basically the same capacitor but with a slightly lower higher temperature range. And you're familiar with these things. And as you might know, if you're an experienced designer,
+
+**Dave Jones:** so picking something like an X7R is a relatively stable uh high value capacitor to use, a relatively stable dielectric. So, you you might use, say, an X7R or an X5R in an RC time constant like this, but aha,
+
+**Dave Jones:** wait until we get to the bench. I'll show you a trap. It's not just about the tolerance here. Now, if we look at the RC circuit which I use in the example on the bench in a minute, you're familiar with the
+
+**Dave Jones:** charging uh graph, charging response of a capacitor. And time constant, one time constant or tau, as it's known, is the simple formula R * C. And, you know, a basic building block circuit, basic building block formula, you should be
+
+**Dave Jones:** familiar with. And one time constant is the point, here it is, one time time constant is on the x-axis here, and the percent of charge is on the y-axis here. And if we put a step voltage in like
+
+**Dave Jones:** this, then our capacitor will charge up with a um exponential formula. The main formula is actually down here, but you can simplify it. We won't go into the details on that. We'll just use our simple R * C formula today, and we'll be
+
+**Dave Jones:** measuring this one time constant period. One time constant is where the voltage charges up to roughly 63.2% of the final voltage. Why that particular number? Well, it has to do the fact that when you plug one e to the
+
+**Dave Jones:** power of minus one up here, that's the number that actually spits out of the formula and it's useful. And basically a capacitor is essentially fully charged, you could say, after roughly five time constants or five times RC. A capacitor is fully charged. So, if
+
+**Dave Jones:** you know your resistance, you know your capacitance, you can figure out how long it takes to fully charge that cap or get to one time constant. Pretty simple, pretty basic. And of course, there's more to this as well. There's a class
+
+**Dave Jones:** three down here using yet more exotic materials and yet more unstable materials again for ceramic capacitors. So, pretty much that class one is the most stable, class two yeah, they're okay, but as we'll see, there's some future traps in there. And well, class
+
+**Dave Jones:** three is even worse. So, let's not go there. What we'll take a look at today is an X5R or X7R capacitor on the bench. And we we we won't be taking frequency into account as well. It'll be nothing
+
+**Dave Jones:** to do with that. It'll just be the capacitance, this tolerance figure here. So, if we have a look at say the X5R capacitor we're going to go look at on the bench now, it should measure plus minus 15%. Does it?
+
+**Dave Jones:** Well, yes and maybe no. Come with me. Okay, the first example we're going to look at is a typical 0805 class two ceramic capacitor from Murata, one of the top manufacturers. And here's the full part number, got this from
+
+**Dave Jones:** Farnell's and it's a multi-layer ceramic capacitor, X5R, basically the same as XR7R, it's just slightly lower temperature, nominal 10 microfarads and 6.3 V rated. So, one of these, you know, low voltage rating ones you typically only use them on 5 V or 3.3 V rails or
+
+**Dave Jones:** something like that. Now, it's a nominal 10 microfarads with a tolerance defined by this letter here. In this case, it is K, and I'll show you the data sheet in a second. That is plus minus 10%. Now, that's not the X7R. The X7R
+
+**Dave Jones:** value of plus minus or X5R value of plus minus 15% we saw before, that's its temperature or change, the temperature coefficient over that full temperature range. So, but this is the initial tolerance as you'll measure it and buy
+
+**Dave Jones:** it from Murata straight out of the packet here. So, there you go. You have to decode these rather complicated part numbers for these things, and you'll notice that the 102 is the value there, 10 microfarads, and we've got K, number
+
+**Dave Jones:** eight. So, we have to drop down to number eight and see what that is. And here you go. Here's the full table available from Murata, and K, there it is, plus minus 10%. So, assuming that we measure it under the defined measurement
+
+**Dave Jones:** conditions for this capacitor, then we should measure 10 microfarads plus minus 10%. Okay, now, what frequency are we supposed to measure this at? What do they the specs define it as? Well, here it is. Capacitance, if it's greater than
+
+**Dave Jones:** uh 10 microfarads, there it is, at 0.1 kHz, 100 Hz. There you go, at a 1 V uh test voltage plus minus 0.2 V RMS. So, well, let's use our LCR meter. Here it is. I've uh surface mount soldered one
+
+**Dave Jones:** of the capacitors onto this little adapter board so we can plug it into our breadboard. Now, it's completely cooled down from the temperature change. It's at room temperature. We're like 23° C here in the lab, so the temperature is
+
+**Dave Jones:** not going to change during this measurement. And 100 Hz, here we go. Look, we're practically bang on to our 10 microfarad value. Okay, let's round that to 10 microfarads, okay? This is spot on. Okay, so let's mount that on
+
+**Dave Jones:** our breadboard here. We've got our bang on 10 microfarad capacitor there. We've got a 1K resistor in series with that, so we've got that RC circuit I showed you on the board before. So, we should be able to see the charge of the
+
+**Dave Jones:** capacitor there. And I've got that hooked up to my function gen here, and I've got it out putting a square wave, so we get a nice big step change from 0 to 5 V. Remember, this is a 6.3 rated
+
+**Dave Jones:** cap, so we're safely under that 5 Hz repetition rate with a 20% 5 Hz frequency with a 20% duty cycle. So, that'll allow us to see the charge and discharge cycle of the capacitor. And here we go. If we
+
+**Dave Jones:** look at our scope here, let's single-shot capture that. Bingo, there is the charging of our capacitor. Now, there's our green step change on the input there, and we're charging up, charging up until we get to 100%. And we're basically then dropping it back
+
+**Dave Jones:** down, and we don't care about the discharge period here. We're only going to be looking at the charging period. So, it's got enough time to charge up. So, there it is. There's our beautiful charging waveform. Now, from this, we should be
+
+**Dave Jones:** able to turn on our cursors, measure one time constant here, and from that one time constant equals R times C, we should be able to verify that that capacitance is correct. So, if we go into our select our cursors here, let's
+
+**Dave Jones:** go the Y right down the bottom, like that. Y2, let's uh take that. What we want, because we've got a 5-V signal here, we basically want that to be uh 63.2% of 5 V. So, that is 3.16 V, so we set
+
+**Dave Jones:** our cursor where our delta Y to 3.16 volts. We'll get close enough, okay? Just in the ball uh 3.162. There we go. So, that's the delta difference between there. So, that height is 63. Uh 2% or one time constant. Now, we go
+
+**Dave Jones:** into our X here, and we want our X right at the start period there, and X2 cursor right where that intercepts the waveform. That's pretty close to spot on there, and we're getting 10.6 milliseconds as the difference there.
+
+**Dave Jones:** Uh-huh. Let's plug that into the formula. All right. So, what do we have here? We measured precisely Basically, we rounded it to precisely 10 microfarads. Uh tau equals R times C. We measured uh that time constant to be
+
+**Dave Jones:** 10.6 milliseconds equals 1 K times C. We're trying to calculate C. Rearrange the formula. 10.6 milliseconds over 1 K equals 10.6 microfarads. Hey, that's not bad. That's pretty close, Ronnie. Uh 6% out there. Still within side that uh 10%
+
+**Dave Jones:** uh value that we, you know, the data sheet value. Yeah, it's a little bit off. It is 6% to what the our really accurate uh Agilent LCR meter told us, but hey, you know, you can put that down
+
+**Dave Jones:** to uh the error in the cursors and, you know, things like that eyeballing this sort of stuff. So, uh we're going to call that near enough. Not a problem. Okay, do it one more time for uh 0 to 6
+
+**Dave Jones:** volts, and I've done the cursors here, and we're basically getting uh 10.1 milliseconds or translates directly into 10.1 microfarads. Everything's hunky-dory. But, what happens if we change this voltage, and we add a DC bias voltage in here? So, our low level
+
+**Dave Jones:** is is our waveform is going from 0 to 6 V as you can see. Here's our ground reference level here, DC coupled inputs, and 1 2 3 4 5 6. So, we're getting six divisions there. What happens if we
+
+**Dave Jones:** actually set this thing so our low level here is say 5 V. So, it's going between 5 and 6 V. So, the capacitor always has a constant bias voltage of 5 V on it. Let's have a look what happens. So, if
+
+**Dave Jones:** we do our single shot capture there, there we go. There's our ground level down there. It's still exactly the same as what's was before. 1 2 3 4 5 V, but now our four and now our waveform is now
+
+**Dave Jones:** superimposed biased 5 V up. But, hey, that should not affect our formula at all. The time constant doesn't matter about what the initial value is. It's all about that step change. It makes no difference. Trust me, the formula ain't
+
+**Dave Jones:** wrong. It's been around forever, and it you can rely upon it. It's 100% correct. So, let's go in and measure that, shall we? Hmm. So, let's take that up a little bit more, shall we? And let's bring that right down to the here,
+
+**Dave Jones:** say. Bring that waveform down to here, and then we can capture that again, and bingo, we can go in there and measure that. I'll even bring it out the horizontal a bit so we can get a reasonable amount of accuracy in there.
+
+**Dave Jones:** Once again, we go in there and we use our cursors. Now, we've got to set Oh, let's set our Y1 minimum, our baseline here, right down the bottom. No problem. Y2, let's go up because it's a 1 V
+
+**Dave Jones:** change. We're looking for 63.2 delta here, difference. 63.25. There we go. Excellent. So, that's fine. And we're going to X1 over here. X1's already set. It's that cursor over there. So, we won't muck around with that. X2, bring that over to the point where that
+
+**Dave Jones:** waveform crosses there. What do we get? A delta, a time constant times times difference there. Once again, we're still getting to that 63.2% one time period, but look at this, 4.82 milliseconds. You whack that back into the formula, you get 4.82
+
+**Dave Jones:** microfarads. Our capacitance has halved. So, if we go back to our full formula here for the charging curve of a capacitor, well, actually, just change it slightly. V0 here is actually V origin. It's the start of where the voltage starts at,
+
+**Dave Jones:** okay? So, it doesn't necessarily have to be zero like we saw in this case. It's starting from 5 volts and going up to 6 volts. The formula still holds. I mean, you know, you read that in any textbook
+
+**Dave Jones:** and it is not wrong, okay? It is absolutely spot-on. And of course, tau is RC. And well, so what is varying, okay? Our start voltage is staying the same. We've measured it with our oscilloscope. There it is. We're going
+
+**Dave Jones:** up to the 6 volts. And we're we're we were measuring the time constant we're measuring the time period correctly, that 63.5% of the total change. Now, our resistor in here, R, well, a resistor is probably the world's most basic
+
+**Dave Jones:** component. These things don't change, okay? So, it's it's a fixed known 1K. So, what is left? What must be changing because we've measured all the voltages, we've confirmed them with the oscilloscope. Well, you guessed it, C. The capacitance
+
+**Dave Jones:** is changing. It has changed. So, it's dropped from that uh, value we had before of, uh, 10.6 microfarads, it's dropped down to 4.82 microfarads with that 1 V range with that 5 V offset. And it's got nothing to do with the 1 V range instead
+
+**Dave Jones:** of 5 V, we can confirm that. Again, let's go back, remove the DC bias, and check that 1 V range. It's not the range of the voltage, it is the DC bias which is causing this capacitance to drop. And here we go, just to
+
+**Dave Jones:** confirm, I've set it back to, uh, 0 to 1 V there, and there it is. There's our 0 to 1 V waveform, and what do we get? So, it's exactly the same amplitude as before, and we get, look, bang on, 10
+
+**Dave Jones:** MS. WOW! BET YOU DIDN'T know that. These class two ceramic capacitors change their capacitance based on the applied DC bias level. Unbelievable. Who knew? They don't tell you that in the data sheets, the bastards. But not only that,
+
+**Dave Jones:** the capacitance also changes with the applied DC, uh, voltage level as well, not just a DC bias offset. So, the AC level as well. In fact, the capacitance can go up, not decrease, as we've seen with an an applied AC voltage, depending
+
+**Dave Jones:** on the level, depending on the, uh, construction technology and the dielectric used in a particular type of capacitance. And it can even change fairly drastically between the same family with different size capacitors. Unbelievable. So, the same family, the
+
+**Dave Jones:** same type, the same XR7 rating or whatever it is, it can change. Man, I hate capacitors. So, are you shocked? Well, you should be. Now, let's go on to a different type here. This is a pretty horrible Y5V, uh, ceramic cap
+
+**Dave Jones:** minus 20% plus 80% initial, uh, tolerance, 10 microfarads, 16 V, and, uh, let's measure it and see what we get. So, I measured a value on the LCR meter of 8.65 microfarad. So, let's see what we get on the scope. I won't bore
+
+**Dave Jones:** you with the operational details. So, here you go, 7.8 microfarad, 7.8 milliseconds, exactly the same resistor, everything else. So, it's a reading quite significantly lower than that 8.6 we were getting before. And well, that's not a mistake. As we've seen, capacitors can vary with
+
+**Dave Jones:** bias voltage and also other things like the just the basic applied voltage. Now, let's check this same Y5V capacitor from 0 to 10 volts instead of 0 to 1 volt. Once again, there's no DC bias here at all. What do we get? Well, look at it.
+
+**Dave Jones:** It looks substantially different. And there we go. Look at that, 4.6 milliseconds. Goodness, our capacitance once again has like halved. Pretty hard, but look at this. The wave shape, the charging waveform has actually changed. It is not that sort of, you know, rapid rise and
+
+**Dave Jones:** then the decay like that. It sort of goes up like this and then decays, totally different to what we saw before. Ah, so these Y5V caps are absolutely horrible. And there's some weird, you know, physics going on here um based
+
+**Dave Jones:** on the dielectric and the construction of these uh Y5V capacitors. They're nothing like those X7Rs that we got before or even like this same Y5V but down at 1 volt. All we've done is now change it to 10 volts. Here we go, we're
+
+**Dave Jones:** 2 volts per division, and like the characteristic of the charging of this thing has changed. Oh, man, you definitely don't want to use these for any sort of timing application. And what happens if we add a bias level? We'll
+
+**Dave Jones:** add a 9-V DC bias level. Remember, this is a 16-V cap. This cap will only go up to 10 V maximum output voltage on a square wave. So, we're going from 9 to 10. So, we're going back to that 1-V uh
+
+**Dave Jones:** difference, that 1-V change. But, let's have a look at the waveform, and this is what we get. Now, yes, we're back to that uh characteristic shape that we saw at 1 V, that proper, you know, the curve you actually expect for the charging of
+
+**Dave Jones:** a capacitor. But, look, what? We're at 1.5 ms, 1.5 microfarads. It's dropped by, you know, not quite an order of magnitude, but jeez, it's getting there. And this is for a 16-V rated uh you know, Y5V cap. And that we
+
+**Dave Jones:** measured the value and measured the capacitance of with our good LCR meter. It's hopeless. Now, the real problem with all this is that this is rarely mentioned in data sheets. There are exceptions to this. Some manufacturers do actually remind
+
+**Dave Jones:** you of it every now and then. But, hey, sometimes it's almost next to impossible to find for your particular manufacturer. Now, this particular Murata capacitor we're actually using here, uh we used first of all the 0805 here, the 6.3-V 10 microfarads. There it
+
+**Dave Jones:** is there. And if you jump on over to the product uh page here, by the way, it's not in the data sheet. You have to actually go to the manufacturer's product page for that specific capacitor. And here, look at this. Look
+
+**Dave Jones:** at this graph right here. Maybe I could uh zoom into that, perhaps. Not that great, but here it is. The capacitance, oh, no, here it is. The DC bias characteristics of the capacitor. Look, zero is like This is the uh change in capacitance,
+
+**Dave Jones:** i.e., the the in capacitance with the DC bias level and that's exactly what we saw here. And look at that graphic. It can drop as much as 60% by the time it gets to 6.3 volts. So, at 6.3 volt
+
+**Dave Jones:** rating, it's dropped by a massive 60 the capacitance has dropped by 60%. It's unbelievable. And look over on this side here, here are the AC voltage characteristics I was telling you about. I don't have time to um set up
+
+**Dave Jones:** experiments to uh verify this one today. I want to keep it a bit short. Oh, as short as possible. Probably been going long enough already. Anyway, the capacitance change with AC voltage RMS. Look, quite significant up to like plus
+
+**Dave Jones:** 15% minus 30% right down at low signal levels. Unbelievable. Who knew this stuff? Right. And um the AVX are quite um decent. They actually remind you of it. Here it is. Capacitance change versus bias voltage. Look at the drastic
+
+**Dave Jones:** drop-off in this particular one. I mean, this is just awful. Look at this. Uh this is for one of their general purpose uh multilayer ceramic capacitors. So, the uh it actually goes up a bit. As I said, it
+
+**Dave Jones:** can actually go up at small DC bias levels and then it it drastically drops down to, you know, once again, these are high voltage uh caps, but it can drop way, way off, 80, even 90% or more of your nominal rated
+
+**Dave Jones:** capacitance just by adding DC bias or by uh changing that AC voltage. And anyway, you can get some interesting uh little obscure articles here which tell you all about the physics and uh stuff like that behind all how how all this sort of
+
+**Dave Jones:** stuff works and how the various crystalline structures work. And look, did you see it? Know that the crystalline structure changes with temperature? Look at that. This is for a certain type of dielectric and uh construction uh which is found in
+
+**Dave Jones:** typical class two and class three multi-layer ceramic capacitors. So, depending on the temperature, it actually changes the crystalline structure. And then the DC bias, it goes into try and explain the physics of how that actually works and how the DC bias
+
+**Dave Jones:** affects the actual capacitance. So, anyway, I'll link in this stuff down below. Check it out. And there's a lot more to it. Some manufacturers don't even mention it. But wow, it's a can be a real trap. Capacitance ain't
+
+**Dave Jones:** capacitance. And here's an example of AVX actually showing you the effects of voltage. In this case, it's the AC voltage capacitance change versus AC voltage as well. And you can see how the capacitance can actually increase drastically, you know, 50-odd percent or
+
+**Dave Jones:** so, depending on the AC voltage applied to it for these multi-layer ceramic capacitors. So, yeah, it's really tricky business. Now, a couple of the manufacturers, namely Murata and AVX, these are the two of the better manufacturers in this field for
+
+**Dave Jones:** analyzing and trying to correct it. You know, they're always improving their manufacturing processes and stuff like that for to, you know, try and eliminate this kind of effect, although it's next to impossible with the class two capacitors. But at least they're aware
+
+**Dave Jones:** of it. And they do allow you tools to actually simulate it as well. The Murata website has a tool called SimSurf, and it allows you to actually plot this stuff with bias values and all that sort of stuff. And AVR as well,
+
+**Dave Jones:** they have SpyCap software, which will do a similar thing as well. So, you can play around with these simulation tools, but there's nothing better than actually whacking it on your bench and seeing it for real like we did today. And I won't bore you
+
+**Dave Jones:** with the details. I'll leave it up to you to experiment with this. But if you drop that DC bias level like say 1 V at a time. So, if you went from 9 to 10, and then 8 to 9, and 7 to 8, and 6 to 7,
+
+**Dave Jones:** and so forth, and dropped it down, or increased it, then if you plotted that and measured your capacitance at each value, you would get that similar characteristic, huge big characteristic drop in uh capacitance versus your bias voltage, exactly like the manufacturers tell you,
+
+**Dave Jones:** if you can find their data. So, there you go. That's an interesting fact that not a lot of uh even experienced design engineers know about, because well, they just throw their capacitor in, they assume it works. Yeah, they know about
+
+**Dave Jones:** all sorts of other characteristics of the ceramic uh caps, and all your temperature coefficients, and mainly all they care about is temperature, but what a lot of people don't think about is that capacitance can change with voltage as well. Not only DC bias uh voltage uh
+
+**Dave Jones:** that can have a drastic effect, but also the applied AC voltage as well. So, it is not just like RC time constants like this. Of course, if you're using the same uh circuit for, you know, you're doing filtering and things like that, it
+
+**Dave Jones:** can really matter based on the signal level. It can be really quite critical. So, you have to be very careful with how you use these modern ceramic capacitors. They're fantastic with all these wonderful materials technology that goes in and give you incredibly high
+
+**Dave Jones:** capacitance in incredibly small uh volumes for SMD and stuff like that, but yeah, there's a few downsides, and it's not just temperature, voltage as well. Trap for young and old players alike, certainly. Now, this only applies to class two and above ceramic capacitors.
+
+**Dave Jones:** It does not apply to electrolytic capacitors, tantalums, and uh class one NPOs, and things like that. So, yeah, and there's of course I've done videos on other uh traps with uh these ceramic capacitors as well. Piezoelectric uh effect, of course. Well, I'll link that
+
+**Dave Jones:** in down below if you haven't seen that video. So, there's lots of stuff to think about here. Man, so many traps. Got to be careful. Electronics design ain't as easy as it seems on the surface. You dig deeper and
+
+**Dave Jones:** deeper and deeper and well, if you're in a critical application, this can be a really big deal. So, there you go. Hope you enjoyed that video. There's so much I can do on this subject. I can measure, you know, and hey, let's not even get
+
+**Dave Jones:** into change of frequency changes and and all sorts of other stuff thrown into the mix. Oh, goodness. Could do hours and hours of videos experimenting with this sort of stuff, but you should get to your bench and have a play around with
+
+**Dave Jones:** it yourself. It can be rather fascinating. So, there you go. Um, hope you enjoyed that one. If you want to discuss it, jump on over to the EEVblog forum. Link is down below. If you like Fundamentals Friday, please give it a
+
+**Dave Jones:** big thumbs up even though, well, it's actually Saturday I'm shooting this on. Yeah, I'm a bit late. Anyway, catch you next time.

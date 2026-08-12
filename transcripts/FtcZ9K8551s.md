@@ -1,0 +1,332 @@
+---
+video_id: FtcZ9K8551s
+title: EEVblog #701 - Keysight 3000T Oscilloscope Review
+url: https://www.youtube.com/watch?v=FtcZ9K8551s
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, back in February 2011, Agilent, as they were then called, released the 2000 3000 X-Series oscilloscopes and they were absolutely ground-breaking scopes with building waveform generator, 1 million waveform updates per second, etc. with that mega zoom 4 ASIC. Very impressive stuff
+
+**Dave Jones:** at the time, absolutely industry leading, nobody could touch them for a couple of years after that. And well, this turned out to be the X-Series turned out to be the most popular and biggest selling oscilloscopes in Agilent and HP's history. And what have we got
+
+**Dave Jones:** today? Well, another world exclusive. Out goes the Agilent 3000 series. You can still buy it, but they've replaced it with Tada! It looks exactly the same, but it's the 3000T. They've upgraded from the 3000A to the 3000T. Why is it called T?
+
+**Dave Jones:** Because it's touchy. So, about 2 years after they released the original 3000 X-Series, they released the 4000 X-Series, which I did a review on as well and that'll be linked in down below if you haven't seen it. And that was a pretty impressive
+
+**Dave Jones:** scope, but I was a bit underwhelmed by it at the time, even though it had a gorgeous big touch screen, all the touch screen technology, everything else, huge massive screen on it, very impressive scope with its zone trigger
+
+**Dave Jones:** capabilities, everything else, but I was a bit underwhelmed that they didn't have a new mega zoom 4 a new upgrade to the mega zoom 4 ASIC, which made the 3000 and 2000 series an an absolute winner. So, I was very
+
+**Dave Jones:** excited to hear about this. So, does this have a new mega zoom ASIC in it? No. Fortunately not, It doesn't. It's exactly the same mega zoom 4 ASIC with the same limited 4 meg memory that you got in your regular 3000 series. Say
+
+**Dave Jones:** again. There's no mega zoom 5 ASIC in it. Yeah. Huh. Where's it gone? Yeah, I don't know. Uh, I I think it must still be in the R&D labs at Keysight. What do you think? Yeah. Should they release it?
+
+**Dave Jones:** Yeah. Yeah, I think it needs some more memory, don't you? Yes. Yeah, it's a bit of a shame, but it's still got lots of features, doesn't it? Yeah. And it's the same price. So, that's got to be pretty good.
+
+**Dave Jones:** Yeah. Yeah, you want to check it out? Yes. All right. So, just what have they changed from the original 3000 series? Well, hardly anything at all. Here's the new one. If you look at the differences, there's hardly anything at first glance. Very hard to
+
+**Dave Jones:** pick between the two. The only difference is, as far as the physical uh unit is concerned, and the uh look and feel of it is that the new model has two extra buttons. There's a third button over here, which is, well, the touch
+
+**Dave Jones:** button. And they've also added squeezed in a little zone button there. But, that's it. They're practically identical scopes. But, they've had to actually do away with one button um in terms of functionality. They've now moved the serial button was up here, but now it's
+
+**Dave Jones:** a dedicated FFT button. So, the serial is moved down here, replacing what used to be the label button. They've added the touch button, which is uh was the help button on the original one. And now, the help button is moved over here
+
+**Dave Jones:** to this additional button. And as I said said, we've got the uh zone triggering button just squeezed in up there. And it does kind of look like it has been squeezed in as well from the existing layout. But, this is kind of makes sense
+
+**Dave Jones:** cuz that label button probably one of the least used uh buttons on the scope. So, really they've they've thought about, okay, which button can we take out there? Maybe they should have just added, you know, kept the label button
+
+**Dave Jones:** over here or something like that and added another one. Eh, but apart from those changes, everything else looks and works exactly the same, apart from the fact that, tada, we now have a touchscreen. We can now move our
+
+**Dave Jones:** waveforms up and down, and we can do all sorts of weird and wonderful stuff, which I'll no doubt show you. And although it's uh hard to really get a difference here, this new uh screen looks to be a little bit brighter than
+
+**Dave Jones:** the previous one. And of course, it's a capacitive uh touchscreen, and it does work really well. And as for the rear, absolutely identical. They've reused all the existing uh tooling for the cases. It still has the um reasonably small, but excellent little
+
+**Dave Jones:** um uh sort of built-in uh pouch, I guess you could call it up there to uh carry your probes in. Once again, you can barely fit the four probes in there. It's a bit of an art to get them all
+
+**Dave Jones:** packed in there. So, yes, we've still got our trigger out, our external trigger in, our um USB device, and our USB host as well. And there's another USB uh host on the front. And the LAN VGA module is still optional extra.
+
+**Dave Jones:** Bummer. And we'll see if there's any boot time differences. Here we go. And look at that, we have a winner. At just over 40 seconds, the new one is substantially slower. It's going to take almost a minute to boot. Oh, no.
+
+**Dave Jones:** Oh, come on. That's painful. Over a minute. No. What have you done, Keysight? You've gotten slower after you change your name. Should have stayed as bloody Agilent. Still going. Oh, a minute 12. Look at that. But the reason for this is pretty
+
+**Dave Jones:** obvious because this new 3000 uh T model actually uses the same code base as that newer 4001. Hence, because the 4000 already has all the touch screen and everything else. So, it's got it is different firmware. Still based on the
+
+**Dave Jones:** original one, but they started using the code base from the 4000 inside this thing. Hence, it boots slower. It's got more bloat in there and whatever. And one very nice upgrade, you now get the 5 gig samples per second standard across
+
+**Dave Jones:** all of the units included from the 100 MHz up to the 500 MHz uh up to the 1 gig, sorry. And yes, the update rate is still the same cuz it uses the same MegaZoom 4 ASIC. So, it's the 1 meg
+
+**Dave Jones:** waveforms per second. Because before you only got the 5 gig sample per second on that uh 1 GHz model before. Uh the previous one, all of the the 500 MHz models and below, they were all 4 gig samples per per second. So, that's a
+
+**Dave Jones:** nice little upgrade. And another big upgrade, but well, they were pressured into doing it. You get the standard 4 meg memory now on all the models, even from 100 MHz right up because that's the uh that's the maximum amount of memory
+
+**Dave Jones:** in the MegaZoom 4 ASIC. And they've had to do that to compete. And that is still one of the probably the only major limitation of this uh new scope is that it still uses that MegaZoom 4 ASIC and
+
+**Dave Jones:** is still limited to 4 meg memory. But to compensate for that, if you go into acquire, yes, segmented memory is now standard across all the models as well. Once again, that was a paid option before, standard now. They were forced
+
+**Dave Jones:** to do it. And just like the previous models, it does not display the amount of memory actually used. It Well, well, this touchscreen, I can't just go pokey poke. They do not actually display that it In fact, there's no way to actually
+
+**Dave Jones:** choose how much memory you're going to use it. The scope always decides and uses the maximum amount of memory possible based on the current mode and the the time base and everything else. So, some people don't like that, but as a
+
+**Dave Jones:** day-to-day use scope, I do really appreciate that because you don't have to dick around with anything. It always gives you the maximum performance. And a new option not available previously is Well, the frequency counter. It comes standard with a 5 MHz a five-digit one
+
+**Dave Jones:** just like here, but now, whoops, I automatically touched that. Now you can actually call that up and you can actually have ta-da, up to eight digits. But that is an optional extra. You don't get that standard. It's going to take a
+
+**Dave Jones:** time. It's going to take time to calculate that, but it will eventually Look at that. Eight digit, very nice. And to go along with that and also to increase the performance of this thing, the previous model only had a standard
+
+**Dave Jones:** time base stability of 25 ppm. I mean, you know, a pretty stock standard crystal oscillator in the thing, right? Just, you know, Joe Blogs one. But now, they've increased that as standard to 1.6 ppm. Very, very nice. And it's also
+
+**Dave Jones:** got a totalizer function as well, which once again, that's part of the optional upgrade package. It wasn't available in the previous model. And as an upgrade, you can now have up to eight different measurements down here, whereas before,
+
+**Dave Jones:** you could only get two. So, now we can add as many as we want. Well, up to eight, anyway. There we go. Neat. And by the way, I've just had this running overnight cuz I wanted to see what happened if I would try and trick
+
+**Dave Jones:** up this totalizer if it like rolled over or got something, you know, got to some maximum internal figure. But look at this, 37.74 gigahits. So, that's unbelievable. So, yeah, it didn't fail at all and that's how many times it's triggered and
+
+**Dave Jones:** captured this waveform since last night. Unbelievable. And by the way, that totalizer there can count events, be they trigger events or any sort of capture event up to 25 million times per second. Whoa, super quick. So, the touchscreen interface is just like the
+
+**Dave Jones:** 4000 series. We can just drag these dock and we've got these various docks over here and we can add various things and then you can have them as solid dialogues or transparent. It's all very, very nice and the options, the various options come up
+
+**Dave Jones:** for the different channels. You can change them all here. You can do all sorts of jazz and then we've got our menu up here, which is designed to be based around a tablet so that you can actually fully control this thing via
+
+**Dave Jones:** remotely via a tablet. So, you don't even ever need to touch the the controls on this thing. If you don't, you can operate it remotely. It works the same way on the scope as it would on a remote PC or a tablet via
+
+**Dave Jones:** Wi-Fi, for example. So, it's beautiful and it's really well designed. They've actually put a lot of thought into this. Just They haven't just gone, "Oh, we'll just make this thing touchscreen and ah, that'll be right." You know, they've
+
+**Dave Jones:** actually put some thought into the usability, how it's going going across platforms and all that sort of stuff. So, you know, you may not like touchscreen, but it's really darn handy. Like I can go up here and if we're in
+
+**Dave Jones:** move mode, for example, I can just drag waveforms up and down and that's, you know, that works really, really well. And then of course we can do stuff like drag our waveform across. You just saw that it actually moved there and we can
+
+**Dave Jones:** drag it like that. Very, very nice. So, we can go up here and we can say, "Well, we want to zoom in to, you know, well, that edge there, for example." And then you get all the various options. You can
+
+**Dave Jones:** get the zone triggering, which we'll take a look at, or we can do the horizontal waveform zoom, or just the waveform zoom itself. Look at that. Fantastic. Works really well. You know, you may not like touchscreen, but hey,
+
+**Dave Jones:** this is implemented as good as you could possibly imagine. And if you're a screen poker like I am and oh, accident- it's accidentally popping up and it's annoying the hell out of you, well, you just turn off the touchscreen with the
+
+**Dave Jones:** button there and nothing. You can't You can't do anything at all. You can turn it back on. Takes a second or two to enable it back on, but hey, that's a really nice touch. Get it? And just nice little extra thing over
+
+**Dave Jones:** the 3000 series, it actually highlights the current waveform that you've got operational here. So, you can see they actually put a little box a little highlighter box around that and that really is quite neat. And that's not just for the touchscreen. That works if
+
+**Dave Jones:** I press the channel two button over here or the channel one button. It's just nice. And it seems like they have much more confidence in this new model as well. They give you a three-year standard calibration cycle instead of
+
+**Dave Jones:** two years. Now, of course, the calibration cycle is only a recommendation. It's what your company implements. If your company says, "Well, we got to calibrate our instruments every 6 months." Well, that's what you do. But, the manufacturer's recommended
+
+**Dave Jones:** rating, they're confident that this thing will hold its calibration for 3 years and you'll only need to get it calibrated every 3 years. So, most companies will follow the manufacturer's recommendation on that. So, that lowers your cost for uh recalibration. And they
+
+**Dave Jones:** quoted an MTBF, a mean time between failure for this instrument as well, whereas they didn't quote it before on the 3000 A series. They're now saying this will be reliable for a greater than 250,000 hours. And that's a pretty bold
+
+**Dave Jones:** claim because that's 28 and 1/2 years reliability. Wow. Huh, I don't think they're offering a 28 and 1/2 year warranty though. But, still they've got a high confidence in the reliability of this thing. So, you know, they're going to be using quality
+
+**Dave Jones:** parts in this thing. But, jeez, that's a long time. That's a big MTBF for a whole instrument. And one of the good things of course is that the built-in demos and things like that are really actually quite handy. Not only just for reviewers
+
+**Dave Jones:** like me to demonstrate the capability, but just to uh remind you how these sorts of things work. And there's lots of powerful little uh demos here that generate um all these test signal waveforms that allow you to, you know,
+
+**Dave Jones:** remind you how to set up trigger and things like that. Here's just one random one. It shows the auto ranging of the built-in uh DVM meter over here and how it rescales it to um tells you to maximize the dynamic range of the um
+
+**Dave Jones:** lowly 8-bit converter in this thing. But, hey, that's nice. Auto ranging DVM. And here's an example of the hardware based mask testing. And this is actually generating real signals here. I can actually disconnect the disconnect the uh scope probe on on the
+
+**Dave Jones:** front here and it's just redoing this. So, it's very nice. You can see how it's defined. Oops, I've I've complete Oh, no. There we go. We've restarted. It's nice how I can just move that around. So, you can set up these interactive
+
+**Dave Jones:** demos generating real test signals. In this case, they've got like this bad pulse here that the thing's capturing and it's capturing this hardware in the real time. This is of course the advantage of the MegaZoom 4 ASIC I've shown in previous videos, but
+
+**Dave Jones:** number of tests look it's 9 million. I've had it running for like less than a minute and it's already done, you know, 10 million tests because of the million waveform updates per second fastest speed possible. It's not always one
+
+**Dave Jones:** million waveform updates per second depends on the horizontal time base range, but yeah, it's just super quick. Everything's done in hardware this mass testing serial decoding everything else. Still one of the standout advantages of the Agilent scope architecture the MegaZoom 4 ASIC.
+
+**Dave Jones:** Everything's done in hardware. None of this software rubbish doesn't slow down the machine at all. Brilliant. And same thing with eye diagram mass testing. Look at that. It's just It's just beautiful. And that's generating real signals out of the scope and you can play around
+
+**Dave Jones:** with it to your heart's content. Terrific stuff, really. I'm changing the horizontal time base there. And the next demo just shows you the new high digit counter there. There we go. It automatically does it. And by the way,
+
+**Dave Jones:** yes, we do have pop-up keyboards now and yes, it does support USB keyboard and mouse as well on the USB if you want to you know, interact with the machine that way. So, there you go. It's just showing
+
+**Dave Jones:** that it's a slightly lower frequency and we saw that before as well coming out of the arb gen. And there we go. That's the totalizer function accurately totals the number of input edges and counts both edges and trigger conditioned on
+
+**Dave Jones:** qualified events. This example totalizes the number of runt signal inputs to the scope. so you can count the number of runt pulses, not the number of main pulses. Brilliant, super powerful. Now, of course, with the advent of the
+
+**Dave Jones:** Tektronix MDO 3000 with its fantastic built-in FFT spectrum analyzer, well, Agilent have had to kind of sort of compete with that, and they can't really because the Tektronix has some, you know, a real hardware and RF front end
+
+**Dave Jones:** to do that sort of thing, but hey, you know, they're having a token attempt by replacing the serial button, they've moved it, and they've now put a dedicated FFT button there, so you can switch that on. But, we're going to have
+
+**Dave Jones:** a look at the math mode first, and the also an advantage of the new 3000T is that you can have the FFT mode and a math function on at the same time, whereas with the older model, you had to
+
+**Dave Jones:** choose between FFT and or math, you couldn't have both at the same time. Now you can. So, here you go, this example's just generating a basic waveform, and we're getting the harmonics there. This is the math function of that, and of
+
+**Dave Jones:** course, you've got measurement capability here as well. And further demos, I've done a video on this showing the integration capability, but you can cycle through, this is the absolute value, these are some of the math functions that are built in, and it's
+
+**Dave Jones:** terrific. You can actually learn a lot by just playing around with this stuff. It's fantastic. Measurement trend of an FM burst, there you go. Okay, so I'm going to try out this zone triggering function. This is very powerful. Instead
+
+**Dave Jones:** of setting your trigger up more traditionally, we can go in here, and can select that, and we can go, we want to trigger on that right there, and we can must intersect, we can choose that it must intersect that box there, and it must or
+
+**Dave Jones:** it must not intersect or whatever, so we can choose that, and bingo, zone triggering has come done, and it's come on, and we're going to trigger within that zone there. Look at that. Fantastic. I love that. That is beautiful. So, not only zone
+
+**Dave Jones:** triggering on runt pulses, we've got regular runt pulse triggering, but here we go. We we can edge speed violation triggering, and all sorts of fantastic stuff. There we go. It's showing you how to do that. And that's just so powerful to
+
+**Dave Jones:** learn how to use this thing. It shows you step-by-step how which menus to call up, where to move the, you know, and what to select to set up a edge violation triggering, for example. It's just brilliant.
+
+**Dave Jones:** And here we go. It's now set up the zone triggering. There we go, which I did just did manually before, but now it's giving you a demo for that zone triggering. Very, very powerful this zone triggering capability. I'm not sure
+
+**Dave Jones:** whether it's available on other scopes. It might be called It might be called something else, but or it might be completely unique, but it really is quite powerful, especially when you combine it with a touch screen, and you
+
+**Dave Jones:** can just draw around things. It's brilliant. And you can also trigger on qualify conditions as well, like A then B, for example. So, you can set up sequential things to trigger like that in hardware. But they've done more than
+
+**Dave Jones:** just whack an FFT button on the front. There's a lot more advanced capability in here now. Look, for example, this the white waveform up here, which actually looks blue on my screen, but anyway, on my camcorder screen, but it it's white
+
+**Dave Jones:** here, is the FFT function. So, there we go. I can highlight that FFT function up there, and at the same time we can do a traditional FFT math function on, in this case, it's the same signal. It doesn't have have It can be on an
+
+**Dave Jones:** entirely different channel. So, I can now switch to math, and then I can choose which channel I want that from. So, that's It really is um quite powerful, and it's got if we go to the FFT here, it's got uh gated FFT as well, which
+
+**Dave Jones:** allows us to get the FFT function of a particular zoomed in part of the waveform. This allows us to uh or you can even integrate this and correlate it with all the mixed signal stuff. So, the analog signal and the digital signals as
+
+**Dave Jones:** well. So, if you've got a mixed signal design, it's you know, it's getting there towards what you can do with the uh with the Tektronix MDO 4000, for example, with its time correlation between channels. But, uh of course, the
+
+**Dave Jones:** Tektronix MDO 3000 can't do that time correlation. It's either FFT or bust uh kind of you know, spectrum analyzer or bust. It can't time correlate like the MDO 4000 can, but this uh 3000 T can actually time correlate between uh your
+
+**Dave Jones:** digital channels, your analog, and your uh FFT spectrum as well. And because it's doing it all in the hardware, it's not necessarily slow. It's not going to slow this puppy down. Very nice. And also got a debugging uh glitch example
+
+**Dave Jones:** in here. So, we can have a look at this. So, we can have a look at find a coupling signal that catches the glitch. So, let's have a look at that. And it tells you, of course, the million
+
+**Dave Jones:** waveform updates per second. And you can see the little uh runt pulses in there. It shows you how that you can actually uh trigger on these things. Here we go. You just take it I could do it manually,
+
+**Dave Jones:** of course, but it's going to do it for me. You draw the box around there, use the zone triggering, bang, and then you can get in there and identify that runt pulse. Very, very nice. And I can show
+
+**Dave Jones:** you this uh time correlation. Here we go. In this example, they're going to use the gated FFT to correlate the time domain analog signal with frequency shift key and modulated with the digital signal which is an I squared C clock and
+
+**Dave Jones:** what they're going to do the I squared C serial decoding as well all in hardware in real time and they're going to time correlate that to the frequency domain spectrum FFT. So let's give it a whirl and have a look. So this it's
+
+**Dave Jones:** triggered on the I squared C bus at the right frame. So all that's done in hardware in real time and here we go. It's going to show us how we can go in and we can search for the frequency
+
+**Dave Jones:** peaks. We can get that. We can set it up in the peaks in the dock over here very very nice and then we can start some time correlation. So yeah, this is damn impressive and then we can use the
+
+**Dave Jones:** navigate buttons to go through and find and there's our I squared C digital stuff and we can time correlate and find that frequency peak. Very impressive once again, this is actually generating real hardware signals down here that you
+
+**Dave Jones:** can manually play around with and probe yourself. So it's incredibly impressive what it's able to do on this base level scope. So yeah, it doesn't have a real in quote marks spectrum analyzer in the thing. It's still using the
+
+**Dave Jones:** you know, the basic ADC and doing the math and doing it all in hardware of course in the ASIC, but it it is still very very impressive capability how it can do time correlation between all your mixed signal stuff while doing hardware serial
+
+**Dave Jones:** decoding and everything else. Yeah, thoroughly impressive and we can also have a look at some of the intelligent cursor features and in this case we've got a clock signal, but it's got some noise superimposed in that. So we want to get an FFT of that
+
+**Dave Jones:** and it'll show you how you can actually go up there and do that. Switch it on and we should get and then we'll turn on our math function and get our FFT and then we can go in here and we can have a look and get our
+
+**Dave Jones:** use our cursor, drag it over and bang, intelligent cursor allows you to track the waveform math and there we go. We can And as I showed on the 3000T, also got all these training signals built in which Look, we've got all serial
+
+**Dave Jones:** digital stuff and then we've got all sorts of, you know, infrequent clock with infrequent glitches, all sorts of stuff and it will generate the hardware real time. Now, on the 3000, this was available as an optional extra. I'm not
+
+**Dave Jones:** sure if this is built into this one or whether or not it's only available on education models or something like that, but these training signals are fantastic. Because you can't always remember how to trigger on some, you know, obscure thing
+
+**Dave Jones:** and set up the scope. If you haven't done it before, you haven't You did it 10 5 years ago or something and you just forget how to do it. This allows you to generate a, you know, a similar signal
+
+**Dave Jones:** to the problem you're getting and then allows you to actually set up the scope and actually play around with it before and learn how to do that and trigger before you go probe your real signal. And of course, all the built-in serial
+
+**Dave Jones:** decoding which is optional extra is all the same as what you got on the traditional 3000, all the mixed signal stuff. So, there we go. It's this decoding real real digital data here. Oops, got to stop stop poking at the screen. I'll hit
+
+**Dave Jones:** my touch button to turn it off. There we go. And yeah, all that stuff is all that goodness is still there. Once again, all that serial decoding all done in hardware, but you got to pay extra, but maybe they might bundle it in with deals
+
+**Dave Jones:** and things like that. Ask. And there's an example of serial decoding the I squared C bus. So, that's pretty powerful and it's got the event table up the top, everything else all done real time in hardware. So, um yeah, the fastest possible signal you
+
+**Dave Jones:** can imagine, I squared C or SPI or any other serial bus, this thing will decode it all in the hardware. Your scope doesn't slow down at all. And of course, in the marketing blurb, they, you know, go on about this. Uh you get no slow
+
+**Dave Jones:** down with the logic channels, the protocol decoding, the math functions, the measurement, the vectors, all the sine x on x interpolation. This is all done in the ASIC hardware and yep, I can vouch for it. And of course, they see
+
+**Dave Jones:** the Tektronix MDO 3000 as a real threat, so they provide a comparison tables with uh for the waveform update rate, for example, at 10 nanoseconds uh per division. I haven't uh confirmed these, but I'm going to take um Agilent's word
+
+**Dave Jones:** for it. I'm pretty sure it's correct cuz the MDO 3000 really does slow down a lot as I as I've mentioned in previous videos. If you've got nothing turned on, it's a pretty fast scope, the MDO 3000, but um
+
+**Dave Jones:** at the same 10 nanosecond per division time base, of course, you get over a million waveform updates per second, but you turn on the digital channels, for example, on the MDO 3000, it just dies, that update rate. It's terrible. If you
+
+**Dave Jones:** turn FFT or anything else on the serial decoding, everything else, it's because they don't have the ASIC hardware to do it on the Tektronix MDO 3000. So, this is a really rip-snorting fast scope. Unfortunately, there's no new ASIC in
+
+**Dave Jones:** here, but it's amazing how it's held up, this MegaZoom 4 ASIC over this time period. It's just, you know, it's still the fastest thing on the market. And by the way, all the advanced math functions that were optional on the 3000 A are
+
+**Dave Jones:** standard now on the 3000 T. And so, they want to be, you know, for the price these days, they've got a competition in the industry. They've got to bundle it together. So, you know, differential integrals, FFTs, absolute values, all
+
+**Dave Jones:** sorts of things we we looked at in previous videos, digital uh high and low filtering, and averages and smoothing, and all sorts of advanced math stuff, all standard. Brilliant. But, all your uh serial decoding options there are still
+
+**Dave Jones:** uh optional, I'm afraid. So, yeah, if you want your I2C and your SPI and everything else you can bus, then you've got to pay for it. But, as I said, they might be able to, you know, bun- you
+
+**Dave Jones:** might get this as bundled in or something like that in the future, perhaps. And you now get the 500 MHz passive probes standard across all the models. So, even if you buy the 100 MHz version scope, you get the 500 meg uh
+
+**Dave Jones:** probes. Awesome. That means A, you know your probe's not introducing any uh issues on your signals, and B, you can upgrade that bandwidth at any time. Of course, you can't get like a 1 gig passive uh probe. So, you could go buy
+
+**Dave Jones:** the 1 GHz option on this, but, you know, 1 gig passive probes basically um don't exist. So, yeah, you've got to like use an active probe or uh roll your own solution there, but, yeah, great to get the 500 meg probes. But, woohoo, look at
+
+**Dave Jones:** this. If you buy the uh mixed-signal option, they've got these brand-spanking-new digital probes. These are the N2756A. Now, of course, the same uh pinout and uh .1-in header interface they've always had, but these are look like uh redesigned. So, these look very, very
+
+**Dave Jones:** funky indeed. I love these things. Look at them. Fantastic. So, they've got new uh probe ends on them and uh everything. So, yeah, entirely different. Agilent have had the same digital uh probes across a lot of their models for, oh
+
+**Dave Jones:** man, like 15 years or something now. And they've Yeah, they've finally got the new ones. I'm not sure what the uh if there's any performance differences or whether or not they just uh physically look different and a bit sexier, but,
+
+**Dave Jones:** yeah, that's nice. And the old 3000A drew around about 67 odd watts with a power factor of .91. And the new 3000T takes 67 watts with a power factor of .86. Not much in it, but it's still got
+
+**Dave Jones:** the ridiculous planet-destroying 6 and 1/2 watt standby. Geez, you could fly to Jupiter and back on 6 and 1/2 watts. It's ridiculous. Ah, fix that, please. That's awful. And yes, the function generator is still the same as before. The arbitrary function
+
+**Dave Jones:** generator, it's only one channel and it is optional, but the touch screen interface makes the arbitrary waveform editor, for example, much more usable. It's just, much simpler to use than it's a similar appearance to what you got on
+
+**Dave Jones:** the A series, but yeah, that touch screen just adds quite a lot of value in quite places on this scope. It's really handy. Now, here's an interesting difference between the Keysight 3000 and the Tektronix MDO 3000. Low-level signals. We're on 2 mV per division
+
+**Dave Jones:** here. 50 ohm input impedance. We're viewing a 100 meg signal here. And you can see the waveform is quite fuzzy. I've done a video explaining why this is the case because it's much higher bandwidth, much higher sample rate. So, you're going to
+
+**Dave Jones:** get a noisy signal. We can clean that up with high res mode and all the rest of it, but let's not get into that, right? There's our averaging and there's our high res mode. So, no problems at 100
+
+**Dave Jones:** MHz and the Tek will measure just the same. And there's the Tektronix MDO 3000. It's just fine, hunky-dory once again at that 2 mV per Well, it's 20 mV per division. I haven't set the times 10 probe factor on that, but it's 2 mV per
+
+**Dave Jones:** division. Our signal's just the same. It doesn't look as fuzzy because this is a slower scope. It doesn't update as fast. Done a whole video on that. Anyway, that's fine at 100 MHz. Look what happens when we wind up the wick. So,
+
+**Dave Jones:** here we go. We're going to wind up the wick. There's our frequency there, okay? And look at this. Our amplitude's starting to drop, and that is not my signal generator. This is my good Marconi one. No, our signal is dropping. It's
+
+**Dave Jones:** dropping it's because the MDO 3000 has limited bandwidth at the lower volts per division settings. So, that is a 1 gig signal, and there's nothing there. It's a 1 gig bandwidth, but there it is, but you don't get it because at the low um
+
+**Dave Jones:** volts per division settings. But, on the Agilent one, no problems whatsoever. That's our 1 gig signal, and yep, it's all hunky-dory. You get the full 1 gig bandwidth right down to 1 mV per division. And there you go. They claim it's 150 meg uh bandwidth
+
+**Dave Jones:** on the MDO 3000 and three at 1 mV and 350 at 2 mV and 5 mV. And we're all getting around about that figure. We sort of uh confirmed about that figure, but we got the full bandwidth on our 1
+
+**Dave Jones:** mV on our uh Keysight one. So, um and they claim it lower noise as well. I'm not going to go in there and measure it, but they do claim I presume that's a yeah RMS noise. There we go. At 1 meg
+
+**Dave Jones:** point memory. So, you can go in there and verify that. But, so basically, it's still the same 3000 series scope you used to, but it's got a fantastic new uh touchscreen and seems a bit brighter. So, it's just all better, and they've
+
+**Dave Jones:** implemented the as I said that touchscreen really quite well. I'm impressed with that. And if you don't like it, hey, don't use it. Just switch it off. It's dead easy. They've got things that have flowed down from the
+
+**Dave Jones:** 4000 series like the zone triggering and all the event tables and the new FFT actually is more than just a button. It does provide some additional functionality with FFT and math at the same time and all sorts of stuff and
+
+**Dave Jones:** gated measurement and gated cursors as well which I haven't looked at. So yeah, it's a really nice little upgrade and you get the 5 gig samples per second standard across all. So ripper. Shame it doesn't have more memory though. So there you have it.
+
+**Dave Jones:** There's the new Keysight, not Agilent anymore, Keysight 3000T. It is effectively a replacement for the 3000A. You can still buy the 3000A but it'll only be available for select markets. This is the same price. It's designed to be a replacement. So you're
+
+**Dave Jones:** mad if you bought the 3000A now. You go out and buy the 3000T. So if you're sitting on the fence before with the 3000A then this one might send you over the edge because can't fault it. The touch screen
+
+**Dave Jones:** interface really nice. They've brought down all that functionality from well a lot of most of the functionality from the 4000 series. Unfortunately, still well, they have included a lot of stuff standard that was optional before but you know, being tight ass like the eight
+
+**Dave Jones:** digit frequency counter is optional and all sorts of stuff like that. And well, go through the list, shall we? It's extensive. So yes, I do have a list. Who's been naughty? Well, Keysight have because everything's still optional even
+
+**Dave Jones:** though they did generously include some things for free. Like I said, the serial decoding stuff, that's still optional. The waveform generator, waveform gen, mask limit testing, that awesome hardware based mask limit, still optional. The MSO, of course you can buy
+
+**Dave Jones:** just a standard version and then buy the MSO later and they'll ship you the probes. The power analysis stuff I probably done in a previous video. that eight-digit counter, complete tight-ass there. The uh education and training kit, that
+
+**Dave Jones:** should just come in every scope. Put the damn thing in there. Unbelievable. Um and uh yeah, everything's, you know, there's quite a lot of optional extras. Now, just like the the 3000 A series, you have to choose your bandwidth uh
+
+**Dave Jones:** carefully. If you buy the 100 MHz model, you can only up software upgrade that to 200 MHz, to 350 meg, to 1 gig uh different models. But, unlike the 3000 A, you can actually choose uh to upgrade it with no additional cost at the
+
+**Dave Jones:** service center, I believe. Anyway, um if you have to send it back to get a motherboard replaced for the extra bandwidth uh front end, then they provide much more flexibility in terms you can jump from 100 MHz straight to 1
+
+**Dave Jones:** gig, or you can do any sort of combination of those. So, it's a bit better in that regard. And no doubt, they'll start bundling things again to compete, you know, like they had an offer a while back for free arb uh gen
+
+**Dave Jones:** on the thing and all sorts of stuff. So, no doubt they'll have those, and well, they've got to to compete these days. The market is pretty tight. They don't have it all to themselves these days. And the only really thing that's uh that
+
+**Dave Jones:** is a limitation on this thing is still the 4 meg memory, and they know it. Bet your bottom dollar they know it, and they're probably working on a new ASIC. But, that's you still get leading uh performance in terms of just hardware
+
+**Dave Jones:** update rate. This scope still cannot be beat even 4 years later. Nobody can touch it, and it's just as good. And that's the price you pay. So, overall, while it's a quite nice upgrade, it's pretty underwhelming, I must say. You
+
+**Dave Jones:** know, yeah, touch capability is great, and they've added a few extra things, but it's basically a 3000 um A with touch. And well, zone triggering is pretty darn good, but, yeah, not a huge amount extra, but, hey, it's
+
+**Dave Jones:** the same price. It allows them to milk the existing architecture for a bit while longer, stay uh, competitive, and they're still pretty darn competitive. The only thing is that, uh, 4 meg memory, but that's it. Apart from that,
+
+**Dave Jones:** still one of the fastest, uh, scopes on the market in terms of update speed and response time, and very, very usable. Brilliant. Relatively small memory at 4 meg. Even, you know, $300 scopes have double or triple that amount of memory
+
+**Dave Jones:** these days, but, hey, you get that super performance update, and with the segment of memory, it does some smart things anyway, so deep memory is not as important, but still, it's one of the fundamental performance requirements of a scope. So, that's the only thing you
+
+**Dave Jones:** can really fault about this thing. It was an awesome scope before, and it's just as damn well good, even better, now. So, there you go. That's the new Keysight probably said Agilent a few times in there, mhm, 3000 T for touch model.
+
+**Dave Jones:** Awesome. I like it. It's brilliant. It's only comes down to a matter of, you know, of value for money. Does it suit your requirements for value for money, as always. So, anyway, I think it's an absolutely brilliant scope, and they've
+
+**Dave Jones:** just milking the cash cow a bit more on their, uh, mega zoom 4 ASIC, just trying to, you know, improve things. So, not the giant leap we saw before, just a few little incremental improvements in here, but very, very nice, and
+
+**Dave Jones:** still smells good. Beautiful scope, the 3000 series. Awesome. So, hope you enjoyed that, uh, look at 3000 T. If you want to discuss it, jump to the EEVblog forum down below. That's the best place to do it. And if you like my product
+
+**Dave Jones:** reviews, please give it a big thumbs up. Catch See next time. Got to send it back. Bummer. Ah, still happy with my 3000A. Hmm.

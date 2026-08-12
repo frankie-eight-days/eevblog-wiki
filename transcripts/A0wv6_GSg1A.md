@@ -1,0 +1,286 @@
+---
+video_id: A0wv6_GSg1A
+title: Amazon Kindle 4 Review & Unboxing - EEVblog #205
+url: https://www.youtube.com/watch?v=A0wv6_GSg1A
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, you know I love my Kindle and how I've reviewed the third generation one and I did a teardown as well. I'm super
+
+**Dave Jones:** excited that there's a new Kindle in town. It's just turned up, just landed on my doorstep. It's the new fourth generation Kindle. In fact, there's quite a few models in the new range of Kindles. There is the new one. This is the $79
+
+**Dave Jones:** one, bottom of the range, super low cost, stripped down version we're going to review and do a teardown of. There's also the touch version as well. It's $99 and that's with Wi-Fi and there's another touch version with 3G as well and that's
+
+**Dave Jones:** $150 with touchscreen as well and there's the new Kindle Fire which is a whole different category. That's a tablet, but we're going to check out the new $79 one. Let's go. And here's the box which it ships in.
+
+**Dave Jones:** Very similar. I think it's a bit smaller than the original one. It's got a wedge shape here where it's pretty obvious that you get the rip off tab here because it's got the frustration free certified frustration free packaging.
+
+**Dave Jones:** Beauty, I love it and it's recycled material as well, I believe and let's crack it open. See what's in here. Can't wait. Is it really frustration free? You just grab the tab there. Zip it off. Aha, here we go.
+
+**Dave Jones:** And there it is. There's my new Kindle. I love it and no, it's not switched on because it's got the e-ink display. It permanently it just retains the image without drawing any power. Let's check out what we get in this little
+
+**Dave Jones:** pocket here. We've obviously got a what is this? That's the user guide, license terms and agreements and terms and conditions. Give me a break. God. Here we go. It's got a little quick start guide, by the looks of it. Getting
+
+**Dave Jones:** to know your Kindle, charging your Kindle. Oh, is that it? Different languages. There you go. It's actually literally that. It's not hard at all. It ain't rocket science, folks. And we have the Kindle itself. What's under here? And we have, yep, there it
+
+**Dave Jones:** is. Oh, it's nice, but we'll take a look at that. And we have our micro USB cable. Excellent. And that's all you get. But I love the packaging. The packaging is really, you know, it it is really state-of-the-art. They put a lot of
+
+**Dave Jones:** effort into this, and there are actually a lot of people actually copying the packaging of this, because a lot of the time there's a lot of wastage in terms of, you know, it it has a nice pretty pack that it's displayed in, and then
+
+**Dave Jones:** it's got to be shipped inside another pack with bubble wrap or or with foam peanuts or something like that. But in this case, the the actual protection is built in, and it ships and couriers just in this It looks like recycled
+
+**Dave Jones:** cardboard. I It's just brilliant. I love it. Unfortunately, the packaging is, of course, made in China. Wah. Wah. Wah. Wah. And here it is compared to the third generation Kindle. As you can see, it's a fair bit smaller. It's actually
+
+**Dave Jones:** not as wide, either. And thickness-wise, we're talking it's probably a little bit thinner. I'd have to get my calipers out there and check, but the the look is much nicer, much sexier. I really like it. They've ditched the QWERTY keyboard,
+
+**Dave Jones:** of course, which we'll go into instead of the dark charcoal graphite, which I I still like and I used to like. I think this uh silver color is much nicer and it's got the protective film on, of course. Let's
+
+**Dave Jones:** take the protective film off and there we go. And it's just a beautiful display. The uh E Ink display is just as good as the other one. Um you would In fact, I think it might even uh supposed
+
+**Dave Jones:** to be better. Um but it is really quite a nice design. I like it. The nice silver uh back in on it. And if we take a look at the back here, you'll see, yeah, assembled in China, of course. Uh it's
+
+**Dave Jones:** got all the uh FCC markings and uh everything else. And it's curiously got uh two terminals here, which obviously uh are either for um uh charging as well or for their um they're probably for a um another external uh light. Cuz
+
+**Dave Jones:** there's one thing you'll notice that there's uh it's not The new Kindle is not compatible fourth generation is not compatible with the old uh third generation uh lighted case. It doesn't have those two uh slots on the side,
+
+**Dave Jones:** which you um saw in the previous ones. There they are. The two little uh two slots there, which uh hook into the uh lighted um case. And it also has a uh serial port in there, which we found
+
+**Dave Jones:** out. So, the new one doesn't have any of that at all. All it's just got these two terminals here. So, um sadly, it doesn't look like uh there is an externally accessible serial port like there is and like uh all the uh hackers loved on the
+
+**Dave Jones:** third generation Kindle. What a bummer. And if you compare the uh side switches here between the two units, they are um quite understated on the new fourth generation Kindle. They're uh angled sharper. These ones are might have much
+
+**Dave Jones:** bigger purchase for your thumb on there and they're really obvious. Whereas they're they're less obvious on the new generation Kindle, more angled. I'd have to tell you if they're any good through just through use of them, but I I think
+
+**Dave Jones:** just from a feel point of view, I probably prefer the third generation Kindle there. But anyway, that does remain to be seen. And of course on the bottom, because this is only a $79 unit, bottom of the range, it's got no audio capability. So
+
+**Dave Jones:** it drops the headphone output. I presume there'll be no microphone in there as well. Although that little hole there could be a microphone. We'll have to check it in the teardown and in the specs as well. But it's got the same
+
+**Dave Jones:** micro USB connector, which is excellent cuz micro USB is very high reliability, high number of insertions. They've done away with the with the flicking one here with the LED that we had on the third generation. They replaced it with
+
+**Dave Jones:** just a single button. And let's press it and give it a go. Oh no, there we go. It's got no, that's not a microphone. It's an LED. There you go. Ta-da! It's booting up. So I'm not sure what happened there. I have to play with
+
+**Dave Jones:** the on-off switch a bit more. But maybe this is only a first time thing. Once it boots up, we'll just let this go and see how long it takes. Here we go. That took about a minute. There you go. And I'm not sure
+
+**Dave Jones:** if the original one popped up with this, but English United Kingdom or United States. Well, I'm going to go the UK cuz I don't want bloody US English. Screw that. Let's go United Kingdom English. Use English United Kingdom as your device
+
+**Dave Jones:** language. Well, that's what I clicked on. Geez, do I have to confirm it? Okay, thank you very much and it's going through more boot up process. Twiddle the thumbs.
+
+**Dave Jones:** It's booting. There you go. Welcome. Welcome to the Kindle Kindle and it asks you to connect to the Wi-Fi directly. So, we'll go through the process and uh we'll set it up. Well, it's found my Wi-Fi straight up. I'm only getting one
+
+**Dave Jones:** bar out here in the lab cuz I've got my transmitter power down on my Wi-Fi. So, that's fairly typical and we'll see if it connects. And one of the first challenges that she faces is that because it has no QWERTY keypad, it
+
+**Dave Jones:** tells you you have to hit the keypad button down here to call up the on-screen keypad. There it is there and you've got to scroll around with the cursor key. That's one of the disadvantages of having a smaller unit
+
+**Dave Jones:** with no room for a QWERTY keypad. Although, I guess technically you could have squeezed one in there, but that would have been quite an engineering effort and it probably would have been too small for most people's liking, but
+
+**Dave Jones:** we'll give it a go. And here we go. It's connecting now. One thing I noticed that it didn't do is it didn't encrypt your or it didn't hide your password as you typed it in. So, the whole password was
+
+**Dave Jones:** you know, uh physically there on the screen. I don't like that. I like when they actually hide it. I'm sure the the previous generation Kindle did that, but it's trying to connect to my network. It might be that we've only got one bar
+
+**Dave Jones:** there, but um Oh, are we in? Yep, there we go. We're in. We're connected. No problems at all by the looks of it. Now, one complaint I already have is that I'll show you later, but on the QWERTY
+
+**Dave Jones:** keypad, I found that this cursor key here, they've the cursor pad is exactly the same as the third generation Kindle and you can understand why they've reused it. Okay, but because you've dropped the keypad here and you're using this all the time to enter
+
+**Dave Jones:** stuff in on the on-screen QWERTY keypad, it should have been bigger, in my opinion. And my uh thumb and fingers aren't um terribly big, and I sort of have trouble getting that purchase on the tiny little um uh cursor keys around the outside of
+
+**Dave Jones:** there and in the center um as well. I feel as though I'm going to press the wrong key. Now, it was okay on here cuz you didn't use it a huge amount because you had the QWERTY keypad. Now, you're
+
+**Dave Jones:** going to use it more, I just found it a little bit annoying. I thought they could have redesigned that potentially and made it a bit bigger, but I still like the uh concept of it. It still works uh quite well.
+
+**Dave Jones:** Now, one of the things I'm sure that the previous Kindle did uh when I opened the box, it said, "Welcome, David." because it already knew that I bought it, and they had pre-registered the Kindle for me. But this one hasn't been
+
+**Dave Jones:** pre-registered at all. We've got to go through the registration step. Um so, I don't know if the uh more upmarket uh touch models will be uh pre-registered, and the tablet will be pre-registered for you, but this one certainly isn't.
+
+**Dave Jones:** Little bit thing. It just worked out of the box last time. And uh here's the QWERTY keypad. I don't don't mind it at all. It's uh uh quite uh you know, it's um not laid out in the uh
+
+**Dave Jones:** QWERTY uh fashion. Sorry, it's uh laid out in the, you know, alphabetical order type fashion, but I I I like it. It's big. It's uh it's fairly easy to navigate, and it's typical of these things which don't have a QWERTY uh
+
+**Dave Jones:** keypad, and I find it works quite well. And of course, to cycle through these uh tabs here, you naturally just press the uh side buttons up here, and they let you cycle through uh uppercase, lowercase, and various uh
+
+**Dave Jones:** um other uh ASCII characters as well. But I've got to admit it did take me an annoying amount of time to type in david@alternatezone.com. And because it knows you're asking for an email address here, it would have been nice if we could have actually dot
+
+**Dave Jones:** com. So, you could just put in dot com, bang, like that. But, no, you've got to put in dot and then you're going to type in common. Well, you know, it did take some time. So, that's a limitation of
+
+**Dave Jones:** the lack of the QWERTY keypad. Um, but, that's to be expected on a smaller, lighter, and for 79 bucks, well, you know, if you're annoyed with that using, um, you don't have to uh, enter this sort of stuff on here. You can do it on
+
+**Dave Jones:** the, um, on the on your main computer on the Amazon website, as well. And, here we go. We are connected. Now, I noticed that it did hide the password on that one. So, it's only the, uh, first screen it didn't bother to hide
+
+**Dave Jones:** the password on. And, the setup of our Kindle is finished. Let's go to, uh, shopping in the Kindle store, shall we? Ta-da! Here we go. Let's see how fast it is. Now, remember, this is only got, uh, one Wi-Fi bar up here, bang, we're
+
+**Dave Jones:** straight in. Nice and quick. I like it. And, out of the box, the, um, the battery the looks like the display up the top, David's third Kindle. There you go, it knows. It automatically knows that I've got I own, uh, three Kindles,
+
+**Dave Jones:** and it's called this one David's third Kindle. I can go in and change that, uh, name if I want, but that's what it's given it by default. I like it. Uh, and, um, same display as before, got the
+
+**Dave Jones:** Wi-Fi symbol, the, um, Wi-Fi signal strength meter, and the, uh, battery gauge, which it ships, you know, um, sort of, you know, four fifths, uh, full. So, it's rather nice. It works quick, and it's working on one bar Wi-Fi. Uh, so so
+
+**Dave Jones:** far, so good. Well, now, that's interesting. Uh, I've powered up my other, uh, one of my Wi-Fi Kindles here, the third generation, and it can't even detect my, uh, network. Whereas, the new fourth generation Kindle, I'm over it I'm still
+
+**Dave Jones:** getting one bar as you saw I logged in and it connects and it serves no problem. So, it looks like the Wi-Fi antenna is all the Wi-Fi antenna circuitry is more has greater sensitivity in the new fourth generation. I like it.
+
+**Dave Jones:** Okay, I've turned my Wi-Fi router up to 100% from 25% and I'm now getting two bars on the third generation Kindle and still only one bar on the fourth. So, go figure. Anyway, they're still both working. Let's do a
+
+**Dave Jones:** bit of a speed test now where I've gone into the Kindle store all books and let's say we want to search the non-fiction section. Let's go. I'll press it at the same time. Go.
+
+**Dave Jones:** Here we go. Come on. Oh. No. Third gen. No, no. It It flickered the screen but uh There we go. Bang. The new one is in there first. Go figure. Bit of a speed improvement there. Okay, let's press the back button on
+
+**Dave Jones:** both and see what happens. Bang. And yep, very similar. Let's try that one more time just to make sure it's you know, it's not a furphy and bang straight in there. Cached it obviously but the the new generation
+
+**Dave Jones:** Kindle was quicker than that as you saw. There you go. Bang. It's Well, maybe there's a bit in my key press there. I'm not sure but uh Ah, no. Let's Let's Let's call that one even for cached pages. And if we take a
+
+**Dave Jones:** look at the interface here, you'll see it is very simplistic. It's got the minimal you'll need to match the capability of the existing Kindle but in much fewer keys. There's the cursor keys up here of course with the uh enter / uh
+
+**Dave Jones:** select button in the middle. We've got a back key here, so if you make a mistake or you just want to go backwards, you hit that. Uh there's the uh keypad key here, which uh calls up the uh over
+
+**Dave Jones:** keypad overlay, which basically replaces all of the uh QWERTY keypad on the previous uh Kindle. There's a home button here, which takes you back home to this screen, as you'd expect to get back from anywhere. And there's a
+
+**Dave Jones:** settings menu button as well. And that duplicates the uh entire capability of the existing third generation Kindle with the QWERTY keypad. And after you boot it up, uh you get the welcome, David, thing. We can go in there and
+
+**Dave Jones:** talk about that. It talks about the Kindle, I assume. Dear David, there we go. Yada yada yada. All that sort of stuff. Sincerely yours, Jeff Bezos. Good on you, Jeff. What a champion. All right. Now, let's go back in here, and
+
+**Dave Jones:** we can transfer uh all of our Kindle content over to this Kindle. So, all of the uh books and stuff we've bought, we can transfer them over. Nice. And there's a New Oxford American Dictionary. Ox- uh sorry. Yeah, the New
+
+**Dave Jones:** Oxford American Dictionary and the Oxford Dictionary of English, just in case you don't like the American version. And there's a Kindle User's Guide, and there's archived items as well. I don't know why they need to be archived, but
+
+**Dave Jones:** uh there you go. Now, if you take a look at them both side by side, you will I'm not sure if this will turn up on camera, but the third generation Kindle certainly has a whiter uh background than the new fourth generation one. It's
+
+**Dave Jones:** slightly a duller color, if that sort of uh makes sense. The I I'm not sure which one I prefer. I'd have to get uh used to it. Certainly, the contrast is uh still there, but the displays are actually
+
+**Dave Jones:** different. The older one is definitely whiter. Now, um of course, the menu uh system, if you pop up the menu's here inside the book. We've got it's it's exactly the same wireless on all the times not right. We haven't set that on
+
+**Dave Jones:** the new one. Shop and but of course it's the new one has changed font size because the old Kindle had that dedicated font key down here which it doesn't have on the new keypad on the new one. So you've got font sizes in the
+
+**Dave Jones:** main menu but apart from that it looks to be exactly the same. Search, you spoke at bookmarks, notes or highlights. Well, add a bookmark. It doesn't have add a note or highlight. It's got add notes and view notes and marks. So it doesn't have
+
+**Dave Jones:** the capability to add notes or highlights in this one. But apart from that functionality is the same. And the display capability is exactly the same. Font sizes haven't changed any of that. The typeface, line spacing, words per line. There's no
+
+**Dave Jones:** text-to-speech on the new one of course cuz it doesn't have any audio capabilities. That's how they get the price down and the weight as well and the size. So that's about the only difference but apart from that they do
+
+**Dave Jones:** have identical interfaces. The third generation here goes all black. It doesn't go nearly as black on the In fact, it doesn't. So the updating is smoother. I don't know if it's any quicker. I I don't think so but it's just nicer cuz
+
+**Dave Jones:** it doesn't go all black like that. I That's a nice improvement. I like it. One thing to notice about these power pads on the back is that they are actually recessed down in there and that's important because you don't want
+
+**Dave Jones:** to short those out if you throw it in your bag or something like that. And because they're recessed I think you'd really have a hard time shorting those out with anything. I guess you'd have to get you know, some steel wool or something
+
+**Dave Jones:** in your bag or you'd have to have something really quite weird to actually uh out both of those, but technically, it's possible. And let's measure those pads on the back and see what we get. The Kindles are turned off at the moment, so let's check
+
+**Dave Jones:** it out. In the off mode, of course, we get uh zip. There's nothing there at all. Let's uh switch it on. And our little LED's on down there, I can see. And there you go, 3.9 V. Um it'll be
+
+**Dave Jones:** interesting to see if we can actually take any current from that at all. Okay, I've got it switched on here, and uh I've got my meter connected to uh in current mode, 10 amp range. Let's uh do something nasty and short out these
+
+**Dave Jones:** terminals here, and uh and see what we get, shall we? Let's go. Yep, no, limits itself to 58 milliamps, by the looks of it. Let's uh change that over to milliamp mode. And there you go. It looks like it's uh
+
+**Dave Jones:** current limited to 58 milliamps. And doing that uh didn't actually uh switch off the Kindle at all. So, they've actually designed that properly, as you'd expect. All right, power up, boot time. Let's see if we can do it. It's a bit hard,
+
+**Dave Jones:** cuz this one's got the springy uh power switch, which I probably prefer. I got to really like that springy power switch, but let's give it a go. And here we go.
+
+**Dave Jones:** Whoa, pretty similar. I'm not going to call that one. Let's uh well, let's call it even, shall we? And every time you uh switch this off, it uh gives you a new uh display, just like the other one, new uh screen saver
+
+**Dave Jones:** image uh just like the other one. I don't know how many, um but the other one uh came up with authors. This new one has uh looks like uh early uh writing instruments and uh implements and things like that.
+
+**Dave Jones:** And what more can I tell you? It It exactly the same as the previous uh generation Kindle. So, you know, it's exactly the same. The The dictionaries in there and all that All the stuff works identically. And the highlight
+
+**Dave Jones:** feature is exactly the same between units. That's one of the things I love about the Kindle, the highlight feature. It all works exactly the same. So, if you've used the Kindle 3, well, you're going to be used to the Kindle 4. But,
+
+**Dave Jones:** of course, the big thing is the size and the weight of this thing. It is much smaller and much lighter than the previous generation Kindle. 168 g. There you go. Compared to 220 g for the just the Wi-Fi only
+
+**Dave Jones:** version and the Wi-Fi with 3G version, 232 g. That's over 30% lighter. And that's valuable. It's one of It's probably the major reason. It's probably the only reason why you'd buy this thing because it is a stripped-down version.
+
+**Dave Jones:** It's smaller. It's lighter, but it works exactly the same. It's a bit more inconvenient, but hey, I like it. Actually, I based that 30% figure from the Amazon website cuz that's what they claim. They claim this is 30% lighter
+
+**Dave Jones:** than the previous generation Kindle. Well, you actually measure it, it's not. It's only 23.6% lighter. So, I claim Somebody in the marketing department has rounded that number up because, well, you can't just claim, "Oh, 23.6%." It doesn't sound nearly as good as 30%.
+
+**Dave Jones:** Well, the contrast of the screen, I don't know. What can you say? The new I maybe slightly prefer the third generation Kindle here. It's just whiter. The contrast I think is very similar, but I don't know. It's hard to
+
+**Dave Jones:** tell. Let's take it outside and see what it's like in sunlight. Well, here I am outside and well, I don't know. There's a it's still whiter again here, but there's there's not much difference. They're both extremely readable. I just
+
+**Dave Jones:** probably personal preference prefer the previous third generation one, but there's not much in it. And here's the display under my extremely dim LED reading light. Cuz I I don't like really bright light when I'm reading at lot at
+
+**Dave Jones:** night and uh really I it's probably going to be hard to pick up on camera there, but um you know, there's not much in it. Glare is practically identical between the two units. So, glare is exactly the same.
+
+**Dave Jones:** Um I don't know. I once again, I can't call it. Now, there's one thing I do notice is the black um border around the actual display here, the bezel. There's sort of a black bezel in there as opposed to just really nothing on the
+
+**Dave Jones:** previous generation Kindle. I'm I don't know. It certainly looks smarter. It looks sexier. Um but yeah, I I don't know. It's Well, this thing Okay, this is this is better to hold and better to look at, I think. If you're
+
+**Dave Jones:** just reading a book, this thing looks like it's some gadget with its big keypad, but this actually looks more like sort of a paperback book, really. Well, you know, it doesn't actually look like a book, but as a
+
+**Dave Jones:** replacement for a book, an ebook, I I think it it is much better. And I've got to tell you the smaller size and the lower weight is very welcome. If I'm reading, I'm going to if I got the same book on both these
+
+**Dave Jones:** devices, I'm going to pick up this one every time. It's just it just really is nicer. And one of the problems though with being so small is that you know, your sort of your fingers sort of get in
+
+**Dave Jones:** the way if you're holding it like that, you know? It's whereas there was more space before down here on the previous generation. You just hold it like that. You could even have your thumb up at 45° and it's still not covering the display
+
+**Dave Jones:** like that. But the new one, it's sort of it's it's just different. It's harder to hold, but I guess you would get used to that. Now, one thing I do like is that they have buggered off the Amazon name
+
+**Dave Jones:** from the front of the unit. Plastered all over Amazon Kindle, it's just Kindle now. I find that's much nicer and much less offensive, quite frankly. And after using it for a little while, about the side buttons, it's all about the side
+
+**Dave Jones:** buttons. The page forward and page back. I I don't know. They're a little bit more finicky than the existing Kindle just cuz there's just a smaller operational range of angles and things it works over, I think. So, and it just
+
+**Dave Jones:** feels different. I guess it takes getting some used to. I think I prefer the previous one though, but give me a month or so of using it and I probably won't even notice the difference. Hopefully you can really see the
+
+**Dave Jones:** differences there in the two units. The new one's on the bottom, the old one's on the top. And the old one has you know, much sort of you know, much more purchase on the top, much more surface area on the
+
+**Dave Jones:** top, less angle. The new one's are much much more angular and they've got a sharp turn on them in there, but uh yeah. I don't know. They're they're just slightly different. The actual position of them is changed compared to the
+
+**Dave Jones:** screen. So, there you go. There's a bit of a difference. But I find there's there's not much in it. You would just get used to it, really. But I've got to say they've probably got the location of the new ones right
+
+**Dave Jones:** compared to the bottom here. They sit lower, but compared to the screen, it's actually higher up. But I find that my hand where I'm actually using it, I can get better access with my thumb to the uh page back button compared to the
+
+**Dave Jones:** previous Kindle. And as per the previous version, I held down the button uh for uh 10 seconds and it completely uh switched the thing off. So, let's uh switch it back on. The LED is there and bingo, it's back.
+
+**Dave Jones:** So, what happens if we charge this thing? Let's give it a go. Plug it in. Yep, LED lights up uh amber. Presumably, it'll light up uh green when it's uh finished charging and well, there's nothing there, but if we uh
+
+**Dave Jones:** press the menu, bingo, charging. No problems. And if we physically give it the uh twist test there, I think it's actually more rigid than the previous Kindle, which uh which did have a bit of uh bit of flex
+
+**Dave Jones:** and play in it. Look, you can actually see it see it flex in there. And uh the new one, it's uh much more rigid. I like it. Feels pretty solid. Uh good quality plastics and uh the construction seems
+
+**Dave Jones:** excellent. I like it. Build Build quality is first class. So, how does the new generation E Ink display compared to the old one at low temperatures? Glad you asked. Let's toss it in the freezer and find out. Beauty.
+
+**Dave Jones:** We'll uh come back later, shall we, and see what's happened. All right, it's been about half an hour. LET'S TAKE IT OUT AND UH check it. See what it's like. Whoa, nice and frozen solid. I love it. And uh they're
+
+**Dave Jones:** still got the still got the displays on there and let's uh try and boot them up at the same time. Let's Well, let's do them one by one, shall we? Let's do the old Kindle.
+
+**Dave Jones:** Ta-da. And hello. Oh, there we go. Slowly What's going on? Slowly fading. Oh, it doesn't like that at all. Ghosting. It's still What's going on? Oh, it really doesn't like that at all. Critical battery. No, the battery's died. Battery's died. All right, let's
+
+**Dave Jones:** try the new one. See what it's like. I think we've got a uh slight problem with the battery uh frozen solid. There we go. It's uh Yep, at least this one's At least this one works. I may have left it in there a
+
+**Dave Jones:** bit long. Oops. But uh yeah, fair bit of ghosting on there at low uh temperatures, as you'd expect. Um that's pretty damn low. That's feels pretty frozen. I'll let it thaw out. See what happens. And here we go, the old Kindle
+
+**Dave Jones:** actually uh reset itself. It totally crapped itself out. Um so, let's restart that one now. But it seems to have recovered. It's got some energy back. And it No, the battery's still low. So, the battery's crapped itself. But let's
+
+**Dave Jones:** turn on the new one and see what happens. It's uh slower, as you can see. It turns on a little bit slower. Uh the display, that's what we found on the previous uh generation one at lower temperatures. The update rate's a bit
+
+**Dave Jones:** slower. But apart from that, it's survived nicely. And you can see that update rate here. If we hit home, it's really It really is a fair bit uh a fair bit slower. But it still works. And if we're in the main screen here and
+
+**Dave Jones:** we check out the uh main menu, we've got the uh experimental uh menu down here, as we did on the old uh Kindle. And it's got a web browser, and that's it. So, it's got the uh web kit. I assume it's still the uh web kit
+
+**Dave Jones:** uh web browser, and Amazon, Wikipedia. And once again, but because it doesn't have 3G, you can only do it if you've got uh Wi-Fi access. So, let's call up Wikipedia, shall we? And bingo, there's the Wikipedia article. No problems at
+
+**Dave Jones:** all. And let's go to eevblog.com, shall we? And a most excellent website. And there you go, it rendered the page and all the ads and everything just fine, no problems at all. So, there you have it. That's the new fourth generation Kindle
+
+**Dave Jones:** over the third generation. Just the other week, I was sort of picking up the Kindle and sort of complaining third generation and complaining that jeez, it feels a bit heavy. You know, it it should be lighter. And sure enough, the
+
+**Dave Jones:** new one popped up on the market a week later and it certainly is. It's smaller, it's lighter, it's funkier, it's sexier. I like it. It's probably a better designed product in terms of the look and feel and the functionality. And if
+
+**Dave Jones:** you're going to travel, you definitely want to take this over the third generation Kindle, no doubt about it. But because it's cheaper and it's a stripped down version, essentially a stripped down version of the previous Kindle, the new touch model won't be.
+
+**Dave Jones:** It'll have all the same capability except of the old Kindle except with touch screen. This one has 2 gig of memory instead of 4 gig, but because it doesn't have any audio capability, no text-to-speech, no capability to store audio files, they're
+
+**Dave Jones:** the ones that really chew up the space. So, memory doesn't really matter. And it's got no SD card slot at all, which is a real pain in the butt. But because it doesn't have audio, not a big deal.
+
+**Dave Jones:** On the touch version with audio, absolutely, you're going to need that expansion capability cuz the old one, you put audio on here and it chewed it up like there's no tomorrow. So, anyway, I kind of like it. They've it's
+
+**Dave Jones:** 79 US bucks, but there's two versions, there's a catch to that price. The marketing are at it again. It is ad supported. Now, this is the international version, this is not the $79 one. I don't think the international
+
+**Dave Jones:** version, I didn't have a choice whether or not to have the cheap ad supported one. Clearly the ads don't work in Australia or something. I don't know, the international model. Go figure. But yeah, you pay your 79 bucks,
+
+**Dave Jones:** you apparently get uh ads not in the I don't think it's in the book, so don't quote me on it, but during operation of the device, you're going to get blasted with bloody ads. It's ridiculous. So, I don't know, price to be paid for saving
+
+**Dave Jones:** a few bucks there. I'd probably get the one without the ad. Who cares about the additional cost? Bloody marketing idiots. And because of the smaller weight, it's got less of a battery life. It's 1 month, so they claim.
+
+**Dave Jones:** It remains to be seen with the Wi-Fi turned off using it like 30 minutes a day or something like that. You know, turning pages, reading books. It supports the same file formats, exactly the same 800 by 600 screen, except it's supposed to be an
+
+**Dave Jones:** improved screen. I don't see it. I probably slightly prefer the other one. As I said, not much in it. Anyway, still pretty darn good. There's no ghosting on on the display. It's excellent. I love it. And it's got the identical pixel per inch,
+
+**Dave Jones:** the same size screen as a previous Kindle. It's got 16 levels of gray scale, exactly the same as the old one, except it's improved. So, my verdict? I love it. It's It's sure It's stripped down and it's built down to a price, but if you just
+
+**Dave Jones:** want to read books and if you're traveling, it's fantastic. I love this thing. Even just general reading, I'd rather pick up this because it's just smaller, lighter, and it's sexier. Catch you next time.

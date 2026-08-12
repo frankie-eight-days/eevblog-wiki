@@ -1,0 +1,300 @@
+---
+video_id: J3pE_mDwCpk
+title: EEVblog #1187 - Room Heater Technology Explained
+url: https://www.youtube.com/watch?v=J3pE_mDwCpk
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, I thought we'd take a look at space or room heating. If you've got a heater in a room like this, how do you effectively heat up the temperature of this room or heat objects like people or other things inside the room and do it
+
+**Dave Jones:** effectively and efficiently? Let's take a look at it cuz there's lots of scams and ridiculous marketing around in terms of like space heaters and other Kickstarters and lots of things that claim to be more efficient. So, let's go
+
+**Dave Jones:** through the basic theory of how to heat a room up and the different types of heat transfer that you actually get in a room. Let's go cuz it's rather interesting and it's probably more to it than you think. Now, we first have to
+
+**Dave Jones:** look at the three different types of heat transfer and because these terms, this terminology gets mixed up a lot and I'm guilty of it myself just through sheer laziness or not explaining it properly and marketing of course, they get these things completely wrong
+
+**Dave Jones:** all the time as well. So, let's start with conduction. If you've got a material like this and it's hot at one end and cold at the other, the heat will transfer or conduct through the particular medium and I've
+
+**Dave Jones:** done a whole video on the concept of heat sinks for example, which I'll link in at the end, which is very interesting in terms of electronics engineering. Now, conduction depends upon the thermal resistance of the material that you're
+
+**Dave Jones:** conducting through and it doesn't have to be a physical material like metal. Metal happens to be or various types of metal happen to be the best conductors, but you can also get heat conduction through gases and liquids as well.
+
+**Dave Jones:** They're just not as effective, but some different types of gases much better than others, some different types of fluids much better than others, some different types of metals much better than others. And of course, you can have like metals like joined together and if
+
+**Dave Jones:** this one's hot and this one's cold, it can flow from one to the other. But it's basically it conducts through a medium, whether that's metal, liquid or gas. This is basically the second law of thermodynamics here because hot atoms
+
+**Dave Jones:** are going to vibrate. They have a lot of energy and they're naturally going to tend to move towards a spread out towards the less energetic areas over there. So that's why you're going to get heat conduction. It's basically the second law of
+
+**Dave Jones:** thermodynamics, you know, the heat death of the universe, all that sort of stuff. Energy just tends to dissipate and spread out eventually. It's pretty miserable. Now, the second type of heat transfer is convection and you might be familiar with that term. A
+
+**Dave Jones:** convection microwave oven, for example, has a fan in there to force the air and circulate it around. The air convects around inside the space and a similar sort of thing can happen in a room when you're trying to heat it up. If you've
+
+**Dave Jones:** got a space heater, for example, that uses convection, then of course, you're familiar, no doubt, with that hot air rises. That's why balloons go up and everything else. So the hot air rises like this and then it like it comes
+
+**Dave Jones:** around the room if the room is well insulated and will go into this and you get natural convection going around like that. And there's two different types. There's natural and forced. As I said, a natural one doesn't use any fan at all.
+
+**Dave Jones:** And you might be familiar with these oil heaters or some other type of heater heaters that don't have any fans in them. They've got these big fins on them and they basically they heat up an oil inside, but they've got these large
+
+**Dave Jones:** surface areas that the air circulating in the room goes over the fins. It rises up like this and then it naturally comes down and it sort of heats up the room rather slowly by natural convection. There's no fan forced
+
+**Dave Jones:** type system. But But can also get the, you know, the box type ones. They have a big like fan in them like this and then they have some heater elements on them and they actually force the air out uh
+
+**Dave Jones:** to help it circulate around the room. And they can be more effective, not efficient. They can be more effective in heating a room faster, for example, because uh they force the air around the room rather than just relying
+
+**Dave Jones:** on natural convection. And this is why if you stand near one of these oil radiators that have no fans in them, you have to get reasonably close to them to sort of like feel any heat. They're designed to heat up a volume of a room
+
+**Dave Jones:** quite slowly through natural convection. And once again, convection needs a medium through which uh the heat can transfer. In this particular case, air inside a room. So, both convection and conduction, because they need a medium to transfer the heat through, they do
+
+**Dave Jones:** not work in a vacuum. I.e., they don't work in outer space. So, the sun, for example, which is the heat source for this planet, can't use conduction or convection. There's no medium for it to transfer through. So, you can think of
+
+**Dave Jones:** convection working where you have a surface that's hot, like a surface element, like a panel radiator, for example, that sits on your wall and it has a large surface that heats up all these fins that heat up, for example,
+
+**Dave Jones:** and then the air circulates past those fins and convects. It's a sort of like a transfer from a surface onto a medium, another medium, typically air, of course, that circulates over that and it just draws the heat away by the process
+
+**Dave Jones:** of convection. Now, to infrared radiation, as I said at the start, this doesn't need a medium to transfer through. So, all of the heat energy coming from the sun is in terms of uh radiation. In this case, infrared
+
+**Dave Jones:** radiation. And this is just like any other type of electromagnetic radiation. In fact, if you look at your electromagnetic spectrum, you'll find that part of it is the infrared radiation, i.e. heat. But then that is broken down into many different types,
+
+**Dave Jones:** and we're going to be a bit loosey-goosey with the wavelengths here. For example, these are wavelengths in micrometers for five different types of typical IR spectrum. You might hear near infrared, which is used for night vision goggles. And that's So, that's a
+
+**Dave Jones:** frequency range generally up to about 1,000 nanometers or 1 micrometer wavelength. And then you've got short wavelength infrared radiation, mid, long, and then far infrared. So, you might hear these terms, and they're different like depending on which standard you follow, like the ISO
+
+**Dave Jones:** standard for example, uses the term near, mid, and far, for example. It doesn't have short and long. So, don't really fuss over the exact categories. But basically, all this sort of stuff in the middle here is what's called thermal radiation. And don't
+
+**Dave Jones:** confuse that with infrared radiation because it's a specific wavelength which can be dependent upon the temperature of the In this case, for heaters, the heating element. For example, you might be familiar, if you heat your soldering iron up enough, maybe at 500°C, you'll
+
+**Dave Jones:** start to see it glow like a dull red. And then it might go into you know, orange, and then yellow, and then white at say, you know, 1500°C or thereabouts. So, that's why, say your bar radiator heaters, and here's a photo
+
+**Dave Jones:** of one of those you're more familiar with, they just have the bars with typically with a reflector at the back cuz that will reflect the radiation off the back of that and towards you. So, these are actually directed radiation
+
+**Dave Jones:** heaters. So, they will heat the object or a surface at a distance via radiation, not via conduction, not via convection, but pure electromagnetic radiation from the source into the object that you're heating. And by the way, the energy goes up with a fourth
+
+**Dave Jones:** power of the temperature. That's Stefan-Boltzmann's law. We won't go into the details. So, in terms of commercial infrared IR heaters that you can buy, they're typically like a panel mount. You mount them on the wall, for example, and you might get these in your
+
+**Dave Jones:** bathroom. And for those who don't like the visible glow of, which you can be quite hard on your eyes, of a bar radiator heater, you can get like ceramic radiator heaters and other types. You can get new graphene-based
+
+**Dave Jones:** ones, which are infrared radiators. So, they're designed to heat the object directly. So, if you've got your panel radiator here, it goes across the room, and it'll heat up poor little human on the other side wall, not actually heating up the air in
+
+**Dave Jones:** between. That's the theory, anyway. Now, this is where we have to get into actually practical space or room heating or with heaters that you can buy. And they come in two types, either the convection type or the radiation type.
+
+**Dave Jones:** You don't really get conduction heaters because air is a pretty pretty poor conductor. But, in practice, it doesn't matter what type of heater that you buy, whether it's a convection heater or a radiation heater, an infrared heater, they're all going to have some small but
+
+**Dave Jones:** non-trivial amount of conducted heat through the air. Air is certainly a poor conductor, but it doesn't have an infinitely high thermal resistance. So, you do get some conducted heat through the air. And any infrared panel heater, even no matter how well it's designed,
+
+**Dave Jones:** is also going to do convection as well, because you've got this big panel, this big surface area. You're going to get the, you know, convection currents. You just can't avoid it. So, it's going to heat the room via both direct infrared radiation
+
+**Dave Jones:** and via convection, and some conduction as well. And likewise, if you've got a pure convection heater, like one of those oil radiators or one of those fan-forced little space heaters with the element and the fan to circulate through
+
+**Dave Jones:** the air, they're also going to produce some infrared radiation as well. So, it really depends upon how the product is actually designed, whether or not it's predominantly IR radiation or whether it's predominantly convection. But, every type of heater is going to have at
+
+**Dave Jones:** least a combination of these things. So, these infrared or radiation heaters come in several types. They might be, as I said, the panels that you stick on the wall where you can't see any visible glow from, but they still actually
+
+**Dave Jones:** produce infrared radiation, which actually goes across the room and heats the object over here directly. And these are really useful if you're outside, for example, if you're sitting on your table at you know, you're having dinner here, for example, and then you might have one
+
+**Dave Jones:** of these infrared heat lamps, which will, you know, go down and they will heat the people directly like that. And any convection losses just sort of, you know, lost out into the free air. So, you know, really you want those to be as
+
+**Dave Jones:** well-designed infrared radiators as possible. You're going to lose some to convection, for example, and some conduction to the metal and things like that, which then is going to have its own little, you know, convection ones going off the surface and things like
+
+**Dave Jones:** that, but mostly it's going to be infrared radiation. Might be 70 or 80% or even a little bit higher direct of the power that you put into it heating up the actual objects, which might be great if you're outside at a table, for
+
+**Dave Jones:** example, having dinner late at night and it's really cold. You You know, you like that heater, but inside a house, these aren't necessarily the best thing because you might feel like you're getting, you know, baked by this infrared heater. And of course, if you
+
+**Dave Jones:** from here over to here in the other part of the room, and the infrared is going in that direction, then, well, you're going to feel, woo, really cold in this part of the room, and not here. So, that's not
+
+**Dave Jones:** necessarily good for a large living environment like this. It's okay if you're sitting on a lounge, and then the heater's on the wall in front of you, it might feel pretty good, but it's not going to be great if you want to live
+
+**Dave Jones:** inside a, you know, a relatively large, uh, like a house or a lounge room or something like that. And that's why these different type of heaters are available. You might have one of these oil heaters, for example, which is going
+
+**Dave Jones:** to, uh, convect around like this, and eventually heat up and keep the room at a certain temperature. And you might combine that with, say, an IR panel heater if you're just sitting on a lounge, and you just want to be heated
+
+**Dave Jones:** up directly. So, this is, uh, going to be faster, much faster, and more effective than, uh, turning on a a radiator that's either going to use natural or forced convection. As I said, forced convection will be faster, but
+
+**Dave Jones:** natural radiation might take hours to lift the temperature of this room. But you've got to be careful with how you use and apply different types of heaters. Let's say you have an infrared radiator heater, and it might be 80%,
+
+**Dave Jones:** you know, uh, or more infrared, uh, radiation. Well, that's great, but if you have, say, a glass window over here, that could shoot straight out of the window cuz the glass is typically going to be fairly transparent to the infrared
+
+**Dave Jones:** radiation. But that depends on the wavelength, and also this thermal radiation that you get with a thermal imaging camera. I can demonstrate that now, how thermal radiation doesn't get glass through glass at all, but infrared radiation at a specific wavelength will
+
+**Dave Jones:** actually uh, tra- pass fairly transparently through a window. So, you don't want to be pointing that at a window. You're just going to lose most of your heat directly out the window. So, I've got my FLIR E8 thermal imaging
+
+**Dave Jones:** camera here, and this is designed to detect thermal radiation. And you're no doubt familiar with these things. They're very cool. And let's have a look to see what glass actually does. So, I've got my glass cubicle here like
+
+**Dave Jones:** this. As you can see, if I'm in front of it, like there's my thermal imaging profile. It's detecting the heat coming from me. And these types of cameras will work up to, you know, quite high temperatures, many, many hundreds of
+
+**Dave Jones:** degrees, as well as like body temperature as well. But if I go behind the glass, oops, where's my hand? It ain't there. Where's my body? Half of it's gone. Check it out. Isn't that cool? And if I put my hands right up to
+
+**Dave Jones:** it, you still can't see anything at all because the wavelength, the particular wavelength of the thermal radiation that we're seeing here with this camera simply cannot get through glass. But I've done a video on this as well. It'll go perfectly fine through plastic.
+
+**Dave Jones:** Don't try this at home, kiddies. There you go. You should still be able to see me even though my head's behind this plastic. Works fine through plastic at this wavelength, but the particular wavelength we're talking about here just
+
+**Dave Jones:** can't penetrate glass. So, that's why you can actually use glass on these infrared panels cuz they're the correct wavelength to go through. It's It's almost transparent to that particular wavelength. And maybe, just maybe, if I left my hand there long enough, it might
+
+**Dave Jones:** eventually conduct through. But as I said, glass is a poor thermal conductor. But if I put my hand on front like that, you might be able to maybe you can see my hand prints. Cool, huh?
+
+**Dave Jones:** And let's say if you had one of these newfangled glass infrared heaters, for example, that doesn't have a reflector on the back of it. It's got glass. It's got the heating element inside which is generating infrared direct infrared
+
+**Dave Jones:** radiation, but it can come out both sides. It's got glass on both sides. Then, if you go and hang this on the wall for example, oops, half your infrared energy is going to go that way and half's going to go into
+
+**Dave Jones:** your wall over here. It's going to heat up the wall. Yeah. Just be careful how you mount these things. Now, here comes the tricky business. Let's say you put 1,000 W into an infrared panel heater that emitted both sides. Let's assume in that there's
+
+**Dave Jones:** no convection at all. It's not true, but let's just assume 500 W going in this direction, but you might have 500 W going in the other direction as well. Let's assume it's a symmetrical design. So, that 500 W is going in to heating up
+
+**Dave Jones:** the wall and the wall's going to conduct because it's a physical medium, it's going to actually conduct the heat out and then you'll get convection on the outside which will then take it off the surface. You remember convection is
+
+**Dave Jones:** designed to take heat from a surface into an air medium. So, yeah, if you see one of these glass infrared panel heaters that have glass on both sides and no reflective surface on one side and you see them hanging on a wall,
+
+**Dave Jones:** just have a bit of a giggle cuz you're wasting a lot of power. But in theory, let's say you had a perfectly insulated wall, there was no conduction out of there, then you're basically heating up that wall with the 500 W and then that
+
+**Dave Jones:** wall will have convective air currents which will take that off. So, really in terms of heating up or raising the temperature of your room, that heat is effectively going to stay inside your room assuming there's no conduction out.
+
+**Dave Jones:** But of course, in practice, you're going to have heat conduction losses out your walls. So, you've got to be careful with actually comparing the effectiveness of one type of heater to another. If you got one of these infrared heaters, it's
+
+**Dave Jones:** great at heating up you and you go turn it on you go, "Oh, that feels nice and warm. How fantastic is this? It's only drawing 100 W and oh, a couple 100 W. I feel fantastic." But, it's not raising
+
+**Dave Jones:** the temperature of your room. If anything, in fact, your room could be cooling down due to losses, which we now have to go into. And one other thing you got to be careful of is when you're measuring the performance of heaters
+
+**Dave Jones:** like this in a room, let's say you had your thermometer here like this and, you know, you're getting a reading on your thermometer, be careful that that's not heating up the thermometer. That thermometer may not actually represent the temperature of the room. You really
+
+**Dave Jones:** have to put them in the dead spots like this in multiple points to, you know, really get a feel for how much the room temperature has actually risen. So, these IR heaters, just be careful with them. And here's where the terminology
+
+**Dave Jones:** gets mixed up a lot. These oil radiators are actually called radiators. They ra- as in like a bit if you want to go strictly by the terminology, radiation only refers to infrared radiation, electromagnetic radiation that heats a source directly. But, it's common
+
+**Dave Jones:** industry terminology to call these radiators. So, the terminology is quite muddled up, but you got to realize that they're actually really majority convection heaters and not IR. They're certainly not majority IR radiation heaters. Now, here comes the crux of
+
+**Dave Jones:** this video really. How do you raise the temperature of a room or a space? Now, it comes down to an old school unit called BTUs or British Thermal Units. But, you don't have to use BTUs cuz BTUs are directly equivalent to watts, i.e.
+
+**Dave Jones:** electrical power. So, if you put, say, 1,000 W into an electric heater inside a room, if it's drawing 1,000 W, you're going to you're going to generate X amount of BTUs. Now, watts is actually an amount of energy per second. It includes a time
+
+**Dave Jones:** component. 1 watt is actually equal to 1 joule per second. It's got that time component in it. Likewise, BTUs have a time component as well. So, you can just directly convert from BTUs to watts or watts to BTUs. 1 watt is approximately
+
+**Dave Jones:** 3.4 BTUs per hour cuz it has that time component. And you can work in terms of joules, you can work in terms of watts, or you can work in terms of BTUs or British thermal units. They're all equivalent. You can convert one from the
+
+**Dave Jones:** other, but it's basically heat over time. Now, as I mentioned in a previous video, if you've got a heater in the room, doesn't matter what type of heater. If it's, say, a 1,000 W heater, by definition, any electric heater, i.e.
+
+**Dave Jones:** it uses an element to heat up, is 100% efficient. Remember, efficient is different from effectiveness. IR heaters might be more effective at heating up a person directly, but in terms of heating up the temperature of a room, all that matters is the power,
+
+**Dave Jones:** i.e. the watts or the BTUs. So, any form of heater, it doesn't matter if it's a 1,000 W of direct infrared, it doesn't matter if it's a 1,000 W convective, if it doesn't, you know, it it doesn't matter what it is. If you'll put it if
+
+**Dave Jones:** you've got inside a sealed room and you're generating 1,000 W and also consuming 1,000 W from the mains because they're always almost practically by definition a 100% efficient. So, if you see any manufacturer out there claim that their
+
+**Dave Jones:** heater, whether it's infrared type, doesn't matter whether it uses magic woo-woo graphene in it, or whatever the whiz-bang marketing technology is in there, if it's generating 1,000 W, it's exactly the same as any other 1,000 W heater. And you can't get around this. This is
+
+**Dave Jones:** basic thermodynamics. To heat a volumetric space, you need X amount of BTUs. In this case, it's like BTUs includes that hour component. You have to put that energy into the room in order to heat it up. Now, let's assume
+
+**Dave Jones:** that we have any sort of heater. Doesn't matter what type it is. It's inside this room. It's generating 1,000 BTUs per hour, which is equivalent to roughly 293 W. So, if you bought a 293 W IR panel heater that you hang on your wall, it's
+
+**Dave Jones:** generating 1,000 BTUs an hour into this room. But, of course, rooms aren't perfectly insulated. You're going to have losses through like gaps in your wall. You're going to have windows over here. You're going to get some losses out of there because glass is Well, it's
+
+**Dave Jones:** a fairly poor thermal has poor thermal conductivity. It's You know, you can actually lose a lot of energy out your windows, which is why we have double glaze windows, for example, and double brick wall construction. They'll have like an air gap in the walls and
+
+**Dave Jones:** they're better thermally insulated. A house that's built that way better thermally insulated than one that just has a single brick construction. It's called double brick construction and double glazing windows cuz they'll have that air gap cuz air is Although glass
+
+**Dave Jones:** is still pretty poor, air is even poorer. So, air is a better insulator. So, that's why you take these measures when you're building an energy efficient house. You want to try and keep the heat in there. But, it doesn't matter what
+
+**Dave Jones:** you do. You're going to get losses, conducted losses through top roof, which is why you'll have your You know, your insulated pink bats, for example. You'll put those You know, those wool insulation bats in your ceiling to stop that heat being
+
+**Dave Jones:** conducted and then convicted out through your roof. And that's why you'll have these little, you know, whirlybird Well, we call them whirlybirds here in Australia. Stick them on your roof and they vent the hot air because you've got
+
+**Dave Jones:** the radiation coming in from the sun. It's going to heat up this roof. And if you're trying to cool it, but that's a cooling thing. Anyway, you can actually lose heat via your roof as well as putting heat
+
+**Dave Jones:** into the room as well. But yeah, you want to avoid conducting out that and then convecting out of your roof. You want to avoid conducting out your windows and your walls and your slab, you know, if you've just got a
+
+**Dave Jones:** wooden floorboard, for example, it's going to be worse than a big concrete slab. And so you've got all these losses. But let's assume that all of our losses added up everywhere total a thousand BTUs per hour. And it's
+
+**Dave Jones:** actually quite difficult to actually model and measure all of these losses, which is why we have like just lots of rules of thumb and other industry things which we'll go into. But let's say your total losses, you can measure it at a
+
+**Dave Jones:** thousand BTUs an hour. If you're putting a thousand BTUs an hour into your heater, or your heater is generating a thousand BTUs an hour, that's what you're pulling from the mains and it's heating up this room, then your losses equal the amount generated,
+
+**Dave Jones:** so you will not by definition, basic laws of thermodynamics, you will not be able to raise the temperature of this room. Yeah, if if you're here, for example, right next to it, you might be able, you know, you you're going to
+
+**Dave Jones:** feel warmer, but the entire temperature of the living space will not rise, not a single degree cuz your your generation equals your losses. And when discussing this sort of thing, the question always comes up, "Well, what if a lot of my
+
+**Dave Jones:** energy is light or vibration?" For example, if you've got the Ubeam transmitter that's transmitting a thousand kilowatts of ultrasonic energy for from one side of the room to the other, well, that 1,000 W has to go somewhere. It's being generated inside
+
+**Dave Jones:** that room, so it's got to heat up the air molecules, it might heat up the the person who's standing in front of it, or whatever it is, might heat up the walls or whatever. And likewise, if you got
+
+**Dave Jones:** one of those infrared panel heaters, if they're facing a wall, for example, it's going to heat up the wall. But the point is it doesn't matter what type of radiation it is, light, sound, vibration. You might say, for example,
+
+**Dave Jones:** that one of those fan forced fan convection heaters, for example, well, you got to use power for the fan, therefore it's not 100% efficient. It might be 99 or 95 or whatever, cuz you got to waste energy to
+
+**Dave Jones:** the fan. But the the that extra power that goes into powering the fan, it's going to be lost in bearing friction, for example, winding resistance, all sorts of stuff. It doesn't matter. They're still 100% efficient. The energy eventually gets converted into heat.
+
+**Dave Jones:** Doesn't matter what it is. So don't let anyone say that any form of heater is not 100% efficient, cuz it ultimately will be. You've got 1,000 BTUs an hour into that space. And likewise, if your losses are 1,000 BTUs an hour, and
+
+**Dave Jones:** you're not generating 1,000 BTUs an hour, cuz you've only got a piss ant 200 W heater, for example, this room is eventually going to cool down. The temperature's going to drop until it reaches some sort of equilibrium, but
+
+**Dave Jones:** it's certainly not going to stay the same. You cannot beat the laws of physics, Captain. So just remember, no amount of woo-woo, graphene, or other technology whiz-bang marketing that claims some heater is more efficient, it is 100% demonstrable It's all
+
+**Dave Jones:** about BTUs per hour. And there's basic calculators online, and they do vary quite a lot, but But try to estimate the amount of losses. Like they might have, you know, low, high, or normal type losses in a room. And to
+
+**Dave Jones:** work out how much energy you need, how many BTUs an hour, or what wattage heater that you would need to heat up a room, let's say we have a 15 square meter room, 5 m by 3 m by 2.5, you use
+
+**Dave Jones:** one of these many calculators available. And let's say you wanted to increase the temperature of this room by 10° Celsius. Then, well, you put that into the calculator, and you need 4,200 BTUs an hour, or roughly 1,250 W heater inside that room will
+
+**Dave Jones:** eventually do it. But like I said, there's lots of practical aspects into this. Like if you have your heater over in this corner of the room over here, and you happen to have it near lots of losses around this part of the room,
+
+**Dave Jones:** then you're going to have a harder time rising increasing the temperature on this side of the room, uh for example. So, you know, it there's really a lot of variability in here, but the basic fundamental thermodynamics are the same.
+
+**Dave Jones:** You need to increase that by 10° C, you might need 1,250 W, and that could vary if you had really good insulation, you might only need, say, 750 W, or you could need like 2 and 1/2 thousand W
+
+**Dave Jones:** depending upon that thing. But if you buy like a little 200 W panel, for example, and expect it to increase the temperature of a 15 square meter room by 10° Celsius, uh-uh. So, in basic heat transfer theory, the heat always moves
+
+**Dave Jones:** towards the colder object. So, if you've got, you know, a really lots of losses over on this side of the room, you might have a door open, for example, then you're going to get lots of transfer of the heat, or lots of convection over to
+
+**Dave Jones:** sort of this cold part of the room. You're going to get lots of losses over there. So, yes, while certain different types of heaters, either a direct infrared radiation heater, they can feel It's all about the feels versus reals.
+
+**Dave Jones:** They can feel more effective, but they aren't really necessarily going to increase the temperature of the room unless they've got X number of BTUs an hour to overcome the losses in the room. There's just no way around it. But, hey,
+
+**Dave Jones:** if you get like a little, you know, a couple of hundred of what heater, infrared heater, and you sit right near it, in front of it, you've got a radiator or a bar radiator heater, for example, you sit in front of it, you're
+
+**Dave Jones:** going to feel toasty warm, even too warm. But, that's not going to help you much if you get off and walk around the room and all that sort of stuff. You want a comfortable living space. But, in terms of heating up a a space heating, a
+
+**Dave Jones:** room heating, it's X number of BTUs versus the losses, and you need more BTUs input than you have in losses. It's just a fundamental aspect of thermodynamics. And just be aware that there is no such thing as a more
+
+**Dave Jones:** efficient heater, uh like a space heater. It doesn't matter what the marketing claims, doesn't matter what woo-woo material they use inside the thing, it's useless. It's all electric heaters, regardless of their type, are 100% efficient. Don't let anyone tell
+
+**Dave Jones:** you otherwise. Yeah, generally, if you want to heat up a space, get one with a fan uh based forced convection system. That's going to heat up a larger volume of air in a room quicker than any IR radiator or any just uh one of those uh
+
+**Dave Jones:** naturally convection oil heaters. And don't let any marketing also tell you that things can magically generate heat when there's no electrical input. You have to put in electrical power to get heat output. Now, in the oil radiators, for example, they're
+
+**Dave Jones:** actually a quite a good thermal heat sink cuz the element the resistive element in there heats up the oil and they actually stay hot for a long time. But, when you pull the plug, yeah, they'll still feel like they're
+
+**Dave Jones:** they still will be convecting heat out, but that's only because they're a heat buffer. It's you don't magically continue to get more energy out. When you look at the whole energy equation for heating up the room. So, any claim
+
+**Dave Jones:** about any woo-woo technology that can magically generate heat during an off cycle or when the power's off, nah. It's just a heat buffer. When the equations are all said and done at the end of the day, you haven't generated any more you
+
+**Dave Jones:** haven't input any more energy into your room. Now, by definition, even though the different types of heaters they're all 100% efficient, some heaters can be more efficient than others, but we do need to be very careful with how we say
+
+**Dave Jones:** this. Let's say that you have a heater on this side of the room and all you care about is heat in your definition of efficiency. This is where the definitions matter. I is heating this part of the room over here by say 10° C,
+
+**Dave Jones:** then that's where an infrared heater, for example, that heats up that spot directly might be more efficient in terms of the overall system in heating up that particular spot than say a a slow convection natural convection heater over this side of the room. It's
+
+**Dave Jones:** going to take much longer and hence require more BTUs and more power more electrical energy to heat up that spot by a given temperature than another type of say infrared heater would, for example. So, you've got to be very
+
+**Dave Jones:** careful how you specify this. It's in terms of a total system efficiency. I I I'm really hesitant to use the term, but I think we need to explain that technically it's possible, but that does not give a license to the manufacturers
+
+**Dave Jones:** to claim on the on their marketing material, on the box, that their heater is more efficient than any other type of heater. They're all 100% efficient in terms of converting electrical energy into heat. So, they have no way of
+
+**Dave Jones:** knowing what the end use configuration is. So, there's no way that they can say it's 800 times more efficient. It's eight times more efficient. It uses 1/8 the power. It uses half the power of a competing unit. That's cuz they
+
+**Dave Jones:** don't know the end system configuration. So, if you see that claim on any type of heating product, you know it's And be careful of any company that uses, say, watts per hour, for example. You know they have no clue what they're
+
+**Dave Jones:** talking about. It's just watts because it's joules per second. It already has a time component, so you can't go watts per hour, which then would be an accelerated time thing. Yeah, the just keeps accelerating. So, all electrical heaters 100% efficient.
+
+**Dave Jones:** That's it. End of story. The only way you can get greater than 100% efficiency on an individual heater, like the actual heating unit, is when you use what's called a heat pump. And this is how air conditioners work. They aren't just
+
+**Dave Jones:** generating the heat inside the room, they're actually pumping it um like outside the system. So, the the system efficiency or the coefficient of performance or COP, it's called, can be greater than one. So, air conditioners can technically have an efficiency
+
+**Dave Jones:** greater than 100% without beating the laws of physics, but what that actually means, so let's say you have a 1 kW air conditioner, for example, you know it's got the unit on the outside, remember that? It's actually outside, then it can
+
+**Dave Jones:** actually generate more BTUs per hour than the equivalent electrical energy input. So, that's why it's it's not beating the laws of physics or anything like that. It's just because it's working as a heat pump, and they are a real thing. That's how air cons
+
+**Dave Jones:** work, but that's story for another video. But, anyone else who claims that anything's more than efficient than any other type in terms of using electrical heaters, you know they're full of crap. So, there you go. I hope you found that
+
+**Dave Jones:** useful. This was actually a lot longer than I was expecting, but it did waffle on a bit. But, anyway, there's a lot of stuff which goes into this, but the basics BTUs in, BTUs out and losses. That's what it comes down to pretty
+
+**Dave Jones:** much. But, yeah, some different types of heaters can feel more effective than others. But, at the end of the day, depends on your particular circumstances. But, as always, you cannot beat the laws of physics, Captain. Energy in versus losses. That's
+
+**Dave Jones:** all it comes down to. So, I hope you found that useful. If you did, please give it a big thumb One thumb up is fine cuz that's all you can do. And as always, comment down below or on the
+
+**Dave Jones:** EVBlog forum. Catch you next time.

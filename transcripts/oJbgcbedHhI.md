@@ -1,0 +1,308 @@
+---
+video_id: oJbgcbedHhI
+title: EEVblog #668 - Mailbag + FLIR TG165
+url: https://www.youtube.com/watch?v=oJbgcbedHhI
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, welcome to everyone's favorite segment, mailbag. Yes, I'm inundated yet again. This is not all of them. I've got another three there. I've got another couple down here. And well, a whole bunch of them. And obviously, I won't be
+
+**Dave Jones:** able to get through them all today. Sorry about that. Um, but yeah, hopefully next week. I've been busy the last couple of weeks for those who've wondered why there's been no mailbag. So, sorry about that. I'll probably go
+
+**Dave Jones:** through in the order that I got them. So, the oldest ones are first, except for this one down here, which is a brand spanking new product from Flur. Yes, Flur just released like yesterday. So, we'll probably open that one first.
+
+**Dave Jones:** Let's go. Yeah. By the way, I have uh tightened the shot up on this. I've got the camera uh closer and sort of down a bit more. People wanted a tighter shot on that. So, hopefully this isn't too
+
+**Dave Jones:** bad. Let's go. So, yes, brand spanking new product from Flur. And yes, it is a thermal imaging camera. Oh, well, kind of. We'll see. It is brand new. It was released yesterday. It's the 29th here in Australia today. Um, I believe it was
+
+**Dave Jones:** released on like the 27th. Probably should have taken all that crap out. Um, so it [Music] is brand spanking. I haven't looked at it yet. Tada. Here it is. Here we go. Tada. It is the Flur TG165. And um it's a it is a thermal
+
+**Dave Jones:** camera, but it's more of a uh visual thermometer kind of thing like uh uh Fluke's uh VTO2 and VTO4 thermal thermometers. It sits in the market between their uh Flur one of course for the iPhone that's all the rage at the
+
+**Dave Jones:** moment uh in terms of price point and functionality between that Flur 1 add-on and or and the Flur E4 uh camera that we've looked at. I've got the E8, but the bottom base model E4. So, this is $499, 500 bucks. And uh the
+
+**Dave Jones:** only the thing I don't like about it, I haven't even powered it up yet, but I know for a fact it's got the uh E4 type form factor, which is really quite nice. I love that. And it's rugged and drop
+
+**Dave Jones:** proof and everything else. Um but it doesn't have the MSX technology and that that is the difference. I'll post a link down below to a table that Flur have uh highlighting the differences between this Flur 1 for the uh iPhone and the E4
+
+**Dave Jones:** model. Yes, it does use the new Lepton uh sensor, same as the Flur 1, but it doesn't have the camera in it for the um MSX overlay, which is quite disappointing. But if it did, hey, it would become a Flur E4. So they've
+
+**Dave Jones:** positioned it between that market um priced about halfway between at 499, but it does have the laser thermometer. So it doesn't read the temperature from the leptton sensor. It actually reads it based on your traditional uh laser targeted infrared thermometer. So it's
+
+**Dave Jones:** combination of between a more niche market than either the Flur one or the uh E4 for a full thermal camera. So it's almost a full thermal camera. It's got that leptton sensor in it, but no, that MSX technology, which is fantastic. So,
+
+**Dave Jones:** hm. And this is what you get in the box. The camera itself, of course, which looks and feels very nice. You get a uh USB uh charging adapter with all the requisite adapters, plus a USB cable. But, interestingly, the voltage on this
+
+**Dave Jones:** thing is 5.35 volts uh at 2 amps. So, it's almost as if they've catered for like a, you know, they've presumed that you're going to get a drop in in the USB cable, which it probably will. Um, of course,
+
+**Dave Jones:** especially at 2 amps, but still that's quite unusual to output 5.35 volts. H. So, here's where it stands. It is a combination between just your traditional, you know, spot IR uh laser thermometers like this. The laser is just a targeting uh based system. So,
+
+**Dave Jones:** it's got that, but it also overlays a uses that Lepton thermal imaging sensor to overlay the image on there, but it still reads, as I said, the temperature based on your traditional uh pyroctric uh sensor in there. Doesn't get the
+
+**Dave Jones:** temperature readout on screen as we'll see from the actual uh leptton sensor. And in terms of, you know, size and functionality for it, this is the Flu uh E8 uh which is a fantastic thermal camera. But the E4 is exactly the same
+
+**Dave Jones:** um as this. So it it sits somewhere between there, but it's much smaller, much lighter. Um it's got an 8 hour battery life, rechargeable USB. Yes, it does have a tripod mounting thing on the bottom. Why they couldn't do that on the
+
+**Dave Jones:** um on the E series, I don't know. Well, because the Eseries actually uses these nice rechargeable battery packs. This also has a um in but it's got an internal rechargeable battery. Hence why I guess they could put that, but jeez,
+
+**Dave Jones:** they should have added it. Real pain in the butt. Anyway, so it sits somewhere between these in terms of uh price and usability. As I said, no MSX technology like the Eeries. Now, if you have a look at the front here, you can see we've got
+
+**Dave Jones:** dual laser diodes here. I'll show those in operation in a minute. So you can actually get the uh spot difference um at a distance which is really uh quite handy. And then we've got the uh thermometer window here which curiously
+
+**Dave Jones:** um isn't your traditional or doesn't seem to have like a traditional Fresno lens like it does here. So maybe it is inside and that's a a thermally uh transparent uh window. I'm not sure. And then we've got our Leptton sensor up
+
+**Dave Jones:** here. So our Leptton devices uh behind that. So, as and as I said, no camera because it doesn't have that camera overlay, that MSX technology, which is so wonderful on the E1 and also um is fairly useful on the Flur one as well.
+
+**Dave Jones:** And on the top here, we've got a USB interface uh for charging. I don't know if video comes out of this thing. I'm not entirely sure. And a little uh micro SD card there for saving images. And no,
+
+**Dave Jones:** it can't save video. All it can do is take uh screenshots with the trigger down here, which also activates the laser. And those photos, of course, are uh done by the trigger, and I'll show you the operation of that. And there's
+
+**Dave Jones:** our laser warning. Eh, it's less than a millatt. She'll be right. We've got ourselves a very simplistic interface here as well. I hope it works. The E series is a bit uh annoying. Let's see how long it takes to boot up. There we
+
+**Dave Jones:** go. It's ready to work. No problems at all. It does have an auto uh shutter on the thing, I believe. So there you go. We can see the uh image from the lepton sensor of course and that uh but that
+
+**Dave Jones:** measurement spot in the center where it's taking that reading as I said not taking it from the leptton sensor it's taking it from the uh from this window here and your traditional uh pyro electric infrared sensor. So yeah
+
+**Dave Jones:** totally different. It's a combination of the two. So it's really just using the leptton sensor and that image just as a visual guide. And then if I press the button like this, bingo, we can see the uh dual spots. And I'll show you those
+
+**Dave Jones:** better in a minute. Now, one thing I found instantly annoying about it is that you press the button down and your uh lasers come on as you'd expect, right? To get your uh window of where it's actually measuring. But if you
+
+**Dave Jones:** release the trigger, here we go. If you release it, it pops up with an image of that. And you can actually, you've got a couple of seconds to save that. And it's just I find that just a little maybe a
+
+**Dave Jones:** bit annoying. It would have been nice, but I don't know with a single trigger interface maybe, you know, dedicate one of the buttons on here to actually, you know, save image or something like that rather than just have to trigger that,
+
+**Dave Jones:** release it, and then bang, we can save that. And then we can go back in here and go in here and we can go there's our image. We've only got one. That's it. But yeah, I don't know. It's a little
+
+**Dave Jones:** bit annoying. Anyway, in terms of our menu interface, it is incredibly simplistic. We can change the uh color uh thing there. We have two choices for that. So, we can go out of there. There we go. We've got the blue one or the uh
+
+**Dave Jones:** colored one by default. And so, nothing fancy there at all. We can set the emissivity, which is fantastic. We can set that in uh like 0.95 is the default. And it looks like we can have a totally custom value in there, which is
+
+**Dave Jones:** terrific. We can increment that to anything we want. So, that's very nice. Got a couple of presets. That works well. And apart from that, we can turn our laser off and on when we pull the trigger on the thing. And uh Celsius and
+
+**Dave Jones:** Fahrenheit for you Yanks. We can turn off the center spot, although if you do that, it still displays the uh temperature. We can set the time out. And we can set the uh time and date which is used to um stamp the files
+
+**Dave Jones:** obviously. And well that's it. That's all she wrote. Version 1.50. And uh there's nothing else fancy at all in this thing is designed to be completely idiotp proof. And that's the advantage of this over like a full thermal camera
+
+**Dave Jones:** like this. This is the huge advantage. And it's more of a niche uh market cuz it's not a true thermal imaging camera with all the bells and whistles of the E series. you want that or you get the
+
+**Dave Jones:** E-series which is fantastic but for those who just want to go out and spot measure a temperature and you traditionally use one of these. Well, this one is better. Yeah, it cost you a bit more coin but it's nice to have the
+
+**Dave Jones:** thermal image in there. So, if you're going out measuring the temperature of your fuse box or your industrial machinery or something like that instead of having to map, you know, using one of these, you have to move it over the
+
+**Dave Jones:** whole thing to try and find the hot spot. This one just, you know, you can instantly and easily see the hot spot by virtue of the uh lepton sensor and the uh thermal uh camera in there. So, it's
+
+**Dave Jones:** worth every cent. But uh yeah, no MSX technology, but it's just designed to get a ballpark so that you can move the cursor over the hot spot you want to measure and then get it within light lined up with the lasers and then you
+
+**Dave Jones:** take your reading. So, it's designed to do one job and one job only. When I first uh got the specs for this thing, I thought, "Oh, you know, look, it's it's it's quite expensive because it's not as uh good as the Flur one in terms of
+
+**Dave Jones:** having the MSX technology and the camera, but I can appreciate how, you know, you can't use the Flur one with your iPhone in some industrial environment. You got gloves on or you got whatever, you know, it's a pain in
+
+**Dave Jones:** the ass. This thing does a beautiful job. Super duper rugged. drop proof to uh 2 meters and simple to use. Turn it on and it just works. So yeah, but if you want a thermal camera, it's not for
+
+**Dave Jones:** you. Get one of these. Okay, what I've got is my HP power supply here. And if you compare the thermal images of the two, there's just no contest. And you wouldn't expect there to be either. I mean, this one has the 320 by uh 240
+
+**Dave Jones:** sensor with the MSX technology, so it shows all of the detail. And this one, well, just shows a few hot spots, but still, you know, it's yeah, I'm not using it correctly here. This is not its intended purpose, but I just wanted to
+
+**Dave Jones:** show you the difference there. And if we turn off the MSX technology on the E8 there, you can see the difference in the uh quality of the uh you know the 320 by uh 240 sensor in the E8 compared to that
+
+**Dave Jones:** 80x60 lepton sensor there. Huge difference. But you know, this thing's good enough for just its intended ballpark purpose. Oh, there's that auto power off. H but you can change that obviously. And of course, if you're trying to measure small details like
+
+**Dave Jones:** that hot resistor down there, there's no contest. I mean, the uh the E8 is saying that is uh you know, 72, 74, 70, 80° because it can get it can measure directly the individual pixel uh on that uh thermal sensor. But the
+
+**Dave Jones:** TG163, sorry I can't get the glare on the light, you know, because you can see the laser spots there. It is averaging over a bigger area uh like that. You know, it's not There we go. It's No, it's not too bad, but
+
+**Dave Jones:** you got to muck around and get it because it averages over a larger area. You're not going to get fine detail measurements with this thing, but that's not what it's designed to do. So, I'm really, you know, not using the thing uh
+
+**Dave Jones:** within its intended use. I just wanted to show you that. And I just wanted to show you also how these laser spots change. You can see that they're almost vertical like that at that distance. In fact, I can bring them down and they're
+
+**Dave Jones:** vertical at that distance and then they move like that as you get closer. And the further away you get, the more they spin around like that. But basically what it's telling you is that your measurements window is between those two
+
+**Dave Jones:** dots. So it's basically a circle around those two dots there being the outer limits. And if I shined on my door all the way over there, bingo. You can see that it's uh moved like that. And if I
+
+**Dave Jones:** walk towards it, here we go. I will uh Sorry, the sound will die. I'm not wearing my wireless mic, but you'll see it rotate like that. There we go.
+
+**Dave Jones:** Woohoo. So, there you have it. That's a brief look at the Flur TG165. I guess you could call it a visual uh thermometer. That's the term that Fluke use for their VTO2 and VTO4. And I've tried the Fluke VTO2 and it is
+
+**Dave Jones:** awful. It really is. I can if I can I've got some video footage of that. I might try and include it uh here. I got some old footage and yeah, it's truly awful. So, compared to that, this thing is
+
+**Dave Jones:** absolutely uh fantastic. It's got a bigger uh industrial temperature range compared to the Flur 1, for example, which only has 0 to 100. This does minus 255 to + 380. Um, and it really is easy to use, rugged. I haven't tried the 2 m
+
+**Dave Jones:** uh drop test yet, but uh yeah, it really is um it does the business and super high quality as you'd expect from a Flur, but possibly a bit pricey at $4.99, but it's not the consumer market that the Flur one was uh trying to
+
+**Dave Jones:** target. But if you need, as I said, a real thermal camera, go for the E series much better. And I guess I can kind of understand not having the MSX technology in there because it would really start to compete with this. So, they've
+
+**Dave Jones:** deliberately tried to uh lower the cost and keep it out there, but I would have preferred a cheaper camera there. I think you know every anyone looking for something like that it's a bit pricey but I guess you don't care for those
+
+**Dave Jones:** companies who uh you know need this sort of capability. So yeah it's a very nice bit of kit and this doesn't have any video capability like the Flur one either. So it's just you know if you want video you got to go for the
+
+**Dave Jones:** consumer flur one or the upmarket eeries. Hi guys, just a quick uh impromptu video checking out the new Fluke VT O2 thermal camera and uh it doesn't look very good folks. Let's do some practical tests comparing to the um
+
+**Dave Jones:** uh Flur I3 camera which we've seen before. So what we've got is a can filled with hot water there with matte black on it. So its emissivity is going to be about uh 0.95 or thereabouts. And it's only on
+
+**Dave Jones:** one half. And the emissivity on the other side is of course going to be pretty horrible. And let's check out look at the difference in that compared to the uh flur. No contest whatsoever. The uh Fluke VO2 is absolute
+
+**Dave Jones:** garbage. Really is. It's um it's like a blob. I have no no idea what sort of sensor or lens they're using in that thing, but it's pretty awful. Look at that. Not impressed at all. Um the temperature does, if you get it just
+
+**Dave Jones:** right, it does seem to work, but uh does seem to be reasonably accurate in that respect, but otherwise it's uh just pretty garbage. Can we turn the camera view on? There we go. So, we got the camera view and
+
+**Dave Jones:** uh but yeah, it's just a fuzzy blob. Hopeless. Really no contest whatsoever. And if we do some lights up on the roof here, there's just ah man, the fluke is just hopeless. Okay, switch it back to full. Look at that. Just a blob. So,
+
+**Dave Jones:** you got to wonder what lens and sensor they're using in this thing. And there's supposed to be a human in there somewhere. And uh looks like just a blob on the Fluke. Unbelievable. So yes, folks, the Fluke VO2 looks like it's all marketing.
+
+**Dave Jones:** Um it's really its performance is probably the worst I've ever seen in a thermal camera. It's just hopeless. Um Jeez, I don't know. But one thing I don't like about it either is that the screen is on an angle like this and the
+
+**Dave Jones:** sensor is on a different angle. So when you're actually pointing it at something, you've got to sort of um you know uh sort of mentally offset the thing. Whereas the Flur um you know the screen is you can't really hard to see
+
+**Dave Jones:** that the screen is parallel with the sensor. So in use it's um this thing's just really annoying to uh aim at things. I don't like it at all. So anyway, um just had a very quick play around with it, but I think that's an
+
+**Dave Jones:** absolute fail. So I don't know, thumbs down. Next up, one from Australia. Yes, Charlie Muns. Good day, Charlie. Um it's got uh Pooh Bear and Tiger. Awesome. Let's have a look. Make sure I don't cut my mat here.
+
+**Dave Jones:** Goodness. A whole bunch of a whole bunch of stuff for Sean. Look at that. A whole bunch. And we have a note. Let's have a read. Well, this one's well worth reading. It's actually from uh Julie Charlie's mom. Charlie is
+
+**Dave Jones:** a 13year-old viewer of the EEV blog, and I actually uh he contacted me a month or two back, and I actually uh sent him a one of the Tektronics uh scopes that I had um cuz he didn't have one. So
+
+**Dave Jones:** anyway, um Charlie, I had no idea, but uh Charlie was in uh really had some medical problems um early on and uh he's done some uh fantastic stuff for the Westme uh children's hospital as ambassador and in 2012 he completed uh
+
+**Dave Jones:** his commercial uh radio school uh training. He wants to become a radio broadcaster. Good on you, Charlie. That's awesome. and he's been on 2GB, which is a local uh radio station here, a couple of times. Fantastic. Thank you
+
+**Dave Jones:** very much. And here is a um Charlie's story. And I just wanted to show this. Look at this. This is terrific. Charlie celebrates 2 years since his life-saving liver transplant. Oh, I had no idea. Charlie, fantastic. There he is. Look at
+
+**Dave Jones:** that. 7 weeks old, just diagnosed with alpha 1 anti deficiency. I can't even pronounce that. Goodness, that doesn't sound good. But it sounds like he's doing pretty well these days. And Westme Children's Hospital uh saved his uh life
+
+**Dave Jones:** with a um liver uh liver transplant. Terrific. I believe you can go on and live a very normal life with a when when you have a liver transplant. Please correct me if I'm wrong, but uh thank you very much Julie Charlie's mom for uh
+
+**Dave Jones:** sending this stuff in for Sean and Sean. Westme Children's Hospital actually saved little San Sean as well. For those following along tweets at home about a year ago or something, he had a he got a uh peanut um a nut stuck in his uh lung
+
+**Dave Jones:** airways and uh yeah, they had a team of like seven um surgeons operate on him and they removed it. No problems whatsoever. So, massive thumbs up to Westme Children's Hospital, one of the best uh hospitals in the world. Thank
+
+**Dave Jones:** you very much, Charlie and uh Julie as well. I hope you enjoy the scope and I hope you have an excellent career. Good on you, Charlie. Two thumbs up. Speaking of medical uh issues like this, I got some really good friends whose uh little
+
+**Dave Jones:** boy has uh congenital musculardrophe, a really a massively debilitating disease uh problem. And they've actually got a possible uh campaign coming up in two days time and I'll link to it. At the moment they've just got a Facebook page
+
+**Dave Jones:** but very shortly um they'll have that. It's called Beat for Life and they're trying to raise money for uh research into this and for drug uh trials for it uh for congenital musculardrophe. So please if you can help out for uh that
+
+**Dave Jones:** research, all the money goes into the uh research for that um horrible uh disease then please do so. So, um, the links will be down below. Very much appreciated. Is a good friend of little San all the fun of sand without the
+
+**Dave Jones:** mess. Sounds awesome. Thank you very much, guys. Sean will love this. Dear Dave, just wanted to thank you for the kindness time and oscilloscope you sent Charlie. You're very kind. We appreciate my random act of kindness. Which way
+
+**Dave Jones:** Charlie's week? A brighter one. No worries. He really loves electronics. Had a keen interest way before school even started. That is the best way to go. as did the best electronics professionals I know. Can I offer any advice on postchool education to get
+
+**Dave Jones:** into the field? Well, jeez, how long have we got? He's already Charlie's already streets ahead of uh everyone else. having it for a hobby, having that interest and working on stuff um outside of uh the educational uh system. Given
+
+**Dave Jones:** his age, can't do uh formal education yet, but uh you know, once that age uh gets in that you can start formal education definitely, but already streets ahead, get involved in uh possibly public uh projects, just build, design, and build stuff. And I've done
+
+**Dave Jones:** videos on job interview uh tips and things like that. The absolute best thing you can do is bring along stuff you've designed and worked on because that's what it's all about. And he's already streets ahead. So, good on you, Charlie. Next up, we
+
+**Dave Jones:** have someone you've seen before, LPS, Low Power Radio Solutions, the Eric uh you know, modules. Um they uh have sent something in. They got the having a second sucker, the SAV, and they've sent in some another little wireless module.
+
+**Dave Jones:** Oh, yeah. There we go. Nice to see you again, mate. Here are your Eric modules updated with the latest software. Yes, I've done a video on these before. The um Eric. There we go. That's Eric. He's Yes, he's being mended cuz I broke him
+
+**Dave Jones:** um in a previous video. And these little uh low power radio modules are very good. And uh check them out. I'll link them in down below. I've talked about them in a previous video. They're quite neat. And this is very typical of uh
+
+**Dave Jones:** these sort of modules. And you can see these like half moon uh castellations here they're called on the side of the board. And this is an easy way just to uh either surface mount them on these types of modules onto your PCB or um you
+
+**Dave Jones:** could actually uh you know uh use them uh standoffs or as we saw in the previous uh video on these things, you can actually get clips that actually connect in there. And these are really easy to do on the board. You can see
+
+**Dave Jones:** that um you just do them like as a regular through hole pad and then just define your cut your routing path on your board to go straight through the center of the hole. And then you end up with um yeah, my pointer looks really
+
+**Dave Jones:** huge on here. You end up with this half moon shape with the plating going through the half moon hole there. And it uh really is an easy and simple technique to do that. Those ones on the side there are a bit messy. these ones
+
+**Dave Jones:** here. Little bit cleaner, but uh yeah, quite a common technique, castellations. Next up, we have a huge one and it's been here for a while. Sorry, Josh Parker. He's from um Orange in California. Just Orange, not Orange County or just Orange. There you go. Um
+
+**Dave Jones:** in the US, thank you very much. So, let's crack this thing open. And by the way, this mat was pretty tear resistant. I did actually um dig into it and scratched it, but didn't cut through. Fantastic. Uh, so let's let's crack into
+
+**Dave Jones:** this and let's let's have a look. I think we're going to like what's in here. I think I have an idea of what's in here. And it's not an Amazon item, but it does come in an Amazon box. Let's get
+
+**Dave Jones:** rid of that. So, those foam pellets. And here we go. Let's check it out. We have a note inside which I'll show you. I'll read in a minute. Oh goodness. Got to open it again. Sorry. This could take
+
+**Dave Jones:** a while. But uh Oh, there's some lots of cruddy crap. I don't know what uh don't know what that is. Anyway, lots of crud. Lots of crud. Not happy. It's polluting the lab. But, tada. What we have is an Ampex um
+
+**Dave Jones:** memory 16k memory module. Let's take a look at it. There we go. Huh. Can't see much uh memory on the top there, but uh it is two board construction. M let's read the note. See what we got here.
+
+**Dave Jones:** Friendly greetings Dave and to you too. Included is a 16k word fite core memory board made by Ampex sometime in the late '7s. Bought a pair of them off eBay. According to the seller, they are unused spares for the NASA ESA uh Mr. 125 Space
+
+**Dave Jones:** Lab ground computers during the early parts of the space shuttle program. Fantastic. Apparently, it's an 18bit memory configuration with 16 bit word plus one par bit plus one protection bit which you work out over a quarter of a
+
+**Dave Jones:** million fite cores. Goodness sake, where are they hidden? Um, haven't been able to find much info, but it seems to have been on a faster larger module of the more common Mitra 15 Ampex, mostly known for the magnetic storage products, and I
+
+**Dave Jones:** haven't been able to find many details. Um, a bits of history too good to pass up. Just had to share one with you and other viewers. Thank you very much. And yes, left it sealed in the original packaging and it's been at since 1993.
+
+**Dave Jones:** Hence all the crust. It could be like um mouse poo or something like that. Thank you very much, Josh. This is awesome. And uh there's some links down below which I'll include. And here we go. Mitra 125s. Okay. for space. H this
+
+**Dave Jones:** would have been in uh one of the journals uh back in the day, an ad in one of the uh electronics or computer magazines, I guess. And uh there you go. Can't read that, of course, but uh I
+
+**Dave Jones:** think he sent me a um email copy of this. I'll include it if I can check it out. It's all uh very well, I'm not going to say boring cuz it's in it's still uh nice in its own right. um uh
+
+**Dave Jones:** here. But we want to of course see the ferite core memory. Unfortunately, it looks like there I'm going to have to undo it all. It's a two board construction here. And I can't see any ferite core memory. Obviously, it's in
+
+**Dave Jones:** the it's in the center here on the lower board. And this is all the driver stuff which uh goes along with it. All DIP technology, of course. Let's see if we can get a date code on one of these.
+
+**Dave Jones:** 32nd week, 1975. So, there you go. There's some more more uh 74 date code stuff down here. And uh yeah, all uh TI part 7442s for example and uh yeah, probably other stuff that we can get uh get data
+
+**Dave Jones:** on. But we've got a whole bunch of drivers and things along here. And there's some interesting things to note actually. Look at this inside here. You'll see that. Look at those under there that run the whole length of these
+
+**Dave Jones:** chips. These were very common back in the day. These are actually decoupling caps that run under the chips and then go down into the same holes as the chip. So, you put the big decoupling cap on first and then you through the holes and
+
+**Dave Jones:** then you put the um they're they're actually um they would be totally custom made for the particular pitch between the chips in here and then inserted into the particular uh power pin holes. You used to be able to get uh generic ones.
+
+**Dave Jones:** Maybe you still can. um that go into dip packages like this and they'll have, you know, one pin over here and one pin over here for power and um power and uh ground, for example. But this would have
+
+**Dave Jones:** been custom made. And it's a bulk bulk decoupling cap for all of these chips here. And likewise, right on the edge of the board, look at this. It is a bulk decoupling cap. You can see the you see
+
+**Dave Jones:** the pins down in here. It's a bulk decoupling cap that runs the entire length of the board. Look at that. Absolutely fantastic. And then we got some horrible dip tanelums here. Look, colorcoded. Ah, beautiful. Those were the days. But, uh, and then they've got
+
+**Dave Jones:** them running right up the length of these chips as well. So, it's um, if you have a look at that. There you go. They got them running all over the shop. I mean, this thing would have only been
+
+**Dave Jones:** working at a couple of megahertz, I guess. But, you know, you got to have some decoupling on there. And that bulk decoupling is a way to do that on probably I I would assume maybe a double-sided board. And yep, it is a
+
+**Dave Jones:** double-sided board. I can actually see uh through there if you hold it up to the light. And just regular tin plate on the bottom. There's no uh solder mask or no overlay or anything on the bottom side. So, this is the board we need to
+
+**Dave Jones:** screw out, which will have the memory on it. Uh, cuz there's nothing on the top here, but we should be able to unscrew that pretty easily. And, uh, it's a really fascinating board. Mix of technology. Are they resistor arrays
+
+**Dave Jones:** they've got there? They're resistor networks, I'm assuming. Um, so yeah, interesting mix. You'll notice the uh turrets the through. So, they got the pins sticking up. Bit of corrosion on that bottom board. uh the pins sticking up and then into the turrets mounted on
+
+**Dave Jones:** the top board. So that's how they join the two boards together. And uh absolutely fascinating board. I like this one. And I'll tell you what, this really took some prizing apart. There's a lot of force that goes into that. And
+
+**Dave Jones:** tada, we're robbed. We still can't see it. We got some more drivers on here. And see there's nothing on the bottom. Just all the tin plate. And uh got some more drivers around here, but this is where the 16K core memory will be
+
+**Dave Jones:** hidden. Ah, let's get this off. And for those playing along at home, there's the sticker. It's the model 1600. Serial number 2,673. And it needs 5V and 15 volt uh supplies. So yeah, I can probably still power this thing up if we could even get
+
+**Dave Jones:** schematics for it. I doubt it. And of course, we've had some ferite core memory on here before. And uh I've shown that and it really is sexy old school technology. And uh no I still need to get that one there off. And well I
+
+**Dave Jones:** suspect the warranty is not valid anymore from the mid70s. So screw that warranty. And uh let's get into it. Hey, we're in Oh, in like Flynn. Look at that. Look at the density on that. That is just incredible. Well, I can't zoom in
+
+**Dave Jones:** enough. Oh, and if you thought my previous one was tiny, look, you can still just see the ferite rings in there if you are viewing this in HD most likely. But compare that with this one. And oh crap. Macro lens time. Oh wow,
+
+**Dave Jones:** look at that. That is stunning. Look at the density of those ferite rings. That is absolutely incredible. Sorry, I can't really can't get a huge amount better than that, but that is just wow. Unbelievable. Look at all these
+
+**Dave Jones:** ferite rings. Each ferite ring of course stores one bit of data in the uh magnetic field and it probably I don't know could still have data on it these days if we could figure out how to read the bastard out. So that is just utter
+
+**Dave Jones:** madness. That is incredible. Oh my goodness. Sorry, my macro lens isn't good enough. As you can see, the uh uh distortion of the lens and the uh brocet around the outside, it just just isn't good enough to really
+
+**Dave Jones:** capture this sort of detail. It's absolutely incredible. Check out these just massive buses of this enamelcoated very fine enamelcoated wire go into wired into individual uh pads like that which then go into these big dip chips. It's just and they just branch off like
+
+**Dave Jones:** that as we go down. It just gets thinner thinner thinner until well there's a few branching out like that and oh we couldn't fit that on the board. So we're just branching these off down here. It's just ah it's
+
+**Dave Jones:** insane. Then you've just got the bundles of multicoled enamel coated wire doing the rows and columns in in there. And it's and of course the sense line and the inhibit line. It's just I don't even want to know how they manufacture this
+
+**Dave Jones:** thing. Well, actually I do because it'll be totally fascinating. But like it this is rocket science. There you go. I'm shooting that from near vertical with my X 10 macro lens and almost the full I think I am yet the full uh 20 times
+
+**Dave Jones:** optical zoom on my Canon HFG30 plus the X 10 macro lens and that is just ridiculous. What is the dimensions down in there? Let me get a ruler. And I'm a little bit annoyed that I can't find my
+
+**Dave Jones:** really fine graticule uh measurement microscope marker, but here's a steel ruler with half mm increments there. And well, there's at least two of those per half millimeter uh spacing. That's just crazy. So, there's an attempt to measure it with my micro ruler there. And well,
+
+**Dave Jones:** each little ferite ring's about roughly, just maybe just under half a millimeter diameter. Actually, they're not a huge amount smaller than the existing ferite rings that I had on the previous one I showed. It's just really essentially just the density that they're able to,
+
+**Dave Jones:** you know, thread these things with. I mean, it's got to be I at least 10 times the density in this thing compared to the old board. Just look at that. There's no comparison in the density of that. So, you know, let let's call it B
+
+**Dave Jones:** almost the same size uh ferite ring, slightly smaller, but that that density they overlap each other in the in the horizontal direction there. Crazy. But of course, you're not going to get any interaction between the ferite cores because it's the wire actually running
+
+**Dave Jones:** through it and the fact that it's a ferite ring and the magnetics of how that works, you don't actually get any interference to from the ferites next to it. So, it works a treat. So, you can basically uh as long as you got the
+
+**Dave Jones:** wires actually physically going through them, you can pretty much um you know pack them as dense as you want there. So, thank you very much Josh for sending in that marvelous piece of space shuttle late7s uh vintage computer technology
+
+**Dave Jones:** and we love ferite core rope memory like this. It's just fantastic. I showed off uh my previous one at the electronics trade show and it was a huge hit. But like I had the Tano microscope there and people really uh you know lusted after
+
+**Dave Jones:** that. That was double-sided technology, by the way. Uh, this one didn't need it because of the incredible density in this thing. 16K. I don't know if that's 16k bytes or 16k bits. H. Anyway, thank you very much. This is just awesome.
+
+**Dave Jones:** It's a feature piece for sure. Fraable.

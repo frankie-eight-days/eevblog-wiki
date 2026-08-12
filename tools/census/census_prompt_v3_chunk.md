@@ -49,13 +49,35 @@ last paragraph of the previous one. Extract it normally; the pipeline dedupes.
 `**Speaker ?:**` is a real speaker label used when diarisation failed — treat it
 as the literal speaker string `Speaker ?`.
 
-Speaker labels are unreliable in three known ways and you must not "fix" them:
-a paragraph often contains both sides of an exchange merged under one label; some
-episodes mislabel a guest with a product name (episode 650 labels Andreas
-Olofsson as `Parallela` on nearly every turn); and a stray label sometimes lands
-on the wrong paragraph. Always record the label exactly as it appears on the
-paragraph, and use the `notes` field to flag an episode whose labels are visibly
+Nearly every video is Dave alone, so `**Dave Jones:**` is the label on every
+paragraph and carries no information. Record it as given; never invent a second
+speaker because the text sounds like a dialogue (Dave voices both sides of an
+imagined exchange constantly). A small minority of videos are interviews or
+guest videos; there the labels are as unreliable as any diarisation output —
+a paragraph may merge both sides of an exchange under one label, and a stray
+label sometimes lands on the wrong paragraph. Always record the label exactly as
+it appears, and use the `notes` field to flag a video whose labels are visibly
 broken.
+
+## Dave is holding the thing (important)
+
+This is video, and the transcript is only the audio half. Dave constantly refers
+to objects that are on screen and unnamed in the text: *"this little guy"*,
+*"there's your problem right there"*, *"see that?"*, *"the thing I showed you
+last time"*. A podcast never does this, because nobody can see anything.
+
+**Resolve unnamed demonstratives against the video title and the chunk's own
+established subject**, then emit the concept under its real name. If the title is
+"EEVblog #1234 - Fluke 87V Teardown" and Dave says "so let's crack this thing
+open", that is a mention of `fluke-87v`, not a skipped sentence. The same goes
+for the device under test throughout a teardown, repair or review: it stays the
+subject even in the many paragraphs that never say its name.
+
+Two limits on this. Only resolve a demonstrative when the title or a nearby
+paragraph makes the referent unambiguous — do **not** guess a part number that
+was never spoken or written. And do not manufacture a mention per pronoun: emit
+one when Dave is actually saying something about the object, under the normal
+depth rules below.
 
 ## Output format
 
@@ -66,13 +88,13 @@ chunk's mentions:
 
 ```json
 {
-  "episode": 212,
-  "title": "An Interview with Trey German - Launchpad Laden Lodesman",
-  "url": "https://theamphour.com/212-...",
-  "file": "0212-an-interview-with-trey-german-....md",
-  "main_topics": ["c2000", "field-oriented-control", "msp430-launchpad"],
-  "guest_name": "Trey German",
-  "guest_affiliation": "Texas Instruments",
+  "episode": 1234,
+  "title": "EEVblog #1234 - Fluke 87V Multimeter Teardown",
+  "url": "https://www.youtube.com/watch?v=...",
+  "file": "abcdefghijk.md",
+  "main_topics": ["fluke-87v", "multimeter", "input-protection"],
+  "guest_name": null,
+  "guest_affiliation": null,
   "notes": null,
   "mentions": [ ... ]
 }
@@ -94,16 +116,22 @@ chunk — chunk 0 is the only place they are read from.
 **`episode`** — from frontmatter. If frontmatter has no `episode` field, set
 `null`; do not infer it from the filename or the cold open.
 
-**`main_topics`** — 2 to 3 canonical concept names identifying what the episode
+**`main_topics`** — 2 to 3 canonical concept names identifying what the video
 is *about*, as opposed to what it merely mentions. Each must also appear as a
-`concept` in `mentions`. For an interview this is usually the guest's subject
-matter; for a hosts-only episode it is the two or three threads that occupy the
-most airtime. Rank by airtime and depth, not by mention count — a concept named
-forty times in passing is not a main topic.
+`concept` in `mentions`. Rank by airtime and depth, not by mention count — a
+concept named forty times in passing is not a main topic.
+
+This field is load-bearing for teardowns, repairs and reviews, which are the bulk
+of the channel. **When the video has a device under test, name that device as the
+first main topic**, as specifically as the title and audio support: prefer
+`fluke-87v` over `multimeter`, `rigol-ds1054z` over `oscilloscope`. Fall back to
+the general instrument only when no model is ever identified. Downstream stages
+key the teardown pages off this field, so a teardown whose `main_topics` names
+only the category has lost the article.
 
 **`guest_name`** / **`guest_affiliation`** — the interviewee and the company or
-institution they are introduced as representing. Both `null` on hosts-only
-episodes. If a guest gives no affiliation, set `guest_affiliation` to `null`
+institution they are introduced as representing. Both `null` on solo videos,
+which is nearly all of them. If a guest gives no affiliation, set `guest_affiliation` to `null`
 rather than guessing. Use the person's real name even when the speaker label is
 corrupted (episode 650's guest is `Andreas Olofsson`, not `Parallela`).
 
@@ -336,8 +364,14 @@ best `industry-economics` and `career` material.
 
 ### 5. Ignore the show's own furniture
 
-The cold open, "welcome to the Amp Hour", episode numbering, "we'll link it in
-the show notes", sign-offs. These produce no mentions.
+The cold open ("hi, welcome to the EEVblog"), video numbering, calls to like and
+subscribe, "link's in the description below", Patreon and sponsor plugs, forum
+and mailbag-address readouts, sign-offs ("catch you next time"). These produce no
+mentions.
+
+One exception worth stating because it recurs: when Dave names the *sender* of a
+mailbag item or the *supplier* of a piece of gear, that is a real
+`company-product` or `person` mention, not furniture.
 
 ### 6. Skip the unrecoverable
 

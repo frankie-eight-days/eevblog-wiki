@@ -1,0 +1,236 @@
+---
+video_id: _kI8ySvNPdQ
+title: EEVblog #1284 - How Bad Product Design Kills The Environment
+url: https://www.youtube.com/watch?v=_kI8ySvNPdQ
+source: youtube-asr
+---
+
+**Dave Jones:** Hi, I get lots of uh email technical questions and this particular case I got one from uh somebody who wanted to know how to design uh like really low standby power direct mains power supplies, i.e. you know, 240 V or 110 V mains rectified
+
+**Dave Jones:** uh and powering a product directly non-isolated as we'll go into, but they wanted to have like really low uh standby uh power. So, like usually technical questions like these take a long time to uh answer. So, usually I
+
+**Dave Jones:** direct uh people over to the EEVblog forum to answer such things, but I thought, "Hey, this might make an interesting video." So, I thought I'd actually get a uh mains-powered uh product like this. In this particular case, it's one of these uh
+
+**Dave Jones:** photoelectric uh smoke alarms. It's a 240 V one that actually powers into the mains. It's actually dual battery and mains-powered because if the mains fails, you need the battery back up for safety, of course. Model QA 1300, it's a
+
+**Dave Jones:** Quell, which is a uh big brand here in Australia. So, I thought we'd do a teardown of this and have a look at the design and uh look at how much standby current uh something like this uses and
+
+**Dave Jones:** um potentially how to actually uh design or a you know, one of the ways to actually design a really low uh standby quiescent current direct mains power supply. So, you know, let's take a look at it. Now, just a quick uh
+
+**Dave Jones:** note on the product design of this thing. I really quite uh like this. It's got the back in plate here and uh of course you screw this into the ceiling and then it's got a hinged uh system like this and it's got some um screw-in
+
+**Dave Jones:** terminals for the mains, of course. You've got to uh have that. So, your 240 V uh goes directly and they look like proper cage clamps, too. None of that uh you know, spring leaf lever rubbish. I really like those. Um so, that's really
+
+**Dave Jones:** nice. They've got an extra uh cover which then goes over that to isolate, but when it goes down, here are the pins on the PCB inside. So, when it goes in like this, it goes down and then slides
+
+**Dave Jones:** across like that and makes uh contact in there as well as uh retaining it on the roof. So, yeah, hats off to the designers there. That's very nice, and we've got our 9-V battery backup in there as well. And no,
+
+**Dave Jones:** it's not uh rechargeable. It just uses a regular uh 9-V uh uh PP3 alkaline or uh lithium or whatever you whack in there, and that's just you know, they've probably got diode or in will reverse engineer the circuit in here and have a
+
+**Dave Jones:** squeeze. But anyway, rather like the uh design of that, and also the design of this. This little latch here, when you put the battery in there, it pushes down and moves that lever out, and that means that uh you can't actually close this up
+
+**Dave Jones:** and then slide this in and install it without the battery physically being installed. That's really nice design touch. I love it. Yeah, uh this is a photoelectric one, as I said, uh photoelectric uh sensor. So, what that means is that it just um like the smoke
+
+**Dave Jones:** particles uh go into the sensor here, and then it uses uh optical uh measuring to see if there's any particles within the air inside the uh sensor. So, it doesn't have any of that nuclear rubbish. And right off the bat here, the
+
+**Dave Jones:** spec, it's only got a maximum spec, but look at this, 80 milliamps, uh 240 V AC. Oh, jeez, that's a fair bit of current draw. But yeah, it won't be that max. We'll have to measure it. And there you
+
+**Dave Jones:** go. Wow, that is truly horrendous. 563 mW. WOW, THAT'S AWFUL. And look at the power factor, 0.062 power factor. So, that gives is a VA of over nine well nine VA? Got to be kidding me. This is like
+
+**Dave Jones:** obviously they're using an like just a bridge rectifier in their Zener diode type configuration or something like that. Absolutely no thought given whatsoever to actually minimizing the quiescent current of this thing. And what what's the big deal Dave, you know,
+
+**Dave Jones:** it's only half a watt. What's the big deal? Well, I've done videos which I'll link in on why that can be a big deal. And sure you're only in like residential situations generally it might vary in some countries, but you're only going to
+
+**Dave Jones:** pay for the half a watt here. You're not going to pay for the nine VA here, but that is current that has to come from the grid. So even though you're not paying for it, the grid infrastructure has to be there to enable this. So we're
+
+**Dave Jones:** looking at 36 and a half milliamps at 247 volts. Yes, I am right on the high side of the mains voltage which is normally 230 volts here in Australia. So it did give us our nine VA. So that's
+
+**Dave Jones:** just yeah, that's nuts. Let's run some numbers, shall we? So that power consumption is absolutely atrocious. We'll go through the numbers in a minute, but I thought that well, it maybe it's just this Quell design. So I went out and bought this
+
+**Dave Jones:** sort of like no name fire pro I guess. Well, let's check this out. It's not promising though. Look, 100 milliamps max. The other one was only like 80 milliamps or something. So I'll measure this one, but I reckon it's
+
+**Dave Jones:** going to be a shocker too. Built down to a price. And the design of this one is nowhere near as polished as that Quell one. Anyway, let's power it up. Wow, this is an absolute shocker. 1.36 watts. Are you kidding me? That's
+
+**Dave Jones:** enormous. It's Once again, same power factor as we're getting before. So, our VA is getting 19 and 1/2 VA. Are you kidding me? People have like half a dozen of these things installed in their house. This is shocking. I I'm going to
+
+**Dave Jones:** call it. This seems to be a systemic design problem with this with these like 240 volt home smoke alarms. Let's run the numbers on this. It's insane. So, let's run some numbers here. Let's say we had this Fire Pro brand installed all
+
+**Dave Jones:** over Australia. Oh, don't touch the dangerous part here. Um yeah. Anyway, let's say we had these Let's say, you know, a typical large home might have like five of these installed. You've got to have them installed in front of every
+
+**Dave Jones:** or inside every bedroom and stuff like that. There's new requirements these days, things like that. Let's say we have a million homes in Australia. I think there's like 2 and 1/2 million, but just, you know, Let's just round
+
+**Dave Jones:** Let's say we've got a million homes installed with five of these each, right? We're talking Let's just round this up to 20 VA, okay? And because, even though the residential customer is only paying for the watts, okay, 1.3
+
+**Dave Jones:** watts, the grid has to be designed to deliver this entire 78 milliamps, right? You don't get that for free. That's losses in the grid, even though you're not paying for it. So, the generator has to produce that, the transmission
+
+**Dave Jones:** capability has to be in there for that. So, let's just call that 20 VA, right? So, this is apparent power or complex power as opposed to real power or active power as it's called. But, as I said, you've got to have you've got to
+
+**Dave Jones:** generate this at the generation station. Just goes to show how bad product design like this or really essentially cheap product design, cuz we'll have a look at better product design in a minute that's more expensive that can solve this
+
+**Dave Jones:** problem. This can have a real huge environmental and cost impact on the planet. When you start talking millions and tens of millions and hundreds of millions of homes that all have these smoke alarms mandated. You don't think all the smoke
+
+**Dave Jones:** alarms take a naff all power and it does when you power them from your little 9-V battery here cuz normally these things will last a couple of years off a 9-V battery. So the actual electronics in here detecting the smoke takes naff all
+
+**Dave Jones:** power. It really does. So all of that like 99.9% of it is being wasted in the mains rectifier in here and the power supply that needs to power that circuitry. It's insane. And well, to the surprise of absolutely none of my
+
+**Dave Jones:** audience whatsoever, yeah, this is the cheap Firex Pro one and this is the more expensive one. It's actually designed by Kidde. I've heard of them before so yeah, Quell don't design their own but yep, these things are built down to a price as you'd
+
+**Dave Jones:** expect and we're paying the price in terms of environmental cost because these mains power sensors use like in the order of 65,000 times more power than the equivalent just being powered from the battery. The same thing. It's just insane. Absolutely insane. And
+
+**Dave Jones:** we've got our piezo transducer as well and this is actually the sensor. And you can see where the smoke's actually going to get into this one. If we have a look at this Kidde / Quell one over here, you
+
+**Dave Jones:** can see that this is where the smoke goes in around here. I was actually wrong that the smoke goes in through here. This is actually the buzzer. It goes around the outside and then goes inside the unit and then makes
+
+**Dave Jones:** its way through the grill here into our photo sensor here and here. It's interesting to note that this cheaper one actually uses a tactile switch here for the test button, but the more expensive [laughter] one over here, well, I presume it's more
+
+**Dave Jones:** expensive, actually just uses a PCB contact and just some bent metal like that making contact to a link over there. So, I do wonder which one's actually cheaper cuz, you know, you can get these for cents at the Shenzhen
+
+**Dave Jones:** market. I wonder how much this solution here cost. It's interesting. Anyway, this one is this a double side? This one looks like a double-sided FR4 board. This one over here, single-sided jobbie cuz you save a few cents on that.
+
+**Dave Jones:** Anyway, both of them have a MOV because you don't want any surges, of course, on the power line cuz these things are hooked up 24/7. So, both of them have a little MOV. That one's got a little slot cut
+
+**Dave Jones:** out underneath for isolation, but basically, it's a capacitor divider and a big resistor. Capacitor, of course, at 50 Hz, none of that 60 Hz American rubbish. 50 Hz Australian mains and, of course, a capacitance will have a given
+
+**Dave Jones:** impedance and then that works in combination with a resistor here to give you a resistor divider and it looks like is that our Zener up there? Could be. So, this one here uses a one mic. Both of these are X2 class
+
+**Dave Jones:** capacitors. Of course, you know, proper mains rated self-healing types with all the requisite approvals on them. So, this is the Kidde/Quell. This is the Firex Pro here. You got a smoke alarm controller IC here. It's a custom ASIC. We've got bridge rectifier down
+
+**Dave Jones:** here. I can't see a bridge rectifier over on here. Might be a just a half wave jobbie. Not sure if you can see that, but the more expensive one, there you go, got the shine on it. It looks like it has a
+
+**Dave Jones:** at least partial conformal coating on it just to stop moisture causing a problem. So, I've reverse engineered the mains input power supply on both of these and as suspected they're just a simple Zener diode based rectifier. That's it. So, we've
+
+**Dave Jones:** got our 240 volts in here, line and neutral. We've got a series resistor here. That's a big 2 watt jobbie in both places. Then we've got that X2 240 volt rated, you know, mains capacitor. We've got a MOV here doing some protection
+
+**Dave Jones:** after the resistor, so that's good. We've got some bleeder resistors across here, just some high value ones. One of them had three resistors in series just to get the voltage cuz they're SMD ones, so they're only rated like couple hundred volts
+
+**Dave Jones:** each tops. So, they put them in series to get the voltage rating. Then we've got a Zener diode. In the case of this one, it actually used Sorry, this one over here used two Zener diodes here and here in series. This one over
+
+**Dave Jones:** here only uses one Zener diode, but works exactly the same. Then we've just got a regular Joe Blog's diode here and then an electrolytic cap and then that buggers off to the ground in here. Now, of course, these are what's called
+
+**Dave Jones:** a direct mains connection non-isolated power supply and these are inherently dangerous. You do not design these except in products that are fully enclosed like this where the user can never ever touch the electronics in them or shouldn't. That's the entire
+
+**Dave Jones:** point because it's more cost and complexity to put in like a mains isolation transformer and everything else. But in these types of products, um it's it's no problem and it's completely legal to have uh your circuitry over here mains referenced over here. Even
+
+**Dave Jones:** though it's the neutral and technically we use the men system, the multiple earth neutral as we do here in Australia, your mileage may vary and the neutral's connected back to the earth at your switchbox, but you can't assume
+
+**Dave Jones:** that the wiring in a house is correct and uh some idiot may have swapped uh new you know, active and neutral here and you could completely come a gutser if you uh design a product uh that was relying on the fact that uh any exposed
+
+**Dave Jones:** user accessible uh ground or metal or connector or anything like that was reliant upon directly connected through the neutral, you're going to come a gutser and that's inherently unsafe. So, you don't want that. So, a non-isolated power supply like this um
+
+**Dave Jones:** they're very common to find in these type of uh in sealed enclosures like this cuz you just don't need the isolation, but this is where the poor power factor comes from. It's just using the cap and the uh series resistor as a
+
+**Dave Jones:** dropper effectively for the Zener diode and that's just uh no, no. That's what's resulting in the piss-poor power factor that what that we're seeing. So, there's just no way of avoiding uh losses in your traditional Zener based uh circuit
+
+**Dave Jones:** like this. I In this particular case, I'm going to measure the voltage directly across uh the 100 ohm resistor here. Uh I've got it there and 7.9 volts. So, there you go. That's 79 milliamps and of course, that's going to
+
+**Dave Jones:** match your 79 milliamps up here and there's absolutely nothing you can do about that. So, you're pissing away that 79 milliamps even though you've got essentially bugger all like microamps load on here. It it doesn't matter. It's just being wasted in the Zener diode
+
+**Dave Jones:** circuit. So, that's just lazy and cheap design and well, they just didn't care. And of course, 89 milliamps might not sound like a lot, but when you have millions and millions, tens of millions, hundreds of millions of these sort of
+
+**Dave Jones:** things out there, it makes a huge difference, especially given the poor power factor. That current has got to come from the generation system. There's just And you've got I squared R losses in the in all of that, and it's just it
+
+**Dave Jones:** it adds up. And if you want to know how much current it takes with just the 9-V battery parent, it's your traditional uh smoke alarm in And this particular one, five little as five microamps, it sort of just goes up in bursts. It's, you
+
+**Dave Jones:** know, it sense in there, whatever. Max, almost 50 microamps. So, between 5 and 50 microamps there periodically. So, you know, sniff of an oily rag stuff. So, if the actual product itself only takes like less than 50 microamps, why does
+
+**Dave Jones:** the whole product have to take orders of magnitude more than that? Because they were just saving cost here, and they just didn't care about how much quiescent power consumption this thing is going to use, and that's terrible. Just to save like maybe a dollar or
+
+**Dave Jones:** something like that on each one. And yeah, I can understand that might be significant, but if you explain to people, "Hey, look, our one is going to save you money cuz there's not quiescent current in there." But you
+
+**Dave Jones:** could turn this into a marketing opportunity. You can say, "Hey, look, our one only draws like 100 microamps, for example, or a couple of 100 microamps, like sub-1 milliamp, uh for example. If you just spent, you know, a
+
+**Dave Jones:** dollar or two more in the design of this thing, and you put some thought in, you could, you know, you can own the market because yours has like lower power consumption. I Anyway, I don't Is there one out there
+
+**Dave Jones:** that claims that? I don't know. So, how can we improve this? Well, let's go have a look at Well, at least one solution, anyway. But it's going to be more expensive, and that's the trick. So, how can we solve
+
+**Dave Jones:** this? Well, there's many ways to skin this cat, and if you've got a better way to skin this cat, then please list it down below, and you can roll your own solutions and do all sorts of stuff, but
+
+**Dave Jones:** I'm just going to go with an incredibly simple and obvious solution. Let's take a look. Let's go straight to Digi-Key, shall we, or your favorite supplier with their parametric search tools, or as I've shown in previous videos, you can go
+
+**Dave Jones:** directly to the manufacturers websites like over here, for example, and look at LDO regulators and stuff like that. Now, we're just going to we need a regulator, of course. These particular power sensor runs on 15 volts, so actually the chip
+
+**Dave Jones:** runs from 6 to 15 volts, but this particular one has like runs on like 14 and 1/2 volts to the Zener diode voltage in this thing. Anyway, so we need a linear regulator, but because it is powered directly from the mains, we
+
+**Dave Jones:** don't have any isolation, we need a high DC input voltage regulator, and these actually do exist. So, if you just simply go into the voltage regulator linear voltage regulator section here in Digi-Key, and then you sort by voltage
+
+**Dave Jones:** input maximum right here, sort from highest down, look, you'll notice that there's a whole bunch of them that have 450 volt rated, and then it drops down to 150. 150 is you know, that's not good enough, but obviously these 450 volt
+
+**Dave Jones:** ones are designed for direct mains connection. And look, there's a Microchip solution, there's an On Semi solution. Yep, they seem to be the only two, but hey, there's two right off the bat. So, we can go into the Microchip
+
+**Dave Jones:** one here, adjustable 1.2 to 3 to 438 volt output regulation. This one's not the best example. Let's go to a better one. Now, let's go to these On Semiconductor ones here. You can find it on the parametric search on directly on
+
+**Dave Jones:** the website here. Wide input voltage range, ultra low quiescent current. That's what IQ means. Quiescent I is current, Q is quiescent. Up to 10 milliamps load current. So, only designed for real low power stuff, but hey, you saw the circuit consumption is only
+
+**Dave Jones:** like 50 microamps. So, this has got oodles. I don't like that little pain in the ass package. Look at that surface mount. So, this one's not really conducive, but look, you can it's designed for half wave rectifier mains input circuits with
+
+**Dave Jones:** a full .7 mic cap there. That's you will see in a minute how that's not we can get one that's a bit better than that. But, if we go down here, look, here's some input gain configuration. There's a half wave
+
+**Dave Jones:** bridge rectifier. Look, bingo, 15 volts out, 10 milliamps. It's going to do the business. We've got a full wave bridge rectifier one here, and let's have a look at this other one. So, they've got two ones the NCP1786 we
+
+**Dave Jones:** saw before. This is the 1785 product overview. It's one of their energy efficient innovations here. They look, [gasps] shock horror, designed for smoke sensors. The marketing people at these companies know exactly how to target these chips to these companies. But, do
+
+**Dave Jones:** they care? There's probably some out there that implement these lower power solutions, but well, the two I've got here don't. They just saved a few cents. We'll see the cost in a minute. But, anyway, let's have a look at this puppy, shall we?
+
+**Dave Jones:** It's got a fixed 15 volt output, exactly what we want. Uh half wave rectifier, 2.2 microfarad cap. The smaller the capacitor, the cheaper it's going to be to actually implement that. So, there you go. There There's your There's your circuit right there.
+
+**Dave Jones:** Just a half wave diode bridge rectifier, 2.2 mic cap, 450 volts. It's got to be proper mains rated and all that sort of stuff. You're still Yes, you're still going to get poor power factor from any bridge rectifier solution like this, but
+
+**Dave Jones:** we'll take a look at a smarter solution to this in a minute. It's really quite nice. But still, because you aren't implementing that Zener solution, that's just pissing away like 80 milliamps or whatever. They didn't need it that high.
+
+**Dave Jones:** They could have just implemented the Zener diode circuit better. But anyway, these are going to be a better solution cuz the quiescent current is only like a 10 microamps quiescent current there and 50 microamps for the load. So it's
+
+**Dave Jones:** drawing naff all, right? The whole thing even probably the worst smoke sensor circuit on the chip on the market is, you know, going to be like sub 100 microamps with this thing. So yeah, we're still going to get poor power
+
+**Dave Jones:** factor, but it's going to be order of magnitude better than the Zener solution that they're actually using here. No doubt about it. So it literally is as is as simple as that. And tell us the price, son. How much does it cost?
+
+**Dave Jones:** Here we go. Yeah, they cost Okay, 55 Yankee cents each in like volume. Probably get it cheaper than that if you're manufacturing millions of smoke alarms, right? So they probably saved like 30 cents or something, 40 cents or
+
+**Dave Jones:** something because Zener diodes are cheap. You get them from the Shenzhen market. Like it it it's real cheap, right? The way they did it. So they probably saved like a sub 50 cents on the bomb cost of this thing and they're
+
+**Dave Jones:** just you know, [snorts] destroying the environment and putting load on the grid and they because they just don't care. They want to save 30 cents. It's ridiculous. Should have just used one of these puppies. But I know what you're
+
+**Dave Jones:** asking. Is there a smarter solution than just the simple diode full or half wave bridge rectifier diode solution here to get a better power factor? Well, yes, there is. As I said, you could probably roll your own and let us know if you got
+
+**Dave Jones:** links down below to like rolling your own solutions. We won't go into that. It's it's fairly complex. But I did find this part from TI. It wasn't easy to find, but look at this. It's 120 mA smart AC-DC low dropout linear voltage
+
+**Dave Jones:** regulator. Don't know why you need low dropout, but anyway, [laughter and gasps] you've got plenty of margin. But, it's for non-isolated power solutions greater than 18 V, same as before. Standby power consumption is only 15 mW there. Line
+
+**Dave Jones:** voltage cap cap drop capacitor is as small as 1/4 the size of linear solution. So, there you go. You can save cost there cuz when you got mains-rated capacitors, they have to be not only physically larger, but they're more expensive as well.
+
+**Dave Jones:** We'll have a look at this puppy cuz it's really quite interesting. Yes, it's about I think it's about a dollar in volume here, but anyway, work with me. Well, what do you know? Smoke and heat detectors. They know who they're
+
+**Dave Jones:** marketing to. Now, here it is a schematic for half-wave and full-wave bridge rectification. This is direct mains input. So, here's your 240-V mains input. You've got a TVS surge protection here. You've got an input series capacitor and input series resistor,
+
+**Dave Jones:** just like we have on the Zener circuit here. But, instead of having the lossy Zener circuit, we're putting in this active rectification chip. It's just got a few other support components there, but it gives you an LDO regulated
+
+**Dave Jones:** voltage out from direct mains input. And the way it does it is really quite nice. Let's go down here is that it's got active rectification in here. So, instead of having dumbass regulation, it's got this active regulation with these two MOSFETs here
+
+**Dave Jones:** and here, which control this full-wave bridge rectification. And it's very smart. It can control it so it can give you a better power factor direct from the mains. Anyway, it's just a really nice chip. I like this one. So, if you're after a direct
+
+**Dave Jones:** mains-connected low quiescent current solution with a linear voltage regulator output, not isolated of course, then this is well worth a look. And yeah, it's a bit expensive, but you know, buck a chip, but it's a really nice solution.
+
+**Dave Jones:** You want the lowest quiescent current possible, this could do the business. Unfortunately, this chip is only available in versions that we fixed output voltages up to 5 volts. It doesn't go to 15. Don't know why. You know, but anyway, so it's not
+
+**Dave Jones:** suitable in this particular circumstance with this particular smoke sensor chip. But anyway, I thought I'd show you that cuz that is a really nice solution chip. If you know of another equivalent one on the market, direct AC input like this,
+
+**Dave Jones:** please leave it in the comments down below cuz I think this might be the only one. But anyway, haven't done a hugely exhaustive search, but yeah, I really like that. Is that chip of the week? Think it is.
+
+**Dave Jones:** So there you go. I hope you enjoyed this look at a typical consumer product that went from being very low power design through essentially regulation, at least here in Australia, you have to have these direct Oh, I think all new houses
+
+**Dave Jones:** must have these direct mains connected smoke sensors. And two of them on the market, including one of like a real premium brand, brand, one of the most popular ones, they're both still awfully designed, penny pinching designed, and not giving one rat's ass about the
+
+**Dave Jones:** quiescent power consumption. And as I showed, when you got millions of these things installed, some houses have, you know, half a dozen or more of these things, then it just really adds up. So next time, if you're involved in designing stuff like
+
+**Dave Jones:** this, just please try and persuade the company that you're working for that this could be a potentially good and marketable solution. Cuz you can go, "Hey, houses eco-friendly." Everyone goes crazy over that these days. Marketing people can tell the consumer
+
+**Dave Jones:** about this sort of uh uh problem. And this is by far not the only product. There's, you know, a countless other products on the market. If If you know of any other really badly designed products that have standby quiescent uh
+
+**Dave Jones:** power like this, basically anything with Internet of Things in the title, possibly. Anyway, leave it in the comments down below. So, yeah, I It's a real eye-opener when you actually run the numbers and do the calculation on something like this of how much actual
+
+**Dave Jones:** grid infrastructure and generation uh power is wasted just through poor product design like this. Unbelievable. So, anyway, I hope you found that video useful. If you did, please give it a big uh thumbs up. And as always, you can
+
+**Dave Jones:** discuss down below or over on the EV blog forum. And check out EVblog.tv, which links to my library uh channel. Subscribe over there cuz that's going a gangbusters. And I did mention Chip of the Week. Um yes, I'm back into doing uh
+
+**Dave Jones:** more regular Amp Hour episodes. So, if you don't know, the world's biggest electronics engineering podcast that I've only been uh co-hosting for the last decade, almost. Um theampour.com. Go check it out. It's available on all your iTune-y platforms and Spotify and
+
+**Dave Jones:** all that sort of stuff. Catch you next time. [music]
