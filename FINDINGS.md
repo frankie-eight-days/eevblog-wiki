@@ -358,14 +358,101 @@ brand axis, `tool-equipment` for instrument classes (oscilloscope, multimeter).
 Neither is currently used to select or shape anything -- `type` is written into
 packet metadata at build_bundles.py:356 and never read again.
 
+# PIPELINE BUILT AND RUN (2026-08-12, overnight)
+
+Every stage now exists and has been run end to end on 2,064 videos. The wiki
+tooling from the Amp Hour was NOT in that repo — only its outputs were committed —
+so canon, graph and candidate selection were all rebuilt from
+`canon/_canon_report.md`, with stage numbering kept aligned so the two read side
+by side.
+
+## Numbers as of 03:50
+
+| stage | result |
+|---|---|
+| transcripts | 1,763 caption + ~470 whisper (of an eventual ~2,900) |
+| census | 194,417 caption + 31,024 whisper mentions |
+| canon | 65,311 raw → 61,280 canonical (6.2% compression, $0.88) |
+| graph | 3,961 nodes, 13,883 edges, 49 communities |
+| candidates | **747 articles** at explains≥15 (Amp Hour: 412 from 717 episodes) |
+
+## The caption census was silently discarding 22% of its evidence
+
+Rejection was 21.6% against 7.8% on the whisper half. Measured across 8,413
+rejects: **48% were snippets spanning a paragraph boundary**. The census locates a
+mention by finding its `context_snippet` inside the paragraph it names, so a
+snippet crossing a break can never be found and the mention is dropped.
+
+The cause was not the word cap. `json3_to_transcript` tested for a sentence end
+only at CAPTION EVENT boundaries — an event is an arbitrary display line and
+sentences end mid-event constantly, so the test almost always said no and
+paragraphs ran to the cap, breaking wherever they landed. The whisper converter
+split into sentences first, which is exactly why it never had the problem.
+
+What made it findable: a first fix requiring a sentence end at the event level
+pushed paragraphs to 71 words, past the 45 the census needs, and a parameter
+sweep showed **no setting could give both**. That impossibility pointed at the
+real bug.
+
+    kept 151,849 → 194,417     rejected 21.6% → 7.8%     articles 588 → 747
+
+**This bug was invisible in every health metric.** Depth mix, mentions/1000 words
+and type mix all looked fine on the broken census because the losses were spread
+evenly. Only the whisper-vs-caption comparison exposed it — an argument for
+keeping both transcription paths rather than standardising early.
+
+## Two canon bugs caught before they corrupted the vocabulary
+
+- Stage 3 used the aggressive stemmer, which folds `-ing`/`-er`, so `3d-printer`
+  and `3d-printing` were merged **by rule**. Stage 3 now uses a plural-only
+  stemmer; the aggressive stem stays in stage 5 where a type-compatibility check
+  backs it up.
+- Acronym pairs were auto-merged rather than adjudicated, collapsing `hp` into
+  `hackaday-prize`. Initials matching is good recall and bad evidence, so stage 7
+  now feeds stage 8.
+
+`louvain()` also needed its aggregation phase — local moving alone gave 312
+communities against the Amp Hour's 26. Aggregating each community to a super-node
+and re-running gives 49.
+
+## YouTube throttling: the fast setting is the slow setting
+
+| gap | burst rate | blocks | effective |
+|---|---|---|---|
+| 15s | ~100/h | 5 in 5h (30+60+120 min cooldowns) | **~16/h** |
+| 75s | ~42/h | none so far | **~42/h** |
+
+It is the burst rate that trips the bot check, not the daily total. Backing off
+cleared a block that had held for two hours — so it is rate-triggered, not an IP
+ban. The local run's 90s gap sustained ten hours with one block.
+
+Two `api_run.py` bugs found the hard way:
+- `urlopen(timeout=1800)` — a hung socket parked each of 6 workers for 30 minutes,
+  the ready queue filled, the downloader blocked in `put()`, total deadlock.
+- `RuntimeError(stderr[-200:])` truncated away the bot-check marker, which
+  yt-dlp puts at the START of a long error. `BOT_BLOCK` never matched, so instead
+  of pausing the run would have marked all 748 videos failed.
+
+## Article lanes (agreed with Frank)
+
+concept · brand/product · teardown · debunked · safety/standards · series index ·
+people. Four port from the Amp Hour; teardown and brand need new gatherers and a
+second template. Debunked needs no census change — it reuses the concept template
+but promotes `opinion` evidence instead of discarding it.
+
+Census prompt was retuned for EEVblog: demonstrative resolution against the video
+title (Dave is holding the thing and never names it), and device-under-test
+promoted to `main_topics[0]`. Measured: 93% of teardowns name a specific device,
+including ones the title does not ("Sony Mystery Teardown" → `sony-pc216ax`).
+
 ## Next session
 
-1. ~~Fetch and score all caption tracks~~ — **done**, see above.
-2. Draft the reply to Dave (scoping questions + paid pilot proposal).
-3. Run the 25-video pilot: 10 Fundamentals, 10 teardown/repair, 5 mailbag/BLAB
-   — deliberately including the worst case so the quote is honest. Pick the
-   worst case from the ledger's `needs-whisper` rows.
-4. Fetch the age-gated video with `--cookies-from-browser`.
+1. Finish transcription (~667 remaining, ~16h at the sustainable rate).
+2. Re-run census → canon → graph → candidates on the complete corpus. All cheap.
+3. Set the explains threshold from the full sweep rather than inheriting 15.
+4. Review the 13 sibling-split pairs (`3d-printer`/`3d-printing`) — a judgment
+   call each; ADC/DAC is in that list and must stay split.
+5. Build the teardown and brand gatherers, then the first articles.
 
 ## Reproducing this
 

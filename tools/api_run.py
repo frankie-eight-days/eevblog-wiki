@@ -33,7 +33,13 @@ PRICE_PER_MIN = 0.006
 MAX_BYTES = 25 * 1024 * 1024
 
 N_API = 6                 # transcription is not the constraint; this is plenty
-DOWNLOAD_GAP_S = 15       # authenticated, but still deliberately unhurried
+# Measured, not guessed. The local whisper run used a 90s gap and took one block
+# in ten hours (~29 videos/h sustained). This run started at 15s, managed ~100/h,
+# and took five blocks in five hours -- each costing 30, then 60, then 120 minutes
+# of nothing. Averaged over the cooldowns the fast setting is SLOWER, and it is
+# the burst rate that trips the check, not the daily total. 75s splits the two and
+# should sustain ~40/h without stopping.
+DOWNLOAD_GAP_S = 75
 BOT_BLOCK = re.compile(r"not a bot|HTTP Error 429|Too Many Requests|"
                        r"Sign in to confirm you[’']?re", re.I)
 COOLDOWN_S = 1800
