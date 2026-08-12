@@ -1,6 +1,6 @@
 # Concept co-occurrence graph — EEVblog
 
-Generated from /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/captions-v1, /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/full-v1 plus `canon/`.
+Generated from /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/captions-v2, /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/full-v1 plus `canon/`.
 
 ## Build parameters
 
@@ -17,40 +17,40 @@ Generated from /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/captio
 
 | metric | value |
 |---|---|
-| candidate concepts (>=5 videos) | 4,048 |
-| isolated (no surviving edge), dropped | 939 |
-| **nodes in graph** | **3,109** |
-| raw candidate edges | 92,988 |
-| edges after weight>=2 | 13,761 |
-| **edges after top-8 prune** | **9,844** |
-| hierarchy (broader) edges | 230 |
-| communities | 48 |
+| candidate concepts (>=5 videos) | 4,878 |
+| isolated (no surviving edge), dropped | 917 |
+| **nodes in graph** | **3,961** |
+| raw candidate edges | 134,473 |
+| edges after weight>=2 | 21,083 |
+| **edges after top-8 prune** | **13,883** |
+| hierarchy (broader) edges | 331 |
+| communities | 49 |
 
-Node types: component 950, tool-equipment 523, concept-principle 472, technique 392, company-product 220, manufacturing 181, standard-protocol 139, software 111
+Node types: component 1187, tool-equipment 626, concept-principle 620, technique 529, company-product 272, manufacturing 238, standard-protocol 182, software 131
 
 ## Largest communities
 
 | # | size | members (most-covered first) |
 |---|---|---|
-| 26 | 361 | `oscilloscope`, `ebay`, `sample-rate`, `bnc-connector`, `oscilloscope-bandwidth`, `oscilloscope-probe`, `agilent`, `coaxial-cable`, `sine-wave`, `keysight` |
-| 39 | 298 | `resistor`, `datasheet`, `led`, `diode`, `transistor`, `mosfet`, `integrated-circuit`, `breadboard`, `ohms-law`, `ground` |
-| 8 | 294 | `usb`, `firmware`, `ethernet`, `hdmi`, `rs-232`, `wi-fi`, `arduino`, `usb-c`, `bluetooth`, `open-source-hardware` |
-| 13 | 284 | `multimeter`, `fuse`, `current-shunt-resistor`, `input-protection`, `fluke`, `current-measurement`, `voltage-measurement`, `resistance-measurement`, `auto-ranging`, `shielding` |
-| 34 | 231 | `pcb`, `schematic`, `ground-plane`, `solder-mask`, `pcb-layout`, `bypass-capacitor`, `pcb-trace`, `service-manual`, `bill-of-materials`, `reverse-engineering` |
-| 32 | 184 | `heat-sink`, `relay`, `transformer`, `bridge-rectifier`, `power-consumption`, `fan`, `cooling-fan`, `switch-mode-power-supply`, `common-mode-choke`, `linear-regulator` |
-| 10 | 174 | `microcontroller`, `analog-to-digital-converter`, `fpga`, `adc`, `crystal-oscillator`, `ram`, `bga`, `flash-memory`, `memory`, `asic` |
-| 4 | 162 | `capacitor`, `inductor`, `electrolytic-capacitor`, `dc-dc-converter`, `potentiometer`, `ceramic-capacitor`, `capacitance`, `oscillator`, `tantalum-capacitor`, `equivalent-series-resistance` |
-| 9 | 141 | `lcd`, `ribbon-cable`, `processor`, `flat-flex-cable`, `connector`, `speaker`, `board-to-board-interconnect`, `lcd-display`, `lcd-driver`, `microphone` |
-| 31 | 139 | `soldering`, `surface-mount-technology`, `soldering-iron`, `solder-joint`, `hand-soldering`, `microscope`, `reflow-soldering`, `desoldering`, `through-hole-technology`, `through-hole-component` |
-| 44 | 134 | `battery`, `lithium-ion-battery`, `battery-life`, `battery-capacity`, `battery-pack`, `aa-battery`, `backlight`, `switch`, `9-volt-battery`, `alkaline-battery` |
-| 16 | 128 | `solar-panel`, `kickstarter`, `inverter`, `electric-vehicle`, `solar-cell`, `solar-power`, `series-connection`, `solar-roadways`, `air-conditioning`, `solar-power-system` |
-| 33 | 125 | `power-supply`, `voltage-regulator`, `short-circuit`, `current-limit`, `hard-drive`, `motherboard`, `power-rail`, `processor-board`, `electronic-load`, `bench-power-supply` |
-| 25 | 75 | `op-amp`, `voltage-reference`, `calibration`, `comparator`, `differential-amplifier`, `temperature-coefficient`, `operational-amplifier`, `oscillation`, `lm324`, `output-capacitance` |
-| 27 | 62 | `antenna`, `low-pass-filter`, `radio-frequency`, `filter`, `audio-amplifier`, `rf-shielding`, `pci`, `band-pass-filter`, `local-oscillator`, `sim-card` |
-| 29 | 58 | `youtube`, `twitter`, `youtube-channel`, `facebook`, `mailbag`, `google`, `nasa`, `dick-smith`, `youtube-algorithm`, `gpu` |
-| 21 | 48 | `i2c`, `spi`, `jtag`, `uart`, `clock-signal`, `can-bus`, `timer`, `serial-decoding`, `gpio`, `ascii` |
-| 38 | 46 | `digi-key`, `texas-instruments`, `analog-devices`, `component-sourcing`, `mouser`, `buzzer`, `linear-technology`, `national-semiconductor`, `battery-terminal`, `msp430` |
-| 22 | 38 | `camera`, `frame-rate`, `apple`, `electronics-lab`, `depth-of-field`, `ibm`, `white-balance`, `computer`, `autofocus`, `working-distance` |
-| 17 | 34 | `3d-printing`, `product-design`, `injection-molding`, `silicon-chip`, `electronics-australia`, `form-factor`, `3d-printer`, `mechanical-engineering`, `resume`, `laser-cutting` |
+| 23 | 442 | `oscilloscope`, `sample-rate`, `oscilloscope-bandwidth`, `oscilloscope-probe`, `keysight`, `coaxial-cable`, `ac-coupling`, `bnc-connector`, `waveform`, `agilent` |
+| 6 | 399 | `usb`, `firmware`, `ethernet`, `processor`, `wifi`, `rs-232`, `hdmi`, `ram`, `bluetooth`, `usb-c` |
+| 17 | 360 | `resistor`, `led`, `op-amp`, `transistor`, `mosfet`, `voltage-reference`, `integrated-circuit`, `breadboard`, `trimmer-potentiometer`, `ohms-law` |
+| 26 | 258 | `power-supply`, `heat-sink`, `voltage-regulator`, `power-consumption`, `cooling-fan`, `fan`, `power-rail`, `current-limit`, `power-dissipation`, `linear-regulator` |
+| 7 | 257 | `microcontroller`, `analog-to-digital-converter`, `fpga`, `adc`, `i2c`, `flash-memory`, `shielding`, `memory`, `spi`, `jtag` |
+| 20 | 251 | `multimeter`, `ebay`, `calibration`, `current-measurement`, `fluke`, `resistance-measurement`, `voltage-measurement`, `auto-ranging`, `capacitance-measurement`, `backlight` |
+| 29 | 238 | `capacitor`, `diode`, `inductor`, `electrolytic-capacitor`, `dc-dc-converter`, `oscillator`, `ceramic-capacitor`, `capacitance`, `equivalent-series-resistance`, `tantalum-capacitor` |
+| 11 | 227 | `pcb`, `lcd`, `ribbon-cable`, `flat-flex-cable`, `lcd-display`, `connector`, `speaker`, `lcd-driver`, `single-sided-pcb`, `screw` |
+| 48 | 219 | `relay`, `transformer`, `fuse`, `bridge-rectifier`, `current-shunt-resistor`, `switch-mode-power-supply`, `input-protection`, `common-mode-choke`, `metal-oxide-varistor`, `optocoupler` |
+| 35 | 214 | `soldering`, `surface-mount-technology`, `soldering-iron`, `surface-mount-component`, `bga`, `solder-joint`, `hand-soldering`, `user-interface`, `reflow-soldering`, `microscope` |
+| 36 | 187 | `pcb-layout`, `solder-mask`, `bypass-capacitor`, `ground-plane`, `pcb-trace`, `silkscreen`, `via`, `double-sided-pcb`, `pcb-routing`, `pcb-design` |
+| 28 | 179 | `battery`, `battery-life`, `battery-capacity`, `short-circuit`, `battery-pack`, `lithium-ion-battery`, `aa-battery`, `9-volt-battery`, `electronic-load`, `patent` |
+| 34 | 158 | `solar-panel`, `kickstarter`, `inverter`, `electric-vehicle`, `solar-cell`, `series-connection`, `solar-power`, `solar-roadways`, `prototype`, `solar-power-system` |
+| 18 | 147 | `youtube`, `eevblog-forum`, `camera`, `twitter`, `webcam`, `macro-lens`, `led-lighting`, `frame-rate`, `evblog-store`, `google` |
+| 3 | 122 | `datasheet`, `schematic`, `texas-instruments`, `digi-key`, `service-manual`, `reverse-engineering`, `bill-of-materials`, `test-point`, `component-sourcing`, `mouser` |
+| 37 | 61 | `motor`, `sensor`, `magnetic-field`, `accelerometer`, `coil`, `solenoid`, `dremel`, `magnet`, `artificial-intelligence`, `printer` |
+| 45 | 60 | `antenna`, `power-amplifier`, `grounding`, `radio-frequency`, `ferrite`, `rfi`, `receiver`, `sim-card`, `5g`, `chassis-ground` |
+| 31 | 53 | `crystal-oscillator`, `frequency-counter`, `low-pass-filter`, `phase-locked-loop`, `band-pass-filter`, `parts-per-million`, `voltage-controlled-oscillator`, `local-oscillator`, `high-pass-filter`, `rubidium-frequency-standard` |
+| 46 | 24 | `bond-wire`, `silicon-chip`, `electronics-australia`, `electronics-magazine`, `mechanical-engineering`, `job-interview`, `resume`, `rf-transmitter`, `electrical-engineering`, `die` |
+| 24 | 19 | `nasa`, `satellite`, `spacex`, `memory-module`, `apollo-11`, `telemetry`, `starlink`, `apollo-program`, `starship`, `rocket-engine` |
 
 Build time 2s.
