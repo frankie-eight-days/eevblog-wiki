@@ -73,7 +73,14 @@ DOWNLOAD_GAP_S = 90
 # CIRCUIT BREAKER. A bot-check is not a per-video failure; retrying it burns
 # through the queue marking good videos dead and keeps the block alive. Detect
 # it, stop fetching entirely for a long cooldown, and put the video back.
-BOT_BLOCK = re.compile(r"not a bot|Sign in to confirm|HTTP Error 429|Too Many Requests", re.I)
+# Must NOT match "Sign in to confirm your age" -- that is one permanently
+# age-gated video (AuFSMpFzAnw), and treating it as a rate-limit would trigger a
+# 30-minute cooldown on every pass over the queue, forever. Match the bot phrase
+# specifically.
+BOT_BLOCK = re.compile(r"not a bot|HTTP Error 429|Too Many Requests|"
+                       r"Sign in to confirm you[’']?re", re.I)
+# Permanently unfetchable without cookies; skip rather than retry each round.
+AGE_GATED = re.compile(r"confirm your age|inappropriate for some users", re.I)
 BLOCK_COOLDOWN_S = 1800   # 30 min, doubling up to a cap
 BLOCK_COOLDOWN_MAX = 10800
 WHISPER = "/opt/homebrew/bin/whisper-cli"
@@ -187,7 +194,14 @@ def downloader(work_q, ready_q):
             time.sleep(DOWNLOAD_GAP_S)             # deliberate throttle
         except Exception as e:                       # noqa: BLE001
             msg = str(e)
-            if BOT_BLOCK.search(msg):
+            if AGE_GATED.search(msg):
+                log(f"AGE-GATED (needs cookies, skipping): {row['id']} "
+                    f"{row['title'][:50]}")
+                with _lock:
+                    _stats["failed"] += 1
+                with (BASE / "age_gated.tsv").open("a") as fh:
+                    fh.write(f"{row['id']}\t{row['title']}\n")
+            elif BOT_BLOCK.search(msg):
                 # Not this video's fault. Requeue it untouched and stop fetching
                 # for a while -- continuing to ask is what keeps the block on.
                 work_q.put(row)
