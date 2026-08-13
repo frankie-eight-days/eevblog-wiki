@@ -57,6 +57,12 @@ def verify(path):
 
     cites = [int(c) for c in CITE.findall(text)]
     bad_c = sorted({c for c in cites if c not in vids})
+    # A citation that is not a number at all -- [None], [n/a], [?] -- slipped
+    # straight through the numeric regex and was counted as neither valid nor
+    # invalid, so a run with six of them still reported a clean sweep. Anything
+    # bracketed that is not a valid number is now a failure.
+    junk = [t for t in re.findall(r"\[([^\]\n]{1,24})\]", text)
+            if not t.isdigit() and not t.startswith(("^", "http"))]
 
     body = re.sub(r"^#.*$", "", text, flags=re.M)
     return {
@@ -65,7 +71,9 @@ def verify(path):
         "words": len(body.split()),
         "quotes": len(quotes), "quotes_bad": len(bad_q),
         "citations": len(cites), "citations_distinct": len(set(cites)),
-        "citations_bad": len(bad_c),
+        "citations_bad": len(bad_c) + len(junk),
+        "citations_junk": len(junk),
+        "junk_tokens": sorted(set(junk))[:6],
         "bad_citation_numbers": bad_c[:8],
         "bad_quotes": [q[:110] for q in bad_q[:5]],
         "sections": len(re.findall(r"^##\s", text, flags=re.M)),
@@ -97,6 +105,9 @@ def main():
     for r in rows:
         for q in r.get("bad_quotes", []):
             print(f"  UNVERIFIED QUOTE  {r['file']}: \"{q}\"")
+        if r.get("junk_tokens"):
+            print(f"  NON-NUMERIC CITE  {r['file']}: "
+                  f"{r['junk_tokens']} x{r['citations_junk']}")
         if r.get("bad_citation_numbers"):
             print(f"  INVALID CITES     {r['file']}: {r['bad_citation_numbers']}")
     return 0

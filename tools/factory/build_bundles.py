@@ -98,7 +98,7 @@ def build_index(alias):
 
 
 def collect(concept, idx, cap):
-    seen, depths = {}, Counter()
+    seen, depths, skipped = {}, Counter(), {}
     for stem, m in idx.get(concept, ()):
         pi = m["paragraph_index"]
         fm, paras = load_transcript(stem)
@@ -106,6 +106,16 @@ def collect(concept, idx, cap):
             continue
         title = fm.get("title", "")
         num = EPNUM.search(title)
+        if not num:
+            # A passage with no video number cannot be cited, and handing one to
+            # a writer anyway is worse than dropping it: the prompt rendered the
+            # number as the literal string "None", and one model dutifully wrote
+            # "[None]" into the finished article. 43 of 413 passages across the
+            # first three bundles hit this -- EEVblog videos whose titles carry
+            # no number at all ("Rigol MSO7000 Unboxing"). Losing 10% of the
+            # evidence is the cheaper mistake; every surviving claim is traceable.
+            skipped[stem] = title
+            continue
         key = (stem, pi)
         depth = m.get("depth") or "mention"
         if key in seen:
@@ -134,7 +144,7 @@ def collect(concept, idx, cap):
         }
     out = sorted(seen.values(),
                  key=lambda p: (DEPTH_RANK[p["depth"]], -len(p["text"])))
-    return out[:cap], depths, len(out)
+    return out[:cap], depths, len(out), skipped
 
 
 def main():
@@ -149,7 +159,7 @@ def main():
     OUTDIR.mkdir(parents=True, exist_ok=True)
 
     for c in args.concepts:
-        passages, depths, total = collect(c, idx, args.cap)
+        passages, depths, total, skipped = collect(c, idx, args.cap)
         if not passages:
             print(f"{c}: NO PASSAGES (not a canonical name?)")
             continue
@@ -157,11 +167,14 @@ def main():
         words = sum(len(p["text"].split()) for p in passages)
         doc = {"concept": c, "passage_count": len(passages),
                "passages_available": total, "video_count": len(vids),
-               "depths": dict(depths), "passages": passages}
+               "depths": dict(depths),
+               "uncitable_videos_skipped": len(skipped),
+               "passages": passages}
         dest = OUTDIR / f"{c}.json"
         dest.write_text(json.dumps(doc, indent=1))
         print(f"{c:22} {len(passages):4}/{total:4} passages  {len(vids):4} videos  "
-              f"{words:6,} words  {dict(depths)}  -> {dest.name}")
+              f"{words:6,} words  {dict(depths)}"
+              + (f"  [{len(skipped)} uncitable videos skipped]" if skipped else ""))
     return 0
 
 
