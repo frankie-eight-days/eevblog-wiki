@@ -1,0 +1,358 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: dropout voltage
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 65 passages drawn from 26 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only video numbers that appear in the supplied passages. Do not infer, guess, or invent a number.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# dropout voltage`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: multimeter into the, you know, low current mode, measure the sleep current, then you can, uh, put it into active mode, you can measure the current, and then you can get out the data sheets for the batteries, and then you can do the calculations, and then you can try and figure it all out, and you can, you know, do all this, but something like this just allows you to do, like, a what-if, uh, thing, you know, what-if I
+TEXT: change my battery chemistry, and stuff like that, what-if I change my cutoff voltage, as I said, you might want to re-optimize your design, you might, uh, change from a, a linear regulator to a switching converter to get lower dropout voltages, or something like that, um, this thing can tell you that, so that's, yeah, that's really quite good, and I love that it's all open source hardware and software, so I'm sure people will, uh, improve on this, and Doug will no doubt, uh, improve as well, he did ask for, uh, feedback, so thank you very much, Doug, for sending that in, that is really cool, so LinkedIn down by the
+context after: down below, leave your thoughts down below, uh, as well, and as always, discuss over on the EEV blog forum, because that's where everyone discusses, like, test gear, like this, very cool, catch you next time. Thank you.
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: Alright, so we're gonna say that we're powering our product from a lithium polymer battery here, it's one cell, let's say a thousand milliamp hours to make it nice and round, it will cut off at three volts, that's a, you know, a good cutoff voltage, if you can, uh, operate down to that, of course, because if you've got, say, the battery,
+TEXT: powering, like, a 3.3 volt voltage regulator, well, like, a low dropout one, then it's gonna be, like, 3.35, or something like that, and that will actually, right, if you've got 50 millivolts dropout there, that'll move your, uh, cutoff point to here, and then you're, you're pissing away, you're wasting half of your battery capacity, so a thousand milliamp hour battery, you'd be wasting it, because here's our voltage cutoff point at that red dot, so basically, the area under the curve extending down to zero volts,
+context after: here, um, is essentially the energy of the battery, so you can see it, you know, it's gonna be roughly, like, half-half, so you're wasting, like, 45 to 50 percent of the capacity of that battery if you used a, if you designed your product to power directly from a lithium, uh, polymer battery, a single cell lithium polymer battery, and have a dropout voltage of, you know, a linear regulator, so unless you've got a swi
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: I typically use a 220 ohm. Now, the other trap with the LM317 is that it is not what's called a low dropout voltage regulator. It's a just a standard linear regulator with a high dropout voltage.
+TEXT: That means the dropout voltage is the voltage differential between the input. So, the input must be X volts higher than the output, otherwise it drops out of voltage regulation, which I won't go into the details of how and why, but it basically means if you've got 5 volts out of your regulator, for example, well, you need typically for an LM317 as a rule of thumb at full current, it's
+context after: taken as a 2-volt minimum drop, and we'll take a look at that in a sec. So, you would need a minimum of 7 volts input, otherwise your regulator will drop out of regulation.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Now, the dropout voltage of this part is interesting cuz it specifies it in two different ways. There's V control pin dropout voltage and VIN dropout voltage. So, if you look back to the circuit here, it's got VIN and V control.
+TEXT: Normally, you tie these two together, and we will in our application here today, but uh if you want a really low dropout voltage of this part, like a low input voltage, and a minimum input uh dropout voltage between the input and the output, but you happen to have in your circuit somewhere a higher control voltage, then you can take advantage of that and get a lower dropout voltage
+context after: from into out by tying V control up to a higher voltage up there like that. But, we're going to tie them together. And also, not all parts uh have the extra V control pin.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: If we wind the current up, let's see where it drops out. It easily meets our spec of 100 milliamps. That's what That's what we designed it for. And it goes a bit but a bit but a bit above that and 170 it's starting to drop.
+TEXT: There we go. At about 170 milliamps, it's the output voltage is starting to drop. It enters drop out because our values aren't optimized for that higher current. But if you obviously wanted to go up to 220 milliamps, say, you would have done those calculations again and you would have got different values for the components which would have allowed you to go on up to that current.
+context after: Okay, now let's see if we can actually characterize the performance of this DC-to-DC converter circuit over its entire current range. Now, ladies and gentlemen, boys and girls, I've mentioned this before but I will say it again.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Now, here is, if you go through the data sheet, it'll it'll be the same for all voltage regulators like this. All linear voltage regulators will have a dropout voltage specification.
+TEXT: You can get special low dropout types, which go down to several hundred millivolts or something like that. They can actually be quite low, but here is our parametric graph of the input to output differential voltage on the Y axis here from 1 volt up to 3 volts, and that's the dropout voltage, okay, on the Y axis versus temperature, cuz this effect does change with temperature.
+context after: And as you can see, curiously, it has at different and these load lines are for different output load currents. This one up here, which curves like that, is for the maximum 1.5 amps output, and then 1 amp and 500 milliamps, 200 milliamps, and then the lowest load line they've got is 20 milliamps here.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: from into out by tying V control up to a higher voltage up there like that. But, we're going to tie them together. And also, not all parts uh have the extra V control pin.
+TEXT: Some of the Some of Some of the packages actually um will tie those two pins internally. So, you don't have it actually have it available. So, um we need to take the worst-case version of that because we're tying them together, which will be There it is, 1.2 V, or at full That's at 100 mA, so at full current, which you have to take into account it could be as bad as 1.6.
+context after: So, our input voltage has to be at least 1.6 V above our output voltage. And that's this voltage here, not over here. So, if our output voltage is 5 V here, we need to have at least 6.6 V or 1.6 V higher here.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (explains)
+context before: You want at least 1 V per cell. Ideally, you want the voltage regulator to go down to um 0.8 V per cell, cuz that's when you use most of the uh capacity in your 9-V battery.
+TEXT: So, unfortunately, this is very simple thing. It'll work fine, but yeah, um it doesn't regulate when it drops out, so there's nothing that uh cuts it out. So, if you are designing something like this, I'd recommend using a switch-mode uh converter, which then works down to a much lower uh dropout voltage for your 5 V, so you can get right down to that uh almost 0.8 V.
+context after: So, at least 1 V per cell. So, dropout voltage of 6 V, for example, 1 V above um the 5 V required output. And any decent switch mode converter is going to do that easily.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (explains)
+context before: The only problem with this is that it's very inefficient because you're using a linear regulator and uh it's only and it's going down to uh 7 V, which um at like normal 9 V battery, right?
+TEXT: So, the dropout voltage of a 7805 is going to be around about 2 V. It actually depends on the very specific type and the load current and all that sort of jazz, but anyway, you know, rough rule of thumb is that the dropout voltage of a 7805 voltage regulator, in case we didn't get the schematic before, everyone's seen the schematic of a 7805 voltage regulator before.
+context after: Yeah, the um input voltage must be greater than uh 2 V uh the 2 V higher than the output voltage. So, uh the problem with that is that well, that means the dropout voltage is a nominal 7 V for the battery.
+
+[751] EEVblog #751 - How To Debunk A Product (The Batteriser) — Dave Jones (explains)
+context before: You when you use a general purpose chip like this and you have to design a general purpose product to work over the range of any unknown product. You don't know whether that product's going to be a wireless keyboard that draws a small amount of current down here or whether or not it's going to draw hundreds of milliamps right up here.
+TEXT: You just don't know. So, you've got to look at the efficiency and higher currents, it's just going to drop off like a brick wall. So, any potential gains that you're going to get from this batterizer based on uh the drop out voltage of your product is going to be offset by the efficiency of this thing depending on what type of product you've got.
+context after: So, once again, it even narrows the range of usable products even further than what it already is based on their ridiculous original ridiculous claim of 1.35 volts cut out voltage.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: So, if you have a big sharp change in your load, it's going to take some time for the loop to actually compensate. So, there you go. Look that one up.
+TEXT: And I should also talk very quickly about the differences between standard linear regulators and LDOs. LDOs, of course, have a lower dropout voltage, a lower you know, you can the input can be much closer to the output because a standard linear one might take two or three volts, and that can be really annoying for low voltage systems.
+context after: So, that's why LDOs are very popular. But, they have the downside LDOs have the downside of having not only a a greater inherent instability in the loop. So, you have to be very careful about what capacitor the ESR and the value of the capacitor that you use on the output.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Oh, no, don't need to worry about that. Minimum load current. Now, here we go. Minimum load current, very, very important. We need to take that maximum figure there, 500 microamps or half a milliamp, as our minimum load current.
+TEXT: If we don't do that, it doesn't tell you what's going to happen. There's a couple of notes here, which we'll read, but it doesn't tell you. Just assume that's not going to be stable or it's going to have a larger dropout voltage, or uh sorry, it's not going to allow you to go down to a as low a voltage as it could, or whatever.
+context after: There's a whole bunch of different uh reasons not to If you don't meet that, a whole bunch of bad things can happen and ruin your day. So, we have to somehow um get a minimum load current over uh our uh minimum load current of 1/2 a mA over our entire voltage range.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: Once again, the V the um, VC pin which powers the internal circuitry doesn't have to be powered from the input pin. We can actually take that. In fact, that's what I'm doing in this design.
+TEXT: I'm taking it from the other side of uh, the um, current uh, shunt resistor. So, the dropout voltage effectively um is much smaller than if we just tied these two pins together, but depending on the package you get for the LT uh 3080, um some small smaller pin count packages actually have those two pins tied internally.
+context after: So, you would have to take into account the voltage drop, but there you go. Um that's not a bad solution. I rather like that. I think I might probably implement this in my power supply design.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: Okay, so the 5-V output goes through this pass transistor, and it goes on to this side to plus 9.5 V there to this C11, this 5,300 microfarad cap on the output of this full-wave bridge rectifier.
+TEXT: So, if this doesn't measure 9 V, well, it actually says 9 V here and then 9.5 V there. Little discrepancy. Anyway, if it doesn't measure around about 9 V, or, you know, significantly higher than the 5 V, cuz the dropout voltage of the pass transistor here, so let's assume and say it's a 2-V maximum dropout voltage.
+context after: It's going to need at least 7 V to regulate this thing. So, if it's not at least, you know, around It should be around about that 9-V figure. If it's not, then we know, bingo, the primary side is not being able to supply enough power on that particular winding, and most likely on all the other windings as well.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And that's what happens when you um when you're on the margin like this using an LM317 voltage regula- regulator, a standard linear regulator instead of a low dropout one where we would have had plenty of margin.
+TEXT: Um instead of having, you know, the 1.5 to 2 volts dropout voltage, which we get with the LM317, if you use an LDO, it might have .2 volts dropout voltage, and we'd have a ton of margin, and the output current would work right up to, you know, 500 milliamps, not a problem, and everything would be sweet.
+context after: But, we're just trying to be really cheap and simple and nasty here and use an LM317. And if you're interested to know what the quiescent current is for just the AVR ISP Mark II programmer on its own, that's the input current for the USB, the 5-volt USB.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: You can get special low dropout types, which go down to several hundred millivolts or something like that. They can actually be quite low, but here is our parametric graph of the input to output differential voltage on the Y axis here from 1 volt up to 3 volts, and that's the dropout voltage, okay, on the Y axis versus temperature, cuz this effect does change with temperature.
+TEXT: And as you can see, curiously, it has at different and these load lines are for different output load currents. This one up here, which curves like that, is for the maximum 1.5 amps output, and then 1 amp and 500 milliamps, 200 milliamps, and then the lowest load line they've got is 20 milliamps here.
+context after: So, let's take a look at the 20 milliamp one, and let's take basic room temperature here for our 20 milliamp minimum load current graph. So, at 25° C, which is room temperature, we've got a dropout voltage of about 1.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Your diode, your type of diode's going to affect your efficiency and so on. But you can modify those to increase your efficiency as required. Okay, I've changed the inductor on here.
+TEXT: It's a different brand, different type. It's a 47 microhenries instead of a 33 microhenries. Let's get the efficiency graph again with that inductor and see how it goes. And one thing with this new inductor, as you can see at 120 milliamps output current, it's actually dropping out.
+context after: The voltage is dropping out, whereas at 110 it was just about 100, it's just in there at 15. So, it drops out right on 100. And here's the efficiency graph again with the 47 microhenry inductor.
+
+[972] EEVblog #972 - Operating Chips Outside Their Spec — Dave Jones (explains)
+context before: but yeah, it's tracking that, no worries at all. And if we go up to 10 volts peak to peak there it's, look, it's pretty, you know, it's not quite bang on, but it's pretty darn close, it's well within spec so it's operating quite well with large crest factor
+TEXT: signals, down at a 3.6 volt chip supply limit, well under that data sheet value of 4.8, so this chip is very conservatively specified, and by the way, 3.6 volts will be the highest operational voltage part inside this meter, so this allows us to set our dropout voltage
+context after: our low battery detector voltage not much above that 3.6, so you might set it to, have to look at the data sheet for the regulators, the low dropout regulators used in this, but you know, it might be typically 50 millivolts, 100 millivolts, not much above that
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: The yellow is the output voltage down there. The red ground reference is right on the bottom graticule down there. And let's wind the input down until we start either seeing Well, we probably won't see it oscillate, but until we start seeing that drop there.
+TEXT: Up. Is that it? Yep, there we go. So, Woah. So, we're talking 1.25 V or thereabouts drop out voltage at no load. And if you're curious to see the drop out voltage at an amp here, this is our input voltage I'm probing that directly on the input pin of the LT 3080.
+context after: So, that's bypassing all the wiring on the breadboard and stuff like that. And I'm measuring the output directly on the pin as well. And that's still the output noise there.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: It would just be the part number difference at the end. 25 microamps quiescent current here. Looks like at V in at 4.3 volts, V out at 3.3. It's capable of 250 milliamps, which is quite a generous amount of current for a little saw 23 jelly bean regulator like this.
+TEXT: Once again, you can get higher, you can get lower, but it's not too shabby. 0.2 volts dropout at 90 milliamps output current. That increases to 0.4 at 150. They don't tell you what the dropout is at 250 and they don't provide any graphs further on the data sheet.
+context after: So, you just don't know. But hey, the whole idea is even if this data sheet, which doesn't have any performance graphs or anything like that, you know, just your basic data, there's no reason why you should avoid these types of chips if you qualify them.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: And we're looking at the AC output here. So, 10 millivolts per Oh, there we go. Yep. So, dropout Oh, yeah, 3. Oh, yep, there we go. Let's call that it What?
+TEXT: 300 and Yeah, let's call it 300 millivolts. 300 millivolts dropout. And by dropout, it means it drops out of regulation. And you can see that like it's still like it's still the voltage is still there, but it's You can see that it's becoming a bit unstable.
+context after: Will that change? If we remove our capacitance? No, look at that. Wow. No capaci- no input output capacitance at all. That's crazy. Let's put 330 mic on that. No.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: So, if this voltage here is 10 V and we're feed well, 10 V here on this pin because it's being fed back and raised by two. There's 10 V here.
+TEXT: It makes this pin here 10 V as well. It drives all this circuitry to make it 10 V. And that's why this input there's a dropout voltage. It needs to be higher than that 10 V significantly higher so that it can so that the actual circuit itself can function.
+context after: And if you're wondering about the power supply for these op amps, it all this by the way works from our single supply because that's part of our spec. So, this would be grounded here like this.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: So, let's wind the input down. And see where the output starts to drop. There we go. Around about 6.8 V by the looks of it. Yep, about 6. 6.85 6.9 V.
+TEXT: So, that's about 1.35 to 1.4 V drop out voltage. And is that what we expect? Well, let's have a look here at the drop out voltage minimum because the V control pin, remember it's not the quoted specs cuz we've tied the V control pin and V in pin together.
+context after: And sure enough, at an amp up here at junction temperature, well, we're going to be above 25°. Let's go up to 50°. You know, we're about 1.4 V. So, yep, it's pretty much agrees with the data sheet as you'd expect.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: You can still see the uh residue. That's not the nicest um introduction to these power supplies at all, but anyway, yeah, they're the high current uh paths, obviously, the input and the output and uh you know, you got the output filter caps and the switching uh and whatever.
+TEXT: Um as of course, this is a buck uh converter, so it's not like you can feed in 5 V and then get your 96 V out. You've got to feed in greater than your 90 greater than whatever output voltage you're trying to uh do, whatever the dropout voltage is.
+context after: And as you can see, the minimum input is 20 V and maximum 110 for a 96 V out. So, it looks like it might have like at least 14 V dropout voltage, which is absolutely enormous.
+
+[621] EEVblog #621- Stanford Research SR650 Repair - Part 2 — Dave Jones (explains)
+context before: Why that heatsink was missing, I don't know. Absolute mystery, ridiculous. Didn't find it inside the box. I don't know. Somebody's been playing around with this thing. It's ridiculous. Anyway, we're getting our AC and DC coupling on there properly.
+TEXT: We've measured all the voltage rails, the plus minus 15 V rails on both analog boards. We measured the input to make sure that the ripple is well above the minimum dropout voltage of the regulators and yeah, pretty piss-poor design in there.
+context after: Not that happy with that at all. The margins in there maybe they might be slightly different because I've got I'm running over 240 V here in the lab, like in 245 or something nominal, I think, here in the lab.
+
+[1095] EEVblog #1095 - Is a $38 Multimeter any good? ANENG Q1 Review (4K!) — Dave Jones (explains)
+context before: which they probably have to do because it doesn't have that range switch. And interestingly, if you try and measure this on microamps, check it out. I don't know if you can hear that going tick tick tick tick tick tick. It just oscillates, because it can't actually drive
+TEXT: that relay on power up. Oops. Now let's see what the dropout voltage is. I've got to, please excuse this, I've got to hold it. Steady the contact. And look, it starts the brightness of that display. Look, at 3 volts, look how that brightness
+context after: at 3.5, sorry, 2.5, it's gone! It's gone! This thing is hopeless! Absolutely ridiculous. What a joke. Wow. It cannot work. Like, that is ridiculous. That's 1.25 volts per cell that it should still work at. You've got to have 2, you know, you've got to have
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Anyway, for the purposes of today's experiment, we just want to get a near enough value so we don't have to worry about that that sort of stuff because we're not going to draw too much current from this so the regulator's not going to heat up much.
+TEXT: But, what we want is to measure the 20 mA load graph there at about 25°C we expect it just over 1.5 V drop out voltage. Now, the drop out voltage is defined as the delta V out or the change in V out or the drop in V out actually of 100 mV.
+context after: So, what we want to do here is adjust our input voltage down until our output voltage drops by 100 mV. Now, as you can see it's 3.36 output voltage and if I adjust the input voltage here, way, that's a bit high.
+
+[1431] EEVblog 1431 - Keysight EDU33212A Function Generator Teardown — Dave Jones (explains)
+context before: 7815 and 7805. So, we got plus minus 5 V rails and plus minus 15 V rails for the op-amps of course. Very nice. You want the headroom on the op-amps.
+TEXT: So, yeah, that's interesting because that mean this is linear. So, the output of the power supply, that must be not plus minus 12 V as I mentioned before. It must be like at least there's got to have at least a 2-V dropout voltage on that.
+context after: So, it's got to be like plus-minus 18-V or something like that would be my guess. You want to keep it down so the dissipation in those isn't much, but you know, yeah.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Uh it's the minimum load current required to maintain regulation. If you don't meet it, it ain't going to regulate, and that defeats the whole purpose of a power supply.
+TEXT: Now, the dropout voltage of this part is interesting cuz it specifies it in two different ways. There's V control pin dropout voltage and VIN dropout voltage. So, if you look back to the circuit here, it's got VIN and V control.
+context after: Normally, you tie these two together, and we will in our application here today, but uh if you want a really low dropout voltage of this part, like a low input voltage, and a minimum input uh dropout voltage between the input and the output, but you happen to have in your circuit somewhere a higher control voltage, then you can take advantage of that and get a lower dropout voltage
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: Whatever value you set on your pot, you know you've got to output uh 1.25 V higher than that, but it's it's not nice. It's not elegant. And of course, the LM317 doesn't go down to 0 V.
+TEXT: So, that's hopeless. And of course, uh I had to turn just in case for those who are wondering out there, yes, I did have to turn my input voltage up from the 7 V cuz we were too close to the dropout voltage of the regulator.
+context after: Remember, there's a couple of volts dropout voltage on an LM317. Now, you can actually get the output of the LM317 to go down to uh closer to 0 V if you uh feed in a negative voltage uh into the set pin, and you offset it by that uh 1.25 V.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: And also, let's see where the DC-to-DC converter drops out. Now, this is my current. Here, it's basically reading 2 milliamps at the moment. This is my output voltage, 15 V.
+TEXT: If we wind the current up, let's see where it drops out. It easily meets our spec of 100 milliamps. That's what That's what we designed it for. And it goes a bit but a bit but a bit above that and 170 it's starting to drop.
+context after: There we go. At about 170 milliamps, it's the output voltage is starting to drop. It enters drop out because our values aren't optimized for that higher current. But if you obviously wanted to go up to 220 milliamps, say, you would have done those calculations again and you would have got different values for the components which would have allowed you to go on up to that current.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: So, I don't really have to worry about the extreme ends of the of the curve. Really, only if you're going up to some sort of industrial temperature, do you sort of have to worry about the differences in the temperature differential of the load line.
+TEXT: So, at 500 milliamps, 25° C, we're looking at about 1.75 V or 1.8 V or thereabouts dropout voltage. And of course 3.3 V, our output voltage plus that nominal 1.8 V volts 500 milliamps, Uh, that's going to give us uh 5.1.
+context after: So, we require a 5.1 V input voltage, which our 5 V USB is uh well, 5 V nominal. So, we're pretty close to the margin if we're drawing In fact, we're technically over if we're drawing an I out of 500 milliamps.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And as you can see, curiously, it has at different and these load lines are for different output load currents. This one up here, which curves like that, is for the maximum 1.5 amps output, and then 1 amp and 500 milliamps, 200 milliamps, and then the lowest load line they've got is 20 milliamps here.
+TEXT: So, let's take a look at the 20 milliamp one, and let's take basic room temperature here for our 20 milliamp minimum load current graph. So, at 25° C, which is room temperature, we've got a dropout voltage of about 1.
+context after: 5 V. So, if we want 3.3 V output, that means we need an input voltage minimum of 3.3 V plus 1.5 V, which is 4.8 V, and technically our USB should give us that.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: Um, not a fan of snakes at all. spiky. You mean input versus output drop? I'm not sure what you mean. Either it regulates at the voltage at the reference voltage or it doesn't.
+TEXT: The dropout voltage is 2 volts above the output voltage. You're talking about the output regulation. Well, it I don't think the line regulation. There it is. Line regulation. And it tells you 1 ppm, 1.5 ppm per volt.
+context after: So it's pretty low. And that's for a VIN range of if you go to the 2 1/2 volt one. Let's go. We're back to the voltage reference here, folks.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: A lot of those will only go up to 6 or or you know, getting ones that go up to 12 V are quite rare. Any higher than that, rarer again.
+TEXT: You've got big drop out voltages. Your voltage here has to be several volts greater than your output and you've got another drop on here. It's just it's not pretty at all and it's not going to meet our requirements.
+context after: We're going to need something different. But, although we might end up using something different today for our final design, the configuration is going to be quite similar or can be quite similar.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: So the 5V one 7 volts. There you go. It's all there in the data sheet. What are you talking about spiky? It's all there. Just got to read the data sheet.
+TEXT: Although I guess you were looking for the term dropout voltage. That can be a bit of a trap, you know. Um, if you're used to talking in terms of voltage regulators, you know, you'll see the term dropout voltage.
+context after: You know, you won't find the term dropout voltage in uh in a voltage reference like that usually. So, Edward Snowden is a whistleblower. He's not a traitor or blood.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Some of the Some of Some of the packages actually um will tie those two pins internally. So, you don't have it actually have it available. So, um we need to take the worst-case version of that because we're tying them together, which will be There it is, 1.2 V, or at full That's at 100 mA, so at full current, which you have to take into account it could be as bad as 1.6.
+TEXT: So, our input voltage has to be at least 1.6 V above our output voltage. And that's this voltage here, not over here. So, if our output voltage is 5 V here, we need to have at least 6.6 V or 1.6 V higher here.
+context after: And if we are using a 1-ohm resistor and we're drawing an amp, you're going to get an extra volt. And so, you need 7.6 V here minimum for a 5-V output.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: Yes, they regulate well. It'll give you your precise minus 4 volts or 3.3 volts or whatever voltage you actually uh set your regulator to. But, if you've got tens or hundreds of millivolts of input ripple that you're trying to get rid of, LDOs can be a poor way to do it because the amount of attenuation of the ripple from input to output depends on uh not only the type
+TEXT: of regulator, it depends on the input to output or the dropout voltage of the regulator. As you get lower, it can potentially get worse. Here's a graph uh which can show you a typical uh result of that.
+context after: And it depends on the amount of current on the output as well. The higher the output current, the uh the less effective it the regulator's going to be at actually attenuating the ripple.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (explains)
+context before: You'd have to do it manually. I'm going to set up like a 50 milliamp discharge here. I've got a little CR2032 battery hooked up. I think it's new. And I'm just going to like that's way over its capability.
+TEXT: 50 milliamps shouldn't discharge it at that, but anyway, I just thought I'd try it. So, let's give that a whirl. So, I can set the drop out voltage to say, you know, 2.6 volts or something like that.
+context after: So, let's give that a whirl and start. Presumably. Let's go. Is it starting? We uh you can switch on and off the remote sensors well. Um Switch that off.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (explains)
+context before: And the answer is no, it's not. So, these are going to be operating in linear mode. So, if you've got power supply coming in at say 12 volts and say these are 0 to 8 volts output, say, because I don't know what the spec is.
+TEXT: But, you're going to have some like dropout voltage on there. So, your output can't go right to the maximum of your input voltage. So, you've got to have some sort of dropout voltage on this thing.
+context after: So, it's a linear pass element. So, that means because it's not switching, especially at say low output voltages. Say you've got a 1.2 V rail or something like that and you're maxing it out at 700 mA maximum output thing that this is current that this thing's capable of, then you're going to be dropping like 10 and 1/2 V across this at like 700 mA and well, that's like uh 7 W or something
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: Of course, you know, it's not like you can um get the 5V version or the 10vt version and put in 4 1/2 volts and get your 10 volts out.
+TEXT: You know, it's not going to happen. But yeah, I would say the minimum there is 2 volts. So 2 volts above your uh output voltage, but yeah, they don't specify like like a uh dropout voltage as such.
+context after: They don't use that term um in terms of voltage uh references. Um yeah, here we go. And then they give you separate figures for the 3.3 volt version. So the 3.3 volt version is 5.3 volts.
+
+[1031] EEVblog #1031 - $25 DPS3003 PSU Module Characterisation — Dave Jones (explains)
+context before: I'm not going to worry about the once again the drop across these output cables here. It's you know, it's going to be near enough cuz we're not going up to particularly high currents.
+TEXT: Anyway, I've enabled the external sense there. And if you want to know uh what the dropout voltage is with no load. Anyway, I'm feeding 32 V in and I'm getting a maximum of 31 V out of this thing.
+context after: So, that's not bad. 1 V dropout with no current load. By the way, in the previous video, I completely overlooked the fact that you could set the voltage and the current just by pressing these keys.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: So it seems to be stable but you know at high you'd have to test it at higher current but of course you wouldn't just as good design practice putting anything less than the recommended 2.2 microfarad ceramic output capacitance but even point 47 seems to work fine at at about a quarter of an amp.
+TEXT: Okay, let's test the drop out voltage at no load. So there's no load on the output. The output voltage is at maximum at 5.5. Let's tweak it down to if we can to 5.50 just as a nice round number.
+context after: It's a bit hard with these single turn pots really dicky. That's why you need a 10 turn pot. Let me tell you any good lab power supply should have 10 turn pot.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: There's all sorts of fancy new LDO topologies to get around those sort of problems, but that can be a basic inherent uh disadvantage as well cuz the actual the ground current can have a direct relationship between the output current and it can be quite high and you can waste a bit of power there as well.
+TEXT: So, they're the basic differences. So, linear regulators are much simpler and more stable but they're got a greater voltage drop across the input and output. So, they're the basic pros and cons.
+context after: So, how does the switch mode actually work? Well, I'm glad you asked. But unfortunately, I won't go into the whole detailed operation of it cuz that can take a whole blog in itself.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: There you go. So it's once again it's 2 volt. So it looks like 2 volts minimum for all the types. And the 4.096 volts is 6 volts. There you go.
+TEXT: Bang. 2 volts above. Right. So that's the line. Um that's you know effectively they're saying that that's your dropout voltage 2 volts. Um cuz then it won't maintain its uh output regulation.
+context after: So the 5V one 7 volts. There you go. It's all there in the data sheet. What are you talking about spiky? It's all there. Just got to read the data sheet.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: So, they can potentially oscillate cuz they use a PNP or a P-channel uh pass element, which is inherently more unstable. And anyway, I won't go into the details, but the advantage of it is is that you get the low dropout voltage.
+TEXT: For a 3.3 volt output voltage, you can only need to feed in say 3.4 volts or something like that. You know, if it's a 100 milliamps dropout, and of course that will change with current.
+context after: So, let's actually I'm actually doing that at the moment. Actually had it loaded there. We've actually got no load at the moment. So, no load with no capacitance, absolutely no input or output capacitance.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: taken as a 2-volt minimum drop, and we'll take a look at that in a sec. So, you would need a minimum of 7 volts input, otherwise your regulator will drop out of regulation.
+TEXT: Now, here is, if you go through the data sheet, it'll it'll be the same for all voltage regulators like this. All linear voltage regulators will have a dropout voltage specification.
+context after: You can get special low dropout types, which go down to several hundred millivolts or something like that. They can actually be quite low, but here is our parametric graph of the input to output differential voltage on the Y axis here from 1 volt up to 3 volts, and that's the dropout voltage, okay, on the Y axis versus temperature, cuz this effect does change with temperature.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: And this actually would be connected to the input like that. So, the input voltage must be significantly higher than uh than the voltage that we're actually trying to uh control.
+TEXT: So, there will be some dropout uh voltage there. But all of this all these op amps can be powered from this one supply. All right, we've done the minimum case of 0 V control signal.
+context after: What if we do our maximum case of 1 V? So, our control voltage here is 1 V, and once again, we're going to assume 10 V there just for the sake of this uh calculation.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: There we go, it's dropping. It could be a little bit tricky. Sorry, 3. Yeah, 3.26. So, there it is. I'm going to say that's near enough. So, 4.8 volts.
+TEXT: All we've got to do is plug that into the calculator. 4.803. Let's put all the digits in. We don't have to. Minus 3. 2 Let's say 26 there and that is 1.54 volts drop out voltage.
+context after: Bingo. It matches the graph there. 1. Yeah, 1.54. It's just over that point there on the graph. So, that matches up perfectly. Oh, by the way, I've set the current to 20 milliamps down here, the load current.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: Of course, you know, this is obviously not something you hugely want to care about in Well, you might in normal operation, but of course, with the building current limit, what you're really concerned with is that you don't don't blow the ass out of your regulator, you don't release the magic smoke when, you know, if the mode on it shorts and you want it to recover.
+TEXT: And this is pretty good. Okay, so let's look at the dropout voltage at its maximum rated current, 250 milliamps. It's not its absolute max, but that's its maximum recommended.
+context after: And of course, we're getting our It's pretty It's pretty darn accurate, this, even though like plus minus 2%, of course, you'd have to test, you know, you know, a dozen units or 50 or 100 units or something, you know, to get an idea of normal accuracy, especially across different production reels as well, you know, if they all come from the same die wafer, then, you know, they're all going to be They should all
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: It's available in all your favorite biggie packages like this. And once again, this is not a low dropout regulator. We'll have a look at that in a second. One of the downsides is it does have a lower dropout voltage.
+TEXT: Uh here we go. Input to output differential voltage, uh 3 volts minimum typically. So, that's more than the 7805. So, uh but once again, this is not a low dropout regulator.
+context after: Just be aware though, there is a big trap for young players with the LM317, and this is the minimum load current to maintain regulation. And given that it's a voltage regulator, you want to maintain regulation.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: That's why this one only goes to a maximum of 11. 26 volts cuz we're only feeding in uh 12 volts. So, if you want higher than that, then you have to go up.
+TEXT: This is rated from 0 to 40 volts input. So, if you want the 32 volts out, you've got to have at least 32 volts plus the dropout voltage cuz they're only a buck type device.
+context after: Anyway, in constant uh current mode, I've had the output uh on that whoop. I've had the output uh shorted at uh 2 amps on this thing for quite some time now and that's not even warm.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Low output voltage noise is only 40 microvolts RMS through in that bandwidth. And it's got it supports input voltages up to 36 volts. Terrific. We're not going to go that high today, but hey, if you're into high voltage power supplies, it can do it.
+TEXT: And the dropout voltage that will be at full load is only 350 millivolts, but we can check the curves on that one as you'll have to. Less than 1 millivolt load regulation.
+context after: Line regulation's awesome. Now, one thing, minimum load current, there it is. 0.5 milliamps, we have to worry about that. And it's stable with 2.2 mic ceramic output capacitors. That's all we need to make this thing stable and then it's guaranteed over any loads you like.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Normally, you tie these two together, and we will in our application here today, but uh if you want a really low dropout voltage of this part, like a low input voltage, and a minimum input uh dropout voltage between the input and the output, but you happen to have in your circuit somewhere a higher control voltage, then you can take advantage of that and get a lower dropout voltage
+TEXT: from into out by tying V control up to a higher voltage up there like that. But, we're going to tie them together. And also, not all parts uh have the extra V control pin.
+context after: Some of the Some of Some of the packages actually um will tie those two pins internally. So, you don't have it actually have it available. So, um we need to take the worst-case version of that because we're tying them together, which will be There it is, 1.2 V, or at full That's at 100 mA, so at full current, which you have to take into account it could be as bad as 1.6.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: It's actually a um a Darlington transistor like this. So, whoop. There you go. It's actually an NPN Darlington transistor. And same down here as well. Now, you've probably heard about low dropout regulators, and you might think they're all mysterious, too.
+TEXT: What is a low dropout uh voltage regulator? Well, it's just got a lower voltage drop, a lower tolerance between input and output than a than a standard linear regulator.
+context after: Cuz this standard linear regulator, cuz it uses a Darlington pair like this, you're actually going to have two VBE drops plus the saturation voltage of that transistor. So, that's why, in say a 7805, you'll see a typical dropout voltage of like 1 and 1/2 or 2 V or something like that, or even higher, because it's just a function of the Darlington NPN transistor and how it's used.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (explains)
+context before: There's six cells in here, six alkaline cells, so um they're 4A cells, by the way. So, there's six for these alkaline, six physical 4A cells. I've taken a battery apart before and showed that.
+TEXT: Um so, the dropout voltage is a nominal what um uh 1. Um six um yeah, 1.1 uh volts or thereabouts. Um 6 V 1.15 or something volts per cell, which isn't um a very low.
+context after: You want at least 1 V per cell. Ideally, you want the voltage regulator to go down to um 0.8 V per cell, cuz that's when you use most of the uh capacity in your 9-V battery.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (explains)
+context before: You can't just put, you know, a thousand mic in there and think that your ripple's going to zero. So, you might have to do some post regulation. So, you might put a low dropout regulator on the output of your 7660, for example, if you need a minimum amount of ripple.
+TEXT: But, there there's a bit of a trap there using a uh using a 7660 and then having your post regulator on there is depending on the voltage drop across that regulator.
+context after: If you're only dropping a small the smaller voltage you drop, the less effective it becomes of filtering input noise and stuff like that. So, if you only got a low dropout voltage on it, then your noise might pass mostly through that regulator.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: So, let's take a look at the 20 milliamp one, and let's take basic room temperature here for our 20 milliamp minimum load current graph. So, at 25° C, which is room temperature, we've got a dropout voltage of about 1.
+TEXT: 5 V. So, if we want 3.3 V output, that means we need an input voltage minimum of 3.3 V plus 1.5 V, which is 4.8 V, and technically our USB should give us that.
+context after: Although USB is 5 V plus minus 5%. So, it could actually be, you know, it could actually be under that. It could technically be 4.75, but we're not too concerned with that.
+
+[1031] EEVblog #1031 - $25 DPS3003 PSU Module Characterisation — Dave Jones (explains)
+context before: It's like a sub $25 delivered for this module and you can turn it into a bench power supply. Just voltage in and voltage out. Fantastic. And here's the specs for the things just as a recap.
+TEXT: 6 to 40 volts input. It is a buck only. So you have to have an input voltage range at least the dropout voltage greater than the output voltage range you want.
+context after: The maximum voltage range you want is 0 to 32. So for example, if you only needed like a 12 volt 0 to 12 volt lab power supply, then you could get away with say like a 13, 14, say 15 volt input.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: But, just uh, boost it up a bit more so that we do have um, just adequate uh, margin on our LT3080 here because we need um, depends on the output uh, current.
+TEXT: I think it's 1.6 V maximum is the absolute maximum uh, drop out voltage. It can be lower because our V control doesn't have to be tied to our input pin.
+context after: We can try it tied to the other side of our um, offset our current uh, offset pin. If we take a look at the schematic back here. Oh, and we take a look at the LT 3080 again.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: So, that's bypassing all the wiring on the breadboard and stuff like that. And I'm measuring the output directly on the pin as well. And that's still the output noise there.
+TEXT: So, let's wind the input down. And see where the output starts to drop. There we go. Around about 6.8 V by the looks of it. Yep, about 6. 6.85 6.9 V.
+context after: So, that's about 1.35 to 1.4 V drop out voltage. And is that what we expect? Well, let's have a look here at the drop out voltage minimum because the V control pin, remember it's not the quoted specs cuz we've tied the V control pin and V in pin together.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (opinion)
+context before: Let me go check." And you read up the data sheet. Sure enough, right, it's very clear that there's a legacy and new chip and like all the specs have changed, right?
+TEXT: So, you would have to qualify that part. Simple voltage regulator, but you might have to re-qualify it cuz you don't know. It might it might drop out differently. It might oscillate, for example, with the different loads and different um bypass caps and things like that, right?
+context after: So, yeah. So, you don't know. You go, hold off buying that one until we can re-qualify the part. So that's what happens when you add the extra part number either a letter an extra letter at the end because as a design engineer your job or it might be an huge company it might there might be an engineer dedicated to creating a bill of materials uh like this that would
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: So, really you know, I think it's going to do the job. But, hey, let's test it. Now, I thought we'd just check the uh performance of this thing to see if it meets the data sheet specs.
+TEXT: Because if you remember, I said that we're going to be pretty close to the limit of the dropout voltage of this LM317. Because ideally, I would have used a low dropout regulator in this application.
+context after: But, I didn't have one left in my junk box. I just decided to use an LM317. And let's see if it matches the uh dropout voltage graph, shall we?
+
+[972] EEVblog #972 - Operating Chips Outside Their Spec — Dave Jones (mention)
+context before: But, of course, when you're designing a battery-powered product, you want to actually maximize the usable capacity in that battery. So you want to have the cutoff voltage of your battery as low as possible. Now, in this case, of course, if we dropped it out at 4.8 volts,
+TEXT: that'd be wasting probably half of the capacity in the batteries. I haven't checked, but it'd be a horribly high cutoff voltage of 1.2 volts per cell, and that doesn't include the dropout voltage of the regulator. But, hey, this chip, you could actually run it directly off the batteries.
+context after: But, of course, if you've got a nice stable supply, you can guarantee the performance is not going to change over the supply range. So 4.8 volts is like, we don't want to piss away half the capacity in our batteries, or whatever it is.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (mention)
+context before: Still in the same business. The response is all the same. So, this The response of this thing with a capacitive load, it's like it it really almost doesn't matter.
+TEXT: Once again, I I recommend using it without a output capacitors. That's just silly. Um but yeah, it's it's really stable. So, quite impressed. Um yeah, so 300 mV uh dropout at full rated current.
+context after: Let's go down to 100 mA and and let's keep going down down. There we go. So, at 100 mA, let's say the dropout is only talking at 150 mA dropout there.

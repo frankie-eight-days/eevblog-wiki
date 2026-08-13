@@ -1,0 +1,793 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: asic
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 152 passages drawn from 95 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only video numbers that appear in the supplied passages. Do not infer, guess, or invent a number.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# asic`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1639] EEVblog 1639 - Keysight InfiniiVision HD3 Oscilloscope Teardown — Dave Jones (explains)
+context before: Plus a Xilinx Zynq processor and that's it for a lower end scope that's 14-bit MegaZoom 5 and all the bells and whistles, but obviously but then they'd multiplex. They would multiplex cuz if it does actually have two ADCs in it plus but actually four inputs that are multiplexed cuz we know there's extra inputs here, then maybe my speculation is that's ripe for a low-end version.
+TEXT: Eventually, don't expect it And year or next year, maybe, but you know, in a few years time, maybe lower end version of this scope where they save costs, cuz this is not a cheap ASIC, of course, but given that it's an ASIC, once you got the that NRE cost down, that non-recurring engineering cost, once you've paid for that, once you've absorbed that, then it relatively speaking, um the ASIC becomes
+context after: cheap or cheaper than what you'd pay with like a like if you're buying the ADC from Texas Instruments or Analog Devices or whatever, and you're buying the FPGA from, you know, Xilinx or whoever.
+
+[1229] EEVblog #1229 - Mailbag — Dave Jones (explains)
+context before: That's obviously got an LCD driver built in. So, yeah, um Samsung specifically targeted and marketed these to the GPS market, and well, yeah, TomTom lapped it up. And also, what happens a lot is that companies like TomTom, I don't know how big they were back in the day, but like large companies can actually approach companies like Samsung and hey and say, "Hey, you know, like customize us a chip
+TEXT: that's, you know, suited to our particular application, and yeah, we'll let you sell it to other people as well, but yeah, we want this specific one cuz we notice you have this off the you know, this already existing chip, but we'd like it to have this feature or take out that feature to make it a bit lower power, etc., etc." And yeah, sometimes they'll play ball if you're
+context after: big enough, if you're you know, if the quantity is there. Oh, a little grounding spring. Isn't that cute? So, thank you very much, Tyler, for sending that what more than a decade-old TomTom GPS.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (explains)
+context before: It just means more dead time. Cuz it depends on how you prioritize the thing in the design of the user interface in the acquisition engine whether or not you're going to prioritize the user interface which you should.
+TEXT: You don't want a slow operating scope. But then also you want the fast update. But that's why something like the Keysight does it all in an ASIC so that it you know, it doesn't matter what you turn on FFTs or any of the other cursors and measurements and all the other processing functions, it it doesn't matter because the main processor is not handling that sort of stuff.
+context after: But you saw the dead time on the Tech here. It was quite substantial. But you know, it is still a fairly responsive scope. You've just got to live with the dead time.
+
+[1218] EEVblog #1218 - 1GHz Oscilloscope Spec Shootout — Dave Jones (explains)
+context before: Yep, included. They throw in the arb gen as well. All the others are optional arb gen, I believe. Maybe not. Maybe the Rohde & Schwarz gives you all. Check it out.
+TEXT: I do Come on, I spend enough time on this as it is. So, one of the reasons why the new Rigol 7000 didn't get people very excited, even though they've got their own new chipset, they're one of the big players, they've got their own ASIC, the front-end ASIC and the acquisition chip, their own custom ASIC, so they're one of the big players now in that respect, but
+context after: they just didn't price it right. It was It was just too pricey and really like meh, you know, are you going to pick the you know, if you're after 350 mega, you're going to pick the Rigol 7000 over the RTM 3000?
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (explains)
+context before: It's great. I love it. And that's how they can It probably took them years to develop this ASIC, but once you do, once all the hard work's done, then you can bring this capability down into your low-end scopes.
+TEXT: You can amortize the cost down into the low end. And it just you know, allows all this phenomenal update rate capability in low-end scopes. Whereas traditionally if I had to pay 10, 20,000 dollars to get a million waveform updates per second, which is what this ASIC is capable of, 1 million waveforms per second directly onto the LCD display.
+context after: There's no way you would ever do that with your traditional CPU approach. Now, that's on the 3000 series model. I'm not sure if the 2000 series model uses exactly the same ASIC or whether or not it's a scaled down version which has less sample DRAM and less waveform update capabilities per second.
+
+[1027] EEVblog #1027 -  Implantable NeuroStimulator Teardown — Dave Jones (explains)
+context before: But, so I hope you found that teardown interesting at least. I mean, the most interesting part of this is basically, well, a lot of people say the boring part, and it is uh but it's critical is the certification of the design process.
+TEXT: It can take years and years and years. I've actually done some work for an implantable uh device company and they, you know, just the amount of effort that goes into like not only designing the ASIC chip, but designing every single part, qualifying every single part that goes into it, and everything else is just a ridiculous amount of work.
+context after: And if I'm conceiving the latest our product or, you know, next generation product to when it actually gets released to market can be, you know, like 5 to 8 years or something like that.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (explains)
+context before: Essentially it's got the high speed uh logic um stuff it's got built in uh memory as well for any sort of uh caching or anything like that that needs to be done and it can do of course all the processing that's an FPGA you can get it to do anything you want.
+TEXT: You wouldn't be rolling your own uh ASIC for something like this unless you were looking at really high volume and something like this like a three or six 6,000 logic analyzers you're not going to be selling them in the hundreds of thousands you know you're going to be selling them in the hundreds thousands if you're lucky.
+context after: So what they're going to be implementing in there of course uh is serial straight in so the 32 or 64 channel uh serial uh differential pair straight into the Serdes and then into the logic array where they're going to be implementing uh hard serial decoder functions decoder hard serial trigger cuz you can uh trigger off various a whole slew of different protocols.
+
+[1639] EEVblog 1639 - Keysight InfiniiVision HD3 Oscilloscope Teardown — Dave Jones (explains)
+context before: Well, they don't connect those on the other ADC on the other side. So, if this is true that this is a combined MegaZoom ASIC and 14-bit 80 dual 14-bit ADC, at least dual 14-bit ADC into the one chip.
+TEXT: Basically, an oscilloscope in one chip. You know, you've got to add the processor on and and maybe you need that small FPGA above or you can bind it into say a Xilinx Zynq processor, which they don't have on this one, but what I'm thinking about is that if this is the case, then you could have one of these chips, one.
+context after: Plus a Xilinx Zynq processor and that's it for a lower end scope that's 14-bit MegaZoom 5 and all the bells and whistles, but obviously but then they'd multiplex. They would multiplex cuz if it does actually have two ADCs in it plus but actually four inputs that are multiplexed cuz we know there's extra inputs here, then maybe my speculation is that's ripe for a low-end version.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (explains)
+context before: It'll have to 2 and a half and the sample rate halves as well. But if you turn on the third channel, it shouldn't do that. No, it remains the same.
+TEXT: So, they've obviously got a dedicated ASIC chip just like in the Keysite and many other uh scopes for per two channels. So, that's just a little uh trick. If you want to uh maximize your sample rate and your memory and you're only using two channels, then use channel one and three or two and four.
+context after: And what does empty mean? Hm. And the lowest volts per division we've got is uh 2 m volts per division here. And yes, our auto probe uh interface works.
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (explains)
+context before: phenomenally better performance for really not that much more money. I mean, just over a thousand bucks gets you this capability, which before, you know, I've had to spend $10,000, $15,000 on the oscilloscope to get this kind of update rate and performance. It's unbelievable.
+TEXT: And now it's coming down due to the technology with the new ASIC in this, they're actually bringing the technology into their low end products. I can't believe it. And they've really laid down the gauntlet to the competition. I don't think anyone can match them at the moment for phenomenal update
+context after: rate for the price. It's incredible. Competition's got a lot of catching up to do, let me tell you. Now, the base price of this unit is, uh, recommended retail price is $1,230 or thereabouts US, uh, for the 70 megahertz model, dual channel, no logic analyzer, no function gen.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (explains)
+context before: Another traditional function that the CPU actually takes care of. So, in your traditional scope, you would have your AD converter here and you might have a big FPGA or a custom ASIC like this doing various stuff, but then it would usually funnel the data or there'd be like a dual port memory and funnel it into external memory and then the CPU would access the memory and then update the display and
+TEXT: then your CPU becomes the bottleneck. And that's the real problem. So, that's what they get around with with this new custom ASIC because everything's done on here through the display plotter directly coupled onto the LCD display, the CPU is really relegated to just like a secondary function.
+context after: Steve's put in here like math, measurement, and search capability and things like that, but of course it runs Windows CE and it handles Ethernet capability, USB, and file stuff and all that sort of thing, but really it doesn't talk to the LCD direct.
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (explains)
+context before: And, well, that was always curious. Everyone was saying, oh, why did Agilent do that? You know, just rebadging some, you know, cheap Chinese brand oscilloscope. What are they doing? They've lost the plot. All that sort of stuff. Well, I reckon, though I don't know, but I reckon they're probably just doing that to bide
+TEXT: their time while they're designing this baby. Because this is completely in-house designed and manufactured by Agilent. The ASIC, which is used in here, which we'll go into, designed in-house by Agilent. That's the heart of the new technology. Manufactured in Agilent's plant in Malaysia.
+context after: It's got nothing to do with Rigol or any other one. They've gone back in-house and I love it. Now, the new 2000 Series model is the InfiniVision model. So, Agilent are now going to brand all their oscilloscopes InfiniVision across the entire range. And because of this new technology,
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (explains)
+context before: There's a little resistor there plus two mod wires, so they've done this after uh after production, obviously. They decided to make those changes. Uh couldn't be bothered to respin the board.
+TEXT: Cheaper just to put a couple of mods on there. There's our Zilog Z80 CPU. Uh our main uh LSI uh ASIC up here, which would handle pretty much uh everything else the um ex- part from the CPU because we've basically got the big LSI, we've got the memory, there's the ROM socket on the back.
+context after: There's another device there, not sure what that is offhand. And a couple of the miscellaneous uh chips over here and another one up there. But apart from that, that's it.
+
+[None] Popular Mechanics Promotes Batteriser 2.0! — Dave Jones (explains)
+context before: If battery savers can deliver, its approach could be essential to enabling longer service time or reducing battery mass. Andrew Abbott, a professor at the University of Leicester, whose work focuses on solving such big battery problems, tells Popular Mechanic. Well, obviously, Andrew hasn't heard about the Batterizer,
+TEXT: because it's already been commercialized. And, like, really good, as I said, like, it's really good technically, how they've integrated the circuitry on here. This is the absolute best possible implementation you could possibly get. They even developed their own custom ASIC chip for it,
+context after: which is actually really good in its own right, but still increases battery life up to 600% now. You know, yeah, nah. And, of course, competing with big battery. Where have we heard that before? And I was accused in a national newspaper, in print, of being paid for by big battery.
+
+[622] EEVblog #622 - How To See Through Objects With A Thermal Camera — Dave Jones (explains)
+context before: Woohoo. So, as you know in previous video, this thing actually stops working if you don't have the fan on. It overheats in like a couple of minutes and the software detects that and actually shuts the thing down.
+TEXT: So, what I've done is I've wrapped it in plastic. It's dead wrapped in plastic. All right, and I've basically sealed up all of this side. So, the fan sucks in here like this over the main ASIC down the bottom which actually gets hot, the main ADC chipset and all that sort of stuff.
+context after: So, it gets really hot. That's the thing that's shutting down. So, the air goes in here. It's got nowhere to go but out this other side. Ordinarily on this thing, the vent holes are over here somewhere, but I've just got it coming out the end cuz I just want the air to go in and flow through and go over.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (explains)
+context before: And if you hit serial again, you can actually call up a lister, which will actually um list the data here, which is very very nice. And there's various other options as well.
+TEXT: I won't go into them, but it really is quite a nice option for um serial decoding. And once again, that's done all in the hardware. It's so you don't get a performance penalty or pay a performance penalty by enabling the serial decoding cuz it's all done on the ASIC in real-time.
+context after: And there's one other thing to remember with the serial decoding option. You don't actually, if you buy the option, you don't actually get all of them at once. You have to buy them separately or in groups, which is a bit crazy.
+
+[598] EEVblog #598 - Sony DME7000 Video Multi Effects Processor Teardown — Dave Jones (explains)
+context before: Eh, interesting. And as I said, this board is full of Sony custom chips here. Whether or not they're just rebadged or there are custom Sony silicon, I don't know. I would presume that there's Sony custom silicon, because there's a very specific task we're doing
+TEXT: here for these video effects. So it wouldn't surprise me if they've rolled their own ASICs for these sort of jobs, or you know, mask or something like that for these sort of specific tasks. And then for something like the Z process section here, well look, what are these part
+context after: numbers? I don't know if we can Google them, but I doubt you're ever going to find any info on these things. And that's all there is, just two custom Sony chips. And of course you end up with similar but different part numbers like CXD8838 for example.
+
+[781] EEVblog #781 - Samsung LCD TV Part 2 — Dave Jones (explains)
+context before: I I can't remember I don't remember. I wasn't I wasn't taking it seriously. What was I doing? Dave was zoned out tapping the back of the TV. He found whatever the hell it was.
+TEXT: Oh, we do know that I don't know if you can see me. I'm boo. Um we do know that the Yeah, the main ASIC on the processor board is driving a whole bunch of differential pairs, as you'd expect, over that main cable, that black cable we saw inside, over to the T-con board.
+context after: Um it's being driven directly. That sounds like the tapping that you were doing. Yeah, okay. That sounds the same. Okay. Well, that's the main ASIC on the processor board.
+
+[694] EEVblog #694 - Mailbag — Dave Jones (explains)
+context before: custom, you know, interfacial VGA had. And now, ta-da! Look! There's bugger all in it! A couple of basically two major chips and that's it. There were no chipsets when I was a boy. And you know, you had to implement the thing all yourself, or most of it, a good lot of it
+TEXT: yourself. And we had a ton of logic to actually do it. Lots of programmable logic and other stuff. But now it's just, yeah, somebody's done it all, whacked it in ASIC, too easy. But now anyone can buy these chips from DigiKey or wherever, lay out a board in a day
+context after: and Bob's your uncle. So yes, we take it for granted these days, you can just do this sort of thing, but 20 years ago, let me tell ya, you know like taking the VGA input, as I said, only 640 by 480 and actually recovering the clock
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (explains)
+context before: Okay, let's see what happens if we turn on peak mode here, which will give our, uh, like, frequency, uh, peaks. So, we're 47 k per second. Turn on peak, and, well, yeah, it's really dropped. It's really dropped down to 60 waveform updates per second.
+TEXT: That's doing some serious processing there. So, the ASIC they've got in this thing, um, uh, yeah, it's, it, it's not magic. It, it can't, like, when you turn on extra processing functions, it will slow down the waveform update, uh, rate drastically in some cases.
+context after: But, still, in, you know, a lot of general use, it's fast, it's way faster than the Keysight. But check this out. This is really interesting. Even though we can't see the, uh, runt pulse glitching up here on the clock, it looks like we can see it on
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (explains)
+context before: I'm not quite sure of how because you saw in the teardown that the that there's an FPGA next to the CPU. So, possibly that's what that FPGA does, but that's only a guess.
+TEXT: But as you can see, it's phenomenal and it's entirely different to your traditional scope design where the centerpiece is a CPU. But that becomes a real bottleneck and you can avoid that with a custom ASIC like Agilent have done here in the new Mega Zoom 4.
+context after: It's great. I love it. And that's how they can It probably took them years to develop this ASIC, but once you do, once all the hard work's done, then you can bring this capability down into your low-end scopes.
+
+[None] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (explains)
+context before: L2316. That looks pretty jazzy, doesn't it? Does that come off? Yeah, that comes off. Okay. So you can actually plug that. Wait, why have they got an extender? Logic probe adapter. What? What does it adapt? I don't get it. I don't like logic probe adapter.
+TEXT: Okay. Not quite sure I understand that anyway. There we go. This of course uses the new, what is it, the Phoenix chipset. Rigol have rolled their own custom ASIC for this thing. So absolutely fantastic. Where are the flippy feet? Where are the flippy feet?
+context after: Oh, they're at the back. Let's have a look at the back. There we go. So you flip those out like that. Doesn't tilt back very far, but good enough for Australia. No worries, no I'm not shooting this in 4K. File size is too big for one of these one-offs, couldn't be bothered.
+
+[405] EEVblog #405 - Lecroy 9384C Oscilloscope Repair - Part 3 — Dave Jones (explains)
+context before: So, the other rails aren't powered at all. And uh of course, it's a non li- we've already determined it's a non-linear uh thing. So, um you know, we expect it maybe to drop to I don't know, 8 amps or something like that.
+TEXT: Maybe nine or something like that cuz it is going to be shared across the um ASICs here, of course. And if we're And if our theory is right about the four four ASICs all being equally blown or reasonably equally blown, we should see a percentage decrease.
+context after: So, let's have a look. Ta-da! There we go. 8.8 amps. It has actually dropped by you know, uh 1. 2 amps or thereabouts. I'm not exactly sure uh exactly what the value was last time, but it was around about 10 amps or so.
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (explains)
+context before: I expected sort of, you know, this total number to be sort of crammed onto one board, and I don't know, maybe they used a, you know, a four-layer board or something really fancy like that. But no, you don't have to when you go for all these ASICs.
+TEXT: But they're certainly designed, and they had to split the processor up into four separate ASICs. So I'd love to know what the architecture is there that made them do that, and the display processor. They couldn't fit it in one, so they had to use two.
+context after: Probably this is some sort of, like, gate array or something like that, so, you know, they only had a certain amount of logic and they had to design their processor using a custom gate array. So it's probably, like, a gate array chip. So it's not actually, probably not a custom ASIC as such.
+
+[1032] EEVblog #1032  Part 4 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: That's obviously no secret. Everyone knows you've got to be working on the next one. There's a magic to not doing it too quickly, though, to making sure you get all the value out of the investment, and also waiting until the disruptive changes that your competitors are using,
+TEXT: market needs change, because it's a huge expense. To develop those chipsets took over five years. Five years to develop the MegaZoom 4, even though you had the MegaZoom 3. Was it a complete, would you know, was it a complete redesign? All new ASICs.
+context after: Yeah, but was it a complete redesign in terms of architecture? Yeah. Oh, it was. Absolutely. From the ground up. Yeah, the MegaZoom 3, I believe they brought it into a processor to display the MegaZoom 4. Oh, right. Yeah, yeah. They have a, the digital ASIC has a display built in,
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (explains)
+context before: I don't mind that at all, that's quite novel. So I'm a little bit surprised at the sort of lack of density in this thing. Like, you know, I expected, like, all dip technology, of course, back then, but I expected it to be, you know, like, chock full of dip chips on each one.
+TEXT: I expected sort of, you know, this total number to be sort of crammed onto one board, and I don't know, maybe they used a, you know, a four-layer board or something really fancy like that. But no, you don't have to when you go for all these ASICs.
+context after: But they're certainly designed, and they had to split the processor up into four separate ASICs. So I'd love to know what the architecture is there that made them do that, and the display processor. They couldn't fit it in one, so they had to use two.
+
+[872] EEVblog #872 - Mailbag — Dave Jones (explains)
+context before: This is why I lusted after it, because you could actually, the ad in the computer magazines showed you all the bits. You could actually build this thing yourself. They sold it as a kit. Can you believe it? And it had a memory expansion module here.
+TEXT: You could get, I believe, it was up to, was it 16K or was it even 64? Hmm, not sure. And yes, it's a Z80-based computer with the famous Sinclair uncommitted logic array, the ULA, kind of like ASIC chip, which allowed them to get this model down.
+context after: The model before this was the ZX80, and that was quite much, much larger. It had, I don't know, 10 times as many chips or something. This puppy's got bugger all, but that's why it was so cheap. And a quick two-minute teardown. I do want to do a separate video on this,
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (explains)
+context before: You've got two ADC chips. I think it is shared. So, yeah, that's common in all designs. So, I don't know if that is a dual ADC or it's a single ADC and then it's got a max in there.
+TEXT: I can't actually uh remember. And this is the new bad boy ASIC that's responsible for uh the world's fastest updating scope. And obviously, um FPGA application processory thing over here, whatever it is uh they're using uh clock gen in there.
+context after: It's a dead giveaway when you got a couple of oscillators in there. That'll be like a PLL or like a clock uh gen for all the uh sampling. So, that'll be doing all that.
+
+[969] EEVblog #969 - Vintage $80k NLE Video Editor Teardown — Dave Jones (explains)
+context before: Thank you very much. Uh, 420 pads. And you can configure, uh, RAM in here. You can see it down the bottom there. It says fully configurable RAM compilers. And you can basically think of this is an FPGA, basically.
+TEXT: Um, and they would use these, uh, commonly to, like, uh, design customizable products easily, cuz they're gate arrays. They don't have to spin a full ASIC size. It's much cheaper, much simpler to implement custom logic in chips like this.
+context after: From a consumer price point of view, you wouldn't be using this in a cost-competitive, uh, consumer price for but for a bit of specialized, you know, industry kit like this one where price is no object, hey, just whack these things in everywhere.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (explains)
+context before: Steve's put in here like math, measurement, and search capability and things like that, but of course it runs Windows CE and it handles Ethernet capability, USB, and file stuff and all that sort of thing, but really it doesn't talk to the LCD direct.
+TEXT: If it wants to do something, it goes through here and there's a GUI controller as well which handles, you know, all of your graphical interface type stuff, maybe your cursors and all that sort of thing are handled directly via the ASIC.
+context after: So, your CPU has just become a supplementary item in these modern scopes. It's phenomenal. And then it will output some data directly into other capabilities. This acceleration for measurement, search, and things like that, that may be the separate FPGA on the board.
+
+[582] EEVblog #582 - HP41CV Calculator Teardown — Dave Jones (explains)
+context before: The bottom side seems to be completely devoted to the keypad overlay. So, I think everything is within this tiny little quad flat pack, this custom quad flat pack. So, I can only presume that the CV model actually integrated the extra five times the number of registers into the particular chip.
+TEXT: They actually re-spun the ASIC itself for the CV model over the standard C model. I wasn't expecting that. I thought it'd have the same processor and they would have had the separate memory chips on the board, but no, clearly not.
+context after: An interesting point to note is that they've got one little tiny pin on each side there, not on this side, but on either side here actually chopped out. And that almost looks like it's a hand drag soldered job.
+
+[1727] EEVblog 1727 - REPAIR: Casio CT-X700 Keyboard — Dave Jones (explains)
+context before: >> No, from my memory, as you click certain keys on the keyboard, you can add different instruments. >> Right. Oh. Oh. Oh. Just randomly hit a There's a hardwired button.
+TEXT: Hardwired There's a hardwired button. Oh, there we go. >> Yeah. >> Oh, no, it's gone. >> [clears throat] >> So yeah, [clears throat] there's the giant big ASIC chip I was telling you about, and that's basically the whole thing.
+context after: That is everything else is single-sided. This is a double-sided jobbie or whatever. And everything else is just single-sided and built down to a price. So, that's just a Casio ASIC.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (explains)
+context before: Bargain. Now, I know why they've done the 100 MHz version is to give people a sense of, you know, value down at that bottom end, but I just you know, I There's overlap with the 2000 series there.
+TEXT: I would have preferred if their bottom of the range unit started at 200 MHz and you got that for the 2800, but I don't know. I'm just being a bit greedy, I guess, but only because I see all this filter within the ASIC in here.
+context after: I see all this marvelous technology filtering down, and now you're getting the million waveform updates per second for an incredible price, but they they still are in that traditional mindset.
+
+[738] EEVblog #738 - Yamaha DME32 Digital Mixer Teardown — Dave Jones (explains)
+context before: This is like the RSR 42 uh 485 and the COM interface there. So yeah, they're putting some filtering on the line. They've got it also here over here. Little um EM filter for the input and output uh data clock and aha I was kind of right.
+TEXT: The I looked up these YSS910 S's and these are uh yes custom LSIs large scale integration or ASIC or whatever you want to uh call it. basically ASIC chips from Yamaha and they claim that they're the world's first 44bit DSPs.
+context after: So each one of these chips is an individual DSP like that. So they got 10 DSPs all around here, all with their own local memory as well. And they're upside down, so all the electrons are going to fall out.
+
+[1019] EEVblog #1019 - Mailbag — Dave Jones (explains)
+context before: Okay, maybe they're often used replacements, you know, you have to rechip these things if one goes bad. Maybe yeah, maybe it's worth it. And sure enough, it's a VoIP processing chipset.
+TEXT: Fully customized ASIC for just this particular task. So, yeah, the Vertex 2 Pros probably just maybe joining all those together. I don't know how many channels these things are or whatnot, but yeah, heavy-duty silicon.
+context after: And then we have this Ethernet board. There's nothing but an Ethernet controller on there. So, they obviously had these short form factor cards like this. Whether or not they put those onto a dummy like a an extender board at the back, I don't know.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (explains)
+context before: Now, of course, you can do this uh like with a you know, two multi two logging multimeters, but then you've got to have the software to actually you know, the data logger software to actually do that and accumulate that over time.
+TEXT: This is like it just a nicety that you've got this built into the one bit of kit. And because this is doing integration in hardware, that's what that ASIC, no doubt what that ASIC is for, it's doing that in hardware.
+context after: It at one meg sample per second for the voltage and current. It's doing it in a real time and really fast in the hardware, so it's not going to miss any of those transmit little transmit spikes and stuff like that.
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (explains)
+context before: And that's one of the problems with the Rigol scope and a lot of other scopes on the market. They will do all that math function in, you know, processing in software.
+TEXT: So, it takes actually time when you turn those math functions on. That's why they're slow updating. If we go to our Agilent 3000 series scope here, it does all the math stuff and in direct hardware on the ASIC.
+context after: So, it is much better, much quicker updating. But the problem is this scope only goes down to 1 mV per division, but it really only has a true 2 mV per division.
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (explains)
+context before: So, going to work in US dollars. So, what's changed with the new DHO 800 series? Well, you've seen my previous videos about 9 months ago or so on the DHO uh, which was called HDO at the time.
+TEXT: They've actually renamed the series to DHO. I don't know, legal reasons, probably. The DHO 1000 series and the DHO 4000 series. And these contain Rigol's new ASIC front ends and acquisition ASIC chips in them.
+context after: And I said at the time that they should release a smaller version. That's what they've done, a cheaper version. And they've got it down to like technically $299 US dollars for the two-channel version.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (explains)
+context before: But, as soon as you switch in a second channel, you only get 2 gig samples per second. It drops in half. But, one of the advantages of getting the four-channel version is that because these are segmented, these these two separate channels, it handles them separately.
+TEXT: If you turn on channel three, look, it stays gig samples per second. So, you can actually still run two channels side by side, both at 4 gig samples per second, because it can handle that inside the ASIC.
+context after: But, you switch on the that one, and it just can't do it. So, there's a little trick. And the memory depth is going to halve, too, if you turn on the secondary channel, just like the sample rate.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (explains)
+context before: So, I'm rather rather confused with the 2000 series. I didn't really notice that before, but it really stands out when you look at the 3000 series board. And the input cans down here, the the analog input sections are physically bigger, as you'd expect, because they do have the the active probe input pins on them, so they physically have to have more connections on those.
+TEXT: Um, and of course, the big change is that we've now got four ASICs here, two of the new waveform the new MegaZoom 4 ASIC, which is where all the magic happens, and two of these unknown devices over here.
+context after: Whereas, we've only got one set on the 2000 series board here. So, it's really is a a substantial difference. You're basically getting uh double the amount of grunt, really, which is not surprising considering that the 3000 series model does 1 million 1 million waveforms per second.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: Now, as I mentioned before, you can do the thing with like feeding a constant current through the thing and then using this um to measure uh voltage drops, but the problem with that is when you've got active devices on here um drawing huge amounts of current, you're naturally going to get the drops across here anyway.
+TEXT: So, um you know, you're going to get the drops across the plane. So, here's our input connector, and all these four ASIC devices here are all drawing, you know, large amounts of current.
+context after: So, unless you could uh isolate those, um it's going to be incredibly difficult to find the issue. Like, let's go from this cap here, for example, to this one.
+
+[1383] EEVblog 1383 - Human Battery Energy Harvesting BUSTED — Dave Jones (explains)
+context before: Let's get it to a point where Yeah, round about a volt. Once it gets to about .8, you'll start to see those digits fade a bit. Can operate down at .8.
+TEXT: That's kind of like typical of this sort of um you know, processor ASIC node as they call them at the silicon uh level, you know, .8 and under that, it's going to start to really fade.
+context after: Jeez, it must be getting some light through there. So, there you go. .8 volts, it's it's barely on. It still actually does work and we can actually rescale that.
+
+[565] EEVblog #565 - Tektronix TDS3054 Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, you'll have to be content with just viewing the screen here, unfortunately. But, yeah, it still gives us a very good result here. And you can see the span where we're going from 22° sort of, you know, on the bench.
+TEXT: This is the temperature scale. It's automatically adjusted this up to 96. So, you can see that the hottest objects, which are obviously that main chip, the die inside that main chip.
+context after: There we go, 101. Well, you know, 90. It's basically 100° there on that main ASIC chip. Here comes my finger, there it is. That main ASIC chip down there and you can see that the the 480 C's, one there, one there, one there and there.
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (explains)
+context before: And you know, a bunch of miscellaneous other stuff. They've got the UART and the RS232 driver and the real-time clock. And And interestingly, down here, this is what I like, a simplified block diagram.
+TEXT: And as I mentioned before, IC302 here is the main ASIC, and it runs continuously on the 12.2 MHz ceramic resonator there, and everything hooks into it. I mean, here's IC301 up here.
+context after: Here's the CPU, but it's hardly, you know, according to this block diagram, it's hardly doing anything at all. And And everything runs off that. So, you've got the the LCD controller is built in there.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (explains)
+context before: If you've got nothing turned on, it's a pretty fast scope, the MDO 3000, but um at the same 10 nanosecond per division time base, of course, you get over a million waveform updates per second, but you turn on the digital channels, for example, on the MDO 3000, it just dies, that update rate.
+TEXT: It's terrible. If you turn FFT or anything else on the serial decoding, everything else, it's because they don't have the ASIC hardware to do it on the Tektronix MDO 3000.
+context after: So, this is a really rip-snorting fast scope. Unfortunately, there's no new ASIC in here, but it's amazing how it's held up, this MegaZoom 4 ASIC over this time period.
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (explains)
+context before: Uh, go figure. Is it a HP ASIC or is it, uh, just some rebranded, uh, regular, uh, you know, processor? Wouldn't be an arm, of course, but some other, you know, 32-bit processor or something just re-badged, most likely.
+TEXT: Well, Googling that one, all I get for the UPD 67823 is that it is an NEC part now, Renesas, of course, uh, and that it's an ASIC. Hmm. Bingo, there it is.
+context after: NEC Gator 8.44 micron technology, 3.3 V big ass 672-pin BGA, ultra high performance submicron gate target of applications kind high speed, low power dissipation, blah blah blah, reasonable price, blah blah blah.
+
+[970] EEVblog #970 - Mailbag — Dave Jones (opinion)
+context before: please let us know how something like this would perform in extremely low temperatures compared to say you know traditional ceramic NPO caps and stuff like that let us know cuz there's a there's definitely a reason why they've implemented it like this and you know I shot like it's not in 81 it's not recent but still there'd be a particular electrical reason why it was implemented like that but there's not much in it
+TEXT: that's basically all it is is just an RF transistor oscillator that transmits but absolutely fascinating physical implementation I love it and what that chip there chip there is doing it's obviously like they're obviously modulated it might be a custom ASIC modulating the temperature or whatever they're actually what this particular probes actually measuring I believe it that's normally temperature barometric pressure stuff like that that they're actually measuring so maybe two
+context after: parameters with the one sensor or maybe it's combined I'm not exactly sure what's going on there, but anyway. No, looks like no, they've just got the two two wires going out to that with the shielded back in on it.
+
+[1727] EEVblog 1727 - REPAIR: Casio CT-X700 Keyboard — Dave Jones (opinion)
+context before: It could be dead. I call them diodes. I used to call them diodes when I was a kid cuz I didn't know how you pronounce diode. It's only later did I I never heard anyone use the word diode when I was a kid.
+TEXT: So, I call them diodes. So, anyway, still call them diodes now. Just to, you know, confuse people. All right, let's see if this works. Um there's there's a good chance that this will work cuz, you know, I can't remember the teardown of this exactly, but it's, you know, one big ASIC chip or whatever and there's like there's not much else.
+context after: It wouldn't even use a probably wouldn't even use a DC-to-DC converter in there. And if it did, the batteries are probably just powering via a linear regulator, just just powering the rest of it.
+
+[752] EEVblog #752 - Original Sony Walkman TPS-L2 Teardown — Dave Jones (opinion)
+context before: just because, well, they couldn't fit them into these single-in-line arrays, I guess, or they were, you know, just better served by having discrete transistors there. We've got some tantalums here, oh, these tag, these dipped tag tantalums. Blah, blah, blah. They send a shiver up the spine, they really do.
+TEXT: Anyone who's used to old boards like this knows all about tag tantalums. Wonderfully reliable. And, yeah, there we go. Of course, Sony rolled all their own, well, ASIC. It's a transistor array, I'm sure. Good luck getting data on that. You could win the internet if you actually find a data sheet for one of these puppies.
+context after: Good luck. Hmm. And it looks like I win the internet, folks, because here is the service manual for the TPS-L2. Can you believe it? Fantastic. This is from freeservicemanuals.info. I'll provide a link in down below for those playing along at home. And, oh, they don't make service manuals like this anymore.
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (opinion)
+context before: And you can specify the DC offset as well. Let's go into the settings. The output load impedance can be high impedance or 50 ohms, which is important to have, of course. And you've got trigger outputs that you can set up, so that the BNC connector on the back of the scope here can generate a trigger signal that's synchronized
+TEXT: to your function generator output. It's quite nice. And if you're astute, you would have noticed that there's one thing missing from the selection of waveforms, and that's an arbitrary mode. Now, I reckon that the ASIC is very capable of actually doing arbitrary waveforms, and it makes sense
+context after: to have. Why they didn't do this, I'll get into. But to be able to, say, capture the input with the analog signal, store it as an arbitrary waveform, and then output on the function generator, that would have been phenomenal capability, phenomenally powerful, and is the reason behind why you can buy
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (opinion)
+context before: Curiously, there's not a heatsink block for this one though. There's that chipset for those playing along at home, and the other one over here, don't know what that one is either. There we go, Samsung branded, so that's probably, you know, Samsung, ah, huge!
+TEXT: So yeah, they've rolled their own ASICs for this, most likely. And just like the other digital board, I don't see much that can go wrong on here, but there could be, because we're getting like column fires and other like graphical fires. So, you know, what I'm going to do is I'm going to
+context after: reseat these flat flex connectors down here, just going to, yeah, un-prize them, just check them out and, you know, reseat them. Unlikely to be a bad contact, but you never know. You know, there could be like a BGA failure under this, a heat,
+
+[695] EEVblog #695 - Mailbag Tektronix 2465 Analog Oscilloscopes — Dave Jones (opinion)
+context before: and there's some mod wires, you know, running up there, that's hard to see. You know, a couple of little mod wires running around the place. So naturally they've fixed a few of those things on the newer model. But generally, yeah, they've taken the same layout and they've just run with it.
+TEXT: Now I'll post some high-res photos of these on my website, evblog.com, but look, like the ASICs are all exactly the same, and what looks like exactly the same part number, they haven't updated the ASICs. So if you're really needed, you know, to salvage a part from one to the other,
+context after: you could probably do it between these two models, at least on a good lot of the analog section. And just small advances in manufacturing technology, for example, look, these are, all these front panel pots, they're all just, you know, like a free-wired heat shrunk,
+
+[864] EEVblog #864 - Siglent SDS2000X Series Oscilloscope Teardown — Dave Jones (opinion)
+context before: as efficient as if you put them in at the bottom, the air comes through the bottom there. Nice. And we've got ourselves a little x-ray sticker here, what that's for is that it indicates that they've actually x-rayed this after the board's been assembled, so they're x-raying for the
+TEXT: BGA parts to make sure that they're all hunky-dory, all the balls on there are soldered, so nice, somebody's done the checking. And just in case you weren't convinced that these three are FPGAs and Siglund have levelled up and they're designing their own ASICs now, well
+context after: look, dead giveaway, FPGA, there's our JTAG header, and they've only got the one here, so that'd be daisy-chaining all three, which is very common. So what have they got under there? I don't know. Xilinx or Altera? Who knows? I could, eh, I'm not
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (opinion)
+context before: Anyway, I won't be doing that in this video. But we've obviously got some sort of a USB interface chip here. And then we've got our sample memory up here.
+TEXT: That'd be SRAM, of course, none of that DRAM rubbish. Actually, this is very interesting. Look at the Presume that's the day code, 29th week '09. Um is it an ASIC which they developed a long time ago or maybe like a custom gate array or something like that, perhaps?
+context after: Um maybe they have gone to that effort, so that wouldn't be easy to clone, really. So, let's have a look here. We've got a LVT 16 245. So, yep, that's our input logic buffer.
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (opinion)
+context before: Yep, yep, 15 volts. Okay, so that must be a step-up converter I would presume. I finally found a logic level one. There we go. Down here, 1.8 volts with, you know, bugger all ripple of course. That's 1.8 volt core voltage for this main
+TEXT: processor, no doubt. Another logic level, 1.8 volts over here again. Once again there's no ripple, everything's fine, that'd be another core supply for one of the main ASICs under here. And there's a lot of people who might say, I'll replace these SsangYong caps
+context after: and things like that. But no, I don't need to do that, because I'm not measuring any ripple, the rails seem fine, everything I'm measuring seems fine. And like I said, these are all digital, like low-level digital stuff. Dry joint BGA under one of these, perhaps
+
+[964] EEVblog #964 - Mailbag — Dave Jones (opinion)
+context before: Get that, uh, compliance on its own, just for that board and then everything else on there. If you wanted to make changes for this, it wouldn't matter. And that's going to do power over Ethernet and all the rest of it, because there's your DC jack there
+TEXT: and it comes with a 48 volt plug pack. Um, Cisco have their own processor. ASIC, well, probably it might just be a rebadged off-the-shelf big um, huge BGA. Maybe it's, uh, they wouldn't be doing, would they be doing FPGA? I don't know. Not at this, although
+context after: they are real expensive gear. I was going to say not at this price point, but they are quite expensive. But, uh, yeah, not a huge amount. Inside this thing, check out the PCB. They've got the classic, uh, lens on here just to, like, leave
+
+[1146] EEVblog #1146 - New Rigol MSO5000 Oscilloscope — Dave Jones (opinion)
+context before: And this is, you know, it's a quite impressive scope. Unfortunately, it comes at an equally impressive price. And for what I'm hearing, it's not exactly a big seller because it's it's trying to compete at the real sort of middle into high end of the market.
+TEXT: And it's, you know, bang for buck doesn't seem to match it. And I was saying in the video, well, this is their first scope which uses the new Phoenix chipset, you know, they're probably getting back their years worth of NRE on these new ASIC chipsets.
+context after: They've been working on them for a long time. As impressive as it was, it just wasn't that polished yet. And I said, well, look, I'd love to see this in a lower priced scope.
+
+[383] EEVBlog #383 - Agilent 4000X Oscilloscope Review — Dave Jones (opinion)
+context before: Agilent 4000x series scope? Well, of course it's very nice, it's very sexy, and yeah, of course it gets a thumbs up, but I don't know, I just can't help feeling pretty underwhelmed with it. I expected more, really. I thought, I almost hate to say it, but I think the
+TEXT: useability for ASIC in this thing is almost cramping its style, it's almost limiting this thing. I mean it was great in the 3000x series, but then, well, yeah, the 4000x has got some nice stuff, I mean the screen is really nice, okay? But it should be
+context after: higher res for the extra money, and the size of it quite frankly, it's a little bit too small. Yes, the touchscreen stuff, fantastic, they've got that right. The usability, yeah, there's other touchscreen on the market, but this one works really well, I like it.
+
+[1146] EEVblog #1146 - New Rigol MSO5000 Oscilloscope — Dave Jones (opinion)
+context before: Hi, I've got a world exclusive for you. Check this one out. Well, it's not actually this one. This is the Rigol MSO 7000 series scope which I've done a extensive teardown of and a like first impressions unboxing review on the second channel as well.
+TEXT: I'll link that in if you haven't seen it. And this was released in June, I think it was, and it uses Rigol's new ASIC technology. They're one of the big players now with their new Phoenix chipset and their own front-end chipset which they rolled.
+context after: And this is, you know, it's a quite impressive scope. Unfortunately, it comes at an equally impressive price. And for what I'm hearing, it's not exactly a big seller because it's it's trying to compete at the real sort of middle into high end of the market.
+
+[496] EEVblog #496 - What Is An FPGA? — Dave Jones (opinion)
+context before: Hi. Welcome to Fundamentals Friday. Today we're going to take a look at the FPGA or Field Programmable Gate Array. That's what it stands for. What is an FPGA? Well, an FPGA is a programmable device, a programmable chip, which is pretty much the closest thing you can get to actually designing your own chip completely from scratch.
+TEXT: Just like an ASIC you may have heard of or something like that. That's what an FPGA allows you to do. It allows you to design and implement any virtually any digital function you can possibly imagine all within the one universal chip.
+context after: They're pretty darn flexible. Now, the big difference between an FPGA and virtually every other chip you can buy on the market is that the FPGA doesn't do anything. It has no intended function when you actually buy it.
+
+[593] EEVblog #593 - HP35670A DSA Repair Part 4 - Thermal Testing — Dave Jones (opinion)
+context before: The op amps are as per their data sheet values for the quiescent current. The Raytheon uh chip down in there, I'd expect that to get a little bit warm and uh yeah, it is a bit toasty.
+TEXT: I'm still using my finger even though I've got a Flir camera in front of me, crazy. And the ASIC gets as warm as you'd expect, 55° and that sort of stuff, but apart from that, nothing really scorching hot or out of the ordinary.
+context after: So well yep Great tool, but didn't find anything in this case. Bummer. And I've had a probe around with the scope on all the various test points, cuz there are lots of nice test points in here even though I don't know what a lot of them do, but I'm getting, you know, the activity I expect, a clock line, you get clock line, you get clock data.
+
+[969] EEVblog #969 - Vintage $80k NLE Video Editor Teardown — Dave Jones (opinion)
+context before: Hmm, anyway, all the rest of it is going to be doing motion JPEG. Aha, hello. The next one down. Ah, this one is a TMS340 DSP with all the memory.
+TEXT: Check it out. So, is that the main uh controller card cuz I'm going to assume that the motion JPEG compression is done in these big ass ASICs here from NEC, and the uh 340 DSP does the video effects and all that sort of stuff.
+context after: That'd be my guess. Then we've got ourselves a fully shielded uh double height board here. Check this out. This is the uh this is the video board. There you go.
+
+[1027] EEVblog #1027 -  Implantable NeuroStimulator Teardown — Dave Jones (opinion)
+context before: I mean, the new generations are probably thinner and smaller, but you know, they they've made no real effort to shrink that down apart from the ASIC, of course, which probably does, you know, a fair bit.
+TEXT: But, you know, it's a probably a fairly complex ASIC. But, yeah, I mean, this is basically just made some large-scale parts on here. Made no effort effort to get it down, especially with the connector and everything like that.
+context after: So, you know, these would be pretty bulky inside you. But, like I said, this is early '90s tech, I believe. It would have That's when Well, that's when the data sheet, the manual for this thing.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (opinion)
+context before: So, I can and because they're almost essentially a uniform temperature, the only logical conclusion on this one, folks, as much as I hate to say it, I think it's unrepairable.
+TEXT: Four identically dead ASICs. That one slightly more dead than the rest. I might have some more fun with it maybe. I don't know. Maybe suck out this second device and see if it makes a huge amount of difference, but no.
+context after: Think we're going to lose it, folks. Bummer. Anyway, if you want to discuss it, jump on over to the EV blog forum. Catch you next time.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (opinion)
+context before: But as you can see, it's phenomenal and it's entirely different to your traditional scope design where the centerpiece is a CPU. But that becomes a real bottleneck and you can avoid that with a custom ASIC like Agilent have done here in the new Mega Zoom 4.
+TEXT: It's great. I love it. And that's how they can It probably took them years to develop this ASIC, but once you do, once all the hard work's done, then you can bring this capability down into your low-end scopes.
+context after: You can amortize the cost down into the low end. And it just you know, allows all this phenomenal update rate capability in low-end scopes. Whereas traditionally if I had to pay 10, 20,000 dollars to get a million waveform updates per second, which is what this ASIC is capable of, 1 million waveforms per second directly onto the LCD display.
+
+[1027] EEVblog #1027 -  Implantable NeuroStimulator Teardown — Dave Jones (opinion)
+context before: It is a long development cycle. Uh cuz, you know, implantable devices have to be ridiculously certified. So, they certainly weren't trying to make this thing as small as possible.
+TEXT: I mean, the new generations are probably thinner and smaller, but you know, they they've made no real effort to shrink that down apart from the ASIC, of course, which probably does, you know, a fair bit.
+context after: But, you know, it's a probably a fairly complex ASIC. But, yeah, I mean, this is basically just made some large-scale parts on here. Made no effort effort to get it down, especially with the connector and everything like that.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (opinion)
+context before: Obviously, it's supposed to be an order of magnitude greater than that. We know it's not supposed to take 11 amps. We know it's only supposed to take six tops.
+TEXT: So, all that extra power is going somewhere and we've used a $12,000 IR thermal camera going all over this thing and cannot find a hot spot at all. All the power is being dissipated in these four ASICs.
+context after: So, I can and because they're almost essentially a uniform temperature, the only logical conclusion on this one, folks, as much as I hate to say it, I think it's unrepairable.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (opinion)
+context before: So, I guess you'd have to RTFM. Read the freaking manual for that one. Aha, there you go. It does actually hook into the this side of it. Is that like a dedicated interface for something like that?
+TEXT: But, obviously there was a customer need for pulse width pulse width trigger module. They couldn't do it in their ASIC or whatever it was. So, they had to develop a little external doohickey to do it.
+context after: But, anyway, that's not a USB logic analyzer. This is a USB logic analyzer. As I said, I believe it starts at three grand, but we have the This is the F standard series.
+
+[None] Fluke 1AC Voltage Detection Stick Repair — Dave Jones (opinion)
+context before: Anyway, No, it's it's good though. It's intact. No worries. Anyway, got a couple of transistors, and we've got one custom um micro here. That'll be a custom pre-programmed micro.
+TEXT: It wouldn't be a custom ASIC, would it? I don't know. Fluke might have done a custom ASIC um for this thing. But there you go. There's a 10 meg resistor there, and that's about all she wrote.
+context after: There ain't much in it at all, and yeah, those contacts are uh terrible, so but uh they're in parallel, so, you know, it doesn't matter which side of the button you push either of those contacts.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (opinion)
+context before: No. Zip. So, that's obviously just staying low. It's not doing anything. Aw. But no, that's just a uh it's a furphy. And uh no. So, we're getting no data um out of the processor going to the LCD.
+TEXT: So, it's not like the LCD has failed. Uh we're just getting no data on those pins. That processor is not booting up. This is not looking good. Has our custom uh ASIC/processor failed?
+context after: Well, power supply's okay, the clock's okay. I got no data on it. What's left? So, really that is not looking promising, I'm afraid, because well, yeah, you've gone through the basics.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (opinion)
+context before: And of course that second one, which we'll call the second one down there, does look hotter than all the others, but there are no There's like nothing. I can't I can't see anything.
+TEXT: There's no other components that actually show any hot spots at all. So, this is not looking good, folks. Let me tell you it is looking like it is something to do with those ASICs.
+context after: Now, if you pan around the rest of the board Now, here's an interesting thing. You might see a hot spot on these on these BNC connectors here. And you might think they're actually hotter than other, you know, than other parts of the board, but that's not That's just heat reflection.
+
+[1145] EEVBlog #1145 - Dumpster Diving 4K TV! — Dave Jones (opinion)
+context before: So, that's a 12-to-1.1 V converter. 1.1 sounds like one of those like really low-level like FPGA, you know, really advanced logic rails. So, I think that's fine. And I've checked all these other ones.
+TEXT: This is 1.2 V, 1.2, 3.3, and 1.2 again up here. And that makes sense like 1.2 for like a high like a really modern high-density uh logic, you know, custom ASIC device up there.
+context after: There's only, you know, the one 3.3 here. Everything else would maybe be some sort of, you know, local LDO type stuff, things like that. Test pads haven't really found any yet in terms of that, but all the, you know, all the local regulation looks okay.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (opinion)
+context before: I think that's what's happening here. So, this processor will maybe encode some uh audio um you know, some sort of data over that audio pair. How it's actually doing that, I don't know cuz there's not a lot of miscellaneous circuitry there.
+TEXT: I mean, you know, there's our resonator for the uh processor and that's about it unless that actually is like a custom uh you know, ASIC, which is which is doing all that.
+context after: Um it may not just be an off-the-shelf processor. That's kind of like the only conclusion I can really come to at this point, I think. We've got ourselves some optocouplers there by the looks of it, but yeah, there's not much in there.
+
+[1625] EEVblog 1625 - Electronex: Scope Wars: The Rise of Uni-T — Dave Jones (opinion)
+context before: But, you said that this is a 3 gig one. Yeah, so there's a 1.5 gig range, the 1000 series, the 3000 series goes up to 3.6. Um and there's now a another series that's coming up to 26 gig.
+TEXT: 26 gig. following that sort of importation. They're doing some of their own uh ASICs and their new scope as an example, the the 7000 series. They're using their own chips.
+context after: Um so, that's going to go up to 6 gigs. Um so, they're they're really putting a lot of a lot of money and effort into R&D. That's and I just got the new um the $5000 four-channel uh The UTG 9000, yeah.
+
+[330] EEVblog #330 - Medela Swing Teardown & Repair — Dave Jones (opinion)
+context before: But considering that uh absolutely nothing happens to this thing um when we attempt to turn it on, it's likely that uh something has gone wrong there. And there's no obvious signs of uh failure anywhere else.
+TEXT: But look at that. Medela. They've got their own branded chip there. And of course they wouldn't have designed, you know, it's not going to be an ASIC. I greatly doubt it.
+context after: It's just going to be an off-the-shelf micro controller, I would presume, which they've uh you know, they ordered so many of them, they just got them custom branded direct from the manufacturer.
+
+[None] Mini Arcade Game Console Repair OOPSIE! — Dave Jones (opinion)
+context before: Like, it could just be like a a big memory, big flash memory arm uh processor or something like that. May not be one of the mainstreams ones. Maybe one of those uh uh obscure uh Chinese brands or something.
+TEXT: And then they just get it in die form and blob the whole lot. So, not necessarily an ASIC under there. You can't make that call unless you actually know what's going on.
+context after: But, anyway, uh I think the fault's almost certainly in our tab connection there. Groan. Seen that in many videos before. All right, let's see what happens to that screen if I push down on the connections.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (opinion)
+context before: So, no doubt they'll have those, and well, they've got to to compete these days. The market is pretty tight. They don't have it all to themselves these days. And the only really thing that's uh that is a limitation on this thing is still the 4 meg memory, and they know it.
+TEXT: Bet your bottom dollar they know it, and they're probably working on a new ASIC. But, that's you still get leading uh performance in terms of just hardware update rate.
+context after: This scope still cannot be beat even 4 years later. Nobody can touch it, and it's just as good. And that's the price you pay. So, overall, while it's a quite nice upgrade, it's pretty underwhelming, I must say.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (opinion)
+context before: So, it it's very cool. And it can do a lot more stuff, of course, you know, as I said like you can do harmonic analysis and stuff like that, but um yeah, and and of course, we can use the other stuff, right?
+TEXT: We can go back into the data here live, and it's still integrating in the background. And that's that probably doing it inside that ASIC and the arm processor there.
+context after: It's it's just doing that integration um with inside that, so you can operate the menus and do everything else while you're actually doing uh the long-term integration uh measurement, which is really cool.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (opinion)
+context before: We've got just the bottom side of it, but whoa, beautiful. I was going to say, are these metal cans on the other side of here? It's like there I've never I haven't seen like silk screen like that on the bottom without it being associated with like a metal can on the top.
+TEXT: But obviously, this is probably the main um you know, the main ASIC that's uh that's doing all the uh magic inside this thing. Got a diecast alloy. Look at that.
+context after: Diecast alloy block. Oh, beautiful. Oh, Oh, look at those power connections. Seriously? That's pornographic. Demonetized. Well, yep, that has well and truly set the benchmark for a oscilloscope power connections.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (opinion)
+context before: I like the look of that. Um they've got a nice little light pipes here to get from the LEDs up, uh which are up here, and guide the light up to the center of that.
+TEXT: Oops, the switch fell out. And as you can see, they've got a Zero Plus branded chip in here. Now, I doubt this is going to be a custom ASIC, but you never know.
+context after: But they've obviously had it had it branded to their own chip. So, what that one is, you know, we're not going to Well, could we use the logic analyzer itself to probe its own clacker and figure out what that chip is?
+
+[None] Mini Arcade Game Console Repair OOPSIE! — Dave Jones (opinion)
+context before: That's happening in real life. Oh, yeah. Oh, yeah, I can see things just. Yeah, it's one sick puppy. So, I would take it apart, have a squeeze. It's probably just a single chip solution in it.
+TEXT: I'm sure wouldn't would it be an ASIC? I mean, you know, they've got to get the price down on these things. They They They practically give these things away.
+context after: They're really dirt cheap. So, yeah, I don't know or is it just a an arm processor and LCD and maybe an external ROM or something for the games. Perhaps, I don't know.
+
+[738] EEVblog #738 - Yamaha DME32 Digital Mixer Teardown — Dave Jones (opinion)
+context before: This is not ancient. This is not like 80s or 90s or even 90s stuff. This is, I believe, like early 2000s or or something like that. So, uh it should be reasonably modern.
+TEXT: Uh possibly lots of ASIC um stuff like we saw in the uh uh the Sony video mixer uh for example. So, you know, Yamaha, a uh pretty big company.
+context after: they might uh they might roll their own chips cuz they did back in the day. Um and you know it wouldn't surprise me that they still do that sort of thing.
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (mention)
+context before: I'm not sure what's going on there. And there's our tracking generator output there. There's the big N connector. We've got a multi-stage LC filter there. As you can see, there's no uh PCB magic filtering happening there.
+TEXT: And we've got yet another lasered off chip there. They really don't want you to know what ones they're using in there. They're They're almost certainly uh commercial chips. It's not like these are custom ASICs or something, but they're just stopping people reverse engineering this and it's probably not hard if you spent, you know, a few hours at it to uh find out what the device is based on the uh block diagram of A, what
+context after: it should be, and B, you know, the uh package type and the number of pins. You can um you know, narrow it down in uh not much time at all.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (mention)
+context before: They're they're probably stored as part of the CPU up here and the CPU down dumps the data for the test signals into the waveform synthesis engine. Now, as you can see, they've got masking capability as well built in.
+TEXT: Another traditional function that the CPU actually takes care of. So, in your traditional scope, you would have your AD converter here and you might have a big FPGA or a custom ASIC like this doing various stuff, but then it would usually funnel the data or there'd be like a dual port memory and funnel it into external memory and then the CPU would access the memory and then update the display and
+context after: then your CPU becomes the bottleneck. And that's the real problem. So, that's what they get around with with this new custom ASIC because everything's done on here through the display plotter directly coupled onto the LCD display, the CPU is really relegated to just like a secondary function.
+
+[1314] EEVblog #1314 - Ultrasound Machine Teardown! — Dave Jones (mention)
+context before: So, yeah, I'll leave that for another time. So, there you go. I hope you enjoyed that as much as I did. Sorry about the length, but I do like to waffle on about these things.
+TEXT: And, uh, yeah, you can see the amount of engineering effort that's gone into an ultrasound like this. All the beam forming technology and all the stuff that goes along with doing that with all, uh, you know, I'm not going to say like it's not all discrete hardware, but you saw those boards was tons of discrete, uh, logic plus tons of ASICs to do anything, co-processors galore.
+context after: I mean, how many like Intel processors were inside this thing? Like, I don't know, like eight? I think it's just, you know, absolutely crazy the complexity of this thing with front and back boards in the back of the system.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: Very impressive once again, this is actually generating real hardware signals down here that you can manually play around with and probe yourself. So it's incredibly impressive what it's able to do on this base level scope.
+TEXT: So yeah, it doesn't have a real in quote marks spectrum analyzer in the thing. It's still using the you know, the basic ADC and doing the math and doing it all in hardware of course in the ASIC, but it it is still very very impressive capability how it can do time correlation between all your mixed signal stuff while doing hardware serial decoding and everything else.
+context after: Yeah, thoroughly impressive and we can also have a look at some of the intelligent cursor features and in this case we've got a clock signal, but it's got some noise superimposed in that.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (mention)
+context before: Uh, it's right over here. So, maybe our input comes in here and we've got some switch in here and it goes there and then over to here and these are a differential driver for the ADC perhaps.
+TEXT: Relatively compared to these days primitive solution here. Um, you know, nowadays like the big manufacturers all have their ASIC front ends and stuff like that, right? So, you get your 800 MHz nice flat beautiful schmick analog front end in like single chip almost these days, you know, cuz the the biggies are now rolling their own analog front ends and stuff.
+context after: So, yeah, anyway, I'm not going to reverse engineer that any further. I'll put some high res photos, of course, as I always do over on eevblog.com. Nah, it's just not quite an unusual front end.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: So, I thought we'd start again because we got to the point in the previous video where we found that the we we had a you know, a 0.1 or thereabouts short across the 3.3 volt rail on here and we tried to track that down and I explained how the usual culprits are the either the bypass caps or you know, one of the semiconductors or something like that.
+TEXT: But of course, I sucked off what I believe were all of the bypass capacitors on the 3.3 volt rail and the short was still there. And then I did some quick thermal temperature measurements of the only four devices which seem left on the 3.3 volt rail, which are these ASICs here because I don't have the memory modules plugged in and they were all at at the same
+context after: temperature pretty much. So, one of them didn't really stand out, you know, that was hotter than the others and I couldn't find any other place on the board just you know, using my hand just a quick look.
+
+[None] More uBeam Ultrasonic Wireless Charging LOL's! — Dave Jones (mention)
+context before: In various areas of design and physics. Potentially including, but not limited to, impedance-matching and phased-array circuit design. So, you've got to teach all the other employees about RF and impedance-matched phased-array circuit design. Because, well, you know, they've obviously got no one there who knows anything about it.
+TEXT: Mixed analog and mixed signal ASIC development. They're not asking for much vision and beamforming hardware and software development. ME fixture and product design setup test benches. Conceive and create new circuits for electromechanical transducers. Their whole company is based around the transducer. Like, okay, maybe you have to keep refining them.
+context after: But, like, conceive and create new circuits? They don't have the transceivers down pat yet? Unbelievable. Coordinate close feedback between experiment and simulation. They're still doing experiments and simulation. Because they know we need production. Coordinate with hardware and software director. Stay ahead of competitive postgraduate.
+
+[None] Dumpster Diving 50 inch LG LCD TV — Dave Jones (mention)
+context before: So that's a bit of a letdown, but, uh, it's always, yeah, it's all inside, the polycarbonate on the outside is, uh, doing just fine, but these are good from just a work-of-art point of view. Eh, so much for that one. I might just dump this on the, uh, second channel.
+TEXT: It's not really main channel worthy, unfortunately. And, by the way, yes, I could actually tear it down and, but, eh, we've seen some LCD TVs before, they're pretty boring. There's a power supply in there, there's one tiny little bulb with a huge, uh, ASIC on it, and, you know, eh, not much else, really, so, yeah, not worth the effort, I'm afraid.
+context after: And there's not really any salvageable parts inside these things, you know, I, I, maybe there is, but, you know, from the power supply and things like that, but, meh.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (mention)
+context before: There it is. Beep. beep, beep, beep, beep, beep, beep. And when I change the voltage as well. Yeah, but it doesn't do it for other buttons. So, it's not like a button press.
+TEXT: If I do the sideways buttons, it doesn't do anything. So, it's only when changing the voltage and current ranges up and down. So, yeah, my guess would be that that processor there is doing the real-time voltage and current measurements, but that's no surprise considering that the ASIC would be doing that and that processor there's handling.
+context after: And this processor over here is, like I said, doing something else. And as for the sizing of this large heat sink for that 10 mli current shunt resistor there, at the maximum 20 amps here, we're only talking 4 W.
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (mention)
+context before: None of that E-res stuff. This is a true 12-bit ADC front end in this. If you've seen my teardown video, link down below, um you'll see that it actually uses the same front end as both of these.
+TEXT: It's actually capable of really high bandwidth, uses the same ASIC chip. And you get 1024 by 600 resolution screen, greater resolution, 7-in, but it's capacitive touchscreen now. So, not only do you get 12-bit ADC, but you get a touchscreen capacitive high resolution or higher resolution screen in now a really compact killer form factor.
+context after: Look at this. And it's got a VESA mount as well. So, VESA mount is standard. I said when the Tektronix released their two-series scope, which was fantastic, it was the first to have the VESA mount.
+
+[803] EEVblog #803 - HP1740A Analog Oscilloscope — Dave Jones (mention)
+context before: This would be our main horizontal time base board or horizontal time base selection. The the main horizontal um oscillator could be down on the main board there, but yeah.
+TEXT: Nice. Check out the heat sinks on some of the metal can packages there. Old school. And there's our CRT, shielded, of course, and no touchy. Now, interestingly, if we have a look at our main block diagram here, and here's this like like ASIC chip I was talking about before for the differential preamplifier front end and driver.
+context after: Um they call it a preamplifier substrate. So, that to me implies some sort of maybe ceramic hybrid module or something like that. And I love the switch maintenance here.
+
+[None] EEVacademy | Digital Design Series Part 5 - Karnaugh Maps — Dave Jones (mention)
+context before: But you might have noticed, the keen eye here might have noticed, Dave, look, you didn't need this extra inverter in here, you could have actually connected that directly up to there. And if you spotted that, bonus internet points. But these sort of circuit simplifications here are the entire point of doing Kano maps and also algebraic logic like this and algebraic simplification as well.
+TEXT: And this, you might think, oh, who designs with discrete logic chips anymore? No one, right? Well, no, you do. Because you don't want to be working inside FPGAs and inside ASIC chips and inside processors and things like that. You don't want to be implementing this many gates if you can get away with just this.
+context after: Because not only do you have the extra gates and the extra silicon, you also have the extra propagation delay time to get every stage of gates you go through, increases your propagation delay, that slows down the maximum frequency of your chip, like your latest Intel processor or whatever it is.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (mention)
+context before: Oh, beautiful. Just got more RFI sponge here. Oh, they love this stuff. Then again, that's not uh surprising considering Rohde & Schwarz are basically, you know, one of the, if not the, RF uh company and that's why this thing has the best and fastest spectrum analyzer built into any scope.
+TEXT: So, yeah, they just know their stuff in the RF domain. And there's the bottom side load of our dual arb waveform gen. So, not much doing there. Just uh maybe regulation and other miscellaneous stuff, but yeah, all the interesting stuff's on the top side, but that'll just be like a an uh FPGA or an ASIC.
+context after: Best probe interface solution ever. I deem that. Anything on the bottom? Got a few itty-bitty parts on the bottom there. Wow, can't even see them. Look at it. Look at it.
+
+[695] EEVblog #695 - Mailbag Tektronix 2465 Analog Oscilloscopes — Dave Jones (mention)
+context before: But on the analog side of things, hey, why would you change it? Yeah, they've upped it from 300 to 400 megahertz, but that's basically only going to be the front-end stuff here. So these cans would, you know, there'd be a bit better performance in there.
+TEXT: But apart from that, basically almost identical boards. Not quite. They have actually re-laid out, you know, they've added a couple of things, which I'll show you in a minute. But look, all the ASICs are all still exactly the same. You know, 95% of the parts, I'd say, are all in all the exact location,
+context after: like the individual resistors, things like that. Everything is pretty darn close to identical. You know, small differences like an adjustment pot here. There's none here. So apart from that, really haven't laid out a huge amount, much difference. Now there's an interesting change near the output gating connectors here.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (mention)
+context before: But, of course, if we stop that, it's only in the visible window. So, why do Siglent and other scope manufacturers do this uh and Keysight do it differently? Well, uh your guess is as good as mine, really.
+TEXT: They just implemented their architecture differently, I guess. This hasn't got an ASIC uh in it. It's got FPGA. There's no reason why they couldn't even like change this in firmware or update the FPGA hardware or or something like that cuz FPGAs are reconfigurable or field programmable gate array.
+context after: There's no reason why they couldn't change it to actually um do the same thing cuz you've got 200 meg of memory depth. Surely you can get in the fast updating.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: halve to 30 points per channel, 30 samples per channel. Yeah, you don't get much, that's how you get the fast updating. And then, of course, if we go down to the fourth channel, it's still going to remain the same. So if you've got three or more channels, and by the way, yes,
+TEXT: that is any combination of channels. Channel 1 and channel 4, for example, you can't get away with it. Unlike, say, the Agilent scopes, which have two megazoom for ASICs, one per dual channel. So in this case, no, it's the 180c spread across all four channels, so regardless of the combination
+context after: you have on, you can't beat it. It's just, you know, it's a limitation of the hardware, that's why it's built down to a price, and you really can't complain. At $399, you kidding me? You're getting a four channel bloody scope! You know, so anyone who complains about
+
+[None] eevBLAB #58 - Engineers Are Underappreciated — Dave Jones (mention)
+context before: Something that nobody gives a shit about, but it enables, you know, your phone calls to be made and whatnot, right? Look at the complexity of this board. How many engineers, how many nameless engineers worked on this, right? How many nameless, like, like the person who did this PCB layout, right?
+TEXT: Fantastic, right? Right. The people who worked on designing all these custom ASIC chips, right? The VHD, the Verilog engineers that worked on all the system architects that worked on these. The, you know, somebody, the people that, you know, they look like one of those TI modules, right?
+context after: The people, engineers at TI who made those, the people who made those chips, these chips, these chips, these chips, hundreds of chips, right? This one board is got to be the result. Of many thousands of engineers' work, yet this is a nothing product that they made in low volume, like, by nothing.
+
+[None] eevBLAB #58 - Engineers Are Underappreciated — Dave Jones (mention)
+context before: This is nuts. This is absolutely nuts that, you know, the amount of complexity. Thousands upon thousands of engineers worked on. You know, worked in unison, unknowingly worked in unison to get just this one board. Even something simple, like the tech that goes into this calculator, for example.
+TEXT: Like, you know, it's just nuts. So, yes, underappreciated. See, that's the thing. Like, imagine, you know, working at a company, working on that. You can spend years. An engineer probably spent years developing the, you know, the VHDL and develop these custom. ASICs and stuff like that.
+context after: Spent years of their career just working on that one bit of silicon, that one chip, that one bit of code, right? Just for this application. Unbelievable.
+
+[144] EEVblog #144 - Agilent 2000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (mention)
+context before: They're in their cans of course. Unfortunately they're soldered onto there so we're not going to be able to take those off. So let's look at some of the parts in a bit more detail. Let's have a look at what we've got here. We've got the four cans.
+TEXT: These are the four channel converters obviously and they're actually soldered. Those cans are soldered on there so they would actually require quite a lot of butchering to actually get those off. Now these are clearly the two ASICs. I was expecting one big ASIC which handles everything.
+context after: That's what I was led to believe especially when you power on the scope and there's a picture of the one big wonderful ASIC which does everything. It's clearly got two. Now as you can see the traces coming from these controlled impedance serial lines here coming
+
+[1032] EEVblog #1032 Part 5 - John Kenny Keysight Interview — Dave Jones (mention)
+context before: No. No. No. Okay. No. So, I'm a technology manager. I one of the things I do is I work with teams to create common building blocks they could choose between all the projects.
+TEXT: Okay. Got it. And I'm often brought in to help them go over a particular difficult technical challenge. So, for example, on the high-end function generator, they had some horrendous problems with the switching power supplies to power up all the high-power ASICs creating spurs Yeah.
+context after: Yeah. into the output of the function cuz at 120 MHz Oh, yeah. it doesn't take much to get bad noise output. And I brought in some power supply people to help them redesign all the power supplies to reduce the noise cuz our power supply group is really good at low noise switching.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: It is just reflection. If I put my hand near that, you'll see it change, right? There you go. If I put my hand near that, you can see the heat reflected reflected off those shiny B and Cs, and it can also do the same thing on solder joints and things like that as well.
+TEXT: So, that's a real trap for young players with using these things. You've got to know about the reflective properties you're actually viewing. Now, let's have a look at the back of the board, see if we can get it, and you can see the hot spots on the ASICs there, of course.
+context after: Once it's about 65° on the back of there. And that Yeah, that's the first one. And the second one, 67. So, once again, it's a bit hotter. Third one, not 65, not quite as hot.
+
+[116] EEVblog #116 - Retro Teardown - Tandy Radio Shack TRS-80 Model 100 — Dave Jones (mention)
+context before: So, it it would have been a major design requirement to fit all this circuitry onto a double-sided uh a single double-sided board. Uh single-side load, all actual components, dip through-hole component circuitry using off-the-shelf parts cuz there's no custom devices on here at all.
+TEXT: There's no custom ASICs, not a thing. It's all using off-the-shelf parts. Effectively, anyone could have built this uh back in 1984 using all these off-the-shelf components. But, of course, the uh computer-aided uh CAD technology wasn't wasn't really around back then.
+context after: Or it was, but it wasn't really affordable for the individual to use, not even close like it is these days. And it's just remarkable how they've actually um built a mainstream consumer product like this just using all standard off-the-shelf components of the time.
+
+[725] EEVblog #725 - LG Plasma TV Teardown — Dave Jones (mention)
+context before: You couldn't actually stare at the screen, it was that horrible. So there's something going wrong there. We'll have to have a close look at those caps, but beautifully modular. We've got all our main video processing all on this board here. Dead giveaway is
+TEXT: all the huge ASICs. It's probably obscured by the bar there. Huge, big die-cast bar in these things with the big die-cast chassis in there. So, but anyway, a couple of big... three big ASICs on that board, big display processing. Then we've got our road drivers
+context after: either side, and our column driver boards. They're not one big PCB, because you can't manufacture or you can manufacture a PCB this big, which is like just under a metre long or something like that. But it's... you can get them specially made, but it's much easier, as they've done,
+
+[619] EEVblog #619 - Dumpster Dive PABX Teardown — Dave Jones (mention)
+context before: Look at that. And the only thing interesting here is this uh MT8952. It's a HDLC uh protocol controller. And it's basically um formatting data in the X.25 uh format.
+TEXT: Nothing fancy. Look, '96 vintage, 38th week. So, nothing uh you know, that's pretty much it. Not a huge amount of stuff. And you'll notice that uh this um uh micro custom uh ASIC or cell device over here also has that uh debugging emulator interface over here.
+context after: So, obviously, you know, designed for uh they would solder on on the development boards during our prototyping and development and uh debugging. They would solder headers on there, and then they'd be able to uh tap in there and emulate that chip.
+
+[395] EEVblog #395 - World's Most Expensive Hard Drive Teardown — Dave Jones (mention)
+context before: huge couple of hundred pin bus connector joins onto. So that actually does, it looks like it goes straight down to there, and then straight onto this paneling down in here. There you go, it goes straight down into there, straight into these connectors and then straight over into the
+TEXT: heads there. So yeah, this thing you know, it doesn't look like it contains any processing electronics at all, apart from the ASIC. Presumably that would be on the head driver in there, the head amplifier slash buffer. That'd be about it. Well check this out
+context after: folks, look at that date code, February 18th 1991! So I don't know if it was manufactured in 91 or whether or not they retrofitted a new cable to this thing in 91, but there you go, that's fascinating that they were still manufacturing, if they were, if it is
+
+[150] EEVblog #150 - Agilent Easter Egg — Dave Jones (mention)
+context before: There they are, in all their glory. These are the people, these are the guys and girls who worked on the scope, and they've got the same animation in the 6000 series, which Mike has posted on his channel. Now, a lot of the names will be very similar to the 6000 series development team, so a lot of the people have stayed over.
+TEXT: And I've heard that Matt Holcomb here is the guy responsible for the Megazoom for ASIC. He's responsible for all the magic that happens in these new 2000 and 3000 series scopes. But I'm sure that's not to say all the other people weren't involved as well.
+context after: So, there's the developers. But I haven't found, like, a game yet. I haven't found, you know, any other built-in features. So, if you can, let me know. .
+
+[807] EEVblog #807 - Mailbag — Dave Jones (mention)
+context before: we've got some flash memory underneath there. And yeah, that's got a firmware sticker, so that's got to be the flash memory. Well, not much else. It's got, you know, this will be our network port adapter up here, but this will be all the
+TEXT: security and whatnot inside here. And although I might be able to get this heatsink off this presumably ASIC down in here by maybe heating it up, I'm curious to know, because we don't want to use this thing. It's like yep, that's a two minute tear down.
+context after: I'm curious to know what happens if I try and eh-eh, get in there with the screwdriver and go a bit medieval on its arse. Let's find out. This could be ugly. This could be really ugly. Oh, the BGA's gone! Oh, what have we got?
+
+[913] EEVblog #913 - Mailbag — Dave Jones (mention)
+context before: You can buy it as and you can actually once again this is consumer level, well they have guides for it anyway available on their website and that's just a battery backup so your phone can still work if your local power goes out. Anyway, let's crack it open.
+TEXT: And we're in like Flynn and this is exactly what you'd expect. One big massive ASIC controlling everything. We've got our fibre optic which is just a connector. It's not a PCB mount. That's going over to here. We've got some sponge on top of that.
+context after: I don't think that would be thermally conductive because like there's no reason to do it. Yeah, I don't really get that. There's no, you know, nothing to dissipate it to. So yeah, go figure. Anyway, got our requisite Ethernet isolation transformers and not a huge amount more.
+
+[1530] EEVblog 1530 - Siglent SDS2000X HD 12 Bit Oscilloscope TEARDOWN — Dave Jones (mention)
+context before: some resistors here, very close, this is the LCD connector going across. So, you've got to assume that that is somehow doing the mapping for the screen. And, maybe, you know, and my thought is, is that they're dumping, this is how the Keysight works, but the Keysight does it all in its, uh, Megazoom
+TEXT: for, uh, ASIC. Um, they, it might just be using a direct dump in there like that to get the waveform data out of, well, out of memory, into, straight into the screen like that, and that might be how they're getting their fast waveform updating.
+context after: Anyway, that one is not particularly grunty, cause it doesn't have a, uh, heatsink on it. And, uh, then, we've got a Xilinx, uh, zinc over here. So, yeah, um, I don't know why they need this, plus the zinc over here, and then, of course, the zinc has the
+
+[405] EEVblog #405 - Lecroy 9384C Oscilloscope Repair - Part 3 — Dave Jones (mention)
+context before: So, I'm not sure if that uh happened um during my teardown or not. I don't actually remember it happening, but I can only presume that it did happen during that.
+TEXT: It's got nothing to do with it. It's just a little break in the case of a relay. It's nothing. And just to satisfy those who are harping on about removing this second ASIC here, fine, I'll remove the second ASIC and see if the short goes away.
+context after: It's not, but I'll do it anyway. Now, this is a pain in the ass. This is stuck on to this chip good and proper with uh thermal adhesive, and you're not going to get that off in a hurry um short of some nasty chemicals or something like that, which I don't um have.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: That's the new Keysight probably said Agilent a few times in there, mhm, 3000 T for touch model. Awesome. I like it. It's brilliant. It's only comes down to a matter of, you know, of value for money.
+TEXT: Does it suit your requirements for value for money, as always. So, anyway, I think it's an absolutely brilliant scope, and they've just milking the cash cow a bit more on their, uh, mega zoom 4 ASIC, just trying to, you know, improve things.
+context after: So, not the giant leap we saw before, just a few little incremental improvements in here, but very, very nice, and still smells good. Beautiful scope, the 3000 series. Awesome.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (mention)
+context before: We should be able to emulate the thing before we actually one-time program it. And then this just looks fun to play with. 3-cent microcontroller in volume, in stock from what looks like, you know, the mini Chinese Digi-Key.
+TEXT: And there's so many other things on here that we could, you know, go through, but there's lots of these manufacturers around that make these microcontrollers and other special purpose application chips that you're just not aware of.
+context after: And, you know, it's worth a browse on here and just having a look at at what's available. Like let let's have a look at, you know, Sinowealth. There's 20 different devices from Sinowealth.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (mention)
+context before: Anyway, it's got another BLT module configuration. So, there's a BLT product and a BLT module. So, I Once again, they've got different configurations. Revision LP3, whatever that means. And the sample rate, 5 gig samples a second.
+TEXT: Which the MegaZoom 4 ASIC is capable of in their high-end um, like the I think the 3,000, 4,000 and the 6,000 whatever that do they do five at least the high bandwidth ones, the one gig bandwidth ones do five gig samples a second.
+context after: So, the chip's capable of that. Now, here's some fascinating stuff. BLT product configuration zero and one ID2 ID4 and look, it's got a voltage in there 1.246 volts, 0.692 volts, right?
+
+[1185] EEVblog #1185 - Dumpster Tek 500MHz TDS540D Scope — Dave Jones (mention)
+context before: Well, yeah, I'm not sure what happened there. It rebooted. I did nothing. So, one more time for the dummies, I guess. There it goes again. It just reboots. All right, so let's crack this thing open, see what's what.
+TEXT: Oh, look at that. Beauty. We're in like Flynn. Oh, look at that big heat sinks on those massive ASICs. Wow. Well, at the design review meeting for this thing, they went, "Well, you know, look at all these all these heat sinks.
+context after: It's going to need a lot of air, so ah, bugger it. Let's just install this thing." Unbelievable. Look at the depth of that thing. I mean, it's it's that's just nuts.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (mention)
+context before: So, yeah, they Are they like discrete parts? Maybe? It may be like a discrete transistor uh differential amp, perhaps. Don't know. And all the rest of it's just miscellaneous housekeeping stuff.
+TEXT: So, we won't bore ourselves with that, but yeah, nice front end implementation. When you're paying for it, of course. And this is where the magic happens. This is their new IXP um for extra performance um ASIC, the MXO4 ASIC.
+context after: And it's responsible for the 4 and 1/2 million waveform updates per second, industry leading, and it would also do the uh digital triggering, cuz it's got one of the world's best digital triggering systems in it um as well.
+
+[1027] EEVblog #1027 -  Implantable NeuroStimulator Teardown — Dave Jones (mention)
+context before: Sorry for those who think this is beautiful and I shouldn't be DESTROYING IT BUT AH THERE WE GO. YEAH, chipped it. And you can see the bloody glue under there.
+TEXT: Unbelievable. Somebody went ballistic on the production line. Why? But I think you can see what's going to be on the bottom. In fact, I don't think there's any other components apart from that one big blobbed ASIC in there.
+context after: And trust me, they are running ASICs inside this thing. It's not going to You're not going to find any sort of general purpose micro controller inside one of these puppies.
+
+[633] EEVblog #633 - Mailbag — Dave Jones (mention)
+context before: the iPhone is now ancient. Go figure. And another local one from Josh, thank you very much Josh, he's from sleepy South Australia. And let's crack it open and see what, oh, more phones! I've got a bunch of phones. Jeez, I've got more phones.
+TEXT: Crossword puzzle, ah, right, yeah, I think my mum used to have one of these little things. It's just going to have like one ASIC in it. I've got no change of phones to, oh man, that is crusty as, oh, look at that. That has
+context after: seen better days. Crikey, look at that. Alright, let's crack this one open. Just have like a single chip-on-board ASIC, that's about it. Oh, it's completely off the mark. Look at this, it's got two chip-on-board devices of course, the main ASIC plus LCD controller for the custom or dot matrix or
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (mention)
+context before: You've got some spare ground attachments and the easy hooks as well. They're very nice Logic Analyzer probes. And even nicer, check it out, made in USA. And the easy hooks as well, made in good old USA. OK, let's boot this thing up and see what we get.
+TEXT: It does take a little while to boot up. Now, I think these LEDs up here for the Run, Stop and Single Mode ... ah, there's the new ASIC inside the ... that's where all the magic happens. This is the new ASIC they're using.
+context after: They're real high-end models. The same technology is filtered down into these low-end $1200 entry-level models. It's incredible. Anyway, it's now taken 20 ... it's almost 30 seconds to boot up. So it does take a little while with Windows CE, and it's got to do
+
+[372] EEVblog #372 - Fluke 27 Multimeter Review & Teardown — Dave Jones (mention)
+context before: So, this is an interesting mix this meter of, uh, you know, modern sort of, you know, a they've retrofitted an old design. They kept a lot of stuff the same.
+TEXT: I mean, the classic ASIC on the bottom there, they were still able to manufacture that, so they were still using it way up to 2005 and and, uh, presumably will be on that right up until they, uh, discontinued this model.
+context after: And it's basically the classic design which it probably and the wafer, uh, range switch here is probably exactly the same design they used in the original one. And, uh, you know, the vertical uh, radial resistors there, absolutely classic design.
+
+[None] Discussion with Shahriar from The Signal Path — Dave Jones (mention)
+context before: I'm sure a lot of people are now even listening to these things even more so. So, I think it's good timing. I suspect so, yeah. So, what's been happening with you?
+TEXT: You're still at Bell Labs, aren't you? Yeah, yeah. Still at Bell Labs. I still lead the ASIC research team at Bell Labs and do the The Signal Path, of course, is kind of a hobby here with like part of my lab behind me.
+context after: Yep. So, you still got time for doing The Signal Path? What's your frequency these days of content? Or is it just it happens when it happens? Yeah, it kind of happens when it happens.
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (mention)
+context before: You know, maybe it's just not repairable. I don't know. If anyone certainly has schematics for it, that would be very nice. So anyway, I hope you enjoyed that teardown and a little bit of troubleshooting there 1973 vintage scientific desktop, scientific calculator with a whopping 80 words of program memory.
+TEXT: And it's a bit of a beast and quite simple. And as I said, if you do have any info on the gate arrays or ASICs used in this thing, please leave it in the comments as well. So I hope you enjoyed that, and as always
+context after: you can discuss it over on the EEVblog forum, links are down below, and also there's a link down below to the high res teardown photos of this. I mostly take photos as I go along, and they'll be on EEVblog.com. Catch you next time.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (mention)
+context before: Um yeah, obviously uh we got switching converter over here over here. That's a big-ass inductor there. Um and then uh this is our uh VCO, is it? Anyway, suffice it to say that you do need a lot of stuff to power this beast.
+TEXT: So, analog-to-digital converters, no custom uh stuff unlike what they have. I'll link in the application down below. I believe it's the tech 049 acquisition um engine which has a custom their own custom ASIC.
+context after: We're on the higher-end uh models on the four and above, not on the three series. I think the three series might use this same one. Don't quote me on that, but yeah, anyway, they're just using off-the-shelf National Semiconductor jobby, two of them here.
+
+[60] EEVblog #60 - Fluke 117 Multimeter Review and Teardown — Dave Jones (mention)
+context before: This is one of their made in China ones. So, the quality is really is just as good. Okay, I've taken the shield off with uh just two screws up here.
+TEXT: It just lifted straight off. There's a couple of slots in there and as you can see there's the circuitry under there. No surprise, an MSP430 processor and here this looks like a little custom uh ASIC device.
+context after: I'll show some I'll try and get a close-up photo of that later, but that's obviously um that circuitry there is obviously part of the um uh non-contact uh voltage alert uh functionality cuz you can see that there's it goes off to the shield for the can and there's two huge caps there and that's obviously that.
+
+[1079] EEVblog #1079 - Mailbag — Dave Jones (mention)
+context before: You know, all of your internet and your phones and all your other traffic that you just take for granted um goes through all you know, specialized bits of hardware and ridiculously complicated stuff.
+TEXT: Like Oh, stuff I still got the board. Hang on. Yeah, here it is. Just like stupidly complicated stuff. Like Vertex 2 Pros, you know, and all these Centilium ASIC chipsets for coms and things like that.
+context after: I mean, the amount of engineering that goes in into something like that, the you know, the engineering teams involved. Just you know, the team just writing the uh Verilog or VHDL to go into this.
+
+[199] Tektronix MDO4000 Oscilloscope Teardown - EEVblog #199 — Dave Jones (mention)
+context before: And those two labeled firmware flash devices are a dead giveaway. They're right next to the applications processor there. And that huge device up the top there, that's pretty much the biggest device on the board.
+TEXT: It's the big daddy and it seems to tie into all those other ASICs on the left hand side of it. And here we have our six devices which are clearly uh separated into uh basically uh two channels.
+context after: That's why we um found that effect when when we actually reviewed it. We uh saw that if you switch on more than two channels, then it uh it's um update uh performance actually uh halves.
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (mention)
+context before: So, massively high sample rate and as it says further on, here we go, a bandwidth in excess of 5 GHz. So, the actual ADC itself has an input bandwidth up to 5 gig.
+TEXT: The ADC hybrid or whatever ASIC developed by Tektronix that massive 5 gig bandwidth so they can they can easily get a 3 gig input spectrum analyzer. They can sample the RF signal directly.
+context after: So, you know, none of your traditional um uh spectrum analyzer type stuff. It's basically just operating like a regular scope. That's pretty much all all it is, except you you know, you've got some nicer RF sort of front end with your 50 ohm load and your attenuator and your gain and you know, some filtering and that sort of stuff, but apart from that, it's just like another analog channel,
+
+[1289] EEVblog #1289 - Mystery Huawei Teardown — Dave Jones (mention)
+context before: And of course, like we just got a bunch of DRAM on the back and things like that and just some miscellaneous stuff, some local oscillator and other, you know, transceivers and other housekeeping stuff and whatnot.
+TEXT: You can see here by all the bypassing and all the vias there. Huge BGA. One of you know, 1,000 pin BGA. Going to be some custom ASIC processing thingy, video processor, encoder, decoder.
+context after: Then another one. Okay, it could be an FPGA, too. And then another one here, another one here, another one here, another one here. Well, geez that's heavy. And we know why.
+
+[398] EEVblog #398 - Lecroy 9384C Oscilloscope Repair — Dave Jones (mention)
+context before: So, maybe not. I mean, it's it's not a definite, but I don't know. You'd assume that they'd maybe not in the trigger section. Maybe that's not No, it doesn't look like that might be the case.
+TEXT: But, what about these little puppies down here, maybe? Although, these look like local regulators. So, we might be uh 2.7 ohms. Now, I've had a quick little probe around these ASICs.
+context after: You can see these four large um ASIC ADC hybrid uh modules here in the circuitry on the back. They've got no uh bulk uh decoupling on there, just lots of small uh caps.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (mention)
+context before: There's no way you would ever do that with your traditional CPU approach. Now, that's on the 3000 series model. I'm not sure if the 2000 series model uses exactly the same ASIC or whether or not it's a scaled down version which has less sample DRAM and less waveform update capabilities per second.
+TEXT: I'm not sure. But it certainly allows you to bring that capability down to the affordable level. It's great. Agilent, huge thumbs up to Agilent for designing this new mega zoom ASIC.
+context after: I love it.
+
+[187] EEVblog #187 - Tektronix TDS2024C Oscilloscope Teardown — Dave Jones (mention)
+context before: So I'm not sure why they've actually done that. I guess they deem it not they don't actually require it. Anyway, let's take a look at some more aspects of it.
+TEXT: There's two main ASICs up here clearly because it's a four I presume they're ASIC. I don't actually recognize the number of them at all. It's a VO42ADG522. I don't really know that.
+context after: It doesn't ring a bell. But they've got some they've obviously got some that looks like DRAM there. They've got some high speed IDT memory there and there. And the analog input parts are national semiconductor parts.
+
+[217] EEVblog #217 - Lecroy 9384C Oscilloscope Teardown — Dave Jones (mention)
+context before: They've got quite a few of those on the board. We've got a backup battery there. We've got a can here. We'll try and pop the shield off that and some discrete logic down here to handle the PCMCIA adapter.
+TEXT: And underneath that shield, there's a custom LeCroy large scale integration ASIC. Some sort of BT device here running with its own local clock. But these ones go off to the display.
+context after: This is probably the display processor cuz these two go off to the display board. It seems to be a little bit of gunk around the base of that the corner bottom corner of that tin on there, but I think it's Yeah, it's just some looks like just some dust.
+
+[993] EEVblog #993 - Mailbag — Dave Jones (mention)
+context before: Hm. And Jeff has kindly sent some uh detail here about these uh Gridseed uh G blade blade script things that do Litecoin and Dogecoin uh mining. And um yep, it's had the magic smoke escape.
+TEXT: We'll take take a look at that. Uses 72 meg Cortex um M3. That's not for doing the mining. That's just for uh control and uh stuff like that. So, it uses 40 uh ASICs on each blade.
+context after: Total power consumption at full speed is 140 W. Uh most people use an ATX power supply for this thing. Uh the main These are able to do script and SHA-256, but the blade is only using the script uh script functionality.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: I think that's all I'm going to do on this one today because I think I'm going to call this one and declare it unrepairable. I think something has died in this power supply which has killed taking out everything on the 3.3 V rail.
+TEXT: Everything being the only four devices on the 3.3 V rail which are these four ASICs here. Unless somebody can come up with another very plausible explanation for what's wrong here.
+context after: I mean, I cannot find a hot spot where it's you know, dissipating all that extra power. We know for a fact the rail's not supposed to be 0.1 ohms.
+
+[1150] EEVblog #1150 - Electrostatic Speaker Teardown — Dave Jones (mention)
+context before: That's a very nice attention to detail. This thing just oozes build quality. Really does. There's our extra processor. And that's where all the magic happens. It's a CSR8670 from Qualcomm.
+TEXT: And this is like a Bluetooth spec application specific uh processing DSP chip. It has a DSP core in it. Whole bunch of other stuff. Incredibly powerful purpose-designed ASIC chip.
+context after: So yeah, no wonder they're using that. Does all the magic. Runs at like 80 megahertz uh DSP. You can see the little oscillator over there. You can see a whole bunch of miscellaneous stuff around there.
+
+[None] Tektronix 2 Series Discussion with Andy Tedd from Tektronix — Dave Jones (mention)
+context before: it. But we would go up to maybe seven or eight at times on that. We've got a great, you know, system for, you know, working through the design, checking all the bits of the design as they're done, checking them into um our systems there, um filing bugs, and then just continuing that through your trade up.
+TEXT: And then you'd have an ASIC um team as well that worked on the ASIC. Yeah, that that's a separate team. They have They haven't worked on this ASIC. They're working on other ASICs.
+context after: You know, there's a continuous, you know, we have all always have an ASIC team. Right. And then we have a software team that's um again flexes depending on any given month what the areas of focus are.
+
+[781] EEVblog #781 - Samsung LCD TV Part 2 — Dave Jones (mention)
+context before: No, that is rock solid. So, is it is it the T-con? Is there something wrong with the T-con board? Cuz it doesn't look like there's anything wrong with these flat flexes.
+TEXT: As you saw in the previous video, we actually uh got out the thermal spray the uh freezer spray and we uh and we froze those big uh ASIC chips on there and it didn't do anything.
+context after: So, there was any sort of uh you know, dry joint BGA uh issue, then that it doesn't always show up with the uh freezer spray, but you know, odds are that it uh should have shown something and it didn't.
+
+[1314] EEVblog #1314 - Ultrasound Machine Teardown! — Dave Jones (mention)
+context before: There's just no end to the amount of processing you have to do to get one of these ultrasound machines working. And the modern ones that that don't use dedicated hardware like this, they still have to do all this.
+TEXT: So, they're still probably doing it in, you know, big ass FPGAs and stuff like that instead of a whole bunch of, you know, like lower end, lower end in quote marks, AC hardware.
+context after: 10 layer jobby again. And this one here is actually two boards, although I'm not sure if they're actually related. This one is the image memory module and of course it's just got a whole bunch of memory and a whole bunch of gals up here for interfacing and that's it.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (mention)
+context before: It's got to calculate like a frequency bin, for want of a better term. It's got to calculate each individual point, and there's a lot of processing involved in this, and to do actually 128 K points FFT requires a lot of processing grunt.
+TEXT: So, typically, it might be done in an FPGA or an ASIC. When you do it on like a regular Joe Blog's on processor or something, it's going to probably, you know, grind to a halt.
+context after: But, yeah, we can actually select that. So, you can see that when we drop down in that, it just gets coarser and coarser, and of course it gets faster because it's able to calculate the fast Fourier transform faster.
+
+[738] EEVblog #738 - Yamaha DME32 Digital Mixer Teardown — Dave Jones (mention)
+context before: We've disconnected all the cables, taken off all the jacks at the back, and it's not trivial, but tada, it's out. Beauty. Hey, look at that. Not a huge amount more in here.
+TEXT: So, we just got one baseboard down on the bottom. It's just got one main ASIC down in there. That's not a Yamaha. That's just an offtheshelf uh kind of like a PC type chipset.
+context after: This is the uh PCMCIA and USB board. As you can see, the P the USB connector is right down there going to the front panel. Got a PCM old school PCMCIA adapter.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (mention)
+context before: This is all This is all Look at this. Here it is. And there it is. 50,000 50k samples per second. There it is, right? So 50,000 waveform updates per second.
+TEXT: And you can see that there's just a little bit of we're triggering on the one, but there's a little bit of like jittering in there cuz the ASIC's doing, you know, whatever.
+context after: But look, that is the difference, right? So it's almost always sampling, right? Look, just all the time. There's no dead periods. And sure if I, you know, tweak the vertical and stuff like that, it's still, you know, there is some extra dead time in there to do, you know, stuff like that, change the vertical divisions and change the horizontal and stuff like right.
+
+[1314] EEVblog #1314 - Ultrasound Machine Teardown! — Dave Jones (mention)
+context before: Wow, anyone remember those? Geez, that's really old school. Can you even buy them these days? I'm not sure. How long do they keep these sort of things in production for?
+TEXT: I don't know. And IDT up there, that would be probably like some FIFO memory or something. IDT IDT do some of the best FIFO memory. And then we've got some Raytheon ASICs.
+context after: What the hell are Raytheon doing in here? Anyone know? Bueller? Bueller? But once again, a remarkable amount of hardware there. And you love being mooned. That's all she wrote.
+
+[1289] EEVblog #1289 - Mystery Huawei Teardown — Dave Jones (mention)
+context before: Well, there's a surprise. I expected these bottom boards to be identical. This one looks like it's going to be, but this one here significantly different. But yeah, I expected four identical.
+TEXT: So, to have that oddball one, but look at all the Look at the bypassing on this bad boy. Look at this. Look at all the huge FPGAs or ASICs we're going to have under here.
+context after: This is some serious ass hardware, and this is not going to be built down to a price in any way. There'd be zero penny-pinching in this cuz price is no object in this sort of market.
+
+[514] EEVblog #514 - $5 Mobile Phone Teardown - LG800G — Dave Jones (mention)
+context before: So, anyway, we expect a whole lot of high level of uh, system chip integration in this thing. I'd be surprised if it's more than like a three-chip uh, solution or something like that.
+TEXT: You know, I mean, they're really it's going to be the main ASIC in here, plus maybe some external memory and you know, maybe an RF chipset and that's probably about it.
+context after: So, and of course, it'll be a one-board solution. The LCD on this is not high resolution at all. Um, and we really they're really going to save every cent on their bomb cost possible on something like this.
+
+[783] EEVblog #783 - Dumpster Dive Power Macs — Dave Jones (mention)
+context before: And physically, it's a bit different inside. There's just one big cover on here now. So, that's interesting. That's a difference. Um, the fan looks, uh, slightly redesigned. If we take a look down here, much bigger heat sink on the graphics card.
+TEXT: So, they've obviously, uh, it's got a beefier graphics card and a big ass heat sink down there on, uh, some sort of, you know, system, um, ASIC, something like that.
+context after: So, the other one didn't have that. So, that is quite significantly different. And this puppy has eight gigs of RAM total. Wow, that would have been something back in the day.
+
+[398] EEVblog #398 - Lecroy 9384C Oscilloscope Repair — Dave Jones (mention)
+context before: Um it could you know, uh in theory, it could be like a you know, a power plane in the middle of the board or something, but it's more likely to be a uh cap or a component, but I have no idea how many caps or how many caps and how many chips are in parallel on that 3.3 V rail on here.
+TEXT: I'm assuming like maybe all of the memory up here and uh you know, a lot of the um ASICs and stuff like that and a whole bunch, probably all the uh processor board.
+context after: So, let's start. We've actually got some things which we're going to unplug. So, let's We've got the processor board here. So, let's uh whack this out and measure that again.
+
+[917] EEVblog #917 - Mailbag — Dave Jones (mention)
+context before: Zilog Z80 series one of not the original Z80, but one of the later ones with a through hole ROM. They've actually soldered hand soldered the ROM in there. You can still see the residue left over.
+TEXT: Oh, wow, a couple of custom uh ASIC um uh uh There's an RTC there, battery backup, and uh a custom Sony part. Of course, Sony uh rolled their own silicons lots.
+context after: But oh, for all you Zilog fanboys. And sure enough, inside the back here, yep, rubber surround. Look at that. Beauty. And I actually like the connector uh system. It's uh sealed as well.
+
+[1289] EEVblog #1289 - Mystery Huawei Teardown — Dave Jones (mention)
+context before: And oh, this is brilliant. And if you're wondering, can you bend a 4.2 mm PCB? Yeah? Well, it's just fiberglass. There you go. Wiggle, wiggle, wiggle. Yeah. All right.
+TEXT: So, what's going on with this board here? Massive uh FPGA or ASIC. Got some firmware down here. Did give away with the uh stickers on it. And what's a Cortina?
+context after: Well, I know what a Ford Cortina is, but I don't know what a Cortina is here. Made in Canada? Really? Is there a fab in Canada that makes that?
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (mention)
+context before: There's so little dead time in this thing that yeah, you just you really don't notice it unless you're, you know, really changing ranges very fast. But even then, it's this like orders of magnitude better than the new architecture Tektronix.
+TEXT: And this is a 12 13, I think it's now. I think the MegaZoom 4 ASIC in this is now 13 years old. Come on, uh Keysight. When are you going to I'm doing Agilent.
+context after: Come on, Agilent. When are you going to release the MegaZoom 5? But yeah, um there you have it. So, this will only slow down if we go at slower time bases cuz it's got to fill the it's going to take time to fill the memory up.
+
+[830] EEVblog #830 - Portable CRT TV Retro Teardown — Dave Jones (mention)
+context before: They, you know, they actually uh design the blocks into these things so that the signal uh flows through the various uh stages and then you get the you know, a decent PCB layout.
+TEXT: So, they uh s- you know, application-specific chips. So, let's take a look at the next one. Then up on our uh RF board here, what have we got here?
+context after: We've got the AN5700. It's upside down so all the electrons are going to fall out, but no worries. Um this one is actually a Take a look at the data sheet.
+
+[781] EEVblog #781 - Samsung LCD TV Part 2 — Dave Jones (mention)
+context before: Murphy will ensure that happens. So, we're going to um like usually like T-con boards are more popular uh failure modes, in fact by by far the most popular, but we do suspect something on the processor board cuz we were tapping around here and we made a difference and we were freezing around here, made a difference.
+TEXT: So, we don't like the look of the So, we think it's either the ASIC or it's the memory. And little pain in the ass BGA memory chips in there.
+context after: Uh they're actually easy to reflow. We don't have to take the board out or anything like that um cuz they're a low uh thermal mass, everything else, you know, we don't need a preheater underneath or whatever.
