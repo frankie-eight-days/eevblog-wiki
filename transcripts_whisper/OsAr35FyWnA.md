@@ -1,0 +1,53 @@
+---
+video_id: OsAr35FyWnA
+title: EEVblog #36 - It's Hardware Puzzle Time!
+url: https://www.youtube.com/watch?v=OsAr35FyWnA
+source: whisper-large-v3-q5_0
+timestamps: {"0": 0, "1": 30, "2": 59, "3": 74, "4": 74, "5": 102, "6": 117, "7": 117, "8": 141, "9": 181, "10": 194, "11": 209, "12": 234, "13": 256, "14": 275, "15": 275, "16": 294, "17": 333, "18": 349, "19": 365, "20": 396, "21": 418, "22": 435}
+---
+
+**Dave Jones:** Hi, welcome to the blog. I'm your host, Dave Jones. This week I've got something a bit different. Rather than the usual blog of me giving you information and things like that, no, you're going to try and figure it out yourself. That's right, guys and girls at home, this is going to be a bit interactive, because I've got a puzzle for you.
+
+**Dave Jones:** It's quiz time. Why on earth do a quiz? Why do a puzzle? Well, it's a good question. I've actually had a couple of people actually suggest it, and I think it's a great idea. And the reason being is I've got a lot of beginners and, well, young and old people starting out in electronics who watch the blog and love it, and I keep getting asked all the time what's the best way to learn electronics outside of the regular theory and things like that.
+
+**Dave Jones:** You know, you can get, for building stuff, you can learn, I always say, build your own gear, and you can learn a hell of a lot. And I've said it before, but I hope your project doesn't work, and you have to troubleshoot it, and then you're going to learn a hell of a lot that way as well.
+
+**Dave Jones:** But one of the best ways I think you can learn as well is to take a product like this, any product, take it apart, and try and figure out how it works. Well, not necessarily how it works, but just look at the devices that are used in here.
+
+**Dave Jones:** Look at each chip, look at each component, and then go check out the data sheet for that particular chip, because that can lead you places, and that's how you learn a hell of a lot. You look up that chip and you go, wow, I didn't know that chip existed.
+
+**Dave Jones:** That's a really cool building block. That's great functionality. And then, oh, that data sheet leads you to an application note, and so on and so on and so on. And you just learn a hell of a lot. So this is going to be a hardware quiz.
+
+**Dave Jones:** I'm going to show you this board, and you've got to figure out what it is. And of course, in the usual EEVblog style, I haven't thought about this. It's off the cuff. So I don't really know what the rules are going to be.
+
+**Dave Jones:** I'm probably going to make them up as I go along, and this might be incredibly easy, or it might be incredibly difficult, and nobody gets it at all. So, I guess some rules I'm going to make up are, you have to guess what this is, the functionality of this board, in as much detail as you possibly can, and the person who gets the closest, I don't know how long it's going to run for, but the person who gets the closest on this answer will win, yes, there's a prize!
+
+**Dave Jones:** Woohoo! One of my microcurrent adapters. So, it's not a huge prize, but it's a handy little gadget, and the person with the best answer, not necessarily the most correct, maybe, but the most detailed and best and accurate answer will win a microcurrent adapter.
+
+**Dave Jones:** So here we go, this is hardware quiz number one. This is the board I want you to reverse engineer and solve. Tell me what it is, tell me what it does, tell me how it works, give me all the detailed info you can.
+
+**Dave Jones:** Now, I'm going to put up some high-res photos of it, of all the aspects of it, up on the blog site, so you can download those and you can see what the individual chips are, and things like that, but I'll show you it on the video here, so here it goes.
+
+**Dave Jones:** There we go, can it focus? Now, as you can see, there's a device there, it says Master on it, there's actually, I'll give you a bit of a hint, this is the Master version of the board, there's also a Slave version of the board, as might make sense, and the Slave version is pretty much identical to this as well, so that might be a hint for you.
+
+**Dave Jones:** Maybe, maybe not. Anyway, here's the board. It's got a riser board here, it's got some circuitry under there, which you'll be able to see on the high-res photos, it's got a couple of big 40-pin DIP chips there, it's got another riser board here, it's got another daughter board, so if you check that out.
+
+**Dave Jones:** The one under this label here that says Master, that's actually a PIC, that's actually a 16F series PIC, so I won't leave you in the dark about that. So it's got a PIC micro on it, and it's got a, well, I won't say what the devices are, it's up to you to figure it out.
+
+**Dave Jones:** And underneath here, there's a whole bunch of, well, you might be able to see it on the back, they're soldered on the back here. There's a whole bunch of things under there, I'm not going to tell you what they are, but once again, the high-res photos will show you what they are.
+
+**Dave Jones:** There's a couple of headers on the end here like this. What else have we got? Let's have a look. There's a board on the back as well, another daughter board, so it's like a three-layer construction. So there's another board on the back here which has some socketed parts, and yeah, what's that?
+
+**Dave Jones:** And that's another PIC as well, so each one of those boards has a PIC micro on it. I'll tell you that for free, and there you go. What is it? What does it do? How does it work? I don't know, it's for you to figure out.
+
+**Dave Jones:** There's actually room on the back here, there are pillars for an extra one of these daughter boards, but from memory, I don't think I ever actually used that, it was just designed for expansion. Maybe that's a hint. There you go. As I said, I've got no idea how long I'm going to run this for, so I don't know how long you've got really.
+
+**Dave Jones:** I guess it's maybe until someone comes up with the right answer. Maybe it'll just go indefinitely. If it turns out to be really hard, I might add some hints, maybe. But once it's all over and somebody's figured it out, then what I'll do is I'll do a whole blog devoted to the design of this, and how it works, and all sorts of things.
+
+**Dave Jones:** So that should be really interesting, actually, because what this thing does is it's nothing special, but it's rather interesting. I think it'll make a good blog. So there you go. Try and figure it out. One note specifically for my YouTube viewers. Believe it or not, my blog is actually not on YouTube.
+
+**Dave Jones:** I just use YouTube to host the videos, really, the high-res version of the videos that I embed in my real website. The blog website is eevblog.com. So I want you to leave your comments on the blog website, not on YouTube. In fact, I'll make it a rule.
+
+**Dave Jones:** If you leave your comments on YouTube, they're not valid. I don't care if you're absolutely correct. You won't win. The comment has to be on the eevblog.com website, in the comments section, right under the video. It's easy. So come on, guys and girls.
+
+**Dave Jones:** What is it? Figure it out. Tell me. And you can win a microcurrent adapter. Okay, maybe not the greatest prize on the planet, not the most valuable, but hey, you'll win the admiration of millions, well, thousands, who watch the blog anyway. Come on.

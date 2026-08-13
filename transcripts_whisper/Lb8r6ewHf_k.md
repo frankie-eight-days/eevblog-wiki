@@ -1,0 +1,105 @@
+---
+video_id: Lb8r6ewHf_k
+title: EEVblog #581 - How To Do Kickstarter Surveys & Project Management
+url: https://www.youtube.com/watch?v=Lb8r6ewHf_k
+source: whisper-large-v3-q5_0
+timestamps: {"0": 0, "1": 0, "2": 30, "3": 30, "4": 59, "5": 81, "6": 121, "7": 151, "8": 151, "9": 176, "10": 176, "11": 205, "12": 232, "13": 254, "14": 254, "15": 282, "16": 282, "17": 311, "18": 333, "19": 354, "20": 354, "21": 381, "22": 402, "23": 402, "24": 430, "25": 459, "26": 486, "27": 511, "28": 511, "29": 535, "30": 558, "31": 558, "32": 584, "33": 609, "34": 609, "35": 638, "36": 662, "37": 689, "38": 716, "39": 745, "40": 745, "41": 771, "42": 771, "43": 825, "44": 851, "45": 851, "46": 895, "47": 895, "48": 937}
+---
+
+**Dave Jones:** Hi, there's a lot of confusion on Kickstarter campaigns. For those who want to run a Kickstarter campaign and what it's like, sort of like behind the scenes to sort of manage the project and the campaign and things like that. So I've done a campaign on Kickstarter here.
+
+**Dave Jones:** So I thought I'd give you a just a brief behind the scenes tour of what it looks like to do our surveys. In fact, I'm going to do one right here live to my backers of Microsoft. My project and show you some stats and things like that.
+
+**Dave Jones:** So this is my project, the microcurrent gold. I had, I raised, I smashed my target. I raised $116,575 of my $9,900 goal with 1,268 backers. That was a very successful project. And for those wondering the total fee, how much of that did I actually receive?
+
+**Dave Jones:** Well, it was that figure, $116,575 minus just over $116,575. That's just over 8%. Kickstarter charged a fixed 5% fee, plus the credit card merchant took another 3.1%. I forget the exact figure, but it was around, it was just over 8%. So you really have to take that into account.
+
+**Dave Jones:** That is a significant amount, especially, you know, when you're trying to put a hardware product like this into production. So just be careful. Now I've previously done a campaign on the Australian website, Possible, and the advantage of that, apart from accepting PayPal as well, which is a major complaint I got from Kickstarter not accepting PayPal, is that once you reach your target, in this case $9,900, the money went immediately into my account so I could start buying parts and things like that.
+
+**Dave Jones:** But on Kickstarter, that wasn't the case. I had to wait until the project ended on December 31st and then wait another two weeks precisely. And at Kickstarter, true to their word, they said they would pay me two weeks after, and they did. So on January 15th, $100,000 just appeared in my account in one big lump sum.
+
+**Dave Jones:** But by the way, it does work differently for Australians like me, because Australians and some other countries who have Kickstarter available don't use the Amazon payment system. So it could be very well different for US backers because they use the Amazon payment system, whereas the Australian version of Kickstarter, like I use, they use a third-party credit card merchant and collect all the money themselves and then put it in one lump sum payment over to your bank account.
+
+**Dave Jones:** Anyway, let's go in here and take a look at the dashboard. These are the stats that you get behind the scenes here. And there's nothing proprietary in here or anything like that. And you can see my funding goal. I think it was a two-week campaign or something I ran there.
+
+**Dave Jones:** Yes, December 16, December 31st. And you can see it really kicked up at the start. That's where you get most of your sales at the start, or at least if you have an established audience like me. Then it drops off, flattens out, and then at the end everyone realized, oh, I better get one before I miss out.
+
+**Dave Jones:** So they jumped in and sales ramped up a bit at the end there. So here's some stats. If you're wondering the popularity of putting your project on Kickstarter, well, here's the actual figure. It tells you via Kickstarter, 22% of my sales were directly via Kickstarter.
+
+**Dave Jones:** The rest came from external sites, which you can see down here. But I have a big established audience. That's where most of my sales come from. Now, I can't guarantee that that 22% slice of the pie there was just random people who didn't know about me or my project and were just searching Kickstarter.
+
+**Dave Jones:** It could have been people who knew about me, knew about the project, and just didn't click through a link. They just went to Kickstarter and just bought it through there. But they already knew about me, so they didn't just stumble across it. So I'd, you know, ballpark figure, I'd probably halve that figure.
+
+**Dave Jones:** So maybe 10 or 12%, maybe 15% extra sales I got for going through Kickstarter as opposed to another website. Perhaps. But your mileage may vary greatly because I have a large established audience. So don't take my stat there as anything to go by.
+
+**Dave Jones:** But you can see, direct traffic, and then 279 pledges there. 262 pledges came from my website. 211 came from my YouTube channel there. Searching Kickstarter, 87% hardware discover. But once again, I don't know. So there's 12% just there between searching and just general searching on Kickstarter.
+
+**Dave Jones:** But as I said, I don't know if those people already knew me or not and went in there. Then KickTrack, that's a statistics website, 62%. So they claim, but I think, but I was publishing KickTrack stats. So possibly some people jumped in and bought it through there.
+
+**Dave Jones:** Twitter, 3%. I've got a large, I've got 10,000 Twitter followers. So, you know, 3% of my sales came through there. And then at my Ampower radio show here, I've got, I had an extra 10 sales through the link on that. Hack gadgets got mentioned on there.
+
+**Dave Jones:** And various stats. So you can see that down there. And you can see that only 38.26% of people actually finished playing my video. I can't remember how long my video was. I think it was five minutes or something like that. So obviously a lot of people started watching it.
+
+**Dave Jones:** The majority started watching it and didn't actually finish. And then the popularity of my rewards and then the activities down the bottom. Now if we go into the backer report over here, this is really quite nice. You can list and sort and categorize all of your pledges.
+
+**Dave Jones:** So for example, here is just a random list of rewards actually sent. So I've already sent these ones here. I've actually ticked them off down here. I've manually ticked them off each one that I actually sent. So I can actually go into just the new ones, for example.
+
+**Dave Jones:** Here's the new one, which I'm about to do my campaign for. And then I can sort them based on backer here, for example. Yep, there we go. I can sort them based on that. So I can get, you know, so these people up here at the top who contributed first, I can make sure that they get those ones first, for example.
+
+**Dave Jones:** So that's really quite neat. And then once you've sorted all this, you know, you can select your rewards, sort them, various things, then you can just go up here and you can message all of your backers as well. But you can go in here and export it.
+
+**Dave Jones:** And here it is, export backer report production run. And you can choose which one you want to do. There we go. That's really quite nice. So let's say I wanted to get all of my mail in address labels, for example. Even though I haven't sent out my survey yet, I'll explain that in a minute.
+
+**Dave Jones:** But I can export. Even now, all that stuff, it's ready to download. There it is. And you can do this. The good thing about this is that you can generate this as many times as you like. So kickstart a backer report, there it is, it puts it in a standard CSV format, and you can just load that directly into any spreadsheet program.
+
+**Dave Jones:** And it works perfectly. Then I was able to import that data directly into my DYMO label printer and print out my addresses. Very, very easy. I love this feature of Kickstarter. It worked much better than I was expecting. Now, here we go. I'm actually going to do a real survey here.
+
+**Dave Jones:** I haven't done it before because you, here's one of the disadvantages of Kickstarter, you only get one shot at doing a, what they call a survey, which is basically sending out and asking people for their information. This is one aspect of Kickstarter I don't like, as opposed to Possible, which I've used before the Australian site.
+
+**Dave Jones:** Because you have to create an account on Possible and give your address details, so you always got people's address details from the start. So yeah, I didn't really like that aspect of Kickstarter. I wanted to know up front, you know, how many countries my things were going to, that I had to ship to, for example.
+
+**Dave Jones:** But anyway, here we go. Let's go into Manage, Surveys, and I had heard horror stories about these surveys. And there's all these third-party companies out there that have sprung up, and when you put a project on Kickstarter, they will email you and ask you, hey, you know, Kickstarter's a nightmare, do you want to give us 1% of your money and we will, you know, we'll give you this magic tool that handles all your surveys and everything else.
+
+**Dave Jones:** Well I found that would have been a waste of money for my purposes, because I found the exports, the survey system easy, as we'll see, and also the active exporting the CSV address data really easy. So here we go. Anyway, we have our 199 backers, so I want to create a survey.
+
+**Dave Jones:** Here we go. So I will create a survey like this, and this is exactly what it looks like. And I have to concentrate, make sure I get it right. Now this is a new feature, let backers change their address. This was not here the other month when I did my other survey.
+
+**Dave Jones:** If we hover over there, if you are not shipping for a while, you can let backers change their address in case they move. You can close this later when you're ready to ship. Awesome! This was one of the big disadvantages of Kickstarter in that if you sent out your survey early, you know, a couple of months early and people changed their addresses, you were screwed, then you had to manually fix those up.
+
+**Dave Jones:** So really there's not much advantage for these third party programs anymore. They let you do that. But anyway, I'm going to ship pretty quick, so I'm probably going to leave that off and any change of address I'll just handle manually. I don't expect much.
+
+**Dave Jones:** But here we go. It's the preview they've already put in. By default is shipping details. So name, address one, address two. So two lines for the address, that's adequate. City, state, province, zip code, and country. So people will see this form exactly like this, or you can add questions in like this.
+
+**Dave Jones:** You can add a specific question and you can get an answer like that. But I want to, oh, I don't, I probably shouldn't have done that. I might go back out and disable that because I don't really want to add, or you can add multiple choice questions like this.
+
+**Dave Jones:** But I don't really want to add any questions, I just want people's names and addresses. So I'll go back out and fix that. So here we go, I'm back in and I've, I just cancelled, I'm back in and I'm happy with all this default address information.
+
+**Dave Jones:** I used it last time, it was certainly adequate, I got no complaints. It imported into my label program very nicely, and everything was hunky-dory. So that's a good set of options for international, international is important for Australian shippers like me who, you know, need to ship internationally.
+
+**Dave Jones:** And the fields are ideal, so I'm happy with that, it works well. So I'm just going to go send survey. It's done. So I'm going to send out to those 199 backers at that tier only, okay. So because I've got these units, they're here in my lab here, tested, ready to ship, so I need people's addresses, so I'm going to send that survey.
+
+**Dave Jones:** Here we go. Send, you can only send a survey once per reward tier, so make sure you ask for all the info you need. Well, all I need is people's addresses, that's it. So send survey now. Bingo, it's done, there's no going back, and that is one of the huge disadvantages.
+
+**Dave Jones:** So this is what, here, here's the screen, this is what people will see, they will have these fields, they will import, they will set that data in, so they'll be sent an email asking them to, with a link to go to the website to fill in this, survey has been sent, address change is not allowed, but I can edit that later, so that's really good.
+
+**Dave Jones:** And then we can go back into the backer report, and now, if we have a look at the reward tier here, first production run, there we go, we have a look at that tier there. Now, if I sit here and wait long enough, in, you know, within 10 minutes I'll have the first people start, there'll be a tick there, the survey response, bang, just like I had for my other ones, my early signature editions here.
+
+**Dave Jones:** It tells me that that person, that person, so this will update live. So you can see, over the next couple of hours, next day, I'll see people that have entered in their survey response, and then I can message those who haven't done it.
+
+**Dave Jones:** So that works really well. I've got no complaints, almost no complaints at all, apart from only being able to send it once, of the survey system in Kickstarter. And I heard all these horror stories that I had to use these third party tools that I got absolutely spammed with.
+
+**Dave Jones:** You have to use our tool because Kickstarter's so awful. Hey, it's not. I think it worked well, at least for my purposes anyway. And there you go, I literally just stopped recording that segment and refreshed the page, and look, I've already had five people fill in their address details.
+
+**Dave Jones:** Fantastic. So you can just sit there, well you have to refresh it of course, it won't automatically refresh, but that's great. There we go, got five addresses already. I can ship those right now. And here's a quick look inside my imported data into my spreadsheet from that exported CSV file, which that CSV file, as I said, you can export as many times as you want, over and over again, as the people's addresses come in, or right at the last minute, just in case they've changed it.
+
+**Dave Jones:** I've removed people's names and email addresses, but the data would be there, of course. International and domestic, their pledge amount, the date, whether it was collected, when the survey was answered, and then you've got all that format data which they entered in. Once again, I've actually removed this, and there could be hundreds of these things or thousands of these things if you had enough backers in that particular category.
+
+**Dave Jones:** So there you go, all the data is there as shipping country, so you can sort by shipping country, because when I'm doing domestic and international, I want to sort by the various countries and things like that, so that's really handy. And once you've got that data into your spreadsheet, easy, you can do whatever you want.
+
+**Dave Jones:** And I can just import that easily into my label printer or give the Excel file to the mailing house. So there you go, I hope you enjoyed that little behind-the-scenes look at the management of a Kickstarter project, and it worked. I was really fearful because I heard some real horror stories of people who had run it before and said, oh, the survey was such a nightmare, and you're just going to be pulling your hair out, but I wasn't.
+
+**Dave Jones:** I got my address, all I wanted, because I want to ship these units, is get my address data into a standard CSV format, import into a spreadsheet, then I can play around with it, sort it, categorize it into different countries and things like that, and then export to my label printer or give to my mailing house.
+
+**Dave Jones:** That's all I wanted, and it did exactly what I wanted. So in the end, yeah, Kickstarter had quite a few quirks and other things in terms of formatting of the project, for example, like there's no formatting ability over in these pledges over here, it's just very archaic, it's, you know, I didn't really like that, but in the end, ultimately, the management stuff behind it worked pretty well.
+
+**Dave Jones:** So there you go, I had no problems, really essentially no problems with Kickstarter. So if you want to discuss this, jump on over to the EEVblog forum, that's the place to do it. Catch you next time.

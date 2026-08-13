@@ -44,7 +44,12 @@ say "  $(ls census/full-v2/*.json 2>/dev/null | grep -vc _manifest) censused"
 #     came back empty. This silently cost 6 videos on each earlier pass.
 say "re-running empty-but-substantial censuses"
 python3 - <<'PY' >>"$LOG" 2>&1
-import json, glob, pathlib
+import json, glob, pathlib, shutil
+# Move aside rather than delete. The re-run that is supposed to replace these can
+# itself fail -- a dead API key did exactly that -- and delete-then-recreate loses
+# the originals when it does. Empty ones are worthless anyway, but the ordering is
+# the point: never destroy until the replacement exists.
+hold = pathlib.Path('census/_reruns'); hold.mkdir(parents=True, exist_ok=True)
 bad = []
 for f in glob.glob('census/full-v2/*.json'):
     if '_manifest' in f: continue
@@ -52,11 +57,26 @@ for f in glob.glob('census/full-v2/*.json'):
         t = pathlib.Path('transcripts_whisper')/(pathlib.Path(f).stem+'.md')
         if t.exists() and len(t.read_text().split()) > 300:
             bad.append(f)
-for f in bad: pathlib.Path(f).unlink()
-print(f"cleared {len(bad)} for re-run")
+for f in bad: shutil.move(f, hold / pathlib.Path(f).name)
+print(f"held {len(bad)} aside for re-run")
 PY
 EEV_TRANSCRIPTS="$PWD/transcripts_whisper" EEV_OUTDIR="$PWD/census/full-v2" \
   python3 tools/census/census_production.py >>logs/census_full_v2.log 2>&1
+
+# GATE. Do not build canon on a partial census. The census step can fail whole --
+# a missing API key, a billing stop, a network outage -- and every stage after
+# this consumes its output without noticing it is short. A canon built on 80% of
+# the corpus looks completely normal: right shape, plausible clusters, sensible
+# article list, and no indication that 200 videos are missing. Better to stop
+# with the transcripts safe and wait for a human.
+TR=$(find transcripts_whisper -name '*.md' | wc -l | tr -d ' ')
+CE=$(ls census/full-v2/*.json 2>/dev/null | grep -vc _manifest || echo 0)
+if [ "$CE" -lt $((TR * 97 / 100)) ]; then
+  say "ABORT: census covers $CE of $TR whisper transcripts (<97%)."
+  say "       Transcripts are safe on disk. Fix the census, then re-run this script."
+  exit 1
+fi
+say "census gate passed: $CE/$TR whisper transcripts censused"
 
 # 4-6. canon -> graph -> candidates, all pointed at the complete corpus
 say "canonicalisation (~90 min)"
