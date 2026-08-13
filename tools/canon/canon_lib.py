@@ -197,7 +197,16 @@ def variant_pairs(names):
             for i, a in enumerate(group):
                 for b in group[i + 1:]:
                     out.append((a, b, "spacing"))
-    return {(a, b): k for a, b, k in out if a in seen and b in seen}
+    # The digit guard has to apply HERE too, not only in rule_verdict. Joining
+    # tokens to test spacing also joins digits: `1-2-volt-rail` and `12-volt-rail`
+    # both collapse to "12voltrail", so a 1.2 V core rail was merged into a 12 V
+    # bulk rail -- and stage 3 runs before rule_verdict, so the part-number guard
+    # never saw it. Measured on the real vocabulary: 7 merges corrupted this way,
+    # including `7-4-series-logic` into `74-series-logic` and `fluke-875` into
+    # `fluke-87-5`. Every decimal quantity in the corpus is exposed to this,
+    # because the census slugifies "1.2 volt" to "1-2-volt".
+    return {(a, b): k for a, b, k in out
+            if a in seen and b in seen and digits(a) == digits(b)}
 
 
 def acronym_pairs(corpus):

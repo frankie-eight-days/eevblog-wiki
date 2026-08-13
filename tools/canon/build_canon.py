@@ -36,8 +36,21 @@ between the two concept names AS AN ELECTRONICS ENGINEER WOULD USE THEM.
 
 SAME     - the same concept under different words (pcb / printed-circuit-board;
            heatsink / heat-sink; dfm / design-for-manufacturing)
-BROADER  - the FIRST is a parent category of the SECOND, or vice versa. Say which.
-           (dc-dc-converter is BROADER than buck-converter)
+BROADER  - a strict IS-A-KIND-OF relation: every instance of the child is also an
+           instance of the parent. Say which is the parent.
+           (buck-converter IS A dc-dc-converter; ldo IS A voltage-regulator)
+
+           BROADER is ONLY is-a. Answer DISTINCT, not BROADER, for:
+             part-of      clamp-meter-enclosure is PART OF a clamp meter, not a
+                          kind of meter
+             made-by      texas-instruments-module is MADE BY TI, not a kind of TI
+             acts-on      undervoltage-detection ACTS ON undervoltage, not a kind
+                          of it
+             produces     video-title-generation PRODUCES a video title
+             mode-of      32-bit-mode is a MODE OF a device, not a kind of 32-bit
+           These association edges are the most common wrong answer here. If you
+           cannot say "every X is a kind of Y" out loud without wincing, it is
+           DISTINCT.
 DISTINCT - related but not interchangeable, and neither contains the other
            (analog-to-digital-converter vs digital-to-analog-converter;
             oscilloscope vs spectrum-analyzer)
@@ -46,6 +59,27 @@ Be conservative. A wrong SAME silently destroys a distinction for every reader; 
 wrong DISTINCT only leaves two thin pages. When genuinely unsure, answer DISTINCT.
 
 Different part numbers, model numbers or process nodes are ALWAYS DISTINCT.
+
+ACRONYMS. Many pairs here are a short string against a long name, because the
+pipeline generates initials from every multi-word concept and offers the match.
+Most of those are BACK-FORMED and wrong. Answer SAME only if the short form is an
+abbreviation engineers ACTUALLY WRITE for that thing. Real: pcb /
+printed-circuit-board, esr / equivalent-series-resistance, mlcc /
+multilayer-ceramic-capacitor. Invented, and the kind of thing to reject: rs /
+range-switch, gpc / gold-plated-contact, smr / surface-mount-resistor -- the
+initials line up but nobody uses them.
+
+Two further acronym traps:
+- The short string may be a CLIPPING or an ordinary word rather than an
+  abbreviation (coax, dip, mains, fan). A clipping of the same word is SAME;
+  an ordinary English word that merely matches initials is DISTINCT.
+- Adding or removing a letter makes a DIFFERENT acronym, not a spelling variant:
+  mcc is not mlcc, so that pair is DISTINCT.
+
+Prefer the meaning this channel actually uses: it is hands-on test equipment,
+teardowns and repair, so package codes and instrument terms beat software or
+business readings (pga is more likely Pin Grid Array than
+programmable-gain-amplifier here).
 
 Return ONLY a JSON array, one object per pair, no prose and no markdown fence:
 [{"n":1,"v":"SAME"},{"n":2,"v":"BROADER","parent":"dc-dc-converter"},{"n":3,"v":"DISTINCT"}]
@@ -266,11 +300,23 @@ def main():
             e["snippets"] += d["snippets"]
             if n != canon:
                 alias[n] = canon
+        # Type is decided by plurality, which is fine when the crowd agrees and
+        # unreliable when it does not. Record the MARGIN so downstream stages can
+        # see a contested call instead of a bare label: measured on the real
+        # vocabulary, every type decided by a sub-50% plurality in a 35-concept
+        # sample was either wrong or a concept that should have been split
+        # (mobile-phone 39%, floppy-disk 41%, solder-joint 49%).
+        ranked = e["types"].most_common()
+        top_t, top_n = ranked[0]
+        second = ranked[1][1] if len(ranked) > 1 else 0
+        share = top_n / max(sum(e["types"].values()), 1)
         vocab.append({
             "canonical_name": canon,
             "aliases": sorted(n for n in group if n != canon),
-            "type": e["types"].most_common(1)[0][0],
+            "type": top_t,
             "type_votes": dict(e["types"]),
+            "type_share": round(share, 3),
+            "type_contested": share < 0.5 or (top_n - second) <= 2,
             "total_mentions": e["mentions"],
             "episode_count": len(e["episodes"]),
             "sample_snippets": e["snippets"][:3],
