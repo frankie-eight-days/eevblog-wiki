@@ -1,80 +1,80 @@
 # Canonicalisation report — EEVblog concept census
 
-Source: /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/captions-v2, /Users/frankwalsh/Documents/vibecoding/eevblog_wiki/census/full-v1 (2,064 videos, 223,239 mentions).
+Source: census/captions-v2, census/full-v2 (2,846 videos, 275,643 mentions).
 Additive layer; no census file was modified.
 
 ## Headline
 
 | metric | value |
 |---|---|
-| raw distinct concept strings | 65,311 |
-| canonical concepts | 61,280 |
-| compression | 6.2% fewer entries |
-| total mentions (unchanged) | 223,239 |
-| concepts in >=10 videos | 2,051 |
-| singletons (1 mention, no alias) | 39,738 |
-| `broader` relations recorded | 7,033 |
+| raw distinct concept strings | 79,095 |
+| canonical concepts | 73,874 |
+| compression | 6.6% fewer entries |
+| total mentions (unchanged) | 275,643 |
+| concepts in >=10 videos | 2,661 |
+| singletons (1 mention, no alias) | 47,812 |
+| `broader` relations recorded | 6,850 |
 
 ## Stages
 
 | stage | method | result |
 |---|---|---|
-| 1 hygiene | junk `type` remapped to the canonical 16; leaked `depth` reset | 77 fixes |
+| 1 hygiene | junk `type` remapped to the canonical 16; leaked `depth` reset | 99 fixes |
 | 2 normalise | case / unicode / punctuation / whitespace fold | folded into stage 3 |
-| 3 variants | plural + hyphen + spacing, only when both forms observed | 759 pairs |
-| 4 embeddings | `text-embedding-3-small`, cosine >= 0.8, top-25 neighbours | 50,675 candidates |
-| 5 rule merge | identical stemmed token sequence + compatible type | 268 pairs |
-| 6 rule reject | differing digit signature, or both-singleton below 0.86 | 25,929 pairs |
-| 7 acronym | deterministic initials match (embeddings are blind to these) | 470 pairs |
-| 8 adjudication | `gpt-5.6-luna`, effort low, 60/request | 24,380 pairs, $0.88 |
+| 3 variants | plural + hyphen + spacing, only when both forms observed | 1,012 pairs |
+| 4 embeddings | `text-embedding-3-small`, cosine >= 0.8, top-25 neighbours | 64,755 candidates |
+| 5 rule merge | identical stemmed token sequence + compatible type | 0 pairs |
+| 6 rule reject | differing digit signature, or both-singleton below 0.86 | 17,985 pairs |
+| 7 acronym | deterministic initials match (embeddings are blind to these) | 551 pairs |
+| 8 adjudication | `gpt-5.6-luna`, effort low, 60/request | 46,566 pairs, $1.65 |
 
 An acronym gets exactly one expansion: the highest-mention one, plus spelling
-variants of it. 4074 homonym expansions were rejected this way
+variants of it. 5393 homonym expansions were rejected this way
 (full list in `_acronym_rejects.json`).
 
 ## Biggest merge clusters
 
 | canonical | type | videos | mentions | aliases | sample |
 |---|---|---|---|---|---|
-| `heat-sink` | tool-equipment | 293 | 504 | 5 | `cpu-heatsink`, `external-heat-sink`, `heatsink`, `processor-heat-sink`, `thermal-heat-sink` |
-| `schematic` | media-resource | 218 | 346 | 3 | `circuit-diagram`, `machine-schematic`, `schematic-diagram` |
-| `bridge-rectifier` | component | 146 | 271 | 5 | `diode-bridge`, `diode-bridge-rectifier`, `discrete-bridge-rectifier`, `full-bridge-rectifier`, `full-wave-bridge-rectifier` |
-| `surface-mount-technology` | manufacturing | 141 | 183 | 3 | `smt`, `smt-process`, `surface-mount` |
-| `switch-mode-power-supply` | tool-equipment | 136 | 195 | 3 | `switched-mode-power-supply`, `switching-power-supply`, `switchmode-power-supply` |
-| `battery-life` | concept-principle | 113 | 165 | 4 | `battery-lifespan`, `battery-lifetime`, `battery-longevity`, `battery-service-life` |
-| `flat-flex-cable` | component | 108 | 192 | 4 | `flat-flex-ribbon`, `flat-flex-ribbon-cable`, `flat-flexible-cable`, `flexible-flat-cable` |
-| `rs-232` | standard-protocol | 108 | 150 | 4 | `rs-232c`, `rs232`, `rs232-protocol`, `rs232c` |
-| `surface-mount-component` | component | 101 | 129 | 4 | `smd`, `smd-component`, `smd-part`, `surface-mount-device` |
-| `fluke` | company-product | 95 | 173 | 3 | `fluke-brand`, `fluke-corporation`, `fluke-trademark` |
-| `waveform` | concept-principle | 93 | 143 | 3 | `waveform-software`, `waveforms`, `waveforms-software` |
-| `solar-panel` | component | 92 | 454 | 4 | `photovoltaic-module`, `photovoltaic-panel`, `solar-module`, `solar-panel-module` |
-| `trimmer-potentiometer` | component | 86 | 115 | 4 | `carbon-trimmer-potentiometer`, `potentiometer-trimmer`, `trim-potentiometer`, `trimming-potentiometer` |
-| `reflow-soldering` | technique | 81 | 119 | 3 | `pcb-reflow-soldering`, `smd-reflow`, `solder-reflow` |
-| `motherboard` | component | 76 | 96 | 5 | `computer-motherboard`, `main-board`, `mainboard`, `mains-board`, `pc-motherboard` |
-| `double-sided-pcb` | manufacturing | 75 | 112 | 3 | `dual-layer-pcb`, `dual-sided-pcb`, `two-layer-pcb` |
-| `time-base` | tool-equipment | 65 | 115 | 3 | `horizontal-time-base`, `horizontal-timebase`, `timebase` |
-| `sot-23` | component | 60 | 104 | 4 | `six-pin-sot23`, `sot-23-package`, `sot23`, `sot23-package` |
-| `resistor-divider` | technique | 59 | 101 | 4 | `high-voltage-resistor-divider`, `resistive-divider`, `resistive-voltage-divider`, `resistor-voltage-divider` |
-| `processor-board` | component | 54 | 73 | 4 | `cpu-board`, `main-processing-board`, `main-processor-board`, `processing-board` |
-| `quad-flat-package` | component | 52 | 66 | 3 | `qfp`, `qfp-package`, `quad-flat-pack` |
-| `pin-header` | component | 50 | 71 | 3 | `pcb-header`, `pcb-pin-header`, `pin-header-connector` |
-| `user-manual` | media-resource | 49 | 58 | 4 | `installation-manual`, `instruction-manual`, `owner-manual`, `user-guide` |
-| `thermal-camera` | tool-equipment | 48 | 86 | 6 | `flir-camera`, `flir-infrared-camera`, `flir-thermal-camera`, `flir-thermal-imaging-camera`, `infrared-thermal-camera`, `thermal-imaging-camera` |
-| `4000-series-cmos` | component | 44 | 60 | 4 | `4000-cmos`, `4000-series-cmos-logic`, `4000-series-logic`, `cd4000-series-cmos` |
-| `5-volt-rail` | component | 42 | 91 | 4 | `5-v-rail`, `5-volt-power-rail`, `5v-rail`, `plus-5-volt-rail` |
-| `webcam` | tool-equipment | 42 | 52 | 3 | `usb-camera`, `usb-webcam`, `webcam-camera` |
-| `pcb-assembly` | manufacturing | 42 | 47 | 3 | `circuit-board-assembly`, `pcba`, `printed-circuit-board-assembly` |
-| `bar-graph-display` | tool-equipment | 41 | 56 | 4 | `bar-graph`, `bar-graph-indicator`, `bargraph`, `bargraph-display` |
-| `micro-sd-card` | component | 41 | 53 | 3 | `micro-sd`, `microsd`, `microsd-card` |
-| `led-backlight` | component | 39 | 60 | 4 | `backlight-led`, `backlit-led`, `lcd-backlight`, `led-backlighting` |
-| `microampere` | concept-principle | 37 | 43 | 5 | `microamp`, `microamp-current-measurement`, `microamp-measurement`, `microampere-current-measurement`, `microampere-measurement` |
-| `solar-roadways` | company-product | 36 | 320 | 5 | `solar-freakin-roadways`, `solar-freaking-roadways`, `solar-highway`, `solar-road`, `solar-roadway` |
-| `usb-flash-drive` | tool-equipment | 36 | 48 | 5 | `usb-drive`, `usb-memory`, `usb-memory-stick`, `usb-stick`, `usb-thumb-drive` |
-| `soldering-tip` | tool-equipment | 35 | 117 | 7 | `fine-point-soldering-tip`, `fine-soldering-tip`, `modern-soldering-iron-tip`, `pace-soldering-tip`, `solder-tip`, `soldering-iron-contact-tip` |
-| `solar-power-system` | tool-equipment | 35 | 93 | 5 | `photovoltaic-solar`, `photovoltaic-system`, `solar-panel-system`, `solar-photovoltaic-system`, `solar-pv` |
-| `serial-decoding` | technique | 33 | 54 | 3 | `hardware-serial-decoding`, `serial-communication-decoding`, `serial-data-decoding` |
-| `oscilloscope-memory-depth` | tool-equipment | 33 | 49 | 3 | `deep-memory-oscilloscope`, `long-memory-oscilloscope`, `oscilloscope-deep-memory` |
-| `bandwidth-limit` | technique | 33 | 45 | 3 | `bandwidth-limitation`, `bandwidth-limiting`, `frequency-bandwidth-limit` |
-| `3-3v-rail` | component | 31 | 62 | 4 | `3-3-v-rail`, `3-3-volt-power-rail`, `3-3-volt-rail`, `3.3v-rail` |
+| `power-supply` | tool-equipment | 517 | 898 | 3 | `power-supply-circuit`, `power-supply-circuitry`, `power-supply-unit` |
+| `heat-sink` | tool-equipment | 356 | 592 | 6 | `computer-heatsink`, `cpu-heatsink`, `custom-heat-sink`, `custom-heatsink`, `heatsink`, `processor-heat-sink` |
+| `schematic` | media-resource | 277 | 423 | 5 | `circuit-diagram`, `circuit-schematic`, `electrical-schematic`, `electronic-schematic`, `schematic-diagram` |
+| `fpga` | component | 211 | 511 | 6 | `field-programmable-gate-array`, `fpga-data-sheet`, `fpga-datasheet`, `fpga-i-o`, `fpga-io`, `fpgas` |
+| `switch-mode-power-supply` | component | 207 | 292 | 7 | `isolated-switch-mode-power-supply`, `switch-mode-converter`, `switch-mode-power-converter`, `switched-mode-power-supply`, `switching-converter`, `switching-power-supply` |
+| `solder-mask` | manufacturing | 202 | 329 | 3 | `pcb-solder-mask`, `red-solder-mask`, `solder-mask-pcb` |
+| `dc-dc-converter` | component | 182 | 296 | 6 | `ac-dc`, `ac-dc-conversion`, `ac-dc-converter`, `ac-to-dc-conversion`, `ac-to-dc-converter`, `dc-to-dc-converter` |
+| `bridge-rectifier` | component | 178 | 322 | 5 | `diode-bridge`, `diode-bridge-rectifier`, `discrete-bridge-rectifier`, `full-bridge-rectifier`, `full-wave-bridge-rectifier` |
+| `serial-port` | standard-protocol | 161 | 209 | 3 | `serial-communications-interface`, `serial-interface`, `serial-port-interface` |
+| `battery-life` | concept-principle | 155 | 240 | 6 | `battery-lifespan`, `battery-lifetime`, `battery-longevity`, `battery-operating-life`, `battery-runtime`, `battery-service-life` |
+| `crystal-oscillator` | component | 144 | 212 | 5 | `crystal-controlled-oscillator`, `oven-controlled-crystal-oscillator`, `ovenized-crystal-oscillator`, `quartz-crystal-oscillator`, `quartz-oscillator` |
+| `solar-panel` | component | 133 | 613 | 4 | `photovoltaic-module`, `photovoltaic-panel`, `solar-module`, `solar-panel-module` |
+| `flat-flex-cable` | component | 131 | 226 | 5 | `flat-cable`, `flat-flex-ribbon`, `flat-flex-ribbon-cable`, `flat-flexible-cable`, `flexible-flat-cable` |
+| `rs-232` | standard-protocol | 129 | 177 | 4 | `rs-232c`, `rs232`, `rs232-protocol`, `rs232c` |
+| `silkscreen` | manufacturing | 127 | 185 | 6 | `pcb-silk-screen`, `pcb-silkscreen`, `silk-screen`, `silk-screen-printing`, `silk-screening`, `silkscreening` |
+| `solder-joint` | component | 111 | 175 | 7 | `bad-solder-joint`, `cold-solder-joint`, `dry-solder-joint`, `poor-solder-joint`, `solder-connection`, `solder-junction` |
+| `waveform` | concept-principle | 108 | 167 | 3 | `waveform-software`, `waveforms`, `waveforms-software` |
+| `trimmer-potentiometer` | component | 105 | 137 | 7 | `10-turn-trimmer`, `10-turn-trimmer-potentiometer`, `carbon-trimmer-potentiometer`, `gain-trim-potentiometer`, `potentiometer-trimmer`, `trim-potentiometer` |
+| `double-sided-pcb` | manufacturing | 101 | 139 | 4 | `double-layer-pcb`, `dual-layer-pcb`, `dual-sided-pcb`, `two-layer-pcb` |
+| `reflow-soldering` | technique | 98 | 139 | 6 | `infrared-reflow`, `infrared-reflow-soldering`, `pcb-reflow-soldering`, `solder-paste-reflow`, `solder-reflow`, `surface-mount-reflow-soldering` |
+| `firmware-update` | software | 94 | 137 | 4 | `device-firmware-upgrade`, `field-firmware-update`, `firmware-updating`, `software-firmware-update` |
+| `motherboard` | component | 84 | 105 | 5 | `computer-motherboard`, `main-board`, `mainboard`, `mains-board`, `mains-power-board` |
+| `arbitrary-waveform-generator` | tool-equipment | 71 | 139 | 3 | `arbitrary-function-waveform-generator`, `awg`, `awg-wire-gauge` |
+| `sot-23` | component | 70 | 114 | 3 | `sot-23-package`, `sot23`, `sot23-package` |
+| `9-volt-battery` | component | 68 | 113 | 3 | `9-v-battery`, `9v-battery`, `nine-volt-battery` |
+| `battery-charging` | technique | 66 | 102 | 6 | `battery-charge-circuit`, `battery-charger-circuit`, `battery-charging-circuit`, `battery-charging-circuitry`, `battery-recharging`, `battery-recharging-circuitry` |
+| `analog-oscilloscope` | tool-equipment | 65 | 159 | 3 | `analog-crt-oscilloscope`, `analogue-oscilloscope`, `crt-oscilloscope` |
+| `rohde-and-schwarz` | company-product | 65 | 114 | 3 | `roehde-and-schwarz`, `roehde-schwarz`, `rohde-schwarz` |
+| `test-equipment` | tool-equipment | 65 | 82 | 3 | `test-and-measurement-equipment`, `test-gear`, `testing-equipment` |
+| `pcb-assembly` | manufacturing | 65 | 75 | 3 | `circuit-board-assembly`, `pcba`, `printed-circuit-board-assembly` |
+| `thermal-camera` | tool-equipment | 63 | 104 | 7 | `flir-camera`, `flir-infrared-camera`, `flir-thermal-camera`, `flir-thermal-imaging-camera`, `infrared-thermal-camera`, `thermal-imager` |
+| `quad-flat-package` | component | 63 | 80 | 3 | `qfp`, `qfp-package`, `quad-flat-pack` |
+| `rigol-oscilloscope` | tool-equipment | 61 | 116 | 5 | `rigol-2000`, `rigol-2000-oscilloscope`, `rigol-2000-series`, `rigol-2000-series-oscilloscope`, `rigol-ds2000` |
+| `resistor-divider` | technique | 60 | 100 | 3 | `resistive-divider`, `resistive-voltage-divider`, `resistor-voltage-divider` |
+| `user-manual` | media-resource | 60 | 71 | 3 | `instruction-manual`, `owner-manual`, `user-guide` |
+| `surface-mount-device` | component | 60 | 70 | 4 | `smd`, `smd-component`, `smd-device`, `smd-part` |
+| `pin-header` | component | 59 | 82 | 3 | `pcb-header`, `pcb-pin-header`, `pin-header-connector` |
+| `5-volt-rail` | component | 57 | 110 | 6 | `5-v-rail`, `5-volt-power-rail`, `5v-rail`, `five-volt-power-rail`, `five-volt-rail`, `five-volt-supply-rail` |
+| `processor-board` | component | 57 | 76 | 3 | `cpu-board`, `main-processing-board`, `main-processor-board` |
+| `micro-sd-card` | component | 57 | 71 | 3 | `micro-sd`, `microsd`, `microsd-card` |
 
-Run time 5303s.
+Run time 9425s.

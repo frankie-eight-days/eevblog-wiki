@@ -1,0 +1,925 @@
+{
+ "episode": null,
+ "title": "EEVblog #837 - Reverse Engineering A Valve Headphone Amplifier",
+ "url": "https://www.youtube.com/watch?v=coSt5HWRvv4",
+ "file": "coSt5HWRvv4.md",
+ "main_topics": [
+  "zanzu-x2u808",
+  "reverse-engineering",
+  "pentode"
+ ],
+ "guest_name": null,
+ "guest_affiliation": null,
+ "notes": null,
+ "mentions": [
+  {
+   "concept": "zanzu-x2u808",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 78,
+   "depth": "mention",
+   "context_snippet": "this Zanzu X2U808 valve-based hi-fi amplifier you can get on eBay for like, you know, 50 bucks"
+  },
+  {
+   "concept": "valve-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 78,
+   "depth": "mention",
+   "context_snippet": "this Zanzu X2U808 valve-based hi-fi amplifier"
+  },
+  {
+   "concept": "jfet",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 0,
+   "char_start": 223,
+   "depth": "mention",
+   "context_snippet": "It uses two JFETs with pilot lights here"
+  },
+  {
+   "concept": "blue-led",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 1,
+   "char_start": 375,
+   "depth": "mention",
+   "context_snippet": "the obligatory wanky blue LEDs in there"
+  },
+  {
+   "concept": "audio-op-amp",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 2,
+   "char_start": 668,
+   "depth": "opinion",
+   "context_snippet": "they've just got a couple of regular audio-grade op-amps inside this thing"
+  },
+  {
+   "concept": "valve-heater",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 3,
+   "char_start": 863,
+   "depth": "mention",
+   "context_snippet": "We can see them actually heating up there"
+  },
+  {
+   "concept": "high-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1185,
+   "depth": "explains",
+   "context_snippet": "valves are usually high-voltage operating devices"
+  },
+  {
+   "concept": "6-volt-dc-power-supply",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1251,
+   "depth": "mention",
+   "context_snippet": "it comes with a 6-volt plug pack, 6-volt DC plug pack"
+  },
+  {
+   "concept": "boost-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 4,
+   "char_start": 1340,
+   "depth": "mention",
+   "context_snippet": "maybe some boost converter circuitry in there"
+  },
+  {
+   "concept": "reverse-engineering",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1446,
+   "depth": "explains",
+   "context_snippet": "we'd do a little reverse engineering of this thing, of the circuit in here"
+  },
+  {
+   "concept": "6j9",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 5,
+   "char_start": 1600,
+   "depth": "mention",
+   "context_snippet": "these are 6J9 valves"
+  },
+  {
+   "concept": "sylvania",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1699,
+   "depth": "mention",
+   "context_snippet": "These are from Sylvania"
+  },
+  {
+   "concept": "6j9",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1738,
+   "depth": "mention",
+   "context_snippet": "the pinouts for this puppy"
+  },
+  {
+   "concept": "ne5532",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 6,
+   "char_start": 1917,
+   "depth": "mention",
+   "context_snippet": "classic NE5532s"
+  },
+  {
+   "concept": "valve-socket",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 2003,
+   "depth": "mention",
+   "context_snippet": "our valve sockets"
+  },
+  {
+   "concept": "diode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 2195,
+   "depth": "mention",
+   "context_snippet": "we've got ourselves a diode"
+  },
+  {
+   "concept": "inductor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 7,
+   "char_start": 2224,
+   "depth": "mention",
+   "context_snippet": "we've got an inductor"
+  },
+  {
+   "concept": "output-capacitance",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 8,
+   "char_start": 2268,
+   "depth": "mention",
+   "context_snippet": "we've got some output capacitance here"
+  },
+  {
+   "concept": "6j9",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 3596,
+   "depth": "explains",
+   "context_snippet": "it's a triple triode"
+  },
+  {
+   "concept": "triode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 12,
+   "char_start": 3635,
+   "depth": "explains",
+   "context_snippet": "Basically, essentially, three JFETs with pilot lights in the one package"
+  },
+  {
+   "concept": "rf-amplifier",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 16,
+   "char_start": 4811,
+   "depth": "mention",
+   "context_snippet": "designed for RF amps and VHF stuff"
+  },
+  {
+   "concept": "e180f",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 4953,
+   "depth": "mention",
+   "context_snippet": "it's actually a substitute for the E180F"
+  },
+  {
+   "concept": "pentode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 5112,
+   "depth": "mention",
+   "context_snippet": "it's a pentode designed for wideband application"
+  },
+  {
+   "concept": "wideband-amplifier",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 17,
+   "char_start": 5117,
+   "depth": "mention",
+   "context_snippet": "a pentode designed for wideband application"
+  },
+  {
+   "concept": "pentode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 19,
+   "char_start": 5586,
+   "depth": "explains",
+   "context_snippet": "It's one of the more complex valves, due to the many various elements in here"
+  },
+  {
+   "concept": "plate",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 20,
+   "char_start": 5904,
+   "depth": "explains",
+   "context_snippet": "Up the top here is the plate, which is also called the anode"
+  },
+  {
+   "concept": "anode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 20,
+   "char_start": 5923,
+   "depth": "mention",
+   "context_snippet": "the plate, which is also called the anode"
+  },
+  {
+   "concept": "suppressor-grid",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 6053,
+   "depth": "explains",
+   "context_snippet": "The next grid down is what's called the suppressor grid"
+  },
+  {
+   "concept": "control-grid",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 21,
+   "char_start": 6183,
+   "depth": "explains",
+   "context_snippet": "the one at the bottom here is the control grid, otherwise known as the gate"
+  },
+  {
+   "concept": "cathode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 22,
+   "char_start": 6484,
+   "depth": "explains",
+   "context_snippet": "that just heats up the cathode, which emits all the electrons"
+  },
+  {
+   "concept": "electron-current",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 23,
+   "char_start": 6700,
+   "depth": "explains",
+   "context_snippet": "this is electron current flow as opposed to conventional current flow"
+  },
+  {
+   "concept": "pentode-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 24,
+   "char_start": 7051,
+   "depth": "mention",
+   "context_snippet": "a rudimentary pentode amplifier"
+  },
+  {
+   "concept": "ac-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 28,
+   "char_start": 7941,
+   "depth": "explains",
+   "context_snippet": "our anode resistor up here, which then just AC, is just AC coupled off to give our output"
+  },
+  {
+   "concept": "headphone-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 9163,
+   "depth": "mention",
+   "context_snippet": "the headphone output driver? Power, like, you know, power amplifier for the headphone?"
+  },
+  {
+   "concept": "preamp",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 32,
+   "char_start": 9291,
+   "depth": "opinion",
+   "context_snippet": "my guess is it's typically used as a preamp input"
+  },
+  {
+   "concept": "potentiometer",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 9539,
+   "depth": "explains",
+   "context_snippet": "our pot is like directly on our input"
+  },
+  {
+   "concept": "volume-control",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 33,
+   "char_start": 9578,
+   "depth": "explains",
+   "context_snippet": "That's our volume control pot, so it's effectively attenuating the input here"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 34,
+   "char_start": 9746,
+   "depth": "mention",
+   "context_snippet": "these two caps"
+  },
+  {
+   "concept": "desoldering",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 10504,
+   "depth": "explains",
+   "context_snippet": "sometimes it's just easier to desolder things to look under them"
+  },
+  {
+   "concept": "continuity-testing",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 37,
+   "char_start": 10703,
+   "depth": "mention",
+   "context_snippet": "you start to randomly, you know, buzzing out pins"
+  },
+  {
+   "concept": "resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 38,
+   "char_start": 10888,
+   "depth": "mention",
+   "context_snippet": "you didn't know there was a resistor under there"
+  },
+  {
+   "concept": "circuit-schematic",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 11347,
+   "depth": "explains",
+   "context_snippet": "which you have to redraw because it doesn't really make much sense"
+  },
+  {
+   "concept": "kicad",
+   "type": "software",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 11496,
+   "depth": "mention",
+   "context_snippet": "the Davecad reverse engineering edition"
+  },
+  {
+   "concept": "headphone-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 11539,
+   "depth": "mention",
+   "context_snippet": "this Hi-Fi headphone amplifier"
+  },
+  {
+   "concept": "screen-grid",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 40,
+   "char_start": 11575,
+   "depth": "mention",
+   "context_snippet": "you'll notice here that the screen grid is actually connected"
+  },
+  {
+   "concept": "pentode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 11709,
+   "depth": "explains",
+   "context_snippet": "it actually converts it from a pentode into a triode"
+  },
+  {
+   "concept": "triode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 41,
+   "char_start": 11709,
+   "depth": "explains",
+   "context_snippet": "it actually converts it from a pentode into a triode"
+  },
+  {
+   "concept": "preamplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 11929,
+   "depth": "opinion",
+   "context_snippet": "in terms of a front-end preamplifier like this"
+  },
+  {
+   "concept": "triode-connection",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 42,
+   "char_start": 11996,
+   "depth": "explains",
+   "context_snippet": "connecting it as a triode at least offers lower noise"
+  },
+  {
+   "concept": "plate-drive-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 12211,
+   "depth": "explains",
+   "context_snippet": "you're going to need a higher dry plate drive voltage"
+  },
+  {
+   "concept": "distortion",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 43,
+   "char_start": 12436,
+   "depth": "mention",
+   "context_snippet": "The spec is like 0.005% distortion"
+  },
+  {
+   "concept": "valve-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 44,
+   "char_start": 12533,
+   "depth": "opinion",
+   "context_snippet": "valves are supposed to do funky things sonically when you overdrive them"
+  },
+  {
+   "concept": "valve-heater",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 46,
+   "char_start": 13218,
+   "depth": "explains",
+   "context_snippet": "valves are 6 volt heater voltages"
+  },
+  {
+   "concept": "dc-dc-converter",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 13348,
+   "depth": "explains",
+   "context_snippet": "Those two DC to DC converter switch modes that we saw in here"
+  },
+  {
+   "concept": "sot-23",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 13415,
+   "depth": "mention",
+   "context_snippet": "that little 5 pin SOT23"
+  },
+  {
+   "concept": "soic-8",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 13439,
+   "depth": "mention",
+   "context_snippet": "and the SO8 there"
+  },
+  {
+   "concept": "negative-voltage-rail",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 47,
+   "char_start": 13458,
+   "depth": "explains",
+   "context_snippet": "One generates the negative voltage"
+  },
+  {
+   "concept": "suppressor-grid",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 48,
+   "char_start": 13820,
+   "depth": "mention",
+   "context_snippet": "the suppressor grid connected"
+  },
+  {
+   "concept": "cathode-follower",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 51,
+   "char_start": 14445,
+   "depth": "explains",
+   "context_snippet": "in this case, a cathode follower. So basically, this thing is not a preamp as such, it's just a buffer"
+  },
+  {
+   "concept": "line-level-signal",
+   "type": "standard-protocol",
+   "speaker": "Dave Jones",
+   "paragraph_index": 53,
+   "char_start": 14928,
+   "depth": "explains",
+   "context_snippet": "It's designed to take line-level signals and give you your headphone out"
+  },
+  {
+   "concept": "ne-5532",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 15943,
+   "depth": "mention",
+   "context_snippet": "the NE5532"
+  },
+  {
+   "concept": "ac-coupling",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 56,
+   "char_start": 15955,
+   "depth": "mention",
+   "context_snippet": "the AC coupling"
+  },
+  {
+   "concept": "dc-analysis",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 57,
+   "char_start": 16102,
+   "depth": "explains",
+   "context_snippet": "let's just take the DC condition first, okay, when you're trying to analyze circuits"
+  },
+  {
+   "concept": "capacitor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 57,
+   "char_start": 16275,
+   "depth": "explains",
+   "context_snippet": "C12, a capacitor's gonna be open circuit"
+  },
+  {
+   "concept": "voltage-follower",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 58,
+   "char_start": 16420,
+   "depth": "explains",
+   "context_snippet": "this op-amp is not here, okay? Because it's just a voltage follower"
+  },
+  {
+   "concept": "unity-gain-amplifier",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 59,
+   "char_start": 16756,
+   "depth": "explains",
+   "context_snippet": "So you've got a unity gain amplifier there"
+  },
+  {
+   "concept": "ac-analysis",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 61,
+   "char_start": 17267,
+   "depth": "explains",
+   "context_snippet": "But in the AC condition, of course, then these capacitors are going to matter"
+  },
+  {
+   "concept": "gain",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 62,
+   "char_start": 17629,
+   "depth": "explains",
+   "context_snippet": "depending on the frequency here you're going to start getting a bit of gain in this thing"
+  },
+  {
+   "concept": "6j9j",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 63,
+   "char_start": 18043,
+   "depth": "mention",
+   "context_snippet": "this 6J9J or slash E150F valve"
+  },
+  {
+   "concept": "e150f",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 63,
+   "char_start": 18043,
+   "depth": "mention",
+   "context_snippet": "this 6J9J or slash E150F valve"
+  },
+  {
+   "concept": "amplification-factor",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 67,
+   "char_start": 18917,
+   "depth": "explains",
+   "context_snippet": "the amplification factor mu comes into it and the output impedance"
+  },
+  {
+   "concept": "anode-supply-voltage",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 69,
+   "char_start": 19641,
+   "depth": "explains",
+   "context_snippet": "its nominal anode supply operating voltage at 160 volts"
+  },
+  {
+   "concept": "cathode-resistor",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 70,
+   "char_start": 20019,
+   "depth": "explains",
+   "context_snippet": "the cathode resistor here is usually, a rule of thumb"
+  },
+  {
+   "concept": "load-impedance",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 71,
+   "char_start": 20091,
+   "depth": "explains",
+   "context_snippet": "it should be an order of magnitude lower than the load impedance"
+  },
+  {
+   "concept": "function-generator",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 72,
+   "char_start": 20639,
+   "depth": "mention",
+   "context_snippet": "feeding in a signal from my function gen over here"
+  },
+  {
+   "concept": "sine-wave",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 20748,
+   "depth": "mention",
+   "context_snippet": "1 kilohertz sine wave"
+  },
+  {
+   "concept": "oscilloscope",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 73,
+   "char_start": 20838,
+   "depth": "mention",
+   "context_snippet": "The yellow trace is the input"
+  },
+  {
+   "concept": "cathode-follower",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 74,
+   "char_start": 21149,
+   "depth": "explains",
+   "context_snippet": "we expect, again, close to 1, no phase issues or anything like that, no inversion, it's a cathode follower"
+  },
+  {
+   "concept": "voltage-gain",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 75,
+   "char_start": 21278,
+   "depth": "explains",
+   "context_snippet": "we do expect the gain to be slightly less than 1"
+  },
+  {
+   "concept": "cathode",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 79,
+   "char_start": 22531,
+   "depth": "explains",
+   "context_snippet": "that cathode is still hot"
+  },
+  {
+   "concept": "valve-data-sheet",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 22693,
+   "depth": "mention",
+   "context_snippet": "the data sheet will actually tell you the warm-up time"
+  },
+  {
+   "concept": "cathode-heating-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 22784,
+   "depth": "explains",
+   "context_snippet": "Check it out, cathode heating time. Nominally 12 seconds, maximum 18 seconds."
+  },
+  {
+   "concept": "warm-up-time",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 22820,
+   "depth": "explains",
+   "context_snippet": "Nominally 12 seconds, maximum 18 seconds"
+  },
+  {
+   "concept": "distortion",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 22889,
+   "depth": "explains",
+   "context_snippet": "they've actually specified a distortion here"
+  },
+  {
+   "concept": "valve-data-sheet",
+   "type": "media-resource",
+   "speaker": "Dave Jones",
+   "paragraph_index": 80,
+   "char_start": 22973,
+   "depth": "opinion",
+   "context_snippet": "I'm not hugely familiar with valve data sheets"
+  },
+  {
+   "concept": "distortion",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 23119,
+   "depth": "explains",
+   "context_snippet": "1.6% for a 1K load for 100 millivolts RMS input"
+  },
+  {
+   "concept": "hi-fi-amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 81,
+   "char_start": 23257,
+   "depth": "opinion",
+   "context_snippet": "this little one-hung low-brand hi-fi amp"
+  },
+  {
+   "concept": "tube",
+   "type": "component",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 23430,
+   "depth": "explains",
+   "context_snippet": "the tubes do actually do something"
+  },
+  {
+   "concept": "cathode-follower",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 82,
+   "char_start": 23480,
+   "depth": "explains",
+   "context_snippet": "they're cathode followers"
+  },
+  {
+   "concept": "audio",
+   "type": "other",
+   "speaker": "Dave Jones",
+   "paragraph_index": 83,
+   "char_start": 23697,
+   "depth": "mention",
+   "context_snippet": "all the audio fools will come out"
+  },
+  {
+   "concept": "doug-ford",
+   "type": "person",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 24503,
+   "depth": "mention",
+   "context_snippet": "my mate Doug Ford from Doug Ford Analog Design"
+  },
+  {
+   "concept": "doug-ford-analog-design",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 24526,
+   "depth": "mention",
+   "context_snippet": "Doug Ford Analog Design"
+  },
+  {
+   "concept": "rode-microphones",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 24600,
+   "depth": "mention",
+   "context_snippet": "a former head designer at Rode Microphones"
+  },
+  {
+   "concept": "jans-audio",
+   "type": "company-product",
+   "speaker": "Dave Jones",
+   "paragraph_index": 86,
+   "char_start": 24644,
+   "depth": "mention",
+   "context_snippet": "former head designer at Jans Audio"
+  },
+  {
+   "concept": "amplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 24756,
+   "depth": "mention",
+   "context_snippet": "he's designed amplifiers"
+  },
+  {
+   "concept": "microphone-preamplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 24782,
+   "depth": "mention",
+   "context_snippet": "mic preamps, including tube preamps as well"
+  },
+  {
+   "concept": "tube-preamplifier",
+   "type": "tool-equipment",
+   "speaker": "Dave Jones",
+   "paragraph_index": 87,
+   "char_start": 24795,
+   "depth": "mention",
+   "context_snippet": "including tube preamps as well"
+  },
+  {
+   "concept": "harmonic-distortion",
+   "type": "concept-principle",
+   "speaker": "Dave Jones",
+   "paragraph_index": 88,
+   "char_start": 25154,
+   "depth": "explains",
+   "context_snippet": "add some second and third harmonic distortion into there"
+  },
+  {
+   "concept": "microphone-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 89,
+   "char_start": 25400,
+   "depth": "mention",
+   "context_snippet": "Doug's microphone, multi-part microphone design video series"
+  },
+  {
+   "concept": "microphone-design",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 25601,
+   "depth": "mention",
+   "context_snippet": "It's not just about microphone design"
+  },
+  {
+   "concept": "circuit-topology",
+   "type": "technique",
+   "speaker": "Dave Jones",
+   "paragraph_index": 90,
+   "char_start": 25680,
+   "depth": "mention",
+   "context_snippet": "circuit topologies"
+  }
+ ]
+}

@@ -245,6 +245,44 @@ def acronym_pairs(corpus):
     return out, rejected
 
 
+# Adjudicator mistakes that survive review, kept as DATA because a wrong SAME is
+# the one error this pipeline cannot walk back: once two concepts share a
+# canonical name their mentions are summed, and nothing downstream can tell they
+# were ever different things. A wrong DISTINCT merely leaves two nodes that
+# should have been one, which is visible and fixable.
+#
+# Each entry is a pair of predicates over normalised names. A SAME verdict whose
+# two sides land on OPPOSITE sides of a firewall is dropped -- the pair falls back
+# to DISTINCT. Matching is by regex on the slug rather than by literal name, so a
+# surface form that has not appeared yet is still caught: `ac-to-dc-rectifier`
+# would be firewalled from `dc-dc-converter` without anyone editing this list.
+#
+# Found by reading the merge-cluster table after the 2026-08-13 full run. Luna
+# merged the AC-DC family into `dc-dc-converter` (a rectifier front-end is not a
+# switching converter), `mains-power-board` into `motherboard` (ASR hearing
+# "main board" as "mains board"), and `waveform-software` into `waveform` (a tool
+# for viewing a thing is not the thing).
+FIREWALLS = [
+    ("ac-dc vs dc-dc",
+     re.compile(r"(^|-)ac-(to-)?dc(-|$)"),
+     re.compile(r"(^|-)dc-(to-)?dc(-|$)")),
+    ("mains board vs motherboard",
+     re.compile(r"^mains(-|$)"),
+     re.compile(r"(^|-)(mother|main)-?board(-|$)")),
+    ("waveform vs waveform software",
+     re.compile(r"^waveforms?$"),
+     re.compile(r"(^|-)software(-|$)")),
+]
+
+
+def firewalled(a, b):
+    """-> the firewall's name if this pair must never merge, else None."""
+    for name, pa, pb in FIREWALLS:
+        if (pa.search(a) and pb.search(b)) or (pa.search(b) and pb.search(a)):
+            return name
+    return None
+
+
 def rule_verdict(a, b, corpus, cos=None):
     """Stages 5 and 6: decide a pair without asking the model, or defer.
 

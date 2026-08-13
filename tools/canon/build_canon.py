@@ -15,8 +15,8 @@ from collections import Counter, defaultdict
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import numpy as np
-from canon_lib import (Corpus, Union, acronym_pairs, digits, rule_verdict,
-                       stem_key, variant_pairs)
+from canon_lib import (Corpus, Union, acronym_pairs, digits, firewalled,
+                       rule_verdict, stem_key, variant_pairs)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 KEY = (ROOT / "tools/census/openai_key").read_text().strip()
@@ -296,9 +296,22 @@ def main():
 
     log("merge + emit")
     uf = Union(names)
+    blocked = Counter()
     for (a, b), v in decided.items():
-        if v == "SAME":
-            uf.union(a, b)
+        if v != "SAME":
+            continue
+        # Last gate before the union becomes irreversible. Applied HERE rather
+        # than at adjudication because a SAME also arrives from stages 3 and 7,
+        # and union-find makes merges transitive: `ac-dc` -> `ac-dc-converter`
+        # -> `dc-dc-converter` collapses the whole family even when no single
+        # pair looks wrong on its own.
+        fw = firewalled(a, b)
+        if fw:
+            blocked[fw] += 1
+            continue
+        uf.union(a, b)
+    for fw, n in blocked.most_common():
+        log(f"  firewall '{fw}': blocked {n} SAME merges")
 
     alias, vocab = {}, []
     for group in uf.groups().values():
