@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deye Hybrid Inverter Gen Port Troubleshooting</title>
+<meta name="description" content="Full transcript of Deye Hybrid Inverter Gen Port Troubleshooting. Hi, I&#x27;m trying to get to the bottom of this mysterious DI 84 watt power consumption, which happens 24-7, regardless of what I do when I switch on the microinverter input on the generator port. So, I&#x27;ll measure the current clamp, right">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Deye Hybrid Inverter Gen Port Troubleshooting</h1><div class="meta"><span>5:39</span><span>883 words</span><span>18 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=kCtGoymiShU" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=1s" target="_blank" rel="noopener" title="Play from 0:01">0:01</a></div><p>Hi, I&#x27;m trying to get to the bottom of this mysterious DI 84 watt power consumption, which happens 24-7, regardless of what I do when I switch on the microinverter input on the generator port. So, I&#x27;ll measure the current clamp, right? This is coming from the battery.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=23s" target="_blank" rel="noopener" title="Play from 0:23">0:23</a></div><p>And, look at this, right? It&#x27;s 1.15 amps there, and I&#x27;ve actually verified that with another current clamp. At a current voltage of... current voltage? Get it? I&#x27;m here all week. A current voltage of 53.6 volts there, that doesn&#x27;t equal the 84 watts. And let me show you.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=46s" target="_blank" rel="noopener" title="Play from 0:46">0:46</a></div><p>Okay, what I&#x27;ve done is I&#x27;ve actually isolated the inverter. It&#x27;s nighttime here, obviously. So I&#x27;ve isolated the AC side, which is that one there, okay? And I&#x27;ve also isolated the new microinverter, which is that one there. So I switched both those off. So the DI inverter is being powered just from the battery.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=70s" target="_blank" rel="noopener" title="Play from 1:10">1:10</a></div><p>There&#x27;s no other source, and you can see it&#x27;s showing off-grid there, and it&#x27;s still showing 5 watts, 4 watts from the microinverter on the gen port, but that&#x27;s just a residual error. There&#x27;s nothing doing there, but it&#x27;s still reporting the 84 watts. So there&#x27;s nowhere else for the current to go.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=91s" target="_blank" rel="noopener" title="Play from 1:31">1:31</a></div><p>Like, that 84, I reckon&#x27;s got to be some sort of furphy. And it makes no difference if I switch the microinverter off. So it&#x27;s not the Hoy-Miles microinverter consuming 84 watts quiescent standby at night. It&#x27;s not that. It&#x27;s happening, if it is real, it&#x27;s happening inside the DI,</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=112s" target="_blank" rel="noopener" title="Play from 1:52">1:52</a></div><p>because it&#x27;s not going back out to the grid. It&#x27;s got absolutely nowhere to go. So, yeah. I can only presume that this thing is taking, well, 65 watts or thereabouts. So I don&#x27;t know where the 84 is coming from. It makes no sense whatsoever.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=126s" target="_blank" rel="noopener" title="Play from 2:06">2:06</a></div><p>I don&#x27;t get it. So I think it&#x27;s some sort of furphy. Arrgh! Thoughts and comments down below. Now I&#x27;ll switch the AC grid side back on. I don&#x27;t think it&#x27;s connected yet, but it takes like a minute to reconnect. But all of that power is still coming from the battery,</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=146s" target="_blank" rel="noopener" title="Play from 2:26">2:26</a></div><p>so I&#x27;m going to wait for that grid to reconnect and see if that actually, if the residual, there it goes, it dropped. So the grid is reconnected. There you go. That&#x27;s what I thought would happen, okay, because I had the grid isolated. So the DI microinverter is completely isolated from other power sources,</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=167s" target="_blank" rel="noopener" title="Play from 2:47">2:47</a></div><p>except for the battery, and when that happens, it drew about 1.15 amps-ish there, which is around about, that battery voltage is around about 60-odd watts. So it&#x27;s definitely not the 84, and it&#x27;s definitely not on the generator port, because I&#x27;ve got nothing on the generator port.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=184s" target="_blank" rel="noopener" title="Play from 3:04">3:04</a></div><p>I&#x27;ve disconnected the Hoyle-Myles microinverter. So now obviously most of the power for the DI box is coming from the grid side now, because the grid side is reconnected now. So now there&#x27;s only a little piddly bit coming from the battery. I don&#x27;t know, that&#x27;s just to power some internal circuitry in there,</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=203s" target="_blank" rel="noopener" title="Play from 3:23">3:23</a></div><p>so that&#x27;s not much, right? That&#x27;s bugger all. In terms of watts, just to power the input circuitry, whatever that is, in the DI for the battery there. So it&#x27;s just some residual stuff there. So that&#x27;s interesting, huh? And this is real-time updating, okay?</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=220s" target="_blank" rel="noopener" title="Play from 3:40">3:40</a></div><p>During none of this has any of that 84 watts changed, whether or not I connect the Hoyle-Myles microinverter to the gen port or I don&#x27;t, whether I disconnect or disconnect the grid. The only thing left to do is to actually physically switch it off,</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=235s" target="_blank" rel="noopener" title="Play from 3:55">3:55</a></div><p>change the work mode, and see what happens. Actually switch it off back to not a microinverter thing, and that should drop to zero then. So if I change that auxiliary input, the microinverter, okay, I&#x27;m going to convert it back to generator input like this,</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=254s" target="_blank" rel="noopener" title="Play from 4:14">4:14</a></div><p>and if I save that, if we go back out there and we go right down to the bottom, I think we might find generator power zero. So it&#x27;s now dropped back to zero. So I reckon there&#x27;s something really, really sus going on there.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=269s" target="_blank" rel="noopener" title="Play from 4:29">4:29</a></div><p>Yep, yep, there it is. It just dropped right back to, well, it will, I think. Should drop back to zero. It shows zero on the other page. I&#x27;m not sure why the scale hasn&#x27;t moved there. I&#x27;ve got one minute update. Let me try and refresh that.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=286s" target="_blank" rel="noopener" title="Play from 4:46">4:46</a></div><p>Yeah, zero. There you go. After a refresh. So there you go. When you switch it to microinverter input, there&#x27;s a mysterious 84 watts there. I&#x27;ve got no idea. I have asked DI, but they haven&#x27;t really responded yet. So yeah, I think it&#x27;s a furphy.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=305s" target="_blank" rel="noopener" title="Play from 5:05">5:05</a></div><p>I don&#x27;t think there&#x27;s actually like 84 watts actually going anywhere. I think there&#x27;s just 60-odd watts for the actual DI thing itself. So that kind of makes sense, I guess. Seems a bit high, but, you know, at least it&#x27;s something. But yeah, it&#x27;s definitely not the microinverter or something else.</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=kCtGoymiShU&amp;t=324s" target="_blank" rel="noopener" title="Play from 5:24">5:24</a></div><p>So I get, well, I don&#x27;t know, it might chew extra power because it&#x27;s got to switch on the microinverter output to keep on the gen port to keep it going. But I don&#x27;t know. I don&#x27;t get it. Yeah, it&#x27;s weird. Another DI quirk.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

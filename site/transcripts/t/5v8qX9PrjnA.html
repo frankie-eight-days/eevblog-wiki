@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brymen BM257 vs BM235 Multimeter IR Serial Protocol</title>
+<meta name="description" content="Full transcript of Brymen BM257 vs BM235 Multimeter IR Serial Protocol. Hi, I just wanted to do a quick video looking at a potential hack for the EVBlog BM235 meter to give it PC com capability PC serial RS232 communications that you could get on the BM257 and the two meters are all very equivalent ">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Brymen BM257 vs BM235 Multimeter IR Serial Protocol</h1><div class="meta"><span>6:16</span><span>995 words</span><span>25 paragraphs</span><span>source: captions</span></div><a class="watch" href="https://www.youtube.com/watch?v=5v8qX9PrjnA" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, I just wanted to do a quick video looking at a potential hack for the EVBlog BM235 meter to give it PC com capability PC serial RS232 communications that you could get on the BM257 and the two meters are all very equivalent meters almost equivalent functionality except this one does have the PC coms on it and this one doesn&#x27;t.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=27s" target="_blank" rel="noopener" title="Play from 0:27">0:27</a></div><p>But interestingly if you&#x27;ve seen the teardown, I wanted to see if it was possible look like it might actually have a pad in there for an infrared diode that we could infrared LED that we could hack into convert this to RS232 capability because these two do actually use exactly the same case and you&#x27;ll note that it does actually have those two holes in there are for the RS232.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=57s" target="_blank" rel="noopener" title="Play from 0:57">0:57</a></div><p>Okay, so we&#x27;ve got ones over here and they actually have if you have a look in here let&#x27;s have a look ta-da behind the curtain they oh yes, they both have the transparent holes in there.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=73s" target="_blank" rel="noopener" title="Play from 1:13">1:13</a></div><p>Everything&#x27;s the same. They&#x27;ve actually changed look the piezo transducer is now on the board with the BM 235 and quite a few significant changes inside. There&#x27;s less internal wiring.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=86s" target="_blank" rel="noopener" title="Play from 1:26">1:26</a></div><p>They don&#x27;t have a shield like they do under here. You can see see that plastic uh insulated shield down in there. They don&#x27;t have that. They&#x27;ve changed the organization of the amps jack and the milliamp microamp.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=99s" target="_blank" rel="noopener" title="Play from 1:39">1:39</a></div><p>They swapped those around and they&#x27;ve put the chipsets on the top. The chipset has changed. You can tell that when a multimeter chipset changes by the fact that now they&#x27;ve got volts AC and DC on the same range whereas this one here had volts DC and AC separately, and how all those ranges configured will be different depending on which multimeter chipset it uses.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=123s" target="_blank" rel="noopener" title="Play from 2:03">2:03</a></div><p>And I do not know which multimeter chipset they use in here. It&#x27;s Brymen branded, so they won&#x27;t tell me. They just say no, it&#x27;s proprietary. Sorry, we&#x27;re not going to tell you.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=134s" target="_blank" rel="noopener" title="Play from 2:14">2:14</a></div><p>Anyway, so they&#x27;ve got the multimeter chipset. It&#x27;ll be like a variation of one of the commercial off-the-shelf ones or an identical off-the-shelf one, but I don&#x27;t know exactly what one is.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=143s" target="_blank" rel="noopener" title="Play from 2:23">2:23</a></div><p>Haven&#x27;t traced out the pinouts or reverse engineered it or anything. And we&#x27;ve got an LCD driver up here. So, you know, there are significant changes, but interestingly, look, here we go.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=154s" target="_blank" rel="noopener" title="Play from 2:34">2:34</a></div><p>That&#x27;s Where&#x27;s my poker? Here we go. There&#x27;s our little infrared LED there. Notice that it only transmits. It does not have a receiver, even though there&#x27;s a hole in the case.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=168s" target="_blank" rel="noopener" title="Play from 2:48">2:48</a></div><p>There&#x27;s two holes in the case, one for transmit, one receive. It only transmits the data. That&#x27;s it. And interestingly, the EE blog BM235 has a pad here for a diode.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=178s" target="_blank" rel="noopener" title="Play from 2:58">2:58</a></div><p>Look at that. And it looks to be in almost identical location to line up with that hole. Pretty darn close. So, I thought, &quot;Aha!&quot; But, if we actually get in closer here, sorry, I&#x27;m going to film this in one shot.</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=196s" target="_blank" rel="noopener" title="Play from 3:16">3:16</a></div><p>Couldn&#x27;t be bothered putting my macro lens on. So, hopefully you can see that. The LCD driver chipset is the HY2613C. And you&#x27;ll note that that trace goes up there, goes to a cap, which then goes down to ground, and it goes around over to pin four down there.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=211s" target="_blank" rel="noopener" title="Play from 3:31">3:31</a></div><p>And yeah, that thought, &quot;Well, okay, maybe it does that.&quot; And the cap didn&#x27;t make sense, but Brymen actually released the RS232 protocol for this thing. And you know, it&#x27;s a it&#x27;s a weird ass protocol.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=228s" target="_blank" rel="noopener" title="Play from 3:48">3:48</a></div><p>I might have to link in link down the uh PDF down below, but it&#x27;s available on their website. And this is for their 6,000 count digital multimeters. And um what it does is it basically in like instead of outputting an RS232 number like as a string or or whatever, it actually outputs the LCD digits and it maps them.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=251s" target="_blank" rel="noopener" title="Play from 4:11">4:11</a></div><p>Which is rather unusual. So, you&#x27;ve got to um decode that output. What a pain in the butt. But obviously, that&#x27;s how they implemented it in the or the manufacturer of the chipset implemented it.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=263s" target="_blank" rel="noopener" title="Play from 4:23">4:23</a></div><p>So, that&#x27;s the That&#x27;s the protocol for the output. Really unusual. So, it kind of made sense that this thing actually connected up to the LCD chipset. Aha, does the LCD chipset actually have a built-in, you know, um RS232 output that outputs this protocol with all the segments?</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=279s" target="_blank" rel="noopener" title="Play from 4:39">4:39</a></div><p>It was looking promising, but Take a look at the data sheet here for the uh QFP-48 package, which is the one we&#x27;ve got here. Sorry. Pin four on the C model, there&#x27;s different models here.</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=298s" target="_blank" rel="noopener" title="Play from 4:58">4:58</a></div><p>Uh the C model it has like a back light inverter and one doesn&#x27;t or something like that. Um it&#x27;s the LCD power voltage control input charge pump power output.</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=305s" target="_blank" rel="noopener" title="Play from 5:05">5:05</a></div><p>So, that&#x27;s why there&#x27;s a cap on there because it&#x27;s a charge pump output. It needs a capacitor on there to do that. So, it&#x27;s got nothing to do at all with the um any of this uh protocol.</p></div><div class="para" id="p20"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=317s" target="_blank" rel="noopener" title="Play from 5:17">5:17</a></div><p>It&#x27;s just a coincidence that it happened that they&#x27;ve left a pad here. Why they&#x27;ve left a pad for the diode, I&#x27;m not uh entirely sure. Maybe there&#x27;s another mode for the um charge pump or something.</p></div><div class="para" id="p21"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=330s" target="_blank" rel="noopener" title="Play from 5:30">5:30</a></div><p>Anyway, so they&#x27;ve got that going to a rail there, whatever rail that is, um a positive rail, presumably. So, there um yeah, they just left that part out. Just happens to be in the same location.</p></div><div class="para" id="p22"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=341s" target="_blank" rel="noopener" title="Play from 5:41">5:41</a></div><p>So, what I&#x27;m afraid I don&#x27;t even have to probe that one with the scope to know that&#x27;s not going to work because well, we have the data sheet unless No, there&#x27;s just no other option.</p></div><div class="para" id="p23"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=353s" target="_blank" rel="noopener" title="Play from 5:53">5:53</a></div><p>There is no unless. Okay, it&#x27;s a charge pump. It just Yeah, a coincidence. So, there you go. 6-minute video to tell you that. Sorry. Um yeah, this thing has no secret uh serial output hack, I&#x27;m afraid.</p></div><div class="para" id="p24"><div class="ts"><a href="https://www.youtube.com/watch?v=5v8qX9PrjnA&amp;t=372s" target="_blank" rel="noopener" title="Play from 6:12">6:12</a></div><p>Bummer. Catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

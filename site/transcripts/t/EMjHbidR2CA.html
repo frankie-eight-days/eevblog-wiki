@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEVblog #535 - Dumpster Dive Plotter</title>
+<meta name="description" content="Full transcript of EEVblog #535 - Dumpster Dive Plotter. Hi guys. Yes, it&#x27;s night time again. You know what that means. Another night time dumpster dive. Let&#x27;s go. Whoa, better switch the lights on. Woohoo! Check out tonight&#x27;s score. We have a massive HP Hewlett Packard Designjet 500 wide format plo">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>EEVblog #535 - Dumpster Dive Plotter</h1><div class="meta"><span>7:07</span><span>904 words</span><span>18 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=EMjHbidR2CA" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=1s" target="_blank" rel="noopener" title="Play from 0:01">0:01</a></div><p>Hi guys. Yes, it&#x27;s night time again. You know what that means. Another night time dumpster dive. Let&#x27;s go. Whoa, better switch the lights on. Woohoo! Check out tonight&#x27;s score. We have a massive HP Hewlett Packard Designjet 500 wide format plotter. The plotter, complete with stand, looks in very good nick and contains all the colour cartridges.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=30s" target="_blank" rel="noopener" title="Play from 0:30">0:30</a></div><p>No idea how much ink is left. And if we have a look around the back here, we&#x27;ve also got a pretty decent size roll of plotting paper on this thing as well. So, if this sucker works, then we&#x27;ve got an absolute score here.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=53s" target="_blank" rel="noopener" title="Play from 0:53">0:53</a></div><p>Even if it doesn&#x27;t work, heck, you know, tear the thing down, salvage all the parts out of it. Now, somebody who would buy and own a printer like this, you&#x27;ve got to think that they would know the value of it and they wouldn&#x27;t toss it out working, right?</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=76s" target="_blank" rel="noopener" title="Play from 1:16">1:16</a></div><p>So, you would have to think that there is actually something wrong with it. Well, only one way to find out. Take it back to the lab and check it out. And the good thing is, it comes on wheels, look. And away we go.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=93s" target="_blank" rel="noopener" title="Play from 1:33">1:33</a></div><p>Woohoo! And of course, you&#x27;ve got to make sure it actually fits in the lift. Yeah, barely. Check it out. Woohoo! Well, it&#x27;s powering up and making noises. Whoa! Jeez, sounds like a jet starting up. Fantastic. Still initialising. Please wait, please wait. Oi! Paper menu, press enter.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=125s" target="_blank" rel="noopener" title="Play from 2:05">2:05</a></div><p>Well, it&#x27;s, you know, the basic hardware works. We&#x27;ve got ourselves the GUI. So, I guess I&#x27;ll feed some paper in and surely it has the ability to do some sort of test print or something like that. Oh, there&#x27;s the ink levels, there we go.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=139s" target="_blank" rel="noopener" title="Play from 2:19">2:19</a></div><p>Our black is, I assume, that means empty or almost empty. But the others, the colour ones, still not bad at all. The yellow is half down, but the others are practically full. Awesome. Job management menu, press menu for system setup. Ah, that&#x27;s it.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=154s" target="_blank" rel="noopener" title="Play from 2:34">2:34</a></div><p>Alright, I don&#x27;t know how to use this thing. Log, log. We could have a look at what prints it&#x27;s done. Print heads, let&#x27;s have a look. Errors, let&#x27;s see if there&#x27;s any errors. Here we go. Select error for more info. There&#x27;s only a couple, let&#x27;s select the last one there.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=178s" target="_blank" rel="noopener" title="Play from 2:58">2:58</a></div><p>Error code, redsp.c. Hmm, date 2006, there you go. That&#x27;s a hell of an old error code. So, let&#x27;s go up here. So, 1st of June, that happened, it&#x27;s now, what is it, the 5th of July. So, oh well, that&#x27;s not too long ago, but that maybe could be the reason why they turfed it out, or it could have a physical fault.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=204s" target="_blank" rel="noopener" title="Play from 3:24">3:24</a></div><p>We haven&#x27;t even tried to print yet. And here&#x27;s some printer info. The firmware 3.04 paper usage, it&#x27;s done 7687 square metres. So, assuming that, you know, it does a 1 metre wide sheet, unbelievable, it&#x27;s done 7000 metres of that. Are you kidding me?</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=227s" target="_blank" rel="noopener" title="Play from 3:47">3:47</a></div><p>That&#x27;s a lot of printing. And, ink used, 2582cc on the black, less on the colour. So it&#x27;s done, well, when you combine the three to do various prints, but it&#x27;s certainly been used more for the black. So, there you go, scan axis usage, 4%, paper axis usage, ah, spittoon, like in the old Wild West.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=254s" target="_blank" rel="noopener" title="Play from 4:14">4:14</a></div><p>And I won&#x27;t actually hock one up and do the sound effect there for the spittoon, just picture Back to the Future. That&#x27;s all I&#x27;m saying, Back to the Future Part 3. And, pinch left, colour usage, 56%. What, does that mean like there&#x27;s only 56% of the life of the colour is used?</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=265s" target="_blank" rel="noopener" title="Play from 4:25">4:25</a></div><p>I don&#x27;t know. Ink usage, 5%, eh, interesting. Anyway, I don&#x27;t know much about this printer, I haven&#x27;t actually looked up the specs on this thing, or the age of it yet. And I just found the date code on the back, the 1st of December 2000, so the thing is 13 years old, but still it looks in pretty darn good nick.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=299s" target="_blank" rel="noopener" title="Play from 4:59">4:59</a></div><p>So, I&#x27;m going to feed this sucker. I don&#x27;t know how to do this, but I assume I just, oop, it detects it, does it? Is it going to auto, auto suck? Come on, auto load? Checking paper. Hey, the head&#x27;s going. Whey, that was quick.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=320s" target="_blank" rel="noopener" title="Play from 5:20">5:20</a></div><p>Alright. Trimming roll edge, it&#x27;s going through an extensive procedure here to check the paper alignment. It originally had to be aligned up with that, it gave me an error with the line marker, but now it&#x27;s significantly out from that. Now it&#x27;s saying it&#x27;s trimming the roll edge, and this thing is, hey, there we go.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=344s" target="_blank" rel="noopener" title="Play from 5:44">5:44</a></div><p>This thing is serious about getting its paper alignment, let me tell ya. Alright, well the paper&#x27;s successfully loaded, I&#x27;m going to print the printer information. There&#x27;s no like, I can&#x27;t find like any demo or anything in here, so I&#x27;m just going to go enter, and print.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=361s" target="_blank" rel="noopener" title="Play from 6:01">6:01</a></div><p>Oh, the whole machine&#x27;s wobbling a bit, as that head flies across. I guess there&#x27;s a lot of mass in that, and it&#x27;s moved pretty quick. Yeah, it&#x27;s printing, it&#x27;s printing. Here it is. We have a winner, folks. This sucker works. Can you believe it?</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=EMjHbidR2CA&amp;t=382s" target="_blank" rel="noopener" title="Play from 6:22">6:22</a></div><p>And that looks like decent print quality, I&#x27;ve got it set to fast print quality. So, that is terrific. It&#x27;s done. And that, folks, is a winner. Awesome. And more than awesome. Thanks for watching.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEVblog #727 - How To Kill An Opamp</title>
+<meta name="description" content="Full transcript of EEVblog #727 - How To Kill An Opamp. Hi. You ever have one of those bad days when you just do something incredibly face-palm stupid? Well, yeah, that just happened to me today. I was just checking the calibration of my little microcurrent test jig here. This is the 1 amp one. I&#x27;ve">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>EEVblog #727 - How To Kill An Opamp</h1><div class="meta"><span>6:49</span><span>967 words</span><span>20 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=EZZcfOrcMkk" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=1s" target="_blank" rel="noopener" title="Play from 0:01">0:01</a></div><p>Hi. You ever have one of those bad days when you just do something incredibly face-palm stupid? Well, yeah, that just happened to me today. I was just checking the calibration of my little microcurrent test jig here. This is the 1 amp one. I&#x27;ve got several of these for</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=21s" target="_blank" rel="noopener" title="Play from 0:21">0:21</a></div><p>different current ranges and things. And this is the production test jig that goes along and, you know, bang, bang, bang, bang. You put it in and check the microcurrents in production. I sent these to my assembly house. I don&#x27;t do them here. So they&#x27;re the ones who operate this.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=37s" target="_blank" rel="noopener" title="Play from 0:37">0:37</a></div><p>And I&#x27;ve got a precision current source that I&#x27;ve built. And if you want to I don&#x27;t know, have I shown inside this before? It&#x27;s not pretty. There you go. It&#x27;s not pretty, but there is a small board down in there which is pretty schmick, actually.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=57s" target="_blank" rel="noopener" title="Play from 0:57">0:57</a></div><p>It generates a really precision 1 amp current. So it may not look like much, but anyway, this generates the current reference for the microcurrent calibration. And I was just checking the calibration of this where I actually feed in 1 volt into the input into this thing.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=77s" target="_blank" rel="noopener" title="Play from 1:17">1:17</a></div><p>So it simulates the 1 volt output from the microcurrent using my voltage reference here. And you&#x27;ll notice that it&#x27;s reasonably close to... I&#x27;ve just switched this thing on. So let me plug it in and watch what happens. Oh, am I doing it again?</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=97s" target="_blank" rel="noopener" title="Play from 1:37">1:37</a></div><p>No. Look! It&#x27;s dropped down. There you go. Why is it dropped down? From the nominal 1 volt? Well, obviously the output of this voltage reference is being loaded. Why? Because I did something incredibly dumb! I hooked it up and I had my voltage reference set to 10</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=117s" target="_blank" rel="noopener" title="Play from 1:57">1:57</a></div><p>volts. D&#x27;oh! And this thing is powered from, as you can see, two coin cell batteries. So there&#x27;s like a maximum of a 6 volt range. Yeah, a 6 volt power supply on this thing. In fact it&#x27;s dropped a little bit down below that</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=133s" target="_blank" rel="noopener" title="Play from 2:13">2:13</a></div><p>on the rail itself. And of course, d&#x27;oh! If you feed 10 volts into the input, in this case the input terminals here are connected directly to an op-amp on here. And if you feed 10 volts in, when you&#x27;ve got a 6 volt rail</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=149s" target="_blank" rel="noopener" title="Play from 2:29">2:29</a></div><p>whaaa! And well, yeah, something&#x27;s loading it down. So I think I&#x27;ve killed my input op-amp here. And that&#x27;s, you know, my dumb. I didn&#x27;t ruggedize this thing like I would have normally did. I did it in a real hurry. And I didn&#x27;t put any input</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=169s" target="_blank" rel="noopener" title="Play from 2:49">2:49</a></div><p>series protection resistors or anything, any input protection at all, any sort of clamping, because it wasn&#x27;t going to be ever used in a scenario where that was likely to be a problem. Except when it gets back in my hands and I completely screw my own little design by not checking before</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=189s" target="_blank" rel="noopener" title="Play from 3:09">3:09</a></div><p>I plug the damn voltage reference in. Ah! Unbelievable. So yeah, I think there&#x27;s something seriously wrong with that chip, and it&#x27;s loading down my reference. Let&#x27;s go measure it. And by the way, if you haven&#x27;t seen this, it&#x27;s just got a power LED in here and an</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=205s" target="_blank" rel="noopener" title="Play from 3:25">3:25</a></div><p>InSpec LED, and that&#x27;s basically it. It tells the production operator, go, no-go, whether or not a microcurrent passes the test. And well, let&#x27;s, this is the voltage input here which takes the output from the microcurrent, and when you feed in the nominal 1 amps into the microcurrent, this is just a feed-through</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=225s" target="_blank" rel="noopener" title="Play from 3:45">3:45</a></div><p>like that. So this just feeds the current straight through like that. So no big deal. Obviously 60 ohms, there you go, that is why it&#x27;s loading down my voltage reference. I&#x27;ve definitely well and truly killed it. This is supposed to go just directly to the input of a high-precision</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=249s" target="_blank" rel="noopener" title="Play from 4:09">4:09</a></div><p>CMOS op-amp. So it should effectively be infinite input impedance basically. Nope, it&#x27;s shorted out. So, yeah. Oops. And it&#x27;s going to be that puppy there, the OPA2376. So it takes the input directly from there, and it&#x27;s a window comparator, so it drives the LED there from a</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=293s" target="_blank" rel="noopener" title="Play from 4:53">4:53</a></div><p>voltage reference on the board. So you know, it&#x27;s a fairly simple device, but yeah, I had no input protection or anything like that. Suck out the chip, and well, I hope I&#x27;ve got another one. I usually buy more than what I need. You know, if I was building one of these</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=309s" target="_blank" rel="noopener" title="Play from 5:09">5:09</a></div><p>I wouldn&#x27;t just order one op-amp. You know, because I would have got it from DGK or maybe someone like that. I would have ordered at least a couple of spares. Gonski. And a little bit of clean-up there. And she&#x27;ll be right, ready for a new one.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=329s" target="_blank" rel="noopener" title="Play from 5:29">5:29</a></div><p>Okay, so make sure dumbass me&#x27;s got it around the right way. I think I have. I&#x27;ve already tacked down one corner pin. And in this case it was unlikely to have taken out anything else on the supply rail. And I checked the voltage reference on here,</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=349s" target="_blank" rel="noopener" title="Play from 5:49">5:49</a></div><p>it seems to be working just fine. And the other op-amp on here, its functionality is just fine. So there&#x27;s only basically three main devices on the rail here. And sure enough, ta-da! I&#x27;m not sure if you can see that, but anyway, a green light, it&#x27;s in spec, and I can now</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=365s" target="_blank" rel="noopener" title="Play from 6:05">6:05</a></div><p>go out of spec and make it jump in and out of spec. And now I can go in and tweak it. It takes actually quite some time to actually recheck and recalibrate this thing. But there you go, it&#x27;s fixed. So dumbass me. What&#x27;s the moral of the story?</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=EZZcfOrcMkk&amp;t=381s" target="_blank" rel="noopener" title="Play from 6:21">6:21</a></div><p>Why did I do this video? I don&#x27;t know. I just wanted to share my screw-up with you. So before you plug stuff in, thou shall check voltages. Catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

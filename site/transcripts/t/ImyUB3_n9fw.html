@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEVblog #442 - Analog Vs Digital Oscilloscope Noise</title>
+<meta name="description" content="Full transcript of EEVblog #442 - Analog Vs Digital Oscilloscope Noise. Now digital scopes have this uh reputation of being higher in noise than analog scopes, for example, but that&#x27;s not necessarily uh the case. It&#x27;s just that with their update uh rate and capture, they&#x27;re actually capable of displ">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>EEVblog #442 - Analog Vs Digital Oscilloscope Noise</h1><div class="meta"><span>5:10</span><span>819 words</span><span>20 paragraphs</span><span>source: captions</span></div><a class="watch" href="https://www.youtube.com/watch?v=ImyUB3_n9fw" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=10s" target="_blank" rel="noopener" title="Play from 0:10">0:10</a></div><p>Now digital scopes have this uh reputation of being higher in noise than analog scopes, for example, but that&#x27;s not necessarily uh the case. It&#x27;s just that with their update uh rate and capture, they&#x27;re actually capable of displaying more of the noise than a traditional analog scope.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=23s" target="_blank" rel="noopener" title="Play from 0:23">0:23</a></div><p>And you might think, &quot;Well, our problem is going to disappear if we use an analog scope.&quot; But no, it&#x27;s not. Check it out. Let&#x27;s have a look here. It&#x27;s hard to get this.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=33s" target="_blank" rel="noopener" title="Play from 0:33">0:33</a></div><p>I&#x27;m going to have to set the exposure, but you can see the switching uh You can see, look, we&#x27;re still got switching noise in there. We&#x27;re still got common mode noise even on our analog scope.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=47s" target="_blank" rel="noopener" title="Play from 0:47">0:47</a></div><p>It&#x27;s nothing to do with the scope at all. It&#x27;s inherent. It&#x27;s common mode noise being picked up through the mains input between uh the earth and the neutral. There we go.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=57s" target="_blank" rel="noopener" title="Play from 0:57">0:57</a></div><p>I turned down the contrast on my camera, and you can see the switching noise in there. It&#x27;s actually quite significant. Now that&#x27;s 5 ms per division with no uh times 10 amplifier in there, and it&#x27;s really it&#x27;s going to be hard to see on camera, but you can actually see the switching noise in there.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=74s" target="_blank" rel="noopener" title="Play from 1:14">1:14</a></div><p>It&#x27;s actually quite significant. Exactly what we&#x27;re seeing on the digital scope, except the digital scope picks it up better by virtue of its uh sampling and um greater persistence, effectively, especially on the cheaper scopes.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=88s" target="_blank" rel="noopener" title="Play from 1:28">1:28</a></div><p>But you can see that switching noise in there. So, this is where digital scopes actually have an inherent advantage. You&#x27;re being fooled You&#x27;re effectively being fooled by your analog scope thinking that there&#x27;s no, you know, you turn the intensity down.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=103s" target="_blank" rel="noopener" title="Play from 1:43">1:43</a></div><p>There we go. And you might think, &quot;Oh, well, you know, it&#x27;s just that looks clean as a whistle, you know, not a problem at all.&quot; But you&#x27;re actually getting that common mode noise on there, which you normally wouldn&#x27;t see.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=114s" target="_blank" rel="noopener" title="Play from 1:54">1:54</a></div><p>Now, if I actually go, turn the time base right up here, and move my horizontal position, and turn that up, look, there it is. You can actually Let&#x27;s turn the There we go.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=128s" target="_blank" rel="noopener" title="Play from 2:08">2:08</a></div><p>You can see it. There it is. You can see that switching noise there, that common mode switching noise. You can&#x27;t necessarily see it when it comes in here. You see it It&#x27;s sort of, you know, it just vanishes because, you know, it&#x27;s the analog scope is not really capable of the persistence that a digital scope is capable of.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=150s" target="_blank" rel="noopener" title="Play from 2:30">2:30</a></div><p>But look, that&#x27;s 5 mV 5 mV per division. There it is. I&#x27;ve got my times 10 gain not in, and you can see Look at that switching noise. It&#x27;s exactly the same amplitude we get on our digital scope.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=164s" target="_blank" rel="noopener" title="Play from 2:44">2:44</a></div><p>And look, I&#x27;ll do it in a single shot. I&#x27;ll take it over. We&#x27;re 5 mV per division there, and there we go. It&#x27;s the same thing. If we stop it, and look, we can see that amplitude is exactly exactly the same.</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=181s" target="_blank" rel="noopener" title="Play from 3:01">3:01</a></div><p>But our digital scope, because of the greater Well, effectively, because digital scopes aren&#x27;t as good, in {quote} marks, as our analog scopes, the slower your updating scope, the greater you&#x27;re going to actually see this noise.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=198s" target="_blank" rel="noopener" title="Play from 3:18">3:18</a></div><p>So, if you&#x27;ve got a really super fast updating scope with persistent variable persistence and all that sort of magic, then you&#x27;re going to see it less than you would on a lower-end digital scope, which shows all this stuff up.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=211s" target="_blank" rel="noopener" title="Play from 3:31">3:31</a></div><p>And you can see precisely that on this Rigol scope. It&#x27;s going to be very similar to this analog scope. I&#x27;ve turned my intensity knob Here&#x27;s my intensity knob. I&#x27;ve turned it all the way down to the bottom, like this.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=223s" target="_blank" rel="noopener" title="Play from 3:43">3:43</a></div><p>And you might think, &quot;See, we&#x27;re getting that nice flat line.&quot; You can just see some switching components in there, okay? And of course, when you turn the horizontal knob, it stops picking it stops refreshing and you can momentarily see the noise on there.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=241s" target="_blank" rel="noopener" title="Play from 4:01">4:01</a></div><p>Let&#x27;s turn it back and if we turn up our intensity, look, all that noise has magically appeared again. So, it&#x27;s not that these digital scopes are inherently noisier than analog scopes.</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=253s" target="_blank" rel="noopener" title="Play from 4:13">4:13</a></div><p>It&#x27;s not the case. It&#x27;s just that they&#x27;re better off the sampling nature of the digital scope and the greater effective persistence on the screen is better at picking up these noises.</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=265s" target="_blank" rel="noopener" title="Play from 4:25">4:25</a></div><p>So, really, you know, be careful when you claim that analog scopes you know, they&#x27;re they&#x27;re much lower noise than digital scopes. Not only is that not necessarily true, it can be in some circumstances, but not necessarily true, but the fact is you can miss a lot of stuff like this common mode noise that you wouldn&#x27;t normally get on this on that you could easily pick up with a digital scope.</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=ImyUB3_n9fw&amp;t=290s" target="_blank" rel="noopener" title="Play from 4:50">4:50</a></div><p>So, just be careful when you&#x27;re talking about noise in systems like this.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

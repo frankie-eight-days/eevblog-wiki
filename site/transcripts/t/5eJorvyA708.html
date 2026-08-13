@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Altium Designer Serious ERC bug</title>
+<meta name="description" content="Full transcript of Altium Designer Serious ERC bug. Hi, I wanted to just show you what I think I&#x27;ve found a bug in Altium Designer 17. This is the absolute latest release as of the release date of this video and I was just actually making a video on ERC, Electrical Rules Checking in Schematics, and ">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Altium Designer Serious ERC bug</h1><div class="meta"><span>6:42</span><span>1,074 words</span><span>14 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=5eJorvyA708" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, I wanted to just show you what I think I&#x27;ve found a bug in Altium Designer 17. This is the absolute latest release as of the release date of this video and I was just actually making a video on ERC, Electrical Rules Checking in Schematics, and I was trying to like force an error and it wasn&#x27;t being detected and this is really rather unusual, okay?</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=29s" target="_blank" rel="noopener" title="Play from 0:29">0:29</a></div><p>So what I&#x27;ve got here is I&#x27;ve deliberately introduced several errors into this schematic here. One is a data out, an output pin of this chip is connected over to another output here, okay? So two outputs shorted together, it should detect that, you know, as a fail, okay?</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=29s" target="_blank" rel="noopener" title="Play from 0:29">0:29</a></div><p>And then I&#x27;ve got, well, I&#x27;ve got two floating, I&#x27;ve got a floating input here, so two inputs connected together with no driving source, okay? It should detect that and I&#x27;ve got another one here where the data output pin is connected through to ground, so it&#x27;s connected to a power net.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=58s" target="_blank" rel="noopener" title="Play from 0:58">0:58</a></div><p>Once again, a really bad error which should be picked up by an ERC. So, hey, look, I&#x27;ll go into my out job here, okay? I&#x27;ve got my out job set for my Nixie Tube display project, here we go, and I&#x27;ll run that and bingo, look, okay, I&#x27;ve got a couple that are saying there&#x27;s no driving source, okay?</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=88s" target="_blank" rel="noopener" title="Play from 1:28">1:28</a></div><p>That&#x27;s fine, net&#x27;s hidden, but there is no warning or error flagged for two output pins shorted together or for an output pin shorted to a ground, like a power net, okay? And just to prove that it&#x27;s all hunky-dory, I&#x27;ll go into my project options here, my connection matrix, look, here it is, output pin to output pin, shorted together, so there it is, output pin to output pin generates an error.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=117s" target="_blank" rel="noopener" title="Play from 1:57">1:57</a></div><p>It should generate an error, you can have a no report, a warning, an error or a fatal error and trust me, I&#x27;ve experimented with this, doesn&#x27;t matter what you set here, it does not detect it and power nets and everything else by default should actually detect this sort of stuff and you go, okay, don&#x27;t use an out job, but hey, an out job is supposed to be the final step, critical design step before you manufacture or do anything else.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=146s" target="_blank" rel="noopener" title="Play from 2:26">2:26</a></div><p>So there&#x27;s something wrong, I&#x27;m not sure where it&#x27;s getting and if I just, where it&#x27;s getting those options from, whether or not it&#x27;s a bug that&#x27;s missing it or it&#x27;s getting some ERC options, matrix options from somewhere else, I don&#x27;t know. So anyway, if I go to the schematic document over here and I right click and I compile that document, which is the same thing as doing that ERC and I&#x27;m specifically, I want to compile this one sheet like this, so I compile that Nixie sheet like that and sorry, it didn&#x27;t pop up, there&#x27;s a window here, there&#x27;s a display window, a messages window, I&#x27;ll actually clear that and I&#x27;ll run that again, okay, compile, boom, there you go, it&#x27;s done.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=195s" target="_blank" rel="noopener" title="Play from 3:15">3:15</a></div><p>And it, look, compile successful, no errors found, it did not even warn that those two outputs are connected together. Now the only way to make this work and I spoke to Altium and they said, yeah, do this and it&#x27;ll work and sure enough, it does, I haven&#x27;t used Altium 17 before, my previous version was Altium 10, so yeah, I&#x27;m a newbie to Altium 17 here.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=220s" target="_blank" rel="noopener" title="Play from 3:40">3:40</a></div><p>So let&#x27;s go over to here, if I go compile PCB. Project, now the project, which contains a blank PCB, it doesn&#x27;t matter, but if I do compile the PCB project, bingo, it finds it, okay, exactly what you want, here we go, no dry, ground, there it is, ground contains output pin, blah, blah, blah, blah, blah, okay, so it&#x27;s found it, I don&#x27;t like the fact that it really doesn&#x27;t highlight, you know, you&#x27;ve got to like search through, where is it, where is it, well, there it is in there.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=255s" target="_blank" rel="noopener" title="Play from 4:15">4:15</a></div><p>Yeah, so it doesn&#x27;t, anyway, and of course, it, and it&#x27;s generated other warnings here, like component has unused subparts, which we didn&#x27;t see before and things like that, so clearly it&#x27;s getting rules from somewhere else and here&#x27;s the multiple output pin error, for example.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=272s" target="_blank" rel="noopener" title="Play from 4:32">4:32</a></div><p>So it has now detected it, it&#x27;s detected it just fine, multiple output pins, exactly as you would expect it to when you do an ERC, but if you go like this. And compile that, where, look, it&#x27;s not there, it&#x27;s not there, that to me has got to be a bug, there&#x27;s no way that you can miss critical errors on a schematic, I want to check that one schematic, I&#x27;m asking it to do that, and once again, the out job will do exactly the same thing, it&#x27;ll miss those errors, so what the, like here&#x27;s the, like if I put that to a PDF report, I could,</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=315s" target="_blank" rel="noopener" title="Play from 5:15">5:15</a></div><p>feed that to a PDF report, give that to management and say, hey, look, it&#x27;s passed ERC, no worries whatsoever, let me go onto the PCB layout, and they&#x27;ll go, yeah, no worries, and my schematic contains, like, really gross errors that are going to release the magic smoke from these chips, I mean, it&#x27;s just, nah, there&#x27;s something seriously wrong here, so I want to know where it&#x27;s getting the rules from to do that compile document there,</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=344s" target="_blank" rel="noopener" title="Play from 5:44">5:44</a></div><p>because it&#x27;s certainly not coming from the project option, and fair enough, the, when I do the project compile, the project options uses the connection matrix, but where else is it getting the rules from to do the compile, so if it might be some legacy thing, because Altium&#x27;s full of legacy stuff and things like that, but please comment below if you think this is, like, a genuine bug, or you know some way around it, or I&#x27;m doing something dumb, I&#x27;m still talking about it,</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=5eJorvyA708&amp;t=374s" target="_blank" rel="noopener" title="Play from 6:14">6:14</a></div><p>I&#x27;m still talking with Altium on this, so I&#x27;m sort of, like, prematurely releasing this, but I just wanted to document that issue, so there you go, I think that is a major issue, if I compile a document, or do an out job, especially an out job ERC, like, you know, there it is, electrical rules check, thank you very much, I expect it to catch all those errors and it doesn&#x27;t, anyway, enough rambling, catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

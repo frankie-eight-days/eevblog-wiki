@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>eevBLAB #6 - Don&#x27;t Assume It&#x27;s Faulty</title>
+<meta name="description" content="Full transcript of eevBLAB #6 - Don&#x27;t Assume It&#x27;s Faulty. Hi, welcome to another EEVblab episode. This one I wasn&#x27;t going to do because it&#x27;s rather embarrassing. But I thought, hey, this could be a learning experience for some people. Now, this is my EDC Cronheight MV106 voltage standard. If you hav">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>eevBLAB #6 - Don&#x27;t Assume It&#x27;s Faulty</h1><div class="meta"><span>6:00</span><span>1,003 words</span><span>21 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=ZYC763Vx9O8" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=1s" target="_blank" rel="noopener" title="Play from 0:01">0:01</a></div><p>Hi, welcome to another EEVblab episode. This one I wasn&#x27;t going to do because it&#x27;s rather embarrassing. But I thought, hey, this could be a learning experience for some people. Now, this is my EDC Cronheight MV106 voltage standard. If you haven&#x27;t seen it before, I&#x27;ll link in videos down below.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=20s" target="_blank" rel="noopener" title="Play from 0:20">0:20</a></div><p>Very nice metrology grade voltage reference standard. And I was testing a multimeter the other day, plugging it into it, and as usual I set it for 10.0000 volts. And this thing is absolutely a bang on. I&#x27;ve had it tested at a traceable Cal Standards lab.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=40s" target="_blank" rel="noopener" title="Play from 0:40">0:40</a></div><p>And this is what I got. 10.470 volts. Now, I sort of freaked out for a second because I actually had the multimeter switch to ohms when I actually plugged it in. And, of course, in ohms mode, the multimeter will try and generate a voltage and try and generate a current</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=64s" target="_blank" rel="noopener" title="Play from 1:04">1:04</a></div><p>into this thing. And I&#x27;ve done that before without problem, but I was sure that this thing actually worked before I plugged in that particular multimeter on the ohms. And as soon as I plugged it in, wham! All of a sudden it was giving out 10.47 volts.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=76s" target="_blank" rel="noopener" title="Play from 1:16">1:16</a></div><p>And look, if I switch it down to 9 here, well, it&#x27;s still 9.47, so it had all that resolution, right? So it had all the typical resolution there. So it seems to work, but it was out. And if I turn it down to 100 millivolts here, right?</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=96s" target="_blank" rel="noopener" title="Play from 1:36">1:36</a></div><p>It&#x27;s bang on, of course. And if I turn it down to 10 millivolts, it was bang on again. It was only the 10 volt range like this. So I thought, oh no! Somehow this multimeter in ohms range is blowing this thing. But I knew, you know, that&#x27;s</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=112s" target="_blank" rel="noopener" title="Play from 1:52">1:52</a></div><p>a real remote possibility, because this thing&#x27;s only going to generate like a milliamp at most, and this thing is pretty robust. It&#x27;s going to handle that. As I said, I&#x27;ve done it before, but hey, those were the symptoms. And you know, look, it&#x27;s not a dicky connection or anything like that.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=128s" target="_blank" rel="noopener" title="Play from 2:08">2:08</a></div><p>And I turn it negative, and we get the negative. And it works fine on the 100 millivolt range. So I thought, you know, somehow I&#x27;ve blown maybe the output of an op-amp or something in the feedback loop or something like that, you know.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=140s" target="_blank" rel="noopener" title="Play from 2:20">2:20</a></div><p>Even though the remote possibility, what it was. And that was what I got. So I thought, you know, that&#x27;s got to be, like, the problem. And I thought, oh great, okay, I can do a repair video of this. I got all like super excited that, you know, I&#x27;d be able to actually repair</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=160s" target="_blank" rel="noopener" title="Play from 2:40">2:40</a></div><p>this thing. Because it&#x27;s a nice, you know, all through-hole design and everything in there. So I got all excited, so I moved it over here, and onto the main bench where I shoot videos here. Took the lid off like this, and then I realized, oh</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=176s" target="_blank" rel="noopener" title="Play from 2:56">2:56</a></div><p>what the problem was. And no, it&#x27;s not blown. It&#x27;s a pebcac. Problem exists between keyboard and chair, i.e. me. I was fooled into thinking this thing had failed due to various circumstances, but it hasn&#x27;t. Now, if you want to try and figure it out, pause the video now</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=196s" target="_blank" rel="noopener" title="Play from 3:16">3:16</a></div><p>and try and figure it out. So I&#x27;ll twiddle my thumbs until you go on, pause it, try and figure it out. You should be able to. Maybe not by what you actually see here, but by a bit of deductive reasoning, you might be able to figure it</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=212s" target="_blank" rel="noopener" title="Play from 3:32">3:32</a></div><p>out. And as I said, no, it&#x27;s not dicky connections. Down here like this, we&#x27;ve got our sense terminals there, everything&#x27;s just fine. So what&#x27;s wrong here? Well, it is those sense terminals. Watch this. Ta-da! Look at that! It wasn&#x27;t making contact on that sense terminal.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=236s" target="_blank" rel="noopener" title="Play from 3:56">3:56</a></div><p>And if I put it negative like this, bingo, the negative one also was like just a smidgen out. It wasn&#x27;t making contact. So these sense terminals here of course, in these sorts of instruments, not only in these metrology-grade instruments, but like a 4 ohms</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=256s" target="_blank" rel="noopener" title="Play from 4:16">4:16</a></div><p>terminal measurement, that&#x27;s what you have to have here. A 4 ohms measurement because you have to sense right at the load. In this case we don&#x27;t have to, hence we can use these shorting bars here because the multimeter load is only 10 meg, of course.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=272s" target="_blank" rel="noopener" title="Play from 4:32">4:32</a></div><p>It&#x27;s very, very small. And these wires here, they&#x27;re only like a milli-ohm or something, so do-ohms law, you can figure out the voltage drop across these cables. These bugger all, hence why we can just sense here, but larger loads we&#x27;d have to sense there.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=284s" target="_blank" rel="noopener" title="Play from 4:44">4:44</a></div><p>Anyway, that&#x27;s what it was! Just a tight, it wasn&#x27;t tight on there, you know, I wiggled them around, it looked like they were in, you know, but it was only like, you know, a smidgen, like half a turn out or something like that.</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=296s" target="_blank" rel="noopener" title="Play from 4:56">4:56</a></div><p>That&#x27;s all it had to be. But it just didn&#x27;t make good enough contact, just a tiny smidgen out. So there you go, a trap for young players. What&#x27;s happening, of course, is that the feedback loop in here, if it&#x27;s got no sense, if it&#x27;s not reading that sense voltage back, it&#x27;ll just go to</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=316s" target="_blank" rel="noopener" title="Play from 5:16">5:16</a></div><p>full scale. So obviously, that&#x27;s what it&#x27;s doing. It&#x27;s going to 10.5 as full scale, and then negative 10.5 down there as full scale, and that will of course change, even if you go down like that. So that&#x27;s what the problem was! Oh! Yes, it&#x27;s incredibly embarrassing,</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=336s" target="_blank" rel="noopener" title="Play from 5:36">5:36</a></div><p>but I thought that might be a lesson for some people. Don&#x27;t assume something&#x27;s faulty. I got a bit too excited there that I&#x27;d be able to do a cool little repair video with this thing, I think, rather than think about it. But I ultimately did discover the problem pretty darn quick, so</p></div><div class="para" id="p20"><div class="ts"><a href="https://www.youtube.com/watch?v=ZYC763Vx9O8&amp;t=352s" target="_blank" rel="noopener" title="Play from 5:52">5:52</a></div><p>it&#x27;s not that embarrassing. But anyway, I thought I&#x27;d share. Hope you learned something there. Catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

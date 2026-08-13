@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rigol HDO4000 PSU Teardown</title>
+<meta name="description" content="Full transcript of Rigol HDO4000 PSU Teardown. Hi, just a quick second channel video back on the Rigol HDO 4000 series oscilloscope. I completely forgot to tear down the power supply in it. And well, yeah, I thought that&#x27;s a first, isn&#x27;t it? Anyway, um cuz it&#x27;s usually one of the first things I look">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Rigol HDO4000 PSU Teardown</h1><div class="meta"><span>6:17</span><span>1,107 words</span><span>28 paragraphs</span><span>source: captions</span></div><a class="watch" href="https://www.youtube.com/watch?v=muMjiao5i0k" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, just a quick second channel video back on the Rigol HDO 4000 series oscilloscope. I completely forgot to tear down the power supply in it. And well, yeah, I thought that&#x27;s a first, isn&#x27;t it?</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=13s" target="_blank" rel="noopener" title="Play from 0:13">0:13</a></div><p>Anyway, um cuz it&#x27;s usually one of the first things I look at. Yeah, yeah, I looked a bit difficult to get out, so I thought I&#x27;ll leave it until the end and then the end came and I forgot and I was excited that I&#x27;d finished the video and I went to edit it.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=24s" target="_blank" rel="noopener" title="Play from 0:24">0:24</a></div><p>Anyway, um here it is. It&#x27;s actually a rather than just you know, like a bare board like stuck on some standoffs in here, it&#x27;s actually screwed into the side like this and a post down here.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=36s" target="_blank" rel="noopener" title="Play from 0:36">0:36</a></div><p>So, rather than just like a bare board and then have like a custom shield over it, it looks like they&#x27;ve gone for like and just an off-the-shelf brick, a Mornsun brand.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=48s" target="_blank" rel="noopener" title="Play from 0:48">0:48</a></div><p>I&#x27;ve certainly heard of them. And it&#x27;s an LM15020B12 for those playing along at home. So, it&#x27;s like they&#x27;ve just taken it and off-the-shelf module. They haven&#x27;t actually commissioned anything specific because well, they don&#x27;t need anything fancy.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=65s" target="_blank" rel="noopener" title="Play from 1:05">1:05</a></div><p>As I said, like there&#x27;s just like presumably it&#x27;s set to 12 volts. I haven&#x27;t actually measured it. And it&#x27;s just one of those adjustable output voltage jobbies and mains in and it&#x27;s just it&#x27;s all done for you.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=76s" target="_blank" rel="noopener" title="Play from 1:16">1:16</a></div><p>But usually they you know, companies try and reduce the cost a bit by actually getting something at least like you know, custom tailor cuz you might be able to save a few cents that way.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=87s" target="_blank" rel="noopener" title="Play from 1:27">1:27</a></div><p>But they&#x27;ve they&#x27;ve gone with it just an off-the-shelf brick and it seems to meet their requirements. So, they went yeah, no worries. So, we&#x27;ll have a quick squeeze. And of course, dumb ass me didn&#x27;t engage brain.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=99s" target="_blank" rel="noopener" title="Play from 1:39">1:39</a></div><p>I just saw two screws on the side and I unscrewed them and the dull I I little bracket fell out inside because that was holding one of the power devices.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=108s" target="_blank" rel="noopener" title="Play from 1:48">1:48</a></div><p>That had nothing to do with actually clamping on the lid. So, yeah, we can actually have to get in here like this and taking it off they&#x27;ve got the clips in here.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=119s" target="_blank" rel="noopener" title="Play from 1:59">1:59</a></div><p>I can probably push in there and get it out but yeah, though yeah, it turns out it&#x27;s got little clever hooks in there and stuff like that. So it actually just slides off the end like that but yeah, there was the that would ruin your day if you had that flapping around in the breeze in there.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=139s" target="_blank" rel="noopener" title="Play from 2:19">2:19</a></div><p>Yeah, you&#x27;d really come a gutter. So yeah, that is designed you see that they&#x27;ve got the gigantic like gigantic silicone condom on there. Yeah, they&#x27;ve completely covered the package and that&#x27;s just designed to physically hold pressure on there and just even though they&#x27;ve got that&#x27;s possibly thermal adhesive in there not entirely sure but they&#x27;ve got it on those ones up there as well and that plate just holds those in</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=169s" target="_blank" rel="noopener" title="Play from 2:49">2:49</a></div><p>place. Anyway, forgive me for not unscrewing all that. I just couldn&#x27;t be bothered. Anyway, here&#x27;s the mains input over here big bridge rectifier there and the two big DC filter caps.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=183s" target="_blank" rel="noopener" title="Play from 3:03">3:03</a></div><p>What brand have we got? I don&#x27;t know. It&#x27;s under the bottom. I don&#x27;t want to take it off 105° C rated. I don&#x27;t know RTM in brackets model number B3A not sure.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=195s" target="_blank" rel="noopener" title="Play from 3:15">3:15</a></div><p>Maybe I can search for that but I can&#x27;t see any of the custom transformer in there but yes, it&#x27;s all wrapped for our protection. That&#x27;s some serious common mode choke action happening there.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=208s" target="_blank" rel="noopener" title="Play from 3:28">3:28</a></div><p>I really like that. Oh, look at that. That&#x27;s just that&#x27;s a Bobby dazzler really beautiful. I love the exposed just having the exposed coils and the look look at the green core in there.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=220s" target="_blank" rel="noopener" title="Play from 3:40">3:40</a></div><p>Thing of beauty joy forever. Anyway, it looks like a bunch of wire class caps going down the ground all the nice isolation shots slots. Everything&#x27;s hunky-dory. We&#x27;ve got filtering on the input and output of our common mode choke.</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=233s" target="_blank" rel="noopener" title="Play from 3:53">3:53</a></div><p>There&#x27;s a varistor on the input there. That looks like a fuse, little line fuse on the mains input and the output filtering is, you know, pretty minimal here. It&#x27;s just got some polymer they look like polymer.</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=247s" target="_blank" rel="noopener" title="Play from 4:07">4:07</a></div><p>None of that electrolyte rubbish. They look like solid electrolyte and you&#x27;ve got to make Why would you go with these and then have that one as well? Different values, different functions, but yeah, it&#x27;s just funny that they&#x27;ve gone with an old school vented one there and that looks like solid ones here, but it&#x27;s all she wrote.</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=267s" target="_blank" rel="noopener" title="Play from 4:27">4:27</a></div><p>Like I won&#x27;t get the board out. There&#x27;s SMD circuitry on the bottom, no doubt because like this is going to have some secondary side regulation here. So I would say that there&#x27;s going to be circuitry on the bottom.</p></div><div class="para" id="p20"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=280s" target="_blank" rel="noopener" title="Play from 4:40">4:40</a></div><p>Oh, all right, there you go. I know people just complain if I don&#x27;t do it. There&#x27;s the secondary side. Oh, look at that. They got all the thieving squares there.</p></div><div class="para" id="p21"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=290s" target="_blank" rel="noopener" title="Play from 4:50">4:50</a></div><p>Somebody somebody had fun. It&#x27;s only a three pin jobby on there and oh, look, you can see the glue. You can see the glue holding it well that were supposed to be holding down the components that aren&#x27;t there.</p></div><div class="para" id="p22"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=305s" target="_blank" rel="noopener" title="Play from 5:05">5:05</a></div><p>That&#x27;s what that little thing in the middle there is. Hopefully you can see that. That is some They&#x27;ve applied the glue, but they haven&#x27;t applied the part because well, presumably it&#x27;s not needed on this model, but anyway, um these are not switching on the output.</p></div><div class="para" id="p23"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=320s" target="_blank" rel="noopener" title="Play from 5:20">5:20</a></div><p>These are just diodes. You can tell they&#x27;re only two pin and it looks like so there&#x27;s only a sub 23 here, but you can see some optocoupler feedback here.</p></div><div class="para" id="p24"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=330s" target="_blank" rel="noopener" title="Play from 5:30">5:30</a></div><p>In fact, it&#x27;s coming. You can see the traces running all the way around there. All the way, follow the money. They&#x27;re running to the output here and there&#x27;s an optocoupler there which does So they&#x27;re effectively doing primary side regulation there by the looks of it, but anyway, that&#x27;s pretty groovy.</p></div><div class="para" id="p25"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=346s" target="_blank" rel="noopener" title="Play from 5:46">5:46</a></div><p>I like all the isolation slots. That is a well-designed uh power supply. I you know, the cap brands, meh, whatever, but uh yeah, they&#x27;ve actually used a uh complete off-the-shelf module.</p></div><div class="para" id="p26"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=356s" target="_blank" rel="noopener" title="Play from 5:56">5:56</a></div><p>That&#x27;s interesting. I think that&#x27;s possibly the first time I&#x27;ve ever seen that in a scope teardown. Please tell me if I&#x27;m wrong down below, but um yeah, it&#x27;s quite unusual to just literally use like an off-the-shelf um you know, package.</p></div><div class="para" id="p27"><div class="ts"><a href="https://www.youtube.com/watch?v=muMjiao5i0k&amp;t=372s" target="_blank" rel="noopener" title="Play from 6:12">6:12</a></div><p>Usually they, you know, save a few cents by custom designed it in some way.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

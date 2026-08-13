@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GCC Embedded Linker Followup</title>
+<meta name="description" content="Full transcript of GCC Embedded Linker Followup. Hey, so this is a follow-up video to update you on what has happened with the LD linker issue. So the last time I was working on this, the LD linker was crashing and it was crashing for a very strange reason, an undocumented error, LD exit status 253.">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>GCC Embedded Linker Followup</h1><div class="meta"><span>6:40</span><span>893 words</span><span>19 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=iwUqE6ZJqgA" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hey, so this is a follow-up video to update you on what has happened with the LD linker issue. So the last time I was working on this, the LD linker was crashing and it was crashing for a very strange reason, an undocumented error, LD exit status 253.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=12s" target="_blank" rel="noopener" title="Play from 0:12">0:12</a></div><p>Turns out that signal 11 on Linux being on various distros or using different things in Linux didn&#x27;t help at all. Using a different IDE didn&#x27;t help at all. Using dozens of different compiler and linker flags didn&#x27;t help at all. So what was the issue?</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=34s" target="_blank" rel="noopener" title="Play from 0:34">0:34</a></div><p>Well, the issue was related to a few different things. The issue was stack related. It was a stack overflow. The linker was having a stack overflow, but it&#x27;s interesting why. Interesting why a stack overflow could happen in a linker. So the answer lies in</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=52s" target="_blank" rel="noopener" title="Play from 0:52">0:52</a></div><p>something called VLAs. This is a GNU extension. This isn&#x27;t part of the C++ language, not part of the C language, but it is part of the GNU compilers, the GNU toolchain. So why are they a problem? Well, a VLA is something that is allocated on the stack and on various operating systems, Linux,</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=75s" target="_blank" rel="noopener" title="Play from 1:15">1:15</a></div><p>Windows. The stack has a fixed size unless you specifically tell it otherwise. And by the way, people who are thinking pass the flag into GCC, no, that doesn&#x27;t do what you think it does. That applies to the XE it&#x27;s compiling. Anyway, so I&#x27;ve tried that anyway.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=94s" target="_blank" rel="noopener" title="Play from 1:34">1:34</a></div><p>It doesn&#x27;t work. Well, a VLA is a GCC extension and a good compiler will tell you that. It will tell you warning, ISO C++ forbids variable length arrays and this is the root cause of the error. What is a VLA? A VLA is an array whose size can be defined by a parameter or a variable.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=122s" target="_blank" rel="noopener" title="Play from 2:02">2:02</a></div><p>It is defined on the stack, unlike the vector, which is defined on the heap. This vector. And it has its advantages on that you can keep everything on the stack, but it has massive disadvantages. Some insecurity, and the one that I was facing was that</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=142s" target="_blank" rel="noopener" title="Play from 2:22">2:22</a></div><p>if someone were to put a very large P size value here, then you can just completely fill the stack and crash the program and the program will have no awareness that that&#x27;s happened. It might just end, but it won&#x27;t be able to report a sensible error.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=156s" target="_blank" rel="noopener" title="Play from 2:36">2:36</a></div><p>So, that&#x27;s the problem. And here&#x27;s GNU&#x27;s libivity implementation and this is roughly what caused the error. So, you can look at this CDMangle print callback, got some options, and you&#x27;ve got a bunch of things in the parameters, then you&#x27;ve got this DPI variable.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=181s" target="_blank" rel="noopener" title="Play from 3:01">3:01</a></div><p>It&#x27;s a struct and it receives its information from print in it. Okay, fine, whatever. But, you&#x27;ll notice this. DPI, numSaveScopes, numSaveTemplates, has no maximum. And it&#x27;s clearly not tracking how close it is to the stack limit. So, without the program being aware at all, it can completely fill the stack and blow the program.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=200s" target="_blank" rel="noopener" title="Play from 3:20">3:20</a></div><p>The program will crash and end. So, that&#x27;s what was happening. GCC 7.2 was producing an enormous amount of symbols and that caused the VLAs to be loaded with a very large number of items. Now, symbols can be quite large in and of themselves.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=219s" target="_blank" rel="noopener" title="Play from 3:39">3:39</a></div><p>And GCC was producing way too many of them. Now, GCC 8.2, as far as I&#x27;m aware, still uses VLAs. Actually, I think it uses this same code here. But, the compiler itself produces far less symbols. So, I no longer have to change the stack size in</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=240s" target="_blank" rel="noopener" title="Play from 4:00">4:00</a></div><p>Windows and Linux for GCC 8.2. Okay, so Linux and Windows actually use stack very differently. On Windows, the stack size, the maximum stack size, is defined by the executable itself. This means that ahead of time, programmers need to know how much stack a program could conceivably use.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=256s" target="_blank" rel="noopener" title="Play from 4:16">4:16</a></div><p>On Linux, they don&#x27;t. This is a good and bad thing. And I won&#x27;t go into why. But, basically, it was smacking through the stack on Windows. And the reduction is an order of magnitude in 8.2. So, I no longer have the error. And in the process of debugging the problem, I ported the program to a CMake</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=289s" target="_blank" rel="noopener" title="Play from 4:49">4:49</a></div><p>project. And this means you can now develop, if your developer wants to contribute to the project, once the product is out, you can contribute via your own CMake project on Linux or Windows. It&#x27;s very easy. I use VS Code because it works with CMake no problem.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=303s" target="_blank" rel="noopener" title="Play from 5:03">5:03</a></div><p>And also, there&#x27;s Visual Studio Code on Linux and Windows and Mac and probably some other platforms as well. They seem to put it everywhere. Everything the Chromium browser was on, Visual Studio Code is on. So, okay. And just for the satisfaction of it, let&#x27;s see it build with no errors.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=319s" target="_blank" rel="noopener" title="Play from 5:19">5:19</a></div><p>So, let&#x27;s clean it and then let&#x27;s build. It&#x27;s gotten stuck. Hooray! Success. So, as you can see, the error is now gone. So, if you&#x27;re having a similar error, if you&#x27;re having a signal status 11 from Linux or you&#x27;re having exit status 253 on Windows,</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=354s" target="_blank" rel="noopener" title="Play from 5:54">5:54</a></div><p>the solution is to do one of two things. One, compile GCC-LD yourself with custom linker size with your own stack size defined. Or you can upgrade to GCC, the GNU toolchain 8.2, and it should fix itself anyway. So, I hope that was interesting.</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=iwUqE6ZJqgA&amp;t=374s" target="_blank" rel="noopener" title="Play from 6:14">6:14</a></div><p>Bye. Bye.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

@@ -217,9 +217,21 @@ def main():
 
     (OUT / "t").mkdir(parents=True, exist_ok=True)
     rows, n_ts = [], 0
+    seen_vids = set()
     for src, kind in SRC:
         for path in sorted(src.glob("*.md")):
             vid = path.stem
+            # macOS "keep both" copies -- "VIDEOID 2.md", " 3", " 4" -- accumulate
+            # whenever this directory is copied or synced, and a plain glob
+            # publishes every one of them as its own page. 1,999 such files once
+            # made a 2,886-video corpus render as 4,885 pages, each video
+            # appearing up to four times. Filter here rather than trusting the
+            # directory to stay clean, and skip any repeat id for good measure.
+            if re.search(r" \d+$", vid):
+                continue
+            if vid in seen_vids:
+                continue
+            seen_vids.add(vid)
             fm, paras = parse(path)
             if not paras:
                 continue

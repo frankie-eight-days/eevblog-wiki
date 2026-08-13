@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Goldshell LBC LBRY ASIC Miner Teardown &amp; Troubleshooting</title>
+<meta name="description" content="Full transcript of Goldshell LBC LBRY ASIC Miner Teardown &amp; Troubleshooting. Hi, I am replacing the, or swapping, the controller boards, as you asked. This is the faulty unit, so I&#x27;ve called it number two here, and I&#x27;ve noticed that this capacitor here is bulged. It&#x27;s got a bulge in the top, and thi">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Goldshell LBC LBRY ASIC Miner Teardown &amp; Troubleshooting</h1><div class="meta"><span>3:17</span><span>465 words</span><span>10 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=-bPGrSSaXhE" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, I am replacing the, or swapping, the controller boards, as you asked. This is the faulty unit, so I&#x27;ve called it number two here, and I&#x27;ve noticed that this capacitor here is bulged. It&#x27;s got a bulge in the top, and this capacitor here is completely...</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=14s" target="_blank" rel="noopener" title="Play from 0:14">0:14</a></div><p>looks like the bottom seal has completely gone on that. It&#x27;s hard to see in there, sorry, but it is... it looks like that capacitor may have failed. Anyway, I&#x27;ve... so I&#x27;ve labeled this board number two. There it is there, controller board number two.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=38s" target="_blank" rel="noopener" title="Play from 0:38">0:38</a></div><p>So this is the faulty unit, and this is the good unit over here. So I&#x27;ve called that unit number one, and I&#x27;ve labeled it number one and number one down there. So what I&#x27;m going to do first is put the number... the faulty controller board into the good unit,</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=57s" target="_blank" rel="noopener" title="Play from 0:57">0:57</a></div><p>and we&#x27;ll see what happens. All right, I&#x27;ve now got unit number two, so the faulty controller board in the... with the good... the working hash board. So I&#x27;ll apply power and see what happens. Yeah, instantly it comes green like that, whereas the faulty board became red.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=74s" target="_blank" rel="noopener" title="Play from 1:14">1:14</a></div><p>I will double check that the... that the actual miner works, but I&#x27;m pretty sure it won&#x27;t... it will work just fine, because the fault was... was that the red LED came on permanently, but now the green comes on. So that indicates that this controller board is fine.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=97s" target="_blank" rel="noopener" title="Play from 1:37">1:37</a></div><p>So what I&#x27;ll do now is I&#x27;ll put the good controller board number one into the faulty hash board number two, and we&#x27;ll try the same thing. Oh no, it&#x27;s red now. Is that because I have not plugged in the ethernet, probably? And yes, that&#x27;s</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=120s" target="_blank" rel="noopener" title="Play from 2:00">2:00</a></div><p>confirmed. I plugged in the ethernet, and 30 seconds later it went to green. So I have no doubt that one is working. Okay, I&#x27;ve now got the good controller board number one in the... with the faulty hash board number two, and let&#x27;s power that on.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=132s" target="_blank" rel="noopener" title="Play from 2:12">2:12</a></div><p>And it&#x27;s red. It... well, it almost flickered to green for a split second there, but no, it&#x27;s staying red. So this was a previously working good controller board. So it&#x27;s almost certain that this hash board is faulty, and given those capacitors on there,</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=158s" target="_blank" rel="noopener" title="Play from 2:38">2:38</a></div><p>that is potentially what the issue is. But I also noticed, and I&#x27;m not sure if it&#x27;s going to show up here, but the soldering on some of the MOSFETs down there is not very good. So yeah, whereas it&#x27;s better on the other unit.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=-bPGrSSaXhE&amp;t=172s" target="_blank" rel="noopener" title="Play from 2:52">2:52</a></div><p>So I&#x27;m not sure if that&#x27;s anything to do with it, but soldering is not good on those at all. But anyway, yeah, it looks like maybe some capacitors have failed on that board, and it&#x27;s definitely the hash board confirmed. Thanks.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

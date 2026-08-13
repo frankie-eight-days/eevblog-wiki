@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEVblog #285 - USB Lab Supply - Part 1</title>
+<meta name="description" content="Full transcript of EEVblog #285 - USB Lab Supply - Part 1. Hi, I wanted to give everyone a bit of a heads up on a new series I&#x27;m starting, a new design series. It&#x27;s my power supply spin-off. I&#x27;ve been mentoring numerous times in the previous bench, battery-powered bench power supply video series and">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>EEVblog #285 - USB Lab Supply - Part 1</h1><div class="meta"><span>6:04</span><span>941 words</span><span>19 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=QxWRT4U_I9o" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=1s" target="_blank" rel="noopener" title="Play from 0:01">0:01</a></div><p>Hi, I wanted to give everyone a bit of a heads up on a new series I&#x27;m starting, a new design series. It&#x27;s my power supply spin-off. I&#x27;ve been mentoring numerous times in the previous bench, battery-powered bench power supply video series and on the forum and</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=17s" target="_blank" rel="noopener" title="Play from 0:17">0:17</a></div><p>Twitter and various other places I&#x27;ve mentioned that I&#x27;m going to be working on this bit of a spin-off project. In fact, it actually predates the bench battery-powered power supply by a long time. So I&#x27;m going to start on that. So this will be part one.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=33s" target="_blank" rel="noopener" title="Play from 0:33">0:33</a></div><p>There won&#x27;t be any detailed technical info in here. I just wanted to show you what I&#x27;m actually going to do. Now, what it is, is I, back in 2009 or so, I had the thought that it&#x27;d be nice to have a little power supply you could take with you and work</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=53s" target="_blank" rel="noopener" title="Play from 0:53">0:53</a></div><p>on those little projects or hacks or whatever you&#x27;re doing, you know, out in the field wherever you are with your laptop, right? You&#x27;re working on a microcontroller project, you need the power thing, you&#x27;ve got your laptop with you, but you don&#x27;t have a little bench power supply you can take with you.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=65s" target="_blank" rel="noopener" title="Play from 1:05">1:05</a></div><p>And I thought, well, why don&#x27;t you convert a USB port into a power supply? And it seemed like a really good idea, and you know, a lot of people do that, a lot of people have done it. You know, they hook 3.3 volt regulators directly onto the USB connector, and that&#x27;s</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=85s" target="_blank" rel="noopener" title="Play from 1:25">1:25</a></div><p>fine and dandy, but I wanted a proper variable power supply with knobs and a current and voltage readout and things like that. And I knew it wasn&#x27;t going to be high power, you know, it&#x27;s limited to the 2.5 watts on the USB port, but hey, 2.5 watts</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=101s" target="_blank" rel="noopener" title="Play from 1:41">1:41</a></div><p>can power, you know, a decent amount of projects these days. Especially a lot of the stuff I&#x27;m working on, it&#x27;s more than enough. So I thought, I&#x27;ll do a USB lab power supply. And that&#x27;s what I started on. And ta-da! USB lab power supply.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=117s" target="_blank" rel="noopener" title="Play from 1:57">1:57</a></div><p>The microsupply USB lab power supply. It&#x27;s got voltage and current readouts, it&#x27;s got dual knobs on it, USB input, and the outputs. And sorry, don&#x27;t get all excited, this is not a finished product. It&#x27;s one of my prototypes. And I&#x27;ll show you some of the others, well, one</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=141s" target="_blank" rel="noopener" title="Play from 2:21">2:21</a></div><p>of the others. I designed this one back in 2009. It was designed to, if it looks very similar to my microcurrent, it&#x27;s no surprise. Because it was designed around the same time, hence I designed it into the same case and things like that.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=161s" target="_blank" rel="noopener" title="Play from 2:41">2:41</a></div><p>It&#x27;s got the same red front panel, and it&#x27;s got the binding posts on the top and things like that. So that was also a dual readout with the buttons. That was my first one, this is another more modern one, this was done in 2010.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=173s" target="_blank" rel="noopener" title="Play from 2:53">2:53</a></div><p>So it&#x27;s been sitting around for quite some time. And I&#x27;ll plug it in and actually show you what&#x27;s going on here. Here we go, got my USB cable, and it plugs in and yeah, you can just adjust the voltage there. It switches between the set</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=197s" target="_blank" rel="noopener" title="Play from 3:17">3:17</a></div><p>voltage and the actual red voltage, so if you turn it down in 50 millivolt steps, there it is, it drops down, and then it reads the, and same thing with the current as well. You can choose your constant set current, and then it</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=213s" target="_blank" rel="noopener" title="Play from 3:33">3:33</a></div><p>actually switches back and measures the set current. Very simple. And it&#x27;s isolated as well, so you can put them in series and create split supplies and things like that. Very handy. But like I said, not a finished design. I was never really happy with either of these,</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=233s" target="_blank" rel="noopener" title="Play from 3:53">3:53</a></div><p>the direction they were going, the price of them, some component selection, some logistic issues, I thought it was too big to slip into a notebook carry case and stuff like that. So I&#x27;ve decided that recently I will redesign it from scratch and I&#x27;ll start a new series on how I&#x27;m going to design</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=253s" target="_blank" rel="noopener" title="Play from 4:13">4:13</a></div><p>a USB lab power supply. So I hope you enjoy it, I hope you follow along. And no, I&#x27;m not going to stop work on the battery-powered bench power supply, that&#x27;s still ongoing. Trust me, I&#x27;ve got a few major steps to that, I&#x27;ve got to re-lay out the board before I can do another video and stuff like that, so that</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=277s" target="_blank" rel="noopener" title="Play from 4:37">4:37</a></div><p>will be going on at the same time. So that will eventually happen, don&#x27;t worry, it hasn&#x27;t been abandoned. But I&#x27;m going to do this one as well, it&#x27;s pretty simple, nothing complex, so this one might actually come out before as a kit, I plan on selling this thing.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=293s" target="_blank" rel="noopener" title="Play from 4:53">4:53</a></div><p>So it should, because it&#x27;s simple, it should come out sooner than the battery-powered bench power supply. Anyway, it should be fun. A USB lab power supply. Let me know in the comments, on the forum, wherever, if you think this is a neat idea, do you want one?</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=309s" target="_blank" rel="noopener" title="Play from 5:09">5:09</a></div><p>And what features you would like to see in it. But I&#x27;ve already got an idea of how, of what features it&#x27;s going to have, how it&#x27;s going to be packaged, everything else, so I&#x27;m basically going to follow that design, but I&#x27;m keen to hear people&#x27;s input on the concept and the idea</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=QxWRT4U_I9o&amp;t=329s" target="_blank" rel="noopener" title="Play from 5:29">5:29</a></div><p>of a USB power supply, like this one. Lab power supply. And you know, maximum voltage, maximum current, and interface and things like that. So, should be a fun and interesting project. Hope you follow along. Catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

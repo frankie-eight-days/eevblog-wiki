@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keysight P9336A USB AWG Teardown</title>
+<meta name="description" content="Full transcript of Keysight P9336A USB AWG Teardown. I&#x27;m at the Keysight stand, and that is my Swiss Army knife, and I&#x27;m going to attempt to open a, uh, what is it? The new, this is the new Arlington Wave kit. Um, I would have been, I think. Turns like, seems like somebody&#x27;s hacked this one. They&#x27;ve">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Keysight P9336A USB AWG Teardown</h1><div class="meta"><span>4:09</span><span>703 words</span><span>15 paragraphs</span><span>source: whisper</span></div><a class="watch" href="https://www.youtube.com/watch?v=u22duJf4n1Q" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=1s" target="_blank" rel="noopener" title="Play from 0:01">0:01</a></div><p>I&#x27;m at the Keysight stand, and that is my Swiss Army knife, and I&#x27;m going to attempt to open a, uh, what is it? The new, this is the new Arlington Wave kit. Um, I would have been, I think. Turns like, seems like somebody&#x27;s hacked this one.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=13s" target="_blank" rel="noopener" title="Play from 0:13">0:13</a></div><p>They&#x27;ve replaced C2901 on the 28th of Feb. Gee, it&#x27;s been around for a while. Ah. Oh, no, you&#x27;ve got to take these off. You&#x27;ve got to take these off as well. That&#x27;s annoying. Oh, get back to you. Alright, we, I think we have to get these end pieces off.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=37s" target="_blank" rel="noopener" title="Play from 0:37">0:37</a></div><p>And we think that, oh, there we go. Oh. Oh. Oh, is there, is there one at the back? I think that might be holding it in. Oh, unbelievable. I&#x27;ll get back to you again. Alright, we&#x27;re getting into it now, I think. Oh, yeah.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=55s" target="_blank" rel="noopener" title="Play from 0:55">0:55</a></div><p>Yeah, hey, we&#x27;re in. Here we go. We&#x27;re in like queens. Ah, there we go. Now. Oh, gee, there&#x27;s five. How many fans in this thing? Unbelievable. Two, four, six, eight fans. Crazy. What&#x27;s going on? That&#x27;s nuts. How much airflow? Oh, nice little, uh, anti-vibration mounts on them.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=79s" target="_blank" rel="noopener" title="Play from 1:19">1:19</a></div><p>Nice. Is it low noise? Oh, yeah, it&#x27;s pretty low noise, but jeez, with that many fans. Remember when we were testing yesterday, you couldn&#x27;t even hear the fan. Oh, yeah, well, it&#x27;s a loud trade show, but. Yeah, anyway. Um, that&#x27;s kind of really funky,</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=92s" target="_blank" rel="noopener" title="Play from 1:32">1:32</a></div><p>but why so many? So we&#x27;re getting, uh, push, um, a suck in from one side and push out the other side. Uh, and we did actually, I did some, uh, product engineering for them, which I&#x27;ll have to charge, because it&#x27;s normally, normally it sits on the bench</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=108s" target="_blank" rel="noopener" title="Play from 1:48">1:48</a></div><p>like this, and it has the Keysight thingamabob like this, but that takes up a lot of square area on your bench, so screw that. I reckon they should actually provide some feet that clip into there and the foot on the bottom, so you can mount it</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=125s" target="_blank" rel="noopener" title="Play from 2:05">2:05</a></div><p>vertically like that, and even the Keysight logo is correct, because it sucks in the air from the bottom and the hot air comes out the top. So, yep. I&#x27;ll charge them for that. Bit of design advice. So, there we go. And I believe</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=143s" target="_blank" rel="noopener" title="Play from 2:23">2:23</a></div><p>this is exactly the same card as what they use in the, uh, PXI, PXI, uh, devices, so it&#x27;s the same, um, that&#x27;s, well, yes, this is the front. So, I believe this is either the identical card or pretty close to it that they use in the PXI, and they&#x27;ve just</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=165s" target="_blank" rel="noopener" title="Play from 2:45">2:45</a></div><p>got the, uh, the same technology stuff. Probably is a different layout, but, uh, anyway, all the magic&#x27;s under the can, sorry, um, but I&#x27;m not gonna take the can off here, but, uh, there you go. So, they&#x27;ve got the, uh, the, uh, PC interface and everything else in there.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=183s" target="_blank" rel="noopener" title="Play from 3:03">3:03</a></div><p>What&#x27;s the expansion for? They&#x27;ve got an expansion slot in there for memory. No one knows. No one has a clue. Okay. That&#x27;s pretty neat. Anyway, that&#x27;s inside the new arbitrary, uh, waveform gen, and this is their new line of, um, USB, uh, instruments,</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=199s" target="_blank" rel="noopener" title="Play from 3:19">3:19</a></div><p>and, and they all stack, as you saw, it had the, uh, circle on top, and you can all stack them together. They&#x27;ve got a, uh, VNA, they&#x27;ve got a 1 gig bandwidth, um, scope, uh, 1000, you know, the, with the Megazoom 4 ASIC, with the million waveform</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=211s" target="_blank" rel="noopener" title="Play from 3:31">3:31</a></div><p>updates per second, and they, this is the arbitrary waveform generator, they&#x27;ve got a VNA as well, which is, uh, 26.5 gig! That&#x27;s insane! That&#x27;s like FieldFox, that&#x27;s the same as the FieldFox. Probably. So they&#x27;ll probably take the board out of the FieldFox, whack it in here, but if you</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=225s" target="_blank" rel="noopener" title="Play from 3:45">3:45</a></div><p>have to ask the price on that, you can&#x27;t afford it. Anyway, that&#x27;s a vector network, um, this is the arbitrary waveform, you can get a VNA and a scope! And the same form factor! So that&#x27;s a winner! Look at that! Beautiful! They&#x27;ve got a, a nice, uh,</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=u22duJf4n1Q&amp;t=239s" target="_blank" rel="noopener" title="Play from 3:59">3:59</a></div><p>die-cast, um, chassis on that too. It&#x27;s really rather, it&#x27;s a, it&#x27;s a nice design, they, they do industrial design very well. Really like it.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

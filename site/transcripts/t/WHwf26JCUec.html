@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tektronix TDS540D Repair Part 1</title>
+<meta name="description" content="Full transcript of Tektronix TDS540D Repair Part 1. Hi, this is a follow-up video to my previous one which I&#x27;ll link in if you haven&#x27;t seen it, the Tektronix TDS 540D that I found in the dumpster. It&#x27;s a four-channel 500 megascope. It&#x27;s, you know, it&#x27;s almost practically 20 years old, but it&#x27;s prett">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Tektronix TDS540D Repair Part 1</h1><div class="meta"><span>6:40</span><span>1,074 words</span><span>27 paragraphs</span><span>source: captions</span></div><a class="watch" href="https://www.youtube.com/watch?v=WHwf26JCUec" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, this is a follow-up video to my previous one which I&#x27;ll link in if you haven&#x27;t seen it, the Tektronix TDS 540D that I found in the dumpster. It&#x27;s a four-channel 500 megascope.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=9s" target="_blank" rel="noopener" title="Play from 0:09">0:09</a></div><p>It&#x27;s, you know, it&#x27;s almost practically 20 years old, but it&#x27;s pretty schmick and it still works, but the CRT in it doesn&#x27;t work. So, I thought we&#x27;d have a look at repairing that.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=22s" target="_blank" rel="noopener" title="Play from 0:22">0:22</a></div><p>Oops. My Don&#x27;t you hate it when your rubber falls out? So, I thought we&#x27;d take a look at it try and get the CRT out and get the driver board out cuz it looks like it&#x27;s a fire on the driver board in there cuz everything else, the main power supply, and all the rest of the digitally stuff works just fine.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=39s" target="_blank" rel="noopener" title="Play from 0:39">0:39</a></div><p>Now, there&#x27;s actually on the EVblog forum, one of the members on there is actually posted a comprehensive way that you can upgrade and turn these 500 series TDS 500 series scopes into the TDS 700 series with the color display.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=58s" target="_blank" rel="noopener" title="Play from 0:58">0:58</a></div><p>So, even if we&#x27;re able to fix the CRT inside this, it&#x27;s a monochrome only display. So, we can actually by adding some extra memory inside this thing, doing a few other little mods in it, we can hopefully upgrade it to the 700 series color.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=76s" target="_blank" rel="noopener" title="Play from 1:16">1:16</a></div><p>So, I&#x27;ve ordered some chips to actually do that. They&#x27;re extra video memory chips. So, hopefully I&#x27;ll do a follow-up video on that, but we&#x27;ll just look at the CRT today.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=83s" target="_blank" rel="noopener" title="Play from 1:23">1:23</a></div><p>See if we can get this working again. So, the front panel just lifts off with a couple of clips and then we&#x27;re left with the just the membrane keypad around here.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=91s" target="_blank" rel="noopener" title="Play from 1:31">1:31</a></div><p>So, we&#x27;ll take the screws off and we should be able to take off that front panel and then there should be some extra screws in here holding the CRT in place cuz obviously to get the main board out of the bottom in here, we have to take out the CRT cuz there&#x27;s no way we can lift that board out without getting that CRT at least, you know, at least half the</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=114s" target="_blank" rel="noopener" title="Play from 1:54">1:54</a></div><p>way out there. Now, I&#x27;ve actually got two of the screws out for the CRT cuz you have to do that and it&#x27;s like like this front display part is really really stuck on.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=128s" target="_blank" rel="noopener" title="Play from 2:08">2:08</a></div><p>So, you&#x27;ve got to try and got to try and prize it off. Ah, yep, double-sided tape. There we go. We&#x27;re in. Now, I can access the CRT. Oh, doesn&#x27;t that look old school?</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=144s" target="_blank" rel="noopener" title="Play from 2:24">2:24</a></div><p>Love it. It&#x27;s got to disconnect that, carefully disconnect the back connections there, and it should pull out. Neat. And it&#x27;s a Clinton Electronics Corp for those playing along at home.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=160s" target="_blank" rel="noopener" title="Play from 2:40">2:40</a></div><p>Oh, all the electrons are going to fall out. It&#x27;s upside down. Date code 99, 10th of the 4th, 99. Well, it&#x27;s next to impossible to get this board out because of the it&#x27;s just got a little L shape here at the bottom.</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=172s" target="_blank" rel="noopener" title="Play from 2:52">2:52</a></div><p>It&#x27;s really rather annoying. You can&#x27;t slide out the front cuz there&#x27;s a annoying lip there or maybe if you could at you got it the right angle. Uh-huh, think I have to tilt it in the other orientation and the board is going to slide out, hopefully.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=187s" target="_blank" rel="noopener" title="Play from 3:07">3:07</a></div><p>That&#x27;s the plan. All right, so there&#x27;s the back of the PCB and one of the first things we&#x27;re going to look for is dry joints cuz unfortunately, we cannot really power this thing up and like get it working and probe it at the same time cuz the whole thing just doesn&#x27;t go together.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=206s" target="_blank" rel="noopener" title="Play from 3:26">3:26</a></div><p>Maybe you could if you like uh you know bodgy in some power supplies and an external VGA uh input like external sorry, VGA. External horizontal and vertical inputs and stuff like that.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=220s" target="_blank" rel="noopener" title="Play from 3:40">3:40</a></div><p>So, the first port of call is just to check visually. So, I can&#x27;t do this on the camcorder screen. So, I&#x27;ll get back you. Now, at first glance, everything actually looks um even under like a just a small magnifying glass, everything looks okay, but the line output transformer here, these are notoriously bad.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=246s" target="_blank" rel="noopener" title="Play from 4:06">4:06</a></div><p>So, I&#x27;m going to go in here with my macro lens and and have a look. I don&#x27;t know, does that look See how hard it is to get a good look at these?</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=259s" target="_blank" rel="noopener" title="Play from 4:19">4:19</a></div><p>That one looks almost dry as a dead dingo&#x27;s donger. That does look a bit crusty, doesn&#x27;t it? Some of the others look okay. Is that one down the bottom?</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=273s" target="_blank" rel="noopener" title="Play from 4:33">4:33</a></div><p>Yeah. That looks a bit suss. And check it out, you can just see the gorgeous molding in here, isn&#x27;t it fantastic? And if we want to retrofit this with an LCD display, you can actually buy a commercial kit for these, but it&#x27;s like 350 bucks or a color one.</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=291s" target="_blank" rel="noopener" title="Play from 4:51">4:51</a></div><p>So, bugger that. We can buy like a 640 by 480 VGA color LCD for like, you know, 20 or 30 bucks with the VGA driver and everything. So, you know, only thing is is that we have to somehow fit it in there.</p></div><div class="para" id="p20"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=307s" target="_blank" rel="noopener" title="Play from 5:07">5:07</a></div><p>Like, we can just somehow like glue it or tape it to the front screen or something like that, perhaps, but yeah, maybe like 3D print some sort of bracket to go in there and hold it.</p></div><div class="para" id="p21"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=316s" target="_blank" rel="noopener" title="Play from 5:16">5:16</a></div><p>I won&#x27;t know that until I actually like get a module in my hand and try and figure it out. But, yeah, there&#x27;s a decent base to work from in there.</p></div><div class="para" id="p22"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=326s" target="_blank" rel="noopener" title="Play from 5:26">5:26</a></div><p>Okay, I&#x27;m going to give it a very quick repower up just to see if it was any dry joints on the line output transformer. So, here we go. And ah, I got to push the button.</p></div><div class="para" id="p23"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=341s" target="_blank" rel="noopener" title="Play from 5:41">5:41</a></div><p>I should do it with the real thing. Come on. Okay, just a little pro tip there, helps if you actually replug in the keyboard. Just saying. And There we go.</p></div><div class="para" id="p24"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=353s" target="_blank" rel="noopener" title="Play from 5:53">5:53</a></div><p>Powering up. What are the odds? And not good. It&#x27;s got to be something else. By the way, I checked like all the diodes. I checked like the ESR of the caps and everything looked okay.</p></div><div class="para" id="p25"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=367s" target="_blank" rel="noopener" title="Play from 6:07">6:07</a></div><p>And the other joints looked okay. So I don&#x27;t like our chances though, but this does take a bit to boot up. But we&#x27;ll see. See if it&#x27;s got the same problem as before.</p></div><div class="para" id="p26"><div class="ts"><a href="https://www.youtube.com/watch?v=WHwf26JCUec&amp;t=385s" target="_blank" rel="noopener" title="Play from 6:25">6:25</a></div><p>Yep. Yep. Yep. Yep. It has. I just saw it down there. Yep. Same problem. So wasn&#x27;t that. Aw. Bummer.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

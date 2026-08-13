@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Improving the Rigol MHO98 Boot Time + Low Power Mode</title>
+<meta name="description" content="Full transcript of Improving the Rigol MHO98 Boot Time + Low Power Mode. Hi, just a quick video on the new Rigol MHO 980 series. Somebody mentioned that maybe the slow boot time is due to the SD card used. And this is a Lexar jobby. It&#x27;s a class one or whatever it is. So I thought that I&#x27;d try a new">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>Improving the Rigol MHO98 Boot Time + Low Power Mode</h1><div class="meta"><span>3:47</span><span>556 words</span><span>15 paragraphs</span><span>source: captions</span></div><a class="watch" href="https://www.youtube.com/watch?v=Fx3YixoQS6E" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, just a quick video on the new Rigol MHO 980 series. Somebody mentioned that maybe the slow boot time is due to the SD card used. And this is a Lexar jobby.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=17s" target="_blank" rel="noopener" title="Play from 0:17">0:17</a></div><p>It&#x27;s a class one or whatever it is. So I thought that I&#x27;d try a new like a fast I do actually have a faster SD card here. So I&#x27;ve copied it onto a faster class three card show you in a minute, but let&#x27;s let&#x27;s power it up and see if what the boot time is.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=33s" target="_blank" rel="noopener" title="Play from 0:33">0:33</a></div><p>I think we had a minute 12 last time, didn&#x27;t we? So let&#x27;s go. Come on. Twiddle your thumbs. I&#x27;ll speed this up. Wow, there you go. 57 seconds. So it looks like it is actually faster.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=65s" target="_blank" rel="noopener" title="Play from 1:05">1:05</a></div><p>That&#x27;s interesting. Let me put this one back in and just double check that again. And here&#x27;s the one I just used. It&#x27;s like a class three. I can never remember all the bloody classes.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=76s" target="_blank" rel="noopener" title="Play from 1:16">1:16</a></div><p>It&#x27;s an A2 or whatever is it. I can barely read that. But anyway, yes, it is a more betterer card. So I just duplicated the image onto that card.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=87s" target="_blank" rel="noopener" title="Play from 1:27">1:27</a></div><p>Anyway, I put the original one back in that Lexar jobby. So let&#x27;s go. Will it do 57? No. No, it&#x27;s Is it going to take a minute 12 like it did last time?</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=113s" target="_blank" rel="noopener" title="Play from 1:53">1:53</a></div><p>Wow, it&#x27;s a bit quicker. So there you go. Then like it seems to be variable the boot up time. That&#x27;s interesting. Hmm. But yeah, the other card seems to be like you can shave, you know, some sort of time off, maybe 10 seconds off with the faster card.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=133s" target="_blank" rel="noopener" title="Play from 2:13">2:13</a></div><p>Maybe you can even get faster than this one, but yeah, like I use these in my little action cams and stuff. There you go. So it does seem to make a bit of a difference anyway.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=142s" target="_blank" rel="noopener" title="Play from 2:22">2:22</a></div><p>Now I also wanted to show you this interesting feature which I found. Haven&#x27;t RTFM yet. I found this by accident. Um normal power consumption 55 watts. Takes forever to boot or 57 or whatever.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=154s" target="_blank" rel="noopener" title="Play from 2:34">2:34</a></div><p>Takes forever to boot up. But if you actually press the if you press and hold the power button, it switches it off, then it takes the minute to boot back up.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=161s" target="_blank" rel="noopener" title="Play from 2:41">2:41</a></div><p>But if you just press the power button once, there&#x27;s actually a low power mode. And if you press low power mode like that, it actually goes into well, what they class as a low power mode.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=174s" target="_blank" rel="noopener" title="Play from 2:54">2:54</a></div><p>It&#x27;s still drawing like 19 watts, which is ridiculous. It&#x27;s not low power mode at all. Imagine like leaving that on 24/7. That&#x27;s it, you know, it&#x27;s dropping a bit.</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=186s" target="_blank" rel="noopener" title="Play from 3:06">3:06</a></div><p>But you know, that&#x27;s a &gt;&gt; [laughter] &gt;&gt; pretty ridiculous though for a low power mode in quote marks. Anyway, if you press the power button back again, you boot up in like two seconds, which is cool.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=201s" target="_blank" rel="noopener" title="Play from 3:21">3:21</a></div><p>But yeah, it&#x27;s it&#x27;s not low power, but I guess it&#x27;s lower lower power and it does turn the fan off. So you know, oh. Oh. Oh, I&#x27;ve got a dicky connection.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=Fx3YixoQS6E&amp;t=209s" target="_blank" rel="noopener" title="Play from 3:29">3:29</a></div><p>Anyway, um yeah, it&#x27;s got a low power mode. So there you go. Useful, I guess, in that it turns the annoying fan noise off, but um you&#x27;re still drawing 20 odd watts, so Anyway, catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>

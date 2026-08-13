@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEVblog 1604 - BEWARE! Multimeter Burden Voltage</title>
+<meta name="description" content="Full transcript of EEVblog 1604 - BEWARE! Multimeter Burden Voltage. Hi, let&#x27;s talk about burden voltage in multimeters and it&#x27;s something you might not be aware of. Now, I&#x27;ve done videos on this in the past, but I haven&#x27;t done a short concise video to show you what burden voltage is and the you can">
+<style>
+:root{
+  --ink:#2a2a2a; --ink-soft:#5a5a5a; --ink-faint:#8a8a8a;
+  --ground:#ffffff; --panel:#f2f2f2; --rule:#d4d4d4;
+  --accent:#ff8500; --accent-dark:#d97000; --bar:#2a2a2a;
+  --font:"Droid Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+     font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+.bar{background:var(--bar);border-bottom:3px solid var(--accent)}
+.bar-in{max-width:1040px;margin:0 auto;padding:14px 20px;display:flex;
+        align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar a.brand{color:#fff;font-weight:700;font-size:19px;letter-spacing:.2px}
+.bar .tag{color:#cacaca;font-size:12.5px;text-transform:uppercase;letter-spacing:.7px}
+.bar .spacer{flex:1}
+.bar a.up{color:#cacaca;font-size:13.5px}
+main{max-width:1040px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--ink-soft);font-size:13.5px;margin-bottom:22px}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--ink-faint)}
+.watch{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+       font-size:13.5px;padding:7px 14px;border-radius:2px;margin-bottom:24px}
+.watch:hover{background:var(--accent-dark);text-decoration:none}
+/* transcript body */
+.para{display:grid;grid-template-columns:64px 1fr;gap:14px;
+      padding:7px 0;border-top:1px solid #efefef}
+.para:first-of-type{border-top:0}
+.para:target{background:#fff8ee}
+.ts{font-size:12.5px;color:var(--ink-faint);padding-top:3px;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+.ts a{color:var(--ink-faint)}
+.ts a:hover{color:var(--accent-dark)}
+.para p{margin:0}
+/* index */
+.search{width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        border:2px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--accent)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:12px 0 18px;
+       font-variant-numeric:tabular-nums}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0;
+           display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
+ul.list li a{font-weight:600}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.controls label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;
+                letter-spacing:.5px}
+.controls select{font-family:inherit;font-size:14px;padding:7px 9px;color:var(--ink);
+                 border:1px solid var(--rule);border-radius:2px;background:#fff}
+.controls select:focus{outline:none;border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.chip{font-family:inherit;font-size:12.5px;padding:5px 11px;border-radius:2px;
+      border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+      text-transform:uppercase;letter-spacing:.5px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+                           color:#fff;font-weight:700}
+.stat{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+      white-space:nowrap;text-align:right}
+.stat b{display:block;color:var(--ink);font-weight:600}
+.tags{color:var(--ink-faint);font-size:12.5px;margin-top:2px}
+.dur{color:var(--ink-soft);font-size:13px;font-variant-numeric:tabular-nums;
+     white-space:nowrap}
+.ch2{display:inline-block;background:var(--panel);color:var(--ink-soft);
+     font-size:11px;padding:1px 6px;border-radius:2px;margin-left:7px;
+     text-transform:uppercase;letter-spacing:.5px;vertical-align:1px}
+.none{color:var(--ink-soft);padding:26px 0}
+footer{border-top:1px solid var(--rule);margin-top:40px;padding-top:16px;
+       color:var(--ink-faint);font-size:12.5px}
+@media (max-width:620px){
+  .para{grid-template-columns:52px 1fr;gap:10px}
+  ul.list li{grid-template-columns:1fr}
+  h1{font-size:22px}
+}
+</style>
+</head><body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="../index.html">EEVblog Transcripts</a>
+  <span class="tag">No Script, No Fear, All Opinion</span>
+  <span class="spacer"></span>
+  <a class="up" href="../index.html">&larr; All transcripts</a>
+</div></div>
+<main><h1>EEVblog 1604 - BEWARE! Multimeter Burden Voltage</h1><div class="meta"><span>6:23</span><span>1,154 words</span><span>29 paragraphs</span><span>source: captions</span></div><a class="watch" href="https://www.youtube.com/watch?v=GRRvGj8OT_A" target="_blank" rel="noopener">Watch on YouTube</a><div class="para" id="p0"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=0s" target="_blank" rel="noopener" title="Play from 0:00">0:00</a></div><p>Hi, let&#x27;s talk about burden voltage in multimeters and it&#x27;s something you might not be aware of. Now, I&#x27;ve done videos on this in the past, but I haven&#x27;t done a short concise video to show you what burden voltage is and the you can really come a gutter using your multimeter, any multimeter.</p></div><div class="para" id="p1"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=15s" target="_blank" rel="noopener" title="Play from 0:15">0:15</a></div><p>Every single multimeter on the market is going to have a problem with burden voltage with measuring current. So, let&#x27;s demonstrate this. I&#x27;ve got my power supply here outputting 1 V.</p></div><div class="para" id="p2"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=26s" target="_blank" rel="noopener" title="Play from 0:26">0:26</a></div><p>I&#x27;ve got a 100 ohm resistor directly across it. Ohm&#x27;s law, of course, current equals on resistance. So, 1 V divided by 100 ohms gives you a current of 10 mA and that&#x27;s exactly what we&#x27;re reading here, 10 mA.</p></div><div class="para" id="p3"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=38s" target="_blank" rel="noopener" title="Play from 0:38">0:38</a></div><p>No problems whatsoever. But, watch what happens if I break my circuit and insert my current meter in series cuz that&#x27;s what you have to do with a multimeter measuring current.</p></div><div class="para" id="p4"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=48s" target="_blank" rel="noopener" title="Play from 0:48">0:48</a></div><p>You have to put it in series either on the top here or the bottom here. It makes no difference. So, let&#x27;s disconnect our circuit and plug it in and see what happens.</p></div><div class="para" id="p5"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=59s" target="_blank" rel="noopener" title="Play from 0:59">0:59</a></div><p>9.8 mA. What&#x27;s going on? Is there something wrong with this meter? No, in fact, this is an excellent and quite accurate meter and even the power supply over here is now reading exactly the same.</p></div><div class="para" id="p6"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=73s" target="_blank" rel="noopener" title="Play from 1:13">1:13</a></div><p>It&#x27;s dropped from 10 mA to 9.8 mA. What&#x27;s going on? Well, this is what we call burden voltage in a multimeter, but basically, what&#x27;s happening here is every multimeter is going to have a some resistance between the current jacks.</p></div><div class="para" id="p7"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=89s" target="_blank" rel="noopener" title="Play from 1:29">1:29</a></div><p>This is made up of the not only the value of the internal fuse, which has a resistance, but also the current shunt resistor, which is dropping the voltage, which is used by the multimeter to actually measure the current.</p></div><div class="para" id="p8"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=99s" target="_blank" rel="noopener" title="Play from 1:39">1:39</a></div><p>So, what you&#x27;re doing now is you&#x27;re broken your circuit and you&#x27;ve put your multimeter in series. That multimeter has an extra resistance in it and it can be quite significant.</p></div><div class="para" id="p9"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=110s" target="_blank" rel="noopener" title="Play from 1:50">1:50</a></div><p>Now, in this particular case, we don&#x27;t know what the value is in here, although we could calculate it or we could measure it, but for the purposes of this video, we don&#x27;t care.</p></div><div class="para" id="p10"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=120s" target="_blank" rel="noopener" title="Play from 2:00">2:00</a></div><p>But, the fact is we&#x27;ve put an extra resistance in series with our circuit. We&#x27;ve completely changed and disturbed our circuit under test. And anytime you use an instrument to measure something, you&#x27;ve got to be aware of the impact that that measuring device, in this particular case a multimeter on current range, is having to your circuit under test.</p></div><div class="para" id="p11"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=139s" target="_blank" rel="noopener" title="Play from 2:19">2:19</a></div><p>So, Ohm&#x27;s law, once again, our current flowing through our circuit is 1 V the 1 V hasn&#x27;t uh changed over here, but the total resistance has. It&#x27;s not just 100 ohms anymore, it&#x27;s 100 ohms plus that what we call a shunt resistance inside here is uh which we call RS here, it&#x27;s RS, the shunt resistance, plus R1, which is 100 ohms.</p></div><div class="para" id="p12"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=161s" target="_blank" rel="noopener" title="Play from 2:41">2:41</a></div><p>So, it&#x27;s something over 100 ohms, which means uh we&#x27;re going to get a value less than 10 mA, and that&#x27;s what we&#x27;re getting here. So, every multimeter is going to have this, and if you&#x27;re not aware of the impact uh the shunt resistance in a meter can have on your circuit under test, then you&#x27;re going to come a cropper.</p></div><div class="para" id="p13"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=178s" target="_blank" rel="noopener" title="Play from 2:58">2:58</a></div><p>The reason it&#x27;s called burden voltage, it kind of has to do with uh the fact that uh let&#x27;s, for example, say you had a 5-V uh power supply over here powering your circuit, you put your current meter uh in series, and you&#x27;re measuring the current.</p></div><div class="para" id="p14"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=190s" target="_blank" rel="noopener" title="Play from 3:10">3:10</a></div><p>Well, that multimeter could easily drop, say, 0.3 V, for example. It can be quite high. It can be up to like a volt on some multimeters. It can get quite high.</p></div><div class="para" id="p15"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=201s" target="_blank" rel="noopener" title="Play from 3:21">3:21</a></div><p>And that means that your circuit is no longer now getting that 5 V, it&#x27;s getting less than, say, the 4.75 V, which is your typical lowest threshold voltage of say a TTL circuit, for example, and your circuit could stop working.</p></div><div class="para" id="p16"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=215s" target="_blank" rel="noopener" title="Play from 3:35">3:35</a></div><p>So, your multimeter is a burden on your circuit. So, that&#x27;s why it&#x27;s called burden voltage. But, check this out. What if I change from milliamp range over here to microamps?</p></div><div class="para" id="p17"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=224s" target="_blank" rel="noopener" title="Play from 3:44">3:44</a></div><p>We should still be able to measure that 9.8 mA, but what? Look, we&#x27;re getting 4,960 microamps, which is 4.96 milliamps, and that&#x27;s what we&#x27;re getting over here, 4.96. Why is it now changed again?</p></div><div class="para" id="p18"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=240s" target="_blank" rel="noopener" title="Play from 4:00">4:00</a></div><p>It&#x27;s because the shunt resistance inside your multimeter across your terminals, or the burden voltage, is going to change with the current range that you actually use. So, microamps is going to have a much higher resistance internally than what your milliamp range does.</p></div><div class="para" id="p19"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=257s" target="_blank" rel="noopener" title="Play from 4:17">4:17</a></div><p>And likewise, if we switch over to the amps range here, okay, insertion error, we have to switch back to here, and bingo, we&#x27;re now actually back to our 10 milliamps.</p></div><div class="para" id="p20"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=269s" target="_blank" rel="noopener" title="Play from 4:29">4:29</a></div><p>Does that mean that our amps jack doesn&#x27;t have a shunt resistance in it? No, it actually does. It&#x27;s just much, much lower than your milliamp or microamp range. But look, we&#x27;ve traded off our resolution here.</p></div><div class="para" id="p21"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=283s" target="_blank" rel="noopener" title="Play from 4:43">4:43</a></div><p>We don&#x27;t get as many digits as we got when we were actually using the milliamps. So, go over to milliamps, you can see that we&#x27;re actually getting three decimal places.</p></div><div class="para" id="p22"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=290s" target="_blank" rel="noopener" title="Play from 4:50">4:50</a></div><p>Over here, we&#x27;re only getting two, basically two decimal places after the milliamp range there. So, we&#x27;ve lost some resolution, but we&#x27;re now not impacting our circuit as much cuz this shunt resister is much, much lower on the amps range, but it&#x27;s not zero.</p></div><div class="para" id="p23"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=309s" target="_blank" rel="noopener" title="Play from 5:09">5:09</a></div><p>If you actually go and put 10 amps, try it on your multimeter at home, put 10 amps through your amps jack, and actually, you can put a second multimeter, this is why you should have two multimeters, second multimeter across here, and you can actually measure the burden voltage yourself.</p></div><div class="para" id="p24"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=322s" target="_blank" rel="noopener" title="Play from 5:22">5:22</a></div><p>And this problem with burden voltage in the multimeter, which as I said, can be like up to a volt or something like that, several hundred millivolts to a volt at full scale reading, and it&#x27;s going to change depending on your current through there, by the way.</p></div><div class="para" id="p25"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=335s" target="_blank" rel="noopener" title="Play from 5:35">5:35</a></div><p>It&#x27;s why I developed the microcurrent. It&#x27;s basically got It&#x27;s still the same, it&#x27;s a shunt resister, but it&#x27;s got a times 100 amplifier in there. So, in theory, it&#x27;s the shunt resistance is 100 times lower, but it&#x27;s still not zero.</p></div><div class="para" id="p26"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=348s" target="_blank" rel="noopener" title="Play from 5:48">5:48</a></div><p>And that&#x27;s why I also built that into my 121GW multimeter here. I think it&#x27;s the only meter on the market that has a low burden voltage. It&#x27;s basically got a micro current built in, the little amplifier.</p></div><div class="para" id="p27"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=361s" target="_blank" rel="noopener" title="Play from 6:01">6:01</a></div><p>But, even with this meter, the burden voltage is still not zero. It&#x27;s just lower than a regular multimeter. So, there you go. Burden voltage. Just be aware of it.</p></div><div class="para" id="p28"><div class="ts"><a href="https://www.youtube.com/watch?v=GRRvGj8OT_A&amp;t=371s" target="_blank" rel="noopener" title="Play from 6:11">6:11</a></div><p>Can be a real trap for your own players. Catch you next time.</p></div><footer>Machine transcription. Timestamps link to the moment in the video.</footer></main>
+</body></html>
