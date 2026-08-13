@@ -28,7 +28,16 @@ CHAT_URL = "https://api.openai.com/v1/responses"
 JUDGE_MODEL = "gpt-5.6-luna"
 PAIRS_PER_REQUEST = 60
 COS_FLOOR = 0.80          # stage 4 recall threshold
-TOP_K = 25                # neighbours kept per concept; beyond this is noise
+# Neighbour budget per concept. A FLAT top-K gives the worst recall to the most
+# important terms: in a 65k vocabulary a hub like `power-supply` has hundreds of
+# strings above the cosine floor (`psu`, `bench-power-supply`, `smps`,
+# `linear-power-supply`, ...) and its 25 slots are eaten by its own morphological
+# family, so cross-family pairs such as `earth` / `ground` never become
+# candidates at all. Scale the budget with coverage so hubs get looked at
+# properly; the tail keeps the cheap flat budget.
+TOP_K = 25
+TOP_K_HUB = 80            # for concepts appearing in many videos
+HUB_MENTIONS = 25
 
 JUDGE_PROMPT = """You are canonicalising a concept vocabulary extracted from the \
 EEVblog electronics video channel. For each numbered pair, decide the relation \
@@ -118,7 +127,7 @@ def embed(names, log):
     return a
 
 
-def neighbours(mat, names, log, block=1024):
+def neighbours(mat, names, log, corpus=None, block=1024):
     """Stage 4b: all-pairs cosine, blocked so the full N x N never exists.
 
     At 40k concepts the dense matrix would be 6 GB; in 1024-row strips it is
@@ -128,11 +137,15 @@ def neighbours(mat, names, log, block=1024):
     # large float32 matmul, including on random well-formed input. Verified
     # spurious: the outputs are finite and in [-1, 1]. Suppressed so a real NaN
     # would still be visible in the candidate counts rather than buried in noise.
+    # enumerate, not names.index() -- the latter is a linear scan per element and
+    # turns this into 65k^2 comparisons before the matmul even starts
+    hub = ({i for i, x in enumerate(names) if corpus.mentions(x) >= HUB_MENTIONS}
+           if corpus else set())
     with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
-        return _sweep(mat, names, log, block, pairs, n)
+        return _sweep(mat, names, log, block, pairs, n, hub)
 
 
-def _sweep(mat, names, log, block, pairs, n):
+def _sweep(mat, names, log, block, pairs, n, hub):
     for start in range(0, n, block):
         sims = mat[start:start + block] @ mat.T
         if not np.isfinite(sims).all():
@@ -141,7 +154,8 @@ def _sweep(mat, names, log, block, pairs, n):
             i = start + r
             row = sims[r]
             row[i] = -1.0                              # never pair with self
-            idx = np.argpartition(row, -TOP_K)[-TOP_K:]
+            k = TOP_K_HUB if i in hub else TOP_K
+            idx = np.argpartition(row, -k)[-k:]
             for j in idx:
                 if row[j] >= COS_FLOOR:
                     a, b = (i, int(j)) if i < j else (int(j), i)
@@ -238,7 +252,7 @@ def main():
 
     log("stage 4: embeddings")
     mat = embed(names, log)
-    cand = neighbours(mat, names, log)
+    cand = neighbours(mat, names, log, corpus)
     log(f"  {len(cand):,} candidate pairs at cosine >= {COS_FLOOR}")
 
     log("stage 5-6: rules")

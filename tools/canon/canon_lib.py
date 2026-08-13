@@ -97,9 +97,17 @@ def stem_key(name):
 
 def digits(name):
     """Part numbers are the classic false merge: LM317 and LM319 differ by one
-    character and embed almost identically. Any difference in the digit runs is
-    an automatic reject, whatever the cosine says."""
-    return tuple(re.findall(r"\d+", name))
+    character and embed almost identically.
+
+    Trailing zero runs are dropped so version spellings agree: `usb-3` and
+    `usb-3.0` both key as ('3',), and `bluetooth-4` matches `bluetooth-4.0`.
+    Without this the digit guard permanently blocked a large, systematic family
+    of version pairs on a hardware channel -- and a rule reject is terminal, so
+    they never even reached adjudication to be argued about."""
+    runs = re.findall(r"\d+", name)
+    while len(runs) > 1 and runs[-1].strip("0") == "":
+        runs.pop()
+    return tuple(runs)
 
 
 def acronym_of(name):
@@ -243,12 +251,31 @@ def rule_verdict(a, b, corpus, cos=None):
     -> "SAME" | "DISTINCT" | None (None means: send it to adjudication)
     """
     ta, tb = corpus.type_of(a), corpus.type_of(b)
-    if digits(a) != digits(b):
-        return "DISTINCT"                      # part numbers, process nodes, model IDs
-    if not compatible(ta, tb):
+    da, db = digits(a), digits(b)
+    # Terminal reject ONLY when both sides carry digits and they disagree -- that
+    # is the part-number case (lm317 / lm319). When one side has no digits at all
+    # the mismatch is usually a spelled-out numeral (`1-wire` / `one-wire`,
+    # `i2c` / `iic`), so send it to adjudication instead of killing it silently.
+    if da and db and da != db:
         return "DISTINCT"
+    if not compatible(ta, tb):
+        # NOT terminal. type_of() is a majority vote over one raw surface string,
+        # and for a one-mention alias that is a single census call -- the least
+        # reliable field in the corpus, promoted to an unappealable veto. It was
+        # blocking real pairs across the software/company-product boundary
+        # (`altium` / `altium-designer`, `eagle` / `autodesk-eagle`), which is a
+        # large slice of this channel's vocabulary. Let the model decide.
+        return None
     if stem_key(a) == stem_key(b):
-        return "SAME"                          # stage 5 auto-merge
+        # Aggressive-stem equality is a CANDIDATE, not a verdict. The module
+        # docstring calls this stemmer disastrous as a merge rule and stage 3 was
+        # moved off it -- but this line then used it to auto-merge with no model
+        # call, which is the same hazard one stage later. It produced 246 merges
+        # including `pcb-manufacturer` into `pcb-manufacturing` (a company into a
+        # process) and `air-conditioning` into `air-conditioner`. Plural-identical
+        # pairs were already merged by stage 3, so anything reaching here differs
+        # derivationally and deserves adjudication.
+        return None
     if cos is not None and cos < 0.86 and \
             corpus.mentions(a) == 1 and corpus.mentions(b) == 1:
         # two one-off strings that are only vaguely close: not worth a model call,
