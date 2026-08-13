@@ -1,0 +1,67 @@
+# seven segment display
+
+A seven segment display is a numeric display element in which each digit is formed from seven individually addressable bars arranged around a figure-eight outline, almost always accompanied by an eighth element for the decimal point.[NvIv-0-R6qQ][400] It is the dominant way of showing numbers on instruments, clocks, calculators and controllers, because a digit costs only eight drive lines and needs no font tables, character generator or graphics memory in the driving processor.[1241] The same segment geometry has been realised in LED, liquid crystal, vacuum fluorescent, neon planar and incandescent form, so "seven segment" describes a layout convention rather than any one display technology.[717][1044][ahoxDw0J2T8][kSvB7hV0XU8]
+
+## Structure and segment naming
+
+In an LED seven segment device the package simply contains a number of discrete LEDs — eight of them once the decimal point is counted — each brought out to its own pin, with the remaining electrode tied in common.[NvIv-0-R6qQ] The segments are conventionally lettered A through G, and driver chips label their outputs to match so that pin A connects to segment A and so on.[NvIv-0-R6qQ] Where data is shifted serially into a display, the usual bit order is segment A through segment G with the decimal point last, and a mismatch between the order the pattern table is written in and the order the bits are actually clocked out is a standard source of garbled digits.[1531]
+
+Two polarities exist. In a common cathode part all the cathodes are tied together and taken to ground, so a logic one on a driver output turns its segment on.[801][1531] Common anode is the more widely encountered variant.[801] The distinction matters to software as much as to hardware: a segment pattern table written for common cathode drives its lamps with ones, and a default return of zero from a lookup function leaves every segment in that digit dark.[1531]
+
+Individual segments are ordinary LEDs and need current limiting like any other. Applying a raw 9 V supply directly to a segment without a series resistor destroys it, leaving a display with one permanently dead bar.[s2KkgI-kyK0]
+
+## Decoding and driving
+
+The classical approach converts binary-coded decimal into segment patterns in hardware. A 4511 is a BCD to seven segment decoder driver, fed from a BCD counter such as the 4518, and represents the traditional way of driving these displays.[801] The 4026 combines a decade counter with segment outputs in one 16-pin package compatible with common cathode displays, so a counter and its display need nothing between them.[801][NvIv-0-R6qQ] The MC4511 appears as the display driver in older bench multimeters.[482] Where a converter chip presents its result as BCD rather than segment data — the ICL71C03 in a picoammeter, for instance, driving three and a half digits — a separate BCD to seven segment decoder must be added, usually on the front panel board.[406]
+
+Decoding has also been done in mask ROM: in one programmable calculator the segment patterns for the multiplexed display are held in ROMs acting as data to seven segment decoder lookup tables, a simple and effective method for the era.[1153]
+
+Serial expansion is the common modern route. A 74HC164 eight-bit serial shift register supplies exactly the eight outputs one digit plus its decimal point requires, and the parts cascade so that five digits become a single 40-bit shift register with 40 segment outputs.[1491][1531] A 595-type shift register with output latch is likewise suited to driving seven segment displays directly at modest currents, though not at 20 mA per LED.[1611] Dedicated peripherals exist at both ends of the scale: the Holtek 16K33 is an I²C LED driver intended for exactly this job,[851] while the Intel 8279 is a combined keyboard and display controller that, with a 74LS156 decoder, runs the six-digit display of an 8085 design kit.[1308] Where segment current exceeds what the shift register can sink, high-side driver MOSFETs are added alongside a constant-current LED driver such as the TLC59282.[689] Indicator LEDs and seven segment digits are frequently combined into one multiplexed matrix driven through ULN2003 transistor arrays.[1360]
+
+Driving straight from a microcontroller is also practical: eight port lines through series dropper resistors carry the seven segments plus the decimal point, and a further pin sinks the common cathode, since a typical micro can handle the roughly 30 mA involved.[400] A display enable line that blanks the digits is useful when the count is changing rapidly, so the observer sees only settled values rather than the intermediate counting.[NvIv-0-R6qQ] The same blanking technique hides data as it shifts through a chain of registers.[1531]
+
+## Current, brightness and multiplexing
+
+Segment current sets the whole power budget. At about 5 mA per segment — enough for decent brightness in a lab or office, let alone outdoors — a digit showing an eight with its decimal point lit draws eight times that, 40 mA for one digit.[298] Displays of this type therefore multiplex, holding total display current near the single-digit figure.[298] The current draw is significant enough to be a design driver in its own right: it is the reason LED seven segment displays get abandoned in favour of LCD in low-power products.[298][400] A mains energy-saving gadget consumed almost a watt purely to drive its seven segment displays.[1191]
+
+Multiplexing divides the average current per segment by the number of digits in the scan. Sharing a 20 mA budget across 40 segments leaves half a milliamp each, which is far too dim to be useful, and pulse-width modulation cannot recover brightness that was never in the current budget.[1491] Outdoor-readable digits want on the order of at least 10 mA per segment.[1491] The scan must also be fast enough to fuse: each segment turning on at least 40 times per second is the threshold at which the flicker stops being visible.[1493]
+
+Where a multiplexed display shares one current source among segments, the source current is split between whichever segments are on, so brightness depends on how many are lit unless the drive compensates.[1493] A conventional power-on self test lights all eights, then all decimal points, exercising every segment.[1493]
+
+## Liquid crystal seven segment displays
+
+Segment LCDs are physically a glass sandwich of liquid crystal with at least one common pin — properly the backplane electrode — and one pin per segment.[1045] Unlike an LED display they cannot be driven with DC. The drive must be an AC waveform in which the polarity alternates between common and segment, which is why a dedicated LCD driver is required rather than plain logic outputs.[1297] Driving a segment LCD incorrectly with DC is a known way to damage it over time.[1297] A microcontroller intended to drive bare seven segment LCD glass therefore needs LCD driving circuitry on board, and selecting one is a parametric search problem in its own right.[248]
+
+A display with few segments can be driven statically, with one common and no multiplexing, though the pin count rises accordingly — a static seven segment part may use two pins per segment, and even an old three and a half digit multimeter can be static if forty-odd pins are acceptable.[1044] Multiplexed glass requires calculating the discrimination ratio, the RMS voltages seen by on and off segments, and that arithmetic becomes involved for a seven-common panel; this complexity is the argument for using a dedicated LCD driver chip or a microcontroller with a built-in multi-segment multi-common driver.[1074] Inside the glass, the routing ties one digit's segments onto a common line, which is what makes the multiplexing possible.[1074]
+
+## Designing custom segment glass
+
+Custom LCDs are specified segment by segment. A µSupply panel came to 212 segments once its four-digit groups, decimal points, bar graph and annunciators were counted, which forced the choice of a driver with around 256 segment capability split into commons — in practice eight commons and 32 segment pins.[1055][1105] Grouping matters: putting the eight segments that form one number on a single common lets the panel update that digit with one common drive, which is easier both in software and visually at refresh time.[1055]
+
+The segment artwork itself should be specified rather than delegated. If a manufacturer is simply told that six seven segment digits are wanted, it will use its own house font, which may produce segments that tilt, or that are thin and skinny, or short and fat.[1055] Supplying the drawing gets the delivered glass as close as possible to the intended font, and it also allows the design to be moved between manufacturers later.[1055] Custom seven segment glass is available with large digits and very good contrast, which is why it is attractive for instruments meant to be read from across a room.[1699]
+
+## Alternative segment technologies
+
+The seven segment layout is independent of the light-emitting mechanism. In a vacuum fluorescent display the anode is a phosphor-coated conductive element that can be shaped into segments as readily as into dot matrix pixels or arbitrary artwork; a grid mesh at anode potential lets electrons through to make a segment glow, and pulling the grid to cathode potential turns it off.[717][1601] A single seven segment VFD digit might be driven statically, but ten characters would be multiplexed as an LED display would be, and the high anode voltages rule out driving them from ordinary TTL or even 4000-series CMOS.[717]
+
+Nixie tubes are not segmented at all: each digit is a separate electrode shaped like the whole numeral, stacked in front of one another, so they are driven from a one-of-ten decoder such as the obsolete 74141 rather than a segment decoder, and never have two outputs on at once.[948] The Beckman SP351 Panaplex is a planar neon display carrying two seven segment digits.[ahoxDw0J2T8] Incandescent seven segment displays were common in 1970s and 1980s equipment and appear throughout period films.[kSvB7hV0XU8]
+
+E-ink is the notable gap. Segmented electronic paper would be ideal for a display that must hold a static reading without power, removing the need for any battery or supercapacitor backup, but seven segment e-ink modules have been discontinued and the technology is effectively all graphic now.[1241][1242] A related discovery is that certain segment LCDs, after being abused with DC drive for a long period, begin holding their image with the power removed, behaving like e-paper.[1297]
+
+## Historical LED forms
+
+Early LED seven segment dies were extremely small, so multi-digit parts were built with a lens over each digit — bubble displays — which makes the digits appear considerably larger than the die beneath.[561][618] Four-digit bubble packages of this kind were standard, and the format survives in vintage instruments.[618][1134] Displays recognisable as the modern traditional LED seven segment part date to around 1976, and unusual packages of the era include the very small Monsanto MV5080 and parts with staggered pin rows.[561]
+
+Seven segment displays with hexadecimal keypads formed the entire user interface of early single-board computers, including a three-chip Z80 design where data was entered manually on DIP switches.[142][KKEYAdXEW-M] Surface-mount LED seven segment displays have become uncommon enough to be worth remarking on when found in a teardown.[1263]
+
+## Mechanical and product considerations
+
+A discrete display behind a front panel needs a cutout, and getting those cutouts aligned is troublesome and adds manufacturing cost; a clear window over the whole front removes the constraint and leaves the display technology free to change.[298] Misalignment between faceplate and display is a visible symptom of low-cost construction.[315] Physical size is a deliberate choice — 0.5 in and 0.56 in LED digits are used where the display must be read at a distance.[400] The look is valued enough that graphical displays are sometimes drawn to imitate it, as on a lab supply whose readouts were made larger and given a seven segment appearance.[509]
+
+Seven segment rendering is a stock feature of instrumentation software too: the static I/O panel of a mixed-signal test instrument can be configured to display its digital outputs as a seven segment digit.[692][1552] Schematic capture libraries carry a good selection of seven segment symbols as generic parts.[253]
+
+## Judgment on segment versus dot matrix
+
+Where only numbers must be shown, the segment display is the better instrument display. Contrast on a seven segment panel is markedly better than on a full dot matrix of the same technology, and larger digits are easier to read for general use, at the cost of not being able to draw graphs or menus.[15] This preference is applied consistently in design decisions and in assessing other equipment: a soldering station with a seven segment readout is judged favourably against the alternative — "None of that dot matrix rubbish."[OvGdE5hC1Ro][1463] The counter-argument is capability, not legibility; dot matrix earns its place when logging, graphing and text are required.[15][e9cpKN69Avk]
+
+Segment counts above seven exist for alphanumerics — 14-segment and starburst displays — and these consume the full output complement of a driver chip where a seven segment digit leaves pins spare.[689][1044][1602]

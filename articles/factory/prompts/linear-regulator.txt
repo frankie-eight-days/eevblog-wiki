@@ -1,0 +1,673 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: linear regulator
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 128 passages drawn from 88 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# linear regulator`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: multimeter into the, you know, low current mode, measure the sleep current, then you can, uh, put it into active mode, you can measure the current, and then you can get out the data sheets for the batteries, and then you can do the calculations, and then you can try and figure it all out, and you can, you know, do all this, but something like this just allows you to do, like, a what-if, uh, thing, you know, what-if I
+TEXT: change my battery chemistry, and stuff like that, what-if I change my cutoff voltage, as I said, you might want to re-optimize your design, you might, uh, change from a, a linear regulator to a switching converter to get lower dropout voltages, or something like that, um, this thing can tell you that, so that's, yeah, that's really quite good, and I love that it's all open source hardware and software, so I'm sure people will, uh, improve on this, and Doug will no doubt, uh, improve as well, he did ask for, uh, feedback, so thank you very much, Doug, for sending that in, that is really cool, so LinkedIn down by the
+context after: down below, leave your thoughts down below, uh, as well, and as always, discuss over on the EEV blog forum, because that's where everyone discusses, like, test gear, like this, very cool, catch you next time. Thank you.
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: Alright, so we're gonna say that we're powering our product from a lithium polymer battery here, it's one cell, let's say a thousand milliamp hours to make it nice and round, it will cut off at three volts, that's a, you know, a good cutoff voltage, if you can, uh, operate down to that, of course, because if you've got, say, the battery,
+TEXT: powering, like, a 3.3 volt voltage regulator, well, like, a low dropout one, then it's gonna be, like, 3.35, or something like that, and that will actually, right, if you've got 50 millivolts dropout there, that'll move your, uh, cutoff point to here, and then you're, you're pissing away, you're wasting half of your battery capacity, so a thousand milliamp hour battery, you'd be wasting it, because here's our voltage cutoff point at that red dot, so basically, the area under the curve extending down to zero volts,
+context after: here, um, is essentially the energy of the battery, so you can see it, you know, it's gonna be roughly, like, half-half, so you're wasting, like, 45 to 50 percent of the capacity of that battery if you used a, if you designed your product to power directly from a lithium, uh, polymer battery, a single cell lithium polymer battery, and have a dropout voltage of, you know, a linear regulator, so unless you've got a swi
+
+[1533] EEVblog 1533 - How To Estimate Product Battery Life — Dave Jones (explains)
+context before: Three AAAs, of course, a nominal 4.5 volts. We can actually go above that. And it's going to stay the same current. And it should stay the same current when we drop it like this. Let me explain why. Let's go to DaveCat here, and I'll show you how this particular load, i.e.
+TEXT: this multimeter, actually works. It's going to have a linear regulator inside. None of that switching regulator rubbish. It might have multiple linear regulators, but for the purpose of this discussion, it doesn't matter. We've got our battery over here, okay? And then we've got our current draw from the battery, which is what we just measured, that 5 milliamps or so.
+context after: And then we've got current, which goes into the load, which is all the circuitry for the multimeter. Now... Of course, the load can switch, and you can have, like, you know, pulse currents and all sorts of things. But a multimeter like this is, like, a fairly consistent 5 milliamp load there, as you saw.
+
+[378] EEVblog #378 - Dumpster Diving Teardown Repair — Dave Jones (explains)
+context before: So, IC452 is what I might try and find. And if we get in here to IC452, I found it over here. Here we go. That's our That looks like the input.
+TEXT: There we go, 10.1 V, and our output is 5.42. And here we go. Here it is over here, IC452, which is a linear regulator. It takes that 10.1 V input that we get from that S10 that we were looking at, and it outputs It looks like it permanently outputs various Well, you know, a 5-V rail basically for plus 5-V B, U, plus 5-V M, plus 5-V S, and then there's this P
+context after: detect signal, and it's all quite complicated. And this C1 and C2 here, look, this tied into this reset pin, which goes off onto this board somewhere up here. You follow it all the way up here and it goes out there and it's that goes off to the main board.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: It's almost endless. Boost, buck, inverting, synchronous, you know, power factor corrector ones, isolated, non-isolated. It's just It's crazy. There's And there's countless theories behind all of them, too, and it can get very, very complex.
+TEXT: And I'm sure I could do a 1-hour blog on each and every type of those switching regulators and well, I might do in the future anyway, but I just wanted to make this one quick and simple to show that there really isn't much internal circuitry difference between a standard buck switching regulator and a linear regulator, not much at all as you saw.
+context after: And that's something you traditionally don't learn in school or courses or things like that. They don't teach us switch modes as totally separate. So, I thought that I hope that was a a bit of clarity for you and to show beginners that they are they can be pretty simple these switching regulators.
+
+[95] EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans — Dave Jones (explains)
+context before: It's made it stable. Let's change this output capacitance to I don't know, something silly like 10 pF and have a look. No, it's still stable from 0 to 100 milliseconds.
+TEXT: That looks really quite good. 100 microfarads, but you know, it it's not really um this really isn't an exact um simulation. It's you know, it's probably not even close, but um at least it does show you the uh variability in changing um the you know, certain circuit parameters in just this uh basic uh linear voltage regulator loop like this.
+context after: So, you have to be really careful about what um you know, to well, either simulate it extremely closely, but as everyone knows, simulation really um can't cater for uh the parasitic effects of your circuit when you actually build it on a PCB, parasitic capacitance and and power supply and noise and all sorts of things like that.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: So, if you have a big sharp change in your load, it's going to take some time for the loop to actually compensate. So, there you go. Look that one up.
+TEXT: And I should also talk very quickly about the differences between standard linear regulators and LDOs. LDOs, of course, have a lower dropout voltage, a lower you know, you can the input can be much closer to the output because a standard linear one might take two or three volts, and that can be really annoying for low voltage systems.
+context after: So, that's why LDOs are very popular. But, they have the downside LDOs have the downside of having not only a a greater inherent instability in the loop. So, you have to be very careful about what capacitor the ESR and the value of the capacitor that you use on the output.
+
+[1533] EEVblog 1533 - How To Estimate Product Battery Life — Dave Jones (explains)
+context before: So as a rule of thumb in electronics, anything more than, like, two orders of magnitude. So, you know, 101, 100th of something. You can pretty much rule it out. That's, like, 1% error. Doesn't matter. And if you get lower than that, well, it, you know, it just becomes insignificant.
+TEXT: So you can rule out IQ. So for a linear voltage regulator, and this is something you should know as a basic building block thing for regulators like this, is your output current, your load current, is equal to the input current. So effectively, because the linear regulator is a fixed voltage across essentially a fixed load,
+context after: you're essentially getting a fixed... a fixed current, or a constant current, essentially. So as you'll see in a minute in the battery data sheets, we're drawing from the battery essentially a constant current load. If you're using a linear regulator, that's what you got.
+
+[95] EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans — Dave Jones (explains)
+context before: 
+TEXT: Hi, welcome to the AAVlog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, now a couple of episodes ago, I showed you a standard linear regulator circuit and how it wasn't that much different to LDOs and even switch mode power supply regulators.
+context after: Now, as it so happened, I've actually been playing around with just such a circuit recently. In In fact, pretty much exactly this. I've been using a TLC 2252 op-amp with an MJD 212.
+
+[749] EEVblog #749 - Mailbag — Dave Jones (explains)
+context before: So, let's see if I'm in tune, shall we? Still have no idea what I'm doing, but here we go. And check out the array of transistors that they got here all driving the LEDs there.
+TEXT: Hilarious. Didn't have enough grunt on the, uh, 8051. So, that's quite a crude little, uh, thing. I mean, it looks like they just got a transistor voltage regulator up here cuz there's just a 9-V battery snap and uh, yeah, it's probably what those transistors up there are doing it making a crude 5-V regulator.
+context after: As I said, it's probably just like squaring up the microphone signal, doing some timing stuff, and it you know, it's got a few modes and calibration things and stuff like that.
+
+[427] EEVblog #427 - HP 3478A Multimeter Teardown — Dave Jones (explains)
+context before: That'll be the regulator that's powering all of this digital stuff all around here. The main processor, there's the backup battery which we'll talk about and they're just using that for heat sinking on the side.
+TEXT: I mean, I don't think this thing uses much power particularly. So, that's why they can get away with the linear regulators inside this which are of course much quieter than having switching regulators and that's why they need less shielding and stuff like that inside, but there's our mains transformer there.
+context after: It is fused on the back down there. We've got our GPIB cable going across and they basically split this thing into the just like they did in the 3457A.
+
+[258] EEVblog #258 - PSU Housing Design - Part 11 — Dave Jones (explains)
+context before: And once you go to three of these or four even, the uh charging solutions for those become more complex and more expensive and more difficult and things like that.
+TEXT: So, and really, it was taking up a fair bit of uh room inside this thing. I couldn't mount them in the other uh orientation if I wanted to. And really, with a linear power supply I was using here, you're really pissing away a lot of your capacity in your battery due to your linear uh voltage regulator.
+context after: So, you know, if you've got uh 12 volts coming from your uh uh batteries, for example, then well, and you're only putting 3.3 volts um out, uh which might be a typical uh power for a project or something like that, there's a lot of power wastage in your heat sink.
+
+[1174] EEVblog #1174 - Rohde & Schwarz PSU Teardowns — Dave Jones (explains)
+context before: Which then, um... Is... Tracks. You know... Only like a volt above. Or, you know... Half a volt above. So that... Um... Regardless of your, uh... Output... Voltage... Um... This is gonna be super efficient. So you only need a tiny heatsink... On your, uh...
+TEXT: Secondary output, uh... Linear regulator. But of course... Using the output linear regulator... You get, uh... Much lower noise than a... Just a direct switching output power supply. And sure enough... If you have a look down in there... That's a... NCP... 1034... Which is a synchronous...
+context after: Buck... Converter. There you go. So... Yep. They're just buckin' that down to... As I said... Probably... About... 50 volt... Per... Per... Per... As I said... Probably like... You know... A volt at most... Above the, uh... Output... Pre-regulator. And it's always tracking that. Um...
+
+[1174] EEVblog #1174 - Rohde & Schwarz PSU Teardowns — Dave Jones (explains)
+context before: Heh. They're a fan of... They're a fan of their, uh... Gold dots, aren't they? Love it. Once again, we've got Nichicon main caps in here. There's our bridge rectifiers on the input. Yeah, so I think what we've got here is... This is actually...
+TEXT: This is most likely the output, uh... Linear... Regulator. But it's got a, uh... Tracking... Switching... Pre-regulator here. These are, uh... 80 volt... Uh... Jobs. And... The... Full wave bridge rectifier from the... Uh... Mains creates a DC. And we've just got a DC to DC converter.
+context after: Which then, um... Is... Tracks. You know... Only like a volt above. Or, you know... Half a volt above. So that... Um... Regardless of your, uh... Output... Voltage... Um... This is gonna be super efficient. So you only need a tiny heatsink... On your, uh...
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (explains)
+context before: It automatically powers down. It's nice. It's in a You can get it in a tiny 2 mm by 3 mm DFM or an easier-to-use uh five-pin SOT23. Fantastic. I like it.
+TEXT: And, this is the typical application. This is how simple it is here. Your voltage input from your charger, decoupling cap, your output voltage. You've got to have a decoupling cap on there, otherwise it can oscillate just like any linear or low dropout voltage regulator can.
+context after: Same thing here. The internal charging circuitry is the same uh if it's similar circuitry to what's used, and it will be an unstable loop unless you add the output the recommended value of output capacitance.
+
+[329] EEVblog #329 - Tracking Pre-Regulator LTspice Simulation Part 2 — Dave Jones (explains)
+context before: 
+TEXT: Hi, it's simulation time again. If you remember a previous video I did on a switching tracking pre-regulator for a linear voltage regulator. In this case it was a switching boost converter, can be any standard type of switching boost converter, followed by any type of linear
+context after: regulator. In this case it was an LT3080 we were looking at, and we based that circuit on a P-channel MOSFET, which is M1 here, and that came from a recommendation in the LT3080 data sheet, and it had a few little issues with it, but as it turns out John Barnes has sent me
+
+[1122] EEVblog #1122 - Raspberry Pi 3 PoE Hat FAIL Investigation — Dave Jones (explains)
+context before: So, I've changed it down to 37 volts and our 12 and 1/2 watts output and it's working just fine. So, there's essentially nothing wrong with this Raspberry Pi power over Ethernet hat.
+TEXT: Pretty much, you know, it's doing the business except perhaps in the ripple department. It may just have too much ripple, which is passing possible I've done a video on this how ripple can easily pass through our regulators, the linear the 3.3 volt linear voltage regulator.
+context after: So, any ripple on the 5 volt rail is going to translate through mostly it's going to you know, especially at these sort of frequencies it's pretty much mostly going to pass through to the 3.3 volt rail.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (explains)
+context before: apparently these were the ducks guts in the SDR community, the software defined radio community, apparently this combination of chipsets was apparently highly regarded, but Elonyx have apparently folded and you can't get the E4000 chipset anymore, so this is an older design, but apparently
+TEXT: a lot of people use these things for software defined radio stuff, cool. As for heat building up inside the rubber, I'm not sure what the casing it was, but the chipsets wouldn't take much at all I mean these are linear regulators on here, but like you know, 79 milliamps at
+context after: 1.5 volts for the tuner, I don't know the Realtek chipset PDF doesn't seem to be easy to come by, probably under bloody NDA or some crap like that, but yeah I don't think it would have consumed a huge amount so I don't think that would have been an issue.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (explains)
+context before: With when you've got a uh pass transistor like this, you can make it operate in constant current mode like this by determining the voltage drop across that current that shunt sense resistor there.
+TEXT: You can keep it at a fixed current. And then when it switches into another mode, it can work as a linear voltage regulator. And that's why these um are typically lithium ion charger ICs are typically a linear type because they drive the pass transistor with a DC voltage.
+context after: It's a linear thing. Some will actually, uh, drive this with a pulse width modulator, okay? And they're your switch mode types, but you can look at the data sheets to see the differences between those, but the most of the simple ones, and and there's nothing wrong with them, uh, most of them will be of the linear type.
+
+[1533] EEVblog 1533 - How To Estimate Product Battery Life — Dave Jones (explains)
+context before: So the last thing you want in this is a switching converter to power your like, dual-slope A to D inside this thing. You know, precision measurements, nah, yeah, no thanks. So it's common in products like multimeters like this to sacrifice some of the energy in the batteries
+TEXT: for measurement performance. And, uh, simplicity. So let's look at some data sheets. Let's just take a Duracell UltraPower AAA here, and we know we've got a constant current load here, and this will go into the different, uh, varieties. And sure enough, look at this!
+context after: Constant current graph. They've got two constant current graphs here, but wah, wah, wah, wah. Murphy's Law, wouldn't you know, they've got 1 milliamp and 10 milliamps. They don't have 5 milliamps. And as you can see, there's quite a large discrepancy between these. So you could actually, like, try and guesstimate it, like,
+
+[1153] EEVblog #1153 - 1970's Programmable Calculator Teardown — Dave Jones (explains)
+context before: Um don't you love the the tubing? That's not even heat shrink. I don't think that's just tubing. We've got our capacitors mounted down to the chassis quite old school.
+TEXT: It's a bit how you're doing over here with the uh What is that? The the series pass transistor for the linear regulator? Um they've got heat shrink on there but you know, they're putting it down there using it as a heat sink and well, there's not much else on there.
+context after: Bunch of caps. That's a Is that a big ass inductor? Or is it? What the What on Earth? No, it's a bridge rectifier. That's a big-ass bridge rectifier. Look at that.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: Hi, sorry about the new office background here. I didn't have time to build it scale or to paint it. In a previous video and previous couple of videos, we looked at the 3 cent microcontroller from Paducah and we got that from LCSC, which is a Chinese catalog type Digi-Key kind of competitor Digi-Key Mouser Farnell's catalog competitor.
+TEXT: And I thought we'd take a look at another part from them. It's not a microcontroller because well microcontrollers are expensive, right? At 3 cents. How about another jelly bean part which you'd be no doubt familiar with, the low dropout voltage regulator.
+context after: How cheap can you get these on LCSC? Well, turns out you can get them for 1 cent or little bit of maybe 1 and 1/2 cents. I'm rounding down to 1 cent.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: It's because that active op-amp there is driving it faster than a normal RC curve. Now, this little bit here is is interesting. What's that? That's 200, 400, 600, 700 mV.
+TEXT: Aha. That 700 mV um happens to be the same as what our regulator is capable going down to with no load. So, there's some turn-on mechanism there internally to the LT3080 device that uh that causes that sort of jump up there and then flat for a little bit.
+context after: But, if you follow that curve down there, I think you'll find that that will intersect precisely down the bottom like that. So, it's got this little knee characteristic uh switch on like that, but it's not a problem because it doesn't overshoot cuz our output voltage is 1 V.
+
+[1533] EEVblog 1533 - How To Estimate Product Battery Life — Dave Jones (explains)
+context before: process, rather than just, you know, like estimating the battery life, which is what we're doing here. Now, 3.58 divided by 3, get the confuser out, that's a smidge under 1.2 volts, so we definitely aren't extracting all of the energy from these AAA batteries, because I've done a ton of
+TEXT: battery videos, and I'll link in the playlist down below. And batteries do contain usable energy right down to 0.8 volts, but in products like this, that use a linear regulator like this, or multiple linear regulators then, so yeah, it is common to waste
+context after: some energy in your batteries like this. And that's just an unfortunate side effect of a product like a multimeter, that you don't want to have a switch in power supply in here, because that can screw things up. You know, this is a precision measurement device.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (explains)
+context before: It's fantastic. And is this down here part of the battery emulator ESR? Cuz you don't want you don't need to go too high in your battery ESR. There's going to be a point where is that adequate heat sinking for it?
+TEXT: Off the top of my head I couldn't tell you. And yeah, this makes total sense once you look at it. This is obviously the electronic load over here. It's going to have the largest heat sinking cuz it's it's a purely a linear thing for the electronic load.
+context after: And as I said, it's just basically connected in parallel with the main functionality of this product. A lot of people won't use the electronic load capability in this product.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: And I know that might sound crazy, but trust me, they're not that much different, and I'm going to show you why. Okay, so if you're a beginner, you might have seen something typically like this.
+TEXT: Linear power supplies, real simple, little three-terminal devices, input, output, and they step down the voltage from like 9 volts down to 5 volts for like a 7805. Very simple to use, very simple to understand, a couple of filter caps, and that's it.
+context after: And you might have seen something like this for a switch mode power supply, much more complex, a lot more components, this magic black box down here. We've got diode, inductor, capacitors, um, output sense resistors, and other sense and, um, compensation components around here.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Okay, that's at minimum output voltage, minimum load. Let's go maximum output voltage, minimum load. There it is there. No problems at all. And it jumps around, of course, cuz it's AC coupling.
+TEXT: So, you'd expect it to jump around until it settles through the AC coupling input cap. And I like that. No complaints at all. It looks like it looks very clean, as you'd expect from a linear voltage regulator with a rated 40 microvolts output noise.
+context after: In fact, I don't have the gear to measure 40 microvolts output noise. I'd have to roll my own amp and do all sorts of other things. And ah, gah, too hard.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Hi, I've got another top five jelly bean component for you. This is a follow-up to my previous video which was very popular linked up here and down below if you haven't seen it where I looked at the top five jelly bean op amp components.
+TEXT: So, today we're going to take a look at ta-da, top five voltage linear voltage regulators and references. So, let's get down to it. Now, a jelly bean component is basically an industry standard component that has been around for a long time.
+context after: It's been around forever. In case of the first one we're looking at here, like been around for like 40 plus years. So, a long time. And they're still used today as the go-to component for this particular function.
+
+[802] EEVblog #802 - Mailbag — Dave Jones (explains)
+context before: So it's .1, is there a point? Point, yep. You've got to press the star for decimal point. 1.23 volts. Nope, nope. And hash. Nice. And let's get the Fleur in here and have a look. And yep, no surprises for finding that heater there at
+TEXT: light shadow, 41 degrees there for that little heater board. Of course you can see the DC to DC is it a DC? No, it's a linear reg. It wouldn't have a DC to DC converter in there. I think it's a linear reg because you know, 2 9 volt batteries
+context after: you don't need. You're typically going to operate this linear. You don't want any switching stuff in there like that. But yeah, that's a little heater board. Actually I suspect that might be rather clever. What I think's going on here, this is a pure guess, because I
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: Now, what we're going to do is try and find where the tap voltage on for the 30 V is. So, I'm ramping down 30 V. Once again, I got that full load happening on there.
+TEXT: So, let's wait for the relay click. And up, there we go. So, about 23 V. Let's go up. Yep, 23.2 V is where that uh tap kicks in. And we should see that temperature go up, and we do because it's now dissipating more being a linear regulator.
+context after: Um at 24.4 V, of course, it's dissipating more power in the heat sinks. There we go, we're over 40 now, and I've just had it running for a minute.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (explains)
+context before: Here's our mains supply. Obviously, look, we've got our big mains choke up here. So let's flip it around, shall we? And have a look what's going on here. Here's our input mains choke that they've got there, the RFI choke. They've got some input protection happening there, so that's all good.
+TEXT: But once again, look at this. Curiously, like, plus 5 volts D, which would be digital, plus 5 volts digital. They've got a common mode choke here. So it looks like 6.5 volts in, 5 volts out. They've just got a linear reg happening there.
+context after: But look how close that is to the other mains circuitry. Once again, they've probably added adequate clearance, according to the, you know, the creepyjar standard and everything else. But it's just amazingly close. And it's obviously not coming through here. I thought at first it might be some, you know, capacity divider or something,
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: Well, I'm glad you asked. Let's take a look at it, because if you actually look at what goes on inside these boxes here, they're not that much different at all.
+TEXT: In fact, there's hardly any difference, really. Different modes of operation, but the circuitry is very similar. Let's take a look at it. Okay, let's take a look inside a linear regulator, one of those 7805 three-terminal devices.
+context after: What do you have? What's the circuitry actually look like? Well, here it is. It's a very simple. It's got an NPN series pass transistor. It's got an op amp.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Uh it's the minimum load current required to maintain regulation. If you don't meet it, it ain't going to regulate, and that defeats the whole purpose of a power supply.
+TEXT: Now, the dropout voltage of this part is interesting cuz it specifies it in two different ways. There's V control pin dropout voltage and VIN dropout voltage. So, if you look back to the circuit here, it's got VIN and V control.
+context after: Normally, you tie these two together, and we will in our application here today, but uh if you want a really low dropout voltage of this part, like a low input voltage, and a minimum input uh dropout voltage between the input and the output, but you happen to have in your circuit somewhere a higher control voltage, then you can take advantage of that and get a lower dropout voltage
+
+[139] EEVblog #139 - Let's Select a DC-DC Boost Converter — Dave Jones (explains)
+context before: Um and quite frankly, if it doesn't have a parametric graph, I'm not going to use it. I might use it as a last resort if I have to go in there and calculate it or measure it, but I don't want to do that right now.
+TEXT: I'm looking for devices. Now, let's check out a Maxim device down here, Maxim 1765. Let's open the data sheet. Okay, now this Maxim device is only an 800 mA step-up DC-to-DC converter, but it's got a 500 mA linear regulator.
+context after: So, who knows? This might be good. Um adjustable output from 2.5 to 5.5 up to 800 mA output. Uh let's have a look at its parametric graphs. Okay, here we go.
+
+[1285] EEVblog #1285 - How to do Design By Inspection — Dave Jones (explains)
+context before: But, this is a 450-volt device. It can handle 450 volts DC. So, it can handle directly rectified 240-volt AC mains as well as 110 and it gives a fixed 15 volts out depending on the model you choose here.
+TEXT: Now, why is this going to be lower solution? Because linear regulators standard building block and this is where the experience comes in or as you'll see in a minute we can look down in the data sheet to see this, okay?
+context after: So, what we're going to get here, let's just ignore uh, voltage regulator for a minute and let's just look at the half wave, uh, bridge rectifier and the cap here.
+
+[1285] EEVblog #1285 - How to do Design By Inspection — Dave Jones (explains)
+context before: Now, what about the currents actually flowing into the regulator here? Aha, this is where you have to understand, uh, voltage regulators and linear voltage regulators like this. How they work is that basically the current flowing in here, let's call that I in, this is I IQ, which is, uh, the quiescent current of the regulator and we'll have a look at that, uh, down at the minute cuz look
+TEXT: at the box here, right? And and the regulator's physically only got three legs. So, current, if it's going to flow into the regulator at all, it can only flow out of here like this or out of this ground pin like this.
+context after: So, this is going to be a quiescent current that is essentially the just the little bit of current that the regulator itself needs to use to do its function.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (explains)
+context before: So, that's telling us that we're well, we've got a linear voltage regulator. So, even though this is a switch mode power supply, we're looking at possibly um not any active switch mode regulation on the secondary side over here.
+TEXT: We've got a linear regulator. So, what that points to is just a simple uh bridge rectifier or you know, a diode halfway the secondary side and then just going into the caps and then we're just got linear regulators.
+context after: Now, there's another device down in here. You know, you can't get in here to read any of this stuff. It's ridiculous. Anyway, now these two here on small heat sinks, these are diodes.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And then, if you wanted to uh uh characterize it over different temperature ranges if it wasn't just going to be used in a basic uh lab environment like this, then you'd have to go to a lot more trouble.
+TEXT: And that's what happens when you um when you're on the margin like this using an LM317 voltage regula- regulator, a standard linear regulator instead of a low dropout one where we would have had plenty of margin.
+context after: Um instead of having, you know, the 1.5 to 2 volts dropout voltage, which we get with the LM317, if you use an LDO, it might have .2 volts dropout voltage, and we'd have a ton of margin, and the output current would work right up to, you know, 500 milliamps, not a problem, and everything would be sweet.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: And when it's fully saturated, it doesn't drop much power at all. And when it's off, it doesn't use any power at all, essentially. But there are losses in the loops and things like that, which we won't go into cuz it just complicates it and there's no need for that.
+TEXT: But basically, it's either off or on. Whereas a linear regulator, I don't have the circuit here anymore, but as you saw, it's a continuous loop and it's continuously dissipating power in the past transistor.
+context after: So that's why linear regulators are very inefficient and switch mode power supplies are quite efficient. They can be up to greater than 90% efficient for a buck. Now, that's not always the case though.
+
+[674] EEVblog #674 - Rigol DS1054Z Teardown — Dave Jones (explains)
+context before: So But save cost and of course the you know, that only cost a cent for the you know, 74,000 series not even that. So they're really optimized down. I like it.
+TEXT: And you also would have noted that there's no local voltage regulation on these individual front ends either. Likely they've got a 2.5 linear regulator over here. So that's likely powering all four channels.
+context after: So they don't have the extra low noise one like the DS2000 does cuz it's got the 500 microvolt per division race. So it needs a lower noise linear regulator specifically designed for the task and a bunch of other little touches to make it low noise.
+
+[1371] EEVblog #1371 - A 10,000hr Battery Life Bench Multimeter? — Dave Jones (explains)
+context before: So, that is going to work out well. I think we can power it from a single cell. Hmm. Now, we need to know the battery current, so we'll just break into that.
+TEXT: And because it's a linear regulator, almost all of the current goes like straight through. So, there's like only like, you know, 10 like tens of microamps or something in the control pin of that micro.
+context after: So, all of the current flows through into the meter. So, it doesn't matter what voltage you power it from, it's going to draw Look at this, 1.75 milliamps or negative.
+
+[805] EEVBlog #805 - Siglent SDG2122X Arb Generator Teardown — Dave Jones (explains)
+context before: But, yeah, it's pain in the from a PCB layout point of view, you go, "Do I have to use that package? Really?" Uh anyway, breaks the monotony. Anyway, just this uh converter chip alone uh more than 10 bucks in, you know, a couple of hundred quantity.
+TEXT: So, it's not a cheap puppy either. And then we got lots of linear regs all around here. There we go. You know they're not uh switching converters by the uh look, by the lack of inductors around there.
+context after: And uh it's common to get those um five-pin uh packages like that for various adjustable linear uh regs. But, um yeah. So, lots of power supply. That's the problem.
+
+[1285] EEVblog #1285 - How to do Design By Inspection — Dave Jones (explains)
+context before: They always have been. That's why once these linear regulators came along, everyone just switched over those. Although, the Zener solution, the reason that they use it is because it's cheap.
+TEXT: A Zener is still going to be lower cost than linear regulator, especially a higher voltage linear regulator like this, even though it might be, you know, 20 cents in volume or something like that.
+context after: So, bingo, that's design by inspection. And I you can bet your life that that's the quiescent current you're going to use. But as I said before, there can of course be traps.
+
+[353] EEVblog #353 - Mailbag — Dave Jones (explains)
+context before: Follow the links to the MIDI Modbus page. I presume it's open hardware. And uh let's take a look at the schematic here. So the power supply. Yeah, we've just got a uh is that a Yep.
+TEXT: 7805 15 to 30 volt um input. And we've got a 78 L12 as well. Both linear regulators. Um so yeah, it's got to be at least 15 volts input cuz you know 12 volts output here you need at least 2 volts.
+context after: So, it could actually go down to uh Oh, no. It can't cuz there's a diode drop is there as well. There you go. Um, so where what have we got?
+
+[1714] EEVblog 1714 - Presonus Eris Speaker REPAIR (Capacitor Pop Noise) — Dave Jones (explains)
+context before: Thankfully, I have a rather large knife. Whoa. There we go. Got it. Yikes. Jeez, that was tough. Wasn't much stuck on at all. All right, let's just have a look over the board here.
+TEXT: We've got it out. As I said, these are CapXon CapXon brand and all of them all the capacitors on here are CapXon brand. So, they're the output of uh some linear regs here, the 7812 and 7912 there.
+context after: So, plus minus 12 V uh rails, you know, there should wouldn't be any problem there. So, you wouldn't even bother uh replacing those and yeah yeah, they're all CapXon.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: You can actually increase these values, but then the error term becomes significant, and you're not going to meet a lot of the data sheet's specs. So, you really should keep that to about 240 or well, you know, certainly under like 500 ohms or something like that to really keep the thing within spec.
+TEXT: I typically use a 220 ohm. Now, the other trap with the LM317 is that it is not what's called a low dropout voltage regulator. It's a just a standard linear regulator with a high dropout voltage.
+context after: That means the dropout voltage is the voltage differential between the input. So, the input must be X volts higher than the output, otherwise it drops out of voltage regulation, which I won't go into the details of how and why, but it basically means if you've got 5 volts out of your regulator, for example, well, you need typically for an LM317 as a rule of thumb at full current, it's
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: There's all sorts of fancy new LDO topologies to get around those sort of problems, but that can be a basic inherent uh disadvantage as well cuz the actual the ground current can have a direct relationship between the output current and it can be quite high and you can waste a bit of power there as well.
+TEXT: So, they're the basic differences. So, linear regulators are much simpler and more stable but they're got a greater voltage drop across the input and output. So, they're the basic pros and cons.
+context after: So, how does the switch mode actually work? Well, I'm glad you asked. But unfortunately, I won't go into the whole detailed operation of it cuz that can take a whole blog in itself.
+
+[ILIO5b1BliE] Why Use AA's Instead of 9V Batteries in Multimeters? — Dave Jones (explains)
+context before: In this case, it's actually about round about 5 mA for normal operation. So, that 5 mA, if there's no current down there, then you must have 5 mA coming from your battery.
+TEXT: So, it's effectively by the nature of linear when you power your device from a linear regulator like this, it's essentially a constant current load. So, 5 mA constant current from the battery.
+context after: Now, if we take a look at a 9 V uh the best one you can get like Duracell Ultra Power without going to lithium or whatever, but the best alkaline one, um let's have a look.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (explains)
+context before: power supply under here this will all have the local uh voltage regulation as well you 3.3 volts or whatever to power all the digital and the other analog stuff under here as well will probably have plus - 15 volt supply.
+TEXT: They'll all be very low noise linear regulators of course local regulation. Uh when you're talking about currents like you know really 15 phto amps or whatever it is absolutely incredibly low.
+context after: So you really have to look at low noise uh local linear regulators. But anyway, high voltage regulation step up DC toDC converter. That's the output filter in that we're generating now plus - 245 volts there.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (explains)
+context before: Um we When the first version is ready, he will send it to you. Thank you very much, Lucas. It's a um just a 7805 voltage regulator that just goes on a bit of matrix board.
+TEXT: The only problem with this is that it's very inefficient because you're using a linear regulator and uh it's only and it's going down to uh 7 V, which um at like normal 9 V battery, right?
+context after: So, the dropout voltage of a 7805 is going to be around about 2 V. It actually depends on the very specific type and the load current and all that sort of jazz, but anyway, you know, rough rule of thumb is that the dropout voltage of a 7805 voltage regulator, in case we didn't get the schematic before, everyone's seen the schematic of a 7805 voltage regulator before.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: Wow, they've gone to a enormous amount of effort and complexity there to get a low-noise supply. So, here's the pins where that header comes up, and it goes into all this linear power supply stuff.
+TEXT: No switching rubbish in here at all. You can see these uh thermal pads here underneath these uh What are they? TSOP-8 packages or whatever. These are going to be little linear regulators.
+context after: And if you check out, they'll be, you know, low-noise ones. We've got plus-minus 21 V here. We've got 5 V. We've got 3.3. We've got 2.5. We've got 1.5.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: So, you know, that could vary, but let's just call it 12 volts. Now, if we're getting 12 volts in and 5 volts out, well, we've got a delta or a voltage drop across this regulator of 7 volts.
+TEXT: And because it's a linear regulator, it's got to drop seven the power is going to be 7 volts times the current flowing through it, which is of course the output current, which is .7 amps.
+context after: 7 volts times .7 amps, 4.9, let's round it to 5 watts. This thing is dissipating five freaking watts. Now, anyone with any electronics design experience knows that no way in hell you're going to use a heat sink of that size for 5 watts, even if you've got a fairly high air flow.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: The transformer taps coming in here. And there are two triacs in there. There are two triac uh drivers down in there as we saw in the teardown. But, that's what they're using instead of uh more traditional relays uh to select the secondary taps because uh yeah, because this is a linear supply, you want to you need uh some sort of tap on there.
+TEXT: Imagine you're delivering only 3.3 V out of here, and you're getting, you know, 40 V out of your uh transformer. That's a lot of power to dissipate in your uh linear regulator like that.
+context after: In your part series pass transistor to it's called. So, really, you want to choose the uh they've got a couple of selections on those uh taps there. So, that's basically um what they're doing.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (explains)
+context before: Okay. So, unfortunately, it's just really annoying to troubleshoot this because as I said, I'm going to have to solder some wires on there to actually measure it. And that other chip there is a C2P A51.
+TEXT: It's obviously a linear reg there. So that's maybe for the local digital. Bloody black solder mask makes it hard to see. With the inter- we'd be using the internal switch as pin two.
+context after: Oh, pin two is not connected to the inductor there which is rather interesting. And pins one and eight aren't connected either. So it's not in the usual buck configuration.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: taken as a 2-volt minimum drop, and we'll take a look at that in a sec. So, you would need a minimum of 7 volts input, otherwise your regulator will drop out of regulation.
+TEXT: Now, here is, if you go through the data sheet, it'll it'll be the same for all voltage regulators like this. All linear voltage regulators will have a dropout voltage specification.
+context after: You can get special low dropout types, which go down to several hundred millivolts or something like that. They can actually be quite low, but here is our parametric graph of the input to output differential voltage on the Y axis here from 1 volt up to 3 volts, and that's the dropout voltage, okay, on the Y axis versus temperature, cuz this effect does change with temperature.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: They're no different either. Amazing, isn't it? I thought I'd also make quick mention of transient response. You've probably heard that in regards to regulators. And basically, what it is is because this is a continuous feedback loop, it takes time for the output to adjust to well, changes in load for the you know, for the loop to respond to changes in the load.
+TEXT: So, that is the the time it takes for it to actually propagate through the loop and actually correct the output is the is effectively the transient response of the linear regulator.
+context after: So, if you have a big sharp change in your load, it's going to take some time for the loop to actually compensate. So, there you go. Look that one up.
+
+[141] EEVblog #141 - AA Alkaline Battery Capacity Measurement — Dave Jones (explains)
+context before: Right? It generates a constant voltage over a constant resistance which gives you a constant current load. Okay? And a constant power load. And that's going to give you a fixed current into here.
+TEXT: Now, because of the nature of linear voltage regulators like the 7805 or the LM317 or something like that, this input current here is going to be the same as the output current.
+context after: There's a little tiny little bit lost down here, but you know, let's not include that. Input current equals output current. So it's effectively constant current being drawn from your battery.
+
+[1164] EEVblog #1164 - Xbox Engineering Baptism Of Fire — Dave Jones (explains)
+context before: So, those four resistors are obviously the 50k there. So, of Of we're getting our, you know, our 240 volts AC rectified across this full wave bridge rectifier here. So, we're getting our 240 volts on there.
+TEXT: That's why we need those four resistors in series, high voltage, doing a direct mains powering of this chip here. And it's got a built-in regulator. It's designed to do this.
+context after: So, no problems whatsoever. But, where's the solenoid? Where's Wally? It's directly across active and neutral permanently. I swear. I must be going nuts. And I have confirmed that that is correct.
+
+[1371] EEVblog #1371 - A 10,000hr Battery Life Bench Multimeter? — Dave Jones (explains)
+context before: I think I've got maybe there's So, well, there was a holder for it somewhere. Anyway, designed to hold a 9-V battery and that goes into our little board down here.
+TEXT: If we have a look, it's actually got a 7812 12-V linear reg here. Obviously, the AC coming here goes into from the transformer goes into the bridge rectifier here.
+context after: Here's the main filter cap for that and it's got two diodes in the back there. One's a Yeah, like a current steering. Does it come from the 9-V battery snap here or does it come from the mains?
+
+[107] EEVblog #107 - Live Show #4 — Dave Jones (opinion)
+context before: No, that's buggered off somewhere. I've got that going to some instrument somewhere. And, yeah, I do have a wrist strap. There it is. Antistatic wrist strap, which I, which plugs into the, plugs into the bonding point over there. So there you go, I can put my wrist strap on.
+TEXT: And I've got, and it goes to the mat as well. I've got a small antistatic mat on my bench. So there you go, they're my static precaution things. I don't use them much. It's, you know, it's not, it's overrated, really. Do I think it's possible to design a cheap switch mode power supply that outputs 0 to 40 volts, 1 amp, with low ripple, such as using a linear regging series?
+context after: Sure. Yeah, you can do it. I mean, you know, it's, it's, it's not that hard. Oh, well, 0 to 40, if you want to have a linear, if you want it as low noise as a linear, that's a bit harder, but, what is the most complex software I've done?
+
+[823] EEVBlog #823 - Rigol DSG815 RF Signal Generator Teardown — Dave Jones (opinion)
+context before: supply, these are all going to be, I don't even have to look at them, they're probably low drop-out regulators, more regulators up here, everything's going to be linear, none of this switch mode rubbish. So it looks like we have our power coming over here,
+TEXT: that would come from a switch mode power supply, it's how they get the size down of course. But you won't find any switch mode converters on the main analog board itself, either outside the can or inside the can, definitely. Okay, looking at the spec sheet, there seems to be a pulse modulation option, so I'm going to assume
+context after: that that will fit in here, having the RF coaxes coming up here, so that'd be the modulation, pulse modulation output, and digital control cable probably coming up here to the board. And let's pop the front panel off here, took off the rubber baby buggy bumpers there, and 4 screws here.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (opinion)
+context before: Um What's So, there's no regulation for the 5 V? Really? It looks like they've just got a big Zener. If we look down that one one up, I think we'll find that's a 5.1 V Zener.
+TEXT: Yeah, I couldn't get that readily, but yeah, oh, it's 5.6 V. A 5-W general-purpose voltage reference regulator diode. Well, that's a bit how you doing, isn't it? I mean, they go to the effort to use a a proper linear reg up here for the 12-V rail, but for the 5-V rail, they've just got a lousy a lousy Zener in there.
+context after: Oh, that's terrible, Muriel. Anyway, here's our -12 and -5. And yep, the -5 is connected just through to the -12 V there. And yep, we've also got a 330-Ω 2-W in parallel here.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (opinion)
+context before: Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, it's time for another tutorial. This time around, it's switch mode power supplies.
+TEXT: Why? Because, well, I keep hearing that beginners are scared of switch mode power supplies. They don't understand them, and that they're complex, and they're different to linear regulators, and linear regulators are so much easier, and they just don't understand how they work, and it's all too much.
+context after: So, I thought, that's not right, because you shouldn't be taught that switch modes are all that much different to linear supplies, because if you look at it, they're not.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (opinion)
+context before: So, what we do there is keep it on our ground and you can probably see down in there there's a couple of sort uh 323 packages down there, so we'll probe those puppies and have a look.
+TEXT: 3.3 V, bingo. Uh and probe the tab, and that's the five. Five and 3.3, no wackers. So supplies are fine. I mean, we can get in there and like with the scope and like check for like ripple in it, but it's it's a linear reg, like it's not going to be a problem.
+context after: So unless like on the high side of those regulators there's 6.5 V output, maybe there's excess ripple on there, and it might be causing something, but meh, you know.
+
+[1126] EEVblog #1126 - Mystery Teardown! — Dave Jones (opinion)
+context before: Got a mains over there and you know some pretty how you doing wiring down in there as well. Check that out. Geez, that's kind of like un-HP, isn't it?
+TEXT: It's almost as if it's like it's you know not like a mainstream product. They've got what looks like a TO3 package down in there. Probably like a series pass transistor for a linear regulator and not that switching rubbish in something like this.
+context after: You still got any idea what it is? Bueller? Bueller? I do believe under here we'll have some sort of adjustment. Something ah, come on. Yeah. No. What? Some sort of like wool like it's not foam.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (opinion)
+context before: I am doubting that. I haven't actually tested it yet, but I am very much doubting it. Specs aren't going to set the world on fire in terms of peak to peak ripple.
+TEXT: It's a switching converter of course. It's not a linear converter, but hey, for for 20 bucks like you can't complain. This thing's great. And if you're not a fan of the real tiny display down here, you can get other ones like this one.
+context after: I could actually power it up. This is it from the you know, the same anonymous designer manufacturer whoever it is. If I find out who it is, I'll link it in down below.
+
+[1505] EEVblog 1505 - 120W Home Phantom Power? Audit Time! — Dave Jones (opinion)
+context before: You've seen that in the repair video. I'll try and link that in here cuz it caught on fire because one of the ceramic capacitors in there shorted out, and boom, the magic smoke escaped.
+TEXT: And all the sensors and things which are powered from that, they're incredibly low power. So, I think a lot of that power's just being wasted away in the fact that it's got an AC, you know, transformer and linear regulators, I think.
+context after: So, maybe there's something I could do there. I might be able to slash that by, you know, 5 W or something, maybe. And but the the big two here for my mind are the Wi-Fi router and NBN modem.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (opinion)
+context before: How cheap can you get these on LCSC? Well, turns out you can get them for 1 cent or little bit of maybe 1 and 1/2 cents. I'm rounding down to 1 cent.
+TEXT: The 1 cent linear regulator. I bought 3,000 of them. Let's check them out. So why on earth would you want a 1 cent voltage regulator? Well, why not? When you're optimizing the bill of materials for your product, it could matter.
+context after: And with modern products like FPGAs and other like, you know, really high density logic, they often require lots of low voltage power supplies, not just 3.3 volts, you know, 2.5 volts, 1.8 volts, 1.2 volts, you know, even like 0.8 volt cores, 1 volt cores and things like that.
+
+[964] EEVblog #964 - Mailbag — Dave Jones (opinion)
+context before: SushiBits. Arduino compatible and of course you'll recognize that. But it fits the STM32 which I've had a look at in a previous video and maybe we'll do some more on that because it's in my... I don't know. Maybe. Hmm. Anyway, here's the, yeah, first revision of the board.
+TEXT: JTAG, broken out the JTAG and boot headers. It's got, I like that it's got for ultra low power purposes. A lot of people forget about that sort of stuff. You don't want to piss away the current on a linear regulator and all that
+context after: if you're using a switch mode or whatever. So, you know, it's good that that's been thought of. So anyway, if you want to check it out and Max is from Shanghai and yes P.S. He's open for hire. Are you interested in 801 compatible MCU
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (opinion)
+context before: So it's not uncommon to need even like half a dozen different voltage rails inside your product. And that really adds up when you're talking about, you know, selling thousands of items and you might have, you know, three or even five voltage regulators per products.
+TEXT: So it can often pay you to have like a cheap jelly bean part like this voltage regulator, for example. This one's actually a fixed 3.3 volt one, but we might have a look at adjustable ones just to show you how cheap they are.
+context after: and well, let's go to Digi-Key, for example, and do a search here on I've sorted by price here in volume. They start at like 3,600, they start at 4.5 cents, which is pretty cheap, but you'll note that's obsolete from a company that I've never heard of, Skyworks Solutions Inc.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (opinion)
+context before: By the looks of it, hmm. All right, let's go in here. There's actually um we don't particularly Oh, there's a LED on. That's handy. Uh we don't particularly care about this side uh cuz the main processor over here, it's got its own power up here.
+TEXT: So, let's uh just check that. What do we expect? 5 V, 3.3? Let's find out. 6.48. Okay, maybe there's an onboard 5 V reg. Maybe. Huh, I would have expected a digital level rail coming out of that.
+context after: Now, of course, the first thing I should have done is check for visuals and things like that. Make sure every nothing's obviously blown. I kind of sort of did that in my uh subconscious head.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (opinion)
+context before: No touchy um in the mains side of things, but you know, if you have like secondary heat sinks and stuff like that, uh check those to make sure they're not getting too hot.
+TEXT: You know, you can get the uh get the old finger down here. That one there's that little SO8 package SO8. It's probably a uh a little uh linear reg or something like that, but it's not hot at all.
+context after: Um I don't know, you know, we got like a heartbeat-y type LED down there. So, that's really interesting. Got another heartbeat LED over here doing the business. Um So, yeah.
+
+[1285] EEVblog #1285 - How to do Design By Inspection — Dave Jones (opinion)
+context before: Three orders of magnitude less, 1,000 times less quiescent current for this circuit here compared to the Zener solution up here. And to any experienced engineer in the industry, everyone knows that these Zener circuits are wasteful.
+TEXT: They always have been. That's why once these linear regulators came along, everyone just switched over those. Although, the Zener solution, the reason that they use it is because it's cheap.
+context after: A Zener is still going to be lower cost than linear regulator, especially a higher voltage linear regulator like this, even though it might be, you know, 20 cents in volume or something like that.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (opinion)
+context before: Almost as if the fan is an afterthought. Because if you were designing a fan in from the start, you would have put a two-pin connector on there to plug your fan into, right?
+TEXT: So, uh beats me. Mm. And they've put a cutout in the board here, and they've mounted what looks like I can't get the number on that yet. It's probably a you know, a linear reg or something.
+context after: 78 Yeah, I think it is a 7805, and they're using that big block down there as a heat sink. And of course, yeah, there's nothing special with the transformer there.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (opinion)
+context before: It's just a standard PNP transistor instead of an NPN. And that actually allows a lower saturation voltage. But that also has complications in terms of loop stability and stuff like that.
+TEXT: That's why LDO regulators are a bit inherently more a lot inherently more unstable than a standard linear regulator with the NPN transistor. But, there you go. That's an LDO regulator.
+context after: They're no different either. Amazing, isn't it? I thought I'd also make quick mention of transient response. You've probably heard that in regards to regulators. And basically, what it is is because this is a continuous feedback loop, it takes time for the output to adjust to well, changes in load for the you know, for the loop to respond to changes in the load.
+
+[1285] EEVblog #1285 - How to do Design By Inspection — Dave Jones (opinion)
+context before: These linear regulators can actually uh oscillate if you don't get the output uh capacitance correct value, the correct type, the correct you know, placement distance from the regulator and things like that.
+TEXT: So, there are little traps like that. I'm not saying that you can go out and build a million widgets without building this thing up. I'm not saying that at all.
+context after: You would definitely build up, make sure, and measure it, make sure it works. But, there's really for me, there was no reason to do a video really actually measuring and comparing these two because I it just seems absolutely obvious that you can just do this by inspection.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (opinion)
+context before: It's dropping. I've got like just boxes on the top like that just to simulate cuz the air in the side in the intakes going to be the same. Okay, it's getting down towards 75°.
+TEXT: So, yeah, that's knocking like 13° off, but that is still just no excuse for being that high for a basic linear regulator when you have all that space inside.
+context after: It's just insane. Now, and that's not to say that it's like, you know, going to fail or anything like that. There's still margin inside, you know, the die temperature of a 7805 or whatever can go up to What is it?
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: There you go. Um yeah, nice nice metal threaded inserts there in the case. Yeah, that's pretty groovy. Got a BGA under here. That's certainly one big FPGA with building processor, you know, a zinc or whatever.
+TEXT: We've got some linear regulators here. We've got the sample memory there. You know, there's nothing fancy. This is not a high-end oscilloscope input. It's only I think maximum of plus minus 25 volts, so you're not going to see a full, you know, oscilloscope front end on this thing, but you know, it's it's going to be good enough for Australia and any sort of like general purpose like lab
+context after: stuff, especially education and just basically around on your uh you know, bench with your usual, you know, low-power products, designs, and stuff like that. So, as I said, I'm not a fan of that magnetic input.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (mention)
+context before: So, it can be an absolute bargain if you just need to generate a a simple low current negative voltage. As I said, for an op-amp or for a negative regulator or for to get a regulator down to zero or for any other purpose that you need that split supply.
+TEXT: And once again, you can add a linear regulator on the output here. If your input voltage is high enough, you could use a low dropout regulator. So, if you had a 5-volt supply, for example, then you could easily use even with at at low currents, even with crappy 1N4148 diodes and low values of capacitors in here, you could you get a fully regulated and clean 3.3 volt
+context after: linear supply with a low dropout regulator. Not a problem. But using this particular load, which is 10K at the moment, there's our output voltage 3.64 volts. That's good enough to give us basically, you know, a couple hundred microamps um, output current if we use a low power, uh, low dropout voltage regulator at 3.3 volts.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (mention)
+context before: I like the little lead thing down there on the uh little surface mount TO package there, but yeah, thumbs up to that. All right, so let's have a squeeze under the Takagi microscope here.
+TEXT: Nothing interesting happening around all that sort of stuff. There you go, ALVC translators or whatever what have you. Let's have a look down here. Nothing interesting happening. Got a couple of linear regs there and of course one of the big things is that we're going to have two analog to digital converters which are Well, I'll show you in a second.
+context after: There and there because we've got one that shares the dual channel. And you have to have the two ADCs in there to keep your sample rate up. In this case they've it's one gig sample per second, but if you enable all four channels then it drops down to 500 megasamples per second, which is good enough for 100 megahertz bandwidth, not great at all, barely adequate with sine
+
+[494] EEVblog #494 - Mailbag — Dave Jones (mention)
+context before: So yeah, there we go. It's got two pushbuttons, headers, blah blah blah, AD converter, there we go, it's got a 50 MHz oscillator on there, everything you need to get a basic I.O. based FPGA up and running with some built-in memory. So you know, it's even got the
+TEXT: Altera compatible byte-blaster program built in. Fantastic. And there you go, National Semiconductor are quite proud that they've teamed up with this, and they're showing you, extolling the virtues of their linear regulators that they've no doubt got on board there. There you go, and their 12-bit ADC, which they've no doubt got on there as well.
+context after: Neat. And that sucker is $79 US dollars, so very cheap indeed. You can also get it it's a bit more expensive, but you can get it from Artifruit as well. So that is, you know, for a sub-$100 FPGA demo board. But of course, you know, it's all about the
+
+[1103] EEVBlog #1103 - Omicron Labs Bode 100 Review & Experiments — Dave Jones (mention)
+context before: 50 MHz bandwidth. So, it's much more much more useful for more practical electronic stuff. Things like you know, measuring the stability of control circuits. I eat power supplies which I'm going to have to do a totally separate video on cuz that's like a 30-minute whiteboard thing in its own right via one of these voltage injection transformers.
+TEXT: And I don't so I don't think I'll be able to demonstrate that in this video. Maybe. We'll have a look. So that allows you to measure the performance and stability and calculate what sort of output capacitors and things like that you need for not only your own DC to DC converters, but for off-the-shelf linear regulators and stuff like that.
+context after: You can do complex impedances of various components. So I've done that before in an old video which I'll link in down below where I used a red Bataya to measure the impedance over frequency up to I think 40 or 50 megahertz like this one does.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (mention)
+context before: available. So, now with only uh two cells at 4.2 V per cell absolute maximum, um really, we're only talking about like a 0 to 6 V supply at the, you know, outside.
+TEXT: Um that's with a full uh voltage cuz we've got a couple of volts drop with our LT3080 linear regulator. So, really, um that changed the whole ballgame and started the cascade of changes like I've talked about, and uh I went right, well, now I've got two lithium ion cells, what can I do with that to get a bigger output range?
+context after: Well, I can put in a um switching uh a switching pre-converter in there to boost the voltage up uh before the LT3080. So, that gave the capability to then actually give um the entire to give a much bigger output voltage range.
+
+[379] EEVBlog #379 - Yamaha RX-V557 Receiver Fix — Dave Jones (mention)
+context before: to the voltage claimed in the service manual for that test point so that's an example of one of those unusual and annoying faults that lead you up the garden path, because you know, the first rule of troubleshooting is thou shalt test voltages, and that's what I was doing, I was getting that
+TEXT: 10.2 volts, I was getting the 5 volts, I checked the voltage regulator, the linear 5 volt regulators on the main board and they were all okay, and you know, everything seemed within tolerance, and you know, and it should have you know, and that shouldn't have been the problem, but well, there's something a bit more subtle
+context after: in there, I'm not going to really look into it, I don't care I don't want this video to be another 40 minute job, so what do you know that little bastard right there was the culprit, and it was staring me in the face the whole time, look at it!
+
+[107] EEVblog #107 - Live Show #4 — Dave Jones (mention)
+context before: And so this ground plane on this side is all analog, and this ground plane on this side is all digital. The idea is that all the high-frequency digital information flows through the digital ground plane back to the power supply star reference point, and the analog stuff flows back, and they don't interact.
+TEXT: So you don't get any... and they've all got separate bypassing. You can have localized linear voltage regulators on the analog side, and that's how you can split analog and digital designs. Any product reviews coming up soon? Hey, Chris. Chris Gamble, my co-host, my esteemed co-host, everyone, of the Amp Hour radio show.
+context after: You'll kill me if I don't mention the Amp Hour. The AmpHour.com radio show we've got going. Yes, product reviews. I've got the three... I've said it before, but I'm pretty close to doing it. I've got the three LCR meters, I've got the AdjuVent, I've got the BK Precision, the new one, that looks really good, and I've got the XTEC one as well, the real cheap $199 XTEC one.
+
+[1090] EEVblog #1090 - Sony Mystery Teardown — Dave Jones (mention)
+context before: you know, it's all powered from a single battery, much lower voltage. You need the DC to DC converters to generate the required rails. But jeez, they've got a town there. And looks like a whole bunch of plastic package. Tranny's under there. Look at that.
+TEXT: So are they linear regulators on the output? Probably. And you start to see the modular construction of this. We've got our digital audio tape, our DAT tape recorder up here. Of course, Sony invented the digital audio tape in 1987. It's their thing. And then we've got the DAT controller down here.
+context after: And as is typical, as seen in many Sony teardowns, they like a roll in their own silicon. So there you go. That's whatever, like that's the, like is that like motor drive and all that sort of jazz going directly into the digital audio tape.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (mention)
+context before: And of course, that's a pretty piss-poor voltage source, cuz as I said, you ideally you want zero ohms in there. So, really it can only power like really high impedance, really high resistance loads, like say an op-amp for example, which has naff all getting towards naff all input current.
+TEXT: So, 5 K series resistance in, you know, even like a bipolar op-amp input, not a problem whatsoever. This is why you'll find voltage dividers like this in all sorts of regulator circuits, switching regulators, linear regulators, and stuff like that in the feedback circuit for those circuits.
+context after: I've done lots of power supply videos, and you've seen that before, and they can be up in, you know, the hundreds of K's and things like that, because what, you don't want to piss away your power, do you?
+
+[1021] EEVblog #1021 - Retro Radio Shack TRS-80 Color Computer — Dave Jones (mention)
+context before: I think the only thing that's not Motorola, of course, is the memory up there. But, ah, jeez. Oh, no, no. NEC ROMs. Oh, sorry. But I believe practically every other chip inside this puppy is. And the mains here is pretty how you're doing.
+TEXT: It's got this cardboard insulated flap. It's like, you know, it was par for the course back in the day. You know, you just don't find that sort of stuff these days. And, of course, all your isolation is done on there. And then it comes off and you've just got your regular linear regulators.
+context after: None of this switch mode rubbish. And, of course, your main 5 volt regulator up here. And this one actually doesn't switch the mains on the PCB. The mains just go straight into the transformer. So that's permanently hooked on. And the power switch actually just switches the secondary here.
+
+[1207] EEVblog #1207 - ARM Dev Boards Falling From The Sky! — Dave Jones (mention)
+context before: You don't have to scrape anything. Oh, yeah. It's, it's so much better. Ta-da! There's our STM. Processor 32F100C. 8T6B for those playing along at home. And 24 megahertz. Jeez, that's screaming, isn't it? Jeez, you wouldn't think you'd, you know, need that sort of grunt, really.
+TEXT: But, uh, maybe just a switching converter down in there. A couple of local regulators. You can tell they're surrounded by a bypass cap down in there. And it looks like some voltage-set resistors, perhaps. Off-the-shelf connector there for our interface. And, oh, a routed-out slot there.
+context after: What that would be for onboard temperature sensor. And this is a common technique that I've, uh, discussed over the years in, uh, several videos, I'm sure. Is that you route out a slot like that, because it prevents, uh, any thermal expansion in the, uh, PCB from actually stressing the, uh, through the leads of your, uh, temperature sensor here through the leads in there.
+
+[513] EEVblog #513 - Mailbag — Dave Jones (mention)
+context before: But, you know, this is what you can sort of do. So, woo-hoo! I like it. Light bulb. Good old-fashioned light bulb. Pissing away the energy. That's what we want to see. And you'll notice, this involved 2400 watts of mains. What a complete idiot.
+TEXT: And there's the schematic for those playing along at home. Old-school PIC16F54, because that's all you need. It's not doing much at all. And there's our mains input. There's our transformer. Standard linear regulator. 5 volts. And we've got 5 volt power to power our sensors over here.
+context after: Beauty. I know a lot of people don't like postcards, but I'm going to show it. Because it involves beer. And a lot of people, apparently, like beer. I have no idea how good or how bad Belgian beers are, but they look very impressive.
+
+[1471] EEVblog 1471 - Mailbag — Dave Jones (mention)
+context before: Um, yeah, we actually talked about this. Chris thought he was a bit triggered by this, but we actually talked about different techniques for doing art like this on PCBs.
+TEXT: Now, you can actually do with a standard PCB, you can actually do five different colors, in quote marks. And by this I mean, right, this is a standard This is a matte black solder mask with a regular white silk screen here, which by the way, linear voltage regulator.
+context after: Not sure what a linear voltage regulator is. Yeah, oops. And by the way, yeah, unfortunately, the PCB manufacturer has put their batch code up here, which is really annoying.
+
+[571] EEVblog #571 - Sennheiser EW100 G3 Wireless Microphone Teardown — Dave Jones (mention)
+context before: So, yeah. Not exactly sure how they implement it in here and how aggressive it actually is. Up there we've got a Japan Radio Corp JRC 4580, pretty jelly bean sort of op-amp, nothing much going on there.
+TEXT: Once again, probably lots of channel and maybe some local regulation stuff like that. It looks like probably that might be part of the battery switch my or the charging circuitry linear technology charging circuit given that it's right near the chargers there.
+context after: There we go, going through an input diode and into there. So, that's probably part of that charging stuff and uh not much else happening on top here. We can't find the main processor.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (mention)
+context before: There we go, 2.5 volts tells you we need those because we've got, oh, 1.9 volts? Look, 1.9, okay. It's usually 1.8, are they allowing for some drop going across the board or something like that perhaps? Interesting, there's our 5 volt. I expect a 3.3 volt one somewhere.
+TEXT: Hmm, and they've got regulators all over the shop, there's lots of linear ones there, you can actually see those. They've got, oh, there's minus 11.5 plus 1.3, plus 1.9 again, local regulation. There's got plus 5 volts, they've got minus 10 volts, oh man.
+context after: So that must be a switch, maybe that's a switch cap filter for the negative rail there. It's more power supply goodness. Once again, yeah, negative 10 volt rail plus 10, so yeah, I think that's a switched capacitor filter, because there's no, or is that an
+
+[261] EEVblog #261 - Marconi 2023 RF Signal Generator Teardown — Dave Jones (mention)
+context before: Massive amount and there's a second secondary metal black bracket behind here as well. And they've used some very professional looking clamping mechanism for the devices all individually screwed. They've got some seal pad material behind there.
+TEXT: Very nice. There's a couple of linear linear voltage regulators on there plus a couple of switching components here and over here as well. And they've just gone to a lot of trouble to actually heat sink those very professionally on the side of the case.
+context after: I like it. And the transformer here, as you'd expect, it's professionally mu metal wrapped there just to try and keep the leakage from that down. They've got another heat sink heat sink device over here.
+
+[1613] EEVblog 1613 - Audiophile REPAIR: $4500 Chord Hugo DAC — Dave Jones (mention)
+context before: They got a blue giga Bluetooth module there. So, I'm sure you can stream from your shoe phone and your whatnot. What's down on the bottom here? Not much doing there.
+TEXT: That's just a microchip regulator there. Um you know, they claim linear regulators and everything else. Yeah, that's why they need two batteries in this because they're doing the plus minus uh rail, so they don't need an inverter to get the extra rail.
+context after: 78256 Is that a memory? Is it? It's not a converter there. But um it's not much to see here. It's a TI jobby, DK 637. It's just an op-amp of some description.
+
+[452] EEVblog #452 - Stanford Research SR430 Teardown — Dave Jones (mention)
+context before: And of course, they got the fan on one end here, which uh sucks the air through and uh comes straight out there through the fins and straight back. I rather like it really.
+TEXT: We're chock-a-block there with devices on both sides of these things. I think we've got a whole bunch of linear regulators there. Well, that's kind of disappointing. I love all the big um old-school uh power Molex connectors on here, but look at this.
+context after: They've beautiful modular wiring for everything with with connectors, and the power switch is hardwired onto the board. What the? As if the power switch would be an afterthought. I Why?
+
+[236] EEVblog #236 - FE-5680A Rubidium Standard Teardown — Dave Jones (mention)
+context before: Neat. Do I sense a slight budge there with that uh capacitor that surface mount capacitor vertically raised up like that with the wire hanging off it? Uh I don't know whether or not not that's intentional or uh what they've done there.
+TEXT: Yet another linear regulator there hooked on to the main heat sink and that pretty much covers the entire device. Really, there's some unusual uh construction techniques in there. It's got the interesting foam, some hand stuff, but I really like it.
+context after: It's really quite nice and novel. They've really gone to town. There's quite a lot of uh system engineering which goes into not only just uh doing the circuit, but doing the physical layout of this thing as well and getting it right and getting it to dissipate the power in that uh package and, you know, making it reliable cuz these things that have to be super reliable or there'd be I
+
+[544] EEVblog #544 - Fluke 5450A Resistance Calibrator Teardown — Dave Jones (mention)
+context before: They cannot use the PCB. This wire down there is sneaking off through a hole in the board. Nah, only air is good enough for this. And for those who love their connectors, look at that low EMF tellurium copper, no doubt.
+TEXT: And in all the excitement over the pornographic relays, I missed this little kludge. Look at this. A 7805 linear regulator that was supposed to just probably be freestanding in the board there or maybe you know, attached to the back panel there.
+context after: They've Look, it looks like they've done a staggered offset. Maybe they didn't get the PCB right to line up with the chassis or vice versa. So, they've I don't know.
+
+[1530] EEVblog 1530 - Siglent SDS2000X HD 12 Bit Oscilloscope TEARDOWN — Dave Jones (mention)
+context before: Curiously, that one's not labeled and all the other ones are, so, eh, don't know what's doing there. Anyway, power supply-wise over here, uh, you can tell it's a power supply because, well, it's got a nice, big, fat, chunky chip there, which will have, uh, the built-in, uh, you see there's no external MOSFETs there, so it's got big
+TEXT: chunky internal, uh, MOSFETs, and of course you can tell by the, uh, decoupling there as well. There's a little, uh, 3.3 volt linear, uh, reg there, and they've got a few of these, actually. There you go, it's an MP. Is that an MP52145?
+context after: You can go look that up if you want. Anyway, that looks like the USB there, is it, perhaps? And our logic analyzers here, so there's probably some logic analyzer stuff on the bottom, I would guess. And this is the board-to-board interconnect, which goes over to that, uh, rear panel, and of course that, uh,
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (mention)
+context before: Whoa, good stuff. And one of the first things I noticed, of course, as part of the uh system design, keeping these grounds separate, you'll notice that there's only two connecting cables on this thing.
+TEXT: One is coming from the transformer over here, so it's got its own transformer tap going over there. That's of course uh isolated due to the uh transformer. Then it's got its own uh just linear rectifier and linear regulator over here.
+context after: And then down in the bottom is the only other connection between the digital board down here and the uh and the main signal uh processing board and ADC board over here.
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (mention)
+context before: It's about 35 degrees or thereabouts. Big hot spot there at about 50 I was getting 52 at uh 52 at one point. There we go, almost 53 at one point.
+TEXT: So, that's a linear regulator up there on the acquisition uh board. Can see the processor right down there. It's a little hot spot as you'd expect, you know, one of these um Cortex thingamajobs uh running Linux or whatever.
+context after: They're they require a fair bit. And um there's a, you know, another that well, there's the heat sink, by the way. There's that uh large heat sink on the acquisition board, so there's nothing doing there.
+
+[815] EEVBlog #815 - Mailbag Teardown Bonanza — Dave Jones (mention)
+context before: Made in the Republic of Korea by Samsung. There you go. Who would have thought designed by Sinclair in the UK though, in Cambridge, sorry. And that's it. We're in like Flynn.
+TEXT: This is 1984 issue by the way, even though it's got copyright 1983 on there. This one came out in '94, I believe. Anyway, look, they've still got the that dodgy bracket on the regulator on the linear regulator over here.
+context after: Just got like afterthought. Geez, terrible mural for a plus model. And there's the Ferranti ULA or uncommitted logic array, essentially a PLD and a programmable logic device. And you can see the date there, 48th week '84.
+
+[574] EEVblog #574 - NEC Analog TV IF Modulator Teardown — Dave Jones (mention)
+context before: I don't know. Not going to look in the manuals. There's the back of the panel meter down in there. Nice big wafer switch down in there. That's that front panel selection for the for the panel meter where you know function to switch through to the panel meter and I have to flip the chassis around to get a look at the board on the back which is for our linear power
+TEXT: supply here. Ta-da! 2SD357s manufactured by NEC. Who would have guessed? And there's not a huge amount interesting on that linear regulator board. I mean, you know, whatever. Couple of huge power resistors in there.
+context after: Incidentally, there you go. Once again, they've got those standing off but no spacer. None of those fancy plastic spacers we saw on the other board. No way. Don't want to go to that expense on the power supply board.
+
+[1404] EEVblog 1404 - The Amazing HP 9845B Computer — Dave Jones (mention)
+context before: Have you ever seen heat sinks sliding to rails? Oh, how can you not think this is the best thing ever? Oh, engineering students, take notes, please. Look at Look.
+TEXT: Look. Look. What does that do? No idea what that does. Oh, couldn't they label it? Anyway, like yeah, it's okay, linear reg. Oh, okay, that's actually That goes up That only goes up to the top power supply board.
+context after: So, there you go. Just generating some extra rails there, and then that goes into these boards. There you go. Look at that. Big ass bridge rectifier, big ass Oh, yeah, the heat sink.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (mention)
+context before: But, this one seems ideally matched. But, there's one more neat thing about this. Now, I originally wanted my design to actually be low noise. Um hence why I'm the LT38 is a very low noise device, but it's also battery powered.
+TEXT: So, it'd be a really low noise device, but now we've added this uh nasty 1 MHz switching regulator in here. It's not low noise anymore, but hey, even but we do have a linear voltage regulator on the output still.
+context after: So, we will actually filter out a fair bit of that noise. I might put it like an RF bead in there or something like that to maybe uh drop it a bit more, but um the good thing is is that there's an an enable pin here, which allows us to switch off the DC-to-DC converter if we're getting low output voltages.
+
+[427] EEVblog #427 - HP 3478A Multimeter Teardown — Dave Jones (mention)
+context before: They've got just a regulator, a linear, I believe it's a linear regulator. It's got a HP part number on it. Just put some wires over to here like this.
+TEXT: That'll be the regulator that's powering all of this digital stuff all around here. The main processor, there's the backup battery which we'll talk about and they're just using that for heat sinking on the side.
+context after: I mean, I don't think this thing uses much power particularly. So, that's why they can get away with the linear regulators inside this which are of course much quieter than having switching regulators and that's why they need less shielding and stuff like that inside, but there's our mains transformer there.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (mention)
+context before: So, yeah, these are digital um isolated digital signals coming over. So, I'd be guessing these two here for your voltage measurement. Yes, cuz that's tied Here's your voltage input here.
+TEXT: So, this would be your um high resolution ADC uh for your voltage input. And that's powered from this switching converter. And of course, you'd have a low noise uh linear regulator on the output of that as well.
+context after: Cuz we're dealing with very low signal levels here. And this one here would be for your uh current ADC. So, yeah, we're going to find our voltage ADC under there and our current ADC under there somewhere.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (mention)
+context before: And you know, that's that's really quite nice. And that's what allows you in this configuration to use this NPN transistor and then feed it back. And of course you got to have a minimum output capacitance on here as well for stability because a voltage reference has an internal error amplifier.
+TEXT: And I knew that and of course error amplifiers just like linear regulators and low dropout regulators, they can oscillate if you don't have the correct, you know, bypass capacitors on the input and the output.
+context after: So that's why I wanted to breadboard this thing up. I wasn't sure. I had a funny feeling that, you know, look it's in the it's in the data sheet, you know, it should just work, but does it?
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: And you want 5 volts out, that's only half a volt drop for the linear regulator. Bingo, you've got 90% efficiency for a linear regulator. Just with linear regulators and with switch modes, too, there's lots of other often internal circuitry in there for overcurrent protection, overvoltage protection, overtemperature protection, all sorts of other little things that they add in to make the chips more useful.
+TEXT: But don't let those confuse you. The basic operations is basically as I've shown here and that's going to be the same for all for those LDOs, those linear regulators and those switching regulators I've shown.
+context after: They're not that hard to understand at all once you strip away all the other stuff. So, there you go. I know that's not a complete tutorial on switching regulators, not even close cuz there's so many types out there.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (mention)
+context before: They've got another three of those down here. So, these are like like just precision resistors, really. Um matched. I don't know. I don't know that package offhand. If you do know the manufacturer and if you notice that uh package if you recognize that package, then leave it in the comments down below, but yeah, some sort of matched resistor thing, not just, you know, your regular standard Joe Blog's
+TEXT: resistors here. And as I said, this has got a linear reg out here. That's just an LM 7805 uh jobbie. And this will just be another low noise uh regulator just for powering the ADC here cuz that's important.
+context after: So, yeah, cool bananas. And we'll go over here. And on the current amplifier side of things, look at this. Over here, I love how the the this is the uh this is the shunt resistor module version 1.00.000 because you never know when you have to get six uh you know, revision um decimal points in um to here in simple riser board for your shunt resistor.
+
+[1681] EEVblog 1681 - Mailbag: Nice DIY CC Load,  Amazing Proto Boards, Ian Johnston — Dave Jones (mention)
+context before: Isn't that neat? So, there you go. So, so you can see the solder bridges in there that they've just bridged those over. And it's just terrific flexibility. An entire buck converter Um, that one little board with no jumper links whatsoever.
+TEXT: Yeah, so you can butt them up on on the side like this, so you can, you know, butt the different types. Um, you know, so this one has like a 5 V linear regulator thing, and then it's got like an ATtiny.
+context after: And as we mentioned, they've got these purpose-built uh, castellated holes. So, castellated edges, castellated uh, holes, that's the that's the terminology for when you uh, basically uh, how you put the how you design those on a PCB is you just put a just a normal pad.
+
+[1727] EEVblog 1727 - REPAIR: Casio CT-X700 Keyboard — Dave Jones (mention)
+context before: So, I call them diodes. So, anyway, still call them diodes now. Just to, you know, confuse people. All right, let's see if this works. Um there's there's a good chance that this will work cuz, you know, I can't remember the teardown of this exactly, but it's, you know, one big ASIC chip or whatever and there's like there's not much else.
+TEXT: It wouldn't even use a probably wouldn't even use a DC-to-DC converter in there. And if it did, the batteries are probably just powering via a linear regulator, just just powering the rest of it.
+context after: So, I'd expect maybe the batteries like there's not much I can fail. It's the one big ASIC chip. So, Hello. Yep. >> Q Dave, the musician. >> I'm going to GET COPYRIGHT STRUCK.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: That's a thousand bucks in your time that you can spend that's worth you spending that time. And if your time is valued at, say, a hundred bucks an hour, you can spend 10 hours searching or 5 hours say searching for that one part and you're still going to be ahead.
+TEXT: And I'll just show you that category thing with that voltage regulators I was talking about. Look, you got linear, DC to DC switching regulators, but you then you've got switching controllers.
+context after: So, it depends on whether or not the regulators usually, you know, has a built-in pass transistor, all that sort of stuff. But, like a a switching controller might have an external one and there might be just various categories, you know, linear plus switching down here.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (mention)
+context before: It's China um it's got nothing to do with National Semiconductor or Linear Technology, but they said, "Hey, they're famous names. We'll just join them together. Hey, we'll sound legit." There you go.
+TEXT: So, they sell they have this 300 mA linear regulator in different packages. It's not that it's a little bit more expensive than the one we've got here. Um but anyway, all Chinese data sheets.
+context after: So, yep, knock yourself out. This one actually does have curves, but the one we're going to play with, the Fenjin Fuman Electric Co. If we have a look at the data sheet, Shenzhen Finemad Finemad Electronics Group.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: Now as I said in the previous video looking at the schematic for the main power supply board you can see it's a it's basically a standard linear transformer. It's got multiple isolated taps two four six different taps here all going to standard bridge rectifier full wave bridge rectifiers and then the big filter caps the big old ones from Sprague and Mallory I think they are.
+TEXT: Anyway, but yeah we've got a linear regulator chip you know pass transistor mounted on the back all kind of you know standard stuff but basically I'm measuring the output of most of these.
+context after: I'm measuring five Um, we've got six taps here. Anyway, I'm measuring five main rails here and they all dropped according to that photo, even though I have not been able to reproduce it yet.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (mention)
+context before: And if we take our frequency down 81 Hz, look at that. Because we're using such large value caps, our switching frequency can actually be relatively low, you know, in the order of 100 Hz or so.
+TEXT: And we're still going to get a good enough DC voltage out that we could use to power an LCD or something else perhaps, especially if we decide to put an extra linear regulator after that.
+context after: But of course, generally speaking, you know, you're not going to be using 47 mic caps in there for example. They're just more expensive, you know, and they're larger and you know, you're going to use little ceramics that you've already got in the circuit.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: It's got a voltage reference. And it's got two uh feedback uh voltage divider resistors. And that's it. That is a complete traditional three-terminal linear regulator. Now, the 7805 type will have these resistors uh built in to set the output voltage.
+TEXT: But something like an LM317, which is um an adjustable linear regulator, these resistors will be outside the chip, and it will have that uh feedback pin. But they work exactly the same.
+context after: So, there's essentially no difference between an LM317 and a 7805 traditional linear regulator. Now, it works um the basic principle is very simple. It's just a negative feedback loop here.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: And then when you're designing products, you can just drop in these parts. Oh, I need a regulator. I need an op amp. I need a comparator. Whatever it is, you can just pull it from your jelly bean components library and just drop it in there knowing you're good to go.
+TEXT: Bob's your uncle. First up is linear voltage regulators. None of that uh low dropout rubbish either. This one is an absolute classic. You've guaranteed to have already used this thing.
+context after: So, but it is the jelly bean part. When you think of a jelly bean voltage regulator, you think of the 7805 or the 78XX series as it's uh called.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: You're certainly getting your money's worth. Not to mention the software. There's two things I want to go into detail here. One is how they're doing the power supply, and the other is a quick look at the front end.
+TEXT: Now, the power supply is very interesting. At first glance, without reading the numbers, I thought these were just linear regs here. They're not. Now, this brings back some memories.
+context after: These are Burr-Brown jobbies. All the Burr-Brown fanboys go wild. OPA 547. And these are a high-voltage op-amp with current limiting, pretty much specifically designed for power supplies. Now, I actually looked at this back when I was doing the micro supply.
+
+[1431] EEVblog 1431 - Keysight EDU33212A Function Generator Teardown — Dave Jones (mention)
+context before: That's it. No workers. And got some other op-amps here, TLV274s. I don't know what they're doing. They don't seem associated with anything in particular, at least not on the top layer anyway.
+TEXT: Meh, whatever. Just that some housekeeping op-amps. Then of course, you got all your regulation stuff up here. Good old old school 7905 for your negative 5 V regulator. 7915 up here.
+context after: 7815 and 7805. So, we got plus minus 5 V rails and plus minus 15 V rails for the op-amps of course. Very nice. You want the headroom on the op-amps.
+
+[6] EEVblog #6 - Part 1 of 2 - Meterman 37XR Multimeter review — Dave Jones (mention)
+context before: It's an industry standard pinout, so you can use it as a replacement for other other parts on the market. And it's It's a really good part for a couple of reasons.
+TEXT: The first one, and the real big one, is that it's a It has a voltage accuracy, a fixed voltage accuracy of 0.5%. Now, that's just remarkable for a standard linear voltage regulator.
+context after: Cuz most on the market are like, you know, 1.5% for a good one, 2% 3% for a pretty ordinary one. Um to get sort of half percent accuracy, you've really had to go to sort of, you know, a band gap voltage reference.
+
+[517] EEVblog #517 - Car Airbag Controller Teardown — Dave Jones (mention)
+context before: Couldn't get a data sheet, but I got a you know, a sales brochure on their automotive stuff specifically for airbag control systems and it is a power management controller pretty much.
+TEXT: It's got a boost It's got a buck converter in there. I think it's got two boost converters. It's got a linear reg in there. It's got reset watchdog system all in one chip.
+context after: But once again, specifically designed for the automotive market. And here's Infineon's airbag system solution from their glossy brochure which they give to all the car company executives and design teams.
+
+[1124] EEVblog #1124 - Rigol 7000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Uh sorry. Almost forgot 20 volts for all you 20 volt rail fan boys. Oh, and little sneaky bastard 5 volts in there. And also plus minus 15 volts. Obviously for large scale uh analog stuff.
+TEXT: And we've got more over here. Just some uh local linear regulation 1.8 volts, 3. 3 volts uh probably for that uh Spartan there or whatever processor jobby that is there.
+context after: Tons of rails. That's the problem with like these newfangled modern uh FPGAs and um chips. They just need so many different rails. It's insane. JUST UH 0.75 VOLTS. WELL, hello McFly.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (mention)
+context before: Uh the curve here is flatter than the coke anode one. And it drops off much later in voltage as well. So, the advantage of that is that you can power your 3.3 V circuit, a modern circuit, microcontroller, whatever at 3.3 V directly from the battery using the low dropout voltage regulator.
+TEXT: Because if your circuit is 3.3 V, there it is, okay? But, uh you might use a linear low dropout voltage regulator. Might have a dropout voltage of 0.1 V or even 0.2 V.
+context after: Even at 3.5 V dropout voltage, you're using most of the capacity of that battery. It's fantastic. Now, the difference between a graphite one is typically determined to be dead at around about 3 V level or something like that.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (mention)
+context before: It's ridiculous. Now for the finger test on these heat sinks down in here. Of course, this one's where we're not dumping any load into this at all. So, of course, that's completely cold.
+TEXT: These linear regs down here, back of the finger. Hang on. It is Ry Gall, so Ah, yay. Yay. Bloody hell, that's too hot to touch. Unbelievable. Have they done it again?
+context after: Okay, so that one there is 80°. Come on. This is not a rocket science, Ry Gall. That is too hot for a simple supply. I mean, like the junction temperature has like is well above that.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (mention)
+context before: Maybe it does God, it goes under a switch there. Those two chippies down in there which it seems to go down to. That one looks like it's a little ST op-amp and this one is a you classic 393 in dual comparator.
+TEXT: So, yeah, it looks like maybe it does go down to there somewhere. So, maybe and as I suspected that's a linear 5-V regulator but that's what the resistors there for.
+context after: It's just a dropper. It's just a dropper. That's it from the 17.5 V rail. Old school. Now, that's switching rubbish. And what's that? Is it another 5-V reg? One for digital, one for the analog matrix, maybe?
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (mention)
+context before: So, you know, your traditional linear supply just generating the 5 volts needed for all this stuff. And then of course, they've got the board-to-board interconnect connector down in there.
+TEXT: There it is. It's very quiet. It's quite nice, actually. I rather like the look of that one. And yeah, just some small local linear regulation around here as well.
+context after: Once again, you need those for the plus minus rails. And of course, optocouplers for everything as you'd expect. That connector is all just on an angle there. Really dodgy.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (mention)
+context before: You want Mommy to put you into sleep mode? Okay. Lock. With when you've got a pass transistor like this, you can make it operate in constant current mode like this by determining the voltage drop across that current that shunt sense resistor there.
+TEXT: You can keep it at a fixed current. And then when it switches into another mode, it can work as a linear voltage regulator. And we forgot the tray, didn't we?
+context after: But, let's sit you on here and see what you weigh, okay? You ready? 3.255. What a champion. Beauty. Ooh, it's your first visit to another cow lab, isn't it?

@@ -1,0 +1,67 @@
+# electrostatic discharge
+
+Electrostatic discharge (ESD) is the sudden transfer of accumulated static charge between two conductors at different potentials, and it is the discharge — not the charge itself — that destroys semiconductors.[Uk5F3rQNUkU][BUW6h88weXU] The distinction is not pedantry: "There is no such thing as an electrostatic sensitive component."[Uk5F3rQNUkU] Components are sensitive to, and damaged by, the discharge event, so control of ESD is control of sparks rather than control of charge.[Uk5F3rQNUkU] Because the mechanism operates in the first hundred nanoseconds and frequently leaves no visible trace, ESD is among the least tractable failure modes in electronics manufacture, service and bench work.[BUW6h88weXU]
+
+## Mechanism
+
+Every ESD event requires three ingredients: a dry non-conductor separating from something and generating a charge, that charge being induced onto a conductor, and a discharge from that conductor to a second one.[BUW6h88weXU] The initial contact between any two conductors produces a small spark unless they were brought to precisely the same potential beforehand, which is almost impossible to achieve in practice.[BUW6h88weXU] This is why touching a doorknob, touching a spoon or shaking hands are all discharge events.[BUW6h88weXU]
+
+Human perception badly understates the severity of these events. It takes roughly 3,500 V before a person can feel a discharge at all; below that threshold the human being is simply incapable of detecting it.[BUW6h88weXU] Damage-causing events therefore pass unnoticed as a matter of routine.
+
+Inside the device, the damage is thermal and mechanical. A spark rips from one conductor to another through the intervening gate oxide in something under 100 nanoseconds.[BUW6h88weXU] There is no time for heat dissipation over that interval, so the oxide melts, a physical hole opens through the glass and the metal is vaporised.[BUW6h88weXU] MOSFET and CMOS structures are exposed precisely because the gate is separated from the channel by a very thin insulating oxide layer; touching the gate pin can blow a hole straight through that insulator.[748]
+
+## Latent damage
+
+A discharge does not have to be fatal to be destructive. When conditions are marginally less severe — slightly higher humidity, one fewer step taken across the floor, a plastic bag slightly further away — the resulting spark may drive metal vapour only partway down the walls of the hole it melts.[BUW6h88weXU] The device then carries a failure it has not yet expressed, and it will pass every test in the building with acceptable if slightly atypical results.[BUW6h88weXU] This latent-failure population is what makes ESD control a process discipline rather than an inspection problem.
+
+## Susceptibility and process geometry
+
+ESD sensitivity scales with feature size: the problem grows as manufacturing geometries in silicon shrink.[561] The effect is visible when a long-lived part is migrated to a newer process — moving the NE5532 to a smaller process node produced weaker transistors with increased susceptibility to electrostatic damage alongside reduced output drive capability.[1752] The same coupling of process to susceptibility bites in production: any change in the digital domain forces a full repeat of environmental, RFI and ESD testing, because a new chip may be sensitive where the old one was not.[1032]
+
+Modern logic carries on-die protection and datasheets publish the rating. A typical device is specified to clamp ±2,000 V on its inputs under the human body model without harm.[sr1DOHnJi8I] The ESD ratings table is worth checking against the datasheet revision history, since it is the kind of section that appears or changes between revisions.[sr1DOHnJi8I] On-chip protection is nonetheless a floor rather than a ceiling: where external static shock is the real threat, an external clamp able to dissipate more energy than the chip itself is the appropriate answer.[sr1DOHnJi8I]
+
+## Testing
+
+ESD immunity is defined against the human body model — a specified capacitance charged to a specified voltage and discharged into the device under test.[97] Generating consistent, repeatable events on a hobbyist budget is not practical; the standard approach is a proper ESD gun, hired for the purpose rather than owned.[97] Commercial guns are expensive enough on the second-hand market to run to a couple of thousand dollars.[UStV3zyhgnQ]
+
+## Circuit-level protection
+
+Several protection techniques recur, differing mainly in cost and in how much energy they absorb.
+
+A PCB spark gap is a pair of pointed copper features placed close together so that a high voltage arcs across the smallest gap rather than reaching the components.[678] ESD events do not carry large amounts of energy, so the gap sparks over once and absorbs it, taking the energy out before it reaches the circuit.[678] The technique is among the crudest available but is effectively free, since the PCB is being fabricated anyway.[678] Placement is what makes it work: the gap belongs immediately at the I/O connector, not next to the chip, so that the energy is absorbed at the connector before it can propagate down the track.[678] A snaking track with multiple spurs gives an event several separate chances to spark over before it gets in, though such structures wear out after more than one input spark.[682] Spark gaps also appear as spirals fed from mounting screws, preventing ESD entering by that path.[1043]
+
+Transient voltage suppressors handle peak overload — lightning surges and ESD discharges — at instrument inputs.[1655] Where a discrete solution is wanted, two NPN bipolar transistors with collectors joined and bases joined, emitters either side, form a bipolar clamping Zener that conducts in either direction and clamps impulses, overloads and ESD.[1157][1000][n4NBUruLyoo] Membrane keypads can be ordered with an electrostatic shield added as an extra ground layer connected out to a pad, specified on the engineering drawing.[1282] At the low end of the protection hierarchy, a USB device may rely on nothing more than the built-in diode protection inside its microcontroller, which is still workable for a product carried in a pocket or on a keychain.[1075]
+
+## Packaging: dissipative versus shielding
+
+The most persistent misconception in static control concerns bags. Pink antistatic bags and antistatic tubes do not protect devices inside them at all; a discharge passes straight through the bag and through the tube into the parts.[3][247] A proper ESD course demonstrates this directly, placing a sensor inside an antistatic bag, zapping through it and showing the event arriving undiminished — then repeating the test with a static shielding bag, through which nothing gets.[3] What is needed is a metallised shielding bag, whose metal layer actually shields rather than merely dissipating.[247][Ylb8TqGizU8]
+
+The distinction between dissipative and shielding materials is functional, not cosmetic. Antistatic material earns its keep at the moment of contact: touching pink or similar material lets the charge come off without a spark being exchanged, the two surfaces reaching the same polarity sparklessly.[BUW6h88weXU] That is a different job from blocking an external discharge. Bags with a printed buried carbon grid divert an approaching finger into the grid so the spark goes elsewhere, but the grid is not nearly as effective as solid metallisation, and no metallisation matches aluminium foil — which has the practical drawback of being opaque, an issue when customs wants to look at the device.[BUW6h88weXU]
+
+## Bench and facility practice
+
+Wrist straps work by dissipating accumulated charge to ground through a controlled path. A conventional strap carries no internal resistance in the band itself, connecting directly through to the stud, with the 1 meg safety discharge resistor placed in the lead and a further one at the mounting point.[768] Cordless "antistatic" wrist straps, sold for around a dollar, cannot work, because there is no way to dissipate charge to ground without a cord-based connection to an ESD point.[768] Quantitative testing bears this out: with a surface DC voltmeter reading kilovolts against a conductive stencil referenced to an ESD mat, a genuine strap collapses the charge to zero on contact, while the cordless version leaves the charge decaying at its ordinary rate.[768] Internally there is nothing else to it: "It is just a 1 meg resistor flapping around in the breeze".[768]
+
+Body voltage can also be monitored continuously. The IONA StatIQ Band "wirelessly measures human body voltage and provides audible alarms that identify ESD concerns".[1567] In use it reads around −1,500 V after dragging rubber-soled shoes across carpet, and the reading collapses on returning to an ESD mat.[1567] Garments matter as much as the equipment: a clean-room bunny suit that had been through a mud obstacle event left the monitor reading persistently high even with a grounded wrist strap.[1567]
+
+Facilities engineer the environment. A metrology laboratory is more concerned with air being too dry than too wet, because dry air brings an ESD problem, and the floor is an ESD floor bonded properly to maintain an ESD-safe environment.[1039]
+
+Anderson's audit approach targets the sources rather than the symptoms: identify and remove the common plastics and the exposed conductors capable of striking a spark anywhere the device might come into contact with them.[BUW6h88weXU] Ordinary organic materials can be dismissed — "paper and cotton and wood" cannot be moved fast enough by hand to produce ESD damage, so wiping something with a tissue or a cotton swab is not a hazard.[BUW6h88weXU] The real offenders are the plastics ignored on the bench. Separating a plastic film generates several hundred thousand sparks; a plastic bag of nuts and bolts is itself insensitive, but waving it past a circuit board destroys parts quietly and silently.[BUW6h88weXU] An induced charge does not even require contact — a plastic bag at 5,000 V brought near a lead couples enough potential difference onto the device to fire a spark through the gate oxide.[BUW6h88weXU]
+
+Air ionisers are of limited value against separation-generated events. A radioactive air ioniser leased at $500 per table per year does a fair job of slowly collapsing charge already sitting on plastics, but the discharge damage from separating a tape is done in the first 100 nanoseconds, so the ioniser arrives too late to prevent it.[Uk5F3rQNUkU]
+
+Common workplace signage compounds the misconception by warning that static can damage components, when the accurate statement is that static discharge can damage components.[BUW6h88weXU]
+
+## Everyday charge sources
+
+Clothing and furniture are dominant generators in a working lab. Standing up from an office chair produces a discharge audible as a click and detectable on nearby equipment.[1107] Stretchy denim charges noticeably as the wearer rises from the seat.[1107] A t-shirt that generated too much static was simply swapped for another rather than resorting to a wrist strap for a bench session.[1306] Rubbing feet on carpet remains the canonical mechanism, whether the concern is a keychain-carried hardware wallet or a device under test on a bench.[1075][Q_RYG_5cQk8]
+
+Cling wrap generates ESD, and the charge builds again each time it is drawn off the roll.[623] The levels are real but modest in context: wrapping boards in it is inadvisable, while using it as a case over a finished product is not a serious concern, since a person not observing ESD precautions generates more than the film does.[623] Rolling the film back onto the roll and redeploying it does not rebuild the same charge, which is a practical way to minimise it.[623] Some components are simply not at risk — metal snap domes supplied on tape and reel carry no static concern.[1725]
+
+## ESD as a diagnostic red herring
+
+ESD produces intermittent, non-reproducible faults that are routinely blamed on the wrong subsystem, and this is where most of its cost falls.
+
+Static injected into a probe cable appears on an oscilloscope as a glitch in the coax input that has nothing to do with the circuit under test, at signal levels down to volts.[14][20] The impulse looks as though it originates in the circuit when it does not.[20] The effect survives precautions that would be expected to eliminate it — it has been reproduced while wearing a full lab coat at a properly equipped ESD bench, with the static still getting through into the probe.[14][21] The underlying mechanism is understood to be ESD, but exactly how it manifests in the scope front end has never been explained to general satisfaction.[104]
+
+An interface board under development produced a fault that took weeks to isolate; the cause was ESD spikes generated by the designer standing up from the chair, coupling into the system.[NX2mOOpPs2I] A 4K monitor exhibited the same class of fault, and fitting a ferrite clamp to the suspect cable did not stop it.[1107] A Kindle case fault that survived elimination of the obvious short-circuit path was most plausibly attributed to ESD coupling into the contact terminals via the case.[135] A multimeter that died sitting on a shelf was suspected of a chipset ESD sensitivity problem.[853] In each case the signature is the same: a fault that is real, repeatable at the system level, and traceable only to a discharge path that no one was measuring.

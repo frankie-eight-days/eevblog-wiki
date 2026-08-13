@@ -1,0 +1,518 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: lm317
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 97 passages drawn from 31 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# lm317`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[102] EEVblog #102 - DIY Constant Current Dummy Load for Power Supply and Battery Testing — Dave Jones (explains)
+context before: It can be, you know, 3 volts, 5 volts, 15 volts, 20 volts, whatever, and the load will actually adjust itself to extract that constant current. So, what would you think of when you're thinking about constant current generators?
+TEXT: Well, you'd think about the classic circuit like the LM317. Normally it's a voltage regulator, but if you put a series resistor in there, an adjustable resistor, a pot, you can actually that actually becomes a constant current well, a in this case, a constant current generator, but if you just ground that output there, and hook this on into your power supply, bingo, it becomes a constant current load.
+context after: But, it has certain disadvantages, this one. The resistor has to be a very low value. It can only be within a certain range to keep it stable. And there's other issues with it.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: I do actually I like the on semi data sheet a bit better here. Now, this is the typical application circuit. Once again, you do not actually need the output capacitor for stability, but you put it in there as a matter of course.
+TEXT: You just need uh you usually this is a fixed resistor. 240 is the nominal value, and then you put your adjustable resistor in here. So, a good thing for your bill of materials, if you're using jelly bean component like the LM317, you always have a like a 240 ohm resistor uh like loaded on your pick and place machine ready to go for all your LM317s that you're using in your circuit and
+context after: then you try and like reuse that 240 ohms somewhere else. Yeah, you might typically use that then elsewhere in your circuit. You might find you need or a 220 ohm somewhere in your circuit, but I've already got a a 240 for my LM317.
+
+[1162] EEVblog #1162 - Little British Monitors — Dave Jones (explains)
+context before: 'Cause otherwise I don't know why you'd stake it like that. Anyway, there. And it goes over to here, so I'm not sure what that mod is. But these are pre... I think these are probably pre-production units. So, you know, give them a pass on that.
+TEXT: Anyway, these are like, you know, hand-built, do-it-yourself. So, like, a mod is just... It's almost mandatory, isn't it? I should actually read the soldermast, shouldn't I? LM317, there you go. So that is the regulator for the low end. I'm not sure if they actually disable the power to that Bluetooth module because...
+context after: Look over here. I just, I love this solution here. This is very nice. Let me get that out of the way. And it's just a connecting board that joins all the connections together, including the multi-way rotary switch. So it's a very nice solution.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: Um, but not at the expense of spending 200 bucks to repair it. Um, that's a lot. So, it it sounds old. The tech 428 sounds really old. Cool. Thanks for the email, Tish.
+TEXT: Need a 3.3 volt voltage regulator. I have some recommendations. What What current do you need? Just go s just go to Digi Key or Mousa search for um or whoever your local uh supplier is and search for go in do the parametric search for um 3.3 volt fixed uh regs or use an LM317 and put in and put in the two resistors.
+context after: Um so yeah it depends on your requirements depends on your current requirements. depends on your physical what physical package you want SMD or TO220 or whatever your power dissipation all that sort of stuff and your price and your availability.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (explains)
+context before: And the version of this board is 2.10. The 26th of March, 2013. So that was actually done before my uh design investigation this changed, but I definitely know, as I said, they have upgraded this heat sink to a different size one.
+TEXT: They just haven't changed the layout since then. And my old board is There it is. Uh version 2.00. The 14th of January, 2013. Now as far as the differences between these two boards, well, I can't see any difference at all apart from the culprit LM317 5-V supply around here, which they've um obviously changed.
+context after: So they have made two upgrades this board. The first was to, you know, they realized this was too small. Oops. They rearranged it, moved the capacitors back, added the footprint for the larger heat sink over here.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: But, it's all about design margin. And you saw what happened when we'll verify this again when we open it back up, but I'm sure that this is causing that 5-V reset problem.
+TEXT: Now, the to run something at 90 to 100° uh to run a you know, an a 317 regulator or any heat sink at that sort of temperature for something dumb ass like a nominal, you know, 5-V rail to power uh you know, the digital circuitry in this thing is absolutely insane because there is no design margin in there.
+context after: Um yeah, okay. Maybe this thing might work and might continue to work for most people for a couple of years or something until those caps dry out, of course.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And that's what happens when you um when you're on the margin like this using an LM317 voltage regula- regulator, a standard linear regulator instead of a low dropout one where we would have had plenty of margin.
+TEXT: Um instead of having, you know, the 1.5 to 2 volts dropout voltage, which we get with the LM317, if you use an LDO, it might have .2 volts dropout voltage, and we'd have a ton of margin, and the output current would work right up to, you know, 500 milliamps, not a problem, and everything would be sweet.
+context after: But, we're just trying to be really cheap and simple and nasty here and use an LM317. And if you're interested to know what the quiescent current is for just the AVR ISP Mark II programmer on its own, that's the input current for the USB, the 5-volt USB.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: Well, let's check it out. Re- remember it was There we go. It's jumped up to 6.4 volts. It is not 1.25 anymore. And if we plug it back in, bingo, we'll get 1.25.
+TEXT: There you go. Now, ordinarily, you don't really have to worry about this with a traditional LM317 circuit with a voltage divider on the input cuz the voltage divider, if you read the data sheet, is designed to the values are low enough to actually present the minimum load requirement of the LM317.
+context after: But because we don't have that voltage divider and we're just driving the input pin like this, then there's no minimum load and we're going to need a minimum load on there to make to actually make this thing stable.
+
+[621] EEVblog #621- Stanford Research SR650 Repair - Part 2 — Dave Jones (explains)
+context before: And we're looking at an actual uh tab temperature on the TO-220 there of, you know, it's it's getting upwards of 70° or thereabouts. So, yeah, it's it's not preferable, but it's it's not that bad at all.
+TEXT: So, yeah, there's certainly no gross overload condition there. And the analog LM317 there is actually higher. Look at that, 72.4. And if we go over here, we're looking at for the 337, the other rail, you'd expect it to be pretty well matching and yeah, I mean, jeez, that's not great at all.
+context after: This is pretty piss-poor thermal design in this thing. I mean, if you design this thing properly, it wouldn't even need a damn fan. And we'll just measure our 5-V rail there.
+
+[168] EEVblog #168 - How To Set Up An Electronics Lab — Dave Jones (explains)
+context before: The old adage is you can never have too many power supplies. Now, this is one of the classic projects which you can and you should build yourself. You can build them from junk box parts.
+TEXT: It's amazing what you can do with just an LM 317 and a couple of knobs, and you know, bingo. Now, this one's a kit from Silicon Chip. It's powered from an external AC plug pack, so you don't have to do worry about doing mains wiring, and it's just selectable output voltages, very handy.
+context after: It's got plus and minus, what's called a dual tracking supply, but this one's not variable, fixed output, but still very handy. And here's another kit power supply. As you can see, it's got a fixed 5-V output here with a load switch.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: 1.5 or 1.65, 1.7 odd volts or thereabouts. So, let's see if we get that, shall we? Let's drop our input voltage until we get 3.26. There we go, pretty much spot on.
+TEXT: So, it's 4.958 minus 3.264 equals 1.69 or 1.7 volts. So, it's spot on. It matches those graphs very precisely. Beauty. Now, if this was a production design, we would want to characterize the maximum output current we could take from this regulator under a worst-case input scenario.
+context after: In this case, the it worst case would be 5% below the nominal 5-V USB input voltage or 4.75 V. So, you would adjust your input to 4.75 V, and then you would adjust your current up from zero until your regulator output voltage here got to 5% below your nominal 3.3-V output voltage.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (explains)
+context before: Let me go check." And you read up the data sheet. Sure enough, right, it's very clear that there's a legacy and new chip and like all the specs have changed, right?
+TEXT: So, you would have to qualify that part. Simple voltage regulator, but you might have to re-qualify it cuz you don't know. It might it might drop out differently. It might oscillate, for example, with the different loads and different um bypass caps and things like that, right?
+context after: So, yeah. So, you don't know. You go, hold off buying that one until we can re-qualify the part. So that's what happens when you add the extra part number either a letter an extra letter at the end because as a design engineer your job or it might be an huge company it might there might be an engineer dedicated to creating a bill of materials uh like this that would
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: You can actually design some circuitry around here to replace an LM317 type constant current configuration and we will actually use the technique of overriding a pin on a voltage regulator.
+TEXT: So, standby. So, how exactly do we start designing a circuit to overcome some of the limitations? Well, I think the first thing you should do is take a look at how these LM317s actually work because you might be able to maybe duplicate them with some similar circuitry.
+context after: Now, if you have a look inside a typical LM317 broken down, you've seen this before. It's just an error amplifier with a series pass transistor. In this case, it's a Darlington, usually a Darlington transistor pair like that.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: So, I'll just use it elsewhere in the circuit. Parts consolidation. And it shows the packages you can get here. TO-220 classic of course, this up 223, the D pack and there are others available.
+TEXT: But this is actually this is where there is actually multiple versions available. This is the LM317M and this is only a 500 milliamp version. So, the regular LM317 an amp and a half, the M version is 500 milliamps and we'll have a look at a lower power version shortly.
+context after: And there's your classic formula there for uh calculating your voltage output and you can rearrange that for your resistor for generating like R2 here. No worries. And the LM317 along with the 7805 actually 78XX is you can turn it into a constant current regulator by just simply shorting the adjustment pin out to the output and then uh putting a resi- a single resistor in here or this
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: Well, turns out there's quite a few things wrong with it, actually. Uh the first one is, you remember I spec from 0 V up to whatever uh voltage. We need to go down to 0 V, but the LM317 doesn't allow you to go down to 0 V.
+TEXT: It only allows you to go down to a minimum of 1.25 V, and that is because of the internal uh voltage uh reference inside of it. And uh the second one is is that um uh this adjustment uh pot here, it you can't it's uh not uh terribly good down at the very low level.
+context after: So, if you wanted to set an output current of 1 mA, you know, it's not that great down there. Third, uh how do you adjust these with a uh you know, a microcontroller or a software function?
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: It's known as the 1117. This is our jellybean low dropout voltage regulator. And the good thing about this is that you can actually get it in its adjustable and fixed.
+TEXT: So, you can get the adjustable version just like the LM317. In fact, the pinout uh is identical, and the formula for calculating the resistor um divider down here is absolutely identical you can think of it as just a low dropout version of the LM317 or 7805.
+context after: So, you you could argue that the 1117 is probably more ubiquitous these days. I don't know. Like doing teardowns of stuff, I'm still seeing the 317 and the 7805, but the 1117 is just like low dropout can be really nice sometimes.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: So, you need a buffer there. So, this is our 0 to 1 V control input. Now, it goes into this adder or summer circuit here and then that is fed into a * 2 amplifier here into the non-inverting input of this constant current equivalent circuit.
+TEXT: Now, if you remember how the LM317 worked, because it had a voltage reference in here of 1.25 V and it fed directly around to this pin here with no additional circuitry like that, then the current equaled 1.25 V divided by 1 ohm or 1.25 amps in this case.
+context after: And we're basically replacing that direct feedback with a circuit that allows us to inject the 0 to 1 V signal and raise it up so that it can control this higher voltage circuit up here.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (explains)
+context before: Now they've gone for a larger one, which I think matched the same footprint. So they didn't have to upgrade the board. But apart from that, I can't see any changes anywhere else on this board at all, really.
+TEXT: Unless I'm missing it, but, you know, I'll post some photos up, but really, I think that's the only thing they've changed. And if I get down there, right on the tab, that little thin piss ant tab they've got on that LM317, uh yeah, I'm getting over 70.
+context after: I could sort of leave it there for a bit longer, but uh certainly, you know, well within the operational uh limit of that uh uh case anyway and in turn the uh junction itself inside the LM317.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: It's not in the system. So, it may be an EMI issue getting in somewhere that's resetting this sucker. I don't know. All I can do really is fold this back in, screw it back in place, and run it as a bench supply for, you know, an hour and see if it see if it resets.
+TEXT: Now, there's one thing I found is that this regulator in here, this tiny little that's an LM317, that's actually delivering the that isolated 5 volts for the main logic that we saw in the teardown, and I noticed that was getting really, really hot.
+context after: And look at that. I mean, we're talking, you know, this isn't going to be super accurate, but look. I mean, it's not going to read over though. So, you know, I was getting close to 90 or something at one point.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: The input's the top rail up here coming from my lab power supply. Ground is down the bottom here. The right-hand pin over here is the input. There it is there.
+TEXT: The output is the center pin or the tab. The center pin is electrically connected through to the tab up there. I've got a load here. I've got a 1K load just to because these devices, if you check the datasheet, do actually need a minimum load.
+context after: And we'll take a look at that in a sec. And this orange wire over here is our adjust pin, which, with a typical LM317, as you would know, it's a basic building block circuit.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: I'm not sure how much, uh, power this board takes. I haven't actually measured it, but it's not that important. It wouldn't take all that much at all, really. So, there is, uh, there should be ample, uh, current to power your circuit under test, maybe, you know, 350, 400 mA, or something like that, should be readily available, but we'll check that later and see how that goes.
+TEXT: And here's an up-close shot of my mod. And I've put the LM317 backwards here because, uh, it made sense to do that because the input pin here is on this side of the device, and I just bent that over and connected it directly to a capacitor.
+context after: It's quite hard to see, sorry about that, but a a capacitor So directly connected through to that large trace, which is the 5-V input from the USB connector. So that goes directly into the LM317.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Still used in I don't know how many billions every year. It's just crazy. So, open up any product that doesn't have any like strict uh spec requirements, you need a voltage regulator, you're going to find a 78XX and a 79XX regulator in there.
+TEXT: Almost guaranteed. Now, if you need an adjustable regulator, that brings us to our next jelly bean part, the classic LM317. You should definitely know these. Should have these in your kit ready to go cuz they're used absolutely everywhere.
+context after: It's got all your favorite specs from the 7805, uh 1.5 amps nominal. It's got short-circuit current limiting. It's got thermal overload protection. It's got the safe area compensation, etc., etc.
+
+[992] EEVblog #992 (Part 2) - How To Clean & Service A Microscope — Dave Jones (explains)
+context before: LM317. Yeah, those can make current sources um at about a watt. So that should be exactly what we need. Okay, so we've got our 317 and a couple resistors and a capacitor.
+TEXT: That's all that's needed for an LM317 current source. All you do for an LM317 current source is you tie this to the middle pin. That's the output. And then all you need to do is um tie it to the adjust pin, which is probably pin one.
+context after: I think that's this pin. I got it over here. Um pin one is the adjust. Yeah. So, it's pretty simple. Then we're going to solder this. Okay, so it's all soldered now.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: We're looking at 100° C rise above ambient and that's exactly what we're getting. It's ridiculous. I could go into there, you know, draw the thermal uh graph of all the things in there and the heat sink compound and the bloody you know, everything the junction case and all that.
+TEXT: And imagine what the if this is what the heat sink temperature is at, imagine what the junction's at. Well, we actually don't even need to guess what the junction's getting at because let's look at the data sheet for the LM 317.
+context after: Just take a typical one from Fairchild for example. Let's go down here. Let's get the thermal characteristics. Well, here it is. Um, there we go. Thermal resistance junction to case.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (explains)
+context before: Oh, been there so long, my Fluke switched off. There we go. And we're getting over 81° C. Once again, still within side, you know, operational margins even with this even with no air flow.
+TEXT: Much better than what it was before of like well over 110. I think someone even reported like 120 or 130 or something ridiculous. It was off the charts. Certainly well over the uh max operational uh die temperature of an LM317.
+context after: And no, they haven't uh upgraded the uh transformer or the transformer uh tap. It's certainly not part of the upgrade. Whether or not they'll do it in the future to get a uh slightly lower voltage into the LM317 after the full wave bridge rectification there, I don't know.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (explains)
+context before: So, yep, that one is definitely connected through. So, that's our negative input, that's our positive input. Just look at the data sheets for these op-amps, you know, if their maximum voltage, say, they're a low voltage one, might be 6 volts, and you might just, you know, whack 5 volts on there, for example.
+TEXT: And as it turns out, we've got nothing to worry about there. Look, we've got an LM317 voltage regulator here. There we go, so we could read those resistor values, figure out exactly what we've got there, but there you go.
+context after: So, it's going to do the regulation for us. Beauty. All right, so I soldered on myself a ground test point here, and a couple of flying wires. I've got that going up to, well, I will have it connected to the bench power supply, and because this is a uh LM317, it's only got a LM317L low power version, it's only got a current limit of 100 milliamps.
+
+[1435] EEVblog 1435 - The World's Most EXPENSIVE Catalog IC ? — Dave Jones (explains)
+context before: So, you can see that uh this SG1 down here, for example, $302. That's, you know, it meets mil standard, whatever. So, that's like a microsemi. It's just a like a 117.
+TEXT: Like like a LM317. 117 is like the military equivalent to the uh 317, basically. And it's basically Yeah, it's an LM317 voltage regulator. Um but, you know, it's available in all these mil standards and stuff like that.
+context after: So, that's why um yeah, you got to pay all that sort of coin for that. But, look at this, hermetically sealed, welded ceramic package with the gold wank on it.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Next part we're going to take a look at is a voltage reference, or in this particular case, a micropower shunt voltage reference because often you're need a better precision, better temperature uh coefficient than you can get with a voltage regulator.
+TEXT: A voltage regulator, okay, you've got an LM317, and you can trim it to whatever voltage you want, and you can use it as a voltage reference because you've trimmed it, and you know, the one you can get them in 1, 1 1/2%.
+context after: That might be good enough, but often you want better than the couple of percent initial accuracy you can get from a voltage uh regulator. And more often than not though, with a voltage reference like uh ADCs and other uh precision comparators and stuff like that, you're doing like detecting voltage threshold levels and doing all sorts of other things, you need a voltage reference that is not only
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: So, it's effectively like it's neither here nor there. They're both are the same in that regard. So, you need that minimum current. So, if you're designing micropower circuits and stuff like that, these aren't the regulators for you.
+TEXT: So, if you actually do want to use the 317, and you do actually only want to draw like 1 milliamp from it or something like that, then you're going to have to put a resistor on the output to get that minimum current.
+context after: I do actually I like the on semi data sheet a bit better here. Now, this is the typical application circuit. Once again, you do not actually need the output capacitor for stability, but you put it in there as a matter of course.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: There you go. Now, ordinarily, you don't really have to worry about this with a traditional LM317 circuit with a voltage divider on the input cuz the voltage divider, if you read the data sheet, is designed to the values are low enough to actually present the minimum load requirement of the LM317.
+TEXT: But because we don't have that voltage divider and we're just driving the input pin like this, then there's no minimum load and we're going to need a minimum load on there to make to actually make this thing stable.
+context after: Now, I've got the adjust pin of the LM317 connected through to my external another a second external variable lab supply which we can adjust here and I've got the meter just hooked up with some alligator clips there to the output and I'm feeding in 1.25 volts from my lab power supply and look what we're getting out.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And then, if you wanted to uh uh characterize it over different temperature ranges if it wasn't just going to be used in a basic uh lab environment like this, then you'd have to go to a lot more trouble.
+TEXT: And that's what happens when you um when you're on the margin like this using an LM317 voltage regula- regulator, a standard linear regulator instead of a low dropout one where we would have had plenty of margin.
+context after: Um instead of having, you know, the 1.5 to 2 volts dropout voltage, which we get with the LM317, if you use an LDO, it might have .2 volts dropout voltage, and we'd have a ton of margin, and the output current would work right up to, you know, 500 milliamps, not a problem, and everything would be sweet.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Uh here we go. Input to output differential voltage, uh 3 volts minimum typically. So, that's more than the 7805. So, uh but once again, this is not a low dropout regulator.
+TEXT: Just be aware though, there is a big trap for young players with the LM317, and this is the minimum load current to maintain regulation. And given that it's a voltage regulator, you want to maintain regulation.
+context after: That's kind of its job. And so, you need 3.5 milliamps minimum. So, that's still on par with like the 78XX series, which didn't have a minimum load current but it had the higher quiescent current.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And bingo, it just pops out, allows you to do mods really simply. I like it. Now, my modification is really simple. The on-off switch here just goes through is soldered to pin two on the ISP connector down there, and then the input to it goes to the 3.3 V or 5-V selection switch there.
+TEXT: Um uh single pole double throw, and it just uh and I've just added an LM317 voltage regulator on there with some decoupling caps and some uh a couple of resistors to set the voltage, and that's pretty much it.
+context after: And that's powered directly from the 5-V uh input from the USB. Now, unfortunately, Atmel don't actually uh give you the circuit for this Mark II uh programmer, and I couldn't find any circuits online.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: That is ridiculous. 110° on the heat sink and this thing's only been on for like 10 minutes 115, 120. Unbelievable. No wonder something that regulator is just going to shut down and no wonder the thing's going to reset.
+TEXT: So, clearly something is drastically wrong there because, you know, like an LM317 is only got an operational temperature range to like 120 125° or thereabouts and it's got built-in thermal overload protection.
+context after: So, I think that's why this thing's resetting. Actually, as I think that even though I haven't measured it, I think the regulator is just getting too hot and it's shutting down for some reason.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And I won't go into it, but I've got it all hooked up down there and there it is. And it's a bit of a mess, but we should be able to measure the load current graphs.
+TEXT: Let's try it. First one we're going to try and measure is 20 mA one down here because that's guaranteed to work. We should get just over 1.5 V there at 25°C And that's actually not the ambient temperature.
+context after: That's actually the junction temperature. And if you're doing this seriously, then you'll actually want to get a probe onto the case of the device, but even that is not the true temperature of the junction.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Um so, really we're looking at What have we got here? Very touchy on the old uh power supply voltage control there, but we're looking at 3.13 V there. So, really you're looking at um you know, at really 160-odd milliamps.
+TEXT: There you go, 160 or thereabouts would be the worst case uh actually Well, it'd be the worst-case output current we could draw from our voltage regulator while we're still within spec at room temperature.
+context after: And then, if you wanted to uh uh characterize it over different temperature ranges if it wasn't just going to be used in a basic uh lab environment like this, then you'd have to go to a lot more trouble.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: But anyway, let's try using the same technique of replacing it with this kind of circuitry. And to do that, I think I'm going to need a little bit more room, so I'll erase all this and we'll concentrate on the constant current part.
+TEXT: So, what have I come up with to replace the LM317 constant current circuit? Well, tada! Here it is. And it's rather neat, I think. I like it. Now, it looks a little bit complicated, but stick with me.
+context after: It's not, trust me. Now, we've uh replaced We've got the LM31 circuit constant current equivalent circuit in this red box here. Remember, we've just replaced it with the error amplifier and the series pass transistor.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Um and this here is the uh another um 100 n output capacitor. Oh, sorry, it's not 100 n, it's like um that. And uh yeah, I just picked the uh highest value I found in my junk box that fitted, and it's connected between the output and ground as well.
+TEXT: And that's all there is to it. It's pretty simple. And the output just goes off to the 3.3 or the 5-V selector switch and then switches through to the on-off switch, which goes through to pin two.
+context after: Simple. And it all seems to fit nicely. This um the actual voltage regulator isn't uh glued down or anything like that. It's just sitting there. So it's not the most robust solution in terms of vibration.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Just be aware though, there is a big trap for young players with the LM317, and this is the minimum load current to maintain regulation. And given that it's a voltage regulator, you want to maintain regulation.
+TEXT: That's kind of its job. And so, you need 3.5 milliamps minimum. So, that's still on par with like the 78XX series, which didn't have a minimum load current but it had the higher quiescent current.
+context after: So, it's effectively like it's neither here nor there. They're both are the same in that regard. So, you need that minimum current. So, if you're designing micropower circuits and stuff like that, these aren't the regulators for you.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: Now, I've got the adjust pin of the LM317 connected through to my external another a second external variable lab supply which we can adjust here and I've got the meter just hooked up with some alligator clips there to the output and I'm feeding in 1.25 volts from my lab power supply and look what we're getting out.
+TEXT: 2.51. Bingo. It adds up. So, any voltage you feed in to this adjust pin on the LM317, you've got to add 1.25 volts and there it is there. And if we adjust that set pin to 5 volts, what do we get?
+context after: You guessed it. 6. 25 or 6.27. Bit of error there, but There there go. We whatever voltage you feed into that set pin, you've got to add 1.25 V.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: You can actually increase these values, but then the error term becomes significant, and you're not going to meet a lot of the data sheet's specs. So, you really should keep that to about 240 or well, you know, certainly under like 500 ohms or something like that to really keep the thing within spec.
+TEXT: I typically use a 220 ohm. Now, the other trap with the LM317 is that it is not what's called a low dropout voltage regulator. It's a just a standard linear regulator with a high dropout voltage.
+context after: That means the dropout voltage is the voltage differential between the input. So, the input must be X volts higher than the output, otherwise it drops out of voltage regulation, which I won't go into the details of how and why, but it basically means if you've got 5 volts out of your regulator, for example, well, you need typically for an LM317 as a rule of thumb at full current, it's
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: So, clearly something is drastically wrong there because, you know, like an LM317 is only got an operational temperature range to like 120 125° or thereabouts and it's got built-in thermal overload protection.
+TEXT: So, I think that's why this thing's resetting. Actually, as I think that even though I haven't measured it, I think the regulator is just getting too hot and it's shutting down for some reason.
+context after: And of course, you can't have it operating at that temperature. It's just ridiculous. Let alone the like I was measuring what 110° plus on the case after a minute or two, let alone the actual die temperature itself.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: I used, I think it was a 470 n. I'm not sure. Uh and I've got a And it says it use a 240 ohm here. That's just a nominal value.
+TEXT: I actually used a 220 ohm there and a variable value, which we have to calculate for our nominal output voltage of 3.3 V. So, let's do that. Here is the typical formula for a standard LM317.
+context after: It doesn't matter which device you've actually got. But so, we know what our V out is. Our V out is 3.3 V. And we actually want to calculate R2 here.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Really I'm limited to a maximum output current of Basically 150 milliamps, which is going to be okay for a lot of circuits I do, but really I think it was a it was a bit of a gamble to put in an LM317.
+TEXT: I know I was going to be limited. I was hoping for a little bit better but and then than the data sheet performance figures, but they are pretty much spot on to the to the figures there.
+context after: So, it's not that great. I think I might actually replace it with a low dropout voltage regulator and just a fixed voltage a fixed 3.3 volt one. So, you don't even need the adjustment adjustment resistors on there.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: It's got a voltage reference. And it's got two uh feedback uh voltage divider resistors. And that's it. That is a complete traditional three-terminal linear regulator. Now, the 7805 type will have these resistors uh built in to set the output voltage.
+TEXT: But something like an LM317, which is um an adjustable linear regulator, these resistors will be outside the chip, and it will have that uh feedback pin. But they work exactly the same.
+context after: So, there's essentially no difference between an LM317 and a 7805 traditional linear regulator. Now, it works um the basic principle is very simple. It's just a negative feedback loop here.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: So, it's really annoying. No, not considering checking out the LT381. I'll probably just go back to like the um LM317 and then just build a negative rail to bring it down to zero.
+TEXT: And like because you can drive it the same way. um you've just got to cater for that 1.25 volt offset voltage. Um which is fairly consistent. Um so I was thinking about just doing that.
+context after: Um no I haven't been to Sweden. Sorry. Is Sean interested in electronics? He's only two. He loves computers. Why do I need to watch Sky News Arab Cala? Why should I watch a Sky News Arab video?
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: You'll get out 2.25 V here. And well, you can take care of that in software. It's not too hard. So, the voltage configuration, you can actually drive it with software.
+TEXT: So, let's actually build up this LM317 circuit and verify that it actually does what we think it does. Now, here it is. I've got my LM317. I've got bypass caps on the input and output.
+context after: The input's the top rail up here coming from my lab power supply. Ground is down the bottom here. The right-hand pin over here is the input. There it is there.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: Um, I would have had to hire a hire a van or something like a ute or something. Um, get someone to help me out as well, go pick it up, and it just it just wasn't going to happen.
+TEXT: So, it's really annoying. No, not considering checking out the LT381. I'll probably just go back to like the um LM317 and then just build a negative rail to bring it down to zero.
+context after: And like because you can drive it the same way. um you've just got to cater for that 1.25 volt offset voltage. Um which is fairly consistent. Um so I was thinking about just doing that.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: So, it's not that great. I think I might actually replace it with a low dropout voltage regulator and just a fixed voltage a fixed 3.3 volt one. So, you don't even need the adjustment adjustment resistors on there.
+TEXT: All you need is the regulator and input and output cap. Problem solved. Huge amount of margin and well, there you go. That was just implementing simple LM317 on a design.
+context after: I got a bit carried away here. I was just going to only show you the mod and that was it. It was going to be a quick 2-minute vlog, but I thought I'd just show you some stuff on some basic performance measurements on an LM317.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: And the good thing about uh having an adjustable regulator in your um jelly bean kit is that it's you only have to stock the one part and then you can use it for all different regulation voltages that you need cuz the 7805's 78XX series, it only goes down to 5 volts.
+TEXT: Can't Can't use it anything under that. But the 317, it'll go up to 37 volts here. So, anywhere from 1.25 to 37, absolute killer. All you need is two resistors in there.
+context after: It's available in all your favorite biggie packages like this. And once again, this is not a low dropout regulator. We'll have a look at that in a second. One of the downsides is it does have a lower dropout voltage.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: It's a really neat 1% initial accuracy on the set current. That's not bad at all. And one of the neat things about this is that a single resistor programs the output voltage, although we're not going to use that today, but we might have to take aspects of that into account, as you'll see.
+TEXT: But, it's really neat as like the unlike the LM317 where you got to do use two resistors to actually set the output voltage. This one only needs one. We'll go into why.
+context after: Low output voltage noise is only 40 microvolts RMS through in that bandwidth. And it's got it supports input voltages up to 36 volts. Terrific. We're not going to go that high today, but hey, if you're into high voltage power supplies, it can do it.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Bingo. It matches the graph there. 1. Yeah, 1.54. It's just over that point there on the graph. So, that matches up perfectly. Oh, by the way, I've set the current to 20 milliamps down here, the load current.
+TEXT: And let's repeat that for the 200 milliamp load graph. So, I've got adjusted the output current to 200 milliamps there and we expect roughly let's have a look here.
+context after: 1.5 or 1.65, 1.7 odd volts or thereabouts. So, let's see if we get that, shall we? Let's drop our input voltage until we get 3.26. There we go, pretty much spot on.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: So, we'll take the worst case figure of 100 microamps, and we'll multiply the 100 or 100 microamps times our 363 ohms, that's only equal to about 36 millivolts. So, instead of our nominal 3.3 or whatever value it works out to with those exact value resistors, it'll be instead of being 3.3, it'll be 3.336.
+TEXT: And it's not really a big deal for our purposes, but it's something to be aware of if you are designing LM317 circuits. Now, just in case you're wondering why they typically choose a value of 240 ohms here for the sense resistor here, it's pretty much because because of the error current from the adjust terminal.
+context after: It it effectively sets like a minimum load current required for this device, which they typically specify in the data sheet here. If you take a look at a lot of the specs will actually show um like a minimum of like 10 milliamps.
+
+[538] EEVblog #538 - HP35670A DSA Repair - Part 2 — Dave Jones (opinion)
+context before: They aren't actually linear regulators. And our 5 volt rail there is just fine. And let's have a look at this should be negative 15 volts. Aha, -16.5. So, there you go.
+TEXT: Yeah, that one I don't like the look of that at all. Well, the test point is labeled 15 so it is an LM317 of course which means that the resistors could be out or it could have been trimmed to that or you know, actually set to that but yeah, I don't like it.
+context after: It should be minus 15. It's likely the regulator's gone and plus, well, there you go, 16. You could argue that that's 16.5. They're suspiciously close to each other so I'd say that's not a fault at all.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: You will have to use the thermal data from the data sheet which shows the junction to case thermal resistance. You've got to take that into account to calculate the junction.
+TEXT: Anyway, for the purposes of today's experiment, we just want to get a near enough value so we don't have to worry about that that sort of stuff because we're not going to draw too much current from this so the regulator's not going to heat up much.
+context after: But, what we want is to measure the 20 mA load graph there at about 25°C we expect it just over 1.5 V drop out voltage. Now, the drop out voltage is defined as the delta V out or the change in V out or the drop in V out actually of 100 mV.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (opinion)
+context before: I love it. One thing we do care about though is its minimum operating voltage of typically 0.9 volts up to 1 milliamp. So we plan to operate it at 1 milliamp or thereabouts or half a milliamp maybe.
+TEXT: So it's unfortunately it's only going to operate down to about 0.9 maybe 0.8. But hey, 0.8 milliamp if we can get our power supply to operate down to say 0.8 or 0.9 volts that's a lot better than the 1.25 volts you might get on an LM317.
+context after: And then you can go right down to zero if you want. But then you're reliant upon the load actually providing the minimum current. Then you can't use like a high impedance load actually below 0.9 volts or or 0.8 volts or thereabouts.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: So, you they won't oscillate like this and do other weird stuff, but we're still talking about not a huge amount there, but if we keep dropping that input voltage say to 4.75 or we change the output current, it's going to change with the output current as well.
+TEXT: But, as you can see, it does actually doesn't drop out as smoothly as you'd like, but that's the LM317. There are much better regulators out there. And if you're keen on the actual details of the circuit, there's not much to it.
+context after: Here's the Dave CAD drawing of it. It's basically just a 5-V USB input. Any 3.3-V voltage regulator regulator you like. I used an LM317 cuz I didn't have anything else at the time.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (opinion)
+context before: Not a problem at all. Just uh contact your local dealer and I'm sure they'll uh do that no issues whatsoever. And uh I'm you know, pretty much worst case here, the 240 or 250 volt scenario, things like that.
+TEXT: And yeah, it doesn't seem to be an issue anymore. I still would have preferred like a lower voltage tap. I still think, you know, there's too much voltage coming into there, the LM317 there, but you know, it doesn't matter.
+context after: It's going to work just fine now. Very happy with it. And I, as I said, I don't know if that fan is a tinge louder than last time. Maybe it's just my imagination.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (opinion)
+context before: And I'm afraid I'm no real closer to that uh, turn on uh, glitch when you actually power the thing on. So, I don't know. That was the aim of this when I started this uh, yesterday was maybe to get down into that detail, but who cares now?
+TEXT: I mean, we've got that show stopper which is the bloody LM317. And here's another thing, the LM317 they're using, check out the ridiculously thin tab on that. That is just well, that is really piss ant thin tab ones.
+context after: Absolutely horrible. And you can see the difference on these two devices over here. Whereas this has got like a normal thickness tab on it. That's what a, you know, a proper well-designed TO220.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (opinion)
+context before: Now, there's one thing I found is that this regulator in here, this tiny little that's an LM317, that's actually delivering the that isolated 5 volts for the main logic that we saw in the teardown, and I noticed that was getting really, really hot.
+TEXT: And look at that. I mean, we're talking, you know, this isn't going to be super accurate, but look. I mean, it's not going to read over though. So, you know, I was getting close to 90 or something at one point.
+context after: There we go. 95. It's crazy. That thing is getting super hot and I'm not sure if that's normal or not. Surely it can't be running that hot. Unbelievable. Have no idea why.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: So, what we want to do here is adjust our input voltage down until our output voltage drops by 100 mV. Now, as you can see it's 3.36 output voltage and if I adjust the input voltage here, way, that's a bit high.
+TEXT: Oops, be careful with that. You can see that it it pretty much is regulated. There's no problem at all. So, the regulator's working just fine and we want to adjust that down until that gets down to 3.26.
+context after: There we go, it's dropping. It could be a little bit tricky. Sorry, 3. Yeah, 3.26. So, there it is. I'm going to say that's near enough. So, 4.8 volts.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: Bingo, you've got yourself a modified AVR ISP Mark II programmer. So, after all that, am I happy with this? Well, not not 100% No, it's There's a quite a limita- quite a few limitations.
+TEXT: Really I'm limited to a maximum output current of Basically 150 milliamps, which is going to be okay for a lot of circuits I do, but really I think it was a it was a bit of a gamble to put in an LM317.
+context after: I know I was going to be limited. I was hoping for a little bit better but and then than the data sheet performance figures, but they are pretty much spot on to the to the figures there.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (opinion)
+context before: So, there's our specs. Remember them. That's what we're designing around. So, let's get into the design. And of course, when you're building a lab power supply like this, one of the first devices you're going to consider is the classic LM317 and you've probably seen this before and both of these uh configurations.
+TEXT: It's a classic device. It's a robust, it's low noise, it works, it's relatively stable, it uh works in constant current and constant voltage configurations which you can cascade as we've done here.
+context after: Very versatile device and uh let's take a look at what uh how you can build a um a basic lab power supply with an LM 317 based uh system.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (opinion)
+context before: And that's really quite annoying from a um well, it's from a software point of view, it's probably not that bad because you can do the math and do the adjustment in software.
+TEXT: Whatever value you set on your pot, you know you've got to output uh 1.25 V higher than that, but it's it's not nice. It's not elegant. And of course, the LM317 doesn't go down to 0 V.
+context after: So, that's hopeless. And of course, uh I had to turn just in case for those who are wondering out there, yes, I did have to turn my input voltage up from the 7 V cuz we were too close to the dropout voltage of the regulator.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (opinion)
+context before: I haven't uh heard anything, but presumably uh they won't change that tap at all. So, as you saw right at the start of the video, I am on the very quite the high side, almost 250 V here in the lab uh sometimes, you know, 248 common, certainly over 245 nominal most of the time.
+TEXT: So, um unfortunately, um yeah, we do get a quite a high uh voltage into our LM317 there. Nothing's changed in that regard. So, that's uh basically problem resolved here.
+context after: I mean, no issue whatsoever. If you've got an older uh unit, affected unit, Rygel will uh replace the board uh free of charge for you through your local dealer.
+
+[621] EEVblog #621- Stanford Research SR650 Repair - Part 2 — Dave Jones (mention)
+context before: there, but yeah, that's why it's running a bit hot, but it's certainly not, you know, crazy out in the ballpark like 12 V or something like that. So, that's not too bad.
+TEXT: And we'll measure the LM317 rails. And these are really annoying cuz there's no voltage test points on this board at all. It's really damn annoying. You got to figure it out for yourself, and you can't see the traces cuz they're on the bottom and I had to buzz a few things out and use a bit of common sense and I finally found the ground point on there and uh it's just ridiculous.
+context after: Anyway, that's our output voltage of the LM317 and that's around about we're 5 V per division, so around about 15 and 1/2 V or thereabouts. And the input voltage, if I can get in there And yeah, there we go.
+
+[621] EEVblog #621- Stanford Research SR650 Repair - Part 2 — Dave Jones (mention)
+context before: So, but really, cuz they're only driving all the analog circuitry. Now, what we've got here is because we've got two different analog boards in this thing, all with their own separate taps, separate isolated because everything in this is isolated.
+TEXT: So, the 5 V digital board will have its own tap and its own bridge rectifier and filter cap, and likewise for the two different supplies. We've got uh plus minus um I don't I don't know whether it's plus minus 12 or plus minus 15, but anyway, um split uh supply, and we've got an LM317 and an LM337 for one analog board, and another matching 317 and 337 for the other
+context after: board. And that's our 5-V voltage regulator and as I said with the heat sink missing, that's a 7805. This one next to it is actually a uh tip uh power transistor.
+
+[371] EEVblog #371 - Universal Programmer Teardown — Dave Jones (mention)
+context before: For the main board here, let's start, have a look around this section around here. Now, as I said before, this is likely the high-voltage, well, almost certainly, the high-voltage programming regulators here, and a whole bunch of stuff to handle that and select the various programming voltages required for a whole bunch of different devices.
+TEXT: This dodgy sort of heat sink here, it's not actually stuck down there at all. It's not, they forgot the nut on the back of that, so oops. No real surprises here, we have an LM317, which is probably maybe switched to multiple voltages. We have a low dropout 1117 regulator here, basically the same as the LM317, but it is a low dropout type.
+context after: And this one's not a regulator, it's a BD139 power transistor. Pretty bog-standard stuff, and then we have LM339 quad comparator. What else do we have here? LM3... LM3T4 quad op amp, of course. And there we have a TLV5620, which is an 8-bit quad DAC.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (mention)
+context before: But because we don't have that voltage divider and we're just driving the input pin like this, then there's no minimum load and we're going to need a minimum load on there to make to actually make this thing stable.
+TEXT: Now, I've got the adjust pin of the LM317 connected through to my external another a second external variable lab supply which we can adjust here and I've got the meter just hooked up with some alligator clips there to the output and I'm feeding in 1.25 volts from my lab power supply and look what we're getting out.
+context after: 2.51. Bingo. It adds up. So, any voltage you feed in to this adjust pin on the LM317, you've got to add 1.25 volts and there it is there. And if we adjust that set pin to 5 volts, what do we get?
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (mention)
+context before: We're going to design a linear power supply today, not a switching one. And uh we want a single supply input. And you'll find um as we uh go through, you'll find why that's uh uh actually uh important because it's a hard harder to get a zero, a true zero volt output range with only a single supply input.
+TEXT: So, there's our specs. Remember them. That's what we're designing around. So, let's get into the design. And of course, when you're building a lab power supply like this, one of the first devices you're going to consider is the classic LM317 and you've probably seen this before and both of these uh configurations.
+context after: It's a classic device. It's a robust, it's low noise, it works, it's relatively stable, it uh works in constant current and constant voltage configurations which you can cascade as we've done here.
+
+[168] EEVblog #168 - How To Set Up An Electronics Lab — Dave Jones (mention)
+context before: You can get grab bags from various uh suppliers or you can buy them in 10 off or 100 off quantity quite cheaply. You can get mixed bags on eBay.
+TEXT: Uh you get capacitors of all sorts uh ceramic, uh electrolytic, tantalum, monolithic, various types of LEDs. You're going to want a whole bunch of voltage regulators, 7805s, LM317s. You're going to want uh standard transistors, NPN uh PNP types and general purpose ones, power and signal types, MOSFETs.
+context after: You're going to want uh header connectors. You want these uh dual in-line type and single in-line header connectors. You want various ICs, 4000 series logic, 74 series logic, uh basic op-amps and things like that, triple five timers.
+
+[1724] EEVblog 1724 - BWD 603B MiniLab RETRO TEARDOWN — Dave Jones (mention)
+context before: And that's the bipolar amplifier there. Oh, it's just just got yeah, a PM100 just driving the main output power transistors. As I said, that could drive up to 15 W.
+TEXT: So, they needed those on the decent heat sink. LM317s and LM7912s. I They're not displaying those as off-board. So, looks like they're they'd be on the PCB cuz they're showing these like externally, like as in it's going off the board wiring over to the heat sink.
+context after: There's our 200-V power supply there. We've got 80 V AC coming in from the transformer. And yeah, we saw those transistors mounted on the board there. And yeah, just a discrete transistor adjustable power supply.
+
+[839] EEVblog #839 - Mailbag — Dave Jones (mention)
+context before: frequency lower, typically 455 kilohertz was a typical IF. And look at the difference in frequency, bingo! 455 kilohertz. And, but you didn't need that for the transmit, you only needed that heterodyne IF for the receive side. And follow the wires from the battery pack and looky what
+TEXT: we have here, a genuine homemade bodge. This would not be a factory fit. We've got an LM317 down here with some heatsink compound down to the case using it as a heatsink. Then we've got some Vero board here, unbelievable. And, oh, is that
+context after: burnt? I think that puppy's burnt out, is it? Wow, anyway, got an LM, oh, that's come off. Is that an LM358? No, that's an LM308, and yeah, that resistor looks like it's seen better days. So that's a 5 watt jobby, and that looks like our output transistors there, but
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: So, if you actually do want to use the 317, and you do actually only want to draw like 1 milliamp from it or something like that, then you're going to have to put a resistor on the output to get that minimum current.
+TEXT: I do actually I like the on semi data sheet a bit better here. Now, this is the typical application circuit. Once again, you do not actually need the output capacitor for stability, but you put it in there as a matter of course.
+context after: You just need uh you usually this is a fixed resistor. 240 is the nominal value, and then you put your adjustable resistor in here. So, a good thing for your bill of materials, if you're using jelly bean component like the LM317, you always have a like a 240 ohm resistor uh like loaded on your pick and place machine ready to go for all your LM317s that you're using in your circuit and
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: All you need is the regulator and input and output cap. Problem solved. Huge amount of margin and well, there you go. That was just implementing simple LM317 on a design.
+TEXT: I got a bit carried away here. I was just going to only show you the mod and that was it. It was going to be a quick 2-minute vlog, but I thought I'd just show you some stuff on some basic performance measurements on an LM317.
+context after: I hope you liked it. See you.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (mention)
+context before: You should build your own. And a good lab power supply is one that has constant voltage and constant current, as you might know. If you don't know, you do now.
+TEXT: And how do you go about building one of those? Well, it's pretty simple. There's hundreds of designs out there using basic LM317s or whatever. You know, a voltage control knob, a current control knob for the constant current.
+context after: Pretty simple, but a lot of people ask, how do you do it with software control or at least have the capability to add software control, be it from a PIC, from an Atmel, an Arduino, or a PC, or whatever processor or intelligent thing.
+
+[1283] EEVblog #1283- What is Mains Ripple Injection? — Dave Jones (mention)
+context before: That's really quite nice. But, these things are absolutely gorgeous. So, this dials in the command. So, obviously, like it's going to encode like a word, you know, a byte or word or whatever, onto the mains.
+TEXT: And you just dial in the frequency. The trimpot here, curiously, goes over to three over there, which So, maybe that's like a you know, LM317 regulator or something, and it just sets adjusts the level or something like that.
+context after: I don't know. There's not much else in there. Just a 74HC series logic. So, I'm not even going to bother to take that board out. There's nothing more interesting to see.
+
+[392] EEVblog #392 - 555 LED PWM Hack — Dave Jones (mention)
+context before: Let's whip that around. And have a look. There we go. That looks like a diode drop, but it seems to be in the wrong direction. So, I'm not sure what's going on there.
+TEXT: There is definitely something in there though. And I cracked it open and yeah, look what we have here. We have an LM317 in here and also you can see the spring as well going all the way up that uh shaft up there.
+context after: That's how it gets its nice uh retention uh system. Very nice spring. I like it and it's attached to there. It's insulated. It's got a little uh seal pad washer on there.
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (mention)
+context before: I would expect it I would expect it to be a reasonable quality one, but uh I assume it must be on the bottom side of the board cuz unless I'm blind, I can't see it on the top here.
+TEXT: And if you're wondering what the TO-220 devices are, well, sorry, nothing exciting, just a bunch of LM317s and 337s. So, that's a very neatly presented and neatly laid out and well-engineered uh main PCB there.
+context after: I mean, it's going to extend uh under here. It's quite possibly the full width of this whole weight unit right under the diecast uh shield here where the RF front end is.
+
+[1258] EEVblog #1258 - MORE Dumpster Wandel And Goltermann! — Dave Jones (mention)
+context before: Of course, they're not they're not doing any bypassing there. You know, they're coupling the things because you want high stability in your coupling caps to get good linearity and all that sort of business.
+TEXT: It's not much else doing there. LM317, thank you very much. And dumb ass Dave does it again. I think I've come a guts in this. Probably been a whole bunch of you screaming at me since the start of this video.
+context after: Dave, this isn't the on-off switch. Look, it says dial there. The power lead here, I just realized that there's another on-off. Cuz at first I thought oh, it was a clicky, you know, end stop thing.
+
+[538] EEVblog #538 - HP35670A DSA Repair - Part 2 — Dave Jones (mention)
+context before: So, yep, there we go, 0.3 ohms between inputs and out. And before I rush down to Jaycar and pick up some regulators cuz I don't have any 7915s in stock here, well, let's just take a look at the main analog input board and bingo, look, we've got some more regulators as well.
+TEXT: Minus 15 volts. These aren't the same though. These are LMR337 and LM317. Whereas the other ones aren't the adjustable type. They're just the fixed 7800 series and there's a plus 5 volt one here as well.
+context after: So, I'll whack some probes on there and we'll put this card back in and just measure this board here. And we've got two other TO220 packages here and here but they're transistors.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (mention)
+context before: They just showed them as transistors. Check this out. This Jeong Yang whatever um one that I said matched the plus - 18 volts here. Lo and behold, PNP input pair rather than the NPN in the original design.
+TEXT: H another interesting tidbit, the classic LM 317 adjustable voltage uh regulator. Another jelly bean, the 317M. Well, they introduced a new part, but at least they gave it a new part number, the MQ.
+context after: So, they call that the MQ is called the new chip. Um, qualified for automotive applications. And if you go down to the specs down here, you can see legacy chip and new chip.
+
+[1248] EEVblog #1248 - INSANE! A 0.02% Process Meter for $9? WTF! — Dave Jones (mention)
+context before: No. But, anyway, that's a pretty schmick part and that's where it gets its schmick performance. To get this for under 10 bucks delivered is remarkable. Just for that Just for that chip and that DAC.
+TEXT: Okay, down in this corner LM317. Nothing happening there. 7660, that's just a voltage inverter. Of course, it is. You can tell by the two caps there. 1009, sorry. That's an I on the end, not a one.
+context after: That's a Linear Tech 1009 voltage reference. There it is. I I've done videos on this. It's not the absolute accuracy. 0.2% It's how What's the temp co? That would be for the analog to digital converter for the measure part of it cuz we've already seen the one that's used inside the DAC.
+
+[440] EEVblog #440 - Atten PPS3205T-3S Triple Output Power Supply Teardown — Dave Jones (mention)
+context before: Yeah, they There's four running out the bottom there. They know what they're doing. Oh, and by the way, that uh sigma delta converter, 16-bit one, also has a programmable gain amplifier built in as well.
+TEXT: Perfect little device for something like this. Not much else happening on the board, but we have a classic 317 jelly bean. It's the you know, it is the standard low dropout uh voltage regulator.
+context after: You see them in all the ten downs. You know, they're a dime a dozen. Uh you know, used everywhere. And it's got 3.3, so that's a 3.3 V version.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (mention)
+context before: We're going to need something different. But, although we might end up using something different today for our final design, the configuration is going to be quite similar or can be quite similar.
+TEXT: You can actually design some circuitry around here to replace an LM317 type constant current configuration and we will actually use the technique of overriding a pin on a voltage regulator.
+context after: So, standby. So, how exactly do we start designing a circuit to overcome some of the limitations? Well, I think the first thing you should do is take a look at how these LM317s actually work because you might be able to maybe duplicate them with some similar circuitry.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: So, it fouled on the top of the regulator and that wouldn't have been very good to short out to that to the switch. So, I just uh shifted that one over and put a label over it.
+TEXT: No problems. Fixed. And let's have a quick look at the LM317 data sheet, shall we? This is the National Semiconductor one, which just so happens to be exactly the same as the one I'm using.
+context after: And let's look down here at the typical application circuit. And this is basically what we have here, the LM317. We've got the input cap, 100 n, just for good measure because I'm not sure if there was actually one on the board.
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (mention)
+context before: But the TL431 is not just a Zener diode like it appears here. Here's the internal circuit for it. It's actually got an op-amp in there. So, it's just working exactly like up here.
+TEXT: It's just using an actual uh part. So, um yeah, classic jelly bean uh component circuit there. Here's an even more classic jelly bean circuit, the LM317. You should be familiar with this.
+context after: It's the classic adjustable voltage regulator. But you can actually use it as a constant current source. You just put it in series like this, input output. Well, that normally you have uh some resistors on the output which tap back, feed into the adjust pin, and it's used as constant voltage.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (mention)
+context before: So, whether or not they're those three SO8 chips all identical, I don't know, but, you know, it looks like it's just an it looks like it's a bloody op-amp or something like that.
+TEXT: I mean, god, who cares? And to complete the retro rollout, LM393. Woohoo! More of that action down the bottom side here of the board, and we've got ourselves a free-standing LM317 there.
+context after: You know I'm not always keen on those uh free-standing packages like that. We've got ourselves a transistor in there. Sorry, I can't make out the markings, it's really incredibly dark in there.
+
+[1355] EEVblog #1355 - NEW Siglent SDS1104X-U $399 4CH Oscilloscope Teardown — Dave Jones (mention)
+context before: But yeah, you can bet your bottom dollar they would have been saving cents anywhere they could. Actually, this is very interesting. You'll notice that on the secondary side here, this is just a diode.
+TEXT: So, you know, here's the main primary side switcher here. So, it goes switchers through the transformer. Then we've just got a rectifier diode there, some caps, and this is an LM317.
+context after: And well, is that it? I don't see any other control stuff on the secondary side. We've just got an LM 317. Really? Well, yep. Nothing on the bottom side.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: But, as you can see, it does actually doesn't drop out as smoothly as you'd like, but that's the LM317. There are much better regulators out there. And if you're keen on the actual details of the circuit, there's not much to it.
+TEXT: Here's the Dave CAD drawing of it. It's basically just a 5-V USB input. Any 3.3-V voltage regulator regulator you like. I used an LM317 cuz I didn't have anything else at the time.
+context after: It's not that great. I'd recommend you use a low drop out an LDO voltage regulator. 3.3-V just a a selection switch to choose between them and an on-off switch and hook that up to pin two of the ISP connector and that's it.
+
+[141] EEVblog #141 - AA Alkaline Battery Capacity Measurement — Dave Jones (mention)
+context before: Right? It generates a constant voltage over a constant resistance which gives you a constant current load. Okay? And a constant power load. And that's going to give you a fixed current into here.
+TEXT: Now, because of the nature of linear voltage regulators like the 7805 or the LM317 or something like that, this input current here is going to be the same as the output current.
+context after: There's a little tiny little bit lost down here, but you know, let's not include that. Input current equals output current. So it's effectively constant current being drawn from your battery.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: If it goes above 5.25, which is the, you know, nominal uh TTL output, the crowbar can switch on, and that can protect your $10 million board that you've got connected up to this wimpy little power supply.
+TEXT: So, you can use it with the 317 here. You're going to once again a single a simple series uh pass transistor. Um this one's simple. You can actually a precision 5-V regulator.
+context after: You know how I told you the internal reference is 2.5 V. They're exactly the same because the output will be double the voltage reference here. So, if the internal reference is 2.5 V, you'll get your 5 V out here.
+
+[392] EEVblog #392 - 555 LED PWM Hack — Dave Jones (mention)
+context before: I like it. But look at this, there's no circuitry on there at all. It's just dropper resistors. That's it. So uh I'll uh measure the rest of it uh to make sure it just comes through from the but I think it's just uh directly from the 9-volt plug pack straight through a dropper resistor for each LED.
+TEXT: So, too easy to modify this thing um to use um PWM uh to get uh the brightness adjustment or you don't even need PWM. You can just use an LM317 linear regulator or something.
+context after: And it looks like those little plastic clips there. They're like sort of those molded in type. So, I don't really want to break the board out there. So, I'll just measure these resistors and can do that just fine.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: So, the I adjust is actually the current required for the adjust pin here, which flows through R2. Hence, the output will be the adjust current times R2, which is Ohm's law, the voltage drop across that resistor, plus your value.
+TEXT: So, that's why they they add that term plus I adjust times R2. Now, if you look at the data sheet for the device the other page, you have to look down here.
+context after: Let's see if we can get it here. Adjustment pin current. There it is. And it's typical value is 50 microamps, but if you're doing these sort of calculations, you always take the worst case figure unless you know exactly what you're doing.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (mention)
+context before: And here's my unit open with the upgraded heat sink. As you can see, um much, much larger heat sink than the little tiny piss ant one that we had on here.
+TEXT: It's uh not black anodized, not a huge deal, really. It is a thin tab um LM317, one of those uh thin ones. But once again, that's not a uh huge deal.
+context after: And um yeah, it is It is pretty darn large. It's as large um It's about the same height as the uh largest heat sink on here. I won't bother really getting good angles on that.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: I actually used a 220 ohm there and a variable value, which we have to calculate for our nominal output voltage of 3.3 V. So, let's do that. Here is the typical formula for a standard LM317.
+TEXT: It doesn't matter which device you've actually got. But so, we know what our V out is. Our V out is 3.3 V. And we actually want to calculate R2 here.
+context after: So, we know what R1 is. We're using 220 ohms for that. So, you have to rearrange the formula here. So, if you do that, R2 equals V out on 1.25, which is the voltage the internal voltage reference inside the device, and then you subtract one, and then you want to multiply that by R1.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: Because if you remember, I said that we're going to be pretty close to the limit of the dropout voltage of this LM317. Because ideally, I would have used a low dropout regulator in this application.
+TEXT: But, I didn't have one left in my junk box. I just decided to use an LM317. And let's see if it matches the uh dropout voltage graph, shall we?
+context after: Now, to do that, what we need is the input here powered from my bench supply uh over there. So, my variable bench supply. So, that's the 5 V input USB.

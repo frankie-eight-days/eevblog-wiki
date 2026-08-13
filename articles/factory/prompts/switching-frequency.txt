@@ -1,0 +1,358 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: switching frequency
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 65 passages drawn from 41 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# switching frequency`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[469] EEVblog #469 - Cockcroft-Walton Multiplier — Dave Jones (explains)
+context before: So, these capacitors aren't really getting a chance to discharge at all, but there is a practical limit where to how long you can make this thing. You can't just make it arbitrarily long because there is going to be some AC resistance, some impedance in here due to the components.
+TEXT: And then, of course, it depends on the switching frequency as well. So, when you're driving a load, uh for example, or you know, even a tiny little load, the frequency is going to matter, the value of the capacitors is going to matter, and effectively, you can get the output voltages um sagging because, let's say we had the waveform at at this point here, it's going to drop.
+context after: It's not going to be a square wave like that. It's going to drop off like that. So, it's going to drop off, and then the reference and then the uh peak value that's fed through to the next stage is going to be lower than in this case with the peak value with no load.
+
+[1117] EEVblog #1117 - PCB Power Plane Capacitance — Dave Jones (explains)
+context before: if your circuit's switching at just the right resonant frequency and you combine that with the inductance of your tracers with the impedance of the resonant point of your bypass capacitor, you're... you can really screw things up, okay? So, actually, so that's one of the dangers of putting
+TEXT: too many bypass capacitors on there of different values is you might potentially hit a resonant point at some switching frequency and that can just cause your circuit to go completely screwy. Anyway, the impedance of... have a look at the maroon-colored one here, and its impedance is down in the, you know, it's like tens of milliohms,
+context after: stuff like that, whereas the impedance of the ground plane is in the order of, like, you know, 6 ohms for the... something like that. What is it? Yeah, 4.6 ohms there for that, and maybe, like, 11 ohms or something for the other Gigatron board.
+
+[139] EEVblog #139 - Let's Select a DC-DC Boost Converter — Dave Jones (explains)
+context before: $2 This first one up here, there's 10,000 available, $2.98 in one-off quantity. That's quite reasonable. And it's a TPS, it's a Texas Instruments part. I don't mind their parts at all.
+TEXT: It's a TPS61028 device. Um that one certainly rings a bell. And uh it's got an output current of up to 800 mA, but we'll go into that. Now, at the switching frequency, we're not too worried about the moment, but the higher the switching frequency, the greater the Well, the smaller the inductor you need, cuz that's important as well.
+context after: This design is going to be fairly small. So, a higher frequency giving us a smaller inductor will help a lot. Now, the maximum power output's only 2.05 W here, but I'm going to give this device a go.
+
+[1504] EEVblog 1504 - The COOL thing you MISSED at Tesla AI Day 2022 — Dave Jones (explains)
+context before: here of uh one inside but they've actually got a photo there so they were getting cracks so they're they're physically little micro machine oscillators that like oscillate in there right they're physically right oscillating well all oscillators are like you know physical like quartz quartz uh
+TEXT: crystal or whatever these are mems oscillators and they were physically cracking inside here so what they were getting was out of plane resonance and they were getting like mechanical resonance we're talking about actually caused by the vibration of the capacitors due to the switching frequency and the high currents in there it just
+context after: so happened to be at the right frequency and you get like a resonant mode and you can get harmonics and you can get resonant you can get mechanical resonances of there and jay murphy bit them on the ass and said i'm gonna crack those oscillators so they got out of plane this is like inside the
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: Doll. Here we go. Now we're talking 800 900. Yeah, we're talking Yeah, it's it's lower noise. So, we went through from 3 and 1/2 microvolts per root hertz to roundabout one might Let's call it one microvolts per root hertz.
+TEXT: So, yeah, the MAX4239 in this implementation of the microcurrent is about 3 and 1/2 times worse noise than the OPA189. So, yeah, it certainly is quieter and the switching frequency of the OPA189 that I don't think they tell you exactly, but it's up in the like somebody said it's up in like the hundreds of kilohertz range.
+context after: They measured it or something. Unfortunately, we can only go to 100 kilohertz with this. Um and you can see a little something in there, but I don't think that's it cuz somebody else said they've that they've measured it in a project and it was in the couple it was in the hundreds of like 250 kilohertz or something.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: And you can think of your ground plane as a grid of resistors like this because that's effectively what it is. Your current it the higher for I've done a video on this.
+TEXT: The higher your switching frequency, the more the current is going to remain say say you're switching for your your source and your loads here for example, then your current at high frequencies due to a spreading inductance on your board will the loop will follow the path directly under the power traces on your board.
+context after: So, there won't be as much current flowing out here and here. But, DC in theory, it kind of will start flowing out. But, once again, you've got spreading resistance in here.
+
+[1452] EEVblog 1452 - Fluke PM3370B Combiscope REPAIR — Dave Jones (explains)
+context before: Primary side uh failed but you can see that the mains DC is still there, so it's not any of the primary rectification diodes failing or anything like that. So, I'll switch that off now and um wait, there we go.
+TEXT: So, that means all this goodness here, we were looking at the switching across this diode here cuz it was a convenient uh location. And um yeah, it just it dropped in frequency and um that would affect all of the outputs, which are all of the outputs here, which are, you know, all of your voltage rails.
+context after: So, everything's dropping. So, um in that includes your EHT. So, uh looks like um people who uh suspected that it was like the uh tripler failing and stuff like that, it doesn't seem to be.
+
+[yOJ7xPugsdc] Hoymiles Microinverter Reverse Engineering CORRECTION — Dave Jones (explains)
+context before: Once again, if I gave it 2 seconds thought, at 50 because this would have to be like 50 Hz. And at 50 Hz, that tiny little transformer ain't going to do it, okay?
+TEXT: And this is why there at higher frequency switching, they can get away with smaller transformers here like this. But yeah, there's your galvanic isolation is Well, it's goes through under those resistors, and there's your galvanic isolation like that, which Actually, I'll draw the galvanic isolation.
+context after: Galvanic isolation goes under like that. Under the transformer. Under those resistors and around like that. And you should be able to see that on the other side. There it is there.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: You switch on the gate voltage and the transistor switches on. As a switch, in probably the majority of applications, you're going to be using MOSFETs for switching purposes. You know, you switch on a relay load, you switch on an LED load or you're pulse width modulating some LEDs or something like that or using it as a switching element in a DC to DC converter, something like that.
+TEXT: This is what MOSFETs are really good at. They're better than BJTs. It's why they're more popular. When you're talking about switching frequencies for like high frequency DC to DC converters which can go into the megahertz region, They're faster and more betterer than BJTs for that.
+context after: So, MOSFETs universally popular these days. Of course, that doesn't mean nobody uses BJTs anymore. BJTs still have advantages in like linear applications. They're more robust. You know, there's no gate to blow, for example, via ESD or something like that.
+
+[1504] EEVblog 1504 - The COOL thing you MISSED at Tesla AI Day 2022 — Dave Jones (explains)
+context before: times lower out of plane q factor uh which is the resonance uh the physical resonance q factor on there so they can you know or they can often mount it on a different board or something like that i've done that i've mounted oscillators physically on separate boards in their own
+TEXT: anti-vibration um you know like foam compartment um that that takes all the stress out or they can change the switching frequency although they can do any combination of those sorts of things and and here's the um advanced computing rack actually developed and um at the end of this
+context after: i might actually include the full um talk of this guy sorry i don't know his name i should uh check it out but he's the one who's you know this dojo cabinet thing and how they've developed all these tiles and then they've developed these interface cards and these racks and this all
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (explains)
+context before: There it is there. You've got your internal voltage reference. So, that could uh potentially vary between uh different brands and different uh types of variable switching uh chips. So, the calculation calculate the output voltage based on the resistor uh divider could change.
+TEXT: So, inductor selection and all this, you know, choosing your inductor and capacitor values and stuff, they're going to change, as I said, depending on the switching frequency. Uh there can be vast differences in switching frequency uh between chips and that could really matter.
+context after: But, as I said, you know, if you if you chose a different brand, it it's probably it's at least going to do something, you know, you might get more ripple on the output or whatever.
+
+[1631] EEVblog 1631 - $230 Micsig MDP700 HV Differential Probe Review — Dave Jones (explains)
+context before: You can see the difference that that makes. So, well, let me switch over to the green here and you can see that yeah, the ringing is shorter on that.
+TEXT: But anyway, this isn't an extensive test. This is just a sanity test to show you that all three probes basically performing the same at 1 MHz switching frequency here and all the ringing is all has to do with the probing and but I've gone through that in the previous video.
+context after: So, I don't know. Just wanted to have a play around with that. Simple sanity check just to make sure they're on par, but yep, they basically are. So, so you can see in there all three channels like that are all performing identically.
+
+[533] EEVblog #533 - LED Fluoro Tube Teardown — Dave Jones (explains)
+context before: And we'll take a look at it. Of course I've got the wire attachment here, I've got it in wire mode. And this is what we're getting. Here it is. You can see the that's the advantage of the deep memory of course, you can capture all that and then
+TEXT: zoom in. And you can see the current ramp there. Of course we've got a whole bunch of ringing at the bottom of it. And then after that, it looks like we've got some main stuff happening in here mixed up with that. But it's basically switching there at 64 kilohertz.
+context after: And you can see the main stuff there, we're at 2 milliseconds per division. And if we take that point there for example, and go from there to there, which is the repeating period, then we've got 2, 4, 6, 8, 10 milliseconds, 100 hertz, which is
+
+[855] EEVblog #855 - Ceramic Capacitor Piezoelectric Effect — Dave Jones (explains)
+context before: So, that's an interesting little uh practical example of piezoelectric effect in multi-layer ceramic capacitors. Watch out for it. Can be real trap for young player. You can really come a gata.
+TEXT: Um Um ultimately though, it's it's an issue with the chipset. The frequency is down in the audible range and that's just dumb. If they switched it at 20 kHz or 30 kHz or something like that, you know, instead of down at 5 kHz, no one would have noticed a thing.
+context after: It can go piezoelectric. Your dog might hear it or something like that, but or your cat, but that's about it. So, yeah, it's just a poor choice of frequency.
+
+[oVkrc3gF7ns] Conducted Mode EMC Emissions Demo — Dave Jones (explains)
+context before: ...electronics in the UK, and Julia Moses from Wirth Electronics Australia to showcase the EMI debugging demo based on Wirth EMC demo boards, power supplies from Rodent shorts and our latest MX04 oscilloscope. So yeah, to begin the demo, I would like to invite Glenn to brief about the experimental setup or the demo setup.
+TEXT: So what we have here is a good design, bad design of a boost converter. So it's normally running about 300 kilohertz switching frequency. So we've got an input voltage of 19 volts, and we're boosting up to 24 volts. That will go through to our electronic load.
+context after: So I'll be drawing around about 420 milliamps off of that. What we're doing is actually hooking the demo board up to a Cisco 25 listen. So this has been developed in partnership with Wirth Electronics and Rodent shorts. So what makes this listen slightly different compared to what's typically on the market is it has dual outputs.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: But, uh let's whack a load on this thing. So, if you're keen to see the switching noise in there, there you go. We can stop that, and there you go.
+TEXT: There's our switching, and if you go out, you can see whoa, there's not really much ripple, is there? Is it? There's really no low-frequency ripple there, cuz all you care about is really on the switching supply is the switching frequency, which is 120 kHz.
+context after: I'm going to plug in a 2-ohm resistive load here. So, at whoa, 20 volts, there you go. We're delivering 200 watts. Oh, look at that. We're all over the shop there.
+
+[548] EEVblog #548 - EMC Pre-Compliance Conducted Emissions Testing — Dave Jones (explains)
+context before: One of the major ones, of course, which everyone thinks of uh when they think of, you know, EMC uh compliance and things like that is what's called radiative emissions.
+TEXT: And you're probably familiar with this, you know, your electronic product has lots of switching frequencies in there, very uh fast sharp digital signals uh which uh emit very, you know, broadband uh radiative, you know, noise emissions and things like that.
+context after: So, you know, pretty much any product unless it's completely sealed in a metal can with nothing coming in, nothing coming out, and the metal can's 100% effective over the whole frequency range or the desired frequency range, then pretty much your product is going to radiate electromagnetic interference out.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: And yeah, the probing's not absolutely ideal, but you're going to get this. You can see that how much of a major problem that is. But let's actually go down, okay?
+TEXT: And we'll go down in frequency. And if we go down to 1 kHz switching frequency, you'll see not really a problem, right? You don't like we can Once again, we can go up to ALL THE WAY UP to 300 V, and you don't notice any change in that wave form whatsoever.
+context after: So, the high voltage differential probe is fine at 1 kHz, but as it goes up in frequency, your common mode rejection ratio drops, and then you get all those problems.
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (explains)
+context before: So, you could certainly come a cropper there by thinking, "Oh, yeah, I can just throw in any adjustable one." If it's a if it's a fixed voltage regulator one, yeah, you can probably get away with just pretty much throwing in anyone, and it's probably going to work.
+TEXT: You know, it might not be as efficient or whatever because the inductor values and capacitor values aren't matched for, you know, that particular frequency of that device, the particular switching frequency, but you know, it's it's probably going to work.
+context after: We've got one more to try, Diodes Inc., but it's actually BCD. So, I don't know. Diodes Inc. bought BCD. I've never heard of BCD. Nothing named that we haven't heard of before.
+
+[324] EEVblog #324 - DC-DC Converter Testing - USB Supply Part 4 — Dave Jones (explains)
+context before: of the regulator, so to avoid that, a little trick you can do is just offset your waveform a bit, because it's right smack in the center now, if you center it, just offset it a bit from that center, and bingo, it'll find the peaks
+TEXT: elsewhere in the waveform, and now it will track that. So we're looking at 160 odd kilohertz there, so for the switching frequency, now let's drop let's drop the input voltage here, we should be able to get all the displays on the screen there, yep, okay,
+context after: that's it, drop our input, that's at 5 volts input, it's got 160 kilohertz, and as it goes down, we're going to have to switch that down, 4 volts, sorry, decreasing, oops, it's now, it's jumping all over the shop there, it doesn't like that,
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Let's round that up to 0.5, okay? So, we come back here, you plug it in, saturation voltage 0.5. You punch that into your calculator and you get a value of 2.7.
+TEXT: Now, let's go on to the second parameter, T on plus T off. Has the simple formula of one on F. F is the switching frequency. Now, as I said, the switching frequency of this device has a maximum value of 100 kHz and I'm going to choose that maximum value.
+context after: Why? Because a switching DC to DC converter, the higher frequency you go, the smaller the inductor you have to use and inductors are big devices. They, you know, if you've got a large value of inductance, it requires a large a physically large inductor.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Now, let's go on to the second parameter, T on plus T off. Has the simple formula of one on F. F is the switching frequency. Now, as I said, the switching frequency of this device has a maximum value of 100 kHz and I'm going to choose that maximum value.
+TEXT: Why? Because a switching DC to DC converter, the higher frequency you go, the smaller the inductor you have to use and inductors are big devices. They, you know, if you've got a large value of inductance, it requires a large a physically large inductor.
+context after: I don't want that, okay? So, the higher the switching frequency, the the more losses you will get at a higher switching frequency, but it's a bit of a trade-off, but we won't worry about that.
+
+[1294] EEVblog #1294 - LLC Resonant Mode Converter Design — Dave Jones (explains)
+context before: And then you can get into the regions and things like that, and we won't go into that cuz it gets quite complex. So, the thing with a regular switch mode uh topology that you're used to with your regular switching uh transistor is that uh it's switching it basically like digitally, like high low high low high low like that.
+TEXT: And the switching losses can be quite high, particularly the higher frequency you go, cuz you want to make it more efficient, so you go to a higher frequency, but at the higher frequency you get greater switching losses with that sort of thing.
+context after: Whereas with a resonant mode uh converter like this, it actually changes the wave shape the switching wave shape so that there's effectively less losses. I'll I'll try and Dave cat it.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (explains)
+context before: So, we can get a good look at that get rid of the menu there. Get a good look at that ripple now, that output ripple. You can see the capacitor charging and then discharging on that purple waveform.
+TEXT: So, there's that little charge there and then whoop discharge. And once again, this is going to depend on the value of your capacitors and your switching frequency. So, our switching frequency at the moment with this 10 K load is 1 kilohertz.
+context after: So, as you can see, it's got the hardware frequency counter in there showing the 1 kilohertz, but we can change that. Of course, let's give that a go. Yeah, sorry, I've got to reach across my bench and let's change it to 10 kilohertz.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (explains)
+context before: And you might stumble across something like this LM2 double 76 which capacitor inverter might look like it it does the business. You know, you might need a few tens of milliamps output or something.
+TEXT: It's got a high switching frequency here 2 MHz high switching frequency which based on the classic 7660 design actually implies a low output ripple. So, if we go over to the classic 7660 here, trust me, I'll get to the point eventually.
+context after: The trap with this chip I'm just taking attention here. Now, the classic 7660 can be a very efficient chip or you know, like near 100% like 99% plus, but it depends on the switching frequency.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: So, you'd have to look into uh potentially things like that. But really, what we're interested in is like dynamic uh characteristics, for example. So, let's go down circuit protection all sorts of hysteresis voltages and things like that.
+TEXT: We won't worry about any of that. Typical application circuit switching frequency, of course switching frequency is going to change. It's a complex equation which changes with all sorts of things and then it can affect various things.
+context after: And uh you can come a gutser just there alone. That'd be a whole video. Anyway, uh undervoltage, here we go. Output efficiency, system efficient load regulation, there we go.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: So, at 10 volts here, you know, you're looking at like, you know, a couple of ohms, 2.4 ohms. It can rise at lower voltages, for example. So, it it's not spectacular.
+TEXT: It's not designed for high current, but you know, 100, couple hundred milliamps, no worries. And 1 MHz switching frequency, if you care about your input capacitance on a jelly bean part, you're probably not in jelly bean category.
+context after: And because we're talking about a SOT-23 package here, it's tiny, so power dissipation is only like max, absolute max at room temperature, like 0.2 of a watt, not much.
+
+[1122] EEVblog #1122 - Raspberry Pi 3 PoE Hat FAIL Investigation — Dave Jones (explains)
+context before: So, I'm going to probe properly. I'm going to get rid of the crap, you know, the internal earth lead on there. I'm going to use the proper low inductive probing down here, and let's have a squeeze.
+TEXT: We've got our switching frequency on there. It's about 24. 6 kilohertz or something like that. It's actually quite high. 320 millivolts peak to peak. So, we don't have a huge load on there, just the just a Raspberry Pi itself.
+context after: Although, that is a fairly large load, but it's not doing anything. It's just like booted up and sitting there doing naff all. But, you can see you'd expect to see some switching frequency there, of course.
+
+[1607] EEVblog 1607 - PSU Switching Noise Reduction via Vibration — Dave Jones (explains)
+context before: So, I'm just actually driving this at the moment with the signal gen from the scope. I'm just driving at 8 1/2 hertz here, and you can see it physically vibrating, and I can Whoa, it's going to bottom out there.
+TEXT: I don't want it to bottom out. So, lower that back down. But, let's see if we can actually find a sub resonant point. We won't be able to go to multiple resonances cuz the switching frequency of this is 246 kilohertz, right?
+context after: So, you can see that there is the main switching frequency. So, this is at 3 amps here. Now, I'm going to see if I can actually wind up this frequency, and we'll see if we can get any impact on that at all.
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (explains)
+context before: I used my uh high voltage differential probe. I'll probe directly across the uh primary side of the transformer there. See if we can get a switching waveform. All right, power on.
+TEXT: We are switching. There you go. That's 100 V per division. Getting something there. And switching frequency there, about 27 kHz. That sounds about right. But, the problem is uh we're only 20 V per division.
+context after: I do have my probe set up correctly to 100 to 1. So, uh yeah, that seems a bit low, 20 V per division. Although, having said that, if you notice that uh this particular schematic here has a low ratio transformer, 1 to 2.4, with this AC series cap in here.
+
+[1724] EEVblog 1724 - BWD 603B MiniLab RETRO TEARDOWN — Dave Jones (explains)
+context before: Just absolutely fantastic. And I only had a 7 1/2 MHz bandwidth, which wasn't huge, but for power measurements and stuff, that was like for its market, that was plenty.
+TEXT: If you were using this bit of kit, you weren't talking about like you know, 100 MHz or something like that, you're talking about hundreds of kilohertz, several megahertz switching frequency stuff like that.
+context after: So, yeah, look at this bad boy. Digital phase readout. Winking 0° reference marker. Hands up if your oscilloscope had a winking marker on it. Love it. And look at this, you can tweak the common mode rejection on the channels.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: We now jumped up to about 4.8 V or thereabouts. So, what's our frequency going to do? Well, of course, it's going to change the discharge curve of this cap.
+TEXT: So, of course, this is still our 47 microfarads in here, but our second stage one up there, you'll be able to you can just see the ripple on there at the moment, but let's increase the frequency, shall we?
+context after: So, here we go. Oh, well well, we can drop well we we can increase it, of course, and of course, we just get better, you know, there's you can't see any ripple on there now, but if we lower that frequency down significantly, aha, look at that.
+
+[1252] EEVblog #1252 - LED Panel Lighting Flicker Investigated — Dave Jones (explains)
+context before: I've done a whole video on that how not to blow up your scope, and uh 10 volts per division, 10, 20, 30. There was the 38 volts that we saw before, and that's the current waveform.
+TEXT: So, obviously, this thing is just a real pile of turd, and that's why you get the flicker. And for those playing along at home, you want to know what the uh high-frequency switching is, 62.7 kHz there.
+context after: It's a little bit tricky to trigger on that. If we wind that out, there you go. So, let's have a look at another panel that I got some time back just as a trial.
+
+[957] EEVblog #957 - How To Measure DC-DC Converter Efficiency — Dave Jones (explains)
+context before: If I was doing this properly and professionally, I would actually sacrifice this thing and actually solder the wires directly on four wires on the input and four wires on the output directly on the terminals.
+TEXT: So, then nothing can go dicky with your measurements. And along with your efficiency, if you want to, you can measure other parameters well. Like you might measure the switching frequency, for example.
+context after: You'll get that by typically probing the inductor in there. Depends on the converter you're using. And you can have a look at the switching frequency because your switching frequency, it might be a converter type that's the switching frequency changes depending on the output power and this will fairly typically happen with converters that want to get maximum efficiency across like at very low currents as well.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: Yeah, that'd be two divisions. Yeah, so that'd be 100 mV peak to peak is what the uh spec sheet says, but they don't tell you about the switching noise.
+TEXT: So they're just talking about the lower frequency ripple there, which at 4 microseconds per division, 1 2 3 and 1/2 divisions there. You can calculate that yourself what the uh switching frequency is.
+context after: So that's 5 V at 6 amps, 100 mV per division, like 700 mV uh peak to peak. Not great, is it? But I guess that's the price you pay for your 50 bucks at uh 300 W in a tiny little uh module like this.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: So, we're getting nothing near our 9 volts we expect, but uh good enough. But even that single-stage one, 4.7 volts there, is enough to drive, like you know, four or five milliamps, even at 1 kHz.
+TEXT: Not a problem. And because there's no ripple, we're not going to actually see any uh benefit there by going up in frequency, as you can see. Frequency is only going to matter once you start drooping.
+context after: And if we take our frequency down 81 Hz, look at that. Because we're using such large value caps, our switching frequency can actually be relatively low, you know, in the order of 100 Hz or so.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: But, there's a little bit of an offset there. That's going to be due to the offset voltage, but anyway, what we really care about here is this noise. Look at the ripple.
+TEXT: You can see that the switching frequency because um the RC filter we're using is not uh low enough in value to filter out all that noise. Who wants a power supply when you're trying to output 100 mV?
+context after: It's got, you know, what's it got? 10 mV of ripple on that. Ah, hopeless. And that's with a filter frequency down here of 159 Hz because if you do the math, use that formula, 1 over 2πRC, that's that the 3dB cutoff point of that filter is 159 Hz.
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (explains)
+context before: But before we call it quits on this and we go back and actually fix the arcade machine, we'll just probe a few things when it's working. So, let's just start with the primary of the main switching transformer and there it is there.
+TEXT: There you go. Once again, it is the 20 7 kHz or thereabouts, but that's the that's the proper waveform we should be getting and it's completely consistent. No skipping, no funny business at all.
+context after: That's our 50 volts per division for those playing along at home. And if we probe our output here, then that VCC power supply, it's actually um much more than 15 volts actually.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: Not a problem. And because there's no ripple, we're not going to actually see any uh benefit there by going up in frequency, as you can see. Frequency is only going to matter once you start drooping.
+TEXT: And if we take our frequency down 81 Hz, look at that. Because we're using such large value caps, our switching frequency can actually be relatively low, you know, in the order of 100 Hz or so.
+context after: And we're still going to get a good enough DC voltage out that we could use to power an LCD or something else perhaps, especially if we decide to put an extra linear regulator after that.
+
+[1122] EEVblog #1122 - Raspberry Pi 3 PoE Hat FAIL Investigation — Dave Jones (explains)
+context before: No wackers. 9 kHz. Let's just have a look. See if that changes with our load. So, let's go up to a 2 W load for example. 2 W. There we go.
+TEXT: Yeah, doubled. There you go. 19 kHz now. So, the frequency varies with and I'm sure if you read the data sheet, this is exactly what it's supposed to do, but the frequency varies with the load.
+context after: But this baby is supposed to be able to do 5 V at 2.5 A. So, that's 12.5 watts. So, let's go all the way with LBJ. Yep, it's still outputting 5 volts.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (explains)
+context before: It's got a high switching frequency here 2 MHz high switching frequency which based on the classic 7660 design actually implies a low output ripple. So, if we go over to the classic 7660 here, trust me, I'll get to the point eventually.
+TEXT: The trap with this chip I'm just taking attention here. Now, the classic 7660 can be a very efficient chip or you know, like near 100% like 99% plus, but it depends on the switching frequency.
+context after: It depends on the output impedance of the switches inside the chip cuz we have have a look at the topology down here like the basically they've got these output switching a switch capacitor voltage inverter.
+
+[1409] EEVblog 1409 - The DANGERS of Inductor Back EMF — Dave Jones (explains)
+context before: Well, this is actually a a quirk of bipolar transistors. It's what's called the storage time. And not all data sheets will have it, but here's a data sheet that actually does have it and I'll show you this transistor in a minute.
+TEXT: And this storage time of bipolar transistors, it's in the order of, you know, microseconds. It's not long, but it this what's is what limits the switching frequency of bipolar transistors.
+context after: Generally, they actually um have this like a a delay. They actually retain the current in there for a you know a short amount of time, the base current. They essentially retain that and keep the transistor switched on.
+
+[1252] EEVblog #1252 - LED Panel Lighting Flicker Investigated — Dave Jones (explains)
+context before: So, as a percentage of the total current, it's not much. Of course, this is AC coupled, and you can see that there is some 100 hertz there. Of course, if you have a look at your time base, 10 milliseconds, there you go.
+TEXT: It's 100 hertz, and you go into the high frequency stuff. We can single shot capture that. There you go, switching frequency 47 kilohertz. But you can see there's just a huge difference.
+context after: It's we're getting 100s of milliamps of ripple before. That's That's why it's flickering. That's why you can see it. You're not going to see it. You might be able to measure a teeny tiny bit of flicker somehow if you had sensitive enough stuff to measure that, but you're basically you're not going to see that on camera or on it's not going to be a problem on the eye as well.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: So, we can expand the time base there, and you can see that if I lower the intensity here like this, you can see that the higher frequency stuff is uh as uh prominent.
+TEXT: That's why you take AC RMS. It depends on how you want to measure noise there. But, anyway, so if you're curious to know the switching frequency there, it's about 246 kHz or thereabouts.
+context after: Oh, dammit. You know what happened? I forgot to put the shield back ON THE CAN. OH, WHEN I ASSEMBLED IT. OH. I WAS GOING TO SAY THAT'S ME PUTTING MY hand on there is increasing that noise.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: The spec is not peak to peak noise, it's RMS noise and there it is, it's less than 1 millivolt. So it's doing in but look at this horrible output here.
+TEXT: Look at this switching. We're at 5 microseconds per division, three divisions there. And we're looking at you know around about 66 kHz switching frequency there. What is the issue here?
+context after: Well, I'm not actually going to tell you. I'm going to leave that for a quick little separate video coming up. Okay, so that'll be a little aside video. I won't explain it here.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: You can start seeing 4 kHz, three, you can start seeing the ripple appearing and the droop there. If we go down to 1 kHz, you know, ah, pretty bad.
+TEXT: So, you don't want to be operating these things at 1 kHz. 10 kHz, reasonably good rule of thumb. Now, what happens if we change all of these caps to 47 microfarads, pretty beefy value.
+context after: Bingo, here it is. This is with our 1K load. And the amazing thing is, that's still at 1 kHz, as you can see. So, it is possible to use a value like that, but uh you have a frequency like that, but you have to go um uh much higher in your capacitor's values, and that's with a 1K load.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: This is at a 5 volt output voltage RMS 5 millivolts. So, yeah, no worries. So, it is under the RMS, and you can see the but you can see the clear switching noise here.
+TEXT: This is 50 millivolts per division, 120 kilohertz switching frequency there, and well, yeah, that's what you expect from a switching supply. You get what you get. You don't get upset.
+context after: But it's well within spec RMS-wise, and if we bump the voltage up, we'll find that that is going to drop. Let's go Let's go all the way with LBJ, shall we?
+
+[1608] EEVblog 1608 - Mailbag — Dave Jones (explains)
+context before: That's off. Anyway, let's power this thing up cuz this thing's quite remarkable. Um I even saw a new thing apparently where you can like plug a probe into this thing and you can instead of pro you can program it by probing things and then it sets up the the analog matrix down here.
+TEXT: Apparently, it's got only a 1 MHz uh switching uh frequency uh up to uh well, signal integrity up to uh plus minus 8 uh volts. So, but that's that's good enough for Australia.
+context after: Um so, speak you know, when you're dealing with problem red balls Look at this. I'll turn the studio lights off. Sorry about the black solder mask, um but this thing this thing actually lights up.
+
+[296] EEVblog #296 - AIM-TTi I-Prober 520 Current Probe Review — Dave Jones (explains)
+context before: Beautiful. Love it. And, of course, one of the big uses for this thing is, uh, probing switch-mode power supplies. So, you can, uh, have a look at the switching, uh, waveforms.
+TEXT: So, let's take a look inside this switch-mode power supply here, and we can see the output of the inductor there, and we can measure the switching frequency. There it is.
+context after: 40 kHz between those peaks there, and it allows you just to take a look at, without, uh, these waveforms, without having to break into the circuit, which is the traditional method to do it with these current probes.
+
+[469] EEVblog #469 - Cockcroft-Walton Multiplier — Dave Jones (explains)
+context before: But, just like your linear supply, you can do a full wave rectified version. You just mirror that circuit down and duplicate it like that. You have your extra tap on the transformer exactly like your linear supply.
+TEXT: And just like that, it doubles the frequency so you get less sag on your capacitors and greater output you know, a capability to drive a load just like a linear supply.
+context after: So, what we're going to do today is we're not going to build up that full one. We're just going to build up the half wave rectified one and have a very quick play with it.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: I don't want that, okay? So, the higher the switching frequency, the the more losses you will get at a higher switching frequency, but it's a bit of a trade-off, but we won't worry about that.
+TEXT: I'm going to choose 100 kHz. That gives us 10 microseconds for T on plus T off. Now, let's go on to the next one, T off. T off is a bit more complicated formula.
+context after: It's T on plus T off, right? It's not They're not separate values. It's that that parameter there, T on plus T off, okay? 10 microseconds, there it is. Uh divided by T on on T off, which is that one there, 2.7 plus one.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: So, here we go. Oh, well well, we can drop well we we can increase it, of course, and of course, we just get better, you know, there's you can't see any ripple on there now, but if we lower that frequency down significantly, aha, look at that.
+TEXT: You can start seeing 4 kHz, three, you can start seeing the ripple appearing and the droop there. If we go down to 1 kHz, you know, ah, pretty bad.
+context after: So, you don't want to be operating these things at 1 kHz. 10 kHz, reasonably good rule of thumb. Now, what happens if we change all of these caps to 47 microfarads, pretty beefy value.
+
+[579] EEVblog #579 - Precision Low Current Source — Dave Jones (opinion)
+context before: Bingo, 10 milliseconds. What's that? 100 hertz full wave rectified mains. Hmm, coincidence? I think not. No, so what we're doing here is we're getting crap picked up from external in the room and watch this, right?
+TEXT: I don't have my LED lights on, my big LED studio lights on. Let me switch them on. Tada, look at that there. Some higher frequency, I think if I memory serves me correctly, it was like 64 kilohertz switching or something like that, but more crap just picked up there.
+context after: So, really what we're talking about here is just external noise picked up from the environment here with these big antenna leads. So, if we actually disconnect this antenna here, this horrible looking antenna, and we connect our lead over there, so our load is basically shorted out, but it's kept on the breadboard now.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (opinion)
+context before: Why? Because a switching DC to DC converter, the higher frequency you go, the smaller the inductor you have to use and inductors are big devices. They, you know, if you've got a large value of inductance, it requires a large a physically large inductor.
+TEXT: I don't want that, okay? So, the higher the switching frequency, the the more losses you will get at a higher switching frequency, but it's a bit of a trade-off, but we won't worry about that.
+context after: I'm going to choose 100 kHz. That gives us 10 microseconds for T on plus T off. Now, let's go on to the next one, T off. T off is a bit more complicated formula.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (opinion)
+context before: Anyway, let's get back to this and the trap with this uh LM2776. And you might think this is a great chip because you picked it cuz it's available. It might be the right price.
+TEXT: Doesn't matter. Right, let's just say that you found this chip, 2 MHz switching frequency. If you're familiar with the 7660s, that might imply uh nice low output ripple and stuff like that.
+context after: The higher the frequency, it's got lots of current capability. You know, sounds like a good chip, right? And it's available in like a little tiny six-pin package, none of this eight-pin rubbish, right?
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (opinion)
+context before: This is just a multi-phase device sharing voltage. Uh it's very simple control. It's autobalancing because the transformers force the inputs to be 100 volts because all the outputs are 12 1/2 volts connected through transformers.
+TEXT: Um, so I think this will be a very popular topology >> with the uh switching frequency there. What is the tradeoff? Why 1 MHz? Why not two? Why not five?
+context after: What are the trade-offs as you go up in frequency in your particular design? I I think in an LLC that's a you know inductor inductor coupled um uh uh converter which is a nonisolated uh converter um that that connects the input to the output in a at a variable ratio.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (mention)
+context before: No, that was just ground and there we go. We had various uh just the bypassing caps and stuff on the bottom. So, there you go. That's 1,136-pin Vertex 5 FPGA, but not particularly uh major high current requirements apart from that that 1-V uh rail did take a bit but not much on the 2.5 or the 3.3.
+TEXT: But, every FPGA is different. And I was actually going to get a power estimator for you cuz all the FPGA companies have these power estimator programs, spreadsheets, whatever they are or tools to you put in your number of gates, your specific family you're using, your switching speeds, what peripherals you're using, what IO and all that sort of stuff you're doing and it will simulate fairly accurately, depends you
+context after: know, garbage in, garbage out of course, but if you put enough stuff in there it'll or if you're if you're simu- or if you're finish your design and then just run the calculator on it, uh put in all all the various factors, it'll give you a very accurate estimation.
+
+[1ngqB4mxZOI] Smeg Oven Goes Clunkedy Clunk + Capacitor Go Poop — Dave Jones (mention)
+context before: So, anyway, that seems to be that cap, it's directly connected across here, and this, what is this? Let's have a squiz. Now, not that, um, please forgive me, this probably will not be a repair video, this will just be a inspecting the board kind of video.
+TEXT: So, that's some sort of MOSFET-y, switch-y thing. What's an I per, it's an ST, jobby, VI per 22A? Aha! It's a VIPER 22A. Low power offline switch mode primary, primary switcher, there you go. 60 kilohertz switching frequency. So, there you go, it's got a built-in MOSFET.
+context after: That's an interesting part, isn't it? Yeah, so it's like a primary side, yeah, primary side switching controller, in this particular case, for a battery charger. Huh, interesting, but, you know, you could use it for a ton of different applications. So, obviously, they're not charging a battery here.
+
+[324] EEVblog #324 - DC-DC Converter Testing - USB Supply Part 4 — Dave Jones (mention)
+context before: the, actually, I'll probably put it up here, you can see the, you'll be able to see the frequency change, or turn that input voltage back up. Actually the scope's rather annoying here in that it's, in automated frequency measurement mode, it's tracking that individual, you know, it's tracking that high frequency
+TEXT: stuff in there, because it's got such a deep memory, that when it samples, you know, it's got all that high frequency content in memory, and even when you go right, there we go, it's just jumped out, now we can see the switching frequency
+context after: of the regulator, so to avoid that, a little trick you can do is just offset your waveform a bit, because it's right smack in the center now, if you center it, just offset it a bit from that center, and bingo, it'll find the peaks
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (mention)
+context before: Maybe it's maybe it's this all coming down all the way. So, we're very close. If not, we've already found the actual pinout, whether or not we've found the actual chip.
+TEXT: It It doesn't matter at this stage. Because remember the person asked that we if we could find an equivalent part. As long as you get the right pinout and, you know, they're roughly the similar sort of frequency and stuff like that.
+context after: You're probably going to get And they're rated at the correct output voltage. And these are not adjustable voltage regulators. Like you have to actually specifically specifically get. Like this is a like this is a 1.5 V part.
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (mention)
+context before: Well, we found it again, but it's the LTC 3406AB and the AB is the adjustable version, whereas just the B version is non-adjustable. So, we'll get rid of that jobbie and it's the AB one here.
+TEXT: So, let's see if it's the same formula. And yep, sure enough, it is the same formula here. 0.6 V times, so these two let's go 1.5 MHz, right? It basically, you know, as a rule of thumb, you just go by the 1.5 meg, right?
+context after: 600 milliamps, 800 milliamps for the MaxLinear. I'd say these are pretty equivalent parts, so if it was one of these, you could actually substitute with the other. Like, of course, you go into the details, look at the formulas and stuff like that, but, you know, these two look to be fairly their pin equivalent parts.
+
+[321] EEVblog #321 - Google Nexus 7 Tablet Teardown — Dave Jones (mention)
+context before: Looks like we got power supply circuitry. So, nothing terribly surprising or interesting in there for the switch-mode power supply apart from the shielding, of course. You know, full metal can shielding.
+TEXT: You don't want your DC-to-DC converter to be spewing out any garbage. It'd be, you know, high-frequency one at a megahertz or more. It'd be, you know, quite efficient, optimized for the power consumption of this device.
+context after: So, you know, I'd expect, you know, upwards of like 90% efficiency, something like that. And inside there I spied a Texas Instruments TPS63020. And yeah, there you go, up to 90% efficiency maximum 3 amp output current 3.3 volts.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (mention)
+context before: They would have designed it at for one particular output current. Because you can design DC-to-DC converters with 90% plus efficiency if you choose the correct type of magnetics, i.e., the inductor here.
+TEXT: That's what this uh big device is, the you know, the MOSFET, the output capacitance, and the switching frequency. And you can actually design it for quite reasonable efficiency. So, let's say it's 90%.
+context after: Um if you're getting near 100 watts here, let's just say it's 100 watts. At 90% efficiency, this thing has to dissipate 10 watts. So, that's going to cause a temperature increase in our active semiconductors that are dissipating the power here.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: I'm going to plug in a 2-ohm resistive load here. So, at whoa, 20 volts, there you go. We're delivering 200 watts. Oh, look at that. We're all over the shop there.
+TEXT: Look at that. We've got an extra little doohickey in there, extra little frequency switching. So, that's still at 120 kHz there, but it's added an extra That's just not a capture artifact.
+context after: That's actually really there. It's actually got two little switches in there. So, it's changed modes at that higher current. And what happens if we go into constant current mode there?
+
+[1607] EEVblog 1607 - PSU Switching Noise Reduction via Vibration — Dave Jones (mention)
+context before: That's so RMS noise and peak-to-peak. So, we're looking really it's probably going to be impacted more on the peak-to-peak aspect if this if we can actually get the resonant frequency for this or sub resonant frequency.
+TEXT: So, I'm going to take that up. I'm going to wind that wick up. And so we're looking at 246 kHz. So, maybe at 200 something hertz perhaps. I don't know.
+context after: I'm going to wind it up. Now, you won't fit. Trust me, that's vibrating. I'm not sure if you can even hear you probably can't hear that, but that is still Oh, yeah.

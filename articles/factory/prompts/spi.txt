@@ -1,0 +1,928 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: spi
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 179 passages drawn from 101 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# spi`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[58] EEVblog #58 - Warm and Fuzzy FPGA Troubleshooting — Dave Jones (explains)
+context before: You can look up what an I2S bus actually does. I won't explain it now, but it's basically a serial It's a standard serial audio interface. And I checked it and there was no data on there at all.
+TEXT: There was nothing, which pretty much told me that either the software in here is doing nothing or this chip, as I knew from the previous encounter I had in the other blog, that if this chip obviously wasn't booting up in the correct mode because um when the when the whole system powers up, this the soft processor has to send a command via the SPI bus to switch this chip into
+context after: um into the required mode. And that obviously wasn't happening. So, the next thing I do is go aha, it's got to be the SPI bus. So, I probe the SPI bus.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (explains)
+context before: You just got to get the right contrast. There it is. Let me go look that up. And aha that's actually the uh LMH6518. And no surprises whatsoever, it is the recommended device for that particular national semiconductor analog to digital converter designed or you know very uh well listed one of the applications for an oscilloscope front end.
+TEXT: Go figure. And that's actually a 900 MHz programmable uh gain amp. And yes, it does have via SPI. uh the gains controllable via SPI and yes it does have internal bandwidth limities um on the output of uh I think 60 100 200 and then 350 MGHertz so they're probably using that as the bandwidth limiter although I wouldn't rule out that they've got something else down in there
+context after: that they could switch with a digital line or something like that to do the filtering. Um, so yeah, I don't know. Someone will no doubt uh reverse and you know, I don't see a veractor in there or anything like that.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: We've got the phase-lock loop uh voltage, the PLL voltage. And what we're doing, basically, is we're turning on the uh VCO here, okay? Our voltage controlled oscillator. We're switching it on and uh and we can watch our PLL voltage ramp up just as we could on a regular uh DSO.
+TEXT: We can on a regular mixed signal oscilloscope, we can even look at the um SPI packet data. We could zoom in on that and actually see the data packet if we wanted, but what we get here is because we've also got the um we've also got the frequency domain as well captured at exactly the same time, we look at the frequency as uh we can actually yeah, the frequency of the VCO
+context after: as the PLL voltage changes and see where our VCO how long it takes for it to become stable. This is so brilliant brilliant and so powerful. Let's have a look at it, okay?
+
+[1074] EEVblog #1074  - Custom LCD Design - Part 2 - (µSupply Part 17) — Dave Jones (explains)
+context before: And you can spend money on a better case or better switches or better overlays or you know, something else. So, if you can save money, do it where you can.
+TEXT: Uh but also from as I said a layout point of view, if your micro your microcontroller can be over on this side of the board up here and your LCD controller can be up on this side and you've only got those three lines going that SPI bus going between it and the micro might be over here cuz you might be using the analog-to-digital converters in it or something else and
+context after: they might be near your analog uh parts for example and your LCD can be separated right up here. So, there's lots of advantages to using a dedicated chip. Um and they're often just easy to use.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: That's a trade-off with all scopes in that regard. And it does actually have chip select timeout on here, which is important because if you don't have that, then you have to have the chip select on the extra channel.
+TEXT: So, this just allows you to do it based on a software timeout, and then you don't have to sacrifice another analog channel. Nice. And I've captured some data here, and with clock and data SPI, and you can see that the when you select this threshold for the clock, you can actually type in values, or why can't they just get rid of that if you should disappear.
+context after: Anyway, you can see even though it's stopped, it will still decode, or it should. Yep, it it it decodes on the saved data. So, that's kind of nice as you move the threshold.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (explains)
+context before: 
+TEXT: Hi, just wanted to do another video just playing around with the new Rigol 5000 series scope and just maybe comparing it to some other scopes doing some serial decoding and just playing around with some of the features of it. And I found right off the bat here, I was just playing around with some SPI decoding and I don't know what's going on here.
+context after: I really don't. I'm in just standard two channel mode. I'm feeding in two signals here and I'm just playing around with some SPI decoding. And you might think there's no signal there. They're both grounded, channel one and channel two. I've got my trigger point right in the middle here and it might actually come good while I'm actually saying this.
+
+[1071] EEVblog #1071 - (UPDATED) Dumpster Dive HP Envy Touch PC REPAIR — Dave Jones (explains)
+context before: It's a common problem with the these uh HP Envy's apparently. And there's the little puppy under there. Now, thankfully, I believe we don't actually have to uh desolder this to reprogram it.
+TEXT: Um we've got a remote programming header down here and I'll link in information. It's on a website. Thankfully, I didn't have to go uh decode it myself. Some people have already done the hard yards here and we have the pin out for that and we can actually access the SPI bus for the serial ROM chip up here and we should be able to reflash it.
+context after: Fingers crossed. So, here's the pin out for the ROM recovery header and it comes with two jumpers. Normally, there's this black jumper in place here and that's the SPI chip select.
+
+[58] EEVblog #58 - Warm and Fuzzy FPGA Troubleshooting — Dave Jones (explains)
+context before: So, I went to the software, um, guy who who wrote the software, and sure enough, right? Well, he was scratching his head too for a while, but it suddenly dawned on us that, um, that, uh, he had actually seen this problem or a similar problem with SPI bus initialization before.
+TEXT: Because the FPGA, right? The, um, soft processor has a a very complex, uh, protocol, um, stack and it has an SPI, uh, protocol interface and it has it goes off to another FPGA up here, and, um, and and it's got an SPI, uh, SPI multiplexer in it, and it talks back and forth and does all sorts of weird, um, weird and wonderful things.
+context after: And, uh, as it turns out, there was a compiler switch in the, uh, in the C compiler software, which which said, "Use this SPI, um, multiplexer." But, we were actually talking direct from here to here.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (explains)
+context before: Now, as in terms of UART and SPI, this is where it's harder on Digikey and other uh websites, they sort of like combine them. Look, you've got a like you know, it's got to like CAN bus.
+TEXT: Look, it's got like all all this combined one and you can easily miss ones. Like, oh, I need a UART. So we need a UART and SPI, but we have to go through and manually, if we wanted to search for that on Digikey, we'd have to go in and manually search for all and select all the ones that had the those particular peripherals.
+context after: So, you know, it's and that's different to your peripherals over here. So, yeah, I I generally wouldn't search for that. Most micros are going to have a UART and an SPI these days.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: That can be a big problem. So, electrical isolation can be a big issue. So, you can build a separate board with a USB to an isolated USB interface to RS-232 if you wanted to, or you could use one of those XBee wireless boards or something like that.
+TEXT: So, this could be a wireless controlled power supply. That'd be awesome. There's no reason why you can't do that at all. That'd be fantastic. So, to free up these pins, basically, my DAC up here and my ADC over here, they're both SPI input devices, and because I had enough pins available, I just drove them separately.
+context after: But, what I'm going to have to do is actually combine the clock pin on both. So, instead of having a separate clock pin coming from the micro, I'll have the same clock pin and I'll have the same data input pin as well.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (explains)
+context before: So I've got all three channels coming in. By the way, it is not a true SPI as you know it, because SPI, if we go in here, is normally a four-wire thing. We've got our clock, our, whoop, bloody touchscreen, our MOSI, and our MISO, i.e.
+TEXT: input. And output data signals and chip select. But in this case, it's actually a three-wire SPI interface. It's still SPI, but it's three-wire. So it shares, it's bi-directional here. So it's not as great a throughput. It goes tri-state and everything else. So anyway, we don't actually have specific support for that.
+context after: So I've just set it up here. I haven't set up the bits yet, but let's just trigger this thing and have a look. I'll press the bandwidth button. And there we go. Look at this. We've got our clock. We've got our data. And now we have our chip select.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (explains)
+context before: So, if you want to hook on other I squared C devices, you can do that. And when it comes to choosing one of these I squared C serial expansion IOs, once again, I did the parametric search on Digikey, and pretty much for a DIP device I wanted, and Microchip came up again.
+TEXT: It's the MCP uh 23008, and it's just an SPI interface. It's got programmable address lines and eight uh user-definable input and output you can software configure them to send data through when you set them up first, and then you can use them as IO, just like on a regular microcontroller.
+context after: It's great. As I mentioned, it's got an interrupt uh output capability. You can actually uh reset the things if you need to, and power and ground, and that's it.
+
+[1242] EEVblog #1242 - Memory LCD+Supercaps+Low Power Design — Dave Jones (explains)
+context before: Well, let's have a look at that solution as well. So, these are the sharp memory LCDs. This is the one that I've actually got here. They're all dot matrix though.
+TEXT: They're a three-wire SPI interface so you can drive them with a little 3 cent PSoC microcontroller. Hopefully, I'm going to have a follow-up video with the PSoC microcontroller actually getting one of those up and running with a do-it-yourself programmer and also an open tool C compiler.
+context after: This is the one I've got is 29 by 6 mm perfect and it's 6 microwatts static power consumption and dynamic power consumption when you're changing stuff on the display, which we don't need to in this case.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (explains)
+context before: So, all this laser driver is all uh floating. No worries. And I hadn't seen this chip before, but damn, I like it. The LT6820. What they're doing here is I thought, you know, oh, they're just doing some uh you know, like simple custom serial interface.
+TEXT: This is actually SPI over a galvanically isolated twisted pair. And that's what this chip set does from Linear Technology. Here's the data sheet, and it uh you just put one of these at each end, and you've got a full um SPI compliant interface over one galvanically isolated twisted pair.
+context after: Fantastic. I don't care what this thing cost. It's brilliant. Anyway, that takes all the uh dickery out of Yes, that's an industry term. Uh dickery out of like your interface.
+
+[bg6QsTT0Plw] Laser Driver PCB & Circuit Review — Dave Jones (explains)
+context before: So, all this laser driver is all uh floating. No worries. And I hadn't seen this chip before, but damn, I like it. The LT6820. What they're doing here is I thought, you know, oh, they're just doing some uh you know, like simple custom serial interface.
+TEXT: This is actually SPI over a galvanically isolated twisted pair, and that's what this chipset does from Linear Technology. Here's the data sheet, and it uh you just put one of these at each end, and you've got a full um SPI compliant interface over one galvanically isolated twisted pair.
+context after: Fantastic. I don't care what this thing cost. It's brilliant. Anyway, that takes all the dickery out of Yes, that's an industry term. Dickery out of like your interface. Just use a standard SPI interface and you don't have to use like multiple optocouplers or anything like that in multiple lines.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (explains)
+context before: Even though I'm not using the internal hardware SPI capability, which is actually multiplexed onto these ISP pins, which I wanted to free up. So, I'm not using the hardware SPI interface, I'm using just a regular IO.
+TEXT: So, I'm just going to what's called bit bang the SPI interface, but that's no problems at all. But, you want it but because you want that to be reasonably fast, you're always sampling that ADC and DAC via the you know, you might sample it at 1 kHz or a couple hundred hertz or something.
+context after: You're always doing it via that. So, if you put down the I2C interface, there's just overhead there you don't want. So, sure enough, I've got the SPI D in there, which is the data comes from the ADC, the ADC data out and sorry, the data in, which goes to both the DAC and the ADC, and then the data output from the ADC there, and the interrupt input
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: It would have been better to maybe, you know, to squeeze in somehow a dedicated back button. That really would have been nice. As far as the software options go, we do have a lot of them. Check this out. We can get runt pulses, we can get nth edge triggering,
+TEXT: and of course we can trigger off RS-232 I2C, SPI RS-232, and then decoders as well. It's got serial decoding, and you can do that with the four channels. You can have your SPI bus with your four channels. Brilliant. And the record replay mode, which is effectively your segmented memory,
+context after: although segmented memory on this 1000 series isn't as nicely implemented as it is on the 2000 series scope with its dedicated control. And a lot of people don't know that the original 1052E also had recorder segmented memory mode as well, but it was, you know, hidden deep away in the menu.
+
+[934] EEVblog #934 - Raspberry Pi Supercomputer Cluster PART 1 — Dave Jones (explains)
+context before: But, this motherboard idea, it's all going to come to naught unless we can actually get internet connectivity through these header pins. And the Orange Pi One ethernet over to here, these ethernet pins do not come these physical ethernet pins, uh, do not come down to this header.
+TEXT: It doesn't have it. So, we're in trouble there, but, uh-huh, I think I've found a solution for this. As luck would have it, if you have a look at the, uh, pinout for the Raspberry Pi, it's the same on the Orange Pi One here, there is an SPI port that actually comes out on these pins.
+context after: So, uh-huh, can we convert the SPI into an ethernet interface? Yes, we can. Now, as it turns out, the, uh, Raspberry Pi Linux, uh, build, I believe, has a built-in driver for the Microchip, um, ENC28J60 SPI to ethernet, uh, converter chip.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (explains)
+context before: And it's got this one here, and it's got this one here. Now this one here is 24 bits long, is exactly what it shows in the datasheet. So if we have a look here at the write operation, you can see that this is a single access cycle, and the chip select is supposed to go low of course, but it doesn't, so we're not sure what's going on there.
+TEXT: And this shows that the data bits are sampled on the positive going edge of S-clock here, and it shows that there's 24 bits total in there. So that's exactly what I counted in there. So there's a command field of 8 bits, so there's 8 bits command and 16 bits data.
+context after: And here is that 16 bit data field, and you can see D6, D7, D8 here, see table 6, and this is the bit that should change. So I'd expect a D6 to change from 20 to This bit to change from 20 to 350, so D8 and D6, I'd expect those to toggle on the different write operations when we toggle that bandwidth limit button off and on.
+
+[991] EEVblog #991 - Mailbag — Dave Jones (explains)
+context before: It doesn't look like you can, you know, do like Can you type in your own frequency? No. Okay, so it's it's fixed divider frequency. That's a bit of a shame.
+TEXT: Would have been nice to do that. But anyway, to go up that high and the ability to do that is quite right quite nice. Anyway, look, you got quad rights and reads for the SPI and this is just a simple mode and custom mode looks like you can script the whole thing.
+context after: Beautiful for all you script fanboys. Wow. Neat. Anyway, this is very powerful. So you can write data out. Is it only in yeah, hex I guess binary okay, right yep.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: So, that should be good enough for our circuit, but as always, it's a standard pinout. If we need to put, uh, really, um, better precision op amps in there, we just drop them in.
+TEXT: And as for our 12-bit DAC over here, well, it's pretty darn boring. There's some digital input lines here. It's an SPI, so we've got a clock, a chip select, and, uh, data input, a voltage reference input, bypass cap, and it just outputs two different voltages.
+context after: It's a dual channel 12-bit DAC, this one. It's quite nice. Uh, well, for the price, it's really cheap. And, uh, and so, that just generates our voltage Vset and Iset exactly as we would if we hooked a pot onto here like we've seen in the previous videos.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: so many channels. And we've also got an ASCII list as well, we can call that up, very nice. Now I haven't actually gone in there and tried to verify bit by bit that these are actually correct and it's decoding it correctly, but yeah, I'm going to
+TEXT: take its word for it that it's doing, because I don't know what this board's actually generating, and I could go through and I'd have to go through and manually check. I couldn't be bothered, sorry. And if we go into the SPI decoder here, then I've just got
+context after: two channels coming in, I've got the clock and the MOSI line as well. So we can see that it's doing some sort of counting pattern here on the data, and you can set up the width of course, and the order, most significantly significant, and the format as well, and once again the
+
+[wWymcaiaQXM] What happened to my Rohde & Schwarz HMO1202? — Dave Jones (explains)
+context before: And sometimes I just completely forget that I've done a video in the past. No, it's not old age, it's just I don't know, some videos stick in my mind and some don't. And I had completely forgotten that I did a teardown, well I knew I did a teardown
+TEXT: of this, but I had completely forgotten that I did like a hacking video of this actually looking at the SPI signals that are controlling the front end gain chip in here, and that's how they actually get the bandwidth. Because this is software bandwidth,
+context after: the base unit is 50 MHz, and it goes up to 300 MHz and that's all in software. And they do that by sending SPI commands through to the front chip amplifier on here, I forget the part number, but yeah, that's how they do the software bandwidth.
+
+[CMoBGGqojqs] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (explains)
+context before: Yep, that's it, yep. We can group them into a bus. Nice, we can change all the colors. So I assume that we can do decoding on a bus and things like that. So you can define, you know, which of your 8 channels, your 8-bit data bus or whatever.
+TEXT: Decoding, alright, yep, parallel decoding, that's what your bus grouping is for. So, there you go. RS-232, I2C, SPI. Let's have a look at the SPI. It'd be nice if you can assign the SPI through to the channels here. Bus status on, let's see if you can
+context after: mode. Ah yeah, yes, it's got a time out mode, which means you don't have to use the clock. Sorry, you don't have to use the um, whatchamacallit? And let's have a look. Threshold, okay, so we can set our threshold to kilovolts. Yeah, I'm going to set my threshold
+
+[879] EEVblog #879 - R&S HMO1202 Scope Bandwidth Hack Investigation — Dave Jones (explains)
+context before: What's going on? Hang on, I'll single shot capture that. Bingo! Look at that. So, the invert is doing two rights there with no chip select. That is interesting. Surely you need the chip select to also do the read.
+TEXT: You have to. But, I do find it rather fascinating that that's a hell of a lot more than uh 24 uh cycles, but uh both of these are supposed to be 24 read and write to this um serial interface, this uh three-wire SPI, are supposed to be uh 24 cycles.
+context after: And we're getting a lot more than that. My only conclusion is that there's something else on the bus. The chip select is not going low there. So, this chip is not being selected.
+
+[843] EEVblog #843 - David's rPrint 3D Printer Design — Dave Jones (explains)
+context before: ATOI is ASCII to integer. Pretty basic stuff. You thought they'd get right. Yeah, you think it'd be fast, but that ends up being a massive speed hit on a parser. Of course, because it's text, right? So you're trying to parse text and then convert it to integers and floating point.
+TEXT: You hardly keep up with the SD card's data rate. Wow. Just because the SPI port doesn't run. You're not going to run the SPI port at full speed. You put it down a bit so you don't stuff up. And then you're hardly getting the throughput you need.
+context after: And then you've got this thing that's processing the string, and it's just in time only. And that's actually probably where most of the limitations in the controller are. But maybe are they optimizing how they've written these routines? Maybe they're optimizing them for size instead of speed.
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (explains)
+context before: I got to go back home to turn on my waveforms. I just Look at this, you can execute I squared C commands to the IO encoders. C code. I mean, that's like, you know, hacker's delight, I guess, right?
+TEXT: Um and SPI command to the ADC. So, you can send SPI commands directly to the ADCs. Okay, if you want to script something or or do something like that, but like Seriously, like and it doesn't even know that we've switched the ranges, right?
+context after: The the app thing does not know that we switched ranges. Like, so how are we supposed to know like we're supposed to like manually multiply? Like, I assume it's 1 V per division on the normal mode.
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (explains)
+context before: to be anything on there. Anyway, they are connected through to the module. By the way, this is the pinout on the flat flex over here, and this is the uh lepton module over here.
+TEXT: And I can also confirm that they're using video over SPI. They're not using the MIPI interface. Definitely the SPI bus. They've got SPI chip select connected. They've got SPI clock, of course, and they've got SPI uh MOSI, the output pin.
+context after: So, uh i.e. output from the lepton module into the microcontroller. But, there is no uh MISO pin, so there's no input on that coming back into the module. Okay, so I've got it powered up, and it works works just a treat.
+
+[58] EEVblog #58 - Warm and Fuzzy FPGA Troubleshooting — Dave Jones (explains)
+context before: So, we're still not sure 100% what actually, the exact mechanism which caused it, um, because we didn't want to go into the SPI multiplexing code for the, for the, stack and all that sort of thing.
+TEXT: It, you know, it it just wasn't worth the time. But, obviously, the, the protocol, um, stack for that SPI thing it was calling up, uh, relied on, was wasn't entirely robust enough to, um, to, uh, account for various timings in the FPGA.
+context after: And, FPGAs also do, um, can, you know, do weird things with their port pins and things like that. They can read back all sorts of different things depending on, you know, a whole slew of different circumstances.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: So, there's some extra hardware in there to do that, but the software is the same. So, you pay that extra money, and well, you just get very basic software.
+TEXT: It's okay for just, you know, general use, really. If you just want to muck around and capture your SPI or I squared C buses, stuff like that, low speed stuff, eh, it's okay value for 150 bucks, but just wish they'd add more features.
+context after: Anyway, if you like the review, please give it a big thumbs up. If you want to discuss it, jump on over to the EEVblog forum. Catch you next time.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (explains)
+context before: No problems at all. And, like, if I go back to channel one, it's the same thing. If I go back to channel one, it's there. So bugger it, I've had enough of using this thing to probe its own clacker. Let's have a look now at hooking up the SPI line here.
+TEXT: So I've got all three channels coming in. By the way, it is not a true SPI as you know it, because SPI, if we go in here, is normally a four-wire thing. We've got our clock, our, whoop, bloody touchscreen, our MOSI, and our MISO, i.e.
+context after: input. And output data signals and chip select. But in this case, it's actually a three-wire SPI interface. It's still SPI, but it's three-wire. So it shares, it's bi-directional here. So it's not as great a throughput. It goes tri-state and everything else. So anyway, we don't actually have specific support for that.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: But, that requires extra pins. And here's another cascaded change we've got. If I chose the one with the up-down pins, I would have needed more output pins on my IO expansion device.
+TEXT: Remember I had uh two IO expansion devices before? Now, I've saved cost, and I've only got one. And one of the reasons for that is because I've consolidated many of my parts in this Rev C to use the I²C bus instead of the SPI bus.
+context after: So, I parallel them and I don't use any extra pins on my microcontroller. Brilliant. So, let's take a look at this change. I had two of these devices before, now I've only got one.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (explains)
+context before: Um in this case, we have the middle of the byte, that's kind of when you want to read, um or clock in data, is right in the middle. So, we're reading on that rising and that falling edge.
+TEXT: Strictly speaking, that isn't the end of the complexity of SPI. So, as well as the polarity, the up-so-downness of the clock line, you also have the phase. And that basically is when are we clocking in and clocking out data.
+context after: So, a phase of one is basically shifting the data by half the period of the clock. See, the distance between these red lines is the period of the clock, and notice when phase is one, we've shifted the data across by half.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (explains)
+context before: All right, it's time to learn about the serial peripheral interface or SPI. Um SPI is basically a four-wire interface, occasionally three, that has a clock line a chip select and two data lines.
+TEXT: The data lines are basically data in and data out. SPI has a master-slave relationship. That means that all the communications are coordinated by the single device, the master. The slave doesn't ever initiate communication.
+context after: Um the only thing the slave can do is respond synchronously with the clock through the MISO line, the master input slave output. The master sends data to the slave via the master output slave input.
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (explains)
+context before: 5 minutes left, I'm going to run out of battery for my single take video decode. RS232 spy configure cuz we've only got the two channels. You'd want to be able to configure the external um one up.
+TEXT: Sorry. As the menu, okay, S clock. Positive, negative. Okay, where where do you set up your channels? Where do you set up your channels? It's like you can't. Now, I wish I didn't change the uh display turn off event table.
+context after: Okay, it's got an event table. Wonderful. But, where is How do you set which channel is used for clock and uh timeout? Okay. So, it looks like it's a got a timeout, so you can get away with the uh chip select uh with the timeout thing.
+
+[517] EEVblog #517 - Car Airbag Controller Teardown — Dave Jones (explains)
+context before: And bingo, we have ourselves the accelerometer down here, but I'm surprised that it's two separate devices. It's not just a one MEMS accelerometer. We've got ourselves two. These are Freescale MMA 6800 series.
+TEXT: This one here is the MMA 6821 and this one's the MMA 6856. To the data sheet. Once again, very specifically designed for automotive airbag systems. It's a SPI based two axis medium G over damped lateral accelerometer.
+context after: Woohoo! And it's part of their Safesure system. Beautiful. Specifically tailored for the market once again. Plus minus 20 g to plus minus 120 g. Uh you know, single supply SPI uh compatible 10-bit digital signed or unsigned SPI output.
+
+[fM4bbKVw2og] Uni-T 500MHz 4CH ARB Signal Generator Unboxing — Dave Jones (explains)
+context before: And I can feed that to counter input. And it still gets nothing. So I don't know what's going on there. Oh my god, that's embarrassing. Hello? Hello? Digital. So I can generate digital. How fast can I go? How fast can I go on this spy bus?
+TEXT: Can I go 10 megahertz? You betcha. Oh wow. How high can we go? Can we go 100 megahertz? No. Yes? Can we go 100 megahertz? Out of range. We can do a 50 megahertz spy bus. There you go. That's pretty groovy. And clock?
+context after: 10 megahertz. I squared C. Let's go. Yep, no worries. Can we do, try 100 megahertz I squared C. Oh my god, what pull-up value would you need for that? You can do a 50 meg I squared C as well. And UART? What's the maximum board rate?
+
+[1720] EEVblog 1720 - Mailbag: USSR Bonanza + Logic Training + $69 Logic Analyzer — Dave Jones (explains)
+context before: So, we can set it to like a volt and a half here. Okay, and buffer size 16, okay. And we run it again. Capture failed. Time out occurred. Why?
+TEXT: If we go into here, we've just got our buffer size, our pattern, hardware max USB max speed, hardware EMU data. Okay, that shouldn't matter cuz I've only got I'm only feeding in like a SPI signal here.
+context after: Look at all the decoders though, right? This is just This is just crazy, right? I see Look at Look at all this. This is nuts because this is Sigrok.
+
+[879] EEVblog #879 - R&S HMO1202 Scope Bandwidth Hack Investigation — Dave Jones (explains)
+context before: Um so, we can actually go down. There's all sorts of uh jazz here. 900 MHz, blah blah blah. We won't go through all the specs, uh which are quite impressive.
+TEXT: It's a very nice uh very nice part. Uh perfect for um scope front ends. Here's our pinout. So, we're actually looking what we want to do is uh tap in to the serial line on this thing, the SPI line.
+context after: So, uh here they are. Chip select, SDIO, and S clock there. So, those those three pins, pins 9, 10, and 11, they're the ones we want to tap into to see Oh, by the way, here are the uh here here are the various uh responses for the different attenuation settings, which we'll see.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (explains)
+context before: You You need to connect multiple uh multiple different I2C lines to separate them. Um it's either that or a multiplexing solution. And sometimes you just don't want to pay for the extra chip.
+TEXT: All right, it's time to learn about the serial peripheral interface or SPI. Um SPI is basically a four-wire interface, occasionally three, that has a clock line a chip select and two data lines.
+context after: The data lines are basically data in and data out. SPI has a master-slave relationship. That means that all the communications are coordinated by the single device, the master. The slave doesn't ever initiate communication.
+
+[879] EEVblog #879 - R&S HMO1202 Scope Bandwidth Hack Investigation — Dave Jones (explains)
+context before: Trust me. Here comes the exciting part. It's coming. I know it is. I know it is. And there's an example digital oscilloscope front end. So, maybe that's, you know, they might have used this as an example of how to do this, but, you know, they've been designing scopes for a long time.
+TEXT: They would have their own implementation. So, here's the um SPI pins. It's three-wire SPI interface. Here's the serial protocol stuff, which we'll no doubt have a look at. But, aha, here it is.
+context after: Table six, the filer filer filter selection data field. And these are the bandwidths. Look, you can actually choose full bandwidth if you write 000 to a register somewhere in the chip, or you can get 750 650 350, not quite the 300 MHz maximum bandwidth that which this one has.
+
+[1699] EEVblog 1699 - µTimer PROJECT Part 1 - The LCD — Dave Jones (explains)
+context before: So, you have to put those, you know, in various configurations. Yeah, they've got a capacitor across two pins there, or they've got others going down to ground like this, and they've strapped these pins here.
+TEXT: So, I haven't gone through the exact pinout of this thing. Um they're only using uh some of the pins here. I think I specified an SPI interface, cuz this LCD is capable of SPI serial interface.
+context after: I think it might do I squared C as well, as well as 4-bit and 8-bit parallel interfaces as well. So, it's very flexible, but I think it might be working serial, but haven't 100% confirmed that.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: You don't have to have a fancy mixed-signal scope like this. You can do it with a cheap simple PC-based USB logic analyzer that supports these serial uh decodes. And we can change the number of bits here, and we can do all sorts of things and we can set up our uh trigger.
+TEXT: I'm triggering from the SPI uh bus at the moment as you can see. We can trigger off all sorts of things and we can trigger off two different types of serial buses and it's really is quite neat.
+context after: But we can go into trigger setup and once we get all this set up, we'll be able to trigger off this SPI bus and see exactly what's happening here.
+
+[991] EEVblog #991 - Mailbag — Dave Jones (explains)
+context before: FPGA. And uh David and I were just actually discussing this project before we opened this uh coincidentally. And how I looked before and they didn't have the ability. I looked at the previous like the Analog Discovery and stuff and all it had was the pattern generator like this and that didn't actually uh do it.
+TEXT: But this uh protocol one, bingo! We can generate UART, SPI, I2C, and SPI can go up to 50 meg. Thank you very much. That's unbelievable. Uh unfortunately, a little bit of a limitation.
+context after: It doesn't look like you can, you know, do like Can you type in your own frequency? No. Okay, so it's it's fixed divider frequency. That's a bit of a shame.
+
+[e4wvxWWMla0] Rohde & Schwarz HMO1202 - Like a Bought One — Dave Jones (explains)
+context before: Hi, you saw in a previous video how dumb-ass Dave left the uh shielding can off this Rohde & Schwarz HMO 1202 series scope when I did a um hack-in video on the uh SPI bus uh for the front end to hack around with the uh bandwidth and stuff like that.
+TEXT: And yes, it is uh possible if you tap in uh to the SPI bus cuz the uh software bandwidth is uh defined by the front end chip and you send commands to it and the bandwidth limits it.
+context after: So, anyway, um yeah, I forgot to put the metal can back, and of course it's picking up the 50 Hz. And I'll show you, if I actually pick this up, you'll see that's coming from my ESD mat.
+
+[879] EEVblog #879 - R&S HMO1202 Scope Bandwidth Hack Investigation — Dave Jones (explains)
+context before: sheet the 20 MHz bandwidth limit. So, practically every scope has a 20 MHz bandwidth limit and this is almost certainly how they're doing it if they have this chip.
+TEXT: Just send an SPI command in, bingo, you've got your 20 MHz bandwidth limit and it's most likely how they're doing the bandwidth the software license upgradeable bandwidth as well.
+context after: So, I'll do this using my Tagarno microscope here and yes, I've got to prop it up on some books. So, why not prop it up on the Art of Electronics?
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (explains)
+context before: The only line that the slave does drive is the MISO. So, a typical SPI frame has a signal that looks like this. You have a clock line that goes up and down like this, and then you have a uh select line, which is active low, and you have these data lines.
+TEXT: The data lines are synchronized with the clock, and they could be synchronized with the rising edge or a falling edge. So, SPI isn't as basic as the previous picture made it seem.
+context after: It actually has a thing called polarity, which complicates this interface, which basically indicates the idle state, that's this line here, that the clock line returns to. That is the the logic level that the clock line is on when it's not communicating with any devices.
+
+[1074] EEVblog #1074  - Custom LCD Design - Part 2 - (µSupply Part 17) — Dave Jones (explains)
+context before: So, we need obviously to use an LCD uh driver chip. And I've mentioned this previously. So, we've decided on the uh Holtek 1622. So, let's go take a look at that one.
+TEXT: The advantage of this is that it basically only needs three lines for the microcontroller. It's basically an SPI interface. So, we have our our clock, MOSI, and uh chip select.
+context after: Uh this chipset can actually read the data back out as I'll explain in a minute, but we're not using that functionality. We're just driving the LCD, and we don't really care to get any data back.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: Well, I've actually consolidated them on the microcontroller, but how did I do that? Because I didn't have any free pins last time. I was absolutely maxed out and you guessed it, I maxed out again, but I managed to gain a couple of pins by ditching the SPI interface.
+TEXT: Remember that bit banging SPI interface I was using? Well, I got rid of that and I consolidated with I²C part. So, on this I²C bus here, SDA and SCL there, I've got two pins.
+context after: And let's have a look at what we're driving here. We're driving not only our I squared uh pot here, um we're doing that. So, we've got that capability for no extra pins, but we're driving our LCD as well, just like we were last time.
+
+[1275] EEVblog #1275 - Uniden UHF Walkie Talkie Teardowns — Dave Jones (explains)
+context before: But apart from that, it's pretty easy. It's just uh GPIO. So, it's good that it's got GPIO because you might want to hook up like a little eight-pin micro to this thing and then you can use the GPIO on this to uh drive it.
+TEXT: So, yeah, that's about all she wrote, though. But the other thing is we've got the full programming guide as well. And this is uh how you program it via the I2C or SPI.
+context after: Okay, it sounds like you can use either SPI or I2C. Take your pick. I don't think you need both. So, that's really flexible depending on what your micro has.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: It comes from my new New Zealand uh supplier. It looks first-class quality, Circuit Labs in New Zealand or um pcbzone.net. They're This board is manufactured in New Zealand. I might give you a closer look at that later, but let's check this pin here, which is the output of the AVR.
+TEXT: No, it's exactly the same on the scope. So, what? Fail. So, what I want to do here is check my SPI clock here, pin 26. It is actually the uh ADC3 input or A3 input.
+context after: So, if I go to my Arduino code, let's uh check out to see if that's actually correct. And there it is, SPI SClock A3. And the others work. I've defined that pin, and we can go down and check it further down, but I don't know.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (explains)
+context before: Hang on. Look at this. It's got code generation for the UART, spy, UART with buffer. So, let's let's go to like if I wanted a spy bus, for example.
+TEXT: Neat. Look at this. Fantastic. I can set the pin I want. I can set the pin, the SDI pin, and the bit three, copy to clipboard, master or slave configure Fantastic.
+context after: And this was like 8 meg. It was just an 8 meg tool and it just I don't know where it installed the file. I think it maybe just ran.
+
+[1146] EEVblog #1146 - New Rigol MSO5000 Oscilloscope — Dave Jones (explains)
+context before: Yep, we can use the analogs. There you go. So, in theory, we could have our 16 channels 16 channel logic analyzer and serial decoding happening on our analog channels as well.
+TEXT: So, that's pretty jazzy. Let's go to SPI. Okay, it's got timeout mode. That's nice so that you don't need the extra line there. You don't have to dedicate that.
+context after: Once again, selectable threshold level in kilovolts. Yeah, nanovolts. Yeah, that's what I need, nanovolt threshold level for my SPI bus. Yeah, once again, the sources analog and digital for it looks like for any of the serial decoding.
+
+[DX_f0Cg6pHo] How a 4-20mA Process Control Current Loop Rotational Sensor Works — Dave Jones (explains)
+context before: I'll get that, and I'll pull up the data sheet right here. And that's an Osram AS5047 um Hall effect sensor there. And it's actually a 14-bit jobby. So, this one at uh 12 bits, they're uh being a bit uh conservative uh there.
+TEXT: It is The actual chip is uh capable of more than that. But uh yeah, that basically gives you an an SPI output. It's got a lot of magic built into that puppy.
+context after: And what else they've got here is a Microchip uh 12-bit DAC there. I don't know what that jobby is there. But if we flip it over, got a little programming port there.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: I don't like get it. You can just get rid of it like that, but yeah, I don't We have to go back to there. Press the button again. Don't like that.
+TEXT: Anyway, let's choose SPI and then go in and check our signals, and the three lines here, we should be able to Yep, we can choose our analog channels. Nice.
+context after: And if we choose turn digital on, do we get our digital decodes on our digital channels? We should. That's That's a theory anyway. Clock Aha. Digital channels. There you go.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: I'm triggering from the SPI uh bus at the moment as you can see. We can trigger off all sorts of things and we can trigger off two different types of serial buses and it's really is quite neat.
+TEXT: But we can go into trigger setup and once we get all this set up, we'll be able to trigger off this SPI bus and see exactly what's happening here.
+context after: We don't have to do this. We can actually just single shot uh capture this thing using the regular um scope if we want. Um but it just it'll be nice because it'll give us our data uh decode here and we can see that the data will actually match what we're sending in our software.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (explains)
+context before: Probably for a delay. Well, it has to be. There's no other reason. Yeah, there's no other reason. Although, they've got this delay thing here, so I don't know. Dot delay four.
+TEXT: Does this make any sense to you? Uh yeah, it's a bit banging thing. Yeah, well, yeah, yeah, it has to be cuz it doesn't have a hardware or SPI.
+context after: So, it's a bit banging thing, but it's it's obviously in C. It's like it's a mix of assembly and C or something. Yeah, where where's the assembly? I don't Set one, is that a That's not a variable, is it?
+
+[399] EEVblog #399 - GoPro Hero 2 Teardown — Dave Jones (opinion)
+context before: And our LCD, fully uh custom of course, doesn't cost you much to get a fully custom um LCD. So that's a custom uh COG chip-on-glass one there. You can see the chip in there.
+TEXT: It's embedded on the glass like that. Has the driver. That's the uh driver for the LCD and it looks like it's just a uh serial interface there. There's some power and a couple of other lines so that'll be like an SPI interface um LCD or something like that that goes over to the uh flat flex connector over there.
+context after: There's a rubber spongy rubber backing on that just holding it in place. And there's a bit of bulk capacitance in there with all those tantalums. And the lens pokes out through this board and that's fixed.
+
+[8qmU7SZu_-I] Altera Software Dongle Teardown — Dave Jones (opinion)
+context before: Perhaps? Do we have a couple of... that'd be center, would it? So this one goes over here like this. This one goes over here. These two Vs here. That one goes to that cap, which I presume might be a... Oh, no, I don't see another...
+TEXT: I don't see another V going off that. Hang on. No, and those two Vs there. So there's so much to the theory about that being a I2C, you know, EEPROM or something like that. Could be like an SPI interface, but that's actually got a surprising amount of resistors on there.
+context after: That's actually a fairly complicated beast. A couple of diodes in there, what have they got? Like steering diodes or something? That's, you know, they've gone to a lot of effort. So, hmm. Let us know what you think down below. Has anyone ever, did anyone ever reverse engineer one of these Altera dongles?
+
+[e4wvxWWMla0] Rohde & Schwarz HMO1202 - Like a Bought One — Dave Jones (opinion)
+context before: 
+TEXT: Hi, you saw in a previous video how dumb-ass Dave left the uh shielding can off this Rohde & Schwarz HMO 1202 series scope when I did a um hack-in video on the uh SPI bus uh for the front end to hack around with the uh bandwidth and stuff like that.
+context after: And yes, it is uh possible if you tap in uh to the SPI bus cuz the uh software bandwidth is uh defined by the front end chip and you send commands to it and the bandwidth limits it.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (opinion)
+context before: But uh who knows they may actually um because this thing is not software upgradeable they may actually uh choose different parts in there for example. So there could be different resistor or capacitor values or something like that to actually uh bandwidth limit that uh somewhere else.
+TEXT: But then that wouldn't leave their options open for the future if they wanted to then offer a bandwidth uh upgradeable model. So yeah, anyway, in theory, you could actually crack into the SPI bus on that and um change the gain to anything you like.
+context after: Um but of course then you wouldn't have things like the uh timebased setting and other stuff in the uh software. So yeah, I don't know. I'll leave that one definitely up to the afficionados.
+
+[290] EEVblog #290 - Mailbag — Dave Jones (opinion)
+context before: hasn't, um, centered my stuff on the screen because it's all the way over here, um, because my trigger condition, that's the pre, I assume that's all the pre-trigger data in there, so it's automatically captured that, and there's my, uh, SPI bus. So you can see the advantage of the
+TEXT: cheap memory though, but, um, I, you know, we can zoom across here like this, hang on, what's going on here, the decoding has to catch up there, so I'm not sure what happened, uh, I think there's a glitch in my SPI bus, I'm using a
+context after: demo, uh, board to generate uh, SPI, so like, whoop, there we go, we can put, uh, a marker there, can we zoom in? Yeah, we can use our, um, scroll, our mouse, uh, scrolly center wheel to, no, it looks like it just moves it from side to side, we have to use
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (opinion)
+context before: Maybe that time there to set the chip select back high is causing the DAC. I don't know. I'd have to read the data sheet but let's go in and we can actually examine the data in here and as you can see, it hasn't actually decoded individual data here.
+TEXT: It's just got B611. It hasn't actually decoded our data like I wanted there. So maybe I haven't set the thing up properly yet but there you go. There's our data and our chip select sorry, our our clock here.
+context after: The data should be stable when it transitions. So, when it clocks high here, then uh that is going to read in a one from the data. When it clocks high here, it's going to read in a zero.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (opinion)
+context before: Fantastic. I don't care what this thing cost. It's brilliant. Anyway, that takes all the uh dickery out of Yes, that's an industry term. Uh dickery out of like your interface.
+TEXT: Just use a standard SPI um interface, and you don't have to use like multiple optocouplers or anything like that in multiple lines. No, that's a great solution. I'm going to have to remember that chip.
+context after: That's really neat. Wonder how long that's been around. Then again, it's been a long time since I've been able to do any uh galvanically isolated uh serial interfaces. Often I've rolled my own for that sort of aspect.
+
+[761] EEVblog #761 - Pebble Time Smartwatch Teardown — Dave Jones (opinion)
+context before: And the nearest data sheet we can get, which is basically an equivalent one except a slightly different resolution, is this one from It's manufactured by Japan Display Inc. And this is a low-temperature polysilicon memory per pixel LCD display.
+TEXT: So, it actually contains individual memory in there to for each individual pixel to turn it off and on for the all the RGB elements. And it doesn't look like a SPI interface thing.
+context after: It looks like it you know, it has its own custom interface. And there is data in here about how to actually drive the thing and stuff like that. There's like the power on sequence and power off and stuff like that.
+
+[934] EEVblog #934 - Raspberry Pi Supercomputer Cluster PART 1 — Dave Jones (opinion)
+context before: Beauty. And although I haven't tried this, I believe that all you got to do is add in one uh line to the uh boot uh config file in your build and then bingo, it just automatically works.
+TEXT: This um ENC28J60 chip just handles it. You plug it into Ethernet and away you go. Now, of course, it's not going to be the uh fastest solution via the SPI bus.
+context after: You can change the speed in the uh configuration and stuff like that, but it's not going to be nearly as fast, but you know, this thing is basically a uh compute system, you know?
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (opinion)
+context before: I'm doing I'm press start single shot and it's still sitting there waiting for the trigger. So that's no good because we don't want to trigger off a bit of data.
+TEXT: I want to actually trigger off the uh chip select or something like that. Instead of um the SPI is just the data. It only gives you the options for the data.
+context after: So we don't want that. We want to actually trigger off an an edge for one of the uh source channels and here's where you should label them. So that instead of having 1 2 3 4 like that, you should actually go to the effort to label them but ah, I'm not going to bother today.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: Like I'm trying to set up a uh asynchronous serial one uh say RS-232 one at the moment. And uh of course, it um it still has the I squared C there and it automatically like if you go in here, set it up, it tells you that uh these two are already in use by the I squared C.
+TEXT: So, looks like you can do multiple ones. Well, as you'd expect because uh really it's only just, you know, decoding this stuff in software after the fact. So, really it should be able to do anything if you can capture, you know, so really you could uh with eight channels, you could capture uh four separate SPI, uh four separate I squared C buses, or uh asynchronous serial buses at the same
+context after: time. Beautiful. But, one annoying thing is I was on this tab here and I changed my uh labels and channels up here, but that only applied to that tab.
+
+[991] EEVblog #991 - Mailbag — Dave Jones (mention)
+context before: There we go. Look. Uh well, okay. We can adjust it and then read it and feed stuff in and just see the LEDs and stuff like that. That's kind of neat.
+TEXT: And then you can do uh protocol stuff. This is what I'm interested And by the way, you can just generate patterns a pattern generator. So, I was actually um going to design a product that actually did this cuz I wanted something that you can generate uh you know, SPI, I2C, and UART and other uh signals up to uh you know, very high rates and stuff like that, hence the
+context after: FPGA. And uh David and I were just actually discussing this project before we opened this uh coincidentally. And how I looked before and they didn't have the ability. I looked at the previous like the Analog Discovery and stuff and all it had was the pattern generator like this and that didn't actually uh do it.
+
+[1309] EEVblog #1309 - Siglent SDS2000X Plus Scope Teardown+Hack — Dave Jones (mention)
+context before: I believe Siglent actually have like a proper demo board for this that allows you to actually look at all the different types. So if you want me to actually look at that maybe ping Siglent and get them to send a board in and something and then we can do that like it's just nice if you already have like a nice hardware example that you can probe easily and
+TEXT: you know do all that sort of stuff. And like all that sort of jazz but that is an optional extra of course and it's got of course well no mass testing it's got serial decoding as well and look this is not a review of course but it's got I2C SPI UART CAN LIN FlexRay CAN FD I2S got a built in hardware frequency counter but it's already showing it up there so I don't
+context after: know why they actually have another counter over here. I'm not entirely sure but anyway it's pretty powerful the trigger of course they've got the zone triggering if I remember rightly I had some issues with that on the 5000 series so zone one on can we Yep, go like that and you can trigger within the zone must intersect like that and bingo it's going to trigger on little ramp pulses and things like that
+
+[1552] EEVblog 1552 - Digilent Analog Discovery 3 — Dave Jones (mention)
+context before: Seven-segment display there. They've got a spectrum analyzer, a network analyzer, and they've got an impedance analyzer as well. Fantastic! And they've got a curve tracer. I didn't know, I've never played with that before. Uh, protocol analyzer, which, um, what sort of, uh, protocols do you get?
+TEXT: UART, SPI, I2C, CAN, uh, CEC, JTAG, SWD, and AVR as well. Nice! And then you can do, uh, custom scripting as well. I've never, uh, tried to script this thing, so I don't know, but apparently it's really good. And apparently it integrates with MATLAB, and because National Instruments own it now, I think it integrates with National Instruments, um, tools somehow.
+context after: And all that sort of jazz. So, automation is, uh, pretty high on the list here. Anyway, so we can go to, uh, if you just want to get back, you can get to welcome, so we can go to any of the, whoop, I just heard the relays, uh, click down in there, and we're good to go.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (mention)
+context before: they'll, uh, provide you a report telling you if your, uh, product passes or fails the USB 3.0 spec. And we'll try and, uh, see if we can maybe do some serial decoding perhaps.
+TEXT: I'm not sure if this one's got it, but um, set up. Geez, these touch screens are really touchy, pun intended. Um, serial decode. Hey, there we go. Well, hey, it's already on USB 3.0 and here's some of the stuff USB 3, 2, SPI, SATA, um, PCI Express Gen 3, all sorts of stuff, JTAG, LIN, InfiniBand, whoa, FlexRay, whoa, Ethernet, um, 10 gig, it does 10 gig, um,
+context after: uh, Ethernet as well, but we want USB 3.0. Show decode, is that that's grayed out. So, data source one, channel one, bang. Uh, descramble. Uh, show decode. It's not there's no auto setup.
+
+[8] EEVblog #8 Part 1 of 2 - Graphical LCD Displays & PIC Micro Demo Boards — Dave Jones (mention)
+context before: Now, this is a little New Haven 128 by 64 pixel LCD display I'm going to use in the new watch. And I've been trying to get it up and running and I've got a couple of stories to relate. Now, the first story is, do you use serial or do you use a parallel interface?
+TEXT: Now, this little LCD actually is quite cool. It has both an SPI serial interface as well as a more traditional 8-bit parallel interface. Now, an interesting question with this is, do you use serial SPI mode or do you use parallel mode? Now, I started, I wired this up to use parallel mode because I wanted increased transfer speed, which is quite important.
+context after: So, I set up my little, I just prototyped this up just so I could use it. It's got a little flat flex cable in there, 0.5 mil pitch. So, it's really quite small and, you know, it's really fiddly, so I wired up a header connector on it.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (mention)
+context before: Hi, just wanted to do another video just playing around with the new Rigol 5000 series scope and just maybe comparing it to some other scopes doing some serial decoding and just playing around with some of the features of it. And I found right off the bat here, I was just playing around with some SPI decoding and I don't know what's going on here.
+TEXT: I really don't. I'm in just standard two channel mode. I'm feeding in two signals here and I'm just playing around with some SPI decoding. And you might think there's no signal there. They're both grounded, channel one and channel two. I've got my trigger point right in the middle here and it might actually come good while I'm actually saying this.
+context after: But trust me, there's and it's refreshing. It's refreshing and it's not. There it is. There it is. I swear I didn't touch it. These signals I'm feeding in SPI signal and they just magically appear. Look, if I press run, stop, look, they're gone, right?
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (mention)
+context before: So, here we have the port zero up the top sending 42 and then we have port one sending 53, 45, 47, all the odd numbers and each of them going up by two and the port zero is doing the same, 42, 44, 46, 48.
+TEXT: So, we can confirm that it is receiving the frames correctly and Saleae Logic um the Saleae Logic Analyzer is correctly interpreting our frames. So, I hope you found that useful and I hope that you learned a little bit more about the SPI protocol, bit banging, and how you can use, you know, simulations on the PC to help out in your debugging.
+context after: Bye. Mhm.
+
+[313] EEVblog #313 - Bus Pirate LCD Debugging — Dave Jones (mention)
+context before: Anyway, let's give that a go. Right, now um what we want to do now is go into the macro menu. So, we want to do a bracket zero like this.
+TEXT: And that puts us into uh the macro uh various macro options. And uh that's the thing. This is pre-programmed into the uh Bus Pirate for um you know, testing LCDs and for other uh items, you know, for the SPI and I squared C and all that sort of stuff, but we're in the LCD menu and we can just go LCD reset.
+context after: So, I believe we have to do one bracket. And yep, we've reset. And uh let's do init LCD. So, we need to do Sorry, two. Okay, bracket, which I like means command.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (mention)
+context before: I'm not sure if this will show up on camera or not, but the Roden Schwartz is the winner. It has the biggest and brightest screen out of the bunch. Much higher res too. This thing sticks on a stick. It's just beautiful. And even the old Rigol 1054Z has a, you know, a brighter screen on it.
+TEXT: And yes, that screen is glarey, but putting it side to side with the Roden Schwartz, ah, it's, the Roden Schwartz is probably glareier. It's like crisper. Shows more detail. Love it. Should be in the spec sheet. You know, screen reflection, signal integrity. Anyway, I'm doing some SPI serial decoding here.
+context after: So we go into the decoder. You've got four different decoders. We've got it set up for SPI. We've got mode with which is, ah, the timeout mode, um, which allows you to just have the clock and the, ah, MOSI data down here. So you've only got the two channels here.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: So, unless you've got a really high-priced, properly designed logic analyzer probe system, you're you're you're really kidding yourself. You're You've really only got a toy. Now, there's nothing wrong with just having a toy logic analyzer.
+TEXT: They're They're useful for, you know, most jobs, really. Uh just for analyzing your I squared C bus or something like that. But, if you're into serious high speed, you know, 50, 100, couple hundred megahertz, something like that, these toy logic analog USB logic analyzers really aren't going to cut it.
+context after: Yet another decision you need to make when you're buying a logic analyzer is there's once again there's two different types. There's those that uh capture and buffer the signals within the thing itself and then upload the data to the PC or there's the ones that uh work in real time and they're the cheap ones.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (mention)
+context before: So that works out to a lot of pins and this is why you might want to go to a COG display chip on glass cuz it has the driver chip built on.
+TEXT: So you can simply talk to it via an I squared C bus or an SPI bus or whatever or the regular um you know Hitachi interface LCD driver or whatever you choose to In this particular case, no because we've just got the pins or the flat flex or the zebra strips, we have to drive every one of these 40 pins.
+context after: So that becomes a problem. Now if you course if you've got a relatively small LCD, you can use your existing microcontroller that you already plan to use. Or you can choose a variant of the microcontroller that has a built-in LCD driver.
+
+[1241] EEVblog #1241 - Power Up Display Counter Project - Part 1 — Dave Jones (mention)
+context before: uh suppliers and check those out looks like pervasive displays they're really targeting that that that shopping thing you'll see that everywhere eventually like even in the uh mom-and-pop stores you'll find those there so you know these are still like too thick I just want even if I went for a it's not looking great is it this is nice
+TEXT: they you know you can get a nice little SPI adapter board that's that's really great for uh development so that's that's their e-paper displays hmm open source demonstration code works on the c-duino nice yeah I just don't want a dot Matrix so maybe this one over here I might try and get some data on
+context after: that but I really don't like the interface I'm not liking this at all it's it's driving man another one of these projects that you know you think is uh quick and simple I'll just find a little e-ink uh display module just you know shaped like this and and maybe with like a nice flat uh you know
+
+[913] EEVblog #913 - Mailbag — Dave Jones (mention)
+context before: if you want to drive it old school. Ah, here's a breakdown of the different modules in there. Lovely quick start guide here. The Diablo processor, that's the one. They've got their own processor and their own language for driving graphics displays and things like that.
+TEXT: The 7-inch we've got here, 800x480 resolution. And then if you've got the touch version, you've got a capacitive touch or DT's resistive touch, DCT, capacitive touch, choose your flavor depending on your application. Um, and all the interface types. It can do SPI, serial, I2C, GPIO, it can do analog.
+context after: So it can actually, because it's a processor, you can actually program it to do its own thing. It can be its own controller. So if you're developing some sort of interactive user display terminal or something and you want to have it do some basic processing,
+
+[735] EEVblog #735 - Mailbag — Dave Jones (mention)
+context before: as well. Also it's got an E-squared PROM and two I-squared C bus extenders. Awesome! Excellent! There you go. Thank you very much, John Lumley. And I'll post a link to the Kickstarter down below if you want to check it out. So as I said, it is a hat for the Raspberry Pi
+TEXT: to do all sorts of multi-channel goodness, 12-bit PWM, 12-bit ADC, 12-bit DAC, and some level-shifting of SPI and serial stuff as well. And, well, it looks to do just that. He's got the requisite chips on there, no input protection at all or anything like that that I can see, no output buffers, but
+context after: it all, like for the DAC for example, it all depends on what you use, no output driver, transistors for the PWM for example, so it's not a high-power thing, it's basically a logic level low-level type thing, it's not like an industrial controller add-on
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (mention)
+context before: So, that's really quite annoying. Um, hold off down here, of course, we have our, uh, hold off auto, normal, single, all your basic stuff. Apart from that, you know, it hasn't got anything, uh, too fancy.
+TEXT: There's no, um, I squared C, uh, triggering, SPI, or any logic analysis, uh, triggering, or anything like that. It's not even an option, so, uh, forget it if you're looking to do, uh, digital troubleshooting, because you could, with them, you know, very large, uh, 10 meg sample memory in here.
+context after: It'd be, you know, ideal for, uh, you know, decoding packets and stuff like that, but, no, forget it. Um, it doesn't have that capability whatsoever. Pulse trigger down here, we've got some other stuff.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (mention)
+context before: I like the software, the software's quite good in terms of USB scopes I've seen, it's really quite good, but it's just, it's not good enough. I expect more, especially for the price. And if we go to the digital stuff down here, we can choose buses, we've got I2C,
+TEXT: parallel and SPI, um, where is like RS-232? Where's serial? That's disappointing. Um, so yeah, there's our lines, so we can choose, what's that, enabled, okay so there we go, we're turning those on here, presumably we can drag, yeah we can drag those, it automatically rearranges, that's good.
+context after: It's doing all the regular stuff. Our maximum sampling rate is one gig sample per second on the digital lines, and we can set our threshold voltage, it's all adjustable so it doesn't matter what logic family you're using, and that maximum digital buffer size
+
+[MC9_4mpqVgU] eevBLAB #5 - Are Mixed Signal (MSO) Oscilloscopes Worth The Money? — Dave Jones (mention)
+context before: So, you might think speed-wise and memory-wise, this is a pretty good logic analyzer, but uh it's not that great. Actually, well, the sample rate's really good, right? The sample rate's fantastic, but most digital stuff you do in these days is it's not like it was 20 years ago where, you know, you had a whole board full of hundreds of chips and they were all interconnected all digital
+TEXT: interconnected and you had to debug them all. Now, it's all like serial buses and things like that. So, typically when you look at a logic analyzer, you're looking at doing serial buses, SPI spy buses, I squared C buses, you know, CAN buses maybe, you know, things like that, one wire buses.
+context after: So, you know, often you don't need those eight or 16 logic channels that you normally would. Now, uh the other thing is is that logic analyzers aren't as good as scopes.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: And there's a whole bunch of software options, mine came with all these trials already installed. Mine came with all these trials already enabled out of the box, but mine, I don't know if it actually comes out of the box. And the good thing is, is the time left is the operating time left,
+TEXT: so it's not, you know, like in 30 hours. I've had this for like many weeks now, and it hasn't timed out, so it must be operating hours. But as you can see, the trigger, decode, I2C, SPI, whoop, and it's vanished. And this is the software version and the hardware version that I'm running
+context after: for those playing along at home. And one thing I do like in this utility system menu is when you pair up the scope, you can actually set whether or not you want it to go to scope defaults or to the last setting. Nice.
+
+[304] EEVblog #304 - Mailbag — Dave Jones (mention)
+context before: thing about these calipers is that most of them, and this one does by the looks of it, it's got one of these data ports in there. You can see the pads directly on the PCB, and don't quote me, I don't exactly remember, but it is like a, either like a, it's some sort of a serial output, whether it's
+TEXT: sort of like a UART RS-232 type compatible, whether it's a SPI, I can't exactly remember. I'd have to look that up. But yeah, apparently you can get the data out of these very easily, and interface them to a microcontroller, and use them for all sorts of weird and wonderful projects.
+context after: Because these, the slide, the mechanism used to detect the absolute position of these things is, you know, extremely accurate. So these things can be very, very useful to hack into and use for other projects. So maybe I'll use this as an experimental hack one, maybe.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: all four channels, I've got FFT math, I've got reference waveform, I've got serial decoding up there, which is the SPI bus decoding, I've got all the statistics turned on, and I've got cursors turned on, everything turned on, and I can still play around with that, and
+TEXT: it's still fairly responsive. Like, it doesn't bog down at all. Very nice. Now if we go into the math option here and check out the decode capabilities, I showed this briefly before, we've got RS-232, parallel, I2C and SPI, and yes these decoders are software options, you've got to
+context after: buy it. Let's actually try out the I2C, I've turned my decoding off and on, like this, so there we go, it pops up, and our data is, our clock is channel 1, data's channel 2, you can exchange those over and you can see that
+
+[290] EEVblog #290 - Mailbag — Dave Jones (mention)
+context before: full 64 meg samples like that, so, or meg, uh, bits, um, 8 meg samples like that because it does quite take an annoying, rather annoying little, um, amount of time there. You saw that message that said evaluating bus there, it was obviously, uh, decoding that, and it
+TEXT: hasn't, um, centered my stuff on the screen because it's all the way over here, um, because my trigger condition, that's the pre, I assume that's all the pre-trigger data in there, so it's automatically captured that, and there's my, uh, SPI bus. So you can see the advantage of the
+context after: cheap memory though, but, um, I, you know, we can zoom across here like this, hang on, what's going on here, the decoding has to catch up there, so I'm not sure what happened, uh, I think there's a glitch in my SPI bus, I'm using a
+
+[313] EEVblog #313 - Bus Pirate LCD Debugging — Dave Jones (mention)
+context before: Give it a go. Let's try it. And just to get this thing up and running really quickly with minimum amount of fuss I thought I'd use my Bus Pirate.
+TEXT: Haven't used it before. I've got a Bus Pirate version 3.5. I think it's a slightly older model. It's available from Dangerous Prototypes. It's open source hardware. It's really good for you know decoding serial interfaces, you know, SPI, I squared C and all that sort of stuff.
+context after: But it's got like built-in modes to drive LCDs and drive various you know dozens and dozens of types of chips. Really handy little device. It runs on a PIC 24.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: And these do exactly the same thing. You turn a knob on these two here. You turn a knob, but a microcontroller generates the voltage. Now, in terms of the DAC uh here, you know about digital-to-analog converters, or if you don't, look them up.
+TEXT: I won't go into them here, but basically, they're a dedicated device. You feed a digital signal in via usually, you know, like a serial input these days, an SPI or an I²C interface, or if they're built into the micro, they could do that, and they give you a direct voltage out.
+context after: You don't have to do anything else with it. They're magic. But, a pulse width modulator is exactly the same as a DAC. It works It It well, it works differently, but it gives you the same result.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (mention)
+context before: well? Well here we go. We can insert interpreter here, and we can actually set these up and define our signals. I don't have a bus hooked up at the moment, I could, but I'm not going to be actually bothering testing it. But there we go,
+TEXT: we can do SPI, I squared C, and UART as well. So looks like it has all the functionality. There we go, we can get, oh, ones and twos complement. All sorts of weird and wonderful output formats there, and I squared C, and we can set up which channels we want those on, and UART
+context after: as well. That'll go up to 230k board. Very, very nice. So there you go. It's got all that capability built in, so quite a useful logic analyzer apart from protocol decoder. I'm going to assume the protocol decoder works, so I'll give it the benefit of the doubt.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (mention)
+context before: And let's have a look at what we're driving here. We're driving not only our I squared uh pot here, um we're doing that. So, we've got that capability for no extra pins, but we're driving our LCD as well, just like we were last time.
+TEXT: So, we've got our LCD, and I changed my DAC here from an SPI DAC to an I squared C DAC. And um I think it might even be a few cents uh cheaper as well, but I freed up those three pins on the um on the on the micro because I've gone for an I squared C device instead of SPI.
+context after: So, really, that was a bit of a no-brainer. So, these things cascade down, and I freed up all these pins. Now, you're probably wondering, "Where is my analog-to-digital converter?"
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (mention)
+context before: A 32 intensity uh, gray scale screen. Yes, it is only a green screen, but it was true mixed signal, so you'd have the 16 channel logic analyzer as well.
+TEXT: Fantastic. You could configure all that. You could trigger it. It had I squared C triggering in here. Here it is. Where is it? More I squared C triggering. It could do SPI and TV and pulse width triggering and pattern triggering and all sorts of weird and wonderful stuff.
+context after: It was pretty much state-of-the-art and I loved the interface for this. It was so easy. Dedicated vertical controls, horizontal that just worked as you'd expect. Simple uh, acquire menus had real-time mode or there it is.
+
+[358] EEVblog #358 - Electronex 2012 — Dave Jones (mention)
+context before: If we do a single shot on this, we can actually look down to... Benefit of the long record length. Things like individual color bursts on it. There's also the option to go up to 56 meg on the product. Is that a software option?
+TEXT: Yes, software. Right, okay, so it's software limited to begin with. Yep, that's correct. All the options on it are software. There's a serial bus to code option for it, I2C and SPI. It's also got the high input sensitivity down to 500 microvolts. 500 microvolts, that's...
+context after: There's obviously digitizer noise. These can run in a high resolution mode, which I know there's been a bit of talk about on the blog. There has been some talk on the forum about the high res. That's the high res mode switched on at 500 microvolts per division.
+
+[946] EEVblog #946 - Apple (Raspberry) Pi Cluster - PART 2 — Dave Jones (mention)
+context before: board, and then your riser board plugs horizontally over to here. And of course you can supply your 5 volts power through the Raspberry Pi header from your riser board like this, but you could actually have two of them which then plug in like that.
+TEXT: But then you'd maybe have to change the pin out over here, couldn't use the standard Raspberry Pi one, or you wouldn't have to wire them all the way through if you wanted to get, say, the serial and other ports out of their SPI and everything else out of these things.
+context after: So you might have to have a custom header, a custom pin out on your riser board like that. Or you could just have some extra pins, or something like that. So instead of a 40-way header, you could use a slightly larger one, or a
+
+[909] EEVblog #909 - Heart Defibrillator Teardown — Dave Jones (mention)
+context before: that, and yeah, by the way, all the voice, oh I didn't look at the voice stuff, there might be a voice chip in there. Oh, hang on. Yep, there it was, hiding under the label exactly what I suspected. It's the classic chip called ISD4004
+TEXT: series, they've been bought out by various companies over the years anyway, I don't know. But yeah, they're still the in thing. Single chip voice recorder, you pre-program in the voices in there, and then this one's an SPIR control, but you know, there are dumber ones
+context after: that you can just, you know, like five different playback messages or whatever and you just stroke the pin and boom, it plays it back. So too easy. And there's some more analogue-y goodness and stuff down there, sense amps and you know, things like that.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (mention)
+context before: Now, of course, because the logic analyzer probe and license on this is quite expensive, can we do the serial decoding without the logic analyzer? Can we use the analog channels here?
+TEXT: Well, let's turn on our decode here and bus decode, it's got how many different decoders? It's got two different decoders, and protocols standard, you do get I squared C, SPI, and UART standard, but CAN, LIN, and FlexRay, and I2S, they're all separate priced options.
+context after: But, at least you do get the main ones standard, I believe. I just noticed something here on the menu, there's like if you go in here and say choose signal, where's the back Where's the menu back button?
+
+[592] EEVblog #592 - Mailbag — Dave Jones (mention)
+context before: So, there's probably only a few devices on the market that'll do that full speed. So, there you go. Check out the Cypress EZ-USB FX3. Bit of a beast. And there you go, it does actually have an ARM 9 in it to control it.
+TEXT: This is a block diagram, but basically the high speed general purpose interface bus over here, it's got the UART, SPI, I2C, and uh what else have we got? We got easy check, yep, and USB 2 on the go, but it's got USB 3 as well with 512 K SRAM embedded on the sucker.
+context after: So, quite a powerful little beast if you want to hook up USB 3 to your product. If you've got that amount of data to transfer, well, you know, I mean, you're not going to roll your own solution.
+
+[661] EEVblog #661 - Mailbag — Dave Jones (mention)
+context before: Yes, Target 3001 is a German PCB package I believe. They, donkeys years ago they used, this is way before the blog, they used my PCB design tutorial in their package or something. They asked me if they could use it and I said yeah, no worries.
+TEXT: My electrical working on it. Okay, there you go, you're working on your project. Awesome. Thank you very much. And there's the lovely postcard. Havelstadt Zonik in Germany. Looks like if my German is any good, we have a 3-axis accelerometer, SBI and I squared C.
+context after: There we go. For those who love to read their German, go for your life. And it looks like we have that little board, there's the schematic. Looks like we have that in here somewhere, but we have ourselves a cheap-ass pocket oscilloscope made by who?
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (mention)
+context before: Um and also we've got not only can you turn on a math waveform as well as the RF, so you can have bingo, there's your RF waveform, you can have your math, your digital, and so it really is a mixed domain oscilloscope, you know, as the name says.
+TEXT: And you can turn on four types of buses as well, digital buses, SPI or or, you know, I squared C or something else. Brilliant. It's It's almost too much to display as well as the digital because you can turn on, you know, the 16 digital channels plus frequency.
+context after: It's got It's got everything but the kitchen sink. Now, I'll show you how turning on the various functions actually slows this down. Now, you can get an idea of the update rate there and we're and we're only we're at 100k length there for the memory.
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (mention)
+context before: 5 math modes there. That's pretty comprehensive. And you can do fil... Well, why didn't that... Because I'm in... I've got a mouse hooked up, I think. So you can get different... Oh, just high pass, low pass, filter. That's it. There's no band pass.
+TEXT: You can go in Gaussian or rectangular. And you can set the cutoff. Anyway, we can go into a spectrum analyzer. This is supposed to have beautiful spectrum analyzer capabilities. Anyway, bus mode. Once again, uh, yeah, you've got to hit it twice. I2C, SPI, UART.
+context after: Is that all? Would have expected a bit more. Maybe, you know, I2S or something like that. Apps. We've got apps. Uh, frequency response analysis. There you go. So that'd be our bode plot. Can we... Oh, I heard... I heard relays click. Whoa. Whoa.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (mention)
+context before: We got a 10 bit address and data and we can do E squed prom and stuff like that and we can go in there and and have a look at it and it's all okay but okay we can trigger on it but this scope has no ability to decode any serial data at all.
+TEXT: So that's the same for the uh SPI and the UART. it can't do any decoding. They've left that up to the entirely separate logic analyzer module. So, it almost kind of defeats the purpose of having a $5,000 whisbang uh scope that can trigger on I squared C stuff.
+context after: Okay, you can capture it and have a look and and download and go analyze it later or you know, you're forced to buy the separate uh logic analyzer module at least.
+
+[290] EEVblog #290 - Mailbag — Dave Jones (mention)
+context before: cheap memory though, but, um, I, you know, we can zoom across here like this, hang on, what's going on here, the decoding has to catch up there, so I'm not sure what happened, uh, I think there's a glitch in my SPI bus, I'm using a
+TEXT: demo, uh, board to generate uh, SPI, so like, whoop, there we go, we can put, uh, a marker there, can we zoom in? Yeah, we can use our, um, scroll, our mouse, uh, scrolly center wheel to, no, it looks like it just moves it from side to side, we have to use
+context after: the plus minus buttons, it's not, the user interface is not massive, see, I would have expected it to center around that line there where I had it, but it didn't, like expand around that line, but it, it doesn't. Um, yeah, I think the, the GUI
+
+[fM4bbKVw2og] Uni-T 500MHz 4CH ARB Signal Generator Unboxing — Dave Jones (mention)
+context before: 500 picoseconds per division. That's picoseconds. Nanoseconds, rubbish. 500 puff per second. So yeah, do calculate that yourself. So 1, 2, 3, 4 divisions there. 500 picoseconds per division. Wowza! And you can do that, presumably, across all 4 channels. I hope it doesn't divide.
+TEXT: I'm sure it doesn't. I'd be pretty surprised if that only gave you, if you enabled the 2nd channel. Well, 2nd channel? Hello? What? Why does, oh! Oh, because we're still, look at this! I'm generating a 500 megahertz signal, and a SPI bus. I'm still doing
+context after: the SPI bus. So channel digital amplitude off. Thank you. There you go. So you've got to look down the bottom for what your outputs are doing. So channel 3 and channel 4, and I'm still getting my 500 megahertz. So yeah, no worries. So I can do 500 meg on that one too.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (mention)
+context before: Okay, so that needs compensation, obviously, that's, you know, it's poorly compensated. But it works, yet I plug it on this scope, and it doesn't. And the exact same thing happens on channel two, when I set the source to there, and I've set it up, and look, if I actually plug in a signal here, there we go, I'm plugging in like a one mega square wave, it triggers.
+TEXT: No problems at all. And, like, if I go back to channel one, it's the same thing. If I go back to channel one, it's there. So bugger it, I've had enough of using this thing to probe its own clacker. Let's have a look now at hooking up the SPI line here.
+context after: So I've got all three channels coming in. By the way, it is not a true SPI as you know it, because SPI, if we go in here, is normally a four-wire thing. We've got our clock, our, whoop, bloody touchscreen, our MOSI, and our MISO, i.e.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (mention)
+context before: I really don't. I'm in just standard two channel mode. I'm feeding in two signals here and I'm just playing around with some SPI decoding. And you might think there's no signal there. They're both grounded, channel one and channel two. I've got my trigger point right in the middle here and it might actually come good while I'm actually saying this.
+TEXT: But trust me, there's and it's refreshing. It's refreshing and it's not. There it is. There it is. I swear I didn't touch it. These signals I'm feeding in SPI signal and they just magically appear. Look, if I press run, stop, look, they're gone, right?
+context after: Like I'm in, like you can't see it because like my, I've got my studio lights installed, my old ones anyway, get me up and running. But yeah, it's in run mode and I can do single shot. Single shot's fine. Single shot will capture it every time.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (mention)
+context before: There's the probes, look, probing exactly the same point, and, like, what? What? That is one of the weirdest things that I've ever seen, it's not like this scope is incapable of probing itself, the analog front end does not matter, it should not matter, it can't matter where it's hooked up to, as long as, you know, you don't short anything out with ground issues or anything like that.
+TEXT: I'm going to the chassis ground, it shouldn't care where the signal's coming from, it's relative to that ground, it's exactly the same point, it, it should work, and it works for one of the lines on the SPA boss, but it doesn't work for, on the other.
+context after: What? There's gotta be some sort of pep cack with this thing, it, it's gotta be me, what the hell am I doing? I've resorted to the manual, this is bad, it really is, I don't know what's going on with this scope. No, I'm at a loss.
+
+[1272] EEVblog #1272 - Mailbag — Dave Jones (mention)
+context before: It's got auto-calibration, um and it recalibrates like every 4 seconds or something like that. And I believe it's got like auto shutoff. So, if you touch it when you power up, I think I have to look at the details more, but I think it might disable that switch if it's touched when it's powered up.
+TEXT: But anyway, yeah, it's The good thing about this, you don't have to dick around with any uh SPI or I²C bus rubbish. It just gives you a direct digital output that you can uh just replace any mechanical switch with a touch sensor switch for 8 cents.
+context after: So, that's terrific. Let's just hook this up quickly and uh give it a bell. But yeah, we'll just lightly touch here, and we'll just get an active uh high or active low depending on how you uh strap one of the pins here.
+
+[703] EEVblog #703 - Rigol DS1054Z Oscilloscope Review Summary — Dave Jones (mention)
+context before: And the great thing is you get a lot of memory with this thing, 12 meg standard or if you got the upgraded model, 24 meg memory. That's a huge deep memory, but once again, if you turn on the multiple channels, you do actually lose some of that unfortunately.
+TEXT: It really has very nice serial decoding and trigger capability. You can do SPI, I squared C and RS232 and parallel, but unfortunately, this is an optional extra. And it really does have an amazing range of measurement and statistics capability.
+context after: It's absolutely phenomenal for a low-end scope like this, fantastic. And it's got your basic FFT functionality as you'd expect on a modern scope. And when you turn on the measurements and the statistics and the FFT math and everything else, it is still a reasonably responsive scope, doesn't slow down a huge amount.
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: So, you can capture tons of data serial or well, usually only serial cuz an oscilloscope is only a couple of channels. That's the main disadvantage. And the main advantage of the logic analyzer is that they're multiple channels.
+TEXT: But the large sample memories in oscilloscopes mean that a lot of the time a lot of traditional uses for these logic analyzers like debugging serial product protocols like SPI or I squared C or RS232 are done by the oscilloscope these days.
+context after: Logic analyzers come in three main types that you need to consider. One is the traditional bench instrument. You can still buy them. They're you know, as big or bigger than a bench oscilloscope and they have and they cost you know, 5,000, 10,000, 50, 100,000 dollars.
+
+[913] EEVblog #913 - Mailbag — Dave Jones (mention)
+context before: the editor-in-chief of Elektor magazine, and they're freaking, they are fans of the blog, by the way. Thank you very much. Um, and they've sent through not only the new Elektor Lab's Arduino compatible clone. Here you go. Let them explain it. There are a zillion Arduino
+TEXT: things out there, but this one's special. Um, the Elektor Uno 4 is an evolution of the Uno R3, uses a blah blah blah, supercharged bee brother, blah blah blah. This puppy has two USARTs. Awesome. Um, 4 SPI, 2 I squared C, 5 times a whopping
+context after: 9 PWM channels, plus an extra 4 GPIO ports. Sweet. Can also run off 3.3, so it's goodbye to the level shifters. Awesome. There you go. So apparently it's an Uno R3 on steroids. There it is, the Elektor Lab. It's, yeah, an Arduino looking thing.
+
+[fM4bbKVw2og] Uni-T 500MHz 4CH ARB Signal Generator Unboxing — Dave Jones (mention)
+context before: Oh, switch. On. There you go. Switch on. Right? No, counter. Switch on. AC coupling. Trigger level. Yeah. High frequency reject off. Yeah. Okay, yeah, for RTFM I've definitely got the counter. Yeah, it's counter. So I can actually feed it up its own placker here, because I've got a 10 megahertz out.
+TEXT: And I can feed that to counter input. And it still gets nothing. So I don't know what's going on there. Oh my god, that's embarrassing. Hello? Hello? Digital. So I can generate digital. How fast can I go? How fast can I go on this spy bus?
+context after: Can I go 10 megahertz? You betcha. Oh wow. How high can we go? Can we go 100 megahertz? No. Yes? Can we go 100 megahertz? Out of range. We can do a 50 megahertz spy bus. There you go. That's pretty groovy. And clock?
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: So, these are the bottom five pins here, um 10 through to six there, are the same pinout as the FTDI, those generic FTDI boards you can buy for five or 10 bucks or something like that.
+TEXT: So, there's a couple of ways that you can program this board. And as you can see, I've thrown on the other SPI pins up there, as well as the RS232 hardware UART, the reset pin for good measure, just in case you need that for some reason.
+context after: I needed to fill up an extra pin. Um I was going to put 5 volts on that connector, but on the layout of the board, it wasn't that great.
+
+[985] EEVblog #985 - Siglent SDS1202X-E Oscilloscope Teardown — Dave Jones (mention)
+context before: I we just want to have a quick booting kernel booting Linux on physical CPU Linux version 3.9.8.0 for those playing along at home GCC version there you go. Ah, it's all happening.
+TEXT: It's all happening. So is there anything interesting? So that's all the Linux boot stuff USB blah blah blah blah blah Xilinx data Xilinx AXI DMA engine successful. That'll be for dumping all the high speed oh open SPI dev HC595 failed.
+context after: What? What? That's to speak to a 595. Um but it got this one here did it? Hmm anyway that's the port expander I would be guessing for the that they use on the front ends but they they might not might have No we didn't see a 595 anywhere else on the uh thing did we?
+
+[849] EEVblog #849 - Sony E-Mount Camera Lens Teardown — Dave Jones (mention)
+context before: So, I'm not exactly sure what the pinout and interface is here. I haven't looked, but I might have a quick Google on that before when I edit this thing and I'll uh put it up, but uh some sort of, you know, maybe I2C serial interface or something.
+TEXT: It's just got to, you know, it doesn't have to transfer a lot of uh data, so just be some interface like that or maybe a spy bus or something perhaps, but not sure how easily these come apart or how they or how repairable they are.
+context after: I guess, you know, you wouldn't bother repairing this lens. You can get these pretty cheap, but you know, more expensive lenses, you can get them serviced and that sort of jazz, I believe, so let's Oh, we're in like Flynn.
+
+[1741] EEVblog 1741 - Mailbag! — Dave Jones (mention)
+context before: Curiously, it does have a little micro USB. That would just be for interface or something. You wouldn't power it from that, would you? I can't readily see that number there, but that's obviously our compass.
+TEXT: Jeez, when I was a boy, we did literally roll our own >> [laughter] >> magnetic flux gate compass. So, yeah, coils and everything. Now, it's like just plonk your SMD part down and Bob's your I²C or SPI interface, Bob's your uncle.
+context after: Yeah, that corrosion's not pretty, is it? Yeah, so I'd say corrosion issue somewhere. Look at [laughter] that poor innocent micro USB connector. Oh, that's terrible, Muriel. And trying to power it from that, whether or not it's that is actually doable or not, I don't know, but yeah, diddly-squat.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (mention)
+context before: There's no other detail there, so let's assume that's what it's actually going to do. And down here they have hardware serial decoders built in. This is uh traditionally a feature which uh has been performed inside the CPU up here, which we'll also go into, but they've decided to build it onto uh the die itself.
+TEXT: And as you can see they're they're simultaneous, so you can decode uh I squared C, you know, SPI, USB, um all that sort of stuff, all those serial protocols uh done in real time on the actual hardware itself, which is phenomenal.
+context after: That's a another traditional one which is done on the CPU, but because you've got a built in, you've got speed advantages, and you can actually decode stuff in real time.
+
+[1703] EEVblog 1703 - µTimer Project Part 2: An E-Paper Like LCD — Dave Jones (mention)
+context before: And it uses that uh, ST uh, chipset. So, this is the ST7305. So, slightly different to the one we used in the uh, previous video. It's got a wide operating temperature range.
+TEXT: Um it's got that high resolution. It's got an SPI interface and it has paper-like displaying. So, hopefully it'll be, you know, like similar to e-ink e-paper. That's what they're claiming anyway, but it's an actual TFT display.
+context after: So, we'll find out about that and it's low-powered, Jobi. Um so, yeah, it all sounds very good and it's cheaper than the buy display ones we looked at in the uh previous video.
+
+[58] EEVblog #58 - Warm and Fuzzy FPGA Troubleshooting — Dave Jones (mention)
+context before: They're all measuring okay. So, they hadn't loaded in the incorrect components. Bugger. I've got to, you know, go deeper into this and troubleshoot it further. So, let me take you through a basic block diagram of uh of the section at fault here.
+TEXT: What we've got is a huge um Altera Cyclone III FPGA. It's a big BGA package, you know, 700 odd pin BGA. And it's running a 32-bit um soft core actual processor, and it's got an I2S um audio bus, and it's got a SPI control bus.
+context after: And these two buses go to a um a Cirrus Logic CS4270 24-bit delta-sigma converter. And the codec goes into a little uh power amplifier, which drives some speakers and a headphone jack.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (mention)
+context before: But, well, I just want my ground option, please. And one of the major items you don't get on the 2000 series is the optional and I highlight the word optional serial decoding.
+TEXT: So, you you hit the serial and you've got all the different modes. You've got I squared C, you've got um I2S, SPI, CAN, LIN, and UART RS232. Not a bad selection uh at all, but I think there's one missing there and that is USB.
+context after: It can trigger off USB. If you go into trigger here, we can see that the list of trigger options, we can actually trigger from USB, but we can't actually do uh real-time decoding in USB.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (mention)
+context before: The reason that we're doing um functions instead of direct pin set and clears is because the functions kind of isolate the platform agnostic chism. Um so, that if I were to change platform from this Visual Studio environment to, for example, MSP430, I would only have to change the code inside those functions.
+TEXT: So, I can have those functions in their own file and that file just includes everything that is platform dependent. So, I'm just modifying the SPI code just to um, you know, make the names and logging system make any sense.
+context after: Um the way I actually do this is by having before and after any change of a pin, I basically just record the state of all the pins. And that's all I'm doing here.
+
+[793] EEVblog #793 - Rohde & Schwarz HMO1002 Oscilloscope Hands-On — Dave Jones (mention)
+context before: Fantastic. I know. That might be useful for some people, hmm. And I believe it comes standard with serial decoding as well and you can do that serial decoding through the analog channels and you can set up different bus types here.
+TEXT: So, we're into the bus menu here and we can set up bus one. Let's have a look at this puppy. There we go. What type is it? Parallel Ooh, clocked and we've got SPI I squared C, all the usual suspects, UART, CAN, even LIN.
+context after: So, fantastic. So, we can go in there and uh then configure all those. Looks very nice, and I believe that is uh that is standard. Nice. So, there's our different uh our different lines there.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (mention)
+context before: Let's Let's just have a look, right? Cuz this is So, who knew that GoTop or Gen- Genitop? I don't know. What's their What's their actual name? Anyway, I haven't looked for an English version of this, um but we but we don't need it.
+TEXT: But it's basically a um uh like a SPI type interface. Let's have a look. It's got ASCII, basic So, it's got uh 5 by 7 fonts, 5 by 10, 7 by 8, 6 by 12, 8 by 16, 12 by 24 for your larger uh displays and stuff like that.
+context after: And if you're designing your project and you couldn't be bothered like like trying to find a an existing font or something like that, putting it into your microcontroller memory, doing all that sort of jazz, and you know, and speed wasn't a real you know, maybe a huge issue, and you just wanted a solution to give you different scaled fonts, you can buy this chip.
+
+[cziiWo6Uh5M] $5000 Uni-T UTG9504T 500MHz Function Generator Partial Review (The Lost Tapes) — Dave Jones (mention)
+context before: all the other requisite modulations here. It's got absolutely everything. Then, of course, you can do, uh, sweeps, and you can do bursts, and you can do these on any of the, uh, four channels here. As you can see, it's got a built-in, uh, frequency counter that goes up to 800 megs, apparently.
+TEXT: And if we go into utility over here, we actually have digital, uh, signals as well. So we can do spy bus, I squared C, and, uh, UART as well. And you can do those at the same time as doing all the other stuff as well.
+context after: So having four channels, really pretty schmick. So the modulation stuff, for example, is very advanced. The, uh, as I said, the quadrature amplitude modulation here, it can, uh, go up to 256 symbols here. Um, unfortunately, the, uh, the bit rate here is only a maximum of, uh, two megabits, uh, per second,
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (mention)
+context before: If you put them side by side, I'll try and get them in the same shot. There we go. Yeah, very nice. The Rigol and Agilent do operate very similar.
+TEXT: The tech is is significantly different. So, on an everyday signal like this SPI line here, for example, they're both triggered like this. If I take the Agilent out of trigger like that, yeah, there goes all the data.
+context after: do do do do. And I can do the same thing for the tech. And yeah, it's just that slower updating. Whether I don't know. I I just prefer the Agilent really.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: So, it's effectively got an infinite uh sample memory. It uh the sample rate just depends on the latency of your USB port. Um this is They claim the maximum is uh 24 megasamples per second on this thing.
+TEXT: But, you've got to have a uh very low latency USB port to get that full transfer. And, well, you know, that is adequate for most uses, you know, SPI, I squared C, and other sort of, you know, serial interface stuff.
+context after: But, you know, this is not a serious uh you know, a professional end logic analyzer, not by any means. And, by virtue of the lack of an input latch, this thing is effectively uh timing analysis only.
+
+[13] EEVblog #13 Part 1 of 2 - Digital storage Oscilloscope Tutorial — Dave Jones (mention)
+context before: Big sample memory really comes into its own when you're doing uh digital uh troubleshooting, which is you know, it's very common these days. It's probably one of the most common requirements of an oscilloscope is to you know, debug digital electronics and serial protocols and things like that.
+TEXT: If you're working on say a SPI bus or a you know, I2C bus or you're trying to debug some serial protocol, then a big sample memory is awesome. And uh but only and it's also useful for traditional debugging as well.
+context after: You can capture a waveform, and you can it means that you can capture little glitches in there as well. You can actually zoom in and get all this fine detail.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (mention)
+context before: I plug those same two signals into any other scope. It is fine. There's something up with this Rigol 5000 series. It's, it's just strange. And if I plug that exact same channel one signal over to here on the key site, 3000, there it is.
+TEXT: Like you can see it coming up. It's like, you know, it's, it's there, there it is. And I'm decoding the SPI, but look, you know, when I run that, I actually see a signal. I see a signal on that. There it is, right?
+context after: It's, it's infrequent. Maybe that, you know, that's probably the problem. It does not like, for some reason, it does not like long periods between trigger when you get to a certain, no, no, it's gone. Like, where is it? That's just, that's just nuts.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (mention)
+context before: At the end of data sending, it's always required that the data line is released for acknowledgment, so the state between data blocks is always going to be okay. I've always found it very useful to learn how to bit bang an algorithm so that you fully understand it.
+TEXT: So, we're going to do that right now. We're going to bit bang the algorithm. So, here we go. Okay, so we're just going to put it in C++. The code I'm working on here is based on the example for bit banging SPI.
+context after: I use some structures which help in developing these bit banging libraries. I'm just going to work on the bit banging library now. This is a simple implementation and a lot of it is based on the previous SPI bit banging tutorial.
+
+[1004] EEVblog #1004 - Owon XDS3202A 14bit Oscilloscope Teardown — Dave Jones (mention)
+context before: Uh 200 meg bandwidth with 1 gig sample per second. Uh that sample rate will drop with the number of bits up to 14 bits, I believe it drops down to like 125 meg sample per second.
+TEXT: It's got an arbitrary waveform generator, but it's got like uh CAN, I squared C, RS232, SPI decoding, touchscreen, VGA, Wi-Fi. It's got an app which you can scan in, and it's got a multimeter as well built in.
+context after: And it's like 1,200 bucks, so it's it's not exactly an entry-level uh price point. So, it's in a rather niche market segment where really the only reason that you'd buy this is because of the 14-bit high-resolution converter.
+
+[1580] EEVblog 1580 - MacGruber Mailbag — Dave Jones (mention)
+context before: That's the thing with these. Don't wait until you need them then you have to order them and then they're out of stock or they take time to deliver. No, you should have a whole bunch of these type of proto button prototyping and interface boards in your kit just ready to go for whenever you need them.
+TEXT: There's some more uh examples there. Fantastic So, there's a three SPI uh DAC, for example, he's got those actually connected up there all with bypass caps and uh series resistors and uh yeah, that's great.
+context after: Aha, yes, you can have a filter on every pin. Uh so, 0805 or 0603 uh for decoupling caps, current limiting series resistors, pull up, pull down, series termination, parallel termination, clamping, TVS, high pass filters, low pass filters, and many others.
+
+[321] EEVblog #321 - Google Nexus 7 Tablet Teardown — Dave Jones (mention)
+context before: Beautiful. And it works at 3.8 milliamps. Presumably down at 3.3 volts. If you have a look over here, it's got a low power operating modes 10 microamps at 1 hertz up to 140 microamps at 40 hertz.
+TEXT: And it contains a 5 microamp idle mode as well. And it's the I squared C interface up to 400K or a 20 megahertz SPI as well. Excellent. And it's tolerant up to 10,000 Gs of shock, which sounds like a lot.
+context after: But when you, you know, if you drop this thing onto, you know, a hard, concrete, or steel surface on its edge, and the plastic is coupled directly through to the printed circuit board, which is connected, soldered directly onto the chip, you can, um, in theory, uh, easily exceed that, uh, 10,000 G, uh, shock, uh, rating, and damage the device.
+
+[1244] EEVblog #1244 - Mailbag — Dave Jones (mention)
+context before: That's fairly typical for these sorts of jobbies. And, uh, and it can be used as a general microvolt, uh, reader as well. Um, it looks like minus 6,000 to plus 40,000 range.
+TEXT: Cool. Uh, it's got Python spy interface. Um, code and examples are all there. Yeah, look, I won't, uh, hook it up and it'll take me some time to get all that working, but, uh, I'm sure it works a treat.
+context after: So, check it out over at scientificdatasystems.co.uk. If you're in the market for a, uh, multi-channel thermal couple amplifier and logger, it's always worth having, uh, you know, at least a thermal couple temperature sensor probe, preferably like a multi-channel or and or a logger, uh, type system cuz you never know when you have to log, uh, temperature for doing, uh, you know, just temperature uh, testing your prod
+
+[277] EEVblog #277 - Mailbag - Elektor / Matrix Multimedia E-Blocks — Dave Jones (mention)
+context before: And that's I don't think that really cuts it these days. Anyway, they got an ARM microcontroller. All right. What we really need to do here is jump on the Matrix uh multimedia website and check out these uh what boards they've actually got cuz there seems to be a massive range here.
+TEXT: Uh they got terminal boards, sensor interface, leads, LCDs, power, 7 SEG, uh USB micro. They've got an IRDA stuff, SPI bus, keypads, RS232, CLDS, CAN. Oh man, they've got a breadboard prototyping board.
+context after: They've got a MIDI interface. They got a motor controller. They got a Bluetooth board. Excellent LIN board. Um MMC card reader. They got PS2 VGA. They got a voice codec.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: And so, they want to be, you know, for the price these days, they've got a competition in the industry. They've got to bundle it together. So, you know, differential integrals, FFTs, absolute values, all sorts of things we we looked at in previous videos, digital uh high and low filtering, and averages and smoothing, and all sorts of advanced math stuff, all standard.
+TEXT: Brilliant. But, all your uh serial decoding options there are still uh optional, I'm afraid. So, yeah, if you want your I2C and your SPI and everything else you can bus, then you've got to pay for it.
+context after: But, as I said, they might be able to, you know, bun- you might get this as bundled in or something like that in the future, perhaps. And you now get the 500 MHz passive probes standard across all the models.
+
+[1699] EEVblog 1699 - µTimer PROJECT Part 1 - The LCD — Dave Jones (mention)
+context before: So, just mentions Raspberry Pi 2 to enable device tree support. Do I know? That's only for Raspberry Pi 2. Real-time performance constraints. No. Interactions with other systems. If in order for your library SPI to work, you may need to disable the SPI kernel module using this.
+TEXT: Oh, well, I may have to do it. I I don't know if it's going to bit bang the pins or like this the software's going to bit bang the pins or whether or not it's going to use the uh hardware spy or what.
+context after: I I'm not going to touch that now. I won't touch that unless it doesn't work. Unless I compile the code, run it, and then uh I can't see any data toggling on the pins.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (mention)
+context before: So, you'll find not only these internal diagrams, but the associated timing diagrams along with them. Here we go. That's a simple one, but you know, it shows you where things are transitioning and why.
+TEXT: SPI timing mode, you're doing SPI I2C stuff, you've got to know about all these sort of timing modes. You want to implement your own bit bang serial protocol, you need to know all this sort of stuff.
+context after: Here we go. I2C, like this is like really important stuff to know and understand. Power up startup sequences, you don't understand why your chip's not starting up properly. You've got to get into these sort of timing diagrams.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: And then we've got the, uh, the flash as well. That's all the program flash. And then, of course, we go over into this glue FPGA or whatever it is and back again into our display processor.
+TEXT: And there's that tantalizing SPI boot header. And then, this mysterious one over here, ground, VCC, reset, and BKGD. And this circuitry here is coupled around the front panel USB connector here.
+context after: So, they've got their own local regulator here. And these devices, these two chips here would be associated with power, you know, providing power, current limited 500 milliamp power to the front panel USB port.
+
+[2FlQnPsZCdE] Scope WTF! — Dave Jones (mention)
+context before: But it's good that it actually recovered and didn't have to reboot. So, that's interesting. How Wow, I was lucky to get this. Um, you know, the EVBlog curse of reviewing stuff.
+TEXT: Um, something always goes wrong, but um yeah. Okay. Well, I'm going to get back to it. I go didn't have to reboot. That's interesting. And it's reading at 1 megabit per second SPI bus as well.
+context after: You can see that it's decoded road cuz this is coming from my Rohde & Schwarz RTB. Um, and so it's got IDN and then Rohde & Schwarz. It's actually decoded that no problems whatsoever.
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (mention)
+context before: Why do we have an RCA? There's an RCA connector on there. What the? Anyway, that's our sig gen. Um and then our multimeter inputs. It doesn't even tell you the cat ratings.
+TEXT: That's a fail for a multimeter. It says Wi-Fi decoding. It's got uh CAN, I squared C, RS RS-232, SPI, all the good stuff. Maximum power, 15 W. So, that's why Hey, where's where's the battery?
+context after: Uh I think the battery Does the battery three suspicious screws up there with a different looking plastic. Oh, yep. Yep. Yep. I was right. There you go. Yep. So, that's the tilting bail and the battery goes in there.
+
+[1523] EEVblog 1523 - Dumpster Samsung Cleaning Robot TEARDOWN — Dave Jones (mention)
+context before: Block diagram here. So, the sensors and AD signal processing and the Kalman filter that all error correction filter. So, that all Yeah, it's not actually doesn't seem to be predicting where object what objects are going to do moving objects cuz I guess there's only humans and pets and stuff walking around.
+TEXT: It's not too busy unlike an autonomous car which has everything including like light poles just jump out at you. There you go. Very simple. It's just got nice squared C and a SPI interface.
+context after: Geez, that might be interesting. I wonder if you could see anything if you took if you decanned it. Not going to do that in this video, but leave it in the comments down below if you want me to try and somehow get the can off that sucker.
+
+[58] EEVblog #58 - Warm and Fuzzy FPGA Troubleshooting — Dave Jones (mention)
+context before: It's just not possible. So, I ruled that out. So, I thought, what's going on here? I was scratching my head for ages. And the other thing, there was there's a also a reset switch on here as well, which resets the soft processor.
+TEXT: And I was playing around with that, and uh I could actually get stuff to happen on the SPI bus. When I was playing around with this reset, you do it enough times and and it it didn't work.
+context after: It didn't make the chip work, but it made it do something, and I got something on the SPI bus and then something on the I2S bus. But it was just it was just garbage, really.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: Another thing to look for in a logic analyzer is that it can actually decode serial data in real time and trigger on serial data in real time. So, it actually analyzes each bit like this and you can set it up to trigger on a particular word or a particular byte.
+TEXT: And this is most useful for serial decoding, uh I-squared-C and SPI and all those serial type buses once again. If your system supports those, then it's going to be super valuable for you.
+context after: Now, generally a logic analyzer will come with these easy hook probes. They're actually little tiny probes that you pull down and they're a standard they just pull straight off here.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (mention)
+context before: Brilliant! And this is where our wave inspector uh control here is uh very nice. I've got to admit, it is one of the better uh features of the Tektronix uh these high-end Tektronix uh scopes.
+TEXT: It really is uh nice. And uh once again, the outer ring is the uh pan. So, it allows us to pan the window across. Now, I've zoomed in here, so we can actually see the SPI uh packets here.
+context after: And as you can see, it's got another little uh display up here to show you where in the memory. That's the entire memory depth of the scope from side to side there.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: So, I wouldn't even bother searching for that, but you can. So, if you really wanted to do that, I'd probably go it back over to the manufacturer's website over here and they probably have it separately.
+TEXT: And there we go. Yep, they have it separately, UART and SPI. So, there you go. We've got our parametric search data, 256 K of memory and in fact it put killer bits, but it doesn't matter.
+context after: 256 K of memory, 25 IO pins minimum, UART and SPI. So, I almost guarantee they'll have SPI. So, anyway, we were good to go. Yep. So, you'll find that this is all updates live in the background.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (mention)
+context before: That's a bit quirky. Hmm, more investigation required. Anyway, yes, I do plan on doing videos uh reviewing and maybe like a shootout comparison or something like that. Um but it's interesting 499 US bucks with all the serial uh decoders built-in, by the way.
+TEXT: There they are, I2C, SPI, UART, CAN, and LIN buses all built-in. The 14 meg sample memory, the bode plotting, which I haven't uh looked at yet. But yeah, you can actually do a bode plot.
+context after: There you go. Uh 1 meg FFT, which is awesome, which you can do these days inside that Zynq uh FPGA. Um and which you see on other scopes like the GW Instek one does.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: And there's an example of serial decoding the I squared C bus. So, that's pretty powerful and it's got the event table up the top, everything else all done real time in hardware.
+TEXT: So, um yeah, the fastest possible signal you can imagine, I squared C or SPI or any other serial bus, this thing will decode it all in the hardware. Your scope doesn't slow down at all.
+context after: And of course, in the marketing blurb, they, you know, go on about this. Uh you get no slow down with the logic channels, the protocol decoding, the math functions, the measurement, the vectors, all the sine x on x interpolation.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: So, I Yeah. But, anyway, if you can get like this one for what is it the 16 16 or something for like 130 bucks and get all those serial decoders, that could be very very useful.
+TEXT: Very well worth checking out. And you can see that they've got uh protocol analyzers as well. Ooh, what's I squared C SPI control center? I wonder. Geez, they've got all sorts of stuff.
+context after: The website's a bit weird, but uh anyway. Hmm. I'll have to do the starter kit in another in software control. I squared C SPI control center. Oh, this is the Is this this generator?
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: And we'll just do flash. We probably don't want FF RAM for example. So, you know, like you don't have to do that. But we'll we'll we'll just do that for kicks, shall we?
+TEXT: Now, as in terms of UART and SPI, this is where it's harder on Digikey and other uh websites, they sort of like combine them. Look, you've got a like you know, it's got to like CAN bus.
+context after: Look, it's got like all all this combined one and you can easily miss ones. Like, oh, I need a UART. So we need a UART and SPI, but we have to go through and manually, if we wanted to search for that on Digikey, we'd have to go in and manually search for all and select all the ones that had the those particular peripherals.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: I like I just don't see it. Anyway, but let's run with that, shall we? Number of IO at least 25, fair enough, which rules out like 16-pin dips and things like that.
+TEXT: You're looking at probably in that you might be able to get away with say a 28-pin dip for example. Communications ports UART and SPI, they pretty much come standard with most things.
+context after: And we're searching for the cheapest possible price. And this is a very common requirement in electronics design is that you're searching for price? You've decided, okay, I need a microcontroller with these specifications or I need this part.
+
+[934] EEVblog #934 - Raspberry Pi Supercomputer Cluster PART 1 — Dave Jones (mention)
+context before: As I saw as you saw in the previous video for this Orange Pi One, the software, the builds for it aren't that great and up-to-date and stuff like that, but you can make it work.
+TEXT: I've yet to know if the SPI one will work for the Orange Pi one, the Microchip Inc 28J60, but I'm I believe it does work. People have done this and it does work for the Raspberry Pi.
+context after: So, no worries. But yeah, if you know of any other compute modules that might be more suitable at a low cost. Yes, you can get them. You've been able to get these compute modules.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (mention)
+context before: STM controlling all this. That's a a LVC04, so that's just inverter. And is this a DAC? I can't read that. Anyway, I won't be surprised if that's the 14-bit analog-to-digital converter.
+TEXT: I'm going to go put a bit of spit on that. Yeah, that's an ADS 220 from TI. That's a 24-bit 2K sample four-channel low-power delta-sigma ADC with PGA, VREF, SPI and two DACs as well.
+context after: So, yeah, that's where all the magic's happening. So, this is your basically it says they're only got 14-bit converter in this, but there's a 24-bit converter in there. And you can see like labels on the board here.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: Very well worth checking out. And you can see that they've got uh protocol analyzers as well. Ooh, what's I squared C SPI control center? I wonder. Geez, they've got all sorts of stuff.
+TEXT: The website's a bit weird, but uh anyway. Hmm. I'll have to do the starter kit in another in software control. I squared C SPI control center. Oh, this is the Is this this generator?
+context after: I think it might be the protocol generator, I don't know. Anyway. Huh, weird. They've got all sorts of stuff. Anyway, thank you very much Zero Plus for sending those in.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: Barely worth it. Oh, of course. PEBCAK. Stupid me. I figured out why the logic analyzer function's not there. It's because you need to actually plug in the probe. Oh.
+TEXT: There it is. Logic analyzer. Uh, sorry. It does actually work just fine. So, if we turn on our logic analyzer there, there we go. We've got something. Bus, parallel, UART, I2C, SPI.
+context after: By By the way, you don't It seems like you don't have to pay for the various decoding of these things. You buy your logic analyzer module, you get your UART, your I2C, your SPI, and your parallel.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: want that. So, you know, you might want this nice There we go. Nice quad flat pack down there. 32K of flash memory, you know, it's 82 cents. They've got them in stock, 220 too.
+TEXT: It's not a huge number of stock. And as I said, like all of them have UARTs and SPI and stuff like that, so that's, you know, it's pretty much a given these days, almost guaranteed.
+context after: So, you know, there's plenty of options in there. Look, I I could go through until the cows come home and search for the perfect microcontroller for this application, but quite frankly, we need more information on just that.
+
+[3] EEVblog #3 - Static Myths, PIC Micro, Pocket Multimeter — Dave Jones (mention)
+context before: The list of bugs in the 24F series uh device I was using is actually quite extensive and I'm going to have to actually read a list here. Um the brownout reset, the real-time clock, the I²C module, the UART, JTAG, uh SRAM, they got the size of the SRAM wrong.
+TEXT: It's incredible. Uh ADC, SPI, and uh a whole bunch of core functions, voltage regulator stuff, and and just regular core functions. It's crazy. The list is longer than my arm.
+context after: And they're up to like the fourth revision of the device or something and there's still a whole list of bugs in there. It's just It's just crazy. I don't know where it comes from.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: PCM stuff, the I 2 S audio. Standard Manchester one wire bus for all you people working on one wire, you know, Maxim Dallas one wire and other one wire stuff.
+TEXT: Async serial, simple parallel, SPI, Uni IO. All your basics are covered there with a few bonus extras. Although, there is one that's missing there and that's JTAG, of course.
+context after: But JTAG usually quite high speed. Might have been out of the realm of something like this. But I I guess it would have been nice to have JTAG in there because a lot of logic analyzers will actually, you know, won't have JTAG.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (mention)
+context before: It actually has a thing called polarity, which complicates this interface, which basically indicates the idle state, that's this line here, that the clock line returns to. That is the the logic level that the clock line is on when it's not communicating with any devices.
+TEXT: So, in this case, polarity is zero, and it is logic low before and after SPI frames. In the case where it's polarity one, the idle state is high, as you can see on this line.
+context after: Um they are basically just upside down. You can think of the polarity being one being the clock-line inversion. So, the first edge of polarity zero is actually a rising edge, and the first edge of polarity one is a falling edge.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (mention)
+context before: So, it's pretty much one of the cheapest solutions on the market. Dual inline 0.1 inch header. It's all integrated. It uses one of the WIZnet the WIZnet W5200 actual device on it with a magjack and everything.
+TEXT: And it's 3.3 V powered. Perfect. It's a SPI interface, of course. It's got a power down pin, which is excellent because this our design is a battery powered power supply.
+context after: So, if you're not using the Ethernet, you want to power the thing down. And the maximum power consumption down here when it's doing 1000 Base-T maximum uh speed is 120 milliamps.
+
+[1275] EEVblog #1275 - Uniden UHF Walkie Talkie Teardowns — Dave Jones (mention)
+context before: We've got our power amplifier. Uh then it's got a variable gain power amplifier, driver, VCO, synthesizer, all that sort of stuff. And it's microphone direct straight in. So, the other microcontroller has nothing to do with the audio or analog aspects of this at all.
+TEXT: The uh audio frequency out goes directly to the speaker power amplifier chip, and the micro here just talks. I'm not sure why it has both an SPI bus and an I squared C.
+context after: I guess Do you need both, or does it let you uh choose it? But that's it. That's it for that no name data sheet. So, I assume like there's multiple clones of this chip.
+
+[1463] EEVblog 1463 - Mailbag — Dave Jones (mention)
+context before: And it's got all the requisite stuff. There's a touch sensor switch which it has an interface. I don't know which one it actually uses. Got a rotary encoder. And then it's just got it breaks out all of the stuff near the breadboard so that you can just like jumper all this stuff over.
+TEXT: So here you go. You've got I squared C over here. Is that SPI in there? It's a bit shadowy. It's hard to read, but it's got like a stepper motor driver board interface.
+context after: That's actually not actually on here. It doesn't If you have a look on the back, there's actually no circuitry on the back. It's all populated on the front. It's basically just a good gigantic breakout board that you can, you know, plug everything into and then all of the uh outputs and stuff come near the breadboard, as I said, and that allows you to just jumper stuff over to the
+
+[1720] EEVblog 1720 - Mailbag: USSR Bonanza + Logic Training + $69 Logic Analyzer — Dave Jones (mention)
+context before: Look at all the decoders though, right? This is just This is just crazy, right? I see Look at Look at all this. This is nuts because this is Sigrok.
+TEXT: Right? This is not their program. This is Sigrok doing all this stuff. Look at this. Man, that's nuts. And go go the open source community. Right, so there's our SPI.
+context after: Can we Yeah, can we choose that? There is no channels assigned to this decoder. Okay, so we've got to assign channels to the decoder. Fair enough, but we're getting like nothing.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (mention)
+context before: What I've done here, okay? What I've got is I've got a um a VCO, a voltage-controlled oscillator, okay? And uh it's designed to uh operate at 2.4 gig, okay?
+TEXT: Now, it's um what we've got here is we've got uh digital signals. We've got an SPI bus here, okay? There's a little SPI packet. We've got the VCO enable uh pin here.
+context after: We've got the phase-lock loop uh voltage, the PLL voltage. And what we're doing, basically, is we're turning on the uh VCO here, okay? Our voltage controlled oscillator. We're switching it on and uh and we can watch our PLL voltage ramp up just as we could on a regular uh DSO.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (mention)
+context before: Maybe it's an executable that just But it said it installed, but I don't didn't say where or anything. And this is This is great. Copy to clipboard and just paste out There it is.
+TEXT: There's our code. There's our code for our UART. Uh sorry, for our SPI bus. Code wizards out there, David. Come here. David's here. Hey. He's a resident code expert.
+context after: Tell us about this code. What does it look like? Tell us your thoughts. Processing. Pro He's ment- He's mentally processing. What Why would you need a no-op? Why would you need a no-op?
+
+[669] EEVblog #669 - FLIR TG165 Thermal Imager Teardown — Dave Jones (mention)
+context before: What's this thing working at? There you go. That looks like the main oscillator only 8 megahertz. But that's kind of what you'd expect because uh they wouldn't, you know, I mean, this thing's just got to read the serial interface from it.
+TEXT: It's either got to read the SPI or more more likely the Mippy interface from the Lepton sensor over here and then uh display it on the LCD. And that's basically it.
+context after: There's not a huge amount else. Everything else is just uh support stuff. Here's our SD card. Here's our uh micro USB up here. We've got some um input protection there.
+
+[11-AQ_E1fz8] Siglent SDS1000X-E Serial Decoding — Dave Jones (mention)
+context before: So, I'll just give you a little uh sneak peek here. Now, I've actually um the great thing about the scope is that serial decoding is free. It is no optional extra, no hacking required.
+TEXT: You get I squared C, SPI, UART, CAN, and LIN. I'm only going to play around with the uh UART here right now. There's uh two different uh decoders, uh one and two.
+context after: I believe it's similar to the previous uh series Siglents, it's just included uh free. And of course, you can set up the uh signals, but unfortunately, unlike the Keysight 1000X series, you cannot use this third channel here.
+
+[1524] EEVblog 1524 - The 10 CENT RISC V Processor! CH32V003 — Dave Jones (mention)
+context before: And what are we getting here? It's a 48 meg risk 5 processor, 18 GPIO pins, 16 K of flash memory, 2 K of S RAM. So, you know, it's quite usable.
+TEXT: One UART in it, one I squared C, one SPI. It's got an 8 channel 10 bit ADC. How good that is I don't know. I haven't really, you know, data sheet link down below.
+context after: Um you can get these specs from it. Uh one general purpose uh timer module, one advanced timer module, one system uh tick, uh two watchdogs, and uh partridge in a pear tree.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: Here you go. I'm searching all the manufacturers and bingo, we're sorted by a thousand off quantity price. We're talking 81 cents. Winner winner chicken dinner to Microchip. Um their SAM 3 um Cortex M3 chip.
+TEXT: There you go. And yes, it does have the UI UART and SPI. It's only 81 cents. It's in stock. Absolutely fantastic. So, Microchip win there. Who's the next winner?
+context after: And STMicro, the 32F uh 030. That's a It's almost twice the price there. So, you know, I mean, if you you really desperately needed, if that was your only requirement, I need 256K of uh program memory and uh just some IO and a UART and a thing at the 81 cents.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (mention)
+context before: When the device isn't selected, these pins here go high impedance and it is as if the master is communicating directly to the slave it chooses to. Okay, so to demonstrate bit banging, I've got a small library in C++ that basically emulates um a bit banged SPI port.
+TEXT: And we're going to use this library to test whether we've implemented the bit banging correctly. So, we're just going to run it now and it's spit out some data.
+context after: We're transmitting the number 12 on the four different SPI modes. So, let's just copy all of that and put it into a spreadsheet. So, we've pasted the data into a spreadsheet and this can be useful if you're you've only got an oscilloscope, not a logic analyzer.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (mention)
+context before: And that is how the number 12 looks in binary. So, this is um what we expect and as you can see the polarity is different like we expect where the default value, the idle value, is high when polarity is one and it is low when polarity is low.
+TEXT: The phase is doing the same thing where the the waveform appears to be shifted by half the period. So, what does a write routine look for a bit banged spy port?
+context after: So, we've got to be talking with all the four pins to implement this and we have to transmit and receive eight bits. So, that means we need to have a loop that goes around eight times.
+
+[1699] EEVblog 1699 - µTimer PROJECT Part 1 - The LCD — Dave Jones (mention)
+context before: It's got the building It's got building capacitors, which uh generate the various uh bias voltages and things. But, still need a couple of external caps there, just uh to bypass in there, tie a couple of pins uh here, which select the mode.
+TEXT: I won't go through all the complete data sheet, but this selects the SPI uh mode, and then chip select, and then um data instruction select uh pin on A0 there.
+context after: And so, we only have to, in theory, hook up, you know, two, four, five pins um to here, plus the 3-V power uh and ground. And then, if you hook them up to the right pins on this, via this selection matrix.
+
+[1254] EEVblog #1254 - Mailbag — Dave Jones (mention)
+context before: Frequent questions, no, the 3D printed case never melted. I've used a buck converter for 5 hours cuz LDO was uh very low efficiency. Thermocouple curve is not ideal. Code function, there you go.
+TEXT: Uh yes, the board has SPI pads for bootloader burn. What else have we got? The T12 uh soldering iron so it's designed to use the uh Hakko uh T12 uh uh tips.
+context after: Plugged in. There you go. Um you can get both genuine ones and rip-off uh versions of these. This one's been used. Look at that. And you Yeah, genuine and rip-off versions avail- Jeez, that doesn't No.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (mention)
+context before: Uh with output buffers and uh two ultra low power uh comparators as well with wake-up capability. Uh DMA controllers, if you're into that sort of thing. USB 2, uh three UARTs built-in.
+TEXT: Um eight up to eight SPIs, uh depending on the chip that you use. Or two I2Ss. It's got two I-squared C buses, 11 timers, blah blah blah, six 16-bit timers.
+context after: All that sort of stuff. And it's got um capacitive touch sensing as well, up to 23 channels and CRC calculation as well. So, as you can see, it's a very powerful and versatile um micro.
+
+[yzO1PsscjOI] WENS 540 Handheld 10MHz Oscilloscope and Debug Meter — Dave Jones (mention)
+context before: Then it's got a protocol. This is where it gets interesting. Protocol analyzer. Yes. What protocols have we got? We got bus, linus, I squar, uh, USB. That's USB 2 USB high speed and full speed.
+TEXT: No, no, sorry. Uh the the two slowest ones, right? Yeah. Yeah. Yeah. Yeah. That one. Yeah. Yep. And uh SMB bus. Oh, i2S. Sorry. I IS audio. Yeah. Uh SPI.
+context after: SPI of course. DMX 512 for lighting and Dallas one wire. There you go. Very nice. Yeah. And uh again, you can set up your trigger conditions as to where you which channel you want to trigger off, etc.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: And check out even the shielding they've put around the IEC mains input connector there. I like that. That's terrific. That is well done. They've uh got of course metal threaded inserts down in the case here, but let's take the rest of it apart and check out these two pin headers penetrating the metal shield here.
+TEXT: Oh, it's got hack written all over them. If I look at the silk screen through there, that says SPI boot. Oh, that could be a hacker's delight that one.
+context after: And this one here is uh look at the silk screen, it's got ground, VCC, reset, and uh what is BRGD? Whatever that means. Go figure, but yeah, interesting. And here we go.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (mention)
+context before: Code generate, OTP writer. Okay, so this is It looks like it's a This is the help. Okay, so this is the read me help. It's automatically loaded up the read me help.
+TEXT: Hang on. Look at this. It's got code generation for the UART, spy, UART with buffer. So, let's let's go to like if I wanted a spy bus, for example.
+context after: Neat. Look at this. Fantastic. I can set the pin I want. I can set the pin, the SDI pin, and the bit three, copy to clipboard, master or slave configure Fantastic.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (mention)
+context before: Chips do often have support for two different SPI modes, though, but it's not 0 and 1. It's often pairs um two after each other. So, for example, they have support for everything with polarity zero or with polarity one.
+TEXT: This is why in data sheets like this one you often see this type of list. You see a polarity is zero and zero or polarity is one and one.
+context after: A common way you see the SPI bus connected is as this diagram shows here. You have all the different devices connected to the same bus and selected with separate chip select lines.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: And you know, you don't know those things unless you read the uh the detailed parts of the data sheet. So, I had to free up that uh reset pin there.
+TEXT: And uh and also I was sharing um part of the ISP interface down here with the uh SPI bus uh for my um ADC and DAC or the uh DAC actually.
+context after: So, I decided to uh change that around free up I had to free up that reset pin. And uh that really started a whole cascade of changes cuz as you can see, every single pin was actually used on there.

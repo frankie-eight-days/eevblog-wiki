@@ -1,0 +1,403 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: power factor
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 74 passages drawn from 44 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# power factor`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: Any well-designed, well-specified product will specify it in VA instead of watts. If it's in watts, it's like, "No, not really. I don't believe you. I don't think there's a power factor correction circuit inside that oscilloscope." And well, as you saw an example and in our example, there's not.
+TEXT: It's got a piss-poor power power factor of 0.45. So, the big takeaway from this is that whilst there's no power dissipated in reactive loads, it's simply just transferring this imaginary power to and from, that can actually manifest itself in real losses upstream in as apparent power and actual current in your conductors because, you know, unless you got superconductors, which have zero resistance, then yeah, you're going to get losses in your
+context after: system. And that's why VA matters and that's why transformers and other things will be measured in VA and not in watts because that's what matters. So, anyway, I hope you enjoyed that and found it useful.
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: So we've got both voltage and current magnetic flux fields and they actually induce current eddy currents inside the aluminum disc here. And as I mentioned, the slightly offset nature of these current coils actually makes it rotate in one prefer to rotate in one direction like this.
+TEXT: But of course, if we have got a perfect power factor, i.e. a power factor of one in our load, then our voltage and current are actually in phase. So if we're producing an in-phase phase magnetic flux from the voltage and current, then well, we're not going to have any circulating eddy currents in there and that's not going to uh produce any rotational torque in the disc at all.
+context after: They're just basically going to cancel each other out and the disc isn't really going to move anywhere. So we have to actually delay one of these by 90°. So let's do some vector diagrams of what's actually happening here.
+
+[533] EEVblog #533 - LED Fluoro Tube Teardown — Dave Jones (explains)
+context before: the device, whereas I think the genuine NXP one has the built-in regulator, it can generate its own VCC built-in, it looks like they've just got some stuff in here to generate that externally for this, you know, cheap rip-off brand one, it may not
+TEXT: have that built-in. So this sucker has, you know, pretty much purpose-designed for this sort of application here. 95% efficiency, high power factor, low bomb cost, always important for these consumer stuff, as I said, can do buck boost and flyback modes, single inductor for non-isolated configurations, this can be a non-isolated configuration of course,
+context after: because the user can't touch anything inside this sucker, and 5% output current control accuracy, not bad at all. And of course, here it is, for driving strings of lead or high voltage lead modules from a rectified mains supply. Bingo, exactly what you want in these LED replacement fluoros.
+
+[164] EEVblog #164 - Agilent Fly To The Moon — Dave Jones (explains)
+context before: Now, the power factor is about 0.86 on that. So, let's see if it draws anything when you switch it off. Ta-da! Look at that! There it is! It's still drawing 6.5 watts! Are you kidding me? God, you'll fly to the damn moon on 6.5 watts!
+TEXT: Unbelievable! And the apparent power, because the power factor is much lower now, it's 0.32. The apparent power's gone up to 20.5 but, unbelievable! 6.5 watts! Shame, Agilent, shame! OK, now here's the board. I've taken it apart. And, as you can see, it's got this long, mechanical, very traditional mechanical lever arm
+context after: going back here to the mains input power supply. There's the IEC input connector, there's the input choke, and it goes through to the Lineage Power brand switch mode power supply which looks like a really high quality one but, apart from the standby, power consumption, apparently.
+
+[1482] EEVblog 1482 - Mains Capacitor Zener Regulator Circuit — Dave Jones (explains)
+context before: The dissipation, even though it's equivalent resistance is 14.5 K, the power loss in this capacitor is effectively zero. Or, there'll be a tiny amount due to the equivalent series resistance in here, but that's really really really small.
+TEXT: Now, of course, to understand this, you have to get into power factor and there's no free lunch here, okay? You still have to provide at the generator at the power station somewhere still has to provide the 3.7 watts, but because this is a mostly capacitive circuit, the power factor is going to be absolutely horrible.
+context after: So, even though the power generator has to deliver the power, the actual uh load here does not dissipate any power because it's a capacitor. So, that's why they whack a capacitor in there.
+
+[690] EEVblog #690 - TDS220 Oscilloscope Autopsy — Dave Jones (explains)
+context before: So, there seems to be definitely water um behind the screen and all moisture ingress and all that sort of stuff but damn, it powered up. And if you're curious to know how much a muddy old TDS 220 draws, well, look at that.
+TEXT: 9 watts there. No problem whatsoever. Um the uh 18 VA. So, there you go. So, that gives you a power factor of uh you know, 0.5. Pretty darn horrible but that's not much uh That That ain't much power draw at all but uh it's not a you know, it's really an old school scope that's not very powerful at all.
+context after: Okay, here we go. I'm going to do a self cal. This is going to be great. Self calibration in progress. We'll come back when it's done. Oh, here we go.
+
+[449] EEVblog #449 - Absopulse VFC500 Variable Frequency Converter Teardown — Dave Jones (explains)
+context before: Typical distortion less than 5%. Not bad. It features full electronic protection, high efficiency, low output noise, and it's fan-cooled. Woohoo! The use of components with established reliability results in high demonstrated MTBF. It's manufactured in our own plant under strict quality control. Excellent. Now let's have a look at the specs.
+TEXT: It has a universal input voltage range, 95 to 264 volts, and also a large input frequency range from 47 to 410. Not surprising, I guess. The power factor's a minimum of 0.97 at full load for the entire input range. Various input protection schemes are inrush current limiting, varistors, internal safety
+context after: fuses, lower voltage than the specified minimum will not damage the unit. That can be, you know, one of the cheap designs or something like that. If you take the input below the 95 volts, it could, I don't know, latch up, blow up, release this magic smoke, do whatever.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: And ideally, when you're designing a product like that, a cell phone, your computer, or whatever, or a big industrial bit of machinery, for example, or your entire factory, then you want a power factor that's actually equal to one.
+TEXT: You want the real component to equal the apparent component. You want to just have basically a resistive load. You don't want any imaginary reactive component in there. You don't want any reactive uh component at all in your factory, because if you're a big factory, they're going to charge you for VA.
+context after: So, the closer you can get your power factor to one, and it's never over one, it's always one or below, from zero to one, then the closer you can get to that, the less your electricity bill for your factory is going to be.
+
+[273] EEVblog #273 - Power Factor Correction with the MC34262 — Dave Jones (explains)
+context before: to sag as they say, as they call that line sag. And so you're going to get these current pulses at the positive and negative peaks at the mains input. And that's not very good at all for getting a Power Factor correction of one.
+TEXT: And in fact they tell you here that this configuration can give you commonly a Power Factor ratio of 0.5 to 0.7, and that's not great at all. Now I don't think this is the place to actually get into a detailed discussion on how a Power Factor correction pre-converter works, a current mode one like
+context after: we've got here. If you want to get the details of this, by all means download the data sheet, it'll be linked in in the notes there. So, but this is basically what we've got. We've added a PFC, Power Factor correction, pre-converter between the bridge rectifier and the bulk
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: Anyway, yep, always keep your neodymium magnet in a sock. Trust me. You'll notice, of course, this says kilowatt-hours, not VA hours, because this actually measures watts, it measures, uh, true power.
+TEXT: So, it's got to, of course, multiply voltage by current to actually do that, and it's got to do it in phase as well. Because I've done a video on those, um, energy saver scams that you get that is basically just a capacitor in a box, and it claims to reduce your energy consumption.
+context after: But, of course, most houses in, uh, most countries, it might vary around the world, but certainly here in Australia, you do not pay for what's called apparent power. You only pay for true power in kilowatt-hours.
+
+[915] EEVblog #915 - Dumpster Dive LCD TV Salvage — Dave Jones (explains)
+context before: 6,000 Kelvin, uh, panel. So we'll get the difference. And at a metre, this one's rocking about 1,200. So let's, let's call it double. And sure enough, my 60 watt nominal panel draws just over 60 watts, 63 watts. And if you want to see the VA, there we go,
+TEXT: 65.3, power factor 0.969. Very good, these panels. Or, well, the power supply that comes with it. Which, for those playing along at home, is a liffard. And our dodgy brother's hacked TV LED panel, uh, 40 watts, almost bang on. Uh, VA, 50.92, so that gives us a power factor of, uh,
+context after: 0.8 for this particular LG, uh, 50 inch LCD TV that we've got here. So that includes the electronics, uh, of course, so who knows how much power they're, uh, still chewing and stuff like that. But, yeah, um, that's not too shabby at all.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: More power generation. It's it's got to come from somewhere, you know? It's not magic. And I know you're curious to see how much this actually draws before and after the transistor.
+TEXT: So, this is with no power factor correction. This is in standby. Still on 327 mW. Power factor of .02. Yeah, it's pretty bad. So, if we check out our VA, it's actually drawing 17 and 1/2 VA, or I don't want to say 17 and 1/2 W, cuz it's VA, but you'll only actually pay for .3 W.
+context after: You won't pay for 17 and 1/2 W. You'll only pay for .3. So, very poor power factor. Let's switch it on. And 16 W. 98 W here, 100 W.
+
+[1253] EEVblog #1253 - LED Flicker 2: Electric Boogaloo — Dave Jones (explains)
+context before: kill your lucrative government contract. And if you think that the, uh, flicker free version, uh, solves the problem by input capacitance, nope, it doesn't. There you go. It's a little piddly. You can barely see it, but 4.7 microfarad, 400. Volt there. It's solving it because it actually does proper secondary side current regulation
+TEXT: over here. Quite a significant topological differences between these, this one and this cheap ass jobby. And if you want to know what the power factor of, uh, this particular one is, it's even better than the other one. 0.974. Thank you very much. Now, of course we could try and
+context after: correct this power factor correction problem by, uh, but passive means, uh, using some inductors, uh, for example, but it's kind of like polishing a turd pretty much because we don't know, uh, the, what impact this, these mods have had to the efficiency of something like this.
+
+[dLlhoUHlnjE] LED Flicker 3 - More Electric Boogaloo — Dave Jones (explains)
+context before: Hi, just a quick follow-up video to this one-hung low LED driver flishy-flashy problem that I had. No point putting this on the main channel again. So I've got myself, I'll link those in down below if you haven't seen those videos. Anyway, I got myself some new LED drivers
+TEXT: because it just wasn't worth hacking these things. It's just silly. Anyway, lots of, you know, almost 100% flicker or poor power factor, take your pick. And some people said, oh, I should just lower the input cap value and stuff like that and then you'll get better power factor.
+context after: But it's still a power factor ripple and hence flicker. Trade-off. Anyway, so I got myself some new ones. These are flicker-free versions. Does it say flicker-free on here? Anyway, they are supposed to be. They're a Lifford brand. I believe I've shown these before and have used them before.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: all of your three different adjustments. You've got two adjustments down in there for your high frequency stuff, that's why it's at the end of the cable here, and your low frequency adjust right up there. So that's just beautiful. Thumbs up. And check out the power consumption
+TEXT: in standby mode. It's only half a watt, absolutely tiny, but of course the power factor's gonna be really poor, so that's gonna result in 6.3 VA there, but yeah, beauty in standby. And operating, only 18 watts, and power factor, actually not that great when it's operating, so
+context after: it's not terrific, but it doesn't have, you know, active power factor correction in it, or anything like that. So there you go, a measly 18.5 watts. And if you're wondering why we didn't see a lack of logic analyzer, or typical logic analyzer input circuitry,
+
+[dLlhoUHlnjE] LED Flicker 3 - More Electric Boogaloo — Dave Jones (explains)
+context before: second side. So there you go. That's, you can, it shows that you can do a decent, low-ish cost. It's not going to be as low a cost as this one. They've really cut costs there. But it shows that you can actually do it with a primary side only
+TEXT: regulation. That's great. Power factor, anything over 0.95 is pretty fine. And that ripple is, you know, it's not zero, but it's almost non-existent. Now for all practical purposes, this thing is not going to flicker at all. So that really is quite sweet. That's the Lifford
+context after: 1. So if you want a trade-off of, you know, and like, once again, decent size transformer. The switching transistors don't need any heat sink on them. They are just flapping around in the breeze there. But anyway, if it, but these things aren't subject to vibration
+
+[1253] EEVblog #1253 - LED Flicker 2: Electric Boogaloo — Dave Jones (explains)
+context before: And look at our input voltage. Look at that. There's not, you know, there's a bit of ripple on that, but no worries. You know how it was going almost down to ground before, because there was only 330 nanofarads there. So the input capacitance is
+TEXT: the, well, it fixes the problem. And our output ripple is really quite nice, even with the original, uh, was it 330 microfarad output cap. So we're still drawing our 24 watts. But our power factor, uh, wah, wah, wah, wah. Thanks for playing. It's dropped down to 0.58.
+context after: That is a horrible, horrible power factor. So really from the utility, you're drawing almost double the amount of, uh, current through the network copper, even if you're not being charged for it. I've done a whole video on that, linked in at the end and down below, if I remember to do it.
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (explains)
+context before: I'm I'm getting into apparent power versus real power, and that's not the scope of this video, but anyway, it shows you that these huge like normally, if it was power factor corrected, you would just see this waveform in here.
+TEXT: You wouldn't have these gigantic peaks. Yeah, if it was ideal power factor of one, you'd only see a small amount of current in there. But, we've got these huge current spikes in here, positive and negative, and this causes like losses I squared R losses in the cable.
+context after: I've covered that in fundamentals videos. You can't escape those I squared R losses. They're going to come from the cable. They're going to flow through your fuse, so it affects the fusing design of the fusing of your product and other component ratings inside your product and your distribution system and all sorts of things.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: But, that's not watts. You'll see that's actually on the left-hand side there, that's actually VA. And apparent power is not measured in watts like real power is, it's measured in what's called volt amps or VA.
+TEXT: Because it's simply it literally is that. It's voltage times the current. That's why the units are in VA. But, VA is not watts. So, you'll see underneath the voltage and current there that this product this oscilloscope is not drawing 67 watts as the VA indicates.
+context after: You can't just multiply the voltage by the current. That is not the true power that this product is taking. It's actually 30 W displayed below it. How does that work out?
+
+[1285] EEVblog #1285 - How to do Design By Inspection — Dave Jones (explains)
+context before: Let us know if you actually use that terminology. Leave it in the comments. But, you know, like there's other things that we could go into and things like this.
+TEXT: And we're not going to like look at power factor of this versus this. Like that's something that, you know, you might measure like build it. You can simulate it, of course, but you might actually want to build it up and actually measure it out in the real world.
+context after: And because I've got a as I said, might have a video coming up on harmonic power factor. It's not just phase lead and lag. Harmonic is the, you know, is is the killer.
+
+[773] EEVblog #773 - 80W INDUAL LED Light Teardown — Dave Jones (explains)
+context before: That feels like glass to me. Of course you need glass to handle the heat. You know, there's no way you're going to get like a 10 year lifetime out of some, you know, cheap arse little plastic lens. This is not going to do it.
+TEXT: Proper glass. Look at that. Beautiful. Wonder how much that costs in volume. Hmm. And I've just powered it up, and sure enough let's have a look. Yep, 82 watts. There we go. And the power factor's about 0.95 I think it's pretty good. 0.97, it was claimed at
+context after: 0.95, so yeah, it's better than what it claims. Nice. Alright, we'll just do a quick test here. I'll power it up. I've actually only got two of my new LED lights on so this is the regular light here in the lab, but I've fixed the
+
+[574] EEVblog #574 - NEC Analog TV IF Modulator Teardown — Dave Jones (explains)
+context before: Frequency fluctuation allows 2%. And power consumption, of course, for the model we've got, 5 kW. Go and figure. And there you go. Um ambient temperature range at minus 10 to plus 45.
+TEXT: Operational power factor greater than 90% up to 95% relative humidity. And they can operate these up to 2,500 m above sea level, which could be important because, hey, uh you know, you want to mount mount these things on the top of mountains, pretty much.
+context after: That's where they go. So, this is basic block overview of what we're looking at. We've got two of the items here today. As I said, we don't have the corrector here, but basically, we have got the audio and video input over here, which comes from the network, you know, channel 7 network headquarters or something.
+
+[725] EEVblog #725 - LG Plasma TV Teardown — Dave Jones (explains)
+context before: there we go, we've got a hundred and... no, there we go, 230 watts. And so it must be, obviously that's not standby, that's displaying something on the screen at the moment, so it's obviously booted up, so yeah, over 200 watts there. Wow. So we can see
+TEXT: our power factor, there we go, we've got a 250 VA and our power factor there, there we go, 0.82. But of course that 200-odd watts is going to change drastically with the information on the screen though, that's not going to be consistent at all.
+context after: I think it's displaying a white menu screen at the moment. So just for fun, let's just measure our main DC supply rail here, so that's going to be our ground, and yep, I've definitely got it plugged into the volts, you betcha. And let's measure
+
+[873] EEVblog #873 - World's Most Dangerous Consumer Product! — Dave Jones (explains)
+context before: So your average Joe might buy this thinking, oh yeah, you know, look, it says it's safe, no worries, right? Oh, you're putting mains wires directly into water, like... So I shouldn't have to tell you not to buy this heap of crap. It'll kill you!
+TEXT: Okay, don't try this at home! It's alive! It works! Wow, one kilowatt! Look at it! There it is! If you're curious about the power factor, there we go, it's almost bang- it is bang-on, so no worries. So much for the 500 watts. Wow, 1.1 kilowatts.
+context after: Oh, that's ridiculous. And the steam's coming up. Or is that hydrogen? Yeah, that looks completely safe, doesn't it? Two 40-volt mains, two plates straight in the tap water. 1.2 kilowatts now. Unbelievable. Just... no. Hang on. No, no, no, no, no, no, no. No!
+
+[1191] EEVblog #1191 - Digital Energy Savers BUSTED! — Dave Jones (explains)
+context before: So, a big ass inductive fan. Yes, it does have like an electronic controller and stuff like that in it, but it's predominantly a an inductive fan. Sorry about the noise here, but it is quite loud.
+TEXT: I've plugged it in without the woo-woo device, okay? Real power here, 93 odd watts and reactive power 103. Not about, you know, 0.9 power factor. Let's actually plug in our woo-woo device and we'd actually expect it to maybe improve it a tad.
+context after: So, 0.90. Let's plug it in. There you go. 0.914. It's going to it's getting better. Sorry. Can't see that. It's getting better. It's getting better. So, it's actually improved the power factor a little bit.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (explains)
+context before: Agilent have had the same digital uh probes across a lot of their models for, oh man, like 15 years or something now. And they've Yeah, they've finally got the new ones.
+TEXT: I'm not sure what the uh if there's any performance differences or whether or not they just uh physically look different and a bit sexier, but, yeah, that's nice. And the old 3000A drew around about 67 odd watts with a power factor of .91.
+context after: And the new 3000T takes 67 watts with a power factor of .86. Not much in it, but it's still got the ridiculous planet-destroying 6 and 1/2 watt standby. Geez, you could fly to Jupiter and back on 6 and 1/2 watts.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: So, like power stations might have or factories might have big capacitor power factor correction banks in there, for example. But, if you've got a capacitive load, which is often like what a switch mode power supply in, for example, that oscilloscope product, then you want to add some actually inductance in there to actually compensate that out.
+TEXT: You just want to add the opposite of whatever type of reactive component you have in your circuit or your factory or whatever. That's why if we go back to our oscilloscope setup over there, you can see that the power factor is only 0.45.
+context after: That's actually pretty poor. That's why we get 67 VA, but only 30 W in real power because we've got a 0.45 power factor. Put those into your computer, and that number will work out.
+
+[790] EEVblog #790 - Lecroy Wavejet 354 Touch Oscilloscope Teardown — Dave Jones (explains)
+context before: See ya! ... Winner! And just listen to all these relays click on when you switch it on, I love it! ... And how much power does it draw on standby? 1.6 watts? Meh, that's okay. Would have liked it to have been a bit lower.
+TEXT: VA of about 7, yeah. Not terrific, but that's what you get with a power factor of, you know, 0.23. And if we turn it on, we'll see that power factor. Shoot! Right up. Here we go. 0.64, it's still actually a reasonably poor power factor.
+context after: Anyway, this draws, doesn't take much. 42 watts and 68 VA. And it's 11.20pm. You think I'm going to finish this on time? For Teardown Tuesday? I don't think so, but Australia's ahead of the rest of the world. See ya! ...
+
+[164] EEVblog #164 - Agilent Fly To The Moon — Dave Jones (explains)
+context before: And that's at 247 volts which is the Australian mains voltage. At least that's what it is at my place here in Sydney. At about 256 odd milliamps. Not a problem. And, if we go over here, we can also measure the apparent power as well which is about 63.3.
+TEXT: Now, the power factor is about 0.86 on that. So, let's see if it draws anything when you switch it off. Ta-da! Look at that! There it is! It's still drawing 6.5 watts! Are you kidding me? God, you'll fly to the damn moon on 6.5 watts!
+context after: Unbelievable! And the apparent power, because the power factor is much lower now, it's 0.32. The apparent power's gone up to 20.5 but, unbelievable! 6.5 watts! Shame, Agilent, shame! OK, now here's the board. I've taken it apart. And, as you can see, it's got this long, mechanical, very traditional mechanical lever arm
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: imaginary reactive component. Got it? That's the power triangle. And that brings us to power factor, and you might have heard this before. That is simply the real power divided by the apparent power.
+TEXT: And ideally, when you're designing a product like that, a cell phone, your computer, or whatever, or a big industrial bit of machinery, for example, or your entire factory, then you want a power factor that's actually equal to one.
+context after: You want the real component to equal the apparent component. You want to just have basically a resistive load. You don't want any imaginary reactive component in there. You don't want any reactive uh component at all in your factory, because if you're a big factory, they're going to charge you for VA.
+
+[169] EEVblog #169 - Samson StudioDock 4i USB Monitor Speaker Review — Dave Jones (explains)
+context before: you need to get started to make a decent electronics lamp. Not just a lame-ass lamp, a decent electronics lamp. And I can hear those birds in the background, no problems at all. So how much power does it draw? Well, around about 8 watts.
+TEXT: Just sitting there, not playing at all. It's actually switched on. And if we have a look at the VA, almost 24 VA, at a power factor of 0.33. And it draws exactly the same, regardless of whether or not you have it connected to the
+context after: computer at all. And that brings me to a little point. This power LED here, I would have liked to have seen that be a USB active or speakers active LED. Because at the moment, you have no idea, unless you try and play something, whether or not they're actually connected to
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: You want the real component to equal the apparent component. You want to just have basically a resistive load. You don't want any imaginary reactive component in there. You don't want any reactive uh component at all in your factory, because if you're a big factory, they're going to charge you for VA.
+TEXT: So, the closer you can get your power factor to one, and it's never over one, it's always one or below, from zero to one, then the closer you can get to that, the less your electricity bill for your factory is going to be.
+context after: And you'll notice that's also equal to cos theta, which is the term over here in that real factor. So, if cos theta is one, you've only got a resistive load, then it's going to be equal to one.
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: But of course, if we have got a perfect power factor, i.e. a power factor of one in our load, then our voltage and current are actually in phase. So if we're producing an in-phase phase magnetic flux from the voltage and current, then well, we're not going to have any circulating eddy currents in there and that's not going to uh produce any rotational torque in the disc at all.
+TEXT: They're just basically going to cancel each other out and the disc isn't really going to move anywhere. So we have to actually delay one of these by 90°. So let's do some vector diagrams of what's actually happening here.
+context after: Now the current coil here, okay, it's if we've got current flowing through the coil, then because it's only a couple of turns, you can see in there, it's basically not inductive at all.
+
+[dLlhoUHlnjE] LED Flicker 3 - More Electric Boogaloo — Dave Jones (explains)
+context before: Power it on. And let's have a look at the scope of dope. There it is. Still got the same 200 milliamp... oh, 100 milliamp per division. 100, 200, 300, 400, so we're just over 400 odd milliamps there. And look at it. Naffle ripple.
+TEXT: Very, very nice. And I can't see any flicker on the camera on the panel of this thing. And as for power factor, well, don't know if you can see that. I think you can. That is 0.94 power factor. And that's at, or near,
+context after: 30 watts. So that's pretty darn impressive for just this, like, you know, single-stage converter like this. So I'm quite surprised, but obviously it's a better chip, they've got more input capacitance, they're doing some sort of right thing. Oh, let me turn that off now.
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: So, but it changes direction like this. Really didn't have time to build this to scale out of pain, did I? But, it basically goes back in the other direction like that.
+TEXT: So, these four quadrants just repeat themselves again for the waveform. And remember, this is not the load, okay? This 90-degree phase shift is not here due to load. This is at a power factor equal to one, okay?
+context after: Which is the current and voltage are in phase in your load. This is due to the fact that the voltage coil acting as an inductor, and producing a magnetic delay, a 90-degree magnetic flux delay in there.
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: But, of course, most houses in, uh, most countries, it might vary around the world, but certainly here in Australia, you do not pay for what's called apparent power. You only pay for true power in kilowatt-hours.
+TEXT: So, um it doesn't matter what the power factor of the energy is you're using, um you'll only pay for the real component of that. And uh this kilowatt-hour meter is designed to measure that real component.
+context after: So, this one's got a couple of ports around here, which if you wanted to have your cable in come in from the side, and you'll notice that there's three terminals on this thing cuz one two will be the current terminal and one will be the neutral or basically it's got a measure our voltage as going to have another terminal to measure the voltage.
+
+[726] EEVblog #726 - Dual Xeon Video Editing Machine Build — Dave Jones (explains)
+context before: And our socket 2, yep, it's there. So, it's all worked. No spread spectrum rubbish, and uh all the power management uh stuff, it's by default it's energy efficient, balanced There you go.
+TEXT: So, but it's working. Very, very happy. Awesome. And just sitting there idle doing absolutely nothing, it's drawing uh around about 177 watts, and uh 192 VA. That gives us a power factor of uh about .92.
+context after: So, that's just sitting there doing nothing at just at the BIOS screen. I don't know how much of that is the uh graphics card, of course, and how much is the uh motherboard with the uh CPUs.
+
+[936] EEVblog #936 - Mailbag — Dave Jones (explains)
+context before: It's like I unbelievable. Anyway, street cred for the electrical tape. Doesn't look the shape it looks very industrial. It's a Crompton um digital analyzer. Like one of those industrial panel mount digital analyzer is from a very large mains mains switchboard that just faded away and stopped working.
+TEXT: So, it's dead as 1998 vintage and let's crack it open for a 2-minute teardown. So, this is a power analyzer, apparently measures our volts, amps, power factor, all that sort of jazz and uh reports back.
+context after: Let's tear it down. And made in the old dart, too. Thank you very much. Screw that. And we're in like Flynn. Moldy board cube construction there. Ribbon cable going off to our touch buttony things on the front.
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: So, you will have two different phases of flux inside your aluminum plate in terms of circulating eddy currents. And that will actually produce maximum torque in the disc in the one direction as we've talked about at a power factor of one.
+TEXT: And once the power factor goes in your load goes below one, then it becomes less optimum and you're getting less and less torque in your disc. So, it's effectively measuring the true power in the load.
+context after: So, in terms of this being a linear induction motor, what we've basically got here is a transformer core like this. These are the stators. We've got one stator in the middle.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: But, that is imaginary, it's not actually dissipated anywhere in your actual uh circuit or product. And by inspection, you can see that the apparent power S is equal to uh P squared, which is uh your real watts, uh plus uh Q squared over here, and square root of that, which is also equal to, as we saw before, uh the real component plus minus the J imaginary component Q, which is your
+TEXT: imaginary reactive component. Got it? That's the power triangle. And that brings us to power factor, and you might have heard this before. That is simply the real power divided by the apparent power.
+context after: And ideally, when you're designing a product like that, a cell phone, your computer, or whatever, or a big industrial bit of machinery, for example, or your entire factory, then you want a power factor that's actually equal to one.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: Because put cos zero, zero phase difference in the uh confuser here, and that's going to give you a value of one. So, your power factor is going to be one at best.
+TEXT: So, the closer you get towards zero, the more current you're going to take from your entire up upstream power delivery system, and the more the electricity provider is going to charge you for that.
+context after: So, that's why you will often have a power factor correction circuit inside your product. I've done an entire extensive video on this, so I'll link that in down below, and you can design active and passive power factor correction circuits.
+
+[1753] EEVblog 1753 - Designing a 2000V Isolated Oscilloscope (Cleverscope) — Dave Jones (explains)
+context before: >> Oh, I was going to say that is AI data center. I had that. >> That's what it is. >> Yeah. >> Between 1 and 10 MW. Kind of a big thing.
+TEXT: >> Yeah. >> It's to replace the big heavy metal traditional transformers, which have some issues. Supply is one of them. >> Yes. >> Second issue is that they have a power factor variation, >> Mhm.
+context after: >> which affects the power supply system. They don't like it. Whereas, a solid state transformer can be unity power factor, which is quite useful. Or invariable, in fact, if the utility wants them to do that.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: It means that there's very little series resistance in that those transformers, but there's some. And that's the only place in the resistive component of that transformer that is going to dissipate power.
+TEXT: So anytime you introduce a reactance in your circuit or your load, for example, then you're going to get that voltage current phase difference, and that's when the cos theta term comes into here.
+context after: So let's look at apparent power here. What is apparent power? Well, it uses the term S here. That's what stands for apparent power. And it's simply the voltage times the current.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: It Give me a break. Let's switch the lab lights off here, and boom, it's blaring. It's absolutely blaring away. This is terrible. God, this ain't some consumer toy. And how much does it draw on standby?
+TEXT: Good question. 4.8 W. God, flight of Jupiter on 4.8 W, you've got to be kidding me. And that's a power factor of -0.2 20 almost 24 VA. Crazy. And how long does this stupid thing take to boot up?
+context after: Well, you don't really want to know, but here you go. For goodness sake. Boot. Come on. Oh, this is painful. That only took a minute and a half. What am I complaining about?
+
+[1649] EEVblog 1649 - Mailbag: M5stack, Beelink Mini PC, ZOYI LCR, ToughOn Battery — Dave Jones (explains)
+context before: 10 and 1/2 watts. Are you serious? The monitor would take more than that. Sniff of an oily rag stuff, really, for a like a modern OS like this. Incredible.
+TEXT: Oh, for those who desperately need to know the VA on that, 23. So, yeah, the power factor is not exactly, you know, there, but you don't expect it. Little switching power supply like this jobby.
+context after: CPU-ID on that? Uh I'll put up the other one um over here, the Ryzen uh 7. Um but yeah, we've got the i5 uh 12450H. It's the Alder Lake 12th gen jobby.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: So, the closer you can get your power factor to one, and it's never over one, it's always one or below, from zero to one, then the closer you can get to that, the less your electricity bill for your factory is going to be.
+TEXT: And you'll notice that's also equal to cos theta, which is the term over here in that real factor. So, if cos theta is one, you've only got a resistive load, then it's going to be equal to one.
+context after: Because put cos zero, zero phase difference in the uh confuser here, and that's going to give you a value of one. So, your power factor is going to be one at best.
+
+[1191] EEVblog #1191 - Digital Energy Savers BUSTED! — Dave Jones (explains)
+context before: They haven't installed a apparent power meter. It's a real power watt meter. So, there you go. I think it's about 9.1 watts there, and if we switch over to apparent power, it's about 32.
+TEXT: So, that gives us a power factor of about 0.57 there. It's just a factor between the two. So, you can see it actually draws significant power, like it has, you know, not a great power factor.
+context after: So, what I'm going to do now is plug in the woo woo device right next to it. Yes, I've got it out of the case. Don't do this at home, kiddies.
+
+[uxm3qeKcg3w] EcoFlow Delta Pro Battery Capacity TESTED — Dave Jones (explains)
+context before: That's microwatts, by the way. That's my 0.8 microwatts my microwatt hours. Sorry. So, energy meter on watt hours, okay? I'll now turn on the 1 kilowatt heater. And All right.
+TEXT: There we go. And I can actually go back on the display here. There you go. It's actually 1.1 kilowatts. And of course, uh because it's a resistive uh load, the power factor is precisely one.
+context after: But, even if we had a lower power factor, this energy meter is one of the best ones you can possibly get. So, anyway, there you go. Oops, I forgot to unplug the mains input.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: You just want to add the opposite of whatever type of reactive component you have in your circuit or your factory or whatever. That's why if we go back to our oscilloscope setup over there, you can see that the power factor is only 0.45.
+TEXT: That's actually pretty poor. That's why we get 67 VA, but only 30 W in real power because we've got a 0.45 power factor. Put those into your computer, and that number will work out.
+context after: So, hopefully you now understand apparent, reactive, and real power. It is quite confusing, and if you're not using it all the time, you go, "Oh, is it reactive power?
+
+[1517] EEVblog 1517 - Heat Pump Hot Water Install & Analysis — Dave Jones (explains)
+context before: That's all right. No wuckers. Uh that's 1.8 VA. Let's see what the pump takes. I'll switch it on. No, didn't do anything. Nope, fan's not going. Nope, nothing. So, it's drawing a couple of watts in standby.
+TEXT: VA on that, oh yeah, pretty terrible. Uh 40 VA, but as I said, yeah, power factor of 0.07. Yeah. That's what happens to these sorts of things. Uh yeah, that's what you'd expect.
+context after: It's terrible, Muriel, but uh but yeah, I I only pay for um the watts. So, 2.7 uh 3 W. So, let's run through the numbers of what I actually measured and compare it with what I thought I would get before I actually installed this thing, because this whiteboard might be familiar to many people, or at least the people who are subscribed to my second channel EE Vblog 2.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: Well, you don't really want to know, but here you go. For goodness sake. Boot. Come on. Oh, this is painful. That only took a minute and a half. What am I complaining about?
+TEXT: Yeah, right. You're going to RUN THE BLOODY MILE in a minute and a half. Give me a break. And when it's switched on, it uses 143 W, and that is 151 VA at .95 power factor.
+context after: There you go. And if you switch on the RF, it doesn't really increase that at all. And how loud is it compared to the Agilent scope? So, I've got the Tektronix here, the Agilent here.
+
+[1505] EEVblog 1505 - 120W Home Phantom Power? Audit Time! — Dave Jones (explains)
+context before: Wow. Okay, I was actually concerned by this one, but you know, I mean yeah, you can switch it off. Three was still three watts, but jeez, that's that's all right.
+TEXT: I expect a lot more. One of these Dyson Hepa filter thingies, uh 0.2 W. That's not too shabby. But once again, like the power factor on these is going to be terrible.
+context after: There you go, 0.02 uh power factor, 11 VA. So, uh you know, that current's got to come from somewhere. Bedside clock, uh well, it's got one of these like sunrise lamp things, but that's not on.
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (explains)
+context before: And you'll notice that's also equal to cos theta, which is the term over here in that real factor. So, if cos theta is one, you've only got a resistive load, then it's going to be equal to one.
+TEXT: Because put cos zero, zero phase difference in the uh confuser here, and that's going to give you a value of one. So, your power factor is going to be one at best.
+context after: So, the closer you get towards zero, the more current you're going to take from your entire up upstream power delivery system, and the more the electricity provider is going to charge you for that.
+
+[1032] EEVblog #1032 Part 5 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: So, there's no requirement if a scope take, you know, has a power factor of 0.5 or something. You don't need Well, something that requires power factor full power PFCs, you know, even low power the PFCs are available down to what less than 100 W?
+TEXT: So, you will have a power factor almost any product today will have a power factor of 0.98 or 0.99. All right. It used to be PFC was only used at 600 W and up.
+context after: Now, it's even a 45 W brick has a PFC. Right. Yeah, because the chips have gotten so cheap and it actually above a certain power level, it's actually cheaper to have PFC than not.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: You won't pay for 17 and 1/2 W. You'll only pay for .3. So, very poor power factor. Let's switch it on. And 16 W. 98 W here, 100 W.
+TEXT: That's That's what I expected. Our power factor, there you go, it's gone up to .5 as you'd expect. You It improves at It's very poor at low power factor.
+context after: So, you know, .5, that's not too shabby. So, you know, that's 194 VA, but you know, you'd only be paying for that 99 W still. Let's Let's power that on.
+
+[674] EEVblog #674 - Rigol DS1054Z Teardown — Dave Jones (explains)
+context before: What it actually takes, haven't measured it yet. And it turns out the answer to that question is 22 watts or thereabouts with all four channels running at the fastest time base.
+TEXT: But if you want to know the apparent power, well, there we go. 40 about 40 and a half because the corresponding power factor, there it is, is about 0.55.
+context after: Not that crash hot. But you'll be pleased to know, yes, it does have a real clunking power switch. It draws nothing when you turn it off. Yay. As for getting this sucker apart, looks like very same as the 1052E.
+
+[BtQUuD6QRMw] Solar Panel Temperature Dependency — Dave Jones (explains)
+context before: But, anyway, um I hope you found that interesting. Somebody else also asked, which is a fair enough question, if this thing clips like, you know, it was like clipped here.
+TEXT: Let's say, you know, you get a perfect curve and then you see the flat top clipping on there. They asked, does that upset the power factor of the thing?
+context after: Well, no, because you'll still get the perfect continuous sine wave output. Um, this has nothing to do with the actual, the 240 V sine wave actually produced by the inverter or the microinverter in this case.
+
+[1191] EEVblog #1191 - Digital Energy Savers BUSTED! — Dave Jones (explains)
+context before: Plugging in this magic woo woo device has actually made the power factor worse. It's drawing more apparent power, a lot more apparent power. So, right there it is absolutely busted.
+TEXT: Not only does it not work, it If you were being charged for apparent power, then you'd be charged a lot more for it, just by plugging in this device.
+context after: It's ridiculous. It's just an absolute joke. It just doesn't work with modern products like this that have a bad power factor like this. It's the opposite of what you want.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (explains)
+context before: That would do it um by changing the integration time, you'd uh likely get your increased resolution there. And if you're curious to know how much uh power it takes, there we go.
+TEXT: I've got it hooked up to my uh power meter here. And it's taking about 16 odd watts or thereabouts or 18.5 VA. Woohoo! With a power factor of .863.
+context after: Terrific. Well, it basically works, so there's only one thing left to do and that's take it apart. Now, of course, what we expect in this sucker is uh uh pretty much uh you know, late '80s vintage.
+
+[1446] EEVblog 1446 - Analog Watt Hour Meters are AMAZING! — Dave Jones (explains)
+context before: But because it's a pure inductor, the actual current is going to be at 90° and of course it's the current that actually produces the magnetic flux. So our flux that's due to the voltage which we'll call V flux is at 90° to the voltage.
+TEXT: So at a power factor of one here where voltage and current are in phase in your load, okay, so that's why I've got them both pointed up like this.
+context after: They're in phase. The actual flux produced by the voltage coil will be 90° lagging from that 90° out of phase because it's an inductive voltage coil. So what you end up with here is a flux due to the current coil here that is 90° out of phase to the flux caused by the voltage coil.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: So, this is with no power factor correction. This is in standby. Still on 327 mW. Power factor of .02. Yeah, it's pretty bad. So, if we check out our VA, it's actually drawing 17 and 1/2 VA, or I don't want to say 17 and 1/2 W, cuz it's VA, but you'll only actually pay for .3 W.
+TEXT: You won't pay for 17 and 1/2 W. You'll only pay for .3. So, very poor power factor. Let's switch it on. And 16 W. 98 W here, 100 W.
+context after: That's That's what I expected. Our power factor, there you go, it's gone up to .5 as you'd expect. You It improves at It's very poor at low power factor.
+
+[dLlhoUHlnjE] LED Flicker 3 - More Electric Boogaloo — Dave Jones (opinion)
+context before: We've got the full-wave bridge rectifier going directly across the filter cap of course, that's why the cap's 450 volts. And then we've got our, no doubt, it's similar to the chip that we... what was it? Onbright or whatever? Chip that we used here, but it could be another manufacturer.
+TEXT: Don't know if it's the same one. But it's a similar topology, but they're getting much better... well, they're supposed to get much better power factor out of this. And ripple, flicker-free. So let's try it, let's power it up. Alright, got my current clamp probe on there.
+context after: Power it on. And let's have a look at the scope of dope. There it is. Still got the same 200 milliamp... oh, 100 milliamp per division. 100, 200, 300, 400, so we're just over 400 odd milliamps there. And look at it. Naffle ripple.
+
+[1038] EEVblog #1038 - Uni-T UPO2104CS Oscilloscope Teardown — Dave Jones (opinion)
+context before: because we saw that the memory could handle all the channels 32 meg per channel I think. So I don't expect to find much if anything interesting on the bottom. So yeah, I just want to get around to powering this thing up. ... ...
+TEXT: ... ... Takes almost 50 seconds to boot! It's infuriating! Anyway, what does it draw? 44 VA and 26 watts. Jeez, that's not a terrific power factor is it? But anyway, 26 watts. So it says like 100 VA on the back, didn't it? Jeez, not even drawing half that.
+context after: And 2.13 watts in standby. That's at least a trip to the moon. Seriously. Mars, maybe. And for those wondering fan noise on the thing, not as bad as the Rigol 1054Z. It's not too bad, like in a quiet lab you would hear it, but you know, look, if you want to put a silent
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (opinion)
+context before: It gets a bit you know, hairs on the back of your neck start going up but in this case it's easy. There's our mains input cable for this. There's our brown active wire and we simply clamp around that.
+TEXT: Bingo. That is our current waveform for this oscilloscope. As you can see, uh pretty poor power factor of course, you know, not terrific. And the good thing is most oscilloscopes will have support for current probes.
+context after: So, if I call up uh the channel one menu here and we just go into probe like this and I units um you know, any good scope these days will have volts and amps.
+
+[791] EEVblog #791 - Ebay Fluke 45 Multimeter Teardown — Dave Jones (opinion)
+context before: Leave it in the comments. And by the way, the manual says this thing used an 8-volt rechargeable battery pack. It's rather bizarre. Here's a photo of it. And what's the standby power consumption with the switch off?
+TEXT: Well, just over 1 watt. That's all right with just the uh transformer and the uh output rectifier and filter caps energized, and we're looking at uh 8 VA. Uh and the power factor is awful, as you'd expect.
+context after: So, I hope you enjoyed that look at this venerable Fluke 45, the world's first dual display multimeter from the late 1980s. An absolutely classic meter that still holds its own today uh spec-wise.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (opinion)
+context before: Hopefully we don't release the magic smoke. And 3. 2 watts. There you go. So it actually draws more in standby with the power factor correction. That's that's a shocker.
+TEXT: That's terrible. And the power factor correction is not that great. It's better but 0.16, but this is typical of low power products like this. That's not great at all, is it?
+context after: Anyway, let's switch it on. Wow, well that's very interesting. It doesn't work at all with the switching transistor. Are you kidding me? Well, that actually makes no sense at all because if the switching transistor just wasn't Let's say the switching IC, let's say that was busted and it just wasn't driving that transistor at all.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (mention)
+context before: But, it's 220 to 240 V input, although it does operate from 180 to 290 V input. Burden voltage less than 10 W per phase. Frequency range it operates from 45 hertz to 60 hertz and then the current range is got looks like one channel is that one channel 6 amps 5 channels 20 amps I don't know current limit is 20 times the maximum current range for 0.5
+TEXT: seconds for those surges then our burden power in this case less than 0.5 VA or 0.5 watts per phase and it does four quadrant energy measurement imports and exports uh real and reactive power it does absolute and three phase and per quadrant and all that sort of jazz and it does frequency phase angle power factor total harmonic distortion unbalanced stuff and you can do waveform downloads it's got five
+context after: cycle resolution on sagging and stuff like that so it can record that time date and phase worst case excursions programmable trigger levels man it's got everything it's got IO as well it's got a various relay drive outputs and stuff like that really quite neat designed to operate over minus 25 to plus 60 degrees range it's 2.1 meg of non-volatile memory so it can record for 3600 days 10 years
+
+[173] EEVblog #173 - Gossen Metrahit Energy Multimeter Teardown — Dave Jones (mention)
+context before: It's part of their uh Starline series, very similar to the Metrahit Xtra uh system multimeter I've reviewed donkey's years ago and this is the new Energy multimeter. Triple display, measures power and energy consumption.
+TEXT: It's brilliant. It's one of my favorite METERS ON MY BENCH. Let's crack it open and see what's inside. Here it is up close. It uses exactly the same case as the Metrahit uh Xtra series which I've reviewed before, but of course it now it measures uh energy, power, watts, and VA, um power factor, and all sorts of stuff, voltage and current at the same time and that's why
+context after: you've got the triple digit display up here, which is beautiful. I love it. It's got full count and resolution on each display. Haha, beautiful. And it's exactly the same case.
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (mention)
+context before: That's exactly the the it's the squared factor, the mean uh factor, and then the square root in there. So, anyway, we won't go into details. It's basically just getting the area under the curve.
+TEXT: So, you just have to get this area under the curve here, and you can do that using graphical methods if it's just like a sawtooth waveform or something like that, or even uh you know, a pulse current uh waveform like that, like a poor like power factor on a DC to DC converter.
+context after: You'll get a waveform like that. I showed that in previous videos. You can do these actually using uh graphical methods, or you can do it using uh differential calculus.
+
+[QxMmEAb2JME] Dungeon LED Light Upgrade — Dave Jones (mention)
+context before: Sorry about that, but there you go. And so that's 6,000, 5,000, and 4,000 color temperature. And, of course, I can turn them both down like that, but, yeah, I do prefer the 5,000. So I've standardized on that. Okay, so the ones I've got in here at the moment, these are these tricolor ones.
+TEXT: They're a cell jobby, and they're 18 watt. There you go, power factor 0.9. There you go. They're actually 2,200 lumens at 4,000. Oh, it was 4,000, was it? Yeah, sorry, I thought these were 5,000. No, they're only 4,000. So 3,000, 4,000, and 6,000.
+context after: It's another reason to upgrade, actually, is because there'll be 5,000 instead of 4,000 to match my other lights. The color rendering index, just greater than 80, meh. You know, it's a bit how you're doing. And there you go. It's just got an adjustable switch, and all that will do is just turn on different...
+
+[1730] EEVblog 1730 - AC Basics Tutorial Part 8: Apparent, Reactive & Real Power — Dave Jones (mention)
+context before: Hi, welcome to part eight of the AC Basics tutorial series. Going to look at something very important today, not some obscure rubbish. We're taking a look at apparent, reactive, and real power.
+TEXT: And we'll take a look at power factor as well. You'll encounter these terms absolutely everywhere in all aspects of power distribution, power supply, AC power distribution, AC power supply, or your mains powered stuff.
+context after: If you've ever seen me review a mains powered product, and an oscilloscope or a computer, I might actually measure its mains, like its power consumption from the mains. And it might measure, say, 15 VA, or 15 W, or 15 VAR, for example.
+
+[VTHcxTst_RA] Rohde & Schwarz MXO3 3 Phase Power Measurement — Dave Jones (mention)
+context before: >> Is is that three-phase module available on all the series scopes? >> That is correct. This is a new options that we have complete on our MXO series 345.
+TEXT: Okay? And this allows you to look at all the three-phase measurement. And the bottom part you get to see the frequency. Okay? And we can tweak this to optimize all the crest factor, active factor, as well.
+context after: As a scope, you know, we do have 1 to probably 4% error. Okay? The way to improve this cycle-to-cycle measurement, okay, first you need to find out, you know, where are we triggering it.
+
+[1698] EEVblog 1698 - Awesome Ebay AC Power Source: GW Instek APS-7050 — Dave Jones (mention)
+context before: So, we search for a time, so we can ramp up time or voltage. Let's ramp up voltage here, and we can look, we can set the steps there. Isn't Isn't that groovy?
+TEXT: And we can get some power meter functionality here, as well, by hitting the display button like that. There you go, we can get our power factor and our crest factor.
+context after: Isn't that groovy? So, it looks like that's all we've got there, by the looks of it, but, uh, looks like you can change the measurement item. So, like that volts, so you could actually put, um, the power measurement on there if you wanted to.
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (mention)
+context before: It doesn't actually care. This could be a perfect sine wave, could be a triangle wave, a square wave, it doesn't matter what this waveform is. If it goes to plus one up here and minus one down here, it it doesn't matter.
+TEXT: It could have a tiny little spike like this, tiny little spike down here. It could be like a you know, that could be a very poor power factor as we've looked at.
+context after: Way means way form or something. The peak-to-peak, it doesn't matter what the wave form is. The peak-to-peak is just the actual instantaneous peak value like that. But average and RMS, they're different.

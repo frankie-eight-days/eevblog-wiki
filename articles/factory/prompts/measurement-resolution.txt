@@ -1,0 +1,338 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: measurement resolution
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 61 passages drawn from 43 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# measurement resolution`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: Very cheap, very easy. So, you can take as long as you want to measure these uh ramps here and these ramp times. And from these value uh from these measurement times, then and from a known reference uh charge up point, you can apply a reference.
+TEXT: You have a known voltage, takes a known amount of time. Well, you can work out by some very simple formulas what your input voltage is. And because you have a fixed clock rate, effectively, the longer you let this ramp up, the more accurate you can measure the time, or the greater the resolution you can measure the uh ramp up and ramp ramp down time, and therefore the greater
+context after: resolution you can measure the input. That's why these uh bench multimeters, because they use an integrating ADC uh technique like this, dual slope or multi slope, as we'll get into, um then that's why they take longer to uh get a 6 and 1/2 digit result than they will to get like a 3 and 1/2 or 4 and 1/2 digit result, because they just change the uh ramp time based on the current used to
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: But, um yeah, AC bandwidth can be important depending on what you're working on. But, if you know that, then you're going to know what to look for. So, really don't worry too much about the bandwidth for just a general purpose, you know, everyday use instrument.
+TEXT: So, how many counts should you look for when you're buying a multimeter? Well, as always, the more the better, but not at the expense of accuracy because if you get that 6,000 count meter and it's only got 0.5% accuracy, well, it's really you know, it's got more resolution which allows you to see changes, but your figures not actually going to be accurate accurate.
+context after: But, more digits, even if it's inaccurate, can help. More resolution can be good for some applications when you want to see just a relative change in something. But, you know, it's really just really go for a 4,000 count one.
+
+[q4gXnpFPFzQ] 121GW Multimeter 2.00 Firmware — Dave Jones (explains)
+context before: So, there you go. There's just a few changes. There's a minor bug in, like, low ohms mode or something like that. But, anyway, let's now have a look at a capacitor. We've made changes on the capacitance range as well. So, let's go over to there.
+TEXT: So, the old one, this is a 100 mic cap. Let's plug it in. Both are on auto-ranging. And... 94. See, it didn't actually auto-range properly there. It's capable of, it's given the correct value, but it didn't auto-range properly. So it's actually, you're capable of actually getting more resolution than that,
+context after: but you had to go in and do it manually. So that was a bug in the old 1.57 and 1.58, because there was a 1.58 beater, I think. Anyway, and in the new 2.00, that's just going to work, should work, hunky-dory. There you go.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: Well, you've got the needle width in there, and, well, you kind of have to guess a bit, but I'm guessing that there's at least 250 needle distances, like, needle widths in that sweep at least. So assuming that we've got 5 needle widths between each one of those scale graduations there,
+TEXT: then that's a total of 250 across there, 5 times 50 there is 250. But even if you had, say, 500, that's still only 0.2, that represents a minimum resolution, or, sorry, a maximum resolution, the highest resolution you can get with this, of, say, 0.2%, or maybe, if you'll use that lower one, 0.4%.
+context after: That's kind of like the best resolution you can get. So that would be the equivalent of this digital meter over here, not having these two digits at all, and only having this digit here, the second after the decimal place, jump up by 4, at 4 counts at a time.
+
+[1474] EEVblog 1474 - Can You Measure Capacitors IN Circuit? — Dave Jones (explains)
+context before: So, one of the things that you're supposed to know when you're using LCR meters like this is that for large value capacitors like this, you're supposed to use the lower frequency, like 100 Hz, 120 Hz.
+TEXT: And that really gives us our capacitance value. So, if you were to give me this cap and say measure it, right, I'd put it on the 100 the lowest frequency mode, 100 Hz, and that will give us the greatest resolution, and we'll as we'll talk about different range resistors in a minute.
+context after: But, yeah, that's going to give us the best value. And the ESR, 1.3 ohms. So, basically, our ESR was pretty much bang on to where we were where before.
+
+[506] EEVblog #506 - IR Remote Control Arduino Protocol Tutorial — Dave Jones (explains)
+context before: With any sampling system like this, the resolution is going to be dependent upon your sample rate. Now, we're sampling at 8 MHz here and you'll notice that it's over on the right-hand side there it's saying the pulse width is giving us that to three decimal places or 1 nanosecond resolution.
+TEXT: Well, that's obviously complete It's saying it's 12.875 microseconds. It's not possible to get 1 nanosecond resolution on that, but 8 MHz is more than good enough to get the timing requirement for this particular application, but let's resample that at say a lower rate of 500 kHz.
+context after: Now, if you invert five let's start that, capture it. And here we go. And if you invert 500 kHz, of course, you get 2 microseconds. You'll notice that there we go.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (explains)
+context before: Well, I can probably, you know, get it to like, yeah. Anyway, it's it's it's a pretty good screen. I like it. And I like the big crisp high contrast digits.
+TEXT: They're really quite nice. They're It's really good at most angles. So, yeah, big thumbs up for the screen, that's for sure. Now, the first thing you should have noticed is that, look, 10 microvolts resolution here on the, well, 100 mV range cuz it's, you know, 10,000 count.
+context after: So, you might think that's and that is really good, right? That's better than most meters already. But this thing has another one up its sleeve. Put in manual range.
+
+[137] EEVblog #137 - BK Precision 879B Handheld LCR Meter Review — Dave Jones (explains)
+context before: So, I'd recommend going springin' if you're going to get this model for the top-of-the-line 879B. So, what are the headline specs? Well, they've improved this model over the existing Escort design in that the primary display is now 40,000 counts, which the old one was 20,000 counts.
+TEXT: So, you get twice the number of counts, which is really useful. It means you can get uh a greater resolution for a more over a more useful range. So, if you measure a 39 um 39 nF capacitor, you'll get an extra digital resolution over a 20,000 count meter, which is awesome.
+context after: Now, um the secondary display is 10,000 uh count, which is still pretty darn good. Um it's got USB interface, which we'll go into. Um it measures up to 10 kHz, which uh the cheaper LCR meters won't, so that's real handy.
+
+[215] EEVblog #215 - Gaussian Resistors — Dave Jones (explains)
+context before: And this is where resolution counts. And also, with this sort of test, you're going to want stability. And once again, the Fluke 87 is more than stable enough for a measurement like this, but hey, I've got a HP 3478A bench meter with an extra digital resolution and better stability.
+TEXT: So, hey, why not? Let's use it. So, let's gild the lily, shall we? And use the five-digit mode. I mean, you know, the 3478A has got a four-digit mode to mimic the Fluke 87, or even a three-digit mode if you're that way inclined, but we'll use the five-digit mode.
+context after: It's warmed up, so it's nice and stable. And the other thing which can affect this sort of measurement is the change in temperature over time. So, we'll just monitor that as well, but I, you know, I wouldn't expect a major change.
+
+[BuFoA-qt1PY] Brymen BM2257 Intelligent Auto Power Off (iAPO) tested — Dave Jones (explains)
+context before: 100 millihertz signal, so basically once every 10 seconds, 10% duty cycle. And you can see it, it's going from 0 to 5 volts here, and you'll see them all tick over. There we go, it goes to 5. I think this has a slightly better update rate, which is why it stays
+TEXT: there at 5, gets to 5 quicker than the 235 does. Of course the BM786 has an extra digit of resolution there. It went to 2.5 volts interim there, but that's because the waveform just happened to be in the point in the sample period where it actually sampled that.
+context after: So it's neither here nor there. But anyway, so I've got a timer here, so I'm going to reset all these. So I'm just going to leave this, it'll just put in a small pulse, a 1 second pulse every 10 seconds, so it'll continually
+
+[774] EEVblog #774 - Low Battery Discharge Testing Part 1 — Dave Jones (explains)
+context before: boom, boom, boom, boom. So then it just hits the bottom and this thing just starts bloody well oscillating. Battery oscillation! Beauty. But hey, I'll just check another power mode, I'll do 10 milliwatts now, okay? And just see how good it is in 10 milliwatts.
+TEXT: There we go, we're down at 10, our resolution is right down there, you know, we can get better instruments to measure this more, there's better techniques to measure this more accurately, but yeah, that's good enough. Once again yeah, 10 milliwatts down to 0.24,
+context after: 0.21, 0.15 volts, we're still getting our 10 milliwatts, eh, near enough. So I'm happy with that setup, it passes the test, so let's go and measure some real batteries. Sorry I won't be able to give you the data today, this is going to take a long time, we'll have to do
+
+[324] EEVblog #324 - DC-DC Converter Testing - USB Supply Part 4 — Dave Jones (explains)
+context before: over to amps, bingo! We've got our same current, but look! The voltage has jumped right back up to 5 volts. There is no drop in these leads, or very little. It was all inside the burden voltage of that multimeter. What a bastard! Trap for young players.
+TEXT: There's two ways around it, either to use my microcurrent if you really want to do this, then you have to be, if you really want, but you see with the 10 amp over here, okay, our resolution has dropped. So if you want to keep that resolution, okay, it's dropped
+context after: to 4 1⁄2 volts. There it is. You have to compensate for the drop, the burden voltage, the drop of voltage in this meter by turning up your input voltage back to 5 volts. So as you increase this current here, you've got to increase your, you've got to adjust your power supply at the same time
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: So you know, we aren't going to be down here. We're going to be, you know, much significantly higher than this. So it's neither here nor there. And we probably want that on a log axis as well.
+TEXT: So we go into scale and log. Thank you very much. There we go. That's better. Let's do that again. And as I mentioned in the previous video, we're only going to get because of our 400 lines of resolution on this thing, we're going to get large steps like that.
+context after: We're not going to be accurately able to measure over the full 100 kilohertz bandwidth. But hey, let's actually run with that. So right, so just remember that. That's our baseline noise floor for our setup here.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: then that's a total of 250 across there, 5 times 50 there is 250. But even if you had, say, 500, that's still only 0.2, that represents a minimum resolution, or, sorry, a maximum resolution, the highest resolution you can get with this, of, say, 0.2%, or maybe, if you'll use that lower one, 0.4%.
+TEXT: That's kind of like the best resolution you can get. So that would be the equivalent of this digital meter over here, not having these two digits at all, and only having this digit here, the second after the decimal place, jump up by 4, at 4 counts at a time.
+context after: You wouldn't even be able to get 1 count on there. But, ah, all your greybeards are going to go, yeah, but if I hold my tongue at the right angle, I can see that it's, you know, half a needle width across. Yeah, you can.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: It hasn't changed, but because the integration time is not long enough to do any effectively like averaging, so to speak, even though it's integration. I won't go into the differences, but but anyway, if we go to there, and then if we go to 10 power line cycles, watch.
+TEXT: Tada! We get an extra digit of resolution here, and of course, we're getting our zero volts there. Once again, if I touch those leads, right, yeah, I can get, you know, tens of millivolts, basically, equivalent to what we get on our handheld multimeter here.
+context after: And I can show you how the smoothing, you know, average mathematical averaging doesn't do the same thing. It's actually to do with the measurement integration, not the post measurement smoothing or something like that.
+
+[1604] EEVblog 1604 - BEWARE! Multimeter Burden Voltage — Dave Jones (explains)
+context before: We don't get as many digits as we got when we were actually using the milliamps. So, go over to milliamps, you can see that we're actually getting three decimal places.
+TEXT: Over here, we're only getting two, basically two decimal places after the milliamp range there. So, we've lost some resolution, but we're now not impacting our circuit as much cuz this shunt resister is much, much lower on the amps range, but it's not zero.
+context after: If you actually go and put 10 amps, try it on your multimeter at home, put 10 amps through your amps jack, and actually, you can put a second multimeter, this is why you should have two multimeters, second multimeter across here, and you can actually measure the burden voltage yourself.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: There we go. That's a certainly well within spec right down at that and the display is spot on. Two least significant digits. This one's four least significant digits out, but there you go.
+TEXT: It's drawing close enough to 10 milliamps so and that's not too bad. I mean, you're right down in the noise and right down in the resolution and the noise of the specs, so to speak, right down at that bottom end of the range, but certainly not a problem.
+context after: Now, what I'm going to do here is I'm going to measure the noise performance of this thing and I've got my Agilent scope here, bandwidth limited by the way to 20 megahertz cuz that's a spec.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (explains)
+context before: You don't want that. You just want Give me 10 meg, damn it. Um and uh auto zero in uh off or on if you want to auto zero your reading.
+TEXT: Generally, you're going to leave that on, and your aperture number of power line cycles. It defaults to 10, but of course, we can do uh you know, we can make our display uh faster, but you uh lose some resolution there with the lower power line cycles.
+context after: Bingo, we've just gained an extra uh digit. That's basically eliminating the um 50 hertz mains hum or 60 hertz. It's going to detect which uh mains frequency you're using in your particular country.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (explains)
+context before: One millivolt minus 100 microvolts, of course it's going to have a very a um error or a 10% error there of 90 microamps. So, let's actually measure that. So, let's go up here and we've got it set to 1 V here and we're getting our 100 microamps as we saw before, spot-on.
+TEXT: Because um in theory, we should actually expect 99.99 microamps, but because um that value is one uh digit um better than the resolution we've got here, eh it's you know, it's insignificant, especially when you consider the accuracy of this thing.
+context after: So, or the intended accuracy of this thing. So, it's insignificant, but if we wind that down to 10 mV here, I'm on the 100 mV range, we're generating 10 mV.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: and then they've got the green and the blue, and the, well, they've got a black up the top for the ions, but of course you can read it off. So, you know, 10, 8, 6, and you can see, that's pretty much, bang on, 5, but, like, is it 5.05?
+TEXT: Or is it, like, what? I mean, granted, this is a 50,000 count display, but even a 3.5 digit 2,000 count meter beats the pants of any analog meter in terms of resolution. And that's the thing, with the resolution of this needle, what exactly is it?
+context after: Well, you've got the needle width in there, and, well, you kind of have to guess a bit, but I'm guessing that there's at least 250 needle distances, like, needle widths in that sweep at least. So assuming that we've got 5 needle widths between each one of those scale graduations there,
+
+[1095] EEVblog #1095 - Is a $38 Multimeter any good? ANENG Q1 Review (4K!) — Dave Jones (explains)
+context before: And for current and microamps, that's not too shabby at all. But here's your problem. If you want to measure 9mA forget it. Put in the milliamps jack up here yeah, but look, you've got like one deci... look, ah, it's crap! Measuring like something that you'd measure in everyday electronics.
+TEXT: You don't get any resolution at all. That's a huge downside to this thing. It misses the 100mA and the 10mA ranges. It's inexcusable. If this is your only meter, do not get either this one or the 8008. If that's your only meter, forget it.
+context after: One feature I do like, if you're in volts mode, you simply plug it into there, you're in microamps current mode. You don't have to switch anything. Very nice. Of course the downside to that is that if you accidentally plug your probe into there, there's no input
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (explains)
+context before: It's not bang on, but, you know, you don't buy this meter, uh, for its accuracy. It is, uh, .05%, uh, percent, though, plus, uh, three counts, so it is actually technically within spec there. So you're not buying this 25,000 count meter here to, like, as an accurate, like a really super
+TEXT: accurate lab meter or something like that. You're just buying it because it has more resolution than the 10,000, uh, count that you had before, and in that particular case, let's check it out. Can we do it? Yeah, we can do it, no worries.
+context after: And where does it flip over? There you go, it can go up 2.53, thereabouts. And, of course, there'll be some hysteresis on that, so you'll probably have to go down quite significantly before it'll, yep, before it'll go back. There's nothing wrong with that.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (explains)
+context before: This Prema 8 and 1/2 digits, um two full digits more, uh pretty much. Although, this is 10,000 count. Anyway, this is 8 and 1/2 digits. Goes up to what?
+TEXT: 20. So, it's 19999. Um and it's in the order of point triple 0 5%. So, an order of magnitude 10 times better uh basic DC volt accuracy spec than a 6 and 1/2 digit top-of-the-range 6 and 1/2 digit meter like the Agilent 34461A.
+context after: So, that's the sort of, you know, even though you're jumping up two digits, you're only jumping up one order of accuracy pretty much. Yeah, and basically the same on the 1-V range as well.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: So, how many counts should you look for when you're buying a multimeter? Well, as always, the more the better, but not at the expense of accuracy because if you get that 6,000 count meter and it's only got 0.5% accuracy, well, it's really you know, it's got more resolution which allows you to see changes, but your figures not actually going to be accurate accurate.
+TEXT: But, more digits, even if it's inaccurate, can help. More resolution can be good for some applications when you want to see just a relative change in something. But, you know, it's really just really go for a 4,000 count one.
+context after: A 2,000 count or 3 and 1/2 digits a bit old-fashioned. It's sort of you know, 20, 30 year old sort of you know, figure. So, you know, a good meter will have you know, base meter will have 4,000 count or 6,000 count.
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (explains)
+context before: So, the Y cursor there is 1.055 V. You divide that by the maximum value up there, which is BY, which is 2.102 equals that. Shift arc sine and bingo, 30.12°.
+TEXT: Not quite the 33°, but you know, good enough for Australia. And because like we don't have the actual the measurement resolution there, I'll leave it up to you experiment at home how you can get better resolution on that.
+context after: But cool, huh? You can get arc sign of voltage levels to actually measure your phase angle. Neat. So, there you have it. There's just like half a dozen different ways to use your oscilloscope to measure phase between two waveforms.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (explains)
+context before: We're in like Flynn. Now, I don't mind the interface. It's not too bad at all. Displays the current voltage with four-digit precision. Thank you very much. And we do get, even though this is not the A model, we do get the 0.1 milliamps.
+TEXT: At least the display digit is there anyway. So, that is definitely 0.1 milliamps whether or not, you know, it could be as I said, just a software thing and it just counts up in 10s and only has 1 milliamp resolution.
+context after: I don't know. But anyway, it displays our power and our resistance as well. So, let's put it in constant current mode. So, ranges here, we've got 40 amps and 4 amps.
+
+[1232] EEVblog #1232 - Add Web Access To Old Instruments! — Dave Jones (explains)
+context before: Um it's really fascinating. Anyway, Keithley 617 programmable electrometer, only four decimal places here, but have a look over there. We've got some extra digits on there. Let's see if we get There we go.
+TEXT: 102. There you go. So, there's some decent extra resolution to be had from your instrument here. So, there you go. That's really worthwhile. Just that alone to get extra resolution out of instruments like this.
+context after: So, anyway, I think that's very cool and well worth the money. Uh if you're into old instruments like this, I've done an example of um I don't have it anymore.
+
+[1604] EEVblog 1604 - BEWARE! Multimeter Burden Voltage — Dave Jones (explains)
+context before: And likewise, if we switch over to the amps range here, okay, insertion error, we have to switch back to here, and bingo, we're now actually back to our 10 milliamps.
+TEXT: Does that mean that our amps jack doesn't have a shunt resistance in it? No, it actually does. It's just much, much lower than your milliamp or microamp range. But look, we've traded off our resolution here.
+context after: We don't get as many digits as we got when we were actually using the milliamps. So, go over to milliamps, you can see that we're actually getting three decimal places.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (explains)
+context before: So, it's a loser. And it's got the other annoying aspect of having to remove the holster to change the damn battery on the thing. Crap. How about the Uni-T meter?
+TEXT: Well, once again, it's not a bad meter. It's got some good traits. It's got the um highest AC bandwidth of all the meters out of the group. It's got that excellent 10 microvolts resolution, that 60-mV range.
+context after: It's got RS232 interface, which I didn't really try out. I'll have to give that a go, but you know, that's a bonus feature and it's nice clear display and it's pretty good value for money.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: They're effectively like essentially the same thing. The number of power line cycles means it'll do an integration measurement over 1 50 or 60 hertz power line cycle. So, if NPLC is set to 1, and then you can do that in milliseconds as well.
+TEXT: I mean, you know, 50 hertz would be 20 milliseconds, of course. So, you can see if I've actually got that value very low, I don't get many significant digits there, and I also get quite a lot of noise here.
+context after: And if I go into 0.02 power line cycles, 0.06, we're still getting you know, like volts of noise, right? And 0.2, we're still getting quite a lot of noise.
+
+[1232] EEVblog #1232 - Add Web Access To Old Instruments! — Dave Jones (explains)
+context before: It's just blank. And here's an example of the extra resolution I was telling you about. I've got my ancient but awesome, still almost unmatched these days, done an awesome teardown video of this.
+TEXT: Um it's really fascinating. Anyway, Keithley 617 programmable electrometer, only four decimal places here, but have a look over there. We've got some extra digits on there. Let's see if we get There we go.
+context after: 102. There you go. So, there's some decent extra resolution to be had from your instrument here. So, there you go. That's really worthwhile. Just that alone to get extra resolution out of instruments like this.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (explains)
+context before: So, you do everything via here. So, yes, that is live updating uh the data there. I've got nothing actually connected in there and we're in chart mode. You can also go to um uh display mode here.
+TEXT: Once again, that is better resolution than what you get on the screen of the multimeter. I mean, you know, it doesn't have you know, a like a a 10 microvolt uh mode or 100 microvolt mode or whatever.
+context after: So, it's using that floating point precision from the analog-to-digital converter to give you the extra resolution there. Excellent. And of course, if we go in here, we can change our mode and oh, we're we're locked.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: But yeah, that is a nice display. Not as big. I guess it would be nice if it had like options to like make the display a bit bigger or something like that like the fonts a bit bigger and maybe if you didn't need this other stuff, you could have like a bigger display like up here or something like that.
+TEXT: But as I said, this has got more digities, more goodness. But look at the resolution difference. I mean, this is only like three digits for the voltage, four digits resolution for the current.
+context after: This is six digits for the voltage and six digits for the current. You know, no contest. But of course, there's a reason why both of these models exist. Like this one it might be more suitable for some tasks and this one's more suitable for other tasks.
+
+[k2_mJtAeaog] SNEAKY Enphase Solar Monitoring Modification — Dave Jones (explains)
+context before: So, it can it can give you 5-minute sample interviews and intervals and can actually go down to as little as 5 seconds if you want to view the live data.
+TEXT: So, it just has greater resolution on the data. So, there you go. Cuz it was kind of pointless having both systems, Solar Analytics and the Enphase Envoy measuring exactly the same thing.
+context after: What was the point? So, yeah, now I can the Enphase system just measures its own thing. And Solar Analytics measures my whole house production and consumption. So, anyway, hope you found that interesting.
+
+[1692] EEVblog 1692 - $130 Fluke 17B MAX Multimeter REVIEW — Dave Jones (explains)
+context before: So yeah, it's a downside. Auto ranging speed not too shabby. But as you see there, we don't get anything fancy like a a 60 ohm range or a 60 m volt range or whatever.
+TEXT: So yeah, we just don't get the extra resolution. So compare that to something like the 2257 and we do actually get that uh 60 m volt uh range there and display update speed in ohms here.
+context after: You can see significantly slower than something like the 2257. You can notice how dim that actual backlight is. That backlight's actually on. Um so yeah, but that as a consequence is probably going to chew a lot less current, too.
+
+[Y2rcx4vKxlc] Unboxing the Keysight E36731A DC Power Supply, Electronic Load, and Battery Emulator — Dave Jones (explains)
+context before: Must be. So, it's got the soft power rubbish. And Ooh. Oh, well, what am I talking about? No, here's your sense terminals. Oh, I was I was so excited.
+TEXT: I was this and I completely missed the sense terminals here. Unbelievable. And you got another terminal. Wow. There you go. Better well. Nice. Nice. So, we're talking 0.1 mV resolution.
+context after: So, 100 microvolt resolution. 100 microamp resolution, but I think it might have different It could be different modes on that. So, anyway, are you sure you want to switch to power supply mode?
+
+[269] EEVblog #269 - Energy Micro Tiny Gecko — Dave Jones (explains)
+context before: It might be say 10 nanoamps average, but really it's not accurate at all. So, let's see if we can get some more accurate measurements of that. And if you read the user manual here, it actually tells you what it's capable of measuring.
+TEXT: Here it is, from 0.1 microamps to 50 milliamps. And does that in uh two different uh ranges. And uh it can go down to 100 nanoamps resolution, but resolution's different to accuracy.
+context after: But the built-in uh power measurement uh capability, you know, it's probably good enough for uh most applications, but I think we'll just uh double-check that and uh see if we can measure it ourselves.
+
+[506] EEVblog #506 - IR Remote Control Arduino Protocol Tutorial — Dave Jones (explains)
+context before: It's jumping between 2 and 14 microseconds, but it's still showing two decimal places beyond that. That's the software not knowing what it's doing and this might be tricking you into thinking that that pulse width is precisely 14.00 microseconds when it's not.
+TEXT: Your resolution isn't good enough to determine that. In this case, this really isn't quite good enough for this particular system. It's almost in the ball ballpark, but not quite.
+context after: Anyway, just be aware of that. Trap for young players. So, that's it. Very, very simple to write your own code, reverse engineer a protocol. You don't even need an oscilloscope.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (explains)
+context before: I was expecting more. I don't actually know how to switch in the extra couple of digits here. Don't know how to work this thing uh yet, you know. It's got all sorts of measurement uh modes and integra- You can set the integration time and all sorts of stuff.
+TEXT: That would do it um by changing the integration time, you'd uh likely get your increased resolution there. And if you're curious to know how much uh power it takes, there we go.
+context after: I've got it hooked up to my uh power meter here. And it's taking about 16 odd watts or thereabouts or 18.5 VA. Woohoo! With a power factor of .863.
+
+[yzO1PsscjOI] WENS 540 Handheld 10MHz Oscilloscope and Debug Meter — Dave Jones (explains)
+context before: Yeah. And then you can obviously continuity. Yep. How fast. Nice little graphic. Never tested it. It's brand new. It's too new. It's too new. Then we got diode test.
+TEXT: Yep. And capacitor. So all the normal things you'd expect. Ah, one parad resolution. Very nice. Yeah. And we've got our meter. And it's actually got resolution down to 10 nano.
+context after: How many count is the meter? 50,000 count. Right. 50,000. Off the top of me head. Don't quote me. Well, you will on this thing. Yeah. Well, yeah. Anyway, let's say 50,000.
+
+[398] EEVblog #398 - Lecroy 9384C Oscilloscope Repair — Dave Jones (explains)
+context before: So, I hope they're related, but Murphy might intervene again and ensure that they're not related and this 3.3 volt is a new fault. So, even if I find this 3.3 volt issue and I fix it as no guarantee that it's going to fix the original fault, but fingers crossed.
+TEXT: Now, when you're tracking down this sort of short on a board, you want the greatest resolution possible on your multimeter. Now, this is a case where accuracy does not matter.
+context after: You just want resolution, cuz we don't care if it's a 5% accurate, 10% accurate or 0.005% accurate. We don't give a toss. All we care about is the resolution.
+
+[wjMIsM4sDw8] Unboxing WOW! The coolest bit of kit in my lab. — Dave Jones (explains)
+context before: What do we got on the front here? Um speed, fast. Boom. Look at that. LOOK AT THAT. WE'RE GETTING THERE. Can we even slide Can we slow that down?
+TEXT: Slow, too. Like we're getting our resistance to like five decimal places there, and we're getting it at that sort of speed. That's just Or it might It might drop down to four.
+context after: Yeah, it drops down to three or four. Three or four four decimal places there or something. Or max. Max. This is mad. Oh, unbelievable. Anyway, um plus minus 42 volts peak, max input.
+
+[1226] EEVblog #1226 - Get Better Accuracy On Your Oscilloscope — Dave Jones (explains)
+context before: It hasn't updated. You can see how many bits it's got to play with here. Not many. Uh Um yeah, this Rigol scope is just slow. It's not updating as I turn that thing.
+TEXT: But that that actually gives you Hey, that's you know, it's really quite neat. It gives you a representation of how many bits it's playing with there. Not many is the answer.
+context after: So that's why standard deviation the error is larger. And right down here, 11 mV. No, eight, seven, six, dropping a little bit, five. So there you go. You can get extra resolution on your waveform on practically any oscilloscope that does these sorts of measurements.
+
+[1636] EEVblog 1636 - Ultimate Multimeter Beginners Guide! — Dave Jones (explains)
+context before: So, if we press that, we go into manual ranging, and you'll notice that the auto up the top has disappeared. And then if we press that again, we'll go into the 60-V range.
+TEXT: So, you'll notice that we lose a digit of resolution here, it's called. And then we press it again, we can go into the 600-V range. And once again, we've lost another digit.
+context after: And then we can go to the 1,000-V range. It this won't go to 6,000 V, 1,000 V maximum. And then we can go back, and bingo, and then we can hold that down and go back into auto.
+
+[509] EEVblog #509 - Rigol DP832 Lab Power Supply — Dave Jones (explains)
+context before: And this one should be 4 V and it is. No problems at all. And installing this 32-digit license key could take a while. Success. We're in like Flynn. Now, I've gone back to the main screen here and I don't automatically get the extra resolution.
+TEXT: Maybe I got to re-power the thing or something. Aha, there we go. We got it. Yeah, just had to re-power it. Bingo. 1 mV resolution here and 1 mA resolution on our current.
+context after: And just for a bit more accuracy here, let's check it out. It's It's set to 10 V. So, 10 V, 10 V, and 5 V on the third channel.
+
+[1604] EEVblog 1604 - BEWARE! Multimeter Burden Voltage — Dave Jones (explains)
+context before: Does that mean that our amps jack doesn't have a shunt resistance in it? No, it actually does. It's just much, much lower than your milliamp or microamp range. But look, we've traded off our resolution here.
+TEXT: We don't get as many digits as we got when we were actually using the milliamps. So, go over to milliamps, you can see that we're actually getting three decimal places.
+context after: Over here, we're only getting two, basically two decimal places after the milliamp range there. So, we've lost some resolution, but we're now not impacting our circuit as much cuz this shunt resister is much, much lower on the amps range, but it's not zero.
+
+[1649] EEVblog 1649 - Mailbag: M5stack, Beelink Mini PC, ZOYI LCR, ToughOn Battery — Dave Jones (explains)
+context before: Yeah, some are going to be better than others, and some are going to be better in circuit than out of circuit, and some are going to do you know, have higher resolution.
+TEXT: I really like the low Here it goes. I really like the low resistance. Yeah, look at that. 0.1 milliamp, 100 microohm resolution on that sucker. So, that's pretty good.
+context after: Doesn't go up to 100 kilohertz, of course. You don't expect it to, but um that looks like decent value. So, um yeah, worth checking out. Need more extensive evaluation though.
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (explains)
+context before: Does support, of course, four-wire ohms measurement with the four terminals there. Probably shouldn't be feeding voltage into that during the ohms range, but yeah, it's you know, it's designed specifically for this automated system measurement kind of market.
+TEXT: You can select the number Let's go back here. We can select the number of digits, of course, very fast updating, super quick. And we can set our update rate as well.
+context after: Slow That was on medium, so now it's saying slow. We've got fast. Look at that. I mean, that's ridiculously quick. I'm not sure of the exact specs of the update rate, but it is very quick indeed.
+
+[1232] EEVblog #1232 - Add Web Access To Old Instruments! — Dave Jones (explains)
+context before: Sold it on eBay, but an old uh HP multimeter that you can actually extract an extra digit of resolution from it if you actually got the reading over the GPIB.
+TEXT: So, you know, like valuable stuff like that. So, you turn like a a 7 and 1/2 digit meter into an 8 and 1/2 digit meter. Not all meters are like this, of course.
+context after: If you extracted it over the GPIB instead of just on the uh display. So, anyway, I think that's pretty cool concept. It simply just works. I've been playing around with it, and there there's been a few times where it's um like it doesn't respond and things like that if I actually uh change like um modes on the like GPIB modes and addresses and stuff like that, and it
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (explains)
+context before: There we go. That's to 1 microamp, and uh there we go. We're down to 100 n A, and I can even get lower than that. There we go. That is 1 n A.
+TEXT: And of course, when this thing says it's 6 and 1/2 digits, well, how many counts is that? It doesn't actually imply um any you know, the actual count value.
+context after: Well, in this case, let's check it out, okay? We're on the 1 mA range here. So, you might think it goes to point, you know, it goes to 1 mA maximum, but it doesn't.
+
+[dv0B_WqL7w4] UniT 210E Current Clamp Teardown + Brymen Comparison — Dave Jones (opinion)
+context before: Now I'm pretty confident it will be spot on, right? Well, no. It's not great, is it? And once again, for those who complain, I'm not holding the wire straight. Okay? Look, I'm putting it right in the middle. I'll put it right up near the top.
+TEXT: Put it right down the bottom. Put it right off to the side. Okay, you do get your extra digit of resolution with your 2 amp range, but that's not terrific. Even with, you know, the least significant, you know, plus minus counts. I'll 20 amps and I'll zero that.
+context after: Yeah, look, it's got that constant offset. That's massive. Is this normal? Has anyone else got this meter and can confirm that they have this larger offset? 0.96, there. All right, so that's similar to what we were getting before. And it always defaults back to AC.
+
+[513] EEVblog #513 - Mailbag — Dave Jones (opinion)
+context before: Now, yeah, it certainly does because it's drawing, ah, current. And we can see our phone, we can see the charging current of our phone. Let's have a look. Ah, power, 2 watts, there we go, it's drawing 2.1 watts. And with 400 milliamps charge current.
+TEXT: Now I'm not sure why the resolution would be like that in 10 milliamp increments. I'm not sure why you wouldn't show 400 there. I mean, you know, you're not going to go over an amp anyway, so having 999 full scale, ah, would be more sensible.
+context after: So, but still, um, you know, it's handy just to get a, ah, a rough ballpark of how much current's being drawn there. And how accurate is it? Well, let's have a look here. 5.14, yeah, good enough, one least significant digit, not a problem.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (opinion)
+context before: So, if you're trying to synchronize measurements in a system or something like that, great way to do it. It's got excellent resolution in there, as you saw. It's just fantastic.
+TEXT: Not sure of the exact resolution. I mean, it goes down to, you know, something ridiculous, but you know, there's got to be a limitation somewhere. Well, maybe, you know, in terms of timing, but seems very powerful.
+context after: And of course, you can set the number of samples it takes per trigger sample. As well, you can set the output to be positive or negative on the rear panel there.
+
+[1335] EEVblog #1335 - Miniware $70 DT71 LCR Tweezer REVIEW — Dave Jones (opinion)
+context before: It's absolutely fantastic, but yeah, it's like it's a bare-bones LCR meters. I wouldn't recommend it probably as your only LCR meter. You should have like a proper like handheld or bench uh LCR meter for doing, you know, more precision work.
+TEXT: This is not a precision device, doesn't have the range, doesn't have the resolution, um and doesn't have the accuracy to, you know, really be a top-notch LCR meter, but damn, it's handy.
+context after: And the price point at under 80 US bucks delivered, absolutely fantastic. And the tweezer design is just brilliant on its. So, there's really no excuse for any decently equipped lab now not to have a pair of handy little LCR uh tweezers like this, cuz as I said, like surface mount stuff like this, like tiny little parts which don't have the value marked on them, and you want to like
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (opinion)
+context before: So, it's that sine -1 there on your calculator. You might never have used it. But if we use that, boom, that is our phaser. That happens to be our phase angle.
+TEXT: It's a little bit off because our resolution's not great, but it's there. And then if I wind this up to 90°, okay, and it's perfect like that, then the both values are the same, 2.046.
+context after: Like it intersects at 2.046 and the maximum value is 2.046, which is you divide those two figures, it's just one. And then if you've got one and then you do your arc sine like that.
+
+[137] EEVblog #137 - BK Precision 879B Handheld LCR Meter Review — Dave Jones (opinion)
+context before: And basically, this is just a simple control program. You can basically control all the remote interface on this. So, I can measure capacitance, or I can go in and measure impedance, or measure inductance, or anything like that.
+TEXT: So, if I stick my capacitor in there, and I measure capacitance, there it is. It's popped up, and it gives you much better resolution than what you can actually get on the display.
+context after: Check it out. 98.25. I've got an extra digit of resolution here. And you can set up the measurement mode, series parallel, the test frequency. Of course, you can change all that.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (opinion)
+context before: Now, it'll sample at 1-second intervals. 2 3 4 5 6 All right. Beautiful. And this is actually quite powerful because if the trigger source is coming from external, for example, then you can set the delay after an external trigger, something like that.
+TEXT: So, if you're trying to synchronize measurements in a system or something like that, great way to do it. It's got excellent resolution in there, as you saw. It's just fantastic.
+context after: Not sure of the exact resolution. I mean, it goes down to, you know, something ridiculous, but you know, there's got to be a limitation somewhere. Well, maybe, you know, in terms of timing, but seems very powerful.
+
+[137] EEVblog #137 - BK Precision 879B Handheld LCR Meter Review — Dave Jones (opinion)
+context before: I've set it to auto update here, and it's reading the primary and the secondary display from the meter, but look at the resolution. Check it out. It's 0.1 femtofarads.
+TEXT: It's phenomenal. And it looks like you can get much greater resolution than what you can get on the display here. This is really remarkable, and it could come in real handy.
+context after: And basically, this is just a simple control program. You can basically control all the remote interface on this. So, I can measure capacitance, or I can go in and measure impedance, or measure inductance, or anything like that.
+
+[1476] EEVblog 1476 - Keithley 515A Wheatstone Bridge TEARDOWN & TUTORIAL — Dave Jones (opinion)
+context before: Look, it's ancient. Right? But as you can see, we dialed in and you remember it also changed with voltage. It was actually at 10 volts it was like 220 odd meg, then it dropped down to about 210 meg at 100 volts.
+TEXT: So, you know, this is measuring much lower than 10. But there you go, that's what we get in. I mean, you know, you can like all these digits are just BS, right?
+context after: They're just just there for show, really. It's nowhere near the accuracy that matches that resolution. But there you go. So we'll do a brief look at how Wheatstone bridges work on the whiteboard here.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (opinion)
+context before: And that and the values in that are, of course, the not the actual display value, but the calculated uh from the single precision internal uh math inside the unit.
+TEXT: So, you might be able to extract whether or not it's valid. You may be able to extract a bit more resolution by uh sucking that data out. I don't know.
+context after: Haven't looked into it. And uh by the way, I should mention uh the 61A has 10,000 readings memory. The uh 60A only has 1,000. And of course, the trend chart.
+
+[1012] EEVblog #1012 - Best Bargain Ebay Bench Meter? - Fluke 8842A — Dave Jones (mention)
+context before: Yep. That's good enough. Winner winner chicken dinner. Oh, look at that. And 100 mega, I don't think it does 100 meg. No, I think it only goes up to 20.
+TEXT: I can't remember how many counts this is. Uh 20 Uh 200,000 count? Something like that? Anyway, there you go. Bang on. So, once again, sorry. I was hoping to bring you a repair video.
+context after: I buy these repair things occasionally. Um and you know, hoping, crossing my fingers, that they'll be an interesting repair, not just a simple blown fuse, or not beyond economical repair, as quite a few of my repairs have turned out to be.

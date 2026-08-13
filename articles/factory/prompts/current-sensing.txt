@@ -1,0 +1,348 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: current sensing
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 63 passages drawn from 56 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# current sensing`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (explains)
+context before: that's the output topology used in this thing and you can see that that is actually real with the meter on the output there and if I up that I can just uh up the current there I can make it go real quick and of course if you set it to you know 50 milliamps or something like that it's pretty much going to instantly sort of ramp up to your 30
+TEXT: volts there especially at like 100 milliamps not a problem whatsoever but so that's an issue with uh some of the topologies used in these power supplies the output configuration of the sense resistor to do the current sensing and hence do the constant current and having a large output capacitance and as I've mentioned in like my power supply design videos and stuff you want them for a constant current power supply like this
+context after: you want to minimize your output capacitance for that charging up reason and also for the reason that when your current limit kicks in you don't want that capacitor which can store a lot of charge in it to actually dump out excess current over and above your set current limit to your load now there was another big issue that somebody on the forum noticed because these channels here
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: And our voltage here I've added uh some gain here with these two resistors. Um so our gain should um so our final voltage that multiplies um that 2.5 by a value of uh that has a gain of 2.2.
+TEXT: So that will be our maximum voltage output. And up here for our current shunt measurement, I've um actually matched these 10k resistors here. So I've picked ones out of my bin and I've physically measured them on the multimeter and actually matched them so they're within I don't know I'm not sure what it was but they're pretty close sort of you know plus minus two least significant digits or something.
+context after: So much better than the standard 1% tolerance which is what these resistors are marked as. And the op amps we'll be using today are TLC2272s. You could use a quad op amp which is a 2274.
+
+[87] EEVblog #87 - Let's hop on the Electronics Design Merry-Go-Round — Dave Jones (explains)
+context before: The ATtiny261A. Now, what it's actually got let's have a look here. Yeah, three high frequency PWM outputs. Excellent. Okay, so it's got the number of PWMs. But check this out.
+TEXT: It's not only does it have a 10-bit ADC, 11 single-ended channels, but it's got 16 differential ADC pairs. So, it's actually got differential amplifier in there. And this is really fantastic for this sort of design I'm doing which has high side or current monitoring because basically what you want is a differential amplifier across the current sense resistor.
+context after: And it's also got programmable gain. Check it out. Times 1, times 8, times 20, and times 32. Now, that's really inviting. Um now, unfortunately, though, it's only available with 16 IO lines.
+
+[272] EEVblog #272 - Manson 9400 40A 3-15V Switchmode PSU Teardown — Dave Jones (explains)
+context before: Well, you've probably already seen them there. And we've got our output filter in here, some caps in parallel, and we've got 12 0.1 ohm resistors all in parallel here.
+TEXT: It looks a bit weird, but they're actually flip this up to here, and that one's in parallel with that one, that's in parallel with that, etc. So, there's actually 12 total 0.1 ohm resistors in parallel, and that's our current sense, which is actually tapped off tapped off here and goes up to our current meter here and off to some other circuitry over there.
+context after: And we've got some extra caps in parallel here. They'll be on the separate output connector, and they go to chassis earth ground. You'll note the earth the chassis ground symbol as opposed to circuit ground.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (explains)
+context before: in but unfortunately but it's kind of hard to sort of see the layout in there and sort of reverse engineer that without taking off the front panel but nothing you can't fix without a back lit torch beauty you can see all those traces now still a pain in the butt though so by inspection what seems to be happening here is this power resistor low value resistor driving of course the
+TEXT: 6.5 volts is coming from on this side and it's then driving through this choke here over to the BNC down in there to power the probe now this is looks like basically it's been used as a current shunt resistor and then it looks like they got a sense resistor which then taps off here and then that buggers off down to I think a pin five or whatever it is
+context after: down there so what I'm going to do is measure the voltage on here relative to ground and confirm I'm pretty sure it will Um, will change value when the probe is plugged in.
+
+[1410] EEVblog 1410 - Mailbag — Dave Jones (explains)
+context before: And if you have a look here at the data sheet, 0.1% nominal accuracy of this thing, 300 kHz bandwidth. It's 69 bucks at Digikey. They've got 472 in stock.
+TEXT: And so, go for it. And like 69 bucks might sound expensive for a current shunt, but it's not. This is fully isolated, accurate, takes out all of the issues to do with like remote current sensing and stuff like that and gives you a nice differential output you can feed into any isolated output you can feed into any sensor system.
+context after: So, yeah, that's terrific. So, yeah, in that regards, when you building, you know, systems together, like 69 bucks for a sensor that takes all the R&D work out of, you know, you wouldn't build this into something that you're shipping in a million volume or something like that.
+
+[1170] EEVblog #1170 - TRUE Mystery Teardown! (not even Dave knows) — Dave Jones (explains)
+context before: The high-voltage CPU includes a frequency reference from which the 50-60 hertz output for the PWM is defined, the PID control loop that stabilizes the output voltage, H-bridge over-current protection, supplementing the protection inherent in the analog design of the bridge. In addition to the analog bias voltage removal circuits described above to protect the MOSFETs, oh, we missed that,
+TEXT: it also monitors the current flowing through the JFETs, since the microprocessor is the source of the switching bias voltage signals. By detecting the overload condition, it can reduce the magnitude of the commanded output to reduce the transient currents present. The output regulation... is performed by the PID algorithm.
+context after: There you go. Via the isolation transformer 22, it wasn't labeled, there were no enunciators on the diagram. So, the CPU generates bursts of 35 kilohertz signal to measure the impedance presented by switch 31. There you go, that's interesting. Nice, that's like a, like an ESR measurement, like you'll, um, do measure ESR of capacities, you'll do that at 100 kilohertz, typically.
+
+[1408] EEVblog 1408 - $5M WiGL Wireless Charging BUSTED! — Dave Jones (explains)
+context before: the shelf as well uh i don't have a load on it other than this led right here which draws about one to two milliamps when the system is working we have a three by three array of these unit cells in here oh sorry nine i i only see six and it's uh polarization sensitive so right now
+TEXT: the dipoles are vertically polarized we combine all the dc's to this output down here near the led and this is a current sense with one ohm they don't actually use that and we have a load that we can switch in in and out between a hundred ohm load and a 10k ohm load just work so currently it
+context after: is driving a little led there and a 10k load this close that's what they're doing and they're pumping a watt i believe and they admit that they're pumping a watt into this to stay within fcc guidelines for they're pumping a watt i believe and they admit that they're pumping a watt into
+
+[1434] EEVblog 1434 - Cadex C7000 Battery Analyser Teardown — Dave Jones (explains)
+context before: Let me get my head under there. Yeah, there's a sneaky device on the other side. Okay, that makes more sense. Alright, so we've got four power transistors. Two on each heat sink. They're all insulated with a seal pad. Nice little clip that just presses down on there.
+TEXT: Nice. Screw rubbish. Excellent. Aha, I was just about to say these heat sinks aren't going to be the series pass transistors for the electronic load, which I've done a video on, by the way, because if it was, then you wouldn't have such large power resistors like this for measuring currents
+context after: sense. So obviously, these transistors here, which then, where's my probe? These transistors here, which would then be used as the electronic load for the dissipation in the big resistor there. So yeah, that's what they're doing. But once again, Y7? I don't know. Yeah, so that's only an LM317
+
+[946] EEVblog #946 - Apple (Raspberry) Pi Cluster - PART 2 — Dave Jones (explains)
+context before: No worries. I like the little heatsink there. I'm going to keep that. But that's not as big a goof as the one we've got up here. This is the power connector with the crusty flux residue soldering. And obviously they've screwed up some, you know, star grounding type
+TEXT: thing, I would presume. And yeah, they brought it back to that big power resistor there. That'd be a current shunt resistor. I think you can see the two tracers going off there. That'd be going into a diff amp, measuring the current presumably for this expansion connector.
+context after: Check this out. I was taking this bracket off here, and look what we've got on here. A little plastic TO-220 package, just you know, just cable tied on there like that. I can't quite see the part number on that. It's a 2N3904. Wow, yep, there it is.
+
+[RasOXxxEhCk] Jackery Battery Bank FAIL Investigation - Part 1 — Dave Jones (explains)
+context before: I can get down there. I can measure that and that. It's exactly the same. Something has died in the ass here. Can we see any obvious failures? Any blowholes? MOSFET-y action down there. Let's look at, I mean, you know, it could be a dodgy, dodgy joint on there.
+TEXT: Connector. That looks pretty clean, doesn't it? Yeah, that looks pretty okay, doesn't it? Can't see what chip it uses down in there. Okay. Got some current shunt resistors there. They look fine. Everything looks fine. Like, so yeah, that'd be for current sensing of the,
+context after: because here's from the battery, right? Two parallel 10 milliampere resistors. So I was at 5 milliohms, and, oh, so I was an inductor. Can we see a chippy number down there? But everything looks okay, doesn't it? An SW6124. It's a total solution for power delivery
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: Is that your ADC down there? Not entirely sure. If we move over to here, this is the input of course coming from our transformer tap here. We've got input surface mount fusing down there, but that's not designed for protecting your output of course.
+TEXT: That only pops in case of circuit failure. Now, in terms of the output here, of course they're going to have the current sense there. You can see the extra sense wire on so the main drive and then the main and then sense wire coming back for the positive and negative.
+context after: They snake all the way along the back of the case over to a relay over here. So, that relay there, that could be for doing your series parallel stuff.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: And here's a big-ass four-terminal current shunt. I'll give you a better Look at that. Sounds like bugger wiring uh PCB traces to this thing. Let's just go Here's the Here's the main current here and here, the main wires coming in, very nicely heat-shrunk, by the way.
+TEXT: Well done, bravo. And then one of the sense wires is coming off here. They've only got one sense wire, cuz the other one is stitched all the way down there to ground, so they don't need the second sense wire, so it's relative to ground, by the looks of it, but yeah.
+context after: Now, here's something I find quite strange. It looks normal on the top here. Here's one of the uh sense terminals, of course, so they've got that isolated from this ground trace around it.
+
+[Lk2KRc6Bm4I] Mystery Dumpster Diving Teardown - 2020-07-11 — Dave Jones (explains)
+context before: So yeah, it has to be that pick micro. So yeah, there's all the there's the mains cable coming in on that connector rubbish. They just go straight angle right angle soldered straight to the board.
+TEXT: No worries. Big power resistor there shunt and looks like they can see the sense lines buggering off there. So some sense resistors another couple of sense resistors over here and of course they are soldered coating all of the traces to increase try and increase.
+context after: Although that's not going to increase it a huge amount when you've just got the big copper like that. Some more power resistors here and there's those three on the bottom I told you about.
+
+[1006] EEVblog #1006 - Trezor Bitcoin Hardware Wallet Teardown — Dave Jones (explains)
+context before: Got that on the scope. Be careful where you put your ground on this. Don't put it on the positive. I've done a whole video on how not to blow up your oscilloscope when probing USB. Stuff like this. So just be very careful with that if you're trying to do something like this.
+TEXT: And we've got it connected. And the good thing is we can get a decent voltage drop across this thing. And it still works. So this is actually fairly tolerant of, you know, inserting resistors in the power line like this to actually get quite a decent voltage.
+context after: In this case, 100 millivolts per division. So we can see that it draws about 40 milliamps or so. So we're actually getting quite a decent signal level there. So we've got one second per division triggered at this point over here. And at the same time that I triggered it, roughly, I connected to the wallet on the website.
+
+[273] EEVblog #273 - Power Factor Correction with the MC34262 — Dave Jones (explains)
+context before: bandgap reference, zero current detectors, quadrant multipliers and various other stuff. So let's take a look at the internal simplified block diagram here. As you can see, not a huge amount of circuitry in there. There's an internal bandgap voltage reference. That's an over-voltage comparator which comes from the voltage feedback which goes into an error
+TEXT: amplifier. There's a compensation pin. The input for the multiplier is here. There's the output driver and there's a current sense input as well with the zero current detect input because it has to know when there's zero current. And we'll take a look at that
+context after: and there's a power pin and that's pretty much it. There's not much else, but we'll see if we scroll down here and we go to typical configurations, we can actually have a look at, it's well worth reading this, it's got introduction and how a Power Factor correction
+
+[1263] EEVblog #1263 - Mailbag — Dave Jones (explains)
+context before: You're watching this on an almost certainly bigger monitor in even 720p. Um, yeah, you're gonna be able to see it. That's the, that's the programming interface, so this might be some sort of, uh, where, this one over here might be some sort of external thing.
+TEXT: Is that a big, uh, shunt resistor there? And are they little, uh, amplifiers for measuring, uh, the current shunt, or something like that? Anyway, there's a lot of trainings on there. Wow. Another couple of big power resistors over here as well. And, uh, lots
+context after: of electrodes there. Yeah, the old-school vented ones, you can tell by the, uh, marks in there like that. Are they Nippon Chemicon? Is it a Nippon Chemicon symbol? Anyway, we've got our Shrek relays. We've got another processor on there. Do another Atmel processor
+
+[274] EEVblog #274 - Makerbot Tweaking & First Print — Dave Jones (explains)
+context before: and I like this control panel, I can just manually tweak things up. Take it out, and yep, a problem on my Y. I'll show you that up close. And you should be able to see that stepped pattern over, under my finger there. So it's definitely way off on the Y axis.
+TEXT: So my next step is to check the voltage, or the drive going, the current drive, which you measure by measuring voltage on test points here on the board. This is the Y stepper motor controller, and I've, the instructions say it should be 0.6 volts for ref.
+context after: And it certainly is, there it is, 0.6. So let's check the other ones and see what they are. And I think I've got it figured. There are different voltages here for the different types of stepper motors, either the MakerBot NEMA 17 or the Moons brand NEMA 17.
+
+[543] EEVBlog #543 - PCB VIA Current Investigation — Dave Jones (explains)
+context before: Now, I'm not going to pick one at random here cuz we may actually need a special case and I found a board we need a four terminal measurement because I'm going to be passing current through the via and I don't want it to go anywhere else.
+TEXT: I want all the current to flow through a via and then we want to be able to tap off voltages. So, I run me through some old boards and it was actually quite difficult to find a board with exactly the configuration of tracks which I needed which is this.
+context after: This pad here is the one that we're going to actually target And I'm going to feed the current in here, and it goes down there, and it can go nowhere else because this trace is open down here.
+
+[530] EEVblog #530 - Electrophoresis Power Supply Teardown — Dave Jones (explains)
+context before: I don't think I'll bother. But uh basically, yeah, DC out, so we're getting our high voltage DC out of there, rectified, and then if this doesn't look quite familiar to you, this symbol, it's an IGBT, an insulated gate bipolar transistor.
+TEXT: It's an International Rectifier type IRG4PH50K, and uh that is the main uh control element here. It looks like they've got a 1 ohm uh resistor that looks like it's being used for the current sense, so there's uh something being tapped back off there.
+context after: There's our main big output uh filter cap here there that huge axial uh high voltage one you saw before. They've got a snubber on there, just a simple series RC snubber.
+
+[1436] EEVBlog 1436 - The TOP 5 Jellybean OPAMP's — Dave Jones (explains)
+context before: And also another important thing, the common mode input range includes ground. So, that enables direct as it says here, direct sensing near ground. If you go over to say the Rome data sheet, it actually says calls it a ground sense operational amplifier.
+TEXT: And that's huge advantage in terms of like if you want to do like a low side current shunt measurement or something like like a non-critical current shunt measurement, just you know, to a modicum accuracy, then it's a pretty good decent job for that.
+context after: It's got a low input offset voltage, low, 3 millivolts. Once again, this is a jelly bean component, jelly bean specs. But this is just a guaranteed figure. The the typical figure is like 300 microvolts.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (explains)
+context before: So, if you know of any good books on the subject for debugging these neuro electronic projects, let me know. Wait, bye-bye. It's time to enter sleep mode. Sleep mode?
+TEXT: You want Mommy to put you into sleep mode? Okay. Lock. With when you've got a pass transistor like this, you can make it operate in constant current mode like this by determining the voltage drop across that current that shunt sense resistor there.
+context after: You can keep it at a fixed current. And then when it switches into another mode, it can work as a linear voltage regulator. And we forgot the tray, didn't we?
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (explains)
+context before: Got it. Output from this point here goes to coupling capacitors and into the output transformers. We'll trace that through in a second. One of the most important points is the output limiting the short circuit protection.
+TEXT: Output current here comes down through those two emitter resistors which in this case are 1 ohm. We use the voltage sensed across those resistors to well if the voltage across there is high enough it starts turning on these transistors Got it.
+context after: which shorts drive away from the pre-drivers down to there or away from this drive down to there. How much distortion does something like that add if we're talking about like a hi-fi?
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: A really good one, it'd be 50, and a real superb one, it'd be 100 kohms per volt. But what does that mean? The thing about analog meters is that the meter movement here, apart from the ohm scale, which I'll talk about later, is powered from your circuit under test.
+TEXT: So the power to actually move this meter movement here actually comes from your circuit under test. So in this case, 20 kohms per volt. So if you take 1 volt DC divided by 20k, that's actually 50 microamps. So it actually requires 50 microamps
+context after: to move that needle all the way over here. And that 50 microamps is going to come from the circuit you're testing. So if we have a look at DaveCAD here, if you're measuring a resistor divider in your circuit, for example, then your probes are going to take 50 microamps
+
+[1499] EEVblog 1499 - EcoFlow Delta Pro 3.6kWh Portable Battery TEARDOWN! — Dave Jones (explains)
+context before: And there's no switching in there so there's no way to disconnect it. And you should be able to see There you go, some traces running off up there. You should be able to see traces running off.
+TEXT: So, they're actually using that as current sensing. So, yeah, they're doing it looks like they're doing that low side current censoring current sensing for the main pack. So, you can see our charger and inverter board a bit better there now.
+context after: And on the charger inverter board you can see that there's a little board down there. It says silk screen MR500 CNTL. So, some sort of control board. It's got a little window here to access some dip switches when you take the cover off.
+
+[501] EEVblog #501 - Sinclair C5 Electric Car Teardown & Test Drive — Dave Jones (explains)
+context before: Yep. Um this little device here is a bit interesting. It's called a ULA, uncommitted logic array, which contains um an A to D, I believe, some comparators, um uh a D2A made up of I think it's an R2R ladder, right?
+TEXT: It's only three bits. I was going to say there's not many resistors there to make it up. The um the output of that D2A changes the gain of an op amp back in the control box and it's part of the current sense and temperature sense circuit.
+context after: All right. The right hand displays voltage. The least or the lowest LED should come on about 12.5 volts. Mhm. And the left hand displays current and also flashes in case of over temperature on the motor.
+
+[552] EEVblog #552 - DFM Automated PCB Panel Testing — Dave Jones (explains)
+context before: It basically handled everything. There's a switch on here to apply power to the device under test. Here Here's the test interface connectors over here. We'll take a look at how it can measure the board current as well.
+TEXT: You can see a current shunt resistor. Oh, sorry, that's a That's a poly switch to protect the board from any overload. Then it's got a current sense resistor, little current sense amplifier, so it can actually measure the current.
+context after: That's all part of the test as well. It's going to have a little LCD on here. So, you know, just a two line by 16 character thing so that you can get status.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: It was like uh $2.50 or something, third most expensive apart from the voltage uh regulator. So, really, by ditching that, um that was a big decision because I basically had to decide that this was no longer going to be a really high-precision uh power supply.
+TEXT: And the reason I wanted uh I was using that is because I wanted excellent resolution on my current uh ranges from my micro current capability. And you'll notice what's also missing from here that was on the previous version.
+context after: I've ditched my I my micro current capability. Or have I? And here's my previous Rev B schematic. And as you can see, there's my analog-to-digital converter plus the buffer voltage followers here.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: So, there's one on the low side so that it go down to ground and this is going up to the positive side and you can see we've got a current shunt resistor here.
+TEXT: Looks like 8 milliohms, is it? And then they've got just got the differential voltage going up there to the current sense pins on the 9928. So, let's check out that jobbie cuz that is the heart and soul of this thing.
+context after: It's an MP9928 and it's exactly what you'd choose for an application like this cuz it's basically a single chip constant current constant voltage switch switching power supply. But, as I said buck only, it won't boost up so you got to have the maximum capability.
+
+[1096] EEVblog #1096 - ANENG Q1 Multimeter Teardown (Now in 4K!) — Dave Jones (explains)
+context before: Anyway, let's crack it open. There's no fuse access of course, you wouldn't expect it. And here's where you might want to switch to 4K mode down here in the corner so you can see all the detail.
+TEXT: Let's have a look. I don't mind that little riser board there for the uh current. That's pretty good. You can see how it's got the split jack and it's actually sensing those off so I can do that auto detection there.
+context after: No worries. Two little M205 HAC fuses there. Not branded at all so okay, well they're better than a little pissant glass fuse. There's our little 10 amp current shunt.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (explains)
+context before: So, let's have a look if you've got a traditional current shunt resistor. What does that mean? Okay, our current shunt resistor RS, we're going to have a current flowing through it.
+TEXT: And this particular model has a 100 amp capability. So, let's take 100 amps. And as you know, um P equals I squared R. So, you rearrange that. Our resistance there, so we're calculating Sorry, that's RS.
+context after: And we've got RS here is going to be equal to the power, our maximum power in this case, 2 W, divided by IS squared. So, that's 100 amps maximum capability.
+
+[803] EEVblog #803 - HP1740A Analog Oscilloscope — Dave Jones (explains)
+context before: And here's the schematics for the, uh, linear power supply and you can see, you know, we've got a standard bridge rectifiers. There is our main filter caps down there.
+TEXT: And then we've got some of these regulator chips. You saw those in the sockets there. And they've all got current limit current sensing there. You can see there's our pass transistor mount on the back.
+context after: That's why it's got these socket symbols with a separate thing means it's mounted off the board. There's a current sense resistor. And these all have current sensing in them.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (explains)
+context before: And you've seen these type of uh circuit configurations before. Now, this pass transistor can depending on there's a lot of control circuitry in here and voltage references and stuff like that that go between the different modes, but you don't have to worry about that.
+TEXT: With when you've got a uh pass transistor like this, you can make it operate in constant current mode like this by determining the voltage drop across that current that shunt sense resistor there.
+context after: You can keep it at a fixed current. And then when it switches into another mode, it can work as a linear voltage regulator. And that's why these um are typically lithium ion charger ICs are typically a linear type because they drive the pass transistor with a DC voltage.
+
+[1059] EEVblog #1059 - Quick 861DW Hot Air Waveform Measurement — Dave Jones (explains)
+context before: You can measure current using the clip-on toroidal attachment I've got here. We can actually just use it as a oscilloscope clamp meter. Basically, to turn our scope into a clamp meter to view the waveforms.
+TEXT: And in this particular configuration, it gives out a well, the amplifier in here, the sensor and the amplifier give out a nominal 1 V per amp output. So, I've got that hooked into the scope here.
+context after: And I've got this on the primary side of the filter in there. But I've also got a reference waveform captured from the secondary side there of the filter. I think somebody in the comments said that this filter was wired wrong or something like that.
+
+[269] EEVblog #269 - Energy Micro Tiny Gecko — Dave Jones (explains)
+context before: But the built-in uh power measurement uh capability, you know, it's probably good enough for uh most applications, but I think we'll just uh double-check that and uh see if we can measure it ourselves.
+TEXT: And if we take a look at the the here and see how it's doing the MCU power uh current sense. This is the circuit it's using a linear technologies LTC6102 zero drift precision current sense IC.
+context after: In fact, it's got two of them for one for range one and one for range two as well. And it's it's not a bad device at all and it's a current sense amplifier.
+
+[929] EEVblog #929 - Designing A Better Multimeter — Dave Jones (explains)
+context before: You don't really have to do it because the PCB trace resistance is a tiny, tiny fraction of that 100 ohms out up here. It's going to matter for this 1 ohm one cuz you're getting down there.
+TEXT: So, typically they might take a sense point there on that 1 ohm resistor and actually the other sense point down here. So, they're actually using both of those as the current sense resistor.
+context after: But they are typical values that you'll find in probably the vast majority of multimeters out there. 100 ohms, 1 ohm, and 10 milliohms. So, now let's take a look at this table down here and see what our burden voltage is for the different ranges.
+
+[1215] EEVblog #1215 - $18,000 4K Monitor Teardown From 2001! — Dave Jones (explains)
+context before: Geez, usually you'd put those like right near the chips. Anyway, what else have we got? Uh we've got two other microchip parts here. So, I'm not sure what all that stuff's doing.
+TEXT: Uh just got some gates down there and your power supplies. Look at those 5 million resistors there. Wow, big beefy. They're doing some current sensing there. And that's about all she wrote.
+context after: We've got some diodes running down here. And that connector's buggering off to the board on the bottom. I don't know why. They've got what looks like some configuration resistors over here and test points.
+
+[762] EEVblog #762 - How Secure Are Electronic Safe Locks? — Dave Jones (explains)
+context before: And this is designed for power line analysis attack exactly like this. But, not everyone's got one of these or you know, can take this out in the field to crack locks like this.
+TEXT: So, I thought that we just try it with the basic the most basic tool available, a a resistor for power line current sensing and an oscilloscope. Let's see what we can get from that first.
+context after: Well, this is embarrassing. I got my 10-ohm resistor I was going to whack in series with the battery here, hook my scope up, and um yeah. Hang on. Wow.
+
+[1164] EEVblog #1164 - Xbox Engineering Baptism Of Fire — Dave Jones (explains)
+context before: That one looks like it has much finer and much higher number of turns in there, and that's just like a regular PCB mount current transformer there. Got a diode bridge rectifier, we'll look at that for the transformer in a minute, but look at how the mains current goes here.
+TEXT: Why do they need two if they're just doing simple current sensing? Now, this first current transformer here has both the primary, the brown wire, and the black wire running through it.
+context after: That does not make sense for measuring the current of the product under test because the if the current's flowing this way through the active brown wire and then back at this way through the black neutral wire, then they cancel each other out and you can't measure anything.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (explains)
+context before: Uh I just want to make sure. So, this is ground plane here and this is our input volts, okay? So, we get now 8.3 V. That's going through two parallel 20 mΩ resistors.
+TEXT: So, they've got a 10 mΩ current shunt there. So, our voltage is getting in there and our voltage is getting to the other side, okay? So, those current shunt resistors aren't blowing.
+context after: And this chip looks like a MOSFET because uh all four pins are shorted together and three pins over here plus the gate drive over here, okay? So, we get now 8.3 V in and are we getting now 8.3 V out?
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (explains)
+context before: What? I you know, like you just go and search. "A supplied only in passivated die form with solder bumps. Ah, bugger off." Great for your mobile phone, but you know.
+TEXT: So, you might search for current sensing, for example. There's 38 parts down there that do current sensing. And oh, look at that. Stud package. Isn't that Well, it's very studly.
+context after: Oh, yeah, from IXYS. You might never have heard of IXYS. Uh for example, Nexperia. So, you know, look, you can just go in and have a look at this data sheet because you didn't know what current sensing is, for example.
+
+[1643] EEVblog 1643 - DON'T BUY this Cheap 7kW 32A EV EVSE Charger — Dave Jones (explains)
+context before: One for the active and one for the neutral and it had a core balance relay as well. But if we look over here, there's no core balance relay. So they haven't got the active and the neutral going through the relay.
+TEXT: They're only measuring the current there on the neutral side of that. So So yeah, I think they're that's how they're getting the cost down on this thing. They're skimping a bit.
+context after: Anyway, some nice isolation slots down in there. So they're doing all the requisite stuff. It's just a simpler design. So I'm not sure about the various standards, but looks like we've got a a cover over our relay.
+
+[861] EEVblog #861 - Rigol DP832 PSU FAIL & REPAIR — Dave Jones (explains)
+context before: And if that's not a dead giveaway, then once again, follow the money. Here's the two big spade lugs here for the output voltage that goes Look, there's our output current sense resistor.
+TEXT: There we go. It's just tapping off. You can see the two Look, see the two traces coming out there going off to an amplifier in there and that will be doing the current sensing.
+context after: But yeah, the two big traces just go off. So, I can't see precisely where those traces go, but there it'll they'll go maybe under the heat sink and into our output series to our series pass transistor right there.
+
+[330] EEVblog #330 - Medela Swing Teardown & Repair — Dave Jones (explains)
+context before: So you know, instead of using a big like a 1206 or even a bigger regular surface mount package, they've gone for a one of the old style mouths which you don't see much anymore.
+TEXT: so that's probably a current um sense resistor for the motor, so it can you know, so the software can actually monitor how much current is flowing through the motor.
+context after: So they that would dissipate you know, a fair bit of power more than a little 0805 or something like that could tolerate. So they've engineered in a larger physical package.
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (explains)
+context before: Oh, look at all of those Look at those massive vias down there. Oh, yeah. Good stuff, but um yeah, we've got a little clip-on spring terminal here with a little spring down here.
+TEXT: That's obviously our current sense jack. And yes, these are actually a split. If we can uh see down there, there we go. You can actually see the split down in there.
+context after: So, that's how they're uh sensing that, but I've never seen an implementation like that. It's rather unusual. Now, silly me, did I say before that this was the uh battery terminal?
+
+[1164] EEVblog #1164 - Xbox Engineering Baptism Of Fire — Dave Jones (explains)
+context before: So, obviously this current transformer is measuring the product consumption current from the active goes out to your Xbox and then if current comes back and then avoids that. So, we're measuring the current taken by the Xbox.
+TEXT: So, that one is doing your current sensing and the circuitry on the back it looks like and that's going to bugger off to your control board here as a track on top.
+context after: I don't know if you can see that, but there's a track that goes from the pin of that current transformer over to that board. So, there you go. It's got dual functionality.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (explains)
+context before: Why else would you sense off the uh the the voltage for the probe other than to detect when a probe is plugged in? I don't I don't see any other way.
+TEXT: I mean, it's not coded anyway. It says, "Only use these uh CPM probes only." But, I think it's just detecting that there's a current draw on there. That's it.
+context after: And if we plug in the other probe, this is the mains power the mains uh probe that uh hooks onto there. Yep, there it is, 2.87. So, it's it's drawing less current, but still it's enough to detect.
+
+[k2_mJtAeaog] SNEAKY Enphase Solar Monitoring Modification — Dave Jones (explains)
+context before: It's just that we're putting it through that same uh we're putting the production of the 3 kW system through the consumption measurement transformer. That makes sense. So, just imagine that we've got 1 amp flowing into our house like this, okay?
+TEXT: And we've got 2 amps flowing out of our 3 kW system like this. And let's say we've got 3 amps flowing out of our 5 kW system like this.
+context after: Let's see what happens here. Now, the only thing we uh care about is the consumption here because the uh production measurement here and here, that's not affected at all.
+
+[735] EEVblog #735 - Mailbag — Dave Jones (opinion)
+context before: There you go, this Ethernet chipset here, 05, so yeah, around about 10 years old. There, doing the business here on the Nippon Chemicon. Main cap, the 2200 mic one there. That's not too shabby at all. Top brand of course for those who don't know, Nippon
+TEXT: Chemicon. Hello? Hello? Hello? Look at that! They've soldered that little, is that a jumper? I can't read that. Yeah, that's a 0 ohm jumper designed to have a big ass power resistor in there, maybe some sort of current sense thing perhaps, I don't know, but yeah,
+context after: just whacked it in there at an angle to boot, thank you very much. But of course that angle is probably just due to like, you know, uneven surface tension or something like that, when it reflowed it may have just, you know, pulled it
+
+[1351] EEVblog #1351 - Mailbag — Dave Jones (opinion)
+context before: Well, you can't really do that because, um, it's on a DCC system. They're all wired up. Everything's wired up. So, you know, um, and then it's just digital control. So, yeah, I-- I don't necessarily think you can do it that way. You know, you can, like, try and-- I-- I think there might be--
+TEXT: I've got a vague recollection there might be some systems that, uh, can actually tell the location of the micros by, like, local current drawer and, uh, you know, stuff like that, and, uh, like, going over certain points and things like that, uh, maybe,
+context after: but that's only after the fact that, like, a train's gone through on the wrong track, and whoops, you know, it's gonna smash into your other, uh, tra-- and, you know, some of these engines, they can cost serious money in your rolling stock. Jeez, um, anyway, so, yeah, I suspect, um, I-- yeah, I don't know.
+
+[87] EEVblog #87 - Let's hop on the Electronics Design Merry-Go-Round — Dave Jones (opinion)
+context before: But, the problem with that is that um then it actually raises this voltage here uh by the voltage drop in the resistor. And, that can be about 0.1 V or something like that, cuz I want to use a 1 amp in the current anyway.
+TEXT: Uh the details aren't really important, but um I don't know if I can actually do this low side um current monitoring because of this uh increased voltage here. I might be able to do some weird arrangement with the grounds.
+context after: So, this um this ADC uh ground I might be able to, you know, uh tie into here, but the power ground I might be able to tie into there or something like that, but I've got to look into all those details, but um yeah, I you know, 80 cents for that little part I'm I'm a bit offended by that, really.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (opinion)
+context before: So we'll have a look. Uh obviously part of looks like power supply uh 3.3 volts there happening. So maybe some part of the linear power supply. So they're relatively uh you know high values.
+TEXT: They're 10 ohms a pop and power resistors. So maybe they could be doing some uh current sense happening on those for example for the inbuilt uh power supplies. I don't think that's part of the output uh circuitry at all.
+context after: And there you go. I missed the labels there. Plus 245 volts minus 2455 volts across that entire network. So, we're looking at 500 volts there. That's why they've uh you know parallel their series uh and parallel stacked these capacitances.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (opinion)
+context before: So, looks like we've only got the one current shunt resistor down there. Very low value jobbie. Now, whether or not that varies between the regular model and the A model, I doubt it.
+TEXT: I think they're using the same current sense resistor. Um like well, the sense network could change. They could get extra resolution, but I think it's just probably like a software type difference there.
+context after: So, this is the difference between they would be getting the non-A model, which we've got here, has 1 milliamp resolution, I believe, and the A model has 0.1 milliamps.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (opinion)
+context before: But, we're basically being fed in here. Look, we got four 10 ohm power resistors there paralleled up, giving you 2.5 ohm current shunt resistance there. And then that's being tapped off by I believe that little tiny uh SO 23 uh that would be like a high-side current sense uh amplifier.
+TEXT: And there's probably more current sensing going on in all parts of this thing. Uh plenty on the top side and plenty on the bottom. That's not for the direct output uh current.
+context after: That's just for I, you know, self- testing and all that sort of stuff just to make sure everything's working fine. And no surprises for finding a real beefy quality high voltage end channel MOSFET on the positive uh supply rail.
+
+[1753] EEVblog 1753 - Designing a 2000V Isolated Oscilloscope (Cleverscope) — Dave Jones (opinion)
+context before: >> And you can see the usual Miller plateau that you're used to done. There's a couple little gremlins which we know about. We won't talk about it. There's a the power supply that runs it.
+TEXT: >> Mhm. >> And we were interested in seeing how much it was being hit as this current turns on and you can see it here. >> Yep. >> It's being hit by about 300 millivolts.
+context after: And here's VGS, which is from 19 volts, which is what it's running to about 0 volts. Now, I have to point out that this is on the 1 kilovolt range.
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (mention)
+context before: So, I won't go over details, but you can see that we've got our varistas here, which are out there. We've got our MOVs and we've got two PTCs here. These are both unbranded, by the way. There's no markings on them. And this one's a bigger one, which is heat-shrunk here.
+TEXT: Here's our two input resistors up here. So, they're big, large, high-voltage jobbies like that. And these two resistors down here are our 5-meg input resistors for our current sense jack circuit. So, we won't bother with that. And we've got our board-to-board interconnect. Four pins up here, JU1.
+context after: And JU6 here just goes to... This little SOT 23, which I think is just a temperature measuring thing. So, they've put that on the main board. So, we won't bother with that. But as you can see, we can reverse engineer that nicely. It's got the nice isolation slots here.
+
+[OvGdE5hC1Ro] Bakon BK212 Soldering Station - URGH — Dave Jones (mention)
+context before: Then we've got a uh Holtek uh LCD uh display and not much else. There's our main switching Chinese there. What is that brand? I don't recognize it offhand. Hard to read on the camcorder screen.
+TEXT: And we've got some uh 10 mΩ current shunts in there. No worries. But yeah, that looks like a very neat, thoughtful layout. I rather like that. Quite impressive. Then we've got a main board which just sits in a rail here and well let's talk about that in a minute.
+context after: So let's slide this out and tada! I like that. Once again, very neat and tidy. You might think that's a mains earth connection but it's not. That's actually it's actually labeled there our sleep.
+
+[769] EEVblog #769 - Mailbag — Dave Jones (mention)
+context before: one if you're doing a multichannel testing. And of course it's only designed for high currents, because we've got 100 millivolts per amp output, so it's not like you can measure it, you know, down in the milliamps or microamps or anything like that. It's designed for
+TEXT: high current applications. And ta-da! We're in like Flynn. There we go. There's our Hall Effect device. Let's take a look. Well, there's not much going on here. All we've got is a Hall Effect current sensor, nice big fat trace happening there. I like that.
+context after: And it's a little 5-pin job, which I do not recognize at all. And I'll show you that up close. I can't find anything on the markings there, but we've just got ourselves a op-amp down in here just to gain that up. And it looks
+
+[649] EEVblog #649 - Power Designs 2005 PSU Teardown — Dave Jones (mention)
+context before: Lovely. No, I just checked the schematic. This pot down here is R27 over here. I love Sorry, R27 over here. I love this diagram. It's just beautiful. It really is.
+TEXT: R27 is part of the current sense circuit there. So, no, I'm afraid there's something else. By the way, when you're testing any gear, especially really old gear like this, just be aware of any any corrosion inside the contacts of these things.
+context after: Look, it can be a bit dicky. You've really got to make sure you get it right and stable before you start trimming these things. But you really can like dial this up just one digit.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: And they're pretty cheap. They're only like a dollar 20 in one off or less than 80 cents um in volume. So, pretty much a uh no-brainer in terms of uh choosing these devices.
+TEXT: As for the microcurrent circuit here, uh it's the same as before, I have changed the gain. It was 200 before. I've now upped it to uh 500 so that I can get one microamp bit uh resolution for a 12-bit uh converter.
+context after: And that was just nicer than 2.5 microamps. I like that nice round number so that your uh ADC can read each bit equals one microamp. And on the output here, I've replaced the reverse uh Schottky diode with an SA12AG uh TVS, which is a um transient voltage suppressor, or a transorb, or whatever you want to call them.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: I I talked about it before, you might want the absolute lowest on resistance, but you might go, "Oh, what's this gate charge? I don't know what that is." Go Google it.
+TEXT: Find out. Input capacitance. Um you know, there's a whole bunch of stuff. Then you might go, "Oh, what's a super junction? What's depletion mode? I don't know anything about the current sensing?
+context after: What? I you know, like you just go and search. "A supplied only in passivated die form with solder bumps. Ah, bugger off." Great for your mobile phone, but you know.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (mention)
+context before: Notice the white line there. The PCB design has been very kind to us and shown how they've separated the two halves. What are they? Well, they've even labeled them.
+TEXT: Vense is up there. So there's our voltage sense path or voltage sense channel up here. And here's our current sense channel all the way down the bottom. And these have to be the ADCs.
+context after: Let's go in and take a look at those. And sure enough, both of those are a real high-end ADC. A, in this case, a Texas Instruments ADS16751. Let's go to the data sheet.
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (mention)
+context before: That's obviously our current sense jack. And yes, these are actually a split. If we can uh see down there, there we go. You can actually see the split down in there.
+TEXT: So, that's how they're uh sensing that, but I've never seen an implementation like that. It's rather unusual. Now, silly me, did I say before that this was the uh battery terminal?
+context after: Look like it at first glance. I I was going to actually comment on that, but it's not. It's actually the uh piezo transducer up here. So, I really don't like the way that, you know, why have wiring going over the piezo transducer?

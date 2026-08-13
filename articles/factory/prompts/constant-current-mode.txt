@@ -1,0 +1,493 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: constant current mode
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 92 passages drawn from 38 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# constant current mode`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: But just be careful. You don't want to put a massive amount of capacitance on the output of a constant current power supply like this, because that capacitor can store a lot of energy.
+TEXT: You know, if you put in a "I'm going to put in a big 2200 microfarad capacitor. That'll really, you know, give it lots of transient performance." Well, there's a downside to doing that, and that's when this thing switches into constant current mode, then can't react, cuz it's still got all this energy in the cap that can get dumped high current into your load, because it's not current
+context after: regulating. So, you want to keep in a lab power supply like this with a constant current circuit like this, you want to keep the output output capacitance as low as possible just to ensure stability in your regulator.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (explains)
+context before: We've got a TVS on the output. We've got a PTC for protection. Not a huge amount and this is just tapping off. That'll be going over to the microcontroller to you know, when you saw 12.01 volts on there, that's where it's getting from.
+TEXT: It's just tapping it off there. And that's about all she wrote. Oh, and then I forgot down here to know if we're in constant current or constant voltage mode hardware-wise so the micro could tell if you know, if we're in constant voltage or constant current, there's a dedicated circuit there LM 321 just a comparator here and it just knows which one and then signals the micro there.
+context after: So, yeah, that is just power for the op amps and so there it is. That's the output circuit. Once again, you can make it simpler than that. Once again, I couldn't tell you the exact design decisions, but this has changed a lot over the years, especially in my Hands up.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: I think I much preferred the It was a bit smoother with the 22 mic, but that's a 100 n for you. Now, it might be tempting to use that 0.1 mic there and have a faster switch on.
+TEXT: Who cares what the op amp's doing? The output, you know, it's not too bad at all. Well, let's try to see what happens in current limit mode. And to capture that, we'll change our trigger to up just below the 5-V level there and we'll trigger on the negative slope because when it goes into constant current mode, the output voltage is going to fall and well, let's try that
+context after: and see what we get. I've put the 22 microfarad back in, so this is our normal circuit configuration now. All right, we'll see if we can capture it going into constant current mode.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: THERE WE GO. I figured it out. That's pretty nice. Okay. Yep, that's really good. Okay, no, I take back what I said about that. That's really good. I can then go to there, just move the cursor by pressing that.
+TEXT: Uh, very nice. Yep. Yep, thumbs up. And sure enough, yep, if you whack a load on it, go into constant current mode, there it is there. Um, 1.8 dropped from uh, 6 volts to 1.1 and of course the reason it doesn't match here is 1.1 out here and it's 1 volt reading on here is because of our the drop in our leads and our connections because we're not remote sensing anything.
+context after: I really like that even though it's displaying only 1 milliamp there, you can actually set down here in increments of 0.5 milliamps. So, you get a little little bit extra for your dollars there.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (explains)
+context before: Here it is here. Boop. There it is. It's actually hooked up to a load and it's drawing 200 milliamps here. You can see the set voltage and set current are up the top here and then you've got the actual measured output voltage and the measured output current here.
+TEXT: It's got a nice big customized hello here, but that can be used for all sorts of stuff and it's a pretty funky little thing. You can actually if we want to program the current up here for example, if we wanted to only go to say 100 milliamps like that, we could enter 100 milliamps and boom, it drops down to 100 milliamps and entered constant current mode down there.
+context after: And yeah, it's a nice little supply. It does actually work. It's got USB C input over here like this, so we can power that on and there it is and we can jump right back in there and it automatically stored the milliamps up there.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: It was more of a like unboxing teardown thing. Um, but presumably, um, can we just touch that? Ah. Yep. Uh, hope the knob works. Oh, yeah, the knob sort of didn't work Yeah, it goes up in increments, so obviously our cursor's in that position, but the problem is like you can't just like move your cursor over and like select like there's no arrow keys on here to move your cursor over to
+TEXT: set the jumping increments. It's 1 V. So, that's the very first thing I noticed about that. Um, anyway, uh, I do like the display. It's really good. Um, and I I'm sure it will change color like to red or something if go into constant uh, current mode uh, from green to red, but anyway, we've got our set voltage and our readback voltage, our set uh, current and our
+context after: readback current for each channel. So, it's it's nice. It's got uh, output uh, uh, power as well, brilliant. So, yeah, I like the interface. It's nice except yeah, how do we like Yeah, I can hit that.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: It's settled down. And then if we go up to 10 W, yeah, we're all good. And once it's settled down, 50 W, yep, exactly the same as what uh we got with the Junctek.
+TEXT: It's uh once it's all locked in and settled down, but it really doesn't like the transients when it switches on cuz it goes over current. So, then the power supply uh go goes briefly into uh constant current mode, and then the electronic load detects that, and it'll switch back in modes, and it'll just goes it just goes haywire.
+context after: And uh so, the two just play a merry little uh dance together. Let's uh 69. Let's go to 69, good value. And then we'll go to 96 watts like we had before, and everything's hunky-dory.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (explains)
+context before: for all of our um rear panel and control interfaces. Now you can't see it there but I'm a bit surprised to find a 1,000 mic output cap there. That is 1,000 mics is pretty darn high for a any power supply which has a constant current capability.
+TEXT: Why? Because on a supply with constant current at any time it can switch into constant current mode but that constant current might be limited back further on the board but then this output capacitor here can deliver a spike of current you know energy directly into your load over and above that set current amount.
+context after: So during that switch over period so it really the design goal when you're designing any lab power supply with constant current mode capability is to minimize your output capacitance there but they've whacked in 1,000 mic which is pretty darn high.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Here we go. Didn't even trigger. There we go. We're Looks like we have to lower our trigger there. Let's try it again. And bang, there we go. Much smaller output transient this time cuz we've got greater output capacitance.
+TEXT: But, as I mentioned in the previous video, it's a bit of a trade-off. You can't have an infinite amount of output output capacitance cuz then it when it switches into constant current mode, all that energy from the output capacitance can be dumped into the load before it has time to regulate the current.
+context after: So, probably not a good idea. And we'll check the load when we do the switch on transient. So, we want to set our trigger signal below like that. So, because we expect it to drip down like that.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: And uh they've got shake-proof washers, the whole shebang. So, that is uh very nice all your terminals. Once again, I think they've got a little maybe a little bit of output capacitance there, not much, of course.
+TEXT: In a good lab power supply, you do not want too much output capacitance because then when you transition from constant voltage to constant current mode, you've got all that energy in those output caps, and you don't want that to dump in the your poor little load that you're trying to instantly protect.
+context after: So, yeah, you can't just whack, you know, 10,000 mic on the output of your power supply to make it super stable and then yeah, not think you're going to come a gutser when you power your circuit.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: Very nice. And then your plus minus 25 volts here, you can actually turn the output off or on, there it is, now it's live reading. So this is your set voltage, your set current, and your read voltage and current, 1 millivolt resolution, 1 milliamp resolution.
+TEXT: This is great, you're certainly getting your money's worth. This looks very nice, constant voltage mode, it'll tell you when it switches over into constant current mode if we just go short of the output and go into constant current. Here is our, we're on the 100 millivolt range, sorry, I'll just drag
+context after: this over here like this, and we're now on our digital multimeter panel down here. Volts DC, volts AC, like the fonts are a bit small, I would have liked them to be larger than that, but anyway. And then continuity range and, nah, it's fixed.
+
+[281] EEVblog #281 - BK Precision 8500 Electronic Load Teardown — Dave Jones (explains)
+context before: And of course, I'll do a proper review of this thing later cuz it comes with PC control software and all sorts of stuff like that. But look at these huge big binding posts on the front.
+TEXT: Absolutely awesome. Lovely knob here for setting stuff, current, constant current, constant voltage, constant resistance, constant power modes, everything. More stuff than you can poke a stick at. I love it and it's a really nice big clunking power switch on here and it's a really nice solid unit.
+context after: And check out the base of it down in here. Huge metal base with tons of screws. I love it. So, let's crack this thing open and see what's inside.
+
+[1087] EEVblog #1087 - UNBELIEVABLE Alesis Studio Monitor Fault! — Dave Jones (explains)
+context before: It lights up red. But blue is the problem. Hmm. Can we get that off? All right. Oh, yeah. Ta-da. We're in like Flynn. All right. The LEDs have to be tucked up and hot snotted all within there, which is a bummer.
+TEXT: And they just go into the light pipe, but yeah, I assume it's just a dual back to back they back to back red and blue LED. Okay, so what I've done is just put the power supply into constant current mode 5 volts compliance or output voltage, that's just the technical term and 10 milliamps.
+context after: So, because the 121 multimeter is only capable of a couple of milliamps due to the 2. aha. There we go, blue. Tada! No problems whatsoever. If I change the polarity, red.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: Actually, let me get out of roll mode. All right, so let's see if we can capture this. I've got uh 10 milli sample milliseconds per division. Okay, I'll go into I'll adjust the voltage while we're in constant current mode, remember that, and you watch it, it's going to jump.
+TEXT: We saw those little spikes. Now we'll zoom in and we'll capture those spikes. Can up. No, it just went out there. There we go. Bingo. Captured. It It lasts for like, you know, 12 milliseconds or something like that, and it's jumped out of constant current mode when we adjust the voltage.
+context after: That's very interesting. Why is it doing that? Oh, it's not a consistent time. That's a bit nasty, isn't it? Wow. Yeah, um like you shouldn't It shouldn't jump out of constant current mode when you adjust the voltage like that.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (explains)
+context before: So, let's capture that again. But, look at that. It's jumped up and then it's ramped back down to 0.2 volts. What's going on here? There's definitely some funny business going on here.
+TEXT: I've got 4 amps constant current set with a 50 watt constant load, so we should expect at 15 volts, so you know, 3.3 amps or so. And we switch it on and sure enough, that's what we get, but we do it a few times and we'll eventually get to a point where it this voltage will drop down.
+context after: I'm not sure if it's like the some sort of over the over voltage protection mechanism kicking in. It shouldn't cuz we're not we're not doing anything, but I'm having a hard time There we go.
+
+[320] EEVblog #320 - Mailbag Monday — Dave Jones (explains)
+context before: It is a K&H, a very popular one. K&H model RH32. I've got a couple of these. And unfortunately, it's not the right pitch. It needs to be a bit wider. I guess it would be nice if it supported both pitches. Make the board a little bit, actually it doesn't even need to be wider, it is
+TEXT: just the correct width. Just needs a couple of extra footprints on there. Alright, let's give it a quick go here. I've got my power supply killer, the BK Precision 8500 300 watt programmable electronic load. Love it. So we can, I put it in constant current mode, here we go.
+context after: We've got I-set, constant current, 0.1 amps, 100 milliamps, so that should be fine. It said it was up to 300 milliamps or something. And we've got our input voltage here. And our output voltage, this is the output voltage as well. It just double-checks that, we don't really need
+
+[gqzZHbEfWDU] KoradFollowup Charles — Dave Jones (explains)
+context before: Those of you who aren't, interesting topic. OK, we're going to move this back again. In the meantime, the power supply's obviously been behaving itself because the bulb's stayed on and we haven't blown it up in voltages. It's stayed stable. So let's just flick it on and off a few times now.
+TEXT: You can also see briefly there, when the power supply is first connected, turned on, we go to constant current mode, then we go to constant voltage mode. And that'll be when the bulb is actually pulling maximum current out of the supply, so it just says, "I've had enough."
+context after: I'm going to constant current, and then it drops back to constant voltage, which is what it's at now, but you can't really see that because of that bulb. So we're going to get that out of the way. There you go, constant voltage. If I increase the voltage on the bulb now,
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: Now, this has killed power supplies in the past because this is going to have a loop response in the electronic load here trying to keep the 1 amp there.
+TEXT: And it just goes into that current limit just fine and dandy. So, nothing's oscillating, nothing's dying. It's just hunky-dory. So, it's a simple test, but it just does show that that loop response in the load isn't upsetting the constant current mode in the power supply.
+context after: And even if I set the maximum output voltage of 80 volts here, it's still it's still handling that just fine. So, I can disconnect that. Error disable output. Whoa, sparky.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: That'd be incredible. That's amazing dynamic range. You know, if you're developing like a Wi-Fi product or something like that, you can like just keep it on the 2 amp measurement range and measure, you know, like an amp when it's transmitting or you know, you got a some high-powered product uh doing something like uh transmitting a decent amount of RF or whatnot, and then you uh and then when it goes to sleep um or
+TEXT: just, you know, background idle or whatever, and it's drawing, you know, 100 microamps or something, you can still get decent resolution on that. Nice. Yeah, so the minimum we can go there for our constant current mode is 1 milliamp, but of course, that's like plenty.
+context after: So, let's just uh switch that output on, right? So, we'll set it to 20 volts. What it Well, look, we can I can show you that uh it can actually go much higher than that.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: I've got no load, but it will actually switch on right down at the low end when it hits zero. Bang. There it is. And you can see the, um, exponential uh, discharge due to you guessed it, um, this resistor R2 here.
+TEXT: Because when it goes into constant current mode like that, bang, it, uh, switches on this transistor, which then discharges this 22 microfarad cap through that 1K to ground. And, uh, that's taking about, uh, 10 20 30 40 50 milliseconds or so there to switch that off.
+context after: So, we can actually tweak the value of, uh, that 1K. You wouldn't want it any higher, but, uh, we could, uh, certainly, uh, lower that, um, almost down to, well, effectively down to zero so that we can, uh, short, uh, short out the cap directly and, uh, get that fast turn on.
+
+[TQcV3ftPLgA] Matrix PSU Unboxings & Teardown — Dave Jones (explains)
+context before: I don't think you can see any scanning of that on my camera with the rolling shutter. But, yeah, 30 volts 5 amp or 31 volts at 5 amps and a power display as well.
+TEXT: It's only a single output jobby, but yeah, I think that's probably a Bobby Dazzler. So, 31. 000 and we're getting 997 readback. So, it's doing the actual readback. The segments down there for the constant voltage and constant current, they're they're not that bright.
+context after: So, I'm not that keen with that. Let me get No. Hang on. Let's brutalize it. What was it set to? 5.1 amps. All right. Let's brutalize this sucker, shall we?
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (explains)
+context before: I've got 2 4 6 8 9 LEDs. I calculate the voltage drop on each LED there. It's pretty high for your 45 volts for almost 46 volts there, but we're going to limit it to 1 milliamp.
+TEXT: So, I can just turn up the current 2 milliamps, 3 milliamps, etc. And the LEDs are just going to get brighter and brighter. Cool, huh? So, we're operating in constant current mode because we've got a load, these LEDs, that are essentially current driven devices.
+context after: You have to pass a current through them, and whatever voltage drop across them, the 46 volts, that's just what happens to drop due to the characteristics of these LEDs, but we don't hook a 46-volt power supply up to them.
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (explains)
+context before: It's actually set to 9 V over here. Okay, that's as low as it actually goes. So, look what happens, right? At 8 K, it's fine. We're measuring precisely 1 mA because this is a precision current source.
+TEXT: And if I go to 9, oopsie, we're right on the limit there. So, we've gone from constant current mode all this time. Okay, even though this doesn't have an indicator saying constant current constant voltage, now we've actually gone into constant voltage mode.
+context after: I I can adjust the resistor to 20 K, for example, and the current is just going to drop because it's just working as a voltage source now. You can see.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (explains)
+context before: So, if you know of any good books on the subject for debugging these neuro electronic projects, let me know. Wait, bye-bye. It's time to enter sleep mode. Sleep mode?
+TEXT: You want Mommy to put you into sleep mode? Okay. Lock. With when you've got a pass transistor like this, you can make it operate in constant current mode like this by determining the voltage drop across that current that shunt sense resistor there.
+context after: You can keep it at a fixed current. And then when it switches into another mode, it can work as a linear voltage regulator. And we forgot the tray, didn't we?
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (explains)
+context before: Why? Because on a supply with constant current at any time it can switch into constant current mode but that constant current might be limited back further on the board but then this output capacitor here can deliver a spike of current you know energy directly into your load over and above that set current amount.
+TEXT: So during that switch over period so it really the design goal when you're designing any lab power supply with constant current mode capability is to minimize your output capacitance there but they've whacked in 1,000 mic which is pretty darn high.
+context after: Now whether or not they have done that because that was the minimum value that they required for output stability I have no idea. You'd have to go into the circuit and the actual design and how and the loop performance of this thing.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: Well, there you go. There's the update speed for it. I've got it in silly bugger constant power mode again. And yeah, it's jumping around the shop. I've got it jumping up to like you know, 19 amps or whatever.
+TEXT: So, yeah, it's still not killing it. It's a robust little beast. Guess one of my only complaints about the user interface is that like really when you switches to constant current and constant voltage to constant current, And not really obvious.
+context after: Yeah, the dot there changes, but like it would have been nice if it like just highlighted saying CV or CC, you know, change the entire display or something rather than just changing the little bullet dot there perhaps.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: We've just got a low value cap there. And this uh cap on the um output would should just be in parallel with these ones, but it's literally right on the output.
+TEXT: So, it's got a significant amount of uh output capacitance, which does matter if you're uh switching into constant uh current mode, of course, because then your uh capacitors can still deliver that charge before the loop has uh time to respond.
+context after: So, ideally you want the uh in power supply design, you want the lowest possible output capacitance while still keeping your ripple uh low, but also uh when you switch into constant current mode, you don't want to uh uh fry your circuit.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (explains)
+context before: This one goes over to the keypad. This one goes over to the LCD and as we've said the LCD is appears to be the same on both versions and that's just one of those you know module things with the some circuitry on the flex there some driver and inverter stuff on the flex circuitry and then we've got our other ribbon cable which heads off back to the main board
+TEXT: for all of our um rear panel and control interfaces. Now you can't see it there but I'm a bit surprised to find a 1,000 mic output cap there. That is 1,000 mics is pretty darn high for a any power supply which has a constant current capability.
+context after: Why? Because on a supply with constant current at any time it can switch into constant current mode but that constant current might be limited back further on the board but then this output capacitor here can deliver a spike of current you know energy directly into your load over and above that set current amount.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: I've switched it down to 1 volt so we're not getting a huge massive spark when we do that. There we go, 5 amps and channel 3 should be 3 amps.
+TEXT: Maximum 2.999, 3.016. All well within spec. Nice. And if we try it right down at 10 milliamps current, there it is. It's drawing 10 milliamps there. I've got it set to constant current and of course, you know, it's going to be near enough.
+context after: There we go. That's a certainly well within spec right down at that and the display is spot on. Two least significant digits. This one's four least significant digits out, but there you go.
+
+[1381] EEVblog 1381 - Argon Ion Laser 10kW PSU Teardown — Dave Jones (explains)
+context before: Whilst it is fairly linear except right at the extreme ends, it'll kind of just tail off like crazy. It's something that's actually better driven by a constant current source.
+TEXT: So, once that high voltage pulse starts up the thing, it basically kicks into constant current mode. And this is basically a water cooling unit and a giant pass transistor basically give a linear pass transistor to give constant current.
+context after: Although, I'm sure it's more than one transistor. And we're going to find out by opening this bad boy. So, yeah, this is a piece of work. I think I'll just do the teardown on this table, so it could look a bit different to where I normally do my teardowns.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: All right, let's try 0 to 45 V, same time base. There we go, exactly the same. But, you'll notice if we switch it off, it is reading on the output terminals.
+TEXT: Look how long it takes for those output caps to discharge. So, yeah, got large output capacitance. As I said, not ideal for a lab power supply cuz when it goes into constant current mode, those caps can potentially deliver over current.
+context after: So, yeah, you got to be careful of that. And off, let's see how she ramps down. I mean, we've only got the 1 meg load on the input. Bingo, there it is.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: So, I think what might have happened here is that the large output capacitors here with their lower ESR, they're dumping current into the load, and the load has a protection against that to try and like to to well, to protect itself.
+TEXT: And so, the capacitors are trying to wham when it changes over into constant current mode, they're trying to slow those capacitors trying to slam that current into the load, which is uh you know, basically just shorting out pretty much.
+context after: And it's just protecting itself. So, I think that's what the deal is there. It's So, technically, that's an issue with the uh Rigol power supply, but this is what happens when you have large output uh caps on your power supply.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (explains)
+context before: No. Heaps. So, anyway, we can set it back to two. So, we'll go two steps, and then I've set uh I you just use cursor keys over here just to set Okay, we want 1 amp.
+TEXT: We're in constant current mode. We can change our range. So, we want 1 amp 1 amp for a duration of 1 second, and then we want uh 2 amps for a duration of 1 second, and circles I loop, you know, how many times you want to loop through.
+context after: So, we can now run that, and it should hopefully No. What's it doing? Huh? Well, why isn't it going on to the next step? Hello. McFly. One other thing I noticed, if you've actually got this on and you go to something else, it just it'll go to that mode and switch it off.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: So, I've got it on 5 volts at the moment. And so, there it is, 5 volts per division. And we'll jump up to say 20 volts. And uh we'll try and capture that.
+TEXT: So, trigger point is just above 5 volts. So, we'll go voltage set, and we'll go 20, and see what happens when it jumps. There we go. Nice linear ramp up there, constant uh current mode, and no overshoot, nothing when it changes taps.
+context after: Very nice. And we'll capture that again with a uh 10 ohm resistive load. So, we'll go from 5 up to 20. Beautiful. Look at that. A little bit of a little bit of funny business happening there, but um yeah, it doesn't overshoot.
+
+[-ir61ARd5T4] WTF is Wrong with my Rigol DL3021 Electronic Load? — Dave Jones (explains)
+context before: So, I guess that's the idea there rather than have a regulator in there like a you know a SEPIC like a buck booster converter in there to actually do it anyway.
+TEXT: Right, so we can see all right we've got great resolution on here. We can see that, okay? Now, I've got this set for 1 amp, okay? So, we can actually switch this on so it'll be 1 amp constant current and we can switch this on, okay?
+context after: And it should be and why it's drawing 0.1 amp I don't know, okay? So, I was able to actually get it to draw 1 amp. If I can set one again like that, whoop it goes up to 1 amp.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: So, these things are actually hard to kill, or that's the intention of it. And so, that overcurrent protection is kicking in, and uh yeah, all that current is being dumped out of those um out of that big output cap.
+TEXT: So, yeah, just take that into account of anything that you're using this for. Um in this particular case, because we're cycling there into constant current constant voltage mode, boom, all that current's available to be dumped out.
+context after: And because the load was uh thinking, cuz this is an electronic load, takes time to respond and things like that, it just sets the output uh transistors like a really low uh impedance, and that will effectively short the output of the cap, cause all the current to be dumped into this load, and trip the output uh or the input current overcurrent protection system.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (explains)
+context before: Oh. Oh. Just feel the silicone. These leads are gorgeous. Oh, excuse me, I'm going to go in the corner and just fondle them. And I really like the setup in this thing.
+TEXT: If you're in constant current mode, for example, you just go shift, setup here, and you get all the stuff. You can set your range, you can set your high threshold voltage, you set your low, you can set your slope rate as well.
+context after: Check it out, 5 amps per microsecond. That's the up, you know, when it rises back up to compensate, and when it falls down, you can actually set that. Pretty beautiful.
+
+[1375] EEVblog #1375 - Mailbag: IEEE — Dave Jones (explains)
+context before: whoa okay we just switched it off there we go go straight in there's no like um the splash screen or anything and the time stays there that's interesting so i'm not sure how you reset that i'm not going to rtfm just now anyway let's say
+TEXT: 57.6 volts and we'll put a load on so current set of 1.2 amps here let's just go for a constant current of say one amp here so that's 57 watts 0.986 0.997 that's a little bit out don't know if that's still within spec but uh
+context after: fans not turning so there you go that's good because these things are going to be uh quite reasonably efficient although you know you'd have to do the full characteristic curve it's actually a lot of effort to uh if you want to get the full uh characteristic
+
+[Cn3DVQGmF9A] Dyson Battery Failure — Dave Jones (explains)
+context before: The battery's dead anyway, but if we can, like, rejuvenate it, that'd be cool. So let's just bump that up to 24 volts there. And let's just say, let's just half an amp, something like that. So let's give it a whirl. Got it around the right way.
+TEXT: Yeah, I think so. Just do a sanity check there. There you go, 24 volts. All right, all right, let's go see if it can do anything. And we're in constant current mode. So we put in half an amp into there. You can see that.
+context after: See that right there. I'm going to leave that for a bit and see if we can't rejuvenate this sucker, huh? Yeah, because those cells might have gone completely dead. There might be some protection circuitry in the cells or whatever. So yeah, maybe the plug pack doesn't have the grunt to get it going again.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: So, that takes about 400 and something milliamps. So, if we set it to 300 milliamp current limit, and I've got 10-volt output, and we and I'll just uh give that a little whoop switch on.
+TEXT: There we go. That's actually the uh response of the constant current mode. So, it it undershoots there in terms of the voltage, but that's okay. Um no harm done there, but it recovers, you know, 50 milliseconds or so.
+context after: So, that's quite nice. And then, if I set it to the positive edge and lift her up, there we go. That's the response going from constant current mode um with the voltage limit there up to the 10 volts, and there's very little overshoot there.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: All right, I knew this uh defibrillator tester would come in handy. It's got a big-ass 50-ohm resistor in here. Um so, let's uh single-shot capture uh turning on uh 40 V here, and uh that'll give us a 30 W load.
+TEXT: Boom. There we go. Nice. And we'll switch that off, and that's a clean switch off, too. And that is uh turning on into constant current mode. You can see the uh CC down there, and that's clean as a whistle, as well.
+context after: And let's try that going from 45 V into constant current mode. Yeah, there we go. Little bit of undershoot there, but that's normal. It's not doing anything strange, not oscillating, so that's quite nice.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: Um anyway, so that's that's obviously the set. And obviously yeah, obviously uh that's telling you it's on because we got our constant voltage light there. So, 5 V and so set to five and we're getting pretty darn close to five, so that's pretty accurate.
+TEXT: No worries. Okay, so I'm going to set this to 5 volts constant current and let's turn it on. Oh, sorry, 3 amps. Yeah, because we had our 3 amp current limit down there and sure enough, um 3 amp current limit.
+context after: So that's that's pretty bang on. No worries. Okay, so let's press set and we get into our voltage. And we go down. Oh, no. No. There we go. Uh I This is where you have to read the manual.
+
+[828] EEVblog #828 - Siglent SPD3303X Precision Lab PSU Teardown — Dave Jones (explains)
+context before: There we go. So, that's the first tap. And then 16 down to 15 24 22. So, 23 24 and that's it. There you go, three taps. Okay, so what I'm going to do now is use my famous power supply killer here, the BK Precision 8500 electronic load that I have managed to kill a production power supply with before.
+TEXT: When you set it to constant resistance, you can actually get this thing to oscillate between constant voltage and constant current mode. So, I've got it set to 8 volts, which is like the minimum of the tap.
+context after: Okay, so of the next tap, so it's actually um Uh so, we switch to the next tap. So, this will be dissipating the most about amount of voltage across the output power transistor.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: Don't know what to do. Quick, switch relay. Switch relay. It's panic. Panic." But there you go. To its credit, it's survived that and it's surviving just shorts on the output as well.
+TEXT: 5 amps constant current. So it lives to power another day. Not a problem. It's not like that Korad rubbish. There you go. I've got it on constant resistance mode again at 1 ohm on the uh three this time.
+context after: 6 volts, there's no relays clicking, it's not uh changing um transformer taps. So, it's uh there we go. It's just jumping in and out of that 3 amp, doesn't know what to do.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: Let's try that again but in DC coupled mode, 1 volt per division so we can actually see the real drop in voltage and here we go. Boom, look at that.
+TEXT: Nice and clean. And let's see how accurate the constant current mode is. Let's our constant current is set for 3 amps. Okay, we're currently drawing 2.995, 2.996 and of course the voltage hasn't dropped.
+context after: And let's see if we get very close to that 3 amps. It should switch into constant current mode. Yeah, hang on. Yeah, there we go. Bang. Right on target.
+
+[749] EEVblog #749 - Mailbag — Dave Jones (explains)
+context before: Oh, there we go. It's a real tight fit. Ta-da. It is a self-powered active load, 2 volts to 70 volts. Beautiful. Let's take a closer look at it. And here it is.
+TEXT: It's a self-powered active load, i.e. a dummy load. And it's got both constant current and constant resistance mode as well. I'll tell you why it's uh important in a minute, but here we go.
+context after: We've got um where you plug your load into here. It's got a current meter by looks of it. You can actually measure your uh current going through if you want to.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: Some people might need that. Okay, I've got the constant current set to 2-A here, but I've got a 3-A load. So, let's just switch that on and see what happens.
+TEXT: It should yeah, 2-A. There you go. We've only got 0.12 V out, but uh we are getting our constant current 2 amps. It's limited that. All right, so that's going to be our bloody load here.
+context after: Let's just uh set it and we'll just short the output with the leads. That's better. These loads can be annoying sometimes. All right, so we just set uh 10 volts 2 amp output and we'll just short this puppy and see what we get.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: Look at that. We've got an extra little doohickey in there, extra little frequency switching. So, that's still at 120 kHz there, but it's added an extra That's just not a capture artifact.
+TEXT: That's actually really there. It's actually got two little switches in there. So, it's changed modes at that higher current. And what happens if we go into constant current mode there?
+context after: So, I'll do just 9 amps there. And uh well, let's restart that. Well, there we go. So, there it is there. And let's plug it in. Constant current mode.
+
+[393] EEVblog #393 - LiPo Battery Discharge Testing — Dave Jones (explains)
+context before: So, this is just an update on the USB the battery powered USB supply that I was working on and you've seen this prototype in a couple of videos and I've got some firmware up and running on it now.
+TEXT: So, micro supply version 1.0 and you know, it's displaying I can set and display the constant voltage and the constant current modes. So, just a little bit of the menu interface here.
+context after: I haven't got the full menu done yet, but basically voltage at the top this is currently displaying output volts here and output current. I haven't zeroed the thing or anything like that yet.
+
+[1558] EEVblog 1558 - Mailbag — Dave Jones (explains)
+context before: So, if you want that tiny USB form factor, this could be really good. But, yeah, but the power supply with a minimum of uh amps current limit, and as you saw there, it's not actually capable of like doing like the set power uh you know, constant current.
+TEXT: Yeah, and you can see it's like it's in constant voltage mode there, it says. Um and not constant current, even though like 1 amp like can I even set like half an amp, for example?
+context after: Nope. It's a well, 0.6. Oh, no, cuz it's a minimum of 0.6. Um yeah, so it's got limitations like that. And uh there's no like data logging. I want to see data logging.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: It's oscillating. And I can hear some sort of oscillation thing happening. You can see it on the LED there. The LED is blinking. And this is going silly buggers.
+TEXT: What? Disable this? What? My Rigol load is causing that? The input should be disabled, but why would this be going into constant current mode if our current limit is 13.1 amps?
+context after: It doesn't make any sense whatsoever. Let's plug this back in. Yeah? It's causing that It's causing that issue again. Oh, I just realized that my terminals here were loose when I cuz I had my wires in there and I didn't screw them back up, but that shouldn't do anything cuz this load is off.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: Okay, so I've got it in roll mode now and we're in current limit down here. So, let's see what happens if we change this voltage again. Let's go see if it jumps out of constant current mode.
+TEXT: Oh, yeah, look look look at that. Look at that, it's jumping out of constant current mode. That's interesting, isn't it? WOW, WE should be able to single shot capture that.
+context after: Actually, let me get out of roll mode. All right, so let's see if we can capture this. I've got uh 10 milli sample milliseconds per division. Okay, I'll go into I'll adjust the voltage while we're in constant current mode, remember that, and you watch it, it's going to jump.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (explains)
+context before: That's what I'm led to believe anyway. So, just be aware you're getting a genuine unit. Very similar keypad interface, but a couple of more keys instead it's got the enter key here for example, and the buttons light up.
+TEXT: It shows you which mode you're in, constant current mode. This one didn't. Look, you boot the thing up, you don't even know what mode you're in. It's just uh it's crazy.
+context after: This one's much nicer, and uh separate uh shift button over here. So, user interface vastly improved, which is so welcome. It's got the same excellent knob that we had before, no worries.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: So, probing or whatever, so I wouldn't I wouldn't worry about that at all. Switches off cleanly. And we'll capture the transition from constant voltage to constant current. Got constant voltage at the moment.
+TEXT: That was out of constant current into constant voltage. So, it is it's really clean. And as for voltage step response, yeah. Yeah, yeah, that's pretty good. There we go.
+context after: We've just got some steps there. That's pretty clean. As I was adjusting that cuz where I was going down, so you expect it to curve with the output capacitance like that.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: So, it went to the output voltage and then it took 5 milliseconds. It took like 8 milliseconds or something, 7-8 milliseconds to realize that Oh, I need to go into constant current mode.
+TEXT: So, it's over volted on that and there's a little That's interesting little blip in there before it realized No, I need to go into constant current. Thank you very much.
+context after: So, is that a problem? Well, potentially. You know, it depends on your application. So, okay, for comparison, let's see how this new Keysight EDU triple output power supply does under exactly the same circumstances.
+
+[861] EEVblog #861 - Rigol DP832 PSU FAIL & REPAIR — Dave Jones (explains)
+context before: Replaced it with a half amp and fine. What the I These things just happen. I with monotonous regularity in the EV blog lab. Is it the EV blog curse?
+TEXT: I don't know. All right, let's check this puppy out. Let's switch it on. 30 V. Let's just go the current limits 3 amps. Let's just go constant current 1 amp, shall we?
+context after: Just for simplicity, turn it on. Yep, drawing an amp. No worries. Works a treat. So that's all it was. Is it a blowing N-channel series pass transistor in there?
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (explains)
+context before: At least the display digit is there anyway. So, that is definitely 0.1 milliamps whether or not, you know, it could be as I said, just a software thing and it just counts up in 10s and only has 1 milliamp resolution.
+TEXT: I don't know. But anyway, it displays our power and our resistance as well. So, let's put it in constant current mode. So, ranges here, we've got 40 amps and 4 amps.
+context after: So, that doesn't give us it doesn't change our display resolution at all anyway. So, that's rather interesting. Our slew rate, our, uh, V on where it uh, switches on at, our voltage limit, 180 volts.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: So, I wouldn't rely on that and not as good as a hardware one. And something you don't see that often is a output power protection as well. I don't know.
+TEXT: Some people might need that. Okay, I've got the constant current set to 2-A here, but I've got a 3-A load. So, let's just switch that on and see what happens.
+context after: It should yeah, 2-A. There you go. We've only got 0.12 V out, but uh we are getting our constant current 2 amps. It's limited that. All right, so that's going to be our bloody load here.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: But of course, when you switch all those outputs if you well, if you switch the one output or all of them off, any combination, then it displays the set current, 1.5 amps.
+TEXT: So, let's check the accuracy of this. So, let's connect it and you should to the current mode short out the output and you should hear the fan whoop, go up.
+context after: You heard the relay switching there. There we go, 0.993. It's displaying 1.001 and it's set to 1.000. So, that is within the current spec of uh 0.1% plus 5 milliamps.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (explains)
+context before: So, I've got it set to constant power 1 W little tiny 1 W load at the moment. So, we're in constant wattage mode, you'll see the little CW there.
+TEXT: So, we'll be drawing a constant 1 W. My current limit's right up and 1 V. So, let's switch the output on and you should hear the fan switch on, by the way.
+context after: Let's go. Wham, you can really hear that. It's So, you know, when it's drawing 1 A on the output, 1 V, of course, 1 W. Then let's have a look at the correlation of the displays.
+
+[543] EEVBlog #543 - PCB VIA Current Investigation — Dave Jones (explains)
+context before: Not that the actual diameter is going to matter. We just want to be able to see if we can see a difference. That's all we're going for here. The absolute value doesn't matter.
+TEXT: Just want to see if it actually changes. So, my test setup here is my Rigol power supply set to constant current mode. I can just program in the current.
+context after: You can see I've probably got Yeah, you can likely see that 1 amp constant current programmed in there at the moment and then I'm reading the voltage across directly across on my 6 and 1/2 digit Agilent bench meter here and there you go.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (explains)
+context before: Let's try it again. One more time. Wow, third time. And that's with a constant current load. So, that is rather bizarre. I mean, you know, there's no overshoot there.
+TEXT: You don't have to worry about that. Um but let's take it down to 15 volts and see what happens. All right, 5 amp constant current load, 15 volts output.
+context after: Switch on. And bang, there's a nice little kink in there. Look at that. Boing! But, it does not overshoot. Let's do it again. No, still doesn't overshoot. So, the ramp up uh performance, that might be where it's uh switching.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: No. No, it's Anyway, that's only like 2 milliseconds there. So, yeah, no worries. Doesn't overshoot. That's the main thing. All right, so what I'm going to do now is just test the transient with constant current.
+TEXT: So, I've lowered it to 1 amp here. So, how quickly will it go into constant current mode? Will it detect that there's an over current and will it go in?
+context after: So, let's yep, let's set that up and boom, there you go. That's interesting. So, there you go. You can see it ramp up like it did before. It went to its 3.3 volts.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (opinion)
+context before: So, once again, it's got an interesting characteristic response here that just so happens to be near the That's just a coincidence that it's near my trigger level here. Of course, if I increase my trigger level up above that, we can do that again.
+TEXT: There you go. So, yeah, that's got an interesting response there. But this one doesn't over volt. So, yeah, it's got a bloop bloop. Yeah, so the Rohde & Schwarz one is not that good in terms of its constant current at switch on capability.
+context after: So, I'm wondering if they can, you know, tweak that in software or something. Because yeah, that's a potential issue. You don't want your Technically, cuz because you're over voltage in there, you are also over currenting.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (opinion)
+context before: We saw those little spikes. Now we'll zoom in and we'll capture those spikes. Can up. No, it just went out there. There we go. Bingo. Captured. It It lasts for like, you know, 12 milliseconds or something like that, and it's jumped out of constant current mode when we adjust the voltage.
+TEXT: That's very interesting. Why is it doing that? Oh, it's not a consistent time. That's a bit nasty, isn't it? Wow. Yeah, um like you shouldn't It shouldn't jump out of constant current mode when you adjust the voltage like that.
+context after: Uh I think we have a glitch. Anyway, this isn't going to be a review. There's going to be like this has a whole stuff a whole bunch of stuff.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (opinion)
+context before: So, yeah, it's still not killing it. It's a robust little beast. Guess one of my only complaints about the user interface is that like really when you switches to constant current and constant voltage to constant current, And not really obvious.
+TEXT: Yeah, the dot there changes, but like it would have been nice if it like just highlighted saying CV or CC, you know, change the entire display or something rather than just changing the little bullet dot there perhaps.
+context after: It's just, you know, it's just not obvious that it's in constant like at a glance that it's in constant current mode. Well, I've had it running at 150 W for a little bit now and it got up to 41 just a second ago before I hit record dropped down to 40° there, but that fan really is worrying.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (opinion)
+context before: So, let's try and override those sense lines with another voltage and then our display should change. So, first thing we do is we'll short out our sense terminals and bingo oh error disable output uh what?
+TEXT: It's disabled the output because the sense is zero? Okay. Uh yeah, it's it's literally switched off. Okay, safety feature uh great. It's but no, it should have gone into constant current mode though, right?
+context after: Something's up there. Look, it looks like I've permanently done something to it. I just repowered it. I thought I shooting the video I wasn't but um yeah, I I like error disable output.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (opinion)
+context before: This is rated from 0 to 40 volts input. So, if you want the 32 volts out, you've got to have at least 32 volts plus the dropout voltage cuz they're only a buck type device.
+TEXT: Anyway, in constant uh current mode, I've had the output uh on that whoop. I've had the output uh shorted at uh 2 amps on this thing for quite some time now and that's not even warm.
+context after: Uh not at all. So, neat. And for those who want to see the uh switching noise, 65 kHz there. Uh this is at uh 3 amps at uh 10-volt output and well, it is what it is, you know.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (opinion)
+context before: So, we can actually tweak the value of, uh, that 1K. You wouldn't want it any higher, but, uh, we could, uh, certainly, uh, lower that, um, almost down to, well, effectively down to zero so that we can, uh, short, uh, short out the cap directly and, uh, get that fast turn on.
+TEXT: But it seems, uh, very well-behaved, uh, in, uh, current, um, in in switchover to constant current mode. So, let's try that again. But this time I've got a, uh, 1 V output.
+context after: So, I've changed my volts per division and my trigger, uh, point. And we're got, uh, driving 100 milliamps, uh, into a load. So, let's turn our constant current pot and bang, that's what we get.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (opinion)
+context before: It's rated 30 volts, 5 amps, and that's only with one channel connected. Let's try channel two. Uh we seem to be getting the same performance. Uh there we go, 4.9.
+TEXT: No, it's See, it just dropped down to four. What the hell is going on here? I'm setting this to 5-amp constant current, and it does not like that at all.
+context after: And there we go. I just switched it down to 20 volts, and I heard the relay inside click. So, it obviously went to another transformer tap, and not a problem.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (mention)
+context before: So, the weight distribution is pretty even. It's a fairly sturdy supply though in terms of you know, the case is reasonable thickness, reasonable and yeah, I don't mind the build quality at all certainly for the price.
+TEXT: And if we power it up here, we've got independent voltage and current readouts as you'd expect on any good lab supply plus a whole bunch of indicators. We've got over voltage protection, over current protection which are separate modes you can select, constant current mode, constant voltage mode, and whether or not the output is off or on because it's a got soft output switch and up to five different memory recalls.
+context after: Although, curiously, there are only four memory recall buttons here, but there are five LEDs. Go figure. And you can tell it's sort of you know, low cost, a bit slapped together.
+
+[1676] EEVblog 1676 - Lab Timer HACK — Dave Jones (mention)
+context before: So, I thought maybe I could tie this into doing the fuse thing. But the problem with testing a fuse like this is that you're going to get a very low voltage across the fuse, i.e.
+TEXT: the burden voltage. I've done quite a few videos on that. My entire microcurrent product is based around that. Anyway, there's a low voltage across the fuse here, and then when the fuse blows, then the 12 volts that you're applying well in my particular case, the 12 volts, the compliance voltage, whatever the compliance voltage of your power supply is that you're actually using in constant current mode.
+context after: You can see I'm putting 400 milliamps through that fuse at the moment, and it's got a burden voltage of 0.3 volts. In fact, that's not just the fuse, that's actually cuz I'm only using a two-wire measurement, that's drop on the cables as well.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (mention)
+context before: They're not using the main display processor to actually you know, do any of that. So it's it's got its own local regulation. You need that for speed and you know, consistency and and just separation of your design like cuz you don't want to be doing like this kind of like low level uh stuff for your supply in your main applications processor.
+TEXT: That's not the job for it. It's the job of the local processor here to actually do that. So it's you know, it it's got to do all the you know, overcurrent overvoltage protection stuff which is all happening around here and then it's going to be controlling the regulation of your ESR and all your different modes your constant power mode and your constant current modes and everything else.
+context after: So it's handling all that sort of jazz. So there you go. Um A diagram wise it's it's fairly simplistic, you know? It's All the magic's in the firmware and of course all the precision parts, all these, you know, really expensive parts on here and this is this is why these things cost a pretty penny.
+
+[Y2rcx4vKxlc] Unboxing the Keysight E36731A DC Power Supply, Electronic Load, and Battery Emulator — Dave Jones (mention)
+context before: Don't know what they mean. Have to RTFM. But uh that's just the power supply. So are you sure you want to switch to load mode? Yes. Then we've got a traditional mode switching.
+TEXT: Okay, we've got a traditional electronic load and our load settings uh current and the slew rate. Uh where's the range? Okay, 40 amps or 4 amps, nice. And uh protection we don't worry about but the mode there it is constant current, constant voltage, constant resistance, and constant power.
+context after: Nice. So this is problem Ah, I mean this eliminates a bunch of instruments. Um my my Keithley battery emulator might as well sell that now. Um I've got two constant uh I've got two uh electronic loads.
+
+[MecbPOPeovs] Whatever Happened to the uSupply Project? — Dave Jones (mention)
+context before: but reuse the custom screen, because I, I think it's, like, really nicely laid out, like, like, we actually put a lot of thought into this, you know, they, they just set, um, voltage and current up the top, and then what you're actually reading back, um, at the moment, and there's other
+TEXT: enunciators, constant voltage, constant current, and, you know, and it's a nice big legible display, and it's, it's really quite nice, so I was, I was thinking, maybe, you know, if I was gonna, if I was gonna do this, I wouldn't do it as the, this portable thing anymore, I don't think, I'd
+context after: sort of, like, want to reuse the LCD, yeah, like a little, like, I love those slimline bench ones, yeah, like, have you seen those, they're really sexy, and you can put them side by side, yeah, I, I don't have one, but I've seen them, and they're, I really like that form factor, and I
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (mention)
+context before: For like it's only 150 V rated, so it's designed for you know, so you can't touch these things, but like yeah, I don't know. Okay. Cute, I guess. Nice touch.
+TEXT: Now, as for the key layout, it could certainly have been better. I mean, you've got all your constant current, constant voltage, constant resistance, constant power, and and your other looks like there's a pulse mode, a toggle mode, a list mode and stuff like that.
+context after: So, I don't mind that. You know, your on/off button probably should have been down like here next to your output or something like that perhaps. Transient short is interesting.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: And you might think that the display is not very bright. It's the yellow display here because we haven't actually set the output on. So I can switch the output on and it gets brighter and then it actually displays the output.
+TEXT: So when it's actually switched off, it goes dimmer like that just to indicate that, you know, it's off but nice bright output thing here and we're constant voltage and constant current mode indicator turns red in constant current mode to match the silk screen.
+context after: Everything's hunky-dory. Standard terminal dimensions, no worries. Look at that. Bob's your uncle. So obviously they've got the 4 mm banana jack and the binding post there. Don't mind it at all.
+
+[-ir61ARd5T4] WTF is Wrong with my Rigol DL3021 Electronic Load? — Dave Jones (mention)
+context before: Hi, yet another follow up video on this Goal Zero Yeti battery, but this one isn't really about that. It's about this Ryobi deal 3021 electronic load here, and it's a rather interesting problem.
+TEXT: Look at this. So, I was just going to use this like to test the battery capacity cuz it's got a battery mode on it where you know, so you go and say it's got the regular constant current constant voltage constant resistance constant power everything else.
+context after: But, it's got a battery test app which will give you the amp and which will give you the amp hours and the watt hours as well, and you can set like cut off voltages and what constant current you want to test at, right?
+
+[393] EEVblog #393 - LiPo Battery Discharge Testing — Dave Jones (mention)
+context before: They've made them look like seven segment. It looks worse in real life than on the camera here. But those background ones just really bleed into the the digits don't stand out much at all.
+TEXT: It's really quite annoying. So, they tried to go all wanky there and they've just failed. Anyway, you can set it up to various like constant voltage mode, constant current mode, constant resistance mode, and constant power mode.
+context after: And for those who want to whinge that I'm not actually screen capturing this thing, I'm just shooting the LCD with my camcorder, don't bother. Give me a break. Now, this Turnigy battery at a nominal 5,000 milliamp hours at 3.7 volts, you might multiply those two figures and it's got a nominal watt hour capacity which is sometimes more important than the milliamp hour capacity.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (mention)
+context before: That's not bad. And if I just uh switch my load to constant power, I've got 10 W constant power. So, it's giving us 10 V at 1 amp, 10 W.
+TEXT: So, this is the transient switch on performance for 10 W constant power. Let's go into 10 V constant current mode, and let's do it again. And that's our switch on performance for constant 1 amp constant current mode.
+context after: Again, 10 W. And what if we've got no load at all? Well, let's give that a try. Here we go. Bang. And that's with no load. Zip. So, but there's no overshoot, no problems at all.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: Boom. Look at that. Perfect ramp down. No worries whatsoever. Um and how long's that taking? Couple of seconds? Yeah, 2.2, but it's nice and clean. There's no overshoots or anything.
+TEXT: And there we go. That's the ramp down from 5 volts. That was me ramping it on and that was ramping off. So, once again, that's very clean. Beautiful. Okay, let's test it going into constant current mode, shall we?
+context after: So, there we go and boom! There we go. That went cleanly into pretty cleanly into constant current mode. We don't know if you know there's some contact bounce in there or not.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (mention)
+context before: And, yeah, they rubbed the bloody numbers off. And, there's where the extra grunt comes from, STM32F103 ARM Cortex M3 processor. So, that one's the one that must be, uh, doing all of the calculations because this is not an analog uh, unit as such.
+TEXT: It's it's digital. All the control happens digital. So, to do implement the constant power, the constant current, constant resistance, everything else modes, it needs to do it all in software, fast DAC and ADC.
+context after: And, especially to do the transients and stuff like that, that's when the switching, that's how it's doing it in the STM processor. And, there's a little Altera CPLD there just taking care of business.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (mention)
+context before: Not a problem whatsoever. And what happens when we go back to 20 volts under load? Well, let's uh set our falling edge uh trigger there and we're at 20 volts and we've got our 10 ohm resistive load on there drawing 2 amps and let's go down to our 5 volts and see what happens.
+TEXT: There we go. Nice ramp down. Beautiful. Think I'm getting the hang of using this thing. There we go. Look at that. All right, let's see what happens when we go from no load into constant current mode.
+context after: So, let's capture that. Whoa, look at that. There we go. Let's try that again. Boom, look at that. So, we had some bounce there. So, let's look at that.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (mention)
+context before: Single shot capture, output. And they are we can see it's sort of starting to do the thing there, but it then goes back down aggressively. So, that that really depends on the uh voltage range that we're actually got there.
+TEXT: And another interesting thing, check check this out, right? If we're going to voltage and I'm twiddling this, I'm still in constant current mode, but you'll actually see this go green.
+context after: Whoop, you see? It goes green like that and it not sure what the deal is there. So, is it jumping out of constant current mode? Um maybe we need like a live uh display.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: So, there we go and boom! There we go. That went cleanly into pretty cleanly into constant current mode. We don't know if you know there's some contact bounce in there or not.
+TEXT: Constant voltage mode down into constant current mode didn't overshoot, didn't oscillate, do anything weird like that. Let me just try that again, shall we? Here we go and boom!
+context after: Like that. Yeah, it looks like that's just my contact. I'll see if I can do it faster. I'll go over here. Let's try it again. Boom! Look at that.
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (mention)
+context before: Watch the LED down the bottom. Okay, we've got 100 milliamps there. No worries, it's still in constant voltage mode. But, what happens when we get to 0.5 amps? You can either watch the old-school analog meter or you can watch the uh same digital display up here.
+TEXT: Once we get to Oh, I'm just on just on 0.5 amps, it's still constant voltage. But, if we go just a little bit more, Mav, um uh yeah, it switched to constant current mode.
+context after: And you'll notice that we cannot draw any more current from the power supply. This is trying to. In fact, we can take this out and we can actually SHORT OUT OUR POWER SUPPLY like that, but it's still only going to limit it to 0.5 amps there because that is the constant current limiting mode.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (mention)
+context before: Are they those film jobbies? Or are they leaded ceramics? Either way, we're not going to get a stress fracture problem, that's for sure. Okay, let's hook it up to the lab electronic load.
+TEXT: I just got a constant current of 1 A here. So, we'll just switch that on just the default 5 V out, so 0.997. So, that's accurate, the voltage, of course, has dropped.
+context after: You could see there that it was actually Yeah, it's spot on there, too. The least significant digit, no worries whatsoever. And of course, we're going to have some The reason this doesn't match is because we've got the loss in the little piddly cables here.
+
+[828] EEVblog #828 - Siglent SPD3303X Precision Lab PSU Teardown — Dave Jones (mention)
+context before: And it's switching the input range current as well the transformer tap as well. I wouldn't like to leave that going all day, every day. I think it will eventually die, but yeah, let's turn that off, and it's started working again.
+TEXT: And we can go back to say 1 amp constant constant current, for example. And switch that on. Ah, sorry. Yeah, our Yeah, sorry. I had already adjusted the current here.
+context after: So, I've got to go in here and up the current. There we go. 1 amp. Yep. It's working a treat. And I switched it to like the 19-V range, and it's even more violent now.
+
+[166] EEVblog #166 - HP Agilent E3610A Lab Power Supply — Dave Jones (mention)
+context before: So, that seems to work just fine. And just a few tips, if you're after a really good bench power supply like this, uh I highly recommend one that's got a low voltage range.
+TEXT: This one's actually got two ranges. They call it 2 amps and 3 amps here, and it's got a real meaty push button switch on there, none of that soft button rubbish.
+context after: And uh this one has a nice low voltage range of 0 to 8 V uh at 0 to 3 amps, and 0 to 15 V at 0 to 2 amps.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (mention)
+context before: Once again, little fan burst as we powered on. Powered on 5 V 3 amps. It's probably what they last tested at the factory at. Let's switch. Okay, on. And yep, 5.00 5.002.
+TEXT: No wackers. And we're in constant current mode 3 amps. 2.0 3.00. Good enough for Australia. All right. I've got to go to output in 25 amps at the moment.
+context after: There we go. Constant current and no wackers whatsoever. And yeah, my wires once again might get a little bit warm ski. But even even 15 gauge is going to get a bit warm at 25 amps.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: That's actually really there. It's actually got two little switches in there. So, it's changed modes at that higher current. And what happens if we go into constant current mode there?
+TEXT: So, I'll do just 9 amps there. And uh well, let's restart that. Well, there we go. So, there it is there. And let's plug it in. Constant current mode.
+context after: Yeah, it's doing the same. Still doing the same job there, but you'll see that we have some lower frequency stuff in there now. Look at that. There you go.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (mention)
+context before: Can we No, that's our Mhm. No, that's our setup mode. What? Anyway, a half a volt on our load, but I am really puzzled as to why that says constant We're in constant voltage mode and 7 volts at 4.1 amps.
+TEXT: Like, what the heck? I don't get it. And we're only dissipating 2 watts in our load. Uh All right, I've gone back to 1 amp here at constant current.
+context after: So, let's just like increase this. Okay, we got 2 amps. Let's go to 3 amps. Okay, 3 amps we're good. 4 amps. Okay, we're good. Okay, now now we're good.

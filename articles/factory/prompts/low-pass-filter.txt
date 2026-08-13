@@ -1,0 +1,463 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: low pass filter
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 86 passages drawn from 61 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# low pass filter`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (explains)
+context before: Look at the output of the amp in the 18 dB IF amplifier down here. Bingo, it goes into another band pass filter. Another interdigital type. Once again, different geometry in there to give you a different range and response of the thing.
+TEXT: And then that's followed by another cute-looking bowtie low-pass filter as well. Once again, just to take the upper edge off something. And if you're curious about how these interdigital bandpass filters actually work, when you can clearly see that both like the input signal comes in and then it basically goes down to ground with a trace sticking up and then the other then the trace on the right-hand side
+context after: and next to that goes up to ground at the top side and then the next one goes down to ground. So, how does this actually work? Well, it's because we're at high frequencies here.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: And of course, you're going to get 0 V output. It's just low. It's a DC signal. But, let's say it goes high for X amount of time Let's say it goes high for 10% of the time, then 10% of the time it stays low for 90% of the time.
+TEXT: What do you get out? Well, you don't get out anything. It's a digital signal. But, if you pass it through a low-pass filter, an RC filter, first-order filter like this, you will actually magically, as long as you got the filter values right, magically convert this PWM signal into a DC voltage from 0 to 5 volts because, let's say we've got a 5 volt microcontroller and that's what its output voltage is
+context after: going to be, either 0 or 5 volts. Well, when you pass it through the RC filter like this, it averages out that duty cycle or on time value to a direct linear proportion linearly proportional voltage from 0 to 100% or 0 to 5 volts.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: You can put in maybe an optional switched output filter so that the performance of it is completely below the chopping frequency of the zero drift amplifiers in here because unfortunately the micro current it was that you know like 13 to 15 kilohertz or so it's pretty much you know bang on in like the measurement range that you're trying to do so even if you didn't want the increased
+TEXT: bandwidth you could still get the same bandwidth as existing micro current gold but actually put in a low pass filter on the output and have that chopper frequency outside the operational range so right there another big benefit so yeah I'm I'm liking look of this so OPA 189 it's pretty schmick so anyway hope you enjoyed that and found it interesting if you did please give it a
+context after: big thumbs up and let me know down below how you're liking this new series in quote marks which will be just random videos going forth it's not some official design project design series it's just I'm doing you know the occasional rando videos so this is part three and I'm sure there'll be more parts specially like another one dynamic performance something so let me know if you want to
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: And another feature is a low pass filter. You can see this Fluke 87 actually has a little low pass filter symbol on it. Now, that can be, uh, real handy if you're working on, um, motor drives and noisy signals and stuff like that.
+TEXT: It filters out, um, it filters out a lot of the uh, high frequency crap. But really, if you're if you're working on that sort of gear, then you're probably going to have you're going to know it and you're going to have a meter with that function, but for an average use, average electronics use, it's, you know, it's not a huge deal, so don't worry about it.
+context after: The other thing with the meter is the ruggedness of it. How rugged is it? Because odds are you're eventually going to drop the thing off your bench or off a ladder or or something else.
+
+[620] EEVblog #620 - Repair: Stanford Research SR650 Programmable Filter — Dave Jones (explains)
+context before: can average that out. So, anyway, let's turn that back to our spectrum, and then let's start. Here we go. And you see how it starts out noisy, but then it it eventually gets flat.
+TEXT: So, I'm just feeding the source directly to the channel one input, okay? So, it's flat over the entire frequency range. Now, what we'll do is we'll put our filter, our Stanford Research filter, in series with that, and we'll set it to 50 kHz smack in the middle, and we should see it go flat and then drop off like a brick almost like a brick wall, cuz this
+context after: is an eighth-order filter, really high-order filter, so it should have a really sharp fall off right at 50 kHz. Pretty much smack in the middle there. All right, we're in the low-pass side of it.
+
+[353] EEVblog #353 - Mailbag — Dave Jones (explains)
+context before: I think that says radio filter. Not 100% sure there, but anyway, let's uh crack this thing open and uh see what we've got. Uh what do we got here?
+TEXT: Oh, we have a graph. Jack Smith from Clifton Laboratories. Thank you very much, Jack. Aha, he's obviously seen my uh DSA video. Enclosed a two 15meg lowass filters. One is a single pie section Butterworth lowass build according to the design I showed in my DSA video recently, but with a different physical layout and component choice.
+context after: Because if you saw the DSA video, uh you would have known that a lot of the parasitics I was getting in the response are due to the physical construction of the thing if you built it, you know, dead bug free air style or something, it would be much better than and distributed capacitance and you know, all sorts of there's all sorts of methods to uh increase this thing.
+
+[397] EEVblog #397 - Turnigy Accucell 6 Charger Teardown — Dave Jones (explains)
+context before: And then we've just got some uh buffers here tapping off each in each particular uh balance cell like that, and they go directly um well, sorry, I was about to say directly into the ADC.
+TEXT: They don't, they go down to the uh 4051 marks down here, and there's some more uh dividers down here as well. And they go into all the channels of the 4051, and then the uh micro pins select which channel it wants to uh which uh cell voltage it wants to measure, and that goes through to the main ADC via a low-pass filter.
+context after: And this schematic here shows a um USB interface uh serial uh chip here, which um isn't um included in this design, so that must be uh something to do with a different model.
+
+[823] EEVBlog #823 - Rigol DSG815 RF Signal Generator Teardown — Dave Jones (explains)
+context before: with a controlled impedance trace. And back to our wider shot again, and that's our modulation input, that modulation board. And then bingo, we've got some, what a lot of people call RF voodoo, it's just a distributed element filter. That's its official name, you can go Google that
+TEXT: I'm sure, and have a look. Now it might look like magic until you actually realize what's going on here. It's basically just a filter, it's probably just a multi-stage low-pass filter. And what we've got, these pads here, these are actually capacitors, okay? So that's effectively a capacitor going down to ground.
+context after: And then these little squiggles in here, they're actually inductors, so you've got a capacitor going to ground, then an inductor in series, then a capacitor going to ground. So it's an LC filter like that, and then you would have a little bit of resistance in here
+
+[1109] EEVblog #1109 - Spectrum Analyser Design Walk-through — Dave Jones (explains)
+context before: So, we've looked at basically just one block here, the RF input attenuator in near the signal input there, and that includes the switching and the preamp and everything else.
+TEXT: Now, we expect to see a low-pass filter in here, and that's what we'll see in a second. And then, that goes into a mixer, which then uh uses a local oscillator, mixes the two signals together, generates a higher frequency called the intermediate frequency, and then we expect to see a gain stage there.
+context after: There's that gray uh uh amplifier block there. Uh attenuator, we won't see this in this one, but it doesn't matter. Um that IF then goes into an IF filter.
+
+[169] EEVblog #169 - Samson StudioDock 4i USB Monitor Speaker Review — Dave Jones (explains)
+context before: Lovely! Ah, I love it. And of course the 4i and the 3i are different, just in terms of the size is slightly different. It uses a three-inch woofer as opposed to a four-inch, and it's got two times 20 watts, and the frequency response of course is lower, it goes down to 65 hertz on the 4i unit.
+TEXT: And they tell you about the high-pass filter as well, it's at 4 kilohertz, 6 dB per octave. But they are PTC protected as well, and the low-pass filter is at 1400 hertz, 12 dB per octave. Linkwitz Riley. I love the Linkwitz Riley. One of the things you really notice about the main power amp boxes,
+context after: it's heft. It really is quite hefty. It sits on the bench quite solidly. It's 4.3 kilograms, or 9.5 pounds for you US folk, and the passive speaker is 3 kilos. It's significantly lighter, and that's 6.5 pounds. And just so that they can add i to the title as well, it's yes, you guessed
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (explains)
+context before: So, what we're going to do is take a look at a basic block diagram here. So, we've looked at basically just one block here, the RF input attenuator in near the signal input there and that includes the switching and the preamp and everything else.
+TEXT: Now we expect to see a low-pass filter in here and that's what we'll see in a second and then that goes into a mixer which then uses a local oscillator mixes the two signals together generates a higher frequency called the intermediate frequency and then we expect to see a gain stage there.
+context after: There's that gray amplifier block there. Attenuator we won't see this in this one but it doesn't matter. Um that IF then goes into an IF filter. We'll definitely see that and then goes into a log amp and envelope detector, video filter, and display but that's not quite how this one works.
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (explains)
+context before: too concerned with direct coupling like that. Like, because there's, so, you know, it's like, direct coupling is hard to stop. But, yeah, that's fixed. That, and I haven't even turned, like, the low-pass filter on. So, I would even call that a fix. But, obviously, they've tweaked
+TEXT: something else, I think. Just a tad, perhaps. Alright, let's try it again with the low-pass filter on. Yeah, see, whereas the other one gave, you know, diddly-squat there. So, that's, yeah, so they've made some other little minor changes in there. Probably tweaks and capacitances or
+context after: something like that. Unless there's some other mod on the board, some other change and maybe a track layout change that I haven't seen yet. But, there you have it. The main culprit was the RFI beads in there on the ground plane. Oops! Seemed
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: The value the reference value of which is set up in the setup menu we saw before. And it's got a low pass filter mode as well on both the millivolt and the volt range.
+TEXT: So, you hit that and bingo, you've got low pass filter 1 kHz. That's for taking out any switching noise and things like that. And there's actually a whole section of the manual dedicated to all the different dual display capabilities it has in all the various ranges of the thing.
+context after: It is actually quite powerful once you add that second display. Let's try the mobile phone test. Hello. No problems whatsoever. And let's try the capacitance range and uh it's got 1 pF resolution, which is excellent.
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (explains)
+context before: else going on there. Like, there's no coupling at all. So, it's drastically improved. You know, I would say that was fine. I mean, if that was the fix, then I think other meters are like that, you know, of that order as well. So, I wouldn't be
+TEXT: too concerned with direct coupling like that. Like, because there's, so, you know, it's like, direct coupling is hard to stop. But, yeah, that's fixed. That, and I haven't even turned, like, the low-pass filter on. So, I would even call that a fix. But, obviously, they've tweaked
+context after: something else, I think. Just a tad, perhaps. Alright, let's try it again with the low-pass filter on. Yeah, see, whereas the other one gave, you know, diddly-squat there. So, that's, yeah, so they've made some other little minor changes in there. Probably tweaks and capacitances or
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (explains)
+context before: My guess is they're probably doing it in the software, cuz that's the easiest way to do it. Once this thing is already uh installed and assembled, they would uh individually calibrate um each one of them to uh uh to basically remove uh that error.
+TEXT: And here's those uh components I showed you earlier on the um output there. There's the primary side. It's just a current transformer. We've got a burden resistor there, which gives us a voltage uh drop across here, and there's our low-pass filter, and off it goes to your ADC.
+context after: And here's the uh characteristic uh curve graph, and it shows uh various things versus uh current here. We've got uh basically uh the graphs extend from, you know, a couple of hundred uh milliamps down there all the way up to a couple of hundred amps.
+
+[160] EEVblog#160 - 555 Timer Easter Egg? — Dave Jones (explains)
+context before: What I've got is the low-pass filter up here. Okay, so let's we have to go trigger off channel two here. So let's trigger off our second channel up the top and look at that.
+TEXT: Look. Look at what we've got. That that filter, that low-pass filter down in the circuit down here is just taking out effectively taking out the 55.5 kHz carrier frequency as you know, to want of a better term and it's it look at the output here and that's on frequency two.
+context after: Look, it is 55. I'm not kidding you. It is 55 .5 Hz modulation. We can turn the averaging up a bit more here. Let's Oh, sorry. That that that is no averaging.
+
+[209] New Agilent 3000X Oscilloscope Firmware - EEVblog #209 — Dave Jones (explains)
+context before: All these uh you've got uh filters, you've got squares, square root, absolute logs, natural logs, exponentials, and low pass and high pass filter, measurement trends, and uh all sorts of stuff.
+TEXT: I like it. But, of course, if you don't have that module, you don't get it. So, you got to pay for it. Okay, let's just have a quick play around with that low pass filter there and we can adjust the bandwidth here and uh the purple waveform there is our math uh one.
+context after: This is still our live input, obviously. See, it's uh live if you disconnect it, it totally goes away. So, where our math is being updated in real time there, and uh let's adjust our bandwidth here.
+
+[961] EEVblog #961 - Monkey Debouncing — Dave Jones (explains)
+context before: cause multiple transitions due to noise on that signal. But I think what we might have here is a pebcac, a problem exists between keyboard and chair, i.e. me. I haven't set up this universal counter properly, and I don't think I've shown setting up a universal
+TEXT: counter before. Let's take a look at it. Now, you might be able to just see under there that there's a 100 kHz filter, I've got that switched on so it's a low pass filter, filters out any noise above 100 kHz. But, you know, we could have some higher frequency noise
+context after: on here for the threshold and stuff like that, so that could still be an issue. But let's take a look at the setup, shall we? You'll notice that there's an AC-DC mode here, DC LED is not on, so we're actually in AC mode.
+
+[1410] EEVblog 1410 - Mailbag — Dave Jones (explains)
+context before: There's a solder bridge there which yep goes down to ground. I thought so. And then yep, solder bridge or two solder bridges can take you over to 3.3 and and a 0.1 inch header as well here.
+TEXT: I just a lot of flexibility in there. That's great. And he's put other practical examples how you can put a low pass filter for example. Yes, you could. He's got a crystal on the backside here so you can connect a crystal and the caps as well over to the pins.
+context after: Nice and you can strap the pins to ground and 3.3 volts. And he's got exactly the same thing available in an SO thing up to 24 pins. Different widths available and very nice.
+
+[611] EEVblog #611 - Electret Microphone Design — Dave Jones (explains)
+context before: Yep. So, KTR. So, it's the fact that it's proportional to root resistance. Mhm. Okay, double the resistance, increase by 3 dB only. Okay, but here we've got our resistor in series with its noise voltage source.
+TEXT: Okay, and that voltage there increases by 3 dB added to there, but it's got this low pass filter attached to it. So, that will only be true up to a cutoff frequency, a corner frequency determined by the value of that resistor and the value of the capacitor.
+context after: So, let's just say this one, okay, cutoff there. Okay, so its corner frequency is there. When we double the value of resistance, we shift that down to half of what it was.
+
+[LbqnHtNPt9Y] Siglent Oscilloscope - Function Gen USB Connection Test — Dave Jones (explains)
+context before: So, you connect it to USB, and I can press test, and it's successfully connected. Bingo. The scope can now control the function generator to do the external frequency uh sweeping.
+TEXT: And so, what I've got is a little uh just a little 15 MHz um uh filter down here uh low-pass uh filter. So, the input's on uh channel one here, and the output's just go into channel two, and we measure the uh we can measure the frequency response of that.
+context after: So, uh yeah. This actually works straight out of the box, even though I think like this is many years old. I can't remember how old this thing is. I don't think I've upgraded the firmware in a long uh time, but I thought, you know, I might have to upgrade the firmware so that it's a new model scope has to talk to this old one.
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (explains)
+context before: completely gone. Okay, they have absolutely, thoroughly nailed that. But can we disable the low pass filter? Maybe not. And it's fine on milliamps as well, no wackers, and microamps, yep. And of course you dangle it around the outside, there's absolutely nothing, there's no more spooky action to the difference,
+TEXT: and that's on the microamp range, so yeah, that's, yep, that's basically nailed, no worries. So if we go into the filter option here, we can actually switch the filter off. Hopefully, that's the plan. It's got a reset. Ta-da! Now we're in like Flynn,
+context after: and it's showing up. I think they did that by default, so that, oh no, hang on, no, no, it's all good. Why they're enabling that by default, I don't know. Maybe they just wanted it to be absolute, we've got a little residual thing there,
+
+[836] EEVblog #836 - Tour Of The Australian Synchrotron — Dave Jones (explains)
+context before: They're It's incredible. A lot of this we we end up doing blind to a lot of the things on the very small scale. Right. Okay. Part of it like I just a low pass filter I'm putting in my system.
+TEXT: And then we'll be Right. So, it's just an op-amp low pass filter and that's it. Yep. Oh, and then there's it'll be what it's going to actually do is find um find the the difference changes in the the amplitudes in in each of the the single bunches.
+context after: Yep. And this will be able to take what's called a a tune which is a it's the a tune is the re-actual oscillation which is the the beam oscillates at.
+
+[1101] EEVblog #1101 - Siglent SVA1015X VNA Teardown — Dave Jones (explains)
+context before: I probably showed the data sheet in the uh previous video, but this one over here has just got a little six-pin uh SOT23 package. Anyway, that's probably like an amplifier.
+TEXT: And then um it's actually got these. Looks like it's got them uh back to front. Here it's got a bowtie low-pass filter as a distributed element filter. The low-pass filter is once again just done with uh discrete capacitors and inductors in there.
+context after: Um for performance reasons, I don't know. They maybe uh chose that. Of course, because the distributed element filter is actually lower cost. You got to pay for these capacitors and inductors, but you know, they're trivial cost in the scheme of things.
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (explains)
+context before: Okay, let's just turn that to a square wave, make it pretty extreme, 10 megahertz, 10 volts peak to peak, here's the original one, wah, wah, wah, wah, it's just gonna overflow like that. Let's try the new one, oh, why do we have, how do you have
+TEXT: a low pass filter in DC mode? What? Okay, they've enabled, I mean, it does have a low pass filter built in, but they've enabled that, can we disable that? What the, look, that vanishes on AC, no low pass filter, no low pass filter on AC plus DC,
+context after: and just DC percent, no, they're forcing, they're forcing the low pass filter on, is that an extra software trick in there to actually get rid of the noise? Anyway, here we go. Let's plug it in. Ta-da! Completely gone. Completely gone. Plug it into the common jack,
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: And if it takes more than about a second to cycle through uh, all those ranges to get down to zero ohms, then you know it's pretty slow. So, um, but that depends on what the upper range of the, uh, ohms is, but, you know, it generally if it's much more than a second, I reckon give it the flick.
+TEXT: And another feature is a low pass filter. You can see this Fluke 87 actually has a little low pass filter symbol on it. Now, that can be, uh, real handy if you're working on, um, motor drives and noisy signals and stuff like that.
+context after: It filters out, um, it filters out a lot of the uh, high frequency crap. But really, if you're if you're working on that sort of gear, then you're probably going to have you're going to know it and you're going to have a meter with that function, but for an average use, average electronics use, it's, you know, it's not a huge deal, so don't worry about it.
+
+[CYm-4gbl1Zc] ElectroBOOM Stalks Sydney — Dave Jones (explains)
+context before: Hertz motion. Measures or generates? No, it measures. only measures. Are you sure it might be generating? No, pretty sure it only measures. Okay. Uh I don't even know what this means on it.
+TEXT: I have to go download our manual. Variable frequency drive. So it's a low pass filter for a variable frequency drive motor. I've never I don't think I've ever used Well, I have used VFD function, but it wasn't for a motor.
+context after: It records too. What does it What does it record? Oh, and that's just min max average. So yeah, it's kind of a [ __ ] to you know. So, so they call it record, but I thought it's going to like a, you know, do a time stamp of recording of, you know, have measurements.
+
+[343] EEVblog #343 - Spectrum Analyser Tracking Generator Tutorial — Dave Jones (explains)
+context before: I mean, you know, we're only talking Well, it's you know, peaking around minus 7 dB. Awful. But really all that experimentation is for naught because we are not going to escape this characteristic notch response.
+TEXT: You can see how it goes down and then it recovers. That's called a notch response in our low-pass filter there. So, it's it's not working nearly as good as a low-pass filter up at the high past a certain frequency point.
+context after: So, when you're designing one of these filters, you will design it for that particular frequency which you're trying to attenuate at best there because after that, it's just going to recover and it's going to have that notch type response.
+
+[UJ6JG4eV0nY] BM036 Clamp Meter Magnetisation Test — Dave Jones (explains)
+context before: So, you can put a wire uh through. It's got PCB track mode, but it's also got a field mode as well. And it just gives you a DC output.
+TEXT: I'm going to put it on uh 2 Hz here, very, you know, filter out any um high frequency magnetic crap. And uh okay, we're going to try it. So, I've got it's basically an output here, which you can hook up to a scope.
+context after: In this case, I've hooked it up to my meter. You can see it up Well, you can see it over there. There you go. Um and of course, this these are so sensitive, same with these meters, right?
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: And this has sample and holds in here, and it can cause you all sorts of problems. So, it's good practice to actually buffer that so it provides a low-impedance drive to your analog-to-digital converter.
+TEXT: These ones here don't need it because it's coming directly from the output of the op amp here through three a little low-pass filter of 330 ohms here. Not a problem, that's low enough not to cause an issue.
+context after: And the other comes from the ADC I out, which is the current we looked at before. And once again, it's 330 ohms, low enough not to cause an issue.
+
+[234] EEVblog #234 - Agilent U1733C LCR Meter Teardown — Dave Jones (explains)
+context before: That's a HC74HC, uh, 112 is an OPA, uh, 2364 op amp one and OPA, uh, 2376, uh, op amps. Um, HC4053s. Um, uh, jeez, what else we got? Another, uh, OPA precision, uh, op amp.
+TEXT: This is actually a, um, max, uh, 7400. That's actually an eighth order, uh, low pass, uh, switched cap filter they've got in there. So, um, they have actually got, uh, a switched cap, uh, filter, go figure.
+context after: And, uh, once again, another 4053, couple of 4053s. We've got another OPA device. It looks like they love these, uh, TI, uh, OPA devices. They're absolutely obsessed with them.
+
+[517] EEVblog #517 - Car Airbag Controller Teardown — Dave Jones (explains)
+context before: Woohoo! And it's part of their Safesure system. Beautiful. Specifically tailored for the market once again. Plus minus 20 g to plus minus 120 g. Uh you know, single supply SPI uh compatible 10-bit digital signed or unsigned SPI output.
+TEXT: Uh 12 low-pass filter options. Woo! 50 Hz to 1,000 Hz optional offset cancellation. All sorts of goodness down here. So, we have the 21, which is the 120 g on the x-axis, and plus minus 25 g on the y-axis.
+context after: And check out the block diagram of this puppy. Here we go. We've got our overdamped uh y sensor and our x sensor in here. And we've got a delta sigma converter, sign C filter, uh various low-pass filters, compensation, linear interpolation, offset cancellation, output scaling.
+
+[VTHcxTst_RA] Rohde & Schwarz MXO3 3 Phase Power Measurement — Dave Jones (explains)
+context before: Okay, rather than having this free run that we do not know where to get where to measure our power. Okay, we can use this to select like channel two.
+TEXT: Channel two is a current waveform which is like running around 30 40 Hz. I can apply another cut-off frequency. Okay, this is a low-pass filter that I can actually use this to filter maybe up to 100 kHz.
+context after: Okay, this will help you guys to improve the measurement. And most of our customer that wants to on power power efficiency is important these days. You know, we are looking at more than 80% or 90 95% data center EV power converters.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: It all comes out in the wash, and also that 1 volt capability will be important when we look at the INA219 later. But, let's just look at the this capability here a bit more.
+TEXT: I've got a a low-pass filter here just to filter out any switching noise or transient noise from the loads or like that. So, you might be wondering what this voltage follower op-amp is doing here.
+context after: Why don't I put just the end of R17 there directly across the shunt resistor? Because that's how I had it in the original when I talked about this single op-amp differential amplifier before.
+
+[10] EEVblog #10 Part 2 of 2 - Fluke 87 V Multimeter Review — Dave Jones (explains)
+context before: Um, it does duty cycle percentages. Now, there's another really neat feature they've added to it. Um, on the AC measurement range here, um, it's actually got a low-pass, uh, filter function.
+TEXT: So, you just press shift and, um, it's it actually it shows you that there's a low-pass filter mode is in, and and it filters out high-frequency crap. So, that's that's really quite handy.
+context after: Now, the, um, screen updating is really quick on this new model. Um it's uh four times per second in um 6,000 count mode, and um it only drops to three times per second in 4 and 1/2 digit mode.
+
+[343] EEVblog #343 - Spectrum Analyser Tracking Generator Tutorial — Dave Jones (explains)
+context before: Why? I don't know. Why not? I just wanted to basically show off the performance of such a filter and how to use a spectrum analyzer basically with a tracking generator to get the response of such a filter like this.
+TEXT: So, I'm on a website here. This is calculator edge.com and they've got an online filter for a low pass LC Butterworth pi filter. And if you have a look here, you can see it's pi shaped.
+context after: If you just ignore L2, C3, and all the rest of those through there, if you just look at C1, C2, and L1, you can see it's actually a pi shape like that and that's why it's called a pi filter.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (explains)
+context before: Uh they just weren't around then, so they had to, you know, hand match these JFET inputs, but you can just get a um FET input um op-amp, a really uh low bias current, you know, precision op-amp these days just to do that.
+TEXT: Put a feedback resistor in there, some um low-pass uh filtering caps on there, and Bob's your uncle. And there's the output um terminals and the output banana jacks on the back panel.
+context after: So, you can access directly the output of the feedback amplifier. And that um you know, I won't go into theory of feedback uh amps here. I may have even done it uh before, but um basically, it converts uh current into voltage on the output with effectively only the uh difference between the offset voltage between the inputs to the op-amp um which is your burden voltage on the
+
+[310] EEVblog #310 - Cheap Siglent and Agilent scopes — Dave Jones (explains)
+context before: And it's still picking the spikes up. And so, I've got to turn the filter on, that'll help. Here you go. Here we go. Look at that. It's taken out all those high frequencies.
+TEXT: Beautiful. And that's a software filter, of course. Yeah. You can change the filter type. At the moment, we're looking we're looking at a low pass. We can change it to a high pass.
+context after: So, there's a lot of high frequency noise. We can uh I mean, this is actually quite neat. I'm quite impressed by this myself. So, we've got a low pass.
+
+[1101] EEVblog #1101 - Siglent SVA1015X VNA Teardown — Dave Jones (explains)
+context before: Um we can just do this with our um with our caps and our um in inductors." Whereas, that's basically what they're doing over here. These circuit elements, right? These are inductors in here, and these elements over here uh capacitors, and that's exactly what basically is happening over on this one over here.
+TEXT: We've got inductors and capacitors and that forms our um um low-pass uh filter. Then it goes into the mixer. I looks like the mixer might be It looks like it is a different part.
+context after: But basically uh the topology's all going to be the same. The crazy thing about this is if you have a look on the right, they have actually changed the chip from the HMC 400488 to the HMC 213.
+
+[620] EEVblog #620 - Repair: Stanford Research SR650 Programmable Filter — Dave Jones (explains)
+context before: So, anything above 10 kHz it's going to allow, and then the output of that goes over to the input of the low pass filter, and then the low pass filter set to 20 kHz.
+TEXT: So, anything below 20 kHz is going to be let through. So, bingo, we've now got a band pass between 10 kHz and 20 kHz, and the output comes from here, back over, and look at that.
+context after: Woohoo! There is our band pass filter characteristic. 10 kHz to 20 kHz. Bang on. Now, I just switched this to AC coupling mode and just permanently uh set it into overload.
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (explains)
+context before: And we don't care about the quiescent current really. And 500 to 6 500 meg to 6 gig bandwidth. Pretty decent. And we're almost there. I've mentioned this before. You can see the output of that one that's selectable band pass filter there.
+TEXT: Then goes through just a little bit more stuff there and goes through another bowtie low pass filter. It's called a bowtie low pass filter because it looks like a bowtie.
+context after: That's where it gets its name from. Another low pass filter just takes the edge off something or other. And then that finally goes into the mixer. So that block diagram we saw before and you see for all spectrum analyzers the local oscillator goes straight into the mixer.
+
+[620] EEVblog #620 - Repair: Stanford Research SR650 Programmable Filter — Dave Jones (explains)
+context before: Haven't done complete tests on it yet, but hey, I'm happy with that. And what I've done here is put it in band pass configuration. So, my source is coming into here where I've set a high pass filter at a frequency of 10 kHz.
+TEXT: So, anything above 10 kHz it's going to allow, and then the output of that goes over to the input of the low pass filter, and then the low pass filter set to 20 kHz.
+context after: So, anything below 20 kHz is going to be let through. So, bingo, we've now got a band pass between 10 kHz and 20 kHz, and the output comes from here, back over, and look at that.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: So I think we have a pretty decent new candidate. I I don't expect any show stoppers in the dynamic performance aspect of this. In fact it could be potentially even better because as we saw the actual chopper frequency is up you know, past 200 kilohertz or something like that.
+TEXT: So in theory you could put a low pass filter on the output as well even more existing micro current or in a new design micro current which we're working on here.
+context after: You can put in maybe an optional switched output filter so that the performance of it is completely below the chopping frequency of the zero drift amplifiers in here because unfortunately the micro current it was that you know like 13 to 15 kilohertz or so it's pretty much you know bang on in like the measurement range that you're trying to do so even if you didn't want the increased
+
+[609] EEVblog #609 - Condenser Microphone Design Tutorial — Dave Jones (explains)
+context before: Reasonable. So, 50 ms time constant. Mhm. Uh incidentally, that's an un That that that would be an unrealistically low value, but it's some that all the microphone manufacturers use.
+TEXT: So, we've got a 50 ms charge time constant there. Mhm. Uh which incidentally will wind up corresponding to an electrical roll-off pole there of 20 Hz about 6 Hz.
+context after: Okay. That's 50 ms time constant. Yep. Uh 1 over 50 ms is 20 Hz. Mhm. And uh well, actually, the with a 20 with a 20 Hz time constant the actual -3 dB frequency would be two two pi lower than that, which is about 3 Hz.
+
+[1602] EEVblog 1602 - Sony Amplifier REPAIR ADVENTURE — Dave Jones (explains)
+context before: So, we should get typically like 4 and 1/2 5 volts. Something like that. AC that is. So, what do we get? Uh 0.8 Uh Buela Buela. And by the way, um no, VFD is not a vacuum fluorescent display mode.
+TEXT: That's variable frequency drive. So, if we actually select that, um it adds a filter in there. It has a low pass filter and it should read lower. Yeah, it does.
+context after: So, what we need to do is actually check the frequency on that because that is really low. So, and 28 kHz. Yeah, that's pretty high. This meter is not the best best for those sorts of frequencies.
+
+[209] New Agilent 3000X Oscilloscope Firmware - EEVblog #209 — Dave Jones (explains)
+context before: This is still our live input, obviously. See, it's uh live if you disconnect it, it totally goes away. So, where our math is being updated in real time there, and uh let's adjust our bandwidth here.
+TEXT: For uh let's lower that down, and we should see the amplitude uh drop. There we go. Bingo, cuz we've put in that uh low-pass filter. So, that's a neat tool.
+context after: It just allows you to uh experiment in uh real time inside your scope with um your actual uh waveform. So, you can see it actually smooth out um all of those high-frequency high-frequency components.
+
+[160] EEVblog#160 - 555 Timer Easter Egg? — Dave Jones (explains)
+context before: They recommend like a 10 nF capacitor to on pin five to ground, but my circuit that I was playing around with didn't have that, and I realized that you that is the key one of the keys to this.
+TEXT: There are two keys to this, which you'll find out, and I just added a low pass filter to the output so that I can see some stuff, as you'll see later.
+context after: But, let's check out the circuit on the board. And, here it is, wired up exactly as per that DaveCAD drawing. Here's my adjustable pot up here, which I'll use to adjust the oscillator frequency.
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (opinion)
+context before: Now this is the LCD driver chip and maybe this resistor here is to do with the contrast or setting the contrast or something like that. I don't know. But yeah, that's the LCD driver so that really shouldn't have anything to do with it.
+TEXT: But I did find something interesting in here. Look at that. It's .2 ohms. That doesn't seem to make sense. Like it could be like a as part of a low-pass filter for the power supply, but at .2 ohms, that does not sound right to me.
+context after: So, I got my reference board. Let's have a look at that one. That it is 9.4 K. We can flip it around. Yeah, 9.4 K. It's a good tip just to measure resistance in both directions.
+
+[377] EEVblog #377 - Mailbag Monday — Dave Jones (mention)
+context before: A full-on review, it's just a thing, it worked out of the box. It was already set up for me, sure, but I don't think it would be that hard at all. Well this Pokey 56 device sounds really powerful, check out the feature set here.
+TEXT: It's got 55 digital inputs, 55 software-controlled digital outputs with pull-up resistors, 7 analog inputs, 12-bit resolution, adjustable low-pass filtering, 26 encoder pairs, 3-axis 25kHz pulse engine, digital counters, a 16x8 matrix keyboard interface, 2 8x8 matrix LED display support, 6 high-speed fully configurable PWM outputs, 25 meg
+context after: PWM timer, it's got a standard Hitachi LCD support, 4x20 characters. Oh man, it's just crazy. Modbus support, all sorts of things, support for up to 10 sensors on the I2C bus, 1 wire bus, analog sensors, it's got the web interface stuff, man, it's all happening!
+
+[CMoBGGqojqs] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (mention)
+context before: Let's check. Okay, let's bugger off this logic analyzer rubbish. Bugger off the decoder. Why can't I just turn off the decoder? That's super frustrating. Um... What? I've got to turn, like, why can't I double click? Why can't I double press on that? Like I can
+TEXT: with the logic analyzer to turn it on and off. That's ridiculous. Anyway, you've got to do standard math stuff. Can you do arbitrary formulas? Okay, integrals, differentials, square roots, I've done a thing on why the integrals are useful. Scope, that's nice. I can do software, low pass, high pass, band pass, band stop.
+context after: AX plus B, okay. That's very nice. I like that. You can do the FFT, it doesn't have a... oh yeah, it did have an FFT button over here, didn't it? There you go. Try that. Hello? Oh, okay, it just calls up the menu.
+
+[zfkqOB3c86U] Rode NT1A vs NTG1 Microphone Comparison & Testing — Dave Jones (mention)
+context before: Anyway, it's further There you go. Let me know what you think. Do you prefer the boomier basier NT1 1-in condenser jobby or do you prefer the NTG1A shotgun and possibly more consistency as I move my head like this cuz I've had issues with this setup in terms of consistency and it's kind of bugging me.
+TEXT: I think the NTG1 will fix that. So, yeah. Let me know. And I I'm using the internal low-pass filter on that one, too. Whereas, the NT1, I had to use a Shure you know, external low-pass filter cuz the Focusrite solo doesn't have a Scarlett doesn't have a built-in Sorry, high-pass filter low-cut filter.
+context after: So, I was using external one and that just gets all over the bench and it's kind of annoying. So, anyway, thoughts, comments down below. Catch you next time.
+
+[N63dJHbCdbk] Sneak Peek: NEW Keysight 1000 X-Series Oscilloscope — Dave Jones (mention)
+context before: so that we can, that'll move it up and down, and we can do exactly the same thing with the phase scale as well, that's in 5 degree increments, phase offset, yep, 5 degrees, beauty, and we can just auto it. Let's give it a burl.
+TEXT: So, for the purpose of today's experiment, I just so happen to have a selectable bandpass, lowpass, LC filter board here that we can hook up, so we can just get a basic bandpass thing, because that's what we really want to see, so we've got channel A and B hooked up there, let's give it a burl.
+context after: So we'll set up there for our maximum frequency range, 20 Hz to 20 MHz, ah, 9 volts peak to peak max, why not? And, let's run that, and see what happens. Whoa! Check it out, looks like it's displaying the waveforms there, on both channels, and I haven't set that to transparent,
+
+[777] EEVblog #777 - Keithley 177 Microvolt DMM Repair — Dave Jones (mention)
+context before: Why is that blown? But anyway, let's not wonder why, let's look where that's actually likely connected to, because it was probably connected up to something, when it blew. Otherwise, how could that blow? You've got to have current flow through there to blow the arse out of that
+TEXT: resistor, and look where it's connect, look where the positive one is connected to. Sure, it's 100k, it's 100k series protect, well, we've got a low pass filter there, but here is protection resistor going into our main converter chip here, and here's all the analogue switching in here.
+context after: So this chip just contains various analogue switching that controls the integrator here. So, ah, yeah, you've got to you can't help but get the heebie-jeebies thinking, mmm, have we actually damaged the input to this somehow? But, I still have confidence, because we are actually able to get this
+
+[757] EEVblog #757 - HP4263A LCR Meter Teardown — Dave Jones (mention)
+context before: And that is for setting your output uh signal level because tada, here's your output uh block diagram. We have our reference oscillator here. That's our DAC there that we just saw.
+TEXT: Then we've got ourselves a low pass filter. And then the uh DC bias uh source. You can turn that off and on. They just sum that in. And as we saw before, you got an external uh connector on the back if you want to feed in your own uh DC bias and a buffer and then the source resistor.
+context after: That's not to be confused with the uh range resistor. So, that's the source resistor driving your device under test. Because as you can see, not only can you set the uh frequency here from 100 Hz up to 100 K, but uh you can also set the uh voltage level as well.
+
+[470] EEVblog #470 - Agilent N9344C 20GHz Spectrum Analyser Teardown — Dave Jones (mention)
+context before: But that is absolutely brilliant. But as with all of these, you can see the signal flow. I mean, you know, there's obviously signal flowing through just that little gap there on the inner part of the board, then we're going through our complex network over to here.
+TEXT: It's jumping over to here. This is probably jumping over to there. More low-pass and band-pass filtering happening there. Another one of those hybrid modules jumping over there. Once again, the signal just jumps straight through there on the bottom side of the board, goes up.
+context after: Blah, blah, blah, all over the place, and then these cans look interesting. Let's take a look at those. And that's a Z-COMM CRO 3750A-LF. That's a voltage-controlled oscillator module.
+
+[662] EEVblog #662- How & Why to use Integration on an Oscilloscope — Dave Jones (mention)
+context before: Add, subtract, multiply, divide, we can differentiate, and it shows you the data in real time. We can actually apply these operators and transforms to our captured data, not only in stop mode, but also in real time as well. And we can differentiate, integrate,
+TEXT: we can do FFTs, you're likely familiar with FFTs, to get the frequency domain of your signal, or make it work like a spectrum analyzer, but we can square, square root, absolute value, we can do all sorts of logarithms, and we can even low-pass filter our signal,
+context after: and do all sorts of weird and wonderful mathematical stuff for this. But you're probably thinking, well, what actual practical use is having something like an integral here? Why would you want to integrate your signal? Well, I'll show you a real practical example where this is very useful, and how you can use this and do it.
+
+[1580] EEVblog 1580 - MacGruber Mailbag — Dave Jones (mention)
+context before: There's some more uh examples there. Fantastic So, there's a three SPI uh DAC, for example, he's got those actually connected up there all with bypass caps and uh series resistors and uh yeah, that's great.
+TEXT: Aha, yes, you can have a filter on every pin. Uh so, 0805 or 0603 uh for decoupling caps, current limiting series resistors, pull up, pull down, series termination, parallel termination, clamping, TVS, high pass filters, low pass filters, and many others.
+context after: Um yeah, it's just crazy. So, there's that one for your 0.5 mm pitch there and you've got a prototype area and you've got similar uh sort of thing like happening there that you got on the main board over here.
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (mention)
+context before: Yes, c h w o b s, tubes. Oh boy. So, okay. We're audio switching there with JFETs and spitting them out into the two mixing amps to go out of the two power amplifiers.
+TEXT: Uh well That's it. Uh and the only the only particularly interesting thing here is where we're getting the uh uh the intercom line doing a whole stack of high pass and low pass filtering and buffering and then sending it into this detector 425 kilohertz.
+context after: That's our That's our tone decoder. Yep. His output then goes back into the Gator Eye Logic chip, so Right. That's your lot. That's it. That's it. That is the Sydney Rail What is it?
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (mention)
+context before: And it's um this is for the 4000, so the 3000 in fact they're actually missing something out of here which we'll show in a minute as well, even on the 4000 which what we're what we're doing.
+TEXT: Basically, the RF input can is just here which is what we've seen, well, at this point that's all it is. Input attenuator, some gain, some you know, some low-pass filter in and stuff like that, but it's basically just an RF front-end amplifier.
+context after: And it's going into what's called a block down converter because in the MDO 4000 series, well, they're trying to get up to 6 GHz bandwidth, but we don't need that in the MDO 3000 bandwidth because we're only going to 3 GHz here.
+
+[1569] EEVblog 1569 - A Very Ploopy Open Source Mailbag — Dave Jones (mention)
+context before: Right. Wow. You can set the coefficients. Are you kidding me? This is nuts. Right. This is nuts. And that's the thing you can get with custom. Right. I can, I can enable that. Whoa. Haha. Whoa. And then I can disable that and it all works in real time.
+TEXT: It's great. I can hear that low pass. There's not much in my voice below 612 Hertz. Anyway. So what I've got is just flat at the moment and just flat response. Sounds fine. Whoa. There's some bass in that. Playing me some MC front a lot.
+context after: Whoa. That's great. Whoa. Wow. That's got some serious base. Whoa. Yeah. I can just feel the under 40 Hertz. But he's there. I've just filled it off everything else. Wow. That's amazing. Anyway, they sound really good. I am. I am. I'm happy with the ploopy apart from the.
+
+[1101] EEVblog #1101 - Siglent SVA1015X VNA Teardown — Dave Jones (mention)
+context before: So you know you'd kind of expect that and here is the input coming from that coupler that we saw on the main board and once again you know like this stuff around here looks to be similar to what's here.
+TEXT: I don't know what's doing here. These look like Macrel voltage regulators I think. Anyway, anyway, so comes in here, does the same thing. We've got a bow bow tie low pass filter like this, goes up that chip there looks identical.
+context after: We've got this going across here, here, and once again, we've replaced our distributed element filter with a discrete component filter. But apart from that, yeah, that is our tracking gen.
+
+[433] EEVblog #433 - Mailbag — Dave Jones (mention)
+context before: And on the back here is a neat little uh uh sample applications. DC blocking, of course, you can just put the AC coupling cap in there. Um AC block, which just has a choke in the middle.
+TEXT: Uh, series termination, shunt termination configuration, precise shunt termination, uh, feed through decoupling cap, diode detector, attenuator, low pass filter, highp pass filter. Beautiful. And here it is. Don't turn it on.
+context after: Take it apart. No worries. We will take it apart. Overshoot 3.5 7 uh 3.574%. Pre-shoot 1.1 to1%. Getting pretty precise there. Cycle jitter less than 600 picosconds. Uh, peak to peek.
+
+[1101] EEVblog #1101 - Siglent SVA1015X VNA Teardown — Dave Jones (mention)
+context before: Uh that's unsurprising. And then, I've probably got all this detail in the original um teardown of this uh 3000 model. I go into like detailed data sheets on each one of the chips.
+TEXT: Anyway, then it flows down into the low-pass filter, which you can see here, they've got it as a distributed element filter, whereas over here, they've decided, "Well, we don't need this distributed element filter rubbish.
+context after: Um we can just do this with our um with our caps and our um in inductors." Whereas, that's basically what they're doing over here. These circuit elements, right? These are inductors in here, and these elements over here uh capacitors, and that's exactly what basically is happening over on this one over here.
+
+[738] EEVblog #738 - Yamaha DME32 Digital Mixer Teardown — Dave Jones (mention)
+context before: Um, all of our inputs seem to be like eight channel cards and things like that. I don't know. Each one of these could be doing um, you know, um, programmable filter function that you download to them.
+TEXT: Who knows? They could have a specific use. They could have uh, pre-programmed lowass, highpass filtering or something like that in them. N, who knows? But what is very clear is that this board is almost entirely digital.
+context after: It's, as I said, all the um there's four ribbon cables coming over here from the module. So, all the analog to digital and digital to analog conversion, all done on those plug-in modules as you'd uh expect.
+
+[759] EEVblog #759 - Mailbag — Dave Jones (mention)
+context before: So, that's Hey, is that their little symbol? Neat. And once again, we got a solid ground plane here from the crosshatch one we had previously. That looks like not a bad layout whatsoever.
+TEXT: It is indeed their symbol. There it is. That lion head, the London University Formula Student Engineering Team. Nice. They've really gone to town on their inputs there. Here they've got an uh lowass uh filter here.
+context after: They've got a zeno diode protection. That's not usual uh way you do it. Um unless they needed the uh pullup uh for some reason. You usually just do diode uh clamping there to positive and negative rail.
+
+[470] EEVblog #470 - Agilent N9344C 20GHz Spectrum Analyser Teardown — Dave Jones (mention)
+context before: So, that's probably getting out the um you know, one of the local oscillator signals or something like that over to our uh tracking gen. And that's where we follow the signal around like that from our output way back here around there through what looks like band pass filter there.
+TEXT: Through some local oscillators and stuff and back over to here. But then we've still got these isolated sections here. Some more filtering going on there. Uh you know, it could be like a low pass filter perhaps.
+context after: And but these blocks, I mean there's a there's a connection between this block in here like this down to here, but it seems like that block is almost uh you know, um isolated.
+
+[574] EEVblog #574 - NEC Analog TV IF Modulator Teardown — Dave Jones (mention)
+context before: And that's just been amplified by an op-amp on the output. Bob's your uncle. So, all of this schematic does really match that overall block diagram very nicely. So, you can like put these one on top of the other, and you can go, "Right, here's our phase detector right here." And bingo, there's your phase detector going to be in there.
+TEXT: And, you know, it really is So, there's your DC amp, your low-pass filters happening in there, all sorts of stuff. So, it really is quite easy to follow when you have the schematic and the block diagram here.
+context after: It's beautiful servicing this thing. Must have been a dream. We've got ourselves an audio transformer here, 600 ohm output impedance. That's coming out of here. And that's going out to our audio output.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (mention)
+context before: What use is that? Well, rule number one, no current flows in or out of the inputs. So, nothing no current flows in. So, if you've got a load over here, I don't know, it could be some sort of sensor or whatever.
+TEXT: It could be a low-pass filter, for example, like you're feeding a pulse-width modulated signal from your microcontroller or something like that, and then you want to buffer that voltage off there.
+context after: Because no current flows into the input, this op amp does not disturb your sensor or your circuit that you're actually trying to do. It's a what's called a very high impedance input, essentially open circuit.
+
+[703] EEVblog #703 - Rigol DS1054Z Oscilloscope Review Summary — Dave Jones (mention)
+context before: It's a reasonably low-noise scope. And it's got a built-in hardware frequency counter as well. Fantastic. Unfortunately, it doesn't have any uh software or hardware filtering in it on your input signal.
+TEXT: So, no low-pass or high-pass filters, unfortunately. And the dual-screen uh delayed time base works exactly as you'd expect and with the very deep memory on this thing, it's a very powerful tool.
+context after: And if you go into triggering here, there is a ridiculous amount of triggering options, even run pulses and everything else and you can trigger off the serial ones as well, but these are optional extra, they're not standard.
+
+[620] EEVblog #620 - Repair: Stanford Research SR650 Programmable Filter — Dave Jones (mention)
+context before: Not sure how to reset the uh overload on this thing. Might have to read the manual. Um but curiously, switching from AC to DC coupling, as you'd expect, I heard a relay.
+TEXT: But this channel over here, the low pass filter, there's no relay. I don't hear it. And same with filter in and out. I would have expected that possibly to be a relay bypass, but I can't hear it.
+context after: So, anyway, there you go. That's a repair, in quote marks, of a Stanford Research SR650 dual channel uh filter. And it's a very nice instrument. If you can pick up one of these, like I did, for just over 100 bucks, uh and looks like it was just the uh mains input uh blowing then really there's not much else that can go wrong with this.
+
+[209] New Agilent 3000X Oscilloscope Firmware - EEVblog #209 — Dave Jones (mention)
+context before: that with it. One of the analog inputs. I wonder if the hardware is actually capable of that. If it was, that'd be really cool. Now, another thing they've added is uh an optional module for the if you've got the advanced math uh option module, then they've added all these other cool stuff.
+TEXT: All these uh you've got uh filters, you've got squares, square root, absolute logs, natural logs, exponentials, and low pass and high pass filter, measurement trends, and uh all sorts of stuff.
+context after: I like it. But, of course, if you don't have that module, you don't get it. So, you got to pay for it. Okay, let's just have a quick play around with that low pass filter there and we can adjust the bandwidth here and uh the purple waveform there is our math uh one.
+
+[836] EEVblog #836 - Tour Of The Australian Synchrotron — Dave Jones (mention)
+context before: Wow, that's impressive physics in its own right, isn't it? Because It's a it's quite an impressive bandwidth that we're working at. So, it's art and science just to design the detectors just to see the position of these things flying around let alone the equipment in the beamlines that's designed to analyze the Exactly.
+TEXT: They're It's incredible. A lot of this we we end up doing blind to a lot of the things on the very small scale. Right. Okay. Part of it like I just a low pass filter I'm putting in my system.
+context after: And then we'll be Right. So, it's just an op-amp low pass filter and that's it. Yep. Oh, and then there's it'll be what it's going to actually do is find um find the the difference changes in the the amplitudes in in each of the the single bunches.
+
+[1519] EEVblog 1519 - FREE Your Sonos Speaker! (HACK) — Dave Jones (mention)
+context before: That is not That is not coming out at all. Beautiful. Now, unfortunately, the supplied knobs are these deep recess types and they don't fit on there. So, the subwoofer here is controlled by its own amplifier.
+TEXT: It'll have its own low-pass filter for it. That'll be on the PCB. So, no worries. But, we've only got the single left-right speaker output. So, we've got a a two-way speaker system here.
+context after: So, we need to measure the impedance of the woofer and the tweeter here. Even though we do have this, it's a Peerless 4 ohm jobbie. It's, you know, it's reasonably decent.
+
+[160] EEVblog#160 - 555 Timer Easter Egg? — Dave Jones (mention)
+context before: But, let's check out the circuit on the board. And, here it is, wired up exactly as per that DaveCAD drawing. Here's my adjustable pot up here, which I'll use to adjust the oscillator frequency.
+TEXT: That's my low pass filter there, and I've got a bypass cap on there, but as you will see that won't have any impact on this. Now, let's take a look at the problem and see what we get.
+context after: As you can see, I'm probing the output here. This is the pin three output, and I'm also probing the output of the low pass filter here, and you'll note that there's no bypass cap on pin five, and as you'll see later, that's pretty key to this whole thing or it's one of the keys.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: I'm using the function generator output of my Agilent scope here to actually replace the pot. And I'm feeding it in via a single RC filter, which is what we've looked at.
+TEXT: And this is what I've got here. Instead of the voltage control pot, we've we've disconnected that and we're taking it down to a 10K and a 100N low-pass filter just as we looked at.
+context after: And the frequency I've got set, as you can see here, if you go in here, you can see I've got 100 kHz frequency and our amplitude is 3.3 V.
+
+[396] EEVblog #396 - Bode Plotting on Your Osciloscope — Dave Jones (mention)
+context before: So, that and then you enter those enter all those tables and numbers into your spreadsheet and you generate your frequency response graph, but we don't want that. We want to actually generate a Bode plot or a frequency response plot plot in real time on the screen.
+TEXT: So, if I've got a low-pass filter, I want to see it go like this and then drop down like that. You might think it's impossible, but there's a neat trick that allows you to do this.
+context after: So, quick recap on what a frequency response or Bode plot is is a graph of amplitude on the Y axis here versus frequency. And the way you normally get it is to sweep a signal through your filter over the desired frequency range like that and you will get response plot.
+
+[1109] EEVblog #1109 - Spectrum Analyser Design Walk-through — Dave Jones (mention)
+context before: So we have to actually mix that with a high mix our input frequency with a higher frequency to generate an intermediate frequency above our maximum 3.2 gig input range.
+TEXT: And if we go back to our original block diagram here, what we expect after our input stuff is a low-pass filter and then a mixer with a local oscillator feeding into that mixer.
+context after: Do we get that? Well, let's take a look. Yes, of course we do. You can see the preamp there on the left that we looked at before. It then feeds into a down into that uh low-pass filter, which is again a distributed element uh filter there with the various L's and C's, and then that goes into a mixer IC there, which then uh accepts the signal from above it
+
+[470] EEVblog #470 - Agilent N9344C 20GHz Spectrum Analyser Teardown — Dave Jones (mention)
+context before: And yep, they are. I can't just pop the lid off that. It's not just like an RF can you can just pop the lid off. Oh, bummer. And we've got some interesting uh stuff happening down in here.
+TEXT: Once again, no idea what that device is. RF section AT4 attenuator. Perhaps some sort of attenuator going on there. Low could mean a low-pass filter is going on on and there.
+context after: If you want to know where that is relative to the other side, that one actually is the same block as that contains that funny little wiggle in there with uh that little amp or something down in there.
+
+[738] EEVblog #738 - Yamaha DME32 Digital Mixer Teardown — Dave Jones (mention)
+context before: So yeah, exactly the same circuitry underneath. If you can see the switches as well. And then we've got the output of our input amp going into surprisingly um a pretty Joe Blogs dual opamp.
+TEXT: Once again, Japan Radio Corp 215s. And they're really nothing special at all. So, they're doing um like a two- stage uh filter in there. High pass and uh uh low pass perhaps.
+context after: Well, they they do look like identical stages just based on the layout of the uh components. So, yeah, maybe they're doing a uh a cascaded filter there perhaps and going into our analog to digital converter.
+
+[199] Tektronix MDO4000 Oscilloscope Teardown - EEVblog #199 — Dave Jones (mention)
+context before: Let's lift the skirt up. Tada! Oh, beautiful. Oh, this sort of stuff just brings a tear to the eye. Real RF engineering, it's just a thing of beauty and a joy forever.
+TEXT: Oh. I'm not an RF guy, so I won't even begin to explain what's going on here cuz I'd probably be talking out my ass really. There's a a high filter here and a low filter.
+context after: Everything on here by the way you see is a transmission line. This is serious business. All right, this is absolutely serious. Let's start with the RF connector up here.
+
+[540] EEVblog #540 - HP35670A DSA Repair - Part 3 — Dave Jones (mention)
+context before: There we go. And it's generating source signal and then says, well, you know, ADC gate array failed. Now what I'm doing is I'm actually probing a point further on past the DAC.
+TEXT: So we've looked at the DAC. We were getting data out. This is actually labeled low pass filter or there's two of these. There's low pass first low pass filter and second.
+context after: So looking at the first one. So we're at least getting data out of our first low pass filter, but I've got my source set to a sine wave at 1 hertz.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (mention)
+context before: And up a frequency at 1 volt, loses the plot at about 1.7 megahertz. And of course, with the dual display capability, it can display Hertz as well at the same time as AC voltage and it can also display DBM as well.
+TEXT: The value the reference value of which is set up in the setup menu we saw before. And it's got a low pass filter mode as well on both the millivolt and the volt range.
+context after: So, you hit that and bingo, you've got low pass filter 1 kHz. That's for taking out any switching noise and things like that. And there's actually a whole section of the manual dedicated to all the different dual display capabilities it has in all the various ranges of the thing.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (mention)
+context before: So that's pretty cool. Uh you can rescale stuff and uh bandwidth uh limits. Uh we've got uh full 100 MHz 22 and 200. That's a bit unusual. You don't often get that.
+TEXT: So that's not too shabby. Uh that's not too shabby at all. And that's per uh channel of course. And it's got highpass, lowass, and uh what's this? Um SMA filter.
+context after: Ooh, look at this. Oo. So, it looks like we can set up a software filter here and we can change the width. Can't touch that. Um, at plus minus one point up to 25 points.
+
+[375] EEVblog #375 - Sony Video 8 Camcorder Teardown — Dave Jones (mention)
+context before: I don't know. It doesn't matter. I'm not going to go into a circuit breakdown of this thing. I'm more interested in the just the physical construction side of things.
+TEXT: And you can see all the adjustment pots on this thing. I mean, there's still adjustment. There's uh cap What is it? LP at low pass adjust and stuff like that.
+context after: There's all sorts of various uh adjustments where you got to get a little tiny jeweler's screwdriver through some of these holes. They really are quite tiny. And that can in there looks like it's the DC motor which drives the tape transport mechanism.
+
+[840] EEVblog #840 - Yamaha M3000 Mixing Console Teardown — Dave Jones (mention)
+context before: And they're actually on the board. There we go. There's a pad, which is an attenuator. There's a high HBF, high pass filter. And there's the high mid, there's the low mid.
+TEXT: And yeah, equalization, is it? And that's the low if we can get that little cap up there. Oh, sorry. Yep. And there's the low pass filter. And check this out.
+context after: We've got ourselves a relay here, but it looks like it's got magnetic shielding on it. There we go. Look at that. There we go. Part number for those playing along at home, but yeah, little mu magnetic shield on it.
+
+[951] EEVblog #951 - Mailbag — Dave Jones (mention)
+context before: It's a bit It's a bit hard. It's all for show. Anyway, um, thank you very much, Ian. Excellent. Um, oh, uh, Sergeant Tech on the forum. Excellent. Thank you very much.
+TEXT: What do we got? What on earth is that? Oh, that's a wrist strap tester. So, two minute tear down on that. Um, it's just got like a uh low pass high.
+context after: So, it's basically just uh comparing the onemeg strap resistance. That's all it's going to be. It's going to probably have a window uh comparator in there would be my guess.

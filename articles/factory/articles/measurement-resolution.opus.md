@@ -1,0 +1,61 @@
+# measurement resolution
+
+Measurement resolution is the smallest change in a quantity that an instrument can display or record — the size of its least significant step, expressed as counts, digits, or an absolute increment such as 10 µV or 100 nA.[1007][269] It is a separate property from accuracy: an instrument can resolve 100 nanoamps and still be badly wrong about the value it shows.[269] Resolution determines what changes are visible; accuracy determines whether the number itself can be trusted.[75][269]
+
+The distinction matters most when the two are mismatched. A 6,000 count meter with 0.5% basic accuracy has more resolution than a smaller-count meter, which lets a user see changes, but the displayed figure is not correspondingly accurate.[75] The same mismatch appears at the high end: an instrument may display all the digits it likes while the underlying measurement is nowhere near accurate enough to justify them, in which case the trailing digits exist for show.[1476] Conversely, a 5½-digit reading obtained from an instrument whose specified accuracy is an order of magnitude worse than the last digit simply means that digit is insignificant.[406]
+
+## Counts and digits
+
+Handheld meters quote resolution as a count — the maximum number the display can reach before ranging up. A 2,000 count meter is 3½ digits, an old-fashioned figure by modern standards; 4,000 or 6,000 counts is a reasonable baseline for a general-purpose instrument.[75] Above that sit 10,000, 25,000, and 50,000 count designs, where the extra resolution rather than any improvement in accuracy is the selling point — a 25,000 count meter specified at 0.05% plus three counts is not a precision lab instrument, it simply resolves finer than a 10,000 count meter.[1597][1007][yzO1PsscjOI]
+
+Doubling the counts buys roughly an extra digit over a useful part of the range: a 40,000 count LCR meter measuring a 39 nF capacitor gains a digit over a 20,000 count instrument.[137] The digit count quoted for bench meters does not by itself imply a count value, and the relationship between digits and accuracy is not linear — an 8½-digit meter specified around 0.0005% on DC volts is about ten times better than a top-of-the-line 6½-digit meter, so two extra digits bought only one order of accuracy.[489][613]
+
+## Range selection
+
+Resolution is a property of the selected range, not of the meter alone. Stepping a 6,000 count meter manually from the 6 V range to 60 V, then 600 V, loses one digit of resolution at each step.[1636] The same applies to extra low ranges: a 60 mV range gives 10 µV resolution on a 10,000 count meter, and a meter that lacks such a range simply cannot offer that resolution.[1007][99][1692]
+
+Missing ranges are a substantive design failure rather than a minor omission. A meter that provides microamps and then jumps straight to amps, skipping the 100 mA and 10 mA ranges, yields essentially no usable resolution for a 9 mA measurement — a current typical of everyday electronics.[1095] Auto-ranging can also fail to select the finest available range, leaving the correct value displayed at coarser resolution than the instrument is capable of until the range is set manually; this was a firmware defect corrected in later releases of the 121GW.[q4gXnpFPFzQ]
+
+## The current-range trade-off
+
+Current measurement forces an explicit trade between resolution and circuit disturbance. The amps jack uses a much lower shunt resistance than the milliamp or microamp jacks, so it perturbs the circuit less but returns fewer digits — three decimal places on the milliamp range collapse to two on amps.[1604][324] The shunt on the amps range is lower, not zero, and burden voltage remains.[1604] Where fine resolution is required at low current without the burden penalty, a dedicated low-burden front end such as the µCurrent is the alternative to accepting the coarser range.[324] Compensating for burden voltage by raising the source voltage restores the operating point but does nothing for the lost resolution.[324]
+
+Clamp meters show the same pattern: a 2 A range provides an extra digit of resolution over the 20 A range, though on a poorly performing instrument that extra digit is swamped by a large constant offset.[dv0B_WqL7w4]
+
+## Integration time and resolution
+
+In integrating ADCs, resolution is bought with time. A dual-slope or multi-slope converter charges an integrator to a known reference and measures ramp durations against a fixed clock; the longer the ramp is allowed to run, the more precisely the time — and therefore the input voltage — can be resolved.[485] This is why bench multimeters take longer to produce a 6½-digit result than a 3½- or 4½-digit one: the ramp time is changed to suit the requested resolution.[485]
+
+The user-facing control is the aperture, usually expressed in number of power line cycles. One NPLC is one 50 Hz or 60 Hz mains period — 20 ms at 50 Hz.[1379] At very low NPLC settings, few significant digits are available and the reading is visibly noisy; at 0.02, 0.06, and 0.2 power line cycles the noise remains substantial.[1379] Raising the aperture to 10 power line cycles yields an extra digit of resolution and a stable zero, and simultaneously rejects mains hum, since integrating over a whole number of line cycles cancels it.[1379][489] Instruments default to 10 NPLC for this reason; faster display updates are available but cost resolution.[489] The improvement is a property of the measurement integration, not of post-measurement mathematical averaging, which does not do the same thing.[1379] Older bench instruments expose the same mechanism through a settable integration time.[613]
+
+## Sampling systems
+
+In any sampling system the achievable time resolution follows from the sample rate.[506] Software that prints more decimal places than the sample rate can support is misleading: a capture at 8 MHz displayed to 1 ns resolution cannot actually resolve 1 ns, and a pulse width shown as 14.00 microseconds while the underlying reading jumps between 2 and 14 microseconds is a display artefact, not a measurement.[506] The practical test is whether the resolution is good enough to determine the quantity of interest — 8 MHz is more than adequate for decoding infrared remote timing, while resampling the same signal at 500 kHz quantises the same pulse to 2 µs steps.[506]
+
+The same constraint governs frequency-domain work: an FFT with 400 lines of resolution produces coarse steps across a 100 kHz span and cannot characterise a noise floor accurately over that full bandwidth.[1328] Logging systems inherit it too — reducing a solar monitoring interval from 5 minutes to 5 seconds is purely a gain in data resolution.[k2_mJtAeaog]
+
+Oscilloscope measurements are limited by the effective number of bits available at the chosen vertical setting, which some scopes will display directly, and a low bit count is what makes the standard deviation of a measurement large.[1226] Extra resolution can nonetheless be extracted from the measurement statistics on practically any oscilloscope that computes them.[1226] Where a scope's resolution is inadequate, derived quantities suffer accordingly: computing phase angle from cursor amplitudes via an arcsine returns 30.12° against an expected 33° when the amplitude resolution is poor.[1751]
+
+## Extracting resolution over remote interfaces
+
+Instruments frequently compute internally to greater precision than they display, and the remote interface can expose it. A bench multimeter's logged data can carry better resolution than its own screen because the value is taken from the ADC's floating-point result rather than the formatted display.[489] The same instrument's single-precision internal math may hold more resolution than the panel shows.[489] An LCR meter read over its remote interface returns 0.1 fF steps on capacitance and an extra digit over the front panel.[137] Adding network or GPIB access to older instruments recovers digits that the front panel never showed — an electrometer limited to four decimal places on its display yields more over the bus, and some HP multimeters effectively turn from 7½-digit into 8½-digit instruments when read over GPIB, though not all instruments behave this way.[1232]
+
+## Resolution as the goal in itself
+
+There are measurements where accuracy is irrelevant and resolution is the entire requirement. Tracking down a short circuit on a board is one: whether the meter is 5% accurate or 0.005% accurate does not matter, because only the ability to see small relative differences in trace resistance is being used.[398] Relative-change measurements generally fall into this class, and more digits help even on an inaccurate instrument.[75] Matching resistors is another — the task calls for both resolution and stability, which justifies moving from a handheld to a warmed-up bench meter in five-digit mode.[215]
+
+Choosing test conditions to maximise resolution is part of the technique. Large-value capacitors are measured on an LCR meter's lowest test frequency, 100 Hz or 120 Hz, which gives the greatest resolution on the capacitance value.[1474] Setting a bench meter's aperture high, or an instrument's range low, follows the same principle.[1379][1636]
+
+## Resolution in analog instruments
+
+An analog meter's resolution is bounded by needle width against scale. Estimating something like 250 to 500 distinguishable needle positions across a full sweep gives a best-case resolution of roughly 0.2%, or 0.4% on a coarser scale.[1067] Expressed in digital terms, that is equivalent to a digital meter losing its two least significant digits and having the remaining digit step in increments of four counts.[1067] Even a 3½-digit, 2,000 count digital meter therefore resolves far better than any analog meter, and the ambiguity of reading a needle — whether a value is 5 or 5.05 — has no digital equivalent.[1067]
+
+## Resolution in sources and loads
+
+Programmable supplies and electronic loads carry the same specification on their outputs and readbacks. Enabling a licensed option on a lab supply can unlock 1 mV and 1 mA setting resolution.[509] Instrument families are commonly differentiated on this axis alone, with a three-digit voltage and four-digit current display on one model against six digits for both on another, each suited to different tasks.[1402] Higher-end supplies reach 100 µV and 100 µA resolution, sometimes varying by mode.[Y2rcx4vKxlc] Electronic loads may show a 0.1 mA display digit whose underlying resolution is uncertain, since a firmware implementation counting in steps of ten would present the same digit with only 1 mA of real resolution.[1023]
+
+Instruments operated near the bottom of a range work down in the noise and the resolution floor of their own specification, which is not necessarily a fault but does bound what can be concluded — a supply reading close enough to 10 mA at the extreme low end of its current range is behaving as specified.[439] Where resolution is coarse relative to the quantity, as with a USB power meter reporting charge current in 10 mA increments, the reading serves only as a rough ballpark.[513] Similarly, a low-power battery discharge test conducted at 10 mW sits right at the resolution limit of the setup; better instruments and better techniques exist, but the measurement is adequate for the purpose.[774]
+
+## Where resolution is the headline feature
+
+Resolution is often what distinguishes instruments that are otherwise comparable. A meter with an extra digit reaches an intermediate value on a slowly changing input that a lower-resolution meter skips over entirely.[BuFoA-qt1PY] An LCR tweezer that lacks the range, resolution, and accuracy of a bench instrument is nonetheless useful as a convenience tool rather than a precision device.[1335] Handheld LCR meters vary widely, and 100 µΩ resolution on low resistance marks out the better ones.[1649] Component-level figures such as 1 pF resolution on capacitance are quoted the same way as voltage and current figures.[yzO1PsscjOI] Bench instruments allow the displayed digit count and update rate to be selected directly, trading one against the other.[478][wjMIsM4sDw8] The count of an older bench meter, in the region of 200,000, remains its defining resolution specification decades after manufacture.[1012]

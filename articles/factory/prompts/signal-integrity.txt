@@ -1,0 +1,493 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: signal integrity
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 92 passages drawn from 58 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# signal integrity`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[83] EEVblog #83 - Do You Suck At Hardware Or Software? — Dave Jones (explains)
+context before: You can't just throw down a few, you know, triple five timer chips on a board and go, right, I'm, you know, I'm experienced at PCB design. It's just, you know, it's just not going to happen. You really have to get down and do some meaty projects before you can consider yourself, you know, competent in that particular area.
+TEXT: And if it's PCB design, you know, you've got to do high speed PCB design. You've got to know all about signal integrity, EMI, DFM, design for manufacturing, design for manufacturability. You've got to know how the PCBs are manufactured, assembled, tested. And there's a whole, you know, there's a whole slew of different things you've got to know about just for, just to become a really good PCB designer.
+context after: And the same thing with FPGAs, for example. You know, you can't just, you know, slap down a hundred lines of VHDL and think you know all about FPGAs. It's just, you know, it's not that simple. But once again, you can know all about FPGAs.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: It helps us set up your scope and get real-time analysis of what's happening inside your FPGA. Neat. Sure it costs a fortune, of course. So, there you go. I hope you found this rather interesting.
+TEXT: If you want to check out more, um go search for, you know, Google uh eye diagram uh measurements and stuff like that. I'm sure there's 10 million app notes and uh things out there which will um explain just what a valuable tool this is for um doing signal integrity measurements on differential um high-speed serial lines like this and um pretty much in all you know these high end scopes.
+context after: This is one of the main things that they are capable of doing is measuring and analyzing and you know extracting the clock from the signal and displaying an eye diagram which is essentially the data waveform overlaid again and again and again on the recovered clock which it controls the horizontal axis is the recovered clock from the signal itself and from that you can tell an awful lot about
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (explains)
+context before: But that's all you have to do. Just do that. Know it's critical. Put it in and then you've got other signal integrity things to worry about. In fact, it might tell you that Yeah, it does.
+TEXT: There you go. They talk about split return paths here. So, if you've got your never split your ground planes. If you add a little cut out in your ground plane like that, not a physical cut out, a routed out part of your board, but if you if some reason didn't flood fill your ground under there, and it's going to take a longer path, you've just ruined your day right there again.
+context after: You've ruined your timing budget. You've ruined your signal integrity. You've ruined everything. And well, yeah, they're going to sack your ass because you didn't know how to lay out boards.
+
+[532] EEVblog #532 - Silicon Chip Wafer Fab Mailbag — Dave Jones (explains)
+context before: So, instead of soldering your chip directly onto the board, you insert this zero insertion force test socket and then you can plonk your BGA chip on there and bingo.
+TEXT: Yeah, you are going to get some signal integrity issues doing that so you would have to take that into account. So, obviously that would be very carefully designed with you know, the the dimensional tolerance and everything else just to give the exact right amount of pressure on the chip there so you don't damage the balls when you screw that up and off you screwed it up.
+context after: You got a nice hole in the top. You can still read your part number. And yes, they are pogo pins. Look at that. We can push those up and down.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: Now, generally a logic analyzer will come with these easy hook probes. They're actually little tiny probes that you pull down and they're a standard they just pull straight off here.
+TEXT: Make sure your probe comes with your logic analyzer comes with these probes cuz they're most valuable. And make sure it comes with a good set of short short, not long probe wires because the longer Look, the ground on this, the longer you make that ground, the less reliable your signal integrity is going to be on the input to this thing.
+context after: So, you don't want super duper long probes. You want them as short as possible. And I can't say it enough, probing on a logic analyzer is critical. Unlike Well, it's critical on an oscilloscope, too, but at least you can see the problem.
+
+[309] EEVblog #309 - Mailbag — Dave Jones (explains)
+context before: And it's got two little pin connections here, which then you can use with all the various attachments we've got in here to probe your circuit under test. Because the big thing with active probes is probing. You know, you can't just have some big antenna ground lead just flying out from
+TEXT: the thing. If you really want the utmost in signal integrity, you have to use the shortest leads possible between the probe here. This'll have the FET input buffer will be in here, so the signal's not just going straight down the coax there. There'll be an active amplifier in there, FET amplifier, and that's how they get the one
+context after: picofarad input capacitance. Because it's right there, you don't have to worry about all the capacitance of the probe, and even if it's over here on the circuit board, you've got capacitance going across the circuit board. So the FET will be right at the input there.
+
+[GS0WqUKZ-3c] PCBite Handsfree Oscilloscope Probe! — Dave Jones (explains)
+context before: Here we go. Can we Yeah, yeah, there we go. So, you can see channel two is a little bit more loosey-goosey there. Look at the overshoot and undershoot and then really fast transition stuff like obviously happening here.
+TEXT: This is one short transition here because we don't have a ground on channel two there. Our signal integrity is not that terrific, but hey, this often doesn't matter. Sometimes you just want to see that something's happening there or you want to see you know, timing relationships or you know, something else between these.
+context after: You can see that channel two is like a bursty thing there. There we go. If we trigger from our channel one there, you can see that uh there's nothing happening on channel two until unless we get lucky like that.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: So, yeah, you want to set it up on the negative going transition of your clock pulse. And then, of course, we have to think about that you're potentially daisy-chaining these together, and you said that uh the issues start showing up when you daisy-chain many of them together like this.
+TEXT: Now, you could actually have a uh driving problem due to uh the capacitance of the line. Cuz if this is your Raspberry Pi board over here, you know, if you're driving one module, it can be okay, your signal integrity's okay, and it's working fine, but you might still, you know, you might get the occasional uh thing.
+context after: But then you need more lines coming down here like this, which goes off to, you know, another board here, right? So, this is the identical board, but stuck in here.
+
+[795] EEVblog #795 - Electronex 2015 — Dave Jones (explains)
+context before: hey, you want to check this out? Absolutely. Thank you, Dave. We appreciate it. Thanks, Val. I've got to ask about the bodge, Val. Yes, yes. Tell us about the bodge. Okay. The bodge actually has an interesting story to it. Do tell. Yes, yes.
+TEXT: That's actually a coupling capacitor for the 5-volt auxiliary line that's feeding in from the digital video connector. Right. I didn't have a coupling capacitor there before, and that's really bad news if you're obviously wanting to keep your signal integrity intact. Right. And so hence I had to put one in.
+context after: Okay. Thankfully the new boards that are coming in will have that. They'll all be fixed. They'll be all good. Fantastic. Good work, Val. No worries. And that's Val. He was too nervous to be on camera, but that's all right. So you just heard his voice.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (explains)
+context before: With a big ground plane, lots of decoupling, you can easily get away with uh well, you you had to get away with it because you had to make these systems work.
+TEXT: You had to use all these chips, spread them out over large boards like this with uh backplanes, but signal integrity wasn't on on the PCB level wasn't as huge a thing as it is today with uh with all of today's uh you know, high-speed uh serial lines, controlled impedance, and all that sort of stuff.
+context after: These things weren't controlled impedance. You just laid it out with one big ground plane. You'll notice they've got decoupling chips on each one, but you'll notice how they're all laid out in nice lines like this.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: It depends on what you're after though. Sometimes you may want to see how other parts of your circuit in this particular case, if we're chopping off some of the capacitors on the other side of the board, for example, that might upset the clock at this particular part of the circuit so that we're actually probing.
+TEXT: You know, so you may or may not want to see that. But of course, if you want the signal integrity at that point, the best way to do it is to simply Well, you can turn on high-res mode which does a boxcar averaging of like you know, like 16 or something like that in a row at the sample thing.
+context after: But the best way to do it is just with a nice average like that. There you go. We've got our two waveforms. Now we can actually store those as reference waveforms.
+
+[368] EEVblog #368 - EPIRB Teardown — Dave Jones (explains)
+context before: So, I expect that to be some sort of gating pulse for the RF oscillator. Let's give it a go. And there you have it. It is some sort of gating pulse for that RF transmitter there.
+TEXT: Once again, I've got the antenna earth lead back on, so we're picking up crap here. It's actually a digital It's truly a digital signal here. This is a pain in the ass trying to probe You know, if you're looking at signal integrity in an RF design like this, probing is absolutely everything.
+context after: I mean, look at that. You would think that there's something wrong with your design when you get all this on it. If you don't actually know what's happening with your probing.
+
+[304] EEVblog #304 - Mailbag — Dave Jones (explains)
+context before: it's got a slot cut out in there, it's designed to mount on right angles on a PCB like this, that looks really rigid because it locks the board into that slot there. I really, really like this BNC connector, because it doesn't, you know, it's not going to flex at all because
+TEXT: that board is totally locked in that position, and of course you've got the huge big solder tabs here, and of course for your utmost signal integrity, you've got your surface mount pad on here, because you don't want to have a through-hole lead, because that will just add to your inductance.
+context after: So that's a brilliant choice for a connector. I, man, I was actually, I really was going to design one of these little puppies, and maybe even sell it as a kit, or something like that, but I'm not sure if I'll bother any more, because Manute has done all that for us.
+
+[1362] EEVblog #1362 - A Very Skookum Mailbag — Dave Jones (explains)
+context before: again here we go can we yeah yeah there we go so you can see channel two is a little bit more loosey goosey there look at the overshoot and undershoot and then really fast transition uh stuff like obviously happening here this is one
+TEXT: short uh transition here because we don't have a ground on channel uh two there our signal integrity is not that terrific but hey this often doesn't matter sometimes you just want to see that something's happening there or you want to see you know time in relationships or you know something
+context after: else between these you can see that channel two is like a bursty uh thing there there we go if we trigger from our channel one there you can see that there's nothing happening on channel two until unless we get lucky like that but anyway yeah you can see that uh here's that you know here's a good
+
+[316] EEVblog #316 - More PFANG, More 13GHz Scope, & More Pulser — Dave Jones (explains)
+context before: There it is. Yep. 74 LVC4 A D. Date code. H, who cares? But there you go. Excellent. Well, I hope you enjoyed that. Thank you very much, uh, Chris.
+TEXT: And if you want to, uh, build up your own one, by all means, um, go for it. Give it a try. And uh yeah, it's I think it's all about the uh getting the uh load matching and all that right as of course is obvious with uh signal, you know, really high speed signal integrity stuff like this.
+context after: And uh as you can see, it doesn't have to be high speed in terms of frequency. You know, it can be a 1 kohz signal. It's all about the slooh rate, that rising edge, how fast that thing is.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (explains)
+context before: There it's interesting though that they don't do it to the lowest two ranges down here. There's none of that switching at all on those lowest two ranges where you think it would be um absolutely critical to uh do that thing.
+TEXT: So, I have to look at the uh schematic for that. But that is that that is just lovely. They've deemed that they have to go to that effort to get the uh to get the signal integrity, the low noise on this thing instead of using the you know, the crummy switches inside these gang switches.
+context after: I mean, no matter how good you manufacture these switches, they're probably going to be pretty crusty. So, they've gone for a beautiful you know, um very probably a very heavily plated uh gold leaf um contact there onto another heavily plated gold pin.
+
+[342] EEVblog #342 - Agilent 90000 Oscilloscope Teardown — Dave Jones (explains)
+context before: but you can see that there's additional circuitry on the bottom side of the board there, a ton of it, actually. Not huge stuff, just support stuff, and there'd be bypass stuff and things like that, but definitely double-sided load, of course. You need that to get the bypass caps right on the modules themselves,
+TEXT: but there's a ton of circuitry on the bottom there, and the modules don't look to be through-hole, of course, they're some sort of BGA system which helps with the signal integrity. Sorry, can't get a better view than that. So there you go, I hope you enjoyed a brief look inside
+context after: a $140,000 scope to see where you're getting your money's worth. I'd love to be able to show you more on those ADC boards, but I'm definitely not going to take this thing apart. I was asked not to, but they didn't say I couldn't take the lid off, of course.
+
+[1398] EEVblog 1398 - Western Digital RED 6TB WD60EFRX Hard Drive TEARDOWN — Dave Jones (explains)
+context before: So that's all the head and motor drive. You can see the the thicker traces in there versus the thin. Of course, the I assume that the head amplifiers, you know, they're all going to be in there.
+TEXT: It's not going to get all those teeny weeny little signals all the way back over here, I don't think. Now, I'm totally unsure how these platters come out and I'm sure there's a lot of people who have disassembled these and they're probably screaming at me, "Do this step, Dave.
+context after: Do this step." or whatever. I'm just going to wing it. Haven't looked at any guides. Have we got some screws on top there? So maybe we've got to take them out one by one.
+
+[1028] EEVblog #1028 -  PC104 - The Full Version — Dave Jones (explains)
+context before: no one will ever need more than 640k, extended memory, EMS, you remember when you had to use EMS? That was, ah, those were the days. Okay, so we can fix that display. We should, because it should be the braid, so what I'm going to do is just,
+TEXT: I forgot to connect up the braid, I'm going to hook the braid just up to ground here, and we should see a very significant improvement. Here we go. Ta-da! That's the difference between the shield and no shield on the signal integrity. It's just the clock recovery inside there,
+context after: like, you know, it's just, it's all jittery as buggery, and huge difference. Look at that. The full boot sequence for those playing along at home. Ta-da! Copyright 1996. Wow. 32 meg. Wait, wait, wait. We're in. Now it came with the keyboard cable on it,
+
+[1237] EEVblog #1237 - Old School Teardown: HP3785A Jitter Analyser — Dave Jones (explains)
+context before: It'll like just be out and so the connector will probably stop here and here and the board just extends out the edge of the connector. Neat. Now, if we lift up the second board here, you can see that we got three cables on this and one of these cables here is Well, in fact, I think Yeah, I think both of them might be all three of them might be buggering off to
+TEXT: other boards here. I think pretty sure this one goes down to one of the other boards. So, here's where signal integrity starts to matter. They couldn't get that signal from there down to the bottom of the edge connector through the motherboard and back up to the other board.
+context after: So, they ran a a coax there. Nice. All you relay aficionados are wetting your pants now. Look at these Teledyne relays in metal can package. Ah. Thing of beauty.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: You're just going to short them out, no good. So, make sure you just get one of these uh headers like that and uh Bob's your uncle, no problems whatsoever.
+TEXT: Or, in this case, I would probably go to the effort to uh solder on a little uh pin which jumps up from the uh ground plane here. And yeah, we're not too concerned about signal integrity at the moment, so the length of this ground lead uh doesn't matter much at this stage.
+context after: We're just looking for signal, is it there or not? Now, if we had to get in there and actually probe this little 0.6 uh 35-mm pin pitch SSOP package, that would be a pain in the ass, but thankfully this system allows us to break almost everything out onto uh these header pins here except the serial data in here, but we can check the clock and the latch and
+
+[1369] EEVblog #1369 - Xiaomi Mi Air Wireless Charging BUSTED! — Dave Jones (explains)
+context before: So, to get the narrow beam forming required requires a large number of antenna, and 144 doesn't give you a very narrow uh, beam forming beam. So, right there, it's I mean, pretty limited.
+TEXT: And you'll notice that they're actually through hole. You can see the pin coming through. And Sharia says there's absolutely no way that this is going to work from a signal integrity point of view at millimeter millimeter wavelength, which is which is what his research is.
+context after: So, that'll be, uh, 28 GHz and beyond. So, he seems to think that this this actual antenna that they show here in their video is, uh, probably more likely around around the 5 GHz ISM band, something like that.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: You laid out your board properly. You got all your controlled impedance traces correctly, all your terminations right, you know, all your shieldings right, you've got low clock jitter because, you know, look at the you know, the the width in there is just ah, it's just beautiful.
+TEXT: So, this is a demo. Um if you probe the thing properly and design your system properly, you might, you know, you might never achieve that in your system. You know, it's all about meeting the specs and the uh tolerances and what is actually achievable in a practical system.
+context after: But that I don't know if I can do anything else with that demo. I think it just displays um it was just a demo file really and it allowed me to uh uh maybe I can do Here we go, USB 3 serial decode.
+
+[155] EEVblog #155 - ITead Studio PCB Prototype Goof — Dave Jones (explains)
+context before: it might actually go all the way, you know, if you've got a house here, draw a little chimney on that, it's not a very good house, but anyway, it can go all the way through your house, but it will eventually join back down to your, uh, common earth point down here, but they will actually
+TEXT: connect up like that, and that provided the, uh, ground path needed to complete the circuit, and that's why it instantly started to work. The signal integrity is going to be complete and out of crap, because it's got to go all the way through your power board and back out.
+context after: It's going to be awful, but because this isn't, you know, UART interface isn't particularly high speed, it was able to work no problems at all. So I was asking myself, how could this be? Because I know I did a DRC, a design rule check, on this board before I sent it out, and there were no breaks
+
+[1362] EEVblog #1362 - A Very Skookum Mailbag — Dave Jones (explains)
+context before: like little springy clip or something like that that goes around your regular high speed probe but even then to use one of those you've got to have a nearby ground point um anyway so you have to like scrape away your solder Marsh you're going to solder something into a nearby ground plane or
+TEXT: something like that just to actually make your high frequency uh probe work so you know this has a similar sort of uh signal integrity grounding limitations as your regular probe but it just lets your probe stuff side by side and who cares about signal integrity when
+context after: you can actually capture you know stuff like that oh there we go I got it see and like you can just that's more than good enough so that's just fantastic for debugging oh look we've got a really that's a really short pulse on there on on channel one look at that look at that jobby
+
+[1664] EEVblog 1664 - REPAIR with Junk Bin Parts! Keithley 2302 — Dave Jones (explains)
+context before: So, what I want to do is just find a more convenient ground point and sure enough the chassis there is connected. So, we can just connect our scope probe to the chassis ground like that.
+TEXT: No worries. And because it's all mains earth reference scopes mains earth reference and so is this chassis. So, not a problem. Not the best signal integrity, but for just probing to see if the signal's there, you don't really care about signal integrity.
+context after: All right. So, we're 1 V per division here and we're picking up some 50 Hz AC mains there. Triggered just above that. So, switch the power on. I'm probing pin three here.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: Let alone probing the thing. I mean, we haven't even probed this thing correctly, let alone measuring it um to the exact specifications of the USB 3.0 standard. I'm sure it's very complex.
+TEXT: I don't think I've ever read the USB 3 standard actually, but I'm sure it contains all of this stuff, which would be critical to get correct signal integrity. And if you're designing a USB 3.0 product, you really need to get this sort of stuff um right.
+context after: And it would you know, be over a standard length and type of cable and, you know, into a specific load and all sorts of stuff. So, um you know, really you can probably spend weeks actually characterizing your system for the to make sure it meets the correct performance targets.
+
+[Y7t6BIhBZhc] High Frequency Active FET Probing DEMONSTRATED — Dave Jones (explains)
+context before: for all the world, and it is an RC discharge curve. So there you go. What's that, you know, 10 nanoseconds per division? I don't know. You can work that out, whatever, for those playing along at home. But you can see how the resistive probe actually completely changes
+TEXT: the circuit that you're actually measuring. So, sure, the signal integrity is excellent. Let's take a look at this, actually. If you have a look at the bottom here, you can see that both of them undershoot almost exactly the same. But you remember how I
+context after: said that the resistive probe can actually be more tolerant of longer ground leads. I think they're both about the same length. I think they're practically near identical. Remember how I said it can be more tolerant on these than active FET probes. This might be an example
+
+[GS0WqUKZ-3c] PCBite Handsfree Oscilloscope Probe! — Dave Jones (explains)
+context before: So, you have to like scrape away your solder mask, you've got to solder something into a nearby ground plane or something like that just to actually make your high frequency uh probe work.
+TEXT: So, uh you know this has a similar sort of signal integrity grounding limitations as your regular probe, but it just lets you probe stuff side by side. And who cares about signal integrity when you can actually capture you know, stuff like that.
+context after: Oh, there we go. I got it. See? And like you can just that's more than good enough. So, it's just fantastic for debugging. Oh, look. We've got a really That's a really short pulse on there on on channel one.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (explains)
+context before: There's no overshoot, there's no undershoot there, and we've got getting something in there. A little thing happening in there. Well, let's take this over to the Rigol 2000 series and see what we get.
+TEXT: Yep, basically identical to the Rigol 1000 series. Of course, this is the 200 MHz one. So, if there was any, you know, termination issue or something like that, or actually signal integrity issue, you'd expect the higher bandwidth would show it.
+context after: But, we're not actually seeing that there. And as a fourth comparison, let's try our 500 MHz Agilent 3000 series, and ta-da! There we go. Look at that. We do have some overshoot and some undershoot there, presumably due to the higher bandwidth.
+
+[968] EEVblog #968 - Mystery EDA Package — Dave Jones (explains)
+context before: Um, so let's actually have a look at here. It comes from a company called CSI EDA and they're a Japanese uh company and they, you know, here's their product lineup.
+TEXT: Um, let's have a look. Win schematic, Win Spice, Win PCB, which is the one we're after, PCB design 2, Win signal, uh, which would be signal integrity, uh, stuff, i.e., you know, simulation, high, you know, impedance control and all that sort of.
+context after: In fact, that one. No. Yeah, that one's just impedance control and cross talk and things like that. Gerber cam editor tool. It's got a 3D PCB viewer, Electra, Electra route, auto routing uh tools, and uh they're just the various packages that you can get.
+
+[LeVZ5n3K2io] eevBLAB 111 - The TMA Banning x1/x10 Switchable Probes? — Dave Jones (explains)
+context before: Uh enhanced durability. Fixed times one times 10 probes are less prone to wear and tear due to the absence of switch mechanisms. Yes, resulting in a longer lifespan and a reduced need for replacements.
+TEXT: Uh improved signal integrity. The fixed nature of times one times 10 probes can lead to better signal integrity and more accurate measurements by minimizing risk of attenuation distortion caused by poor switch contacts or impedance mismatches.
+context after: True. Um Uh streamlined product offerings. By focusing on times one times 10 probes, manufacturers can concentrate their resources on improving these core products, resulting in high-quality and more specialized offerings.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: demo board here, by the way, so I have no idea what signals it's actually generating, it may actually deliberately been putting in a false pulse there, perhaps. But that's the advantage of having your being able to view your waveform as well. So yeah, it's a bit disappointing that you can't actually
+TEXT: trigger off the analog signal channels, because that's handy, to be able to view your signal to make sure your signal integrity is fine, but check out the rise time on that, that is poor as. But hey, we're getting data out of it, and it seems
+context after: fairly quick, and it seems to be doing the business anyway. And we've just got some line termination probing type issues here, but no big deal. But it seems to be doing it. And I'm not sure if we can actually set the height on those digital channels, it'd be nice to actually expand those.
+
+[386] EEVblog #386 - Glass Delay Lines Part 2 — Dave Jones (explains)
+context before: It's not completely clear. And they've clearly treated that probably due to a through some chemical treatment process or something to roughen it up to ensure that those shear waves actually stay within stay shear waves and they stay within the body of the material like that so that they can actually reflect off there because this thing is effectively a high fidelity transmission line, so to speak.
+TEXT: Because we're we're not just passing digital one and zero through this thing. We're the signal integrity of this transmission line matters. We're passing analog high bandwidth analog information through this stuff, color video signals.
+context after: So, we need to we need for this to be as a good a transmission line as possible. And that includes reflections and bounces and stuff to do with regular transmission lines.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: And well, you know, that could potentially be like a signal integrity issue and stuff like that. So, imagine if I went through and started looking at all the timing diagrams here and all the protocol and everything else, and then finding no problem there, and then going on, you know, thinking confidently that I've already probed the chip in there, and everything and the hardware must be right.
+TEXT: That and, you know, then I go, well, it's a signal integrity issue then. Imagine the hours I would have wasted trying to actually probe properly cuz if you want proper signal integrity, you can't just use an antenna earthly like this.
+context after: You've got to go in there and set up these things properly. And well, yeah. Man, could have wasted forever. It's lucky I just, you know, stepped back and went, "I'm going to double-triple check that clock pin." And sure enough, bloody well was.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (explains)
+context before: So, like it's it's to do with the data that you're actually transferring, not just the fact that you've got your termination right. Anyway, into symbol interference. And And that's what it tells you.
+TEXT: It can cause by the bus running faster than it can settle, basically. Um cuz you need time for it to settle before you send the next data so that your data doesn't interfere with from the previous data due to signal integrity issues.
+context after: So, anyway, that is a component of that. And then you got crosstalk between your signals because your signals are right next to each other and they're they're talking and they're coupling.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (explains)
+context before: And the braid just goes off here to your ground tip. And that's it. A 1K series resistor in a coax. How can this perform as good as like a multi-thousand dollar probe even?
+TEXT: Well, there's a bit of art and science to it. And they can uh basically uh match the at least signal integrity uh performance of like a multi-thousand dollar even 10,000 dollar 10 gigahertz uh probe if you do these right.
+context after: But, yeah, there's a lot of art and science in getting it right. And this one here I just uh crudely made up. I haven't measured uh its performance. Once again, if you actually want to characterize the performance of it um and know it's going to be good, then well, you need all the gear and the experience to do that.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (explains)
+context before: It's from Africa. Go figure. There's not a huge amount on this board, just the rotary encoders. These are all pushable, of course, and we have the nice spring-loaded zoom knob here.
+TEXT: Rather like that. It's really sexy. And there you go. There's not a huge amount doing on the back here. The two channels have actually removed the bottom ground plane out of that for signal integrity performance reasons.
+context after: But apart from that, yeah, we've just got some basic passives, and there's some resistor terminators on there. There's the bottom of the BGA down in there. If you you know, if you want to zoom in on that, you can see the classic bypass capacitor layout for an FPGA.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (explains)
+context before: So, these types of systems with the long cables and breaking in order all worked just a treat. But on modern processors working at many many hundreds of MHz, in-circuit emulator design is a real art in itself and uh trying to minimize the uh physical interconnections for various things, even for our bond out chips and stuff like that, you have to be very very careful.
+TEXT: Signal integrity uh becomes a huge deal and uh flight time on the copper cables or any interconnects at all can really ruin your day. It really is uh quite a difficult art to design these in-circuit emulators.
+context after: Huge R&D dollars go into these things and they don't sell many of them. So, they're usually pretty darn expensive. And that's the reason why they've put the emulation microprocessor as close as physically possible to the um to the connection pins here is because they really need to uh keep that signal integrity as best they can.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: And I soldered it on to 0.1 in headers on there so that we can use the supplied adapter cable for our probe, which we'll take a look at to probe the signal without having to hold it in place.
+TEXT: Now, I know this is not the best thing to do in terms of signal integrity. So if we're really probing this system properly, characterizing it at these sort of frequencies, we really have to probe it correctly.
+context after: And I'll show you a proper probe in a second. But this will be good enough for today's experiment to allow us to measure the signal so I don't have to dick around trying to probe the thing properly.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: We won't know a specifically what point actually failed. We might be able to analyze it later if we can actually get it to fail, but let's measure some points just so that we have a baseline.
+TEXT: And of course, using proper signal integrity techniques to measure them, and then start removing some caps. See what happens. Now, at this point, it's actually very important to get your grounding correct.
+context after: And I actually shot more than 10 minutes of waffle talking about the correct ground probing technique and different probes and and things to use and how to set up your scope.
+
+[747] EEVblog #747 - PC Based Logic Analyser Project — Dave Jones (explains)
+context before: And I did. I got it onto a single-sided board. I was very proud of that. Had a few jumper links, of course. Had to jump the odd bus here and there.
+TEXT: But yeah, it generally wasn't It wasn't too bad. You know, there's performance penalties you pay for single-sided board in terms of signal integrity and stuff like that. But it It was just a goal I set.
+context after: It was just a fun goal I set myself. It was just a fun project. And you know, and that's what I did, basically. And I used the parallel uh uh port because, well, you know, I was familiar with the parallel port, and everyone had a parallel port at the time, and things like that.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: Same thing with logic analyzers. If you buy a cheap logic analyzer with cheap probes and a cheap input circuit, cheaply designed and made input circuit, it's not a serious tool.
+TEXT: Why? Because there's so many issues involved with getting uh I I good signal integrity on the input to a logic analyzer. There's There's noise. There's skew across channels. There's uh transition times.
+context after: There's metastability issues. There's all sorts of things. Input capacitance, inductance, and rise time, and fall time, and cross talk, and all sorts of things that can actually affect your measurement.
+
+[306] EEVblog #306 - Jim Williams Pulse Generator — Dave Jones (explains)
+context before: It's much better than uh what you would think at minus 3 dB down at 500 MHz. So, this thing's pretty much kicking ass. And just in case you're wondering what the other channels are, I've chosen channel three here, and we're basically getting identical 520 530 picoseconds.
+TEXT: And you can see that our signal integrity is not perfect here. We have a little bit of a little dip there just before it starts, and of course some undershoot and ringing at the end of it here.
+context after: Ideally, it should be better than that. That's probably due to our coax cable. It would have been nicer if we had a direct connection, or if this connector here wasn't this socket type, but was actually a plug type.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (explains)
+context before: You know, it's a woven pattern. And if you run your signal actually on top of one of the weaves and the or then like in the direction that it's going, you get a different dielectric constant than if you do if it's passing over the ones running in the other direction like that.
+TEXT: That can matter as well. That can change your propagation delay right there and your signal integrity and everything else. So, let's take a look at a a discrete design like this Gigatron.
+context after: It uses the absolute classic 62256 SRAM, which has been around from day dot 32K SRAM chip and it's available in fast access times from uh 45 up to 85 nanoseconds.
+
+[1322] EEVblog #1322 - JBL LSR308 Studio Monitor Speaker REPAIR — Dave Jones (explains)
+context before: So, get one side of the resistor. Yeah, look at that. That was like a clock. 3.072. Next to it. Yeah, that looks like data. There you go. That's just random.
+TEXT: That'll change every time. Don't Don't worry about the overshoots there cuz I'm using a uh hideously long ground lead. All we're looking for We're not looking for signal integrity here.
+context after: We're just looking for data. And uh yep, there it is again. The ADC is doing its business and outputting stuff. So, there's nothing wrong with that. Um, unless like, as I said, like the signal's not coming in.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: Right, okay, I'm putting down our 10 MHz signal by the way, it's 10 meg up there. It's that's the hardware frequency counter is working in absolute treat, okay? Watch this.
+TEXT: I've only got channel one on, right? I've got 1 megaohm input impedance. Turn on channel two. The waveform goes to buggery. Enabling that second input is changing the signal integrity.
+context after: You notice that it's not it's not really the jitter. It's it's not a problem in there. It's actually changing that the fidelity. And does that change with 50 ohm?
+
+[1664] EEVblog 1664 - REPAIR with Junk Bin Parts! Keithley 2302 — Dave Jones (explains)
+context before: What That's pretty good. I mean, the really piss-poor probing that we've got here, right? And this big antenna earth lead, we've got the big wire coming out here. It's picking up 50 hertz like there's no tomorrow.
+TEXT: Um, it doesn't matter because we're not measuring When I talk about signal integrity, um, I'm talking about how the signal looks like. Is there any overshoot? Is there any undershoot?
+context after: In this particular case, um, there's nothing. So, it's actually pretty good. So, yeah. So, you don't really have to worry about When you're just looking at signals like this, don't have to worry about that you've got, you know, in this particular case, like I've just I'm not even trying to probe it with this cuz you can accidentally short out pins with your easy hook, uh, on there.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: the signal. But it was just good fun having to play around with this and see what the scope is capable of. I really rather like it. It's been fun and if you get a chance to play with one of these high end scopes by all means um play around with the eye diagram stuff because it can be a great deal of fun and you can learn a
+TEXT: lot about signal integrity. You know if I could I could you know probe this in different ways and stuff like that and see how the signal integrity changes but haven't got the time.
+context after: So if you want to discuss this jump on over to the EEVblog forum. The link is below the video there or above if you're on the blog website. And remember if you like it please give it a big thumbs up.
+
+[MC9_4mpqVgU] eevBLAB #5 - Are Mixed Signal (MSO) Oscilloscopes Worth The Money? — Dave Jones (explains)
+context before: If you really want to look at a signal properly, you need to use an oscilloscope channel, a proper one of these four channels on your scope here. You got to use those.
+TEXT: They're they're better than a logic analyzer cuz a logic analyzer will only give you a one or a zero below a certain fixed threshold and it doesn't take signal integrity into it.
+context after: So, if you haven't your circuit properly, you can get dodgy results on your logic analyzer and not know where those faults are coming from and you can chase red herrings until the cows come home.
+
+[334] EEVblog #334 - History of PDA's in Teardowns — Dave Jones (explains)
+context before: No, I can't see anything under there. So you know they they really just haven't bothered another bypass cap here. So they've got a couple scattered over there but it doesn't really need it.
+TEXT: Signal integrity is not a big deal when you're only working at a megahertz like this. One of the interesting things to note is the date code ET. That stands for electrical test.
+context after: So the bare board manufacturer put that on here. 13th week 1989. So this thing was first released in 1986 as I said. So you know this is 3 years later manufactured and they still kept manufacturing it for another 3 years or so and you know you can't imagine any device like this having that sort of time span these days or product lifetime these days.
+
+[523] EEVblog #523 - REPAIR: HP 35660A Dynamic Signal Analyser — Dave Jones (explains)
+context before: You know, it's probably like 8 MHz or something like that, you know, 4 MHz. What does a uh 68000 run at? Like 8 maximum or something. So, you know, like under 10 MHz usually, not very quick at all.
+TEXT: So, it really signal integrity is not a huge issue. Multi-layer board, it's got all the bypass caps. It's got tons of bypass caps. It's got the ground planes, everything else.
+context after: So, not a problem whatsoever. So, it's all digital circuitry. You can just let the auto router rip. I mean, to manually route these by these sorts of boards by hand, I've done it.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (explains)
+context before: So, the lower the capacitance, the less you're going to load your line. But, if you are talking uh DC, then the passive probe still better. That's 10 mega DC.
+TEXT: These are only a meg. So, you'd use an active FET probe over your passive probe when a signal integrity at high frequency really matters. Well, A, these can go higher.
+context after: This is actually the fastest passive tender one passive probe you can get at 10 meg. This is And as I said, this thing with a resistor will, you know, if you build it right, will actually outperform this.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (opinion)
+context before: It was working fine. So, it had to be a hardware fault like that. So, there you go. But, I thought, you know, oh, maybe it's a signal integrity problem cuz he talked about he put some termination resistors on the board, for example, and but didn't populate them on these ones.
+TEXT: And well, you know, that could potentially be like a signal integrity issue and stuff like that. So, imagine if I went through and started looking at all the timing diagrams here and all the protocol and everything else, and then finding no problem there, and then going on, you know, thinking confidently that I've already probed the chip in there, and everything and the hardware must be right.
+context after: That and, you know, then I go, well, it's a signal integrity issue then. Imagine the hours I would have wasted trying to actually probe properly cuz if you want proper signal integrity, you can't just use an antenna earthly like this.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (opinion)
+context before: There it is. We should be able to, you know, and it's got a ton of stuff that we can look at and we could spend days and days and days here analyzing the signal.
+TEXT: In fact, it would probably take you a couple of days to set up the measurement. If you were doing really critical, if you were developing a USB 3.0 product and you really had to get critical measurements to make sure it passed the standard and all that sort of stuff, then, you know, you could spend days setting up and probing this just to get your one, uh, you know, set of
+context after: measurements or something like that. So, really, you know, I don't have the time to, uh, do that. So, we're just playing around today and the USB standard would have, like, um, how, uh, oh, actually, that's just measuring.
+
+[879] EEVblog #879 - R&S HMO1202 Scope Bandwidth Hack Investigation — Dave Jones (opinion)
+context before: This is why you need a temperature-controlled soldering iron. Every job is different. That's a bit nasty, but there we go. I think she flowed. Yes, I did uh tin these wires beforehand, but uh yeah, you just want to put a fresh coat on there and don't have a big blob.
+TEXT: And we'll just clean that up a little bit. And uh that will evaporate and she'll be right. No worries. And I've deliberately left these wires long, so um A, you can, you know, handle the ends of them, put your probes on, get them off the board and things like that because, you know, signal integrity is not a big issue here and allows us to put some tape on there.
+context after: You definitely want to put some tape down on there so that when you handle these leads on the other end, there's uh no stress on those leads. So, you can get down here, you know, hook up your probes and wiggle them around, no problems whatsoever, move the thing around the bench, and you know, you're not going to break your little tiny little joint in there.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (opinion)
+context before: Uh that's pretty crap, isn't it? You could add a Schmitt trigger buffer on all of your clock and uh data inputs here so that um it it can try and clean them up and stuff like that.
+TEXT: That's one method to do it. If you know your input if well, if you aren't certain what the signal integrity of your input clock is going to be, then yeah, at a minimum, like if they're coming from externally or something like that, you should be using uh at least Schmitt triggers uh inputs.
+context after: Just uh if you've got noisy signals like this, that can cause a problem. So, right off the bat, it could be uh noise because this board, obviously, I don't know how you how you're connecting it uh to your What is it?
+
+[1452] EEVblog 1452 - Fluke PM3370B Combiscope REPAIR — Dave Jones (opinion)
+context before: I don't actually have uh the ground leads from the any of these probes actually hooked up to these boards. It's going via the mains earth here and going back to the power strip under the floor here and going back.
+TEXT: So, you know, that's just for ease. Like, we're not looking at signal integrity here. Our 58-V rail has plummeted. Once that starts happening, yeah, of course, then our 2.2 kV rail starts then decaying or negative 2.2 kilovolts starts decaying and our 12 volt is decaying as well.
+context after: So yeah, that sudden drop on your 58 volts, that'll definitely do it cuz there's no more volts to switch. So yeah, no more high tension. So looking at the schematic here, this is the point where we're measuring plus 58 volts VHT, which is interesting cuz I can't yet find that anywhere else in the circuit.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (opinion)
+context before: I mean, they've It's probably put a lot of thought into it and laid it out by hand, because you can't see too many uh vias in there. There's a couple, you know, there's a few, but there's not like, you know, hundreds and hundreds of vias and stuff like that.
+TEXT: So, they really, you know, I'd say somebody has probably manually uh routed this thing and took some pride. But for some complex ones where the signal integrity isn't critical, yeah, just let the auto router rip on these boards.
+context after: It's fun to watch. And check out the ancient uh bypass capacitor package there. They've got standard uh 0.3-in spacing on these things designed to integrate and butt right up next to chips for high density in quote marks uh logic designs like this one.
+
+[GS0WqUKZ-3c] PCBite Handsfree Oscilloscope Probe! — Dave Jones (opinion)
+context before: Look at that. Look at that jobbie. Wow, what's that What's that time base? 50 nanoseconds. There you go. That's like a just over 20 nanosecond uh pulse there. And it's doing pretty decently even though I've got this big antenna earth lead going over here like this.
+TEXT: Um it's it's working just fine. So, from a signal integrity point of view, this thing's as as good as you can expect from such a probing solution. It's just This thing's going to find a pride of place here in the EEVblog lab.
+context after: It's just a brilliant. I highly Like as I said, I don't even care about the cost. You need one of these. It'll save your bacon and your sanity, let me tell you.
+
+[1085] EEVblog #1085 - Bypass Capacitors Visualised! — Dave Jones (opinion)
+context before: Um that's what's causing this ringing here cuz there's not sufficient bypass, so that um once again, we're on a 100 mV per division. That's a awful lot of ripple happening on your 5-V power supply.
+TEXT: It's horrible. It's got all sorts of ramifications in terms of uh signal integrity, glitches in your circuit transitions and ground bounce and all sorts of you know, weird and wonderful stuff which we won't get into.
+context after: But, if we connect the load, bingo, we've got that uh lower frequency uh switching ripple as well due to the high pulse currents actually or high uh transmission driving currents going into that load.
+
+[1320] EEVblog #1320 - Premature Oscilloscope Triggering — Dave Jones (opinion)
+context before: And those little glitchy things picked up by in this case poor probing, but adequate probing for the task at hand. You know, just really just looking at in this case I'm just troubleshooting the PCB.
+TEXT: You'll have to support us seeing the other video to know what I'm actually doing here. And you know, it's like adequate probing for just you know, probing around. We don't necessarily care about signal integrity.
+context after: Just making sure signals are there. You know, and they're doing the right thing and stuff like that. So, yeah. But you can come a cropper when you try and trigger off something like that with nearby magnetic components which then couple into your ground system.
+
+[1239] EEVblog #1239 - Mailbag — Dave Jones (opinion)
+context before: Just goes over to a custom non-standard uh pinout here on a nice, um you know, the old uh kind of like Centronics type uh parallel interface. Nice big reliable uh you know, board-to-board interconnect thing.
+TEXT: That just goes straight in there. There's a little little fiddly piss-ant fan in that thing. Oh, jeez, that'd be horrid, wouldn't it? That'd wear a bit, and up to yeah, signal integrity be damned, of course.
+context after: They don't care. None of that uh controlled impedance rubbish. Just goes straight over. Yeah, because it's not an IDE to SATA interface. So, this is just purely a connector interface.
+
+[1028] EEVblog #1028 - What's All This PC/104 Stuff Anyhow? — Dave Jones (opinion)
+context before: See if we get lucky. All right, are we feeling lucky, punk? You've got to ask yourself one question. Do I feel lucky? Well, do you, punk? Switching on. Uh Yes!
+TEXT: We're in like Flynn. A little bit, how you doing because uh you know, we've mucked up the signal integrity just a tad, but it boots, no worries whatsoever. Main processor ALI M 6117, screaming 40 MHz 640K.
+context after: No one will ever need more than 640K. EMS, you remember when you had to use EMS? That was uh those were the days. Okay, so we can fix that uh display.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (opinion)
+context before: This is an This looks like for all the world, and it is an RC discharge curve. So, there you go. What's that, you know, 10 nanoseconds per division? I don't You can work that out, whatever, for those playing along at home.
+TEXT: But you can see how the resistive probe actually completely changes the circuit that you're actually measuring. So, sure, let the signal integrity is excellent. Let's Let's take a look at this, actually.
+context after: If you have a look at the bottom here, you can see that both of them undershoot almost exactly the same. But you remember how I said that the resistive probe can actually be more tolerant of longer ground leads.
+
+[1718] EEVblog 1718 - Cheap 1GHz Oscilloscopes are Useless? ($5 DIY 1GHz Resistive Probe) — Dave Jones (opinion)
+context before: I don't You can work that out, whatever. For those playing along at home. But you can see how the resistive probe actually completely changes the circuit that you're actually measuring.
+TEXT: So sure, like the signal integrity is excellent. Let's let's take a look at this actually. If you have a look at the bottom here, you can see that both of them undershoot almost exactly the same.
+context after: But you remember how I said that the resistive probe can actually be more tolerant of longer ground leads. I think they're both about the same length. I think they're practically near identical.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (opinion)
+context before: There you go. They talk about split return paths here. So, if you've got your never split your ground planes. If you add a little cut out in your ground plane like that, not a physical cut out, a routed out part of your board, but if you if some reason didn't flood fill your ground under there, and it's going to take a longer path, you've just ruined your day right there again.
+TEXT: You've ruined your timing budget. You've ruined your signal integrity. You've ruined everything. And well, yeah, they're going to sack your ass because you didn't know how to lay out boards.
+context after: So, there you go. I hope you liked that video. Can't as I said, can do video whole video series of just on signal integrity, just on doing analyzing DDR timing budgets and and things like that.
+
+[1462] EEVblog 1462 - Why Dymo Label Printers SUCK! — Dave Jones (opinion)
+context before: I've got the I squared C decoding on. I'm not sure if I've got it absolutely correct yet. There seems to be like a little runt pulse in there. That's only 500 nanoseconds, so I'm not sure what's doing there.
+TEXT: I did change the sample rate and it didn't seem to make a difference. It's still capturing it. I mean, I've got really short leads, so I don't think there's a signal integrity issue there.
+context after: So I believe this line here is the interrupt line, but unfortunately it's got a fairly the chip has a fairly complex interrupt controller in it. So it we don't like it's fully firmware programmable to do a ton of stuff.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (opinion)
+context before: So, for example, with a 0.5 V per second edge rate and a 50 mV VREF noise, it's it's 200 picoseconds of And there you go. It's extremely important aspect of DDR SDRAM design.
+TEXT: When laying out the trace, it should be as wide as possible to reduce inductance on the line. So, really, here's where signal integrity does matter just on getting your voltage reference.
+context after: And I've done DDR designs where I've decoupled and inductor isolated the V ref to buggery because it it it matters. And then they tell you about the space into adjacent signals from the V ref cuz you typically want to keep your V ref isolated from crosstalk from other signals as well.
+
+[1496] EEVblog 1496 - Winning Mailbag — Dave Jones (opinion)
+context before: Yeah. And I I had these capacitors and resistors for um the USB signals, and I just removed them, so it went back down to USB 2, and it worked fine.
+TEXT: Nice. Oh, okay. So, it was a signal integrity thing, you think? Oh, okay. Well, that's even this is not going to help with that, unfortunately. It's too higher frequency stuff, but yeah.
+context after: Nice that you figured that out. And yeah. The job's back down. Awesome work. Anyway, thank you. So, enjoy the scope. Yeah. Fantastic. It's got some probes with it as well.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (opinion)
+context before: They are thicker than your other signal lines going signal lines going around here like this. This means that they're obviously doing like a controlled impedance trace cuz there's a big ground plane underneath here.
+TEXT: So, you can see see that there. So, signal integrity is another thing entirely even on this which I've done a video on like a removing bypass capacitors months in on a board like this.
+context after: Does it have an effect? Well, on on something like this DDR level memory on your computers that you're familiar with? Um yeah, it's a big deal. Signal termination, signal integrity, stuff like that.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (opinion)
+context before: This is just something I slapped together willy-nilly and this is the result that we actually got. This is fascinating, right? They both undershoot exactly the same but the active FET probe, the orange one, actually look it overshoots again when and it takes much longer to recover than the resistive probe.
+TEXT: Look at that. So, this could be an example of where this cheap ass do-it-yourself resistive probe is actually outperforming this $2,500 active FET probe in terms of signal integrity.
+context after: But once again, this is not a completely controlled experiment. But this is what you can actually get. But of course, the limitation is that it loads it down much more.
+
+[1347] EEVblog #1347 - SMD Thermal Jumpers could be GAME CHANGING! — Dave Jones (opinion)
+context before: And then of course because the copper's on the outside of the PCB, it's actually more readily available to transfer. It doesn't have the insulative properties of the fiberglass wedged in the middle of the PCB.
+TEXT: So having your copper on your top or bottom layer, your big ground plane is much more effective. But then you've got to take signal integrity into account and all that sort of stuff.
+context after: But let's assume that thermal is one of your major priorities and you want and you want to or need to just use your ground plane. Well, if you've got your traditional method like this, you can't because this device that you're using can't be electrically connected to ground or power plane because it'll short out because the tab on the device is electrically it's the V out pin or
+
+[936] EEVblog #936 - Mailbag — Dave Jones (opinion)
+context before: There's got to be a point where that becomes like pointless. You got to have them directly on the back. Well, it would be under there if Yeah, but there's nothing under there.
+TEXT: Trust me. And they've just whacked them in a line like that cuz that looks nice. With you know, signal integrity. That's not the best of bypass layout I've seen, let me tell you.
+context after: They should have been on the bottom. And considering that they double-sided load with those switches anyway. So, yeah, not sure what's going on there. It's a bit how you doing.
+
+[p-eLu1z7-cs] Rigol HDO1000 Serial Boot Capture for Hack + R&S MXO4 play — Dave Jones (opinion)
+context before: Is it? What's going on there? That's interesting That's an interesting quirk. That's got to be a quirk. Check it out. Yeah, look. That looks absolutely fine. That's it So, I'm one one meg points memory.
+TEXT: Okay. And then boom, it goes like that. So, it's hiding. Maybe all that's there, you know, cuz our signal integrity is like really poor here. Okay, it's not great, right?
+context after: So, I expect kind of rubbish, but why does it take it away at the shorter time base like that. That's interesting. Anyway, we definitely have serial stuff here, okay?
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (opinion)
+context before: It's just the analog capability there. So, I can change that to 15 meg and let's see if we can repeat that. Can we? Whoop. Whoop. Whoop. Whoop. Whoop. It's not working now.
+TEXT: I've got a signal integrity issue. There you go. Works at 1 meg. Doesn't seem to be working on the extremes. Let's try 10 meg. No, it's not working at 10 meg either.
+context after: So, yeah, that could be a signal integrity thing. Oh, oh, there we go. I just lost my uh table. Single shot capture. No, see it it looks pretty good.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (opinion)
+context before: And so you can get in there and probe each pin. But, as it turns out, our the other end of the cable already has another connector on here. So, we can just whack some pins in there and then just probe them.
+TEXT: Easy. Signal integrity is going to be pretty awful, as I said, but hey, we're just looking for signal. All right, so here we go. I'm going to probe these again.
+context after: This is coming directly out of the Arduino board, and there's the first line, which is the colo line, and then we've got our latch signal, and then we've got our blanking signal.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (opinion)
+context before: If you were, and it was going over all these lines, and you get massive bouncing your ground like this, and yeah, that would really ruin your day. But luckily, you've got it coming from more locally from that relay driver board.
+TEXT: Anyway, but by the time the signal gets over to here, it's not going to look nice and square. I'm going to expand it here, so let me expand it.
+context after: This is the clock line. It's going to look something like my horrible drawing here. It's going to have lots of ringing on it. Okay? And then when it goes down here, you're going to get undershoot, and it's going to look something like that.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: It's just unless you absolutely have to, and you wouldn't have to on a four-layer board like this with just like what, you know, four chips on it, um no, you'd be looking to get 90% of this layout on the top layer.
+TEXT: All of your signal traces on the top layer. 5 or 10% tops might drop down to the bottom layer. You'd have no signal traces on the inner layer. And there'd be no even if you were needed high-speed signal integrity, as I said, you would go for uh your microstrip, which is uh the controlled impedance on the top trace and the ground plane underneath.
+context after: Or you can do it on the bottom layer, uh for example, but then you'd have to swap your you'd have to trade off the ground plane on a lower layer.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (mention)
+context before: I would have found that, of course, it was perfectly fine. And I was, you know, I I was trusting Jockey, and it sure enough, he was right. There's nothing wrong with the software at all.
+TEXT: It was working fine. So, it had to be a hardware fault like that. So, there you go. But, I thought, you know, oh, maybe it's a signal integrity problem cuz he talked about he put some termination resistors on the board, for example, and but didn't populate them on these ones.
+context after: And well, you know, that could potentially be like a signal integrity issue and stuff like that. So, imagine if I went through and started looking at all the timing diagrams here and all the protocol and everything else, and then finding no problem there, and then going on, you know, thinking confidently that I've already probed the chip in there, and everything and the hardware must be right.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (mention)
+context before: They you've got the transmitter skew here. You've got the PCB skew, which is the thing we're interested in, and the receiver skew as well. Like the internal setup and hold propagation delay times inside the chip and the transmitter as well when it's sending data back.
+TEXT: So then they talk about the signal integrity process. As I said, we won't talk about signal integrity, but it does impact these things. So anyway, in this particular case, they've got a 266 MHz period, which is a 3.75 ns half period because it's it's DDR, double data rate.
+context after: So we've got a setup budget of 1.8 nano 1.875 ns cuz we're working 1,800 ps. We're now down in the picosecond region here, right? This is This is real engineering.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (mention)
+context before: It was still niggling at me, and I didn't go off willy-nilly. I could have spent all day, you know, mucking around checking these protocols and timing everything. That was going to be the intention of this video.
+TEXT: I came back today and I went, "Well, okay, you know, look, I'll I'll hook it up." And I went to the trouble to get my scope out. I hooked up my probes and everything down here, and I was ready to go into that and maybe some signal integrity stuff if I got that far.
+context after: Oh, what's it saying there? There you go, Shack Space. Mate, I I might leave that in there. Got to advertise the guys. So, all those different things add up to lead you down the garden path to think that you've A, checked it, and B, it can't possibly be that.
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (mention)
+context before: The PCB designer, if they knew, you know, designer layout, which a PCB designer often does, although not always. I've worked with top-notch PCB designers who come from a drafting background.
+TEXT: They've got no electronics knowledge at all, but you pick up, you know, you do pick up stuff over the years. This is back when, you know, things weren't as advanced as they are now, and you know, you got to understand signal integrity and all sorts of stuff, right?
+context after: It's not that an engineer can't do a PCB layout. It's just it helps if you have. So, there was probably no pushback from the PCB designer going, "Hey, look, come on.
+
+[VTAwzrKPjeE] Nixie Tube Display ESP8266 Wemos D1 Mini Testing — Dave Jones (mention)
+context before: Sorry, I'm not... don't use my Saly logic analyzer much. It's pretty handy. It's good for... These USB logic analyzers are really good for desktop stuff like this, you know? Like, I have a scope here, like in a box, but I'm at the office at the moment, not at the lab where all my gear is.
+TEXT: So when you're just working on little embedded micro stuff like this, you know, you don't want a big scope on your bench and stuff like that. What a... you know, unless you're looking at signal integrity and stuff like that. So this thing works quite well.
+context after: It takes up zero footprint. You just plug it in. I'm going to go into my USB hub on the desk here. There's no power plug packs, nothing. It just works. It's great. Anyway, sorry for the lack of content recently. I have been busy with the multimeter stuff and things,
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (mention)
+context before: If you stitched all these pins together, and did this on a four-layer board, you wouldn't be getting stuff or you know, it's it's much more minimized this sort of switching effect.
+TEXT: I mean, you know, have a look at the size of those excursions. And yes, I've put the bypass caps back. Okay, the first thing we're going to do when we're actually probing something like this, we care about signal integrity.
+context after: And signal integrity has to do with the types of probe you use and the probing technique you use. So, the first thing you want to do above everything else is get rid of this antenna ground lead cuz that is an inductor.
+
+[6qjqhnQiQXQ] How to Measure Oscilloscope ADC Dynamic Range — Dave Jones (mention)
+context before: Um and then we can actually set the uh peak-to-peak voltage here. Now, make sure you use the high uh Z or high impedance output. You don't want the 50 ohm termination cuz if you've used the 50 ohm termination, then uh you have to factor in uh the accuracy of the 50 ohm load termination and the actual divider and the 50 ohm output in this and all that sort of stuff.
+TEXT: So, I prefer to use You can, but I prefer to use the high Z. We're not talking about anything high frequency here, so we don't have to worry about any of that um you know, signal integrity uh stuff.
+context after: So, um high impedance output mode uh 1 kHz and I've actually got an 8.6 V peak-to-peak signal here. But, let's take this up to say 10 V peak-to-peak here, okay?
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (mention)
+context before: If traces just cross like that, the crosstalk's very little because there's little mutual capacitance between them. But when you're running buses like this all the way up, then the crosstalk can be very serious.
+TEXT: And we won't go into differential mode, common mode. We get into signal integrity. Come on. And coupled circuits is all just part of that. We won't talk about crosstalk effects, blah blah blah.
+context after: VREF noise, that's a thing. As I said, the termination the volt is terminated to a mid-rail voltage reference. You can actually get specific voltage reference DDR termination chips that are actually designed to do this.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (mention)
+context before: You've ruined your timing budget. You've ruined your signal integrity. You've ruined everything. And well, yeah, they're going to sack your ass because you didn't know how to lay out boards.
+TEXT: So, there you go. I hope you liked that video. Can't as I said, can do video whole video series of just on signal integrity, just on doing analyzing DDR timing budgets and and things like that.
+context after: Anyway, I hope you learned something from the video. And if you did, please give it a big thumbs up. And if you want to see more videos of, you know, more specific stuff like this thing, please let me know.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: the length of the pair but they're also adding the little single-sided wiggle in there to tweak and match um the individual pair it's each line in the individual pair.
+TEXT: So that trace there with the wiggle in it is designed so that it exactly matches the length of its companion differential trace next to it. Classic you know high-speed signal integrity layout.
+context after: They've done it perfectly and of course this board would be multi-layer probably six or something like that. They might have even got away with a four-layer on here and that would be controlled impedance.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (mention)
+context before: Something reasonable. Don't set it to like 0.01 mm, half a bee's dick, cuz the software's just going to go can't do it. Sorry. Yeah, it's Don't gild the lily there.
+TEXT: But that's all you have to do. Just do that. Know it's critical. Put it in and then you've got other signal integrity things to worry about. In fact, it might tell you that Yeah, it does.
+context after: There you go. They talk about split return paths here. So, if you've got your never split your ground planes. If you add a little cut out in your ground plane like that, not a physical cut out, a routed out part of your board, but if you if some reason didn't flood fill your ground under there, and it's going to take a longer path, you've just ruined your day right there again.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (mention)
+context before: Once I thought about it, you know, it must be the clock. And I I got lucky. It might not have been. It might have been something other weird of screw-up.
+TEXT: Could have still been the protocol or the signal integrity or something like that. Would have been much harder to find that. And that's what I thought this video would end up being.
+context after: It's already been going like 40 minutes or something in this video. Crikey. Sorry about that. But anyway, this is my basically real-time investigation. You followed me through of me debugging this thing.
+
+[1608] EEVblog 1608 - Mailbag — Dave Jones (mention)
+context before: That's off. Anyway, let's power this thing up cuz this thing's quite remarkable. Um I even saw a new thing apparently where you can like plug a probe into this thing and you can instead of pro you can program it by probing things and then it sets up the the analog matrix down here.
+TEXT: Apparently, it's got only a 1 MHz uh switching uh frequency uh up to uh well, signal integrity up to uh plus minus 8 uh volts. So, but that's that's good enough for Australia.
+context after: Um so, speak you know, when you're dealing with problem red balls Look at this. I'll turn the studio lights off. Sorry about the black solder mask, um but this thing this thing actually lights up.

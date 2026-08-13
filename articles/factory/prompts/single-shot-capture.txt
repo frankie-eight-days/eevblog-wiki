@@ -1,0 +1,488 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: single shot capture
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 91 passages drawn from 58 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# single shot capture`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1324] EEVblog #1324 - Oscilloscope Reference Waveforms are USEFUL — Dave Jones (explains)
+context before: 
+TEXT: Hi, just a quick oscilloscope tip video. Now, modern digital scopes are of course very handy because they've got single shot capture capability and allows you to capture multiple waveforms and display them on the screen and of course get time correlated information of how they switch between one another like this and then you could go in there and look at the timing differences and count your divisions and use your cursors and
+context after: do all sorts of other measurements and of course modern scopes I recommend like a four channel scope uh these days because well, even entry level ones like sub $400 scopes there, you can get like four channel ones.
+
+[1638] EEVblog 1638 - NEW Keysight Megazoom V ASIC 1GHz HD3 Oscilloscope! — Dave Jones (explains)
+context before: So, I've set up one meg points here at 3.2 gig samples a second here. But the problem is when I actually stop that, I'm only getting the 32K of information that's on the screen.
+TEXT: I'm not getting the full one meg points, which it's actually defined up here. So, to do that, you should have to do the single shot capture over here. So, presumably what that means when you're actively running like this and say you're getting measurements like this, it's only doing the measurements on the screen data, which seems to be 32K points because that if I stop it and I
+context after: save the data, then that's what that's all that like actual binary data, that's all the data that gets saved. Even though I've specifically manually set one meg points here, it just won't do that.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: Hi, the humble oscilloscope. You're used to using it every day and if you're doing, say, troubleshooting a specific signal that you're trying to measure and seeing what's going on your circuit because it might be playing up, you're used to setting up your oscilloscope to capture a signal.
+TEXT: You'll set your horizontal time base to what you want. You'll set your vertical time base to what you want. You'll set your trigger level to exactly what you want and then you it might single shot capture it, for example, or you might do a run stop and you might even set it to maximum memory depth here, for example, just in case you want to zoom in on the data and see
+context after: extra detail. And when you hit single like this, bingo, you've captured your data. Fantastic. And you can zoom in, of course, to your heart's content because you've got a massive 200 meg of memory or whatever it is you've got these days.
+
+[1221] EEVblog #1221 - Mailbag Monday — Dave Jones (explains)
+context before: This, it's on the GitHub and he's used a JMW on the forum and it works currently with that Keysight MSO 1000-6000 series, Rigol MS and DSO series scopes, excluding the new one, I guess. Anyway, you're supposed to just be able to plug it in and then go, "Hey, Snips."
+TEXT: See, it just came on, "Hey, Snips," and it recognises, oh, don't know why it's flashing twice. Anyway, so it seems to be working so far and you just go, "Hey, Snips," single and it puts your oscilloscope in single shot capture mode. That's the idea behind this and it's got a whole bunch of different commands, run, stop, single, all that sort of stuff.
+context after: So, you know, hide external trigger, show digital zero, zoom in, zoom out, set time base to 100 nanoseconds. I wonder if it's going to... Recognise my Aussie accent. She'll be right, mate, no worries. Of course, the whole idea behind voice probing your oscilloscope is if you're probing your board, imagine there's a board there and you're trying to dick around.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: It's useful for repeatable signals that are repeatedly triggered and they have random noise on them. It reduces that noise right down, whereas high resolution mode, even though it's doing averaging, it's doing a different type of averaging called boxcar averaging in single shot mode and it's high resolution doesn't give you any real value there, but averaging does.
+TEXT: So averaging is the mode to use when you've got random noise that you want to take out of a periodic signal and that's the key, a periodic signal. And that is why if we actually single shot capture this, you'll notice that our waveform is still noisy because the averaging mode at the mathematical averaging mode does not work in single shot mode.
+context after: It relies on those averages. This case I've got it set to 8,192. So it'll average 8,192 complete waveform samples to give us that very nice looking thin line that we've got there.
+
+[1536] EEVblog 1536 - How to find a $50 Oscilloscope on Ebay (Part 3) — Dave Jones (explains)
+context before: Yes, you can get the $50 scope. It is it it is still possible. They've got make an offer there. Offer them 150, like they've already reduced the price from 229 to 195 because a digital scope is going to be much more useful, of course, than an analog one.
+TEXT: Even an it's I said this on the forum, even an advanced analog one, you know, with your dual time bases and your high bandwidth and everything else. I would rather have a really low-end digital one so they can do single shot capture than have you know, a top-of-the-line bells and whistles 2246, you know, Tek, you know, bells and whistles scope.
+context after: The digital storage is more useful, but you know, if you're on a real budget, then you can easily pick up something useful for under 100 bucks. Easy. Even Even for that 50 bucks.
+
+[1228] EEVblog #1228 - Do Digital Scopes Have REAL Verniers? — Dave Jones (explains)
+context before: And the so, you know, the joints might be a bit how you doing, but as long as they're touching, so we just take the stress off those, then we just have some uh flywires coming out we can touch with our regular probes, uh either scope probes or logic analyzer probes.
+TEXT: Beauty. I've got uh three signals. Channel one's data, channel two's clock, channel three is the latch signal, and I've got it set up for normal triggering here. You don't want it in auto mode because then you'll just uh continually get your signals and you don't want to always be single shot capturing this.
+context after: So, you want normal mode so that you can run it and then every time you get a signal like this, bingo, it triggers like that and we can see it over here.
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: But I just thought that I'd show an example here of how it can be a little trap unless you're at, if you've got high-frequency noise superimposed on a low-frequency signal that you're looking at. Now, in this case, I've got a couple of signals here which I'm capturing.
+TEXT: They're very slow, 100 milliseconds per division in there, right? So a relatively slow changing signal, which we're going to single-shot capture. So let me single-shot capture that, and bang! OK? And it looks, both of these curves look quite smooth and nice, OK? But when you zoom in, look at that, see?
+context after: Only when you zoom in can you see that noise on the signals like that. But when you zoom out, like that, you don't actually see it. It looks smooth as a baby's butt. But if you turn off high-res mode and you go into normal mode,
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (explains)
+context before: So, to increase that resolution, what we can do is we can get it so that both of these are on screen. If no, that's not I'm going to have to go down to time base like that.
+TEXT: Okay? And then we can single shot capture that. Okay? And then if we center it like that where it's zero there, and then we can just bring this over, and instead of just measuring it like that and get our point, you know, be happy with our 0.2 microseconds, we can increase our time base like that.
+context after: And go in there, and you'll see that now it's finer. So, we've got 94. So, what's that jump in at 0.08? I think. Yeah, 0.08 microseconds there. So, we can actually get just a finer resolution there.
+
+[1221] EEVblog #1221 - Mailbag Monday — Dave Jones (explains)
+context before: So, you know, hide external trigger, show digital zero, zoom in, zoom out, set time base to 100 nanoseconds. I wonder if it's going to... Recognise my Aussie accent. She'll be right, mate, no worries. Of course, the whole idea behind voice probing your oscilloscope is if you're probing your board, imagine there's a board there and you're trying to dick around.
+TEXT: Well, you know, you've got your tongue at the right angle, you're probing the pin like this and you've got your one hand over here operating your oscilloscope and it's a real pain in the butt. Wouldn't it be good if you could just go, "Hey, Snips," single and it's set to single shot capture mode.
+context after: That would be pretty cool. Well, let's try it out. Complete board for those playing along at home, can't see what that micro is down in there, so it's just hard to read these chips on the stupid camcorder LCD. Anyway, yeah, that's all you need.
+
+[1235] EEVblog #1235 - How To Align Signals On A Digital Oscilloscope — Dave Jones (explains)
+context before: Let us know if your one has it. But anyway, this does the business without having to muck around with your triggering. Because by default when you enable a dual time base scope, it has a separate trigger for each one.
+TEXT: It's actually triggering off channel one and channel two totally independently. So technically dual time base scope is better than the alternate trigger system because if now if we actually single if we stop that or if we single shot capture that, we'll actually get both at the same time.
+context after: Oh, single shot capture. Come on. I'm pressing the single button. I swear. Single. Function is disabled. You can't Oh my goodness. I I hadn't used this scope in depth.
+
+[RuIBgQP5tAQ] Rohde & Schwarz RTB2004 Oscilloscope Slow Timebase Trigger is Cool — Dave Jones (explains)
+context before: I I don't know. Leave it in the comments down below. Um but yeah, this is bloody useful. I like it. Anyway, let's well, actually I'll yeah, I'll just No, no, no, we'll go out with the timer.
+TEXT: Here we go. Okay. So I'm going right, I'm already in single shot capture mode so obviously if I do my trigger thing, that there you go. It triggers. It hasn't shown the first half yet but it shows the second half and then when it's done, it boom, it shows the first half like this.
+context after: Okay, complete. Everything's hunky-dory, right? So watch this, right? So we'll push our single button and watch what it displays here. This is great. Not ready. Pre. It says pre trigger time.
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (explains)
+context before: It's more better, huh? And we're now point 04 point Yeah, point 04. It's jumping in resolution there. So, that's just a way to get a slightly finer or greater resolution measurement there like that.
+TEXT: And that's 94.32 microseconds. And we can take that figure and we get like 33.9. So, we can actually get a little bit more equal bit more resolution out of it there by single shot capturing expanding it and then shifting the waveform over and then choosing a reference point.
+context after: It's easy just to get the you know, the center of the screen. And yeah, you can get a bit better that way, but but here you're saying, "Dave, those four or five ways isn't enough.
+
+[HN_eeI12qZw] The R&S MXO4 is too powerful for its own good (and Dave's sanity) — Dave Jones (explains)
+context before: Yeah, record length. There you go. That's why they tell you the record length. 20K points, 4 gig samples. So it's only, you know, it doesn't tell you the It'd be nice if it told you up there what the waveform acquisition, but I guess you can tell by just looking at it.
+TEXT: So yeah, it will I'm pretty sure when it gets down to zero, it will stop there. So that's really cool. You can go like you can If you're trying to debug something, you can uh set it up and then you know you know, it might come in the next you know, 10 minutes or whatever.
+context after: Then you can just press your single shot. You can walk away, come back and and and stop. Yes. There we go. We got it. Okay. So now we're in our Yeah.
+
+[368] EEVblog #368 - EPIRB Teardown — Dave Jones (explains)
+context before: It's neat. All right, let's see if we can capture something in test mode here. I have no idea what it's going to give out or do anything at all or how to trigger.
+TEXT: That's why you got to experiment with these things to find out. So, I've got the channel one connected to the antenna output there. Single shot capture. We've got 100 milliseconds per division horizontal and one volt per division vertical set to trigger just above that.
+context after: So, eh let's give it a go. Let's press the button and uh see if we can trigger something. Up, there we go. We got something. There we go. We got a spike and then boop another little another little So, that's clearly above 1 V per division.
+
+[1638] EEVblog 1638 - NEW Keysight Megazoom V ASIC 1GHz HD3 Oscilloscope! — Dave Jones (explains)
+context before: So, what I've done is I've actually inputted my own signal now, and I've just I've put it I've run the auto setup here, and it's it's going and doing all sorts of stuff, and actually trying to figure out and populate the values for me.
+TEXT: And it's starting and stopping it, and it's doing single shot capture, and it's doing See? It's just jumping over, doing all sorts of things. So, it's Of course, it's going to pass everything cuz this is like my reference waveform that I'm actually programming in.
+context after: And then, uh you can once you've got that reference waveform cuz see, you're trying to find an elusive uh fault in usually a stable uh you know, some sort of stable clock uh for example, the clock might be doing something weird uh just once every blue moon, and you want to capture that.
+
+[383] EEVBlog #383 - Agilent 4000X Oscilloscope Review — Dave Jones (explains)
+context before: there's funny business, you see it over here as well. Being able to trigger off that particular point would ordinarily be, you know, not an easy task to do at all. I mean, you move your trigger up here, and it's just flipped it around to here,
+TEXT: and, you know, that won't allow you to single shot capture that thing. I mean, if we just go a single shot mode, and then just go bang, bang, bang, we're never going to capture that. Well, we might, eventually, if we can see something on the screen like that.
+context after: So let's try and trigger on that. So let's draw a little window around there, and it pops up with these rather convoluted at first options. It's got two different zones you can set up. So you can set up a scenario, like an and-or type scenario between the zones.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: So, we're only capturing 50, 100, 150, 200, 250, 300, 350, 400 microseconds worth of data. 400 microseconds before of data. Do the exact same thing, but press single. So, same time base setting, same everything.
+TEXT: We're in auto memory mode. So, zoom out like this, and 100 microseconds per division. So, it's gone from 400 to 100, 200, 300, 400, 500, 600, 700, 800. It's doubled the amount of data that we've captured in single shot mode than it does in run mode.
+context after: So, this is actually particular to the Keysight's scopes and the MegaZoom 4 ASIC and the capture architecture that they're using inside the scope cuz all scopes are designed differently.
+
+[1324] EEVblog #1324 - Oscilloscope Reference Waveforms are USEFUL — Dave Jones (explains)
+context before: We're good to go. So, we now have a rising edge reference point, which will be our power supply that we can trigger off and then get time correlation uh between any other signals we want to probe.
+TEXT: Now, of course, we can just probe them one at a time and do a single-shot capture like this, for example, and we get this waveform here, and then we do another one, and then we single-shot capture again, and then we probe another point here, okay?
+context after: But, we can see those waveforms, but the problem is, of course, that we're not going to be able to see the time correlation between them because we have to trigger from the waveform under test.
+
+[EVRdTY4LNhg] Rigol DHO800 Disappearing Waveform BUG — Dave Jones (explains)
+context before: Hi, just trying to reproduce another Rigol bug here. Once again from Surge65536 on the forum. Thank you very much. And he's done a video showing it. And yes, I am able to reproduce it. So what I've got here is I've got the memory set to 25 megapoints here.
+TEXT: I've just got channel 1 enabled like this. And I've got it set to actually, let me turn that back to 500 milliseconds per division. We'll go single-shot capture. And we'll just go... So we get some, well, 200 millivolts per division. There we go.
+context after: Okay, so we captured some data. Whoa! Whoa! Okay, right. So we captured some data. Okay. Not sure what it was doing there. Maybe it was just the time it took to process and update the screen. Anyway, we can make it. This is my first experimentation with it.
+
+[926] EEVblog #926 - Introduction To The Oscilloscope — Dave Jones (explains)
+context before: Except it's got a lot more measurement functionality and things like that, but there's one crucial difference between the digital and the analog oscilloscope. The digital one allows you to store the waveform and analyze it.
+TEXT: So, it allows you to freeze it and then work on the signal later and debug it and analyze it, but it also allows you to capture single-shot events, i.e., events that only happen once, whereas an analog oscilloscope won't be able to capture that.
+context after: So, if you have a look at a very slow 1-Hz signal on an analog oscilloscope, you can see that you can just maybe see a trail going behind it there.
+
+[HN_eeI12qZw] The R&S MXO4 is too powerful for its own good (and Dave's sanity) — Dave Jones (explains)
+context before: Uh, this is really annoying. I press run, of course. I'm running. I'm measuring a signal here. I press stop. It stops, right? It still shows the uh historical waveform, but then you can if you change the horizontal um it Okay, all good.
+TEXT: Single shot capture. Uh, where's my single shot capture? I just want to press the single button and get a single shot capture. It's not It's running. Huh? If I get my uh Rohde & Schwarz RTB uh 2000 over here, run stop mode, okay, I'm running.
+context after: There's my waveform. I press my single single button, and I get it stops. Exactly what I expect. Oh, I just realized it's like turning on a history mode up here.
+
+[368] EEVblog #368 - EPIRB Teardown — Dave Jones (explains)
+context before: It's chopping back and forth because look at what's happening on the scope over here. It's jumping all around. So, we can get a better look at that if we go into single shot capture mode instead of just continuous mode.
+TEXT: So, if we hit the trigger sweep button here, it gets us into the trigger sweep menu and mode. We're in continuous mode at the moment but let's go into single shot capture mode and bingo, we've captured that and you can see our carrier here.
+context after: As you can see, center frequency 121.53 megahertz. There it is. So, we've got that no problems. Let's go into trigger sweep again. Let's turn that back to continuous. Okay, it's jumping all around the shop.
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (explains)
+context before: that's actually capital E, if you can see that. Sorry about, uh, you know, if you're not viewing this in HD. Contin- now, to continually trigger off, it doesn't start here, because you remember, our trigger points are actually in the middle of the screen.
+TEXT: Can we get rid of that? Trigger points in the middle of the screen, that's why our E is here, like this. But this is continuously triggering, so I can single shot capture that. Boom. And it's going to appear in the middle. So, like that.
+context after: And then, of course, we can use the cool history mode. We're only capturing one history like this at the moment, um, but we can actually go in there and set our N single count, like that. Let's say we wanted to capture, I don't know, 50.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (explains)
+context before: You just set the level, Bob's your uncle. So we can set our two levels for runt there and our lower level is around about there. No worries. And bingo, there's your runt pulse.
+TEXT: And of course, you can single shot capture that every single time. So you don't need an expensive scope to get these sorts of advanced trigger capabilities. It's They're now available on the absolute bottom of the range sub $400 scopes.
+context after: Brilliant. You just know how to need to know how to use them. And again, to find the runt pulse in the first place, it doesn't matter if you have a fast updating scope or not.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: I'm going to Sorry, you won't be able to see it. You will be able to see that now. Okay, it's just above the sine wave there, so it won't trigger on that.
+TEXT: And we'll go must intersect zone one, zone two must intersect. They've actually copied Keysight here like practically completely. And there we go. So, if I go to single shot capture, it should sit there and wait until we get a pulse.
+context after: Bingo. And we're in like that. And there's our little glitch, which we captured with our zone triggering. So, that's very cool. That seems to work fine. But, as I said, update rate not as fast as say the Keysight at its white maximum 1 million, this is like almost 10 times less than that.
+
+[771] EEVblog #771 - Electronic Safe Lock Powerline Attack Part 2 — Dave Jones (explains)
+context before: that! Wah, that's interesting. So once again, I think we've been duped by the time base there, so let's actually try that again. I'll just do the correct sequence just so I don't accidentally lock myself out or anything dumb like that, okay? So now we'll do the incorrect sequence
+TEXT: again. Five, and single shot capture, and seven. So we're at a slower time base now, so then we can scroll, we can now move that back, because we've got the detail to do that now. And, ah, that's where it starts. So it's got
+context after: yeah, look, it's got a funny little, funny little jaggy there, and it doesn't line up in time well, actually I'm not going to say it doesn't line up in time sequence, because it does if you align the start there, that certainly lines up, but look, that's different, okay?
+
+[1493] EEVblog 1493 - MacGyver Project - Part 2 — Dave Jones (explains)
+context before: It's not great. So, yeah, it's a bit how you doing, but you can see the signal. So, no worries. So, that's our clock. And then our data is the pin next to it.
+TEXT: And it's more randomy. Ooh, that's Oh, hang on. That's the trigger level. That's the trigger level. That's all over the shop, isn't it? That's everywhere. Yeah. Wow, so they're really So, we can single shot capture that.
+context after: If we just single shot capture it a couple of times Oh, hang on. I got to put it back in the middle. There we go. There we go. It change It'll change a few times cuz we got different displays.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (explains)
+context before: Is that what? You can't do what? Why is it doing that? Anyway, um yeah, that's our typical piezoelectric shock response, which we get on almost every scope, but jeez, that's Oh, there we go.
+TEXT: Now you really need the high-frequency metal-on-metal like that, but I don't understand what's going on there. It shouldn't do that in normal mode. You should just get normal mode is basically a single shot capture.
+context after: Uh I don't get that at all. It's gone through and it's not disarming the sweep, and you only ever get two of them. I don't get it. Don't get that with the Rigol.
+
+[1552] EEVblog 1552 - Digilent Analog Discovery 3 — Dave Jones (explains)
+context before: just have DC. Anyway, so let's ramp up at a rate of 1 hertz. Period. 1 second. Amplitude. Okay, let's go from 0 to 1 volt. And, uh, 2.5 volts offset. Well, we don't want any offset, do we? And we don't want sinusoidal. What we want is a ramp up.
+TEXT: There you go. So we, they've already, they've put that in there for us. Awesome. So we want it to ramp up. So now, we want a single shot capture on our scope our voltage ramp. Now, I've got to tie the inputs so that
+context after: we can use our channel 1 to measure our power supply. Yeah, here's where I would have preferred the silk screen on the top here. So, our channel 1, the orange one, we want to connect through to our V plus there. And because this is a
+
+[14] EEVblog #14 - An unusual oscilloscope phenomenon! — Dave Jones (explains)
+context before: We had an oscilloscope special last week, so I thought I'd show you a really interesting phenomenon. Now, what you need is an oscilloscope, digital storage oscilloscope, 100 MHz bandwidth, the higher the better, but you can do it using a 100 MHz bandwidth scope.
+TEXT: So, I've got a TDS 220. You need a standard times 10 crow pro and short the input just like that. And set your scope up to single shot capture, 10 nanoseconds per division, and maybe 1 V um per division vertical.
+context after: But, you can go a bit lower than that if you can't get the phenomenon as easily as I'm about to show you. I'll explain it all later. So, I'm going to put the oscilloscope down here on the bench and I'll show you a close-up of it later.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (explains)
+context before: Let me show you. Okay, the exact same signal on the Agilent, and adjust our trigger level up, and boom, look at that, free running. You can't see that signal at all.
+TEXT: But of course, if you press stop, boom, we're straight in. You can see you instantly capture. Run, stop, run, stop. And that brings up another difference between these scopes in terms of how they operate.
+context after: Let's take that trigger level up, so it's not triggering at all, and it's just free running. Although it's not true auto update triggering as the Agilent is. Press stop, and you get all those multiple waveforms on the screen like that.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: All right. So, clearly what this is is the sample rate interpolation cuz at 2.5 gig samples per second, we're trying to measure that rise time, okay? So, we've got dots.
+TEXT: Let's, okay. Well, we have to single shot capture that to see that we haven't got many dots in there, okay? There's all our little dotties. There's all our samples and that's a 2.5 gig samples per second.
+context after: So, if we turn off the extra channel, which will give us five, you notice that it didn't change. It only changes when you do the new sample. Now, we've got double the amount of dots.
+
+[p-eLu1z7-cs] Rigol HDO1000 Serial Boot Capture for Hack + R&S MXO4 play — Dave Jones (explains)
+context before: Like And then, if you set it there, it doesn't actually tell you what it is down there. It just says user-defined. Anyway, that's enough quibbling with my minor things.
+TEXT: Let's put single shot capture. Well, let's turn the scope off first. Double-click of the soft power button does that. Okay, I've got positive edge trigger. I've got a slowish time base 40 ms per division.
+context after: Yes, it is 1 2 This is weird. Actually, this one does 1 2 4 and 5 sequence. 1 2 4 5. It doesn't do 1 2 4 and then 1.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (explains)
+context before: Yeah, something like that. Anyway, it's better than one of these pocket toy oscilloscopes having a real bench scope. There's no Uh there's no comparison. A dual channel 20 MHz analog scope infinitely more usable than one of these things.
+TEXT: Sure, the analog scope's not um single shot. You can't do single shot capture, but apart from that infinitely more valuable learning tool. But, apart from that, you should just get yourself a cheap DSO.
+context after: But, if you can score uh for free or for like 50 bucks or something uh or less a dual channel analog scope, definitely get one. The best learning tool possible.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: The output is actually switched on at the moment and as you can see, if you switch it off, up, run it. There we go. We can see our output and channel two is our output waveform.
+TEXT: So, our output voltage. So, we're smack on 30 volts there. And if we just single shot capture that, bang, there we go. We can see the rise there. It's got some little something happening down there.
+context after: I'm not sure what, but anyway, that's still there's no overshoot on that output at all. It's ramping up. The output ramps up to 30 volts and of course, directly controlled from the gate voltage.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (explains)
+context before: Anyway, pro tip put on some variable persistence like that's infinite. Put on some variable persistence like a second or something like that. We power that up, you'll see that you know like you can just you know see information pop up.
+TEXT: It just means that the information stays there on the screen a little bit longer. Okay, so a single shot captured some data there. What we want to do is go in there and just measure the board rate.
+context after: So this is where your cursors come in handy or you can just do it manually. You just need to be in the ball park here. So you can actually see that it's you know it's serial UART type information.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: It is actually noisier. So, I found these graphics from a Keysight article on the subject and I think it actually represents it quite well and explains what I'm trying to say here.
+TEXT: In high-resolution mode, it takes a single shot capture, i.e. in real time, and it takes all those samples like 10 or 12 here and gives you one and averages those and gives you one sample period.
+context after: But if you have a look at the graphic for the average mode, then the average mode works differently. It takes multiple waveform in this case and with an average value of four, takes four waveform captures, takes those four data points at each data point in your waveform, and then gives you one average value.
+
+[441] EEVblog #441 - How To Track Down Common Mode Noise — Dave Jones (explains)
+context before: Be careful. There you go. So, that's um we're getting very, very close to still one is a still a a burst in there that's triggering off that. So, it's obviously Well, probably we can move our trigger around and uh There we go.
+TEXT: We can single shot a capture off that. So, there is some another burst event coming in there, but really um that, folks, now we can at least get a more decent measurement of our power supply.
+context after: You can see how this is originally had a um a common mode noise source directly a switching power supply directly on there. We thought we eliminated the lights, but we didn't.
+
+[HN_eeI12qZw] The R&S MXO4 is too powerful for its own good (and Dave's sanity) — Dave Jones (explains)
+context before: I love the auto history function on this. It's absolutely brilliant. Every scope should have it. Um but, not automatically when you press the single button. Yeah, you can see that operation here, right?
+TEXT: I turn show history off, okay? And I press single button. Boom. It turns it back on automatically. Uh, uh I'm still not seeing like mode absolute No, that's not an absolute relative thing.
+context after: I'm not I'm not seeing a setting for it. Uh, uh All right, I think I figured it out. N single average count. There it is, 131,000. So, when you press I assume that means when you press the single button, it does it takes like 131,000 waveforms and and put you in history mode.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: We're doing some averaging as well. So let me turn off the averaging. I've got 50 averages set here which is a lot. So, if we just go into normal acquisition, that's what we're seeing here, right?
+TEXT: It's just higgledy piggledy like this. We can single shot capture that. So, if I set the single count back to one there, oh, just popped up. Um, and then I single shot capture that.
+context after: You can see what that waveform looks like there. So, um, yeah, it's not that great because, well, it's picking up all sorts of external stuff as well as a signal.
+
+[1183] EEVblog #1183 - RIFA Madness (Schaffner Repair) — Dave Jones (explains)
+context before: So, let's run that. You can see that's actually live. So, what we want to do is set our trigger point just above that. There you go. So, it's now free running.
+TEXT: We'll put it on normal mode. Then we'll single shot capture that. Now, if we trigger it, hopefully we'll capture something. That's the plan. Whoa, yep, got one. Something in there.
+context after: Let's say it doesn't look like there's anything in there, but uh-huh, because it's only a 100 nanosecond pulse, and we're currently at 5 ms per division. Bingo, there it is.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: By the way, this doesn't look nearly as good as the Keysight one. And bingo, we've lowered the other trigger level to below that, and it's triggered off the runt pulse.
+TEXT: So, yeah, it works. There we go. We've triggered nicely off our runt pulse, and then we can of course single shot capture that every time, and we'll capture that run every time.
+context after: So, that works. No worries. But why is that zone still there? Oh, I've still got zone triggering on there. Turn zone triggering off. Let's try that. There we go.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (explains)
+context before: So, it's mechanically coupled. Very Oh, wow. Very, very differently, but anyway. Now, this is interesting. If we try the uh Keysight one here, right? We got a similar thing happening in normal mode, of course.
+TEXT: But look, it I see it popped up with the multiple one the multiple waveforms there, but it figured that you're in normal mode and you wanted that single shot capture, right?
+context after: Because it's the high update rate, it's going to show the multiple things. So, maybe it the Siglent one, because it's 100,000 waveform updates per second, the Siglent, which is awesome, but it leaves the artifacts of the uh of the See?
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: Going right up here to the fastest time base. 5 ns per 1 ns per division. Yeah, right. Give me a break. Look at that. It's just It's pretty awful.
+TEXT: I've got it in single mode here, and it's in run mode currently. So, M over here will stop it. Okay, and then you press the start button here, which kind of makes sense.
+context after: Okay, you put it back into start mode, and it will apparently sit there and uh run, right? But, I think it occasionally captures a signal on there, right? Let's do that.
+
+[866] EEVblog #866 - Mailbag — Dave Jones (explains)
+context before: So, let's give it a bell and we'll be able to see I'll show you a closeup on the scope in a second, but bingo, there's the pulses. So, let's take a closer look at that.
+TEXT: There we go. You can see the frequency down the bottom there about 80 hertz or thereabouts repetition and we can single shot capture that. There we go. I captured that.
+context after: So, if we zoom in, bingo, we can see these pulses there. what uh you know 20 microsconds or something like that at uh where I'm at um 100 uh volts.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: So, and we've got all this nice, fast detail. Look at that. And we can just our trigger level here to look at some of the, you know, faster things.
+TEXT: But, of course, um, if you want to capture it, we can just single-shot capture that, and we can look at these fast transients that are happening on our 5-V rail there.
+context after: And this is going to be, you know, pretty close to what's there. So, as you can see, this is sinusoidal. It's ringing here. So, this is going to correlate, if you had some other channels and you hooked on, uh, say the, digital signals, this is where a mixed-signal oscilloscope would come in.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: So, it's going to be a little bit noisy, but there you go. Um, this is our clock signal down here. Obviously, like I can run this real time, right?
+TEXT: And you can probably just see, yeah, we're getting patterns like that. So, I'm single shot capturing this, and sure enough, check it out. It is It seems to be correct.
+context after: We've got our five packets of clock pulses. It should be eight. 1 2 3 4 5 6 7 8. Yep. And there's five packets of those. So, it shifts eight for the first digit and the second, boop, etc.
+
+[1716] EEVblog 1716 - University Dumpster Diving: Kikusui Oscilloscope — Dave Jones (explains)
+context before: That's great. So, storage mode and we can go save. Boom. We just saved that waveform. And then can we go back out? No. No, cuz there we go we're just going to go back to analog.
+TEXT: Come back in. No, we've just we've just captured that waveform basically. So, can we single shot capture that? We can. Boom. Boom. I am pressing the boom button there.
+context after: There you go. Single shot capturing. Beautiful. And then pen, we can go save. Like, what? Yeah, save. And then we can go pen and boom, it's actually it's outputting that information there to the pen output.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: So, I'm going to concentrate. No. Nothing. Just high, as we saw on that uh pin header. Now, I'm going back to the data line for a second there, and uh we're back on the uh ribbon cable itself.
+TEXT: And if we just single shot capture that, um we can see that the data is really changing all the time, as you'd expect um when this thing is updating the uh the clock.
+context after: So, um yeah, I I don't know. Data's getting into the chip. Our clock pulse is getting in. We're Well, we're fairly sure. I haven't checked all the pins directly on the chip.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (explains)
+context before: Anyway, all right, so what we need to do is start probing up its clacker and just have the crow probe ground on there. There we go. So, up, is there anything there?
+TEXT: Nothing there. Hello. There we go. Found it. Straight off the bat. Look at that. Let me uh we can single shot capture that and let me reboot this. Yeah, look at that.
+context after: There you go. Well, we've got something. We got one. There you go. That's serial if I've ever seen it. Bingo, found it. It's that uh header along the bottom there like that.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: If you see something, and then you just oh oh, saw something, and you press stop, then it actually just freezes it exactly in the middle of the sweep um sweep as in, you know, old school analog scope, but, you know, digitizing sweep, it stops it right then and there, and displays the existing memory that it already had in the buffer.
+TEXT: But, a single shot capture mode, look, if we're part of the way through, you have to sit there and wait, and it'll give you a full acquisition like that.
+context after: So, the single will wait for the next trigger point and then give you an entire capture in memory. So, there are different modes, and they exist for a reason.
+
+[1235] EEVblog #1235 - How To Align Signals On A Digital Oscilloscope — Dave Jones (explains)
+context before: Thank you very much and we can go in there and have a look at channel two. Okay, that's great, but how can we look at both of them at the same time with any sort of detail?
+TEXT: Ha, I know what you're saying, Dave, that's easy, too. All you got to do is single shot capture that, put it at a reasonable time base, and then zoom in.
+context after: Ah, look at that. Depending on our memory depth, we've come a gutser. There's not much detail in there, is there? That's pretty awful. And then, of course, we can scroll over to channel one over here.
+
+[762] EEVblog #762 - How Secure Are Electronic Safe Locks? — Dave Jones (explains)
+context before: So, you don't want, you know, microvolts, hundreds of microvolts. You want, you know, tens, hundreds of millivolts, something like that. But you don't want it to be too high so that the voltage uh drops out.
+TEXT: And it's got to be uh able to operate the uh solenoid too as well. So, anyway, I've got a 10 ohm in there, and I've got single shot capture on my scope.
+context after: Let's press a button. Ta-da! Look at that. That's pretty good. That's 100 millivolts per division. So, we've got like uh 250 millivolts or thereabouts that we can actually go in there and look at the data packets.
+
+[HN_eeI12qZw] The R&S MXO4 is too powerful for its own good (and Dave's sanity) — Dave Jones (explains)
+context before: So yeah, it will I'm pretty sure when it gets down to zero, it will stop there. So that's really cool. You can go like you can If you're trying to debug something, you can uh set it up and then you know you know, it might come in the next you know, 10 minutes or whatever.
+TEXT: Then you can just press your single shot. You can walk away, come back and and and stop. Yes. There we go. We got it. Okay. So now we're in our Yeah.
+context after: Yeah. Now I got a single shot capture. I get it now. Oh boy. Okay. That's very That's a very cool feature. Um, but yeah, I just accidentally had that switched on um, cuz I was playing around with the scope before.
+
+[HN_eeI12qZw] The R&S MXO4 is too powerful for its own good (and Dave's sanity) — Dave Jones (explains)
+context before: Run single. No, see? See? It did it again. It captured a whole bunch. There you go. But it captures like a few hundred or whatever. It captures the 500 that I had set there.
+TEXT: So segmented and single if I put that down to one, okay? Now I run single and it does the one. Oh. OH. OH. OH. I THOUGHT I WAS GOING NUTS.
+context after: I THOUGHT I WAS going nuts. So by default that's incredibly powerful. Yeah, actually I yeah, that's an like that's an incredibly powerful feature, but I don't know, was there anything that was telling me I was in segmented memory mode?
+
+[1235] EEVblog #1235 - How To Align Signals On A Digital Oscilloscope — Dave Jones (opinion)
+context before: You saw that on the main time base. So you can set that goes true. So that one's actually got true. Alternate trigger mode. Isn't that neat? Kind of like that.
+TEXT: You can't single shot capture in alt mode though, but you can run stop and get both at the same time. Winner. So only one of my scopes seem to have had like a proper old school alternate trigger mode even though you couldn't do it in single mode and the Keysight is the only one that has both pattern and or.
+context after: And of course the pattern one does work, but the or one you can set both of your channels or you can basically set all of your channels to slopes.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (opinion)
+context before: Because it's the high update rate, it's going to show the multiple things. So, maybe it the Siglent one, because it's 100,000 waveform updates per second, the Siglent, which is awesome, but it leaves the artifacts of the uh of the See?
+TEXT: Um whereas the Keysight gets rid of them as I would expect it to. Um if I'm in normal mode and I get a single shot thing which triggers my scope, I damn well want it to capture.
+context after: So, the the last one. I mean, you know, cuz there's multiple trigger points there with this thing. Maybe if I do it like that, it's going to be a bit more controlled.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (opinion)
+context before: It practically fails at that. There's no battery, the battery indication doesn't work, There's no AC coupling. You've got to be kidding me. It's buggy as all hell. The attenuators are all over the shop.
+TEXT: It doesn't even get close to its bandwidth performance. The single shot captures all The menu system sucks. Really? There's only one thing for it. A thumbs down and a facepalm.
+context after: 
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (opinion)
+context before: You can see that it's decoded hex here. I don't want that. I want ASCII so that we can read it. But those who Oh, it's done that in real time.
+TEXT: It's done that in real time. Hang on. Hang on. We've got dot dot dot. Hang on. I'll single shot capture that. I'll burst that puppy again and why is it showing dot?
+context after: Yeah, it's getting S for the stop bit there. One cool feature here is that the custom baud rate here it it readjusts this in real time. So I can actually like I've captured the waveform, right?
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: And by the way, I can't even trigger off like a uh time period. Like, oh, it's been high. Like, I can't even say, oh, it's been Okay, it's been high for, you know, X milliseconds or whatever, and then trigger on the first uh point after that.
+TEXT: Can't even do that. Um you know, we uh often call that pulse width uh triggering. It just doesn't have that capability. But anyway, I would like a uh you know, I can I can capture the data, single shot capture, but where's like the free running mode where I can just, you know, do that because then I'd be able to see if I was able to trigger off, for
+context after: example, that um pulse width Why does that spring back? That's really rather annoying. How that swings back and it's automatically swings back. Sometimes it does it, sometimes it doesn't.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (mention)
+context before: Or at least go between 1 and 0 here, between 20 and full for example. So yeah, but we're not seeing that. We're seeing no data change at all. It's weird. Now there's something very, very strange going on here. I just know that chip select line must be positive.
+TEXT: So what I've done is I've hooked up a second scope here, and sure enough, to the chip select line, look, there it is. I can re-trigger, here we go, I'll show you in the one shot, I'll re-trigger this thing, oh here we go, single shot capture, okay, and I press the bandwidth limit button, bingo, there's the chip select line.
+context after: I'm probing it, and I'm probing the exact same line on the Rodenschwartz scope itself, and I've got a And it's just, like, it's not, it's not doing anything. It's not doing anything. Look, type, trigger, edge, no worries, source, channel 1, we're in channel 1, negative slope, positive negative slope doesn't matter, it should capture something, and it's not capturing a damn thing.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: So that, that calibration seems to have done the business. Anyway, okay, I'm gonna go into single shot mode. I've got my trigger level set above there. So it's armed. Let me wind the wick up, see if it captures. Yep, there we go. Works.
+TEXT: So it does single shot capture. Looks like a micro for charging. That looks really deep. Might have trouble. Yeah, as I suspected, they provide, like, that looks like an extra long micro USB. So that's, that's kind of annoying. And the power on/off switch, so if you want to see it boot.
+context after: There you go. Don't know if you can do firmware upgrade or whatever. No idea. Anyway, that's what it looks like nude. There's nothing else. There's a box on the bottom, it's just a, a plastic jiffy type box. Let's crack it open. And we have self tappers, of course, but you know, that's what you'd expect.
+
+[13] EEVblog #13 Part 1 of 2 - Digital storage Oscilloscope Tutorial — Dave Jones (mention)
+context before: You didn't have any options. But today's oscilloscopes like this Rigol one that I've been raving about is they they can have sample memory sample depths of up to, you know, 1 million samples, 1 megasamples.
+TEXT: And um this is really fantastic cuz it allows you to zoom in on your signal under analysis. you can take all your measurements. Um you can just hit the single shot button, you can take a capture, and then if you see any detail in the waveform you like, you can just zoom straight in.
+context after: Big sample memory really comes into its own when you're doing uh digital uh troubleshooting, which is you know, it's very common these days. It's probably one of the most common requirements of an oscilloscope is to you know, debug digital electronics and serial protocols and things like that.
+
+[961] EEVblog #961 - Monkey Debouncing — Dave Jones (mention)
+context before: Hmm, let's just manually do it for starters. Oh! Oops, 225! Oops! You're no doubt familiar with this problem, it's contact bounce. When these contacts close like this, you don't just get one edge, you get multiple edges. And we can actually have a look at that
+TEXT: if we actually hook our scope up here to our input. Let's have a squeeze, shall we? And put in single shot capture mode, you'll notice it was high there, and let's just capture, boom! One little pulse like that, look at that! We've actually got not just one, not just the one nice
+context after: we do have actually one nice pulse there, but after that look at all the crap that we've got there. There's lots of stuff happening with the contacts here, the screws, the surface you know, corrosion on the screws, and all sorts of weird and wonderful stuff.
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (mention)
+context before: But, you can see that we're kind of getting towards like the sampling uh limit here cuz we're only 10K points memory. So, we got the extra little resolution, but you know, it's it's good enough.
+TEXT: But, if you really want to increase your chances, you can actually change your sample rate here. Let's go in there, and let's go to our full 10 meg of memory like that, and we can now single shot capture that again, and you can see that we've got more data in there.
+context after: It's more better, huh? And we're now point 04 point Yeah, point 04. It's jumping in resolution there. So, that's just a way to get a slightly finer or greater resolution measurement there like that.
+
+[1213] EEVblog #1213 - The Oscilloscope Interpolation Trap! — Dave Jones (mention)
+context before: Hi, I wanted to show you a feature in modern digital scopes that can be a real trap for young players if you don't know what you're doing. And you may have actually seen this in the scope before but not really understood what it is.
+TEXT: Let me show you here. A newfangled deep memory scope here. Obviously got a signal here and we can capture a ton of the signal and then zoom in later with our deep memory. Okay, so let's do our single shot capture here. Say we're on 50 milliseconds per division here.
+context after: Let's single shot capture that and then we can go zoom in at our data and well, look at that. It looks like we've got a pulse there and it's got some ring in and you may be familiar with this sort of ring in
+
+[869] EEVblog 869 - Counting LED Photons! — Dave Jones (mention)
+context before: just fine in frequency counter mode, of course. You can go in there and you can view all your stats and everything else, but in totalised mode, it doesn't work. Why? It's just a software thing, why can't they put you know, just a simple average on the thing for
+TEXT: totalised? I don't get it. Anyway, you can like single shot capture it just like on a scope. There you go. And of course you can extract the data out of it and average it that way and get a graph and everything else. You know, a plot and everything else.
+context after: But meh. Anyway, so yeah. Ordinarily this would be the tool for the job, because you don't have to worry about sample rate and your memory depth and all that sort of rubbish. As long as you set it up correctly, this puppy will do the job.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (mention)
+context before: scope over here. And with the Keysight's, uh, logic probes, which are these little, uh, jobbies here. Very similar length, uh, probes and everything. Everything else, exactly the same test point. So I've got both hooked on there. And let's see if we get these little runt pulses.
+TEXT: Again, we're at, uh, 1 MHz. We're only at 1 MHz frequency. And let's go over here to the Keysight. And here we go. Let's single-shot capture that. You can see that there's absolutely no issues there whatsoever. So I'll set the thresholds up the same.
+context after: So I've got that set to, uh, standard 1.4 volts TTL. I'll do the same on the Rigol. There we go. At the same 1.4 volts there. And let's see if we get our spurious data. It hasn't come back. But I have seen it at 1.4 volts before
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (mention)
+context before: And we set it to pulse trigger here. Once again, we got positive or negative. We've got the greater less than greater than or window. So, you see that works just fine.
+TEXT: And if I continually single shot capture that, you'll notice that really there is no synchronization between this runt pulse glitch and the actual edges of the waveform itself. So, that's why it's kind of like free running, as you'd call it.
+context after: There you go. So, it practically corresponded with You might not see it at all, cuz it might perfectly correspond with a like a rising or falling edge there. So, you may not see it, but that's what happens when it's not actually synchronized with the actual main waveform itself.
+
+[EVRdTY4LNhg] Rigol DHO800 Disappearing Waveform BUG — Dave Jones (mention)
+context before: Whoa. No, look. I don't even have to do the Vernier. Look. Look, it's gone. What? Whoa. Look at that. Look at that. I didn't even have to do the Vernier. So let's actually try that again, shall we? 500 milliseconds per division. Okay, I'll put it back in the center.
+TEXT: Yeah, center. Okay, single shot capture. Okay, so we've captured, we've got our single shot capture. Okay, that's fine. If I just move it, are we going to get it? No. No. No. No, it seems okay. So is it because we've changed it? Like that?
+context after: No. No, it looks like you do have to do, whoa. You expect this on like the really slow time base, I guess. But, come on, stop. Go back to the one second per division. Turn the Vernier, whoa, Vernier on. And it's Gonski. Yeah.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: So, there just like you can actually measure the subtle differences there, but this is an example of a repeatable waveform that does not have random noise. You'll notice that this noise is the same.
+TEXT: I've not single shot captured that. Look. So, that They are real deviations in the signal there. This is not random noise. So, that's why averaging mode isn't having a huge effect like it was when we were introducing random noise.
+context after: And that's the advantage of your traditional averaging mode here when you've got random noise and a stable trigger that you want to remove the noise on. Averaging mode works fantastic, but it can have some traps for young players if you leave it turned on and you don't know it's turned on and then your signal looks all weird and does all sorts of weird and funky stuff, then check that
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (mention)
+context before: I'm sort of beginning to doubt this. It's really weird. It doesn't operate like all the other scopes in that regard. So, I'm not sure what they're doing with the acquisition there and with the acquisition engine there and how they're claiming those 80,000 waveform updates per second.
+TEXT: Need more investigation there. Anyway, if you stop that, boom, it instantly operates like the Agilent one and displays your captured waveform single shot instead of the displayed waveform it had before.
+context after: So, there you go. That just goes to show you a couple of operational differences. I know this sort of led us astray from what this video kind of started at with just showing that little quirk in how the Tektronix operates, but anyway, you know, I like to waffle on here and I find these things as I play with them and I like to show you some operational differences between scopes
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: It's now 200 microseconds per division. If I do that, you'll find it'll be noisier. Ta-da! Because it's doing the boxcar averaging over a different time base at a different sample rate, 625 megasamples per second now.
+TEXT: So, if we go back here and then turn off our acquire mode, here we go. If we go normal back to there, you'll see and we can do single shot capture, you'll notice that it's noisier right down in there.
+context after: It is actually noisier. So, I found these graphics from a Keysight article on the subject and I think it actually represents it quite well and explains what I'm trying to say here.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: And let's zoom in to that and you can see all that noise is there, right? All that and that's single shot capture, all that noise. But, if we go into uh high resolution mode here and we go out to the same uh 200 ms per division and we single shot capture that, you'll notice it actually looks cleaner at this particular point.
+TEXT: And if we zoom in, look at that. It's cleaned it up in single shot capture mode. High resolution mode uses what's called a boxcar averaging technique to actually average the samples as it's going.
+context after: So, it doesn't rely on multiple waveform captures. It's doing it in real time in the hardware to actually average the samples on the fly. It actually uses a higher sample rate.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (mention)
+context before: It's actually doing that because I'm still on runt trigger mode. So, don't get fooled by that. If I turn that back to regular edge triggering, we're back to the point where it's not going to actually do that.
+TEXT: If we do single shot capture, okay, single shot capture, we're not going to actually get the pulse. It's just going to be like random. It intersects that zone. And that's not really what you want.
+context after: So, don't use zone trigger. Anyway, I hope you have enjoyed that look at some more advanced trigger types in modern scopes. But even you don't have to get an expensive one, even the lower end ones have these these days.
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (mention)
+context before: It's resampling. Then when it gets out of tolerance for the baud rate, it whoa whoa starts to change a bit and then it goes all wonky. There you go.
+TEXT: That's pretty neat. And bingo, I've turned on my event table here and you can see EE Vblog. There it is there. I can, you know, single shot capture that and trust me, yeah, that is EE Vblog.
+context after: I can drag that window down. Yep, there we go. EE Vblog EE Vblog EE Vblog. Um because it's easier to use the event table when you've got like a long bit of data like this cuz they're not displaying.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (mention)
+context before: But uh trust me. And if I go up to the fastest speed, that's uh 2 nanoseconds per division, it's still the same 52 kHz signal. So, if I slow it down 200 ns, 500, right?
+TEXT: It starts getting a bit slower. And we can whoop do that. There you go. So, at 2 microseconds, that's 22.7 kHz. And let's go to 50 microseconds. We'll have to single shot capture that.
+context after: 1.8 uh kHz. So, you know, the slower it gets because we've got uh slower time base on here means it's got to fill up the memory, and it's got to take that amount of time.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (mention)
+context before: Why are we getting so much trigger jitter? There's no trigger filters or or anything here. We've just got rising condition, ring rising, falling. There's no either or. Um, so you know it hasn't got that basic scope functionality.
+TEXT: And of course, uh, yeah, we do that and it's just going to auto trigger. And of course, we can single shot capture that. Hello. Single. Single. Single. Why is it not turn normal?
+context after: Single. Why is it not capturing that now? Because this trigger threshold is moving like this. I I think it does have pre and posttrigger data because it seems Yeah, it's it's like triggering in the middle, but the time bases like just the way the axes are labeled.
+
+[1320] EEVblog #1320 - Premature Oscilloscope Triggering — Dave Jones (mention)
+context before: Our positive going edge is all the way over here. What's going on? So, just for kicks, let's choose another scope here, signal in 1,100, whatever, channel two, slope rising edge, our trigger levels, you know, round about 2 volts, something like that.
+TEXT: So, let's switch our thing off, single shot, let's switch it back on, and capture where you know, that was just the decay of the power supply, and let's switch the product on.
+context after: There it is. Bueller. Bueller. Look at this. It's There's our trigger point right in the middle, yet we're triggering over here, and there's nothing. I can zoom all the way in there, and there's absolutely waveform extended to the maximum.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (mention)
+context before: To get your images out, you've got to go into oscilloscope mode, menu over over, and then you've got to go into storage mode, and then you can you know, access the files under Windows just appears as a drive.
+TEXT: No worries, works fine. So, if I go into normal mode, how do you do single shot trigger? Like we're in single shot trigger, and you would think that trigger would trigger it.
+context after: Aha, that was not obvious. It's the hold button. The hold is the trigger button. So, I I guess it's under there. So, yeah, all right. Yeah, no worries. I'll tell you what would be nice though.
+
+[1324] EEVblog #1324 - Oscilloscope Reference Waveforms are USEFUL — Dave Jones (mention)
+context before: See I've got one there previously. So let's clear any existing reference waveforms there and now we're ready to probe with our second channel our first signal that we want to capture.
+TEXT: All right, I've probed my first tricky point down there and I've still got one hand free and I'm not going to accidentally short anything out. Let's go single shot capture.
+context after: Let's power it on and you'll see that bingo, and you'll see that we have triggered off our channel one here, which is the 3.3 V rail and you can see that the signal that we've actually measured immediately went high like that.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (mention)
+context before: But uh that looks really good. What if we go to 512k? There we go. There's the dot mode you expect. Beautiful. There we go. Why can't all scopes bloody well do that?
+TEXT: Unbelievable. There we go. Vectors and dots. And then if we single sequence that single shot capture. Sorry. There we go. Where Yeah, we get a true dot display. Right.
+context after: Oh. There you go. There's no more dots out here. What happened to our dots? Mate, is that a little bug? Right at the fastest time base there perhaps, but anyway, there you go.
+
+[1235] EEVblog #1235 - How To Align Signals On A Digital Oscilloscope — Dave Jones (mention)
+context before: It's actually triggering off channel one and channel two totally independently. So technically dual time base scope is better than the alternate trigger system because if now if we actually single if we stop that or if we single shot capture that, we'll actually get both at the same time.
+TEXT: Oh, single shot capture. Come on. I'm pressing the single button. I swear. Single. Function is disabled. You can't Oh my goodness. I I hadn't used this scope in depth.
+context after: Unbelievable. Single shot capture mode disabled in dual time base. Dual time base scopes are great, but for some reason manufacturers well, you know, it's more complicated. So you know the reason why.
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (mention)
+context before: delay lines. Now, somebody asked, um, I mentioned in the video that, uh, you know, there was the screen jitters like this because the triggering wasn't set up correctly, and I didn't bother because I was playing around with single shot.
+TEXT: I was single shot capturing it, and you can go in there, and you can view the waveform just fine. So, they wanted to ask, how do we fix that trigger jitter like that?
+context after: And it turns out I've already done a video on this. It's called trigger hold-off, and I go it's about 20-minute video. It explains how to trigger like this, but there's actually, uh, three ways to, uh, trigger off this thing and make it stable.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (mention)
+context before: So, it's uh pretty slow this old sucker. And I've turned on the hardware frequency counter here and it's 3.266 odd MHz. So, there you go. It's obviously dividing that crystal that 9 MHz crystal by three.
+TEXT: But if you have a look at that, there is still a period in there where it blanks out even though it's continuous. I'll try and single-shot capture that. There we go.
+context after: Bingo, we got something. And we can zoom into that here. And notice there's a dead period there of 5 10 15 20 almost like around 24 microseconds. There's a dead period.
+
+[297] EEVblog #297 - Canon LANC Bus Reverse Engineering — Dave Jones (mention)
+context before: We're getting multiple data packets. Look at that. No problems at all. Now, one of the uh problems with my uh Agyant 3000 series scope here is that it doesn't it's got really good uh signal um uh like many different uh triggering modes like a serial decode modes, but it doesn't have um one wire bus.
+TEXT: So, um it's, you know, it's just really annoying. So, I'll just decode this manually. But what I like I can just, you know, single shot capture that and have a look.
+context after: But you'll notice that uh the triggering is not that stable. It jumps around. So what I'm going to do is just try and uh just for the fun of it.
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (mention)
+context before: So, we can just move that over there like that, and bingo, 94.4. But, you'll notice that the resolution jumps 0.2. That's the best resolution we've got at the moment.
+TEXT: And of course, you can single shot capture this too if you have to. So, you can see how we're only getting a 0.2 microsecond resolution there when we shift that.
+context after: So, to increase that resolution, what we can do is we can get it so that both of these are on screen. If no, that's not I'm going to have to go down to time base like that.
+
+[c0evM3-GTAw] Weird Uni-T UDP6731 PSU Fault FIXED. I got a DUD? — Dave Jones (mention)
+context before: Let's have a look um the voltage mode out here doesn't actually matter. Well, I I set it the same like every everything's the same, okay? So, list the mode is the same here.
+TEXT: So, let's plug that in and run that. So, let's switch that over, plug it in, single shot capture again, and let's run that and see if it's any different.
+context after: I have not tried this Oh. Oh, yeah? I have not tried this yet, so let's have a look. Let's have a look. They claim they fixed it. They have.
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (mention)
+context before: I've got a signal integrity issue. There you go. Works at 1 meg. Doesn't seem to be working on the extremes. Let's try 10 meg. No, it's not working at 10 meg either.
+TEXT: So, yeah, that could be a signal integrity thing. Oh, oh, there we go. I just lost my uh table. Single shot capture. No, see it it looks pretty good.
+context after: I got you know, that should that should do the business, I would have thought. Um a 5 meg maybe? Okay, it looks like we're good on EV blog there.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (mention)
+context before: So, there you have it. That's a look inside the new Siglent SDS1104X E four-channel scope. Um yeah, it's Hello? There we go. That's our piezoelectric effect. It's actually not too shabby.
+TEXT: Let me Oh, no. There we go. Hang on. Single shot. Oh, isn't it cute? Look at that. We can put it into up normal mode. There we go. Oh.
+context after: Hey. Why do we have dual waveforms like that? What's going on? Is that a bug? We're in normal mode. I'd expect it to give me one update, not two.

@@ -1,0 +1,518 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: power rail
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 97 passages drawn from 69 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# power rail`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: 
+TEXT: Hi, just a follow-up video to this HP 1740A 100 MHz dual channel analog oscilloscope and the repair of this thing. And where we got to last time was that we found that once we took the case off this thing, it basically would not fail except for one very small capture that I got by coincidence as I was tweeting a photo where all of the power rails, five different power rails on the
+context after: output of the secondary linear transformer. This is in a switch mode converter supply. So, five different linear rails all dropped at once. And well, I left the thing for like at least 4 hours.
+
+[16] EEVblog #16 - CMOS SCR Latchup Tutorial — Dave Jones (explains)
+context before: It goes under various names, but you know, we'll call it SCR latch-up. And it's a real issue and a real trap for young players. Now, what SCR latch-up is is it is an inherent problem in the actual construction of all almost all CMOS devices.
+TEXT: And well, you know, practically most chips on the market these days are CMOS in in some way, shape, or form. So, it's a it's a real issue. And what SCR latch-up can do is it's a is it's a fault condition that can actually short out your power rail within your chip a where parasitic transistors inside your CMOS device between the power rails actually short out.
+context after: So, a transistor at the top transistor down the bottom, they short out and it shorts out your power rail. And it will latch like that, hence the name, like an SCR.
+
+[1608] EEVblog 1608 - Mailbag — Dave Jones (explains)
+context before: Like, if you're building something that's so massive, you're like kind of getting like out of the realm of the breadboard. So, just having like a double strip, when, when I was a kid, all I had was a single strip like this, and that often wasn't enough.
+TEXT: So, when I got a double one, having real, I can't remember too many occasions when I've needed something bigger than like a double breadboard like this. And having the extra power strips on the, uh, side, especially if lots of different, uh, power requirements these days, very handy to have, uh, extra power strips down instead of, uh, just along the top.
+context after: It looks like there's no break in the middle. I can test that. No, they do actually have the break in there. That's interesting. Um, so, that's not indicated. Yeah, it's, uh, connected there.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: But even if you had a big gigantic ground plane in here, which is very common for these high-end FPGAs for that Stratix one we looked at with the 10 power rails.
+TEXT: So, you know, in a common implementation, you might have seven or eight rails, something like that. You might dedicate not a whole ground plane to each one. You would have one or two ground planes, but then you would dedicate like a couple of your layers to power, and you'd be routing you'd be like routing your different paths for your power as well.
+context after: Typically, you'd have them all coming back on the one ground plane. But, the problem is big ground planes aren't magic because it goes back to ta-da! Bring back a You remember this?
+
+[538] EEVblog #538 - HP35670A DSA Repair - Part 2 — Dave Jones (explains)
+context before: rails look fine. So, we're now and we're getting the exact same ADC Gator array error now. So, I don't know. Now, I'm getting, you know, a bad feeling about that minus minus 15-V rail, which went to minus 19.
+TEXT: Shouldn't be a huge deal, but you know, that diode was shorted out. So, all that power was going through there into the analog rail. So, hopefully it hasn't taken out too much, but maybe we have to go back now to the troubleshooting guide cuz once we check your power rails, then you'd go systematically back through to your troubleshooting guide.
+context after: That's probably what we'll do next time and hopefully we'll find the sucker, but anyway, I was really hoping that would fix it. I was, you know, pretty confident, sort of, you know, 80% sure that fixing those regulators would would do the trick, but no, clearly not.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: There's nothing there. And if I scan the rest of the board, there's nothing over the board, either. Once again, hard to capture on camera. I've done it uh off camera and thoroughly and there's nothing there.
+TEXT: Zip. Now, if I switch the other power rails on here, you'll notice that it dropped from 10. 5 there to 8.6. So, it looks like there might actually be some current going through the other unpowered rails there either through protection diodes or whatever mechanism is in place on those rails to actually do that.
+context after: So, but still, you know, that doesn't explain anything. That's a complete non sequitur. So, all that's left is to current limit this and see if we can get any temperature differentials, but I reckon all those are dead.
+
+[1452] EEVblog 1452 - Fluke PM3370B Combiscope REPAIR — Dave Jones (explains)
+context before: Everything's gone. So, the whole thing's gone. So, damn it. We're going to have to probe um further. Okay, I've got some more probes hooked up now. All right. So, what I've got here is the yellow one, our uh 2.2 kilovolts.
+TEXT: Then we've got the green one, channel two, that's at uh 20 volts per division. That's our 58-volt rail there. And the blue one, that's our 12-volt rail there. So, I'm measuring the three different rails on here, the 58-volt, the uh 2.2 kilovolts, which actually gets back uh fed back here, by the way.
+context after: I just noticed that. And the uh 12-volt here. I'd like to probe this power HT input, but unfortunately, that's a surface-mount. Uh there's both surface-mount devices on the back side of the board and the back bottom side of the board is right down in there, right down the bottom.
+
+[1504] EEVblog 1504 - The COOL thing you MISSED at Tesla AI Day 2022 — Dave Jones (explains)
+context before: wanna yeah you don't want your capacitors in this case you don't want your capacitors cracking and then losing capacitance or shorting it out or doing whatever and your car stops or blows up or does whatever right and um yeah these things can catch
+TEXT: on fire which i've also done videos on right if the ceramic capacitors crack they can uh go short circuit and they can catch on fire because caps are usually across power rails in this case that can dump a thousand amps into these suckers and um yeah the magic smoke's going to escape
+context after: real quick so yeah not only i mean if a capacitor fails open it often wouldn't ruin your day but if they fail short you're in trouble but in this particular case they were mechanically vibrating and that uh vibration goes travels through the rigid pcb
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (explains)
+context before: Others like to have it off to one side like this, for example. They prefer to have it like that and like that. For example, I know that's a bit messy. Once again, it's the grid. Either way, it doesn't matter. Just put it physically close and neat and tidy.
+TEXT: Once again, power on the top, ground on the bottom, near the pins that you're actually decoupling. And just a small thing here. Don't have this line like this. You know, like, keep some consistency. Well, keep some consistency like that. It's not going to -- it's not going to snap.
+context after: But you know what I mean. And, of course, this connector here, we're going to have to do something about this. Not only is it all upside down. But it's kind of -- it's got the lines running through the connector. There's everything wrong with this.
+
+[636] EEVblog #636 - FPGA Demo Boards - DE0 Nano — Dave Jones (explains)
+context before: Total power dissipation by block types. We can get power dissipation by hierarchy here. Come on. This is slow as a wet week. Man, I'm only running a 2 GHz core i7 here.
+TEXT: I'm not sure what's going on. Maybe it's my screen capture in the background, but all these breakdowns of all the power dissipation. Fantastic stuff. And you can even get an estimate of what current is going to be drawn here from each of the uh individual power rails.
+context after: The like the IO, that was based on a I think it was a 12 and 1/2% uh toggle rate or something like that. So, it's just an estimation, but if you see AVCC D, the internal power dissipation, the static current, fantastic.
+
+[942] EEVblog #942 - Mystery Monday Teardown — Dave Jones (explains)
+context before: It's uh it's different. You'll notice that there's conductive traces on there which go over very fine and that basically connects all these traces in there. There we go. Got four traces and so, these are just be loop traces.
+TEXT: So, that looks like we've got two separate loops there, perhaps. And then um these would likely We'll follow the traces on the board in a minute, but my guess would be that these would uh be in series with the power line uh power uh trace going to those SRAM chips.
+context after: So, let's see if I'm right. All right, it's actually hard to trace these uh things, but anyway, these pads go off to transistors and through these resistors. Here, you can likely see that pad go off to these resistors.
+
+[1176] EEVblog #1176 - 2 Layer vs 4 Layer PCB EMC TESTED! — Dave Jones (explains)
+context before: That's why you have the bypass capacitors. Look, this one goes up and goes up to here and then it's connected to this bit of ground up here. And that bit of ground is like split on this half.
+TEXT: It's split by this power rail running right through the guts of this. So, unfortunately, that's like it's going to have a hard time getting back. So, that loop area is going to be much larger for this actually trying to get back between these particular chips.
+context after: And then the bypass capacitor for this chip here is over on this particular ground, which is not via stitched over to this one, which has to go all the way Yeah, it doesn't even go all the way across and maybe there's some via stitching in there, but it's it's like connected to a totally different split ground plane.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (explains)
+context before: So, what we do there is keep it on our ground and you can probably see down in there there's a couple of sort uh 323 packages down there, so we'll probe those puppies and have a look.
+TEXT: 3.3 V, bingo. Uh and probe the tab, and that's the five. Five and 3.3, no wackers. So supplies are fine. I mean, we can get in there and like with the scope and like check for like ripple in it, but it's it's a linear reg, like it's not going to be a problem.
+context after: So unless like on the high side of those regulators there's 6.5 V output, maybe there's excess ripple on there, and it might be causing something, but meh, you know.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: So, we're a bit under where we were before, but like it's not much in it. It should maybe it'll go under one here, but yeah it's you know there's not a huge amount in it.
+TEXT: So, basically the op-amp and those resistors weren't really contributing much to that which is as you'd expect because as I said it goes through the power rail system and then it's effect on the op-amp itself has to do with the power supply rejection ratio.
+context after: So, it's not actually coupled into the input as such it even though it's a flight like it's introducing noise into the ground reference the ground reference is still the reference.
+
+[827] EEVblog #827 - Mailbag — Dave Jones (explains)
+context before: And by the way, this is how they fit in the breadboard. The pins on the bottom just straddle your regular breadboard like that. So very nice, no worries whatsoever. But look, it allows you to actually daisy-chain them together. So that plus V in pin is actually a dual-purpose pin.
+TEXT: So if you feed in 5 volts USB here like I'm doing, this plus V in actually becomes a V out. And it passes the USB voltage through. So then it allows us to daisy-chain like this. So we can have the one USB input here providing all of these different rails.
+context after: And guess what else? They're not... they're really not talking this up too much, but they've got plus minus 320 milliamps, like plus minus current. They're actually plus minus rails. So this minus V out here, these are not just... well, these are not isolated outputs.
+
+[1483] EEVblog 1483 - Holy Mailbag Bomb Batman! — Dave Jones (explains)
+context before: But, anyway, yeah, I don't know. It's, it fits, uh, quite a few of the, uh, generic ones that I've got. Well, just for completeness, I would have liked to have seen a micro, um, USB. 'Cause I just, like, at the bench here, um, happen to use,
+TEXT: uh, micro. But, uh, no, no worries. I'll just plug in another cable. One thing I did notice is that because these are actually soldered through, these make contact with the ground plane and, uh, the 12-volt rails over here, um, and another thing here,
+context after: you could actually, if these are on a conductive surface, you could actually short out, um, your power rails. So, yeah, you gotta be careful of that. It could come a gutter. There you go. I powered it up via the, uh, Mini-B there. And those LEDs are, uh, bright enough.
+
+[1097] EEVblog #1097 - Mailbag — Dave Jones (explains)
+context before: These, of course, wouldn't have been manufactured in high volume. You know, they would have sold, you know, hundreds of systems. You know, if they were lucky, maybe thousands of systems, something like that. But they cost, you know, so much money that to actually develop these things,
+TEXT: it's just phenomenal. That, you know, price was no object in terms of the hardware. A Genem GS2971A. I don't know. Look that one up. Serious about the power on here, weren't they? Look at that, 5 volt in and then getting 0.9, 1.8 and 3.3 volt rails.
+context after: But that's a serious bit of juice. Don't know what this is, but look, Raytheon parts. Interesting. Are they, like, is it a Raytheon chipset? Or is it a Raytheon, like, gate array? Or I don't know. I thought they would have stuck with the Xilinxes that they got on there
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (explains)
+context before: And across this main... main filter cap up here. And bingo, 4.9 volts, presumably it's 5 volt logic, and well, I'm happy with 4.9, that's certainly well within spec. So yeah, like, you know, 5 volt logic, they've got 7.4 TTL stuff in there, so you know, they're going to have a
+TEXT: 5 volt supply everywhere you've got to presume, so that's okay. So all the logic is powered up. And if we have a quick little probe around here, there's our 5 volt rail. So that's doing hunky-dory. No problems whatsoever, there's no ripple on that.
+context after: And we've got all this bus stuff happening over here. So let's start probing some bus. Hello! Hello, Mr. Signal at 10.1 kilohertz. Okay, there we go. Yeah, 10.1, yep. Oh. Hello, so it's working. Hello. Bit of rounding there. Look at that, 200, it's almost bang on 200 kilohertz, 203 kilohertz there.
+
+[147] EEVblog #147 - Agilent 3000 $12000 Smoke — Dave Jones (explains)
+context before: I've smelt that a million times in my career. It's just I reckon something went poof. That's $12,000 magic smoke. Love it. Well, the first rule of troubleshooting is thou shalt check voltages.
+TEXT: And that's exactly what I've done. I've checked all the rails. There's plenty of different rails in this thing, and they all look spot on. So, uh I don't think it's um at first glance, it doesn't appear to be anything to do with the power supply.
+context after: I'd love to troubleshoot this further, but quite frankly, I don't have the time. So, I'll just ship it back to Agyant with a big fail sticker on it, and they can investigate it and let us know what went wrong with it.
+
+[1394] EEVblog 1394 - Onkyo Receiver Repair - Part 1 — Dave Jones (explains)
+context before: So, usually they have like relays that D-thump the speakers when you switch on and stuff like that. So, that all So, it all seems kind of normal, like 3 4 seconds click, then there's not yet then there's another click.
+TEXT: So, that sounds pretty normal. But units like this, they have many different supply rails in them. So, it could be anything like the might just be as simple as the display power supply or something, but anyway, let's crack it open, take a look.
+context after: Here we are. I think this thing could do with a bit of a blow job. Uh it's I'll take it out into the stairwell and uh give it a good once over, but um yeah, a very nicely uh designed and laid out inside.
+
+[1ngqB4mxZOI] Smeg Oven Goes Clunkedy Clunk + Capacitor Go Poop — Dave Jones (explains)
+context before: That's an interesting part, isn't it? Yeah, so it's like a primary side, yeah, primary side switching controller, in this particular case, for a battery charger. Huh, interesting, but, you know, you could use it for a ton of different applications. So, obviously, they're not charging a battery here.
+TEXT: Internal controls, drain, source, right? So, anyway, that cap, so assume that that cap is like C, equivalent to C5 there, which is like the power rail. So, drain at the top, source down there, and VDD. So, if we go back to the videotape here,
+context after: yeah, the cap is across the source and VDD there, there you go. So, it's across the rail, but, yeah, I don't, like, I don't see how that's related to driving this interlock mechanism, because the interlock mechanism goes ka-clunk, ka-clunk, ka-clunk, like it's slipping, the cogs are slipping in there,
+
+[630] EEVblog #630 - How To: Soniq LCD TV Troubleshooting Repair - Part 1 — Dave Jones (explains)
+context before: You can see it jump down a bit, but you know, look, there's no ripple on there. There's nothing wrong with that cap. I don't know. To measure all the other rails, uh yeah, it's a bit tricky, but Jeez, there's nothing obvious.
+TEXT: Um yeah, I might have to start going down to the processor board down here and checking out the uh digital rails on that sucker. Now, they have actually been uh relatively kind and labeled the power rails uh down on here on the silk screen.
+context after: So, there's as we looked at before, I'm just going to measure this is the 24 V rail. Rail. 20 It's nominally 24, but there's 25. There's nothing wrong there.
+
+[1739] EEVblog 1739 - UNUSUAL FAULT! in a Beelink Ryzen 9 Mini PC — Dave Jones (explains)
+context before: So, I can't see how he's broken anything in here. I don't see how that's a thing. Again, that looks beautiful. Focus, you bastard. That looks great, doesn't it? So, no drama there whatsoever.
+TEXT: Sorry, the camera's died again. Just going [clears throat] to put it all back together because I don't think the power supply has died. I might be able to like measure a power rail on that reset, what I presume is that reset chip there.
+context after: Sorry, that stupid SJCAM camera's completely died in the ass. No, doesn't do anything. Okay, I'm just going to see if there's any voltage across a cap in here. There's not this side, 0.4 volts.
+
+[398] EEVblog #398 - Lecroy 9384C Oscilloscope Repair — Dave Jones (explains)
+context before: And the 5 volt rail is just hanging in there just fine and dandy. Well, as a matter of course, I did suck off every bypass cap on all of these channels on the 3.3 volt rail and no, didn't find it, of course.
+TEXT: We're still getting .0 16 ohms or thereabouts in Really, I mean, uh I Am I chasing a red herring here? I'm not 100% um sure that I'm not, but you know, it seems likely because that is an an incredibly low resistance for a power rail.
+context after: And of course, uh you power it up and it's drawing uh double what the manual um says it, you know, should that the power supply is even capable of on that rail.
+
+[976] EEVblog #976 - Keysight 1000 X-Series Oscilloscope Teardown — Dave Jones (explains)
+context before: Power supply, nothing to write home about. These are wet electrolyte ones. You can tell because they've got the vents in the top. They're not the solid SMD caps, so, you know, but they're fine. Par for the course. You've got all our LDOs. This thing has no shortage of power rails.
+TEXT: 1.8 volts, 3.3, 1.2, 1 volt, of course. They're all for the FPGA and other digital cores and things like that, and what else? I think we've got, like, 2 volts over here, I saw somewhere. I don't know, there's a whole bunch of stuff.
+context after: And the trigger circuitry's like, meh. Always nice to see an NEC relay, though. I can list, there's three on here. There's one thing I don't see on here, and this is an LCD cable. This one over here, this tiny one, that's the keyboard cable.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: It's very difficult to do. So, I don't think that's really going to work in this particular instance. It can work in other uh instances, but this one, not so much.
+TEXT: So, we can do the same thing again with the um uh instead of the uh drop on the rail uh itself, we can get the voltage drop of the rail instead of the voltage drop across the the resistance of the tracks and the plane.
+context after: So, we can start out over here and we're getting at the connector we're getting 3.032 volts input, okay? 3.0325, for example. And then let's go to our cap over here.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (explains)
+context before: Um so, I'm going to presume that the power supply is probably okay, but of course, golden rule of troubleshooting, thou shall test voltages. So, uh we'll check the voltages here.
+TEXT: There's probably I'm not sure what they are off the top of our head, but uh we can get in there and measure those puppies. That's probably a ground and uh what, you might have a couple of different rails in there.
+context after: By the looks of it, hmm. All right, let's go in here. There's actually um we don't particularly Oh, there's a LED on. That's handy. Uh we don't particularly care about this side uh cuz the main processor over here, it's got its own power up here.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: 
+TEXT: Hi, I showed in a previous video how you can use one of these cheap relatively cheap and simple power rail probes here to actually measure the performance of a power rail that you've got in your circuit.
+context after: In this particular case, I'm viewing a 5-V power rail on a Raspberry Pi powered from an external battery in here. And this has a 2-GHz bandwidth, which is way more than my 1-gig scope here.
+
+[279] EEVblog #279 - How NOT To Blow Up Your Oscilloscope! — Dave Jones (explains)
+context before: It can explode in your hand. Real nasty stuff. If it's a real low energy thing, well, your product might just shut down and it's not inherently like not massively uh, dangerous.
+TEXT: If your power supply is not capable of actually delivering a lot of current, then, well, your product you short out your power rail and it doesn't blow up, but your circuit's not going to work anymore.
+context after: Okay? So, you want to avoid that. So, that's why when you're probing around with a mains earth reference oscilloscope, like almost all bench uh, oscilloscopes are, if you're dealing with a mains earth referenced product, be very careful where you put that alligator clip, that crocodile clip in your circuit.
+
+[1739] EEVblog 1739 - UNUSUAL FAULT! in a Beelink Ryzen 9 Mini PC — Dave Jones (explains)
+context before: No. It was just a missing screw under there on the power supply and they were using as I was going to say in the video, they I didn't know how they got the power through from that board whether or not there's a pin header on there or whatever.
+TEXT: No, they're using the standoffs to transfer all of that power. That is the main power rail and that's why it didn't work. And when I put my thumb on there, that made contact and boom, it started up.
+context after: Isn't that fascinating? There you go. Completely come a gutser there but that is fixed. We solved We solved that. No worries. There we go. Fan's off. Now it's gone into power down mode.
+
+[16] EEVblog #16 - CMOS SCR Latchup Tutorial — Dave Jones (explains)
+context before: You've got two bulk resistors, two transistors, we'll call them Q1 and Q2 and they actually form like this. I won't explain the detail here. It's going to be more it's going to be clearer down here in a sec.
+TEXT: But these form a parasitic circuit between ground as you can see ground over here and your positive supply rail we'll call V+. Okay? Now this is all happening inside the silicon substrate material.
+context after: It's really got nothing to do with the circuit design which is on top here. So it's pretty much irrelevant about what type of chip or circuit it actually is and this can be the input or the output circuit.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (explains)
+context before: By the looks of it, hmm. All right, let's go in here. There's actually um we don't particularly Oh, there's a LED on. That's handy. Uh we don't particularly care about this side uh cuz the main processor over here, it's got its own power up here.
+TEXT: So, let's uh just check that. What do we expect? 5 V, 3.3? Let's find out. 6.48. Okay, maybe there's an onboard 5 V reg. Maybe. Huh, I would have expected a digital level rail coming out of that.
+context after: Now, of course, the first thing I should have done is check for visuals and things like that. Make sure every nothing's obviously blown. I kind of sort of did that in my uh subconscious head.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (explains)
+context before: Let's measure these rails. I don't know where a ground is, but presumably, I don't know, the can in the can here or the can of the crystal. Let's give it a go.
+TEXT: So, our 5-V rail, there it is. 5 5.02, not a problem. -15, yep. +15, not a problem. There are our three power rails. So, this thing's just hunky-dory. I have no idea why it wasn't working before.
+context after: Um it's really weird. Very strange. And there's that rather unusual input can. I just took the shield off there and it just, you know, they've gone to a lot of trouble to actually design that so it wedges in there and like just over the BNC.
+
+[330] EEVblog #330 - Medela Swing Teardown & Repair — Dave Jones (explains)
+context before: But there are dangers in that. If you just start short that out and do it again, and something in here is shorted, well, you could blow the circuitry. I mean, the fuse is there to actually protect your circuitry.
+TEXT: So, really, you know, you'll What we have to do first is check that there's nothing shorted on here. And the first thing you want to do is check to see if this power rail is shorted to ground.
+context after: And we'll do that. We're going to put our negative probe on here. By the way, if you're probing stuff like this, there can be flux residue left on these pins.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (explains)
+context before: But hey, bingo. There we go. 5.21. So, yeah, 5-volt rail, not surprising, and it's within specs. A little bit high, but within spec. So, that's all right. I'm assuming that's the rail.
+TEXT: And of course, you can verify that. You just pick a easy to probe chip with a known rail pins. In this case, the E-squared prom, we know pins four and eight are going to be our power rails.
+context after: As I said, light touch there, no voltage. You got to push down, pierce, bingo, there we go, 5.2. So, yeah, maybe oh, then maybe there's a little bit drop there, perhaps, but not at that sort of current.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: these one hung low brand LCDs and they probably hum all the time you know they're it's actually designed in um I don't know a cap's failed somewhere you know you start looking around the caps First you'd, you know, check your power supplies.
+TEXT: Make sure you're, um, of course, you know, you check your, you know, first rule of troubleshooting, thou shalt, you know, thou shalt measure voltages. Thou shalt check your power rails.
+context after: So, you check for h on the power rails to see if it's coming through like that. Um, and if not, well, you know, where do you start from there?
+
+[1679] EEVblog 1679 - Why Does a Uni-T AWG Cost $5800? - BOM Cost Analysis — Dave Jones (explains)
+context before: Um, incidentally, we got uh 17 1/2 volt power. I thought this would just be a fixed 12 volts. Not plus minus 17 volt power. It's got a power kill there.
+TEXT: It's got minus 8 1/2 volts and plus 6V power. So, obviously that's running all of the digital uh stuff. So, they'd be dropping that down. There's be some five mix of 5V parts on there.
+context after: 3.3 and then the FPGA will drop that down even further to your 1vt 1.2 volt rails and stuff like that. Um, but that'll be on the main board. Plus minus 17 volts of course for the analog uh sections and uh plus six volts is just standby for the processor because it's a soft power button jobby.
+
+[805] EEVBlog #805 - Siglent SDG2122X Arb Generator Teardown — Dave Jones (explains)
+context before: And uh it's common to get those um five-pin uh packages like that for various adjustable linear uh regs. But, um yeah. So, lots of power supply. That's the problem.
+TEXT: When you start talking FPGAs like this and other logic and stuff like that, you know, you need to get all these different rails. So, they're going to have uh this is 20 V peak-to-peak.
+context after: So, they're probably going to have uh plus-minus uh 12 or plus-minus 15 uh V rails here for the analog section. They're going to want to keep that quiet. So, that's all going to be separate.
+
+[1429] EEVblog 1429 - Sony RX100 Camera Troubleshooting Part 2 — Dave Jones (explains)
+context before: We didn't Let's see. So, I've missed the battery. Uh 0.4 V regulator. Wow, what do they need a 0.4 V regulator for? Holy mackerel, 0.4 V + 1.2 + 1.8.
+TEXT: If you think you got power rail problems, spare a thought for the Sony designers. 0.4 V, 1.2 V, 1.8 V, 2.5 V, 1.1 V, and there's more. I've seen other regulators, 3.1.8 and 3.3.
+context after: And that's just this one page. Wow, and there's more, is there? Is that another 1.1? What is that? That was a different 1.1. That's another switched 1.1. Nuts. No, well, that's it.
+
+[1119] EEVBlog #1119 - Designing a 1kV Isolated Oscilloscope — Dave Jones (explains)
+context before: via the USB interface? Yes, it is. Yep. Yep. So, the we have a supply application so you can just upgrade it as you go. Fantastic. for no extra cost.
+TEXT: So, then the other things down here there's a power supply system which there's lots of power supplies you need for an Area 5 sadly. Yeah, you need like five different rails.
+context after: Yeah. You know, like 1 V 1, 1 V 1 5, 1 V 2, 1 V 8. Lots of them. Nightmare. And this is the IO board. And we have a an isolated signal generator 0 to 65 MHz.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (explains)
+context before: So, maybe they're not. Um okay, so I was just um exclaiming that the two grounds were actually connected like this between the two and of course you wouldn't have that if it was uh optically isolated between there.
+TEXT: Um so, yeah. Uh that's Well, anyway, we're getting 6. 1/2 V on there. It is pretty close to precisely 6.5 V. So, I'm inclined to think that it's probably the intended value.
+context after: When it's like exactly pretty close to exactly like a round value like that, then you know, it sounds legit, smells legit. But I just initially expected like uh 3.3 or 5.
+
+[536] EEVblog #536 - HP35670A DSA Repair — Dave Jones (explains)
+context before: Well, when in doubt measure voltages. I've had to I had to get in there. I've soldered a couple of pins onto that 79L12 voltage regulator on the back. So, let's have a look.
+TEXT: That's the input. Not minus 19.2. Okay, I think this uses plus minus 18 volt rails, but you know, okay, it's there and the output minus 1.85 volts. Something's wrong there.
+context after: So, either that regulator's gone bung or uh uh something is dragging it down. And we'll just measure the resistance of the output rail of that. No, 6.8 K. Of course, the figure's meaningless.
+
+[p-eLu1z7-cs] Rigol HDO1000 Serial Boot Capture for Hack + R&S MXO4 play — Dave Jones (explains)
+context before: So, no lockers like and zoom in there and that'll do the same thing. Yep. Okay. So, I definitely got a serial pin, okay? So, let's go back. Aha! That was I was just probing pin number four and that is a decay like that.
+TEXT: So, I think pin number four is a power rail. When when you see like a decay like that, that's not like a logic output going low. That's like a classic power rail going low.
+context after: So, yeah. No worries. Over 5 milliseconds, something like that. Yep. Okay. Same time base we had before, 40 milliseconds per division. Pin number four. Yeah, we're getting no negative edge at all.
+
+[405] EEVblog #405 - Lecroy 9384C Oscilloscope Repair - Part 3 — Dave Jones (explains)
+context before: Might have to do the odd second pass here and there and you can clean it up with our solder wick later if you wanted to solder in a new chip, but we don't want to do that.
+TEXT: We just want to ensure that all the pins are gone and we can then measure the rail again. And there you go. Should be left with a whole row of very nicely tinned pads.
+context after: Now, if you wanted to if you're soldering a new chip on those, you might of course go and solder wick some of the rest of it off, but that is a very nice result and that was a pretty horrible way to rip a chip off like that, but uh really, I think that's probably the best available option I um had to hand really considering that we didn't have to reuse the uh chip at all.
+
+[Gbn_51IoJiM] Amiga 2000 Teardown & Power Up — Dave Jones (explains)
+context before: Or at least looks like it. Can hear the hard drive powering up and off. So, yeah, there's uh not it's just like resetting or something like that. Hmm. Now, apparently uh Amigas are suppo- I'm not sure if it's a 2000, but Amigas in general are supposed to flash their power LEDs um when they boot up in various ways.
+TEXT: So, maybe that's encouraging. Couldn't readily find a a list of codes, so it's turned on. I'm just going to check the rail here. And 4.93, no workers. Happy with that.
+context after: So, our 5-V rail looks uh nice and steady. So, that's that's doing all the CPU and all the logic, so yeah, no problem. I'm going to like at least rule out the power supply for now.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, we can do the same thing again with the um uh instead of the uh drop on the rail uh itself, we can get the voltage drop of the rail instead of the voltage drop across the the resistance of the tracks and the plane.
+TEXT: So, we can start out over here and we're getting at the connector we're getting 3.032 volts input, okay? 3.0325, for example. And then let's go to our cap over here.
+context after: Bang, it's dropped a bit. You'd expect that just due to the plane resistance and we'd expect it to drop a bit more. There we go, 2.96. As we go to this ASIC over here, 2.93.
+
+[628] EEVblog #628 - Tektronix 213 Vintage Portable Oscilloscope Teardown — Dave Jones (explains)
+context before: That could have been like, you know, tested by KW, I guess, um, in '81, perhaps. Anyway, we'll find out that once we get to the, uh, date code of the ICs.
+TEXT: That'll be dead giveaway. There's a few adjustments on here, too. We've got plus 15 V adjust. I assume that's, uh, some sort of power rail. We've got charge adjust.
+context after: We've got high voltage adjust. There we go. Character spacing adjust over here. This is like a link, I believe. I've had a quick look at the schematics and I think there was like a a jumper link in there that actually, uh, set how much, uh, spacing you have between the characters on the, uh, CRT.
+
+[405] EEVblog #405 - Lecroy 9384C Oscilloscope Repair - Part 3 — Dave Jones (explains)
+context before: Now, if you wanted to if you're soldering a new chip on those, you might of course go and solder wick some of the rest of it off, but that is a very nice result and that was a pretty horrible way to rip a chip off like that, but uh really, I think that's probably the best available option I um had to hand really considering that we didn't have to reuse the uh chip at all.
+TEXT: So, yeah. Well, only one thing left to do. Let's measure that power rail. I bet you it's exactly the same. All right, here we go. Let's short our probes again.
+context after: Compensate for that. What were we getting before? Uh 0.11 ohms on our 3.3 volt rail. There we go. It's pretty It's going to be pretty repeatable as we saw last time.
+
+[1124] EEVblog #1124 - Rigol 7000 Oscilloscope Teardown — Dave Jones (explains)
+context before: Goodness. When I was a boy Well, I think I was on the money with the rails here. Let's go in and have a look at them, shall we? They're thoughtfully labeled.
+TEXT: 1.2 volts, 1.0 volts, 0.9 volts, 1 volt, 2.0 volts, 1.8 volts, 1.5 volts, 1 volt, 3.3 volts, 3.3 volts again. I guess they've got to have two separate ones.
+context after: Keep them one's digitally, one's analog, maybe. Uh cuz it wouldn't make sense if they're both digital. Um and 5. oddball 5.5 volts and 5.5 volts. Thank you very much.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (explains)
+context before: I love this. In some cases, the power VDD may Oh, okay. Right, it's about brownout in the VDD. Um, manually in case the video drops to a level that's lower than the LVD, but higher than 1 V at this time and pulled again lower, then maybe some chance there.
+TEXT: Okay, so it's an application note saying, yeah, what that it happens if you get a brown out on your power rail if it you know your 5 V or 3.3 V.
+context after: Oh, I didn't even check. Oh, you can get eight levels of uh LVR. Great. Great. Looks like yeah, 4 V. It looks like it'll work from five cuz a lot of micros these days don't work from uh you know anything.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: Make sure you're, um, of course, you know, you check your, you know, first rule of troubleshooting, thou shalt, you know, thou shalt measure voltages. Thou shalt check your power rails.
+TEXT: So, you check for h on the power rails to see if it's coming through like that. Um, and if not, well, you know, where do you start from there?
+context after: You start physically checking uh some of the caps. I don't know. It's most likely to be a power supply, though, if it's if it's mains hum. But then again, if it's like a hum coming through a system when you hook it up or something like that, that's a totally different ball game again.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: They've got auxiliary ones. Uh they've got battery backup power supply. They've got the IO pre-driver power supply. And they've got the IO power supply. And not done yet, the PLL digital power supply, the PLL analog power supply.
+TEXT: So, how many are we up to now? 2 4 6 7 8 9 9. And then a regular VI set 9 10 different power rails. 10. 10 different power rails.
+context after: Modern FPGAs are insane. Like I said before, it's not uncommon to get four, five, or more in this particular case with these high-end FPGAs. And but let's go down and have a look here at the requirements.
+
+[1144] EEVblog #1144 - Padauk Programmer Reverse Engineering — Dave Jones (opinion)
+context before: Hey, so I'm going to be kind of going into the reverse engineering of the PMS-150C programming interface. This might be very difficult, it might be very easy, but I suspect it's going to be quite obscure. So, let's just look at what we've got.
+TEXT: So, first things first, I have this SOIC-8. When I talk about a pin, I'm going to be talking about the numbers. The numbers go round anticlockwise. So, 1, 2, 3, 4, 5, 6, 7, 8. Now, I've made some assumptions with this. So, I'm going to assume that this is ground and this is power.
+context after: I'm also going to assume that reset is still reset. So, and I'm also going to assume that reset is active low. So, it's resetting when it's at ground. So, it's running when it's at power rail or something. High, logic high. So, that leaves us with five pins to analyze for.
+
+[849] EEVblog #849 - Sony E-Mount Camera Lens Teardown — Dave Jones (opinion)
+context before: Of course, the whole thing, as I said, the whole thing extends out. So, there's going to be some sort of like a worm, you know, small counter worm drive on the inner mechanism in there, which for want of a better term, I don't know my lens terminology and things like that, so you will have to please forgive me, but um yeah, anyway, I there's probably another Is there another motor in there
+TEXT: somewhere, perhaps? Anyway, we'll find out. And you can clearly see the pin out on here. These two thick traces here, obviously the power. I don't know, what is it, 5 volts or 3.3 or something like that going over and then the rest are just signal wires.
+context after: I've got the board out. There's another chippy on that side. We'll have a squeeze at that and we can see the flat flex here that uh big multi-trace one.
+
+[lDQdA4Ml5GA] What do I sound like with my pitch lowered? — Dave Jones (opinion)
+context before: So, the other caps, they're all up here like this going to these individual pins. So, these look like possibly uh just bypass caps. So, they've got a surface-mount connector on the bottom there, which goes off um to I don't know.
+TEXT: Is there another board under this, or that's how they I don't know. They get the signals out somehow. But, uh yeah, that almost looks like, you know, that's an entire power rail across there, perhaps, and these are just uh bypass caps.
+context after: And then, are they some resistors there? Perhaps for the signals, and they look like possibly protection, perhaps. So, they've got some protection devices on each line, maybe. That'd be my guess.
+
+[1541] EEVblog1541 - What is this Blown SMD Component? Redux — Dave Jones (opinion)
+context before: So, you can and and this one's got multiple vias up here, right? Three vias in there. There's a via down here, right? And and this one is quite thick.
+TEXT: So, you can assume that these are like power and ground or power rails or something like that. So, maybe that's the supply for the chip, whatever this doing. But it's got a rather unusual pin configuration.
+context after: And of course, here's where it pays to know your packages as well. This is a SOT23 package, but it's a five-pin, so it's what's called a SOT23-5. And that's going to be valuable in our search.
+
+[745] EEVblog #745 - Mailbag — Dave Jones (opinion)
+context before: So, interesting got a huge um big super cap under here .47 microfarads. So, half a farad. Got ourselves a relay and some LEDs mounted on nice little standoffs there.
+TEXT: So, let's lift this out see what else is beyond that. Oh, genuine inductor bodges. You don't see too many inductor bodges. Really? That's like almost like they've broken the power rail there.
+context after: So, it's like they had some sort of, you know, noise power supply issue something like that and went, "Oh, well, we'll bung in a an inductor in there. That'll clean it up.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (opinion)
+context before: Right? even if you just you have no clue, you just randomly probe around at large traces with decoupling caps and large number of vias and stuff, right? There's just There's There's nothing.
+TEXT: And I think the second one here Well, the second one here is red. There you go, 3.2 volts. So, we're getting our voltage in there. But once again, this is over this part of the circuit.
+context after: So, is it It's nowhere near that power up thing. So, I don't know. We We just It's not getting through. There could be like a diode orient thing or something that activates that uh power on latching circuit and bypasses that somehow.
+
+[630] EEVblog #630 - How To: Soniq LCD TV Troubleshooting Repair - Part 1 — Dave Jones (opinion)
+context before: So, you just got to generally bum around hoping to find something. Well, I've powered it back up again, been playing around with it and I'm getting nothing on the screen now at all.
+TEXT: So, you know, the backlights are working, everything's just fine. All the all those power rails look good and and, you know, it's given the boot up thing and everything's hunky-dory.
+context after: So, I don't know. It seems to be getting progressively worse and worse, pretty much. So, not sure what the deal is. Anyway, I'm going to have to leave it there because I'm running I've run out of time to do this and uh well, yeah, I don't know.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (opinion)
+context before: Um so, yeah. Uh that's Well, anyway, we're getting 6. 1/2 V on there. It is pretty close to precisely 6.5 V. So, I'm inclined to think that it's probably the intended value.
+TEXT: When it's like exactly pretty close to exactly like a round value like that, then you know, it sounds legit, smells legit. But I just initially expected like uh 3.3 or 5.
+context after: Okay, I found myself a 5 V test test point like right down on the What is that? Some little programming serial Is that the serial header or whatever? But it's labeled 5 V, so you always look for labels and bingo.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (opinion)
+context before: We know it works when we plug in the mains power. It's a W50463729. I searched for W5046, you get nothing. I don't know. Some little customy thing. And may any major bypassing around this chip, that's basically it.
+TEXT: And they're fat traces there for a 0 ohm jumper. So, I assume that's kind of like power power rail, you I have never seen it so many 0-ohm jumpers before in my life.
+context after: Count them. All because they wanted to avoid a double-sided PCB, the cost of a double-sided PCB. Anyway, the only capacitor I can see is there and that's got 300 mi- minus 300 mV.
+
+[788] EEVblog #788 - Apple IIC Teardown — Dave Jones (opinion)
+context before: Nippon Chemicon caps, fantastic. No expense spared there. So, you know, they're they're still going. No leaks in those whatsoever. And that's a very nice implementation of a DC DC converter.
+TEXT: I'm not sure how many rails it's going to have 5 volts and minus 5 volts and 12 volts or something. From a 12 to 15 like up to 15 volt input from the plug pack.
+context after: If I put it back together and just take the lid off, you can see this bracket that they're using at an angle there to hold in and push the switching transistor across against the back end here, which is using this as a heat sink.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (opinion)
+context before: I'm not going to get confused. So, that is definitely off. I can tell you that negative is over this side over here. 131 mV. That's what we're getting before, right?
+TEXT: That is not working. That is not like that's got to be a power rail, right? And look at this pin over here, right? That is going through an inductor.
+context after: Like that's got to be like a power rail. Doesn't matter if we get the probes around the other way, right? Probe between there and there, there and there. Like, you know, like something's got Got be a power rail in here somewhere.
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (mention)
+context before: Uh you can get away with bulk cuz there's a lot of debate and if you go and actually use the simulation tools to actually try and simulate bypassing which is really advanced really expensive software tools, you can actually do it.
+TEXT: But there's specialized signal analysis tools to do this and yeah, you can often find that well, just one bulk decoupling cap is going to work. Something like that unless you're talking about real like modern complex FPGAs with multiple things and they have like, you know, 50-page documents of just how to power up and bypass and sequence the power rails on a modern FPGA or a modern processor or something
+context after: like that. It's really strict. But yeah, maybe this VGA chip, I don't you know, it's it's kind of like old school compared to modern stuff and you could have just got away with a couple of bypass caps.
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (mention)
+context before: And it it has come good. There you go. So same so much for scrap and no trace on this thing. It was simple power supply but looks like somebody's had a shot at this cuz some of those capacitors had looked like they'd been hand soldered and replaced.
+TEXT: So yeah, I'm not sure what's going on there. But look we're on our way. This is absolutely terrific. So yeah, I expected more problems with something like this. And of course I did take the easy way out by simply replacing all of the caps on the unregulated side inputs without really you know like measuring the ripple on all the other rails.
+context after: I just replaced them as a matter of course and it just came good. So, we got a bit lucky that there weren't any other faults, no faults on the high voltage uh side of things.
+
+[859] EEVblog #859 - Bypass / Decoupling Capacitor Tutorial — Dave Jones (mention)
+context before: 
+TEXT: Hi, welcome to Fundamentals Friday. Today we're going to answer the question, why do you use multiple bypass capacitors? You've probably seen this in many circuits, that you've got your chip here, you've got your power rail, and you might have more than one bypass capacitor just on that one chip, or even just that
+context after: one power rail on a chip that might have multiple power rails. For example, it's not that uncommon to find like a one microfarad cap, a hundred nanofarad cap, a ten nanofarad cap, or one nanofarad cap. You can have two, three, or four caps in parallel.
+
+[296] EEVblog #296 - AIM-TTi I-Prober 520 Current Probe Review — Dave Jones (mention)
+context before: Can trace this thing around. And if you're careful enough, you can actually trace out if you got a texture out, you could actually trace out that exact path. And if you're careful all the way, so I can find shorts, current paths.
+TEXT: You know, if you've got a short going through a chip, through a power rail, internally shorted on a power plane, in inside a multi-layer PCB or something like that, um you should be able to trace it out with this thing because it can find that signal anywhere because it's using the magnetic field of the trace.
+context after: Now, what I'm going to do is try and attempt to trace out a real ground current on a PCB like this. And as you can see, there's a split PCB plane in there.
+
+[1308] EEVblog #1308 - 1970's Intel MCS-85 8085 Design Kit! — Dave Jones (mention)
+context before: They didn't interface with this at all. They've got some connector ports here which you could have gone off to your own products or you could use this large interfacing area.
+TEXT: They've got power strips down the middle like this and that's very nice to be able to prototype your industrial widget in mid to late 1970s. This would have been absolutely fantastic and you could probably afford to use this section because I don't believe the development board was very expensive.
+context after: So yeah, if you needed another one or whatever, you just buy another one and you build up more circuitry, various uh, revisions of your hardware until you perfected it, then you design and layout your own PCB, and Bob's your uncle.
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (mention)
+context before: So with all boards plugged in now, I'm getting you know, almost 2 amps, so that is higher than the rated current on the back there of 1.3. Hmm. And if I power up just the power supply board on its own with the display supply disconnected, we're getting
+TEXT: 90 milliamps. So that's pretty much, you know, what you'd expect ballpark for the quiescent supply of something like this old school power supply. So you know, no problems at all. We're basically looking for gross excess current faults here. Let's check the power rail here.
+context after: And across this main... main filter cap up here. And bingo, 4.9 volts, presumably it's 5 volt logic, and well, I'm happy with 4.9, that's certainly well within spec. So yeah, like, you know, 5 volt logic, they've got 7.4 TTL stuff in there, so you know, they're going to have a
+
+[s6lVvIWWNBw] Can VoiceBox AI Clone Dave's Voice? — Dave Jones (mention)
+context before: If that was actually generated, that is super impressive cuz that sounded like just sounded like it was just the recording. Let's have a listen to that again. Hi, Dave here from the EEVblog.
+TEXT: Look, I've been playing around with this new oscilloscope probe set up on the bench. Right, it's one of those active probes for looking at power rails and it actually makes a big difference when you're trying to see those small noise signals on top of a high DC voltage.
+context after: You've got to be careful with the offset range though. It changes depending on your volts per division setting. So, don't get caught out there. Now, that sounded like in the middle there like I wasn't pausing at all.
+
+[398] EEVblog #398 - Lecroy 9384C Oscilloscope Repair — Dave Jones (mention)
+context before: And of course if you swap your leads around like that, you'll no doubt get something different. There you go. So, yeah, don't follow that. That's a uh that's a red herring.
+TEXT: So, let's have a look at this cap here. Ah, bingo. There you go. 0.162. So, technically, that's higher than what we had. So, there you go. Another rail. So, that cap there, um we've at least got one of those those caps, as I said, on that uh on that rail there.
+context after: So, we'll find that one of these caps it's slightly laid out different here, but like this one over here will be possibly, yeah, 0.16. They're all slightly different layouts, these boards.
+
+[1498] EEVblog 1498 - TransPod Fluxjet Hyperloop $550M Boondoggle! — Dave Jones (mention)
+context before: Full speed operation ending at 1,000 km an hour. Geez, you better slow down quick. You're close to the city there. These curtains covering biodiversity friendly. Mitigates something. Of Of it does.
+TEXT: That is wonderful. I'll I'll accept your cookies now after that. That is so impressive. I'm going to accept all your cookies. Contactless connection enabled plasma stabilized liquid cooled electric current control systems here power rail plasma monitoring.
+context after: So, what it's levitating on? Plasma or something, is it? Free space retracted position magnetic flux polarity. Right, so it's going to propel this thing along. Yet, I guarantee that the one they're demoing doesn't do this.
+
+[1117] EEVblog #1117 - PCB Power Plane Capacitance — Dave Jones (mention)
+context before: but can that actually replace an actual 10 nanofarad bypass capacitor? The answer is no, and it's obvious why you actually, if you actually think about it. When you, if you've got a large plane like this, the capacitance is spread over the whole surface of it.
+TEXT: So that's the whole, you know, 10, 20 nanofarads. If you're, but you're looking at a little chip which wants to bypass between the, right at this point, between the positive and the negative rail, power and ground, it needs to do it at that point.
+context after: It doesn't want to have to go right across the board to get the capacitance. So if you're trying to bypass one pin, which is one little point like this, on an otherwise big board, then the amount of actual capacitance in that little area is actually rather small.
+
+[384] EEVblog #384 - Agilent 4000X Oscilloscope Teardown — Dave Jones (mention)
+context before: Look at all the via stitching there going through to the inner power plane where it would be distributed over to the FPGAs and other stuff that ASICs that actually require that. We've got 1 volt, we've got 1.2 volts here, we've got 14 volts here, 1.8 volts, 2.5 volts.
+TEXT: Oh man, another 12 volt supply. Voltage is all over the shop. 1.4 volts down here. Man, more voltage rails than you can poke a stick at. But very typical in these system designs. Oh, and we have a traditional 5 volt one. There we go, look at that.
+context after: Beautiful. 5.2 over here, check that out. And there's the main 10 megahertz oscillator, and it's a Raycon brand TX0220. Now, I had a quick look at the Raycon website, and of course basically being TX, that means temperature compensated crystal oscillator. So I could only find the 2200, which was a 0.5 ppm to 2.5 ppm temperature compensated oscillator.
+
+[1306] EEVblog #1306 (2 of 5): PCB SMD Hand Soldering & Assembly — Dave Jones (mention)
+context before: There's absolutely no reason to go tight-ass. I hate a small ring. And there we go. It's like a bought one. Just cleaned it up with some flux remover. It's still got some, uh, residue and stuff left on there. So what we want to do now is, um,
+TEXT: before we power it up, just, you know, buzz a few things out to make sure, like, things like the power, rail and stuff like that's not shorted. So, let's do that. So, first thing, C6... Uh, sorry, I don't have the, uh, schematic here to show you.
+context after: But this one here, this is actually the input. You can see it coming over there like that. So, this is actually the input cap. Make sure it's not shorted. And it's not. We're not. And a cap on the, uh, 3 and 3.3 volt rail.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: So, but still, you know, that doesn't explain anything. That's a complete non sequitur. So, all that's left is to current limit this and see if we can get any temperature differentials, but I reckon all those are dead.
+TEXT: Now, have a quick scan around the board again with just the 3. 3 V rail and as you can see, apart from the heat sinks and the connector, I've only just switched on everything else is uh everything else is dark apart from those heat sinks.
+context after: So, let's um switch on all the other supplies and we should start seeing a few other things heat up as well. So, yeah, I can start see some uh other circuitry on the far side.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: Or you could uh you might want have two, you know, like I've like the odd design, you might go with two grounds in the middle and then run your if your power requirements is simplistic, which they are for this design, you might run your power on your top and bottom uh for example, you might have like some flood fill power top and bottom.
+TEXT: Yeah, I wouldn't say I've never seen or done that in specific circumstances, but generally no. Power and ground in the middle layers and with especially with this FPGA which only needs the one power rail which is a yeah, 2.8 volts.
+context after: There it is. For the No, 2.8 volts is for the image sensor. So, I think three 3.0 it might be running the micro from this Is it the same?
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (mention)
+context before: Um I don't know, you know, we got like a heartbeat-y type LED down there. So, that's really interesting. Got another heartbeat LED over here doing the business. Um So, yeah.
+TEXT: Like but our screen is screen is dead and we've got no response from the silly buttons. What the hell? Now, this is interesting. They got that same 6.5 V tap um also going over to the analog board over here.
+context after: Even though they're supposed to be like uh isolated like opto Are they opto-isolated? No, they're probably not. I can't remember the teardown, but it actually They got a serial interface between the two, but maybe they're not It doesn't look like there's any like a row of optos there.
+
+[5v8qX9PrjnA] Brymen BM257 vs BM235 Multimeter IR Serial Protocol — Dave Jones (mention)
+context before: It's just a coincidence that it happened that they've left a pad here. Why they've left a pad for the diode, I'm not uh entirely sure. Maybe there's another mode for the um charge pump or something.
+TEXT: Anyway, so they've got that going to a rail there, whatever rail that is, um a positive rail, presumably. So, there um yeah, they just left that part out. Just happens to be in the same location.
+context after: So, what I'm afraid I don't even have to probe that one with the scope to know that's not going to work because well, we have the data sheet unless No, there's just no other option.
+
+[1394] EEVblog 1394 - Onkyo Receiver Repair - Part 1 — Dave Jones (mention)
+context before: By the way, I think this that is your receiver. There's a little arrow coming in. That's your IR That's your remote control IR receiver. So it makes sense to have it on the display board cuz it's got little front panel pokey-out bits that can see outside.
+TEXT: But anyway, what we're interested in is the connector over here. Obviously like there's no blow holes in the chip. There's nothing physical that we can actually see. We've got various rails here.
+context after: We've got plus 3.3. We've got plus five display. That's interesting. Plus five just for the plus five display. You want to be measuring that and plus minus 15 volts as well.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (mention)
+context before: Let's probe it here like this and if I switch on you can see that it switches through to there. So, yeah, it's actually um the the the big cap there.
+TEXT: It's going to slowly discharge. Yeah, so that it it's doing the business, right? So, why does that power not get through to to the main processor seemingly? Um going to have to trace the trace.
+context after: Yeah, so the output of that regulator, it drops through here. It doesn't go anywhere else and then through a zero resistor to here, right? So, that's it. That looks like that's the extent of the path.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (mention)
+context before: Hi, I showed in a previous video how you can use one of these cheap relatively cheap and simple power rail probes here to actually measure the performance of a power rail that you've got in your circuit.
+TEXT: In this particular case, I'm viewing a 5-V power rail on a Raspberry Pi powered from an external battery in here. And this has a 2-GHz bandwidth, which is way more than my 1-gig scope here.
+context after: And you can see the power rail probe waveform there. But I also compared it to a very expensive 2-GHz active probe. This is a Agilent/Keysight jobby, matched for this scope.
+
+[675] EEVblog #675 - How To Reverse Engineer A Rigol DS1054Z — Dave Jones (mention)
+context before: So, that makes it real easy to play with and the good thing about transparencies like this is that you can now come along with some whiteboard markers like this or highlighters and you can highlight all the traces one by one as you do them in different colors.
+TEXT: So, you can have all your ground all in green and all your you know, your positive rail in red and all that sort of stuff. So, you can you know, really make sure you don't miss anything.
+context after: And I'll try and show you some of that layer alignment up close. If you have a look at those three holes over there, they're nice ones to sort of line up and you can see that there's holes on the top side of that and they just line up perfectly and then over this side we can get get some there and we can just line those up brilliantly in
+
+[630] EEVblog #630 - How To: Soniq LCD TV Troubleshooting Repair - Part 1 — Dave Jones (mention)
+context before: Don't know what. Whoa, you see that red? What the hell was that? And just for kicks, I'll get out my Fleer thermal imaging camera more just to have a play around with and pretty much the things that are getting hot are the things I expect to get hot.
+TEXT: A couple of free standing TO-220 packages over there. They're mounted on the heat sink. These ones over here are power power resistors presumably on the main rails. They get pretty hot.
+context after: Actually, it's not good from this distance distance. I was measuring like up to 70° on those and the digital part of it was you know, the regular expect the individual regulators to be hot and stuff like that.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (mention)
+context before: Okay, I found myself a 5 V test test point like right down on the What is that? Some little programming serial Is that the serial header or whatever? But it's labeled 5 V, so you always look for labels and bingo.
+TEXT: So, that's fine. Um Yeah, okay. But because we've got a big-ass uh TI uh applications processor micro down in there, it probably needs like 1.8 or one of those stupid modern rails.
+context after: So, what we do there is keep it on our ground and you can probably see down in there there's a couple of sort uh 323 packages down there, so we'll probe those puppies and have a look.
+
+[1429] EEVblog 1429 - Sony RX100 Camera Troubleshooting Part 2 — Dave Jones (mention)
+context before: If you think you got power rail problems, spare a thought for the Sony designers. 0.4 V, 1.2 V, 1.8 V, 2.5 V, 1.1 V, and there's more. I've seen other regulators, 3.1.8 and 3.3.
+TEXT: And that's just this one page. Wow, and there's more, is there? Is that another 1.1? What is that? That was a different 1.1. That's another switched 1.1. Nuts. No, well, that's it.
+context after: Um I didn't find the battery. Oh, the battery It's in there somewhere. I I really But check check this out. Look, they got pin outs. They got pin outs.
+
+[s6lVvIWWNBw] Can VoiceBox AI Clone Dave's Voice? — Dave Jones (mention)
+context before: That was a fail. >> [laughter] >> Hi, Dave here from the EE V blog. Look, I've been playing around with this new oscilloscope probe set up on the bench.
+TEXT: Right, it's one of those active probes for looking at power rails and it actually makes a big difference when you're trying to see small noise signals on top of a high DC voltage.
+context after: You've got to be careful with the offset range though. It changes depending on your volts per division setting, so don't get caught out there. Nice. Okay, I think we've done it.
+
+[16] EEVblog #16 - CMOS SCR Latchup Tutorial — Dave Jones (mention)
+context before: Now I'll explain how SCR latchup actually works. Now if this circuit here actually looks kind of familiar to you it well it should because it looks exactly like an SCR silicon controlled rectifier.
+TEXT: Right? It looks It's It's effectively exactly the same circuit. Okay? But, it's the same It's an SCR connected between your power rails. And that's why it's called SCR latch-up.
+context after: Because in an SCR, once you Once you trigger the gate, this thing latches on. And if you've got an SCR between your positive and negative power rails, you know, bang.
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (mention)
+context before: Those ones aren't touching. So, it'll still be good. I don't know. It just looks a bit how you doing, but um that it'll work a treat. All right. Now, let's switch it back on.
+TEXT: Uh before you do that, of course, you measure all the rails, make sure that they're not uh shorted, anything like that. Done all that. So, we're looking for the LED up in there.
+context after: Nothing yet. It's on. It's on. It's staying on. No more blinky blink. Like, I'm going to presume like it's some sort of uh that's measuring uh about 9 meg, by the way.
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (mention)
+context before: And we'll just measure across that filter cap there to make sure it's not shorted, and no, it's not. 46k, and you'd expect it to rise as the uh capacitors charge up.
+TEXT: So, that's all working hunky-dory. So, um I'm going to presume that the uh power rails. And I'm not sure if there's another voltage regulator on here. There certainly could be.
+context after: Um that there looks like it could be a voltage regulator. So, maybe they have a 5-V regulator on this thing. Although, if you're powering it from uh 6-V batteries, the four uh double A's in series, that's um 6-V uh nominal.
+
+[279] EEVblog #279 - How NOT To Blow Up Your Oscilloscope! — Dave Jones (mention)
+context before: I'll actually demonstrate it. We've got our Arduino, it's working. There's the LEDs flashing away and it's hooked up to our mains earth reference computer via the USB and if I hook up the ground lead to the ground the earth lead on my oscilloscope up to the ground point on the circuit, no problem.
+TEXT: Still continues to work. I can probe away. Everything's safe. But, if I connect this through to the power rail, the ground lead, watch this. Ready? Don't try this at home.
+context after: Bang! And you might be able to hear the computer reboot. Because the device has shut down. I've just I've just shorted out my power supply. Nasty. And if you do that to a high energy circuit, you can blow the thing up.
+
+[1154] EEVblog #1154 - Surprising 4K Dumpster TV Fault — Dave Jones (mention)
+context before: So, if I went in and measured those local regulators, I'm I almost guarantee that they're fine. It just wouldn't make sense for it uh to be uh a power supply issue on that chip.
+TEXT: So, I've got a ground. Where's all the power? Oh, over here. Didn't see that. There you go. There There's all the There There's all the power rails. Sweet. Ooh, look.
+context after: Secret. Secret squirrel. Um only for training and service purposes. It's lucky I'm doing training and servicing. All right. So, I've got the board out. I thought I'd have a at least have a go a reflowing a chip.
+
+[E1IqcGcZKHE] RPi CM4 Compute Module FAILURE Part 2: Thermal Boogaloo — Dave Jones (mention)
+context before: Um yeah, the power supply is a bit Ernie Bernie. Uh let me see if I get anything. No, no, I'm getting nothing on the HDMI. nothing out. So, no, I think that's a uh that's a loser all round.
+TEXT: Um you know, we we could have like damaged our power supply or something. Still delivering 5.1. I guess we could measure on there and measure some power rails maybe.
+context after: But yeah, that's that's just too high. But you saw it before like we were getting what six or something, six and a half. And then we put on the other one seven.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (mention)
+context before: It doesn't go It's not drilled all the way through like this. And so if you've got your ground and power down here, they can be a nice solid ground plane, but then you got a more expensive board, and it's a trade-off and stuff like that.
+TEXT: But even if you had a big gigantic ground plane in here, which is very common for these high-end FPGAs for that Stratix one we looked at with the 10 power rails.
+context after: So, you know, in a common implementation, you might have seven or eight rails, something like that. You might dedicate not a whole ground plane to each one. You would have one or two ground planes, but then you would dedicate like a couple of your layers to power, and you'd be routing you'd be like routing your different paths for your power as well.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (mention)
+context before: And this of course depends upon which point of your power rail you're measuring in circuit, what sort of decoupling you've got on the rail, trace inductance, loop inductance and depending upon where your source and your load is and the whole loop area and all that sort of you know, signal fidelity stuff.
+TEXT: I'm just measuring the 5-V rail of a Raspberry Pi here but just as just an example but you could be measuring a more critical power rail in your WizBang widget.
+context after: And if we actually expand that time base out here, you can see that there's that high frequency information like that and there's also going to be lower frequency information in there as well.
+
+[720] EEVblog #720 - Mailbag — Dave Jones (mention)
+context before: And the software with this is very comprehensive, if I remember correctly, when I looked at it for the Hackaday uh prize. And that was one of the things that was so impressive about it.
+TEXT: It's not just the hardware, but the software to back it up. And yeah, it's got some RF stuff as well, so it can probe all that. It can probe the uh power rails.
+context after: It can not only spike them, but uh probe those in terms of uh you know, trying to extract uh security information out of chips and reverse-engineer them. It's just absolutely brilliant.
+
+[1428] EEVblog 1428 - Sony RX100 IV Camera Repair and then WTF! — Dave Jones (mention)
+context before: Look at that. So, that comes from the I really don't actually I'm I'm I'm going to leave that in place. I'm going to leave it. Like I'd love to get the whole board out, but I don't want to actually have to go back and do that.
+TEXT: This is pain in the ass enough. Look at this. I mean, you know, power two pin and a some sense line, is it? Something like that. So, that's power.
+context after: And that top board in there doesn't want to budge. Yeah, look. There's a peg in there. That board comes out forward. I don't like it's not going to lift up.
