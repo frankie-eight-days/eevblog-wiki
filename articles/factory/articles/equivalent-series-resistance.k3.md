@@ -1,0 +1,27 @@
+# equivalent series resistance
+
+Equivalent series resistance (ESR) is the lumped resistive term in the equivalent circuit of a real capacitor or cell, representing all internal ohmic losses in series with the ideal element.[33][742] It dominates the practical behaviour of electrolytic capacitors and batteries: it sets ripple current capability and heat dissipation in capacitors, terminal-voltage sag under load in batteries, and in DC–DC converters it is a stability parameter that may need to fall inside a specified window rather than simply being minimised.[742] Because ESR rises as aluminium electrolytics age, it is also the standard diagnostic quantity for the classic "bad cap" failure mode.[347][763]
+
+## The capacitor model
+
+The first-order model of a capacitor is the ESR in series with the capacitive reactance, which falls with frequency, and the equivalent series inductance, whose reactance rises with frequency; the sum of these three gives the total impedance.[33][742] Plotted against frequency, impedance is dominated by capacitive reactance at low frequencies, bottoms out near the ESR at self-resonance, and is taken over by inductive reactance at high frequencies.[33] Parasitic inductance and ESR together are why a large electrolytic is a poor high-frequency bypass capacitor: it works for bulk decoupling but cannot adequately shunt fast edges, so a small film or ceramic part is placed at the chip pins for that job.[1085] Overlaying the impedance curves of paralleled parts of different values is used to obtain a broader, lower-impedance path over a wider frequency range, and ESR is deliberately controlled in such networks to damp ringing rather than blindly minimised.[9V99J22aiLE]
+
+## Aging and the electrolytic failure loop
+
+In aluminium electrolytics, the liquid electrolyte dries out over life, and the ESR rises as it does; heating during operation accelerates the process, which is why marginal capacitors often reveal themselves through intermittent faults that worsen as the unit warms up.[630] The degradation is self-perpetuating: a slightly elevated ESR causes internal I²R heating, which raises the internal temperature, which drives off more electrolyte and raises ESR further, producing pressure build-up and venting until the capacitor fails outright.[347] Once the electrolyte is gone the ESR "goes through the roof".[1665] In power-supply output stages the rising ESR both heats the capacitors and degrades regulation, and the heating in turn accelerates the drying.[1239]
+
+Repair practice is to replace failed parts with good-quality low-ESR types; ideally the replacement's ESR is matched against the original part's datasheet, though in practice a recognised low-ESR series is near enough.[763][347] The Panasonic FR series, rated at 5,000 to 10,000 hours at 105 °C, is a cited example of a suitable quality replacement line.[763]
+
+## Measurement
+
+Dedicated ESR meters measure at 100 kHz and can test capacitors in circuit, which is valuable for screening parts without desoldering them.[763][1474] Long thin test leads contribute of order an ohm and must be compensated out when reading ESR, and on an LCR meter with adjustable signal level the lower level should be used for in-circuit work.[1474] Readings are judged against published per-value charts: a new 3,300 µF / 10 V electrolytic reads essentially zero against a chart expectation of around 0.06–0.1 Ω, while a failed example of the same value measured 0.9 Ω — grossly out of family, which is what a genuine failure looks like compared with a merely marginal one.[763][630]
+
+## Paralleling and converter stability
+
+Because capacitance adds and ESR divides in parallel, a 100 µF capacitor with 0.1 Ω ESR can be synthesised from two 50 µF parts, each doubling the capacitance-per-ESR economics of the bank — a principal reason electrolytics are paralleled in power designs, with the part count scaled to the power level.[742] Converter datasheets commonly state a maximum ESR such as 0.1 Ω, and some require a minimum or even a window, because the output-capacitor ESR enters the control-loop stability of DC–DC converters.[742]
+
+## Batteries and emulation
+
+The same concept applies to cells, where it is usually called internal resistance. Its consequences are I²R losses dissipated inside the battery and terminal-voltage droop under load.[1732][1550] A battery's ESR rises as it depletes and as it ages, which is why a battery emulator — essentially a power supply with an adjustable series resistance implemented with a MOSFET or MOSFET bank — is used to reproduce the ESR characteristic as well as the discharge curve when testing battery-powered products over temperature, ageing, and charge cycles.[1550]
+
+The practical effect shows up in usable capacity: with AA alkalines, discharge currents much above about 1 A are punishing because ESR-related sag pulls the terminal voltage below the cut-off while 5–10 % of the capacity remains in the cell.[hSkaZEgrZkY] Conversely, a test of a 20-year-old Panasonic lithium-ion cell discharged to 2.8 V found ESR had little impact on delivered capacity, with the 500 mA run even outlasting the 250 mA run for electrochemical reasons.[1732] A loaded measurement also exposes cell ESR quickly: a coin cell reading a healthy 3.3 V open-circuit collapses visibly when a typical 2.5 kΩ peak load is applied, immediately flagging the high internal resistance.[1667]

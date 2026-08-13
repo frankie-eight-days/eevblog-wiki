@@ -1,0 +1,1233 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: pcb layout
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 240 passages drawn from 165 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# pcb layout`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[742] EEVblog #742 - Why Electrolytic Capacitors Are Connected In Parallel — Dave Jones (explains)
+context before: So, now you've split your current up three times like this, you're going to have much smaller voltage drops, and your load's going to be much much happier because you've used multiple capacitors in parallel.
+TEXT: So, you might have physically implemented them as three separate capacitors like that, but on your schematic, you're just going to show them as three like that. But, typically, if you're good designer, you'll have a note on your schematic like that saying explaining to the PCB layout person, which might be you because you might forget, explaining to lay it out in this sort of configuration because it's important.
+context after: And a different configuration yet again, well, you might dedicate one of your capacitors, for example, to another load out here just so that you don't have to share the same copper here because if this load here is a pulse load, for example, and it's it's pulsing, then you know, physical layout of your PCB and your traces matter.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: They've got a plastic spacer which moves on the bottom of that and so it basically connects this big ground trace over here all the way over to here and why they've done that I have no idea.
+TEXT: It's obviously not serving any useful shielding purpose so they've it seems as though they've done it for layout reasons. Like they you know they routed the the battery ground point down here and they went well you know I we have to somehow get this all the way over to here and well we've only got a double-sided board don't have the luxury of a multi-layer board so we're going to have to jump the thing
+context after: all the way across and rather than putting your traditional link which you don't see any of here on on this unit by the way there's no wire links on this thing.
+
+[393] EEVblog #393 - LiPo Battery Discharge Testing — Dave Jones (explains)
+context before: One as I said, I don't want to do 20C, but let's do you know, a benchmark at 1C or something and see what we get. And by the way, I think I mentioned that I did actually capture the layout of this board, the full layout.
+TEXT: So, I might even though I'm going to change it, I might still go through and add some commentary on top of that layout and upload that upload that just like I did with my previous power supply one cuz they're I think they're really interesting videos just adding commentary to real time or sped up real time PCB layout cuz you know, it took me like you know, and you know, a 5 hours or a day or
+context after: something to lay out this board properly. So, I'll speed that up and might add some commentary. Now, I've got my BK Precision 8500 electronic load hooked up to the PC here via the USB adapter which I got with it.
+
+[975] EEVblog #975 - Human vs Autorouter — Dave Jones (explains)
+context before: the signal integrity wasn't critical between two chips and things like that yeah just have at it the problem with doing selective routing like this um without having to have done, you know, pre- routes first and things like that is it's going to, you know, lock you in.
+TEXT: It's going to block you in much further down the track when you start doing uh more routes and things like that. So, you know, that's why a good PCB uh layout person is worth their waiting gold because they'll be able to think, you know, halfway across the board ahead, you know, a thousand routes ahead and go, "Oh, I need to leave space for that." And you know, you don't have to
+context after: dick around setting up rules. It's just all kept in your head and things like that as you s saw on my previous video. But of course, you know, it takes it does take more time to auto route uh sorry to manually route a board of course, but you're going to often get a much better job.
+
+[1559] EEVblog 1559 - PCB Design: Trace Current Rating — Dave Jones (explains)
+context before: Just get a nice thick ass gauge wire and just you cut it to length and solder it on at the production stage. And, you know, unless you're building a million widgets, then that's a perfectly acceptable solution, especially if you're only got like one trace or one or two traces that that you need to do.
+TEXT: Just get your regular 1-oz or 1/2-oz copper board or whatever, then just put on a big thick ass trace and then just bypass your PCB entirely. No worries. And the good part about that is you could have like a This is not a dense layout, but you can have a really dense layout and then you can like snake it around components and you can just, you know, squeeze that wire in anyway.
+context after: No worries. And you can carry like 80 amps on that thick ass wire. Not a problem. And you'll see that selecting DC here just removes your skin effect thing down here.
+
+[568] EEVblog #568 - Solderless Breadboard Capacitance — Dave Jones (explains)
+context before: For example, you wouldn't want to build a switch mode power supply on here for example, it's not going to work that well. And you'll see in as you saw in a previous video where I was playing around with this precision constant current circuit.
+TEXT: Yeah, it's not that great on the breadboard because of all the inter-contact capacitance on here. It's you know, it's not very good at all. But hey, if you can get something working on the breadboard, then that gives you good confidence that it's going to work on a proper PCB when you actually lay the thing out properly, you do nice tight ground loops and power loops and keep
+context after: everything nice and short and tidy and stuff like that and you don't have all that stray capacitance between the contacts. Now, you know, the rule of thumb in the industry is that sort of you don't do anything more than like a megahertz on the breadboard.
+
+[415] EEVblog #415 - SMD Stencil Reflow Soldering Tutorial — Dave Jones (explains)
+context before: You would program in this profile here where it ramps up, you know, ramps up to maximum temperature at about 180 seconds there. So, you put your entire board in and boom, it ramps up.
+TEXT: It's going to be, you know, it needs to be within these margins. That's why it's got two curves up and low. It should be somewhere smack in the middle of that and then reaches a peak at around 180 seconds and taper off, but this will vary depending on the type of solder paste and it'll also vary depending on the type upon the layout of your board as well because if you've got
+context after: a board with you know, lots of ground planes on there, not enough thermal relief and this is where the design of your PCB comes into it because your components can tombstone.
+
+[1307] EEVblog #1307 - TUTORIAL: PCB BOM Consolidation — Dave Jones (explains)
+context before: You know, like import the schematic, it's all ready to go, and then try and lay out the board yourself and see how you go. So, anyway, that's bit of a tangent there, but people keep asking that.
+TEXT: How can I get better better at uh PCB design? How can I improve my skills? Have it better on my resume and things like that? Well, it's by taking a design an existing design like this, a fast track way take an existing design and then start laying out the boards just like blank the board start from scratch see if you can do it and preferably build up make sure it works
+context after: but anyway here's the GitHub here and it's got the uh KiCad file and anyway it generates a bill of materials like this this is what most uh CAD programs will uh generate they'll generate a Excel uh file like this is CSV uh file of all the components you know the number the quantity you've got uh the uh component reference designator the description and then maybe like supplier part numbers manufacturer part
+
+[438] EEVBlog #438 - Amiga 500 Retro Computer Teardown — Dave Jones (explains)
+context before: Why isn't it sort of over here, right over near the uh, audio and the audio output stuff over here? Well, it also controls the uh, UART stuff up here.
+TEXT: So, I guess it wasn't really needed to put it right over there. And And also, of course, when you're talking about laying out a board like this, by the way, which is a two-layer board, I mean, you know, we've got our processor down here, which we'll look at, but you can see all the tracks snaking around, and then these ones from Fat Agnes here up to Paula, and really,
+context after: you know, you can't just whack this chip all the way over there, get those big 8-bit or 16-bit uh data buses all the way over here and stuff like that, and back here, and ah, it's just not going to happen.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: I said this one will be quick. So, there is no happy ending. I haven't finished playing around with this thing at all. I just wanted to show you that uh you know, don't just trust the application notes like that in the application circuits.
+TEXT: Build them up and verify that they actually work because this one oscillates like a So, sure. Yeah, if you build this up on a PCB, you know, it's going to be uh the loops are going to be tighter and of course you have to choose your components carefully and it's going to be better, but the fact is, you know, you may not get this on the first spin or the second or the
+context after: third. You know, it's a pain in the ass. So, if you can't get it just, you know, at least um semi-stable on a breadboard like this just using uh you know, when you're trying different types of input and output caps and things like that and it's just all over the shop, then you know, you're going to be in trouble.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: There we go. There's our DRC And uh looks like we've got a few errors. Tidying those up. Looks like just a few uh clearance errors. Probably doesn't meet the 10 thou uh clearance.
+TEXT: And it looks like I'm shuffling I changed my ground plane there. I'm changing my polygon. It's part of the ground plane. I've just decided to shuffle that there cuz there probably wasn't enough room there to get the uh the polygon was a bit thin there even though on the left-hand side even though it didn't carry any significant current on the left-hand side.
+context after: Um just as good practice I decided to And there we go. Oh, you missed it. I just uh joined the polygon at the start point down in the bottom left corner.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (explains)
+context before: But that's it. Isn't that retro porn for engineers? Ah brings a tear to the eye. It really does. It's been cut out and they've flipped that chip up and they've flipped it on its back and soldered it on the underside like that.
+TEXT: It's brilliant. It's absolutely brilliant. Why they've done that is because it makes the PCB layout possible using a double-sided board. Usually when you get the generic industry events, they're just like a total waste because well, they're just a whole bunch of rabble of companies trying to flog you [ __ ] The paper money, this funny money, US stuff.
+context after: And hell, it's just crap quality paper. It's just garbage. The print looks awful and somebody commented that it smells like well, a combination of feet and ass. Go figure.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (explains)
+context before: Um from limited FPGA experience, I know that meeting timing is critical for a functioning design. Yet on these simple projects, nobody seems to talk about this and talks about signal propagation delay through the wires is much faster than through digital logic.
+TEXT: Can a design like this be routed that these constraint without the constraints being violated? What frequency is this relevant? And he talks about that what could be problematic like routing a clock signal too far away from registers and other things where they have to go through other gates and take other paths on the PCB and it it gets complicated.
+context after: At what point does it become an issue and he'd like someone to clarify this. And Ben asked, "What's the question?" I guess the question is for simple slow 4 8-bit computers, for example, the Gigatron, is propagation delay for digital signals an issue in the design layout of the board and at what clock frequency roughly would this become a big issue?
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (explains)
+context before: And this is how you laid stuff out. This is how you design stuff back in the day, you know? You didn't have Oh, well, you had FPGAs and stuff like that if you wanted to uh wanted to use them or you had PLDs and and stuff anyway that you could certainly use and they those gate array logics I can probably see I think I see maybe some gate arrays on there or
+TEXT: something like that. So, but you design these all in neat rows like that and then you would typically have as we'll see on the board you typically had all all the traces on one layer going in one direction and on the other layer going all the other direction and that's one of the good uses for auto routers back in the day in the CAD software.
+context after: You would let the auto router rip. So, you'd lay it out. You'd put a bit of sense and order into the layout of course, but you'd lay them out all nice and neat like that with their individual bypass caps on each chip.
+
+[zyuRcsM0gjI] eevBLAB #10 - Why Learn Basic Electronics? — Dave Jones (explains)
+context before: Ele- no matter how easy and modular and everything else electronics gets, electronics design engineers still have to make the final product because final products generally have to be specifically tailored in some way.
+TEXT: You've got to do all your regular electronics engineering stuff. You've got to lay out a proper PCB. You've got to do your bill of materials. You've got to do your research, you've got to read data sheets, you've got to understand what the specifications are, you've got to do design for testing, design for manufacture, all this sort of stuff.
+context after: And that can be just for a simple product, even if you're making like 10 of them. It can be a real big deal. So, there is every reason to learn all these basic electronics taking a 555 timer flashing your LED on the breadboard cuz you learn stuff.
+
+[208] Tektronix 2225 Oscilloscope Teardown and Calibration - EEVblog #208 — Dave Jones (explains)
+context before: You don't even have to probe, you know, get down inside the guts of the scope. You just probe everything from the back. It's brilliant. Why isn't all gear designed like this?
+TEXT: I love it. As for the layout itself, it's just beautiful. If you've ever laid out a board of this complexity, like a double-sided through-hole board like this, of this sort of complexity with this number of components, you'll realize the amount of work, effort, and sheer talent and artistry which goes into laying out a board like this.
+context after: It's just It's brilliant. Now, the true test of any double-sided board layout to see if it's been laid out properly is how many jumper links that you can see in here.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (explains)
+context before: Hi. Now, there were quite a lot of people who wanted me to take them through my PCB layout of this power supply board, and that's exactly what I'm going to do here.
+TEXT: While I was laying out this board, I did actually uh capture it in real time. So, what I plan to do here is actually play that back, the complete recording of laying out the board at uh times 10 speed, and adding some commentary on top of that of how I was laying it out, what I was thinking, and the processes and things like that.
+context after: So, let's get on to it. Now, before anybody asks, the package I'm using here is Altium Designer, okay? Say no more. That's the package I'm using. Yes, it's very expensive.
+
+[742] EEVblog #742 - Why Electrolytic Capacitors Are Connected In Parallel — Dave Jones (explains)
+context before: So, you might have physically implemented them as three separate capacitors like that, but on your schematic, you're just going to show them as three like that. But, typically, if you're good designer, you'll have a note on your schematic like that saying explaining to the PCB layout person, which might be you because you might forget, explaining to lay it out in this sort of configuration because it's important.
+TEXT: And a different configuration yet again, well, you might dedicate one of your capacitors, for example, to another load out here just so that you don't have to share the same copper here because if this load here is a pulse load, for example, and it's it's pulsing, then you know, physical layout of your PCB and your traces matter.
+context after: You don't want that tied onto here because if this load here, you know, takes a big gulp of current, then you're going to get a voltage drop and a droop on your traces going to this load over here, which may not like it.
+
+[1176] EEVblog #1176 - 2 Layer vs 4 Layer PCB EMC TESTED! — Dave Jones (explains)
+context before: have better performance than a poorly-laid-out four-layer board. So, it you know, but four-layer it's just going to four-layers, having the ground and power planes just makes it much easier and you're less likely to screw up.
+TEXT: Just remember split ground planes really bad. So, if you got to chop up your ground and power planes four-layer board, that can cause problems, too. But, like there's lots of When you go down the rabbit hole on designing PCB layouts for EMI EMC performance, there's just a almost an infinite number of things to consider.
+context after: I might do some more videos on that if you want me to. Let me know in the comments down below. But, there have been and there are like entire books devoted to just doing this sort of stuff.
+
+[1602] EEVblog 1602 - Sony Amplifier REPAIR ADVENTURE — Dave Jones (explains)
+context before: Um Yeah, no worries. That's just crusty burger, isn't it? So, I'm going to give that a good clean, and hopefully that will come up a treat because that's obviously like here's your power in, right?
+TEXT: So, here's your power in, comes through a little inductory there, and or a ferrite FB, ferrite bead, there you go. Um when you're running like there's plenty of room there to put FB25 next to that, but it's common when you don't have room, like, you know, you might not have room in there, for example, to go C216.
+context after: So, that's that capacitor C14 is that one. C28 is that little jobby. And ferrite B down there is that one. So, that's just common uh PCB layout technique. Although, they still had plenty of room there.
+
+[53] EEVblog #53 - Mr Murphy and Microchip PIC Silicon Bugs — Dave Jones (explains)
+context before: PICchip again. And what do you know? Here it is on page six, module ICSP. I don't know if you can read that, but anyway, ICSP. Yes, it basically says the ICSP port pair number three does not, cannot be used to read or program the device.
+TEXT: In other words, it doesn't bloody well work at all. And, of course, Murphy's Law, this particular PICchip, it's a 64-pin one, has three of these ICSP buses. It's really quite neat. It means that when you're laying out the board, you can choose whichever data and clock pair you want from three different ones.
+context after: And I was intending to use number one, which doesn't have a problem at all. But very late in the design process, the layout of this thing, I thought, oh, it'd be nice if I used number three instead. And I didn't remember that when I read this, you know, a bit before, that it had a problem with number three, the ICSP bus
+
+[116] EEVblog #116 - Retro Teardown - Tandy Radio Shack TRS-80 Model 100 — Dave Jones (explains)
+context before: And I'm sure it'll still be probably working in another 20 or 30 years as well. You'll probably be able to switch it. Well, I don't know, maybe not. You might have to replace a few caps after after 60 odd years, but still, it's in remarkable condition, and it still works a treat.
+TEXT: I love it. And the other thing to remember with boards and layouts like these, these double-sided boards spread all over the place. They've got Yeah, they've got ceramic bypass caps everywhere, but really, you know, layout wasn't critical back then, not even close because this thing only runs at 2.4 MHz.
+context after: You could brutalize the layout back then, have it as big as you want, big inductive traces all over the place, and it really wouldn't matter a rat's ass. The thing would pretty much still work.
+
+[185] EEVblog #185 - Fluke 87V Multimeter GSM Fix! — Dave Jones (explains)
+context before: They've got all these extra uh passives. There's a couple extra resistors and a couple extra capacitors up here like this. Now, um whereas before, this is the previous board and it had some unpopulated uh pads there.
+TEXT: So, there were supposed to be components there, but they left them off for I don't know, whatever reason you can uh think of. It would require Fluke to actually tell us that, but um they've actually changed the layout slightly and there's definitely um you know, four or five extra components there.
+context after: Now, this is the JTAG uh interface for the processor, and I think uh back at the time of the GSM video, somebody guessed that it may have had something to do with uh you know, locking up the JTAG and reprogramming and reflashing the unit accidentally or something like that.
+
+[GoKbPDADG0c] The Incredible Switch Replacement Repair — Dave Jones (explains)
+context before: contact here, and that trace goes up to one of the contacts on the AB selection channel select switch up here, and the outer case is, of course, shielded, so this pin obviously, uh, shorted over to the metal case, and they've used the metal case as a ground, and as I mentioned in the previous video,
+TEXT: it looks like the reason they've done that is a PCB layout reason, because they wanted the other side of the selection switch to be ground, they couldn't get the trace around the outside of the board there, they probably couldn't, is this still ground up here, I don't know, they couldn't get it
+context after: around here like this, so they just decided, oh, let's just use the metal case. We've already got, here's our ground input wire here, already got ground here, we can get, we can use the switch as a jumper, and that's not uncommon in products, but in this case, they've come a gutzer, and the
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (explains)
+context before: Just draw a new one. I don't want to have to draw a new one. Why should I have to draw a new trace? That is ludicrous. Okay? I should just be I would have to drag and tidy up.
+TEXT: This is a step in the PCB layout process is going through and tidying up stuff like this, okay? Cuz you might have all these residual things left You might have these residual things left over cuz you've moved, you know, you've pushed and shoved around it, and you're moving all over the place.
+context after: And as a final pass, you're going through and you're just tidying up stuff like this. And you know, I It It It should be trivial to do that. And it's not.
+
+[1353] EEVblog #1353 - WHY Are These Pins Shorted? — Dave Jones (explains)
+context before: Anyway, let's wick that up. Ta-da. There you go. Needs a good clean. Oh, this actually was, I forgot, this actually was conformal coat too, by the way. Probably why this looks a bit janky. Yeah. Absolutely no doubt that that down in there, see, that is copper, genuine copper.
+TEXT: That is not a short. Well, it's a deliberate short. It's supposed to be there. But as I said, yeah, poor work on the PCB layout. That trace should have gone up there like that, and they should have just went around there, knowing that they were going to have no solder mask expansion in there.
+context after: So there you go. I hope you found that video interesting, waffled on a bit. It's been covered before. A lot of people didn't seem to realize. So please, no more comments in future videos when you spot shorts like that. And hopefully you can now recognize them and go, "Oh, yeah, I'm pretty sure that's deliberate."
+
+[536] EEVblog #536 - HP35670A DSA Repair — Dave Jones (explains)
+context before: We've got some memory happening around here, but yeah, interestingly, we've got these sockets down here, which have no load written on them into the silk screen. If you can see that.
+TEXT: So, um, you know, at the PCB design stage, the PCB layout stage, the layout designers go, "Well, we know we're not going to load that part, so I'm going to put no load directly on the silk screen." So, maybe they're only for development or test debugging purposes or something like that.
+context after: So, anyways, wanted to have a look at that board. I'm not going to start troubleshooting this board because I'm going to go to the main processor board on the top because I think that's where the issue is.
+
+[431] EEVblog #431 - PCB Wave Soldering — Dave Jones (explains)
+context before: If you know the direction your board or your panel is traveling through the wave solder machine, you only need those on one end. But just as a matter of course, they just put them on both ends just in case you want to whack the board around the other way.
+TEXT: But ideally, if you're doing this properly, you should know the direction where you're laying out your board for wave soldering and you should know your direction of board travel, whether it's this direction or that direction because ideally you want the pads to be in this direction.
+context after: If this chip was oriented like that and you put your board through the wave soldering machine like this, that's not a good idea, folks. And same thing with your surface mount components like this, you want them so you want your ICs in this orientation so the solder drags over the pins like that.
+
+[276] EEVblog #276 - Mailbag — Dave Jones (explains)
+context before: Whoa, it's a sensation. People from many countries, including Poland, very highly began to make these devices. However, the original SIM ASIM, if I'm pronouncing that um SIM ASIM, as in symmetrical and asymmetrical, PCB design was sold here, and many users complained about the problems.
+TEXT: Common issue, unstable operation, PCB was too big and looked like it was designed by someone had no experience. Woohoo! All right, while designing the circuit, I was doing my best to keep the symmetric the symmetrical in both mechanics and currents that has succeeded almost perfect.
+context after: Moreover, I had to fix the problem with unstable operation. Excellent, which was caused by too long and misplaced traces on the original PCB. Aha, just a layout issue, not uncommon for these types of amps to have layout issues and be unstable.
+
+[304] EEVblog #304 - Mailbag — Dave Jones (explains)
+context before: 1.5 volts is it? Plus minus, I'm not sure, I have to look at the app note and things, but the pulse generator, you put it straight into the scope, you can't have a lead of course, because any lead has inductance in it, even the
+TEXT: PCB traces, you've got to lay it out properly and, because otherwise that can affect the rise timing, gives you overshoot and undershoot on your waveform. There's a bit of an art to designing these, a very sharp rise time edge. So this is probably like 350 picoseconds, maybe I think
+context after: is sort of one of these, a standard one, and it's all dependent upon the transistor. It uses a 2n, 2369, and they're not all equivalent, apparently you've got to select on test for these things to find the best one. But that's a nicely little laid out board, so we've got to put a supply
+
+[598] EEVblog #598 - Sony DME7000 Video Multi Effects Processor Teardown — Dave Jones (explains)
+context before: down in there, and I can't, down the corner down in there, can't really see anything, so you know, nothing really exciting on the bottom there. All the components on the top, beautifully laid out. Look at the layout of these boards. I think we'll see that across all of the boards.
+TEXT: Really professional level placement. Nobody's auto-placed these things by the way. And I'll probably talk about the PCB layout later once we get a probably a more dense or complex example. This one's relatively simple in the scheme of things. So it's all about component placement.
+context after: Anyway, I'll go into that later. Four batteries up here. They're pretty serious. I presume that they're all wired in parallel, are they? Or, I don't know, that's weird. Dedicated controller up the top, IDT chip. There's a couple of chips I recognize, national semiconductor mark.
+
+[1449] EEVblog 1449 - What Causes Excess Battery Drain? (BM235) — Dave Jones (explains)
+context before: It'll still do the same thing, you know, if that helps in your layout or something like that." Um uh which you might have to do often in actual design.
+TEXT: You might have to actually compromise um your PCB layout. Uh pin swap pin swapping is another uh thing, right? If you've got your microcontroller pins, your FPGA pins, or something like that, and your routing's not you know, it it it just can't it last trace it can't go in there.
+context after: Well, you might swap some of your microcontroller or FPGA uh pins or something like that um just to ease your uh routing, you know. Basically, it's it's got to come back to here.
+
+[54] EEVblog #54 - Electronics - When I was a boy... — Dave Jones (explains)
+context before: They're still common. So, they've survived a long time or you made your own PCBs and you made them using either tapes like Bishop Graphics. You would actually get a clear film.
+TEXT: Here's some photos. You actually get clear film and you would get these all the different pad shapes and you would stick them down on the clear film and then you would route the tracks by hand using Bishop Graphics or something else or you used a Dalo, what was called a Dalo pen.
+context after: I think it was a trademark name back then, but it was basically a special felt text that you drew your circuits directly onto the copper board. There were no computers with CAD software back then.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: That's a beautiful eye diagram. That's just, you know, if you see that sort of stuff on your if you see that sort of waveform on your system, you know, you're you're really sitting sweet.
+TEXT: You laid out your board properly. You got all your controlled impedance traces correctly, all your terminations right, you know, all your shieldings right, you've got low clock jitter because, you know, look at the you know, the the width in there is just ah, it's just beautiful.
+context after: So, this is a demo. Um if you probe the thing properly and design your system properly, you might, you know, you might never achieve that in your system. You know, it's all about meeting the specs and the uh tolerances and what is actually achievable in a practical system.
+
+[280] EEVblog #280-3 - Talking Electronics - FM Bug Kits - Part 3 of 5 — Dave Jones (explains)
+context before: Yeah, terrible. But I had just picked everything right. Right. So, from that time on, I just made up that little printed circuit board in that long strip like that because that's the way the circuit works. No one had done that before. Everybody just made a square board.
+TEXT: A square one. Which was just senseless. Every part, all odd parts everywhere. The actual board didn't match the circuit diagram. There was no correlation. There was no mechanics with the whole thing. So, I changed the whole concept to make it all logical, linear and make it work.
+context after: Yep. And put the FM bug. The ant was the first one. The ant. And absolutely brilliant. And that was in one of your regular issues, wasn't it? I can't remember whether I put it on the cover or something like that. Yeah, I can't remember either.
+
+[863] EEVblog #863 - Sony D50 Discman Teardown - World's First Portable CD Player — Dave Jones (explains)
+context before: of the vibration out of this thing, very nice. Now, I heard that this unit didn't have any anti-skip technology, which you'd, you know, take for granted these days, so, you know, they're just trying to help there a little bit with just a compliant mounting mechanism.
+TEXT: And the PCB designer has been very nice, look at this, divided it up and labelled it on the silk screen on the back, couldn't on the top, of course, there's just no room, the top is absolutely chock-a-block, but look, we've got the system control block, we've got the servo block,
+context after: we've got the RF block, we've got the PLL decoder block, very nice, and this, oh yes, it is, it is power supply, take a look down there, there you go, that's right, that has got to be a switching converter, otherwise you wouldn't bother
+
+[565] EEVblog #565 - Tektronix TDS3054 Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: And look, this is the folded channel, this is channel three, -2.5, +2.5, they're all probably running from the same regulator. I don't know if they have local regulation or not, they could do, that's what one of those little sub-23s.
+TEXT: -2 +2.5, -2.5. So, and all the other channels, there you go, they're doing exactly the same thing, and the layout is duplicated across the channels. The PCB layout designer, of course, is not going to make their life hard, so they're going to duplicate the layout on all of them.
+context after: So, you know, you can easily compare channels. So, this is our folded channel three, and those two caps there are just hunky-dory. In the 3.3-V rail on the main processor over here, powering all the you know, the heavy-duty digital stuff, that's all just fine as well.
+
+[1306] EEVblog #1306 (2 of 5): PCB SMD Hand Soldering & Assembly — Dave Jones (explains)
+context before: And, that will physically hold them in place, perfectly lined up while you solder them. Then, you just lift the chip back out. And, just for a bit of street cred, there you go. A UA-709 Texas Instruments 37th Week 1978. I just, little, like, that was just one of the first ones
+TEXT: that came off my, um, sponge. My, you know, I, like, I obviously salvaged, I de-soldered this when I was a kid. I would have de-soldered this. Um, anyway, still comes in handy. Just another tip. When you're laying out boards like this, look at the size of these annular rings,
+context after: i.e. how much exposed ring there is on each pad. It's naff all. Like, why would you do that? This is not a high-density board. There's absolutely no reason to do that whatsoever. The thing about a small annulus ring like that is it's hard, then, to get your sold...
+
+[1222] EEVblog #1222 - Apple's MacBook Design FAIL - Who's To Blame? — Dave Jones (explains)
+context before: That's very true, especially in terms of something so complex like a MacBook Pro. There's no way only just one person did the schematic and the layout and everything else.
+TEXT: You've got at least one person doing the schematic. The schematic might have even been divided up. You've likely only got one person doing the PCB layout because cooperative PCB layout, yeah, it's great in theory, doesn't really work that well in practice, but it's possible.
+context after: But it's most likely that I mean that MacBook board that we're seeing, not particularly a complex layout. One design engineer can easily do that. And it's better if you have the one design engineer do it.
+
+[598] EEVblog #598 - Sony DME7000 Video Multi Effects Processor Teardown — Dave Jones (explains)
+context before: And it's not about, with an auto-router, you want to place all the chips and then press the auto-route button, it does everything for you. As I said, you would selectively, you know, I want to route just this memory section here, please, I don't want to waste time dicking around with this, you know, just let it rip.
+TEXT: So you would place them like this and you'd say, I'd highlight those and just let those rip and sort of integrate all those in, something like that. And of course when you've got, when you want to layout and route all these sort of stuff, well, in complete modules like this,
+context after: look at this! Too easy, right? You just do one and then you can duplicate the route for each particular layer. And depending on the tool that your software, CAD tool that you're actually using, whether or not that's easy or hard to duplicate your routing
+
+[155] EEVblog #155 - ITead Studio PCB Prototype Goof — Dave Jones (explains)
+context before: Even if these, uh, pads down here were connected on the other side, there could have been a reason that I wanted the, uh, current going through this way as well, and then you can get all sorts of, um, subtle ground problems if only, you know, if the current's not going where you expect it
+TEXT: on the board or it's being routed somewhere else. So, definitely something to watch out for, A, when you're laying out boards, and B, when you're getting them manufactured like this. So, there you have it. The problem was with these IT Studio boards. Someone there decided
+context after: to modify my Gerber files and actually expand the ground plane around those pads to the point where they went from an eighth thou, uh, trace between there, which I was relying on, to nothing. A break! It's crazy! I, you know, I can understand maybe a thou or something like that, but to
+
+[694] EEVblog #694 - Mailbag — Dave Jones (explains)
+context before: It's harder on you know, really fine surface mount stuff like this to try and pick it up. Whereas your magnetic field, your H-field probes, are designed to pick up your larger loop areas, like your ground loop areas, which is one of the big things
+TEXT: for EMC compliance, is that you have to keep the golden rule of PCB layouts, keep your ground loop, or your loop areas small. So you're, and that means going from your power supply all the way out, the loop area includes your ground on here, includes your ground system
+context after: plus the power wires to get there and any signal stuff. So it's an entire, you know, where the current flows in the entire loop. And that's where these H-field or magnetic field probes pick up. So we're picking up a lot more crap, as you can see, going around here with our H-field probe.
+
+[1449] EEVblog 1449 - What Causes Excess Battery Drain? (BM235) — Dave Jones (explains)
+context before: So, I like yeah, why wouldn't you have those after the switch? Maybe it was just like a convenient routing, something like that. And uh maybe uh you know, this is not uncommon, by the way.
+TEXT: The uh PCB layout uh ask me how I know. Circuit designer designed the meter, and then they threw it over, you know, they threw it over the cubicle wall to the PCB layout design engineer, and they went, "Oh, look, I can't just like it's on the other side of the board.
+context after: I can't put these things here and get it back here and like all that um sort of jazz." Like, "Really? You want me to Can't I just put it before the switch?" And they asked the designer, the designer goes, "Yeah, whatever.
+
+[598] EEVblog #598 - Sony DME7000 Video Multi Effects Processor Teardown — Dave Jones (explains)
+context before: Recursive V. Ah, goodness. Dust KV filter, I presume it's a filter over there. And all sorts of weird and wonderful names. GDC, whatever that is. Input filter mix, scan conversion, all sorts of stuff happening here. Control, generic control, filter V, man, more modules than you can poke a crowbar about.
+TEXT: Now I was going to talk about PCB layout on something like this. Now, with something like this system and these boards, it's all like, forget about the routing, it's all about the placement. So that's where you design and group the things into the individual modules
+context after: and you put them and you of course group them together, it's all about the placement. These individual sections may have been individually routed outside and then moved in as sections, but generally you would place all this, and because it's all digital, it's all digital, then you could actually auto-route
+
+[254] EEVblog #254 - KiCAD PCB First Impressions — Dave Jones (explains)
+context before: but that's only a small thing, not a big deal, um, polar coordinates as well, you can display the, there you go, down in, down here, you can display polar coordinates, excellent, that's handy for laying out, uh, circular boards, and things like that, so,
+TEXT: um, you know, if you've got a circular board, and you want to put things around the outside connector, at certain, you know, 10 degree intervals, um, that's pretty handy, so I like that, that's neat, disable design rule checking, presumably as you're routing, uh,
+context after: what else have we got, page settings, paper size and text, oh yeah, by default, yeah, A4, none of this, uh, none of this, fools, none of this, you know, US rubbish, that's great, A4, excellent, um, 3D display, oh, let's have a look at it,
+
+[795] EEVblog #795 - Electronex 2015 — Dave Jones (explains)
+context before: And it's got tilt sensor connectors and set the sensors to tilt of the truck to make sure that it doesn't roll over on that. Got it. This was designed about a year and a half ago. And it's even got Bluetooth, so they've got some remote communication happening.
+TEXT: Right. And you're the layout guy. You do just layout for a living, not even the schematics. You actually get customers give you the schematics riddled with errors. Some engineers are very good. Most engineers are very good that I deal with. Well said, well said.
+context after: And they would design their circuits. There'll be a few minor issues here and there that get picked up. And a lot of them aren't very obvious until you get into laying out the boards. Of course, yep. And you pick them up for them.
+
+[KJEmBtvZrPU] eevBLAB #78 - Engineering Student Job Advice — Dave Jones (explains)
+context before: or something like that, at least you can show that you built something, sold it, that you're enthusiastic, all that sort of stuff. But don't take an existing off-the-shelf open source project and modify it in some way. Add something, add some new features to it, hardware, software-wise.
+TEXT: And a lot of open source hardware projects, like they don't come in a nice box. So, maybe you can like re-lay out the board or something to put it in like a nice case and show that you can like do the more polished engineering type stuff to finish off a project.
+context after: Not just build up prototypes, that's okay, but that you can finish it off and actually build it into a really nice case. That'll be a winner. So, there's absolutely no excuse for not having your own projects to show off. But as I said,
+
+[695] EEVblog #695 - Mailbag Tektronix 2465 Analog Oscilloscopes — Dave Jones (explains)
+context before: 84. And check it out, not much SRAM. Classic 6116 there, SRAM. And basically they just got some 74LS everywhere else. Some 4000 series CMOS, and absolutely classic packed arrangement on all the through-hole stuff, and how they've, you know, laid them out in your traditional rows like that,
+TEXT: and then just routed them. So these are, as I've explained in previous videos, these sorts of board layouts require their own special techniques, which were really quite good. And a lot of the early auto-routers would, you know, handle these no problems at all.
+context after: So you just lay them out in rows like that, and bang, you could let the auto-router do it. But there was a lot of art in it as well if you wanted to do it yourself. And you can see they've changed that to a Motorola SC67127P.
+
+[661] EEVblog #661 - Mailbag — Dave Jones (explains)
+context before: Bam. Straight back and then tapering down in. This is a beautiful layout. Look at this, there's no problems whatsoever, everything is sort of, you know, there's no one, you know, this trace isn't going all the way up around here and back to here.
+TEXT: Routed, laid out sensibly. At first glance I'm really liking the look of this. Look, everything's sort of short path together. That is a professional layout, it really is. Good on you Lee, that is awesome. I can't believe that's your first PCB layout effort.
+context after: It looks like you've been doing it for a long time. That is really well done. I'm impressed with that. I'm hard-pressed to fault that. I don't know about this solar mask expansion on there, might have to get my macro lens down in there.
+
+[131] EEVblog #131 - Live Show #7 — Dave Jones (explains)
+context before: There you go, an hour and a half, so I should probably call it quit soon. Where should the A ground and D ground for an ADC be connected together? Right at the chip, usually. They'll tell you that in the app note. Make sure you read...
+TEXT: in the data sheet, usually. Make sure you read the layout section of the data sheet, because the layout section tells you all about it, so make sure you do that. Mega means nigger? No, I don't think so. There is in the layout section, oh, in the data sheet.
+context after: Well, then they'll have an app note. Look for app notes, or use a real ADC with a real data sheet that gives you layout advice. Any decent ADC... at least they'll tell you in text if they don't give examples. Use a real part, a real good data sheet.
+
+[661] EEVblog #661 - Mailbag — Dave Jones (explains)
+context before: of things. Fantastic. He sent me the schematic and a blank PCB. Sorry, it's blank but I'm still working on a proper enclosure, no worries. And I guess he'd need a, yeah, I don't need another dummy load. I'm mainly after the feedback of the layer, on the layout of the
+TEXT: PCB. It's his second attempt, Rev A was his very first at a PCB. Awesome. Okay, second ever attempt, that's terrific. Try to keep the noisy parts away from the sensors and try to keep parts together. Also done an instructable which I'll link in down below.
+context after: Thank you very much Lee Wiggins. Let's take a look. First of all let's take a look at the schematic, which sorry it's huge and it's an A3 one. But very neatly laid out and modular, complete with descriptive blocks around everything. That is a beautiful
+
+[661] EEVblog #661 - Mailbag — Dave Jones (explains)
+context before: Huge thumbs up. I don't know, can anyone fault that? I'm having a hard time at first glance like this, like I didn't look over it before hitting record here. This is my first impression of it, but yeah. I can't fault that at all.
+TEXT: Everything's, you're, the way you're going to tell if it's good, if everything's like laid out sensibly, nice, compact, there's not a lot of wasted space on here, really. Not a huge amount. You know, you've got some around here, but that's a bit inevitable
+context after: kind of thing. But you know, it's really nice and compact. All your main circuitry around here, and your placement has been sensible, because I don't see any traces going willy-nilly, like I said, like looping back and going around and around and things like that.
+
+[1258] EEVblog #1258 - MORE Dumpster Wandel And Goltermann! — Dave Jones (explains)
+context before: in later. They've got one over for the cap over there. And this one is shielded on the bottom. Uh little bit of flux residue left over there. Somebody didn't clean up.
+TEXT: That's common for the day. So, when you're designing this thing, uh you can't just uh lay out your front panel willy-nilly because you have to group the things together on the functional boards because you've got the physical switches um in into your PCB.
+context after: There's no front panel board and then some wiring harness going over or something like that. You can probably guess what the next field uh board does. Oh, just spoil, spoiler alert right there.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (explains)
+context before: It could have been shrunk down and made smaller, but maybe there's a reason, physical reason to make it that big, in which case it's fine, but yeah, otherwise I would have tried to get the size down on that. Now as I said, your layout's actually quite neat.
+TEXT: You know, the traces are reasonably short to the point, like I don't know why you chose the locations you did, but okay, that's part of layout, you choose your locations for your parts first and then you route everything and all of your traces are quite
+context after: nice. They all flow around like this, around into there, there's just some short ones. You've got multiple directions on here, but you've got to do that on a double-sided layout. You've got your flood fill plane all over. I don't necessarily see any via stitching like joining
+
+[133] EEVblog #133 - Dodgy Digikey Components — Dave Jones (explains)
+context before: So, what I got is is one of my microcurrent boards and I soldered just the 10 ohm resistor on there, as you can see. There it is there, the the 10 ohm resistor and I've got two wires coming in, which is comes from the from the current generator basically and then what's called the sense wires are connected directly onto the resistor like that.
+TEXT: They're not soldered directly on like they should be be the microcurrent layout the board layout already has the wires actually going directly onto the resistor. But you normally solder these sense resistors directly onto the contacts of the resistor.
+context after: And let's see what we get. Now hopefully you can see that. It's not that great in the light. But what I've got it is on is I've got it on two-wire measurement.
+
+[1222] EEVblog #1222 - Apple's MacBook Design FAIL - Who's To Blame? — Dave Jones (explains)
+context before: They probably would have had something like, "Oh, connectors must be physically similar to what they look like rather than just numbering and one through 50 or whatever and then not having a physical representation, just one big row like this and not even having two sides separated." So, I don't I don't really think the librarian was at fault there.
+TEXT: When this is passed on to the layout engineer, person responsible for actually routing the design on the physical board, he routes the design blindly and does not catch the area because he does not know or really care about how the circuit functions.
+context after: That can be a very true. There's nothing uh that says a PCB layout person has to be Well, they they have to have electrical knowledge, okay? But, they're not necessarily a design engineer.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (explains)
+context before: in green. The ground of those three capacitors to get back to where it actually needs to be, which is the ground pin, pin number 1 of the U1 voltage regulator there. It's got a loop all the way around C1 like that, go right
+TEXT: back through the input, go through that little sliver there, go through D6, and then up to the pin like that. And loop area is one of the big traps for young players in terms of PCB layout and, you know, EMC and the whole, you know, electromagnetic
+context after: conformity thing. Now I won't go into the technical details of loop area, but it is one of the worst things you can do in PCB layout is to have large loop areas like this, and it's something that beginners get wrong all the time because they don't
+
+[1133] EEVblog #1133 Mailbag Monday — Dave Jones (explains)
+context before: There it is. 33.8 picoseconds rise time. Beauty. That's a bobby dazzler. Let's plug it in. Even though we're not going to be able to measure it, but it's power from USB. Very handy for modern scopes. Let's go. There's the board for those playing along at home.
+TEXT: Look at the cutout there. That's a, that's a beautiful layout. I like it. Uh, layouts are quite critical when you're talking about, you know, in the order of, uh, 30 picoseconds rise time. It really, really matters. So that is, that is sweet as.
+context after: Check it out. Got external trigger out as well. Beautiful. I really like that. Good work, Leo. That's a bobby dazzler. And the thing with, uh, BNCs is that you really start getting to the limit when you, of what they're capable of bandwidth wise when you're talking about these.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: Hi, this is part four of the Nixie tube counter project. So, I'll link down below the previous parts. They'll be in a playlist as well if you want to check them out.
+TEXT: Last time we looked at the schematic here and we went through various design choices for like the Wi-Fi module and stuff like that. So, we're going to do the PCB layout this time because I have actually done a video on how to lay out a PCB.
+context after: If you have not seen a lot of people haven't because well, it's got 163,000 views, but a lot of people ask me all the time can I a video how to lay out a PCB?
+
+[937] EEVblog #937 - Retro Canon Still Camera Teardown! — Dave Jones (explains)
+context before: Anyway, yeah, I think I can see some pins coming off there. So yeah, they've done that. Cut that out so that they could get a lower profile on that chip so it doesn't take up as much height. So they must have been, you know, pretty desperate for some height
+TEXT: at that particular point. So the mechanical designer came back to the PCB layout person and said, hey, we need some extra height in here, but you know, you're going to have to chop out this part of your board and route everything around it.
+context after: And groan, yeah, okay, I can do that, yeah, no worries. You know, I can work magic. Then we've got all our tactile dome buttons there. We've got a real tactile switch there for the main shutter button. Thank you very much. None of this tactile dome on flex, rubbish.
+
+[975] EEVblog #975 - Human vs Autorouter — Dave Jones (explains)
+context before: 
+TEXT: Hi, just a quick follow-up to my uh previous video which I'll link in down below if you haven't seen it where I basically uh took you as a walk through through the entire process of laying out this uh Nixie tube uh PCB that I've done here.
+context after: And uh that was like an hour and 20 minutes worth and it was it seems very popular. But one of the uh common questions I got was a lot of people wanted to know uh what would the auto router produce?
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: So, it really doesn't need anything more powerful than that. And I guess they decided that they'd use that instead of a soft processor inside a higher end um FPGA than the uh Cyclone II here.
+TEXT: Now, while I said this layout is quite uh neat and they seem to know what they're doing, well, they didn't seem to you know, this is a 100 MHz oscillator up here and it's, you know, they should have put that closer to the chip over here.
+context after: It's, you know, a bit poor. I mean, it's it's going to work, but yeah, it's not good practice. Then looks like our programming interface there for our uh ST microcontroller and that's about all she wrote.
+
+[1032] EEVblog #1032 Part 2 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: 
+TEXT: Design tools. How have they changed over the years? From like '78 when you started, were you still doing the uh the the tape on the film? Yeah, we were using Rubylith and and board layout that way and then it it trimmed Doing it by hand?
+context after: Doing it by hand with Rubylith and and the little coupons you put down for the Yes. Yeah, the for the IC for the DIP packages and stuff. Yeah. Yeah.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (explains)
+context before: So, that's really remarkable. So, yeah, that'll all be being done inside um that ASIC. So, they've been in working on that for donkey's years, I'm sure. Now, the memory up here, um as I said, look at how they group things.
+TEXT: When you're looking at PCBs, cuz the PCB designer usually groups functional uh blocks together. So, the fact that there's a bigger space between here tells me that these are functionally a different block to what these are doing.
+context after: That'd be my guess, anyway. I'd love to have that uh confirmed, but I don't think it's any uh coincidence that they're, you know, this in these gaps here are even, and these ones aren't.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (explains)
+context before: That's because it's mounted upside down. It's mounted in a cutout in the PCB. Why have they put uh one row of them like this and the other like this?
+TEXT: This is for PCB routing reasons. It's just the way that the pin outs worked. If you had these chips up the other way, like these ones, it would all be higgledy-piggledy and you need extra layers on your board to to route it all.
+context after: It'd be an absolute mess. So, from a PCB layout elegance point of view, they've mounted these chips backwards with a cutout in the board. It's just It It's simply brilliant.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (explains)
+context before: Typically, less than two microvolts peak-to-peak noise. Um, you know, accuracy guaranteed plus minus one count over the entire full scale range, guaranteed zero reading. So, a pretty darn nice chip for its day.
+TEXT: I like it. Um, use of these chips pairs eliminates clock feed-through problems and avoids critical board layout. Woohoo! Beautiful stuff. And it's also, uh, does a three and a half digit mode, which is what, um, it's used here.
+context after: And you can get up 30 readings per second to do that. And I love here how they're tooting their horn, almost ideal differential linearity and time proven dual slope conversion.
+
+[1053] EEVblog #1053 - The Biggest 80's Computer FAIL - IBM PC Jr — Dave Jones (explains)
+context before: Unbelievable. And I do believe that's pretty much all she wrote. That looks interesting. That looks like it's like a black hole. That's like, like, bonus, you pay more to get a black hole in your PCB. So that's what you need for the IBM PCjr.
+TEXT: And as I said, it's quite a well laid out board. Look, all the chips are in the same direction. All the traces are all going in one direction. All the other ones are going in vertical on the other side. It's a beautiful layout.
+context after: I like it. And it's, you know, just users all off the shelf. Well, no, as we looked at, there might be a couple of custom gate arrays in there which might have definitely got the parts count down. But there's lots of jelly bean interface logic.
+
+[261] EEVblog #261 - Marconi 2023 RF Signal Generator Teardown — Dave Jones (explains)
+context before: And then over here, we've probably got the level modulation and probably the AM modulation too. So, you can see how that's probably making sense now based on the block diagram.
+TEXT: And that's probably how they design this thing. You start off with a high-level block diagram. You go into little building blocks. And then you're going to lay out your board pretty much exactly the same way that you see it.
+context after: And you can shield the individual sections cuz you see the shield actually comes down in between here with just a little penetrator down there for the for the trace going across there.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (explains)
+context before: You've got no height left on your board. You can't do it. Whereas if you rotate rotate your chip 45° like this, look, you can route out all of your signals from your quad flat pack or your QFN or or whatever package Uh you've got like that.
+TEXT: So, that's a That's just a common uh layout technique in the industry for size constrained boards. We also see it in like a big uh video uh boards, you know, like a a big uh PC uh board that you plug in and things like that.
+context after: You'll have that big main chip on an angle like that. No, it's not to help the electrons all pull down in the bottom or something like that. It's to It's just for routing.
+
+[1649] EEVblog 1649 - Mailbag: M5stack, Beelink Mini PC, ZOYI LCR, ToughOn Battery — Dave Jones (explains)
+context before: They might be slightly reoriented in the other direction. The power supply looks absolutely identical here. Yeah, that's the same 85 W uh power supply there. So we don't need to take any of this apart further.
+TEXT: If you want a more detailed look, link it to the previous mailbag video. Got the same RFI tape on there. Everything looks exactly the same, you know, this of course different PCB layout for the Intel processor, of course.
+context after: Maybe that's why it's just due to routing. I think the others went in that direction, didn't they? Memory serves me correctly. You'll be able to see the overlay here.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: And no, this is not due to the bypass caps. I've actually soldered most of the caps back on this port. I think I'm only missing one or two. Okay, so let's go over to this chip over here.
+TEXT: Just random probing. Look at that. Look at all that switching crap in there. You can see it. Isn't it horrible? And that is basically just due to the layout and signals crossing ground paths and doing all sorts of stuff.
+context after: So this is like the high frequency That'll be the high frequency clock in there doing that. Okay, bonus. Let's go down to a chip over here for example, and you get the same sort of thing.
+
+[720] EEVblog #720 - Mailbag — Dave Jones (explains)
+context before: So this would be the silkscreen designators here for all of those bypass caps and then that one for in there for example and they just yeah. The piece of gear designer has gone to a lot of effort and that's not uncommon cuz when you've got densely packed bypass caps like that, obviously you can't put the silkscreen designator next to each one.
+TEXT: It's just impossible. It's not uncommon in my board layouts when it gets very dense like this, I'd often put the silkscreen designator over here and then like a line like a silkscreen line going off pointing to the part.
+context after: In this case, I would have said you know well, where's a good example? This one. I would have put a line pointing to where that actually is. Let's say if this corresponded to this here, I would have had a line then you know, arrow pointing over there saying these designators correspond to those parts over there for example.
+
+[1334] EEVblog #1334 - Mystery Dumpster Teardown — Dave Jones (explains)
+context before: Look, you know, they've got C22 right next to that one. Obvious C24 right next to that one. Tons of room over here. Yet, they're just gone flapping around in the breeze here.
+TEXT: C23, why not put it like that? Come on, have some pride in your work. Like symmetrical, like C21 should be here and this one's not labeled. Maybe it is underneath, but once again, that's poor PCB design layout if it is.
+context after: Your designator should be outside. Should be there. Like And it's processor board time. You big dip package fan boys are in for a treat, but first, let's have a look at this.
+
+[1621] EEVblog 1621 - Mailbag: RadiaCode Radiation Monitor + LattePanda Mu Compute Module — Dave Jones (explains)
+context before: Tell you one thing I really don't like is the power connector here is not labeled at all positive, negative. It's not labeled Top, bottom, uh DC barrel jack presume is uh center positive, but you know, I mean seriously?
+TEXT: Not labeled? Uh yeah, no. That's a huge oversight. Can have it like a massive plus here or something. I mean yeah, I can make it out from the PCB layout on the bottom if you can get through the black uh solder mask.
+context after: That one's going to be your negative, and that one's going to your positive cuz that's negative going over to your uh HDMI eyes um shields and whatnot, but still like I I shouldn't have to.
+
+[9V99J22aiLE] Full Discussion - Film Capacitor Failures with Ron Demcko from AVX — Dave Jones (explains)
+context before: So, we have a very low loop inductance. Right. We could get inductances of a capacitor down to maybe about uh maybe 25 to 40 pico Henry's. Wow, that's that that's insane.
+TEXT: That's just crazy. You you would get more on your traces going to the component on your PCB than in the cap. Yeah, you have to be really careful cuz you could mess up a very highly performing cap with a bad layout.
+context after: A bad layout, yeah, exactly. Okay, it does so much for you in terms of the resonant point and the ability to to uh supply, you know, high dIdTs to so many different types of circuits.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: Here's our big connector here like this. So, all this high-speed routing's got to come out to go off to the LCD on the bottom here. And well, you could argue, well, this could have been up the top and stuff like that.
+TEXT: And well, you know, anyway, there's layout reasons why So, the PCB designer went, well, okay, I'm forced to put my switching regulators up here. That means I've got to get a reasonably low impedance path over here.
+context after: And if you use the ground plane inside the board going from here over to here, that's a lot of distance there. We're talking probably 20 cm there to get your 8 amps over to here.
+
+[1535] EEVblog 1535 - DeepPCB AI AutoRouting FAIL! — Dave Jones (explains)
+context before: Still beta version 1.000. So, I I don't know what they've been doing for like 4 years or whatever, but some people say it's pretty good, others go, "Meh." Now, of course, the big thing with auto routing, one of the big things, is placement.
+TEXT: As I've said before, PCB layout is like 90% placement. Getting the placement right. Now, as I've already placed these components, what I'm going to do is take the existing board file, I'm just going to unroute it.
+context after: So, it's reasonably good placement and done by a verified human, Um, I thought we just load that in there and see if it can order out. Pure AI-powered cloud-native PCB routing, design complex boards in less than 24 hours.
+
+[645] EEVblog #645 - TRS-80 Model I Retro Computer Teardown — Dave Jones (explains)
+context before: Ta-da! From the case. And we're in like Flynn. And this is actually a beautiful PCB. Why do I say that? It looks a bit There's a few hacks and bodges on there, but it's basically very well laid out and is very typical of the era.
+TEXT: And my hat's off to whoever laid out this board because I can't see a single jumper link anywhere on this board. And that is always the holy grail of any PCB layout engineer is to basically get zero jumper links.
+context after: So, you're only going to double-sided board like this. It's not like they've given you the luxury of four layers and you can have a big ground and power plane and everything else.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (explains)
+context before: You notice the isolation slot under there. That's a high compliant voltage ceramic resistor, much nicer than just the five. But, you know, they get away with it. I mean, you know, nothing inherently wrong with that.
+TEXT: And you'll notice that they got 1.5 mm there and also here. Now, a real educated guess is that this is actually a design note to the PCB layout person to saying, "We need 1.5 mm minimum clearance on these things.
+context after: That's what we need cuz these are the high voltage input, so isolate it from everything else." And this one here, 9 mm input clearance. Thank you very much. So, assuming that we're in either the millivolts DC range, the ohms, or the capacitance range, then these two contacts on the PCB here are going to be shorted and we're going to be using these input five input resistors here
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: You can tell they're MOSFETs cuz all the all the pins are tied together like that, and there's just the one gate pin here and here. Okay, so these these MOSFET switching here for our two converters, and then the controller, was that on the top side?
+TEXT: These have internal voltage references which set those DC characteristics. So, all of the dynamic switching characteristics you could have if you don't have proper layout in your switch-mode converter like this.
+context after: If you don't keep your tight loops, and I've done videos on this, and if you don't keep that tight, you can get extra DC error or switching or dynamic switching errors when you when your output loads.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: Like you might realize this at the last minute and like oh, you know, you're 2 weeks into your layout and you might realize oh damn, I forgot about you know, I forgot about the extra power coming over here cuz often the designers of the schematic like they may if they're good, they'll put notes on the schematic explaining how they want stuff done.
+TEXT: But it's ultimately up to like which things are important saying, you know, look it like they'll show it as a star ground and things like that. So, the PCB layout person has to know that and and stuff like that.
+context after: But, you can you know, your brain's not engaged. You can spend a week still in your layout and then you come and go, "It's all I couldn't be bothered redoing the whole thing.
+
+[1171] EEVblog #1171 - Yihau WEP SMD Rework Station Meltdown! — Dave Jones (explains)
+context before: Not sure. TW something. TWI is it? But anyway, they had to put it at a slight angle just so that they could snake snake a few more traces out here in the vertical distance required.
+TEXT: That's a bit of a PCB designers trick there, especially like if you see like especially on like video cards or other highly integrated PC motherboards and stuff like that, you'll see chips at like a 45° angle.
+context after: That's like, you know, instead of the square chip being like that, you'll see it like that at a 45° angle because then you can get the traces out from one side and the other like that.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (explains)
+context before: Is there another one in the middle? What's going on? Uh is there a sneaky bugger under there? There's four sneaky buggers under there. Look at that. Is that like a big heat sink under there or something?
+TEXT: It just seems weird, and they're offset from the center, so it's almost as if a it's like an operational PCB heat sink thing instead of like being an external design, it's driven by the PCB layout in there.
+context after: That'd be my guess. So, this is where the PCB designer might have actually uh driven the or had to feed back to the mechanical case designers what they actually wanted.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: Um but I just scaled it back to get exactly the same circuit that they've got in the application note here. And, you know, the bypass yeah, I've got no bypass caps directly on there, but the whole idea of this was that um look, if it worked on a breadboard like with this with the bypass caps sort of, you know, like a centimeter or or two away at most kind
+TEXT: of thing with, you know, going through a breadboard. If it's stable there, then you can be pretty confident when you tighten the loops up and everything on your final PCB layout, it's going to work a treat.
+context after: So, you know, I really wanted uh good confidence that it worked on the breadboard. But, you guessed it, it doesn't. And that is my 1.25 V output voltage. And as you can see, 200, 400, 600, 800, uh 1 V, 1.2, you know, it's near to there, but look how fuzzy it is.
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (explains)
+context before: I can see the Philips symbol. I can't make out the symbol. So, this is probably the This is This would be the capture memory for the video input. Anyway, this is Anyway, let's not worry about the details of the card.
+TEXT: Why does the layout look like this? Why are all these Look, look at all these bypass caps. Why are they all surrounding the chip like this and why are Why is everything like in rows and columns like this?
+context after: It's all beautifully, neatly laid out. Why is this case? Well, there's several reasons for this. The first of all is this This appears to be a single-sided load. There are load.
+
+[186] EEVblog #186 - Soldering Tutorial Part 3 - Surface Mount — Dave Jones (explains)
+context before: Maybe we'll do another tutorial on just reworking parts, but hand soldering skills, very important, and there's no need to be scared of any components like this. Surface mount components are easy to do.
+TEXT: Basic chisel tip soldering iron, some fine solder, a well-designed board with well-designed pads, and the solder mask, make sure you get the solder mask between the pins when you're laying out the board.
+context after: Watch for solder mask expansion. Go Google that. To I think I've probably done that in a previous tutorial. Solder mask expansion is important to get that right. But if you get those things right, you can solder all these boards yourself at home very quickly, very professionally.
+
+[1602] EEVblog 1602 - Sony Amplifier REPAIR ADVENTURE — Dave Jones (explains)
+context before: 1 2 3 4 5. That was the anode voltage, and you see the trace is thicker. It looks like it's buggering off like on this bus thing here, but it ain't cuz look, the trace is a bit thicker.
+TEXT: Half a bee's dick thicker than the other traces, which indicates, aha, it's not part of a bus, right? Because any PCB layout engineer worth his salt is going to lay out all the same width traces, right?
+context after: So, this one's deliberately thicker for a reason. If we follow the money, always follow the money. Aha, instead of going with all the others, it buggers off down a via there.
+
+[1602] EEVblog 1602 - Sony Amplifier REPAIR ADVENTURE — Dave Jones (explains)
+context before: So, here's your power in, comes through a little inductory there, and or a ferrite FB, ferrite bead, there you go. Um when you're running like there's plenty of room there to put FB25 next to that, but it's common when you don't have room, like, you know, you might not have room in there, for example, to go C216.
+TEXT: So, that's that capacitor C14 is that one. C28 is that little jobby. And ferrite B down there is that one. So, that's just common uh PCB layout technique. Although, they still had plenty of room there.
+context after: So, yeah, I don't see what the problem is. You know, you move this around to here. You could move that down to there. You could certainly move that next to there.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: You know, and try all the chips vertically, for example. But, like I said, like I normally wouldn't fuss over, you know, a board like this, a one-off board like this.
+TEXT: But, I I just wanted to sort of, you know, use this as an example and just comment on some uh you know, that's typically what you might have to do in industry when you're laying out a complex board.
+context after: Or heck, um some people like me just, you know, PCB layout is an end unto itself, right? It's just like art. You just love doing it. So, you might, you know, go, oh, that's not optimized.
+
+[1108] EEVblog #1108 - Casio CT-X700 Keyboard Teardown — Dave Jones (explains)
+context before: Cuz if they wanted resistors, they've already got to put down these little What are they? Uh diodes, they. There you go. They've already got to put down these diodes and uh solder those on uh reflow.
+TEXT: So, why not do resistors as well? But, the problem with that is is that um you know, you have trouble running all your traces that you need. It's it's just a PCB layout thing under your resistors.
+context after: You could probably use some Well, for you know, some longer Well, for resistors in there, perhaps, and achieve the same result. But, uh it's a pretty narrow in there.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: 
+TEXT: Hi. In the last video, I showed how I laid out my Rev A power supply board and what went into that. Well, I said I'd do another video showing you how I laid out the Rev B revision of the board.
+context after: In this case, I took the existing Rev A board I've got here, as you saw last time, and basically changed it a little bit, added a few components on here for Rev B.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: But anyway, I think that's probably a good way to Whoop. Have that. No, but look at U3. See, U3, here we go, right? U3 has a whole bunch going over to this side and U2 has a whole bunch going over to that to that side.
+TEXT: So, they're crossed. You can see why that ratsnest are so vital to doing your pre-layout placing. I've I've said it before and I'll say it again, probably 90% of PCB layout work is placement.
+context after: Getting these parts right. You can't just throw them down and then route it. That's a horrible way to do it. So, you just you know, I like on a complex board, I might spend days doing this, right?
+
+[1176] EEVblog #1176 - 2 Layer vs 4 Layer PCB EMC TESTED! — Dave Jones (explains)
+context before: It's got just the same number of bypass capacitors. Everything's hunky-dory. They should be identical, right? Well, it all comes down to loop area, which you've heard me talk about in many videos before, and a huge general rule of thumb when you're laying out boards is not only to keep your traces as short as possible, but to keep the what's called the loop area as small and tight as possible.
+TEXT: So, the tighter your layout and the tighter your loop area, the less problems you're going to have with EMI in generation and EMI and susceptibility to electromagnetic interference as well.
+context after: So, you have a source and you have a destination on your PCB, a trace going from one side from the source to the load. Now, the loop area is actually the total area that includes the ground for that entire loop, but it also includes the power system with the bypass capacitors.
+
+[860] EEVblog #860 - Mailbag — Dave Jones (explains)
+context before: They're surface mount. Of course, they're not actually through hole. So, um, but yeah, they decided we need some routing here and oh, we don't need any routing here. So, oh, let's just whack in a ground plane.
+TEXT: These ones over here didn't need it, but uh obviously these ones up here did and another one over here didn't. So, that's all just a part of your layout considerations and things like that.
+context after: There's our PCI Express slots over here. More stuff coming down. Look at it. Oh, beautiful. There's that. Uh that's probably a level translator. Looks like an IDT one. No, Cypress.
+
+[1074] EEVblog #1074  - Custom LCD Design - Part 2 - (µSupply Part 17) — Dave Jones (explains)
+context before: And the it's actually cheaper to get this Holtek driver chip than it is to buy uh spend the more on the microcontroller to get the model that has all those pins required, as I said.
+TEXT: So, it's from a cost uh point of view, it's better, and also from a uh PCB layout point of view as as well. You can actually put the driver chip next to your LCD, right next to the pins.
+context after: You can route out the pins properly. It might mean you can uh use a two-layer board instead of a four-layer board, for example. So, those sort of uh factors can influence the final uh cost of your design.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: Fantastic. I'm not worried about the silkscreen on the bottom. Who cares? I wouldn't even get it manufactured with a silkscreen on the bottom. I wouldn't bother. In this particular case, doesn't matter, but there we go.
+TEXT: That is a complete board and this is Sorry, this video has I I intended for it to be short, but you know, I always think of stuff to say and turn it into a bit of a how-to layout a PCB.
+context after: That is just like a one-off PCB. Like sort of, you know, a quick and dirty kind of thing. Nothing fancy-pantsy as I said. Bye. Um no stretch is this, you know, I'm super proud of this board or anything.
+
+[142] EEVblog #142 - Electronics Magazine Memories — Dave Jones (explains)
+context before: And then we moved to eight digits in I don't know, the '90s or something like that, but that's how old it must be. Unbelievable. There it is, a 100-W guitar amplifier with the old pattern like that.
+TEXT: You used to photo You used to go to a photocopy machine and pattern it and actually copy it over and put it on the transparency and lay out your own boards, mix a preamp, classic stuff.
+context after: Love it. And the old full page ads they used to have. Look, GE MOVs. Beautiful. Varistors. Awesome. This is where you used to find out about information before the internet came along because this is the only time you you know, this might be the first time you ever heard of MOVs.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: But, yeah, this might have just been a little dead space inside like from a thermal air flow point of view. And they decided, "No, we need a fan in there." But, that is attention to detail at the design stage because, you know, they've got the bracket.
+TEXT: They've actually designed that bracket and they so you know, put that on the layout of the PCB. And so, it's not like they haven't just whacked that in as an afterthought as a budge.
+context after: That's That's all part of the thermal design of this thing. Um interesting. The other way to design this would have just been to have one large uh heat sink just going all the way along there and have your diodes and your power transistors on there.
+
+[830] EEVblog #830 - Portable CRT TV Retro Teardown — Dave Jones (explains)
+context before: It's just, you know, it's great. And you'll see a similar thing in all of these ICs and it helps with the layout and everything else. They just So, they don't just pick the pin outs willy-nilly.
+TEXT: They, you know, they actually uh design the blocks into these things so that the signal uh flows through the various uh stages and then you get the you know, a decent PCB layout.
+context after: So, they uh s- you know, application-specific chips. So, let's take a look at the next one. Then up on our uh RF board here, what have we got here?
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (explains)
+context before: As you can see, I think it's a neat layout. It's got the cutouts for uh the case that it's going to fit into neatly. And I have to do a whole separate video on that cuz there's quite a bit of effort which went into actually figuring out where all the components went and what components I used like the inter user interface components like the knobs and the switches and
+TEXT: uh the power connector and things like that and the heat sink went into this system design before I even started laying out the board. And that constrained a lot of uh things.
+context after: And if this was just a board that was sitting in the middle of a case and then I had wiring going out to the front panel and the back panel, then it would have just been a a simpler uh design from a system and a PCB point of view cuz it would have just been a square board.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: So, just the act that you've got to do a dozen or so components even on a fairly simple, rudimentary double-sided design like this can take a fair amount of time.
+TEXT: So, there you go. Uh I hope you've given that's given you a bit of insight into uh not just laying out a board from scratch but actually making changes to an existing board.
+context after: I'll catch you next time.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (explains)
+context before: This is for PCB routing reasons. It's just the way that the pin outs worked. If you had these chips up the other way, like these ones, it would all be higgledy-piggledy and you need extra layers on your board to to route it all.
+TEXT: It'd be an absolute mess. So, from a PCB layout elegance point of view, they've mounted these chips backwards with a cutout in the board. It's just It It's simply brilliant.
+context after: It really is. Hats off. Luckily, we do have the service manual complete with all the schematics, the theory of operation, the whole works. They don't make them like this anymore, unfortunately.
+
+[1176] EEVblog #1176 - 2 Layer vs 4 Layer PCB EMC TESTED! — Dave Jones (explains)
+context before: Now, this is the Gigatron TTL computer which you've no doubt seen in previous videos and this is the original from the designers and it's a two-layer PCB. There is no ground plane internally to this.
+TEXT: So, all the signal traces you can see they go horizontal as effectively horizontal on the bottom and more vertical on the top and that's a traditional two-layer PCB layout.
+context after: Yes, they've got some ground flood fill in here and stuff like that, but generally it's it's actually quite a nice neat layout. All the chips are in the same direction and it's quite a neat traditional two-layer layout.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: Like, there's no reason why, you know, this chip here, for example, can't sit in there underneath these tubes on the bottom side of the board. You know, we could go in there and we could flip that down to the bottom layer and that would fit just fine and dandy in there, right?
+TEXT: So, it wouldn't be on the top here. It'd be on the bottom side of that board and could easily fit there. And so, if you really want extra tight room, then you can do that.
+context after: Actually, I think that the this one over here was a good example of that. How to Yeah, everything was mounted on the bottom here or vice versa. It had a a couple of little switches on one side there, but look, they even mounted the DC jack underneath the underneath the tubes there because there's some physical space for the leads and the solder joints to hang out there.
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (explains)
+context before: They don't want them overlapping, and so they spaced them out nicely around the chip like this. They could have put them a bit closer, but as I said, there might have been requirements for that.
+TEXT: So, you simply place them, all your bypass caps around the outside, and you want to have them all in line, because you're a, you know, you take pride in your PCB layout.
+context after: So, you want to have them, you know, in nice vertical and horizontal arrangements. And then, if we zoom in there, you can actually see they've got the vias there and there, like either side there.
+
+[e9cpKN69Avk] 121GW Development History — Dave Jones (explains)
+context before: And they had they completely of course I think they had to rewrite a good majority if not most of the software from scratch. Although a lot of the routines, you know, cuz it's high level if it's talking to the the chip and stuff like that.
+TEXT: A lot of the code might remain the same, but everything basically underlying had to be completely rewritten. So, and of course the PCB had to be completely re-laid out.
+context after: They had to re-spin all that. And I was amazed at the speed with which they transitioned from a pic to an arm STM32 like like that. It was it was almost instant and painless.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (explains)
+context before: 
+TEXT: Hi. Now, there were quite a lot of people who wanted me to take them through my PCB layout of this power supply board, and that's exactly what I'm going to do here.
+context after: While I was laying out this board, I did actually uh capture it in real time. So, what I plan to do here is actually play that back, the complete recording of laying out the board at uh times 10 speed, and adding some commentary on top of that of how I was laying it out, what I was thinking, and the processes and things like that.
+
+[9V99J22aiLE] Full Discussion - Film Capacitor Failures with Ron Demcko from AVX — Dave Jones (explains)
+context before: And yeah, well I've done this is I think the next slide. I've done a video on this and ceramic capacitor cracking and board flexing and and how this can cause shorts and fires.
+TEXT: I've I've had my own products catch on fire because of you know, the board is flexed and you know, people mount them. It's also a PCB construction PCB layout thing.
+context after: If you put it too too near to a a screw point for example like a mounting point for example just screwing in your board into your chassis can cause a crack in your capacitor and boom, off it goes or Yeah.
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (explains)
+context before: Nice little module. I can buy this in stock in Australia on eBay for 10 bucks delivered. You know, it's like Anyway, it's fantastic. It uses the ESP8266E chipset. There's bugger all on it really.
+TEXT: So it's got a little USB thing, little 0.1 inch header with 0.9 inch spacing here. So yes, I had to do my own layout for that because of course we didn't have ones.
+context after: There we go. Just did my own symbol there. It took like a minute. It's like bugger all. I sort of you know got almost close to the right dimensions.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: And there was a lot more uh involved in there. A lot of thinking, a lot of rip up, retry for a lot of things. And but as you can see, I didn't rip up and retry a lot of components.
+TEXT: So, just the act that you've got to do a dozen or so components even on a fairly simple, rudimentary double-sided design like this can take a fair amount of time.
+context after: So, there you go. Uh I hope you've given that's given you a bit of insight into uh not just laying out a board from scratch but actually making changes to an existing board.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: If you don't get that right, especially in tran- sients and stuff like that. Like it might work fine during normal operation and then you might get a transient and whoop, if your capacitor's right on the edge of your stability requirements, then your regulator can start ringing and doing and become unstable, get the heebie-jeebies and go So just be careful with low dropout regulators, not just the triple 17.
+TEXT: And they also give layout requirements here for a reason. So yeah, you want to keep your loops a bit tight. So I said they're available in fixed voltages as well.
+context after: So you might keep a stock of those uh just available so you don't need the resistors, especially if you're space critical, you can't afford the resistors in there to adjust it.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (explains)
+context before: That's why it's called a H-bridge. And it's a very uh versatile and powerful way to uh drive a motor like this. So, it's got a dual H-bridge like that, all the required control circuitry to drive it, all some current sense resistors RS1 and RS2 here, and uh supply which is uh they've called VBB.
+TEXT: And one of the things I love about these data sheets and why they make excellent reading is it's got typical layout information about how you lay out the boards.
+context after: People ask, "Well, how should I lay out a particular circuit? Well, how do I learn it?" Well, read data sheets like this and follow these example layouts. And it tells you why various things are important.
+
+[434] EEVblog #434 - SMD Thermal Pad & Drag Soldering Tutorial — Dave Jones (explains)
+context before: And I've shown you one way to do this before with solder paste and put it down on there and then use hot air, but I'm going to use a different technique today.
+TEXT: So, I thought I'd show you that where I'm actually going to apply the heat from the bottom of the board and I specifically laid out my board so I could do this.
+context after: Now, this is a 0.65 mm pin pitch MSOP. It doesn't matter what the pin pitch is. Really, what we're doing here is I'm going to show you how to get the thermal because you need solder under that pad down there to thermally bond it to the chip and then all of this copper around here, of course, is used as a heat sink to get the to get the heat out of the die
+
+[454] EEVblog #454 - JVC Camcorder Teardown — Dave Jones (explains)
+context before: We've got the um headphone uh jack. I don't think this has an external uh microphone input. And uh not much else. Look at that. They gone to the effort there to mount that LED just on a slight, you know, 10 15° angle from the vertical like that just because, I don't know, that's the, you know, the light pipe sort of, you know, had to fit in there and uh all that sort of stuff.
+TEXT: So, you know, the person who was laying out this board had to talk to the uh industrial designer of the uh light pipe and the case and the all sorts of things.
+context after: It It's just, you know, a lot of effort. You'd be surprised goes into just selecting the angle of that LED on the PCB layout. Lots of flow-on effects from somebody uh deciding up uh you know, the food chain or across the food chain uh deciding that they want the LED in a particular uh spot on the case.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (explains)
+context before: This is a step in the PCB layout process is going through and tidying up stuff like this, okay? Cuz you might have all these residual things left You might have these residual things left over cuz you've moved, you know, you've pushed and shoved around it, and you're moving all over the place.
+TEXT: And as a final pass, you're going through and you're just tidying up stuff like this. And you know, I It It It should be trivial to do that. And it's not.
+context after: Okay? And I know you might think it's trivial. Just change the grid size. Just delete the track and place a new one. Or just place a new track. It It It is totally beside the point.
+
+[651] EEVblog #651 - Mailbag — Dave Jones (opinion)
+context before: Look at that. Boom, boom, boom. No, you know, professional layout person would actually route the board like that. I think they've just hit the bloody auto route button on that thing.
+TEXT: So it's almost as if they were designed and manufactured by different people different departments because look, there's no tin rolled on this. This is solder mask over bare copper as opposed to this one which looks like it does seem to have been you know, a fairly intelligent and carefully and nicely laid out by hand I think and it's been manufactured different so yeah, there you go.
+context after: That's like sort of like totally different implementations there and there's the vacuum fluorescent display for those into their display porn. They're they're just very nice vacuum fluorescent displays. I love them.
+
+[WFVfbu1Xz3A] Solar Analytics 4G Solar Monitor TEARDOWN — Dave Jones (opinion)
+context before: This is different here. The main side looks absolutely identical. Ah, it's got an extra TVS um up there. It's got two TVSs instead of They're for surge protection, so it's got two instead of one.
+TEXT: So, that's a bit extra, but apart from that, um yeah, looks looks the same. Flip it over. Wow, yeah, they really haven't changed that. It's near identical layout. Now, somebody mentioned that they were concerned with the isolation in here and yeah, I I would have if I was designing this, if I was laying that out, I certainly would have put an isolation slot cuz these are the three
+context after: phases here coming in. So, I certainly would have would have put isolation slots between there. And but, you know, if you work out the clearance, technically it's probably enough and over here it's on the low lower voltage side of things.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (opinion)
+context before: Early in the process, I would have gone, "Okay." Both of them so Assume these are both lines. Let's do a larger trace, right? Both lines like this, I just would have routed those around the bottom there, and up to there.
+TEXT: Is that where they're going? Anyway, I would have like routed that first. Um, you know, oh, well, you know, fairly early on in the design uh process. Just get those over, and anything that needs power, then I would have, you know, well, you would have had the bypass caps done already, but anyway, but the fact that you snaked all of these power traces around here, don't do that.
+context after: The top layer should be for signal traces. So, this just looks like your JTAG interface here for your um FPGA, and like these traces here are going I can see those.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (opinion)
+context before: Can't uh you know, it handles it just fine. The total project lists a pledged amount currently, does that include Oh, it does Ah, sorry. Does the I don't know whether or not the pledged amount on that's publicly shown on Kickstarter includes the delivery or not.
+TEXT: I don't know. Were there any design compromises? Yeah. Like if I was designing this myself, um yeah, I would have maybe it would have turned out differently. Um I would have done a lot more small tweaks, you know, if I was laying out the board, I would have done like lots of small tweaks, which they, you know, I couldn't Mike I couldn't did not want to micromanage
+context after: this. And because I wasn't paying for it, um paying for the development, I didn't want you know, that's not that's poor form to micromanage it. Um I think I did I think I pushed them enough as it is.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (opinion)
+context before: It still worked. So, let's get back to this power supply here, this pesky little power supply. Reason we didn't look at it last time is cuz well, look at it.
+TEXT: It It look It's like you can't even get in there to read or measure half of the parts. It's all higgledy-piggledy. It's all over the shop. It's just a really horrible layout to work on and of course Murphy ensured that any trace that you try to you know, trace on here it's going to go through to the top layer where you can't damn well see anything.
+context after: So, yeah, real pain in the butt. Anyway, we're going to solve our minus five volt and minus 12 volt issue on here. So, let's take a closer look. By the way, we're going to be using the new EE blog BM 786 multimeter available exclusively on the EE blog available on the store as of today.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (opinion)
+context before: And absolute classic example of how to lay out one of these uh four-layer 1980s vintage digital boards. So, of course, you did have to put some thought into the layout of this thing, component placement.
+TEXT: As I've always said, PCB layout is, you know, 90% component placement. You do good placement, the auto routing routines can work just fine. And of course, you know, if you had to get a signal from here right over to there, you didn't care how, you know, it might jump across on the bottom layer here, jump up back there, back back.
+context after: It'll just, you know, as it's easy to find a route when you first start start laying out the traces, but when, you know, you get to that 90 80 90% routing mark, and well, you haven't got much room left, you really have to jump all over the shop here, but this one is quite efficient.
+
+[53] EEVblog #53 - Mr Murphy and Microchip PIC Silicon Bugs — Dave Jones (opinion)
+context before: In other words, it doesn't bloody well work at all. And, of course, Murphy's Law, this particular PICchip, it's a 64-pin one, has three of these ICSP buses. It's really quite neat. It means that when you're laying out the board, you can choose whichever data and clock pair you want from three different ones.
+TEXT: And I was intending to use number one, which doesn't have a problem at all. But very late in the design process, the layout of this thing, I thought, oh, it'd be nice if I used number three instead. And I didn't remember that when I read this, you know, a bit before, that it had a problem with number three, the ICSP bus
+context after: number three. And I didn't recheck the silicon errata, and lo and behold, Murphy's Law says that, you know, if I'm going to pick the, you know, if I'm going to pick that particular pair, it's going to be the wrong one. And I picked number three, and number three doesn't work.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (opinion)
+context before: so they've maybe got some more stuff tacked on here, but yeah. Oh no, no, it looks like they have it down here. You can see the traces snaking down like this, down to this unpopulated area down here. So hey, that's a bit... that's a bit of a pain in the butt from the...
+TEXT: like, it's probably the PCB designer, went, oh, you've only given me this room, I need this amount of layout here for all this, and you want me to duplicate the channel. I don't have enough room, you haven't made the case wide enough, so I'm going to have to split this down here and have the extra circuitry down here.
+context after: Bummer. But that might make a bit of sense, given that the extra MOSFETs for the other channel are down here. They're not populated, of course, and then this is the circuitry for the MOSFET that controls all the ESR, of course. That's how you would get a controllable battery ESR,
+
+[xUAKjWMsUfA] TWO BOXES of Mystery Multimeters! — Dave Jones (opinion)
+context before: It didn't have a number back then. It wasn't called the 121GW. It was just the eVlog2RMS meter. So, there you go. So, yeah, that one should go to the pool room. Oh, look, hang on. I'll go quicker through this. Two, more Tektronix. So, I've got four total Tektronix units.
+TEXT: Wow. So, keep those together. Although I'm probably just going to toss it all back in the box, really. Geez, this is ridiculous. Look, 121s, 121s. Yeah, that's, oh, 2016 as well. Old school. Yeah, 2016. So, there's lots of, they were churning out. Amazing how they could re-spin a new design, a new board layout.
+context after: And for those who don't know, there is a secret Dave head inside there. Can you see it? Hopefully you can see that. Anyway, there is a Dave head, Dave hand with a Dave head. Because ever since I was a kid, I wanted my head.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (opinion)
+context before: And yeah, that'll probably be a fix. Maybe, you know, that Well, it probably would be a half reasonable fix if they up the size of that heat sink by you know, four or five times or something like that.
+TEXT: But, it definitely involves something custom. Other than that, it probably have to relay out the board or something like that. This is clearly unacceptable. Anyway, let's see. I'll definitely let Rygo know about this and let's see we hear back from him cuz this is just complete utter Catch you next time.
+context after: 
+
+[795] EEVblog #795 - Electronex 2015 — Dave Jones (opinion)
+context before: I'd actually move the transistor to the other page closer to the device that's close to it. Got it. Tweak the schematic just a little bit. Right. So you can still make a decent living just doing PCB layout? Or is it getting harder and harder?
+TEXT: It's getting more difficult as time happens. Why is that? Is it because they get more in-house talent for PCB design? Or what's the reason? Well, it's getting more difficult from perspective. Unfortunately, a lot of companies and organizations seem to require and expect their engineers to lay out boards.
+context after: Right, that's common. And that's becoming more and more common. And the poor engineers, half the time they're scratching their head trying to work out what they need to do. Engineers do a reasonably good job. They're capable people. Right. But they're not necessarily experienced.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (opinion)
+context before: powering that, but no, it's all just part of powering the digital stuff over on this side of the heatsink here. So obviously what they're doing is routing the mains from the power switch, probably under the back of the board, the backside of the board,
+TEXT: and popping up into here. Because you can see some dark traces on the bottom, through the bottom of the board there, but that's... It's like layout! I mean, somebody just wasn't thinking about the layout and just hasn't adequately separated it. Like, from a technical point of view, it's fine, I think,
+context after: but it's just rather puzzling why they did it like that. Strange. Anyway, that power supply is no doubt going to be absolutely first class. I might be able to take it out and take the cage off and have a squeeze, but not hugely interested.
+
+[1188] EEVblog #1188 - $10 DIY EMC Probe using Scope FFT — Dave Jones (opinion)
+context before: As you go over the board, you might compare board PCB revisions for example. So you might go, "Aha! Like I've got this big spike here for example." might come out.
+TEXT: So you might realize that you goofed up the PCB layout. So you might respin your board, tighten up the loop area to actually get that down, or do whatever measure you want to do, and then you retest it, and you should be able to then see that particular spike drop by X amount of dBs, or whatever.
+context after: So, it you don't need a quantitative value. It doesn't really matter to get a comparative difference when you make changes on your design. That's what it's all about. So, you can see how even a low-end scope like this, with its FFT functionality, is more than good enough for the job of doing this.
+
+[WQRdEtqLabE] eevBLAB #58 - Engineers Are Underappreciated — Dave Jones (opinion)
+context before: Like, you know, like, just take this, right? This is, I think it's Siemens, is it? I did, this is a, this was sent into the mailbag, right? This is like a Siemens. I don't, I don't know. Anyway, like a telecoms voice processor for an exchange, right?
+TEXT: Something that nobody gives a shit about, but it enables, you know, your phone calls to be made and whatnot, right? Look at the complexity of this board. How many engineers, how many nameless engineers worked on this, right? How many nameless, like, like the person who did this PCB layout, right?
+context after: Fantastic, right? Right. The people who worked on designing all these custom ASIC chips, right? The VHD, the Verilog engineers that worked on all the system architects that worked on these. The, you know, somebody, the people that, you know, they look like one of those TI modules, right?
+
+[690] EEVblog #690 - TDS220 Oscilloscope Autopsy — Dave Jones (opinion)
+context before: Now that they're faded and just crap after, you know, 15 years, um they're just no good. So, anyway, um so yeah, that was the problem there. I got sidetracked.
+TEXT: The uh mod on it was they had to strap a another wire from here directly down. I think it went over the back of the boards right down onto the BNCs right down in there because maybe there was a layout issue on the board and that didn't have a low enough impedance or whatever to go through.
+context after: So, yeah, I'm not sure if this is like an upgraded board or whether or not you know, all new or it's just one that hasn't been modded and all of the uh latest ones, by latest I mean, you know, at least like 12 years old or something, more than like 15 years old will probably have the earth terminal going directly down to the BNCs down in there
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (opinion)
+context before: So, I presume it's just a programming difference between and maybe they only populate all the passives and you know, they only populate one of these or something like that for the 16 uh channel version.
+TEXT: But, the PCB layout's likely to be uh absolutely identical between the two models. And once again, you might say, yeah, that's a rip-off. One's 135 bucks right at the bottom end, the other one's like 1,800 bucks right at the top end, but they've got to pay for all the software development.
+context after: That's just how it works. And this puppy right down in here is a Microchip uh E-squared PROM. So, is that where they're storing the product configuration or something like that, perhaps?
+
+[1330] EEVblog #1330 - Mailbag with GUEST LABS! — Dave Jones (opinion)
+context before: Let's ah, ah, there you go. Made in the United States of America for IBM. Ah, so who actually ma did IBM manufacture it or was it just subcontracted? Manufacturing in the USA for IBM. All right, let's see what we've got in here. Ah, there we go.
+TEXT: Beautiful. Uh, 8049. Yep. No surprises. Nice hand taped layout there. Beautiful. Got all the curvy traces. None of that 45 degree rubbish. 1987 date code though. So, you know, late eighties. So got our first customer IBM part number. I'm surprised we don't see more custom IBM part numbers.
+context after: Uh, that's interesting. But, uh, anyway, um, yeah, basically what's that one? Um, everything else in here is, uh, digital. So yeah, they're just, I get in the ones and the zeros out. So I assume based on the analog goodness around it here, all these tag tants, evil tag tants.
+
+[795] EEVblog #795 - Electronex 2015 — Dave Jones (opinion)
+context before: And most engineers are very grateful. And then you go ahead and the engineers would supply the circuits to me. They'll specify some special conditions, give me mechanical requirements. As in the footprint layout of the board, maybe some placement information. Yes, actually connectors and some critical things.
+TEXT: The schematics generally would include most footprints. In some cases you might have alternative footprints that you might consider. And then it would be all left up to me. And I'd lock myself up and get on to it. How long basically for an expert layout guy to do that for their project?
+context after: A design like this, at the time I had to do some research on DDR3, make sure that I cover all requirements. I did some research on a few other minor issues here and there. And I believe this board took in excess of about 200 hours.
+
+[936] EEVblog #936 - Mailbag — Dave Jones (opinion)
+context before: if you go look at the the implementation and note the data sheet for the OMAP processor, they'll probably tell you a typical bypass configuration might be three different value caps.
+TEXT: I've done a video on this explaining why that's the case, why you'd have different value caps in parallel. So, I won't go over that again, but like they put that on the schematic and then the PCB layout person just went, "I'll just just whack them all in a nice neat row on the outside.
+context after: That'll pass the design review meeting. Looks nice and neat." Um when really they should you should be putting them as close as possible underneath the chip directly onto the power pins, even sacrificing the required number of caps just to fit them on the bottom.
+
+[145] EEVblog #145 - Agilent LAN/VGA Module Teardown — Dave Jones (opinion)
+context before: I think that was the same as what was in the DSO from memory. So they've had six goes at this board either. Well, A, either they've had six goes at it, or B, they actually automatically update this board when the other one gets
+TEXT: updated. That's another technique, but I doubt it. It'd be a bit silly to update this particular module. It would be its own project, and well, there's not much in here at all. So it's certainly not 400 bucks worth of parts. It's, you know, even from Digikey one-off, it's probably only
+context after: 30 or 40 bucks worth of parts. So it's not much at all. So clearly, what you're paying for is the development, and you're paying for, well, because it's Agilent, where everything's optional extra. Let's take a quick look at the layout, because there's something I immediately noticed here.
+
+[754] EEVblog #754 - Altium Circuit Maker First Impressions — Dave Jones (opinion)
+context before: automatically get pushed through to CircuitMaker or vice versa, but, yeah, it's pretty impressive. So, actually, moving up from CircuitMaker into, well, Circuit Studio is going to be the same as CircuitMaker, except it allows you to do all the local stuff, I believe, but moving from CircuitMaker
+TEXT: up to the full professional Altium Designer shouldn't be that hard at all, and, of course, I'm completely familiar with this. I can, you know, lay out boards fairly quickly straight away, because it effectively is Altium Designer, just with a little bit easier to use user interface,
+context after: although I think they, you know, they're wasting a lot of space up there. Space is always, real estate, screen real estate's always been an issue with Altium Designer, and, yeah, this new ribbon layout doesn't, doesn't help matters at all, but, oh, I feel so at home.
+
+[979] EEVblog #979 - Mailbag — Dave Jones (opinion)
+context before: Arm and a leg. CFL backlight is, well, stuck in there somehow. That's your high voltage backlight. None of this lead backlight rubbish. That looks like a magnesium alloy thing for the screen. But yeah, that's... oh, we saw on the bottom side here. Here we go.
+TEXT: There we go. We've got an extra board. What's that controller doing? Oh, that'd be the video controller. Actually, that puppy's what's called a mobile GUI accelerator. Shoot, we don't make those anymore. So there's a lot of design effort that goes into laying out a board like that.
+context after: And, well, obviously, oh yeah, we've got some capacitors in there on the mod as well. I missed that before. Oh yeah, there we go. There we go. Beautiful. It was easier to do the mod wires in production. Because you know, these wouldn't have been, you know, they're not selling a million of them
+
+[752] EEVblog #752 - Original Sony Walkman TPS-L2 Teardown — Dave Jones (opinion)
+context before: all through-hole, as I said, but I'm surprised at the amount of jumper wires going all around here. But why didn't they spring for a double-sided board? Too expensive for a consumer product, I guess. You know, it was cheaper to have someone, you know,
+TEXT: do the manual labor and add all these little jumper wires all over the shop here. You know, you've got to get from one side of the board to the other. Geez, I wonder if they could have optimized their single-sided layout. I don't think Nobutoshi himself would have done this layout.
+context after: Anyway, they've got some tape holding all this down, and these probably run off to another board under there perhaps. We'd have to take that off, but yeah, man, totally 1970s written all over it. And up here we've got genuine bodge resistors. Or are they?
+
+[1169] EEVblog #1169 - TI 1972 Computer Interfacing — Dave Jones (opinion)
+context before: they've also... Where they put that, uh, gunk before, they've also put some on the bottom side here. So, I, like, was moisture a problem at that part in the circuit? I'm not sure. Made in the U.S.A. T.I., love the T.I. logo, classic. Anyway, there's no obvious, uh, bodges on this board, so...
+TEXT: Nice job, whoever did the layout on that. Sweet. Oh, some dust accumulation. From 1978. I presume it's never been cleaned. Ha-ha. And they're, they're all, uh, tip series power transistors. Probably been used as, uh, series pass regulation elements. Actually, looking at all this,
+context after: I think this is all part of the power supply here. And given that this puppy is not your standard linear transformer, it looks like this is a switch-in, uh, converter, given that the power of this thing, uh, would be taking two, of course.
+
+[960] EEVblog #960 - Mystery Merry Mailbag Teardown — Dave Jones (opinion)
+context before: maybe prototypes or short-run boards or something like that. They just did as a matrix layout. I mean, half those pads aren't connected, yet they've left them in there. It's, like, bizarre. Did they have some rapid prototyping system that allowed them to make boards like this easily?
+TEXT: Otherwise, you know, if you're going to etch a board and do it, you know, why not just etch a proper board? Why use a system like this? No, they wouldn't have placed them down afterwards, would they? No, it's weird. I... Maybe I might have seen this somewhere once, but I can't...
+context after: It kind of rings a bell, but I can't remember. If anyone knows if this particular technique has a name, if it was specific to IBM or whatnot, then please let us know. But that's very, very unusual. Anyway, we have some date codes in here.
+
+[645] EEVblog #645 - TRS-80 Model I Retro Computer Teardown — Dave Jones (opinion)
+context before: And by the way, just looking at the routing on this back of the board, they've done a really good job. As an experienced PCB guy who's done many of these, countless double-sided layout boards like this, you can tell they've got this pretty much right and optimal.
+TEXT: Trust me, it's not easy laying out a double-sided board like this. And well, they've done really well. Manufactured by NEC here, these are mask ROMs. And you can tell it's a ROM set because they've basically got this part number you've never heard of and then A, B, and C there.
+context after: So, yeah, it's a three-part ROM set. And of course, it needs three ROMs here to make up the 12K ROM. So, these would be 4K each. 4 8 12.
+
+[1611] EEVblog 1611 - Top 5 Jellybean 7400 & 4000 Logic — Dave Jones (opinion)
+context before: You only get your data inputs and your Q outputs, and you don't get any not Q outputs, but hey, you get eight of them in the one package. The only problem with this is that Oh, and and you get a three-state output enable, which you don't get on the 74.
+TEXT: So, if you're joining buses and stuff like that, fantastic. You can tri-state the output. But the problem is with the 374 trap for young players is that the Ds and Qs are mixed up on both sides of the package, and that could be good or bad for you depending on your PCB layout.
+context after: So, in that particular case, extra special mention for the H74574, which is exactly the same as the 374, except all the data is on one side and all the Q outputs are on the other.
+
+[979] EEVblog #979 - Mailbag — Dave Jones (opinion)
+context before: or something like that. So it was easy to do the mod wires. There they are. Poking up through the board and snaking off. Jeez, they're going all over the shop, aren't they? Wow, what were they fixing there? But yeah, a lot of work's gone into this.
+TEXT: A lot of layers. A lot of blood, sweat and tears in that PCB layout. Wonder if the person who did it's watching. If we take the screen apart, there's all our dispersion films and whatnot. There we go. And there's the backlight which it's got the faint, it's got the dots on it.
+context after: Maybe you can see. I've done videos on these before, they're hard to see. Yeah, there we go, you can see all the dots. That helps disperse the light evenly. So, backlight. Fujitsu KC Limited. There you go. And there's our reflective backing. There's part of our driver circuitry there.
+
+[1219] EEVblog #1219 - Don't Trust Switches - Toy Repair — Dave Jones (opinion)
+context before: there we go, there's the positive, goes down to the switch, comes out of the switch, goes up that trace there, sorry for my crude finger pointing, goes to the second contact, so that second contact, has shorted out to the external case, which they decided to ground instead of float,
+TEXT: and there's no electrical reason to do that, so you could maybe blame the, I don't know, do you blame the PCB layout person, or do you blame the original designer who specified that, I wonder if that's specified on the schematic, whether or not they showed that those pins were
+context after: electrically connected to ground or not, there was no, you know, there's no, like, EMC reason to do it or anything like that, so, yeah, hmm, you're reliant upon the reliability of that switch to prevent shorts. Anyway, I think that's a rather interesting fault, and it can show you how you can really come aguts
+
+[872] EEVblog #872 - Mailbag — Dave Jones (opinion)
+context before: And there's our little board as I said, all open source hardware, very nice got the mount going directly into the board, it's all properly designed. Nice! Look at this, we've got ourselves isolation on here it done that for thermal reasons perhaps? Because I reckon, well I believe
+TEXT: this thing has cold junction compensation so there's probably a cold junction temperature compensation up there, let me hang on, I'll do this off camera. And isn't that a beautiful layout board, I really like that, we've got a battery backup for the RTC because it is a data
+context after: logger of course, you don't want to lose your time and date and everything else when you replace that battery and here's our ADC here, I thought oh yeah, there we go, that one must be doing cold junction temperature compensation up there is it written on the board?
+
+[1205] EEVblog #1205 - RC2014 Z80 Computer Kit Build — Dave Jones (opinion)
+context before: Look at those, Sagan, they are fantastic joints. - Yeah. - I'm liking the look of those. Oh, well done, mate. What do we have to do now, Sagan? - Get the offcuts of our resistors and do them as links. - Links? - Seriously?
+TEXT: This is crazy. - I don't know why we have to use, why we have to put links in it. It's not for PCB layout reasons. Maybe it's for experimenting and jumping later. Maybe it's like setting memory addresses and stuff like that. It's really tricky to get those, isn't it, Sagan?
+context after: - Yeah. - They're tucked away in there. You've gotta feed your solder through. - Yeah. - Really tricky. All right, there's two, yeah, four more down there. Now, I'll tell you the trick to these, Sagan. Because they're all flapping around in the breeze there,
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (opinion)
+context before: Bummer. But that might make a bit of sense, given that the extra MOSFETs for the other channel are down here. They're not populated, of course, and then this is the circuitry for the MOSFET that controls all the ESR, of course. That's how you would get a controllable battery ESR,
+TEXT: is by using the on-resistance of the... controlled on-resistance of the MOSFETs to simulate the ESR. But yeah, why you wouldn't, from a first layout PCB point of view, like, whack this in the middle, like the heat sink in the middle, have the power transistors either side,
+context after: and then have all the other circuitry going down like this, and then this tucked over here, we've got an unpopulated one over here, but, like, yeah, I don't know. Like, did they suddenly design, like, at the last minute, oh, we need a two-channel version,
+
+[1222] EEVblog #1222 - Apple's MacBook Design FAIL - Who's To Blame? — Dave Jones (opinion)
+context before: Or we did actually test that particular thing, but it only fails one out of every 10 times. And of course, you're not going to test it 10 times. You're going to Oh, you're doing it a few times or you you know, Murphy's Law.
+TEXT: It'll get you every single time. So, so anyway, it's an interesting discussion about the infinite variability in layout and things going wrong and whether or not you do failure analysis, whether or not it's good enough, whether or not your mitigation issues are enough.
+context after: But yeah, this one seems a bit dumb with hindsight. But are they are they to blame? Are the engineers to blame? Let us know your thoughts down in the comments.
+
+[964] EEVblog #964 - Mailbag — Dave Jones (opinion)
+context before: That was a fair bit of dosh back then. Anyway, Samuel has sent this in. He's from Crown Point, Indiana. Hi to all my viewers in Indiana. And of course it has the classic 1980s style in. Look at that. Ooh, and we've got ourselves a telescopic rod antenna.
+TEXT: Oh, I love playing with the rod antennas. Fantastic. So let's crack open this Bobby Dazzler and see what we've got inside. Ta-da! Exactly what you'd expect. Single-sided construction. They got away with very few links. Just a couple of links in there. Nice layout job.
+context after: Oops, lost one. And yeah, we've got our line isolation transformer and some Motorola chippies. Ooh, what is that? Big-ass relay, is it? Hmm. But look at this mains wiring completely. How you doing? Look, they've just got... Oh, I'm going to have to take that off.
+
+[1222] EEVblog #1222 - Apple's MacBook Design FAIL - Who's To Blame? — Dave Jones (opinion)
+context before: It's just the nature of having a high voltage, uh you know, reasonable current, uh reasonable power capability power supply, and you add liquid, it's going to ruin your day.
+TEXT: I mean, there's got to be a point at like at some physical separation distance, but we've got quite a large separation in there. Like if I was uh the layout person doing that board, and I wanted to add separation in there, it certainly wouldn't be any more than that.
+context after: But, we are drawing significantly uh less current than before. We're drawing about 7 milliamps this time. So, there is a function of the distance in there, um but still, I mean, that's like uh within seconds.
+
+[1060] EEVblog #1060 - $35,000 DataIO Unisite Universal Programmer Teardown! — Dave Jones (opinion)
+context before: Love the right angle dual in-line 0.1 inch header there with the soldered on boards. They're very rugged. Love that. Yes, it is actually a dual row. It plugs into the second row down the bottom there as well.
+TEXT: But these would have cost a fortune and check out the density in this thing. Wow, look at that. The This is a brilliant layout. So it's hats off to who whoever laid this puppy out to try and get all that density into the like There wouldn't have been much room left.
+context after: Would have been tearing their eyes out trying to lay out that puppy. But anyway, very very nice. We've got ourselves uh some power transistors down here. They're 3055. You should be familiar with those.
+
+[1080] EEVblog #1080 - Gigatron TTL RISC Kit Computer Review — Dave Jones (opinion)
+context before: So it should just power up and play games. They all should be programmed into the ROM. The operating system, in quote marks, whatever that is, I'm sure they've got detailed info and all that sort of stuff. But basically, we're building a microprocessor just out of 7.4 series logic.
+TEXT: Brilliant. I tell you what, I like the layout too. That's actually quite efficient. You can see, like, mostly vertical routing on the top side here. This is only a double-sided board, so, you know, laying out this one, if you want to task, maybe they've got the...
+context after: what did they use, Eagle or something? If they've got the files, try and route something like this yourself. It'd be an interesting exercise in optimization. Most of the routing on the bottom there, that's a very... and the flood field, the rest. Anyway, I like this.
+
+[oVkrc3gF7ns] Conducted Mode EMC Emissions Demo — Dave Jones (opinion)
+context before: So this is basically now my noise source. And what I want to do is now implement what a good design looks like. So what do we mean by a good design? So we've got a second circuit on the board that I'll now switch in.
+TEXT: And this will have improvements to things like common mode chokes, differential mode filtering, better layout. And what we can now see, it will be the end result. So let me just power this down, switch it over to a good design, power back up and set my emissions.
+context after: So if you now look on the screen, we can actually see in the time domain, we have virtually suppressed all that noise that was coming off the bad design. And so this is implementation of things like common mode choke, better layout. We can see the resultant conductive emissions has significantly dropped.
+
+[1174] EEVblog #1174 - Rohde & Schwarz PSU Teardowns — Dave Jones (opinion)
+context before: This bypass wire here does. It takes that mains... Over... There... To... Over to your... Primary... Transformer. So... What? They run out of routing room? To snake it over? Hmm... Because you can see the other trace here... Going... Actually on the bottom of that...
+TEXT: Around like that... Just avoiding these two sections here. So... PCB designer went... Oh... Geez... What are you doing to me? Maybe it was like a... Uh... Uh... Uh... Uh... Later edition or something... Maybe they just got to the end of the layout... You know...
+context after: And went... Oh... Yeah... Forgot all about these... Uh... We'll shove them in here... But... Oh... We don't have the electrical clearance... Um... No... Like slots routed or anything like that... Um... Which is fine... You know... If you've got the... Uh... Creepage... Uh... Distance across here...
+
+[697] EEVblog #697 - Mailbag — Dave Jones (opinion)
+context before: done it manually. But yeah, that would be my only critique there, I guess, is maybe you could have tried a bit hard to get it on a single-sided. But I stand to be corrected. That could be an optimum layout. I love this. This is a harmless scientific experiment.
+TEXT: If found, please call this number. But I guess with that component on that side, I guess it doesn't really matter a huge amount. So yeah, you're going to have to put traces on the bottom side anyway. I'm just being pedantic. You've got a reasonable amount of
+context after: via stitching around there. And you know, like obviously you would have moved that trace there, I guess, and let the copper pour flow through there rather than break that around like that. You know, just little things like that. But yeah, not a big deal.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (opinion)
+context before: I like it, cool bananas, there you go a lot of people have done micro supply type variants of the project and I totally encourage it, it's great to see yeah, there's lots of people on the forum who've done that sort of stuff, I like how it's almost all
+TEXT: through hole, except for that puppy up there but anyway, that looks like a nice layout jazzy, aha, there's inside the finished product and yeah, we've got the, using the back panel as the heat sink in time honoured tradition, and it looks like it uses the LT
+context after: 3080 still, so there you go so well done Thomas, that's an excellent implementation linked in down below, it's all open source-y Hi to all my Finnish viewers, this one's from Julius Willuco from Espoo Espoo in Finland, there you go let's have a squares, I believe this one is a
+
+[1327] EEVblog #1327 - 3 Ways to FAIL at PCB Manufacture — Dave Jones (opinion)
+context before: And then they've got like you know, the the pad to the track and things like that. Via to track and all sorts of other different specifications. And they can be really tricky to actually program into your software.
+TEXT: I don't know how you do that in KiCad, actually, cuz I'm not a huge user of KiCad, but they could reject your board just based on that. And imagine if you went to all the time and effort to lay out that board and find out you couldn't get your $5 prototype.
+context after: Wah, wah, wah, wah. Not all manufacturers are going to be you know, like have these sorts of differences. Some of them will all they'll care about is trace width and spacing.
+
+[1450] EEVblog 1450- $99 Fluke Combiscope Ebay SCORE! — Dave Jones (opinion)
+context before: Isn't it gorgeous? They obviously decided that this needed a bit of shielding and they've put it down to a couple of years here and a pad over here and stuff and they've done it with that chip up there, too.
+TEXT: So, that's that's the bodge of the week. And eagle-eyed viewers would have noticed all the right-angle traces and everything like this on here. This part of the layout is obviously auto routed cuz no human could would could possibly route traces like that.
+context after: So, yeah, it could have a combination of auto and manual routing. And then our other card here, this is just IO. So, this is our GPIB and serial GPIB connector and serial interface there.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (opinion)
+context before: is by using the on-resistance of the... controlled on-resistance of the MOSFETs to simulate the ESR. But yeah, why you wouldn't, from a first layout PCB point of view, like, whack this in the middle, like the heat sink in the middle, have the power transistors either side,
+TEXT: and then have all the other circuitry going down like this, and then this tucked over here, we've got an unpopulated one over here, but, like, yeah, I don't know. Like, did they suddenly design, like, at the last minute, oh, we need a two-channel version,
+context after: oh, let's just squeeze it in. I don't know. As a layout person, I wouldn't have put that there. I would have put it right in the middle. Symmetry. I like symmetry. So yeah, it looks like we've got some power supply stuff happening around here.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (opinion)
+context before: And you've got your big FPGA under here like this. So, any switching of your switching power supply or your load on the other side of the power supply, even the FPGA itself, is going to cause quite a few issues.
+TEXT: So, did they goof this from a layout point of view? Maybe, but I'm not going to like, you know, there's lots of reasons that goes into this. This is a month's worth of layout, so yeah, let's let's just not say that they goofed here, but it's possible.
+context after: Now, everyone thinks about when they think about PCB layouts, it's all about bypassing. And you can see all the bypass caps in here under the FPGA, right? They've done that well.
+
+[1374] EEVblog #1374 - DIY Trezor Crypto Hardware Wallet - Part 1 — Dave Jones (opinion)
+context before: Like, I don't, this is a mess. I'd be tempted not to even reuse that at all. Like, uh, if I'm gonna do a new one, I'd import the schematic, get the schematic tidied up, get the BOM tidied up, and then just generate a new board and start that from scratch.
+TEXT: 'Cause it doesn't take a long time to lay out a board like that. I mean, you know, there's not a huge number of parts on it. It's not very complicated. So, uh, yeah, you know, you might take the outline and stuff like that, if you were gonna use that,
+context after: and then just nuke it. Maybe, you know, keep some things like the connector in place and stuff like that. But you might want to nuke that from orbit. Uh, it's the only way to be sure. I say we take off and nuke the entire site from orbit.
+
+[884] EEVblog #884 - EEVBlog BM235 Multimeter REPAIR — Dave Jones (opinion)
+context before: But, um I I can't obviously see under the uh uh input board yet, but it doesn't look to be any issue here at all. I wouldn't expect that. But, uh see the nice little uh star grounding point there.
+TEXT: Very nice. Just going off. Someone knew what they were doing in terms of uh PCB layout. But, uh yeah, there's nothing obvious going on there at all. As I said, um the main chipset down here, which is um BTC, which is Biwin Technology Corp uh branded.
+context after: I don't know exactly what one it is. They won't tell me. Um but, uh that is obviously not failed because half the functions work, and the other half don't.
+
+[805] EEVBlog #805 - Siglent SDG2122X Arb Generator Teardown — Dave Jones (opinion)
+context before: One you're definitely not going to get the footprint for in any CAD package on the planet. So, you you know, you would have to roll this one your own unless they specifically had all the Enpirion parts already done for you.
+TEXT: But, yeah, it's pain in the from a PCB layout point of view, you go, "Do I have to use that package? Really?" Uh anyway, breaks the monotony. Anyway, just this uh converter chip alone uh more than 10 bucks in, you know, a couple of hundred quantity.
+context after: So, it's not a cheap puppy either. And then we got lots of linear regs all around here. There we go. You know they're not uh switching converters by the uh look, by the lack of inductors around there.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (opinion)
+context before: And sure enough they do. I'll link it in down below. Point-to-point simulation process. And this talks about your timing budget, which is a big thing that you'll hear in these types of designs when you're like you wouldn't always do this.
+TEXT: If you're laying out this board here, right? Like you wouldn't I would not go in and do a timing budget for for something like this. I I just really wouldn't like waste my time doing Sometimes it's not a waste of time, but I really wouldn't bother.
+context after: All I would know is that right, let's just match the lengths of the traces and that's it. And and just be done with it, right? You don't have to worry about stuff like like how how close do I need to match?
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (opinion)
+context before: So if they just take an existing stock, and they've done a rework on that, I mean, you know, it's as plain as day. That's been redone. Look at all the beautiful fillets, solder fillets everywhere else. Absolutely gorgeous. And then you've got this little hack in
+TEXT: there. So I'm going to have a look around for more hacks, but maybe that's the only one. But I expect them to redesign this board, re-layout, to put in some ferrite beads at least, in series, to, you know, that's the most common technique to stop
+context after: RFI getting into conducted mode. Stuff getting into chips. You put them on the power lines and other stuff. So, you know, ADC inputs maybe, and stuff like that. But not seeing it on the top side of the board anyway. And if we go to
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (opinion)
+context before: next one, and there we go. Beautiful. So there we go, we're getting about, you know, minus 60 dB THD there, so it's good to about 10 bits or thereabouts. And here's something a bit naughty I found, I've switched off my ArbGen so it's not running at all, and looky what we
+TEXT: have here. At 39.4 kHz or thereabouts, look, we've got ourselves a nice little spike. That's got to be one of the internal switch mode power supplies. So oops, maybe they got a little bit of a layout issue there and it's coupling into the input.
+context after: That's not great. Anyway, if we go in here and have a look at our waveforms with two shorted inputs, let's turn on the second trace actually. The second waveforms, second channel's a little bit better there. This is over our full range, our full, well, our highest frequency range, 10 MHz to 24
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (opinion)
+context before: So I need to lift that. But that should come out. They've got a nice slot there for the little micro coax coming from the antenna connector on the back. That's very nice. Attention to detail to keep it in place. Doesn't flap around in the breeze.
+TEXT: So, you know, somebody was thinking, the person who laid out the board must have been instructed or was, you know, like, they worked together with the mechanical people. OK, we need a coax on the back here for the antenna. And, well, you know,
+context after: you didn't have to put that slot in there. You have to know that that slot, when it went together as a system, that slot had to go in there. So they would have probably, you know, 3D modeled all this and everything else, but that's very nice.
+
+[694] EEVblog #694 - Mailbag — Dave Jones (opinion)
+context before: So you can actually probe around not only parts, but you can follow traces and things like that and find any signals on your board. Really quite neat. And, you know, it just lets you do. And if you know what the standard is and you know that
+TEXT: oh, it's not, oh, I screwed up the layout on this and it wasn't supposed to emit there and, you know, all that sort of jazz, then, yeah, you can find this stuff really easily with these sorts of near-field probes. Now the way you typically
+context after: use these is that your e-field probes are basically for very close direct contact here, which is why we're seeing nothing until we go like directly over the crystal there. So you can pin, like, track down like maybe individual pins or individual traces on large-scale stuff.
+
+[759] EEVblog #759 - Mailbag — Dave Jones (opinion)
+context before: But generally, uh you would pull it back what's that's the term used. You would pull back your ground plane uh spacing. You'd set your DRC before you flood fill it.
+TEXT: You'd pull it back to a certain value that's acceptable where the uh minimum spacing if you needed to flood fill between pads and things like that. So, you know, that's generally it's it's a board to board layout to layout specific thing.
+context after: But yeah, that's the only criticism I'd have there. Just looks a bit close, that's all. And this, folks, is very, very cool. Check it out from nicod drone.com. It's the EPN 688 and it's electro magnet.
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (opinion)
+context before: just fine because the performance apparently is really superb like the low noise performance, everything else. So, you know, I'm just surprised from a PCB layout point of view, maybe, like you know, marketing might have driven the design and layout of this thing. They said, this is what it's gotta
+TEXT: look like, that's it. PCB designer, make it fit. You know, but if I was the PCB designer, I probably would have put that up there first as a matter of course, because you can run line level stuff, like across the board, that's all fine.
+context after: So when you're running line level stuff, it's no worries. But that microphone line is critical, so I'm just surprised that they're running it halfway across there, but it's fine, they're getting away with it. It's just, you know, it's just a rule that you're gonna follow.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (opinion)
+context before: I'm not sure if it's something I did in the teardown, and if it is, well, quite frankly, it's crap. Um but occasionally, it just locks up and does something weird.
+TEXT: What a load of garbage. So, overall, I'm very very impressed with the layout of this board. Layout component selection choices, soldering is first class, There's no soldering residue. The design, I can't really uh fault it at all.
+context after: And for the fabric, I got two types. Yes, naturally wife approved. And check it out. This brings tears of joy. We've got two uh high sensitivity 3 V relays on here.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (opinion)
+context before: No worries. And the good thing about that is it's just got a header on there. We can boom, solder that directly just, you know, flat down onto our board.
+TEXT: No worries. Could mount vertically, but in my case, I'm going to mount it horizontally like that. So, no worries. It'll work a treat. There we go. Bit of a goof on the layout of the cap and the inductor there, the spacing on that.
+context after: I'll get a vertical uh header for that. Um, no, that transistor is not missing. It's actually there. That's an IRF uh 2 IRDF uh 220 in the um four-pin DIP package there, so no worries.
+
+[525] EEVblog #525 - Bank Note Acceptor Teardown — Dave Jones (opinion)
+context before: Just got a fuse on the input there, common mode choke, our bridge rectifier is uh four separate diodes underneath there, our filter caps, and then our main flyback controller, and Bob's your uncle.
+TEXT: And there's our feedback optocoupler hidden under there. And as I said, just very messy layout. I mean, I don't like it at all. Look at it. It's not over near here, near the photo interrupter, and it's just Ah, it's it's terrible.
+context after: Awful layout. And the only other thing of note on here is this uh Texas TLV5629, and that's an 8-bit uh DAC. Probably not a huge surprise to find that on there.
+
+[100] EEVblog #100 - Triple Digit Retrospective, Wonder Woman, and More Multimeter Destruction. — Dave Jones (opinion)
+context before: And that's pretty much exactly what I've seen on my oscilloscope. And it's only $4. And what is it? $4.30. You got to be kidding me. If it's something I designed, I'm going to be fairly intuitive and instinctive with it rather than methodical.
+TEXT: But, leave a note and we'll bust this Microsoft patent wide open. Beauty. It's just all bunched in there. Somebody didn't know how to lay out this board. It was But, as always with these equipment reviews, it's horses for courses.
+context after: So, there you go. There's a recap of 100 blogs. I can't believe it. Triple digits. Haha. It's been like a year and a bit and man, I'm still going strong and I plan to keep on doing it.
+
+[189] iRiver Story HD eBook Reader TEARDOWN - EEVblog #189 — Dave Jones (opinion)
+context before: Uh, they could have even gone for 0603 if they wanted to to uh possibly uh increase their manufacturing yield, but uh these sort of, you know, 0402's no problem these days.
+TEXT: So, really, it's uh not a bad uh design whatsoever. The layout is quite good. You can see they've actually panelized it down here. They've got the cutouts um well, the uh actual breakout um tabs for the panelization of the board.
+context after: Why they've actually uh done a cutout there and shaped it like that, uh your guess is as good as mine. And I don't see any uh reset switch on here either.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (opinion)
+context before: And now what we want to do is go in and dump all our components onto the board because if we've got if we've done all our hard work over on the schematic and we've put our footprints for every single component like that and everything else all our nets we've done our electrical rules checking everything's fine then in theory you should only have to do this step once.
+TEXT: So we'll go but all but PCB design is always an iterative process you're always making changes and doing stuff and sometimes there's value in in starting your PCB layout before you finish your schematic and and stuff like that.
+context after: We won't get into details. Anyway, we want to update PCB document Nixie tube. So, it's going to go in there and add um all of these components which it's already checked.
+
+[VTAwzrKPjeE] Nixie Tube Display ESP8266 Wemos D1 Mini Testing — Dave Jones (opinion)
+context before: Hey, I've done it that way before, many times. All power to you. But then, when you come to writing the software, then you've got to do this like a pin mapping thing, and it can get really ugly, and I hate doing those. They're, like, I just despise them.
+TEXT: They're a pain in the ass. But yes, it can make a nice efficient PCB layout, and that might be important to you. So I haven't skipped any, but I forgot the decimal point is the first one. So I've done all of these in order, so,
+context after: right, I haven't gone willy-nilly. So they're in order, like, decimal point, then digit one, then digit two, three, four, five, six, seven, zero, right? Oh, actually, the zero's at the end, right? I may have that swapped around. Anyway, doesn't matter. It's much easier than
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: Somebody didn't know how to lay out this board. It was a real afterthought. And check out the big wire, which big twin pair wire, which goes all the way across there like that.
+TEXT: That just shows that they didn't think about the layout. Now, Extech um have actually admitted that and they say they're looking into a redesign of it for a better layout and things like that, but yeah, I don't like it at all.
+context after: It's all too bunched. And if you look down here, look at the resistor. It's It's In fact, this one is touching that input jack. And what? There it is.
+
+[697] EEVblog #697 - Mailbag — Dave Jones (opinion)
+context before: but anyway, please go ahead with your usual critique. Excuse the tape masking my phone number, that's alright. And this is the Chebo V3A HABIT tracker. There you go. That's the presumably the socket or just the solder down for the uBlock's module. We've got our ATmega and we've got, looks like an SD
+TEXT: card, micro SD card over there. And well, the layout is, I've got to say, I thought you could have done that on a single-sided board, kept all the traces there. And I reckon, oh, maybe with a bit of effort you could have kept
+context after: it all, have all the traces on there. I wouldn't know until I actually threw the components down in the CAD package. But you know, when you have something snaking around like that, you've got to think, well that could, where are these ones going?
+
+[37] EEVblog #37 - Rigol DS1052E Oscilloscope Teardown — Dave Jones (opinion)
+context before: So, it it is an analog um input bandwidth limitation. After opening this thing, this Rigol oscilloscope, I'm even more impressed with it. I just simply cannot believe that they use all prime spec components.
+TEXT: And the And the quality in the design of this thing, the actual layout of the board, and the actual uh design of it, and the and the quality of the build construction, and the the power supply in it is is really top quality.
+context after: A lot of effort's gone into this. Somebody really knows their stuff. The team that designed this really knows how to design quality products. And I don't know how they get the incredibly low prices because they're not using rip-off parts.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (opinion)
+context before: That's the point at which was my star point around the microcurrent circuit. So, that's where I split and I joined the ground planes via the top layer there. And I've added some Oh, there we go.
+TEXT: Added some nice labeling eevblog.com, micro supply. I've added a serial top left there, another label serial. I'm labeling things out. I'm mucking around. And now, uh-huh, what I'm doing now is doing a pass for hole sizes.
+context after: So, um Whoop, there we go. I'm going in, checking a footprint to make sure I've got a footprint right. Maybe there was some doubt in my mind that I might have goofed that up.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (opinion)
+context before: I won't go into details. Oh, it's a mod wire. It's a mod wire. Will that be in the production version? But as I said, as a qualification build, good old-fashioned budge there.
+TEXT: Good work. It There you go. Like that's that's a nice implementation. I like the right-angled board like that. Oh, that's great. Oh, they got double-sided load. Geez. Why you couldn't fit it all on the backside there?
+context after: Come on. The PCB layout engineer should have went, "Ah, I can fit all that on one side. No worries." But anyway, that is a very nice design. I I really like that.
+
+[1248] EEVblog #1248 - INSANE! A 0.02% Process Meter for $9? WTF! — Dave Jones (opinion)
+context before: You don't need anything fancy pantsy there. That's just a fixed input scale there, so they're using probably some, you know, 10-ppm resistors in there. Yeah, why they've got the reference over here like this, and that looks like it's it's for I can't see what else it'd be for.
+TEXT: Well, you could use it for your multimeter, part of it, but you know, but the multimeter's just meh. So, that's obviously they're using that for the uh analog-to-digital converter up here, so that's a layout thing.
+context after: But anyway, you add up the cost of all this, the multimeter chipsets and the LCD chipsets, you know, but there's a dollar there. You know, you add all these up, you can't possibly make this thing, let alone sell it for under 10 US dollars, let alone sell it and ship it.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (opinion)
+context before: So, these, for all the world, look like resis- you know, set set resistors right next to the chip. So, if we flip it over, hello, we can access those.
+TEXT: It's beautiful, and I love untinted vias. We don't have to get in there and scrape off. We can just probe. Thank you very much, Keysight. And the PCB layout person who went, "I don't want those bloody tinted vias.
+context after: Can't hack and probe the thing. Bugger that." So, what we want to do now is just go measuring around there with the multimeter and see if we can get pretty close to the voltages.
+
+[822] EEVblog #822 - World's Worst Tablet Computer Teardown — Dave Jones (opinion)
+context before: That's awful. And stuck it down with double-sided tape. Wow, this thing is beyond horrific. Oh my goodness, look at that. Look at that. Oh, that wins the badge of the Wait, what?
+TEXT: Badge of the year award perhaps. This is so bad, but look at this. They've gone to the effort to make it double-sided. So, they know it's They haven't got a clue about layout, about soldering, about construction.
+context after: Oh my goodness, I can't believe they delivered that to a client. Wow. I mean, yeah, sure enough, if you have to do a home etched board, you know, hand etched board to you know, to get the job done to meet the deadline for, you know, a little prototype run or something, but this is serial number 11.
+
+[969] EEVblog #969 - Vintage $80k NLE Video Editor Teardown — Dave Jones (opinion)
+context before: Fit it. Cuz this is a very These are very serious PCB layouts. Um molten problem. Don't think one person did all the boards, probably uh multiple people uh worked on this, multiple layout people.
+TEXT: But, yeah, that's you know there's a lot of density on these boards. What are they? Four They're only four layer, I think, though. And the way you can tell that, it's common to leave uh layer markers like this.
+context after: So, just to see the inner layers. Of course, it's not going to be three, but they've got little squares there to signify that this is going to be a four layer board.
+
+[1069] EEVblog #1069 - Mailbag — Dave Jones (opinion)
+context before: That's worth your dollars. Nokia 5110. There it is. Yep. Important note, solder the microcontroller and the SD card before soldering the screen. Yeah, that could ruin your day, couldn't it?
+TEXT: Anyway, that looks really good. Layout looks really neat. No wackers there at all. And ah, it's already attached. Great. Awesome work, guys. That is terrific. So, thank you very much Albert for sending that in.
+context after: I'll link it in down below if you want one. And I'll have to take this home to Sagan. Well, I don't know. I've got two. I'll have to build the kit and uh give one to Sagan to play on.
+
+[1714] EEVblog 1714 - Presonus Eris Speaker REPAIR (Capacitor Pop Noise) — Dave Jones (opinion)
+context before: Anyway, the woofer outputs here are directly uh soldered into the board there, and uh the negative for the woofer and the tweeter are going right down to there, which is the star ground.
+TEXT: Basically, that point there, that's the star ground for those uh capacitors there. So, that is good layout practice. Just going to have a cursory glance over the solder joints just to make sure they're okay.
+context after: Look at that. There's some There's some dag in there, is there not? A bit of solder splash there. But what I don't like I don't like the look of that resistor.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (opinion)
+context before: I don't know, it could last forever. Anyway, that's for the real-time clock cuz this thing does have a timer. And you can see right up there. Geez, that's a weird layout, isn't it?
+TEXT: I mean, you know, you've got your real-time clock chip. There's your 32.768 kHz crystal, and and your battery's all the way down there. So, yeah, that wasn't good planning on your PCB layout point of view.
+context after: There you go, that's a bit of a surprise. We've got ourselves an ST micro in here. You know, I would have maybe expected an old-school PIC or, you know, like a Motorola part or something like that.
+
+[1307] EEVblog #1307 - TUTORIAL: PCB BOM Consolidation — Dave Jones (opinion)
+context before: You've reused one of your parts here, and sure, you've put in an extra resistor, and sure, it's more board space, and sure, that might be important if you've got a real ultra-dense design.
+TEXT: You may not have the luxury of being able to put two resistors in parallel. I mean, you know, probably the majority of cases in practice, you are going to have the room to put in the two 10K or make room.
+context after: A good PCB layout designer can always make room for that extra resistor, just so that you reduce that one extra bomb item. And you can do this again, 16 puff up here, 1.2 1.5 nF.
+
+[678] EEVblog #678 - What is a PCB Spark Gap? — Dave Jones (opinion)
+context before: So, there you go you've created that little spark gap across there but you know, it that's probably not the best solution but you'll see see this actually quite common in various products.
+TEXT: You've seen them probably in a couple of tear downs I've done where they've just removed the solder mask. It's just easy and lazy way to do it from a layout point of view but hey, crude but effective.
+context after: All right, so let me show you a slightly better method to just to avoid that point source that we got before with the pad in there and you know, it it just wasn't as as controlled as you'd generally like.
+
+[1322] EEVblog #1322 - JBL LSR308 Studio Monitor Speaker REPAIR — Dave Jones (opinion)
+context before: So, that that did get through to our pins. So, maybe we could have just instead of cutting, you can see though the problem here is that it hasn't properly self-aligned cuz the surface tension of the power pad is pulling it upward.
+TEXT: Yeah, that that didn't work. So, maybe somebody didn't design the thermal pad properly on the layout perhaps. I don't know. There we go. Okay, way too much solder. So, we'll fix we'll wick that away.
+context after: It's no problem. So, yeah, don't be afraid that you've shorted your pins. It's not a problem. Yeah, they the alignment's not great, is it? It's really pulled that chip over.
+
+[1596] EEVblog 1596 - NEW Digilent Analog Discovery Pro ADP2230 TEARDOWN — Dave Jones (opinion)
+context before: If you want that, there's a separate little power supply. 500 BUCKS, THAT'S PRETTY PRICEY. ANYWAY, YEAH, I would have liked to have seen, you know, just a couple of small a posts or at least some screw terminals.
+TEXT: Maybe, you know, you could have shifted this over on the PCB layout a bit and just added a couple of you know, couple little Phoenix contact you know, screw terminals on there or something perhaps.
+context after: That would have been nice. But anyway, you've got the pin header. There you go with a 14-bit 125 megasamples per second, 14-bit 125 megasamples per second scope as well.
+
+[137] EEVblog #137 - BK Precision 879B Handheld LCR Meter Review — Dave Jones (opinion)
+context before: It's just a single-board construction. Now, they've got the USB connector down the bottom here. Now, that USB connector has got to connect to these devices up the top. So, why it's right down there, a high-speed USB serial interface right down in the bottom corner near the terminal.
+TEXT: In this case, it's the positive terminal over there. Why they put it down there instead of up here somewhere right next to the devices is beyond me. Um that just seems like a crazy layout decision.
+context after: I'm not sure what they were thinking there, but anyway, the only adjustment in the whole thing is a uh nice 10- or 20-turn uh pot down here as you can see.
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (opinion)
+context before: So, you simply place them, all your bypass caps around the outside, and you want to have them all in line, because you're a, you know, you take pride in your PCB layout.
+TEXT: So, you want to have them, you know, in nice vertical and horizontal arrangements. And then, if we zoom in there, you can actually see they've got the vias there and there, like either side there.
+context after: Like, well, that one, oh, yeah, that one's there. I don't know why they didn't put it there. Oh, jeez, you know, they went to all this effort to make it aesthetically pleasing, and they put the put the via there.
+
+[969] EEVblog #969 - Vintage $80k NLE Video Editor Teardown — Dave Jones (opinion)
+context before: It'd be interesting to know the systems engineering behind this cuz I even wonder if they like designed the boards first and then figured, "Okay, we need at least this amount of room to put all the stuff on." Or did the uh specs come down from management saying the box is going to be this big, you've got this amount of room from the uh cards, PCB layout guru, go.
+TEXT: Fit it. Cuz this is a very These are very serious PCB layouts. Um molten problem. Don't think one person did all the boards, probably uh multiple people uh worked on this, multiple layout people.
+context after: But, yeah, that's you know there's a lot of density on these boards. What are they? Four They're only four layer, I think, though. And the way you can tell that, it's common to leave uh layer markers like this.
+
+[353] EEVblog #353 - Mailbag — Dave Jones (opinion)
+context before: Uh doesn't always happen at the max 232 there. And we got a pick 18 LF1 XK22. There's so many bloody picks. I don't know. Who knows? Anyway, it's got a setup jumper and some firmware.
+TEXT: And here's the board. It's very nicely laid out. Nice and neat. Most of the traces on the bottom here. It's all ground flood filled. Excellent. Well laid out. All everything's in nice alignment.
+context after: Grouped beautifully labeled. I like it. Thumbs up. It's got a using the PCB as a heat sink. Just flood filled to the rest of it. Presumably it comes with a bolt to bolt it down.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (opinion)
+context before: Exactly how the silkscreens looking. You can see if You can get a very high contrast in this mode to see that the silkscreen doesn't overlay any pads or something like And bingo, there you have it.
+TEXT: There's my final laid out board. I'm feeling pretty chuffed about myself. So, I added a little platypus there on the right-hand side. Why? Well, why not? And I was quite happy with this layout.
+context after: I'm pretty pretty pleased. There's quite a bit of um especially on the right hand uh side of the board, you'll see there's quite a bit of uh area left.
+
+[1019] EEVblog #1019 - Mailbag — Dave Jones (opinion)
+context before: It's just absolutely ridiculous. This is the compute module. So, whatever it needs to compute, I don't like know. Does it do all the packets and stuff like I have no idea.
+TEXT: Anyway, um, look at the denseness of the of the passives on the bottom here. This is just fantastic. Look at this. The PCB layout on this thing like your space would have been a serious option.
+context after: They probably went to a 10 or 12 layer board or something just to fit all this stuff on. This is just ridiculous. And the PCB layout person really didn't like our vias.
+
+[470] EEVblog #470 - Agilent N9344C 20GHz Spectrum Analyser Teardown — Dave Jones (opinion)
+context before: Brilliant bit of systems engineering. I love that. A lot of thought and attention to detail has gone into that thing. And you can see the, uh, thermal, um, seal pad on top of each one of those chips lines up.
+TEXT: So, you know, there's got to be a, uh, a lot of, um, uh, you know, communication going on between the, uh, PCB layout guys and all the mechanical, uh, housing guys and all that sort of stuff.
+context after: So, excellent work. Well done. Huge thumbs up on that. Well, another really interesting part about this, which I didn't expect to see, is, uh, yet more shielding blocks inside here.
+
+[1717] EEVblog 1717 - Rigol's INSANE New $999 350MHz Oscilloscope: TEARDOWN — Dave Jones (opinion)
+context before: Looks like they've got a 45R. Uh do they? And then some smaller values with some uh compensation on uh uh tweaking that maybe to get the 1 gig bandwidth.
+TEXT: I don't completely know if the 1 gig layout that I've got for the 98 model is different to all the other ones that go up to 800 meg. I doubt it cuz you'd have to respin the entire main board.
+context after: So, I suspect that they've just uh tweaked a couple of maybe uh things on, you know, like there's some like there's cap missing there. There's some missing bits here uh for example.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (opinion)
+context before: Very, very simplistic. Cuz as I said, I think it's just got, you know, one or two voltages coming out here. Incredibly simple. So, just a a universal uh switch mode power supply.
+TEXT: Um single-sided board looks very well laid out. No problems whatsoever. Once again, Agyant likely didn't do this. It would have been a third party. There we go. We can just see inside there.
+context after: They've got a label on there. Third party. Um it could be TDK Lambda again. Awesome. Anyway, the output is just a single 24VT. That looks like 6.3 amps, I think.
+
+[975] EEVblog #975 - Human vs Autorouter — Dave Jones (opinion)
+context before: And uh well, you probably have no choice, right? Because to manually route this might take, you know, 2 3 hours or something like that. and if you had to send it away uh with an hour's notice cuz then you'd miss the deadline on the PCB manufacturer and you wouldn't get a blah blah blah blah blah um then you know sometimes you may not have a choice or if you simply don't
+TEXT: care trust me learn to care take some pride in your layout. It's an artwork. We're almost there. 227 of 238. And I may as well waffle on for the rest of it because we're we're getting there.
+context after: And well, you know, it doesn't it's not like, you know, there's all garbage down in these dead spaces here. It's sort of, you know, said, okay, well, you know, I don't need to route ridiculous stuff all over here.
+
+[1161] EEVblog #1161- Automated Coffee Machine Dumpster Teardown — Dave Jones (opinion)
+context before: And they call it the core motor and core TC out. Uh the grinder motor here. Uh magnet. What's magnet? Pump and work TC in. They're the internal names that they uh give these things.
+TEXT: So, but apart from that, uh signal ground work TC out. Big ass relay on there. And that's a decent layout. Don't mind that at all. So, what parts can you salvage out of something like this?
+context after: Well, of course, you got the motor up here. You might want to reuse the grinder mechanism for something. Who knows? Uh these boards are very nice to keep cuz you know, you've got um like large mains filter caps, uh big common mode chokes.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (opinion)
+context before: So, yeah, wow, they've had it in the skunk works for a long time. Look at it. Just look at it. Look at it. Look at it. JUST GORGEOUS. OH!
+TEXT: OOH, THERE'S A BUTTON I CAN PUSH. There's just other really nice touches on this board. Check out the layout of this International Rectifier DC-to-DC converter. That is A TIGHT ASS LAYOUT.
+context after: LOOK AT IT. It's just beautiful and it's 45°, so all the electrons are going to come out the right way. And then above that, we've got another one. Look at that.
+
+[1449] EEVblog 1449 - What Causes Excess Battery Drain? (BM235) — Dave Jones (opinion)
+context before: That's got nothing to do with the battery consumption. So, as I said, if you've got any clue why they uh would put capacitors on the on the like the battery side instead of like after the switch, I like cuz it's not like it's got to uh perform or meet any EMI requirements when it's off.
+TEXT: So, I like yeah, why wouldn't you have those after the switch? Maybe it was just like a convenient routing, something like that. And uh maybe uh you know, this is not uncommon, by the way.
+context after: The uh PCB layout uh ask me how I know. Circuit designer designed the meter, and then they threw it over, you know, they threw it over the cubicle wall to the PCB layout design engineer, and they went, "Oh, look, I can't just like it's on the other side of the board.
+
+[1334] EEVblog #1334 - Mystery Dumpster Teardown — Dave Jones (opinion)
+context before: And there's got to be a capacitor in there, right? And they're just potting it inside. I could actually Could I actually dig that out? Doh, I completely screwed the pooch on that one.
+TEXT: I thought that C21 I thought that was a capacitor and 103, you know, no, it's an inductor. Oops. And let this be a lesson to all you young whippersnapper PCB layout uh designers out there.
+context after: Look, you know, they've got C22 right next to that one. Obvious C24 right next to that one. Tons of room over here. Yet, they're just gone flapping around in the breeze here.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (opinion)
+context before: And now I'm mucking around. I'm in the whole size editor now. So, I'm just tidying up a few uh I think I'm in the whole size editor there. I'm just uh checking a few things and boom, that's it.
+TEXT: Is that it? That's all we got? It's all over. So, there you go. There's our completed board. And yeah, that took probably um not as long as the original layout but uh not that far off it.
+context after: And there was a lot more uh involved in there. A lot of thinking, a lot of rip up, retry for a lot of things. And but as you can see, I didn't rip up and retry a lot of components.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (opinion)
+context before: But, I I just wanted to sort of, you know, use this as an example and just comment on some uh you know, that's typically what you might have to do in industry when you're laying out a complex board.
+TEXT: Or heck, um some people like me just, you know, PCB layout is an end unto itself, right? It's just like art. You just love doing it. So, you might, you know, go, oh, that's not optimized.
+context after: No, I'm going to rip up half the board and going to re-optimize that cuz I have one daggy track left over going right across the damn thing. And oh, no, I had too many vias or single-sided board, I had too many jumper links or whatever.
+
+[171] EEVblog #171 - Agilent U1272A Multimeter Teardown — Dave Jones (opinion)
+context before: I presume this is another voltage reference over here. But, apart from that, there's not much else on the bottom of the board. There's a couple of diodes over here.
+TEXT: And that about does it. So, overall, I'm very very impressed with the layout of this board. Layout, uh component selection choices, soldering is first class. There's no soldering residue.
+context after: The design I I can't really uh fault it at all. Um probably the only thing which I said they could have could have refined a bit more is not to have the uh flying lead here going over to the piezo buzzer.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: So, there you go. Anyway, let's take a look at the input protection. Three big MOVs here, a big PTC, but look, they're all crowded and they're folded over in there like that.
+TEXT: So, you know, I'll give them thumbs up for the input protection, but the just the crowding of it. Look at the vertical input protection resistor like that. It's just all bunched in there.
+context after: Somebody didn't know how to lay out this board. It was a real afterthought. And check out the big wire, which big twin pair wire, which goes all the way across there like that.
+
+[9s9LXOBknck] Unusual Brymen BM235 Fault — Dave Jones (opinion)
+context before: I like Ah, this is funny. I've never noticed that before that they tried to do the star ground in there, right? They tried to do star, and they've shorted them all out there.
+TEXT: That's That's actually quite funny. I like that. All right. Now, this is not the old design where we had problem with the inductors down here cracking. This is the new layout, I believe.
+context after: But uh yeah, it's not going to have anything to do with those. There is absolutely nothing unless people are screaming at me, there's nothing visual on here at all.
+
+[464] EEVblog #464 - Mailbag — Dave Jones (opinion)
+context before: So, it's harder to um fan out all of the traces and keep the bypass caps in there. So, they've had to sort of group them out of the way of all of the routing paths coming out of this thing.
+TEXT: And if you flip it open, they've done a very similar thing down in here. So, that's not an optimal uh layout in terms of our bypass caps. But, uh you know, it's it's it's going to work.
+context after: Um but, on you know, really high-performance uh stuff, you'd be routing, you know, that thing out on a six or eight-layer board or something so that you can get your um as tight a loop as possible with your uh bypass caps on your power supply.
+
+[185] EEVblog #185 - Fluke 87V Multimeter GSM Fix! — Dave Jones (opinion)
+context before: The tracking seems to be exactly the same. How all the speaker and everything works is exactly the same, and if we take off the shields, which have little clips on them, then we'll be able to see that there is no difference at all on the bottom of the boards, but the the actual type of mask solder mask used on this new revision PCB is actually different.
+TEXT: It's less it's more opaque. You can't really see through it like the tracks really don't stand out like they do on the old one, but as you can see, it is actually an identical layout.
+context after: I can see very few differences at all in the actual tracking. In fact, I I think there's essentially none. Actually, I think the top and bottom, as we'll see on the top side, there's a couple of little extra vias up the top here, but really the two boards are as identical as you can possibly get them.
+
+[109] Amazon Kindle 3 3G/GSM/WiFi 6" TEARDOWN - EEVblog #109 — Dave Jones (opinion)
+context before: It It It's using bleeding-edge technology. I mean, the I'm sure the E Ink display alone cost, you know, a third of the price or something like that. But, to get the rest of the price point down, they put a lot of effort into high-volume manufacture.
+TEXT: The shielding is brilliant. The design and the layout of the board, my hat's off to the guys and girls at Lab126 who designed and and built this thing. It's just It's just fantastic.
+context after: It's lovely, and it's a beautiful beautiful design example. So, I hope you liked it. That's inside the Kindle 3. I'm impressed. I give it a huge thumbs-up.
+
+[955] EEVblog #955 - World's First Portable Computer Teardown — Dave Jones (opinion)
+context before: Board-to-board uh, interconnect with uh, those, you know, down here as well. So, there's three board-to-board interconnects. That's really nice. And they've gone and ruined it with this completely how you're doing wiring going over soldered to individual pins and vias all over the damn board.
+TEXT: What? Lee, seriously, what were you thinking? I mean, you must have been desperate to get this thing out. Oh, well. I mean, this actually um, screams of uh, PCB layout desperation.
+context after: Actually, like, oh, I've got a point up here, point up here, couple of points down here. Oh, I can't get them right down to a connector down here. But, you know, a lot of these are pretty close.
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (opinion)
+context before: Actually, one thing I find a bit surprising is the lack of secondary output capacitance. I mean, yeah, we got that that jobbie, that one, and this one over here.
+TEXT: Just one. So, I would have expected more than that. Anyway, I'm reasonably impressed by this board. It looks like it's reasonable quality. It's you know, it's laid out quite well.
+context after: At least a care has been taken in it. So, yeah, I think they know what they're doing there. But anyway, the first thing, of course, as I said, give it a smell test.
+
+[1307] EEVblog #1307 - TUTORIAL: PCB BOM Consolidation — Dave Jones (opinion)
+context before: You may not have the luxury of being able to put two resistors in parallel. I mean, you know, probably the majority of cases in practice, you are going to have the room to put in the two 10K or make room.
+TEXT: A good PCB layout designer can always make room for that extra resistor, just so that you reduce that one extra bomb item. And you can do this again, 16 puff up here, 1.2 1.5 nF.
+context after: You know, couldn't we have used 1.2 nF? Look, do we have to use 11k here and 11.3k here? Really? So, this is a really good example and it's why I actually picked uh the when I saw this project, I just picked it like a random and complicated one.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (opinion)
+context before: When you could have taken that fat one straight across there. Straight across like that. No worries, right? Straight across and then you wouldn't have had to wiggle these as much.
+TEXT: You would still have some wiggles in there, but not as much. So, yeah, that's just That's just poor layout. Not enough attention to detail. Yeah, I think that looks pretty good.
+context after: I'm I'm quite I'm quite happy with that. So, I'll I'll actually leave this apart so I can take some take some high-res photos of it cuz I like to include high-res photos on my product listings.
+
+[472] EEVblog #472 - JBC CD-2BB Soldering Iron Teardown — Dave Jones (opinion)
+context before: I don't know but apparently I think the new model actually has a USB port on it by the way. This one doesn't. Yes, I just went and checked that and yes the latest B model does have a USB port on the back of it and of course uh this one doesn't.
+TEXT: So, um uh whether or not uh you know, that's the interface connector for that, I don't know. Pro- It could even be a uh completely different uh board layout for the new model.
+context after: Not entirely sure. If anyone's got the uh latest model with the USB, uh please post some photos and we can do some uh comparisons. There's a jumper link there.
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (opinion)
+context before: And the bottom side of the board up here, you can see all of the uh residue from the dip soldering uh the wave soldering process. So, that's not going to cause an issue, but anyway, we've got a whole bunch of uh surface mount stuff on the bottom.
+TEXT: Why you would like There's no shortage of room in this thing, really. Um so, why you would put surface mount stuff on the bottom? I don't know, they had to for layout reasons.
+context after: Like I I I don't like nah. It's not something I would have done unless I absolutely had to. Anyway, um you can see that we've got uh some primary side switching stuff over here.
+
+[1262] EEVblog #1262 - Designing a Flex PCB + uSupply Update — Dave Jones (opinion)
+context before: And then you've got a bend in here, but I'm not really concerned about that. So, you've got two intersecting bend lines like that. So, maybe with hindsight I could have put I should have put the chip down the pins down around like no no higher than the other chip, because then the whole thing could flex along that axis like that, if you can see my cursor, if you know what I mean, if you
+TEXT: know what I'm talking about. So, yeah, um I I I think it'd fit. I don't think it's going to be a problem. Once again, for for production, you'd fuss over this sort of stuff.
+context after: All right, just to avoid that dual bending radius like intersecting bend radius at this point here, I might go with what I originally proposed. Might do a one off turn it one where I just route all the traces up around here like half on the top, half on the bottom.
+
+[1258] EEVblog #1258 - MORE Dumpster Wandel And Goltermann! — Dave Jones (opinion)
+context before: And they're a dog to get out. Anyway, there's nothing on there that tells us what that is. It's 85 uh 40th week 85. That could be like a jumper link, like an option setting link or something like that.
+TEXT: Classic old digital board with your classic layout. Um not many bypass caps on there. Don't need it. I've done my months in video and classic auto routed layout. Come on.
+context after: And do that, please. Take some pride in your work. But it's a nice physical layout. All the chips are in the right orientation. When you're laying out boards like this, of course, old-school dip stuff even today, really, with your surface mount rubbish, you want ideally, you want to be shooting for all your chips in the same direction.
+
+[643] EEVblog #643 - Mailbag — Dave Jones (opinion)
+context before: And dead easy to use. I mean, you basically feed the voltage in, you just decouple it. Feed the voltage out, you might have to decouple the output. And but uh not much else.
+TEXT: Bob's your uncle. And as far as the PCB layout goes, I don't uh mind it at all. Uh you've got some right angles there. The electrons is going to fall fall off the corner.
+context after: Jeez, some people take that seriously. Unbelievable, but yeah, we can basically switch between the top and the bottom there. Look at that. Neat. And something that I immediately always look for on designs like this is, well, do you have enough via stitching in here to get your ground coupling over because your current is not flowing through here at all.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (opinion)
+context before: And that's part of the art of PCB design. And it's actually quite difficult to uh teach cuz a lot of it is a lot of experience, a lot of innate ability to think about the entire system and how things fit together.
+TEXT: And um this is one thing. If you're laying out a board which you didn't actually design, then uh it's going to be harder than if you actually designed the whole thing.
+context after: But because I designed this, I have the circuit in my head, or I've got it next to me on paper. I know exactly Everything's modular on the schematic. I know where the modules go and I sort of have an idea of the system design as far as the case goes and where the connectors go and and things like that.
+
+[1450] EEVblog 1450- $99 Fluke Combiscope Ebay SCORE! — Dave Jones (opinion)
+context before: They just made absolutely everything. Anyway, yes, this is the physical they use an actual analog delay line here. Old school just to delay the time of flight in this thing.
+TEXT: None of that digital rubbish. But, yeah, that is just a beautiful example of a PCB layout that they've gone to the effort to put in and they've numbered look 1 2 3 4.
+context after: So, row and column. So, then in the service manual, so you can say, "Oh, the chip in D1 failed." or whatever. It's just brilliant. Okay, so what the power supply board?
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (opinion)
+context before: They've got no electronics knowledge at all, but you pick up, you know, you do pick up stuff over the years. This is back when, you know, things weren't as advanced as they are now, and you know, you got to understand signal integrity and all sorts of stuff, right?
+TEXT: It's not that an engineer can't do a PCB layout. It's just it helps if you have. So, there was probably no pushback from the PCB designer going, "Hey, look, come on.
+context after: You're making me do a single-sided load. We don't need 20 bypass caps. You don't need a power a bypass cap per pin. It's just going to be sufficient to rely on some bulk decoupling.
+
+[1106] EEVblog #1106 - Pace ADS200 Soldering Station Review (JBC Killer?) — Dave Jones (opinion)
+context before: Like it drops Does it drop down to another via? I don't get it. And the regulator's right here, right in the path where you need to get the high current traces over to the um you know, the the the heating element cable over here.
+TEXT: Uh it just seems like a crazy layout to me. I don't know what the hell's going on there at all. Don't like it. Well, somebody had fun at the Pace factory in the US.
+context after: They probably got some someone who's the uh czar of crimps, have they? Um they've just gone berserk. Look at that uh star point there for the for the ground.
+
+[276] EEVblog #276 - Mailbag — Dave Jones (opinion)
+context before: flodins.info if I'm pronouncing that correctly. All right, so let's crack this thing open, get all the parts out, and check it out. Make sure they don't go flying. Good thing is it's all through hole stuff.
+TEXT: So, you're not going to lose any 0402 components. Let's check out the board here. Flodins, it's uh SIM version 2 and it does there's quite a bit of symmetry there.
+context after: I like it. It's a nice decent layout. Well done. And let's have a look at the top. What do we got here? Flodins Sim V2 again, Sebastian Ollier, and uh it looks good.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: And you can see the budged see the budged wire under there like that which is hilarious. But yeah, there's nothing note on the bottom at all. So yeah, really the Extech construction there.
+TEXT: They got flying wires there on the back light. You know, that's not really sort of you know, a tacked on after thought. So the layout of the Extech very very poor.
+context after: They really need to redesign this especially around the input protection and get rid of this um jumper wire going across here. That's just not That's just not on really.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (opinion)
+context before: But, yeah, you know, there you go. That's laying out a little bit little bit tricky. There are a few tricky things in there with the layout of the um you know, the routing of the chips and all that sort of stuff.
+TEXT: But, I like that horizontal arrangement. It really looks It just looks quite nice, I think. Anyway, that's an okay job. It'll get the job done. Hope you liked it.
+context after: Catch you next time.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (opinion)
+context before: Good work. It There you go. Like that's that's a nice implementation. I like the right-angled board like that. Oh, that's great. Oh, they got double-sided load. Geez. Why you couldn't fit it all on the backside there?
+TEXT: Come on. The PCB layout engineer should have went, "Ah, I can fit all that on one side. No worries." But anyway, that is a very nice design. I I really like that.
+context after: Like, you know, and then these pieces just slot in there like that. I like the the mechanical engineers like really had a good time with this one. Oh, and by the way, for those who don't want the super funky stand, I swear if this was had an Apple logo on it and cost a thousand bucks, it's It's one of the highlights of this product is the stand.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (opinion)
+context before: OOH, THERE'S A BUTTON I CAN PUSH. There's just other really nice touches on this board. Check out the layout of this International Rectifier DC-to-DC converter. That is A TIGHT ASS LAYOUT.
+TEXT: LOOK AT IT. It's just beautiful and it's 45°, so all the electrons are going to come out the right way. And then above that, we've got another one. Look at that.
+context after: Ah, beautiful. Whoever laid out this board takes pride in their work and they know what they're doing. They're out 10 MHz in and out and external trigger. Well, to see all the goodness, we're going to have to take all this off and to access the power supply as well.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (opinion)
+context before: Like you you know, you're at the design review meeting before your board gets manufactured. If you've got a ridiculously complex board, like one of these things, you know, if you've got Right, if you've got something like this, you've you've designed this board here, for example, right?
+TEXT: You've designed this board or it's some other huge PC motherboard or something. It's taken you a month to lay out this board, which is not uncommon, by the way.
+context after: I've had boards that have taken me a month or two to lay out, right? They're absolutely like, you know, and this one's not enormously complex, but this is a pretty advanced board.
+
+[1715] EEVblog 1715 - Euler Precision eSAP-30 3GHz Active Probe REVIEW — Dave Jones (opinion)
+context before: That could ruin your days. We're of course not going to fuss over the uh implications of this particular signal, but it works. But it's got those high frequency components in there on the edges.
+TEXT: Look at that. That could be a PCB layout thing. That's likely a PCB layout mismatch issue. So, I'll capture that and uh we'll probe it with the Oiler Precision.
+context after: And yes, of course, we are limited by the 1 gig uh bandwidth of this scope here. We're not actually limited by the probe, but if we get a same result, but what we're looking for is a same result that matches the much more expensive uh keysite probe.
+
+[1079] EEVblog #1079 - Mailbag — Dave Jones (opinion)
+context before: you could have um uh you know KeyCAD or whatever it is and you could have your own custom overlays to do shortcut keys to do various stuff and that is very very handy.
+TEXT: Of course the problem with that is once you get used to this, if you go to another machine and try and do your PCB layout without one of these, you're screwed.
+context after: Oh, what happened there? Think I pressed the button and it did something weird. Now I'm just tiny. Come through a few Aussie ones. Thank you very much. I presume it's virtual access or is that like just an old it might just be an old sticker perhaps.
+
+[171] EEVblog #171 - Agilent U1272A Multimeter Teardown — Dave Jones (opinion)
+context before: I would expect to see an off-the-shelf micro like an MSP430 or something like that. We'll find out when we flip the board over, but uh uh yeah, it's there's just lots of passive circuitry.
+TEXT: The board is very clean. It seems like it's well laid out. Uh there's no solder residue on it at all, and I'll go into the individual components a bit later.
+context after: There's a couple of um surface mount electrolytic uh caps there. There's a few components aren't missing, and rather unusual, this thing is rather curious here. It's got like an exposed uh gold pad here with this large uh large package capacity here, and another capacitor that goes off to this rather unusual thing which uh it's almost like a sensor pad which goes off under the bottom.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (opinion)
+context before: And remember, if you going to try this at home, wear protection. Give it a go. There we go. It's not necessarily the cleanest result there, um because there's a probably a bit too much uh solder got on the on the pins, but we can actually clean that up.
+TEXT: You can actually drag the iron back out like that and get the solder off those pins, no problems at all. But this layout is just I don't know. Who did this?
+context after: The work experience student? Here we go. I've got my mouse trap or it's actually a much larger rat trap. It's the Eradicator. I love it. And and really it it is quite a nice symmetrical rotational design.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (opinion)
+context before: It's pretty funky. I'm Yeah, I I probably went through a a fillet phase, you know? And uh and and the other thing is teardrops as well. Now now that we're talking about this, see?
+TEXT: Like See, the problem here is is this trace here, right? So, coming down on the this this trace here, right? This is not This is not good layout, right?
+context after: You don't have your trace coming down and then at an angle. Like even though it might be angling in here properly and it might be physically connected. I don't like that KiCad doesn't actually No, there it is.
+
+[5eJorvyA708] Altium Designer Serious ERC bug — Dave Jones (mention)
+context before: ou do an ERC, but if you go like this. And compile that, where, look, it's not there, it's not there, that to me has got to be a bug, there's no way that you can miss critical errors on a schematic, I want to check that one schematic, I'm asking it to do that, and once again, the out job will do exactly the same thing, it'll miss those errors, so what the, like here's the, like if I put that to a PDF report, I could,
+TEXT: feed that to a PDF report, give that to management and say, hey, look, it's passed ERC, no worries whatsoever, let me go onto the PCB layout, and they'll go, yeah, no worries, and my schematic contains, like, really gross errors that are going to release the magic smoke from these chips, I mean, it's just, nah, there's something seriously wrong here, so I want to know where it's getting the rules from to do that compile document there,
+context after: because it's certainly not coming from the project option, and fair enough, the, when I do the project compile, the project options uses the connection matrix, but where else is it getting the rules from to do the compile, so if it might be some legacy thing, because Altium's full of legacy stuff and things like that, but please comment below if you think this is, like, a genuine bug, or you know some way around it, 

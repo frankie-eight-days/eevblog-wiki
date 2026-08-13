@@ -99,6 +99,7 @@ def build_index(alias):
 
 def collect(concept, idx, cap):
     seen, depths, skipped = {}, Counter(), {}
+    # skipped is retained for reporting only; nothing is dropped now
     for stem, m in idx.get(concept, ()):
         pi = m["paragraph_index"]
         fm, paras = load_transcript(stem)
@@ -106,16 +107,15 @@ def collect(concept, idx, cap):
             continue
         title = fm.get("title", "")
         num = EPNUM.search(title)
-        if not num:
-            # A passage with no video number cannot be cited, and handing one to
-            # a writer anyway is worse than dropping it: the prompt rendered the
-            # number as the literal string "None", and one model dutifully wrote
-            # "[None]" into the finished article. 43 of 413 passages across the
-            # first three bundles hit this -- EEVblog videos whose titles carry
-            # no number at all ("Rigol MSO7000 Unboxing"). Losing 10% of the
-            # evidence is the cheaper mistake; every surviving claim is traceable.
-            skipped[stem] = title
-            continue
+        # Videos whose titles carry no EEVblog number still need a citation
+        # token. Rendering the missing number as "None" put literal "[None]"
+        # into finished articles; DROPPING those passages instead was far worse
+        # -- 32% of transcripts have no number in the title, and `sextant` lost
+        # the single video holding 114 of its 116 paragraphs, leaving a top-50
+        # concept with four passages. So numberless videos cite by video id:
+        # uglier in the text, but every claim stays traceable and no evidence is
+        # discarded for a naming accident.
+        cite = num.group(1) if num else stem
         key = (stem, pi)
         depth = m.get("depth") or "mention"
         if key in seen:
@@ -132,6 +132,7 @@ def collect(concept, idx, cap):
         seen[key] = {
             "video_id": stem,
             "video_number": int(num.group(1)) if num else None,
+            "cite": cite,
             "title": title,
             "url": f"{url}&t={secs}s" if url and secs is not None else url,
             "paragraph_index": pi,

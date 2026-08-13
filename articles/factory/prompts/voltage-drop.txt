@@ -1,0 +1,638 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: voltage drop
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 121 passages drawn from 70 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# voltage drop`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: I don't care, you know, it's not the design phase. This is supposed to be a finished product. It's supposed to work. So, I could set the limit, you know, if you were testing a design, your own DC to DC converter, you know, just to be safe, you would set the output current to 1.1 amps uh per channel or something like that.
+TEXT: But, you do have to be careful setting a uh low safe, in quote marks, uh current output limit, because uh you can get uh certain like power on surge currents, and that may up and then this the power supply that you're powering your uh converter with may go into current limiting mode, it drops the voltage, and then that causes, you know, a problem with your converter, and well,
+context after: that can ruin your day. So, anyway, I just got to set 3 amps. Let's go. So, what I'm just going to show you now is if I don't hook the voltage sense lead up to the rear uh voltage sense terminal in this, you'll know you'll see how much uh voltage drop we get across these cables at this uh 8 amps continuous current.
+
+[1653] EEVblog 1653 - Alkaline Battery Leakage Testing 2 - Electric Boogaloo — Dave Jones (explains)
+context before: It's not a great discharge transistor in there. It's not designed for uh uh these high currents and uh you can't actually find a maximum current in the data sheet, at least I couldn't, um for the internal um discharge transistors.
+TEXT: You can get the output current, which is a couple hundred milliamps, uh but the discharge transistor, noopsie. Um anyway, uh so 130 ohms. So yeah, if the if the voltage drop across this pass transistor is too high, then the discharge voltage is never going to get low enough for the output to then re-toggle for for that flip-flop inside to go flip-flop and then um now flip.
+context after: And then uh the output goes high and it changes state and it keeps oscillating. So if we actually measure that voltage, so let's let let's do that. Where's it?
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: THERE WE GO. I figured it out. That's pretty nice. Okay. Yep, that's really good. Okay, no, I take back what I said about that. That's really good. I can then go to there, just move the cursor by pressing that.
+TEXT: Uh, very nice. Yep. Yep, thumbs up. And sure enough, yep, if you whack a load on it, go into constant current mode, there it is there. Um, 1.8 dropped from uh, 6 volts to 1.1 and of course the reason it doesn't match here is 1.1 out here and it's 1 volt reading on here is because of our the drop in our leads and our connections because we're not remote sensing anything.
+context after: I really like that even though it's displaying only 1 milliamp there, you can actually set down here in increments of 0.5 milliamps. So, you get a little little bit extra for your dollars there.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: In fact, there's no simple calculators out there to do it. Might be a couple of rules of thumb, but they're not hugely accurate. So, you have to use what's called a finite element analysis.
+TEXT: You have to You can get real expensive tools to do it, but they very complex mathematical modeling. In this particular case, modeling the drop, like if we had a big ground plane, modeling the drop right across this board over from this power connector over to here like this, and then this over to your and the or the output, sorry, uh to your FPGAs and stuff like that.
+context after: It's really, you know, it's almost don't bother calculating something like that. So, you can do it in theory, but in practice, yeah, no. Okay? So, that's why they probably went for the wires because it it's actually a more predictable resistance we can actually get in here like this.
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (explains)
+context before: I can bring that sense wire over to the front panel, but then the rear panel terminals won't be in full regulation anymore. We'll get voltage drop to the rear panel.
+TEXT: So, yeah, you know, you really have to go to town if you want to do this properly. And there you go. If you set it to half its maximum current, 3 amps, which is still a decent amount of current out there and power out, especially if you're talking, you know, 35 volts max output voltage, then it's only dropping at the terminals here point to point nine three.
+context after: But of course, this is a fairly precision power supply. So, yeah, you know, if you really want to do it properly, you need that sense wire. But the interesting thing is is that there is no wiring capability in this thing at least that I'm aware for the official Agilent Keysight modification for this thing that has the binding post on the front terminal.
+
+[762] EEVblog #762 - How Secure Are Electronic Safe Locks? — Dave Jones (explains)
+context before: And this one's got the holes on the back as well, but yeah, no big deal. Beauty. It's like a bought one. Okay, after that little fun detour, sorry about that, but hey, it was kind of fun.
+TEXT: Very Hollywood style break into the safe. I love it. Beauty. Anyway, we've got a resistor in series with the battery here. Just chose a nominal value, 10 ohms. Uh you want it to be high enough value so that you get sufficient uh voltage drop across it based on the current pulses, any current pulses from the CPU, so that you can actually see it on the scope.
+context after: So, you don't want, you know, microvolts, hundreds of microvolts. You want, you know, tens, hundreds of millivolts, something like that. But you don't want it to be too high so that the voltage uh drops out.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: You put them on the high side. So, that's why often way back in the day a 5-V rail wouldn't be 5 V. They'd actually set it to 5.25 V.
+TEXT: So, that all the circuitry near the connector it'd get 5.25 V, which it'd be on the upper side of your 5-V tolerance on your 5-V rail. Everything's fine, but by the time it got all the way to the other side of the board with the hundreds and hundreds and hundreds of chips on there as the old boards were, it might drop down to 4.75 and you're still right.
+context after: You're still within the margins. But, modern devices with their 0.9 V, 0.8, even lower core voltages and if you put you know, you might have half a dozen of these large FPGAs on a big complex board, you can be talking tens of amps, 50 amps, even 100 amps.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: Let's take the example of the 2-ohm resistor here. If we've got 2 amps flowing through it, I squared R, 2 squared is 4 and * 0.2 ohms, we're only going to dissipate 0.8 W in all of those resistors.
+TEXT: And we've got if we've got 5 W total capability or 10 W, not a problem whatsoever. It's not going to heat up much at all. Now, of course, the value of your current shunt resistor is going to determine how much voltage drop you get across there, and depending on your input voltage over here, depending on what you power it from, that may be an issue.
+context after: In this case, if we use a 0.1 ohms, then we're only Well, in either of these two cases up here, we're only talking about a 0.4 volts maximum drop, which really isn't that bad at all.
+
+[779] EEVblog #779 - Batteriser: How To Measure Battery Cutoff Voltage — Dave Jones (explains)
+context before: There's no load on it, and measure the unloaded voltage, then put it back in your product, and then a minute later take it back out, and measure the battery voltage again, unloaded.
+TEXT: Okay? So, you can actually get two characteristic curves like that. So, the green one, of course, is going to have a higher voltage because when you put a load on a battery like this, this internal resistance, of course, Ohm's law, it's going to drop some voltage, and that voltage is going to be the differential between those two curves there.
+context after: So, this is why it's fundamentally and demonstrably wrong to measure the open circuit unloaded voltage of a battery when you're talking about discharge curves, battery cut off voltages, and everything else because it's meaningless because you're not loading down the product and you're actually not taking into account that internal resistance.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: I probably should have drawn that the other way. Let's just say that we had our nice big square in here like this and then we had our 20 mm trace coming over.
+TEXT: If it was like let's just say that's 100 mm there, then we'll get half the voltage drop on that. So, we'll get a 40 mV drop coming from the output of here over to our assume let's assume that once it's gotten under the FPGA like that, you get your one big solid thing that there's no more kind of little drops in here, for example.
+context after: There will be. There might be, you know, 2 mV or something like that going from one side to the other. Whatever. Depends how many vias are in there like actually uh breaking up that uh that big nice big solid block you've got in there, but you might have you could easily have 40 mV drop going from there to there at 8 amps.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: Anyway, 10 m drop on that trace the 8 amps we're talking about, 80 mV drop. That's only one of them. That's just the power trace. What about the ground trace?
+TEXT: Bingo, you've got 160 mV already. We're already over our Altera data sheet limit. Where was it? Hey, you remember? It was only 125 mV. So, if we take our power trace like this over to here and it was 20 mm wide, for example, nice big huge beefing power trace, we're going to get a voltage drop across there of 80 mV at 8 amps.
+context after: There you go. And then then you've got the extra drop for the the same drop again for the ground or whatever. But in this case that's going to the switching converter.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, it's just simply not going to work when you have a huge power plane like this thing. So, no, sorry. As cool as this thing is, it's not going to do the job in this particular instance.
+TEXT: Now, as I mentioned before, you can do the thing with like feeding a constant current through the thing and then using this um to measure uh voltage drops, but the problem with that is when you've got active devices on here um drawing huge amounts of current, you're naturally going to get the drops across here anyway.
+context after: So, um you know, you're going to get the drops across the plane. So, here's our input connector, and all these four ASIC devices here are all drawing, you know, large amounts of current.
+
+[1163] EEVblog #1163 - Xmas Mailbag — Dave Jones (explains)
+context before: Okay, now they get into the details. Orange, orange, brown. Okay, now they get into the details. Orange, orange, brown. Okay, now they get into the details. Orange, orange, brown. Oh, there we go. Nice graphics. One leg of this resistor in the same column where the negative terminal of the LED is connected.
+TEXT: And connect its other leg. They might mention either way. And it flows in the circuit. Anyway. And it flows in the circuit. of the led meter negative or negative v1 which is equal to 3.38 volt don't need to go in the voltage drop precision across the resistor is equal to v2 which is going in the front of the physicist
+context after: kirchoff and we call it kirchoff's voltage law and if they're yeah okay do beginners flashing a lead need to know kirchoff's voltage law riddle me that um yeah leave it in the comments i mean some people think that this is how it should be taught um others don't necessarily agree but um
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: But, you do have to be careful setting a uh low safe, in quote marks, uh current output limit, because uh you can get uh certain like power on surge currents, and that may up and then this the power supply that you're powering your uh converter with may go into current limiting mode, it drops the voltage, and then that causes, you know, a problem with your converter, and well,
+TEXT: that can ruin your day. So, anyway, I just got to set 3 amps. Let's go. So, what I'm just going to show you now is if I don't hook the voltage sense lead up to the rear uh voltage sense terminal in this, you'll know you'll see how much uh voltage drop we get across these cables at this uh 8 amps continuous current.
+context after: So, let's turn our load on. We've got Yeah, everything's right. Let's switch it on, and we're getting 6. Uh 6.6 volts at the moment. So, let's switch it on.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: This won't tell you much, but if we go that's a ground. Oh, sorry. You couldn't see that. My face is a bit If you go to the power rail, you can see how they're actually split on the bottom here.
+TEXT: That just, you know, shows how you can snake things around and just avoid various things. It's not the best example, but but it shows you just how you would might split up your power planes on a board to uh to avoid voltage drops on one high power section causing issues on a lower power section, stuff like that.
+context after: So, I think we'll call it quits there. Sorry for the length of this video, but as you can see, there's a whole bunch of stuff involved in this and we're I wouldn't go I'm not going to say we're scratch the surface, but we've probably only scratched the surface of what you can deep dive into on this sort of thing.
+
+[774] EEVblog #774 - Low Battery Discharge Testing Part 1 — Dave Jones (explains)
+context before: But it's not. Because look, we're still getting 7, this is where our Agilent meter up here can still help, because we're actually tapping that point there. But these are really thick beefy cables. If they weren't, these were just really thin wires. Half an amp would get
+TEXT: a significant voltage drop across there, and this wouldn't be accurate. As you can see, no problems whatsoever, but we're still, like we're 10% out there. Now here's actually where we get to the limitation of our test setup. Yeah, we might be showing an error here, but that's not actually an error caused by
+context after: this load. We're now getting the error caused by the voltage drop here. Because look, multiply 0.15 volts times 0.66 amps, you get basically precisely the 100 milliwatts which we've programmed into the thing. So this load is still doing the business down at 0.15.
+
+[1559] EEVblog 1559 - PCB Design: Trace Current Rating — Dave Jones (explains)
+context before: So, 1 oz copper and 10 mils is ridiculous, right? So, let's go for 100 thou. Right, 100 thou trace. 100 mil trace. Not that millimeter rubbish. And the conductor length here um we don't know.
+TEXT: So, it depends on your particular layouts. So, the total resistance will depend on the conductor length uh of course. And then uh that will determine the voltage drop which you're willing to tolerate cuz that might be part of your electrical design rather than the third You've got two issues here.
+context after: You've got electrical and thermal um as well. And you might even have high frequency stuff. That's why they've got like skin depth over here and skin skin depth uh percentage.
+
+[950] EEVblog #950 - Nixie Tube Display Project - Part 2 — Dave Jones (explains)
+context before: So, those of my who are subscribed to my second channel and I highly recommend you do cuz occasionally I put updates and other uh miscellaneous videos like that. Um I'll link that in.
+TEXT: But uh rather than just shoot that again, I'll just display that video here for you about the open circuit voltage drop of the Nixie tubes because some people have asked uh there will be a voltage drop on the Nixie tubes on the pins that you aren't actually switching on with your transistors.
+context after: So, all the off pins will have so much of a voltage drop on via the Nixie uh tube itself that you can get away with low voltage uh transistors.
+
+[1281] EEVblog #1281 - Garmin GPS Repair — Dave Jones (explains)
+context before: It's not supposed to do that. Mhm. No. Oh, flicker flicker. No, something's going on. You are not going to believe this. I am copping Murphy today. Wow, unbelievable. All that sort of like weird resetting stuff and like glitching on display and all that was caused by not anything I did, a bloody dodgy little mini B.
+TEXT: Look at that piss ant little cable on that. Unbranded, not marked, not rated, not anything. And ah, toss that straight in the bin. That was just dodgy as. So, that was like causing voltage drop and the processor just wasn't getting enough and it was resetting and hiccuping and doing whatnot.
+context after: And like I replaced the cable and I just tested it on the PC and it's fine. It connects. It So, everything's winner winner chicken dinner. I could have really chased a red herring down a rabbit hole there all because of a bloody USB cable.
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (explains)
+context before: And if I hit that button on the back, the uh sense button, and where is it? There it is. There we go. We're getting our 0.83 volts there. So, that sense remote works an absolute treat.
+TEXT: That's a winner. I love it, and I didn't have to modify the board or do anything. Fantastic. And you'll notice that we're still getting 0.84 volts because we're over here because we're getting the drop on all the leads, even though these are real big beefy uh leads on this thing.
+context after: We're still It's enough at 6 amps uh to get, you know, 150 millivolts uh drop there. But, that's an absolute winner. We keep our precision. We've got it switchable between the front panel and the rear panel without having to hack the PCB or anything like that.
+
+[774] EEVblog #774 - Low Battery Discharge Testing Part 1 — Dave Jones (explains)
+context before: Down at 0.1, it's hard to do the resolution of this thing. There we go, exactly 1 amp there. Right? So that's still exactly 100 milliwatts. So this thing is actually still working absolutely perfectly, even though we're getting like 40% error over here. That's due to, even though we're using
+TEXT: huge, big, thick, beefy cables here, these things are monsters. Big binding post terminals, this wire is bloody really thick as well, and these massive binding posts, we're still getting that drop on there because we're at an amp. It's amazing the drop you can get at an amp.
+context after: And especially in this sort of situation, it can cause a 40% error. But this sucker still works perfectly fine, so it's no problems whatsoever. So the hiccuping we must be seeing in this thing must be like the battery chemistry causing an effect where, okay, it draws a bit of current,
+
+[329] EEVblog #329 - Tracking Pre-Regulator LTspice Simulation Part 2 — Dave Jones (explains)
+context before: so the current, so the pre-regulator voltage is equal to the constant current set through R2, which gives a constant voltage drop across R4 here, so let's shut that down, expand it, so the voltage pre-regulator voltage here is equal to the constant current through R4,
+TEXT: and the voltage drop across that, plus the voltage drop of the base emitter junction here, and that's it, that's what sets the value of the pre-regulator voltage, so it depends on the constant current set up here, current through there, the voltage drop in the base emitter,
+context after: so this circuit is going to be pretty darn good, and the only issue there's going to be with it is the temperature dependence of the base emitter junction here, so we can actually try that, I've set it back to a 2N3906 transistor, I've added the SPICE directive dot step temp,
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: You shouldn't say impedance with DC. A DC resistance problem. There's too much voltage drop on that. They're trying to lower the resistance to decrease the voltage drop at a particular current.
+TEXT: Remember Ohm's law, voltage is current times resistance. So, the more current, well, in this case, let's say we've got our eight amps flowing across our board like this, then you're going to get X amount of drop over that distance based on the resistance of the traces.
+context after: It's non-zero. Even a nice big fat ground plane is not zero resistance. But I hear you saying, "Well, Dave, in practice, a big ground plane, that's going to be good enough for anything." Well, that's not so, as we'll take a look when we go further down the rabbit hole.
+
+[376] EEVblog #376 - Multimeter Fuse Diode Followup — Dave Jones (explains)
+context before: It won't make any sense otherwise. Now, a lot of people asked and I think rightly so because it is a little bit confusing. These this diode protection here, we're using the Fluke 27 as the example.
+TEXT: This is the schematic I used on the whiteboard in the previous video, but this is the actual schematic from the Fluke 27 service manual. And this diode bridge here and these four diodes here, which give a 3.6V nominal voltage drop um across the current shunt resistor.
+context after: In this case up here, it's say 5 ohms up there for the milliamp one for example. and they was uh asking how do the manufacturer Fluke in this case ensure that these diodes won't blow before the fuse blows here.
+
+[819] EEVBlog #819 - DC Fundamentals Part 4: Kirchhoff's Laws Tutorial — Dave Jones (explains)
+context before: Let's say we just want E1 on the one side here. We can go E1 equals VR1 + VR2 + VR3, exactly the same as before, but the negative E2 becomes a positive E2 like that.
+TEXT: And you can actually see that kind of makes sense if you think about it. If we're talking about a voltage drop across R1, voltage drop across R2, voltage drop across R3, but because E2 is the other direction according to the current flow we chose, it's also a drop.
+context after: And the sum of the applied voltages equals the sum of the voltage drops. Bingo. We've got this one is applied, all the others are drops. So, this voltage source, even though we sort of we had it as an applied voltage before, you can also think about it as a voltage drop, depending on which side of the equation it's on.
+
+[1449] EEVblog 1449 - What Causes Excess Battery Drain? (BM235) — Dave Jones (explains)
+context before: Now, of course, this doesn't mean that this isn't the culprit. You could very well have a, you know, a faulty diode in there that has excess leakage. So, if you've got this sort of problem, it can be in any multimeter.
+TEXT: This is a very common any product, actually, that has batteries. You might typically have a like a reverse bias diode like this. If you can afford the luxury of the voltage drop, then you put the diode in series with the batteries, but then you get your 0.6-V drop.
+context after: And on a 3-V battery, that's pretty crippling. So, you have your reverse bias diodes. There's other ways to protect, but anyway, this is a cheap and simple. And yeah, it could certainly have come a gut to that part.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: Now, we have a value of the resistor we can use for R1. Our current down here hasn't changed. Uh we calculated that before at 200 microamps cuz it's 13 K in parallel with uh the resistor divider 6,250 ohms uh divided by 1 or 1.25 volts divided by 6,250 ohms is 200 microamps.
+TEXT: So, we know we've got 200 microamps flowing down R1. And this is where we need to now calculate R2, which actually increases uh our generates our voltage drop across it to raise up our low input voltage and create to 3 volts and create our expanded scale voltmeter.
+context after: So, we need to calculate R2 for a 3 volt drop based on current down here, but it's not just 200 microamps. Remember before, it's 200 microamps plus the error term here.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: Even though there is a drop in these leads, it's actually compensating that and reading back 10 exactly on the output. So, it's actually outputting. So, if we actually measure down here with this meter will whoop oh it didn't disconnect it wasn't fast enough.
+TEXT: There you go that's interesting. We should find that this voltage is higher than the actual 10 volts there by the drop in the leads and 10.05 cuz we're only an amp but there is 50 millivolt drop across those leads and if we increase the current that'll be higher.
+context after: So I've increased that to 10 amps there and now we're delivering it says bang on 10 amps and so there's a bit of non-linearity there but anyway so we now we should have a bigger drop on the output here because yeah 10.4 so we got 430 millivolts drop across those leads but because we're using the external sense it's going to read precise it's going to deliver precisely 10 volts across our
+
+[774] EEVblog #774 - Low Battery Discharge Testing Part 1 — Dave Jones (explains)
+context before: a significant voltage drop across there, and this wouldn't be accurate. As you can see, no problems whatsoever, but we're still, like we're 10% out there. Now here's actually where we get to the limitation of our test setup. Yeah, we might be showing an error here, but that's not actually an error caused by
+TEXT: this load. We're now getting the error caused by the voltage drop here. Because look, multiply 0.15 volts times 0.66 amps, you get basically precisely the 100 milliwatts which we've programmed into the thing. So this load is still doing the business down at 0.15.
+context after: Down at 0.1, it's hard to do the resolution of this thing. There we go, exactly 1 amp there. Right? So that's still exactly 100 milliwatts. So this thing is actually still working absolutely perfectly, even though we're getting like 40% error over here. That's due to, even though we're using
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (explains)
+context before: That's a winner. I love it, and I didn't have to modify the board or do anything. Fantastic. And you'll notice that we're still getting 0.84 volts because we're over here because we're getting the drop on all the leads, even though these are real big beefy uh leads on this thing.
+TEXT: We're still It's enough at 6 amps uh to get, you know, 150 millivolts uh drop there. But, that's an absolute winner. We keep our precision. We've got it switchable between the front panel and the rear panel without having to hack the PCB or anything like that.
+context after: So, we keep We keep the precision of our supply, and that is an absolute winning mod. So, there you go. Um if you can pick up one of these cheap on eBay, you can modify these.
+
+[324] EEVblog #324 - DC-DC Converter Testing - USB Supply Part 4 — Dave Jones (explains)
+context before: And that's with the resistive load, tiny little resistive load down in there, and disconnected from our electronic load. Now, here's an absolute classic example of burden voltage on the current range of a multimeter at work here. We've got 5 volts input voltage. That's
+TEXT: measured, by the way, right at these two alligator clips there, right at the input terminals to the voltage regulator. So, obviously the voltage at our power supply up here will be higher because of the voltage drop. There'll be some slight voltage drop in the
+context after: cable, but let's take a look at this. We're at 40 milliamps at the moment, and I'm going to turn up this output load and watch this input voltage here drop. Let's go up to a couple hundred milliamps, right? So, let's go, say, 200 milliamps output current,
+
+[642] EEVblog #642 - TI Connected Launchpad — Dave Jones (explains)
+context before: burden voltage on your multimeter to measure current causes an issue. Let's actually probe this thing, I've taken the jumper off, okay? And watch the LEDs down there, you'll see that that LED is barely like, it's not functioning, it's not powering up as it
+TEXT: should, right? But if I connect it over to the amps jack here, and do the same thing, bingo! It powers up, no problems whatsoever, and starts to operate. Because it obviously, the burden voltage of the meter was too high, and it was dropping the voltage to the
+context after: microcontroller, it couldn't operate properly at that particular current, and of course you switch over to the amps range, and everything's hunky-dory, and that's the LEDs that I expect when it actually runs the thing. So there you go, that's just a little example of
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: I just got a constant current of 1 A here. So, we'll just switch that on just the default 5 V out, so 0.997. So, that's accurate, the voltage, of course, has dropped.
+TEXT: You could see there that it was actually Yeah, it's spot on there, too. The least significant digit, no worries whatsoever. And of course, we're going to have some The reason this doesn't match is because we've got the loss in the little piddly cables here.
+context after: We could, of course, do remote sensing. So, I won't be lazy, Dave, I will actually I the external sense. And by the way, when you're doing the external sense, make sure you get it around the right way.
+
+[905] EEVblog #905 - REPAIR: HP85 Vintage Computer — Dave Jones (explains)
+context before: This should be plus 5. Yep, 5.12. That's fine and dandy. That's within the usual uh 5% uh tolerance, i.e. 4.75 to 5.25. And usually on high current or high power 5 V uh computers like, you know, old-school stuff like this, which chew a bit of uh current on the 5 V rail for all the uh digital logic, then you probably want to set it like slightly to the high side.
+TEXT: You don't want to set, you know, trim it to precisely 5 V thinking you're really smart trimming it right like that, and then getting drop over the cables and the connectors and the traces and everything else out to the uh large boards and things like that.
+context after: So, it's common to actually set that uh reasonably high. This is plus 6. Yep, 6.17. Um I think that's it. I'm happy with that. Winner. Now, here's where I think the problem came about.
+
+[ZYC763Vx9O8] eevBLAB #6 - Don't Assume It's Faulty — Dave Jones (explains)
+context before: terminal measurement, that's what you have to have here. A 4 ohms measurement because you have to sense right at the load. In this case we don't have to, hence we can use these shorting bars here because the multimeter load is only 10 meg, of course.
+TEXT: It's very, very small. And these wires here, they're only like a milli-ohm or something, so do-ohms law, you can figure out the voltage drop across these cables. These bugger all, hence why we can just sense here, but larger loads we'd have to sense there.
+context after: Anyway, that's what it was! Just a tight, it wasn't tight on there, you know, I wiggled them around, it looked like they were in, you know, but it was only like, you know, a smidgen, like half a turn out or something like that.
+
+[725] EEVblog #725 - LG Plasma TV Teardown — Dave Jones (explains)
+context before: Oh, actually, ta-da! Look at this! This is handy, they actually tell you. There we go, VS 190 volts and VA 60 volts. So I was slightly off there on the vertical grid supply voltage, but there you go, no problems whatsoever. 5.3 volts there for the power supply.
+TEXT: Why is it 5.3 instead of your nominal 5 volts of 5.25? Well, you want to set it so that you're allowing for voltage crop drop across all your wiring and all your boards. So if you've got your main 5 volt supply voltage on this high voltage power, not high
+context after: voltage, but your main switch mode digital power supply here, then you want to allow, because of the huge big space modular nature and all the cabling running off, you want to allow for the voltage drop in the cable. So you're going to typically set your 5 volt rail here, not to 5 volts
+
+[774] EEVblog #774 - Low Battery Discharge Testing Part 1 — Dave Jones (explains)
+context before: But we go down. Alright, no. No, it's still 100 milliwatts. Let's keep going. I won't bore you to death. 0.2 volts. It's still 100, oh there we go, we're getting some error. So down at, let's say, at 0.2 volts here. So yeah. Yep.
+TEXT: Or is that, yeah. Maybe, because we're looking at half an amp. Look, we're trying to draw half an amp at 0.17 volts. That's a lot of current. So you've got to you know, like we might, this is where the drop in these leads could be quite significant.
+context after: But it's not. Because look, we're still getting 7, this is where our Agilent meter up here can still help, because we're actually tapping that point there. But these are really thick beefy cables. If they weren't, these were just really thin wires. Half an amp would get
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: This transistor just stays permanently switched off, and this acts just like a the standard voltage regulator by setting this pin. If you've got 1 V set in 1 V output, you'll have 1 V here, and bingo, this transistor is turned off, so that's not there.
+TEXT: There's effectively no current drop through these resistors, and you'll have 1 V here, and you'll have 1 V there. Easy. But, as always, I simplified things and lied to you a little bit by saying that there was no current drop in these resistors.
+context after: But, if we check out the data sheet for the LT3080, might be a couple of traps for young players. So, let's go have a look at the data sheet.
+
+[957] EEVblog #957 - How To Measure DC-DC Converter Efficiency — Dave Jones (explains)
+context before: So, we're going to have to go tweak knobs over here. Tweak this with our tongue at the right angle to get our input voltage at our fixed 5 volts every time.
+TEXT: So, yeah, it's you know, got to tweak a few things. Oh, well. It's not easy being green. And I show you that here. Even if we've got no output current meter, we're just relying on our drop on our wires here to get our 5 volts on our output here.
+context after: I've had to tweak this up to 5.31 at our 0.1 amp 100 milliamp output current, which is the first one that we want to measure. And then if we change our output current to say you know, 20 20 milliamps or something, you'll notice that bingo, our input voltage has changed.
+
+[gqzZHbEfWDU] KoradFollowup Charles — Dave Jones (explains)
+context before: Now we know that the current metering on the power supply is pretty accurate from what we've seen already. So I don't want the shunt resistance of the multimeter actually in circuit. So we've taken that out and we'll measure that voltage. The other reason is I just wanted to show you the effect of the lead resistance
+TEXT: when you're delivering a higher current to a load. What we'll be getting on the power supply versus what we'll be seeing at the bulb will be different due to the voltage drop actually in the leads. So let's turn it on and see what happens now.
+context after: This is going to... All right, there we go. So you can see we've got our 24 volts. We've got 4.6 amps. And if we can see it, we're in constant voltage mode. That's OK. We're showing 23.95 at the output terminals. That's about a 50 millivolt difference there
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: Then, if you don't get your If this is, you know, This is This is very crude, but if you don't get your star grounding like this, like this one is going off to your load, for example, and this one might be going off to, you know, some other load, or whatever, and this one goes to your chip.
+TEXT: It goes to your converter, for example. If you don't If you have your large switching currents going up like this, and then you connect here your chip off to this point here, then you're going to get that voltage drop all the way along there.
+context after: That's do very crude diagram, but you then you've got an internal reference voltage inside this thing that you've just like you're dynamically switching when your load switches, your current's going to switch.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (explains)
+context before: I actually I don't know where the higher shunt resistor is and on that board. No, it wouldn't be on that board, would it? Um might be on the riser board cuz I don't see a precision shunt resistor in here, really.
+TEXT: Um you know, like a 1 Ω or 10 Ω or something like that. Anyway, like even with say the 10 mΩ one, it's great when you have like a full scale like half a volt drop across it or something like you know, several hundred millivolts drop maximum.
+context after: But, when you're down in the resolution of your converter down in there, you've got like microvolts and then uh you know, this app op amp here had 25 microvolts offset voltage, for example.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (explains)
+context before: And all the stuff like that ground plane, the blue ground plane there on the left-hand side, that's all signal ground. So, there's no real current flowing through that. So, there's going to be no voltage drop through that.
+TEXT: And therefore, all of my sensitive signal stuff, my ADCs and the DACs, will be at the same potential because they're at the same ground potential because there's no current flowing through that left-hand blue part of the ground trace.
+context after: And wait, here we go. I'm doing some 3D model time. Sorry. Um my video capture program didn't capture that. It looks a bit uh dodgy, but what I'm doing now is looking at 3D mode.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And the uh Fluke 87 is measuring the output voltage. Now, when you're probing the voltage like this, it has to be right on the input and output terminal. You've got to probe it right on there.
+TEXT: Otherwise, you could get uh a a voltage drop due to current through your wires or or traces on your board or something like that. So, you have to probe it directly at the input and have the ground directly on the ground pin as well.
+context after: And I won't go into it, but I've got it all hooked up down there and there it is. And it's a bit of a mess, but we should be able to measure the load current graphs.
+
+[i069j6S80OU] uCurrent — Dave Jones (explains)
+context before: No problem. Easy, right? And but most people think it's really small. But it's not. The closer you get to the full scale range of the meter, the the the bigger the drop, obviously.
+TEXT: Now, a really good meter, like the Fluke 87-5, it will have Well, well, this one actually has 1.8 mV per milliamp burden voltage. So, if you pass 200 milliamps through this, if you try to measure 200 milliamps, that's a 360 mV drop.
+context after: Now, that it may not sound like much, but really 360 mV is If your circuit is 5 V, bingo, you've already uh thrown your circuit out of voltage spec, probably.
+
+[1427] EEVblog 1427 - An INFURIATING Electronics Exam Question! — Dave Jones (explains)
+context before: Uh Um that you know, you don't put a voltage source directly across a non-linear element like an LED here. It's just It's just ridiculous. So, yeah, you wouldn't do that.
+TEXT: Okay? But, we are told that the forward voltage is 2 volts here. Okay? So, there's 2 volts drop across this one, and there's 2 volts drop across these two in parallel cuz they're in parallel, so they'll have the same voltage drop.
+context after: Okay? So, this midpoint here um is going to be like 2 volts. It's half rail. So, it all kind of makes sense. So, you know, you can sort of brush that the practical aspect of that away and go, "Okay, there's 4 volts VCC, and we're going to have 20 milliamps."
+
+[1427] EEVblog 1427 - An INFURIATING Electronics Exam Question! — Dave Jones (explains)
+context before: I don't know, it's just cuz I wasn't looking straight on, but yeah, anyway uh That's just a function of our eyes really. If you actually got proper measurement instruments that were measuring the millicandelas or the lumens out of this thing, then you'll find that yeah, the brightness would be proportional to the current cuz that's pretty linear.
+TEXT: Having said that diodes and LEDs are non-linear devices, they are in terms of voltage drop, but in terms of output lumens output per current per milliamp through them, then that's a pretty linear relationship for the most part.
+context after: So, there you go. I hope you enjoyed that bit of pointless fun. If you found it interesting though, give it a thumbs up and as always discuss down below.
+
+[362] EEVblog #362 - LED Tube Lighting Install & Theory — Dave Jones (explains)
+context before: Exactly. In actual fact, in in both of the cases I've mentioned so far, the current has to pass through the driver. For example, in here up through there Mhm.
+TEXT: down through there. And if we're going out that pin there, say, out through that pin there. So, that driver is responsible for some voltage loss, but we might only be talking about 50 or 100 volts out of the 240 available.
+context after: Yep. It's still live and ugly. So, that's another variant on the theme that you really don't want to see around the place. Got it. But and but you shouldn't if you're buying new tubes.
+
+[87] EEVblog #87 - Let's hop on the Electronics Design Merry-Go-Round — Dave Jones (explains)
+context before: I've got like a quad op-amp uh package in the design, and there's going to be one spare. So, maybe I can do a low-side current sensor or something like that.
+TEXT: But, the problem with that is that um then it actually raises this voltage here uh by the voltage drop in the resistor. And, that can be about 0.1 V or something like that, cuz I want to use a 1 amp in the current anyway.
+context after: Uh the details aren't really important, but um I don't know if I can actually do this low side um current monitoring because of this uh increased voltage here. I might be able to do some weird arrangement with the grounds.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: And depending on the value of the R and the C, the larger you make the capacitance, the more ripple rejection you're going to get. It's going to attenuate your ripple.
+TEXT: Even if you take the case of like a low value resistor, lowish, like 100 ohms for example, even with a small amount of current on the output, 10 milliamps, you kind of get a 1-V drop across that resistor at 10 milliamps.
+context after: That's not terrific, especially if you're, you know, you're generating a -5-V rail and you need, say, a negative uh you know, almost near negative uh 5-V rail on the output or even -4.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: Look at that. It's still there, but wow, it's attenuated a lot. And that's just with a standard um you know, non-Darlington transistor. Winner, winner, chicken dinner. But, if we go back to our DC coupling, we're getting about a 3.3 volts output there.
+TEXT: You can see that there's roughly about 1 volt uh drop due to the uh pass transistor there. But, as I mentioned, it's not regulated. Uh so, if we change our offset voltage like this, look how our output changes like that.
+context after: So, it is not a regulator. It's just to get rid of your ripple. And the voltage drop here is going to be dependent upon your uh load that you've got.
+
+[742] EEVblog #742 - Why Electrolytic Capacitors Are Connected In Parallel — Dave Jones (explains)
+context before: And a different configuration yet again, well, you might dedicate one of your capacitors, for example, to another load out here just so that you don't have to share the same copper here because if this load here is a pulse load, for example, and it's it's pulsing, then you know, physical layout of your PCB and your traces matter.
+TEXT: You don't want that tied onto here because if this load here, you know, takes a big gulp of current, then you're going to get a voltage drop and a droop on your traces going to this load over here, which may not like it.
+context after: So, you might actually show them, once again, electrically all in parallel like that, but physically going off to a different load. But, you know, if you were Once again, you'd put a note there, but if you're a good drawing You're good at drawing schematics and drawing them cleanly, then you'd put that capacitor over against the load on the specific part of the circuit.
+
+[1526] EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load! — Dave Jones (explains)
+context before: Hard to tell. Anyway, the total power loss of 283 of these in series is the input voltage because we it was 240, but then we had some drop across that 20-odd meters of those five extension cords plugged together.
+TEXT: So, the input voltage to the first one of these was 228.1. So, you got to subtract the output voltage, which was 187.65, and then that's your voltage drop, and V * I gives you your power, so times 7.31 amps 295.7 watts.
+context after: So, that's going to get toasty warm, and it's coincidentally not far off, basically 1 watt for each one of these double adapters. So, 200 the total power divided by the number of adapters 283 1.045 watts.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: It's very difficult to do. So, I don't think that's really going to work in this particular instance. It can work in other uh instances, but this one, not so much.
+TEXT: So, we can do the same thing again with the um uh instead of the uh drop on the rail uh itself, we can get the voltage drop of the rail instead of the voltage drop across the the resistance of the tracks and the plane.
+context after: So, we can start out over here and we're getting at the connector we're getting 3.032 volts input, okay? 3.0325, for example. And then let's go to our cap over here.
+
+[317] EEVblog #317 - PCB Tinning Myth Busting — Dave Jones (explains)
+context before: But, if you have this sense wire, which is tapped right at the same point like that, then you're measuring the voltage directly off there. And because there's no current, you've got a high-impedance multimeter measuring this, there's no voltage drop along this wire.
+TEXT: It measures the exact uh, resi- the exact voltage drop across your trace like that. So, it is the most accurate way to measure resistance like this. And of course, we've got that on both ends of the board like that.
+context after: So, we've got one at that end and one at this end, four wires. We can drive it with a constant, uh, current or with a, uh, a four-wire multimeter like a HP 3478A.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: And if we actually lower the range down to three, well, we can barely see it. 3 V there. Look, 0.08 V. Now, if we go to 0.6 V range, then we're even lower input impedance on this multimeter, and we're measuring zero, exactly as we should.
+TEXT: And if I go to the 6-V range, which I can because I've got a voltage doubler here, and if we forward bias our diode, there we go. We're measuring our 5 V, or 4.91 V with a bit of a forward bias voltage drop there.
+context after: See? Input impedance, it's everything. Or another way you could have done this is use your low impedance range down here to actually measure. You're going to get like a 2k auto range, but it's so low, it's not going to measure it.
+
+[1394] EEVblog 1394 - Onkyo Receiver Repair - Part 1 — Dave Jones (explains)
+context before: I'm sure the solder joint's okay, but you know, never know. It doesn't actually tell you what the filament voltage is, but a classic valve filament voltage, 5.6 V, five or six, and the 5.66, there you go.
+TEXT: Um so, it's fine. Uh does it get through that resistor there? Oh, 4.4. It drops on the other side of that resistor, so it must have some drop. Yeah, actually there's 1.2 V drop across that um 8-ohm resistor there.
+context after: Geez. Sure enough, on that board, it's actually rated as a half-watt resistor, so that makes sense. You probably wouldn't use a half-watt, you'd only use a quarter-watt if there was like enough or current, so using a half-watt for a reason there.
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (explains)
+context before: Let's power it on. And uh address two, excellent. Wow. We haven't gotten anything out of it yet. Okay, let's test it. I've got it set to 1 V output here and let's hook it up to my electronic load up there.
+TEXT: There we go. Hopefully that's in focus as well. And we're getting 1.01 V but it's drawing no load, so we're getting no voltage drop across the wires here. I'd expect quite significant drop when we do the full 6 A.
+context after: So, I programmed this for 6 A. Let's turn it on. See what we get. We exactly the same, of course, because we haven't dialed in the current yet. So, let's dial up the current.
+
+[649] EEVblog #649 - Power Designs 2005 PSU Teardown — Dave Jones (explains)
+context before: These are just strapped across in place, but of course with a precision power supply like this, you want to actually be able to sense the voltage right at your load and that's what these sense terminals are.
+TEXT: I mean, there's no point having a nice precise 5.000 volts on the output of your power supply if then you're going to drop some voltage over a couple of uh you know, feet of cable going to your product under test.
+context after: So, you know, a precision power supply pretty essential to have these sense terminals on them. All right, let's crack this thing open and uh it's going to be very, very old school in here, of course.
+
+[IXVTMUQGN5U] Goal Zero Yeti 400 Lithium Battery Capacity Test #2 — Dave Jones (explains)
+context before: Now a couple of people said, "Oh, no. I, you know, I need to do this properly otherwise the test is not valid." And that's not true. like I've got to take that into account.
+TEXT: I've got to do proper four wire measurement and everything. Otherwise, you're getting a little lost in the leads and the dicky connector and everything else. And that's not going to give you a correct reading.
+context after: Well, that's not actually true because the W hour figure that we got uh from this and the W hour figure that we got out of this one just now uh was we got roughly 400 on this one and 381 on uh this one.
+
+[141] EEVblog #141 - AA Alkaline Battery Capacity Measurement — Dave Jones (explains)
+context before: Now, if we actually move this voltage terminal from the end of the battery to the actual input jack, you'll see it's 1.056, which is basically the same as what it's showing here.
+TEXT: So that little tiny bit of wire there going jumping from there over to there and the contact resistance of the spring terminal and all that sort of stuff is enough to cause that voltage drop at 250 milliamps.
+context after: Now you notice if we turn the current right down 1.259 volts and we'll measure the battery voltage. There we go. One point. It's practically spot on because there's no current causing a drop in that little tiny lead there.
+
+[1526] EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load! — Dave Jones (explains)
+context before: I really did not expect that high. I expected, you know, a lot less than that. And I have no idea why I wrote milliwatts there. That's obviously milliohms. There you go.
+TEXT: Ohm. Ohm. Ohm. Ohm. So, 9 and 1/2 milliohms, um, a total, uh, resistance. So, it's like total drop. So, that includes both, uh, wires here and all the, uh, contacts as well for each, um, individual section.
+context after: But most of that resistance is going to be in your just your plug, uh, contacts here, your press plug contacts cuz, you know, not a huge amount of force in those and you can get, you know, corrosion on them and crud and all sorts of, uh, stuff like that.
+
+[748] EEVblog #748 - How Do Transistors Work? — Dave Jones (explains)
+context before: The lightly doped material, cuz it's effectively higher resistance. So, because we've got a low-resistance material here and a higher-resistance material here, which is going to be a very thin layer, by the way.
+TEXT: This lightly much thinner than what I've shown here. This is low resistance. This is effectively high resistance. So, the voltage between the collector and the base here, most of it is going to be dropped.
+context after: There's going to be a higher voltage differential in this lightly-doped material, i.e. right in the region between the P and the lightly-doped N-type material. And because that has a high voltage threshold, something magical happens.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: And you may as well go to a proper uh instrumentation amp or something like that. Um now, you can uh do low-side current sensing as well. But as as I mentioned before, you're going to get voltage drop across there.
+TEXT: If we include the resistor on the ground return path, the current shunt resistor on that ground return path from the output, you get the voltage drop there. There are ways around that, but uh it's dicky.
+context after: I don't like it. Stick with the high-side current monitor, and we're sweet. So, I like that. Let's build it up. Said that last time, but this time I think I really mean it.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: So, some people call them just a barrier diode, but probably more common just to call them a Schottky diode. And they're different to a regular PN junction diode like your 1N 4001 or your 1N 4148 here.
+TEXT: These are just a PN junction, but the Schottky diode is what's called a metal semiconductor junction. It has an extra metal layer in there, and that gives you a huge advantage in terms of voltage drop.
+context after: So, let's measure these diodes with a diode tester on a multimeter. Let's have a look. You can see that it works fine, and we put in the other direction, it reads nothing.
+
+[616] EEVblog #616 - How Microphone Phantom Powering Works — Dave Jones (explains)
+context before: The standard P48 phantom powering uses a 48-V supply, a 3.3-k resistor. Excuse me. Uh which limits your How do you put it? Your short-circuit current over here to something like about I think it's 14, 16 milliamps, something about there.
+TEXT: Mostly though, you might be using about 8 or 10 milliamps consumption there. Mhm. If you're pulling 10 milliamps here, well, that causes 33-V drop across there. That 48-V drops to about uh what, 15 V?
+context after: And so, you're getting 15 V at 10 milliamps there. Yep. That's enough to power a fair bit of analog circuitry. Absolutely. May plus maybe light up some idiot leads or something like that if you really want to.
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (explains)
+context before: So, really, you know, you do get a bit of loss going across this board, but and bingo, you can see the sense wire here. Here it is, tapped directly off right at that output terminal there and snaking its way all the way back.
+TEXT: Of course, you know, if they took it from here, you'd get a bit of error drop across, you know, as tiny as that big flood fill tracing there is, you're going to get a little bit of loss across there.
+context after: So, that's why good design practice dictates that you take the sense line right to the point that you want to sense it at. So, you know, you could mod that.
+
+[1559] EEVblog 1559 - PCB Design: Trace Current Rating — Dave Jones (explains)
+context before: I won't go into all the stuff it's got. But, one of the things it does is it's got conductor properties here. So, we can put in the various parameters, uh, up here, and then it will give us the conductor DC resistance, how much resistance that trace has got.
+TEXT: So, we can use Ohm's law and then we can calculate the, uh, voltage Well, no, it already calculates the voltage drop for us. There it is. Um, and the maximum conductor current that it's capable of.
+context after: But, there's a lot of stuff that goes into this. So, let's have a look. There are three major things that dictate how much uh, maximum current a particular PCB trace can handle.
+
+[934] EEVblog #934 - Raspberry Pi Supercomputer Cluster PART 1 — Dave Jones (explains)
+context before: You probably, you know, you wouldn't need like 2 oz copper or anything like that for this sort of current, but you couldn't just run little piss ant traces over to each connector.
+TEXT: You'd get uh too much drop on the thing. So, yeah, nice big fat buses there and maybe dropping off like that or you could star arrange it. It depends on how much space you had on the board layout.
+context after: Something like like these slots. The bad thing about having slots in your board like this is that it just kills your routing space. You have to route everything around it.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: Looking quite substantially better, no flickering. Yeah, okay, all good. So, 28 volts input, 5 volts output. So, we're delivering 22.3 watts there at 4. So, it's dropped. So, it's showing 5.01 volts out here.
+TEXT: So, I'm wondering if all that voltage drop is in my leads here cuz I don't have a four-wire terminal compensation on that at the moment. Let's actually measure the voltage on the terminals there.
+context after: Yeah, there you go, 4.99. So, that was just the drop in my leads over there. So, the voltage regulation is excellent and I'll just switch that off. So, the load off.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: So, the next reason is DC impedance. Now, there's two issues on a PCB. One is AC impedance, one is DC impedance. When you see a huge big thick jumper wire like this, means somebody's trying to fix a DC well, resistance basically.
+TEXT: You shouldn't say impedance with DC. A DC resistance problem. There's too much voltage drop on that. They're trying to lower the resistance to decrease the voltage drop at a particular current.
+context after: Remember Ohm's law, voltage is current times resistance. So, the more current, well, in this case, let's say we've got our eight amps flowing across our board like this, then you're going to get X amount of drop over that distance based on the resistance of the traces.
+
+[749] EEVblog #749 - Mailbag — Dave Jones (explains)
+context before: So, um I've used my Para clips here. Unfortunately, there's not a huge reach on there. I might just spin it around, but let's try it again. Oh, yeah, I'm draw I'm my power supply is showing showing 6 milliamps now and when it's uh turned off.
+TEXT: So, hello. Hello. Ha, look, we got crap static. Battery down. Oh, that's yeah, that's the drop in the uh test leads. Yeah, oops. And yeah, I was trying to use these little wimpy thin things.
+context after: No, I put in some beefier cable in there and no problems whatsoever. Not getting as much uh drop along the cable. Wasn't the Para clip, it was the uh was the copper in there.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: Let's switch the outputs on. Doesn't make any difference, of course, but yeah, you know, it's jumping around as you'd expect, but let's call that 700 milliamps. And the input voltage, about 11.8 volts, which will of course vary with the line voltage because it is bridge rectified with just some filter caps coming from the transformer.
+TEXT: So, you know, that could vary, but let's just call it 12 volts. Now, if we're getting 12 volts in and 5 volts out, well, we've got a delta or a voltage drop across this regulator of 7 volts.
+context after: And because it's a linear regulator, it's got to drop seven the power is going to be 7 volts times the current flowing through it, which is of course the output current, which is .7 amps.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (explains)
+context before: Not impossible, but you can certainly implement that. But what it means is that it then at low values of current, instead of say 100 amps, if your house is only drawing say 1 amp on that phase, what does that mean?
+TEXT: What's the voltage drop across that shunt resistor? Well, 1 amp, do the math. It's going to be 200 microvolts, basically. And we're talking very small voltages there at very small currents.
+context after: And that becomes a pain in the ass to measure. So, you know, let alone get me out trying to measure, you know, 100 milliamps or 50 milliamps or something like that.
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (explains)
+context before: All right. So, let's see how much of that drop is due to the wiring and how much is due to There there we go. We got point eight five, let's say.
+TEXT: Point eight five and directly on the output there. Point nine three. Okay, so quite a significant margin taken by the wire and I should have used bigger gauge there if I wanted 6 amps.
+context after: And of course, there's really no point to test like the ripple and noise on this thing. It's just going to be as good as what it is at the rear panel, really.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (explains)
+context before: But, the problem is, let's say your shunt resistor is 1K, then when your microcontroller just suddenly wakes up from its sleep mode and wants to draw a couple of 100 milliamps, what what what what, 100 milliamps through a 1K resistor shunt resistor to measure the current, that's 100 volts.
+TEXT: What what, your power supply is only 3.3 volts, it doesn't have 100 volts to drop. So, the voltage on your product drops to zero. Even if you use a 100 ohm resistor, not good enough.
+context after: It's still going to drop 10 volts at that 100 milliamps. You know, a 1 ohm resistor is still going to drop a 100 millivolts, 0.1. That may not make your product drop out, but then you can't get the resolution down at the lower currents.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: It was flowing from negative to positive. So, it was actually producing voltage in the circuit. Now, it's flowing from positive to negative just like it was here. So, this battery is effectively working like a voltage drop based on the arbitrary current direction that we chose.
+TEXT: So, you guessed it. It's negative E2 just like it's a drop. Haha, brilliant. So, you've got to be so careful doing these things. You can easily miss that and go, "Oh, it's a voltage.
+context after: It generates voltage in a circuit." But, no, it can be a drop. Depends on the current direction. And you know, once you do this a few times, you'll get to, you know, you'll get to know and love this technique, and trust me, it'll all come out in the end.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: And once again, another trap for young players, it depends on where you actually measure that voltage. I've got the ground reference over here on this side of the load, but I'm actually uh attaching the uh I'm actually measuring the load voltage right on that right on that resistor there.
+TEXT: Now, the problem with that is is that the burden voltage in my multimeter is in place there plus plus the plus the voltage drop in the wiring and the breadboard and stuff like that.
+context after: So, if I disconnect that, it's a little bit hot and I connect it straight onto the tab of my TO220 device, I think we'll find it's exactly 5.5 V.
+
+[831] EEVblog #831 - Power A Micro With No Power Pin! — Dave Jones (explains)
+context before: Just a neat little application there, just in case you need it. So, what we've actually got here is a diode protection input on each and every pin. For example, the reset pin we originally played with here, it's just like any other pin, it's got the diode protection, so we can power the chip through there and it goes into physically the VCC pin inside.
+TEXT: So, yeah, we get a voltage drop, but the chip is still going to work. So, let's actually measure that. We've got ground here and our power supply up here, of course, is 3.37 volts.
+context after: There it is and we'll measure our floating pin here, our floating VCC pin. Nothing's connected to it, but we're powering it through one of the random IO pins here.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: 8 amps constant current load on this thing, 6.59 V with no load. Turn it on. Bingo, it drops down to 6.58 exactly 5.5 exactly what we saw on the multimeter before.
+TEXT: So, that's a big trap for young players and bingo, it's showing the 52.46 W. So, now we're getting accurate measurement. Trap for young players, voltage drop on the output leads.
+context after: Now, just because this thing works doesn't mean that it's any good. Okay, it's outputting the set 6.5 5.5 V no problems at the rated 8 amps continuous output for a 48 V input.
+
+[1036] EEVblog #1036 - PSU Fire PCB Repair — Dave Jones (explains)
+context before: It's just really annoying. And it's loud enough to be quite annoying. But, you know, you could retrofit any uh fan you wanted to. Okay, now we're drawing 100 watts.
+TEXT: There we go. And everything's hunky dory. Don't worry about the voltage loss on here. I haven't set up remote sensing. So, we're just getting some loss across the uh cables here.
+context after: Even though they are a decent size, when you're talking 10 amps, yeah, you're going to get some drop. Let's just have a look at the uh output noise here.
+
+[141] EEVblog #141 - AA Alkaline Battery Capacity Measurement — Dave Jones (explains)
+context before: And we've got the cell. Now the disadvantage what with this three terminal measurement is that this value here because this internal voltmeter here okay is actually measuring the differential voltage between the two input terminals like that.
+TEXT: The ADC is there. Then any current flowing through this wire down into here from the cell over to here, that is actually going to cause a voltage drop and upset the measurement.
+context after: So that's a disadvantage of this three terminal measurement. So what we want is a big chunky wire as short as possible right here. Now, as a practical measurement here, I've set this up and it's drawing about 260 milliamps as you can see, but the metric energy is only measuring 1.037 037 volts.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: See? Input impedance, it's everything. Or another way you could have done this is use your low impedance range down here to actually measure. You're going to get like a 2k auto range, but it's so low, it's not going to measure it.
+TEXT: But, it will measure the 5 V in the other direction. We're getting a bit more voltage drop there, 0.2 V because it's a lower value load. It's about 1k, 2k, something like that.
+context after: So, there you go. Hope you found that video as interesting as I did. If you did, please give it a big thumbs up. As always, discuss down below. Catch you next time.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: It's brilliant. So, what's our next term? Our next term, okay, we've done this point here. Our current Now, we're looking at R2. So, it's flowing from positive to negative.
+TEXT: It's a drop. Okay? So, it's negative R2 I2. Okay? So, that's our voltage across there, and then it goes through R3 like this. So, once again, it's positive negative like that.
+context after: It's a drop cuz it's just a resistor. So, we've got drop drop drop. Everything's dropping. God, where are the voltages being generated? Wait for it. Okay, so we've got uh R3 this time times I 2.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: So, it's a it's generating a voltage. So, it's positive. This one is going from positive to negative cuz resistors drop voltage, okay? We know because it's a resistor. You know how resistors work.
+TEXT: They don't generate voltage. They actually drop voltage when you pass current through. So, it's a voltage drop. So, it's actually minus. And what is the voltage drop on here?
+context after: Easy. It's uh one. You got it. Times I1. Ohm's law. Voltage equals I * R or R * I. I'm going to put it in R first, but it doesn't matter.
+
+[749] EEVblog #749 - Mailbag — Dave Jones (explains)
+context before: So, hello. Hello. Ha, look, we got crap static. Battery down. Oh, that's yeah, that's the drop in the uh test leads. Yeah, oops. And yeah, I was trying to use these little wimpy thin things.
+TEXT: No, I put in some beefier cable in there and no problems whatsoever. Not getting as much uh drop along the cable. Wasn't the Para clip, it was the uh was the copper in there.
+context after: And this puppy just on idle draws about 5 watts. Aha, we're in like Flynn. Look at this. I'm just going to There is a tape in here. I have no idea what's on it.
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (explains)
+context before: Um so, it'll go out and you know, cascade to other chips. But, in this case, no, we have to take the output from Q7. So, what we have to do here is the data has to be tapped off here for the next chip and then so on for the next chip.
+TEXT: But, if you're driving current out of this segment here, then you're going to get a voltage drop on there, um which could impact the data that's being read by the next chip.
+context after: So, you want to be careful with that. So, what is the output uh resistance output resistance of the uh output high-side MOSFET um inside these things? Well, data sheets like this uh for 74 series logic, they won't give you a 4,000 or whatever it is.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: So, uh what I'm going to do is actually set the output uh the constant output uh current to, in this case, uh 8 amps, and it'll tell us the output power.
+TEXT: And in this case, it is actually telling us the output voltage. But, we need to do one more thing with this setup because these output leads are really actually quite wimpy.
+context after: There's at like high currents, like we're talking 8 to 15 amps here. Uh we're going to get serious voltage drop across these leads. So, we're actually going to get power dissipated into that and our uh figure on here will not be accurate for our output power.
+
+[2] EEVblog #2 - Burden Voltage, HP Multimeter review — Dave Jones (explains)
+context before: Now, a really good meter, like the Fluke 87 V, it will have well, this one actually has 1.8 millivolts per milliamp burden voltage. So, if you pass 200 milliamps through this, if you try to measure 200 milliamps, that's a 360 millivolt drop.
+TEXT: Now, that it may not sound like much, but really 360 millivolts is, if your circuit is 5 volts, bingo, you've already, uh, thrown your circuit out of voltage spec, probably.
+context after: Let alone a 3.3 volt circuit or I'm working a lot these days on 1.2 volt circuits. So, it's, you know, a current like this, you really can't a meter like this, you really can't measure precision current with.
+
+[366] EEVblog #366 - USB PSU Troubleshooting — Dave Jones (explains)
+context before: It should boost it up, but it's not. The output voltage and of course, we can see the drop on the diode here as well. Okay, here's the input voltage 5.143 5.143 and then the output side of the diode here is 4.98.
+TEXT: So, because the rest of the circuit is going to draw some uh you know, some current. So, uh we've got a voltage drop across our diode there. It all looks quite reasonable.
+context after: So, going to actually do some resistance measurements here. Let's switch it over. And of course, the output's not going to be shorted. The output of the diode there, the power rail uh VR there, that one's not going to be shorted at all.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: With these two chips and you've got a low power digital section over here. So, if you're switching a couple of hundred milliamps, if all that current is flowing across your board through a trace or a plane or whatever that's shared by these little sensitive digital chips over here, you can get ground bounce, okay?
+TEXT: And power bounce, right? You can get um you know, voltage drops in these lines. It's not so much of a problem when you've got a you know, a big ass ground plane in there.
+context after: So, I'm not necessarily saying it's an issue here. I'm just like this could be one or potentially part of it could be exacerbating the issue, right? It could be right on the margin with some other issue and then this, you know, not laying out your uh ground and power properly can you know, tip it over the edge a threshold problem that we're talking about and the multiple clock pulses.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: It works exactly like a regular diode. And the other one here? Look at that. No worries. It looks and tests exactly like a regular diode. But you might have noticed something there on that reading.
+TEXT: Look at this. 0.142 V. That's a low voltage drop. So, let's get the classic 1N 4001. Ah, we've got half a volt drop. And the 1N 4148 diode? Once again, half a volt drop.
+context after: The Schottky diode's their huge advantage is that they're a much lower voltage drop than your regular PN junction diodes, and that's why people use Schottky diodes in switch-mode power supplies when you care about efficiency.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: But, aha, just like before, we have a fourth term, which I'll draw in red because I1 now interacts with I2 over here. Now, we've got to look at the direction that it does that.
+TEXT: Once again, this is flowing around like this. It's positive negative, so it was a drop before in the previous equation. Where is it? R2. It was a drop. It was negative.
+context after: But, now you can see that relative to I2 a certain Look, just imagine this blue arrow going around on this side now. It's going from negative to positive. Aha, it's a voltage generated.
+
+[1732] EEVblog 1732 - 20yo 1000+ Cycle Panasonic Li-Ion Battery TESTED — Dave Jones (explains)
+context before: So, I'm going to do constant current. It'll discharge that constantly, uh hence why it's called constant current, until it reaches that threshold voltage of 2.8 V. Now, you'll notice that it says sense there.
+TEXT: That's because I've got um external sensing set up. So, uh it's reading the voltage back from here. That eliminates any voltage drop in uh the cables going to the load.
+context after: So, that's called a four-terminal measurement. You want to do that. And I've got two extra leads here because I'm going to data log this thing so that I can actually get um the data into a spreadsheet and then I can overlay them uh later.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: You don't have to put the positive in there. It's just not negative, okay? So, it's actually generating a voltage. And then, we have a look R1 here. What have we got?
+TEXT: It's a voltage drop. So, we're actually going to have a positive voltage here and a negative voltage here. As opposed to this one, we went from negative to positive.
+context after: So, it's a it's generating a voltage. So, it's positive. This one is going from positive to negative cuz resistors drop voltage, okay? We know because it's a resistor. You know how resistors work.
+
+[819] EEVBlog #819 - DC Fundamentals Part 4: Kirchhoff's Laws Tutorial — Dave Jones (explains)
+context before: But hey, once again, we can start doing some silly academic stuff, rearranging formulas, but it's kind of important, so let's do that. Let's say let's just rearrange this formula we've got here.
+TEXT: Let's say we just want E1 on the one side here. We can go E1 equals VR1 + VR2 + VR3, exactly the same as before, but the negative E2 becomes a positive E2 like that.
+context after: And you can actually see that kind of makes sense if you think about it. If we're talking about a voltage drop across R1, voltage drop across R2, voltage drop across R3, but because E2 is the other direction according to the current flow we chose, it's also a drop.
+
+[1526] EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load! — Dave Jones (explains)
+context before: 283 adapters? Yeah, nah. Yeah, nah. And let's go back to the other end. And have a look. Let's see what happens on the input. Input should still be good although we are going right along five extension cords, which is kind of dumb, but we need to know that Yeah, there you go.
+TEXT: 228 volts going in. So there you go. So we can calculate 228.2. So we can calculate the voltage drop across all those adapters and we know our current is 7.31 amps.
+context after: What's the current at the other end? Should be the same. Current in should be current out. So there you go. 1.66 7 kilowatts. So 7.31 amps. Let's go back.
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: There we go. We've got 40-mV drop across there like that. And then if we go over here, we're going to get a larger drop. Uh if we can get in there.
+TEXT: There we go. We've got 81-mV drop. So, you know, how can you really essentially narrow that down when you've got such large currents drawn across a plane like that?
+context after: It's very difficult to do. So, I don't think that's really going to work in this particular instance. It can work in other uh instances, but this one, not so much.
+
+[1526] EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load! — Dave Jones (explains)
+context before: So just the fan takes 18 watts and yeah, 17 watts. Okay. 239 volts. So it dropped a little bit. 1 kilowatt. It's coming out. Is it drawing a kilowatt?
+TEXT: No. 811. It's down to 202 VOLTS. WOW. THAT DROP IS MASSIVE, SAGAN. It's down to 202 volts. Um and try to draw kilowatts out of it and it dropped down to 182 volts.
+context after: So It's it's massive. Wow, 283 adapters. There you go. But you can I mean I'm I'm still getting warm out of this kind of It's not very It's not very good, but you know, it's still It's yeah.
+
+[742] EEVblog #742 - Why Electrolytic Capacitors Are Connected In Parallel — Dave Jones (explains)
+context before: So you're going to have a a current flowing through this trace, this one and this one which will be 1/3 the current you would have with only one capacitor and then you would get smaller of drops across their Ohm's law because we're going to have a certain PCB resistance depending on the thickness of your copper.
+TEXT: Typical 1 oz copper, for example, you're going to have a voltage drop. As small as it might be, it can in big high-power systems, this can be a real consideration.
+context after: So, now you've split your current up three times like this, you're going to have much smaller voltage drops, and your load's going to be much much happier because you've used multiple capacitors in parallel.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: My loads here are only a couple hundred watts each, like 200 watts. Um and let alone the power source. So, I don't know. Leave your comments down below. So, right up at 19.9 amps now.
+TEXT: That's our maximum output current and of course the voltage is dropped a bit from the nominal 5 volts because I'm not doing a four terminal current sense on that.
+context after: So we're getting even though I've got big beefy gauge wire on there, it's we're still getting some loss across that. No wuckers. So yeah, 96 watts and don't really feel any warm air coming out of that.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: So, it's going to sense the voltage directly on the output here. So, uh at at the moment, because there's no load, the output voltage at the terminals here is going to be exactly what the output voltage here.
+TEXT: So, there's no current uh flowing at the moment through these cables, so there's going to be no voltage drop. But at 8 amps, it's going to be very significant.
+context after: All right, let's test it. I've set both channels here to 24 V, so that's going to give us a 48-V output. And if we have a look at the uh data we had before, 48 V, its maximum rating is 8 amps uh continuous.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: So, you know, there's a little bit of error there on the measured current. So, but it's not too far off at all. So, that's not too shabby. Mhm. I like that.
+TEXT: By the way, the output voltage is going to drop because of the leads there. I haven't got any remote sensing or anything like that. So, don't worry about that.
+context after: But that is That is very nice. Now, this DPS3003 module is a little bit more expensive than this one here, which we had before, but not much. This was like $18 on eBay delivered.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: You'll see why in a minute. And then, well, we've got another one. It flows down through R2 here. This is going to be positive. This is going to be negative here.
+TEXT: So, we've got another voltage drop. So, it's minus uh two in this case. And the current is I1. So, that's our voltage drop. And we're back to our point here.
+context after: But, we're not finished yet. Look, I2 is also flowing through here. So, we have to take I2 into account. And what is I I2 is going from a negative to a positive, right?
+
+[742] EEVblog #742 - Why Electrolytic Capacitors Are Connected In Parallel — Dave Jones (explains)
+context before: But if you went for three capacitors in parallel for example, you wouldn't just wire them straight here. You might have a separate trace going to the load like that.
+TEXT: So you share uh current through each particular trace so you can have smaller traces, less drop going to the to a specific start point over here at the load.
+context after: So you're going to have a a current flowing through this trace, this one and this one which will be 1/3 the current you would have with only one capacitor and then you would get smaller of drops across their Ohm's law because we're going to have a certain PCB resistance depending on the thickness of your copper.
+
+[lYKjScnkeq0] Goal Zero Yeti 400 Lithium Battery: Capacity Test — Dave Jones (explains)
+context before: All right, it's been another 1 hour and 41 minutes. Uh we're down in the dregs. Uh we're 7% here. So yeah, don't expect it to last a huge amount longer.
+TEXT: We're down to 9.69 volts. Um that's not going to be on the battery. That's going to be uh you know, there's going to be a little bit of drop in those leads.
+context after: Um but an extra 66.7 W hours. So what is that? um 370 over 370 watt hours out of this um old battery. That's pretty good. I think it you know the name plate is 400 watt hours.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: You don't actually have to buy one. There's no bill of extra bill of materials on them, and cost. You just include it with a PCB trace. Brilliant. And as long as that value is high enough, then you can share the current between the two devices adequately without one device heating up much more than the other device.
+TEXT: But, you can't make it too high cuz then you get a voltage drop. And in this case, let's say you got a 2-A output, and our two ballast resistors are 10 mΩ.
+context after: Well, it's a total of 5 mΩ cuz they're actually in parallel. So, essentially what they are. So, that's 5 mΩ ballast resistance or output resistance there at 2 A is going to give us a 10 mV drop on the output.
+
+[182] EEVblog #182 - Rode Videomic Shotgun Microphone Hack — Dave Jones (explains)
+context before: And we're just going to put another uh green LED here in parallel with it and with its own dropper resistor. As I said, we don't put them directly in parallel with that.
+TEXT: And I've measured these at 1K each with 4 and a half volts drop across it. That means there's 4.5 milliamps uh flowing through the LED like that for it.
+context after: You fly to the moon on that amount. So u this one I think I'll up it to maybe uh 2k2 or something like that. So I only get a tiny little 2 milliamps flowing through the LED.
+
+[1526] EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load! — Dave Jones (explains)
+context before: So you can see what's the voltage over there? 240 one, was it? 40 something. Well, we've got 240.0 here. Here we go. 283 double adapters. That is just the fan.
+TEXT: So just the fan takes 18 watts and yeah, 17 watts. Okay. 239 volts. So it dropped a little bit. 1 kilowatt. It's coming out. Is it drawing a kilowatt?
+context after: No. 811. It's down to 202 VOLTS. WOW. THAT DROP IS MASSIVE, SAGAN. It's down to 202 volts. Um and try to draw kilowatts out of it and it dropped down to 182 volts.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: You can see that there's roughly about 1 volt uh drop due to the uh pass transistor there. But, as I mentioned, it's not regulated. Uh so, if we change our offset voltage like this, look how our output changes like that.
+TEXT: So, it is not a regulator. It's just to get rid of your ripple. And the voltage drop here is going to be dependent upon your uh load that you've got.
+context after: It's going to be dependent upon your base resistor, the type of transistor that you've got, and the gain as well. So, it's you know, it just happens to be around about a volt drop in this particular case.
+
+[IXVTMUQGN5U] Goal Zero Yeti 400 Lithium Battery Capacity Test #2 — Dave Jones (explains)
+context before: And it's maximum of 99,999 seconds. You can't change that to minutes or anything. Um, it's like it's just that. So, we can actually trigger that. And there we go.
+TEXT: We get in. And as I said, it's constant 20 watts there. And yeah. Yeah, that voltage is uh going down. And so if I give this a wiggle wiggle wiggle.
+context after: Yeah, you'll probably see that voltage there change. Well, yeah, it's it's not too bad though. It's not too bad, but still. Yeah, it's not exactly um the world's lowest impedance connection, so it's not great.
+
+[RXk_wr0g8UM] Nixie Tube Voltage Drop — Dave Jones (explains)
+context before: So I could go and measure all eight. But yeah, and you're probably not going to get this from any of the other ones. So that's the kind of open circuit voltage you need to withstand the voltage rating of your driver transistor or your driver transistor array or whatever you're going to use to actually drive this thing.
+TEXT: So yeah, I'm afraid you can't get away with relying on the voltage drop of the Nixitude itself. So I hope that cleared that up. Catch you next time.
+context after: 
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: From there from there to there across the uh plane there, okay? 13 mV. And then if we go a bit more, we'll find that we've got more drop. Oh, wrong pad.
+TEXT: There we go. We've got 40-mV drop across there like that. And then if we go over here, we're going to get a larger drop. Uh if we can get in there.
+context after: There we go. We've got 81-mV drop. So, you know, how can you really essentially narrow that down when you've got such large currents drawn across a plane like that?
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, unless you could uh isolate those, um it's going to be incredibly difficult to find the issue. Like, let's go from this cap here, for example, to this one.
+TEXT: I think I've got the right one. No, let the other pad here. Okay, so just from one ASIC to the other, we've got a 13-mV uh drop there, okay?
+context after: From there from there to there across the uh plane there, okay? 13 mV. And then if we go a bit more, we'll find that we've got more drop. Oh, wrong pad.
+
+[lYKjScnkeq0] Goal Zero Yeti 400 Lithium Battery: Capacity Test — Dave Jones (opinion)
+context before: At least 370. I don't think it'll get to 400. I think that's asking a bit much but uh still hanging in there. Now this is interesting. Check this out.
+TEXT: I can actually probe in here and in theory that's the same um 12 volts like output as what's on the other connector and it's 10.2 volts. So I don't know whether or not I have to look at the tear down again.
+context after: Don't know whether or not they're just wired in parallel. If they are that's a lot of drop in the connector and the leads. I I used pretty um these are pretty uh beefy wires going over.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (opinion)
+context before: So, it is not a regulator. It's just to get rid of your ripple. And the voltage drop here is going to be dependent upon your uh load that you've got.
+TEXT: It's going to be dependent upon your base resistor, the type of transistor that you've got, and the gain as well. So, it's you know, it just happens to be around about a volt drop in this particular case.
+context after: And if we change our base resistor here or our filter resistor from uh 1K to 10K for example, we'll find There you go. We've now got a larger drop like that, but uh of course, our corresponding AC ripple should go right down like that.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (opinion)
+context before: I'm taking it from the other side of uh, the um, current uh, shunt resistor. So, the dropout voltage effectively um is much smaller than if we just tied these two pins together, but depending on the package you get for the LT uh 3080, um some small smaller pin count packages actually have those two pins tied internally.
+TEXT: So, you would have to take into account the voltage drop, but there you go. Um that's not a bad solution. I rather like that. I think I might probably implement this in my power supply design.
+context after: So, I hope you enjoyed that. I'll catch you next time.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (opinion)
+context before: by these digital by these low power ones over here. And then your ground and power is just bouncing all over the place, cuz it's drawing a couple hundred milliamps.
+TEXT: And you know, you might only be talking you know, tens of millivolts you know, bouncy drop or whatever, but you know, you can really come a gutser from that.
+context after: So, anyway, yeah, and then then it rings and does it like it'll resonate and then you get big ringing and all sorts of right issues. But the good news is that no, you're plugging directly into the board.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (mention)
+context before: So, how could you have gotten yourself in a situation where you're you have to run these wires across here? Well, one could be a placement of your board. You've got to look at that first.
+TEXT: We'll go into voltage drops, you know, I've mentioned the voltage drops are the issue here, but why? Placement. Well, in this case, they physically needed this connector right here cuz it's on the back of for product, you know, usability reasons.
+context after: The user has to be able to plug it in. This is all one big like interface on the back panel. So, it's got to be here, for example. So, you might think, well, you know, you could say that the layout person probably should have if it was me, I wouldn't have had my big switching regs all the way distant from the power connector here.
+
+[543] EEVBlog #543 - PCB VIA Current Investigation — Dave Jones (mention)
+context before: And the uh via resistance as well, uh 0.33 mΩ. We don't care about the inductance and that stuff like that cuz we're only dealing with uh DC here. And then, of course, um you can calculate from the resistance and the current, you can calculate the power, of course.
+TEXT: And uh it gives you the cross-sectional area. And it gives you the thermal resistance down here and the voltage drop and you know, uh it's really quite nice, but that is for a 1° C temperature rise and that's the thing.
+context after: Uh when you're designing a board like this, you have to determine what is your acceptable temperature rise in that copper PCB trace usually or in this case the uh via, which is basically exactly the same except it has a less controlled manufacturing process than a uh a regular trace on a PCB.
+
+[667] EEVblog #667 - Agilent 6643A Power Supply Binding Post Hack — Dave Jones (mention)
+context before: I don't think it actually brings the sense wire out. I'm pretty sure it doesn't actually. So, that's why I think it says, as I mentioned before, says somewhere in the manual that if you do have the front panel option, then you do lose the voltage regulation specs because of that drop.
+TEXT: All right. So, let's see how much of that drop is due to the wiring and how much is due to There there we go. We got point eight five, let's say.
+context after: Point eight five and directly on the output there. Point nine three. Okay, so quite a significant margin taken by the wire and I should have used bigger gauge there if I wanted 6 amps.

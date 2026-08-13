@@ -1,0 +1,1233 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: mosfet
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 240 passages drawn from 102 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# mosfet`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[193] FPGA Implementation Tutorial - EEVblog #193 — Dave Jones (explains)
+context before: But, once again, don't let it scare you. Don't get buried in the details there. And uh we want to power this from 1.2 to 1.5. I've actually got, because this is a prototype board, I've actually got a core of a core voltage select header here.
+TEXT: So, we can actually program the thing. You can move a jumper across, program it at 1.5 V, and then put it down to 1.2 V. But, but if you were designing this into a more intelligent um system, then uh you would maybe have a uh FET in there or something to control your DC-to-DC converter, which select automatically selected the voltage during programming, and actually, that's what this pin this unused pin four up
+context after: here up on the JTAG adapter is designed for exactly that purpose. It's designed for driving a MOSFET, which then can control the output voltage of your DC-to-DC converter during during the JTAG programming mode, and then so switches up to 1.5 during programming, and then down to the minimum 1.2 during operation of your device, so that you can draw the minimum amount of power consumption.
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (explains)
+context before: And next to it, here, we have a Micron, sorry, a Micrel Ethernet controller. It's a KSZ8051. So, this thing actually has Ethernet built in, but they've decided to use an external Ethernet controller here.
+TEXT: And this section here, just above the processor, they've got a Linear Technology LTC7328LX two-phase synchronous regulator and you can see above it just there, you can see the um two external MOSFETs as well, the two external N-channel MOSFETs used for the synchronous rectification and uh it's probably um wouldn't be a stretch to uh guess that they've uh got the um uh switching frequency of this thing locked
+context after: to the uh sampling frequency so that it doesn't interfere with the acquisition part of the RF front end. No surprises for finding a whole bunch of uh low drop out linear regulators here, you know, triple 17s, um you know, sort of like the industry standard.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: That's it. Now, we won't get into uh detailed characteristic curves of MOSFETs and how they work, but suffice it to say that when your input signal changes, cuz the two gates are tied together like this, one transistor's supposed to be on when the other one's off and vice versa.
+TEXT: But, that's not always the case. If you have a slow-changing input signal, a you know, a slow slew rate like we saw like that, there's going to be a point where both of these transistors are on or partially on at the same time, and that can cause excess current and other uh issues in digital logic, especially when they've just got a non-Schmitt trigger input like this, a standard CMOS input, they
+context after: don't like having slow input slew rates. They like having just to be switched incredibly fast so that either one transistor is on or the other one's off. So, let's get into Schmitt triggers.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (explains)
+context before: Um don't even have to look up the data sheet for that. It's a voltage output uh DAC using an internal uh reference. Just a buffer driver to drive just your standard uh constant current circuit.
+TEXT: You've got two uh MOSFETs in parallel here. Don't have a current sharing resistor between the MOSFETs. Often you'd put like a low value resistor in the uh line, you know, it's a one going here, one going here, just so they uh share the current more evenly cuz when you try and drive those, I don't know, you know, you you'd have to do some practical uh testing on that cuz you won't might find
+context after: that one just due to um the parasitic uh differences in the specs in these chips cuz they aren't going to be identical even if they're they're better matched if they're from the same wafer, but they're unlikely to be.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: They're more popular than BJTs for lots of reasons. They are better lower RDS on, which is the on resistance of the transistor, so that's better. It's called RDS on in a MOSFET versus VCE sat typically in a BJT.
+TEXT: And that lower on resistance means lower voltage drop and more power handling more current handling capability and more power handling capability in a specific package, for example. So, if you've got like a little sub 23 package and it's got a lower RDS on, you're going to get a lot more bang for buck in your current and your power dissipation in a given package size in a MOSFET typically.
+context after: And in a MOSFET, they're voltage driven as versus essentially current driven in a BJT. So, there's no constant base current like you get in a BJT transistor. You've just got a gate voltage.
+
+[1170] EEVblog #1170 - TRUE Mystery Teardown! (not even Dave knows) — Dave Jones (explains)
+context before: It's not... He didn't do it himself, but, yeah, it's not hugely comprehensive, but it gives you some detail. There you go, 60 kilohertz PWM, and the high-voltage cap is, of course, charged to 400 volts DC, sustains large voltages, short-term transient output load currents as required for loads.
+TEXT: The high-voltage CPU includes a frequency reference from which the 50-60 hertz output for the PWM is defined, the PID control loop that stabilizes the output voltage, H-bridge over-current protection, supplementing the protection inherent in the analog design of the bridge. In addition to the analog bias voltage removal circuits described above to protect the MOSFETs, oh, we missed that,
+context after: it also monitors the current flowing through the JFETs, since the microprocessor is the source of the switching bias voltage signals. By detecting the overload condition, it can reduce the magnitude of the commanded output to reduce the transient currents present. The output regulation... is performed by the PID algorithm.
+
+[1433] EEVblog 1433 - More Adventures in Sony RX100 Repair (Part 3) — Dave Jones (explains)
+context before: a finer probe, this time, one of these fluke jobbies with the spring-loaded thing, so let's go in here, let's re-measure that, 3.93, no whackers, 4.13, it's not, there's some drop on that, and our gate, 3.76, right, so there you go, that makes sense, when we're measuring the gate, okay, so we're getting our reg, unreg in here, and
+TEXT: then we're measuring the gate voltage here, right, but that's because our 10 megaohm input, we were reading under, because you get the voltage drop between the 1 megaohm gate source resistor here, and the gate, so, yeah, no, that needs to go to ground, to switch on that MOSFET, and the reason that we got the voltage over here, I don't know, but it was lower, which means that, you know,
+context after: if the transistor was, well, it's obviously not switched on, but if it was switched on, X wake would be pretty darn close to X reg, whereas it was, yeah, what, 3.7 or whatever, so, that's, that's not it, but still, I don't even know if I'm chasing the right thing, I'm not sure if that's supposed to be on or not, or when that, when this reset thing happens, all I can do is try and probe this at the same time as trying
+
+[107] EEVblog #107 - Live Show #4 — Dave Jones (explains)
+context before: If there's any other waterproof meters you've seen on the market, let me know, and I'll see if I can get one, and do another outdoor blog. Um, because I'd love to go back to the dam and drop one again, and, um, yeah, I- I might.
+TEXT: Maybe you might go drop some cheap meters off the dam, and, I don't know, see what happens. Um, how do I normally drive 12 volts or so MOSFETs from a 3.3 volt micro? Um, you have to have another, um, you- generally, if you're not using a logic-level MOSFET, which I would highly recommend using a logic-level MOSFET so you can drive them directly, um, I would, um, uh, use another MOSFET.
+context after: Another, uh, transistor and a pull-up resistor to drive it. So, there you go, but you've got to- with the pull-up resistor, you've got to watch out for the capacitance of the gate, and- and rise time, and stuff like that. So, um. Will programming in C only and not learning assembly bite me in the arse?
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: And in a MOSFET, they're voltage driven as versus essentially current driven in a BJT. So, there's no constant base current like you get in a BJT transistor. You've just got a gate voltage.
+TEXT: You switch on the gate voltage and the transistor switches on. As a switch, in probably the majority of applications, you're going to be using MOSFETs for switching purposes. You know, you switch on a relay load, you switch on an LED load or you're pulse width modulating some LEDs or something like that or using it as a switching element in a DC to DC converter, something like that.
+context after: This is what MOSFETs are really good at. They're better than BJTs. It's why they're more popular. When you're talking about switching frequencies for like high frequency DC to DC converters which can go into the megahertz region, They're faster and more betterer than BJTs for that.
+
+[890] EEVblog #890 - ArmourCard Active RFID Jamming Teardown — Dave Jones (explains)
+context before: There's no, you know, SO 23 uh package or anything like that. So, there's no external transistor. They're obviously using an internal transistor in the micro to drive the load across the coil here.
+TEXT: But, of course, it's going to be or it's going to be a MOSFET um CMOS output of course, but it's going to be an open drain one. So, if you go probing there, you're not going to see anything switching on the output because it's just going low low like like it's not you've got to have something uh you've got to have an induced magnetic field to induce a current in here so that you can
+context after: actually have a current flowing through the uh coil and the uh transistor in order to see it switch. But I do believe that it is simply continually switching the load across this coil.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (explains)
+context before: So, yeah, that's to be expected, but uh apart from that, yeah, Ethernet USB interface. Uh the USB just goes uh straight over there. There you go. A couple of inductors and Bob's your uncle.
+TEXT: Off she goes. Woohoo! So, we've got two main boards here. One's going to be a power supply. I don't know which one's what, but one's going to be power supply and uh one's going to be the uh electronic load and also uh to do the battery uh emulation as well, which as I said, is basically just a series MOSFET or a bank of series MOSFETs that simulates the uh ESR output of uh your
+context after: battery. That's basically all there is. The rest is in the uh smarts in the software. And believe me, you pay extra for the software. Because of course you do.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (explains)
+context before: I think this is a MOSFET. Get the multimeter back out. So, what we expect is actually I've got the external power plugged in. We expect a positive signal on there, and I've compared that with a good unit, and yeah, we get 3.3 V there.
+TEXT: So, the micros obviously like you know, doing that and switching that on. So, it but it's not doing that. So, I don't know. That's going to be hard driven, so we can't just short it out cuz then we'd be shorting out the output uh gate, but we could actually remove that resistor there and actually um you know, connect that to the input, and that would latch on the circuit.
+context after: Or, of course, you know, we could just bypass the main uh switching MOSFET here, um switching that through. But, yeah, um I've I've confirmed on a good unit that that's what that does.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Um yeah, I I don't know. Leave it in the comments down below. Maybe I'll have a more squeeze, but if you can find It's a challenge. If you can find a matching uh part in the same package with the same voltage and current and RDS ratings, I'll give it that, and ESD protection on the gate, uh leave it in the comments down below, and you can win the
+TEXT: internet. So, anyway, I hope you found that useful. Just, you know, showing you like different methods to actually search for stuff. And um it's I highly recommend like taking stuff apart and just trying to figure out, you know, if you're new we take stuff right it's obvious to an experienced person that you know, these are going to be MOSFETs and things like that.
+context after: But you know, start taking stuff apart and see if you can identify um what things are. In fact, that could be a good video. Like uh you know, just random teardown stuff and go right, what does that part do?
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: But, just over the heatsink. So, let's have a look at that now. I've had it going there for a while, and that's actually rather surprising. I'm getting under 70.
+TEXT: Now, I would have expected that to increase, but uh I guess more airflow Yep, angled differently now over the fins, so I guess it's it's more efficient. And if we try and have a sneaky peek under like that, uh yeah, we've got the board on a bigger angle now, but yeah, we can like the case of the MOSFETs, for example, you get in there where let's call it 100
+context after: degrees C, but that's probably still okay. Um yeah, I don't mind that at all, special for the amount of power that we're delivering and that we're dropping. That's Yeah, it's going to do the business.
+
+[1035] EEVblog #1035 - Flaming DIY Power Supply! — Dave Jones (explains)
+context before: Um but, there are They look like They're certainly not from the same same batch, are they? They're uh They're quite different, but yeah, we've got four of those there.
+TEXT: 80 V uh 40 A N-channel MOSFETs. So, fairly you know, fairly grunty little beasts. And also under here, um that's obviously not a switching converter. You can uh switching controller cuz I it's got a designated Q, which is a transistor, and it's got your three pins tied together here or four pins tied together over there, and that's your gate down in there.
+context after: Your classic MOSFET configuration. Once again, Alpha Omega. Um, AO 42 uh 64. And this is a 60 V 12 amp job in series with, mind you, a polyfuse. Look at that.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: So, you know, it's still it still has to be reasonably beefy, but not as and not as uh good as this one. In fact, the on resistance can be once again 10 times higher, but yeah, you can use any jelly bean and channel MOSFET in there.
+TEXT: Beauty. So, now if we set this to 0 V, it'll switch off this MOSFET, so that this shunt resistor is disconnected. And if we put our voltage on there, then once again, the gate and the source here, the voltage or the gate actually here and here plus the voltage drop across that and that is going to switch on this MOSFET and bingo, we're using that one.
+context after: No worries. And you guessed it, we just continue that ad nauseam. And there you have it. I almost ran out of whiteboard space here, but then you can just cascade these in series these shunt resistors right up to 100 ohm.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (explains)
+context before: But there you go, winner, winner, chicken dinner. I found a locally sourced 18N50 in the plastic package, so I don't even have to dick around with insulating that either. So that's fair. And I got them. Wow. Murphy's asleep right now. I should auto search for and order other stuff.
+TEXT: Once again, like, there are infinite variations on, like, manufacturers. Part numbers, part numbers, and things like that. But MOSFETs, you know, they're fairly reasonably well, you know, de facto standardized on this current voltage, you know, N-channel type thing. So that's pretty handy to know when you're searching for replacement parts like this.
+context after: Once again, it's, you know, a lot of the parameters down here might matter. They might matter a lot. You could come a gutter if you don't get them right in terms of design and stuff like that. But for a simple, like, a mains power factor correction.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: about 3.3 or thereabouts. So, it should work at 3.3. Um, so yeah, find one that's branded logic level in Digi Key. I think you can even parametrically search for or mouse or whatever you can parametrically search for logic level MOSFETs.
+TEXT: So that is probably the best way to do it I would suspect. Um yeah, otherwise you've got to search for the VGS at particular current you need and you might have to look at the curves and you know no it's not that great although they should have a headline you know if it works like at 2.5 volts um something like that then you you know you probably
+context after: fairly safe that it's going to be a logic level compatible MOSFET. So um but yeah it can be very confusing so just get one of the branded ones cuz they are branded.
+
+[371] EEVblog #371 - Universal Programmer Teardown — Dave Jones (explains)
+context before: I mean, take a look at that resistor network there, it's just... And that stuff around the MC34063 there, pretty horrid. Really crusty. Now, as for the individual transistor pairs here, they're clearly in pairs based on the circuit topology here. And they're both the same type, so it's not like one is an N-channel MOSFET and the other's a P-channel MOSFET.
+TEXT: They're both like a P-channel MOSFET, presumably to switch through a voltage onto, you know, any of the programming voltages or something onto the pins. And on second thought, these probably aren't power-switching ones, they're probably signal-switching ones based on they're coming from the FPGA here, and there's no power stuff around there.
+context after: And as we'll look at, there's more power stuff on the more power-looking MOSFETs on the top board. So really, these are probably signal-switching MOSFET, but they are in pairs. And there's 12 pairs of them, so there's only 24 total there. Not nearly enough to have a truly universal programmer and be able to switch every one of the signals
+
+[Z_c4wjBpSzE] Grokipedia vs Wikipedia — Dave Jones (explains)
+context before: See edits. We can go in here and we can see all of these edits. The issue, right? So, source citation mismatch, for example, Grock has discovered this. Um, there's an issue.
+TEXT: the most widely used type of transistor the metal oxide semiconductor MOSFET was invented by Berlance between 1955 and 1960 and it's fixed it to and it's revised that bit of text um in Wikipedia to invented in 1959 by Muhammad Matala and Dwang Kuang at Bell Labs and demonstrated in 1960 with citations and it's put in three extra citations.
+context after: So there you go. So, uh, this had a whole bunch of citations and this only had three. So, I'm not sure like I don't know supporting evidence, computer history, museum.
+
+[1620] EEVblog 1620 - Deye Solar Hybrid Inverter EXTREME TEARDOWN — Dave Jones (explains)
+context before: One of these big switching transistors down here. Got to wipe all the thermal grease off those. Just bloody getting everywhere. Now, we've seen that the capacitors aren't as advertised, so let's actually check these bad boys.
+TEXT: It's a transistor cuz it's got Q, and let's see. What are they Can't read that. Anyway, let's flip a few of these up and see what we've got. The claim is the MOSFETs and IGBTs, insulated gate bipolar transistor if you don't know, they're just like a combined like the best aspects of MOSFETs and the ruggedness of bipolar transistors.
+context after: Anyway, Infineon, On Semi, Alpha and Omega. Do we have them? Well, that's a nope. Who's NCE? There's a whole bunch of those. MagnaChip. That ain't Infineon. And what the heck is that one?
+
+[1530] EEVblog 1530 - Siglent SDS2000X HD 12 Bit Oscilloscope TEARDOWN — Dave Jones (explains)
+context before: There's a serial. There you go. You wanna get a serial dump out of this sucker? I won't do it in this video. Um, there's another JTAG? 3-pin? What's going on there? Is that, no, that might be some sort of jumper, or something like that.
+TEXT: Curiously, that one's not labeled and all the other ones are, so, eh, don't know what's doing there. Anyway, power supply-wise over here, uh, you can tell it's a power supply because, well, it's got a nice, big, fat, chunky chip there, which will have, uh, the built-in, uh, you see there's no external MOSFETs there, so it's got big
+context after: chunky internal, uh, MOSFETs, and of course you can tell by the, uh, decoupling there as well. There's a little, uh, 3.3 volt linear, uh, reg there, and they've got a few of these, actually. There you go, it's an MP. Is that an MP52145?
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: So, you get these characteristic for different values of VGS, the gate voltage. So, if you say they don't actually have one for 3.3, but let's say 3.5 volts here, okay?
+TEXT: If you're driving it with your 3.3 or 3.5 volt logic, we're talking about, right? This is drain current, you know, over 100 milliamps there, maybe 150 milliamps. This will vary slightly, you know, bit between parts from different manufacturers, but you know, at that low VGS uh voltage, you can do 100 milliamps there pretty safe.
+context after: And at uh 5 volts here, well, you know, you can do like over 400 milliamps, no problems. And the transfer characteristics is the other uh common graph that you're going to want to look at uh for MOSFETs.
+
+[1031] EEVblog #1031 - $25 DPS3003 PSU Module Characterisation — Dave Jones (explains)
+context before: Uh and if you want to really want to push it to its extreme limits, we haven't characterized every extreme limit here. Um then you might have to have a bit of uh forced airflow, but that's a winning little module for like what, under 20 25 bucks delivered or something like that?
+TEXT: Absolutely crazy. Um yeah, maybe I'll do like a reverse engineering of that and uh see what's uh doing in there. We know it's the What is it? The XL 7005 converter uh chip or something like that, but it's going to be using an external MOSFET and uh uh you know, external MOSFET cuz it's not built in to do that uh sort of jazz.
+context after: But anyway, that is a really neat little module, neat designed, and it basically isn't lying in the specs. I rather like it. So, there you have it. I hope you enjoyed that.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (explains)
+context before: Um, and I remember fairly clear I was going underneath a bridge, you know, here in Los Angeles, uh, a freeway actually. And all of a sudden an idea came to me.
+TEXT: Uh it was uh it was July 22nd to be specific. And that idea was >> You remember the date? Okay. >> Oh, I remember the moment. Um you know it was one of those flashes >> and um you know the the the uh the idea was to inject extra charge in that too narrow region which would in effect make it look wider to the electrons.
+context after: And that became one of the basic inventions uh of the MOSFET. It worked not the first but the second time that we tried it. Uh and immediately the device went from 2 ohms down to 7 ohms.
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before: Exactly like your regular rectifier. So, we've got exactly the same circuit as we had up here, except our diode is now an ideal, perfect diode, provided you operate it within the op-amp voltage range, but that's all a given.
+TEXT: Now, you can do exactly the same thing. You can have the resistor load on the capacitor here, for example, or you can have your MOSFET there, your reset MOSFET there to short out the cap on the output, provided, of course, that your op-amp can handle that short circuit current, and it's not going to cause any damage.
+context after: Usually not a problem. So, we've got now our perfect peak detector circuit. Or is it? You know, this sort of circuit is good enough for sort of, you know, ordinary everyday applications, where you want to get a relatively accurate, you know, quantized value of the peak value.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (explains)
+context before: They're going to have an electronic load board, which can be like totally separate. And also, uh the basically the battery emulation, all it does is it puts a series resistance on the output of the power supply.
+TEXT: So, the power supply in this thing will have another lot of circuitry, maybe this board, don't know yet, with an equivalent with a basically an adjustable resistor, which is a MOSFET or a bank of MOSFETs, that can adjust the equivalent series resistance or emulate the equivalent series resistance of your battery.
+context after: So, it looks like there's no panel on the bottom. It's just one big folded case like that. It's got a Kensington lock on it, too. Um so, yeah, it looks like we can't just get access the bottom of those PCBs, so everything's got to come out from the top side, unfortunately.
+
+[893] EEVblog #893 - Mailbag — Dave Jones (explains)
+context before: something. Item value reset, okay. Speed Passion, I don't know. Interesting. Could have sold a million of them, who knows? And it comes with this companion thing, the Speed Passion, it's probably a car thing, sort of looks and feels automotive, took the screws off that, and not much doing
+TEXT: inside there, although reasonably compact. Though that's a secondary board, so that's probably the controller board. Excuse being completely rough here, but some MOSFETs are driving some motors or LEDs or whatever. Actually it makes sense that they're on the bottom side, because that's the heatsink.
+context after: So you want those MOSFETs attached to the other heatsink. So that's all this tiny little controller. And, oh okay, so you program, do you use that to program this, that other thing to program this, perhaps? Maybe that's how it works. And oops, I could smell
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: You can get TO220 uh variants of uh the uh 44 here. Um TO262, but you know, D-squared. So, these are surface-mount uh jobbies, but uh you know, you can dissipate uh so I've done videos where you can dissipate uh via thermal vias and other things, surface-mount heatsinks, and then uh transfer blocks through the case and stuff like that.
+TEXT: Or you can simply bolt the TO220 on your heatsink. So, when you have to dissipate a decent amount of power, this thing's not too shabby. So, the actual package itself with no heatsink in 3.8 W, but then, you know, like you're going to really go up there when you start uh heatsinking this sucker.
+context after: So, it's not too shabby. Uh VGS here, um it can like minimum of a volt. It's pretty great. So, RDS on here, yeah, they specify it. Look at 4 V here, they specify that at 4 V at 21 A and 4 V drive with 21 A for example, like 35 mΩ.
+
+[711] EEVblog #711 - Mailbag — Dave Jones (explains)
+context before: calculator keypad, which was fantastic. So that is an interesting little puppy. Probably deserves something better than a 10 minute, 2 minute teardown. Made in Japan, of course. And we have a board. And Stefan's done this board, he wants me to take a quick look at it.
+TEXT: Very simple, it's a synchronous rectifier, basically an electronic rectifier, instead of using like a replacement for a bridge rectifier instead of using lossy diodes, as you used to in your traditional bridge arrangement, you can actually use a smart controller with some MOSFETs like this, i.e.
+context after: in a, that's the reason you have four of them, because it works exactly how a bridge rectifier works except it, of course, the low on-resistance of the MOSFETs eliminates the loss, and of course the 0.6 volts drop per diode at least, you know, it can be like a volt at the higher currents
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: 0.1 ohms and the other one over here is not. That is open. So, you can see that's 12 meg. So, yeah, that second battery or what they call the first battery, the one that that channel that failed, that's got MOSFET switching in there.
+TEXT: This one will also have some MOSFETs associated with likely these two that can disconnect or and or reconnect um, either of those cells and and charge them independently. So, why didn't they go with the charger chip uh, that actually supported um, the multiple batteries um, in series like this?
+context after: Meh, I don't know. Um, they could have also designed the uh, changed the design topology so that it actually had a boost converter to work from one battery and then um, yeah, you could like have the separate batteries and you could switch them and stuff like this.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: But anyway, right off with the bat we know that second row of information there is not a date code. RR6SA, well that doesn't sound like a part number to me.
+TEXT: And if you're familiar with MOSFETs, and once again, if you just go into your Digikey, Mouser, Farnell's, Element 14, who whoever it is, go in and search the parametric table for MOSFETs and you'll get familiar that yeah, a 4303 sounds like a you know kind of a familiarish kind of number.
+context after: So, I'm going to run with 4303 is the number of the MOSFET. And up here, we've got 4307. And this has got RT26S. So, these are like radically different.
+
+[664] EEVblog #664 - Peltier TEG Energy Harvesting Experiments — Dave Jones (explains)
+context before: accumulate and store energy from your thermoelectric generator from this internal ox bus in here which also supplies your output. You can also simultaneously charge up this storage capacitor. So like, you know, under normal conditions when you're generating enough power from your thermoelectric generator, you're powering your
+TEXT: circuitry over here just fine, but if this input drops below this voltage this auxiliary voltage inside here, then the charge control will switch on this MOSFET and then it will draw current from the storage cap until such time as your thermoelectric generator can generate more power
+context after: than that voltage. So it can account for all the times when your input actually drops out and you can just continue to power your product without problem until your storage cap has drained and then wah, game's over. Now here's where we came to this
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: But, it's input capacitance, uh, 630 puff. You saw we were in the like the 20 puff, uh, region before, uh, for the 2N7002, but you're typically going to get that.
+TEXT: You're going to get a greater, uh, gate capacitance in there the gruntier your MOSFET is. That's just a general rule. And once again, this is because of the physical construction of the MOSFET, a higher current MOSFETs like this one need a bigger like physical surface area in there.
+context after: The bigger the physical surface area you have on the actual transistor substrate itself, the greater the capacitance. So, it it they just go hand in hand. You you know, it's just a side effect of that.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (explains)
+context before: It's got a charge pump for generating the required voltages. And uh it's got a built-in um uh built-in H-bridge. And uh it gets that name from the shape of the circuit.
+TEXT: If you picture where my cursor is there going down like that, these two these four these two MOSFETs down this side, the two MOSFETs down here, and then the motor which is physically connected outside, but usually it's drawn with the motor in between there, and it forms a letter H.
+context after: That's why it's called a H-bridge. And it's a very uh versatile and powerful way to uh drive a motor like this. So, it's got a dual H-bridge like that, all the required control circuitry to drive it, all some current sense resistors RS1 and RS2 here, and uh supply which is uh they've called VBB.
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: we've got some USB protection over here, uh, we've got a, uh, that's our isolator, uh, power supply here, and then we've got a, uh, you know, a serial isolator here, another isolator up here, and then this looks like an, what was it, a, um, INA, uh, can't read that, but anyway, instrumentation amplifier,
+TEXT: you saw that before, and that's reading the, or sensing the voltage across our current shunts, and we've got two current shunts here, we've got a 0.100 milli-ohms here, and we've got a 100-ohm, and then we've got a MOSFET actually just shorting out the 100-ohm, now, uh, he's just,
+context after: he's just gone with measuring the voltage across both resistors like that, so when you short out the MOSFET, you're going to include the RDS on of the MOSFET in series with the, uh, 100 milli-ohm current sense resistor here, and you can, like, get rid of that in software and stuff like that, um, you know, I, ideally you'd have, like,
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (explains)
+context before: It has a resistance, and you can calculate that output resistance based on the drop there. So, we're getting a 0.2-V drop at 5.2 milliamps output current. So, use Ohm's law.
+TEXT: That's homework for you. Use Ohm's law. Oh, yes. There's the temperature I told you about at ambient temperature. I forgot to mention that. So, anyway, you can essentially work out the output resistance of the effective output resistance in quote marks of the MOSFET inside there.
+context after: It's not I've drawn a JFET, but it's actually a MOSFET. And the output resistance of that at various currents. That's why the uh difference in this voltage here is going to get higher and higher the higher your output current gets.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: In this case, it's a CMOS uh inverter. Then, you basically just got two MOSFETs like this. The gates are tied together. You've got a P-channel and N-channel MOSFET, and the output here.
+TEXT: That's it. Now, we won't get into uh detailed characteristic curves of MOSFETs and how they work, but suffice it to say that when your input signal changes, cuz the two gates are tied together like this, one transistor's supposed to be on when the other one's off and vice versa.
+context after: But, that's not always the case. If you have a slow-changing input signal, a you know, a slow slew rate like we saw like that, there's going to be a point where both of these transistors are on or partially on at the same time, and that can cause excess current and other uh issues in digital logic, especially when they've just got a non-Schmitt trigger input like this, a standard CMOS input, they
+
+[1620] EEVblog 1620 - Deye Solar Hybrid Inverter EXTREME TEARDOWN — Dave Jones (explains)
+context before: So, you can just switch and alternate and or disconnect either side of your transformer here. So, that's what a H-bridge does. Same thing for motor drives, whatever. Now, Phoenix questions, "Where is the DC blocking capacitor on the secondary?" And that is a good point cuz there should be a capacitor in here just like there's one here.
+TEXT: So, DC blocking. So, you know, if these MOSFETs like short on or something like that, um you know, they come and got to fail, maybe you're having a bad day with Murphy, then you're not going to get just a basic like you know, pretty much DC short circuit across your battery.
+context after: So, and then we've just got a few other tidbits here like we've got an auxiliary supply up here derived from the battery cuz as I said, this thing has to work if the grid fails.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (explains)
+context before: Take a nice high-res photo and you can just, you know, you can just pan around until the cows come home. Anyway, what I'm interested in is the shunt and uh switching.
+TEXT: So, if we go over here, here's our input connector here. And these are obviously uh big-ass MOSFETs. Don't even need to look up the number. You can tell by the pinouts how they shorted all the pins there, shorted all the pins there, and they'll have one for the gate drive.
+context after: So, that's a MOSFET. So, I can see our shunt resistors right away. Okay, so let's have a look at what's going on here. Here's our first shunt resistor, and this looks like I think like I thought that was 10 ohms, but I think that's actually 10 milliohms shunt resistor.
+
+[472] EEVblog #472 - JBC CD-2BB Soldering Iron Teardown — Dave Jones (explains)
+context before: So glass going to work a treat. Brilliant touch. And there's the main control board. I'll show you some close-ups of some chips in the minute, but it looks very well soldered, very well assembled, very well designed.
+TEXT: You can see all that heavy via stitching all around some components heavy components there obviously MOSFETs down in there. You can tell by the pin out all the pins are shorted together there and there and well one side four and then three and then the gate pin over there.
+context after: And we'll have a look at the microchip microcontroller. We've got ourselves a four terminal current shunt here Dale top quality brand of course. They're the sense pins. There we go.
+
+[1ngqB4mxZOI] Smeg Oven Goes Clunkedy Clunk + Capacitor Go Poop — Dave Jones (explains)
+context before: So, anyway, that seems to be that cap, it's directly connected across here, and this, what is this? Let's have a squiz. Now, not that, um, please forgive me, this probably will not be a repair video, this will just be a inspecting the board kind of video.
+TEXT: So, that's some sort of MOSFET-y, switch-y thing. What's an I per, it's an ST, jobby, VI per 22A? Aha! It's a VIPER 22A. Low power offline switch mode primary, primary switcher, there you go. 60 kilohertz switching frequency. So, there you go, it's got a built-in MOSFET.
+context after: That's an interesting part, isn't it? Yeah, so it's like a primary side, yeah, primary side switching controller, in this particular case, for a battery charger. Huh, interesting, but, you know, you could use it for a ton of different applications. So, obviously, they're not charging a battery here.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (explains)
+context before: I've seen that elsewhere. So, that's the package code on there, but you know, like they're designed for driving external fets like that and that's looks like what Well, these ones aren't series like that.
+TEXT: These are definitely in parallel. There's no doubt about that because you can see that these See that right right there. There you go. Parallel not in series. So, then we go to Mouser here, you know, lithium ion lithium polymer like you know, Nishinbo data sheet, right?
+context after: I I guess you'd you'd get to know all these if you're into, you know, designing your lithium ion battery products and stuff like that, but yeah, I I think it might be a hard time finding out the exact device here unless somebody happens to know.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (explains)
+context before: Nah, 20N60, like, if you go back here, 20N60 from DigiKey, does such a beast exist? It might. Yep, a 20N60 certainly exists. And yep, sure enough, it's 600 volts, 20 amps. It exists. Local suppliers, Element 14 and RS, they don't have, like, anything like that.
+TEXT: So I've pretty much got to go now into the parametric searching. So anyway, we basically want to go, into single MOSFET here, and we have to start parametric searching. Once again, in stock, there's no point. Well, technically, there might be a point doing out of stock
+context after: if you're doing parametric search. You just want to, might find equivalents. You might be desperate for your part, for example. And even though Element 14 might not have it, you might be after some obscure part, but then DigiKey or Mouser or some other obscure provider
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (explains)
+context before: not, yeah, we're definitely updating. There's nothing updating there. I'm at 500 milliseconds per division, unless it's doing it out at 10 seconds. Maybe I can you know, leave it like that, but I know. We would have seen something. It looks like they're all
+TEXT: the bypass FET for each one is on. Okay, so let's have a look at the circuit arrangement, but it's not doing any multiplexing during discharge. Well that's damn confusing. We've got the discharge MOSFET on for each one of the channels, and that's the path that would be
+context after: taken. But as I said, because the positive terminal of the battery is up here, the body diode of the MOSFET is switched off here, here, here, here, and here. So like, where is the discharge path? Where is the discharge path from this battery?
+
+[1525] EEVblog 1525 - Commisioned Mailbag — Dave Jones (explains)
+context before: Nice, 1.3 gig. So, there you go. You can scan that at home. 0.3 to 0.4 puff input capacitance. Nice, times 10 probe. AC coupled jobby, 100K to 1.3 gig. Do-it-yourself probe. I'm not going to be able to. I'm going to test the performance of it, really.
+TEXT: Oh, no. No, I think I might have a 1.5 gig scope now. Whoa. And here's Christoph's board. It's so tiny, I had to get my macro lens out. It uses a single MOSFET in a common drain configuration. I can't get this off, because I'd have to desolder the can on there.
+context after: But here's the schematic for it. And it's basically just a BF998 FET on there, and a common drain, and pretty much, you know, the same thing you'd get on any of the other probes you're uncle. So, inputs on this side over here, we've got ground and the input here,
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: And up in this corner up here, this is actually our rotary shaft encoder for our little thumbwheel thing. And on our bottom side here, we've got the USB-C negotiation chip down here.
+TEXT: We'll take a look at that. This is our main switching converter down here. We'll definitely take a look at that. Um, these are our switching MOSFETs here. We've actually got two of them in parallel on the top on the high side and one on the bottom side here.
+context after: We'll see that when we take a look at the data sheet here. We've got a couple of zero drift op-amps here. They're the same. And now basically our output here goes through here.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (explains)
+context before: and it is actually electrically connected. The other one up here is isolated, and the other one over there is also isolated by the looks of it. So this thing is electrically connected. So let's say you could only get the art metal tab version in stock.
+TEXT: That's okay. It's going to work. But you would add a micro-washer plus a little plastic insulating sleeve in there. In this particular case, the Fairchild on Semi make an F version and insulated one as well. And RS 18N50, they don't have any options either.
+context after: So I put this on Twitter, and somebody said, oh, RS in Europe, like, have it, but it doesn't show up in the RS Australian search anyway. Useless. So what you might search for now, for example, you might search, say, anything higher current or higher voltage rating would be fine.
+
+[RasOXxxEhCk] Jackery Battery Bank FAIL Investigation - Part 1 — Dave Jones (explains)
+context before: So the problem is, like, these MOSFETs should be on under, like, all regular circumstances, because it's a cell protection device designed to protect cells. So they will, so the MOSFET will open in case of, you know, any sort of issue with the cells.
+TEXT: We know the cell voltage is good, right? So if we actually measure the voltage across there, and we've got 3.5, which is the they're open, right? They're, well, it's going to measure exactly the same. They're open. So, looks like our MOSFETs have opened up.
+context after: And they're doing their job of protecting the cell, protecting the cell from what? I don't know. The cell is fully charged. So, unless we can figure out I'm going to call it quits there for today. I just wanted to make this a quick video.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: We've got a 12-bit converter. So, 2.5 mV. So, basically, our ADC down here can measure our output voltage to 2.5 mV resolution. So, it'd be nice if this circuit here only dropped 2.5 mV or one bit or less.
+TEXT: So, pretty much, we want 2.5 mV maximum drop across this MOSFET here when it's switched on and all this circuit is disconnected on our high current range. Our maximum resistance there is going to be 2.5 mV divided by the 2 A maximum current there, 1.25 mΩ.
+context after: So, our FET there needs one bit error is going to need 1.25 mΩ. So, that's actually a very low value for a MOSFET. If you actually want to meet that, you need a really, really beefy MOSFET.
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (explains)
+context before: the discharge path. Here it is. It's bleedingly obvious. There's actually here, okay, here's the positive terminal of the lower battery here. Here's the shunt I was measuring before by the way, that ground shunt. And here's the top MOSFET. Here's the positive terminal. Okay, it actually
+TEXT: there's a trace that goes off under there and it snakes off around there around there, around there into, bingo, Q25 here. That's got to be a little that's a little SOP23 MOSFET. And then there's two 6R2 resistors in parallel under that, that actually then
+context after: go back to ground on the other side. Here's that current shunt resistor in there. And so the other side of that. Bingo. And it wasn't so obvious on these ones here, for example. Here's the next one and then the next one. So there's actually four of these
+
+[425] EEVBlog #425 - Mailbag — Dave Jones (explains)
+context before: You're going to a lot of trouble here. Here's an ATmega32, there you go. And there's it mounted in a box with all these USBs coming out. I assume that the LED strips actually plug into the USB connectors around the edge of the board
+TEXT: there. How it works, there we go. We've got, right, Windows, there's a player, there's a Boblite, GetPixel, whatever that is. There's an FT232 of course, there's an ATmega32, there's some MOSFETs to drive the LEDs, and a Boblite HD. No idea what that is.
+context after: There you go, there's the FTDI converter, the firmware, it's all there. Beautiful. And there's not a huge amount to the schematic of course, there's a power supply, there's a micro, there's an FT232, and that has a USB interface. And then yes, it does use
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (explains)
+context before: because there's no... Well, if you wanted to add a metal tab, you could, but you might have to add an insulating washer on there. Let me check the traces on the PCB here. Sure enough, check it out. There's one of the holes right there,
+TEXT: and it is actually electrically connected. The other one up here is isolated, and the other one over there is also isolated by the looks of it. So this thing is electrically connected. So let's say you could only get the art metal tab version in stock.
+context after: That's okay. It's going to work. But you would add a micro-washer plus a little plastic insulating sleeve in there. In this particular case, the Fairchild on Semi make an F version and insulated one as well. And RS 18N50, they don't have any options either.
+
+[1541] EEVblog1541 - What is this Blown SMD Component? Redux — Dave Jones (explains)
+context before: And here's a typical application. Uh-huh, look at this. So, bingo, what do we have here? We've got two pins tied together just like we saw on the PCB. We've got an RC circuit with a power as we speculated at the start that that was a possibly a a power pin.
+TEXT: So, it looks like there's a MOSFET inside here which switches between it in the charger negative line like this cuz it's a battery protection. It's measuring the battery it's monitoring the battery voltage through the VDD through the actual power pin.
+context after: So, it's doing the monitoring and it's powering the chip as well which is a really nice solution and it's a battery protection device. So, you still need your charger circuitry out here somewhere.
+
+[RasOXxxEhCk] Jackery Battery Bank FAIL Investigation - Part 1 — Dave Jones (explains)
+context before: diagram for those playing along at home. Anyway, our problem here is that let's go back to the videotape, and I'll probably just We know the cells are good, okay? So I'm going to, I've had this left off for a while. Let me just reconnect that in there.
+TEXT: So the problem is, like, these MOSFETs should be on under, like, all regular circumstances, because it's a cell protection device designed to protect cells. So they will, so the MOSFET will open in case of, you know, any sort of issue with the cells.
+context after: We know the cell voltage is good, right? So if we actually measure the voltage across there, and we've got 3.5, which is the they're open, right? They're, well, it's going to measure exactly the same. They're open. So, looks like our MOSFETs have opened up.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: If you actually want to do this, you can spend a designer can spend weeks and weeks or a month just getting this power system right. Bloody scrolling. Anyway, so it looks like on the bottom there, there's our MOSFETs.
+TEXT: You can tell they're MOSFETs cuz all the all the pins are tied together like that, and there's just the one gate pin here and here. Okay, so these these MOSFET switching here for our two converters, and then the controller, was that on the top side?
+context after: These have internal voltage references which set those DC characteristics. So, all of the dynamic switching characteristics you could have if you don't have proper layout in your switch-mode converter like this.
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (explains)
+context before: because one of the outstanding issues from last time I didn't have time to look at is how they're actually measuring the discharge current for this thing. We knew that the DC to DC converter was basically putting all the batteries in series and there was a measurement shunt resistor down the bottom down here.
+TEXT: And we also knew that by nature of this dual MOSFET configuration for each battery cell here, so here's each battery and there's a pair of MOSFETs across each one. And let me show you the switching arrangement, how they can switch cells in and out,
+context after: depending on which of these MOSFETs they turn on. So if you turn on the top one here, for example, then you're going to charge the battery. Okay, so it's going to go through there and around down to there. But if you turn the bottom one on, you can completely bypass that.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (explains)
+context before: And then that MOSFET there shorts out the 100 milliohm where Yeah, it gets rid of No, it gets rid of the top part, so they're shorting out the top parts of them.
+TEXT: So, it shorts out but the top string, I mean. So, uh yeah, that one there cuz we're still in you know reasonably high current territory. So, we need a grunty two grunty MOSFETs there and then we start getting to more little piss ant MOSFETs here.
+context after: Surprised they don't use all the same there actually, but they've actually used another two of one type then another two of another type and then we've got our other shunt resistors here.
+
+[880] EEVblog #880 - Mailbag — Dave Jones (explains)
+context before: and over, you know, the input supply limits and the output maximum loads and everything. Over the entire power operating envelope of the thing. Just, you know, poor engineering. No one bothered to do their homework on that thing. Fail. And they're Fairchild 19N20s for those playing along at home, and they look like
+TEXT: genuine Fairchilds. I mean, that looks like the genuine F, but you never know your luck in the big city. And yeah, they just didn't do their homework. Anyway, they're a 200 volt MOSFET, you know, reasonable. But is it good enough for the design?
+context after: I don't know, you'd need to get into all the intricacies of it and what's the, you know, the power envelope and the current envelopes, the voltage envelopes, the whole thing. And, well, I don't know. Clearly they weren't good enough. They shouldn't blow. And maybe odds are that this puppy is not going to
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: We have an additional low-side one. And normally, I don't like doing that because then it introduces an offset voltage error here from ground and depending upon your output current.
+TEXT: That's why at very high output currents, we don't want to go through this resistor here. We want to shunt that Excuse the pun. We want to shunt that through a much lower value MOSFET here so we don't get any errors introduced on our low side.
+context after: It's going to be effectively ground. So, let's say we want to only tolerate one bit resolution error on this output. What value do we need? Well, our output voltage is maximum output voltage is 10.25 V, 2.4 V, sorry, divided by 4096.
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (explains)
+context before: for the first 500 milliseconds, it's actually bypassed. That battery is not being charged. And then, uh, for the next 500 milliseconds, you can see that, uh, it does charge, because then the charge goes high, charge line goes high for 500 milliseconds. And then, of course, the bypass,
+TEXT: these are always alternate, uh, ones. I don't think, um, there's a scenario where you're going to have both, uh, charge and your bypass on at the same time, because, well, you'd be shorting your battery out. So, as you can see, they have, uh,
+context after: for the first 500 milliseconds, uh, number 1 battery is on, number 2 is off, number 3 is on, number 4 is off. So they're doing 2 at once here, and then alternating between them. But we've also got this little data that's going on in there.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Um yeah, these are all your main brand ones down here. Okay, so the next main important requirement is the drain source voltage, like the maximum voltage of this part.
+TEXT: Okay, don't worry about the gate source voltage. Let's go for the drain source voltage V V DSS because that is what we'll find here, drain to source voltage. Okay, it's so important that's over on this side of the uh of the parametric table.
+context after: Okay, so we're looking for at least 30 volts. Okay, you'd want to match it. Um in fact, I wouldn't go as high as Well, you could. Okay, if we put that 65, that's narrowed it down to 40.
+
+[371] EEVblog #371 - Universal Programmer Teardown — Dave Jones (explains)
+context before: What? What? Ah, fail? If we go into blank check here, it's telling us this EPROM is blank. Ah, bullshit. And let's crack this sucker open and see what's inside. Now what I expect inside here is a fairly heavy duty micro, probably, maybe an FPGA or a PLD or something like that,
+TEXT: and a whole bunch of analog circuitry to switch every single pin on this device. So there'll be 48 channels of MOSFETs to switch each pin high and low and to various voltages. So I expect to see lots of discrete circuitry inside this thing.
+context after: I mean, there could, I think there are actually custom chips you can actually get for this purpose, but I'm fairly confident this one will use all discrete circuitry. And it's probably, it could all be on the one board, although the ZIF socket could be mounted on a riser board or something like that,
+
+[811] EEVblog #811 - How The Varta 15 Minute Battery Charger Works — Dave Jones (explains)
+context before: 0.6 volts for example, so it'll rise up, jump up to 2.2 volts. And so this point here is now 2.2 volts. But it doesn't matter, because it's a constant current source, it's going to drive that constant current through the battery. So it's going to stay the same.
+TEXT: So to actually switch off the charge current, they can't just drop VGS down to 0 and try and turn off this MOSFET, it's not going to work. They have to actually turn off the output of the constant current DC to DC converter generator here.
+context after: If we have a look at the thermal image here with our FLIR camera, we're looking at like the battery, I've only had it on there for a couple of minutes, it's already at 55 degrees. You know, I'm not counting for you know, emissivity and everything, I don't have the exact value.
+
+[504] EEVblog #504 - UPS Tutorial & Teardown — Dave Jones (explains)
+context before: And we can see that uh H bridge configuration on this DaveCad drawing here. Please excuse the crudity of the model. Didn't have time to build it to scale or to paint it.
+TEXT: What we've got is uh four MOSFETs here. And you can see why it's called a H bridge cuz it looks like a H. If you take out that line there and take out that line there, it looks like a H with the uh transformer in the uh center taps there.
+context after: And we've got our 48-V uh battery across here. And we've got uh two P-channel MOSFETs up the top. Or as we'll see uh in this case down here, we're going to have multiple ones in that parallel.
+
+[657] EEVblog #657 - Maker Faire 2014 Interviews — Dave Jones (explains)
+context before: Started work on Monday. On Monday. Yeah. On Monday. Um, CNC cut the the foam PVC foam for the top, MDF for the base. Took the Nerf Vulcan, which is a great little toy.
+TEXT: Um, extended ammo belt, modified it very slightly just to bypass all the triggers electronically. Yep. Uh, so basically just running that through a MOSFET into an Arduino straight into the computer running um Project Sentry gun software.
+context after: So yeah, so some open source software. Oh, it's open source for Yes, it is. So if you do want to build your own, go for it. Awesome. Show us what it does.
+
+[1611] EEVblog 1611 - Top 5 Jellybean 7400 & 4000 Logic — Dave Jones (explains)
+context before: So hugely versatile part you'll find in a ton of different teardown. All right stop furiously commenting down below. Okay, special mention it's not in my top five list, but special mention to the 4066 CMOS quad bilateral switch.
+TEXT: It's basically a similar thing except it has basically four independent switches and I like how it actually shows you how it works here. Basically here is the pair of MOSFETs here and they switch them and that's the analog pass through.
+context after: So that's going to have some on resistance of course the 4051s 4053s etc. work in the same way and then you've just got your your logic here. It's basically just four separate independent analog switches.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: It's got like 5 or 10 milliamps RDS on. It's on resistance. So, effectively it just works just like a resistor and if the input goes negative cuz you might want to be measuring AC current for example or you you have put the probes in backwards, then it works as a switch.
+TEXT: It doesn't matter. If this voltage on the gate is positive with respect to the source down here, then or VGS is positive, then it's going to switch it on and act like a switch and it works in both directions and everything's hunky-dory.
+context after: Now, we could actually put uh shunt resistors in parallel and then switch them like that, but hey, then we get into the same mux problem that we uh did before.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: I mean, if we weren't If we ignored the ESD part of it, then well, you know, we could get almost anything. So, we could actually just probably use this 4425 here.
+TEXT: It's, you know, like I can Look, I can spend an hour going through like the characteristic curves and everything and and the VGS at 10 V. Anyway, you'd start, you know, comparing your on resistances for a maximum of 12, maximum of 21.
+context after: That's 21 miliohms it is. They specified in ohms, but that's 21 miliohms. So, I think that's under the other one. So, as long as you had them under and stuff like that, you're probably good to go for a for a static like switch not switching, but a like a switch application.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: And our next one will have 50 mV drop as well because then we're using 100 milli-ohms. So, uh but we're using an order of magnitude less current, order of magnitude greater resistance, same voltage drop, Ohm's law.
+TEXT: So, we put that off the tap once again to eliminate any uh issues there in terms of uh sensing. And then we add another MOSFET in up here, but because it's only 500 milli-amps, doesn't need to be nearly as beefy as this one over here.
+context after: So, you know, it's still it still has to be reasonably beefy, but not as and not as uh good as this one. In fact, the on resistance can be once again 10 times higher, but yeah, you can use any jelly bean and channel MOSFET in there.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: So you know if you want really small values of capacitance large values of resistor, you guessed it. You can get rid of that and you can use a MOSFET like this.
+TEXT: No wackers whatsoever. But using a MOSFET you might have like a larger voltage drop or that. It depends on what parts you're choosing and things like that. But it means because it's a MOSFET, there is no gate in this particular case.
+context after: It's not a gate. It's not a base. It's a gate. You've got no uh gate current here. So this value of resistor can be as high as you want, and that means you can use really seriously low values of capacitance to get your attenuation.
+
+[-ir61ARd5T4] WTF is Wrong with my Rigol DL3021 Electronic Load? — Dave Jones (explains)
+context before: It's literally off. And there's a short circuit across the input there. I mean, you know, I can I can probe directly across the inputs. There we go, directly across the inputs.
+TEXT: It's a dead short, a dead short, and the only way to fix this is to is like literally to turn the power off then on again, right? And because this is not like a physical short, it's a like, you know, it's switched on a giant MOSFET.
+context after: There you go, 28k now it's fine. So, there's like some big crowbar thing either there's some big crowbar thing or it's deliberately like going into constant resistance mode and it's assuming No, well, see see?
+
+[1599] EEVblog 1599 - TOP 5 Jellybean Bipolar Transistors — Dave Jones (explains)
+context before: So, it's a jelly bean MOSFET as well. So, 60 V 3 A SOT-223 package available in the SOT-220 package as well. Then, you can go up to bigger packages here.
+TEXT: Um and you know, you can get 60 V 11 A for example. And these are MOSFETs. So, if you need the particular requirements of MOSFETs, and I won't go heavily into the differences, but BJTs are basically they're more robust than MOSFETs.
+context after: Like, you can't easily damage them static-wise, and they might have more better overcurrent capabilities and stuff like that. You can think of BJTs if you need just simple, rugged kind of stuff, and and easier potentially easier to drive over MOSFETs, which are a bit more trickier.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: And a few hundred milliamps like that is fine. Now, one of the problems with MOSFET switching is that as I said before, you have to switch this 10 milliamp shunt resistor and it's like you got 10 or 20 amps momentarily on some multimeters and you've got to switch that.
+TEXT: You can't do it with the wafer range switch, so you've got to do it with a big beefy MOSFET, you know, what like in a big TO220 D squared pack, you know, a decent package rated for 20 or 50 amps or something like that, a big MOSFET.
+context after: And there's they're a dime a dozen, right? You can there's a million on the market that can actually do this. So, an N channel big beefy N channel MOSFET like this is required to switch our 10 milliamp shunt resistance and of course we don't want to increase our burden voltage.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: So, we put that off the tap once again to eliminate any uh issues there in terms of uh sensing. And then we add another MOSFET in up here, but because it's only 500 milli-amps, doesn't need to be nearly as beefy as this one over here.
+TEXT: So, you know, it's still it still has to be reasonably beefy, but not as and not as uh good as this one. In fact, the on resistance can be once again 10 times higher, but yeah, you can use any jelly bean and channel MOSFET in there.
+context after: Beauty. So, now if we set this to 0 V, it'll switch off this MOSFET, so that this shunt resistor is disconnected. And if we put our voltage on there, then once again, the gate and the source here, the voltage or the gate actually here and here plus the voltage drop across that and that is going to switch on this MOSFET and bingo, we're using that one.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: And we've got one little MOSFET over here. In fact, all the MOSFETs in this are identical. So, we'll take a look at the data sheet in a minute, but it's a 4040 N-channel type.
+TEXT: So, it's positioned there. Looks like it's actually switching the power from the USB-C through to the rest of the buck converter. So, essentially, that's the on-off MOSFET there cuz you saw we had a on-off soft power switch there.
+context after: And these capacitors here, does it matter what brand they are? Of course, they're going to be absolute rock bottom cuz you're paying a rock bottom price. Anyway, these ones here look like solid jobbies cuz you can't see the vents which you'd typically have in there if they were wet electrolyte ones, but these are wet electrolyte, so right.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: Or you can simply bolt the TO220 on your heatsink. So, when you have to dissipate a decent amount of power, this thing's not too shabby. So, the actual package itself with no heatsink in 3.8 W, but then, you know, like you're going to really go up there when you start uh heatsinking this sucker.
+TEXT: So, it's not too shabby. Uh VGS here, um it can like minimum of a volt. It's pretty great. So, RDS on here, yeah, they specify it. Look at 4 V here, they specify that at 4 V at 21 A and 4 V drive with 21 A for example, like 35 mΩ.
+context after: Now we're talking. And maximum continuous current load 46 A, but you can do 160 A pulsed drain current. So, if we go down and have a look at the uh characteristic curve down here, yeah, look at this.
+
+[1294] EEVblog #1294 - LLC Resonant Mode Converter Design — Dave Jones (explains)
+context before: As I said, I'll link this down below. And then you finally, once you've done all that engineering, you calculate resonant mode values, and then bridge and rectifier selection, for example.
+TEXT: This is why they use MOSFETs in here. There's basically two you really can't do this with bipolar transistors cuz their drive requirements are too much. So, really you need a very specific, in this case, highly optimized MOSFET.
+context after: One that's carefully tailored for this kind of specific resonant mode operation. And this is what they design these specific MOSFETs for. And if you want to know the difference between a full bridge and a half bridge one, how and why, here you go.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: It's worth trying. Okay, there it is, the 4407. In you go. We just wick up some of this. Cleaned it up. And don't worry about those pins shorted out, they're supposed to be.
+TEXT: That's just uh the solder mask coming off. You can see the solder mask had come off between those pads in there, so yeah. Here we go. Okay, so I'm just going to measure the resistance across that MOSFET that just shorted before.
+context after: It's no longer shorted, so yep, no wuckers. So, let's uh power this sucker up. I've got no batteries in it, so we should Let's see if we get Now, no.
+
+[1614] EEVblog 1614 - Circuit Design TIP: Crystal Oscillators — Dave Jones (explains)
+context before: And you'll notice that this one actually has the 10 meg load resistor here actually internal with an internal switch, which is actually connected to the enable pin. So, when you disable the chip, it opens up this circuit, so there's no feedback resistor here, and it disables the oscillator.
+TEXT: But, trap for young players, for this particular chip, doesn't mean it happens on other chips, but this particular, uh, chip, it actually the enable pin also will turn on this MOSFET, which will short out your X1 pin to ground.
+context after: You don't really want to do that with an external crystal oscillator. Just be aware of that. So, there you have it. Hope you found that interesting. You do not need to use an external crystal and the load capacitors.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: the circuit stuff. I mean this was obviously doing switching of the batteries here either charging or using them as loads. So you switch them off switch the charge in or you can switch or you can switch them out so that they're powering the product and stuff like that.
+TEXT: So you know I I knew that these things were being used as switches for this battery. So for a switch application, you can pretty much ignore like every other specification on this data sheet part from voltage, current, RDS on.
+context after: That's pretty much all you're going to have to do. And I wasn't worried about the fact that it didn't have internal gate protection like this. If it blew, it blew.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: Winner, winner, chicken dinner, or at least well, it's at least back to what looks like normal functionality, whether or not that MOSFET's good enough for passing passing the current and all that sort of stuff.
+TEXT: We're only talking like we're not talking anywhere near like 12 amps um or something like that. So, like I think these MOSFETs are like grossly overrated uh for the task, and there's nothing wrong with that, it's very common.
+context after: Um so, yeah, if in that lower rated uh current MOSFET, I don't think it's going to do a huge business. Anyway, the actual switching functionality seems to be there.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: And the way it does that is it basically this circuit doesn't operate all the time. This circuit will only effectively be in use when you want to measure and you want to measure low values and your microcontroller knows that the values are very low, it can switch this circuit in.
+TEXT: And it does that with this MOSFET here. I can switch on this and effectively insert another load because our output voltage is here's our output voltage here, but the ground, here's our output, our negative output terminal.
+context after: Instead of going directly to ground, it goes through a current shunt resistor here, a what's called a low-side as opposed to the high-side current shunt resistor we have up here.
+
+[532] EEVblog #532 - Silicon Chip Wafer Fab Mailbag — Dave Jones (explains)
+context before: You might have to view it in HD, but it is right down there like that. This is actually an active FET probe. That's actually a fit, believe it or not, designed for a, you know, basically high-frequency performance because you got a tiny little probe tip there which goes down onto the wafer and then this fit which then buffers the signal to go up the coax.
+TEXT: Now, if you're curious about the physical construction of the fit, then that probe wire going down there, of course, that is connected to the gate of the MOSFET and then the drain is connected to the casing of the pogo pin.
+context after: Effectively, it's a coax. Pretty much a solid form coax there and the source is connected to the center pin of the coax over there. And they are pico probes from a company called GGB Industries Inc.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: It's a failed MOSFET and simply replacing the MOSFET, which I salvaged from a dumpster laptop, which was pretty cool. I fixed the light. So, that was a winner winner chicken dinner.
+TEXT: But, I thought I'd do a follow-up video actually showing you how when I first actually found this MOSFET, I went to search for it. I knew it was a MOSFET and I searched for it and I couldn't find any data on it whatsoever.
+context after: And I didn't recognize the markings on it. So, I had to actually not only find the manufacturer, but then to figure out exactly what MOSFET it was, but also potentially find a replacement as well.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: I you know, why isn't my thing working? I'm using the right models and it's following everything and everything's hunky-dory." Imagine if you got that straight off the bat, you'd be absolutely you know, racking your brain trying to figure out what was going on there.
+TEXT: And that can be a real trap with circuit simulators. Sometimes you got to play around with them to get them to play ball. Now, here's a MOSFET, the FQB 11 P06 that actually has a 4-V VGS, which is what it's showing here.
+context after: But unfortunately, that's only available in like a power type package. It's a little bit expensive, not really what I want. I don't need a power uh MOSFET here. I want a little signal uh MOSFET.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (explains)
+context before: And that's got its own little tiny, teeny, weeny piss-ant free-standing heat sink, but the big heat sink here has one pass transistor on it. I'll try and get the code off that, but once again, quite dark in there.
+TEXT: And that's a SEP 80N15 N-channel MOSFET, of course, no surprises, 150 V 76 A nominal rating. So, pretty much what you'd expect in there. And the other one on the smaller heat sink by the way is a old school retro BD136.
+context after: And there's our current shunt resistor, 20 m by the looks of it. 1% but once again, absolute accuracy of this thing can doesn't really matter. It's all about the temp co and how you trim this thing out in the software.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: Oh, I saw something. No, it doesn't flash. Look at that. And hopefully, we haven't taken anything else out. There you go. It's It's not It's not doing it anymore.
+TEXT: In theory, right? And in practice, right? Taking out that MOSFET could actually like take out other things. Who knows? There's a non-zero chance that MOSFET in there shorted was actually actually protecting other stuff.
+context after: And then when you take it out, it's dead. Um unlikely, but I don't know. I There's got to be a It's got to be a scenario where that's possible.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: I've decided to use one of these. It's cheap, readily available, in a nice package. I like it. And it's going to be near enough. It's got a rated maximum RDS on or a maximum maximum resistance of 8.4 mΩ, but that's going to be at the maximum current.
+TEXT: It's going to be better than that at the lower current and at higher VGSs as well or higher gate source voltages. So, in any case, that MOSFET should give us a a very insignificant error at our maximum range of 2 amps.
+context after: So, as I said, the software is capable of switching this MOSFET on and to do that, I've actually to get a higher um gate source voltage, I've actually used, rather than drive it directly from the microcontroller, which would only be a 0 to 3.3 V output, that's not really good enough for this MOSFET.
+
+[1527] EEVblog 1527 - Toshiba T1000LE DOS Vintage Laptop Repair HELL — Dave Jones (explains)
+context before: Um and obviously it's not through the lead one, but is it this here? This says charger as well. So, this is charger and this is charge. So, what does charger and charger mean?
+TEXT: I I like Dumb and Dumber. I don't know. Okay, I checked around and the only issue I could find potentially with the MOSFETs is this one here which is measuring 46 ohms in both directions between the drain and source.
+context after: And this one over here which was thermally you know, which was getting hot sort of like a you know, runaway kind of thing. It measures okay, but because it like it didn't get hot instantly, it's not like it was like shorted out and then you know, connecting permanently connecting the inductor across the rail for example.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (explains)
+context before: Aha! We now have 3 volts. We have 3 volts on that gate. 3.15 volts. That one's at 3.15 cuz they're parallel. Turn it the right angle. Come on. That one is zero, though.
+TEXT: And we'll just verify the voltage across there. Yeah, 3.5 volts across the MOSFET. So, that's it's open just like we measured last time. Oh, I just realized that those two in series, they're the opposite direction.
+context after: Anyway, there were some people that said I should charge up the battery pack even though it's at almost 3.6 volts, which is like the middle of the discharge curve.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: I don't know how long it takes to charge this. I'm not sure the charge rate. I think it's like it's pretty slow. Um, so, yeah, I I don't think there's any worries whatsoever with that MOSFET in there.
+TEXT: So, even though it's lower rated, it seems to be doing its function just fine. And in these sort of applications, you'll find that almost any MOSFET would have done the job provided has the maximum voltage rating.
+context after: That's one of the most important things and the maximum current. But because it's like a a 12 amp rated MOSFET, like we're never going to get 12 amps. So, it's, you know, it isn't really a problem.
+
+[1681] EEVblog 1681 - Mailbag: Nice DIY CC Load,  Amazing Proto Boards, Ian Johnston — Dave Jones (explains)
+context before: Definitely, if you're not subscribed to Ian, you definitely should be. So, and we've got a schematic. Beauty. So, we've got an Arduino Pro Mini here. We've got just a little LCD module.
+TEXT: Yeah, regulation and switches, and this is a whole shebang, basically. There's our two connector interface. We've just got two MOSFETs here. So, basically, this is the driver which comes from the micro over here.
+context after: It's driving and just the gate. It's just pulling that down to ground, and then just basically just switching on the MOSFET here. Very in the straight across the terminals.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: And once as I said, these ones down here, these three MOSFETs down here carrying 50 mA or less or five or hundreds of microamps, they can be just nothing MOSFETs.
+TEXT: You know, they don't need any power handling capability at all, really. So, and the RDS on it practically doesn't matter. Any MOSFET's going to do the job. Provided, of course, that the VGS on is suitable here.
+context after: And you have to choose a particular MOSFET and I won't go into the details cuz that's a whole separate video of how to choose a MOSFET for something like this that has a particular VGS on voltage that you want and ensures that 0 V on here can genuinely switch all these other ones off.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: In this particular case, it's actually switching the battery packs and things. But even if you didn't know that, um this sort of application you'll go it's more likely to be a MOSFET these days.
+TEXT: They're more popular than uh BJTs for uh like high current switching applications because the on resistance of these chips is much lower. They're you know you can get like much higher power ones in a package.
+context after: And all the characteristics around it just mean MOSFETs are better for like switching power type stuff, switching you know, driving LEDs and switch mode converters and you know, stuff like that.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: Usually, you'd find something else. You can get other uh more obscure faults like breakdown in the insulation of the enamel uh wire on uh transformers and stuff like that.
+TEXT: But, that's you know, that's pretty rare. So, I'd just want to get in there and measure the uh transistor. It's not a bipolar jobby. It's one of those newfangled mosfety things because it's got G for a gate.
+context after: Hey, hey, you. Hey. Drain and source shorted. There's another problem. Yep, it's not just the diode. So, there you go. If you just try to do uh replace the diode there and uh you'd probably come a gutser and you might blow it again because well, our switching transistor is shorted as well.
+
+[1698] EEVblog 1698 - Awesome Ebay AC Power Source: GW Instek APS-7050 — Dave Jones (explains)
+context before: And yes, you won't find any Wang Hung Lo's in here. These are genuine Nichicons. Thank you very much. 105°C, top of the range stuff here, and these are 63-V rated.
+TEXT: So, each rail is going to be, you know, 50 V or something like that. And of course, when you're putting MOSFETs in parallel, you want a ballast resistor just to even out the current between the transistors.
+context after: You don't want to rely on the internal resistance of the transistors to try and share power between them. That's a no-no. So, yeah, 0.3-ohm 5-W ballast resistors on every one of them.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (explains)
+context before: If you do, leave it in the comments down below. Yeah, but our odds of lucking upon it, um probably not great. Murphy's Law and all. There we go. Once again, this series.
+TEXT: So, yeah, we've we've got parallel jobbies. Definitely. Or so we or a single and they've just put two in parallel to handle the extra current or so Although, this isn't consider this like hugely high power.
+context after: All right, I don't know why they couldn't have just used the one MOSFET, but anyway, I mean obviously you can narrow it down based on uh cell voltage and stuff like that, but we're probably not going to find it here, right?
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: If you're driving it with your 3.3 or 3.5 volt logic, we're talking about, right? This is drain current, you know, over 100 milliamps there, maybe 150 milliamps. This will vary slightly, you know, bit between parts from different manufacturers, but you know, at that low VGS uh voltage, you can do 100 milliamps there pretty safe.
+TEXT: And at uh 5 volts here, well, you know, you can do like over 400 milliamps, no problems. And the transfer characteristics is the other uh common graph that you're going to want to look at uh for MOSFETs.
+context after: So, it does once again the ID drain current here on the Y axis, but it's the VGS or gate to source voltage here. And you can see as they and and the characteristic curves are at different temperatures.
+
+[718] EEVblog #718 - Keithley 2400 SMU Teardown — Dave Jones (explains)
+context before: USA, USA, USA. Now, here's a simplified schematic from the service manual, which I'll link in down below, of the output stage here. So, we don't actually have to take off these little seal pads against these transistors to, you know, find out exactly what they are.
+TEXT: We've got MOSFETs. Basically, there's going to be four MOSFETs in there and two power transistors as well. So, that's why we've got 2 4 6 devices on the upper half and 6 devices on the lower half here.
+context after: And of course, as I said before, this is a four-quadrant device, so it's able to source current as well as sync. So, we've got our main 225-V supply rail up here and then of course, it's able to source current out like this.
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (explains)
+context before: Hence why they need a voltage regulator regulator in there, the 78L05, which I haven't shown here. Um they need a stable a temperature uh stable value in there. Anyway, then this um op-amp works as a comparator, of course, cuz there's no feedback on there if at all.
+TEXT: There's no hysteresis, either. Um and that just drives the MOSFET, which drives the buzzer. So, it's not like this thing is working uh a lot of metal detectors will work as a beat frequency oscillator.
+context after: So, they'll have two separate oscillators and they'll beat against each other at two high frequency like RF-type oscillators, then they'll beat against each other depending on the presence of the metal, and then that will give you an audio tone, which then gets mixed down and gives you an audio tone out.
+
+[Z_c4wjBpSzE] Grokipedia vs Wikipedia — Dave Jones (explains)
+context before: So there you go. So, uh, this had a whole bunch of citations and this only had three. So, I'm not sure like I don't know supporting evidence, computer history, museum.
+TEXT: Yeah. Okay. Decent reference. Scope applicability. Miss statement. This specifies pin names for BJTs but presents them as general for all transistors ignoring MOSFETs which use gate source drain. Okay.
+context after: Pin names base collector emitter. Okay. Remove the info box table per guidance retaining only images and captions to avoid specific misrepresentation. That's interesting. Okay, so it has changed things and you can see that it's Grock has gone through and it's put all it supporting evidence and presumably it will add to this.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: And at uh 5 volts here, well, you know, you can do like over 400 milliamps, no problems. And the transfer characteristics is the other uh common graph that you're going to want to look at uh for MOSFETs.
+TEXT: So, it does once again the ID drain current here on the Y axis, but it's the VGS or gate to source voltage here. And you can see as they and and the characteristic curves are at different temperatures.
+context after: So, you'll take like room temperature here, but you know, if you're designing for the extremes in your design for extreme uh you know, temperature ranges, um it doesn't vary a huge amount.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Well, uh first of all, you look at the reference designator. In this particular case, it's Q. That's a Q for this Q3 up here. There's Q11 over here. And Q is the industry standard uh designator for tran- transistor.
+TEXT: So, if you see a Q, you know it's a transistor sometime and some type. So, it could be a BJT, a bipolar junction transistor. It could be a MOSFET, a metal oxide semiconductor field effect transistor.
+context after: Or it could be a JFET, a junction uh FET. And but JFETs aren't really used these days. And for this sort of application for uh LED lights, you basically you need these for uh switching.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (explains)
+context before: So, they've got a 10 mΩ current shunt there. So, our voltage is getting in there and our voltage is getting to the other side, okay? So, those current shunt resistors aren't blowing.
+TEXT: And this chip looks like a MOSFET because uh all four pins are shorted together and three pins over here plus the gate drive over here, okay? So, we get now 8.3 V in and are we getting now 8.3 V out?
+context after: We are getting now 8.3 V out. So, that MOSFET is switched on. No wuckers. Actually, these all look like MOSFETs. So, there's a lot of switching happening here. It comes into here and it looks like, you know, it's switched through to here and it looks like it switches through again to here and then it looks like it switches through from here, which it then goes off to this uh boost converter over
+
+[504] EEVblog #504 - UPS Tutorial & Teardown — Dave Jones (explains)
+context before: And the only power devices in here uh the H-bridge um devices themselves. Actually, I probably should have a look down here. I might be jumping the gun, but what I haven't shown here on my Dave CAD drawing, what I omitted because I thought it didn't matter, is the substrate diode across each one of these.
+TEXT: And there's going to be one of those uh substrate reverse bias diodes across each of these MOSFETs. I won't go into details of why, but all MOSFETs are going to have these substrate diodes in there.
+context after: And when you have diodes like that in reverse bias, you can feed power back in from this transformer, and then you can actually have um huge amount, you know, large capacitance across here like this or across there and there.
+
+[643] EEVblog #643 - Mailbag — Dave Jones (explains)
+context before: So, you really, you know, these things have to be incredibly efficient. Um as we said before, 450 W. So, you know, you can only uh even at 1%, you know, 99% efficiency, that's still 4 and W inside that tiny little beast there.
+TEXT: So, let's go to the data sheet. And no surprises for guessing that you get sort of, you know, the world's best RDS on, which is the on resistance when the MOSFET is switched on in a TO-220 package.
+context after: So, world's best one, don't know if that claim is actually true, but RDS on 0.19 ohms there, 650 V VDS rated, 20 amps. These things are a beast. And I'm not They're probably not cheap, either.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: So, even though it's lower rated, it seems to be doing its function just fine. And in these sort of applications, you'll find that almost any MOSFET would have done the job provided has the maximum voltage rating.
+TEXT: That's one of the most important things and the maximum current. But because it's like a a 12 amp rated MOSFET, like we're never going to get 12 amps. So, it's, you know, it isn't really a problem.
+context after: The higher RDS on at uh, the certain gate voltage, whatever it's being used in here, um, yeah, okay, it's might be a little bit higher, might display a little bit more heat, but can't even feel it, so, no worries.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: It's a just a regular MOSFET like this, and it's got the four drain pins on one side and the three source pins on the other with the gate pin.
+TEXT: And that's exactly what we're seeing in this uh photo here. So, right off the bat, we've identified this as it's almost certainly a MOSFET um of some description. We don't know the specifications.
+context after: We don't know anything. Although, you can kind of guess at the specifications because this is uh like, for example, uses a a two-cell 8-V uh lithium battery, for example.
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (explains)
+context before: That'll switch it off. This gets no base current, nothing goes through, end of story. So, that's how you can use um that's a basic circuit for switching on and off, but we don't want two switches, and we want we want to use one switch.
+TEXT: So, it's a bit more complicated. So, what we're going to do for starters is to replace our bipolar transistor with a P-channel MOSFET. Works exactly the same, except it's got lower on resistance.
+context after: They're just nicer, more readily available. So, I'm going to use a MOSFET, but you could still use a bipolar transistor if you really wanted to. And because it's a MOSFET, um we, you know, you don't want the gate here flapping in the breeze around like that.
+
+[1020] EEVblog #1020 - Is A $7 LCR / Component Tester Any Good? — Dave Jones (explains)
+context before: Um, it's just a light emitting diode and uh 2 volts and it says it even gives you the capacitance for the diode 4 puff. Isn't that jazzy? So, I'll just repeat that.
+TEXT: I turned it around and put it in different ones. Yeah, that's pretty repeatable. Nice. Green diode there. Sweet. We'll try a VN10K MOSFET here. But, what? Fail. It thinks it's an NPN transistor.
+context after: Hm. So, that's interesting. It knows it's acting like a transistor, which it is. It's just a MOSFET. Um, and it is an N-channel MOSFET. So, it's got that right and the HN, it knows that the gain is massive, but it hasn't identified that it's actually a MOSFET instead of a bipolar.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: So, you'll take like room temperature here, but you know, if you're designing for the extremes in your design for extreme uh you know, temperature ranges, um it doesn't vary a huge amount.
+TEXT: But yeah, basically there at a VGS of say 3.3 volts, you know, there it is, you can do that, you know, 100 odd milliamps there if you're you know, extrapolate that and drop it down, for example.
+context after: Um and if you do it at 5 uh volts, you know, you're going to get like 400 milliamps out of it. So, it's okay, but it's nothing to write home to your mom about.
+
+[929] EEVblog #929 - Designing A Better Multimeter — Dave Jones (explains)
+context before: So, we're going to be stuck with that high 500 millivolts burden voltage. There's almost no way around it apart from implementing some sort of switching solution here that goes through our 11 amp fuse.
+TEXT: But then we'd have to put some real beefy heavy duty MOSFETs in there or a relay to switch our 10 milliohm current shunt resistor. And there is one like a high-end Gossum, they actually do that.
+context after: They do actually MOSFET switch the 10 milliohm current shunt resistor in there and then they can switch in. Once you've got rid of that then you can put other resistors in parallel here.
+
+[643] EEVblog #643 - Mailbag — Dave Jones (explains)
+context before: So, let's go to the data sheet. And no surprises for guessing that you get sort of, you know, the world's best RDS on, which is the on resistance when the MOSFET is switched on in a TO-220 package.
+TEXT: So, world's best one, don't know if that claim is actually true, but RDS on 0.19 ohms there, 650 V VDS rated, 20 amps. These things are a beast. And I'm not They're probably not cheap, either.
+context after: I don't know what the Digi-Key price is, but yeah, these puppies wouldn't be extreme DVDT rated or periodic avalanche rated. Beautiful. Look at the specs. So, thank you very much, Aiden.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: Notice we measured 161 degrees C. So, maybe the heat sink we've got slightly better than that cuz we were getting no air flow, but still this is way above the maximum junction temperature of the semiconductors.
+TEXT: And if we actually have a look at the MOSFET used here, the AD409, then we can see that the maximum junction temperature, absolute maximum, junction and storage can temperature 175 degrees C.
+context after: Of course, we are going to you might say, "Well, it's under that." Well, no, it's not because you have to look below that at the junction to ambient and what junction to case and then you've got a couple of degrees C per watt there you've got to add it on.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (explains)
+context before: Um so, yeah, 500 milliamps, unfortunately, we've got the 0.33 milliamp offset. So, there we go, until you lose a digit and it vanishes. It's exactly the same. So, there's two current shunt resistors there, but unfortunately, that's the tyranny of ranging there.
+TEXT: Unless you're going to have an entirely separate shunt resistor and amplifier for each one of those ranges, or at least shunt resistor, and then you can switch them using MOSFETs or whatever.
+context after: Um but unless you like if you've only got the two shunt resistors, then yes, um on the slower on the lower ranges, um which is 5 milliamps and 500 milliamps here, uh you're going to get a greater effect of the offset uh voltage there.
+
+[1316] EEVblog #1316 - Quantum Computing for Electrical Engineers — Dave Jones (explains)
+context before: Because you affect the state of it by measuring it. Is that correct? So, this is a hopefully a nice example for our electrical engineering audience. Um so here is where we use actual transistors Right.
+TEXT: for the measurement. So the technology that I use is based upon using the dopant atoms as the qubits, the spin of the atom. But the readout device is actually a essentially a modified MOSFET.
+context after: Right. So small transistor that we fabricate in our clean room. It's about 50 by 100 nanometers in size. So it's it's small. It's not even as small as the ones you have in the chip in your camera probably, but you know, that's what we can do.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (explains)
+context before: Similar basically similar sort of thing except we've got some extra MOSFETs for switching there. But of course, all of the current does actually flow down through here. It must flow through here.
+TEXT: It can't flow out into the gate. So, it's got to come down here. So, these MOSFETs down here, while they're lower power and lower voltage, uh they still have to uh handle the maximum current.
+context after: We saw this was a a 7 amp rated uh MOSFET up here. These, and no surprises, this FDS8978 is also 7 amp rated as well. So, of these three range resistors here, you could get a reasonable combination of uh current range values.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: So, 10 m 100 m 1 ohm 10 ohm and 100 ohm. And that's what you would use for all your different ranges. So, we'd have to redo this table, but the good thing about this is that the the burden voltage is exactly the same on each particular range depending on the resistor you choose because we're going up by a decade 10 times an order of magnitude each time.
+TEXT: So, if you want to switch on your 500 mA range, well, this becomes 0 V. You'd have 0 V on here. You'd have 0 V on here. And you'd have your 5 V or whatever switching on that MOSFET up there.
+context after: And once as I said, these ones down here, these three MOSFETs down here carrying 50 mA or less or five or hundreds of microamps, they can be just nothing MOSFETs.
+
+[1755] EEVblog 1755 - Tolicore Femtoammeter TEARDOWN + REVERSE ENGINEER — Dave Jones (explains)
+context before: Just conveniently put them on both sides of the chip, so you can run the guard directly through the chip. That's a layout thing they did deliberately on the chip, and it's got a bunch of input protection, and they would just, you know, they'd be pretty special, too, so there's bugger all leakage in those.
+TEXT: High voltage protection there, however they're doing that. But, yeah, um FETs, that's how you do it. And contrary to what it might look like here, they're actually got a MOSFET input stage.
+context after: Don't want to use that JFET rubbish, but yeah. Anyway, extremely low input bias currents, blah blah blah blah blah. The guard amplifier. Anyway, I'll link it in down below.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: And that lower on resistance means lower voltage drop and more power handling more current handling capability and more power handling capability in a specific package, for example. So, if you've got like a little sub 23 package and it's got a lower RDS on, you're going to get a lot more bang for buck in your current and your power dissipation in a given package size in a MOSFET typically.
+TEXT: And in a MOSFET, they're voltage driven as versus essentially current driven in a BJT. So, there's no constant base current like you get in a BJT transistor. You've just got a gate voltage.
+context after: You switch on the gate voltage and the transistor switches on. As a switch, in probably the majority of applications, you're going to be using MOSFETs for switching purposes. You know, you switch on a relay load, you switch on an LED load or you're pulse width modulating some LEDs or something like that or using it as a switching element in a DC to DC converter, something like that.
+
+[366] EEVblog #366 - USB PSU Troubleshooting — Dave Jones (explains)
+context before: So, clearly that DC-to-DC converter is not turned on. Why? And well, um what I suspected is that it may have been something to do with Q two around there and I've been I've actually played around with the software in here.
+TEXT: I've been playing around for a little while and so, what I decided to do is short out Q two and that's exactly what I did. Just take that out of the equation and I replaced R2 under there.
+context after: Sorry, yes, R2. Um it's supposed to be 12K, but I actually replaced it with uh 51K just to eliminate that uh Q2 control aspect from the DC-to-DC converter. So, it should as soon as you power it up and apply 5 V to the input, it should give you, you know, a much higher output voltage.
+
+[412] EEVblog #412 - Jawbone UP Pedometer Teardown — Dave Jones (explains)
+context before: Ta-da! Finally cracked it. There it is. Yep, lithium polymer, 32 mA hour, three single cell, 3.7 volts with what looks like uh possibly a battery protection uh board in there as well, as you'd expect.
+TEXT: And there you go, there's the backside of the battery protection PCB, and you can see the MOSFETs in there for the um over-voltage uh cut off and uh probably under-voltage cut off as well.
+context after: And there you have it, it's completely out, and you can see the rigid flex um architecture with the different boards all joined by the one flex membrane in there.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: You'll find that you know there are various configurations of things that cause them to play up and you know just not play ball generally with what you're trying to do.
+TEXT: So, it looks like um the particular type of MOSFET which we're choosing there makes a difference. Let's go back to the BSS 84 here and let's close that and let's run that again and bingo.
+context after: Now we're fine. No problems whatsoever. So, yeah. That is weird. Now, the first thing I'm going to suspect here is um the LT3080 because the gate here of the MOSFET is trying to read back from the output of the LT 3080.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (explains)
+context before: Uh it was uh it was July 22nd to be specific. And that idea was >> You remember the date? Okay. >> Oh, I remember the moment. Um you know it was one of those flashes >> and um you know the the the uh the idea was to inject extra charge in that too narrow region which would in effect make it look wider to the electrons.
+TEXT: And that became one of the basic inventions uh of the MOSFET. It worked not the first but the second time that we tried it. Uh and immediately the device went from 2 ohms down to 7 ohms.
+context after: It was even better. >> Oh, nice. You and now you have a product >> and now you have a product. >> You have a viable product >> just in time.
+
+[929] EEVblog #929 - Designing A Better Multimeter — Dave Jones (explains)
+context before: But then we'd have to put some real beefy heavy duty MOSFETs in there or a relay to switch our 10 milliohm current shunt resistor. And there is one like a high-end Gossum, they actually do that.
+TEXT: They do actually MOSFET switch the 10 milliohm current shunt resistor in there and then they can switch in. Once you've got rid of that then you can put other resistors in parallel here.
+context after: So, that's why they actually only have one amp jack like this and it measure down to like a 100 micro amp range or I think it's 300 micro amp range or something like that cuz then once you disable if you're able to disable that current shunt resistor there then you can put others in series real easy because you know if it's 1 ohm or something like that you can switch it in no problems.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Okay, don't worry about the gate source voltage. Let's go for the drain source voltage V V DSS because that is what we'll find here, drain to source voltage. Okay, it's so important that's over on this side of the uh of the parametric table.
+TEXT: Okay, so we're looking for at least 30 volts. Okay, you'd want to match it. Um in fact, I wouldn't go as high as Well, you could. Okay, if we put that 65, that's narrowed it down to 40.
+context after: If we narrow it down to like exact equivalent, you can see up here it's 34 remaining. Okay, so let's actually go for an exact 30 V equivalent part, right?
+
+[331] EEVblog #331 - Mailbag — Dave Jones (explains)
+context before: Got it. um you know it's a multi-ell uh battery protection uh chip that you know detects over charge and over discharge and all that sort of stuff. Um but it's not the same because it is that was a 16 pin package and this one is only a little eight pin package.
+TEXT: So um anyway uh something's wrong there. I reckon we've got a little uh six pin controller, two uh different MOSFETs. This one's an N channel. This one would be a P channelannel MOSFET.
+context after: And uh they've, you know, they've done a decent job there. That is a proper battery protection board. So there you go. The FA [ __ ] battery um actually has decent protection built in.
+
+[748] EEVblog #748 - How Do Transistors Work? — Dave Jones (explains)
+context before: Now, we're going to take a look at two different types of transistors cuz they are physically different in how they operate at the silicon level. One is the bipolar junction transistor, your BJT, the other is your field effect transistor or a FET.
+TEXT: Now, we're actually going to look at a particular type of FET, the MOSFET in this uh case cuz there are many different types and well, that's probably best left to a different video.
+context after: Now, regardless of whether you have a BJT type or a MOSFET, they going to work in your circuit configuration pretty much exactly the same. We're going to look at the NPN type and the N-channel type only here today and you should be familiar with these at the circuit level.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Here you go. Maximum power dissipation down here at 25 at ambient temperature of 25° C, 3 watts or if it's like getting hot inside this thing as it would inside a LED uh you know, light like this with no circulating airflow or whatever 2 watts maximum.
+TEXT: So even if it was being used at 5 amps, we're like well under half of its maximum power dissipation. So yeah, I I just knew this part was going to be fine and it was going to work.
+context after: So for something like this application, that's all I I could get away with using almost anything. And in terms of maximum voltage here, 30 volts once again this is over specified.
+
+[1415] EEVblog 1415 - Reverse Engineering the DP10007 Differential Probe — Dave Jones (explains)
+context before: So, if you actually know what's going on here, please leave it in the comments. But anyway, here's an MCH6604 from ON Semiconductor. Okay, it's a dual MOSFET as you'd expect in a six-pin package.
+TEXT: If you know, you wouldn't get a six-pin package for a MOSFET unless you're you know, unless it's a dual jobby. This one's actually not a SOT 23 package, so it's not the actual one.
+context after: Anyway, it's a dual N N-channel power MOSFET. And we'll have a look at the pinout in a second, but if we go over to this one over here, this is an Alpha and Omega one well, it's look, an N-channel and a P-channel.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (explains)
+context before: So it doesn't regulate but if you put eight of them in series you can isolate it. So it becomes an isolated 800 volts u but each of these little things are not isolated between the the primer and the secondary side.
+TEXT: So um this LLC is um uh optimum at about a megahertz or 1.2 meghertz before you get into uh losses both in the transformer and in the feds. So it's kind of an an optimum uh thing.
+context after: And a lot of people ask well why is you know 100 volt per stage the best? And the answer is that there's a lot of um theory that shows that um lower voltage devices connected in series particularly somewhere in the 200 volt or 150 volt range are more efficient in terms of silicon area as well as figure other figures of merit than higher voltage devices.
+
+[890] EEVblog #890 - ArmourCard Active RFID Jamming Teardown — Dave Jones (explains)
+context before: You could just do that with just, you know, jelly bean logic stuff and uh get away with that. And all you've got to do, as I showed in the previous video, is well, I've got it here.
+TEXT: There we go. All you've got to do is have the micro like this and then just have a treat or in this case to be a MOSFET that just puts a load across the coil and that's all it is.
+context after: It doesn't really take any, you know, any major energy to switch on that MOSFET and put that load across the coil. So, you could run for years on this thing.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: You might pick a couple of milliamps, 5 milliamps might be fine and remember you've also still got the resistance of your HRC fuse up here. So, your MOSFET has to be as low as possible.
+TEXT: Now, just using a single MOSFET like this N channel works just fine. If you put a voltage on here, let's say you put 5 volts or you might only need 3 volts or something like that.
+context after: Your multimeter is only working from a couple of batteries. It switches this MOSFET on. I won't explain how MOSFETs work, but it switches on. It acts like a switch.
+
+[1599] EEVblog 1599 - TOP 5 Jellybean Bipolar Transistors — Dave Jones (explains)
+context before: Like, you can't easily damage them static-wise, and they might have more better overcurrent capabilities and stuff like that. You can think of BJTs if you need just simple, rugged kind of stuff, and and easier potentially easier to drive over MOSFETs, which are a bit more trickier.
+TEXT: And BJTs can work at really ultra-low uh voltages as well, whereas MOSFETs might have particular higher requirements and trickier to drive and bias and you know, stuff like that.
+context after: But, yeah. So, stock the 3055 in whatever flavor package you want in for your MOSFETs as well as your BJTs. And likewise, you can get the complementary the P-channel MOSFET in the 2955 here, and they're going to have no shortage of those as well.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: Hi, it's time for another installment in the jelly bean component series. I'll link in the playlist down below if you haven't seen them before, where I've done jelly bean op-amps and voltage references and I've done bipolar transistors before and a lot of people since then have been asking for the same video on MOSFETs.
+TEXT: So, here we go. So, MOSFETs or metal oxide silicon field effect transistor, that's the name, MOSFET or moosefets as I often call them, they are pretty much ubiquitous these days.
+context after: They're more popular than BJTs for lots of reasons. They are better lower RDS on, which is the on resistance of the transistor, so that's better. It's called RDS on in a MOSFET versus VCE sat typically in a BJT.
+
+[1113] EEVblog #1113 - Is a $5 USB Soldering Iron Useful? — Dave Jones (explains)
+context before: All right, let's try some 15-gauge wire. It's the shape of the tip plus the wattage as well. It's not the best. Yep, no worries. 15-gauge wire not a problem.
+TEXT: Okay, let's take it apart. We've got three screws here. I expect nothing fancy, just a the 5 volts directly to the heating element basically via a MOSFET or something like that.
+context after: And just the touch sensor. It's probably just got like a one-shot retriggerable monostable in there with a touch front-end configuration on that. So, you know, really easy. Probably could have used triple five.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: That's all hunky-dory, but how do they do it inside, say, a 74HC14 Schmitt inverter or inside any other chip that has a CMOS, uh, digital chip that has a Schmitt trigger action on the input?
+TEXT: Well, they can't have resistors in there and do it all analogically that you know, that just doesn't work in the process. They have to do it using discrete MOSFET transistors.
+context after: And here's a shot of how they actually do it from Fairchild and it is rather clever. Look at the input here. It actually uses four stacked MOSFETs on the input.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: You would need like a SEPIC or some other topology buck boost converter, basically, to actually do that. So, this is only a buck converter. So, you can only get like in this particular case about 400 millivolts below whatever the USB power delivery has negotiated over here.
+TEXT: And we've got one little MOSFET over here. In fact, all the MOSFETs in this are identical. So, we'll take a look at the data sheet in a minute, but it's a 4040 N-channel type.
+context after: So, it's positioned there. Looks like it's actually switching the power from the USB-C through to the rest of the buck converter. So, essentially, that's the on-off MOSFET there cuz you saw we had a on-off soft power switch there.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: So we're 1.8 V differential above the output voltage. That's not high high enough for us. It's high enough for the LT3080, but we've got an additional, if you remember the schematic for the power supply, an additional 1 ohm current shunt resistor in there which at 1 amp can drop up to a volt.
+TEXT: So we're looking for about a 3 V voltage differential. And that differential voltage will of course depend almost entirely upon the type of MOSFET which you actually use here.
+context after: It has some dependence upon the current as well going through here via your resistor values, but not a huge amount. So really you have to get the specific type of um of MOSFET in here and we've actually got the If we have a look at here, we've got the FDC 5614P and we're getting about 1.8 V on the simulator differential.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: It's not National Instruments. Uh All Data Sheets, okay. Nothing is generic coming up. So, GW Instek. Um no. Right, oh analog.com LTC4303, a hot swappable two-wire bus buffer. Well, no.
+TEXT: It's not that. We know it's a MOSFET. So, I would search for MOSFET and then PDF. I like adding PDF to the end because it gives you a data sheet link pretty much off the bat.
+context after: Well, here we go. SM4303 MOSFET. So, we can go in. I'll right click on that. PN4303. There you go. Oh, that's a JFET, right? That's a junction FET. JFETs are not uh power devices like this.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: But, for something like this, we could probably get away with this part here. But, anyway, we have not found this ESD like we we can't search for an ESD part like this on Digikey.
+TEXT: I mean, you got to remember even this like like equivalent part over here that had 4303 in the title is a very different MOSFET. It does not have the ESD protection built in.
+context after: It's It's very different. So, if with that if that was key to your product and you put accidentally specified this one in thinking, "Oh yeah, no worries. It's got to be equivalent." You looked at the top level specifications and looked at the part number 4303.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: So, you know, well within the package capability that we saw of 1 watt. So, for a SOT-23 package, this is like, you know, pretty much the duck's guts. Fantastic.
+TEXT: And I forgot to mention, uh, as with all of, uh, these, uh, MOSFETs, due to the construction of them, you're going to get your back diode across your drain and source here.
+context after: This is just, uh, inherent in the physical, uh, silicon construction of this. I'm sure I've done that in a video somewhere, but you basically get that, uh, back diode for free.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: Now, I've only got the one battery in there at the moment, and it's charging. So, it actually supports charging of only one battery, but if I switch that off, then it does not work from that battery, even though it has more than enough um, charge to actually uh, power these LEDs.
+TEXT: So, what they're doing here is really interesting. There's only the one switching controller here, and but it has no ability, as I said, to control the MOSFETs um, in here.
+context after: So, these must be either controlled via the micro, which is powered when it's off by the way, so it must be using the same supply as the charger chip over here.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: And then they've got additional two MOSFETs there, P3 and N3, which act as source followers. Actually going from the output feeding back the output, effectively feeding back the output signal back to the middle of either the upper or the lower totem segment up there on the input and that can be used as a Schmitt trigger action.
+TEXT: It's fantastic. So, let's take a brief and simplistic look at how it works. If you've got zero volts on the input, then the upper two MOSFETs P1 and P2 are going to be on.
+context after: P3's going to be off and N1 and N2 down the bottom of the pole totem pole there are going to be off. And and N3 is going to be on.
+
+[1594] EEVblog 1594 - Inside a Quantum Computer! with Andrea Morello — Dave Jones (explains)
+context before: That's the DC voltage that comes out of the amplifier chain, but you can think of this as being the current through the transistor. Right? So, bright yellow or green means high current.
+TEXT: By high, I mean half a nanoamp. Yep. Blue means zero. Dead. And because your sensor is basically a one MOSFET which you guys have modified. So, manufactured. That's right.
+context after: It's manufactured designed by us. Uh no, actually no. The electron mobility is not that great. Okay. Yeah, it's is not is not a particular high electron mobility. What makes it special is that instead of being a continuous MOSFET channel, there are two barriers across the channel that isolate isolate a puddle of about 100 electrons.
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before:  zero, and it effectively resets the peak detector circuit. But, if you're sort of doing uh like intelligent measurement on this thing, and you've got an analog-to-digital converter, it could be a microcontroller or something, reading the value out of this, then well, as soon as you've read your peak value, it makes sense to reset your peak detector detector signal straight away, and not just have to rely on a simple
+TEXT: resistor to discharge the thing. So, what do you do? You replace the resistor with a MOSFET like that, and you can apply a signal to the gate and short out that capacitor.
+context after: Bam! You've reset your peak detector circuit. So, peak detector circuits really quite useful. It, you know, a changing AC input waveform, if you only care about what the maximum value, either positive or negative, is, you can just use a couple of simple components and it gives you a DC value out that you can read.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: And in which case the on resistance of the MOSFET does not matter. It doesn't actually affect It's pretty insignificant compared to say a 10k there. But, if you were have But, if you had a say a high-speed op-amp or something that used low-value resistors, then you might not want to actually switch this thing with a MOSFET.
+TEXT: So, in this particular case, what you do is you move your MOSFET out of the feedback path and into the path of the input of your op-amp, which is of course high impedance.
+context after: Now, I've drawn the MOSFET as a switch here. Could be a mux, a MOSFET, a physical switch, whatever it is. Anyway, so we've moving it out of the path, so it's it doesn't matter what the on resistance of this switch is, there's no current flowing through it because it's into the high impedance input of the op-amp here.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (explains)
+context before: There There's our 24-volts input, okay? And then on the other side there, we have our switching converter, which is on the other side. Uh that's 8.35 uh that's the 8.3 volts.
+TEXT: So, that is our charging circuitry for our battery. This is a MOSFET. This is not the charge controller. Once again, four pins shorted, three pins over there plus a gate.
+context after: But, if I up my current to like an amp, and then I plug my battery in, there you go. 200. Yeah, yeah, it's charging. It's showing the LED indicator over there.
+
+[1605] EEVblog 1605 - JBL Charge Speaker REPAIR — Dave Jones (explains)
+context before: I just didn't expect I the rail to jump up like that. I expected it to I expected you to switch it on and it jumps up if it's 5-V fine if you want to power your um amp at 5-V, that's no problem whatsoever.
+TEXT: Um not sure you're going to get your 30 W your 15 W a channel out of it. So, the reason that they have these MOSFETs is because look the input this is off at the moment.
+context after: You have to trust me. Can't see the uh power soft power button, okay? But we power it on and it jumps up. Jumps up to the 12-V or whatever, but immediately jumps back down.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (explains)
+context before: and here's the motor outputs down here of course and and of course, there are two diodes in here. These two here. There are two catch diodes there, but they are the the parasitic as it actually mentions there.
+TEXT: They're the parasitic diode which is inherent in the physical construction of the MOSFET and I've done a tutorial video on this before. So, you can go look that one up.
+context after: And uh um often they are adequate uh for the task, but uh you've got to be very careful um in in terms of uh specking them to, you know, to really know if they are suitable or not.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (explains)
+context before: That's just for I, you know, self- testing and all that sort of stuff just to make sure everything's working fine. And no surprises for finding a real beefy quality high voltage end channel MOSFET on the positive uh supply rail.
+TEXT: In this case, the FQB 8N60C from Fairchild. And it's a 600vt 7 12 amp 1.2 ohm onresistance MOSFET. Very nice. And as you can see, they got four of these paralleled up.
+context after: the drain connection, which is the tab there. They're all connected in parallel, but they've of course got their own uh uh current shunt resistor down here. So, they're using these as a uh basically a uh constant current uh load.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: Now, I can't read this detail on the screen here, but that looks like most of the control stuff for one of the channels. It's duplicated on the other side, so we don't need to see the other side there.
+TEXT: So, yeah, it looks like we've got two shunt resistors here. They look like a couple of MOSFETs, are they? Yep, so they'd be doing your range current range switching.
+context after: Is that your ADC down there? Not entirely sure. If we move over to here, this is the input of course coming from our transformer tap here. We've got input surface mount fusing down there, but that's not designed for protecting your output of course.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: It's not going to work in free air like this. But, hey, if you have a look at the uh, data sheet for this thing, it actually tells you that it's rated for uh, a certain particular air flow over the heat sink.
+TEXT: And of course, the thing is if that heat sink is getting to 160°, then imagine what the uh, junction temperature in the poor little MOSFETs in there are getting to.
+context after: It's like these things will shut down, burn up, the magic smoke will escape. So, it obviously cannot do its rated current with no air flow, but that doesn't surprise me at all.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: Apparently not. So, it looks like I'm going to have to try and find a replacement. I'll get out my uh BM786. 0.2 ohms. I know. I was going to say as my flux pen did.
+TEXT: Got it. Ta-da! One ohm. 0.33 ohms. Got him. Yeah, failed MOSFET. What took it out? I don't know. Does Do the LEDs blink now? Yeah, yeah, yeah. Let's uh power it up.
+context after: Oh, I saw something. No, it doesn't flash. Look at that. And hopefully, we haven't taken anything else out. There you go. It's It's not It's not doing it anymore.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: Now, just using a single MOSFET like this N channel works just fine. If you put a voltage on here, let's say you put 5 volts or you might only need 3 volts or something like that.
+TEXT: Your multimeter is only working from a couple of batteries. It switches this MOSFET on. I won't explain how MOSFETs work, but it switches on. It acts like a switch.
+context after: It's got like 5 or 10 milliamps RDS on. It's on resistance. So, effectively it just works just like a resistor and if the input goes negative cuz you might want to be measuring AC current for example or you you have put the probes in backwards, then it works as a switch.
+
+[f-LTv1GqCMw] Brymen BM786 Power On Fault Investigation — Dave Jones (explains)
+context before: WHOA. HANG ON. WHOA. WOW. That's a weird one, isn't it? I don't know. Anyone want to hazard a guess at that? I'm thinking it's not the switch. I'm thinking that you'd be chasing a red herring down a rabbit hole if you if you think it's the switch.
+TEXT: I'm thinking like electronic power on switch. Doesn't this I think this has a Yeah, this has like a MOSFET to turn it on. I've done a video uh tracing that before.
+context after: Um and maybe something to do with that. Now it's not working at all. Let me get the other one. And it had something weird like this as well saying it wouldn't come on or something.
+
+[397] EEVblog #397 - Turnigy Accucell 6 Charger Teardown — Dave Jones (explains)
+context before: Ta-da! There we go. Some extra big FETs under the bottom there. That one is uh You can see the seal pad under there. Isolating that from the uh thing they've got some white heat sink compound under there.
+TEXT: So, that'll be a MOSFET under there. Is it got And Yeah, it's got another one. It's hard to see under there, but it's got another one tucked up right under there.
+context after: So, it looks like they're wedged between there based on that standoffs under the bottom of the board. So, these screws here will be uh holding down and pressing those uh TO-220 packages against the base, and the base is, of course, used as the heat sink.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (explains)
+context before: So, that's a MOSFET. So, I can see our shunt resistors right away. Okay, so let's have a look at what's going on here. Here's our first shunt resistor, and this looks like I think like I thought that was 10 ohms, but I think that's actually 10 milliohms shunt resistor.
+TEXT: And that's this MOSFET here is the one that's actually shorted Why do you need to shut that off? You wouldn't need Oh, sorry. No, it's going at the positive side.
+context after: Okay, so that's enabled all the time. And then you've got the 100 milliohm, the 0.1 ohm shunt resistor here. That is not a four-terminal jobbie like I have on the micro count.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (explains)
+context before: And right, so they're tapping that off. And that's going to the MAX4239 over here, or 4238. Yeah, they've got the higher bandwidth, so the 4239 I think is the higher bandwidth one.
+TEXT: And then that MOSFET there shorts out the 100 milliohm where Yeah, it gets rid of No, it gets rid of the top part, so they're shorting out the top parts of them.
+context after: So, it shorts out but the top string, I mean. So, uh yeah, that one there cuz we're still in you know reasonably high current territory. So, we need a grunty two grunty MOSFETs there and then we start getting to more little piss ant MOSFETs here.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: It turns out this is a bit of a pain to get out. It's actually um screwed in from the bottom side here. So, you can't even release it uh from the top and then it's soldered uh three solder tabs down in the board.
+TEXT: As So, you got to desolder three major uh tabs for the heat sink and the uh transistor itself. But, it does lift out in one assembly. And that is an MDF 18 N 50.
+context after: So, that'll be you can tell by the numbers on these MOSFETs usually 18 will be the current, so that'll be 18 amps. So, pretty beefy. And 50 won't be 50 volts, it'll actually be 500 volts.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: Well, they can't have resistors in there and do it all analogically that you know, that just doesn't work in the process. They have to do it using discrete MOSFET transistors.
+TEXT: And here's a shot of how they actually do it from Fairchild and it is rather clever. Look at the input here. It actually uses four stacked MOSFETs on the input.
+context after: Two N-channel down the bottom, two P-channel up the top and this is different from the arrangement I showed on the whiteboard before with just the single transistor top and bottom.
+
+[1113] EEVblog #1113 - Is a $5 USB Soldering Iron Useful? — Dave Jones (explains)
+context before: Okay, here we go. Oh, there we go. Pops open. Got a little spring there. That connects through to the uh just the touch pad. Got a big electro in there.
+TEXT: That'll be a one hung low. And yep, just got a a MOSFET as suspected. Just the MOSFET switching there for the 5 volts going straight through to the element.
+context after: And there's the That's the wire going over for the touch. And that will be our monostable. What is that? I called it triple five because well, that's basically what you need.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: So, were we wrong? First thing is just take a look at the pinout, and you can see that well, no, you wouldn't short out like pins 1, 2, and 3 here.
+TEXT: And you certainly wouldn't short out 8 5, 6, 7, and 8 on this side. So, you know it's a MOSFET. So, there you go. You can be led up the garden path there.
+context after: It just happens to be the um the same uh part number 4303. And the other links we got were like started MOSFET 4303 MOSFET. Boom! It's a P-channel MOSFET for maximum power dissipation 4.30 volts.
+
+[1599] EEVblog 1599 - TOP 5 Jellybean Bipolar Transistors — Dave Jones (explains)
+context before: So, the 3055 is the only part I know that basically has an equivalent BJT and MOSFET as well. All right, leave it in the comments uh down below. There's probably others, but the 3055 is most famous.
+TEXT: So, it's a jelly bean MOSFET as well. So, 60 V 3 A SOT-223 package available in the SOT-220 package as well. Then, you can go up to bigger packages here.
+context after: Um and you know, you can get 60 V 11 A for example. And these are MOSFETs. So, if you need the particular requirements of MOSFETs, and I won't go heavily into the differences, but BJTs are basically they're more robust than MOSFETs.
+
+[861] EEVblog #861 - Rigol DP832 PSU FAIL & REPAIR — Dave Jones (explains)
+context before: It's not It's properly um, soldered. And this one? Somebody's had a go at that. Look, you can even see a scratch mark on the board from the iron, I think.
+TEXT: What? And just to verify, we've got it out. Here we go. And nope, that is not normal for a MOSFET. The gate is supposed to be open. Nope, gone ski.
+context after: So, there you go. Replaced. Of course, don't forget to put uh, the heat sink compound on the back of the thing first, just a little bit. And uh, make sure you screw it in nice and tight before you do the solder joints.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (opinion)
+context before: Yes, I'm sorry, there are millions of different MOSFETs out there. I can't possibly cover everyone's favorite MOSFET. Put it down below. I've used this and I can get them in the trillions quantity for, you know, 0.1 cents each and blah blah blah blah blah.
+TEXT: But, I've covered the ones that I thought are pretty jelly, you know, I pretty much standard jelly bean. If you only have to stock the one MOSFET for generic use, yeah, it's going to be these Alpha and Omega jobbies both in the SO8, the higher power SO8 packages, and the lower power uh SOT23s here because they're just like even the SOT23 is it's rather incredible.
+context after: And that's why it's copied by everyone. And that's why it's jelly bean. Anyway, as always, discuss down below and over on the EEVblog forum linked down below. And if you want to help support the channel, me making videos like this, buy some merch at EEVblog.store down below cuz, you know, YouTube doesn't really pay the bills anymore.
+
+[929] EEVblog #929 - Designing A Better Multimeter — Dave Jones (opinion)
+context before: I don't don't think I've ever encountered an issue where burden voltage has been a problem on the amps range really, but there might be some obscure case, but we don't really need to fix that, but we definitely fixed these five 5 milliamp range and the 500 milliamp range we had problems with before.
+TEXT: Ripper. So, there you have it. This has probably been a lot longer than what I intended, but I think this is quite a neat solution. There's other ways to do it as I said, switching having the one input jack and having MOSFETs switching and stuff like that is, you know, a really nice way to do it, but it's big and complicated and expensive.
+context after: So, yeah, it's you know, but just to modify an existing type traditional meter design like this, that probably does the business. The only kind of confusing part is maybe the 500 milliamp range here would have to be marked on that jack.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: Um so, yeah, if you were designing this product and you really you really wanted to use this Sinergy power part because it's ultra cheap, you would also probably um test and spec in um this VB Semi one as well.
+TEXT: Just in case you couldn't get one or the other, you might be able to substitute these. And, you know, you'd have to go into all the details. And, you know, but for some application like this, you know, as we saw in my repair video, just a generic MOSFET pulled out of a uh laptop did the job just fine.
+context after: Right, so let's say that you couldn't get either of these. Let's say they didn't have stock or you couldn't get them or whatever, right? You're you're you're stuck. How do you find a replacement?
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (opinion)
+context before: Um and but you jump up to 3-V gate voltage, for example, then you start talking in the 10s of amps here, and then you go to like That one there is 4-V.
+TEXT: Look at that. So, as long as you you know, above 4-V, you start hitting that, you know, peak performance, uh, type stuff. Fantastic. Of course, you're not going to be getting these in the millions, uh, of units like we could on the other ones, but, you know, there's a few manufacturers here.
+context after: Um, it's Infineon is the original, you know, International Rectifier/Infineon, um, is the OG here, but it's available from, uh, these other usual, um, suspects here. And, you know what, 50 cents a pop?
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (opinion)
+context before: Well, we don't exactly know cuz there's just not enough detail in the data sheet to, you know, not exactly what's wrong. Apparently, you can actually read out some registers and stuff like that.
+TEXT: But obviously, we're not going to go to that effort. So, basically there it comes down to two things, whether or there's something internal to the chip like there's some blowing output MOSFET or something like that and it's actually detecting that or whether or not it's something external.
+context after: Now, look, we've got some ceramic caps up here and of course, I've done many videos on ceramic capacitor failure and things like that. Very fascinating stuff, by the way.
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (opinion)
+context before: And we've got 100k here, and we've got a 1 meg and a 22 mic here. Should roughly do the trick. I think we need to build this up. I think this circuit, because we're using uh BJTs here, could be a bit critical in terms of getting the ratio between cuz this value needs to be high unless you've got a massive cap here.
+TEXT: You've only got a very small amount of base current. This resistor has to be high, and there's going to be a balance between these values. So, could be a little bit tricky unless you went to MOSFETs, but I'm going to try and build this up with BJTs and a MOSFET pass transistor up here.
+context after: See how it goes. Breadboard time. And here's my circuit built up on the breadboard for my MOSFET here. I've got an IRF 9110. Um that won't be the final one I use in my circuit, but that's what I had to hand, so I'm going to use one of those.
+
+[1599] EEVblog 1599 - TOP 5 Jellybean Bipolar Transistors — Dave Jones (opinion)
+context before: Um and you know, you can get 60 V 11 A for example. And these are MOSFETs. So, if you need the particular requirements of MOSFETs, and I won't go heavily into the differences, but BJTs are basically they're more robust than MOSFETs.
+TEXT: Like, you can't easily damage them static-wise, and they might have more better overcurrent capabilities and stuff like that. You can think of BJTs if you need just simple, rugged kind of stuff, and and easier potentially easier to drive over MOSFETs, which are a bit more trickier.
+context after: And BJTs can work at really ultra-low uh voltages as well, whereas MOSFETs might have particular higher requirements and trickier to drive and bias and you know, stuff like that.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (opinion)
+context before: You switch on the gate voltage and the transistor switches on. As a switch, in probably the majority of applications, you're going to be using MOSFETs for switching purposes. You know, you switch on a relay load, you switch on an LED load or you're pulse width modulating some LEDs or something like that or using it as a switching element in a DC to DC converter, something like that.
+TEXT: This is what MOSFETs are really good at. They're better than BJTs. It's why they're more popular. When you're talking about switching frequencies for like high frequency DC to DC converters which can go into the megahertz region, They're faster and more betterer than BJTs for that.
+context after: So, MOSFETs universally popular these days. Of course, that doesn't mean nobody uses BJTs anymore. BJTs still have advantages in like linear applications. They're more robust. You know, there's no gate to blow, for example, via ESD or something like that.
+
+[1162] EEVblog #1162 - Little British Monitors — Dave Jones (opinion)
+context before: So that's important. And let's get this out. So we've got green solder mask. All that black rubbish. We've got silicone leads, too. Very nice. So there's our Bluetooth module with a Bluetooth antenna just flapping around in the breeze there. But, yeah, you can actually disable it.
+TEXT: Does it look like... Is that a MOSFET to disable the power? Sort of the... Oh, no, that'd be a regulator, sorry. Local regulator powering that, separating it. 'Cause you don't want that Bluetooth rubbish. Seriously, I mean, you know, if you want Bluetooth, just go and buy it.
+context after: Just buy a cheap-ass pair of Bluetooth speakers. But I don't. Everyone's got different requirements. Okay. Everyone wants to see the main capacitor brand, of course. BC. Yeah, BC Capacitors. They're actually Vichy. They're actually a reputable brand. You just don't see them that often, really.
+
+[711] EEVblog #711 - Mailbag — Dave Jones (opinion)
+context before: I've had in a long time. Oh, by the way, the Little Boy bomb, it was actually a uranium gun-type device. The plutonium device was the Fat Man, which had the plutonium implosion device with the plutonium core and all the separate charges around the outside.
+TEXT: Even today, actually, you can buy well, you can if you're American, you can buy certain types of MOSFETs and other devices which they deem to be suitably fast enough for use in implosion-type plutonium bombs. So they're like heavily export-restricted and things like that.
+context after: So yeah, there are a couple of parts out there. If people actually know the specific ones I saw them once many years ago. I haven't, I don't remember them offhand, but yeah. Please leave it in the comments if you know specific parts that are used
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (opinion)
+context before: Now we've got three, or maybe even four with meh. Beauty. And of course, we don't need the amplifier. We've just got times one amplifier in there, it can go straight into the ADC, the multimeter chipset, whatever.
+TEXT: So, you don't need anything, but you've just got you know, now you've got five MOSFET switching configuration here, but you know, MOSFETs are reasonably cheap, as long as you have the space for the layout, and you are happy to buy the shunt resistors and everything else.
+context after: It's actually a pretty good solution. I like it. Now, of course, if you wanted to actually improve, if you weren't happy with the 50 millivolts burden voltage, you could say decrease all these range resistors by an order of magnitude, so this instead of 10 milliohms could become 1 milliohm or maybe 5 milliohms, you know, choose your value.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: I mean, you got to remember even this like like equivalent part over here that had 4303 in the title is a very different MOSFET. It does not have the ESD protection built in.
+TEXT: It's It's very different. So, if with that if that was key to your product and you put accidentally specified this one in thinking, "Oh yeah, no worries. It's got to be equivalent." You looked at the top level specifications and looked at the part number 4303.
+context after: It's got to be the same, right? I'll just whack that in my bill of materials and then you couldn't buy your Sino power one and you went to to make 100,000 of your fatty novelty gadget widgets with your APM 4303 and you find that, well, 5% of them come back as failure in the field because little Johnny's been zapping the terminals when they take the batteries in and out.
+
+[1708] EEVblog 1708 - What's This SMD Part? — Dave Jones (opinion)
+context before: So, we know that this is a motor drive transistor. So, it's probably a MOSFET for example. And we've got a reverse protection diode here to prevent back EMF from, you know, damaging this thing.
+TEXT: So, that's looks like yeah, we've got a MOSFET driver transistor here. Now, the part number DB30AD. Pretty sure that's a red herring. That's the manufacturer's code. So, if you search for DB30AD transistor, I don't think we're going to find anything, okay?
+context after: 30 V silicon bipolar transistor available at Mouser, right? It's not going to be that, okay? Could be, but I don't think so. No, these are old school a classic jelly bean part the BC549, okay?
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (opinion)
+context before: No worries. So, I hope you enjoyed that look at a jelly bean MOSFET. If you did, please give it a big a thumbs up, and as always, discuss down below.
+TEXT: Yes, I'm sorry, there are millions of different MOSFETs out there. I can't possibly cover everyone's favorite MOSFET. Put it down below. I've used this and I can get them in the trillions quantity for, you know, 0.1 cents each and blah blah blah blah blah.
+context after: But, I've covered the ones that I thought are pretty jelly, you know, I pretty much standard jelly bean. If you only have to stock the one MOSFET for generic use, yeah, it's going to be these Alpha and Omega jobbies both in the SO8, the higher power SO8 packages, and the lower power uh SOT23s here because they're just like even the SOT23 is it's rather incredible.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (opinion)
+context before: Got a lot of interest. So, I've taken it out of the uh plastic enclosure um because uh what I thought was uh probably like a low-side battery protection um device down here.
+TEXT: Um a lot quite a lot of people were saying, "Nope, these are uh dual uh MOSFETs and there's got to be a control circuit somewhere um either under the inductor or underneath or something." So, I did get it out and uh yeah, it was um it was stuck in there.
+context after: So, but I managed to uh get it all out and tada! Looks like there is. That's where the MOSFETs are. So, there is a control. So, this is the battery protection controller.
+
+[928] EEVblog #928 - Jaycar DMX RGB LED Lights Teardown — Dave Jones (opinion)
+context before: But I hate the white solder mask, it's hard to see the traces underneath. Real pain in the arse. Okay, so let's power this turd up and see how much current she draws. There you go, it's only 1.5 watts. That's full power, wow. So there you go, the green draws 5.6 watts,
+TEXT: 0.47 amps or thereabouts, and the red is a measly 1.4 watts. This is hopeless. This is assuming, of course, that the MOSFET is completely on. And look, even the pattern is not complete. I'm assuming that, like, it is like not universal pattern in there.
+context after: Like it's not symmetrical, consistent, whatever you want to call it. Well, the blue, 5.7 watts as well. So blue and green are the same, but the red is completely piss poor. The blue, though, does seem to have a symmetrical pattern on it. Yeah, and the green, but the red, oh!
+
+[872] EEVblog #872 - Mailbag — Dave Jones (opinion)
+context before: Yeah, this part over here. Let's see if we can get a clue on that. We've got ourselves an LN324 over here with a whole bunch of passives around there, so that's doing some amplification of some description. We've got two power pins going out to the connector here,
+TEXT: but other ones are going into some trennies here and looks like we've got two big power resistors there. They are current shunts perhaps? That puppy there looks like it might be a little MOSFET or something. And oh, yeah, okay. Some thermal vias there.
+context after: There's got to be a chip on the other... Actually, let's take it out. Got to be a chip on the other side of the board. There, because that didn't make much sense. Ta-da! Bob's your uncle. There you go. Well, I didn't expect that.
+
+[329] EEVblog #329 - Tracking Pre-Regulator LTspice Simulation Part 2 — Dave Jones (opinion)
+context before: of temperature range of 50 degrees C, and that's not surprising because the typical base emitter junction temp code is going to be about 2 millivolts per degree C, so there you go, I quite like that circuit, so thank you very much John, I think I'm going to use that one, it's
+TEXT: better than the MOSFET circuit recommended in the LT3080 data sheet, seems to work a treat, and if you want to discuss this, jump on over to the EEVblog forum, and if you like this type of video, please give it a big thumbs up, catch you next time!
+context after: 
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: You just won't You might not find these on Digi-Key. Anyway, so the 4831, that's an N-channel uh enhancement MOSFET, and the 4307, that's a P-channel enhancement MOSFET, and interestingly, the 4303 is another P-channel enhancement mode MOSFET.
+TEXT: So, why you'd have two um almost like 30 minus 30 volts, 11 amps, right? 30 volts, 17 amps. Okay, so that one's a bit higher, 9 milliohms max. 80 Okay, so this one's granted, but why you wouldn't use this one in all of the every situation in here.
+context after: You can see around here, this one has ESD protection on the gate here. Yeah, here we go, ESD protection 8 kilovolts, whereas this one does not have the ESD protection.
+
+[1717] EEVblog 1717 - Rigol's INSANE New $999 350MHz Oscilloscope: TEARDOWN — Dave Jones (opinion)
+context before: This will be like the 50 ohm path and then you'll have another path coming here uh which will be the uh high impedance 1 meg uh path as well.
+TEXT: So, there's nothing uh fancy there. That uh MOSFET um that we saw, I don't know what that's doing, switching off power to the circuit. But from the power measurements, it doesn't seem like it's doing much, so I'm not sure what's going on there.
+context after: So, have they actually tweaked that much from the 4000? Not really. It's going to be very similar. Well, I mean, you know, it's relayed out slightly, but it's going to be basically um the same front end that they've got in the um HDO 4000.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (opinion)
+context before: Like a mux chip can be a simple 4051, for example. You know, 4000 series CMOS or the 7400 series equivalent. They're very common in multimeters. If you open up multimeters, you'll find lots of uh 74HC4051s, for example, doing a lot of the switching in there cuz they cost like cents each.
+TEXT: But, if you wanted to get rid of the mux, you could do that and you could just have it as an amplifier like this, for example, straight into your amp, positive negative in, and you could have your resistor, and then that could go into a MOSFET.
+context after: I've drawn a JFET there, but whatever. You know, that can go into a switching MOSFET, and then you can go like that, and bingo, Bob's your uncle. You can actually switch in uh whether or not you want your times 10.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (opinion)
+context before: So, we'll do that, and we'll set it to, say, 10 volts again. And I changed the output MOSFET back to the one that was giving the trouble. I've got the IRF 7407 in there, and let's take that gate voltage directly from down here, and let's simulate this sucker again, and see what happens.
+TEXT: And bingo, we are getting a There you go. There you go. It's working. It's working a treat again. Not a problem. So, there you go. That was the MOSFET that was giving us trouble before if you measured our gate voltage from the output there.
+context after: So, obviously, there's a there's a trap there in the model of how the LT, either the LT 3080 model, or how the MOSFET or the interaction of the two, you'd have to go in and look at the spice models themselves and know how the spice engine works and does all the simulation and things like that and maybe I'm someone who's more knowledgeable on that sort of stuff
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (opinion)
+context before: So that's VGS 10 volts, and over here is at VGS 10 volts. It's exactly the same specification, and at 9 amps. So, you know, you've got to look at these little things. Like the Banner, don't always believe the Banner spec. It might be 265 milli-ohms, but in this particular case,
+TEXT: it's at 9 amps. It's not, and at VGS 10 volts, it's not at the full 18 amps rating and whatever VGS you happen to be using at that. But for an application like this, as I said, it's going to be completely equivalent. Let's try 20N50 at RS.
+context after: No, and they've corrected it to 2050. Thanks, RS. Useless. Tits on a ball. Right, so you might want to go to, like, a 600-volt version. Is there a 20N60? You can guess stuff like this, but you might want to go into, like, parametric searches.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (opinion)
+context before: Now, what I've done is I've um compared to another unit because I have one. Sure enough, there's no NPN uh junction in there. So, this is not a bipolar.
+TEXT: I think this is a MOSFET. Get the multimeter back out. So, what we expect is actually I've got the external power plugged in. We expect a positive signal on there, and I've compared that with a good unit, and yeah, we get 3.3 V there.
+context after: So, the micros obviously like you know, doing that and switching that on. So, it but it's not doing that. So, I don't know. That's going to be hard driven, so we can't just short it out cuz then we'd be shorting out the output uh gate, but we could actually remove that resistor there and actually um you know, connect that to the input, and that would latch on the circuit.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (opinion)
+context before: It searches the partial term. But for some reason, RS and element 14 don't do it. But Digikey, Mouser, Arrow, and Finechips, and Octoparts, and all the rest. They don't do it. You can come against it like that. But hopefully you learned that really, you know, the parametric search is one of the
+TEXT: better ways of doing it. Of course, if we didn't have an exact match here in Australia, then I would have had to choose an equivalent. So I might have had to go with like a 20N50 or something like that. And that's a metal tab.
+context after: And then, you know, if that's the only one I could have got in stock, then eh, so be it. You know, I could have made do. And for those wondering what this MPN is here, that's the manufacturer's part number so you can actually search by that and you don't need the asterisk, 18N50.
+
+[-bPGrSSaXhE] Goldshell LBC LBRY ASIC Miner Teardown & Troubleshooting — Dave Jones (opinion)
+context before: And it's red. It... well, it almost flickered to green for a split second there, but no, it's staying red. So this was a previously working good controller board. So it's almost certain that this hash board is faulty, and given those capacitors on there,
+TEXT: that is potentially what the issue is. But I also noticed, and I'm not sure if it's going to show up here, but the soldering on some of the MOSFETs down there is not very good. So yeah, whereas it's better on the other unit.
+context after: So I'm not sure if that's anything to do with it, but soldering is not good on those at all. But anyway, yeah, it looks like maybe some capacitors have failed on that board, and it's definitely the hash board confirmed. Thanks.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (opinion)
+context before: So, yeah, we've we've got parallel jobbies. Definitely. Or so we or a single and they've just put two in parallel to handle the extra current or so Although, this isn't consider this like hugely high power.
+TEXT: All right, I don't know why they couldn't have just used the one MOSFET, but anyway, I mean obviously you can narrow it down based on uh cell voltage and stuff like that, but we're probably not going to find it here, right?
+context after: You're better off going to like LCSC maybe. Okay, we're in battery management ICs. So, we want SOT23-6. SOT23-6. There you go. So, we want both of those. I just picked the first cab off the rank there.
+
+[366] EEVblog #366 - USB PSU Troubleshooting — Dave Jones (opinion)
+context before: I don't even need my oscilloscope there to probe that switching point to see if it's switching or not. I know it's not switching. It's the exact same DC voltage.
+TEXT: So, clearly that DC-to-DC converter is not turned on. Why? And well, um what I suspected is that it may have been something to do with Q two around there and I've been I've actually played around with the software in here.
+context after: I've been playing around for a little while and so, what I decided to do is short out Q two and that's exactly what I did. Just take that out of the equation and I replaced R2 under there.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (opinion)
+context before: So, we definitely need our back-to-back diode protection, just like we did last time, and I had a diode bridge across here to protect these lower ranges. Now, we could just use the diode bridge again, or back-to-back Schottky's, or whatever, or you know, whatever you wanted to do.
+TEXT: But, aha, we can reduce our bill of materials cost by reusing the same component, and using a property of our big fat beefy MOSFET here we've probably paid, you know, quite a few uh cents for this uh MOSFET here.
+context after: We want to get our money's worth out of here. If you know your MOSFETs, which you should, it has a diode in here called a body diode because it's in the body of the construction of the MOSFET.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (opinion)
+context before: And the goal here is to have a different shunt resistor value for each and every range and we'll switch in the particular shunt resistance. The reason that you want to do that is then we can eliminate the amplifier as we'll see later.
+TEXT: So, yes, we're going to need a different shunt resistor for each one, but MOSFETs are pretty cheap, shunt resistors are pretty cheap, and we might have the space available cuz we've gotten rid of the extra fuse.
+context after: We've only got the one 11 amp one up here which is shared between the amps, the milli-amps, and the micro-amps here. So, stick with me. So, we've added in the extra now.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: Um at VGS 4.5 30 continuous drain current at minus 10 of 14 amps at 70° at 10 V. Yeah, 13.5. So, yeah, um it looks like Yeah, there is one other manufacturer equivalent of that part.
+TEXT: Um so, yeah, if you were designing this product and you really you really wanted to use this Sinergy power part because it's ultra cheap, you would also probably um test and spec in um this VB Semi one as well.
+context after: Just in case you couldn't get one or the other, you might be able to substitute these. And, you know, you'd have to go into all the details. And, you know, but for some application like this, you know, as we saw in my repair video, just a generic MOSFET pulled out of a uh laptop did the job just fine.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: There you go. We don't get the LEDs doing their cycle thing anymore. Let's see if we get our voltage on the terminals over here. Ta-da! 8.3 and 8.3. There you go.
+TEXT: Winner, winner, chicken dinner, or at least well, it's at least back to what looks like normal functionality, whether or not that MOSFET's good enough for passing passing the current and all that sort of stuff.
+context after: We're only talking like we're not talking anywhere near like 12 amps um or something like that. So, like I think these MOSFETs are like grossly overrated uh for the task, and there's nothing wrong with that, it's very common.
+
+[388] EEVblog #388 - Fake Apple USB Charger Teardown — Dave Jones (opinion)
+context before: Well, I've done a quick reverse engineering to this. Hopefully, I've got it right and here's the basic circuit for it. It's a Dave CAD drawing of course and this is the Apple branded charger which of course is a clone.
+TEXT: And it speaks for itself. It's pretty bloody simplistic. There's no main controller I see at all. It's an absolute shocker. But this non-Apple branded one is even worse. It doesn't even contain a MOSFET.
+context after: It's just a cheap ass 2 W class B output transistor and SS8050. You got to be kidding me. And the other transistor in there is a TV chroma KSE13001.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (opinion)
+context before: Look at that. So, as long as you you know, above 4-V, you start hitting that, you know, peak performance, uh, type stuff. Fantastic. Of course, you're not going to be getting these in the millions, uh, of units like we could on the other ones, but, you know, there's a few manufacturers here.
+TEXT: Um, it's Infineon is the original, you know, International Rectifier/Infineon, um, is the OG here, but it's available from, uh, these other usual, um, suspects here. And, you know what, 50 cents a pop?
+context after: But, you know, you can get stock. So, you know, once again, over at Digi-Key, um, if you go over to single MOSFETs over here, let's have a look. Only got a couple of, uh, manufacturers here, but, you know, you can get this sucker in stock, and, um, yeah.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: Not nothing at all. So, I won't even bother breaking out the thermal camera. No worries at all. The charger chip, I mean, we we just started, so, you know, but no, I don't think it done.
+TEXT: I don't know how long it takes to charge this. I'm not sure the charge rate. I think it's like it's pretty slow. Um, so, yeah, I I don't think there's any worries whatsoever with that MOSFET in there.
+context after: So, even though it's lower rated, it seems to be doing its function just fine. And in these sort of applications, you'll find that almost any MOSFET would have done the job provided has the maximum voltage rating.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: So, I'm going to let them discharge, and then I'm going to plug it back in and see if it charges. And just to check the temperature again, finger test.
+TEXT: No. Those MOSFETs running as cool as an ice cold stubbie. No worries. Okay, it's been running for ages, but still hasn't gotten down there. But these are big ass batteries, so let me plug this out.
+context after: There you go, charging. Charging. Yep. I think we're good. So, yeah, I still need, you know, more experiments, but I've had this like running for like an hour and hour or something on full brightness, and nothing gets warm here.
+
+[1292] EEVblog #1292 - $2 Meter vs JVA Electric Fence Controller! — Dave Jones (opinion)
+context before: Perhaps haven't looked at the like exact part. That little tiny pic you don't need much and that does our and control for safety. And Paul talks about that in the podcast, of course.
+TEXT: So, we've got 12 to 24 volts DC in. And as I said, we've got the first stage step-up transformer here. There's just a MOSFET, doesn't need to be hugely grunty, not like the output SCRs over here.
+context after: And then output diode and then some feedback resistors here to allow them to monitor the charge voltage on the capacitor bank as itself. And of course, this has to be grunty enough to charge fully charge these things to get all your eight joules into there within the second or whatever the cycle period is.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (opinion)
+context before: So, yeah, you had to get the entire board out to actually look at this sucker. Now, what is this? What is this? It's a 50 K Is that 50 or is that an That's a five, not an S.
+TEXT: That's a 50 K U. So, we can look up that little six-pin jobby. So, yeah, um so, they would certainly be uh MOSFETs. So, yeah, my bad. Um I just assumed that they were low-side battery protection.
+context after: But, nope. So, we'll have a search for that SMD code. Uh 50 K U, I don't know. We might get lucky, we might not. But, then again, you can look for battery uh protection ICs, six-pin uh jobbies.
+
+[1708] EEVblog 1708 - What's This SMD Part? — Dave Jones (opinion)
+context before: This is just a quick and dirty. Aha, side motor L left, I guess. So, this is in some sort of robot motor drive left and right motors or something.
+TEXT: So, we know that this is a motor drive transistor. So, it's probably a MOSFET for example. And we've got a reverse protection diode here to prevent back EMF from, you know, damaging this thing.
+context after: So, that's looks like yeah, we've got a MOSFET driver transistor here. Now, the part number DB30AD. Pretty sure that's a red herring. That's the manufacturer's code. So, if you search for DB30AD transistor, I don't think we're going to find anything, okay?
+
+[929] EEVblog #929 - Designing A Better Multimeter — Dave Jones (opinion)
+context before: So that is one possible solution just to do away completely with all this crap up here and just do it all from the one jack with switching but that's not what I want to do here.
+TEXT: I want to solve the problem for the existing jacks that we've got available. One of the reasons is is that those MOSFETs or a relay or whatever they're really big ones have to be big and beefy.
+context after: They take up a lot of room inside a multimeter. So you've got to clear out all the space. So I'm going to propose sticking with using the amps jack and the 11 amp fuse and the 10 milliamp shunt for the 500 milliamp range but this 50 milliamp range hey let's go back to the existing solution here and just use we don't even need this uh 10 this point 1 ohm shunt here.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (opinion)
+context before: There's our input. Okay, so there's our 5-volt input and there's our boost converter is 4.4 now. Something is but it's not it's not working. I think we might have a faulty controller.
+TEXT: That was probably the least likely scenario because like these battery protection things and MOSFETs they kind of like fail all the time. They're a bit notorious. So damn. I can get in there.
+context after: I I've already spent enough time on this today. I want to do other stuff unfortunately. So I'd really have to resolder that. Extend that to get it out to physically get that out.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (opinion)
+context before: If you remember the circuit from the previous video, we actually had the a diode bridge across the input for the milliamp ranges only. The amps range kind of takes care of itself.
+TEXT: The amps range is usually a big, beefy sort of nichrome resistance wire shunt in there. So, it's it's not going to melt away anytime soon. And the MOSFET's going to be able to handle itself.
+context after: It's big and beefy. You've chosen well. And the HRC fuse is going to blow if you put any voltage across there which exceeds that 10 amp current. It'll just It'll blow.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (opinion)
+context before: So, pretty much, we want 2.5 mV maximum drop across this MOSFET here when it's switched on and all this circuit is disconnected on our high current range. Our maximum resistance there is going to be 2.5 mV divided by the 2 A maximum current there, 1.25 mΩ.
+TEXT: So, our FET there needs one bit error is going to need 1.25 mΩ. So, that's actually a very low value for a MOSFET. If you actually want to meet that, you need a really, really beefy MOSFET.
+context after: I've decided to use one of these. It's cheap, readily available, in a nice package. I like it. And it's going to be near enough. It's got a rated maximum RDS on or a maximum maximum resistance of 8.4 mΩ, but that's going to be at the maximum current.
+
+[1119] EEVBlog #1119 - Designing a 1kV Isolated Oscilloscope — Dave Jones (opinion)
+context before: with every probe you need. So we give you four low voltage one switched one by 10 by probes and four high voltage 100 times probes. Nice. And if you really want we can give you 200 times probes cuz then you can look at 1.6 kV.
+TEXT: Ooh. Excellent. Yes. Excellent. But most MOSFET solutions stop at around about 5 600 volts something like that. That's right. But there is There's a lot more technology coming along.
+context after: They have things called sick. Uh have you heard silicon carbide fits? silicon carbide fits. Okay. They're rated at 1200 volts. And you know people are starting to use that 1200 volts.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (opinion)
+context before: So you can create smaller dimension devices um in high voltage than you can in silicon. Uh and also it has a miraculous thing called a two-dimensional electron gas which is a quantum mechanical gas that scoots along the surface and allows you to make very efficient lateral devices but so much more efficient than than a vertical silicon device.
+TEXT: Much more efficient than than um you know a MOSFET than it could ever dream to be. Theoretically 6,000 times more efficient. So there's a lot there. >> Wow. Um, you said quantum gas.
+context after: How does that I've never heard that term before. >> Yeah, it's a it's a beautiful thing. It's called a a two-dimensional electron gas or two deck. Um, it was first um I'll say theorized in the '9s and then experimentally verified.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: Hi, in a previous repair video, linked in if you haven't seen it, I repaired one of my failed Aputure Amaran HR672C LED studio lights. And spoiler alert, recommend you watch it first cuz it's quite interesting how I traced it down.
+TEXT: It's a failed MOSFET and simply replacing the MOSFET, which I salvaged from a dumpster laptop, which was pretty cool. I fixed the light. So, that was a winner winner chicken dinner.
+context after: But, I thought I'd do a follow-up video actually showing you how when I first actually found this MOSFET, I went to search for it. I knew it was a MOSFET and I searched for it and I couldn't find any data on it whatsoever.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: So even if it was being used at 5 amps, we're like well under half of its maximum power dissipation. So yeah, I I just knew this part was going to be fine and it was going to work.
+TEXT: So for something like this application, that's all I I could get away with using almost anything. And in terms of maximum voltage here, 30 volts once again this is over specified.
+context after: We've got two battery packs in series here absolute maximum at 8. whatever volts each. So you know something 17 18 volts is all that's required. So 30 volts was well over specified but the the replacement part was identical voltage spec.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: But that one does not. Yeah, I I think we've got a dead LED. What are the odds of having a dead lead as well as a shorted MOSFET? LCSC do have them in stock, 50 cents.
+TEXT: So, I could I can get an exact replacement. I really like the idea of bunching some something, I think. So, let's see if we can find a replacement MOSFET inside a dumpster laptop.
+context after: This is an Acer jobbie, uh Aspire 9420, and it has Intel Centrino dual technology, and it's Windows Vista ready. Ah, the dream combination of Centrino and Vista. Beautiful. Now, the reason I'm doing this is cuz laptops are usually a decent source of like little uh SMD power converters.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: 4303. Yeah. Look at that. Can anyone come up with a reason why that should be one ohm in circuit? Everyone in the chat seems to think that this is failed.
+TEXT: I asked everyone to press F in the chat if they think the MOSFET's failed. And it's failed. By engineering consensus, that MOSFET is kaput. It's reliable and rugged. Here it is.
+context after: Apparently not. So, it looks like I'm going to have to try and find a replacement. I'll get out my uh BM786. 0.2 ohms. I know. I was going to say as my flux pen did.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (opinion)
+context before: So, and which is our ground is here. Yep, it does. So, there you go. So, that is ground. So, it's just simply latching that uh down to ground. No worries.
+TEXT: I'm suspecting that cuz the bipolar transistors are more rugged than MOSFETs. If If you're going to have a transistor fail out of these two, your money should be on the MOSFET.
+context after: Which in so I'm just going to go to my MOSFET kit, find a P-channel MOSFET, and I'm just going to replace that. Cuz it takes 2 seconds. Wiggle wiggle wiggle, yeah.
+
+[1620] EEVblog 1620 - Deye Solar Hybrid Inverter EXTREME TEARDOWN — Dave Jones (opinion)
+context before: Uh these are not in channel uh MOSFETs here. These are actually IGBTs. Uh in particular, Q3 and Q8, they are actually these are MagnaChip uh 650-V field-stop IGBTs um here.
+TEXT: So, not N-channel MOSFETs. So, you know, a bit overkill there. But generally these days it's easier to get IGBTs, uh which there's a symbol for an IGBT if you haven't seen it.
+context after: Uh it's easier to get those in high-voltage uh jobbies than it is uh to get uh MOSFETs generally in uh like high-voltage ones. Back when I was working on like high-voltage ones, it was hard to get a 600-V MOSFET when I was a boy.
+
+[242] EEVblog #242 - Hakko FX-888 Soldering Iron Hack — Dave Jones (opinion)
+context before: You might be thinking that we can do away with this resistor cuz we already have a resistor here. Well, if you do that, when then the voltage drop across the base emitter junction here will actually swamp out this LED and switch the red LED off.
+TEXT: So, you can't just do away with that resistor. Otherwise, you'll find the red LED will never come on. But, you could replace that with a MOSFET for example and do it that way.
+context after: You can get away with out the resistor. But, anyway, I thought this was quite a neat solution and it would work. Unfortunately, it requires a red green bicolor LED with a common anode common anode connection because there's the anode of the diode and they're connected together.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: Anyway, let's not go there. So, there's a little tip. Don't fall for these ads that, you know, thinking, "Oh, this must be an equivalent. Maybe, you know, Element 14 have determined that this is an equivalent part." No, it's not.
+TEXT: You can tell A from the package, B, this is an N-channel, a high voltage job, 300 volts. Thank you very much. And yeah, no, these aren't equivalent. These are just paid ads.
+context after: But, yeah, so the only stuff we get is the SM4303 from the data sheets. And if you go and look at them all, there's a there's a Japanese one.
+
+[1541] EEVblog1541 - What is this Blown SMD Component? Redux — Dave Jones (opinion)
+context before: So, you leave it alone. And of course, uh VDD and pin two here is ground. So, that's what we uh saw here. That's what we suspected that that one might might be a ground there.
+TEXT: And of course, as you saw the RC uh circuit here powering this thing, and Bob's your uncle. We've found it, right? It It has to be this part. There's absolutely no way.
+context after: It's not like it It may not be this actual manufacturer. There may be someone else. Uh Shi- Shikues? Shi- Shiyues? I don't know how you pronounce that. Never heard of them before.
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (opinion)
+context before: The best solution I've seen before this is a three-transistor one plus the MOSFET as well. And well, it seems to work reasonably well. There are other solutions, I'm sure, but I rather like this one.
+TEXT: It's kind of neat. We could probably do it uh differently using uh MOSFETs um if we wanted to, but I'm using uh bipolar transistors here. And this is a standalone one.
+context after: There are other ways you can do these sort of things where you can switch them off using a microcontroller, like if you've got an automated uh if you want your software to be able to switch off the unit to go into power save mode after a certain amount of time.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: Have I got any spare MOSFETs? Um let's have a look. What what what what They're all D-packs. I got through-hole um MOSFETs. I've got TO220 MOSFETs. That one turns on.
+TEXT: But that one does not. Yeah, I I think we've got a dead LED. What are the odds of having a dead lead as well as a shorted MOSFET? LCSC do have them in stock, 50 cents.
+context after: So, I could I can get an exact replacement. I really like the idea of bunching some something, I think. So, let's see if we can find a replacement MOSFET inside a dumpster laptop.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (opinion)
+context before: And I didn't recognize the markings on it. So, I had to actually not only find the manufacturer, but then to figure out exactly what MOSFET it was, but also potentially find a replacement as well.
+TEXT: Even though in this video I actually got a replacement MOSFET, which is not similar specs at all from a dumpster laptop and it worked just fine, which is excellent.
+context after: But, I thought wouldn't it be interesting to do as a video showing you A, how to find that how I found that specific manufacturer of that MOSFET and then potentially finding actual replacement parts for it, either the identical replacement part or like an equivalent apart, especially if the specifications matter.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (opinion)
+context before: So, if you want to switch on your 500 mA range, well, this becomes 0 V. You'd have 0 V on here. You'd have 0 V on here. And you'd have your 5 V or whatever switching on that MOSFET up there.
+TEXT: And once as I said, these ones down here, these three MOSFETs down here carrying 50 mA or less or five or hundreds of microamps, they can be just nothing MOSFETs.
+context after: You know, they don't need any power handling capability at all, really. So, and the RDS on it practically doesn't matter. Any MOSFET's going to do the job. Provided, of course, that the VGS on is suitable here.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (opinion)
+context before: But yeah, basically there at a VGS of say 3.3 volts, you know, there it is, you can do that, you know, 100 odd milliamps there if you're you know, extrapolate that and drop it down, for example.
+TEXT: Um and if you do it at 5 uh volts, you know, you're going to get like 400 milliamps out of it. So, it's okay, but it's nothing to write home to your mom about.
+context after: Tell us the price, son. Okay, let's go to Digi-Key. I'm going to be using Digi-Key and LCSC. Uh so, Digi-Key for a Western supplier and uh LCSC as a catalog uh Asian uh supplier over here.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (opinion)
+context before: 1 ohm. Anyway, we might have found the culprit. I think that's a three. Hang up. Put a bit of spit on it. That's a three. There was a little There was a little thing on there which made it look like an eight.
+TEXT: 4303. Yeah. Look at that. Can anyone come up with a reason why that should be one ohm in circuit? Everyone in the chat seems to think that this is failed.
+context after: I asked everyone to press F in the chat if they think the MOSFET's failed. And it's failed. By engineering consensus, that MOSFET is kaput. It's reliable and rugged. Here it is.
+
+[331] EEVblog #331 - Mailbag — Dave Jones (opinion)
+context before: We looks like we have some protection circuitry in there. Now, somewhat surprisingly, this actually looks quite decent. It looks like it's got uh at least a couple of devices on there.
+TEXT: So, a couple of the probably a couple of MOSFETs and a controller in there would be my guess. And uh so it's quite surprised in this FA [ __ ] battery.
+context after: There we go. Tada. Let's have a look at what we got here. And I'm looking through my beautiful Mantis Elite microscope here. It's really a gem. It does work.
+
+[35] EEVblog #35 - Inside the Varta 15 minute NiMH Battery Charger — Dave Jones (mention)
+context before: It's got to sense the It's very critical and we'll talk about this later, but it's very critical that senses the battery temperature. So I can guarantee you it's going to have an individual temperature sensor on one on these on each one of these terminals or maybe inside these little springy things here.
+TEXT: Maybe it's inside there, but I I guarantee you there's an individual temperature sensor for each battery direct contact. And because we're talking about 8 amps at least minimum 8 amps 9 amps even per battery to meet their specifications, this thing's going to have some heavy duty wiring per channel and it's going to have some really beefy transistors, MOSFETs, you know, solid state relays, something like that to actually get the individual
+context after: control to each battery. And it's going to have one heavy duty power supply in there as well to cater for all that. This thing requires a lot of power.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (mention)
+context before: Um yeah, but it's all about the tempco. You put it in a toaster at 60 and a freezer and it moved 4 millolts. Yeah, you can work out what the ppm is.
+TEXT: Um, ah, Norwegian guy asks, "How do I spot the difference in logic level MOSFETs and normal ones when looking at a data sheet? So many parameters to understand." Um, the easiest way is to find one that's branded logic level and that takes all the, you know, because usually they'll be, you know, logic level these days means, you know, under five volts, you know, usually they're not talking about five, they're talking
+context after: about 3.3 or thereabouts. So, it should work at 3.3. Um, so yeah, find one that's branded logic level in Digi Key. I think you can even parametrically search for or mouse or whatever you can parametrically search for logic level MOSFETs.
+
+[861] EEVblog #861 - Rigol DP832 PSU FAIL & REPAIR — Dave Jones (mention)
+context before: And there's an error amplifier here, which then taps off a divider on the output. And then there's a reference voltage, which will be uh, your adjustable control coming from your DAC, or from a pot, or whatever on your power supply, which sets your output voltage.
+TEXT: And then this error amplifier just drives your transistor, be it a MOSFET, or a BJT like this. It doesn't matter. There's various configurations. And that error amplifier is just a loop that just keeps this output voltage at a constant level, because due to op-amp action here, these two voltages will the op-amp will do anything it needs to on the output here to keep these two voltages the same.
+context after: So, if you set 1 volt here, then you're going to get 1 volt here. It'll drive this transistor and do whatever, and that's how it creates regulation and regulates your output.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: That's why I breadboarded the thing up. Never trust these application notes just to work. Oh, you got to build the things up and test them, let me tell you.
+TEXT: And since then I've tried various configurations. I've tried the other one here with the PNP configuration, but that one was a dog too, especially at higher currents. And I tried some FETs in other configuration and various various other things to try and stabilize the loop on this thing cuz internally it's an op amp and well, you know, if you don't get the loop stable, which I won't go into,
+context after: it can it can oscillate and that's exactly what we saw, especially at high current load. So, I thought I'd have another crack here using another circuit we you've seen before, which I'll link in down below as well if you haven't seen it.
+
+[950] EEVblog #950 - Nixie Tube Display Project - Part 2 — Dave Jones (mention)
+context before: Now, there's an potential issue here, and it can be a major one. And so, we'll actually measure this and show why totem pole outputs aren't really suitable. We really need an open collector or open drain output like this.
+TEXT: I've just drawn generic FETs in there, don't worry about that. They can be MOSFETs, they can be BJTs, whatever. Now, let's assume that we've got the 170-V supply, 22-k dropper, we've got our Nixie tube, we've got one of the segments, of course, turned on being driven low, but we've got all the other, you know, nine outputs here actually, you know, just floating, flapping around in the breeze.
+context after: Now, if we're driving it with one of these microchip drivers that has a totem pole output, it's got a high HV pin on a high voltage active pin like that.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (mention)
+context before: I guess I was carried away by like the non-HRC fuse up here and this really ridiculously bizarre milliamp and amp terminals that are actually physically joined together. A totally redundant terminal.
+TEXT: I And then they had MOSFET switching on the different ranges on the different current ranges. I guess I got carried away with that and I got carried away with talking about like how lovely all this insulation stuff is and the insulation sheets on the other side and it's otherwise very apart from the quirk that was happening here, like, you know, quite nicely designed and laid out if somewhat
+context after: basic. I forgot to mention though, there is no zero zilch nada input protection on the volts ohms amps jack. Let's follow the money. It goes straight into this I don't even know if this is a ceramic resistor divider or whether or not they've just got the actual individual resistors in there like this, but it basically goes straight into that resistor divider network here.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (mention)
+context before: 
+TEXT: Hi, it's component replacement source in time, because sometimes when you're doing a repair and you've got a failed part, it's, Murphy says, it's not going to be a part that you actually have in stock or necessarily an equivalent part. Anyway, I was doing a repair video, which you'll see in a future video, and one of the things which has failed, there was more than one, is a MOSFET.
+context after: So, I've removed the heatsink here. Focus, you bastard. Not sure if you can see that, but anyway, it's an MDF18N50. So, let's jump back over to the datary sheets. This is from a company called MagnaChip. Now, of course, I want to do this fairly quickly, so I could probably, you know, maybe find this on DigiKey or Mouser overseas, but of course, I'm from Australia and I, you get it relatively quickly, but, you know, i
+
+[890] EEVblog #890 - ArmourCard Active RFID Jamming Teardown — Dave Jones (mention)
+context before: Is that three? Oh no. 13.56. So they are using they're you is that a 13.56 MHz crystal there? Interesting. Anyway, we should be able to get what micro that they're actually using there.
+TEXT: But as I said, we didn't see any uh discrete MOSFETs on the output. So obviously it's uh it's changed and then they go into how it all works with the web browser what serving processing system are they trying to do a broader get a broader patent so that they can potentially patent troll people I hope not and then we've got the physical embodiment of the thing and uh
+context after: oh look even example uh pass like you know example applications and everything else and then we've got a uh photo of the thing and but uh it used to looks like It used to be called payuard.
+
+[281] EEVblog #281 - BK Precision 8500 Electronic Load Teardown — Dave Jones (mention)
+context before: And no surprises in the layout and the amount and type of circuitry in here. We've got a mains transformer for powering the thing. We've got We've got some big current shunts over here.
+TEXT: We've got some current shunt power resistors down in here. We've got some MOSFETs hooked onto some large heat sinks with some pretty decent fans here on each one. I rather like this actually, this dual arrangement here with the fan inside sucking the air from these vent holes here through the heat sink and boom, out the back like that separately on both of these.
+context after: And that mains input over here and some control circuitry. We'll take a look at that. We've got a number rubbed off there. Don't like that. We've got a couple of relays, which I love, of course.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (mention)
+context before: And that became one of those crossing the chasm moments because the single-ended flyback uh wide ranging ACDC power supply became a standard. They made millions of those of those um computers all over the place.
+TEXT: Initially they were very standardized on our MOSFETs. Of course eventually everybody else came into the business but by then we had a whole barrage of of uh patents and by June actually by February so we launched it in November and by February was when uh Tom came with this idea of you know why don't we just make a cell out of this instead of a racetrack.
+context after: We figured that that was about three times higher density. Uh and so by interesting >> 1979 so that's only eight months later >> we launched the hexfed and that that became because of the 3x difference in d size that became commercially um obvious against against the bipolar transistor >> and and that was the IRF130 wasn't it the first >> well the very first part was the IRF 100
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (mention)
+context before: So, they've gone with basically the most complicated um, solution possible. Uh, putting cells in series um, and or parallel um, for this operation. So, yeah, they've gone to town.
+TEXT: Love to see the schematic on it, but interesting, huh? So, if you enjoyed that, please give it a big thumbs up and as always you can discuss down below and uh, check out the follow-up video to this which is uh, the one looking at um, this particular MOSFET and how to find a just searching for the data sheet for that and uh, finding a suitable replacement.
+context after: Catch you next time.
+
+[1270] EEVblog #1270 - Electronics Textbook Shootout — Dave Jones (mention)
+context before: These are basically component-based textbooks. Thyristors. Then the op-amp. Basic op-amp circuits. Special op-amp circuits. Active filters. Oscillators. You know, voltage regulators and basic programming concepts for automated testing. Let's go to Malvino down the bottom here. Malvino's got, once again, diodes. It starts out with like semiconductors.
+TEXT: You might get some semiconductor theory, you know, doping and p-n junctions and things like that. But basically diodes, BJTs, amplifiers, power, JFETs, MOSFETs, thyristors, frequency effects, differential, operational amps, linear op-amps, circuit applications, active filters, non-linear, oscillators, regulators, and that's it. It's near identical index.
+context after: And then Boylsted down here. Look at this. Diodes, BJTs, Jacinda over 4, FETs, FET biasing, op-amps, power amplifiers, digital, some linear digital ICs, feedback and oscillator, and some voltage regulators. Exactly the same thing. If we go up to Sedra Smith up here, this one actually starts out with signals and amplifiers
+
+[1wrin8FYtEo] eevBLAB #72 - BUSTED! Medtronics Open Ventilator FAIL — Dave Jones (mention)
+context before: Okay, you know, there's a few hundred in stock around, uh, 3,000, okay, maybe, okay, you might be able to get it. But, yeah, like, even if you could get that, like, you don't have the software, you don't have anything, you don't have the files in CAD format,
+TEXT: it's, it's pretty much useless, unfortunately. Commandee? Turbine? Anyway, there's the blower command board, okay, so there's, there's all the MOSFETs, for all the temperature sensor and things like that, okay, it's great that they're releasing the schematic, but unfortunately, without it in electronic form, and without the software to go along with it,
+context after: and without all the mechanical stuff, it, it, you know, it's basically useless. Tantalumless. Can't use those tantalums, those pesky tantalums. Uh, Powerpack, but that's it. I mean, that's it for the files that they've released. They, uh, somewhere they said that they might, uh, the files, like, this software, um, in the future, but, uh, that, that doesn't help out now.

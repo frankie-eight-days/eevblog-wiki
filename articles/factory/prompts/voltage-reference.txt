@@ -1,0 +1,1233 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: voltage reference
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 240 passages drawn from 132 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# voltage reference`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: I like it. So that resistor effectively the load on there on the voltage reference effectively determines the LED brightness and that'll be a based on a formula which will find it further on in the data sheet.
+TEXT: Now they've got a nice little section here on the internal voltage reference and how it works and it's it basically works the voltage reference is internal like that V positive negative it's inside like that and it always generates 1.25 volts pretty much regardless of how you've got it configured externally but it will generate 1.25 volts so if you hook let's call them well they're called R1 and R2 here and that's what
+context after: we'll call them in our circuit as well. Don't worry about it now we'll go into it later but that will generate 1.25 volts across that resistor there if you've got it wired if R1's wired directly across those pins so that you can use Ohm's law 1.25 volts divided by R1 generates a current which goes down there and hence flows into here but there is also an what they call call an error term
+
+[440] EEVblog #440 - Atten PPS3205T-3S Triple Output Power Supply Teardown — Dave Jones (explains)
+context before: I think it's about uh 0.25% or something like that. Couldn't quite get the uh temp cal of the whole thing, but it's in the order of like uh 10 ppm per degree C for the gain.
+TEXT: Uh differential non-linearity less than half uh at significant bit, and uh it's monotonic over the whole range. So, you know, it's a reasonable DAC. Does the business. Serial interface, and of course, um the absolute reference in here is uh not good enough at 0.25% to match the uh 0.05% absolute performance of this uh power supply, but as I've said many times before, it doesn't matter cuz you can calibrate that out.
+context after: This thing could be, you know, have a 5% reference. Makes no difference whatsoever. It's all about the stability and the drift with temperature. So, as long as it's uh stable, not a problem.
+
+[709] EEVblog #709 - EDC 4601 AC Voltage Standard Teardown — Dave Jones (explains)
+context before: And as we saw in our previous uh DC voltage standard, all the magic happens in the hand selected by somebody with a gray beard and the tongue at the right angle, uh Zener voltage reference.
+TEXT: So, they age these things and they've got special uh Zeners which are super super stable and they've obviously hand selected it at a particular uh current there and they've measured it 6.1 uh 517 V and then the whole thing is tweaked and uh calibrated and uh yeah, you don't touch it from that point cuz these uh Zeners are specifically uh aged and tested been to be extremely low drift.
+context after: And that's what you need in a precision reference like this, whether it's AC or DC, it doesn't matter. Uh the the uh Zener diode itself could be like plus minus 5% absolute tolerance, doesn't matter.
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (explains)
+context before: But, I don't know. I'm shooting this video as I go along. I don't actually know if we're actually going to find anything here as like an exact match. So, either it is a fixed voltage regulator, and this is the enable pin, and this is the feedback pin from the output of the inductor here, or it's an adjustable regulator, and this is the enable pin, and this here
+TEXT: and this resistor is part of the feedback voltage divider network. And in this particular case, if it was if it isn't adjustable one, it might be harder to find a direct equivalent because you're dealing with you know, the the chip the formula for calculating the voltage reference and everything internally could be very different between devices even though they're identical pinout.
+context after: So, you could certainly come a cropper there by thinking, "Oh, yeah, I can just throw in any adjustable one." If it's a if it's a fixed voltage regulator one, yeah, you can probably get away with just pretty much throwing in anyone, and it's probably going to work.
+
+[413] EEVblog #413 - Mailbag — Dave Jones (explains)
+context before: So, I guess that's my only uh gripe with that, but and as you'd expect, there's not much to it at all, really. Pretty much exactly what I expected. There's a precision low offset op-amp.
+TEXT: It's the OPA335. That's got about 5 microvolts offset voltage, not much at all. And then it's got a few precision resistors there, presumably, and a voltage reference up here, 1.24 volts through a 620 ohm resistor straight to the test probe, so that just generates a voltage directly across the resistor there, and it multiplies that and gives you an output.
+context after: And that's all there is to it. That's all you need. Now, my only concern here is why he's got a 100 nanofarad cap on the output, presumably trying to I don't know reduce noise or something like that, but you don't need that at all.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: This is going to tolerate any bypassing on your supply rail. And we won't go into noise and things but these aren't like the lowest noise reference parts. They're just jellybean parts.
+TEXT: They're you know in the same order as like a voltage regulator for example. But they're the specs are quite adequate. So, if you just need a basic voltage reference from analog to digital converter or maybe uh your microcontroller using the internal converter it might have an internal reference, you might need something a bit better than that.
+context after: Well, all the baseline one you're going to go looking at is the 4040 and 4041. And as I said, they are available in different grades at different price points.
+
+[779] EEVblog #779 - Batteriser: How To Measure Battery Cutoff Voltage — Dave Jones (explains)
+context before: And as I showed in a previous video, for a modern electronic active electronic product, might be typically 1 V per cell. And if it you use multiple cells, multiple batteries in your product, then well, this is per cell voltage.
+TEXT: And let's take it as 1 V. So, you might have some an active cutout detection circuit, a comparator for example, and a voltage reference inside your product that when your battery voltage gets down to that 1 V here, then it turns on your low battery detect LED or shuts down the product or you know, stops functionality, does whatever.
+context after: So, how do you test this product, whether or not you designed it yourself or whether or not you've actually bought the product and you want to measure where it actually stops functioning, at what battery voltage?
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Now, you can compensate for that in software or uh parts with uh further gain stages or something like that, you can actually calibrate it and tweak it, but yeah, that's a bit nasty.
+TEXT: But uh so sometimes you might want to actually power your microcontroller instead of from a regular voltage regulator, you can actually power them from a voltage reference. One of those precision uh you you know, 2 and 1/2 V voltage references if your micro goes down that low or a 3.3 V voltage reference or a 5 V voltage reference.
+context after: And you can get those in like 0.1% or something like that, 0.2% for a dollar or so. So um you can actually power your microcontroller from that provided that your microcontroller and the other circuitry you're powering from it doesn't take more than its maximum allowable current.
+
+[579] EEVblog #579 - Precision Low Current Source — Dave Jones (explains)
+context before: It's got to work, as long as you take into account your op-amp, as long as you're ensuring that that op-amp has enough output margin there on on the low side output drive to drive your voltage reference.
+TEXT: Oh, and for those curious about the noise, no on the 1 milliamp one, no, there's bugger all noise. That's just the noise of the test setup, pretty much. The good thing about this voltage reference, it does actually have a noise reduction pin as well, so you can put a bypass cap on there if you really want to get the noise down.
+context after: And if we have a look at the 1 microamp current source output, check this out. Look, 50 mV per division. That is awful. We've got some real nasty crap going on in there, but is it the actual reference itself being unstable or is it external noise?
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: And if you have that, as we said up here, it's we want a range of 1.2 V over which our LEDs light up. Or 1.25 is near enough for my purposes.
+TEXT: So, ideally, all we want to do is connect the voltage reference directly onto these pins here. And if we did that, if we actually did it as per the circuit that's shown here, if we grounded this, grounded this, and this connects to the Vref output there, then this would the chip is designed to work over a range of 0 to 1.25 V.
+context after: So, these LEDs will light up at 0. It would, you know, the first LED will light up, and then all the way up to 1.25 V. That's a standard circuit.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: I've added a couple of things. I've added a limit lead on the output of the current limit comparator down here. So, when the output of the current limiter goes high and turns on the transistor and goes into current limit mode, it also lights an LED.
+TEXT: So, we can visually see and if that happens really fast and you'll see should see some flicker on the LED there or something like that. Um. I've added a 2.5 volt voltage reference because a power supply is no and power supply is only as good as its voltage reference because that's where additional noise will come from.
+context after: That's where it gets its absolute values from. I've used an LT1009 here. Slight overkill in this instance, but in the final design, it's like a 0.2% 2.5 volt voltage reference, but it will allow us to drive the voltage reference input of a PIC microcontroller or something like that which which we can use for our digital panel metering and we'll have to go into that in some further video.
+
+[f_SdM6sXHD4] FNIRSI SG-003A Process Meter + DSO-TC2 Oscilloscope & Transistor Tester — Dave Jones (explains)
+context before: I'll put some high-res photos over on the EEVblog Flickr account, and you can uh analyze that to your heart's content, but there's got to be more on the bottom.
+TEXT: Um so, this is just your output stuff. I don't know, you know, cuz the the whole point of these is that you have, you know, a decent voltage reference in there, and then a decent uh you know, then they implement a decent current reference and stuff, and how that's adjustable, and um these are like incredibly useful.
+context after: Um could be like a very nice platform to do like a hacked um process meter or something. Um cuz I don't know how much this cost. Let me check the price.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: It's not a nice round number. It sucks. So, uh and you have to compensate for that in software. You've got to actually do some math in software. It's not that bad, but there's a reason they make these voltage references which correspond to the like a power of two to match your analog-to-digital converter.
+TEXT: In this case, 2.048 volts, but you can get 4.096 volt voltage reference. But, 2.04 volts is more common. So, we're going to use that. So, look what happens if you're using 2.048 volts, okay, on maximum ADC value and you divide that by your 4,096 bits, bingo, you've got a nice round number of 500 microvolts per bit.
+context after: And if you have a look up here of when you translate this into your current shunt values, you end up with a very nice round 500 microamps per bit resolution.
+
+[562] EEVblog #562 - More SMD Oven Reflow — Dave Jones (explains)
+context before: And down here, look, there you go. It warns in Will Robinson, max safe temperature 260 degrees C. That's why it's more important to get, yeah, to get to ensure that your thermal oven doesn't go over the maximum temperature, rather than, you know, get the exact
+TEXT: thermal profile right. Especially, like, you know, critical parts. Because even some data sheets, I'm not sure if this one does, but, you know, it does for, say, voltage references, for example. They will have graphs of its performance before and after reflow. And, you know, and you can see, like, the mean shift.
+context after: I haven't got the graph here, but you can actually see the shift in performance of the reference after reflow at a certain temperature. And they only characterize that, well, based on their recommended reflow profile and stuff like that. But it can really, you know, for precision parts, it can really have a difference.
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (explains)
+context before: I don't think there's anything too interesting there. There's another ADG 1309 mux in there. Let's have a look at these others. It might be hard to see, but down in there we've got some analog devices, AD4610s, and they're very, very schmick. There's another one down there.
+TEXT: Very, very schmick. Oh, that one's upside down. All the electrons are going to fall out. Oops. Very schmick. JFET, low noise, op amps, low, everything, super-duper, whiz-bang, Bob's your uncle, op amps. Oh, nice. And there's our voltage reference right there. Analog devices, AD586, precision 5-volt reference.
+context after: No worries whatsoever. Got to have some 4000 series, or in this case 74HCT series, 4052 mux. No worries whatsoever. And we've got another one. We've got one up there, if it's ever going to focus. Yeah, 4053. Nice. Still use them, like, 40 years later.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: And if this is measuring the consumption of your battery, then, you know, if you're only drawing low currents from your battery, then 35 milliamps could be quite significant. But, if you're drawing, you know, if if your product draws a couple of amps or something like that, then you may not worry about that.
+TEXT: And you may like the effect of the bar graph display mode. And checking our reference voltage, there is 1.246 volts, pretty close to the nominal 1.25 volts claimed. And if you remember this error term here of 75 microamps that we included in our calculations for the offset voltage here, how accurate is that?
+context after: You cuz you remember it was a nominal value of 75 microamps. Could have could have been a maximum of 120 microamps. Well, let's measure the thing. There it is.
+
+[540] EEVblog #540 - HP35670A DSA Repair - Part 3 — Dave Jones (explains)
+context before: So, uh you know, the exact value may not actually matter the fact that it's um you know, set to something or they you know, the firmware could have changed or they could have offset it in software or whatever, but 6.5 I'm not going to worry about that at this stage.
+TEXT: So, let's measure So, the negative reference is okay. Positive one. Hello. 3.7 and bouncing around. Well, the whole idea of a voltage reference for an ADC is that it's supposed to be stable is the number one requirement, not necessarily accurate, but stable and that's jumping around like a jack-in-the-box.
+context after: So, something has failed. Let's check it out. Now, this is where a schematic would uh come in pretty darn handy. I mean, I have no idea of the layout of this.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: I mean you can't get a.3 volt reference because the band gap the the physics of band gaps I mean stop at you know 1.2 volts. I mean um I think there might be some weird physics ones which do eight or something band gap voltages but I don't know quote me on that.
+TEXT: So you have to divide it down. So, you've got to get either your precision resistors uh to divide it down, i.e. point.1% um precision resistors divide it down and then you got to buffer it, of course, with a a follower um an op amp follower or um you can use um ordinary resistors and uh and or and trim it.
+context after: You can trim it of course um with a trim pot. So, that's how you get a.3 volt reference. Once again, you'd buffer it. Um but then uh you know um if you're using ordinary resistors just watch the temp code.
+
+[930] EEVBlog #930 - Mailbag — Dave Jones (explains)
+context before: 650 cell in there. Emmerich. Ooh, there you go. Don't know of Emmerich, but it sounds good, probably got protection built in. Don't know. There's our internal memory, presumably there's our internal logging memory on the micro SD there, but yeah. All the business is happening right down the bottom here.
+TEXT: And we've got ourselves a linear technology LTC6655 voltage reference, that's pretty schmick, and is par for the course in this type of instrument. I love the old school ceramic package on that. Beautiful. Anyway, that looks quite professional inside, no worries there whatsoever. My only small gripe on the
+context after: design of this thing is that yeah, you can get in there and kind of adjust these from the top here, but these ones down here are going to like, they just get in the way. I probably would have put them down either side like that, and had the screws
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: And that's well, that's hopeless, you know, if you feed in 100, you know, if you're measuring 100 bits out of something that represents a voltage of, you know, 61.035 millivolts.
+TEXT: It's not a nice round number. It sucks. So, uh and you have to compensate for that in software. You've got to actually do some math in software. It's not that bad, but there's a reason they make these voltage references which correspond to the like a power of two to match your analog-to-digital converter.
+context after: In this case, 2.048 volts, but you can get 4.096 volt voltage reference. But, 2.04 volts is more common. So, we're going to use that. So, look what happens if you're using 2.048 volts, okay, on maximum ADC value and you divide that by your 4,096 bits, bingo, you've got a nice round number of 500 microvolts per bit.
+
+[1037] EEVblog #1037 - Solving Ceramic Capacitor Cracking — Dave Jones (explains)
+context before: Don't worry about the uh little artifact there. Um a slot around your mounting holes like that so that uh less mechanical stress is transferred through the board uh to your components surrounding it, but it's still provides the mechanical rigidity.
+TEXT: And by the way, multi-layer ceramic capacitors aren't the only uh electronic components to be susceptible to stress. If you get a really high-precision voltage reference, uh you'll find that they are um it's quite common to find them actually surrounded by an isolation slot like this around the chip.
+context after: They might come in an SO8 package like that. And if you see a slot routed around like that, it means that they're actually uh trying to isolate any stress, any flexion on the board like that into the chip because uh the mechanical stress can couple into the voltage reference and it can drift and do all sorts of, you know, really subtle things.
+
+[733] EEVblog #733 - Mailbag — Dave Jones (explains)
+context before: which is available on these pin headers here can be configured as either a DAC output, a buffered DAC output with like 25 milliamps current capability, or an ADC input. Both of them are 12 bits. I'm not sure of the absolute performance, you'll have to look at the
+TEXT: details. Got a built-in 2.5 volt voltage reference, 0.25% absolute, 10 ppm typical, 25 ppm max drift on the thing, not too bad. 400k samples per second, reasonably quick for a 12-bit converter. So you know, as far as linearity and you know, all that sort of jazz, I don't, I haven't looked deeply
+context after: into the details, but jeez, to have all that flexibility in the one chip, really, really interesting. It's got a 0 to 10 volt input range, so single-ended input range, you can do bipolar, like minus 5 to plus 5, or it can do a direct ADC
+
+[1046] EEVblog #1046 - Mysterious Digital Voltage Doubling (LCD design) — Dave Jones (explains)
+context before: And, so they're 5 volts peak-to-peak signals, channel A and channel B. And you'll note that they're out of phase. When one's zero, the other's high, and vice versa. So, our LCD is hooked across those two pins. And, this actually gives you a good indication of what's going to happen.
+TEXT: Your voltage reference, actually, instead of being ground here, we shift it up to here. And you'll note that it goes up by one division, and down by one division. And, if we look at our math function here, we've got A minus B, which is basically a differential function, and the scale is 5 volts.
+context after: And the commenters said, oh, maybe I had the scale wrong, it's doing it wrong. But, no, look, it's actually 10 volts peak-to-peak. But, is there something funny happening in this telescope? Is this math operator incorrect? Well, we have a way to verify this.
+
+[294] EEVblog #294 - Mailbag — Dave Jones (explains)
+context before: Oh, look at that! It's gone through a fair bit of trouble. It's got a photo of each part. Nice. Well done. There's the schematic. Let's have a look at it. What have we got here? Alright, let's see if we can get this. Let's have a look.
+TEXT: What have we got? We've got an ATtiny85 there. That's powered from VCC, which is yeah, powered from, I don't know what it's powered from. USB port over here. Okay, we've got our USB port. VCC directly on the chip. So the, unfortunately, because I don't see another voltage reference on there.
+context after: Am I incorrect? So the voltage reference would come from, hey, don't know what's going on here. There's a battery connected directly across VCC. What's going on there? I guess that's optional. You wouldn't want to have the battery and the USB connected at the same time, because otherwise you'd
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: If you see a TO-92 in the uh secondary side of a main switch mode power supply, then it's most likely a TL431. It's available in SO-8, old school DIP, and a microwave rubbish.
+TEXT: So, you can use it as a basic shunt regulator reference like adjustable uh like this if you want, or as I said, a fixed uh 2.5 V. Um but, it's it Where it comes into its own is all the different applications you can use it for due to its slightly different topology uh compared to the 4041.
+context after: So, here's a precision high series uh current uh regulator, for example. Once again, they've got a Darlington uh configuration here for uh like series pass uh transistor there. It's got a You can use it with a 7805.
+
+[72] EEVblog #72 - Let's Design a Product — Dave Jones (explains)
+context before: They're a tiny little uh tiny little um three-pin device and they just um give you an output once they get a below a predetermined level and you can buy them in different voltages.
+TEXT: In this case, I bought the TPS um 3809L30, which is actually a 2.65 V um reference device. So, when the input voltage from the battery drops below 2.65 V, which is close enough to operational range of 2.7, it um we well, in this case, it's got a negative output, so it switches the LED off.
+context after: So, I'm going to have a feature on the the LED is on when it's above 2.65 V and the LED turns off when it's below. So, if the LED's off, that's determines that it's you know, you've got low battery.
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (explains)
+context before: All the clamping is exactly the same here. Some resistors have changed here for the MELF, for the chipset here. Because the multimeter chipset has changed. We'll try and get the number in a sec. But, it is 25,000 count versus 10,000 count. So, it's different, but, basically, exactly the same arrangement.
+TEXT: Input protection, apart from the count value and the accuracy in it, same. So, it's a DM1109EN for the older 702. And there's the reference ICL8069DCZR. And the new one, wah, wah, wah, wah, same voltage reference. But, of course, the accuracy comes from the resistors and the calibration.
+context after: But, wah, wah, wah, wah, they've laser trimmed that off. So, they don't want us to know what that chipset is. Why? But, as far as the oscilloscope goes, you can see, of course, dual channel 50 MHz versus single channel 10 MHz are significantly larger.
+
+[525] EEVblog #525 - Bank Note Acceptor Teardown — Dave Jones (explains)
+context before: It'll be interesting to see if that's matched on the top side and why it's actually angled like that. Then we've got two extra LEDs in here. Once again, they will probably be matching on the other side with photo transistors over there to actually detect that.
+TEXT: So yeah, really, I don't see any magnetic unless it's on the top side board. On the bottom side board here, I don't see any magnetic detection at all. And as far as the chips go, we've got an LM336 2.5 volt voltage reference there and just a couple of dual op-amps LMC6062 and LMC 662.
+context after: So really, not much doing at all. Couple of transistors there presumably for driving the LEDs at quite a high brightness, I'm assuming. Apart from that, that's it. And that plate on the top side there, I maybe had a thought that maybe it's some sort of filter or something, but I don't know.
+
+[Wwz_fdU17aQ] 121GW Multimeter Thermal Test — Dave Jones (explains)
+context before: Hi, just a quick second channel video to test the new 121GW multimeter. I got two of the new model, well the new version in, the 1707 dated model. And I've got one in the thermal chamber and testing, what I want to do is test the tempco on this
+TEXT: because we have inside the new one, we have a new improved temperature, new improved, voltage reference plus lower tempco and lower tempco divider resistors. Everything's improved in terms of the drift characteristics. So I thought I'd ramp it in the thermal chamber and check it out.
+context after: Anyway, for comparison, I've got the MetraHit Ultra in there and also the Keysight U1282A. The MetraHit Ultra is a pretty schmicky type one. I forget the tempco, but it's a real expensive meter, so we'll whack it in there and see what happens. Currently we're at 22.6, so we're at room temp.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: It doesn't matter which device you've actually got. But so, we know what our V out is. Our V out is 3.3 V. And we actually want to calculate R2 here.
+TEXT: So, we know what R1 is. We're using 220 ohms for that. So, you have to rearrange the formula here. So, if you do that, R2 equals V out on 1.25, which is the voltage the internal voltage reference inside the device, and then you subtract one, and then you want to multiply that by R1.
+context after: So, if you punch those numbers in, you will get a value for R2 for 3.3 volts. So, if we want 3.3 volts over 1.25 minus 1 times R1 is 220 ohms.
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (explains)
+context before: The Because we only want to go to central. Shush. Okay, the the output of the uh sorry, the long-tail pair is differencing okay, the non-inverting input here of actual signal and the negative feedback here which is 330k into 6k2.
+TEXT: All right, now for AC it's 330k into 6k2, for DC it's 330k into 6k2 plus 100k. This means that for 60 volts there, we're expecting maybe about 15 volts there and indeed the bias for here is from a 15 volt reference derived by a 47k resistor from the 120 volt rail and 6k2 down here.
+context after: Okay, so another diff pair up here to give us our different signals. Uh this is our voltage amplifier stage here. So that's basically a mirror. Okay, we then have MJE 340 and 350 pre-drivers MJE 340 and 350 drivers MJ15024 and 025 output stage.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: So, it's going to have any input amps they might need for the low uh current ranges, things like that. And um and maybe the ADC is under there as well.
+TEXT: That remains to be seen. Interestingly, we've got two little plastic They No, are they metal as well? I don't know. Anyway, we've got two uh cans. They must be either uh if they are a voltage ref If they are plastic, then it'd be for uh stopping air flow over the voltage reference.
+context after: Don't know where the voltage reference is yet. And there's our precision ceramic divider. Look at that. And then we get to see a lot of cutout stuff happening. This like at first glance, I thought, "Aha, this Look at all the cutouts in there.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: But uh so sometimes you might want to actually power your microcontroller instead of from a regular voltage regulator, you can actually power them from a voltage reference. One of those precision uh you you know, 2 and 1/2 V voltage references if your micro goes down that low or a 3.3 V voltage reference or a 5 V voltage reference.
+TEXT: And you can get those in like 0.1% or something like that, 0.2% for a dollar or so. So um you can actually power your microcontroller from that provided that your microcontroller and the other circuitry you're powering from it doesn't take more than its maximum allowable current.
+context after: But you can actually do that. So when you're designing power supplies like this, don't be afraid to actually power your microcontroller from a precision voltage reference. It can work and it can be very handy.
+
+[777] EEVblog #777 - Keithley 177 Microvolt DMM Repair — Dave Jones (explains)
+context before: this data sheet on its own, which is what we've actually got. We've got a combined ICL8052A and an ICL71CO3, and they've got the two different pin-outs on here for the two different chips on the one data sheet. Oh, that's confusing. And then we've got this
+TEXT: Oh, that's confusing. But anyway, check it out, it's a pretty schmick device, it's designed for 4.5 digit meter, from 200 millivolts to 2 volt at full scale, and then you have the resistor dividers, of course, to do everything else. But it's got a medium quality reference in it,
+context after: 40 ppm typical on board, it's not too shabby at all, 5 puff input current, oh, that's pretty awesome. It's got guaranteed zero reading, it's got guaranteed accuracy plus minus 1 count, that's where that spec comes from, over the full 20,000 count range, it's got 2 microvolts peak-to-peak noise over the 200 millivolt range,
+
+[a4Xpsenpd6E] The Amp Hour #643 - Calibration & Repair with Ian Johnston — Dave Jones (explains)
+context before: sorts of stuff. But, you know, shouldn't be an excuse. But anyway, I did get special permission to go home late tonight because it's, you know, getting towards the evening here. So, you know, special permission to turn up late for dinner because I'm recording.
+TEXT: Oh, boy. So what a lot of people might know you for, though, is the. It's a bit confusing. Make sure I get it right. The PDVS2. Now it's the mini. It's the voltage source, the 10 volt voltage reference source. And you sent one into my mailbag like donkeys years ago, wasn't it?
+context after: Was it a mailbag? It was a mailbag and it wasn't even a prototype. It was just. I just put it together. Right. I was trying to gauge. That's right. That's right. And people wanted one. Right. Didn't they? After the video, people. No. What actually happened was during the video, you said the words, Ian has got to make these.
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (explains)
+context before: But, uh yeah, you need to work out um the output voltage and then um you'll be able to get the equations down here cuz it has to do with the internal reference voltage.
+TEXT: There it is there. You've got your internal voltage reference. So, that could uh potentially vary between uh different brands and different uh types of variable switching uh chips. So, the calculation calculate the output voltage based on the resistor uh divider could change.
+context after: So, inductor selection and all this, you know, choosing your inductor and capacitor values and stuff, they're going to change, as I said, depending on the switching frequency. Uh there can be vast differences in switching frequency uh between chips and that could really matter.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (explains)
+context before: Uh offhand, it's it's not a hugely highly spec'd meter. It's got a really nice voltage reference in it. Um, this is kind of a weird thing. Sort of late in the development process I I was thermally testing it and the results weren't as good as I liked.
+TEXT: Um, you know, there was some drift in the thermal chamber and stuff like that. And we looked into it and you know, it was like the voltage reference wasn't that good but we're trying to lower the cost, you know, so I decided no, let's put a nice voltage reference in there.
+context after: So I think we're using the same voltage reference as what's used in side the what is it? The $600 five or $600 Keysight U1280 series. It's the analog devices I can't can't remember.
+
+[735] EEVblog #735 - Mailbag — Dave Jones (explains)
+context before: 2 minute teardown. It was fully functioning the day it was taken out of service. It would carry on for, yeah, I think it would carry on forever. These things generally do. Not much that can go wrong in them. How can a hobbyist test
+TEXT: their DMMs? Bonus question. Well, you can get voltage reference. It depends on what class DMM you've got. If you've, like, on eBay you can buy voltage reference. Like for, I think they're very cheap. Even for like $20 or something from China you can get like a, an accurate
+context after: or reasonably accurate, you know, like .05% like nominal, you know. 10 volt voltage reference. And it might have a voltage divider. For example, the DMM checker's another one. I think the guy has shut down, he's not making those anymore. Anyway, there's quite a few on there.
+
+[727] EEVblog #727 - How To Kill An Opamp — Dave Jones (explains)
+context before: And I've got a precision current source that I've built. And if you want to I don't know, have I shown inside this before? It's not pretty. There you go. It's not pretty, but there is a small board down in there which is pretty schmick, actually.
+TEXT: It generates a really precision 1 amp current. So it may not look like much, but anyway, this generates the current reference for the microcurrent calibration. And I was just checking the calibration of this where I actually feed in 1 volt into the input into this thing.
+context after: So it simulates the 1 volt output from the microcurrent using my voltage reference here. And you'll notice that it's reasonably close to... I've just switched this thing on. So let me plug it in and watch what happens. Oh, am I doing it again?
+
+[802] EEVblog #802 - Mailbag — Dave Jones (explains)
+context before: you don't need. You're typically going to operate this linear. You don't want any switching stuff in there like that. But yeah, that's a little heater board. Actually I suspect that might be rather clever. What I think's going on here, this is a pure guess, because I
+TEXT: actually doesn't have the schematic for the heater, I don't think. No, anyway, what's going under there is the voltage reference which is the max 63 50, is an SO8 or some, you know, surface mount package just mounted on the top of the board, on the top of this red board
+context after: under there, just like the others are mounted here. And then I reckon there's a power resistor, SMD power resistor on the bottom of this double-sided board. That's just an LM358 op amp, so we've got some transistors there. And just for a loop to keep the temperature
+
+[372] EEVblog #372 - Fluke 27 Multimeter Review & Teardown — Dave Jones (explains)
+context before: Part of the range switch here. And you can see why this thing's going to get 1,000 hours battery life because, look, it's driven by a 32.768 kHz watch crystal.
+TEXT: I don't know if they multiply that inside, but it's certainly not going to be running very fast at all. I love it. And uh there's our voltage reference down there, 1.23 V, and then there's a adjustment trim pot there to set that, which goes in as the voltage reference.
+context after: We've got some more filter some ADC sampling stuff around here and active filter components, buffer integrator components, and that. And here's the digital output, which goes off to the digital board.
+
+[718] EEVblog #718 - Keithley 2400 SMU Teardown — Dave Jones (explains)
+context before: Gee, so they're mixing it up. LM311 comparator. Um, and well, I don't know, scream at me if you can see the voltage reference cuz I haven't damn well seen it yet.
+TEXT: And uh, there's lots of test points all around, of course, and uh, that Vref has got to be doing something. There's an AD um, uh, presumably um, AD converter test point, but uh, once again, I haven't actually found any analog to digital uh, converters or a reference.
+context after: Unbelievable. If we go down here to the relays down here, there's nothing much doing down there as well. Anyway, here is our Oops, just hit my microphone. We've got ourselves some Dale uh, precision shunt resistors down in here.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: Now, I'll just mention that I'm actually using a 2.048 voltage reference here. It happens to be an ISL2107 over, but it can be any one on the market, really.
+TEXT: It's, you know, it's not too bad. It's 30 ppm plus minus 0.25 0.25%. Now, why I'm using 2.048 V instead of the more traditional 2.5 V voltage reference is because then the values that we're going to get out of our analog-to-digital converter are going to be spot on.
+context after: We don't have to fudge them or do anything like that. Now, I'll give you an example of that. Let's say we use a 2.5 V voltage reference, okay? And we're using a 12-bit analog-to-digital converter.
+
+[584] EEVblog #584 - What Effect Does Your Multimeter Input Impedance Have? — Dave Jones (explains)
+context before: So, what I've got here for the circuit is a precision voltage reference here LTC 6665 precise 1.25 V like 0.025% accurate really quite nice. And then I've just got a resistive divider down here like this.
+TEXT: And what this is doing is just generating two precision reference voltages ref plus and ref minus here. So, that's all I'm doing and it's basically I'm going to try and set them today to plus 0.025% or 1 V 0.025% above 1 V which is 1.00025 V and 0.025% below 1 V.
+context after: There you go. So, we're trying to set some really precise values here. And to do that of course we're going to use our 6 and 1/2 digit you know really top of line Agilent multimeter to measure our voltage across our two pots.
+
+[9lIC3ZzIht4] Junk box Digital Panel Meter Analysis CX101 — Dave Jones (explains)
+context before: maybe it doesn't need, it's got an internal reference and you have to strap it externally to make it work, I don't know. So let's knock, oh sorry, it's offscreen you can't see it, but there's another power supply on the left-hand side here I'm going to take that down to one volt, so I'm going to hook that up, well we get one
+TEXT: where's the other digits? Hello? Maybe if I short the input? No! Short the input does nothing. Okay well, yeah, maybe I have to strap those references. Yeah, you see RFH and ROH, so reference output high and reference high, and reference low, yeah, okay, so 9 and
+context after: 10 have to be strapped together. Aha! Something's happened we've got 303, so I just strapped yellow to white there just shorted those together, and ah, there you go, I just shorted the pins out sure enough it went to zero, so, sorry I can't keep this like upright
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: They don't necessarily need to shield this. They just need to keep out air flow from the fan that's cooling this thing, circulating air currents in there. Don't um you know, waft over all of the parts and the voltage reference.
+TEXT: But, the voltage reference does has have its own internal heater, but still, you don't want the ambient changing willy-nilly uh based on the um fan. So, you know, you want it to change really gradually, and that's what it's going to do by putting a cover on it.
+context after: And here's our what I think is possibly the ADC, although hmm, because it's got that ADC in up here, that test point. Um, so, you know, I Well, these are DG switches, right?
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: You have to if you go on build this thing up, you're going to have to solder a couple of SO8 packages. Sorry. And I've got a little MAXIM MCP1700 3.3 V voltage regulator.
+TEXT: They're they're quite nice devices. They're actually got very high very close output tolerance of a percent or less, or half a percent. They're really really quite nice neat. You can actually use those almost as a voltage reference at an ambient temperature.
+context after: I think I've mentioned that before, but anyway, I've got a standard LM7805 to give our 5 V out from our US for our USB output connector over here. And because I've This is the heat sink.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (explains)
+context before: Look at those, ceramic noise suppression caps down to earth as far as the eye can see, all the way through there, every back panel connector except for the external current shunt input as we saw, which is taken care of on the main board as we just saw before.
+TEXT: Right next to our ADC there, we have ourselves our voltage reference. There you go, a little two-pin shunt. And the voltage regulators on the output of the voltage isolation that we saw before for the power coming in, yeah, no surprises as I guess, 78L05s.
+context after: And of course, make that a split supply with the 79L05 negative. So, you might still be wondering the input configuration here, voltage and current, they're obviously not galvanically isolated.
+
+[755] EEVblog #755 - Fluke PM2812 PSU Ebay Score — Dave Jones (explains)
+context before: You can certainly see that here. There we go. Look, physically smaller chip here for N302. And they've Yeah, so they've upgraded that. Interesting. Now, the interesting thing about this board is that even though I've got two DACs on here, you won't find any reference.
+TEXT: I mean, you'll find some, you know, nice precision uh op-amps, OP200s, and the rest, but there's no voltage reference whatsoever. So, but you go over to this other board, which we saw has the We saw this one is actually slightly different to the other two.
+context after: So, double-sided load here, which is really interesting through all on the top and then a whole bunch of surface mount on the bottom. And bingo, we're going to find another precision op-amp, but take a look down here.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: So, you need a buffer there. So, this is our 0 to 1 V control input. Now, it goes into this adder or summer circuit here and then that is fed into a * 2 amplifier here into the non-inverting input of this constant current equivalent circuit.
+TEXT: Now, if you remember how the LM317 worked, because it had a voltage reference in here of 1.25 V and it fed directly around to this pin here with no additional circuitry like that, then the current equaled 1.25 V divided by 1 ohm or 1.25 amps in this case.
+context after: And we're basically replacing that direct feedback with a circuit that allows us to inject the 0 to 1 V signal and raise it up so that it can control this higher voltage circuit up here.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (explains)
+context before: Hi, in a previous video, which I'll link it in down below if you haven't seen it, we played around with a precision 1 amp current source. Ignoring all this sort of stuff, we were basically following the application note circuit here in the LTC6655 data sheet.
+TEXT: This is a precision 1.25 V voltage reference. And this thing oscillated the buggery. It was absolutely awful. And and since then I've tried a couple of I've tried the other recommended configuration with the PNP cuz I suspected this thing might oscillate.
+context after: That's why I breadboarded the thing up. Never trust these application notes just to work. Oh, you got to build the things up and test them, let me tell you.
+
+[210] EEVblog #210 - Krohn-Hite DC Voltage Standard Teardown & Calibration — Dave Jones (explains)
+context before: As for holding the uh PCB in place here, this is uh very old school construction technique. They've got the um aluminum uh plate with the cutout for the board and the board uh screwed on the underside there and they've just cut it out for the uh components.
+TEXT: Um uh quite uh you'll see this construction method uh used quite a lot in these sort of uh rack mount um early early designed instruments. Now, one of the first things I I'm looking for in something like this is where is the uh voltage reference standard.
+context after: Now, I've got this curious looking uh package here and um but I don't think that is the voltage reference. I get a feeling that that's not it. I'm not actually sure what that is as well and and at all.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: I'm not su- not sure uh if the um uh FLU uh reference in there actually is available in different uh footprints or not, but anyway, that's really interesting. There's your voltage reference.
+TEXT: Hmm. Now, whether or not it's better performance than the LTZ 1000, eh, depends who you talk to. And of course, as we noted before, the oven driver circuitry is outside of that plastic can, because that stuff to drive the oven takes a fair bit of current.
+context after: So, all the that chip that driver chip is going to heat up. So, you don't want that inside your can that's designed for your voltage reference. So, they sit it outside.
+
+[1434] EEVblog 1434 - Cadex C7000 Battery Analyser Teardown — Dave Jones (explains)
+context before: ADC in here somewhere. Found, like, I'll bunch of DACs, but no ADC. Well, for the life of me, I cannot find an ADC on here. If I do later, I'll put it in the edit, but I cannot find one. So I reckon what's happening is there's
+TEXT: a bunch of, uh, comparators in there as well. So I reckon what they're doing is, uh, they've just got, like, a reference, um, somewhere, and they're just, uh, basically using the DACs to then, uh, create a voltage reference, which then they compare, like,
+context after: end of voltage, um, like, like, you know, like, end of charge type uh, level stuff. I don't think they're actually measuring it. And that seems very strange. Why you'd limit yourself? I don't know why you wouldn't go for a full ADC DAC solution.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: It's a split supply, of course, positive and negative, so it's plus minus 2.5 V relative to this ground point here. And uh then we've got our LED on the output.
+TEXT: We'll have our pulse uh RC pulse stretcher 10 meg 100 nF in that time constant, roughly uh a second or thereabouts. And then we've got um a resistor divider here from the rail uh giving us a negative uh 1.25 V reference and a positive 1.25 V reference.
+context after: I just chose the uh split values. It's just nice and even. We're splitting the rail in half. So, if the input signal, which is this pot here, goes above or below 1.25 V, our LED should turn on.
+
+[1464] EEVblog 1464 - TOP 5 Jellybean Comparators — Dave Jones (explains)
+context before: Very versatile part. Um it's the TSM102 and you can get it from TI and ST as well. So, let's let's take a look inside here. So, what are you getting in this bad boy?
+TEXT: Well, you get a dual op-amp, a dual comparator, and a voltage reference. Would you like steak knives with that? Anyway, yeah, check out this bad boy. So, you've got two comparators in there, two op-amps, and an adjustable reference all in the one chip.
+context after: So, yeah, you might have guessed what applications, you know, switch mode power supplies, battery chargers, voltage and current sensing, overvoltage, undervoltage, window comparators, alarm detectors, sensors. So, if you're doing all sorts of analog stuff, you can actually combine.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Whereas, you couldn't use an LM317 there because it would need that like 3 volts voltage drop uh minimum. So, you just can't get your 3.3 volt rail from a 5 volt rail, for example.
+TEXT: Next part we're going to take a look at is a voltage reference, or in this particular case, a micropower shunt voltage reference because often you're need a better precision, better temperature uh coefficient than you can get with a voltage regulator.
+context after: A voltage regulator, okay, you've got an LM317, and you can trim it to whatever voltage you want, and you can use it as a voltage reference because you've trimmed it, and you know, the one you can get them in 1, 1 1/2%.
+
+[579] EEVblog #579 - Precision Low Current Source — Dave Jones (explains)
+context before: And it uses the REF102 voltage reference from Burr-Brown, the old Burr-Brown, which are now owned by TI, of course. And there's a whole application note, which once again, I'll link in down below.
+TEXT: Check it out. It's how to use this REF102 10-volt voltage reference, pretty good voltage reference, which has been around for donkey's years. And you can hook an op-amp onto it, and a precision resistor, bingo, you've got yourself a low current, i.e.
+context after: sub 10 milliamp, precision current source. Great. So, where we only want 1 milliamp here, and also 1 microamp. So, not a problem. I thought I'd give this a whirl with the REF102 and the recommended OPA 227 op-amp here.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: There you go. The 52nd week in 1990. So, this is over 20 years old. But you'll notice of course that this new chip doesn't hasn't switched on at 6 volts like the other one did.
+TEXT: So, there you go. It's It's you know, the tolerances are slightly different because each chip So, it's going to be a slightly different in terms of temperature coefficient absolute accuracy of the internal 1.25 volt voltage reference and other stuff.
+context after: So, really you know, that's why they have the trim pots in the circuit because ultimately you may have to trim this thing if you want to get accurate, but I I reckon you could you know for a rough battery gauge for for for my application anyway, I think I'm not going to worry about with the trim pots.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: Fantastic. That's the advantage you get with the 12-bit analog 12-bit DAC. If we used a 10-bit DAC, you'd be looking at 2 milliamps per bit. Not as good, but still, you know, might be certainly adequate.
+TEXT: So, I've just gilded the lily here. You could have just used the microcontroller for sure. Depends on your requirements. Now, as for our voltage output, well, our DAC is going to give out 0 to 2.048 V cuz that's our voltage reference coming in here.
+context after: So, 0 to 2.048 V. I've put in a gain of five here in this amplifier set by these two resistors here. Exactly the same circuit you've seen before. The tap actually comes from here, so it compensates for these series resistances here.
+
+[72] EEVblog #72 - Let's Design a Product — Dave Jones (explains)
+context before: So, if we decide to power things from 3 volts, then we need a low voltage battery detection circuit which cuts out at about 2.7 volts. Now, there's many ways to do low voltage battery detection circuits, but they're all very essentially the same thing.
+TEXT: They have a voltage ref- a a precision voltage reference and a comparator. Once it drops below a certain level, it switches on an output and you can turn on an LED saying, "Low voltage." Now, um I didn't want to muck around with things like that.
+context after: It turns out that you can get a whole slew, if you go on Digi-Key or Mouser, you can get a whole slew of these dedicated low-voltage battery detection chips.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: Look at that. Absolutely awful. And that's directly across the pins of the SO8 adapter. How close does this bloody input bypass cap need to be? Unbelievable. So, if we put the original one back on there as well, look, there we go.
+TEXT: That's knocked that down. I mean, it's still bad. I mean, it's still oscillating, especially for a precision reference. It's absolutely useless, but there you go. That is loop stability of the error amplifier inside this bloody voltage reference.
+context after: Ah, it's all over the shop. Now, of course, if we put no load on there, it should be okay. And yep, there it is. 1.2502 volts. And yeah, I have actually done the I have configured it without the series pass transistor in there at all.
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (explains)
+context before: So, you can think of it as either a current limiter or depending on how you want to use it and how you want to look at it, it's a constant current generator.
+TEXT: So, the formula's really easy. Your output constant current is equal to the voltage reference divided by the current shunt resistor. And this op-amp, due to op-amp action (I've done op-amp videos), it keeps drives the base of this transistor.
+context after: This is NPN in this particular configuration cuz the arrow's pointing that way, but it can be PNP. And as I said, there's many ways to skin this cat. You can do this many different ways, but this is just a very typical basic example.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: Let's have a look at our raw data here. If we uh start out here, here's the bit, okay, at the first that first transition there. So, it's 000 111110 100.
+TEXT: And if you convert that to decimal, that's 500. It's exactly what I'm feeding in. And if you plug the actual values into the formula in the data sheet, the actual voltage reference we're feeding in 500 / 4096 * the voltage reference 2.0 493.
+context after: We actually should and then multiply by two for our internal gain amp, should get precisely point 5003 V out, but we don't. We actually get 495. Okay, now what I've done is changed the software so that it also outputs it on the other channel, too.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: Give me a break. Man, anyway, um very nice uh construction on the thing by the way. I'll have to do a full review of this thing, of course, but uh trust me, it feels really top quality.
+TEXT: So, let's rip this sucker apart and uh looks like we've got a couple of torques screws on the back there and uh that should slide out. So, essentially, the big question is uh what voltage reference is going to be used inside this thing.
+context after: Will it be a traditional, you know, LM 399 as is used in most uh meters like this. There we go. Nice little captive uh screws in there. Rather like that.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: So, anyway, they are completely matched. They want to either So, I think they're trying to keep the leakage out of there, of course, with the slots as they're trying to do everywhere, but, you know, it's like normally you'd see that on like a voltage reference.
+TEXT: So, it's like like the expansion to stop expansion of the board, the the FR4 PCB down here the fiberglass material can expand and then if you've got a real precision voltage reference in here that can, you know, minutely change that.
+context after: So, it's often common to see that sort of construction for a voltage reference, but in this case, it's not or it could be part of the voltage reference perhaps, but it's not within side the any of the cans here, so we where I expect the voltage reference to be.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: So, it's not just the input ramping up anymore, you can get the input to ramp up. Let let's say these switches here were off, for example, and we just were charging up with the input.
+TEXT: Well, the ramp might go up like that, and it might take a long amount of time. Well, you don't want that. Let's speed this sucker up. We have a known fixed voltage reference, known fixed resistor, doesn't drift, nice stable current.
+context after: We can sum that in, so we're injecting more a known current in there. So, instead of a ramp that goes slow like that, we can speed up the ramp like that and get get the same result in less time because we're injecting a known current.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: And I I don't doubt you know there's hand techch ones and stuff which um you know a lot of people are telling me are okay but yeah they're okay just don't expect too much from them that's all.
+TEXT: Um oh you need a.3 volt reference. Can't divide down a higher refle amp unless I have an accurate VCC on two. Oh you need a.3 volt reference. Um well you you know there's two ways you use a regular well you have to divide it down.
+context after: I mean you can't get a.3 volt reference because the band gap the the physics of band gaps I mean stop at you know 1.2 volts. I mean um I think there might be some weird physics ones which do eight or something band gap voltages but I don't know quote me on that.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Terrific. And it's course it's got full back current limiting and over temperature, so it's pretty bulletproof just like the LM317. And there's the typical application which we've just spent a long time talking about.
+TEXT: You've got a series pass transistor, the error amp connected straight through, but instead of having an internal voltage reference like the LM317, it's got an internal constant current generator which is actually 10 10 microamps.
+context after: And it it tells you that over here. Here's the distribution graph and you'll notice, you know, we've been talking about bell curves recently. Well, there it is again. And that is 10 microamps constant current down through there.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Now, of course, uh it Why do they just put a battery charger circuit? Normally, you don't have the output uh series resistor here. You just have the two resistors here to set the value.
+TEXT: The formula's in the data sheet. Won't go into the details, but voltage in, voltage out. The good thing is it can go to 1.25 volts cuz it's got a 1.25 volt voltage reference in here and we can have a look at the internal diagram.
+context after: There it is there. It's got an internal 1.25 volt reference. So, you can go down to that. So, that's very useful for all sorts of modern electronics with low power supply uh rails.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: There you go. Um not too shabby part at all. And lookie what we have here. Yeah, if you've seen my uh jelly bean MOSFET video, then it's the 7002.
+TEXT: It's the jelly bean of jelly beans. And we've got a TI voltage reference here. That's not too shabby. 40 ppm uh jobby because this thing has an offset uh voltage and and it's going to have a DAC which you know drives the offset.
+context after: You you need a precision uh reference uh for that. And up here we've got a DCtoDC converter. Never heard of them. Uh Dexu Electronics. All the electrons have already fallen out of it.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (explains)
+context before: Anyway, I've soldered on a, uh, brand new, uh, LTC, uh, 6605 and let's have a look at what we get. Bingo! That is, uh, half, I think, roughly half of what we're getting before.
+TEXT: So, we're now .03% and technically, that's within side our error budget, because our, um, cuz the voltage reference is at .025%, I believe, uh, nominal in itself. And then we've got the, uh, precision current shunt of, uh, .02%.
+context after: So, yeah, there you go, within our error budget. So, maybe, I don't know, maybe this little puppy has had a bit too much abuse from all the, uh, experimenting that we've got there, but I'm I'm pretty happy with that.
+
+[1334] EEVblog #1334 - Mystery Dumpster Teardown — Dave Jones (explains)
+context before: Okay, that wins the capacitor of the day award. Uh well, capacitor package of the day award. Have you ever seen a cap like that? Anyone? Can't say I have.
+TEXT: Oh, voltage reference, 10 V voltage reference LT1031, '92. 5th week '92 manufacture. No, but I double-checked. Turns out the 8652 is a synchronous frequency to voltage converter, which coincidentally is used for precision ADCs.
+context after: And you know, you can see it's got a tone localized ground over there. If we flip it over, you see we've got a nice little guard ring going around like that.
+
+[828] EEVblog #828 - Siglent SPD3303X Precision Lab PSU Teardown — Dave Jones (explains)
+context before: So, there's going to be a reasonably high-end ADC in there somewhere. Is it one of those puppies? I don't think the arm STM processor has a high enough resolution ADC even if it has one.
+TEXT: And this is where the magic and the performance comes from an analog devices ADR 7792. This is actually pretty decent little beast. It's a three-channel 16-bit sigma-delta converter. It's got a built-in 4 ppm voltage reference.
+context after: It's got built-in differential amplifiers and all sorts of jazz. And they've also got a ADR03. That's a pretty reasonably schmick 3 ppm 2.5 V voltage reference as well. So, they've got some decent hardware in here.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (explains)
+context before: And we won't go into differential mode, common mode. We get into signal integrity. Come on. And coupled circuits is all just part of that. We won't talk about crosstalk effects, blah blah blah.
+TEXT: VREF noise, that's a thing. As I said, the termination the volt is terminated to a mid-rail voltage reference. You can actually get specific voltage reference DDR termination chips that are actually designed to do this.
+context after: And the noise of these reference voltages impacts your budget for your timing budget for the amount of skew that you can have on your PCB, the difference in your traces.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: And we will ground that. Now, uh this R low down here, we want to get rid of that ground. And we want to connect R low up here to the bottom of that because we know our range is 1.25 V or exactly the same as this voltage reference.
+TEXT: And we can leave this also connected up to here. Okay? So, our uh R high up here is connected to the positive side of the voltage reference. Uh R low down here is connected to the negative side of the voltage reference.
+context after: And all we want to do is choose these resistors so that we get 3 V superimpose uh 3 V across there. And that will raise our voltage up by the 3 V we need.
+
+[1307] EEVblog #1307 - TUTORIAL: PCB BOM Consolidation — Dave Jones (explains)
+context before: But often they'll come back and they'll go, "Look, I cannot get this. Can I use Can I buy something else?" And you might have to do an engineering change request or whatever it is to go, "Yep, look, I authorize to use a 13 puff capacitor in there instead of 11 puff.
+TEXT: I was just lazy when I designed it and it doesn't matter a rat's ass that it's 11 picafarads or 13." Now, values like these ones, for example, this obviously sets out what the value our 1.2 volt voltage reference.
+context after: So, these values are fairly the ratio of them is fairly critical. But you could actually put in a 10k here, like a 13.3k, okay? And yes, 13.3 here, if we go to 1.33, is a both is all three columns here is an E48, E96, and E192 preferred value.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: So, you can use it with the 317 here. You're going to once again a single a simple series uh pass transistor. Um this one's simple. You can actually a precision 5-V regulator.
+TEXT: You know how I told you the internal reference is 2.5 V. They're exactly the same because the output will be double the voltage reference here. So, if the internal reference is 2.5 V, you'll get your 5 V out here.
+context after: And because this is an emitter uh follower uh transistor here, The output voltage, yeah, it'll be twice that. So, nice little shunt precision 5-V power supply. They got a PWM converter with reference here.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: You can tell they're MOSFETs cuz all the all the pins are tied together like that, and there's just the one gate pin here and here. Okay, so these these MOSFET switching here for our two converters, and then the controller, was that on the top side?
+TEXT: These have internal voltage references which set those DC characteristics. So, all of the dynamic switching characteristics you could have if you don't have proper layout in your switch-mode converter like this.
+context after: If you don't keep your tight loops, and I've done videos on this, and if you don't keep that tight, you can get extra DC error or switching or dynamic switching errors when you when your output loads.
+
+[579] EEVblog #579 - Precision Low Current Source — Dave Jones (explains)
+context before: And what do we get? Aha, look at that. 1.027 or so microamps. But that's rather curious because we actually expect it. So, that's above our nominal figure. But if you have a look at the um circuit down here, we actually expect it to be less because the it's going to suck away some of the current into here.
+TEXT: So, we actually expect our current into low, which we're measuring, to be under spec, not over spec. So, we'll go back to our voltage reference here and measure it, and ta-da, we're looking at uh 10.14 V there.
+context after: Aha. So, that's exactly the same issue we were getting last time without the diode. So, now our our circuit parameters have changed, and it looks like we're our voltage reference isn't working as well.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: And they've been very clever with this device as well. This resistor, which is the load for the voltage reference here, actually determines the LED brightness. So, it's sort of that's it's quite clever, but can actually be a pain in the butt because then that interacts with your voltage offset voltage offset resistors as you'll see and things like that but it is quite clever.
+TEXT: I like it. So that resistor effectively the load on there on the voltage reference effectively determines the LED brightness and that'll be a based on a formula which will find it further on in the data sheet.
+context after: Now they've got a nice little section here on the internal voltage reference and how it works and it's it basically works the voltage reference is internal like that V positive negative it's inside like that and it always generates 1.25 volts pretty much regardless of how you've got it configured externally but it will generate 1.25 volts so if you hook let's call them well they're called R1 and R2 here and that's wh
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: It goes to your converter, for example. If you don't If you have your large switching currents going up like this, and then you connect here your chip off to this point here, then you're going to get that voltage drop all the way along there.
+TEXT: That's do very crude diagram, but you then you've got an internal reference voltage inside this thing that you've just like you're dynamically switching when your load switches, your current's going to switch.
+context after: You might have only 5 or 10 millivolts, but that could change your output reference voltage from your 0.9 volts, it could easily change it down to 0.8, and you're screwed.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, this is not independent. It actually relies on the fact that this 15-V rail is set correctly. And then if you go look at the 5-V voltage regulator, right, here's our output here, here's our output current sense resistor, here's our series pass transistor.
+TEXT: Where is the voltage reference coming from? Bingo, the plus 15-V rail again. So, if that plus 15-V rail drags down, of course it'll drag down the 5-V rail. Of course it'll drag down the negative 15-V rail.
+context after: So, it looks like the all the rails there are referenced to that plus 15-V output. And of course, wouldn't you know it, if you actually go and read the theory of operation of this thing, it tells you exactly that.
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (explains)
+context before: Because in normal operation you don't want it to dissipate much power. Then across that shunt resistor you've got an op amp or basically a differential amplifier that measures the voltage across that current shunt resistor.
+TEXT: And then into that circuitry, that op amp circuitry there, we won't go into details about how it exactly works cuz there's many ways to skin this cat. But suffice it to say you feed in a reference voltage.
+context after: In this particular case I've shown it coming from a zener. But inside your power supply that voltage reference is actually your current knob which dial in to your set current.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: Fantastic. More than what we need. A little bit overkill, but hell, I already used that in the micro current, so we're going to use it here again. Now, because I wanted to make this design into a kit, I wanted all the components to be through hole, and I tried as hard as I could to make everything through hole, but unfortunately, the MAX 4238 is only in an SO8 package, and likewise,
+TEXT: the MAX 480 is only in an SO8 package, and the voltage reference, although I can get ones in like a TO92 package, they're cheaper and more readily available, especially in the 2.848 V version, in a SO23.
+context after: So, they're the only three surface mount parts on the entire design. Everything else is through hole, and I pretty much optimized I chose parts based on through hole availability.
+
+[779] EEVblog #779 - Batteriser: How To Measure Battery Cutoff Voltage — Dave Jones (explains)
+context before: That's why I said you have to actually measure directly on the battery terminals of the product. And when you do that, when you measure on the battery terminals, that, by definition, okay, is the battery cutoff voltage of the product because you can't measure this value in here.
+TEXT: It only matters what the value is in there because the internal circuitry you've got for your product actually has a voltage reference in there, and that's what's determining what shuts off your product.
+context after: So, it's the battery. It's the voltage on the battery terminals here. It's got nothing to do with this internal resistance. It's a complete red herring. And the other reason why this internal resistance here doesn't matter for the cutoff voltage is because look at the data sheets for any battery at all.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (explains)
+context before: Because it's external, you could actually modify that and play around with it, but you know, very interestingly, there's a PCB contact switch here. I wonder what that one does.
+TEXT: Hmm. And there's the voltage reference there. The TO92 package is it looks like a genuine Intersil genuine in quote marks. Could be. Anyway, it's an ICL80 69. It's the DC ZR which is the 100 ppm version.
+context after: There is a 50 ppm version. So, you know, it's adequate for a 10,000 count multimeter. Interestingly, they've got the silk screen wrong. They say ICL80 96 instead of 80 69.
+
+[552] EEVblog #552 - DFM Automated PCB Panel Testing — Dave Jones (explains)
+context before: And then they just go into a window detector here, which then lights up a, you know, a red green light based on a reference voltage for a particular known test current.
+TEXT: You know, it might generate, you know, one for a nominal like 1 V output or something. So, that might be a 1 V reference voltage. Of course, it's going to be a plus minus because it's a window detector.
+context after: So, there'll be the tolerance in there of, you know, 0.05% or something like that. I would set it to whatever tolerance I require for testing. So, this would be a, you know, a real expensive voltage reference, real expensive precision resistors on here.
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (explains)
+context before: They're obviously using uh for everything else, they're using the internal uh clock of that uh micro, no doubt. We've got ourselves another trimmer here, whatever the hell that's doing, but it doesn't instill a lot of confidence.
+TEXT: And we've found our voltage reference. It's a Maxim, if it's genuine, well, it's I'm sure it is. Uh MAX6198AESA. The AESA is important cuz it's the A1, which is the higher uh 5 ppm uh voltage reference.
+context after: So, it is the highest grade one in that particular part. So, 5 ppm uh temp code, 2 mV initial uh accuracy on that puppy. And then we've got a um uh OP1177 uh precision op amp next to it.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: It is actually mapping, and we're mapping at 500 milliamps, too. It's slightly low, but if we go up to a volt, we'll find that one will map as well.
+TEXT: And it does, but we are once again uh about uh 5 millivolts or 5 milliamps short. Now, the interesting thing is is that our reference voltage here is uh 2.0493 volts, and that's well within our spec.
+context after: The spec of this voltage reference is 0.25% and 0.1% um of 2.048 volts is 2 millivolts. So, we're well under 0.1% there. So, really um that doesn't explain a 0.5% discrepancy or 5 millivolts in a thousand on our output.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Here it is. Now, here's the internal circuitry for it and as you can see, it's an 8-pin device. It's very simple. It's uh just like in my previous blog, I showed how a a basic This is really I It's about as simple as it gets for a uh switch mode controller IC.
+TEXT: And as you can see, it's got a comparator with a built-in 1.2-V voltage ref- reference. It's got an oscillator, which is controlled via an external capacitor, the timing capacitor on pin three there.
+context after: It's got a um it's got a Darlington uh transistor uh pair that well, it's actually you can configure the output transistor. It's got a switching transistor Q1 there. It's got the separate collector and the separate switch emitter.
+
+[374] EEVblog #374 - DIY Multimeter Calibration — Dave Jones (explains)
+context before: Not sure how much I paid for it. I think it was under 100 bucks or something like that. And I have not adjusted this one either. It is absolutely spot on.
+TEXT: Now, what I've done here is I've just let both of these warm up because the 3478A here uses a heated voltage a controlled temperature voltage reference in it. So, it does take some time to warm up.
+context after: And also a voltage standard like the MV106 here, you have to, you know, in theory you should probably leave these sort of things on all the time if uh you know, if you take your calibration and your voltage standards seriously.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: And it's done uploading, and let's give this a go. And tada, there it is. There it is. Not a problem at all. Awesome. So, it should be fixed if I stick my multimeter on the output of that DAC, um assuming that I've got my algorithms correct um for my SPI serial interface, then I should get the exact value out I expect.
+TEXT: All right, let's check a couple of things. Let's check our voltage reference for starters. There you go, 2.049 should be 2.048. Near enough. And let's uh adjust our um our current output pot here.
+context after: As you can see, it's zero, so let's measure the output. Let's probe the output pin, which is pin uh 7 8 9 10, I believe. Currently 0 V. And What?
+
+[1248] EEVblog #1248 - INSANE! A 0.02% Process Meter for $9? WTF! — Dave Jones (explains)
+context before: Is there anything under that? No, it looks like there's nothing of note on the bottom side. All right, let's take a look at the PCB. There's two things we want to know about this.
+TEXT: One is what voltage reference does it actually use? Is it some one hung low brand? Is it a proper known brand? If it is, oh, and the other parts on it, how are they doing it for this sort of cost?
+context after: .02% class instrument. Source and measure. Input side here, as I said, like nothing particularly stand-outy chipset right off the bat. Looks like a genuine Microchip part. Doesn't look like a rip-off.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: Um the one the other night, Evolution, it was really good. I do like Brian Cox. He's really He's excellent. Some say he's the new Carl Sean, you know. Um, do voltage references have a voltage drop?
+TEXT: I'm looking in the data sheet. 5V reference. Well, that, you know, if it's a shunt reference, you know, they've got to have a minimum uh voltage. I mean, you know, there's um two different types.
+context after: There's uh voltage driven voltage references and there's current shunt voltage references. So, I'm not sure what the maximum it'll tell you in the data sheet. It'll be one of the big banner figures of, you know, the maximum um the minimum voltage it can operate at.
+
+[210] EEVblog #210 - Krohn-Hite DC Voltage Standard Teardown & Calibration — Dave Jones (explains)
+context before: Go into that later. Zener diode, then you need a constant known current through it. So, that's what this is designed. It's got an adjustment pot there, and you tweak the voltage you tweak the current through the diode until you get the exact voltage you want, and then in theory, it should just start stay like that based on the temperature stability of the diode will be the main
+TEXT: contributing factor to the drift of this absolute reference. So, there's our voltage reference here. So, a constant known current flowing, which is inside it's actually labeled as 6.5 milliamps.
+context after: So, that you adjust that pot there, which is pot number one, and they've labeled it pot number one on the board, too. So, that's handy. Um So, we've got pot number one, 6.5 milliamps through that Zener, which gives that measured voltage drop, which is saw written on handwritten on the label inside the unit.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (explains)
+context before: And yep, LM339 voltage regulator. And this will be, as I said, it'll be coming so you got +12, -5, -12, uh etc. And then, yeah, you got some resistive dividers.
+TEXT: And then, a voltage reference will be coming. Yep, it even says reference over here. Voltage reference. Yep, there it is, 2.5-V voltage reference TL431. Classic for those playing along at home.
+context after: And then, we've got some opto-isolators and stuff like that. So, there you go. That is That is the schematic. So, that's exactly what we deduced it to be during the troubleshooting that, you know, it was just obvious this is what it was, that it wasn't actually that it had linear regulation on the secondary side and it wasn't doing any secondary side switch-mode regulation.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (explains)
+context before: A couple of Maxim parts. MAX4130. More Maxim parts, guaranteed not to be able to get them. That's a 1990s joke uh for those who can't get it. Maxim uh 5331, that'd be a DAC.
+TEXT: Um don't even have to look up the data sheet for that. It's a voltage output uh DAC using an internal uh reference. Just a buffer driver to drive just your standard uh constant current circuit.
+context after: You've got two uh MOSFETs in parallel here. Don't have a current sharing resistor between the MOSFETs. Often you'd put like a low value resistor in the uh line, you know, it's a one going here, one going here, just so they uh share the current more evenly cuz when you try and drive those, I don't know, you know, you you'd have to do some practical uh testing on that cuz you won't might find
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: It's very basic stuff. You can build up something like this just using just using a bunch of comparators yourself and and the resistors and things like that, but it's all built on the one chip.
+TEXT: It's beautiful. Now, one of the keys here is this internal voltage reference source of 1.25 V. Now, one of the important things to note about this is that it is not ground reference internally.
+context after: It goes out to a separate pin, which they call ref adjust, which in the basic application it is showing that it's actually grounded here, but you don't have to ground it.
+
+[1012] EEVblog #1012 - Best Bargain Ebay Bench Meter? - Fluke 8842A — Dave Jones (explains)
+context before: It was a custom job for Fluke, and it's not the LT LTZ 1000 either. It's a different variant that doesn't have a built-in heater, but it's used in some of the It's used in the Fluke 732 voltage reference standard.
+TEXT: That's why this meter is so darn good. It's, you know, .003% class meter, because the reference in it, the LTFLU, is brilliant. So, that is massive overkill for a five and a half digit meter.
+context after: It'd be overkill for a six and a half digit multimeter, which would use the classic, you know, LM 399, for example, which is not as good as this. This is like almost a transfer standard class reference, and they've got it in this five and a half digit meter.
+
+[540] EEVblog #540 - HP35670A DSA Repair - Part 3 — Dave Jones (explains)
+context before: If I actually probe the negative, well, according to the silk screen, -6.2 volt one, then I'm getting that positive value that we have before. And if I hand probe the positive 6.2 volt reference, we're getting that minus 6.5.
+TEXT: So, it's complete opposite polarity to what's showing on the silk screen. Unbelievable. And it says TP413 is negative. Yep. So, the silk screen matches up to what's on the block diagram here.
+context after: So, jeez, I don't know what's going on there at all. You can see how important these voltage reference rails are there. If you have a look at that internal layer, see that dark trace going down there and flowing through there, through there, probably down into this DAC over here, along there, all up into here, all up into all of these op-amps for all of the channels.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: You know, it's not going to happen. But yeah, I would say the minimum there is 2 volts. So 2 volts above your uh output voltage, but yeah, they don't specify like like a uh dropout voltage as such.
+TEXT: They don't use that term um in terms of voltage uh references. Um yeah, here we go. And then they give you separate figures for the 3.3 volt version. So the 3.3 volt version is 5.3 volts.
+context after: There you go. So it's once again it's 2 volt. So it looks like 2 volts minimum for all the types. And the 4.096 volts is 6 volts. There you go.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: So, that allows us to give us a fifth uh current measurement measurement range just by having that one extra pin on the microcontroller there. Fantastic. So, we've got now this huge five spanned current measuring capability for 1 amp down to 10 microamps resolution with just a um current uh 1 ohm current shunt resistor, an INA219, and a rough and ready uh differential amp here.
+TEXT: Brilliant. And of course, we have to feed our voltage reference into our uh microcontroller as well. So, we do that in on pin 21. It comes directly from our 2.048 voltage reference here.
+context after: That that hasn't changed since uh we first originally uh since our first design. So, that um reference powers the DAC and the analog-to-digital converter as well. Uh we're still got our 0.1 uh 0.1% uh precision resistors in our voltage set capability.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: So, I thought I would just lash it up on the breadboard and you know, see how well this thing actually perform. Now, what I'm actually trying to do is get a as I said, a precision 1 amp output, which is pretty high for a precision constant current output and by precision I'm talking, you know, point over better than point over five percent and absolute.
+TEXT: So, it's not trimmed or anything like that and the way I'm doing that is using a precision LTC 2655-1.25 volt voltage reference and that's normally point over two five percent accurate.
+context after: So, you know, really quite a decent chip, you know, it's like 10 or 12 dollars in one off quantity. And basically I'm using that as a precision voltage reference driven across a precision resistor in the final product.
+
+[469] EEVblog #469 - Cockcroft-Walton Multiplier — Dave Jones (explains)
+context before: As you can see there if I actually it's one all all four channels are 1 volt per division. If I move that up, you can actually see that it's there but we'll move it right down there.
+TEXT: So, that's our 0 volt reference. That first graticule line there is our 0 volt reference. So, all of our channels will be ground referenced around that point or DC coupled, of course.
+context after: So, as you can see we're not quite getting our 2 volts out of there. In fact, we're getting 1.67 volts. We've got some diode losses there. You see how it actually pulls it negative like that.
+
+[884] EEVblog #884 - EEVBlog BM235 Multimeter REPAIR — Dave Jones (explains)
+context before: So, let's turn it on and uh see what we've got here. Switch on. He said it worked on AC, curiously. Now, that, you know, function-wise, it's it's displaying the right stuff.
+TEXT: Okay. So, there we go. Okay, no drama at all. I've got a um I've got my voltage reference here. I've got it set to a volt. This is my lab reference one of my lab reference standards.
+context after: So, let's plug it in and um see if we get a volt. What what what what. He's right, look. It's going down and down. It's not like it's on AC mode, it's on DC mode.
+
+[e9cpKN69Avk] 121GW Development History — Dave Jones (explains)
+context before: What we What we were hoping was sort of like the final production version or pre-production version before we ran into the Kickstarter. And in that sort of like final thermal testing that I was doing and we noticed a few little you know like a drift discrepancy issues and stuff like that and you know it wasn't as good as what we wanted.
+TEXT: So at that point we actually made the decision to uh change the voltage like put in the voltage reference at that point and like a much better and much higher spec voltage reference.
+context after: We went for the I can't remember the analog devices such and such. Anyway, and they said yeah we can do that cuz re-spinning the boards is not a big you know deal for them even at this very late stage.
+
+[540] EEVblog #540 - HP35670A DSA Repair - Part 3 — Dave Jones (explains)
+context before: And uh something in here is uh giving us a problem. Maybe. I mean, here's it Here's all our power supplies, which we fixed last time. You remember we had that uh negative uh five and negative 15 issues, but they've been fixed.
+TEXT: But it could have taken out something else. And what I see here, this looks interesting. Here we go. voltage reference used as the reference for the ADC circuits and two test points.
+context after: So, let's get in there, measure that. That's always the first thing. If you can get in there and measure any sort of voltages, reference voltages, power supply voltages, uh you know, DC quiescent voltages or something like that, you should definitely get in there and measure them as a first pass.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: The formula's in the data sheet. Won't go into the details, but voltage in, voltage out. The good thing is it can go to 1.25 volts cuz it's got a 1.25 volt voltage reference in here and we can have a look at the internal diagram.
+TEXT: There it is there. It's got an internal 1.25 volt reference. So, you can go down to that. So, that's very useful for all sorts of modern electronics with low power supply uh rails.
+context after: And the good thing about uh having an adjustable regulator in your um jelly bean kit is that it's you only have to stock the one part and then you can use it for all different regulation voltages that you need cuz the 7805's 78XX series, it only goes down to 5 volts.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: So, we need to calculate R2 for a 3 volt drop based on current down here, but it's not just 200 microamps. Remember before, it's 200 microamps plus the error term here.
+TEXT: And there you go. If you remember back to this diagram here, we talked about that R1, and we talked about that error term being the leakage current of the voltage reference itself.
+context after: So, we need to find that value in the data sheet to find out what this value actually is. And if you have a look here, it actually tells you since 120 microamp current maximum from the adjust terminal.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: Doh! So, what we want say if we're feeding a 100 from our you know, 100 million amps, which will be a value of 100 directly in the internal register, then we want to divide that 100 by 4096, okay?
+TEXT: And then we times it by our voltage reference, which is 2.048 volts. Bingo. So, I got to give us 50 millivolts. We want that to map to 100, so we want to use the times two output.
+context after: So, let's change that around and we'll find it'll work precisely the way we want. These sort of things always happen first go when you don't engage your mind before you write the software.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (explains)
+context before: Look at that. We can already see it ramping up like that. Check it out. There we go. And looks like it's well, we'll have to auto scale that again.
+TEXT: Quite nice. You can see the turn on the switch on performance of this voltage reference this calibration uh voltage reference standard here. Beautiful. I'm going to uh stop that.
+context after: And now we can capture that data. And you've got to remember, too, we're looking at the least significant digit down in there. Look at it, it's not changing at all, but we should be able to see something on our histogram and our trend chart.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: Um, oh, you know, like if I just see one, you know, if I'm out, you know, walking in the bush and I just see one over there minding his own business, you know, it's not like a run screaming in the other direction, but, you know, if I like all almost step on one or something, if I get surprised by one, yeah, I I hate snakes.
+TEXT: Um, not a fan of snakes at all. spiky. You mean input versus output drop? I'm not sure what you mean. Either it regulates at the voltage at the reference voltage or it doesn't.
+context after: The dropout voltage is 2 volts above the output voltage. You're talking about the output regulation. Well, it I don't think the line regulation. There it is. Line regulation. And it tells you 1 ppm, 1.5 ppm per volt.
+
+[1424] EEVblog 1424 - Fluke 23 Multimeter Repair — Dave Jones (explains)
+context before: That's the idea of these ceramics is that these hybrid ceramic resistor dividers is that you can actually laser trim them without any worries and yeah, then coat the sucker and Bob's your uncle.
+TEXT: That's why these things are still accurate 30, 40 years later. And because of the voltage reference as well. An LM385 is that a 1.2 volt jobby? And that's the standard part.
+context after: That's under 30 ppm drift, but I don't know if there's any other grades or anything like that or what uh what Fluke do to them. So, we can also get the LCD out of there as well, but anyway, yeah, I'm going to measure a few things around the input, but first of all, I think we'll get a schematic.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (explains)
+context before: And with this uh, power good here, with this LMR339 quad comparator, what's going on here is a rough sketch. Um, we've got all the power supplies coming in. There might be more than this.
+TEXT: It'll be +5, +12, -12, -5. Should have drawn an extra one there. But they all basically uh, go into uh, comparators here. Uh, there'll be a voltage reference on these pins.
+context after: So it's basically, you know, are they uh, like below a certain uh, spec? So 5 volts you might put, you know, 4.75. Is Is it above that? Your typical uh, 5%?
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (explains)
+context before: So, obviously, something's been snottered internally and this voltage reference is just cactus. So, yeah, there's something seriously wrong. Anyway, the uh positive power uh supply rail, 26 V as I said, I've measured that.
+TEXT: There's no ripple on that. It's a nice solid rail. Uh VCC1 is 26 V. Uh internal VDD reference, internal reference voltage, another one. Um I once again, I'm getting a zero.
+context after: And again, uh, there's supposed to be a cap between these two here, and they're supposed to be isolated. They're not actually It's not actually ground. It's like an internal voltage floating voltage reference somehow.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (explains)
+context before: That's do very crude diagram, but you then you've got an internal reference voltage inside this thing that you've just like you're dynamically switching when your load switches, your current's going to switch.
+TEXT: You might have only 5 or 10 millivolts, but that could change your output reference voltage from your 0.9 volts, it could easily change it down to 0.8, and you're screwed.
+context after: And that's just with the layout of your like little switch mode controller chip. That doesn't include actually going off to your big ass FPGA up here, and the voltage drop on those.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: And if you've only got a single supply input, like we've got here from 0 to um uh 0 to 7 or whatever voltage it is, then you can't get any lower than that 1.25 volts output cuz we've grounded our input here.
+TEXT: We can't get any lower than that. So, that's why a lot of traditional lab power supplies will only go down to 1.25 volts because it's the reference voltage used in there.
+context after: Now, I mentioned that load's important. Well, let's actually check what happens to the output if we disconnect the load like that. So, all we've All we've got now is the bypass cap.
+
+[1189] EEVblog #1189 - Ebay $140 6.5 digit DMM Bargain!? — Dave Jones (explains)
+context before: What else? There's not much doing. Um actually, where's Wally? Where's the voltage reference? Still looking, and of course, more isolation up here to go around between the um serial and GPIB and uh the rest of the analog stuff.
+TEXT: So, where is our Where's our voltage reference? I'm not seeing a LM339. Where is it? Come on. I'm starting to suspect that little silver beastie down in there. Nothing.
+context after: No label on the top. That's looking suspect. And it turns out all those parts that had those uh that have been like resoldered or hand-soldered, basically, they're all the reed relay stuff in here.
+
+[1435] EEVblog 1435 - The World's Most EXPENSIVE Catalog IC ? — Dave Jones (explains)
+context before: And like And those things are Actually, that was That might have been the cost when they came out. Like, you know, who knows, right? That would have been like the very early micro mirror projector technology or whatever.
+TEXT: And for all you volt nuts, let's go voltage reference. What is Digi-Key's most expensive voltage reference? What is the holy grail? It's a TL431. 704 bucks for a TL431.
+context after: This is actually the video I was working on like jelly bean parts. TL431. Yeah. Once again, this has got to be like, you know, military high temperature grade wankery.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: It's just a linear technology. Um, God, don't quote me LT like 40 or something or one 40. Oh, I don't know like ah, no, I'm not I'm not going to remember the exact number, but right, you can buy it from linear technology.
+TEXT: It's like 40 bucks oneoff price, right? So, you can buy the same reference that's used in this, you know, $10,000 multimeter, right? You can you can buy that reference.
+context after: It's just the LT chip, right? But they've but they use, you know, they've got, you know, carefully engineered um tempco, you know, but it's all about the tempco. So, they got carefully engineered surrounding circuitry and stuff.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: Hmm. Now, whether or not it's better performance than the LTZ 1000, eh, depends who you talk to. And of course, as we noted before, the oven driver circuitry is outside of that plastic can, because that stuff to drive the oven takes a fair bit of current.
+TEXT: So, all the that chip that driver chip is going to heat up. So, you don't want that inside your can that's designed for your voltage reference. So, they sit it outside.
+context after: They know what they're doing. All the shielding is all on the bottom. They've got a whole bottom plate um made for this thing and which is under there. I can't actually get that out.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: Maximum max 6043 loading PDF. One more. Here we go. Precision voltage reference. No, there we go. It's a 4.5 volt to 40 volt supply range. So presumably that's for the that you would assume just based on the banner spec that there'd be a minimum 4.5 volt input voltage for 2.5 volts out.
+TEXT: So that's what you would assume. So there you go. It's uh stable with no capacitive load. So there you go. Yeah, there's the input supply voltage range, 4.5 volts.
+context after: Of course, you know, it's not like you can um get the 5V version or the 10vt version and put in 4 1/2 volts and get your 10 volts out.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: So, it should be sweet. All right, the next thing I'm going to want to do is uh just uh check a few things. Uh just check pin one here.
+TEXT: That's my VDD. That's uh 3.3 V. It's 1 V per division. Not a problem at all. Um I've already checked the uh VREF voltage. That's uh 2.0 V and that 2.048 V.
+context after: So, that's pins 11 and 13. There it is there. And uh check pin 11 as well, cuz there's two separate voltage references for both um A and B voltage outputs, and they're working just fine.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: If you do the math, if you subtract 8.4 V from 6.4 V, what do you get? You get 2.4 V, okay? Now, what happens if you divide that by two?
+TEXT: What do you get? I'm glad you asked. You get 1.2 V. Now, 1.2 V is pretty darn close to the 1.25 V voltage reference here. So, I think we can use that.
+context after: We can be clever and just use that as our uh voltage range for here. So, all we need to do is multiply that by two to give us our range on these our voltage range on these two pins.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: They don't use that term um in terms of voltage uh references. Um yeah, here we go. And then they give you separate figures for the 3.3 volt version. So the 3.3 volt version is 5.3 volts.
+TEXT: There you go. So it's once again it's 2 volt. So it looks like 2 volts minimum for all the types. And the 4.096 volts is 6 volts. There you go.
+context after: Bang. 2 volts above. Right. So that's the line. Um that's you know effectively they're saying that that's your dropout voltage 2 volts. Um cuz then it won't maintain its uh output regulation.
+
+[9s9LXOBknck] Unusual Brymen BM235 Fault — Dave Jones (explains)
+context before: Um and no, it's uh still doing the same business. Okay, so you can scratch uh joy joints on the processor. Oh, and by the way, yes, I have checked.
+TEXT: It does measure bang on. So, if I feed like 1 V or 2 V in from my voltage uh reference, it will show 2.000. It'll just toggle between 2 and 5.
+context after: So, it's otherwise bang on. That means that the measurement like on the input side, the measurement side, that's all working fine, but for some reason, it's toggling five like that.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: So that's what you would assume. So there you go. It's uh stable with no capacitive load. So there you go. Yeah, there's the input supply voltage range, 4.5 volts.
+TEXT: Of course, you know, it's not like you can um get the 5V version or the 10vt version and put in 4 1/2 volts and get your 10 volts out.
+context after: You know, it's not going to happen. But yeah, I would say the minimum there is 2 volts. So 2 volts above your uh output voltage, but yeah, they don't specify like like a uh dropout voltage as such.
+
+[1560] EEVblog 1560 - TIP: Use Your Arb Gen as a High Resolution DC Voltage Source! — Dave Jones (opinion)
+context before: Whoop, that was just an error there, actually. Whoops. But, I can actually go up to plus minus 10 V on this particular thing. So, plus minus 10 V with a 16-bit digital-to-analog converter, you get pretty decent DC resolution on these things.
+TEXT: It's great. And also, you might have temperature drifts as well, cuz these things don't have the absolute best voltage standards in them. So, you know, it But, but if you need to, you don't care about the absolute value, you know, if 1% is good enough for Australia, but you need to adjust and do fine adjust in DC voltages, you can use this signal gen to get an order of magnitude or or two
+context after: orders of magnitude better than what you can get with a typical DC power supply. And as I said, you're probably using your power supply to power your project anyway.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (opinion)
+context before: But, as you can see, the set, because this is a direct feedback loop and whatever voltage you put on here comes out here, any noise that you put on this set pin is going to come out here as well within limits of bandwidth and all sorts of other things like that.
+TEXT: So, really the noise limit will depend on this. Now, if you're driving your circuit with a pot like this and you've got this fed to you know a voltage reference or something like that say a 2.5 volt voltage reference you know a really quiet low noise voltage reference then your noise is going to and you're driving that pin directly then the noise is going to be pretty good.
+context after: But, if you're doing a PWM signal and you're feeding that through your RC filter like that and then you're driving that with a buffer obviously and you're driving that into the set pin like that then um your noise then any noise that you haven't filtered out here any noise on there is going to make it through to here and it's going to make it through to your output.
+
+[e9cpKN69Avk] 121GW Development History — Dave Jones (opinion)
+context before: us which you know so they've got to write all new software and learn how the chipset works and everything else so it'd be a longer development cycle but you know hey yeah we'd let's use that chip so at this point we'd settled on the HY3131 chipset with VA instead of watts and you know we relaxed maybe some of the specs and things like that to lower the cost target cuz once you go
+TEXT: for really high higher end specs there can only be like a little bit difference in the specs but that can add up to a huge increase in the in the bomb cost of the units you might have to go for a thin you know custom thin film precision divider network and stuff like that and a much higher precision reference and everything else and it just you know
+context after: there's huge trade-offs all over the shop here and I couldn't possibly go into I don't know the hundreds if not into the thousands of emails that have gone back and forth between myself and ultimately finest I'm still keeping Kane test in the loop but I'm pretty much oh no I think Kane was still in the I was still dealing with Kane at this time but later on in the more detailed
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (opinion)
+context before: So I think we're using the same voltage reference as what's used in side the what is it? The $600 five or $600 Keysight U1280 series. It's the analog devices I can't can't remember.
+TEXT: It's in the Kickstarter part number is in the Kickstarter campaign. So we added um, so yeah, voltage reference. So we put in the this kick-ass voltage reference. And I asked them, you know, cuz they're the ones that determine the spec the manufacturer, the designers, the one the company who's designing manufacturing this.
+context after: They're the ones who determine the specifications cuz they have to guarantee it at their calibration facility and all that sort of stuff. And um we put in this new much better voltage reference in there.
+
+[9lIC3ZzIht4] Junk box Digital Panel Meter Analysis CX101 — Dave Jones (opinion)
+context before: though, it looks like I have to short that pin to the one next to it, but I can just do that manually I guess, even though the other end is here, and conveniently, so that should be, so I short black, brown, and orange there, apparently
+TEXT: according to the schematic, and that should be our input. So I'll hook that up to another floating power supply here, so not common. So this pin over here is apparently like a reference in and out or something so I'm not sure, but it seemed to be measuring something, so maybe this one's slightly different
+context after: maybe it doesn't need, it's got an internal reference and you have to strap it externally to make it work, I don't know. So let's knock, oh sorry, it's offscreen you can't see it, but there's another power supply on the left-hand side here I'm going to take that down to one volt, so I'm going to hook that up, well we get one
+
+[1424] EEVblog 1424 - Fluke 23 Multimeter Repair — Dave Jones (opinion)
+context before: So, anyway, and all multimeters to this day, well, a lot of them, use the transistor clamp method like this. Anyway, it's very interesting. You know, if if if something like this was blowing, like then, well, you know, your chip's going to be blowing.
+TEXT: Anyway, yeah, I'm just going to replace that resistor with a 1K. Hopefully, I've got a big enough carbon uh 1K resistor and I'll whack that in there and um see if she works cuz as I said, the main ADC and everything seems to be working the reference cuz the current works.
+context after: So, could be as simple as that. Let's Let's whack that out. I don't have a 1K um in a suitable size. Ernie Bernie. Uh so, I'm just going to whack in my little quarter watt, chubby and just to see if it works.
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (opinion)
+context before: Just the the fuses, the input jacks, the lack of any bloody MOVs. It's not doesn't stand a snowball's chance in hell of meeting any of its ratings. There's no precision thin-film resistor network in there for stability.
+TEXT: This is supposed to be a 0.05% class instrument. Yeah, they've whacked in a decent half-decent maximum reference in there. But, oh, I don't know how they get in there 40,000 counts out of the 22,000 counts Cirrus Tech uh chipset there, and uh it's just uh it's just awful.
+context after: They botched in a a like a not even a genuine uh true RMS converter, and they've got little trimmer pots everywhere on a You got to be kidding me.
+
+[727] EEVblog #727 - How To Kill An Opamp — Dave Jones (opinion)
+context before: series protection resistors or anything, any input protection at all, any sort of clamping, because it wasn't going to be ever used in a scenario where that was likely to be a problem. Except when it gets back in my hands and I completely screw my own little design by not checking before
+TEXT: I plug the damn voltage reference in. Ah! Unbelievable. So yeah, I think there's something seriously wrong with that chip, and it's loading down my reference. Let's go measure it. And by the way, if you haven't seen this, it's just got a power LED in here and an
+context after: InSpec LED, and that's basically it. It tells the production operator, go, no-go, whether or not a microcurrent passes the test. And well, let's, this is the voltage input here which takes the output from the microcurrent, and when you feed in the nominal 1 amps into the microcurrent, this is just a feed-through
+
+[372] EEVblog #372 - Fluke 27 Multimeter Review & Teardown — Dave Jones (opinion)
+context before: And check out we have a little ferrite on that input lead. And what that thing is going to do is just take the edge off any um uh surge or any input uh surges and when the fuse blows.
+TEXT: And that device down in there is an IFC23817. Can't find any data on that. Uh if we looked at the schematic, I by the two-pin nature of it uh there and the TO-92 package, my guess and the guard trace around it, um my guess would be that is a voltage reference.
+context after: And here's our milliamp input, the current shunt 4.995 ohms, 0.25% there. It's a biggie. It's a couple of watts. And right next to it there, you can see the classic uh bridge rectifier and diode protection will ensure that the uh fuse is going to burst and not that big um uh current shunt resistor on the milliamp range in uh gross overload conditions.
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (opinion)
+context before: Real pain in the ass. Anyway, if you want to take a look at this thing, the uh service manual for this, which has the full schematics and everything else in it, will be linked in down below.
+TEXT: And uh if you know what that voltage reference is in there from Linear Technology, please let us know. I'm sure there's a lot of people um into, you know, precision references on the forum and stuff like that and they would love to know that sort of thing.
+context after: Maybe it's obvious. I don't know. I just haven't looked hard enough, but anyway, if you want to discuss it, jump on over to the EEVblog forum. That's the best place to do it.
+
+[1248] EEVblog #1248 - INSANE! A 0.02% Process Meter for $9? WTF! — Dave Jones (opinion)
+context before: But they don't give you, you know, any serious specs over the range and linearity and all that sort of jazz, right? But pretty darn close to spot on. Of course, there's a bit of discrepancy between my two 7.5 digit meters here because current's not as good as accuracy.
+TEXT: Well, you can argue for your $200 it's meh, but how can they make this thing and sell it for under $10? You got to have precision parts. Is there a new source for some no-name Asian sourced voltage reference plus precision resistors and stuff like that?
+context after: Maybe. I don't know. Let's take it apart. Anyway, before we do that, it is quite a large unit, 121 GW, so you know, it's quite a large physical unit, but that's similar to other process calibrators on the market.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (opinion)
+context before: So it's your regular low impedance mode thing. Presentation is excellent. Oh, in the video. Thank you very much. How does this meter compare to a Fluke 87? Haven't seen our full video and read the specs.
+TEXT: Uh offhand, it's it's not a hugely highly spec'd meter. It's got a really nice voltage reference in it. Um, this is kind of a weird thing. Sort of late in the development process I I was thermally testing it and the results weren't as good as I liked.
+context after: Um, you know, there was some drift in the thermal chamber and stuff like that. And we looked into it and you know, it was like the voltage reference wasn't that good but we're trying to lower the cost, you know, so I decided no, let's put a nice voltage reference in there.
+
+[852] EEVblog #852 - Multimeter Mass Turbulence — Dave Jones (opinion)
+context before: It's much better than the specs. That's all we care about. So they can actually software calibrate these things I believe but I'm not sure of their exact procedure. I can't find a cal like a some meters have like a cal menu when you you know hold a button down and turn them on for example.
+TEXT: So I'm not sure of the procedure for this one or whether or not they're just relying upon a the voltage reference which I believe is inside the chipset for this one and the and the precision of the resistor networks that they plug into these things.
+context after: Whether or not they do individual cal on each one, I don't know. As like manufacturers different manufacturers going to be different, different models are going to be different, all that sort of stuff on how they calibrate them.
+
+[727] EEVblog #727 - How To Kill An Opamp — Dave Jones (opinion)
+context before: I wouldn't just order one op-amp. You know, because I would have got it from DGK or maybe someone like that. I would have ordered at least a couple of spares. Gonski. And a little bit of clean-up there. And she'll be right, ready for a new one.
+TEXT: Okay, so make sure dumbass me's got it around the right way. I think I have. I've already tacked down one corner pin. And in this case it was unlikely to have taken out anything else on the supply rail. And I checked the voltage reference on here,
+context after: it seems to be working just fine. And the other op-amp on here, its functionality is just fine. So there's only basically three main devices on the rail here. And sure enough, ta-da! I'm not sure if you can see that, but anyway, a green light, it's in spec, and I can now
+
+[727] EEVblog #727 - How To Kill An Opamp — Dave Jones (opinion)
+context before: It generates a really precision 1 amp current. So it may not look like much, but anyway, this generates the current reference for the microcurrent calibration. And I was just checking the calibration of this where I actually feed in 1 volt into the input into this thing.
+TEXT: So it simulates the 1 volt output from the microcurrent using my voltage reference here. And you'll notice that it's reasonably close to... I've just switched this thing on. So let me plug it in and watch what happens. Oh, am I doing it again?
+context after: No. Look! It's dropped down. There you go. Why is it dropped down? From the nominal 1 volt? Well, obviously the output of this voltage reference is being loaded. Why? Because I did something incredibly dumb! I hooked it up and I had my voltage reference set to 10
+
+[727] EEVblog727 HowToKillAnOpamp 1920x1080 — Dave Jones (opinion)
+context before: And that's, you know, my dumb. I didn't ruggedize this thing, um, like I would have normally did. I did a real hurry. Um, and I didn't put any input uh input series protection resistors or anything, any input protection at all, any sort of clamping because it wasn't going to be ever used in a scenario where that was likely to be a problem except when it gets back in
+TEXT: my hands and I completely screw my own little design by not checking before I plug the damn voltage reference in. Oh, unbelievable. So yeah, I think um there's something seriously wrong with that chip and it's loading down my reference.
+context after: Let's go measure it. And by the way, if you haven't um seen this, it's just got a power lead here and an inspec lead. And that's basically it. It tells the production operator go no go whether or not a microcurren um passes the test.
+
+[1424] EEVblog 1424 - Fluke 23 Multimeter Repair — Dave Jones (opinion)
+context before: It it looks fine. So, we're going to run with this. Like I said, here's your divider resistors here. That's that uh ceramic hybrid jobby. That's uh that does all the precision here.
+TEXT: And uh your voltage reference, there it is, down the bottom there. No wackers. So, that's all fine. So, the voltage reference is fine because this thing works, but as I said, it it only seems to work in current mode, okay?
+context after: So, we've tested the milliamp here. So, that works, right? So, that path there, and that bypasses, of course, the ceramic uh resistor divider and the other input protection stuff up here.
+
+[1420] EEVblog 1420 - Mailbag — Dave Jones (opinion)
+context before: Like he didn't just buy these, apparently. So, yeah, hats off. There's like a decade's worth of like, you know, actually collecting second-hand stuff, actually repairing these standards. And look, he's got, you know, SMAs and UHF and BNCs and all the requisite stuff.
+TEXT: Keithley parts up here, Fluke parts, linear ICs, DACs and ADCs. And yeah, this is like This is incredible. This is absolutely incredible. Trash can for bad voltage references that are 2 ppm out, in the trash can they go.
+context after: This is great. So, that's only the first photo. I mean, we've got multiple angles. Here it is. So, yeah, this is the Oh, no, that's that's the calibration bench in there.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (opinion)
+context before: And you can get those in like 0.1% or something like that, 0.2% for a dollar or so. So um you can actually power your microcontroller from that provided that your microcontroller and the other circuitry you're powering from it doesn't take more than its maximum allowable current.
+TEXT: But you can actually do that. So when you're designing power supplies like this, don't be afraid to actually power your microcontroller from a precision voltage reference. It can work and it can be very handy.
+context after: And in the previous videos, I actually used an LT109 voltage reference in the build, but you can use the LM336 and there's hundreds or thousands of other voltage references and some of them might have, you know, 40, 50 milliamps output capability and that's a decent amount of current for powering a a microcontroller.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (opinion)
+context before: And they don't even keep it in an oven. I I don't believe I think it's just, you know, it's just uh sitting there. So, um, uh, LT1000. It could be JND CZ.
+TEXT: It could be the, uh, anyway. Um, yeah, like Linear Tech's highest end. Like, it's like 40 bucks one off. Um, or something like that, I think. And yeah, and that's the reference using that $10,000 multimeter.
+context after: And it's all about the tempo because it's super duper low tempo. So, that's what you're paying for. And it's like, but if you look at, what I'm saying is if you look at the spec for that chip, it's like 3%.
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (opinion)
+context before: This thing is like I think slightly over a thousand or the 60 is slightly under is like $900 or something like that. I'll stand corrected on that. But yeah, you know, it's like two and a half times the cost and 6 and 1/2 digit meter.
+TEXT: It's got you know, a a much better voltage reference in there, much better design, much tightly, much higher controlled specs, everything else. So, really, you know, like not not a fair comparison at all.
+context after: But look at the user interface. It is identical right down to the menu options. Look, number parameter. They even call it trend chart, which I think might even be a Agilent / Keysight.
+
+[1104] EEVblog #1104 - Omicron Labs Bode 100 Teardown — Dave Jones (opinion)
+context before: And the actual generator itself for the source output and the other one might be so that the device under test doesn't affect the source and so that they can do the reflection measurement using this one as the phase reference perhaps.
+TEXT: That's That's my first guess. Next to that we've got an ultra precision 80 8676. Special. Don't know what the top job up there is. That doesn't That's just a Probably that looks like a voltage reference.
+context after: So down here we've got some filtery doohickey going on. Check that out. Then we've got our six What? Six op amps? What have we got? And these are AD 8170s.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (opinion)
+context before: The leads may not be the best quality or whatnot. And the input protection don't go use this on mains or other high energy circuits, but for sub $25 multimeter, I love some of the low ranges on this thing.
+TEXT: It really is quite neat. Seems to, you know, vastly exceeds its accuracy specs, at least the one-off unit I've got here. It could vary, but you know, it's got a half-reasonable little reference in there.
+context after: The build quality is okay, but you know, I like it it's as good as you can expect. If you're after a twenty-five dollar dollar multimeter, you can do worse than this little thing, I suspect.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (opinion)
+context before: And you can get up 30 readings per second to do that. And I love here how they're tooting their horn, almost ideal differential linearity and time proven dual slope conversion.
+TEXT: Ah, love it. It's got a medium quality reference in it, not a high quality reference. It's a medium quality reference, 40 ppm. Yeah, not that, uh, terrific, but, um, more than good enough for this.
+context after: Five pico amp, uh, input current down there. And it's a dual chip solution. And they've got them in the one data sheet, which is, um, quite unusual. Using Usually they'll have, um, separate data sheets for each one.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (opinion)
+context before: And it's all about the tempo because it's super duper low tempo. So, that's what you're paying for. And it's like, but if you look at, what I'm saying is if you look at the spec for that chip, it's like 3%.
+TEXT: Or something like, you know, it if you sorted if you went into Digi Key and parametrically sorted those voltage references, um, and that one wouldn't show up because you go, "Oh, 3% or something.
+context after: That's it's useless, right? It's garbage." But it's not. It's the best one in the industry because its tempo is incredibly low. So you need to sort by tempo instead of by um by percentage reference unless you want to do no trimming at all.
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (opinion)
+context before: We've got guard nodes marked around here, matched transistor, matched JFET transistor pairs, and uh stuff like that. And here's our uh reference board over here. That's got our uh reference Zener on it, and we'll take a look at that.
+TEXT: But uh yeah, that um ADC is, of course, uh clocked and controlled via the uh 8051 processor. And here's what a lot of people want to see, what is the ref the voltage reference used in this thing?
+context after: Well, this is the uh PCB assembly here. This one is obviously the uh reference um Zener diode with a built-in uh heater, too, of course, but it's a linear technology part.
+
+[1393] EEVblog 1393 - Retro Fluke 37 Multimeter Review & Teardown — Dave Jones (opinion)
+context before: So, that's okay, but I would have I would have liked to have seen a better battery solution, but hey, even the you know, the Fluke 80 series has still got the same battery snap solution.
+TEXT: Ugh. And given our guard trace around there like that, I'm going to assume that that is our voltage reference. Can we get a number on that? So, yes, that is very uh Fluke 1980s for sure.
+context after: There are some things I like about it in terms of like the external uh fuse board and stuff like that, but you know, the battery holder implementation and some of the layout things.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (opinion)
+context before: Some speculator heard me use it and registered one low. I I'll probably get an email. Would you like to buy one low.com? No. Oh, your question's complicated. Mini me.
+TEXT: I can't divide down a higher VREF. Goodness. Uh, I can't can't down divide down a higher VREF because single supply opamp you would need a non-inverting config with a gain less than one.
+context after: Any ideas? But I sorry, I don't know. It's too complicated. kind of missed the first part of your question because the chat crashed. What do I think of the one low 50meg twochannel analog scopes on eBay?
+
+[727] EEVblog727 HowToKillAnOpamp 1920x1080 — Dave Jones (opinion)
+context before: And a little bit of clean up there. And she'll be right. Ready for a new one? Okay. So, make sure dumbass me's got it around the right way. I think I have.
+TEXT: I've already uh tucked down one corner pin. And in this case, it was unlikely to have uh taken out anything else on the supply rail. And I checked the voltage uh reference on here.
+context after: It seems to be working just fine. And the other op amp on here um its functionality is just fine. So, there's only basically three main uh devices on the rail here.
+
+[171] EEVblog #171 - Agilent U1272A Multimeter Teardown — Dave Jones (opinion)
+context before: A lot of meters on the market will actually have a menu option to select 50 or 60 hertz rejection. You don't actually need that need to do that on this meter.
+TEXT: And there's a Burr-Brown OPA340 here. And down here it looks like I think it's a Maxim LM285 1.2 volt voltage reference, but it's a pretty crude uh voltage reference, that one.
+context after: So, it's obviously not used for the ADC up here. The ADC has to have another another precision voltage reference around it, but I can't really see one there. Maybe it's on the other side of the board.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (opinion)
+context before: Now, look, as you can see, there's only four paths in and out. One there, one down there, one over there, and one up there. So, you know, one one trace through each one, both top and bottom.
+TEXT: So, you can probably have a maximum of like eight traces coming in and out. But, that's, you know, probably enough uh for this thing cuz it's just a voltage reference.
+context after: So, you need power in and basically reference voltage out. That's about it. There they've got a complete cutout going all the way around here like that. So, it's a spiral arrangement, and probably shouldn't do it, but I can I can Uh you probably can't see it there, but I can I can poke that board and make it move because it's its own sort of, you know, sprung arrangement in there by
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (opinion)
+context before: But it's starting to recover back up like that. I mean, that could be a simple temperature thing overnight as the temperature drifted. I don't know. I would have had to record the temperature with it, get some correlation.
+TEXT: It's pretty good here in the lab though. It is pretty stable. So, who knows? Maybe that's the just some inherent drift in the reference or the meter. I don't know.
+context after: I haven't checked the specs to see which one is which one's going to dominate there. But anyway, that, folks, is very fascinating. And you can extract the data out of that and you can learn an awful lot.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (opinion)
+context before: There are better meters on the market spec-wise like the Brymen 869 is a better spec meter than this one. Um it's a little bit more expensive, but maybe a similar-ish price point.
+TEXT: So, it's a better spec meter uh if you're just after specifications. It's got It you know, I don't know whether it has as good a voltage reference as this one.
+context after: Um but they're what they claim for their specs is better than this one. Um it's This is designed We were deliberately trying to get a lower cost target. So, um it doesn't use a a laser-trimmed uh reference divider resistor, for example.
+
+[281] EEVblog #281 - BK Precision 8500 Electronic Load Teardown — Dave Jones (mention)
+context before: So, they've uh paid a bit of attention to detail to there. I like it. And I'm going to presume that these two large uh shunts here the main input current shunts and they would have possibly been tweaked to value or they're or they're tweaked in software of course to actually know that out because this is a real high precision unit by the way we're talking 0.05 percent class voltage measurement and at
+TEXT: least 0.1 percent class current measurement as well very precise bit of kit so I expect it to that would be a very low tempco metal to use as the current shunt and we should have some some precision voltage reference and ADC circuitry elsewhere but it looks like there's room for two more there maybe different model units cuz there are various models in this entire range and they have different
+context after: capabilities. And we've got a date on this sucker 10th of the 9th 06 so it looks like it is quite an old design it's been around for quite some time you know and these DC electronic loads they don't change much they don't need to be upgraded so that doesn't surprise me at all and there it is it's the IT 85 11 load and presumably this baseboard can
+
+[xUKf-4rv_sQ] EEVacademy #8 - Howland Current Pump — Dave Jones (mention)
+context before: 
+TEXT: Okay, so today we're going to be talking about the improved Howland current pump. Um it's a op-amp circuit with five resistors and a voltage reference which can be used to generate a constant current for a few milliamps, tens of milliamps, which can be used to drive an LED or a sensor or anything that requires a small amount of current which doesn't require particularly high efficiency.
+context after: So, let's get started. Here we have a difference amplifier. A difference amplifier is probably the fundamental building block of a Howland current pump. And you'll notice that this is a unity gain difference amplifier.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (mention)
+context before: So, you can probably have a maximum of like eight traces coming in and out. But, that's, you know, probably enough uh for this thing cuz it's just a voltage reference.
+TEXT: So, you need power in and basically reference voltage out. That's about it. There they've got a complete cutout going all the way around here like that. So, it's a spiral arrangement, and probably shouldn't do it, but I can I can Uh you probably can't see it there, but I can I can poke that board and make it move because it's its own sort of, you know, sprung arrangement in there by
+context after: virtue of that spiral cutout. Now, the ex- uh seismic man in me tells me, "Ooh, what's the resonant What's the mechanical resonant frequency of this board when you mount it in there like that?" And uh so, it will have some sort of mechanical resonant frequency.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (mention)
+context before: But, it measures the output from the micro current, and it can also measure the output voltage, which we'll take a look at there, and also the ADC input, the voltage input as well, coming from your source.
+TEXT: So, then your software is able to determine whether or not it's got adequate voltage and whether or not this regulator is going to actually drop out. So, our 2.048 voltage reference here goes into the DAC over here, the 12-bit DAC, and it also goes over to our 12-bit analog-to-digital converter here, and both of those are devices from Microchip.
+context after: This is The DAC is an MCP4922, and the ADC is an MCP3204. So, why did I choose this specific analog-to-digital converter and DAC? Well, let's find out. Let's go and do a parametric search in Digi-Key here.
+
+[482] EEVblog #482 - Retro Iskra Multimeter Teardown — Dave Jones (mention)
+context before: Look at that instead of per degrees C. But that's pretty good. You know, even on DC current, you know, point two. Not bad at all. I like it. Point two percent for ohms.
+TEXT: This was pretty good for its day. And there's our block diagram. Nothing really special of course. Got the input attenuator and the ohms to voltage converter for the ohms range, your current shunts and then it's got a the triple five timer in there was obviously operating the analog to digital converter there with the voltage reference.
+context after: I didn't have a look what voltage reference and then we've just got a basic BCD to seven segment decoder to drive the LED display and the converter in there and a AC to DC average responding converter.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: Like just gone more like all brittle and everything. but they seem to have designed them well and the plastic seem to be super high quality in this thing to last all this time with just plastic case together, the multimeter with no screws.
+TEXT: That could be the title of this video. What's a C S brand? Never heard of it. Leave it in the comments. So, if I hook it up to my lab reference here, I've got to set to 100 mV and of course my MV106 here has gone to a standards lab and been compared and yeah, it's good enough to calibrate like a 6 and 1/2 digit meter, let alone a
+context after: 4,000 count meter like this one. So, 1.1% out. So, yeah, that's out of spec. So, and we can change the various ranges as well. So, that's the millivolt range and DC, it's exactly the same.
+
+[1330] EEVblog #1330 - Mailbag with GUEST LABS! — Dave Jones (mention)
+context before: that bastard. Anyway, let's take a look at the lab. We've got a classic HP, I guess, Agilent, Keysight 3458 or 3458A, the classic eight and a half digit multimeter. And if it's good enough as the transfer standard in Keysight's own calibration facility, which I've done videos on, by the way, then it's good, more than good enough as a transfer calibration standard in Ian Johnston's lab or anyone's lab for that matter.
+TEXT: It is the classic device for, you know, transfer standard for calibrating. I mean, it's a multimeter, but people use it as a, like a calibration reference standard. So you can see some of the voltage references over here. I spy the same, what looks like the same Stanford Research dual channel analog filter that I've got.
+context after: I've done a repair video on that. Not quite sure what that is. We've got an old HP multimeter up here. What else we got? It's old school power supply. Ah, real analog meters. Winner, winner, chicken dinner. That looks like a frequency counter. Can't be bad.
+
+[0Oo2J66FLZA] BM786 Firmware Update Test — Dave Jones (mention)
+context before: Unlike Joe, unlike there's, they've advised Joe Smith that when they sent him the new chip, he, it may be slightly out of calibration. And the reason for that is because the microcontroller has a built-in sigma-delta converter in there, the main converter's in there.
+TEXT: So obviously, when you actually calibrate the meter, it's going to have little, you know, the calibration's going to include the analog-to-digital converter and the reference and everything else. So if you change the micro, the physical micro itself, then yes, your readings might be slightly out because
+context after: of the, because the calibration is obviously going to take into account any errors in the analog-to-digital converter. So yeah, if you change the chip, obviously, yeah, it might be slightly out. But if you just upgrade the firmware, I am told that no, you don't have
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (mention)
+context before: Everything else in there is just you know, input-output power wiring from the transformer, and all the front panel. So, all of your data is set and read via this serial link via the serial link here onto the main board, which then of course we've seen goes to the mains earth reference part of it here back to the main processor on the front panel.
+TEXT: So, each power supply module here for each channel must have its own on-board processing and on-board voltage reference and also analog to digital and digital to analog converters. Now, if we have a look at the mains wiring here, I've actually disconnected the these red and black ones down the bottom.
+context after: They're the two They're They come directly from the IEC mains input down here, and they go through these two cable ties here, and they go down to the switch on the front panel down in there.
+
+[275] EEVblog #275 - PIR Sensor Teardown & Tutorial — Dave Jones (mention)
+context before: that resistor on the input doesn't cause false triggering. And just as an aside, Perkins-Elmer also do what's called a digipyro. And that's a, instead of being an analog pyroelectric sensor, it's actually a complete digital one. It's got the pyro elements down here just as we've seen, but it's got
+TEXT: an analog-to-digital converter, it's got a decimator, and a serial interface which goes off to a microcontroller, and a voltage reference of course, and an oscillator. So these are completely digital paths, but they're totally different systems to what we're looking at here today. We're looking at the
+context after: one which is analog only. And if you have a look at the rest of the specs on the table here for the LHI968, you can see the responsivity we've mentioned, the minimum, the typical figure, matching between the two different sensors, 10% and the noise we've talked about,
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (mention)
+context before: Others prefer it the other way around. They'd like to know what the output voltage is going to be before they or or what the output voltage actually is regardless of the load switch position.
+TEXT: So, um this just having a separate sense line gives people the flexibility to wire it up anyway they like. And once again, I've just got some voltage divider resistors here, and that will give me a certain voltage into my analog-to-digital converter scaled down to meet my 2.04 V voltage reference.
+context after: And more than that, it is precisely the voltage here is precisely 1/5 of the output voltage. And coincidentally, remember I had a * 5 gain over here. So, once again, my that scales perfectly.
+
+[1435] EEVblog 1435 - The World's Most EXPENSIVE Catalog IC ? — Dave Jones (mention)
+context before: So I thought it'd be interesting to actually look at like some of the most expensive parts we can get on Digikey here. There's obviously other um sites but we'll just use Digikey.
+TEXT: Now this one actually came about because yeah it as I said like I was just searching for voltage references, right? And then all of a sudden I must have goofed it and then like all these weird microchip ones came up like like $43, $38, $40, $103 for a 7805 voltage regulator and stuff like that.
+context after: So I thought you know like I've occasionally done this before like just for kicks of like um sorted by the most expensive parts. So I thought we go through a couple of categories and just find the most expensive parts we can.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (mention)
+context before: Keithley custom multi-slope integrator, like you see in the Keithley high-end DVMs, except this one's probably not going to be as good, it just doesn't have the same huge requirement, but you can see the PLCC package up there, it's some custom part number for Keithley,
+TEXT: so it's probably like a custom embedded PLC, PLD type array, which is implementing their multi-slope integrator circuitry, and you can see the voltage reference down in the bottom right corner as well, multiple packages there, but this one just uses a buried Zener reference, just the
+context after: Zener diode reference, but they could have put a more high-spec unit in there, so they're just hedging their bets there. Alright, let's jump straight in and take a look at these power MOSFETs here, and here we go! We're in like Flynn, look at this, IRFP
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (mention)
+context before: I'm not that familiar with the actual implementation of it that if that's actually uh possible to do. So, well, I guess they must be. Or do they have a special variant of the uh part or something?
+TEXT: Hmm. Anyway, it's got all the requisite uh input uh switching. And it's got the voltage reference and everything else to do with you know an analog front end and all the stuff surrounded and it's all just you know jelly bean type you know muxes and and switches and things like that.
+context after: So you know not much doing there at all. We'll have another look at this puppy over here is a bit special but of course we're going to have a separate processor up here.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (mention)
+context before: So I'm sure we could find a part in there that probably did the business. So I think we're already well ahead straight off the bat. But look at these ADCs, ADCs with computation.
+TEXT: For example, if you wanted to do some computing stuff on that, number of DACs, resolution, internal band gap, voltage references. Yeah, it's just a hardware limit timer. Signal measurement timers, math accelerator, angular timer, you know, for rotational stuff, and class B hardware.
+context after: I don't know what class B hardware is. That's weird. You need CRC, you know, in in hardware. You can It's all in there. You can search for all these parameters.
+
+[802] EEVblog #802 - Mailbag — Dave Jones (mention)
+context before: EV blogging will happen. I hope you find it useful. Thank you very much. He's got to sell these. It looks neat. I love it. Unfortunately, either there's no battery or it's run out. Hmm. Got to open it. But that's a really nice case.
+TEXT: Funky. Gone to all the effort to oh, that's not silk-screened. That is Letraset, I think. Isn't that rather neat? Maybe the reference on its own isolated board. Is it? A bit how you're doing on the 9 volt battery snaps without, you know, we haven't got like a proper holder on there.
+context after: I can whack a couple of batteries in and otherwise, that's a little neat solution. It looks like yeah, he's got screened cable going to the front banana plugs. I'm not sure how much that's going to help, but anyway, let's power it up. See what's what.
+
+[1090] EEVblog #1090 - Sony Mystery Teardown — Dave Jones (mention)
+context before: that's why it tells, like the B and Cs on the side, they're 16 channels, so that's why that one is probably the DAC there. And there's a couple of trimmers up the top there, 0.5 volts, probably setting, are they setting like range levels,
+TEXT: or, oh no, voltage ref, there we go, 5 volts. So that's some sort of voltage ref for the ADC or something, perhaps? And that company, Asashi Kasai, I've heard of it somewhere, but my memory completely fails me, it's actually Asashi Microsystems, which is part of a much bigger group,
+context after: which has been going on for like, I don't know, 50 year old company or so, actually 1922 I think they started, absolutely crazy. Anyway, don't know if they're still in business, taken over, merged, done whatever, but they had a semiconductor thing, and maybe they were contracted by Sony
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (mention)
+context before: just like we were doing before. And there we go, there's the specs claimed. They span, you know, spurious free dynamic range up to the Nyquist frequency for a 1 MHz output, 84 dBc. Yeah, okay, we can go in and verify that. And at a maximum 10 MHz
+TEXT: output, that drops down to 75. So there you go. And some stuff on the DAC, the voltage references, offsets, because yeah, we didn't, that's something we didn't play with was the offset in there in the arbitrary function gen. So got all the schematics for it, they've got all the
+context after: formulas, everything, there's our audio output driver, and the spectral characteristics, here we go, and all sorts of and the calibration memory as well, which we didn't touch on. It is actually capable of doing and storing its own calibration stuff as well, which is fantastic.
+
+[1248] EEVblog #1248 - INSANE! A 0.02% Process Meter for $9? WTF! — Dave Jones (mention)
+context before: It's only got a fixed 10-V range. That's it. It makes it easy. You don't need all multiple ranges, so you don't really need those precision, you know, ceramic divider networks or anything like that.
+TEXT: You don't need anything fancy pantsy there. That's just a fixed input scale there, so they're using probably some, you know, 10-ppm resistors in there. Yeah, why they've got the reference over here like this, and that looks like it's it's for I can't see what else it'd be for.
+context after: Well, you could use it for your multimeter, part of it, but you know, but the multimeter's just meh. So, that's obviously they're using that for the uh analog-to-digital converter up here, so that's a layout thing.
+
+[1598] EEVblog 1598 - ANENG AC11 Socket Tester TEARDOWN + SCHEMATIC Reverse Eng — Dave Jones (mention)
+context before: So, the battery, as you saw on the schematic, so this is the ground. This is not earth. This is the internal circuit ground and that's connected to the negative of the battery, but that's different from the com.
+TEXT: They're not actually electrically tied together, but that's common in multimeters. Common, get it? You're a week. But yeah, it's got all the stuff required for your regular multimeter here and it's got an internal voltage reference, of course, and it's got an 8-bit risk MCU.
+context after: What actual risk micro that is. It Maybe it's its own flavor, but here is a typical application circuit here. This would be a multimeter, so this is the common of your multimeter.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (mention)
+context before: Anyway, here's a TDA8703. It's a flash 8-bit analog-to-digital converter primarily designed for video type applications, but you could certainly um use it for an oscilloscope. And I did, and it looks like Fluke have as well.
+TEXT: But you'll notice that it's only got a single ADC. There is no second one. And it's a pretty basic flash 8-bit flash converter. Really, it needs like external voltage references and stuff, external level shifters, and all sorts of things, you know, to make the thing work.
+context after: But you know, it's not bad. It's 40 meg samples per second at maximum. So, that's the upper sample rate of this thing. Obviously, I'm not sure if it does actually get to 40.
+
+[986] EEVblog #986 - Mailbag — Dave Jones (mention)
+context before: Let's have a look at the chips. And yep, right there on the input, that weird code there, that's an analog device, it's 84 95 there, so that's a K-type thermocouple amplifier with built-in cold junction temperature compensation so it's got a built-in, you know, built-in temperature
+TEXT: sensor and everything else. Got a little trimmer there, and they've gunked that up. And then we've got like a, looks like it's upside down, all the electrons are going to fall out. Then we've got a voltage reference powering that, so really they've gone to town there.
+context after: And over here is just a microchip 6004, that's just a jellybean op-amp, just driving some sort of overload indicator. Ooh, that's a dual-colour LED, you can see the dual die on there. So I'm thoroughly impressed by that, that's going to be a lot
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (mention)
+context before: So, we need to find that value in the data sheet to find out what this value actually is. And if you have a look here, it actually tells you since 120 microamp current maximum from the adjust terminal.
+TEXT: Well, that's it. Once again, don't take any of this application stuff for granted. Go over to your electrical characteristics table cuz this is the only one that matters. So, if you look for our voltage reference here, we can find out there it is, adjust pin current.
+context after: There it is, 75 microamps typical, and sure enough it is. They were correct. It is 120 microamps maximum. So, they weren't lying over there like they were with the resistor divider up here.
+
+[1207] EEVblog #1207 - ARM Dev Boards Falling From The Sky! — Dave Jones (mention)
+context before: What that would be for onboard temperature sensor. And this is a common technique that I've, uh, discussed over the years in, uh, several videos, I'm sure. Is that you route out a slot like that, because it prevents, uh, any thermal expansion in the, uh, PCB from actually stressing the, uh, through the leads of your, uh, temperature sensor here through the leads in there.
+TEXT: And then getting onto the die. And that can actually affect the stability of your, uh, temperature reference or voltage reference or whatever it is. So, um, yeah, that's just a common technique for that. And on the bottom, HCUO4. Got to have some 7-4 series in there.
+context after: Fantastic. Uh, just got a lot of, uh, other analog-y stuff. Not much else happening there at all. And that there is our transmitter. It's upside down, so all the electrons have already fallen out. But, uh, yeah, you can see that. That's what I want in a trans- that's what I expect to see in a disposable transmitter.
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (mention)
+context before: and why it has to do it. Like, hey, it's important that we calibrate, sorry for the inconvenience, but it's important that we calibrate the here we go, source calibrated ideal 4, calibrated A, these are our percentage difference. Okay, so there we go. Okay, maybe they're just
+TEXT: calibrating out a little bit of error there, just to get better. Specs, which is all hunky-dory, presumably all referenced back because I don't, I'm not sure if there was an external voltage reference chip on here, but they might be using the one built into the PIC32
+context after: ADC. Done. I guess I can save that for, as being implied, the instrument was lost when powered down. What? What? Are they seriously telling me that they have to reload this calibration for every time you power this up? No way. That's an epic fail, if that's the case.
+
+[661] EEVblog #661 - Mailbag — Dave Jones (mention)
+context before: Fantastic. We've got ourselves the DAC, the MCPR4922. Let me zoom in here, that's ridiculous. And we've got its LED, so it's pretty fancy pancy. There's even motor control down here. Terrific, you've got your catch diode on there, beautiful, well done. And we've got ourselves a rotary encoder by the looks
+TEXT: of it. And 5 volt auto USB selector between VIN and VUSB, excellent. He's doing that with a relay. And there's our voltage reference. It's an analog devices part. And there's our ADC for the VIN to measure the battery voltage, presumably, and the current output
+context after: as well. And yep, here's our basic current load. Yeah, we've got an n-channel MOSFET, a bunch of parallel 1 ohm resistors here, 10 of them by the looks of that, to get 100 milliohms cheap and easily. Yeah, that's a common technique to do
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (mention)
+context before: So, that should be good enough for our circuit, but as always, it's a standard pinout. If we need to put, uh, really, um, better precision op amps in there, we just drop them in.
+TEXT: And as for our 12-bit DAC over here, well, it's pretty darn boring. There's some digital input lines here. It's an SPI, so we've got a clock, a chip select, and, uh, data input, a voltage reference input, bypass cap, and it just outputs two different voltages.
+context after: It's a dual channel 12-bit DAC, this one. It's quite nice. Uh, well, for the price, it's really cheap. And, uh, and so, that just generates our voltage Vset and Iset exactly as we would if we hooked a pot onto here like we've seen in the previous videos.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (mention)
+context before: The other thing is the um the meter is not as cheap as I originally wanted. I originally had a lower price target in mind and the cost has crept up over time.
+TEXT: Uh technically the cost is more than the contracted cost. Like we you know, we have a contract for this and there's a contract price in there and it's actually more than the contract price because we've added an extra voltage reference other precision parts.
+context after: We added in a more precision true RMS converter and all sorts of you know, stuff and and they passed on the costs. And then it's got gold plated contacts on the range switch and stuff like that that have all, you know, every little thing we do adds little cost here and there and it's and they spent so much time and effort on it.
+
+[930] EEVBlog #930 - Mailbag — Dave Jones (mention)
+context before: It's the corresponding negative power supply for that channel like that. So if I plug, I'm feeding in 1 volt precisely into channel 1. Ta-da! There it is, 0.999972. Okay, got it now. It's just kind of non-obvious. And as you can see, the update rate is actually very slow here.
+TEXT: I'm not sure if there's any ability to change that here. Anyway, system info, there we go. System uptime, tells you how long it's been running, that's very nice. Nice touch there, I like that. Voltage stack, ooh, voltage reference, ooh. How does it measure
+context after: the voltage? Oh, have they calibrated it? Maybe they've actually calibrated it and programmed it in there perhaps. Hmm, interesting. So let's go back and oh, no. Logger, 60 minutes save interval, 60 minutes decimal separator. Um, where is, okay, we've got startup delay, there's no
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (mention)
+context before: Yeah, like that should be consistent and it's not. There's really something wrong there. That should be like a consistent output. Yes, it is the 27-kHz if you actually measure it, but yeah, there's all sorts of weirdness happening there.
+TEXT: So, you know, it could be anything like could be a sense, you know, the feedback, the voltage reference, or anything like causing an issue, Um, but it does seem at least to be the PWM chip seems to at least be working because it's outputting something.
+context after: Right, so what I want to do is I just want to go back to measuring that primary side transformer now that we've got more information on the secondary, well, the actual drive side of that, the PWM control side of that.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: What do you have? What's the circuitry actually look like? Well, here it is. It's a very simple. It's got an NPN series pass transistor. It's got an op amp.
+TEXT: It's got a voltage reference. And it's got two uh feedback uh voltage divider resistors. And that's it. That is a complete traditional three-terminal linear regulator. Now, the 7805 type will have these resistors uh built in to set the output voltage.
+context after: But something like an LM317, which is um an adjustable linear regulator, these resistors will be outside the chip, and it will have that uh feedback pin. But they work exactly the same.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (mention)
+context before: Yeah, pretty much a dead giveaway that that's going to be the JTAG programming interface. Well, down on the analog board here, from the side, hello Mr. TO92 2N3904. What are you doing there?
+TEXT: We saw a TO92 package part on the Agilent um unit for the voltage reference, so that it was outside. It was the thing that was uh controlling the heater element um for the voltage reference, and it was outside, so it would get separate air flow.
+context after: I wonder if they've done the same thing here, because there's a metal can right next to it, which but it's a huge can. It goes all the way up there, so I don't think all of that is your voltage reference, but anyway, fascinating.
+
+[1452] EEVblog 1452 - Fluke PM3370B Combiscope REPAIR — Dave Jones (mention)
+context before: That's a classic thing of where the EHT is dropping down and then the capacitors goes and all your image just collapses. Like it's not like the XY drive or anything like that.
+TEXT: So, our power supply board is pretty basic stuff. We've got a line filter here. We've got our bridge rectifier there. There's a 10 volt voltage reference. There's our flyback transformer and and then the rectifier and then the 5 volt regulator.
+context after: It's got to have more than that. It can't just be 5 volt output. There's got to be tons of rails specially for the analog and digital and all that.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: Hi, I've got another top five jelly bean component for you. This is a follow-up to my previous video which was very popular linked up here and down below if you haven't seen it where I looked at the top five jelly bean op amp components.
+TEXT: So, today we're going to take a look at ta-da, top five voltage linear voltage regulators and references. So, let's get down to it. Now, a jelly bean component is basically an industry standard component that has been around for a long time.
+context after: It's been around forever. In case of the first one we're looking at here, like been around for like 40 plus years. So, a long time. And they're still used today as the go-to component for this particular function.
+
+[727] EEVblog727 HowToKillAnOpamp 1920x1080 — Dave Jones (mention)
+context before: Um there you go. It's not pretty, but there is a small board uh down in there which um is pretty schmick actually. It generates a really precision 1 amp um current.
+TEXT: So, it may not look like much, but anyway, this generates the uh current reference uh for the microcurrent calibration. And I was just checking the calibration of this where I actually feed in uh one volt into the um input into this thing.
+context after: So, it simulates the 1V output from the microcurren um using my voltage reference here. And you'll notice that it's um reasonably close to I've just uh switched this thing on.
+
+[87] EEVblog #87 - Let's hop on the Electronics Design Merry-Go-Round — Dave Jones (mention)
+context before: There's a SOIC 28. Yep, there we go. That one's available in SOIC 28. So, I like that. Let's look at the um 16 uh F722. If we open the data sheet, let's check it out.
+TEXT: Um now, what have we got here? Let's zoom in and uh we've got um Oh, look look at that. The analog-to-digital converter is only 8-bit resolution. It does have an internal voltage reference, but 8 bits really isn't going to cut it for me.
+context after: I really need uh you know, say 10 bits or something like that. 12 is a bit overkill, but I could maybe get away with eight, but I really want um 10.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (mention)
+context before: Is it doing this in is it doing auto ranging hardware or software? It's there's I don't see any reason to have the comparators there if you weren't doing it in hardware.
+TEXT: Anyway, this design looks pretty jazzy. Looks like it can do the business. So, obviously our ADC is in here somewhere. Where is it? You know, we're going to have a nice voltage reference, and there's going to be Where's the 14-bit ADC?
+context after: Where's Wally? I reckon Wally's got to be one of these TI jobbies here. It's obviously like a serial output one. Um 2 megabits per second serial output. So, anyway, um that looks uh pretty good.
+
+[718] EEVblog #718 - Keithley 2400 SMU Teardown — Dave Jones (mention)
+context before: So, that's just It takes care of all the housekeeping here. All right, here we go. Let's have a pan around the board with our Takano microscope, shall we? And we can get reasonably good detail, see all the chips and everything.
+TEXT: So, everything's hunky-dory. So, let's have a look around here. And what I'm specifically looking for is the voltage reference. Now, I found a Vref test point here, but look, it's a Linear technology 1097 with linear technology 1007.
+context after: These are just all op-amps. We've got a TI 7705, that's a voltage supervisor, some 74HC logic, a DG 4 400 series marks. We've got a max 326, there's nothing special happening here at all.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: It's, uh, more than good enough for my, um, application here. So, there you have it. There's our precision 1 amp current source, and we got it stable, and we got it to work on a breadboard.
+TEXT: Brilliant! That's what we want. Even, uh, within our, uh, error budget of our two main parts here, which is our voltage reference and our, uh, precision resistor here. So, I think I might, uh, do a custom little, uh, board for this.
+context after: I'm not sure I had exactly the final, uh, form factor it's going to be built in. Little box, it's going to be powered from batteries, it's going to be powered from like four, uh, D cell batteries.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: Same thing here. This is a step down switch mode power supply. And this is actually what goes on in the chip. Check it out. They're not that much different at all.
+TEXT: Look, series pass NPN transistor, exactly the same. Op-amp with a voltage reference, exactly the same. Feedback resistor network, exactly the same. So, what's different? Well, if you look at it, there's a gated oscillator down here.
+context after: There's a There's an oscillator. Let's just take an example of a fixed oscillator for the time being. And the op-amp actually switches that oscillator off and on to drive the series pass transistor.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: That's sort of worst case. These things you know never hit their worst case. So I can only presume that extra error that we're getting in there because we expect better than that, um, is due to the contact resistance on my breadboard in here.
+TEXT: So, this is not ideal. Either that or my voltage reference is out of tolerance. So, what I've done is I've soldered up another chip. This is the old one with the dodgy, uh, pins that I had to, uh, bend inwards to make it, uh, fit.
+context after: Anyway, I've soldered on a, uh, brand new, uh, LTC, uh, 6605 and let's have a look at what we get. Bingo! That is, uh, half, I think, roughly half of what we're getting before.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (mention)
+context before: Yes, it's just plastic. It's not a shielding um box at all. In this case, it's just designed to keep out the air flow. We've got shielding on the base of the board there.
+TEXT: They don't necessarily need to shield this. They just need to keep out air flow from the fan that's cooling this thing, circulating air currents in there. Don't um you know, waft over all of the parts and the voltage reference.
+context after: But, the voltage reference does has have its own internal heater, but still, you don't want the ambient changing willy-nilly uh based on the um fan. So, you know, you want it to change really gradually, and that's what it's going to do by putting a cover on it.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (mention)
+context before: So, all of the uh all the control circuitry and everything else is at the same ground potential as the input. And there's where all the measurement magic happens. That's an Analog Devices AD7682 Pulsar ADC, 16-bit job.
+TEXT: And yeah, pretty decent converter. You can see right next to that, there's the voltage reference. That's a Maxim 6250. Yeah, pretty common for this type application. Good enough. And over from that, tada, there's our DAC.
+context after: Look, uh good old Burr-Brown, love it. Anyway, it's the DAC 8831. Once again, matching 16-bit DAC. And this uh particular one has, as opposed to the 8830, I think it is, has a uh Kelvin connection for the reference.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (mention)
+context before: Uh completely silent. As you saw, it only draw drew uh 15 odd watts or thereabouts. But anyway, transformer up here, right right hand board construction soldered directly onto that.
+TEXT: Then a little board, very nice looking board to board interconnect there. And looks like out there, there's our main voltage reference there. Couple of huge relays in here, but really just double-sided board construction.
+context after: We've got all our processing happening over here, good old EPROM in there. Don't want to lose that data out of that. You may not get that one that back in a hurry.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: And there is our circuit built up there and this op amp isn't used here. That was just from some experience from last time. We might need that again. We'll see.
+TEXT: There's our precision voltage reference on there. As I said, bypass cap, bypass cap on the input. The ground, you'll notice that the ground is reference is separate and actually goes back to the sense terminal over there.
+context after: Oh, there's my 1.25 ohm four terminal precision resistor. There's our N-channel MOSFET up here. This will be my current source going from the drain of that thing up to the top there.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (mention)
+context before: 8558 voltage uh yeah meter right um and you know it's got like the world's lowest drift and all that sort of stuff. Well, it, you know, you might be surprised to find that the reference in that you can buy it, right?
+TEXT: It's just a linear technology. Um, God, don't quote me LT like 40 or something or one 40. Oh, I don't know like ah, no, I'm not I'm not going to remember the exact number, but right, you can buy it from linear technology.
+context after: It's like 40 bucks oneoff price, right? So, you can buy the same reference that's used in this, you know, $10,000 multimeter, right? You can you can buy that reference.
+
+[918] EEVblog #918 - REPAIR: Sony Pyxis GPS — Dave Jones (mention)
+context before: There we go, it's coming out of our 7660 inverter. But hang on, before we go off half-caught, we've got another couple of test points in here. This one's actually, I believe that's Vdig, so that'll be Vdigital, so that could be 3.3 or something like that.
+TEXT: And this one in here's got the VRF, voltage reference, so that's pointing to that one in there. So I'm going to just have a quick measure of those two. We know our minus 5 volts isn't there, but our plus 5 is still there.
+context after: So let's measure our voltage reference, 1.43, I don't know what it's supposed to be. But that's alright, there's something there. And Vdig. Well, there's nothing on Vdig either. Hmm. And you'll notice that Vdig is also coming from this, oh, is it coming from that top board?
+
+[718] EEVblog #718 - Keithley 2400 SMU Teardown — Dave Jones (mention)
+context before: So, sorry to all you uh volt nuts out there. Uh for the life of me, I can't find the actual voltage reference uh used for the multi-slope uh converter in here.
+TEXT: Could be one of the SOIC-23 packages, could be a a precision uh buried Zener reference uh for example, something like that, perhaps. Hmm. Well, there very well may not even be a specific voltage reference in here.
+context after: It may be that the uh that the rails are, you know, ultra-low noise, ultra-low drift uh voltage rails, for example, and everything uh is referenced from that, perhaps, because um of course, you don't need an absolute uh reference in there like an absolute precise value reference like 2.50000 volts.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (mention)
+context before: And then you would um because this this actual resistance in here matters because it will change based on when this thing flexes like that. Even the tiniest little flex in there can cause the resistance to change.
+TEXT: And you put that in a Wheatstone bridge uh configuration circuit with a very uh high stability precision voltage reference and some other um high stability resistors in there. You couldn't just use a junky ones.
+context after: Yeah, you know, strain gauges are very precise type things. And then you'd have a differential amp, a really uh you know, highly stable high high precision uh differential amp in there.
+
+[1571] EEVblog 1571 - Nobel Prize Winning Mailbag. 121GW, Retro calcs, Assembly, and Discrete Logic — Dave Jones (mention)
+context before: Overflow, as in like 1,000 V overflow. So, do it on DC No, it's okay on DC. Okay. M- on milli A- It's okay on AC millivolts. That's actually not updating.
+TEXT: That's That's not updating. That should be That should be changing. Hello. Hello. Wow. Um that's a strange one. I've got that on a voltage reference source, uh 3 V, and that's just That's just reading nothing.
+context after: But, on millivolts DC, it's Oh, no. No, I thought it was going to do something. I've got 300 milli thing in 300 millivolts. If I feed in 3 V, it overloads.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: Like, bang on to the least significant digit. It's also 1.1% out for the 10 V range and that's the same for the ohms as well and I believe for the current as well.
+TEXT: So, it looks like one of those trimmers is going to be the absolute tweaking, but I don't know which one. All right, so this one here is next to the voltage reference physically next to the voltage reference.
+context after: So, going to give that one a go. Got the screwdriver that fits. All right, hello. She is She's turning. There we go. Look at that. I hold tongue at right angle.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (mention)
+context before: It's got guard trace all the way around here. Look at that. So, you can actually um you know, see that's obviously, you know, not just like an I²C chip or something like that.
+TEXT: It is some analog signal there that they're trying to guard against. And you'll notice that here, what looks like our voltage reference, I'm not going to try and uh you know, decode one of these SMD marks.
+context after: They're a pain in the ass on that SO-23, but why have they routed out that little slot around there? Well, that is to isolate that device from any thermal stress on the board, cuz when this board warms up, which you'd expect to do and what would happen inside a power supply, for example, then it doesn't apply stress to the leads as the PCB material stretches just a little tiny little bit,
+
+[989] EEVblog #989 - FLIR ETS320 Thermal Camera Teardown — Dave Jones (mention)
+context before: So, like inside the camera. So, that's obviously a uh some sort of programming {slash} debug uh interface. And suggested, that is isolated up there. That's isolated for thermal and uh vibration reasons.
+TEXT: So, it's either a voltage reference or a temperature sensor. Take your pick. I don't know. What's a T730 on a six-pin uh SOT-23 package? David's over there busily trying to get that up on his phone.
+context after: It's easy. Another header there which doesn't seem to be doing much. So, there you go. That's about all she wrote on that board for those playing along at home.
+
+[500] EEVblog #500 - Live Show — Dave Jones (mention)
+context before: I do I do like him, but I'm not paying that to go see him. That's crazy. Yeah, he's Yeah, he's very cool. I watched his uh show two two nights ago, one some one of his um uh series on uh Evolution.
+TEXT: Um the one the other night, Evolution, it was really good. I do like Brian Cox. He's really He's excellent. Some say he's the new Carl Sean, you know. Um, do voltage references have a voltage drop?
+context after: I'm looking in the data sheet. 5V reference. Well, that, you know, if it's a shunt reference, you know, they've got to have a minimum uh voltage. I mean, you know, there's um two different types.
+
+[504] EEVblog #504 - UPS Tutorial & Teardown — Dave Jones (mention)
+context before: So, looks like they've got a charging waveform here. Perhaps you'd have to read the associated text. And they've got some clearly some uh control circuitry here. Here's the battery.
+TEXT: They've got some other Yeah, they've got a error amplifier here with a voltage reference control ADC all that sort of jazz. So, that's clearly the control if looks like they got some There we go.
+context after: Energy build-up state. That would be in the winding inductance and they got the discharge state and energy build-up state again. And you can associate that with the text description of the system operation.
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (mention)
+context before: Yeah, yeah, yeah, yeah. Fairly typical of what you'd expect to find in a 5 and 1/2 digit multimeter. Of course, unlike like Fluke and Keysight, they haven't like rolled their own, you know, dual slope converter and stuff like that.
+TEXT: Just used an off-the-shelf delta-sigma. Good enough for a 5 and 1/2 digit meter, no worries whatsoever. And there's our voltage reference right next to it. It's the MAX6325, uh the CSA version.
+context after: It's, you know, a reasonably schmick reference. It's a 0.5 ppm initial accuracy of 0.02%, but of course that doesn't matter a rat's ass. It's all about the temperature drift because this thing's got a nominal DC spec of 0.015%.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (mention)
+context before: Now, uh the input voltage up here is pretty much it technically it's going through an RC filter here with the current shunt resistor, but it's negligible, really. So, it's a So, the voltage is going to go straight through to power the uh LT1080 straight to the output.
+TEXT: There's no uh there's no capacitance um around our voltage adjust pot or anything like that um or our voltage reference. So, that's going to power straight up instantly power the pot instantly.
+context after: This op amp's going to turn on instantly and it's going to try and drive the set pin of the LT1080 instantly. Assuming our constant current uh control is set all the way to maximum, of course.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (mention)
+context before: Unbelievable. What the hell were they thinking when they designed this thing? I I don't think they were. It's just ridiculous. Wow. Like this is supposed to be, you know, serious business going out and measuring, you know, 1500 volt PV, you know, in installations out in the field, you know, industrial big industrial type stuff.
+TEXT: And they want to enter that market with this. Let's go for a,000 volt AC. Shall we operate? Yeah, it's takes time to settle down for my voltage reference here, but hey, it's bang on though.
+context after: Um, this can go to 11 and and we're 1200 volts AC. It's surviving as you'd kind of expect, but the design just isn't there for the for you to trust this on high voltage stuff.
+
+[1574] EEVblog 1574 - REVIEW: Is the $42 Fluke 101 Multimeter Any Good? — Dave Jones (mention)
+context before: I mean, we've got a crystal and a bunch of passives, but that's all she wrote, really. And we've got more input protection diodes there, but that's about all she wrote.
+TEXT: So, is the voltage reference internal? And we've got our battery terminals here. There you go. Input fuse there, very nice. And reverse diode protection there. And that'll be the regulator.
+context after: Of course, the one thing you won't find in a cheap meter like this is any sort of hybrid resistor divider network. You're just not going to get it. So, yeah, they just using passive jobbies for that.
+
+[791] EEVblog #791 - Ebay Fluke 45 Multimeter Teardown — Dave Jones (mention)
+context before: And once again, there's those big opto couplers we saw going over. So, it's just the serial comms data coming directly out of the AD converter itself. And for those playing along at home, there's inside the big custom Fluke analog processor.
+TEXT: It's got multiplexers and switches and all sorts of things. It's got the voltage reference for the ohm source. And everything you could possibly need to roll your own front-end converter.
+context after: And you can see our input signal here being AC coupled off here. It goes through some relays up to a AC buffer up here. And then here is our true RMS converter.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (mention)
+context before: You just get as a solder wave goes over this thing, you actually get a larger pad on the end allows you to capture any excess solder that's coming off like that.
+TEXT: And there's a Signetics SG3524D pulse width modulation power controller. So that's just you know, powering some DC to DC converter stuff around here and LM285 1.2 volt voltage reference.
+context after: And of course there's one thing you'll notice lacking around the multimeter inputs or anywhere on this board is your traditional Fluke multimeter type functionality. It doesn't have that Fluke input custom switching chip and all that sort of stuff.
+
+[427] EEVblog #427 - HP 3478A Multimeter Teardown — Dave Jones (mention)
+context before: Or it's actually the logic for the analog-to-digital converter. It's not an actual analog-to-digital converter as you know it. It's the external the external integration capacitor around the outside, the external switching and stuff like that is done outside.
+TEXT: This is just the logic for a multi-slope analog-to-digital converter, which is a quite a neat way to do it. And of course, the voltage reference, absolutely identical linear technology.
+context after: It's got the HP part number, but as we found out, that is a linear technology LM399. So, exactly the same voltage reference. I presume it's the same grade that's used in its big brother.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: So, we we didn't find them Oh, is that the current sense resistor for the milliamp shunt? I think it is. Aha, there's your reference. All the LM358 fanboys go wild.
+TEXT: Um yeah, 2.5 V reference. Uh what's that's the Z? I don't know what temperature class that is. Um but it Yeah, like as I said, this is like a point two percent class meter or something.
+context after: It's only 4,000 count. It's not It's not, you know, 4.5 digit point. As I said, the 50 series, that can that at least got down to 0.025% accuracy specs.
+
+[1012] EEVblog #1012 - Best Bargain Ebay Bench Meter? - Fluke 8842A — Dave Jones (mention)
+context before: The other good thing is, check it out. Looks like we've got a Zilog E2 PROM down in there. You'll notice the lack of a battery in this thing. So, none of that pain in the ass battery backup uh calibration values either.
+TEXT: So, E2 PROM all the way with LBJ. No prizes for guessing that custom Fluke chip is the ADC. Uh the dual slope or a multi slope integrator. And is that our voltage reference down there?
+context after: I'll get my macro lens out. Woah, for all you LT fan boys. Aha, we don't have an LM399, we have an LTFLU, which is a LT Fluke manufactured by Linear Technology.
+
+[1649] EEVblog 1649 - Mailbag: M5stack, Beelink Mini PC, ZOYI LCR, ToughOn Battery — Dave Jones (mention)
+context before: Sorry. But unless I'm blind, I've got it plugged in. Um it doesn't say it's uh charging at all. It just tells you the percentage. A charging indicator would have been nice.
+TEXT: Uh something very odd is going on here. I've got my 10 V voltage reference here. I've got positive polarity. Yellow on the positive here. Yellow is going to the positive input here.
+context after: And I'm getting minus. Minus. 9.97. Not plus. Sure enough, if I change the polarity, it'll flip. But um uh what? And if I send it you check this thing.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (mention)
+context before: Um, you know, there was some drift in the thermal chamber and stuff like that. And we looked into it and you know, it was like the voltage reference wasn't that good but we're trying to lower the cost, you know, so I decided no, let's put a nice voltage reference in there.
+TEXT: So I think we're using the same voltage reference as what's used in side the what is it? The $600 five or $600 Keysight U1280 series. It's the analog devices I can't can't remember.
+context after: It's in the Kickstarter part number is in the Kickstarter campaign. So we added um, so yeah, voltage reference. So we put in the this kick-ass voltage reference. And I asked them, you know, cuz they're the ones that determine the spec the manufacturer, the designers, the one the company who's designing manufacturing this.
+
+[1366] EEVblog #1366 - Mystery Bunker Item Teardown — Dave Jones (mention)
+context before: Like 5 years later. So, they had to use like, you know, 4 5-year-old stock of processors to get this puppy working. Oh, made in Germany. Oh, made in made West Germany.
+TEXT: Not that East German rubbish. Elco I Sure I'm not pronouncing that correctly, but oh, beautiful. Voltage reference for those playing along at home down there. What is it? An 80 584.
+context after: Once again, yeah, 30 that was that was brand new ski. So, 37th week 84. So, they would have got that fresh off the production line. And the other devices in here handily marked OP2.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: Back from the future. But, if you think you're going to solve this problem by, you know, tweaking your input capacitance on this on over here, then you're completely wrong.
+TEXT: You're in the wrong ballpark because the loop stability of this thing is ultimately uh determined by the phase margin of the um output op amp in there for this voltage reference.
+context after: And the as I said, the output um capacitor here, the 10 microfarads with the uh a a it usually specifies in data sheet. It does in this case of it's got to be less than 0.1 ohms.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (mention)
+context before: Give me a thumbs up and comments down below if you want me to do a separate video on this um actually getting one of these and trying to actually develop a a project with a 2 cent microcontroller, 3 cent microcontroller.
+TEXT: It's got a comparator, internal voltage reference in a little five-pin SOT23. Fantastic. Doesn't have an ADC, 64 bytes of RAM. It's got a 16-bit timer, 8-bit timer. Does do PWM.
+context after: That's nice. Um you know, if you just want a little five-pin micro for example, a little SOT23 that all it does is generate a PWM or something like that for a couple of cents.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: I'm not sure. And another device down there, a little Look, little MLF package. Not sure what's happening there. Another TI part. But quite a few TI parts there. P274 22KAV31.
+TEXT: Don't know it offhand. Uh there's a voltage reference test point. A couple of more devices around there. It's all pretty bog standard stuff. And a 4051. You got to have a 4051.
+context after: And check out the via stitching all the way around this external input circuitry. They've got going, "Oh, man, I don't want anything to get in or out of this sucker.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (mention)
+context before: Oh, sorry, I was getting carried away. I think this is the 5-V C. Let's Let's go to the next page. C C C, yes, 5 V here. That's it.
+TEXT: Um What's So, there's no regulation for the 5 V? Really? It looks like they've just got a big Zener. If we look down that one one up, I think we'll find that's a 5.1 V Zener.
+context after: Yeah, I couldn't get that readily, but yeah, oh, it's 5.6 V. A 5-W general-purpose voltage reference regulator diode. Well, that's a bit how you doing, isn't it? I mean, they go to the effort to use a a proper linear reg up here for the 12-V rail, but for the 5-V rail, they've just got a lousy a lousy Zener in there.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (mention)
+context before: Each one of these resistors is 1 K, and it gives you a typical value further on in the specs for the device, and they drive the LEDs over here.
+TEXT: So, that's a very basic very basic just a window comparator or a bar graph dot comparator type thing. And it's got an internal voltage reference, which we'll take a look at.
+context after: It's got the power pin, ground pin, and not much else. Just the upper and lower threshold voltages, which go directly across the directly across the divider resistors here, which determine the individual voltage thresholds for each of those comparators, and then in turn each of those LEDs.
+
+[1382] EEVblog 1382 - Keysight EDU34450A 5.5 digit Bench Multimeter TEARDOWN — Dave Jones (mention)
+context before: Once again, we've got a couple of 393 comparators there. A bunch of LEDs for diodes and all transistors. Yeah, yeah, they're all diodes. So, a bunch of diode protection and whatnot and just a bunch of passive.
+TEXT: And of course, all your multimeter aficionados are asking the one question. Sorry I had to get this far into the video before you saw it. The voltage reference, of course.
+context after: Notice this is in a six and a half digit meter, so you're not going to get your, you know, LTZ1000. Sorry. You're going to get a Renesas jobbie. Although, that's got a Fairchild on there, but you know, it's all Renesas these days.
+
+[1435] EEVblog 1435 - The World's Most EXPENSIVE Catalog IC ? — Dave Jones (mention)
+context before: And oh no, it's in die form. Okay, I think yeah. Okay, a die. Okay, you specifically get the die instead of the package. So yeah, yeah, so if you if you want a bare die 431.
+TEXT: The 431 is literally one of the cheapest jelly bean voltage references on the market. It is the jelly bean part. Spoiler alert for maybe an upcoming video, but um yeah.
+context after: Right? But because if you just want the die and that's in your bomb, it's $704. Thank you very much for the bare die. Oh my goodness. Whereas if you go TL431, TL431, you poor bastard if you design that into your if you design a die version into your product, you're screwed.
+
+[1096] EEVblog #1096 - ANENG Q1 Multimeter Teardown (Now in 4K!) — Dave Jones (mention)
+context before: What else? Look at this beastie. There, yes, they have rubbed the numbers off that. Look at that, they have completely erased from existence. Got ourselves an e-squared prom there with some pretty crusty soldering.
+TEXT: I'll get the macro lens out and show you. And there's our ICL voltage reference. What's that one? I could use my new 4K zoom. I'll zoom into that and see what we get.
+context after: Cuz that's one of the advantages of having a 4K camera, not necessarily that, you know, people are going to watch in 4K, but at that the editing stage, it allows me to like zoom in on teardowns and stuff like that in the editing process if I see something interesting.
+
+[1060] EEVblog #1060 - $35,000 DataIO Unisite Universal Programmer Teardown! — Dave Jones (mention)
+context before: So, I DACs all over the place. It's full of DACs. All right, let's have a quick look at the schematic for the waveform generator here. It's three pages. Check this out.
+TEXT: But let's go up to the first page here, up here in the corner. We've got ourselves the voltage references AD851 and the usual transistor driver for that. No wackers.
+context after: We've got some 0.5% resistors. Like doesn't have to be hugely or 0.1%. You know, it doesn't have to be hugely accurate. But yeah, I would figure yeah, if you're designing something like this, you know, you want to be 5.
+
+[173] EEVblog #173 - Gossen Metrahit Energy Multimeter Teardown — Dave Jones (mention)
+context before: So, they've used it as you would. You would use an off-the-shelf chip for this. They've already perfected the energy measurement technology and and the various techniques used to measure all that sort of stuff.
+TEXT: So, it's all on chip. It's got a built-in voltage references. It's just support circuitry. I'm not sure what it does. A bunch of op amps, few transistors and things.
+context after: Pretty much discrete stuff, but I rather like that board. The bodgy resistor, I don't know. I'm going to assume they've fixed it in the production version. I'm not going to mark them down for that because, well, I don't know.
+
+[63] EEVblog #63 - Microchip PIC vs Atmel AVR — Dave Jones (mention)
+context before: So you know I'll go I'll look at my requirements the processing speed. Do I have to worry about low power ultra low power. Do I need DSP? Am I doing FFT stuff?
+TEXT: Do I need a you know a differential amp in there? Do I need a voltage reference in there? Do I need a DAC output? Do I need this? Do I need an LCD interface?
+context after: Etc. etc. And doing the research on that can just it can take a long time. Now you have to do that or you should do that in a professional application cuz it's worth it to get the right part for the job.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (mention)
+context before: Very simple device, and this is a quite a precise one, and it's 0.1%, so with a gain of five, we can do various calculations up here for various current shunt resistor values.
+TEXT: Now, I'll just mention that I'm actually using a 2.048 voltage reference here. It happens to be an ISL2107 over, but it can be any one on the market, really.
+context after: It's, you know, it's not too bad. It's 30 ppm plus minus 0.25 0.25%. Now, why I'm using 2.048 V instead of the more traditional 2.5 V voltage reference is because then the values that we're going to get out of our analog-to-digital converter are going to be spot on.

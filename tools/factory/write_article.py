@@ -60,7 +60,7 @@ QUOTATION -- THIS IS CHECKED MECHANICALLY
 - If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
 
 CITATIONS -- ALSO CHECKED
-- Cite only video numbers that appear in the supplied passages. Do not infer, guess, or invent a number.
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
 
 SUBSTANCE
 - Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
@@ -77,7 +77,7 @@ def prompt_for(bundle):
     title = bundle["concept"].replace("-", " ")
     lines = []
     for p in bundle["passages"]:
-        head = f"[{p['video_number']}] {p['title']} — {p['speaker'] or 'unknown'} ({p['depth']})"
+        head = f"[{p.get('cite') or p['video_number']}] {p['title']} — {p['speaker'] or 'unknown'} ({p['depth']})"
         lines.append(f"{head}\n"
                      f"context before: {p['context_before']}\n"
                      f"TEXT: {p['text']}\n"

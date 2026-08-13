@@ -51,8 +51,17 @@ def verify(path):
     hay += [norm(p["context_after"]) for p in bundle["passages"]]
     haystack = "\n".join(hay)
     vids = {p["video_number"] for p in bundle["passages"] if p["video_number"]}
+    ids = {p.get("cite") for p in bundle["passages"] if p.get("cite")}
+    ids |= {p["video_id"] for p in bundle["passages"]}
 
-    quotes = [q for q in QUOTED.findall(text) if len(q.split()) >= MIN_WORDS]
+    # Pair quote marks by ALTERNATION, not by regex. A pattern like
+    # ["“]([^"“”]+)["”] happily matches from the closing quote of one span to
+    # the opening quote of the NEXT, capturing the ordinary prose in between and
+    # reporting it as an unverified quotation. That raised two false fabrication
+    # alarms on an article whose quotations were all genuine -- the worst kind of
+    # check failure, because a verifier that cries wolf discredits its real hits.
+    segs = re.split(r'["“”]', text)
+    quotes = [q for q in segs[1::2] if len(q.split()) >= MIN_WORDS]
     bad_q = [q for q in quotes if norm(q) not in haystack]
 
     cites = [int(c) for c in CITE.findall(text)]
@@ -62,7 +71,8 @@ def verify(path):
     # invalid, so a run with six of them still reported a clean sweep. Anything
     # bracketed that is not a valid number is now a failure.
     junk = [t for t in re.findall(r"\[([^\]\n]{1,24})\]", text)
-            if not t.isdigit() and not t.startswith(("^", "http"))]
+            if not t.isdigit() and t not in ids
+            and not t.startswith(("^", "http"))]
 
     body = re.sub(r"^#.*$", "", text, flags=re.M)
     return {
