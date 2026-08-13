@@ -1,0 +1,938 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: input protection
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 181 passages drawn from 128 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# input protection`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[94] EEVblog #94 - Near Death Multimeter Experience — Dave Jones (explains)
+context before: When you plug the voltage probes in, it disconnects that switch and sends the voltage from the input through to through the 10 meg resistor into the VR1 input of the chip, and it should handle that and it should be fully protected.
+TEXT: And there's overload there's the input PTC and MOV protection devices there as well, which aren't shown on here, but that's what should actually protect the meter. But, what happened is because we plugged in the probes and that switch didn't engage, the 240 volts we were measuring went through that variable pot there and went through the PTC on board and a couple of those passive parts, and those
+context after: passive parts are the ones that you see blowing up on the top side of the board. So, I think that's pretty good confirmation that that's what the actual problem was.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (explains)
+context before: I And then they had MOSFET switching on the different ranges on the different current ranges. I guess I got carried away with that and I got carried away with talking about like how lovely all this insulation stuff is and the insulation sheets on the other side and it's otherwise very apart from the quirk that was happening here, like, you know, quite nicely designed and laid out if somewhat
+TEXT: basic. I forgot to mention though, there is no zero zilch nada input protection on the volts ohms amps jack. Let's follow the money. It goes straight into this I don't even know if this is a ceramic resistor divider or whether or not they've just got the actual individual resistors in there like this, but it basically goes straight into that resistor divider network here.
+context after: And there's nothing else. There's no PTC input protection, no positive temperature coefficient resistor. If you don't know what that is, usually it's a a series resistor in series with the input here.
+
+[1447] EEVblog 1447 - EXPENSIVE Fluke vs CHEAPER Brymen - Teardown — Dave Jones (explains)
+context before: So, once again, more betterer. Both of them have three MOVs, but as you can see, um the Brymen uses physically bigger MOVs. And once again, more betterer. The larger the MOV, the more energy it's going to be able to absorb before releasing the magic smoke.
+TEXT: So, yeah, I think um the Brymen has the edge there. Not talking about any, you know, additional diode clamping and the robustness of the clamping for the silicon and everything else, but in terms of like uh transient energy absorption, yeah, the Brymen actually has better input protection than the Fluke on the voltage range.
+context after: But, as I said, on the current range, the Fluke wins out. Both of them use 1,000-V rated fuses, but the Fluke uses a larger breaking capacity on the uh 400/600 mA range.
+
+[64] EEVblog #64 - Fluke 28 Series II Multimeter Review & Teardown — Dave Jones (explains)
+context before: And well, I guess that can work just as well. But, it's just different to what I was expecting, I guess. But, check out the input circuitry. Isn't that sex on a stick, boys and girls, ladies and gentlemen?
+TEXT: Here's a textbook example of how to design high voltage isolation slots and high energy isolation slots on a multimeter. Isn't it just brilliant? Check out those slots. And if you notice the case over here, all these large these large like blast shields are designed to mate and go into and go into these slots down here.
+context after: So, it separates the separates the voltage input from the fuses and everything else. Fantastic. Fluke have put so much work into that. It shows why they're the number one maker of multimeters.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: And it looks like we have ourselves a low drop out 3.3 volt voltage regulator there. There's those input diode clamps. You can see them in standard 6 pin package there.
+TEXT: It's got DO-46 on I'm not going to bother looking up the type though. It'd be a low capacitive type. You can see the input series protection resistors there. So basically it goes directly from the input pins through series resistors through the diode clamps which are diode clamp to the positive and negative rails.
+context after: You can do those with individual diodes but it's just cheaper and easier in most cases to use these little packages. That's what they're designed for. They're cheap and popular and of course it's duplicated over here.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (explains)
+context before: Yeah, wouldn't surprise me. Anyway, um it doesn't get much better from a high voltage point of view. Wow. Wow, look at how unconventional surface mount uh that'll be a PTC there.
+TEXT: So, that's you know, there's no markings on that. But, yeah, wow, look at that. They've really uh you know, lots of spacing in there. Yeah, they've really designed this uh properly um the two resistors in series, well, three there to get the uh high voltage on all those inputs, plus PTC and the actual resistor.
+context after: Yep. Very nice. Um no spark gap or overload protection, but it doesn't doesn't matter when you've got this sort of stuff happening. That's very nice. Like it. So, the build quality of that is uh quite decent.
+
+[1755] EEVblog 1755 - Tolicore Femtoammeter TEARDOWN + REVERSE ENGINEER — Dave Jones (explains)
+context before: There is the actual input schematic, and it's basically all just FETs, and there's your buffer amplifier there. As I said, it was connected directly to the non-inverting input there, and they've just got the two guard pins.
+TEXT: Just conveniently put them on both sides of the chip, so you can run the guard directly through the chip. That's a layout thing they did deliberately on the chip, and it's got a bunch of input protection, and they would just, you know, they'd be pretty special, too, so there's bugger all leakage in those.
+context after: High voltage protection there, however they're doing that. But, yeah, um FETs, that's how you do it. And contrary to what it might look like here, they're actually got a MOSFET input stage.
+
+[1592] EEVblog 1592 - Fluke 287 Multimeter Teardown — Dave Jones (explains)
+context before: It's not for the, uh, 280 series, but it's for the 189 series 2, which this one, uh, came from. They just, uh, discontinued the 189. It became the, uh... 287, 289, basically. So, I do believe it's pretty identical. So, um, yeah, let's actually just have a very brief look.
+TEXT: Here's our, uh, front end here, of course. So, here's our, uh, like, there's our current shunter, 10 amp current shunter down there. I've done videos on, uh, front ends like this. There's our diode, uh, bridge protection. Got some extra clamp in here. Looks like LM4141 is our, uh, reference there.
+context after: And then you just calibrate it, uh, out. So, it's all about the, uh, Temco. Um... Stuff. Then they've got that milliamp jack, uh, sent in here. And here's our input jack here. Here's our, uh, fusible resistor. We've got our high voltage resistor here.
+
+[84] EEVblog #84 - High Energy Multimeter Destruction — Dave Jones (explains)
+context before: Okay, we're back in the lab and I've got a BOX FULL OF BUSTED METERS. LET'S CHECK THEM OUT. You can still smell them. Beauty. Here's the original Fluke 70 series from the 1980s.
+TEXT: These aren't CAT input protected, so they're a very old design and as you can see the mob down here, the metal oxide varistor, which is used for the input protection, they just blowing to kingdom come and that's what generated all the internal pressure enough to actually blow this knob clean off.
+context after: But as you can see, there's really no other damage there at all. It's just taken out the protection device. It's exactly what they're designed to do. I've just taken out the board and there is one more device here which has violently exploded.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (explains)
+context before: So, no worries there at all, folks. They usually don't disappoint on that front. So, we'll whip these out. These feel like self-tappers to me. Yeah, self-tappers. They're really Yep, the uh Yep, the classic Fluke self-tapper, the same design as all their other ones.
+TEXT: So, they haven't haven't decided to change that at all. Interesting to see. I mean, this is a CAT uh four rated 600-V CAT four, so I'd expect to see some decent uh input protection circuitry, decent clearance, maybe a blast shield or two, and a uh lots of big MOV protection, all the usual jazz.
+context after: Of course, the two HRC fuses. They'll all be in there. And uh not much else. Probably powered by an MSP430 again, would be my guess, like they do on the uh other Flukes.
+
+[973] EEVblog #973 - Hioki Multimeter Review & Clamp Meter Teardown — Dave Jones (explains)
+context before: That'd be our programming interface for that. There's our little surface mount buzzer. And not a huge amount more around there, really. So that's about all she wrote. So that is certainly a very well-designed, neat and tidy, well-manufactured bit of kit. Thumbs up. And check out the really deep grooves they've got on there for blast protection around the outside.
+TEXT: Yep, they're doing everything right. Fantastic. So as far as input protection goes, they haven't really gone overboard there. They've got the one PTC in series here, and they've got the one gas discharge tube, but that's it, no MOVs, but a GDT is exactly, performs the same function as a MOV.
+context after: In fact, that looks like a really schmick, expensive jobby. But hey, you know, it's, I'm sure it is, no doubt meets the latest IEC, you know, CAT4 standard for this. If you have a look at the general specs here, they don't really tell you anything about that.
+
+[1016] EEVblog #1016 - Crude Multimeter High Voltage Overload Testing — Dave Jones (explains)
+context before: It didn't quite do what I want, but that was fascinating. We found a fascinating result with an un-MOV protected meter. And you saw that the other ones, you know, were clamping nicely at the 1800 volt level, because these normally have like, you know,
+TEXT: they might have like two 900 volt MOVs in series or whatever, and then they clamp at the 1800 volts or whatever, particular rated MOVs that you have inside these things. But that's typical, under 2 kilovolts. And then the rest of the input protection can do its job easily and safely.
+context after: The MOVs are designed to dissipate the energy. So there you go, I hope you found that interesting. And if you did, please give it a big thumbs up for engagement. And as always, comment down below. And I'll link in those videos at the end here, check it out.
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (explains)
+context before: Don't do it! Tear off before use! They've had too many people blow the fuses in these things and try and return them. Yeah, as a multimeter seller, I can tell you, that happens. You can't tell which one is which, can you? Once again, don't believe the 600 volt cat, 4000 volt
+TEXT: cat 3 rating. It's not independently certified, and it doesn't have the internal protection really required to meet any of that. So yeah, but that's typical of these low-cost instruments. What do you expect? For the film aficionados! So I'd be surprised if everything's not absolutely
+context after: identical, except for the internals, which is going to have dual channel. It's got the fast turn-on here. We've got our dual channels there. No! Look at this! I'm surprised! The interface is different, and the screen the screen is physically bigger! I stand corrected!
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: Isn't that beautiful? And then, that goes into a MOV that goes down to these four five red devices here are the MOVs. So, it goes into the extra MOV there, and you notice that a tap goes off there over into the range switch.
+TEXT: That's why they need the extra protection here, cuz this bugs off to a range switch that then ultimately goes off to the ADC somewhere. So, they're just protecting this extra input that they require for some reason over on the ADC input and range switching circuitry.
+context after: But then, the other MOVs then, of course, come back here, and three There's our three series MOVs there, plus our extra one there, and they bugger off back to return back to the ground and input.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (explains)
+context before: And the input here, very basic attenuation. They're just got four dropper resistors on each leg here, basically attenuating the input signal here down to bugger all to go into this max here.
+TEXT: So, you know, really, no matter how high the transient voltage, it's not going to damage the input there. That's why we basically don't see any input protection. If we have a look around here, you just don't need it because you're just attenuating the input so much.
+context after: I mean, there's nothing on the input protecting that at all. And as far as our current shunt goes here, well, look at this. This is a fancy pantsy. It's an SMD current shunt, I guess you could call it because it is actually, you know, soldered, although surface mount onto large pads over here.
+
+[1592] EEVblog 1592 - Fluke 287 Multimeter Teardown — Dave Jones (explains)
+context before: So, there you go. And, of course, the graphics processing, it's not actually doing all the graphics processing. It's probably like a, that looks like a serial interface over there. Buggering off, is it? Anyway, there's our hybrid resistor network there. There we go. We've got another ceramic resistor network there.
+TEXT: That's just the high voltage input resistor there. Of course, this is Cat 4, 600 volts. Cat 3, 1,000 volts. So, it's going to have pretty decent input protection and space in everything else. And we see that here. We've got the isolation slots all around here.
+context after: We've got our fusible input resistor here. We've got a PTC. We've got three MOVs. They're not huge, but there's three MOVs there. There's our 10 amp current shunt. And I'm not seeing the diode e-bridge for the fuse protection. Usually, you have one of those.
+
+[884] EEVblog #884 - EEVBlog BM235 Multimeter REPAIR — Dave Jones (explains)
+context before: We have a faulty inductor. Something's gone horribly wrong with that inductor. And obviously it still made contact. When they assembled this thing, it was still fine and would have passed its test.
+TEXT: But uh after that it's just gone horribly wrong. But as I said, there's no way that you could um blow that inductor and not blow your inputs. So, you know, let not have your input protection uh trip and you know, blow out your traces and everything else.
+context after: So, it hasn't been overloaded. I think we have a genuine inductor manufacturing fault. So, there you go. I desoldered that from the PCB and that And of course, what we're dealing with here uh this is actually the common terminal, this wire here, even though it's got red uh insulation on it.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: Bit of a design oversight. Don't really like that. But they have gone to the effort to actually raise the rubber surround around the display like that, which is really quite nice.
+TEXT: I like that. It's a CAT IV 600-V input-rated CAT III 1000-V rated. It's about as high as you can get on a handheld multimeter. So, along with the HRC high rupture capacity fuses, uh these meters can handle any pretty much any overload you throw at them.
+context after: They're designed for industrial high-energy applications. They're completely safe. And the range switch is okay. That annoying turn-on beep. Oh, get onto that. But, it it it's okay. It's a similar to the um original Escort uh series, similar feel.
+
+[Iwy8UVVQNkA] Sanwa PM300 Pocket Multimeter Review — Dave Jones (explains)
+context before: So anyway, we've got our rubber in there. That's very nice. But have a look at this. Not only is there the PTC, but there's a GDT as well, a gas discharge tube. That's why it's called GAP down there, because it's a spark gap.
+TEXT: So dual spark gap and PTC protection on a pocket multimeter. Beautiful. I love the series string of resistors in here to get the high voltage isolation. And just like the spacing of all the traces and everything else is beautiful for a... There we go.
+context after: Look, nice gaps in there, nice spacing, everything else, fantastic. So I have no doubts that it passes its Cat 3 and Cat 4 ratings. And Sanwa are not a company who do... I believe they do their in-house ratings, or maybe there's some obscure Japanese company or something,
+
+[229] EEVblog #229 - IET DE-5000 LCR Meter Teardown — Dave Jones (explains)
+context before: It is first class and it does live up to the Generad tradition. Beautiful. And if we have a look at that eight-pin SO package, it is a 24C 02 if you can see that in there.
+TEXT: So, that is the external E-squared PROM which stores the calibration values and other settings for the instrument. I guess the only real downside of the minimalistic input circuitry like this is that there's really no input protection that I can see.
+context after: There's no MOVs, there's no big back-to-back power diodes or anything sort of protecting the input. So, I'm a bit cautious, you know, I hazard a guess that this might be much easier to damage the input circuitry on this than some other LCR meters, but I'm willing to be stand corrected, but I can't see any major input protection on there.
+
+[678] EEVblog #678 - What is a PCB Spark Gap? — Dave Jones (explains)
+context before: And the reason it's called a spark gap is because they're designed to arc over. When you get a high voltage between this point here and this point down here, instead of destroying your components, the idea is that this arcs over and you get a spark across the smallest gap there.
+TEXT: Now, there's many different ways to protect your product and circuit against ESD discharges into your product on an input pin for example or some sort of you know, overload pulse or lightning strike or whatever and this is just one of the techniques.
+context after: In fact, this is one of the crudest uh techniques, but it has the advantage of being effectively free because you're already get making the PCB, so it doesn't cost you anything to add one of these spark gaps onto here.
+
+[831] EEVblog #831 - Power A Micro With No Power Pin! — Dave Jones (explains)
+context before: That's how if you touch the pin, you know, you zap it with a high voltage, it's going to the diode is going to conduct because it's above the rail or below it and it's going to clamp that energy and dissipate it in the diode.
+TEXT: So that's how they actually protect modern devices, be they complex microcontrollers that we're looking at here or standard 74, you know, HC double O series logic. Go look at the data sheet for that, you'll find exactly the same input protection.
+context after: So let's take a look at say a 74HC double O uh quad NAND chip. Now, they all are going to have ESD protection like this. You can actually see it written there, but very few data sheets are actually going to show you diagrammatically the actual diodes in this.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: Little M205 fuses here, but they are ceramic jobbies. So, that's pretty good. Not a huge amount of protection. We've got a real fading relay here. So, that's not too shabby, but yeah, basically two input mouth series resistors here and a tiny little PTC there.
+TEXT: And so, unless there's mobs on the other side, yeah, not a huge amount of protection. So, the CAT IV 600 V CAT III 1000 V, yeah, no. Compare this with say the BM786, which is exactly the same specification as that and I'll put up the photo here.
+context after: The input section on the 786 and just compare it to the one PTC with no mobs. Yeah, there's just no contest. Check out the clearance with this screw and this trace here and the trace coming from the input here.
+
+[813] EEVblog #813 - Mailbag — Dave Jones (explains)
+context before: They've got to be ANSI approved. You got it? And check out inside. It's actually fairly neat and tidy. You can see how they've got the cost down to absolute bare minimum.
+TEXT: I mean, there's basically no input protection. It doesn't exist. They've got a crappy M205 arc glass fuse, but that's what you'd expect in something like this. Chip on board, that would be the cheapest multimeter chipset on the planet, no doubt.
+context after: And they couldn't afford the packaging, so the blob uh the chip on board is a cheaper zebra strip down there, just going to the um LCD. Absolutely bare bones.
+
+[134] EEVblog #134 - The Maxim Manipulation — Dave Jones (explains)
+context before: It goes off to it and um it's got to talk to the device as well as uh being able to externally program it. Now when you program this thing, you put your board in your test jig or you use some other circuitry to program it, some onboard circuitry in this case, then um it generates a 12vt programming pulse.
+TEXT: So normally it talks 0 to 3.3 volt digital down here and then you'll get a big 12vt programming pulse and if you don't have any protection circuitry that can blow up your processor or your FPGA or your other device which is trying to talk to it.
+context after: Now um uh these values actually here can actually load down the line from the uh external programming circuitry. So we thought okay maybe they've loaded a wrong part on here.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: And that will ensure that during that time current will flow through the diodes and then it will ensure that the fuse has time to blow. So, it's basically a protection mechanism not only for your input circuitry, but also to ensure that the fuse blows instead of your shunt resistor.
+TEXT: So, how does this work exactly and why are all these diodes here? Well, let's assume that we input a positive voltage here, for example, and we've got a positive voltage here respect to down here and it's an overload input condition, okay?
+context after: And the fuse hasn't blown yet, okay? So, let's say, you know, it's 10 volts or something, right? Now, normally the voltage across your shunt resistor is going to be uh quite small.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: The board uses HRC fuses. It uses um well, it's hard to tell good quality gold from crap quality, but it uses good quality gold plating on the board. All the components are all surface mount except for this couple of key components which need to be uh through hole here really.
+TEXT: They're all surface mount and input protection devices. Look, these little these blue things, you can see them, right? Three, four, there's a there's a gas discharge uh tube and a you know, just really oh another another couple down here.
+context after: Just really good quality construction. Now, here's the inside of the Fluke 28 Series II, what I consider one of the best inputs um the one of the best input sec that's designed input sections on any meter.
+
+[682] EEVblog #682 - Ness D16X Alarm Panel Repair — Dave Jones (explains)
+context before: tens of ohms as we saw before, hundreds of ohms, really nasty stuff. Look at that, 400 ohms, yeah, ah, blech. And what can happen to, when you get an overload on the input like that, and when it can blow the arse out of a protection device, but that's exactly what they're designed
+TEXT: to do, they're designed to take the brunt of it so that it protects the rest of it, it protects, you know, you don't care if your diode bridge blows, or maybe your 7805, but by the time the energy gets to 7805 it can get through into your
+context after: rest of your circuitry, it does provide some, ah, protection, of course, and you can just blow your regulator and not the rest of it, but, yeah. Um, certainly, if you want it to blow, you want it to blow right at the input there, but it can just get real messy
+
+[1704] EEVblog 1704 - WTF? The ANENG 626 Multimeter REVIEW — Dave Jones (explains)
+context before: That's all right. Yep, and it goes back to auto. Hey, actually someone was thinking there. That down there looks like the gigantic backlight they're going to need on this thing.
+TEXT: Uh and oh, mouth mouth mouth, the mouth fanboys go wild, and there's our input protection. Yep, we've got one PTC, and uh that's all she wrote. None of that mouth rubbish, you don't need any of that in a CAT III 600 V multimeter, do you?
+context after: There's our current shunt resistor there. We'll have to have a look at what chipset that is. That looks like it's probably the antenna for our non-contact voltage detection up there.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: Just whack in a times 10 amp, a fixed times 10 amp. You don't have to change any of the gain on it. So, that's an advantage from the previous circuit as well.
+TEXT: But, I know what you're saying, "Dave, you've forgotten all about the protection. Where's the protection? You're going to blow the ass out of this thing if you apply a voltage directly across here." Well, let's have a look at protection.
+context after: If you remember the circuit from the previous video, we actually had the a diode bridge across the input for the milliamp ranges only. The amps range kind of takes care of itself.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: As you can see, two HRC fuses, these nice high voltage isolation slots all the way around here with matching blast shields in the case that get inserted when you put it together, they get inserted into there.
+TEXT: And that is just a brilliantly designed front end. You know the things um when it overloads, it's not going to explode on you. Now, another thing you need to look for in a good meter is a good thick film precision resistor network.
+context after: This resistor network here, they they're almost always they they look very similar to this. Now, that will determine that pretty much the accuracy and and stability of your meter.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (explains)
+context before: We have a note. Hi Dave, greetings from the ZOYU engineering team in China. Let's be honest, most budget meters are absolute crap. Yes, they are. But you know, you get what you pay for.
+TEXT: We try to change that. We built the ZOYU 15B and 17B to be affordable but safe. They actually have proper input protection, MOVs and real fuses inside. We know you love to blow stuff up, so please give them the full torture test.
+context after: I can't actually, I don't have like a real high energy, I've got high voltage testers here. I don't have any like real high energy ones to actually test, you know, massive fuse surges and stuff like that.
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (explains)
+context before: They've got a nice big graphical display on the thing and this thing's got uh trend pot plotting, everything else. Very similar functionality uh to the Agilent uh bench meter that we've seen before, and I'll show you a comparison at the end cuz it's absolutely hilarious.
+TEXT: But, of course, the downsides of bench multimeters, they are tied to the bench, and generally they're not going to have the same sort of input protection as a handheld multimeter cuz they're not designed to be used in the field.
+context after: Hence, we're only looking at um CAT II 600 V and CAT 1000 V rating. That's very typical of a bench uh multimeters. But, of course, one of the other advantages of a bench multimeter, you typically get, and of course you do get in here, the uh four-wire measurement.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (explains)
+context before: So, you've got to have the two extra MOVs on that. So, it's not like it's better input protection. It's just got an extra input path which needed protecting. And this is interesting.
+TEXT: GT 17B Plus. They've got decent diode input protection there against the fuses. Looks like they've got some protection transistors over here. That looks nice. And they've got the contact pads for the battery, which is excellent.
+context after: But they don't have the big 1K high voltage input protection resistor, probably fusible, maybe fusible, not sure. They've just got the series SMDs there because well, they're cheaper and simpler.
+
+[432] EEVblog #432 - Brymen Multimeters — Dave Jones (explains)
+context before: And it's got input jack alert as well. Pretty darn handy feature for a meter in this price category. And we'll have a quick peep inside, and I really like what I see.
+TEXT: It's a quite unusual. It's got a second riser board here, which uh soldered directly onto the back of the terminals. As you can see, that the uh jacks there, as you can see, and it's got all the protection circuitry in there.
+context after: There's a little uh point uh 1-in header going down there and a couple of not very nicely little uh insulated and crimped wires joining those down to the uh fuses down there.
+
+[115] EEVblog #115 - Extech 380193 LCR Meter Review — Dave Jones (explains)
+context before: And they're they're really quite nice. I like them. And as you can see, a spare fuse. Look at that. They've given you a spare fuse, which is quite thoughtful.
+TEXT: And there's the input fuse there. There's a poly switch. There it is, a PTC poly switch. So, it's got some input protection. And it does tell you if the fuse blows, the firmware can actually detect that the fuse is blown.
+context after: It will actually display fuse up on the screen. There's a little uh trim pot there. Um but that trim pot looks like the only adjustment. And there's a jumper switch here which says cal.
+
+[91] EEVblog #91 - $50 Multimeter Shootout - Extech EX330, Amprobe AM220, Elenco, Vichy VC99, GS Pro-50 — Dave Jones (explains)
+context before: So they're actually full metal sockets. You got glass fuses. They're not little M205s. They're not HRC ceramic ones but hey, for the price, that's still pretty good. There's a big power input resistor here going into a varistor there.
+TEXT: That's obviously a varistor. A couple of more large value There's another power resistor down there. It's the That's the 1K input resistor. There's a PTC as well. So it's got PTC and it looks like a varistor protection.
+context after: These pads obviously went to a different type of battery a different type of battery housing. So they must have sort of changed the design at the last minute or something like that.
+
+[597] EEVblog #597 - Fluke 114 Kit Multimeter + Sparkfun/Fluke Rant — Dave Jones (explains)
+context before: Curiously, uh, they actually, um, solder all three of these on even though the, uh, 114 doesn't have the current, uh, input. They just It's the same process, comes off the same line.
+TEXT: They just leave various parts off, like in this case, they've left the, uh, fuse and stuff off. And it looks like they've left all the input circuitry, the MOVs and, uh, PTCs and, uh, stuff like that have been left off.
+context after: But apart from that, it looks fully, uh, operational. So, we'll have to assemble the switch and everything, and let's look at the other bags. And the LCD, let's check it out.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: CAT III would be your typical switchboard or something like that. And CAT IV on top of that means your real you know, your substation, you know, your main distribution panel for a whole site because that's where the high energy spikes can be higher in energy, big voltage spikes, things like that.
+TEXT: So, this is where we need some input protection circuitry that sees very fast transient pulses. And those CAT ratings will be defined by how many high voltage transient pulses they can survive and anywhere up to 8 kV.
+context after: So, your 1,000 V rated meter is CAT III. It's actually designed to survive 6 or 8 kV transient voltages. And the way it does that, that PTC is not going to help you at all.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: The whole plastic assembly comes out. Beautiful. Look at that. And there's all the mains wiring under the cover there. Looks very professional. No problems there at all. As you'd expect.
+TEXT: I rather like the way that things physically constructed. And as we looked at before, the input circuitry here, two 11 amp fuses for both of the fuse ranges. We've got a massive poly switch there by the looks of it.
+context after: We've got ourselves a spark gap. Brilliant. And over here, there's our diode bridge. We've got some MOSFETs in there. Couple of three switching relays. And there's no input wiring at all.
+
+[1425] EEVblog 1425 - Fluke Repair 2 Electric Boogaloo — Dave Jones (explains)
+context before: Did it go viral at the not well, went viral for like 11 years ago anyway. Um and yeah, people love that where I blew up a meter. And I believe this was the one that I blew up.
+TEXT: The knob actually blew off um from it. So, yeah, it's somehow reattached, but uh if I remember uh rightly, yeah, it's um just the um like the input mobs or something blew and probably the fusible resistor as well.
+context after: Ooh, I've got feet. I can I can use those, but let's crack this sucker open. Got myself some new screws too I can use and I could probably reuse the bottom half of this case too.
+
+[1443] EEVblog 1443 - They Don't Teach This in School! (Coherence) — Dave Jones (explains)
+context before: So, 9 V. So, this gives it the DC bias point. So, we have our 5 milliamps coming in here, and this is powering our accelerometer. Now, I'm tapping off that with an AC coupling cap here.
+TEXT: A 0.5 microfarad AC coupling cap, which goes into our input, cuz the inputs are not that robust. And you can actually blow them up. So, you don't want to be going like high voltage high compliance voltage sources.
+context after: Even though this does have an AC coupling input option, and we're going to be using that, like it's yeah, I just want to be built and braces to ensure that no no DC is going to the input here.
+
+[64] EEVblog #64 - Fluke 28 Series II Multimeter Review & Teardown — Dave Jones (explains)
+context before: And as you can see, um um you can't really see much of the circuitry. There's some sort of some sort of input or current sense circuitry over there. There's the thick film resistor hybrid network and there's another thick film resistor down here.
+TEXT: You've got your classic input protection stuff, which again is isolated from the with the blast shield and the high voltage isolation slot. This circuitry here is obviously the DC to DC converter from the battery.
+context after: They've got a poly switch here, which is excellent to actually protect the battery and and the speaker well the piezo transducer down here is got these little springs integrated.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: Most impressive. That's uh really is quite quite nice. And yes, it does have a uh fan in it. Uh it's not excessively uh loud, but you know, if you didn't like it, well, you could get in there and disconnect it or you could, you know, replace it with a a low noise substitute or something, I guess, but Mhm, very impressed.
+TEXT: And I'm impressed by the huge 10 amp Well, 11 amp HRC fuses down in there on the input because this thing's only CAT II rated. Usually you don't find big HRC fuses and input protection on these bench multimeters.
+context after: It's just not the application they're designed for, you know, putting in a rack designed into a system. You know, you usually don't get the usual you know, surge type overload conditions that you would on a handheld meter which can used in the field and abused and used in all sorts of different situations.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (explains)
+context before: And I think you can actually get in there and change the battery. Yeah, without uh, taking the board out. There you go. Switch contacts look good. Oh, jeez. Isn't that neat and tidy?
+TEXT: I'm liking this. Got our requisite uh, trimmers in there, but everything looks fine. Mouth action happening. Uh, input protection is uh, one PTC, but that's you know, that's pretty much all you're going to get.
+context after: As long as you get a PTC in these, that's okay. And the spacing and layout looks uh, quite reasonable for a pocket multimeter. Um, the for like only a couple of bucks more than the Ainings, we've really stepped up.
+
+[759] EEVblog #759 - Mailbag — Dave Jones (explains)
+context before: They've got a zeno diode protection. That's not usual uh way you do it. Um unless they needed the uh pullup uh for some reason. You usually just do diode uh clamping there to positive and negative rail.
+TEXT: And then they've got another small RC filter in here. And of course the series uh resistors of course help protect the input uh limit the input uh current so you don't get uh uh damage the chip from maximum.
+context after: So yeah we got filtering plus protection there. And then our output. Yep. They just got a low side uh end channel MOSFET there. They got some lowass filtering on the gate and Bob's your uncle.
+
+[678] EEVblog #678 - What is a PCB Spark Gap? — Dave Jones (explains)
+context before: The last thing you want to do is for it to propagate along this trace and go into your IC pin. So, if you can clamp the energy right at your input pin, that is the place to do it.
+TEXT: And of course, good design practice, as I said, you would generally uh put some extra protection on the um input pins. Although, the ICs generally, you know, fairly robust in terms of uh ESD these days.
+context after: Not perfect, but, you know, um pretty darn good. So, often just adding a spark gap like this, uh not too bad at all. But, the best part about this is that it is free.
+
+[SoeVNaz7KGc] EEVsmoke #2 - Magic Smoke Captured! — Dave Jones (explains)
+context before: You know, even these 220 220 cases, they're, you know, they're designed for reasonable power handling. But even with all that heat sinking there, that's not going to do any good whatsoever for instantaneous overloads for whatever failure mode this particular one is.
+TEXT: I don't know. It might have been a line impulse or you know, something like that. There wasn't any adequate input protection or enough input protection. And then it just start shorted these babies out.
+context after: And wham. And you can see that, you know, usually it's gate the left hand pin pin one here is going to be the gate. And then the drain and source are going to be these two pins here.
+
+[932] EEVblog #932 - How Does A HV Differential Probe Work? — Dave Jones (explains)
+context before: Although, I couldn't really find any info on that part number that I saw down here. It said it was like an N-channel JFET, but it didn't say it was dual or anything else.
+TEXT: So, from some obscure company that's probably not even around anymore. Anyway, um I believe that is a dual JFET input. That makes sense. We've got some diode clamping here for input protection.
+context after: By the way, these three caps here, 120 puff, 82 puff, and 82 puff, and then probably a much smaller trimmer cap value here just to trim the frequency compensation on this thing after it's all assembled in the metal cans, everything else is on.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (explains)
+context before: Joby, what's going on there? You don't usually see that. So yeah, you've got your 2,000 volts going over here. And this is your 2,000 volt string here going along and got like there's no protection at the end of this at all.
+TEXT: There's no mob protection. There's barely even a D. There could be a protection pair transistors there, a zen clamp, but you know that's bare minimum um clamping. There's just Oh, seriously.
+context after: Looks like we have another Zenna clamping pair there for protection and some diode here. But um I yeah, not impressed at all. Not impressed. I'm going to like that's a fail.
+
+[1292] EEVblog #1292 - $2 Meter vs JVA Electric Fence Controller! — Dave Jones (explains)
+context before: So, I I have no idea of like the pulse shape of this compared to the IEC standard and all that. What am I doing? All right, here we go.
+TEXT: Nope. It's 6.9 kilovolts and it's not overloading. There's no over There's no red status there. It is surviving that. Just hunky-dory. That's what you get when you get uh input protection.
+context after: That's the MOVs kicking in. Nice. And sure enough, I just uh checked it on DC volts and it's bang on. So, it survives. No worries whatsoever. All right, let's try a 121 G W.
+
+[1724] EEVblog 1724 - BWD 603B MiniLab RETRO TEARDOWN — Dave Jones (explains)
+context before: BWD power supply. And I did find the schematic. I'll link it in down below if you want to have a look. So, yeah, here's the Well, here's the operational amplifier.
+TEXT: Yeah, look, it's got diode protection on the input cuz you don't want the students, you know, >> [laughter] >> crapping the thing. Yeah, that's Yeah, it's definitely a decent input there.
+context after: It's pretty hard to damage that sucker. So, yeah, you want it student proof. The output also diode protected. So, we've got an LM318 there, absolute classic, and a 220 ohm resistor there on the output.
+
+[1238] EEVblog #1238 - Vion: The World's Worst Multimeter! — Dave Jones (explains)
+context before: None of that HRC rubbish. Glass all the way with LBJ. Supposed to be 100 milliamp fuse. Hmm. Anyway, they did advertise this originally as having a current capability, but they've removed that.
+TEXT: You can't measure current. So, the fuse is just for generic protection on the input. Wow, even when you put the screw in here, I really don't like that. I can prize that apart like that.
+context after: And there's only one clip on the like other side kind of holding it in. Because ironically, you take the screw out of here and you're supposed to prize it up from this side, which has the clip on it.
+
+[1558] EEVblog 1558 - Mailbag — Dave Jones (explains)
+context before: That's cap, is it? See? And see I'm missing a couple of caps, but that's all right. And uh they've got a Freescale jobby. I don't know what MP27 PV Anyway, you can look that up Um this is not an extensive uh review reverse engineering some more protection there.
+TEXT: Um there's our 5 V, that's just our serial com. So, all the power, so that's input protection, so that'll be reverse polarity protection on the input. Oh, we have to got two more screws.
+context after: So, yeah, they've done well to squeeze it in here, but I've got to like think you know, you probably don't have to, but maybe, you know, I don't know.
+
+[9s9LXOBknck] Unusual Brymen BM235 Fault — Dave Jones (explains)
+context before: And I'll heat that off and pull that off to one side there. Bingo. Let's get that out. Yeah, as I said, I can't see how it can be anything to do with the input circuitry at all.
+TEXT: There is another wire attached, but you can leave that off. Like, there's nothing There's going to be nothing doing on there. Like, absolutely nothing. That's all your input protection.
+context after: This is how this meter can get its um CAT IV uh 300-V uh rating up here. There you go. In such a compact little meter. It's fantastic. It's why I love it.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (explains)
+context before: Yeah, both ranges are fuses fused and yes, they are HRC high rupture capacity fuses in quote marks, but they're absolutely tiny. So, that's a 10 amp job 250 volts not this high voltage rubbish and 200 milliamps down here for the combined volts and milliamp microamp jack down there.
+TEXT: So, so right off the bat, I can't see any protection in here apart from the fuses. Where are the PTCs? Where are the MOVs? They're just not there. Nice little MELF resistors there.
+context after: You know, I'm a MELF resistor fan boy, but unless the protection devices are on the bottom side. Uh-oh, what do we have over here? We've got one. There it is, PTC right up there on the other side that of the battery contact right near the chip.
+
+[597] EEVblog #597 - Fluke 114 Kit Multimeter + Sparkfun/Fluke Rant — Dave Jones (explains)
+context before: That's easy. And the pressure on there just keeps the zebra strip on. And if like me, you thought this is a pretty dumb idea, it does sound like it on the surface.
+TEXT: You know, the safety and all that sort of stuff. That's why you buy a proper flight. But really, it's just the input protection devices, which you can't get around back to front.
+context after: Very clear instructions, all that sort of stuff. And really, it comes fully calibrated out of the factory, so I'm told they've done you know, the bed of nails test on it, and the remote calibration, all that sort of stuff.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: Nice. And, of course, this thing is absolutely bare-bones as far as the logic analyzer it's concerned. We're just got the single uh microcontroller here, which we'll take a look at.
+TEXT: The eight inputs, which go straight in through uh 510 ohm series resistors here. We've got some uh input uh diode clamping. They'd be uh low capacitive um input diode clamps.
+context after: So, there is uh some input protection there for uh overloads and stuff like that. But, uh basically, there is no input uh buffer chip, uh no input uh latch chip.
+
+[648] EEVblog #648 - Mailbag — Dave Jones (explains)
+context before: There you go. So that's a transistor. And um well that's all she wrote. That's all that's in a three and a half digit multimeter of these era. And of course the uh ganged um switches, they actually look and feel quite okay.
+TEXT: I don't mind that at all. So this isn't too bad for the era. You're not going to get all the requisite input protection you get these days cuz the standards are much higher.
+context after: Um there's our 10 amp. Is it 10 amps current shunt? Yeah, 10 amp current shunt there. Little bit crusty. They've just uh trimmed it there to value, but yeah, I expected a lot worse.
+
+[rT0g1QmKE5E] Brymen BM2257 MOV Leakage Testing — Dave Jones (explains)
+context before: In fact, it can go over that. I've actually done a video measuring that. I can link that in. And of course these won't have like a really sharp instant turn on.
+TEXT: It doesn't actually work like that, but I normally they're designed to of course protect the input circuitry of the meter over here from any you know high voltage transient.
+context after: So that's what all the UL testing is designed to do. They put input transients on the input here, very you know various like half wave forms and stuff like that, really you know big peak energy stuff in there to see if the MOVs can actually survive that well and the meter can actually survive that overload protection.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: Well, there you go. That's interesting. It's an LPC932. 900 series old-school, I believe it's a legacy um 8051 microcontroller, 8051 processor. What's that sucker doing? And you can see the USB connector on the front panel here.
+TEXT: There's a uh PCB mount uh vertical USB uh socket there, and that's just connected directly via some uh um input uh protection and filtering there into the Spear processor.
+context after: And once again, they've done very well with these uh plastic brackets and stuff that hold everything in place. I mean, look at that. That's just beautiful. Really is. And on the main board here, they haven't skimped on the brand of the cap there, Nichicon, no worries at all.
+
+[94] EEVblog #94 - Near Death Multimeter Experience — Dave Jones (explains)
+context before: But, if we plug it in all the way, see? That switch that that plunger just came out and moved that switch. Now, I think that's what the issue is.
+TEXT: It's a really nice design aspect, and that switches the meter, I think, into um into voltage um mode, and it's supposed to be fully protected, and it should handle 240 V.
+context after: But, because I only plugged it in part of the way like that, um the contacts engaged inside before the switch turned over like that. So, they've actually got that design completely and utterly back to front.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (explains)
+context before: Yeah. Plastic threads. They're deep down in there. Self-tappers. Um, so that's not too terrific. So, we've got our little battery holder. Does that come out? See some wires in there.
+TEXT: It's a little header down there. What's that doing? There's your clampy clamp. Let's have a look at our input protection. It looks really good. It's on a separate board.
+context after: You know, the spacings in there and they've got the uh isolation slots as well. You know, it's um it's a Brymen. So, yeah. Look at that. Wow. And we've got uh three mobs and two uh PTCs.
+
+[344] EEVblog #344 - Fluke 17B Multimeter Teardown — Dave Jones (explains)
+context before: I'm probably by far and it's not surprising. It's got the Fluke name on it. It's what you'd expect. What would you think of when you were going to buy, you know, a sub $100 Fluke?
+TEXT: What would you expect them to get right? Well, Fluke are known, of course, for their legendary um input protection, you know, safety. And you certainly get that on this.
+context after: This is a uh CAT II uh 600 V CAT I 1 1000 V rated input. And the input front end is designed properly and uh you know, it's well protected.
+
+[1019] EEVblog #1019 - Mailbag — Dave Jones (explains)
+context before: Thankfully, the top board does come off and we've got an ATmega2560 and all the requisite interfaces to go along with that. So, obviously, nothing's going to be hooked up directly to the processor and of course you don't want that in an industrial controller.
+TEXT: I don't know what sort of uh protection I don't know specifically what uh devices they've used down there, but they would be uh input protection on each of the channels.
+context after: So, yeah, they've done their job. And here's the bottom of the top board with the ethernet. Got ourselves a Wiznet ethernet interface, little uh micro a little uh Atmel micro as well.
+
+[46] EEVblog #46 - Gossen Metrawatt Xtra Multimeter Review — Dave Jones (explains)
+context before: Seals out dust and moisture, and helps for, you know, really serious overload, so you know, sparks don't fly out, and god knows what. Now, the input Look at all the You've got your high voltage fusible resistors here.
+TEXT: You've got input protection. You've got a spark gap here. You've got the huge HRC fuse. You've got the nice high voltage slots cut into it here, if you can see that.
+context after: Yeah, maybe not, but yeah, it's very well designed. And the input The input connectors here, I really like them. They're high quality. They've got big, thick hand-soldered things go wires going down into a nice slot down there, So, it's not just tacked on the top of the board.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: The eight inputs, which go straight in through uh 510 ohm series resistors here. We've got some uh input uh diode clamping. They'd be uh low capacitive um input diode clamps.
+TEXT: So, there is uh some input protection there for uh overloads and stuff like that. But, uh basically, there is no input uh buffer chip, uh no input uh latch chip.
+context after: So, it goes directly into the microcontroller. And, of course, uh it's got no effectively no uh sample memory in it. It uh samples in real time on the PC.
+
+[252] EEVblog #252 - Multimeter Ohms Overload — Dave Jones (explains)
+context before: Hi, on the Agilent U1272A meter review I just did, I showed how if you put 240 volts mains on the ohms range, that this thing, while it would survive and that's good, it would take some time to recover, uh possibly many, many minutes to recover before it actually gave you an accurate reading again.
+TEXT: And that's a standard test I do on all multimeters to see if the input protection's any good. If it can survive 240 volts on the ohms range, it's beautiful.
+context after: And this one did, but it just had that recovery time, quite possibly due to a PTC input protection uh device heating up and taking some time to cool back down.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (explains)
+context before: Um oh, another spark gap there I didn't see. So, two spark gaps. That's actually quite uh reasonable. Oh, is that a Fortune semiconductor chip set? There you go. Pretty bog standard stuff.
+TEXT: Oh, and I almost missed the uh PTC down there. So, this is the best input protection uh so far. Um a PTC plus two spark gaps. Very nice. Auto ranging.
+context after: It's reasonably quick. Um so, there you go. I That one's okay. Like, I like the build quality of that. It's probably the only uh you know, it's one of the best uh so far.
+
+[491] EEVblog #491 - Nintendo 64 Game Console Teardown — Dave Jones (opinion)
+context before: Some sort of upsell with these things, of course, with the uh memory slot. But that looks like it's just tied in there. There's nothing special. Doesn't look to be any uh protection in that at all, actually.
+TEXT: No, there's bypassing on the back, but there's no like uh you know, um there's no protection in on the inputs there at all. It just looks like it hooks straight onto the memory bus there, but yeah, they were transferring the heat directly out of these devices um straight onto that heat sink there and a few miscellaneous stuff around here we'll take a look at, but that is pretty much it and that's what
+context after: you'd expect in a, you know, when you manufacture things in the millions, something like this, you want to get down to a couple of chip solution, absolute bare-bones stuff.
+
+[1420] EEVblog 1420 - Mailbag — Dave Jones (opinion)
+context before: Actually, I don't mind the look of that. Got the big high voltage resistor there. They got multiple smaller 1206s in series like that. And yeah, what's doing? They got three different strings over here and multiple strings, multiple strings.
+TEXT: Yeah. Oh, yeah, that's actually a input probe detection input. There you go. One PTC. Don't see any MOVs, but, you know, I On these sorts of handhelds, you don't really expect protection, but then, you know, they just give you the rating of, you know, They even put the IEC standard on there and like CAT III, CAT IV, 600 V.
+context after: No. No. And these are only 250 V fuses. Are they even rated They even got anything on them? Oh, wow. Wow, they don't even have any branding at all.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (opinion)
+context before: Cat 4 rated 300 V. And to get Cat 4 rating and true RMS 2 by the way. So, to get a true Cat 4 rating in a pocket meter, wow, you know, it's hard to beat.
+TEXT: So, if you're measuring the mains, you're going to want to get one of the you know, if you're measuring like industrial mains, stuff where safety is important, you're going to want to get the Sanwa or you're going to want to get something like the Amprobe or one of the other ones we've seen with decent input protection.
+context after: You wouldn't be buying one of the cheapies. Anyway, I love how the probes just go into the bottom part of the case here and they're easy to get in and out.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (opinion)
+context before: Just like the Fluke, it does have a separate millivolt range, but it's also got it for the AC as well as the DC. And well, that's just two extra switch positions to complicate things.
+TEXT: I I know they're probably a design decision based on input protection or possibly or something like that or you know, noise or some sort of design aspect forced them to do that, but I would have preferred just volts AC, volts DC and save the switch positions, but oh well, you can't have everything.
+context after: But apart from that, ohms and diode is separate, which is quite nice. Capacitance is got its own one and milli amps um AC and DC are actually shared on the same switch position unlike volts.
+
+[735] EEVblog #735 - Mailbag — Dave Jones (opinion)
+context before: as well. Also it's got an E-squared PROM and two I-squared C bus extenders. Awesome! Excellent! There you go. Thank you very much, John Lumley. And I'll post a link to the Kickstarter down below if you want to check it out. So as I said, it is a hat for the Raspberry Pi
+TEXT: to do all sorts of multi-channel goodness, 12-bit PWM, 12-bit ADC, 12-bit DAC, and some level-shifting of SPI and serial stuff as well. And, well, it looks to do just that. He's got the requisite chips on there, no input protection at all or anything like that that I can see, no output buffers, but
+context after: it all, like for the DAC for example, it all depends on what you use, no output driver, transistors for the PWM for example, so it's not a high-power thing, it's basically a logic level low-level type thing, it's not like an industrial controller add-on
+
+[365] EEVblog #365 - ESR Meter Bad Cap Monitor Repair — Dave Jones (opinion)
+context before: We'll save some cents and we'll just whack in these ones here and just leave them free standing off the board. Uh, poor form, really. Uh, just terrible. And uh yeah, they're just pushed in there at any old angle in the factory, not in China in this case, in Indonesia.
+TEXT: Up the top here is an M205 size uh direct soldered in fuse. Like that, don't particularly like that, but hey, at least it is fused, right? And uh and they've got, you know, basic adequate protection and um some filtering here, but yeah, they haven't really gone to town on the input side of stuff.
+context after: They've got uh uh shake-proof washers on the earth lug down in there. So, it it's okay, you know, it's it's not too bad. I guess it's possible, I guess you could say.
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (opinion)
+context before: So, that's really nice design. They, You know, they knew what they were doing there. So, I have no doubt that this puppy would meet its rated, you know, 600 V CAT IV rating.
+TEXT: All the space and everything seems to be there. It's like very nice input protection. Very well done. Cannot fault that at all, really. Perfect. And as I said, there's the two protection resistors for our sense lines there, those little spring terminals, of course, that we had popping up there.
+context after: So, yeah, no worries. They're doing that all hunky-dory, even though they don't actually need transient protection on that, but just they've got that going into. So, that's what this cluster circuitry around here must be.
+
+[290] EEVblog #290 - Mailbag — Dave Jones (opinion)
+context before: I'm sure you could. We've got our LEDs and our input side here. We've got an octal, uh, buffer, of course, because this is 8-channel. It's just a, uh, 74 TTL, um, series, uh, octal, uh, 244 octal buffer. It's a 74, uh, LVTH series,
+TEXT: which, uh, is compatible with, uh, different logic families. So you can use it on 5 volts and 3.3 volts, or, uh, possibly even lower, uh, input compatible. But one thing to note, there's no, um, input pull-down resistors, uh, at all. It's just, uh, or input protection or anything like that.
+context after: It's just connected directly to the input of the 244. That's not the best. And, of course, there's nothing fancy in this thing like adjustable, uh, level, uh, trigger threshold or anything like that. It's just, you know, direct, uh, CMOS, uh, TTL, uh, input buffered.
+
+[802] EEVblog #802 - Mailbag — Dave Jones (opinion)
+context before: used a Caddick one down there. I don't know, some reason for it. Anyway, we've got ourselves also a Fluke TrueRMS converter chip. There we go, they rolled that their own. Listen to the Amp Hour episode, I think we might have some details on that.
+TEXT: Of course they're not designed to the same, you know, well the CAT standards that we have these days, they didn't have those back then. It was very old school in terms of input protection and things like that. Our rubber membrane, we've just got some PCB contacts under there, no big deal.
+context after: But I won't, I actually don't know how to get that board out of there, so I won't go to any effort to take it apart further. Once again there'll be a custom Fluke surface mount chip, probably, maybe on the underside, would there be?
+
+[1393] EEVblog 1393 - Retro Fluke 37 Multimeter Review & Teardown — Dave Jones (opinion)
+context before: Those things don't drift over the years. Um there's our uh external DC uh input jack if you want to use that for your 300 microamps. Jeez. Anyway, another couple of uh tag tants.
+TEXT: Um yeah, I don't know, they could go the way of the dodo eventually, but they're still hanging in there, obviously. And uh let's go over and check out the input circuitry cuz they do claim that uh this has rugged input circuitry on it, but anyway, here's the positive inputs uh here.
+context after: And and as I said, um two big high voltage resistors there. So, that's absolutely fantastic. So, obviously, they've got uh one for like a different path here. And look at all the MOVs they've got here.
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (opinion)
+context before: SOT23-6 parts there, some form of single-pole double-throw switch, which I can't find the data sheet for. If I can, I'll link it in down below. But, you can see that one side of the switch there, I believe pin one there, switches in C9 and R1, which is the 50 ohm load there.
+TEXT: So, it's not a permanent 50 ohm load input. And you'll notice that there's actually four diodes unpopulated there, so there's a distinct lack of input protection here. So, unless there's something inside that little wimpy U1 switch there, there's, you know, not much here at all.
+context after: There's basically nothing on the other side. There is a tiny little diode D7 there, but jeez, it's wimpy. And if we scroll down here, we've got a couple more of these switches here.
+
+[1109] EEVblog #1109 - Spectrum Analyser Design Walk-through — Dave Jones (opinion)
+context before: single-pole double-throw switch, which I can't find the data sheet for. If I can, I'll link it in down below. But, you can see that one side of the switch there, I believe pin one there, switches in C9 and R1, which is the 50-ohm load there.
+TEXT: So, it's not a permanent 50-ohm load input. And you'll notice that there's actually four diodes unpopulated there, so there's a distinct lack of input protection here. So, unless there's something inside that little wimpy U1 switch there, there's, you know, not much here at all.
+context after: There's basically nothing on the other side. There is a tiny little diode D7 there, but jeez, it's wimpy. And if we scroll down here, we've got a couple of more of these uh switches here.
+
+[868] EEVblog #868 - Keysight U1282A Multimeter Torture Test — Dave Jones (opinion)
+context before: they've actually got in the back of the plate here, they've got these supports. You can see where the force of the batteries has just, you know, almost cracked this thing. It's started to crack the back plate. They're designed, of course, to keep them in place
+TEXT: and stop them rattling around, but you know, these batteries weigh a lot, and the force of those really caused them to deform. Okay, let's try and crack this thing open. It ain't pretty. Oh, look at that! PTC that's fallen out there. I guess it's not going to protect the input.
+context after: Oh, wow, look at that. The board has deformed. Wow. Check it out. The piezotransducer, that was up in there. That was like heat sealed in there. That was, you know, just soldered, used a soldering iron or whatever to sort of melt that in place.
+
+[872] EEVblog #872 - Mailbag — Dave Jones (opinion)
+context before: Dymotech from Shenzhen, there you go Oh goodness, be afraid, be very afraid Here we go, here we go It won't be as bad as the $5 special we saw a mailbag or two back. Oh, it's almost identical. Is that an almost identical board to what we saw last time?
+TEXT: I think it might be. Memory serves me correctly It's absolutely shocking, and of course Anyway, there's our 10 amp current jack, like you gotta be kidding me just totally unfused, and input protection bleh, and it's just, yeah It's crap. You want to throw it in your glove box
+context after: and, you know, measure your car battery voltage or something like that? Fine, whatever, but come on. So we've got ourselves a fuse over there but that's not the 10 amp, that'd be for the other input, which is not Yes, yes, it is milliamps, there you go, it shares the
+
+[2QZ8GWwzXXY] Tektronix Multimeter Repair-O-Thon — Dave Jones (opinion)
+context before: But anyway, that's the, uh... That's the strain relief for it. So, yeah, that's just... Yeah, the design on these is not great. Oh, that's my finger. Or is that... Still got some of that white stuff in there. It's not... It's like caked on there.
+TEXT: It's really weird. It's not like the magic smoke has escaped from anything and has coated all the inside. You know, if anything blows up, it's going to be around the input stuff. I'm not seeing it. There's no burnt tracks. There's no sign of any overload to speak of, really.
+context after: Let's see if we can get a new battery snap. I'll get back to you. Well, I don't have any battery snaps to hand, but we can actually make one. Take a dead 9-volt battery, and hopefully, if we open this bad boy up, we should be able to...
+
+[56] EEVblog #56 - Agilent U1253A OLED Multimeter Review & Teardown — Dave Jones (opinion)
+context before: Whoop. Ta-da! It's lifted out. And here we go. Let's now take a look inside this thing. You can see the uhm, HRC two huge HRC fuses here, which is fantastic.
+TEXT: Uhm, you can see the input protection uh, probably fusible resistors there, some overload protection devices, but not a huge range of, um, over input overload protection. I'm a I'm a tad disappointed, I guess, but, um, you know, each uh each meter is designed differently.
+context after: Okay, so I've taken the OLED uh display board off here, and it's got some driver circuitry on the back here, which actually looks uh quite nice. And it's got a little, um, standard header to plug in to here, and it's got these little standoffs, which are nice.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: So the contacts are you know, doesn't don't instill a lot of confidence really, but let's take a look at the board. No extra input this and diodes on the back there.
+TEXT: No extra input protection. You know, it's a fairly ordinary layout and let's see if we can take off the screen here. I'm not sure if that Oh, yeah, there's a little catch on the bottom here and you have to release that and hopefully we can pop open the screen like that.
+context after: There it is and it's all sort of hinged. The LCD is sort of hinged on there. I really really don't like it. It's it's not that great at all.
+
+[991] EEVblog #991 - Mailbag — Dave Jones (opinion)
+context before: All through-hole components, like, you know, really old-school type design. Look at the DIN connector on the side. Oh, my god. DIN connector in a multimeter. And I know that was par for the course back in the day.
+TEXT: They didn't really have, you know, input protection wasn't really a thing back then. You know, now we have the CAT standards and everything else. Very stringent requirements to pass, and they've got MOVs and poly switches and and diode protection and all sorts of stuff.
+context after: But, yeah, back in the day, yeah, No, one cares about that. She'll be right. Is that colorful puppy there? I thought that might have been a uh color-coded cap at first, but uh it's I think that is a uh a mauve of uh some description, but there you go.
+
+[727] EEVblog #727 - How To Kill An Opamp — Dave Jones (opinion)
+context before: CMOS op-amp. So it should effectively be infinite input impedance basically. Nope, it's shorted out. So, yeah. Oops. And it's going to be that puppy there, the OPA2376. So it takes the input directly from there, and it's a window comparator, so it drives the LED there from a
+TEXT: voltage reference on the board. So you know, it's a fairly simple device, but yeah, I had no input protection or anything like that. Suck out the chip, and well, I hope I've got another one. I usually buy more than what I need. You know, if I was building one of these
+context after: I wouldn't just order one op-amp. You know, because I would have got it from DGK or maybe someone like that. I would have ordered at least a couple of spares. Gonski. And a little bit of clean-up there. And she'll be right, ready for a new one.
+
+[1254] EEVblog #1254 - Mailbag — Dave Jones (opinion)
+context before: And uh there's our current shunt. What What was it? A uh 10 amp Yeah, 10 amp range. Anyway, a shared milliamp and voltage jack. That's a guaranteed disaster waiting to happen.
+TEXT: And of course, uh no input uh protection to be seen. We've got a diode over there, but uh [ __ ] that's about all she wrote. No Nothing. And of course, the uh chip on board, cuz that's, you know, half a cent cheaper than getting the uh quad flat pack package there.
+context after: And zebra strip. And that's all she wrote. And you can see how they can like sell this for $2 and somebody's probably still making a profit. There we go.
+
+[84] EEVblog #84 - High Energy Multimeter Destruction — Dave Jones (opinion)
+context before: I'm not sure that what that was. It looks like a resistor, um but it's just a charred black remains. It could be a fusible resistor or something like that.
+TEXT: Here's the El Cheapo Jaycar Digitech QM-1524, about a $20 meter. It's got no input protection. It's pretty crap and as you can see, it's really blasted this completely black all the residue in there and this track here has actually lifted, it's peeled straight off.
+context after: But, that's what you get with these cheap meters. They're just not designed to handle those surges. And here's the cheapy Jaycar JTech QM-1344 and 1/2 digit meter. And let's check this one out.
+
+[171] EEVblog #171 - Agilent U1272A Multimeter Teardown — Dave Jones (opinion)
+context before: There's a couple of um surface mount electrolytic uh caps there. There's a few components aren't missing, and rather unusual, this thing is rather curious here. It's got like an exposed uh gold pad here with this large uh large package capacity here, and another capacitor that goes off to this rather unusual thing which uh it's almost like a sensor pad which goes off under the bottom.
+TEXT: Uh presumably goes under the board there somehow, and it's connected in here, and it's isolated, and they've taken off the uh solder mask, and they've taken off the ground plane, and and on the input side of the design, they've actually done a pretty good job.
+context after: I like it. They've got this secondary board up here, which you don't see all that often. Uh and the contacts are made with these uh brass uh standoffs here, which go from the top of the board to the bottom.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (opinion)
+context before: What's on the bottom? Oh, look at that. So, there's actually quite a lot of space inside this thing. Wow, look at that. Um unfortunately, some of the cans are soldered down, so um yeah, but interestingly, look at that up there.
+TEXT: These are our input connections, which go directly over a giant cutout here. They're really serious about the layout of this thing. Wow, this is really something else. Well, brutal is probably the word I'd use to describe that input diode clamping up in there.
+context after: This is the two current terminals here and the two back-to-back diodes. Look at those beasts. No fusing rubbish in there, so you're guaranteed not to get more than half a volt burden voltage across your current shunt resistor there.
+
+[556] EEVblog #556 - Mailbag — Dave Jones (opinion)
+context before: shielding tape, just like on the battery. Why do they need that? I'm not sure what they're doing. They've got the negative from the battery over here coming over and connecting to that, and presumably something connected on the other side there, but I don't know, that's, you know, got no idea
+TEXT: why. It's a spark gap between the inputs there, so that's, you know, a modicum of input protection, I guess. I wouldn't expect to find much else in this. I don't think this is going to be a hugely rugged multimeter, that's for sure. Check out those
+context after: segments. Obviously the LCD has degraded massively over time. You can see the shadow on the bottom part of that, but that is just awful. That is, there's something gone horribly wrong with the liquid crystal in this stuff, and it's just faded out. If anyone
+
+[1574] EEVblog 1574 - REVIEW: Is the $42 Fluke 101 Multimeter Any Good? — Dave Jones (opinion)
+context before: We've got our AC coupling cap there. We've got another high-voltage input resistor here, and then a high-voltage series array up here. Of course, each one's only like a couple hundred volts, but you whack enough of them in series, and no worries, you can get a high-voltage resistor that way.
+TEXT: And of course, there's nothing to go wrong with this. The great thing about this is that as you saw in the overload testing, it's going to actually perform really well cuz it's got I'm sure it meets its CAT ratings, no problems whatsoever.
+context after: And the clearance and the creepage on the traces looks absolutely fantastic. So, very happy with that. I expected that the other chip to be an E-squared prom, and indeed it is, 24C something or other.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (opinion)
+context before: I've got a capacitance mode. Much easier. More accurate. I don't have to calculate anything based on a decay factor of a meter needle movement. Might have been great back in the 60s, maybe, like, you didn't have to get your, like, LCR bridge out or something, but
+TEXT: meh. No thanks. And as far as input protection goes, well, cat ratings weren't around then when these things existed. You can still buy this one. I don't know if they are cat rated these days. I'll have to have a look at some new images.
+context after: This is an old model, but basically they'll have almost even your cheap ones, you know, your bottom range ones, have diode protection, back-to-back diode protection directly across the meter movement like that. So it is pretty hard to, well, destroy them by simple overloads,
+
+[1382] EEVblog 1382 - Keysight EDU34450A 5.5 digit Bench Multimeter TEARDOWN — Dave Jones (opinion)
+context before: Of course, you know, only 300 V CAT II rating. You're not going to of course because this is main mains powered. You're not going to carry it out with you in the field or to a switchboard or, you know, to some big power plant or something like that.
+TEXT: That's not its job. But looks like it has more than adequate protection. And you can argue your way about the voltage reference and and whatever. I assume it's custom Keysight multimeter chipset silicon down in there or they don't know.
+context after: I don't know. Somebody may have helped them out. Maybe they commissioned it from one of the multimeter chipset manufacturers. Perhaps. I don't know. Is it the same? Is this almost identical to what's used in the existing OLED model in the more traditional bench multimeter case?
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (opinion)
+context before: Hi, just a quick follow-up video on this MHO14 Mixig tablet oscilloscope / multimeter thingo. And I can't believe I completely forgot this. Somebody mentioned it in the comments. Thank you very much.
+TEXT: I like brain fart. Um, cuz you know I like to talk about input protection in multimeters. And here is the teardown photo and I completely forgot to mention the input protection on the volts ohms amps jack here or lack of protection.
+context after: I guess I was carried away by like the non-HRC fuse up here and this really ridiculously bizarre milliamp and amp terminals that are actually physically joined together. A totally redundant terminal.
+
+[171] EEVblog #171 - Agilent U1272A Multimeter Teardown — Dave Jones (opinion)
+context before: It looks like a real high-quality connector. There's a programming interface. They've actually used a connector for that, but we'll go into that when we look at the board in more detail.
+TEXT: They've got a secondary board up here for the input connectors, and they seem to be doing everything right. Although, I can't see any input protection devices on the top uh apart from this huge uh fusible resistor up here.
+context after: That's like the low-value 1 K or less input fusible resistor. That's about all I can uh see up there in terms of that, but we might have to uh flip the board open to see what's on the bottom.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (opinion)
+context before: We've got some relay switching happening in there, but we've got some Well, there's one Epcos uh GDT, gas discharge tube down in there, aka spark gap. We've got another one over here.
+TEXT: We've got some varistors here and here, they're monsters. They're absolutely the size of the package there. So, um yeah, some really decent input protection happening around there, and uh that's about all she wrote.
+context after: Although, I can see some Look at that. Guard rings in there, you can see the exposed gold traces around the relays there. So, yeah, they're really taking care of business down in there for your a real low current stuff.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: I really don't like that at all. It just looks really cheap and, you know, cheap and nasty. Ugh. Anyway, let's check out the rest of it. Um Okay. Um input protection, we've got a pretty wimpy looking PTC there, a wimpy looking MOV there.
+TEXT: So, you know, basically very minimum um input protection. You You don't get a lot of um a feeling of big confidence with this. They've only got small um 3AG size um HRC, but they are HRC uh fuses, of course.
+context after: The 10 amp current shunt. Um they They do have um blast protection built into the around the walls here, which is quite nice. I guess because of its curved shape like that, that's how it gets its rugged um and the actual rugged part of it, I guess.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (opinion)
+context before: The first thing is that the input jacks on the previous version, they were like these split input jacks. The new ones actually have solid jacks like this. Very nice, which then screw in.
+TEXT: So, that's a really good upgrade right there. I like that. Now, as far as the input protection goes, they have really beefed it up. Before, we only had uh, two PTCs here and no MOVs at all, uh, to speak of.
+context after: Now, of course, the UT61E was, uh, never recommended for its, uh, input protection and stuff like that. It's just for its, uh, bang per buck. So, they have actually, uh, improved it there.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (opinion)
+context before: And well, it's not too bad. It's got some useful ranges on here. It's you know, it's going to survive a a few knocks and things like that. And for the price, I mean, you get all the accessories and stuff with it.
+TEXT: The leads may not be the best quality or whatnot. And the input protection don't go use this on mains or other high energy circuits, but for sub $25 multimeter, I love some of the low ranges on this thing.
+context after: It really is quite neat. Seems to, you know, vastly exceeds its accuracy specs, at least the one-off unit I've got here. It could vary, but you know, it's got a half-reasonable little reference in there.
+
+[171] EEVblog #171 - Agilent U1272A Multimeter Teardown — Dave Jones (opinion)
+context before: They've got the two big HSC fuses, 440 mA and 11 A. I love it. They've got the high-voltage isolation there with the extruded plastic uh coming through as well.
+TEXT: There's a lot of thought gone into that. I presume the input protection devices are around here and they're on the bottom side of the board. We'll find out that when when we flip it open, but I like that.
+context after: I'm quite impressed. And if you look down there, it is actually a rev 004 board. So, they've had a few uh goes at this. They have actually refined it.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (opinion)
+context before: And that's um that's pretty much all she wrote. I mean, but this thing doesn't have to do any uh range switching or anything, I don't think. Um well, a couple of lower ranges from the divider, but that's it.
+TEXT: I mean, so really it's just fixed functionality, but I did uh expect to see at least some mouths in there. So, I don't know. Um Fluke know what they're doing on the input protection uh side of things.
+context after: This is uh CAT IV 600-V uh rated. So, I guess they've determined uh that due to the limited functionality in this thing, they simply don't need input mouth protection.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (opinion)
+context before: So, it's going in. Okay, it might have a 10 meg, although it could be coming out here. Granted, the 10 or the 10 meg could be like in here or something, and coming out here, and then these aren't actually connected internally to this like I showed previously, so we don't know, um, unless I actually went to the bother to measure it or something like that.
+TEXT: I couldn't be bothered, but anyway, it it doesn't matter. This is a really basic implementation with no input protection. Don't use this thing on the mains at all. >> [laughter] >> This is ridiculous.
+context after: And how much does the extra like even if it's only 10 bucks extra, I'd expect a single PTC in there, please. Let alone MOVs, you know, a single PTC, you know, a single MOV.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (opinion)
+context before: Isn't it neat and tidy? Um and I actually like the uh cable strain relief there. That's quite good. There you have it. That just flips out like that. The contacts look good.
+TEXT: And look at that. That's That's pretty decent. I don't mind that at all. But I don't like like in terms of the uh construction quality. But um it's got no input protection at all, by the looks of it.
+context after: But still, I would rank that one uh streets ahead of the XB866. Um uh for basically there's a couple of bucks difference in price, if that. Definitely go for this.
+
+[1004] EEVblog #1004 - Owon XDS3202A 14bit Oscilloscope Teardown — Dave Jones (opinion)
+context before: Ah, we've got a real Finder income relay. Okay, thumbs up for the Finder income relay. Um but, we've only got one NTC thermistor here. We've got our two uh high voltage input resistors here in the little mouth package.
+TEXT: They have done the right thing. They've cut the uh slots under there. So, yeah, no worries, okay. But, that's basically uh your only input uh protection there. There are no MOV protection at all.
+context after: We've got your traditional, which I did in my thousandth video. You've got your uh back-to-back Zener uh clamp with your two uh transistors there. They've also cut the uh uh isolation slot underneath the relay as well.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (opinion)
+context before: So, this is uh true RMS AC and DC. No, yeah, I I totally agree. You you wouldn't see that thin wall in there. It's just a It's just something I just noticed then.
+TEXT: But, um you know, the the the case feels good quality. It's got, you know, the um deep um the deep protection in there for blast protection and stuff and the input protection's really good.
+context after: I mean, jeez, they got, you know, three MOVs and a couple of PTCs in there. That's pretty good. Right? And plus the two fuse what what are probably fusible resistors as well.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (opinion)
+context before: Super duper safe. So, now we're going to have a look at the volts, ohms, and diode jack, and capacitance jack, for that matter. So, all this no longer exists.
+TEXT: The These fuses have nothing at all to do with protecting the voltage jack. Common misconception out there. So, let's have a look at it. And the input protection is actually pretty basic.
+context after: It's not as complicated as it looks because actually pretend that these two components don't exist. These are just extra components that happen to be in the Fluke because of its 80s type of ADC and its input uh combination.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: In fact, it's pretty good. And when I first got these meters, I thought this one might be a bit of a shoe-in to win it. I mean, what's not to like?
+TEXT: It's an Extech, one of the big brand names. It's got a 3-year warranty. It's got CAT IV input protection. It's got a nice big clear display. It's waterproof and drop-proof, super rugged.
+context after: It's got the best temperature function out a lot with 0.1° resolution. It's got this lovely carry case which comes with it. It seems like excellent value for money. And it's And it's not bad value at all.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (opinion)
+context before: Fuses don't blow instantly. They take seconds to blow. So, any properly designed multimeter is going to have some sort of diode bridge protection on the current ranges like that.
+TEXT: It's just a belt and braces approach, additional protection for your input circuitry and for your current shunt resistors over and above the fuses because fuses blow all the time, right?
+context after: People set it to the wrong current range, they accidentally measure volts or whatever, and you blow the ass out of your fuses. You know, you should keep half a dozen of things in stock just because it happens all the time.
+
+[91] EEVblog #91 - $50 Multimeter Shootout - Extech EX330, Amprobe AM220, Elenco, Vichy VC99, GS Pro-50 — Dave Jones (opinion)
+context before: Really, there's hardly any. Um it's it's not much at all. Once again, they are actually gold plated. I think we finally have some gold plating. It doesn't look um like the best I've seen, but it is actually um gold.
+TEXT: So, there's very little on that top board. It's very unusual indeed. Now, there's a PTC there. That looks like the only um input protection on this thing is one PTC and not much else.
+context after: One big um power couple of power input resistors and well, not much else at all. And as you can see, the 10-amp one is not fused here at all.
+
+[1004] EEVblog #1004 - Owon XDS3202A 14bit Oscilloscope Teardown — Dave Jones (opinion)
+context before: We've got your traditional, which I did in my thousandth video. You've got your uh back-to-back Zener uh clamp with your two uh transistors there. They've also cut the uh uh isolation slot underneath the relay as well.
+TEXT: So, that's quite nice, but there's basically bugger all uh protection on this thing. That's basically it. Now, if we go over here to the amps range, here's our milliamp shunt here.
+context after: There's no diode protection on that at all. And our 10 amp shunt here is just our regular nichrome uh wire going across, which is meh, okay. That's your standard, you know, it's a little bit how you doing, but it does the job, right?
+
+[84] EEVblog #84 - High Energy Multimeter Destruction — Dave Jones (opinion)
+context before: We get a lot of flash around here with corresponding vapor deposition over there. You got to love a cheap Chinese screw. Thanks for that, dog. As the actress said to the bishop.
+TEXT: Not as much damage as we thought. No, but the PCB is certainly ruined. Yeah, there's no input protection on that. There's no mobs or anything like that. So, that's what you expect.
+context after: I'm not being gentle here. No. And under That's entirely disappointing. We've barely got a little bit of flash. Yeah. Not much has happened at all. That is very disappointing.
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (opinion)
+context before: Uh, complete fail right there. Then we got a um standard package 10 turn trimmer there. I don't know what that thing's adjusting. We've got ourselves a little jumper link there.
+TEXT: The jumpers. Is that actually Oh, yeah. Look, it's going between those two pins there. I have no idea what that's for. Um but uh goodness, yeah, input protection really sucks ass.
+context after: It really does. And this is supposed to be CAT IV 600 V. Category IV, folks. You're supposed to be able to use this on you know, big industrial mains um lines.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: But, much, much worse than that. But, apart from that, it's you get a sense of it's really just good quality. The components are very beautifully soldered. The The caps here look like excellent brand name quality rated ones.
+TEXT: There's the main chip. I'm not actually familiar with that one, I don't think. But, it just looks like a good quality construction all round. Input protection, I'm very surprised.
+context after: There are I can't see any MOVs at all. The The 10 amp current shunt is one of the better, nicer ones I've seen. That's really quite neat. The two massive HRC fuses, of course.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (opinion)
+context before: You know, I'm a MELF resistor fan boy, but unless the protection devices are on the bottom side. Uh-oh, what do we have over here? We've got one. There it is, PTC right up there on the other side that of the battery contact right near the chip.
+TEXT: So, that's a interesting placement. So, yeah, like a bare minimum input protection. Where's the fuse? Where Where do you even find those? They're 10 mm by 3 mm by the looks of it.
+context after: Uh, jeez, like why? MTO5s at least. Thank you. So, the lack of any input protection like MOVs and we've got a single PTC, but there's no like diode looks like unless it's on the bottom, there's no diode protection for the amps input and stuff like that.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (opinion)
+context before: So, there's more There's more cutouts on there as well. Looks like that is your That's your input string there. And they got three series resistors there for high voltage.
+TEXT: Or is it four? Might be four under there. So, that's pretty good with the cutouts and everything. That's nice, but you you know, Brymen do Brymen know how to do input protection.
+context after: Like, they're better than Fluke. Right? Brymen are pretty much the leaders in input protection. No battery cover which you can lose or break. Great. Says Grafter. Yeah, that's fair enough.
+
+[234] EEVblog #234 - Agilent U1733C LCR Meter Teardown — Dave Jones (opinion)
+context before: um you know, they've changed a few things. The uh processor looks like it's changed, we'll take a look at that. Um the ADC which they had up here before in this big um SO package is gone, probably replaced by this device here.
+TEXT: They've changed the uh buzzer there to a different type. They've changed the input protection. We have a um RF uh bead here for uh that looks like uh for the DC input down there.
+context after: That's a DC input circuitry. They've added that just for some RFI. The input protection is uh different. We'll go into that uh later. It looks a lot better on the newer one.
+
+[757] EEVblog #757 - HP4263A LCR Meter Teardown — Dave Jones (opinion)
+context before: And there's our, uh, our front panel terminals. They got little, uh, common mode toroids on them, just to, uh, keep the crap out, and nice, uh, board-to-board, uh, BNCs for those.
+TEXT: Very nice and looks like we've got some input protection with the diodes there. And uh, cuz these things you don't want to go applying DC voltage and it probably tells you that.
+context after: There it is. Discharge test device before connecting. If you hook up a big thumping electrolytic capacitor charged up to it, uh, it can ruin your day. Interestingly, they've got a DC to DC converter in here.
+
+[1084] EEVblog #1084 - Pocket Multimeter Shootout Part 2 — Dave Jones (opinion)
+context before: those leads are just going to get in the way. Um, if you want bargain basement, the Uni-T um 10A, not hugely more expensive than the Aning, which absolutely failed on uh mains on the ohms.
+TEXT: Um, Uni-T are doing fairly well these days on input uh protection if they haven't always uh done so, and that one's um quite reasonable down at like the 20-odd uh dollar range.
+context after: And of course, the uh PM3 300 performs pretty well across the board, and also I think it's got the best uh case, but it's also the most expensive, and it's the thickest uh as well.
+
+[84] EEVblog #84 - High Energy Multimeter Destruction — Dave Jones (opinion)
+context before: But, that's what you get with these cheap meters. They're just not designed to handle those surges. And here's the cheapy Jaycar JTech QM-1344 and 1/2 digit meter. And let's check this one out.
+TEXT: This one had, you know, the same sort of thing on the back. It's basically got no input protections at all. It blasted and charred around here. It just couldn't handle at all.
+context after: It's completely burnt. This one actually smoked. And if you look at the top side here, you can actually see you may not be able to see that, but some tracks of of peeled right off in there like that.
+
+[559] EEVblog #559 - Auction Score — Dave Jones (opinion)
+context before: Good old-fashioned trim pots. So, let's uh take this this top board off and see what sort of uh processor we've got here. By the way, the input uh they've got these ones are held down by screws.
+TEXT: These are soldered in these input jacks. They're obviously uh sensing input jacks on there and uh there's a reasonable amount of protection in there, but not uh a huge amount.
+context after: What's the CAT rating? Yeah, CAT II. There you go. I thought it looked a bit uh a little bit on the wimpy side. It's still okay, but uh yeah, it's not a CAT III or a CAT IV rated meter.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: So, I put it down to a one-off. Extech have investigated it. They haven't got back to me about it, but they are treating this as a serious issue. So, I'm treating it as a one-off, but it just happened to be in my unit.
+TEXT: So, there you go. Anyway, let's take a look at the input protection. Three big MOVs here, a big PTC, but look, they're all crowded and they're folded over in there like that.
+context after: So, you know, I'll give them thumbs up for the input protection, but the just the crowding of it. Look at the vertical input protection resistor like that. It's just all bunched in there.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (opinion)
+context before: It's only got a transmit LED. They've changed the arrangement of the uh input jacks here instead of the straight arrangement like this. They've actually staggered them. It's neither here nor there.
+TEXT: Ratings exactly the same CAT IV uh 600 V CAT III 1,000 V, but uh as we'll see in the teardown, the input protection isn't as good as uh you know, a properly designed meters.
+context after: But as they say on here, it's only uh 250 uh V rated, and they only have 250 V rated fuses in there. This one actually claims uh 20 amps max as opposed to 10 amps max here.
+
+[727] EEVblog727 HowToKillAnOpamp 1920x1080 — Dave Jones (opinion)
+context before: And nope it's shorted out. So yeah. Oops. And it's going to be that puppy there, the OPA 2376. So it takes the input uh directly from there. And um it just it's it's a window comparator.
+TEXT: So it uh drives the uh lead there from a voltage reference on the board. So you know, it's a fairly simple device, but yeah, I had no input protection or anything like that.
+context after: I'll suck out the chip and well, hope I got another one. I usually buy more than what I need. You know, if I if I was building one of these, I wouldn't just order one op amp.
+
+[Yk_T-uCbg10] Returned BM036 Clamp Meter Investigation — Dave Jones (opinion)
+context before: Those so uh it all looks fine. It all looks okay there. Not seeing anything obvious. So uh rest of the board maybe. Of course the the front end board there's going to be nothing on the front end board.
+TEXT: I like how the BM036 has ton of protection on here on its own dedicated board. No wackers. It's uh uh It's really quite the little beastie. I I forget what the rating is.
+context after: Cat 4 300 volts cat uh 3 600 volts. So, it's not too shabby. So, that's our input uh marks down there. That's all sort of like the more multi-metery stuff.
+
+[ay9wFQAW19Y] eevBLAB 91 - Why Are Fluke Meters So EXPENSIVE? — Dave Jones (opinion)
+context before: In fact, this one has practically better everything, really, than the Fluke 77. So, why is this more than well over twice the price of a competing product which pretty much beats the pants off it in terms of bang for buck and features?
+TEXT: Is it because Fluke meters are more accurate than other meters on the market? Nope. Is it because they have better input protection than other meters on the market? Nope.
+context after: Is it because they're like more rugged than other meters on the market? Nah, not really. And there's a lot of people out there who will use those three reasons of why Flukes are better and why they cost more than other meters, but that's not the case.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: They got flying wires there on the back light. You know, that's not really sort of you know, a tacked on after thought. So the layout of the Extech very very poor.
+TEXT: They really need to redesign this especially around the input protection and get rid of this um jumper wire going across here. That's just not That's just not on really.
+context after: So after testing $600 meters, how do they compare? Whoa, the problem is they all compare reasonably well. They're all pretty decent meters. I mean, they've all got their pros and cons.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (opinion)
+context before: Okay. 51st week 2021 on the right. 51st week 21. Yep. So, it's got your buzzer. So, this is looking pretty good. I give that a thumbs up. Does anyone disagree?
+TEXT: I really like the I really like the design here. I got no problems with this. It'll easily meet its current rating. Brymen know know how to do their input protection.
+context after: It's independently UL listed. Uses the standard Brymen um rotary switch interface. And um it's pretty simplistic. Why the wavy traces? Um that's so that they can route them. In You're talking about those?
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (opinion)
+context before: Geez. I mean, come on. And this is rather unusual. Look at that. That looks like a ceramic resistor network. It almost looks like like it's a BGA package or or something like that.
+TEXT: And there's like almost like a dip alternative part. That is that is bizarre. What on earth are they doing there? Anyway, the input protection is not too shabby here.
+context after: This red wire is coming from our input banana plug. Then we've got a couple of gas discharge two tubes here. Couple of big beefy looking mobs. No worries whatsoever.
+
+[AzIuayXzCvs] Brymen / EEVblog BM235 Multimeter Unboxing — Dave Jones (opinion)
+context before: The thing that's missing is the serial port. It's got a couple of extra features. It's got multi-level electric field detection, stuff like that and backlight continuity, a few other things.
+TEXT: But it is designed to be cheaper than the BM257 and improved input circuitry as well. Once again, it is CAT IV rated. Really nice little meter. I love this thing.
+context after: And they did actually I was supposed to get this in November, but they had a last minute design hiccup and they just had to tweak a little thing. It was slightly failed spec on one particular thing and they found the cause for that and and they fixed it in production.
+
+[749] EEVblog #749 - Mailbag — Dave Jones (opinion)
+context before: Shame it only goes down to 2 volts, but yeah, you can understand because it's self-powered active load. The op amps inside have to, you know, the active the op amps have to, you know, work.
+TEXT: So, you're not going to, you're going to have a hard time getting much lower than that. The only issue might be is I'm not sure about the protection on the input.
+context after: If you get reverse polarity, they warn you on the back, you know, don't hook it up reverse polarity. They do have a There we go. A reverse bias diode in the input input in series with a 10-amp uh uh fuse there.
+
+[1272] EEVblog #1272 - Mailbag — Dave Jones (opinion)
+context before: What the And that's a through Is that a through hole? Surface mounted. That's a through hole that's been bodged to a surface mount. Okay, you know, fair enough. Anyway, there's our 10 amp current shunt.
+TEXT: That's bent right over on the side. That's a bit how you doing. Um look at all the solder in there, but you know, look hey, it's got no shortage of protection.
+context after: Um don't worry about that. Look at this. Three MOVs, three PTCs, and a plus your uh diode bridge and this other diode over here, whatever that's doing, but it's big and beefy.
+
+[717] EEVblog #717 - How To Hack Vacuum Fluorescent Displays — Dave Jones (opinion)
+context before: There's no silk screen like this. Well, you look at the cap. You can see the negative of the cap. It's the pin on this side. You can see that that trace is going over to this pin.
+TEXT: So, this pin is going to be the negative input. This pin here is going to be the positive input on the left here. So, there's no input protection there at all.
+context after: And then, what voltage are we going to have here? Well, it's pretty darn obvious. I don't see much in the way of regulation, although something like this could be a discrete transistor regulator, but I don't think so.
+
+[9gYaB1AGmT8] Padauk 3 Cent Micro Programmer & ICE Unboxing — Dave Jones (mention)
+context before: of that just to have a squeeze under and let's see what we get so I don't know how much this ice cost actually but I would say if you're serious about writing code for these things unless of course you know someone like you know you had a simulator or what not software simulator ice is basically an in circuit emulator it's a hardware emulator rather than like a software
+TEXT: simulator thing so it actually runs on either your target device you can plug it in there we go hear that what have we got here what I that looks that looks number rubbed off fish um that looks blank there's probably some PLD or FPGA oh no my battery's running out battery's running out better go okay sorry looks like they've got some input protection up there and that's a
+context after: Cirrus Logic micro by the looks of it Cirrus Logic job yep and all the emulation I presume that the ice has done inside there every little FPGA or PLD but I can't see a number on that anyway if I can I'll update it in the text down below catch you next time
+
+[482] EEVblog #482 - Retro Iskra Multimeter Teardown — Dave Jones (mention)
+context before: It's like a single chip solution that does everything, but you know, really um old school, you know, end on resistors there. They've just used like an off-the-shelf um rotary switch there, you know, pretty crusty.
+TEXT: Ooh, look. We have some MOV input protection. Wow, stunning. But uh yeah, put some tape around there to pull the fuses out. Obviously, some battery leakage there, but let's uh That's, you know, this is like a big contrast in terms of um you know, the system integration in the single chip multimeter, but I think this is not um too dissimilar age.
+context after: So, let's see if I can pop that off and have a look at the chip. Get a date. Here we go. I got the sucker off. It looks like I had uh put some tape on there cuz yeah, I kind of remember that.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (mention)
+context before: So, you really don't get much better in terms of power supplies and TDK lambda. And, you know, first class Aurid expense. They've they've spared no expense. This thing would not have been cheap at all.
+TEXT: But, hey, in a $13,000 instrument, eh, it doesn't matter. They're not pinching pennies. They got proper nichon uh caps, of course. The uh mains wiring over here of course is properly crimped and then shake proof washer down to the side and they've got all the requisite input protection and everything happening.
+context after: Beautiful spaced out and it' be super duper reliable and would last well not forever but a long time and easily repairable too. So there you go. I hope you enjoyed a look inside that high-end Agyant B2912A precision source measure unit or shMO as they're called cuz you don't get to look inside these things every day.
+
+[534] EEVblog #534 - Mailbag — Dave Jones (mention)
+context before: us to do quite a, ah, few useful things. And it's got an integrated, ah, full wave bridge rectifier in it, hence the ability to rectify the, ah, AC coming from a piezoelectric element. And it's pretty beefy, up to 100 milliamps of output current, of course, in piezoelectric mode, you're usually
+TEXT: not going to be able to generate that kind of stuff. But it's a generically useful chip. And you can select the output voltages, all of your, you know, 1.8, 2.5, 3.3, 3.6, very nice. And of course it has a, ah, high efficiency, ah, buck DC to DC converter in it, and it's got input, ah, protection, and
+context after: undervoltage lockout. Unfortunately it comes in a pain in the arse 10 lead DFN package, bleurgh, evil. But anyway, this is how simple it is. Here's your, here's your piezoelectric element here, hook it up to the two pins, nothing else required, and just a couple of, ah, caps here, and an
+
+[1019] EEVblog #1019 - Mailbag — Dave Jones (mention)
+context before: It's all it is. In a touch-tone phone, well, not hugely interested in that, but yeah. But, it is made in Poland. Uh absolutely classic. Um yeah, that's what exactly what you expect a phone of this vintage.
+TEXT: There it is. We've got a modicum of input protection there, but it's a phone. Classic single-sided board construction with the Look, there we go. Got the hot snot down in there and the end-on the end-on resistor construction like that, very common back in the day to get the compact size required.
+context after: And inside the phone, of course, we've got our touch-code tone controller. No idea what that one is, but 50th week, '94. So, you know, mid-'90s vintage there. But, yeah, that's all it is.
+
+[694] EEVblog #694 - Mailbag — Dave Jones (mention)
+context before: Holland was only a small region of the Netherlands. I'm not sure which part, but a small region of it. But I think people are a bit forgiving if they refer to if you refer to like Holland and the Netherlands as Holland. Anyway, here we go.
+TEXT: That's a rather neat instructions there. How to battery check, how to do all your adjustments and calibration. Excellent. And there we go. 2 kilovolts input protection. And the frequency range 25 kilohertz, yes. Huge frequency range. Typical accuracy, yeah, 3%. Very typical for an analog meter.
+context after: And two 9 volt batteries. And that's pretty dodgy. Someone's had a hack at that. Look at the hot snot on the back of that. So they've clearly replaced those with what looks like the battery snaps that they got out of the top of the 9 volt batteries.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (mention)
+context before: It just looks so close. It's like, what are you doing? Now, if we follow the money here, obviously, look, this comes in, goes through our mains switch. Then where does it go? This is the output of our power supply. Like, where does it go?
+TEXT: Here's our mains supply. Obviously, look, we've got our big mains choke up here. So let's flip it around, shall we? And have a look what's going on here. Here's our input mains choke that they've got there, the RFI choke. They've got some input protection happening there, so that's all good.
+context after: But once again, look at this. Curiously, like, plus 5 volts D, which would be digital, plus 5 volts digital. They've got a common mode choke here. So it looks like 6.5 volts in, 5 volts out. They've just got a linear reg happening there.
+
+[1270] EEVblog #1270 - Electronics Textbook Shootout — Dave Jones (mention)
+context before: Like, you know, it assumes that, you know, what inductors are and, and ringing and stuff like that. And yeah, I, it just like, bam, it just comes out of nowhere and hit you. This is just in the diodes application section. Yeah. See, you can argue that they probably should have left that out.
+TEXT: I liked the fact that they're doing like input protection and stuff here. Isn't it? That's, you know, that's quite all right. Okay. Let's take a look at Sedra Smith, shall we? Oxford University Press. Now this is a slightly different, as I said, to the ones before, because it starts out
+context after: with signals and amplifiers and then goes semiconductors, diodes, MOSFETs, like I know, like I, I don't agree with that. I think the others are better in the way they start, but once again, it, you know, it doesn't matter what order it's not like you're going to systematically read through this textbook.
+
+[37] EEVblog #37 - Rigol DS1052E Oscilloscope Teardown — Dave Jones (mention)
+context before: Because not only is it um FR4 PCB um instead of the usual phenolic base stuff, you can see it's actually got really um quite high quality construction. It's got a really nice quality fuse holder here.
+TEXT: It's uh the earth connection's done really well. The um it's got all the protection type stuff. This just really looks like a very well-designed and top-quality switch mode power supply, much better than what you would you'd expect for a typical uh Chinese product like this.
+context after: And I know what everyone's thinking, what everyone wants to see. The ADC chips. Here are three ADC chips. 1 2 3. Yes, they've had the numbers rubbed off, but on the second chip here, I've actually looked at this in detail, and I'll show you a high-res photo of it.
+
+[986] EEVblog #986 - Mailbag — Dave Jones (mention)
+context before: high voltage resistor string there and here, and going around so, you know, they're really doing the business. It's a multi-layer board, none of this two-layer rubbish. Yeah, but to have to get into self-tappers like that to get access to the HRC fuses, no, that's, you know, like Fluke, sure, you know, Fluke
+TEXT: do that, right? On their, hey, 80 series, there's our screen, don't want to let it fall off the zebra strip. Oh, and there's all our, there's our buttons, nice surface, oh, bloody screws falling everywhere. Nice surface mount tactile switch. There's our input protection,
+context after: I like how it's all on a separate board. We've got our requisite MOVs and PTCs in there, very very nice. O-ring seal down the bottom, they've got the split input jacks for the input jack alert. Another high voltage string there, beautiful, nicely spaced, everything's hunky-dory, no worries about that whatsoever.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (mention)
+context before: the speed of course. And of course the FPGA there is doing all the logic analyzer stuff as well. Nothing fancy there, there's no voltage level threshold set triggering and all that sort of stuff. It's just really, you know, pretty dumbass logic analyzer functionality.
+TEXT: And on the backside, you know, there's a whole bunch of miscellaneous there's our input protection there for our logic analyzer by the looks of it. I haven't looked at the schematic for that. There you go, there's our analog devices TX DAC part. Another expensive 14-bit
+context after: DAC and all the miscellaneous circuitry and, you know, output amps to go along with that. It can drive a 50-ohm impedance output. So a pretty chock-a-block board. And if you can get this for $99, it represents pretty darn good value, let me tell you, on the hardware
+
+[880] EEVblog #880 - Mailbag — Dave Jones (mention)
+context before: That just wasn't Fluke's thing, so yep. But jeez, it looks almost identical to the original Fluke's in terms of case and buttons and everything. Wow. And of course, classic through-hole construction for the day. We've got the Intersil 7106, although it's not a genuine Intersil, it's a TSC there.
+TEXT: And yeah, we've got some LM358s, are they? Yep, just some op-amps and everything's just manual ranging. You know, input protection, what's that? You know, we go, ooh, no, hang on. Ooh, might have something. Pretty how you doing? Some trimmer pots, and Bob's your uncle.
+context after: Not much else. Very typical of the era of these things, but yeah, it's a little bit crusty, but you know, this would have done the job back in the day. And it looks like it might still do the business today. Not a very safe meter, but you know, meh.
+
+[674] EEVblog #674 - Rigol DS1054Z Teardown — Dave Jones (mention)
+context before: I don't know my birds. Sorry for all you bird people out there. Um, but that's probably the code name for this, um, 1000, uh, this new 1000 series. Anyway, look, we have some nice, uh, common mode chokes here.
+TEXT: They're they're silastic down, uh, very nice. We've got input, uh, protection. We've got all the requisite stuff happening. Look, we've got the high voltage isolation slots between our bridge rectifier directly on the input there and it all looks very neat and tidy.
+context after: It really does. Only one issue. And of course they're going for the CapXon caps. Not to be confused with a very similar sounding one which are actually cheaper yet again.
+
+[481] EEVblog #481 - Mailbag — Dave Jones (mention)
+context before: I absolutely suck at it. So let's have a look at it. We get the manual and everything. Look at this. Fantastic. Brilliant. Look at that. There's the block diagram. Brilliant. And schematic, schematic, schematic. We're in. We're in like Flynn. Look at that. I'll have to scan that.
+TEXT: Actually what I'll do is I'll scan this in and I'll put it up as a PDF available rather than you having to squint. Everyone having to squint in HD there. Oh look, some JFETs on the input there. Have we got? Oh there we go, there's the input protection, circuitry.
+context after: Anyway, I may or may not go through that. What we want to do is have a look at this puppy and it will maybe be the subject of today's Teardown Tuesday. So I may not do anything with it in this mailbag, so sorry about that.
+
+[6] EEVblog #6 - Part 1 of 2 - Meterman 37XR Multimeter review — Dave Jones (mention)
+context before: Now, let's check out what's inside. There's a The big 10-15 amp HRC fuse is actually under the main cover. So, if you want to replace that, you have to take the main cover off, but that's not a big deal.
+TEXT: They don't blow all that often. Um, looks like we have input protection, uh, which you'd expect. It's all SMD construction. It's all very nice. Um, and uh yeah, there's two main LSI devices and there's some actually uh fair bit of discrete um circuitry, as well.
+context after: And it's it's just a really nice layout and uh it's nicely machine assembled. I like it. It's um a really nice internal construction. It should be really reliable and um you get a lot of measurement confidence with this baby.
+
+[827] EEVblog #827 - Mailbag — Dave Jones (mention)
+context before: Thank you very much. That's the year Star Wars came out. Jesus. Plessy. Fantastic. Ah, original RCA chips. Ah, does it get any better? Wow. Look at the M205 fuse holder just hacked on the top of there. Ah, completely how you do it. And they've got all these crusty little carbon trimmers all in there as well.
+TEXT: They're just awful little things. And that one over there, that's the front panel zero set control. Oh, wow. You wouldn't even bother fixing this thing. And input protection and cat rating. What's that? Actually, I can't find any info on the Plessy MP3202 there,
+context after: which that's actually the same part number as a modern white lead driver. So that's all that's popping up on a first quick search. But there's our right angle display board, just four little seven segment displays in there. So that's obviously doing all the magic.
+
+[1720] EEVblog 1720 - Mailbag: USSR Bonanza + Logic Training + $69 Logic Analyzer — Dave Jones (mention)
+context before: Can't see that on my camcorder screen, but I don't believe that is like any of your mainstream uh processors there. So, or mainstream FPGA, or whatever it is. There's our inputs.
+TEXT: Looks like it has some protection there. And but as I said, like there's not going to be like in any individual channel threshold voltage setting. Like you don't expect that on a board like this, but you might be able to change between 3.3 and 5, maybe perhaps.
+context after: Looks like it does have some memory up there, but whether that's a micro, I'll have to look. I'll put it up here, whether or not that's a micro or an FPGA.
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (mention)
+context before: Surface leakage. That's what it's all about. Contamination. So, these so nothing leaks into these critical pins. And there's all our true RMS converter circuitry around there. That was all the stuff that was under the shield on top.
+TEXT: And it wasn't fully shielded, of course. And you can see the input switching relays and other stuff still around the analog front end all around here. There's our input protection stuff and just running and the shield sort of goes over part of this part here.
+context after: Optocoupler down in there. And here's that DC power input here, yeah, going off to the front panel here. And that's You can see the physical separation in there between the analog stuff.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (mention)
+context before: scope ADC, but oh, right, so this is our ADC, these are our differential inputs for our ADC. We haven't actually got to the differential drivers yet. Or did we skip those? We must have skipped the differential analog drivers. Oh yeah, here they are, sorry.
+TEXT: Scope driver. So these come from the output from the MUX, and then they've got differential drivers for driving the channels here. And then we've got some protection there by the looks of it. And that is pretty much all she wrote. And we've got some advanced
+context after: stuff here on the scope signal scaling. This is really quite good, look. And we've got our usable windows here, and I won't go into details on those. No doubt there's some good explanatory text that goes along with that. Scope spectral characteristics here. And we can, there we go, they've used it to measure itself
+
+[795] EEVblog #795 - Electronex 2015 — Dave Jones (mention)
+context before: Wow. Let's have a squiz at this. A CD. We've got... Sorry, you can't see everything. Layout considerations. Oh, application circuits. Nice. Yep. It's all in there. Wow, this looks jazzy. I want one of these. I wonder if they're giving them away. That'd be a nice freebie at the stand.
+TEXT: Wow. Oh, sensor interface with ESD protection. Wow, that looks beefy. Wow, input protection there. All sorts of stuff. Oh, I want one. I'm here with Ruben. Hello. And he's going to tell us about the book. The Trilogy of Magnetics. It's a fourth edition.
+context after: Yep. It's a three-chapter book, hence the trilogy. The main idea is we teach people about switch on power supplies and EMC. Chapter one's basic principles up to very advanced theory and understanding. Chapter two, components. We talk about things like skin effect and the relationship between ferrite and copper.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: That speaker is really dodgy, the odd dodgy part, but you know, it's it's not a bad layout at all. Okay, I've taken it apart. There were half a dozen or more self-tappers.
+TEXT: There's lots of lots happening on the range switch here. It's got reasonable brass contacts down there. I don't I don't mind it too much at all. There's some extra input protection here and diodes down here and the split input jacks here.
+context after: Now, they need the split input jacks for the current ranges because it's got input alert feature where if you plug the probe into the wrong thing, and that um is a neat feature, but these are very weak input jacks.
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (mention)
+context before: I really like it cuz there's nothing else in this product. Just this main board and the power supply. And there's the connectors bolted directly on there. Brilliant. I like it.
+TEXT: Thumbs up. And there's a quick peek inside the power supply. It's you know, they're doing all the right things. They've got input protection. They've got input filtering. They're using Epcos brand capacitors, which aren't too bad at all.
+context after: They've celastic'd a lot of it down. They've got output filtering. Yeah, it's all happening. They've got high voltage isolation slots there. We won't go into it in too much detail because really it's not that interesting.
+
+[9u8TEJdAVdQ] Returned Faulty BM235 Switch Investigation — Dave Jones (mention)
+context before: So, we just have to desolder just the leads here that hold that board in and it just lifts out. No worries. There we go. Just lift that off. And Bob's your uncle.
+TEXT: Look at that. Fantastic. Love that. And look at all the input protection. Of course, the first thing I'd be suspecting is the range switch, but that looks looks a little bit high there, but I do believe that's actually quite normal.
+context after: I could be could be mistaken, but I don't think so. I think that's okay. I think we're going to have to get it out. So, the good thing about the BM235 is that it doesn't have that might you might think that's like has should have some sort of a circlip or retaining clip under it, but it it doesn't.
+
+[1292] EEVblog #1292 - $2 Meter vs JVA Electric Fence Controller! — Dave Jones (mention)
+context before: And you can basically read back the output voltage with your own custom high voltage opto-isolator. Beautiful. Thing of beauty, joy forever. So, although the basic concept is fairly simple, if you listen to Paul talk about how they developed these things over the years, then there's a lot of art and science which goes into these.
+TEXT: The pulse shape, the transformer design, output protection and input protection, and the charge discharge cycles of the caps, and all sorts of stuff, and lots of intelligence in the firmware to handle all that sort of stuff.
+context after: Ugh, really not a fan of these connectors. Um, I don't know what the deal is there. Industry standard thing, I don't know. All right, so let's power this bad boy up, shall we?
+
+[43] EEVblog #43 - Fluke 233 Multimeter Review — Dave Jones (mention)
+context before: And as you can see here, um typical Fluke quality construction. You've got the massive HRC fuse. There's your 10 amp current shunt. The uh input sockets are really well soldered and well anchored.
+TEXT: I like those. And look at the range of protection stuff. You've got all these protection. There's your main input resistor protection devices everywhere. And there's your thin film resistor network right in there.
+context after: And as with the other display, the battery terminal, I like them. They're soldered directly through hole straight onto the board. Gold in looks really good. You got a shielded display can here.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (mention)
+context before: That's okay. But jeez, you know, um almost like an afterthought. They've glued that resistor in there. A little bit of attention to detail just to ensure that doesn't flap around in the breeze.
+TEXT: They got some input protection down there. I see a uh mauv and a thermister down there. Fuse of course. Um it's not directly soldered in. Why they've got this just jumping over to there like that, I don't know.
+context after: Um it maybe it allows them uh to get a current clamp over that thing perhaps. I don't know. Um weird. Anyway, looks like we do have a common mode choke here filtering.
+
+[ay9wFQAW19Y] eevBLAB 91 - Why Are Fluke Meters So EXPENSIVE? — Dave Jones (mention)
+context before: metrology and their measurement confidence and everything incredibly seriously, then you won't understand why they're more than happy to pay a two or three times the price for less features for this meter.
+TEXT: And it's not because they're more accurate. It's not because they're more rugged. It's not because they have better input protection or something like that. Although, you know, these are really rugged things.
+context after: You can, you know, beat the crap out of them. They have a, you know, really good reputation for that. But that's not why people buy them. It's about measurement confidence, longevity, and trust in the product.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (mention)
+context before: Uh they're all galvanically isolated. Check this out. You can see the split in the ground plane, totally separate ground planes between all the channels. Looks like we've got some input attenuation here.
+TEXT: We'll take over that. Very interesting looking uh current shunt on the input there. We've got some protection. We've got some interesting looking uh transformers here. We'll have a look at those in a second.
+context after: And there's our uh galvanic isolation using three optocouplers there. So, we're just getting serial data out of this thing and that's exactly what you'd expect. Now, if you were paying attention, you would have realized that there's no power There's no other wires coming to this board.
+
+[1596] EEVblog 1596 - NEW Digilent Analog Discovery Pro ADP2230 TEARDOWN — Dave Jones (mention)
+context before: And they That's how they could get the price down on this thing. Now, it's not so cheap. Back when it was like a student thing, it was cheap. Anyway, external memory there.
+TEXT: Oh, upside down. All the electrons are going to fall out. 3.3 volt rail there. Looks like we've got our input protection there for our logic inputs. UPS, that would be the universal power supply, would it?
+context after: Positive and negative rails, so that would be the adjustable power supply, is it? So, there's our 61175 boost converter there. 3-amp high-voltage boost converter soft start programmable switching frequency.
+
+[791] EEVblog #791 - Ebay Fluke 45 Multimeter Teardown — Dave Jones (mention)
+context before: And by the way, we have a date code on this puppy. There we go. First week '93 for that chip there. So, yeah, we're talking uh uh probably early to mid '93 construction.
+TEXT: We have well and truly lifted the skirt on all the ADC front end section. So, let's take a look at it. As I said, here's the main voltage input here, and here's our two input protection resistors here.
+context after: What are these funny-looking things? There's a cutout slot underneath that, if you can see it. There we go. You can just see the slot. Those are going to be surface mount MOVs.
+
+[52] EEVblog #52 - Panasonic Plasma TV's Suck (and a Teardown) — Dave Jones (mention)
+context before: That's why there's lots of links and things in there because that's cheaper to manufacture. But the the uh quality of the components is really actually quite nice. The um there's some there's a couple of fuses there.
+TEXT: There's a couple of input protection uh input protection devices there. And the quality of the power supply and the quality of the components used is actually quite good. Um there's this board here.
+context after: sure what this one does. It sort of it only in interconnects with a couple of these nice blue uh ribbon um nice blue uh cable bundles here. And um yeah, it it hooks onto the main processor board which is this one here um which connects to all the input sockets.
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (mention)
+context before: Looks really, really well-designed. Of course, Tektronix wouldn't have done this. They would have chopped this out. But, yeah, I, you know, look at that. Beautiful celastic holding everything in place.
+TEXT: All your protections are there. Oh, you've got your boots even even over the uh earth connector there. We've got a rubber boot over that. Beautiful. We've got some input protection down in there.
+context after: It's, you know, they're doing everything right on this power supply. High quality. But, hey, that's what you'd expect when you pay a high price for a Tektronix. And for those who love to know the capacitors, as we all do and you should because they should be high by in a Tektronix.
+
+[e9cpKN69Avk] 121GW Development History — Dave Jones (mention)
+context before: We're going to drive the LCD directly with the PIC 24F here. And we, you know, it wasn't that It was just sort of like a first bash at it up here.
+TEXT: We've got the HY31 31 chip set here. So, it was all taking shape. Everything I don't I think the switch architecture had changed the input protection with the MOVs and the PTCs and everything.
+context after: Like, it was all really starting to take shape there. So, you know, the additional burden voltage circuit down here with the MAX4258 is it or whatever. So, it was really, you know, it was starting to come along.
+
+[1447] EEVblog 1447 - EXPENSIVE Fluke vs CHEAPER Brymen - Teardown — Dave Jones (mention)
+context before: Do you know about it? Leave it in the comments, all those gold plating experts, please. And by the way, there was no nickel screening inside the Fluke plastic case like this, but the Fluke actually has this conductive plastic case surrounding the ceramic hybrid module in here, and that's a nice touch.
+TEXT: This is actually conductive. That's why they have that ring there. There you go. Couple of 100 ohms conductive. Now, let's look at the input protection differences between these two meters.
+context after: Remember, they're both UL listed and tested. They're both exactly the same CAT rating, CAT 3,000 V, CAT 4, 600 V. So, they're should be equivalent, but they're not. Look at this.
+
+[1424] EEVblog 1424 - Fluke 23 Multimeter Repair — Dave Jones (mention)
+context before: And uh your voltage reference, there it is, down the bottom there. No wackers. So, that's all fine. So, the voltage reference is fine because this thing works, but as I said, it it only seems to work in current mode, okay?
+TEXT: So, we've tested the milliamp here. So, that works, right? So, that path there, and that bypasses, of course, the ceramic uh resistor divider and the other input protection stuff up here.
+context after: Yeah, and that just like goes into the converter and whatnot. So, all that sort of stuff, right? So, all this all this should be working. We we know that's all working.
+
+[1314] EEVblog #1314 - Ultrasound Machine Teardown! — Dave Jones (mention)
+context before: know, the master and all sorts of other uh modules are all doing fine. So, yeah, that does a heck of a lot of controlling. Nothing too fancy down here on the power supply part.
+TEXT: They've just got it some uh local uh linear regs uh down here and uh looks like we've got a switching transformer there. Like, you know, no big deal. And some input protection down there.
+context after: Ooh, look at that baby. That's That's actually enormous. That's a big ass mob. And all the large caps on this board and on the other boards are all uh Marcon brand.
+
+[1635] EEVblog 1635 - Mailbag: RF book, Probe Bonanza, Beelink Ryzen 9 EQR6 PC, CueCat — Dave Jones (mention)
+context before: Um but, yeah, I really like it's it's totally surrounded by insulation here, and check check that out. There we go. More thermal pads on there, but that is a really integrated design.
+TEXT: That's really something. Look at that. There you go. You've got some protection on the input there. Um but, that is really dense. That's incredible design there for an 85 W power supply.
+context after: It doesn't even take up the entire height of this thing, either. That's crazy. Of course, the one downside of a completely integrated power supply, totally custom power supply like that, is that if it ever fails, good luck getting a replacement, because yeah, it's it's fully custom design for this.
+
+[363] EEVblog #363 - Gold Phone Teardown — Dave Jones (mention)
+context before: You know exactly what all this stuff is doing. You know, ring detection. You know, there'd be all sorts of uh stuff. And I should probably read the manual, but there's some stuff for the LCD.
+TEXT: There's a couple of relays there. There's input protection stuff. We got some moss there by the looks of it. Are they? They look certainly look like it. input protection resistors there.
+context after: And uh there you go. Couple of uh dip, a couple of jumper links to set various stuff and indicator lead. And that's about all she wrote. But I love the modular design of this thing.
+
+[1704] EEVblog 1704 - WTF? The ANENG 626 Multimeter REVIEW — Dave Jones (mention)
+context before: Anyway, um yeah, there's our input resistance. We just got our single PTC here. Um and they're obviously using yeah, like a relay thing. Like they've got a relay in here.
+TEXT: That's the only addition that they've added. There's you know, the Zener diode input protection there. Um and Bob's your uncle. That's it. The rest of it just drives all the LCD stuff.
+context after: And of course, on top of this they'd add the battery charger stuff. But well, it's it's got a UART. There you go. You could actually get some data out of this thing.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (mention)
+context before: I don't the standard size one. Don't know why they didn't. There's the BNC output. And there's our uh USBC, which looks pretty sturdy. No worries. This thing's chocker block.
+TEXT: Here's the bottom side cuz you remember they had dual heads before. So now they put all the circuitry in the one uh unit here. Um they've got more protection on the bottom side here.
+context after: And they've got another differential receiver here, the um AD 8129A. That is the lower um part than the other one. It's not too much. Where do I put it?
+
+[293] EEVblog #293 - Fluke Multimeter Birthday Cake — Dave Jones (mention)
+context before: Made in China. assembly tie tie on. It's rubber. Yes, it's supposed to be rubber on the outside. The yellow was supposed to be rubber. Jeez, it went through that screen so easily.
+TEXT: Buttons are a bit stuck. Oh man, it's a destructive test. There's a tear down inside the fluke mold multimeter. Beautiful. Input protection circuitry's got to be in there somewhere.
+context after: I don't know. I love got some input jacks. Complete with wax wax. [Music]
+
+[482] EEVblog #482 - Retro Iskra Multimeter Teardown — Dave Jones (mention)
+context before: It'll be uh I think that's done enough. And uh it'll just be like a tin maybe a tinned um board PCB or something like that. Uh we'll see how the I'm not sure how the uh I'm probably two-ball construction maybe for the LCD, something like that perhaps.
+TEXT: Anyway, um it should be fascinating. And I don't expect uh you know, CAT input rating on this thing and uh huge input protection and isolation slots and all that sort of stuff.
+context after: No, they didn't care about that sort of stuff back then. Heck, even the Flukes really uh weren't Whoop. Whoop. Better not lose those. Hang on. Better chase it. Right, here we go.
+
+[91] EEVblog #91 - $50 Multimeter Shootout - Extech EX330, Amprobe AM220, Elenco, Vichy VC99, GS Pro-50 — Dave Jones (mention)
+context before: But uh once again, no uh gold plating on the range switch there, but you know, decent uh contacts. You can see the split tube um input sockets there. And um yeah, it's you know, it's not too bad.
+TEXT: It's neat and tidy. And I don't mind the All-in-One Tech at all, really. I uh I forgot to mention the input protection on here. It's got one PTC. And that's pretty much it.
+context after: No varistors. And there's those dodgy Golden Power batteries again. I hate I'm sick of seeing Golden Power batteries in cheap meters. BUGS ME. And the Global Specialties. Let's check it out.
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (mention)
+context before: So it looks like it's doing some sort of range switching and even Oh, no. I thought they were going down here. But anyway, it looks like it's doing possibly some sort of range switching uh mux type function or something like that perhaps.
+TEXT: So it's you know like usually the main uh chipset would handle all that jazz. That handles all of your input goes to your hybrid divider resistors and everything like that.
+context after: As I said, no hybrid divider uh resistor on here. No high quality uh stuff. So it's got bugger all chance of meeting its 0.025%. If it does, it's just you know a fluke.
+
+[669] EEVblog #669 - FLIR TG165 Thermal Imager Teardown — Dave Jones (mention)
+context before: It's either got to read the SPI or more more likely the Mippy interface from the Lepton sensor over here and then uh display it on the LCD. And that's basically it.
+TEXT: There's not a huge amount else. Everything else is just uh support stuff. Here's our SD card. Here's our uh micro USB up here. We've got some um input protection there.
+context after: Some more input protection going on down here. Some unpopulated parts around here. There's another two pin connector over here. So, I'm not sure what they uh designed that one for.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: And they're exposed so that um if you get moisture on the board, then it can actually make electrical contact with the guard traces there. So, they've left those exposed and that's Okay, yeah, there you go.
+TEXT: That is the 10 meg input. So, coming in and they've got a shield around that. Nice. Nice attention to detail. I really love it. But this is pretty minimalistic.
+context after: Is it not? I mean, this is not a true RMS converter, I don't believe. Looks like we've got our diode bridge there, protection for the 10 amp current jack.

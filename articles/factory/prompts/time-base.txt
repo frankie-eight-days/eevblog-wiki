@@ -1,0 +1,598 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: time base
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 113 passages drawn from 76 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# time base`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[858] EEVblog #858 - Red Pitaya — Dave Jones (explains)
+context before: I'd rather have like a separate knob or buttons for each channel and stuff like that. So, anyway, if we increase that, look, 500 mV per division, okay? So, we're going down, so that's all hunky-dory, but it froze last time I did this.
+TEXT: It actually froze. So, we can change our time base, too, 2 ms per division. There we go. What are we picking up there? That's interesting. Because that's our channel one and that is That's fascinating, actually, because I've just connected, as you saw, the output of the sig gen to the input of this, and it's um the sig gen is turned off.
+context after: So, yeah. Quite strange. Anyway, we can turn our sig gen on. There it is. Hey. Got some alias in there. Doesn't like that. Um it seems to be more stable now.
+
+[1678] EEVblog 1678 - Oscilloscope Trigger Warning — Dave Jones (explains)
+context before: It's crazy. So I'll do that again and we've still got our trigger point right out over here I'll turn my output on after five seconds. No, it's not triggering No, eight nine seconds nine seconds I want it was able to start triggering and sure enough it did it was like you can see it was actually capturing that
+TEXT: Data as I was turning them off and on before that but it wouldn't trigger Until like right over here until it had armed itself. So you've got to really be aware It's slower time basis this becomes a big problem It's it's not a problem at faster time basis like we saw at the start of the video because well
+context after: It's filling that buffer practically instantly before you can actually move your arm over and trigger manually trigger something So let's see if the new mega zoom 5 key site ASIC makes any difference here So I've got the new key site scope here and let's take a look at the indicators at the top
+
+[1041] EEVblog #1041 - Keysight Calibration Lab Tour — Dave Jones (explains)
+context before: If you look at the reference signal generator here, think back to the old days when you had the 8662A and the 8663A, which were the industry standards for phase noise. So we now have this one here, which is the E8663D, which was developed particularly for the low phase noise performance on it.
+TEXT: And at the low frequency end, where residual phase noise, not absolute phase noise, residual phase noise, that's where the time bases have to be tied. The problem with absolute phase noise is that as you get close in, and we're talking 3 Hz to 200 mHz offset from the carrier, nice and close,
+context after: if you're using a phase-locked loop system, any instability of your device under test within that phase-locked loop is lost within the phase-locked loop. So when we specify residual phase noise, the time base of the device under test and the reference oscillator are locked.
+
+[86] EEVblog #86 - Buy a real Analog Oscilloscope PLEASE! — Dave Jones (explains)
+context before: But if you can afford 100 MHz dual channel analog, beauty. You will never regret it. Trust me. It will be a great purchase, and even when you upgrade to a digital scope later, you will most likely want to uh keep that analog scope for various reasons that I won't go into in terms of screen updating and noise performance and all that sort of stuff.
+TEXT: But anyway, yes. Get an analog oscilloscope and learn to use oscilloscopes properly, cuz they teach you analog oscilloscopes teach you how an oscilloscope actually works. Even the modern digital ones, they work the same way um in terms of time base and triggering and all that sort of thing.
+context after: They will teach you a lot. So, do that. Now, the reason that these cheap USB uh and these little portable DSO nanos and these uh, FPGA development kits are all load of garbage is because they don't have proper input circuitry on them, okay?
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (explains)
+context before: And of course, you can see it on the screen over here. It is just not updating. And well, you know, that's fair enough, cuz you're interacting with it. And if I drag the trigger level here, yeah, trigger level, same thing.
+TEXT: No updating. And the absolute best waveform updating rate I'm able to get on this thing is 18.8k waveforms per second. And that's at, uh, like a real fast time base, like 10 nanoseconds per division, 250 points memory, um, and I'm also, uh, in normal, uh, trigger mode on this on the scope.
+context after: So, I cannot get better than that. And if I slow down the time base, you'll notice this is still the same until I hit 100 nanoseconds per division here, which gives us, uh, 7 and 1/2 K waveforms per second.
+
+[1312] EEVblog #1312 - Siglent Oscilloscopes CRIPPLING History Mode! — Dave Jones (explains)
+context before: The frames are instantly there in the 200. So they are using the 200 mega memory just not in the way you want them to in [laughter] most cases. So and and no you can't there there is no data.
+TEXT: There's only the uh uh in this particular case based on this time base 100,000 points in there for every frame. So the whole 200 they're using the whole 200 meg but they're using you know taking frames of this 100k 100k 100k 100k and just filling up with uh you know 1,987 frames there.
+context after: So, uh, yeah. Anyway, that's the tradeoff you get with the Siglin and I believe the Lacroy as well, but please correct me down below. Anyway, there you go. I I Yeah.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: That's quite jazzy. But, you can see how it's all a big trade-off in terms of, you know, getting the right uh A, you've got to have the right memory depth set.
+TEXT: That's not going to work. You've got to have the right time base setting. You've got to have Well, you know, generally if your scope can do, um you know, allows you to change the number of points like this, then you set it to, you know, maximum unless you want really fast updating.
+context after: So, if I now set it to 8K points FFT, same as what we had on that crappy Teledyne LeCroy, look, you can see that it's giving us, you know, like that is a similar sort of result at that particular time base.
+
+[l-fuyHCs2Sw] Rohde & Schwarz RTB2004 Oscilloscope Acquisition Bug — Dave Jones (explains)
+context before: That's, that's crazy, there's something seriously wrong with that. Anyway, I just wanted to show you that, I've been playing around with this thing, and if we put it on the full 20 meg, whoa, see that? That was a different, it's not acquisition buffer, but why?
+TEXT: It's actually almost like changing the time base there, like the playback time base kind of thing, and compressing that, I don't know. Oh, because you've changed the memory depth, okay, then it's going to show a higher frequency waveform, but yeah. That's, jeez, I don't want that.
+context after: Anyway, I don't see that at higher frequencies, by the way, and I don't see that if I, whoop, there we go, yeah, we can still see it, still see it like that, and if I go down, oh, and that's actually supposed to be triggering off that, but it ain't, so I'm not sure what the, what the deal is there.
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (explains)
+context before: There's actually a fair amount of that, presumably because it's got uh you know, it's got to do some interruptions stuff like that. Um it's not, you know, like a fixed pulse output.
+TEXT: So, presumably that is the processing time that this scope takes to process the waveform after it actually uh captures it. And you can see if I change the time base like all the way up to maximum 5 nanoseconds per division, as I said before, I have to go right down to what is it?
+context after: 500 microseconds per division before we see that uh pulse width change. And it was 1 microsecond before, now it's 585. So, if we jump back, there it is, 1 microsecond.
+
+[771] EEVblog #771 - Electronic Safe Lock Powerline Attack Part 2 — Dave Jones (explains)
+context before: waveform there, but you know, how about your current colour? Geez. How hard is that? Anyway. Saved. Alright, so that's our stored correct six digit sequence that opened the lock. Now we'll do an incorrect sequence. One, two, three, four, five, single digit, seven. Hey, look at
+TEXT: that! Wah, that's interesting. So once again, I think we've been duped by the time base there, so let's actually try that again. I'll just do the correct sequence just so I don't accidentally lock myself out or anything dumb like that, okay? So now we'll do the incorrect sequence
+context after: again. Five, and single shot capture, and seven. So we're at a slower time base now, so then we can scroll, we can now move that back, because we've got the detail to do that now. And, ah, that's where it starts. So it's got
+
+[Ott9syzNLuE] Rohde & Schwarz RTB2004 Acquisition Bug Part 2 — Dave Jones (explains)
+context before: So I can't, maybe I'm just not doing it at the right time. Maybe you've got to, I don't know, do it at the right time perhaps. But, ah, come on. I want to get it. It just looks really horrible. It's like, ah, it's like showing, like, a high frequency waveform, like, you know, almost like practically the full screen high for the first, like, division or, it varies a bit.
+TEXT: But, ah, when you switch off a channel. And, ah, come on. Oh, there we go. Look at that. You saw it. You saw all that crap. So I won't try and reproduce it. There you go. I have no idea what that is. Um, I think it's only at this, ah, time base, which is, what, 100 milliseconds.
+context after: Ah, per division, like a slow time base, 100 milliseconds per division. I don't think it, well, I haven't really tried it, but I'm going to assume that it's not going to, ah, show up on a, ah, higher time base. But I'd have to dick around a hell of a lot more than that.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: here, we can store 10 different reference waveforms so that you can capture an image and then have it permanently overlaid and compare it with another one. So that's more than enough, it's got all the basic functionality for reference storage, no problems at all.
+TEXT: And we can see that, we've already saved it, but you probably can't see it because the same waveform is superimposed on top, but there you go, that's what happens when we change the time base. They don't scale the time base with the reference waveform there, and if we change the
+context after: frequency on our signal gen, there we go, we can see in comparison with the reference. And another part of the display functionality here, we have our persistence time of course, we can set that to infinite persistence so that it's a good way to capture glitches and things over time
+
+[F0HQJIPcDYs] Oscilloscope Anti Alias? — Dave Jones (explains)
+context before: 
+TEXT: And, it looks like it has no anti-aliasing. This is a 10 MHz input signal here. And, if we turn down the time base, we start to see the wobblies. Oh, she's coming to guts her. The wheels are falling off the billy cart. And, well, I don't think our signal is that frequency.
+context after: And we can even measure that there. 1 Hz. Yeah, nah. Yeah, nah. Let's turn that back up. There we go. 10 MHz. No worries. But, hey, Roden-Schwarz will do that too. There you go. 8.16 Hz. But you won't get that on a Keysight 3000, even at 2 seconds per division.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: Let's go down back to 2 ms per division here and turn the FFT back on and you'll notice that we will hopefully get it. There we go. Now with our 65K points, we can actually go in there and see that.
+TEXT: But it all depends on the upon the time base. So, yep, we're at the center now and bingo, we can go in like that and see it. But of course, if we change our if we don't have enough data there, let's go down to say an order magnitude lower, 200 microseconds per division.
+context after: Turn our FFT back on and look, we can't get See, the resolution in there is no good, okay? Cuz we're calculating even though we're still calculating a massive 65 thousand um FFT points in there, i.e.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (explains)
+context before: on here to tell you. But once you get used to it, it's easy. So, up and down, of course, changes. It's fairly intuitive. It changes your vertical scale like that. And of course, obviously, this one changes your horizontal scale. Now, this is a
+TEXT: bit weird. It's got your regular 1, 2, 5 sequence up here. But when you get down low, 25 nanoseconds, 12 nanoseconds, and 6 nanoseconds. That'd have to do with the sample rate and the memory depth and stuff like that. But that's the lowest, 6 nanoseconds per division.
+context after: It's a bit oddball. But anyway, there's no alternate trigger function. And it goes up to 50 seconds per division. But if you hit the mode button here, you can see that change. And you might be able to guess that moves your waveform around.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (explains)
+context before: Anyway, it was set up to either, so let's single shot capture that. Look, every time I capture that, D0, there's my trigger point. It is not there. It is not there. It is not triggering. And now, look, it decided to there, but when I do, look, I'll take out my time
+TEXT: base a bit further, right, that looks like it's triggered. But when I go in, look, it shifted the waveform. What? It shifted it. My trigger point has not changed. Yet, somehow, this waveform, somehow, this display, the displayed algorithm or whatever, has decided that
+context after: it's going to put it in the middle. What on earth is going on there? That's just crazy. So, I, like, it looks like it's below, above a certain time base, it looks okay. But when I get down below, like that, oops, jump back.
+
+[F0HQJIPcDYs] Oscilloscope Anti Alias? — Dave Jones (explains)
+context before: And, it looks like it has no anti-aliasing. This is a 10 MHz input signal here. And, if we turn down the time base, we start to see the wobblies. Oh, she's coming to guts her. The wheels are falling off the billy cart. And, well, I don't think our signal is that frequency.
+TEXT: And we can even measure that there. 1 Hz. Yeah, nah. Yeah, nah. Let's turn that back up. There we go. 10 MHz. No worries. But, hey, Roden-Schwarz will do that too. There you go. 8.16 Hz. But you won't get that on a Keysight 3000, even at 2 seconds per division.
+context after: You will get it on a TEC, though. There you go. 100 ms per division. This Siglent jobby at least makes it look funky at one time base, but if we go down one more, 100 ms, oh, there we go, we've come a gutser.
+
+[1678] EEVblog 1678 - Oscilloscope Trigger Warning — Dave Jones (explains)
+context before: And you'll notice that that triggered without the question mark has two actual meanings It can mean that your signal is actually triggered like in this particular case like we can actually trigger it like that And you'll see it turned from the question mark back to that and our waveform has popped up and it's triggered
+TEXT: So it has that two meanings of both Being triggered and also sitting there unarmed waiting for that pre-filled buffer It's like like the same thing indicates both like what why so it actually takes Ten seconds in this particular case at one second per division.
+context after: It'll be longer, you know Correspondingly longer at longer time basis, but five seconds It's already armed, but it hasn't show it and boom it popped up at the ten second mark there that question mark But it's totally non-obvious that there's this trigger dead time in there while your scope is
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (explains)
+context before: They were forced to do it. And just like the previous models, it does not display the amount of memory actually used. It Well, well, this touchscreen, I can't just go pokey poke.
+TEXT: They do not actually display that it In fact, there's no way to actually choose how much memory you're going to use it. The scope always decides and uses the maximum amount of memory possible based on the current mode and the the time base and everything else.
+context after: So, some people don't like that, but as a day-to-day use scope, I do really appreciate that because you don't have to dick around with anything. It always gives you the maximum performance.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: arrows here actually do scroll through. It's not the best thing. As I said, if you go in here it doesn't have a dedicated back button. They put it down in here on the soft key. It's just a little bit confusing. I guess you'd get used to it.
+TEXT: And yes, it does have a delay calibration or a skew feature to set your delay to match different probes that you've got. And any decent scope will have that, and this one surely does. But look, it's actually disabled. That is because of the time base it's on.
+context after: 10 microseconds here, and if we switch that down a bit to 5 microseconds, there we go, bingo, it switches on and then allows us this step value here, we'll sorry, I'm using this control, this step value here, at the moment it's only going to change by 20 nanoseconds
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (explains)
+context before: resolution screen, I think. Just physically bigger. And they've changed the look and feel. Oops, did that just power off there? That was a screensaver, I think. We should be able to turn that off. Yeah, and the zoom window display up there is physically
+TEXT: changed. The time base now says nanoseconds instead of like an M colon in front of it here. Yeah, they've just changed the look and feel of it. They've changed the battery indicator and stuff like that. But one menu option has here changed. It now was AC
+context after: over here, but now it's got a cursor over here. So I'm wondering whether or not this change was reflected back in the 702S model. Because Zotac did say that I did have an early unit. So maybe they have changed it? I don't know.
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (explains)
+context before: intensity right up to 100%. But you can see, it's, it's at least capturing that, you know, a couple of times per second. It's doing really well. Exactly the same waveform on the, uh, Keysight scope over here. And you can see, yeah, it pops up every second.
+TEXT: Area sometimes twice a second. So at 100 nanoseconds per division on both, um, yeah, it does seem to be faster than the benchmark Keysight. But of course the update rate is, uh, dependent upon the time base and the memory depth. And as we'll see, other
+context after: stuff, you've got turned on. Now when I first did this, in fact, I uploaded this on my, uh, second channel, and I wondered, what the heck's going on? It was so slow. It was dog slow. It was less than 1,000 waveform updates, uh,
+
+[UJjMt2-k99c] What Is An Oscilloscope? — Dave Jones (explains)
+context before: either we can do it manually or on a modern digital scope. It can actually calculate, it can measure and calculate and give you a voltage display reading just like a multimeter. So, what do you want an oscilloscope for? Well, to see voltages change with time.
+TEXT: So, in this case, what we'll do is we'll slow it down, OK? And this is what an analog oscilloscope is quite good at. If I slow it down to seconds per division over here, so it can take X amount of seconds or milliseconds or microseconds or nanoseconds
+context after: to go across. An analog oscilloscope always starts from the left-hand side and sweeps over to the right and then it retraces back like this. It has to do that to display the image. The digital one works the same, but it has an interesting feature
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: Or if they say, "Oh, yeah, okay. That's kind of sort of useless." Or because this is not a feature that you would actually uh rely upon all the time.
+TEXT: It's nice if your particular scope has it, of course, but how you regularly use a scope is based on what's on the screen. As I said, you set up your time base, your vertical, you set up your trigger level, trigger pattern, whatever you want to uh do.
+context after: You set it up and then you capture your data. And usually in most cases, if you want to see what's outside of uh that screen, then you recapture at a uh longer time base.
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (explains)
+context before: Off. There it is. Turn the bloody thing off and uh it's just So, you can auto scale horizontal and vertical just like those little cheap little handheld pocket scopes.
+TEXT: No, I don't like it at all. Garbage. Now, as far as the horizontal zoom goes, it's pretty darn awkward. You call up horizontal menu down here and you can You got your main time base here, which is M for main time base, 2 microseconds per division.
+context after: You can In the set mode, then we can adjust the size of our window down there. So, we should be able to zoom in on that and then we can zoom in on that waveform, but you can't show both at once.
+
+[662] EEVblog #662- How & Why to use Integration on an Oscilloscope — Dave Jones (explains)
+context before: as I said. So we can go in there, and we can choose, well, let's go in there and go full screen, but then we can actually choose the value that we actually want. And there you go. At the moment, it's giving us a readout
+TEXT: of 525 microvolt seconds there, and of course we can expand the time base and actually get the full figure, just like we got before. Actually, there's another neat thing. We can go into the zoom function here, and then we can expand that window,
+context after: because we've selected measure over the full window. So then we can go in there and choose our window, and if you wanted to, you can press that and go into your Vernier and actually get exactly the time period that you wanted to, so over the full screen.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (explains)
+context before: There's the odd skipped one and stuff like that but you know as you know the Agilent is the fastest updating scope in the industry. So we can actually change that.
+TEXT: So let's run it back and let's up the time base on the Agilent here and we can go right in let's go right up and you'll notice that at the higher time base we should get close to our theoretical 1 million waveform updates rates per second.
+context after: There we go. 1.01 MHz. So, super quick, but once again, it's not absolutely consistent in there, but very very quick. Now, at this fast time base, it doesn't look like there's any dead spots in there, but let's wind the wick right out and aha, bingo.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (explains)
+context before: So, we'll tweak that up. I'm holding my tongue at the right angle just in case. And 5 microseconds. And ta-da! Look at that. It that looks pretty good. You can't complain about that.
+TEXT: Like I can't zoom in any faster than that cuz that's the lowest time base is 5 nanoseconds uh per division on this uh 1054 uh Z. You might uh get an extra um step there if you've got the 100 MHz model, but I've only got the 50 MHz model.
+context after: So, there you go. That is that is gone. And I've got infinite persistence on there, of course. And let's just I'll hit the horizontal button, so we'll jump back.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: So, like I can press channel two. No, no I don't like that at all. Like I like the like the menu is really nice. Anyway, you might think that T might be for time base here.
+TEXT: It's not. It's for your trigger level. But, that's okay. H is your time base for your horizontal. Like that. Okay, no worries. It's all fairly responsive. Can we just move with Yeah, yeah, that's actually really quite quite responsive.
+context after: I like that. And we've got measurement. So, that will whack up measurements. We've got menu over here. All sorts of stuff. It's It's really bright display. I really like it.
+
+[383] EEVBlog #383 - Agilent 4000X Oscilloscope Review — Dave Jones (explains)
+context before: then, well, having two zones there might be useful. I like it. And we can go, well, it doesn't need to go through that zone there, it must not intersect through that zone. And you see how I'm, there we go, it's triggered. So it's now excluding that zone there.
+TEXT: This is really powerful. And the other good thing about it is that you can expand the time base like that and zoom right out and then draw it, say, all the way over here, must intersect, and it still keeps zone 1 right off the screen
+context after: all the way over here like that. So you can put those zones anywhere within the waveform window, not just on screen. Now the other thing that the touch screen is useful for, check out this up here, at the moment we're in select mode,
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (explains)
+context before: It's a nice user interface. I really like it. And I can actually get the scope to alias, by the way, if you go down, doesn't have any alias in.
+TEXT: If you go small enough time base, slow enough, way, there we go. No worries, but yeah, you expect that. But in general, like everything is like fairly responsive, you know, I can I can play around with this, no problems whatsoever.
+context after: And look, it's updating. I don't know why the FFT updates like that when I move it, but if course if I move my waveform, then you can see the actual capture and hence any math processing on there actually stops.
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (explains)
+context before: Right, we've got alt mode. And look, uh channel one is a bit Channel one is a lot noisier. It's got something on there. So, something's going on there. It's not the best.
+TEXT: When you turn it down, you can notice a bit more noise, but you turn the time base up, it's definitely got something something on that. So, I'm going to actually apply a uh terminator to that and see if we can get that to go away.
+context after: Yes, it certainly does. If we terminate that, it's gone. So, likewise on channel two. So, I'm not sure where that's coming from. Maybe something internally. Of course, if I put my hand near it or my hand on the control, something like that.
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (explains)
+context before: Now of course this was advertised 25 million vectors per second which sounds fantastic. So what does that actually give us in terms of update speed? Well, not much by modern standards.
+TEXT: Look at this, 520 Hz. That's bugger all. And actually if I change the that's at 5 nanoseconds per division. So that's the fastest time base. I increase it and it doesn't drop down until uh it's it's dropped down a fraction there.
+context after: There we go, 10 microseconds and it's starting to starting to jump around there. But there we go. Now going down until we get to there and we've got to adjust it, and we're down to, you know, that's at 500 microseconds per division, we're down to like 120 odd hertz.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: I think I've got a dicky T piece there. I think I do. Uh anyway, you get these things impressive amount of memory. It works great in the time domain, everything else, but the FFT on it is almost like a toy.
+TEXT: And we'll see if the Rigol DS 2200 is any different. We're at 50 microseconds per division, which wouldn't work before, and sure enough, it doesn't work here either. Look, we'll change it down to 20 microseconds per division.
+context after: Bingo, we've now got our FFT, and we can maybe zoom in on that and have a squeeze. But the good thing about the Rigols is that yes, once you're in math mode, the horizontal actually does that.
+
+[I3FhAhxet7s] Rigol DHO800 Bug Testing — Dave Jones (explains)
+context before: So, basically, one meg points of memory. Roll mode is off. He deliberately specified that. And I've got the same voltage range here, if that actually matters. I've got a sine wave here. And also, he showed that the frequency was 188.1 kHz. And that's exactly
+TEXT: what I've got here. 188.1 kHz. I've got one meg points of memory here. And he showed that if you slowed the time base down, and you actually got to 200 milliseconds. Okay, so let's go 100, right? And this is kind of the point
+context after: that you'd expect it to alias. And I've showed in my review video that it does actually alias, as most scopes do. And they don't give you any warning. So I'll go to 200 milliseconds, and I don't get the display issue at all. But his one
+
+[153] EEVblog #153 - YouScope Demo on a Digital Scope — Dave Jones (explains)
+context before: And if you don't know how X-Y mode works, basically the X input controls... the voltage on the X input controls where the dot is on the screen across the X-axis. And likewise, the Y input down here, the voltage on that, controls the dot in the Y-axis.
+TEXT: So there is no time base anymore. It is a direct correlation. If I take out the input signal here, as you can see, it's just a dot on the display like that. And if I plug in the X and Y inputs, as you can see, away it goes.
+context after: And it generates the image based on that. Now, it's really funky because it doesn't... there is no way to blank that signal, okay? Normally some oscilloscopes have a Z-axis input, and that will actually turn off the dot for a brief period. So you can move the dot around, you can draw lines like a vector-based display,
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: Bingo, we've now got our FFT, and we can maybe zoom in on that and have a squeeze. But the good thing about the Rigols is that yes, once you're in math mode, the horizontal actually does that.
+TEXT: And if you just press channel one, bingo, you can go back, and that changes your time domain, and you press math again, and bingo, you're in you can actually adjust that, and then your time base can be used to zoom in.
+context after: So, jazzy jazzy, okay, but What what what what? Thanks for playing. That is no good at all. Woo! Jumping around like a jackrabbit. There we go, center one meg, we're at uh 10 dB uh per division.
+
+[1226] EEVblog #1226 - Get Better Accuracy On Your Oscilloscope — Dave Jones (explains)
+context before: Actually only running with 10K sample points at the moment. So not many sample points. This is just to show you that it does actually work. And you can see that 1 kHz we're like one decimal place there on the frequency.
+TEXT: And we're one decimal place on the standard deviation. So that's 54. So let's actually change and increase our time base so that we get more stuff. Bingo. We've got two decimal places there on our standard deviation.
+context after: But in the case of the horizontal, the standard deviation actually works in the opposite way. If we go one waveform at like you know just basically one and a bit cycles or two cycles on the screen or whatever, you can see that our standard deviation is quite high.
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (explains)
+context before: That's dodgy. We can remove that and bingo, we've got our automatic measurement and sure enough, there it is, 32 33 degrees. It's updating like crazy, but we can actually expand that and get statistics in here.
+TEXT: And you'll notice that how many counts it's actually getting these um average values over. So, 33.1 degrees. There you go, fantastic. And you'll notice if I change the time base, that count will reset like that.
+context after: There you go. Or if I change the vertical scale, for example, it will reset those statistics there. So, that's easy peasy lemon squeezy, but Dave, what happens if your oscilloscope doesn't have this fancy pantsy new um phase measurement capability like this?
+
+[1146] EEVblog #1146 - New Rigol MSO5000 Oscilloscope — Dave Jones (explains)
+context before: I can't it it Wow, that's the first time I've seen a scope completely lock up, I think. No, you can't even get back with the default button. All right, so I rebooted and I just thought for a second that it was this time base.
+TEXT: Look at this. It can go to 100 kiloseconds. That's insane, but it's but it's not that. It should actually recover from that. No no worries whatsoever. So, um it's interesting that the modulation has vanished.
+context after: The generator when it rebooted the generator is still on by default, but the modulation is not. Do our modulation again. 1 kilohertz AM. Oh. That looks horrid, doesn't it?
+
+[F0HQJIPcDYs] Oscilloscope Anti Alias? — Dave Jones (explains)
+context before: And we can even measure that there. 1 Hz. Yeah, nah. Yeah, nah. Let's turn that back up. There we go. 10 MHz. No worries. But, hey, Roden-Schwarz will do that too. There you go. 8.16 Hz. But you won't get that on a Keysight 3000, even at 2 seconds per division.
+TEXT: You will get it on a TEC, though. There you go. 100 ms per division. This Siglent jobby at least makes it look funky at one time base, but if we go down one more, 100 ms, oh, there we go, we've come a gutser.
+context after: So it looks like the Keysight's the only one that's doing the anti-aliasing thing here. Ah, GW Instec doing the same thing. Look at that. Except it can't even trigger.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: And you'll notice that if we change Okay, we're at our maximum 128K points, change it to 64K points and you'll notice that it's halved. Like that look at the it it has stopped here.
+TEXT: Okay, and the center is at 833 kHz. That's why there's no signal anymore cuz our 1 MHz is out here like this. Okay? So, using this particular time base of 5 ms here, sorry for the big fat finger in the way.
+context after: I should use my poker. 5 ms per division and at 65K points, we can't get that. So, we're going to have to go basically turn this is where it becomes a bit annoying.
+
+[1228] EEVblog #1228 - Do Digital Scopes Have REAL Verniers? — Dave Jones (explains)
+context before: So, that's the one we want in there. You can see it. It stays uh low for a long period of time, but it's only sending one little packet of data to that particular chip.
+TEXT: The reason uh there's all this other uh stuff which we uh ignore over here. In fact, let's go right out on the time base. Seven different packets there every time we change the volts per division setting.
+context after: So, it must be updating all of the different channels even though we're only changing channel one. So, that may not be the smartest thing to do in software, but the uh chips that aren't latched will just ignore this.
+
+[p-eLu1z7-cs] Rigol HDO1000 Serial Boot Capture for Hack + R&S MXO4 play — Dave Jones (explains)
+context before: Like And then, if you set it there, it doesn't actually tell you what it is down there. It just says user-defined. Anyway, that's enough quibbling with my minor things.
+TEXT: Let's put single shot capture. Well, let's turn the scope off first. Double-click of the soft power button does that. Okay, I've got positive edge trigger. I've got a slowish time base 40 ms per division.
+context after: Yes, it is 1 2 This is weird. Actually, this one does 1 2 4 and 5 sequence. 1 2 4 5. It doesn't do 1 2 4 and then 1.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (explains)
+context before: But you're usually not going to operate the Tek on a day-to-day basis at that kind of memory depth usually because it's so slow. Usually, you want a fast updating scope.
+TEXT: And if we try and go into fast acquisition mode here, well, it For some reason, it jumps to 10 microseconds per division from 10 milliseconds per division. For starters, I'm not sure why it does that.
+context after: But then we can certainly go up there back to our 10 milliseconds per division. But because in fast acquisition mode, we don't have the memory, you can kind of sort of see its amplitude modulated.
+
+[f_SdM6sXHD4] FNIRSI SG-003A Process Meter + DSO-TC2 Oscilloscope & Transistor Tester — Dave Jones (explains)
+context before: Anyway, yeah, look. Okay, so now we can change our range, 1 V, 2 V. So, it'll go down to Oh, it's really hard to read that blue. 10 mV per division.
+TEXT: And And then we can go to our Oh, we can't change our times 1 times 10 probe. That's probably in the setup menu somewhere. Okay. Now we can change our time base, and then we can change our coupling.
+context after: Okay, no worries. And then we've got a menu. Where does the menu go? Please press okay to start I held down that and it went into some calibration. Start calibration or hold down auto to cancel this calibration.
+
+[424] EEVblog #424 - $3M Agilent Portable Calibration Lab Tour — Dave Jones (explains)
+context before: And they're not necessarily the same. They're two different things. They're things that that impact different devices. Yep. Um if you're the stability of in in many cases device under test is is the largest source of instability.
+TEXT: Mhm. If you're doing a time base. Yep. If you're If you're doing a Most of our instruments run off a 10 meg time base, right? Right. Most of the Agilent time bases are stable within within 4 hours.
+context after: Right. However, we we wait if we're testing a precision temperature controlled crystal oscillator we'll have it running for 48 hours. Right. All right, before we we wait will have to be on site powered up for 48 hours before we start doing those precision time bases.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: Vectors mode, 47 just over 47.1 kHz there. Put in dots, doesn't change a huge amount, but it does actually go up a bit to 52.7. And just like the Siglent, you do need a sweet spot there.
+TEXT: So, even like at the fastest time base rate, 25 kHz. There we go. 16 kHz, 10, and then bingo, you find the sweet spot in the timebase based on the memory depth acquisition, all that sort of stuff.
+context after: That you get your highest update rate. So, the verdict on that one is the signal I'd say it's got to be slower because in in normal vector mode that everyone uses, it doesn't get anywhere near its claimed 60,000 waveform updates per second.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (explains)
+context before: So, I cannot get better than that. And if I slow down the time base, you'll notice this is still the same until I hit 100 nanoseconds per division here, which gives us, uh, 7 and 1/2 K waveforms per second.
+TEXT: Then it jumps to 3.8 kHz here. And then if I go down lower than that, I've got to change my time base down 1.9 kHz at 400 nanoseconds. At 1 microsecond per division, we're now down to 760 hertz.
+context after: So, yeah, it's it's not that great. But, uh we are getting increased memory here. Oh, one incredibly annoying thing. Check this out. If I want to set my manual memory depth, okay?
+
+[1521] EEVblog 1521 - CMRR Full Edit — Dave Jones (explains)
+context before: So, we want to go to 1 MHz on our sig gen there. And we do want to change the lower the bandwidth of our input here. So, we'll go in there and we'll just drop that down to say 20 meg there.
+TEXT: So, you know, reasonable margin, but you don't want to be too high. And then we've got to change the time base. Otherwise, we won't get enough waveforms on there to give us a reasonable value.
+context after: So, there you go. 423 microvolts divided by 1.8 volts there. Uh and log * uh 20 = -72. Yep, there you go. Um so, you subtract or add 20 dB to that.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (explains)
+context before: So, we are in dot mode. But then Look at that. It seems to have changed over to vectors when we go up when we increase our horizontal. I That's that's that's crazy.
+TEXT: So, that Look, there's dots there. You can see them. I expect when I expand that horizontal time base out where it's 5 ns per division. We can still see the dots, but then it goes to vectors.
+context after: Why? If I want dot mode I put it on dot mode. I want my bloody dots. Damn it. Anyway, I don't like that the cursors are the same color as one of the waveforms.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: Start from one, replay it, and I still haven't captured anything, but it actually does, check this out. It actually does have the update right, in fact faster than what they're claiming.
+TEXT: I'm getting now 446,000 waveform updates per second, and that'll actually uh change if I adjust the time base. That That was on 50 nanosecond time base. That seems to be the sweet spot.
+context after: It's 357 uh kilohertz or 1,357,000 waveform updates per second, and that seems to be the sweet spot. But wow, that is a ridiculously fast waveform update rate, and it's sure enough in here, it does the business, but it doesn't capture a one in a million glitch.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: So, it must have some real grunty hardware in there doing a one meg point FFT. It's absolutely incredible. But, as you can see, we've got our carrier, we've got our FM modulation and of course that component down there as well.
+TEXT: So, it's just as good if not better, than the Rohde & Schwarz one, but uh just try and use this thing. Right, the horizontal time base still works on the um time domain up here, okay?
+context after: So, it's like that, right? So, my horizontal time base is still there. Where's the Let's go back to here, okay? But now well, this is fairly typical of scopes, but look how we have to dick around, okay?
+
+[762] EEVblog #762 - How Secure Are Electronic Safe Locks? — Dave Jones (explains)
+context before: But, this could be the processor starting up, waking up, and doing something. So, uh-huh. Now we're getting somewhere. Hmm, so ignore all that. That's just out the packet that we saw before.
+TEXT: And because it's uh 20 milliseconds per division, there it is 20 40. That's our 50 millisecond packet. Hmm, the processor is doing something in here. And that's what you would expect.
+context after: You expect the processor, when you push the key, you expect the processor to wake up, do some processing, figure it out if it's the correct uh key or whatever, and then do the buzzer.
+
+[926] EEVblog #926 - Introduction To The Oscilloscope — Dave Jones (explains)
+context before: And why is that a big deal? Well, because practically all modern electronics works on high-speed signals that you cannot display on a multimeter. You just can't see it changing with time.
+TEXT: So, our oscilloscope is a window of voltage versus time here, and we can slow it down with what's called the time base, and we can display these signals. Now, DC is not interesting.
+context after: It's just a fixed line because it's at a fixed voltage. But, if we adjust that power supply, ooh, look at that. It's jumping all over the place, but that's relatively slow.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: It's not 125, it's actually two and a half and then two and then one. That's interesting. 500 mV. I can hear it the relay click between 200 and 500 mV.
+TEXT: So, yeah, that's where they're just choosing the front end attenuation. And of course, this is your time base. So, 20 seconds per division goes this way down to 50 ns per division.
+context after: That's that's what you want. And then you can move the waveform around. Presumably, yep, we can move it up and down. If you double click it, does it go back?
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: And look at that trace. Look at it. It's just beautiful. Look how fine that is. I've got no input connected to these scopes or any of these scopes, as we'll see.
+TEXT: And they're all going to be, by the way, set to the same volts per division, 1 V per division in this case, and 1 ms time base, just so that we're consistent across all scopes.
+context after: But look at that. You might think, "How beautiful is that? There's no noise on that whatsoever. These analog scopes are so massively low, they practically don't have any noise at all.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (explains)
+context before: Even the cheap Rigols can do that, I think. So, but hey, at least you have some digital filtering capability. I guess that's going to be based on your time base.
+TEXT: Um so, you'd expect Yeah, you can actually see that change when we change our time base there. Our digital filter frequency. So, uh at least it's got it, you know, rudimentary.
+context after: So, yeah, better than nothing, but not going to write home about that. So, uh jeez, what else have we got? Measure, all our statistics, gating. Ah, you can do the measurements.
+
+[860] EEVblog #860 - Mailbag — Dave Jones (explains)
+context before: You have to There we go. We're in. Tada. Oh, I can make it do something. Can I pick up 50 Hz hum? Here we go. How do we change the time base?
+TEXT: Press it. Hey, there we go. 100. Is that 100 nconds? Five microsconds. There we go. We're going to get there. It's actually like you can't you can just go in one direction.
+context after: That's it. There we go. We're starting to see it. We're starting to see it. Hold on to your hat. Tada. We have our 50 Hz h. Look at that.
+
+[70] EEVblog #70 - Turn your Rigol DS1052E Oscilloscope into a 100MHz DS1102E (Hack) — Dave Jones (explains)
+context before: You can see the wave shape's changed. Look, you can see the see the extra ringing up there and down there. And there it is, 3.2 nanoseconds. Beauty, it works.
+TEXT: And as you'll see, we'll change the time base. It used to go down to 5 nanoseconds maximum. Now, it goes down to 2 nanoseconds maximum. We now have a 100 MHz 1102E scope.
+context after: And let's go into the utility menu and check out system info. Bingo, there it is. DS1102E and the serial and the new serial number and terrific. Thumbs up, it works.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: Yeah, it can capture that, and it's not updating the screen, which is fine. And if you go into history mode, maybe you might be able to capture it in there somewhere, but you've got to remember that look at the amount of dead time.
+TEXT: How far do I have to go out? Crikey. Look at that. What's that frequency there? That's 50 milliseconds per division, 100, 200, 250 milliseconds, like quarter of a second.
+context after: A quarter of a second dead time, and then and we can only capture um up to 1,000 uh sorry. Well, at this time base or what uh we're only getting 1,024 that we can capture, okay?
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (explains)
+context before: Let's have a quick check of the high frequency bandwidth here. I've uh I'm I'm feeding in the highest frequency I've got from my function generator, which is 20 MHz at uh uh 4 V peak-to-peak.
+TEXT: Now, um this uh once the problem with this Tektronix 2225 is if you use it on standard time base, it's just really it's not fast enough. That's as fast as it goes, okay?
+context after: So, you know, I can see the 20 MHz signal there, but you can't easily get in there and measure its frequency and stuff like that. So, it really forces you to use your uh forces you to use the mag mode, which is okay.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (explains)
+context before: I really like this little horizontal position marker up here. It, uh, tells you how far you've moved the waveform obviously from the trigger point there but I would have you know preferred that up the top so it doesn't waste it.
+TEXT: I mean why are we showing our second time base up here for the zoom mode? And by the way, look at this. I've just noticed this, right? If we adjust our time base right?
+context after: Look. Let's look at the sequence here. There is it's not your traditional 1 2 5. It's 2 Well, let's go right down. Here we go. 2 4 8 What?
+
+[86] EEVblog #86 - Buy a real Analog Oscilloscope PLEASE! — Dave Jones (explains)
+context before: There is no difference at all. If you use both of them in manual mode, you should not see any difference at all. In fact, you could argue that digital scopes are harder to use than and then a traditional well-laid-out analog oscilloscope.
+TEXT: So, unless you're using this auto set button, you know, all these modern oscilloscopes have got like an auto button. You push it, and it sets up the time base for you.
+context after: It sets up the vertical attenuators for you. It sets up the triggering for you. It sets up everything, and it displays the waveform usually. Um it's not foolproof, but it displays the waveform perfectly on the screen.
+
+[978] EEVblog #978 - Keysight 1000X Oscilloscope Hacked! — Dave Jones (explains)
+context before: 70 MHz bandwidth and Keysight sell the 70 MHz bandwidth model. So, I've got to do the measurement to actually confirm to find the minus 3 dB point on that.
+TEXT: But, hey. Hey, notice the screen as well. 1 gig sample per second. Let me change that time base. Yep. There you go. We've got it. I've changed the time base there.
+context after: And that limits the sample rate as well. So, bingo. We've got it. It looks like you can change the bandwidth and the sample rate at least with just the configuration resistors.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (explains)
+context before: Let's like go down a couple. Uh sorry, higher. Right There's our Okay, there's our waveform. Much lower vertical. And let's stop it. No. No, we're not getting anything there.
+TEXT: So, let's go up a range. Let's run it again at 200 microseconds per division. Make sure we're doing it exactly the same. Yeah, look. Look. That one there has it.
+context after: That one there has it. What the hell kind of artifact is that? You tell me. I've never seen anything like that before. I'm pretty darn sure it's not the input signal.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (explains)
+context before: In fact, we're using the wrong measurement technique on the scope here cuz we're talking, you know, heartbeat like once per second, you know, boom, boom, boom, right? So, obviously, we need to get into our Let's go into a horizontal menu here.
+TEXT: We need to get our time base instead of put it on your usual time base, you want it in roll mode like this. And this is what roll mode is actually good for.
+context after: And there's nothing on this test point that I can see anyway, but if we move it over to another one, TP6, bingo. Look at that. Hang on, we're still got some crap on here.
+
+[81] EEVblog #81 - Smart Tweezers LCR Meter Review And Teardown — Dave Jones (explains)
+context before: So, you got to hunt around for like a little screwdriver and then you got to flick it across like that and bingo, it goes into trace mode with a fixed plus minus um 5 V um scale.
+TEXT: I think Yeah, I don't think you can change the scale, but you can change the time base by just um pushing the jog shuttle. Let's see if we can speed it up.
+context after: Yep, there are it's actually you can actually might not show up on camera too well, but it is actually flying through at a fast reasonably fast time base and then you can slow it down.
+
+[D2PANd9Hu3U] Zotek/Zoyi Test Equipment MAILBAG BONANZA UNBOXING! — Dave Jones (explains)
+context before: Are you kidding me? So, the oscilloscope. What happens if I just 50 Hz that? And can we uh do our auto there? Oh, yep. Yep. There we go. It did.
+TEXT: It autoscaled on the 50 Hz there. Okay. Short that out. And it shorts. Got our time base up there. Uh where's our voltage mode? That's like 0 mill volts.
+context after: What? No, that that's the trigger level. Oh, it just was not obvious there. One volt. So, it's one volt per division. Okay. Right. How do we adjust that? Okay.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (explains)
+context before: Yeah, go to 101 MHz and we at least get our sine wave and then it will eventually taper off. No. This thing just It's It's just ridiculous. It's It's almost a joke.
+TEXT: And if you want to look at the aliasing, we're at 101 MHz here. The fastest 10 ns per division, can't go any faster than that. We go down, it's okay.
+context after: We go there, Kamigatsa, and then of course it's the wrong frequency cuz there's our aliasing. So, yeah. And I'm at 43 MHz. Uh, even though it's showing only four Oh, it shows 43 occasionally there.
+
+[1320] EEVblog #1320 - Premature Oscilloscope Triggering — Dave Jones (explains)
+context before: So, what what I've got here is it's just on channel two here. My trigger level is just like, you know, set to the middle of the uh 3.3 V waveform here.
+TEXT: Okay, so what I'm going to do, I'm going to set it to a slow time base like 500 ms uh per division. I've got my pro Let's switch the product off.
+context after: Okay, I'm going to trigger on the rising edge. We expect to see a trigger point right in the middle there. So, here we go. Uh Hmm. Something's a bit strange.
+
+[l-fuyHCs2Sw] Rohde & Schwarz RTB2004 Oscilloscope Acquisition Bug — Dave Jones (opinion)
+context before: Look at that, and I haven't tried them all, but I've jumped up a few, it's got to 100k, whoop, and you saw that, it just sort of like re-sampled there at a different time base, so that's kind of weird, I don't know if that's a bug, haven't actually looked at that, but we're not seeing it with that sort of memory depth.
+TEXT: I've got to actually go up to, whoa, see that? See that? Wow, that was interesting, so it did, like it's not flushing the sample buffer properly and it's re-sizing it and displaying it, something weird's going on there. Anyway, I don't see it, this issue, this bug, until I get to 1 meg sample per memory, so obviously the automatic mode must be sampling at 1 meg plus, but yeah, so that, it's, look at that, that is just ridiculous.
+context after: That's, that's crazy, there's something seriously wrong with that. Anyway, I just wanted to show you that, I've been playing around with this thing, and if we put it on the full 20 meg, whoa, see that? That was a different, it's not acquisition buffer, but why?
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (opinion)
+context before: You can't change it. You can just like auto scale or whatever. Once we get a signal in here, we can have a look, but yeah, I'm not not liking that at all.
+TEXT: And they've got all this wasted space under my head here. There is not nothing on this screen, yet the time base here, okay, all of this stuff, all this stuff for the time base could have fitted on the main page here.
+context after: Why do I have to change over to time base here? I I just don't get it. Okay, we can do roll mode. Okay, cool bananas. We got precision peak detect and deep memory mode.
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (opinion)
+context before: So, there you go. That looks like it works fine. I like it. And we should actually check that that value is spot on. I've got times uh 10 mag at the moment with the 100 kHz, so I'd expect uh that to be 10 divisions across and it's not.
+TEXT: It's slightly out, just like it is with the um main time base as well. But that should come back in once we calibrate the main time base. Another thing we haven't checked is the probe adjust here.
+context after: So, I've got a times 10 probe, so we're actually going to use the times 10 uh setting over here, not the times one. So, we're on 0.1 V per division.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (opinion)
+context before: Trigger there. I've just got your basic uh trigger on your um slope. That's it, your edge. Negative uh you know, positive. Let's put it on fall there and single shot.
+TEXT: That, okay. But watch this. I change the time base. Now, it's going to make a fool out of me, isn't it? I swear it was triggering like in the middle of there where there was no pulse.
+context after: I swear. Okay, this is what the display looks like when it tries to decode it. It's just weird. Um I'm not sure what the deal is there. Zoom in.
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (opinion)
+context before: So, you know, I can see the 20 MHz signal there, but you can't easily get in there and measure its frequency and stuff like that. So, it really forces you to use your uh forces you to use the mag mode, which is okay.
+TEXT: There's nothing inherently wrong with that. It's just uh not as nice as um some other scopes which have the main time base which uh goes down to that. But anyway, that's okay.
+context after: And you'll notice that it it's a bit fuzzy here. Once again, if we go here, our frequency is uh slightly out again, of course, because our main time base is out as we've verified before, but uh as you can see, the amplitude has dropped a bit from um uh where it was before.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (opinion)
+context before: We've got all of our previous waveforms. And maybe I don't know how frequently that run pulse occurs actually. Um but we can scroll through all 2,00 previous ones and well, twiddle your thumbs.
+TEXT: Hang on. We might capture it eventually. Here we go. I just uh whacked the time base out. There we go. We've captured one already on our first screen. We got lucky.
+context after: But even if we go back through. Here we go. We should be able to find one. Should be able to find another one. There it is. There it is.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (opinion)
+context before: It's like it's some sort of velocity. Well, yeah, okay, we're we instantly entered a roll mode there. Okay, I'm not sure. Now it's not Now it's not triggering. Um Oh, no.
+TEXT: No, no, there we go. Okay. No, sorry. We went down to horribly slow time base. Oh, no. No, it just looks like it couldn't recover from that slow time base setting.
+context after: It had velocity control on the horizontal. I think that's the problem. And it was going too quick. Yeah, I think that's what I think that's what happened there. And it was trying to do a slow time base, and it just couldn't you know, it would not and turning the control maybe didn't reset that.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (opinion)
+context before: So, you know, and that looks to be sort of the case here because we run that, right? Look, right? And then if we stop it in there because we're stopped at a different sample, right?
+TEXT: It's going to go, "Hey, it's going to be different again." There you go. Look at that. Look at that. Wow. Look at that. One time base difference between those.
+context after: Funny business, right? And every scope's going to do this differently. Um so, yeah, but there's clearly no anti-aliasing filter in the scope, and I think most scopes don't have one, I think.
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (opinion)
+context before: It says we should be getting 500 mV peak-to-peak at 1 kHz. Are we? Well, not quite uh five divisions there, so it's a little bit out, uh but not a problem.
+TEXT: And uh we should be getting basically 1 kHz, but once again, the time base is out just like it was before. So, looks like our uh probe adjust is working fine.
+context after: Let's have a quick check of the high frequency bandwidth here. I've uh I'm I'm feeding in the highest frequency I've got from my function generator, which is 20 MHz at uh uh 4 V peak-to-peak.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (opinion)
+context before: So, we're 1 V per division. Okay, let's take it down to 500 mV per division. We've got a 1 V peak-to-peak sine wave. We're at 100 ns per division.
+TEXT: That's no good for us. So, we need to change the these ones here, which you know, it'd be nice if it was time base plus minus or something, but it's not.
+context after: So, we're going to get this thing down. Here we go. Our sine wave is coming in. Sorry, I think I've got that on times Yeah, I've got that on times 10.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (opinion)
+context before: Um yeah. Can I go to decode bus? No, it looks like I can't get help for that. Right, I realized I didn't have enough memory and again, I cannot change the memory depth.
+TEXT: What? Okay, I found a display bug with the time base in uh replay, well, in stop mode. Uh watch this line over here as I change the time base.
+context after: Look at that. It's got that line there. Goes away. Data's there. It's not like I'm doing anything weird. Yep, that's a bug. Okay, I'm not sure what's going on with single shot trigger mode.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (mention)
+context before: Whoa. There we go. And here we go. I got a few jumps in there, and yeah, you can see it's now much, much quicker. And there you go. We've got a delta of 2.17 hertz there, which works out to about 130 beats per minute.
+TEXT: And I'm back on regular time base mode now, and unfortunately, I can't turn averaging on at such a slow time base. And averaging doesn't work in roll mode either, but I can like change to high res mode, which does that boxcar rolling average, but still we can't really clean up that signal much, and we're not really going to be able to see that cardiac pulse, I'm afraid.
+context after: Here we go. Settle out. Yeah, we're you know, it's kind of sort of there, but and because I know some people ask, no, it's not the scope grounding here.
+
+[1221] EEVblog #1221 - Mailbag Monday — Dave Jones (mention)
+context before: See, it just came on, "Hey, Snips," and it recognises, oh, don't know why it's flashing twice. Anyway, so it seems to be working so far and you just go, "Hey, Snips," single and it puts your oscilloscope in single shot capture mode. That's the idea behind this and it's got a whole bunch of different commands, run, stop, single, all that sort of stuff.
+TEXT: So, you know, hide external trigger, show digital zero, zoom in, zoom out, set time base to 100 nanoseconds. I wonder if it's going to... Recognise my Aussie accent. She'll be right, mate, no worries. Of course, the whole idea behind voice probing your oscilloscope is if you're probing your board, imagine there's a board there and you're trying to dick around.
+context after: Well, you know, you've got your tongue at the right angle, you're probing the pin like this and you've got your one hand over here operating your oscilloscope and it's a real pain in the butt. Wouldn't it be good if you could just go, "Hey, Snips," single and it's set to single shot capture mode.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (mention)
+context before: And there you go. Heaps. But here's the thing, right? Once you include once you increase your memory points, okay, it's going to go down. So, we're on fixed 14k point memory there, which is heaps for just general use and screen.
+TEXT: So, really when you're operating your scope, pro tip is that, you know, you should choose the lowest amount of memory for the fastest update rate possible for a given time base, and that'll help you detect infrequent stuff like this, which is going to rely on sheer statistics of whether or not it's actually picked up in the acquisition or not.
+context after: Of course, if you got a scope that has zero dead time, it's just acquired it all the time, and it's going to present that information to the screen. It actually decimates it because you can't, even on the Keysight over here, right?
+
+[1291] EEVblog #1291 - Mailbag — Dave Jones (mention)
+context before:  oh, we're in, look, sorry, this LCD is absolutely atrocious, um, I'm not having much luck here at all, but anyway, I fed in a signal, and, by the way, if you set both of these off, that actually turns the power off, so if you set one or the other on, um, look, I assume that flashing light there is a trigger, let me disconnect my input signal, no, no, still triggering, so I'm feeding in a 1 MHz sine wave, I'm getting
+TEXT: nothing, so obviously it's not updating, um, hmm, god, I've entered, I, I just pressed the clear, clear all button, and it's just, like, switched off, like, what the, what, I don't get it, now it's switched back on, um, oh, this thing is just, 299.0 milliseconds per division, uh, where's the divisions, I, uh,
+context after: it's a graticule, this thing is just atrocious, I mean, what are you supposed to make of this, like, millimicro, nano, it's got calculator buttons, it's, like, H, min, uh, second, auto, auto, I'm gonna press auto, no, it's beeping at me, doesn't like auto, oh, wow, like, this is just ridiculous, trigger, trigger doesn't do anything,
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (mention)
+context before: But I just thought that I'd show an example here of how it can be a little trap unless you're at, if you've got high-frequency noise superimposed on a low-frequency signal that you're looking at. Now, in this case, I've got a couple of signals here which I'm capturing.
+TEXT: They're very slow, 100 milliseconds per division in there, right? So a relatively slow changing signal, which we're going to single-shot capture. So let me single-shot capture that, and bang! OK? And it looks, both of these curves look quite smooth and nice, OK? But when you zoom in, look at that, see?
+context after: Only when you zoom in can you see that noise on the signals like that. But when you zoom out, like that, you don't actually see it. It looks smooth as a baby's butt. But if you turn off high-res mode and you go into normal mode,
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (mention)
+context before: Only when you zoom in can you see that noise on the signals like that. But when you zoom out, like that, you don't actually see it. It looks smooth as a baby's butt. But if you turn off high-res mode and you go into normal mode,
+TEXT: let's capture that same signal again, shall we? And bang! You can see the noise at the slowest time base like that, and it's exactly the same when you zoom in. So if you are using high-resolution mode, just be careful at these expanded time bases that it's not averaging
+context after: some high-frequency noise like that. Now, I'll show you an example of where the high-res mode can be useful to clean up your signal, just measuring the DC output of a 5-volt sorry, a 1-volt power supply here. So we've got a volt output there,
+
+[208] Tektronix 2225 Oscilloscope Teardown and Calibration - EEVblog #208 — Dave Jones (mention)
+context before: So, it's you know, it's fairly basic stuff, but there's a lot of um effort goes into actually designing a custom gain switch like that. And there's something you don't see every day, made in Holland.
+TEXT: Beautiful. Haha. Copyright Tektronix 1986. So, at least this uh top this uh vertical uh attenuator and time base board is made in Holland. I'm not sure of the uh rest of it, but uh this board is at the very least or maybe the entire scope is manufactured in Holland.
+context after: I don't know. But uh there you go, copyright 1986. So, we have a um a reference uh point for the manufacturer of this thing. I'm not sure how old this scope was.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (mention)
+context before: Turn persistence mode on. There we go. It pops up and it does it pretty quickly. You can clear it. Pops up. Okay, I've turned persistence on here, reset it, and it's a popping up yet.
+TEXT: Now, this is same time base 50 nanoseconds per division. The 5000X series has a nominal maximum update rate of Oh, there we go. We got one. And that 110,000 is actually less than the lower 2000X series, which has a maximum of 140K waveform updates per second.
+context after: Bingo. There we go. We got one. But yeah, you can see the the fairly dramatic Oh, did we get another one there? Yeah, you can see the update rate difference.
+
+[1501] EEVblog 1501 - Rigol HDO4000 Low Noise 12bit Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: Oh, yeah, that's the auto setup button. There we go. There's our Oh, look at that. You all looking and see the detail. Can see the detail on that bad boy.
+TEXT: And automatically it's popped up with it's popped up with this. Okay, to give us a different time base option right off the bat and then it vanishes. Neat. Anyway, right off the bat it's showed up with our statistics here for our period and our frequency.
+context after: There you go. So, at this particular time base, that's how many samples it's you know waveform updates per second. We're actually getting there. All right, so we just go horizontal like this.
+
+[1678] EEVblog 1678 - Oscilloscope Trigger Warning — Dave Jones (mention)
+context before: So that's pretty easy, right? We're at 100 milliseconds per division here. I press my single shot button like that, and I turn on my power supply. And Bob's your uncle, right? I can do this all day long. Press single shot, and then, boom, I trigger every single time.
+TEXT: Look at that. Easy. But what happens if I want to go to a slower time base? Let's say 1 second per division here, okay? It's not radically slow, but if I press the single button like this, and I set my output, you can see at 10 volts, it hasn't triggered.
+context after: What? What? Why? Why has it not triggered? We're in single shot mode, exactly the same as before, and I press the... I went from 0 to 10 volts, you saw it, and it didn't trigger. What's going on? Well, the trick here is that the oscilloscope had not armed itself yet, because modern digital scopes, this one's no difference, the same as every other scope.
+
+[1678] EEVblog 1678 - Oscilloscope Trigger Warning — Dave Jones (mention)
+context before: Hi, I wanted to show you a problem with modern digital oscilloscopes where you could potentially come agutter, just like I did recently, and even I was fooled by this. Even though I knew about it, I simply forgot to take it into account when I was doing some measurements recently.
+TEXT: So what I've got here is just a basic DC signal, 10 volts coming from my power supply. I'm 2 volts up per division here, and I can switch this on or off like this. That's it, right? And I've got a trigger point just right in the middle there.
+context after: There's nothing fancy with the trigger couplings just set to DC here. There's no noise reject or hold off or anything, right? So it's a pretty simple thing. In my case, I just want basic edge triggering. When it goes from 0 to 10 volts here, positive edge, I want it to trigger, and that's it.
+
+[207] Electronex Expo 2011 - EEVblog #207 (1 of 3) — Dave Jones (mention)
+context before: Glad you asked that. Yes, let's have a look. So let me... Let's look around the side here. So the screen flips up and down. Okay, so it tilts up and down. But have a look at this. For ergonomic reasons. Have a look at this.
+TEXT: Let's say you've got data lines and you've got a stack of them and you want to see them on the same time base. So what happens... Bingo. Look at that. Portrait mode. It's not exactly a... Everyone's going to slim, lightweight ones these days,
+context after: so I guess that's the price you pay for that nice screen. Yeah, it's a bit bigger because it's catering for bigger frequencies and there's more of the acquisition boards inside and the processing is a bit more complex. So, yeah, it needs the space.
+
+[CMoBGGqojqs] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (mention)
+context before: If you're looking to spend $2700 bucks on a scope, you can buy a much, you can either get a four channel basic version of this at 100 MHz bandwidth, right? But you do get your 10 gig samples per second and the highest time base of course is going to be
+TEXT: what is it? It'd be less than a nanosecond. Where is it? Where's my time base? Oh, there it is, 500 nanoseconds. Oh no, because we're in zoom mode, it's bugger off zoom mode. There we go 500 puff. Yep, I thought it'd go below 1 nano.
+context after: So that's very nice. That is very nice. And if you get that for $2700 bucks, but you could buy a higher bandwidth four channel scope in a lower one that only went to say 300 MHz maximum or 200 MHz maximum you can get more bang per buck.
+
+[3jDRH-6IvZc] Analog VS Digital Scopes for Glitch Captue — Dave Jones (mention)
+context before: What we've got is we're feeding in a signal that has a glitch there on it and you can see it pop up occasionally. And this is basically based on the statistical chance of it happening because it's got the number of waveforms per second that it's actually capturing up here and you can see it's probably doing 200, 300, 500.
+TEXT: It's probably doing, you know, a couple of hundred waveforms per second. So, it's set at this particular time base, this particular memory depth that varies. Currently doing a couple of hundred samples per second.
+context after: And we've got a signal that has a what's called a frequent glitch. I'm actually using Tektronix's own demo board and it's got frequent anomaly. It's actually called on there frequent anomaly.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (mention)
+context before: What's going on? Uh, do I have to calibrate it? No, that's just over sampling alignment. Didn't pop up with anything. It's just 800 meg any alias. Nice. Okay, so that changed it a bit.
+TEXT: So, the problem is we don't have our traditional um oscilloscope controls here. Like where's the time base? Okay, we got time nanconds here. Is that like that's not like nanconds per division?
+context after: It's interesting that it has a frame counter. It's doing 3 like 90. It's almost pushing 400 frames per second. 46,000 events at 81 hertz at 08 megabits per second.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (mention)
+context before: But then that wouldn't leave their options open for the future if they wanted to then offer a bandwidth uh upgradeable model. So yeah, anyway, in theory, you could actually crack into the SPI bus on that and um change the gain to anything you like.
+TEXT: Um but of course then you wouldn't have things like the uh timebased setting and other stuff in the uh software. So yeah, I don't know. I'll leave that one definitely up to the afficionados.
+context after: Now, interestingly, uh if you look at the membrane, key membrane on the front panel, there's three more buttons down in here, and it's like, aha, is there, you know, some uh upgraded or some potential future upgrade?
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (mention)
+context before: I've I've I've seen enough already to know this is just This is not an oscilloscope, okay? It's a data acquisition learning platform or something. I don't know. There we go.
+TEXT: I press home and we're back to minus three. Like Should I even bother putting a waveform into it? Seriously, I mean, you know, time base microseconds. Where's the microseconds per division?
+context after: Where's your horizontal time base? Like, you know, well, two microseconds per division. There There's shortcut keys. Okay. I I There's Yeah, I remember seeing shortcut keys in the manual.
+
+[703] EEVblog #703 - Rigol DS1054Z Oscilloscope Review Summary — Dave Jones (mention)
+context before: So, if you got bad eyesight, that could be a real issue. And the screen is reasonably well laid out. You've always got whether or not you're triggered or you're waiting for a trigger up here.
+TEXT: You've got your horizontal time base always displayed. You've got your vertical controls always down here, which you can select. It shows which one is highlighted and grays out the others.
+context after: It always shows you the sample rate and the memory depth, so you always know where you stand with the scope. Very nice. The pretty much standard waveform zoom display there.
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (mention)
+context before: Yeah, this is This is fantastic. This is absolutely instant, no problems whatsoever. Yep, but we don't have like the control like version of it. Well, there we go. So the problem is we don't have any controls at all.
+TEXT: Um so like the thing I find myself using the touchscreen for a good majority of stuff, but simple things like your time base and your vertical controls and stuff, still using the knobs.
+context after: So you know, they're like you can go in there, like we can adjust that and we can go in and Yeah, I mean we can change it like that, but like nah, yeah, nah.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (mention)
+context before: Um, yeah, that's another thing to be fixed. Anyway, we have a waveform. Hallelujah. We can also get that on channel 2. And I think I figured out why the lead is red on channel one and blue on channel two, cuz that's what the colors are on the screen.
+TEXT: Huh. There you go. But it starts up. I think it powers up that um it's blue on channel one. So, I don't know. So, there you have it. And we can go to the time base, which is the time.
+context after: Oh, god. Oh, my mouse is Whoa. This Oh, no. Okay, we're back. This is interesting. We're back down to 270 frames per second. That's interesting. Compared to the thousand we were getting before.
+
+[1226] EEVblog #1226 - Get Better Accuracy On Your Oscilloscope — Dave Jones (mention)
+context before: So effectively 25 mV is the spread of the measurements that it's getting. Not still not working. Damn annoying. Anyway, I can still show you what I'm talking about. So, remember that figure, 25 mV standard deviation and two decimal places here, okay?
+TEXT: So, let's go up. So, as I showed before, if we change the time base to 500 mV per division, it's just outside. It can't measure it. Okay? So, this is where our vernier can come in.
+context after: We can push, hence it says variable there. We can go in and just get it under until it starts displaying our value. And bingo, what do you know? Look at the standard deviation there.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: It had velocity control on the horizontal. I think that's the problem. And it was going too quick. Yeah, I think that's what I think that's what happened there. And it was trying to do a slow time base, and it just couldn't you know, it would not and turning the control maybe didn't reset that.
+TEXT: Hmm. Let's see if I can do it again. Ready? Nope. And then no, it's come back. No, see? Look. Look. See, 200 nanoseconds per division, then it takes a little bit to come back.
+context after: Something weird. Some weirdness happening there in the firmware, I think. Okay, I thought I'd just sweep the analog input here with my RF sig gen and find the actual analog bandwidth of this thing.
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (mention)
+context before: sin x on x, no worries. We've got our memory which should go up to 40 meg. And once again, like you can't you can't select that. That is so frustrating.
+TEXT: I'd hate to use this thing every day. I'm going to say it's reasonably responsive, but yeah, anyway, the stupid touch. Can we Yeah, yeah, we can change the time base.
+context after: We're going like that. No, it looks like we can move and we can expand, but that's exactly what you want. So, that's great. No worries. We're going all the way with LBJ.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: But, I'm not seeing my glitch on here, and it doesn't matter whether I'm in dot mode, vector mode, or whatever. And of course, the penny just dropped like duh, it really is too late.
+TEXT: Yes, it is 10:20 p.m. on a Friday night, isn't that sad? Duh, of course, yeah. We are getting our um you know, well, in this case, well, time base there There we go.
+context after: We can get actually 400,000 waveform updates per second, you know, fantastic, right? But, that's only in this segmented acquire capture mode. The reason that we're not seeing our one-in-a-million pulse down here is because of the massive dead time, okay?
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: Really quick. That's like it's banner um specs. So, I'm measuring down here, okay? I've got a feed in in my standard 1 MHz uh test signal. That's what you do when you measure the waveform update rate.
+TEXT: Okay, I've got it on the smallest amount of memory. I've got, you know, like the fastest time base, right? Everything, right? It should be It should be pretty good.
+context after: But, I'm only getting Sorry that this is hard to see. I'm only getting like 11 12 kHz uh down here. And so, what the hell is going on? Look, regardless of what time base setting I put on there, okay?
+
+[1324] EEVblog #1324 - Oscilloscope Reference Waveforms are USEFUL — Dave Jones (mention)
+context before: So, what we can then do is simply move our waveform up here and we can capture another one. Let's do it again. So, this reference waveform here will stay there even if we go single shot.
+TEXT: Capture again. It's going to stay there as our reference as long as you don't touch the time base or anything else. Now, we can probe and capture the second signal.
+context after: Now, let's probe the second signal. It looks like the same spot, but it's actually not. It's like one or two millimeters apart. Um that's what makes it really tricky to probe both of these points at the same time with one scope probe, especially when you've got like everything in the way like heat sink and crystal here.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (mention)
+context before: And it might just save your bacon one day knowing that you can just Well, in this case you can't, but knowing that you can just zoom out. As I said, in probably the majority of usage cases it doesn't matter.
+TEXT: You just retrigger again at a slower time base. You know, you just go over here and you just go, "Oh, well, stop it." and then zoom in. I've got 200 meg of memory.
+context after: No worries, right? But, you know, there might occasionally be the case where you're working on some obscure glitch or something. You finally capture it. Like you see something in here and you go, "Oh, jeez, I wonder what happened out side the screen here."
+
+[803] EEVblog #803 - HP1740A Analog Oscilloscope — Dave Jones (mention)
+context before: So, all the triggering seems to be just fine as well. We can whack it in normal mode, and there we go, it vanishes once we get uh outside the uh trigger window, or in normal, it'll just uh roll, of course, when we uh don't trigger.
+TEXT: So, everything looks like it's working just fine. We can turn on uh time Let's try times 10 mag. It's working. There we go. And uh it's an absolute winner.
+context after: Can't fault it at all. And of course, uh as usual with uh some of these things There we go. If we get in with the vernier, you can see that uh it's all itchy and scratchy there.
+
+[1450] EEVblog 1450- $99 Fluke Combiscope Ebay SCORE! — Dave Jones (mention)
+context before: Oh, I thought I had a winner winner chicken dinner. I was bragging. Ah! Come again, sir. Here we go. I'll try it again. Okay, that sounds good. She's come back.
+TEXT: Not a problem. So, yeah, so it looks like and it's got the light time base, too. Very nice. So, if I leave this running, I wonder if it'll just it again.
+context after: So, it looks like it does have some sort of like uh potential power supply issue. What's TB mode? Oh, time time base mode. Okay. Right. Alt chop. Okay. Yep, auto single, all that sort of jazz.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (mention)
+context before: Magic. Let's take a look at a real example where it does exactly that. Now, what I've got on the analog scope here is this uh same a very similar digital burst signal.
+TEXT: It's actually a bit more complicated, but as you can see, um if I adjust the time base here, then really um it's just, you know, it's just digital data.
+context after: It's just really digital uh you know, garbage, really. You can't see much at all. You can see it's transitioning and all that sort of stuff, and everything's just fine, but really you can't make out that there's actually uh packets there.
+
+[860] EEVblog #860 - Mailbag — Dave Jones (mention)
+context before: Do we push this button? I assume we push this button here because it's just sitting there. Oh, yeah. There we go. Version 3.0 1995. Here we go. So, it wouldn't even power on.
+TEXT: You have to There we go. We're in. Tada. Oh, I can make it do something. Can I pick up 50 Hz hum? Here we go. How do we change the time base?
+context after: Press it. Hey, there we go. 100. Is that 100 nconds? Five microsconds. There we go. We're going to get there. It's actually like you can't you can just go in one direction.

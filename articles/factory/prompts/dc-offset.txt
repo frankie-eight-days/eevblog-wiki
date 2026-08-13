@@ -1,0 +1,498 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: dc offset
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 93 passages drawn from 39 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# dc offset`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Bingo, we're triggered. It's removed the DC, but it's triggered for us. Let's go to our third signal here. Bingo, it's triggered. Let's go over to here. It's triggered. But if you go to DC trigger coupling down here, it's useless.
+TEXT: There's our fourth signal, our third signal, doesn't even show up, our second, and back to our first. Absolutely useless. So the takeaway from that is if you use DC trigger coupling down here, then every time you probe a new signal on your circuit, an unknown signal, and it might have a different DC offset and you're using DC input coupling like that because you want to see the DC offset
+context after: you're probing your circuit. You want to know if there's a DC offset there. So you're using DC mode typically you might do and you've got to manually go in and tweak the level control each and every time if that DC input varies.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (explains)
+context before: And just to show you what it's supposed to do, of course, here's the black version. The black version works. The beige is the problem. There you go. Right, it's fixed.
+TEXT: All you got to do is spray paint it black. Yeah, there you go. So, there's no change in the DC offset and the calibration output is DC reference. So, yeah, something weird happening with the rooted unit where it's based on the range like has DC offset issues, which is interesting cuz I mentioned before like the external voltage regulator like you know, powering that.
+context after: If if that was a problem, then you'd expect it to be a problem on all ranges possibly. So, yeah, this is a This is A WEIRD ONE. GUESS WHICH UNIT THIS IS.
+
+[1631] EEVblog 1631 - $230 Micsig MDP700 HV Differential Probe Review — Dave Jones (explains)
+context before: Maybe we'll get some No, no improvement there. And manual attenu- manual And of course you can set the attenuation, but it makes no difference, right? But we can actually set that to the times 200 there, but it just changes the scale.
+TEXT: It doesn't physically change uh the res- the signal level into the uh scope. So, yeah. There you go. Um yeah, try and get a signal out of that. So, let's turn our on our sigma or standard deviation measurement AC for uh to get rid of any uh DC offset, so we'll add that for uh channel one, and then we'll also add that for channel uh four as well, okay?
+context after: So, there you go. We can get both of those, and we can turn our statistics on, okay? And boom, we now have, right, figures that we can actually work with.
+
+[1223] EEVblog #1223 - Oscilloscope Standard Deviation Noise Measurement — Dave Jones (explains)
+context before: And you might think, "Aha, Dave, dummy, it's because you've got DC coupling of your input." Well, let's go in to AC coupling. Turn my channel off. Let's go into Come on, give me my menu.
+TEXT: There you go. AC coupling, the statistics have reset themselves, but it's still there. It hasn't removed that DC offset cuz that DC offset is actually after the input AC coupling cap, which is when you select AC mode here, there's a relay in there, either a mechanical or electronic relay that will switch in an AC coupling capacitor.
+context after: So, the DC offset is actually after that AC coupling cap. It's residual within the input amplifiers and it'll vary with temperature and time and everything else. So, if we made wait another hour or something, that DC offset might drift up.
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (explains)
+context before: Sine, square, ramp, pulse, DC, and noise. And you set the frequency, the frequency fine, as well. And you can adjust that, no problems at all. It works just like a regular function generator. The amplitude can be anywhere up to 5 volts peak-to-peak. It can go right down to millivolt region.
+TEXT: And you can specify the DC offset as well. Let's go into the settings. The output load impedance can be high impedance or 50 ohms, which is important to have, of course. And you've got trigger outputs that you can set up, so that the BNC connector on the back of the scope here can generate a trigger signal that's synchronized
+context after: to your function generator output. It's quite nice. And if you're astute, you would have noticed that there's one thing missing from the selection of waveforms, and that's an arbitrary mode. Now, I reckon that the ASIC is very capable of actually doing arbitrary waveforms, and it makes sense
+
+[OBOgiMA89Ks] My Keysight 1000X Oscilloscope FAILED :-( — Dave Jones (explains)
+context before: you're supposed to disconnect all the inputs, which is what I did, I ran the user calibration, and it failed. So I don't know what's going on. Let's see if the issue was here. I just wanted to show you that error message. What I was seeing is that when I changed
+TEXT: the time base here, let's go down, look, look, the offset, look at that, it's jumped, like, 600 millivolts, like that, and then it jumps back. So on those two ranges, on the 200 millivolt and 500 millivolt ranges, there's this huge DC offset, it still works, but there's this, the channel still works, but there's this massive
+context after: DC offset. All the other ranges are fine. So has this scope, like, failed on its 200 millivolt and 500 millivolt ranges? I don't know. Let's turn on channel 2 here, and let's see if this does the same thing. Okay, oh, yep, 50 volt range.
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (explains)
+context before: And because it's a perfect sinusoidal wave form, or it could be a perfect square wave for example, it doesn't actually matter if the area above the axes here is equal to the area below the axes here, and they're both the same amplitude like this, the average value will actually come out at zero.
+TEXT: So, if you feed an AC voltage, a perfect AC voltage with no DC offset, into your DC multimeter, which reads average value, it'll read zero. And also for multimeters that aren't true RMS multimeters, that'll have true RMS written on them, usually they will actually be what's called an average responding multimeter for AC.
+context after: So, what that means is that it assumes that the wave form you're measuring in AC voltage mode or AC current mode on your multimeter is a perfect sine wave.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: You want and need a 0-V average value for your drive signal. 100-Hz continuous 100-Hz square wave. And as you can see, the segment is on, but the contrast isn't that great."
+TEXT: Now, let's have a look what happens if we actually adjust the DC offset of the signal. So, let's actually shift this down like this, and you can see that if we actually take that to zero DC offset, so we've got plus minus 2 and 1/2 V still 5 V peak to peak, you'll see that it's actually vanished like that.
+context after: So, the nominal 5 V drive for this particular LCD isn't good enough. Now, if we actually continue to take that down to negative, you'll actually see that come good again.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: So, there we go. Now we're starting to get some more. There we go. Very nice. And I've got it set to 12 meg memory depth here, so we can, you'll see that there's glitches popping up in there, I think that's what this demo board is designed to do, actually glitch it
+TEXT: occasionally or something like that. But you can see it's decoding all those packets over that entire range. Very nice. And it's also got self-calibration routines as well, you disconnect all of the inputs down here, and it takes a while to actually run, but it takes into account DC offset and
+context after: everything else and checks everything. So these are all 4 channels turned on and centered before our calibration. So we'll run the self-cal and see what happens. There we go, it's clearly like up in level, it's doing like a shift in the DC offset and doing things
+
+[675] EEVblog #675 - How To Reverse Engineer A Rigol DS1054Z — Dave Jones (explains)
+context before: Well, this must be the DC path, and then over here, I figured out that we had some an e squared pot over here, the ADSR the AD 5207, and that's just buffering that, and that's feeding in.
+TEXT: So, this must be the offset control for the channel, the DC offset to shift the waveform up and down, the vertical vertical position control on the front panel. So, the output of that has to be going back into here and offsetting the signal before it gets into our FET amplifier over here.
+context after: So, by deduction, this point here must connect to this point over here. And sure enough, I buzzed it out after all this time, and bingo, that's where it went.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: But, with a regular active probe like this, when we don't even have the ability to do AC coupling. Well, we could if Well, this particular probe doesn't support AC coupling on the input, but that has its own limitations and things like that.
+TEXT: So, if we actually go into the active probe here, you'll see that we actually don't have an option for AC coupling. It's just not there. If your scope front end is capable of taking care of those DC offsets, then you can get a bit more dynamic range, but we're 1 V per division here.
+context after: You can see our ground, so 1 2 3 4 5. So, we're measuring the information there. So, yes, we can zoom in on that, okay? Here we go. Here we go, and boom.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: So, that's just the difference that the DC offset can make to the contrast on an LCD. Now, you can see that our signal drive level is still exactly the same peak to peak, but it's just not good enough.
+TEXT: And it doesn't really matter what you do here. When you've got a ground reference here, and you're just driving your LCD positive, in this case, I've got a 0.5 second period, so it's flashing at a 2 Hz rate every 0.5 seconds, and I've got burst of a 100 Hz frequency in there.
+context after: You're still going to end up with an average value, which is Well, it's not going to be in the middle anymore, but it's still going to be somewhere above zero.
+
+[dv0B_WqL7w4] UniT 210E Current Clamp Teardown + Brymen Comparison — Dave Jones (explains)
+context before: AC. Well, that's not going to work. 0.744. What's wrong with the Uni-T? Look. The Breiman's bang on. 0.75 amps. If I go the other way, of course, it'll give me positive. What? 1.2? Zero it. Okay, right. Yeah, but, like, oh. Okay, right. Sorry.
+TEXT: Really? Was it showing that before? Can somebody confirm that it was showing that offset before? Was it showing that large an offset? That's a massive offset. I mean, you know, the Breiman's got the DC offset feature, but it's usually only out by, like, less than five digits.
+context after: Five least significant digits. This is huge. It is off. I will turn it on to the 2 amp range. I will put it on DC. Look at the offset. That is enormous. Really? Okay, well, let's zero it. Okay, fair enough. Okay, right. Let's zero it.
+
+[1021] EEVblog #1021 - Retro Radio Shack TRS-80 Color Computer — Dave Jones (explains)
+context before: So we've got our composite signal because all that is is a common emitter follower that just drives the, you know, that drives the coax and doesn't affect the signal. Like it won't kill the RF output from here, you could use both at the same time for example.
+TEXT: But I've just hacked in a cap in here because this does have a, both of them have a very significant DC offset, which you don't want. So I'm just AC coupling that into, straight into the coax with nothing and into a little HDMI, you know, one of these little cheap eBay jobs.
+context after: And ta-da! Look at that, we've got something. It's not quite there, but you can see that it works. Extended color, basic copyright, under license, okay. And, hello, world! So it really doesn't like that at all and well, I'm not sure whether or not it's because of the buffer or not,
+
+[1223] EEVblog #1223 - Oscilloscope Standard Deviation Noise Measurement — Dave Jones (explains)
+context before: And that is a problem because if you're measuring RMS with a DC offset, by definition, root mean squared does not take out that DC offset. It's going to include that DC offset value.
+TEXT: So, that's why there's a small amount of DC offset. Look, it's 1 mV per division, it's only a couple hundred microvolts, right? It's it's down it's almost bugger all, but it makes going to make a huge difference, and it's going to add on and contribute to that mean value.
+context after: And you might think, "Aha, Dave, dummy, it's because you've got DC coupling of your input." Well, let's go in to AC coupling. Turn my channel off. Let's go into Come on, give me my menu.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: you know, we're getting quite reasonable now. We're getting our standard 10 megohm input impedance. And as I said, you go up to 1,000 volts, and you're going to be getting your 20 meg. I hear all the greybeards saying, Dave, analog meters beat the pants off digital
+TEXT: in terms of response. You can see the needle wiggle. Well, let's actually try that out and see if it can beat a fast-responding bar graph on a digital meter. Alright, so what I'm feeding in is a 250 millivolt peak-to-peak sine wave superimposed on 4 volts DC offset.
+context after: So of course it's measuring 4 volts here. It's measuring 4 volts, and let's have a look. Like, you can clearly see the bar graph going did-did-did-did-did, and the meter movement going like that. But can you see it on the analog? Yeah, you kind of can.
+
+[713] EEVblog #713 - Voice Recognition - 1980's Style — Dave Jones (explains)
+context before: But what are they doing? Well, I actually forgot to put in the positive and the negative rail there, but we're powering this from a single 5-volt supply. This is an LM324, by the way. So we have to actually bias these up. If we had these at ground, it wouldn't work.
+TEXT: It'd be clipping. We'd need a split supply. So what do we do? Well, we just raise this value up by some DC level, i.e. we're shifting the waveform up. We're adding a DC offset in there instead of ground. We're going up to a value set by this resistor divider here.
+context after: So we've got our voltage supply, and that's going to be at some value, you know, like 2 thirds the supply value or whatever it happens to be, or half the supply value. And then they've got just some filtering on there to make sure it's a nice DC signal.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: But if you don't have this oscilloscope bandwidth to do that, then well, you know, what's the point? You're just gilding the lily. Um but yeah, times 10 probe works fantastically.
+TEXT: No worries. But only if your scope can actually do the 5-V offset required. And that's the important point. But of course, if you're using a 10:1 probe like this, you are attenuating your signal 10:1, but that means your in this case 5-V signal is down to 500 mV.
+context after: So, your scope only needs 500 mV offset in order to do that. And I'm pretty sure almost every scope out there is capable of 500 mV. I think everyone in the lab I've got here is.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: It's showing up as plus voltage. And the further I go down, the more it goes positive. It doesn't display negative. So, then if I move it up like that, does it go negative?
+TEXT: But look at the Siglent here. As I go down, it's increasing, but it's showing up as a negative voltage there. So, both the Siglent and the Rigol show negative when you go like in the down direction, whereas both Keysight and Rohde & Schwarz show it as a positive.
+context after: Isn't that interesting? What's going on there? It's really It depends how you think of it, whether or not it's like input-referred, um so to speak, which means that, okay, I've got to shift my waveform down by 5 V.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: Hence why it's noisy and not flat. You might think if you used this fancy dancy couple of thousand-dollar active probe, oh, your uncle, right? I'm going to get super duper measurement waveforms.
+TEXT: No, you might think this noise is actually coming from your circuit when it's actually not because you didn't use the right tool for the job. In this particular case, when you're probing power rails, you want to remove the DC offset before it gets to the scope.
+context after: That's what these things do. Cool, huh? Now, I just wanted to show you what could happen if your scope didn't have that DC offset and you had the ground point here and you had to set it to one volt per division.
+
+[713] EEVblog #713 - Voice Recognition - 1980's Style — Dave Jones (explains)
+context before: here, pin 1. Here we go, you can see me talk into this thing. And let's give it a whistle, let's see what frequency I've got. And if we have a look at pin 7 here, the output of here, it's going to be a bit higher amplitude.
+TEXT: Check, check, check, one, two, but there you go, you can see my voice very nicely on that, on the scope trace there. And the DC offset here of course is set by this value here with this resistive divider down here. So it's just setting a DC offset and shifting
+context after: it up. But because we don't have any analog to digital converter in this little PCM micro, we have to convert it into a, we have to square it up and convert it into a digital signal which we can actually send into the micro.
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (explains)
+context before: Host name, open scope. Can we just open it? Connect in. Yay! That's what we want. There you go. Millivolts, 500 millivolts per division. Thank you very much. And trigger in the middle. Beautiful. Alright. Wavegen. It's not an arbitrary waveform gen, which I believe the analog discovery
+TEXT: was, so it's just a basic function gen. But you can go up to, looks like 3 volts peak-to-peak is the highest you can go. That's okay, you know, for a device like this, that's fine. You can offset in 100 millivolts steps up to plus minus one and a half.
+context after: So that's pretty groovy. It's good to have the ability to DC offset. And the frequency is, can we I mean, presumably we can just type in 100. If we just type in 100, can we? No? Set wavegen, like 40 kilohertz. What? 100. Like I can't press enter and like 100k.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: It should be at zero. We need to drive it both positive and negative with the average value of zero because the average value at the moment, look, is minus two volts.
+TEXT: It's not actually zero. So, if we actually shift our DC level to ground here, and this is the correct way to drive it as solid off and on, which we could achieve by other methods, but this way there's no DC offset on the LCD, we can't damage it.
+context after: So, we've got to go both positive and negative, but that is a real pain when you're using digital logic to drive this LCD. So, while she can get away with using this method number one here to drive your LCD, it requires that negative supply and to get your DC average at zero.
+
+[OBOgiMA89Ks] My Keysight 1000X Oscilloscope FAILED :-( — Dave Jones (explains)
+context before: to see what, what's what, but anyway, I'll let you know, but I don't expect it to just magically pass again. Something wrong with this. And surprise surprise, it failed again. And the interesting thing of course, is that it happens on both channels. There it is, sure we're not triggering off
+TEXT: channel 2 there, source 2, there we go. But, like, they're both got both channels have that DC offset on the 500mV and the 200mV ranges. Like, that's just nuts. Why? Both channels, so it's not like a physical hardware fail on a channel, they're
+context after: two independent channels, so I just I'm not getting it. Leave your thoughts in the comments down below. If you've seen this issue, if you've heard about it let me know, because yeah, this one's a loser. Which is a shame, because this is one of my favorite scopes in the lab.
+
+[1521] EEVblog 1521 - CMRR Full Edit — Dave Jones (explains)
+context before: So, at 10 MHz it's minus 40 dB here. So, we want to flip that around here to give the output divided by the input. Now, to measure this uh, ratio between input and output, we can either measure the peak-to-peak value or the RMS value.
+TEXT: Doesn't matter. RMS is, you know, it's better, it's more accurate. But, you might think that we use this RMS value here. And uh, that 1.4 mV like that. But, I've done a video on this where that RMS value, that includes any DC offset component.
+context after: So, that's not quite what you want. So, let's go into the measurement menu here. Unfortunately, they don't have it in the basic category. You've got to go down to the what the vertical there.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: That is a built-in DC offset of this active probe. And you'd want to want to be a decent because, you know, that's many thousands of dollars. Just for the probe.
+TEXT: And that's where something like this cheap PRP-1 power rail probe, this is only like a hundred bucks or so. I'll put a link in down below. It's may or may not be available yet, but it can actually adjust plus minus 24-V, which is really nice.
+context after: So, if you've got a you know, a 20-V rail that you're trying to measure, then well, this thing will do it and that multi-thousand dollar probe won't. But, anyway, you just go to our regular oscilloscope input here, and on channel one, and have a look at the DC offset there, how far can we go?
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: So, you know, it's good enough for Australia. Now, for your very keen eyed, you would have noticed a big difference between both the uh Key- Keysight and Rohde & Schwarz and the Rigols and the Siglents.
+TEXT: So, the two big name ones versus the two uh like lesser name ones, there's actually a big difference. Let me show you. You'll notice as I move the trace down, I'm adding that DC offset, okay, in the front end, but it's showing up as positive.
+context after: It's showing up as plus voltage. And the further I go down, the more it goes positive. It doesn't display negative. So, then if I move it up like that, does it go negative?
+
+[1560] EEVblog 1560 - TIP: Use Your Arb Gen as a High Resolution DC Voltage Source! — Dave Jones (explains)
+context before: They generate them using typically a 16-bit digital-to-analog converter. And with that higher resolution analog-to-digital converter, you can actually get really nice steps on this. A lot of people don't know realize that their arbitrary waveform generator should have a DC option like this.
+TEXT: Usually it might be called DC offset or something like that, but they can actually generate a DC voltage on the output which then can be precisely this one. You might think it goes 1 mV, but we can actually go over and generate 0.1 mV steps.
+context after: So, that's two orders of magnitude better than the best power supply I've got in my lab here. Now, it's not magic, of course. There's a couple of issues which I'll go through.
+
+[207] CleverScope USB Oscilloscope - EEVblog #207 (2 of 3) — Dave Jones (explains)
+context before: Right, okay. No, it's not too bad. This is the Ethernet version. So you can see there's the Ethernet board. Hang on, let's put it down on the table over here. There we go. And tell us about the hardware. I'll zoom in on that.
+TEXT: We can do that, yeah. So this is the digitizer. And we do them in 10, 12, and 14 bits. So this is a 14-bit digitizer. This is all the analog stuff. And over here we have DC offset, which is so that we can look at just a small chunk of range,
+context after: like 2.1 to 2.2 volts, and digitize across just that chunk. Right. Over here we have our mixed signal input, the eight digital ins. Yep. Not too many PCs got to do that. Yep. And over here is an Altera Cyclone. Magnificent device. That's where all the magic's running.
+
+[296] EEVblog #296 - AIM-TTi I-Prober 520 Current Probe Review — Dave Jones (explains)
+context before: There you go. And we can take that uh take that frequency up, of course. That's actually 10 MHz now. So, it's a well beyond its well beyond its rated bandwidth.
+TEXT: And of course, this thing is uh sensitive to the DC offset as well. That's why we have the um offset trace position. If I adjust the DC offset control on my function gen, I can move this waveform up and down, and you can see it clip there.
+context after: So, we can adjust for with the uh trace position control on the unit, we can adjust for any particular um DC offset on our current waveform. Okay, now we'll try it uh in wire mode.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: But anyway, it's it's it's huge. You've already seen the benefits. And I see very little drift in this thing either. It's pretty good. So I'll switch on the cal mode now and you'll see it.
+TEXT: Cal mode now. Boom. There we go. That was it. It's quick and then the offset button you can just move it, you know, if you've got a DC offset in there you can trim it like it's looks like it's about like .2 mV per step or something.
+context after: It's really quite small. So I'm adjusting that now and you can see that the steps are really quite tiny. So yeah, it's really nice. So there you go. I hope that's given you some insight into what these really advanced expensive probes can do.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: Look how tiny it is in there. So if you want to see that information, not only is it advantageous to have a like a 4 a 12 or 14-bit oscilloscope like modern oscilloscopes now are 12 bits is now pretty much you know, the entry level even entry level scopes have a 12-bit performance.
+TEXT: 12-bit ADC it means that you can actually zoom in on that information better. But, there's another factor, DC offset on your oscilloscope. Aha. So, what we do is we want to use our DC offset knob like this to get this right down.
+context after: Let's put it in the center of the screen like that and it well, you change the vertical again. You keep it to wind it down again. You change the vertical and you See how it's off screen?
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: There's our fourth signal, our third signal, doesn't even show up, our second, and back to our first. Absolutely useless. So the takeaway from that is if you use DC trigger coupling down here, then every time you probe a new signal on your circuit, an unknown signal, and it might have a different DC offset and you're using DC input coupling like that because you want to see the DC offset
+TEXT: you're probing your circuit. You want to know if there's a DC offset there. So you're using DC mode typically you might do and you've got to manually go in and tweak the level control each and every time if that DC input varies.
+context after: Whereas if you got AC coupling, you don't have to do that. You can set typically set one zero trigger point there and it'll the trigger on a good lot of input signals.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: So what we've got down here in the measurements we've got channel one and channel two and our little sigma symbol here. I've done an entire video on this with this is um AC what's called AC RMS which removes any DC component.
+TEXT: This isn't just your regular RMS. It actually is basically a standard deviation of that which removes the um any DC offset component which is really important here when you're measuring incredibly low-level signals like this.
+context after: So you can see that here it's the standard deviation AC RMS it's called. So that can be a real trap for young players. You think you're using the RMS like a good engineer.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: The average value is up here like this at 2.5 V. I mean, I could just leave this at 5 V. Hook up the pin just permanently at 5 V.
+TEXT: Yeah, the segment will come on, but then your average DC value relative to your common pin is 5 V, and that's going to eventually kill your LCD. So, while this might work, in {quote} marks, do not drive your LCDs like this.
+context after: You want and need a 0-V average value for your drive signal. 100-Hz continuous 100-Hz square wave. And as you can see, the segment is on, but the contrast isn't that great."
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: You can see our ground, so 1 2 3 4 5. So, we're measuring the information there. So, yes, we can zoom in on that, okay? Here we go. Here we go, and boom.
+TEXT: Our signal has come in once we've taken out that 5 V offset. But, look how much noisier that is. It's terrible, Muriel. Yeah, we can still see the informa you know, the information, some of the information's still there.
+context after: Look at that, right? So, there's a little reason there's a timing difference there is because we haven't skew calibrated these probes. By skew, I mean the timing difference, but yeah, we're we're probing the same point down here, but this is going to have a different propagation delay on this probe to this probe over here.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: But look at the Siglent here. As I go down, it's increasing, but it's showing up as a negative voltage there. So, both the Siglent and the Rigol show negative when you go like in the down direction, whereas both Keysight and Rohde & Schwarz show it as a positive.
+TEXT: Isn't that interesting? What's going on there? It's really It depends how you think of it, whether or not it's like input-referred, um so to speak, which means that, okay, I've got to shift my waveform down by 5 V.
+context after: In that case, Siglent and Rigol saying, "I've got to add negative voltage negative like 5 V in there." Whereas the Keysight and the uh Rohde & Schwarz show that, "Well, I've got to offset it by 5 V."
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: As far as it sees it, it's flipping polarity relative to the common pin. So, the average value as far as the LCD's concerned is zero relative to the common.
+TEXT: There is zero DC offset. So, you're uh aren't violating the issue with driving your LCD by having a DC offset on the common pin and we're driving this effectively with a single 5 V 3.3 V TTL CMOS digital uh source.
+context after: Winner, winner, chicken dinner. But I hear you saying, "Dave, how do we actually drive this with a real microcontroller or a digital logic or whatnot?" Well, yeah, you just hardwire this in.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: Let's put it in the center of the screen like that and it well, you change the vertical again. You keep it to wind it down again. You change the vertical and you See how it's off screen?
+TEXT: And you can see here that we can adjust the 5-V the offset the DC offset on the input of our oscilloscope to that 5-V. So, it gets rid of that 5-V DC and we adjust the offset it'll come in soon and there it is.
+context after: And then we can get it on the input like that. But, oscilloscopes are not magic. Not all oscilloscopes are created equal. Not all of them have the DC offset required.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: You do not want to drive this. Why? Because it Well, let's assume that you have one second on, one second off, a 50% duty cycle, it's going to give you an DC average voltage of, in this particular case with a 5 V drive signal, 2.5 V if it went up like that, for example, and it was 50% duty cycle.
+TEXT: And DC offsets on an LCD will eventually kill them. You do not want to use this method to drive your LCD, but it does technically work. Now, some people will try and get around this by driving it with a burst.
+context after: In this case, you know, you could have, say, 100 Hz or something like that to try and get your DC average value lower, but yeah, it's going to lower it, but you're still going to end up with some DC level on there, and it's not going to really eliminate the problem.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Okay, let me demonstrate this very dramatically where AC trigger coupling is useful in a practical scenario when you're probing a circuit. Now, over here I've got it on a normal trigger mode.
+TEXT: I've got it on AC coupling, okay? So, we're going to see the advantage of it. Input is DC coupled, okay? So, we'll be able to see DC offset. What I'm going to do is I'm going to probe four different signals.
+context after: I've got four function generators set up here with different DC offsets, but just assume that we're probing a circuit. We don't know what's going on. We want to find out what happens, okay?
+
+[1223] EEVblog #1223 - Oscilloscope Standard Deviation Noise Measurement — Dave Jones (explains)
+context before: It is It's an important and subtle point that makes a huge difference. All right, did you guess it? Did you get it? Did you get it? Well, I'll tell you all about it.
+TEXT: And looking here, you'll see that you can see C1, it means channel one, that is right in the center there, and that would be our ground point. And you can see that there's a slight little DC offset there.
+context after: And that is a problem because if you're measuring RMS with a DC offset, by definition, root mean squared does not take out that DC offset. It's going to include that DC offset value.
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (explains)
+context before: And I don't like how it says like a double negative down there. Negative negative. Anyway, um what I want to show you is that uh when you invert it like this, yes, there's a there's a DC um offset in there.
+TEXT: And that's not uncommon, you know, all scopes are going to have this right down at the bottom end. We're at 2 millivolts uh per division. And if you turn it up, then you expect that to go down, of course.
+context after: And it does. So, say at uh 10 millivolts per division, we can still see a significant offset down there. Now, if we go up to 100, you'll hear a relay click.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (explains)
+context before: So, there's something wrong with the DC offset. So, yeah, if I put both to the same level there, I can cheat here and just set it to uh line uh triggering so we can at least see the waveform.
+TEXT: Then we can swap between the two channels, right? Yeah, well, yeah, look. Yeah, look. The DC offset. I didn't even notice that. Yep. Yep. So, we've got actually got a DC offset problem on both channels.
+context after: So, the sampling seems to work. The ADC's working. The triggering system's working. The uh you know, everything seems to be working, but we have a DC offset issue on both channels.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: But, this Keysight HDO R300 here, it has the ability to actually DC offset the input like that, okay? So, we can actually offset it by 4.9 volts here, but not all scopes are going to have that, okay?
+TEXT: So, I actually re-captured it there and you can see that bingo, we're doing pretty good now. But, this scope just happens to have the ability to do this DC offset on the input, but it's it's limited.
+context after: I can't remember what the input offset, but I think we're at the like extreme limit of it. I don't think we can go to like, you know, 20 volts offset or something like that.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: Isn't that interesting? What's going on there? It's really It depends how you think of it, whether or not it's like input-referred, um so to speak, which means that, okay, I've got to shift my waveform down by 5 V.
+TEXT: In that case, Siglent and Rigol saying, "I've got to add negative voltage negative like 5 V in there." Whereas the Keysight and the uh Rohde & Schwarz show that, "Well, I've got to offset it by 5 V."
+context after: I It doesn't think about adding the negative kind of thing. So, I don't know. Which one's right? Which one's wrong? Eh, six of one, half a dozen of the other.
+
+[1223] EEVblog #1223 - Oscilloscope Standard Deviation Noise Measurement — Dave Jones (explains)
+context before: If that makes sense. Maybe you know, if you got a better way to explain it, leave it in the comments down below, please. Okay, so a better example of this is if we actually put in a real signal.
+TEXT: In this case, I've got a 1 MHz sine wave here. I'm on 1 V peak-to-peak and I'm actually feeding in from my generator up here. You can see on my generator there, 2 V RMS and we've got a 2 V DC offset.
+context after: So, let's just reset the statistics there. The statistics for I can talk. Hardly. So, you can see our ground point over here is actually shifted up where 1 V per division.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: And that's eventually going to damage your LCD. So, there's just no way to drive this with your 3.3 V or 5 V LCD signal directly as you know it, like your regular 0 to 3 or 0 to 5 V.
+TEXT: So, let me take it up to 8 V here, for example. The like it's coming on nice and dark, but you'll see it never switches off. Why? Because look, our DC our minimum level here is at minus uh 4 V there.
+context after: It should be at zero. We need to drive it both positive and negative with the average value of zero because the average value at the moment, look, is minus two volts.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: And then you might have bandwidth limitations and other things. So, so that's just a simple example of the difference between the right tool for the job. In this particular case, a power That's why it's called a power rail probe.
+TEXT: Cuz it's and it's got these big DC offset controls because it takes out the DC offset before it gets to the input of your scope. So, you can use the entire dynamic range that 14 bits of your scope.
+context after: I mean, we can, you know, we're we're still got 14 bits to play with. If if I go to back to channel one here, like we can zoom into here and see a lot more information in here cuz we've got that 14-bit dynamic range.
+
+[1515] EEVblog 1515 - Dumpster Tektronix TDS540D 500MHz Oscilloscope LCD Upgrade — Dave Jones (explains)
+context before: Oh, yeah. Yep, there it goes. I'll I'll just run it just to see if the uh, DC offset goes away. Who cares if it drifts again, you can just rerun it as many times as you want.
+TEXT: Well, that's finished and yep, that fixed the uh, DC offset issue as you'd expect. So, yeah, no worries. Can we change the vertical on that? Looks good. We can go right down to 1 mV per division.
+context after: Not a problem. So, there you go. That was an interesting upgrade of a uh, Tektronix TDS 540D and as I said, uh, there is a color upgrade available as well.
+
+[1560] EEVblog 1560 - TIP: Use Your Arb Gen as a High Resolution DC Voltage Source! — Dave Jones (explains)
+context before: The first one is that usually they will have a DC offset. This one's not bad, so you can see it's a 25 microvolts offset if I set it to zero.
+TEXT: But, it can be substantially higher than that. This Rigol over here, for example, set it to 0 V, you switch it on, and you can see that it's got like a 500 microvolt offset or a 0.5 mV offset.
+context after: So, yeah, you can adjust it by 0.1 mV, but you just got to be aware you're going to have that offset there, or you might or might not, depending on, you know, how decent your signal generator is.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (explains)
+context before: Yeah, look, the DC Yeah. Yeah, look. Look at that, the DC shifted. We're in DC mode, right? We're in DC coupling. And DC coupling and all of a sudden, yeah, look, it's gone negative.
+TEXT: So, there's something wrong with the DC offset. So, yeah, if I put both to the same level there, I can cheat here and just set it to uh line uh triggering so we can at least see the waveform.
+context after: Then we can swap between the two channels, right? Yeah, well, yeah, look. Yeah, look. The DC offset. I didn't even notice that. Yep. Yep. So, we've got actually got a DC offset problem on both channels.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: So, and it's got a built-in calibration mode, which only takes a couple of seconds. Whereas the other models, even though I haven't used them, Mixig claim that they can take up to minutes to to calibration cuz these things drift with temperature and stuff like that.
+TEXT: So, you got to be careful to actually calibrate these things before you, you know, take your your critical measurements. Just so that you're, you know, taking out DC offsets and other stuff.
+context after: So, yeah, they've got built-in signal generators in the probe. So, when you press the calibration button, it will actually run a like there's a test generator in here which will generate a signal and then it can test it and it can calibrate for any offsets.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: There's a little annunciator there that shows that it's going high and bingo, there's our duty cycle of 20% and if we wind up that Let's go all the way up to 80 and it's 80.
+TEXT: Seems to work just fine. But that pulse width does seem to be off in the presence of high DC offsets. At low DC offsets, it's fine. At high DC offset of 2.5 volts, it does actually jump up.
+context after: It's not accurate. And it claims to have a range up to 1 megahertz at 40 millivolts peak to peak input and it does just that. So, let's adjust it down until we and it starts to lose the plot at just over 25 millivolts or so.
+
+[369] EEVblog #369 - Rigol DS2000 Oscilloscope Playing Around — Dave Jones (explains)
+context before: Ah, boy. Anyway, the first time I got this scope turned it on and wanted to check out the 500 microvolts per division and there was quite an offset. There was a couple of divisions offset or three divisions or four divisions offset or something.
+TEXT: It was quite large. Um, so the DC offset by default from the factory out of the box seemed to be really quite large, but then I ran the calibration function, which is in here somewhere.
+context after: I won't go through it now cuz it does take some time, but I ran the uh Oh, I No. Okay, so I won't go through it, but I ran the self cal and it got rid of the DC offset there.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (explains)
+context before: Shift it. Whoa, look at that. It's shifted down. That's right. I remember now. Yeah, it wasn't the It's not like the signal failed. Yeah, it's all coming back to me.
+TEXT: Yeah, look, the DC Yeah. Yeah, look. Look at that, the DC shifted. We're in DC mode, right? We're in DC coupling. And DC coupling and all of a sudden, yeah, look, it's gone negative.
+context after: So, there's something wrong with the DC offset. So, yeah, if I put both to the same level there, I can cheat here and just set it to uh line uh triggering so we can at least see the waveform.
+
+[1355] EEVblog #1355 - NEW Siglent SDS1104X-U $399 4CH Oscilloscope Teardown — Dave Jones (explains)
+context before: But, that makes no difference whatsoever. Uh So, what I've got is I've got the uh peak-to-peak and the RMS of uh channel one and channel two. But, I've done a video on this.
+TEXT: The RMS value is not the correct way to actually measure noise, cuz it'll take into account the DC offset in here. And uh yeah, as I said, I've done a whole separate video on that.
+context after: It's very interesting, hasn't I don't think it's cracked 50,000 views, but it's a fascinating watch. So, I'll definitely link that one in here. Watch it. Explains all about uh the traps in RMS uh noise measurement and standard uh deviation.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (explains)
+context before: Then we can swap between the two channels, right? Yeah, well, yeah, look. Yeah, look. The DC offset. I didn't even notice that. Yep. Yep. So, we've got actually got a DC offset problem on both channels.
+TEXT: So, the sampling seems to work. The ADC's working. The triggering system's working. The uh you know, everything seems to be working, but we have a DC offset issue on both channels.
+context after: That's annoying. Um so, there's probably something common to That's weird cuz I would have expected the DC offset to be generated when you you know, turn your vertical position control here.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: Um most of the oscilloscopes are going to have with an input divider, they're going to have enough um DC offset range to do that. Although, something like this uh power rail probe like a hundred bucks, you know, really good value.
+TEXT: It can do up to plus minus 24 volts um offset. And uh you saw this active probe, even though it's a couple of thousand dollars, it can do like uh yeah, plus minus 20 volts offset.
+context after: So, you do get the higher offset uh advantage there. But, you know, using your basic um probes that you already have, no worries. Anyway, if you like that video, please give it a big thumbs up.
+
+[1609] EEVblog 1609 - Composite Amplifier Tutorial + Practical Demo — Dave Jones (explains)
+context before: So, what can you do? Composite amplifier, of course. So, let's say you needed your one you know, standard 1 meg input impedance here. Well, you can choose your A1 amplifier here to do all the DC precision.
+TEXT: So, you'd select it for, you know, very ultra-low DC offset, low drift, low noise, everything else, right? So, this could handle your DC and low frequency stuff, but it's no good.
+context after: It's only going to work, I don't know, up to a meg or something like that, right? It's no good for the 1 GHz that you want. Well, you can have a DC path here and an AC path through the AC coupling cap C1.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: No worries. But only if your scope can actually do the 5-V offset required. And that's the important point. But of course, if you're using a 10:1 probe like this, you are attenuating your signal 10:1, but that means your in this case 5-V signal is down to 500 mV.
+TEXT: So, your scope only needs 500 mV offset in order to do that. And I'm pretty sure almost every scope out there is capable of 500 mV. I think everyone in the lab I've got here is.
+context after: And if you try and capture the signal without using any DC offset, I've captured it at 1 V per division and shifted it down with an 8-bit oscilloscope, old school like this, yeah, you can see the individual bits.
+
+[1521] EEVblog 1521 - Common Mode Rejection Ratio (CMRR) Explained & Measured — Dave Jones (explains)
+context before: Doesn't matter. RMS is, you know, it's better. It's more accurate. But, you might think that we use this RMS value here. And uh what's that 1.4 mV like that.
+TEXT: But, I've done a video on this where that RMS value, that includes any DC offset component. So, that's not quite what you want. So, let's go into the measurement uh menu here.
+context after: Unfortunately, they don't have it in the basic category. You've got to go down to vertical there. There you go. Standard deviation AC RMS. I've done an entire video on that.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Whereas AC, if you switch it to AC coupling here, then it removes the DC component. I.E. So, only frequencies from like a you know, a couple of tens of hertz upwards are displayed.
+TEXT: So, if you've got an input signal here that is offset by a DC amount, in this case 1 volt, if you turn on AC input coupling, then it simply removes the DC component like that.
+context after: Pretty easy. I think everyone understands that. So, that's basically how your inputs work. We've got an input amplifier here, which you can select AC or DC coupling. Do you wish to remove the DC component?
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (explains)
+context before: That's annoying. Um so, there's probably something common to That's weird cuz I would have expected the DC offset to be generated when you you know, turn your vertical position control here.
+TEXT: It adds a DC offset value to the signal being measured and I thought that would have been generated within the channel itself. So, oh, we just saw a reversal direction there.
+context after: So, slight drift between the 50 hertz mains and the 1 kilohertz internal. It's going to go back. It's going to drift back. Lovely. Anyway, that's fascinating. I've done a video on clock drift actually.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: Is that really there? Uh there is no ability to set DC offset there. So, is that like I've got to assume it's really there? I mean, that's not good if it's actually there.
+TEXT: Like that's that's significant. We're 200 mV per division. We got like 250 mV offset or something. I'll verify that on a real scope. Sure enough, that's got a huge offset.
+context after: That's like 400 mV offset there. Um why does it have an offset? That's nuts. And check out all this um burst noise on here. And no, that's not because this scope isn't grounded.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: In fact, the DC offset that we've got here is not coming from the oscilloscope, it's coming from this active probe. This active probe here actually has the ability to go to I think it can do a 12-V offset.
+TEXT: Let's go to 13, see if it can do that. Nope, the control is at its limit. It can actually do plus minus 12-V offset. But, that's not the oscilloscope hardware doing that.
+context after: That is a built-in DC offset of this active probe. And you'd want to want to be a decent because, you know, that's many thousands of dollars. Just for the probe.
+
+[1072] EEVblog #1072 - KRK Rokit 6 Studio Monitor Speaker Repair — Dave Jones (explains)
+context before: So, but that doesn't mean that the source of the oscillation is coming from the preamp board and it's being fed in there. It could be the fact that, you know, it's not switching the relay in there and it's not turning it on.
+TEXT: I don't know, but there is a DC offset on that output. Certainly. Hmm. Anyway, this is interesting. If we turn it off, listen, goes down down down. Maybe you can hear it.
+context after: Hang on. That was like a little farty noise coming from there as you switched it off. And yep, I plug it back in and it's back. And I've cut out all the black gunk off between all the tops of the capacitors on there, just in case there's like three different areas where the black gunk was uh shorting out the tops of those cans.
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (explains)
+context before: And of course, what we expect in here because the head is going to have an headphone at headphone a head amplifier on it. Obviously, you want to amplify the low-level stuff right at the head and then it's going to have a cable drive which drives this and it's going to have just have a level converter and it'll do some shifting as well cuz it's got that functionality that shifting
+TEXT: functionality as well. So, that's going to add a DC offset to you shift the output and that will go into there like that. So, maybe that's what that's driving over there.
+context after: Perhaps, I don't know. Anyway, let's take that off. There we go. And yep. As I I didn't expect to see any circuitry on the bottom actually at all, but we do.
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (explains)
+context before: Let's plug this probe back in and see if that's any different. Yep, there you go. We've taken out the little DC component offset that we actually had in there.
+TEXT: Now, it's bang on. There's no additional DC component in the mains AC signal. But of course, we can actually change that DC offset there. We can shift that. Like, way.
+context after: Whoop, it's gone cuz it's not triggering anymore. It's gone out of our trigger window. So, there you go. We can just shift that like that. So, that's beautiful. You can see the DC component change there.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: And you can see here that we can adjust the 5-V the offset the DC offset on the input of our oscilloscope to that 5-V. So, it gets rid of that 5-V DC and we adjust the offset it'll come in soon and there it is.
+TEXT: And then we can get it on the input like that. But, oscilloscopes are not magic. Not all oscilloscopes are created equal. Not all of them have the DC offset required.
+context after: In fact, the DC offset that we've got here is not coming from the oscilloscope, it's coming from this active probe. This active probe here actually has the ability to go to I think it can do a 12-V offset.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: There we go. Right, and let's trigger off channel two. So, trigger mode auto rising trigger channel channel two. There you go. It just froze well, it locked in and you go outside of the range.
+TEXT: Yeah, you go just outside the so the trigger value seems to be pretty accurate there. Okay, it looks like that we have significant DC offset on that signal there.
+context after: You can see where the ground is. You can see up there where it's uh Oh, it's it's quite off. I need to change the trigger back. So, yeah, why do we have that DC offset there?
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (explains)
+context before: So, let's actually do that. So, we'll just disconnect that. We'll hold that down. It's going through auto zero. The LED's on. And beep beep beep, it's done its auto zero business.
+TEXT: Let's plug this probe back in and see if that's any different. Yep, there you go. We've taken out the little DC component offset that we actually had in there.
+context after: Now, it's bang on. There's no additional DC component in the mains AC signal. But of course, we can actually change that DC offset there. We can shift that. Like, way.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: I just it's there and I wanted to show you. And the actual noise here we've got our AC noise here. I've done a whole video on that and how you've got to choose that correctly.
+TEXT: So it eliminates the DC offset here and we're getting 782 microvolts over the full 200 MHz bandwidth. And I've now got a 200 Oh, I've now got a 333 MHz span.
+context after: You can see at about 200 MHz it starts to fall off because well, this thing only has a 200 MHz bandwidth. So you expect the bandwidth to start falling off there, but that looks pretty good, you know, at around about like 80 minus 80 dBm noise floor or something like that.
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: So you don't want to go using AC coupling. You want DC coupling but therein lies the problem. Take for example the 5-V rail that we're measuring on this Raspberry Pi here.
+TEXT: You've got 5 V of DC offset because you don't want to use your AC coupling mode which removes the DC offset. You want to include that 5 V DC.
+context after: So that signal on your oscilloscope we're using the active probe here DC coupling only. There's our ground where it 1 V per division, 1, 2, 3, 4, 5. Sorry, you can barely see the graticule on there but five divisions and there's the information that we want to measure.
+
+[1560] EEVblog 1560 - TIP: Use Your Arb Gen as a High Resolution DC Voltage Source! — Dave Jones (explains)
+context before: So, that's two orders of magnitude better than the best power supply I've got in my lab here. Now, it's not magic, of course. There's a couple of issues which I'll go through.
+TEXT: The first one is that usually they will have a DC offset. This one's not bad, so you can see it's a 25 microvolts offset if I set it to zero.
+context after: But, it can be substantially higher than that. This Rigol over here, for example, set it to 0 V, you switch it on, and you can see that it's got like a 500 microvolt offset or a 0.5 mV offset.
+
+[OBOgiMA89Ks] My Keysight 1000X Oscilloscope FAILED :-( — Dave Jones (opinion)
+context before: 
+TEXT: Hi, I just thought I'd show you something with my Keysight 1000x scope here. Check this out. User calibration failed. Because I had an issue with the DC offset on this thing, and, like, the firmware was way behind, and I thought, oh, OK, I'll, like, do the user calibration, which takes about 7 minutes.
+context after: It's very comprehensive, it generates, like, its own internal test signals and it, like, you know, it calibrates, like, the channel offset, the channel gain, and all sorts of weird and wonderful stuff. So, you know, it really is fantastic, but I ran the user calibration,
+
+[OBOgiMA89Ks] My Keysight 1000X Oscilloscope FAILED :-( — Dave Jones (opinion)
+context before: it up, system concerns detected, instrument is uncalibrated, yeah, because it failed the calibration, like, the user cal, okay, wonderful, anyway, let's feed in a, so let's feed that right in the middle, whoa, look at that, 5 volts and 10 volts per division, wow, look at that, that's
+TEXT: seriously, that is, that's failed big time. Yeah, 2 volts, yeah, and here we go, you can see that DC offset, shift like that, the waveforms, like, you know, it works, but it's completely shifted, so yeah, this is one sick puppy, I don't know what's wrong with it.
+context after: Alright, so let's just run that calibration again, you've actually got to go into options here, auxiliary and cal protect, so you've got to disable the calibration protection, and then you've got to go into service here, and then start user calibration, and boom, there
+
+[369] EEVblog #369 - Rigol DS2000 Oscilloscope Playing Around — Dave Jones (opinion)
+context before: I've naturally put my hand there on the corner of the scope like that and I'm I'm I'm stop and turn to single shot mode all the time. It's really rather annoying.
+TEXT: Ah, boy. Anyway, the first time I got this scope turned it on and wanted to check out the 500 microvolts per division and there was quite an offset. There was a couple of divisions offset or three divisions or four divisions offset or something.
+context after: It was quite large. Um, so the DC offset by default from the factory out of the box seemed to be really quite large, but then I ran the calibration function, which is in here somewhere.
+
+[1515] EEVblog 1515 - Dumpster Tektronix TDS540D 500MHz Oscilloscope LCD Upgrade — Dave Jones (opinion)
+context before: The screen isn't as bright. I like if you turn the brightness up, it just appears like like the backlight and it fades out and stuff. So, you know, it's okay, but it's you know, it's nothing to write home about.
+TEXT: Anyway, the good part about it is is that it is functional. There's channel one. There's a significant offset, actually. Channel two, significant offset. So, I might have to run through the Three's got an offset as well.
+context after: And four, might have to do there's a couple of more traces in there. I got some math waveform on or something. Let's turn DPO mode on. Uh, which works better in color, of course, but then it it drastically drops the memory.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (opinion)
+context before: Looks like it goes up in 20 nanovolt 20 microvolt uh steps. Nanovolts, God. And then four, eight, no velocity keys on that at all. One thing I don't mind is the uh offset there.
+TEXT: The offset leaves a tiny little bit of offset at 2 mV. I don't know whether or not it has a calibration routine, but as I step up the uh vertical gain there, like oh, it just heard a relay click from 200 to 500 mV.
+context after: And uh but the DC offset didn't uh shift. So, that's pretty good compared to like the 01 uh one we tested in the last video, for example. That's a winner.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (opinion)
+context before: And then yeah, it screws up the DC offset and looks like for all the world like a hardware failure. Like I thought this was a hardware failure. And like my mind instantly went into hardware mode and it well, it's well technically was hardware but not in the way that you'd expect.
+TEXT: Like user calibration and and DC offset and you know, adjustments between vertical levels that should have nothing to do with the product configuration. So, anyway, yeah, I don't know, programmers out there?
+context after: Let us know what you think. Have you been involved with something like this before where you've dotted all your eyes and crossed all your T's so that no matter what the users do, they can't possibly um you know, screw it up in this way.
+
+[805] EEVBlog #805 - Siglent SDG2122X Arb Generator Teardown — Dave Jones (opinion)
+context before: but I'm guessing um maybe some DC offset stuff happening around here and then there's our two output drivers there. So, that's duplicated exactly down on the second channel as well.
+TEXT: Yep, I just checked these two puppies here are AD8512A's. They're just you know some sort of like almost jelly bean low noise JFET op amps. So, as I suspected most likely doing DC offset functionality.
+context after: So, there you have it not much else to it. That's a look inside the new Siglent SDS2000X series. Let's go to Thanks Charles at Trio Test and Measurement for loaning this one letting us have a look and starting at 499 bucks for the specs.
+
+[1418] EEVblog 1418 - The Most EMBARRASSING Repair! — Dave Jones (opinion)
+context before: I don't know, just in case, like from a programming point of view. I don't know. Programmers out there, tell me. Is this like a a lapse in and a bit of an oversight here or is this oh, well, no, of course, you know, you dick around with the hardware, you get what you get and you don't get upset.
+TEXT: But, I would have thought that like any product configuration should not be able to screw up the calibration and the DC offset and things like that. I mean, I I don't even know how that happens.
+context after: Surely, you'd have a robust enough system so that well, if you did get into the wrong mode for insert reason here, like you have a user is around with trying to hack the thing.
+
+[805] EEVBlog #805 - Siglent SDG2122X Arb Generator Teardown — Dave Jones (opinion)
+context before: There we go. So, clearly what's going on here with the one channel like I got our DAC here and this is a current output DAC by the way. So, we've got ourselves a massive any Allison passive network here and this is got to be a current to voltage amplifier and then we've got our real high bandwidth voltage amplifier here which we looked at and then probably I haven't looked at these two
+TEXT: but I'm guessing um maybe some DC offset stuff happening around here and then there's our two output drivers there. So, that's duplicated exactly down on the second channel as well.
+context after: Yep, I just checked these two puppies here are AD8512A's. They're just you know some sort of like almost jelly bean low noise JFET op amps. So, as I suspected most likely doing DC offset functionality.
+
+[1290] EEVblog #1290 - Hapbee: Anatomy of a Snake Oil Product — Dave Jones (opinion)
+context before: So, it does actually talk to the app and things like that. Um it's got a TI class D audio amplifier in it. This drives the coil, which is presumably right around the band on it.
+TEXT: And apparently, um that coil's not even wired up properly. Apparently, there's like a DC offset issue with it or something. It apparently also has a tamper detection switch in it.
+context after: Geez, I wonder why. But anyway, you could of course measure if you had one of these, you could actually measure the magnetic field. Even though it's incredibly small, as we might mention.
+
+[1515] EEVblog 1515 - Dumpster Tektronix TDS540D 500MHz Oscilloscope LCD Upgrade — Dave Jones (opinion)
+context before: I don't I don't know what the front end's like on these really drift. Yeah, I don't I don't recall um, them being that bad. Don't recall ever being an issue um, for the older ones I've used.
+TEXT: Oh, yeah. Yep, there it goes. I'll I'll just run it just to see if the uh, DC offset goes away. Who cares if it drifts again, you can just rerun it as many times as you want.
+context after: Well, that's finished and yep, that fixed the uh, DC offset issue as you'd expect. So, yeah, no worries. Can we change the vertical on that? Looks good. We can go right down to 1 mV per division.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (opinion)
+context before: You can see where the ground is. You can see up there where it's uh Oh, it's it's quite off. I need to change the trigger back. So, yeah, why do we have that DC offset there?
+TEXT: Is that really there? Uh there is no ability to set DC offset there. So, is that like I've got to assume it's really there? I mean, that's not good if it's actually there.
+context after: Like that's that's significant. We're 200 mV per division. We got like 250 mV offset or something. I'll verify that on a real scope. Sure enough, that's got a huge offset.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (mention)
+context before: And um here's the Texas Instruments forum again. Um apparently there's an offset. They they made a silicon change and the off there's an offset problem there that if you have a sustained offset it can offset voltage which you'll have on the front end of a chip which this of an oscilloscope which this chip's used in then um it can it can damage the chip and there's people
+TEXT: on the forum who've actually um recognized that and there's a response from um TI here one of the people that worked on it so their forum's quite good um but yeah so there's some sort of DC offset anyway another rabbit hole there from a potential change.
+context after: And it's not just a process change. They've actually changed the design of this thing. So here's the old one over here. They actually gave you, this is the 2015 version.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: Like it's almost as if it's in an average sampling mode or something. That, that's really quite weird. Anyway, there's six seconds, uh, per division. It's measuring it. A hundred megahertz, but, uh, 460, uh, 470 millivolts. Um, it's a four volt peak to peak signal.
+TEXT: So we're, looks like we're not getting our hundred megahertz, uh, bandwidth. Of course, a bandwidth of a scope is specified at 3dB down. So, uh, 0.707 of four volts. Get your calculator out. You can work out that. A little bit of, uh, DC offset there.
+context after: So let me wind the frequency down. Yep. It's going up. Let me, whoa. Have we got an averaging mode turned on? Hi, this is the T 800 model day from a few days into the future, because I actually, uh, finished this video and I released it to my patrons,
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (mention)
+context before: I've got four function generators set up here with different DC offsets, but just assume that we're probing a circuit. We don't know what's going on. We want to find out what happens, okay?
+TEXT: Out Look, our waveform's nice and triggered here, okay? We set our trigger level where we want, but because we've got AC triggering, watch what happens if I change Look, to a different signal with a different DC offset.
+context after: It still reliably triggers off that. No problems at all. It's a different waveform. Uh it could be a different frequency or whatever. Let me try a third signal that we're probing.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (mention)
+context before: It still reliably triggers off that. No problems at all. It's a different waveform. Uh it could be a different frequency or whatever. Let me try a third signal that we're probing.
+TEXT: Look, it's a higher frequency. It's a different DC offset. We're still automatically triggering on that. Fantastic. And if I choose another signal, even higher DC offset again, once again, it's still triggering.
+context after: But look, if we switch this down to DC mode, what? Useless. There's the third signal. Look, it briefly showed up there for a second. There's our second signal. Briefly showed up for a second.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (mention)
+context before: I've got it on AC coupling, okay? So, we're going to see the advantage of it. Input is DC coupled, okay? So, we'll be able to see DC offset. What I'm going to do is I'm going to probe four different signals.
+TEXT: I've got four function generators set up here with different DC offsets, but just assume that we're probing a circuit. We don't know what's going on. We want to find out what happens, okay?
+context after: Out Look, our waveform's nice and triggered here, okay? We set our trigger level where we want, but because we've got AC triggering, watch what happens if I change Look, to a different signal with a different DC offset.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (mention)
+context before: That's just nuts. Absolutely nuts. Anyway, I'm not absolutely not happy with that at all. You see the ALC in kicking in there. Really going to town there. And anyway, it's just Oh, man.
+TEXT: I hate this thing already. And I'm assuming that this little marker over here is the trigger marker because it's got DC offset, but it doesn't seem to be a way to actually shift it.
+context after: There seems to be no vertical offset adjustment at all. And here we go. We'll call up the menu system. You use this power symbol up here and that calls up the menu like that and these ones actually cycle through the menu.

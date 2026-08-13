@@ -1,0 +1,41 @@
+# i2c
+
+I²C, commonly written I2C, is a two-wire serial bus using SCL for clock and SDA for data, with open-drain drivers and pull-up resistors so that up to 127 addressed devices can share the same pair of wires.[fm13tIe5wSc] It matters because it adds sensors, memory, converters, port expanders, display drivers, and power-management parts without consuming extra microcontroller pins; the closely related SMBus is found in the same class of equipment, including computer motherboards.[fm13tIe5wSc][259][912] Its performance is deliberately modest: the lowest standard speed is 100 kbit/s, but that and the faster grades are sufficient for most sensors and data-acquisition traffic.[fm13tIe5wSc]
+
+## Electrical model and protocol shape
+
+The bus works because devices only drive the lines low; when no device is driving, pull-up resistors return SCL and SDA to the supply rail.[fm13tIe5wSc] A bit-banged implementation therefore has to make its pins high-impedance rather than push-pull high, since actively driving the line high would not meet the open-drain requirement.[9hMsNOwY5AQ] Two resistors pulling up to the power rail are a recognizable schematic signature of the interface.[fm13tIe5wSc]
+
+A transaction begins with a start condition in which SDA is pulled low and then SCL is pulled low, after which data is sent.[fm13tIe5wSc] The address field is seven bits, followed by an acknowledge phase, and the data line is released at the end of a data byte so the receiver can acknowledge it.[fm13tIe5wSc] Between address and data blocks the clock can be held low while SDA is allowed to rise, so a software writer routine mainly has to emit start and stop conditions around clocked-out 8-bit bytes.[fm13tIe5wSc] A missing acknowledge is diagnostically meaningful: serial triggers can be armed on start, stop, and missing-acknowledge conditions, and instrument fault logs report events such as no device acknowledging on the bus.[149][536]
+
+## Speed grades, pull-ups, and signal integrity
+
+I2C had four speed grades until a fifth was added in 2012, with operation reaching the megabit range.[fm13tIe5wSc] A worked sensor example is an unrealistic 32 kHz, 8-bit accelerometer: 256 kbit/s of sample data becomes about 512 kbit/s if half the frame is assumed to be address overhead, still below a 1 Mbit/s mode.[fm13tIe5wSc]
+
+Pull-up value is the main analogue design choice because lower resistance gives faster edges, while higher resistance saves current but slows the rising edge.[fm13tIe5wSc] A common recommendation is 2.2 kΩ, moving down toward 1 kΩ when the bus must run faster or when more devices add capacitance.[1208] Adding devices increases bus capacitance and changes slew rate enough to miss data bits, so a 10 kΩ pull-up can become marginal with five devices on one bus.[259] Long traces are tolerable because I2C is not a critical high-speed routing net, but extra capacitance from a long run over a ground plane is countered by reducing the pull-up value.[1323] At the extreme, bus capacitance still dominates: very fast claims such as 10 MHz operation make a nominal 2 kΩ-class pull-up potentially inadequate.[991]
+
+Slow rising edges are not merely ugly; if a clock input exceeds a maximum rise/fall time such as 500 ns, the result can be metastability, multiple clock pulses, and otherwise unspecified behaviour.[1365] A captured I2C pulse that fails to reach the expected high level is therefore a rise-time/pull-up problem before it is a protocol problem.[876]
+
+## Typical uses
+
+The bus exists to economize pins: five devices can hang off one SDA/SCL pair, and moving functions from SPI to I2C can free several microcontroller pins.[259] Choosing an I2C LCD instead of a parallel display reduces the pin count to the clock/data pair plus a reset line in a typical small design.[232] A four-pin expansion header carrying SDA, SCL, power, and ground is enough to attach further devices.[238]
+
+Common device classes include RTCs, EEPROMs, temperature and humidity sensors, magnetometers, DACs, ADCs, digital pots, port expanders, LED drivers, and current/voltage/power monitors.[C1on-LaIsCA][912][377][761][251][1453] A DS1307 RTC can be driven by bit-banged I2C and its battery-backed SRAM can even store small amounts of application data.[C1on-LaIsCA] I2C EEPROMs expose the usual power, ground, three address pins, write-protect, SCL, and SDA, and are routinely used for calibration data.[912][Xg_niU86bhI] A bidirectional current/power monitor with an I2C interface can offer 0.5% accuracy over temperature, 16 programmable addresses, and 0–26 V measurement range.[259] A PCA9632 LED driver provides 16 channels with 8-bit PWM and totem-pole outputs rated to 25 mA per LED.[1453]
+
+Audio parts often separate control from data: a codec may use I2C to set registers and operating data while using I2S for the audio stream, and the two interfaces should not be conflated.[271] Some RF and radio parts allow a choice of I2C or SPI programming rather than requiring both.[1275] Secure elements may present an I2C interface while keeping the cryptographic operations and key storage inside the chip rather than sending secrets across the bus.[Yky9yQwZALM]
+
+## Implementation and layout practice
+
+A microcontroller does not need a dedicated I2C peripheral; software bit-banging is practical in tens of lines of code.[912] Even so, when a hardware I2C peripheral is available on the needed pins, using it is preferable to bit-banging yet another port.[238] Bit-banging remains useful when there are not enough serial ports, when multiple devices share the same address and must be placed on separate buses, or when learning the protocol by implementing the algorithm directly.[9hMsNOwY5AQ][fm13tIe5wSc]
+
+I2C traces are normally routed after critical clocks and data lines because the bus tolerates length and is not edge-rate critical in the way high-speed interfaces are.[1323] Layout effort should still avoid pointless layer changes and via counts, since only two wires are involved and simpler routing leaves room for bypass capacitors and priority signals.[1323] Some I2C port-expander or peripheral chips provide internal software-defined pull-ups, making external resistors optional but board-space-consuming.[245]
+
+## Debugging and failure modes
+
+Useful instrument support includes triggering on start and stop conditions, missing acknowledges, specific addresses, and data frames, with real-time decode showing address, read/write direction, ACK/NAK, and data bytes.[149][436] A start-condition trigger is also the practical way to capture intermittent analogue defects such as runt pulses on SDA or SCL.[240] A tri-level or otherwise non-binary waveform is evidence of bus contention rather than normal two-level digital behaviour, and the fault can be isolated to one device even when no addresses are duplicated.[240] Widely spaced I2C packets consume deep capture memory, because everything between packets is still sampled.[44]
+
+A connected SCL/SDA pair is not proof of traffic; some products route the pins through while showing no activity across power-up, shutter events, or normal operation, leaving the bus apparently unused or reserved.[670] Conversely, assuming a control travels over I2C can waste troubleshooting time when the actual switch is carried back on a dedicated line through jumpers and ribbon cable.[1672]
+
+The bus is also used for authentication and accessory identity, which creates a distinct failure class. A battery pack with SDA and SCL contacts can contain an ID chip, and a replacement lacking the correct ID or spoof can produce an invalid-battery style error.[1370] Powering such a device from a source without the I2C identification device can trigger a repair-required state even though the pack otherwise supplies energy.[370] Where the peripheral side supports a secure key exchange over I2C, replacing it with a simple signal simulator stops being a wiring exercise and becomes substantial reverse-engineering work.[1462]
+
+Philips originated I2C, which is why older Philips silicon and the I²C trademark recur in consumer and instrument hardware.[603][1450]

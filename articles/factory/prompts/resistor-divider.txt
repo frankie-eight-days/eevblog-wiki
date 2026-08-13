@@ -1,0 +1,533 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: resistor divider
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 100 passages drawn from 60 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# resistor divider`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1415] EEVblog 1415 - Reverse Engineering the DP10007 Differential Probe — Dave Jones (explains)
+context before: So, yeah, anyway, and they've got dual compensation down here like this, which is, you know, going to town a bit. Don't know why they need the dual compensation, but But anyway, like I haven't gone in like measured part values and stuff like that.
+TEXT: We just really want to look at the topology of this thing and it is a pretty bog standard uh you know, implementation of a high-voltage differential amplifier. The high-voltage straight The high-voltage resistors like this, the lower side of the resistor divider completely matched um positive and negative and this is Once again, have a look at that video of how a differential probe works.
+context after: I go into a bit more detail, but there you go. Um that's Yeah. Interesting. Anyway, I don't know what all this stuff and what's going on here. I don't It's strange.
+
+[730] EEVblog #730 - Thin Film Resistor Networks — Dave Jones (explains)
+context before: So, let's try and measure this one. And this is the big serpentine one. Bingo, about 9.9 meg. That's what you'd expect. And then if we check the other one here, we expect a very low value.
+TEXT: Bingo, about six odd K. So, a very big resistor divider here. And the reason why they're actually going to use a mix of different geometries inside thing as we've seen the ladders and the serpentine traces and all sorts of other weird and wonderful trim techniques is that so it reduces the sensitivity of the final value to the amount of material that gets laser trimmed out.
+context after: It just means that they can, you know, get progressively closer and finer towards the individual laser value that they need in the end. And they can do this on an individual resistor basis and a ratio basis as well based on these resistor networks.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (explains)
+context before: I And then they had MOSFET switching on the different ranges on the different current ranges. I guess I got carried away with that and I got carried away with talking about like how lovely all this insulation stuff is and the insulation sheets on the other side and it's otherwise very apart from the quirk that was happening here, like, you know, quite nicely designed and laid out if somewhat
+TEXT: basic. I forgot to mention though, there is no zero zilch nada input protection on the volts ohms amps jack. Let's follow the money. It goes straight into this I don't even know if this is a ceramic resistor divider or whether or not they've just got the actual individual resistors in there like this, but it basically goes straight into that resistor divider network here.
+context after: And there's nothing else. There's no PTC input protection, no positive temperature coefficient resistor. If you don't know what that is, usually it's a a series resistor in series with the input here.
+
+[1521] EEVblog 1521 - CMRR Full Edit — Dave Jones (explains)
+context before: So, that's how you measure common mode noise. I hope you found that, uh, interesting and informative and it's not often done. You just take it for granted from the, uh, data sheet, but if you want to verify this, you design in your own amplifiers, doesn't have to be differential probe, could just be any differential, uh, amplifier, um, or even like a regular, you know, op amp, regular amplifier.
+TEXT: You might have the common mode rejection, uh, ratio. By the way, um, it's, uh, you know how I mentioned the resistor dividers are the main contributor to that. If you try and actually build up a circuit to measure the common mode rejection ratio of your op amp, for example, you've just designed a new op amp, you know, you work at Analog Devices or whatnot and you want to
+context after: measure the common mode rejection ratio, well, it's going to dominate via the resistors there, but you can actually do a technique, maybe I'll do a second, leave it in the comments if you want to, uh, see a video, um, showing where you can actually, uh, eliminate the resistors in the circuit, um, from the measurement and you can just get the pure, uh, common mode rejection ratio of
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (explains)
+context before: it driving the LED via the anode there. Now if we have a look at our yellow waveform here the charging that's the main capacitor that's the one 3.3 micro farad capacitor charging up via the 200k resistors there.
+TEXT: So 200k in series via 1 micro farad and that's the charging waveform, so you can use your formulas to calculate how long that's going to take to charge up, and then it is when it reaches the threshold voltage, if we have a look at our internal block diagram of a 555, the comparator, because of the 555 K resistors in there, it's 2/3 the threshold comparator is 2/3 of the
+context after: supply voltage. In this case, the supply voltage is 9 V, so our threshold voltage is going to be 6 V. And is it? Here's ground. We're at 2 V per division, 2 4 6.
+
+[1361] EEVblog #1361 - Dodgy Tactile Switch TEARDOWN — Dave Jones (explains)
+context before: It was rather interesting and it has a dodgy contact in it. It varies anywhere from like, you know, a couple of like it should be like almost zero ohms really.
+TEXT: But it varies anywhere from a couple of ohms even if you press it really hard up to many hundreds of ohms and it caused a major problem if you design your switch matrix in such a way that it uses a single pin on your microcontroller and then analog to digital converter switches in different resistance values in the pull-up resistor in a resistor divider in this case.
+context after: And it it's a neat way, of course, to sort of an age-old way to get multiple switches onto a single pin of a microcontroller or over one line in this particular case and like you can do it over one line and stuff like that.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: So, I just cut and pasted that code from chat GPT into Arduino here. You compile it and it compiles just fine. There's no errors whatsoever. It doesn't mean it's going to work, but there's no syntax errors.
+TEXT: All right, let's just power it up and try it. I know this setup's a bit how you doing, but it's good enough for Australia. Now, as you saw in previous videos, we need a 2-V power source for this because there's no drop resistors on there and because we've got a 5-V TTL level out of the Arduino, I've had to put in a budging a resistor divider in there.
+context after: So, I've just got like a 1K and a 680 or whatever and that will drop it down to like under 2-V to actually go to the logic on here and I've grounded the common cathode pin.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: It's actually a 10-bit 50 meg sample per second ADC. I didn't readily find an English uh version of this, but one may be available. There's the um architecture for those playing along at home, and there you go.
+TEXT: So, yeah, 50 MHz um bandwidth, and there they're just running through a resistor divider ladder. Yeah, there's nothing on the that was over here. So, there's no compensation on that uh resistor network there there, but that'd be an attenuator, and there's some compensation possibly uh across there, but yeah, it's just sampling that in real time.
+context after: No worries. Good enough for Australia. Good enough for an 80 buck uh meter. You know, the proof's in the pudding how well it's implemented. Anyway, as I mentioned uh metal threaded inserts, which which is uh really nice, and then we do have uh some grooves around here for uh blast protection.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (explains)
+context before: Why? As you I can't see any sort of, you know, voltage isolation issue with that, really. But anyway, they're they're serious about how they want to form those legs and make sure there's an even leg each side.
+TEXT: Fascinating. There you have it, a 0.22 microfarad 1,000 V peak high voltage cap tucked away in there. So, that's directly coupling. Like, that's the AC The AC input comes across here and directly AC AC couples through there and then is divided by that resistive divider we just saw and goes into our true RMS converter down in there.
+context after: Oh, and by the way, I checked this port here, which I thought might have been like an RS-232 serial debug port for the Linux or whatever operating system they're using.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (explains)
+context before: And it it it just doesn't seem like it didn't turn off or on if I hold it down and then release it, it'll turn off, but it's not supposed I don't believe it's supposed to work like that.
+TEXT: So, anyway, somebody in the previous videos um said, "Oh, they're pretty sure that these uh the keypad on this thing with all the buttons works as a like a ladder divider, basically a resistive divider, and that might explain uh you know it could be the contacts could be dodgy, it could be picking up noise from somewhere.
+context after: Like who knows? You know, there's uh various things that can go wrong with like you know high impedance ladder uh dividers like this. So, I thought we'd actually you know take it off the wall cuz I want to move the damn thing anyway um and have a teardown and then just uh investigate possible uh fix for this or or if I I might want to put it back and then I could actually design
+
+[1246] EEVblog #1246 - Dumpster TV to Retro RGB Monitor Conversion — Dave Jones (explains)
+context before: But this is a very different chip to the Motorola one that we've got. And not only that, but it's not it look it shows that it's on the main board.
+TEXT: So it's definitely like that like the pin outs are all entirely different. It's not like a compatible version from Motorola or whatever. Very different chip. So this one uh you can see that the RGB lines they come in here and they come from via these resistor dividers here from the our system control processor over here.
+context after: Interestingly, the IC number is the same. IC401. It's IC401 on here as well. But it's a very different beast. It's absolutely remarkable. Um yes, I am aware of the 8-bit guy's video on converting monitor into I think it was a Samsung into an RGB monitor.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: Well, if we had, you know, a 10k and a 100k and we're sensing it right near the positive or here, sensing right near the positive rail, it wouldn't have worked before with those um at even at 5 volts because our it would have tried to sense the input there up near 5 volts.
+TEXT: So, this technique doesn't actually help down at 2 volts. We'd have to shift everything. It gets real nasty. But, at slightly higher voltages, it's always going to help you when you're trying to detect up near the peak range because instead of the input having to detect up here now, it's only got to detect down here.
+context after: So, it gives you that extra voltage margin in there. And just to prove that, what I've done is I've removed my divider there and I've swapped these two resistors and these two around so that the 20k 22k is on the top and the 100k is on the bottom.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (explains)
+context before: And you're going to get And you can potentially get a different response depending on which volts per division setting you've got, depending on where in the voltage divider ladder it is.
+TEXT: If you're right at the top tap, of course, then you're going to get, right, a potentially better response than if you're getting somewhere other tap down uh voltage divider, and then you're talking about compensating your resistive voltage divider and the pulse response of compensating the resistive divider there.
+context after: And then you've got low and high frequency compensation, and you know, all sorts of variables that goes into that. So, if you want to test an oscilloscope properly, you would have to actually test the pulse response with a known good input signal.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: Resistive voltage dividers and there's more complex voltage dividers when you start and you can get capacitive voltage dividers and non-linear voltage dividers and all sorts of stuff. Now, we're only talking about in this video resistive voltage dividers, but they're absolutely everywhere.
+TEXT: So, what is a resistive voltage divider? Well, in its most basic form, it's only two resistors like this. We've got an input voltage here and an output voltage. And as per regular convention in in electronics, the input or the input voltage in this case is on the left-hand side, the output voltage is on the right.
+context after: That's just how you draw and conceive things in electronics. Stick to it. Trust me. Anyway, it's a resistive voltage divider where the output is always some voltage less than the input and that's it.
+
+[852] EEVblog #852 - Multimeter Mass Turbulence — Dave Jones (explains)
+context before: Now, let's repeat that same thing, but with 50 mV. So, I've changed to the millivolt range here and we are, you know, 50 mV is quite low. So, you know, not all multimeters have a 50 mV range, but hey, let's have a look.
+TEXT: This one's bang on 50.00. Ah, 50.00. Geez. Liking the millivolt range. Anyway, I am recording all these. Actually, the millivolt range so far is ridiculously ridiculously spot on. So, I think what they must be doing is calibrating the millivolt range and relying on the resistor divider uh to get the other ranges.
+context after: Ah, there we are. It's getting It's got It dropped out. There's a little bit of excess charge there. So, these are all spot on 50.00. This is insane. So, yeah, this is just uh This is crazy business.
+
+[909] EEVblog #909 - Heart Defibrillator Teardown — Dave Jones (explains)
+context before: the secondary side. And this sense circuit here with these high value protection resistors, that's actually sensing the voltage directly across the capacitor bank, so these resistors are obviously providing most of the voltage drop across there, and this isn't so this only needs to be like low voltage amplification
+TEXT: and that's actually a fairly common technique, dropping the voltage across some two high value resistors there, it's a technique to what's used inside these high voltage differential probes, if you don't know you might be familiar with these things, you might think that there's some whiz bang proprietary
+context after: isolation transformer technology in there and stuff like that, no, if you want me to do a, I've always wanted to do a tear down or reverse engineering of one of these, and let me know if you want me to do it, and you'll find it's a similar thing, it's basically
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: It's exactly the same circuit as before, except I've redrawn it with the Schmitt inverters in there instead of just the block chip, which doesn't make it very descriptive at all. You've got to sort of fill in the blanks there. It's not as easy.
+TEXT: This one's a bit easier. Anyway, we've got our antenna input here, we've got our voltage detection, well, antenna, probe, whatever you want to call it. We've got just a simple voltage divider here. The value of that voltage divider will be set dependent upon the input voltage range you require, and the
+context after: threshold voltage of your Schmitt inverter here. And then it's AC coupled and pulled high, and then that's for basically when there's no input voltage there. So it's pulled high, and then the input to this Schmitt inverter goes into this diode and resistor and cap arrangement here, which sort of
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: You can't, unfortunately, do that with the uh 4040 because it's just got the single resistor like this, and you get what you get, and you don't get upset, as they tell the uh preschool kids.
+TEXT: Um but you can get the LM4041 here, which is the same basically the same part, but it has an extra pin on here. It's got a feedback, it's got an adjustment pin, and you just use the a resistor divider here, and Bob's your uncle, you can set whatever output voltage you want well within reason.
+context after: So, this is actually a good time to learn a PPM here cuz if you go into like it depends on the data sheet and they can vary like it specifies okay for the 2.5 V part here for example, it tells you yep it's it's typically 2.5 V and the tolerance is it tells you that in millivolts.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: I'm going back even more fundamental than this. Resistive voltage dividers and series and parallel resistors. I know it's incredibly simple stuff, but it's important. Trust me. If there's one bit of theory you're guaranteed to use in electronics in some form or another, it's voltage dividers.
+TEXT: Resistive voltage dividers and there's more complex voltage dividers when you start and you can get capacitive voltage dividers and non-linear voltage dividers and all sorts of stuff. Now, we're only talking about in this video resistive voltage dividers, but they're absolutely everywhere.
+context after: So, what is a resistive voltage divider? Well, in its most basic form, it's only two resistors like this. We've got an input voltage here and an output voltage. And as per regular convention in in electronics, the input or the input voltage in this case is on the left-hand side, the output voltage is on the right.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (explains)
+context before: You get four 1 meg resistors to ground. Here's the ground terminal. Here is the output reference. I haven't drawn it but output ground over here like this and this comes from my reverse engineering drawing so I'll link that one in but basically yeah, that is connected through to here.
+TEXT: So it's look it there it is. It's connected right through 4 meg resistor and they've got a low value down here 25 so it's just a resistor divider in each leg and then they've got a FET differential amplifier here and some extra gain stage times 10 times 100 selected and that's it.
+context after: That's all that's inside of one of these things but because they've got such high value resistors, you can plug them anywhere in your circuit and it's not going to cause a problem.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: But, some people might call this sort of uh oscillation caused by this uh input signal a metastable state. But, yeah, just don't confuse it with metastability, which is a different uh phenomenon.
+TEXT: So, let's take a look at our next issue here, which is noise on comparators. Now, we've got a classic jelly bean uh comparator here, the LM311, and uh we've got a reference voltage on the non-inverting input here, which is uh just a resistor divider from our 5-V uh rail.
+context after: So, two 1K resistors giving us 2.5 V reference voltage here, and the um inverting input is our input signal. Now, our input uh signal can be anything. It can be, say, a battery.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: in parallel with the resistor in circuit under test. And of course, this is exactly the same for your digital multimeter as well, but this one has a much higher input impedance, or 10 megohms, a nominal 10 megohms input impedance on most of the voltage ranges.
+TEXT: So it doesn't really affect anything, but really high impedance circuits here. But let's demonstrate. Okay, so what I'm doing is I've got a resistor divider here with 200k resistors. And I've actually tweaked them to be exactly the same. And if we go up to the top here,
+context after: you can see that we're feeding in precisely 10 volts. And what if we measure in the middle of that? It should be 5 volts, but it's not. It's 9.4.977 volts. And I'll leave those playing along at home to calculate if that is correct
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: So the power to actually move this meter movement here actually comes from your circuit under test. So in this case, 20 kohms per volt. So if you take 1 volt DC divided by 20k, that's actually 50 microamps. So it actually requires 50 microamps
+TEXT: to move that needle all the way over here. And that 50 microamps is going to come from the circuit you're testing. So if we have a look at DaveCAD here, if you're measuring a resistor divider in your circuit, for example, then your probes are going to take 50 microamps
+context after: if the meter is all the way over like that, regardless of which range you're on. So there it is. It translates to 50 microamps full scale. But what does that mean in actual terms of error? If you're measuring the voltage divider, well, you're effectively putting a resistor
+
+[713] EEVblog #713 - Voice Recognition - 1980's Style — Dave Jones (explains)
+context before: But what are they doing? Well, I actually forgot to put in the positive and the negative rail there, but we're powering this from a single 5-volt supply. This is an LM324, by the way. So we have to actually bias these up. If we had these at ground, it wouldn't work.
+TEXT: It'd be clipping. We'd need a split supply. So what do we do? Well, we just raise this value up by some DC level, i.e. we're shifting the waveform up. We're adding a DC offset in there instead of ground. We're going up to a value set by this resistor divider here.
+context after: So we've got our voltage supply, and that's going to be at some value, you know, like 2 thirds the supply value or whatever it happens to be, or half the supply value. And then they've got just some filtering on there to make sure it's a nice DC signal.
+
+[286] EEVblog #286 - Orders Of Magnitude — Dave Jones (explains)
+context before: And with these two instruments here, I can generate a voltage anywhere from 0.01 nanovolt or 10 picovolts, 10 to the power of minus 11, to 1,000 volts, 10 to the power of three.
+TEXT: And that's 14 orders of magnitude. Incredible. And one order of magnitude is important in electronics for lots of rules of thumb reason, measurement uncertainties, and things like that. Let's take an example of a multimeter measuring a resistor divider here.
+context after: We've got two resistors here. One is a fixed 1 meg resistor, which we're measuring across with our digital multimeter. And as you should know, a digital multimeter doesn't have an infinite input impedance.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (explains)
+context before: There's a potential candidate, but once again, it's not going to be any of these resistor arrays, but hello. Hello. There's a whole strip. Bingo. This is what we want.
+TEXT: Look, that looks like a resistor divider. The thicker trace there is obviously going to be ground or power, and then we've got the thin signal trace going off to a via, which then goes under here to one, you know, to some pin somewhere on the board here.
+context after: So, these, for all the world, look like resis- you know, set set resistors right next to the chip. So, if we flip it over, hello, we can access those.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: It's a split supply, of course, positive and negative, so it's plus minus 2.5 V relative to this ground point here. And uh then we've got our LED on the output.
+TEXT: We'll have our pulse uh RC pulse stretcher 10 meg 100 nF in that time constant, roughly uh a second or thereabouts. And then we've got um a resistor divider here from the rail uh giving us a negative uh 1.25 V reference and a positive 1.25 V reference.
+context after: I just chose the uh split values. It's just nice and even. We're splitting the rail in half. So, if the input signal, which is this pot here, goes above or below 1.25 V, our LED should turn on.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (explains)
+context before: And then, as I said, it can change depending on the volts per division, at what range you're actually on on your scope. Cuz it can They can have slightly different low and high frequency compensations on each range.
+TEXT: And it's not like, you know, there's a little trimmer there like back in the old days. And you used to have little trimmer pots, right? Um so that you can with your tongue at the right angle tweak the response of each of the resistor divider steps.
+context after: But even then, like you might have to have multiple compensations for high and low frequency response. And uh it's it gets really ugly. Um so yeah, just because like, you know, we saw that the Uni-T is spotted on there, it doesn't mean that, you know, it's absolutely exceptional.
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (explains)
+context before: The number was just a, you know, next in their sequence or something like that. I don't know. It's got nothing to do with it. But, by coincidence, it does have 555 in there.
+TEXT: And that's just a resistor divider in there to generate the threshold voltages. And of course, the control voltage pin is directly connected to one of those taps here. Now, what I've got is basically the same diagram that's on my 555 timer shirt.
+context after: This is the typical internal block diagram of the 555 timer, and we'll see how these modules relate to these items in here, like the threshold comparator. There's the comparator, of course, uh connected to the threshold pin.
+
+[1521] EEVblog 1521 - CMRR Full Edit — Dave Jones (explains)
+context before: And I've done a teardown um of a high-voltage differential probe down like this. I'll link it in up here and down below if you haven't seen it. And just the matching between the resistors on here is um like pretty much determines the common mode rejection ratio of this probe.
+TEXT: Because usually, like the op-amps used inside here, they're usually pretty good. They're going to have like a rejection ratio of like, you know, over 100 dB or something. Whereas, the resistor divider drops that down to like 40 or even less.
+context after: Now, a product like this HVP 70 differential probe, it'll typically have a common mode rejection ratio figure measured at various spot frequencies. Maybe, if you're lucky, you might get like a response uh curve of common mode rejection ratio because it's going to vary depending on the frequency.
+
+[1521] EEVblog 1521 - Common Mode Rejection Ratio (CMRR) Explained & Measured — Dave Jones (explains)
+context before: I'll link it in up here and down below if you haven't seen it. And just the matching between the resistors on here is like pretty much determines the common mode rejection ratio of this probe.
+TEXT: Because usually like the op-amps used inside here, they're usually pretty good. They're going to have like a rejection ratio of like, you know, over 100 dB or something. Whereas the resistor divider drops that down to like 40 or even less.
+context after: Now, a product like this HVP 70 differential probe, it'll typically have a common mode rejection ratio figure measured at various spot frequencies. Maybe if you're lucky, you might get like a response curve of common mode rejection ratio because it's going to vary depending on the frequency.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: That's our target. But R1 here, curiously, right, which we calculated the figure here of 6,250 ohms, that's great if nothing else was attached, but what do we have here?
+TEXT: Check it out. Look, up here, we have this resistor divider network directly in parallel with R1. We've got these resistors in here we have to take into account. So, we have to add these in parallel with our well, in parallel with R1.
+context after: We haven't actually calculated true value of R1 yet. We want R1. Sure, we want R1 to be 6,250, but we're not going to use a 6.25 K resistor in there because we've got all these other resistors in parallel.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (explains)
+context before: Check it out. You can see that there. But that doesn't explain why we're out. The only reason we'd be out is if like there's extra load across this divider.
+TEXT: There's some contamination under that marks. Perhaps that's causing some sort of issue. So cuz this is how you get the different ranges. You get the different ranges from this resistive divider and they put them on the ceramic.
+context after: I've done a video on that showing the like they laser trim cuz they're really stable and you can match them and then they thermally they've got really great thermal properties and matching.
+
+[85] EEVblog #85 - High Voltage Oscilloscope Probe Design — Dave Jones (explains)
+context before: Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. All right, go for your life. Okay, um the probe I was after had to measure voltages up to about 5 kV and I didn't want to buy a Tektronix uh high voltage probe for half a quadrillion dollars, so I decided to roll my own.
+TEXT: I wasn't too worried about ultra high input impedance because I'm measuring uh quite high uh energy sources with low source impedance. So, I figured I'd kick off with something with five high voltage 10 meg resistors in series.
+context after: So, I've got five by 10 meg resistors. Each of those is rated at 3.5 kV handling. And over here, since we've got 50 meg uh total load impedance over here of 50k comprising 56k fixed resistor, 1 meg worth of uh uh oscilloscope input resistance, and another uh 1 meg resistor hung off it.
+
+[1476] EEVblog 1476 - Keithley 515A Wheatstone Bridge TEARDOWN & TUTORIAL — Dave Jones (explains)
+context before: So it's a bridge configuration which of course you'll know from like a diode bridge configuration. And it's basically just four resistors like this. This is all it is with a voltmeter in the center or an electrometer in this case because we're measuring extremely low currents with this Keithley device.
+TEXT: But basically a voltmeter in the middle. So I've got a DC voltage source here and you can see that we've basically got two resistor dividers. One here, so this is one point on the divider and here's the other point over here.
+context after: And you can see that by inspection, as we've talked about in previous videos, if the ratio of this divider here is the same as the ratio of this divider here, then the voltage difference between these two points is precisely zero.
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (explains)
+context before: You're probably going to get And they're rated at the correct output voltage. And these are not adjustable voltage regulators. Like you have to actually specifically specifically get. Like this is a like this is a 1.5 V part.
+TEXT: This is a 1.8 V part, for example. These are fixed. Because there's no resistor divider in the feedback here. If there was a resistor divider, you know, aha, the it's set the output voltage is set by some resistors over here.
+context after: Um and then it's, you know, it's adjustable. But it it it could be adjustable. Maybe Maybe I'm wrong. But So, next, Max Max Linear. Max Power. So, what do we got here?
+
+[932] EEVblog #932 - How Does A HV Differential Probe Work? — Dave Jones (explains)
+context before: And the other one should be negative similar. Yep, -9.5. So, there you have it. That's inside the LeCroy AP031 / Sapphire 9001 differential high voltage differential probe. So, I hope you found that interesting just how these things work.
+TEXT: With the front end, I mean, the exact reverse engineering details aren't aren't a huge big deal. But the fact that it uses those two big resistive dividers with a differential FET front end, that's what we wanted to know.
+context after: Rather interesting little beast this one is. Ancient. I don't know the date on this one. They've rubbed off all the bloody codes on there. Anyway, this design must date back a long time.
+
+[655] EEVblog #655 - Auction Score — Dave Jones (explains)
+context before: We've got some probes. Let's have a look. There you go. We've got some 1161A's. Let me check the bandwidth of those suckers. Look at this score. This is what you're hoping you'll get when you're buying an oscilloscope at auction like this.
+TEXT: Got four original probes. Unfortunately not all the same. I've got three 1161A passive probes. These are designed for this one, but they're times 10 divider probe of course with your standard 9 meg resistor inside here.
+context after: So it's just your regular passive probe. they're 500 MHz bandwidth each. So, I've got uh three of those, pretty good probes in their own right. Um this one here though is an 1163A, also a passive probe.
+
+[1542] EEVblog 1542 - A Decade of Dumpster Diving! — Dave Jones (explains)
+context before: So, they come together and emboss your card. So, they will slam together and emboss your card. So, they've got basically the negative and the positive of that. Check out what I found in the dumpster.
+TEXT: Yeah, I heard the high tension. Nothing. Hello. Line. Works a treat. And start up. That's working a treat. There's our RGB inputs. Okay, so we're just whacking a little resistor divider there from the IBM PC Junior.
+context after: So, let's switch it on. Ta-da. There it is in all its glorious color. Thing of beauty is joy forever. That's the composite and that's the RGB. Wow, that makes a heck of a difference.
+
+[1602] EEVblog 1602 - Sony Amplifier REPAIR ADVENTURE — Dave Jones (explains)
+context before: There you go. Okay. Right. And oh, it's they're labeled quite nicely. VFD clock there, that'll be this that'll be these test points. Yes, I assume this is the pin out for over here.
+TEXT: And there you go. So more test points over here. Uh Bluetooth lead connection, yep. NFC, yep. ADC key one, ADC key one and key two. That would mean that they're using a resistive um divider uh for the key matrix.
+context after: The key matrix. So that's I'd say that's how they're measuring the using measuring the keys is via an ADC on the micro. Standby plus 5 volts, infrared, ground. 12 there.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: Common-mode input range. This applies to our op-amps as well, not just to comparators. Very key spec for an op-amp and a comparator. So, what's the solution? Well, we could just use an expensive rail-to-rail comparator that just does the business.
+TEXT: Not a problem, but, you know, it's not a jelly bean part. May not be in stock. Whatever. Yada yada. More expensive. Um we don't need to do that. We can just solve the problem with some extra resistor dividers.
+context after: So, instead of our input voltage going straight in, we actually divide it by a significant amount. So, I put in a 1-meg series resistor and a 270K to ground.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: And R2 was 10.91k or 10.909. And it just so happens that that's exactly you can make that up precisely using a 12k and a 120k in parallel. So, that's what I've built up here.
+TEXT: And our input voltage divider here, two 10ks, they can be pretty much any odd value you like. 10k is not a bad value. It's all powered, you'll notice the whole thing is powered from the battery under test.
+context after: So, here it is. Ta-da! Let's see if it works. All right. What we've got here is we've got the uh Fluke 87 measuring the input voltage here, which uh it would come from our battery, but in this case it's coming from a variable bench power supply.
+
+[730] EEVblog #730 - Thin Film Resistor Networks — Dave Jones (explains)
+context before: And there's up the top here we've got all sorts of jazz happening around here. A combination of some ladders plus some other stuff. So, weird and wonderful shapes. You can see this coming around and it's snaking back out.
+TEXT: But effectively, it's just one huge big resistor like that and that's why that's the only way that you can get the huge values like, you know, the 9 10 meg you need for these sort of resistor dividers.
+context after: So, let's try and measure this one. And this is the big serpentine one. Bingo, about 9.9 meg. That's what you'd expect. And then if we check the other one here, we expect a very low value.
+
+[1447] EEVblog 1447 - EXPENSIVE Fluke vs CHEAPER Brymen - Teardown — Dave Jones (explains)
+context before: So, yeah, the Brymen doesn't have that. And the Fluke does have bigger and expensive caps here. These won't be cheap uh for your AC uh component of those. So, yeah, they're just bigger and better and more expensive than you get on the Brymen.
+TEXT: Now, of course, a lot of the stability and accuracy in a meter comes down to the input divider network, the resistive divider network. And both of them, I'm happy to say, use a ceramic hybrid network.
+context after: Of course, Fluke are famous for using, you know, look at the little this old-style big, beefy, laser-trimmed ceramic hybrid divider. Very nice. As I said, a shielding around there as well.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: So, what is a resistive voltage divider? Well, in its most basic form, it's only two resistors like this. We've got an input voltage here and an output voltage. And as per regular convention in in electronics, the input or the input voltage in this case is on the left-hand side, the output voltage is on the right.
+TEXT: That's just how you draw and conceive things in electronics. Stick to it. Trust me. Anyway, it's a resistive voltage divider where the output is always some voltage less than the input and that's it.
+context after: It's incredibly simple because you're dropping voltage across this top resistor and tapping off the voltage from the lower resistor. So, it's always going to be less. There is no gain in this at all.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: That's just how you draw and conceive things in electronics. Stick to it. Trust me. Anyway, it's a resistive voltage divider where the output is always some voltage less than the input and that's it.
+TEXT: It's incredibly simple because you're dropping voltage across this top resistor and tapping off the voltage from the lower resistor. So, it's always going to be less. There is no gain in this at all.
+context after: So, V out has to be less than V in. So, what use is that? Well, it's used in practically every aspect of electronics. It's even on my t-shirt for goodness sake.
+
+[1574] EEVblog 1574 - REVIEW: Is the $42 Fluke 101 Multimeter Any Good? — Dave Jones (explains)
+context before: So, is the voltage reference internal? And we've got our battery terminals here. There you go. Input fuse there, very nice. And reverse diode protection there. And that'll be the regulator.
+TEXT: Of course, the one thing you won't find in a cheap meter like this is any sort of hybrid resistor divider network. You're just not going to get it. So, yeah, they just using passive jobbies for that.
+context after: Somewhere. Most of those seem to be caps. All right, there we go. There's probably divider array over there. But yeah, that is exactly what I expected in a top quality like bottom-end Fluke.
+
+[372] EEVblog #372 - Fluke 27 Multimeter Review & Teardown — Dave Jones (explains)
+context before: Some classic style cylindrical tubular style or whatever the name is for those trimmer caps. There's some more trimmer caps down here. There's a variable a couple of variable resistors there.
+TEXT: And that is the uh hybrid. There's the uh ceramic hybrid there which would be the resistor voltage divider. And these are actually very high voltage with standing Teflon uh dielectric capacitors.
+context after: Hence, because they're high voltage, they're still in the high voltage input uh part of the circuitry. Hence, the high voltage isolation slot underneath it there. These particular ones are rated to 1,700 V.
+
+[1246] EEVblog #1246 - Dumpster TV to Retro RGB Monitor Conversion — Dave Jones (explains)
+context before: Interestingly, the IC number is the same. IC401. It's IC401 on here as well. But it's a very different beast. It's absolutely remarkable. Um yes, I am aware of the 8-bit guy's video on converting monitor into I think it was a Samsung into an RGB monitor.
+TEXT: And so please don't add it in the comments. And, yes, he shows the resistor divider here and he he tapped it he like did some extra resistors down here and then oh, I can't leave that on there.
+context after: And then tapped those off um and then switched the blanking pin here, which we could do exactly the same thing here, but this schematic is not representative of this Australian model thing.
+
+[1252] EEVblog #1252 - LED Panel Lighting Flicker Investigated — Dave Jones (explains)
+context before: The side effect, of course, is horrible amounts of ripple. And here's the schematic, which is basically what we've got on the board here. Um we've got our bridge rectifier on the input.
+TEXT: We had a few more, you know, a fuse and some filtering stuff and things like that. And we've just got a resistive divider here powering the chip itself. And we've got a external transistor.
+context after: Was that on there? But this is interesting. We don't have a switching transistor on the board. So, I I got to assume it's the same part. The part number's the same.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: So, we'll take a typical value We'll take the typical value cuz I don't think it will be near to the upper maximum. It could be. If you want to design worst case, as we've explained in previous blogs, you might have You might use the maximum, but I'm going to use the typical value and see what we get.
+TEXT: See how far it is out. So, we will take this 70 that as I adjust equals 75 microamps. So, the total going down here through R2 is 200 microamps plus 75 microamps or 275 microamps total.
+context after: So, if we now calculate R2 here, R2 is very simple. It's going to be our offset voltage we want on this pin of 3 V. Okay? Cuz it's connected through to there.
+
+[1246] EEVblog #1246 - Dumpster TV to Retro RGB Monitor Conversion — Dave Jones (explains)
+context before: So, that's basically what a 3.5 V uh digital signal. So, we're going to have to uh knock that signal level down to under a volt before we can feed it directly into our chip there.
+TEXT: But, we can do that with a simple resistive divider. As I've got 220 ohms and 47, she'll be right. I haven't calculated it, but that should be close. I've got these AC coupling caps.
+context after: These are just hanging off in free air. And these will all be all tied together. These will go to ground. And these three caps dump solder that on the back there.
+
+[366] EEVblog #366 - USB PSU Troubleshooting — Dave Jones (explains)
+context before: And uh well, you know, But there you go. Um so, we've replaced that. It should be good. So, let's power this thing up. That should start. I think we're expecting about 7.6 V out or something.
+TEXT: Uh because it will be uh 51 K. Um it's the upper resistor divided by the lower resistor. So, 51 K on 10 K plus one times uh the reference voltage of the DC-to-DC converter, 1.245 V.
+context after: Um let's see what we get here. 5.1 V in and What? Fail. Still fail. 5.11 V out. This chip is still not going. Son of a Well, I just went and inspected and reflowed that chip again.
+
+[1382] EEVblog 1382 - Keysight EDU34450A 5.5 digit Bench Multimeter TEARDOWN — Dave Jones (explains)
+context before: I just unscrewed it there. And you'll notice that this one will slide over, and these will slide over like that. Then it just drops out. Nice design. All right, so there's our big ass uh AC input uh coupling cap for AC measurements here.
+TEXT: They've got a cardac uh resistor divider here. So, that's for the ranges. So, you know, you know, that's what you expect. You expect that in any 5 and 1/2 digit uh plus class meter.
+context after: You can't Well, you can do it with discrete parts, but it's just it's much nicer to do it with a ceramic array. So, no surprises there whatsoever. Uh here's our two uh input strings here.
+
+[675] EEVblog #675 - How To Reverse Engineer A Rigol DS1054Z — Dave Jones (explains)
+context before: Of course, you wouldn't, you know, have your output of your op amp on there. So, you know, but they've got exactly the same value resistor, exactly the same connected to the inverting terminal over here.
+TEXT: But this one goes off to the vertical position control, whereas the 1052E just has the channel one position just adding into there at the lower part of that resistor divider there.
+context after: So, yeah, it's, you know, they've substantially changed things. But anyway, there's got to ultimately be some feedback from here coming back and and getting through it, whether or not it comes through here, through the E squared pot and everything else.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (explains)
+context before: But check it out. This is really interesting. The off position is here and then it goes to 2,000 volt and 2000 volt mode over here. So, you've got your regular go up to auto range and up to 1,000 volt.
+TEXT: So, that indicates that it is going to have a separate path internally on this thing um to do the 2000vt range. So, it'll have an extra input series resistor divider or whatever.
+context after: Um, and there you go. 200VT high voltage digital multimeter, you know, BYIO probes with it, of course. And it's got a specific 2000 volt input as well. So, that's really interesting.
+
+[801] EEVblog #801 - How To Design A Digital Clock — Dave Jones (explains)
+context before: So, strictly speaking, not needed. And what we do here is we tap off before the halfway rectifier here, tap off the AC. And uh what we do is just uh diode clamp that uh down here so it doesn't go negative.
+TEXT: And then that will actually produce a 50 Hz um pulse into here. You've got a a resistor divider here. And then we can get our 50 Hz clock coming from our mains into this chip.
+context after: Let's have a look at that on the scope. And there it is. If we probe pin 10 of our 4040 uh ripple counter here, then we can see that the 50 Hz there it is.
+
+[932] EEVblog #932 - How Does A HV Differential Probe Work? — Dave Jones (explains)
+context before: So anyway, we've got our positive and negative input here. We've got our four meg of resistance here, four meg worth of resistance here. We've got some compensation caps around here and around here.
+TEXT: Then the two resistors in there are going to be the lower end of the divider. So we've got a four meg input divider and then it's going to go over to these two resistors here.
+context after: Why they've got three caps? They actually look to be They're all in parallel. So I don't know why they've got so many in parallel. Anyway, we'll have a look at those values maybe to compensate for each frequency range, which is a common technique for like bypassing for example cuz they'll have a different impedance characteristic based on their value and their package size and everything else.
+
+[1282] EEVblog #1282 - Design Your Own Membrane Keypad! (µSupply Part 20) — Dave Jones (explains)
+context before: You might only have a single pin on your microcontroller. In that case, you can actually do the array matrix using an analog-to-digital converter. A single ADC pin on your micro, you can have different value printed resistors depending on which key you press.
+TEXT: It'll give you a different resistor divider and from that you can work out the voltage and you can have a mapping in software and things like that. We won't go into details.
+context after: Do a video on that one day. Our resistors are in here but we didn't actually get them carbon printed. So that's it from the design point of view. I mean, you don't even have to go to this sort of detail but this is kind of, you know, professional and what you'd expect.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: All right, let's just power it up and try it. I know this setup's a bit how you doing, but it's good enough for Australia. Now, as you saw in previous videos, we need a 2-V power source for this because there's no drop resistors on there and because we've got a 5-V TTL level out of the Arduino, I've had to put in a budging a resistor divider in there.
+TEXT: So, I've just got like a 1K and a 680 or whatever and that will drop it down to like under 2-V to actually go to the logic on here and I've grounded the common cathode pin.
+context after: So, there's no like blanking or anything like that. And I've got a 100 mA current limit. It I can't remember exactly what it took, but let's just try that.
+
+[730] EEVblog #730 - Thin Film Resistor Networks — Dave Jones (explains)
+context before: Crazy until it comes out this pin down here. So, that is one huge resistor. That's typically going to be a, you know, a 9.9 meg, 9.9 meg resistor or something like that, and then a smaller value down the bottom.
+TEXT: So, it it it taps off um the high voltages down to a usable level. You can see we've got a whole mix of stuff on this particular one. We've got our ladders down in there.
+context after: We've got our intermediate uh range trims and our um coarse trims, but most of this is all coarse trim cuz it just loops back and back and back. But, we do have some elements in here that loop back and then we can just increase sort of like, you know, more intermediate course kind of stuff like that.
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (explains)
+context before: And that's exactly what we're seeing there. It's discharging back down. It's taking half the time that it took to charge up, because it's only going through a 100 K resistor instead of the 200 K.
+TEXT: And of course, then our trigger comparator down in here is measuring that value at 1 because of the 55 K resistor divider in there. It's 1/3 of the supply voltage or 3 V.
+context after: And bingo, look, it discharges from 6 V down to 3 V, and then the cycle starts again. And of course, I'm preaching to the converted. Most of you know about a standard 555 timer operation.
+
+[1414] EEVblog 1414 - MicSig DP10007 High Voltage Probe - Turning it up to 11 — Dave Jones (explains)
+context before: And on the divide by 100 range, we're talking 700 volts DC plus AC peak. Now, of course, it's not going to due to the nature of how these things are actually designed and I've done a teardown of the and a reverse engineering of the 7 HVP70 differential probe and this one will the Mix Equal work exactly the same thing.
+TEXT: They got a big input resistor compensated resistor divider network and stuff like that. So, it's not like you go over that and you magically going to blow up your probe.
+context after: I don't think that is the case. So, anyway, we're going to take it up here with our AC voltage standard and see what's what. And yes, some people have complained that it's not great having the fixed leads on the long leads on the unit like this cuz that affects its high frequency performance.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: Um and we've got like a FET or something there, but that's basically it. So, there's no like uh variable gain amp, you know, programmable gain amplifier or anything like that.
+TEXT: We've just got basically going through a uh divider here. We're using a 4051 analog mux straight into here. So, it's not the best analog front end, but what do you want?
+context after: This is sub $80, right? So, you get what you get, and you don't get upset. Anyway, the ADC here is an MS-9280. This is interesting. Hadn't heard of this one before.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (explains)
+context before: That's got to be volts. So, that implies that they're using an ADC inside the Speer 600 to actually measure configuration resistors. Um, why you couldn't just use pins like how many modes are there?
+TEXT: Um, anyway, you can do that, do it with ADCs and just set a a resistor divider. So, bingo, hopefully we can modify those resistor values and change the configuration.
+context after: But, that doesn't mean this is going to work because I fully expect uh, well, I know for a fact that you can upgrade the bandwidth with the license keys inside this thing.
+
+[852] EEVblog #852 - Multimeter Mass Turbulence — Dave Jones (explains)
+context before: And also, it'd be the same for the 500 mV one, too, I would think. Cuz what they're doing is they're calibrating it on the mV scale, and that's very typical.
+TEXT: And then uh actually relying on the resisted divider to do the rest. So, that's why, you know, when you start getting out to the 5-V range, you're a little bit out.
+context after: Um I was very impressed by the current. Actually, that was uh really uh spread on that was really good. And the AC, very surprising, as well. I would have expected a larger spread on the AC, but didn't see it at all.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (explains)
+context before: So the ceramic, it's there, right? So we've got, you know, just like a shielding pad here, which you can see that with hindsight there has actually been a bit of corrosion on there, right?
+TEXT: Check it out. You can see that there. But that doesn't explain why we're out. The only reason we'd be out is if like there's extra load across this divider.
+context after: There's some contamination under that marks. Perhaps that's causing some sort of issue. So cuz this is how you get the different ranges. You get the different ranges from this resistive divider and they put them on the ceramic.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: And it turns on at about yeah, 0.75 or something like 0.8. And we expect it to turn on at plus 0.8 as well, but no, it doesn't. It's down near zero again because we've got exactly the same issue.
+TEXT: Where this helps though, this divider helps is at um the higher voltages where you need to sense near the input. You know how we had 100k 100k here before?
+context after: Well, if we had, you know, a 10k and a 100k and we're sensing it right near the positive or here, sensing right near the positive rail, it wouldn't have worked before with those um at even at 5 volts because our it would have tried to sense the input there up near 5 volts.
+
+[628] EEVblog #628 - Tektronix 213 Vintage Portable Oscilloscope Teardown — Dave Jones (explains)
+context before: So yeah, I don't think there's a whole lot of insight to be gained by ripping apart all this module and seeing that uh top side of the input board there that actually has the multimeter input terminals there soldered directly onto the board in there.
+TEXT: There we go. It looks like that might be some sort of ceramic um uh resistor divider module that you'd find in any multimeter uh front end of the day.
+context after: So, you know, yeah, pretty ordinary type stuff. The pots are mounted directly on the board down in there and the switches down in there and there's some shielding on top of that as well, I believe, coming from the other side.
+
+[286] EEVblog #286 - Orders Of Magnitude — Dave Jones (explains)
+context before: How much? Well, in this particular case, it depends on what value of R1 is. If R1's 100k, you're going to get roughly a 1% error caused by a multimeter.
+TEXT: If it's a half If it's a half rail divider like this with a half volt in the middle and R1 is 1 meg here, you're going to get about a 5% error.
+context after: And if it's much bigger and you're measuring a smaller voltage down here, you're going to get about a 9% error or thereabouts. And roughly, you're getting an order of magnitude error, worst case, due to that 10 meg resistor.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (opinion)
+context before: continuously scan the keyboard. It it really it doesn't matter whether or not that switch is a couple hundred ohms. It would still work and it wouldn't confuse it with other buttons on there, but that's not how they implement that.
+TEXT: So, they've implemented obviously using some sort of resistor divider thing. I don't know. We could like reverse engineer this. If anyone actually does have a reverse engineered or a schematic for this thing, please leave it in the comments down below.
+context after: But yeah, obviously it is what Steven said in the comments. They're obviously trying to do some sort of resistor dividery type keypad arrangement. I you know, I'm trying to read that values.
+
+[852] EEVblog #852 - Multimeter Mass Turbulence — Dave Jones (opinion)
+context before: Ah, there we are. It's getting It's got It dropped out. There's a little bit of excess charge there. So, these are all spot on 50.00. This is insane. So, yeah, this is just uh This is crazy business.
+TEXT: So, that's what they must be doing. That's why we saw some variation on the readings before, 499 497 from basically 4 uh 4.997 up to 4.5, basically. So, uh just some tolerance on the Is this still the divider?
+context after: But, these are all Jeez, that's ridiculously bang on. That's just crazy. Oh. Oh, is that one one least significant digit out? Oh, no. And now for the resistance standard, I'm using my Weinschel precision reference standard.
+
+[1246] EEVblog #1246 - Dumpster TV to Retro RGB Monitor Conversion — Dave Jones (opinion)
+context before: And it shows like 75 ohm terminations on the RGB inputs. And And if we have a look over here, RGB input amplitude, there you go. Um your typical 700 mV peak-to-peak, I believe that's a fairly typical RGB input level.
+TEXT: So, in theory, you should be able to feed RGB inputs directly into there, no resistor dividers or anything like that. Should have started to whack them straight in. And this data sheet is very comprehensive.
+context after: It's uh color difference stages, there's all the blanking and the clamping and the luminance and all sorts of stuff. It's all Actually, there's the there's the bypass. Okay. Okay, so there's our RGB inputs, fast commutation, blanking, fast commutation logic, bypass.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (opinion)
+context before: It's supposed to go to There you go. Let's try another button. 13.1 13.3 13.6 You're seeing a pattern? Nine like eight. Uh the these contacts are dodgy down here, by the way.
+TEXT: Get the idea that yeah, this seems to be YouTube commentator was right that this is some sort of divider array, but he mentioned voltages go down to zero. But pressing these buttons does affect the AUX line.
+context after: So that's in the So it shows that that AUX line is not like, you know, some sort of digital output coming from the micro or anything like that. It It's analoggy to do with the buttons, which is really interesting.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (opinion)
+context before: Like some of them have an external surface. This one doesn't. In quite a lot of them you can actually see the like the actual resistive elements actually patterned onto the carbon and then little laser trim marks and everything on there.
+TEXT: But no, this is a fully sealed thing. So, I don't see a problem. I I I can't imagine a problem within there. I'm guessing contamination somewhere else that's loading down the resisted divider.
+context after: And if you don't fix that sort of problem, then yeah, I can recalibrate this and I'm sure it'll work fine for now, and then it could drift further. Yeah, I was looking to get in an ultrasonic bath.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (opinion)
+context before: So, they've implemented obviously using some sort of resistor divider thing. I don't know. We could like reverse engineer this. If anyone actually does have a reverse engineered or a schematic for this thing, please leave it in the comments down below.
+TEXT: But yeah, obviously it is what Steven said in the comments. They're obviously trying to do some sort of resistor dividery type keypad arrangement. I you know, I'm trying to read that values.
+context after: That's a dicky design decision that can come back to bite me. Basically, it's been bugging me for years. I can't believe I put up with it. Um, think I did actually try to take the thing off the wall before and I just couldn't get the damn thing off.
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (opinion)
+context before: Well, that's it. Once again, don't take any of this application stuff for granted. Go over to your electrical characteristics table cuz this is the only one that matters. So, if you look for our voltage reference here, we can find out there it is, adjust pin current.
+TEXT: There it is, 75 microamps typical, and sure enough it is. They were correct. It is 120 microamps maximum. So, they weren't lying over there like they were with the resistor divider up here.
+context after: So, we'll take a typical value We'll take the typical value cuz I don't think it will be near to the upper maximum. It could be. If you want to design worst case, as we've explained in previous blogs, you might have You might use the maximum, but I'm going to use the typical value and see what we get.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (opinion)
+context before: It's incredibly simple because you're dropping voltage across this top resistor and tapping off the voltage from the lower resistor. So, it's always going to be less. There is no gain in this at all.
+TEXT: So, V out has to be less than V in. So, what use is that? Well, it's used in practically every aspect of electronics. It's even on my t-shirt for goodness sake.
+context after: It's used in amplifiers. It's used in attenuators. It's used in every form of voltage regulation and even appears in circuits where you don't think, "Oh, that's not a voltage divider cuz it's not drawn like a voltage divider." Like we had our in a previous video, which is actually the following video to this.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (mention)
+context before: So, we'll be able to actually physically see these components and how they work, and we'll show inside shots of the multimeter as well. But I did the teardown in the last video.
+TEXT: So, this is fairly typical, but I'll just say up front the input protection of multimeters changes a fair bit from manufacturer to manufacturer, depends on how the ADCs out here work, and the the requirements for protecting those, and the network dividers they the input they use, and all sorts of things, and the measurement ranges and types.
+context after: It varies a lot, okay? So, this is typical of a basic multimeter, volts, ohms, amps, and that's, you know, pretty much it. So, let's have a look at what we have here.
+
+[1507] EEVblog 1507 - Mida: A surprisingly good cheap portable Electric Car EVSE Charger — Dave Jones (mention)
+context before: And no, it's still No, it ignores the diode. so I I don't know if that's a specific standard. I don't know, you'd have to go into it, but it looks like it doesn't It doesn't matter whether the diode's there or not.
+TEXT: Some chargers do, apparently. Anyway, it seems to do the business and meets the basic requirement there. You could get a resistor divider box out. Nah, I won't bother. By the way, when you switch it off, it doesn't seem to unlatch those relays when it loses power, but it switches the relay back off as soon as you immediately apply power.
+context after: So, not a problem, I guess. This was supposed to be a teardown video, so you'll leave it at that and I don't know, you might see an operational thing of this on my EV one day, but actually, I'm very impressed with this.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: And really, there's you know, and they've bolted it directly onto the board there uh these two screws. And they've got one mouth resistor there. You'll notice that there's no what mouths on this thing at all, which is uh quite surprising all the way unless they're on the uh other side.
+TEXT: But uh I don't see any through-hole uh pads for the mouths at all. So, there you go. All they've got is this uh mouth input protection resistor here. They've got an input uh cap and then uh AC coupling cap and then they've just got uh the hybrid uh thick film uh resistor divider network.
+context after: And that's um that's pretty much all she wrote. I mean, but this thing doesn't have to do any uh range switching or anything, I don't think. Um well, a couple of lower ranges from the divider, but that's it.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (mention)
+context before: So, whether or not you choose to use that third like a quad comparator for example instead of the dual comparator because you can get these in a dual package or a quad package and have one left over.
+TEXT: But, then you got to generate the voltage so you got to need a couple of extra resistors up here for example. So, you know, it's all a bit of a trade-off or whether or not you might want to use the Schmitt inverter cuz you have five inverters in your package left over.
+context after: You might be able to use them somewhere else in your design. It's one of those trade-off things. It depends on your implementation and how you want to use it.
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (mention)
+context before: Seems accurate. Let's have a look at the high-res photos. Got the shields off and like as I talked about, like all of the all the cutouts. Look at this, all the slots.
+TEXT: Even the slots between preventing creepage between the individual taps on the resistive the presumably hybrid resistive divider. The reason that they do that, by the way, is so that they're all thermally matched so that they're all on the same ceramic substrate.
+context after: I assume it's a ceramic, it's a plastic encapsulated ceramic maybe or it might be a cheaper solution cuz this is built down to a price so maybe it is a cheaper solution than they just have like maybe that's just a potted, you know, individual precision resistors in there and they're just individually potted maybe on a small piece of beer or even hand wired, who knows.
+
+[872] EEVblog #872 - Mailbag — Dave Jones (mention)
+context before: So I, yeah, anyway, 250 milliamps, 200 milliamps max, oh goodness, anyway just token protection, it's not rated for anything. Don't use this on anything other than low voltage DC, please. But anyway, that's an interesting step up from the $5 meter, which I'm sure used an
+TEXT: almost identical board, notice they've got little trimmers in there, and there's our resistor divider and like, oh geez, goodness, but you know it's like $9 delivered, I mean, come on like, yeah I just don't know what to say about these things, they're garbage
+context after: but if you want something to throw in your glove box to measure, you know, voltage when you're in the middle of nowhere, but like, before you get around to using it, the battery's probably going to leak in the damn thing Oh, what battery have we got?
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (mention)
+context before: So 16.1 m vols divided by 1.77 10 log * 20 equals -40.8. Yeah. So it easily balls in the minus30. So they probably didn't want to put that minus40 spec in there because they would have been so close to the margin there that you know people would have complained.
+TEXT: So this lower to 30. Ah yeah, she'll be right cuz as I said because it has to do with the input matching of the components in the differential uh stage the differential uh divider the resistor divider string and the uh differential amplifier uh gain as well.
+context after: So the matching of all those components so unless you tweak every single one of them um then yeah you can come. So normal tolerance can really throw this reading out.
+
+[1371] EEVblog #1371 - A 10,000hr Battery Life Bench Multimeter? — Dave Jones (mention)
+context before: I need to find a potential suitable candidate for this. Anyway, let's go to the videotape and uh take a look at a battery solution for this. Oh, all right, there you go.
+TEXT: There's a quick squeeze there. Um, curiously, it's got Something just fell off. Um, it's got a hybrid resistor divider. Nice. Um, yeah, I wasn't expecting that. But, I think from memory, this is like a 0.1% like class meter or something like that.
+context after: So, that's understandable. And it's, you know, it cost a pretty penny, I think. There we go. For those playing along at home, I can't actually see a chipset yet.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (mention)
+context before: So, don't know what's going on there. LM393 dual op amp. Yeah, we've got another one of uh those low noise TL072 absolute classic jelly bean amplifier in there. That's not doing much to write home to your mum about.
+TEXT: Um as and we've got some regulators here, but yeah, I expected a like really low offset chopper in there and we didn't get it. But yeah, they've got some pretty schmick op amps and they're using these what matched resistor dividers or something.
+context after: So, we've got it back together and it seems to work. So, let's go into the current here and I'll tell I'll show you what I said about that offset there.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (mention)
+context before: So, they've removed the solder mask around here for a reason, right? Because this is a high impedance uh part of uh the top side of the uh resisted divider here.
+TEXT: Now, we've got this big ass series cap here, and that is the top part of your resistor divider here. So, um I'm inclined to take that cap off because that's, you know, like smack on where the uh contamination actually came through.
+context after: So, yeah, I'm going to take that cap out. It'll function fine without that cap. It's just like a you know, an AC bypass type thing. So, as far as DC's concerned, we can take that off and we should be if the leakage goes away, then we know, "Aha, we've got it."
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (mention)
+context before: I've got no real comment on that until we uh take the whole thing apart. But uh yeah, it looks like, you know, decent uh spacing around here, everything else.
+TEXT: So, shouldn't be an issue. We've got our big high-voltage uh cap in there. And it looks like we have our precision uh thin-film uh resistor divider network. Is it or is it a high Is it Is it a high-voltage input resistor?
+context after: I can't see the extra pins on there. I think it's just a Is it just a two-pin high-voltage ceramic resistor? Hmm. And yes, obviously all this stuff up here is to do with the uh V sense stuff.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (mention)
+context before: So all of your ranges match. So your good quality high precision meters are going to have a a hybrid ceramic resistor divider in them and this one does. So obviously I reckon something has gone wrong.
+TEXT: Like there's no other reason for this meter to drift like that. And did contamination get onto the onto the ceramic divider itself? I don't know. I'm going to have to desolder the shield to get in there and have a look.
+context after: Ta-da! There we go. We've got that out. There you go. It's a top quality Caddock. No worries there, but like you can't get in there. It's like sealed. Like it doesn't have a surface on it.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (mention)
+context before: Now, that was actually used. It's marked DC volts down here. So, presumably, uh you would tweak that for the uh calibration. You got another pot uh down here as well for the um AC volt uh calibration and another adjustment uh pot over here as well and then a couple of trimmer caps down there that would be for the uh frequency adjustment and another one over here for
+TEXT: the uh capacitance adjust. And well, I'm not seeing any adjustment pots on the new design at all. So, yeah, they're uh they're using a like just a better reference, uh better divider resistors, everything else.
+context after: Uh that probably lowers their uh production cost, but they are charging uh 20 bucks more for this. Remember that. One of the interesting things is they uh only had a transmit LED before here for the um serial interface.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: Look, they've actually put like a blast shield around there, which then goes in the middle of the board. So, they're almost like that's like a fusible track or something.
+TEXT: So, on gross overload conditions, that's designed to uh uh break, I'm assuming. Then there's the uh AC input coupling cap, of course, and straight into the divider. And you know, really that's all she wrote.
+context after: And then they've got an inductor down here on the uh surface mount inductor on the negative line. But that's rather fascinating. There you go. Um that's all you need for a a fixed AC measurement.
+
+[584] EEVblog #584 - What Effect Does Your Multimeter Input Impedance Have? — Dave Jones (mention)
+context before: Pass fail results. It's got some trim pots to allow me to trim the exact specification pass fail specification that I need. So, let's take a look at it, take some actual measurements, and see what we get.
+TEXT: So, what I've got here for the circuit is a precision voltage reference here LTC 6665 precise 1.25 V like 0.025% accurate really quite nice. And then I've just got a resistive divider down here like this.
+context after: And what this is doing is just generating two precision reference voltages ref plus and ref minus here. So, that's all I'm doing and it's basically I'm going to try and set them today to plus 0.025% or 1 V 0.025% above 1 V which is 1.00025 V and 0.025% below 1 V.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (mention)
+context before: So, I checked and yeah, sure enough, even though they don't have a voltage rating on them, yep, these are 250 V fuses. So, meh. You know, at least they are you know, ceramic jobbies, but yeah, no.
+TEXT: Like you don't buy this meter for the input protection. So, the extra money's not going there. Now, there's our input divider resistor network there and it's very nice that they've actually used that.
+context after: They looks like they've used the identical one again. Now, EBG that's actually an Austrian company. So, very reputable. They do actually have an Asian branch and that's where it would have come from.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (mention)
+context before: Well, I took the shield off this thing and look at this. We've got more bodginess. I mean, take a look at that. It looks like we've got some what looks like polystyrene caps just like bodgily what you know paralleled up there.
+TEXT: And we've got a couple you know just afterthoughts just added across this resistor divider here. You know, probably doing improve the AC performance of that thing. And well, it's it's pretty crap.
+context after: Look, we've got ourselves some nice trimmers here. These are all available through the top of the can there. These little reed relays in there I suspect. They could certainly well be reed relays for switching in there.
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (mention)
+context before: know you're going to be pretty close and they're just going to fall into place nicely. Of course, I have to orient the uh uh the bands around all the right way, otherwise the electrons will fall out.
+TEXT: Can't have that. And uh 4K7 was another 4K7, there's another 4K7. And uh And the 555 timer, of course, is famously supposedly using four 5K resistors in there in the uh divider string.
+context after: And uh this one's obviously not. And there's the uh uh 4K uh 4K7s instead being an E12 uh preferred value. Not a uh not a big deal, but that uh sort of uh doesn't lead to the authenticity that the original triple five timer does.
+
+[1415] EEVblog 1415 - Reverse Engineering the DP10007 Differential Probe — Dave Jones (mention)
+context before: So, you got to assume that that one goes down there. I actually have put the product back together, so I can't actually um I have to crack it open if I want to measure anything at this point.
+TEXT: So, this is obviously going to the output, which is pin six here, and you can see that buggering off to the output resistor divider here, and the relay switching for the gain.
+context after: But, you notice that there's no other resistor here, and obviously the other side of this R49 here obviously goes to pin two. Pin three is the positive, so that's the input, and then pin two is the negative, the inverting input of the op amp.
+
+[1382] EEVblog 1382 - Keysight EDU34450A 5.5 digit Bench Multimeter TEARDOWN — Dave Jones (mention)
+context before: I'm I'm not sure why you'd do that. Right. So, we've got our four relays here and our four inputs. Um this relay here connects to the AC coupling cap.
+TEXT: This relay here connects to a 100-ohm resistor there in series. This relay here actually connects through to the uh high end of uh the uh ceramic resistor uh divider there.
+context after: And this relay here connects through to uh this high-voltage resistor uh array here. So, there you go. There are about four separate choices for our inputs. Um yeah, I just I just don't know why they've gone under the Why they gone under the resistors?
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (mention)
+context before: So, that's why you have a hard time measuring these diodes in circuit. So, now, if we go check out our power good circuit. So, yep, there you go. There's our diode and gate there.
+TEXT: And yep, LM339 voltage regulator. And this will be, as I said, it'll be coming so you got +12, -5, -12, uh etc. And then, yeah, you got some resistive dividers.
+context after: And then, a voltage reference will be coming. Yep, it even says reference over here. Voltage reference. Yep, there it is, 2.5-V voltage reference TL431. Classic for those playing along at home.
+
+[1670] EEVblog 1670 - BM786 Multimeter BATTERY LEAKAGE REPAIR + GIVEAWAY — Dave Jones (mention)
+context before: Around that via there, but um that's just part of the programming header there. I'll clean that up. But, no no, there's nothing on the bottom side here. So, and of course this is not um there's the main chipset down there.
+TEXT: And we got our uh thin film hybrid resistor divider there. Neato. No, I got a flippity do dar on that. Ah, there it is. Yeah, I didn't try that adequately.
+context after: I think that's still got some water um {slash} isopropyl or the because it was the uh combo. I'll I'll dry that out. So, yeah, that would be maybe an impedance issue there.

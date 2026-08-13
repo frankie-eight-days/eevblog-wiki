@@ -1,0 +1,40 @@
+# airflow
+
+Airflow — the movement of air over heat-dissipating surfaces, whether driven by a fan, by natural convection through vents, or by an external source such as a vehicle's motion — is one of the primary variables in electronics thermal design. The thermal resistance of a heatsink is not a fixed number but a function of the air moving across it, so a cooling solution that is adequate under forced airflow can fail outright in still air.[105][895] Airflow path design inside an enclosure determines which components get cooled and which are left to cook, and the presence or absence of realistic airflow also determines whether a bench temperature measurement means anything at all.[622][824]
+
+## Role in thermal design
+
+Thermal design must account for the airflow over a heatsink, the enclosure type, and the available ventilation, with the goal of keeping the semiconductor junction at a safe and reliable temperature.[105] The magnitude of the effect is large: a heatsink dissipating 10 W that stabilises at 76.3 °C in still air drops to 35.7 °C under fan-forced airflow of roughly 10 km/h, with the corresponding device case temperature falling from about 87 °C to 47 °C.[105] A small regulator heatsink measured at 161 °C in free air ran at 56 °C once airflow was applied, and the same converter could not deliver its rated current even momentarily without airflow.[895] Even the modest air movement from room air conditioning can make a significant difference to component temperatures.[742]
+
+Components rated with airflow assumed will fail without it. LED lamps installed in sealed "no airflow" light fittings heat up and burn out within days, regardless of heatsinking, because fins accomplish nothing without air moving over them.[735][866] Electrolytic capacitors rated at 105 °C still have a finite lifetime that is eroded when airflow is absent and thermals are poor.[GbADsyp9wM8] At the board level, a resistor run at its quarter-watt limit needs adequate airflow and must not be mounted beside an electrolytic capacitor, whose life is derated by the neighbouring heat.[191]
+
+## Quantifying airflow and heatsink performance
+
+Heatsink datasheets characterise thermal performance as a graph of heatsink-to-ambient thermal resistance (°C/W) against airflow, expressed in linear feet per minute (LFM). A typical rating point of 5 mph corresponds to about 440 LFM, which on one extrusion reads back to a thermal resistance of roughly 8 °C/W; a measured assembly achieving about 4 °C/W against a datasheet figure of 15 °C/W illustrates how much the surrounding design matters relative to the tabulated value.[895] Airflow itself is measured with an anemometer, and the reading may need converting — for example from km/h to feet per minute — before it can be applied to the performance graph.[105] Fan throughput is also expressed in CFM (cubic feet per minute).[4oHUuXgK_i4] In comparative fan testing, standing the unit vertically and resting the anemometer on the exhaust gives a repeatable figure; one swap moved exhaust velocity from 3.3–3.5 km/h down to 2.7 km/h, and fan noise tracks airflow fairly directly.[zoyaHOqp9gI]
+
+## Enclosure and airflow-path design
+
+Good enclosure design establishes a deliberate path from intake to exhaust that carries air across the heat-generating parts. Common practice is air in through side or front vents, over the transformer and heatsinks, and out through a rear fan.[511][440][549][1038] Ducting, lips, and surrounds around vents can force the full air volume across a power supply rather than letting it escape sideways, though added ducting also adds air resistance and reduces volumetric efficiency.[824] Generous internal volume aids airflow.[674]
+
+Several failure modes recur:
+
+- **Blocked paths.** A fan aimed straight into a shielding can so that air reflects off and exits without crossing the power supply or active circuitry is a design failure, as is an airflow path that must turn sharply around staggered heatsinks.[824][1434] Boards mounted broadside to the incoming air dam the flow and starve downstream heatsinks; they should be oriented edge-on to the stream.[946] An add-in card can similarly wreck a designed airflow path.[1053]
+- **Fin orientation.** Heatsink fins must align with the airflow so air passes through them; fins at the wrong angle block it. This is a "trap for young players" and fin direction is deliberately chosen in competent designs.[1761][1289][1701]
+- **Series heating.** Where two heatsinks sit in series in the same airstream, the downstream device receives pre-heated air and runs hotter than the upstream one.[726]
+- **Dead air.** A densely packed heatsink assembly may pass almost no air from one end to the other even with system fans present.[917]
+
+Fans carry an airflow-direction marker that must be observed when fitting them so the flow matches the case's front-to-back path.[462] Larger fans move a greater volume of air at lower RPM and are therefore quieter for the same cooling.[1124] Running a fan below its rated voltage — 8 V on a 12 V part, for instance — is a deliberate trade of airflow for noise where full throughput is not needed.[pwS6HnM9PDo][zoyaHOqp9gI] Vertical mounting that intakes at the bottom and exhausts warm air at the top works with natural convection.[u22duJf4n1Q][1690] Fanless designs substitute generous grills and slots and rely on ambient cabinet airflow from neighbouring equipment.[1177][574] Airflow leaves forensic traces: dust accumulates at the end of a power supply where air is forced in, and soot deposits can map the flow path through a chassis.[217][574]
+
+## Airflow in thermal measurement
+
+Temperature measurements taken with the enclosure open are not representative, because removing the lid destroys the designed airflow over heatsinks and devices; components read hotter than they would in service.[622] Realistic figures have been observed to be at least 10 °C lower once the fan and airflow are restored, and heatsinks measured in free air at 80–88 °C fell once the lid was replaced to re-establish the air path.[800][1023][512][549] Thermal validation must also be done at the full specified ambient — a product rated to 50 °C cannot be signed off at a 22 °C lab bench, because the required airflow may not suffice at the extreme.[PcxEO3fA_Ls]
+
+Because cling wrap is transparent at thermal-infrared wavelengths, wrapping an open chassis restores something close to the lid-on airflow while still allowing a thermal camera to image the board — and under favourable conditions the airflow itself becomes visible in the image as warmed air streams across cooler regions toward the exit vent.[622][623]
+
+## Airflow as a disturbance
+
+Airflow is not always desirable. Precision circuitry is deliberately shielded from it: a plastic cover over a multimeter's voltage reference and ADC exists not for electrical shielding but to keep fan-driven air currents from wafting over the reference and disturbing its thermal equilibrium.[731] Conversely, an earlier oscilloscope revision that fully enclosed a heatsink inside a screening can was improved by cutting an opening so airflow could reach the finned top.[1146]
+
+## Other contexts
+
+Fume extraction depends on airflow volume and capture geometry: folded HEPA media maximises surface area for the airflow, and a well-shaped intake can capture fume effectively from 100 mm away even at the lowest fan setting.[1616][yi5pb_l8U94] Compact extractors trade nozzle size and total airflow for convenience.[1338] Solar panel output depends on airflow across the panels as well as insolation and ambient temperature, since airflow sets the cell operating temperature.[BtQUuD6QRMw] Atmospheric-water devices use a fan — or the motion of a bicycle — to drive airflow over a Peltier-cooled condenser.[881][1454] Air-moving sensors such as laser particulate counters draw a measured sample stream through the sensing chamber with a small internal fan.[1049]

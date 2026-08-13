@@ -1,0 +1,548 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: sample memory
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 103 passages drawn from 66 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# sample memory`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (explains)
+context before: So, we get a USB cable. We get the requisite into like just you know flying lead cables because these are not particularly quick. We're talking about a 75 MHz bandwidth across all the models from the low-end one has a 100 megasamples per second 100 MHz sample rate in time in analysis mode and I think 75 in state analysis mode and the top of the range one has
+TEXT: 200 MHz sample rate and 100 MHz state analysis mode. So, you know, great for most you know, generic uses for a logic analyzer. No problems whatsoever. And sample memory on these ranges from 32K per channel for the bottom of the range unit 130 odd dollar unit up to 2 megabits per channel for this top of the range 32 channel unit, which is the 32,000 for those playing along at home.
+context after: So, that's not a huge amount of memory. It's probably adequate for most general-purpose use, but it does have sample compression as well up to eight times. So, you can multiply it depending on the scenario of what you're actually measuring the signals you're measuring.
+
+[1185] EEVblog #1185 - Dumpster Tek 500MHz TDS540D Scope — Dave Jones (explains)
+context before: Yeah, I did I don't know. I did 10 to 1. I'm here all week. Get it? 10 to 1. Anyway, a floppy drive definitely dates this thing and it's apparently compatible with the Iomega Zip Drive.
+TEXT: Hands up if you remember the Iomega Zip Drive for storing large amounts of data. We're talking about up to eight meg of sample memory in this thing, which doesn't sound like a you know, a huge amount by today's standards, but back in the you know, 20 years ago, that was a massive amount of sample memory, but yeah, a lot of people didn't like like the usability of these
+context after: things, but then you know, you wouldn't complain if you got a working 500 meg four channel scope with a decent sample rate and eight meg of sample memory. You wouldn't kick it out of bed.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: So, we can now determine where are we? We're at 100 nano per division, and that's the and the waveform update rate isn't isn't really changing a huge amount there between when I change the time base, but if I take it down, there we go, you'll see the waveform up here change.
+TEXT: So, let's see, I'm at 20 nanoseconds per division down here measuring the 20 MHz input signal, and we're basically getting if I reset the stats up there. You probably can't see that, but I'll tell you it's 4 kHz or 4,000 3,000 samples waveform updates per second basically, and that's with only one channel going and a only a thousand only a 1K sample memory.
+context after: And if we change that to 10K, you'll see it doesn't actually change that frequency at all. So, 100K and 10K are the same, so is 100 K sample memory, but if we drop it down to a meg, bingo.
+
+[217] EEVblog #217 - Lecroy 9384C Oscilloscope Teardown — Dave Jones (explains)
+context before: Now, now, if you don't know LeCroy scopes, they're part of the big three in {quote} marks um oscilloscope manufacturers. There's LeCroy, Tektronix, and Agilent, of course. And LeCroy have always uh they like a pioneered a lot of the digital scopes out there.
+TEXT: They've always had huge sample memories, and very fast acquisition um rates, and high analog bandwidths. And they're one of the three big major manufacturers out there before a lot of the uh smaller companies started to be able to do uh 1 gig sample per second and the higher uh bandwidths, you know, the 300, the 500 MHz, and even 1 GHz these days.
+context after: But these LeCroy scopes aren't nearly as popular um on the second-hand market as the um Agilents and the Tek's, of course. But if you're if you're after a um high bandwidth, uh high sample rate, high and deep memory uh scope, you can pick up some decent bargains if you search for LeCroy uh scopes, cuz they're not nearly as popular.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: But generally, on the market in mid to low priced logic analyzer, you won't get that generally. Your logic analyzers that use compression sampling will generally only have a couple of kilobytes or something like that of sample memory.
+TEXT: So, that means there's a trade-off with these small sample memory logic analyzers. Don't be fooled into thinking that they're magic because they're not always magic because what it will do is if any one of your input channels changes, any one of your data channels changes, then it's going to actually take a sample across all your channels.
+context after: It's going to use up a byte. So, if you've got one channel which is clocking away, going really fast, and then you've got another channel which is having, you know, having a slow data or it's got widely spaced packets of data that you want to analyze, then that fast input changing channel can chew up all your memory before you get a chance to view your next packet.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: Well, this has to do of course with the amount of memory that we actually have and our sample rate and our particular time base that we happen to be capturing at.
+TEXT: And you'll notice that we're uh sampling at 5 gig samples per second and we're in auto memory depth so we don't the Keysight uh the ASIC is uh quite smart and it'll use the maximum amount of memory of its 4 meg sample memory maximum that it can uh based on whatever mode and time base and all, you know, everything else you're in.
+context after: So, let's actually wind this time base back a bit. 10 microseconds, 20. Watch this gig samples per second. 50. Aha, 50 microseconds per division. We've dropped Well, bloody touch screens.
+
+[502] EEVblog #502 - $19 Hameg Analog Oscilloscope — Dave Jones (explains)
+context before: Power on. Ah, helps if I plug it in. Oh. Oh, and by the way, don't get too excited about the uh digital performance, the storage performance of this thing.
+TEXT: It is only 20 megasamples per second uh with a 2K per channel sample memory. So, you know, pretty ordinary digital scope, but because this is a true analog scope as well, you just you know, you don't turn your storage mode on, you just turn your storage mode off and it works as a regular analog scope.
+context after: So, and there's no sign X on X interpolation in this thing, so don't go thinking that you can get maybe, you know, 5 MHz usable storage bandwidth out of it.
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (explains)
+context before: this, separated by lots of dead period, very long dead time periods like that, which I used to have in my seismic and underwater business, when I was working in that sort of stuff, you'd have like an acoustic shot here, then you might wait 10 seconds for another acoustic shot, and if you want to
+TEXT: analyze those particular shots in detail, then you need a massive amount of sample memory, hundreds of megabytes, and gigabytes of high-speed sample memory to do it. And to get a scope with that much memory costs $50,000 or $100,000, or it may not even be possible if the time periods are long enough.
+context after: So let's actually give this a go here. What segmented memory does, is it only captures the actual bursts of data that you're interested in, and it doesn't waste all of its precious sample memory capturing non-existent data. So let's give it a go. And this is what these individual bursts
+
+[342] EEVblog #342 - Agilent 90000 Oscilloscope Teardown — Dave Jones (explains)
+context before: You're paying top dollar for that. So there you go, that's a... they give you a decent look at the board there. I really like that, you can see the connectors on the side here. So that's almost as good as taking the thing out.
+TEXT: And you can see it's pretty much all in these custom devices, as you saw there was circuitry on the bottom as well, just support stuff, bypass stuff, and miscellaneous stuff like that. But yeah, it is serious business, and that's why this stuff can have up to one gig of that high-speed sample memory,
+context after: which is just crazy stuff. So that's where your money's going, folks. You know, everyone goes, oh, why can't it just be a little tiny black box hooked up to a regular Windows PC? No, it can't be! There's, you know, many, many tens of millions of dollars of R&D
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (explains)
+context before: This thing does not have the auto hold. Why? It's It's got trig hold, which is which is really handy. I've done a video I might have to link in where um Oh, hang on.
+TEXT: No. If I can get rid of that. There we go. Trig hold. Okay, so it looks like it's going to do the same thing with trig hold, but um it's which is very handy for uh when you probe something, it'll automatically add it to sample memory, but um it does not have the same, you know, auto hold capability.
+context after: It's just Why? Did they determine, "Oh, we're going to do away with that and going to have this stupid remote uh uh probe interface thing. It's like uh it's dumb.
+
+[1038] EEVblog #1038 - Uni-T UPO2104CS Oscilloscope Teardown — Dave Jones (explains)
+context before: So that's our sample memory, 6YJ17. That's very different to the one that we had over here on the applications processor. So this will contain our 32 meg samples. Let's decode that. So as it turns out, that's an MT41K64. Anyway, blah, blah, blah, blah, blah.
+TEXT: Sure enough, that is 32 meg per channel, because there's 8 bits per channel. Awesome. So there's obviously no second one on the bottom there. All the sample memory's inside that. Unless there's another one for, like, the phosphor display and other stuff, like segmented memory and things like that.
+context after: Hmm. And above that is our mystery FPGA, which we'll take a look at. And then, oh, don't you just love all the matched lines? Beautiful. Thing of beauty is a joy forever. Ah. Behold the WonkaMobile. Thing of beauty is a joy forever. Anyway, the Cypress CY7C1360.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: Anyway, it might be useful to someone. I like the fact that you can acquire modes, you can get maximum waveform rate, you'll notice 5 samples a second in, or you can go maximum sample rate, or you can go automatic. So you'd probably just leave it on automatic
+TEXT: mode most of the time, and the sample memory's dropped down to 480k points, it just chooses that. So, you know, if you want maximum update speed, what do you want, maximum sample rate, you know, so it's all there. It's got various arithmetic modes as well, it's got your regular envelope mode,
+context after: your regular averaging, the smoothing mode as well, you add the smoothing mode on, you'll notice it went up to 12-bit resolution here. A beauty and something you rarely get, is an adjustable filter here, so we can, you know, based on, it'll change based on
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: This is where compression sampling comes in. Now, compression sampling is will only it it still samples at the same rate as this one, okay? But it will only store data it will only use a a word or a byte of memory whenever one of the input data channels changes.
+TEXT: So, in this example here, it's only used 1 2 3 4 words of memory, because the data's only changed, it's only transitioned four times. Whereas up here, the same waveform might take, say, 1,000 or even more, a million bytes of memory to capture just that same couple of little thing.
+context after: 
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: And that is why we're getting a nice clean signal there. So that's fact number one. And I can demonstrate that on this Rigol here. Now, you can see that it looks a little bit worse than the Tektronix one, okay?
+TEXT: 100 MHz bandwidth, same time base, same voltage, no input, all those spikes, but this Rigol DS1052E has 1 meg of sample memory. So for any given time base, in this case 1 ms per division, then it can capture much more high frequency noise and actually display it on the screen.
+context after: And that's exactly what it's doing. And I'll show you that. If we go into the acquire menu here, if I it's on long memory at the moment, so it's got that one meg points.
+
+[144] EEVblog #144 - Agilent 2000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (explains)
+context before: of the 2000 series models, so far at least anyway, have 16 channel capability. So is this the 3000 series board and it's dumbed down to take off the circuitry to get to the 2000? I don't know, because I haven't opened up the 3000 series model yet, but that's rather interesting.
+TEXT: And if you're curious to know what those logic analyzer input chips are, they're max 9201 quad comparators. Now that's one thing with the two Agilent custom ASICs, you'll notice that there's no memory surrounding them. That's because the sample memory is built onto the die.
+context after: As you'd expect from an Agilent designed and manufactured oscilloscope, the PCB, not only the component quality, but the assembly quality in their plant in Malaysia is first class. It really is. It looks like the components are quality components. The soldering is superb and the quality of the PCB
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: ISSI, I'll link in the data sheet, it's a 9 megabit synchronous SRAM, 200 megahertz or thereabouts, it's good enough for the purpose. And so that's basically, well, it's just over 1 megabyte per chip, there's actually three of these. So there's an oddball number, so
+TEXT: this is a nominal, this is a 2 meg sample memory oscilloscope, so obviously they're using one of these per channel, and of course sorry, two of these total to give the 2 megabytes or 2 meg sample memory, because it's 8 bits per sample of course, but they've got a third one
+context after: because they're probably doing that for the variable intensity display and the segmented memory and all that sort of jazz. And there's our Ethernet controller, it's a micro KSZ blah blah blah, so yeah, it's nothing doing. Here's a national semiconductor part, and just by the looks
+
+[824] EEVblog #824 - GW Instek GDS-1000B Oscilloscope Teardown — Dave Jones (explains)
+context before: have spun their own ASIC, although to get like 50,000 waveform updates per second, it's supposedly on spec at least, it's you know, quite a fast scope. I've yet to try it out with responsiveness and you know, everything else, but it's fairly grunty, so I'm assuming that's like an FPGA and
+TEXT: not some sort of applications processor, but it drives the LCD directly. So we've got our sample memory here, we'll take a closer look at exactly what type, and they've got 10 meg per channel by the way, which is not shared apparently, although I'm yet to confirm that.
+context after: We've got flash memory and just the main processor slash FPGA, but is it an FPGA? I don't think it can be, or just never, like it might be a hybrid one with you know, like a zinc or something like that, with a built-in ARM Cortex processor, because look, it's got
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: one million transitions, there you go. So that's it. Um, so it must have sample compression, because it's doing uh, it enables you to select transitions instead of meg samples, it's got the sampling rate, and instead of setting a memory depth size, it's giving you
+TEXT: you know, X number, 10,000 transitions, a million transitions, or whatever. So it's obviously doing sample compression, and that's very nice. I'm not sure, you'd have to check the spec sheet to know exactly how much sample memory it actually does have, but that's nice.
+context after: It means that when you have a you have packets of data, that are spread, you know, by long period, long dead periods, you're not wasting all your sample memory taking all those dead periods, you only, it's only the transitions that are stored in memory, time stamped, and did it transition high, did it
+
+[290] EEVblog #290 - Mailbag — Dave Jones (explains)
+context before: set the data, uh, depth, because, um, like, sometimes you don't need that much memory if you just want to sample quickly and, uh, you know, you just want to, um, update this thing, then, um, you know, you don't want to wait to download the
+TEXT: full 64 meg samples like that, so, or meg, uh, bits, um, 8 meg samples like that because it does quite take an annoying, rather annoying little, um, amount of time there. You saw that message that said evaluating bus there, it was obviously, uh, decoding that, and it
+context after: hasn't, um, centered my stuff on the screen because it's all the way over here, um, because my trigger condition, that's the pre, I assume that's all the pre-trigger data in there, so it's automatically captured that, and there's my, uh, SPI bus. So you can see the advantage of the
+
+[1038] EEVblog #1038 - Uni-T UPO2104CS Oscilloscope Teardown — Dave Jones (explains)
+context before: but otherwise, nah, feet out. Anyway, Ethernet standard on the thing, you've got your mains with a little switch on the back, and external trigger and pass-fail output as well. 30,000 waveform updates per second are claimed on this thing, so, you know, it's pretty well-specced.
+TEXT: 32 meg of sample memory as standard, so that's awesome. That beats most low-end scopes on the market, probably maybe all of them. I'm not sure, 100 VA max. Jeez, we're going to have to measure the power consumption on this thing. Looks like a big-ass fan on the back.
+context after: You can see all the metal work, we've got a Kensington lock there. And that's about all she wrote. Anyway, you know what we say here on the EEVblog, don't turn it on, take it apart. Oh, I didn't even see the poor warranty void sticker on there.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: And that little uh window, if we use our zoom control here, which is the outer one, we can actually make that smaller and we're zooming in, or we can make it bigger like that.
+TEXT: And you can see, so that window there correlates to what you're seeing on the display. And that uh yellow bar there correlates to our frequency spectrum there. So, we can um depending on how much uh sample memory you've uh chosen, you can zoom in as far as you like.
+context after: And uh we can actually see the um the uh data bytes in the SPI on the SPI bus in in this case. But, you've got to have the SPI analysis module to actually do that.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: It means that when you have a you have packets of data, that are spread, you know, by long period, long dead periods, you're not wasting all your sample memory taking all those dead periods, you only, it's only the transitions that are stored in memory, time stamped, and did it transition high, did it
+TEXT: transition low, and then that makes more effective use of your memory. But you still need a lot of sample memory, um, you know the sampling compression like this is not magic. You've got to have a lot of memory to back it up, of course, because if one, if you've
+context after: got 1,000 transitions in one packet, and you want to measure 10 packets and you've only got, you know, 1K of sample memory then it can only do 1,000 transitions, you're going to miss these other packets so, yeah. But I'm sure it does, I think it's got like
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (explains)
+context before: there. And we can view lots of different stuff as well. So we can view data table for example. We can view events. We can view... well no, that's it. Or we can zoom in part of it. There we go, I've got a zoomed in
+TEXT: screen right here. So now we're actually zooming in to that trigger edge signal there. And of course we can scroll this along, but we only have a small memory here. It's only using, as it says up here, 2048 samples at 200 kHz. That's what it's currently
+context after: sampling at. So it does no sample compression that I'm aware of, and yeah. So it's a reasonably limited logic analyzer, but the amount of capability in here, just from the software side of things, yeah, very impressive. And of course everyone's going to want to know, can it decode buses as
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: That's great. But yeah, it's not, it can't dump the one meg of memory each time. So it's obviously, it's taking the one meg sample memory but then it's going to be just doing the display data and then streaming the display data to the
+TEXT: PC via the USB portal, via Wi-Fi or Ethernet or whatever you happen to connect to. But when you stop it, when you stop it, that's the point where it would upload the one meg points of memory. So if we go like this, we go way out like that, and we just
+context after: go auto mode. So let's go out like that, and we should be able to, let's have a look at that, let's stop that, okay, and it should give us the one meg capture, and we should be able to zoom in that and see, oh, there we go, well I
+
+[358] EEVblog #358 - Electronex 2012 — Dave Jones (explains)
+context before: They have different time base. You can individually click on different frequency. Different time base for each channel. Yes, like four scopes in one, in other words. So you can see all four. You can actually put them back into a normal one, and they'll be also at the same time.
+TEXT: Or if you turn off individual ones, so you've got that turned off, and then you go back to that. You can adjust individual time base, individual sample memory, or do they share the sample memory? It's the same sample memory, but individual time base.
+context after: So you can put this one, select that one, so then you change the time base that move with it. Nice. And how much sample memory in this? This is 10K, I think. I think it's 10K. And five giga sample per second. Right, so it's only a small sample memory.
+
+[810] EEVblog #810 - Micsig MS310 Handheld Oscilloscope Teardown — Dave Jones (explains)
+context before: And sure enough, right next to the FPGA, there's two of these puppies, pretty common as mud in these sorts of scopes, ISSI, 256K x 18-bit wide, 4 megabit, well you can actually choose different widths. 4 megabit SRAM, nice. SD RAM, rubbish, no. SRAM, thank you very much.
+TEXT: Easy to drive with the FPGA, and super quick. And there's two of those. So yeah, this thing's got 240K sample memory, so they could at least double that. They could have 512K samples because there's only 8 bits per sample. Actually, is that the same?
+context after: Looks like it is. They've actually got three of these, so I'm assuming that there's one per channel for the sample memory, and the other one, video memory would be my guess. And there's a good old-fashioned old-school TMS 320 in there for you 320 fanboys.
+
+[216] EEVblog #216 - Gaussian Resistor Redux — Dave Jones (explains)
+context before: Now the U 1272A actually has three different data logging modes, and we can get into it here by pressing the setup and going into the DLOG or data logging menu like this. Now, we can then select which data logging mode we want. Trig, we can do hand mode, or we can do
+TEXT: auto mode. Now, the hand mode sounds like the one we want. That's basically where you manually push a button to store each measurement. Aha! But, there's always a trap if you read the manual. It tells you that's only got, for some bizarre reason, 100
+context after: sample memory, 100 samples in this mode, not the full 10,000. Crazy! I don't know why. It doesn't tell you why. So, if we look at the other modes, auto mode is like an automated time interval. So, it'll take one sample every second, or once per minute,
+
+[1355] EEVblog #1355 - NEW Siglent SDS1104X-U $399 4CH Oscilloscope Teardown — Dave Jones (explains)
+context before: So, well, yep, there's your savings right there. I mean, you know, relays aren't cheap, right? And uh obviously, they've got uh some redesigned circuitry in here. So, no doubt that's going to be cheaper for the lower bandwidth.
+TEXT: They've only got the single ADC up here, and that's it. As opposed to the two before, and then of course they've got less sample memory, only 14 meg points total, and that would go down of course if you put on the multiple channels almost certainly.
+context after: So, that you know half the number of so you save your cost there, you save your cost in your ADC's. You save your cost on the relay and other front end components and stuff like that.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (explains)
+context before: But as I said, it'd be built in the main chipset, which is up here. Let's take a look. Put a damn texture on there. That's actually an AM335 uh Sitara TI series um uh an ARM Cortex A8 processor and of course operating memory down there.
+TEXT: This would be your sample memory down here as well. It's got uh 70 meg. Uh I'm not sure if it's uh per channel, whether or not they uh once you turn on all the channels, that halves, but uh yep, you know, it's got a decent amount of memory on it.
+context after: And that's the Ethernet interface there, no worries. And then just uh surrounding that, we've got various uh power supply stuff. The inductors there are a dead giveaway. There's a few local regulation stuff happening.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: Look at that, we've dropped down to 1 K, uh 1,000 waveform updates per second. And if we go up even further to 10 meg, whoa, there we go. Exactly the same uh time base, and we're uh looking at um 20 uh basically at 200 waveform updates per second.
+TEXT: And we go down to 20 meg sample points, and whoa, we're not even not even in the ballpark here. 20 hertz. So, there you go, 20 waveform updates per second at that particular uh 20 nanosecond per division time base with uh 20 meg sample memory.
+context after: So, that's a neat way that you can actually measure the um waveform update rate of the scope. Now, watch this. As you can you can see the uh you can see the pulses the trigger pulses there, and they're basically that far apart of 1 and 1/2 divisions or thereabouts.
+
+[1326] EEVblog #1326 - How Engineering Minds Think Alike — Dave Jones (explains)
+context before: Anywhere from 16 to 64. Mine was just a fixed 32. So if we have a look at the base level board, I think it could be like 16, and then you can plug on expansion boards. Now, input level, TTL, I think this is incorrect.
+TEXT: And we'll have a look at why later. But anyway, this one I didn't put in my specs, but this one only has 4K sample memory. Mine's got 32K. And we'll go into some of the differences that makes in terms of the... design of the main control chip.
+context after: Trigger point, it's in the center, internal or external. This design got 50 megahertz. I only pushed mine to 40. I can't remember why I pushed it to 40. I don't know if it was capable of 50 or not. I don't recall, but anyway,
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: You'll see it. There we go, rectangular. Let's I won't go into details of how all these various modes work and things like that, but um but it's just when you're comparing them, it's just important to use the same window in technique.
+TEXT: And And I've also got both scopes set to what 1 meg point sample memory and they're both working at 50 meg samples per second here 1 meg points as you can see same time base setting so it just allows us to get you know do decent comparisons.
+context after: And the third cab off the rank here is the Keysight MSOX 3000 and this one I really like it works really well. It's got a dedicated FFT button goes straight in and you can actually do FFT and another math function at the same time.
+
+[207] CleverScope USB Oscilloscope - EEVblog #207 (2 of 3) — Dave Jones (explains)
+context before: like 2.1 to 2.2 volts, and digitize across just that chunk. Right. Over here we have our mixed signal input, the eight digital ins. Yep. Not too many PCs got to do that. Yep. And over here is an Altera Cyclone. Magnificent device. That's where all the magic's running.
+TEXT: It's all the magic, and we can change it. Yep. And people can go and upgrade their hardware in the field later on. Fantastic. Memory. Yep. SD RAM. Yes. It's got a couple of, what is it, eight? It's got eight megs. Eight meg of sample memory.
+context after: But it's not high sample rate, this one. It's only 100 meg samples. 100 meg samples. So it's pretty slow, but when you've got a 14-bit converter, that's the magic. Plus, you've got a trigger that can capture almost anything. Excellent. I reckon, anyway. Wow, yes.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (explains)
+context before: UNFORTUNATELY, IT'S BACK LIKE it's upside down. All the electrons are going to fall out. Look, the FPGA code FPGA code is on the bottom. And they make you put it on the top here.
+TEXT: I I No. Anyway, it's this jobby down here. And we've got the data sheet for that. And there you go. These are 512 meg bytes. But because this is an 8-bit scope, that's per sample, not including any like high-res mode or anything like that.
+context after: So, 512 meg samples per chip. We've got four chips. So, that's two gig samples of memory hardware they got in here. But it's only 10 meg sample memory that they've got.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (explains)
+context before: It's just going to be doing like the user interface stuff and uh things like that. It's not, you know, busily um you know, updating the display. That's all offloaded to that display processor there.
+TEXT: And if you remember the sampling memory here, 512 megabit each, divide that by eight, that's 64 megabytes and there's two of them. This is a two-channel scope, so that they'd probably be dedicating one of those per channel, of course.
+context after: So, these this thing um well, in theory, has 64 megabytes of, uh, sample memory per channel. And on the display device here, we have two Cypress, uh, SRAMs, a CY73 1380C.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: It makes it maximizes your use of memory. Now, the best oscilloscope will have an incredibly deep memory, megabytes of memory with a compression sampling system. That is the best scope you will get.
+TEXT: But generally, on the market in mid to low priced logic analyzer, you won't get that generally. Your logic analyzers that use compression sampling will generally only have a couple of kilobytes or something like that of sample memory.
+context after: So, that means there's a trade-off with these small sample memory logic analyzers. Don't be fooled into thinking that they're magic because they're not always magic because what it will do is if any one of your input channels changes, any one of your data channels changes, then it's going to actually take a sample across all your channels.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: one meg worth of data, so that's not being continually transferred. I don't know how many times this is updating per second. You know, 15, 20 times a second or something, it kind of looks like. It's really quick and responsive. I really like that.
+TEXT: That's great. But yeah, it's not, it can't dump the one meg of memory each time. So it's obviously, it's taking the one meg sample memory but then it's going to be just doing the display data and then streaming the display data to the
+context after: PC via the USB portal, via Wi-Fi or Ethernet or whatever you happen to connect to. But when you stop it, when you stop it, that's the point where it would upload the one meg points of memory. So if we go like this, we go way out like that, and we just
+
+[1032] EEVblog #1032  Part 4 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: We're neck and neck, and of course, our competitors aren't standing still. Yeah, no, no, they're, in terms of memory space, like, the Keysight still rules in terms of response and user interface kind of, you know, stuff, and your speed of updating, that sort of stuff.
+TEXT: But lags behind because of the limitation in the ASIC, the amount of sample memory, the size of the screen, as you said, is limited to 800 by 600. You can't get any bigger, you can't, so. So they're obviously looking at all that now.
+context after: But you, there's a magic time, you don't want to go so soon that you don't pick up enough update, and you don't, you advertise the cost of making those chips. But you don't want to wait so long that you lose, you know, you don't want your markets to grow and then shrink a little bit,
+
+[976] EEVblog #976 - Keysight 1000 X-Series Oscilloscope Teardown — Dave Jones (explains)
+context before: to compete against the 1054Z, which is hackable, and other scopes which are hackable, this one has to be hackable. And if you can get the function gen version for that, then it's going to be an absolute bargain. It could be a killer scope, and of course, as time goes on,
+TEXT: they can release extra functionality in this, because it's got the MegaZoom 4 ASIC in there, they can increase the sample rate to up to 4 gig if they wanted to, they can increase the sample memory up to 4 meg if they wanted to,
+context after: they could implement the million waveforms per second if they wanted to, all that functionality is already built into this scope. And of course, the serial decoding is an optional extra, they can include that for free. So they have a lot of scope to move on the pricing,
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: to want to touch state analysis much. If you're going to need it, you're going to know it. And because of various uh factors to do with um the the design of the capture system in the logic analyzer and various other things, generally, the spec the sample rate for state analysis for any given logic analyzer is going to be less than timing analysis.
+TEXT: That's just the way it is. There's another thing you've got to consider when you buy the logic analyzer, and that's sample memory. Now, just like an oscilloscope, you need to get the biggest, deepest sample memory you can get.
+context after: It's very important on a logic analyzer, cuz usually you're analyzing data, and lots of it. So, you need a big sample memory. But, to confuse the issue, there are two different types of sample memory.
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (explains)
+context before: There's the main application processor 68 C020 classic. And there's the ROMs tucked under there. And there's what I'll call the analog mega zoom ASIC cuz it's dedicated to the analog channels.
+TEXT: And then we've got our two sample memories here, separate ones per channel. And likewise for our digital mega zoom ASIC. Once again, as as I mentioned before, separate memory for the digital channels, which is great.
+context after: It doesn't share the analog channels. And there's quite a few memory chips surrounding that dedicated to all 16 channels. And I popped off the metal can on the front end and tada, there it is.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: It just cannot It's got a very low number of FFT points. So it can't use all of that sample data. And that's one of the keys with having a high number of FFT points.
+TEXT: No point having 150 million gigabytes of sample memory if your FFT algorithm it just can't use it. So yeah, so our signal is way outside the range here. So we can obviously can't select that time base setting, okay?
+context after: And if we go worse, we can only go to 800 kHz, okay? So we've got it So the absolute best range that we can get where we're going to get the most resolution out of this thing is at 20 microseconds per division because anything uh faster let me go to 10, okay?
+
+[1309] EEVblog #1309 - Siglent SDS2000X Plus Scope Teardown+Hack — Dave Jones (explains)
+context before: And other differences from the 2000X series, this one's actually got slightly less waveform update speed, 120,000 waveform updates per second versus 140 for the regular X series. So, I'm not sure what the deal is there.
+TEXT: It's probably to do with the extra memory they've got in this thing. This is a 200 meg points memory as opposed to I think it's 120 or something in the previous one and this one's got 500 microvolts per division.
+context after: It's got a 50 MHz function generator output instead of a 25 MHz function generator output and it's got a much larger screen, 1024 by 600 10.1 inch capacitive touchscreen as opposed to to 8-inch screen in the regular X series we've torn down before.
+
+[1716] EEVblog 1716 - University Dumpster Diving: Kikusui Oscilloscope — Dave Jones (explains)
+context before: Or if you go down to two, you getting more post-trigger data than pre-trigger. But it looks like there's no way to go down to zero to get 100% pre- or post-triggering, but acceptable compromise for the era.
+TEXT: Well, I was right. Here are the specs for this thing. Yes, maximum of 25 megasamples per second with 1,024 points sample memory. So, 1K of sample memory, but that's all you need for on the display like this.
+context after: It's It's just fine, and this would have been extremely useful back in the day. I didn't have one. I only had the analog jobbie. So, yeah, I would have lost it after this.
+
+[1761] EEVblog 1761 - Micsig MHO14 Tablet Oscilloscope TEARDOWN — Dave Jones (explains)
+context before: And of course the beautiful diecast alloy case here. Absolutely fantastic. And surprise, surprise, not a Xilinx Zynq main FPGA up here which is does all the capture engine. It's a next C7Z020.
+TEXT: You can go look that up if you're playing along at home. This is obviously the sample memory. There could be more on the other side there, but I'm not going to be bothered decoding the part numbers there.
+context after: You can do that yourself if you really wanted to. I don't know. Might even be able to read the barcode. Anyway, so that's sample memory. That's going to have bypassing on the bottom of it.
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: That's just the way it is. There's another thing you've got to consider when you buy the logic analyzer, and that's sample memory. Now, just like an oscilloscope, you need to get the biggest, deepest sample memory you can get.
+TEXT: It's very important on a logic analyzer, cuz usually you're analyzing data, and lots of it. So, you need a big sample memory. But, to confuse the issue, there are two different types of sample memory.
+context after: Well, the same sample memory, but two different types of systems, and here they are. The first one is sequential sampling. It's That's not really its name. It's just normal, the traditional method.
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: And this uh this isn't very good if you're trying to measure, say, a packet of I squared C data here, and then another packet of data which is way down there.
+TEXT: That means you've got to have a huge, massive, many megabytes of sample memory, um otherwise you're not going to be able to capture all these widely spaced um packets of data that you want to analyze.
+context after: This is where compression sampling comes in. Now, compression sampling is will only it it still samples at the same rate as this one, okay? But it will only store data it will only use a a word or a byte of memory whenever one of the input data channels changes.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. So, a logic analyzer with compression sampling is extremely valuable.
+TEXT: It makes it maximizes your use of memory. Now, the best oscilloscope will have an incredibly deep memory, megabytes of memory with a compression sampling system. That is the best scope you will get.
+context after: But generally, on the market in mid to low priced logic analyzer, you won't get that generally. Your logic analyzers that use compression sampling will generally only have a couple of kilobytes or something like that of sample memory.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: I'll give you a quick demo of that capability. I'll turn on data logging mode. It's got 1,007 samples already in here, but it's on auto hold mode. I've got my little resistor probe over here I built up for a previous video and bang, I can go through and just add each one directly on like that without having to touch the meter.
+TEXT: Brilliant. One of the powerful features of this meter is that it does have 10,000 data points sample memory and it's it works brilliantly and it's got various auto and trigger hold modes available.
+context after: I won't go through them all but I've put it you can cycle through its trigger hold capability here and so you can probe something and then manually take a trigger if you want and bang and you can take trigger points and it adds them and automatically increments the counter up there and then you can cycle through that data later on the unit itself or you can upload it to a PC.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (explains)
+context before: There's this $129 optional pulse width trigger module as well. So, that's interesting. I'm not sure why they couldn't do that inside the unit. Inside, presumably, you're going to find FPGAs inside all these doing all the heavy listing heavy lifting.
+TEXT: And these are, while they are USB logic analyzers, they are not like the cheap Saleae logic, for example. These actually have built-in sample memory. So, they're not streaming logic analyzers.
+context after: So, let's have a squeeze at this. There it is. It's our Logic Cube. So, this is the 32-channel version. But you can get the 16-channel version. I presume there's just like an extra board in there with some extra hardware.
+
+[5YjS4DHKlQU] Tektronix 5 Series Oscilloscope — Dave Jones (explains)
+context before: So, I don't know why they did that. I I know, I I don't agree. Anyway, we've got a tiny little horizontal button. There you go. What's the sample memory?
+TEXT: How much sample memory? 6.25 gigabytes. No, there's no sample memory, the size of the memory. 62.5 62.5 meg. Right, 62.5 meg samples. And uh anyway, so that's the 12-bit That's the high res.
+context after: We'll run that again and oh. Oh, no, cuz uh that's right, we haven't zoomed in. So, if we zoom in like we can see that it's eight bits sampling at the moment.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: So, let's see, I'm at 20 nanoseconds per division down here measuring the 20 MHz input signal, and we're basically getting if I reset the stats up there. You probably can't see that, but I'll tell you it's 4 kHz or 4,000 3,000 samples waveform updates per second basically, and that's with only one channel going and a only a thousand only a 1K sample memory.
+TEXT: And if we change that to 10K, you'll see it doesn't actually change that frequency at all. So, 100K and 10K are the same, so is 100 K sample memory, but if we drop it down to a meg, bingo.
+context after: Look at that, we've dropped down to 1 K, uh 1,000 waveform updates per second. And if we go up even further to 10 meg, whoa, there we go. Exactly the same uh time base, and we're uh looking at um 20 uh basically at 200 waveform updates per second.
+
+[1639] EEVblog 1639 - Keysight InfiniiVision HD3 Oscilloscope Teardown — Dave Jones (explains)
+context before: I'll just use this Linear Technology. Jobbie. Thank you very much." So, specking two of those there. No worries. Oh, and they've got another one over here, too. Cool. And if you look up the part number for these Micron memory chips, and yes, they do have one memory chip uh per channel.
+TEXT: So, you don't have to uh share. And if you look that up, that's a Micron uh 512 megabyte 32. So, there you go. That's how they get their 100 uh meg points, 100 meg uh samples per channel.
+context after: So, obviously, uh that has more than it needs. So, that's uh excess there. They might be doing uh some, you know, intensity uh graded uh stuff with the extra memory or something like that.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (explains)
+context before: They're the, you know, your your $100 ones or 50 or $100 ones. They're generally the ones that will just uh really stream data in real time over your USB 2.0 interface and generally they're limited to, you know, 10 or 20 megahertz or something megasamples or something like that.
+TEXT: And that's because they stream data in real time. Now, the advantage with those low-cost ones that stream in real time is that you effectively have an infinite amount of sample memory.
+context after: You've got your hard drive. You've got You've got a terabyte hard drive. Whoa! You know, fantastic. You can store a terabyte of damn data. It's incredible. So, you got unlimited buffer.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (explains)
+context before: and coupled around what's clearly an FPGA uh under here. I don't know if I'll remove that heat sink yet. Could be really messy. I don't know. But anyway, we got ourselves a GS 88036 uh CGT, a 9 megabbit uh synchronous SRAM in a 256K time uh 36-bit configuration.
+TEXT: So, effectively a total there of uh only 2 megabytes. But that's what this thing's got, 2 megabytes of sample memory. So clearly that's uh 2 mega sample memory with an extra bit.
+context after: And of course coupled onto our FPGA, these two suckers under here are obviously our analog to digital converters and dead giveaway because they're right near the vertical front ends.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: How far do I have to go out? Crikey. Look at that. What's that frequency there? That's 50 milliseconds per division, 100, 200, 250 milliseconds, like quarter of a second.
+TEXT: A quarter of a second dead time, and then and we can only capture um up to 1,000 uh sorry. Well, at this time base or what uh we're only getting 1,024 that we can capture, okay?
+context after: So, as So, if the one-in-a-million pulse happens to occur in that in the region where it's sampling, then bingo, you'll get it. And uh you might I don't know if it'll display it on the display.
+
+[1188] EEVblog #1188 - $10 DIY EMC Probe using Scope FFT — Dave Jones (explains)
+context before: But one of the reasons it's so fast, we're we are only on 10 K points mode if we memory mode. If we go to 100 K points, wow, look at that.
+TEXT: Now we're talking. 1 meg points. Takes time for its first, but but even at 1 meg points, which is different, this is the sample memory. This is not the FFT number of FFT points.
+context after: This one actually takes a bit of fiddling around in terms of like selecting the correct thing here, but there we go. We've got it. And you can see the ridiculously fine resolution in there.
+
+[1] EEVblog #1 - Rigol DS1052E Oscilloscope Review — Dave Jones (explains)
+context before: And it takes a few seconds to boot up. One of the um I guess really the main annoying aspect with it I have is that it does actually have a fan.
+TEXT: Uh it's not too loud, but it's uh it's it's certainly not like a a fanless unit like the TDS 210. Now, its big selling point, of course, is that it's got a 1 meg point memory.
+context after: Um, and 1 gig sample per second sampling. Now, Rigol were one of the first Asian manufacturers to roll their own 1 gig sample per second uh front end, which is what they've actually refined and they've finally used in these units.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: So, that's our modulation. So, uh what it's doing is when we turn on FFT mode, it'll actually uh compute the fast Fourier transform of this, and then we can uh just go in there and zoom in.
+TEXT: But, the FFT depends upon uh many different things. It depends on the sample memory of the scope, how deep a memory you've got. It depends on the sample rate uh you're using.
+context after: It depends on your current uh horizontal time base setting. And uh most importantly, it uh depends upon the number of FFT points. And this Rohde & Schwarz one is unique in not only that it has a high number of FFT points, it has a 128 uh K points, but you can actually select it, as well.
+
+[1612] EEVblog 1612 - Siglent SDS1000X HD 12 bit Oscilloscope Teardown — Dave Jones (explains)
+context before: Manual. Uh, click next if oscilloscope initialization completed. Uh, uh? Uh? Hope I don't ruin it. Um, connect AWG to C1 tweak uh, C1 to T1. Uh, yeah, no, this is getting nasty.
+TEXT: Okay, I won't go there. Sorry. Well, this is interesting. This does auto memory management, right? You can't do fixed like you can the only option is fixed sample rate.
+context after: Whereas over here, right? It's got fixed memory. So, you've no longer got um, that option on the 1000. You don't have fixed memory. So, yeah, that's really annoying. There's like we can uh, and it times out, too.
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (explains)
+context before: But, of course, it it's in a 512k bit by 18 bit arrangement. So, um I don't know are they doing a check sum with the extra uh two bits in there.
+TEXT: Anyway, that only works out to 128k uh sample memory for that. So, this is not being used as the main uh sample memory because it's got it's supposed to have 14 megs.
+context after: So, presumably that's what that puppy on this side here is for. So, that puppy there. And if you know that that number off the top of your head, well, my hats off to you because it's bloody cryptic.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: That's how they implement the memory inside their MegaZoom 4 ASIC, and I don't have particular details exactly how they do that. So, why did it actually run out of puff at 50 microseconds per division there?
+TEXT: Well, this has to do of course with the amount of memory that we actually have and our sample rate and our particular time base that we happen to be capturing at.
+context after: And you'll notice that we're uh sampling at 5 gig samples per second and we're in auto memory depth so we don't the Keysight uh the ASIC is uh quite smart and it'll use the maximum amount of memory of its 4 meg sample memory maximum that it can uh based on whatever mode and time base and all, you know, everything else you're in.
+
+[5YjS4DHKlQU] Tektronix 5 Series Oscilloscope — Dave Jones (explains)
+context before: Old school uh tech. I I reckon they're going They're jumping back to that. Does it tell us? Uh 12-bit. Where does it tell us the number of uh samples?
+TEXT: No, that's that's acquisitions per second. Where does it tell us the size of the sample memory? Oh, there we go. Is that it? Uh 12.12.5 K points. There it is.
+context after: So, that's actually more than the couple of K in the previous uh gens. So, that's all right. They've improved improved it in the fast acq mode. No worries. And uh trigger we got force.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: It's got up to 96 or 128 kilobytes of S + 128. It's got a separate SRAM or something? But anyway, we've got the ADC which we'll have a look at, but there's no other glue logic in this.
+TEXT: Uh there's no CPLD, FPGA or anything. No sample memory. Uh so, the 64K of sample memory must be in inside here. And this must just be sampling in real time.
+context after: We've got an old school uh 4051 analog uh mux down here. Looks like we've got an attempt at a standard um analog um front end. This is our BNC, of course.
+
+[1311] EEVblog #1311 - Can Your Oscilloscope Zoom OUT? — Dave Jones (explains)
+context before: So, let's actually wind this time base back a bit. 10 microseconds, 20. Watch this gig samples per second. 50. Aha, 50 microseconds per division. We've dropped Well, bloody touch screens.
+TEXT: We've dropped down to 2.5 gig samples per second and at a 100, 1.25 gig. You'll notice that it's dropping because uh this thing's only got 4 meg of memory.
+context after: So, it has to drop that sample rate because it can't get the maximum 5 gig sample uh per second sample rate at 1 millisecond per division. It just does not have the memory to do it.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: So, there is uh some input protection there for uh overloads and stuff like that. But, uh basically, there is no input uh buffer chip, uh no input uh latch chip.
+TEXT: So, it goes directly into the microcontroller. And, of course, uh it's got no effectively no uh sample memory in it. It uh samples in real time on the PC.
+context after: So, it's effectively got an infinite uh sample memory. It uh the sample rate just depends on the latency of your USB port. Um this is They claim the maximum is uh 24 megasamples per second on this thing.
+
+[369] EEVblog #369 - Rigol DS2000 Oscilloscope Playing Around — Dave Jones (explains)
+context before: Um that it at it relies upon how many waveforms it captures relies upon the memory depth and the horizontal time base that you've currently got it set to. Now, I've got this now set to very fast.
+TEXT: It's set to 50 ns per division there. And you can see we're only going to capture 700 points. And that's will double if we turn off channel two there.
+context after: Bang, we can get 1.4 K points, okay? So, but let's turn channel two back on. So, it'll capture both of these channels 700 points. It'll capture Well, let's let's get the calculator out here.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: Look at that. See, what? What is that? Unbelievable. And let's do a test to see if we get any aliasing. Let's turn That's a 20 MHz sine wave, by the way.
+TEXT: Let's turn it down and yep, we do. Check it out. Alias city. But of course, you won't get that if you choose a longer memory depth like 1 meg.
+context after: Wait, we're still getting something there and then 10 meg. No, it's all She's all still sweet. There we go. I'll show you a little trick with determining the waveform update rate of a scope.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (opinion)
+context before: or performance, and, uh, lack of options, you know, and, yeah, it's only single channel, um, but, hey, that would have been good if it did actually have a decent 100 meg front end on there, and if it had some decent options in the software, and the triggering worked better, and the sample memory you could actually zoom in on your waveforms, and it, it just, like, yeah, it's just, ah, let down at the final, uh, level.
+TEXT: But, um, yeah, I, I don't know, there might be an issue for this, you know, I like the form factor, kind of like the look and feel, I kind of like the layout and the options it had, it just, it, it was just let down, like, just huge showstoppers, almost, like, you know, the, the sample memory, not being able to zoom in, and it not working properly in just normal trigger mode, um, I, and the lack of the bandwidth, so, uh, I'm not sure I can recommend that, unless you've got some niche apps out there.
+context after: But, um, yeah, I was hoping this would be a winner-winner chicken dinner, but, uh, it ain't, but, you know, it might be useful for some people, a little field, uh, pocket view of waveform, you don't care about, uh, zooming in, and the auto mode's good enough for you, and the bandwidth is good enough for you, and, and whatnot, maybe, but anyway, I'll leave a, uh, link down below if it, uh, does suit your purposes, no,
+
+[1218] EEVblog #1218 - 1GHz Oscilloscope Spec Shootout — Dave Jones (opinion)
+context before: Unbelievable. Even the lower 3 series is better with 50,000 waveform updates per second minimum. Now it doesn't tell you that in the Tektronix 4 series manual here. It just says greater than 500,000 waveform updates per second, which sounds fantastic.
+TEXT: But I have been informed that it's actually but that is in its what what's that mode called that the super acquisition mode which you have deliberately have to switch on and then you get bugger all sample memory with it and then you'll get your 500,000 waveform updates per second maximum.
+context after: But I've been informed that it's only 100 in normal mode. Not 100k, 100. Correct me if I'm wrong. Yes, here it is. Fast acq technology. High speed way to debug a design problem.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (opinion)
+context before: Got a nice DC power supply in it, plus minus 25 volts at 1 amp, so there's 50 watts and 6 volts, 3 amps up to. All digitally programmable, quite accurate. Everything else, I believe the specs on your digital multimeter are pretty good too.
+TEXT: It's got 8 channels of digital I.O. here, and also it's a mixed-signal oscilloscope. So you get 16 digital channels for your logic analyzer as well. 1 MB sample memory per channel, which is not a lot in the scheme of things. So quite disappointed by that.
+context after: And it's also somewhat disappointingly for a bench instrument like this, like a USB sort of like educational type tool, it's only an 8-bit regular 8-bit converter. Would have much preferred to see a higher resolution converter inside this thing. Even if you had to sacrifice bandwidth, would have been very nice to get like a 12-bit converter.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (opinion)
+context before: But, yeah, they got two separate processors there, exactly the same. So, meh. So, my first guess is the Spartan 6 FPGA here, it's going to be doing probably the sampling, um, subsystem.
+TEXT: That could be the sample memory tied onto there, perhaps. Uh, not entirely sure, but it's definitely not like, um, that we saw in the, uh, in other meters that we've seen that, uh, they can do the FPGA, the sampling FPGA functionality inside the FPGA.
+context after: That's not what That's not what's going on here. I Because it's on the digital board, it's not on the analog board as you'd expect it to be. So, it's got to be doing, you know, it's got to be doing something after it's getting the data from the analog-to-digital converter.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (opinion)
+context before: On the Agilent scopes, it doesn't at all. You can turn on the serial real-time serial decode, the masking, and those waveform updates per second don't drop. You still get a million waveform updates per second.
+TEXT: It's incredible. And that, depending on your requirements, not everyone's going to have the same requirements, that may be worth its weight in gold compared to you know, a bit extra analog bandwidth or a bit more sample memory or something like that.
+context after: But just keep it in mind. Make sure you compare apples to apples. Don't just rush out and say these things are too expensive. And then, of course, you start talking options.
+
+[1218] EEVblog #1218 - 1GHz Oscilloscope Spec Shootout — Dave Jones (opinion)
+context before: 8 years old at least. So, it's very old. They haven't updated. It's got the 4 megasamples maximum. And a lot of people don't worry about the sample rate, it's more than enough.
+TEXT: And these are still great scopes. But if sample memory's your thing, yeah, you want to think twice about the Keysight. And as far as the display goes, the standouts are the new Tektronix 3 and 4 series scopes.
+context after: They've got full HD 1920 by 1080 and screens. They're all the models in this shootout are touchscreen, so no worries there. And most of them have got like gesture-y type meh.
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (opinion)
+context before: Now, there could be more stuff on the other side, but certainly not big heat sunk devices like this. Whereas, the MDO 4000 had, I think, a separate ADC per channel heat sunk and all that sort of stuff.
+TEXT: Look, three main devices. The sample memory here, almost certainly the sample memory. Why? Well, there's four of them there and they're coupled in with presumably match length traces to get the timing right.
+context after: We'll take a close in look at that. So, there's one device per two channels like that. So, of course, your sample rate will half half if you turn on both channels, presumably.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (opinion)
+context before: That'd be my guess, anyway. I'd love to have that uh confirmed, but I don't think it's any uh coincidence that they're, you know, this in these gaps here are even, and these ones aren't.
+TEXT: So, my guess is sample memory, and then something else, I don't know, FFT, digital analogic analyzer, and you know, stuff like that. Um so, yeah, I've decoded the part number here, and we can go over there.
+context after: That's actually a Micron uh 8 gigabit. So, that would give 4 gigabytes sample, but because this is a 12-bit ADC, we can't just store it in one byte. So, it's got to be Yeah, it's need at least two bytes to store each sample in there.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (opinion)
+context before: That's a bit quirky. Hmm, more investigation required. Anyway, yes, I do plan on doing videos uh reviewing and maybe like a shootout comparison or something like that. Um but it's interesting 499 US bucks with all the serial uh decoders built-in, by the way.
+TEXT: There they are, I2C, SPI, UART, CAN, and LIN buses all built-in. The 14 meg sample memory, the bode plotting, which I haven't uh looked at yet. But yeah, you can actually do a bode plot.
+context after: There you go. Uh 1 meg FFT, which is awesome, which you can do these days inside that Zynq uh FPGA. Um and which you see on other scopes like the GW Instek one does.
+
+[187] EEVblog #187 - Tektronix TDS2024C Oscilloscope Teardown — Dave Jones (opinion)
+context before: Great oscilloscope in its day. Pioneering, it practically started the entire digital storage oscilloscope business. All these bench portable ones anyway, the ones that had real-time sampling. They started it all but quite frankly, I had one of those back in I think it was 1997.
+TEXT: I'm not kidding. Not 2007, 1997. And it just reminds me of that. Sure, it's got a few more features but the thing is, it's only got and here's the spec, 2.5 kilobytes of sample memory.
+context after: That's not megabytes, that's kilobytes. It's barely enough to do a couple of screens worth. It's hopeless. Now, where is the advancement of the art in the sample memory depth?
+
+[187] EEVblog #187 - Tektronix TDS2024C Oscilloscope Teardown — Dave Jones (opinion)
+context before: I'm not kidding. Not 2007, 1997. And it just reminds me of that. Sure, it's got a few more features but the thing is, it's only got and here's the spec, 2.5 kilobytes of sample memory.
+TEXT: That's not megabytes, that's kilobytes. It's barely enough to do a couple of screens worth. It's hopeless. Now, where is the advancement of the art in the sample memory depth?
+context after: Exactly the same 2.5K sample memory. I can't believe it. This is you know, Tektronix's current model and it's just not competitive. It's crazy in terms of sample memory. It's not a bad scope, you know, I can picture it being useful for say the tech fanboys or something like that and they only want a basic scope that just displays a waveform on the screen and that's it.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (opinion)
+context before: It just really kind of bugs me. I'd expect I expected more. I expected faster and better instant performance like you get on the Agilent ones for, you know, a basically a $30,000 oscilloscope, modern one.
+TEXT: On the one uh make sample memory, I was actually able to capture that one in 18 seconds, but I think I'm lucky uh because it's taken a hell of a lot longer than that.
+context after: It's now a minute past that and it has hasn't captured a uh second one yet. But, yeah, I think I just got lucky, but it seems it's definitely slower as you go up in the memory depth.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (opinion)
+context before: And the separate arbitrary waveform generator, whatchamacallit, is a bit pricey, I believe, for the option. But uh anyway, this is not a review. I just wanted to show you this cuz it's very exciting.
+TEXT: You can get a four-channel scope for 499 bucks with all the serial decoders built-in, a crap load of sample memory. Uh you know, the the sample rate's good enough.
+context after: I wouldn't be paying the extra for the 200 MHz one of this. It's just the sample rate's not good enough, especially if you're utilizing all the four channels. It's just, you know, it's it's not great at all.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (opinion)
+context before: It's a dead giveaway when you got a couple of oscillators in there. That'll be like a PLL or like a clock uh gen for all the uh sampling. So, that'll be doing all that.
+TEXT: And here is our uh sampling memory. Huge amount. Can't remember what, but anyway, they'd be top of the uh line. It's interesting that it's got like six of them.
+context after: And sort of like these four seem to be physically arranged together. We'd have to check the size of that. And then it's got like two separate ones over here.
+
+[199] Tektronix MDO4000 Oscilloscope Teardown - EEVblog #199 — Dave Jones (opinion)
+context before: And up the top here it looks like we've got some uh Micron brand what looks like uh memory. I I can only assume uh the number is uh not familiar at all.
+TEXT: So, uh but they are um obviously coupled into these uh heat sunk uh ASICs up here. So, uh presumably sample memory? And there's the bottom of the main uh board.
+context after: Now, there's a uh there's some more um of Micron memory down the bottom here. Another buttload of that. And I thought there was a device on this soldered onto this side of the board, another BGA device, but that isn't populated.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: There you go. Um yeah, nice nice metal threaded inserts there in the case. Yeah, that's pretty groovy. Got a BGA under here. That's certainly one big FPGA with building processor, you know, a zinc or whatever.
+TEXT: We've got some linear regulators here. We've got the sample memory there. You know, there's nothing fancy. This is not a high-end oscilloscope input. It's only I think maximum of plus minus 25 volts, so you're not going to see a full, you know, oscilloscope front end on this thing, but you know, it's it's going to be good enough for Australia and any sort of like general purpose like lab
+context after: stuff, especially education and just basically around on your uh you know, bench with your usual, you know, low-power products, designs, and stuff like that. So, as I said, I'm not a fan of that magnetic input.
+
+[565] EEVblog #565 - Tektronix TDS3054 Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: If you haven't seen the previous video, I'll link it in down below. Didn't really have any time to troubleshoot it properly last time. It was just a teardown to see if there was anything obvious there at all and have a poke around under the microscope.
+TEXT: There was nothing obvious, of course. We've got a faulty channel three here and we're not sure if it's in the hybrid or whether or not it's in the ADC or whether or not it's in part of the sample memory or something like that, but I asked for comments on the forum and sure enough, I got them and it turns out somebody had Well, Vincent actually, free electron on the forum,
+context after: had the info that the hybrid amplifier chip in here actually has a high-frequency and a low-frequency differential driver output. So, it splits the signal into a high-frequency and low-frequency component and there's two line differential pairs which go over to the ADC there.
+
+[847] EEVblog #847 - Mailbag — Dave Jones (mention)
+context before: It's 100 meg samples per second, but once again 14-bit ADC, 30 megahertz analog bandwidth, but dual waveform generator, 14-bit DAC, 100 meg samples per second, but it does network analyzer functionality, spectrum analyzer functionality.
+TEXT: So, it all comes down to the software. So, pretty much they're all equivalent in terms of hardware. They've both got 14-bit uh converters, lots of sample memory, all that sort of jazz, lots of processing built in like the Red Pitaya uses the Xilinx Zynq processor, incredibly powerful.
+context after: The Analog Discovery 2, I can't remember what this one uses, but another FPGA does some of the stuff in the FPGA in here as well. So, quite powerful platforms, but it basically comes down to the software functionality inside these things.
+
+[1124] EEVblog #1124 - Rigol 7000 Oscilloscope Teardown — Dave Jones (mention)
+context before: I really like the look of those. We've got two two custom A6 up here. They're our ADCs and sampling engines and that well, the new Phoenixy chipset. Oh, got some real old school relays and a battery and one little piss ant um FPGA or processor under there.
+TEXT: Can see a little another Spartan 6 FPGA up there. There's our sample memory. And Bob's your uncle. Geez, it's pretty sweet, isn't it? Look at all the uh nicely laid out um DC-to-DC converters here for all the uh rails I need it for you know you probably got 1.1, 1.5 volts, 1.8 volts.
+context after: Goodness. When I was a boy Well, I think I was on the money with the rails here. Let's go in and have a look at them, shall we? They're thoughtfully labeled.
+
+[502] EEVblog #502 - $19 Hameg Analog Oscilloscope — Dave Jones (mention)
+context before: So, the LEDs all work, no problem. And there we go, plug in our signal. Bingo. And we're single shot captured that. Don't know how we zoom into it. But, there's our dot join mode off and on.
+TEXT: No, maybe that's only uh Well, there's 2K of sample memory in there. And everyone wants to see some good analog modulation, of course, on the analog scope. So, I've got a 1 MHz carrier with a 100 kilo with a 1 kHz uh modulation at 110% and that was at the fastest time base.
+context after: We turn that up. We're not going to see that. Let's uh tweak our hold off here. See if we can get something nice with our hold off control. We should be able to.
+
+[383] EEVBlog #383 - Agilent 4000X Oscilloscope Review — Dave Jones (mention)
+context before: and that can take advantage of that higher sample rate as it does boxcar averaging of those samples in real time, and that's where you need much greater than that 4 times sample rate. So that is, you know, that is a good decision to put 5 gig samples per second on a 200 MHz scope.
+TEXT: I like it. Other differences are 4 meg sample memory standard, this one only came with 2 meg memory standard, so none of that memory upgrade garbage. So it's based on the same MegaZoom 4 ASIC, so they've just enabled the full 4 meg sample memory across all the models.
+context after: Now, it's exactly the same update speed because it's the same ASIC, 1 million waveforms per second, and we'll check that of course. This one has not one, but two arbitrary waveform generators in it, and it still uses the same MegaZoom 4 ASIC. How do they do it?
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: No, that's not going to be terrific. And it's not triggering on that. A lot of other scopes have trouble triggering on that, too. But we're not, it looks like it doesn't have the on-screen memory depth to actually, um, show anything there. Let's put in stop mode and then see if we can zoom in.
+TEXT: No, there's your problem. You can't zoom in. We've got no extra data. So all you've got is so much for your 128k sample memory. That's what it said it had, right? 128 kilobyte storage depth. Well, where is it? We've stopped our waveform and we can't zoom into that.
+context after: We can move it around. That's hopeless. Anything else we've got on here by the looks of it? Brightness. And that's it. So, yeah, this thing is really rudimentary and I'm, I'm, ah, disappointed that you can't, 128k memory would have been useful, but it looks like it's only got the,
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: Now, of course, there's one glaring omission in that it doesn't have the auto probe detect for your times 10 probes, but hey, neither does the Rigol. And hey, this is a 600 well, a $500 scope, so you don't really expect it to have it, but killer, it's got 50 ohm input impedance mode switchable as standard.
+TEXT: Fantastic for a 600 buck class scope. Now, both scopes have 500 microvolts per division. Beauty. I love this new trend of 500 microvolt per division vertical range. And I've set them both to 7K points sample memory here, normal acquisition, everything.
+context after: As you can see, the Siglent appears to have a lower noise floor than the Rigol, but that's appearance-wise. It's got to do with the update rate and the memory depth.
+
+[CMoBGGqojqs] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (mention)
+context before: So that's very nice. That is very nice. And if you get that for $2700 bucks, but you could buy a higher bandwidth four channel scope in a lower one that only went to say 300 MHz maximum or 200 MHz maximum you can get more bang per buck.
+TEXT: But you've got to trade off how much expandability you want in the future. I mean this thing, you can expand it to two waveform gens, you can expand it up to 500 meg of sample memory, which is incredible. I think I saw that they were giving away
+context after: the 500 meg sample memory. If you bought the 500 MHz bandwidth model that we've got here. But this goes up to, this fully optioned up is 12k I believe of that order. I don't know if that includes all the other options as well.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (mention)
+context before: Zinc FPGA plus the Kintex FPGA. Huge beast, and they can't they haven't implemented I2C and SPI pattern triggering, for example. So it's quite limited. You've got to go in there and decode it, so you can't trigger on missing acknowledges and all that sort of jazz.
+TEXT: So it's not really a protocol analyzer as such. So there we go. With the 1 meg sample memory we can capture the entire group of data here, and then we can zoom in. So that's okay. But that's standard on a deep-ish memory scope like this one with
+context after: 1 meg. But yeah, you can't trigger, unfortunately, on anything. So you can't, you know, like a data word or something like that, which is very useful for debugging and things like that. But considering, I guess this is primarily targeted at the educational market, I think
+
+[209] New Agilent 3000X Oscilloscope Firmware - EEVblog #209 — Dave Jones (mention)
+context before: And that can be a big deal um for people who have to get these sort of things calibrated and who don't have their own internal standards, but they follow the manufacturer's recommended interval.
+TEXT: So, they've upped it from 12 months to 2 years. Beauty. Now, the specs for this built-in arb gen aren't exactly going to set the world on fire. We're only talking uh 10 bits vertical resolution, 100 megasamples, and uh 8K sample memory.
+context after: But hey, consider this built-in a scope, it's it's not bad at all. It's certainly quite useful. So, I don't think Agilent's function generator group are, you know, really shaking in their boots at this stage.
+
+[1375] EEVblog #1375 - Mailbag: IEEE — Dave Jones (mention)
+context before: video so we're gonna whip this open uh yeah a little tilting bail nice and wide though so let's crack it open and there we have it uh well we got isn't that the same as similar oh there's a hair in there there's a hair
+TEXT: in there can't remember the exact layout of the previous one but wasn't it the same didn't they have an st arm micro and a ultera max 2 uh fpga and um sample memory and and the adc and that was a bit and then that was it but they
+context after: were like underclocking the adc or uh yeah no it was like they were doing some weird multiplexing thing and it was coming together um why they've got gunk on there i'm not sure they rubbed the numbers off there no they haven't it's just really difficult it's an mxt
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: You can actually see a difference if I change the memory depth here, you'll see that we get more apparent noise. You can start to see some of the variable intensity display in there as well.
+TEXT: Once you go up to 700k sample memory and 7 meg sample memory, there we go. But yeah, it appears to be lower noise. Let's call them equivalent cuz we don't know about the update rates yet.
+context after: As you can see, both scopes have 14 horizontal divisions across. Fantastic. I love that because you get the wide screen display. They've both got 800 by 480 resolution screen, 8-in displays, absolutely identical displays on this.
+
+[1185] EEVblog #1185 - Dumpster Tek 500MHz TDS540D Scope — Dave Jones (mention)
+context before: And the date codes on this are 1999. So yep, almost 20 years old but yeah, the various option boards on this thing. This is obviously the front end. Here's our front ends down here and then we've got our our four channel acquisition.
+TEXT: So we're going to have our ADCs and then our sampling controllers. Got our sample memory of course. That's our base sample memory but there should be an expansion board somewhere.
+context after: I do like how they've Look, gone on both sides. Power supply in the middle like this and they've jumped these jumper boards plus these ribbon cables. Not sure why they went for ribbon cables here and a jumper board up here.
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (mention)
+context before: It looks like um they've uh thermal adhesived that heatsink onto that chip. So, unfortunately, we're not going to get that off. Uh, sorry, folks. I really want to be careful with this one.
+TEXT: It's the only one in the country. Um, anyway, looks like we got our um little sample memory. We'll take a look at um in a minute. And uh anyway, hopefully get the can off.
+context after: What else have we got? And totally unpopulated BGA and memory here. Well, no surprises for guessing what that's for. Um here's our logic analyzer connector down here. So they haven't populated any of that.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (mention)
+context before: Yeah, I mean, you've got to have a really good triggering system to try and get uh equivalent time sampling. Of course, you you really ultra-high expensive high bandwidth, you know, uh scopes, like, you know, your 20 gig bandwidth scopes and things like that, they'll uh usually operate on equivalent time uh sampling, but they're got spectacularly good trigger systems and everything else.
+TEXT: And this thing, no, it's just built down to a price. We've just got an Allwinner processor. We've got an Altera um Cyclone 4 uh FPGA here with the uh sample memory in it.
+context after: And just some two cheap uh possibly clone 100 meg sample per second ADCs, and they're trying to do in a interleave sampling on this, and they're just coming a gutser.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (mention)
+context before: So, as I said with the, uh, 2000 series, competition's got a lot of catching up to do. And that's the thing you've got to consider when you're comparing scopes.
+TEXT: You can't just look at the analog bandwidth and the sample rate and the sample memory and maybe a few other features. You know, you've got to compare apples to apples.
+context after: And if you do that, you've got to include the, uh, waveform update rate as well. Now, you know, you may try and compare this 10 grand you know, you may compare the top of the range 10 grand version of this to another 10 grand scope.
+
+[1450] EEVblog 1450- $99 Fluke Combiscope Ebay SCORE! — Dave Jones (mention)
+context before: And then it looks like it might have some latching. Haven't looked at part numbers here, but there's some other custom Philips parts down here. I don't know, that might have something to do with the triggering or something.
+TEXT: Don't know. Not going to look into the details, but look at this jobbie. This is a custom ASIC. I guess they call it Dalek. And then we've got the sample memory here.
+context after: These are 2K SRAMs a pop, and there's matching ones on the bottom there as well. Genuine bodges. I'll show you another bodge in a minute, but isn't this a fascinating package?
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (mention)
+context before: So, actually, we can type it in. Beautiful. Yes, I love things with keypads. Ah. So wonderful. So wonderful. And we want 100 kHz. There we go. We're in like Flynn.
+TEXT: Okay, now I set this to 1 meg point memory. I set it to Hann in window. Here we go, and 1 MHz center with a Well, 100 I sure I It's set It's changed that to 125.
+context after: I'm sure I set it to 100. Anyway, um it looks like it needs to It can't 100 kHz. There we go. No, doesn't like that. Anyway, so we need to uh Oh, sorry, but per division.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: But they've obviously had it had it branded to their own chip. So, what that one is, you know, we're not going to Well, could we use the logic analyzer itself to probe its own clacker and figure out what that chip is?
+TEXT: Anyway, I won't be doing that in this video. But we've obviously got some sort of a USB interface chip here. And then we've got our sample memory up here.
+context after: That'd be SRAM, of course, none of that DRAM rubbish. Actually, this is very interesting. Look at the Presume that's the day code, 29th week '09. Um is it an ASIC which they developed a long time ago or maybe like a custom gate array or something like that, perhaps?

@@ -1,0 +1,1233 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: i2c
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 240 passages drawn from 139 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# i2c`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1370] EEVblog #1370 - Kindle Paperwhite REPAIR — Dave Jones (explains)
+context before: But, have a look at the contacts though. There's actually four pins and it's not like a temperature uh sensing pin for like overcharge and stuff like that. No, they're SDA and S CL.
+TEXT: So, that's an I squared C interface that no doubt has an annoying um like ID chip in it and the software they've protected these things. So, if you put in an aftermarket battery that doesn't have the correct ID in it, hasn't spoofed the ID, then it's going to pop up with an error message, you know, probably saying, you know, "Invalid battery" or something, you know, "Not authorized by Amazon by your
+context after: Amazon overlords." And uh yes, please buy a genuine one. And uh bugger off. But, the good thing is though that that ID chip should be on the protection uh PCB in there.
+
+[759] EEVblog #759 - Mailbag — Dave Jones (explains)
+context before: Okay. Yeah, we should both press that at the same time since there was something else. Oh, in this All right, we're pressing this at the same time. Yeah. No, just what?
+TEXT: We'll press it at the same time. [Music] Toss the box on the floor and there was um the actual module itself. So, yeah. Oops. That's embarrassing. Matt enclosed is a pulse light 3D lightar light module that works fine in PWM mode but useless in the I squed C mode because of knack it sends as a busy weight that's interesting which works great for Arduino hippies love it um however not a real SBC plus
+context after: Linux plus beagle bone which will confuse the bus and cause timeouts ah there you go so yes it's a pulse lighter Ah, awesome. If it works, we can we can have a good play around with that.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: I'm pretty happy with that we've only got 10-bits output measurement range. We were gilding the lily before, as I said, with 12-bit analog-to-digital converters and 12-bit DACs. Crazy stuff.
+TEXT: But hey, it was fun at the time. But now we've consolidated that into this microcontroller using the internal ADCs. We've got five devices hanging off our I2C bus. And of course, the more devices you have hanging off your I2C bus, the lower values you've got to have in your pull-up I2C pull-up resistors here because every device you add to the bus adds capacitance to the bus, which changes
+context after: the I2C slew rate, which means that you can miss data bits. So, you can't have like a 10k pull-up anymore with five devices on there. That might be a bit dodgy.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before: That's the symbol for a Schmitt inverter and this input here can be as slow as a wet week. It can take a second to ramp up and the Schmitt just goes I'll convert that into a nice beautiful in this case, sorry, nice, beautiful negative, cuz it's an inverter, nice, sharp negative going output pulse, which then you can feed in to the clock input of your chip, and Bob's your uncle.
+TEXT: You won't get any more metastability on your 390 over here, and that will fix the problem. So, yeah, these optocouplers are notoriously bad for driving chips. Other things with open collector, like an I2C bus, for example, this is why the I2C bus, which is an open collector bus, they the typical recommendation is 2.2k pull-up resistors, but you might lower that to 1k if you want the bus to
+context after: operate faster, if you've got more things on the bus, which have more capacitance, which causes a greater rise time in your signal when it transitions from negative to positive.
+
+[1291] EEVblog #1291 - Mailbag — Dave Jones (explains)
+context before: data to come up, uh, like a waveform to come up, but that's only because I plugged it out of one port and plugged it into another, and, really, um, I'm not having any luck here at all, I've got monitor, there we go, monitor mode, and, uh, yeah, really don't like the, um, contrast, these do come up different colors, here, I did get a couple of digits to come up blue, but, uh, anyway, I2C reset, monitor mode,
+TEXT: and it monitors it all, and, uh, cool, you can actually, um, choose your different, uh, pull-ups, which is fantastic, I really like that, and you can choose your speed, 100 or 400 kilohertz, uh, megahertz rubbish, and, uh, capture mode here just, uh, has a, like an I2C, uh, thing, um, but I can't write any data, like, so there you go, it is in live monitor mode now, it's running for
+context after: 20 seconds, if I disable that, current drops to zero, so it's, it's talking to it, that's all live, but, uh, I'm not sure what the deal, it actually just popped up there for a second with not responding, oh, you saw it, that, that 26 just popped up there, whoa, there we go, there we go, yep, and the corresponding ones on here are live, so I don't know why, seems
+
+[370] EEVblog #370 - Kindle Paperwhite Teardown Review — Dave Jones (explains)
+context before: Hmm, let's try it. All right, let's actually measure the standby current draw here with my microcurrent. I've got that on microamp range so millivolts will equal microamps and let's measure the standby consumption.
+TEXT: Uh-oh, folks, something's gone horribly wrong. Repair needed. Your Kindle needs repair. Please contact Kindle customer service. What? Fail. No, it's all good. There you go, it's booting up. I replaced the battery on the back so clearly that's what must happen if you try and power this thing from a battery that it doesn't have the um the chip on the I-squared-C bus.
+context after: So, there you go. Can't just power it from any source. You would have to reverse if you wanted to hack a bigger battery in it, you'd have to reverse engineer the um the I-squared-C chip in there.
+
+[251] EEVblog #251 - Mailbag — Dave Jones (explains)
+context before: Port expander by the looks of it. And 12 bit DAC, ADC, pots or digital pots, all sorts of stuff. Neat. And obviously the whole idea is to have this I squared C system and build up all these boards.
+TEXT: Ta-da. Oh. Yeah, it's um Yeah, they've got definitely got the uh They they've got the individual PCBs here. So, the whole thing looks like a step-by-step guide to building up these boards and running through all the They've got the schematics and then running through all the I squared all the commands and stuff like that to control all these I squared C devices.
+context after: It actually looks very well done. I like it. It's a step-by-step example. So, if you're after a step-by-step guide to learning all about I squared C historical background of I squared C, it's got bills and materials, parts references, all that sort of stuff.
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (explains)
+context before: So, there's a little tip. And I'm trying to buzz out the pinouts on this, and trust me, it's a real pain in the ass. You got to take the lepton out of the socket.
+TEXT: You got to hold one probe in there, use the right tongue angle, get on the other side, and uh it's uh it's horrible, but I'm getting there. Well, that was a real pain, but anyway, I confirmed a few things here is that the SCL and SDA, the I²C command data bus is actually connected, so we can probe that, but I have probed these pins before, and it doesn't seem
+context after: to be anything on there. Anyway, they are connected through to the module. By the way, this is the pinout on the flat flex over here, and this is the uh lepton module over here.
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (explains)
+context before: And I can probe some things here. So, let's have a look at the I²C line. 1 2 3 4 That's the fourth pin along. That's supposed to be the SDA pin.
+TEXT: And you can see there's no activity there whatsoever. I'm triggering right in the middle of that, and there's just nothing on the uh SDA line at all. I haven't waited long enough to see if it actually sends a command on that when the um shutter uh changes, but it's got to read data back out of that to get that shutter information, I thought.
+context after: Anyway, well, to get the information that it requires a uh NAK event. So, uh yeah, there's nothing on there and um and the SDA and the I squared C clock as well.
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (explains)
+context before: There we go. I've got a uh uh so many different scopes, so many ways to use them and you can set the user defined voltage pretty, you know, it's a pretty usable mixed signal scope and it's got I believe 400 meg samples per second on the digital channels and 1 meg per channel for the digitals, I believe.
+TEXT: Don't quote me on that though. And as far as your internal I squared C triggering for example goes, well, you can set the the clock line to the end of the analog channels or any of the digital channels, same with the data line and then you can trigger off start stop conditions and frames and you know, it's it's all there.
+context after: But I know what you're saying, "Dave, I want to see inside it." All right, here we go. Let's take this sucker apart. By the way, I didn't show you the back.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: I2C until recently only had four speed grades, but in 2012 a fifth one was introduced. These speed grades might not be good enough for things like internet or displays, but they are ample for most sensors and data acquisition applications.
+TEXT: The sample rate of common sensors, especially mechanical ones, is mostly quite slow. Strain gauges, which are on bridges, only require a few hertz for the sample rate. Even accelerometers rarely go above uh tens of kilohertz and the I2C bus in the megabit range easily accommodates the data requirements for those sensors.
+context after: Now, if we have an accelerometer that samples at 32 kHz, which is unrealistic, we only need 256 kilobits per second for an 8-bit accelerometer. Every sample of an 8-bit accelerometer requires 8 bits of data to communicate.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: So, sorry about that, but after that, I think I captured most of it. So, I'll add some commentary on top of the times 20 time lapse. Let's go. And here we go.
+TEXT: As you can see, I've got already a bunch of resistors there in place. They're the pull-up resistors, I believe, for the I squared C chip, which doesn't actually need because it's got internal active active software pull-ups you can define within the chip, but anyway, I thought I'd add some external ones in there.
+context after: I might remove them on the next version, perhaps, cuz they do take up some room. But anyway, let's take a look. I'm trying to shuffle in the chip there and you'll notice that right next to it I'm now dragging it out and dragging it around trying to figure out the best orientation for it and how it's going to work out it's going to wire into the other parts of it.
+
+[Xg_niU86bhI] Wens 540 Handheld Oscilloscope Multimeter Teardown — Dave Jones (explains)
+context before: Sorry, that's a poor buzzer sound, isn't it? Whereas a piezo transducer you've got to actually drive it with a signal. Because it's just a piezoelectric element, and it doesn't do anything on its own if you just apply DC, it's just a capacitor. So, ATML320, is that a
+TEXT: that's an E2P, that looks like an I2C thing, you can tell by the two resistors there, going up to pin 8, which is almost certainly the power, it is, because there's a bypass cap across there. So that is some E2P calibration stuff. So there you go, nothing else special up here, just got a DC to DC converter.
+context after: So that's all the bottom. What's the main processor over here? Oh, the PICFAN boys go wild, PIC32MX795F for those playing along at home. And an Actel ProASIC 3, that's interesting, because maybe the PIC32 can't do all the stuff on its own for the oscilloscope, and you know,
+
+[C1on-LaIsCA] EEVblog #b10000000000 - 1K Micro Magic — Dave Jones (explains)
+context before: So they sent, they did send the prototype projects back, these magazines, but you had to send it to them to, so that they could test it out before they invent it, before they publish the thing. Anyway, composite video in, composite video out, powered from 12V DC, little 5V regulator in there.
+TEXT: PIC16F84, DELLA semiconductor DS1307, real-time clock chip, the main crystal and the 32kHz crystal for the real-time clock. I bit-banged, as I'll show you in the source code, bit-banged an I2C serial, an I2C port on this thing, and all this wonderful stuff, with the time, date, overlay, everything,
+context after: ran in 1k of program memory, just. But that's not all. Two months later, in October 1999, I had another one published, a follow-up project, which was the VTG, as opposed to the VCG, was the Video Title Generator. Where is it? There it is!
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (explains)
+context before: So, that's a bit of a shame really. I I I was a bit disappointed with that one, but uh at least you can trigger off USB, so you can decode it manually, but um the serial options allow you to trigger on data like this and you can trigger on all sorts of things.
+TEXT: Start conditions, stop conditions, missing acknowledgers. This is uh I I2C. I've got a I2C uh signal being fed into this. So, you've got your um your SCL clock line and your SDA data line and you can trigger on uh all sorts of various items and you'll see it does real-time hardware decoding.
+context after: And if you hit serial again, you can actually call up a lister, which will actually um list the data here, which is very very nice. And there's various other options as well.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (explains)
+context before: Wow. I don't think there's any semiconductor fires on here at all. The issue seems to be that they have actually run Would you believe this? It's unbelievable. I I wouldn't Once again, with hindsight, but I didn't guess this at the start.
+TEXT: I made a false assumption that this switch was going through this key matrixy thing, which is getting like I squared C signal through and it's doing the LEDs. But But yes, they are driving LEDs through an I squared C, but this switch actually goes through 20 million jumper links, right?
+context after: Back to a pin on here, probably pin 11 if they keep the pin number consistent, and then it goes over this ribbon cable over to here, and then it goes through here, and then it goes over to here, and then it goes over to here, and then it goes into the various power um you know, latch enable um circuits that we actually saw.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (explains)
+context before: And but, you know, once you get past a couple of them, not only do you have the multiple lines, but then the software has to continually read those in real time.
+TEXT: That's a pain in the butt. It'd be much easier if you did an I squared C in the face, and then you could interrupt and stuff like that. And it's got uh these output uh pins here, which uh you can hook up to uh LEDs or you can have them as a digital um input or output or an ADC as well.
+context after: So, that is really quite It's nicely implemented. I mean, it's a really niche in terms of, you know, uh functionality. I mean, probably if if had two rotary encoders, you probably wouldn't go to uh this effort.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: It doesn't necessarily have to, micros don't have to have an I2C peripheral in them for you to use I2C. I've written my own I2C bit-banging routines before, and it's not that hard. It's pretty easy. You know, it doesn't, it takes, you know, tens of lines of code.
+TEXT: It doesn't take much at all to implement an I2C interface. So it looks like they're the two pins, and there's probably pull-up resistors somewhere. Yeah, there's a via here, via there. It probably goes off to a pull-up resistor somewhere, because an I2C's got to have some pull-ups.
+context after: And if we have a look at pins 15 and 16 here, where do they go? They go off to the crystal there. Bingo, and that's exactly their purpose in here. They have a digital I.O., so probably there's an internal oscillator in this thing
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (explains)
+context before: Wow. Like for starters, I could have continued to run that on the top on the top on the top on the top on the top on the top and did like, you know, like So, yeah, like jumping layers when there's no need to.
+TEXT: Um now, of course, because you've got to you pri- you would have prioritized all of your data lines coming over like this on the top layer, you know, you would have run this around the backside cuz an I squared C line can be as long as you like, doesn't matter, it's not critical.
+context after: And if it longer it gets, you just lower the pull down resistor by the way to counteract the extra capacitance of the line, especially if it's a very long trace over ground plane or something like that.
+
+[370] EEVblog #370 - Kindle Paperwhite Teardown Review — Dave Jones (explains)
+context before: So, we'll pop off all these. And we'll uh take this board off. I don't expect there to be anything on the bottom. I expect it to be a single-sided load board, but we'll take a look anyway.
+TEXT: Let's take the rest of the screws off. Aha, the battery here has an I squared C bus. There it is, SCL and SDA. So, that's probably got some sort of ID chip in it and it probably may not work without the without if it doesn't detect that that ID is there, it may not power up.
+context after: Hmm, let's try it. All right, let's actually measure the standby current draw here with my microcurrent. I've got that on microamp range so millivolts will equal microamps and let's measure the standby consumption.
+
+[271] EEVblog #271 - Zoom H1 Recorder Teardown — Dave Jones (explains)
+context before: It's low power. It only takes 14 mW um during uh playback. It's a 3.3 analog supply. Uh what else we got? It's got automatic gain control, which uh there's that switch on the unit, which um selects uh uh, automatic gain control on the input or manual.
+TEXT: Um, it supports, um, it has microphone bias as well built in. You would need that for these, uh, electret, uh, microphone inserts. And, uh, it's got nice I squared C control bus for setting the data and uses the, uh, no surprise as most of these audio class, uh, codecs do.
+context after: They use the, um, I squared S, uh, not to be confused with I squared C. I squared S, uh, audio interface, um, industry standard type thing and it's in a 5 mm by 5 mm 32-pin QFN.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (explains)
+context before: My four switches are already hooked on to there, but uh you can hook on your own or you can use them for IO or anything you want. And that has um 3.3 volts and ground as well.
+TEXT: So, um and this has 3.3 volts as well. So, you can power external boards straight from those IO connector. And why not? Just for good measure, I've added an I squared C bus expansion, just a four-pin uh SIL header there that uh has SDA and SCL and power and ground.
+context after: So, if you want to hook on other I squared C devices, you can do that. And when it comes to choosing one of these I squared C serial expansion IOs, once again, I did the parametric search on Digikey, and pretty much for a DIP device I wanted, and Microchip came up again.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: I This is our SCL our clock and this is our SDA our data. Look at that little runt pulse in there. Check that out. Now, I've got my scope set up to trigger on the start condition.
+TEXT: I'm using serial protocol triggering here. So, let's trigger on the start and let's capture that and bam, let's Hang on. Let's do that again. Let's There we go. That is the data going onto my I2C bus and this is probably the decoder over here, but this is the LCD.
+context after: Trust me if I've looked at this before and it's rather interesting. Look at that. It's almost as if there's a bus Well, there is some sort of bus contention there that is actually causing that thing cuz it's not supposed to be a tri-level bus like that.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: What's pin 17 and 18? I hear you ask. Well, let's have a look. Digital input, output, and yeah, they're I0 pins. So, yep, it matches up. They could, although it doesn't say that this thing actually has I2C capability, they could be bit-banging the I2C port.
+TEXT: It doesn't necessarily have to, micros don't have to have an I2C peripheral in them for you to use I2C. I've written my own I2C bit-banging routines before, and it's not that hard. It's pretty easy. You know, it doesn't, it takes, you know, tens of lines of code.
+context after: It doesn't take much at all to implement an I2C interface. So it looks like they're the two pins, and there's probably pull-up resistors somewhere. Yeah, there's a via here, via there. It probably goes off to a pull-up resistor somewhere, because an I2C's got to have some pull-ups.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: now you can see that the digital and the analog are correlated there, okay? That's fine and dandy, but you can't leave it there. It just snaps back, and you'll notice that this is correlated down here as well. So that's obviously, you can see that pulse in here, that one
+TEXT: that didn't go all the way up, but you saw anyway, it just didn't have the rise time actually. That's, yeah, that's what it is. We've just got a rise time issue on the I squared C lines, the pull-up resistor value is not high enough, so yeah, it's just not doing
+context after: the business there. But anyway, it's still detecting that, because that will depend on our threshold value, which we can change. So let's actually give that a go. I just noticed that the threshold maximum digital threshold can only go to 2 volts. Huh? What the?
+
+[251] EEVblog #251 - Mailbag — Dave Jones (explains)
+context before: Ta-da. Oh. Yeah, it's um Yeah, they've got definitely got the uh They they've got the individual PCBs here. So, the whole thing looks like a step-by-step guide to building up these boards and running through all the They've got the schematics and then running through all the I squared all the commands and stuff like that to control all these I squared C devices.
+TEXT: It actually looks very well done. I like it. It's a step-by-step example. So, if you're after a step-by-step guide to learning all about I squared C historical background of I squared C, it's got bills and materials, parts references, all that sort of stuff.
+context after: There you go. It's looks like it's part of this Lab Works with an X. Get it? Concept straight from the lab to your brain. It's a collection of books each handling a particular topic in the field of electronics.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: I2C and the very similar SMBus are in almost everything. You'll even find it as a major part of computer motherboards. The interface allows communication with up to 127 devices with only two wires.
+TEXT: For many sensors, I2C is the standard way to get data. So, here we have two wires and you've got the S-clock and the S-data. That's SCL and SDA. The reason that the bus can communicate with 127 devices on only two wires is because those wires are open drain.
+context after: Open drain means that the driving side only drives low. Each of the wires have to have a pull-up, which means that when the line isn't being driven low, it gets pulled high.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: which then snake off over to these, which then go through these zero-ohm jumpers here. Yes, you can get zero-ohm resistors, and yes, they do have a tolerance on the datasheet. It's funny. Anyway, they go through here, and bingo, they go up to pins 17 and 18.
+TEXT: What's pin 17 and 18? I hear you ask. Well, let's have a look. Digital input, output, and yeah, they're I0 pins. So, yep, it matches up. They could, although it doesn't say that this thing actually has I2C capability, they could be bit-banging the I2C port.
+context after: It doesn't necessarily have to, micros don't have to have an I2C peripheral in them for you to use I2C. I've written my own I2C bit-banging routines before, and it's not that hard. It's pretty easy. You know, it doesn't, it takes, you know, tens of lines of code.
+
+[851] EEVBlog #851 - Mailbag — Dave Jones (explains)
+context before: Although most people use it, you know, when you say Joey, you're probably thinking about a baby kangaroo, because baby koalas, meh. You know. Anyway. Here it is. Here is the Joey. It is, as it says, a numeric LED display board for the Raspberry Pi.
+TEXT: There it is. There's the header for it. Doesn't come with the pin, so how do you plug it in? So there you go, it's an I squared C address, so you can just program. It's got a whole tech chipset down in here. We'll take a quick squiz at, and there it is.
+context after: Thank you very much David, of course. Dave from Goolagum Electronics. And I'll link it in down below. It was, the Joey was a successful, successfully launched on Kickstarter. Beauty, I think he's had a few successes on Kickstarter, I think. So yes, loyal crowd there.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: So, if we can't capture that on the uh Saleae logic, then well, it's, you know, not nearly as useful as a uh real logic a real hardware-based uh logic analyzer like this one.
+TEXT: And of course, the other thing I like is the uh decoding of the I squared C uh bus itself. Look, it tells you exactly what's going on there. It's uh setting up a write to address 226 with an acknowledge and then the data byte is uh 16 with acknowledge.
+context after: So, you know, it's uh it's doing the business there. I really like that. But to actually um check that this is uh accurate, I'm assuming it is, otherwise people would have reported uh issues and stuff like that and if there were any, they would have been fixed.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: I don't think so, because it's an OTP part. It's a one-time program. It's not like you can get in there, get the tool, and then reprogram it to, you know, repurpose it to do something else. It looks like they've repurposed the UART lines, for example.
+TEXT: So you're not going to be getting serial data out of this puppy anytime soon. It's basically going via I2C to the LCD driver. So if you wanted to actually get data out of this thing wirelessly, I guess you could actually make up your own little module
+context after: to hack onto the I2C line, read the data coming out of that, because you will have the data format for the LCD. So what goes into the LCD, even though we don't have the data that's been outputted from the micro itself, it doesn't matter.
+
+[Yky9yQwZALM] Shift Cryptosecurity BitBox02 Crypto Hardware Wallet — Dave Jones (explains)
+context before: It's got all the pillars. You want all the pillars? Signature, elliptic curve digital signature algorithm. Wow, sounds impressive. Elliptic curve cryptography. Yeah, that sounds pretty schmick, doesn't it? Although, yeah, it's all happening inside the chip. And all the secure stuff's happening inside the chip.
+TEXT: So it's not like it's going over the I2C bus. I'm sure that's not the actual case. So cryptographic coprocessor with secure hardware-based key storage, because that would be pointless if you just sent it over the I2C bus. It's all done on the chip.
+context after: Two high-endurance monotonic counters. Wow. Guaranteed unique 72-bit serial number. There you go. It's got a FIPS random number generator. I don't know what that is, but all you FIPS fanboys certainly would. 10k of eSquared problem memory for key certificates data. That's pretty generous.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: We don't need any extra pins on the microcontroller. Brilliant. So, we've got like four, I think. One uh two, three, yeah, four different devices. Uh five, actually, with our IO expansion.
+TEXT: Five different devices hooked on to our I²C bus. I love it. We're really maximizing the capability of those IO pins on that microcontroller. And that's exactly what the I²C bus was designed to do, to free up pins on low pin count microcontrollers.
+context after: So, anyway, let's look at this device. It's high accuracy, 0.5% over temperature. It's got a 16 programmable addresses for the I²C bus. It can actually measure current, voltage, and power anywhere from 0 to 26 volts.
+
+[697] EEVblog #697 - Mailbag — Dave Jones (explains)
+context before: Look at that. Oh! Oh! Oh! Oh! Beautiful. I'll tell you what, that's got to be the world's smallest kit bag. That's for sure. So there we go, we have the bare chip, have ourselves a bare board, and a made-up one for the Electric Ink.
+TEXT: So there it is, there's the little Silicon Labs chip. And I'm going to assume that ground VCC SDA and SCL, well, ground's here. So yep, plugs in like that. I'm going to have to stick some wax and pins on there and give that a burl, but not in the
+context after: mailbag. Oh man, I think I need some fuel. Let's open our banana here and give it a burl. And what have we got left? We've got two left. Alright. Let's have a look. We've got one from Mr. Chris Stubbs, he's from Chelmsford in the old Dart.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: It's a Roam E2P. Sure enough, look, here's the product name marking from the data sheet. It's the BR24L. That's why it's only got LO2 on here, and sure enough, the LO2 is the product marking for the SOP8 package. Bingo! There we go. So it's a 2SK E2P.
+TEXT: Why they've got two of them? I've got no idea. Anyway, yeah, I2C interface. I was right about the I2C interface. If we go down and have a look at the pinout, bingo, there it is. I was right. Power, ground, three address pins, and that is your,
+context after: well, that's your write protect, and then your I2C lines there, but yeah, it's got 4K of E2P. Why? I mean, I don't get it. And of course you need an E2P to hold the calibration data in there, but that still doesn't explain two chips.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (explains)
+context before: Um alternate edge and stuff like that. uh pulse width dropout which is requisite TV and it does all logical uh functions between channels and yes you can uh trigger on some standard buses here.
+TEXT: So we can trigger on I squared C here and uh that's what I'm feeding in here. So let's see if we can set that up. Okay. So, we can trigger on our I squared C data in there and uh you can see all you know you can trigger on uh uh here we go.
+context after: We got a 10 bit address and data and we can do E squed prom and stuff like that and we can go in there and and have a look at it and it's all okay but okay we can trigger on it but this scope has no ability to decode any serial data at all.
+
+[C1on-LaIsCA] EEVblog #b10000000000 - 1K Micro Magic — Dave Jones (explains)
+context before: and see if everything worked after 18 years, here we go woo winner winner chicken dinner by the way, if you're wondering where I actually stored this text up here, because this Pic16F84 doesn't have any built in E2P and you couldn't rewrite it's own program memory that I recall
+TEXT: anyway, so I actually stored it in the Dallas Semiconductor DS1307 chip, it actually had like 50 or 128 bytes or something of memory, of SRAM memory and that was battery back down there so over the I2C I just stored that video text in there
+context after: so there you go, I hope you enjoyed that look down memory lane of what is capable, a pretty primitive example of what's capable inside a 1K of program memory, it'd actually be an interesting experiment to actually try to see if we could get a
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: I2C's lowest standard speed is 100 kilobits per second, so its standard speed is double the speed of dial-up internet. Now, a gigabit internet connection, for example, is over 10,000 times that speed.
+TEXT: I2C until recently only had four speed grades, but in 2012 a fifth one was introduced. These speed grades might not be good enough for things like internet or displays, but they are ample for most sensors and data acquisition applications.
+context after: The sample rate of common sensors, especially mechanical ones, is mostly quite slow. Strain gauges, which are on bridges, only require a few hertz for the sample rate. Even accelerometers rarely go above uh tens of kilohertz and the I2C bus in the megabit range easily accommodates the data requirements for those sensors.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: Bang, which will be our chip select. So there we go. Captured it single shot mode. Bang and there's our data. Ah, beautiful. Let's single shot capture that and as you can see our chip select is the top trace up here.
+TEXT: Uh this is our data and the yellow one down here is our clock and if we scroll along and zoom into that, you'll notice that the chip select is actually a long way past here because to do the chip select, we're using the I squared C bus.
+context after: So our software has to actually send during this time, it has to send a command through to the I squared C bus to actually switch it on and that's 200 microseconds per division.
+
+[906] EEVblog #906 - Mailbag — Dave Jones (explains)
+context before: and I don't think there's only one current shunt resistor. And Bob's your uncle. So that's neat. Did you, SOTOS? Let us know. Did you get this case custom made and you just fitted the board to fit? Is it like another different case or anything like that?
+TEXT: Or did you get it custom made? Let us know. Now the interesting thing is that there's a I2C interface as well, so you can transfer data and get measurements and things like that. So it's kind of like a all-in-one solution for your panel
+context after: shunt microcontroller projects and stuff like that. Pretty good for a do-it-yourself power supply. Should work a treat. Next up, one from Sweden by the looks of it. And security alert! Security alert! Look at that! Security checked. Jeez, I was serious about this. I didn't want this to get out of the country.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: So, there's some extra hardware in there to do that, but the software is the same. So, you pay that extra money, and well, you just get very basic software.
+TEXT: It's okay for just, you know, general use, really. If you just want to muck around and capture your SPI or I squared C buses, stuff like that, low speed stuff, eh, it's okay value for 150 bucks, but just wish they'd add more features.
+context after: Anyway, if you like the review, please give it a big thumbs up. If you want to discuss it, jump on over to the EEVblog forum. Catch you next time.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: So we follow the money over to here, and we can have a look. Hopefully they're on the top. Pins 9 and 10. 1, 2, 3, 4, 5, 6, 7, 8, 9 and 10. Ugh, bugger. They're going off under there. Anyway, I could get the physical board and flip it over
+TEXT: and try and see where those vias go. But we expect those, yeah, I'll go do that now, actually. I'll spare you the details. Right, so I've had a look at the physical board and the I2C pins under here, they go off to some vias up here,
+context after: which then snake off over to these, which then go through these zero-ohm jumpers here. Yes, you can get zero-ohm resistors, and yes, they do have a tolerance on the datasheet. It's funny. Anyway, they go through here, and bingo, they go up to pins 17 and 18.
+
+[536] EEVblog #536 - HP35670A DSA Repair — Dave Jones (explains)
+context before: Not the best. I mean they're still usable of course but maybe you know if you were restoring this thing you might want to go in there and possibly replace them with them some brand spanking new ones.
+TEXT: They've had a bit of wear. And there's our fault log. I squared C no device acknowledged. Uh occurred 6126. No idea what that means, but yeah, we can follow the extensive troubleshooting in the manual and track this down bit by bit.
+context after: Calibration fire. Yeah, don't know what's going on there. But I it seems to be you know generically booting up and working. We're getting a fault code on the LEDs on the back.
+
+[fM4bbKVw2og] Uni-T 500MHz 4CH ARB Signal Generator Unboxing — Dave Jones (explains)
+context before: Can I go 10 megahertz? You betcha. Oh wow. How high can we go? Can we go 100 megahertz? No. Yes? Can we go 100 megahertz? Out of range. We can do a 50 megahertz spy bus. There you go. That's pretty groovy. And clock?
+TEXT: 10 megahertz. I squared C. Let's go. Yep, no worries. Can we do, try 100 megahertz I squared C. Oh my god, what pull-up value would you need for that? You can do a 50 meg I squared C as well. And UART? What's the maximum board rate?
+context after: Can you do... 100,000. What? 100,000. See, that's a bloody European thing. They don't have the decimal point. Or whatever is it? So it's got 100,000 and then a comma. I'm sure you can change that if that's actually the case. But that's groovy. They've got spy bus configuration.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: But, that requires extra pins. And here's another cascaded change we've got. If I chose the one with the up-down pins, I would have needed more output pins on my IO expansion device.
+TEXT: Remember I had uh two IO expansion devices before? Now, I've saved cost, and I've only got one. And one of the reasons for that is because I've consolidated many of my parts in this Rev C to use the I²C bus instead of the SPI bus.
+context after: So, I parallel them and I don't use any extra pins on my microcontroller. Brilliant. So, let's take a look at this change. I had two of these devices before, now I've only got one.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: if it is this one, programmed the micro not to have any serial output. It's obviously, it's going to be buggering off to the chipset. But they seem to be going down to some transistors down here, a couple of caps, I don't know. Something's, yeah, something's going on.
+TEXT: But they have to have a serial interface going over to the LCD driver chip. And if we take a look at our LCD driver chip here, the Hikon-Tec part, it's an I2C interface. Bingo. So that's SCL, SDA. So we can find those pins on the,
+context after: sorry, on the package here, LQFP48. That's the one where, what's the ABC versions? Oh, they're slightly different in terms of backlight and things like that. Anyway, we're looking at pins 9 and 10. There you go. Pins 9 and 10 there on all the packages.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (explains)
+context before: Does anyone know? Yeah, apparently Briman rolled their own multimeter chip sets. Yeah, it looks like a flash EEPROM. Right. Yeah, that's what I originally thought. Yeah, is an external I squared C.
+TEXT: I I agree, Kevin. Looks like a flash EEPROM. Yeah. That would be my You know, cuz yeah, you got two data lines coming off. So, it's probably like an I squared C interface thing and they're just tying Oh, they're the address pins.
+context after: Okay. 51st week 2021 on the right. 51st week 21. Yep. So, it's got your buzzer. So, this is looking pretty good. I give that a thumbs up. Does anyone disagree?
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (explains)
+context before: So, that is and this one's actually shorter. So, there's, you know, there's no surprise to find that that would be 60 lines of information in there. That's pretty certain, I think.
+TEXT: So, there you go. That's just some more playing around with this thing. I was very surprised that there's basically nothing on that I squared C bus. I couldn't find anything when the shutter activates on there, when it powers up.
+context after: Just nothing, but it is actually connected through. So, maybe they have, you know, got a future use for that thing. I don't know, but it's basically just spitting everything out from the Lepton sensor.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (explains)
+context before: They're using the AND gate and the XOR gate to make sure that you never have the condition where both the P-FET and the N-FET are on. So, why would you want to make the pin high impedance?
+TEXT: One of the reasons is the I2C interface requires that the pins be open drain. Um each of the pins is pulled up with a resistor to the power supply and if we were just driving the pins, we wouldn't be meeting the protocol's spec.
+context after: Um the only way we can do that is by having a open circuit here and allowing the resistor to pull the pin up to the power supply. So, bit banging in general is usually like a tight loop.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: It is allowed to go high. Between blocks of data, for example, between the address and the data blocks, the clock line is held low, but the data line is allowed to go high.
+TEXT: If you're a bit banging this, for example, this makes things quite simple because your function that writes data only needs to clock out eight bits of data, and before and after the transaction, have a start and stop condition.
+context after: At the end of data sending, it's always required that the data line is released for acknowledgment, so the state between data blocks is always going to be okay. I've always found it very useful to learn how to bit bang an algorithm so that you fully understand it.
+
+[1264] EEVblog #1264 - uSupply Software Development Setup — Dave Jones (explains)
+context before: Yeah, that's our code. That's the one that doesn't turn on. Yeah. Yeah. That doesn't turn the device on. What do you mean doesn't turn the device on? Stupid Rich Tech.
+TEXT: It's not Rich Tech's fault really, probably. But the stupid chip wouldn't turn on. Oh, okay. Right. Even though you're trying to force it to. I tried. Yep. And they these are basically I squared C commands that you're Yeah.
+context after: Yeah, I had it I had it So, I can I can get the chip ID and all that stuff, but I can't actually get it to initiate the damn transaction.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: it's still fairly responsive. Like, it doesn't bog down at all. Very nice. Now if we go into the math option here and check out the decode capabilities, I showed this briefly before, we've got RS-232, parallel, I2C and SPI, and yes these decoders are software options, you've got to
+TEXT: buy it. Let's actually try out the I2C, I've turned my decoding off and on, like this, so there we go, it pops up, and our data is, our clock is channel 1, data's channel 2, you can exchange those over and you can see that
+context after: obviously if we get it back to front, it decodes absolutely nothing, but if we get it the right way around, it decodes stuff. And there's a whole bunch of options in here, we can, our format can be hex decimal, there we go, it's changed it,
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: Open drain means that the driving side only drives low. Each of the wires have to have a pull-up, which means that when the line isn't being driven low, it gets pulled high.
+TEXT: Now, if you see a schematic one day and you see two resistors pulling up to the power rail, you'll know why that is. The value of these resistors can vary quite a lot and that depends on the speed grade of the interface.
+context after: The smaller the resistance, the faster the response. I2C is a really slow interface and a comparable one would be dial-up internet. Dial-up internet was like 56 kilobits per second.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: No problems. For the LCD display up here, I've chosen a Newhaven display. I rather like them and they're one of the LCD manufacturers that I like. Their displays are quite neat.
+TEXT: And what it is is it's an I squared C interface. There it is, SCL and SDA. That requires less pins on your microcontroller so I freed up pins here rather than using the standard parallel or full bit interface one.
+context after: I can get away with just well, three lines actually. There's an LCD reset line as well but that wasn't the only reason. Here it is. It just so happened that this LCD fits nicely into the case that I'm using.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: They may or may not. I'll have to check. Anyway, I hope you enjoyed that. That's a bit of DAC debugging on the new power supply. I'll catch you next time.
+TEXT: Now, just as a little aside, I thought I'd show you this on the I2C bus that actually drives the LCD. It also drives those I2C decoder IO chips, but this is an actual problem with the LCD display I'm getting.
+context after: I This is our SCL our clock and this is our SDA our data. Look at that little runt pulse in there. Check that out. Now, I've got my scope set up to trigger on the start condition.
+
+[1462] EEVblog 1462 - Why Dymo Label Printers SUCK! — Dave Jones (explains)
+context before: But now it like transitions like 17 milliseconds later, there it transitions back high and it and then it goes low like, you know, at some time after this and we get an extra little packet, a little bonus packet here.
+TEXT: I've got the I squared C decoding on. I'm not sure if I've got it absolutely correct yet. There seems to be like a little runt pulse in there. That's only 500 nanoseconds, so I'm not sure what's doing there.
+context after: I did change the sample rate and it didn't seem to make a difference. It's still capturing it. I mean, I've got really short leads, so I don't think there's a signal integrity issue there.
+
+[1307] EEVblog #1307 - TUTORIAL: PCB BOM Consolidation — Dave Jones (explains)
+context before: Anyway, let me know. You give us a thumbs up if you want to see that. Leave it in the comments down below. But anyway, there's so many more ways that you can optimize values in designs like this.
+TEXT: For example, like we've got an I squared C line here. That's going to have certain pull-ups in the lower value pull-up for your I squared C line, the higher speed because it's an open collector output.
+context after: The higher the slew rate the faster the slew rate, for example, and the more speed you can get out of your I squared C bus. So, if your you know, Confuser popped out the value of like 1.8K for your pull-up, well, do you need and you don't use 1.8K anywhere else?
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: The smaller the resistance, the faster the response. I2C is a really slow interface and a comparable one would be dial-up internet. Dial-up internet was like 56 kilobits per second.
+TEXT: I2C's lowest standard speed is 100 kilobits per second, so its standard speed is double the speed of dial-up internet. Now, a gigabit internet connection, for example, is over 10,000 times that speed.
+context after: I2C until recently only had four speed grades, but in 2012 a fifth one was introduced. These speed grades might not be good enough for things like internet or displays, but they are ample for most sensors and data acquisition applications.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: So, multiplying the speed the sample rate of the accelerometer with the bits, you get 256 kilobits per second. Let's assume that half our frame is our data and the other half is the address.
+TEXT: And so, for this case, it would be 512 kilobits per second, which is far below the 1 megabit per second mode. Now, even with our unrealistic accelerometer, we're still okay with 1 megabit per second.
+context after: So, every transaction begins with a start condition. The start condition is when the data line gets pulled low and then the clock line gets pulled low. After the start condition, data is sent.
+
+[447] EEVblog #447 - Samsung Plasma Followup — Dave Jones (explains)
+context before: Bit surprised by that. I expected something to happen there, I guess. There was a good chance of that, but I don't know. I need a remote to enter do the factory reset.
+TEXT: Maybe that'll help. Maybe there's nothing physically hardware wrong with it. Maybe it just needs a factory reset, you know, the I squared C codes going to that decoder chip or something to reset it.
+context after: Who knows? Anyway, I think it's an absolute winner. Beauty. I'm going to not sure what I'm going to do with it cuz I don't have a stand, so I can't just take it home and whack it in the lounge room and replace my other one.
+
+[251] EEVblog #251 - Mailbag — Dave Jones (explains)
+context before: What's that? It looks like some sort of analog to digital converter maybe. Um, and we've got whole other board. Shame they don't actually give you the parts to build it up, but sure you can buy the buy the parts, seven seg displays, all that sort of thing.
+TEXT: Port expander by the looks of it. And 12 bit DAC, ADC, pots or digital pots, all sorts of stuff. Neat. And obviously the whole idea is to have this I squared C system and build up all these boards.
+context after: Ta-da. Oh. Yeah, it's um Yeah, they've got definitely got the uh They they've got the individual PCBs here. So, the whole thing looks like a step-by-step guide to building up these boards and running through all the They've got the schematics and then running through all the I squared all the commands and stuff like that to control all these I squared C devices.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: 
+TEXT: I2C and the very similar SMBus are in almost everything. You'll even find it as a major part of computer motherboards. The interface allows communication with up to 127 devices with only two wires.
+context after: For many sensors, I2C is the standard way to get data. So, here we have two wires and you've got the S-clock and the S-data. That's SCL and SDA. The reason that the bus can communicate with 127 devices on only two wires is because those wires are open drain.
+
+[251] EEVblog #251 - Mailbag — Dave Jones (explains)
+context before: And this one is the I squared C bus. And it does look uh pretty good. It goes through all the details of how the bus works and it's it's well done.
+TEXT: It's well laid out. I really really like it at first glance. It's all the timing stuff and things like that. It's uh looks like Vincent's put a lot of work into this and it's really well laid out.
+context after: Yeah. I like it. If you really want to know about I squared C, looks like the go. And another thing I got from Germany from Tilman Boeman. So, thanks Tilman.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (explains)
+context before: So, as I said, all the data lines, all the important data lines, all the important clock and control lines, and the rest, which is miscellaneous stuff like this, for example, this uh microcontroller up here is obviously controlling this the I squared C on this chip.
+TEXT: It's got like an I squared C communication interface, which is where you set up all the parameters and, you know, things like that and data rates and, you know, whatever you set up in the sensor.
+context after: So, there's two two wires going over here. And look. Look at how this is going, right? This is Look at I I hate these chips. Like that's a pad on the corner.
+
+[vq89dWPCxUY] The Tagarno Acquittal - TI or Black Magic Charged? — Dave Jones (explains)
+context before: So, I assume that they're doing that inside the FPGA. But, they're using this as some sort of like re-timer or something. I I I don't know. I Blackmagic can, uh, tell us.
+TEXT: There we go, functional block diagram. So, data register, swap PLL, PLL control, serializer, signal detection, um, right, it's a I squared C control to set up all the registers and everything.
+context after: As I said, there's probably like there's probably hundreds of registers to set up something like this. Um, active DDC block. It's got adaptive EQ gain and all sorts of, right, all sorts of funky stuff happening.
+
+[248] EEVblog #248 - LCD Enabled Microcontroller Selection — Dave Jones (explains)
+context before: A lot of them share uh pin functionality. So, you can't use both of them. Often, you can't use two competing things at the same time. So, we might this thing might very well Well, I guarantee you it'll be able to drive these 24 segments at up to four displays, but do those pins map to some of the analog to 14 analog to digital channels that we want to use?
+TEXT: So, if they do, we're screwed. We won't be able to do both. If those If we want to use an I squared C port, for example, are those I squared C interface pins overlapping our LCD segments?
+context after: It's very likely, but um you know, odds are you're going to get a couple of analog to digital convert converters which don't share the same pin. So, really um that's my main requirement moment, I think, is my analog to digital converters and the LCDs.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (explains)
+context before: Now, if you see a schematic one day and you see two resistors pulling up to the power rail, you'll know why that is. The value of these resistors can vary quite a lot and that depends on the speed grade of the interface.
+TEXT: The smaller the resistance, the faster the response. I2C is a really slow interface and a comparable one would be dial-up internet. Dial-up internet was like 56 kilobits per second.
+context after: I2C's lowest standard speed is 100 kilobits per second, so its standard speed is double the speed of dial-up internet. Now, a gigabit internet connection, for example, is over 10,000 times that speed.
+
+[1309] EEVblog #1309 - Siglent SDS2000X Plus Scope Teardown+Hack — Dave Jones (explains)
+context before: Hmm, I wonder what. Good thing about this, JTAG headers. There's one in there. They're already populated. Just whack on your JTAG on there and Hack Oh, no, that one's not.
+TEXT: Sorry, that's uh I-squared C, SCL, SDA, and digital VDD enable. Oh, that's interesting. Ah, that that controls What? Is that just Is that just for setting up That's a power supply.
+context after: Um so, I don't know why they've got that in there next to the Like, you know, its layout implies that it has something to do with the power supply.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: Uh this is our data and the yellow one down here is our clock and if we scroll along and zoom into that, you'll notice that the chip select is actually a long way past here because to do the chip select, we're using the I squared C bus.
+TEXT: So our software has to actually send during this time, it has to send a command through to the I squared C bus to actually switch it on and that's 200 microseconds per division.
+context after: So it's roughly taking, you know, 200 400 600 800. It's roughly taking 1 millisecond to actually send that command before it gets through to change the chip select high and um I don't know if that is actually an issue.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (explains)
+context before: Very, very nice. And I can show you this uh time correlation. Here we go. In this example, they're going to use the gated FFT to correlate the time domain analog signal with frequency shift key and modulated with the digital signal which is an I squared C clock and what they're going to do the I squared C serial decoding as well all in hardware in real time and they're
+TEXT: going to time correlate that to the frequency domain spectrum FFT. So let's give it a whirl and have a look. So this it's triggered on the I squared C bus at the right frame.
+context after: So all that's done in hardware in real time and here we go. It's going to show us how we can go in and we can search for the frequency peaks.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (explains)
+context before: It just needs an inverter and uh it can start up. So, yeah. Mm. Without more data on this thing, I don't know. Um E2PROM lines, maybe. That's my last resort.
+TEXT: So, there you go. I've checked the lines on the I2C bus on the E2PROM there, and like it just boots up as you'd expect because of the pull-ups, and and then does nothing.
+context after: There's no activity um for, you know, many hundreds of milliseconds after that, taking out the time base. No, it just doesn't boot up. So, it's not even trying to access the E2PROM.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (explains)
+context before: So, I decided to put those over to the I2C because some of the other pins I have to dedicate onto here like there's the I2C bus. I'm using the internal I2C in inside here, see?
+TEXT: SDA and SCL there, SDA and SCL here. That means I'm using the internal hardware I2C interface, and you want to do that. I don't want to have to bit bang that one as well.
+context after: I've got the reset pin totally separate, and I've also got the serial, the hardware UART output as well. And once again, you can tell it's a hardware device the pin label is RXD and TXD.
+
+[1275] EEVblog #1275 - Uniden UHF Walkie Talkie Teardowns — Dave Jones (explains)
+context before: But apart from that, it's pretty easy. It's just uh GPIO. So, it's good that it's got GPIO because you might want to hook up like a little eight-pin micro to this thing and then you can use the GPIO on this to uh drive it.
+TEXT: So, yeah, that's about all she wrote, though. But the other thing is we've got the full programming guide as well. And this is uh how you program it via the I2C or SPI.
+context after: Okay, it sounds like you can use either SPI or I2C. Take your pick. I don't think you need both. So, that's really flexible depending on what your micro has.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (explains)
+context before: Now, if you can from familiar with logic analyzers in general or some other bit of test gear, turn it on. Uh can I use it? Is it intuitive? Well, up here we've got one we've got our number of samples here.
+TEXT: We've got our sample rate and start. And I've hooked up an I²C bus to it and I can just hit start here and occasionally I'll get blank data cuz it is uh packet-based.
+context after: Um there we go. I get it a few times, blank data, and then occasionally I will capture the data. That's because um no trigger is uh set up at all.
+
+[991] EEVblog #991 - Mailbag — Dave Jones (explains)
+context before: Thank you very much. It would have been nice. Yeah, once again, if you could set that, that would have been really and 9921. That would have been really nice.
+TEXT: But hey, this is really rather handy. I'm liking it and I squared C up to 10 MEG. WOW, YOUR BUS capacitance is really going to matter when you getting up that high.
+context after: You know, you have that pull up that 2K that nominal 2K two pull up in the standard may not be enough. Anyway, this looks like it could work a treat.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: Well, by the looks of the location here with the ribbon cable, that's going off to the uh LCD. Not much else. There's another Winbond parts upside down or all the electrons are going to fall out.
+TEXT: So, that'll just be an I²C PROM, wouldn't it? And uh IP2312, that looks like a switching converter. There's your 24 MHz clock there. Uh more power stuff up here.
+context after: No worries. So, that all looks nice. Nice and tidy. 25 Oh, no, 25 meg over here. So, we've got a 24. Okay, so the 24 is for the Allwinner, and the 25 over here.
+
+[251] EEVblog #251 - Mailbag — Dave Jones (explains)
+context before: There you go. It's looks like it's part of this Lab Works with an X. Get it? Concept straight from the lab to your brain. It's a collection of books each handling a particular topic in the field of electronics.
+TEXT: And this one is the I squared C bus. And it does look uh pretty good. It goes through all the details of how the bus works and it's it's well done.
+context after: It's well laid out. I really really like it at first glance. It's all the timing stuff and things like that. It's uh looks like Vincent's put a lot of work into this and it's really well laid out.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (explains)
+context before: So, it's a win. So, let's take a look at this novel device. I love it. It's uh described as a zero drift bidirectional current power monitor with I²C interface.
+TEXT: And bingo, I²C magic term, it means we don't need any extra uh pins like we did before. So, we can actually um share once again share our I²C bus.
+context after: We don't need any extra pins on the microcontroller. Brilliant. So, we've got like four, I think. One uh two, three, yeah, four different devices. Uh five, actually, with our IO expansion.
+
+[8P8Af5SR57U] Goal Zero Yeti 400 Lithium Battery Follow--up — Dave Jones (explains)
+context before: There it is there. That four pin jobby that. Yeah. Yeah. There we go. That four pin jobby there. And unfortunately it is not I got a f it is not a direct access to the um batteries.
+TEXT: So it's actually an I squared C um interface. So there you go. Ground um I squared C um the clock and data lines and it just says BMS there.
+context after: So that's going over to the uh battery management um thing on that uh board. So it looks like it is happening on that board or maybe it's controlled via My bloody tripod keeps falling down.
+
+[1462] EEVblog 1462 - Why Dymo Label Printers SUCK! — Dave Jones (opinion)
+context before: But of course, in theory, you could replace this board with something that just simulated the I squared C signals and the microcontroller unless it's like very cleverly signed and this chip does support a secure key interface over the I squared C or something.
+TEXT: So So might be hard to like just simulate the RFID board cuz a lot of people have talked about this, you know, oh you're just throwing Arduino in there or something and and you can just output I squared C thing signals to simulate it, but yeah, I like it's probably possible, but it's going to require, you know, a significant amount of decoding work to figure out what's going on here.
+context after: Anyway, let's start that going again and I'm going to advance the paper. Whoa. It just Oh, no. Woah. Oh, it's printing. Dymo sucks. Dymo sucks. Um I just wasted Well, no, I didn't waste two labels.
+
+[1503] EEVblog 1503 - Rigol HDO4000 12bit Oscilloscope TEARDOWN — Dave Jones (opinion)
+context before: That might be, you know, that might be the thing. But, yeah, it's like it's amazing how simple the front end 8 800 meg front end, come on. And it seems to be a pretty decent front end, low noise.
+TEXT: 12-bit capable front end, 1 mV per division. Um, yeah, really quite amazing stuff. And this will have uh software bandwidth limiters in there as well, I suspect. Um, so yeah, there's probably like an I2C bus that comes into it or something that actually commands sends the commands uh to it cuz there's no separate uh PGA programmable gain amplifier.
+context after: It's all in here. There's no separate differential uh driver. So, it's got a programmable gain amplifier, you know, with with the attenuator uh system and stuff. And it's got the differential uh driver output.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (opinion)
+context before: So, that is really quite It's nicely implemented. I mean, it's a really niche in terms of, you know, uh functionality. I mean, probably if if had two rotary encoders, you probably wouldn't go to uh this effort.
+TEXT: You'd just do it yourself. But, you know, if you wanted to take the like the software like the you know, if you didn't want to write your own I squared C rotary encoder routines and and stuff like that, then you know, but I think the real value in this is having like large arrays of controls and that's really neat.
+context after: And of course, you could you could handle the these are push button ones as well. Can handle all those. Anyway, I think that's a great little project and everyone else seems to agree because as I make this, there's only 16 hours left in the Kickstarter campaign.
+
+[dv0B_WqL7w4] UniT 210E Current Clamp Teardown + Brymen Comparison — Dave Jones (opinion)
+context before: They've scrubbed that puppy. If anyone knows, because, well, the firmware apparently, apparently somebody said like this hacked firmware. I love, look at the capacitor. Look at, wow, look at that. Look at that, that's insane. That's insane. I've never seen a row of caps like that.
+TEXT: That's kind of great, actually. And I assume that's like an I2C, that's the, that's an I2C for settings and stuff, presumably. Trady Trev has got it. 350 kHz, zero, so that chip there, that chip there is a 350 kHz, zero drift CMOS rail-to-rail IO op-amp with RF filter as well.
+context after: Nice. Nice, okay. Thank you, Trady. Yeah, that's exactly what you'd expect there. That would have been my guess as well, given all the surrounding, the surrounding components, the surrounding resistors and stuff, that's like op-ampy, right? When you see a chip like that, when you see like a bunch of resistors around like that in this sort of like configuration,
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (opinion)
+context before: Uh I've got to have three hands here. So, turn it on. Boom. And uh what have I got? Uh something it went low there, but it's the clock line.
+TEXT: You know, it's not like it's clocking um I squared C data at all. So, we're getting nothing on that I squared C bus. Zip. And that includes when the shutter goes actually cuz the shutter is going to go as we saw before like at 2 seconds after Buddha.
+context after: So, there's just there's just nothing there. And that's the data out of the module there on the SPI. So, that's that's video over SPI and you can see see the packets there.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (opinion)
+context before: And it usually takes too much CPU time to make it viable. So, why would you use bit banging? Why would you ever bit banging? It sounds like it's slow and just worse than using the existing hardware.
+TEXT: Well, sometimes you simply can't use the existing hardware. Sometimes you just don't have enough serial ports. Sometimes you've got a few I2C devices um which is a serial protocol which have the same address and you need to communicate with them.
+context after: You You need to connect multiple uh multiple different I2C lines to separate them. Um it's either that or a multiplexing solution. And sometimes you just don't want to pay for the extra chip.
+
+[849] EEVblog #849 - Sony E-Mount Camera Lens Teardown — Dave Jones (opinion)
+context before: So, yes, it's I've lost all trust in it. But anyway, let's take it apart. And the lens we're looking at is the SELP1650. It's like the kit lens which comes with a lot of NEX 5T and other model cameras with the E-mount.
+TEXT: So, I'm not exactly sure what the pinout and interface is here. I haven't looked, but I might have a quick Google on that before when I edit this thing and I'll uh put it up, but uh some sort of, you know, maybe I2C serial interface or something.
+context after: It's just got to, you know, it doesn't have to transfer a lot of uh data, so just be some interface like that or maybe a spy bus or something perhaps, but not sure how easily these come apart or how they or how repairable they are.
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (opinion)
+context before: Anyway, well, to get the information that it requires a uh NAK event. So, uh yeah, there's nothing on there and um and the SDA and the I squared C clock as well.
+TEXT: That was just me changing pins there. That's why it triggered. And there's absolutely nothing on the clock, either. It's just sitting high. So, zip. And if I actually turn the power off, okay, and I turn the power back on, let's uh hang on.
+context after: I'll turn the power on. Oh, there we go. We triggered something. Well, it went high when I actually pushed There we go. If I just push the power button once, it actually goes high.
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (opinion)
+context before: Oh, anyway, we can hold down control and we can zoom in like that, that's alright so let's force, I don't like this, like why does the green oh, hang on, yeah, why does the green line go down like that in the middle, I don't like that at all, that's quite disturbing
+TEXT: so anyway, there we go, we've got our I squared C, but like, there's no protocol analysis or anything by the looks of it, with C, and it's like no auto timing pops up and things like that, you know, I know this is early stage
+context after: for the software and stuff like that, but it would have been nice to see it's really pretty rudimentary, you know, maybe it's good enough to see a signal, but I can't even see a way to trigger from the, like oh, hang on, if I turn off my, what if I turn off my scope
+
+[1336] EEVblog #1336 - DT71 LCR Tweezer Destructive Teardown + Lab Update — Dave Jones (opinion)
+context before: It's almost direct uh DAC output from other using both DACs. Are they driving both? Um and then I don't know. That one's either a mux or an amp or one of those, you know, front-end jobbies or something.
+TEXT: I don't see like it I don't think it's like an I squared C interface. Like it's not a serial interface or anything like that. Anyway, so these are what These would be range resistors and stuff.
+context after: Uh I would presume you'd need some of those. But yeah, there's not much in it, is there? I mean, jeez, that's, you know, it's a little bit over here, but uh that's just like some relay and MOSFET switching.
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (opinion)
+context before: Okay. Oh, anyway, don't know if you can use the third channel like, you know, uh MISO, MOSI, and the third channel. That's just that's crazy. I That's so limiting.
+TEXT: I squared C Look, I can't even select the I squared like Oh, no. Display I can't even configure the I squared C. There is no configure option. Wow. Unbelievable.
+context after: I haven't even looked at the data log. Uh where is like the data logging stuff? And like they claim data logging. Is that just roll mode? Is it like saving to USB?
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: Like I'm trying to set up a uh asynchronous serial one uh say RS-232 one at the moment. And uh of course, it um it still has the I squared C there and it automatically like if you go in here, set it up, it tells you that uh these two are already in use by the I squared C.
+TEXT: So, looks like you can do multiple ones. Well, as you'd expect because uh really it's only just, you know, decoding this stuff in software after the fact. So, really it should be able to do anything if you can capture, you know, so really you could uh with eight channels, you could capture uh four separate SPI, uh four separate I squared C buses, or uh asynchronous serial buses at the same
+context after: time. Beautiful. But, one annoying thing is I was on this tab here and I changed my uh labels and channels up here, but that only applied to that tab.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: Here we go. You just take it I could do it manually, of course, but it's going to do it for me. You draw the box around there, use the zone triggering, bang, and then you can get in there and identify that runt pulse.
+TEXT: Very, very nice. And I can show you this uh time correlation. Here we go. In this example, they're going to use the gated FFT to correlate the time domain analog signal with frequency shift key and modulated with the digital signal which is an I squared C clock and what they're going to do the I squared C serial decoding as well all in hardware in real time and they're
+context after: going to time correlate that to the frequency domain spectrum FFT. So let's give it a whirl and have a look. So this it's triggered on the I squared C bus at the right frame.
+
+[991] EEVblog #991 - Mailbag — Dave Jones (mention)
+context before: There we go. Look. Uh well, okay. We can adjust it and then read it and feed stuff in and just see the LEDs and stuff like that. That's kind of neat.
+TEXT: And then you can do uh protocol stuff. This is what I'm interested And by the way, you can just generate patterns a pattern generator. So, I was actually um going to design a product that actually did this cuz I wanted something that you can generate uh you know, SPI, I2C, and UART and other uh signals up to uh you know, very high rates and stuff like that, hence the
+context after: FPGA. And uh David and I were just actually discussing this project before we opened this uh coincidentally. And how I looked before and they didn't have the ability. I looked at the previous like the Analog Discovery and stuff and all it had was the pattern generator like this and that didn't actually uh do it.
+
+[1309] EEVblog #1309 - Siglent SDS2000X Plus Scope Teardown+Hack — Dave Jones (mention)
+context before: I believe Siglent actually have like a proper demo board for this that allows you to actually look at all the different types. So if you want me to actually look at that maybe ping Siglent and get them to send a board in and something and then we can do that like it's just nice if you already have like a nice hardware example that you can probe easily and
+TEXT: you know do all that sort of stuff. And like all that sort of jazz but that is an optional extra of course and it's got of course well no mass testing it's got serial decoding as well and look this is not a review of course but it's got I2C SPI UART CAN LIN FlexRay CAN FD I2S got a built in hardware frequency counter but it's already showing it up there so I don't
+context after: know why they actually have another counter over here. I'm not entirely sure but anyway it's pretty powerful the trigger of course they've got the zone triggering if I remember rightly I had some issues with that on the 5000 series so zone one on can we Yep, go like that and you can trigger within the zone must intersect like that and bingo it's going to trigger on little ramp pulses and things like that
+
+[1552] EEVblog 1552 - Digilent Analog Discovery 3 — Dave Jones (mention)
+context before: Seven-segment display there. They've got a spectrum analyzer, a network analyzer, and they've got an impedance analyzer as well. Fantastic! And they've got a curve tracer. I didn't know, I've never played with that before. Uh, protocol analyzer, which, um, what sort of, uh, protocols do you get?
+TEXT: UART, SPI, I2C, CAN, uh, CEC, JTAG, SWD, and AVR as well. Nice! And then you can do, uh, custom scripting as well. I've never, uh, tried to script this thing, so I don't know, but apparently it's really good. And apparently it integrates with MATLAB, and because National Instruments own it now, I think it integrates with National Instruments, um, tools somehow.
+context after: And all that sort of jazz. So, automation is, uh, pretty high on the list here. Anyway, so we can go to, uh, if you just want to get back, you can get to welcome, so we can go to any of the, whoop, I just heard the relays, uh, click down in there, and we're good to go.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (mention)
+context before: Wow. There you go. And so, I don't think there's any semiconductor failures on here at all. I think we've just got a broken line in here somewhere. And if you remember right back where before I even took this thing apart, I I suspected it would be the switch.
+TEXT: It would be the switch. But of course, we buzzed out the switch and it worked, and you're not going to get a break in a PCB track going back to the processor, and I just assumed that the processor worked, and the switch would have been connected to into there, and then it would have been going back via the serial um line in I squared C in this case.
+context after: But no, dedicated line going all the way back. Unbelievable. There you go. So, I've probably wasted like half an hour or with edits, probably an hour actually um you know, mucking around here.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (mention)
+context before: So, the component grid will be in a will actually be in metric and the routing grid will be in imperial, be 50 or 25-mil. I might switch to between those depending on the work down there.
+TEXT: And here I am back at the I2C chip. And if you can see the the serial expand the this switch expansion connector in there, that 10-pin connector, it takes up no room at all because those traces go directly from the I2C chip right up through the resistors, through the connector, and it's it's all very efficient down there around that I2C chip.
+context after: I really like that. So, if you're not fussy about where expansion connector goes, you can really save a lot of PCB space. And there we go. I'm Now I'm moving in my serial connector.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: He says it's low low resolution like it's you know, like low end camera. So 640 by 480 you know, sounds pretty viable. So obviously doing some FPGA processing of the image taken from the sensor probably in real time doing some I don't know masking thing or running you know, some sort of image detection algorithm or open CV or one of those uh, you know, image algorithm type
+TEXT: processing things and obviously the microcontroller here just drives that with the nice squared C line. But as I said, this layout is not finished. Um, so let's just talk about several things of like stack up and other issues to do with routing and component placement and stuff like that because these discussions are always quite interesting.
+context after: So, let's go over and have a look at the board here. All right, so let's have a look here. Now, I'm not too concerned about the uh, buck converter here.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: So all that's done in hardware in real time and here we go. It's going to show us how we can go in and we can search for the frequency peaks.
+TEXT: We can get that. We can set it up in the peaks in the dock over here very very nice and then we can start some time correlation. So yeah, this is damn impressive and then we can use the navigate buttons to go through and find and there's our I squared C digital stuff and we can time correlate and find that frequency peak.
+context after: Very impressive once again, this is actually generating real hardware signals down here that you can manually play around with and probe yourself. So it's incredibly impressive what it's able to do on this base level scope.
+
+[313] EEVblog #313 - Bus Pirate LCD Debugging — Dave Jones (mention)
+context before: Anyway, let's give that a go. Right, now um what we want to do now is go into the macro menu. So, we want to do a bracket zero like this.
+TEXT: And that puts us into uh the macro uh various macro options. And uh that's the thing. This is pre-programmed into the uh Bus Pirate for um you know, testing LCDs and for other uh items, you know, for the SPI and I squared C and all that sort of stuff, but we're in the LCD menu and we can just go LCD reset.
+context after: So, I believe we have to do one bracket. And yep, we've reset. And uh let's do init LCD. So, we need to do Sorry, two. Okay, bracket, which I like means command.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: So, unless you've got a really high-priced, properly designed logic analyzer probe system, you're you're you're really kidding yourself. You're You've really only got a toy. Now, there's nothing wrong with just having a toy logic analyzer.
+TEXT: They're They're useful for, you know, most jobs, really. Uh just for analyzing your I squared C bus or something like that. But, if you're into serious high speed, you know, 50, 100, couple hundred megahertz, something like that, these toy logic analog USB logic analyzers really aren't going to cut it.
+context after: Yet another decision you need to make when you're buying a logic analyzer is there's once again there's two different types. There's those that uh capture and buffer the signals within the thing itself and then upload the data to the PC or there's the ones that uh work in real time and they're the cheap ones.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (mention)
+context before: So that works out to a lot of pins and this is why you might want to go to a COG display chip on glass cuz it has the driver chip built on.
+TEXT: So you can simply talk to it via an I squared C bus or an SPI bus or whatever or the regular um you know Hitachi interface LCD driver or whatever you choose to In this particular case, no because we've just got the pins or the flat flex or the zebra strips, we have to drive every one of these 40 pins.
+context after: So that becomes a problem. Now if you course if you've got a relatively small LCD, you can use your existing microcontroller that you already plan to use. Or you can choose a variant of the microcontroller that has a built-in LCD driver.
+
+[913] EEVblog #913 - Mailbag — Dave Jones (mention)
+context before: if you want to drive it old school. Ah, here's a breakdown of the different modules in there. Lovely quick start guide here. The Diablo processor, that's the one. They've got their own processor and their own language for driving graphics displays and things like that.
+TEXT: The 7-inch we've got here, 800x480 resolution. And then if you've got the touch version, you've got a capacitive touch or DT's resistive touch, DCT, capacitive touch, choose your flavor depending on your application. Um, and all the interface types. It can do SPI, serial, I2C, GPIO, it can do analog.
+context after: So it can actually, because it's a processor, you can actually program it to do its own thing. It can be its own controller. So if you're developing some sort of interactive user display terminal or something and you want to have it do some basic processing,
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (mention)
+context before: So, that's really quite annoying. Um, hold off down here, of course, we have our, uh, hold off auto, normal, single, all your basic stuff. Apart from that, you know, it hasn't got anything, uh, too fancy.
+TEXT: There's no, um, I squared C, uh, triggering, SPI, or any logic analysis, uh, triggering, or anything like that. It's not even an option, so, uh, forget it if you're looking to do, uh, digital troubleshooting, because you could, with them, you know, very large, uh, 10 meg sample memory in here.
+context after: It'd be, you know, ideal for, uh, you know, decoding packets and stuff like that, but, no, forget it. Um, it doesn't have that capability whatsoever. Pulse trigger down here, we've got some other stuff.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (mention)
+context before: So, I think we're out of luck there. What's that? Is that a bug? And here we have it, the Speer 600, which is not recommended for new designs, apparently.
+TEXT: So, there you go. It doesn't mean that you I get it anymore, but um what it says on the website. Basically got a ton of stuff built in. It's got USB host, USB devices, gigabit ethernet, I squared C, synchronous serial ports, two what you are interfaces, which was what we're interested in here.
+context after: Um almost certainly uh because I believe we're seeing it on the 2000 3000 X series scopes, so they're going to do the same thing here. And Keysight um for their Windows CE stuff, we have actually seen um you are interfaces like this before.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (mention)
+context before: It's only supposed to be two levels data, one and zero of course. It's digital, but we're not. So, it looks like there's actually some contention caused by the LCD and trust me I've isolated it down.
+TEXT: It's not the other I2C chips. They haven't got the same address or anything like that. Trust me I've isolated it down and it is the LCD and it's not actually my code doing that either cuz I originally wrote my own LCD driver code from scratch and I got this result and I thought it was funny.
+context after: I thought my code was doing something weird even though I copied it directly from the data sheet of the LCD manufacturer and I thought okay, it's the Arduino the one wire library has been giving me troubles.
+
+[MC9_4mpqVgU] eevBLAB #5 - Are Mixed Signal (MSO) Oscilloscopes Worth The Money? — Dave Jones (mention)
+context before: So, you might think speed-wise and memory-wise, this is a pretty good logic analyzer, but uh it's not that great. Actually, well, the sample rate's really good, right? The sample rate's fantastic, but most digital stuff you do in these days is it's not like it was 20 years ago where, you know, you had a whole board full of hundreds of chips and they were all interconnected all digital
+TEXT: interconnected and you had to debug them all. Now, it's all like serial buses and things like that. So, typically when you look at a logic analyzer, you're looking at doing serial buses, SPI spy buses, I squared C buses, you know, CAN buses maybe, you know, things like that, one wire buses.
+context after: So, you know, often you don't need those eight or 16 logic channels that you normally would. Now, uh the other thing is is that logic analyzers aren't as good as scopes.
+
+[1241] EEVblog #1241 - Power Up Display Counter Project - Part 1 — Dave Jones (mention)
+context before: really wanted to get into it I want one in like a long thin form factor like this one I showed and maybe I'm mixing up I thought I had an e-ink version of one of the like a similar shape to this but maybe it's not maybe I'm actually thinking of the sharp memory LCD once again
+TEXT: they claim that this one is an e-paper display oh no LCD display screen now once again it's got LCD this is not e-paper I squared C serial interface refresh time reflectivity angle of contrast and that could genuinely be eating yeah once again you can request data sheets and stuff like that
+context after: I obviously can't do that right now so I don't want Square I want like that's really not pulling up that's really getting out of uh ink e-paper to Slay's uh pervasive oh Crystal fonts yeah I thought you know I didn't think to go to one of my regular LCD
+
+[-9l41zNWlxY] Guest Video: Voltlog #142 - Mailbag — Dave Jones (mention)
+context before: My next item is a GPS module and inside it should be a Neo M8N module from Ublox, which is a nice module. This module supports connecting up to 3 navigation systems at the same time, so you could be getting data from GPS, GLONASS and GALILEO, which increases the coverage and precision of the system.
+TEXT: This module is a bit special because it also has a magnetometer inside, and that is to help with the flight controller systems of drones or UAVs. So, you basically got two connectors here, one is for power and UART, TX and RX, and the other one is for the I2C interface to the magnetometer.
+context after: Since I got this for a lower price than usual, I paid just $15 for the module, I will open the case just to check we have the correct GPS module inside. By the way, this is my Xiaomi WIHA screwdriver set, which I absolutely love.
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (mention)
+context before: So yeah, there you go. That's the heart of this thing. So let's go and see what else they got on here. Okay, a couple of little, couple of little jobbies down there. Little 6-pin SOT-23s, don't know what they are. They're for, they need a little LED.
+TEXT: So they, what, what are they, LED drives? What are they, what are they doing? Oh, okay, that could be, okay, because that's the switch interface. So you press the switch. So maybe, I don't know, maybe there's sort of like some, I don't know, are they, no, they're not an I squared C thing.
+context after: No. So don't know what it's doing there. Okay, a bunch of other SOT-23 stuff. They don't look like regulators, so they look like some other type of amp. 4 volts, 100 mic, 50 volts, there you go. 50 volt caps. So they're for our phantom power.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: And there's a whole bunch of software options, mine came with all these trials already installed. Mine came with all these trials already enabled out of the box, but mine, I don't know if it actually comes out of the box. And the good thing is, is the time left is the operating time left,
+TEXT: so it's not, you know, like in 30 hours. I've had this for like many weeks now, and it hasn't timed out, so it must be operating hours. But as you can see, the trigger, decode, I2C, SPI, whoop, and it's vanished. And this is the software version and the hardware version that I'm running
+context after: for those playing along at home. And one thing I do like in this utility system menu is when you pair up the scope, you can actually set whether or not you want it to go to scope defaults or to the last setting. Nice.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: It would have been better to maybe, you know, to squeeze in somehow a dedicated back button. That really would have been nice. As far as the software options go, we do have a lot of them. Check this out. We can get runt pulses, we can get nth edge triggering,
+TEXT: and of course we can trigger off RS-232 I2C, SPI RS-232, and then decoders as well. It's got serial decoding, and you can do that with the four channels. You can have your SPI bus with your four channels. Brilliant. And the record replay mode, which is effectively your segmented memory,
+context after: although segmented memory on this 1000 series isn't as nicely implemented as it is on the 2000 series scope with its dedicated control. And a lot of people don't know that the original 1052E also had recorder segmented memory mode as well, but it was, you know, hidden deep away in the menu.
+
+[1546] EEVblog 1546 - INSANE $30k 4K Panoramic DLP Projector TEARDOWN — Dave Jones (mention)
+context before: That's what she said. There's the front panel lens release mechanism. They've gone to a lot of effort for that. And they somehow determined that the nickel screening on the case wasn't enough, so they did this metal shield at the in the base of the main processing PCB.
+TEXT: What the Anyway, uh what's this over here? Ah, turns out that's an LM92 uh I squared C digital temperature sensor, national jobby. Um yeah, it's mounted over there, so they were trying to get, I guess, the air's coming in here, so I assume that's the ambient uh air temperature sensor.
+context after: And that's the thing, like if you were penny-pinching your design process, there's no way you'd design that in with this uh custom cable loom, this custom board, and the you know, you extra moldings in there and stuff.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: all four channels, I've got FFT math, I've got reference waveform, I've got serial decoding up there, which is the SPI bus decoding, I've got all the statistics turned on, and I've got cursors turned on, everything turned on, and I can still play around with that, and
+TEXT: it's still fairly responsive. Like, it doesn't bog down at all. Very nice. Now if we go into the math option here and check out the decode capabilities, I showed this briefly before, we've got RS-232, parallel, I2C and SPI, and yes these decoders are software options, you've got to
+context after: buy it. Let's actually try out the I2C, I've turned my decoding off and on, like this, so there we go, it pops up, and our data is, our clock is channel 1, data's channel 2, you can exchange those over and you can see that
+
+[827] EEVblog #827 - Mailbag — Dave Jones (mention)
+context before: we've got some buttons, and a whole bunch of additional I.O. here, because the Artyx 7 FPGA architecture, of course, extremely powerful, so it's got all the extra I.O. on there. You can't just get it all on the Arduino shield. It's got a buttload of memory, 256 megabyte of DDR3,
+TEXT: it's got 16 megabytes of quad SPI flash, and it's got Ethernet and USB and I2C, UART, all sorts of jazz, nothing fancy on the back. Oh, the white, oh no. Anyway, it's $99, so if you're looking to get into softcore FPGA programming, it's probably not a bad option worth checking out.
+context after: And it does actually come with a voucher, I won't show you the voucher code, but anyway, you can get a barcode and a voucher code, which gives you access to the Vivado design suite and other software tools. And will it actually do anything out of the box?
+
+[1453] EEVblog 1453 - Elgato Key Light TEARDOWN — Dave Jones (mention)
+context before: You could probably, you know, hack into someone's, uh, lights or network and flash their lights in their, um, studio or something while their gamer kitty's live streaming. That'd be cool if any... Has anyone heard of that happening? Where, uh, like, a stream has been, like, going and somebody, like, flashes Morse code on their,
+TEXT: on their key lights in front of them. That'd be hilarious. Anyway, that'd be a great hack. Then for our LED driver, we've got a PCA9632. That's an, uh, 16-channel I2C, uh, driver. And, like, 8 bits for, um, each LED. So you can drive each LED up to, uh, like, totem pole output.
+context after: 25, uh, milliamps for the 16 LEDs. Up to 8-bit, uh, PWM resolution on those. Because these things are continuously, uh, adjustable. And, of course, um, when we tear down the rest of it, we're probably gonna see, like, uh, two different, uh, color LEDs in there.
+
+[313] EEVblog #313 - Bus Pirate LCD Debugging — Dave Jones (mention)
+context before: Give it a go. Let's try it. And just to get this thing up and running really quickly with minimum amount of fuss I thought I'd use my Bus Pirate.
+TEXT: Haven't used it before. I've got a Bus Pirate version 3.5. I think it's a slightly older model. It's available from Dangerous Prototypes. It's open source hardware. It's really good for you know decoding serial interfaces, you know, SPI, I squared C and all that sort of stuff.
+context after: But it's got like built-in modes to drive LCDs and drive various you know dozens and dozens of types of chips. Really handy little device. It runs on a PIC 24.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: And these do exactly the same thing. You turn a knob on these two here. You turn a knob, but a microcontroller generates the voltage. Now, in terms of the DAC uh here, you know about digital-to-analog converters, or if you don't, look them up.
+TEXT: I won't go into them here, but basically, they're a dedicated device. You feed a digital signal in via usually, you know, like a serial input these days, an SPI or an I²C interface, or if they're built into the micro, they could do that, and they give you a direct voltage out.
+context after: You don't have to do anything else with it. They're magic. But, a pulse width modulator is exactly the same as a DAC. It works It It well, it works differently, but it gives you the same result.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (mention)
+context before: well? Well here we go. We can insert interpreter here, and we can actually set these up and define our signals. I don't have a bus hooked up at the moment, I could, but I'm not going to be actually bothering testing it. But there we go,
+TEXT: we can do SPI, I squared C, and UART as well. So looks like it has all the functionality. There we go, we can get, oh, ones and twos complement. All sorts of weird and wonderful output formats there, and I squared C, and we can set up which channels we want those on, and UART
+context after: as well. That'll go up to 230k board. Very, very nice. So there you go. It's got all that capability built in, so quite a useful logic analyzer apart from protocol decoder. I'm going to assume the protocol decoder works, so I'll give it the benefit of the doubt.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (mention)
+context before: And let's have a look at what we're driving here. We're driving not only our I squared uh pot here, um we're doing that. So, we've got that capability for no extra pins, but we're driving our LCD as well, just like we were last time.
+TEXT: So, we've got our LCD, and I changed my DAC here from an SPI DAC to an I squared C DAC. And um I think it might even be a few cents uh cheaper as well, but I freed up those three pins on the um on the on the micro because I've gone for an I squared C device instead of SPI.
+context after: So, really, that was a bit of a no-brainer. So, these things cascade down, and I freed up all these pins. Now, you're probably wondering, "Where is my analog-to-digital converter?"
+
+[603] EEVblog #603 - Gas Sensor Teardown - Dräger Multiwarn II — Dave Jones (mention)
+context before: that's for sure. And there we go, there's the bottom side of presumably our analog board. Fine, pin-pitch part there. Ooh, fancy-pancy stuff. Probably just some more 74HC interface stuff here on top would be my guess. And yeah, that is a four-layer board too.
+TEXT: Well that's interesting. And a Philips PCF8577 I2C interface, of course Philips invented that. LCD driver, so there you go, that's driving the big dot matrix LCD on the front. Which is strange, because they have a proper LCD module down there with the LCD drivers, so, huh?
+context after: And it seems that I don't have to scrape the conformal coding off this to see the numbers in there. If I get it at the right angle under my Mantis microscope, I can see clean through the conformal coding, straight through the numbers, and nothing is revealing.
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (mention)
+context before: A 32 intensity uh, gray scale screen. Yes, it is only a green screen, but it was true mixed signal, so you'd have the 16 channel logic analyzer as well.
+TEXT: Fantastic. You could configure all that. You could trigger it. It had I squared C triggering in here. Here it is. Where is it? More I squared C triggering. It could do SPI and TV and pulse width triggering and pattern triggering and all sorts of weird and wonderful stuff.
+context after: It was pretty much state-of-the-art and I loved the interface for this. It was so easy. Dedicated vertical controls, horizontal that just worked as you'd expect. Simple uh, acquire menus had real-time mode or there it is.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (mention)
+context before: And once again, LEDs for all the FETs up there. I'm interested to see the circuit for that. Is that it just tells you if the FET is uh switched on uh basically.
+TEXT: I assume that's uh that's what it means there and and then we've got a fan which drives the little puppy down in the corner. And here we've got some expansion headers for the UART and the I squared C bus and presumably are some spare IO from the uh main ATmega processor.
+context after: Excellent. And a couple of more status LEDs for uh that are unlabeled. And there's a circuitry and the connector driving the wanky RGB LED strip but and it says 24 volts only with an exclamation mark.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: So, um and this has 3.3 volts as well. So, you can power external boards straight from those IO connector. And why not? Just for good measure, I've added an I squared C bus expansion, just a four-pin uh SIL header there that uh has SDA and SCL and power and ground.
+TEXT: So, if you want to hook on other I squared C devices, you can do that. And when it comes to choosing one of these I squared C serial expansion IOs, once again, I did the parametric search on Digikey, and pretty much for a DIP device I wanted, and Microchip came up again.
+context after: It's the MCP uh 23008, and it's just an SPI interface. It's got programmable address lines and eight uh user-definable input and output you can software configure them to send data through when you set them up first, and then you can use them as IO, just like on a regular microcontroller.
+
+[uOOGXORqsqQ] Trezor Safe 5 Bitcoin Crypo Hardware Wallet — Dave Jones (mention)
+context before: They've got all the protection on the bus there. Ah, there it is. STM32U585. There you go. So the other Trezors just store the secure element inside the micro. But this one here, and that looks like the SD card, micro SD card slot there on the side.
+TEXT: They've got a FET up there for the switch in the power. And where's our secure Optega Trust-M. There you go. So there's our secure element. It's just got I2C interface and Trust, Optega Trust-M. There you go. Looks like it's an Infineon jobby. Easiest way to add security
+context after: to your existing Internet of Things design. Grown. Certified tamper-resistant hardware. Yeah, as I said. So that's the standard, I believe. Not currently up on all the physical hardware standards, but yes, it would have. So all this stuff I'm sure is very impressive to all you crypto
+
+[735] EEVblog #735 - Mailbag — Dave Jones (mention)
+context before: Yes, I do like this kind of stuff. It contains one PCA 9685, 16 channels of 12-bit PWM, very nice. One ADS1015, which is an 8-channel 12-bit ADC. It's got a microchip MCP4725, that's got two channels of 12-bit DAC, and it's got some level-shifting stuff
+TEXT: as well. Also it's got an E-squared PROM and two I-squared C bus extenders. Awesome! Excellent! There you go. Thank you very much, John Lumley. And I'll post a link to the Kickstarter down below if you want to check it out. So as I said, it is a hat for the Raspberry Pi
+context after: to do all sorts of multi-channel goodness, 12-bit PWM, 12-bit ADC, 12-bit DAC, and some level-shifting of SPI and serial stuff as well. And, well, it looks to do just that. He's got the requisite chips on there, no input protection at all or anything like that that I can see, no output buffers, but
+
+[377] EEVblog #377 - Mailbag Monday — Dave Jones (mention)
+context before: real-time clock? Oh! I like this! This is really neat, I just like the form factor and stuff. I'm going to plug this in. And here's the tiny little sensor board, obviously hand-assembled, and there's the SHT21 temperature and humidity sensor. These are really neat devices, I was using
+TEXT: these, oh jeez, I'm not going to say 10 years ago, but probably not far off. And they're really neat devices, I believe, I2C interface, and we've got a 1117 low drop-out voltage regulator there, and the SHT21 sensor. And of course that just plugs in to the expansion bus
+context after: on that board, and that allows us to measure temperature and humidity. But this board is capable of an awful lot more than that. This is just one of its web-enabled capabilities. So the idea is you hook up a whole bunch of sensors to this web interface board and
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: Bingo, there it is, right? We We actually got it, right? Fairly quickly. So, yeah, it's a case of faster update rate not necessarily better. It's all about the dead time.
+TEXT: And if we have a look at serial decode on here, I've got set I squared C bus. It's just outputting some data. This is just a demo signal, and it seems to decode it fine and match the same serial decoding on my Agilent 3000 X series, which I'll show you here in a sec.
+context after: And uh yeah, just take note of those. And here it is actually live updating on the signal here. Just note the second one there. It's two, four, six. Eight, it's It's slow updating.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (mention)
+context before: Now, of course, because the logic analyzer probe and license on this is quite expensive, can we do the serial decoding without the logic analyzer? Can we use the analog channels here?
+TEXT: Well, let's turn on our decode here and bus decode, it's got how many different decoders? It's got two different decoders, and protocols standard, you do get I squared C, SPI, and UART standard, but CAN, LIN, and FlexRay, and I2S, they're all separate priced options.
+context after: But, at least you do get the main ones standard, I believe. I just noticed something here on the menu, there's like if you go in here and say choose signal, where's the back Where's the menu back button?
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: That's when you got to go, you know, crazy buggers. Um, which by the end of the layout by the way, you should only be left with non-critical traces. You should be routing all of your critical traces first as a priority.
+TEXT: So, as I said, all the data lines, all the important data lines, all the important clock and control lines, and the rest, which is miscellaneous stuff like this, for example, this uh microcontroller up here is obviously controlling this the I squared C on this chip.
+context after: It's got like an I squared C communication interface, which is where you set up all the parameters and, you know, things like that and data rates and, you know, whatever you set up in the sensor.
+
+[592] EEVblog #592 - Mailbag — Dave Jones (mention)
+context before: So, there's probably only a few devices on the market that'll do that full speed. So, there you go. Check out the Cypress EZ-USB FX3. Bit of a beast. And there you go, it does actually have an ARM 9 in it to control it.
+TEXT: This is a block diagram, but basically the high speed general purpose interface bus over here, it's got the UART, SPI, I2C, and uh what else have we got? We got easy check, yep, and USB 2 on the go, but it's got USB 3 as well with 512 K SRAM embedded on the sucker.
+context after: So, quite a powerful little beast if you want to hook up USB 3 to your product. If you've got that amount of data to transfer, well, you know, I mean, you're not going to roll your own solution.
+
+[661] EEVblog #661 - Mailbag — Dave Jones (mention)
+context before: Look, I don't know what that is, but yep, there's a lot going on there. I think I might get this now, I think ELV is a German electronics magazine, is it? And this is potentially an article that, here it is, it's a little
+TEXT: 3-axis board, SBI and I2C board, it looks like it's a project that I think Michael has possibly designed and written. I could be wrong, because he doesn't really explain it, but I think that's what's going on here, perhaps. Hmm. Yeah, so I'm not sure if Michael is
+context after: selling this or whatever, perhaps he can clear it up in the comments, because it's a real bit of eclectic mix of stuff he's sent in. Anyway, I'll include the link down below if you're interested in this little 3-axis breadboard board, which looks quite neat.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (mention)
+context before: megs or something worth of memory. And I just found a limitation with the bus trigger, and if we go into digital here, trying to set it up, like set up my SDA line, we can choose any one of the 16 digital channels, we can choose the digital IO
+TEXT: but we can't choose the analog inputs, and that's what I was using. And here we go, check this out, I'll go in auto mode, here we go, we're now doing real-time I2C decoding, I've basically got the same signal, I've got data on channel 1 and clock on channel 2 here
+context after: and same with D0 and D1 there, so they're actually back to front like that. So if we actually single-shot capture that, we should be able to oh, actually, sorry, I got that, got that back to front, there we go we should be able to capture that, like that, and if we zoom in
+
+[771] EEVblog #771 - Electronic Safe Lock Powerline Attack Part 2 — Dave Jones (mention)
+context before: with the, like the three attempt ten minute lockout, it's just, you know, so you have to do it some other way. So I think just the way I've been doing it, the simplistic approach, it seems reasonably you know, it seems reasonably safe. Ha!
+TEXT: Pun intended. But yeah, no, it doesn't mean this thing is not vulnerable. I mean, if you use much more advanced powerline attacks and things like that, people have talked about like seeing the, maybe the I squared C bus for this keyboard, if it's like an I squared
+context after: C bus, might be in parallel with the one at the back. Nah, you know I pretty much don't even have to test that. This is one of the best locks on the market, this Legarde one, as I said before, and if it was that vulnerable
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (mention)
+context before: that said enable peaks at some threshold value and auto detect peaks and things like that, but no, nothing. Once again, rudimentary scopes, rudimentary scope FFT functions have better functionality than this and they cost a lot less. So, you know, yeah, I think there's still
+TEXT: I like the software, the software's quite good in terms of USB scopes I've seen, it's really quite good, but it's just, it's not good enough. I expect more, especially for the price. And if we go to the digital stuff down here, we can choose buses, we've got I2C,
+context after: parallel and SPI, um, where is like RS-232? Where's serial? That's disappointing. Um, so yeah, there's our lines, so we can choose, what's that, enabled, okay so there we go, we're turning those on here, presumably we can drag, yeah we can drag those, it automatically rearranges, that's good.
+
+[661] EEVblog #661 - Mailbag — Dave Jones (mention)
+context before: Yes, Target 3001 is a German PCB package I believe. They, donkeys years ago they used, this is way before the blog, they used my PCB design tutorial in their package or something. They asked me if they could use it and I said yeah, no worries.
+TEXT: My electrical working on it. Okay, there you go, you're working on your project. Awesome. Thank you very much. And there's the lovely postcard. Havelstadt Zonik in Germany. Looks like if my German is any good, we have a 3-axis accelerometer, SBI and I squared C.
+context after: There we go. For those who love to read their German, go for your life. And it looks like we have that little board, there's the schematic. Looks like we have that in here somewhere, but we have ourselves a cheap-ass pocket oscilloscope made by who?
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (mention)
+context before: Um and also we've got not only can you turn on a math waveform as well as the RF, so you can have bingo, there's your RF waveform, you can have your math, your digital, and so it really is a mixed domain oscilloscope, you know, as the name says.
+TEXT: And you can turn on four types of buses as well, digital buses, SPI or or, you know, I squared C or something else. Brilliant. It's It's almost too much to display as well as the digital because you can turn on, you know, the 16 digital channels plus frequency.
+context after: It's got It's got everything but the kitchen sink. Now, I'll show you how turning on the various functions actually slows this down. Now, you can get an idea of the update rate there and we're and we're only we're at 100k length there for the memory.
+
+[888] EEVblog #888 - Mailbag — Dave Jones (mention)
+context before: Unfortunately there is no power supply circuitry on board, but you can plug in a DC jack here, but yeah, there is no circuitry on there to actually produce those separate power supplies, so that's a shame. But look at the bottom of this thing.
+TEXT: Look, they've got all the push buttons, all the info you need on the back of this. This is just brilliant. If you're working with Arduinos, oh man, you've got to have one of these. Here you go, here's the LCD I2C interface, the external USB 2.0 serial interface
+context after: and we've got some prototyping area and stuff like that. The push buttons, and look, all the pinouts, they've labelled them all. And you can just of course plug and unplug your Arduino from the bottom there. It's just... oh, and there's the LCD configuration.
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (mention)
+context before: 5 math modes there. That's pretty comprehensive. And you can do fil... Well, why didn't that... Because I'm in... I've got a mouse hooked up, I think. So you can get different... Oh, just high pass, low pass, filter. That's it. There's no band pass.
+TEXT: You can go in Gaussian or rectangular. And you can set the cutoff. Anyway, we can go into a spectrum analyzer. This is supposed to have beautiful spectrum analyzer capabilities. Anyway, bus mode. Once again, uh, yeah, you've got to hit it twice. I2C, SPI, UART.
+context after: Is that all? Would have expected a bit more. Maybe, you know, I2S or something like that. Apps. We've got apps. Uh, frequency response analysis. There you go. So that'd be our bode plot. Can we... Oh, I heard... I heard relays click. Whoa. Whoa.
+
+[1154] EEVblog #1154 - Surprising 4K Dumpster TV Fault — Dave Jones (mention)
+context before: So, let's go to this uh Ursa 9 chip, which was like the main output uh driver. And we can have a look here. Looks like it's got its own SPI flash.
+TEXT: It's got chip configuration stuff. Slave boot from SPI flash. There's lots of like configuration jumpers and stuff like that. Here we go. Debugging. It's I squared C. Yeah, I'm not that keen to get out the scope and do I squared C decoding and stuff like that.
+context after: That, you know, no, thanks. I don't see a big value in doing that. But, the LGE 7411 the Ursa 9. Once again, there's more like option jumpers is there.
+
+[1462] EEVblog 1462 - Why Dymo Label Printers SUCK! — Dave Jones (mention)
+context before: So I couldn't tell you what it's actually, you know, signifying. You'd have to spend a lot of time to actually play around with this to figure out what's going on here.
+TEXT: But of course, in theory, you could replace this board with something that just simulated the I squared C signals and the microcontroller unless it's like very cleverly signed and this chip does support a secure key interface over the I squared C or something.
+context after: So So might be hard to like just simulate the RFID board cuz a lot of people have talked about this, you know, oh you're just throwing Arduino in there or something and and you can just output I squared C thing signals to simulate it, but yeah, I like it's probably possible, but it's going to require, you know, a significant amount of decoding work to figure out what's going on here.
+
+[776] EEVblog #776 - World's Smallest Digital Dosimeter — Dave Jones (mention)
+context before: charge pump inverter over here which gives us negative 3. There's the vibration motor with its own little MOSFET driver, no problems there at all. Not much happening, we've got else happening. We've got dual crystals here, 32 kilohertz watch crystal of course for the long-term data login.
+TEXT: As I said, it can probably go for like a year in low-power mode actually logging. We've got another transistor driver for the buzzer over here. And the Nokia 2760 LCD display, too easy, that's just an I2C type serial interface. And I don't know what sensor is
+context after: used over here, we'll find out in a minute, but that's just tapping via a 10 meg up to the 400 or 360 volt rail. And then AC coupled and just giving an impulse into a transistor and the impulse, that just converts it to 3 volts and
+
+[3] EEVblog #3 - Static Myths, PIC Micro, Pocket Multimeter — Dave Jones (mention)
+context before: These are bugs in actual silicon devices. Um a recent one I've had experience with is the PIC, the Microchip PIC 24F series. I use the 24 FJ64GA series device in my uh scientific calculator watch.
+TEXT: The list of bugs in the 24F series uh device I was using is actually quite extensive and I'm going to have to actually read a list here. Um the brownout reset, the real-time clock, the I²C module, the UART, JTAG, uh SRAM, they got the size of the SRAM wrong.
+context after: It's incredible. Uh ADC, SPI, and uh a whole bunch of core functions, voltage regulator stuff, and and just regular core functions. It's crazy. The list is longer than my arm.
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (mention)
+context before: it's like 600 hertz, there you go, what? Oh, because I didn't change my, there we go, it was on 600, yep, so it's Johnny on the spot, but like rudimentary stuff, and it's got a data logger as well, but I can't check that now because I don't have the correct firmware
+TEXT: on my simulated version. Oh dear. Alright, let's give the analyzer a try down here, I've turned on channel 1, channel 2 I've hooked up an I squared C signal, and I've just gone force like that because I haven't figured out how to trigger from the, I mean I'm
+context after: triggering from the logic analyzer, but like where's the, like what source, what channel, what, like, I don't get it. Anyway, like here's our two signals, A1, A2 I'm not sure if you, oh yeah, can we expand, no we can move them, but we can't, can we expand them?
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: For example, and your IO IO voltages might have been different to your core voltage. For example, you might be running your core voltage at a lower voltage. In this case, we're only got the single 2.8 volts.
+TEXT: So, the requirements for this, no, it's one big ground plane. I wouldn't have any power traces on here at all. Take priority over the critical signals first and then route your miscellaneous stuff like your I²C later and and your JTAG interface down here.
+context after: Route all those last and you know, things like that. And then you wouldn't have to use all these vias all over the place like this. So, yeah. Shoot for the holy grail of a single-sided layout every time you do an SMD layout.
+
+[377] EEVblog #377 - Mailbag Monday — Dave Jones (mention)
+context before: People have complained about that, oh clear your throat, etc, etc. Geez, you know, give me a break. And here you go, I've got my own sort of username and password for this system here for a COSM feed. So let's have a look at what
+TEXT: this is all about. Hi Dave, I notice that you're enjoying your new office space, and what I figured I would do is send you one of our devices with an SHT21 sensor. Ah! I've used that range of sensors before, if memory serves me correctly, they're an I2C
+context after: Oh yeah, yep, there we go, I2C interface sensor I think. It is a high resolution relative humidity sensor and as such measures both humidity and temperature of the air. Awesome! Thank you very much. The device that the sensor is attached to, the Pokey, is a highly versatile IO interface, 55 configurable
+
+[CMoBGGqojqs] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (mention)
+context before: Yep, that's it, yep. We can group them into a bus. Nice, we can change all the colors. So I assume that we can do decoding on a bus and things like that. So you can define, you know, which of your 8 channels, your 8-bit data bus or whatever.
+TEXT: Decoding, alright, yep, parallel decoding, that's what your bus grouping is for. So, there you go. RS-232, I2C, SPI. Let's have a look at the SPI. It'd be nice if you can assign the SPI through to the channels here. Bus status on, let's see if you can
+context after: mode. Ah yeah, yes, it's got a time out mode, which means you don't have to use the clock. Sorry, you don't have to use the um, whatchamacallit? And let's have a look. Threshold, okay, so we can set our threshold to kilovolts. Yeah, I'm going to set my threshold
+
+[Yky9yQwZALM] Shift Cryptosecurity BitBox02 Crypto Hardware Wallet — Dave Jones (mention)
+context before: I don't know what type of security is actually built into the processor. I don't know whether it's like, you know, physical layer security, anti-glitch featuring and all that. So as in physical security, like the die, so you can't drill through the top of the chip and probe and all that sort of stuff.
+TEXT: So yeah, I think that uses A, but it's basically, yeah, it's that. It's got some I2C memory here. And that's just input protection on the USB. And yeah, that's all there is. There's a touch, a slidy touch sensor on the side of this thing, apparently.
+context after: Can we see that on the PCB? Yeah, can we see that? Yeah, okay. So they're using that contact, that one, that one, and that one. And they're using the castellations. I'm not sure why they've got castellations. Maybe that's part of the case or something.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: DS1302, um that's the RTC, isn't it? I believe. Um I I don't think it has eMMC. Um I think you have to look up the list, but it supports most of these, I believe.
+TEXT: So, all different I squared um C's, IRDA, IR modules, infrared um decoding, key lock, code hopping stuff. This is absolutely incredible. I believe you get most if not all of these decoders with like the bottom of the range $130 you know, $140 unit.
+context after: So, if you're just looking for a serial decoder, this could be the bomb for you know, not much dosh at all. Anyway, we want to go in there and select our UART.
+
+[614] EEVblog #614 - Cebit 2014 Highlights — Dave Jones (mention)
+context before: Right. How close are you to actually producing these in volume? So we're going to run a crowdfunding campaign before the end of the year. Oh, you are? On what site? We're looking at Kickstarter. You are looking at Kickstarter? Okay. We've got our BLE, our Bluetooth Low Energy module here.
+TEXT: Yep. Six degree of freedom sensor. Yes. Our PIC32, of course. We've got our micro SD card here for extended memory. There's a port here that's going to connect to our peripheral device over I squared C. So we've got power and data over the port.
+context after: Yep. Micro USB on there. This is a prototype, so the form factor is quite different to the final design. Which will look like that one we saw before on the... Yep. Absolutely. Yep. So on the back, we've got our flash memory, real-time clock over here, and the circuits down here at the base for communicating with the
+
+[703] EEVblog #703 - Rigol DS1054Z Oscilloscope Review Summary — Dave Jones (mention)
+context before: And the great thing is you get a lot of memory with this thing, 12 meg standard or if you got the upgraded model, 24 meg memory. That's a huge deep memory, but once again, if you turn on the multiple channels, you do actually lose some of that unfortunately.
+TEXT: It really has very nice serial decoding and trigger capability. You can do SPI, I squared C and RS232 and parallel, but unfortunately, this is an optional extra. And it really does have an amazing range of measurement and statistics capability.
+context after: It's absolutely phenomenal for a low-end scope like this, fantastic. And it's got your basic FFT functionality as you'd expect on a modern scope. And when you turn on the measurements and the statistics and the FFT math and everything else, it is still a reasonably responsive scope, doesn't slow down a huge amount.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (mention)
+context before: 1 meg. But yeah, you can't trigger, unfortunately, on anything. So you can't, you know, like a data word or something like that, which is very useful for debugging and things like that. But considering, I guess this is primarily targeted at the educational market, I think
+TEXT: you know, it's okay. But still, yeah, it would have been nice to have that sort of stuff. So this is not a real tool for real world, you know, advanced troubleshooting and things like that. Certainly on I2C, you know, serial buses and the like.
+context after: You can view them, you can capture them, but eh, the rest is up to you. And the other thing that I realized it's not here that I would have liked to see is some sort of automated, you know, programmable control over the digital I.O.
+
+[922] EEVblog #922 - Mailbag — Dave Jones (mention)
+context before: And And whoa, I got ourselves a big power resistor. Look at that. 6.2 ohms, thank you very much. And a whole bunch of jumper wires. That is a neat kit.
+TEXT: I really really like that. I'll link it in down below if you want to nab it. Tell you what, I really like the idea of this. It measures your circuit's impedance over an I2C interface, and it uses a real funky chip, the Analog Devices AD5933.
+context after: Not only it's an it's an impedance converter. Not only does it contain the AD a 12-bit 1 megasample 12-bit ADC, but it's got a DDS signal generator in there, and and DSP processing, which does the Fourier transforms and every it's it is beautiful.
+
+[761] EEVblog #761 - Pebble Time Smartwatch Teardown — Dave Jones (mention)
+context before: It's not an engineering uh sample, cuz it would have had CC down on the second row. It doesn't. We've got TY. And following on from our accelerometer there, ta-da!
+TEXT: This is a dead giveaway, because this I know this thing has a magnetometer. It's advertised as such. Then uh there we go. Mag on it. Mag 2BT. And that is a very nice Freescale MAG3110 uh three-axis magnetometer and I²C interface, no worries.
+context after: And uh sensitivity 0.1 microteslas for those playing along at home, and noise 0.25 microteslas RMS. Yeah, I got no feel for it, but that's like half a bee's dick, isn't it?
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: So, you can capture tons of data serial or well, usually only serial cuz an oscilloscope is only a couple of channels. That's the main disadvantage. And the main advantage of the logic analyzer is that they're multiple channels.
+TEXT: But the large sample memories in oscilloscopes mean that a lot of the time a lot of traditional uses for these logic analyzers like debugging serial product protocols like SPI or I squared C or RS232 are done by the oscilloscope these days.
+context after: Logic analyzers come in three main types that you need to consider. One is the traditional bench instrument. You can still buy them. They're you know, as big or bigger than a bench oscilloscope and they have and they cost you know, 5,000, 10,000, 50, 100,000 dollars.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: Much neater. Much more compact. Everybody happy. And again, we've got this line where the nets are over. Even if the nets were here like this. You might think, okay, those nets are relatively neat. But once again, it's really you should be implying that this line is going out like this.
+TEXT: Because this isn't like an I squared C line. So you want to put them out like that. It visually signifies that there's a line coming in. That's much neater. And as for vertical resistors like this, do you put them off to one side like that?
+context after: Generally, I would if I physically got the room. I'd only put the annotations and the values vertically like that if I didn't actually have space. Sometimes when you've got a big group of resistors bunched together, you might have to put this either side like that.
+
+[913] EEVblog #913 - Mailbag — Dave Jones (mention)
+context before: the editor-in-chief of Elektor magazine, and they're freaking, they are fans of the blog, by the way. Thank you very much. Um, and they've sent through not only the new Elektor Lab's Arduino compatible clone. Here you go. Let them explain it. There are a zillion Arduino
+TEXT: things out there, but this one's special. Um, the Elektor Uno 4 is an evolution of the Uno R3, uses a blah blah blah, supercharged bee brother, blah blah blah. This puppy has two USARTs. Awesome. Um, 4 SPI, 2 I squared C, 5 times a whopping
+context after: 9 PWM channels, plus an extra 4 GPIO ports. Sweet. Can also run off 3.3, so it's goodbye to the level shifters. Awesome. There you go. So apparently it's an Uno R3 on steroids. There it is, the Elektor Lab. It's, yeah, an Arduino looking thing.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: Whoop-di-do. So, there you have it. That's uh rev B of the schematic and uh some thoughts into uh why I went into uh changing things and how you saw how just changing that one little uh reset, freeing up that one reset pin, you know, it changed drove all my extra design decisions.
+TEXT: I went to external um forced me to use external I squared C devices. I could gild the lily with RGBs and add a few other things and add some more uh serial output capability and you know, and uh this is all part of uh system engineering.
+context after: When you're doing this sort of thing, which I'll have to do some more uh system engineering stuff where in a future video in this power supply series when we start talking about the case and the PCB design and things like that.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (mention)
+context before: It was exactly the right dimensions and it's a 20 character by two line because I figured 16 by two probably wouldn't give be able to give the status displays that I actually wanted.
+TEXT: So it's a 20 by two line display, I squared C compatible input. It's only about eight or 10 bucks or something. It is the most expensive component in the whole in this entire power supply project but you've got to have a decent display.
+context after: This is actually an RGB backlight one. I didn't want that but that's the only one that they had in stock for a couple of months. So I'm I'm using the backlight.
+
+[1741] EEVblog 1741 - Mailbag! — Dave Jones (mention)
+context before: Curiously, it does have a little micro USB. That would just be for interface or something. You wouldn't power it from that, would you? I can't readily see that number there, but that's obviously our compass.
+TEXT: Jeez, when I was a boy, we did literally roll our own >> [laughter] >> magnetic flux gate compass. So, yeah, coils and everything. Now, it's like just plonk your SMD part down and Bob's your I²C or SPI interface, Bob's your uncle.
+context after: Yeah, that corrosion's not pretty, is it? Yeah, so I'd say corrosion issue somewhere. Look at [laughter] that poor innocent micro USB connector. Oh, that's terrible, Muriel. And trying to power it from that, whether or not it's that is actually doable or not, I don't know, but yeah, diddly-squat.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (mention)
+context before: There's no other detail there, so let's assume that's what it's actually going to do. And down here they have hardware serial decoders built in. This is uh traditionally a feature which uh has been performed inside the CPU up here, which we'll also go into, but they've decided to build it onto uh the die itself.
+TEXT: And as you can see they're they're simultaneous, so you can decode uh I squared C, you know, SPI, USB, um all that sort of stuff, all those serial protocols uh done in real time on the actual hardware itself, which is phenomenal.
+context after: That's a another traditional one which is done on the CPU, but because you've got a built in, you've got speed advantages, and you can actually decode stuff in real time.
+
+[321] EEVblog #321 - Google Nexus 7 Tablet Teardown — Dave Jones (mention)
+context before: They're really integrating all this stuff together. And it combines a three-axis gyroscope and three-axis accelerometer on the same die together with a digital motion processor as well. So, it's not just your usual, you know, serial output accelerometer analog output MEMS accelerometer what you might be used to.
+TEXT: You know, cheapest chips. This one's got built-in processor as well. Capable of processing complex nine-axis motion fusion algorithms. Sounds complex. And it has an external I squared C bus as well for an external magnetometer.
+context after: So, this thing claims to have a magnetometer in it. So, that must be an external I squared C device on the board somewhere. It's a QFN footprint as we saw.
+
+[1563] EEVblog 1563 - New $389 12bit Rigol DHO800 Scope TEARDOWN — Dave Jones (mention)
+context before: Um it's one of several that I've got. Uh usually 115,000 baud. So, eight-in-one standard. It's even 9,600 or, you know, 115k. Sometimes it's like 19.6 or something weird like that, but let's switch it on.
+TEXT: Bop. Whoa. Why'd it vanish? There you are. There you are. I don't know why that vanished. We're in. So, I'll dump this on the EV blog uh forum. So, it's Yeah, it's the Rockchip uh setting up ports, HDMI, I squared C bus driver.
+context after: Like I said, I think it actually detects the monitor you've got connected and selects the appropriate and scales the appropriate output resolution. Now, whether or not the 12-bit data is actually mapped into the screen, haven't confirmed that yet.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: So, it wasn't really possible to keep that you know single A4 sheet and I didn't want to split it up. So, I've put it onto an A3. I've made it a bit modular and there's a few changes, couple of extra chips and we'll go through them one by one, see what the changes are and why I did them.
+TEXT: This modular aspect to the schematic just makes it a bit nicer because it's ADC separate over here, the micro current part, the USB interface, the the new I squared C IO section, the power supply integrated with the DAC here.
+context after: I could have made the DAC as a separate module like I did the ABC but it's all sort of part of the same one and the Arduino compatible AVR microcontroller plus a few miscellaneous things here.
+
+[922] EEVblog #922 - Mailbag — Dave Jones (mention)
+context before: So, that was like the National Instruments branded version of the Analog Discovery 2. This is the Digilent branded one, but they didn't just send that. They sent the some of those power bricks that we've uh seen before.
+TEXT: Those are the little power bricks, they're very cool. So, they come in handy. We've got a Pmod A, measure your circuit's impedance over an I squared C interface. That could be interesting, so we'll take a quick look at that.
+context after: Uh the interface board. And this is they've got like an analog a Digilent analog parts kit. That looks pretty good. Got a smallish bread Oh, a long thin breadboard.
+
+[WXJP_CNYt3o] #1179 - Stempedia Evive Electronics Learning Kit — Dave Jones (mention)
+context before: Best electronic prototyping tool. Oh, that looks That almost looks multimediary. Anyway, it looks like we've got an Arduino Omega with a Jeez, looks like it's got everything. It's got LCD and a whole bunch of stuff.
+TEXT: We've got a joystick and we've got LEDs and buttons and ZigBee and we've got even got 245s. We've got some I squared C DAC and stuff. Wow. Okay, Young Maker's Guide through the peninsula of peninsula of do-it-yourselfing.
+context after: Unleash the innovator in you as you explore gateway of electronics. Oh. Oh jeez, this looks This looks professionally produced, doesn't it? Pictoblocks code. Have they got their own thing?
+
+[793] EEVblog #793 - Rohde & Schwarz HMO1002 Oscilloscope Hands-On — Dave Jones (mention)
+context before: Fantastic. I know. That might be useful for some people, hmm. And I believe it comes standard with serial decoding as well and you can do that serial decoding through the analog channels and you can set up different bus types here.
+TEXT: So, we're into the bus menu here and we can set up bus one. Let's have a look at this puppy. There we go. What type is it? Parallel Ooh, clocked and we've got SPI I squared C, all the usual suspects, UART, CAN, even LIN.
+context after: So, fantastic. So, we can go in there and uh then configure all those. Looks very nice, and I believe that is uh that is standard. Nice. So, there's our different uh our different lines there.
+
+[1621] EEVblog 1621 - Mailbag: RadiaCode Radiation Monitor + LattePanda Mu Compute Module — Dave Jones (mention)
+context before: This is just their new Mew model. So sorry about the power supply fan noise is a firmware issue on that supply that keeps throttling the fan. Anyway, I really like this demo board.
+TEXT: It's got pretty much everything you could want. It's got the mipi inner face. It's got I squared C interfaces. It's got serial ports. It's got all the USBs. It's got the Wi-Fis and the 4G, 5G and wireless LAN modules.
+context after: It's got a PCI Express stuff and you can power it from DC, you know, input. So great for like custom industrial solutions and stuff like that. And as I said, I think they will actually help you.
+
+[cziiWo6Uh5M] $5000 Uni-T UTG9504T 500MHz Function Generator Partial Review (The Lost Tapes) — Dave Jones (mention)
+context before: all the other requisite modulations here. It's got absolutely everything. Then, of course, you can do, uh, sweeps, and you can do bursts, and you can do these on any of the, uh, four channels here. As you can see, it's got a built-in, uh, frequency counter that goes up to 800 megs, apparently.
+TEXT: And if we go into utility over here, we actually have digital, uh, signals as well. So we can do spy bus, I squared C, and, uh, UART as well. And you can do those at the same time as doing all the other stuff as well.
+context after: So having four channels, really pretty schmick. So the modulation stuff, for example, is very advanced. The, uh, as I said, the quadrature amplitude modulation here, it can, uh, go up to 256 symbols here. Um, unfortunately, the, uh, the bit rate here is only a maximum of, uh, two megabits, uh, per second,
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: So, it's effectively got an infinite uh sample memory. It uh the sample rate just depends on the latency of your USB port. Um this is They claim the maximum is uh 24 megasamples per second on this thing.
+TEXT: But, you've got to have a uh very low latency USB port to get that full transfer. And, well, you know, that is adequate for most uses, you know, SPI, I squared C, and other sort of, you know, serial interface stuff.
+context after: But, you know, this is not a serious uh you know, a professional end logic analyzer, not by any means. And, by virtue of the lack of an input latch, this thing is effectively uh timing analysis only.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (mention)
+context before: In this case, I took the existing Rev A board I've got here, as you saw last time, and basically changed it a little bit, added a few components on here for Rev B.
+TEXT: And it doesn't look like there's a huge amount of difference. There's Rev A. It's down in the bottom right corner here. There's not too many components, for example, and I've added those I squared C chips over here.
+context after: And it's a little quite a bit more dense layout in terms of component density and things like that. So, but there weren't a huge number of changes, but surprisingly, as you might find out, it does actually take a almost same amount of effort really to uh make some small changes to an existing board as it does to layout an existing board from scratch.
+
+[1124] EEVblog #1124 - Rigol 7000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Touch driver. We're in to a root menu. Cannot create socket for UDP 6. Joshua, I haven't even got the send hooked up. Sorry. Dope. So, we're in on die ECC Oh, god.
+TEXT: Keep spewing stuff out. Rigol, you dirty I2C. Oh, this is great. Flamingo Linux kernel, uncompressed, blah blah blah blah blah hash value. I'm sure some people out there can make heads or tails of all this rubbish.
+context after: So, just cling on to me. Sorcery code bench light sorcery. I don't know there's some voodoo sorcery going on inside this new Rigol scope, let me tell you. Some dirty voodoo going on.
+
+[13] EEVblog #13 Part 1 of 2 - Digital storage Oscilloscope Tutorial — Dave Jones (mention)
+context before: Big sample memory really comes into its own when you're doing uh digital uh troubleshooting, which is you know, it's very common these days. It's probably one of the most common requirements of an oscilloscope is to you know, debug digital electronics and serial protocols and things like that.
+TEXT: If you're working on say a SPI bus or a you know, I2C bus or you're trying to debug some serial protocol, then a big sample memory is awesome. And uh but only and it's also useful for traditional debugging as well.
+context after: You can capture a waveform, and you can it means that you can capture little glitches in there as well. You can actually zoom in and get all this fine detail.
+
+[1672] EEVblog 1672 - JBL REPAIR: You'll never guess the fault! — Dave Jones (mention)
+context before: So, yeah, um but with a bit of hindsight, I guess, maybe, that's the more logical thing to do. But, you know, my my guess that we needed power on that IO board to get the matrix wasn't bad, but turned out to be wrong.
+TEXT: Oops. And this is where you can spend like hours troubleshooting something like this with a wrong assumption. So, yeah. Trust, but verify. Yeah, so it's got an I squared C line here for the LEDs and the keyboards.
+context after: They It just reads those with ADC lines. So, they're just different value resistors or whatever and it just measures that and sensor line or whatever. But yeah, there's there's literally a power key.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (mention)
+context before: I don't think we originally used this. But this does the hardware negotiation for this. But, you know, it's this is a relatively simple chip. Yeah, I think we ditched um the older solution.
+TEXT: I don't have to pull up the older schematic. We found this easier solution. So, we actually redesigned it, I think, using this Richtek uh programmable USB-C uh PD controller, and it's just had an I²C interface.
+context after: That's right. So, it went it was just simpler, but we still needed that um isolated side microcontroller in there. So, it's a much smaller uh device but then the main micro uh that drives the LCD and the keypad and drives all the uh DAC power supply functionality, but you needed something when you have isolated um supply like that, you need something on the isolated uh side to do
+
+[1004] EEVblog #1004 - Owon XDS3202A 14bit Oscilloscope Teardown — Dave Jones (mention)
+context before: Uh 200 meg bandwidth with 1 gig sample per second. Uh that sample rate will drop with the number of bits up to 14 bits, I believe it drops down to like 125 meg sample per second.
+TEXT: It's got an arbitrary waveform generator, but it's got like uh CAN, I squared C, RS232, SPI decoding, touchscreen, VGA, Wi-Fi. It's got an app which you can scan in, and it's got a multimeter as well built in.
+context after: And it's like 1,200 bucks, so it's it's not exactly an entry-level uh price point. So, it's in a rather niche market segment where really the only reason that you'd buy this is because of the 14-bit high-resolution converter.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (mention)
+context before: So, okay, that's all right. No module decode. Yep. Oh, there you go. We can select What? We can select kind of the selection's not working. The selection doesn't work.
+TEXT: Wow, that is so up. Oh, wow, that's so sensitive. So sensitive I squared C. K trigger types, what do we got? Edge, pulse, video, slope, run, window, delay, timeout, duration, setup, hold, and search pattern.
+context after: That's a pretty good selection. I'm not going to go in there and try them all, but yeah, I assume they kind of sort of work. Version number for those playing along at home.
+
+[538] EEVblog #538 - HP35670A DSA Repair - Part 2 — Dave Jones (mention)
+context before: So, let's see if it uh still does. Calibration in progress. Oh, hardware error. See fault log. Okay. Well, yeah, calibration file change state. Yeah, blah blah blah. Calibration, we'll turn that off and system utility, more fault log.
+TEXT: Uh ADC I2C no device acknowledge. Your calibration file. Okay, no more ADC file which we were getting before, I believe. Um so that could have fixed that. So, let's now run in let's go into the self-test.
+context after: Self-test and quick conf Let's run the quick confidence test that we did last time and we've got a whole bunch of failures. Failed. What? There we go. All right, we still have ADC gate array.
+
+[1069] EEVblog #1069 - Mailbag — Dave Jones (mention)
+context before: I don't know. Getting started guide. Oh, there you go. There you go. Button A, button B. Should have read the instructions. Wouldn't it have been nice if they were that was on the silk screen lithi um USB lipo charger?
+TEXT: I squared C interface? It's cool. Um in-circuit serial programming port. What? Oh, there. I thought it was pointing to that button. No. Um turn the console on, charge it using a regular regular micro USB.
+context after: Great. learn.makewinow.com. So, let's check out the kit. We've got our uh DIP 8 um It's all Is it all through hole? I think it was all through hole, wasn't it?
+
+[499] EEVblog #499 - What is JTAG and Boundary Scan? — Dave Jones (mention)
+context before: So, we're going to have two programmable devices in our JTAG chain for this thing. Now, this programmer is actually capable of doing a lot more. It's capable of reconfiguring all its pins on the output to match, you know, Xilinx or Altera or anyone or any other manufacturer or even your custom own custom interface.
+TEXT: It can supply power through to this board as well. All configurable on each individual pin. It's hooked up to an I2C bus on here as well, which is then hooked into a an I squared C E prom E squared prom.
+context after: It's hooked up to an analog to digital converter on the I squared C bus and we've got some analog inputs and stuff like that. Don't have no time to muck around with that, but we definitely want to look at these two devices on the JTAG chain.
+
+[1450] EEVblog 1450- $99 Fluke Combiscope Ebay SCORE! — Dave Jones (mention)
+context before: Look at the ribbon cable coming out of that and there's check out that driver on top, that driver board. That's fantastic. It's got three Philips jobbies. Of course they're Philips parts.
+TEXT: Philips, if you don't know, almost like every component used in like modern TVs and CRTs and stuff like that. So, and they invented I squared C, of course. It's Philips, you know, trademark I squared C.
+context after: So, yeah, they did absolutely everything. So, you'll find a lot of Philips silicon in this, I'm sure. But, anyway, look, the fan's got its own nice little compartment over here.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (mention)
+context before: There's always a generic part which you won't find there, which is really annoying, but anyway, quite a few seven segment displays. That's pretty good. DSPs, Intel parts, interface parts.
+TEXT: Uh, looks like some I squared C stuff, whatever that is. Linear devices. Um, no, linear parts, not linear. Um, so lots of national stuff there. LM331. So, we got op amps and comparators, memory devices.
+context after: We got our uh, ers and stuff like that. We've probably got our E squ in here somewhere, maybe. No. Microchip microcontrollers more pick I don't know see why are those microcontrollers why are those pick parts not in microchip somebody hasn't tidied up the library there couple of motor roller parts old school stuff 68 HC11 nice optoouplers Phillips parts power all right now we got uh all sorts of power ports VDD plus
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: And so, they want to be, you know, for the price these days, they've got a competition in the industry. They've got to bundle it together. So, you know, differential integrals, FFTs, absolute values, all sorts of things we we looked at in previous videos, digital uh high and low filtering, and averages and smoothing, and all sorts of advanced math stuff, all standard.
+TEXT: Brilliant. But, all your uh serial decoding options there are still uh optional, I'm afraid. So, yeah, if you want your I2C and your SPI and everything else you can bus, then you've got to pay for it.
+context after: But, as I said, they might be able to, you know, bun- you might get this as bundled in or something like that in the future, perhaps. And you now get the 500 MHz passive probes standard across all the models.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (mention)
+context before: So, you'll find not only these internal diagrams, but the associated timing diagrams along with them. Here we go. That's a simple one, but you know, it shows you where things are transitioning and why.
+TEXT: SPI timing mode, you're doing SPI I2C stuff, you've got to know about all these sort of timing modes. You want to implement your own bit bang serial protocol, you need to know all this sort of stuff.
+context after: Here we go. I2C, like this is like really important stuff to know and understand. Power up startup sequences, you don't understand why your chip's not starting up properly. You've got to get into these sort of timing diagrams.
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (mention)
+context before: Like there's not a single thing about this that I like as a like as an everyday use of oscilloscope, not a single thing. We can get a log scale axes, linear.
+TEXT: I got to go back home to turn on my waveforms. I just Look at this, you can execute I squared C commands to the IO encoders. C code. I mean, that's like, you know, hacker's delight, I guess, right?
+context after: Um and SPI command to the ADC. So, you can send SPI commands directly to the ADCs. Okay, if you want to script something or or do something like that, but like Seriously, like and it doesn't even know that we've switched the ranges, right?
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (mention)
+context before: And what's that? All four pins tied together. It goes to these two mysterious pins over here, which we didn't This You remember those two pins were sticking up and we didn't know what they did?
+TEXT: Does anyone know? Yeah, apparently Briman rolled their own multimeter chip sets. Yeah, it looks like a flash EEPROM. Right. Yeah, that's what I originally thought. Yeah, is an external I squared C.
+context after: I I agree, Kevin. Looks like a flash EEPROM. Yeah. That would be my You know, cuz yeah, you got two data lines coming off. So, it's probably like an I squared C interface thing and they're just tying Oh, they're the address pins.
+
+[1262] EEVblog #1262 - Designing a Flex PCB + uSupply Update — Dave Jones (mention)
+context before: So, it was a cheaper solution to go for this two-chip solution here for uh So, the STM32, of course, has USB built-in. Here it is here, USB. There it is.
+TEXT: There's the uh twisted pair up there. And so, it's got the USB controller, but the USB power delivery is handled via the I²C bus down here in this little uh tiny eight-pin um RT17 Richtek RT1716.
+context after: As it turns out, which we didn't know at the time, the Richtek library for USB power delivery is enormous. So is the ST micro one. The ST micro one is uh I think it's like 2 megabits or something enormous like that.
+
+[370] EEVblog #370 - Kindle Paperwhite Teardown Review — Dave Jones (mention)
+context before: Uh-oh, folks, something's gone horribly wrong. Repair needed. Your Kindle needs repair. Please contact Kindle customer service. What? Fail. No, it's all good. There you go, it's booting up. I replaced the battery on the back so clearly that's what must happen if you try and power this thing from a battery that it doesn't have the um the chip on the I-squared-C bus.
+TEXT: So, there you go. Can't just power it from any source. You would have to reverse if you wanted to hack a bigger battery in it, you'd have to reverse engineer the um the I-squared-C chip in there.
+context after: So, I'd love to be able to measure the LED power consumption in various modes and all that sort of stuff but no, it's a bit too much trouble. I'd really have to uh hack this thing a a fair bit to try and do that but anyway, I've taken the main board out and not much doing on the back.
+
+[670] EEVblog #670 - FLIR TG165 Lepton Sensor Followup — Dave Jones (mention)
+context before: I'll turn the power on. Oh, there we go. We triggered something. Well, it went high when I actually pushed There we go. If I just push the power button once, it actually goes high.
+TEXT: There we Let's have a look at that. So, there we go. So, if I press a hold down that power button, it actually goes the clock line on the I squared C goes high, but uh what I want to do Hang on.
+context after: Uh I've got to have three hands here. So, turn it on. Boom. And uh what have I got? Uh something it went low there, but it's the clock line.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: Now, before I had a just one LED for indication, but I decided, "Oh, what the hell? I'll gild the lily again, and I'll use the RGB uh backlight capability in my LCD displays." So, why not drive them with the pulse width modulator, and then you can vary the brightness of those uh three RGB LEDs.
+TEXT: So, once again, you can't put PWM on the output of your I squared C. It's just not going to be pretty. It's not going to work. You're better off using the internal PWM capability of this device.
+context after: And here's the three here, uh L, uh B, L, G, and L, R. So, they're the red, green, and blue, and they're connected through to the pins which have OC or an output compare module, OC uh B, and uh OC O A.
+
+[1699] EEVblog 1699 - µTimer PROJECT Part 1 - The LCD — Dave Jones (mention)
+context before: So, I haven't gone through the exact pinout of this thing. Um they're only using uh some of the pins here. I think I specified an SPI interface, cuz this LCD is capable of SPI serial interface.
+TEXT: I think it might do I squared C as well, as well as 4-bit and 8-bit parallel interfaces as well. So, it's very flexible, but I think it might be working serial, but haven't 100% confirmed that.
+context after: Anyway, let's plug it in and see if we can get this thing working straight out of the box. All right, so we put that in there. We get that shut like that, and let's power this thing up.
+
+[yzO1PsscjOI] WENS 540 Handheld 10MHz Oscilloscope and Debug Meter — Dave Jones (mention)
+context before: We've only just got it. Um, so anyway, so that's the logic analyzer. And you can set up trigger conditions, etc. Which channel you want to trigger off, all that sort of stuff.
+TEXT: Then it's got a protocol. This is where it gets interesting. Protocol analyzer. Yes. What protocols have we got? We got bus, linus, I squar, uh, USB. That's USB 2 USB high speed and full speed.
+context after: No, no, sorry. Uh the the two slowest ones, right? Yeah. Yeah. Yeah. Yeah. That one. Yeah. Yep. And uh SMB bus. Oh, i2S. Sorry. I IS audio. Yeah. Uh SPI.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: There we go. Look at that. That looks a bit better. Yeah, I didn't like the other one. It was a bit wonky. So, just when you thought this thing didn't have many options and preferences and you know, you're probably asking, "Oh, where do you set up all your serial data SPI?"
+TEXT: Well, you've just noticed this analyzer down here. Look at this. Plus, here it is. CAN bus DMX 512. Brilliant. You don't get that very often. I squared C, I 2 S for you audio freaks out there.
+context after: PCM stuff, the I 2 S audio. Standard Manchester one wire bus for all you people working on one wire, you know, Maxim Dallas one wire and other one wire stuff.
+
+[606] EEVblog #606 - Mailbag — Dave Jones (mention)
+context before: And he's that supplied the source code. Obviously. Fantastic. Hi Dave, in one of your episodes you said, "Go on, make a product." Excellent. So, he went ahead and made one.
+TEXT: Awesome. I love hearing that. Plant watering alarm and sensors uh soil moisture and light. I've designed it to be as low power as the ATtiny44 allows. In addition, it can act as an I2C sensor.
+context after: I can't send you the battery. No worries, I got plenty of those. Let's power it up. And he's from wemakethings.net. Awesome uh domain name. I love it. PS, I'm originally from Lithuania, so can you say hi to all my Lithuani- Lithuanian viewers.
+
+[657] EEVblog #657 - Maker Faire 2014 Interviews — Dave Jones (mention)
+context before: It's just not for Raspberry Pi even. It's for Raspberry Pi and we got our own hardware platform as well. So we got um hardware platform as well. Yep. Uh that can talk directly to the Android smart devices and to the app as well.
+TEXT: So you could actually build build number of different hardware combinations like Raspberry Pi through I2C to our platform or Raspberry Pi standalone or Ras um our board and and the app itself.
+context after: And then just imagine like we got a couple of examples. This one is a RC car, old RC car. We just bringing it to life again. So we got our board and Raspberry Pi connect together and you can you know in 10 minutes you can knock up a control interface and drive this all you know boom nice and similarly you can do like a home automation system.
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (mention)
+context before: Why do we have an RCA? There's an RCA connector on there. What the? Anyway, that's our sig gen. Um and then our multimeter inputs. It doesn't even tell you the cat ratings.
+TEXT: That's a fail for a multimeter. It says Wi-Fi decoding. It's got uh CAN, I squared C, RS RS-232, SPI, all the good stuff. Maximum power, 15 W. So, that's why Hey, where's where's the battery?
+context after: Uh I think the battery Does the battery three suspicious screws up there with a different looking plastic. Oh, yep. Yep. Yep. I was right. There you go. Yep. So, that's the tilting bail and the battery goes in there.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (mention)
+context before: Let's start out by having a look at the schematic here. And here's the existing one. I've shown this before. I squeezed it all onto the one A4 page, and it looks quite dense, but I was I was happy that it was all on one page.
+TEXT: So, I did keep it all on one page for Rev B, but I actually modularized the thing and changed it to an A3 size sheet like this. And of course, I added these I squared C uh chips down here.
+context after: They're two 18-pin DIP packages. So, they're fairly, um you know, large uh devices to fit onto an existing populated uh board. It's not like they're little surface-mount jobs or something like that.
+
+[44] EEVblog #44 - Part 2 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: Another thing to look for in a logic analyzer is that it can actually decode serial data in real time and trigger on serial data in real time. So, it actually analyzes each bit like this and you can set it up to trigger on a particular word or a particular byte.
+TEXT: And this is most useful for serial decoding, uh I-squared-C and SPI and all those serial type buses once again. If your system supports those, then it's going to be super valuable for you.
+context after: Now, generally a logic analyzer will come with these easy hook probes. They're actually little tiny probes that you pull down and they're a standard they just pull straight off here.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: Um do not exceed like at four and a half. I don't know what they're thinking. Five and a half 5 V. Right, four and a half volts. Do not exceed 500 nanoseconds.
+TEXT: Cuz if you do, you can get multiple if your input clock is too slow, like if uh your drive This is uh common on I squared C buses uh for example, because they're an open collector output.
+context after: So, they need a pull-up resistor. And if your pull-up resistor's too high, the capacitance on the line, it can cause slow charging up like that. And if your time from here to here is greater than your 500 nanoseconds uh rise and fall time, you can come a gutser, and you can get it you can enter metastability, you can get multiple clock pulses, basically nothing's guaranteed anymore, um especially
+
+[1246] EEVblog #1246 - Dumpster TV to Retro RGB Monitor Conversion — Dave Jones (mention)
+context before: So, I'm not sure whether or not it it it can't mix them like they want to. It can't switch. I I don't know what's going on. Anyway, they seem to be bypassing on this board.
+TEXT: But you know, we don't care about having them on at the same time. All we care about is feeding this external input here. And of course, there's a Where's the I²C bus down here like this.
+context after: I believe if we read go further on the data sheet, we'll see that we can actually switch this input via the I²C or we can at least disable it.
+
+[1042] EEVblog #1042 - Siglent's $499 SDS1104X-E 4CH Oscilloscope Teardown — Dave Jones (mention)
+context before: That's a bit quirky. Hmm, more investigation required. Anyway, yes, I do plan on doing videos uh reviewing and maybe like a shootout comparison or something like that. Um but it's interesting 499 US bucks with all the serial uh decoders built-in, by the way.
+TEXT: There they are, I2C, SPI, UART, CAN, and LIN buses all built-in. The 14 meg sample memory, the bode plotting, which I haven't uh looked at yet. But yeah, you can actually do a bode plot.
+context after: There you go. Uh 1 meg FFT, which is awesome, which you can do these days inside that Zynq uh FPGA. Um and which you see on other scopes like the GW Instek one does.
+
+[248] EEVblog #248 - LCD Enabled Microcontroller Selection — Dave Jones (mention)
+context before: Supports up to 24 segments with four commons. So, we could drive four of those displays we've been looking at with this one $1.60 in 100 quantity PIC chip. Awesome.
+TEXT: I love it. It's got It's got I²C, UARTs for 8-bit timers. And once again, it's got 14 channels of 10-bit analog-to-digital converter. Heaps. So, there's no reason why we can't use that.
+context after: Or is there? Now, as I'm sure I've mentioned before, one of the traps with using and selecting microcontrollers like this is that a lot of or most of the functionality of these devices like the else all the built-in peripherals, the LCDs, the the timers, the ADCs, and the I squared Cs, and all the peripherals and things like that, PWM outputs, capture compare modules, comparators, whatever.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: And there's an example of serial decoding the I squared C bus. So, that's pretty powerful and it's got the event table up the top, everything else all done real time in hardware.
+TEXT: So, um yeah, the fastest possible signal you can imagine, I squared C or SPI or any other serial bus, this thing will decode it all in the hardware. Your scope doesn't slow down at all.
+context after: And of course, in the marketing blurb, they, you know, go on about this. Uh you get no slow down with the logic channels, the protocol decoding, the math functions, the measurement, the vectors, all the sine x on x interpolation.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: So, I Yeah. But, anyway, if you can get like this one for what is it the 16 16 or something for like 130 bucks and get all those serial decoders, that could be very very useful.
+TEXT: Very well worth checking out. And you can see that they've got uh protocol analyzers as well. Ooh, what's I squared C SPI control center? I wonder. Geez, they've got all sorts of stuff.
+context after: The website's a bit weird, but uh anyway. Hmm. I'll have to do the starter kit in another in software control. I squared C SPI control center. Oh, this is the Is this this generator?
+
+[991] EEVblog #991 - Mailbag — Dave Jones (mention)
+context before: FPGA. And uh David and I were just actually discussing this project before we opened this uh coincidentally. And how I looked before and they didn't have the ability. I looked at the previous like the Analog Discovery and stuff and all it had was the pattern generator like this and that didn't actually uh do it.
+TEXT: But this uh protocol one, bingo! We can generate UART, SPI, I2C, and SPI can go up to 50 meg. Thank you very much. That's unbelievable. Uh unfortunately, a little bit of a limitation.
+context after: It doesn't look like you can, you know, do like Can you type in your own frequency? No. Okay, so it's it's fixed divider frequency. That's a bit of a shame.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: Very well worth checking out. And you can see that they've got uh protocol analyzers as well. Ooh, what's I squared C SPI control center? I wonder. Geez, they've got all sorts of stuff.
+TEXT: The website's a bit weird, but uh anyway. Hmm. I'll have to do the starter kit in another in software control. I squared C SPI control center. Oh, this is the Is this this generator?
+context after: I think it might be the protocol generator, I don't know. Anyway. Huh, weird. They've got all sorts of stuff. Anyway, thank you very much Zero Plus for sending those in.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: Barely worth it. Oh, of course. PEBCAK. Stupid me. I figured out why the logic analyzer function's not there. It's because you need to actually plug in the probe. Oh.
+TEXT: There it is. Logic analyzer. Uh, sorry. It does actually work just fine. So, if we turn on our logic analyzer there, there we go. We've got something. Bus, parallel, UART, I2C, SPI.
+context after: By By the way, you don't It seems like you don't have to pay for the various decoding of these things. You buy your logic analyzer module, you get your UART, your I2C, your SPI, and your parallel.
+
+[1254] EEVblog #1254 - Mailbag — Dave Jones (mention)
+context before: Anyway, that's just got an Atmel processor and some 595 serial latches there. Anyway, which means you have to have the resistor droppers to get the current required. Could have just had like used a lead constant current driver or something like that.
+TEXT: I squared C constant current driver perhaps but six of one, half dozen the other. This snowflake one I really like. These look like RGB jobbies. You can tell by looking at the die.
+context after: There you go. You can have multiple dies on that and of course that's one of those like neo pixely things or whatever it is. One of those new fangled things.
+
+[464] EEVblog #464 - Mailbag — Dave Jones (mention)
+context before: And I thought I'd buy a few more and donate them to your lab. Nothing special, but useful. Uh-oh. You You want that package next? All right, we'll do that one next.
+TEXT: Hang on. You may keep the accessories if you can figure out how to trigger the scope on I I2C address higher than 0X7F. Over. thank you very much Oliver, RF engineer from Germany.
+context after: Germany and bloody Germany again, bloody US again. Of course, please keep the accessories anyway. Thank you very much Oliver. Let's have a look. Whoa, man, funky. Wow. Look at this.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (mention)
+context before: Uh and I still do have that lost footage. I have to do the lost mail bag, the most lost Chinese mail bag. Oh, anyway, I'm sorry. I NETHERLANDS. HI TO ALL MY VIEWERS in the Netherlands.
+TEXT: Um doesn't have a name. Just post bus. Anyway, I'm sure there's details in here. Thank Thank you very much Attika and Simone for their I squared C Kickstarter. Let's check it out.
+context after: So, Attika and Simone have sent in this uh I squared C rotary encoder thing, which looks like very simple. I mean, yeah, it's a rotary encoder on an I squared C bus.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: Once again, all that serial decoding all done in hardware, but you got to pay extra, but maybe they might bundle it in with deals and things like that. Ask.
+TEXT: And there's an example of serial decoding the I squared C bus. So, that's pretty powerful and it's got the event table up the top, everything else all done real time in hardware.
+context after: So, um yeah, the fastest possible signal you can imagine, I squared C or SPI or any other serial bus, this thing will decode it all in the hardware. Your scope doesn't slow down at all.
+
+[1272] EEVblog #1272 - Mailbag — Dave Jones (mention)
+context before: Oh, it's a right little plug-in thing ID. Oh, it's a little It's a little touch sensor. Okay, quick squeeze, but there's not much to it. There's a going to be a touch sensor chip on there.
+TEXT: It's a little six-pin SOT23 jobbie. And yeah, that'll be all she wrote. It'll be like I squared C interface. No worries. Well, it turns out this is actually rather interesting.
+context after: This little six-pin SOT23 touch sensor here, it is from a company called uh TonTec, and this is their Ton Touch uh technology. So, I've never heard of this uh company before.
+
+[1429] EEVblog 1429 - Sony RX100 Camera Troubleshooting Part 2 — Dave Jones (mention)
+context before: That There is a fuse in there. There's a 1 amp jobby in there. And oh, yeah, there's another one as well, 0.63 amps. 24 volts. You could get a fuse blow Oh, another one over here, 2.5 amps, 32 Wow, there's three fuses inside this thing.
+TEXT: There you go. Got a couple of little regulators there. I squared C, DC to DC converter. It's all happening. Still haven't found like the battery. Oh, battery unreg. Is that it?
+context after: Voltage detect. Battery unregulated, battery sense, switch. See, could be something like that. Like it's not detecting that the battery's in there, so therefore it's just not even though power's supplied, it's not powering like It could be anything that's stopping this thing powering on.
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (mention)
+context before: coming from the I2C device, and there's the SPI clock as well. So, that's the SPI interface. That interrupt reset pin has nothing to do with it. So, it's only those three pins there, data and clock, and the chip select is a little bit slower.
+TEXT: So, I decided to put those over to the I2C because some of the other pins I have to dedicate onto here like there's the I2C bus. I'm using the internal I2C in inside here, see?
+context after: SDA and SCL there, SDA and SCL here. That means I'm using the internal hardware I2C interface, and you want to do that. I don't want to have to bit bang that one as well.
+
+[1515] EEVblog 1515 - Dumpster Tektronix TDS540D 500MHz Oscilloscope LCD Upgrade — Dave Jones (mention)
+context before: So, which one's which? They do actually have a VGA connector under there, by the looks of it. Nice. Okay, yeah, so you could have put it like a VGA directly on there.
+TEXT: Red, green, blue. There you go. So, you've got I squared C, and you've got grounds, and you've got your vertical sync, your horizontal sync. Let's leave the middle one intact.
+context after: Let's leave the green one intact, shall we? Or is the input coming here and going through this zero ohm resistor? I'll I'll just buzz it out. 75 ohms to ground.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (mention)
+context before: Laser the thing off. You can almost see a few of the uh start letters there. Anyone want to have a guess? And that's coupled down here to another 8-pin SO package completely marked off there.
+TEXT: It's got guard trace all the way around here. Look at that. So, you can actually um you know, see that's obviously, you know, not just like an I²C chip or something like that.
+context after: It is some analog signal there that they're trying to guard against. And you'll notice that here, what looks like our voltage reference, I'm not going to try and uh you know, decode one of these SMD marks.
+
+[259] EEVblog #259 - PSU Rev C Schematic - Part 12 — Dave Jones (mention)
+context before: Well, I've actually consolidated them on the microcontroller, but how did I do that? Because I didn't have any free pins last time. I was absolutely maxed out and you guessed it, I maxed out again, but I managed to gain a couple of pins by ditching the SPI interface.
+TEXT: Remember that bit banging SPI interface I was using? Well, I got rid of that and I consolidated with I²C part. So, on this I²C bus here, SDA and SCL there, I've got two pins.
+context after: And let's have a look at what we're driving here. We're driving not only our I squared uh pot here, um we're doing that. So, we've got that capability for no extra pins, but we're driving our LCD as well, just like we were last time.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: And that's the first thing I noticed, well, where's the trigger capability on this thing? Like, how can I, you know, trigger on a data packet or something like that?
+TEXT: And um you know, we've got some analyzers down here. Let's go I²C analyzer settings. We can set it up. There we go. It's all It looks like it has it automatically detected.
+context after: No, of course, the uh clock is uh channel zero up there, so we need to set that and data is channel one, so it hasn't automatically detected that. Address display, 8-bit read write.
+
+[1462] EEVblog 1462 - Why Dymo Label Printers SUCK! — Dave Jones (mention)
+context before: I don't even get a single transition out of the serial port here. So, that almost certainly indicates that the STR micro in here has been put into protected mode which disables all of the debug interfaces and stuff like that as well as actually protects you getting the code back out of the micro.
+TEXT: So, the only thing left to probe is the I squared C interface going across here. That'll do the trick. All right, I got the logic analyzer hooked up. There were four lines.
+context after: Two were I squared C, one what looks like an interrupt line, and another line which I didn't bother tracing out, but I hooked it up. So, and here it is.
+
+[1625] EEVblog 1625 - Electronex: Scope Wars: The Rise of Uni-T — Dave Jones (mention)
+context before: Eight. Fantastic. real rainbow down there. You would uh, you don't have enough colors to display on the Crazy. And one of the nice things with the the Keysight oscilloscopes as an example is, you know, they come with demo waveforms.
+TEXT: So, one of the key things, yeah, is if you've got new engineers or somebody's not familiar with I squared C, you can pull up the demo signal, you can play around with it.
+context after: Uh, you know what it is and there'll be tutorials on what you do here, say as an example with the waveform and then add a histogram, add trending or whatever, you learn on that test signal and then you can go on your own design and you're far, far more familiar with it and you get much better sort of value out of the instrument.
+
+[fm13tIe5wSc] EEVacademy #4 -  I²C (I2C) Bit Banging — Dave Jones (mention)
+context before: Here's the start condition. And here we have the address. There are seven bits there. Um and here's the acknowledgement here, which we haven't received cuz we're not actually talking to a device.
+TEXT: Um And the condition before the data byte is correct, so it seems like our formation of the frame is correct. Hope you learned a little bit about I2C. See you next time.
+context after: 
+
+[1275] EEVblog #1275 - Uniden UHF Walkie Talkie Teardowns — Dave Jones (mention)
+context before: We've got our power amplifier. Uh then it's got a variable gain power amplifier, driver, VCO, synthesizer, all that sort of stuff. And it's microphone direct straight in. So, the other microcontroller has nothing to do with the audio or analog aspects of this at all.
+TEXT: The uh audio frequency out goes directly to the speaker power amplifier chip, and the micro here just talks. I'm not sure why it has both an SPI bus and an I squared C.
+context after: I guess Do you need both, or does it let you uh choose it? But that's it. That's it for that no name data sheet. So, I assume like there's multiple clones of this chip.
+
+[1463] EEVblog 1463 - Mailbag — Dave Jones (mention)
+context before: And it's got all the requisite stuff. There's a touch sensor switch which it has an interface. I don't know which one it actually uses. Got a rotary encoder. And then it's just got it breaks out all of the stuff near the breadboard so that you can just like jumper all this stuff over.
+TEXT: So here you go. You've got I squared C over here. Is that SPI in there? It's a bit shadowy. It's hard to read, but it's got like a stepper motor driver board interface.
+context after: That's actually not actually on here. It doesn't If you have a look on the back, there's actually no circuitry on the back. It's all populated on the front. It's basically just a good gigantic breakout board that you can, you know, plug everything into and then all of the uh outputs and stuff come near the breadboard, as I said, and that allows you to just jumper stuff over to the
+
+[269] EEVblog #269 - Energy Micro Tiny Gecko — Dave Jones (mention)
+context before: Bang. You want to do that? We want some ADCs. Yep, we've got looks like four to choose from in this particular package. Let's enable, you know, four channels of those.
+TEXT: And oh, yeah, I squared C. I want one of those. And looks like you can get three different pin locations for the Yeah, there we go. You can select which pins you want.
+context after: Oh, neat. I like that. And oh, actually it tells you it conflicts. I'm assuming the red means that they've conflicted with something else. Mhm. Ah, excellent. All right. I like that.
+
+[778] EEVblog #778 - Oscilloscope Vertical Confusion — Dave Jones (mention)
+context before: And this actually contains a resistor in it, and it will actually be able to measure that you've hooked on a particular different type of probe. And and different probes can have different uh, mechanisms.
+TEXT: Some probes even are intelligent and they can use like an I squared, uh, C type thing and things like that. Uh, a digital identification method. But watch this, okay?
+context after: It's currently set for a probe of one to one, okay? This is channel one. So it thinks there's, because there's no probe attached, it knows that it's going to be, or it assumes it's going to be a times one probe.
+
+[1727] EEVblog 1727 - REPAIR: Casio CT-X700 Keyboard — Dave Jones (mention)
+context before: That is everything else is single-sided. This is a double-sided jobbie or whatever. And everything else is just single-sided and built down to a price. So, that's just a Casio ASIC.
+TEXT: And it's got all the tunes Well, no, I was saying is there an external I squared problem there? I don't know. But, like yeah, that just does everything. It's amazing.
+context after: That's how they get the price point down. Dude, that looks like it's like torn like it's sheared off, right? The actual copper is sheared off around that joint, isn't it?
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (mention)
+context before: Um doesn't have a name. Just post bus. Anyway, I'm sure there's details in here. Thank Thank you very much Attika and Simone for their I squared C Kickstarter. Let's check it out.
+TEXT: So, Attika and Simone have sent in this uh I squared C rotary encoder thing, which looks like very simple. I mean, yeah, it's a rotary encoder on an I squared C bus.
+context after: There's a little micro on the back that, you know, you just plug in a standard uh pin out rotary encoder onto the thing. And but the good thing is is that these can all be joined up together in a grid arrangement, by the way.
+
+[11-AQ_E1fz8] Siglent SDS1000X-E Serial Decoding — Dave Jones (mention)
+context before: So, I'll just give you a little uh sneak peek here. Now, I've actually um the great thing about the scope is that serial decoding is free. It is no optional extra, no hacking required.
+TEXT: You get I squared C, SPI, UART, CAN, and LIN. I'm only going to play around with the uh UART here right now. There's uh two different uh decoders, uh one and two.
+context after: I believe it's similar to the previous uh series Siglents, it's just included uh free. And of course, you can set up the uh signals, but unfortunately, unlike the Keysight 1000X series, you cannot use this third channel here.
+
+[1524] EEVblog 1524 - The 10 CENT RISC V Processor! CH32V003 — Dave Jones (mention)
+context before: And what are we getting here? It's a 48 meg risk 5 processor, 18 GPIO pins, 16 K of flash memory, 2 K of S RAM. So, you know, it's quite usable.
+TEXT: One UART in it, one I squared C, one SPI. It's got an 8 channel 10 bit ADC. How good that is I don't know. I haven't really, you know, data sheet link down below.
+context after: Um you can get these specs from it. Uh one general purpose uh timer module, one advanced timer module, one system uh tick, uh two watchdogs, and uh partridge in a pear tree.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: And if it longer it gets, you just lower the pull down resistor by the way to counteract the extra capacitance of the line, especially if it's a very long trace over ground plane or something like that.
+TEXT: Anyway, so yeah, so I would have taken These are the two I squared C lines. I would have taken just both of the wires going Yeah, yeah, yeah, yeah, over to here.
+context after: Okay, so it's a little bit annoying. I think it's Yeah, okay. So it's these two pins here. So that's annoying. Um, but it's only two lines. So yeah, I would have like Maybe you could have said, "Okay, oh, no." See, if you just dropped a via from your uh bypass cap down to your power layer, you would have room potentially, but all your data layers are So yeah, all your data pins
+
+[251] EEVblog #251 - Mailbag — Dave Jones (mention)
+context before: Anyway, if you want to send me stuff, there it is. PO box 7949 Baulkham Hills, New South Wales 2153 Australia. No, I think that's an I. Anyway, let's open it up and check out what's inside.
+TEXT: Interesting. Get the Swiss Army knife out. Okay, what do we got in here? Oh, it's a book. It's a book. Mastering the I squared C bus. Yeah, excellent. Um, okay.
+context after: Why? Let's have a look here. Mastering the I squared C bus and EPS something. What? Okay. Excellent. Didn't order anything, but there you go. Commissioned by Vincent Vincent Vincent Himpe.
+
+[44] EEVblog #44 Part 1 - Logic Analyzer Tutorial — Dave Jones (mention)
+context before: You're going to use the same amount of memory. Your data can be sitting there at all zeros, and it's going to be chewing up precious memory. Because you've got a sample at each interval like this, and each one of those is using 1 2 3 4, it's using up a byte or a word of your memory at each one of those samples, and right up to 1,000 and so on.
+TEXT: And this uh this isn't very good if you're trying to measure, say, a packet of I squared C data here, and then another packet of data which is way down there.
+context after: That means you've got to have a huge, massive, many megabytes of sample memory, um otherwise you're not going to be able to capture all these widely spaced um packets of data that you want to analyze.
+
+[536] EEVblog #536 - HP35670A DSA Repair — Dave Jones (mention)
+context before: But hey, you know, it didn't take that long in the end, and I found it, and it's at least back up and running, so we have a baseline to work from.
+TEXT: Um error codes, red LEDs flashing in the back, and I plugged in the rear panel, that wasn't the I-squared-C uh issue and things like that. So, I don't know.
+context after: Anyway, if you want to discuss it, jump on over to the EEVblog forum. Hope you liked it. Catch you next time. Mhm.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (mention)
+context before: Uh with output buffers and uh two ultra low power uh comparators as well with wake-up capability. Uh DMA controllers, if you're into that sort of thing. USB 2, uh three UARTs built-in.
+TEXT: Um eight up to eight SPIs, uh depending on the chip that you use. Or two I2Ss. It's got two I-squared C buses, 11 timers, blah blah blah, six 16-bit timers.
+context after: All that sort of stuff. And it's got um capacitive touch sensing as well, up to 23 channels and CRC calculation as well. So, as you can see, it's a very powerful and versatile um micro.
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (mention)
+context before: But yeah, you need the digital license for that, but you don't if you using the analog input. You don't need that specific license. So anyway, so I can turn on the bus here and I can select RS 232.
+TEXT: You got spy and you got I squared C and LIN and all sorts of the CAN bus and all sorts of things there. And its maximum data rate is 15 megabits per second.
+context after: So I've had to lower the data rate to 15 megabits per second on the pattern generator. No worries. One annoying little thing. I wonder why it didn't work and then I discovered that the threshold was 0 volts by default.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: This looks really jazzy. Wow. They've put a lot of work into that. That's very impressive. So, let's have a quick squeeze inside the box, shall we? Ta-da. Look at this.
+TEXT: That's what you get inside, for those playing along at home. So, you get your get a nice breadboard. You get What is that? Oh, I squared C RGB interface.
+context after: Nice. Got a USB interface, we've got a microphone preamp. By the looks of it, you've got a little motor to make something spin. Um, and let's get that out of there.
+
+[2FlQnPsZCdE] Scope WTF! — Dave Jones (mention)
+context before: Rigol dot scope isn't responding. Um, close up cuz this is running on the Android operating system. There's much discussion over this on the EVBlog forum. But this is the first time I've had it crashed um using this thing or had it lock up or do anything.
+TEXT: I was mucking around with the serial uh decoding. I was changing over to um I squared C bus and it just went boom. So, I don't know. Close Oh, close up.
+context after: Oh, nope. Okay. So, is it running like the decoders as apps or something? Is it? That's That could be interesting. No, it's it's actually recovered. Geez, that's actually I It's bad that it something happened to it.
+
+[1462] EEVblog 1462 - Why Dymo Label Printers SUCK! — Dave Jones (mention)
+context before: So, the only thing left to probe is the I squared C interface going across here. That'll do the trick. All right, I got the logic analyzer hooked up. There were four lines.
+TEXT: Two were I squared C, one what looks like an interrupt line, and another line which I didn't bother tracing out, but I hooked it up. So, and here it is.
+context after: I've just got it free running here. We've got a packet like every I don't know, count that every second. There's no paper in there at the moment. So, if I press the feed forward button and it does it doesn't seem to change like anything.
+
+[1621] EEVblog 1621 - Mailbag: RadiaCode Radiation Monitor + LattePanda Mu Compute Module — Dave Jones (mention)
+context before: And uh this one's about 139 US uh dollars for the compute board and I can't memorize all the stuff that's in here. So, I'll put up um like all the uh specs and everything else.
+TEXT: It's got like three HDMI uh ports, it's got uh three PCI Express lanes, it's got I squared C ports, it's got a ton of USB ports and uh everything else.
+context after: So, there you go. I'll give you get look on the bottom there, and we'll flip that back over to the top side, so you can have a bit closer look.
+
+[452] EEVblog #452 - Stanford Research SR430 Teardown — Dave Jones (mention)
+context before: Go with that. That's just a floppy disk controller going off uh via the ribbon cable to the floppy drive. Down next to our battery there, no surprises. What's next to a battery in these things?
+TEXT: It's a Motorola um MC uh 146818 uh real-time clock I to C chip. Old school. And I found some chips as old as '93. Uh well, the 24th week of '93.
+context after: So, this dates this thing at uh just under uh 20 years old. And it's a bit hard to see all that uh logic there under the main CRT uh controller, but it's all uh 74HC uh logic stuff.
