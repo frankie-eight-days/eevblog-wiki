@@ -1,0 +1,38 @@
+# voltage reference
+
+A voltage reference is a circuit element that produces a fixed voltage whose defining requirement is stability over time and temperature rather than absolute accuracy, and it serves as the yardstick against which analog-to-digital converters, digital-to-analog converters, multimeters, power supplies, and comparator thresholds are defined.[540][224] Because a power supply's set value and its output noise both originate from its reference, "a power supply is only as good as its voltage reference".[224][222]
+
+## Accuracy versus stability
+
+Initial absolute accuracy of a reference is largely irrelevant because it can be calibrated out in production or in software; what cannot be calibrated out is drift with temperature and time.[440][709] A 0.25% reference is adequate inside a 0.05% power supply, and even a ±5% absolute tolerance is acceptable in a precision standard, provided the device is stable — aged Zener references in voltage standards are hand-selected and measured at a particular bias current, then left untouched thereafter.[440][709][210] Consequently, parametric part selection should sort by temperature coefficient rather than by initial accuracy: the reference chips used in top-end multimeters have unremarkable initial tolerance but the lowest drift in the industry, and would be filtered out entirely by a search sorted on percentage accuracy.[400] Initial-accuracy and tempco grades of the same part are sold at different price points, such as the 5 ppm/°C A-grade of the MAX6198 versus lower grades, and the 100 ppm versus 50 ppm versions of the ICL8069.[1438][712][1007]
+
+## Topologies and standard voltages
+
+Bandgap physics sets a floor near 1.2 V, so a reference below that — a 0.3 V reference, for example — must be produced by dividing a higher reference down with precision resistors and buffering the result with an op-amp follower, or by using ordinary resistors plus a trim pot while watching the tempco.[400]
+
+Common standard values cluster around a few figures:
+
+- **1.2–1.25 V**: the internal references of the LM317 adjustable regulator and the LM3914 bar-graph driver. The LM317's internal 1.25 V sets the lowest output the regulator can produce in a single-supply circuit and appears in the design equation R2 = (Vout/1.25 − 1) × R1.[158][221][1438] The LM3914's 1.25 V reference is not internally ground-referenced — it exits through a "ref adjust" pin — and its adjust-pin current of 75 µA typical (120 µA maximum) enters calculations as an error term.[204] Micropower shunt parts such as the LM285/LM385 occupy the 1.2 V point.[171][430][1424]
+- **2.5 V**: dominated by the TL431 adjustable shunt reference, "one of the cheapest jelly bean voltage references on the market" and the standard feedback element on the secondary side of mains switch-mode supplies; the LM336 2.5 V part is the other common choice.[1364][1438][1435][525][225]
+- **2.048 V and 4.096 V**: power-of-two values chosen so that a 12-bit converter yields a round 500 µV per LSB, avoiding software scaling; the ISL2107 2.048 V part at 30 ppm and ±0.25% is a typical example.[232]
+- **5 V and 10 V**: the AD586 precision 5 V reference, the REF102 and LT1031 10 V parts, and the AD584 programmable reference appear throughout precision instruments.[875][579][1334][1366]
+
+References divide into series (voltage-driven) and shunt (current-driven) types.[500] Series parts specify a minimum supply voltage above the output — roughly 2 V of headroom, so a 2.5 V part needs at least about 4.5 V in — and specify line regulation on the order of 1–1.5 ppm/V rather than using the term "dropout voltage".[500] Shunt parts such as the 4040/4041 family are used where better precision and tempco than a voltage regulator are needed.[1438]
+
+At the top end, buried-Zener references with on-chip heaters dominate: the LM399 is the classic reference of 6.5-digit multimeters, the LTFLU variant (without built-in heater) appears in the Fluke 8842A and the Fluke 732 voltage reference standard, and the LTZ1000 class sits in the highest-resolution instruments, with its oven-driver circuitry deliberately placed outside the reference's thermal enclosure so driver heat does not disturb the die.[427][485][1012][731]
+
+## Environmental and layout sensitivities
+
+High-precision references are mechanically sensitive. Board flexure and thermal expansion couple stress through the package leads into the die and cause drift, so precision references are commonly surrounded by a routed isolation slot, or even suspended by a spiral cutout that leaves the reference board section sprung.[1037][511][1207][731] Reflow soldering itself shifts reference output, and some data sheets publish before-and-after-reflow mean-shift graphs characterised at the recommended profile.[562] Temperature control extends to the instrument level: heated references require warm-up time, and enclosures or plastic cans are used to keep fan airflow from changing the reference's ambient temperature abruptly.[374][731]
+
+Electrically, references have loop-stability constraints. A precision reference driving a series-pass transistor in a 1 A current-source configuration oscillated badly until output-capacitor ESR (specified as below 0.1 Ω for a 10 µF load) and input-bypass placement were brought within the data-sheet envelope; the stability is set by the phase margin of the reference's internal output op-amp, not by input capacitance tweaks.[567][577] A damaged downstream IC can also load a reference output and pull it down.[727] In switching regulators, the controller's internal reference is corrupted by dynamic layout errors: a few millivolts of load-switching ground bounce can pull a 0.9 V output down toward 0.8 V.[1216] Substituting adjustable regulators is hazardous because the internal reference voltage and feedback formula differ between brands even on pin-compatible parts.[1475]
+
+## Applications
+
+- **Data conversion**: the reference sets ADC and DAC full-scale; it also determines whether results come out as round numbers, hence the power-of-two family.[232][259]
+- **Supply rails**: a precision reference in 2.5, 3.3, or 5 V at 0.1–0.2% accuracy (about a dollar, some with 40–50 mA output capability) can power a small microcontroller directly, giving it an accurate ADC reference for free; some tight-tolerance LDOs such as the MCP1700 can serve the same trick at fixed ambient temperature.[225][232]
+- **Threshold detection**: battery cut-off and low-battery indicators are a comparator plus a reference, available as integrated supervisors such as the 2.65 V TPS3809, and it is this internal reference — not battery internal resistance — that determines where a product shuts down.[72][779]
+- **Current sources**: the canonical constant-current formula is the reference voltage divided by the shunt resistor, with an op-amp closing the loop; the REF102 with an OPA227 implements sub-10 mA precision sources this way.[1688][579]
+- **DDR termination**: dedicated mid-rail Vref termination chips exist because reference noise directly consumes the memory interface's timing budget.[1247]
+- **Combination parts**: the TSM102 packs a dual op-amp, dual comparator, and adjustable reference into one package for power-supply and battery-charger supervision.[1464]
+- **Calibration and checking**: inexpensive 10 V reference modules of about 0.05% class suffice to spot-check handheld DMMs, while aged-Zener standards, the Fluke 732, and 8.5-digit multimeters serve as transfer standards for serious work.[735][210][1012][1330]

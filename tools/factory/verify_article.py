@@ -46,9 +46,24 @@ def verify(path):
     bundle = json.loads(bpath.read_text())
     text = art.read_text()
 
-    hay = [norm(p["text"]) for p in bundle["passages"]]
-    hay += [norm(p["context_before"]) for p in bundle["passages"]]
-    hay += [norm(p["context_after"]) for p in bundle["passages"]]
+    # Check against the FULL transcript of every video in the bundle, not the
+    # bundle's own passage text. Two of five flagged quotes turned out to be
+    # real: a quotation that runs across the join between a passage and its
+    # truncated context matches neither fragment, and the 240-passage cap means
+    # a video can be in the bundle while the quoted paragraph is not. Both
+    # produced false fabrication alarms. The transcript is the ground truth the
+    # claim is really being made about, so compare against that.
+    seen_v, hay = set(), []
+    for p in bundle["passages"]:
+        v = p["video_id"]
+        if v in seen_v:
+            continue
+        seen_v.add(v)
+        for d in (ROOT / "transcripts", ROOT / "transcripts_whisper"):
+            f = d / f"{v}.md"
+            if f.exists():
+                hay.append(norm(f.read_text()))
+                break
     haystack = "\n".join(hay)
     vids = {p["video_number"] for p in bundle["passages"] if p["video_number"]}
     ids = {p.get("cite") for p in bundle["passages"] if p.get("cite")}

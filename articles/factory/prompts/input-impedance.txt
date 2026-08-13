@@ -1,0 +1,633 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: input impedance
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 120 passages drawn from 76 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# input impedance`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: It's 1 meg and 166.6k. So, remember our voltage divider formula? So, 166.6k / 1 I can add these up here 1.1666 meg like that * 10 Tada! 1.428 V so we measured it just a smidgen over 1.4 cuz the analog meter's not that precise.
+TEXT: There you go. That's why we measured 1.4. Circuit loading of your test instrument. Classic trap for young players, especially in high impedance circuits. And you can actually use a second meter to measure the input impedance of our BM786 over here and you can see it's about 11.1 meg and that changes depending on the circuit design of the meter, but they're all, you know, roughly around that 10 11 meg value for
+context after: a standard digital meter unless you've got a high input impedance meter which usually you'll only get that on like the millivolt the lower ranges like the millivolts and maybe if you're lucky in into the lower voltage ranges.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: Well, uh Bueller? Bueller? That's um one and a half volts. What's going on there? Something's a bit weird. Why are we getting like a volt and a half? Well, let's go over to the Keysight meter up here and let's plug in the exact same leads.
+TEXT: Oh, we're still getting a volt. I can hear you saying, "Dave, I know what's going on here. Bench meters are famous for having like a high input impedance on like the millivolt range and even up into uh several over one or several of the voltage ranges." Well, if we go into there, you'll see that no, we're 10 megaohms input impedance and if we go auto, um input said, "Yeah, it goes a bit higher
+context after: and stuff like that and it might charge up because you've effectively got uh infinite input impedance, but um and if we like manually range it like this, look, on the one volt range, we're getting overload, overload, overload.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: Bit of parallax error there on the mirror. What the hell's going on? Go back over here just to verify and yeah, sure enough, 5 volts. Oh. Oops. If you're wondering what button I pushed there, there it is.
+TEXT: Input Z, which is input impedance or input resistance. 10 meg or auto. Auto means basically there's no input resistance. It's really, really high. It's gigaohms. And you know that order of magnitude thing I was talking about on the whiteboard where if you had like one order of magnitude greater, in this case 10 meg ohms input impedance of the meter, then it causes like roughly that 10% error.
+context after: Well, you have to go through the calculation. We'll go through that in a second. But and then if you have two orders of magnitude, or in this case that'd be 100 meg input impedance and you get 1% error.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: So, our shunt resistor is the 1 ohm plus the 10 milliohms in series like this, but we're still tapping off this top bit here because our 100 ohm resistor there's no voltage drop across that cuz it's disconnected here.
+TEXT: Actually, there we go. And the input impedance of our mux or our amplifier or whatever you want, ADC or whatever you want to plug this thing into is extremely high, consider it infinite, especially considering we're down in the hundreds of ohms region here, then there's no voltage drop across this and you're just using that as a sense line to sense directly off this 1 ohm resistor here.
+context after: Beauty. And likewise for the amps range, we now move our probe over to here, so effectively the it doesn't matter which position we select here, microamps or milliamps, doesn't matter.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: A bench multimeter is no different. It's just a sampling system. That's it. It's not rocket science. Just how these things work. And of course it all has to do with the input impedance.
+TEXT: That 10 megaohms is actually quite high and it it picks it all up and if you put go whack a 1K resistor in parallel with it it's going to knock it on the head and and if you go and measure like a low impedance voltage source like a battery cuz it's got like milliohms output well a source impedance and you measure that, that's why we can get just the probes
+context after: there we can get like a volt of noise. Yet when we measure a battery like that, we will get 1.30254 and we'll only get the noise will only be a couple of least significant digits like that.
+
+[584] EEVblog #584 - What Effect Does Your Multimeter Input Impedance Have? — Dave Jones (explains)
+context before: It's affecting our reading because the impedance of that circuit is now changed. So, our voltage divider ratio has changed. So, any good precision multimeter will have a high impedance mode.
+TEXT: Sometimes on uh like handheld multimeters, it's only on the millivolt range, for example. You may not get it on the voltage range. This uh uh Agilent uh meter uh 6 and 1/2 digits doesn't do it on some of the higher voltage ranges, like the hundreds of volts, but I think up to the 10 V range, it allows you to have uh effectively infinite input impedance.
+context after: And it says auto here, but input impedance, let's change it. And look, the value has changed by going from our 10 meg input impedance to effectively infinite. It says in the data sheet, I think it's like greater than 2 gig or something like that, but effectively, it's just the input uh effective input resistance of like uh the FET input amplifier.
+
+[406] EEVblog #406 - Keithley 480 Picoammeter Teardown & Calibration — Dave Jones (explains)
+context before: But, I know it's not out. It's because the offset voltage now becomes a very significant proportion of the burden offset voltage in this thing becomes a very significant proportion of our of our you know, of our calibration setup here.
+TEXT: So, that's why the manual for this thing will recommend minimum input impedances for this thing for for these various ranges. But, what that essentially translates to is not necessarily a minimum input source impedance, but a minimum input voltage essentially so that the burden voltage of this thing doesn't matter.
+context after: Now, look, if we go even lower, like well, we'll go up one there. So, we'll go at one A. See, it gets closer there as we go up. So, we're 10 microamps there, but we'll get more further out as we go down.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: That's what it should be. All right, boot up speed comparison, here we go. Winner, Siglent. Just under well, 9 seconds. Just under 10 seconds the Rigol's. Still going. There we go.
+TEXT: Now, of course, there's one glaring omission in that it doesn't have the auto probe detect for your times 10 probes, but hey, neither does the Rigol. And hey, this is a 600 well, a $500 scope, so you don't really expect it to have it, but killer, it's got 50 ohm input impedance mode switchable as standard.
+context after: Fantastic for a 600 buck class scope. Now, both scopes have 500 microvolts per division. Beauty. I love this new trend of 500 microvolt per division vertical range. And I've set them both to 7K points sample memory here, normal acquisition, everything.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (explains)
+context before: And our voltage reference, which is pretty darn good, it's 1% voltage reference as we'll see. And here we go, an important note, unlike traditional inexpensive scopes, they're fully differential. However a ground connection is still needed to provide a common stable mode voltage. And yeah, as we'll see, it is not a floating
+TEXT: scope, it is still mains earth reference. So it's got standard 1 meg input impedance, let's go down here and have a look. They use analog devices ADG 612 quad switches, it tells you why, because it provides excellent impedance and bandwidth parameters. Well you know, this is basically, this whole project
+context after: is one big ad for analog devices. They're heavily subsidizing the chips used in these things. So anyway, here's our front end schematic. So here's our positive and our negative input here. And as you can see, it is ground reference here, so the negative input here
+
+[453] EEVblog #453 - Mysteries of x1 Oscilloscope Probes Revealed — Dave Jones (explains)
+context before: Why? Well, we're going to find out. And because of that, of course, the rise time, big difference, 900 picoseconds, 900 puff. Look at that. Uh times 10, and 40 nanoseconds for times one.
+TEXT: Huge difference, but that's not surprising considering the the relative bandwidth difference there. And of course, the input resistance is going to be different between the two. 1 meg, everyone knows that 1 meg standard input impedance cuz it just goes through to your It's basically just a bit of coax.
+context after: When you put it on times one there, basically just a bit of coax. Well, we'll see. Goes all the way through to your scope. But in times 10 mode, of course, it's 10 megohms input impedance because of the extra 9 meg resistor in here, which a lot of people are familiar with.
+
+[1576] EEVblog 1576 - Tektronix DMM916 Multimeter Teardown & (Easy) Repair — Dave Jones (explains)
+context before: I'm going to need a going to need a bigger boat. I mean, obviously, if you just got shake-proof washer like that, it could easily come a gata. Oh. Yeah.
+TEXT: Well, certainly wasn't tight. And I Yeah, I can really can screw that up. No, I really don't like those, but they uh Nonetheless, like often, yeah, I suspect like, because we're talking like 10 megaohm input impedance there, and we were getting the uh we're getting readings like slightly low and stuff.
+context after: So, I can only presume that, like, it was just a really high impedance path there, and that was causing causing a problem. And you probably would have seen that on ohms if I bothered to test that.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: meters, or FET VOMs, Volt-O-Meter as they're called, this one's even got a fancy-pantsy dual FET. Look at that. Basically you've got all the same limitations of a regular analog meter. All your scale, your ohms is backwards with the non-linear scale and all your accuracy
+TEXT: problems and your zero-in problems. You've still got the zero on there. Everything else is exactly the same, except the only thing it solves is the input impedance. On DC volts only, well on this particular model anyway, the 22220 Micronta, slash RadioShack slash Tandy, for those playing along at home,
+context after: are 10 megohms. A fixed 10 megohms on basically every DC volt range. So that's basically the only advantage whatsoever to a FET analog VOM. Everything else is basically the same. And on this particular one, as I said, you don't even get that on the
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: And basically, your input impedance, which I just talked about over here, here's your input pin. So, this is all inside of the all inside of the analog-to-digital converter chip.
+TEXT: So, your external impedance here will actually affect the time that this capacitor takes to charge up. So, that's charge up to the value. And if you've got a 12-bit converter, it's got to get very close to the nominal value not to introduce any additional errors into your analog-to-digital converter.
+context after: And if you take a look down here, they actually provide you a graph here. So, that actually shows you the input resistance in ohms, 10K here, 1K here, down to 100 ohms down here.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: times 10 probe attenuation there. And if we do the 20 MHz bandwidth, maybe we'll see it clean up a bit. There we go. And also, because it's only an 8-bit sampling converter, 256 levels, I'm doing a 1920x1080 screen capture here, so obviously it's got to do some pixel doubling
+TEXT: interpolation, all that sort of stuff. You can set the input impedance to 50 ohms. Excellent. Selectable. Nice. Now let's check out the triggering here on the menu. What have we got? Edge, pattern, pulse width, pretty basic. Nothing fancy-pansy there at all. You can trigger from any of the digital
+context after: channels, all the digital I.O. channels, the trigger B and C, the line frequency or the function gen start, very nice. That's actually quite flexible in terms of sources. Rising, falling, either, you've got to have the either. And noise reject. There we go. That's pretty basic.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: Why am I measuring 5 V here if this diode is supposed to block it? Should be reading zero." Nah, it's because of the pesky leakage and the internal resistance of the multimeter.
+TEXT: That's really interesting. And of course, the classic uh trap with uh using multimeters in circuit for measuring voltage is that you've got any point in your circuit, if you're measuring this point here in your circuit, just be aware that you're putting that 10 megaohm resistor across there.
+context after: And if you're measuring voltages in high impedance circuits, that can really ruin your day. You can get false readings because your multimeter has a 10 megaohm input resistance or thereabouts on almost every voltage range, AC or DC.
+
+[610] EEVblog #610 - Why Digital Scopes Appear Noisy - Part 2 — Dave Jones (explains)
+context before: on the displayed waveform on a digital scope. Let's take a quick look at them. Now I've chosen the Agilent InfiniiVision MSOX3000 scope here because this is, this appears to be, in quote marks, the noisiest scope that I have in my lab. And if you saw that I compared a couple of
+TEXT: digital storage oscilloscopes in the previous video. Well, if you've seen me use this scope in videos, you might have seen a waveform like this. Look, I've got nothing connected to channel 1 here. Channel 1 is set to 50 ohms input impedance, right? It's not even high impedance, makes
+context after: no difference if I terminate that input at all. And look at that! I'm 1 volt per division, and look at the noise on that waveform! Oh, you would think that this is the world's noisiest oscilloscope. And, well, as you know from the previous video, it's not.
+
+[UDGsZcAWgL8] Rigol MSO5000 Bug Bonanza — Dave Jones (explains)
+context before: So, you could, in theory, make your own probes up. I don't think there's going to be much else in there apart, like, I don't think there's any differential drivers or anything like that. But don't quote me on that. I think it's just these are a nominal
+TEXT: 100k. You can see it there. A nominal input impedance of 100k with 8 puff there, 8 picofarads. So, yeah, a pretty standard logic analyzer probe. So, in theory, you could make your own. So, they've probably just got the 100k resistors in there. And if you actually plug the thing in,
+context after: it does actually auto-detect and it connected logic analyzer probe and it enables your logic analyzer. And when you get the logic analyzer up, you get various options. Let's have a look. You can actually select a waveform no big deal. You can turn various groups
+
+[973] EEVblog #973 - Hioki Multimeter Review & Clamp Meter Teardown — Dave Jones (explains)
+context before: And by the way, yes, this is a 6,000 count meter, 6,000 count primary and secondary. And the specs aren't going to set the world on fire. Typical 0.3 volts, that's, you know, good enough for a 6,000 count instrument. But this class, plus minus 5 digits, you've got to read the numbers anyway for the different models.
+TEXT: Oh, it's a bit tighter for the model we've got. I think the 425356, yeah, I like a tighter spec meter. Plus minus 3 digits for our particular model. In your typical 10 megaohm input impedance. But, yeah, it's an electrical class meter. Not going to set the world on fire spec-wise.
+context after: And the low Z mode here, there you go, it's got low Z up there. It's just like 900 odd K down at the, you know, 1.5 volts test voltage or whatever. That's going to decrease, of course, when you increase the voltage. But some meters, like the BM235, don't switch on at all.
+
+[1013] EEVblog #1013 - Mailbag — Dave Jones (explains)
+context before: Fantastic. Got mains coming in, right? Just through the rubber grommet. Oh, yeah, fancy panty. Sorry, plastic grommet. And then the age-old tradition of just tying the knot in the mains cord and then just soldering onto the exposed tag strip. That's hilarious. So, yep, they don't make them like
+TEXT: that anymore. And for good reason. Anyway, a VTVM, which was better than, well, depends who you ask, better than your standard meter back in the day, your analog meter, because it was an active component. Because it had the tubes in there, it would have had a high input impedance.
+context after: I don't know what the input impedance of this sucker would have been, but it would have been high, just like your traditional 10 megohm digital meters today. So, that's why they had tubes in them. Or back in the 70s and 80s, when they transitioned away from tubes, you could buy a FETVOM.
+
+[279] EEVblog #279 - How NOT To Blow Up Your Oscilloscope! — Dave Jones (explains)
+context before: Well, it just means that you've connected it through to mains earth. It doesn't It may not do anything. In most cases, it's not going to cause a problem at all unless there's some, you know, you're working on audio circuits and there's hum and all sorts of things, but we won't go into it.
+TEXT: Pretty much, scenario number one, isolated um widget you're working on, completely safe to hook up the alligator clip or the probe to anywhere else in the circuit. And because the probe is connected to the tip of the probe is connected to your 1 meg input impedance on your scope.
+context after: Let's not talk about times 10 probes and things like that. It's a 1 meg resistor. You The worst you're going to do is put a 1 meg resistor across any point in your circuit.
+
+[695] EEVblog #695 - Mailbag Tektronix 2465 Analog Oscilloscopes — Dave Jones (explains)
+context before: So is that how many scopes they manufactured between 1984 and 1990? What would that be? You know, just over like 32,000 or something like that. That seems relatively low, but hey, this was their, you know, one of their most expensive high-end scopes. But I don't know, just for a worldwide market, and Tektronix being the leaders in it,
+TEXT: I would have expected a lot more manufactured than that. And other great features, of course, 50 ohm input impedance, so you can just go, so it's got regular ground DC AC on your 1 meg and your 50 ohms as well. It's also got the detection ring around there for your x10 probe,
+context after: so it automatically changes your scaling factor based on that. Very nice. And of course, it's got separate controls for your waveform intensity, your waveform focus, as you'd find your traditional beam find button here. But it's also got your readout intensity, because it has a separate readout display,
+
+[453] EEVblog #453 - Mysteries of x1 Oscilloscope Probes Revealed — Dave Jones (explains)
+context before: Huge difference, but that's not surprising considering the the relative bandwidth difference there. And of course, the input resistance is going to be different between the two. 1 meg, everyone knows that 1 meg standard input impedance cuz it just goes through to your It's basically just a bit of coax.
+TEXT: When you put it on times one there, basically just a bit of coax. Well, we'll see. Goes all the way through to your scope. But in times 10 mode, of course, it's 10 megohms input impedance because of the extra 9 meg resistor in here, which a lot of people are familiar with.
+context after: And of course, the input capacitance, that will come into play as well. Times 10, it's only 16 picofarads, very small, equivalent to the tip capacitance, which we'll take a look at.
+
+[9lIC3ZzIht4] Junk box Digital Panel Meter Analysis CX101 — Dave Jones (explains)
+context before: dual row pin header on it. Alright, so let's up that to 5 volts, and 200 milliamps, drop it right down, and I've just bodged up a lead here I have this lead, so black, black there, yep, it works! Look at that! And it's slowly going down, that's what I'd expect
+TEXT: because that is capacitive build-up, and yeah, so if you don't touch anything, it will go down. Yeah, so this is 100 meg input impedance this is high, it's not 10 meg, this is really high, so if we wiggle wiggle wiggle wiggle, yeah, around there, yeah, you'll see it go up.
+context after: Whoa, hey, I just overloaded it there. And if we short the input, it'll go back down. Okay, so what I've got is another lead here, now that first one I'm going to skip because it's not connected, so I think I might be one short
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: you can see that we're feeding in precisely 10 volts. And what if we measure in the middle of that? It should be 5 volts, but it's not. It's 9.4.977 volts. And I'll leave those playing along at home to calculate if that is correct
+TEXT: for a 10 megohm input impedance, or I think the 121GW to check the specs. It could be like 11 megohms in parallel with that 100k. But, you know, there's not too much error there at all in that kind of measurement for 100k. And of course, the higher the resistance you go,
+context after: the more error there's going to be with that 10 meg in parallel. But let's try it with the analog meter. Right, so let's check this out. We're measuring our top of our resistance divider up here. We're feeding in our 10 volts. Oh, that's within...
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (explains)
+context before: So that loads your line down substantially and of course you don't need a 1K resistor in here in series. You can basically make it any value you want, make it larger or smaller and you can have it.
+TEXT: Of course, if you put in a 450 ohm resistor, then you'd have the same 10 to one probe as you would here. But the difference is instead of having a 10 Meg input impedance here, this one would have a 500 ohm input impedance and that's going to load down your lines at DC.
+context after: But the interesting thing is that this is 11 puff, 11 picofarads here and at frequency that is going to load down quite substantially. So now we actually have to talk about probe loading whereas this is not going to have much capacitance at all.
+
+[1017] EEVblog #1017 - Enter The World Of Atto Amps — Dave Jones (explains)
+context before: Um but, yeah, you can see our input is going directly over here over to the standoff there into these transform into these relays, which are doing the range switching.
+TEXT: And have you ever seen a 250 gigohm not megohm gigohm resistor before? Well, you have now. That's the input impedance of this thing, by the looks of it. Now, on a quick search, I didn't find anything for these relays here, but I'll have a better look look if I can.
+context after: I'll include it, but these are going to be ridiculously low leakage hermetically sealed relays. Now, I've actually done a video on uh talking about one of the designs I did back in the day uh for a company I worked at where it was a once again measuring high resistances um and at high voltages, and we required a relay matrix in like a massive relay matrix, hundreds and hundreds of relays, and all
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: if the meter is all the way over like that, regardless of which range you're on. So there it is. It translates to 50 microamps full scale. But what does that mean in actual terms of error? If you're measuring the voltage divider, well, you're effectively putting a resistor
+TEXT: in parallel with the resistor in circuit under test. And of course, this is exactly the same for your digital multimeter as well, but this one has a much higher input impedance, or 10 megohms, a nominal 10 megohms input impedance on most of the voltage ranges.
+context after: So it doesn't really affect anything, but really high impedance circuits here. But let's demonstrate. Okay, so what I'm doing is I've got a resistor divider here with 200k resistors. And I've actually tweaked them to be exactly the same. And if we go up to the top here,
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: especially on the high sensitivity ones, the 50k or 100k ohms per volt. They can actually be better than your 10 megohm digital meters. Because even this one, if you take its maximum range here of 1,000 volts, you have to use the other jack over here for the 1,000 volts.
+TEXT: But that's okay. 1,000 times 20k is 20 meg. So this actually has twice the input impedance on that highest range as your typical digital meter. But on all the other lower ranges, forget it. It's much, much worse. And you get that sort of huge amount of error.
+context after: And we can actually see that here on the various ranges. There we are. The 10 volt range, 200k. If you're on the 2.5 volt range, 50k. Grown, 1 volt range, 20k. Well, there it is. There's your 20k ohms per volt range. But if we go right up to 500,
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: If you twist them, it's going to change. If you, you know, it depends where you got this. It'll change from lab to lab, whether or not you're holding them.
+TEXT: It'll change from one part of your lab to another. It'll like just vary all the time because you've got such a large input impedance. You can see that change that I just played around with there on the uh trend chart there, and we can probably do that again.
+context after: Let me get the leads, and I'll actually twist them. Okay, so what I've gone and done now is actually uh twisted the leads like that and you can see that that is significantly reduced the pick up there.
+
+[9lIC3ZzIht4] Junk box Digital Panel Meter Analysis CX101 — Dave Jones (explains)
+context before: So no, not the same thing, but I reckon the pin out's going to be the same. Yeah, 9 volt, 5 volts, common ground, oh goodness, I hope not. Well, we can measure it, and we can test it as well. 0.1%, plus one digit, schmick!
+TEXT: These are really, these are nice panel meters. Two and a half times a second, true differential input and reference. Yeah, those pin outs, oh jeez, that's a dodgy data sheet, isn't it? Can I find better? Ah, this one's better. 100 megaohms input impedance.
+context after: Auto zero, 7 to 11, this is the 7 to 11 volt version, or the 9 volt version. Once again, I, yeah, it can go up to 1000 volts. I think this CX101, we might have the OG here. We might have the original gangster CX101 design
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: The ones built into microcontrollers, they're great. So, when you start trying to push 12 bits inside a microcontroller, you know, you're probably better off going to external. 10, that's why most of them only have 10 bits cuz that's generally all they're good up to.
+TEXT: Now, you see that I've got a couple of voltage buffers down here driving the ADC like this. Now, there's a reason I've actually got that is because when you got a successive-approximation ADC like this, you can't have an arbitrarily high input impedance.
+context after: So, in this case, ADC V out is coming from over here. Look at these 10k resistors, okay? We've got a relatively high input impedance driving this um analog-to-digital converter.
+
+[1016] EEVblog #1016 - Crude Multimeter High Voltage Overload Testing — Dave Jones (explains)
+context before: Trigger that. I've got it set to 5 kilovolts. Let's switch it on and see what we get. I haven't got it hooked up to the multimeter, so it's just hooked up directly to the probe. So there's basically no load on there except the 100 meg.
+TEXT: Oh, let's try that again. Alright, one more time for the dummies. Here we go. Bingo! There it is. And our meter down here, I'll turn that off and be careful, is showing 100 meg. So that's, it's nominating, that's nominal input impedance. So it's bang on.
+context after: And you can see that we've got a fairly, what are we at, 20 milliseconds per division. So it takes, you know, 60, 70 milliseconds to ramp up and switch on here. So obviously it's doing, it's not, I can't remember the tear down, which I'll link in down below.
+
+[1109] EEVblog #1109 - Spectrum Analyser Design Walk-through — Dave Jones (explains)
+context before: It's just all passives, bypassing, and some regulation, maybe things like that. So, nothing special at all. Now, it might look daunting at first with all these distributed element filters and everything else, but as we've seen before, you can see that's pretty much a modular block approach, and I've done a handy little overlay here that will uh attempt to hopefully explain all the different functional blocks and the
+TEXT: signal flow on the board. So, let's get to it. So, let's start by taking a look at the RF input in the top left corner. This section here, of course, contains the 50-ohm input impedance, but that little SOT23-6 package, you'll see four of these here.
+context after: These are actually single-pole double-throw switches, so they can actually switch in the 50-ohm load and various other stuff. So, we'll go to a higher-res photo for this and then zoom in on the RF section here, and we can see that the input is AC coupled there through C10, and then that goes into U1, which is a 955C as all the other ones here, these SOT23-6 parts there, some form of
+
+[91] EEVblog #91 - $50 Multimeter Shootout - Extech EX330, Amprobe AM220, Elenco, Vichy VC99, GS Pro-50 — Dave Jones (explains)
+context before: And as you can see, it's display updating is not fast. It's the same as it looks like, pretty much the same as the main display. So, it's of no real inherent advantage.
+TEXT: Let's do an input impedance test on the Amprobe 220. On the millivolt range, it's got 27 meg, not the standard uh 10 megohm range. So, let's um switch that to 2 volts and it's 11 megohms on the standard uh voltage range and then it goes down to 10.
+context after: So, that can be pretty handy to have uh greater than 10 megohms on the millivolt range. The Extech 330, as you can see, 17 meg on the millivolt range and if we change it, it drops down to 10 meg on the other ranges, 8.7 on the higher ranges.
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before: There we go. We can start to see it. But, of course, we've got I've got a very small load on here and a reasonable value cap. I mean, 0.47 microfarads is no slouch.
+TEXT: And if we drop that down to a 1 nanofarad cap, right back at 1 kilohertz, you can really see the droop now. There it is. Pretty horrible, but that's what you get from 1 nanofarad, even with a you know, a 10 meg input impedance from the scope probe.
+context after: There's no load on there at all. So, look, you have very little time in there to actually reach your value before it starts to droop off and you get significant error pretty quickly.
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (explains)
+context before: ution on there. Beauty. And even better on little coin cells, for example, because, like, 2.5 K load would be very typical. Of, say, a peak load, like, you know, a milliamp or 2, on, like, a small coin cell like this, and if you just measure it on regular volts here, you'll notice that's, oh, 3.3 volts, okay, you turned over to low Z like this, and, wow, look at that, yeah, the ESR of that cell, not too great, is it?
+TEXT: But there was another problem with the design of the BM235, and if I plug it in to an ohmeter over here, yes, that's what they're called when your multimeter is in ohms range, it's an ohmeter, dammit. You'll notice that it's 10 meg input impedance.
+context after: Where's this low impedance mode? Well, if you actually read the manual for the BM235, if you're RTFM, then you'll find that the low impedance mode doesn't kick in until, like, 6 or 7 volts or something like that, and there's a reason why. But if you do the same thing on the 2257, you'll notice that it is 2.3 K.
+
+[1067] EEVblog #1067 - Analog vs Digital Multimeters! — Dave Jones (explains)
+context before: It just does it. Your analog goes hard in the other direction. And if you do it, well, too hard, you might damage your meter movement and actually bend the needle in there. But no, this Simpson is fancy-pansy. It's got one of these newfangled polarity switches,
+TEXT: so we can switch it to negative DC volts without having to change our leads around. Swap them. Beauty. Now the next thing about analog meters is that, well, they're not as high input impedance as your DC volt meter. And that becomes a real issue
+context after: when you're trying to measure things in parallel in circuit. Let me demonstrate with Davecat. So analog meters will actually have their input impedance specified in ohms per volt. And you see that down here, 20,000 ohms per volt DC, and that's very typical of an analog meter like this.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (explains)
+context before: Yeah, so this is just another 595. And there's an analog devices I comparator down there. I won't look it up, but look, they've got the nice creepage slots again, very nice.
+TEXT: So, they're just switching in different paths there. And just the top side of that digital trigger under my head there is the BNC input. Once again, we've got ourselves a solid state relay there to switch the AC coupling, 1 meg input impedance.
+context after: Then they've just got the paths going through there. What's over here? It's a TI jobby. I don't know. Like not too fussed. Don't know what this contamination here on this board is.
+
+[1090] EEVblog #1090 - Sony Mystery Teardown — Dave Jones (explains)
+context before: because they were very expensive. So if you're a company that, like, needed to do some testing, like a, you know, engineering company, and you want to do some vibration or other types of, you know, testing for a couple of weeks at a test house,
+TEXT: you usually wouldn't buy one of these. You'd just rent one. So as you saw, it's got 16 analog inputs here. There's no trimmers on those. Normal 100k input impedance up to plus minus 26 volts peak there. We've got a Sony digital audio tape here.
+context after: We've got a large screen. I'll power it up and show you. And, you know, you can set, like, multiple tape speed, times one, times two data rate, stuff like that. And you can put ID in there and tag and things like that. You can generate test signals and, you know,
+
+[1612] EEVblog 1612 - Siglent SDS1000X HD 12 bit Oscilloscope Teardown — Dave Jones (explains)
+context before: It is lower 456 microvolts as opposed to 630 and 45 as opposed to 62. So, there you go. Um that is more betterer, but you can see that I think the 2000X is updating faster, but if you look at the spec sheet, the 1000X actually has 120,000 waveform updates per second as opposed to 100,000 waveform updates per second.
+TEXT: So, technically it's faster, but that actually looks slower to me. And by the way, I've got them both on 1 megaohm input cuz that's my standard test, but it makes no difference if I will get the similar or same ratio when I put it on 50 ohms.
+context after: There you go, 50 ohms 45 microvolts standard deviation 57 microvolts standard deviation. Of course, YOU KIND OF expect that because not only A is it a different front end, but this has a 350 MHz front end, which you don't get a free lunch.
+
+[1013] EEVblog #1013 - Mailbag — Dave Jones (explains)
+context before: you salvaged them out of products and stuff like that and you check them with your transistor tester. Check the gain. Check the HFE. Hmm, fantastic. I had an analog meter a tricky dick one, tricky dick smith one. 100k ohms per volt Beautiful. This one was only 20k ohms per volt
+TEXT: 100k, it was all about the k ohms per volt. The more the better. 100k ohms per volt. And so if you feed in a volt then it has a 100k input impedance or a 20k input impedance. Feed in 10 volts, it has 10 times more than that input impedance
+context after: not the fixed 10 megaohms that you're familiar with the current multimeters. Anyway, wow. 2 minute teardown. Let's go. It's a thing of beauty. Look at that. It's a TTC Who's TTC? Model C 1001 Made in Japan. All the best stuff's made in Japan.
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (explains)
+context before: And guys JFETs or anything anymore, do they? Uh yes. Yes. Name a niche. Uh one of the best possible niches is, of course, the uh input buffer amplifiers to condenser microphones.
+TEXT: Yeah. Uh condenser microphone preamplifiers where you want staggeringly low leakage currents and staggeringly high input impedances and staggeringly low parasitic capacitances. Got it. And that's what I did for cross-the-road microphones.
+context after: Mhm. Either that 'nother story. Yeah. Either that or I used JFETs with pilot light, also known as like triodes. Tubes. Yeah, tubes. Tubes. No, tubes. Tubes with a c h.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: Now, if we plug in our analog meter in parallel, so we've got 10 meg in parallel with 120k, WHICH IS BASICALLY 120K. WHAT? There you go. It's dropped to 0.33 V.
+TEXT: And if we actually lower the range down to three, well, we can barely see it. 3 V there. Look, 0.08 V. Now, if we go to 0.6 V range, then we're even lower input impedance on this multimeter, and we're measuring zero, exactly as we should.
+context after: And if I go to the 6-V range, which I can because I've got a voltage doubler here, and if we forward bias our diode, there we go. We're measuring our 5 V, or 4.91 V with a bit of a forward bias voltage drop there.
+
+[633] EEVblog #633 - Mailbag — Dave Jones (explains)
+context before: Beautiful. And the cover plate, of course look at that, it slips under there so I can't just a single screw to hold it in place. And all the info you need is on there. Look, we're talking about a spec of 1% there. That's pretty darn good for an analogue meter.
+TEXT: 1.5% over the AC, for the AC 1% on ohms, 2% on capacitance there. Looks like we're talking 100 millivolts up to 1000 volt range there. And of course the 100 kohms per volt is going to give you 100 megaohms input impedance there, up at the
+context after: 1000 volt range. So there you go. Very impressive meter. There's the nanofarad ranges there. There we go, from 1 nanofarad to 100, goes up to 10 mic. Three usable ranges there. Beautiful. So thank you very much Max, that is just awesome. And yeah, I think I love vintage stuff like this.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (explains)
+context before: Hey, there we go. We're in. We're in like Flynn. It's in milliamp mode, but uh volts DC, there we go. 200 millivolts. There we go. Let's switch to two-volt mode.
+TEXT: Obviously, it's got uh high input impedance because it's counting up. So, there you go. Excellent. 200-volt range. There you go. Once you get to 200-volt range, it's not high input impedance anymore, so that's why it's uh quite low.
+context after: But, you switch it down to 20, and yep, it's got that high input impedance. Now, just a very quick check with my uh little resistance box here, 10K. It's around about that, you know, down to the fourth uh digit there, pretty much.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: And if I go to the 6-V range, which I can because I've got a voltage doubler here, and if we forward bias our diode, there we go. We're measuring our 5 V, or 4.91 V with a bit of a forward bias voltage drop there.
+TEXT: See? Input impedance, it's everything. Or another way you could have done this is use your low impedance range down here to actually measure. You're going to get like a 2k auto range, but it's so low, it's not going to measure it.
+context after: But, it will measure the 5 V in the other direction. We're getting a bit more voltage drop there, 0.2 V because it's a lower value load. It's about 1k, 2k, something like that.
+
+[rT0g1QmKE5E] Brymen BM2257 MOV Leakage Testing — Dave Jones (explains)
+context before: We predicted that it should drop to what is it? 9.5 meg, which should go up to like 105 or something microamps on here, but it doesn't. It's still effectively 10 megaohms input impedance.
+TEXT: Now I can go higher cuz this goes all the way to 11. Look at this. And look at that, even at 1100 V it's still effectively 10 megaohms. I mean I can put that into the confuser here and get the precise value and that's 10.02 meg.
+context after: So like it's still it's it's as if those MOVs aren't there. Now I can actually go higher than that. I can actually take it to 1200 V if I do the other dials.
+
+[56] EEVblog #56 - Agilent U1253A OLED Multimeter Review & Teardown — Dave Jones (explains)
+context before: The continuity is actually quicker, look. It's It's slight It's probably, you know, twice as quick as the ohms range. Why? Huh. And yes, the burden voltage isn't too bad either, 2 millivolts per milliamp burden voltage.
+TEXT: So, that's you know, pretty typical. It's on par with the Fluke and and other decent high-end meters. So, that's good. Also, any good top-of-the-line meter will also have a very high input impedance on the low millivolt ranges.
+context after: In this case, anything less than 1 volt is greater than 1 gigaohm. What I expected with this dot full dot matrix display, you can do whatever you want on there.
+
+[85] EEVblog #85 - High Voltage Oscilloscope Probe Design — Dave Jones (explains)
+context before: Hi, welcome to the EEVblog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. All right, go for your life. Okay, um the probe I was after had to measure voltages up to about 5 kV and I didn't want to buy a Tektronix uh high voltage probe for half a quadrillion dollars, so I decided to roll my own.
+TEXT: I wasn't too worried about ultra high input impedance because I'm measuring uh quite high uh energy sources with low source impedance. So, I figured I'd kick off with something with five high voltage 10 meg resistors in series.
+context after: So, I've got five by 10 meg resistors. Each of those is rated at 3.5 kV handling. And over here, since we've got 50 meg uh total load impedance over here of 50k comprising 56k fixed resistor, 1 meg worth of uh uh oscilloscope input resistance, and another uh 1 meg resistor hung off it.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: It's got three orders of magnitude more leakage. So, there's going to be a reverse leakage current through there. What is that value? We can calculate it with Ohm's law.
+TEXT: We've got 4.73 V divided by 10 megohms. Get your computer out. And that value is 473 nanoamps or 0.473 microamps. Doesn't sound like much, but when you've got a high input impedance multimeter like this, it's going to matter.
+context after: And that's why you're reading the voltage there, and that's why with a Schottky diode of 10 nanoamps, run it again. So, 10 meg * 10 nanoamps, should be able to do that in your head.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (explains)
+context before: And it looks like we're 200 milliohms out there but that's the lead. But the problem is it doesn't have a relative function. I can't null that out. One meg is bang on.
+TEXT: 10 meg near enough for Australia. And for those high input impedance on millivolt uh mode aficionados, sorry to tell you it's 10 meg. Whereas we we swap it over, the Fluke actually it actually has high input impedance on it.
+context after: You ever like that? We got it's neither here nor there in this class of meter. Doesn't matter. Okay, ohms auto ranging speed. I got both meters connected in parallel so that's why we're getting a reading there.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (explains)
+context before: It uh supports uh two-wire um RTD, four-wire both two- and four-wire RTD, two- and four-wire thermistor as well, but you know, no standard K-type thermocouple, and it doesn't come with any temperature probes.
+TEXT: Now, if we go into our basic DC volts uh measurement mode here, we can actually uh select our input impedance um by the way uh 10 meg or auto, and you'll see in auto, it of course goes into a you know, gigohms um high Z.
+context after: There it is, it's got it on the display. Um high impedance uh input mode, so you're going to see that charge build up, and yeah, there you go. You see the uh display completely build up until it probably goes uh overload, but that's really handy to be able to select that, because sometimes you don't you know, that's annoying.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (explains)
+context before: Where and also it shows 192 millolts here. I'm supposed to be 100 millolts RMS. I mean, it's an RF sig gen. So, it's going to assume that there's a 50 ohm load.
+TEXT: I'm not using the onemeg input impedance. Let's try the 1meg. That's interesting. There's not much difference there between the one meg and the uh 50 ohm. So, anyway, um yeah, it doesn't it doesn't like that triggering.
+context after: Why are we getting so much trigger jitter? There's no trigger filters or or anything here. We've just got rising condition, ring rising, falling. There's no either or. Um, so you know it hasn't got that basic scope functionality.
+
+[1715] EEVblog 1715 - Euler Precision eSAP-30 3GHz Active Probe REVIEW — Dave Jones (explains)
+context before: So, if you're after extreme precision at 3 ghahertz, you know, this may be not the uh best uh tool in the shed, but anyway, it's decently flat. Um and they've got the actual magnitude figures here.
+TEXT: Yes, this is a 10 to one probe. And uh the input impedance measurement, we've got our return loss. Um, so we're just an S parameter uh measurement here. Got our little smithy chart and the green is the response there.
+context after: And if it was absolutely perfect 50 ohms across all frequencies, you'd expect a perfect uh circle here. It's on the bottom side of the Smith chart because it's capacitive, not inductive, which would be on the positive chart.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: And then, oh, look, it's even going like like 10 volts, 1 volt, right? It it just doesn't know what to do. It's just absolutely nuts. And you turn on the smoothing filter, and well, it's still it's a little bit slower, of course, but the those high voltages are still there.
+TEXT: It's not getting rid of them. And once again, we're still 10 megaohms input impedance. But you'll see that we're 0.1 power line cycles. So, I'll turn off the filter here, and we'll change that to one power line cycle.
+context after: Bingo, it's gone away cuz we're doing at least one integration over one full 50 or 60 hertz power line cycle. Nice. And as I said, uh meters will typically have like a setup in there for 50 or 60 hertz.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: operational or our practical operational input range. But, if you want to go just by the data sheet, of course, where is it? Then, you'd have to allow the 1.5 volts full.
+TEXT: But, in this case, we're getting around about a volt in practice measured. And I'd love to be able to show you the charge waveform on that cap there, but I can't because my scope probe * 10 is 10 meg input impedance.
+context after: 10 meg 10 meg As you can see, look, the LED just stays on permanently unless I Whoop. There you go. It stays off and then once it triggers on, it just stays on because of the bloody scope probe.
+
+[1057] EEVblog #1057 -  µCurrent Murphy — Dave Jones (explains)
+context before: Bang on, and it's changed yet again. 15.1 mV. Let's go over here. It's dropped back down to nine. Aha, now we're able to confirm it with other meters. But, if we actually disconnect the Keithley meter, it causes a problem.
+TEXT: And no, it's not the input impedance down here. It's a standard 10 meg, but I switch it to auto and it causes exactly the same issue. But, only when we put two meters in parallel, does it actually cause a problem.
+context after: And sure enough, if we actually put pretty much any two meters in parallel, we're able to get something. Um once again, it's a different value every time. So, you might think, "Aha, when you put multiple 10 meg input resistances in parallel, that might do it." Well, let's check that out.
+
+[1382] EEVblog 1382 - Keysight EDU34450A 5.5 digit Bench Multimeter TEARDOWN — Dave Jones (explains)
+context before: Done a recent video on this. This actually spurred that recent video on the number of power line cycles. So, I take these probes, I plug them in here. Yep, there it goes.
+TEXT: It's doing exactly the same thing. There we go. It's just cycling through. It's just cycling through. Yeah, it's switching and that's 10 megaohms input impedance. I switch it to auto, which is high impedance mode.
+context after: It still does it. And if we go to a 1-V range here, it just overloads because it's picking up the 50 Well, no, it didn't do it. There you go.
+
+[727] EEVblog727 HowToKillAnOpamp 1920x1080 — Dave Jones (explains)
+context before: So this just feeds feeds the current straight through like that. So no big deal. Uh obviously 60 ohms. There you go. That is why it's loading down my voltage reference.
+TEXT: I've definitely well and truly killed it. This is supposed to go just directly to the input of a um you know high precision um CMOS op amp. So it should effectively be you know infinite input impedance basically.
+context after: And nope it's shorted out. So yeah. Oops. And it's going to be that puppy there, the OPA 2376. So it takes the input uh directly from there. And um it just it's it's a window comparator.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: We're reading directly across any particular shunt resistor every in this range, this range, or this range up here. But something interesting happens if we switch it to the amps range here, you can see that actually the current is switched just through the 10 milliohm shunt resistance, but we're actually tapping off via the additional shunt that 10-ohm shunt resistor, we're actually tapping the voltage off that.
+TEXT: And the reason that we can do that is because the input impedance of our amplifier is extremely high, essentially infinite. There's no input current, so there's no voltage drop across that 10 ohm shunt resistor.
+context after: So, we're actually using one of the shunt resistors as a tap to measure the voltage. So, that's actually not an uncommon technique, and you guessed it, we can apply it here as well.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (explains)
+context before: The other problem with uh chopper amps is that um when you overload them, their recovery time can be quite slow, you know, it can be you know, 5 milliseconds, 10 milliseconds or something of that order.
+TEXT: The other thing you got to watch out for when you're designing with chopper amps is charge injection caused by the switches. Now, this can be reduced by lowering the input impedance and your feedback resistors.
+context after: So, you really got to make them as low as possible to get the maximum performance out of a chopper amp. Now, I actually used a Maxim MAX42 39 chip in my little adapter I've shown you before before for measuring our current.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: And you can see ohms per volt there. So, it's got 10,000 ohms per volt. So, we're on the 12-V range. 12 V * 10,000 is 120k, not 10 meg.
+TEXT: There you go. Using another ohmmeter, we can actually measure that. 120k input impedance, as opposed to 10 meg. So, with our reverse biased Schottky diode here with 10 meg, we're measuring practically the 5 V.
+context after: Now, if we plug in our analog meter in parallel, so we've got 10 meg in parallel with 120k, WHICH IS BASICALLY 120K. WHAT? There you go. It's dropped to 0.33 V.
+
+[xUKf-4rv_sQ] EEVacademy #8 - Howland Current Pump — Dave Jones (explains)
+context before: Um where the path through the resistor is down here. And I'll just make more obviously labeled circuit. There you go. Where the path is down here for the current.
+TEXT: And the reason it's constant is only because you've got a constant voltage across this resistor. Now, a unity gain buffer has a few properties to it. It has the property that the input is very high impedance.
+context after: A very high impedance when compared to these values here. And the other property is that the output is very low impedance as in it has it has a very low output resistance.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: And the maximum clock rate in megahertz at different voltages. And as you can see, if you're operating in a low voltage, we're operating at 3.3 volts. So, it's going to be like in there somewhere.
+TEXT: It's going to be another curve which goes in there and down like that. As you can see, if you've got a 10K input impedance, it's useless to you can't get a 0.1% least significant bit deviation on this thing.
+context after: So, the input impedance matters. In practice, we may not um, need these op amps down here. And if we don't need them, well, we can just not insert it and then just short out pins two and three and five and six there.
+
+[801] EEVblog #801 - How To Design A Digital Clock — Dave Jones (explains)
+context before: Effectively so ultra, you can build really great ultra low power designs with them, because there are effectively infinite input impedance like that. And uh you can like the pull-ups, you can use like 10 meg pull-up resistors.
+TEXT: So, you're not pissing away any current at all. 10 meg works just fine on a 4000 series CMOS. Although, it's not a hard pull-up. So, if you had a long line, but as you can see, I got this long line in here.
+context after: And it you know, 10 meg, it was it wasn't picking up anything. But yeah, you got to be careful. But hold on to your hats, folks. This is where it gets nasty, and this is where it actually took me quite some time to figure out what was going on again after all these years.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: Make sure it's got millivolts. Now, on the ohms range, you want a meter that goes from uh it goes from hundreds of ohms, say, a bottom range of 200 ohms up to a top range of at least 20 megaohms.
+TEXT: You want more than 20 megaohms, because that's very common in electronics to measure such high-value uh high such high-value resistances. Another thing you got to look for in a meter is its input impedance.
+context after: Now, for a digital multimeter, a decent one will be uh at least 10 megaohms input impedance. You can get ones that are cheaper down at one or two meg.
+
+[286] EEVblog #286 - Orders Of Magnitude — Dave Jones (explains)
+context before: And that's 14 orders of magnitude. Incredible. And one order of magnitude is important in electronics for lots of rules of thumb reason, measurement uncertainties, and things like that. Let's take an example of a multimeter measuring a resistor divider here.
+TEXT: We've got two resistors here. One is a fixed 1 meg resistor, which we're measuring across with our digital multimeter. And as you should know, a digital multimeter doesn't have an infinite input impedance.
+context after: It's going to be roughly 10 megaohms or thereabouts. Most of them are anyway. Now, when you put 10 megaohms across that 1 meg resistor, that's going to cause a measurement error.
+
+[1609] EEVblog 1609 - Composite Amplifier Tutorial + Practical Demo — Dave Jones (explains)
+context before: Well, how do you do it? Well, you know, you've picked your buffer amplifier here. Ah, I can drive the coax at 1 gig. No worries, right? But you look at the specs, and it's just got horrible DC precision, right?
+TEXT: So, what can you do? Composite amplifier, of course. So, let's say you needed your one you know, standard 1 meg input impedance here. Well, you can choose your A1 amplifier here to do all the DC precision.
+context after: So, you'd select it for, you know, very ultra-low DC offset, low drift, low noise, everything else, right? So, this could handle your DC and low frequency stuff, but it's no good.
+
+[rT0g1QmKE5E] Brymen BM2257 MOV Leakage Testing — Dave Jones (explains)
+context before: So that's what all the UL testing is designed to do. They put input transients on the input here, very you know various like half wave forms and stuff like that, really you know big peak energy stuff in there to see if the MOVs can actually survive that well and the meter can actually survive that overload protection.
+TEXT: But these MOVs, these are going to have a leakage current through them. So you know we've got our nominal 10 megaohm input impedance there. So what happens to our nominal 10 input impedance at say 1000 V?
+context after: Well, it's interesting. So let's measure it. So you can actually get this entirely from the data sheet and this is the post by Fluffy Dust. I'll link in the data sheet down below for these CNR brand MOVs.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: Input Z, which is input impedance or input resistance. 10 meg or auto. Auto means basically there's no input resistance. It's really, really high. It's gigaohms. And you know that order of magnitude thing I was talking about on the whiteboard where if you had like one order of magnitude greater, in this case 10 meg ohms input impedance of the meter, then it causes like roughly that 10% error.
+TEXT: Well, you have to go through the calculation. We'll go through that in a second. But and then if you have two orders of magnitude, or in this case that'd be 100 meg input impedance and you get 1% error.
+context after: Or if you go up to like gig ohms and you have several orders of magnitude, then it's not really going to affect it at all. And that's why I measured 5 volts.
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (explains)
+context before: And how you can get that? Well, you can get the contamination of your PCB flux residues. You can get dust and dirt and grime and fingerprints and all sorts of crap.
+TEXT: If you've got a very sensitive input node like some of these system Well, a lot of multimeters on the lower ranges will have like effectively you know, many gigaohms input impedance effectively open.
+context after: That's why you see all the digits on the millivolts range just you know, it just charges up because these things um, aren't just 10 megaohms. They're very high impedance nodes.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (explains)
+context before: So, uh that's, you know, proper RG58 coax. Um that should be matching, but it's not. You know, I can understand if you switch it to one meg and then it's out ski, but uh no.
+TEXT: So, I'm not sure what's doing there. I'm actually measuring 55 ohms input impedance there. So, that's a fair bit that's like 10% out from the nominal 50 ohms. So, I'm not sure what's doing there.
+context after: Where's our second channel gone there? There used to be a like a in the older version, there used to be a two channel version there. Okay, now we have trigger stabilizer option.
+
+[778] EEVblog #778 - Oscilloscope Vertical Confusion — Dave Jones (explains)
+context before: But it allows you to just to set that manually. So, it allows you to use any type of custom probe at all, including amplifiers as well. If like in the case of a typical switchable times one times 10 like this, times one of course the signal just goes straight through.
+TEXT: Times 10 is actually a misnomer. It's actually a divide by 10 probe. It's got a 9 meg resistor in here, 1 meg input impedance. It actually divides your attenuates your signal by a factor of 10.
+context after: So, the 10 times that it actually shows on the probe here. Um, that's like a think of that as a reminder to set it to 10 times here on your probe uh setting on your menu.
+
+[634] EEVblog #634 - Analog Multimeter Teardowns — Dave Jones (explains)
+context before: Now, the Unigor has a smaller uh, meter movement. These are quite large meter movements, but these ones are only 20 k ohms per volt meter movement. And this one has a very high sensitivity 100 k ohms per volt meter movement.
+TEXT: So, much more sensitive, higher input impedance, which was a big deal back in the day. Now, the Metrawatt's pretty unique in that it actually measures capacitance. It's got a capacitance range.
+context after: I had an old Dick Smith multimeter which measured capacitance once, but that's the only other meter that I know of analog meter that I know of that measures measures capacitance as well.
+
+[482] EEVblog #482 - Retro Iskra Multimeter Teardown — Dave Jones (explains)
+context before: It's rated for operation at 23° C. Operating temperature 0 to 55, storage temp. Frequency range for the AC of course, 30 hertz to 20 kilohertz. Once again, assuming average responding powered from four NiCad batteries.
+TEXT: There you go. Recharge time 16 hours. Doesn't tell you what the consumption of this sucker is. It might up here anyway. Standard 10 meg input impedance. They even specify the capacitance there.
+context after: Three readings per second. Not bad at all. Um settling time 1 second max for all DC ranges. So looks like it might have a bit of a settling issue there and and maximum potential on the ohms V connector with open sockets plus minus 14 volts.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (explains)
+context before: Look at it going burko. What like Wow. What? There's something seriously wrong with the auto range and it seems to be my hand the capacitance of all the crap.
+TEXT: So it must have a high input impedance and it's just picking up all the garbage and just displaying the segments and don't like it. Wow, I just want to like call the white van for this thing.
+context after: It's not doing it anymore. But anyway, it does work. No worries. But hmm, anyway, being a Amprobe of course Fluke, this one is UL listed as well. That's quite nice and you know, it it feels and looks quite decent quality.
+
+[584] EEVblog #584 - What Effect Does Your Multimeter Input Impedance Have? — Dave Jones (explains)
+context before: So, let's actually uh probe this in parallel. We'll measure the same voltage, of course, but let's see if it changes. Ta-da! Look at that. It's dropped just by putting another 10 meg in parallel.
+TEXT: It's affecting our reading because the impedance of that circuit is now changed. So, our voltage divider ratio has changed. So, any good precision multimeter will have a high impedance mode.
+context after: Sometimes on uh like handheld multimeters, it's only on the millivolt range, for example. You may not get it on the voltage range. This uh uh Agilent uh meter uh 6 and 1/2 digits doesn't do it on some of the higher voltage ranges, like the hundreds of volts, but I think up to the 10 V range, it allows you to have uh effectively infinite input impedance.
+
+[1715] EEVblog 1715 - Euler Precision eSAP-30 3GHz Active Probe REVIEW — Dave Jones (explains)
+context before: If you want to sound smart in the industry, oh yeah, it's a couple of puff, you know, not a couple of poparads. Couple of puff. One poparad uh input capacitance, even though this is three, but we'll just round it to one parad.
+TEXT: Then you whack that in, it's 159 ohms. So your one megga ohm input impedance of your probe is suddenly gone to 159 ohms, eh, you could come a gutsa that could really load down your circuit.
+context after: So the lower input capacitance the better. and active FET probes. Um, instead of just having a coaxial cable, they will have a uh little FET amplifier in the front end here.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Let's just say that's 1 volt. It's not quite to scale, but you'll get the idea. And then our output will be the inverse of that. So, when the input rises, the output goes negative because it's an inverting amplifier.
+TEXT: Now, of course, one of the disadvantages of the inverting amplifier compared to the non-inverting we saw before is that as you can see there is input current coming from your load here.
+context after: So, you don't want to use this where you have a high impedance load because then it can change the gain equation and mess everything up. That's where you want a non-inverting amplifier or at least a buffer.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: that number of power line cycles. It's changing our sample rate effectively. So, there you go. We get sampling artifacts just like you would on an oscilloscope or a data logger or anything.
+TEXT: A bench multimeter is no different. It's just a sampling system. That's it. It's not rocket science. Just how these things work. And of course it all has to do with the input impedance.
+context after: That 10 megaohms is actually quite high and it it picks it all up and if you put go whack a 1K resistor in parallel with it it's going to knock it on the head and and if you go and measure like a low impedance voltage source like a battery cuz it's got like milliohms output well a source impedance and you measure that, that's why we can get just the probes
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: Right, okay, I'm putting down our 10 MHz signal by the way, it's 10 meg up there. It's that's the hardware frequency counter is working in absolute treat, okay? Watch this.
+TEXT: I've only got channel one on, right? I've got 1 megaohm input impedance. Turn on channel two. The waveform goes to buggery. Enabling that second input is changing the signal integrity.
+context after: You notice that it's not it's not really the jitter. It's it's not a problem in there. It's actually changing that the fidelity. And does that change with 50 ohm?
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (explains)
+context before: So, let's just go minus2 to + two. Okay. Okay, there we go. So, we've adjusted that, but that's in volts, right? That's in volts. And where is like we're like jumping to full scale here.
+TEXT: I don't know. Did I do something to it in the tear down? I shouldn't have. AC coupled. Okay. Whoa. Hello. Whoa. That's changed dramatically. What's going on? 1 megga input impedance.
+context after: I can hear the relay click for the 50 ohm, but no, we've got a 50 ohm input impedance. We should be getting a flat line there. What the heck's going on?
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before: So, there you go. That's, you know, that's the sort of trade-off you're going to get and this is with no, effectively no load. Well, the load is my scope probe.
+TEXT: It's the 10 meg of my scope probe because the input impedance of the input bias current on this op-amp is only 1 picoamp. It's a very low one. So, you know, there's nothing in there.
+context after: There's going to be some diode leakage in there, but yeah, we've got our 10 meg scope probe. And in this case, the leakage of our 1n4148 diode, it's going to vary a hell of a lot with temperature, but at room temperature, you know, it's going to be in the order of like 25 nanoamps or something like that.
+
+[801] EEVblog #801 - How To Design A Digital Clock — Dave Jones (explains)
+context before: So, I can increment the seconds at 10 times per second. I can also increment the tens of minutes as well. But, it had a neat little thing, whereas if you put the switch right in the middle, okay, it was break before make.
+TEXT: So, essentially, the input to this CMOS chip was floating here, the clock input. And if you know anything about CMOS 4000 series CMOS, they are essentially infinite input impedance.
+context after: So, any noise at all being picked up on that line, especially the big long antenna line, there you go, going into the back, switch in, this big long line going over with a 50 hertz running everywhere, right?
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (explains)
+context before: There's not many of them on the market. There may not be anything at this price point. I stand to be uh corrected. I have not done my research at all before uh opening this box.
+TEXT: Oh, input impedance, 50 ohms. Nice. Oh, and touch screen as well. Sorry. Yes. So, that's all right. Full band. Oh. Hello. Look. Okay. Oh, right. Okay, because we're in 12-bit mode.
+context after: I bet you it can't do that. Then why have it? Why have those options um show up if you can't have those things at all. So, changes a does a lot of relay clicking in there, let me tell you.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (explains)
+context before: The vibe isn't there. There's no good design practices for um a 2000vt range. Anyway, let's test it. 2500 volts. Here we go. test d 20 meg 20 meg. We've got over voltage, but it's good.
+TEXT: It's showing negative. Why is it showing negative? But there you go. Nothing's breaking down. So 20 meg input impedance. I didn't actually measure the um input impedance of that.
+context after: I guess it's 20 meg. So there you go. It's surviving 2500 volts. Lucky or good design? Didn't see anything there that uh says it's good design. I think they're lucky.
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (explains)
+context before: So, you know, everything there level will set to 50% on trigger, etc. It's got all the mod cons. Come standard with a single USB. It would have been nice to get dual as we might see later.
+TEXT: And of course, on this sort of price point scope, you don't expect times 10 probe detection or any sort of advanced probe. So, you just got your basic 1 megaohm input impedance.
+context after: No 50 ohm stuff, but you can just just just buy yourself an inline 50 ohm terminator. No worries. Now, there is one little thing that's a bit disconcerting with this.
+
+[1715] EEVblog 1715 - Euler Precision eSAP-30 3GHz Active Probe REVIEW — Dave Jones (explains)
+context before: Let's go to Davecat. And I've done videos on passive probes as well and how they're constructed and all the rest of it. But basically, when you're measuring stuff with whatever probe it is, uh, when you're measuring high frequency, the capacit the input capacitance of your probe matters.
+TEXT: And these active fat probes, they're quite low. Look at this. Um, at like it's 1 megga input impedance, but it's less than three puff or three poparads there. So, uh, very nice.
+context after: not as low as like some of the other like really expensive uh commercial uh probes out there, but still it's going to be better than your typical uh passive probe.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: No contest. And the good news is it does go down to 1 mV per division. It's a It's not bad at all. I've got a 50 ohm terminated input here.
+TEXT: And but that's set to 1 meg input. And it's about one division there. So about 1 mV of noise in that mode. And if we switch to 50 ohm terminated mode, it kind of almost halves.
+context after: And that's on full bandwidth by the way. And if we change the bandwidth here, we can lower the bandwidth to 20 MHz. That's not bad at all. I like it.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (explains)
+context before: And then they've just got two uh high-value input protection resistors here to because it's going directly into the chip set there just for some uh current limiting protection for the input pins here in case there's a slight possibility of overload.
+TEXT: I can roll. And they don't have to be uh precision, of course, cuz this is high input impedance. That's why you've only got uh 1% tolerance there, just Joe Blog's resistors.
+context after: Now, let's take a look at our volts and ohms input down here. This is our input jack, and then we've got five resistors in series like this, and they are these puppies in there.
+
+[1564] EEVblog 1564 - Agilent/Keysight U1273AX Multimeter Repair — Dave Jones (explains)
+context before: Right? And then we can measure that cap out of circuit. So, even though this is in circuit, we should measure in the order of 10 meg there. And sure enough, there it is, right?
+TEXT: 9.9 That might eventually go up to 10. So, we might have another meg here and it might be like a total of 11 meg input impedance there. But yeah, so that's across that cap.
+context after: So, it doesn't take much leakage at all for that to become a problem. And of course, on the 200 mV range, it doesn't use a divider or 300 mV range, it doesn't use a divider.
+
+[1718] EEVblog 1718 - Cheap 1GHz Oscilloscopes are Useless? ($5 DIY 1GHz Resistive Probe) — Dave Jones (explains)
+context before: And of course, you don't need a 1K uh resistor in here in series. You can basically make it any uh value you want. Make it larger or smaller and you can have it um of course, if you're putting in a 450 ohm resistor, then you'd have the same uh 10 to 1 probe as you would here.
+TEXT: But, the difference is um instead of having a 10 meg input impedance here, this one would have a 500 ohm input impedance. And that's going to load down uh your lines at DC.
+context after: But, the interesting thing is that uh this is 11 puff, 11 pica farad here. And at frequency, that is going to load down quite substantially. So, now we actually have to talk about uh probe loading.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: And just to show you the actual waveform that we are picking up here, what I've got is I've replaced the multimeter leads with just uh some banana plug leads flapping around in the breeze there, and I've got a uh 10:1 uh probe directly coax connected across there.
+TEXT: So, we've effectively got a 5 megaohm uh input impedance now uh total, but we're going to be, you know, that's still quite high enough to pick up uh the noise and stuff.
+context after: So, if we go in here and we have a look at our trend chart, you can see that we're getting like plus minus a volt there. Does that correlate with the oscilloscope?
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (explains)
+context before: I'm not sure if that's just I didn't hear a relay click. Between DC, AC and ground. Hang on. No, I don't hear a relay click. So, that could ground could just be a software grounding thing.
+TEXT: It may not actually be a physical grounding. Input impedance can't change it. I don't know whether it I don't think it has a 50 ohm option. So, why even put it there?
+context after: Why even have it there if you're not going to uh offer 50 ohm impedance. No, yeah, 1 megaohm standard 1 megaohm only 16 peak 16 puff input capacitance. Um oh, by the way, here's a bit of a trap.
+
+[1747] EEVblog 1747 - Schottky vs PN Diodes & Measurement Traps — Dave Jones (explains)
+context before: There you go. Using another ohmmeter, we can actually measure that. 120k input impedance, as opposed to 10 meg. So, with our reverse biased Schottky diode here with 10 meg, we're measuring practically the 5 V.
+TEXT: Now, if we plug in our analog meter in parallel, so we've got 10 meg in parallel with 120k, WHICH IS BASICALLY 120K. WHAT? There you go. It's dropped to 0.33 V.
+context after: And if we actually lower the range down to three, well, we can barely see it. 3 V there. Look, 0.08 V. Now, if we go to 0.6 V range, then we're even lower input impedance on this multimeter, and we're measuring zero, exactly as we should.
+
+[891] EEVblog #891 - Siglent SSA3021X vs Rigol DSA815 Spectrum Analyser — Dave Jones (explains)
+context before: I much prefer the Siglent that it actually has the preamp right here on the main menu, but it's like Yeah, pretty much the same. But Rigol a few more options.
+TEXT: It's got 75 amp input impedance for video staff corrections and like you know, just a couple of more options. But apart from that, they've tried to rip it off.
+context after: Go into the bandwidth menu here. The resolution bandwidth. And look, VBW average type. Okay, detector type is here which is different because the Rigol combines the uh and the detector whereas the Siglent actually has a detector menu here, which is, you know, slightly different.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: Well, yeah, we'll see. Standard eight-bit bit AD converter and the gain range 10 millivolts to 5 volts with a plus minus 5 volt maximum on the times 1 position or I assume plus minus 50 volts.
+TEXT: There we go with the times 10 probe. DC accuracy 3% standard 1 meg 25 puff input impedance. Great. Coupling DC only? Are they kidding? No AC coupling at all?
+context after: Fail. Geez, you've got to at least have AC coupling on the thing. That's just garbage. Diode input protection, yeah, that's all I'd expect. And it doesn't have looks doesn't have anything buffer size 4K memory.
+
+[1399] EEVblog 1399 - DC Fundamentals Part 3: Voltage Dividers — Dave Jones (explains)
+context before: Well, you have to go through the calculation. We'll go through that in a second. But and then if you have two orders of magnitude, or in this case that'd be 100 meg input impedance and you get 1% error.
+TEXT: Or if you go up to like gig ohms and you have several orders of magnitude, then it's not really going to affect it at all. And that's why I measured 5 volts.
+context after: Cuz when we had that meter set to effectively infinite input impedance, it's almost as if like it's an ideal multimeter and like there's just no load on there at all.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (explains)
+context before: It's a divide by 10 attenuator. Times one is just basically straight through. And because your oscilloscope has a one meg input impedance, that means in times one mode, this probe has a one meg DC input impedance.
+TEXT: But when you switch it to times 10 mode, it puts a nine meg resistor in series with that, giving you a nominal 10 meg input impedance on your one meg scope.
+context after: So these probes are really good for, you know, lightly loading a circuit, a DC circuit that is. We've got to get into AC. And they come standard with your antenna ground connection like this, and of course your easy hook for probing in your circuit, or you take that off, and of course you can just probe like that.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (explains)
+context before: I guess it's 20 meg. So there you go. It's surviving 2500 volts. Lucky or good design? Didn't see anything there that uh says it's good design. I think they're lucky.
+TEXT: Sure enough, that is 20 meg input impedance. There you go. Didn't even occur to me to uh measure that. But uh does it still work? Well, let's find out.
+context after: Sure enough, measuring a 1000 volts. Bang on. No pun intended. There was no bangsky. So, that's okay. But yeah, I think they're lucky. Well, you didn't think I was going to leave it there, did you?
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: You want more than 20 megaohms, because that's very common in electronics to measure such high-value uh high such high-value resistances. Another thing you got to look for in a meter is its input impedance.
+TEXT: Now, for a digital multimeter, a decent one will be uh at least 10 megaohms input impedance. You can get ones that are cheaper down at one or two meg.
+context after: Don't get those. Get a 10 megaohm input impedance, and here's why. Because when you're measuring a circuit, if you've got a circuit like this, and say there's two resistors here, and you're measuring um with your digital multimeter here, if you're across a voltage across a component, okay, your digital multimeter is going to have effectively a 10 megaohm resistor in it.
+
+[72] EEVblog #72 - Let's Design a Product — Dave Jones (explains)
+context before: So, you don't want to get extra induced error there, but most digital multimeters are going to be 10 megaohms. Now, if you put 10 megaohms, if you do the math, 100 ohm in series with 10 megaohms, the error is negligible.
+TEXT: In fact, you have to get down to about 100 K input impedance of the meter before the 100 ohms starts being a problem at about 0.1 uh percent error.
+context after: So, really, it's, you know, it's 100 ohm is a good value to protect it and not provide excess error when you're driving a meter. One of the big things to take into account is the type of battery, the battery voltage, and also your compatibility with the main device you're using.
+
+[rT0g1QmKE5E] Brymen BM2257 MOV Leakage Testing — Dave Jones (explains)
+context before: 700 V. Oh, there you go, 72 microamps. 800 V. So 82.6 microamps. Interesting, 900 V. So yeah, now the leakage looks like it starts coming into play, but really that's nothing to quibble about.
+TEXT: So 1000 V AC 104 microamps or 103.6. There you go, 1100 V AC. For those curious, that is 9.63 meg. So I'm still not a big deal at all.
+context after: No worries. Catch you next time.
+
+[658] EEVblog #658 - Mailbag — Dave Jones (opinion)
+context before: That's why they call it a microvolt one. Yeah, it's not like, you know, 5.5 or 6.5 digits or anything, but eh, you know, still quite an accurate meter and the specs are on the bottom. I love it when meters have specs on the back like
+TEXT: this. There you go, it's not too bad. 0.04% basic DC volts, 0.03, that's on the lower ranges, 0.03% plus one digit by the way, so yeah, that's pretty good. And unfortunately it doesn't have high input impedance mode though, but yeah, it's still pretty good.
+context after: And down in the resistance, you know, we're talking 0.04% down there plus one digit. So yeah, not too shabby. If you can pick one up real cheap they can be a handy little bench meter. There we go, we pop the lid off and that's what we get.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (opinion)
+context before: And they so they changed that and fixed it and everything's good now. So I was kind of waiting for like cuz I didn't know whether it was a hardware problem or if it was a hardware problem, I you know, I didn't want to promise a December delivery cuz it would have just been blown out the water.
+TEXT: Um, so yeah. Had a question earlier about input impedance is someone asked, "Oh, it's your standard 10 11 mega whatever." Sorry, I don't know the exact number off the top of my head.
+context after: It's you know, your your standard 10 mega-ish input impedance except if you're on the low impedance range where it has a HTC uh directly across the input basically. And then that starts out at about 2K 2K as it's cold it's cold value and then if you hook it up to mains it'll heat up due to the current going through it and it'll go up and stuff like that.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (opinion)
+context before: [laughter] Whoa. Whoa. There. There we go. There we go. Whoa. There big fella. Slower. There you go. So, there there is our sig gen. But we do have some ringing on that input there.
+TEXT: That's That's not the best. Um, so there's a little bit of mismatch there. Don't know if that's that 55 ohms versus the 50 ohm and 26.32. So 32 is 1 gig.
+context after: Um, that's not 2 GHz bandwidth, but I think we're at the limit of our Leo Bodnar pulse gen there. But um, yeah, we're getting some ringing on that. I don't know.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (mention)
+context before: And they also come with a compensation adjustment down the bottom here. Sometimes they might have a high frequency adjustment as well. But these passive probe designs can go higher than that.
+TEXT: This is, I believe, correct me if I'm wrong, the highest bandwidth passive probe on the market, the Tektronix TPP 1000. It's a 1 gig probe. Look at that. Once again, 300 V rated, exactly the same 10 megaohm input impedance, but it's got lower input capacitance.
+context after: 3.9 pF. We'll talk about that later on in the video. And these things aren't cheap. This probe costs about 800 bucks each. So, for my mind, these are the best bet, especially if you're working on high frequency stuff, but just the best for everyday use, because most of the time you're not going to use that times one switch.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (mention)
+context before: It's interesting. It's picking up something. But of Of everyone knows what it's picking up. He's just picking up mains and crap, right? And sure enough, if we short the probes, it is zero.
+TEXT: And we can go back to our uh number display there, and zero volts. And we take our hand off that, and there we go. It's going up. .3 .5 .7 Once again, this is 10 megaohms input impedance, exactly the same as our 10 megaohm input impedance multimeter here.
+context after: So, why the difference? Well, I'm glad you asked. It has to do with the number of power line cycles or the integration time of the multimeter. Yeah, typical handheld multimeters are like these.
+
+[Y7t6BIhBZhc] High Frequency Active FET Probing DEMONSTRATED — Dave Jones (mention)
+context before: So it's just, that's a regular BNC, but it just plugs in. It's all captive and they usually have a little lever in there to clamp on the front of your scope. So these things are usually very pricey. You know, they start in the 4-digit category and
+TEXT: go up to like 5 digits. And this one here is a 2 gig bandwidth probe, 10 to 1 divider ratio, 1 meg input impedance. And this Siglet one here, active probe, it's 1 gig with 1 megohm and 1.2 picofarads. But you might think, well, okay, this is 1 gig, well,
+context after: so is this. What's the difference? Well, the difference is, remember, this is like practically the world's best passive probe. 3.9 puff. This one, 1.2 puff. And that's the difference. You remember our formula before. Capacitance is the thing that matters at high frequency. And in the case of this Siglet active probe compared to this
+
+[1609] EEVblog 1609 - Composite Amplifier Tutorial + Practical Demo — Dave Jones (mention)
+context before: To get your most bandwidth possible, you might want to split your gains between those two. So, composite amplifiers, they're rather magical. They let you combine the best of different amplifiers, be they discrete components or op amps.
+TEXT: Combine you know, input impedance, offset, bandwidth, output drive, drift, temperature drift, and noise, and all sorts of things. You can combine them together in many different ways, and I couldn't possibly cover all the different scenarios here.
+context after: It would just take me forever. But as always, there's never a free lunch here, okay? And there are downsides to composite amplifiers if you don't implement them properly. You might find they oscillate or do other uh weird things.
+
+[1609] EEVblog 1609 - Composite Amplifier Tutorial + Practical Demo — Dave Jones (mention)
+context before: This one's acting as a buffer here. Now, why would you do that in this particular case? Well, at the end of this video, hang around, we'll do a practical breadboard example of kind of what we're looking at here.
+TEXT: In the real world in practical applications, you often have multiple system design requirements for your amplifier and some of them can include, you know, input impedance. You might need really high input impedance.
+context after: You might need ultra-low input offset voltage, really DC precision stuff. You might need a huge bandwidth. You might need a huge output drive capability, driving ultra-low impedance loads, or driving high-capacitive loads.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (mention)
+context before: It's all captive, and they usually have a little lever in there to clamp on the front of your scope. So, these things are usually very pricey, you know, they start in the four-digit category and uh go up to like five digits.
+TEXT: And this one here is a two-gig uh bandwidth probe. Uh 10:1 uh divider ratio. 1 meg uh input impedance. And this uh Siglent one here, active probe, it's a it's 1 gig uh with 1 megohm and uh 1.2 picofarads.
+context after: Uh but, you might think, "Well, okay, this is 1 gig. Well, so is this. What's the difference?" Well, the difference is, remember, this is like practically the world's best passive probe, 3.9 pF.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: It's just, much simpler to use than it's a similar appearance to what you got on the A series, but yeah, that touch screen just adds quite a lot of value in quite places on this scope.
+TEXT: It's really handy. Now, here's an interesting difference between the Keysight 3000 and the Tektronix MDO 3000. Low-level signals. We're on 2 mV per division here. 50 ohm input impedance.
+context after: We're viewing a 100 meg signal here. And you can see the waveform is quite fuzzy. I've done a video explaining why this is the case because it's much higher bandwidth, much higher sample rate.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (mention)
+context before: Um I haven't done anything with it yet. Um this is just it immediately popped up like this and it's got voltage division voltage divisions as one volt per division to like plus minus 5 volts.
+TEXT: It's like that doesn't seem right. It's almost as if like there's a bit there. It's like it's zoomed in or something displayed. What is that? AC coupled. We got our one megga ohms.
+context after: So it's almost as if we're down in the noise there. I'm not sure what's going on. Uh, so trigger. So we're running, right? And then we can then we can single shot capture.
+
+[lXvXBdTP7Tg] Haasoscope Pro - An Oscilloscope Space Oddity — Dave Jones (mention)
+context before: Um, I haven't done anything with it yet. Um, this is just it immediately popped up like this. Um, and it's got voltage division voltage divisions. has one volt per division to like plus - 5 volts.
+TEXT: It's like that doesn't seem right. It's almost as if like there's a bit there. It's like it's zoomed in or something displayed. What is that AC coupled? We got our 1 megga ohms.
+context after: So, it's almost as if we're down in the noise there. I'm not sure what's going on. Uh so, trigger. So, we're running, right? And then we can we can single shot capture.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (mention)
+context before: It's showing negative. Why is it showing negative? But there you go. Nothing's breaking down. So 20 meg input impedance. I didn't actually measure the um input impedance of that.
+TEXT: I guess it's 20 meg. So there you go. It's surviving 2500 volts. Lucky or good design? Didn't see anything there that uh says it's good design. I think they're lucky.
+context after: Sure enough, that is 20 meg input impedance. There you go. Didn't even occur to me to uh measure that. But uh does it still work? Well, let's find out.
+
+[lXvXBdTP7Tg] Haasoscope Pro - An Oscilloscope Space Oddity — Dave Jones (mention)
+context before: Anyway, we've got our dual channels and the other channels doing that. Now, the channel one lead has turned from like white bluey to red. The channel 2 lead is white bluey, but it looks like they're doing the same thing.
+TEXT: So, like it's one gig input impedance. I can short it out, but I suspect shorting it out, I get my little 50 ohm shorter plug, but I suspect that won't do anything.
+context after: No, because it it it shouldn't have shouldn't have done anything. What's going on? Uh, do I have to calibrate it? No, that's just oversampling alignment. Didn't pop up with anything.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (mention)
+context before: Now, of course, the front end of this, of course, is software-licensable upgradeable from 70 MHz to 500 MHz. And yeah, I know. All of them do it. I don't actually know though if it's actually done internally at the front end or whether or not it's done after the um, sampling.
+TEXT: But anyway, single chip solution. Uh, there is no 75 ohm input impedance um, on this. So, we've just got that solid state relay uh, that we saw on the other side.
+context after: And basically um, it's just a like a variable gain amplifier and attenuator on the uh, front end. So, it's just a differential output here. Looks like it goes through an N the A LISN filter here and a match length pair.
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (mention)
+context before: No, there's got to be something else. Something Yeah, look you press actually any button. Looks like any button. No, except that. Oh yeah, maybe I can just see them flash.
+TEXT: Oh, listen to those relays. Oh. Oh, Bobby Dazzler. And this has got 50 ohm input impedance too. Nice. Oh, I forgot we can like turn on Where is our other stuff?
+context after: We can turn on the readout intensity, the scale factors. Beautiful. Look at that. Now I got it all. Ah. There we go. Woah. It's a little bit fuzzy. Little bit fuzzy, but jeez, you know, I'm not going to complain about that.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (mention)
+context before: There it is, it's got it on the display. Um high impedance uh input mode, so you're going to see that charge build up, and yeah, there you go. You see the uh display completely build up until it probably goes uh overload, but that's really handy to be able to select that, because sometimes you don't you know, that's annoying.
+TEXT: You don't want that. You just want Give me 10 meg, damn it. Um and uh auto zero in uh off or on if you want to auto zero your reading.
+context after: Generally, you're going to leave that on, and your aperture number of power line cycles. It defaults to 10, but of course, we can do uh you know, we can make our display uh faster, but you uh lose some resolution there with the lower power line cycles.

@@ -110,12 +110,38 @@ def digits(name):
     return tuple(runs)
 
 
-def acronym_of(name):
+# Words that are usually dropped when a phrase is abbreviated. "Usually" is the
+# whole problem -- BOM keeps the O of `bill-of-materials`, while ADC drops the T
+# of `analog-to-digital-converter` -- so both forms are generated and either may
+# match. Taking only the all-tokens form cost 113 acronym pairs, including
+# `adc` (252 mentions) sitting apart from `analog-to-digital-converter` (482)
+# and the same for DAC, which left duplicate concepts and split their evidence
+# across two articles.
+ACRO_STOP = {"to", "of", "and", "the", "for", "a", "an", "in", "on", "per",
+             "with", "at", "by"}
+
+
+def acronyms_of(name):
+    """-> set of plausible initialisms for a multi-word name."""
     ts = tokens(name)
     if len(ts) < 2:
-        return None
-    letters = "".join(t[0] for t in ts if t and t[0].isalpha())
-    return letters if 2 <= len(letters) <= 6 else None
+        return set()
+    out = set()
+    for keep in (ts, [t for t in ts if t not in ACRO_STOP]):
+        if len(keep) < 2:
+            continue
+        letters = "".join(t[0] for t in keep if t and t[0].isalpha())
+        if 2 <= len(letters) <= 6:
+            out.add(letters)
+    return out
+
+
+def acronym_of(name):
+    """Back-compat single value: the all-tokens form, or None."""
+    a = acronyms_of(name)
+    ts = tokens(name)
+    full = "".join(t[0] for t in ts if t and t[0].isalpha())
+    return full if full in a else (sorted(a)[0] if a else None)
 
 
 def compatible(t1, t2):
@@ -228,9 +254,9 @@ def acronym_pairs(corpus):
     short = {n for n in corpus.names() if 2 <= len(n) <= 6 and "-" not in n}
     cands = defaultdict(list)
     for n in corpus.names():
-        a = acronym_of(n)
-        if a and a in short:
-            cands[a].append(n)
+        for a in acronyms_of(n):
+            if a in short:
+                cands[a].append(n)
     out, rejected = {}, []
     for a, expansions in cands.items():
         expansions.sort(key=lambda e: -corpus.mentions(e))
