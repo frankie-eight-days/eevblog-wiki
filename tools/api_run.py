@@ -194,8 +194,13 @@ def downloader(work_q, ready_q, total):
                 else:
                     log(f"FETCH FAIL {vid}: {msg[-120:]}")
                     with _lock: _st["failed"] += 1
-        finally:
-            work_q.task_done()
+        # NO task_done() here. Nothing ever calls work_q.join(), so it bought
+        # nothing -- and both the bot-check path and the worker's API-retry path
+        # put the row BACK on this queue, so task_done() outnumbered get() and
+        # eventually raised "task_done() called too many times". That killed the
+        # single downloader thread silently; the workers stayed alive, so the main
+        # loop's any(t.is_alive()) never exited and the process sat idle for six
+        # and a half hours looking healthy.
 
 
 def worker(ready_q, total, work_q):
@@ -230,8 +235,7 @@ def worker(ready_q, total, work_q):
                 log(f"API FAIL {vid}: {type(e).__name__} {str(e)[-120:]}")
                 with _lock: _st["failed"] += 1
         finally:
-            ogg.unlink(missing_ok=True)
-            ready_q.task_done()
+            ogg.unlink(missing_ok=True)   # no task_done(): nothing joins this queue either
 
 
 def main():
@@ -248,13 +252,25 @@ def main():
     work_q, ready_q = queue.Queue(), queue.Queue(maxsize=8)
     for r in rows:
         work_q.put(r)
-    threads = [threading.Thread(target=downloader, args=(work_q, ready_q, total), daemon=True)]
+    dl = threading.Thread(target=downloader, args=(work_q, ready_q, total), daemon=True)
+    threads = [dl]
     threads += [threading.Thread(target=worker, args=(ready_q, total, work_q),
                                  daemon=True)
                 for _ in range(N_API)]
     for t in threads: t.start()
     try:
         while any(t.is_alive() for t in threads):
+            # The downloader is the only producer. If it dies, the workers stay
+            # alive with nothing to consume and this loop would spin forever
+            # looking healthy -- which is exactly what happened for six and a half
+            # hours. Restart it rather than exiting: the queue still holds every
+            # pending row, so a fresh thread picks straight up.
+            if not dl.is_alive() and not work_q.empty() and not STOP.is_set():
+                log("DOWNLOADER DIED - restarting it (queue intact)")
+                dl = threading.Thread(target=downloader,
+                                      args=(work_q, ready_q, total), daemon=True)
+                threads[0] = dl
+                dl.start()
             if work_q.empty() and ready_q.empty():
                 time.sleep(30)
                 if work_q.empty() and ready_q.empty(): break
