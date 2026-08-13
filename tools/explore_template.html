@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>EEVblog Wiki — concept graph</title>
+<style>
+/* ---------------------------------------------------------------- tokens */
+:root{
+  --surface:#ffffff; --ink:#2a2a2a; --panel:#f2f2f2; --rule:#d4d4d4;
+  --ink-dim:#5a5a5a; --ink-faint:#8a8a8a;
+  --panel-hi:#e8e8e8; --shadow:0 1px 2px #19181312, 0 8px 24px #1918130f;
+  --accent:#ff8500;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --surface:#1a1a1a; --ink:#ececec; --panel:#262626; --rule:#3a3a3a;
+    --ink-dim:#f0eee8a8; --ink-faint:#f0eee86b;
+    --panel-hi:#2b2926; --shadow:0 1px 2px #00000040, 0 8px 24px #00000055;
+    --accent:#e0a870;
+  }
+}
+:root[data-theme="dark"]{
+  --surface:#1a1a1a; --ink:#ececec; --panel:#262626; --rule:#3a3a3a;
+  --ink-dim:#f0eee8a8; --ink-faint:#f0eee86b;
+  --panel-hi:#2b2926; --shadow:0 1px 2px #00000040, 0 8px 24px #00000055;
+  --accent:#e0a870;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--surface); color:var(--ink);
+  font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace}
+
+/* ---------------------------------------------------------------- canvas */
+#stage{position:fixed; inset:0}
+#cv{display:block; width:100%; height:100%; touch-action:none; cursor:grab}
+#cv.dragging{cursor:grabbing}
+#cv.overnode{cursor:pointer}
+
+/* ------------------------------------------------------------ title block */
+#title{
+  position:fixed; left:16px; top:14px; z-index:5; pointer-events:none;
+  max-width:min(46vw,340px);
+}
+#title h1{
+  margin:0; font-size:14px; font-weight:600; letter-spacing:.01em; line-height:1.25;
+}
+#title .sub{margin-top:3px; font-size:10px; line-height:1.4; color:var(--ink-faint); letter-spacing:.02em}
+
+/* ----------------------------------------------------------------- search */
+#searchwrap{position:fixed; left:16px; top:78px; z-index:6; width:min(46vw,340px)}
+#q{
+  width:100%; padding:7px 10px; border-radius:7px; background:var(--panel);
+  border:1px solid var(--rule); color:var(--ink); font-size:12.5px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; outline:none;
+  box-shadow:var(--shadow);
+}
+#q:focus{border-color:var(--accent)}
+#q::placeholder{color:var(--ink-faint)}
+#hits{
+  margin-top:4px; background:var(--panel); border:1px solid var(--rule);
+  border-radius:7px; box-shadow:var(--shadow); display:none;
+  max-height:min(44vh,320px); overflow-y:auto;
+}
+#hits.open{display:block}
+#hits .hit{
+  display:flex; gap:8px; align-items:baseline; padding:5px 9px; cursor:pointer;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px;
+  border-top:1px solid var(--rule);
+}
+#hits .hit:first-child{border-top:none}
+#hits .hit.on,#hits .hit:hover{background:var(--panel-hi)}
+#hits .hit .sw{width:7px;height:7px;border-radius:2px;flex:none;transform:translateY(-1px)}
+#hits .hit .nm{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+#hits .hit .ep{color:var(--ink-faint); font-size:10.5px}
+
+/* ----------------------------------------------------------------- panels */
+.card{
+  position:fixed; z-index:6; background:var(--panel); border:1px solid var(--rule);
+  border-radius:9px; box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0; padding:9px 11px; font-size:11px; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink-dim); border-bottom:1px solid var(--rule);
+  display:flex; align-items:center; gap:8px;
+}
+.card h2 .grow{flex:1}
+.xbtn{
+  border:none; background:none; color:var(--ink-faint); cursor:pointer; padding:0 2px;
+  font-size:13px; line-height:1; font-family:inherit;
+}
+.xbtn:hover{color:var(--ink)}
+
+/* legend */
+#legend{left:16px; bottom:16px; width:min(46vw,340px); max-height:min(52vh,460px); display:flex; flex-direction:column}
+#legend .body{overflow-y:auto; padding:4px 0 5px}
+.lg{
+  display:flex; gap:8px; align-items:center; padding:3px 11px; cursor:pointer;
+  font-size:11.5px; line-height:1.3;
+}
+.lg:hover{background:var(--panel-hi)}
+.lg.on{background:var(--panel-hi)}
+.lg .sw{width:9px;height:9px;border-radius:2px;flex:none}
+.lg .nm{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.lg .n{color:var(--ink-faint); font-size:10.5px; font-variant-numeric:tabular-nums}
+.lg.off{opacity:.42}
+
+/* detail panel */
+#detail{right:16px; top:14px; width:min(88vw,308px); max-height:calc(100vh - 28px);
+  display:none; flex-direction:column}
+#detail.open{display:flex}
+#detail .body{overflow-y:auto; padding:11px}
+#detail .lbl{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:15px; line-height:1.25; word-break:break-word}
+#detail .meta{margin-top:6px; display:flex; flex-wrap:wrap; gap:5px}
+.tag{
+  font-size:10px; letter-spacing:.03em; padding:2px 6px; border-radius:4px;
+  border:1px solid var(--rule); color:var(--ink-dim);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.tag.comm{border-color:transparent; color:#fff}
+#detail .stats{
+  margin-top:11px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background:var(--rule); border:1px solid var(--rule); border-radius:6px; overflow:hidden;
+}
+#detail .stat{background:var(--panel); padding:7px 8px}
+#detail .stat b{display:block; font-size:16px; font-weight:600;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums}
+#detail .stat span{font-size:9.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint)}
+#detail h3{margin:14px 0 5px; font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-faint); font-weight:600}
+.nb{
+  display:flex; gap:7px; align-items:baseline; padding:4px 6px; margin:0 -6px;
+  border-radius:5px; cursor:pointer; font-size:12px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.nb:hover{background:var(--panel-hi)}
+.nb .sw{width:7px;height:7px;border-radius:2px;flex:none;transform:translateY(-1px)}
+.nb .nm{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.nb .w{color:var(--ink-faint); font-size:10.5px; font-variant-numeric:tabular-nums}
+.nb .w.hier{color:var(--accent)}
+
+/* controls */
+#controls{
+  position:fixed; right:16px; bottom:16px; z-index:6; display:flex; gap:5px; flex-wrap:wrap;
+  justify-content:flex-end; max-width:min(88vw,308px);
+}
+.btn{
+  background:var(--panel); border:1px solid var(--rule); color:var(--ink-dim);
+  border-radius:6px; padding:5px 9px; font-size:11px; cursor:pointer;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  box-shadow:var(--shadow); white-space:nowrap;
+}
+.btn:hover{color:var(--ink)}
+.btn.on{color:var(--ink); border-color:var(--ink-faint); background:var(--panel-hi)}
+
+/* narrow screens: panels collapse to sheets */
+/* Narrow: the controls move to their own bottom row so nothing can collide
+   with the title, and the panels become sheets stacked above them. */
+@media (max-width:720px){
+  #title{max-width:calc(100vw - 32px)}
+  #searchwrap{width:calc(100vw - 32px); max-width:none}
+  #controls{left:16px; right:16px; bottom:14px; max-width:none;
+    justify-content:center; flex-wrap:nowrap; gap:4px}
+  #controls .btn{padding:6px 8px; font-size:10.5px; flex:0 1 auto;
+    overflow:hidden; text-overflow:ellipsis}
+  #legend{left:16px; right:16px; bottom:52px; width:auto; max-height:42vh}
+  #detail{left:16px; right:16px; top:auto; bottom:52px; width:auto; max-height:56vh}
+  #detail.open ~ #legend{display:none}
+  .collapsed .body{display:none}
+}
+@media (max-height:520px){
+  #legend{max-height:34vh}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; animation:none !important}
+}
+#title, #searchwrap { transform: translateY(46px); }</style>
+
+<nav style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; justify-content:space-between; align-items:center; padding:10px 22px; border-bottom:3px solid #ff8500; background:var(--panel); font:bold 12px Verdana, sans-serif; letter-spacing:.08em; text-transform:uppercase;"><a href="/" style="color:var(--ink); text-decoration:none;">EEVblog <span style="color:#ff8500">Wiki</span></a><span style="font-weight:normal; letter-spacing:.05em;"><a href="/transcripts/" style="color:var(--ink); text-decoration:none; margin-left:18px;">Transcripts</a><a href="/explore" style="color:#ff8500; text-decoration:none; margin-left:18px;">Graph</a><a href="/how-this-was-built" style="color:var(--ink); text-decoration:none; margin-left:18px;">How it was built</a><a href="/contribute" style="color:var(--ink); text-decoration:none; margin-left:18px;">Contribute</a></span></nav><div id="stage"><canvas id="cv"></canvas></div>
+
+<div id="title">
+  <h1>EEVblog — Concept Map</h1>
+  <div class="sub mono" id="counts"></div>
+</div>
+
+<div id="searchwrap">
+  <input id="q" type="search" placeholder="search concepts…" autocomplete="off" spellcheck="false" aria-label="Search concepts">
+  <div id="hits" role="listbox"></div>
+</div>
+
+<section class="card" id="detail" aria-label="Selected concept">
+  <h2><span class="grow">Concept</span><button class="xbtn" id="dclose" title="Close">×</button></h2>
+  <div class="body" id="dbody"></div>
+</section>
+
+<section class="card" id="legend" aria-label="Communities">
+  <h2><span class="grow">Communities</span><span class="n mono" id="spotname"></span><button class="xbtn" id="lgtoggle" title="Collapse">–</button></h2>
+  <div class="body" id="lgbody"></div>
+</section>
+
+
+<div id="controls">
+  <button class="btn" id="bEdges">Edges</button>
+  <button class="btn" id="bHier">Hierarchy</button>
+  <button class="btn" id="bReset">Reset view</button>
+  <button class="btn" id="bTheme">Theme: auto</button>
+</div>
+
+<script>const PUB=new Set(__PUB__);
+"use strict";
+const D = __DATA__;
+
+/* ======================================================== data unpacking */
+const N = D.x.length;
+const X = Float32Array.from(D.x), Y = Float32Array.from(D.y);
+const EP = D.ep, MEN = D.men, EXPL = D.expl, DEG = D.deg, COM = D.com;
+const LBL = D.lbl, TYPE = D.type, TYPES = D.types;
+const BTW = D.btw, COMMS = D.comms;
+
+const E = D.es.length;
+const ES = Int32Array.from(D.es), ET = Int32Array.from(D.et);
+const EW = Float32Array.from(D.ew), EK = Uint8Array.from(D.ek); // 0 cooccur, 1 hierarchy
+let maxW = 1; for (let i=0;i<E;i++) if (EW[i]>maxW) maxW=EW[i];
+
+/* CSR adjacency: for each node, the list of incident edge indices ------- */
+const OFF = new Int32Array(N+1);
+for (let i=0;i<E;i++){ OFF[ES[i]+1]++; OFF[ET[i]+1]++; }
+for (let i=0;i<N;i++) OFF[i+1]+=OFF[i];
+const ADJ = new Int32Array(2*E);
+{ const cur = OFF.slice(0,N);
+  for (let i=0;i<E;i++){ ADJ[cur[ES[i]]++]=i; ADJ[cur[ET[i]]++]=i; } }
+const other = (e,i) => ES[e]===i ? ET[e] : ES[e];
+
+/* radius (world-independent base, in px at unit zoom) ------------------- */
+const RBASE = new Float32Array(N);
+for (let i=0;i<N;i++) RBASE[i] = Math.sqrt(EP[i]) * 0.47;
+
+/* label priority: highest degree first ---------------------------------- */
+const BYDEG = Array.from({length:N},(_,i)=>i).sort((a,b)=> DEG[b]-DEG[a] || EP[b]-EP[a]);
+
+/* spatial grid over world space for hit testing ------------------------- */
+const GCELL = 125, GN = Math.ceil(10000/GCELL);
+const GOFF = new Int32Array(GN*GN+1);
+const cellOf = (x,y)=>{
+  let cx = x/GCELL|0, cy = y/GCELL|0;
+  if (cx<0) cx=0; else if (cx>=GN) cx=GN-1;
+  if (cy<0) cy=0; else if (cy>=GN) cy=GN-1;
+  return cy*GN+cx;
+};
+for (let i=0;i<N;i++) GOFF[cellOf(X[i],Y[i])+1]++;
+for (let i=0;i<GN*GN;i++) GOFF[i+1]+=GOFF[i];
+const GIDX = new Int32Array(N);
+{ const cur = GOFF.slice(0,GN*GN);
+  for (let i=0;i<N;i++) GIDX[cur[cellOf(X[i],Y[i])]++] = i; }
+
+/* ============================================================== colours */
+const CC = COMMS.length;
+// coprime stride keeps the hue set evenly spaced while separating adjacent ids
+const STRIDE = (()=>{ const gcd=(a,b)=>b?gcd(b,a%b):a;
+  for (let k=Math.round(CC*0.42); k<CC; k++) if (gcd(k,CC)===1) return k; return 1; })();
+let COL = [], COLDIM = [];
+function buildColors(dark){
+  COL = []; COLDIM = [];
+  const L = dark ? 65 : 55, S = 65;
+  for (let c=0;c<CC;c++){
+    // even hue spacing, offset so the biggest communities don't collide
+    const h = ((c*STRIDE % CC)*360/CC + 18) % 360;
+    // perceptual nudge: yellows/greens read lighter, pull them down a touch
+    const t = Math.cos((h-95)*Math.PI/180);
+    const l = Math.max(30, Math.min(78, L - 7*Math.max(0,t)));
+    COL[c] = `hsl(${h.toFixed(1)} ${S}% ${l.toFixed(1)}%)`;
+    COLDIM[c] = `hsl(${h.toFixed(1)} ${(S*0.35).toFixed(0)}% ${(dark?l*0.62:l*1.30+8).toFixed(1)}%)`;
+  }
+}
+
+/* =============================================================== theme */
+const mq = matchMedia('(prefers-color-scheme: dark)');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let THEME = { dark:false, ink:'#191813', surface:'#faf9f6', rule:'#dedbd2' };
+function readTheme(){
+  const forced = document.documentElement.getAttribute('data-theme');
+  const dark = forced ? forced==='dark' : mq.matches;
+  const cs = getComputedStyle(document.documentElement);
+  THEME = {
+    dark,
+    ink: cs.getPropertyValue('--ink').trim() || (dark?'#f0eee8':'#191813'),
+    surface: cs.getPropertyValue('--surface').trim() || (dark?'#171614':'#faf9f6'),
+    rule: cs.getPropertyValue('--rule').trim() || (dark?'#35332d':'#dedbd2'),
+    panel: cs.getPropertyValue('--panel').trim() || (dark?'#201f1c':'#f1efe9'),
+    accent: cs.getPropertyValue('--accent').trim() || (dark?'#e0a870':'#7a3f12'),
+  };
+  buildColors(dark);
+  paintLegendSwatches();
+  if (sel>=0) renderDetail(sel);
+  need();
+}
+mq.addEventListener('change', readTheme);
+new MutationObserver(readTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+/* =============================================================== camera */
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d', {alpha:false});
+let W=0, H=0, DPR=1;
+// The layout box is 10000 wide but the giant component only fills its middle
+// (disconnected fragments sit on an outer ring), so fit to a percentile box.
+const FIT = (()=>{
+  const xs = Float32Array.from(X).sort(), ys = Float32Array.from(Y).sort();
+  const q = (a,p)=> a[Math.min(a.length-1, Math.max(0, Math.round(p*(a.length-1))))];
+  const x0=q(xs,0.008), x1=q(xs,0.992), y0=q(ys,0.008), y1=q(ys,0.992);
+  return {cx:(x0+x1)/2, cy:(y0+y1)/2, w:Math.max(1,x1-x0), h:Math.max(1,y1-y0)};
+})();
+let cam = {x:FIT.cx, y:FIT.cy, s:0};      // s = css px per world unit
+let fitS = 0;
+
+function resize(){
+  DPR = Math.min(window.devicePixelRatio||1, 2.5);
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = Math.round(W*DPR); cv.height = Math.round(H*DPR);
+  const zr = fitS>0 ? cam.s/fitS : 1;      // hold the relative zoom across resizes
+  fitS = Math.min((W-40)/FIT.w, (H-40)/FIT.h);
+  cam.s = zr*fitS;
+  need();
+}
+const sx = wx => (wx - cam.x)*cam.s + W/2;
+const sy = wy => (wy - cam.y)*cam.s + H/2;
+const wx = px => (px - W/2)/cam.s + cam.x;
+const wy = py => (py - H/2)/cam.s + cam.y;
+function resetView(){ cam.x=FIT.cx; cam.y=FIT.cy; cam.s=fitS; fly=null; need(); }
+
+/* ============================================================ app state */
+let hov = -1, sel = -1, spot = -1;
+let showEdges = true, showHier = false;
+let hovNbrs = null;                 // Set of neighbour node indices
+const EDGE_ZOOM = fitS*2.6;         // above this, edges get full presence
+
+/* ========================================================= render loop */
+let dirty = true, raf = 0;
+function need(){ if (!raf) raf = requestAnimationFrame(frame); dirty = true; }
+function frame(){
+  raf = 0;
+  if (fly) stepFly();
+  draw();
+  if (fly) need();
+}
+
+const labelW = new Map();
+function measure(i, font){
+  const k = i+'|'+font;
+  let w = labelW.get(k);
+  if (w===undefined){ ctx.font=font; w = ctx.measureText(LBL[i]).width; labelW.set(k,w); }
+  return w;
+}
+
+function draw(){
+  const t = ctx;
+  t.setTransform(DPR,0,0,DPR,0,0);
+  t.fillStyle = THEME.surface;
+  t.fillRect(0,0,W,H);
+
+  const zr = cam.s / fitS;                       // 1 = fit-to-screen
+  const pad = 40;
+  const x0 = wx(-pad), x1 = wx(W+pad), y0 = wy(-pad), y1 = wy(H+pad);
+  const vis = i => X[i]>=x0 && X[i]<=x1 && Y[i]>=y0 && Y[i]<=y1;
+
+  /* ---- edges ---------------------------------------------------------- */
+  const focus = hov>=0 ? hov : sel;
+  if (showEdges){
+    // alpha ramps with zoom so the overview reads as structure, not soup
+    const a = Math.min(0.42, 0.055 + 0.16*Math.log2(1+zr));
+    const buckets = 3, paths = [];
+    for (let b=0;b<buckets;b++) paths.push(new Path2D());
+    let drew = 0;
+    for (let e=0;e<E;e++){
+      if (EK[e]) continue;                       // hierarchy has its own pass
+      const s = ES[e], d = ET[e];
+      if (!vis(s) && !vis(d)) continue;
+      const b = EW[e]>=6 ? 2 : EW[e]>=2 ? 1 : 0;
+      const p = paths[b];
+      p.moveTo(sx(X[s]),sy(Y[s])); p.lineTo(sx(X[d]),sy(Y[d]));
+      drew++;
+    }
+    t.lineWidth = Math.max(0.5, Math.min(1.4, 0.4*zr));
+    for (let b=0;b<buckets;b++){
+      t.strokeStyle = THEME.ink;
+      t.globalAlpha = a * (b===0?0.55:b===1?0.9:1.35) * (spot>=0||focus>=0 ? 0.35 : 1);
+      t.stroke(paths[b]);
+    }
+    t.globalAlpha = 1;
+  }
+  if (showHier){
+    const p = new Path2D();
+    for (let e=0;e<E;e++){
+      if (!EK[e]) continue;
+      const s = ES[e], d = ET[e];
+      if (!vis(s) && !vis(d)) continue;
+      p.moveTo(sx(X[s]),sy(Y[s])); p.lineTo(sx(X[d]),sy(Y[d]));
+    }
+    t.save();
+    t.setLineDash([4,3]);
+    t.lineWidth = Math.max(0.6, Math.min(1.6, 0.5*zr));
+    t.strokeStyle = THEME.accent; t.globalAlpha = 0.55;
+    t.stroke(p); t.restore(); t.globalAlpha = 1;
+  }
+
+  /* ---- focus edges (hover / selection) -------------------------------- */
+  if (focus>=0){
+    const p = new Path2D(), ph = new Path2D();
+    for (let k=OFF[focus];k<OFF[focus+1];k++){
+      const e = ADJ[k], o = other(e,focus);
+      const tgt = EK[e]?ph:p;
+      tgt.moveTo(sx(X[focus]),sy(Y[focus])); tgt.lineTo(sx(X[o]),sy(Y[o]));
+    }
+    t.lineWidth = Math.max(0.8, Math.min(2, 0.7*zr));
+    t.strokeStyle = COL[COM[focus]]; t.globalAlpha = 0.85; t.stroke(p);
+    t.save(); t.setLineDash([4,3]); t.strokeStyle = THEME.accent; t.stroke(ph); t.restore();
+    t.globalAlpha = 1;
+  }
+
+  /* ---- nodes: one path per community, two alpha groups ---------------- */
+  const rZoom = Math.pow(Math.max(zr,0.25), 0.34);
+  const dim = new Array(CC), lit = new Array(CC);
+  let nvis = 0;
+  const isLit = i => {
+    if (spot>=0 && COM[i]!==spot) return false;
+    if (focus>=0) return i===focus || (hovNbrs ? hovNbrs.has(i) : false);
+    return true;
+  };
+  for (let i=0;i<N;i++){
+    if (!vis(i)) continue;
+    nvis++;
+    const r = Math.max(1.5, Math.min(18, RBASE[i]*rZoom));
+    const c = COM[i], on = isLit(i);
+    const arr = on?lit:dim;
+    let p = arr[c]; if (!p) p = arr[c] = new Path2D();
+    const px = sx(X[i]), py = sy(Y[i]);
+    if (r<1.9){ p.rect(px-r,py-r,2*r,2*r); }
+    else { p.moveTo(px+r,py); p.arc(px,py,r,0,6.283185307179586); }
+  }
+  const anyFocus = spot>=0 || focus>=0;
+  t.globalAlpha = anyFocus ? (THEME.dark?0.24:0.20) : 1;
+  for (let c=0;c<CC;c++) if (dim[c]){ t.fillStyle = COL[c]; t.fill(dim[c]); }
+  t.globalAlpha = 1;
+  for (let c=0;c<CC;c++) if (lit[c]){ t.fillStyle = COL[c]; t.fill(lit[c]); }
+
+  /* ---- selection / hover rings ---------------------------------------- */
+  for (const [i,wid] of [[sel,2.0],[hov,1.4]]){
+    if (i<0 || !vis(i)) continue;
+    const r = Math.max(1.5, Math.min(18, RBASE[i]*rZoom));
+    t.beginPath(); t.arc(sx(X[i]),sy(Y[i]), r+3.5, 0, 6.283185307179586);
+    t.strokeStyle = THEME.ink; t.lineWidth = wid; t.globalAlpha = i===sel?0.9:0.55;
+    t.stroke(); t.globalAlpha = 1;
+  }
+
+  /* ---- labels ---------------------------------------------------------- */
+  const K = Math.min(N, Math.round(150 * Math.pow(Math.max(zr,1), 1.35)));
+  const fs = Math.max(9.5, Math.min(13.5, 9.5 + 1.6*Math.log2(Math.max(zr,1))));
+  const font = `${fs.toFixed(1)}px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace`;
+  t.font = font; t.textBaseline = 'middle';
+  const taken = new Set(), CW = 6, CH = Math.max(8, fs+3);
+  let placed = 0;
+  const boxOf = i => {
+    const r = Math.max(1.5, Math.min(18, RBASE[i]*rZoom));
+    return {x: sx(X[i])+r+4, y: sy(Y[i]), w: measure(i, font)};
+  };
+  const mark = (b, test) => {
+    const cx0 = Math.floor((b.x-2)/CW), cx1 = Math.floor((b.x+b.w+2)/CW);
+    const cy0 = Math.floor((b.y-fs*0.6)/CH), cy1 = Math.floor((b.y+fs*0.6)/CH);
+    if (test) for (let cy=cy0;cy<=cy1;cy++) for (let cx=cx0;cx<=cx1;cx++)
+      if (taken.has(cy*8192+cx)) return false;
+    for (let cy=cy0;cy<=cy1;cy++) for (let cx=cx0;cx<=cx1;cx++) taken.add(cy*8192+cx);
+    return true;
+  };
+  const onScreen = b => b.x>-80 && b.x<W+10 && b.y>-10 && b.y<H+10;
+  const drawLabel = i => {
+    if (!vis(i)) return;
+    const b = boxOf(i);
+    if (!onScreen(b) || !mark(b,true)) return;
+    const a = spot>=0 && COM[i]!==spot ? 0.22 : 0.86;
+    t.globalAlpha = a*0.72; t.fillStyle = THEME.surface;
+    t.fillRect(b.x-2, b.y-fs*0.62, b.w+4, fs*1.24);
+    t.globalAlpha = a; t.fillStyle = THEME.ink;
+    t.fillText(LBL[i], b.x, b.y);
+    t.globalAlpha = 1;
+    placed++;
+  };
+  // focused labels get a solid chip and claim their space before anything else
+  const strongIds = [];
+  if (sel>=0 && vis(sel)) strongIds.push(sel);
+  if (hov>=0 && hov!==sel && vis(hov)) strongIds.push(hov);
+  const strongBoxes = strongIds.map(boxOf).filter(onScreen);
+  strongBoxes.forEach(b => mark(b,false));
+  if (focus>=0 && hovNbrs){
+    for (const i of hovNbrs){ if (placed>=200) break; if (i!==sel && i!==hov) drawLabel(i); }
+  }
+  const LBUDGET = 260, TESTS = 1400;
+  for (let n=0; n<K && placed<LBUDGET && n<TESTS; n++){
+    const i = BYDEG[n];
+    if (i===sel || i===hov) continue;
+    if (spot>=0 && COM[i]!==spot) continue;
+    drawLabel(i);
+  }
+  strongIds.forEach((i,k)=>{
+    const b = strongBoxes[k]; if (!b) return;
+    const padX = 4, h = fs+5;
+    t.fillStyle = THEME.panel || THEME.surface;
+    t.globalAlpha = 0.92;
+    t.beginPath();
+    if (t.roundRect) t.roundRect(b.x-padX, b.y-h/2, b.w+2*padX, h, 3);
+    else t.rect(b.x-padX, b.y-h/2, b.w+2*padX, h);
+    t.fill();
+    t.globalAlpha = 1;
+    t.strokeStyle = COL[COM[i]]; t.lineWidth = 1; t.stroke();
+    t.fillStyle = THEME.ink; t.fillText(LBL[i], b.x, b.y);
+  });
+
+  /* ---- scale hint ------------------------------------------------------ */
+  t.font = '10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';
+  t.fillStyle = THEME.ink; t.globalAlpha = 0.34;
+  t.textBaseline = 'alphabetic'; t.textAlign = 'center';
+  t.fillText(`${zr.toFixed(1)}×  ·  ${nvis} nodes in view`, W/2, H-12);
+  t.textAlign = 'left'; t.globalAlpha = 1;
+}
+
+/* ========================================================== hit testing */
+function pick(px, py){
+  const mx = wx(px), my = wy(py);
+  const zr = cam.s/fitS, rZoom = Math.pow(Math.max(zr,0.25),0.34);
+  const slop = 5/cam.s;                              // 5px grab margin
+  const rad = 18/cam.s + slop;
+  const c0x = Math.max(0,(mx-rad)/GCELL|0), c1x = Math.min(GN-1,(mx+rad)/GCELL|0);
+  const c0y = Math.max(0,(my-rad)/GCELL|0), c1y = Math.min(GN-1,(my+rad)/GCELL|0);
+  let best=-1, bestd=Infinity;
+  for (let cy=c0y;cy<=c1y;cy++) for (let cx=c0x;cx<=c1x;cx++){
+    const c = cy*GN+cx;
+    for (let k=GOFF[c];k<GOFF[c+1];k++){
+      const i = GIDX[k];
+      if (spot>=0 && COM[i]!==spot) continue;
+      const rpx = Math.max(1.5, Math.min(18, RBASE[i]*rZoom));
+      const rw = rpx/cam.s + slop;
+      const dx = X[i]-mx, dy = Y[i]-my, d2 = dx*dx+dy*dy;
+      if (d2 <= rw*rw && d2 < bestd){ bestd = d2; best = i; }
+    }
+  }
+  return best;
+}
+function neighboursOf(i){
+  const s = new Set();
+  for (let k=OFF[i];k<OFF[i+1];k++) s.add(other(ADJ[k], i));
+  return s;
+}
+function setHover(i){
+  if (i===hov) return;
+  hov = i; hovNbrs = i>=0 ? neighboursOf(i) : (sel>=0?neighboursOf(sel):null);
+  cv.classList.toggle('overnode', i>=0);
+  need();
+}
+
+/* ============================================================ camera fly */
+let fly = null;
+function flyTo(i, targetScale){
+  const s1 = targetScale || Math.max(cam.s, fitS*5);
+  if (reduceMotion.matches){ cam.x=X[i]; cam.y=Y[i]; cam.s=s1; need(); return; }
+  fly = {x0:cam.x, y0:cam.y, s0:cam.s, x1:X[i], y1:Y[i], s1, t0:performance.now(), dur:520};
+  need();
+}
+function stepFly(){
+  const u = Math.min(1,(performance.now()-fly.t0)/fly.dur);
+  const e = u<0.5 ? 4*u*u*u : 1-Math.pow(-2*u+2,3)/2;
+  cam.x = fly.x0+(fly.x1-fly.x0)*e;
+  cam.y = fly.y0+(fly.y1-fly.y0)*e;
+  cam.s = fly.s0*Math.pow(fly.s1/fly.s0, e);
+  if (u>=1) fly = null;
+}
+
+/* ============================================================== pointer */
+let drag = null, moved = 0;
+cv.addEventListener('pointerdown', ev => {
+  cv.setPointerCapture(ev.pointerId);
+  drag = {px:ev.clientX, py:ev.clientY}; moved = 0;
+  cv.classList.add('dragging'); fly = null;
+});
+cv.addEventListener('pointermove', ev => {
+  const r = cv.getBoundingClientRect();
+  if (drag){
+    const dx = ev.clientX-drag.px, dy = ev.clientY-drag.py;
+    moved += Math.abs(dx)+Math.abs(dy);
+    cam.x -= dx/cam.s; cam.y -= dy/cam.s;
+    drag.px = ev.clientX; drag.py = ev.clientY;
+    need();
+  } else {
+    setHover(pick(ev.clientX-r.left, ev.clientY-r.top));
+  }
+});
+function endDrag(ev){
+  if (!drag) return;
+  const r = cv.getBoundingClientRect();
+  const wasClick = moved < 5;
+  drag = null; cv.classList.remove('dragging');
+  if (wasClick){
+    const i = pick(ev.clientX-r.left, ev.clientY-r.top);
+    select(i);
+  }
+}
+cv.addEventListener('pointerup', endDrag);
+cv.addEventListener('pointercancel', ()=>{ drag=null; cv.classList.remove('dragging'); });
+cv.addEventListener('pointerleave', ()=> setHover(-1));
+
+cv.addEventListener('wheel', ev => {
+  ev.preventDefault();
+  const r = cv.getBoundingClientRect();
+  const px = ev.clientX-r.left, py = ev.clientY-r.top;
+  const before = {x:wx(px), y:wy(py)};
+  const f = Math.exp(-(ev.deltaMode===1?ev.deltaY*18:ev.deltaY)*0.0016);
+  cam.s = Math.max(fitS*0.45, Math.min(fitS*160, cam.s*f));
+  fly = null;
+  cam.x = before.x - (px-W/2)/cam.s;
+  cam.y = before.y - (py-H/2)/cam.s;
+  need();
+}, {passive:false});
+
+/* pinch */
+const pts = new Map();
+let pinch = null;
+cv.addEventListener('pointerdown', e => pts.set(e.pointerId,e));
+cv.addEventListener('pointermove', e => {
+  if (!pts.has(e.pointerId)) return;
+  pts.set(e.pointerId,e);
+  if (pts.size===2){
+    drag = null;
+    const [a,b] = [...pts.values()];
+    const d = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY);
+    const r = cv.getBoundingClientRect();
+    const mx = (a.clientX+b.clientX)/2-r.left, my=(a.clientY+b.clientY)/2-r.top;
+    if (pinch){
+      const before = {x:wx(mx), y:wy(my)};
+      cam.s = Math.max(fitS*0.45, Math.min(fitS*160, cam.s*(d/pinch.d)));
+      cam.x = before.x-(mx-W/2)/cam.s; cam.y = before.y-(my-H/2)/cam.s;
+      need();
+    }
+    pinch = {d, mx, my};
+  }
+});
+const dropPt = e => { pts.delete(e.pointerId); if (pts.size<2) pinch=null; };
+cv.addEventListener('pointerup', dropPt);
+cv.addEventListener('pointercancel', dropPt);
+
+/* ============================================================== detail */
+const detail = document.getElementById('detail'), dbody = document.getElementById('dbody');
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function select(i){
+  sel = i;
+  hovNbrs = hov>=0 ? hovNbrs : (i>=0?neighboursOf(i):null);
+  if (i<0){ detail.classList.remove('open'); need(); return; }
+  renderDetail(i);
+  detail.classList.add('open');
+  need();
+}
+function renderDetail(i){
+  const c = COM[i], cm = COMMS[c];
+  const nb = [];
+  for (let k=OFF[i];k<OFF[i+1];k++){
+    const e = ADJ[k];
+    // hierarchy edges run narrower -> broader
+    nb.push({j:other(e,i), w:EW[e], h:EK[e] ? (ES[e]===i ? 'broader' : 'narrower') : ''});
+  }
+  // taxonomy links first (they all carry weight 1), then co-occurrence by weight
+  nb.sort((a,b)=> (b.h?1:0)-(a.h?1:0) || b.w-a.w || EP[b.j]-EP[a.j]);
+  const top = nb.slice(0,10);
+  dbody.innerHTML =
+    `<div class="lbl">${esc(LBL[i])}</div>${PUB.has(LBL[i].replace(/ /g,"-"))?`<a href="/${LBL[i].replace(/ /g,"-")}" style="display:inline-block;margin:4px 0 2px;font-weight:bold;color:var(--accent);text-decoration:none;">Read the article &rarr;</a>`:""}
+     <div class="meta">
+       <span class="tag">${esc(TYPES[TYPE[i]])}</span>
+       <span class="tag comm" style="background:${COL[c]}">${esc(cm.label3)}</span>
+     </div>
+     <div class="stats">
+       <div class="stat"><b>${EP[i]}</b><span>episodes</span></div>
+       <div class="stat"><b>${MEN[i]}</b><span>mentions</span></div>
+       <div class="stat"><b>${EXPL[i]}</b><span>explains</span></div>
+     </div>
+     <div class="stats" style="grid-template-columns:repeat(2,1fr)">
+       <div class="stat"><b>${DEG[i]}</b><span>co-occur degree</span></div>
+       <div class="stat"><b>${BTW[i].toFixed(3)}</b><span>betweenness</span></div>
+     </div>
+     <h3>Top links (${nb.length} total)</h3>
+     <div id="nbs">${top.map(n=>
+        `<div class="nb" data-i="${n.j}">
+           <span class="sw" style="background:${COL[COM[n.j]]}"></span>
+           <span class="nm">${esc(LBL[n.j])}</span>
+           <span class="w${n.h?' hier':''}">${n.h || n.w}</span>
+         </div>`).join('')}</div>`;
+  dbody.querySelectorAll('.nb').forEach(el=>{
+    el.onclick = ()=>{ const j=+el.dataset.i; select(j); flyTo(j); };
+  });
+}
+document.getElementById('dclose').onclick = ()=> select(-1);
+
+/* =============================================================== legend */
+const lgbody = document.getElementById('lgbody');
+const spotname = document.getElementById('spotname');
+lgbody.innerHTML = COMMS.map(c=>
+  `<div class="lg" data-c="${c.id}">
+     <span class="sw"></span>
+     <span class="nm">${esc(c.label3)}</span>
+     <span class="n">${c.size}</span>
+   </div>`).join('');
+function paintLegendSwatches(){
+  lgbody.querySelectorAll('.lg').forEach(el=>{
+    el.querySelector('.sw').style.background = COL[+el.dataset.c];
+  });
+}
+lgbody.querySelectorAll('.lg').forEach(el=>{
+  el.onclick = ()=> setSpot(+el.dataset.c === spot ? -1 : +el.dataset.c);
+});
+function setSpot(c){
+  spot = c;
+  lgbody.querySelectorAll('.lg').forEach(el=>{
+    const k = +el.dataset.c;
+    el.classList.toggle('on', spot===k);
+    el.classList.toggle('off', spot>=0 && spot!==k);
+  });
+  spotname.textContent = spot>=0 ? `#${spot}` : '';
+  need();
+}
+document.getElementById('lgtoggle').onclick = e => {
+  const card = document.getElementById('legend');
+  card.classList.toggle('collapsed');
+  e.target.textContent = card.classList.contains('collapsed') ? '+' : '–';
+  card.querySelector('.body').style.display =
+    card.classList.contains('collapsed') ? 'none' : '';
+};
+
+/* =============================================================== search */
+const q = document.getElementById('q'), hits = document.getElementById('hits');
+const LOW = LBL.map(s=>s.toLowerCase());
+let hitList = [], hitAt = -1;
+function runSearch(){
+  const s = q.value.trim().toLowerCase();
+  if (!s){ hits.classList.remove('open'); hitList=[]; return; }
+  const pre = [], sub = [];
+  for (let i=0;i<N;i++){
+    const p = LOW[i].indexOf(s);
+    if (p===0) pre.push(i); else if (p>0) sub.push(i);
+    if (pre.length>200) break;
+  }
+  const rank = (a,b)=> EP[b]-EP[a] || DEG[b]-DEG[a];
+  hitList = pre.sort(rank).concat(sub.sort(rank)).slice(0,12);
+  hitAt = hitList.length?0:-1;
+  hits.innerHTML = hitList.map((i,k)=>
+    `<div class="hit${k===0?' on':''}" data-i="${i}">
+       <span class="sw" style="background:${COL[COM[i]]}"></span>
+       <span class="nm">${esc(LBL[i])}</span>
+       <span class="ep">${EP[i]} ep</span>
+     </div>`).join('');
+  hits.classList.toggle('open', hitList.length>0);
+  hits.querySelectorAll('.hit').forEach(el=>{
+    el.onmousedown = ev => { ev.preventDefault(); go(+el.dataset.i); };
+  });
+}
+function go(i){
+  select(i); flyTo(i);
+  hits.classList.remove('open'); q.blur();
+}
+q.addEventListener('input', runSearch);
+q.addEventListener('focus', ()=>{ if (hitList.length) hits.classList.add('open'); });
+q.addEventListener('blur', ()=> setTimeout(()=>hits.classList.remove('open'),120));
+q.addEventListener('keydown', ev => {
+  if (!hitList.length) return;
+  if (ev.key==='ArrowDown'||ev.key==='ArrowUp'){
+    ev.preventDefault();
+    hitAt = (hitAt + (ev.key==='ArrowDown'?1:hitList.length-1)) % hitList.length;
+    hits.querySelectorAll('.hit').forEach((el,k)=>el.classList.toggle('on',k===hitAt));
+  } else if (ev.key==='Enter'){
+    ev.preventDefault(); if (hitAt>=0) go(hitList[hitAt]);
+  } else if (ev.key==='Escape'){ q.value=''; hits.classList.remove('open'); q.blur(); }
+});
+
+/* ============================================================= controls */
+const bEdges = document.getElementById('bEdges'), bHier = document.getElementById('bHier');
+const bTheme = document.getElementById('bTheme');
+function syncBtns(){
+  bEdges.classList.toggle('on', showEdges);
+  bHier.classList.toggle('on', showHier);
+}
+bEdges.onclick = ()=>{ showEdges=!showEdges; syncBtns(); need(); };
+bHier.onclick  = ()=>{ showHier=!showHier;  syncBtns(); need(); };
+document.getElementById('bReset').onclick = ()=>{ select(-1); setSpot(-1); resetView(); };
+let themeMode = 'auto';
+bTheme.onclick = ()=>{
+  themeMode = themeMode==='auto' ? 'light' : themeMode==='light' ? 'dark' : 'auto';
+  if (themeMode==='auto') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', themeMode);
+  bTheme.textContent = 'Theme: '+themeMode;
+  if (themeMode==='auto') readTheme();     // observer only fires on attribute change
+};
+addEventListener('keydown', ev => {
+  if (ev.target===q) return;
+  if (ev.key==='/'){ ev.preventDefault(); q.focus(); q.select(); }
+  else if (ev.key==='Escape'){ select(-1); setSpot(-1); }
+  else if (ev.key==='e'){ bEdges.click(); }
+  else if (ev.key==='h'){ bHier.click(); }
+  else if (ev.key==='0'){ resetView(); }
+});
+
+/* ================================================================= boot */
+const nHier = EK.reduce((a,b)=>a+b,0);
+document.getElementById('counts').textContent =
+  `${N.toLocaleString()} concepts · ${(E-nHier).toLocaleString()} co-occurrence · ${nHier} hierarchy · ${CC} communities`;
+window.gx = {select, setSpot, go, flyTo, resetView, cam, need, pick, setHover, draw,
+             get sel(){return sel}, get hov(){return hov}, LBL, N, E};
+addEventListener('resize', resize);
+syncBtns();
+resize();
+readTheme();
+resetView();
+
+// --- backing-store fixes: re-measure once layout has really settled ---
+(function () {
+  var last = 0;
+  function reflow() {
+    if (!cv.clientWidth || !cv.clientHeight) return;   // not laid out yet
+    var key = cv.clientWidth + 'x' + cv.clientHeight +
+              'x' + (window.devicePixelRatio || 1);
+    if (key === last) return;                          // nothing actually changed
+    last = key;
+    resize();
+    if (typeof draw === 'function') draw();
+  }
+  requestAnimationFrame(reflow);
+  addEventListener('load', reflow);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(reflow);
+  if (window.ResizeObserver) new ResizeObserver(reflow).observe(cv);
+  // devicePixelRatio changes when a window moves between displays
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(resolution: 1dppx)');
+    if (mq.addEventListener) mq.addEventListener('change', reflow);
+  }
+  setTimeout(reflow, 250);
+})();
+</script>
+
+
+
+</html>
