@@ -1,0 +1,72 @@
+// EEVblog wiki — infobox, citations, source table.
+// Replaces the Amp Hour styles wholesale; the two sites share Quartz, not looks.
+
+// ---- infobox -------------------------------------------------------------
+// Floated right on wide screens, full width on narrow. Deliberately plain:
+// it is a specification block, not a card.
+.ib {
+  float: right;
+  width: 270px;
+  margin: 0 0 1.1rem 1.6rem;
+  border: 1px solid var(--lightgray);
+  border-top: 3px solid var(--tertiary);
+  border-radius: 3px;
+  background: var(--light);
+  font-size: 0.82rem;
+  .ib-h {
+    font-weight: 700;
+    padding: 9px 13px 8px;
+    border-bottom: 1px solid var(--lightgray);
+    letter-spacing: 0.01em;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 0; }
+  td { padding: 5px 13px; border-bottom: 1px solid var(--lightgray); }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { color: var(--darkgray); width: 52%; }
+  td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+}
+@media (max-width: 800px) {
+  .ib { float: none; width: 100%; margin: 0 0 1.2rem; }
+}
+
+// ---- citations -----------------------------------------------------------
+// A claim can carry three or four of these in a row, so they must stay quiet:
+// small, tight, and only coloured on hover.
+sup.cite {
+  font-size: 0.62em;
+  line-height: 0;
+  vertical-align: 2px;
+  margin-left: 1px;
+  a {
+    color: var(--gray);
+    text-decoration: none;
+    padding: 0 1px;
+    &:hover { color: var(--tertiary); background: var(--highlight); }
+  }
+  & + sup.cite::before { content: ""; }
+}
+
+// ---- source table --------------------------------------------------------
+.srcs {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  td {
+    padding: 6px 10px 6px 0;
+    border-bottom: 1px solid var(--lightgray);
+    vertical-align: top;
+  }
+  td.n {
+    white-space: nowrap;
+    color: var(--darkgray);
+    font-variant-numeric: tabular-nums;
+    width: 62px;
+  }
+  td.y { width: 62px; white-space: nowrap; text-align: right; }
+  // the row a citation jumped to
+  tr:target td { background: var(--highlight); }
+}
+
+// ---- article list --------------------------------------------------------
+article table { font-size: 0.9rem; }
+article table td, article table th { padding: 5px 10px 5px 0; }

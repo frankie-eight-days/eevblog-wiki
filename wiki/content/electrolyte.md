@@ -1,0 +1,44 @@
+---
+title: electrolyte
+tags:
+  - manufacturing
+writer: opus
+---
+
+<aside class="ib"><div class="ib-h">electrolyte</div><table><tbody><tr><td>Videos</td><td>11</td></tr><tr><td>Mentions</td><td>200</td></tr><tr><td>Explained in</td><td>195</td></tr><tr><td>Sources cited</td><td>9</td></tr><tr><td>Span</td><td>#42&ndash;#1728</td></tr><tr><td>Type</td><td>manufacturing</td></tr></tbody></table></aside>
+
+
+The electrolyte is the ionically conductive medium inside a [[battery]] or an aluminium [[electrolytic-capacitor]], the part of the device where charge is carried by ions rather than by electrons in metal.<sup class="cite"><a href="#src-140" title="EEVblog #140 - Battery Capacity Tutorial">140</a></sup><sup class="cite"><a href="#src-1527" title="EEVblog 1527 - Toshiba T1000LE DOS Vintage Laptop Repair HELL">1527</a></sup> In capacitors it is a wet fluid held against the etched foil, and it is the component that ages: it dries out, leaks out, or is boiled off, and every dominant failure mode of an electrolytic follows from losing it.<sup class="cite"><a href="#src-1527" title="EEVblog 1527 - Toshiba T1000LE DOS Vintage Laptop Repair HELL">1527</a></sup><sup class="cite"><a href="#src-347" title="EEVblog #347 - Bad Cap LCD Monitor Repair">347</a></sup> Because it is a liquid chemical rather than a solid structure, it is also the thing that escapes when a [[capacitor]] fails violently, and the thing that is later found smeared across the board.<sup class="cite"><a href="#src-42" title="EEVblog #42 - Exploding Capacitors in High Speed">42</a></sup><sup class="cite"><a href="#src-1511" title="EEVblog 1511 - Solar Analytics System FAIL! (+ Dave gets ZAPPED!)">1511</a></sup>
+
+## Role in cells and capacitors
+
+The internal [[resistance]] of a battery is not a single quantity but two resistances in series. One is ordinary electrical resistance from the internal metal contacts and the physical construction; the other is ionic resistance, arising from the electrochemical reaction itself and set by the conductivity of the electrolyte, the surface area of the electrode, and polarization.<sup class="cite"><a href="#src-140" title="EEVblog #140 - Battery Capacity Tutorial">140</a></sup> The two behave differently in time: the electrical part appears immediately, while the ionic part lags and therefore only reveals itself under pulse conditions.<sup class="cite"><a href="#src-140" title="EEVblog #140 - Battery Capacity Tutorial">140</a></sup> Because the electrolyte's contribution is conductive rather than resistive in character, conductance rather than resistance is the customary quantity in electrochemistry and materials science.<sup class="cite"><a href="#src-1728" title="EEVblog 1728 - AC Basics Tutorial Part 6: Impedance, Conductance, Susceptance, Admittance">1728</a></sup>
+
+Wet electrolyte is also used in implantable and hermetically sealed parts, where a fill port must be sealed off after filling because the fluid would react with surrounding material if it escaped.<sup class="cite"><a href="#src-1027" title="EEVblog #1027 -  Implantable NeuroStimulator Teardown">1027</a></sup>
+
+## Drying out and ESR runaway
+
+Loss of electrolyte and rising [[equivalent-series-resistance]] form a positive feedback loop. High ESR causes internal heating; the heating raises the internal temperature, which raises ESR further, which produces more heat, which dries out more of the electrolyte, and so on.<sup class="cite"><a href="#src-347" title="EEVblog #347 - Bad Cap LCD Monitor Repair">347</a></sup> The process is self-perpetuating: a capacitor that starts out marginal degrades faster the worse it gets, and the cycle continues until the part vents and stops working entirely.<sup class="cite"><a href="#src-347" title="EEVblog #347 - Bad Cap LCD Monitor Repair">347</a></sup> Stated compactly, when "the magic electrolyte inside there escapes, the ESR goes through the roof."<sup class="cite"><a href="#src-1665" title="EEVblog 1665 - Keithley VFD REPAIR 2 - Electric Boogaloo">1665</a></sup> The same mechanism drives the pressure build-up that ruptures the can.<sup class="cite"><a href="#src-347" title="EEVblog #347 - Bad Cap LCD Monitor Repair">347</a></sup>
+
+Age alone is sufficient cause for suspicion. Thirty-year-old electrolytics contain a wet electrolyte that will have dried out, leaked, or both, which is why wholesale recapping of vintage equipment is treated as routine rather than as a targeted repair.<sup class="cite"><a href="#src-1527" title="EEVblog 1527 - Toshiba T1000LE DOS Vintage Laptop Repair HELL">1527</a></sup>
+
+## Violent failure and its residue
+
+Under gross abuse — for instance a 6.3 V, 1000 µF part reverse-biased on 15 V from a supply capable of 40 A — the electrolyte is converted to steam, pressure builds inside the can, and the scored vent on the top opens.<sup class="cite"><a href="#src-857" title="EEVblog #857 - High Speed Camera Fun">857</a></sup> High-speed imaging of such events shows the case wobbling as pressure rises, then the yellowish liquid boiling and spraying out in discrete droplets.<sup class="cite"><a href="#src-857" title="EEVblog #857 - High Speed Camera Fun">857</a></sup> Even under deliberate abuse the safety vents do their job: the parts vent rather than fragmenting.<sup class="cite"><a href="#src-857" title="EEVblog #857 - High Speed Camera Fun">857</a></sup> A milder overload produces no dramatic rupture at all, only a build-up of pressure and the electrolyte spewing out of one end.<sup class="cite"><a href="#src-42" title="EEVblog #42 - Exploding Capacitors in High Speed">42</a></sup>
+
+The residue left behind is a diagnostic hazard. Electrolyte deposits found under a component invite the conclusion that the fluid crept beneath the part and became conductive, but such deposits can equally be incidental contamination on a board that is generally dirty, with the real cause being an excess-power event elsewhere.<sup class="cite"><a href="#src-1511" title="EEVblog 1511 - Solar Analytics System FAIL! (+ Dave gets ZAPPED!)">1511</a></sup> The physical mounting orientation of the assembly, and hence where gravity carried the fluid, is the useful evidence for telling the two apart.<sup class="cite"><a href="#src-1511" title="EEVblog 1511 - Solar Analytics System FAIL! (+ Dave gets ZAPPED!)">1511</a></sup>
+
+
+## Sources
+
+<table class="srcs"><tbody>
+<tr id="src-140"><td class="n">#140</td><td><a href="/transcripts/t/R8hTQXqURB4#p71">EEVblog #140 - Battery Capacity Tutorial</a></td><td class="y"><a href="https://www.youtube.com/watch?v=R8hTQXqURB4&amp;t=1067s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-1527"><td class="n">#1527</td><td><a href="/transcripts/t/Ejk79MNe6rg#p88">EEVblog 1527 - Toshiba T1000LE DOS Vintage Laptop Repair HELL</a></td><td class="y"><a href="https://www.youtube.com/watch?v=Ejk79MNe6rg&amp;t=1199s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-347"><td class="n">#347</td><td><a href="/transcripts/t/Ytw57212X2o#p60">EEVblog #347 - Bad Cap LCD Monitor Repair</a></td><td class="y"><a href="https://www.youtube.com/watch?v=Ytw57212X2o&amp;t=991s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-42"><td class="n">#42</td><td><a href="/transcripts/t/9jDsNe_bmtE#p8">EEVblog #42 - Exploding Capacitors in High Speed</a></td><td class="y"><a href="https://www.youtube.com/watch?v=9jDsNe_bmtE&amp;t=122s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-1511"><td class="n">#1511</td><td><a href="/transcripts/t/ECvJu_BKwtQ#p77">EEVblog 1511 - Solar Analytics System FAIL! (+ Dave gets ZAPPED!)</a></td><td class="y"><a href="https://www.youtube.com/watch?v=ECvJu_BKwtQ&amp;t=966s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-1728"><td class="n">#1728</td><td><a href="/transcripts/t/n5oXtI3jz2I#p61">EEVblog 1728 - AC Basics Tutorial Part 6: Impedance, Conductance, Susceptance, Admittance</a></td><td class="y"><a href="https://www.youtube.com/watch?v=n5oXtI3jz2I&amp;t=909s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-1027"><td class="n">#1027</td><td><a href="/transcripts/t/sNW3Xqtgkus#p23">EEVblog #1027 -  Implantable NeuroStimulator Teardown</a></td><td class="y"><a href="https://www.youtube.com/watch?v=sNW3Xqtgkus&amp;t=334s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-1665"><td class="n">#1665</td><td><a href="/transcripts/t/c_mmVFMXFQo#p39">EEVblog 1665 - Keithley VFD REPAIR 2 - Electric Boogaloo</a></td><td class="y"><a href="https://www.youtube.com/watch?v=c_mmVFMXFQo&amp;t=330s" target="_blank" rel="noopener">watch</a></td></tr>
+<tr id="src-857"><td class="n">#857</td><td><a href="/transcripts/t/ptWr0jS-aL8#p17">EEVblog #857 - High Speed Camera Fun</a></td><td class="y"><a href="https://www.youtube.com/watch?v=ptWr0jS-aL8&amp;t=285s" target="_blank" rel="noopener">watch</a></td></tr>
+</tbody></table>
