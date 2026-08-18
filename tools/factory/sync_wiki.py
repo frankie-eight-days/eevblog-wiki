@@ -189,8 +189,40 @@ def main():
         rows.append(f"| [[{c}\\|{t}]] | {st['video_count'] if st else '—'} | "
                     f"{st['explains_count'] if st else '—'} | {n} |")
     (OUT / "all.md").write_text("\n".join(rows) + "\n")
+
+    # Home page. Without a content/index.md Quartz emits no root index.html at
+    # all, and a static host then serves the next best directory index it can
+    # find -- which was index.xml, so the site's front door returned the raw RSS
+    # feed as XML. Every deep link worked, which is exactly why it went unnoticed.
+    top = sorted(written, key=lambda r: -(r[2]["explains_count"] if r[2] else 0))
+    total_w = sum(len(( OUT / f"{c}.md").read_text().split()) for c, _, _, _ in written)
+    home = ["---", "title: EEVblog Wiki", "---", "",
+            f"An encyclopedia of the electronics knowledge in **{len(written)} articles**, "
+            f"built from **2,886 transcribed EEVblog videos** (10.6 million words).",
+            "",
+            "Every factual sentence carries a citation to the video and the exact "
+            "moment it came from. Nothing here was written from outside knowledge: "
+            "if it is not in the transcripts, it is not on the page.",
+            "", "## Start here", "",
+            "- [[all|All articles]] — the full index, ranked by how often each "
+            "subject is explained",
+            "- [Transcripts](/transcripts) — all 2,886 videos, searchable",
+            "- [Concept graph](/explore) — 5,042 concepts by what gets discussed together",
+            "", "## Most explained", ""]
+    for c, t, st, n in top[:24]:
+        home.append(f"- [[{c}|{t}]] — explained in {st['explains_count']} of "
+                    f"{st['video_count']} videos" if st else f"- [[{c}|{t}]]")
+    home += ["", "## How it works", "",
+             "A census pass read every transcript and recorded each concept "
+             "mentioned, grading whether it was merely named, explained, or "
+             "opined on. Those surface forms were folded into canonical concepts, "
+             "linked by co-occurrence, and ranked. Articles were then written from "
+             "the gathered passages alone, and every quotation was byte-compared "
+             "against the transcript before publication."]
+    (OUT / "index.md").write_text("\n".join(home) + "\n")
+
     print(f"{len(written)} articles -> {OUT}")
-    print(f"  index: all.md")
+    print("  index.md (home) + all.md (full list)")
     return 0
 
 
