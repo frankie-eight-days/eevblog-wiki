@@ -1,0 +1,203 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: virtual ground
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 34 passages drawn from 10 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# virtual ground`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1057] EEVblog #1057 -  µCurrent Murphy — Dave Jones (explains)
+context before: And sure enough, if we actually put pretty much any two meters in parallel, we're able to get something. Um once again, it's a different value every time. So, you might think, "Aha, when you put multiple 10 meg input resistances in parallel, that might do it." Well, let's check that out.
+TEXT: There you go. That meter in parallel with 10 meg does absolutely nothing. Hmm. How about 1 meg? Nope. 100k? Nope. It's not the load. So, you might think, "Okay, maybe there's something wrong with that split rail generator in there cuz we've just got the single coin cell battery and then it uses that LMV321 op amp to just split that in the middle." Well, if we put our meter on
+context after: the reference output with reference ground output, which is actually the output of the virtual ground, and measure our battery, then 1.33 plus and minus 1.33. Perfect. So, this is just madness.
+
+[n7XX75S98e8] µCurrent Opamp Divider Input Bypass Testing — Dave Jones (explains)
+context before: So what I'm doing is actually bypassing R6 there. I've got to solder to the cap, but there's a little track in there. So I'm basically putting a 0.1 microfarad ceramic cap across R6, and I've tried it with both R6 and R7, doesn't matter.
+TEXT: We're just bypassing one of the input to the op-amp, the virtual ground input, instead of the output. And technically, that is a better way to actually solve the problem, if you can solve it on the input side. So let's actually try this. Yes, this is the 321 branded op-amp, so this is the bad one, so it does actually oscillate it.
+context after: I've confirmed it without that, so let's, well, let's just plug in, shall we? And then we'll short out like that, and bingo! We're all good. There we go. So we've just got our noise there, so now what we'll do is we'll connect our, we'll try the pulse performance now.
+
+[n7XX75S98e8] µCurrent Opamp Divider Input Bypass Testing — Dave Jones (explains)
+context before: 
+TEXT: Hi. In the previous quick video, we took a look at adding some bypass capacitors to the virtual ground to the two rails, and that effectively stopped the oscillation in a particular brand of chip, LMV321, used on here. Now, I said that that wasn't necessarily the best solution, and I've had problems with that in the past,
+context after: but it does seem to work, because loading the capacitive output of the op-amp, which is what you're doing in this configuration, even though it's via that series resistor, is not the best idea. So what we're going to have a quick look at here is seeing if that, what I'm going to do is actually remove, I'll show you,
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (explains)
+context before: or maybe some other letter variant in there. And if you have an issue with a capacitive load, there is an additional fix which I've tried here. And let me show you, I've put 0.1 microfarads ceramic bypass caps to either side of C2 there,
+TEXT: which is basically across the battery, so each supply rail to the virtual ground there. And a few people commented on this in the main video and said, well, that seems to be the obvious solution. And my recollection from when I designed this way back at the start is this actually did cause stability problems.
+context after: But maybe that was with the one maximum variant and not the microcurrent gold with the two maximum variants, I don't know, I don't think I have my notes from that anymore. But this one, in this particular case, seems to work. But it's not a given that it would actually work bypassing the virtual ground,
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: It's got the large signal voltage gain there. It's specified for a certain rail, but there we go. Typically, 100, and they specify it in volts per millivolt. So, if if you uh divide 100 volts by 1 millivolt, what do you get?
+TEXT: Same figure, 100,000. There's your open-loop gain. So, there's just a quick practical demonstration showing the virtual ground effect there, and also the voltage rail limitations positive and negative. I should do another part of this video on op-amp limitations, practical limitations, things like that.
+context after: That would be interesting. Thumbs up if you want to see that one. But, I've got I'll leave you with one last thing, and I won't explain it. I'll leave it to you to try and figure out.
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (explains)
+context before: which is basically across the battery, so each supply rail to the virtual ground there. And a few people commented on this in the main video and said, well, that seems to be the obvious solution. And my recollection from when I designed this way back at the start is this actually did cause stability problems.
+TEXT: But maybe that was with the one maximum variant and not the microcurrent gold with the two maximum variants, I don't know, I don't think I have my notes from that anymore. But this one, in this particular case, seems to work. But it's not a given that it would actually work bypassing the virtual ground,
+context after: which is the negative output terminal here, to both supply rails. Because then you, what you're doing is effectively adding that capacitance via the 270 ohm resistor. In there, there it is, the 270 ohm resistor. Sorry about the crudity of this video, didn't have time to build it to scale or to paint it.
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (explains)
+context before: But maybe that was with the one maximum variant and not the microcurrent gold with the two maximum variants, I don't know, I don't think I have my notes from that anymore. But this one, in this particular case, seems to work. But it's not a given that it would actually work bypassing the virtual ground,
+TEXT: which is the negative output terminal here, to both supply rails. Because then you, what you're doing is effectively adding that capacitance via the 270 ohm resistor. In there, there it is, the 270 ohm resistor. Sorry about the crudity of this video, didn't have time to build it to scale or to paint it.
+context after: Even though you've got the 270 ohm series output cap, that doesn't magically isolate you from any capacitive load. But what it will do is actually shift the pole so that, I won't go into poles and op amps and response and all that sort of jazz,
+
+[n7XX75S98e8] µCurrent Opamp Divider Input Bypass Testing — Dave Jones (explains)
+context before: That is, it is actually a different response just bypassing it in there. And bypassing R6 there, which is the, is it the lower up? I can't remember. But it doesn't matter. We bypassed one of the input dividers to that op-amp. And I've tried bypassing the other one and it does exactly the same thing.
+TEXT: So by having no bypassing on the virtual ground pin and bypassing on the input, the response is slightly different to the ideal. So, yeah, that's not necessarily the best solution either. So, yeah, the other one, bypassing the virtual ground with the two caps, actually works better, I think.
+context after: In this particular case, even though it's not necessarily the best way to do it. So that's rather interesting. And more experimentation required. Sorry I don't have the time to do it right now. I just wanted to show you this and thought that was quite an interesting experiment.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: will change its output voltage to whatever voltage it takes within the limits of the circuit to make the two input voltages equal. In the case of the inverting amplifier, we take the non-inverting input of the op-amp and tie it to ground. The ground is by definition zero volts,
+TEXT: and it will remain zero no matter whatever else happens to the circuit. The operational amplifier will adjust its output to whatever voltage it takes to make the inverting input also zero volts, and so we call this inverting input a virtual ground. Now when we look at this ground and this
+context after: virtual ground, it's important to remember that zero volts is not the absence of voltage. Here I have four 5-volt batteries giving us a total of 20 volts from here to here. Now let me use these pins as a virtual voltmeter, and if I put my voltmeter like this, of course I will read
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: So let's move the black lead back here, make that our zero volts, make that our ground, and now things make a lot more sense. We have positive five volts here, negative five volts here. The op-amp is doing what op-amps always do. It's adjusting its output
+TEXT: voltage to whatever it takes within the parameters available to make the two input voltages equal. Now those two voltages happen to be zero volts, but that's not because there's nothing there. It's simply the same voltage where the black lead happens to be. So thanks for watching,
+context after: and thanks for your video, Dave. It's one of the better videos I've seen on operational amplifiers on the internet. But even you said people get confused about the voltages seeming to disappear when they get to the op-amp. So hopefully this cleared it up for some people.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Hmm, let's drop these down. Still quite high values, 1K and 10K. They're not, you know, like 10 ohms or something like that. But, let's give it a go. And there it is, a 1K input resistor, 10K feedback resistor.
+TEXT: Exactly the same gain, exactly the same input signal, but what's that little funny business going on in there? And over there? Hmm, and if we measure our virtual ground point, look at these little spikes there and there corresponding to that little bump in that waveform.
+context after: Interesting. So, as Professor Julius Sumner Miller said, "Why is it so?" I'll leave that to you to figure out. Catch you next time.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: minus five volts to compensate. And as I move this down, she has to move up to compensate, and notice that she's making a bigger movement than I am, because the feedback resistor is bigger than the input resistor. And so the higher the ratio between the two resistors, the more she
+TEXT: has to move her output to compensate. So now we have amplification. I make a small input change, and she has to make a large output change to compensate, always making sure that the junction between the two resistors, which is at the virtual ground, is at the same place.
+context after: So as this voltage increases, it does increase the voltage at this point, but then the op-amp reacts by decreasing this voltage to make sure that this voltage stays equal to that voltage, or zero. So this is not zero volts because it is tied to this voltage.
+
+[xUKf-4rv_sQ] EEVacademy #8 - Howland Current Pump — Dave Jones (explains)
+context before: And that that can be used that can be a useful trait in um understanding a Howland current pump. So, if we made this 1 ohm, which I'm going to do now, you'll notice that the output hasn't changed at all and the the um gain hasn't changed at all.
+TEXT: There's an interesting property of this circuit and it's that the whole circuit is basically referenced to this point. It's the only ground in the circuit. And that means you can make it a virtual ground, um which um is frequently created with just a unity gain op-amp.
+context after: So, let's create a um a buffer. And we're going to buffer ground. It's kind of useless, but I will get to this. And I'm just going to move the load all the way over here.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: So, our gain, our formula, AV gain equals RF on R1. There is no plus one with the inverting amplifier. The plus one only applies to the other non-inverting configuration.
+TEXT: So, by way of op-amp action, we'll call it, and negative feedback here, this point, this node here at the non- at the inverting pin, is what's called a virtual ground because typically in this configuration, it is actually grounded because we've grounded this pin.
+context after: Doesn't have to be. We can feed other voltages into with pin and offset and do all sorts of other stuff, but it's still called even if you do feed another pin in here, it's still called virtual ground because it's virtual.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: Now, because the input, the uh non-inverting input down here is also grounded, and once again, we go back to our ideal op amp properties, we're assuming our input offset voltage, remember we're not talking about offset voltage yet, is zero.
+TEXT: So, the difference between here and here is going to be zero. Remember, due to op amp action, the op amp does whatever it needs on the output to ensure that the two inputs are exactly the same voltage, if your input offset voltage is zero, which we'll assume.
+context after: So, this point here is also 0 V. It's also grounded. So, there's no current flowing through R1 there at all. So, but we still have an input bias current.
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (explains)
+context before: that's a whole video or two in its own right. But yeah, it doesn't magically fix that. Putting in that series resistor, which is in there, doesn't magically fix that. So adding these capacitors on effectively the output of the op amp via that 270 ohm resistor
+TEXT: to the virtual ground, to the two different rails, positive and negative like that, is actually adding capacitance to the output. And that's generally not a good thing to actually do. But in this case, I have tested it, and it does seem to work just a treat.
+context after: So let me demonstrate here. So I've actually got two boards molded. One has the good in quote marks TI part, the RC1F chip, and this one has the troublesome 321T or 321S part on it. So let me try. So what I'm doing is, well, actually, here we go.
+
+[819] EEVBlog #819 - DC Fundamentals Part 4: Kirchhoff's Laws Tutorial — Dave Jones (explains)
+context before: And the thing about this is it's not a formula that you have to remember. It's just a concept that current in equals current out. Now, of course, I can build up a boring circuit and actually demonstrate that current in equals current out, but there's no point, but I'll just give you one little simple example here you where you might use Kirchhoff's current law in the real world, for example, to analyze a circuit
+TEXT: here. Let's take an op amp. We've got an inverting configuration. You should be familiar with something like this. We've got a positive voltage here, and by op amp action, one of the basic rules of the op amp is our non-inverting terminal here is at 0 V.
+context after: It's a ground, so therefore the inverting terminal is also at ground. So, we're going to have a current flowing through like this. So, remember, look, we've got a current flowing into a junction point right here, okay?
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: And look at that. And of course because it's an inverting amplifier, the output is exactly 180° out of phase. It's inverted. So at the moment I'm probing the input and the output.
+TEXT: Now you want to see the virtual ground, didn't you? What happens if I move my input probe, the blue waveform here from the input over to this? You'd expect to see the signal but as I've told you and as you should trust me, let's move the probe over.
+context after: That is our virtual ground point. Look. Flat as a tack. The signal has vanished. Magic. But, of course, you know it's not magic. It's just standard op-amp behavior with virtual ground on the input.
+
+[n7XX75S98e8] µCurrent Opamp Divider Input Bypass Testing — Dave Jones (explains)
+context before: but it does seem to work, because loading the capacitive output of the op-amp, which is what you're doing in this configuration, even though it's via that series resistor, is not the best idea. So what we're going to have a quick look at here is seeing if that, what I'm going to do is actually remove, I'll show you,
+TEXT: I'm going to remove the bypassing on the output Vref, so I've removed those, and we're going to try and solve the oscillation by bypassing the input. So the R7 and R6 there are the 200k voltage dividers that creates the 0 volt virtual reference.
+context after: So what I'm doing is actually bypassing R6 there. I've got to solder to the cap, but there's a little track in there. So I'm basically putting a 0.1 microfarad ceramic cap across R6, and I've tried it with both R6 and R7, doesn't matter.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: You would feed that voltage half rail in there. You'd usually do that simply by putting a resistor like that going to V plus and a resistor down there going down to ground and bingo, voltage divider, there's your half rail.
+TEXT: So, we're offsetting our voltage here our virtual ground. Remember, this is still called a virtual ground even though it's not going to be. So, the voltage here is going to be equal to the voltage here due to our second op amp rule.
+context after: So, if our power supply is 20 V, for example, this point here would be half that if we make these, you know, exactly the same value, of course. Make them the same value, half rail.
+
+[1057] EEVblog #1057 -  µCurrent Murphy — Dave Jones (explains)
+context before: I that's the crazy thing I don't understand. And if you have a look at the schematic here, granted it is a bit unusual in the way that um, you know, we don't have a direct capacitance load on V ground here, for example, cuz the bypass caps on the MAX439 are actually across V plus and V minus.
+TEXT: So, they're directly across the battery, not actually on the output. So, it's kind of hard to say what the effective capacitance is on that virtual ground relative to say the negative rail, uh for example.
+context after: So, it's hard to tell, but like I've uh proven that the Texas Instrument part with exactly the same specs it it just never oscillates with any capacitive load, it's completely robust.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: And as a bit of homework, I go recommend you look at the summing op-amp configuration, the summing amplifier, and figure out how it works, because you're going to be using those two rules to figure it out.
+TEXT: So, I'll leave that one up to you. But, enough of that, let's head on over to the bench here and see if we can measure some stuff, make sure I wasn't bullshitting in you about this virtual ground stuff.
+context after: Let's check it out. Sounds a bit sus. See if it really works. All right, we're at the breadboard. Let's take a look at an inverting amplifier here, because I wanted to show you that virtual ground point there, just to show you that there really is no signal there.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Now you want to see the virtual ground, didn't you? What happens if I move my input probe, the blue waveform here from the input over to this? You'd expect to see the signal but as I've told you and as you should trust me, let's move the probe over.
+TEXT: That is our virtual ground point. Look. Flat as a tack. The signal has vanished. Magic. But, of course, you know it's not magic. It's just standard op-amp behavior with virtual ground on the input.
+context after: That's how an op-amp works. And no, the current hasn't magically vanished. The current is going through the resistor. Ohm's law still holds. Current is changing because we've got an AC resistor here.
+
+[xUKf-4rv_sQ] EEVacademy #8 - Howland Current Pump — Dave Jones (explains)
+context before: So, this is all fine. Now we've got this virtual ground here. And we can also connect it here. We can connect the virtual ground to the the ground over here.
+TEXT: And it doesn't actually matter what this voltage is. The whole circuit will shift with it because every element every node in the circuit is referenced to this point here, the virtual ground.
+context after: Um where the absolute ground is over here. So, what we're going to do is apply a voltage source here and see what happens. So, if I put 1 V here, the whole circuit has shifted up.
+
+[72] EEVblog #72 - Let's Design a Product — Dave Jones (explains)
+context before: So, you tap off, you're effectively tapping off 1.5 V, and then you need to buffer that with a with a um a voltage follower op-amp so that it's low impedance, and that becomes your ground.
+TEXT: Now, you're not actually shorting the output of there because it's not actually referenced to anything. This becomes the ground. The output of the op-amp becomes the ground of your circuit.
+context after: And then um by that nature, you've got +1.5 V and -1.5 V, and bingo. There's um you've got a single low-cost um cheap op-amp, no switching noise, and you've generated your plus minus rails, and then you've only got a single battery to worry about for your low-voltage battery detection circuit.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: You know, I I won't go into the details, but basically any noise on this point here will be amplified and picked up on that virtual ground, so you'll get noise on your output signal.
+TEXT: So, you might stick a big ass, you know, 1 or 10 microfarad cap across here, for example, and really make that virtual ground really noise-free. But, hey, that's that's beyond the basics.
+context after: One little mistake I noticed, oops, my formula here for the inverting amplifier, it needs a negative in front of it because the gain is actually negative. So, it's So, the gain is not in this case is not 10k is not 10, it's minus 10.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: It's connected to ground. We're forced to the ground. It's never going to change. So, what is the inverting input here going to do? Well, of course, rule number two, it's going to be identical.
+TEXT: It's going to be the same. So, this point is also going to be ground or 0 V. So, this seems like almost like a pointless circuit cuz look at rule number one, no current flows in or out.
+context after: So, there's no current flowing in or out of that pin and it's ground. We've got both pins grounded and no current flows in or out. It's almost as what's the point of having an op-amp?
+
+[xUKf-4rv_sQ] EEVacademy #8 - Howland Current Pump — Dave Jones (explains)
+context before: That's 2 V. That's 2 V. Okay, so with that we can say that um this is a true virtual ground. We can use this as a virtual ground without really worrying too much.
+TEXT: And this output is still actually 1 V when you compare it to the virtual ground, which is here. So, let's do that. Let's probe the op-amp output with respect to the virtual ground.
+context after: Um and I'll just use one of these probes over here. Just like this one. And you'll see it is 1 V as it always should have been. So, if we change the offset of the whole circuit to 2 V, now it's it's outputting 3 V, but the virtual ground is now 2 V.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: So, it's a different configuration. Our signal is not going directly into the non-inverting pin. And this brings up our next really important concept with op-amps that you really need to understand.
+TEXT: And here's where rule number one really comes into play in trying to analyze this thing. It's called virtual ground. Stick with me. So, once again, how do we analyze this?
+context after: Always go back to your two rules. What's our second rule here? The op-amp tries to keep the input voltages the same. In fact, it will if you've got this non-inverting configuration and you haven't hit the rails yet.
+
+[xUKf-4rv_sQ] EEVacademy #8 - Howland Current Pump — Dave Jones (explains)
+context before: Um where the absolute ground is over here. So, what we're going to do is apply a voltage source here and see what happens. So, if I put 1 V here, the whole circuit has shifted up.
+TEXT: That's 2 V. That's 2 V. Okay, so with that we can say that um this is a true virtual ground. We can use this as a virtual ground without really worrying too much.
+context after: And this output is still actually 1 V when you compare it to the virtual ground, which is here. So, let's do that. Let's probe the op-amp output with respect to the virtual ground.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Makes them the same. We've forced this pin, so it can't change this pin. All it can do is change the voltage via the nature of the feedback resistor here to make this zero.
+TEXT: And trust me, we'll do a practical measurement of this in a minute and this node here will actually be 0 V. This confuses the heck out of a lot of beginners.
+context after: They build up their op-amp circuit. They start probing around, and they've got their input signal here. You know, it's a 1 kHz 1 V sine wave, for example. And let's say they measure this side of the resistor, and the signal's there.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (opinion)
+context before: 
+TEXT: Hello, Dave. I'm making this video in response to your video on operational amplifiers, particularly on the section on inverting amplifiers, where you said people become confused because of the signal at the input to the amplifier that seems to disappear at the virtual ground.
+context after: I think the confusion happens because people see that we have an input at this point here, but by the time we get to the amplifier, it's zero volts, and the other input is also zero volts, so the inputs to the amplifier are always zero.
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (mention)
+context before: adding the capacitive load directly on the output of the op-amp, even though it is via a series resistor. And I recall my testing way back in the day, we're talking many years ago now, is that I was seeing oscillation. I can't remember what parts I was using in what, you know, I can't remember,
+TEXT: but I remember that being a problem, which is why I didn't add the bypass caps to the virtual ground, because I found that A, I didn't need them, and B, it could potentially cause some sort of issue. But in this particular case, it seems to have fixed it.
+context after: So there you go, that is an additional fix for those who have a problem and want to do it. Once again, I could probably do further testing, but setting the worst case capacitance on the output, that's always a good, that's always a decent way to do it.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (mention)
+context before: This Microchip one's performing the same as the Maxim one. So, it looks like the Analog Devices one is something peculiar with that. So, I put my Analog Devices one uh back in here and of course, this is um not using the split uh bench supply anymore.
+TEXT: It's uh utilizing the uh split supply on my microcurrent here, but it doesn't seem to make any difference whether or not I use the split supply the op-amp virtual ground split supply on here, or my bench supply, as you'd expect, really.
+context after: You wouldn't expect any difference, but there it is. I've got the average mode on there. And down at 2.7 V, it's, you know, you know, it's very low, very respectable.

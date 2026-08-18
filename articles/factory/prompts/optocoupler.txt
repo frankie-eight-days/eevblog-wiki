@@ -1,0 +1,568 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: optocoupler
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 107 passages drawn from 76 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# optocoupler`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1292] EEVblog #1292 - $2 Meter vs JVA Electric Fence Controller! — Dave Jones (explains)
+context before: We went over the all this sort of stuff in the previous one. So, it's going to be very similar. Now, Paul talks about this in the podcast as well and it's a fascinating.
+TEXT: This is of course an optocoupler, a do-it-yourself optocoupler. The previous design, as you saw in the last teardown, actually the old one had just some heat shrink tubing going across, but now they've got this custom like injection molded plastic thing, but it's basically it's just a I believe it's an infrared LED over here and just a phototriac over here and that's the only way that they can get that decent
+context after: high voltage isolation. And of course, they get it measures the voltage back across this as well. It's not just like that it's on or off. They can actually measure and monitor the output voltage as well, but yeah, that's nice.
+
+[1252] EEVblog #1252 - LED Panel Lighting Flicker Investigated — Dave Jones (explains)
+context before: So you know, you can get moisture in these things up in the roof that heats up cools down all that sort of jazz so but we've got a secondary side constant current controller here with then of course that will be driving our switching down there with the heat sink but it's basically just a bridge rectifier over to the main filter cap.
+TEXT: Then it uses a proper secondary side constant current controller and you'll notice just like the other one there is actually no optocoupler feedback from the secondary back to the primary so they're also using a winding hence yep they've got the two pairs on the side there one pair will be for the switching one pair will be for the feedback but the difference of course is that the
+context after: constant current regulation is done on the secondary side and they've got big ass filter caps. That's why this one is going to have well won't be entirely ripple free but will have bugger all that it essentially won't flicker.
+
+[745] EEVblog #745 - Mailbag — Dave Jones (explains)
+context before: And there's our DC input source board as well and those NEC 2401 packages by the looks of their placement and the fact that look, there's no traces going from one side to the other.
+TEXT: Like I've I've never seen those NEC 2401s before, but just from the the physical configuration of the board, you can tell what they are. They're optocouplers. There's opto isolation because everything's, you know, just split directly under that chip, so they bet my bottom dollar they're opto isolators with a couple of pull-up resistor networks and Bob's your uncle.
+context after: Yeah, there's no fancy switching power supply down in there. That's just a old-school linear. Thank you very much. Very big, heavy, and beefy. And well, that's all you need in a controller.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before:  I haven't, I've covered it in in some video somewhere. Anyway, metastable state, which means you don't don't know what what it's doing. It could be getting multiple clock clock pulses, it could be getting none, it could be skipping pulses, getting multiple ones, which is why we could be seeing this weird effect, a counting effect that we're getting here, because this could be a meta stable input caused by slew rate.
+TEXT: So, I'm almost 100% certain that the input slew rate caused by this optocoupler here is open collector optocoupler and this pull-up resistor here is what's causing the problem. The in this case, the negative going pulse is just is too slow for this thing and it just it can't count properly, which is why it's giving you a weird counting configuration.
+context after: So, if Darkwing actually bypasses that and feeds it from a nice clock source from your signal generator or some other TTL device, you'll fix it. Or if you really wanted to use this if you had to use the optocoupler, obviously feeding in some sort of AC signal wants to convert that to digital and then clock the thing, which is fine.
+
+[388] EEVblog #388 - Fake Apple USB Charger Teardown — Dave Jones (explains)
+context before: There's nothing in there. You've got to be kidding me. And of course, there's no talking of isolation slots on this thing either. Forget it. I mean, here's the optocoupler.
+TEXT: Okay, they've got a reasonable distance between the primary and the secondary side of the optocoupler here, but look, it's instantly ruined by that gap there. Unbelievable. And I don't think I'm even going to bother to unwind that switching transformer there, cuz it's going to be an absolute shocker inside in terms of clearance as well.
+context after: And one thing you won't find on this design is any fuse protection at all. No fusible resistors, no thermistors, no resettable fuses, nothing. And also, you won't find any inductive filtering either.
+
+[449] EEVblog #449 - Absopulse VFC500 Variable Frequency Converter Teardown — Dave Jones (explains)
+context before: isolation at all between those, because they're just inductors from there to there. And I almost forgot to mention the thermistor on the back of these two main switching power MOSFETs here. Very nice. So over-temperature protection. So what we've probably got here, these boards in here would be part of the control for the active
+TEXT: power factor correction stuff around here, and then this circuitry down here would be our main switching control for our main AC to DC converter, so hence we've got a couple of optoisolators in there, getting some voltage feedback by the looks of it. There's that part of the isolation down in there, and you can see
+context after: that on the board, it's separate, they've got the two connectors on the bottom there, you probably can't see that, but there's, that's the isolation gap between primary and secondary side of the main switching transformer. And here's our second DC to AC inverter board.
+
+[1172] EEVblog #1172 - TRIAC Testing (WEP Meltdown Part 2) — Dave Jones (explains)
+context before: So, I don't think that was a real issue. But anyway, a lot of people in the comments for the previous video said, "Aha, it is the SCR sorry, the triac in this thing which is here and it's a BTA16 / 600V triac and pretty decent one from ST designed for you know, medium power applications.
+TEXT: Here's the data sheet and it looks like to be a genuine one not some knock-off or anything and a lot of people said, "The triac failed short." And sure enough, if the triac actually failed short, then there's nothing that the processor on this thing could actually do via the gate control optocoupler here.
+context after: It couldn't switch it off. Which could certainly be a fire mode and a lot of people have said that oh, they've seen other Yihua/Web stations fail because of the triac.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (explains)
+context before: And of course, these aren't power resistors because they're dissipating a huge amount of power. They're 330 K pop here. They're used because they're high voltage resistors. So, that's what they're being used for.
+TEXT: So, all the big safety isolation here. So, all these grounds are completely separated. Now, we've got ourselves an optocoupler here, the Vishay CNY64. And if you go and look at the data sheet for that thing, then this side over here, these two pins are the LED and this side is the phototransistor.
+context after: So, it's sending data back in that direction. So, it's sending something from over in all this analog stuff. These are all just op amps and comparators and stuff like that.
+
+[930] EEVBlog #930 - Mailbag — Dave Jones (explains)
+context before: It's just pointless. There's one thing I find surprising about this, I just assume that it will contain, like, lots of power stuff and things like that. Like motor drivers and, you know, like big H-bridge or something. I don't know, to actually drive these things.
+TEXT: And like relays, I expected like real relay outputs, but there's nothing of the sort here. We've just got our photo transistor optocouplers here. These are all 74HC14s all along here. These are some RS422 differential drivers and stuff like that. So really, you know, there's no power electronics
+context after: in this. It's really just software and IO. But like I said, I don't know a huge amount about these, you know, like CNC controllers, they hook up to existing motor drivers and stuff like that, I would presume. But anyway, yeah, I just assumed it would have
+
+[1277] EEVblog #1277 - Electric Fence Controller Teardown — Dave Jones (explains)
+context before: So, I'd say more likely it's just voltage sensing, and that's just a dropper for whatever the heck part this is. Just wanted to show you a 4K close-up of these Plezy Ducon caps, cuz yeah, you rarely see those, and you won't see them anymore, cuz I'm pretty sure they don't make them.
+TEXT: Ha, I figured this out. It's obvious. It is an optocoupler, and there's nothing in the middle. Squishy, squishy. That's a LED, and that's a phototranny. So, they're just rolling their own um optocoupler there, cuz uh presumably they couldn't uh find one with enough uh withstanding voltage.
+context after: Fair enough. It's a cheap way to do it. So, that right there is a 1 meg LED dropper resistor. Have you ever seen a 1 meg LED dropper resistor?
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (explains)
+context before: They've even cut this uh ground uh earthing trace over here cuz this would be connected. You'd just ruin your uh system ground if you connected that straight across. So, they've actually cut that uh straight through with the slot.
+TEXT: And they've used these uh optocouplers here, but they're they're like one of those uh optocouplers you'd see, you know, um uh like in a photocopier or something like that, where you can actually put uh something in in between like that and it just cuts off the signal between the two.
+context after: So, that's rather interesting. I wouldn't have expected to see a you know, a basic uh DIP package uh optocoupler or something like that, but they've gone with that type.
+
+[446] EEVblog #446 - Dumpster Diving Samsung Plasma TV — Dave Jones (explains)
+context before: Sorry consumption. I'm not sure if it actually draws that in operation, but it's certainly capable of all that power. So there's one beast of a board. And you can see the isolation in the power supply too.
+TEXT: And that's identified by this big thick silk screen here which goes underneath the optocouplers there. You can see the optocouplers feeding back and it goes through here this transformer and obviously these switching transformers here with some more optocouplers down in there.
+context after: So all this stuff around here is obviously mains primary side and all the stuff down this side is low voltage. Well, you know, 200 volts but it's the isolated side of the power supply.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: And they go into the details. I can link this in, but basically, how is regulation performed? Textbooks only describe op-amps in compensators. The market reality is different. TL431 rules.
+TEXT: And And sure enough, there it is. TL431 is the most popular choice in nowadays designs. So, yes, basically does optocoupler control. Of course, you need isolated feedback. You've got your switching transformer and for your mains power supply and then your optocoupler feedback.
+context after: And it's tied into the optocoupler feedback here. And it's absolutely perfect for that. And you can control based on these resistor values here whatever output voltage you want. And they go into all the math behind that, but check it out for yourself.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (explains)
+context before: We've got our bridge rectifiers going to our main filter caps here and then obviously, yeah, this is this is all the connections for the primary side of the transformer there.
+TEXT: And then we're going to have some optocoupler feedback somewhere. There they are. Optocouplers. They look weird, but yep, old school package optocouplers there. So, we've got some feedback, but I don't necessarily think it's doing much in terms of secondary regulation.
+context after: As I said, we've got that linear regulator there. So, anyway, primary side and then secondary side here. We've got some extra stuff in here. So, yep, this diode over here is on the secondary side and the other diode on the heat sink here also on the secondary side.
+
+[1291] EEVblog #1291 - Mailbag — Dave Jones (explains)
+context before: the two, uh, heating elements, well, one's ground, one's positive heating element, and the other would be the, um, sensor. Uh-oh. Up here, and the lead's just probably across the heater element. Bloody tri-wing screws. Are you kidding me? Time to get medieval on its ass.
+TEXT: Yep, just had to have that inside a mouse case, didn't you? Unbelievable. What was the design pitch meeting for this thing? What a load of rubbish. Anyway, we've got our, um, uh, mains, uh, switch mode here, and secondary, of course. Uh, it's got opto-coupler feedback,
+context after: and there's our primary to secondary filter cap there, and that's maybe what's, uh, causing the, uh, tingling that was, uh, reported, perhaps. It's not necessarily, unless they've, uh, got real bad clearance under here, and it's something else, or there's something wrong with the tranny or something like that.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (explains)
+context before: So, one of those relay contacts there would go to there and there's our optocouplers there. Those three optocouplers would be controlling these three channels here. We've got more optocouplers over here.
+TEXT: So, all of this circuitry around in here is We've got four optocouplers there coupling that over from the digital section, the control section all up the top here down into this output which drives the RJ45 which goes to the G GSM module down there.
+context after: So, that's all optocoupled isolated, as you'd expect. Safety first on this sort of stuff. Another optocoupler in there, and uh that's it. Bob's your uncle. The main processor, there'll be a a flash memory device under there as well.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before: 500 nanoseconds maximum. So, there you go. So, it's actually going to be slightly under that for 5 volts. Somewhere between like 450, 470, something like that. Absolute maximum value.
+TEXT: So, right there if we go back and have a look at our optocoupler here. Uh we could Commegatza. Like there's like we're already at 500 nanoseconds there. Half a microsecond for the fall time and that's with the transistor pulling it down.
+context after: That's not the horrible 45 nanosecond uh rise time with a nominal 4.7 K resistor into that the capacitance load. I Yeah, it might be faster than that, but it's like in the order of tens of microseconds with the resistor 2 K 7 we're talking about here.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (explains)
+context before: So, you slide it back and ta-da lift it up, forward and out. Oh, no, that's something's Oh, there we go. Got to take this. I'm not sure what that cable's doing there.
+TEXT: I might find out. There we go. Ta-da. Aw, we've been mooned. Look at that. Now, on this main board of course, you can see the classic isolated grounds. This is the optocouplers would be bridging these two grounds.
+context after: Here's our output ground here based on our output connectors down here. And then this is all our logic ground up the top. And then they would have the of course, have the optocouplers separating those two grounds.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (explains)
+context before: You know it needs to be really precise AD conversion in these things and front end amplifiers and range switching and stuff like that. So I expect all that including the ADCs to be on each separate card there and then like a serial data interface to that because this thing I think sound like has a 50 kilohertz bandwidth or 100 kilohertz or something like that.
+TEXT: It's not you know huge so you can just get the data over digital serial interface and it's much easier to galvanically isolated digital interface just using some optocouplers than it is to do it analog wise.
+context after: So anyway it could be interesting. Let's crack it open. You bet your ass we're going to void the warranty. Let's do it. One of the most satisfying things you could do.
+
+[1503] EEVblog 1503 - Rigol HDO4000 12bit Oscilloscope TEARDOWN — Dave Jones (explains)
+context before: So, it chooses either the battery interface um or it just comes from the power supply. And that's it. Took me a few seconds to figure out what that board down there was, but it actually tells us our AC triggering board.
+TEXT: So, they've got an optocoupler there, and so it just takes the mains output and the mains input here, um and just gives us an optocoupler output, which then goes over this cable goes over to the main board.
+context after: So, yeah, that's just for our line triggering. So, they've gone to a lot of trouble there. And we'll go through the board in some detail, but this is the LCD connection, so we can take that off and then we can see it, but I'm going to just going to now remove all the heat sinks so that we can take some high-res photos and go into it.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (explains)
+context before: Look at that. That's beautiful. I like And down near our outputs down here, you can see that we've got four outputs, four moves. Those moves are obviously protecting the outputs there and there's our relay which went to that one, I believe it was.
+TEXT: So, one of those relay contacts there would go to there and there's our optocouplers there. Those three optocouplers would be controlling these three channels here. We've got more optocouplers over here.
+context after: So, all of this circuitry around in here is We've got four optocouplers there coupling that over from the digital section, the control section all up the top here down into this output which drives the RJ45 which goes to the G GSM module down there.
+
+[709] EEVblog #709 - EDC 4601 AC Voltage Standard Teardown — Dave Jones (explains)
+context before: This is a vactrol and you're probably wondering what the hell is that? Well, it is a photo resistive opto isolator, like a photo resistive optocoupler. It's like an old school 1960s optocoupler um trademarked the Vectrol name is trademarked by Vactec.
+TEXT: I don't know if they still exist or not. So, unlike a regular opto coupler which has a photo transistor on one side, this has a LED on one side and a photo cell like a CDS photo cell on the other side.
+context after: So, there you go. So, that allows isolation and used in oscillator stable oscillators and things like that, you know, very sort of, you know, HP 200 old school using a light bulb as the you know, as the main as the main stability element in your oscillator.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before: If you fix that, everything else should fall into line. That's the plan, anyway. So, there you go. I hope I've answered Darkwing's question. I hope he follows up uh with this and lets us know what the problem is.
+TEXT: Anyway, so that's what I said down here is has maximum input slew rate. Yep, your clock pulse is coming from an optocoupler, that will be creating a slow positive That's actually a negative edge.
+context after: Sorry, positive edge. Yes. Um and potentially a slow negative edge as well. That optocoupler is not that quick. Um and try reducing your pull-up resistor for starters, etc. So, there you go.
+
+[378] EEVblog #378 - Dumpster Diving Teardown Repair — Dave Jones (explains)
+context before: So, there's the transformer. There's a link. You can see the link going directly over there from the diode bridge going over to the primary side of the transformer. The secondary side is over here.
+TEXT: These are the optocouplers for the feedback. And uh that is about all she wrote on this board. So, there's not a huge amount. There's stand-in binders. I said I've measured that plus five there.
+context after: I'm getting uh plus uh 4.8, which uh should be good enough. And just to give you a look at these uh surface-mount parts here, you can see those little red blobs coming out from under those little uh 0805 resistors there.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before: It's going over to here. It's going through, I believe that's a 270 ohm resistor, and that's jumping over to, uh, what? Pin six of this, uh, HP 3700. So, let's go and have a look at the HP 3700.
+TEXT: You might have already guessed that this is a, uh, AC to AC logic interface. It's an optocoupler. And if we have a look at our internal circuit, the output is coming from pin six.
+context after: This is buggering off to our circuit. That's the clock pulse, and you'll notice that that is an open collector transistor. There's nothing, it's not a totem pole output, which means so there's no active transistor in here that can actually drive this input very fast up to the positive rail.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (explains)
+context before: There it is. It's very quiet. It's quite nice, actually. I rather like the look of that one. And yeah, just some small local linear regulation around here as well.
+TEXT: Once again, you need those for the plus minus rails. And of course, optocouplers for everything as you'd expect. That connector is all just on an angle there. Really dodgy.
+context after: Thrown together. It's quite a Yeah, here we go. These are all on an angle like that. Anyway, here's your optocouplers here. So, between your digital processor board over here and just this this could be part of the sampling logic.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (explains)
+context before: Here we go. Ta-da! So, I'm now holding I'm just holding them. I haven't put them on, but there you go. Have we got something? Okay, what I'm probing now is actually the output to that optocoupler.
+TEXT: Okay, so what's driving that LED on the optocoupler there, and you can see jitter on the signal, and I'm if I'm not mistaken, this might actually change with my pulse rate.
+context after: So, I'm going to jog here. I'm jogging on the spot. See if I can get my pulse rate up. Here I am. Come on. Come on. It's hard to get my I'm quite fit.
+
+[1069] EEVblog #1069 - Mailbag — Dave Jones (explains)
+context before: So it would have been nice to have the schematic and everything else. Anyway, here's the board. I like the little Austin Projects logo and the thumbs up picture on the back.
+TEXT: That's great. Nice. Um but it's basically just a mains opto-coupler interface the MID400 chip. There it is which you can replace of course if you blow the ass out of it.
+context after: And basically you've got mains in here and it connects to either to a Arduino Raspberry Pi. Unfortunately, there's a lack of any sort of silk screen labeling on the board.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (opinion)
+context before: But, all this sort of stuff requires its own video video in its own right, really. So, anyway, if you I hope that's the answer. Otherwise, I'm going to be really embarrassed if I missed something and it's just this breadboard wiring error or it's a as I said, a contact problem or or something like that.
+TEXT: But, yeah, notorious these optocouplers when you're driving. You don't want to drive signals directly from open collector like that. So, in this particular case, the first step would be to simply reduce the value of the resistor.
+context after: Go really low. Go go hundred ohms and see if that fixes the problem or look at that edge with your scope. It's got a Rigol scope there, more than good enough to look at the the slew rate either the positive and negative.
+
+[1161] EEVblog #1161- Automated Coffee Machine Dumpster Teardown — Dave Jones (opinion)
+context before: Well, of course, you got the motor up here. You might want to reuse the grinder mechanism for something. Who knows? Uh these boards are very nice to keep cuz you know, you've got um like large mains filter caps, uh big common mode chokes.
+TEXT: You've got like big big ass bridge rectifiers. You've got uh varistors. You got a relay on there. The optocouplers you can salvage those. Very nice little, you know, heat sinks and other um stuff you can get off there.
+context after: So, you know, boards like that are well worth It's well worth having a just a junk box full of like scrap boards and things like that. Very handy. Uh you know, you get little transformers.
+
+[1587] EEVblog 1587 - Dumpster FAX Teardown — Dave Jones (opinion)
+context before: I mean, I jeez, you got you know, one step uh driving the whole thing. And the power supply, I'm not sure you'd um even bother uh keeping that. Although, you know, you might be able to salvage a few you might toss it in your uh power supply junk bin, I guess to uh you know, salvage some uh protection uh components.
+TEXT: Or, you know, you might need a common mode choke or something like that. But you're not going to reuse any of the caps or anything. You might need an optocoupler one day maybe for something, but yeah, you know.
+context after: Generally, um we don't really have much of value in this thing at all, unfortunately. So, it's about all she wrote. It's a bit of a bummer, but you know, it's dumpster.
+
+[1277] EEVblog #1277 - Electric Fence Controller Teardown — Dave Jones (opinion)
+context before: I would say that this big resistor here uh oh, that's marked D02. What's in there? Ooh. What is that? It's got a cover on it. Oh, there's two leads on each side.
+TEXT: Oh, oh, 02. It's an opto is it It's an optocoupler, is it? Anyway, um these are usually uh like pulsed uh DC type things. I'm I'm there's many different uh standards and and stuff like that for them.
+context after: Uh but yeah, I believe it's like a pulsed uh DC type thing, so it doesn't give you like continuous direct uh DC shock. It will actually pulse. That's why you need uh pulse grade uh capacitors input and output, too, of course.
+
+[637] EEVblog #637 - Omni Directional Laser Barcode Scanner Teardown — Dave Jones (opinion)
+context before: Here it is. So, this is all uh motor stuff around here, and uh that's about all she wrote, really. Now, that right there is a fascinating package. Look at that.
+TEXT: Can anyone tell me what that is? Look at that. Some sort of optocoupler, perhaps, with a split going right through it. That is very And then, potted, like you know, two different halves potted.
+context after: That is a fascinating package. Anyone? Now, look at that. I do believe there's another filter on the entry, and that doesn't surprise me at all, really, cuz you've got to get that contrast.
+
+[1726] EEVblog 1726 - REPAIR of an EV Charger (Unusual Twist!) — Dave Jones (opinion)
+context before: So, I'm going to go ahead and do that. Although, having said that, it is pretty trivial to measure the primary side of the optocoupler feedback there. So, I'm just going to probe that.
+TEXT: There we go. We're at 2 V per division. I've switched to my probe to 10:1. So, we are actually getting feedback on that optocoupler. So, that optocoupler is good.
+context after: That's, as I said, on the primary side. So, the optical part of it's working. The the LED on the primary side of the opto Sorry, well, that's confusing. The primary side of the optocoupler is actually on the secondary side of the transformer.
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (mention)
+context before: numbers on those and we've got our high voltage resistor here it looks like it well it looks like it's a four No could be a no a six terminal device but it looks it's interesting I'm going to get a close up of this cuz it's like almost like three different ones sandwiched like glued together there's one on the top here one in the middle and a smaller one on this bottom side so
+TEXT: let me have a look at that but there we have some sort of optocoupler action there happening we've got a isolation slot we've got high voltage isolation slots around here we've got bigger power SMD resistors here a lot of those would be in series to give you high voltage once again and we've got a relay switching there's some more high voltage isolation slots there over this side between the crystal separating that
+context after: that looks like a diode bridge and what's that puppy let's have a look you can see those precision film resistors down there on their ceramic base it looks like they're all glued together and presumably to just thermally bond them all together there's actually three of them and they're a Caddock TF series let's go to the data sheet there we go TF ultra precision film resistors low temperature
+
+[1058] EEVblog #1058 - Quick 861DW Hot Air Rework Station Review — Dave Jones (mention)
+context before: And there's our triac, and uh looks like genuine ST a BTA 40 series uh 40 amp triac. No worries, that's going to do the business. All the uh oh jeez, that soldering's a bit how you doing?
+TEXT: Well, actu- Well, the soldering's probably okay for the lead-free, but all the uh flux residue and stuff, that's the only negative I've found so far. Anyway, optocoupler, and the layout's actually uh looks quite reasonable, and uh there's our um uh snubber cap across there, and uh that Somebody's really gone to town on the um thermal compound there, but never have too much thermal compound.
+context after: Actually, you can um because it gets to a point where if you have too much, it actually decreases Well, it increases the thermal resistance. So, you know, it's got to be just right.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (mention)
+context before: The top board only has one channel uh essentially. So, the interesting thing is is that there's no processing uh stuff on this board at all. It's all your analog uh power supply stuff all in the center here, which and you can see the isolated path around the board here, which goes through here like this.
+TEXT: And then we've got a couple of optocouplers down here for some just some uh serial data going across there. And of course, all of our output uh grounds on all of our comms stuff, our Ethernet, our USB, and our uh logic uh outputs, for example, and our RS232 are all of course electrically isolated from the output of the supplies, and they've got their own little power supply
+context after: circuitry up here powered from a couple of little uh taps on the transformer up there, and then we've got our ribbon cable going off to our front panel uh board in here, which obviously contains all of the uh all of the processing for this thing, and they're just feeding that data for the Ethernet and the USB and everything else straight down to here.
+
+[427] EEVblog #427 - HP 3478A Multimeter Teardown — Dave Jones (mention)
+context before: So, it's got that single serial line in and out actually connecting the two sections just like the 3457A and there you go. And this section, of course, has its own power supply its own transformer tap on there, completely isolated, goes into some linear voltage regulators here, plus minus 12 or 15 volts or something like that, and a 5-volt regulator as well.
+TEXT: Powers all this circuitry in the measurement section. And you can see the two opto isolators there. They've got the HP part number. I won't bother looking it up. Some people in the forum have posted uh links to cross references of all the part numbers to their real things, but they'll be just, you know, like 4N25s or some sort of similar type optocoupler.
+context after: It is an 8-pin DIP package, though. Now, curiously, the service manual I've got for the 3478A doesn't show these two devices. It actually shows two transformers instead. Actually, you know, transformer coupling the serial signals from one side to the other, but that's not what's going on here.
+
+[378] EEVblog #378 - Dumpster Diving Teardown Repair — Dave Jones (mention)
+context before: So, um I we we can verify that by measuring the uh back of it there, but there doesn't seem to be anything obviously blowing on this board really. But, look, there's a uh there's a diode bridge there, which is full wave looks like it's full wave bridge rectifying directly off the mains input.
+TEXT: And aha, that's what I was talking about before. That is the standby DC-to-DC converter using this transformer here, and there's some optocouplers over here. That's the thing that's going to be drawing the 0.1 W and obviously, that is continually generating a uh a you know, a DC rail or a DC rail or two to power the standby power circuit.
+context after: And because there's no other wires coming off this thing, it goes through a board-to-board interconnect header right down the bottom there. So, clearly, that's got to go into this board, and then this board has to go all the way out somewhere else because if you have a look, I mean, you know, it's uh this Well, you can't see all the wiring here.
+
+[1292] EEVblog #1292 - $2 Meter vs JVA Electric Fence Controller! — Dave Jones (mention)
+context before: One, we're ready to go. Let's power on. And there you go, it's ticking over. Energizer okay LED, 7.9 kV, 12 J there. 12 J there. So, it likes ticking over that once per second.
+TEXT: Unfortunately, we're getting no sparkies on the resistor, but oh well. Anyway, it is dumping that into that 1K load, 12 J each and every time. The kilovolt reading on here, that's actually measured directly from the output terminals via the opto uh coupler, and the 12 J is actually the measured energy on the uh capacitors themselves.
+context after: So, this was supposed to be rated 8, wasn't it? We got 12. Bonus. All right, let's see if we can get some sparkies happening here. Give it a whirl.
+
+[1313] EEVblog #1313 - Bad Luck Mailbag — Dave Jones (mention)
+context before: Oh, second suck of the serve from John here. Back in 2016, oh, jeez, you're pushing your luck. Um, this one's a fantastically simple, uh, single-transistor USB charger that I bought on eBay for 91 cents with free shipping. Yeah, I can feel the 91 cents of...
+TEXT: value in that. Wow. It's about the simplest switch mode power supply you can imagine with a half-wave rectifier, no optocoupler, interference suppression, or secondary side regulation. Yep, I've done a video tearing down one of these. And thankfully, he started a long-term experiment. He figured, run all my USB devices using
+context after: only this charger. I expected the project to last a few weeks at most, but I continued for three years, so it still kept going. Wow. The charger performed flawlessly until about seven months ago when current output abruptly fell to 30 milliamps. I discovered that the transistor had gone high impedance.
+
+[513] EEVblog #513 - Mailbag — Dave Jones (mention)
+context before: Very simple. And, of course, we have to do a quick teardown of this thing. Pretty much exactly as you'd expect. A couple of Triacs here, their BTA-06s controlling the outputs there. You've got your 240 volts mains input here, fused. We've got a filter cap there
+TEXT: by the looks of it. We've got ourselves some optocouplers, and we've got ourselves a nice little Zettler transformer there to power the PIC on the other side. A little dip switch to set the stuff, and, very simple, there's the in-circuit serial programming port for that, and our sensor inputs, and a little bit of protection
+context after: around that. Bob's your uncle. It's all there. Beauty. Hi Dave. Enclosed is a controller we ship out to electricians and cabinet makers for door-activated cabinet lighting. Pretty niche. It's fairly straightforward with four inputs for connection of reed switches, two mains power outputs, two resistors on clearance between HV and extremely low voltage as well.
+
+[449] EEVblog #449 - Absopulse VFC500 Variable Frequency Converter Teardown — Dave Jones (mention)
+context before: There's the N and the pH, the phase hot, or whatever it is. So it actually measures that using the built-in ADC. And that can also display the frequency. So COD, I don't know. Control, output, display or something, IND, indicator or something, it looks like it's driving, that one looks like it's driving
+TEXT: the frequency. Display, so indicator is like the frequency measurement and display. And we've got ourselves a couple of optocouplers down there, they're A3140's 8-pin DIP versions. And there's our output, they're there to drive our two outputs for our power MOSFET. So that's our PWM, that'll be our PWM output
+context after: driving those power MOSFETs. Well, there you go, that was interesting. All we've got to do now is put it back together. ... ... ... ... And it's time to power this sucker back up and see if it works. Let's go, will the magic
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: Though after having said all that I just realized that yeah, these are actually open collector outputs. So all the current is actually it's not being supplied by VCC here.
+TEXT: It's actually being supplied through ground. Where's the ground? Up there. Yeah, it's actually being supplied through the ground and it's being supplied on the power on the optocoupler side over on the board over there, but still the current is got to flow through the ground you know back to the other board.
+context after: So it's a similar sort of thing, but it's not as bad as a full loop coming through the VCC here, but anyway. Okay, so let's say we have our board over here, okay?
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (mention)
+context before: capacity there. I believe it's just a fixed 12 volt output, so when you design 12 volts only, you can really optimise the efficiency of this thing if you've got a single rail output. Now I think I know why they're doing this bottom board, look, if you have a look down there, there's a cap there, there's a
+TEXT: I might actually take that off, but there's, looks like there's an opto, possibly an optocoupler down there. Why they've got, they're tapping off some mains going over to this board, that's got to be for the 50 hertz line, slash 60 hertz for you yanks, line triggering, that's why they've got a 3 pin
+context after: cable going over, they've got the 12 volt coming out plus the line triggering signal as well, so that's why they've done that board there. That's just, that is beautiful. Oh, that is definitely 3 times the spit and polish of any other low end
+
+[872] EEVblog #872 - Mailbag — Dave Jones (mention)
+context before: modem thingamabobs. Alright, two minute teardown. I presume this side bit here is was that a battery pack or is that some sort of maybe, you know, licence module or something? I'm going to tell you what, I don't mind this at all. Apparently it's not that old either.
+TEXT: So yeah, copyright 2011 up here. So look, nice little built-in power supply. I rather like that. They've got the plastic isolators even going molded into the case which come up through the board directly under the switch mode transformer here. Very nice. There's our optocoupler feedback over there.
+context after: Yeah, this part over here. Let's see if we can get a clue on that. We've got ourselves an LN324 over here with a whole bunch of passives around there, so that's doing some amplification of some description. We've got two power pins going out to the connector here,
+
+[1174] EEVblog #1174 - Rohde & Schwarz PSU Teardowns — Dave Jones (mention)
+context before: Yes, thank you very much. You know I love my MELF resistors. There are our output power transistors. Like, it just seems out of whack. There's our output power transistors and there's our big-ass bridge rectifier. Oh, look at that little bridge rectifier on the input.
+TEXT: Unbelievable. Anyway, that's a big-ass surface mount inductor. And looks like we've got a couple of little optocouplers there on the output. And that's about all she wrote. There's our reverse diode protection on the output. And not much else doing on the bottom. Oh, they're actually not the same.
+context after: I thought they'd be identical. And there's your high-voltage noise suppression cap going to mains earth. Because this screw, goes like this little isolated bit of copper here, which isn't connected to anything else, but it's connected to that screw, which is connected through to the heat sink,
+
+[bg6QsTT0Plw] Laser Driver PCB & Circuit Review — Dave Jones (mention)
+context before: This is actually SPI over a galvanically isolated twisted pair, and that's what this chipset does from Linear Technology. Here's the data sheet, and it uh you just put one of these at each end, and you've got a full um SPI compliant interface over one galvanically isolated twisted pair.
+TEXT: Fantastic. I don't care what this thing cost. It's brilliant. Anyway, that takes all the dickery out of Yes, that's an industry term. Dickery out of like your interface. Just use a standard SPI interface and you don't have to use like multiple optocouplers or anything like that in multiple lines.
+context after: No, that's a great solution. I'm going to have to remember that chip. That's really neat. Wonder how long that's been around. Then again, it's been a long time since I've do any galvanically isolated serial interface.
+
+[798] EEVblog #798 - Mailbag — Dave Jones (mention)
+context before: But yeah, granted it's the neutral and in a men's system neutral is tied back to earth, but you can't rely on that fact. So you've got to have your clearance in there. So just that alone is a noop. I wouldn't rely on that one at all.
+TEXT: I mean it's probably going to work, but no, it's not good design practice. And without seeing the rest of the circuit, I'm not sure. But you know, you've got decent clearance on your transformer. We've got ourselves the optocoupler there. Apart from that, probably would have done the business.
+context after: Next up, one from the old dart. Don't get many from the old dart. A. Cook So thank you very much A. Let's see what A has sent in. I think this one's been here for a while, so sorry about that. Oh, we've got
+
+[1313] EEVblog #1313 - Bad Luck Mailbag — Dave Jones (mention)
+context before: But, you know, it's on a really long, really long lead there. It's, like, really flapping around in the breeze. Anyway, uh, bridge rectifier. Looks like we have another gigantic choke here. And then, uh, yeah, it goes into our, basically, our full-wave bridge rectifier.
+TEXT: Goes into our two caps. And then there's our primary side driving transistors. And our switching transformer, that's going to be our primary side. Switching regulator there. Got some opto-coupler feedback down there. And, oh, there's one jobby on the back. Now, that's a sneaky little bugger.
+context after: The others are on this side here. And, uh, would that, that'd have secondary regulation? No doubt. Anyway, it's going to give you all your different voltages. You're going to get your 3.3s and your 5 volts and your 12 volts. And I, I don't think, yeah, do they still do minus 12 volts?
+
+[1530] EEVblog 1530 - Siglent SDS2000X HD 12 Bit Oscilloscope TEARDOWN — Dave Jones (mention)
+context before: But yeah, they've got a separate external trigger board and stuff, so that's a vertical riser board there. And this has, look, they've got a coax going off there. Where's that going to? That's going to something else. Oh, that'd be connecting over to the main
+TEXT: board. And down here, you've got your optocoupler trigger board. They've gone to a lot of effort there. I'm really very surprised by this scope. And look at these standoffs on here. Like, they've got the standoffs, they're pressed into the bent part of the metal chassis there, and to mount
+context after: that board on, it's beautiful. So a mains input connector down here, nicely mounted like this, nicely earthed like that, going into a rivet in there, so it doesn't have a screw, so that's just a right-angle spade lug riveted onto there, and then nicely crimped terminaled.
+
+[1049] EEVblog #1049 - Mailbag — Dave Jones (mention)
+context before: Um Jeez, I have to desolder all that to get to the part. Anyway, it's not here we're not we're more interested in the physical construction details of this thing rather than going in having look at the individual chips and whatnot.
+TEXT: I couldn't really give a rat's ass. But you know, they got some optos and things like that for driving, you know, their various outputs inputs and outputs. So you know, some sort of alarm system driving some relay and as I said just some sort of off-the-shelf uh module for the um comms.
+context after: And there you go. As I said, that could be an off-the-shelf uh module or they've got it designed and certified by uh someone else. Um although you know, it doesn't looks pretty customy um to me.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: There's going to be an unstable region there and you can completely come a gutser. I won't go into the details, but I will also link in this data sheet down below for application note down below.
+TEXT: Suffice it to say that yeah, if you don't get the capacitance right, uh you can really come a gutser and it can go unstable and ruin your day. But there it is, there's the isolated, there's your isolation transformer and your optocoupler feedback for your mains input power supply.
+context after: Cool. It's a very versatile part. There's tons more applications you can use it for. Bonus part, because the fanboys won't let me off the hook if I do a top five list without the REF01, which is basically the jelly bean really ultra precision reference.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (mention)
+context before: You can see it jumping through all the vias here. It goes all the way up here. Always follow the money. Then it goes through a fuse into there like that.
+TEXT: So, it's a multi-phase flyback, is it? Anyway, current shunt resistor over there. There's an opto. And of course, duh, it just started dawned on me these would be the four separate isolated supplies for our four channels, as in for the control stuff, not the actual power.
+context after: It's just for the control circuitry. So, aha, I see it now. Based on the layout, these share a common ground here. You can see there, there, there, and there.
+
+[612] EEVblog #612 - Mailbag — Dave Jones (mention)
+context before: main chip down in there. Yeah, these set-top boxes, not much in them. There's a little crappy tuner down in there. And just one main chip handling everything. Got some memory coupled onto that. Main's power supply around here. Not a huge amount happening, they're doing the right things.
+TEXT: They've at least got a PCB mount fuse down there, even if it is vertical ended up like that. And well, yeah, a couple of isolation slots and the opto-coupler going between there and there. Yeah, they've got the basics happening. So anyway, it's good enough for the price.
+context after: And while these things fail, I don't know how hot this one gets. Probably not a huge amount. No bulges in the caps there that I can see. But yeah, I'm not going to troubleshoot this thing obviously. But yeah, no bulges in any of those caps.
+
+[30] EEVblog #30 - Jaycar Bench Lab Power Supply Review — Dave Jones (mention)
+context before: That's rather surprising, because, um, that costs extra, really. They've actually gone for the more expensive 5 or 10 turn trim pots here, rather than the, ah, rather than the cheap single turn ones they use over here. So, they've actually gone to a bit of trouble.
+TEXT: And, it looks like there's a couple of optocouplers there. So, they're, they're doing the proper design. This board actually looks like it's designed fairly well. And, it's got, it's a Sarko brand. I'm not sure if you can see it, but it's actually done by Sarko.
+context after: And, Sarko are the ones who make this supply, because I saw Sarko branded on the internal packaging. As for the transformer, you can see that's assembled properly. Once again, they've got proper, ah, shake-proof washers in there. And, they're actually the, um, shake-proof nuts as well, captive nuts.
+
+[682] EEVblog #682 - Ness D16X Alarm Panel Repair — Dave Jones (mention)
+context before: back-to-base type security monitoring thing. And so we've got a relay here which can switch that off and on, and you'll notice completely isolated here, that would be meeting telecom requirements, the telecommunications standard. We've got a nice big spark gap down here for protection, and yeah, there's not a huge
+TEXT: amount in there. We've got a couple of optocouplers here for sending the data to from the phone line there. And this 16-channel expander board here, we can get a good look at the input circuitry here. You'll notice that these MOVs have been left out, Y1
+context after: through to Y8 up there, so they've left those suckers out. But aha, what do we have in here? You might recognize this from a recent video I've done. What is that? It's a PCB spark gap. Click here if you haven't seen my video on PCB spark gaps, actually how to
+
+[1507] EEVblog 1507 - Mida: A surprisingly good cheap portable Electric Car EVSE Charger — Dave Jones (mention)
+context before: This is an STMicro jobby so there's tons of like Asian alternatives but they use an ST one a Viper 27. Why can't all chips be given decent names like Viper 27?
+TEXT: I love it instead of like LM12345. Come on. Give me a Anyway, it's an offline high voltage converter here so exactly what you expect. It's just an isolated offline converter optocoupler feedback that's in there somewhere but yeah plain vanilla stuff.
+context after: I just a bit surprised that they used an ST part there. I didn't look at what brand caps they're using on the output here but yeah so you got your mains input here.
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (mention)
+context before: There's our internal battery there. So you can see how that just continually powers that. That's just diode or there. And there's a right calibration lock circuit as well. Watchdog timer.
+TEXT: It's all there. All pretty basic digital stuff. But what that actual Motorola processor is I don't know. One of the Motorola 8-bit processors most likely. And then we have our optocoupler link between boards, and that's what we looked at down below.
+context after: That's that There you go. It's just a serial in and serial out data connecting the two boards together. And of course, this analog board over here actually has its own control processor.
+
+[1253] EEVblog #1253 - LED Flicker 2: Electric Boogaloo — Dave Jones (mention)
+context before: And then we've got the second stage lead driver here. They're using, and of course they're pushing their own parts and I'm, uh, 3409, but you can use any constant current, uh, lead driver you like. And that just inherently gets rid of all the ripple and it solves the problem.
+TEXT: And here's your opto coupler feedback here, but that's expensive. As, uh, it said in the on bright one, I think you need the opto coupler. You need an LM. V four, three, one typically. And then you need to buy the, uh, constant current lead driver.
+context after: And well, there, there's some extra stuff for dimming if you're doing that, but all of that adds significant costs as well as the active, uh, power factor correction, uh, stuff adds very significant costs. You could easily triple your bomb cost or something like that by, uh, adding
+
+[472] EEVblog #472 - JBC CD-2BB Soldering Iron Teardown — Dave Jones (mention)
+context before: You can see some of the soldering up close there even that huge four terminal current shunt resistor lot of thermal mass in that lot of thermal mass in the vias and the ground you know with the large current traces attached to that.
+TEXT: Soldered absolutely beautifully as are all of the passives in the SO8 perfect amount of solder, perfect fillet fillets on there. Oppo 7 LM358 another Oppo 7 and we have a couple of devices over here 3H7 it looks like a opto couplers of some sort.
+context after: And then our power MOSFETs over there sort of bog standard 4470s you know 40 V in channel devices fairly beefy. And that looks like a L4931 low dropout voltage regulator there.
+
+[449] EEVblog #449 - Absopulse VFC500 Variable Frequency Converter Teardown — Dave Jones (mention)
+context before: there's another one down on the front panel, that's for the display accuracy the display ADC and measurement accuracy, I believe. But this control board in here is rather interesting, which goes through to the front panel control here. So, hmm, maybe is this are they generating the required sine wave on this board and then
+TEXT: feeding it over to here? There's some, we've got some optocouplers down in there by the looks of it. And I don't know, what's the topology of this thing? Well there's certainly no shortage of screws holding this plate down, 10 of them, all with
+context after: shake-proof washers. Excellent, they've done well. And ta-da! There it is. There's our AC input module, I guess we could call it. Now this thing looks really messy, of course. And it is, I guess, because you know, it's got celastic everywhere to sort of hold in place
+
+[1429] EEVblog 1429 - Sony RX100 Camera Troubleshooting Part 2 — Dave Jones (mention)
+context before: Light get light gate. So, it's got a light sensor ambient light sensor. There's your pitch yaw sensor. Sounds serious, doesn't it, when they call it pitch yaw? You're flying.
+TEXT: There you go, for you antenna aficionados there. Manual ring rotation sensor. There you go. So, there's the optocouplers for the rotation for the for the ring. Pop-up detect. Pop No, that's the um that's the viewfinder pop-up, I would imagine.
+context after: Right? Strobe No, strobe. No. No, that's for your flash. Right, so your strobe is your flash. Um so, yeah. So, it detects when the flash pops up and it, you know, Yeah, yes, it only charges the capacitor when you I think when you uh pop the flash up.
+
+[791] EEVblog #791 - Ebay Fluke 45 Multimeter Teardown — Dave Jones (mention)
+context before: And here's the main output from our analog processor chip. This is a custom Fluke ASIC. Of course, they rolled their own ASICs. They still do, I think. So, yeah.
+TEXT: And once again, there's those big opto couplers we saw going over. So, it's just the serial comms data coming directly out of the AD converter itself. And for those playing along at home, there's inside the big custom Fluke analog processor.
+context after: It's got multiplexers and switches and all sorts of things. It's got the voltage reference for the ohm source. And everything you could possibly need to roll your own front-end converter.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (mention)
+context before: And there's not much else to it. There's So, you're going to have a bunch of the four of those per channel. There they are, duplicated. And then there's some extra circuitry in here tapped off this one here.
+TEXT: So, I'm not sure what that one's doing, but it's going through an optocoupler there. And as I said, I don't know what that unpopulated stuff is. There's a whole row of resistors in there populated, but all that sort of stuff is unpopulated.
+context after: So, there's this board basically is just the power supply and the um uh current to voltage conversion. Uh that's pretty much it. So, the ADC must be up under there somewhere, and I suspect it's Well, it's either going to be the internal to the Texas Instruments 430 processor, or it's probably one of those puppies under there, cuz that's that LM 324 we saw previously.
+
+[462] EEVblog #462 - Video Editing PC Assembly — Dave Jones (mention)
+context before: Single-sided knowledge-based board of course, standard fare in whatever power supply you're going to get. And actually it looks like they've got some decent input filter in there. They've got some common mode chokes and they've got the filter caps, so that's probably a yeah, is that a MOV?
+TEXT: That's a, yeah, that's a MOV down in there I believe. And we've got our optocouplers and internal heat sinks. Yeah, we've got thermal grease on those. We'll check out the brand of the cap in a second. But you know, it's not too bad at all.
+context after: They've added, look, they've added heat shrink to the bridge rectifier there. They haven't used a heat sink for that bridge rectifier at all. They determined that they didn't have to, I guess. They've just free-stood that one with some extra lead length on there to get a bit more heat dissipation
+
+[530] EEVblog #530 - Electrophoresis Power Supply Teardown — Dave Jones (mention)
+context before: Still not sure of the cause of that. But, you can see basically what I wanted to show is that there doesn't appear to be any missing pulses in there and the yellow one is still the gate voltage, by the way.
+TEXT: It doesn't appear to be any missing pulses, any skip pulses in there whatsoever, at least with this particular load. And what we've got here is our gate drive voltage again with our output from the optocoupler of the blue waveform there.
+context after: So, you can see how the timing is totally synchronized to the AC mains input via that optocoupler. And what we've got here is once again the gate voltage at 10 volts per division there.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (mention)
+context before: I mean, you know, there's our resonator for the uh processor and that's about it unless that actually is like a custom uh you know, ASIC, which is which is doing all that.
+TEXT: Um it may not just be an off-the-shelf processor. That's kind of like the only conclusion I can really come to at this point, I think. We've got ourselves some optocouplers there by the looks of it, but yeah, there's not much in there.
+context after: So, let's power it up and see if we can replicate the fault. So, here we go, 24 volts. It says it draws uh 70 milliamps, so I'll set the current limit to 0.1 amp there and let's switch this puppy on and see what happens.
+
+[1489] EEVblog 1489 - Mystery Teardown! — Dave Jones (mention)
+context before: So, that's just doing some regulation and so that they're your voltage regs tied onto there. It's just using that as a small internal heat sink and there you go.
+TEXT: Um They're interesting. They look like little reed relays maybe. Are they Oh, no. They're No, THEY'D BE OPTOCOUPLERS. OH, YEAH. There you go. The component of the week award goes to this what looks like a do-it-yourself opto-isolator.
+context after: We've seen this once before. I can't remember what it was in. But obviously, look at the PCB clearance in here. We've got like at least an inch of PCB clearance and surprise there's not a routed slot under there for good measure.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (mention)
+context before: And here we go, this is called the Mighty Board Rev E. I don't know if there's a more recent version, we need to check it out. They've put in the web address, makerbot.com/docs/mightyboard.
+TEXT: I love open source hardware. There's the info. Woohoo, we can check it out. We can modify this thing, do whatever we want. Brilliant. Houston, we have a botch. Classic solder botch between two pins on what looks like an optocoupler.
+context after: And there's another botch. We've got a mod wire here and a classic sliced trace there, cut straight through, and bridge between these two power devices. One's an LM340 low drop out voltage regulator.
+
+[525] EEVblog #525 - Bank Note Acceptor Teardown — Dave Jones (mention)
+context before: Just got a fuse on the input there, common mode choke, our bridge rectifier is uh four separate diodes underneath there, our filter caps, and then our main flyback controller, and Bob's your uncle.
+TEXT: And there's our feedback optocoupler hidden under there. And as I said, just very messy layout. I mean, I don't like it at all. Look at it. It's not over near here, near the photo interrupter, and it's just Ah, it's it's terrible.
+context after: Awful layout. And the only other thing of note on here is this uh Texas TLV5629, and that's an 8-bit uh DAC. Probably not a huge surprise to find that on there.
+
+[1171] EEVblog #1171 - Yihau WEP SMD Rework Station Meltdown! — Dave Jones (mention)
+context before: So, yeah, hats off to the PCB designer there. That's not a trivial task. There's the other part down in there. That's looks like a genuine ST jobby. They got the requisite isolation slots there and over here.
+TEXT: Optocoupler across there. You know, not too bad. Well, there you go. This is how desperate the PCB layout person got is that they had to put the the driver chip for the the multiplexer driver or maybe it's an individual micro.
+context after: Not sure. TW something. TWI is it? But anyway, they had to put it at a slight angle just so that they could snake snake a few more traces out here in the vertical distance required.
+
+[1069] EEVblog #1069 - Mailbag — Dave Jones (mention)
+context before: So, even if your mains wiring is back to front, you're still going to be safely protected by the high wattage high voltage axial resistor there as long as you don't touch any of this side, of course, or this side should be relatively low.
+TEXT: And of course, it's just an optocoupler. And here's the data sheet for it, but I once like I can't quite figure out the value like it's a line monitor, but you can't really monitor like the analog mains waveform, for example.
+context after: It's not designed for that because it's got the digital output. You could of course detect that the mains is there or not. You can measure the frequency and things like that.
+
+[985] EEVblog #985 - Siglent SDS1202X-E Oscilloscope Teardown — Dave Jones (mention)
+context before: There are vents here, but they aren't in the uh top or bottom. So, that's blowing over the power supply and over the uh heatsink fins as well. They're even correctly oriented like that to get the maximum airflow over them.
+TEXT: Nice. Power supply is certainly neat and tidy. It's got all the business. Nice uh fully encased uh fuse there. We've got uh isolation slots absolutely everywhere. Look at the primary and secondary here with the optocouplers.
+context after: Very nice. There's our main switching uh transformer. We've got uh requisite MOV protection and uh common mode uh choke on the input. The earth lead is your standard uh standard fare.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Not that fussed, really, but uh they're, you know, they're all nicely uh insulated. They're doing all the right stuff. I see shake-proof washers on there, I believe. And uh that, folks, looks like a very nice power supply.
+TEXT: You can see the split. I haven't taken the board out yet, but you can see the isolation, the high-voltage isolation slot underneath those optocouplers there, feeding back uh to the primary from the isolated secondary side.
+context after: So, they're certainly doing the right stuff there. There doesn't seem to be a matching slot under there, although there could be. I'd have to take the board out to see that.
+
+[525] EEVblog #525 - Bank Note Acceptor Teardown — Dave Jones (mention)
+context before: So, I mean there's you know, the dip switch sort of right next to the main input filter caps. You know, you got to it's crazy. Anyway, we've got some regulators, you know, some low voltage regulators, low side regulators around here.
+TEXT: Maybe they're like some little optocouplers or something like that for the digital out. I mean, here's our mains input here. So, it's popping in here. So, yeah, just looks a bit real, you know, it's a just messy business.
+context after: I sort of, you know, not huge amount of thought has gone into that. Sort of, you know, hack and slash kind of design, I think. Anyway, we've got ourselves a couple of optical detectors here.
+
+[497] EEVBlog #497 - Siglent SDG5000 Function Generator Teardown — Dave Jones (mention)
+context before: And of course, here's the here's the secondary side and we've got some really nice silastic. Somebody's gone to town with the hot snot gun there and they've silastic all that down.
+TEXT: We've got some inductors in there. Our output caps will take a look at the brands. There's our output diodes there and they've, you know, it's designed very well. We've got our isolation slot under our optocoupler there.
+context after: There's our reference circuitry down in there and really nothing else on the secondary side there at all. There's our suppression from the primary side to the secondary side and you know, I was going to say all the isolation was quite nice in here, but you'll notice why they've sort of, you know, look at that.
+
+[488] EEVblog #488 - Dumpster Dive Parts Salvage — Dave Jones (mention)
+context before: They're very useful. Worth getting those out. Couple of little line isolation transformers in there. Got ourselves a relay, have we? Yeah, got ourselves a relay. You can nick that out of there.
+TEXT: Couple of optocouplers and uh well, that's about it out of that. Not terribly exciting. You wouldn't write home about that. But uh we got ourselves a power supply. And it's got uh it's got the AC input directly on it.
+context after: It's looks you know, it probably does the job there. But uh yeah, you might keep that as a whole uh item. We've got ourselves uh 24 volts and 5 volts.
+
+[388] EEVblog #388 - Fake Apple USB Charger Teardown — Dave Jones (mention)
+context before: They've marked them in here with the silk screen. It's around here like this, around here. They've got one in there, and that also extends down to the shield on on the secondary side of the board, cuz here's the two primary connections down in here.
+TEXT: We're primary side primary side connections, which go down to the optocoupler, which go over here, and that in there, once again, the silk screen marks the creepage path in there or the creepage paths that matter.
+context after: By the way, a couple of people have actually asked me to clarify creepage and clearance, because I use both terms. Creepage is actually across the board like that. So, creepage is the correct term to use going from pin to pin like that, because it like you can say like it creeps across the surface of the board.
+
+[1240] EEVblog #1240 - Tandy In The 1980's — Dave Jones (mention)
+context before: Please correct me if I'm wrong. But jeez, you know, I was only a kid at the time. A lucky dip grab bag of IC timers may include 553 555 556 2240 summer jewel summer completely reset or operate on a wide supply range.
+TEXT: Fantastic. 10 optocouplers they just whack in whatever they could uh find it well wasn't the Shenzhen market back then didn't exist. Yep, I've still got one of my original uh Archer breadboard somewhere I'm sure.
+context after: Anyway, lots of proto boards thing like stabilized power supply six output voltages that's just terrific. And etching materials, cuz yeah, everyone etched their own stuff back then. That was a thing.
+
+[718] EEVblog #718 - Keithley 2400 SMU Teardown — Dave Jones (mention)
+context before: Unbelievable. If we go down here to the relays down here, there's nothing much doing down there as well. Anyway, here is our Oops, just hit my microphone. We've got ourselves some Dale uh, precision shunt resistors down in here.
+TEXT: They got those in a series parallel uh, combination there. Got some back-to-back diodes happening. And uh, got an optocoupler there. And but uh, there's a couple of more of those um, NAIS um, MOS relays in there.
+context after: So, this is this would be our main output current shunt resistor because it's quite near the output here. It's near all the There's a a um, output uh, filter inductor and there's our looks like our main output switching relay, the Coto one.
+
+[1161] EEVblog #1161- Automated Coffee Machine Dumpster Teardown — Dave Jones (mention)
+context before: Does it just go like I I don't know. And the PIC microchip fanboys go wild. There you go. What is that? An 18F4620. Big 40-pin DIP package. Thank you very much.
+TEXT: And just got some 74 series logic as very like old school through hole. I really like it. And of course, there's a very nice bunch of uh uh optocouplers down here with the nice isolation slots down between them.
+context after: And they've all uh silkscreen designated all the mains section of that. It's all very nice. And isolation slots between each of the pins of the bridge rectifier. Brilliant stuff.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (mention)
+context before: Fantastic. I don't care what this thing cost. It's brilliant. Anyway, that takes all the uh dickery out of Yes, that's an industry term. Uh dickery out of like your interface.
+TEXT: Just use a standard SPI um interface, and you don't have to use like multiple optocouplers or anything like that in multiple lines. No, that's a great solution. I'm going to have to remember that chip.
+context after: That's really neat. Wonder how long that's been around. Then again, it's been a long time since I've been able to do any uh galvanically isolated uh serial interfaces. Often I've rolled my own for that sort of aspect.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: I don't expect that to be an issue, but I'd definitely put some extra, you know, couple hundred mic uh bulk decoupling on there for those large current uh transitions.
+TEXT: And then you've got uh things like um as I said, like why like this is designed these are optocoupler inverters. You're already sharing the ground between the system and with the Raspberry Pi as well.
+context after: So, the whole So, you're using a common ground, but then you're, you know, you're doubling up on these optocouplers and these uh transistor arrays here, you're actually, you know, doubling up on these boards as well.
+
+[427] EEVblog #427 - HP 3478A Multimeter Teardown — Dave Jones (mention)
+context before: They split it into the digital or the processing and display section up here and then electrically isolated from the analog or measurement part down in the bottom here. You should be able to see that split pretty clearly from I'll show you more detail in here, but it basically splits around like that.
+TEXT: There's this shield here which we'll take a look at and you can see that there's no traces and they ground planes are separated between these two halves here. These are obviously our two optocouplers.
+context after: So, it's got that single serial line in and out actually connecting the two sections just like the 3457A and there you go. And this section, of course, has its own power supply its own transformer tap on there, completely isolated, goes into some linear voltage regulators here, plus minus 12 or 15 volts or something like that, and a 5-volt regulator as well.
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (mention)
+context before: We've got uh yeah, our suppression caps. Is that a mauv in there as well? But look at all the salastic sticking down those output caps. They really don't want those flapping around in the breeze.
+TEXT: Got our optooupler. Nice isolation slots there. I'm sure they've all got the requisite rated components. Another isolation slot down in there. They're doing the business. That's not too shabby at all.
+context after: And there's the primary side switch in. Nice looking heat sink there. Nice looking uh copper strap over the uh main transform main switching transformer there. And that's pretty decent.
+
+[530] EEVblog #530 - Electrophoresis Power Supply Teardown — Dave Jones (mention)
+context before: Anyway, mains input coming in here from the IEC connector on the back. That goes through to our main switch here, which actually switches it. But then we've got some rectification hanging directly off that somehow.
+TEXT: And then there looks like to be an optocoupler down in there. This looks like our primary transformer tap and we've got six wires there, three brown, three black. But they're in three separate pairs.
+context after: Well, you know, there's three separate wires there basically because there's a bridge across those two, bridge across there, bridge across there. And so I'm not actually sure what that's doing there.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (mention)
+context before: And then the data output side of our ADC, as I said, it's an 8-bit parallel output. So they're just whacking that into some shift registers. And of course, we don't have enough bits there.
+TEXT: So they're just feeding that over the optocoupler. And well, that's it. Nothing fancy whatsoever. Oh, I forgot to mention there is a trim pot down here. I'm not sure exactly what they're trimming.
+context after: If that's only in the voltage path, they don't have a similar trimmer pot in the current path. So I'm not exactly sure what they're doing there. You can calibrate this thing in software anyway to you know, there's a whole procedure in the manual to do that.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (mention)
+context before: Hello. What have we got there? And there you go. That's exactly the same signal that I was probing before, but I don't have the wrist straps on anymore. So, let me actually just touch them again.
+TEXT: Here we go. Ta-da! So, I'm now holding I'm just holding them. I haven't put them on, but there you go. Have we got something? Okay, what I'm probing now is actually the output to that optocoupler.
+context after: Okay, so what's driving that LED on the optocoupler there, and you can see jitter on the signal, and I'm if I'm not mistaken, this might actually change with my pulse rate.
+
+[314] EEVblog #314 - Korad KA3005P PSU Teardown — Dave Jones (mention)
+context before: And of course, which of course, uh, goes through the chassis and over to the back to the, uh, mains IC input connector. So, that means, most definitely, the, uh, USB connector is very well and truly, uh, mains earth connected.
+TEXT: Why have they done that? So that you don't have any issues with connecting this to mains, uh, with to your PC, which will also be mains earth referenced. And you can see some optocouplers on here.
+context after: So, this is actually an opto, um, isolated, uh, USB/RS232 interface. Brilliant. So, it's mains earth on the USB and the serial side, presumably, but, uh, it's not but then it's isolated, which goes over to the main connectors.
+
+[287] EEVblog #287 - Handifax 1000 Teardown — Dave Jones (mention)
+context before: And I love it how there's a past sticker on there. It's sort of underneath all the other budge wires. Like it passed and then they thought, "Oh no, look, we're we've got a got a budge this thing up." Maybe to meet some sort of local telecoms requirement or something to that effect because really, you know, it looks like it connects into the RJ11 there directly into the phone socket straight into this
+TEXT: this board which has what looks like a bridge rectifier there with those diodes. And then we've got some optocouplers and all this budge stuff going over to these surface mount pads down in here.
+context after: I've I don't think I've ever seen anything that horrible in a bit of consumer gear before. Wow, look at this really. We've got a couple of tantalums mounted edge on there.
+
+[1302] EEVblog #1302 - Scrapping a Dumpster Laser Printer For Parts — Dave Jones (mention)
+context before: That's just pornographic. Not sure if you'd be able to reuse that, but it is beautiful. Thing of beauty. Look at it. Wow. And over here, are they some big ass mobs?
+TEXT: What are they? Wow, they're enormous. Yeah, just more chokes. And big X and Y class caps and things like that you can get from these. Optocouplers. Some beefy switching there by the looks of it.
+context after: Fantastic Toshibas. None of that one hung low rubbish. And what kind of relay have they got down in there? I think it's a relay. Wow. So, yep, just generally lots of parts to salvage out of a top quality power supply like this designed for high MTBF MTBF, mean time between failures.
+
+[388] EEVblog #388 - Fake Apple USB Charger Teardown — Dave Jones (mention)
+context before: It looks like it's a two-board solution and uh uh There ain't much in that at all. We'll look at this in a bit more detail, I'm sure, but that is absolutely atrocious.
+TEXT: I don't even see a full wave rectifier on the input there and uh nothing on the other uh on the secondary side. Single optocoupler there. Opto I think this one is a steaming pile of dog turd.
+context after: We'll go into that bit more detail, but let's crack open this genuine Apple one and I cannot seem to lever this one open at all. And that tells you right there that uh this one is already better designed and constructed than the other one, which practically fell apart in my hands almost.
+
+[1309] EEVblog #1309 - Siglent SDS2000X Plus Scope Teardown+Hack — Dave Jones (mention)
+context before: It's a SsangYong, you know, not the worst, certainly not the best, but anyway, what do we got? Looks like there's SsangYongs on the output as well. So Yeah, at least they've kept to the one manufacturer, you know, they haven't like looks like they haven't just gotten whatever they could at the Shenzhen market that week.
+TEXT: So yeah, nice big isolation slot under the transformer there as well with and the optocoupler. So just small attention to detail even isolation slots around the nuts there. That's fantastic.
+context after: Got to protect your nuts. Okay, something is very strange here. I've got of course the 350 MHz model and if I go into utility, so I thought I'd check if I had the 500 MHz bandwidth option.
+
+[1726] EEVblog 1726 - REPAIR of an EV Charger (Unusual Twist!) — Dave Jones (mention)
+context before: Color whiz-bang display takes a reasonable It's got a dot matrix thing on it. It takes a reasonable amount, but any excess ripple in there could actually be triggering the hiccup mode in the controller here.
+TEXT: So, I'm going to I can try and measure those in circuit first, but if not, easy to suck out. Although, having said that, it is trivial to measure the opto primary side of the optocoupler.
+context after: So, I'm going to go ahead and do that. Although, having said that, it is pretty trivial to measure the primary side of the optocoupler feedback there. So, I'm just going to probe that.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (mention)
+context before: And you can use them separately or you can do what Darkwing has done here and connect the Q output of the first divide by two into the divide by five and of course that gives you a divide by 10 counter.
+TEXT: Sorry, it's a decade counter. I said it was a four-bit binary. It's actually a decade counter in this particular chip. So and it's driven via an optocoupler over here and we can see that.
+context after: Sorry, it's the breadboard's upside down so all the electrons are going to fall out. Can't quite make out the resistor values but I think that there's a 270 ohm in series.
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (mention)
+context before: And it wasn't fully shielded, of course. And you can see the input switching relays and other stuff still around the analog front end all around here. There's our input protection stuff and just running and the shield sort of goes over part of this part here.
+TEXT: Optocoupler down in there. And here's that DC power input here, yeah, going off to the front panel here. And that's You can see the physical separation in there between the analog stuff.
+context after: We've got ourselves an isolation slot there, and that goes up there to the main processor and powers all that. And there's our mains input down there, all separate. They've got their rod coming from the front panel.
+
+[1239] EEVblog #1239 - Mailbag — Dave Jones (mention)
+context before: That's actually a heat shrink um M 205 I'm sorry, yeah, an M20 Is that No, 3AG fuse. Wow. Well, I'll tell you what, I've seen worse than this. So, it's like typical of what you'd expect in a cheap One Hung Low brand plug pack.
+TEXT: They got decent separation between the primary and the secondary there. No slot cutouts, but you know, that's okay. There's the beer optocoupler down the bottom there. Yep, there she is.
+context after: That'd be a One Hung Low brand, too. Whatever they could get at the Shenzhen market that week. And those caps, I don't know the brand cuz it's on the other side, but bulgy, there you go.
+
+[1452] EEVblog 1452 - Fluke PM3370B Combiscope REPAIR — Dave Jones (mention)
+context before: And if all that still works, I don't even have to measure voltages to know that the digital section is still working. I should be able to get some sort of, you know, tactile um from that.
+TEXT: Anyway, I'm not seeing anything in here that would shut it down. There's the feedback, of course, coming via the optocoupler here, but uh no, here we go. Here's our EHT converter here.
+context after: There's a signal coming in here. Okay, so that that actually could shut it down, I guess. I won't go through the whole topology there, but yeah, does that come from the processor?
+
+[1314] EEVblog #1314 - Ultrasound Machine Teardown! — Dave Jones (mention)
+context before: Um and does system video sync and, you know, not much else. So, this is basically it is just a video conversion board, really. And I won't go into much detail on here.
+TEXT: We've obviously got uh some optocoupler stuff. You can see the split in the ground plane right along the middle there. Um you know, it's got the various outputs and stuff like that.
+context after: So, they're all uh optically isolated. And yes, no surprises for finding Philips parts inside here, because uh Philips do a lot like Sony, uh for example, do tons of their own uh custom ASICs over the years.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: And uh yeah, so that plugs directly into there. So, no real signal integrity issues or anything else really to do with uh interconnecting that board to this module. Just plugs on that header, gets power from here, has a local regulator on here like this.
+TEXT: But, the interesting thing here is is that this has been driven by optocouplers. They're classic optocouplers there. And even down here it tells you where where does it tell you?
+context after: It tells you something more info. 12 V 16-channel relay interface board, and each one needs 15 to 20 mA driver current. So, you need significant driver current to actually drive the optocouplers on this board.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (mention)
+context before: Because what I think's going on here is you can see the architecture here. This is obviously our main switching transformer here. Because here's your isolation, right? This is what this crosshatch indicates.
+TEXT: This is your hot side and this is your cold side as they call it or high voltage low voltage. And so, this is the isolation that goes through. As I said, there's the optocoupler.
+context after: So, this is the main switching transformer here and the main switching transistors for that they've got to be on the bottom. So, what this is over here, okay, you've got your mains coming in here.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: I think we might be able to help out here. Okay, first of all, let's have a look what's uh happening here. He's trying to connect this board to one of these uh SainSmart uh 12-V relay module.
+TEXT: So, a whole bunch of 12-V relays and what looks like optocouplers, optocoupler inputs. And here's the header connector that he's designing the PCB. Where is it? Where is it?
+context after: I had the PCB up. And this is what the PCB is going to plug into. So, there's his PCB with his two chips and his input and output uh header connectors where he's going to uh potentially daisy-chain them together for multiple uh relay boards.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (mention)
+context before: So they're at least doing uh all the basic filtering stuff. There's our big ass um clunking mechanical switch there. Very nice. I like that. It doesn't look like they're uh they're faking that and just doing uh standby power.
+TEXT: You can see the optoouplers down in there. It's, you know, it looks like a pretty basic uh reasonably designed power supply. Let's take a look at the brand of the caps.
+context after: That folks is a nipon chemiccon symbol. I didn't expect a nippon chemicon in here. Excellent. top worldclass brand cap in there. I assume it looks like all their all of them, even the output caps over here.
+
+[1189] EEVblog #1189 - Ebay $140 6.5 digit DMM Bargain!? — Dave Jones (mention)
+context before: Oh, no. I spoke too soon. That's semi. Philips didn't make that, but they make almost everything else. Another NAT semi in there, but jeez, even this puppy, look. Single in line package.
+TEXT: Jeez, you don't see many of those. What's an SSA 1300? Some sort of amp? Looks got a little power fin on it as well. Mhm. And there's your optocoupler in a face.
+context after: And of course, right down there there's the isolation between the digital and the analog section. All goes over via the digital isolator there. They've got another Phillips. No, that's probably at like a comms uh thing to go over the isolator.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (mention)
+context before: 24 volts 830 milliamps there. So, that's basically powering this thing. And they've got another transformer there, so I don't know what that's doing. They've got a big-ass MOV in there, so that's nice to see.
+TEXT: Beautiful. So, is that a common mode choke and X and Y class caps there? And curiously, there is a little relay there and an optocoupler. So, I don't know.
+context after: I'll have to reverse engineer this to have a squeeze at what's going on there. I'm not going to do that in this video, but anyway, that's interesting. AC input terminal block, and then this is another e-sense thing.
+
+[muMjiao5i0k] Rigol HDO4000 PSU Teardown — Dave Jones (mention)
+context before: That's what that little thing in the middle there is. Hopefully you can see that. That is some They've applied the glue, but they haven't applied the part because well, presumably it's not needed on this model, but anyway, um these are not switching on the output.
+TEXT: These are just diodes. You can tell they're only two pin and it looks like so there's only a sub 23 here, but you can see some optocoupler feedback here.
+context after: In fact, it's coming. You can see the traces running all the way around there. All the way, follow the money. They're running to the output here and there's an optocoupler there which does So they're effectively doing primary side regulation there by the looks of it, but anyway, that's pretty groovy.

@@ -1,0 +1,608 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: rom
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 115 passages drawn from 84 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# rom`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[334] EEVblog #334 - History of PDA's in Teardowns — Dave Jones (explains)
+context before: Check it on your calculator. Now, if we take a look at the ROM here, it's got an Atmel AT27C256. That's a one-time programmable 256 Kbit or 8 K ROM, but we've also got a secondary one here, which is a totally different brand, but it's it's the same thing.
+TEXT: It's a 256 Kbit 32 kilobyte one-time programmable ROM. So, this thing's actually got 64 K of ROM. I thought it only had 32. And if we go down here to the SRAM, we've got a classic 6264 Kbit SRAM, which is 8 kilobytes SRAM with an expandable second footprint for a presumably you can just solder in the second device there and the firmware would automatically detect it.
+context after: That would be my guess or maybe there's a jumper link selection or something like that. And there's the main processor. It's a Hitachi, which is now Renesas HD6303 and it's in directly compatible with the 6301 processor.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (explains)
+context before: All of the memory, all of the IO and UARTs and, you know, various other stuff are all built into there. And how do you emulate this thing? Well, you can emulate it using a, you know, dedicated hardware that actually emulates the chip, but you always wonder, well, how accurate is that?
+TEXT: And of course, we can't get in there to actually probe any of the signals normally if we use the regular chip, like we can't break into the memory and simulate it and, well, you know, program the memory, trace it, examine the contents, put contents in there, do all that sort of jazz because in fact, uh, ROM memory in this one is UV erasable.
+context after: It's not a flash memory. Hence, why it has this clear window on top. You have to actually erase this thing under ultraviolet light. Well, in-circuit, uh, emulators, they work, uh, differently.
+
+[1003] EEVblog #1003 - Mailbag — Dave Jones (explains)
+context before: Uh you know, entering content they probably sort putting them in alphabetical order in the ROM or whatever and then translate them over, but I don't know. Um Hmm, maybe it does a little bit more, but I wouldn't have thought so.
+TEXT: And unfortunately, it doesn't work. The LED comes on, but yeah, it's nobody's home. So, that's an absolutely fascinating little module there how they've bent the pins over on just a standard ROM, put a lovely little label on there, and made their own little sort of, you know, like little plug-in thing with a handle.
+context after: That's It's really rather clever. I like it. So, anyway, thanks for everyone who sent in something for today's mailbag and sorry if I haven't gotten around to yours yet.
+
+[507] EEVblog #507 - The First ARM Processor Computer - Acorn Archimedes A3000 — Dave Jones (explains)
+context before: So, clearly, the corrosion has eaten away at the copper traces under there, and I don't even want to think what's under there. It's surface stuff. I don't know. It's just all It's all horrible.
+TEXT: You know, as I said, you might be able to get the thing to boot if you uh put the ROMs back in, of course, desoldered all the uh pins, put in some new sockets, put the ROMs back in, uh buzzed out every single connection, and then repaired the ones that are faulty with either at the board level like this.
+context after: You could do that before you install the sockets or you could use mod wires on the back or something like something ugly like that, but there's a well, there's various ways to repair PCB traces, but no, I'm afraid to say this one is a bit of a loser.
+
+[1053] EEVblog #1053 - The Biggest 80's Computer FAIL - IBM PC Jr — Dave Jones (explains)
+context before: So let's just pan around a bit more, shall we? Nothing doing, nothing doing. They're all just the interface up the top. Let's actually go down a bit more down here. More 74LS373s, nothing doing there. Nothing interesting. What's that crusty burger there? I'm sorry, I didn't, like I wiped off a few of these chips.
+TEXT: Anyway, here is the ROM. And this is interesting. Look, it's not socketed. It's soldered directly onto the board. So not only is it a mask ROM, none of this EEPROM rubbish, it's directly on the board. Date code, 8th week, 84 there. So that was actually before it was officially introduced in March 84.
+context after: So there you go. They were pretty sure about their bias code. So good luck upgrading your bias on that puppy. You've got to desolder the chip from a full layer board. Oopsie. And then we've got a TMM23256, which is, ta-da, once again another mask ROM.
+
+[1153] EEVblog #1153 - 1970's Programmable Calculator Teardown — Dave Jones (explains)
+context before: There you go. So, that'd be uh, so this is a keyboard mapping ROM. So, it doesn't actually contain processor instructions or anything like that. It's a like it's a mapping ROM.
+TEXT: They do some old school mapping. Maybe I'm going to show you an old project I did. I might I'll make a mental note. I'll do a video showing you a um, an old school um, sort of like um, state machine compiler that I uh, wrote back in the day using ROMs to execute instructions and programs.
+context after: I might see if I can, uh, dig that one out of the archives. Uh, remind me, pester me if I if I don't get around to it. And then once again, there's mention of the, uh, 3542.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (explains)
+context before: So, let's take a look at it and see if we can fix it. Oh, and by the way, the Tandy 100 is famous for being one of the last computers actually containing significant code written by Bill Gates himself.
+TEXT: So, he actually worked on the ROM for this thing. So, the original Tandy 100. Anyway, let's switch it on and you can see it appears to actually work. Copyright Microsoft text telecom address that had like a spreadsheet, a word processor built in and basic built in and everything.
+context after: But, you can see up the top here um there's something weird going on. It's like there's you know, look, you can see the clock up there. It's here 54, 55, 56, but it's all sort of weirdy.
+
+[904] EEVblog #904 - Hewlett Packard HP85 Professional Computer — Dave Jones (explains)
+context before: Do we Can we Woah, they're difficult to get out. There you go, but uh we've got the 16K memory module. Doesn't look very uh exciting at all, and we've got the uh ROM drawer.
+TEXT: Oh, look at that. Look, you can put ROMs in there. That's what it's That's actually what it's for. It is actually a drawer for ROMs. That's terrific. So, this one actually has IO, and the ROM chip is going to be inside that puppy there, and uh it plugs into the module like that.
+context after: Wow, isn't that neat? So, this thing came standard with uh 8K RAM, but as you saw, we've got a 16K RAM expansion pack. Fantastic. 64K maximum. Uh the tape drives are about 220K a pop or something, 200K a pop.
+
+[1080] EEVblog #1080 - Gigatron TTL RISC Kit Computer Review — Dave Jones (explains)
+context before: Hi! We love vintage computers here on the EEVblog, but it gets better. This really isn't a vintage computer, but it's a do-it-yourself, TTL-based microcomputer called the Gigatron. And we're going to check it out. We're going to assemble this thing. It is a kit, and look at this.
+TEXT: It's beautiful. All the individual chips soldered onto the board. And yes, there is no microprocessor on this thing. There is simply the ROM. Where's our ROM? Check it out. There it is. We've got a ROM, and we've got a 62256 RAM. Absolute classic, but everything else is TTL.
+context after: Oh, I'm going to love building this. So thank you very much, Walter and Marcel, who designed this thing. And look at this comprehensive manual we get with it. I'll link it in down below if you want one of your own. And they've developed this thing from scratch.
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (explains)
+context before: That could be possibly why it's not working, or when you power it from the batteries, or it's drawing too much current when I power it from the plug pack. So, well apparently. So there's got to be something wrong on there. And of course this is a battery-powered calculator, even if it is D-cells.
+TEXT: So they've sprung for the 74L series here, the low power TTL stuff. Beautiful. And here's our memory board. Take a look at this, we've got ourselves ROM and some RAM here, and obviously some sort of memory controller ASIC, once again all designed by, well manufactured by TI.
+context after: Yep, 39th week 1972. And these are obviously our program ROMs here. No, they're not EPROMs, because there's no window on there. They've definitely got those soldered shut. So they're definitely write once ROMs. And check it out, we have an Intel P2102. We've got four of those, and
+
+[615] EEVblog #615 - Prema 6047 Multimeter Followup — Dave Jones (explains)
+context before: voltage reference. There's some circuitry difference in there, but you might it should, in theory, probably have the same software and just be limited to that 7.5 digits in the firmware for the 6047. So, I've got the ROM dump here, and as you can
+TEXT: see, I've searched for Prima, I've searched for 6047, I've searched for 47, I've searched for 48, and none of it's in there. Basically, it's all just gibberish. I can't find anything, so you would have to disassemble it, disassemble the 65CO2 binary file, and to be able to
+context after: try and find that, if there's a bit in there that gets flipped, or something like that. So, I was hoping that, yeah, it'd be as easy as, like, there'd be a string in there saying 6047, and you might change that to 6048, and then the firmware just checks that when it boots up.
+
+[1205] EEVblog #1205 - RC2014 Z80 Computer Kit Build — Dave Jones (explains)
+context before: So, we want the power to come from here. And it says set the keyboard jumper to pi or serial, depending on what input you want. Serial. Connect jumpers to the ground position for basic. We want basic to the ground zero position, ground. Okay, so that will set the memory address.
+TEXT: You wanna put that on there? There's little jumper links. That'll set the memory address for the ROM so that when the processor boots up, it will know, it'll read from a certain memory address in there and there'll be instructions and it'll run our basic programming.
+context after: So, we can do some basic programming. What language do you use at the moment? - I use the block language, the Scratch. - Scratch, yeah. - Block, blocks. - Oh, blocks and yeah, a graphical user, yeah. But we're gonna use a command line,
+
+[615] EEVblog #615 - Prema 6047 Multimeter Followup — Dave Jones (explains)
+context before: 1987, that one is, yeah, 1987, 50th week, 87. Unbelievable. Still going. But of course if you really cared about keeping this thing going, then the first thing you would do, read the contents out of that, save it, and then try and find a
+TEXT: replacement chip that you can reprogram, whack back in there. And yes, I have read in the contents of the ROM as well, that's a 27C256, just your classic type. And yes, I've got that contents and I will upload it into some repository on the net for those who
+context after: need it in the future. Always do that with this old sort of gear. Now there's one interesting thing to note about this meter, is that even if this SRAM here does fail, then it's not a problem, because you don't lose the calibration of the instrument, because Prima
+
+[1205] EEVblog #1205 - RC2014 Z80 Computer Kit Build — Dave Jones (explains)
+context before: - Yep. - 62256. - Six there. So, wait, wait. You've gotta get pin one right. Notch up there. Notch there. Okay, what you do is you get sort of on an angle, get all the pins in one side first. All in one side first.
+TEXT: And then that. Yep, push it down. Excellent. This'll be our ROM. - What's a ROM? - A read-only memory. It contains all of the instructions for our computer. And these are our TTL chips. - TTL, hey, a small thing. - Are you gonna ask me what TTL means?
+context after: - What is it? - Transistor transistor logic. It's much quieter without that fan, isn't it? - Yeah. - I think they're all in the right way. And we're ready to go. We're ready to power up, I think. We want FTDI power. Well, we've gotta put the jumpers in.
+
+[1133] EEVblog #1133 Mailbag Monday — Dave Jones (explains)
+context before: No, that's an AT Mega. Check it out, all you Atmel fanboy. And now, you must be a microchip fanboy, because they bought Atmel. Anyway, we've got an AT Mega here. Nothing special, no DAC, just some op amps and stuff. So, probably using the, I don't think they have a DAC, those DACs.
+TEXT: So, they're probably doing PWM outputs or something, but whatever. And we've got an Atmel ROM here, a big one megabit ROM. So, obviously, they're doing all the waveform stuff, just like storing it in there, and all the micro doing is dumping that out.
+context after: So, they've got all the cardiac waveforms actually stored in there. Well, you know, nothing wrong with doing that. It's fine. It just offloads everything, and it's probably required if you want a lot of data to get really high resolution cardiac signals. It's better than, like, trying to have an algorithm to do it stored
+
+[949] EEVblog #949 - Australian Made Vintage Laptop Teardown! — Dave Jones (explains)
+context before: So, I don't mind that. You know, it's a sort of a brute force solution. Yeah, don't worry about thermals of the design. What are we going to do? Ah, just whack a separate board on the back and whack the heat sink out the back of the case.
+TEXT: No worries. She'll be right. Wait, hang on. It's working. Check it out. I took all the ROMs out actually. copied them, both the uh MS DOS ones and the uh main uh bias ROM, and I whacked them back in, played around a few times, it still didn't work.
+context after: I was still getting that crap. But I was finally able to uh sequence it with the onoff uh button on the front, and we're in Lake Flynn. Sorry about the contrast on this, but it is pretty darn horrible.
+
+[1163] EEVblog #1163 - Xmas Mailbag — Dave Jones (explains)
+context before: I'm not sure. I'm not sure. I'm not sure. I don't know. the last minute Judith family stuff. Anyway, yes, he bought it all the way over here from the old Dart so he could give it to me at the 2014 meetup. It's the smallest in the RC 2014 lineup.
+TEXT: It's a 280 based retro, 280 based? Oh, Z80. Zed. Not 280. Z80. None of this Z rubbish. Z80 based retro computer kit, which runs Microsoft BASIC from ROM, 32k of RAM, 7.3 meg clock, connect the FTDI cable for 115k board, favorite terminal emulator.
+context after: Enjoy. Thank you very much, Spencer. This is fantastic. Unfortunately, I'd love to do a live video building this, but unfortunately I'm banned from doing live videos on YouTube, on any of my YouTube channels. And I'm also banned from doing live videos on YouTube.
+
+[d1D3d3YIc9A] Talking with Steve Sanghi. 31 years as CEO of Microchip — Dave Jones (explains)
+context before: Ooh. So they were not used for production version. They were only used for prototyping and where you can program and reprogram, use it for production, use it for pro you know, prototype.
+TEXT: Or for very high value added products, very expensive products. That's right. So what we brought to the market was a field programmable product which was only I think about 20 25% higher price than ROM, but tremendous value and time to market.
+context after: Wow. And then so when when did you make the switch from E squared PROM to flash? So the the E So first we went from EPROM to E squared.
+
+[967] EEVblog #967 - Mystery Teardown — Dave Jones (explains)
+context before: And we're in Like Flynn. Have we there we go. Ta-da! We're in Like Flynn. There's our LCD stuff. Oh, a Toshiba, I was going to say, probably sharp jobby, but it's not. That's a Toshiba, and what have we got down here? Good old-fashioned micro, because we've got ourselves
+TEXT: a ROM, and all the best stuff's made in Japan. What on earth is that? SED 1330. Hmm. Aha, there we have it. Philips PCF80C31. Basically the same as the 8051, except there's no ROM built in. Hence, well, we've got a separate ROM there.
+context after: Checksum, 7900. Seems too even to me. Sure enough, that's SED 1330, you googly that one. And it's an LCD graphic controller of course, because you know, this is just for driving the segments. So you've got to have the actual controller itself, so this is
+
+[1434] EEVblog 1434 - Cadex C7000 Battery Analyser Teardown — Dave Jones (explains)
+context before: updatable remotely, I think, uh, yeah, you have to pop in a newie down there, but yeah, like, I like how they've very deliberately put it down here, so you don't have to take all the rest of this assembly out, which, yeah, presumably, I don't
+TEXT: know how the rest of it comes out, but you don't have to take that out, um, yeah, to access and, uh, swap the, uh, ROM down here, so, yeah, very nice. I love how they've got that right angle latched IDC ribbon connector as well.
+context after: I love how they've done their leads down here too. No need for light pipes or anything fancy like that. Just have a cutout in the board. Just solder your leads on like that. You can get reversey middle ones. But anyway, they just poke through
+
+[271] EEVblog #271 - Zoom H1 Recorder Teardown — Dave Jones (explains)
+context before: And that's an 8 megabit flash memory. And the other device we have there is a Cool Magic. Uh haven't heard of them before, but it's a CMS 3216LAH-75. And I believe that's actually an SRAM.
+TEXT: So, there you go. We have a uh Texas Instruments TMS320DSP processor. We have external flash, and we have external SRAM. Now, interestingly, this is a TMS320C5504. And it already has uh 256K of built-in SRAM and 128K of ROM.
+context after: That's It's a huge amount of ROM, but it is a lot of SRAM, but maybe they need a lot more. So, I given given the proximity of these two devices to the TMS320 up here, this does actually support external memory up to 4 meg.
+
+[418] EEVblog #418 - Mailbag Apple Newton Teardown — Dave Jones (explains)
+context before: Then we have a linear technology LTC902CS. I couldn't find any info on that, so I have no idea what that one is. Then we have a couple of Apple ROMs, version 1.30. There we go. They've got Mast ROMs there, and Apple-branded of course.
+TEXT: And up there, so we've got a low ROM and a high ROM there, so they need two of them. And there's our ARM chipset. No, it's not a GPS. It's an ARM P610. There you go. In a quad flat pack package. And then we have
+context after: some SRAM over here. Mitsubishi M5, M51 M51 there, 128k x 8 SRAM. So with 5 of them there, that has a total of 640k of SRAM memory. And no, it doesn't store anything in flash. That's all it's got, which is why it has the battery
+
+[1111] EEVblog #1111 - World's First Microcontroller & Electronic Game — Dave Jones (explains)
+context before: It's like they wouldn't need that for decoupling. And another cap here. RC oscillator. and there's the brains of this thing, the Texas Instruments TMS1100. Of course, the TMS1000 was the world's first, uh, microcontroller.
+TEXT: Um, what defines a microcontroller is that, as opposed to a microprocessor, is that a microprocessor needs external memory, RAM and, uh, program memory as well. Whereas, a microcontroller has those built in.
+context after: Nowadays, you think of microcontrollers as having built-in analog-to-digital converters, you know, timers and serial UARTs and all that sort of stuff. But, back then, it was, you know, like, to have that sort of stuff, they didn't really have those, uh, peripherals back then.
+
+[507] EEVblog #507 - The First ARM Processor Computer - Acorn Archimedes A3000 — Dave Jones (explains)
+context before: Looks like no damage on the bottom. So, we look to be okay there. There is some uh surface mount action happening on the bottom. We've got some surface mount resistors there, the odd cap.
+TEXT: That's interesting. And I'm definitely going to want to get these ROM chips out. They go in this order, 1 2 3 4. They're nicely numbered for me, so I know to put them back in the right place.
+context after: And yeah, we've got some corrosion on those pins. That's no good. Oh. Yeah, some of the pins in the socket look uh pretty awful, in fact. We might need entirely new sockets on this thing, I think.
+
+[1348] EEVblog #1348 - World's First IBM Compatible PC - The Compaq Portable — Dave Jones (explains)
+context before: And I'll we'll probably read in the ROM as well. But yeah, I'll just reseat them all and maybe it was just a, you know, socket problem. And as you can see there, the pins are Well, they're a little bit crusty, aren't they?
+TEXT: Um That's what happens with uh age. Of course, they're nice and shiny where they go into the socket, but jeez, yeah, they've uh they have not aged well. So, I was able to read out this ROM.
+context after: It turns out it's a 64 uh Kbit ROM, even though that my uh TL866 programmer plus two didn't actually support Mos Tech uh chips, it didn't matter. It's they're just like same pin out, same everything.
+
+[1153] EEVblog #1153 - 1970's Programmable Calculator Teardown — Dave Jones (explains)
+context before: This is like a multi-chip processor system, which is different. So, it's got a control and so in effect they're making up a microprocessor with multiple chips. So, we've got a control chip, a data chip, and an SR arithmetic uh chip here.
+TEXT: And they're those three main chips that we saw, and I'll point out in a minute. We've got six different ROMs, and we'll go into the uh different ROMs. They're not all program ROMs.
+context after: Um and then we have a printer controller which has its own ROM. It's got a character generator ROM. Uh, well, we've got a a display controller and gates and various other stuff.
+
+[1003] EEVblog #1003 - Mailbag — Dave Jones (explains)
+context before: That's the Italian ROM. Wow, copyright 1980. Wow. So there it is. Oh, look at that. Beautiful. So yeah, it's just a like it doesn't it just doesn't do anything fancy.
+TEXT: It's just you typing the word and then maps it to a ROM entry and then displays the mapped word. But anyway, there you go. You can put three different languages inside this thing.
+context after: This would have been the ducks guts back in the day. This would have been like black magic technology back then. Oh, I can't get enough of the nipple. You know, I love it.
+
+[903] EEVblog #903 - HP85 Vintage Computer Teardown — Dave Jones (explains)
+context before: So, the display like there's not even a display controller thing on this board. The processor hooks up directly to the CRT controller, which is over on the CRT board.
+TEXT: And now if we have a look at the right-hand side here, we can have a look at our ROM and our RAM, and that's all there is. And like I said before, there is no glue logic here.
+context after: So, we've got like you won't find a single address decoder or anything like that as you would have got in, you know, an IBM PC of the time or, you know, some other PC architecture because HP did all their own custom ASICs.
+
+[904] EEVblog #904 - Hewlett Packard HP85 Professional Computer — Dave Jones (explains)
+context before: And that's, you know, ASCII tables. And that's basically exactly what you wanted. I spent many a year doing that. Anyway, there's tons of stuff available on hpmuseum.net. All these PDFs you can download.
+TEXT: There's a ton of it. And it came with a whole bunch of of course analyst analytical packs, engineering, scientific packs, program packs, ROMs that can do all sorts of stuff.
+context after: So, that you put them in the ROM drawer as we saw, and it's got a list here. But, yeah, it had linear programming, general statistics, math, surveying, Visicalc plus.
+
+[645] EEVblog #645 - TRS-80 Model I Retro Computer Teardown — Dave Jones (explains)
+context before: So, here we go. Let's turn it on. Ta-da! Memory size, I don't know what to type there, so we just hit enter and there it is, Radio Shack level two basic.
+TEXT: Actually, I believe that memory size one is an older version of the uh ROM. The newer one actually saved a few bytes by just putting mem size or something like that.
+context after: And there it is, the TRS-80 microcomputer system custom manufactured in the United States of America. America! By Radio Shack, Fort Worth, Texas, 76102. Catalog number 26-01006. This is a really low serial number one, too, by the way, in the scheme of things, cuz they sold a couple of hundred thousand of these, and this is um sub 10,000, 9,529.
+
+[334] EEVblog #334 - History of PDA's in Teardowns — Dave Jones (explains)
+context before: Then we step up to a Motorola 68328 processor at 16 megahertz. And then we jump up to a PXA255 XScale, uh, which is actually an um, uh, V5 processor running at 400 megahertz at a core voltage of 1.3 volts.
+TEXT: And the SRAM jumps up as well. We go from 8K SRAM, 32K ROM to 512K SRAM, 4 megabytes ROM up to 128 megabytes of, uh, SDRAM with 48 megabytes of ROM.
+context after: And in terms of, uh, functionality, these two were pretty basic. The main, uh, difference you we move from the QWERTY, uh, well, wasn't a QWERTY keyboard, but we move from a, uh, keyboard interface to a pen uh, touch interface with handwriting recognition and stuff like that.
+
+[507] EEVblog #507 - The First ARM Processor Computer - Acorn Archimedes A3000 — Dave Jones (opinion)
+context before: Woohoo, in all its glory. And basically, everything is like early '90s, but if we have a look over here at the ROMs on this thing, they've got 1992 on them.
+TEXT: So, I can only presume that, you know, this thing didn't hang around for manufacture that long. Then, they wouldn't be using chips that old, I doubt it. So, I reckon maybe someone has got in there and replaced some new RISC OS well, RISC OS 3 ROMs at a later date after manufacture.
+context after: So, as a rudimentary first test, we're going to measure the supply coming out of this thing. There's only a single red and black 5 volts coming out of here.
+
+[JJwxFFpnt0M] ATL HDI3000 Ultrasound Machine — Dave Jones (opinion)
+context before: Hang on, there's a standby, there's an off, no, just standby and on. Okay, here we go. Woo! Yes, lights, camera, action. I don't have the probes plugged in. Wow, test pattern, beauty. We have a test pattern. It's booting, it's booting. This is looking real good.
+TEXT: It's got a track ball on it. Wow, I assume now it will take some time to boot. That test pattern might have come from the ROM, or is it part of the OS that when it boots? I can see lead sequencing going through on the power supply down the bottom, but, okay, could take a while.
+context after: No, yeah, here we go. Woo-hoo! Yes, HDI 3000, a system diagnostic. Aha! Yes, HDI 3000, a system diagnostic. Aha! Yes, HDI 3000, a system diagnostic. Aha! Yes, HDI 3000, a system diagnostic. Aha! Yes, HDI 3000, a system diagnostic. Aha! Yes, HDI 3000, a system diagnostic.
+
+[1153] EEVblog #1153 - 1970's Programmable Calculator Teardown — Dave Jones (opinion)
+context before: Well, even my Google foo is off for uh I can't find any info on that. If I can, I'll link it in. But anyway, we've got HD 3541, which looks like some sort of processor, then the HD 3542, then the HD 3543.
+TEXT: So, obviously these are SRAMs here. Uh 3542, I'm not sure what that'll be doing. It's probably not a ROM. be a masked ROM. I don't know. Have to take the rest of it open, but uh anyway, we've obviously got some sort of uh Hitachi chipset.
+context after: Okay, one of the oldest ones I can find is uh 39th week 74. So, this is getting close to being uh you know, a 1975 model. So, as I said, like it's you know, how competitive was this in small batches up there?
+
+[1366] EEVblog #1366 - Mystery Bunker Item Teardown — Dave Jones (opinion)
+context before: So, yeah, there you go. That's our photo sensor. So, that'd have the range from at least, you know, 300 nm to 1,000. And, you know, it'd be fully characterized.
+TEXT: So, they'd know the uh response of it whether or not like they could be factory selected, factory uh calibrated and then I don't know if the calibration information is then programmed into the ROMs on this thing so it can compensate.
+context after: So, yeah, cuz you probably have to like calibrate for a non-flat response or something. So, I'm sure that, but if anyone actually absolutely knows, let us know in the comments.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (opinion)
+context before: Western Digital core, so it could be some sort of you know, Western Digital processor or what not and then just all 74 uh you know, series logic and stuff like that, but that's where the secure keys are kept inside.
+TEXT: Are they inside the ROM? That'd be lame, wouldn't it? You take all the security off. No, they've got to be within side. These are probably battery backed SRAM here like 6264s or you know, 6216s or something like that.
+context after: So yeah. That's it. If anyone has any idea what this was actually used for, this old school ISA card with a D15 and some sort of you know, they went to a lot of trouble to just store, presumably just store some secure keys cuz it's really interfacing type stuff here.
+
+[1153] EEVblog #1153 - 1970's Programmable Calculator Teardown — Dave Jones (opinion)
+context before: These are all the same part number, so this has got to be RAM, but there's only five like there's five of them. So, that's like an odd ball number.
+TEXT: This one here could be some sort of memory controller or something, but like I don't but why you'd need it for SRAM, I don't know. Anyway, um and it looks like these are probably the ROMs.
+context after: Once again, 2 4 6 7. That doesn't make sense really, and it's not that one cuz that's not number along with them. So, those in sequential number order kind of makes sense from a uh like a ROM uh point of view.
+
+[536] EEVblog #536 - HP35670A DSA Repair — Dave Jones (opinion)
+context before: Or, even if you don't take them out, at least give them a good push. Make sure your board is flat against the bench, so you don't, you know, stress the board and crack any solder joints or anything like that.
+TEXT: But, just reseating these sockets can solve a bit of problem. It looks like we might have some ROMs under there, directly soldered into the board, which is a bit surprising.
+context after: So, as usual, these all have, you know, the HP part numbers on them. So, the Actel devices are probably, you know, PLDs or small FPGAs or something like that.
+
+[969] EEVblog #969 - Vintage $80k NLE Video Editor Teardown — Dave Jones (mention)
+context before: I'd be guessing that other big chip, the L7A down there, I can't find any info on that. And uh those ones up the uh top as well, can't find anything.
+TEXT: And if you have a look in the top here with these uh massive ROMs, bingo, we've got a Motorola 68020 processor. And that's interesting that they're using this. But, next to it is a um, 6 uh, 682 math co-processor floating point IEEE co-processor to do all the fancy pantsy stuff that well, you know, they wanted to offload this into dedicated hardware instead of doing it on the PC.
+context after: Now you just do it all on the PC, of course, or you might offload it to the graphics processor or uh, you know, wizbang supercomputer graphics card you've got these days, but it's interesting that they offloaded this to dedicated hardware on the boards here, but it made sense because it didn't matter what your PC did, it didn't matter what crap software you were running in the background that were
+
+[1313] EEVblog #1313 - Bad Luck Mailbag — Dave Jones (mention)
+context before: Wow. Look at that. So, I, yeah. It's like inside the keyboard thing. No, dumbass Dave, keep reading. The board was placed on the backside of this monitor and directly connected to the video amplifier. What is most interesting in the components on this, this board, you can find, uh, USSR, Czech, East German, Z80 CPU clone,
+TEXT: and even Japanese parts. MCU Mitsubishi is responsible for the video airport. Unfortunately, this board is dead, but some of the ROMs can be read. Save this board from a dumpster at the Crimean Astrophysical Observatory. Brilliant. And he doesn't know if the data can be read from the eight inch floppy, uh, cause he doesn't have one.
+context after: And well, unfortunately, neither do I. Oh, look at this bad boy. Genuine Soviet era. Love it. Right. What does it need? 3.3 volts. That's interesting. Wasn't like, I expect it like five volt only. Anyway, five volts minus 12 and plus 12. That'd be for the, uh, serial comms, of course.
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (mention)
+context before: that which then, of course, goes into the, uh, sockets right down there on the bottom. So, uh, we'll have to look at what the other stuff is doing. Thanks to the manual, we do have the block diagram for the various sections.
+TEXT: This is the digital, uh, distortion circuitry and we also have the block diagrams for the analog distortion circuitry we'll check out and the sign gen circuitry around here, but basically there's that big bad ass, uh, um, Analog Devices SHARC DSP up there with its ROM and its JTAG interface and its main oscillator.
+context after: I think it's 33 MHz or thereabouts. And, um, the FPGA little Xilinx down in there. We'll have a look at that type and, of course, it's got to have an external EEPROM to boot that upon, uh, power up and then you've got opto-isolation.
+
+[621] EEVblog #621- Stanford Research SR650 Repair - Part 2 — Dave Jones (mention)
+context before: I'll try and squeeze this one in. See what that it I'm not sure of the specs of that. That's like, you know, maybe 15 20° C per watt, but hey, it should do it.
+TEXT: Because ultimately, it shouldn't need much heat sinking because it's just powering the digital circuitry here, Z80 processor for those playing along at home, and your ROM and your RAM and your GPIB interface with your National Instruments chipset, and really not much else at all to actually power it.
+context after: So, not a huge requirement, and you can tell from the design of the thing that hey, it's free standing, and B, there's not much room around it to put a heat sink, and they didn't design a a PCB mounted heat sink in there with the studs in the bottom like that one, for example.
+
+[1021] EEVblog #1021 - Retro Radio Shack TRS-80 Color Computer — Dave Jones (mention)
+context before: There it was, straight out of the application. Design was practically already done for them. The 6809 CPU slash MPU. The synchronous address multiplexer there. The VDG, the video display generator. The 6847 and the MC1372. And they just whack on DRAM and that's it.
+TEXT: The rest is just the ROM, basically. So it was just like an off-the-shelf design computer straight from Motorola. So, you know, Tandy just went, hey, thank you very much, we'll take that. So I want to power this thing up and try it. But I don't have like a TV with an RF input here in the lab anymore.
+context after: And that's the only output. We've got the RF output here. So I thought that we'd build up a little circuit to try and tap off the composite video output. Because this thing's got to have composite video to feed into the RF tuner here
+
+[BUW6h88weXU] History of ESD with Dan Anderson - 1080p Restored footage — Dave Jones (mention)
+context before: Now, the time and the place of that failure were not only clear, they were flat spectacular. Okay, at my age I have these hot flashes. I don't know what to call them.
+TEXT: However, at uh I had a full head of hair before I started doing these shows. However, the electronic devices that you guys deal with, the ROMs, the PROMs, the CMOS, the MOSFETs, and all those weird initials in which you guys are want to communicate, is that they don't do you any such favor as that.
+context after: How many of you have seen the inwards of those things blown up to the size of the wall over there? It's still hard to see the map of Sydney, Australia in some of those complex circuits, man.
+
+[882] EEVblog #882 - Dumpster Dive Apple Xserve Computers — Dave Jones (mention)
+context before: I don't know, I won't bother looking up the number, but the board looks quite alright. Got no problems, no issues with that whatsoever. Looks very neat and tidy. And it still works a treat. Does anyone want to see the G4 processors? Hmm. Here we go.
+TEXT: Ta-da! It's a module! I thought it was just a heatsink. It's not! It's a complete module, look at that. Wow. And the huge big high-speed board-to-board interconnect there. Neat. And that's underneath the module, and there is our ROM. And you can't half tell that's a dual processor, just look at
+context after: the layout here, the BGA layout right there. Clearly two separate parts. And I know the Apple fanboys won't be happy until I lift the skirt up on this, but there we go! And we got ourselves some current shunts down there, do we? I think we might.
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (mention)
+context before: And well, we've got main three main heatsink devices over here. Obviously, two of them drive two of them are identical and handling two channels each. We've got a third one which handles all four in some way.
+TEXT: We've got this mysterious FPGA over here doing something with some ROMs hooked up to it. We've got a main Tektronix process well, ASIC over here, not heatsink, curiously. We've got an applications processor which handles all the real-time OS, and we've got our logic analyzer stuff down here.
+context after: And well, there's not a huge amount more. Okay, let's lift this main processor board out. Ta-da! Haha, we're in. And here's the main board, and it's pretty much what you'd expect.
+
+[1662] EEVblog 1662 - Vintage Tandy 200 Portable Computer Claytons Repair/Teardown — Dave Jones (mention)
+context before: There it is. Copyright 1984. Microsoft in the head. And they're socketed, so I could actually read the ROM out of that. Nice, as I said, LCD interface. This is the, uh, system expansion connector. And, uh, we've got some memory, uh, down here. But, of course, you've got, uh, memory expansion on the
+TEXT: daughterboard, which is actually under the keyboard. Here, if you flippity-doo-dah that, here you go. And you lift up this insulating sheet. Nice. This is the, uh, memory board which you can access from a panel on the, uh, back there. And that actually, from memory, had an additional ROM.
+context after: So if you flip that open, there you go. So it has, uh, two option RAMs here. So we do actually have, look at that, Tandy, um, a genuine one. Uh, you can get aftermarket updates for this, I think. Um, you know, some people actually, uh, sell
+
+[643] EEVblog #643 - Mailbag — Dave Jones (mention)
+context before: The Sharp organizers flooded the market. They had so many different models and I I I really liked the user interface on them. I thought it was really quite good.
+TEXT: And there we go. Yeah. Quad flat packs and uh memory ROM single chip solution chip on board job there doing something. So, let's and that's our expansion interface over there that Mike was talking about the serial expansion or some other expansion interface right on the end like that.
+context after: And yeah, it's about all she wrote. There's our 32 kHz crystal. Now, check this out. What I at first glance, I thought this chip on board device here was actually yeah, mounted on the main board, but it's not.
+
+[1097] EEVblog #1097 - Mailbag — Dave Jones (mention)
+context before: Anyway, what is probably, like, a reasonable solution for this? Because you're going to want, you know, your row column driver cards. Got a power supply card here, row column driver cards, and then a processor card, which is just stuck on how you're doing style on the outside.
+TEXT: They obviously didn't design this. This is obviously an off-the-shelf controller card. There you go for you 6809 fanboys. We've just got some IO interface, serial interface, some RAM and ROM and, you know, a few miscellaneous chips. And obviously designed to an existing design board,
+context after: off-the-shelf one that they chose, designed to plug into an existing rack. And they just basically just didn't bother. They're just interfacing via the IO over here. And that's pretty much it. It's all you need it for. It's fine. But you've got to see this backplane.
+
+[1021] EEVblog #1021 - Retro Radio Shack TRS-80 Color Computer — Dave Jones (mention)
+context before: So you've got to remember, the market was still very primitive in 1980. Once we got on to 82, 83 with the Commodore 64 and other more advanced computers, then, you know, it got a bit more fancy-pantsy. But this was a state-of-the-art low-cost home computer in 1980.
+TEXT: So on the side here, it had the flap for the cartridges. You could just plug in, of course, your game cartridges and program cartridges on ROM. And on the back, nothing fancy. We've got a power switch, left and right joystick. It was mains directly in, none of this IEC rubbish.
+context after: Dual joysticks for, you know, two players at once. Wow, fancy. Serial I.O. port, which could bugger off to, like, later on they probably had a modem attachment or whatever. And cassette drive, fantastic. Channel select for the video. And that looks like a composite output, but it's not.
+
+[335] EEVblog #335 - Carbon Printed Resistors — Dave Jones (mention)
+context before: these printed carbon tracks is going to depend upon the length, the width, and the surface area of these things. And the thickness of the coating of course, they're actually quite variable, these things. They're typically like in the order of like 30% or so.
+TEXT: So they're very crude resistors, but good enough for pull-up and pull-down resistors like this. But these ones over here, they've obviously got some other pull-ups or pull-downs, probably on this looks like something going into the ROM devices here or somewhere under there, but
+context after: they does look like they have printed on there. So let's actually measure these things and see what we get. Now you can't actually measure these in circuit, because you're not actually going to get a reliable reading. But these pull-down resistors here, and they are
+
+[1592] EEVblog 1592 - Fluke 287 Multimeter Teardown — Dave Jones (mention)
+context before: So, you know, there's some more 4053 action. That's the ADG714, uh, marks that was on, uh, the bottom side of the board. And this is, uh, decoding the range switch here. So, they actually do that using, uh, voltage. So, they have a little crude ADC there, and they can measure the, uh,
+TEXT: the value and know which range switch position they're in there. And here's the main processor, and it's an MC93, uh, 28. And we've got the extra memory over here, and we've got the ROM here. And, well, that's about all she wrote. There's a for development header down there.
+context after: And, um, yeah, they actually, um, those expansion things, that's an Ethernet. Ethernet connector. Ethernet interface for development. Um, I, okay, made development easier, but, uh, yeah, it wasn't used for anything else. Then, you've just got all your fancy-pantsy power supply stuff, and, uh, Bob's your uncle.
+
+[1412] EEVblog 1412 - Argon Ion Laser TEARDOWN! — Dave Jones (mention)
+context before: stuff is all running under there nice right out to the end like that so they've just got them popping up but yeah it's got some serious controller monitoring in there yeah try not to blow up your oscilloscope there you go for all you adc 196 fanboys um that's a
+TEXT: fair bit of grunt in there got a socket at e squared prom there of course our rom is down here like this and uh ah we're gonna have some sense in stuff there's an analog devices jobby linear technologies jobby 1014 there that's a quad precision op amp and well yeah is that a
+context after: 324 is it yeah so we've got some jelly bean stuff in there as well and then some regulation and whatnot so that would be doing um all of the uh safety and control you know safety cutouts and uh control stuff for the tube but interestingly i believe this here is the uh laser output
+
+[411] EEVblog #411 - MiniPro TL866 Universal Programmer Review — Dave Jones (mention)
+context before: There you go. So, if you've got a flash memory device, eight or 16-pin, you can whack that in there and have it auto detect. Okay. That's neat, but we'll search and select.
+TEXT: Let's look at the devices that are supported here. Or you can select between all ROM, flash, non-volatile RAM. They're all your manufacturers. Lots of them. I mean, a lot of them are going to use identical algorithms and stuff like that, but um MCU MPU, there we go, Atmel.
+context after: The Atmel support is the AT98 AT89 series, AT90, and it looks like pretty comprehensive list of all the ATmegas and ATtinys, and that's where it ends. Um So, let's look at uh Microchip.
+
+[598] EEVblog #598 - Sony DME7000 Video Multi Effects Processor Teardown — Dave Jones (mention)
+context before: Let's have a look inside this one. There we go, it's a big chip, what is that, 120-pin quad flat pack? Oh, it's not that huge, but anyway, it's bigger than some of the others. And once again, we get all pin-outs, you know, all usable info, but look at this.
+TEXT: Control, it's got ROM internal dividers, latches, rounding, square roots, it's doing limiting, it's doing, it's squaring stuff, it's getting the absolute value of X and Y there, and it's doing all sorts of weird and wonderful stuff. And doing that, that looks like parallel
+context after: multiple times all the data in parallel. And as I said, all serial controlled, all master clock controlled, stuff like that. So fantastic, if you really wanted to figure out how this stuff was doing it, you could actually, you know, put together all these system block diagrams
+
+[969] EEVblog #969 - Vintage $80k NLE Video Editor Teardown — Dave Jones (mention)
+context before: Oh, we got some fancy pantsy looking memory down for these two NEC chips down here. Lots of process and this is all basically all We've got a processing board plus a more video board doing more of the video conversion and stuff like that.
+TEXT: So, that'll probably have your ADCs and whatnot on there. But, uh that is chock-a-block. Wow, look at that. And old-school ROMs up there. It's got 3D on it. So, I would presume that that does all your fancy spinning and fades and wipes and all your 3D type effects.
+context after: And if you're wondering what's on the bottom of these boards, well, I'm predicting nothing cuz you can tell like all the bypass caps and stuff like that. All the heavy logic's on the uh top.
+
+[1313] EEVblog #1313 - Bad Luck Mailbag — Dave Jones (mention)
+context before: Uh, but most of it would be five volts, I'd be guessing. So yeah, hands up if you spot anything familiar. It's not much Western stuff. Uh, there you go. We've got some genuine, uh, acrylic. There's a sink. Is that like sink ROM? Maybe that's like video sink.
+TEXT: So that would be, would that be the video? I, I have no idea. Anyway, got ourselves old school ROM down there. That's an SGS jobby. Nice ceramic ROM there. Got ourselves some RAM. And yeah, um, yeah, there's very little, oh, there's a, there's a Cygnetix one.
+context after: There's a Cygnetix one. And, uh, oh, TI from Portugal. There you go. So then we're able to get some Western parts in this thing. Yeah, this is just classic though. Look at that. Anyway, dates from, uh, '87. Summer '88, by the looks of it.
+
+[1662] EEVblog 1662 - Vintage Tandy 200 Portable Computer Claytons Repair/Teardown — Dave Jones (mention)
+context before: have your usual RS-232 transceiver in there. Anyway, there's not much on the, uh, power supply side of things. As I said, there's a common mode choke. There's an inductor in there. That's a little transistor package. Look at that jobby there. ST. Ooh. Um, neat.
+TEXT: Anyway, we've got some diodes up here. This is our, uh, reset switch here. So that's just a momentary jobby. Uh, yeah. We've got our DC input here. And, of course, the rechargeable battery is designed to actually protect, um, the, uh, RAM. This is the ROM.
+context after: There it is. Copyright 1984. Microsoft in the head. And they're socketed, so I could actually read the ROM out of that. Nice, as I said, LCD interface. This is the, uh, system expansion connector. And, uh, we've got some memory, uh, down here. But, of course, you've got, uh, memory expansion on the
+
+[583] EEVblog #583 - Wyong HAM Radio Field Day 2014 — Dave Jones (mention)
+context before: So, this is probably, maybe one or two. Lots of plug packs and miscellaneous stuff like that. Let's keep wandering. Oh, geez. Practically a gramophone. And here we go. Here's some big HP stuff. There we go. GSM test set. There you go. Very nice.
+TEXT: And, oh, yeah, individual caps, parts. Tons of stuff. Heat sinks, buzzers. And lots of crusty old stuff, whatever the hell that is. Lots of ROMs in it. Geez. It's all EEPROM. What is that? I'm curious. Oh, it's a dynamic... Oh, it's an audio store.
+context after: Nice collection. Not nearly as many as I thought. Sorry I don't have a Steadicam or anything like that. I really came bare bones today. That's the same UPS I've got in my boot to power up stuff. Old Tektronix cable TV spectrum analyzer. Transmission measuring sets.
+
+[1256] EEVblog #1256 - GORGEOUS Mystery Test Gear Teardown! — Dave Jones (mention)
+context before: Doesn't look like a fuse. It's hard to get a good shot in here. This thing's so tall. My camera's, like, taller than I am at the moment. And we've got our first metal can reveal. Ta-da! Ah, more digital. That's it. The board extends all the way across here.
+TEXT: That's interesting. Well, there's all our ROMs. Um. So, I don't, yeah, there's no processor on this board. So, the processor's obviously, oh, I can see an Intel jobby. We've got some Mitsubishi RAM down there by the looks of it. So, I don't know.
+context after: They could be, maybe it's, like, digital waveform generation or something. Are they some waveform ROMs? 'Cause, ah, the processor board up here has its own ROMs. So, yeah, it's, interestingly, it's got six of them. That's an unusual number. Usually, you don't get that.
+
+[460] EEVblog #460 - Mailbag - Plasma Speaker — Dave Jones (mention)
+context before: So they haven't made all that many of them, or I've got a very early one. Thank you, Sagan. You love putting things in front of the lens. We don't have the macro lens on, though. Yeah. And it looks like 93 date code on here.
+TEXT: So this is actually a, you know, early to mid-90s vintage SNK. Yeah, more packages. Jammer board, cool. And inside the cartridge down in there we've got a couple of huge ROMs there, and I'm not sure if they're mask ROMs or something, I'd have to
+context after: check the number on that. And there's two boards in there because there's a bottom board down in there with its own bunch of chips on it. I'm not sure why they have to use dual slots like that, if anyone knows the history behind that, I'm sure it's on the Wikipedia page, you could look it up.
+
+[268] EEVblog #268 - Xantrex 300V 4A Power Supply Teardown — Dave Jones (mention)
+context before: Now, this board here is actually the uh optional uh remote control board, so you don't get this in the standard configuration, but bingo, there it is. Might be upside down, but there it is, made in Canada.
+TEXT: Interface card. Brilliant. Very old school uh disk ceramics just bent over like this, all crowded in there. Quite old school, I love it. Fox crystal. Uh we've got a ROM here and uh a local uh regulator and um a PLCC uh package uh processor.
+context after: You don't see uh PLCC packages in sockets too much these days. Not too many surprises. It's a Motorola uh MC68HC11. But of course, it seems to be dual processor cuz there's another second 61 uh 68HC11 as well.
+
+[641] EEVblog #641 - Dumpster Cash Register Teardown — Dave Jones (mention)
+context before: So, they've they've really offloaded those tasks to all that glue logic and stuff like that, stuck it all together in those PLDs. They're probably not massively complicated, but uh, worthwhile to uh, cuz ultimately there's not much else in here, but you don't really need anything.
+TEXT: I mean, you need a processor, you need some RAM and some ROM, and, uh, you need a driver board for the, uh, thermal printer, but apart from that, um, and and a communications interface, but apart from that, you don't really need much else.
+context after: So, not entirely sure what they're doing in those two max, uh, PLDs on the bottom there. And that makes sense. A, uh, nickel-metal hydride backup battery there. Um, 70 mA hours, little tiny little thing that, uh, charges up.
+
+[1130] EEVblog #1130 - Mailbag Monday — Dave Jones (mention)
+context before: Pluggy McPlugface. Um, an adapter that lets you hook up a retro PS2 keyboard. Still got one of those, I think. It translates, uh, into ASCII code, which the Gigatron can read. Fantastic, 'cause the Gigatron's only got, like, the PC. Uh, sorry, the controller input.
+TEXT: And they sent me a new ROM as well, which has the, um, a WAS monitor, the original Apple I. So it, uh, it simulates and emulates an Apple I and has a basic, uh, interpreter. Fantastic. Let's power it up. Let's check out Pluggy McPlugface.
+context after: Aw, gotta solder it. Oh, the irony of a TTL microcomputer needing one of these newfangled micros to do the serial conversion. Unbelievable. And I thought they had, uh, goofed this up for a second, um, because it just doesn't fit in there. But if you turn it over,
+
+[940] EEVblog #940 - Mailbag — Dave Jones (mention)
+context before: optocouplers, as you'd imagine, but thought I'd see some traditional relays. But no, what have we got down in there? Do we have some solid state relays? Have to get a good look at those numbers. There we go. Once we get the clips off, no surprises for finding OMRIN
+TEXT: brand relays in an OMRIN PLC. You've got to be able to change your ROM as well, no worries. There we go, date code 1990, that's the last time the firmware. But this, yeah, PLC would date back to the mid-80s when I was using these puppies.
+context after: And of course, cascadable on top. You just, whoop, plug another one on. Well, this is interesting. OMRIN branded parts here. We've got some SRAM down here, and a Hitachi HD63 EB03, what's that? Some sort of Hitachi processor in the thing. But look, these big OMRIN
+
+[438] EEVBlog #438 - Amiga 500 Retro Computer Teardown — Dave Jones (mention)
+context before: You can't just whack the chips anywhere you like. Um of course, near the IO here, we've got our output um so, 74F uh series chips, I'm not sure latching or whatever, buffering or whatever they're doing, right near there.
+TEXT: We've got our data flowing out from these uh 244 latches uh buffers right down into here, LS273s, and it all just, you know, flows nicely. It comes from the processor over to the the ROM is, of course, linked very close to the processor.
+context after: Fat Agnes here, one of the main controllers, sort of right in the guts of that, going down, controlling the memory and all that sort of stuff, going and, of course, interfacing to uh the sound and UART chip, Paula, going over to Gary here, and it all just flows nicely.
+
+[3zAWgNjx5Ew] Intel MCS-85 Design Kit THERMAL IMAGING — Dave Jones (mention)
+context before: but let's have a look here. You can see the arrow, see the cursor in the middle, okay, so that's the, oh, come on, let's see if I can get it to go, that's the processor there. So the processor's at 41 degrees, it's supposed to find the hot spot in there, 48, you know,
+TEXT: it's almost 50 degrees, something like that, for the actual processor. And this one over here is the keyboard and display driver, so that's 42, and this one down here is the ROM, that's about 35, so it's the coolest out of the whole lot.
+context after: This is the RAM down here, the bottom RAM is 47 degrees, this is Celsius by the way, not this Fahrenheit rubbish, and then 42 the top one, so I assume that the bottom one's the one being used, I guess, which is why it's hotter, or is there that much discrepancy between, you know, silicon.
+
+[745] EEVblog #745 - Mailbag — Dave Jones (mention)
+context before: So, it's like they had some sort of, you know, noise power supply issue something like that and went, "Oh, well, we'll bung in a an inductor in there. That'll clean it up.
+TEXT: She'll be right." Got some hot snot on there. So, yeah, oopsie on the power rail. And more old school Hitachi HD6803 processor. There's our ROM. So, the other one must be not sure, but it's a done did have that dash 250 on it with C.
+context after: There we go. We've got some Hitachi SRAM and just your regular 7400 series support stuff. The headers are rather interesting. Standard 0.1 inch header, but they are um uh like keyed like that.
+
+[1662] EEVblog 1662 - Vintage Tandy 200 Portable Computer Claytons Repair/Teardown — Dave Jones (mention)
+context before: So if you flip that open, there you go. So it has, uh, two option RAMs here. So we do actually have, look at that, Tandy, um, a genuine one. Uh, you can get aftermarket updates for this, I think. Um, you know, some people actually, uh, sell
+TEXT: them, I, I believe. But, uh, obviously this is the first option RAM, um, the second option RAM slot. And I think that, uh, that was a ROM slot, wasn't it? Off the top of my head? I can't remember. But, uh, memory protect switch.
+context after: So if you put it on, then that backup battery will actually protect your RAM in here. Because, uh, there was no solid-state storage, remember? No E-squared PROM back then, let alone flash. Um, so, yeah, uh, the only way. You actually kept it in SRAM.
+
+[955] EEVblog #955 - World's First Portable Computer Teardown — Dave Jones (mention)
+context before: So it's interesting that the main processor is on here and you'll see that actually goes into a socket right down to the secondary board, which is rather interesting. So it's a fascinating that when into putting the processor on this secondary board which has to do the display stuff and not have it on the main logic board over here.
+TEXT: That's really weird. I'd love to hear Lee's you know rationale behind all that. So underneath our video board we can actually see this is the main Z80 processor socket here and then we've actually got our ROM, so there it is.
+context after: We'll be able to see if this puppy works later, but I'll get out the EPROM reader and actually extract the data from that and I'll have it on my website for those playing along at home.
+
+[544] EEVblog #544 - Fluke 5450A Resistance Calibrator Teardown — Dave Jones (mention)
+context before: They're not taking any chances. And as far as the digital board goes, well, our care factor is around about 0 + 50 ppm. I mean, it's not that exciting at all.
+TEXT: We've got a Z80 CPU down here and we've got some ROMs and some memory and well, whoop-di-do. I mean, all it's doing there's some jumpers down there. Now, that's some programmable jumpers, but really you know, we don't care.
+context after: Ribbon cable going off to the front LED matrix display and really we don't care. You don't need much horsepower at all to drive a GPIB and uh then you know, a driver display and store a value.
+
+[372] EEVblog #372 - Fluke 27 Multimeter Review & Teardown — Dave Jones (mention)
+context before: As you can see, there's a small data and address bus there. It's only a 4-bit address bus, and it's got various other stuff to end of conversions and clocks and all sorts of things, which go off to the MSP430 processor board, which gets the data out of this thing and displays it.
+TEXT: And it even gives you a little description here of what's inside this custom analog IC. And as you can see here, it says that U1 also contains digital circuitry for the state machine control over the AD decoding ROM.
+context after: So, it's it's got internal decoding ROMs and state machines in there, which allows it to do all the auto ranging and the analog to digital converter. And it tells you the AD conversion is accomplished using a modified dual slope.
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (mention)
+context before: So, but they're the only two adjustments that you can get through this thing. So, we should be able to lift this plate off and see the uh measurement and uh acquisition board on the bottom here, separate from the power supply and digital uh display board over in this part.
+TEXT: You can see the ribbon cables go into the uh keypad and the LCD and stuff. That's all digital control. There'll be some ROMs under there, microprocessor, but this is all your interesting measurement stuff under here.
+context after: So, it looks like this thing just unlatches. Yeah, there's some sort There we go. You just push these latches back like that. They're not easy, but unlatch this side first and then you're probably going to unlatch this side over here.
+
+[1348] EEVblog #1348 - World's First IBM Compatible PC - The Compaq Portable — Dave Jones (mention)
+context before: Well, we don't have to guess cuz the camcorder has a zoom function. And of course, they are 64 K bits a pop. So, by one bit. That's K bits.
+TEXT: So, we've got eight of them there. None of that parity rubbish. So, yeah, 64, 128. So, this one is populated 256 on the board. That's not too shabby. And that over there, that is going to be our famous compact ROM.
+context after: So, I might actually rip that out and read that in and dump it. And it'll be yeah, compact. None of that IBM rubbish or Phoenix who came later and then all the other cloners.
+
+[1366] EEVblog #1366 - Mystery Bunker Item Teardown — Dave Jones (mention)
+context before: This is AMD's version of the 8080 processor. So it's an 8080 compatible processor. Wow. Anyway, so that's 1977, but what's the actual date? Oh yeah, 38th week 79. Wow.
+TEXT: The rest of it doesn't look that old. Yeah, we're talking 82 for the ROMs. So yep, early 80s. But other parts of the circuitry, yeah, 84 14. So yeah, it's definitely manufactured at least 1984 onwards, possibly 85.
+context after: But it's still using and because they were locked in in into the design and they're not going to upgrade it. They're just going to keep manufacturing this thing. So, yeah, they had to use an original part from the 38th week 1979.
+
+[1111] EEVblog #1111 - World's First Microcontroller & Electronic Game — Dave Jones (mention)
+context before: It actually came out in 1974, basically 4 years earlier, but it it took those 4 years for the game industry to catch on and go, "Hey, we can use these microcontrollers in electronic toys, and they only cost a couple of dollars per chip, and they can sell a $20 item." Cuz as you'll see in the teardown of this thing, the microcontroller is does practically everything in this.
+TEXT: So, they could really got to get their bill of materials cost down because the microcontroller had everything built in. It had the RAM, the ROM, and the IO. Everything you wanted, and that's all you had to use.
+context after: A single microcontroller could do everything. And the rest of it was just some LEDs and some molding and cases and stuff like that, and you could sell it for like 25 bucks at retail.
+
+[1189] EEVblog #1189 - Ebay $140 6.5 digit DMM Bargain!? — Dave Jones (mention)
+context before: Geez. It's not terrific. Oh, not impressed by the by Philips there. It's not the best at all. But, once it's all together, it's fine. But, the great thing about this is that it's all old school dip.
+TEXT: So, very serviceable. 808031 processor with a ROM. We've got ourselves a lithium battery down in there. Doesn't look like it's leaked. So, you could replace that. Hopefully, that doesn't have the calibration.
+context after: I think it probably is keeping the calibration constant. So, yeah, you don't just don't want to go whipping that out willy-nilly with You have to use uh certain techniques to uh keep your volatile memory intact while you change the battery in this thing, but I'll give that a measure.
+
+[1716] EEVblog 1716 - University Dumpster Diving: Kikusui Oscilloscope — Dave Jones (mention)
+context before: Now, I have really no idea what's going on with this crusty stuff. This is like a rubber cable and oh, um yeah, I'm not sure what that is. Um Bueller?
+TEXT: Bueller? Anyone know? Uh leave it in the comments. I can barely get the processor down in there. It's a sharp jobbie. That's about all I can make out. There's a ROM next to it and a couple of SRAMs below it.
+context after: Anyway, those mains filter caps still look good. These would be Japanese, of course. I can't see who makes them and that would be on the other side, but uh Kikusui, of course, Japanese company, hence why they're using a sharp processor in there as well.
+
+[1308] EEVblog #1308 - 1970's Intel MCS-85 8085 Design Kit! — Dave Jones (mention)
+context before: This one does actually have a few additions that you didn't get in the standard kit. Only had the processor, the ROM, one RAM chip and the keyboard and display interface driver kit chip.
+TEXT: This one has got an additional RAM chip for a whopping 512 bytes total. That's bytes, none of that K rubbish. 2K of ROM which came standard in the kit and all this extra stuff up here has been added.
+context after: This was this is a bus expansion driver section of the board and you can see that whoever built this is obviously populated that but looks like they didn't do an awful lot with it because they just develop programs because look at this large prototyping area.
+
+[456] EEVblog #456 - CSIRO Rubidium Frequency Standard — Dave Jones (mention)
+context before: And you might have heard it in the background going before in some of the at the start of the video and Yeah, it's hopeless. Unbelievable. Anyway, there we are.
+TEXT: Down in there, looks like we have a Motorola processor. We've got some ROMs there. And uh Where's the oscillator? That metal can down the bottom. Oh, I think there's an adjustment pot on the back.
+context after: Doh, didn't even see it. See, the thing's turned off, and you can probably hear the fan noise. Listen. There you go. Pain in the ass. The fan just, you know, stays on.
+
+[1008] EEVblog #1008 - Mystery Teardown — Dave Jones (mention)
+context before: It's would not be a high volume product, but yeah, this is really old-school. Is there a date code? Yeah, date code of 1990. So, this thing is uh 27 years old.
+TEXT: Wow. And it's your classic microprocessor architecture, RAM, your two ROMs. Uh so, it must be 16-bit. That'd be 8-bit each and our processor. What have we got? And the Hitachi fanboys go wild.
+context after: HD630803 or whack in the data sheet. And we've just got a bunch of uh analog stuff here and looks like of course we need an ADC. What is it?
+
+[591] EEVblog #591 - Agilent 54622D Retro Mixed Signal Osciloscope Review & Teardown — Dave Jones (mention)
+context before: If anyone knows, please let us know. And all of that's running from a main 200 MHz clock oscillator. They're not mucking around there. And there you go for you Motorola 68,000 fans.
+TEXT: There's the main application processor 68 C020 classic. And there's the ROMs tucked under there. And there's what I'll call the analog mega zoom ASIC cuz it's dedicated to the analog channels.
+context after: And then we've got our two sample memories here, separate ones per channel. And likewise for our digital mega zoom ASIC. Once again, as as I mentioned before, separate memory for the digital channels, which is great.
+
+[1176] EEVblog #1176 - 2 Layer vs 4 Layer PCB EMC TESTED! — Dave Jones (mention)
+context before: So, four-layer board in the yellow there, and you can see that actually the four-layer board actually has more prominent peaks in there because all the rest of it's being kept more down in the noise by the ground plane, whereas the two-layer board has once again, you know, a good 5 10 15 dB difference in the like the average broadband noise level there.
+TEXT: And of course the peaks are once again 10 15 dB above the peaks on the four-layer board as well. That's a huge difference. And let's try right on top of the ROM here, just for just for kicks.
+context after: So, that's our two-layer board. And there's our four-layer board. Much, much lower. Just over the accumulator chip there. That's our four-layer board. And there's our two-layer board. So, once again, you can see the broadband difference.
+
+[1153] EEVblog #1153 - 1970's Programmable Calculator Teardown — Dave Jones (mention)
+context before: What on earth? Little trimmer there. Don't know what they're Don't know what they're doing there, but the the main crystal down here, I don't know what What frequency is that?
+TEXT: Does it even have it written on there? Weird. And one thing you don't see here is your traditional EPROM. You know, where's Wally? Where's the ROM? Obviously, this thing's the uh processor.
+context after: These are all the same part number, so this has got to be RAM, but there's only five like there's five of them. So, that's like an odd ball number.
+
+[840] EEVblog #840 - Yamaha M3000 Mixing Console Teardown — Dave Jones (mention)
+context before: Lots of uh they 74 series something or other. Anyway, there's our digital stuff for all you digital aficionados. Yes, you got to have something in here to do all those scene memory and, you know, things like that.
+TEXT: So, we've got a backup battery and we've got a ROM, H8 processor, old school stuff. And uh looks like a couple of Yamaha custom parts under there. And yeah, got to have some TTL somewhere.
+context after: There we go. Peekaboo. Some more 74 series, good old ceramic bypass caps. Check it out. And uh looks like we've got some discrete there. Wonder what they're doing. And what's that Yamaha part?
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (mention)
+context before: Sorry, the LCD's got its own controller, but yeah, they got these freaking custom part numbers on them. Real pain in the ass. And here's the schematic which I'll actually link in in the notes below so you can load up the PDF of the service manual.
+TEXT: It's got the full schematics in here. They're a little bit hard to read, but there's the main processor U 601 there that we looked at. And then of course it's got you know the RAM and ROM.
+context after: It's all very traditional stuff down here or miscellaneous control stuff. We got the speaker down there. Nothing really majorly important there. And then yeah, here's an extension of it.
+
+[936] EEVblog #936 - Mailbag — Dave Jones (mention)
+context before: They manufactured it. Anyway, um looks like we've got some current sense transformers in there, do we? Three of them? Because it's three phase, is it? Oh, TO220 with a heat sink flapping around in the breeze.
+TEXT: It's pretty how you doing. Old school Siemens 80C517 in a PLCC socket. Thank you very much. So, they've just mixed in the old school through-hole stuff. There's the ROM for it down there.
+context after: And does it need square prom or something? Maybe, I don't know. Can't make it out. Raethion? No, what's that? Anyway, they mix that with the surface mount controller down the bottom for the LCD.
+
+[619] EEVblog #619 - Dumpster Dive PABX Teardown — Dave Jones (mention)
+context before: I suspect had a very quick look, uh nothing popped up. So, yeah, like there's no manufacturer, probably some sort of uh custom uh cell device, custom ASIC, something like that, uh combining all the individual uh voice streams into um you you is that the uh main processor and everything else can actually manage.
+TEXT: And the rest of it, there's another custom ASIC chip here. It's got a different number on it. There's another ROM, so that's probably another some sort of processor something like that.
+context after: We've got some system memory over here. Um curiously, we've got a big super cap here plus we've got a battery backup. So, real-time clock, so the super cap maybe I don't know designed to keep the processor running so it can shut down gracefully.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (mention)
+context before: But I could be wrong. Anyway, yeah, there's all our modem stuff out there. There's our isolation transformer for our modem. And the 8085 made by Oki in Japan. All the best stuff made in Japan.
+TEXT: 81C55 is down here. And there, that chip contains Bill Gates himself. Copyright 1983 Microsoft. So, yeah, that's the the ROM is soldered in. Hmm. Let's measure our backup battery there.
+context after: Sorry, you can't see it. 3.42 volts. That's still pretty good. And again, there doesn't no to be any corrosion on the contacts at all. Nothing doing there. Plug that back in.
+
+[645] EEVblog #645 - TRS-80 Model I Retro Computer Teardown — Dave Jones (mention)
+context before: Thing of beauty, joy forever. And the actual circuit design is very typical of the era. Of course, it's not like a Sinclair which tried to reduce it all in gate arrays down to a couple of chips and things like that.
+TEXT: They were future in the '80s, but back then basically you got the Z80 processor here. You've got your RAM and you got your ROM and everything else is basically just standard 74 series.
+context after: What is it? LS? Yeah, 74 LS series logic pretty much everywhere else. There looks to be one particular device which is not standard and that's the only one which is socketed by the way.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (mention)
+context before: I've snipped a few more now. I forgot to press uh record there. Go on, Ski. Tell you what. Mad Man Monster's right. Saved a few cents on our design already.
+TEXT: Okay, I've now removed all the capacitors bypass caps from this side of the board uh where the um instruction register, the RAM, the ROM, everything is. And it's no problem whatsoever.
+context after: I should have actually measured a few more signals around here. So, the clocks actually weren't really a good idea. And really, you know, you should see the LEDs up there stop uh chasing, too.
+
+[745] EEVblog #745 - Mailbag — Dave Jones (mention)
+context before: If you take that programmer off the front Tada! This is what's inside programmable control system. DC input RY output. No idea what RY is. Anyone familiar with these things?
+TEXT: Let us know. Inside really dating this sucker. 4000 series CMOS 74 100 series TTL. Looks like we've got ourselves some sort of ROM over here, but where the processor is, I don't know.
+context after: Must be all Well, I think it kind of It's got seek on it, but it's got uh -250 which indicates it's some sort of memory or it's like a mask ROM or something like that.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (mention)
+context before: I got this a while back. I forgot I had it, so that would have helped. Anyway, let's go in and have a look. I believe it's the same one.
+TEXT: It's the compact portable. This is the portable plus, but that's pretty much only uh it has like a hard drive and some upgraded ROM or something like that. So, anyway, Howard W.
+context after: Sams & Co. Computer Facts. And we'll see why this is a Howard W. Sams & Co. uh is important in a minute. Printed in the United States of Am- Oh, you can't see that.
+
+[1404] EEVblog 1404 - The Amazing HP 9845B Computer — Dave Jones (mention)
+context before: That's more than the maximum 32K video memory inside this thing. So, I've got to say that this one here is this one only has 64K of CPU memory unless we've got more on the other side of the unit on a separate board.
+TEXT: I think this is a minimum configuration of 64 uh K and uh these Mostek jobbies, they look like the ROMs up the top. Are they curiously, they seem to have different part numbers.
+context after: There's 36151s, there's 36 171s. Not sure what the deal is there. 070s? What? And this is hilarious. Look how they've routed this up and around instead of through. That That's hilarious.
+
+[1060] EEVblog #1060 - $35,000 DataIO Unisite Universal Programmer Teardown! — Dave Jones (mention)
+context before: Of course, all the pin driver cards are going to be absolutely identical, but there you go. All that processing goodness. Beautiful. Thing of beauty is a joy forever. This is interesting.
+TEXT: Property of H&R Inc. Does it Silicon Software? Does anyone know the story behind this? Obviously, these are the ROMs. A date code of '87 there, even though it's copyright '95.
+context after: It did they hire Silicon Software to write it? Is it Is it a subsidiary or whatnot? Anyway, we've got some programmable devices here, and oh, look at our beautiful little bodge there on the pin.
+
+[C_tXWwcyZlc] Dumpster HP3488A Switch Teardown + Silverbrook STORY — Dave Jones (mention)
+context before: That's our GPIB in it. That'd be our GPIB chip, would it? Yep. And the other 6800 support chips, of course. And uh what have we got? Some memory down there.
+TEXT: Just some Yep, interface stuff, glue logic. We've got a ROM. And, you know, not a huge amount more. It's just a processor. That's it. And then there's a mains input up there.
+context after: I've got a uh input filter, of course. But it's about all she wrote. Looks like we have a Pozi drive fanboy at HP. Just Phillips, please. And there's the relay board.
+
+[268] EEVblog #268 - Xantrex 300V 4A Power Supply Teardown — Dave Jones (mention)
+context before: You don't see uh PLCC packages in sockets too much these days. Not too many surprises. It's a Motorola uh MC68HC11. But of course, it seems to be dual processor cuz there's another second 61 uh 68HC11 as well.
+TEXT: Uh we've got another ROM up here, so there's uh two ROMs, and probably an inter- interface and control or something like that. We've got a jack up here and uh not much else.
+context after: So, that's the uh interface uh board, couple of miscellaneous 74HC series circuitry, but uh yeah, not much happening there. And here's the Phoenix uh connector inputs. There's some uh jumpers here and uh I can once again uh a bunch of uh 10-turn uh trim pots there, and uh one there are set with the red gunk.
+
+[1496] EEVblog 1496 - Winning Mailbag — Dave Jones (mention)
+context before: I love the battery contacts flapping around in the breeze up here. Nice, that goes into the plastic work. And we've got a ribbon cable also going over here to the slide on off uh button on the top.
+TEXT: And interestingly, that says fuse. So, I TO-92 fuse, anyone? Well, sure enough, that's an ICPN10 fuse. And I've found a data sheet that has like ROM and branding as well.
+context after: So, yeah, there you go. I can't say I've seen a seen a fuse in a TO-92 package. Interesting. I love how they going for that Japanese tradition of just uh saying, "Ah, bugger it, we don't need a connector.
+
+[1209] EEVblog #1209 - Mailbag — Dave Jones (mention)
+context before: Hey, that's near the Is that near the crystal? I don't know what's going on. Is it a clock going over? Very strange. Anyway, yeah, they've got some mods on here.
+TEXT: These, of course, would have been all shielded can sections and we've got a 8031 up there. So, there's your ROM and there's some sort of OE chips that that looks like IO.
+context after: Got an ST part with a 93B1. No idea what that is. Could be a specialized part for whatever application. So, this is like all this wiring is a bit how you doing.
+
+[989] EEVblog #989 - FLIR ETS320 Thermal Camera Teardown — Dave Jones (mention)
+context before: We can see we've got our battery backup there. It's got a Well, presumably it's got a real-time clock boot loader 16.5 for those playing along at home. Winbond. All right, so we've got some SDRAM there.
+TEXT: We've got our ROM. Some more memory over here. So, that means the processor is tucked away inside. And for those hacking, I don't know, there's lots of test points here.
+context after: One of those could be a debug serial interface, of course. Um so, yeah, I don't know. I'm not going to probe around. I'm not too interested in hacking this thing.
+
+[1061] EEVblog #1061 - Data IO Programmer REPAIR - Part 1 — Dave Jones (mention)
+context before: So, it hasn't gone off. So, this is not good. Hmm. And you know, they're supposed to be like blink once it's finished its self-test, it'll like blink and tell you any errors or anything like that.
+TEXT: So, yeah. Uh it's not great. By the way, I found out what this was on the ROMs here, property of uh copyright 1983 H&I Inc. H&I actually stands for uh Hunter and Ready.
+context after: Um my mate Steve Leibson actually commented on the video and he uh knew all about this back in the day and uh apparently Hunter and Ready they developed uh basically the first RTOS, the first real-time operating system.
+
+[620] EEVblog #620 - Repair: Stanford Research SR650 Programmable Filter — Dave Jones (mention)
+context before: And then a separate analog board for each channel. Look at that. I mean, that is hugely repairable. We've got the all of the designators, all that, nicely spaced out.
+TEXT: All DIP. We could just pull that board out and uh desolder things if we have to. Not uh socketed. None of the uh Well, the uh memory and uh stuff over here is socketed.
+context after: Uh and the ROM, but apart from that, yeah. Um that's pretty darn good. I'm happy with that. And of course, this is exactly what you see inside a filter.
+
+[1003] EEVblog #1003 - Mailbag — Dave Jones (mention)
+context before: Thought some sort of switching converter. Anyway, look at the finest budge board over here. Vertical resistors. Fantastic. Thank you very much. So it's basically just a processor a vacuum is it Yeah, I presume vacuum fluorescent display down in there and the cartridge ROMs which you can There you go.
+TEXT: That's the Italian ROM. Wow, copyright 1980. Wow. So there it is. Oh, look at that. Beautiful. So yeah, it's just a like it doesn't it just doesn't do anything fancy.
+context after: It's just you typing the word and then maps it to a ROM entry and then displays the mapped word. But anyway, there you go. You can put three different languages inside this thing.
+
+[1017] EEVblog #1017 - Enter The World Of Atto Amps — Dave Jones (mention)
+context before: Oh, and the Motorola 6805 fanboys go wild. There it is in a socket. Thank you very much. And then we've got the obligatory SRAM next to that. Well, I can't read that.
+TEXT: What is that? Is that Yeah, 6116. Of course it is. Absolute classic. And then we've just got our basic ROM. So, of course, 65 6805 processor and the TMS9914 up here.
+context after: This is actually the GPIB interface chip and you can kind of tell cuz it's plugged into all the micro on the bus and then they all bugger off up here.
+
+[1308] EEVblog #1308 - 1970's Intel MCS-85 8085 Design Kit! — Dave Jones (mention)
+context before: Genuine HPs for those playing along at home. And that's drawing just over an amp there. So, no worries. So, 5 W nominal, but as I said, this actually has some extra port expansion here and a whopping extra 256 bytes of RAM.
+TEXT: Now, these chips, by the way, these RAM and ROM chips, these are very interesting. These aren't just RAM and ROM. They actually contain data latches as well in them.
+context after: So, that's rather interesting. That was just part of the 8085 system. So, yeah, you couldn't you couldn't just I don't believe you can just replace this like with any old ROM.
+
+[1188] EEVblog #1188 - $10 DIY EMC Probe using Scope FFT — Dave Jones (mention)
+context before: look at that. Let's go down to 100 mV per division. This is not low amplitude stuff even with a 20 dB gain amplifier. If you get a higher gain amplifier, it's going to be higher again.
+TEXT: But, you know, if I put it elsewhere on the board like directly over the ROM for example, 200 mV per division is some really high-level stuff. That's over the RAM.
+context after: I'll just show you that on the board here. See? That's over the ROM. Address decoder, you can see that signal really changing in real time. It's great. That's what you can do probing.
+
+[645] EEVblog #645 - TRS-80 Model I Retro Computer Teardown — Dave Jones (mention)
+context before: What is it? LS? Yeah, 74 LS series logic pretty much everywhere else. There looks to be one particular device which is not standard and that's the only one which is socketed by the way.
+TEXT: So, we'll have to have a good look at that one. And curiously, these are obviously the ROMs here and they've taken that's what that board on the back of there is.
+context after: So, they've taken this ribbon cable with this DIP header here off to that board on the back. That's the level two ROM upgrade cuz you If you bought a level one, they would actually upgrade it for free, I believe, if you sent it back to Radio Shack, they would do the hardware upgrade to upgrade it to level three.
+
+[922] EEVblog #922 - Mailbag — Dave Jones (mention)
+context before: Anyway, there's the input. There's the output going in the RF can. Oh, I know you RF aficionados want to see inside the can. You always do. Look at that.
+TEXT: Oh, we've got ourselves some little coils. They're not uh waxed down at all to hold them in place. Hang on, there's a big fat ROM here, but uh where's the micro?
+context after: Is it a ROM? Uh I think that could be a pre-programmed micro. It must be because there's nothing else there that I can see. So, let's peel the label off.
+
+[686] EEVblog #686 - Mailbag — Dave Jones (mention)
+context before: And, uh, yeah, this would have been a complete, uh, custom Well, you know, they would have modified their existing, uh, commercial uh, pen pad and, uh, modified it for the United States Postal Service requirements.
+TEXT: So, there you go. Looks like it's got an extra, uh, memory board in there. There's some Intel flash. And, uh, or maybe that's just a standard, uh, ROM board.
+context after: Or maybe it's additional, uh, that holds the, uh, operating system and the, uh, United States Postal Service application. But, that is Yeah, that is interesting. I don't know, you know, it I don't know it's Is it some sort of cellular-based, uh, wireless system?
+
+[507] EEVblog #507 - The First ARM Processor Computer - Acorn Archimedes A3000 — Dave Jones (mention)
+context before: Look at that. And all of the date codes on our chip here seem to indicate a rough manufacture date of early 1990. I mean, here's the two processor. There it is.
+TEXT: Woohoo, in all its glory. And basically, everything is like early '90s, but if we have a look over here at the ROMs on this thing, they've got 1992 on them.
+context after: So, I can only presume that, you know, this thing didn't hang around for manufacture that long. Then, they wouldn't be using chips that old, I doubt it. So, I reckon maybe someone has got in there and replaced some new RISC OS well, RISC OS 3 ROMs at a later date after manufacture.
+
+[1032] EEVblog #1032 Part 5 - John Kenny Keysight Interview — Dave Jones (mention)
+context before: Yes. last time maybe they changed the test set up slightly or the you the units you tested last time were a little less sensitive, and you fail and had nothing.
+TEXT: So, you end up fixing it something it wasn't what you started out to do. Wow. Most most common parts that go obsolete. ROM and RAM. ROM and RAM. By far.
+context after: Because DDR has registers that you've got to write specific DDR has registers you have to configure, so you have to change the code sometimes to change the DDR. Like, yeah, cuz I would have thought, oh, it's just pin compatible, right?
+
+[1496] EEVblog 1496 - Winning Mailbag — Dave Jones (mention)
+context before: And that's how it was done back in the day. So, there's also the shoestring packet radio, the pocket packet modem here. And oh, look at that. Is that an original Toshiba T1000 series?
+TEXT: Oh, I'd die I want one of those. I want one so bad. They Some of the models have DOS in ROM. Absolutely fantastic. MS-DOS in ROM. It boots instantly.
+context after: Absolutely brilliant. I totally remember this article. I remember this photo. And there's what you can get out of these things. And the schematic for this one quite significantly different.
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (mention)
+context before: Anyway, yeah, the Dallas Semiconductor, that the non-volatile one, 19 This is 32nd week, 1990. So, we're talking 30 years now. So, jeez, Um, yeah, that battery will be no good, but anyway, um, that's the least of our concerns now.
+TEXT: So, we're looking at uh getting a trace up and running on this thing. And the older one is '94 vintage. You can Well, they're the ROMs uh '80 '84.
+context after: '84. Sorry, I was looking at that I was looking at '94 '95 there and I thought, "Geez, that's pretty recent." No, the other one's '84. Wow. Okay, 1984 and you can see the numbering on the chips as well, 1984.
+
+[936] EEVblog #936 - Mailbag — Dave Jones (mention)
+context before: So, I've just entered a short program here. List. Uh can we go down? Yep. Print C, next C, and let's run it, shall we? There we go. Woohoo! Look at it go.
+TEXT: The speed. Hold on to your hat. So, this puppy came out in 1985 and had 32K of uh ROM, 8K of RAM. We and that was in this uh pack.
+context after: Doesn't tell you. Well, it's presumably an expansion pack, but it doesn't actually tell you what size this puppy has. Anyway, this was a bit of a beast back in the day.
+
+[507] EEVblog #507 - The First ARM Processor Computer - Acorn Archimedes A3000 — Dave Jones (mention)
+context before: I don't hear the disk drive or anything. So, excellent. This gives us a chance to crack this sucker open and uh maybe do some troubleshooting. That's the plan anyway and uh no that's a good fault to have like well good and bad good in that you know we've got a defined fault no video but why has it got no video?
+TEXT: Is it part of the Is it uh the video circuitry at fault? Is it the uh um Is it the digital part, you know, if the ROM's gone bad?
+context after: Um all sorts of stuff that it could be. Couldn't be as simple as the power supply, of course. That's the first thing we're going to check. First rule of troubleshooting, thou shalt check voltages.

@@ -122,9 +122,11 @@ def apply_links(text, pat, surf, self_concept):
             if not c or c == self_concept or c in linked:
                 return phrase
             linked.add(c)
-            # `[[voltage|voltage]]` is noise; only carry an alias when the
-            # surface form actually differs from the target name
-            if phrase.lower() == c.replace("-", " ").lower():
+            # Compare against the RAW concept name, not the de-hyphenated one:
+            # `[[voltage-regulator]]` renders as "voltage-regulator", hyphen and
+            # all, in the middle of a sentence. The alias is only redundant when
+            # the surface text matches the slug exactly.
+            if phrase == c:
                 return f"[[{c}]]"
             return f"[[{c}|{phrase}]]"
         out_lines.append(pat.sub(sub, line))

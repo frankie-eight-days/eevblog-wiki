@@ -1,0 +1,333 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: decoupling capacitor
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 60 passages drawn from 42 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# decoupling capacitor`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (explains)
+context before: So that's just nicer. It's not the best because we're off the grid. But you get the idea, okay? You have them going off like that, so it signifies that the signals are either coming in or going out. And, yeah, you just don't have them, like, lying in the middle of the net like that.
+TEXT: It's just a better line coming out and put the nets on the end of the line. And personally, I find this part a bit messy. Here's all the VCC pins, okay? You've grouped your different decoupling capacitors together. That's nice. You want to do that if the three decoupling capacitors -- in this case, you know, it's not uncommon to have a 10-mic, a 1-mic, and a 0.1-mic, for example, to get the different impedances.
+context after: I've done a whole video on why you should put -- you know, why you'd put multiple bypass capacitors together. It is in parallel near a chip. Anyway, it's a bit messy having this line running off here. I would simply have the VC -- like, I'd have this physically near it.
+
+[668] EEVblog #668 - Mailbag + FLIR TG165 — Dave Jones (explains)
+context before: But we've got a whole bunch of drivers and things along here. And there's some interesting things to note actually. Look at this inside here. You'll see that. Look at those under there that run the whole length of these chips.
+TEXT: These were very common back in the day. These are actually decoupling caps that run under the chips and then go down into the same holes as the chip. So, you put the big decoupling cap on first and then you through the holes and then you put the um they're they're actually um they would be totally custom made for the particular pitch between the chips in here and then inserted into
+context after: the particular uh power pin holes. You used to be able to get uh generic ones. Maybe you still can. um that go into dip packages like this and they'll have, you know, one pin over here and one pin over here for power and um power and uh ground, for example.
+
+[751] EEVblog #751 - How To Debunk A Product (The Batteriser) — Dave Jones (explains)
+context before: It has to be like one of the world's smallest DC-to-DC boost converters in order to fit in this form factor. So, naturally, it's going to have extremely limited output capacitance and uh peak current uh capability.
+TEXT: So, you're relying on the internal uh decoupling of your product to handle those uh pulse loads effectively. Now, will the batterizer actually make a difference in this case? Well, it it may, but in the majority of cases, I don't think so, because yeah, it's boosting the voltage up to 1.5 V, which is great for those products which have a low dropout voltage.
+context after: But in terms of uh peak current at end of life, for example, um yeah, it's boosting up to 1.5, but there's going to be a corresponding increase in the current, cuz you have to keep constant power output from your DC-to-DC converter.
+
+[y3WlxxgZwcs] Space Shuttle Magnetic Core Memory — Dave Jones (explains)
+context before: And there's some interesting things to note, actually. Look at this inside here. You'll see that Look at those under there that run the whole length of these chips. These were very common back in the day.
+TEXT: These are actually decoupling caps that run under the chips and then go down into the same holes as the chip. So, you put the big decoupling cap on first and then you through the holes, they would be totally custom-made for the particular pitch between the chips in here and then inserted into the particular power pin holes.
+context after: You used to be able to get uh generic ones. Maybe you still can. Um that go into DIP packages like this and they'll have, you know, one pin over here and one pin over here for power and uh ground, for example, but this would have been custom made and it's a bulk bulk decoupling cap for all of these chips here.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: So you're effectively star powering. It's called a star because the traces go off in you know it's one central point and then you've got digital stuff, you might have analog stuff then you might have high power stuff going off and it's all from one central location and then you have a big bulk decoupling cap just for that as well.
+TEXT: So I would potentially because we're talking a couple hundred milliamps as good design practice you'd put like you know you might have a hundred mic decoupling for these you might have a bulk hundred mic for the board or something like that and then um and then separately run these analog ones back.
+context after: But because their ground and power planes are pretty low impedance it's maybe it's probably not an issue on this board. It's just something to think about or it could be combined with other issues.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: How much bypassing do they have? Will it upset something on that board, for example? I don't think that's the case here. I think it's your issue is localized. I guarantee it's you know, it's localized on the board here with the 595.
+TEXT: You're getting multiple clockings in your 595, guaranteed. But anyway, so yeah, what I would have done like this is put local bulk decoupling. I'm talking you know, a couple hundred microfarads worth you know, significant current here that has to be gulped, and you don't want it to come.
+context after: It's pretty rude, quite frankly, to force it to come from your other board. And this would be especially a problem if this was a long line. If you had like if your board was here, and you had a long cable, like a ribbon cable connecting over to the board over here, those big gulps of current would have to come through the really thin cable over here, which is once again being shared
+
+[1117] EEVblog #1117 - PCB Power Plane Capacitance — Dave Jones (explains)
+context before: But, you know, I'm sure I've mentioned this in previous videos on, you know, controlled impedance tracers and all sorts of other stuff. I'll link them in if I can find them. In that, if you put ground and power, for example, in this case ground and 5 volts,
+TEXT: inside those inner layers which go all over the board like this, that can actually be a decoupling capacitor that goes across effectively your entire board. But how effective is it? Can we actually measure the capacitance in this power plane? Yes, we can measure the capacitance.
+context after: Let's do that right now. But we can do more than that. I've got the probes connected into just one of the bypass capacitors here. Doesn't really matter which one, and we'll test that. We'll actually verify that later on. But let's have a look.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (explains)
+context before: It automatically powers down. It's nice. It's in a You can get it in a tiny 2 mm by 3 mm DFM or an easier-to-use uh five-pin SOT23. Fantastic. I like it.
+TEXT: And, this is the typical application. This is how simple it is here. Your voltage input from your charger, decoupling cap, your output voltage. You've got to have a decoupling cap on there, otherwise it can oscillate just like any linear or low dropout voltage regulator can.
+context after: Same thing here. The internal charging circuitry is the same uh if it's similar circuitry to what's used, and it will be an unstable loop unless you add the output the recommended value of output capacitance.
+
+[446] EEVblog #446 - Dumpster Diving Samsung Plasma TV — Dave Jones (explains)
+context before: And there you go, 10 uh micro Henries, but they're a rather unusual- looking inductors. Now, all of these caps around here, they're obviously uh coupling caps. If you have a look at uh just the way they're arranged, they're, you know, all uh uh bunched together.
+TEXT: They're sort of like all coming from the various inputs here. So, they're just uh um AC coupling uh caps there. And uh because they're not uh decoupling, you know, you can't you're not just going to spread them out like that on a board just for uh uh decoupling.
+context after: That's uh crazy, but there's an absolute ton of them. Check it out. Check out all these surface mount electros. Man. Metric buttload. And there's the HDMI interface chip. It's a uh Silicon Image uh TMDS PanelLink chipset.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And this is one of the feedback resistors. And the other one, which is used to set the voltage, I've got two in series there, which will go into the circuit, but they uh these are the ones that set the output voltage.
+TEXT: And this here is um just an input a 100 n uh input decoupling cap for the 5-V rail. So it goes 5 V and it's soldered down onto the tab of the um the the shield of the USB connector, which is I've checked, it is actually connected through to the ground point.
+context after: Um and this here is the uh another um 100 n output capacitor. Oh, sorry, it's not 100 n, it's like um that. And uh yeah, I just picked the uh highest value I found in my junk box that fitted, and it's connected between the output and ground as well.
+
+[751] EEVblog #751 - How To Debunk A Product (The Batteriser) — Dave Jones (explains)
+context before: That's going to be a big deal where if it takes a, you know, your battery voltage might be falling like this, but then if it switches on a motor, for example, then boom, you might get a low dropout like that, which may product and things like that.
+TEXT: That depends on how much decoupling they've got internally. And all sorts of technical details like that. And is this uh batterizer going to help in that respect? I don't think a huge amount, because it's physically not a large DC-to-DC converter.
+context after: It has to be like one of the world's smallest DC-to-DC boost converters in order to fit in this form factor. So, naturally, it's going to have extremely limited output capacitance and uh peak current uh capability.
+
+[859] EEVblog #859 - Bypass / Decoupling Capacitor Tutorial — Dave Jones (explains)
+context before: can, you know, get a reasonably smooth response over a very broad range from 100 kHz right up to, you know, maybe a few hundred MHz or something like that, but we can't see it. But yeah, it would be quite decent performance over that big entire range.
+TEXT: So you use the 47 micro for decoupling big heavy current bursts and the 10n for all the high frequency switching. Now here's a little interesting aside. You may have seen weird looking surface mount caps like this in a wide package like this. Well
+context after: why? You may not have thought anything of it. Well these are actually special low inductive capacitors designed specifically for this application. Now if we have a look at this little snippet from an AVX app note on these low inductance or the evolution of ceramic capacitors here, you can
+
+[1699] EEVblog 1699 - µTimer PROJECT Part 1 - The LCD — Dave Jones (explains)
+context before: So, this is a very handy board, and you'll notice that you can also tie any of the pins. I think this is like the positive side. They should label it uh a bit better, but uh anyway, like you can tie um each individual pin down to uh ground up here.
+TEXT: So, they've installed like some caps up here, so you can put capacitors down to ground. They would be for the uh internal contrast um boost converters, for example, the bias uh uh capacitors, the bias pins on the LCD.
+context after: So, you have to put those, you know, in various configurations. Yeah, they've got a capacitor across two pins there, or they've got others going down to ground like this, and they've strapped these pins here.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: Aha! A lot of uh experienced engineers might already, you know, might already twig to what's going on here. But, anyway, let's get into it. Like two relays will be triggered when only one was supposed to be triggered or the wrong relay will be triggered.
+TEXT: My goal is to create a firework firing controller. I know, super original. Uh no, it's good. Do it. The 74HC595 data sheet says to use a 10-nF cap on each chip and the ULN2803 doesn't specify needing any capacitors.
+context after: The PCB will connect directly to the relay module with a 2x10 female header block using the 5-V ground supply for the relay module uh to power the PCB. I was hoping you might be able to take a look at schematic and PCB where my mistakes are.
+
+[6] EEVblog #6 - Part 1 of 2 - Meterman 37XR Multimeter review — Dave Jones (explains)
+context before: And also it's its output voltage is stable over a range of ESR cap quite a large ESR cap value range from I think about 0.1 ohms to 5 ohms or thereabouts, which is quite good.
+TEXT: So you only need a single 1 microfarad cap on the output, 1 microfarad cap on the input, and it's a really low cost solution. And the part's available in a whole range of fixed voltages from 1.8 volts up to 5 volts.
+context after: It's got a maximum output current of only 50 milliamps, but that's useful for a whole range of stuff these days. You can You can fly to the moon on 50 milliamps these days.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (explains)
+context before: Then uh yeah, they've just uh removed some ground plane on the top there just to get the performance they need. But apart from that, nothing else interesting on here.
+TEXT: Apart from all the decoupling on that FPGA. So there you go folks. If you want to know what sort of decoupling's required on the bottom of something like that uh Spartan 6 FPGA in there, pretty big beast then.
+context after: Yeah, look at all that little bastard 0402 parts in there. But yeah, you have to do that to fit them in. But that is the sort of uh decoupling you require.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (explains)
+context before: And there's a bit of discussion about this on the forum and the criticality of bypass capacitors. And if we actually go into here uh for the MachXO uh Lattice FPGA, Lattice have a specific power decoupling and bypass filtering for their programmable logic devices.
+TEXT: And because this is a little kind of piss-ant FPGA, it's not, you know, a little piss-weak thing. Um it doesn't require, you know, massive amounts of decoupling. Uh it's only got two VCC pins plus uh VCCIO.
+context after: So, you know, really VCC, you only need like this is not a big grunty FPGA. It's not going to take huge gulps of current like when you power the thing up uh which some of your real big grunty FPGAs can, and then you need massive amounts of bypassing and it's real critical and all sorts of stuff.
+
+[1019] EEVblog #1019 - Mailbag — Dave Jones (explains)
+context before: Um, who was spun off from uh Lucent, I believe it was. Um, and another one of Is that the same chip set we saw before? Very kind of similar to what we saw on the other uh board, but this is a basic switch fabric board, and presumably they used as many of these as they needed for whatever size switch fabric they were looking for, you know, VoIP type switch fabric.
+TEXT: They want to route, you know, 10,000 calls at a time, you need X number of cards. And it looks like those little uh Xilinx, and the big Xilinx up here needed some uh big bulk uh capacitance decoupling.
+context after: Look, you can see them surrounding Actually, they look like 47 mic 16 volt. I'm surprised to uh find such a high voltage on here. Wow, wonder why they did that.
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (explains)
+context before: So, forget I said it. Then they're going to give you some handy recommendations on bypassing in case you didn't know. I've done a whole tutorial on bypassing, so I'm running into the limit of what I can link in at the end of the video, really.
+TEXT: Um, so they recommend your typical 0.1 mic, 100n, and recommend multiple ones for each power pin, commonly used in parallel, etc., etc. And then we've got some nice layout guidelines and unused inputs.
+context after: Thank you very much. Tie unused inputs to VCC or ground like this. And they actually tell you this up here, which I maybe forgot to mention, um because if you're talking about uh you know, power and package power dissipation and stuff like that, that's going to be dependent upon uh we recommend uh I'll find it.
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (explains)
+context before: Hi, just a follow-up to the BM 786 troubleshooting video I did where we came to the conclusion that it's most likely looks like the main processor here has failed because we can't program it from the header which is this one over here like we can't program it directly from the header even though the voltages around here look okay.
+TEXT: But a few people have had some comments. So I thought I'd have a look at that. Yes, I did actually measure all the decoupling caps to make sure like none of them were shorted and stuff like that.
+context after: The bypass caps. Sorry, I forget who mentioned this but somebody in the comments mentioned this resistor down here. Now clearly this resistor and this cap here these have been hand soldered as have some other parts that we'll have a look at.
+
+[208] Tektronix 2225 Oscilloscope Teardown and Calibration - EEVblog #208 — Dave Jones (explains)
+context before: I don't know. But uh there you go, copyright 1986. So, we have a um a reference uh point for the manufacturer of this thing. I'm not sure how old this scope was.
+TEXT: It would have had a uh a decent uh product uh lifetime of 5 plus years or something like that. And perhaps I um after thought here, they've got some uh decoupling uh on this particular chip.
+context after: And uh once again, it's duplicated on uh both uh channels. So, it may be um an after thought. I don't know. Or maybe they it was so it was so critical that they had to get the cap directly on the pins of the device.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (explains)
+context before: Like that's got to be like a power rail. Doesn't matter if we get the probes around the other way, right? Probe between there and there, there and there. Like, you know, like something's got Got be a power rail in here somewhere.
+TEXT: Right? even if you just you have no clue, you just randomly probe around at large traces with decoupling caps and large number of vias and stuff, right? There's just There's There's nothing.
+context after: And I think the second one here Well, the second one here is red. There you go, 3.2 volts. So, we're getting our voltage in there. But once again, this is over this part of the circuit.
+
+[1699] EEVblog 1699 - µTimer PROJECT Part 1 - The LCD — Dave Jones (explains)
+context before: And just so I don't screw this up, pin 60 over here is now pin one. There you go. So, that'll be 3 19. Right. So, I shouldn't goof that up.
+TEXT: VSS VDD, I'll check that that goes over to here and I can do whatever between the two pins. That capacitor between the two pins, I can probably put a cap like between two of the pads here.
+context after: Just little pro tip, it's worth going to the effort to just do this so that you don't goof it up cuz sooner or later you're going to come a gutser.
+
+[1383] EEVblog 1383 - Human Battery Energy Harvesting BUSTED — Dave Jones (explains)
+context before: But, of course, you know, in a typical product, of course, the actual energy harvesting device wouldn't actually supply this peak power. It's only going to supply the average power.
+TEXT: That's when your decoupling capacitors actually handle the peaks and stuff like that. So, you're going to have some sort of storage. So, you know, the average figure and stuff like that.
+context after: But, you know, still like just doing a basic clock like that got to got to wake up from sleep every second. It's got to take, you know, gulp 500 microamps.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: So, anyway, yeah, and then then it rings and does it like it'll resonate and then you get big ringing and all sorts of right issues. But the good news is that no, you're plugging directly into the board.
+TEXT: So, I you know, I don't think it's a huge issue, but this board should have a couple hundred microfarads. I'd probably have one for each chip, for example, or even one bulk.
+context after: And then you actually run separate traces. So, can we actually place a track? W to place a track. So, let's let's place it let's assume it's a big thick trace, okay?
+
+[643] EEVblog #643 - Mailbag — Dave Jones (explains)
+context before: That would uh that would be nice. Anyway, it's got a building thermal cutout and all sorts of stuff like that. And uh really quite nice dedicated chip for switching between two input sources here.
+TEXT: And dead easy to use. I mean, you basically feed the voltage in, you just decouple it. Feed the voltage out, you might have to decouple the output. And but uh not much else.
+context after: Bob's your uncle. And as far as the PCB layout goes, I don't uh mind it at all. Uh you've got some right angles there. The electrons is going to fall fall off the corner.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before: I think Darkwing says it's a 100. Here it is. Does not divide by two. They do the second stage does not output a recognizable pattern. What could be wrong?
+TEXT: Is it somehow necessary to stabilize the IC? Darkwing found that if he put a 0.1 microfarad across the VCC ground, it did a little bit to improve this but probably not much.
+context after: So can somebody give me a hint? So let's look at the circuit here and you can see that and sure enough let's just assume that the power supply is fine and hunky-dory and there's a bypass cap on there.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: I'd probably, you know, you could like split your ground plane or whatever uh for just keep those uh separate for your lower stuff, but that's not really neither here nor there.
+TEXT: I don't expect that to be an issue, but I'd definitely put some extra, you know, couple hundred mic uh bulk decoupling on there for those large current uh transitions.
+context after: And then you've got uh things like um as I said, like why like this is designed these are optocoupler inverters. You're already sharing the ground between the system and with the Raspberry Pi as well.
+
+[1580] EEVblog 1580 - MacGruber Mailbag — Dave Jones (explains)
+context before: It's got some just general purpose stuff over here. So that's nice. I like how you can just break out every single pin. Yeah, it looks like you can strap the pins either high or low and you can put series termination resistors and all sorts of stuff.
+TEXT: That's incredibly flexible. Ah, there you go. He's included a handy little thing so you can actually so you can connect a 0 V 3.3 and a decoupling cap to a micro pin.
+context after: You just short out the pins that you actually need. So you know, this is the ground loop coming around here. So this particular pin is grounded for example. So that's just fantastic and you put a little decoupling cap in there.
+
+[1681] EEVblog 1681 - Mailbag: Nice DIY CC Load,  Amazing Proto Boards, Ian Johnston — Dave Jones (opinion)
+context before: So, if your battery voltage is less than the rating of the max rating of the MOSFET, then you can just put the gate straight down to ground and Bob's your uncle.
+TEXT: And we're just driving a red power LED. Don't know why you had to put it across Vref there to turn on the transistor. It seems wouldn't you die whack it across the rail but maybe wanted to detect if the V ref has failed perhaps anyway and probably don't need your decoupling cap so you can do a bit of months in here you can months the circuit pretty sure you can get rid of
+context after: that you can get rid of that you can get rid of that you can get rid of that and more better anyway let's have a look at the unit let's have a look at this thing liking the look of this already looks like a Bobby Dazzler and look at that that's a beautiful case I love those slope front instrument cases and an old school analog meter isn't that beautiful
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (opinion)
+context before: It's just a better line coming out and put the nets on the end of the line. And personally, I find this part a bit messy. Here's all the VCC pins, okay? You've grouped your different decoupling capacitors together. That's nice. You want to do that if the three decoupling capacitors -- in this case, you know, it's not uncommon to have a 10-mic, a 1-mic, and a 0.1-mic, for example, to get the different impedances.
+TEXT: I've done a whole video on why you should put -- you know, why you'd put multiple bypass capacitors together. It is in parallel near a chip. Anyway, it's a bit messy having this line running off here. I would simply have the VC -- like, I'd have this physically near it.
+context after: So I'd actually get rid of that line there and I'd just add an extra net down here like this, right? Just put the extra net on there like that and just have -- and then just have all this, like, physically close to the chip like that.
+
+[662] EEVblog #662- How & Why to use Integration on an Oscilloscope — Dave Jones (opinion)
+context before: And now, bingo, we've captured that, and we can see our waveform in pretty good detail. And you can see how it powers up here, there's a little bit of, you know, weird stuff happening here when it powers up, and then it goes, got a few little wiggles in there.
+TEXT: And we've got all of our data in there, and slowly charging up, that'll be due to, you know, the decoupling on the power supply, it's doing its operation, and then it's basically shutting back down, right down to the sleep current, right down the bottom, right there.
+context after: So most of the time is going to be spent in sleep mode, of course, and you can see in this case, five minutes, per division, it powers up every two seconds, basically, and updates the LCD. So we want to get the total current consumption over that time.
+
+[1094] EEVblog #1094 - Casio FX260 Solar II Calculator Tritium Nuclear Battery Experiments — Dave Jones (opinion)
+context before: the C107 there is in parallel. You can see the traces going across. So like it buggers off in there, and of course it's going to this like ground, what looks like a ground over here. But we need to measure that, and then it goes into these
+TEXT: three caps here, and no, they're probably charge pump caps, because they go in and out of the chip like that. These ones are three going to ground, so maybe there's some decoupling for the LCD driver for the divider or something like that perhaps.
+context after: But anyway, I think my theory's right, this is the reservoir cap, and we should be able to add another one in parallel. Like I'll try and find the biggest, like what is that, no 805 ceramic, the biggest or even, you know, jam a 1206 on there
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (opinion)
+context before: I've done a whole video on why you should put -- you know, why you'd put multiple bypass capacitors together. It is in parallel near a chip. Anyway, it's a bit messy having this line running off here. I would simply have the VC -- like, I'd have this physically near it.
+TEXT: So I'd actually get rid of that line there and I'd just add an extra net down here like this, right? Just put the extra net on there like that and just have -- and then just have all this, like, physically close to the chip like that.
+context after: It's just nicer. You don't want to have multiple lines running across your sheet. Or in this particular case, I would -- you know, you could argue that, well, you could, you know, move this down, move this up and put the capacitors and physically extend the line across here and then just run the capacitors down like that.
+
+[1111] EEVblog #1111 - World's First Microcontroller & Electronic Game — Dave Jones (opinion)
+context before: Nice. But you can see No, there's no form of regulation or anything like that. The mic is powered directly from the batteries. Do they have a What's We've got one cap in there?
+TEXT: It's like they wouldn't need that for decoupling. And another cap here. RC oscillator. and there's the brains of this thing, the Texas Instruments TMS1100. Of course, the TMS1000 was the world's first, uh, microcontroller.
+context after: Um, what defines a microcontroller is that, as opposed to a microprocessor, is that a microprocessor needs external memory, RAM and, uh, program memory as well. Whereas, a microcontroller has those built in.
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (opinion)
+context before: It's working okay at the moment. Beautiful. Now, I don't recall the if this is normal. I don't think so. Like press AB trig and like a whole bunch of a whole bunch of the LEDs sort of light up.
+TEXT: That could be some of that those decoupling caps on the logic board might be doing something funny, but it's obviously still operational cuz it's got it to do to put the text on the screen like that.
+context after: It it basically has to be fully operational from a basic point of view. So yeah, I do Can anyone let me know if that's normal? Doing like uh look at the yeah, no, it it it can't be.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (opinion)
+context before: Brilliant. Geez, I'm waffling on. Dave, you get to the problems. Okay, first of all, nothing inherently wrong here, okay? So, yeah, you've got some decoupling here, right? 100 and mentioned 10 N before, doesn't really matter.
+TEXT: You could put one big one mic on there or one big 10 mic or whatever, something like that, which we might get We might get into it cuz it might be part of the issue here.
+context after: But anyway, yeah, basically, okay, if you've got a nice clean digital signal coming in and you've got a couple of decoupling caps on your chip as is basic you know, standard practice, then it should just if all your edges are nice and fast because don't use very slow edges like this.
+
+[271] EEVblog #271 - Zoom H1 Recorder Teardown — Dave Jones (mention)
+context before: Then it would need a fairly heavy DSP because it's not easy to do MP3 encoding on a low-end microcontroller but pretty basic stuff. It's got the microphone electric microphone input here with the microphone bias supply AC coupled pretty standard stuff.
+TEXT: Line inputs here also AC coupled another line input here and well it's got a whole bunch of line inputs and then the headphone driver down here an external audio power amp so it's recommending if you know a separate external amp if you want to drive a decent type of speaker load instead of headphones and lots of decoupling over here for the built-in supplies.
+context after: So there's a whole bunch of stuff analog VDD is rated from 2.7 to 3.6 and it also needs for the IO as well go can go down to 1.1 volts to 3.3.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: How rude. We've been slimed. Yeah, so we just won't know what's under there. Anyway, it's obviously got uh power and you can see the differential pair. These are all like individual uh channels, so the differential pair carries the data and then they'd be using the uh power pins to power all that.
+TEXT: The compensation uh trimmer resistor there and that's about all she wrote. It's not a huge amount on there. Some decoupling on the bottom. So, whether or not that's some sort of, you know, custom uh front-end solution, I don't know because this one has a 1-gig bandwidth or it's 1-gig sample rate, I think.
+context after: So, this one is like this logic analyzer is serious business. So, yeah. Um, but we won't ever know. Aw, boo hoo. So, anyway, this looks and feels like a serious bit of kit.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: But either way works. You just want to get rid of that little line, little daggy line in there. And likewise down here, like, just, like, optimize space. This is just, like, too far away from these pins over here. Just -- just move it closer.
+TEXT: Do yourself a favor. And we can, you know, tidy that up. Once again, we don't need that visible. And once again, whether -- when you've got two capacitors like this, whether or not you put the ground and -- some people like to put it in the middle like that and then split off to the two capacitors.
+context after: Others like to have it off to one side like this, for example. They prefer to have it like that and like that. For example, I know that's a bit messy. Once again, it's the grid. Either way, it doesn't matter. Just put it physically close and neat and tidy.
+
+[219] Amazon Kindle Fire Tablet Teardown - EEVblog #219 — Dave Jones (mention)
+context before: And it looks like it goes all throughout there on the base of that right in. Wow, they're really um trying to uh just absolutely kill any problems with um and EMC uh compliance and RFI and stuff like that.
+TEXT: They've really tried to nail this one. And underneath that uh silicon uh pad there, there's not really much of interest, just the uh decoupling and a lot of unpopulated decoupling um parts and and other uh passive type parts under the uh main uh under the main processor there and the main uh SRAM.
+context after: Now, let's take a look at the uh main processor section here. And you might think this is the main processor just by the sheer size of it, but it ain't.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (mention)
+context before: Ah! Programmable timer switch. Geez, that's sizeable, isn't it? So Lee is from Malaysia. Big fan, thank you very much. Working on small projects involving some PICs. It acts as a timer switch. Just finished the PCB, which I wish we could take a look at.
+TEXT: This is the first time designing circuits. I'm not really sure if the selected components and their values are suitable. Especially the decoupling and switch decoupling capacitors. Correct if you find any mistakes on the layout. Let's check it out. Alright, first up, your power supply section.
+context after: You've got a series diode in there. No worries. It's better than like a back-to-back diode across here, which shorts out your supply if you get the polarity backwards. If you're going to forward the voltage drop, the 0.6 volts across there, or 1 volt, you know, like an amp
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: You could put one big one mic on there or one big 10 mic or whatever, something like that, which we might get We might get into it cuz it might be part of the issue here.
+TEXT: But anyway, yeah, basically, okay, if you've got a nice clean digital signal coming in and you've got a couple of decoupling caps on your chip as is basic you know, standard practice, then it should just if all your edges are nice and fast because don't use very slow edges like this.
+context after: You don't want to use slow edges with your 595 because your 595 because your serial clock here and your register clock as well, they don't have what's called Schmitt trigger inputs.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: And then you actually run separate traces. So, can we actually place a track? W to place a track. So, let's let's place it let's assume it's a big thick trace, okay?
+TEXT: I won't bother changing it. But yeah, then I would have a cap in here, right? A big couple hundred mic cap, okay? And then I would power the VCC here like this and I do like you know you got to get routing room to do this, but then I would do if I share it like you could go W is it?
+context after: Yeah, you can share I don't know I can't go across the trace, but then you can run it all the way down there you can run on a different bottom layer or whatever, right?
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (mention)
+context before: But anyway, and it runs all 5 volts. So higher voltage excursion rails than your typical 3.3 volt one. Once it's 6.25 megahertz, so it's not particularly quick. But if we can get something like this to fail, then that'll be really interesting.
+TEXT: And you note that it it has lots of bypass caps on here. Practically, I think there is one for every chip actually. So in you know, traditional time honored engineering practice, they've put a they've just specified in the design a bypass capacitor for each and every chip.
+context after: Whether or not they're actually required in terms of the layout and the impedance of the traces and and the loop paths and all sorts of things. It doesn't matter.
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (mention)
+context before: But yeah, that lattice SEMI, they must be rolling their own ADC with that. So that's obviously going to be some sort of dual slopey type integrator converter, something like that. As for the rest of it, the power supply side of things, I won't go into a huge amount of detail.
+TEXT: Suffice it to say, there you go, we've got some surface mount packages under there. But that's about all she wrote. Lots of bulk decoupling there with your ceramics and things like that. But yeah, got some isolation transformers, as I said. Ooh, doing a flyover.
+context after: Ooh. Using Dave's Steadicam. Well, you probably know what I'm going to say about that. Isn't that gorgeous? Wow. Beautifully laid out. It just oozes quality. Nice shielding strap there on the transformer. Coil craft inductor over here. We've got our common mode choke on the input.
+
+[189] iRiver Story HD eBook Reader TEARDOWN - EEVblog #189 — Dave Jones (mention)
+context before: Now, I believe it's an Epson. Um, I'm reading a TP365180, but don't uh quote me on that. Uh, very unsurprising, Epson make a lot of uh E Ink uh E Ink display controllers.
+TEXT: Um, I believe they use one in the Kindle as well. And of course, we've got our flat flex uh PCB here as well. There's a couple of decoupling capacitors on there, and you'll notice that the uh that it's actually got a designed date um just before Christmas 2010.
+context after: So, there you go. So, there you have it. That's it. Uh, pretty basic. It's got uh nothing more than uh what I expected. No um bells and whistles at all.
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (mention)
+context before: Hopefully, I can get it out in one piece, and uh we'll be able to see all the main processing on the front. And there's really not much doing here at all.
+TEXT: Might have to take this board out and flip it over to have a look at the uh part used, but obviously, look, there's only one BGA device here. You can tell by all the uh vias in there and all the uh decoupling around that, of course.
+context after: Looks like we might have some uh JTAG uh programming interfaces here, perhaps. I don't know. We'd have to uh flip that open to uh have a look. And then we're just got some ribbon cables.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: You want to make sure the data's in the right position first. So, if you want one here and a zero here and a one here and a zero here, you shift all that data in first and then you put a pulse on the clock line like that and it'll shift it all through and all the outputs change at once.
+TEXT: Brilliant. Geez, I'm waffling on. Dave, you get to the problems. Okay, first of all, nothing inherently wrong here, okay? So, yeah, you've got some decoupling here, right? 100 and mentioned 10 N before, doesn't really matter.
+context after: You could put one big one mic on there or one big 10 mic or whatever, something like that, which we might get We might get into it cuz it might be part of the issue here.
+
+[148] EEVblog #148 - Agilent 3000 X Series Infiniivision Oscilloscope Teardown — Dave Jones (mention)
+context before: So, the traces could be inside going down to the four channels, but clearly you can't see anything. There's a little bit going over to the main master ASIC over here, but apart from that, there's not much visible.
+TEXT: Um There's not much in the way of visible traces at all. And you'll notice the difference between the decoupling between the mega zoom ASIC up here and this Well, what I call like a secondary ASIC down the bottom here.
+context after: And you can see this secondary ASIC has a real bunch of you know, really heavy duty really serious ceramic bypass capacitors on it as opposed to the mega zoom ASIC which has a bunch of 100 ends just distributed around like that.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (mention)
+context before: So we can see that on the power side of things here, though. It looks like um uh a lot of the regulation is done internally to the scope and it's just powered through here.
+TEXT: Look, you can see it coming in here. It's decoupled with that cap through an inductor there and then it uh just buggers off through some uh four vas down there over to the bottom side over here to an internal layer.
+context after: This is obviously a uh four layer board and uh then it powers off there. Looks like they've got a little low dropout uh reg there for something or other for some uh local regulation probably for the uh Max 2 uh PLLD or something like that.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (mention)
+context before: You had to use all these chips, spread them out over large boards like this with uh backplanes, but signal integrity wasn't on on the PCB level wasn't as huge a thing as it is today with uh with all of today's uh you know, high-speed uh serial lines, controlled impedance, and all that sort of stuff.
+TEXT: These things weren't controlled impedance. You just laid it out with one big ground plane. You'll notice they've got decoupling chips on each one, but you'll notice how they're all laid out in nice lines like this.
+context after: You would lay them out like that and typically um this is not a good example of uh that one, but then this isn't a particularly good example either. This is the processor, the emulation processor module, but they're laid out in neat lines like that.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (mention)
+context before: And bingo, it just pops out, allows you to do mods really simply. I like it. Now, my modification is really simple. The on-off switch here just goes through is soldered to pin two on the ISP connector down there, and then the input to it goes to the 3.3 V or 5-V selection switch there.
+TEXT: Um uh single pole double throw, and it just uh and I've just added an LM317 voltage regulator on there with some decoupling caps and some uh a couple of resistors to set the voltage, and that's pretty much it.
+context after: And that's powered directly from the 5-V uh input from the USB. Now, unfortunately, Atmel don't actually uh give you the circuit for this Mark II uh programmer, and I couldn't find any circuits online.
+
+[1619] EEVblog 1619 - Mailbag: Featuring Don McKenzie — Dave Jones (mention)
+context before: You know there's like a page and a half on that and then some notes on some clocking and stuff like that. And for the uh power supply decoupling and power plane afficionados, he goes into uh some detail on that actually.
+TEXT: It's not bad decoupling capacitors and the time domain and stuff like that. So, but once again, not an absolutely comprehensive uh tutorial on on it, but uh it's just, you know, hints and tips here and there.
+context after: Oh, no. Tracks at right angles busted. Nice little tips like how to avoid heat sinks, uh thermal vi for example. And then we've got the practicalities, operating points of uh fan flows.
+
+[674] EEVblog #674 - Rigol DS1054Z Teardown — Dave Jones (mention)
+context before: It's just a rebadged, uh, part number from a different manufacturer. I think the one in the DS2000 from was from National Semiconductor if I remember rightly. So, for those who want to go and, uh, reverse engineer that one and, uh, just, uh, you can tell just from the, uh, pin outs you can see where the differential pairs are coming in here.
+TEXT: These are our, uh, four analog channels coming in differential and these are our data output channels and, uh, other stuff going around here. And well, we've just got some decoupling and power.
+context after: There's not a huge amount to it actually. But yes, it is one ADC across all four channels. So, yes, when you turn on, uh, all four channels you don't get the full one gig sample per second.
+
+[1244] EEVblog #1244 - Mailbag — Dave Jones (mention)
+context before: They're Toshiba chips, Mitsubishi. Yep, that's the old Toshiba logo. And In fact, most of the logic in this is all Oh, yeah, there's a smattering of Mitsubishi, but uh mostly Toshiba.
+TEXT: Wow, whatever happened? Couple of discrete discrete there. Big input decoupling cap. And really, you know, not much else. It's just a real whole bunch of uh just discrete logic stuff, really.
+context after: I mean, we've got a processor down you know, it is processor controlled. LH060 Sharp Oh, Z80 CPU. There we go. Ah, Z80 fanboys go wild. Oh, and I missed that.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: So, that's basically what they're using the thing for. They're probably transferring some power over as well for doing this. So, USB 3 was actually a smart choice there. So, we'll just strip this puppy open and see what she has to offer in there.
+TEXT: We can see the decoupling caps on the bottom side here and I'm a fan of the heat shrink construction over boards like this. But for a $3,000 to $6,000 logic analyzer, you you expect a case.
+context after: I mean, I didn't expect to see that. There we go. They've put the strain relief either side of the piece. Oh, they've blobbed it. They've blobbed it. Look at that.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (mention)
+context before: Um it's just not it it's just not available. Now, they do have a lesser range in a 48 uh like a slightly different variant in a 48-pin uh job, but the pin house don't match at all.
+TEXT: So, and of course, look, like we've got a decoupling cap here. Like huge big vias. Like this is ground, okay? Like this is power, okay? And like a huge tans here, right?
+context after: This has to These two have to be the power pin. And it doesn't match the data sheet at all. So, I think they've got some custom pin variant of that.
+
+[993] EEVblog #993 - Mailbag — Dave Jones (mention)
+context before: You can see the copper foil on there. It's just peeling right off revealing the woven fiberglass. I mean, we saw this on the Nest alarm control panel way, way back, didn't we?
+TEXT: It was one of the decoupling caps, wasn't it? Shorted out or something and then it just caught a light and um yeah, well, yep. There we go. Caught a light and yeah.
+context after: And this is actually what FR-4's all about. You know, here at FR-4 PCB, it's actually a flammability grade, flammability rating, whether or not, you know, your board's going to catch on fire and stuff like that.
+
+[1580] EEVblog 1580 - MacGruber Mailbag — Dave Jones (mention)
+context before: That's nice. So, you can point-to-point wire things. You can break out any pin you want. You can take them out to pin headers here and look, you can actually put series resistors in here and they've got other ones on the other side here.
+TEXT: So, it looks like you can have like every pin can have like decoupling. It can have, you know, series output resistor. It can have an RC filter or something.
+context after: Perhaps, you could wire that in. It could have like pull up, pull down, something like that. So, yeah, it looks yes, it looks like you can configure that. You can break traces.

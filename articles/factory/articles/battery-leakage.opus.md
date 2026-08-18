@@ -1,0 +1,39 @@
+# battery leakage
+
+Battery leakage is the escape of electrolyte from a primary cell into the equipment it powers. In alkaline cells the electrolyte is potassium hydroxide, and once outside the cell it reacts with atmospheric carbon dioxide to form potassium carbonate, the white crystalline growth that appears on corroded battery terminals.[1274][1296] The residue is caustic, eats away battery terminals and PCB tracks, and is the single most common reason a piece of otherwise sound equipment is found dead after long storage.[1274][1497] It is common enough in infrequently used instruments that a multimeter left with cells installed should be treated as a candidate for it.[1636][1497]
+
+## Where a cell leaks and why
+
+An alkaline cell's outer can is the positive terminal and is sealed metal; there is no seal at the positive end.[H-yOP-KSMC4] The only seal is the rubber one at the negative end, so that is where electrolyte escapes.[1296][VZuebPVrzI8][1274] Leakage apparently originating at the positive terminal does occur, but it is the rare case: the liquid has left the negative seal, run down the outside of the can, and pooled at the other end according to how the cell happened to be stored.[H-yOP-KSMC4][1508] Storage orientation therefore governs how far the damage spreads and what it reaches.[EcdjlD2rbuw][VZuebPVrzI8]
+
+Escaped electrolyte is normally found in its final crystalline state; catching it while still liquid is unusual, because it crystallises quickly.[1349][1497] The liquid phase has no detectable smell.[1349]
+
+Draining a cell close to zero and leaving it there provokes leakage. A Duracell discharged fully and left in place for a matter of hours or a day longer than its companions leaked, while the companions did not.[789] Published work has been cited to the effect that cells discharged at high current and then left standing are the most likely to leak, which is why deliberate leakage attempts discharge to roughly 90 percent so that internal pressure can build.[hSkaZEgrZkY] Manufacturer advisories against mixing old with new cells, or mixing brands, rest on a related mechanism: when a series string discharges, the still-good cells can reverse-charge the ones that die first.[1274]
+
+## What the damage looks like
+
+The electrolyte creeps. In a voltage detection stick it ran down the outside of the cell, entered the board through a via, spread underneath an IC and accumulated there, damaging a pad — damage invisible from the outside of the board and consistent with the fault, since the circuit is high impedance.[VZuebPVrzI8] It attacks more than metal: it has been observed eating away a plastic battery post entirely,[1564] lifting solder mask off copper,[1497] and removing the printed markings from resistor bodies.[p8T4Dtc6OKk] On an Acorn Archimedes A3000 a leaked battery left green corrosion through the chip contacts and into the keyboard flat-flex connector.[507]
+
+Damage is not always proportional to appearance. A leak that looks unremarkable may have seeped into tracks,[1497] while a board covered in visible residue can turn out to have nothing wrong with it beyond dirty contacts, with the contacts themselves still working.[1564] The diagnostic rule is that when a product with battery leakage is faulty, the leakage is the first suspect, but it still has to be confirmed against the actual failure — in one Fluke 3000 repair the leakage had not reached the display circuitry at all, ruling it out as the cause.[1564][qmcSEJehqZM]
+
+Because the residue continues to attack metal, the standard treatment is to neutralise it with a mild acid — white vinegar, or lemon juice — applied with a cotton bud, followed by isopropyl alcohol.[1497][VZuebPVrzI8][2QZ8GWwzXXY] Left uncleaned, the rot continues.[j_eaXfmRB8Q][VZuebPVrzI8]
+
+## Brand reputation versus controlled testing
+
+Anecdotal culprits are named confidently and inconsistently: every Duracell leaks, every Energizer leaks, this brand leaks and that one does not.[1274] Duracell attracts the reputation strongly enough to be nicknamed accordingly,[2QZ8GWwzXXY][1508] but leaking Energizers are equally well documented, including cells only weeks or months old sent through the post inside a device.[rpGRqlI_VkQ][1497][1349] A long-term controlled experiment was begun in March 2019 with seven brands, discharged in several different ways, specifically to test whether any brand bias exists.[1508][j_eaXfmRB8Q]
+
+The result after ten months on a continuously connected 47 ohm load was zero leakage and zero crystalline growth across all brands, including the ones with the worst reputation, and the same for the half-drained set.[1274] A null result of this kind admits two readings: either the brands are genuinely fine, or the test conditions were wrong.[1274] A repeat with a different discharge methodology followed, in the knowledge that results would not be available for six to nine months.[1296][1350] Only after roughly two years did any of the original cells fail; Panasonic came out worst, and essentially none of the Duracells or Energizers in the test failed at all.[1508]
+
+The experiments also disposed of one popular hypothesis. Since cells in a product sit under spring pressure from the holder contacts, physical tension on the end of the cell was proposed as the trigger; none of the cells held in battery holders leaked, so on this small scale the mechanism can be discounted.[1508]
+
+Statistically the exercise is difficult. What the test is really hunting is the tail of the manufacturing distribution — outlying faults in the pressure vents — so with a failure rate on the order of 1 percent, hundreds of cells per type would be needed to make a leak likely at all.[1296] A later attempt built a circuit supplied by a correspondent who reported that it made batteries leak every time, within 30 to 40 days, on multiple brands; the working suspicion was that a pulsed rather than constant load is what matters.[1653] That attempt also failed to produce leakage.[9O-fyw8CyIY] Meanwhile the original cells from the first test did eventually leak, but only many years later.[1653]
+
+## Other chemistries
+
+Carbon-zinc dry cells contain no potassium hydroxide, so they cannot produce the characteristic potassium carbonate growth; if such a cell leaks the substance is something else, and a cell that does contain KOH is not a proper carbon-zinc cell.[1508] Lithium thionyl chloride primaries are liquid cells in a sealed container, so in principle they can leak, but as parts designed for 20-plus-year service they effectively do not without serious abuse.[WWMXJLhPVdA][1371] Lithium coin and backup cells in instruments are routinely found intact after a decade or more,[755][783][620] though replacement as a matter of course is the sensible move when returning vintage gear to service.[755][620]
+
+## Practical consequences
+
+The operative rule is not to leave alkaline cells in equipment that is used infrequently, and specifically not in expensive test gear.[2Y1tVvllklc][1497][FgkD8K0Ssdc] Discovering leakage in one meter is grounds for systematically checking the rest.[1497] The cost is not theoretical: leakage has written off rare prototype instruments, with the back cover stuck fast to the cells,[EcdjlD2rbuw][1668] rendered vintage systems beyond economical repair,[u6Qd9KfQOzQ] and generated enough demand for replacement battery doors — corroded or with the contacts snapped off — to justify stocking them as a spare part.[1670]
+
+Not all battery-adjacent faults are leakage. Excess drain from a meter's battery can equally be a leaky capacitor across the battery terminals, and a diode plus two capacitors across the supply are the components to examine first in that case.[1449] Conversely, a cheap instrument may be undermined by leakage before it is ever used, simply from sitting in storage with its cell installed.[872]

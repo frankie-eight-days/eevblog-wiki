@@ -1,0 +1,55 @@
+# open source hardware
+
+Open source hardware is the practice of publishing the complete design information for a physical product — schematics, PCB layout, bill of materials, and firmware — under a licence that lets anyone study, modify, manufacture and sell it.[195][1048] It is not the same as free hardware: a physical object still costs money to produce, and what is given away is the information needed to make it, so that anyone who does not want to buy the finished article can build their own.[195] The concept long predates the name, but the formal community definition — a document of twelve points — was ratified comparatively recently, and a design only qualifies as open hardware if it meets that definition.[195]
+
+## Definition and licensing
+
+The defining constraint is commercial freedom. A design carrying a non-commercial clause is not open source hardware, because the whole point is that a third party may take the original design files and produce and sell a copy.[326][333] Restricting competitors is a legitimate choice for a designer to make, but a product carrying that restriction should not be described as open hardware, because those who support the formal definition treat the term as load-bearing.[195]
+
+Licences in actual use span the Creative Commons family, including CC-BY-SA and Creative Commons more generally, the GPL, and the CERN Open Hardware Licence.[313][294][913][686][1079] Design files are commonly distributed through a public repository rather than a project website.[735][-xX2kK-RmQU]
+
+A separate question is whether a design expressed in a proprietary file format is open at all. A design produced in a closed tool can be read only by someone who has bought that tool, so the position taken by the open EDA projects is that hardware is not truly open unless the file formats — and preferably the tools themselves — are open as well.[121] The practical form of this complaint is the project that publishes only native Eagle schematic and board files with no PDF rendering, which forces anyone who wants merely to read the schematic to install a specific CAD package.[643][688] Releasing an easily viewable schematic is treated as a minimum courtesy for an open hardware release.[643] The same failure mode appears at the manufacturing end: a repository containing schematic and board files but no Gerbers is only partly usable, since the recipient must re-derive the manufacturing outputs.[1374]
+
+Free entry-level tools and the movement are mutually dependent. The open source hardware world is built around free software tools and, frequently, around their limitations — the Arduino was designed around the restrictions of the free version of Eagle.[527] A vendor with no free tier is therefore absent from the segment entirely.[527][400] Altium's CircuitMaker was released free of layer, size and complexity limits and without a commercial-use clause, on a cloud-and-community model that requires projects to be public — a structure aimed squarely at open source hardware work.[754]
+
+## Community norms
+
+Beyond the licence there is a body of unwritten convention that predates the movement and traces back to the magazine-project era.[333] The first is: "Don't clone. Innovate."[333] Taking someone's design files and producing an exact duplicate is legally permitted — that permission is precisely what the absence of a non-commercial clause buys — but it contributes nothing back.[333] These conventions are norms rather than rules; they are not enforceable and nobody is obliged to follow them, but observing them makes for better standing in the community than going strictly by the legal licence.[336]
+
+Reciprocity is the other half. Contributors who give to the community tend to receive time back in kind — someone who cannot produce a decent enclosure may find another contributor offering to design the CAD files for it.[195] A derivative work made from an open source design is expected to be re-released as open source hardware in turn.[1374]
+
+## The gear logo problem
+
+The community gear logo is applied to products regardless of whether they meet the definition — sometimes innocently, sometimes as a marketing move that trades on the name without the substance.[921] The logo is itself open, so its use cannot be policed except socially, and nothing about it tells a prospective user which files are actually available; determining that requires visiting the project's download page and reading the licence.[921]
+
+The all-or-nothing structure produces a perverse outcome: a company willing to open part of its hardware risks being shunned for not opening enough, which discourages it from opening anything.[921] The proposed remedy is a graded logo — retain the gear, but signal how much of the design is being released, so that a project may open as little or as much as it wants provided it identifies what.[921][1581] Partial openness is common in practice: products exist whose software and enclosure files are open while the hardware is not,[1190] whose design files are promised but withheld until the first production batch has shipped,[614] and whose schematics are scheduled for release only once the model is obsolete, as a right-to-repair measure.[1715]
+
+Claims of openness also fail on inspection. Instruments promoted as open source have turned out to publish an SDK and application source while no hardware schematic exists anywhere on the vendor's site.[858][2] Others advertise open design files that are available only as a preview.[1621]
+
+## Verifiability and trust
+
+Where a device's security depends on its contents, open hardware changes what a user can check. A hardware wallet whose hardware and firmware are both open can be independently vetted and, in principle, built from scratch, which removes dependence on the supply chain and the associated risk of interception between manufacturer and buyer.[1062][1374][1048] The trade-off is concrete rather than ideological: a closed competitor may use a genuine secure element supplied under NDA, with physical and electrical side-channel protection, and so be technically more resistant to a determined attacker, while offering no way to examine the code or the hardware.[1062][1048] Building from open files does not eliminate trust either — it relocates it to whoever assembles the board.[1374]
+
+The same reasoning applies to silicon documentation. A single-board computer built on a part whose full datasheet is published is open in a way that one built on a part requiring an NDA is not, whatever the rest of the board's status.[883]
+
+Reverse engineering is central to the ethos: being able to take a thing apart and work out how it functions is the point, so terms of use that forbid decompilation, reverse engineering, or the creation of derivative works are directly contrary to it, as are clauses that prohibit building competing services from a forked platform.[1721]
+
+## Commercial limits
+
+Open hardware and large-scale manufacturing sit uneasily together. A complex machine gains little from full openness, because nobody is going to fabricate their own sheet metal and build one from the design files — the practical audience for the released files is the tinkerers and hackers who want to modify, repair, or extend a unit they bought.[356] As a product line matures, it becomes cheaper and simpler to sell a finished assembly than to keep a kit alive, and the kit tends to die of that arithmetic rather than of any decision of principle.[198] Venture funding accelerates the same trajectory, since an eventual sale or float generally ends the open-source character of the company.[198]
+
+Openness nonetheless has commercial value at smaller scale. Publishing a design generates interest, establishes the designer as the authority on that product, and leads to further orders and work — a cheaper route to attention than secrecy.[106] For an individual, a public body of contributed open hardware work functions as a portfolio that establishes a reputation before an interview begins; the advice for a student is to take one project far enough to be worth pointing at, and specifically to finish it to a polished standard — laid out properly and housed in a real enclosure — rather than leaving it a prototype.[-xX2kK-RmQU][KJEmBtvZrPU]
+
+## Antecedents
+
+The practice is continuous with hobbyist electronics magazines, which published projects with full circuits and one-to-one PCB artwork.[1326][-xX2kK-RmQU] A reader could photocopy the artwork from the page, or download the layout from the publisher's bulletin board over a dial-up modem, then expose, etch and drill the board at home.[1326] Designs published this way could be freely rebuilt, improved, republished in a later issue, or sold as kits by third parties, which is functionally what an open source hardware licence permits today.[-xX2kK-RmQU] Designers sometimes sold pre-programmed logic devices for such projects while still publishing the programmable logic files for free download, so that buying the part was a convenience rather than a requirement.[1326] The kit industry saw a revival alongside the modern movement.[-xX2kK-RmQU]
+
+## Representative projects
+
+Open source hardware appears across the full range of instruments and gadgets. Test and measurement examples include a constant-current dummy load distributed with Gerbers, BOM and schematic,[304] a low-jitter 10 MHz reference clock published with full jitter analysis,[899] a battery-life measurement instrument that models the effect of changing chemistry, cutoff voltage, or a linear regulator for a switching converter,[1331] a USB oscilloscope released with all design files whose hardware is sound but whose user interface lacks basics such as a 20 MHz bandwidth limit — an obvious target for community work.[1709]
+
+Instrumentation aside, the corpus covers an open source hardware multimeter concept,[184] the Ultramicron pocket dosimeter, a data-logging Geiger counter with an internal battery that continues logging while switched off,[776][775] a 4-axis desktop robotic arm with all hardware designs and control algorithms released,[586] a TTL RISC kit computer shipped with full schematics,[1080] open-back DSP headphones,[1569] the Bus Pirate LCD adapter,[313] an open screen adapter driving a generic LCD from DisplayPort,[592] and a 3D-printer control board combining GPL and CERN licensed sections.[686]
+
+Bitcoin mining hardware is a case where openness drives an entire product ecosystem: an open source ASIC miner design has been manufactured in many variants by many companies, differing in stands, cooling arrangements and form factor, all derived from the same released files.[0h7lKgIFFXA][4ANGcEJbrTE]
+
+A worked example of building open tooling for a closed part is the Padauk three-cent microcontroller, whose vendor programmer costs on the order of a hundred dollars. The device was reverse engineered by the community, and full open source hardware and software now exist for programming and emulating it, including VHDL emulator implementations and an open C compiler toolchain based on SDCC.[1306][9gYaB1AGmT8][1141]

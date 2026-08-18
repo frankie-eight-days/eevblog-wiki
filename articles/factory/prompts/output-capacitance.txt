@@ -1,0 +1,293 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: output capacitance
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 52 passages drawn from 34 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# output capacitance`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (explains)
+context before: So, the lower the ripple, you know, so at at 10 milliamps output current, you might get 50 millivolts uh, peak-to-peak ripple here. And uh, but that will change if you just use the ICL7660 version on its own, you'll get B, you'll get 200 millivolts ripple, and so forth.
+TEXT: But, and that's for a nominal output capacitance of 10 microfarads and a switching capacitor of 10 microfarads. So, you know, you can't First trap is that you can't just read these graphs and go, "Oh, I'm going to get 50 millivolts peak-to-peak ripple at uh, you know, like that's what the chip's going to give." No, it depends on the out the capacitance, but the also what the ESR of the capacitor you use and all
+context after: sorts of stuff. So, they don't actually go into that. So, that's why these graphs can actually be misleading. You may not You might put your 10 microfarad cap in there, but depending on the voltage rating and the derating of the capacitor with the DC bias on the capacitor, and like that's a whole video.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: That's our output voltage there and it's still sticking with 1 milliamp and let's go let's drop it down. And you know it's only going to go down to about 0.9 before it Yeah there we go it's starting to starting to muck up now and the good thing is is that it's still drawing that half you remember from the data sheet from the previous thought that it would get down to
+TEXT: about it would still be drawing half a milliamp about 0.8 volts or of thereabouts I think we said and I just wanted to point out that up until now my output capacitance here although the data sheet says 2.2 microfarads minimum to make it stable I'm only actually using one microfarad not even using a ceramic either as as recommended so it's cuz I don't actually have a a you know a normal 2.2 micro farad
+context after: ceramic to hand. So it's just fine with that output capacitance and we can add some more later and stuff like that. We'll play around with that. But no, it seems to be quite good and let's actually remove the output capacitance all together and see what happens.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: Nippon Chemicon, of course, when you pay this sort of money for a power supply, even their basic series uses Nippon Chemicon caps. Absolutely very nice. So, we've only got 22 microfarads output cap.
+TEXT: Plus I think there's I see some ceramic surface mount jobbies on the back of as well. but I won't uh take that out. But uh yeah, as with all lab power supplies, you want to minimize the amount of output capacitance because when you switch uh from constant current to constant voltage mode and vice versa, you don't want the energy in these capacitors cuz this is these are after their the
+context after: current regulation uh circuitry. So, you don't want a huge amount of output capacitance cuz then that can dump current into your load above your uh current your current setting.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: But just be careful. You don't want to put a massive amount of capacitance on the output of a constant current power supply like this, because that capacitor can store a lot of energy.
+TEXT: You know, if you put in a "I'm going to put in a big 2200 microfarad capacitor. That'll really, you know, give it lots of transient performance." Well, there's a downside to doing that, and that's when this thing switches into constant current mode, then can't react, cuz it's still got all this energy in the cap that can get dumped high current into your load, because it's not current
+context after: regulating. So, you want to keep in a lab power supply like this with a constant current circuit like this, you want to keep the output output capacitance as low as possible just to ensure stability in your regulator.
+
+[549] EEVblog #549 - Rigol DP832 Lab Power Supply Followup — Dave Jones (explains)
+context before: here especially at like 100 milliamps not a problem whatsoever but so that's an issue with uh some of the topologies used in these power supplies the output configuration of the sense resistor to do the current sensing and hence do the constant current and having a large output capacitance and as I've mentioned in like my power supply design videos and stuff you want them for a constant current power supply like this
+TEXT: you want to minimize your output capacitance for that charging up reason and also for the reason that when your current limit kicks in you don't want that capacitor which can store a lot of charge in it to actually dump out excess current over and above your set current limit to your load now there was another big issue that somebody on the forum noticed because these channels here
+context after: aren't floating these two common terminals are actually these two negative terminals are actually common and you can see that they're shorted out internally here the channel one is an isolated output but channel two and channel three are share a common terminal and if you hook up the load incorrectly on these then it can cause was issue I'll show you okay we can easily demonstrate this.
+
+[314] EEVblog #314 - Korad KA3005P PSU Teardown — Dave Jones (explains)
+context before: Oops. And down on the binding post board, there's not much doing here. You can see the 1 kV caps connecting earth through to the negative output there. Standard practice.
+TEXT: They've got shake-proof washers on the nuts and behind the nuts for the binding post there. Nice. They've only got a small amount of output capacitance because on a on a constant current power supply, of course, you don't want a massive amount of output capacitance because then that energy can be dumped into your circuit when you don't want it to be.
+context after: And then we've got the the main inputs out here, of course, coming from the output of the current sense resistor on the processor board. And then it looks like they've got a another little sense cable which senses the voltage directly at the output terminals.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Here we go. Didn't even trigger. There we go. We're Looks like we have to lower our trigger there. Let's try it again. And bang, there we go. Much smaller output transient this time cuz we've got greater output capacitance.
+TEXT: But, as I mentioned in the previous video, it's a bit of a trade-off. You can't have an infinite amount of output output capacitance cuz then it when it switches into constant current mode, all that energy from the output capacitance can be dumped into the load before it has time to regulate the current.
+context after: So, probably not a good idea. And we'll check the load when we do the switch on transient. So, we want to set our trigger signal below like that. So, because we expect it to drip down like that.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: Now, most series voltage references don't have that. They just have a fixed voltage output, you know, 1.25 volts, 2.5, 5, whatever the output voltage is. This one has a sense one, that's so you can connect it directly across like a precision four-terminal resistor.
+TEXT: And you know, that's that's really quite nice. And that's what allows you in this configuration to use this NPN transistor and then feed it back. And of course you got to have a minimum output capacitance on here as well for stability because a voltage reference has an internal error amplifier.
+context after: And I knew that and of course error amplifiers just like linear regulators and low dropout regulators, they can oscillate if you don't have the correct, you know, bypass capacitors on the input and the output.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: All right, let's power this thing up. Take a look. I've got it down on a little adapter down there, little SOT-23 jobby. Yes, I will No, I don't have any bypass caps cuz I thought we'd just uh have a look first to see uh the stability of thing without any bypass capacitors on it.
+TEXT: Cuz this is a low dropout voltage regulator, an LDO. One of the classic issues with LDOs is uh stability. They can actually oscillate if you don't incorrect if you don't correctly load them with the correct amount of capacitance, the correct type of capacitor, the ESR, all that sort of stuff.
+context after: So, they can potentially oscillate cuz they use a PNP or a P-channel uh pass element, which is inherently more unstable. And anyway, I won't go into the details, but the advantage of it is is that you get the low dropout voltage.
+
+[827] EEVblog #827 - Mailbag — Dave Jones (explains)
+context before: So absolutely fantastic little power bricks. I like them, they're about $16 a pop. They're not, you know, eBay giveaway prices, but wow, they're worth having a set of those. Definitely. Well done. Just beware though, the data sheet for these things which I'll link in down below
+TEXT: does say these have a maximum output capacitance. Not minimum, but maximum output capacitance, presumably for stability. They go unstable with any higher output capacitance, so just be aware of that. I'm not going to hook up a scope and put in capacitors and try and measure its performance
+context after: and instability and all that sort of jazz. Leave that up to somebody else. And here's the Arty. It's a rather ugly looking FPGA development board. I say ugly looking because the white silk screen, I'm sorry, it just does not work. I hate it.
+
+[1253] EEVblog #1253 - LED Flicker 2: Electric Boogaloo — Dave Jones (explains)
+context before: e going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more, a little bit more, and we're going to put in a little bit more.
+TEXT: fixing the output capacitance like this, because we've got no secondary side conversion over here. Nothing. It's all done via the primary side, and we've got bugger all input capacitance. So let's add some input capacitance over here and see what's what. Once again, we're going an order
+context after: of magnitude. You've got to love orders of magnitude in engineering. Nippon Chemicon for the win. Once again, salvaged from an old board, and you should always have like scrap boards lying around so that you can salvage parts like this, because not everyone's going to keep like a component bin
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: the volt the current flowing through this resistor has exceeded the value exceeded the value set by your adjustment pot or your microcontroller, whatever it is, then we'll turn on this transistor and pull this pin adjust pin low, which will then drag your output voltage low with it.
+TEXT: But, of course, because you've got output capacitance here, it's not going to instantly drop to zero. It's actually going to slowly go down. It'll go down It'll go down reasonably quickly, but it'll drop and then it will sort of servo So, the current So, the output voltage will drop.
+context after: So, therefore, your load the current in your load will drop. So, therefore, it will kind of like oscillate and servo and control that and keep it at an average value of 1 amp.
+
+[324] EEVblog #324 - DC-DC Converter Testing - USB Supply Part 4 — Dave Jones (explains)
+context before: But I think I've digressed a fair bit, I don't really, I'm not here to measure the switching transient and trying to fix that and do it on a breadboard and all that sort of crap, I don't really care. I more care about the efficiency of this
+TEXT: thing and its load performance and stuff like that. Right, so one of the first things I've noticed is that it essentially doesn't need any output capacitance on this thing. I mean, I've got no output capacitance at all, and we're driving, you know, let's take up the load to
+context after: let's really bump up the load here. Quite significant output, let's go to its maximum actually. Ta-da! I love this electronic load. It's great, and we're still getting 4.93, that's with no output capacitance at all, input voltage of 4.9 volts, there it is. I've just got a little bypass
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Pretty simple. Now, out C C out, our output capacitor, our filter capacitor here's the formula for it. It's nine times I I the output current, which is 100 milliamps, which is our which is our spec for our circuit, times T on, which we've calculated before, 7.3 microseconds on the output ripple.
+TEXT: Now, as we said at the start, as per our spec, I said I'd be happy with say 100 millivolts ripple on this circuit. So, 0.1 volts, there it is, 100 milliamps, plug it in, and you get 66 microfarads, and that's the output capacitance we need on our switching regulator.
+context after: Ta-da! Wasn't that easy? Piece of cake. It looks complicated, but it's not. You just need some basic math and go through step-by-step. Easy. And there's one more thing we have to calculate.
+
+[664] EEVblog #664 - Peltier TEG Energy Harvesting Experiments — Dave Jones (explains)
+context before: power out of there. We should be able to suck as much power out of there as we can get from our thermoelectric generator coming in. As I said, this Vout2, which is powering the processor, and that we've been looking at that one's only capable of like 4 or 5 milliamps.
+TEXT: So not much at all. So, you know, if you do have like a high power transmitter you want to turn off or on for extended periods that aren't catered for by little pulse currents for your output capacitance here, you can do that using Vout here and then switch it on.
+context after: Okay, I've got a bit more of a complicated test set up at the moment, and I'll explain what's happening here. And by the way this is a classic example where 4 multimeters in your lab can come in real handy. I've explained why any decent lab should have
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: about it would still be drawing half a milliamp about 0.8 volts or of thereabouts I think we said and I just wanted to point out that up until now my output capacitance here although the data sheet says 2.2 microfarads minimum to make it stable I'm only actually using one microfarad not even using a ceramic either as as recommended so it's cuz I don't actually have a a you know a normal 2.2 micro farad
+TEXT: ceramic to hand. So it's just fine with that output capacitance and we can add some more later and stuff like that. We'll play around with that. But no, it seems to be quite good and let's actually remove the output capacitance all together and see what happens.
+context after: Okay, that's with no output capacitance at around about 2 volts and as you can see it's a lot noisier than what we're getting before and let me put on a point 47.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: And it's just protecting itself. So, I think that's what the deal is there. It's So, technically, that's an issue with the uh Rigol power supply, but this is what happens when you have large output uh caps on your power supply.
+TEXT: The energy or current in those caps can get dumped into your load for a brief period when you enter that constant current uh mode. So, yeah, uh power supply lab at power supply design good lab power supply design tries to minimize the output uh capacitance.
+context after: But, these ones Let's go back in and actually have a look to see that they're actually smack on the output. And back inside again, and here's our two caps there and there.
+
+[664] EEVblog #664 - Peltier TEG Energy Harvesting Experiments — Dave Jones (explains)
+context before: that could allow you to charge up some circuitry and do some other housekeeping stuff before your main output switches on. Whether or not you use that depends on your application but it's there. And this output capacity here has to be a minimum of 2.2 microfarads
+TEXT: because as you should be aware, low dropout regulators are inherently unstable so you need a minimum amount of output capacitance there and of course you don't want to make that too large because then you get into the same problem of here of this output
+context after: capacitor of having to charge the thing up, etc. So you can have a really large value over here and a small value here of minimum 2.2 so this one can charge up quicker. So usually this value is going to be a lot lower than your one over here because you have to draw current
+
+[511] EEVblog #511 - Rigol DP832 Power Supply Teardown — Dave Jones (explains)
+context before: Why? Because on a supply with constant current at any time it can switch into constant current mode but that constant current might be limited back further on the board but then this output capacitor here can deliver a spike of current you know energy directly into your load over and above that set current amount.
+TEXT: So during that switch over period so it really the design goal when you're designing any lab power supply with constant current mode capability is to minimize your output capacitance there but they've whacked in 1,000 mic which is pretty darn high.
+context after: Now whether or not they have done that because that was the minimum value that they required for output stability I have no idea. You'd have to go into the circuit and the actual design and how and the loop performance of this thing.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: We've just got a low value cap there. And this uh cap on the um output would should just be in parallel with these ones, but it's literally right on the output.
+TEXT: So, it's got a significant amount of uh output capacitance, which does matter if you're uh switching into constant uh current mode, of course, because then your uh capacitors can still deliver that charge before the loop has uh time to respond.
+context after: So, ideally you want the uh in power supply design, you want the lowest possible output capacitance while still keeping your ripple uh low, but also uh when you switch into constant current mode, you don't want to uh uh fry your circuit.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: All right, let's try 0 to 45 V, same time base. There we go, exactly the same. But, you'll notice if we switch it off, it is reading on the output terminals.
+TEXT: Look how long it takes for those output caps to discharge. So, yeah, got large output capacitance. As I said, not ideal for a lab power supply cuz when it goes into constant current mode, those caps can potentially deliver over current.
+context after: So, yeah, you got to be careful of that. And off, let's see how she ramps down. I mean, we've only got the 1 meg load on the input. Bingo, there it is.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (explains)
+context before: Take out the 2 milliamps. There we go. Bang. I'm curious to know what happens if we remove our 470 mic cap now. Let's see if it goes back to being No.
+TEXT: There we go. It's still stable. We've got a bit more noise but uh not a problem at all. So this thing is now stable without that um output capacitance there cuz we've entirely changed the uh loop parameters of this uh circuit.
+context after: The poles and everything else it's the whole thing has completely changed by adding the op amp buffer in that feedback loop. Oh hello. I just put in a 10 microfarad ceramic.
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (explains)
+context before: So, what it is is how long it takes for your output to transition from low to high, like that. And that's your time in nanoseconds. Once again, typical and maximum figures.
+TEXT: So, this TI data sheet actually doesn't give a huge amount of detail here, cuz this could also be affected by uh the output capacitance. It doesn't say anything. Let's actually go over to a Nexperia data sheet, shall we?
+context after: This is the uh once again it's for the exact same chip. It's for the 74HC uh 00. And if we go down here, let's have a look at the exact same parameter.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: You know, if you put in a "I'm going to put in a big 2200 microfarad capacitor. That'll really, you know, give it lots of transient performance." Well, there's a downside to doing that, and that's when this thing switches into constant current mode, then can't react, cuz it's still got all this energy in the cap that can get dumped high current into your load, because it's not current
+TEXT: regulating. So, you want to keep in a lab power supply like this with a constant current circuit like this, you want to keep the output output capacitance as low as possible just to ensure stability in your regulator.
+context after: Although, I guess you could say, "Oh, okay, you might determine transient response is a more important thing than uh switch it over into constant current." But, generally, you kind of want to keep that thing the output capacitance low.
+
+[751] EEVblog #751 - How To Debunk A Product (The Batteriser) — Dave Jones (explains)
+context before: That depends on how much decoupling they've got internally. And all sorts of technical details like that. And is this uh batterizer going to help in that respect? I don't think a huge amount, because it's physically not a large DC-to-DC converter.
+TEXT: It has to be like one of the world's smallest DC-to-DC boost converters in order to fit in this form factor. So, naturally, it's going to have extremely limited output capacitance and uh peak current uh capability.
+context after: So, you're relying on the internal uh decoupling of your product to handle those uh pulse loads effectively. Now, will the batterizer actually make a difference in this case? Well, it it may, but in the majority of cases, I don't think so, because yeah, it's boosting the voltage up to 1.5 V, which is great for those products which have a low dropout voltage.
+
+[945] EEVblog #945 - Thermal Powered Smartwatches Are GIMMICKS! — Dave Jones (explains)
+context before: 3.3 volts. Bingo. There you go. It's 19.7° C here in the lab. Uh, by the way, if you just wanted to know what that's a 68 Fahrenheit for you Yanks.
+TEXT: And of course, if I take that away, you'll see it start to drop. But I've got some output uh capacitance on here. Small amount of output uh capacitance. And of course, this micro can work down to lower voltages.
+context after: So, you'll see it eventually fade away like that as the uh thermmoelectric generator reaches thermal equilibrium again. It'll go back down to zero. So, bingo. Just using a jelly bean thermmoelectric generator, we can easily power an ARM Cortex M3 processor, albeit a nice little efm32 low power jobby here and an LCD.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Now, here's one of the traps for young players. Um you know how I said the TL 40 40 40 41 is stable with capacitive load? Well, unfortunately, the TL431 is not.
+TEXT: So, you've got a stable region and you've got an unstable region, just like with low dropout regulators and stuff like that. You can't just whack a capacitor on the output and it's yeah, not going to be stable.
+context after: There's going to be an unstable region there and you can completely come a gutser. I won't go into the details, but I will also link in this data sheet down below for application note down below.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: So, yeah, as I said, these things aren't the best as a precision lab power supply. Cuz a good precision lab uh power supply, well, a good lab power supply doesn't have to be precision.
+TEXT: A good lab power supply will minimize the amount of output capacitance that gets dumped into your load. And I've mentioned this many times in my power supply uh design uh tutorials and stuff like that.
+context after: So, that's what's happening here. Um the current from the output caps is being dumped into the load, and the current limit uh down here, it looks like it's set to its maximum of 70 amps, it's actually it's got uh a good electronic load like this will have uh these overcurrent overvoltage protections, so that which will kick in to actually protect it.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: You can expect it to droop down like that and then they recover like that. And if you use a 10 microfarad ceramic, you can see that it takes a bit longer to recover and the droop isn't Well, in this case, the rise isn't quite as much.
+TEXT: So, there you go. But that's at a nominal 1.5 volts output, but the greater the your output the greater the output capacitance on your regulator, the better your load transient response can become.
+context after: But just be careful. You don't want to put a massive amount of capacitance on the output of a constant current power supply like this, because that capacitor can store a lot of energy.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: Look, you can see it. Not that you know, for a precision reference, it's just no good. It's hopeless. And if we swap the transistor for our high gain Darlington KSD3692, and let's have a look what happens.
+TEXT: This is with no load at all. There we go, and that's the force line. There's the force line. Woohoo! Look at that. And of course, this is going to be a function of the output capacitance as well.
+context after: So, I've got a 3.3 mic poly cap in there instead of my Well, in parallel with my 10 mic ceramic, and I can actually, you know, take those out.
+
+[1036] EEVblog #1036 - PSU Fire PCB Repair — Dave Jones (explains)
+context before: So, I expect to see uh uh like some sort of uh capacitive output charging or something. Hello. There we go. Started out low, of course, and it's uh Yep, it's gone up.
+TEXT: That's what I expect. Put it around the other way. And there we go. Started out low because there's some output capacitance somewhere that's charged. And Bob's your uncle. Look at that.
+context after: All right. That's where I'm not sure what it's supposed to be, but hey, I deem that to be um as normal as it possibly could be. So, let's put it back together and power it up.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: So, there you go. But that's at a nominal 1.5 volts output, but the greater the your output the greater the output capacitance on your regulator, the better your load transient response can become.
+TEXT: But just be careful. You don't want to put a massive amount of capacitance on the output of a constant current power supply like this, because that capacitor can store a lot of energy.
+context after: You know, if you put in a "I'm going to put in a big 2200 microfarad capacitor. That'll really, you know, give it lots of transient performance." Well, there's a downside to doing that, and that's when this thing switches into constant current mode, then can't react, cuz it's still got all this energy in the cap that can get dumped high current into your load, because it's not current
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: We'll just set the negative trigger there and we'll switch it off and bingo, that's uh a nice clean switch off in 50 milliseconds or so with that load, of course.
+TEXT: It'll take longer if you totally disconnect the load, of course. And that was a bit warmy. And uh then single shot switch it off, of course the output capacitance will take forever.
+context after: So, that takes about 400 and something milliamps. So, if we set it to 300 milliamp current limit, and I've got 10-volt output, and we and I'll just uh give that a little whoop switch on.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: And you can see how it's immediately switched off there. There's a bit of high frequency stuff there as you'd expect. And then it boop, ramps back down, and then it kicks in, and the op amp kicks in and controls it all, and all settles back down nicely.
+TEXT: But, that's 50 mV per division. So, that's only jumped 50 mV there for a quarter of an amp output current. And of course, that's with our 1 microfarad output capacitance.
+context after: Let's change that. Let's actually add some extra capacitance in there. I'll get an extra 47 microfarads, and I'll whack that on the output, and see what difference that makes.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: That was out of constant current into constant voltage. So, it is it's really clean. And as for voltage step response, yeah. Yeah, yeah, that's pretty good. There we go.
+TEXT: We've just got some steps there. That's pretty clean. As I was adjusting that cuz where I was going down, so you expect it to curve with the output capacitance like that.
+context after: So, yeah, that's nice. And what I've captured here is the switching from constant voltage into constant current mode. And you see tiny little spike there, kind of like to be expected, I guess, but yeah, it's it's relatively clean.
+
+[95] EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans — Dave Jones (explains)
+context before: We'll add those to these even though it's not an exact simulation. We'll just add them in and see if it changes the power response. And as you can see, it it it does.
+TEXT: It's made it stable. Let's change this output capacitance to I don't know, something silly like 10 pF and have a look. No, it's still stable from 0 to 100 milliseconds.
+context after: That looks really quite good. 100 microfarads, but you know, it it's not really um this really isn't an exact um simulation. It's you know, it's probably not even close, but um at least it does show you the uh variability in changing um the you know, certain circuit parameters in just this uh basic uh linear voltage regulator loop like this.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: ceramic to hand. So it's just fine with that output capacitance and we can add some more later and stuff like that. We'll play around with that. But no, it seems to be quite good and let's actually remove the output capacitance all together and see what happens.
+TEXT: Okay, that's with no output capacitance at around about 2 volts and as you can see it's a lot noisier than what we're getting before and let me put on a point 47.
+context after: Bang. And we'll just go down to our 10 millivolts per division AC coupled. That's with the point 47 microfarad bypass cap on there. That's by the way this is at 0.2 amps load.
+
+[893] EEVblog #893 - Mailbag — Dave Jones (opinion)
+context before: at least it's got a conformal coating, you should be able to see the shine on that. So they've at least gone the extra mile to keep the moisture out of this thing, but come on, this is not going to do a 384 watt
+TEXT: continuous output power. Are you kidding me? At least they've got a 105 degrees C rated cap on there. Anyway, like totally inadequate, you know, output capacitance. But yeah, I don't know what it's, you know it's driving, so ripple like, you know, nah, whatever.
+context after: But jeez, no, come on, come on. Anyone want to have a guess as to what the real maximum output power of this thing is? I don't know, probably getting towards an order of magnitude less than what they're claiming. So Keith wants to know if I give it a
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (opinion)
+context before: regulating. So, you want to keep in a lab power supply like this with a constant current circuit like this, you want to keep the output output capacitance as low as possible just to ensure stability in your regulator.
+TEXT: Although, I guess you could say, "Oh, okay, you might determine transient response is a more important thing than uh switch it over into constant current." But, generally, you kind of want to keep that thing the output capacitance low.
+context after: So, we're probably going to want it just, you know, the same value or uh twice the recommended uh value just to be on the safe side that it recommends for stability of this particular regulator.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (opinion)
+context before: Ah, there we go. Look at that. We got a similar Is that the same? Yeah, cuz we're at No, 5 milli seconds per division, and there's a little bit of over shoot there this time.
+TEXT: Little bit, not much. Oh, yeah, oh, there's something, and then a little dip. But once again, as I said, there's no capacitance on there. But yeah, it's got this little shelf in there.
+context after: So, obviously that's I reckon it'll do the same it'll repeat that. I reckon that that'll be repeatable. So, I reckon there's no that's not contact bounce. Yep. There you go.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (opinion)
+context before: So, if we go into voltage uh set mode, our cursor's on the last digit over there, and you can see that our voltage will actually change instantaneously on the output like that.
+TEXT: And if we jump over like to like 1 volt like that, it jumps down pretty quick. So, that output uh capacitance ain't doing a lot there. So, yeah, that's change it really quick.
+context after: Nice. So, it acts like, you know, a proper old school knob on a power supply, rather than uh you set the voltage and then you go. But, some people prefer that.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (mention)
+context before: switching converter and stuff like that. We just like it we just don't care. And stuff like the gate resistance, which is related to the gate capacitance at like a 1 1 MHz.
+TEXT: I I doesn't matter. Then you got input capacitance, output capacitance, reverse transfer capacitance, all this sort of stuff. It's only if you're dealing with like if if you're doing a repair, something like this, like especially MOSFETs and in this particular application they're going to be used for either logic switching, power switching as we've got in this case, or they're going to be used in switching converters.
+context after: It's only in switching converters that you'd really start worrying about anything to do with any of these dynamic characteristics. This is why they call them dynamic instead of static characteristics because they it's dynamic.
+
+[837] EEVblog #837 - Reverse Engineering A Valve Headphone Amplifier — Dave Jones (mention)
+context before: And we've got ourselves our valve sockets, and as we noted last time, it looks like we have a couple of switch mode controllers here, little tiny 5-pin SOT23 there. You can tell it's a switch mode converter, because we've got ourselves a diode, we've got an inductor,
+TEXT: and we've got some output capacitance here, and a controlling element here. So it's clearly a switching converter. We've got another one down here as well. So we've got two switching converters, and what they're actually doing, what voltages they're generating, what for, etc., we won't know until we actually take a look at the circuit.
+context after: And look, I mean, the valves are clearly connected in here in some way, shape, or form. At least, you know, a good lot of the pins are. I'm not sure if every pin's actually connected. But yeah, there's not a lot of complexity in that circuit at all.
+
+[1174] EEVblog #1174 - Rohde & Schwarz PSU Teardowns — Dave Jones (mention)
+context before: or some, you know, built down to a price kind of power supply. So, I'm just thoroughly impressed by that. That is just some nice, brilliant design and construction. Oh, sorry. I thought these were the output caps, but they're not. They're also going down to noise suppression,
+TEXT: down to mains earth down there. That is your tiny amount of output capacitance. One little ceramic jobby. Yes, I do hope that is a, you know, one with flex terminations on the end. But, of course, this board's not going to flex. But still, you know, I probably would have put two in series maybe
+context after: just to gild the lily. But, anyway, you don't want to... You don't want a large amount of output capacitance because, in constant current mode, if you have two larger output capacitance, it can effectively override your constant current mode and then dump the energy in the capacitor
+
+[1253] EEVblog #1253 - LED Flicker 2: Electric Boogaloo — Dave Jones (mention)
+context before: uh, filtering in here, but apart from that, that looks pretty much the same. Here's the compensation capacitor down here. And that value there does the, or attempts to do the power factor correction. So maybe we could tweak something like that on our on bright, uh,
+TEXT: blind perhaps, but, uh, we don't have the relevant data sheet doesn't have the relevant information on that. And it's given us a typical output, uh, capacitance figures as well. Once again, uh, input capacitance is only 47 nanofarads. And the good, the other good thing is that it
+context after: lets us calculate the output capacitance and ripple. So it gives you the example here of, uh, for 30% ripple current, which is a heck of a lot, right? And you still need 400, 480, you know, 470 microfarads, uh, on the output. And that still gives you 30% ripple current.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: And I'm using the same thing. Oh, I didn't write it in there, but yes, it's still the LTC6655. I'm going to still stick with that. So, 1.25 V over 1.25 ohms is going to give us my constant current of 1 amp.
+TEXT: But, hey, let's build it up, see if it oscillates. It probably will. Um, we can almost certainly make it oscillate under uh, certain uh, circumstances. The output uh, capacitance here and uh, and the and the uh, load current and the input capacitance and all sorts of stuff.
+context after: So, um, yeah, we probably can get it to oscillate, but let's see if we can actually get a precision 1 amp current source on our breadboard, which we intended to last time, cuz these configurations uh, here just sucked.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: It shouldn't have have all just If we were getting that here, shouldn't have all just passed through that straight to the output? Well, no, not really. Remember these caps we got here?
+TEXT: They're going to do some filtering as well. And that's what you get if you you replace the 22 microfarad cap here down to 100 n. Bingo. And it turns out that I still had 47 microfarad of capacitance on the output there.
+context after: So, I took that off, and what do you get? Magic. Look at that. Wham! That's an absolute shocker. And bingo, it's back to 100 mV. There you go. So, it's actually now made its way all the way through.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (mention)
+context before: But yeah, that's surprising that they didn't use an off-board connector. So, check out these output boards down in here. Look at the huge big uh crimp terminals here, absolutely massive.
+TEXT: And uh they've got shake-proof washers, the whole shebang. So, that is uh very nice all your terminals. Once again, I think they've got a little maybe a little bit of output capacitance there, not much, of course.
+context after: In a good lab power supply, you do not want too much output capacitance because then when you transition from constant voltage to constant current mode, you've got all that energy in those output caps, and you don't want that to dump in the your poor little load that you're trying to instantly protect.
+
+[1741] EEVblog 1741 - Mailbag! — Dave Jones (mention)
+context before: So, let's have a squeeze at the PCB. That is one big ass poly put the kettle on cap there. 4.7 mic there. That is absolutely enormous. We have double-sided load.
+TEXT: Ooh, discharge capacitor before work. Very nice spacing around there between the primary and secondary. No worries whatsoever. There's our output capacitance for our 5-V output there. And what's that jobbie?
+context after: Oh, I'm going to need the microscope for that. They've absolutely nuked the number from that one. As smooth as A BABY'S BUTT. LOOK AT THAT. ANYWAY, as not much to identify there in the primary side drive.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (mention)
+context before: I'm quite happy with that. No wackers. Like there And there's no oscillation. And that's once again with no output capac Well, sorry. No, I think I still got my 330 mic.
+TEXT: My 330 microfarads plugged into the other end. I mean, that's as horrible as it gets. Wow. Okay, we'll try that again, but with no output capacitance this time. So, I got none at the end of the line.
+context after: None on the board here. So, oh, there we go. Oh, that's that's what happens when you short it out, by the way. There you go. And 50 milliamp constant current load.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (mention)
+context before: So, there's something in there that gives this like little shelf in there from from recovery from short recovery back up. But still, that's pretty good. These things It's almost bulletproof.
+TEXT: One more time, but I've got Yeah, there we go. That's with the half a mic capacitance on there. So, no worries. And then we see that little dip, but it recovers quite nicely from that short.
+context after: Of course, you know, this is obviously not something you hugely want to care about in Well, you might in normal operation, but of course, with the building current limit, what you're really concerned with is that you don't don't blow the ass out of your regulator, you don't release the magic smoke when, you know, if the mode on it shorts and you want it to recover.
+
+[95] EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans — Dave Jones (mention)
+context before: Now, I've got the gain of 3.7. It is actually with the 10K and the 27K feedback resistors here. I've got a nominal load here, which is 10K, and we can play with that later.
+TEXT: And I've got a nominal output capacitance, which I had in the circuit I built up, which was 100 nF. Now, let's run the simulation on that and try it.
+context after: Here we go. We'll simulate it over 0 to 10 ms, shall we? Let's look at the output. The output's exactly what we expect. There it is, 370 mV cuz we've got 0.1 V input voltage times the gain of 3.7 is 370 mV and it looks stable at least for the first 10 milliseconds at least.

@@ -1,0 +1,258 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: input bias current
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 45 passages drawn from 15 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# input bias current`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (explains)
+context before: Um, input offset current is two pico amps. This is for the maximum. What does note two have to say for itself? In plus and in minus uh gates to CMOS transistors, typical input bias currents of one pico amp.
+TEXT: CMOS leakage is so small it's impractical to test in guarantee in production. They're screened uh to eliminate defective units. So, they basically have a go no go for input uh bias current, but it's basically so one pico amp is like so low you don't need to worry about unless you're in some ridiculously ultra critical design uh where yeah, it would matter and then you're going to pay 10
+context after: bucks for an op-amp that's specifically, you know, test every unit for input offset current. Oh, here we go. Input bias current the 189 Oh, it's 70 times worse. That's a lot.
+
+[1464] EEVblog 1464 - TOP 5 Jellybean Comparators — Dave Jones (explains)
+context before: So, the 311 is not classified as a fast comparator, but 165 nanoseconds isn't too bad. It's not too shabby. Basically, we'll look at fast ones later and they're an order of magnitude better than that, but you know, it's you can get a certainly a lot slower than this one.
+TEXT: And then you've got the input bias and offset current to your 300 nA and 70 nA. We'll look at low power ones later and they're orders of magnitude better than this down in like the pico amp region, but you know, this ain't too shabby for just, you know, if you're not talking about like real high impedance applications, it's not too bad at all and it can operate from a single 5-V
+context after: supply. But the good thing is this is one of the high voltage op-amps we'll look at more later and it can do basically plus minus 15 V, so 30-V supply, but it works happily at regular 5-V.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: So that would translate to 500 microvolts on the output here. But as I said in the previous video, it that's not actually the case. This op amp is actually typically 1 microvolt or less.
+TEXT: And I've tried multiple op amps and the and that error is coming from somewhere else. Well, guess where? Input bias currents. And if we have a look at our data sheet here, you'll notice that as I explained before, well, there's a figure for IB there, input bias current, and input offset current right here.
+context after: Here it is. The AD 8628. It's going to It actually gets higher with the quad package, by the way. That's just to do with the uh process technology that they're actually uh using.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: So, uh what are you left to do? Not much. You either put up with it over your supply voltage range, or you fix it at a particular voltage range, or you choose some other op amp.
+TEXT: It's up to you. And for those curious if we're actually able to measure the input bias current on here, well, let's give it a go, shall we? Not particularly easy, but I've hooked up my Keithley picoammeter, there it is, and that at 5-V supply rail, it's the 1-nA range, so we're talking picoamps there.
+context after: So, 1620 odd picoamps into that non-inverting input. That's uh through that 100- ohm bias resistor. And if I That's at 5 V, and if I lower the voltage, so that's 4 and 1/2, we'll probably see it change.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: So, you can see how complicated this is already getting. And really, you know, we're not even throwing vos into the mix much the input offset voltage which the gain is going to get multiplied which is going to get multiplied by the gain of your op amp here and it can get really really nasty.
+TEXT: So if you see any input offset issues they will typically be a combination of the real input offset voltage which is a separate parameter vos entirely separate parameter on your data sheet up here but it can also include your input bias currents and that's what we saw in the previous video.
+context after: If you haven't seen it link it down below. So let's now go back to the breadboard from that previous video and see if we can reduce or eliminate or compensate for these input bias currents and see how it affects our final output offset error and just a quick background to our previous video and you really should watch the previous video it'll be linked down below if you haven't seen this
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: We've been talking about what's called an ideal op-amp up until this point. These rules here aren't strictly true. I lied. But they're still a fantastic way, even professionals use to analyze these circuits as a first order as a first pass.
+TEXT: No current flows in or out. Well, if you've been watching my videos you'll know I've done a previous video on this talking about input bias current. So, little itty-bitty, teeny-weeny currents can flow into and out of these pins depending on what type of op-amp you're actually got.
+context after: And that's a real practical uh limitation of these things. And the other one is that I've talked about in previous video, which I'll link in down below if you haven't seen it, the inputs cannot necessarily go right to the rails, be it uh whether it's positive, negative, reference to ground, or whatever.
+
+[1755] EEVblog 1755 - Tolicore Femtoammeter TEARDOWN + REVERSE ENGINEER — Dave Jones (explains)
+context before: driving this guard wire to match the voltage of the input here and that's how you can get actually prevent any leakage effects in your circuit on your PCB you contamination or whatever moisture on your PCB or whatever so I do actually have a Dave CAD here please excuse the crude the model didn't have time to build it to scale or to paint it so this is the ADA4530
+TEXT: we'll have a quick look at that in a minute and you can see like it's got a ridiculously high impedance FET input amplifier in here as I said like femto amps input bias current, but it's also got this guard amplifier in here, which actively just drives the non-inverting input here.
+context after: You can use it in either configuration. They just happen to be using it in the inverting configuration here going into the inverting pin like this, but you can put it the other way as well.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: So, what You know, I just overlooked it. That can easily happen to even somebody who's done this stuff before, and I made the assumption that it was only going through the 1k, which is incorrect.
+TEXT: All of that bias current is going through there. That's why I I knew that I could have put an additional bias resistor in here like this, but then I knew You know, I I did sort of did the math in my head as I was going along, and I went, "Oh, it couldn't make an effect.
+context after: I could make that one 1k, of course, as we've talked about. It should be 100k in parallel with 1k, but you know, it's going to be pretty close to 1k.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: So, how can we solve this? Well, of course, we could put a pot in here and actually tweak that out and null it out, but that's not actually a solution for the final circuit I want.
+TEXT: So, what we're going to have to do here is drop these values because as I said, all that bias current IB looks like it probably dominates. I I basically what I want to do is reduce uh I fix this circuit so that the input bias current really doesn't have an effect.
+context after: It's dominated by the VOS term there. So, let's change let's lower these by an order of magnitude and we should see let's leave this 1K in Well, no, actually I'll take out the 1K.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: And bingo, there you go. With 100 ohm bias resistor in here, that's look we're getting it's a bit noisier. I got a huge resistor on there. It's probably picking up something, but let's get an average on that.
+TEXT: There we go. It's dropped down to an average of like 50 or 60 microvolts. So, we've effectively you know, really gotten down to just what we expect with the V offset voltage there cuz I on a typical chip like this, I expect it to be slightly under 100 1 microvolt.
+context after: So, like point which would be this digit here would be one. So, if we had one there, it would equate to a V offset of 1 microvolt cuz of the gain of a hundred.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: Voltage range goes down to a tiny 2 V and that can, of course, be a plus minus one volt rail. The op-amp doesn't really, you know, know the difference between a single supply rail and a plus one and a, you know, a split supply like that.
+TEXT: Goes right up to 36 V. Yeah, not a problem in this application. We couldn't go that high cuz we're limited via the 6 V of the 74HC14 inverter. Low input bias current, 25 nA, so that means, you know, it's it's basically taking, you know, nothing from the input.
+context after: We can have very high value resistors. Here, I've got 100 K's in here, by the way, if you can't read that not watching in HD. These 100 K's and you know, it's there's effectively no input current there, no input current from our input signal.
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before: But, what if you're after an ultra precision application? We're after the utmost in accuracy, and you can't afford any droop there at all on your capacitor. None. Nada. Zip.
+TEXT: Well, this circuit, you know, may not cut the mustard. Because not only have you got input bias current in there, right? But, uh as I've done a whole video on, but of course you can choose an op amp with incredibly low, you know, femto amps input bias current.
+context after: So, that's not a huge deal. But, the diode, uh-huh. Typically, in an ultra precision application circuit, the leakage of the diode, the reverse leakage, remember when this thing when this output voltage here drops down low like that, then this diode is effectively connected down to ground here.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: Now, I can uh tweak this thing. Look at that. Not a problem at all. So, you can actually tweak your input bias current. You can null them out, but then you've got to do that at a particular uh supply voltage, of course, and common mode range.
+TEXT: But, of course, if you start changing your voltage rail here, then you're going to find that that setting is what? Look, no good anymore. So, yeah, it's only going to be valid that particular bias current for a particular supply and common mode input range.
+context after: Oh, and by the way, if your bias resistor here is actually uh large in value, then noise can become a problem, thermal noise. So, you may want to actually bypass that with a cap.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: Here it is. The AD 8628. It's going to It actually gets higher with the quad package, by the way. That's just to do with the uh process technology that they're actually uh using.
+TEXT: They've got four of those on the one die, and it's different. So anyway, we've got the single one, the 8628. Input bias current, typically 30 pA. It could be as high as 100 pA there, but you know, it we are going to get the typical uh figure down in here.
+context after: So aha, 30 pA. Let's have a look. Is it a coincidence that our output is just over 300 uh microvolts here? Let's do the math, shall we? 30 if IB here, let's ignore this input here.
+
+[584] EEVblog #584 - What Effect Does Your Multimeter Input Impedance Have? — Dave Jones (explains)
+context before: So, it must be something else. And no, the input impedance of these op-amps isn't going to matter cuz these are really precise fit input op-amps. We're only talking like picoamps into uh the input values here.
+TEXT: So, the loading on there doesn't matter. Although, it even if it was much higher, it wouldn't matter anyway because we were measuring the precise value on there, which would have compensated for any input bias current loading on that trim pot.
+context after: And if you want to try and figure it out for yourself, it's on the screen there. So, stop the video, try and figure out what's going on, and we'll find out in a second.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: And then if we install a 500 ohm trim pot as the bias resistor here, you'll notice that we can actually tweak it. Let's uh get our average there. Watch see it's stable.
+TEXT: Now, I can uh tweak this thing. Look at that. Not a problem at all. So, you can actually tweak your input bias current. You can null them out, but then you've got to do that at a particular uh supply voltage, of course, and common mode range.
+context after: But, of course, if you start changing your voltage rail here, then you're going to find that that setting is what? Look, no good anymore. So, yeah, it's only going to be valid that particular bias current for a particular supply and common mode input range.
+
+[1436] EEVBlog 1436 - The TOP 5 Jellybean OPAMP's — Dave Jones (explains)
+context before: So if you want to step up from like the LM358 or a 324 or something like that because of the offset voltage, then this is the one that you would design in would be the Oppo 7.
+TEXT: And because it is a bipolar jobby, it's actually nano amps input current. It's not pico amp. So yeah, sorry for all you pico amp fanboys, but unfortunately one of the major downsides is that it's not ground sensing or rail-to-rail op-amp.
+context after: So think of it as like a precision LM741 or double 4558 for example. You can also get dual versions of this and quad as well available in different part numbers.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: Okay, let's ignore the non-inverting input. Let's just look at the inverting input here. If our input bias current, let's assume it's going into the pin, then uh if it's 30 pA going in, you remember before, if we ignore the V offset, then there's no voltage drop across this resistor, so all the input bias current, that whole 30 picoamps, av- you know, typical, is coming through that 100 K
+TEXT: resistor. Aha. So, let's do the math here. 30 picoamps, there it is, times 100 K equals 3 microvolts. So, we're getting 3 microvolts error just due to the current going in there, the input bias current into that inverting input there.
+context after: But, the gain of the op-amp, of course, is 100. So, we have to multiply that by 100, and of course, you get 300 microvolts. Aha. Look, 300 microvolts or just over.
+
+[1436] EEVBlog 1436 - The TOP 5 Jellybean OPAMP's — Dave Jones (explains)
+context before: This is why it's still relatively high power consumption. But of course a big advantage that FET input op amps give you is you're talking pico amps now. You're talking typical plus minus one maximum plus minus 120, so it varies a a fair bit, but this is like three orders of magnitude.
+TEXT: It's a thousand times less than the nano amps or tens of nano amps you'll get in a bipolar input design. So this is why you want to go for the end and the input offset current as well like you down in like like femto amps, right?
+context after: 500 femto amps. Pretty low stuff. So that's the advantage of the FET design compared to the bipolar design, but apart from that like I prefer the 35 I don't like the 072s are nice FET input ones, but they're not my preferred jelly bean op amp just for general applications because the LM358 and next one we'll see as well is also the four channel version of the 358 is
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (explains)
+context before: Typical 140 uh down at the 2.25 V. So, yeah, there you go. So, at the lowest voltage, 140 dB. And they don't note one down here. Oh, they don't test it.
+TEXT: That's the same. Yeah, 140 dB. Floating head David again. Input uh bias current. This is important because uh you need a low input uh current due to the topology measuring across a 10 K source impedance on the nano amp uh range.
+context after: So, you know, you don't want to sort of uh you want a decently low bias uh current there. We'll read the note in a second, but basically one puff, one pico amp there.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: And that's where this IOS comes in. The input offset current is the difference between IB plus and IB minus. So, there's actually two parameters there that you have to look at.
+TEXT: Not not only the input bias current itself. Like, the input bias current could be really low. It might be 10 picoamps, for example. But then, if your IOS is 100 picoamps, for example, then well, jeez, that's all over the shop.
+context after: There's no way that you can choose a resistor bias value that's going to work. You might fluke it. You might be able to tweak it for an individual chip or an individual circuit, but just as choosing a generic value to do it, no, you're not going to be able to do it.
+
+[1436] EEVBlog 1436 - The TOP 5 Jellybean OPAMP's — Dave Jones (explains)
+context before: But apart from that, very similar specs, you know, offset typical offset voltage. It's got rail-to-rail output, as I said, 1 MHz gain bandwidth product, which is good enough for a lot of applications, relatively low noise.
+TEXT: But the kicker is that because it's a CMOS version, the input bias current is only 10 pA. So, three orders of magnitude lower. We're looking at nano tens of nano amps before, now we're looking at tens of pico amps.
+context after: So, if you're, you know, like a very high input impedance stuff, things like that, that's where you want to go. It's got lower current as well, 70 micro amps per channel, pretty good.
+
+[579] EEVblog #579 - Precision Low Current Source — Dave Jones (explains)
+context before: Well, in theory, yes. But, in practice, no. And if you want to stop the video again, here's another pop quiz. So, you might have precisely 10 V across your precise 10-meg resistor here, giving you your precise 1 µA through that resistor, but that doesn't mean one microamp is going to flow down here into your load like this.
+TEXT: Why? Because inputs of two op amps have input bias currents. So, there's going to be some of it, tiny little smidgen, you know, a couple of bee sticks is going to fly into the non-inverting input of that op amp.
+context after: Let's go to the data sheet and find out how much. Well, here's our data sheet again, and this is what we need to know, the input bias current here for our OPA2277.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (explains)
+context before: Um, and 126 for 20 kHz. So much for the some premium whisbang, you know, ultra performance audio product if you relied on your channel separation. Sorry about that. You've got your, you know, your 128 channel mixing desk and you're using all these premium opamps worth a million bucks and you're using all these premium op amps in it which cost, I don't know, 10 bucks each or something and all of a
+TEXT: sudden your channel separation's changed. And you build your new mixing console and it's like, what? The channel separation isn't as good. What's going on? We just added plus minus to the input bias current.
+context after: Typical. What? It wasn't plus minus before. Maybe it was just plus and now it's it could be negative. Again, they're deleting like 600 ohm specs. What? Anyway, that's just another random example, right?
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: you've basically got a gain of 10 or more, and R F is 10 times R 1, you can generally say R B equals R 1, near enough. So, that was too easy, right?
+TEXT: We fixed our input bias current. No big deal, just whacking a resistor in there, and you're right. Unfortunately, what? It doesn't work like that in practice because the input bias currents are not matched.
+context after: These transistors are never a matched pair. You're never going to get precisely the same value. There's some op-amps that get really, really close, but in practice, it's not going to be zero, just like the input bias current itself, regardless of the topology used, is not going to be zero, either.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: There's no way that you can choose a resistor bias value that's going to work. You might fluke it. You might be able to tweak it for an individual chip or an individual circuit, but just as choosing a generic value to do it, no, you're not going to be able to do it.
+TEXT: Unfortunately, it is just a problem with these op-amps. If you're really If you're doing ultra-precision applications, yeah, you'll have to trim these things to take into account the input bias currents.
+context after: And on top of that, then we've got our voltage offset, as well. So, you could get to a point, depending on your particular op-amp you've chosen, that IOS could actually swamp your effective IB, or vice versa, or there's a combination of the two, and it can get really ugly.
+
+[1415] EEVblog 1415 - Reverse Engineering the DP10007 Differential Probe — Dave Jones (explains)
+context before: Oh, I forgot to put the part number on there. But, anyway, it goes into a dual op amp in a standard inverting configuration. Here, it's just drawn a bit differently.
+TEXT: Don't When you look at building blocks like this, the positive goes down to ground there via a matching resistor. I've done a video on this and how that matches input bias currents and things like that.
+context after: But, anyway, you don't necessarily have to have it. You can just ground the non-inverting input there. And that's a standard inverting op amp. I don't know where that actually goes out to.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: It's up to you. And for those curious if we're actually able to measure the input bias current on here, well, let's give it a go, shall we? Not particularly easy, but I've hooked up my Keithley picoammeter, there it is, and that at 5-V supply rail, it's the 1-nA range, so we're talking picoamps there.
+TEXT: So, 1620 odd picoamps into that non-inverting input. That's uh through that 100- ohm bias resistor. And if I That's at 5 V, and if I lower the voltage, so that's 4 and 1/2, we'll probably see it change.
+context after: It's a bit noisy there. This isn't the lowest noise setup. I could uh I'd have to dick around a lot more to get lower noise. That's 3.5 V. There we go, we're getting almost down to zero.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (explains)
+context before: It's all like gunked up. But that's the uh input connector. Let's take a look. And there's an LT6010 there, a precision op amp designed for uh surprise, surprise, uh thermocouples.
+TEXT: You know, low input uh bias current, you know, 100 uh picoamps or something like that. So, pretty schmicko little part. And there's that LTFLK2 Fluke custom chipset again. Pops up all over the place.
+context after: So, apart from that, we've got uh There's the uh two input uh pads down in there, you can see they're huge and chunky. Check those out. Huh, enormous. They've got two inductors uh leading from them.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: So, what we've got here is a chopper amp. Its internal architecture is unknown to us. It uses some ping-pong patented architecture that Analog Devices have come up with. It auto zeros and chops and does slices and dices and makes your bread for you and does all sorts of things.
+TEXT: Um yeah, it's going to we're not going to get a consistent well, a VOS and or input bias currents that can go in either direction for both of the inputs over the supply voltage range here.
+context after: So, uh what are you left to do? Not much. You either put up with it over your supply voltage range, or you fix it at a particular voltage range, or you choose some other op amp.
+
+[1464] EEVblog 1464 - TOP 5 Jellybean Comparators — Dave Jones (explains)
+context before: And the input offset voltage is nice on this. So, you could almost call this like a precision, uh, comparator as well. 250 microvolts, of course, that's just typical. Like, it could go up to 5 mV or 7 mV over the full, uh, temperature range and stuff like that.
+TEXT: But, you know, it's, you know, it's fairly tight, um, if you're generic, uh, spec there. And now, because it's CMOS, your input offset and bias current is down in the pico amps range.
+context after: None of that nano amp rubbish. Uh, 20 to 80, uh, well, you could, you know, over the maximum temperature, but barely sneaking into the nano amp range. But, typically, like, under 100 pico amps.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: They've got four of those on the one die, and it's different. So anyway, we've got the single one, the 8628. Input bias current, typically 30 pA. It could be as high as 100 pA there, but you know, it we are going to get the typical uh figure down in here.
+TEXT: So aha, 30 pA. Let's have a look. Is it a coincidence that our output is just over 300 uh microvolts here? Let's do the math, shall we? 30 if IB here, let's ignore this input here.
+context after: Okay, let's ignore the non-inverting input. Let's just look at the inverting input here. If our input bias current, let's assume it's going into the pin, then uh if it's 30 pA going in, you remember before, if we ignore the V offset, then there's no voltage drop across this resistor, so all the input bias current, that whole 30 picoamps, av- you know, typical, is coming through that 100 K
+
+[1464] EEVblog 1464 - TOP 5 Jellybean Comparators — Dave Jones (explains)
+context before: Um, it's got reasonably low current, uh, 200 microamps, and which is independent of the supply voltage. So, it doesn't matter. Um, so, you know, that's not too shabby. But, this is not a low power op amp.
+TEXT: We'll show you an option for that in a minute. Um, it's 25 nanoamp input bias current, not too shabby. Um, input offset 5 nanoamps. Uh, input offset voltage plus minus 2 mV max.
+context after: And once again, there are variations like A and B, you know, various versions. So, this this is the 301 and 391A. Um, and this will vary between manufacturers. All these sorts of specs will actually slightly vary between manufacturers.
+
+[1464] EEVblog 1464 - TOP 5 Jellybean Comparators — Dave Jones (explains)
+context before: One of the advantages of using a dual package. So, it's got 38 V voltage rating, input offset point, you know, 370 microvolts. But, yeah, you got to you know, watch out for the spread of that.
+TEXT: Input bias current 3.5 nA. It draws 200 microamps, which isn't too shabby. So, it's not super low power, but you know, it's lowish. It's got 1 microsecond response time.
+context after: Once again, might not be fast enough for driving digital logic stuff and things like that. But, you know, it's for everything else, it's good to go. And as I mentioned before, there are like this you know, 2903 series.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (explains)
+context before: The same with the output as well. So, you can utilize the maximum output range. Uh single supply operation. It actually goes down to uh 2 and 1/2 uh V or thereabouts.
+TEXT: So, uh perfect for my application. Um high gain. Yeah, kind of 130 uh dB common mode rejection ratio. All that sort of stuff. Low input uh bias current, 100 pA.
+context after: Good enough for my application. Uh low power supply current, it's under a milliamp. Good enough. Overload recovery time, uh it's not bad for a chopper amp. Um no external components, it's all internal.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: It's a bit noisy there. This isn't the lowest noise setup. I could uh I'd have to dick around a lot more to get lower noise. That's 3.5 V. There we go, we're getting almost down to zero.
+TEXT: Will it actually go in the opposite direction? 2.7? Yeah, it does. So, there we go. That's at 2.7, it's actually gone the other way. Ta-da! So, there you go.
+context after: I hope you enjoyed that follow-up Fundamental Friday to the previous video. And if you like the concept, give it a big thumbs up. And if you want to discuss it, you know where to do it, the EE blog forum, or you can leave comments on the blog website or on YouTube.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: And how do we solve this inverting op-amp configuration here? Well, essentially, exactly the same thing. Instead of this going to ground down here, we have a resistor in there going to ground.
+TEXT: So, we're going to get our input bias current, and we can actually cancel them out like that. Now, let's call this R B, and what value should R B be?
+context after: Well, it's a standard formula. It's actually R F in parallel with R 1. Now, I won't go into how you actually derive that. It's not actually that hard if you want to go into the details, but I won't waste the time doing that.
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (opinion)
+context before: 140 picoamps. So, so once again, that's you know, hugely more than the Maxim device. But in this particular case, I'd have to run through the numbers but I I think we're okay there.
+TEXT: 70 picoamps is you know, it's it's worth considering and looking at but it's probably not a show stopper. So, input bias current, you know, you wouldn't throw this chip out just because of that unless you really needed you know, ultra-critical type stuff which we don't necessarily need because as I said, I'm happy to trade off supply current like and accuracy and stuff like that if you get higher bandwidth and lower noise
+context after: and other advantages. So, yeah, it's yeah, I wouldn't rule that out. Okay, and we don't really care about crosstalk or total harmonic distortion. What wonder what it is. Look at this.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (opinion)
+context before: Anyway, they reckon the noise and injected current is much lower than a brand A, brand B, and brand C. I wonder what brands they are. I don't know. Anyone want to hazard a guess?
+TEXT: So, it claims it's the best in terms of noise and injected current, and also the best in terms of input bias current as well. Once again, better than the three other It's too noisy to measure on brand C.
+context after: Brand C must be really crap. Come on, let's find out what brand C is. And yes, it doesn't have your traditional um RMS converter chip. It does digital AC RMS conversion.
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (opinion)
+context before: This one's three microvolts. Oh, that's horrible. You know, and so yeah, it's worth digging into the details because check this out. Focus you bastard. So, there you have it.
+TEXT: Switch off the Dave head mode. You can see that the 189 wins in lots of categories and sometimes wins hugely. The only one where the 4239 really one out hugely was the input bias current.
+context after: So, 189 very worthy of being considered for a new design. Microcurrent. There you go. But, hey subject to actually getting some chips, soldering them, and doing some real-world measurements especially like noise.
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (opinion)
+context before: That's the same. Yeah, 140 dB. Floating head David again. Input uh bias current. This is important because uh you need a low input uh current due to the topology measuring across a 10 K source impedance on the nano amp uh range.
+TEXT: So, you know, you don't want to sort of uh you want a decently low bias uh current there. We'll read the note in a second, but basically one puff, one pico amp there.
+context after: Um, input offset current is two pico amps. This is for the maximum. What does note two have to say for itself? In plus and in minus uh gates to CMOS transistors, typical input bias currents of one pico amp.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (opinion)
+context before: It can get really ugly. So, there's all sorts of problems. You got IB, you got IOS, you got V offset, you've got whether or not your input configuration, your topology, your circuit, and all sorts of stuff.
+TEXT: Ah, is there an easy solution? No, afraid not. So, in practice, this can be a really big issue, even for circuits that you might not think are that critical.
+context after: So, you got to keep an open mind, watch out for it just in case you get caught. I mean, depending on whether what our supply this can change with supply voltage as well, the common mode here, which is that's V common mode here, depending on what input configuration, whether or not you've got an input bias compensated or rail-to-rail op amp, the supply voltage, all sorts of stuff, and
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (opinion)
+context before: But, the gain of the op-amp, of course, is 100. So, we have to multiply that by 100, and of course, you get 300 microvolts. Aha. Look, 300 microvolts or just over.
+TEXT: Is that a coincidence? I think not. Well, it's not going to be the entire story, but it is certainly going to be a lot of the reason for this.
+context after: And by the way, um if you haven't seen the previous video, this does change with supply voltage. So, if we drop the supply voltage down, you can actually see it change significantly, and even go negative like that.
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (mention)
+context before: It might shift a little bit, but, you know, not a huge amount. But the actual yield, you know, could get bigger, something like that. But they would have to change something for that to happen.
+TEXT: So, yeah, interesting, huh? And also, the 189 has um the same yield for input bias uh distributions and input offset uh current as well, if you're interested in those sort of things.
+context after: Which, if you're down in your picoamps, you know, you're really, you know, could care about that sort of thing. Um so, yeah, they've got the yields for that. So, I'm going to call those practically equivalent on input offset voltage, or at least good enough for Australia, anyway.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (mention)
+context before: Well, they're not Well, they're not going to lie, but they're not going to tell you the whole truth and nothing but the truth. This is where you have to look in the electrical specifications here.
+TEXT: So, this is what we're really concerned with. Input bias current doesn't really concern me really and all the rejection ratio and all that sort of stuff doesn't really matter.
+context after: And of course, the drift is so low, you know, 2 nanovolts per degree C that jeez, you don't even have to worry about it. But, not that would come into play anyway, even if it was high, because the lab here is essentially a fixed temperature.

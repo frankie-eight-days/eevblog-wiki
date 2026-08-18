@@ -1,0 +1,358 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: overshoot
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 65 passages drawn from 47 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# overshoot`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: driving flip-floppies and things like that. You get metastability. I've probably done a video on that. And you can get multiple clock ruin your day. Multiple clock pulses, okay? And here's the input uh logic thresholds.
+TEXT: Once again, I've done videos on this. So, you've actually got this region between 1.5 V and 3.15 where it's an indeterminate region. So, So, you've got overshoot or undershoot, that's causing ringing, and it goes in this region, especially if it takes some time, for example, then yeah, you can get that can cause you multiple clock pulses.
+context after: But, here is our setup time, okay? So, what we need is serial serial, which is I believe that's the serial data, is it? Yeah. Serial data in, so the data in before the serial clock, it's got an up arrow, that means the serial clock going high, because it's active um high transition that it latches the data on, the setup time is typically, cuz this is a 974HC, this is the military version,
+
+[453] EEVblog #453 - Mysteries of x1 Oscilloscope Probes Revealed — Dave Jones (explains)
+context before: They're very difficult to actually get right and trim all and get it all right in terms of the compensation network in here that we looked at matched to the actual physical properties of the coax.
+TEXT: So a lot of art and art and science goes into just designing the physical properties of that cable getting that getting that little wiggle inside exactly right getting the lossy uh, parameters all right so that they match and you don't get any funny business, overshoot, undershoot at the end of your bandwidth and all that sort of stuff.
+context after: That requires a whole separate video, though. Woo. Well, that was a lot of talk just to get to the simple conclusion that a, uh, oscilloscope probe coax actually has a lossy transmission line resistance in it.
+
+[n7XX75S98e8] µCurrent Opamp Divider Input Bypass Testing — Dave Jones (explains)
+context before: And once again, it works all the way up, works all the way with LBJ, right? That's up to a megahertz, and of course the frequency roll-off is small there, right? So that's all hunky-dory. Now, what we're going to do is worst-case this thing by putting in the dummy, sorry, the output capacitors.
+TEXT: And I'll show you this in a minute, but basically we're going to try and make it fail in the worst case possible by having, you know, sort of like a maximum worst-case capacitive load on there, so to speak, right? So if it, we can't get it to oscillate when we've got lots of overshoot like that, it should be good.
+context after: So that's basically working identically to the other solution. So that, you might think that, aha, that is a solution, and in theory that is a better solution than what we've got before. But look at this, right? I've got this connected to zero, okay, right?
+
+[859] EEVblog #859 - Bypass / Decoupling Capacitor Tutorial — Dave Jones (explains)
+context before: all sorts of issues like that, and you may have actually seen this. Let's take a look. So what we've drawn is another waveform like this in, of course the ideal world, your output will switch from 0 volts up to 5 volts here, it'll be absolutely perfect, there'll be no ring in, there'll be no
+TEXT: overshoot, no undershoot, nothing. But of course, I use those keywords there overshoot and undershoot and ring in. What they're caused by is the inductance in the power supply here even if you've got local bypassing bypass capacities, there's going to be a little bit of inductance in the trace
+context after: because you can't put it right on the pins, there's going to be a little bit inside the chip with the bonding wires, for example, that actually, you know, because your die is like inside this, they've got to have the little bonding wire which goes
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (explains)
+context before: and I've got it on the nanoamp range, and it's just picking up anything. So once we plug in our signal, we'll be hunky-dory. Oh, we're way off scale here. Let me put it in, there we go. There we go, yep, we're good. Don't touch it.
+TEXT: Alright, so that's 100 kHz with no capacitive load. So there we go, 100 kHz, no capacitive load. And if I whack on some additional capacitive load, of course we're going to change our response. So what we want to do is get like worst-case overshoot, like something shocking like that, right?
+context after: Which should, you know, like when you get worst-case like that, you should expect to start seeing it oscillate, or potentially oscillate, but it doesn't. So what I'll do is I'll then, so that's the response we get with, what have we got? I think a couple of, no, one N load.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Here we go. Bang! I switched the power on and you can see it ramp up. Ooh, what's that down there? That's interesting. And uh you can see the output of the uh op-amp uh go up like that and then come back down when it starts to regulate like that.
+TEXT: And that's a very clean response. I like it. There's no overshoot or anything. There's We'll have a look at this thing down here later, but uh basically all we care about with switch on power supply is that it ramps up cleanly and doesn't overshoot and this one doesn't overshoot at all.
+context after: It ramps up like that almost linearly and then it clamps into into voltage regulation like that. Our op-amp response of course it's it's got to do things cuz it's an active loop there and it's trying to stabilize itself and it comes down like that.
+
+[771] EEVblog #771 - Electronic Safe Lock Powerline Attack Part 2 — Dave Jones (explains)
+context before: Yep, I did three in a row and locked myself out. D'oh! Okay, let's do the repeatable correct sequence again. I've waited my ten minutes or whatever for the time out. Ah, that was embarrassing. One, two, three, four five, single shot, six. Boom. Yeah, that's good, it matches.
+TEXT: So, I'll just shuffle that across. The Rigol's a bit, not hugely responsive to the vertical, ah, the horizontal position control. It's a bit, ah, once again a bit touchy, you get some overshoot there, it's really annoying. But yeah, it matched that orange waveform that we had before.
+context after: So bingo! Um, let's do it one more time, just for kicks, shall we? Five, single shot sequence, six, safe opens, and wah, no, see? Look, it's shuffled that, look, that's low amplitude, this is high amplitude. So it seems to it seems to randomize, perhaps.
+
+[304] EEVblog #304 - Mailbag — Dave Jones (explains)
+context before: 1.5 volts is it? Plus minus, I'm not sure, I have to look at the app note and things, but the pulse generator, you put it straight into the scope, you can't have a lead of course, because any lead has inductance in it, even the
+TEXT: PCB traces, you've got to lay it out properly and, because otherwise that can affect the rise timing, gives you overshoot and undershoot on your waveform. There's a bit of an art to designing these, a very sharp rise time edge. So this is probably like 350 picoseconds, maybe I think
+context after: is sort of one of these, a standard one, and it's all dependent upon the transistor. It uses a 2n, 2369, and they're not all equivalent, apparently you've got to select on test for these things to find the best one. But that's a nicely little laid out board, so we've got to put a supply
+
+[VVOi2dbtxC0] EEVacademy #6 - PID Controllers Explained — Dave Jones (explains)
+context before: That means that the system's response doesn't converge to the set point. And the way you deal with this is by increasing the integral component. They do this, and they remove the steady-state error.
+TEXT: Unfortunately, as they increase the integral and proportional component, overshoot of the system substantially increases. The way they deal with that here is by increasing the derivative component. And because the derivative component resists change, it it it it's it hates change.
+context after: It does help in reducing the oscillations, as oscillations are of course change and overshoot is change. It really just wants the line to be flat and stationary. So, I hope this plot helped.
+
+[340] EEVblog #340 - USB 3.0 Eye Diagram Measurement — Dave Jones (explains)
+context before: So, let me just probe the other one. I'll disconnect it and oops. And we'll reconnect it here. There we go. That's the other one. Hang on. Does that look better or worse?
+TEXT: That's a bit worse, I think. It's a bit worse. So, and yeah, there we go. That's got issues with uh overshoot. There you can see the So, uh that is clearly there the receiver on this IC box because we're getting um level issues there due to our non-perfect transmission line.
+context after: All right. What I've done now is I've um turned on the RMS jitter measurement. So, it's attempting to measure our jitter in there and you can see those auto cursors set up at that point.
+
+[l2LBkXxN81Y] µCurrent Offset Voltage Fix — Dave Jones (explains)
+context before: So there you go, that is an additional fix for those who have a problem and want to do it. Once again, I could probably do further testing, but setting the worst case capacitance on the output, that's always a good, that's always a decent way to do it.
+TEXT: That's always a decent way to do it. Look, our gain's gone right up, because it's just, whoo, overshooting severely there now. And if it doesn't oscillate in that sort of, you know, worst case configuration like that, then you can be sure that's a pretty solid fix,
+context after: unless you want to go in there and, you know, sweep it with your network analyzer and do the whole bells and whistles. But yeah, that looks good. There you go. Thanks, catch you next time.
+
+[8] EEVblog #8 Part 2 of 2 - Review of the BK Precision 1697 Programmable Lab Power Supply — Dave Jones (explains)
+context before: peak-to-peak noise. And there's a little bit of ripple there, but it's not bad. It certainly seems to meet its spec. And yep, that's fairly typical of a switch mode of this design and this price range. Now one of the most important criteria in a lab bench supply is that
+TEXT: it doesn't overshoot when you switch the load on. So let's try that here. I've set up the oscilloscope to trigger, the output's off, and I'll switch it on. Shift, output on, and bingo! We've captured something, and there is some overshoot on here. Not too much.
+context after: It seems to have clamped it fairly well, but there seems to be a bit of a little bit of a ramp up there, which is nothing too much to worry about. And then you can see it kicking in and regulating just nicely. So
+
+[VVOi2dbtxC0] EEVacademy #6 - PID Controllers Explained — Dave Jones (explains)
+context before: It's the fastest heating oven in the world. It's heated up in 8 seconds. So, really great. Notice that the waveform here ends up going like this a little bit.
+TEXT: And that that trough there here is called overshoot, and this is something very um this is a a problem that integral controllers face. They have a thing called integral windup, and this is the building up of the this area here behind the the current reading.
+context after: And there are lots of ways to deal with this. Um many controllers just say, "You will never have more integral windup than value X. It will just limit the the possible um integral value." So, if your limit was was 20, um then this would just limit it to this.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: So, 3.3 volts into a 2 ohm load with 2 amp current limit. We'll just switch that on and boom, that ramped up nicely. You can see it doing some Yeah, it looks like Is it doing some hunting in there?
+TEXT: But as always, we're looking for overshoots there and there aren't any. So, yep, that is clean. Although, it's almost as if that is a deliberate ramp on. I wonder if there's like that's part of the No, that wouldn't be part of the easy ramp thing, would it?
+context after: No. No, it's Anyway, that's only like 2 milliseconds there. So, yeah, no worries. Doesn't overshoot. That's the main thing. All right, so what I'm going to do now is just test the transient with constant current.
+
+[n7XX75S98e8] µCurrent Opamp Divider Input Bypass Testing — Dave Jones (explains)
+context before: So that's basically working identically to the other solution. So that, you might think that, aha, that is a solution, and in theory that is a better solution than what we've got before. But look at this, right? I've got this connected to zero, okay, right?
+TEXT: So there's zero capacitance, just the stray capacitance of the wire and the circuit board and stuff on the output, and we do have some overshoot on there. You can see that. We've got some overshoot and undershoot. Oh, where's that annoying cursor on there?
+context after: Can we get rid of that? Yeah, there we go. So we've actually got some overshoot and undershoot on there, which is caused by that, just the stray capacitance of that board. So just adding a small amount of capacitance there, I don't know, how many puff is that?
+
+[341] EEVblog #341 - Mailbag — Dave Jones (explains)
+context before: Great! I like it. What else have we got here? Cable length configuration. Alright, that's what he's using. It's optimized for a 1.4 meter cable length with a cable capacitance of 140 picofarad and they're the values you tweak in your circuit to match your particular coax that you're using.
+TEXT: There's a lot of art that goes into these passive probes. Oh here we go, it optimizes the step response. There we go, it's chosen this one, 22 ohms is the optimal value. Anything, any value above that, it reduces the overshoot or increases the overshoot.
+context after: So clearly hand-tweaked that value for this particular circuit and this coax. Hey! Check this out, we've got components taped onto the circuit for our kit, there's our little kit. Got some boards, take a look at that, and that, we can build one up.
+
+[VVOi2dbtxC0] EEVacademy #6 - PID Controllers Explained — Dave Jones (explains)
+context before: We've We've got our constants from the Ziegler-Nichols tuning process, and we want to improve it. We want to We want to make it closer to our shape. So, what do we do?
+TEXT: Well, oscillations like this are caused by the component of the integral and the proportional component. And if the integral component has a dominant um is a dominant component, then it's very likely that integral windup is causing this overshoot.
+context after: So, let's try to reduce our integral component. Now, it's likely that you end up with something like this. Um and that might's not still be with your response. So, you you notice that the integral component is no longer significant in the control effort when compared to the proportional component.
+
+[324] EEVblog #324 - DC-DC Converter Testing - USB Supply Part 4 — Dave Jones (explains)
+context before: What we're going to do now is test its switch-on performance at full load to see if it overshoots. So we've got full 2 watts output, constant power load, and let's switch it on. Well, switch it off first, input is switched off, and I'm about to
+TEXT: switch the input on, and hey, there we go. Look at that, that's 1 volt per division, so if we take a look at that, we're looking at 1, 2, 3, 4, 5, 6, we've got some overshoot there, goes to just over 6 volts, got some ripply stuff happening there,
+context after: some of that 50 hertz stuff is kicking in, but then it jumps back down after, what, 50 milliseconds? Yeah, 50-odd milliseconds, jumps back down and then regulates, basically. Not that this thing is actually regulated, it's just following the input voltage, basically. So if you're
+
+[629] EEVblog #629 - How To Design a Microphone Preamplifier — Dave Jones (explains)
+context before: Pretty much, yeah. Yeah. Okay. Uh connect it to a sig genny Yep. square wave. Okay. Have a look at the output and uh find out whether it's going Yep.
+TEXT: or Yep. That's it. Yeah. Oh, bear in mind when you want it to optimize. Yeah. Ideally, you're after something a bit like that. Just taper it, yeah. Just rounds off the You you want to get it up to the point of maybe a a small amount of overshoot.
+context after: Yeah. In which case you know that yeah, it's pretty good. It's pretty stable. Right. Uh that is not on. No. Yeah, because Yep. production variations, it's likely to turn into an an oscillator.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (explains)
+context before: Now, what I've got is 3.3 volt typical power supply voltage, 5 amp constant current limit, but I've set my load to constant current at only 4 amps. So, it'll be booting into constant voltage mode and not into constant current mode.
+TEXT: So, let's capture it on the scope here and see what happens. Switch on. Bang. Transient. That's not that great. Look at the overshoot there. There's a little bit of step there, then it ramps up pretty linearly, but it goes up to 4 volts.
+context after: That's a That's not great at all. I don't like that overshoot. That's pretty terrible. Make sure that wasn't a fluke. Nope. Totally repeatable. performance. Hey, this thing's no good at all for powering Well, I wouldn't like to power a you know, a large 3.3 V uh board because that thing's going to overshoot to 4 V.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: So, I've got it on 5 volts at the moment. And so, there it is, 5 volts per division. And we'll jump up to say 20 volts. And uh we'll try and capture that.
+TEXT: So, trigger point is just above 5 volts. So, we'll go voltage set, and we'll go 20, and see what happens when it jumps. There we go. Nice linear ramp up there, constant uh current mode, and no overshoot, nothing when it changes taps.
+context after: Very nice. And we'll capture that again with a uh 10 ohm resistive load. So, we'll go from 5 up to 20. Beautiful. Look at that. A little bit of a little bit of funny business happening there, but um yeah, it doesn't overshoot.
+
+[1362] EEVblog #1362 - A Very Skookum Mailbag — Dave Jones (explains)
+context before: found a ground point over here like this ground is always going to be the hardest part of any uh probing system like this and you'll notice I've got no ground on uh channel two here so if we actually go over the scope here we go here's one I've uh captured and we can probably capture that
+TEXT: again here we go can we yeah yeah there we go so you can see channel two is a little bit more loosey goosey there look at the overshoot and undershoot and then really fast transition uh stuff like obviously happening here this is one
+context after: short uh transition here because we don't have a ground on channel uh two there our signal integrity is not that terrific but hey this often doesn't matter sometimes you just want to see that something's happening there or you want to see you know time in relationships or you know something
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (explains)
+context before: All right, let's power this thing up. I've got a 10-V I set a 10-V output with a 3-A load on our constant current load here and let's switch the digital output on and we'll capture that.
+TEXT: And that is as clean as a whistle. What's that 500 milliseconds per division 100-mV switch on? That's just fine and dandy. There's no overshoot whatsoever. It has overcurrent and overvoltage setpoint protection as well.
+context after: That's just a soft software thing. They're not doing that in hardware, but that's good. You can you know, if you don't want to damage something set it to you know, 5.5 V or something you got a critical board 5.5 V and it shouldn't go over, but it's a software thing.
+
+[VVOi2dbtxC0] EEVacademy #6 - PID Controllers Explained — Dave Jones (explains)
+context before: There is thermal mass of the oven that takes a lot of time to heat up and um that means there's a delay. The integral component has a very high value now.
+TEXT: We're up to We're up to 24 and that means we're going to overshoot our our set point. So, in the next sample, we unfortunately go to neg- we get We end up having an error of -4 because I've overshoot our temperature.
+context after: We're at 14° and 10 - 14 is -4. And if you add these areas to the -4 area here, then we end up putting an effort of 20. The slight reduction in effort because this oven has basically no thermal mass, apparently, um results in the error reducing a little bit.
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before: So, it's able to um slew fast enough to do all of Let's stop that. It's able to slew fast enough to do all of those little to sort of, you know, chop up and track that input waveform like that.
+TEXT: And if you start getting up too high in frequency and you have too large a load on here with the uh discharge, then you can notice that we're actually getting some sort of overshoot on our output voltage here.
+context after: Now, that's at 100 hertz. Where is it? Oh, I had it there. Yeah, there it is. 100 hertz. And if we bump that frequency up to 1 kilohertz, look at this.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: It's a 10-ohm uh load. So, at 6 volts here, we're only going to get 0.6 amps. But uh let's give that a shot, shall we? And see what we get.
+TEXT: There we go. We're getting that same getting that same business there happening at 0.6 amps with at uh 6 volts. But of course, the most important thing is there is no overshoot, virtually no overshoot there.
+context after: I mean, you know, there's a little bit little half a bee stick of overshoot there with a little bit of recovery, but yeah, that's Yep, that passes. All right, let's try the same thing again.
+
+[311] EEVblog #311 - Jim Williams Pulser Followup — Dave Jones (explains)
+context before: And that's using the formula of 0.4. Of course, it may or may not actually apply to this scope because it may not have a maximally flat response. Who knows what's going on here?
+TEXT: But yeah, you know, it relies on a whole host of factors. You've got to get the correct waveform type with no over as little overshoot as possible. You've got to extend the pulse as much as possible.
+context after: And you've got to, you know, make sure it's a suitable pulse length for the bandwidth of the oscilloscope you're using. And then you've got to know what the correct factor is, what the that correct formula is based on your particular scope and what method it's implementing to do that.
+
+[1106] EEVblog #1106 - Pace ADS200 Soldering Station Review (JBC Killer?) — Dave Jones (explains)
+context before: It's well worth spending your money on. I recommend getting the cartridge-based uh systems. So, I have a bit of a problem with the uh display as well. Jumps around like a jack rabbit um under certain uh circumstances.
+TEXT: Not a big uh fan of that. I think they need to uh work on that. I'm not sure what's going on. Doesn't seem to be the uh PID control loop uh you know, like this thing doesn't uh seem to overshoot.
+context after: So, the thermal performance is fine, but the display just jumps around. So, I'm not sure what's doing there. Think they need to look into that. And I don't think they've um implemented the um the instant set back in this thing uh very well.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: So, our output voltage. So, we're smack on 30 volts there. And if we just single shot capture that, bang, there we go. We can see the rise there. It's got some little something happening down there.
+TEXT: I'm not sure what, but anyway, that's still there's no overshoot on that output at all. It's ramping up. The output ramps up to 30 volts and of course, directly controlled from the gate voltage.
+context after: So, if you actually bring that up, you'll find that those two waveforms are virtually perfectly superimposed there because there's you know, there's nothing else switching the output. It's just that actual gate series pass transistor via the gate there.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 2of2 — Dave Jones (explains)
+context before: And let's try the 330 mV range, 300 335 mV, 335, and they're all pretty darn close to within spec, no problems at all. Uh the BK Precision, it looks like it hasn't ranged down, so we'll take that into the manual range.
+TEXT: There we go. Excellent. And let's try and do a simple overshoot test. They're all reading about 3 volts, and we'll switch that off, and we'll switch it on and see how if any of them overshoot.
+context after: Uh the Extech The Extech doesn't overshoot. It ramps up okay. The Amprobe switches straight to it, no problems. The UEI takes time to ramp up, but it's uh it doesn't overshoot.
+
+[60] EEVblog #60 - Fluke 117 Multimeter Review and Teardown — Dave Jones (explains)
+context before: So, let's try out the continuity test response, shall we? Absolutely, it's got 500 microsecond response time. It'll pick up everything. Excellent. Okay, let's try out the response of the uh measurement and see if it see how it goes.
+TEXT: When you switch it on, it it takes a little bit to get there. It's not the world's fastest switch, but it doesn't overshoot or undershoot. So, it's, you know, it's not too bad at all.
+context after: By far the biggest disappointment with this meter that I found is that, you know, it's got the hold button there and you would think that would be the famous Fluke touch hold, which they've had for, you know, 20 25 years or something.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: Look, we can actually select all the stuff we want down the bottom here. It's a little bit fiddly and here's where I found that the knob, if you didn't you know, you got to press it.
+TEXT: And they've got a few weird acronyms like FOV for example is our overshoot after overshoot after the falling edge. And FPRE is the overshoot before falling edge. It's like, what the?
+context after: Anyway, it's got quite a lot of functionality in the uh the measurement mode. So, you know, no problems whatsoever and it all displays it down there and you get your stats.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: There it is, 5.997, so that's just the drop on the leads, no worries. All right. Now, let's test its uh switch-on performance. Uh going on channel three, 6 volts 3 amps.
+TEXT: See if it overshoots at all. I've got the uh scope set up to single-shot capture, so we switch it on. Boom. Look at that transition. Ramps perfect linear ramp, no overshoot at all.
+context after: Very clean. Nice. And that's with a full load, too, by the way. So, let's uh try it again with no load. So, we'll switch our load off here. And let's reset this.
+
+[762] EEVblog #762 - How Secure Are Electronic Safe Locks? — Dave Jones (explains)
+context before: So, Oh, look, we've got a couple of spikes in there. Not sure what's going on there, but it it's gone down and back up. That's interesting. And bingo, there's our packet.
+TEXT: Don't worry about this overshoot here, that's just because of the AC coupling. This is what I'm interested in here. So, there's our packet that we saw before. That's the buzzer.
+context after: But, this could be the processor starting up, waking up, and doing something. So, uh-huh. Now we're getting somewhere. Hmm, so ignore all that. That's just out the packet that we saw before.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: Four different reference waveforms. Nice. Haven't tried those out yet. Beautiful. And the types. Vertical, that looks pretty comprehensive, doesn't it? Level measured at trigger position. Looks like we've got our preshoot there.
+TEXT: ROV, not sure why they call it uh It should be like just overshoot following the rising edge. Okay, fair enough. And then there's the preshoot before the falling edge etc.
+context after: So, it's all there. Um you can't get any additional help uh by the looks of it over and above what's here uh here. So, that would have been nice, but like when you're talking about a 1 gig bandwidth scope like this, like you shouldn't If you own this, you should know what you're doing.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: That's very nice and clean. There's only a small hint of uh something happening right at the start here, but you know, that's a nothingburger. Um so, yeah, I'm I'm pretty happy with that.
+TEXT: There's no overshoot at all. Beautiful. And what time did that take? Uh it's 200 ms uh per division there, you know, about 300-odd ms, something like that, to ramp on.
+context after: But it's not But what you care about is nice and clean. There's no overshoot. So, uh it's not going to ruin your day if you're you know, you're powering your 5-V TTL stuff and it jumps up to 12 V.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: I don't know, maybe I have to read the manual, but ah, not happy with that. It's constantly going. All right, let's check the ramp on time from 0 to 5 V.
+TEXT: Bingo. There we go. That's about That's 50 ms per division. So, about 50 ms there. There's no bad overshoot or anything like that. So, that's clean as a whistle.
+context after: All right, let's try 0 to 45 V, same time base. There we go, exactly the same. But, you'll notice if we switch it off, it is reading on the output terminals.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Now, one thing we really want to check is the power up performance of this because the power up performance of any bench power supply is very important. You don't want it to uh overshoot.
+TEXT: If you've got your output voltage set to 5 V, you don't want a big spike like that and then it to, you know, level back down at 5 V.
+context after: You want it to ramp up nicely and then go rock steady at 5 V. Now, let's have a look here and try and predict what's actually going to happen here.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (opinion)
+context before: So, let's capture it on the scope here and see what happens. Switch on. Bang. Transient. That's not that great. Look at the overshoot there. There's a little bit of step there, then it ramps up pretty linearly, but it goes up to 4 volts.
+TEXT: That's a That's not great at all. I don't like that overshoot. That's pretty terrible. Make sure that wasn't a fluke. Nope. Totally repeatable. performance. Hey, this thing's no good at all for powering Well, I wouldn't like to power a you know, a large 3.3 V uh board because that thing's going to overshoot to 4 V.
+context after: Nasty. Let's try the same thing again, but this time I've changed my constant current load to 1 amp. So, bang. Hey, there we go. It's a different different performance again, but it really hasn't essentially overshot this time, but it's got this nasty little down the the switch on performance isn't great there at all.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (opinion)
+context before: Aha. That 700 mV um happens to be the same as what our regulator is capable going down to with no load. So, there's some turn-on mechanism there internally to the LT3080 device that uh that causes that sort of jump up there and then flat for a little bit.
+TEXT: But, if you follow that curve down there, I think you'll find that that will intersect precisely down the bottom like that. So, it's got this little knee characteristic uh switch on like that, but it's not a problem because it doesn't overshoot cuz our output voltage is 1 V.
+context after: And there's no over There's a tiny little bit of overshoot in there. There's not, you know, it's nothing to worry about at all. So, it's nice and clean turn-on really.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (opinion)
+context before: So, we're basically just adding a little heat sink onto it. And let's give it a go. Let's give it a go. How quickly does it recover? And does it overshoot?
+TEXT: Doesn't overshoot. Doesn't recover particularly quickly. You can see that the bar graph's going uh full ball up there. It's really dropping down. And my current meter my power supply is only doing like 1 amp or something like that on each channel, so it's not maxing out.
+context after: So, I don't think it's as good as the real JBC, but it's doing a reasonable job. Okay, let's do the a ground plane test at 270 like I've done in previous review videos.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (opinion)
+context before: And let's try that going from 45 V into constant current mode. Yeah, there we go. Little bit of undershoot there, but that's normal. It's not doing anything strange, not oscillating, so that's quite nice.
+TEXT: And then we'll have it coming back out of constant current mode. Whoa, a little bit of overshoot there, is there? Teeny weeny bit. Let me try that again. Little bit of overshoot there, but nothing to write home to your mom about.
+context after: So, let's play around with the user interface here. You can uh do shift lock, by the way, and that just locks absolutely everything, so you can't do a thing.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (opinion)
+context before: You don't have to worry about that. Um but let's take it down to 15 volts and see what happens. All right, 5 amp constant current load, 15 volts output.
+TEXT: Switch on. And bang, there's a nice little kink in there. Look at that. Boing! But, it does not overshoot. Let's do it again. No, still doesn't overshoot. So, the ramp up uh performance, that might be where it's uh switching.
+context after: I mean, it shouldn't switch a tap on the transformer because it should know that it's already in 15 volts. So, it Now, I've got it set to 50 watts uh constant current load at uh 15 volts output and that's our switch on performance.
+
+[91] EEVblog #91 - $50 Multimeter Shootout - Extech EX330, Amprobe AM220, Elenco, Vichy VC99, GS Pro-50 — Dave Jones (opinion)
+context before: The winner of the shootout, I think, Flames invited, the EX 330. Now, of course, the EX 330, the winner, isn't perfect. It's got the spongiest range switch out of the lot.
+TEXT: It's got the worst um how it sits on the bench. It It wobbles around and slides and everything like that. Um, you know, it's it's not the best. It's got some overshoot uh issues as well, but they're not a huge deal, really.
+context after: It's quite slow. Um, it's not the fastest one of the group. But, overall, you just can't beat just the compactness. This it's the smallest one of the group. It's the most rugged.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (opinion)
+context before: Here we go. There we go. All right. Now look, here's a this is a 1 MHz square wave. Look, it's just absolutely useless. Let me uh get the trigger set in on that.
+TEXT: So man, this I keep doing this keep hitting these buttons wrong. So let's get it way back down so it triggers properly. There we go. It should Yeah, it triggers now, but look at the undershoot and the overshoot.
+context after: It's it's absolutely useless. There's no way There's no compensation adjustment on here or on the probe. You can't adjust this thing. It's absolutely useless for any high frequency detail at all for a 1 MHz square wave, right?
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (opinion)
+context before: If you've got, you know, a smaller value or no value at all, as we found it was still stable with no value cap in there, um then well, your transient performance isn't going to be smooth like that.
+TEXT: It's probably going to overshoot. In fact, I can probably give that a go. Here we go. So, I've taken the cap out, and woah, there we go. Now, let me try that again.
+context after: It's hard to capture. I need a proper switch. There we go, got it. There we go. Got a massive amount of overshoot there. So, our 470-mic helps with that.
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (opinion)
+context before: That's the zoom out feature. I've done a video on that. Looks like the National Instruments does it. See where it comes in handy? I've zoomed in I otherwise I'd have to repeat this whole process.
+TEXT: And no, I don't. Look. Boom boom boom. And you know, you don't worry about overshoot like that. In fact, I'll show you the other ones cuz they're on all the time.
+context after: So, there you go. That's third from the second from the top. So, that one looks like data. Oh, there's an interesting level thing happening there. Like little bus contention or something.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (mention)
+context before: Nuts. So, we can look at the different components here, and they break them down, which is really good. First of all, we've got the ISI, which is intersymbol interference.
+TEXT: What that basically means is a symbol is is what's inside the eye here, right? The the type of data that you've got in there, and due to reflections on your PCB, you might have one data interfering the previous data interfering with the new data because then you've got some overshoot, undershoot, some reflections coming back, and that can interfere.
+context after: Sometimes, sometimes not. It doesn't always happen cuz your data's always changing. So, some symbols, some the combination of data may interfere with another combination of data if they're in the right order, depending on termination.
+
+[1362] EEVblog #1362 - A Very Skookum Mailbag — Dave Jones (mention)
+context before: insulating sleeve oh ah beautiful but I'll give it to them they have kept the same construction ring arrangement on the pot there check it out so there you go so yeah yeah just goes around like that that's the ah that's the ohms adjust so they've kept that they've kept the spirit of it alive there but it's
+TEXT: just not the same and that is the chintziest carry strap I've ever seen that's terrible Muriel all right let's give her a try all right 1.5 volts a little bit over oh geez that's got some overshoot doesn't it I don't think we got ourselves a little tortie band wow let's compare that with the new jobby
+context after: oh yeah that one's better look at that I didn't zero it did I and let's look at a real meter triplet 630 na thank you very much ah look at that well a Chinese and 95 mask that was uh that was the joke of 2020 wasn't it there you go look at that bear it's
+
+[316] EEVblog #316 - More PFANG, More 13GHz Scope, & More Pulser — Dave Jones (mention)
+context before: there. So, we got to fix that one, too. And that fix was dead easy, of course. I just put it to square wave mode and went, "Ah, be done with it." Here we go.
+TEXT: So, here's our here is our output pulse. There's some ringing. Certainly some ringing there. Some overshoot and then some ringing. So, that's not that great. But in terms of, you know, if we take sort of the average rise time of this thing, we are talking 250 picos seconds.
+context after: And uh let's turn on some average in here. And if you want to know how to do that on this thing, it's a it's a pain in the ass to use.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (mention)
+context before: All right, here you go. This is slightly different again, is it? This is using the sig gen output on my Keysight 3000 scope. So, the wave gen output there.
+TEXT: And you can see that it's kind of like got almost a ringy kind of response there. Huh. And that's the same signal on the Rigol HDO 4000. Once again, a little bit of overshoot there, but yeah, like, you've got to take into account the signal source and everything else.
+context after: But there you go. Um a pulse response is certainly something to uh consider on a scope. But it's worth investigating. It's an interesting phenomenon, and not every scope is perfect.
+
+[1216] EEVblog #1216 - PCB Layout + FPGA Deep Dive — Dave Jones (mention)
+context before: It drops from a, you know, 5 amps down to 1 amp or something like that, you're going to have a transient response. You can come up That's a right there on these dynamic characteristics.
+TEXT: Undershooting, overshooting. That's all that on on top of your DC characteristics. Like There's a lot involved here. But I know what you're saying, "Dave, just switch to a You know, just use huge ground and power planes, and it's going to solve all your problems.
+context after: Don't worry about this star grounding and layout and routing and all that sort of stuff." Well, a couple of things. One is that you can often Look at all these vias in here.
+
+[972] EEVblog #972 - Operating Chips Outside Their Spec — Dave Jones (mention)
+context before: the AD8436 actually has a specific pin to add an additional averaging capacitor, like a higher frequency averaging capacitor for those shorter peaks, as well as having a larger average capacitor value. So this is a pretty neat chip, that's why it handles crest factors quite well, and certainly the EEV
+TEXT: log meter has both of those caps built in to handle the higher crest factor waveforms, so this is going to be a reasonably high crest factor waveform, you might typically get, you know, overshoots like that, and you know, spikes and things like that.
+context after: So, hey, look right down already, look at that! Look at that, 22 point, we're basically bang on let's go back up to our amplitude here, and go 1 volt oh, we can only do peak to peak here, okay, we can't do the RMS anymore
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (mention)
+context before: Yep, basically identical to the Rigol 1000 series. Of course, this is the 200 MHz one. So, if there was any, you know, termination issue or something like that, or actually signal integrity issue, you'd expect the higher bandwidth would show it.
+TEXT: But, we're not actually seeing that there. And as a fourth comparison, let's try our 500 MHz Agilent 3000 series, and ta-da! There we go. Look at that. We do have some overshoot and some undershoot there, presumably due to the higher bandwidth.
+context after: But, and we're getting we're seeing more fidelity in whatever that little glitchy thing there and there is, but once again, it doesn't look anything like the peaky response of the Techway.
+
+[1501] EEVblog 1501 - Rigol HDO4000 Low Noise 12bit Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: Anyway, so I'm going to leave that at DC coupled, 1 ms per division, 250 meg points. Now, we want to measure this. So, let's measure, okay? So, volts peak-to-peak, volts RMS, and uh AC RMS as well.
+TEXT: I've done a whole video on AC RMS. Anyway, it does have a lot of measurement Oh, preshoot. Look at that. Overshoot um and stuff like that. So, it Yeah, um it They've got lots of options there for measurements.
+context after: I like that. Anyway, what we want to look at this noise floor. It claims 18 microvolts, at least one spec I found, 18 microvolts RMS ultra low noise. I'm getting 25.
+
+[453] EEVblog #453 - Mysteries of x1 Oscilloscope Probes Revealed — Dave Jones (mention)
+context before: And when you put it on times one mode, it's just a bit of coax going in, right? Well, yeah, it should be. So, let's get a bit of coax.
+TEXT: There we go. And let's whack it in there. And see what we get. Here we go. Look at that, a bit of overshoot there. Bit of ringing because it's not terminated properly, but let's increase this in frequency.
+context after: We're at one We're at 1 MHz there. So, let's wind it up and as you can see, 40 MHz, 50 MHz, no problem. Look at the Well, it's rounding off there, but let's not Look, but there is no attenuation of that signal by just a bit of coax.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (mention)
+context before: It's about 700 picoseconds or something like that. So, just a a regular fast pulse you might use for bandwidth or other measurements. And let's have a look at the Techway here, and there's the response we're getting.
+TEXT: Yes, I've got it 50 ohm in-line terminated there, and it is quite ringy. Check out the ringing on that, the overshoot, the undershoot. And let's compare that. This is a 100 MHz bandwidth scope, of course.
+context after: So, let's compare that to the Rigol here and see what we get. Ta-da! That's the Rigol. There we go. A very nice the Rigol 1052E. And there's, you know, a very nice.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (mention)
+context before: Um anyway, this one's pretty schmick, isn't it? There you go. Just happens to be really good pulse response, but you know, you change it, you go down to a different volts per division, and you might get something else entirely.
+TEXT: No, just some high frequency overshoot there. That's a 20 millivolts per division. It's giving a decent show for itself. Back to the Rohde & Schwarz again at 10 millivolts per division, and yeah, you go.
+context after: You can see it sort of goes There's a little dip, and then it sort of slightly goes up. We're only talking a couple of samples here, but you know, there you go.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Whereas this unit say just like And it's a pretty tight response on the pulse here. This is a 40 picosecond pulse generator and it does okay, but there's kind of a little a little bit of a droop in there, which I don't see on other scopes.
+TEXT: Anyway, there's not aggressive sine X on X interpolation, so there's not much overshoot or undershoot. So that's, you know, that's tight as a nun's nasty. Channel two, channel three, and channel four.
+context after: Yep, I'm going to call that consistent across all four channels. So those little bodges that we had on the front ends don't seem to be impacting in that respect.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (mention)
+context before: Unbelievable. And they've removed the maximum peakto peak output voltage swing, the small signal differential voltage amplification, the maximum output bandwidth, the output impedance, and the cross to talk to attenuation.
+TEXT: They've removed all these things from the spec table. Unbelievable. But hey, they have lowered the current from 8 milliamps to 6 milliamps. Winner. They removed the overshoot factor. Why?
+context after: And again, they've changed the slooh rate. So again on the right hand side here, this is the previous data sheet, the old uh revision. And you can see we've got a whole bunch more specs here than we've got here.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: There we go. All right, now we've got a submenu. Look at that. All right, I don't mind the operation of that. It's just not It's a bit non-obvious at first, but once it does pop up, I actually rather like that.
+TEXT: Check it out. So, we got peak to peak, max, mean, amplitude, high low. Geez, no shortage, um overshoot, preshoot, all sorts of stuff. No shortage of measurement capability in this thing.
+context after: That's really quite nice. So, let's actually How do you select it? So, you got to press select. Okay, our frequency's popped up. Let's say we want our period as well.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (mention)
+context before: So, if you're testing like proper pulse response of a regulator or a power supply, you know, you need to do it with a proper resistive load, but here we go.
+TEXT: Ah, there we go. Look at that. We got a similar Is that the same? Yeah, cuz we're at No, 5 milli seconds per division, and there's a little bit of over shoot there this time.
+context after: Little bit, not much. Oh, yeah, oh, there's something, and then a little dip. But once again, as I said, there's no capacitance on there. But yeah, it's got this little shelf in there.
+
+[VVOi2dbtxC0] EEVacademy #6 - PID Controllers Explained — Dave Jones (mention)
+context before: Well, the integral component now, we can change it and probably we can increase it. We know that our value of the integral component is somewhere between the constant that it was initially and after our tuning.
+TEXT: So, let's take the average of those two values. Let's call them K1 + K2. And that will be the new integral constant. And now, we probably will get a little bit of overshoot.
+context after: Um but now we've got that response time. Now, we haven't really got any derivative component yet. So, we now want to start working on that. We're now testing our disturbance rejection.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (mention)
+context before: And there you go. It is like it's of course like the same wave shape. You can see it's got the uh longer ground lead one, the orange one, has some extra undershoot there and comes back and takes more time to come back up like that.
+TEXT: And the one up here got some extra wiggle wiggle wiggle year on the top there, some overshoot. And um so, you know, there are differences in probing right there.
+context after: But at the moment, this is the loading of the line with a one picofarad, one puff active probe which costs a couple of thousand dollars. Okay, now I'm going to use my 500 megahertz uh passive probe here.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (mention)
+context before: Change our Switch our output off. Switch our output on. And boom. Look at that. There we go. With no load, yeah, it's much uh quicker. Of course, I didn't uh change the time base there at all.
+TEXT: And uh ramps up. There's no overshoot in there. What's Oh, look, there's a little There you go. You didn't see that when you're uh There you go. You zoom in.
+context after: There's a bit of funny business happening there. That's uh with no load. So, you know, that might cause an issue with your uh system if uh that was a problem.

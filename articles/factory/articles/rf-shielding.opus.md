@@ -1,0 +1,33 @@
+# rf shielding
+
+RF shielding is the practice of enclosing circuitry in conductive barriers so that radio-frequency energy neither escapes a sensitive or noisy block nor enters it from outside. It is far-field shielding: the electric and magnetic fields separate close to a source and only combine into an electromagnetic field further away, and it is that combined far field that conventional RF shielding addresses.[1329] In practice it governs both directions at once — keeping RF out of an instrument and keeping it in.[261]
+
+## Cans, blocks and partitioning
+
+The commonest form is the metal can soldered or clipped over a section of board. On a consumer device the goal can be near-total coverage: a Kindle Paperwhite carried hardly any unshielded circuitry, with one chip on a flat flex board and a few passives outside, everything else under metal shielded cans, which heads off RFI at the source.[370] Front ends and transceivers in phones and handheld radios follow the same pattern.[243][492][1275]
+
+Higher up the scale the can becomes a machined block. A 20 GHz spectrum analyser uses fully machined cans with RF shielding gaskets, with unrelated parts deliberately kept outside them.[470] Where the enclosure is soldered completely shut, the lid does not come off at all.[470] Sheet-metal outer construction is often paired with an aluminium block inside carrying the RF shielding.[892]
+
+Partitioning inside a single enclosure follows the block diagram. A design is laid out in building blocks and the shield walls come down between them, penetrated only by a small slot for the trace crossing from one section to the next.[261] The same construction appears in a VNA: signals pass between individual blocks that are all shielded, with solder mask removed or gold plating exposed where the wall meets the board, and slots machined out so the signal can pass while each section stays shielded from the next.[1101] Shielding can also be nested — an outer can over two more inner cans, one covering the sensor elements and their signal conditioning, with a copper tab and a metallised polyester strip carrying the shield up to the sensors themselves.[1207]
+
+## Contact: fingers, gaskets, braid and tape
+
+A shield is only as good as its bond to the rest of the chassis, so a large share of the engineering goes into contact hardware. Spring RF fingers running the length of a seam are a mark of serious EMC attention,[790][1256] as are RF fingers on drive mechanisms inside a larger machine.[1314] Compliant RFI gaskets sit between metal shields in spectrum analysers and similar instruments.[477]
+
+Where the joint is long or irregular, braid and tape take over. Metal braid stuck to the metal of a case gives RF screening between the case and its outer cover.[261] An ultrasound machine's boards are heavily shielded with RF braiding down their length; the signals emerge from the braid and contact the top of the metal front panel connector, and a large metal plate presses against all of that braid so nothing escapes.[1314][JJwxFFpnt0M] Conductive tape does the same job at connector level, giving HDMI connectors a very low impedance RF path down to the main shield.[1396] Conductive sponge bridges a chassis to the metal backing plate of an LCD.[1477] Copper tape seals small access holes in a 20 GHz assembly.[470] Board-to-board shield connections get gold pads to make the transition reliable.[1124] Rear-panel I/O gets its own treatment, with RFI shielding tabs at the ethernet and USB jacks.[892] A die-cast case may itself provide much of the shielding.[571]
+
+Because contact quality depends on mechanical detail, disturbing a shield is not free. Screw torque and gasket compression affect the shielding between sections, so removing RF cans on ultra-high-end gear can measurably shift low-level performance and may warrant returning the unit for calibration.[823]
+
+## Shielding for low-level measurement
+
+Shielding is not only about radiated emissions; it protects sensitive analogue measurement as well. In a 7½-digit multimeter the 3 A current range — the one that also carries the 10 µA full-scale range, with resolution down to about 1 pA — gets special treatment, with a cutout and its shield tied directly to a large shield strap running right around the section.[731] Legacy instrumentation used the same reasoning at board level: heavily shielded front-end, Doppler acquisition and channel boards in an ultrasound system,[1314][JJwxFFpnt0M] and a switching backlight board housed inside the same case as the switching supply to keep it away from the rest of the circuitry.[261]
+
+## Where shielding is left out
+
+Shielding is a cost and assembly burden, so it is frequently reduced or omitted. A mixed-domain oscilloscope shipped with no can at all on the front side of its RF front end, a much simpler approach than the more traditional spectrum-analyser-style construction of the higher-end model.[587] A super-regenerative receiver module had no shielding whatsoever — no can, nothing in the case, with the antenna running straight out — which is the direct cause of its poor behaviour.[767] In hand-built work, not every box was given a lid, and performance remained fairly adequate without them, though unshielded sections pick up nearby oscillators such as the crystal.[575]
+
+Where shielding is present in quantity, it is visible mostly as mass and metal: extra brackets and plates whose purpose is not always obvious,[1545] full metal chassis work,[1545] and instruments that are heavy precisely because of how much shielding is inside.[976] Not every shield is a rigid can — a mesh RF shielded pad appears where a formed can would not fit,[1133] and a piece of sheet can be soldered down and bent over to form a half can.[951]
+
+## Anechoic chambers
+
+At the test-facility end, the same principles are applied to a room. An emissions anechoic chamber is a fully sealed metal room, and sealing is critical to its performance.[202] A measured facility achieved about 80 dB of attenuation across the whole frequency range inside the room.[202] Emissions from support equipment are eliminated rather than tolerated: the antenna mast is driven over a fibre-optic link so there are no emissions inside the chamber, and any auxiliary equipment that must be present is itself RF shielded.[202] Sealing the room is a mechanical problem in the same way that sealing a can is — a drive-in door recessed below floor level cannot be sealed properly at the bottom without dedicated provisions.[202] Semi-anechoic rooms, which have no absorber on the floor, are used for military work at field strengths up to around 200 V/m, with tests generally run at 1 m so the floor matters little.[202]

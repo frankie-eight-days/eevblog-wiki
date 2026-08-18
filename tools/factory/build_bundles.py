@@ -117,7 +117,14 @@ def collect(concept, idx, cap):
         # discarded for a naming accident.
         cite = num.group(1) if num else stem
         key = (stem, pi)
-        depth = m.get("depth") or "mention"
+        # The census occasionally leaks a non-depth string into `depth` -- a
+        # field name like "asr_suspect" turning up here crashed the sort on an
+        # unknown key. canon_lib's hygiene stage already remaps these; the
+        # bundler reads raw census files, so it has to do the same rather than
+        # trust the field.
+        depth = m.get("depth")
+        if depth not in DEPTH_RANK:
+            depth = "mention"
         if key in seen:
             # a paragraph can be indexed by several surface forms; keep the
             # strongest depth rather than whichever arrived first

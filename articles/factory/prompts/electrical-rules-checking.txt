@@ -1,0 +1,253 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: electrical rules checking
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 44 passages drawn from 12 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# electrical rules checking`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[5eJorvyA708] Altium Designer Serious ERC bug — Dave Jones (explains)
+context before: n, and fair enough, the, when I do the project compile, the project options uses the connection matrix, but where else is it getting the rules from to do the compile, so if it might be some legacy thing, because Altium's full of legacy stuff and things like that, but please comment below if you think this is, like, a genuine bug, or you know some way around it, or I'm doing something dumb, I'm still talking about it,
+TEXT: I'm still talking with Altium on this, so I'm sort of, like, prematurely releasing this, but I just wanted to document that issue, so there you go, I think that is a major issue, if I compile a document, or do an out job, especially an out job ERC, like, you know, there it is, electrical rules check, thank you very much, I expect it to catch all those errors and it doesn't, anyway, enough rambling, catch you next time.
+context after: 
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: You might have company rules for these sorts of things, you know, you might be forced to use a particular rule set when you if you're a professional PCB designer at a company or something like that.
+TEXT: So, your real serious companies will take this extremely serious, cuz once bitten, twice shy. And ERCs can really save your butt. So, well worth doing, and documents and configurations, harnesses, and various nets, and you can detect all sorts of weird and wonderful things with the connection matrix, and we won't go into um sort of other stuff, but yeah, it's a fantastically powerful tool.
+context after: Now, as you may have already gathered, the quality of your ERC is really only as good as the quality of your component libraries. In this case, actually going there and setting all of these pins to inputs, outputs, or setting them to, you know, open collector and bus power, you know, whatever it is.
+
+[1307] EEVblog #1307 - TUTORIAL: PCB BOM Consolidation — Dave Jones (explains)
+context before: One is uh creating a nice readable uh schematic here and another is what is schematic ERC and I've done other videos on design rule checking and things like that.
+TEXT: So, designing a your widget like this is a multi-step uh process. Typically, you'll uh design your schematic first and then you'll do your electrical rules testing your ERC, then you'll lay out your PCB and you'll do your design rules uh checking and then you'll do uh the generate the manufacturing uh files for it and then you typically get it assembled and everything else.
+context after: And I've done many videos on uh design for manufacturing uh for example, but there's a step in there which I have mentioned in and you know, off and on in a few videos, but I've never done a dedicated video on it and it can actually be quite important.
+
+[5eJorvyA708] Altium Designer Serious ERC bug — Dave Jones (explains)
+context before: 
+TEXT: Hi, I wanted to just show you what I think I've found a bug in Altium Designer 17. This is the absolute latest release as of the release date of this video and I was just actually making a video on ERC, Electrical Rules Checking in Schematics, and I was trying to like force an error and it wasn't being detected and this is really rather unusual, okay?
+context after: So what I've got here is I've deliberately introduced several errors into this schematic here. One is a data out, an output pin of this chip is connected over to another output here, okay? So two outputs shorted together, it should detect that, you know, as a fail, okay?
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (explains)
+context before: I just copy the code in and then start modifying it and that's by far the easiest way to get up and running. I should be up and running in, you know, tens of minutes with this thing, hopefully.
+TEXT: So, that's the plan. So, that's why I chose the WeMos D1 Mini. We'll see if it works. Now, you might think that we're actually done here and we are, but there's one more step which is called an electrical rules check and I actually uh was going to put that in this video, but I decided uh people might want to know about this separately.
+context after: So, I've just uh branched that out into a separate video which should be uploaded at the same time as this one. So, check that out if you want to know about electrical rules checking in schematics.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: Now, we've got two different types. One's a design Oh, that's annoying, a design rules check, a DRC, but you'll notice that it's only available on our PCB document cuz DRCs, a design rule check, is done on PCBs.
+TEXT: But if you want to do the same basically the same thing on a schematic, it's called an ERC, an electrical rules check. So you notice, so this is what we want, electrical rules check, and then it we've got one schematic document in our project, so we select that, and bingo, we've got an ERC on our um thing here.
+context after: Now we enable this and we can actually send the output of this to a PDF file if you want to generate a report for, you know, uh a meeting or you know, or for whatever purpose, or we can generate a video, but what we'll do is we'll just generate a uh basically a HTML file here.
+
+[5eJorvyA708] Altium Designer Serious ERC bug — Dave Jones (explains)
+context before: And then I've got, well, I've got two floating, I've got a floating input here, so two inputs connected together with no driving source, okay? It should detect that and I've got another one here where the data output pin is connected through to ground, so it's connected to a power net.
+TEXT: Once again, a really bad error which should be picked up by an ERC. So, hey, look, I'll go into my out job here, okay? I've got my out job set for my Nixie Tube display project, here we go, and I'll run that and bingo, look, okay, I've got a couple that are saying there's no driving source, okay?
+context after: That's fine, net's hidden, but there is no warning or error flagged for two output pins shorted together or for an output pin shorted to a ground, like a power net, okay? And just to prove that it's all hunky-dory, I'll go into my project options here, my connection matrix, look, here it is, output pin to output pin, shorted together, so there it is, output pin to output pin generates an error.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (explains)
+context before: and it's not going to make electrical connection. And then that is not going to generate a correct netlist, which then goes into your... which then exports into your PCB or imports into your PCB, so that you can then do design rule checking. And using an electronic CAD package like this for schematic and PCB design,
+TEXT: it's all about electrical rules checking. So, that's the first thing you're going to want to do when laying out... your schematic, set your snap grids. Now, unfortunately, this one is all... because it's imported, it's all off the grid. It's not something that we would have done from scratch.
+context after: It'd be much tidier. You can actually... you should be able to see the net in there as we actually do this. And, like, it's just a lot of it's not going to line up like it would on a normal grid design from scratch.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (explains)
+context before: There they are. Anyway, let's go and convert this to No, let's try it. No, let's not go there yet. We haven't done any of the any of the design rule checking.
+TEXT: Let's do an ERC. F9 electrical rule setup Uh This looks exactly like Altium. This is exactly the same um structure of uh if it's it's very powerful. It's it allows you to map turn on and off various things whether you want errors, warnings, or um or actually no errors at all.
+context after: So at the moment, it's only going to check it'll only give you an error on three-state power like if you're tri-stating a power I E it's open or something like that.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: So, let's go in and actually do an ERC of this thing. You should do it as a matter of course. Now, all programs will work differently and this is how Altium Designer works.
+TEXT: Now, there are two ways to invoke an ERC and electrical rules test. One is to actually right click on here and go compile document, but as I showed in the previous video on my second channel, I think there's a bug with this so we're not going to use that.
+context after: Anyway, Altium recommend actually compiling the PCB, the entire PCB project and that will use the uh which we'll take a look at. So, the term compile is just another way to actually run an electrical rules check.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: Hi, this is just a little aside video from my Nixie Tube display driver videos I've been doing cuz I thought some people might find this just interesting in its own right.
+TEXT: We're going to talk about electrical rules checking in schematic documents. In this case using a powerful tool like Altium Designer and just exactly what is an ERC? How does it differ from a design rule check on a PCB and what advantages it can have?
+context after: So, let's get to it. Just to show you doing an ERC on a schematic like this. Now, a lot of people would just skip this if you're just doing it quickly and getting up and running, but hey, you know, you could get if you're doing any sort of serious design or even a one-off like you know, let's say we had our grid set incorrectly and we had a fine grid and
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: If you miss things in the schematic, they can flow through to the PCB, go through to the net list, you route your board, and you get it manufactured, and multiple steps, could be multiple weeks or even months down the process you build up your prototype and find that error when you should have actually captured it in your schematic.
+TEXT: So, ERC electrical rules checking very, very important thing. And good quality package like Altium Designer will have extensive ERC capability. And as I said, there's just a ton of stuff in here with all these reports with the ones to do with buses.
+context after: So, if you got buses, code symbols, actual component stuff like sub parts and being used, and all sorts of, you know, you can set these to warning, no report, error, fatal error, whatever you want.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: Boom, there's 11 components in one schematic document. Yep. Okay. We're updated. We're all good. We'll notice that our symbols have now changed. There we go, data out pin, pin 18 is now output.
+TEXT: So, if we run our out job again, we'll find generate content, boom, our errors are gone for those particular chips. We've still got no driving source for the module, but I don't you know, I could go in and fix that, but and get down to zero errors.
+context after: And if you're a professional designer, and a lot of companies will enforce this to go to the next step, the PCB step, you have to show that you've got zero errors on your ERC.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (explains)
+context before: So at the moment, it's only going to check it'll only give you an error on three-state power like if you're tri-stating a power I E it's open or something like that.
+TEXT: So it allows you to um all combinations of your pin types it allows you to um what what you want to check for for various warnings, errors. So if your schematic's giving you all these warnings, you can actually switch off specific things.
+context after: It's rather neat. Um So I I like that. It's it looks exactly the same as Altium. So I don't know who stole it from who or whether or not they both stole it from somewhere else, but uh it looks identical.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: And where's the other one? We've got uh contains has no contains floating contains multiple output pins. Here we go. This is the one we want. We've got two outputs shorted together.
+TEXT: And bingo, it's found that multiple output pin shorted together for us. So, it just can pick up really gross errors like that. And so, this is why ERCs are incredibly important, just as important, if not more so, than PCB DRC errors.
+context after: If you miss things in the schematic, they can flow through to the PCB, go through to the net list, you route your board, and you get it manufactured, and multiple steps, could be multiple weeks or even months down the process you build up your prototype and find that error when you should have actually captured it in your schematic.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: Now we enable this and we can actually send the output of this to a PDF file if you want to generate a report for, you know, uh a meeting or you know, or for whatever purpose, or we can generate a video, but what we'll do is we'll just generate a uh basically a HTML file here.
+TEXT: So we'll generate a file and we can just go generate content. So what we're going to do is run the electrical rules check using the rules that are already set up, which I'll show you in a minute, and we can just go generate content.
+context after: So it actually runs an ERC, and bingo, here's our report. And you'll notice that uh there's not too there's no major errors, warning Will Robinson, error error. We've only got some warnings here, hidden net added to VCC and ground, that's nothing, that's to do with the 74HC chip, which has a couple of hidden pins, no problem.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: But yeah, if you do it properly, your goal is to get all the errors and warnings to go away before you go on to the PCB layout step. But anyway, that is now fixed.
+TEXT: I'm happy with that. Now of course, we can use this ERC to find, as I said, a whole slew of like I could go through maybe a hundred different examples of different variations of errors that you know, this system can find here.
+context after: But like a very let's do a very serious one for example. Let's say you weren't thinking and you connected an output pin 18 D out here to another output.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: And of course, nothing stops uh you, you know, no ERC is going to save you if this pin 20 here, you've accidentally labeled it pin 19 in your component library, but that's why uh companies put a lot of effort, and often they'll have a dedicated uh library design people or person who will just design libraries, and once the library is designed, that never gets touched again, and it's once it's verified, they
+TEXT: will never touch that thing again. So, it'll just be aware of that. It's worth putting in the extra effort, but yeah, it's just be aware what your ERC is capable of and not capable of based on the information you're giving it.
+context after: Garbage in, garbage out. A fantastically powerful tool, ERC. So, have a play with it next time you can do a schematic in your package of choice, of course. Not all packages will be this uh and powerful.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: Now, there are two ways to invoke an ERC and electrical rules test. One is to actually right click on here and go compile document, but as I showed in the previous video on my second channel, I think there's a bug with this so we're not going to use that.
+TEXT: Anyway, Altium recommend actually compiling the PCB, the entire PCB project and that will use the uh which we'll take a look at. So, the term compile is just another way to actually run an electrical rules check.
+context after: You can think of that, you know, it's literally like a software compiler we've written our code, we've drawn our schematic, now we're compiling and it's going to tell us if we've done something stupid.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (explains)
+context before: it works in Altium Designer anyway and uh a lot of other packages. So uh I assume that it knows that's a power pin and it should be connected to power but it doesn't like having just that net name.
+TEXT: Hence it gave us an error message there when we compiled our schematic. And uh this is handy to get your error um to you know if you ignore all these errors you have to make sure that you know what you're doing.
+context after: Um because the whole idea is you want to get zero errors before you push this schematic through to the PCB. But yeah, you can't always do that. Uh, a lot of the time you'll, you know, you can be spend a lot of time around trying to get your errors down to zero when you know you knew what you were doing and you know what the errors are and you can
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: So, ERC electrical rules checking very, very important thing. And good quality package like Altium Designer will have extensive ERC capability. And as I said, there's just a ton of stuff in here with all these reports with the ones to do with buses.
+TEXT: So, if you got buses, code symbols, actual component stuff like sub parts and being used, and all sorts of, you know, you can set these to warning, no report, error, fatal error, whatever you want.
+context after: You might have company rules for these sorts of things, you know, you might be forced to use a particular rule set when you if you're a professional PCB designer at a company or something like that.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, they can produce your report and go, "Here it is, there's no errors." But, it's riddled with problems. So, it's all about the constraints that you set up when you do your uh design rule checking and your ERC.
+TEXT: Uh your electrical rules checking. ERC is for schematics electrical rule checking and then DRC is for design rule checking, which is for PCBs. And in this particular case, we could ignore that.
+context after: I'm absolutely confident and we can check out verify our Gerbers that this would be fine. So, I could go, "Look, I just want to send this board out to one-off.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (explains)
+context before: So, Oh, yeah. It'll be down the bottom here. There it There it is. Sheet one, of course, and it it would have multiple sheets. So, maybe we could try and find an example that had multiple sheets just to just to check the hierarchy, but let's go into design rule checking.
+TEXT: Bang. Uh no, it's done. It's done already. There we go. Errors, pin types, warnings. Run ERC. Do it again. It's very quick. It's instant. So, that's good. Localize. What does that do?
+context after: I assume I thought that would have maybe zoomed in on the error or something. Ah, looks like it's highlighted. Oh, no. It hasn't. I thought it highlighted a particular error.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (explains)
+context before: Uh, control zed. Thank you very much. It's back. All right, so obviously the delete key does not put you into delete mode, and that would have made sense. Um, so I assume in the delete mode I can just go, okay, it's got several components because it doesn't know which one to choose.
+TEXT: So I'm going to go the um ERC, sorry, the no connect. It even puts up the ERC marker as an object. That's a bit unusual. So usually that shouldn't be an object on your schematic.
+context after: It's just a it's just a marker, but we can erase that and go back into the ERC here. And I'll run that again. Test ERC. There you go. It got rid of that error message.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: You could easily miss routing that pin and your board won't work because you made a simple error in your schematic and you didn't do an ERC and fix it.
+TEXT: So, let's go in and actually do an ERC of this thing. You should do it as a matter of course. Now, all programs will work differently and this is how Altium Designer works.
+context after: Now, there are two ways to invoke an ERC and electrical rules test. One is to actually right click on here and go compile document, but as I showed in the previous video on my second channel, I think there's a bug with this so we're not going to use that.
+
+[y-NiyRvqfXc] Another Altium Designer ERC Bug — Dave Jones (explains)
+context before: And that seems to be where the bug is. But if you select project, everything's fine. So I've actually selected project here. And here it is. I've actually got um watch this.
+TEXT: Okay, let's compile PCB project. And I'll show you the thing at the moment. Here is the messages we get. Okay. And just take note of what they are and how many of them are.
+context after: And there are actually I can show you that in a sec. Oh no, I won't. Anyway, um there's going to be a few more in there if I actually run the out job.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (explains)
+context before: So I'm going to go the um ERC, sorry, the no connect. It even puts up the ERC marker as an object. That's a bit unusual. So usually that shouldn't be an object on your schematic.
+TEXT: It's just a it's just a marker, but we can erase that and go back into the ERC here. And I'll run that again. Test ERC. There you go. It got rid of that error message.
+context after: So that schematic as it came has one error in it. And it's a type error three. Pin connected to some other pins but no pin to drive it. And there's the delete markers.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (explains)
+context before: It's just a it's just a marker, but we can erase that and go back into the ERC here. And I'll run that again. Test ERC. There you go. It got rid of that error message.
+TEXT: So that schematic as it came has one error in it. And it's a type error three. Pin connected to some other pins but no pin to drive it. And there's the delete markers.
+context after: So if you want to delete the markers from your page, you can do that. Um pin connected to some other pins but no pin to drive it. Okay. Pin 14.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: And of course, you can fudge that a lot of you know, a lot of designers will rightly in some cases just fudge that until the errors go away and ha see you know, I I know what I'm doing, you know, and so you can fudge it.
+TEXT: But yeah, if you do it properly, your goal is to get all the errors and warnings to go away before you go on to the PCB layout step. But anyway, that is now fixed.
+context after: I'm happy with that. Now of course, we can use this ERC to find, as I said, a whole slew of like I could go through maybe a hundred different examples of different variations of errors that you know, this system can find here.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: The reason that happened is because when I was re-jigging this uh you know, making it look pretty. I was moving things around, dragging, cutting and pasting, and those lines obviously got moved, and I put them back and accidentally swapped them.
+TEXT: Oops. Trap for young players. And of course, the ERC checking in the these types of uh CAD programs aren't magic. They can't cater for fires up in the gray matter.
+context after: Doh. All right. So, this is what we're going to take a look at in in this video. My DAC isn't working here. I've got my SPI bus on the input, which as I said is a software SPI bus.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: That's why they have snap grids in here so that everything snaps. So, when you actually then do your net list for this and pass it through to your PCB, that information, that net list information of what pin connects to what does not get sent through to your PCB file and then you won't route the thing.
+TEXT: You could easily miss routing that pin and your board won't work because you made a simple error in your schematic and you didn't do an ERC and fix it.
+context after: So, let's go in and actually do an ERC of this thing. You should do it as a matter of course. Now, all programs will work differently and this is how Altium Designer works.
+
+[5eJorvyA708] Altium Designer Serious ERC bug — Dave Jones (opinion)
+context before: ou do an ERC, but if you go like this. And compile that, where, look, it's not there, it's not there, that to me has got to be a bug, there's no way that you can miss critical errors on a schematic, I want to check that one schematic, I'm asking it to do that, and once again, the out job will do exactly the same thing, it'll miss those errors, so what the, like here's the, like if I put that to a PDF report, I could,
+TEXT: feed that to a PDF report, give that to management and say, hey, look, it's passed ERC, no worries whatsoever, let me go onto the PCB layout, and they'll go, yeah, no worries, and my schematic contains, like, really gross errors that are going to release the magic smoke from these chips, I mean, it's just, nah, there's something seriously wrong here, so I want to know where it's getting the rules from to do that compile document there,
+context after: because it's certainly not coming from the project option, and fair enough, the, when I do the project compile, the project options uses the connection matrix, but where else is it getting the rules from to do the compile, so if it might be some legacy thing, because Altium's full of legacy stuff and things like that, but please comment below if you think this is, like, a genuine bug, or you know some way around it, 
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (opinion)
+context before: will never touch that thing again. So, it'll just be aware of that. It's worth putting in the extra effort, but yeah, it's just be aware what your ERC is capable of and not capable of based on the information you're giving it.
+TEXT: Garbage in, garbage out. A fantastically powerful tool, ERC. So, have a play with it next time you can do a schematic in your package of choice, of course. Not all packages will be this uh and powerful.
+context after: But, your professional ones most certainly are and they are for a reason. Hope you enjoyed that. Catch you next time.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (opinion)
+context before: Garbage in, garbage out. A fantastically powerful tool, ERC. So, have a play with it next time you can do a schematic in your package of choice, of course. Not all packages will be this uh and powerful.
+TEXT: But, your professional ones most certainly are and they are for a reason. Hope you enjoyed that. Catch you next time.
+context after: 
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (mention)
+context before: Basically, we're past a DRC as I said like the hidden pin thing before. You'll notice that there's no ground or VCC inside these things, but I could like go in here and then just uh show what uh show all pins even if hidden and you'll notice that there are actually some hidden pins in there.
+TEXT: So, that's it. That's our schematic and uh hopefully that works and hopefully you you found that interesting. I know what has this been like half an hour of waffle or something like that, but uh you know, we've covered like uh done ERC and component layout and nice schematic design and you know, stuff like that and it looks like, you know, a nice layout.
+context after: I haven't done anything fancy on here like, you know, engineering notes and stuff like that. I'm a big fan of adding like notes like of how to drive. I might, you know, add notes down here, maybe some, you know, info for driving pins or, you know, something like that, whatever, but this one doesn't really uh warrant that sort of thing.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (mention)
+context before: Not often you want to do that, but when you do, it's good to have the capability to be able to draw any angles you want. Now, I was talking about the uh design rule checking.
+TEXT: There it is. ERC error rule checking and let's the library browse the library editor annotate you see generate net list bill of materials okay the net list can go out to like a spice uh simulator or something like that a bomb of course uh we'll have to check that out but uh let's just run the ERC here and uh test has it already run I guess we have to
+context after: test ERC see that that doesn't make sense why is it called test ERC See error rule. It's just there should just be go or start or something like that.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (mention)
+context before: So, our design check hierarchy. Let's have a look. Um I assume this is only a one sheet uh project. No errors found in the hierarchy. We haven't looked at multi-sheet projects yet.
+TEXT: So, Oh, yeah. It'll be down the bottom here. There it There it is. Sheet one, of course, and it it would have multiple sheets. So, maybe we could try and find an example that had multiple sheets just to just to check the hierarchy, but let's go into design rule checking.
+context after: Bang. Uh no, it's done. It's done already. There we go. Errors, pin types, warnings. Run ERC. Do it again. It's very quick. It's instant. So, that's good. Localize. What does that do?
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (mention)
+context before: We can get a step file associated with it and stuff like that if you really wanted to get fancy pantsy, but there you go. And we do that for the rest of them.
+TEXT: You can even select and change or however you want to do that. And then we should have footprints associated with all our components. And of course in the previous video I went through and showed how you do electrical rule checking and ERC on these.
+context after: And I think I did a separate ERC video on my second channel as well where I bit went a bit more in depth in that I think. Anyway, now we're time to slap our components on the PCB and start routing.
+
+[254] EEVblog #254 - KiCAD PCB First Impressions — Dave Jones (mention)
+context before: oh boy, fast access to the web based free route, advanced router, no thanks, auto routers, jeez, um, perform design rule checks, by net class minimum trace width, excellent, um, is it only in millimetres, or can you choose metric, for that, if we're in millimetre mode at the moment,
+TEXT: so I'm assuming, if we go to, imperial mode, inches, and we go back up to that, where was it, design rules, no, hang on, where was it, ERC, perform design rule check, there it is, in inches, yes, it's put the, right, it's put the,
+context after: um, quote marks there for inches, there you go, but it does, okay, it does switch, that works, they've done that, um, be nice if you could, do it from within here, just, you know, a little button up here, imperial metric, or something like that,
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (mention)
+context before: That's what I'd be asking for. "Show us your constraints to see if you're fudging uh the DRCs cuz anyone can make You can have a board riddled with errors and get your DRC errors down to zero.
+TEXT: So, they can produce your report and go, "Here it is, there's no errors." But, it's riddled with problems. So, it's all about the constraints that you set up when you do your uh design rule checking and your ERC.
+context after: Uh your electrical rules checking. ERC is for schematics electrical rule checking and then DRC is for design rule checking, which is for PCBs. And in this particular case, we could ignore that.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (mention)
+context before: You can even select and change or however you want to do that. And then we should have footprints associated with all our components. And of course in the previous video I went through and showed how you do electrical rule checking and ERC on these.
+TEXT: And I think I did a separate ERC video on my second channel as well where I bit went a bit more in depth in that I think. Anyway, now we're time to slap our components on the PCB and start routing.
+context after: Oh, wait. Hang on. I can't resist myself. I just Google searched for IN-12 Nixie step file. Step is a 3D CAD file format that Altium uh supports. And look at this sexy 3D model.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (mention)
+context before: Surely. Uh, reference designator renumbering. Good, so you can renumber your entire schematic. That's good. Component editor. Uh, pattern editor, library update, edit library. We'll go into that later, definitely.
+TEXT: ERC. I I like the menus. They're categorized into objects. What do you want to do? You want to place your components, you want to place images, you want to place tables, things like that.
+context after: Then you've got verification, which is a separate menu, which is your design rule checking and your hierarchy checking. Then you've got a separate library function and tools. I rather like the uh neat organization of those options.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (mention)
+context before: Jump over to the schematic here, and it's supposed to be U12. Oh. Oops. There it is. That one's labeled U14. That should be U12, and that should be part F.
+TEXT: So, there we go. We'll just choose that as part six there. Bingo. U12F. So, we'll just push that ERC engineering chain ECO, sorry. Engineering change order ECO, we'll push that through.
+context after: Here we go. So, it's gone. Remove, remove, remove. Add. Oh, yeah. And so, it's removed things. It figures out we need to add that. Blah, blah, blah, blah, blah.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (mention)
+context before: That's looking pretty groovy, isn't it? I like that. So, yeah, I don't know where the bug is where that causes all the the funky copper font and everything else, but anyway, so we're good to go.
+TEXT: So, now really we want to do our ERC thing. I'm still don't know what's causing this. Like, why is that still showing that as a net? I don't know.
+context after: Anyway, so now we want to do our DRC before we do our Gerbers, because you want to make sure that you haven't screwed the pooch. So, design rules checker, we want that in there.

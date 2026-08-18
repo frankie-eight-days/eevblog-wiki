@@ -1,0 +1,203 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: threshold voltage
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 34 passages drawn from 22 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# threshold voltage`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[748] EEVblog #748 - How Do Transistors Work? — Dave Jones (explains)
+context before: So, obviously, if we've got two depletion layers here and here, then no current can flow from source to drain. I eat the transistor is switched off. There's no conduction at all.
+TEXT: But, here's the magic of how it works and the name gives it away, field effect transistor. It works based on an electric field. Now, if we put a positive voltage on the gate here, it doesn't have to be very high like couple of volts depends on the type of transistor, then what we've done here is we've given it enough electric field here to overcome this barrier here, our depletion region
+context after: barrier, and then we can have the electrons that were in the n-type material here that's heavily doped n-type material can actually flow along here because this whole gate is like the whole thing is directly across there between overlapping the two n-type materials, it forms a channel in there where the electrons can flow and bingo, we've turned on our switch based on just an electric field here.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: So, instead of our reference voltage being 0 volts like it was before cuz we had ground there, it's now that not plus 1 V because of this voltage divider action, this reference voltage is now plus 1 V.
+TEXT: So, it won't um action, it won't do anything, it won't switch unless it gets to plus 1 V here. So, once that signal goes once, just once over, even a smidgen over, just like our uh our issue before with 0 V, even you know, a a microvolt, a nanovolt over, whatever it is, the first time it does that, it'll switch down like this and the output will then switch to minus 10
+context after: V down here. What have we got in our voltage divider? Instead of having plus 1 V here, because we've got minus 10 V here, we're going to have minus 1 V here and our reference voltage is changed.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: And likewise, if you went down from 5 volts down to then the same mirror thing would happen with P1 and P3 at the top. They would act as a voltage dividers between VCC and ground.
+TEXT: So, that voltage divider of M1 and N3 then biases uh the source of N2 there to a particular threshold level, which then when it transition and then if you raise the input voltage even more, it transitions through that and switches that on and boom it flips the trigger point over and and the mirror starts to happen with the P1 and P2 and P3 at the top.
+context after: It's a very clever system. I love it. And then of course uh parts that on the output you'll see that out is in the middle there. Then the other two P4 and N4 there are just another inverter with a and then an output driver using P6 and N6.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: discharge curve here, it won't instantly go back there, it'll go through both thresholds, and that'll change the output waveform D to be different from just an inverted version of input signal B here. And that will start to affect the smoothing value that we'll look at
+TEXT: in part E here. So we get our output signal D, which is a square wave, once again based on our input 50-60 Hz waveform, and it just smooths it out between the threshold voltages of this Schmitt inverter down here, based on the value of these two resistors need to be set, just to put it smack in the middle
+context after: of the threshold voltage. So once the input goes above a certain level, and that's to get rid of any issues with like a duty cycle, if noise does get through and it's not the correct duty cycle, then it probably may not actually reach the threshold voltages or something like that.
+
+[961] EEVblog #961 - Monkey Debouncing — Dave Jones (explains)
+context before: aguncer on that if you hadn't So there you go, that's certainly worth watching out for. When you're testing monkeys like this, they're pesky little things, let me tell you. So through a combination of settings now, I seem to have got a system that
+TEXT: counts reasonably well. It counts, you'll notice that it counts up on the 1.5 volt threshold voltage set, and I've got medium sensitivity on this, and positive rising edge, I've got the 100 kilohertz filter on, so it's only counting cycles when he actually goes through that one cycle like that.
+context after: That's if, that's what you wanted, if you wanted to count the actual clicks here, adjust the RC time constants to do whatever. But yeah, it's kind of a tricky business. Now of course there's another way to do this, obviously if this input was going into a Schmitt trigger of course, you've got to have it going
+
+[204] Designing a Li-Ion Battery Gauge with the LM3914 - EEVblog #204 — Dave Jones (explains)
+context before: So, that's a very basic very basic just a window comparator or a bar graph dot comparator type thing. And it's got an internal voltage reference, which we'll take a look at.
+TEXT: It's got the power pin, ground pin, and not much else. Just the upper and lower threshold voltages, which go directly across the directly across the divider resistors here, which determine the individual voltage thresholds for each of those comparators, and then in turn each of those LEDs.
+context after: It's very basic stuff. You can build up something like this just using just using a bunch of comparators yourself and and the resistors and things like that, but it's all built on the one chip.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: in part E here. So we get our output signal D, which is a square wave, once again based on our input 50-60 Hz waveform, and it just smooths it out between the threshold voltages of this Schmitt inverter down here, based on the value of these two resistors need to be set, just to put it smack in the middle
+TEXT: of the threshold voltage. So once the input goes above a certain level, and that's to get rid of any issues with like a duty cycle, if noise does get through and it's not the correct duty cycle, then it probably may not actually reach the threshold voltages or something like that.
+context after: So that's just another mechanism to sort of filter things out a little bit. And then it double inverts that, or buffers it, to drive the output transistor which drives the LED. And that's pretty much all there is to it. And that is the basic operation of one of these voltage detection sticks.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: threshold voltage of your Schmitt inverter here. And then it's AC coupled and pulled high, and then that's for basically when there's no input voltage there. So it's pulled high, and then the input to this Schmitt inverter goes into this diode and resistor and cap arrangement here, which sort of
+TEXT: smooths out the AC voltage and then puts it through another couple of Schmitt inverters and turns on the transistor. So basically the output transistor and this LED turns on when the input voltage from the antenna is above a certain threshold there. And that's all there is to it.
+context after: It's pretty darn basic. If we take a look at the waveforms here from the patent, we can translate those to the Davecad schematic, and I've labelled them exactly the same as the points on the waveform. So point A is our AC input, and that's a reduced
+
+[1676] EEVblog 1676 - Lab Timer HACK — Dave Jones (explains)
+context before: Yay! Winner, winner, chicken dinner. So, that works just fine. And so, yeah, it'll now beep at me. I can come along and I can read that reading off there.
+TEXT: So, let's find out now what our essential trigger voltage is. Trigger voltage isn't the correct word, maybe threshold voltage on our input here to overcome Well, to switch on the transistor here to overcome the the voltage of the Zener diode the drop on the Zener diode here.
+context after: As I mentioned, it's probably going to be a smidge under um that 10 volts cuz they're not precise and it has to do with the resistor current and everything else.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: voltage input dependent upon the voltage divider there. And B is of course the squared up input, because that's what a Schmitt trigger does. A very slow-changing, varying input signal as it transitions through the Schmitt trigger threshold levels squares up the input. So you sine wave in and you get a square wave out, assuming it meets
+TEXT: the threshold voltages. So what's point C here doing? Why have this resistor and cap at all? It doesn't seem to make much sense, because if you look at signal D here, this output D is just an inverted signal of point B here. And if you are talking about the 50 Hz signal
+context after: and these values are set at a specific design value, then that's exactly what you're going to get. B and C, you can actually do without those components, assuming that the input is exactly on frequency and exactly doing the right thing that you want to actually detect.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: And it probably doesn't make much sense at the moment, but it might when we start looking at further on with what's happening with point E here. Because if, let's say we've got a very low frequency input, a low frequency input lower than our detection frequency, then C, if you look at this
+TEXT: discharge curve here, it won't instantly go back there, it'll go through both thresholds, and that'll change the output waveform D to be different from just an inverted version of input signal B here. And that will start to affect the smoothing value that we'll look at
+context after: in part E here. So we get our output signal D, which is a square wave, once again based on our input 50-60 Hz waveform, and it just smooths it out between the threshold voltages of this Schmitt inverter down here, based on the value of these two resistors need to be set, just to put it smack in the middle
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: Well, unfortunately the Schmitt trigger configuration doesn't give you a free lunch here. It doesn't let you escape that this if you have a slow changing input it still does actually increase the current but of course it doesn't oscillate and solves all that sort of problem.
+TEXT: But, you can see here that this is the supply current in milliamps versus the input voltage in volts for a Schmitt trigger gate here. And you can see that at various threshold at the two threshold voltages there it sort of peaks at you know at much higher current.
+context after: So, yeah if you ramp it through it can still cause little current spikes. So, yeah you don't completely get away with that unfortunately. So, there you go. I hope you enjoyed that look at the Schmitt trigger and hysteresis.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (explains)
+context before: intrinsic so in in a a power MOSFET um and and in any MOSS device you put it in space and the weakest element is the O the oxide uh because silicon dioxide traps electrons.
+TEXT: So when you have gamma radiation um which is basically electrons or even charged protons um they all will trap in that oxide and the more that trap the lower and lower the threshold voltage goes until it goes below zero and it becomes a nonfunctioning device.
+context after: >> Oh so it's a buildup thing. It builds up. >> Yeah. Well, that's one point. >> Interesting. >> Second problem. Second problem is that um if you have a massive element like a like a neutron or proton or gold or some other heavy element, xenon, whatever, and they come crashing into your device, um it cracks the crystal.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: P3's going to be off and N1 and N2 down the bottom of the pole totem pole there are going to be off. And and N3 is going to be on.
+TEXT: But if we start to raise that input voltage by a little bit, let's just say 1 volt for argument's sake, then it sort of reaches a threshold where N1, which was off before, actually switches on and that forms a voltage divider between VCC and ground with N3.
+context after: So, N1 and N3 are now forming that voltage divider similar to what the resistors were doing in that analog type configuration. And a similar sort of thing's happening here as that input voltage rises.
+
+[713] EEVblog #713 - Voice Recognition - 1980's Style — Dave Jones (explains)
+context before: So we need to square it up, i.e. clip the signals. So this is what we've got this for, this is a comparator. And you should recognize that instead of having negative feedback, like here, we've now got positive feedback. Positive feedback is a comparator.
+TEXT: So they've got the 10 meg resistor here in combination with this adds a bit of hysteresis there, and we're also setting this offset here. And it's important to have this threshold value actually lower than our offset value there. So that's all that does.
+context after: It squares up the signal, feeds it in there. It's not going to be a perfect square wave, but it's going to be good enough for the purposes here. So we're just using another 1 quarter of our LM324 op-amp as a crude comparator. Ideally you shouldn't use op-amps as comparators,
+
+[1746] EEVblog 1746 - The 555 is 55 Years Old! — Dave Jones (explains)
+context before: It's a standard uh one-shot timer, but instead of having the uh timing resistor between pins seven and eight, I've actually tied pins seven and eight together and put the timing resistor here.
+TEXT: And then our timing RC circuit charges straight away like this and as soon as it reaches the threshold voltage, that uh 2/3 point, uh the discharge transistor open collector jobby turns on and wah, wah, wah, wah, dead crowbar short right down to ground.
+context after: Anyway, try it at home. The killer one-shot. Win or win it, chicken dinner. Catch you next time. >> Mhm.
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (explains)
+context before: It'll still be high for I don't know, depending on the RC time constant, you might point 0.5 seconds or something like that that you want this point to be high.
+TEXT: And then, once it reaches a threshold voltage of the transistor, it will switch the transistor on and pull that to ground. And if you're still holding down that switch after this transistor switches on, well, it's going to oscillate exactly like before.
+context after: But, assuming you can push it quicker than half a second whatever your time constant is, then this transistor will be fully on. And then, this the functionality of this switch changes from an on button to an off button.
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: the position of our trace there, it's a little bit laggy, but it works. And we can't change the height of the thing though, it's a fixed height like that, but eh, it seems to work. And we can display what things are actually displayed here, the endian, the hex mode, the label,
+TEXT: and all that sort of stuff, whether or not we actually want the line on or off. And then we can set our threshold voltages, check this out, very comprehensive, no problems whatsoever there. And then we've got an event table as well, we can call that
+context after: up, and event table on, bingo. And we can see all the events. So if we run this, we can see that actually changing in real time there. And yes, you can actually trigger off your serial decoded data as well. If we go into the trigger menu here,
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (explains)
+context before: The number was just a, you know, next in their sequence or something like that. I don't know. It's got nothing to do with it. But, by coincidence, it does have 555 in there.
+TEXT: And that's just a resistor divider in there to generate the threshold voltages. And of course, the control voltage pin is directly connected to one of those taps here. Now, what I've got is basically the same diagram that's on my 555 timer shirt.
+context after: This is the typical internal block diagram of the 555 timer, and we'll see how these modules relate to these items in here, like the threshold comparator. There's the comparator, of course, uh connected to the threshold pin.
+
+[1604] EEVblog 1604 - BEWARE! Multimeter Burden Voltage — Dave Jones (explains)
+context before: Well, that multimeter could easily drop, say, 0.3 V, for example. It can be quite high. It can be up to like a volt on some multimeters. It can get quite high.
+TEXT: And that means that your circuit is no longer now getting that 5 V, it's getting less than, say, the 4.75 V, which is your typical lowest threshold voltage of say a TTL circuit, for example, and your circuit could stop working.
+context after: So, your multimeter is a burden on your circuit. So, that's why it's called burden voltage. But, check this out. What if I change from milliamp range over here to microamps?
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (explains)
+context before: Oh. Oh. Just feel the silicone. These leads are gorgeous. Oh, excuse me, I'm going to go in the corner and just fondle them. And I really like the setup in this thing.
+TEXT: If you're in constant current mode, for example, you just go shift, setup here, and you get all the stuff. You can set your range, you can set your high threshold voltage, you set your low, you can set your slope rate as well.
+context after: Check it out, 5 amps per microsecond. That's the up, you know, when it rises back up to compensate, and when it falls down, you can actually set that. Pretty beautiful.
+
+[748] EEVblog #748 - How Do Transistors Work? — Dave Jones (explains)
+context before: You can see the black marker, it starts off at zero there, goes up, and you can see the channel effectively turning on in this electron density map on the right-hand side.
+TEXT: This is a 3D electron density map. It's awesome. I don't know how they actually uh got this, but it's fantastic. And you see, as it goes up and reaches a threshold voltage, in this case of about 0.45 uh V or thereabouts.
+context after: This is a real low gate threshold voltage uh nanowire MOSFET, it's called. And you can see the electron channel then just like just sort of bang, there it goes.
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (explains)
+context before: You got spy and you got I squared C and LIN and all sorts of the CAN bus and all sorts of things there. And its maximum data rate is 15 megabits per second.
+TEXT: So I've had to lower the data rate to 15 megabits per second on the pattern generator. No worries. One annoying little thing. I wonder why it didn't work and then I discovered that the threshold was 0 volts by default.
+context after: So I yeah, no. Why can't you set that by default to like one division of what your current scale is or something like that. Anyway, there you go. Decode format.
+
+[748] EEVblog #748 - How Do Transistors Work? — Dave Jones (explains)
+context before: So, basically, nothing conducts if there's no positive voltage on the base here. And you're familiar with that in how your basic transistor circuits work. Now, of course, we come to our uh our our typical diode curve here, which you should be familiar with.
+TEXT: Once we get to about 0.6 V is the threshold voltage, it doesn't conduct any current until we get to around about that point. And then, once we get above 0.6 V, it starts to rapidly conduct up like that.
+context after: So, as the base-emitter voltage rises like this and goes up like this, uh the depletion region in here gets narrower and narrower and narrower until it flips back and overcomes the effectively like the threshold voltage here.
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (explains)
+context before: They're all at the same DC voltage level. Sorry, I should have mentioned that if it's not obvious on the screen. So, 1 2 and 2 and 1/2 volts there.
+TEXT: So, it's just around the threshold voltage of there, of course, which is what you'd expect. So, that's been trimmed with VR1 and VR2, our sensitivity trim pot, which I'm adjusting now.
+context after: So, there's not much not much play in that at all. And if we bring in some metal here, there we go. Can see it see it change, but there's not a huge amount in that.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: This comparator is supposed to be working work to down to 2 V. Well, let's try it. Our LED is off at the moment. There's our 2 V supply, plus minus 1.
+TEXT: There's our input voltage. Now, because um our threshold voltage is going to change now, so we expect half of the split rail, so 0.5 V um well, plus 0.5 V minus 0.5 V.
+context after: So, let's go down to minus 0. 5 V and it should switch on. At around about Well, hopefully. Let's try it. Will it Will it Is it still going to be Oh, yeah, it's still still operational around about the 0.25 V Yeah, there we go.
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (explains)
+context before: So, that's going to be that value is going to be dependent on our um LC tank circuit here. Now, here's the interesting bit. This purple waveform here is the output of that smooth DC output going into our comparator there across C2 there.
+TEXT: And if we change the threshold, you can only see it changes only a tiny amount and that's at 2 and 1/2 volts by the way. 500 They're all 500 millivolts per division.
+context after: They're all at the same DC voltage level. Sorry, I should have mentioned that if it's not obvious on the screen. So, 1 2 and 2 and 1/2 volts there.
+
+[1688] EEVblog 1688 - Constant Current Sources EXPLAINED + DEMO — Dave Jones (explains)
+context before: But, you can see that uh they're not on. There's no current going through. Even though I've got one uh milliamp set here, this is a source. It's supposed to, you know, force out that 1 milliamp of current out of here.
+TEXT: Well, where is it? It's not there because these uh the threshold voltage of these uh LEDs has not been met yet. So, we have to dial up our compliance voltage here.
+context after: Look, we're still We're at 33 V now. That's still not enough to get any current. 33, 37 37 Wait. Oh, look. Current's starting to go up there. There you go.
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (explains)
+context before: So 200k in series via 1 micro farad and that's the charging waveform, so you can use your formulas to calculate how long that's going to take to charge up, and then it is when it reaches the threshold voltage, if we have a look at our internal block diagram of a 555, the comparator, because of the 555 K resistors in there, it's 2/3 the threshold comparator is 2/3 of the
+TEXT: supply voltage. In this case, the supply voltage is 9 V, so our threshold voltage is going to be 6 V. And is it? Here's ground. We're at 2 V per division, 2 4 6.
+context after: It switches at exactly that 6 V threshold limit. And then, once that happens, our discharge pin kicks in, so our not Q output turns on the discharge transistor, which then discharges the current.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (opinion)
+context before: So we don't want that. We want to actually trigger off an an edge for one of the uh source channels and here's where you should label them. So that instead of having 1 2 3 4 like that, you should actually go to the effort to label them but ah, I'm not going to bother today.
+TEXT: Um and we'll trigger off the chip select. Of course, our chip select is channel four here and the threshold voltages, they're all okay. So let's go back into our trigger menu here and we want to trigger off channel four like that.
+context after: Bang, which will be our chip select. So there we go. Captured it single shot mode. Bang and there's our data. Ah, beautiful. Let's single shot capture that and as you can see our chip select is the top trace up here.
+
+[1653] EEVblog 1653 - Alkaline Battery Leakage Testing 2 - Electric Boogaloo — Dave Jones (mention)
+context before: And 13, 12, eight, 10, and nine are the pins for timer two. Basically, they're all on one side. So, along the bottom side there is timer one, along the top side there is timer two, and you got power and ground down there like that.
+TEXT: So, um yeah, very simple circuit that we got here. Um and let's just play around with the uh threshold voltage here. Now, of course, the triple five timer uh only operates down to 4 and 1/2 V Well, the the NMOS version of the CMOS version goes uh lower, but the uh NMOS version um only operates to 4 and 1/2.
+context after: So, I expect the Let me adjust the sup My mouse is dead. So, let's actually adjust the voltage here, and you'll see it should work down to Well, it should work down to 4 and 1/2.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (mention)
+context before: It's spec like it's advertised as having 2.5 ohms here, which is pretty high for an RDS on of a MOSFET. We're going to see much better later, but hey, it's good enough for a straight.
+TEXT: It's good enough for almost every, you know, simple application up to say a couple of hundred milliamps, something like that. It's got low input capacitance, 22 puff. It's got low voltage threshold, which we'll take a look at.
+context after: So, it can operate from low logic level stuff. And this was like game-changing back in like the 1980s, for example. Oh, you can drive the MOSFET directly with your 5 V or even three newfangled 3.3 V logic.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (mention)
+context before: So, if we load up the probe, which is drawing current, yep, it drops to uh 2. 75. So, you know, 250 mV, that's enough to detect. Um, so, oops, clip came off.
+TEXT: Well, there's your problem. So, that should be enough to detect, but of course we don't know exactly what the threshold levels is, how it uh you know, I'm pretty sure that's how it's doing the detecting.
+context after: Why else would you sense off the uh the the voltage for the probe other than to detect when a probe is plugged in? I don't I don't see any other way.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (mention)
+context before: Usually positive feedback is a bad thing in electronics. You usually don't want it, but in this case it's very very helpful because we can add Bingo, you might notice this looks somewhat like your negative feedback amplifier, but it goes back to the non-inverting input.
+TEXT: So, it's positive feedback. So, what this positive feedback gives us, and I'll go through working out these values in a minute, is it gives us not just that 0 V threshold voltage and 0 V is it.
+context after: Even if it's smidgen above or smidgen below, you get that oscillation. What we want to do is add two different threshold levels, the upper threshold level and the lower threshold level about that 0 V point or about 2.5 what we had in the circuit before.

@@ -1,0 +1,243 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: probe compensation
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 42 passages drawn from 30 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# probe compensation`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (explains)
+context before: It is not triggering, right, so okay, it's not triggering. That's why our data is not coming up. Okay, fair enough, but why the hell is it not triggering? That signal is there. Look, I'll, here we go, look, I'll plug this same thing over to here, okay, and let's do the bandwidth thing, there we go, there we go, look at that.
+TEXT: Okay, so that needs compensation, obviously, that's, you know, it's poorly compensated. But it works, yet I plug it on this scope, and it doesn't. And the exact same thing happens on channel two, when I set the source to there, and I've set it up, and look, if I actually plug in a signal here, there we go, I'm plugging in like a one mega square wave, it triggers.
+context after: No problems at all. And, like, if I go back to channel one, it's the same thing. If I go back to channel one, it's there. So bugger it, I've had enough of using this thing to probe its own clacker. Let's have a look now at hooking up the SPI line here.
+
+[1445] EEVblog 1445 - How to Simulate an Oscilloscope Probe in LTSPICE — Dave Jones (explains)
+context before: It's just It's It's run again. It just updated then. Um and Bob's your uncle. So, that's a handy tip if you ever see that error message, uh you know that something's floating, you're going to have to add a DC bias or another ground reference in there to handle it.
+TEXT: Now, how do we know this uh compensation value here of 22.5 pF? Uh once again, go back to the spec sheet here, and it actually tells you the compensation range is between 10 and 35 pF, so we'll you split that down the middle, and you get 22.5, and normally they have a series resistor in there of normally 68 ohms, but it's not going to make a huge difference.
+context after: Like, we can lower that to, you know, 1 ohm, and you'll find that this won't really run that again, and yeah, it's like it's barely changed. It Like, you'll you won't even notice it.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (explains)
+context before: the external divider building 6000 milliamp hour battery don't know what that is in watt hours and standby standby time a usable time of 4 hours so the claim I won't be testing that here it's it's not a bad form factor I rather like it I'm not don't really like trying to get this up it's almost impossible nice and neat fits on the bench don't know about the probes coming
+TEXT: out the top probably would have been better on the side but is what it is and on the top we've got a real clunking power switch a micro USB probably would have liked to see an USB C these days but a lot of USB micro fanboys out there we've got a 1 kilohertz test signal on here nice for compensating your time stamp probes just two inputs no probe
+context after: detection of course 140 US dollars you wouldn't expect it over I guess over load I guess is that like some peak I don't read the manual hang on anyway this thing is a thin R&D weapon it's anti burn it's humanized it's hydromatic why it's grease lightning.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (explains)
+context before: So, it knows don't turn on any of that 50 ohm termination rubbish and the probe set up here it's automatically detected the serial number. It knows it's times 10.
+TEXT: So, if I hook my probe up to the compensation pin I can compensate probe for channel one compensate probe and it'll go and do its business. It'll compensate. You don't have to muck around with any little tweak adjustments with your tongue at the right angle and now it's matched that compensation setting with that probe.
+context after: So, now it has that setting in there and if we plug that probe in it knows that it's compensated. We've already compensated that probe with this channel. So, if we plug that actually into channel two over here it'll know aha it's now default compensation that is not compensated.
+
+[Y7t6BIhBZhc] High Frequency Active FET Probing DEMONSTRATED — Dave Jones (explains)
+context before: Some overshoot. And so, you know, there are differences in probing right there. But at the moment, this is the loading of the line with a 1 picofarad, 1 puff active probe which costs a couple of thousand dollars. Okay, now I'm going to use my
+TEXT: 500 megahertz passive probe here. It's the N2843. It's 11 picofarads, okay? And yes, I've compensated this. You compensate it with your probe compensation on the front. So everything's hunky-dory. I'm using my low inductance, high frequency ground probe attachment. So that's equivalent to what we had before.
+context after: So we should get, because we've only got a 500 bandwidth scope here, then the bandwidth of the probe isn't really going to matter that much. Hold my tongue at the right angle, and probe this. I think I got it. But here's the interesting thing.
+
+[GS0WqUKZ-3c] PCBite Handsfree Oscilloscope Probe! — Dave Jones (explains)
+context before: Okay, the first thing you're going to want to do, of course, is to actually uh calibrate this on your scope as you would with any new probe. So, we hook that up.
+TEXT: We have a look at our vertical. There we go. It's a little bit roundy. So, using the supplied adapter and then these are termination adjust instead of top probe adjust, hence why they can get away with the times one because if all if all the compensation was in the top anyway.
+context after: Yeah, there you go. So, no dramas at all. That's good enough for Australia. All right, I set up a real probe in example here and I've only got two probes.
+
+[707] EEVblog #707 - Rigol Oscilloscope Probe Performance — Dave Jones (explains)
+context before: But apart from that, they're basically the same input capacitance. And there is one difference to note between the probes. The 2200 one is compensated at the probe tip here.
+TEXT: There's a little adjustment and the 3300 is compensated at the end of the cable. It's neither here nor there. They're just different ways to do it. These higher frequency probes, it's most common to have them compensated at the connector end here rather than on the probes.
+context after: Just the way it is. Now, the ground leads are different lengths. This is the 3300 350 meg probe is actually longer than the RP2200 and that's going to make a difference if you're probing like that.
+
+[1715] EEVblog 1715 - Euler Precision eSAP-30 3GHz Active Probe REVIEW — Dave Jones (explains)
+context before: But what I'd have to do here is actually bodgege one of these um like actually cut off the flat flex and then just have like a pin extending out there.
+TEXT: I can actually try that. And I can show you that by just fiddling with the probe here. I can just put my fingers on there. Look at that. [laughter] Cuz we're doing some basically some compensation there on that probe and we're changing its characteristic response.
+context after: It's all about the probing. All right. But I just cut off that. Added a little uh pin there. So, we're not too shabby. And this will u This is not as long as it looks.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: live in a little window, plus exactly how to connect it to the input here. It's just lovely. Love it. And it actually tells you whether or not you need to align it. I've never seen this feature in a scope. That's brilliant, because, you know, you've already
+TEXT: it's already been tweaked. Fantastic! And you can go full screen if you want on that. And if we tweak it, let's see if it requires adjustment. So it shows us that we have to adjust the low frequency one on the probe itself. These are switchable x10 probes.
+context after: And then we can go to the next step, so we can adjust that. I mean, we can tweak that live. There we go. I'm tweaking that with my screwdriver. Tweak that live, and that's beautiful. And then next step, the high frequency compensation on the
+
+[1362] EEVblog #1362 - A Very Skookum Mailbag — Dave Jones (explains)
+context before: it's going to be like more than adequate for most uh you know general purpose users okay the first thing you're going to want to do of course is to actually uh calibrate this on your scope as you would with any new probe so we hook that up we have a look at our vertical there we go it's a
+TEXT: little bit roundy so using the supplied adapter and then these are uh termination adjust instead of our top probe adjust hence why they can get away with the uh times one because if all if all the compensation was in the top anyway yeah there you
+context after: go so no dramas at all that's good enough for Australia all right I set up a real probing example here and I've only got two probes of course you can go more complicated I haven't checked the data sheet for this chip here I just like absolutely random example but it looks like
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: it's already been tweaked. Fantastic! And you can go full screen if you want on that. And if we tweak it, let's see if it requires adjustment. So it shows us that we have to adjust the low frequency one on the probe itself. These are switchable x10 probes.
+TEXT: And then we can go to the next step, so we can adjust that. I mean, we can tweak that live. There we go. I'm tweaking that with my screwdriver. Tweak that live, and that's beautiful. And then next step, the high frequency compensation on the
+context after: cable end, the connector end, down here. So we have to adjust those, and you can see, we've got some ringing in there. We can fix that. But of course, no matter what we do to the adjustment down in here like this, we're always going to get the
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (explains)
+context before: But at the moment, this is the loading of the line with a one picofarad, one puff active probe which costs a couple of thousand dollars. Okay, now I'm going to use my 500 megahertz uh passive probe here.
+TEXT: It's the N28 uh 43. It's 11 picofarads. Okay? And yes, I've compensated this. You compensate it with your probe compensation on the front. So, everything's hunky-dory. I'm using my low inductance, high frequency uh ground probe attachment.
+context after: So, that's equivalent uh to what we had before. So, um it we should get and because we've only got a 500 bandwidth scope uh here, then the bandwidth of the probe isn't really going to matter that much.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (explains)
+context before: And they come in two different styles, one that has the high-frequency compensation adjustment up here on the probe. And the other type has it down on the base here.
+TEXT: Usually your higher frequency ones have it down there. It's neither here nor there. Does the same job. And for all these types of passive probes, you want to compensate them, and you do that by hooking up your probe in times 10 mode.
+context after: Doesn't do anything in times one cuz the compensation cap is for that 9 meg resistor in there for the times 10 mode. Hook it up to your compensation output, which just generates a 1 kHz square wave.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: So man, this I keep doing this keep hitting these buttons wrong. So let's get it way back down so it triggers properly. There we go. It should Yeah, it triggers now, but look at the undershoot and the overshoot.
+TEXT: It's it's absolutely useless. There's no way There's no compensation adjustment on here or on the probe. You can't adjust this thing. It's absolutely useless for any high frequency detail at all for a 1 MHz square wave, right?
+context after: And this thing's supposed to have a 40 MHz analog bandwidth. You got to be kidding me. And what we've got down here this 200 MHz I think that's the sample rate I.E.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (explains)
+context before: Oh! Check this out. This is absolutely fantastic. Now, what we've got here, the orange waveform, of course, is our reference active FET waveform. That's a $2,500 active FET probe.
+TEXT: Yes, it is compensated because you do still have to compensate them, and it stores it internally cuz it knows the serial number of the probe, etc. And the yellow one is Dave's do-it-yourself couple of buck resistive probe.
+context after: Look at this. What's going on here? Well, it's obvious that what's happening at this point right here is that the bus is actually going open or something. I don't know the exact architecture of what's, you know, the pin I'm actually probing.
+
+[ByUiOk00K0U] OWON 14bit XDS3202A Oscilloscope Unboxing & First Impressions — Dave Jones (explains)
+context before: You want your trigger controls lined up with your trigger BNC here. Buttons down the side and the bottom, which means twice the complexity, probably. USB on the front. Are you serial decoding print default?
+TEXT: Okay, let's whip these off. What One of the good things is got ourselves times 10 probe adjust here. So, that's very nice. Excellent. A lot of lowish cost scopes don't include that, so that's uh that's a bit of a win.
+context after: And yeah, anyway, vertical control trigger control should be lined up with your trigger. Look at this. It's even got Like I was going to say, like you know, nicely try like external trig.
+
+[1718] EEVblog 1718 - Cheap 1GHz Oscilloscopes are Useless? ($5 DIY 1GHz Resistive Probe) — Dave Jones (explains)
+context before: Woah! Check this out. This is absolutely fan-freaking-tastic. Now, what we've got here, the orange waveform of course is our reference active FET waveform. That's a $2,500 active FET probe.
+TEXT: Yes, it is compensated because you do still compensate them and it stores it internally because it knows the serial number of the probe, etc. And the yellow one is Dave's do-it-yourself couple of buck resistive probe.
+context after: Look at this. What's going on here? Well, it's obvious that what's happening at this point right here is that the bus is actually going open or something. I don't know the exact architecture of what's you know, the pin I'm actually probing.
+
+[707] EEVblog #707 - Rigol Oscilloscope Probe Performance — Dave Jones (explains)
+context before: termination. So, I'm going to use each probe here. Yes, we're going to ditch these ridiculous antenna earth leads, and we're going to use one of these probe to BNC adapters like this so we can get right on there and probe the signal.
+TEXT: Let's give it a whirl. So, first up, the RP2200, the probe that actually comes with the Rigol DS1054Z. You plug it in, and yes, I have got my little adjustment tool going in there and compensated that 1 kHz signal.
+context after: Okay? So, we zoom into that, and we notice, hey, look at that. We're getting a couple of wigglies on there. That's going to be normal because of this function generator may not be perfect.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: So, it does know what it's actually connected. It even pulls a serial number over. I've got number eight. Beauty. I guess I haven't sold many yet. And these are the probes you get with it.
+TEXT: 500 meg bandwidth ones. So, of course, you can't get 1-gig passive probes. That's really, really difficult. They're end compensated as opposed to probe compensated ones times 10 only, which is what you expect.
+context after: And that looks and feels actually quite nice. And it comes with a BNC adapter. I find those really handy. That's very nice. And your requisite easy hook extra probe tip and the high in low inductance high inductance low inductance grounding point.
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (explains)
+context before: That's that's nice fast updating. I'm liking that. Yes, we can pick up the uh switching of the LCD here. Fantastic. Look, it's almost like an Etch-A-Sketch. Okay, it's uh oh, it's automatically gone into roll mode.
+TEXT: Groovy. There's a lot of uh auto roll mode aficionados out there. That's not too shabby. All right. I'm going to stick it up the clacker. And so we are generating our well, the probe's not compensated.
+context after: Change that to times one. There you go. But just imagine that is compensated. That's just like 1 kHz probe compensation when you're in a oscilloscope mode. I wonder if it does actually uh change.
+
+[1718] EEVblog 1718 - Cheap 1GHz Oscilloscopes are Useless? ($5 DIY 1GHz Resistive Probe) — Dave Jones (explains)
+context before: So, you know, there are differences in probing right there. But, at the moment this is the loading of the line with a one picofarad one puff active probe which costs a couple of thousand dollars.
+TEXT: Okay, now I'm going to use my 500 megahertz passive probe here. It's the N28 43. It's 11 picofarads. okay? And yes, I've compensated this. You compensate it with your probe compensation on the front.
+context after: So, everything's hunky-dory. I'm using my low inductance high frequency ground probe attachment, so that's equivalent to what we had before. So, we should get because we've only got a 500 bandwidth scope here, then the bandwidth of the probe isn't really going to matter that much.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (explains)
+context before: When we plug this probe in like this, it automatically detects and goes to 500 mV per division. Brilliant. You can't come at guts. Murphy's not going to get you with these probes.
+TEXT: And they also come with a compensation adjustment down the bottom here. Sometimes they might have a high frequency adjustment as well. But these passive probe designs can go higher than that.
+context after: This is, I believe, correct me if I'm wrong, the highest bandwidth passive probe on the market, the Tektronix TPP 1000. It's a 1 gig probe. Look at that. Once again, 300 V rated, exactly the same 10 megaohm input impedance, but it's got lower input capacitance.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: I don't know if you saw that on camera. Yeah, there we go. It's just glitching there. And um it's Yeah, you see that that ripple superimposed on there that's not down the bottom like this.
+TEXT: It's crazy. And one thing of course this thing doesn't have the probe does not have a compensation adjustment on it. So I think we'll find that's going to be an issue if we up the frequency.
+context after: Okay, I've turned on a 1 MHz square wave at the same uh Look at the what? Oh man, okay. Well, that's yeah, that's the undershoot. All right, so let's uh Let's scale this thing back out.
+
+[778] EEVblog #778 - Oscilloscope Vertical Confusion — Dave Jones (explains)
+context before: You just go in here, hit that, and you go to times 1 because if you're using a times 1 probe, that's what you need to hit. And bingo, it drops from 10 mV per division down to the the of 1 mV per division.
+TEXT: That's all it is. So, for this volts per division setting here on your oscilloscope to be correct, you must ensure that your probe setting here actually matches what you switch on here.
+context after: If you have it on times one, you use times one. If you go and then switch that to times 10, you have to go in here and switch it to times 10.
+
+[1119] EEVBlog #1119 - Designing a 1kV Isolated Oscilloscope — Dave Jones (explains)
+context before: And in our own front-end, we found that when we switch ranges that we weren't having beautiful uh impedance uh keeping the impedances exactly the same. So we have had to add an extra little switch that switches in a bit more impedance so that both channels are exactly the same.
+TEXT: Got it. Now, probe designs are usually um you can either get a top probe compensated up here or compensated down there. Which one did you go with? Uh this is compensated down here.
+context after: Oh, right. Um Oh, no, there's Well, there's no there's Yes, it's isolated. Hold on there. No, no, that's right. no trimmer. You can't trim Oh, you can. You can.
+
+[1185] EEVblog #1185 - Dumpster Tek 500MHz TDS540D Scope — Dave Jones (explains)
+context before: I think that was what was turned on there. Oh, look. We can set color display here. Um but it's It ain't color. It's just like a black and white a grayscale thing.
+TEXT: So, the amplitude looks right there. It's a supposed to be 100 mV per division times 10 probe. And uh it's looking fine. I haven't compensated that probe on this scope of course.
+context after: That's why we see a bit of um overshoot there. But But yeah. Um that's working. Okay, I just plugged it into channel two. I just ran the auto set.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: There's like a one wire chip in there that identifies the probe. And you'll notice that there's no compensation adjustments on either on the end that plugs in the scope or on here.
+TEXT: There's no traditional trimmer caps on here cuz these probes, what you do is you hook them up to the calibration port on here, and then you run the auto calibration routine.
+context after: It identifies these probes. It knows the serial number, and it actually stores it inside the scope here. So, if we actually go over here, oh by the way, I'm using the Tektronix MDO 3000 here because this is the highest bandwidth scope I've got in the lab, 1 GHz bandwidth, and it has the matching best probes I have here in the lab.
+
+[707] EEVblog #707 - Rigol Oscilloscope Probe Performance — Dave Jones (explains)
+context before: So, 17 puff as opposed to a slightly lower 16 puff on the 350 MHz bandwidth as opposed to 150 meg and of course, you'd expect the corresponding rise time to be different.
+TEXT: But apart from that, they're basically the same input capacitance. And there is one difference to note between the probes. The 2200 one is compensated at the probe tip here.
+context after: There's a little adjustment and the 3300 is compensated at the end of the cable. It's neither here nor there. They're just different ways to do it. These higher frequency probes, it's most common to have them compensated at the connector end here rather than on the probes.
+
+[441] EEVblog #441 - How To Track Down Common Mode Noise — Dave Jones (explains)
+context before: So, our performance has gone from, you know, pretty, you know, uh sort of fairly ordinary. We're still at the same uh volts per division, 2 mV per division, but much cleaner with the scope probe.
+TEXT: Now, let's put it on times 10, and then we have to uh compensate. We've got to go in here, and we've got to turn that to times 10, and then we're on 20 mV per division.
+context after: We've got to uh we can't actually go down to 2 mV per division because we're we have to be 5 mV per division, and it's higher. Why is the noise higher on times 10?
+
+[707] EEVblog #707 - Rigol Oscilloscope Probe Performance — Dave Jones (explains)
+context before: So, let's try some other scopes as a comparison. I got the Rigol DS2000 series scope. This is a 200 MHz bandwidth, but because the bandwidth of the scope is going to matter, the good thing about this is that it does have a 100 MHz bandwidth limit.
+TEXT: So, we've turned that on and because each oscilloscope is different and different input capacitance, we have to go in there and adjust the probe for each and every one.
+context after: So, each uh probe we do on each different scope, we have to re-compensate. So, there's our RP2200 there. Look, looks practically identical. Let's not quibble about any minor differences in there, and you'll see that if we uh turn the bandwidth off, we'll get some higher frequency content in there because we're going to get extra ringing due to the now 200 MHz bandwidth, but we're using a 150 MHz
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: So, you know, it's a trade-off. But, hey, your scope already has these. And I've got my low impedance uh ground clip on there as well. And I'm just going to calibrate this sucker.
+TEXT: And that's a little bit off, so we'll just uh tweak the probe with our tongue at the right angle and get a nice square wave on there. So, we'll just tweak that.
+context after: Tongue at the right angle. Ah, there we go. Bobby Dazzler. So, here we go. We've got the blue waveform, which is our uh times 10 passive probe, 500 MHz bandwidth.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: I prefer the soft buttons down the bottom. I never liked the the Rigol buttons down the side here, but uh anyway, standard coupling AC uh DC and ground. I can't hear a relay clicking there for those bandwidth limits is just your regular 20 meg.
+TEXT: Uh your probe adjustment easy to go through like that, very simple. Um but of course you can use your your selection uh adjust knob up here if you want.
+context after: And yes, you have to push it, but I don't I'm not really detecting any sort of uh you know, problems when you push that and it you know, being a bit dicky.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (opinion)
+context before: So, there you go, the QDSO from do-it-yourself for tools. com. 130 bucks. It's probably worth about 30 bucks, not even that. Don't waste your money on it. It's It's just It fails in practically every respect, which is a bit of a shame.
+TEXT: It's not a bad little case, not a bad little form factor if they didn't reuse the MP3 case. You know, it least came with a a proper scope probe, uncompensated of course, which was a fail, but I don't know, you know, these pocket scopes should be capable of doing the job if they just get the small things right, but this fails in practically every area.
+context after: Man, it just Don't bother wasting your money. I don't know how it compares with the DSO Nano. I have never physically tried a DSO Nano, so don't ask. Um jump on the forums if you want to discuss it.
+
+[559] EEVblog #559 - Auction Score — Dave Jones (opinion)
+context before: Get in there. Hang on. There we go. Power switch on. Just stuck a screwdriver in there. Not a problem. Look at that. And this one has nil calibration output.
+TEXT: Uh presumably the uh probe compensation on there. Well, let's try that out. It's got no calibration output, but hey, who cares? Both channel 1 and channel 2 still work a treat.
+context after: And that one's got a pretty recent cal on it, too. Nice. So, well, I've got nine of those uh Tek TDS 220 scopes, and now I have a nice Fluke Ah!
+
+[1638] EEVblog 1638 - NEW Keysight Megazoom V ASIC 1GHz HD3 Oscilloscope! — Dave Jones (opinion)
+context before: If you remember that from the old garage lab days, 50 ohm input of course, and the Keysight active uh probe interface hasn't changed from the uh 3000 series. But uh interestingly, uh the 1 megaohm input capacitance is 24 puff.
+TEXT: That's actually a lot more. Usually it's like uh the old one is uh 14 puff. So, uh I wonder if we have uh any compensation range uh issues there.
+context after: But uh yeah, we've got our probe compensation. And uh if you buy the two-channel model, you won't get those uh physically won't get those extra two channels. But that's it.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (mention)
+context before: I'm probing it, and I'm probing the exact same line on the Rodenschwartz scope itself, and I've got a And it's just, like, it's not, it's not doing anything. It's not doing anything. Look, type, trigger, edge, no worries, source, channel 1, we're in channel 1, negative slope, positive negative slope doesn't matter, it should capture something, and it's not capturing a damn thing.
+TEXT: It doesn't help that the single mode works back to front, it's really weird. Anyway, auto normal thing, like, it just, it stays high. That's it, what the hell? I've changed probes to the genuine Haymeg slash Rodenschwartz one, and it's the same thing, but this is the data line now, I was getting the same thing on chip select, just wasn't there, and now I'm getting this on the data line, which coincidentally is just continuously triggering now.
+context after: So, yeah, go figure, but you put it in, let's go over to channel 1 here, it still triggers, let's go into... I don't know, another menu, it's still automatically triggering, whereas we weren't seeing that before, but something's weird going on, this thing just will not probe the chip select line for some bizarre reason.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (mention)
+context before: And K, is that a relay there? Oh, look at that, shielded relay, too. And this most likely also handles the pattern generator output here. It's not a hugely complex pattern generator, but it runs almost certainly in there, surely.
+TEXT: Um and the probe compensation uh output here. Although, we've got some separate chips here for probe compensation, so I don't know. Haven't checked the features. Maybe it just does like, you know, 1-kHz output or whatever.
+context after: And I checked this again, it's not silicon, it's actually um hot snot uh glue or some sort of hot snotty type thing. And um this would have been added after they uh reflowed the chip because you want the chip floating when it reflows so that the surface tension of all the balls just pulls it um exactly into place.
+
+[690] EEVblog #690 - TDS220 Oscilloscope Autopsy — Dave Jones (mention)
+context before: It'd be Jeez, you'd be pretty desperate. Um and you know, just a safety thing like that mains isolation uh transformer, that's the biggie really. And it's working. Look at this.
+TEXT: I can get a channel two. I've got the probe compensation signal and you can see the square wave in there. No problems. This This sucker is alive. So, yes, there's the isolation transformer I was talking about there.
+context after: So, that's responsible for all of your safety between all your mains input and your uh and the rest of your circuitry, your BNCs, everything else. So, you know, but it is uh solidly mains earth uh reference or maybe not without the mod in it.
+
+[1124] EEVblog #1124 - Rigol 7000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Um What? 4 volts? I mean, you know, what's what? So, that's just uh yeah, uh some local regulation. That'd be for your uh analog supply here. Uh what else have we got?
+TEXT: Um and then just a uh probe compensation output. Um that's all your logic analyzer stuff. We'll take a close look at those. And then we've got our two uh signal generator outputs here.
+context after: So, where's all the circuitry for the uh sig gen? It doesn't seem to be there. Is it on the bottom? Beulah? Beulah? Copy that. I have no idea about an Adafruit fan, anyone, but it's not that like this thing is not that uh silent.
+
+[1492] EEVblog 1492 - $5 Oscilloscope Repaired! + Oz GIVEAWAY — Dave Jones (mention)
+context before: 157 seems excessive for a return. But anyway, there you have it. So, let's have a look at some other stuff. We've got XY mode. We can adjust our contrast here.
+TEXT: We've got save recall. It's got an SD card on the slot on the front, which is interesting. Micro jobby and single USB port. That's handy. Here you got your probe compensation as well.
+context after: Did this come with probes in the box? Yes, it did. So, we'll be throwing in a couple of switchable 100 meg probes as well for the lucky winner. And well, yeah.
+
+[1638] EEVblog 1638 - NEW Keysight Megazoom V ASIC 1GHz HD3 Oscilloscope! — Dave Jones (mention)
+context before: That's actually a lot more. Usually it's like uh the old one is uh 14 puff. So, uh I wonder if we have uh any compensation range uh issues there.
+TEXT: But uh yeah, we've got our probe compensation. And uh if you buy the two-channel model, you won't get those uh physically won't get those extra two channels. But that's it.
+context after: Could have added something there. Just saying. That could have been the sig gen output. Can't readily feel anything in there. There might be. There might be something. Is there a cutout there?
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (mention)
+context before: That is a beautiful PCB front panel. I've done a video on PCB front panels, but uh we've got our dual inputs here. Got two USB supplies here. Very handy to have two cuz you might want to do like two high voltage differential probes or you know external well or in this particular case power the uh two external active uh probes.
+TEXT: So yeah, very nice. Got our 1 kHz probe compensation there uh and one split out. Okay, that's where he said you could uh sync the two channels uh together.
+context after: And it's a 12bit jobby 2 gig analog bandwidth for 999 Yankee bucks. That sounds great value. It's going to be all be in the uh well it's not all in the software but you know software plays a good part.

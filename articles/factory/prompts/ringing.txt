@@ -1,0 +1,238 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: ringing
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 41 passages drawn from 32 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# ringing`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1735] EEVblog 1735 - Power Rail Probing & Oscilloscope DC Offset EXPLAINED — Dave Jones (explains)
+context before: But that is really only specific for noise measurements. But when you're actually measuring the actual signal fidelity of the rail, you want to see all these transients in here.
+TEXT: And you want it to be high bandwidth and super accurate. Cuz we're talking about high frequency information here. Look at this. We're 10 ns per division, right? These transients in here, this ringing on the power rail, is hundreds of megahertz and that depends on the slew rate of the circuit that you're trying to measure but even basic microcontroller stuff, you can get hundreds of megahertz.
+context after: And this of course depends upon which point of your power rail you're measuring in circuit, what sort of decoupling you've got on the rail, trace inductance, loop inductance and depending upon where your source and your load is and the whole loop area and all that sort of you know, signal fidelity stuff.
+
+[284] EEVblog #284 - Braun Toothbrush Teardown — Dave Jones (explains)
+context before: Probably a bit of hysteresis there. There we go. If you saw that, there we go. The LED is just fractionally switching on when it transitions through that voltage there.
+TEXT: And if we probe one of the coils there, check it out. That's the waveform we get and it's about 13 just over 13 volts peak-to-peak there. And if we freeze that, you can see you can see this ringing on the rising edge there and associated ringing on the lower edge with a flat top and a flatter bottom now as opposed to what we were getting when it was unloaded.
+context after: And a bit more interesting is if we probe the other channel, look at what we get. There we go. They're inverse waveforms. Look at that. I'll zoom in and give you a good look at that.
+
+[9V99J22aiLE] Full Discussion - Film Capacitor Failures with Ron Demcko from AVX — Dave Jones (explains)
+context before: Because you know, there's a ton of people say just one just one big 10 mic jobbie is fine because that's what these impedance curves here you overlay two impedance curves and you're supposed to get a broader lower inductor lower impedance path over a wider frequency range if you use two caps as opposed to one.
+TEXT: Certainly that's true and we've seen that as as a trend and seen people that want minimum ESRs and control the ESRs for ringing and all that. What's interesting is that the lower inductance parts uh the the LACC and the LGAs the ones we saw before those kind of change things a little bit where you might be able to use a big bulk cap and one of those.
+context after: Now the three terminal caps this this feed through concept it changed things a little bit further because you might have a a 10 microfarad cap but has a very low inductance.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: driving flip-floppies and things like that. You get metastability. I've probably done a video on that. And you can get multiple clock ruin your day. Multiple clock pulses, okay? And here's the input uh logic thresholds.
+TEXT: Once again, I've done videos on this. So, you've actually got this region between 1.5 V and 3.15 where it's an indeterminate region. So, So, you've got overshoot or undershoot, that's causing ringing, and it goes in this region, especially if it takes some time, for example, then yeah, you can get that can cause you multiple clock pulses.
+context after: But, here is our setup time, okay? So, what we need is serial serial, which is I believe that's the serial data, is it? Yeah. Serial data in, so the data in before the serial clock, it's got an up arrow, that means the serial clock going high, because it's active um high transition that it latches the data on, the setup time is typically, cuz this is a 974HC, this is the military version,
+
+[306] EEVblog #306 - Jim Williams Pulse Generator — Dave Jones (explains)
+context before: It looks messy, but that's, you know, the absolute lowest um you know, impe lowest inductance sort of uh build you can get. And of course uses a uh plug directly on here, which plugs directly in the oscilloscope, so there's no coax cable at all.
+TEXT: It it works a treat. And that's of course why he's getting no very little ringing. There's a little bit of ringing at the tail end there, but it's tiny as opposed to uh the one which me we measured, which is probably due to the uh long coax used on that thing cuz that's going to have some inductance.
+context after: Sure, it's working like a transmission line, but it can only go so far. So uh really, you need the utmost in signaling integrity. So if you're going to build one of these things, not only do you need to shield it, as you saw, the 50 Hz just uh swamped the thing.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: But, of course, um, if you want to capture it, we can just single-shot capture that, and we can look at these fast transients that are happening on our 5-V rail there.
+TEXT: And this is going to be, you know, pretty close to what's there. So, as you can see, this is sinusoidal. It's ringing here. So, this is going to correlate, if you had some other channels and you hooked on, uh, say the, digital signals, this is where a mixed-signal oscilloscope would come in.
+context after: Um, I I don't know what is causing that, but there's obviously some um switching fuss, switching transient in there. It's going to be very fast, and then we've got all this excess ringing, you know, at not It's not much.
+
+[316] EEVblog #316 - More PFANG, More 13GHz Scope, & More Pulser — Dave Jones (explains)
+context before: there. So, we got to fix that one, too. And that fix was dead easy, of course. I just put it to square wave mode and went, "Ah, be done with it." Here we go.
+TEXT: So, here's our here is our output pulse. There's some ringing. Certainly some ringing there. Some overshoot and then some ringing. So, that's not that great. But in terms of, you know, if we take sort of the average rise time of this thing, we are talking 250 picos seconds.
+context after: And uh let's turn on some average in here. And if you want to know how to do that on this thing, it's a it's a pain in the ass to use.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: But there we go. So, if we see any changes, we can just use the reference to highlight the Oh, by the way, yes, these are actually like real little things happening in the circuit because we're using proper high-fidelity high-frequency probing techniques here.
+TEXT: This stuff's actually happening. There's some sort of transition thing that's causing a ground like a little bounce, you know, in the ground system or whatever. This edge here is pretty good on the top of the clock, but look at the, you know, look at the ringing on that.
+context after: It's pretty terrible, right? And then undershoot on there, right? But this is actually what's happening in our circuit. This is real stuff because we're probing it properly. We know there's very little effect, you know, negligible half a bee's dick to do with our probes.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: And it's actually working at the moment, and have a look at the switching waveform here. And watch what happens if I change it down towards the bottom like that.
+TEXT: You'll notice there's much more ringing here, right? So, you've got to keep this up off the ground like that. That's why they supply the stand. And to befit our state-of-the-art optical fiber probe, we've got the no less state-of-the-art Rohde & Schwarz MSO 4 scope here.
+context after: So, I'll be operating that remotely. I've got a 5-V power supply here, and that just powers the 5-V in for the board. Let me turn that voltage down. Otherwise, I should be using my takeaway protection container here.
+
+[707] EEVblog #707 - Rigol Oscilloscope Probe Performance — Dave Jones (explains)
+context before: We're interested in the high frequency component of that. So, due to the input capacitance and slight mismatches and all sorts of things, we're going to see a wiggle like that.
+TEXT: Anyway, it doesn't the actual practicalities of that doesn't matter. We've got ourselves a good benchmark. That's 5 ns per division and that's pretty good. We just see a little bit of overshoot, little bit of ringing there and then it settles down pretty well.
+context after: Okay, now we've got our RP3300 probe. I've tweaked that with my tongue at the correct angle. Okay, so that probe's compensated and looky what we get. No problems whatsoever.
+
+[859] EEVblog #859 - Bypass / Decoupling Capacitor Tutorial — Dave Jones (explains)
+context before: because you can't put it right on the pins, there's going to be a little bit inside the chip with the bonding wires, for example, that actually, you know, because your die is like inside this, they've got to have the little bonding wire which goes
+TEXT: over inside the chip, that's got a little bit of inductance, and all that can actually lead to ring in on your signal like this, and you've probably seen that before, and then you can get some undershoot down here like this, and causes issues like this
+context after: it's all to do with bypassing, and the higher frequency content you've got, the more this becomes a problem and I'm not just talking about the signal frequency itself, it could be you know, 1 kHz, a 1 kHz square wave for example, not high frequency, as you would measure it
+
+[788] EEVblog #788 - Apple IIC Teardown — Dave Jones (explains)
+context before: Oh, what's going on? Well, yeah, I'm not sure that's actually trigger jitter. I think it's uh something genuine on the clock. So I'm not sure what's happening there. I don't know enough about the Apple uh timing chip to uh to know what that deal is.
+TEXT: There you go. There's the main processor clock and it's rock solid. Uh it's a little bit rounded off there because I've got uh my bandwidth limiter turned on and I'm not exactly uh probing this uh properly, hence all the ringing and crap like that.
+context after: But yeah, it's rock solid. So, there's something else. Um yeah, so the timing coming out of the timing chip, it's probably missing a pulse here or there for uh some particular reason.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: And then we can go to the next step, so we can adjust that. I mean, we can tweak that live. There we go. I'm tweaking that with my screwdriver. Tweak that live, and that's beautiful. And then next step, the high frequency compensation on the
+TEXT: cable end, the connector end, down here. So we have to adjust those, and you can see, we've got some ringing in there. We can fix that. But of course, no matter what we do to the adjustment down in here like this, we're always going to get the
+context after: ringing on here like this. Why is it so? Well, on the high frequency adjust? Because we've got this big antenna earth lead here. Ah, get rid of that! Trap for young players. What we've got is they've actually got a little hook here, we've got a little probe hook
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: Anyway, but by the time the signal gets over to here, it's not going to look nice and square. I'm going to expand it here, so let me expand it.
+TEXT: This is the clock line. It's going to look something like my horrible drawing here. It's going to have lots of ringing on it. Okay? And then when it goes down here, you're going to get undershoot, and it's going to look something like that.
+context after: Okay? It may be as bad as this, it may not. Actually, I guarantee that the clock going into here, Uh, if you're able to measure it, uh, properly, is actually doing something horrible like this and you'll get in multiple triggers.
+
+[1085] EEVblog #1085 - Bypass Capacitors Visualised! — Dave Jones (explains)
+context before: There we go. And let's see how this spectrum changes. We've got to wait for it. See how it just knocks it all down at the uh between like uh you know, 200 MHz and 500 MHz.
+TEXT: You can see how it's changed drastically by adding those bypass caps. You know, if I take them off, boom, the crap starts coming back. So, all this horrible broadband content here and here is caused by all this ringing in here.
+context after: Look at it. It's just just horrible. And the amplitude is, you know, incredibly high. So, it's it's just radiating like buggery. And well, that kind of stuff, yeah, you're probably not going to pass your uh CE FCC uh emissions compliance.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: And signal integrity has to do with the types of probe you use and the probing technique you use. So, the first thing you want to do above everything else is get rid of this antenna ground lead cuz that is an inductor.
+TEXT: Any piece of wire of any length is an inductor. You want to get rid of it. So, that's going to cause ringing on your waveform. You're not going to be able to measure the true waveform in your circuit by using one of these.
+context after: You're just not unless it's a sine wave, then you're okay. But when we're not, we're measuring TTL digital signals here. Not very fast, 6 MHz, but it doesn't matter if it's a 1 Hz signal, it doesn't matter.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: I've saved that as a reference waveform, so that's the white one. So, we'll be able to compare it to the high voltage differential probe, and that's a very good use of those reference waveforms for your scope.
+TEXT: If you've never used them before, this is what they're good for. You'll notice now that we're actually getting so much ringing and crap on that different from that differential probe that like we can't trigger off this.
+context after: So, I'm going to have to choose a different source. I'm going to have to choose the going to have to choose the actual output waveform down here. Now, we can see it.
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (explains)
+context before: Thank you very much, TI. Um take care to avoid bus contention because it drives currents that would exceed maximum limits. The high drive also creates fast edges into light loads.
+TEXT: Routing and load conditions must be considered to prevent ringing, and that's all to do with the PCB layout routing and stuff like that. And here you go. They actually explicitly tell you what we talked about before.
+context after: Load currents must not exceed 25 milliamps per output and 50 milliamps total for the part, and outputs must not be pulled above VCC. Thank you very much. Just don't Don't hurt your little gate.
+
+[1089] EEVblog #1089 - XTAL Oscillator Teardown — Dave Jones (explains)
+context before: When you start adding little leads and everything and inductors all in series and stuff like that, you start to complicate the equation. Doesn't look great, does it? But just put your little bypass cappy on there and she's sweet as.
+TEXT: Look at that. Like a bought one. Now, if you're wondering what all this stuff in here actually is, obviously it's not just the one pulse and then just some ringing in there that then eventually settles out.
+context after: There's obviously some very deliberate high higher frequency components in here. So, if we set up some cursors here like roughly from one peak to the next, that's sort of higher frequency stuff, we're looking at about, you know, 29.4 MHz or something like that.
+
+[453] EEVblog #453 - Mysteries of x1 Oscilloscope Probes Revealed — Dave Jones (explains)
+context before: And when you put it on times one mode, it's just a bit of coax going in, right? Well, yeah, it should be. So, let's get a bit of coax.
+TEXT: There we go. And let's whack it in there. And see what we get. Here we go. Look at that, a bit of overshoot there. Bit of ringing because it's not terminated properly, but let's increase this in frequency.
+context after: We're at one We're at 1 MHz there. So, let's wind it up and as you can see, 40 MHz, 50 MHz, no problem. Look at the Well, it's rounding off there, but let's not Look, but there is no attenuation of that signal by just a bit of coax.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (explains)
+context before: It's about 700 picoseconds or something like that. So, just a a regular fast pulse you might use for bandwidth or other measurements. And let's have a look at the Techway here, and there's the response we're getting.
+TEXT: Yes, I've got it 50 ohm in-line terminated there, and it is quite ringy. Check out the ringing on that, the overshoot, the undershoot. And let's compare that. This is a 100 MHz bandwidth scope, of course.
+context after: So, let's compare that to the Rigol here and see what we get. Ta-da! That's the Rigol. There we go. A very nice the Rigol 1052E. And there's, you know, a very nice.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: And you know, you might only be talking you know, tens of millivolts you know, bouncy drop or whatever, but you know, you can really come a gutser from that.
+TEXT: So, anyway, yeah, and then then it rings and does it like it'll resonate and then you get big ringing and all sorts of right issues. But the good news is that no, you're plugging directly into the board.
+context after: So, I you know, I don't think it's a huge issue, but this board should have a couple hundred microfarads. I'd probably have one for each chip, for example, or even one bulk.
+
+[1085] EEVblog #1085 - Bypass Capacitors Visualised! — Dave Jones (explains)
+context before: So, that's what would happen in a circuit if you were just driving another digital gate that uh just had uh switching capacitance. It's just because it's driving a capacitive line, it's actually uh or and/or a transmission line in this case, but effectively every trace is a transmission line, but we won't get into that.
+TEXT: Um that's what's causing this ringing here cuz there's not sufficient bypass, so that um once again, we're on a 100 mV per division. That's a awful lot of ripple happening on your 5-V power supply.
+context after: It's horrible. It's got all sorts of ramifications in terms of uh signal integrity, glitches in your circuit transitions and ground bounce and all sorts of you know, weird and wonderful stuff which we won't get into.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Much faster rise time but still that exponential curve. As you can see the slight curve in there and the op-amp of course has to compensate for it all now hence all that crap in there.
+TEXT: And you can see that the output of the op-amp rings a little once it hits that point and it goes bang straight down. There's a little bit of undershoot and recovery there and that's but I like it.
+context after: Powers on cleanly as far as I'm concerned. Now, I know what you're thinking. 22 mic do we need it that high? What if we change it to slide a 100 n?
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (explains)
+context before: And well, what is noise? Easy. Noise is everything else. Pretty much mainly due to, in terms of a switch-mode power supply, for example, you generally won't get noise in just a linear power supply like this unless it's being coupled in via something else.
+TEXT: But in a DC-to-DC converter, for example, you can get parasitic inductances all over the place, and they can cause some high-frequency noise or ringing when you've got large dIDT, technical term.
+context after: It just means large changes in current over time, which you get charging and discharging your storage element. These parasitic inductances generally much lower inductive values, so therefore they're going to ring and generate noise at a higher frequency.
+
+[381] EEVblog #381 - How Do Ultrasonic Delay Lines Work? — Dave Jones (explains)
+context before: These um inner ones are about 33 to 37 microhenries each. The two outer ones, 24 microhenries each. And that is pretty much all she wrote. And if we hook up our delay line here, what I've got is the uh uh all of the ground leads connected to the uh ground point of of the delay line.
+TEXT: I'm feeding in a 10 kHz square wave, uh which is the yellow waveform here, and the green waveform is the output. And you can see the delay there, you know, it's got lots of ringing on it.
+context after: That you know, I haven't terminated it properly, so forget about that. We just want you know, we're not going for super super fidelity here. So, let's just put this here, and let's measure that difference there.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (explains)
+context before: Okay, I'm going to try my Leo Bodner um Pulse Gen and see what we get with that. The good thing is I can just use that 5V USB power output to power the little That's great.
+TEXT: [laughter] Whoa. Whoa. There. There we go. There we go. Whoa. There big fella. Slower. There you go. So, there there is our sig gen. But we do have some ringing on that input there.
+context after: That's That's not the best. Um, so there's a little bit of mismatch there. Don't know if that's that 55 ohms versus the 50 ohm and 26.32. So 32 is 1 gig.
+
+[1368] EEVblog #1368 - Active Oscilloscope Probes COMPARED (Part 2) — Dave Jones (explains)
+context before: I don't care. There it is. There's our signal. It's made up of a whole bunch of, uh, stuff, but basically, uh, you can see, look, it's got some undershoot here.
+TEXT: It's got a little bit of ringing there. It's got a little bit of ringing there. I'm going to hazard a guess that that's going to be due to our, uh, long ground lead there, right?
+context after: So, that is our thing. But, we've got actually higher frequency stuff in here. Look at this. Oh, I just happened to capture one there. Look at this. Goes down, up.
+
+[1493] EEVblog 1493 - MacGyver Project - Part 2 — Dave Jones (explains)
+context before: Every two divisions, we're at 10 milliseconds per division. So, how much time between each one, Sayid? 10 milliseconds. Sorry, 20 milliseconds. 20 milliseconds total. So, 20 milliseconds they turn on um they update um or they clock the information into the LED display there.
+TEXT: No worries. And these are Yeah, we just got ringing on the bottom. The reason we got horrible ringing down there is because of my uh in inductive um lead here.
+context after: It's not great. So, yeah, it's a bit how you doing, but you can see the signal. So, no worries. So, that's our clock. And then our data is the pin next to it.
+
+[509] EEVblog #509 - Rigol DP832 Lab Power Supply — Dave Jones (explains)
+context before: Isn't that very curious? Let me see what happens if I can do the same thing with a with a load on there with a 10 ohm resistive load. Here we go.
+TEXT: No, there we go. There we go. Just some just some ringing there. Nothing at all. It's nothing nothing doing there at all. But with no load, let's repeat that.
+context after: With no load, switch off and switch on. Whoa! There There go. Hmm. There's no grunt behind it, I don't think, but really, um that's Rigol, please explain. And I'll try the second channel now.
+
+[813] EEVblog #813 - Mailbag — Dave Jones (explains)
+context before: Oh, look at that. Lovely. And I'd love to be able to show you the proper waveform, but my SMB adapter is kind of missing in action at the moment.
+TEXT: So, I got no idea where that puppy is, but yeah. There you go. So, we've got just a tad bit of ringing there due to our antenna earth lead.
+context after: Oops. But, yep, there we go. 5 V peak to peak at 10 MHz, near enough. It's probably I think this oscillator up there all bloody touchy-feely. This oscillator might be better than the uh one built into this uh Keysight um 500 MHz uh scope.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (opinion)
+context before: We're still at 100 mV per division, but if we turn that up, you can actually see you can actually see the ripple on there now down at 10 mV per division.
+TEXT: We're getting about 5 mV, you know, 8 mV worth of ripple or something like that. And look at these little high-frequency stuff in here like that. Bit of ringing there, that's probably due to our probing and stuff like that, but you really want to get rid of this sort of stuff.
+context after: So, that's not adequate ripple. If we just used that 159 Hz filter there, that's that's really no good at all. I like that one bit. Now, you're probably asking, why did that output actually Why did that output ripple drop from 100 mV to under 10 mV?
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (opinion)
+context before: All right, here you go. This is slightly different again, is it? This is using the sig gen output on my Keysight 3000 scope. So, the wave gen output there.
+TEXT: And you can see that it's kind of like got almost a ringy kind of response there. Huh. And that's the same signal on the Rigol HDO 4000. Once again, a little bit of overshoot there, but yeah, like, you've got to take into account the signal source and everything else.
+context after: But there you go. Um a pulse response is certainly something to uh consider on a scope. But it's worth investigating. It's an interesting phenomenon, and not every scope is perfect.
+
+[Y7t6BIhBZhc] High Frequency Active FET Probing DEMONSTRATED — Dave Jones (opinion)
+context before: Jeez, I can barely see that. This is where, you know, magnification comes in. Okay, I'm probing A point there. I don't know what it is. I don't care. There it is. There's our signal. It's made up of a whole bunch of stuff. But basically, you can see, look, it's got some undershoot here.
+TEXT: It's got a little bit of ring in there. It's got a little bit of ring in there. I'm going to hazard a guess that that's going to be due to our long ground lead there, right? So that is our thing. But we've got actually higher
+context after: frequency stuff in here. Look at this. Oh, I just happened to capture one there. Look at this. It goes down, up. We're at, what, 10 nanoseconds per division. We're almost as fast as we can get here with this scope. But this actually does have
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (opinion)
+context before: All right, I'm going to keep the same uh time base there as we had before, 20 milliseconds per division. Let's go into single shot mode. Let's switch this sucker on and I think it'll turn on.
+TEXT: Well, it definitely will turn on much quicker. Bang. Look at that. Woohoo. Check out the ringing on the op amp. It's trying to recover there, but the switch on is actually quite clean.
+context after: Still very little overshoot there and that's at a 5-V output, but there is, you know, it's I, you know, it's not as nice. I don't like it. I don't like all that ringing and and and all that decay on the op amp like that.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (opinion)
+context before: And we're only switching like What is it? 40 V? Less than like 30-odd volts or something like that. Let's Let's actually turn it up and see what happens. So, let's wind it up.
+TEXT: Watch that orange wave form, okay? Look. Look at how bad that's getting. Look at all the ringing. Look at this. Look at this. Why? It is absolutely atrocious. It is awful, okay?
+context after: And yeah, the probing's not absolutely ideal, but you're going to get this. You can see that how much of a major problem that is. But let's actually go down, okay?
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (mention)
+context before: If I go into Help, it's got a whole, it's got training signals, and it's got auto demo signals. Now, if we go into training signals here, and we call up this list here, check out all these training signals we've got, which appear on the display.
+TEXT: We've got sine, of course, sine with noise, superimposed, we've got phase-shifted sine, sine with glitch, amplitude, modulated sine wave, RF burst, we've got repetitive pulses, ringing clock, digital burst, digital burst, burst with infrequent glitch. Unbelievable! This is fantastic for not only training, you know,
+context after: universities, schools, things like that, to teach people how to use oscilloscopes, but it's actually surprisingly handy for real-world use. If you haven't used this scope for a while, or you're trying to, for example, set up a trigger for an elusive glitch or runt pulse, or something like
+
+[1270] EEVblog #1270 - Electronics Textbook Shootout — Dave Jones (mention)
+context before: like small things. Boldish triplers, quadruplers. Oh, there we go. Oh, I got a tear down. They got a tear down. Battery charger, external appearance. Yeah. It's internal construction. That's kind of neat. Oh, now we're talking to it. Like we're already into look in inductive elements.
+TEXT: Like, you know, it assumes that, you know, what inductors are and, and ringing and stuff like that. And yeah, I, it just like, bam, it just comes out of nowhere and hit you. This is just in the diodes application section. Yeah. See, you can argue that they probably should have left that out.
+context after: I liked the fact that they're doing like input protection and stuff here. Isn't it? That's, you know, that's quite all right. Okay. Let's take a look at Sedra Smith, shall we? Oxford University Press. Now this is a slightly different, as I said, to the ones before, because it starts out
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (mention)
+context before: It's just It's just moving too slowly. But when you get square wave with a pulse a step response like this, which has high frequency components in it depending on the slew rate, then the response after that can, you know, do interesting things.
+TEXT: And you see, like if we turn the bandwidth limit off, then you can see you start to see the overshoot and stuff in there. Start to see the ringing and you know, like transmission line effects in there, termination effects and stuff like that.
+context after: And that's when, you know, at at the high frequencies, like having the difference between having your 50 ohm terminator here and having an in-line one like really could make a difference.
+
+[1266] EEVblog #1266 - PSU Probing Screw Up! — Dave Jones (mention)
+context before: But, you know, it's it's it's spec was 100 millivolts peak-to-peak, I think. And we're measuring about 200 at full load. But anyway, if we drop this down to an amp, for example, put something different, you know, 130 mV peak to peak RMS noise, we're only talking 8 mV, something like that.
+TEXT: So, it's not nearly as noisy as I made out in my review video because I goofed it. So, you know, yeah, I might still do a video investigating how to like take the edge off some of that ringing in there.
+context after: Maybe we need to put some internal ferrite beads across some of the like the switching components like the MOSFET or or something like that. You know, there's several ways to do that depending on uh you know, the best mitigation uh strategy for getting rid of that.
+
+[306] EEVblog #306 - Jim Williams Pulse Generator — Dave Jones (mention)
+context before: It's much better than uh what you would think at minus 3 dB down at 500 MHz. So, this thing's pretty much kicking ass. And just in case you're wondering what the other channels are, I've chosen channel three here, and we're basically getting identical 520 530 picoseconds.
+TEXT: And you can see that our signal integrity is not perfect here. We have a little bit of a little dip there just before it starts, and of course some undershoot and ringing at the end of it here.
+context after: Ideally, it should be better than that. That's probably due to our coax cable. It would have been nicer if we had a direct connection, or if this connector here wasn't this socket type, but was actually a plug type.

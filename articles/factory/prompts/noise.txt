@@ -1,0 +1,373 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: noise
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 68 passages drawn from 45 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# noise`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[835] EEVblog #835 - Wekomm Resistance Standard Part 2 — Dave Jones (explains)
+context before: It looks like it it just like it's not the correct term, but it's sort of like undershoots like that, and then it's going to go back. Now, I suspect that's because of the uh control loop for the uh reference inside the Keithley meter actually trying to, you know, either the thermal uh response of the uh you know, the the the heater in there for the uh reference or, you know,
+TEXT: however they've got that uh control loop set up. So, that's probably a response from that, and you know, it'd be nice if we had a nice noise-free, you know, you could do it better if we actually uh put had the meter in a thermal chamber, everything else, and we're just measuring a fixed resistor with no noise or whatever, you know, you'd be able to see that, but you can actually see that
+context after: dip go down, and now it'll you can actually see it it's starting to head back up, and I believe over the next hour or so it'll shoot right back up.
+
+[1609] EEVblog 1609 - Composite Amplifier Tutorial + Practical Demo — Dave Jones (explains)
+context before: on the gain of these, I won't go into too much detail, but you can trade off the gain of both of these stages so that you are actually the entire noise of the composite amplifier is actually lower than the worst-case 100 nV per root Hz here.
+TEXT: So, effectively, if this one has enough gain, for example, it can compensate for the noise in the second one, but it's all a balancing trade-off, and it gets a bit complicated if you want to analyze it, but thing to take away from this is that composite amplifiers allow you to do stuff like that with noise and offset and input impedance and and drive capability and everything.
+context after: Here's another interesting practical example. Well, excuse the crudity of model. Didn't have time to build it to scale or to paint it. Let's say you wanted a really precision DC precision high bandwidth amplifier capable of like driving a coax or something like that.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: below 0 V here, boom, it switches the other way. And that's it. Simple. But, we didn't see that in our example. We saw that we had some oscillation on the transition here.
+TEXT: So, it might be actually obvious what's going on here. In the real world, you get noise on signals. Nothing is absolutely perfect. And in the case of a comparator here, that input threshold, this input only needs to be a fraction, half a bee's dick, a smidgen above or below the reference voltage here, be it I don't know, a microvolt, a nanovolt, whatever.
+context after: You don't actually know, but if think of it basically as practically zero. It just needs to be above by any ridiculously small amount, and it will switch. And of course, um your input signal is going to have noise on it.
+
+[777] EEVblog #777 - Keithley 177 Microvolt DMM Repair — Dave Jones (explains)
+context before: Oh, that's confusing. But anyway, check it out, it's a pretty schmick device, it's designed for 4.5 digit meter, from 200 millivolts to 2 volt at full scale, and then you have the resistor dividers, of course, to do everything else. But it's got a medium quality reference in it,
+TEXT: 40 ppm typical on board, it's not too shabby at all, 5 puff input current, oh, that's pretty awesome. It's got guaranteed zero reading, it's got guaranteed accuracy plus minus 1 count, that's where that spec comes from, over the full 20,000 count range, it's got 2 microvolts peak-to-peak noise over the 200 millivolt range,
+context after: it's not too shabby at all. And here's the block diagram, which I've added some color. This is the smaller chip which we're having a problem with at the moment, which we measured the output voltage from, and we the output, what was it, the output of the integrator or something?
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: So, this amplifier has a gain. So, the actual um output uh uh the area going to get on the output is the input offset voltage times five, which is 500 microvolts um error on the output.
+TEXT: But because um it scales up five, we're still only talking about one bit uh error there caused by our input offset voltage. Beautiful. And as I said, you just can't make that resistor arbitrarily low cuz not only is there input offset voltages, but then you get um uh noise and things like that causing issues.
+context after: So, there you go. That's almost perfect, that device. And just to get rid of any noise, I've added just a little um RC low-pass filter there, which then goes down into our existing circuit, which we've seen before, our um our uh constant current um comparator down the bottom here.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: Anyway, I need to investigate that but if you got a micro current and you want to like have a drop in replacement for lower noise and higher bandwidth this looks like a quite a decent option.
+TEXT: Now of course I haven't actually checked the bandwidth yet or other dynamic performance aspects of it. This video is long enough so I just want to measure the noise make sure the op amps work make sure the micro current gold like still works it works at DC and its noise is lower and everyone's happy.
+context after: So I think we have a pretty decent new candidate. I I don't expect any show stoppers in the dynamic performance aspect of this. In fact it could be potentially even better because as we saw the actual chopper frequency is up you know, past 200 kilohertz or something like that.
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: So, that is the real signal there, bit of blooming, but basically, there was a difference between the signal as originally that I could see with the eye, and then what we recorded with the camera got a little bit thicker.
+TEXT: And here's that noisy signal. As you can see, barely visible at the low shutter speed, and that's what it looked like to my eye. But as you increase that shutter speed, you start seeing all that dim phosphor you couldn't see with your eye, and you can now see the noise superimposed on the waveform.
+context after: Brilliant. So, there you go. I hope that's cleared up the myth that digital scopes are noisier than analog scopes, because they're not. They're just better, and they work differently, and hence they're showing up all that high frequency stuff that your analog scope has pretty much been hiding from you all these decades by way of the the phosphor persistence on there, and it having that uncorrelated noise or signal
+
+[1032] EEVblog #1032 Part 3 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: We were very unhappy that he went to the dark side. And he's still developing with them. He's still doing quite a lot of good things for them. The 58 has some of the most challenging aspects to it, the subtleties of that. One of our R&D managers who was running the group at the time came over,
+TEXT: the four guys were still with the company, had a handkerchief laying over the circuit board when he was testing it. He says, why are you doing it? He says, because the subtle differences in the air temperature going over some of the parts were moving a tenth of a degree and it showed up as noise.
+context after: You could see it. You could see it. You could see the fluttering of the air on top of the parts. It was changing the DC measures. So is it hard to say you've still got some talent? Oh, yeah. Well, the R&D manager that managed those four guys is still with us.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: So, you've just got to take that into account in your design. It may be fine for you you cuz your input voltage may be quite high. You know, 1 V here plus your additional drop further on on your next stage for your voltage side of the voltage regulation, you've got a an additional minimum drop out voltage there, then it all adds up.
+TEXT: Just make sure and if you wanted to lower the value of that resistor say to 0.1 ohms, then you can compensate with the gain of this circuit. No problems whatsoever to lower your voltage drop, but you know, you can't go arbitrarily low cuz then you get down in noise problems and things like that.
+context after: Now, I encourage you to go and build this circuit up and try it for yourself and maybe even simulate it and do stuff like that. But ultimately, as with all these type of configurations, they can be quite hard to stabilize especially when you've got a variant load in lab power supply.
+
+[524] EEVblog #524 - Vignetting on a Cathode Ray Tube — Dave Jones (explains)
+context before: We've got the vertical rate here, 56.1 hertz. There it is. So that's our vertical scan, and then if we zoom in on the scope, you'll notice this higher frequency stuff. And that there is about 4 divisions there, and we're 10 microseconds per division, 40 microseconds,
+TEXT: that's 25 kilohertz. That's the horizontal scan rate. So there you go. We can easily pick up that. And in a high precision measurement environment, which these DSAs are specifically designed for, that sort of noise can really kill you. And of course we can make that go away with the magic
+context after: screen inside here. So here's our probe, there it is. It's picking up all that junk. You put this in front of it, and the tabs on there are connecting through to the metal case on the back, which is actually screened, as you can see, very, well, it's
+
+[442] EEVblog #442 - Analog Vs Digital Oscilloscope Noise — Dave Jones (explains)
+context before: 
+TEXT: Now digital scopes have this uh reputation of being higher in noise than analog scopes, for example, but that's not necessarily uh the case. It's just that with their update uh rate and capture, they're actually capable of displaying more of the noise than a traditional analog scope.
+context after: And you might think, "Well, our problem is going to disappear if we use an analog scope." But no, it's not. Check it out. Let's have a look here. It's hard to get this.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: You don't actually know, but if think of it basically as practically zero. It just needs to be above by any ridiculously small amount, and it will switch. And of course, um your input signal is going to have noise on it.
+TEXT: It always will. It's just a practical uh reality of real-world circuits. Now, I've greatly exaggerated the noise on our input sine wave here like this, and you'll notice that it actually transitions through the noise actually transitions through that ground there several times.
+context after: So, in this case, if we take that down here, okay? This one's going negative, so it's going to go negative like this. But, then you notice that because it went above zero, so it's going to go negative, but then it transition because of noise briefly down below ground like this.
+
+[1547] EEVblog 1547 (Part 3) - Tour of the NASA Canberra Deep Space Communications Complex — Dave Jones (explains)
+context before: Temperature variations and and essentially the spectrum could collapse. And you had permanent magnets that you had to use to try and tune it back in again, where the new HEMTs they're really robust.
+TEXT: The problem is they're a very broad bandwidth. And with broad bandwidths comes noise. So if you're looking trying to look for a a little part of a spectrum and you have this noise that's covering essentially the entire spectrum, so sometimes that can be an issue as well.
+context after: But, uh they're far more hardy. They don't require tuning. They just chill them. Correct. Actually, so if if you look at what happens, uh you've got the output of the LNA.
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (explains)
+context before: So anyway, one millisecond per division, uh, one meg points with 20 megahertz bandwidth, 20 microvolts. There you go. So, not quite as good as the Rigol one we looked at before, but you've got to understand, right, this is a much more serious bit of kit, and the entire front end
+TEXT: is designed for 1.5 gig bandwidth. So even though we're limiting it to 20 meg, you've got to realize that you've got to design the hardware in the front end, the amplifiers, to have 1.5 gig bandwidth. So they're going to be inherently slightly noisier, uh, just
+context after: the design of the front end amplifier ASIC for that is going to be inherently slightly noisier than one that you designed down to, I think the Rigol was half that, seven, less than half that, 700 meg. But there's only, like, three microvolts difference in the
+
+[1223] EEVblog #1223 - Oscilloscope Standard Deviation Noise Measurement — Dave Jones (explains)
+context before: That's if you want to measure it over the one cycle on your screen. But, of course, we don't have a cycle here. We're not inputting a sinusoidal or other repetitive waveform.
+TEXT: We're measuring noise. So, the cycle standard deviation and cycle RMS just won't work. It just won't give you anything. So, we can put standard deviation. So, if we get rid of that, bingo, we now have our standard deviation here, and it's actually smaller.
+context after: So, there you go. If we're doing it, now we're doing an AB, a true AB comparison. The mean is about 65 microvolts. So, the Siglent is actually lower, but as I said, the Rohde & Schwarz is higher bandwidth.
+
+[1552] EEVblog 1552 - Digilent Analog Discovery 3 — Dave Jones (explains)
+context before: noise on top of that power supply. So we can go 1 volt, right, well, we're, we're adding, like, random 1 volt noise at 2.5 hertz, right? So that's just adding, right, just random noise. That's just ridiculous. Right? Or let's make it a bit
+TEXT: better, right? Let's go up to 1 kilohertz. Look like 1, 1 kilohertz is the maximum. But check it out. We've added 1 volt noise. I assume that's amplitude, that's peak to peak, is it? It doesn't actually tell you. You can actually set the, your peak.
+context after: There you go. So you can actually set units here. Alright, so you can set peak to peak. So if we wanted RMS, uh, there we go. It adds a little RMS symbol. So amazing, right? So we can add 1 volt RMS, 1 kilohertz
+
+[572] EEVblog #572 - Cascading Opamps For Increased Bandwidth — Dave Jones (explains)
+context before: Now, let's take the case of 1 microvolt noise here RMS noise. Now, I won't go into the different types of noises, the current noise and input referred noise and all sorts of stuff.
+TEXT: Uh let's just keep it simple. 1 uh microvolt of noise. We've gone back to times 10 amplifiers here. So, uh our 1 microvolt of noise obviously gets amplified by the uh gain of there and we're getting 10 microvolts noise out of here.
+context after: No problem, right? But, does that 10 microvolt noise get multiplied by 10 and the 10 again? Well, yes, it does. So, your noise would be exactly the same if you had a times 1,000 amplifier here.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: So, it might be actually obvious what's going on here. In the real world, you get noise on signals. Nothing is absolutely perfect. And in the case of a comparator here, that input threshold, this input only needs to be a fraction, half a bee's dick, a smidgen above or below the reference voltage here, be it I don't know, a microvolt, a nanovolt, whatever.
+TEXT: You don't actually know, but if think of it basically as practically zero. It just needs to be above by any ridiculously small amount, and it will switch. And of course, um your input signal is going to have noise on it.
+context after: It always will. It's just a practical uh reality of real-world circuits. Now, I've greatly exaggerated the noise on our input sine wave here like this, and you'll notice that it actually transitions through the noise actually transitions through that ground there several times.
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: But in my opinion, they're actually better. Digital scope is better than an analog scope because you can actually pick up that information, especially one with these intensity graded displays, really.
+TEXT: Fantastic. Look at that. See? It's almost all gone. And there's the tiny amount the tiny waveform. That's the one that's there all the time, and the rest of that information is just more uncorrelated noise around that.
+context after: And you'll really see that here because I've added 30% noise to this signal. So, if we turn it right up to a 100% there we go. Look at that, right?
+
+[947] EEVblog #947 - Chronos High Speed Camera Review — Dave Jones (explains)
+context before: And uh no wonder Dave has actually on his uh YouTube channel has actually designed the world's brightest lead light for uh all his high-speed uh photography stuff. So I'll link that one down below.
+TEXT: Now if I turn the gain all the way up and uh that's my aperture that I'm closing now. I can close it right off of right off of course, but it starts to get really noisy if I want to get everything uh in focus here.
+context after: So yeah, it's just high-speed photography is really tricky. You must have a ton of light. Um, generally that means outdoors. If you're indoor, you need hundreds of watts, thousands of watts d of light directly on your subject.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: And watch the LED. Watch the LED. It'll just switches on. We're not quite in current limit mode yet. Bang. So, it's it's just on the margin. But, check this out.
+TEXT: It's not perfect. If we wind it down, it will actually go off because there's probably some noise on there which is causing us an issue and then it comes back on solid right down at the lower end of the scale.
+context after: So, uh we're going to have to fix that one as well. So, let's replace that with a 470K and see if that's any better. Let's try it out. Yep, I like that.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, I took that off, and what do you get? Magic. Look at that. Wham! That's an absolute shocker. And bingo, it's back to 100 mV. There you go. So, it's actually now made its way all the way through.
+TEXT: So, all of our noise, all of our ripple that we had on our filter here has gone all the way through cuz now we don't have adequately adequate filtering on the output or the or the input to the set pin here.
+context after: And what happens if we add in a second RC filter in here once again 10K and a 100N. Bang! There's our output voltage exactly the same scale as before but our ripple has dropped very very significantly and once again that's with no practically no output filtering or no filtering on the set pin.
+
+[1658] EEVblog 1658 - TUTORIAL: Mean vs Median — Dave Jones (explains)
+context before: So, it would be 102.5. So, whether or not you use median versus mean, it pretty much comes down to whether or not you had, as I said, skewed data or you have really big outlier values in your measurement data.
+TEXT: If you had like lots of noise, you might have big spurious spikes, you know, right out there or something like that. Then, you might want to use the median just to take those out of the average value.
+context after: So, I hope you enjoyed that video and found it useful. If you did, please give it a big thumbs up and as always discuss down below and over on the EVblog forum.
+
+[572] EEVblog #572 - Cascading Opamps For Increased Bandwidth — Dave Jones (explains)
+context before: So, what happens if we cascade these op amps? Aren't we just going to get increase our noise problem? Well, yes, we are, but it's not nearly as bad as you might think.
+TEXT: In fact, it's borderline trivial. So, but the noise will be dominated by this first op amp as we'll see here. So, really you want the maximum gain on your front end here if noise is an issue for you.
+context after: Now, let's take the case of 1 microvolt noise here RMS noise. Now, I won't go into the different types of noises, the current noise and input referred noise and all sorts of stuff.
+
+[572] EEVblog #572 - Cascading Opamps For Increased Bandwidth — Dave Jones (explains)
+context before: Uh let's just keep it simple. 1 uh microvolt of noise. We've gone back to times 10 amplifiers here. So, uh our 1 microvolt of noise obviously gets amplified by the uh gain of there and we're getting 10 microvolts noise out of here.
+TEXT: No problem, right? But, does that 10 microvolt noise get multiplied by 10 and the 10 again? Well, yes, it does. So, your noise would be exactly the same if you had a times 1,000 amplifier here.
+context after: One you're still going to get 1 mV noise out 1,000 microvolts noise out of here with a single stage. And it's going to be the same, almost the same, just a smidge more um out of here like this.
+
+[209] New Agilent 3000X Oscilloscope Firmware - EEVblog #209 — Dave Jones (explains)
+context before: We've now got an arbitrary capability there as well as if you didn't know some of the new There's a couple of extra wave shapes added to the previous new firmware exponential exponential rise and fall cardiac Gaussian pulse stuff.
+TEXT: So, we go up here to arbitrary and it looks like we've got edit waveform. Bingo. That's a new option. Okay, let's go into settings here and it looks like there's a noise capability here.
+context after: Check it out. It's got arbitrary plus noise. So, it looks like you can add from anywhere to from no noise just arbitrary up to What is it? What? 100% noise.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (explains)
+context before: So, that's my sense output there. Watch what happens if I disconnect the input bypass resistor. And I've got this coming from my Rigol linear bench supply, 5 V, by the way.
+TEXT: The input voltage really doesn't make a make a difference at all. Let's remove that and you can note that's the input bypass cap and that's my sense output. You notice the noise went up.
+context after: Now, I'll just whack in a another bypass cap in there to replace that. Oh, look at that. There we go. Woohoo! Now, one interesting thing with this Rigol scope, look, I'm not sure, I can't remember which firmware version I'm running, but I might have found a firmware bug.
+
+[611] EEVblog #611 - Electret Microphone Design — Dave Jones (explains)
+context before: Yes. Okay. So, they've done that bit inside the box. Inside the PC. They only want you to plug that much in. Yeah. Now, there's yet another caveat that you have to be aware of.
+TEXT: Okay. How which is noise on this rail here. Yeah. If this thing if if this JFET is within that working within that constant current region, it's presenting a very high impedance there.
+context after: Mhm. Which means that any noise there gets presented immediately to Absolutely. So, anybody who's using these from anything that might have a bit of noise there, like a PC.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: It might be, you know, 10 puff or 100 puff or something like that. And that's just rolling off the frequency response of that. And likewise, you might see a little cap across something like this, for example, if you have if you are offsetting this thing using a single supply like this.
+TEXT: You know, I I won't go into the details, but basically any noise on this point here will be amplified and picked up on that virtual ground, so you'll get noise on your output signal.
+context after: So, you might stick a big ass, you know, 1 or 10 microfarad cap across here, for example, and really make that virtual ground really noise-free. But, hey, that's that's beyond the basics.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (explains)
+context before: So, basically the op-amp and those resistors weren't really contributing much to that which is as you'd expect because as I said it goes through the power rail system and then it's effect on the op-amp itself has to do with the power supply rejection ratio.
+TEXT: So, it's not actually coupled into the input as such it even though it's a flight like it's introducing noise into the ground reference the ground reference is still the reference.
+context after: So even if the reference is jiggling around due to the noise, it's you know, it's not introducing much. So there you go. That's doing some basic test on the OPA189 op amp and as expected I it was you know, relatively significantly lower noise than the MAX4239 and actual worthwhile upgrade for not much real change power really and it is effectively a drop in replacement for the micro current although as I said
+
+[572] EEVblog #572 - Cascading Opamps For Increased Bandwidth — Dave Jones (explains)
+context before: In fact, it's borderline trivial. So, but the noise will be dominated by this first op amp as we'll see here. So, really you want the maximum gain on your front end here if noise is an issue for you.
+TEXT: Now, let's take the case of 1 microvolt noise here RMS noise. Now, I won't go into the different types of noises, the current noise and input referred noise and all sorts of stuff.
+context after: Uh let's just keep it simple. 1 uh microvolt of noise. We've gone back to times 10 amplifiers here. So, uh our 1 microvolt of noise obviously gets amplified by the uh gain of there and we're getting 10 microvolts noise out of here.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (explains)
+context before: So, this noise about here is not going to cause any problems whatsoever. It's only when it then it first goes through this lower threshold, will it actually boom, switch back like that.
+TEXT: And then once again, even if it transitions multiple times because of noise through this lower threshold, it's not going to flip back until it reaches the upper threshold again.
+context after: So, bingo, with by adding some hysteresis, which is the difference between the upper threshold voltage and lower threshold voltage, by Schmitt trigger action, we've added a margin in there that eliminates our noise problems, and we get a nice clean switching waveform.
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: It actually inverts the waveform, so the least frequent stuff, the glitchy stuff, all that noise, shows up brighter than your main waveform. So, we go up to 100% or else it's all there, and your main waveform in the middle vanishes.
+TEXT: That's just a neat little different way to view your data on this MDO3000. But, that's the same noisy signal, 30% noise added, and can we see it on our analog scope?
+context after: Well, not really. It's very difficult. Look, it looks like a very clean sine wave, but there's actually I've added all that noise to it. You can't see it because it's uncorrelated to the sweep signal, and it's only showing up a very briefly there, but we should be able to capture that with the camera.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (explains)
+context before: And now we can capture that data. And you've got to remember, too, we're looking at the least significant digit down in there. Look at it, it's not changing at all, but we should be able to see something on our histogram and our trend chart.
+TEXT: There we go. Look at that. We can see some little noise fluctuations in there. So, it seems to have greater resolution than I That was me um just overloading thing.
+context after: Let me change that again. We'll clear it. And we'll auto scale that. There we go. So, it has greater resolution. It looks like the trend chart is showing the uh single precision uh floating point calculation from that uh delta sigma like um true volt um uh what what is it?
+
+[572] EEVblog #572 - Cascading Opamps For Increased Bandwidth — Dave Jones (explains)
+context before: One you're still going to get 1 mV noise out 1,000 microvolts noise out of here with a single stage. And it's going to be the same, almost the same, just a smidge more um out of here like this.
+TEXT: So, let's take a look at it. 1 microvolt noise in, 10 microvolts noise out of here. And then we've got to add in our extra 1 microvolt noise of this op amp here.
+context after: But, of course, that's not 11 microvolts. So, it's not 11 * 10, which is 110 microvolts out of here. No. You remember, noise uh when you add noise sources, it's the root sum of the squares like this.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (opinion)
+context before: So, it's not actually coupled into the input as such it even though it's a flight like it's introducing noise into the ground reference the ground reference is still the reference.
+TEXT: So even if the reference is jiggling around due to the noise, it's you know, it's not introducing much. So there you go. That's doing some basic test on the OPA189 op amp and as expected I it was you know, relatively significantly lower noise than the MAX4239 and actual worthwhile upgrade for not much real change power really and it is effectively a drop in replacement for the micro current although as I said
+context after: unfortunately that LMV321 op amp that one will have to be changed to one that supports a higher rail voltage. So off hand I don't know just a regular LM321 might do the job.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (opinion)
+context before: If you zoom out like this this is just a how to use a scope thing and it appears periodic like that but you've got your trigger level set to where you think it should trigger from and if you actually put your scope into run mode and it doesn't trigger like that at the trigger level you thought it does either above or below like that then obviously it's got it's not
+TEXT: completely periodic so then you know to zoom out and uh huh of course it's a packet based thing at there you go 2.7 odd hertz something like that. And there's a too is a packet on there whether or not it's like an actual packet whether it's supposed to do that or whether or not that's just I don't know it's a noise pick up on the line.
+context after: I like have no idea the air con's not actually working at the moment so anyway, let me switch it on and see if you can see a difference. Okay, here we go big power button.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (opinion)
+context before: And for 53 US bucks delivered for the module, it is actually very impressive value for money. Sure, there's a few uh issues with it, but jeez, you know, the user interface is is pretty good.
+TEXT: Its performance, apart from uh the noise on it, is uh pretty good. And of course, you can't uh complain about the flexibility in the specifications, really, apart from Oh, it'd be nice if it um did some uh boost converting as well.
+context after: But jeez, you know, um that's a tough ask for uh something like this. So, they do have other modules if you're into uh combined buck boost or SEPIC uh converters.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (opinion)
+context before: And what happens if we add in a second RC filter in here once again 10K and a 100N. Bang! There's our output voltage exactly the same scale as before but our ripple has dropped very very significantly and once again that's with no practically no output filtering or no filtering on the set pin.
+TEXT: And if we replace our filtering back our 22 mic here and our big capacitance on the output, bang! There's our noise. It's suddenly vanished. These little spikes in here are going to be due due to ground bounce and stuff like that.
+context after: You can actually see the bounce in there is to do with probing and things like that. So don't worry about that but the output noise there, look at that.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (opinion)
+context before: And if we change our base resistor here or our filter resistor from uh 1K to 10K for example, we'll find There you go. We've now got a larger drop like that, but uh of course, our corresponding AC ripple should go right down like that.
+TEXT: But, we're basically just uh down in the noise now. Yeah, there's a lot of noise due to all sorts of uh crap, but you can see that there's basically no ripple that we had there when we had our 1K resistor in there.
+context after: There you go. There's our 1K resistor, and you can see that. So, it's a trade-off. As you increase uh the resistor R here, it starves the transistor of base current, therefore you get a larger uh voltage drop across the pass transistor, but you uh increase the uh ripple attenuation due to the just the RC filter ratio.
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (opinion)
+context before: No. User interface fail. Sorry. This is If this is supposed to be an oscilloscope, that is no good. You have to make it look and work like an oscilloscope.
+TEXT: And what's that uh cross What's that cross talk we've got on the uh purple channel, which is channel three? I know. It's always there. Wow. That That's a lot of noise on the purple channel, which is channel three.
+context after: Got nothing plugged in. What's the Look, the screen's showing some weird-ass half waveform thing. I don't Wow, no, look. Like, what is that? What like what is that? Nothing.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (opinion)
+context before: They're going to do some filtering as well. And that's what you get if you you replace the 22 microfarad cap here down to 100 n. Bingo. And it turns out that I still had 47 microfarad of capacitance on the output there.
+TEXT: So, I took that off, and what do you get? Magic. Look at that. Wham! That's an absolute shocker. And bingo, it's back to 100 mV. There you go. So, it's actually now made its way all the way through.
+context after: So, all of our noise, all of our ripple that we had on our filter here has gone all the way through cuz now we don't have adequately adequate filtering on the output or the or the input to the set pin here.
+
+[2FlQnPsZCdE] Scope WTF! — Dave Jones (opinion)
+context before: Whoa, it's back. What? What? What's going on? I don't get it. And it'll it can come good. It can come good. What? It's not physical. What? I don't don't don't worry about the triggering.
+TEXT: There's obviously like something some noise getting in there or something. What? What? Like if I stop that, that that stuff's actually there. Look. That stuff's actually there. What's going on?
+context after: It's like it's picking up some external noise or something. What? What the heck? Uh I don't I don't get it. Okay, I found something weird. But I I I cannot make that come back now.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (opinion)
+context before: unfortunately that LMV321 op amp that one will have to be changed to one that supports a higher rail voltage. So off hand I don't know just a regular LM321 might do the job.
+TEXT: Anyway, I need to investigate that but if you got a micro current and you want to like have a drop in replacement for lower noise and higher bandwidth this looks like a quite a decent option.
+context after: Now of course I haven't actually checked the bandwidth yet or other dynamic performance aspects of it. This video is long enough so I just want to measure the noise make sure the op amps work make sure the micro current gold like still works it works at DC and its noise is lower and everyone's happy.
+
+[1305] EEVblog #1305 - HEPA Solder Fume Extractor — Dave Jones (opinion)
+context before: So, you know, you have to be reasonably close to these things in order to get most of the fumes actually sucked under there like that. So, yeah, they have a problem with the these uh feet.
+TEXT: They try to stop them uh falling over, and well, it just spaces everything else. You got to be really close. Same thing for these ones as well. If I turn this one on, this one's really loud.
+context after: I've got two of these. I've done a second channel video where I actually uh modified the fan in this to be much lower noise for when I'm shooting videos and stuff like that.
+
+[1103] EEVBlog #1103 - Omicron Labs Bode 100 Review & Experiments — Dave Jones (opinion)
+context before: You can go back and do all your other stuff. And single whoop. Auto optimize. There we go. Woo! You can really see that impedance go right down to buggery.
+TEXT: Well, not buggery, but you know, it goes right down there um at that resonant point. And once again, we're getting uh this noise and crap in here cuz they're they're like it's right down.
+context after: Now, we can uh cuz it's right down in signal level, so we can fix that up by either changing our magnitude or we might be able to change our receiver bandwidth.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (opinion)
+context before: Bit of a trap for young players, that one. Now, I'll put my 22 microfarads back in, and let's give that a go. Bang. Look at that. See? So, it is much cleaner, much cleaner response with the 22 microfarads.
+TEXT: And you can see that live here, too, with the uh 100 n. There it is. As I turn it down, bang. Look at that. Terrible. And with no capacitor at all, by the way, it's an absolute shocker.
+context after: You don't even want to go there. So, put that 22 mic back in. Bang. Clean as a whistle. Look at that. And there you go. Not a problem. And I've put it to AC coupling 10 mV per division, and that's the noise.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (opinion)
+context before: And interestingly, which we might find out inside it offers, or so it claims, here's the true vault. Let's have a look at it. Here's the true vault multimeter. What it means to you, blah blah blah.
+TEXT: Anyway, they reckon the noise and injected current is much lower than a brand A, brand B, and brand C. I wonder what brands they are. I don't know. Anyone want to hazard a guess?
+context after: So, it claims it's the best in terms of noise and injected current, and also the best in terms of input bias current as well. Once again, better than the three other It's too noisy to measure on brand C.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (opinion)
+context before: And you see it started up here and then it went a little There's a little jump in there. It sort of recovered and it drifted down and down and down.
+TEXT: A little bit more sort of noise in these parts around here. I'm not sure what's going on there. You'd have to extract the data and then zoom into it, I guess.
+context after: But it's starting to recover back up like that. I mean, that could be a simple temperature thing overnight as the temperature drifted. I don't know. I would have had to record the temperature with it, get some correlation.
+
+[6qjqhnQiQXQ] How to Measure Oscilloscope ADC Dynamic Range — Dave Jones (mention)
+context before: But anyway, somewhere between 8.75 V and 8.8 V, uh, peak-to-peak, is our full-scale range of our, uh, analog-to-digital converter, or maybe not. It could actually be just where the input amplifier clips.
+TEXT: But you can't really know that, uh, the true range of the analog-to-digital converter, unless you're, unless the manufacturer tells you what it is, you know, you've got the schematic, and you can reverse engineer it, or potentially you can feed in like a one-bit signal, like a one, one-bit, uh, amplitude level signal, until you actually see like one-bit change or something like, uh, but then you're down in the noise, and it's
+context after: horrible, and everything. So, we're just going to assume that the range is, um, in this particular case, 8.75 V peak-to-peak. So, if we get our confuser out here, 8.75 V peak-to-peak, divided by 4,096, cuz that's a 12-bit, uh, converter here, that will give us an individual bit of 2.14, or thereabouts, millivolts, uh, per bit.
+
+[500] EEVblog #500 - Live Show — Dave Jones (mention)
+context before: Oh, I just won't bother checking. That can't possibly be that. You just subconsciously rule it out, you know, and it turns out to be that, of course, you know, Murphy's law.
+TEXT: It's always the last thing you look at naturally. Um, and it's just, yeah, you just have to keep keep working through it. But electronics can be frustrating like that, you know, and especially when some things you just get no feedback on, you know, like if you're dealing with say like a noisy, you know, you've built up your op amp and it's oscillating and you got some noise or
+context after: something, at least you got something to work from, you know, you you can like track it down and um stuff like that. But when things just like, you know, you boot up your project and it just doesn't go, you know, and your source code just, you know, like you get nothing on your LCD, your project doesn't boot up and like, you know, where do you start?
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (mention)
+context before: Oh. No, they specify this as zero drift. It's It's specifically zero drift. So, yeah, I can't see how this 189 is not a winner. Over the MAX4239. There might be a showstopper in there depending on your design.
+TEXT: And once again, we like we could go and quibble over the graphs and things like that. But, I think we've covered almost everything we care about. Offset voltage, supply voltage, gain bandwidth product, supply current, input short circuit current, rail-to-rail stuff, noise, bias and recovery times and slew rates.
+context after: And yeah, positive overload recoveries and things like that. And we've got the, you know, there's the step response, and we're down in like nanoseconds, hundreds of nanoseconds per division.
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (mention)
+context before: Right? So, you might think that this particular chip is like, "Oh, it's four times worse, not nearly as good. Won't even consider it." Okay, this is where you need to dive deeper into the data sheets and have a second look at these sort of things, which is what I was always going to do.
+TEXT: And the maximum isn't that much more than the plus minus two. But, technically, this is a worse chip in offset voltage, but that's not an absolute showstopper if it has advantages in other areas, be it other performance like bandwidth and noise and other things which we're going to look at in this video.
+context after: Or be it price. If this was like 10 times cheaper, you'd go, "Ooh, yeah. Oh, you know, happily live where you know, you might happily trade off." You might not, but you might decide, "Yeah, I'll happily trade off, you know, four times worse typical input offset voltage for, you know, half the price or 1/10 the price." I don't know.
+
+[1697] EEVblog 1697 - What's Up With Different Brand Op-Amps? — Dave Jones (mention)
+context before: You pick it because A, there's tons of different manufacturers available, so you're guaranteed to get this part forever and also longevity of production. They've been selling it for 50 years, they're not going to suddenly stop, right?
+TEXT: And then the next one is you don't really care too much about the specs. You don't need high bandwidth, you don't need high precision and low offset and low noise and you know, all the other bells and whistles because there's literally what, thousands of different types of op amps out there to pick from.
+context after: The reason you're picking an LM358 is just cuz you need a jelly bean op amp to do a basic op amp function and nothing more. So pretty much, if you're doing a design and you care which brand LM358 or which brand jelly bean component, be it a 75 7805 voltage regulator or a comparator, you know, LM339 comparator or something like that.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: So what are the differences between this traditional mathematical averaging mode or this high resolution or sometimes called boxcar averaging mode? Well, it can range anywhere from between very little to essentially nothing in a practical measurement application to be in a huge difference which can greatly impact your measurement accuracy or what your entire waveform even looks like.
+TEXT: So it's really important to understand the differences between these two modes and not everyone does because it can be quite subtle. So what I'm going to do is take the an example of this square wave here which is sinusoidally modulated and it's got some noise on top of the sinusoidal part there.
+context after: So it's coupled in to the square wave here. And if we zoom right in like this, you can see it's actually updating like that. And if we zoom right in and have a look and we change between averaging and high resolution mode, look, it doesn't look to be much difference, does there?
+
+[1325] EEVblog #1325 - OPAMP Shootout - Datasheet Deep Dive — Dave Jones (mention)
+context before: And here's the internal block diagram here. As I said before, this is like a zero drift or uh chopper amplifier. There are differences between the uh zero drift architecture provides ultra-low offset voltage, near zero input offset voltage over temperature and time.
+TEXT: Uh choice factor chip also offers outstanding IC performance, ultra-low broadband noise. Yeah, really interested to actually compare the two. Zero flicker noise. I've done I think I've never done flicker noise in my noise uh tutorial and I went operating below the chopper frequency.
+context after: But, yeah, basically it's got internal clocks, which uh usually they're a divided uh clock, so it's not a one fixed uh frequency, so which can help or it depends.
+
+[k7FlF0ON1VM] Carbon Dioxide CO2 Levels in the Lab? — Dave Jones (mention)
+context before: Hi, just a quick look at the CO2 or carbon dioxide levels here in the EV blog lab because I've got a micro red radiation monitor. I'll link it in down below.
+TEXT: I've had this running for donkey's years and I've got real-time 24/7 monitoring of the air quality level in my lab here. So I've got like a temperature for example, I've got air pressure, I've got humidity, I've got VOCs, volatile organic chemicals, I've got noise.
+context after: It gets noisy in here when I'm talking and it's got carbon dioxide as well. It's got formaldehyde, it's got PM 2.5 which is particulate matter 2.5 microns and it's also got radiation as well just in case a nuke goes off nearby and that's just the voltage of the radiation tube so and the duty cycle of that you don't have to worry about but yeah, so I thought we'd take a look at the carbon
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: It's got all your favorite specs from the 7805, uh 1.5 amps nominal. It's got short-circuit current limiting. It's got thermal overload protection. It's got the safe area compensation, etc., etc.
+TEXT: It's got more than adequate uh performance on noise, power supply rejection ratio, regulation, and all sorts of things. Um and oh, look at all the applications. Oh, look, if you're building your femto base stations, this is the ticket, Laddy, let me tell you.
+context after: These are incredible like the application stuff is just it's so funny to just look at data sheets just for the application uh things that they put in here. It's just ridiculous.
+
+[1090] EEVblog #1090 - Sony Mystery Teardown — Dave Jones (mention)
+context before: Price really didn't matter. The market paid for what it was, you know, for the product and what it was worth. It basically was like little if nothing else that could really do the job. So yeah, it didn't really matter. And they spared no expense on this thing, and it shows.
+TEXT: And you can bet your bottom dollar, as we saw with like a lot of the grounds and things like that in here, they, you know, really very careful attention to detail in terms of, you know, signal fidelity, noise, grounding, dynamic range, all that sort of stuff.
+context after: There would have been lots of little small touches that went into the design of this thing to ensure it had the best possible performance. So I think I'll leave that tear down there. I want to put it back together. It requires a lot of effort to get further
+
+[1609] EEVblog 1609 - Composite Amplifier Tutorial + Practical Demo — Dave Jones (mention)
+context before: To get your most bandwidth possible, you might want to split your gains between those two. So, composite amplifiers, they're rather magical. They let you combine the best of different amplifiers, be they discrete components or op amps.
+TEXT: Combine you know, input impedance, offset, bandwidth, output drive, drift, temperature drift, and noise, and all sorts of things. You can combine them together in many different ways, and I couldn't possibly cover all the different scenarios here.
+context after: It would just take me forever. But as always, there's never a free lunch here, okay? And there are downsides to composite amplifiers if you don't implement them properly. You might find they oscillate or do other uh weird things.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (mention)
+context before: And you can see that live here, too, with the uh 100 n. There it is. As I turn it down, bang. Look at that. Terrible. And with no capacitor at all, by the way, it's an absolute shocker.
+TEXT: You don't even want to go there. So, put that 22 mic back in. Bang. Clean as a whistle. Look at that. And there you go. Not a problem. And I've put it to AC coupling 10 mV per division, and that's the noise.
+context after: If I adjust it, I'm adjusting the pot there. So, you see the AC That's in voltage mode, and we switch to current mode. Bang. Exactly the same noise. All right, we'll measure this switch off transient now.
+
+[1443] EEVblog 1443 - They Don't Teach This in School! (Coherence) — Dave Jones (mention)
+context before: So, basically think of it how much of the output is correlated to the input and you want, obviously, 100% correlation because if your output signal is not 100% correlated with your input signal, the shake that you're putting into this thing, then obviously, you've got some sort of non-linearity in your system.
+TEXT: You've got noise in the system. You've got vibrational modes in your daggy stupid plate that I've got set up here. Um and I'll we'll hopefully be able to see the difference um in a minute with that.
+context after: And you want to make sure that your system is set up because once you go to do your quantitative measurements, if you haven't done your coherence measurement and ensured that your system is completely linear and set up, then uh all bets are off.
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (mention)
+context before: Well, it's been a little bit in trigger there. And that's the normal current that's happening, but it's because it's a switch mode with no power factor correction taking these big spikes.
+TEXT: And this allows you to see this via product under development. And this is brilliant because it allows you to see what sort of peak current you're getting and any noise issues and stuff like that.
+context after: We might have a look at the noise in a second. We might be able to see it. So, 50 hertz the mains, not that 60 hertz yankee rubbish, and peak to peak current is around about an amp.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (mention)
+context before: There we go. So, we've got our 1 V peak-to-peak sine wave, 500 mV per division. And there we go, you can see we're at two divisions there. So, that is actually 1 V peak-to-peak.
+TEXT: So, it is actually measuring spot on there. Go figure. 200 mV peak-to-peak. Yeah, there we go. So, it can actually measure the signal reasonably accurately. Can see the It's got noise on that.
+context after: Check Check that out. I mean, that is you know, this sine wave is coming from my Agilent 3000 built-in waveform gen and it's going to be a lot better than that, I can assure you.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (mention)
+context before: So, what's Here we go, I'll go really slow again, and wow, look at that. Whereas if I go really fast, boom, look, there's not much of it, but there is still oscillation, and that could cause you no end of problems, depending on the uh circuit implementation you've got.
+TEXT: Real trap, that one. So, there's the two problems, input slew rate, and also uh noise on comparator circuits. What's happening here and how do we fix it? Well, let's go to the whiteboard.
+context after: So, we'll jump straight into the solution, the Schmitt trigger. You might have got it from the title of the video. And it's absolutely classic bit and building block. It's used everywhere, and you may not even have realized it's used in uh places.
+
+[323] EEVblog #323 - Rigol Scratch'n'Sniff — Dave Jones (mention)
+context before: Let's go 10 microhertz. Beautiful. Offset, phase. Ah, terrific. Can have a whole bunch of fun with this. We've got uh square, of course, and I love you know, shows a waveform.
+TEXT: Very nice. Ramp, pulse. Whoop, what was that? Pulse said something there. Noise. Uh what type? Can we have Can we select type of noise? Doesn't seem to. Mode. No.
+context after: Just amplitude and offset. Hmm. There's probably a way to do it. And the arb mode, of course. Um has it got like a built-in ones, I'm wondering. Select waveform.
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (mention)
+context before: Fantastic. Look at that. See? It's almost all gone. And there's the tiny amount the tiny waveform. That's the one that's there all the time, and the rest of that information is just more uncorrelated noise around that.
+TEXT: And you'll really see that here because I've added 30% noise to this signal. So, if we turn it right up to a 100% there we go. Look at that, right?
+context after: There's a ton of noise. That is deliberately added on that waveform cuz this scope allows me to do that. You can see if I turn that intensity right down, because that noise is effectively uncorrelated, it goes away like that.
+
+[442] EEVblog #442 - Analog Vs Digital Oscilloscope Noise — Dave Jones (mention)
+context before: So, really, you know, be careful when you claim that analog scopes you know, they're they're much lower noise than digital scopes. Not only is that not necessarily true, it can be in some circumstances, but not necessarily true, but the fact is you can miss a lot of stuff like this common mode noise that you wouldn't normally get on this on that you could easily pick up with a digital scope.
+TEXT: So, just be careful when you're talking about noise in systems like this.
+context after: 

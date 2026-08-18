@@ -1,0 +1,218 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: rc time constant
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 37 passages drawn from 15 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# rc time constant`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[555] EEVblog #555 - 555 Timer Kit — Dave Jones (explains)
+context before: it driving the LED via the anode there. Now if we have a look at our yellow waveform here the charging that's the main capacitor that's the one 3.3 micro farad capacitor charging up via the 200k resistors there.
+TEXT: So 200k in series via 1 micro farad and that's the charging waveform, so you can use your formulas to calculate how long that's going to take to charge up, and then it is when it reaches the threshold voltage, if we have a look at our internal block diagram of a 555, the comparator, because of the 555 K resistors in there, it's 2/3 the threshold comparator is 2/3 of the
+context after: supply voltage. In this case, the supply voltage is 9 V, so our threshold voltage is going to be 6 V. And is it? Here's ground. We're at 2 V per division, 2 4 6.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: And that will be designated IT here like that because it's the value of the instantaneous current at any point in time. Now here's an important thing to realize this RC time constant it's actually an important number.
+TEXT: It's actually 63.2% of the charge. Let me show you why. Basically if you follow the initial charge curve like this up to there. Okay, if if at its initial point if you went in a linear fashion like that and then you dropped this down here like this this point here it'll be equal to 63.2% of the maximum charge and if you take that down there that is 1
+context after: T and then you'll have 2 T here and 3 T and 4 T and so on at that time period. That is called the RC time constant. But that's how it's actually derived.
+
+[1611] EEVblog 1611 - Top 5 Jellybean 7400 & 4000 Logic — Dave Jones (explains)
+context before: And of course, you could say have the classic 7404 for example, but I prefer the 74HC14 because it's a Schmitt trigger. And I've done a video on Schmitt triggers with a nice practical breadboard demo here showing you with the advantages.
+TEXT: That that's a very popular video down here. So, I won't cover Schmitt triggers in detail in this video, but it tells you right here. They are useful to square up slow input rise and fall times because if you've got a slow changing signal, let's say you have a an RC time constant reset circuit for example, well, that's going to ramp up very slowly.
+context after: And as I mentioned in my tutorial, logic gates do not like that. Okay? Regular logic gates, in fact, I can show you. We'll just look at the standard 74HC04.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, let's resimulate that. So, it's about 10 millivolts at the moment. Let's resimulate that, and bang, it's slightly ramping up. It's ramping up, but as you can see, it's taking longer.
+TEXT: It's taking much longer to actually get up to frequency there cuz we've changed the RC time constant. So, you can see that's taken 54 milliseconds before it even, you know, 50 odd milliseconds before it even sort of starts to level out like that, and that's not too bad, actually.
+context after: Now, let's go in there and have a look at the ripple. We'll zoom right into this window here, and bingo, you can see it. There it is. That's only about one Well, what's that?
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (explains)
+context before: The main formula is actually down here, but you can simplify it. We won't go into the details on that. We'll just use our simple R * C formula today, and we'll be measuring this one time constant period.
+TEXT: One time constant is where the voltage charges up to roughly 63.2% of the final voltage. Why that particular number? Well, it has to do the fact that when you plug one e to the power of minus one up here, that's the number that actually spits out of the formula and it's useful.
+context after: And basically a capacitor is essentially fully charged, you could say, after roughly five time constants or five times RC. A capacitor is fully charged. So, if you know your resistance, you know your capacitance, you can figure out how long it takes to fully charge that cap or get to one time constant.
+
+[275] EEVblog #275 - PIR Sensor Teardown & Tutorial — Dave Jones (explains)
+context before: Basically what the pyroelectric material does is it forms a capacitor and that's why down in the circuit down here you can see that the sensor element is actually the symbol for a capacitor with the dielectric material in there. And it's, you know, x number of picofarads or
+TEXT: whatever, and that actually generates a voltage when you apply a specific thermal energy to it. And of course there's a gate resistor in here and an RC, that will form an RC time constant of approximately, in this particular, these particular sensors, of about 1 second.
+context after: So they only detect very slow changing thermal energy, and that's what you want. You don't want to be picking up a very wide bandwidth, because people only move very slowly in front of these sensors. And here in the detector construction part it actually hints that these things are fairly sensitive to thermal
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (explains)
+context before: So, let's have a look at some basics first and then we'll very quickly then we'll jump over to the bench and I'll show you. So, I won't tell you what it is yet.
+TEXT: I'll let you figure it out on your own. But, uh you know, a capacitor, right? Simple RC charge circuit like this, very common application for capacitors. Uh RC time constant charges up, gets to a certain threshold and you can detect that and you can use them as timers.
+context after: Very typical uh application. Not that accurate because as we're aware, capacitors are not particularly high-tolerance devices. And if we take a look at uh some typical ceramic capacitors, we're only talking about ceramic capacitors here, then uh they're basically divided into several classes.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: And I think you'll find that the time constant will be longer and match the math exactly for 1 K and 22 microfarads. All right, let's give it a go on exactly the same time base.
+TEXT: So, I've got my power switched off. Let's single shot that and let's turn it on. Bang. There we go. And you can see that the output of the op-amp has just switched on instantly like that as you'd expect because there's no RC time constant in the feedback loop anymore.
+context after: So, it just bang it due to op-amp action. This output here instantly becomes this input here. So, it ramps up to there and bang 5 volts and this is your RC time constant.
+
+[961] EEVblog #961 - Monkey Debouncing — Dave Jones (explains)
+context before: Well, one of the obvious and common ways to do it is to add a capacitor across the switch, and that's exactly what I've done here. I've added a 330 microfarad capacitor on there, I think I've got a 5k6 pull-up on there Let's give it a try now.
+TEXT: Alright, here you go probes, let's count Oops, we're already screwed. We've got 2 here, it counted 2 instead of 1. And, but look at our waveform now. We now have a beautiful classic exponential capacitor rise like this classic RC time constant you're familiar with.
+context after: And check out that edge that we've got there, it is beautiful! Look at that, there's no contact bounce in there whatsoever, because now that we've got the capacitor across the switch, when you activate the switch, the very first instant that switch goes low, then it shorts out the capacitor, and then
+
+[1746] EEVblog 1746 - The 555 is 55 Years Old! — Dave Jones (explains)
+context before: It's a standard uh one-shot timer, but instead of having the uh timing resistor between pins seven and eight, I've actually tied pins seven and eight together and put the timing resistor here.
+TEXT: And then our timing RC circuit charges straight away like this and as soon as it reaches the threshold voltage, that uh 2/3 point, uh the discharge transistor open collector jobby turns on and wah, wah, wah, wah, dead crowbar short right down to ground.
+context after: Anyway, try it at home. The killer one-shot. Win or win it, chicken dinner. Catch you next time. >> Mhm.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: So, you'll be using your confuser a lot for doing these sorts of stuff. And we've only talked about the case where it goes to 100%. If it If you've got a case where it like only goes up to like here and then starts to discharge again, then well, you've got a substitute your maximum value for, you know, like it's still 63.2 here.
+TEXT: So, the time constant thing will still happen like that. It just like starts and ends at a different value. It's sort of like never gets to there. And you'll get this in like your 555 timers and your other RC time constant circuits and things like that.
+context after: And RC time constants used pretty much everywhere in electronics, whether it's in, you know, your microcontroller, for example, you might think, "Well, where am I going to use an RC time constant in a microcontroller?" Well, for the reset pin.
+
+[490] EEVblog #490 - Peak Detector Circuit — Dave Jones (explains)
+context before: Now, what I've got here is a 100 nanofarad capacitor in parallel with a 10k cap. And you can see the droop or the decay in that. And if we have a look at the time period here, this is a 100 hertz signal, by the way, and it decays faster than that before it has time to recover.
+TEXT: And it's with 2 milliseconds per division. So, it's taking about 500 milliseconds or sorry, 5 milliseconds or thereabouts to decay back down to zero. And that's really what you'd expect cuz the rule of thumb is about five times the RC time constant.
+context after: So, five times RC. 100 nanofarads, 10k. There it is. It's about 5 milliseconds. So, that's your effective reset time of your signal. But, let's increase the frequency here, shall we?
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (explains)
+context before: And I'm just using transistors or 2N3904 bog standard stuff. I've using a 47 micro cap. I didn't have a 22 to hand. So, let's give it a go. Let's switch this thing on and bingo, there it is.
+TEXT: It automatically switches on and I press the button and it switches off. Press the button, switches on. Too easy. And that works a treat. And if I hold it down, it should oscillate just like we said at the frequency set by that RC time constant.
+context after: So, let me actually replace that 22 that 47, sorry, with say a 10 micro and let's see what happens. There we go. There we go. It's oscillating much quicker.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: And you'll see the RC time constant in lots of things, like the 555 timer, for example. The formula for 555 timer is 1.1 * RC. The time constant we we might look at it why in a minute.
+TEXT: So anyway, rises up fairly quickly and then it follows the exponential curve and eventually eventually after about you know basically after an order of magnitude after about 10 time constants you can pretty much say it's it's equal to V.
+context after: In theory it never gets there but that's for those math nerds. In the real world it does. And coincidentally this is the discharge curve that we're going to look at the fall curve but it's also the current because as I said the current will be a maximum.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: Boop. You start out at zero. It just means you start out at zero. Whereas this one, we don't start out at zero. We start out at V. So we don't have the one there.
+TEXT: But it's exactly the same equation. Once again, it's negative T which is the actual time constant in here over capital T which is our RC time constant. Just multiply the resistance in ohms by the capacitance in farads.
+context after: Now, we have to get on to inductors. So I've changed it to LC transients here and I've made a couple of changes. It looks near identical. Of course I've changed it to an inductor.
+
+[242] EEVblog #242 - Hakko FX-888 Soldering Iron Hack — Dave Jones (explains)
+context before: So, what I've done here is I've added a 220 mic cap 16 volts or greater to the across the open collector output of the chip or from the gate of the MOSFET to ground.
+TEXT: And that might keep the red LED on a bit longer. Perhaps, you know, you can experiment with these values. I've changed the LED drop resistor down to 1K, which of course makes a difference with the time constant.
+context after: It makes it worse, actually. But as you can see, it is flickering. And if I cool the sponge down a bit, then it does actually go red like that.
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (explains)
+context before: Or it should do, in theory. Now, uh it works exactly the same as before. When you push this switch, if the circuit's off, this transistor's off, push push this switch, it switches this base current on, latches this, and you supply to your circuit.
+TEXT: And now, this capacitor here starts out at zero, and it starts to charge up in voltage based on the RC time constant plus the base current flow through there cuz this is a um this is an NPN bipolar transistor.
+context after: There's going to be some base current flowing in there as well. But anyway, that will charge that capacitor up. So, uh it won't immediately switch back off cuz this point will still be high.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Um now, BUT WE'VE GOT THIS MASSIVE 22 microfarad here with these uh with this 2K series resistance here total. Cuz remember that transistor's not going to uh switch on during um unless there's current limit.
+TEXT: So, that basically does not exist. So, uh our turn-on RC time constant is going to be there. These two series resistors plus this cap. We're going to see this thing uh ramp up and um and go to the output.
+context after: But, because that's actually in an active uh feedback loop and we're actually driving this with an op amp, um it's not it's uh going to actually charge uh faster than our uh if we Say if we set our output voltage to a volt, then it's going to charge up much faster than you'd expect based on that RC RC time constant.
+
+[1695] EEVblog 1695 - Mailbag: Robin RCD Tester, PCB Book, USB Knob, Geekom IT12 Mini PC — Dave Jones (explains)
+context before: Where Okay, so this is a companion for a book. Is it? Um, oh, look at this. Ref- Schematic symbol. Look at this. This is terrific. Series parallel circuits. So, it looks like yeah, you can just power that with a USB-C and you can muck It's like Look at that.
+TEXT: Got Kirchhoff's, voltage dividers, series parallel combinations. Look at this. Place ohmmeter probes here, so you can parallel and series uh resistors. You got your RC time constant. Oh, okay, so that Oh.
+context after: Right, so no, this is the book. This is the book. It's a physical hardware book. That is a brilliant idea. Well done, Ian. I like this. Cuz I was wondering why series and parallel combination circuits had the RC time constant on the back when the RC time constant is over here is because it's literally designed to flip over as a book.
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (explains)
+context before: It's not just about the tolerance here. Now, if we look at the RC circuit which I use in the example on the bench in a minute, you're familiar with the charging uh graph, charging response of a capacitor.
+TEXT: And time constant, one time constant or tau, as it's known, is the simple formula R * C. And, you know, a basic building block circuit, basic building block formula, you should be familiar with.
+context after: And one time constant is the point, here it is, one time time constant is on the x-axis here, and the percent of charge is on the y-axis here. And if we put a step voltage in like this, then our capacitor will charge up with a um exponential formula.
+
+[1746] EEVblog 1746 - The 555 is 55 Years Old! — Dave Jones (explains)
+context before: Oh, look, Australia actually used to make 7400 series chips right here by Philips. Unbelievable. What happened? Behold my killer one-shot circuit. I've got a classic triple five one-shot uh timer.
+TEXT: I've got an indicator LED on the output here and I've got a capacitor which will trigger the thing when it immediately turns on and I've got an RC time constant here of around about 5 seconds.
+context after: So, the LED, once we apply power, should turn on for about 5 seconds and then well, after that, um I'm not sure. We may only get one shot at this.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: Schmitt triggers because, well, you don't want to use your regular gate in there. Anyway, link in Schmitt trigger video if I remember it. And then, it'll hold the processor in reset for, you know, X milliseconds while the power supply rises up, and your processor not going to do funny business.
+TEXT: It's going to have a nice clean start. So, you know, using RC time constants for your digital stuff. Used all the time. So, this basically ends our DC fundamental series that we've been doing.
+context after: How many? Five or six videos or something like that. Pretty much after this and energy stored in a capacitor and inductor and stuff. After that, you pretty much have to move on to AC.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: So, minus whatever the time period is you're talking about, divided by capital T. Not the same thing. Capital T is not the time here, that's little T, like this.
+TEXT: Capital T is actually R * C. And this is called the RC time constant. And you'll see this all the time, and it'll give you like a rough ballpark of how long it takes to charge up a capacitor.
+context after: And you'll see the RC time constant in lots of things, like the 555 timer, for example. The formula for 555 timer is 1.1 * RC. The time constant we we might look at it why in a minute.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, let's click on the circuit here. Bang! Look at this. And you can actually see that window there. Let's uh zoom to fit. Okay? And bingo, you can see it rise up like that.
+TEXT: That's our RC time constant that it takes when you first switch on the supply or change the voltage or whatever. It doesn't respond instantly, but it eventually settles down to bingo.
+context after: What does it settle down to? Go across here, exactly 100 mV average. Trust me, if you drew a line straight through there, it would go right through the average point of that waveform.
+
+[609] EEVblog #609 - Condenser Microphone Design Tutorial — Dave Jones (explains)
+context before: Yep. And let's say we've got 50 * 10 ^ -12 F there. Okay, that comes to about 50 * 10 ^ -3 seconds, I think. Oh, yeah. Sounds about right.
+TEXT: Reasonable. So, 50 ms time constant. Mhm. Uh incidentally, that's an un That that that would be an unrealistically low value, but it's some that all the microphone manufacturers use.
+context after: So, we've got a 50 ms charge time constant there. Mhm. Uh which incidentally will wind up corresponding to an electrical roll-off pole there of 20 Hz about 6 Hz.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: T and then you'll have 2 T here and 3 T and 4 T and so on at that time period. That is called the RC time constant. But that's how it's actually derived.
+TEXT: It's 63.2% It's like that number means something. If you ever see 63.2% you know you're talking about RC or LC time constants. So assume our capacitor is fully charged up to 100%.
+context after: If we now flip the switch over to here, we start discharging the capacitor like this. So it starts out This is our discharge curve. This is our full curve here.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, we expect if we're feeding in 1 volt here, 1 volt peak-to-peak, there it is over on the Y axis here from 0 to 1 volt PWM signal, we expect 10% on time, we expect 1/10 voltage on here.
+TEXT: Do we get it? Well, not quite and we'll see why. Now, the reason is is that is actually slowly ramping up because there's an RC time constant. We started the simulation from zero.
+context after: So, we're going to have to go in here and we're going to have to extend that time period. Let's say set it to 100 milliseconds like that. Let's leave it at 0.1.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (explains)
+context before: And once again, it's VCT which is the instantaneous voltage at any point in time. It starts out at V which is what we charged it up to. Starts out at you know, if this is 1 volt starts out at 1 volt and then it discharges like this.
+TEXT: And once again, at time constant is exactly the same thing. If you follow that curve It's a bit dodgy, but if you follow that curve, trust me, and you'll get to a value of 36.8%.
+context after: Once again, if you see that figure, either of those figures there, you know you're talking about LC or RC time constants. And there's another formula you have to remember for the exponential decay or exponential fall in voltage.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: And the formula for that, V at any instant in time, is 1 minus E to the power of minus T on RC. Woah, nasty little formula. Thankfully, unless we're really after a precise application, we don't care about this formula cuz all we want to do is light up a LED for a bit.
+TEXT: Who cares if it's on for half a second or 3/4 of a second or a second, right? Good enough, near enough. So, you can just use the standard um RC time constant formula.
+context after: Tau, the time constant, is the value at a specific value of 62.3% of that charge voltage and it's equal to easy to remember the time constant R times C.
+
+[609] EEVblog #609 - Condenser Microphone Design Tutorial — Dave Jones (explains)
+context before: Uh you might polarize it with somewhere around about the 60 V maybe even 90 V mark. Okay. The amount of charge varies, but the whole point is we've got a capacitor here that we've put charge onto.
+TEXT: Yep. It'll charge up over a period of some seconds because we've got gigohms there and a few picofarads there. So, it'll charge up. of seconds after power on? Yeah.
+context after: Uh so, somebody out there can calculate the time constant between Well, no, bugger it. Let's do it here. Uh let's say we've got 10 of the 9 ohms there.
+
+[262] EEVblog #262 - World's Simplest Soft Latching Power Switch Circuit — Dave Jones (explains)
+context before: There's going to be some base current flowing in there as well. But anyway, that will charge that capacitor up. So, uh it won't immediately switch back off cuz this point will still be high.
+TEXT: It'll still be high for I don't know, depending on the RC time constant, you might point 0.5 seconds or something like that that you want this point to be high.
+context after: And then, once it reaches a threshold voltage of the transistor, it will switch the transistor on and pull that to ground. And if you're still holding down that switch after this transistor switches on, well, it's going to oscillate exactly like before.
+
+[471] EEVblog #471 - Overload Detector Circuit Design — Dave Jones (explains)
+context before: Who cares if it's on for half a second or 3/4 of a second or a second, right? Good enough, near enough. So, you can just use the standard um RC time constant formula.
+TEXT: Tau, the time constant, is the value at a specific value of 62.3% of that charge voltage and it's equal to easy to remember the time constant R times C.
+context after: Resistance times capacitance. Simple. So what's a practical lead on time here? Well, I don't know, about a second. Nice round value. You can see that lights up for a second.
+
+[609] EEVblog #609 - Condenser Microphone Design Tutorial — Dave Jones (explains)
+context before: Yep. It'll charge up over a period of some seconds because we've got gigohms there and a few picofarads there. So, it'll charge up. of seconds after power on? Yeah.
+TEXT: Uh so, somebody out there can calculate the time constant between Well, no, bugger it. Let's do it here. Uh let's say we've got 10 of the 9 ohms there.
+context after: Yep. And let's say we've got 50 * 10 ^ -12 F there. Okay, that comes to about 50 * 10 ^ -3 seconds, I think. Oh, yeah. Sounds about right.
+
+[1406] EEVblog 1406 - DC Fundamentals Part 7: DC Circuit Transients Fundamentals — Dave Jones (opinion)
+context before: Just imagine that's not V imagine that's I current I current will start out as a maximum which is V on I you can't get any more than that cuz there's a pesky series resistance then it starts out at maximum and it follows the basically the inverse of this curve like this until we eventually get no current whatsoever.
+TEXT: And that will be designated IT here like that because it's the value of the instantaneous current at any point in time. Now here's an important thing to realize this RC time constant it's actually an important number.
+context after: It's actually 63.2% of the charge. Let me show you why. Basically if you follow the initial charge curve like this up to there. Okay, if if at its initial point if you went in a linear fashion like that and then you dropped this down here like this this point here it'll be equal to 63.2% of the maximum charge and if you take that down there that is 1
+
+[961] EEVblog #961 - Monkey Debouncing — Dave Jones (mention)
+context before: R2. And R2's, you know, generally going to be a smaller value than R1, so you want it to discharge fairly quickly. Once again, depends on your monkey under test, and what you're actually, and what the timings are of your, you know, to choose that capacitor value correctly
+TEXT: specifically for your particular setup. You'd also have to choose R2 to get exactly the right conditions as well. And I won't go through all the particular calculations of RC time constants and things like that, because this is not a really an in-depth switch debounce tutorial.
+context after: But suffice it to say that can solve any potential issue with shorting out a large value of capacitance here. But of course, you might have noticed that now R2 is in series with R1 for your charging circuit, and when you're driving a Schmitt trigger, depending on the threshold levels, the upper and lower
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (mention)
+context before: Yeah, they know about all sorts of other characteristics of the ceramic uh caps, and all your temperature coefficients, and mainly all they care about is temperature, but what a lot of people don't think about is that capacitance can change with voltage as well.
+TEXT: Not only DC bias uh voltage uh that can have a drastic effect, but also the applied AC voltage as well. So, it is not just like RC time constants like this.
+context after: Of course, if you're using the same uh circuit for, you know, you're doing filtering and things like that, it can really matter based on the signal level. It can be really quite critical.
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (mention)
+context before: Pretty basic stuff. Or an X5R, for example, is basically the same capacitor but with a slightly lower higher temperature range. And you're familiar with these things. And as you might know, if you're an experienced designer, so picking something like an X7R is a relatively stable uh high value capacitor to use, a relatively stable dielectric.
+TEXT: So, you you might use, say, an X7R or an X5R in an RC time constant like this, but aha, wait until we get to the bench. I'll show you a trap.
+context after: It's not just about the tolerance here. Now, if we look at the RC circuit which I use in the example on the bench in a minute, you're familiar with the charging uh graph, charging response of a capacitor.

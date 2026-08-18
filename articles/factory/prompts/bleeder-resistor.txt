@@ -1,0 +1,233 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: bleeder resistor
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 40 passages drawn from 29 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# bleeder resistor`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (explains)
+context before: Aha. 7912. There you go. Negative That's our negative 12 V regulator. That's not much of a heat sink, is it? For your negative minus 12. So, yeah, but probably not like for the minus 12 V it'd be like for RS232 or something.
+TEXT: You wouldn't really need it for much. Hence the tiny heatsink but there's another device on the other side in there which I can't so some people wondering why we can't measure those diodes are hard are they short or are they open or whatever well look at these big ass resistors down in here they're probably bleed resistors directly across these caps here these are very common they discharge the caps very quickly if
+context after: you turn the supply off so it's a regular halfway rectifier and then you've got a resistor in there you've got the couple of ohms in the secondary side turning here plus you know however you know they might be you know a couple of hundred ohms down there so effectively either way you're measuring the diode you effectively got like maybe you know a hundred or a couple of
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (explains)
+context before: So, uh anyway, this could take a bit of work. Check out some of the interesting stuff we've got happening around here. Obviously, some high voltage uh ceramic caps here.
+TEXT: uh three paralleled up like that and then four of them four banks of those in series for a total of 12 uh ceramic uh caps there high they obviously doing this high voltage we've got the uh bleeder resistors across here or balancing resistors across here I've done uh uh videos on these before and balancing resistors across the indiv These are high value.
+context after: These are Yeah, these are uh 10meg. Obviously, this is part of the high voltage power supply. As I said, couple of hundred volts output. So, clearly they're doing really belt and braces there.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: It's going to need at least 7 V to regulate this thing. So, if it's not at least, you know, around It should be around about that 9-V figure. If it's not, then we know, bingo, the primary side is not being able to supply enough power on that particular winding, and most likely on all the other windings as well.
+TEXT: So, here we go. I've got another meter here set up across that 5,300 microfarad cap down in there. It's still got some charge on it. Hasn't been able to bleed it off cuz they haven't got a bleeder resistor on there, so the all that, you know, the regulator IC is the pass transistor is just switched off, and there's still some charge there.
+context after: Anyway, so let's power it on. Hopefully, it still fails. Um so, let's power it still. Oh, oh, it's working. 9 V. You bastard. Oh, no, no. Hang on. No, 7 V.
+
+[631] EEVblog #631 - How To: Soniq LCD TV Repair Part 2 — Dave Jones (explains)
+context before: There we go, so it wasn't that connector. Actually, just as a little aside, this is a good example of capacitor dielectric absorption. Now, what I've done is I've disconnected the TV, okay?
+TEXT: So, that main capacitor, as I explained in the last video, is uh still retaining a ton of charge, okay? There's no bleed resistor across that, so that's going to still going to have a couple of hundred volts on it easy, and it'll take, you know, it could take tens of minutes for that to actually decay.
+context after: Now, as I said, you can use a multimeter with the low low impedance voltage measurement, usually designed for eliminating ghost voltages and stuff like that, but you can use it for safely discharging a capacitor like this, because it's low impedance.
+
+[449] EEVblog #449 - Absopulse VFC500 Variable Frequency Converter Teardown — Dave Jones (explains)
+context before: capacitors, KMH series, 105 degrees C rated, 450 volts 220 microfarads. Beautiful. They would be genuine, bet your bottom dollar. And on the main DC output just near the output connectors here, once again Nippon Chemicon, exactly the same model KMH, 250 volts, 560 microfarads.
+TEXT: So this definitely is a high voltage DC output power supply. It wasn't the low voltage, which I thought probably would have been the least viable option for this. So they're outputting on these two terminals here, outputting yeah, no, I can actually touch that, these have got bleed resistors on there
+context after: check it out, not a problem. And safety first folks, I'm a professional, I know what I'm doing. And yeah, so they're outputting high voltage, like you know, 250 odd volts on these terminals here. Check out how they vertically stack those two diodes there.
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (explains)
+context before: you would go in and you'd measure the rail, just to make sure it's okay. Make sure there's no ripple on it. And just a reminder, if you are going to go probing around on any of the main power supply board here, safety first, make sure you discharge
+TEXT: the main filter caps over here. They should already be discharged, should have bleeder resistors on them. But you can actually use, this is a good function for the auto-check. The low impedance ghost voltage function of a multimeter, for example. So we can get in there and probe that.
+context after: Here we go. And let's have a look. And you can see that it's actually not reading a voltage. It's automatically switched to ohms. Mega ohms, there we go. So there's actually, if there was a voltage there, it would actually display it. So there's not, so that's safe.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: And you'll notice over here, what what what? That's 50 V per division. 50 100 100 and still charged up to 150 V DC. It's slowly going down due to the load of the uh probe, which is 4 meg.
+TEXT: So, it'll eventually bleed off, but they got no bleed resistor on there at all. So, just be careful if you're going to do that. Um use your meter in uh low Z mode if your meter has that uh for example, and then like short out the main filter cap on these things when you take it off.
+context after: Anyway, let's power this thing up and see what we get. There we go. Of course, yep, 300 and you know 40 odd volts, something like that. That's what I'd expect.
+
+[725] EEVblog #725 - LG Plasma TV Teardown — Dave Jones (explains)
+context before: to modern LCDs. Got a couple of little pissant fans up here. They're actually shock... are they shock-mounted? Sort of loosely... yeah? Yeah, they're actually shock-compliant mounted on there to minimise noise. So that's not bad at all. Little bit of dust on them, but this is a pretty
+TEXT: clean unit, actually. And by the way, little safety tip. These things generate... these can store a lot of energy in the reservoir caps in here. So a well-designed unit will have bleed resistors on the main filter caps in here, so it should bleed off the energy.
+context after: But you don't want to be go-poking around here, A, when the power's on, unless you use an isolator supply, you know, proper probing, you know exactly what you're doing, or you've just disconnected the thing and then you go touching around. You don't want to do that.
+
+[1381] EEVblog 1381 - Argon Ion Laser 10kW PSU Teardown — Dave Jones (explains)
+context before: No workers. Because this is not high volume stuff, of course. You're not going to like if you make a error on these, you're not going to like uh re-spin the board usually.
+TEXT: Um you're just going to put in some mod wires and whatnot. But yeah, all looks good. Now, of course, I don't have to worry about this being uh charged up at all because not only have got bleed connection bleed resistor across uh the main cap there.
+context after: So, I'm pretty confident I can do that without worries cuz it's been in the dumpster for Yeah, I don't know. What? A decade or more? Wow. Not even sure how this board is going to come out.
+
+[272] EEVblog #272 - Manson 9400 40A 3-15V Switchmode PSU Teardown — Dave Jones (explains)
+context before: Chassis ground and circuit ground aren't necessarily the same thing, and that will be for extra RFI compliance and filtering. And the main output filter in there, they're not skimping here.
+TEXT: They've got two 1,000 microfarads in parallel and different values here once again for filtering the different frequencies. These will have different ESR at different frequencies. And we've got a 1 kV cap here and a 330 ohm 1 W bleeder resistor.
+context after: So, when you switch this thing off, it drains the voltage or bleeds the voltage off the output filter caps very quickly. It's a nice touch, and it's things like that which separate the cheapy supplies from the good ones.
+
+[814] EEVblog #814 - Keysight N8762A 600V 5100W PSU Teardown — Dave Jones (explains)
+context before: and the construction will likely be absolutely drop-dead gorgeous. Let's hope Agilent don't let us down. Sorry, Keysight does have Agilent badge on the front, though, sorry. Ta-da! Oh, yeah, baby, look at that. That is gorgeous. Wow. And even though this puppy has been powered off for a long time,
+TEXT: and I'm sure it's got bleeder resistors in there, not to store any residual charge on the caps, you know, when you're mucking around with something like this, you just want to check first. So I'll get in here to this lovely looking bus bar,
+context after: and I'll give that a probe, and yeah, bugger all. And then you can go probe the main side. But it's all discharged. You just want to make sure this whole thing is discharged, both the secondary high voltage DC side, and the primary side over here,
+
+[1481] EEVblog 1481 - Dodgy Dangerous Heater REPAIR — Dave Jones (explains)
+context before: Well, one of the places that I come a cropper in this one is that I measured it, and it was 100 measured 100 n, and I thought, you know, that sounds like, you know, that's like bang on a typical value that you might find in a dropper like this.
+TEXT: And then there was two, sorry, 1 and 1/2 meg across here. These are 750k each. These are just bleeders to bleed the charge off there when you remove the power so it's not dangerous, and it goes straight into a diode bridge like this.
+context after: Now, of course, I didn't follow my own rule of troubleshooting, thou shall measure voltages. And if I measured the actual voltage out, the rail voltage out of the diode bridge up front, and I would have noticed that it was like half of what we needed to drive our 24 V relay.
+
+[709] EEVblog #709 - EDC 4601 AC Voltage Standard Teardown — Dave Jones (explains)
+context before: And then, curiously, we've got a plug-in board here. We'll take a look at it. It's uh the going to be the oscillator board and a couple of relays on there for switching.
+TEXT: And if we take the bottom cover off here, this is uh rather interesting as well. Here we go. The caps uh protrude down through the bottom here. We've got ourselves some uh bleeder resistors across there so they discharge those caps.
+context after: These are 70 V uh rated Nippon Chemicons. Might show you that in a minute. Uh we've got our bridge rectifier here mounted down to the chassis down there. So, we're just getting the uh split supply.
+
+[452] EEVblog #452 - Stanford Research SR430 Teardown — Dave Jones (explains)
+context before: You hardly ever find that and I think it's brilliant. Good on you, guys. And if any of those guys are watching and uh possibly still working at uh Stanford Research, you know, uh 20 uh 23 years later, hey, leave a comment.
+TEXT: And when I pulled the plug on the back of this thing, that LED uh turned out pretty quick. It only uh stayed on for a second or two, so obviously they got uh bleeder resistors across this thing to uh drain that charge off.
+context after: And here's the power supply when we lift it out and uh I had to do the four um screws on the back um grill cuz they had the uh heat sink actually uh screwed into the back panel and I really like the design and layout of this power supply, how it just uh flips out like that.
+
+[905] EEVblog #905 - REPAIR: HP85 Vintage Computer — Dave Jones (explains)
+context before: So, this is where your low-impedance uh mode on one of these low-Z ranges can uh really come in handy. Actually, I can just go from the uh earth strap there.
+TEXT: There we go. And uh probe that. There we go. It's already discharged, so no worries. Uh I don't Yeah, it's already gone. They don't have a bleeder resistor on it, but uh yeah, the rest of it just discharged it.
+context after: So, there's there's no energy left in that. So, it's safe to go probing around. Not from a high voltage point of view. I mean, 35 V is fine, but just from an energy point of view.
+
+[268] EEVblog #268 - Xantrex 300V 4A Power Supply Teardown — Dave Jones (explains)
+context before: I'm fairly certain without having to trace it out that they will go down to earth like that. And then you may not be able to see that in there, but there's a tiny little half watt axial resistor in there.
+TEXT: That's actually 1 meg. As I mentioned at the start, that's a 1 meg bleeder resistor just to bleed off any voltage stored on these caps. And then we've got another Well, it's not a common mode choke this time.
+context after: We've got two separate inductors here and here and then we've got a another parallel filter cap and then another MOV. In this case, it will be in parallel and go directly across instead of to mains earth.
+
+[1381] EEVblog 1381 - Argon Ion Laser 10kW PSU Teardown — Dave Jones (explains)
+context before: I mean, we're not going to use this anymore. So I'm going to take it all apart. And these are a bunch of circuit breakers that go out. This is actually looks like the output that goes off to the giant cable.
+TEXT: But anyway, we've got a large capacitor bank here. Got a bleed resistor across that of course cuz you don't want that beast to stay charged up. You can tell this capacitor bank is delivering all the power.
+context after: There's a huge thick cables going off here. These are actually going directly across the magnetic coil and confinement coil across the plasma tube in the head. So it like I believe like there's nothing else in the way.
+
+[630] EEVblog #630 - How To: Soniq LCD TV Troubleshooting Repair - Part 1 — Dave Jones (explains)
+context before: And um it's still holding a decent charge. Look at that. This is why you don't want to touch these things unless you've left them off for quite some time.
+TEXT: And it's also recommended, you know, you put a dummy load across them or something like that, a big-ass resistor um you know, calculated that you can put across there and just drain that main filter cap.
+context after: But, look at that. That main filter cap, that is still got 200 and, you know, 70 200 That'll give you a hell of a belt. And of course, something like this uh proper high-voltage differential probe is what you need to be safe measuring the primary side of a switching uh mains uh you know, power supply like this.
+
+[365] EEVblog #365 - ESR Meter Bad Cap Monitor Repair — Dave Jones (explains)
+context before: It's not as good as the Samsung one we we looked at anyway, but yeah, they're kind of doing the right things on there. And for those curious, I will measure the big um high-voltage cap over here.
+TEXT: Yes, I have checked. There's no voltage on that. It is discharged. Usually, they'll have a bleed resistor across it, but always measure it before you do that. Well, this is only 68 microfarads at 450 V.
+context after: So, let's flip it over. Where is it there over? That's that one and that one. 0.8 ohms. That sounds pretty decent. I mean, if you go by the uh chart here, it doesn't go up to 450 V, but you know, 68 it you know, I expected under an ohm, and that's what I'm getting.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: But, and of course, the output of uh that will be tied into the constant current uh circuitry, which then controls the gate. So, that'll all be uh analog loop stuff going on in there.
+TEXT: And then, we've got a bleeder resistor across here. That's that one down in there. There we go. It's a fairly uh large one. And then, we've got another bleeder resistor across the um filter caps.
+context after: There our main three filter caps up here. There they all are. Boom boom boom. Uh they're 2,200 mic each. Uh 63 V. And we'll measure some uh We'll get the scope out, and we'll actually measure some things on here and have a look at the gate waveform there.
+
+[272] EEVblog #272 - Manson 9400 40A 3-15V Switchmode PSU Teardown — Dave Jones (explains)
+context before: Excellent. Right on the terminals. Exactly where it should be. This, interestingly, goes into a little board holding nothing more than uh the uh 1 microfarad input uh filter cap.
+TEXT: Once again, it's got all the necessary uh UL and all the markings on them. Check them out. There's a million of them. And uh there's a bleeder resistor in there, a tiny little one, in parallel.
+context after: And that uses a connector. It's actually glued down. You may not be able to uh see that in detail there, but it but it is actually uh stuck in place.
+
+[1482] EEVblog 1482 - Mains Capacitor Zener Regulator Circuit — Dave Jones (explains)
+context before: So, the micro is powered from like the 3.3 or 5 volts here, and that switches on this NPN transistor, which then turns on the PNP. Then you've got a small base current across both these Zeners here, and then it switches on the relay, which then turns on the heater coil here.
+TEXT: And we almost forgot about the bleeder resistors across the two 220 nanofarad capacitor here. This is for safety. So, when you pull the thing out, this capacitor could be charged up.
+context after: You pull it out of the outlet, and you don't want to touch the pins because then you could get a zappy. So, you've got two high value resistors, 750 K each, and so 1.5 meg total across the 220, and that just bleeds the charge off that capacitor.
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (explains)
+context before: No, 1.3. So, it's most likely to be something primary side related rather than an individual thing on the secondary side. So, let's have a look at the bottom here and by the way, it's always good like just with one hand just hold on to the plug just so that you don't cuz if you're powering this, unpowering it all the time, trying to troubleshoot something like this, you don't want to
+TEXT: accidentally forget plugged in and then you start touching the thing. That could really ruin your day. Anyway, yes, it does have bleeder resistors across about two main caps here.
+context after: So, that actually um that's for sharing as we'll see and also will help bleed those capacitors as well. So, it's safe to touch uh fairly quickly after power down.
+
+[861] EEVblog #861 - Rigol DP832 PSU FAIL & REPAIR — Dave Jones (explains)
+context before: So, that's obviously the negative output in this Chinese symbols there even though the silk screen is a bit dodgy on that one. That's going to say negative in Chinese, I'm sure.
+TEXT: And then our resistor jumps across here and that goes to the other huge trace here. So, obviously, they got that directly across the output rail. So, that's a bleeder resistor.
+context after: So, what that bleeder resistor is doing is actually discharging the output capacitor. You may have seen it in the shop before, I don't know, right down. There's actually a electrolytic capacitor.
+
+[1481] EEVblog 1481 - Dodgy Dangerous Heater REPAIR — Dave Jones (explains)
+context before: Well, that explains it why you're only getting 14 volts DC on the other side. Well, here's what happens when you assume. I measured this in circuit and it's the X class cap which they're using as a divider along with the 47 ohm series resistor to go into the diode bridge.
+TEXT: And as I said, there's like a bleeder resistor across this as well. That measured fine. That was 750k. And I was reading 103 nanofarads. So, I thought, okay, it's a 100n cap.
+context after: That sounds reasonable. But, look, it's not. Focus, you bastard. Look, it's not 100n, it's 220, 224. There it is right there. So, there you have it. Wow, I did not suspect an X class cap.
+
+[1511] EEVblog 1511 - Solar Analytics System FAIL! (+ Dave gets ZAPPED!) — Dave Jones (explains)
+context before: That cap was charged. Oh. Oh, yeah. That was a That was a good one. That was the DC side of that. That was charged up. Ouch. Oh goodness. ANYWAY.
+TEXT: I SHOULD HAVE THOUGHT ABOUT THAT. WELL, WHAT? There's no bleed resistor on there? Um for the caps? Oh, of course, these things aren't designed to be serviced, but jeez.
+context after: Okay, still shaking my hand on that one. Thumb's a bit tingly. Didn't give it a thought, actually. But yeah, with hindsight, um yep, I should have known that they were DC uh input caps charged to mains potential and yeah, zappy.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (explains)
+context before: You might think, "Ooh, it's measuring, you know, 50 ohms both ways or something, and it must be shorted, you know, it must have like a or a high impedance short out" or something like that.
+TEXT: Well, no, you've got to think about the rest of the circuit here and how there might be a bleed resistors like this in parallel. So, yep, that's what they've got here.
+context after: Oh, sorry, I was getting carried away. I think this is the 5-V C. Let's Let's go to the next page. C C C, yes, 5 V here. That's it.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (explains)
+context before: I thought I was going to have a winner winner chicken dinner and get this thing uh fixed. But, anyway, let's have a probe. Uh you got to use your high voltage uh probe here.
+TEXT: Got the HVP uh 70. And by the way, this design, I've got it unplugged uh right now, but um the cap is still charged up because they didn't design in a bleed resistor.
+context after: And you'll notice over here, what what what? That's 50 V per division. 50 100 100 and still charged up to 150 V DC. It's slowly going down due to the load of the uh probe, which is 4 meg.
+
+[1164] EEVblog #1164 - Xbox Engineering Baptism Of Fire — Dave Jones (explains)
+context before: I I can't fault that at all. Looks look like a 240 switch mode supply. So, I got got no issues with that, but let's look at the protection. There's our protection, 2.5 amps.
+TEXT: It It'd be different for the 110. Looks like they got a MOV in there. Don't know They got a resistor across that to bleed any residual when you pull the cord out.
+context after: So, that's nice. Everything's hunky-dory. There has been speculation that there was bad soldering joints on these, and that's what would heat up and start, you know, it catch the fire and everything else.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (opinion)
+context before: So you really have to look at low noise uh local linear regulators. But anyway, high voltage regulation step up DC toDC converter. That's the output filter in that we're generating now plus - 245 volts there.
+TEXT: Probably got some sort of load or something there to keep it uh to keep it all uh nice. And then we've got some other control or low or regulation around here.
+context after: No, it's saying plus 20 volts here. So yeah, plus minus 20 volts. So there you go. There's our local regulation. I don't know why it's sort of all the way up this end because I would have expected the high voltage to flow from over here and then power the um output um side of it.
+
+[504] EEVblog #504 - UPS Tutorial & Teardown — Dave Jones (mention)
+context before: Moving along we've got a couple of extra inductors here and then we've got some more filtering. Large, huge filter caps down here and then there's our current transformer. There it is.
+TEXT: See here? It's even labeled CT. CT1. You can see that they've got a single wire going through a little transformer coil there so they can just get an isolated tap off that and they can measure the current coming from the mains input and they've got our and then we've got a bleeder resistor there by the looks of it.
+context after: Then we've got ourselves another current transformer down in there. That would be measuring the output current. And of course I'd be tapping the output voltage as well as the input voltage and reading those so they can get the output power and the output voltage.
+
+[1291] EEVblog #1291 - Mailbag — Dave Jones (mention)
+context before: and it goes into another mains jobby, and I couldn't be bothered, uh, caring about what the switch mode controller is here. Um, secondary side, another no-name jobby down there, 1,000 mic. So, nothing fancy there at all. Uh, it's doing primary side regulation. I don't think there's any secondary side regulation there at all.
+TEXT: Nope. Um, adequate, uh, clearances and things like that, so, you know, it's not too shabby. Got a couple of little cutouts in there, even. So, and they've got, uh, bleed resistors over here. So, it's, sure, it's built down to a price, but, um, you know, nothing inherently wrong with that.
+context after: And then there's our output board, and there's our selection wheel. Jeez, it's not even, uh, held on the other side there. That's a bit how you're doing. And, uh, yep, as I suspected, it's just a pot there. Turn that around, and there she goes.
+
+[1277] EEVblog #1277 - Electric Fence Controller Teardown — Dave Jones (mention)
+context before: It's all a layout issue, really. But, yep, all three of those uh caps are in parallel, so yeah, no touchy. And I'll just check to see if the negative of these caps is uh ground referenced.
+TEXT: So, yep, of course it is. Now, this is interesting. Uh this that was the big power resistor we saw on the top, and sure enough, it's between the positive and the negative output like this, but it goes through that little uh opto sensory type thing.
+context after: This component across there is just a uh reverse biased diode. Uh that might just be a dropper resistor. That doesn't actually have to be a load. Otherwise, it'd be current sensing the load.
+
+[8blgmbXfDEc] New Dumpster Diving Monitor Score — Dave Jones (mention)
+context before: Here's the mains input, obviously, here's our common mode choke, that's an inductor, that goes up here, and we're going to have a bridge rectifier in there somewhere? Yep, is that our diode bridge? Anyway, it goes up there, looks like our main capacitor, probably in there like that.
+TEXT: So what we want to do is just make sure it's not charged, I mean it's going to have a bleeder on it, but this is where the low impedance, the low Z function in your multimeter comes in handy, because it puts a couple of K across that capacitor,
+context after: as well as measuring it at the same time. Eh, it's not measuring anything, so it's safe to disconnect this. And here's our main power supply board, very simple, although it's got some stuff on the back, and this is the primary side here, of course.
+
+[1481] EEVblog 1481 - Dodgy Dangerous Heater REPAIR — Dave Jones (mention)
+context before: Yeah, good enough for Australia. Well, I didn't have a diode bridge in my kit readily available. Might have one, you know, somewhere in the parts drawers, but anyway, yeah, I'll just rip this one off an old board, and give that a go, because, you know, it could be something internally dodgy with the diode bridge.
+TEXT: So, give it worth a shot. And it's just like there's not much else in circuit. Everything measures fine, the dropper resistor fine, the dropper cap, and the dropper bleeder resistor across the cap, that all measures fine.
+context after: So, I don't know. Diode bridge. Okay, let's try that again. Ah, 14 volts. Nope. Okay, this is the AC side of the diode bridge. What are we getting? Yeah, 15 volts AC.
+
+[1481] EEVblog 1481 - Dodgy Dangerous Heater REPAIR — Dave Jones (mention)
+context before: That's more like it. Your relay's going to switch on now. All right, so what we had going on here was 240 volt AC in. We had a big power series dropper resistor 47 ohm.
+TEXT: I measured that early on and it was correct. And we had a 220 nanofarad X class cap here. I explain X class in a second. We had the bleeder resistor across and I measured this early on, but this is where I come a cropper.
+context after: Well, one of the places that I come a cropper in this one is that I measured it, and it was 100 measured 100 n, and I thought, you know, that sounds like, you know, that's like bang on a typical value that you might find in a dropper like this.
+
+[1364] EEVblog #1364 - Compaq Portable PSU REPAIR — Dave Jones (mention)
+context before: It's like uh it's Anyway, um and we do have an extra one over here, which just has then these letters come over here, and then these are the ones that actually go to the connectors over here.
+TEXT: But anyway, as you can see, mains in here. We've got some chokety chokes. We've got a full wave bridge rectifier. Then we've got our big mains filter caps. They've got some big bleed resistors across there.
+context after: And uh basically, yeah, this is all just uh primary side switching here. And then it looks like it does have a feedback coil here, cuz that's feeding back without opto isolation into there.
+
+[1482] EEVblog 1482 - Mains Capacitor Zener Regulator Circuit — Dave Jones (mention)
+context before: Hi, in a previous video linked up here and down below if you haven't seen it, I repaired an Arlec space heater and I did a Dave CAD drawing of basically what was happening here for the power supply and well, I won't spoil it for you what the failure was.
+TEXT: Just go and look at it. So, all I showed on my Dave CAD drawing was a 47 ohm resistor here, a bridge rectifier and then the AC capacitor down here with some bleeder resistors across there.
+context after: And it basically generated the 24-V output from the bridge rectifier, 24-V to power the relay and the LED display control circuitry and stuff for the heater. And somebody asked me, "Well, how do you actually get 24-V out of the bridge rectifier?" They didn't quite understand and that's because yeah, I forgot to include the actual regulation side.
+
+[1191] EEVblog #1191 - Digital Energy Savers BUSTED! — Dave Jones (mention)
+context before: Blah, blah, blah. Oh, it says 15 to 35% on here. Where was all the marketing on the eBay ad was like 30 to 50%. Wow, stored energy for 10 seconds that the low current constant voltage and stabilized.
+TEXT: Yeah, right. So, what capacitor's in here and there's no bleed resistor on it probably. Do not open or self-repair. Bugger that. It's all just But power factor correction is real.
+context after: Well, it's a thing as with all these products, there's a kernel of truth to them and then they in a practical sense it does nothing because in most countries, I believe anyway, you're not going to pay for bad power factor.
+
+[1481] EEVblog 1481 - Dodgy Dangerous Heater REPAIR — Dave Jones (mention)
+context before: No, of course not. 0.47, of course. Oh, jeez. We're We're coming to Guts uh winner winner chicken dinner. Keep your old dead PC power supplies, cuz look what we have here.
+TEXT: Bodged across there, 224 X2 class. Even looks like the same pitch. Look at that. Ah. Bobby does snip it out, and it's got a bleeder resistor across the bottom of it.
+context after: And I'll have to snip that out, too. That is one nicely salvaged poly put the kettle on 220 micro Farad X2 class mains cap. Even the correct pitch, same size physical size and everything.

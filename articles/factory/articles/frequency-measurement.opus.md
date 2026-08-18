@@ -1,0 +1,51 @@
+# frequency measurement
+
+Frequency measurement is the determination of the repetition rate of a periodic signal, expressed in hertz. It appears as a secondary function on almost every class of bench instrument -- handheld and bench multimeters, oscilloscopes, LCR meters, logic analysers and dedicated counters -- and the quality of the result depends far more on how the instrument derives the number than on the headline range figure.[75][249][383][6M-xXEn1_iI] In practice it is most valuable not as a metrology exercise but as a diagnostic one: knowing that an unidentified coil is running at 55 kHz or that a card reader is a 125 kHz type immediately identifies what the circuit is.[924][539]
+
+## The hertz function on multimeters
+
+Frequency, usually labelled Hz and usually sharing a key with duty cycle, is a near-universal feature on modern meters, from sub-$10 pocket units upward.[3][6][46][1083][1636] On a well-implemented meter the function is not confined to a dedicated range: it operates in AC mode, in DC mode, and in current mode, so pressing the hertz button in any of those positions returns frequency in Hz or kHz alongside pulse width in milliseconds and duty cycle.[249] Dual-display meters can show hertz simultaneously with AC voltage, and in some cases with dBm as well, although the secondary display may not carry the full resolution of the primary one.[249][559]
+
+The useful upper limit varies enormously and is the specification worth checking. A meter built for electrician use may stop at 50 kHz; one general-purpose handheld reaches only about 200 kHz; a 1989-vintage bench meter that reached 1 MHz was considered a significant capability at the time.[60][10][791] At the bottom of the market the ceiling can be far lower still -- 400 Hz maximum on one low-cost handheld, enough for mains and nothing else.[1731] The engineering judgment is that frequency is an overrated and non-essential multimeter function, but that if a meter is being bought for it, the highest range available should be chosen: units reaching several megahertz are genuinely useful, and even a couple of hundred kilohertz covers some work.[75]
+
+Range alone does not describe the function, because sensitivity falls off with frequency. One meter specified to 1 MHz at 40 mV peak-to-peak does meet that claim, but loses lock when the input is reduced to a little over 25 mV; raise the input to 1 V and it holds on to about 1.7 MHz.[249] Comparative testing at a 1 MHz spot frequency shows that this amplitude-versus-frequency behaviour does not track price -- in one group the two cheapest meters outperformed the more expensive ones.[91][99]
+
+Whether the function earns its place depends on the work. On a clamp meter aimed at mains and solar installation, frequency may be the sole difference between two model tiers, and paying extra for it is poor value when the installed system is known to be 50 Hz; the function becomes worthwhile once variable-frequency drives are involved.[dv0B_WqL7w4]
+
+Bench multimeters expose more of the underlying counter. One 6.5-digit unit offers three input filters at 200, 20 and 3 Hz together with three gate times of 1 second, 100 milliseconds and 10 milliseconds, the longest giving the most resolution, plus a logarithmic bar-graph response in frequency mode.[489]
+
+## Gate time, resolution and low frequencies
+
+A counter trades update rate against resolution through its gate time. At a 0.1 second gate the reading updates ten times per second; extending the gate to 1 second drops the update to once per second but adds a digit to the result, and a 10 second gate extends this further.[6M-xXEn1_iI] The same mechanism sets the low-frequency limit: with the gate time set slow enough, 100 millihertz is measurable without difficulty, and specified operation extends down to the order of 100 microhertz.[325]
+
+Resolution must not be confused with the number of digits displayed. An instrument showing a mains-derived 50 Hz signal to several decimal places it cannot actually resolve gives a false sense of precision.[801] At the top of the traceability chain, frequency and time measurements are carried from 1 MHz to 50 GHz against a caesium primary standard.[1040]
+
+## Hardware counters versus sample-derived measurement on oscilloscopes
+
+Oscilloscopes produce a frequency reading by two quite different routes, and the distinction determines how much the number can be trusted. A dedicated hardware frequency counter runs continuously in the background and is independent of the captured record.[855] The automatic horizontal measurements, by contrast, are computed from the acquired samples.[1226]
+
+The consequence is visible on instruments where the automatic measurement is taken from the displayed data rather than from the full acquisition memory: the sample-derived frequency reads four digits at a fast time base and progressively sheds digits as the time base is wound out, while the hardware counter alongside it holds its resolution.[383] Sample-derived measurements are also limited by record length -- a capture of only 10k points constrains the frequency figure to about one decimal place at 1 kHz.[1226] The software measurement can fail outright: one scope refuses to settle on a stable software frequency for a 1 kHz waveform, jumping around and needing many more cycles, yet reads correctly again at 10 MHz.[704]
+
+Enabling the measurement is not free. On one 12-bit scope, adding RMS, peak-to-peak and standard deviation measurements leaves the waveform update rate near 800k waveforms per second, but switching on the frequency measurement alone collapses it from roughly a million to a thousand updates per second.[1529]
+
+Aliasing is the most dangerous failure mode. A 10 MHz input on a scope without anti-alias filtering, viewed at a slow time base, produces convincing low-frequency artefacts that the measurement system will happily quantify -- readings of 1 Hz and 8.16 Hz for a signal that is nothing of the kind.[F0HQJIPcDYs] Cursors provide an independent check: placing them peak to peak on a waveform gives a delta-T-derived frequency that can be compared against the automatic reading, and where a signal alternates between two periods the cursors expose both, for example 3.86 kHz and 5.12 kHz on the same trace.[855][1089]
+
+An alternate-trigger frequency display allows a scope to measure a second channel independently of the main timebase, which can be used to feed the instrument's own trigger output back into it and read out the resulting rate.[480] Analog scopes inherit the accuracy of the main timebase directly: if the timebase is out, the frequency reading is out by the same amount.[196] Three-phase power measurement options display frequency alongside the power parameters, with scope-based measurement carrying roughly 1 to 4% error.[VTHcxTst_RA]
+
+## Diagnostic use
+
+Frequency measurement is the fastest way to identify what an unknown circuit is doing. Probing the drive coil of a mains-charged toothbrush returns 20 kHz at around 700 mV peak-to-peak, an order of magnitude away from an initial guess of a couple of hundred kilohertz -- and the amplitude is irrelevant, being only what the pickup coil happens to capture.[284] The drive coils of a magnetic hover platform sit at around 55 kHz, read at 500 µV per division.[924] An access card reader is confirmed as a 125 kHz type by probing it directly.[539] The motor driving a barcode scanner's rotating prism runs at about 147 Hz, with histogram statistics giving a standard deviation of around 600 millihertz on that figure.[637] A crystal that could not be identified visually turns out to be 24 MHz, feeding a PLL that multiplies it to the processor's internal clock rate.[295] Ringing on a crystal oscillator output contains deliberate higher-frequency components measurable at about 29.4 MHz by cursor.[1089]
+
+The same approach underpins near-field EMC work: an FFT display driven by a hand-wound loop probe reveals peaks as the probe is moved over a board, and the frequency of each peak is then measured to determine whether it will be a problem. Because the technique identifies frequencies rather than absolute levels, the loop does not need to be calibrated or of any particular size.[1188] Signal processing applications rely on the same reduction -- once an analog input has been squared up into a digital form, extracting its frequency and time periods and matching them against known patterns is straightforward.[713]
+
+## Other instrument classes
+
+LCR meters specify a test frequency rather than measuring one, and the available set is a direct indicator of grade. A mid-range handheld reaching 10 kHz does what cheaper LCR meters will not; low-end units are commonly limited to 100 Hz, 1 kHz and 10 kHz, with no 100 kHz option.[137][1649]
+
+Logic analysers list frequency among their per-channel measurements alongside width, period and duty cycle.[436] The usability of that function varies sharply: software that will not report the frequency of a clock without first entering a separate timing-analysis mode, or that displays a frequency without a coherent time reference, defeats the basic purpose of the measurement.[1018]
+
+Signal generators and combination pocket instruments generally include a frequency readout on their measurement side, and hand-held scope-meters place frequency alongside RMS, peak-to-peak and duty cycle in a default measurement set.[1450][D2PANd9Hu3U][1723][f_SdM6sXHD4] Frequency entry resolution on the generation side matters too: a generator front panel that will not accept more than two decimal places of megahertz cannot be set to an arbitrary precise frequency.[1220]
+
+## Verification
+
+Because 1 kHz is the standard reference point for AC and frequency specifications, meter checks are routinely performed there -- 1 V RMS at 1 kHz for AC accuracy, 600 mV on an AC millivolt range at 1 kHz, and a 0.1%-tolerance reference measured at 1 kHz to confirm a bench meter is reading true.[1095][1574][1496] Where a meter's AC bandwidth is the thing under test, the frequency is swept upward until the reading falls out of specification; one inexpensive handheld holds only to about 3 kHz.[1095] Checks of this kind establish confidence in an instrument but are not metrology, which requires a properly traceable chain.[1496]

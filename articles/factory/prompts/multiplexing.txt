@@ -1,0 +1,248 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: multiplexing
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 43 passages drawn from 32 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# multiplexing`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1639] EEVblog 1639 - Keysight InfiniiVision HD3 Oscilloscope Teardown — Dave Jones (explains)
+context before: Basically, an oscilloscope in one chip. You know, you've got to add the processor on and and maybe you need that small FPGA above or you can bind it into say a Xilinx Zynq processor, which they don't have on this one, but what I'm thinking about is that if this is the case, then you could have one of these chips, one.
+TEXT: Plus a Xilinx Zynq processor and that's it for a lower end scope that's 14-bit MegaZoom 5 and all the bells and whistles, but obviously but then they'd multiplex. They would multiplex cuz if it does actually have two ADCs in it plus but actually four inputs that are multiplexed cuz we know there's extra inputs here, then maybe my speculation is that's ripe for a low-end version.
+context after: Eventually, don't expect it And year or next year, maybe, but you know, in a few years time, maybe lower end version of this scope where they save costs, cuz this is not a cheap ASIC, of course, but given that it's an ASIC, once you got the that NRE cost down, that non-recurring engineering cost, once you've paid for that, once you've absorbed that, then it relatively speaking, um the ASIC becomes
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (explains)
+context before: Um these are actually uh dual ADCs um to handle the four channels. So, let's take a look at those. And they are ADC08D1520s. Low-power 8-bit dual 1.5 gig sample per second or single 3 gig sample per second AD uh converters.
+TEXT: So, they're they're dual, but they um have to multiplex them. So, if you want the faster rate, um yeah, it's going to be using both of them. Now, interestingly, the spec for this two series is only 2.5 gig samples per second for the uh single channel or two channel uh configuration um or 1.25, half of that of course, for the um four channel configuration where they uh use
+context after: the chip. Now, that's actually less than that's significantly under um the spec for this chip. They could actually do 3 gig samples per second. They doing that for noise reasons?
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (explains)
+context before: I thought maybe it might be like a membrane type thing. Turned out to be a tactile switch. Usually it's pretty rare that those tactile switches uh fail like that.
+TEXT: Have seen it before, but it's not something It's not my initial conclusion that I'd jump to for something like this. And as I said, if this was arranged this was designed as a switch matrix in the micro as you'd normally do it, you know, you'd have a bunch of digital lines for the common done bunch of digital lines for the rows and then you multiplex them and you scan
+context after: continuously scan the keyboard. It it really it doesn't matter whether or not that switch is a couple hundred ohms. It would still work and it wouldn't confuse it with other buttons on there, but that's not how they implement that.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (explains)
+context before: And they've got a PNP here. So, it's basically they're shorting out that. This goes up to You follow it up, yellow brick road again. It goes up to the bottom of our resistor divider here.
+TEXT: Yeah, handled by uh multiplexing inside the chipset. And basically, the common of those is shorted down to ground when we're measuring AC and DC. But, when we're measuring ohms, it disconnects the ground, and it's you know, it's go it's activating this part on the lower end of this resistor network here in the ohms mode and the uh capacitance mode here.
+context after: In the volts uh DC mode, they've got an AC coupling cap here. They actually and I and a series resistor, so it's almost like a little snubber. They're uh shorting that out, and uh then our input goes, by the way, through a PTC, positive temperature coefficient resistor, which will increase in value in uh overloads, and that's that puppy down in there.
+
+[628] EEVblog #628 - Tektronix 213 Vintage Portable Oscilloscope Teardown — Dave Jones (explains)
+context before: But yeah, there's not a huge amount to this. I mean, this is the analog to digital converter portion. It's all old school. There's no ADC chip as such in this thing.
+TEXT: It does it using slope conversion. Terrific stuff. So, basically what this is doing here, the decade counter, that actually does the counting direct from the ADC. It starts at zero, counts it up and gives you your value, and then it multiplexes the output here and actually then that goes through the character generator ROM.
+context after: So, it'll cycle through each one of the digits, and there's the digit transistors up here, and you can see that it would pass each digit directly through to the character generator ROM.
+
+[1092] EEVblog #1092 - Wi-Charge IR Wireless Charging - Fact or Fiction? — Dave Jones (explains)
+context before: But basically they've got this infrared transmitter, which they can put on the roof here, and the black circle in the middle, that actually has the near-infrared laser diode in it. So this does actually use a laser, and it's got the tracking system as well, which is able to steer the laser beam around
+TEXT: and precisely target the device which you're trying to power. So in the case of the trains, it would actually be tracking and then multiplexing, because it's only got the one laser in it, I believe, so it actually has to track both of them and switch and alternate, multiplex effectively,
+context after: the power between them. And it claims to be able to handle up to 4 devices, and it claims to have a 5 watt total delivered power, and with like a 50 square meter field of view. And they're claiming 5 meters, now I have actually been talking to the head marketing person at Wycharge,
+
+[1241] EEVblog #1241 - Power Up Display Counter Project - Part 1 — Dave Jones (explains)
+context before: permanently display driver MCU yeah don't want that oh yeah here's the five or 15 that we saw before operating between 0 5 or 0 to 15 volts all segments and field of black so there you go so we can just um alternate the thing and you can do that if you like assume you've got a five volt micro
+TEXT: controller you can put it on two IO pins um each segment between two IO pins multiplexing is a different beast but you can put it in between there and then just flip you know one zero one zero like that and you could uh turn your and then of course set it to tri-state when when you don't
+context after: want to drive it because you don't have to leave the drive voltage there and uh that's that's cool it looks like we can just flip it back and forth there you go and once again like I have not looked into e-ink drive voltages before so yeah I I just
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (explains)
+context before: And the spec, I'm pretty sure, only says 1. And the ADC, for you ADC aficionados, I know you're out there, this is the ADC-08D1520, a family that we've seen in oscilloscopes before, very common, basically purpose-designed for this sort of task. This is an 8-bit converter, 1.5 gig samples per second,
+TEXT: dual channel. So that's why we've got two of these puppies on here. So, none of this multiplexing rubbish, you get the full 1.5 gig samples per channel. Nice. But these are actually capable of being interleaved or multiplexed, so you can get double sample rate on a single input channel.
+context after: If you configure it that way, 3 gig samples per second, but the spec doesn't do that. So once again, just like the memory up here, they seem to be gilding the lily. It's, you know, this hardware is capable of much more than what I think
+
+[1369] EEVblog #1369 - Xiaomi Mi Air Wireless Charging BUSTED! — Dave Jones (explains)
+context before: And does it actually have one of those on each side? Or is there some sort of like internal panel that just like rotates with a motor or something like that and then scans around?
+TEXT: I don't know. Anyway, there's some sort of technology that allows them to actually find the phone. So, the the could phone could actually be like maybe transmitting at an incredibly small power signal and then they could be multiplexing that array to actually do some reception as well.
+context after: And then they can like locate where the phone is. But anyway, Sharia says even the best phased array like this, you're only going to get about a 60° beam angle.
+
+[1044] EEVblog #1044 - LCD Technology Tutorial — Dave Jones (explains)
+context before: And you know, maybe like a 3 1/2 digit multimeter, you know, one of those real old cheapo ones, they might be static as well cuz you can get away with like 40 pins or whatever.
+TEXT: And you can drive those statically. There's no need to multiplex. But once you get into a more complex LCD, which is what we're going to actually design in this series of videos and actually get manufactured, you'll see that in the next video, is that you need to multiplex the pins.
+context after: You need to have more than one common pin on here, and then you need to multiplex the segments. Otherwise, you'd end up with hundreds and hundreds of pins. And you obviously don't want that because it's logistically very difficult to drive.
+
+[717] EEVblog #717 - How To Hack Vacuum Fluorescent Displays — Dave Jones (explains)
+context before: It had to be sort of on this end of the display where it's actually flashing. And uh sure enough, there we go. There's our lip lip lip. And of course, it's going to be a multiplex display, so that's why we're getting the frequency there.
+TEXT: And that's being multiplexed at the like a you know, 60 hertz or something like that. So, there you go. You can see the on-off burst like that. And uh of course, it's multiplexed in that part down in there, and then it's just completely switched off down in that part.
+context after: So, there you go. And of course, by adjusting the uh duty cycle and the frequency in there, you can adjust the uh brightness of the display. Oh, and I forgot to mention the voltage um we're at 20 V per divisions here.
+
+[1101] EEVblog #1101 - Siglent SVA1015X VNA Teardown — Dave Jones (explains)
+context before: vector network analyzer to get your S11 parameters um for your uh for your VNA is to measure the reflected power coming back from your tracking generator output, cuz that's exactly what we have to do.
+TEXT: So, what they're doing is actually using the existing spectrum analyzer measurement hardware uh to actually then measure the reflected power. So, they must be sort of like multiplexing between doing the spectrum analyzer sweep and then doing a reflected power sweep.
+context after: It seems like that's how they're doing it anyway. And if so, that's a very way and that's a very clever way to do it with very little additional hardware.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: Here it goes, S data out, and that goes off to the next uh line display over here, to the second board, and the third board. Now, as you saw, all of our displays are actually uh showing all of the digits.
+TEXT: So, they're all stuck on. So, that indicates that the multiplexing system is actually working. The data uh latch and things like that. Because it's uh it's most likely reading out the contents of the data from this, which is just It hasn't been set up.
+context after: We haven't set up the data registers in there to display anything else. So, by default, power on, it's just displaying all segments. So, the multiplexer, 74HC164, is uh no doubt uh cycling through.
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (explains)
+context before: You blank, shift, blank, shift, blank, shift. And then, uh, you know, and then turn on, you know, you might turn on each one of these for 100 milliseconds or something like that, you know, 200 milliseconds, uh, for example.
+TEXT: You might turn on each one of these digits and then shift in the data real quick. So, I think, um, that's really the only way where the only way forward, really, is to like like multiplex these displays to ensure we don't have all 40 on at once.
+context after: And to like if we can limit it to one, uh, like one segment, one display at a time, then we've, uh, reduced our our complexity our, uh, in problems by a factor of five.
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (explains)
+context before: these are always alternate, uh, ones. I don't think, um, there's a scenario where you're going to have both, uh, charge and your bypass on at the same time, because, well, you'd be shorting your battery out. So, as you can see, they have, uh,
+TEXT: for the first 500 milliseconds, uh, number 1 battery is on, number 2 is off, number 3 is on, number 4 is off. So they're doing 2 at once here, and then alternating between them. But we've also got this little data that's going on in there.
+context after: I'm not sure what that business is. That might have to do with the measurement. But whatever it's doing in there for 20, 40, 50, uh, milliseconds, that's not a coincidence, I think. That's precisely 50 milliseconds. Something's going on in there. Anyway, you can see how they're always, uh,
+
+[1044] EEVblog #1044 - LCD Technology Tutorial — Dave Jones (explains)
+context before: If you take a look at the data sheet, it's what's called a uh, static or a non multiplexed LCD display. So, what that means is that it's got one common pin down here, and then a pin for each particular segment on the display here.
+TEXT: And basically, there's no need to multiplex anything. You're still AC driving the pin, but you don't actually need to multiplex different segments. And this is common for like a display like this, which doesn't have many segments on it.
+context after: In this case, it's just a seven-segment display like that. And you know, we have X number of pins. This one actually has two pins per segment. So, you don't need that many pins.
+
+[851] EEVBlog #851 - Mailbag — Dave Jones (explains)
+context before: We've got an infrared detector there. Actually is there anything on the top side at all? Nope. And sorry, but I had to get medieval on its arse and chop all the pins off, couldn't be bothered desoldering it, it's no good. But hey, check out the pattern on the back, we can see how it's all
+TEXT: multiplex, this is fantastic. Look at this, sorry about the reflections, this is all glass so it's sort of hard to get things really right, but jeez, look at that. I mean that's how they can get away with so few pins on this thing.
+context after: Everything's multiplexed. Ah. Thing of beauty. Joy forever. Look at that. So thank you very much Chris for sending that one in, that is one fascinating beast. I'd love to see these puppies in action in Japan. And manufactured by Samsung, thank you very much.
+
+[1044] EEVblog #1044 - LCD Technology Tutorial — Dave Jones (explains)
+context before: This has, if you count up the number of segments on there, it's 8 by 14 segments. Clearly, we don't have that number of uh pins. So, what this one is got is it's actually got four commons.
+TEXT: Uh what's called four common pins instead of this one here which just had the one common pin. And then you have to actually multiplex. If you want to turn, like in theory, your product could turn all these segments on at once.
+context after: And if you want to do that, of course, then you have no choice but to multiplex the display using those four different uh commons just uh to like reduce the number of uh driver pins that you've got on there.
+
+[256] EEVblog #256 - Yamaha PSR-80 Keyboard Teardown — Dave Jones (explains)
+context before: resistance with the pressure. And you can see the matrix arrangement they've got cuz there's not many connections going to this keyboard. There's only a couple of, you know, for what is it, 68-key keyboard or something.
+TEXT: There's not many cables actually going over to the So, they've got a multiplex arrangement with diodes on the top here and that somehow that allows them to sample all of the keys and actually get the displacement of each key.
+context after: It's rather neat. And if you actually take the rubber strip out like this, you can see each individual key popping up like that and they actually have three different prongs on there of slightly different heights.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (explains)
+context before: It's a 16-bit 2 meg sample per second. The rating for this thing is 1 meg sample per second. So, I don't know why they're not pushing it to two.
+TEXT: They can. Uh they're not multiplexing anything here cuz they've got separate ADCs for voltage and current. So, anyway, it's a successive approximation register or SAR converter, which is none of that flash conversion rubbish.
+context after: So, good old school successive approximation converter. It looks pretty schmick. So, yeah, 16-bit jobby. And you know, look look at this. Low power battery operated instrumentation ATIs. That's exactly what we needed for.
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (explains)
+context before: Yeah, so this kind of like really sucks. We're sort of like stuck with a meh um, display. So, I don't know. Like the only other way to do it would be, well, not turn on all 40 segments at once.
+TEXT: They might actually be multiplexing the displays. You could actually multiplex them. You might go, um, well, okay, let's multiplex one display at a time and then you're just constantly shifting stuff all the time.
+context after: You blank, shift, blank, shift, blank, shift. And then, uh, you know, and then turn on, you know, you might turn on each one of these for 100 milliseconds or something like that, you know, 200 milliseconds, uh, for example.
+
+[60] EEVblog #60 - Fluke 117 Multimeter Review and Teardown — Dave Jones (explains)
+context before: Um but, you know, it doesn't have a huge bandwidth. And the other thing is is the cap range on it um has a minimum resolution of 1 nF, you know, so for electronics use, 1 nF resolution is pretty useless.
+TEXT: One thing I do like about it is that uh the ohms and the continuity are separate switch positions, so you don't have to use, you know, they're not uh multiplexed and use the soft buttons like the traditional one.
+context after: So, let's try out the continuity test response, shall we? Absolutely, it's got 500 microsecond response time. It'll pick up everything. Excellent. Okay, let's try out the response of the uh measurement and see if it see how it goes.
+
+[1044] EEVblog #1044 - LCD Technology Tutorial — Dave Jones (explains)
+context before: Uh what's called four common pins instead of this one here which just had the one common pin. And then you have to actually multiplex. If you want to turn, like in theory, your product could turn all these segments on at once.
+TEXT: And if you want to do that, of course, then you have no choice but to multiplex the display using those four different uh commons just uh to like reduce the number of uh driver pins that you've got on there.
+context after: Oh, it's sorry. I love these. I just love them. Starburst. Brilliant old school stuff. Um if you don't know about the starburst, it's just a uh a way to uh allow you to display alphanumeric characters in a standard uh like seven-segment type uh format, but it uses uh 14.
+
+[757] EEVblog #757 - HP4263A LCR Meter Teardown — Dave Jones (explains)
+context before: So, they're measuring the differential voltage across that here, and then they're measuring the current through the device with a range resistor here, which they can select in. It's anywhere from like 1 ohm up to 10 meg or something like that, as we'll see later in the software.
+TEXT: And they just feed that, multiplex that into an ADC, and Bob's your uncle. You can calculate anything. Very simple technique, but there's a bit of math and filtering everything else which uh goes behind it.
+context after: And here is more of the practical implementation how they do it. Here we've got the uh four terminals on the front here. So, they do uh Kelvin connection right at the device under test for compensate for your test leads.
+
+[1669] EEVblog 1669 - Agilent 53131A VFD to LED Display Upgrade MAILBAG — Dave Jones (explains)
+context before: Um so, all the driving stuff So, there is likely um no driving stuff. Well, they've got some uh drivers here um for the rows and columns. Um but that's that's about it.
+TEXT: All the they're just using the existing uh multiplexing uh stuff in here, except uh it's driving a uh LED display instead of a VFD. So, there you go. There's the individual chippies in there.
+context after: I won't go through and do any reverse engineering on this, but uh leave it in the comments down below if you want to comment on those. Don't even know what those part numbers are.
+
+[248] EEVblog #248 - LCD Enabled Microcontroller Selection — Dave Jones (explains)
+context before: Anyway, I want to go in and I want to look at the data sheet for this top one up here, the bingo, the LCD S401. There you go. It's only got It's through-hole once again, but it's only on one side.
+TEXT: Very low pin count, which means it's probably going to multiplex the commons or it has to. Let's go right down. Look at the display here. It's uh got megapascals, kilopascals, uh PSI.
+context after: So, um obviously this is like a a one designed for um some sort of pressure gauge or something like that. But, if you didn't want to use that, you could just start disable those segments, of course, not not drive them and use it as a four-digit uh display.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: But, if we actually probed Yep. If we actually probed all of those, we would uh like at once and uh triggered off one of them, then we would actually see a uh staggered We would actually see each one staggered in time like that.
+TEXT: So, that's just multiplexing each particular digit. But, of course, I totally expected all of that to work because if it didn't, well, we wouldn't get anything on the display.
+context after: We'd get one stuck digit or something like that. So, really, it all comes down to um this driver chip. We know we've got data probe coming in. I've probed that.
+
+[1717] EEVblog 1717 - Rigol's INSANE New $999 350MHz Oscilloscope: TEARDOWN — Dave Jones (explains)
+context before: So, unfortunately, like we can't even like separate the two. So, they're actually using combining both ADC chips there. So, like we can't even turn on channel three. We have it.
+TEXT: That's how they're doing it. It's clever. So, they're only So, it's only a looks like it's only a two gig sample per second ADC, and then they're muxing them for that.
+context after: So, you can't do the channel one and channel three trick like you can on some other scopes. So, that's how they're getting four gig samples per second, but hey, I'll take it.
+
+[1717] EEVblog 1717 - Rigol's INSANE New $999 350MHz Oscilloscope: TEARDOWN — Dave Jones (explains)
+context before: Once you're absorbed that NRE cost, non-recurring engineering cost of actually designing and masking the thing, then yeah, yeah, the price point becomes crazy. That's why no one else can match Rigol for this bandwidth for the money.
+TEXT: And the two ADCs, so yes, we're going to multiplex. So, the four gig samples per second will go down to two gig samples per second. And it's not divided by four.
+context after: So, that's a huge bonus, especially for a sub $1,000 scope. Crazy. Anyway, um yes, this is the same Once again, Rigol custom ADC here. This is the 12-bit jobbie.
+
+[1493] EEVblog 1493 - MacGyver Project - Part 2 — Dave Jones (explains)
+context before: It's sending It's basically sending the same signal strength across each one of the segments. Yes. From the one edgy source. The same current. Splits it and puts it into each segment.
+TEXT: Yep. Well, it multiplexes it. Multiplexes it. Yeah. So it turns on one segment at a time, but it's doing it so fast It's doing it so fast that you can't see it.
+context after: But each one of those segments is turning on at least 40 times per second, at least. Let's just probe some stuff for fun. Let me find a ground point.
+
+[1090] EEVblog #1090 - Sony Mystery Teardown — Dave Jones (opinion)
+context before: You would actually hook all of your sensors up to these, be they vibration sensors, let's say you're testing a motor or an engine or something like that, you might put, you know, dozens of different little vibration sensors all around it, and you'd hook them up to all these input channels here,
+TEXT: and then you would record those onto digital audio tape. And it was state of the art for the day. It had a 16-bit converter on each individual channel, none of that multiplexing rubbish, but unfortunately the bandwidth did scale down based on how many channels you enabled.
+context after: That's why we have the LEDs here for 16 channels, 8 channels, 4 channels, and 2 channels. In 2-channel mode, it had a bandwidth, an analog bandwidth of 20 kHz, and if you had all 16 channels enabled, all sampling at once, then it'd only have a 5 kHz bandwidth.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (opinion)
+context before: So, you'd need another high voltage transistor here NPN to actually uh drive this high voltage transistor. So, if you did that, you'd still need a two transistor solution for each of your eight segments.
+TEXT: So, yeah, I could multiplex this display, but you're going to have higher peak currents. It's going to be dimmer. It's a bit of an unknown. It's sticking around. And I I don't think I'll do it.
+context after: I think I'll just go for a direct drive solution. So, I need like a huge number of driver chippies like this. Uh effectively, if I could find one that had 10 outputs, one to drive each individual display like this.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (opinion)
+context before: We don't need the 88 transistors as well. And because we've only got the one dropper up here per display. So I like the direct drive solution. You get a known constant brightness.
+TEXT: You don't have to dick around with multiplexing and all that sort of stuff. But multiplexing, if you're really short on space and everything else, maybe you'd use a multiplex solution.
+context after: But I'm going to go for the direct drive. Now, if you were going for an external transistor solution, as I said, it's got to be a high voltage transistor, so you can't just use some sort of jelly bean thing like a 2222, for example.
+
+[1717] EEVblog 1717 - Rigol's INSANE New $999 350MHz Oscilloscope: TEARDOWN — Dave Jones (opinion)
+context before: Hello. What's it doing? There it is. Anyway, with 100 meg function gen, that's really very flexible. Um so, yeah, like dual channel 100 MHz function gens with bode plot capability for frequency sweeps.
+TEXT: Amazing. You can see though that the multiplexing we have good drop down to one gig sample per second with the four channels on. So, that is a bit disappointing.
+context after: I was hoping to get the two. And so, with channel three off, we get the two gig samples per second. So, it looks like it's combining. Well, and if we turn off channel four, then if we only have the one channel on, then we're getting in our four gig samples per second there.
+
+[1408] EEVblog 1408 - $5M WiGL Wireless Charging BUSTED! — Dave Jones (mention)
+context before: by 2.4 gig energy harvesting using off-the-shelf chip and they wank using off-the-shelf chip and they wank using off-the-shelf chip and they wank on about you know near field and far on about you know near field and far on about you know near field and far field and all that sort of stuff and
+TEXT: field and all that sort of stuff and field and all that sort of stuff and frequency division multiplexing and all frequency division multiplexing and all frequency division multiplexing and all the different types of multiplexing and the different types of multiplexing and the different types of multiplexing and like they've got none of this
+context after: like they've got none of this like they've got none of this the same wankery look at it like the same wankery look at it like the same wankery look at it like go read it for yourself there's nothing go read it for yourself there's nothing
+
+[1241] EEVblog #1241 - Power Up Display Counter Project - Part 1 — Dave Jones (mention)
+context before: that that'll be fine that gives you a million power-ups you have one message look we can talk to whoever it is over here with the fake photo so there you go model number and of course we don't need anything like that don't need anything fancy drive voltage three volts so this would have a
+TEXT: glass and this would have a chip on glass uh driver I would assume you know it's got to be under there I assume it's under there or is it just like a multiplexed thing anyway I really like that is that the same there's the same that's the same one okay so it does actually
+context after: have the pins so I think they photoshopped same as beauty KP beauty English Alibaba.com it's the same as this one but they've yet they've just photoshopped out the pin so it's a through hole one and uh I'm sure you could order them without the pins if you wanted
+
+[960] EEVblog #960 - Mystery Merry Mailbag Teardown — Dave Jones (mention)
+context before: PCBs, the old 8-inch floppy, and wow! These beautiful little LED dot matrix displays. If anyone's got any data on these things, I mean, easy to find the pinout now, you just hook it up and, you know, fairly trivial. And you could drive I could, you know, use this as a display driver.
+TEXT: That'd be a cool project if I've got time to actually hook up and drive this thing multiplexed, obviously. But wouldn't that be awesome to get that puppy up and running? Oh yeah! So there's an awful lot of engineering that just goes into, you know, sort of a low
+context after: volume, probably in the hundreds or something like that at best I'd be guessing. A custom bit of test jig, it might be for testing floppy drives in the field or something, not entirely sure, but something to do with IBM mainframes, so the service techs
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (mention)
+context before: and then bingo back up through there like that so that's why the current changes direction. Now I know that I said this was going to be a quick video, and well, as always, that was the intention but you know, I got carried away
+TEXT: got a little bit excited you know, I went down the rabbit hole and anyway, we eventually found out what the hell was happening here. Yes, these are all multiplexed and we found the discharge path in the thing and we realized that the voltage sensing on there
+context after: wasn't that great, you know it's not terrific so it's really, it's kind of like a clever design, like I really like the way that they've done the switching in this thing, it really is quite clever, but you know, in the end it's not a great
+
+[576] EEVblog #576 - Advantest R6142 Current Voltage Generator — Dave Jones (mention)
+context before: When I've got the aircon on, I've actually measured the aircon in the the temperature in the room to be stable within plus minus 0.5° C. So, that's what the aircon cycles through.
+TEXT: There's about a 5-minute cycle time between when it switches on and off to maintain the temperature here in the room. Anyway, um this looks like a Oh, you can probably see some of the multiplexing on the display there.
+context after: You can probably see a bit of bit of flicker there. At least I can on my LCD screen. Now, if we have a look at the data here on my Agilent meter and I'm going to assume that my Agilent meter is like spot on.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (mention)
+context before: Well, sometimes you simply can't use the existing hardware. Sometimes you just don't have enough serial ports. Sometimes you've got a few I2C devices um which is a serial protocol which have the same address and you need to communicate with them.
+TEXT: You You need to connect multiple uh multiple different I2C lines to separate them. Um it's either that or a multiplexing solution. And sometimes you just don't want to pay for the extra chip.
+context after: All right, it's time to learn about the serial peripheral interface or SPI. Um SPI is basically a four-wire interface, occasionally three, that has a clock line a chip select and two data lines.
+
+[37] EEVblog #37 - Rigol DS1052E Oscilloscope Teardown — Dave Jones (mention)
+context before: Um over there is the trigger input circuitry. You probably can't see right in there, but it's nothing to write home about. I can probably show you some photos of that.
+TEXT: And uh then we've got some um generic uh analog circuitry here, which um lifts which uh DC offsets the input and shifts it and does uh various other multi plexing type um functions.
+context after: And these input relays here, I think I mentioned it in a previous blog, these actually switch between um uh whether you feed the signal into five ADCs. There's actually two ADCs per chip.
+
+[718] EEVblog #718 - Keithley 2400 SMU Teardown — Dave Jones (mention)
+context before: So, we've got our current limits and our limiting stuff's probably over here somewhere. And then flows around here to our output um sense our output sense resistors there, which is down there.
+TEXT: And Bob's your uncle. We've got some feedback and stuff like that, all sorts of muxing. Got some overload protection and stuff like that. But um that's about all she wrote.
+context after: It's I'd love to see a more detailed block diagram of that and the schematic. So, if anyone does have the schematics for this thing, if it is available online, uh, please leave it in the comments.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (mention)
+context before: So, we're going to get in there and probe the chip. The uh real-time uh this um shield on here, this is only a real-time clock. Uh basically, there's no extra circuitry on there.
+TEXT: The uh uh multiplex and drive circuitry is on the back of the panel here. So, this is the chip we fixed uh in the last video, and uh it's identical.
+context after: So, we can actually plug this cable into all three displays. We'll try that first. Now, what I've done is only plug the cable into the top display here. So, I've disconnected the other two boards, so they're not cascaded after that.

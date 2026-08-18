@@ -1,0 +1,293 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: high resolution mode
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 52 passages drawn from 31 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# high resolution mode`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: Normal mode, which is what your oscilloscope is normally at, hence the name. Peak detect, which we won't discuss here. And but what we want to have a look at is the difference between averaging and high resolution mode.
+TEXT: So what are the differences between this traditional mathematical averaging mode or this high resolution or sometimes called boxcar averaging mode? Well, it can range anywhere from between very little to essentially nothing in a practical measurement application to be in a huge difference which can greatly impact your measurement accuracy or what your entire waveform even looks like.
+context after: So it's really important to understand the differences between these two modes and not everyone does because it can be quite subtle. So what I'm going to do is take the an example of this square wave here which is sinusoidally modulated and it's got some noise on top of the sinusoidal part there.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (explains)
+context before: Whoa. There we go. And here we go. I got a few jumps in there, and yeah, you can see it's now much, much quicker. And there you go. We've got a delta of 2.17 hertz there, which works out to about 130 beats per minute.
+TEXT: And I'm back on regular time base mode now, and unfortunately, I can't turn averaging on at such a slow time base. And averaging doesn't work in roll mode either, but I can like change to high res mode, which does that boxcar rolling average, but still we can't really clean up that signal much, and we're not really going to be able to see that cardiac pulse, I'm afraid.
+context after: Here we go. Settle out. Yeah, we're you know, it's kind of sort of there, but and because I know some people ask, no, it's not the scope grounding here.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: So, we now have a 100 R in there with a 100 n in there where where 1 V output with a 100 mA load, and let's give that a go.
+TEXT: Let's go into constant current mode, turn our pot. Bang. And this is rather interesting. Look, that the the output voltage the yellow trace looks fairly clean, but when we zoom in, it goes up, and you can see that there's noise following in there like that, and I think that is possibly because we're in high res mode.
+context after: So, let's actually switch off high res mode, and we'll try that one more time. Bang. There we go. It's exactly the same. So, that is a disadvantage. You can see the rolling average done in high res mode on the scope.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: So, you can see how if you don't have a properly triggered and properly repetitive waveform, if the waveforms jittering and going all over the place and not triggering properly, then your averaging is not going to work and you always you're going to get anomalies and things like that.
+TEXT: It's going to completely screw up just like we saw. So, that's a fairly stark demonstration of the difference between averaging and high resolution mode. We saw an example where they can be near identical and we saw examples where they can be grossly different and you have to use them in different scenarios.
+context after: Otherwise, you can actually really come a gutter. But, high resolution mode doesn't have the same sort of really gross uh traps for young players that the averaging mode does that we actually saw before where our waveform was completely different and we're getting all sorts of sampling artifacts and every that mathematical averaging artifacts and things like that.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: And that's the advantage of your traditional averaging mode here when you've got random noise and a stable trigger that you want to remove the noise on. Averaging mode works fantastic, but it can have some traps for young players if you leave it turned on and you don't know it's turned on and then your signal looks all weird and does all sorts of weird and funky stuff, then check that
+TEXT: you haven't got averaging mode turned on. But, high resolution mode is the one to use when you've got single shot signals or things that aren't repeatably triggering, you know, haven't got a stable trigger, they're modulated or they're jittering or something like that and you want to clean up your signal.
+context after: And you can also get increased resolution as well. So, there you go. That's a look at the difference between high resolution mode, average mode, and normal mode on your oscilloscope.
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: But if you go into the acquire menu and you choose the high-resolution mode, bang! Look, it's cleaned that up very significantly, and at the lower time bases. If you go up to the higher time bases, of course, it's still thick like that, but at the lower
+TEXT: time bases, it really averages out that high-frequency noise, as opposed to average mode, which is a bit different. It works differently, and I won't explain that. But high-resolution mode can be quite neat, and you can get a much greater vertical resolution, or improve vertical resolution on your scope
+context after: effectively, compared to normal mode. So, there you go. That's high-resolution mode, and it's available not only on this scope but a lot of modern scopes out there, so have a play around with it, but just be careful. ... ...
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: Hi, I thought I'd show you a quick little track for young players, really, with the high-resolution mode that you get in a lot of modern scopes like this. In this case, it's the Agilent InfiniiVision 3000X series. Now, the high-resolution mode, if you're actually
+TEXT: going to acquire down here, it's got normal mode, peak detect, average and high resolution. Now, the high-resolution mode actually does some high-order averaging of the bits to actually give you a lower noise floor. And it can really work out quite well, and I might show an example of that.
+context after: But I just thought that I'd show an example here of how it can be a little trap unless you're at, if you've got high-frequency noise superimposed on a low-frequency signal that you're looking at. Now, in this case, I've got a couple of signals here which I'm capturing.
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: Only when you zoom in can you see that noise on the signals like that. But when you zoom out, like that, you don't actually see it. It looks smooth as a baby's butt. But if you turn off high-res mode and you go into normal mode,
+TEXT: let's capture that same signal again, shall we? And bang! You can see the noise at the slowest time base like that, and it's exactly the same when you zoom in. So if you are using high-resolution mode, just be careful at these expanded time bases that it's not averaging
+context after: some high-frequency noise like that. Now, I'll show you an example of where the high-res mode can be useful to clean up your signal, just measuring the DC output of a 5-volt sorry, a 1-volt power supply here. So we've got a volt output there,
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: going to acquire down here, it's got normal mode, peak detect, average and high resolution. Now, the high-resolution mode actually does some high-order averaging of the bits to actually give you a lower noise floor. And it can really work out quite well, and I might show an example of that.
+TEXT: But I just thought that I'd show an example here of how it can be a little trap unless you're at, if you've got high-frequency noise superimposed on a low-frequency signal that you're looking at. Now, in this case, I've got a couple of signals here which I'm capturing.
+context after: They're very slow, 100 milliseconds per division in there, right? So a relatively slow changing signal, which we're going to single-shot capture. So let me single-shot capture that, and bang! OK? And it looks, both of these curves look quite smooth and nice, OK? But when you zoom in, look at that, see?
+
+[358] EEVblog #358 - Electronex 2012 — Dave Jones (explains)
+context before: Yes, software. Right, okay, so it's software limited to begin with. Yep, that's correct. All the options on it are software. There's a serial bus to code option for it, I2C and SPI. It's also got the high input sensitivity down to 500 microvolts. 500 microvolts, that's...
+TEXT: There's obviously digitizer noise. These can run in a high resolution mode, which I know there's been a bit of talk about on the blog. There has been some talk on the forum about the high res. That's the high res mode switched on at 500 microvolts per division.
+context after: And we've used them in some universities where they're looking at low 2 millivolt signals, and we've seen them very successfully with the... Excellent. ...with that mode. And it's only 2-channel. That's right. There's no 4-channel option. No, 4-channel options are still the B-series, which are similar to the E there,
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: display all day. Anyway, let's go into our acquire menu here. Yeah, we've got all the usual stuff, we've got normal mode, we've got peak detect mode of course, absolutely essential on any modern scope. We've got averaging mode, turn averaging on, whoop, there it goes, and I can hit my clear button and reset that.
+TEXT: Anyway, you set your number of averages down here, no problems, whatever. And of course you've got the high-res mode as well, which does boxcar averaging. Excellent. And curiously, I don't think it allows you to switch the sine x on x interpolation off at all.
+context after: It's just it's always on. Meh. And there are some people who complain, well, I don't want the scope determining how to do my interpolation and how to fill in the dots and stuff like that. It's like, well, you know, it's a $399 scope.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (explains)
+context before: then you can actually call that up like that, and it expands it out and shows you exactly what it is. That's just, it's very nice. And the annotations on the display are really nice. Shows you that it's currently in refresh mode. Let's go into the acquire mode, and
+TEXT: it's got high resolution mode that boxcar averaging and stuff like that, so we can turn that on, and you'll notice that we've gone into 10-bit resolution mode there, so we can turn that off. There we go, high resolution, refresh mode, resolution 10 bits.
+context after: But of course you can't see the 10 bits on the screen on ordinary scopes, right? Digital scopes, you can get that extra high resolution, and you only can really make use of that if you do, you know, FFT analysis, or you export the data, or something like that.
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: and the line is a bit thick and fuzzy regardless of what the time base, 10 nanoseconds per division, 10 microseconds per division, and that's because a wide bandwidth scope like this one, this one's a 500 megahertz bandwidth scope, so it's going to be relatively noisy like that.
+TEXT: But if you go into the acquire menu and you choose the high-resolution mode, bang! Look, it's cleaned that up very significantly, and at the lower time bases. If you go up to the higher time bases, of course, it's still thick like that, but at the lower
+context after: time bases, it really averages out that high-frequency noise, as opposed to average mode, which is a bit different. It works differently, and I won't explain that. But high-resolution mode can be quite neat, and you can get a much greater vertical resolution, or improve vertical resolution on your scope
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: doesn't draw much power at all really. Now let's take a look at the vertical control functionality and what we get. But first thing, I want to show you something very interesting that I found. Okay, what I've got here is just channel 1 switched on, 1 millivolt per division.
+TEXT: I've got high res mode on so that it's averaging out the noise and it doesn't look too bad at all. Auto memory depth will go into that. But watch the DC level, okay? I've already centred that. Now I'll turn on channel 2. Nothing weird happening there.
+context after: Maybe it dropped a little bit, okay? Changes the offset, the yellow waveform, channel 1 just drops a little bit. But watch the blue waveform, channel 2, okay? Channel 2 is centred, right? But watch this, I'll switch on channel 3 and watch what happens to the blue waveform.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: High resolution mode is more forgiving. And that high resolution mode, of course, does exactly what it implies. It gives you a greater number of bits. It gives you a higher resolution, effectively a higher resolution ADC.
+TEXT: Most digital uh scopes like this one are only eight-bit converters, but you turn on high resolution mode and depending on uh your sampling and all that sort of stuff, it can give you, you know, nine, 10, 12, up to maybe even 14 bits of resolution.
+context after: It can really increase the resolution of your signal. So, let's go back to our original signal where we didn't really see any major difference between the averaging and the high resolution and the normal modes.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (explains)
+context before: Ooh, look at this. Oo. So, it looks like we can set up a software filter here and we can change the width. Can't touch that. Um, at plus minus one point up to 25 points.
+TEXT: Is that a uh roll in average filter like a uh high- res mode? Of course, what they got here, they do have a regular high res mode. But if we go into like they got peak detect of course and average and then you go into the uh high resolution mode.
+context after: There we go. It's cleaned that waveform up a lot. It's doing the rolling average there. Box car averaging. Also, this is mislabeled. It says uh level push to find.
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: let's capture that same signal again, shall we? And bang! You can see the noise at the slowest time base like that, and it's exactly the same when you zoom in. So if you are using high-resolution mode, just be careful at these expanded time bases that it's not averaging
+TEXT: some high-frequency noise like that. Now, I'll show you an example of where the high-res mode can be useful to clean up your signal, just measuring the DC output of a 5-volt sorry, a 1-volt power supply here. So we've got a volt output there,
+context after: and the line is a bit thick and fuzzy regardless of what the time base, 10 nanoseconds per division, 10 microseconds per division, and that's because a wide bandwidth scope like this one, this one's a 500 megahertz bandwidth scope, so it's going to be relatively noisy like that.
+
+[1529] EEVblog 1529 - R&S MXO4 12bit Oscilloscope Unboxing and Experiments — Dave Jones (explains)
+context before: single shot capture that, you can see that's a legitimate, uh, pulse in there. And then we could, uh, of course go further into that to have a look at that. So there you go. That's 18-bit resolution. Very schmick. Now, if we compare that to
+TEXT: the, uh, Rigol HDO 4000 series here, which is also a, uh, true 12-bit, uh, scope, we can put it in, uh, high res mode here, and once again, bandwidth equals 50 megahertz, uh, and we can, we've only got 14 or 16 bit. So we can't get
+context after: that 18-bit resolution like we can on the, uh, MXO4. But anyway, let's, let's give it a go, shall we? There you go. Let's single shot capture that. Once again, one volt, uh, per division. Let's, uh, zoom into that. And, uh, 50 millivolts, uh,
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (explains)
+context before: They're very slow, 100 milliseconds per division in there, right? So a relatively slow changing signal, which we're going to single-shot capture. So let me single-shot capture that, and bang! OK? And it looks, both of these curves look quite smooth and nice, OK? But when you zoom in, look at that, see?
+TEXT: Only when you zoom in can you see that noise on the signals like that. But when you zoom out, like that, you don't actually see it. It looks smooth as a baby's butt. But if you turn off high-res mode and you go into normal mode,
+context after: let's capture that same signal again, shall we? And bang! You can see the noise at the slowest time base like that, and it's exactly the same when you zoom in. So if you are using high-resolution mode, just be careful at these expanded time bases that it's not averaging
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: Otherwise, you can actually really come a gutter. But, high resolution mode doesn't have the same sort of really gross uh traps for young players that the averaging mode does that we actually saw before where our waveform was completely different and we're getting all sorts of sampling artifacts and every that mathematical averaging artifacts and things like that.
+TEXT: High resolution mode is more forgiving. And that high resolution mode, of course, does exactly what it implies. It gives you a greater number of bits. It gives you a higher resolution, effectively a higher resolution ADC.
+context after: Most digital uh scopes like this one are only eight-bit converters, but you turn on high resolution mode and depending on uh your sampling and all that sort of stuff, it can give you, you know, nine, 10, 12, up to maybe even 14 bits of resolution.
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (explains)
+context before: And we're reading 25.7 milliamps there. Now, it looks incredibly clean, and it is like the waveforms actually there. But because well, A, you've got to put noise rejector trigger on cuz we are down in the noise here.
+TEXT: So, if we you know, if we don't do that, the trigger doesn't happen uh properly. And we are in the uh averaging acquire mode as well. So, we can go into the high resolution mode that just does boxcar averaging.
+context after: And if we actually look at the signal as it really looks like, it's a little bit it's a little bit hairy scary, but it's there, and you can clean that up, and you can get decent accuracy out of this thing.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (explains)
+context before: Yeah, we're Yeah, we're back. We're back from the future. All right, there we go. So, no, no. Is it Oh, no. No, that's all right. Yeah, see? We're we're back now, but it was sort of like jerky before it gotten it itself and it's got it had its knickers in a knot or something.
+TEXT: And by the way, there's one notable uh omission with this uh scope. It does not have a uh high-res mode to get uh greater effective resolution on your front end, i.e., do the boxcar averaging um over time.
+context after: So, that's a bit of a disappointment on a modern scope like this. Aha, there we go. I got the uh statistics. If you turn on all statistics there, and uh oh, it was there.
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (explains)
+context before: And as you can see, it's a bit slow updating on the screen there, but we're basically getting exactly the same waveform we get before with some high frequency content in there we weren't seeing on our analog scope.
+TEXT: So, what we'll do is we'll just expand that out a bit. We'll go to our acquire menu here and we're in normal acquisition at the moment. We'll change that to our high-res mode with our boxcar averaging.
+context after: And bingo, look at that. There we go. We're getting exactly the same waveform we're getting on that analog scope there on our digital scope. But the waveform updating, uh, little bit slow.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: And it's got no equivalent time sampling either. So, if you want if you had a repetitive waveform, but it's got all the normal stuff. It's got no normal peak detect, average, and e-res there is actually enhanced, I believe.
+TEXT: I'm guessing that's stands for enhanced resolution, which is the high resolution boxcar averaging moving averaging mode. And in terms of control responsiveness, I've had no issues whatsoever with this.
+context after: It's It's just It's very nice. It's pretty much, you know, instant. Exactly what you'd expect. And if we have a look at the trigger options, go into the setup menu here.
+
+[426] EEVBlog #426 - HP 3457A Multimeter Teardown — Dave Jones (explains)
+context before: It I've hooked it up to the MV106. I've set it to 1.00000 volts. I've only got five decimal places there. This thing of course has six decimal places. It's a six and a half digit meter.
+TEXT: In fact, technically with some averaging in high res mode it's capable of seven and a half digits, but you can't get that via the front panel. Apparently you have to do that via the GPIB remotely.
+context after: So I do get fairly lucky with these bits of gear on eBay. Absolutely bang on and of course if I dial that up one digit there, you can see it basically changes by 10 least significant digits.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (explains)
+context before: It is actually noisier. So, I found these graphics from a Keysight article on the subject and I think it actually represents it quite well and explains what I'm trying to say here.
+TEXT: In high-resolution mode, it takes a single shot capture, i.e. in real time, and it takes all those samples like 10 or 12 here and gives you one and averages those and gives you one sample period.
+context after: But if you have a look at the graphic for the average mode, then the average mode works differently. It takes multiple waveform in this case and with an average value of four, takes four waveform captures, takes those four data points at each data point in your waveform, and then gives you one average value.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Beautiful. So what happens if we turn our bandwidths back to full? In this case it's my 1 GHz Tektronix 3000 series and we turn off high res mode, go back to sample mode.
+TEXT: There we go. We get our nice fuzzy waveforms because we've got that massively high bandwidth. That's the advantage. You can go into averaging of course but high res mode does boxcar averaging.
+context after: Just cleans it up. Of course you can do envelope mode. Look at that. Pretty horrible waveform. So when looking at this sort of stuff you definitely don't want to use your regular mode.
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: It's not really noise. It's actually real data that's there, which is ordinarily being hidden on an analog scope, because that analog scope just averages out over its screen. So, in that respect, digital can actually be better, cuz you can easily capture that high frequency data that's really there.
+TEXT: Now, if we go into the acquire menu again, I can demonstrate that. Let's go into high-res mode, which puts on boxcar averaging. So, it's averaging out some of that high frequency content.
+context after: Boom! Look at that. And then, if we go into normal averaging mode, we can do that as well. But that is what happens when it averages out that content.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: And as you can see, this Rohde & Schwarz one, excellent. It's got 128 K points FFT and it allows us to get excellent resolution. You can see our carrier in there.
+TEXT: You can see our frequency modulation. And also, if your scope has got the high resolution mode as well, you can whack that on and you'll notice that the noise floor will drop a bit.
+context after: It'll be a bit better. It has to recalculate that. Thinking, thinking, thinking, but there you go. It's a little It's a little bit better. Little bit better. And also, what the number of points does here is it actually effectively lowers your noise floor.
+
+[5YjS4DHKlQU] Tektronix 5 Series Oscilloscope — Dave Jones (explains)
+context before: So that's probably the main disadvantage um of this thing. Anyway, what we're seeing on the screen at the moment is a uh a the white waveform there is a reference for the 8-bit.
+TEXT: Uh we're just looking at the 16-bit converter at the moment. So here we go. If we hit the high res button here there we go. So it's now in 8-bit converter mode.
+context after: You might be able to see that down the bottom. Where is it? It's somewhere down here. Eight eight bits. There you go. So it's sampling eight bits and that's what we get and put in the 12-bit converter.
+
+[386] EEVblog #386 - Glass Delay Lines Part 2 — Dave Jones (explains)
+context before: And if we take out the Uh let's take out the uh load resistor. Now, we're just getting excess noise in there, which is of course just 50 Hz crap all the way in there, but we're not getting any additional reflection really due to the lack of a uh load termination resistor.
+TEXT: And if I turn on high-res mode on the scope here, we can actually um see a couple little Yeah, one reflection there, then another one cry you know, right there.
+context after: And uh I've got the uh source resistor uh source termination resistor in place here, and that's uh 3 and 1/2 MHz. Basically, go down to 3 MHz. So, you can see the reflections change in there a little bit, but not much.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (explains)
+context before: We're viewing a 100 meg signal here. And you can see the waveform is quite fuzzy. I've done a video explaining why this is the case because it's much higher bandwidth, much higher sample rate.
+TEXT: So, you're going to get a noisy signal. We can clean that up with high res mode and all the rest of it, but let's not get into that, right?
+context after: There's our averaging and there's our high res mode. So, no problems at 100 MHz and the Tek will measure just the same. And there's the Tektronix MDO 3000. It's just fine, hunky-dory once again at that 2 mV per Well, it's 20 mV per division.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (opinion)
+context before: So, the FM frequency, if we double that, we'll find that these artifacts will actually change here. And there you go, that's the exact same signal again. I haven't changed the time base or every- anything, but I've changed the FM deviation to 20 kHz.
+TEXT: This is mathematical artifact, but you don't get any of that if you use your high-resolution averaging mode. It just looks fine and dandy. So, you can see that our first example showed that there was a very little difference between these, but when we got another signal which doesn't trigger repeatedly every time, i.e.
+context after: it's got some jitter on there, it's got FM modulation for example, so which is essentially the same thing, then our high there's massive difference. Averaging is not the correct mode to use for this type of signal.
+
+[824] EEVblog #824 - GW Instek GDS-1000B Oscilloscope Teardown — Dave Jones (opinion)
+context before: 1 millivolt per division, and that's noise floor, that's going to clean up, that's because of the high sample rate, the high update rate, I've done a whole video explaining why digital scopes like this are inherently noisy in quote marks like this, but that's fairly, I think that's
+TEXT: on par with the Rigol 1 at 1 millivolt anyway. And that'll certainly drop if we turn our 16 averages on, no workers. One thing this doesn't have though is a high resolution mode, which is quite disappointing, it's only got your regular average mode
+context after: doesn't have that boxcar averaging. You know a lot of low end scopes are getting that these days, so it's a bit of a shame this one doesn't have it. And why the hell have an app button on it if you're not going to actually have any apps in here?
+
+[762] EEVblog #762 - How Secure Are Electronic Safe Locks? — Dave Jones (mention)
+context before: You can pick up crap and all sorts of things. In this case, all this crap here is coming from my LED lights up there. So, switch those off. Bingo.
+TEXT: Look at that. Now, this is the data I captured here for the correct number. I've turned high res mode on just to get rid of some of that noise and crap, and we can see that we've got a nice little current draw there, then another little blip, and maybe another little blip, and then we've got the packet which we've seen before.
+context after: So, anyway, I can actually save this as a reference waveform, for example, and then we can try and capture it again. So, there we go. We can store that as a reference waveform, and now we can capture it again, and we can just see the difference visually on screen.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: 
+TEXT: Hi, I thought we'd take a quick look at some common acquisition modes on modern digital storage oscilloscopes because it can actually be quite confusing and not at all obvious what the different modes are between the high resolution or sometimes called boxcar averaging mode and the mathematical averaging mode on a scope.
+context after: So pretty much any modern digital scope should have both of these modes. If we go into the acquire menu here and then we've got the acquisition mode. Usually it's called the acquire menu or something like that and we've got different modes here.
+
+[842] EEVblog #842 - Rohde & Schwarz HMO1202 Oscilloscope Teardown — Dave Jones (mention)
+context before: it's really confusing, the external trigger's usually over here, but they have colour code that it's just, you know, like, but you ignore that. Like, you know, so I, you know, force of habit just means I ignore that, you'd get used to it. Anyway, channel 1, channel 2, share the same vertical control here
+TEXT: so you've got to switch between the two like that. And you'll notice that depending on the time-based sample rate, everything else, we can, with smoothie mode and high-res mode, we can get up to 16-bit resolution. Of course it's only got an 8-bit converter in there, but you know, these high-res modes
+context after: on modern scopes do a reasonable job. And I'll tell you what, I'm impressed by the probe adjust here. I mean, it's in the setup, you just go in here and, whoop, there it is. Probe adjust, and look at that. I mean, it gives you the, like, the waveform display there
+
+[610] EEVblog #610 - Why Digital Scopes Appear Noisy - Part 2 — Dave Jones (mention)
+context before: following the annotations on YouTube. And there were basically four main reasons why digital oscilloscopes can appear more noisier than an analogue scope, even though they actually aren't. One was memory depth, the second one was the analogue bandwidth, and the third one was the lack of, or when they can appear less
+TEXT: noisy when you include things like boxcar averaging or high resolution mode. And fourth was the intensity-graded display available on modern digital storage scopes. And the answer was is that modern digital scopes are not any noisier than analogue. They're just better. They're better at showing
+context after: what's really on your signal here. And how, analogue oscilloscopes may actually be worse in that case in that they're hiding that high-frequency content which modern digital oscilloscopes show. Well, I just wanted to quickly update you on two more subtle things that can also affect the apparent noise
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (mention)
+context before: In this case, they're combining all the ADCs together, presumably to give that 10 gig sample per second sample rate for our 3 GHz RF bandwidth. So, they're sampling the RF directly doing that.
+TEXT: But hey, what's the difference between just a regular oscilloscope with an FFT function and this Tektronix MDO technology. You know, like yeah, you can do some boxcar averaging like you're familiar with with the high-res mode and stuff like that, but we didn't have the extra bandwidth.
+context after: Yeah, you can do some other averaging and things like that, but it just didn't make sense. I mean, an 8-bit converter at best is only going to get, you know, around about that 50 dB dynamic range.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: So it's really important to understand the differences between these two modes and not everyone does because it can be quite subtle. So what I'm going to do is take the an example of this square wave here which is sinusoidally modulated and it's got some noise on top of the sinusoidal part there.
+TEXT: So it's coupled in to the square wave here. And if we zoom right in like this, you can see it's actually updating like that. And if we zoom right in and have a look and we change between averaging and high resolution mode, look, it doesn't look to be much difference, does there?
+context after: At all. Can you see any difference? It's very, very subtle, effectively bordering on almost zero for this particular application, but that's not always the case. These are two entirely different ways of averaging.
+
+[610] EEVblog #610 - Why Digital Scopes Appear Noisy - Part 2 — Dave Jones (mention)
+context before: you where that sample rate can come into it, the Agilent always displays 4 gig samples per second here. So it won't drop from that unless I go down to... where is it? There you go. 100 microseconds per division, and if we go back to 50, we're still 40 gig samples per second.
+TEXT: But let's turn on, shall we, let's go to the acquire menu and let's turn on that boxcar averaging or high resolution mode as it's often called these days, and you'll notice that it hasn't done much right up at this high speed. That's because there's not enough samples in there
+context after: for it to actually work and do that boxcar averaging function. It's too fast. But look what happens if we lower our time base down. Look, look at that, it's going down, down, down. Look, the magic of that boxcar averaging at your slower sample rate.
+
+[383] EEVBlog #383 - Agilent 4000X Oscilloscope Review — Dave Jones (mention)
+context before: which these scopes are capable of doing, any good scope is capable of doing these days, you only need 4 times the input bandwidth in theory. Aha! But, as you know, when you switch on that second channel there, it halves the sample rate as well.
+TEXT: The 4000 is no different, exactly the same architecture as the 3000 in that respect. But where that extra sample rate comes in handy is for the high-resolution mode, that 12-bit high-resolution mode for the analog front end. It's exactly the same as the 3000 X-Series,
+context after: and that can take advantage of that higher sample rate as it does boxcar averaging of those samples in real time, and that's where you need much greater than that 4 times sample rate. So that is, you know, that is a good decision to put 5 gig samples per second on a 200 MHz scope.
+
+[683] EEVblog #683 - Rigol DS1000Z & DS2000 Oscilloscope Jitter Problems — Dave Jones (mention)
+context before: And see if I can reproduce it on mine. So what I've got here is just a function generator generating a square wave, 5 volt peak to peak, whatever, at 20 megahertz. And I'm feeding that into our scope and no problems whatsoever. I mean, it's exactly what you'd
+TEXT: expect. You know, it's not terminated properly, doesn't matter. But there's no jitter in that signal whatsoever. I'm sure everyone can agree on that, and I've got no nothing turned on, I've got no high-res mode, no averaging, no nothing. So that's a very clean signal.
+context after: It's triggered perfectly fine, everything's hunky-dory. And our trigger point is right in the middle there, and that's going to matter, I'll tell you why in a minute. We've got our hardware frequency counter there, 20 megahertz, no problem with no delay whatsoever because our trigger point's in the middle.
+
+[662] EEVblog #662- How & Why to use Integration on an Oscilloscope — Dave Jones (mention)
+context before: Bang, there it is, and there's our current waveform when it powers up. So we want to look at and calculate the total energy or current that's being used by our microcontroller over time. Now, our waveform's a little bit noisy there, so what we want to do in this sort of situation
+TEXT: when you're looking to get high resolution and as much accuracy as possible, you basically want to go in and you want to turn on your boxcar averaging, your high-resolution mode here, and we should be able to get a nice, cleaner and higher-fidelity waveform in there.
+context after: And now, bingo, we've captured that, and we can see our waveform in pretty good detail. And you can see how it powers up here, there's a little bit of, you know, weird stuff happening here when it powers up, and then it goes, got a few little wiggles in there.
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (mention)
+context before: 
+TEXT: Hi, I thought I'd show you a quick little track for young players, really, with the high-resolution mode that you get in a lot of modern scopes like this. In this case, it's the Agilent InfiniiVision 3000X series. Now, the high-resolution mode, if you're actually
+context after: going to acquire down here, it's got normal mode, peak detect, average and high resolution. Now, the high-resolution mode actually does some high-order averaging of the bits to actually give you a lower noise floor. And it can really work out quite well, and I might show an example of that.
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (mention)
+context before: So, really, you know, look you can start to see the individual individual bits there. Just crazy. Look at that. But, hey, at least we can see our waveform. So, that's pretty good.
+TEXT: And that value is going to change with our scale here. If we turn our vertical uh up, of course, we get increased fidelity and resolution in that uh calculated math value because it's only got eight bits to work with or more if it's the high-res mode.
+context after: But, let's take it down to say 5 mV per division on both channels. Look at that. Totally blocky because the signal the amplitude is down in the noise. So, it can only calculate Look, we've only got a couple of bits down in there.
+
+[665] EEVblog #665 - Polar Wearlink Heart Rate Transmitter Teardown — Dave Jones (mention)
+context before: ... ... ... ... I don't want to do it! And here we go, let's put it back. There we go, it's quicker. And if I calm down, anyway, you won't see it on there, but we can go in and do direct measurements. And yes, for these sort of measurements, you definitely want a big record length so that
+TEXT: you can get big timescales and then zoom into the data, so I'm using 5 meg, plus the high res mode as well, just to clean it up a little bit, do some boxcar averaging on the waveform. And I've also got the bandwidth turned on there, so input bandwidth
+context after: 20 megahertz limited, you know, I don't need 1 gig worth of bandwidth here, it's just going to make my signal noisier. And of course if we turn on cursors here, there we go, I've set that between the two, the start of the two peaks there, and that of course is my
+
+[223] EEVblog #223 - Agilent Oscilloscope High Res Mode — Dave Jones (mention)
+context before: time bases, it really averages out that high-frequency noise, as opposed to average mode, which is a bit different. It works differently, and I won't explain that. But high-resolution mode can be quite neat, and you can get a much greater vertical resolution, or improve vertical resolution on your scope
+TEXT: effectively, compared to normal mode. So, there you go. That's high-resolution mode, and it's available not only on this scope but a lot of modern scopes out there, so have a play around with it, but just be careful. ... ...
+context after: 
+
+[1146] EEVblog #1146 - New Rigol MSO5000 Oscilloscope — Dave Jones (mention)
+context before: So, that's just the way that the sampling architecture works. Now, one of the most annoying things about this, I couldn't believe it was missing on the Rigol 7000 and it's missing here, too.
+TEXT: Whether or not it's in their new Phoenix chipset, I have no idea. But, if we go into acquire here and then we have a look at your different modes, acquisition, normal, average, peak, where's your high-res mode?
+context after: Every scope on the market, even your couple hundred buck ones, has a high-res mode, a boxcar averaging mode to get your increased bits, you know, like effective 10 bits or whatever.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (mention)
+context before: And well, it uh certainly seems like it's able to. There's that's a full 150 watts. And if you're curious to see what's happening at a constant 150 watts on the output, well, I've got it AC coupled, uh bandwidth limited.
+TEXT: We can switch that on, but we'll have the bandwidth limit on. And I've got it in high resolution mode as well. There's regular mode, of course, but let's put it in high res mode and uh that is working a treat.
+context after: That's 10 millivolts per division. No dramas whatsoever. No, I think there's some funny business happening here. Constant power, switch it on, and I'm only getting 0.2 volts at 5 amps.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (mention)
+context before: So horizontal we can go in there if we turn the bandwidth limit off then yeah you can see it start to see the ringing of course that's what you'd expect.
+TEXT: And but bandwidth limit off but this is fuzzier so we're probably going to have to turn on some can we put on high res mode? There you go. We can put high res mode on there.
+context after: And you can see though the response there once again you know it takes a little bit you know 50 20 microseconds or something to get up there. It doesn't it's you know but we're down in the pixels there right where where down in the pixels.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: It relies on those averages. This case I've got it set to 8,192. So it'll average 8,192 complete waveform samples to give us that very nice looking thin line that we've got there.
+TEXT: So let's have a look at how high resolution mode here works. Now we're in normal mode at the moment. I've got a 1 kHz sine wave with random noise added on it, okay?
+context after: If we actually stop it and zoom in, you can see it's got all that random noise. So, it's not a particularly nice signal and we might want to clean this up with in single shot mode, okay?

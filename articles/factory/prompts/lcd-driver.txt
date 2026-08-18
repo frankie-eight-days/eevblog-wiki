@@ -1,0 +1,588 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: lcd driver
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 111 passages drawn from 77 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# lcd driver`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1044] EEVblog #1044 - LCD Technology Tutorial — Dave Jones (explains)
+context before: You're not actually reducing the number of pins in any way. You're just merely they're the just three different types of interfaces that you can get to a regular LCD glass like that.
+TEXT: And the thing with any of those three interconnect solutions, you've basically just got your LCD glass and you need a separate driver. So, you need all the driver circuitry on the bottom there, either a microcontroller which has the built-in LCD a controller which we'll go into in a future video or whether or not you use a dedicated LCD driver chip or you can budge your own driver circuitry.
+context after: We might go into that, but you need some sort of AC drive circuitry for the display cuz these things don't drive themselves. You can't just hook these up to a microcontroller and expect them to work.
+
+[492] EEVBlog #492 - Vintage Motorola MicroTAC Mobile Phone Teardown — Dave Jones (explains)
+context before: SIM card module into here and then that detection switch is obviously detecting that the SIM card's inserted so the firmware can you know, disable the uh functions for that and the side switch on the side of the thing over here, that slider switch that comes in, that just helps you eject the card back out.
+TEXT: Um huge chip on board device down here. Lots of traces coming out of that sucker. Of course, you can barely see them in HD there, but you know, that would control the that would just be the LCD driver chip on board LCD driver for the 12 character by two line dot matrix LCD plus it's probably doing the keypad or some keypad stuff at all as well or the
+context after: keypad stuff is just going through the main interface straight over to the processor. I forgot to mention, made in Germany. Beauty. Hi to all my German viewers. And this one here, made in well, the Philippines is the baseboard down in here for the LCD and the display from a company called 35 Systems.
+
+[173] EEVblog #173 - Gossen Metrahit Energy Multimeter Teardown — Dave Jones (explains)
+context before: Those Those two little uh things you see down in there are actually the uh chip on glass. They're actually the chip chips mounted directly on the glass. And as you can see, there's not many connection interfaces.
+TEXT: There's just a a few down here and a couple of extra uh support ones uh top and bottom here. And that's actually got the circuitry built on to drive all of the many many hundreds of circuits for the triple digit display on there, cuz really uh without that, you wouldn't you'd have a hell of a time driving it from just a generic micro.
+context after: It's just got too many segments with that triple display. So, they've gone to a lot of effort there to do a fully custom uh chip on glass or uh COG display, it's called.
+
+[643] EEVblog #643 - Mailbag — Dave Jones (explains)
+context before: They've put a some heat shrink tubing over one side of that and there's the other expansion port underneath there, but as you can see there's bugger all inside these things.
+TEXT: I mean there's, you know, there's naff all in them and it's all in the firmware and and of course all the LCD driving stuff is all going to be up in here, so that'll be, you know, the big dot matrix display that's going to have its own, so maybe we can crack that open and just very quickly and have a look at the LCD drivers up there.
+context after: Nothing exciting though. Well, that's interesting. I expected another PCB in there maybe with some quad flat packs driving that board and a zebra strip or something going in there, but we have some, you know, chip on flex here and uh some hot bar stuff going on there and uh There we go.
+
+[1538] EEVblog 1538 - NEW PROJECT Part 2 - Microcontroller Selection — Dave Jones (explains)
+context before: We're talking like really low power. Two, it's got to have an LCD controller built in. Up to I think 73 at current count, 73 segments. So, it's got to support, you know, a reasonably complex LCD built in.
+TEXT: I could use an external LCD controller, of course, but that's an extra bomb item, extra cost, everything else. Nicer if it's built into the microcontroller, but if I can't get a suitable microcontroller with the number of LCD driver segments built in, columns or rows, haven't figured out my columns and rows yet.
+context after: I've done an LCD design video, which I'll link in if you haven't seen it, how to design your own custom LCD, and I'll be doing that again for this project as well.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (explains)
+context before: So that works out to a lot of pins and this is why you might want to go to a COG display chip on glass cuz it has the driver chip built on.
+TEXT: So you can simply talk to it via an I squared C bus or an SPI bus or whatever or the regular um you know Hitachi interface LCD driver or whatever you choose to In this particular case, no because we've just got the pins or the flat flex or the zebra strips, we have to drive every one of these 40 pins.
+context after: So that becomes a problem. Now if you course if you've got a relatively small LCD, you can use your existing microcontroller that you already plan to use. Or you can choose a variant of the microcontroller that has a built-in LCD driver.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: It's only supposed to be two levels data, one and zero of course. It's digital, but we're not. So, it looks like there's actually some contention caused by the LCD and trust me I've isolated it down.
+TEXT: It's not the other I2C chips. They haven't got the same address or anything like that. Trust me I've isolated it down and it is the LCD and it's not actually my code doing that either cuz I originally wrote my own LCD driver code from scratch and I got this result and I thought it was funny.
+context after: I thought my code was doing something weird even though I copied it directly from the data sheet of the LCD manufacturer and I thought okay, it's the Arduino the one wire library has been giving me troubles.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (explains)
+context before: It's good enough reason and they're cheap. So there's various reasons why you might want to design your own LCD and rather than using off-the-shelf one like a dot matrix LCD or a dual line character based display or something like that.
+TEXT: So in this case we're going to design a fairly complex LCD like this. By complex I mean it's actually got a lot of segments in there and basically as we'll come to see the number of rows and segments dictates not only how complex the LCD is but how complex the LCD driver is as well.
+context after: So let's take a look at it. Now I'm kind of actually jumping the gun on this video because I don't actually have an LCD to show you. We haven't actually had this one manufactured yet.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: Otherwise, if you were doing this as a custom ASIC, you wouldn't be wasting all these pins. You'd be going for a smaller package. Sure, you could have like a dual-use scenario in mind or something like that. But anyway, look, map the pins. From pin one through to pin 12 over there are the segments.
+TEXT: So only the last four are something else. So I can actually go in and expand that. There you go, to show you what ones those are. And you can see the last four pins, it matches up. The rest are segments. So because we don't have, we're using a separate LCD driver in this multimeter,
+context after: bingo, we don't use the internal segments. So that matches up perfectly. So right there you go, aha. So unless the manufacturers are like ripping off the pinouts between chipsets, which I don't think they do, I think they're pretty substantially different, then hey, this is looking really good.
+
+[603] EEVblog #603 - Gas Sensor Teardown - Dräger Multiwarn II — Dave Jones (explains)
+context before: that's for sure. And there we go, there's the bottom side of presumably our analog board. Fine, pin-pitch part there. Ooh, fancy-pancy stuff. Probably just some more 74HC interface stuff here on top would be my guess. And yeah, that is a four-layer board too.
+TEXT: Well that's interesting. And a Philips PCF8577 I2C interface, of course Philips invented that. LCD driver, so there you go, that's driving the big dot matrix LCD on the front. Which is strange, because they have a proper LCD module down there with the LCD drivers, so, huh?
+context after: And it seems that I don't have to scrape the conformal coding off this to see the numbers in there. If I get it at the right angle under my Mantis microscope, I can see clean through the conformal coding, straight through the numbers, and nothing is revealing.
+
+[1275] EEVblog #1275 - Uniden UHF Walkie Talkie Teardowns — Dave Jones (explains)
+context before: that. So, uh DACs and ADCs and they would uh make them um specifically or target them uh specifically to one or two uh customers, big customers. And that's a custom Uniden job UC3476 there.
+TEXT: So, uh yeah, it's they're not using the original one from a couple of decades back, but uh yeah, once again, they're like they're rolling their own uh custom ASIC there that that'll be doing all the LCD uh driving as well as uh yeah, you can see it up here.
+context after: That goes up to your LCD uh module up there. So, it's doing all that as well as um some curiously um doing some analog-y stuff. They've they've got, you know, a few pots, 1 2 3 4 little trimmer pots around there.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (explains)
+context before: 
+TEXT: Hi, this is the next video in a series of videos on LCD technology and designing in this particular case designing a custom LCD display. In previous videos here we've looked at just LCD technology overview in general and how to drive different types of LCD.
+context after: So that'll be linked in at the end of this video and down below if you haven't seen that. But today we're going to have a look at what it takes to design effectively your own custom LCD like this.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (explains)
+context before: And here's a photo of the bottom side, and it uses a substantially different chipset. And you can see it's labeled BTC, or Brymon Technology Corporation. And it's just got some weird custom part number like that. So obviously that's in a much bigger quad flat pack.
+TEXT: It's got the LCD driver built in. You can see the traces going off to the contacts here, which then go through the zebra strips there over to the LCD. So that's all contained in one chipset. So that's one of those very typical complete multimeter chipsets.
+context after: It's got the processor in there, it's got the ADC, all the measurements, switching and arranging and all that sort of stuff, plus the LCD driver built in. But the BM235 is significantly different. So let's actually go in and have a closer look here at the board.
+
+[993] EEVblog #993 - Mailbag — Dave Jones (explains)
+context before: They've obviously gotten a contractor make, you know, well, hopefully only a few hundred of these or something. Um but who knows? Uh Okay, what is an E200? By the looks of it, that's the main processor.
+TEXT: So, I got no idea offhand what that puppy is. Hm. But like I said, it's got to be some sort of arm processor, some arm application uh processor at processor with LCD driver and everything building cuz they obviously don't have a separate LCD driver.
+context after: It comes straight from that. So, yeah. Probably is running some version of Linux. So, I think these are absolutely horrible. It almost reminds me of that you know, world's worst uh tablet computer teardown.
+
+[1662] EEVblog 1662 - Vintage Tandy 200 Portable Computer Claytons Repair/Teardown — Dave Jones (explains)
+context before: well, the 100 had a 20-hour battery life. I think the one, I think this was similar, even though it had a bigger speed. I think it had a bigger screen, wasn't it? And that Hitachi jobby, of course, Hitachi, famous for their LCD driver.
+TEXT: So that is an LCD driver. And, sure enough, yeah, so this stores the displaced data sent from the, uh, micro there. Graphic mode. So this can do, uh, 512K dots, uh, 4096 characters. This was, was this 192 by 128 pixels or something like that?
+context after: So they could easily do the job there. That's really interesting. Is that, like, B, BLA? No, I didn't find anything for BLA. BLA 5080, that could be something else. So, we'll have to have a look at the schematic. You can see, that's directly connected
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (explains)
+context before: So you can simply talk to it via an I squared C bus or an SPI bus or whatever or the regular um you know Hitachi interface LCD driver or whatever you choose to In this particular case, no because we've just got the pins or the flat flex or the zebra strips, we have to drive every one of these 40 pins.
+TEXT: So that becomes a problem. Now if you course if you've got a relatively small LCD, you can use your existing microcontroller that you already plan to use. Or you can choose a variant of the microcontroller that has a built-in LCD driver.
+context after: And a lot of them do. I used it in my 121G W multimeter, for example. I chose a particular ST ARM 32 processor which had a built-in LCD driver that had the number of rows and columns that we needed.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (explains)
+context before: It's like it's basically garbage in, garbage out, pretty much. So, the actual column and line drivers and everything else of the LCD seem to be just fine. So, we can pretty much rule out that as an issue.
+TEXT: It's It's the data being fed into them. And this LCD is going to have multiple driver chips for it. Probably, like there's probably going to be like one chip controlling like the first four lines here and the first eight characters.
+context after: probably got another chip controlling that one. So, it's probably that chip up there that's causing some sort of issue. Anyway, luckily, we do have the schematics. Schematics. I need schematics.
+
+[715] EEVblog #715 - Mailbag — Dave Jones (explains)
+context before: Let's have a look. And there's the main ASIC chip. It's the TI ref. And this is used in several of uh TI's uh calculators, but that is a custom ASIC.
+TEXT: But look, the main CPU is actually down here. And that's a Motorola 68,000. And there it is up close for all you 68,000 fanboys. Ah, old school. Then all the other beasts on here, all these Toshiba parts, they're just LCD drivers.
+context after: Dead giveaway, of course. All the huge tracks going off there. They're all over the place. Um, that's just uh some sponge there for the uh back of the batteries.
+
+[1074] EEVblog #1074  - Custom LCD Design - Part 2 - (µSupply Part 17) — Dave Jones (explains)
+context before: So, this is uh for example, a common This is a just a Microchip application uh note here. It's got quite some decent information. But, there are all these different voltage levels in here.
+TEXT: And your LCD driver has got to be able to generate all these different levels because as I've mentioned before, if you uh the whole idea is that you have effectively over time, you want to have a net DC level of zero on your LCD.
+context after: Otherwise, it could uh potentially damage your LCD. So, that's what these uh dedicated drivers um actually take care of all this. They generate the bias voltages. They do everything else.
+
+[248] EEVblog #248 - LCD Enabled Microcontroller Selection — Dave Jones (explains)
+context before: Hi. I know there's quite a few people out there who like watching me do these parametric design searches and component selection and things like that. And I was just working on a little project where I needed a couple of three-digit LCD seven-segment LCD LCD display just little PCB mount ones and I needed a microcontroller to actually drive those because if you know about basic seven-segment LCD displays, I'm not
+TEXT: talking about the dot matrix ones here, but the individual segment ones like you get in your wristwatch or or calculator product or something like that, you need special LCD driving circuitry to actually drive all those segments.
+context after: So, I thought I'd just show you some parametric searching here on Digikey searching for the LCD and a suitable microcontroller and see if there's any traps in here. So, let's go.
+
+[JI4b-7vpIDc] An Unusual Repair — Dave Jones (explains)
+context before: I think Yeah, I just so happen to have a >> [laughter] >> a faulty PCB just lying here. Um scrap PCB, not sure what for. Yeah, so that's the that's the display um driver up there, the high con HY2613C.
+TEXT: Um I'm not sure what happens when you like power that on. Does it just power on all segments? And then the processor down here has to override that? Yes, they just branded BTC, which is Brymen Technology Corporation, of course.
+context after: I can only presume that yeah, like the processor just didn't boot for whatever reason and it couldn't send the command to clear the LCD. And cuz I can't imagine the processor booting up and then sending an LC like a turning on all segments and then kind of failing, but you never know.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (explains)
+context before: Um, human-machine interface, is it? Human-machine interface. There we go. So, there you go. That LCD had, uh, eight, uh, commons there. And however, 31, uh, segments. And a HT, uh, 1622, uh, LCD driver.
+TEXT: I think we, yeah, we couldn't find the ST, some ST micros, of course, have built-in LCD drivers, but we couldn't get it. Um, or it didn't, or it increased the cost too much, and it was cheaper to get a separate chip.
+context after: So, I'll look that one up. So, that was just a Holtek jobby. Holtek's one of, you know, they make their own micros, of course, and they make LCD drivers.
+
+[afErPINq8qc] Mini Arcade Game Console Repair OOPSIE! — Dave Jones (explains)
+context before: Yeah, that's actually soldered. That's actually not a conductive adhesive. So, it it ain't that. Is it inside the screen? Is it a bad die bond in there? What's going on?
+TEXT: And you can actually see the COG chip on glass up there. That's our driver chip. That's actually embedded on the glass. And like if I put physical pressure on there, so it's not the this would be conductive adhesive.
+context after: But it ain't that. It ain't that cuz they've gunked the whole lot of that. So, um yeah, it's something else. Aha, Winbond. Um not necessarily an obscure brand. Yeah, so that's an external flash memory by the looks of it.
+
+[248] EEVblog #248 - LCD Enabled Microcontroller Selection — Dave Jones (explains)
+context before: So, you could miss out um on the odd device, but I need to go through. Unfortunately, there's no column where I can just select LCD. So, I've got to go through and look for any one of these that actually have LCD in them in the parametric search.
+TEXT: So, I go through da da da LCD LCD and this all means it'll have an LCD module in it. And uh we should It's a bit tedious. So, I might skip through this part and I've tediously selected all the ones through there.
+context after: So, that have LCD in them and you cross your fingers that Digikey have done their jobs. The Oompa Loompas at Digikey have imported all this data correctly and we've got 2,306 microcontrollers of all of these different manufacturers.
+
+[1242] EEVblog #1242 - Memory LCD+Supercaps+Low Power Design — Dave Jones (explains)
+context before: So, what do you need for a microcontroller plus LCD solution? Well, first of all, you need an ultra low power microcontroller. There's quite a few of those on the market from many manufacturers.
+TEXT: No worries. But, you also need one that's got the LCD driver built in. In particular, for a six-digit display for example, you know, that's a quite a large-ish requirement in terms of number of segments to drive.
+context after: So, you're looking at a bigger uh chip, for example. So, let's actually go into one of the um traditional leaders in low-power uh micros. They've got an app note here, this white paper thing, uh the TI MSP430.
+
+[298] EEVblog #298 - Dave's Decade Digit Display - USB Supply Part 3 — Dave Jones (explains)
+context before: And uh it's just it's really horrid. It's not something you want to do for a project like this. I want to stick to like a name brand LCD, something that, you know, is going to be available in 5 years time or something like that, not just some one-batch wonder from OneHungLow on Alibaba.
+TEXT: So, the LCD solution, uh it's not bad, similar cost, but then you've got to find an LCD uh a microcontroller with an LCD driver to drive the thing. I'm going to come up with a really low-cost display solution.
+context after: It's not nearly as good in terms of uh you know, direct reading and things like that, as you'll see, but I think it's reasonably clever if you want a really ultra-low-cost solution.
+
+[334] EEVblog #334 - History of PDA's in Teardowns — Dave Jones (explains)
+context before: So it is a classic. Uh this is the original controller chip which everyone copied. So practically every 16 by 2, 20 by 2, 2 by 8, 40 by 2, all of those LCD modules you see these days are compatible with the original Hitachi 44780 controller.
+TEXT: And interestingly, it's also got the HD44100 LCD display driver because this is just the interface controller chip. It can't actually drive the drive directly the LCD segments. That's what this device is for.
+context after: And of course, you don't see this very often these days. Almost nobody uses a two two chip solution anymore. It's very old school. So all of the new clones of the HD44780 actually have a built-in LCD driver uh to drive the that you know, requires the uh know, the bias and the AC signals to drive the LCD segments directly.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (explains)
+context before: And just bottom side there. In fact, there's hardly any traces at all on the bottom side. It's all going over to the LCD there. Oh, yeah, I forgot to show you the, uh, LCD.
+TEXT: Um, human-machine interface, is it? Human-machine interface. There we go. So, there you go. That LCD had, uh, eight, uh, commons there. And however, 31, uh, segments. And a HT, uh, 1622, uh, LCD driver.
+context after: I think we, yeah, we couldn't find the ST, some ST micros, of course, have built-in LCD drivers, but we couldn't get it. Um, or it didn't, or it increased the cost too much, and it was cheaper to get a separate chip.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (explains)
+context before: And then duplicates anything on the fifth line on the first line and then once again continues to wrap. And if we go down another line, it'll duplicate it. Uh so, the uh the eighth line down here, it'll duplicate it on the fourth line.
+TEXT: Isn't that fascinating? So, there's obviously something to do with the how the data's getting into the display driver. The display driver's obviously working cuz the correct characters are showing up.
+context after: It's like it's basically garbage in, garbage out, pretty much. So, the actual column and line drivers and everything else of the LCD seem to be just fine. So, we can pretty much rule out that as an issue.
+
+[45] EEVblog #45 - Arduino, PICAXE, and idiot assembler programmers — Dave Jones (explains)
+context before: And here's the source code to show you how easy it is. Now, just that simple, you know, 10 or 12-line uh program, that takes, as you saw maybe down the bottom, it took about 2.3 K of uh 30 K available memory on this board.
+TEXT: And that might seem like a lot, but it's not really cuz there's the LCD driver there and string handling and all sorts of other overhead. So, that's, you know, fairly typical of a project like that.
+context after: Now, I did actually have some problems with the Arduino software. Uh on my work machine, it it I had all sorts of problems. It was locking up. It would take uh when you boot up, it takes like 3 minutes to even do anything, and then it locked up when it tried to download, and it took minutes, and it was jerky.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (explains)
+context before: So, you can don't need any interface uh voltage translation chips or anything like that. Uh it's got 32 K of RAM. Uh this version that we got here for our 13 buck board is 256K of flash memory with ECC.
+TEXT: It's got E-squared PROM built-in, which is uh one of the advantages uh that I will be making use of. And also, a big reason why I chose this chip in the product is that it has an LCD driver as well.
+context after: 8 by 40 uh segments, which is um pretty much what I need. I think I need like um 36 segments or something like that. So, and it's got decent analog stuff as well.
+
+[1074] EEVblog #1074  - Custom LCD Design - Part 2 - (µSupply Part 17) — Dave Jones (explains)
+context before: But, uh as you can see, um they supplied this uh full data sheet for the thing. And this is going to match the uh samples that we're going to get.
+TEXT: Okay. So, what we're going to need now is uh some sort of uh driver and demo board or your final product board, whatever it happens to be, to actually drive this LCD when we get these samples in.
+context after: As I said, we don't have the samples yet. They're on their way, but we'll get a board uh manufactured and we'll have something ready to go. So, that when we get the LCD, we'll be able to plug it in.
+
+[495] EEVblog #495 - World's First DSLR Camera - Kodak DCS315 Teardown — Dave Jones (explains)
+context before: And then we've got a third board up the top, of course, uh, for mounting the LCD on. So, dual um flat flex cables there. I'm not sure I'm not exactly sure why they need two of them.
+TEXT: They obviously didn't have enough connections coming over. So, is the main driver on the main board down here, and all the segment data for the LCD has to come via the two ribbon cables, perhaps.
+context after: There's a large, really large uh Phillips here holding in that main board. I mean, hey, look at that. We've got some Loctite on the screw there. So, they've gone to a a bit of trouble to ensure that that's uh not going to come out.
+
+[468] EEVblog #468 - Uni-T UT513 Insulation Resistance Meter Teardown — Dave Jones (explains)
+context before: I'd have to look it up. I don't know. One of the generic Chinese 8051 suppliers. So, yeah, that's the main brains behind this thing which would be driving the LCD as well.
+TEXT: They'd be a separate I mean, it doesn't have LCD built in. So, there's got to be another separate LCD driver there somewhere. There's not enough segments not enough pins on that thing to do it.
+context after: But, let's have another look. CD4094, some 4000 series logic. And what else have we got? 4052, 4000 everywhere. And we've got a 4011. It's all happening. All right. So, the TL494 PWM controller down there is obviously controlling main transformer over there.
+
+[1598] EEVblog 1598 - ANENG AC11 Socket Tester TEARDOWN + SCHEMATIC Reverse Eng — Dave Jones (explains)
+context before: It's powered from 3-V uh batteries. It's got the uh soft uh power button there. It's got a couple of uh transistors driving the backlight and the buzzer here, and it's got you sort of like traditional common terminal on your multimeter chipset here, and then your input voltage divider here, which goes into your various usual multimeter architecture, uh multiplexers and stuff like that, and your ADC.
+TEXT: Curiously, this one does actually have an in- internal LCD driver, but it's actually using that um external uh chip because it's got to drive sort of like custom segments or something.
+context after: I don't know what's going on there and your RCD test up here is exactly Oh, I forgot to put the values on there. They're 1K6 each. So, yeah, let's get the confuser out.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (explains)
+context before: And then there's the that looks like a standard Briman implemented thing. And there is our board. Briman chipset. Don't ask what it is. Secret squirrel. Oh, look at that.
+TEXT: It even wraps around my head. Isn't that nice? Um yeah, so that's that's an all-in-one chipset. Neat. So, there's no separate LCD driver. Um so, that but that is not all the segments.
+context after: So, that's a So, the LCD they've got in here actually has a must have a chip on glass must have a COG driver on it cuz they're not driving all the segments through that.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (explains)
+context before: It's so comprehensive. Look at it. Look. Look. Fantastic. Bobby Doesler. Anyway, there's the back of our LCD board. And look at this. Here's the LCD driver board. Look at this.
+TEXT: We have two rows here because this is a 40 column by eight line LCD. And obviously, each row of these chips here will be handling four lines. And we've got five for the columns.
+context after: So, 40 divided by five, eight. Ta-da! Is it just simply this chip that Well, if I'm flipping it the right whichever way it's, you know, actually flipped. Yeah, it could be M1 M1 up there.
+
+[e9cpKN69Avk] 121GW Development History — Dave Jones (explains)
+context before: I mean, you know, we're in no rush um to get this done and it's your dime and all that sort of stuff." And uh so they suggested um And um uh micro, this is in May, about middle of May or thereabouts.
+TEXT: And uh they said um yeah, they suggested this ARM micro. I went, "Well, we need uh and it didn't have a built-in LCD driver, so we needed an LCD a separate LCD driver.
+context after: It would have taken an extra PCB space, extra bill of materials cost and all that sort of stuff." So, I actually uh looked into it and I found uh the What is it?
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (explains)
+context before: Now interestingly this is supposed to be a 22,000 count chipset. But this is a 40,000 count meter. So how the hell are they doing that? And we have ourselves a Holtek HT6121B.
+TEXT: That's an LCD driver. You can see all the traces going over to the LCD. I guess they didn't have enough lines on there micro. What's that? We've got a 40.
+context after: We're going to have a 4000 series CMOS in here. Yes, 4011. Beautiful ST brand. And tada, what do we have here? That looks There's our MSP430. So I don't know what the other TI one on the other side's doing.
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (explains)
+context before: So, yeah, they lifted off, but the chip reads. The chip reads on the programmer. No wuckers. And I was able to successfully program it with the latest version as well.
+TEXT: But, if I plug it in in the programmer mode, it I do get insertion error. That means the processor is now working and the LCD driver is working. Whoop.
+context after: Whoop. Something Something's reset itself there. Whoop. Look at that. There you go. So, we're just insertion error there. Something else is going on. So, I'm going to uh put that transistor back in there because there was nothing wrong with that.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (explains)
+context before: We just decided to have 40 pins there cuz that's enough to do all of the segments we want in an eight common by uh 32 configurations. So we need to choose a driver chip which has uh eight commons and 32 segments at least.
+TEXT: So that works out to a lot of pins and this is why you might want to go to a COG display chip on glass cuz it has the driver chip built on.
+context after: So you can simply talk to it via an I squared C bus or an SPI bus or whatever or the regular um you know Hitachi interface LCD driver or whatever you choose to In this particular case, no because we've just got the pins or the flat flex or the zebra strips, we have to drive every one of these 40 pins.
+
+[1242] EEVblog #1242 - Memory LCD+Supercaps+Low Power Design — Dave Jones (explains)
+context before: It's like man, a gross overkill. With this thing, it takes two microamps static mode. Plus you can drive it with a 3 cent microcontroller. It's going to be hard to beat this if cost is no object, of course.
+TEXT: But hey Dave, there's other LCDs like this STM one, the 32L0X3. It's like a a it's got an LCD driver, 4 by 52, 8 by 48. No worries, right?
+context after: But once again, it's these are like quite large, 20K of SRAM, 6K of embedded EEPROM, 32 pin is the minimum package, right? These I don't even have to look up the prices to know these aren't going to be hugely cheap.
+
+[918] EEVblog #918 - REPAIR: Sony Pyxis GPS — Dave Jones (opinion)
+context before: show that if it didn't actually get the data and was able to lock onto that one satellite anyway. So there you have it. I hope you enjoyed that little troubleshooting thing. Thank you very much to Dave for sending that one in. That was interesting.
+TEXT: We at least fixed it as far as the fault that we wanted to fix, which was the LCD display. It turned out to be the good old capacitor, electrolytic capacitor again, as was seen in previous videos. Often you're not that lucky though. It could have been an LCD driver or something like that, but
+context after: unlikely that it was. From the get-go it was most likely to be something relatively simple like that. Could have been the LCD itself, old age might have, you know, something might have happened to it or something like that. But my initial guess, like the bias
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (opinion)
+context before: So it's definitely not that. So there you go. So there you go. Almost certainly, this is the HY12P65-66. Or, I wouldn't rule out some custom variant of it for Breiman. I would not rule that out, but it looks like, yeah, it's an off-the-shelf thing.
+TEXT: They've reprogrammed it. They've decided not to use the built-in LCD drivers. Don't know why. Even though I think it might have enough segments to actually do it. But anyway, I hope you found that an interesting little look inside the Breiman BM230 series, and some unusual choices in there.
+context after: Certainly not unusual to use a high-con tech chipset, but separate LCD driver, two e-squared PROMs? I don't know. Anyway, discuss down below. Go for it. Oh, and I'm sure people will ask, you know, can this be hacked to do other things and things like that?
+
+[5v8qX9PrjnA] Brymen BM257 vs BM235 Multimeter IR Serial Protocol — Dave Jones (opinion)
+context before: Which is rather unusual. So, you've got to um decode that output. What a pain in the butt. But obviously, that's how they implemented it in the or the manufacturer of the chipset implemented it.
+TEXT: So, that's the That's the protocol for the output. Really unusual. So, it kind of made sense that this thing actually connected up to the LCD chipset. Aha, does the LCD chipset actually have a built-in, you know, um RS232 output that outputs this protocol with all the segments?
+context after: It was looking promising, but Take a look at the data sheet here for the uh QFP-48 package, which is the one we've got here. Sorry. Pin four on the C model, there's different models here.
+
+[1530] EEVblog 1530 - Siglent SDS2000X HD 12 Bit Oscilloscope TEARDOWN — Dave Jones (opinion)
+context before: Wow! Um, wow! This is just, like, really remarkable! It's so different to other scopes. I, I'm just finding this absolutely fascinating. So, there you have it. We'll have to take a high-res photo, and then do the, uh, talking Dave head thing, uh, once I remove, uh, the heat sinks here, but obviously we've got
+TEXT: ADC, ADC, uh, and then the FPGA up there. Um, I don't think they have a custom ASIC in this. Uh, curiously, there's a lattice there. That looks like it's driving. Is that, like, a LCD driver? Maybe that's how they get fast. Do they, are they using that as sort of like a way to
+context after: pump the, uh, waveform information directly into the screen? So, this is called the Atom. That's obviously their code name for this, uh, architecture here. But, uh, yeah. Really nice board. Liking the look of it. Um, so, let me get the cans off. Actually, these clips are
+
+[JI4b-7vpIDc] An Unusual Repair — Dave Jones (opinion)
+context before: So yeah, um it's it's calibrated. I'll do a better check than that, but uh that's odd. There you go. Um that's assuming I test that. Um calibration check that, spot check it on the ranges, that's repaired.
+TEXT: That's odd. I don't know. Leave in the comments down below if you've ever seen that. What would cause all those segments to come on? That's like the processor not I I think when maybe when it goes on, I'm not sure if that's the Is there a high con LCD driver chipset in there?
+context after: I think Yeah, I just so happen to have a >> [laughter] >> a faulty PCB just lying here. Um scrap PCB, not sure what for. Yeah, so that's the that's the display um driver up there, the high con HY2613C.
+
+[918] EEVblog #918 - REPAIR: Sony Pyxis GPS — Dave Jones (opinion)
+context before: The first thing I did, of course, is reseat the flatflex cable, look, inspect for, you know, any broken wires inside there and things like that, and I couldn't see anything, I haven't buzzed out every single connection over there for the flatflex, but yeah, I don't, it doesn't look like there's any issue there,
+TEXT: so there's something else going on, possibly in terms of the bias voltage for the LCD, perhaps that could have failed, could be one of the LCD drivers failed, I hope not, because I won't have replacements for it, but anyway, let's go through troubleshooting, step by step.
+context after: Now the first thing I've done is just disconnect this receiver, put that out of the way, because that's not what, we're focused on just the processor and the LCD here. So I've repowered it up, and it basically, as you'd expect, without the receiver there,
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (opinion)
+context before: Now, I don't think we're going to have to go into like the internal logic of the 44103 and the other, uh, common driver. I don't, you know, it's just it's just getting I think it's just getting the wrong stuff clocked into it.
+TEXT: I think that is the problem. It could be via any number of reasons. There could be a dry joint somewhere. One of the driver chips could be failed. Or something could be wrong with the something could else could be loading down the bus, which is, uh, going to be common.
+context after: Who knows? But, uh, yeah, I don't think we're going to have to get into that sort of detail. Uh, that's sort of like the last rabbit hole we want to jump down.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (opinion)
+context before: and use that in a 6,000-count meter, price-sensitive 6,000-count meter. So it looks like it is the HY12P65-66 here. It's not going to be the others, 2,000-count, but they're obviously over-counting them here, but the way these dual-slope converters work inside these things, you can actually get a higher count out of them.
+TEXT: So it looks like they are pushing it to 6,000-count, but why are they not using the internal LCD driver of this thing? They're using the external LCD chipset, not entirely sure at this stage. Maybe something will come to me, but anyway, they are definitely doing it.
+context after: They could have, I think, could have got away with that chipset, but there's probably some technical reason why they're using the second chipset there, but anyway, that's interesting. That is almost certainly a HY12P66, I'd say. Best guess. I'll tell you what, these two chips over here,
+
+[1105] EEVblog #1105 - $100 Custom LCD Design - Part 3 (µSupply Part 18) — Dave Jones (opinion)
+context before: So, that common is, you know, there's some issue with that common. Now, whether or not it's the driver chip we've got shouldn't be. It's an industry standard driver chip.
+TEXT: It's It's around a long time. Should be doing the business. There's no, you know, it's it's optimized for this kind of application. Um, you know, so I suspect it's more likely uh something to do with the design of the uh manufacturer of the uh LCD.
+context after: It just doesn't, you know, they didn't optimize it right for the uh supply voltage. But I guess you could say, "What do we expect for like a 100 bucks tooling?"
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (opinion)
+context before: So, it could be you know, I'd be looking at the first thing I'd be probing. I don't know if I got the scope out would be I'm probably going to have to unless you were just want to go, well, it's probably that one and you know, if you had like an LCD swap or something like that to swap over you might swap it over and you know that
+TEXT: it's nothing on the driving side of things. It's on the LCD module and then you might go, well, okay, it's got to be this chip here and then you know, but even if you do that, you've still got to like probe it to see like it could be a dry joint.
+context after: Could be a bad solder joint on one of these control pins or something like that. Once again, I don't think it's the data because the data actually gets in there.
+
+[1525] EEVblog 1525 - Commisioned Mailbag — Dave Jones (opinion)
+context before: any, uh, further detail on this or you use one. It's, it's just, like, it's huge and chunky, but, um, it did the business. Like, you know, 30,000 count back in the day with, uh, true RMS was pretty schmick. I've never known Maxim to actually do
+TEXT: a multimeter chipset, so I don't think that's a multimeter chipset. I think that's just a Delta Sigma, uh, ADC. And I think we'll find that NEC jobby down there is a, uh, processor and, uh, perhaps with building, uh, LCD driver as well. Although,
+context after: uh, we didn't, it could just be serial going over, 'cause that's not enough. Yeah, pins, no. No, the LCD must have, uh, its own driver inside, um, there. So, you know, probably like a Hitachi, uh, chipset, um, something like that. Yeah, ADC. And, uh, processor doing all the, uh,
+
+[1094] EEVblog #1094 - Casio FX260 Solar II Calculator Tritium Nuclear Battery Experiments — Dave Jones (opinion)
+context before: that's interesting, they've got metal on the back of there. That's not for shielding purposes, that's for that'd be like a stiffening backplate I would be guessing for that LCD module. Anyway, that's going to have chip on board because we've got a tape bonding attachment here
+TEXT: It's just a hot, hot tape bond on there. And so they're going to have a chip on board chip on tape driver up there because clearly there's not enough segments to drive all that. So that's going to be, in fact that could be like a PCB
+context after: in its own right, really. So anyway, there's our storage cap. Done a little cut out there. No wuckers. And it's not much else is there? Once again it's just the black blob. And that's pretty much all she wrote. But once again, yeah fiberglass PCB in there.
+
+[1425] EEVblog 1425 - Fluke Repair 2 Electric Boogaloo — Dave Jones (opinion)
+context before: Nah, there you go. It's just Nope. Nope, nothing's getting hot. So, it's Yeah, like it's it's on. So, obviously, there is some way like for for that LCD to come on, the processor has to work.
+TEXT: There's the boot up delay, there's the turn on delay, and then it comes on. So, to me, that indicates that the processor works, but it's not Well, at least it's Well, I guess the LCD driver guess maybe that's just it.
+context after: But, yeah, anyway, that's one sick puppy. That was interesting. I didn't expect to get burnt from a 9-V battery, but you know, there's a decent amount of energy in these puppies, and they can can deliver a reasonable amount of power.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (opinion)
+context before: Oh, I didn't fiddle with it. But uh yeah, they have. So, I can't see any reason to suspect the range switch is at fault there. So, I guess now um I need to put it back together, feed in a voltage, and then make sure it's getting to the processor.
+TEXT: Because, you know, like the processor could be active, it could be drawing nothing at all, but you know, it could be getting there and not I don't know the processor could be dead, the LCD driver could be dead.
+context after: Anyway, I am going to rule out the range switch. That one there is the positive, did we say? And that inner one and then the second inner ring is the negative.
+
+[956] EEVblog #956 - Countersurveillance Monitor Teardown — Dave Jones (opinion)
+context before: We've got some diodes here. So, this is our RF front end by the looks of it. And of course, we've got a rubbed the numbers off the micro for this LCD here.
+TEXT: Rubbed the numbers off these. Geez, these are only going to be like LCD drivers. Like give me a break. I mean, that's just that's ridiculous. Anyway, yeah, they've Anyway, it's a counter surveillance device.
+context after: You know, serious professional job. You ain't got to rub the numbers off. Geez. Part of the business. All right, this is a little bit interesting. Here's our BNC input there.
+
+[1105] EEVblog #1105 - $100 Custom LCD Design - Part 3 (µSupply Part 18) — Dave Jones (opinion)
+context before: So, that segment, that segment is tied to that segment, which then goes around. And does it go to the V? I think it might go to the V. I think we have a winner.
+TEXT: So, that common is, you know, there's some issue with that common. Now, whether or not it's the driver chip we've got shouldn't be. It's an industry standard driver chip.
+context after: It's It's around a long time. Should be doing the business. There's no, you know, it's it's optimized for this kind of application. Um, you know, so I suspect it's more likely uh something to do with the design of the uh manufacturer of the uh LCD.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (opinion)
+context before: So, 40 divided by five, eight. Ta-da! Is it just simply this chip that Well, if I'm flipping it the right whichever way it's, you know, actually flipped. Yeah, it could be M1 M1 up there.
+TEXT: That could be it. So, I Yeah. Right off the bat, you would suspect this driver here. It's It's a Hitachi cuz they did all the They still dominate LCD drivers, don't they?
+context after: I don't know. Yeah, the standard Hitachi chip set. Anyway, the HD44102 for those playing along at home. So, automatically, you would either suspect this chip has failed or it's getting bad drive signals coming into it.
+
+[9s9LXOBknck] Unusual Brymen BM235 Fault — Dave Jones (opinion)
+context before: But cracked solder joints, they're hard to find. For example, um but there's nothing to say that this is intermittent. This our controller up here, that's the uh high con tech.
+TEXT: That's our LCD driver. So, it's as as I said, it's not going to be that. It's got nothing to do with the display. Got some e-squared problems up here.
+context after: Nothing to do with that. So, it's got something to do with our custom uh processor, which is a Brian BTC Prime and Technology Corporation. They do design their own ASIC.
+
+[1351] EEVblog #1351 - Mailbag — Dave Jones (mention)
+context before: at looks like a real, is that like a relay? Oh, that's how they're doing it, of course, because this doesn't have a rotary switch, so they must be doing, um, some switching there, PTC here, we've got some diode protection up here, we've got, uh, there's your high voltage input resistor, uh, string there, it's, you know, it's, it's okay for a pocket meter, um, it's, you know, it's, like, how much does this thing cost?
+TEXT: Anyway, um, there's our lead, uh, and, and it's just a two-chip set, uh, so it's one LCD driver and one is the multimeter chipset, I can't say I've heard of an SDIC SD7581, is it? Well, that's interesting, turns out that that is a, uh, RISC micro, a little 8-bit RISC, uh, micro data sheet I, uh, I only found, it's in, uh, Mandarin, so, uh, but it's got a, uh, 24-bit, uh, Delta Sigma ADC in it,
+context after: and an LCD driver, so, yeah, that's interesting, um, what's this puppy down here? That's a TM1622, once again, another, uh, Asian brand I've never heard of, but that's, uh, just an LCD, uh, controller, so, yeah, basically, um, it's just gonna be, like, it's gonna be multi-channel, uh, thing, and it's just gonna be measuring, and it's just gonna be switching some stuff in here, and it bobs your uncle.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (mention)
+context before: Bingo, it's a 64-pin quad flat pack. So you can eliminate anything that is not in a 64-pin package. What have we got here? Bingo, LQFP64. So you can actually rule out a bunch of these, but you'd have to go in individually to see what size packages they're available in.
+TEXT: Sure, the manufacturer can put them in different packages for you and things like that. They might even be able to do small custom variants, but yeah, I don't know. It could be a custom variant. It could come down to that. Anyway, the HigonTech ones, certainly, we're looking at, here we go, but they've got built-in LCD drivers.
+context after: Now, we'll come back to this, but if we actually have a look at the table here, these two down here are 5,000 count ones, here and here. Now, of course, the BM235 is 6,000 count, but hey, I've seen chipsets being extended beyond their counts before,
+
+[399] EEVblog #399 - GoPro Hero 2 Teardown — Dave Jones (mention)
+context before: And our LCD, fully uh custom of course, doesn't cost you much to get a fully custom um LCD. So that's a custom uh COG chip-on-glass one there. You can see the chip in there.
+TEXT: It's embedded on the glass like that. Has the driver. That's the uh driver for the LCD and it looks like it's just a uh serial interface there. There's some power and a couple of other lines so that'll be like an SPI interface um LCD or something like that that goes over to the uh flat flex connector over there.
+context after: There's a rubber spongy rubber backing on that just holding it in place. And there's a bit of bulk capacitance in there with all those tantalums. And the lens pokes out through this board and that's fixed.
+
+[1090] EEVblog #1090 - Sony Mystery Teardown — Dave Jones (mention)
+context before: So anyway, we're not going to be able to get that puppy working. It's actually a very nice combination of, look, we've got a flat flex connector board up here going to various motors and sensors and drivers and whatnot. And looks like we've got a drive motor down here
+TEXT: and all the requisite cogs and everything else. Beautiful. It's a Sony. There's our front panel board. We've just got some keypad encoder stuff there. There's our LCD driver board, Hitachi driving chipset, all fairly standard. Once again, they're taking grounding and decoupling to ground so serious.
+context after: These are the battery contacts here, and they're decoupling all of those directly to the chassis ground. Nice. Okay, let's have a look at the bottom. Ah, been mooned. Shielding, again. And look at that, just some sort of insulating sheet perhaps. Hmm. So it clearly wasn't good enough to just use the back metal case for the shielding.
+
+[856] EEVblog #856 - Mailbag — Dave Jones (mention)
+context before: weigh it down a bit, the whole thing comes out, by the way, look at that, that's actually quite neat, I like that. Woo, and there's the front side of that, just got all the, uh, contacts for the buttons, and you can actually see, there you go, you can see the die in there,
+TEXT: for the, uh, chip on flex, look at that, that's the, uh, LCD driver, directly on the back of there. Bingo. But yeah, there's not much to it. Got ourselves a Toshiba processor, that's gotta be SRAM, don't even need to look at the number, so that memory is gonna be the, uh, program memory,
+context after: of course, um, it's SRAM, don't even need to look at the number, backed up by the, uh, battery here, and this little puppy must have something to do with the LCD, because, look, couple of tracers running out there to the LCD, so if it was just something else to do with just the processor,
+
+[8] EEVblog #8 Part 1 of 2 - Graphical LCD Displays & PIC Micro Demo Boards — Dave Jones (mention)
+context before: it just won't work. You'll get nothing on your display. And, of course, that's what happened to me this time. Now, if you use parallel mode, like I did, and it doesn't work at first, you've got a lot of lines. In this case, I was like, you know, 16 lines.
+TEXT: I had to probe and check and debug to see if it was either a hardware wiring issue or whether or not it was my code. I wrote my own driver for this. Unfortunately, I had left my logic analyzer at work, and so I only had my scope, my two-channel scope, to actually debug this thing with.
+context after: And parallel mode, it was really quite annoying trying to debug this with just the two-channel scope. So, in the end, I got really fed up with it. I was following the data sheet. It's really quite comprehensive. There's lots of hoops you've got to jump through with this thing, and I wasn't sure if it was a hardware timing issue
+
+[980] EEVblog #980 - RoboMaid Automated Vacuum Cleaner Teardown — Dave Jones (mention)
+context before: up on the top board there. Is that also a micro? Let's check the brand out on that. And that's a whole tech job. Why are they not sticking with the one brand of micro? I don't know. Like, jeez. It's making your life harder.
+TEXT: Penny pinching again, obviously. So that is just driving the LCD on there for all your stuff. We've got another lens on top there. So they're obviously like pulse coding the lead timing information, but you know, I mean, it's the speed of light. It's not like they're using ultrasonics
+context after: to, you know, like triangulate position and stuff like that. But yeah, that's some sort of pulse information. Maybe I can power it up and have a look. Once again, they've just got a single lead in there. Infrared lead with the same, exact same lens system.
+
+[1286] EEVblog #1286 - Mailbag — Dave Jones (mention)
+context before: uh, and copper foil, going over to the LCD down there. Um, afterthought? Wow, 2006. Was it really 2006? That's, uh, unbelievable. Some rights reserved. Uh, got our self-thermal pad here, and there we go. There's our applications processor. It's one of those, uh, it's a, looks like a free-scale jobby, and
+TEXT: as I said, applications processor, memory, that's also doing the, uh, the, uh, the, uh, sort of built-in, uh, LCD driver and everything else, and just miscellaneous, uh, support stuff, so nothing huge doing there at all. It's exactly what you'd expect, because a chubby is just an
+context after: Internet-connected-processory-screen-do-dad thingy. It's all in the software. So anyway, that's, uh, like, kind of cool. I do like the, uh, concept, you know, this, you know, cuddly, friendly, uh, Internet of Things back when, you know, that was big in, uh, 2000, 2006. Really? That is 14 years ago now.
+
+[823] EEVBlog #823 - Rigol DSG815 RF Signal Generator Teardown — Dave Jones (mention)
+context before: this one, but you know, some of the more ultra-high-end ones definitely can have a real impact. And all right, why not? Because well, we didn't see the main processor. I know there's lots of processor aficionados out there. There it is, Freescale IMX283, one of these whiz-bang, you know, what is it, 6-800 MHz,
+TEXT: 400 MHz or something, application processors, you know, high-end ARM. It's got all sorts of stuff built in, it's got all the LCD drivers, it's got everything else. There's our LCD ribbon going out there, and there's our front panel touch as well. And not much else doing.
+context after: And of course we have our JTAG interface there, and I don't see, I usually get like a serial debug port on these things as well, but I don't see that doesn't, neither of those look like a serial debug port. So you know, usually you boot, you can boot these things up, hook up a, you know, regular
+
+[810] EEVblog #810 - Micsig MS310 Handheld Oscilloscope Teardown — Dave Jones (mention)
+context before: but it's good for math stuff, and also if you want to capture the data and export it, then, you know, it's fantastic for that too. So I'm not sure what's going on there. Wow! They've spared no expense, that's for sure. Oh, and by the way,
+TEXT: our TMS320 processor also has an LCD driver, so it can probably easily drive the 640 by, what is it, 640 by 480 LCD screen in this thing? No wuckers. And this is rather interesting. Here's our two InterCell ADCs here, but we've got one little micro coax coming up here.
+context after: Like, I thought, okay, if they're going, you know, this top board is the ADC plus the processor board, you know, there it is, like hooked right into the ADC, hooked right into the Altera FPGA sampling subsystem there, but like, yeah, I would have expected two cables to
+
+[833] EEVblog #833 - Mailbag — Dave Jones (mention)
+context before: on the back cover, so it's almost as if it's got like a it can detect when you remove the back panel. Interesting. So that's as far as I'll go in this teardown. Of course it's going to have a display processor for driving that
+TEXT: so that'll be on this upper board here. You know, probably just a flashy LCD driver or something like that. But this is awesome! Thank you very much Paul for sending this one in. I've always wanted one. Fantastic, excellent addition to the collection. Awesome, mate.
+context after: Next up we've got one from Australia. Bloody ripper. It doesn't say who it's from. So thank you very much. Anonymous person from North Sydney. Post office, that's like 30 k's away. So yeah, it's paper-wrapped. None of this prepaid parcel rubbish. Oh, it looks like it's a re-gifter.
+
+[1483] EEVblog 1483 - Holy Mailbag Bomb Batman! — Dave Jones (mention)
+context before: But there's not. Well, there kind of is. Partially, but it was part of this top board. It just, it just ripped off a whole bunch of the components. Yeah, you can see why that has that exposed copper there. And half the SOT 23s are missing.
+TEXT: Nice. Aha, there you go, scraped off the pod in. That's an 8566 Philips LCD driver. Hard to get the numbers at the right angle. And this is a Philips micro. There you go. There you go. P something or other. 87C. Something. I can't read it on my camscore to screen.
+context after: But yeah, that's the micro. And that's where the code is stored in this thing. I don't see a secure E squared prom externally. No, it's just internal to the micro. But of course, the whole idea is that you don't have access to this electronics
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (mention)
+context before: There you go. I just got into the uh Z80 basic version 3 copyright RT Russell. There you go. Who is RT Russell? Hmm. There you go. I just Googled it and it's a Richard Russell and his company RT Russell was set up to supply the basic to the BBC micro back in the early '80s and the same basic interpreter was also included in the Amstrad and NC100 and
+TEXT: other machines. So, there you go. Good on you, Rich. Now, this thing I expect to find uh through-hole technology, of course. There might be some surface-mount stuff. There'd be some surface-mount stuff for like the LCD driver and uh stuff like that, I'm assuming.
+context after: Because it was definitely a '87, so surface-mount was around before then, but uh I expect to see some classic stuff. It'll smell like vintage electronics, too, which will be fantastic.
+
+[1507] EEVblog 1507 - Mida: A surprisingly good cheap portable Electric Car EVSE Charger — Dave Jones (mention)
+context before: That's really neat. Just right off the bat. Loving the crimped end. Yeah, they've got a shake-proof washer on the bottom of those. I love the interface on that. This is really good.
+TEXT: It's got an O-ring seal around there for some weather proofing and that goes into the top board which just has a micro on the that's that's just one button on the top end the well, that'll be the LCD driver will power it up at the end of this and I'll show you.
+context after: But what's going on? What's this over Oh, that's just a lead Yeah, lead bar graph. Does like, you know, earth leakage detection and thermal overload protection and stuff like that.
+
+[5v8qX9PrjnA] Brymen BM257 vs BM235 Multimeter IR Serial Protocol — Dave Jones (mention)
+context before: Look at that. And it looks to be in almost identical location to line up with that hole. Pretty darn close. So, I thought, "Aha!" But, if we actually get in closer here, sorry, I'm going to film this in one shot.
+TEXT: Couldn't be bothered putting my macro lens on. So, hopefully you can see that. The LCD driver chipset is the HY2613C. And you'll note that that trace goes up there, goes to a cap, which then goes down to ground, and it goes around over to pin four down there.
+context after: And yeah, that thought, "Well, okay, maybe it does that." And the cap didn't make sense, but Brymen actually released the RS232 protocol for this thing. And you know, it's a it's a weird ass protocol.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: Metrix meters, I'm sure I remember the ads from the late '80s. That's just a alignment hole, is it? Is it a stud? Does it come out? Yeah. Yeah, it it it's a little it's a little clip, a little slot clip that obviously holds it in position and stops it from ah, so that it makes sure it's in the correct orientation when you assemble the thing.
+TEXT: That's got to be it. That's got to be for production assembly to make sure the switch is correctly aligned. It's beautiful. Anyway, flippity doodah, and yeah, we've just got a couple on this side here, and we've got an NEC jobby over here for driving the LCD.
+context after: So, um 7D7503. Um oh, no, DMM 10B. Is that the multimeter chip set? Anyway, 13th week '94 date code. This would have been a multimeter chip set. Down here, it's ITT branded.
+
+[1539] EEVblog 1539 - NEW PROJECT Part 3 - STM32L vs PIC24F — Dave Jones (mention)
+context before: It doesn't cost much to spin up a cheap board and buy a couple of one-off parts and you know, hand assemble them, right? But you know, it's it's time and effort, but you would do that if you were genuinely trying to do a shootout between you know, a couple of different competitors.
+TEXT: There's just so many variables in here. It's just it's just absolutely nuts, right? And especially when you're driving LCDs and you're using timers, you might be using ADCs, you might be using comparators and other peripherals coming out the wazoo, right?
+context after: And and in different modes and things like that. And then yeah, you'd have to write, you know, test um, software cuz you wouldn't write the full application generally, just write some you know, test operations that drives the LCD, you know, it does your ADC thing, whatever you want to do, it does does the timer things, it does, you know, your comparator stuff and things like that.
+
+[556] EEVblog #556 - Mailbag — Dave Jones (mention)
+context before: They go to your pads on your PCB here, and they've got a light pipe. There you go. And just a blob. Blob. Blah. Nothing more. Not that exciting, I'm afraid. And there's the four side lids. I don't know, I was hoping to, you know, identify the
+TEXT: micro or something like that, but nah, just a blob. Sorry, not that interesting. Looks like we do have a 3-chip solution. I mean, obviously there's the LCD driver part of it, you know, the main part of the watch is under there just driving the, you know,
+context after: it could just be a micro and they just pre-program it or something like that to go to all the LCD segments. So that's the Tokyo Flash Upload watch. And it's like, why? I don't get it. I mean, Japanese and their gadgets and their, you know, they're obsessed
+
+[1094] EEVblog #1094 - Casio FX260 Solar II Calculator Tritium Nuclear Battery Experiments — Dave Jones (mention)
+context before: the C107 there is in parallel. You can see the traces going across. So like it buggers off in there, and of course it's going to this like ground, what looks like a ground over here. But we need to measure that, and then it goes into these
+TEXT: three caps here, and no, they're probably charge pump caps, because they go in and out of the chip like that. These ones are three going to ground, so maybe there's some decoupling for the LCD driver for the divider or something like that perhaps.
+context after: But anyway, I think my theory's right, this is the reservoir cap, and we should be able to add another one in parallel. Like I'll try and find the biggest, like what is that, no 805 ceramic, the biggest or even, you know, jam a 1206 on there
+
+[1420] EEVblog 1420 - Mailbag — Dave Jones (mention)
+context before: We'll just see the LCD. What is the chipset? I don't know that SDIC. That one doesn't ring a bell. That's the SD750 7502 or 750.2. This seems might be a dot in there.
+TEXT: And the other's just a LCD driver up there. But yeah, just the main chipset or the main micro. That's a TM3729. Presumably just a could be one of those little cheap ass you know, no name of micros from China or it could be like the LCD driver.
+context after: But either way, yeah, that's the chipset and not much else doing. But the non-contact tester up there, it's just like just the actual pad sticking out of there. So you know, look, it's it's okay.
+
+[1457] EEVblog1457 - Old School Mailbag - ESC Burnout — Dave Jones (mention)
+context before: it's similar to the other ones, um, we've seen. Yeah, it's just got the, the, uh, press jacks just sitting in the plastic like that, but you know, these things are like 20 bucks delivered or something, I don't know, 20 or 30 bucks delivered, and we've got one, uh,
+TEXT: PTC on the input, that's it. There's no MOVs, uh, whatsoever, um, and yeah, I think we've seen this before. We've got a blob, we've got a display driver, so it's a multimeter chipset, um, then we've got an LCD uh, driver, and then we've got
+context after: a, um, relay in there, because this does, like, auto, um, switching, because this doesn't have a manual range switch, so, you know, ultimately you almost certainly, like, end up with a, that's why you end up with a, uh, relay in there. Is that one of the latching, uh,
+
+[940] EEVblog #940 - Mailbag — Dave Jones (mention)
+context before: calibrated for conductivity. There we go, they're hot snotted over that. And yeah, not much doing. And inside the pH meter geez, I wasn't far off, was I? ICL 7109 there we go, 94. So it's doing basically exactly the same thing. Oh, we've got a little
+TEXT: shielded, oh look, just a little over a chip over a socketed chip. Little shield. Got to find out what that is. Anyway, not much doing there. That's our LCD driver, little oaky job, and it's all through. Oh, woo, bodged tranny on the back.
+context after: That's nothing fancy at all, it's just an ICL 7612, it's just an op-amp, and yeah, wiring and bodge resistor, how you doing? Bent pin, straight out of the socket. Ah, old school mod, look at that. Check out this, it is absolutely fascinating. Erdungsmesser.
+
+[603] EEVblog #603 - Gas Sensor Teardown - Dräger Multiwarn II — Dave Jones (mention)
+context before: Now it will be interesting to see inside if the PCB is, ah, conformally coded or not, um, you don't have to for intrinsically safe, ah, devices, although it may be, probably not, it'd be my guess, but, ah, certainly would not surprise me if we found a conformally coded board,
+TEXT: I don't expect anything fancy, I expect a, you know, an 8 or a 16 bit micro or something like that driving the, ah, LCD, and, ah, with a ADC either built into the micro, if it's not, ah, that demanding a requirement, that's a long screw,
+context after: or, um, or whether or not, ah, it uses an external, you know, precision ADC, something like that, could very well do, but we'll find out, but we'll find out, but I don't expect much else, I expect a microcontroller, on, on the electronic side of things, a microcontroller, maybe some signal conditioning,
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (mention)
+context before: So yeah, they're probably parts that have fallen off and rather than they don't put it back in the pick and place machine and they're not going to scrap the board so you know they have somebody do manual rework and obviously someone at Brymen's not very good at doing manual rework cuz this is pretty piss poor.
+TEXT: Now this is the LCD driver chip and maybe this resistor here is to do with the contrast or setting the contrast or something like that. I don't know. But yeah, that's the LCD driver so that really shouldn't have anything to do with it.
+context after: But I did find something interesting in here. Look at that. It's .2 ohms. That doesn't seem to make sense. Like it could be like a as part of a low-pass filter for the power supply, but at .2 ohms, that does not sound right to me.
+
+[912] EEVblog #912 - BM235 Multimeter Reverse Engineering — Dave Jones (mention)
+context before: if it is this one, programmed the micro not to have any serial output. It's obviously, it's going to be buggering off to the chipset. But they seem to be going down to some transistors down here, a couple of caps, I don't know. Something's, yeah, something's going on.
+TEXT: But they have to have a serial interface going over to the LCD driver chip. And if we take a look at our LCD driver chip here, the Hikon-Tec part, it's an I2C interface. Bingo. So that's SCL, SDA. So we can find those pins on the,
+context after: sorry, on the package here, LQFP48. That's the one where, what's the ABC versions? Oh, they're slightly different in terms of backlight and things like that. Anyway, we're looking at pins 9 and 10. There you go. Pins 9 and 10 there on all the packages.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (mention)
+context before: We'll take a closer look in here. There's another Intel device over here, which we'll look at, but it is nicely modular design like the battery sense circuit around here.
+TEXT: There's a receiver / battery sense circuit. There's external RAM contrast circuit around here and they have labeled them and grouped them quite nicely. I like it. And we have six Hitachi LCD dot matrix driver chip sets there.
+context after: All surface mount, pretty basic stuff. They've decided to integrate this onto the main board instead of having that separately. You know, there's a bit more engineering work in that.
+
+[1229] EEVblog #1229 - Mailbag — Dave Jones (mention)
+context before: It'd be like a big um press contact kind of thing and well, maybe you wouldn't. You just solder straight on and in you go. So, that's actually uh flex tape on there.
+TEXT: So, that's not actually a PCB. So, it is So, it's basically chip on flex really is what that is and then they of course it's got you know, a ton of pinouts cuz it's all got the LCD driver and everything else on it.
+context after: Then they just use the fine pin attachment in there like the and then just hot bar that down around there. Anyway, that's that is fascinating, isn't it? So, of course that's a custom Casio ASIC and well, that's just that's beautiful.
+
+[917] EEVblog #917 - Mailbag — Dave Jones (mention)
+context before: And not O-ring uh sealed though, but it's plastic into Yeah, it's plastic into surround anyway. So, they're adding to some adding something to the water resistance path there anyway.
+TEXT: But anyway, let's go in. Very typical early '90s construction. Look at that. There There's our Sanyo. Is that our LCD driver? And uh another Sony custom part down there and something on the other side.
+context after: And we've got ourselves a Hitachi H8 there. So, that's interesting that we'd have a H8 series in here, but in the uh receiver? Xilinx. Go figure. Anyway, um yeah, completely what you'd expect in there.
+
+[1049] EEVblog #1049 - Mailbag — Dave Jones (mention)
+context before: Thank you very much. I can always do with solder wick. Um it's just got some What is it? So, I've got some random miscellaneous parts. I replaced the main board for I still don't know what a Magna Card 200 is.
+TEXT: Um to Google but look they've got the LCD driver under there. And presumably it looks like it's just a maybe is it a you know 7106 panel driver or whatnot but we've got ourselves the micro on there.
+context after: What's that puppy? That's an NEC D80 7 49. Like that's like an 8080 compatible chip. So, there you go like old school stuff. And I I assume really but like what does it do?
+
+[1215] EEVblog #1215 - $18,000 4K Monitor Teardown From 2001! — Dave Jones (mention)
+context before: And I did like I don't want this to be as destructive teardown cuz this is a gorgeous monitor. And uh really, I've looked at uh those sort of stuff before.
+TEXT: You can see uh LCD uh TV uh teardowns where I've actually gone right down and looked at the inner faces uh the the chip on flex uh drivers on there for all the columns and rows and things like that.
+context after: So, I won't do it here because it's still all the same. But yeah, this is like this is a state-of-the-art LCD. Uh I don't know who actually made the actual LCD display.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (mention)
+context before: I guess maybe not surprising. I mean, it does have a specific, you know, maybe that was a big selling point they wanted to do. This thing does temperature and does it probably better and more accurately than your average multimeter.
+TEXT: There's not much else doing here. We've got some miscellaneous, looks like some filter stuff maybe happening around here. Uh there's our main oscillator 4 MHz and uh direct LCD driver up here.
+context after: And Bob's your uncle. That's about it. Um some extra range, you know, the buttons and things like some extra range uh stuff. And well, not much. Well, what have we got here?
+
+[1679] EEVblog 1679 - Why Does a Uni-T AWG Cost $5800? - BOM Cost Analysis — Dave Jones (mention)
+context before: But yeah, anyway, it it's hard to get a price on that, but it's the most expensive component on the board. And then throw in a couple of uh DDR3s RAMs here, you know, couple of bucks, it all adds up.
+TEXT: You got a flat link LCD driver there. Then you've got a couple of high-speed uh Peekle uh comparators in here. They were in that big block that I saw with all the multiple blocks in there.
+context after: I think they were in there. Um, you know, and they're two bucks 50, you know, it's not cheap. Um, then we've got a FI here. That's for the um Ethernet FI um thing.
+
+[5v8qX9PrjnA] Brymen BM257 vs BM235 Multimeter IR Serial Protocol — Dave Jones (mention)
+context before: Anyway, so they've got the multimeter chipset. It'll be like a variation of one of the commercial off-the-shelf ones or an identical off-the-shelf one, but I don't know exactly what one is.
+TEXT: Haven't traced out the pinouts or reverse engineered it or anything. And we've got an LCD driver up here. So, you know, there are significant changes, but interestingly, look, here we go.
+context after: That's Where's my poker? Here we go. There's our little infrared LED there. Notice that it only transmits. It does not have a receiver, even though there's a hole in the case.
+
+[1055] EEVblog #1055 - How to Design a Custom LCD- µSupply Part 16 — Dave Jones (mention)
+context before: That's a bit strange because it's just basically uh conductive gluing a flat flex onto the glass um as opposed to putting the pins on. So, that was a fair jump to go to that flat flex.
+TEXT: And then uh COG is the chip on glass, which has the LCD driver built onto it. And we could have went for that, but look at the price difference, a dollar $3.71 each quantity versus $1.47.
+context after: And as we'll see, we'll take a look at the driver chip that we're actually going to use, and the price just doesn't justify using COG. But it may for your particular purpose.
+
+[1105] EEVblog #1105 - $100 Custom LCD Design - Part 3 (µSupply Part 18) — Dave Jones (mention)
+context before: They're obviously not making money on it. They're hoping for the big order. Well, gave it a bit of a clean up, but it's still there. But curiously, this segment, which is part of these, which I thought was dodgy before, faded before, is not faded anymore.
+TEXT: So, I Anyway, all right. So, what I'm going to do is uh hook it up to an external supply. I've broken into a track underneath, which uh has the just the supply for the HT1622 LCD driver.
+context after: And I've currently got it set to 3.3 volts, and I'll change it in uh 0.1 volt increments. So, I know I am viewing it from the ideal 6:00 uh angle here.
+
+[884] EEVblog #884 - EEVBlog BM235 Multimeter REPAIR — Dave Jones (mention)
+context before: Nope. Okay, ohms is just showing direct short. That's interesting. That's interesting. I well, I was going to maybe there's some sort of um solder short on the board or something that's causing that.
+TEXT: I mean, obviously our chip set's working fine. Um and there's not much in this apart from a the multimeter chipset. That's pretty much the only active circuitry and the LCD driver chip.
+context after: Um the capacitance Oh, that seems a bit high. 13 nF, I'm not Hang on. I've got a reference cap here. Here we go. Let's check it out. I've got myself a um These are very nice if you can pick them up on eBay cheap.
+
+[1100] EEVblog #1100 - Dumpster Photocopier Repair — Dave Jones (mention)
+context before: Maybe you can Maybe you might be able to pump up the voltage on the backlight or something to compensate. But anyway, the screen still works. What we're concerned about is the touchscreen.
+TEXT: And of course, here's the LCD ribbon going off here. We've got all Looks like we've got all our diff pairs running here over to the LCD driver. Would they need diff pairs for that?
+context after: I don't know, but anyway, they seem to be running them. And here is your touchscreen. The foot classic four-wire resistive touchscreen. Looks like we got some discrete trendies and diodes around there.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (mention)
+context before: Every single device in here has had the number rubbed off. But yeah, I mean, these are just generic op-amps and things like that. So, we can you know, we we should be able to relatively easily trace this out.
+TEXT: Even the micro's rubbed off and the LCD drivers and you know, stuff like that. Anyway, um the voltage is being fed in over here to the coax. So, let's see if we can measure that.
+context after: Now, as for the power supply voltage in this thing, I'm getting uh 6.5 volts across all the main chips on the board down in there. Now, that sounds a bit odd, but 6.5 it was pretty darn close to 6.5.
+
+[1546] EEVblog 1546 - INSANE $30k 4K Panoramic DLP Projector TEARDOWN — Dave Jones (mention)
+context before: Okay, it's all happening. Here you go. So, here's the main processing board VXP by Sigma. No idea it's a custom uh you know, application-specific processor for this sort of business.
+TEXT: Got a couple of analog devices drivers over here. That'd be for your LCD, which is over this side here. Um and someone has thoughtfully provided we got a 4 gig gig microSD card.
+context after: I would presume that's got like the firmware on it. And then it looks like you can upgrade the firmware over here. So, I'm sure that's what that's for. Um Altera Cyclone 3 jobbie over here.
+
+[116] EEVblog #116 - Retro Teardown - Tandy Radio Shack TRS-80 Model 100 — Dave Jones (mention)
+context before: You could brutalize the layout back then, have it as big as you want, big inductive traces all over the place, and it really wouldn't matter a rat's ass. The thing would pretty much still work.
+TEXT: It's brute-force engineering. Now, here's something I find really interesting. This is the LCD display board. Check out how many drivers they need for the 240 by 64 LCD display.
+context after: There are two things I find remarkable about this. One is that it actually uses quad flat pack technology, which was fairly advanced back then. It was fairly fairly novel.
+
+[1044] EEVblog #1044 - LCD Technology Tutorial — Dave Jones (mention)
+context before: You got your traditional low cost reflective static LCD display which will uh have a play around with in a minute so stick around and you've got your traditional 16 two line by 16 character LCD display module and you've got character based ones and graphical based ones and you've got ones that are on like you know mounted on PCBs as part of modules.
+TEXT: You've got ones that are just a have a flat flex coming out of them. You've got ones that have got drivers on them. You've got ones that are low pin count serial interface ones.
+context after: You've got seven segment 14 segment displays like this one we'll have a look at. You've got graphical display ones and all sorts of things. Let's take a closer look.
+
+[334] EEVblog #334 - History of PDA's in Teardowns — Dave Jones (mention)
+context before: It's an I2S audio interface, you know, pretty uh bog-standard uh cons- you know, system audio device. And uh I have no idea what uh that one is. It's an LC98500B.
+TEXT: Um clearly, it's uh driving something to do with the LCD display there. So, something to do with that, some sort of driver. And then we've got uh AD uh 781 from Analog Devices.
+context after: We've got a couple of those. They're actually um nothing special there, quad single pole single throw switches. So, it's just doing some uh housekeeping stuff there. Not sure what that uh particular package is.
+
+[618] EEVblog #618 - Mailbag — Dave Jones (mention)
+context before: I wonder what we'll get. A little friendly face is spinning around. That auto time off is very quick. Obviously, they're paranoid about their about their battery life there. It's taking ages to connect to the network.
+TEXT: It's not worth doing a teardown of this thing. I mean, there's going to be nothing in it. There's going to be an LCD driver if it's not already built into the Xscale processor.
+context after: Going to be the Xscale processor and battery management charging and well, you know, a little Wi-Fi thing. I don't think it's worth doing a teardown. If anyone really desperately wants to see down No.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (mention)
+context before: It's like almost triple the consumption, but it's still bugger all. The STM32L series in particular still more than good enough to meet the specs. But, if you're going for a real ultra low power, like the best you can get in the industry, you probably wouldn't be using something like this.
+TEXT: But, for my purposes good enough and it's probably, I don't know, three to five times better than the PIC32. And it's got all the LCD driver and everything built in.
+context after: Beauty. Now, you might be asking what do we need to actually program these STM32L micros? Well, you only need one of these things. If you don't have the development board, you only you get the ST-Link V2 here it's called and it's 22 bucks 61.
+
+[1258] EEVblog #1258 - MORE Dumpster Wandel And Goltermann! — Dave Jones (mention)
+context before: It's all 74 series or 4000 series CMOS logic driving the LCD display. So, they've probably got some LCD drivers, but yeah, basically, there is no processor. It's just a level meter.
+TEXT: So, all they're doing is got to convert the analog signal, of course, into digital and then just simply drive the LCD. All right, can anyone spot the LCD driver?
+context after: Do you know your 4000 series CMOS numbers? I'm going to leave that up to the viewers at home. Those playing along at home, come on. Leave it in the comments.
+
+[547] EEVblog #547 - Dumpster Phone Teardown — Dave Jones (mention)
+context before: And, uh, it looks like it's a two-wire interface. This board just slides out and then the contact in the other side. So, power and data goes across that two-wire interface.
+TEXT: Really quite neat. Got an Epson, uh, LCD driver there, by the looks of it. And, uh, not a huge amount more. So, these are the same, uh, reverse mount LEDs.
+context after: They just, uh, shine through a hole in the board. Exactly the same as I used in my micro card here. Just drill a hole in your board, shine through.
+
+[1539] EEVblog 1539 - NEW PROJECT Part 3 - STM32L vs PIC24F — Dave Jones (mention)
+context before: Yes, I'm pretty sure they are, but that's not the only part of the equation. I'm actually very well aware of the STM 32L series because I actually specified the STM32L1 series, not the L0, the L1 series, into the 121GW moldimeter.
+TEXT: Pretty powerful. It was relatively cheap at the time and and available at the time. We'll get into that. Um and I had the you know, the LCD driver signals.
+context after: It was pretty low power and you know, all that sort of stuff. So, yeah, I'm very familiar with that. So, let's do a quick comparison here between the STM32L0 and the PIC24FJ128.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (mention)
+context before: I think we, yeah, we couldn't find the ST, some ST micros, of course, have built-in LCD drivers, but we couldn't get it. Um, or it didn't, or it increased the cost too much, and it was cheaper to get a separate chip.
+TEXT: So, I'll look that one up. So, that was just a Holtek jobby. Holtek's one of, you know, they make their own micros, of course, and they make LCD drivers.
+context after: And, you know, they're, they're pretty cheap. I don't know exactly, uh, the cost of that, but, yeah, um, it supported 32 seg, yeah, it supported 32 segments, 1622 with eight, uh, commons.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (mention)
+context before: I don't know. Anyway, there you go. Got one little job down here. All the all the processing has got to be under here somewhere. I doubt it's that. Uh can't see that on the screen.
+TEXT: Yeah, you can probably read in 4K, but I can't on my camcorder screen. And we've just got the hot bar attachment going over to the LCD driver board here.
+context after: I've got a chip on flex driver there with another hot bar attachment on the PCB. More hot bar attachments up here. It's a lot of functionality that goes into this thing.
+
+[1382] EEVblog 1382 - Keysight EDU34450A 5.5 digit Bench Multimeter TEARDOWN — Dave Jones (mention)
+context before: Anyway, I won't bore you with the details. There you go, you can read that for yourself. ST arm uh micro 1 variant and it is You got the memory and you got the flash and you got the whatnots and uh yeah, not much else.
+TEXT: We're going to There's that the ethernet, yep. And uh USB, um and well, not much else. There you go. Is that the LCD flat panel driver? I don't know.
+context after: Hasn't got many connections, has it? But, yeah, there's really not much happening there at all. And well, you wouldn't expect anything more. And if you have any doubt that they're uh reusing the metal chassis there, well, there you go.
+
+[1525] EEVblog 1525 - Commisioned Mailbag — Dave Jones (mention)
+context before: uh, we didn't, it could just be serial going over, 'cause that's not enough. Yeah, pins, no. No, the LCD must have, uh, its own driver inside, um, there. So, you know, probably like a Hitachi, uh, chipset, um, something like that. Yeah, ADC. And, uh, processor doing all the, uh,
+TEXT: smarts and, uh, then LCD driver. Hmm.
+context after: 

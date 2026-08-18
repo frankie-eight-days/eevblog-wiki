@@ -1,0 +1,348 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: current sense resistor
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 63 passages drawn from 45 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# current sense resistor`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[173] EEVblog #173 - Gossen Metrahit Energy Multimeter Teardown — Dave Jones (explains)
+context before: You've got a MOV here. And curiously, there's a couple of what looks like half amp fuses here and I'm not sure what they're actually protecting. Your guess is as good as mine.
+TEXT: I've removed the main fuse here and you can see the current sense resistor under there and they've actually used a proper surface mount full terminal current sense resistor instead of the bent piece of metal basically that almost every other meter uses and you can see the extra you can see the voltage sense terminals there tapping directly off that directly off the terminals or the pads of that resistor
+context after: and that's the proper way to do it. It's really nice. Now, curiously, there's a couple of MOSFET big power MOSFETs here like this, which switch the fuse. Now, I did a quick check and I've actually got a DaveCad drawing of that here.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, based on Kirchhoff's current law, what can be can be happening here? Where can, if it is uh excess current, where can it be going? So, say for example, there's excess uh current on the output of this bridge rectifier and it and it is actually dragging this rail down and this diode bridge and this uh tap here can't uh can't supply uh the power required, where's it going?
+TEXT: Well, it's not going through here. It's not going out of here because here's our current sense resistor. It can There's only two places it can be going. One is somehow through the base of this transistor into our I think believe it's an LM 723 voltage regulator here or it's going around here once again into a current limit pin.
+context after: It doesn't seem likely at all. We've measured the voltage across here. There is no excess current flowing out there. So, it can only flow there or there. So, it can't go anywhere else.
+
+[1006] EEVblog #1006 - Trezor Bitcoin Hardware Wallet Teardown — Dave Jones (explains)
+context before: But I think I mentioned before, they have actually fixed that in a firmware update. The hardware may have changed in the couple of years since that hardware side-channel attack was revealed. But that's all fixed now apparently. But let's just have a quick squeeze.
+TEXT: Okay, so let's just do some basic side-channel power line analysis. What I've got is my Roden Schwartz scope here, 10-bit ADC. I've got high-res average mode on, 20-meg sample memory depth maximum. And I'm breaking into the ground line of the USB here. I'm just breaking this out into a 10-ohm current sensor resistor here.
+context after: Got that on the scope. Be careful where you put your ground on this. Don't put it on the positive. I've done a whole video on how not to blow up your oscilloscope when probing USB. Stuff like this. So just be very careful with that if you're trying to do something like this.
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (explains)
+context before: Hi, just a quick follow-up on this Vata 15 minute nickel metal hydride battery charger I looked at in the previous video. Did a tear down and kind of reverse-engineered the main switching topology and charging circuit for the batteries and things like that. And a lot of people wanted me to follow-up and actually probe this thing and see what's happening here,
+TEXT: because one of the outstanding issues from last time I didn't have time to look at is how they're actually measuring the discharge current for this thing. We knew that the DC to DC converter was basically putting all the batteries in series and there was a measurement shunt resistor down the bottom down here.
+context after: And we also knew that by nature of this dual MOSFET configuration for each battery cell here, so here's each battery and there's a pair of MOSFETs across each one. And let me show you the switching arrangement, how they can switch cells in and out,
+
+[67] EEVblog #67 - Hacking the Princeton Tec EOS LED Headlamp with a Cree XPG — Dave Jones (explains)
+context before: of the, um, lead here. So, really, it's a very basic, um, DC to DC converter. It's just a single transistor switch with an inductor, and a diode, and a, and a smoothing cap, because this, uh, headlamp is actually a constant current mode. Each mode is supposed to have a constant current, which we'll check out
+TEXT: later to see if it actually does. Um, now, these, uh, so, so to get that constant current, you actually need to have, you need for the, uh, you need for the IC to intelligently control the switch over here. That larger resistor there, you can tell that's a, um, current sense shunt resistor just by its size
+context after: compared to all the others. I think they're actually, um, separate range control transistors to get the different current ranges. Now, I'm guessing that they're going to have a fixed current range, and then they switch in a, a sense resistor somewhere here, and all this stuff over
+
+[1409] EEVblog 1409 - The DANGERS of Inductor Back EMF — Dave Jones (explains)
+context before: It's a high-voltage transistor, 300-V rated. You'll see there's a reason for that. I've got a pulse generator over here, which just generates like a 1-Hz 200-ms pulse like this over and over.
+TEXT: 50-Ω terminator just for your transmission line aficionados. Then a base resistor 1K, and that will turn on the transistor. I've got a current sensing resistor down here, so that lets us hook this up to our scope and look at our emitter current flowing down here because it may actually be different.
+context after: Well, it will be different, spoiler alert, to the relay current up here. And I've got another magnetic current probe up here, which is a relay current probe. I just realized I put that in the wrong spot.
+
+[67] EEVblog #67 - Hacking the Princeton Tec EOS LED Headlamp with a Cree XPG — Dave Jones (explains)
+context before: And, um, uh, medium range, I got, um, 88 percent, so it's basically the same on the high and the medium ranges, and the efficiency, as to be expected on the low range, drops a bit. I get about, um, 68 percent efficiency on the low range, but that doesn't matter, it's just the low range, so it's not bad at all.
+TEXT: So if we're going to hack this thing and increase the brightness of the LED on, um, any or all ranges, how do we do it? Well, it's obvious, and it was obvious before I even drew the circuit, because that large 0805, um, current sense resistor I pointed out, which is here, uh, 0.33 ohms, that's
+context after: clearly the value for the high range. So all we have to do is, if we want to increase the brightness on the high range, just change the value of that resistor. And likewise on the other ranges as well, if you're not happy with those values.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (explains)
+context before: Absolute top quality as you'd expect. And of course I missed that, that's the Nippon Chemico symbol down in there and the SXE is the series model of the capacitor and these are high temperature low ESR caps as I suspected.
+TEXT: And we have ourselves a current sense resistor folks, there it is. 0.1 ohms, 5%. That's in series with the battery pack down there. And I can't quite see the uh Murata part number down in there, but it's a Murata part and looks like we've got four ferrite beads there with a filter cap.
+context after: So if you look at the Dave CAD drawing here, it just looks like that in series with the DC input jack. And if we get the shield off and look under the skirt, there it is.
+
+[87] EEVblog #87 - Let's hop on the Electronics Design Merry-Go-Round — Dave Jones (explains)
+context before: So it's a quite an expensive little beast but and we can go straight in and jump straight to the data sheet and actually check out the part. And it's hard to get this in frame here but let me try.
+TEXT: There we go and it's we've got a simple high side current monitor there. It's got a single resistor. It's got a current sense resistor external and it just senses that and gives you a current output which convert to a voltage by putting a single resistor there and that's very nice.
+context after: That's that's pretty much exactly what I want. Supply voltage 2.5 volts to 20 volts perfect for this application. Although the minimum side here 2.5 volts means I probably can't use it on the lower side hence hence the name really.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (explains)
+context before: I want to charge that at half C to be on the safe side, 25 milliamps." I would plug 25 milliamps into the formula in the data sheet, and that would give us a resistor value that allows this chip to charge constant current here of 25 milliamps.
+TEXT: And to do that, most uh chips, the fully integrated ones, will have a built-in uh current shunt sense resistor there with a little amplifier with a little um differential amplifier there as well, and a series pass transistor or a series pass MOSFET in there driven by an op amp.
+context after: And you've seen these type of uh circuit configurations before. Now, this pass transistor can depending on there's a lot of control circuitry in here and voltage references and stuff like that that go between the different modes, but you don't have to worry about that.
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (explains)
+context before: SOT-23s. It's much more complicated than I expect, actually. There's a lot more stuff in here. There's another 4580 down in here, and then we've got all sorts of local regulation around here. This is interesting that they've got 3.9 ohm resistors in here. I don't think they're doing
+TEXT: any current sharing with those. I don't, so I don't know like they're not, and I don't see any, are they? Oh they could be, yeah, they could be like current sense resistors. If they're doing that then that's impressive. Individual current sense for each regulator, so that's
+context after: yeah, because you can see there's another VIA buggering off there somewhere, but that could just be power going off. No, no, they're not I don't think they're doing that. Although that's what that little amp, that could be an amp that's measuring, a diff amp, it's measuring the current.
+
+[855] EEVblog #855 - Ceramic Capacitor Piezoelectric Effect — Dave Jones (explains)
+context before: There's got to be. It'll show you somewhere anyway. If we keep going all the way with LBJ down here, then wait for it. Wait for it. Wait for it.
+TEXT: All timing diagrams, fantastic. Bingo, here it is. There's our LED driver charge pump, and your typical capacitor charge pump, and you can see that it's actually got a current sense resistor uh down here, so it can actually control uh the current going through the LED.
+context after: So, it's going to be a constant current generator operating at some frequency. That frequency we don't know. It's not in the uh data sheet at all, at least well, if you can't read uh Chinese.
+
+[814] EEVblog #814 - Keysight N8762A 600V 5100W PSU Teardown — Dave Jones (explains)
+context before: actually back on the main board, so that's a bit how you do it, almost. I don't like that. I like having my differential sensor, my diff amp, right there. You know, you don't want to go through cables. Anyway, they've done their homework, they know what they're doing.
+TEXT: So this big-ass bridge rectifier is basically protecting the current sense resistor here. And you can see that they are actually sensing the output voltage right on the output connectors here. This goes back to a connector here, which is wired back to the main board.
+context after: So yeah, you know, they're doing it right at the connector. So they're doing it properly, but of course if you want to sense out the load, because this is, well, this is not a huge current. I mean, it's 8, you know, what is it?
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (explains)
+context before: We saw this was a a 7 amp rated uh MOSFET up here. These, and no surprises, this FDS8978 is also 7 amp rated as well. So, of these three range resistors here, you could get a reasonable combination of uh current range values.
+TEXT: And of course then there I didn't show that but they would be t tapping off the value from these current sense resistors and then that's how they're able to uh regulate and maintain the current and they're doing that paralleled up across all four sections like that.
+context after: Really quite nice belt and braces. They've gone to town and then on top here flipped upside down so all the electrons are going to run down to the bottom.
+
+[397] EEVblog #397 - Turnigy Accucell 6 Charger Teardown — Dave Jones (explains)
+context before: We've got all four pins connected in parallel there. Another three over there and the one pin there which will be the gate drive. And that is a load resistor.
+TEXT: We've got 0.051 ohms there. Interestingly, they've missed that solder joint there, but I'm trying to budge that. It's obviously soldered on the other side, so not a problem. And it looks like it might have a 3-A poly switch there by the looks of it.
+context after: HR30, I'm assuming that's a 3-A poly switch. Not actually sure what that's doing there. It's a It's near the balance circuitry. It's nowhere down near the battery connectors down here.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (explains)
+context before: I've sort of tacked it around. It's a low current, so it has a 10 thou trace going to it. Uh and I'm mounting a few I'm placing a few resistors associated with my output current sense.
+TEXT: They're my output current sense resistors and J4 I believe is the is the current sense input connector. I've decided to move a few more resistors over to this corner and I'm slowly dragging components from outside of my board into the board.
+context after: So, you'll find if you can see, you might see a wide shot soon of how many components I've got left and there will be very few actually left outside of the board.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: It's not, trust me. Now, we've uh replaced We've got the LM31 circuit constant current equivalent circuit in this red box here. Remember, we've just replaced it with the error amplifier and the series pass transistor.
+TEXT: And we've got a 1-ohm um current sense resistor here. It's 1 ohm because 1 ohm makes the math really easy. Because what we're after here is what we want to do is we want to because we want this PC-controlled, remember?
+context after: We want software microcontrolled. We want to convert uh say 0 to 1 V from a microcontroller or from a pot or whatever source it is into a 0 to 1 A uh constant current limiter circuit like this.
+
+[1060] EEVblog #1060 - $35,000 DataIO Unisite Universal Programmer Teardown! — Dave Jones (explains)
+context before: What are these little puppies? They They They drivers? For the MOSFET? Have to look those up. So I couldn't find any data on that. If I do, I'll link it in later in the edit, but uh anyway, look, they're very interesting.
+TEXT: 0.285 ohm 1% resistor. That's obviously some sort of current sense resistor. So maybe this is some current sense amplifier. and look, I think they've got a guard trace going right around all those top four pins there.
+context after: So, maybe that's some sort of, you know, amplifier for the They're obviously doing some pin current sensing there. Hmm. And we find these four MOSFETs there. You got to wonder, is this like a four-channel card?
+
+[1106] EEVblog #1106 - Pace ADS200 Soldering Station Review (JBC Killer?) — Dave Jones (explains)
+context before: Aha, we may be able to change our low temperature limit. Right. Change temperature preset. Setting store back to temperature match. Temperature match. That sounds like calibration. I thought this thing didn't need calibration.
+TEXT: Oh, and we found out what our current sensor resistor on there was for. Over current errors if the tip shorts out or something like that. Nice. And there are all the different tips for those playing along at home.
+context after: And the ultra performance ones. By the way, the only difference between the standard tips here and the high, uh, performance tips here is the extra thermal mass inside there.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: It's a very important, vital thing and a trap for young players. Now, our next value our next parameter down here is RSC, which is our sense current resistor. That's what SC stands for.
+TEXT: Uh current sense resistor. And the formula is simple, it's 0.3 on the peak current we just calculated. Plug that in, 0.4 ohms. And that's the value we'll plug into our circuit for RSC, as we'll see later.
+context after: Now, here's where we get down to our other values for our components. Our inductor L, the minimum value of our inductor for this particular circuit, this is the formula.
+
+[861] EEVblog #861 - Rigol DP832 PSU FAIL & REPAIR — Dave Jones (explains)
+context before: So, I've done a separate video on that. So, I just happen to have a board and tada, I should have a spare series pass transistor. You can always tell the series pass transistor, it's the one on the monster heat sink here.
+TEXT: And if that's not a dead giveaway, then once again, follow the money. Here's the two big spade lugs here for the output voltage that goes Look, there's our output current sense resistor.
+context after: There we go. It's just tapping off. You can see the two Look, see the two traces coming out there going off to an amplifier in there and that will be doing the current sensing.
+
+[655] EEVblog #655 - Auction Score — Dave Jones (explains)
+context before: And look, there's those two capacitors that we saw, which I'll show you. They're just um suppression down to uh mains earth there, the chassis. That's the chassis uh earth symbol there.
+TEXT: And here's the output coming from the big uh current sense resistor here, and it comes out here, and then to get to these binding posts, you've got to install these three resistors here.
+context after: Otherwise, you don't get anything out of those uh binding posts. And there you go. You can just wire that in parallel. You don't necessarily need the uh AC um suppression caps, cuz they're already here.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Okay? You don't go and use a an an inductor and a diode rated at 100 milliamps cuz that's your output current. No, you need to choose the inductor and the diode based on your peak current here.
+TEXT: It's a very important, vital thing and a trap for young players. Now, our next value our next parameter down here is RSC, which is our sense current resistor. That's what SC stands for.
+context after: Uh current sense resistor. And the formula is simple, it's 0.3 on the peak current we just calculated. Plug that in, 0.4 ohms. And that's the value we'll plug into our circuit for RSC, as we'll see later.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: But maybe we can do something with this adjust pin here to regulate the current instead of having a whole 'nother you know, instead of having limiting it back here, actually limit limit the current inside this device.
+TEXT: Get this device to do both jobs, voltage and current limiting. How do we do that? Well, we'll find out. Now, if we want to get rid of this, we still need a current sense resistor.
+context after: We're still going to sense the current. So, let's keep our 1 ohm resistor and let's tap off the voltage on there and see what we can do with it.
+
+[720] EEVblog #720 - Mailbag — Dave Jones (explains)
+context before: So, that must be the Intel 602 chipset. And what else have we got? Anyway, a whole bunch of stuff. I won't go through the motherboard. It's not that exciting, although I'm sure you motherboard aficionados would love to see it.
+TEXT: And that's interesting. That looks like some sort of current sense resistor down in there near this big switching power supply. So, maybe it's got some sort of overcurrent thing.
+context after: That could be a little differential amp maybe to measure across that uh resistor current shunt there perhaps. Yeah, so there's quite a lot of unpopulated stuff. There's some sort of connector um sort of some board connector or something like that.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (explains)
+context before: How that particular arrangement is there, not 100% uh, sure, but I think they're getting, uh, dual use functionality out of that thing. And And you don't need a massive heat sink down here, cuz as I said, uh, having this, uh, regulator here, this is a tracking, um, switching regulator.
+TEXT: So, it minimizes the voltage drop, uh, across here. I'm sure that's got to be a tracking jobbie. And all of our current sense resistors, you notice two big Dale jobbies here.
+context after: These are 10 ohms a pop. These are both in parallel. Yes, they're only 1%, uh, because you calibrate it out later. These are actually, you know, very low tempco resistors.
+
+[1180] EEVblog #1180 - Component Parametric Search Tutorial — Dave Jones (explains)
+context before: And N-channel uh trench fit standard level fit. Boom. Let electrostatically robust. And bingo, you might go down and you might see, "Why does it have all these pins? It's only a MOSFET." No, look, it's got a Kelvin sense pin, for example.
+TEXT: Perfect for current sense applications. You got your current sense resistor down in your uh source down here. I've done videos on that, and it's got an I sense pin as well.
+context after: Absolutely brilliant. You might not have known these things even existed. These obscure parts that actually tap it off right on the die, which is absolutely fantastic. And then that might That might give you an idea for your uh product.
+
+[Lk2KRc6Bm4I] Mystery Dumpster Diving Teardown - 2020-07-11 — Dave Jones (explains)
+context before: That's hilarious. And oh, another big shunt resistor over here as well that they're measuring. So yeah, you can see the lines going off. Aha, lines going off. They're going off to yet the controller.
+TEXT: So that pick is reading the voltage across the power across the current sense resistor there. And uh uh Don't overdo it on your solder here. Anyway, um yeah, that's it.
+context after: So that's all she wrote. So there you have it. That's the battery fighter supposedly a whiz-bang intelligent really like high power like 580 watts apparently. 24 volt and 12 volt.
+
+[1381] EEVblog 1381 - Argon Ion Laser 10kW PSU Teardown — Dave Jones (explains)
+context before: And I you know they haven't Otherwise, this board would be like completely dumb ass, and well you wouldn't need all of this fancy pants stuff to drive each individual transistor.
+TEXT: So, I reckon each one is set up as its own constant current load, using that power resistor as the sense element. And then each one, of course, is individually fused.
+context after: So, that's how they're doing it. They're just whacking a whole bunch of like adjustable current sources all in parallel. So, it's not just a big ass pass transistor. So, yeah, these are uh two ohm resistors, so they're actually using those as individual current sense resistors to set a constant current for each one of these transistors, and they simply parallel them all up.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: And if you want to, you can go through, and you can actually test out different cases and half a volt or 10, you know, 0.1 V or something like that for 100 mA.
+TEXT: Do whatever. One thing to remember, though, is that with the 1 ohm resistor here, at 1 amp, you're going to get 1 V drop across there, and that's an additional drop.
+context after: So, you've just got to take that into account in your design. It may be fine for you you cuz your input voltage may be quite high. You know, 1 V here plus your additional drop further on on your next stage for your voltage side of the voltage regulation, you've got a an additional minimum drop out voltage there, then it all adds up.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: We're going to have an ADC in there. We've got ourselves a real fair dinkum relay as well. Got some miscellaneous regulators. And those four babies down in there, had a good look and they're STTH2002s, ultra-fast diodes.
+TEXT: And check out this bad boy on the heat sink here. Isn't that a Bobby dazzler? Yes, that is a 5 milliohm current sense resistor. It's a four-terminal job, of course.
+context after: Two for sense and two for the actual resistor itself. And yes, it is thermally mounted onto the heat sink there. I don't know what the part next to it is, though.
+
+[1617] EEVblog 1617 - Architectural LED Lighting Build + Test — Dave Jones (explains)
+context before: It's easy to miss it on printouts and and silk screens like this. So you put the R in there. The R means decimal point. So it's 6.2 ohms. Um uh and uh and then we've just got a uh 10K uh resistor uh there.
+TEXT: So, yeah, the 6.2 ohms, that will be a current uh shunt resistor so that uh this thing can work out the current. Now, let's see if we can get a part number on that.
+context after: We have 1101, and they're going to be identical, of course. 1101. So, uh I'll have to go look that up. Don't know that offhand. K, so 1101. I didn't put SMD there, but we get this down here, which is a CL1101, and that's product no longer available, but we can now that gives us something.
+
+[1381] EEVblog 1381 - Argon Ion Laser 10kW PSU Teardown — Dave Jones (explains)
+context before: These are just uh balancing resistors. So there's got to be another uh huge, you know, 20, 30 amp or whatever it is uh current shunt resistor somewhere that allows them to uh then measure the voltage drop across that.
+TEXT: And I've done a video on this how to design an electronic load. Works exactly the same way. It's just an op amp and a transistor and a current sense resistor.
+context after: That's it. And second thought, what I think they're actually doing here is that uh because they've got an LM324 for each one. And as you've seen in my electronic uh load video, linked in up here if you haven't seen it, like if you have an op amp and if you have the emitter resistor like that, you measure you use that as the feedback and then you can control the current.
+
+[272] EEVblog #272 - Manson 9400 40A 3-15V Switchmode PSU Teardown — Dave Jones (explains)
+context before: Once again, heat shrunk, done it very professionally. I love it. Now, this here may look a bit dodgy these uh terminations, but they're not. That's a reasonably common. They'll be like a little uh splayed uh terminal under there uh mounted on onto the board which then they soldered directly onto the top.
+TEXT: So, it looks dodgy and blobby, but it's not that bad at all. And here's our output current sense resistors here which uh allows us to read the output current.
+context after: And if you're wondering what these big metal things are, they're huge big um jumper links effectively. That's uh what they are cuz they can't rely on just the PCB to uh transfer all of the huge current from this side all the way over to our output wiring here, they use these big thick uh metal shunts to transfer all the current so it doesn't have to flow through the
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: And it's also got a drive collector as well, which is important and we'll go we might go into that later. And it's also got a current sense input pin.
+TEXT: You put a current sense resistor on there. We'll show you that later. And it's it's basically and it's got the pin five there is the input for the feedback.
+context after: So, it's very simple and it's very easy It's pretty easy to use, not as easy to use as many of the other ones on the market. In fact, you could probably argue this is one of the more difficult ones to design with.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (explains)
+context before: Get this device to do both jobs, voltage and current limiting. How do we do that? Well, we'll find out. Now, if we want to get rid of this, we still need a current sense resistor.
+TEXT: We're still going to sense the current. So, let's keep our 1 ohm resistor and let's tap off the voltage on there and see what we can do with it.
+context after: Okay, here's what I've come up with. Now, once again, it may look a bit complicated, but it's not. Stick with me. It's all basic building block stuff. Now, what we've done is we've got rid of the current LT3080 up here, the current regulator up here, and we've replaced it.
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (opinion)
+context before: Most likely, I don't know, you'd have to check the specs and things like that. It'd be obvious whether or not they've got a linear low dropout regulator on the output just based on the switching noise figures and things like that. So yeah, these are low dropout linear regulators
+TEXT: probably dissipating like a watt each maximum or something like that. Which is why they can get away with such small heat sinks here. It looks like we've got some, are they our current sense resistors there? They're most likely tapping those off. But yep, and you can see it actually coming out here.
+context after: Here we go, here we go. Follow the traces, follow the money, follow the money as Deep Throat said. Here we go, all the way over and that goes over to our, they're our two traces. So these would be our plus minus 25 volt regulators
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (opinion)
+context before: And so, if we plug these values, if we build this circuit and plug these values in, it should work exactly as we predict. Now, some of these values won't be spot on to the E12 or E24 preferred values.
+TEXT: 39 micro-Henries um is in the E12 range, but you might find that a 33 micro-Henry is easier to get, so you might want to use, say, a 33. Um and once again, a 0.4 ohm sense resistor, you're not going to get one of them, so you might choose a 0.39 ohm sense resistor.
+context after: It's not hugely critical. The timing capacitor, you you won't be able to buy a a 292 pF capacitor, matter. So, you might use a a 270 pF or even a 330 pF capacitor in there.
+
+[791] EEVblog #791 - Ebay Fluke 45 Multimeter Teardown — Dave Jones (opinion)
+context before: There we go. That's forming the plus 5 volt, the main logic supply voltage and you'll see that actually it's a really weird arrangement how they've drawn it. It's just like, you know, it's not very typical.
+TEXT: So, it's not obvious at first glance. But, here's our output diode and here via our output resistors here. Here we go. There are current Are they current sense resistors?
+context after: I think they might be tapping it off there for current limiting. It goes out here. Bingo, there's our plus 5 volt rail. And that 5 volt output after the current sense resistors, it's then powering this oscillator here for the primary side of this switching converter here.
+
+[1483] EEVblog 1483 - Holy Mailbag Bomb Batman! — Dave Jones (mention)
+context before: Okay, yep, yep, that's pretty good. They've put a lot of effort into it. Nice, thick. Thick as case. So, you know, they've gone to a lot of effort. And you can see, that's completely potted in there as well. So they've, um, well, actually not entirely.
+TEXT: It's more like a, um, really thick conformal coat potting. Like, if it was entirely potted, then it'd just be, like, a complete, uh, brick. But, you know, there is, uh, some exposed stuff. I see a current sense resistor down in there. But, um, yeah, that's, that actually looks pretty decent, doesn't it?
+context after: So, yeah, right off the bat, I don't see any issues with there at all. It might be hard to actually, unfortunately, that's, nah, that's a real hard compound. That's not, like, a re-enterable, um, potting compound at all. So, I, like, I can try and get the screws out.
+
+[1174] EEVblog #1174 - Rohde & Schwarz PSU Teardowns — Dave Jones (mention)
+context before: Here. And they've got different values in parallel. Look. Itty bitty teeny weeny. And... A 0805. And then a 1206. And then a couple more. Like that. Wow! They're... Like... Really serious about their different types of... Output caps. That would be our... Uh... Mains.
+TEXT: Uh... Uh... Output caps. That would be our rever... Oop. That would be our reverse diode protection there. They're our current sense... Output resistors. They'd be... Uh... Tapping... They'd be doing your, uh... Kelvin connection to that. Tapping that off. Oh! More current sense... Resistors over there.
+context after: And... As I said... The, uh... Output... Hang on. This has to be... A switching supply. Because... That... Heatsink. That little... Piddly, uh... Surface mount heatsink. I like that. Um... That is not enough. For a, uh... Linear... Supply. So... And... Neither is... That. Um...
+
+[1381] EEVblog 1381 - Argon Ion Laser 10kW PSU Teardown — Dave Jones (mention)
+context before: So, that looks like it's probably what they the trade-off they're doing. I mean, you know, one or two of these might pop if your current changes by, you know, a few percent.
+TEXT: It's not going to matter much. Hang on. Count these. 10 10 10 nine. What? Find that deeply offensive. Okay, so what that leaves us with is another board down in here with some big-ass traces down there and I don't know set our current sense resistor or multiple ones down there perhaps to measure that.
+context after: I'm not sure. Anyway, it looks like this might be there's our there's our rectifier diodes. I see them. Aha, now I see the wiring flow. I don't think I have to get all this out to access to the filter.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (mention)
+context before: Now, we've got 5 volts in, okay? We didn't need to calculate the value of the input cap, that can be um anything really, it depends on your source, but we won't go into that.
+TEXT: Now, RSC, we calculated on the whiteboard before, that was 0.4 ohms, okay? Now, our inductor up Oh, sorry, this um this series resistor here to drive um for for this transistor over here, we'll leave that at the example value of 180 ohms, cuz we didn't need to calculate that, so we'll just leave it.
+context after: Now, our inductor we calculated on the whiteboard was approximately 39 microhenries, there it is. Now, our timing capacitor here, we also CT, we calculated on the whiteboard before, was 292 pF.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (mention)
+context before: If you picture where my cursor is there going down like that, these two these four these two MOSFETs down this side, the two MOSFETs down here, and then the motor which is physically connected outside, but usually it's drawn with the motor in between there, and it forms a letter H.
+TEXT: That's why it's called a H-bridge. And it's a very uh versatile and powerful way to uh drive a motor like this. So, it's got a dual H-bridge like that, all the required control circuitry to drive it, all some current sense resistors RS1 and RS2 here, and uh supply which is uh they've called VBB.
+context after: And one of the things I love about these data sheets and why they make excellent reading is it's got typical layout information about how you lay out the boards.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (mention)
+context before: But, this is generally for higher power. You might use a switch capacitor converter for that, but we won't go into it. But, let's take a look. Once again, the configuration on the input on pin six there is exactly the same.
+TEXT: You've got the voltage in filter cap, the current sense resistor once again. Pins eight and one are tied together just like our a step-down configuration. But, as you can see, the difference between the step-down and the inverting is that the inductor and the diode have switched places now.
+context after: Instead of the diode going to ground on pin two there, you've got the inductor going to ground and then you've got the 1N5819 Schottky diode there, once again reversed bias going to the output.
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (mention)
+context before: and that mates up with the exposed pad here. But check out the ground plane separation on here. Look, via stitched all the way around there. Yeah, they're really serious. They really know how to lay out boards at National Instruments. That's what you'd expect.
+TEXT: So yeah, that's just, that's excellent. So it looks like we have mostly power supply type stuff on the bottom here. These look like MOSFETs down here. We've got the inductors, of course, all dead giveaways. So yeah, it's, you know, we've got some current sense resistors up there, have we?
+context after: So it's pretty much all power supplies. Yep, there we go. We've got some optocouplers there happening, I think. But yeah, just miscellaneous bypass and power supply business. And of course, each section's going to have its own, like, local regulation. So this is going to be local regulation over here.
+
+[1483] EEVblog 1483 - Holy Mailbag Bomb Batman! — Dave Jones (mention)
+context before: But anyway, it is a dual-sided jobby. But, um, yeah, there's, uh, lots of diodes here. Um, I am assuming that, um, it just comes AC out of the, uh, generator, and, um, that's what they're using 'cause that's, that's near the input here. 'Cause it comes in via this, uh, ribbon cable here,
+TEXT: and they've potted all that as well. So it's not, it's not coming out. Um, yeah, they've really gunked the whole lot. And, uh, that's, it must be a current sense resistor for the, uh, USB output there. Yeah, there's another one over there. So both outputs looks like all the USB outputs
+context after: are designed, uh, properly. No worries there. So, um, it, it all looks physically, uh, fine. So I, I don't know what the deal is. What size cap they got in there? Unfortunately, it's under the potting. 2.7 volt something farad? Um, yeah, unfortunately. But, um, I, like, yeah, sorry, can't fault the electronics
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (mention)
+context before: And then we've got a nice looking big ass relay, but I'm not entirely sure what they're what they're switching there. Hmm. And they've got very beefy diode bridge protection there, which I've done a video on input protection arrangements and things like that.
+TEXT: You'll typically find a diode bridge for clamping protection and oh yeah, that's a that's a decent beast and there are current sense resistors right down in there because our white our white cable coming over here is our current input and it goes off to these two cables.
+context after: That goes off to the 10 amp fuse connector on the back. So I'm not sure why they're running this they've got a ceramic fuse in there, a little M205, but I don't you know, which is encapsulated, very nice.
+
+[Xg_niU86bhI] Wens 540 Handheld Oscilloscope Multimeter Teardown — Dave Jones (mention)
+context before: resistor here. Is that the current sense resistor for here? I'm not sure. There's an... anyway, two fuses. Whether or not they had HRC in there, I don't know. I don't particularly care. And because, like, you wouldn't use this as an industrial meter or whatever.
+TEXT: It's just not going to happen. No, there are two current sense resistors over here. They look neat. Where's the tap coming out of those? Ah, can't actually see the tap coming off the bottom of there anyway. That's not a four terminal jobby. So yeah, that's interesting.
+context after: Hmm. Anyway, no four terminal current sense. Anyway, lots of relays on this puppy. So there's like five relays on this thing. Jeez, like the only other major meter that has relays is like the Gossen one, I think. And it's I don't even think it has that many.
+
+[909] EEVblog #909 - Heart Defibrillator Teardown — Dave Jones (mention)
+context before: discharging to the sternum and the apex positive and negative terminals on here. So let's have a look, we've got ourselves the six CR123 batteries over here, obviously, we've got a couple of MOSFETs driving the transformer, and of course that transformer there is that one there, so there's our battery input right there
+TEXT: and that's one of the MOSFETs and the other MOSFET is on the bottom there. So they're just driving the primary of that transformer, there's a current sense resistor, that's that baby there, 68 milliohms, and the secondary of the transformer has just got, well, either
+context after: one diode, which is missing, or three in series like this, and that just charges the capacitor bank up. And as we've mentioned before, we've got our five big main storage caps, 600 mic, 400 volts each in series with their reverse protection diodes on there to stop
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (mention)
+context before: This is the negative 15-V one. Where is Where are the feedback resistors from this from this negative output rail? Look, aha, here's our feedback resistors. Look, it's referenced to the 15-V rail, the plus 15-V rail here.
+TEXT: So, this is not independent. It actually relies on the fact that this 15-V rail is set correctly. And then if you go look at the 5-V voltage regulator, right, here's our output here, here's our output current sense resistor, here's our series pass transistor.
+context after: Where is the voltage reference coming from? Bingo, the plus 15-V rail again. So, if that plus 15-V rail drags down, of course it'll drag down the 5-V rail. Of course it'll drag down the negative 15-V rail.
+
+[314] EEVblog #314 - Korad KA3005P PSU Teardown — Dave Jones (mention)
+context before: They've got shake-proof washers on the nuts and behind the nuts for the binding post there. Nice. They've only got a small amount of output capacitance because on a on a constant current power supply, of course, you don't want a massive amount of output capacitance because then that energy can be dumped into your circuit when you don't want it to be.
+TEXT: And then we've got the the main inputs out here, of course, coming from the output of the current sense resistor on the processor board. And then it looks like they've got a another little sense cable which senses the voltage directly at the output terminals.
+context after: Nice. So, there you have it. The Korad KA3005P programmable DC power supply. Eh, what can you say? It's a cheap Chinese power supply and it's I guess you can say it's not bad for the cost.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: Is it not? I mean, this is not a true RMS converter, I don't believe. Looks like we've got our diode bridge there, protection for the 10 amp current jack.
+TEXT: And where's the current sense resistor for the milliamp range? Not seeing it. Yeah, three trimmers. Is that the reference up there that TO92 jobbie? C1959. Don't know. Transistor? I don't think that's a And we've got a tag tent.
+context after: What? Evil tag tents. This thing still works. It reads a little bit high. I think it reads consistently like not sure is it 1% high I think on all ranges.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (mention)
+context before: the drain connection, which is the tab there. They're all connected in parallel, but they've of course got their own uh uh current shunt resistor down here. So, they're using these as a uh basically a uh constant current uh load.
+TEXT: That's pretty much what it is. And there's the current sense resistor side of that. Uh they've got some extra range switching in here, which is rather interesting. 1 ohm resistor here, and then two separate 1.0 ohms.
+context after: This is a dual uh end channel MOSFET. That's a FDS8978. And I presume, haven't decoded that number, but I presume that's a little uh MOSFET as well. So, they can switch in any one of these current range resistors and probably might have some uh current sense amp or something here cuz they're tapping these off.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (mention)
+context before: And here's a quick little Dave CAD of how that all works. We got our big uh end channel power MOSFET up here. Of course, that dissipates all of the power or well a quarter of it anyway because we've got four of these whole sections paralleled up like this.
+TEXT: So, this is our big uh power device which uh syncs and sources our current here. And then we've got our uh range switching down here. So, our current uh sense resistor as you've seen in my uh constant current load.
+context after: Similar basically similar sort of thing except we've got some extra MOSFETs for switching there. But of course, all of the current does actually flow down through here. It must flow through here.
+
+[397] EEVblog #397 - Turnigy Accucell 6 Charger Teardown — Dave Jones (mention)
+context before: OC1A, that is the constant discharge one, which is also up here. And here is the part of the circuit that I'm uh particularly interested in because this could be this what essentially is a a dummy load just like you've seen in my previous videos here.
+TEXT: There's our N-channel MOSFET. It's the IRFZ244, which of course is the main one on the back of the board there, the main heat sink one there. And then we've got our current sense resistor .5 ohms down there.
+context after: And that is a nice little constant current dummy load or depends on the software you could do constant power, constant resistance, or whatever. So, it wouldn't be too hard at all to hack this thing into a nice little dummy load.
+
+[1649] EEVblog 1649 - Mailbag: M5stack, Beelink Mini PC, ZOYI LCR, ToughOn Battery — Dave Jones (mention)
+context before: Okay, let's try something a bit less complicated here. Let's get this cap on the output of this random regulator here. And 7.3839 microfarads, also at 1 kilohertz. 7 microfarads, so yeah, I mean measuring in circuit like this is very often not accurate, but it can often give you a good indication.
+TEXT: So that seems to work. Okay, we have a current sense resistor down here, so that'll be low value. Haven't actually read what it is yet. When you put sideways pressure on, those probes don't exactly line up.
+context after: Hope you're seeing that. Yeah, they don't exactly line up, so you got to put I don't like that. Whereas this one, I put side pressure on and they don't nearly go like there's more force, there's more like lateral rigidity in there, I guess, for want of a better term.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (mention)
+context before: It goes down to pin five of the uh board-to-board connector down here and then that goes up to these two resistors right in there on this mystery chip 22 and pin five of that.
+TEXT: And I've got myself a little Dave CAD drawing. This is a bit of the input here. This is the uh BNC connector. There's the RF uh bead there. There's a There's that low value current sense resistor.
+context after: That's like ohms. And then uh it's sensing off that and that goes off to pin five of that board and there's two those two resistors in parallel which is interesting because that would be similar to what you do if you're trimming some sort of window comparator or something like that.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (mention)
+context before: So, they've got to have a low temperature coefficient. This looks like just a job logs power resistor. So, that's just part of some snubber RC snubber type network there happening.
+TEXT: So, looks like we've only got the one current shunt resistor down there. Very low value jobbie. Now, whether or not that varies between the regular model and the A model, I doubt it.
+context after: I think they're using the same current sense resistor. Um like well, the sense network could change. They could get extra resolution, but I think it's just probably like a software type difference there.
+
+[803] EEVblog #803 - HP1740A Analog Oscilloscope — Dave Jones (mention)
+context before: And then we've got some of these regulator chips. You saw those in the sockets there. And they've all got current limit current sensing there. You can see there's our pass transistor mount on the back.
+TEXT: That's why it's got these socket symbols with a separate thing means it's mounted off the board. There's a current sense resistor. And these all have current sensing in them.
+context after: And same over here. We've got this one here, this one here all got current limiting on them. So, maybe there's, you know, something not inherent in the power supply somewhere else in this unit that's actually causing all of these rails to drop.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (mention)
+context before: So, they're obviously using these giant bolts here as board-to-board interconnects. And I've done a video on designing your own electronic load. It's been very popular. Tons of people have actually built their own and they do sell their own.
+TEXT: And so, we won't go into detail on the electronic load here. So, basically these are going to be our current sense resistors here. And then our MOSFETs which are on here.
+context after: Looks like we've got three main ones like that. And there's also I think another three duplicate on the other side I can see as well. And another little something or other down there as well.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (mention)
+context before: And it turns out they raised uh 15 grand. It's over now, unfortunately, but uh maybe you can still contribute if you want to. Anyway, um I've got the last big uh buses here for your output uh current and uh your output filtering here using uh SMD caps.
+TEXT: You of course you'd uh use like low ESR uh type ones in there, no doubt. Looking down in here, there we go. We're obviously got a current uh sense resistor over to here.
+context after: Nice, lots of via stitching here. Tiny little pads for this little uh tiny power package here. Are those pads too small? Look how small they are. Wow, I What package is that?
+
+[1423] EEVblog 1423 - Flaming Magic Repair Smoke! — Dave Jones (mention)
+context before: It's measuring like three ohms, so yeah, that's no good at all. So, that probably that's not one of the original faults. That would have happened in my goof up.
+TEXT: And we can see how it's blown here. This I totally goofed up. I you know, I thought it was some other, you know, current sense resistor or something dumb like that.
+context after: I just, you know, I didn't have my brain engaged, and of course it's a if you did some basic reverse engineering, you would have seen that this was a Zener dropper, basically.

@@ -1,0 +1,208 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: signal averaging
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 35 passages drawn from 27 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# signal averaging`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (explains)
+context before: Whoa. There we go. And here we go. I got a few jumps in there, and yeah, you can see it's now much, much quicker. And there you go. We've got a delta of 2.17 hertz there, which works out to about 130 beats per minute.
+TEXT: And I'm back on regular time base mode now, and unfortunately, I can't turn averaging on at such a slow time base. And averaging doesn't work in roll mode either, but I can like change to high res mode, which does that boxcar rolling average, but still we can't really clean up that signal much, and we're not really going to be able to see that cardiac pulse, I'm afraid.
+context after: Here we go. Settle out. Yeah, we're you know, it's kind of sort of there, but and because I know some people ask, no, it's not the scope grounding here.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: hunky-dory. Now if we go up here, we've got our acquisition stuff. It's not immediately obvious, you know, I'd like to see like an acquisition button or something like that, but you know. Whatever. It's got peak detect mode, awesome. There we go. Hey, I expected a bit more noise on the peak detect mode there.
+TEXT: What's going on? Anyway. Digital phosphor, okay. Acquisition, and here's our averaging. And there we go, we'll see it go to a nice thin line. Because it's averaging out the noise there. No wuckers. It doesn't have any high resolution mode at all. There's no high resolution mode.
+context after: Why? I would have expected that on a scope like this. Or is that? Alright, that's sampling mode. Okay, so it's not real-time mode. It's equivalent time sampling. That's what's going on there. But that's really I expected more functionality for the money. I really
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (explains)
+context before: We're just interesting in what the waveform looks like. There is our waveform. Now, here's the thing, right? We can actually go into acquire here. I'm actually in average mode at the moment.
+TEXT: So, I've actually got I'm displaying I've I've got a record length of 100k, fast acquisition mode is off, and average and I'm doing 16 averages here. Of course, if we go into sample mode, that's the crap that you get because the waveforms are always, you know, changing.
+context after: There's always noise and and whatnot crap on there. So, if you turn on our fast acquisition, for example, that will that will give us that in really that's updating, you know, 100,000 or a million waveforms per second or whatever this scope is capable of doing.
+
+[1443] EEVblog 1443 - They Don't Teach This in School! (Coherence) — Dave Jones (explains)
+context before: And that's useful for some things, but we generally don't use that for this sort of test. So, we're going to choose actually a random noise. And you can might be able to hear that now.
+TEXT: And that's inputting random noise over that frequency range from 0 to 200 hertz. So, then when we average our data, we take multiple samples, we average, average, average, you know that you're going to get energy input at each frequency over here, because it's random.
+context after: And eventually, you will build up a waveform over frequency. Okay, so we've got our coherence measurement here. Our input, we can like auto range our inputs, so that it gets a suitable selects a suitable input range.
+
+[529] EEVblog #529 - HP 35660A DSA Upgrade Investigation — Dave Jones (explains)
+context before: on channel 1 of 22.2 nanovolts RMS per root hertz. And by the way, that was for a floating input with DC coupling. Now I'm actually measuring channel 2 here, and you can't just select channel 2, you've got to select dual mode, but there we go.
+TEXT: We're getting a little bit higher, but it hasn't done the 100 averages yet. It's a little bit noisier there on channel 2 by the looks of it. 24.56 nanovolts RMS per root hertz for reference on channel 2 over 1.6 kHz span. And that's the figure with a 12.8 kHz span.
+context after: And 100 kHz span with 10 kHz marker. And by the way, these are all performed with a flat top window in, so I can repeat that, the 100 kHz one with a HANIN window. There we go, for reference. And that's the 100 Hz response, once again, a flat top window.
+
+[869] EEVblog 869 - Counting LED Photons! — Dave Jones (explains)
+context before: it running for a while, and then we'll take that figure, okay, and that will be our baseline figure and we'll subtract that from when we hook the lead up to this thing and then try and increase the current. So we should see it go up on the
+TEXT: mean. And we have to use the mean, we can't just rely on the individual counts because as I said, they're all random in there, so you know, you don't know if the LED is contributing to the thing or not just on, you have to rely, you have to get that mean figure
+context after: otherwise you're down in the noise, and you won't be able to pick the signal to noise. Or you've got an extremely low signal to noise ratio as a score.
+
+[1521] EEVblog 1521 - CMRR Full Edit — Dave Jones (explains)
+context before: So, the higher the input signal, the better. So, I've gone up to the maximum uh amplitude here of uh 5 V peak-to-peak here, and uh we've got a frequency of 10 MHz because that's just the uh uh you know, a typical figure we've got in the data sheet which we want to try and uh verify.
+TEXT: So, we want to clean this up a bit more, so let's do some averaging. So, we'll go up to the uh acquisition up here, and we're actually uh in sample mode, so we'll go down here to average mode, and then boom, we can do like 40 averages, something like that.
+context after: We can take the uh time base out a bit like that. You notice how it gets a little bit like chunkier when it goes I guess that's a feature.
+
+[771] EEVblog #771 - Electronic Safe Lock Powerline Attack Part 2 — Dave Jones (explains)
+context before: what does that, how does that help us? Not much at all. So really, that's all I wanted to, ah, check for today just once again, a very basic, ah, powerline analysis with a, you know, as simple as you can get with a 10-ohm dropper resistor in series like that, and just a
+TEXT: scope probe and just a scope doing that. You know, yeah, you can get better tools for the job like this, like the chip whisperer, which I had, and things like that. You can really gain it up and see the noise and get averages and do, you know, get the
+context after: data out of the noise and all sorts of things. So I just wanted to, once again, I'll probably still get complaints of people, oh, I didn't go far enough but anyway, that's all I've got time for now. I've got to head off and finish
+
+[1631] EEVblog 1631 - $230 Micsig MDP700 HV Differential Probe Review — Dave Jones (explains)
+context before: So, I've got HD mode turned on, and you can see that gives us an effective resolution of 16 bits. That's very important. Now, um I discovered one thing on here is that I did have I do have average mode turned on.
+TEXT: And watch this. If I put 20 averages on, okay? And I've set 20 averages, so we should actually get 18 bits of resolution on this thing, and I've got the signal level set to a maximum 5 volts uh peak to peak into a nominal uh 50 ohm load.
+context after: I've got the start frequency 10 kHz, stop frequency 50 MHz. Uh the uh input is uh channel one, so that's from the function gen, and the output is uh channel four here.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: It drops by an order of magnitude as you expect. And then we can uh five with um 5 MHz bandwidth limit because we're running a 10 MHz signal. So, we should see that.
+TEXT: Yep, it's dropped as you'd expect. Nice. Let me just show you how touchy these setups are because we're talking about very low-level uh signals here. And as I'll go through in a minute, I've got like 50 times averaging on that signal.
+context after: Okay? And we're down at 10 molts per division. And so, we're getting like really lowle signals. But watch what happens if I put my hand just couple it to one of those signals.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: And boom. Once we do that, here we go. I'll change the average count. I'll change I'll rotate the knob back down. Look at this. So, I've only got one average, of course, nothing.
+TEXT: Then, oh, 10 averages. We're doing really quite good there. Let me Oh, hang on. It's jumping 10 10 at a time. Don't want that. So, if we just have say four averages, we start to see our sine wave signal getting better there, you know.
+context after: 13 averages. Yeah, it's pretty good, you know, but like wind it up to I don't know 80 averages. There you go. So, we've got our signal. We actually picking our sine wave out of the noise because we're in such a lowlevel condition here that it's just it's it's nutso.
+
+[565] EEVblog #565 - Tektronix TDS3054 Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: I've run some averaging on that and you can see it's bang on 1 kHz. Getting nice beautiful waveforms out of the high frequency part of channel two there. So that's our good channel.
+TEXT: All right. Now let's take a look at channel two here. I've got averaging on so that's what cleans up the waveform but doesn't allow us to really to do proper real-time probing but there's the low frequency output.
+context after: And that is just fine. Let me switch that averaging off there. That's a bit annoying. Okay, so this is channel two. What we'll call the low frequency output. Okay.
+
+[845] EEVblog #845 - Oscilloscope FFT Comparison — Dave Jones (explains)
+context before: And just watch where this noise level is. And you'll see it slowly drop just each time I increment the number of points there. You'll notice that it slowly slowly drop.
+TEXT: And you'll see all the way up. There we go. So, that is like a significant difference. And of course, if you do averaging and all sorts of other you know, stuff, you can really bring signals out of the noise.
+context after: And here's a shot from an Infineon application note where it's showing the difference between like a a small number of FFT points and like millions of FFT points. You can see really how all the signals come right out of the noise.
+
+[1501] EEVblog 1501 - Rigol HDO4000 Low Noise 12bit Oscilloscope Unboxing & First Impression — Dave Jones (explains)
+context before: Well, see, it jumped back down. What the So it'll go up to here, and let's turn on some averaging, shall we? Yeah, it has some new flex knob thing here.
+TEXT: So yep, yep, there we go. 64 averages, there you go. That'll do the bit Well, no, because we're not triggering properly. There's your problem. There we go. So that's our 100 microvolt signal averaged out.
+context after: Because like, you know, I don't know the right I don't know the system end-to-end noise of this. I haven't even I can't remember the spec of this. So I'm not going to look it up, right?
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: And I've got the acquisition bandwidth also set to 100 megahertz. And this is giving us 15 bit resolution here even though it's a 12 bit ADC because we're also going back in here.
+TEXT: We're doing some averaging as well. So let me turn off the averaging. I've got 50 averages set here which is a lot. So, if we just go into normal acquisition, that's what we're seeing here, right?
+context after: It's just higgledy piggledy like this. We can single shot capture that. So, if I set the single count back to one there, oh, just popped up. Um, and then I single shot capture that.
+
+[1463] EEVblog 1463 - Mailbag — Dave Jones (explains)
+context before: This is great example code if you want to play around with the touch button like that. Just a pot. There we go. Is that the That's the pot position.
+TEXT: Is this the pot here? Yep. There you go. So, it's just reading the voltage from the pot and we're just getting a bit of noise there because hasn't implemented any averaging routine on that.
+context after: But, of course, you could add your own. This is just a demo to show you that uh 4,096. There you go. So, it's a 12-bit interface there. Neat. So, it's 80 euros for the uh ESP kit.
+
+[620] EEVblog #620 - Repair: Stanford Research SR650 Programmable Filter — Dave Jones (explains)
+context before: So, fantastic. Um what I'm doing is the source output here, I'm generating 1 V RMS of random uh noise. So, there it is, 1 V RMS there. And uh the reason I'm doing random sources cuz this doesn't have a swept sine uh generator.
+TEXT: So, what we can do is we can generate random noise. So, it generates random noise over the entire spectrum, and then, over time, you can average that out and get a flat spectrum response.
+context after: So, let's actually start that. I've turned averaging on, I've got 100 averages there. What I'll do first is I'll actually show you that noisy input signal. Now, it's working like a scope now, so there's our input signal there.
+
+[601] EEVblog #601 - Why Digital Oscilloscopes Appear Noisy — Dave Jones (explains)
+context before: Not necessarily so. Watch the other video, and you'll find out why. So, the bottom line is any noise on the analog amplifier input down here or on the signal that you're feeding in, any noise which is uncorrelated to your sweep speed or your trigger, i.e., it's just randomly appears, it's not synchronized with the sweep, then it's going to appear quite dim or non-existent because it's not going to
+TEXT: show up all the time. And that is why an analog scope will always show this beautiful clean signal like that. Effectively, what it's doing is averaging your signal by way of brightness.
+context after: But let's take a look at the first example of our digital scope here, ancient Tektronix TDS 220. But as you should know, a digital scope actually samples the signal then displays it.
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (explains)
+context before: So, the function generator isn't actually spot on. We go into the wave generator. There it is, 10 mV peak to peak. There's obviously uh some error in that as you'd expect when you get down that low.
+TEXT: And uh basically, we are getting 4.7 mV peak to peak. I've got the averaging uh turned on there. If we uh turn the averaging off, we can actually see that it's a bit noisier than that.
+context after: But uh you turn the averaging on and bingo. So, this thing is uh our Tek 2225 is working a treat. I love it. Now, you can actually see when we've got no input down here, it's actually picking up a whole bunch of noise on * 5 um uh * 10 mag.
+
+[565] EEVblog #565 - Tektronix TDS3054 Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: Noisy as. That is an awful waveform. So, you really need to connect your grounds in there to uh uh get your um noise down on that. And there we go.
+TEXT: I've run some averaging on that and you can see it's bang on 1 kHz. Getting nice beautiful waveforms out of the high frequency part of channel two there. So that's our good channel.
+context after: All right. Now let's take a look at channel two here. I've got averaging on so that's what cleans up the waveform but doesn't allow us to really to do proper real-time probing but there's the low frequency output.
+
+[1631] EEVblog 1631 - $230 Micsig MDP700 HV Differential Probe Review — Dave Jones (explains)
+context before: Because it's just Now we're sig getting 16-bits, but look at that, right? There's almost You can kind of sort of see there. It's out of phase, right? It's dipping here, and it's going up there.
+TEXT: You can almost see it. Okay? So, we can't have to turn some averages on here. We're in sample mode. So, we'll turn on some averages, right? And that we've only got the one average.
+context after: So, let's just go 20 averages, right? And we can kind of sort of get our um signal level there. So, you can see it's that frequency response graph is going to be very how you doing cuz we're down in the noise, okay?
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (explains)
+context before: One is the usual average, which we haven't turned on yet, and one is the statistical um average result. So, we have to go back into acquisition here, and then we have to actually change our acquisition mode to average.
+TEXT: And boom. Once we do that, here we go. I'll change the average count. I'll change I'll rotate the knob back down. Look at this. So, I've only got one average, of course, nothing.
+context after: Then, oh, 10 averages. We're doing really quite good there. Let me Oh, hang on. It's jumping 10 10 at a time. Don't want that. So, if we just have say four averages, we start to see our sine wave signal getting better there, you know.
+
+[1329] EEVblog #1329 - Magnetic Field Shielding DEMONSTRATED — Dave Jones (explains)
+context before: I just thought that is a interesting little example of how we can pick that up. And of course, if we move this away, if we move it away, we'll probably find that it's not going to pick it up any not going to pick it up as well anymore.
+TEXT: There you go. It's only when we get closer, closer, closer. Unfortunately, you got to sort of like restart the averaging cuz it's it's too noisy if I don't have the averaging on.
+context after: But, yeah, we can get closer, and there you go. Just really goes to town there. So, there you go. Hope you found that interesting, useful. If you did, please give it a big thumbs up.
+
+[1413] EEVblog 1413 - Oscilloscope Current Probe TEARDOWN + DEMO — Dave Jones (explains)
+context before: So, there you go. It's almost That's practically bang on almost. And I can wind the wick down on that and that's that's 10 milliamps now and of course we're going to have to There we go.
+TEXT: We can really clean that up with averaging and that's that's a 10 milliamp signal. So, it can measure way below its nominal 50 milliamps spec. So, that's not too shabby at all.
+context after: So, there you go. I hope you like the look at this Micsig CP2100B current probe and they're a very useful bit of kit. I highly recommend picking one up.
+
+[311] EEVblog #311 - Jim Williams Pulser Followup — Dave Jones (explains)
+context before: So, what I've done here, I'm feeding in a 1 MHz sine wave at 1 V peak-to-peak. So, we want to uh increase the input frequency um until it drops to 0.707.
+TEXT: And that'll give us our real bandwidth. So, let's give it a go, shall we? Okay, let's wind the wick up. And you can see that lovely effect there is due to the averaging.
+context after: I got 16 averages turned on. We're at 50 MHz now, so let's go up, increase the time base. So, we want 0. 70 or 770 mV. So, let's keep going.
+
+[284] EEVblog #284 - Braun Toothbrush Teardown — Dave Jones (explains)
+context before: Very loosely coupled like that is just enough to pick up that signal. All right, so what we'll do is we'll just clean that up with some averaging in a bit.
+TEXT: So, going to our acquire menu, we'll just turn on uh some averaging there. Let's do more than two averages. Let's say take it up to eight averages. There we go.
+context after: We've cleaned up our waveform a little bit. Okay, what I'm going to do just to get consistent results, I'm going to sticky tape a just a single loop down on there like that.
+
+[528] EEVblog #528 - Opamp Input Noise Voltage Tutorial — Dave Jones (explains)
+context before: Next thing we want to do is turn on some averages. so I'll press the average button on the front and then we want to turn average on like that because otherwise we'll just get, you know, we want a smoother line.
+TEXT: See what happens when you turn the average on there? It's set for 10. I'm going to change that to number of averages there and I'm going to enter 100 averages.
+context after: So now when you press the start button and we start our acquisition, there we go. It's giving us a bit of a plot already and we can already see that we're getting a result.
+
+[1631] EEVblog 1631 - $230 Micsig MDP700 HV Differential Probe Review — Dave Jones (explains)
+context before: And it's interesting, you can see the wavering of the average there, and that's because the DC offset is drifting. We're right We're so far down in the noise that that DC That the just in the just the gentle drift in the DC offset in this thing is why it has a zero offset button.
+TEXT: Um is is causing that, and it's moving slowly cuz we've got 100 averages turned on now. If we turn the averages off, you know, you'd see it go burko.
+context after: We turn average back to sample there. That's what we're dealing with. That's what we're dealing with. Now, YOU'LL NOTICE THAT AT 100 MHZ, our signal level's actually dropped here.
+
+[1188] EEVblog #1188 - $10 DIY EMC Probe using Scope FFT — Dave Jones (opinion)
+context before: Let's move that up. There we go. And of course we can change our horizontal to get more resolution. You can see the resolution FFT resolution there 122 kHz. So that would be equivalent to our spectrum analyzer there.
+TEXT: It's which we were using a 120 kHz resolution bandwidth filter there. So maybe some averaging or something like that. Get it a little bit better. And then we can go in there with our cursors and then we can measure our frequency.
+context after: Bingo, 6 MHz. That's our fundamental clock. Of course 12 MHz and so on. Now because it's hard to actually show these two side by side, what I've done is actually screen captured the spectrum analyzer and in my video editing software here I can overlay it.
+
+[1049] EEVblog #1049 - Mailbag — Dave Jones (opinion)
+context before: Isn't it great? I'll link it in down below if you want to check out the live data. And we've got a little microphone down in there as well because it also measures noise.
+TEXT: It must be doing some sort of like you know averaging you know, heavy duty averaging and stuff like that cuz you don't want knocks and bangs of doors to you know, really register on this thing.
+context after: So that it'll be done in software no doubt. So Radu's done a fantastic job developing this over the years and I'm not aware of any like really major competing solution for this and it's not cheap but if you're after comprehensive environmental monitoring for your location or a remote location or whatnot then this thing is pretty much the duck's guts I think.
+
+[1631] EEVblog 1631 - $230 Micsig MDP700 HV Differential Probe Review — Dave Jones (mention)
+context before: You can almost see it. Okay? So, we can't have to turn some averages on here. We're in sample mode. So, we'll turn on some averages, right? And that we've only got the one average.
+TEXT: So, let's just go 20 averages, right? And we can kind of sort of get our um signal level there. So, you can see it's that frequency response graph is going to be very how you doing cuz we're down in the noise, okay?
+context after: So, that is 10 MHz, but it's also reset our probes. So, we've got to go in our user-defined probe and set our bandwidth of our probe. Let's take that down to the 100 where it's supposed to be, okay?
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (mention)
+context before: 13 averages. Yeah, it's pretty good, you know, but like wind it up to I don't know 80 averages. There you go. So, we've got our signal. We actually picking our sine wave out of the noise because we're in such a lowlevel condition here that it's just it's it's nutso.
+TEXT: So that's why we need a really good scope here like a 12 bit jobby like averaged up to like 15 bits and with filters and everything else on to uh try and get the uh crap all out of the noise here.
+context after: So what we've got down here in the measurements we've got channel one and channel two and our little sigma symbol here. I've done an entire video on this with this is um AC what's called AC RMS which removes any DC component.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: Why do I have to change over to time base here? I I just don't get it. Okay, we can do roll mode. Okay, cool bananas. We got precision peak detect and deep memory mode.
+TEXT: Okay, so deep memory mode and so there's some trade-off there. We can do interpolation sine x on x linear or Gaussian. And and averaging then we can just turn off up our number of averages there.
+context after: Okay, okay, it's all pretty basic stuff but then like what I I have to manually type in like I want 10 milliseconds like that and it's not there's no traditional per division.
+
+[2] EEVblog2 #858 - Red Pitaya Extended Cut — Dave Jones (mention)
+context before: Anyway, go into uh the Bode Plotter app. And um this is very Spartan as well. Like I I had a quick play with this before and it's like range settings um measurement settings look amplitude like if I want to go point you know if I want like 10 millolts amplitude if I want to get a you know generate that like what the like like what start measurement blah
+TEXT: blah blah measuring measuring measuring and like it's just a real dinky app don't like it and here's the other Oscilloscope app instead of the oscilloscope pro. Um, this one can do averaging.
+context after: Look at that. No workers. Um, but yeah, like no, the user interface just No, no, no. Don't like it at all. No fail. Um, so don't really care for that at all.
+
+[858] EEVblog #858 - Red Pitaya — Dave Jones (mention)
+context before: Start measurement. Blah blah blah, measuring measuring measuring. And like it's just a real dinky app. Don't like it. And here's the other uh, oscilloscope app instead of the oscilloscope pro.
+TEXT: Um, this one can do averaging. Look at that. Uh, no wackers. Um, but yeah, like no, the user interface just no. No. No. Don't like it at all. Why should I have to scroll that list?
+context after: Why can't it make use of, once again, user interface make use of all the screen, just have the links there. Like, you know, why it even has to be fancy like this.

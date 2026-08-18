@@ -1,0 +1,433 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: clock signal
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 80 passages drawn from 51 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# clock signal`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: everything else. Okay, so let's start out with pin one here, which is the uh call O line. I assume it's uh column. And bingo, we're getting we're getting some data there, so that's fine.
+TEXT: It's not uh shorted, and of course all these little uh uh transitions in here, they're coming from the clock line. So, if we actually uh had the clock line in parallel with this, you would see that the clock would be transitioning every period like that, and that's why we're getting those uh glitches caused by um coupling, ground bounce, all the other all the usual uh signal integrity crap because we're not
+context after: probing that well, so but that's all we want to see is that there's a signal there and it is the correct signal level. It's 1 V per division. We're getting our 5 V logic, no problems at all coming from the Arduino board.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (explains)
+context before: They may put that uh, you know, something happens thing in there, or they may not. They may simply just show it like this, for example, and just shorten it.
+TEXT: There might be might not be anything. And this is where the timing diagram doesn't necessarily represent the exact amount of time in the system. Obviously, if they have a clock up here and the latch data as well, then if they've got that clock, then that signifies if you draw your timing diagrams right and you should, then you're implying by showing that clock that everything is in real time.
+context after: So, unless you put that {dash} {dash} in there, then you really you can't do this trick. You can't do this trick down here or you shouldn't do it. But, just be aware that timing diagrams may not necessarily represent a fixed So, if your grid is like 1 microsecond per grid spacing, for example, based on your clock frequency, then this may not necessarily represent that exact time.
+
+[593] EEVblog #593 - HP35670A DSA Repair Part 4 - Thermal Testing — Dave Jones (explains)
+context before: I'm still using my finger even though I've got a Flir camera in front of me, crazy. And the ASIC gets as warm as you'd expect, 55° and that sort of stuff, but apart from that, nothing really scorching hot or out of the ordinary.
+TEXT: So well yep Great tool, but didn't find anything in this case. Bummer. And I've had a probe around with the scope on all the various test points, cuz there are lots of nice test points in here even though I don't know what a lot of them do, but I'm getting, you know, the activity I expect, a clock line, you get clock line, you get clock data.
+context after: They're all these system clocks are working. All the voltage regulators are still working. The supplies for all the op amps and everything, as I said, just fine. There's no noise on them.
+
+[663] EEVblog #663 - Compucorp 322G Calculator Teardown — Dave Jones (explains)
+context before: And we've got all this bus stuff happening over here. So let's start probing some bus. Hello! Hello, Mr. Signal at 10.1 kilohertz. Okay, there we go. Yeah, 10.1, yep. Oh. Hello, so it's working. Hello. Bit of rounding there. Look at that, 200, it's almost bang on 200 kilohertz, 203 kilohertz there.
+TEXT: So we're getting some activity, so... ooh. Yeah, that's reasonably warm. Yeah, they're actually getting warm to the touch. Oh, that's gone negative. Yeah, there we go. Got a bit of negative stuff happening down in there, yep. But yeah, we certainly have some clock stuff happening, there's that 10 kilohertz and 200, so
+context after: yeah, it's doing something. It's powered up and she's trying to work. Actually I just thought of something. The back of this says 7 volts at 0.7 amps, but that might not, it may not be able to operate from that. That may just be to charge, if you've got internal rechargeable batteries in there, that may just
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (explains)
+context before: I like it. And the label interface is the same. If you press the label button here, you can actually select any one of the individual channels, the math references, or the digital channels in this case. So, if we go down and we select D7, we can go in, and then we can actually spell, we can select
+TEXT: the letter, bang, something like that, and we can label it anything we like, or we can actually, and we can apply the new label, or we can select one of these pre-defined options down here. So, if we know that signal is actually a clock, we can actually select clock and apply a new label,
+context after: and bingo, you can see that channel is now labeled clock. So, it's worth, when you set up a digital logic analyzer like this, it's worth just spending five minutes going through, labeling your signal, so you know exactly which one is what. Trust me, a real trap for young players is to not label
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (explains)
+context before: Okay, so the first thing you need to know is that timing diagrams are basically representing digital signals although we'll get not always, we'll get into that. So, basically you've got a logic one up here at the top and a logic zero down the bottom or high and low depends on your terminology.
+TEXT: So, if you've got a 5-volt TTL signal, it'll be 5 volts and 0 volts. If you've got 3.3 volts, it'll be 3.3 and 0 for example. And as I mentioned, often things will be correlated against a clock or a latch signal or some other sort of reference signal that you're dealing with.
+context after: So, usually in the case of a clock like this, it's very obvious when you're looking at the data sheet. So, if you see something up here for example, that's always transitioning, well, you know that's a clock.
+
+[1228] EEVblog #1228 - Do Digital Scopes Have REAL Verniers? — Dave Jones (explains)
+context before: So, every time we change our volts per division setting, we will get a Yeah, uh you can see it change a little bit over there, but every time we change it, we will get a new trigger over there and ordinarily, it's not actually triggered and I'm actually triggering from the uh latch signal.
+TEXT: So, when it goes negative, that's the only time that the data is actually valid to that particular chip. So, you can see here that there's multiple packets of uh data and clock here, but only one of them is going to be accepted by that chip when that latch goes negative.
+context after: So, that's the one we want in there. You can see it. It stays uh low for a long period of time, but it's only sending one little packet of data to that particular chip.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (explains)
+context before: And if we go down here, they'll show that on these more detailed timing diagrams. Here it is, voltage waveform, set up and hold times, bingo. So, you can see a data input here.
+TEXT: Here's our timing input, which is our clock. This is our transition here. We'll get into why it's sloped instead of straight up a later, and TSU, time setup. That's what the SU stands for, and you can see uh there's a certain time period there before it has to set up.
+context after: So, you know that's a parameter of the chip that can be quite important. If you don't meet that, you can come a cropper, the chip can go metastable, your data's not latched, your design just goes horrible, and you can have all sorts of weird and wonderful problems.
+
+[32] EEVblog #32 - Tandy 1000 Retro Computer time! — Dave Jones (explains)
+context before: It was a pin compatible processor for the 8088. It sped up your machine, but that wasn't good enough. I wanted a turbo button. All these other machines out there had a turbo button, so I wanted my own. So I designed it. So this is how I did it.
+TEXT: The Tandy 1000 had an 8245A timing chip, and this was specifically designed for sending the required clock signals out to an 8088 processor. Now, I pulled over the data sheets for this thing back in the day, figuring out how I could add a turbo functionality.
+context after: And what I found is that it had an internal oscillator, and that wasn't being used. I actually used an external oscillator, and it already had an internal switch to switch between the external clock and this internal oscillator. Aha! Brilliant! Right, but then I found, I read the more, I looked the circuits more in
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: Shall we? Let's have it another input here. So, we've got two inputs coming in here like this. And what do we have in our design up here. Well, we've got 3 volts DC and we've got a microcontroller.
+TEXT: What can microcontrollers do? They can generate clocks, PWM signals. So, we can actually use the microcontroller to generate a clock signal. So, what we're going to do here is we've got two inputs like this and this one will actually put to 3 volts DC.
+context after: So, we'll tie that to our voltage level and then we'll feed in a clock into this input down here and magic happens, which I'll explain in a minute. We're going to get 6 volts DC out.
+
+[1205] EEVblog #1205 - RC2014 Z80 Computer Kit Build — Dave Jones (explains)
+context before: It should show up right where that cursor is. It's all right. Good thinking though, Sagan. Good troubleshooting thinking. Okay, Sagan, it's time for the big guns. Let's bring out the oscilloscope, because we're not getting any lights at all, transmit and receive. So, we're not like seeing any data.
+TEXT: It's being transmitted from this. Or a seed. Or a seed, so let's, so there's our 5-volt rail, okay? All right, so let's maybe measure our clock. CLK is, I assume that, yep, look, the clock is on. These header pins are very nice. Hey, there we go, mate.
+context after: We have a clock. There we go. It's got all these little, they're called overshoes. And it's got those, because look at our big antenna earth lead there, okay? So that's naughty, but the signal's there, so we have a clock. So that means our processor is getting its clock.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: That and, you know, then I go, well, it's a signal integrity issue then. Imagine the hours I would have wasted trying to actually probe properly cuz if you want proper signal integrity, you can't just use an antenna earthly like this.
+TEXT: You've got to go in there and set up these things properly. And well, yeah. Man, could have wasted forever. It's lucky I just, you know, stepped back and went, "I'm going to double-triple check that clock pin." And sure enough, bloody well was.
+context after: So, I'm going to replace these two puppies here on these other channels. And yes, I did order enough because well, they cost what? 50 cents or a dollar each or something.
+
+[1245] EEVblog #1245 - A Most Excellent REPAIR: IBM PCjr Keyboard — Dave Jones (explains)
+context before: needs to go high in order for this thing to work. And that's actually tied to pin 9, which is, uh, the second data pin of this flippity flop here. I haven't traced anything else. This is where the schematic, uh, would be, yeah, really quite
+TEXT: handy. Anyway, we're gonna, uh, check our, see that our input's here. I'll just try and, uh, single shot capture some of these, like, uh, clock, for example, when we power it on. So this is our, uh, clock signal. This is when it was,
+context after: uh, powering down, like this, so power's on, we, there's no extra clock in there, but, uh, we don't know, we haven't time correlated that against the power on. So, uh, yeah, we need to do that. This is where you need a two channel scope.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: I'm not sure why it has that uh dead period in the middle of it. But uh 400 odd microseconds and then aha, there you go. It repeats that. Repeats that every two divisions 10 milliseconds.
+TEXT: So, there you go. Every 10 milliseconds there's a 400 microsecond burst of clock and uh it's able to get away with that because uh it's obviously doing nothing. And if we actually ran a program, we would probably see that change.
+context after: So, I might try and run a basic program and or something and see what happens. All right, I've got a very simple basic program there. It's just going to count up to a high number, print it on the screen, and keep doing that for a while.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: It wasn't a second chip. Well, there was on the second board. So, we had a connector in here, and we saw that there was no data coming out from this serial output here.
+TEXT: So, it's either not getting to this chip, or the chip is not outputting it for some reason. And I don't see why the chip wouldn't output it if it's getting in and it's getting all the clock and the latch and everything else.
+context after: It should work. Okay, I'm going to probe the pin. Now, I've got to be very careful and watch the chip here instead of watching the display. So, I know you can't see me do this, but I'm probing pin two, which is the data pin.
+
+[1463] EEVblog 1463 - Mailbag — Dave Jones (explains)
+context before: So, I don't think that thing's coming apart, but isn't it gorgeous? And how can you not love this Bobby Dazzler? Look at it. Digital Design Experimenter. Once again, you didn't get any uh power strips top and bottom down here, but jeez, isn't it like you just got regular switches single pole double throw jobbies by the looks of it.
+TEXT: Um and you can get a clock 1 1 hertz, you know, you want to flash a LED in 1 kilohertz or a 100 kilohertz. Oh, we're screaming now. Um and you can get negative uh clock as well, so you can get dual polarities on your clock.
+context after: And you know, for doing your JK flip floppies and whatnot. Um experimenting with those. So, uh classic. Um it's got one of these weird ass Yankee plugs, but uh yeah, I can deal with that.
+
+[CMoBGGqojqs] Rigol MSO7000 Unboxing & First Impressions — Dave Jones (explains)
+context before: on just the analog channels? And if you want to buy the digital inputs, well you buy those separately and then you have like a mixed, you know like a 4, a true 4 analog channel plus 16 mixed signal. You pay for that. But by default, like it'd be nice if they just enabled
+TEXT: the analog channels like that. So for our chip select and our, oh, yeah. So mode select, yeah. So timeout mode, there you go. So we can timeout so you don't need the chip select. So you can get away with just clock and data
+context after: using two of the channels, um, and yeah, but if you've got the digital option, what's the, you know? Anyway. Decoding, right. So we can set up four different decoders, presumably at the same time. That's nice. I wonder if they're all hardware stuff. So bus decoding,
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (explains)
+context before: So, you know, we'll show you that later in the much more versatile for the scope for example. But look, we can go in here and we can insert signals, we can insert bus signals. So we can go in here and say that digital pin 15,
+TEXT: what type is it? Is it a constant value? Is it a clock? Is it a random signal? I mean, just fantastic. Here we go. And we can define the duty cycle of the clock and the frequency and the idle time and the output type.
+context after: And it's just, yeah, fantastic. Very, very flexible. So what I've done here is I've just generated a clock signal there on pin 15. On pin 14 I've just generated a random frequency between the values 1 kHz and 10 kHz. So really flexible. You can
+
+[1720] EEVblog 1720 - Mailbag: USSR Bonanza + Logic Training + $69 Logic Analyzer — Dave Jones (explains)
+context before: I can I was a bit confused at first why I couldn't find any clock output pin. I think there should be pins here, just so that you can, you know, like pulse stuff.
+TEXT: I don't know why there's not a pin on there. Anyway, if we enable that, i.e. set it high, cuz there's no bar on there, um, it should count. And sure enough, it does, based on our clock right here.
+context after: We can slow that down, or we can go over to manual clock. So, if I hold down the enable, and then pulse it, we can manually we can see that there's no switch bounce, so this is this switch is debounced.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: So, I'm not sure what's going on there. But anyway, we're uh 50 microseconds per division there. So, 100 200 300 400 microseconds it goes for in two bursts there.
+TEXT: I'm not sure why it has that uh dead period in the middle of it. But uh 400 odd microseconds and then aha, there you go. It repeats that. Repeats that every two divisions 10 milliseconds.
+context after: So, there you go. Every 10 milliseconds there's a 400 microsecond burst of clock and uh it's able to get away with that because uh it's obviously doing nothing. And if we actually ran a program, we would probably see that change.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: So, let's run that and see what we get. All right, so that's what we're currently getting. So, let me just type in run here. Oh, you can see that every time I press a key, bang, it sort of extends that pulse out there.
+TEXT: So, I'm going to press run and we should get a continuous clock. Yep, there we go. Fully continuous. And our screen Now, things counting up. It's only to Oh, it's not even to 200 yet.
+context after: So, it's uh pretty slow this old sucker. And I've turned on the hardware frequency counter here and it's 3.266 odd MHz. So, there you go. It's obviously dividing that crystal that 9 MHz crystal by three.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: But, there you go. That's uh Well, it's not quite all she wrote. But, you can see how Yeah, and then I'll end it like there or something like that.
+TEXT: So, there you go. So, I now got that uh well, a bus, you know, it's like there's two clock lines that has to connect all the chips and then I've just got to drop the vias down.
+context after: Boom, boom, boom, you can see the rats nest there. No worries. So, yeah, I had to go through and free up all that space. Yeah, if I was a bit more careful, I probably would have uh left that stuff uh free over there in the routing process, but yeah.
+
+[9hMsNOwY5AQ] EEVacademy #3 - Bit Banging & SPI Tutorial — Dave Jones (explains)
+context before: Um the only way we can do that is by having a open circuit here and allowing the resistor to pull the pin up to the power supply. So, bit banging in general is usually like a tight loop.
+TEXT: The loop is usually a uh series of bit sets and bit clears where between each bit you have some kind of clock. So, a clock line usually is very periodic, something like this.
+context after: And between each bit you set, you also have a clock signal so that the other device can clock in the data. Without the clock signal, um the slave device, that is the device that's not controlling the bus, will not receive any commands at all.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: And then, we've got this turning on over here, which is in the middle, like this. Hence, why our middle digit is turning on. So, it's actually working. It's clocking the data and doing everything right, but our data's not correct.
+TEXT: So, what what what what. So, let's have a look at the code here. Well, we know that the clock and data pins are working like they're mapped actually correctly and everything.
+context after: Look, I'll tell you one thing I did notice here. Check this out down here. I like how the help here actually it pulls the comment before this. It actually knows that that comment's associated with that.
+
+[1208] EEVblog #1208 - Circuit Analysis & Debugging — Dave Jones (explains)
+context before: But, it's going to be uh clocked on the negative edge, and you can actually see that down here in the uh true table, uh the negative when the clock goes negative like that, it will actually do the count.
+TEXT: But, if it goes positive, then you get no change. So, it counts on the negative edge. And that might actually matter for our circuit configuration, as we'll take a look at.
+context after: Now, uh let's go down here. There's the internal circuit for those playing along at home if you want to see. Anyway, uh what we've got is the master reset, and the reset pin of both of these is actually connected down to ground.
+
+[1288] EEVblog #1288 - Synology NAS Dumpster Find! (REPAIR) — Dave Jones (explains)
+context before: Should I trust it? Mhm. Okay, so what I'm going to do is just uh probe the signal here on pin six. Pin two's actually ground. I'm using my uh low inductance uh probe here cuz we've actually got as you'll see a 25 meg signal.
+TEXT: Look at that. And that's a bit how you're doing. That's not my probe uh doing all that funny business in there. That is uh the actual signal. So, that's that's the clock.
+context after: There you have it. It's pretty poor stuff. And uh yeah, my probe is compensated. Everything's hunky-dory. So, it looks like they are potentially like shorting out two clocks here.
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (explains)
+context before: There's our waveform. That doesn't seem to be RS232E to me. Oh, I've got the wrong channel. I got the wrong channel. Looking at the XL file, yep, it does that.
+TEXT: I the XL file is specifying 10101010. And channel four, there we go. So that was just a like a clock essentially working as a clock output. Yeah, but there is our RS232.
+context after: And we should be able to decode that. But unfortunately, I don't have the digital license. They said I did on this scope, but it looks like I don't. Yeah, there you go.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: But if you have a look at that, there is still a period in there where it blanks out even though it's continuous. I'll try and single-shot capture that. There we go.
+TEXT: Bingo, we got something. And we can zoom into that here. And notice there's a dead period there of 5 10 15 20 almost like around 24 microseconds. There's a dead period.
+context after: So, it obviously needs to or is stopping the clock for some particular reason for 24 microseconds in there. Not sure why. And look at this. This is what it was like in the '80s.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: So, I'm going to concentrate. No. Nothing. Just high, as we saw on that uh pin header. Now, I'm going back to the data line for a second there, and uh we're back on the uh ribbon cable itself.
+TEXT: And if we just single shot capture that, um we can see that the data is really changing all the time, as you'd expect um when this thing is updating the uh the clock.
+context after: So, um yeah, I I don't know. Data's getting into the chip. Our clock pulse is getting in. We're Well, we're fairly sure. I haven't checked all the pins directly on the chip.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: So, it's uh pretty slow this old sucker. And I've turned on the hardware frequency counter here and it's 3.266 odd MHz. So, there you go. It's obviously dividing that crystal that 9 MHz crystal by three.
+TEXT: But if you have a look at that, there is still a period in there where it blanks out even though it's continuous. I'll try and single-shot capture that. There we go.
+context after: Bingo, we got something. And we can zoom into that here. And notice there's a dead period there of 5 10 15 20 almost like around 24 microseconds. There's a dead period.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: It just didn't make sense if we were getting all of these clocks and data and everything else coming in here and getting no serial data out of here. It just didn't make sense.
+TEXT: So, it's almost as if the clock pin wasn't actually getting right to the chip itself. And I thought I had tested that, but I double-checked it and sure enough what?
+context after: File. It's a soldering issue on my chip. I looked really closely under my Mantis 3D microscope at a really deep angle. Sorry, I'm not going to be able to get a good shot at it and it turns out that the um clock pin, pin three on the chip that I reworked, just wasn't quite making it and I was actually probing the the pin.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (explains)
+context before: Oops, the thing just switched off on me. The screen's gone. So, let me reset that. Ah, there we go. And we're back. So, there was no clock frequency when it was dead like that.
+TEXT: So, I'm not sure what's going on there. But anyway, we're uh 50 microseconds per division there. So, 100 200 300 400 microseconds it goes for in two bursts there.
+context after: I'm not sure why it has that uh dead period in the middle of it. But uh 400 odd microseconds and then aha, there you go. It repeats that. Repeats that every two divisions 10 milliseconds.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: And it did finally twig to me that, you know, it like a brand new chip I sold it on, the data was getting in there, but nothing was coming out.
+TEXT: It's got to be the clock. And sure enough, it damn well was. So, I can't imagine how much time I would have wasted when I started diving into the protocol here.
+context after: I would have found that, of course, it was perfectly fine. And I was, you know, I I was trusting Jockey, and it sure enough, he was right. There's nothing wrong with the software at all.
+
+[1322] EEVblog #1322 - JBL LSR308 Studio Monitor Speaker REPAIR — Dave Jones (explains)
+context before: So, I'm just going to go in there and uh probe the ADC here just to see that it's like outputting stuff. That's not too hard. You don't even need to know the pinout cuz there's a whole bunch of resistors over there, and I'm guessing that they're uh series resistors for the various uh I2S data and clock lines.
+TEXT: So, get one side of the resistor. Yeah, look at that. That was like a clock. 3.072. Next to it. Yeah, that looks like data. There you go. That's just random.
+context after: That'll change every time. Don't Don't worry about the overshoots there cuz I'm using a uh hideously long ground lead. All we're looking for We're not looking for signal integrity here.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: I just missed it. And if you probe up here like this and lightly touch it and not put any extra force on it, then I'm not getting the signal.
+TEXT: So, the clock signal is making its way through to the pad and but it's not actually getting into the chip. Bingo. So, what? That's a fail on my part.
+context after: I was a bit hasty in my visual inspection of that thing and yep, that's a PEBCAK. But the interesting part of this that led me up the garden path to think that that chip was fine, there's nothing wrong with it, is that I disconnected this ribbon cable over here and plugged the cable directly into these other two boards, which I was pretty sure were not uh blowing.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: Um but, it's handy with the scope. You can actually see the data. And well, it's looking like we may have to get out the logic analyzer because uh let's well, let's check.
+TEXT: I've I've got one line left, which is pin four, which is the uh clock line. So, let's go to pin four here. Aha! Uh there you go. That's the culprit.
+context after: Pin four's not working. There's no clock. No wonder I'm getting no data out of my DAC. Dull. Dead easy. All right, let's fix that. So, there's nothing getting to pin four of my DAC.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: Come on, admit it. Just for kicks, I'm using the new Siglent SDS 2354XHD. Um, got no ground connections. This is flapping around in the air, the breeze. I'm just going through the ground in of the Arduino.
+TEXT: So, it's going to be a little bit noisy, but there you go. Um, this is our clock signal down here. Obviously, like I can run this real time, right?
+context after: And you can probably just see, yeah, we're getting patterns like that. So, I'm single shot capturing this, and sure enough, check it out. It is It seems to be correct.
+
+[Gbn_51IoJiM] Amiga 2000 Teardown & Power Up — Dave Jones (explains)
+context before: Wouldn't do that otherwise. That's encouraging. I don't know. What's an Amiga supposed to do on the boot? I just got a white screen. Um flashing white screen. Yeah, something's Yeah, something's not right.
+TEXT: But the video hardware is at least uh generating a clock and uh doing what not, but uh
+context after: 
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (opinion)
+context before: But, yeah, you can see the record length of how it's slowing down. But, really, you know, I'm happy to get an average. If you're looking at signal integrity, you don't want the other crap in there to affect it really.
+TEXT: It depends on what you're after though. Sometimes you may want to see how other parts of your circuit in this particular case, if we're chopping off some of the capacitors on the other side of the board, for example, that might upset the clock at this particular part of the circuit so that we're actually probing.
+context after: You know, so you may or may not want to see that. But of course, if you want the signal integrity at that point, the best way to do it is to simply Well, you can turn on high-res mode which does a boxcar averaging of like you know, like 16 or something like that in a row at the sample thing.
+
+[1429] EEVblog 1429 - Sony RX100 Camera Troubleshooting Part 2 — Dave Jones (opinion)
+context before: So, it's most likely some sort of accelerometer, but it's got to be in the screen. So, that means it's got to go via this ribbon cable here. Now, of course, this is all the connections for the LCD.
+TEXT: We know all the data lines are working, all the clock lines, everything's fine, except it's scrolling. So, there's got to be some sort of vertical sync signal here. Horizontal If if they got a vertical sync signal, they probably have a like a horizontal sync, or that could be just the clock.
+context after: I don't know the interface for this one. I Yeah, it's got to have like a vertical sync pin. But then, that doesn't explain why the accelerator is dead. So, it's almost as if like Okay, let's assume that there's a vertical sync pin on here, right?
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (opinion)
+context before: So, that's going to be Rygo's problem. Oops, we've re-triggered there. It shouldn't have done that. Wonder why I did that. So, yes, Rygo still need to be vigilant on this issue.
+TEXT: And as I said, I still think they need to fix that clock. That's pretty piss-poor, but you know, it's one of those arguments like is it good enough to do the job if the scope if there's no measurable difference on the scope, well, does that clock matter?
+context after: Is it good enough? Yeah, you know, ultimately, yeah, it's a bit academic that okay, it's not the world's greatest clock, that's for sure. It's pretty piss-poor, but if it does the job on this particular hardware and nobody can measure the difference on the scope itself, then yeah, what does it matter?
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (opinion)
+context before: So, what I would do there is uh the have another like a buffer chip on this uh board that then drives the output of the board. So, where's the So, yeah, this is your input over here.
+TEXT: Yes, I believe it is, right? So, this output here, I would actually have another set of buffers, right? Just uh buffers or, you know, two inverters in series, wh- whatever, um to drive that line because otherwise, you've got this one clock line here.
+context after: It's poor little Oh, you've got the uh clear as well, have you? Okay, so you've got the register clock, the uh shift clock, and the clear. You don't necessarily uh need the clear line because uh unless you want to like clear things really quickly, you can always just shift zeros into it.
+
+[1288] EEVblog #1288 - Synology NAS Dumpster Find! (REPAIR) — Dave Jones (opinion)
+context before: It's a failure mode. Apparently, the output driver sort of maybe deteriorates over time due to whatever process um you know, they're they're using uh in on the die there.
+TEXT: And so, that's a really awful clock. I don't like that at all, but it's working. And pin number one, it looks like it is just the rail. I couldn't uh measure that before, but it looks like yep, 1 2 3.3 V.
+context after: So, it's pretty solid, but you can see some uh noise on that. And that's just a noise superimposed on that. So, yeah, you know, that's perfectly fine. Nothing wrong with that.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (opinion)
+context before: There is a slight bit of jitter there compared to the regular one, but uh you're really, you know, you're really pixel peeping there, but anyway, I still really have I do really have a still have a problem with this.
+TEXT: Although, hey, the jitter problem on my particular unit is fixed. Okay, fine. But, this is a pretty awful clock. I mean, you know, ordinate like I've zoomed in this a little bit.
+context after: I've now got a 500 kHz span here. And and I've got our delta there's a delta on there that's 67.5 kHz there. And then we've got another little peak which is showing itself here.
+
+[382] EEVblog #382 - Cambridge Z88 Teardown — Dave Jones (opinion)
+context before: Bingo, we got something. And we can zoom into that here. And notice there's a dead period there of 5 10 15 20 almost like around 24 microseconds. There's a dead period.
+TEXT: So, it obviously needs to or is stopping the clock for some particular reason for 24 microseconds in there. Not sure why. And look at this. This is what it was like in the '80s.
+context after: This is how slow computers were in the '80s. Check that out. Haha. Every cycle was sacred. Ooh, it's like whistling Monty Python. So, I'm sorry I wasn't able to bring you a troubleshooting video that I was hoping for.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (opinion)
+context before: And it wouldn't surprise me if Rigol just didn't mention this and like all existing unit and this firmware fixes all existing units, but secretly in the background newer units might actually have different loop value components.
+TEXT: That wouldn't surprise me at all cuz this is pretty bloody awful. I mean, you know, a proper one should be like it should look, you know, none of this stuff should be here.
+context after: It should be like right down here like this. It should be very nice like that. So, we shouldn't have these components in here, but it it's doesn't seem to I mean, I've checked the multiple frequency of that and it seems to be okay, but yeah, that's that's a still a pretty bad clock, but I you know, I mean, Rigol are between a rock and a hard place here.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (opinion)
+context before: I don't like it still. Gives me the heebie-jeebies. So, there you have it. I'm pretty happy with the fix on mine. It seems to work well, but yeah, the proof is going to be everyone else when we've got actually, you know, statistically significant numbers and spreads of units and component spreads and all that sort of stuff.
+TEXT: So, if it if it works out to be a solid fix, great, you know, I'm happy, but yeah, I there's still a chance that it may not fix everyone's unit.
+context after: So, that's going to be Rygo's problem. Oops, we've re-triggered there. It shouldn't have done that. Wonder why I did that. So, yes, Rygo still need to be vigilant on this issue.
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (opinion)
+context before: Um and no, I can't get anything on there when I'm uh booting up or anything like that. There's just no activity. Now, I'm starting to realize, okay, so the processor's obviously uh working.
+TEXT: The clock up here is working. So, you got to presume that uh you know, I haven't actually probed the pin on there. It's a real pain in the ass.
+context after: Fine pin pitch. It's like what is it? 0.35 mm pin pitch or something really annoying. Uh I'm actually going to assume that um because we got some input circuitry, maybe the signals maybe all this digital stuff is all just fine and dandy and the signal's not actually coming from the PCB down in the bottom.
+
+[410] EEVblog #410 - Microtek 8086 In-Circuit Emulator Teardown — Dave Jones (mention)
+context before: And then this cable would connect into your circuit under test. It would plug into your microprocessor socket. So, instead of this processor plugging directly into the socket like normal, you would put all this circuitry and this in-circuit emulator or ice in between it.
+TEXT: Now, this is actually um uh not so much an emulator cuz it's not actually emulating the microprocessor. The circuitry inside this thing is not emulating the microprocessor. It's It's just It's using a real microprocessor and it's tapping into that and just tapping into all the memory signals and the clock signals and everything else required to run the PC because the processor is just that.
+context after: It's just a processor. It needs all external memory and everything else. So, that's why you could do this with the 8086 which you couldn't do, for example, on that PIC we saw earlier.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (mention)
+context before: So, that's not uh easy at all. You have to systematically go through and uh cater for those things. But anyway, I think I did get at least something out of that.
+TEXT: See if there's any correlation between my tapping and the slight modulation on that waveform. Here we go. Make sure yeah, everything's fine. Okay. Here we go. Any correlation? So, obviously what they're doing is uh you know, squaring up this signal really early and getting some sort of you know, uh uh you know, modulation of a clock out of it and uh decoding it that way.
+context after: So, I'm not even sure if this thing actually you know, can record like an an ECG signal as such. So, yeah, I'm not not entirely sure what's going on there, but I'm pretty sure I found that that is modulating in time with my heartbeat.
+
+[1247] EEVblog #1247 - DDR Memory PCB Propagation Delay & Layout — Dave Jones (mention)
+context before: Um from limited FPGA experience, I know that meeting timing is critical for a functioning design. Yet on these simple projects, nobody seems to talk about this and talks about signal propagation delay through the wires is much faster than through digital logic.
+TEXT: Can a design like this be routed that these constraint without the constraints being violated? What frequency is this relevant? And he talks about that what could be problematic like routing a clock signal too far away from registers and other things where they have to go through other gates and take other paths on the PCB and it it gets complicated.
+context after: At what point does it become an issue and he'd like someone to clarify this. And Ben asked, "What's the question?" I guess the question is for simple slow 4 8-bit computers, for example, the Gigatron, is propagation delay for digital signals an issue in the design layout of the board and at what clock frequency roughly would this become a big issue?
+
+[1144] EEVblog #1144 - Padauk Programmer Reverse Engineering — Dave Jones (mention)
+context before: So, yeah. What kinds of things do we need to look at here? Well, from the start to the start of the programming is about 244 milliseconds. We're going to be looking for the data at 244 milliseconds, approximately. It should be pretty obvious when it is, because there should be a fair bit of data.
+TEXT: And the data to this, what I think is initialization section, is 68 milliseconds. So, let's have a look at what I think the clock pin is. Let's see if the clock pin resides inside, when the reset pin is up or down. Now, this will help us determine whether that really is a reset pin, and whether that power pin is really the power pin.
+context after: We don't know. It's not actually guaranteed. Until the device is programmed, that spec sheet, the data sheet, doesn't really come into play. It could burn some fuses and change the pins altogether. Let's have a look. Ooh, that does look like a clock line.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: If you're going to do that, edit your part because this part is, does not have the proper physical pin order. So, you would go in there and modify your pin so that this pin, this clock minus pin, I know it's nice to keep them together like this, but you would keep them together.
+TEXT: So, you'd move clock positive and clock negative down to here, this empty space down here. And then, because this is just going off to a net, clock positive. Then, you could have clock negative going down to the ground and you don't have to have this wire going all the way up there.
+context after: Just avoid crossing wires if at all possible. Now, in this particular case, let's have a look where this net. That's just flapping around in the breeze. Let's have a look at where that's going. Nowhere. What? Dora clock, Dora the Explorer clock is going nowhere.
+
+[1176] EEVblog #1176 - 2 Layer vs 4 Layer PCB EMC TESTED! — Dave Jones (mention)
+context before: traces whatsoever. It's completely identical. The only difference is you can see in there that I've actually got a huge internal ground plane. So, ground and 5 volts internally for there all the bypass capacitors, everything else is absolutely identical and what difference is this going to make to radiated emissions which is important if you're designing a product commercial product for sale, you have to meet various
+TEXT: electromagnetic conformity requirements and that varies in different countries. We won't go into that in this video. So, you can see our computer's operational here. It's got a 6 MHz main clock, which is not particularly fast, but remember, it's not the fundamental clock rate.
+context after: It's In fact, you can have a 1 Hz clock on this, and it can still radiate like buggery because it's the edge rate of the signal. It's not just the fundamental frequency.
+
+[694] EEVblog #694 - Mailbag — Dave Jones (mention)
+context before: plus the power wires to get there and any signal stuff. So it's an entire, you know, where the current flows in the entire loop. And that's where these H-field or magnetic field probes pick up. So we're picking up a lot more crap, as you can see, going around here with our H-field probe.
+TEXT: We're not just picking up that individual crystal. So we're picking up all sorts of crud on here due to, you know, other clocks or other signals that are all looping around this board right back to the power supply. So that's the difference between the H-field probes and the
+context after: E-field electric probes. And one of the things you can do too is you can use demodulation functions on these. A lot of the old graybeards do this. They will plug in some headphones here. That's why it's got a headphone port so you can demodulate the signals and you can actually
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (mention)
+context before: But there we go. So, if we see any changes, we can just use the reference to highlight the Oh, by the way, yes, these are actually like real little things happening in the circuit because we're using proper high-fidelity high-frequency probing techniques here.
+TEXT: This stuff's actually happening. There's some sort of transition thing that's causing a ground like a little bounce, you know, in the ground system or whatever. This edge here is pretty good on the top of the clock, but look at the, you know, look at the ringing on that.
+context after: It's pretty terrible, right? And then undershoot on there, right? But this is actually what's happening in our circuit. This is real stuff because we're probing it properly. We know there's very little effect, you know, negligible half a bee's dick to do with our probes.
+
+[111] EEVblog #111 - Live Show #5 — Dave Jones (mention)
+context before: Practical difference for hobbyists between CPLGs and FPGAs. CPLGs just aren't as flexible. They don't have the, the logic, um, the logic element construction in them is, is different. So you can't, you know, you can't, it's, I'm not going to say you can't, because you might be able to, but it's very difficult to say, build a, to put in a, say, a, um,
+TEXT: an 8-bit microprocessor core into a CPLD. It's more suited to an FPGA. They just have the flexible, uh, architecture with the flip-flops and the clocks and everything else. Um, CPLDs are really good for, uh, really mainly used for just logic interfacing, glue logic,
+context after: and stuff like that. Whereas FPGAs, you can actually put a software processor in there, or multiple processors, and you can do all sorts of, they're just completely flexible FPGAs. So they're, they're more flexible. Um, CPLDs are, you know, just less flexible devices, but they're typically faster.
+
+[227] EEVblog #227 - Light Scythe — Dave Jones (mention)
+context before: I've got 64 vertical pixels here, and I can extend it as long as I like. So I have planned around making a 5 metre one that I can dangle off a bridge and then walk. Is it shift and latch? Is shift then latch, or is it...
+TEXT: This particular strip, there's a clock, data and a latch. The next generation of the strip, which is the $16 million colour one, is just clock and data. But I think there's actually a latch command or something like that that gets propagated, so it doesn't have...
+context after: yeah, you're exactly right. If there's no latch, then what you have is the image slowly marching down the strip, whereas if, as the way it is now, the image gets pushed there and then rolled across off the LEDs with one command. So there's no weird persistence of vision or strange visual artefacts that you get.
+
+[DNlA4X5_S30] Schematic Component Library Drawing Tip — Dave Jones (mention)
+context before: and data in, data clock, and then data out. And that just makes a nice compact symbol like this that's going to flow really well because then I can put my Nixie tube right here. I can put my VCC in next to it and all the wires will just pop straight out
+TEXT: and it'll be ground, VCC, they won't get in the way. And then you can have your wires coming in and out for your clock lines and everything else. So it just makes for a nice flowing schematic. So put a little bit of thought into your circuit symbol there
+context after: and really you'll make your life much easier and a much more presentable schematic.
+
+[290] EEVblog #290 - Mailbag — Dave Jones (mention)
+context before: we need to know about that. Alright, so I've got the, uh, software running here, it, uh, was, uh, painless installation, the driver's no problem, and the, uh, program pops up here, not a problem. Now I've actually got it, uh, physically connected to an SPI
+TEXT: bus here, and I haven't labelled my, uh, channels, but obviously this is the, uh, clock up the top here, this is the data, and this is the, um, this is the select pin. And, uh, here it is. You, uh, we've got various, uh, zoom up here, it's pretty basic,
+context after: and, uh, let's see if the tooltips pop up. No, they did before. I swear they popped up, there we go, acquire data, an acquisition setup, uh, you can refresh it. I wonder how quickly it refreshes, because the acquire data takes quite some time, because it's got a, presumably
+
+[1144] EEVblog #1144 - Padauk Programmer Reverse Engineering — Dave Jones (mention)
+context before: timing of it. Perhaps it's um, the order of the pins if the micro is the host of this process. I don't know. So, I will just go through a few of the problems that I have with this device in decoding the protocol. Um, and there are
+TEXT: a lot. This is a really weird protocol. Um, the voltage changes for everything. Um, so, this is the chip select and the, um, the clock line. And you'll notice that the voltage envelope is the same. So, but it's not constant. Um, around here it's like
+context after: 2 point something volts at max. And up here it goes up to 6.5 we saw much earlier. So, it is still quite mysterious what this protocol is doing. Um, there's so many things that are strange about this. And between programming runs, there is slight variation in the timing.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (mention)
+context before: input. And output data signals and chip select. But in this case, it's actually a three-wire SPI interface. It's still SPI, but it's three-wire. So it shares, it's bi-directional here. So it's not as great a throughput. It goes tri-state and everything else. So anyway, we don't actually have specific support for that.
+TEXT: So I've just set it up here. I haven't set up the bits yet, but let's just trigger this thing and have a look. I'll press the bandwidth button. And there we go. Look at this. We've got our clock. We've got our data. And now we have our chip select.
+context after: Yay. Now the most interesting thing about this is, look, we're getting our 24 clocks. Exactly what we expect before. And if I zoom right out, okay, just what we were doing way, way back, and I press it. Look, we're getting none of that double rubbish that we were getting before.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (mention)
+context before: What is Like we've got timing diagrams coming out the wazoo. Now, timing diagrams are just a bunch of digital transitions represented over time. Just like you'd see on a logic analyzer or an oscilloscope if you actually probed those pins.
+TEXT: So, you might have, say, a clock like this because usually a timing diagram is going to be referenced to usually to some sort of clock. That's very common. Please excuse the crudity of my little mouse inaccuracy here, but you get the idea.
+context after: Everything's referenced to a clock and this could be T0 over here and then time just goes off like that. Okay, so that will be our clock and it pays to draw things on graph engineering grid paper like this because it's important.
+
+[1614] EEVblog 1614 - Circuit Design TIP: Crystal Oscillators — Dave Jones (mention)
+context before: As I said, almost every chip with X1 and X2 crystal uh pins is going to work the same way. They have an internal inverter like this connected between the X1 and the X2 pins.
+TEXT: So, what does that make X1? It makes it a digital input. Aha! You can just shove your crystal oscillator or any other uh signal you can get from anywhere else in your circuit that you can generate, you can just shove that straight into X1.
+context after: No worries. And this X2 pin is usually uh just goes off internally inside your chip and powers whatever circuitry inside your chip, powers your microcontroller or whatever. So, X2 isn't actual digital output pin, and you can actually use that uh to drive other external circuitries.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (mention)
+context before: I'd be, you know, if it works like first go with little massaging or no massaging required of the code, then I'll be I'll be pretty impressed. But, anyway, I don't think we need anything else.
+TEXT: I'm not going to do blank display blanking or anything like that now. I just want to see if we can get clock and data to shift in. And so what I'm expecting from any generated code is to have like digits actually defined.
+context after: Should have to bit map the seven segments on here, right? So it should like if it wants to do five, it should know it needs to turn on those segments like that or you know, number one it needs to turn on segments B and C there for example.
+
+[1081] EEVblog #1081 - Are Bypass Capacitors REALLY needed? (Muntzing) — Dave Jones (mention)
+context before: We're just going to use our these one gig passive probes are more than enough. We can do it with, you know, we can do it on our Rigol, 200 meg Rigol scope as well.
+TEXT: But you know, I'm just using the best scope and the best in terms of bandwidth and the best passive probing system I've got in the lab here. And we've got another clock signal up here which we can measure as well.
+context after: This one's a little bit trickier. Sort of like hold that in place. It's a little bit how you doing? But we can do it. No worries. All right, so we've got our live signals here.
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (mention)
+context before: Now, just as an aside and a trap for young players, one of the annoying things about this particular uh micro is that it's available Not only is it available in a LQFP like this, uh low-profile quad flat pack, but it's also also available in a 64-pin QFN.
+TEXT: Now, the pinout for the QFN is slightly different to this one. So, I do actually have the pinout for this one and it matches up. Um this is the uh clock going in here and this is the data for the debug interface.
+context after: So, clock and data. I've discovered that this one here is uh VSS or ground and this one here, or pin uh three here, is actually uh positive. So, ground and positive rail here.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (mention)
+context before: You've actually If you want to look at the timing, you've got to look at these specific switching waveforms here. But these are still timing diagrams, even though they're called them switching waveforms.
+TEXT: Another thing you'll almost certainly come across is one of these things. What is this? They sort of like break up the signal, break up the clock, and just put some typically dashed lines through here.
+context after: I mean, have a look at that. If we go over to this Microchip one, for example, bingo, here it is here. They've They've put little s's in there, but it can be dashes, it can be, you know, it can be lines broken up.
+
+[1126] EEVblog #1126 - Mystery Teardown! — Dave Jones (mention)
+context before: If I release the front panel start stop button, it goes positive. That's interesting. If I keep pressing it, it's just that just doesn't seem right. I expected some sort of serial data packet cuz the 5-V rail's working.
+TEXT: So, even if the analog section was crap, I'd still expect it to be doing the business. So, you know, it's got that 8-meg clock in there. I expected it to be, you know, outputting a stream of data.
+context after: So, but it ain't. Could be we're just one sick puppy. Like I said, if you've got any info on it at all, I cannot find a damn thing. The specs, user manual, a data sheet, anything on it at all, which is quite strange, which leads me to think that it was, you know, developed and and sold by one of the, you know, specialist divisions of Hewlett-Packard, like spun off once I
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (mention)
+context before: So, yeah, you know, few little things you can do. And I got to a point where I've freed up basically complete routing path through here for the bottom side blue traces there to connect all 10 of those chips together.
+TEXT: Those are clocks. So, beautiful. Just by, you know, at like this used to go all the way for example, like this blue trace went all the way up here, just dropped a via down to the other side.
+context after: This one I I actually broke this one. It used to go all the way through like that on the bottom layer, but drop a via down there, take it to the top side for a little bit, and bingo, you can now get a free clear routing space right through there.
+
+[1237] EEVblog #1237 - Old School Teardown: HP3785A Jitter Analyser — Dave Jones (mention)
+context before: Well, I'm pretty much embarrassing myself trying to use this thing. You know, I I just can't get this manual control to adjust the generated jitter. And we can like set through the data.
+TEXT: So, if we do that, of course it vanishes through the word. So, we put it through the clock and we generate our clock, no problems at all. But then how do we generate our jitter on the clock?
+context after: I might have to RTFM, but yeah, I don't even know. I forgot the manual. Anyway, I'm trying. I'm doing my best. I'm randomly pushing buttons like a monkey and uh well, not much is happening.
+
+[701] EEVblog #701 - Keysight 3000T Oscilloscope Review — Dave Jones (mention)
+context before: So yeah, it doesn't have a real in quote marks spectrum analyzer in the thing. It's still using the you know, the basic ADC and doing the math and doing it all in hardware of course in the ASIC, but it it is still very very impressive capability how it can do time correlation between all your mixed signal stuff while doing hardware serial decoding and everything else.
+TEXT: Yeah, thoroughly impressive and we can also have a look at some of the intelligent cursor features and in this case we've got a clock signal, but it's got some noise superimposed in that.
+context after: So we want to get an FFT of that and it'll show you how you can actually go up there and do that. Switch it on and we should get and then we'll turn on our math function and get our FFT and then we can go in here and we can have a look and get our use our cursor, drag it over and bang, intelligent cursor allows you to track
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (mention)
+context before: But I've decided to jump ahead because I'm so excited. I want to find out if we can use AI, artificial intelligence, i.e. chat GPT. It's all the rage. I thought see if we can actually use it to design I some code that will actually drive this serial driver.
+TEXT: So I've basically got the interface that we want to drive here. We've got five 74HC164 chips and these are eight-bit serial shift registers. So it it has a clock coming in here.
+context after: It's got an input data pin. So on the positive going clock edge like this it will clock the whatever data is there through to Q0. And then on the next positive going edge like that it'll clock Q 0 through to Q 1 because if you have a look over here, this is there basically cascaded the Q output or the data output here is actually the then the data input for the
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (mention)
+context before: So maybe all the grunt work is done inside that Spartan 6. But as I said that's not a particularly large unit. So but it's at least handling the ADC input there.
+TEXT: So it is doing that and quite possibly it looks like it's driving out here as well. Like it's generating like there's all these clocks and and control signals and stuff.
+context after: So it's probably going out here and controlling the you know, the local oscillator and doing all sorts of jazz like that. So who knows. So there you go. The warranty has been voided.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (mention)
+context before: Bloody Murphy. Right, so what I can say now is that the micro You know, you can't say the micro is just Oh, the micro is faulty. Let's just replace the micro.
+TEXT: You can't do that. There's no voltage going to it. So, of course it's not going to do anything. Course we're not going to get a clock like we couldn't measure before.
+context after: Now, I've got to decide whether or not it's better to uh trace the power here via the range switch or and the battery or via the external programming header here.
+
+[1323] EEVblog #1323 - PCB Layout Review & Analysis — Dave Jones (mention)
+context before: And you know, things can get a little bit critical. So, yeah, um rather than just like use vias just to drop everything down, like I should you should not be unless you're absolutely at wit's end and you've run out of space, you shouldn't be running.
+TEXT: So, we've got yeah, 1 2 3 4 5 6 7 8 9. Yes, there's nine trace length matched uh layers. So, that's eight data lines plus the clock or something like that.
+context after: That's all good, but look, I mean, you've got something like this, right? You've got this blue trace, wiggle wiggle wiggle yeah, over to here, jumping up through a via onto a middle layer, over to here, and back down to the bottom layer.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (mention)
+context before: Now, I've set up the DSA 815 spectrum analyzer. Well, I haven't set it up. It's just like power on default. It's just full span like this. So, we just want to have a look to see if we can find the signal.
+TEXT: Now, if we get our probe in here like this, and we go very close to our the output pin here, it's a single-ended output on our clock, our 25 MHz clock.
+context after: There we There we go. You can see the clock and all its harmonics right down there. No problems whatsoever. So, if we can now go over our PLL chip, we can't see anything on the PLL chip.
+
+[1322] EEVblog #1322 - JBL LSR308 Studio Monitor Speaker REPAIR — Dave Jones (mention)
+context before: Um, and no, I can't get anything on there when I'm uh booting up or anything like that. There's just no activity. Now, I'm starting to realize, okay, so the processor is obviously uh working.
+TEXT: The clock up here is working. We've got to have some sort of like a preamp thing down on that bottom board. So, I might just start taking apart again.
+context after: And, tada, there it is. Cuz someone could have blown the snot out of that input. So, yeah, you never know. That's just a That's just the switch uh board.
+
+[1394] EEVblog 1394 - Onkyo Receiver Repair - Part 1 — Dave Jones (mention)
+context before: Everything looks fine. The diodes measure fine. Everything's hunky-dory. So, next thing to do is check uh that the chip's actually getting um signals to it. There's couple of resistors down here.
+TEXT: So, on one side, there you go. That's some sort of clockity do dah. On the other side of the resistor, just to make sure it's not being loaded down.
+context after: No, yeah, that's like data. That's data. That Yep, looks like data again. Yep, that looks good. And the other one's just a reset, and that's uh permanently high. I believe that is correct, so it's not reset.
+
+[8P8Af5SR57U] Goal Zero Yeti 400 Lithium Battery Follow--up — Dave Jones (mention)
+context before: There it is there. That four pin jobby that. Yeah. Yeah. There we go. That four pin jobby there. And unfortunately it is not I got a f it is not a direct access to the um batteries.
+TEXT: So it's actually an I squared C um interface. So there you go. Ground um I squared C um the clock and data lines and it just says BMS there.
+context after: So that's going over to the uh battery management um thing on that uh board. So it looks like it is happening on that board or maybe it's controlled via My bloody tripod keeps falling down.

@@ -1,0 +1,35 @@
+# trigger holdoff
+
+Trigger holdoff is an oscilloscope trigger control that disables the trigger circuitry for a fixed period after each acquisition, preventing the scope from re-arming until that time has elapsed.[159] Its purpose is to force a repeating but internally complex waveform — a burst, a packet, a modulated pattern — to trigger at the same place every time, producing a stable live display where ordinary edge triggering produces a jumbled one.[159][200] It exists as a dedicated knob on most higher-end older analog scopes and as a menu setting on essentially every modern digital scope, and it is widely present but poorly understood.[159]
+
+## Principle of operation
+
+On an analog oscilloscope the beam sweeps across the screen, retraces to the start, and the trigger circuitry re-arms ready for the next sweep.[159] The holdoff control inserts an additional delay after the retrace: the beam still returns, but instead of re-arming immediately the trigger is held off for a set time, which is where the name comes from.[159] That time must inherently be at least as long as the retrace period plus a margin for the sweep to settle before the trigger circuit resets, and the control extends it beyond that minimum.[159] Some analog implementations are calibrated in real time units; others are a bare relative control that only lets the time be increased.[159]
+
+A digital scope has no retrace as such, only processing time, and it typically places the trigger in the middle of the record so that pre-trigger and post-trigger data are both available — but the holdoff concept is unchanged: after the capture finishes, triggering is inhibited for a predetermined period.[159] The practical advantage of digital implementations is high-resolution numeric control, allowing a precise holdoff value to be entered rather than dialled in blind.[159]
+
+## The problem it solves
+
+Consider a burst of data followed by a long dead period, then another burst.[159] With plain positive-edge triggering the scope has no way to distinguish an edge in the middle of the burst from the first edge of the burst — every one of them satisfies the trigger condition equally.[159] The result on screen is garbage: the levels are visible and edges can be seen when zoomed in, but the display jumps around and the packet structure cannot be made out.[159] The resulting trigger jitter is characteristically the same width as the packet itself, because the trigger point wanders anywhere within it.[387] Auto-setup does not fix this; a scope can autoscale the signal correctly and still fail to trigger on the packets, because the feature is not smart enough to recognise the structure.[159]
+
+Holdoff resolves it by exploiting the dead time. If the burst is followed by a quiet gap, setting the holdoff so that re-arming falls inside that gap guarantees the next trigger is the first edge of the following burst, whatever random edge the very first trigger happened to land on.[387][1360] After the initial acquisition the scope waits out the holdoff, re-arms during the dead period, and then captures from the leading edge of the next packet.[1360]
+
+## Choosing a value
+
+The holdoff time that works is bounded by the period of the entire repetitive cycle being captured.[159] Two approaches are practical. If the dead time is known — say 100 µs — the holdoff is set slightly below it, around 90 to 95 µs, so that the trigger will only fire on an edge preceded by at least that much quiet time and all other candidate edges are ignored.[159] If it is not known, the control can simply be increased until the display locks up, since no measurement is required to find the working value by hand.[159]
+
+The working setting is a window rather than a single number. In one worked case with cursors placed on the packet, the usable range ran from roughly 40 µs to just under 47 µs; 39.6 µs was close enough to hold, and beyond the upper edge the display broke up again.[159] For a 20 µs sine-wave burst, holdoff values below 20 µs still allow triggering on interior cycles, and stability appears exactly when the setting exceeds the burst length.[387] Values in practice span a wide range: 2.2 µs to steady a complex test waveform during update-rate comparisons,[1478] and 400 ms to lock onto slow serial packets from an air conditioner control panel.[1360]
+
+Minimum holdoff values differ by instrument and represent the scope's own rearm overhead — 500 ns on a Rigol DS1052E, 40 ns on another digital scope, 100 ns on a Tektronix.[159][387][617] The adjustment mechanism is often awkward: rotary controls tend to jump if turned quickly, and velocity-sensitive encoders can overshoot badly.[159][1220] Some instruments also offer a random holdoff mode as an alternative to a fixed one.[1235]
+
+## Side effects
+
+Increasing holdoff necessarily costs acquisition throughput, since the instrument spends the holdoff interval doing nothing.[159] On a digital scope the waveform update rate falls to approximately the reciprocal of the holdoff value: 100 µs of holdoff yields roughly 10 kHz of updates, against about 24 kHz with holdoff at its minimum.[617] On an analog scope the same effect shows up as brightness, because fewer retraces per second mean less beam time on the phosphor — the trace visibly dims as holdoff is turned up.[159] This is useful diagnostically: setting holdoff to minimum, noting the trace brightness, then turning the control up and confirming the trace dims is a quick functional test that the holdoff circuitry works, as applied to the Tektronix 2225.[196]
+
+Holdoff has no value for simple repetitive waveforms such as a plain sine wave, where turning it up merely delays the sweep without changing what is displayed.[159] It is likewise not involved in straightforward edge triggering on a single transition, where trigger coupling is left at DC and noise reject and holdoff are both off.[1678]
+
+## Implementation across instruments
+
+Access varies. On an analog–digital combi scope the front-panel control marked delay position doubles as the holdoff control, acting as delay only when the delayed time base is engaged and as holdoff in normal operation; the fact that it gets a dedicated button reflects its importance.[159] On digital scopes it sits in the trigger mode or trigger setup menu.[159][387] The Tekway DST1102B assigns adjustment to the V0 knob.[487] The Siglent SDS5000X exposes the effect on its trigger output, where the output pulse width visibly changes as holdoff is adjusted.[1220] Absence of the control is a genuine capability gap: the Digilent Open Scope MZ provides no trigger holdoff or trigger delay at all, leaving no way to trigger reliably on a packet following a dead space.[1056]
+
+Capturing once and zooming into stored memory is an alternative for a scope with sufficient record length, but a stable live display remains preferable because glitches and intermittent behaviour can be seen as they happen.[159] Segmented memory addresses a related class of problem for bursty signals.[1235]

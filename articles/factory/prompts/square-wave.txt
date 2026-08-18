@@ -1,0 +1,533 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: square wave
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 100 passages drawn from 77 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# square wave`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1439] EEVblog 1439 - Analysing Veritasium's Electricity Misconceptions Video — Dave Jones (explains)
+context before: So, this is fundamentally set up as a transmission line problem with the 1-m gap between there to give that incredible answer that stunned everyone. Like, "Oh, how can that how can that be?" It's because they're 1 m apart and there's capacitance between the wires.
+TEXT: Of course, you don't have to technically model this as a transmission line. You can just go, "Okay, there's two wires and there's capacitance." And you can just have the capacitors in there, but ultimately, this is a transmission line problem because it's a step response which generates multiple frequencies using Fourier, of course, because a step is made up or any uh square wave is made up of a fundamental plus all the
+context after: harmonic frequencies. I won't go into uh Fourier, but it then it acts as a step response transmission line. And this is exactly what it is, and this is and this answer only holds if they're a meter apart.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (explains)
+context before: Hi, I was playing around with glitches in signals for another thing which I might see a future video on, but I thought it'd be interesting to actually show you the glitch capture capabilities or pulse capture capabilities of modern scopes and actually compare them and see how it useful they are.
+TEXT: Oh, you might have seen one just pop up there. What There There it is again. What I've got is I'm just feeding in a pseudo random 1 megabit per second signal a square wave signal into this and it's got a random glitch both positive like going from the negative going up like this and also from the positive going down like this at about a volt and a half or something like that and it's
+context after: doing those random glitches about every 15 milliseconds and unfortunately glitches are something that you might actually encounter sooner or later if Murphy's going to bite you on the backside.
+
+[504] EEVblog #504 - UPS Tutorial & Teardown — Dave Jones (explains)
+context before: But it's exactly the same thing. They just uh getting higher power dissipation, better power dissipation there. So, um basically, I won't go into H bridge in detail, but basically, you can switch pairs like that, which then you can alternate the polarity on your transformer there.
+TEXT: So, that's how you can switch it. But then if you just switch them off and on and had just a simple square wave uh output, which the cheaper UPSs do because when you turn on a MOSFET, you know, they've got very low on resistance so that when you um uh yeah, if you just do a square wave output, then uh these things turn on hard and there's not a huge amount of
+context after: power dissipation in these MOSFETs. Although they try to, you know, there's things with gate capacitance and everything else. But and driving conditions, we won't go into any of that detail.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: It's pretty darn basic. If we take a look at the waveforms here from the patent, we can translate those to the Davecad schematic, and I've labelled them exactly the same as the points on the waveform. So point A is our AC input, and that's a reduced
+TEXT: voltage input dependent upon the voltage divider there. And B is of course the squared up input, because that's what a Schmitt trigger does. A very slow-changing, varying input signal as it transitions through the Schmitt trigger threshold levels squares up the input. So you sine wave in and you get a square wave out, assuming it meets
+context after: the threshold voltages. So what's point C here doing? Why have this resistor and cap at all? It doesn't seem to make much sense, because if you look at signal D here, this output D is just an inverted signal of point B here. And if you are talking about the 50 Hz signal
+
+[1724] EEVblog 1724 - BWD 603B MiniLab RETRO TEARDOWN — Dave Jones (explains)
+context before: And it it's going to 5 V. I was measuring 6 V. So, I'm sure I say maybe the 5-V rails out on that thing. The internal power supply. But, yeah, that's kind of poor, isn't it?
+TEXT: The TTL output is just a pull up. Come on. Get some symmetry on your output drive, please. Triangle buffer and sine wave shaper. So, there you go. It looks like yes, so they're doing the So, they're generating the square wave, converting it to triangle, and then they're smoothing it out to your sine wave shaper there.
+context after: So, it does the job. And there's a change note dating from at least '81. But, as I said, this is definitely a 1977 model. So, not sure what's doing there.
+
+[933] EEVblog #933 - Keysight U1272A EMC Issue — Dave Jones (explains)
+context before: you know, he played around finally narrowed it down using a function generator to a noise pickup and I'll show you this right now. It's some sort of you know, conducted common mode thing.
+TEXT: I anyway, let's have a go see if we can recreate it. So what I've got is the U1272A connected to my function gen here and I've got a 5 megahertz of frequency does matter as we'll see in a minute 10 volts peak to peak square wave okay, touchy-feely and I'm just going to take just the positive uh terminal here.
+context after: Here we go and I'm going to plug this in on the amps range. Okay, so well, it's milliamps it'll switch down so when we plug it into here and look what we get.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: discharge curve here, it won't instantly go back there, it'll go through both thresholds, and that'll change the output waveform D to be different from just an inverted version of input signal B here. And that will start to affect the smoothing value that we'll look at
+TEXT: in part E here. So we get our output signal D, which is a square wave, once again based on our input 50-60 Hz waveform, and it just smooths it out between the threshold voltages of this Schmitt inverter down here, based on the value of these two resistors need to be set, just to put it smack in the middle
+context after: of the threshold voltage. So once the input goes above a certain level, and that's to get rid of any issues with like a duty cycle, if noise does get through and it's not the correct duty cycle, then it probably may not actually reach the threshold voltages or something like that.
+
+[1072] EEVblog #1072 - KRK Rokit 6 Studio Monitor Speaker Repair — Dave Jones (explains)
+context before: So, that's okay. So, maybe um Wait. Well, of course, because you saw how it was like physically shaking. I could feel the vibe. Huge excursions of the cone on that tweeter.
+TEXT: And they're not designed to do that when it was applying that 40 V peak-to-peak square wave across it. And um we probably caused some mechanical damage. So, they could uh certainly um cause the distortion I was hearing, plus maybe it feeds back cuz I was measuring directly across the coil there.
+context after: So maybe that was affecting the drive that was seen on the scope. So anyway, let's have a look at the drive signal without the tweeter. And that is as clean as a whistle without the tweeter on there.
+
+[809] EEVblog #809 - Mailbag — Dave Jones (explains)
+context before: So it's basically a uh a glorified uh comparator and it plugs directly into your breadboard like that. You can just plug the thing straight in and then plug sine wave in.
+TEXT: So that's kind of handy or basically any type of uh signal. It can be, you know, anything, any magnitude or whatever. This thing will uh clean it up, tidy it up, and convert it into a nice usable square wave you can feed into your microcontroller or use as a reference, whatever.
+context after: Neat. And there's not much doing in this, of course. It uses a Texas Instruments TLV 3501 uh comparator here. It's got some hysteresus, so you know, you don't want to be flapping around at that edge point, do you?
+
+[652] EEVblog #652 - Oscilloscope & Function Generator Termination Demo — Dave Jones (explains)
+context before: That's because the the transmission line effects, the reflections are subtracting from going back, reflecting off this end, and then subtracting at the input here to the scope. So, your signal at your oscilloscope can actually vanish if you're not probing things properly and terminating things properly.
+TEXT: Now, one way to demonstrate this is to instead of using sine wave, use a square wave. I'm just using the output of the Rigol function gen, so it's not incredibly sharp, but as you know, a square wave edge like that generates a whole bunch of uh you know, harmonic frequencies.
+context after: So, watch what happens if we take the same coax cable. Look, you know, it's pretty nice edge there. It's all compensated very nicely cuz it's terminated in a 50-ohm impedance.
+
+[713] EEVblog #713 - Voice Recognition - 1980's Style — Dave Jones (explains)
+context before: So they've got the 10 meg resistor here in combination with this adds a bit of hysteresis there, and we're also setting this offset here. And it's important to have this threshold value actually lower than our offset value there. So that's all that does.
+TEXT: It squares up the signal, feeds it in there. It's not going to be a perfect square wave, but it's going to be good enough for the purposes here. So we're just using another 1 quarter of our LM324 op-amp as a crude comparator. Ideally you shouldn't use op-amps as comparators,
+context after: they're very poor in that respect, but hey, it's good enough for something like this. What are you doing, Sagan? Show us. I'm putting on green LED and red LED. I found some green ones. See? Are you going to put some dropper resistors on there as well?
+
+[1448] EEVblog 1448 - Convert a Fluke 77 IV to True RMS for 10 CENTS!* — Dave Jones (explains)
+context before: But, what happens when you don't use a sine wave? Well, we have the handy table here from uh the data sheet. You can actually um calculate these yourself. So, for an undistorted or uh perfect sine wave here, um we should, of course, get exactly the same value.
+TEXT: There's 0% error between an RMS meter and an average responding meter cuz these are calibrated for a sine wave. So, you get 0% error. But, if we change this to a symmetrical square wave, i.e., 50/50 uh duty cycle square wave, then we should get an error of plus 11%.
+context after: And sine to square, it should stay at 1 V RMS. This remains the same. Bingo. There's our 11% error, very close to it. So, a triangle wave, we're looking at a minus 3.8% error.
+
+[56] EEVblog #56 - Agilent U1253A OLED Multimeter Review & Teardown — Dave Jones (explains)
+context before: And yeah, I you like you can get a a real sense of a very thick um silicone insulation on them, too. You get a real sense of um you know, safety with these things and confidence.
+TEXT: I love it. Now, the other really neat feature of the Agilent is the um signal generator output mode they've got here. And uh you plug it into the milliamp uh jack and it outputs a outputs a 3-V square wave at a selectable frequency down here, anywhere from 0.5 Hz.
+context after: You can adjust it, you decide. And here it is. I've got uh this one's uh 150 Hz and there it is on the scope, as you can see. And I can adjust the adjust the frequency and boom, and that's a 3-V square wave.
+
+[1046] EEVblog #1046 - Mysterious Digital Voltage Doubling (LCD design) — Dave Jones (explains)
+context before: So let's say that we have a 74HC04 inverter, for example. You're familiar with those? I'll show you this on the bench in a minute that this actually does work. And it's powered from your typical plus 5V. So you've got plus 5V, so you've got your circuit ground down here,
+TEXT: and you're feeding a 5V peak to peak square wave. And, of course, if you measure just the output here, we'll call that B, you get your 5V peak to peak square wave, right? It goes from 0 to 5, 05, 05. But if we probe across A and B, the input and the output here,
+context after: because they've got alternate phases, because it's inverted, and this is exactly what we're doing with the LCD. We're effectively connecting the LCD across the input and the output of an inverter like that. You magically get 10V peak to peak. And this is not just some theoretical, you know, magical pie-in-the-sky thing.
+
+[cBNOxg8Px8M] Playing with short current pulses on multimeters — Dave Jones (explains)
+context before: Hi, this is just a quick video just comparing some meters here based on a discussion on the EEVblog forum. We've got the BM235, the Keysight U1272A, the BM869. We've got the new $150 class meter which I've ordered, and we've got this mystery meter over here as well,
+TEXT: which actually performs in this particular test the same as the 121. I just didn't want to put too many meters in series here. Anyway, what we're doing is we're putting in a... we've got a 60 Hz repetitive square wave here with a pulse width of 5 milliseconds.
+context after: And we can shorten this, but let's just use 5 milliseconds here. And we've got a 50 ohm source, and I'm just driving them all in series. I've got fixed current ranges on all of them, so they don't auto-range. Now, watch this. This is the interesting bit.
+
+[1715] EEVblog 1715 - Euler Precision eSAP-30 3GHz Active Probe REVIEW — Dave Jones (explains)
+context before: This is a 1 gig bandwidth scope, 14 bits. Beautiful jobby. Um, of course, we've got the Agyant N2796A uh probe on here. So, I'll use that first. I've got the little low inductive uh tip like this, and this one has the probe built in.
+TEXT: And we'll just probe the clock on this Altera Cyclone 2 here. It's this little crystal oscillator uh jobby here. It's only only in quote marks only 50 megahertz, but because it's a square wave, it has uh frequency components going into the gigahertz range.
+context after: So, it's all about the wave shape we're looking at. So, I'm going to probe the output here. There's a tiny little V right down in there, if you can see it.
+
+[UJjMt2-k99c] What Is An Oscilloscope? — Dave Jones (explains)
+context before: Sorry about that. Okay, let's go up here. Oscilloscope probe. And I'll actually measure a probe adjust signal. Oh, hang on. There we go. There we go. We now have an example of a fast change. In this case, it's only a one kilohertz signal,
+TEXT: i.e. it changes a thousand times per second. But we can see this square wave here, which goes across, up very fast rise time in here. And we can actually see-- there we go. We can see that's like one microsecond per division. So one division here,
+context after: that is rising-- that signal is rising in one microsecond, or one one millionth of a second. There's no way you'd ever see that on a multimeter, even though multimeter technically, if it had a fast enough converter and everything else, you could actually see it.
+
+[1046] EEVblog #1046 - Mysterious Digital Voltage Doubling (LCD design) — Dave Jones (explains)
+context before: Your reference is now up here, and you're flipping like that. So, you're flipping the polarity, so it's got to be double relative to one of those pins. I hope that's clear. Let's just go to the bench and verify this. Okay, so what I've got here is a 74HCR14, which is a hex Schmitt inverter.
+TEXT: It's a Schmitt trigger, it's just the same as the 04, but it's got Schmitt inputs. By the way, I powered that from 5 volts, and I'm probing the input and the output. So, I'm just feeding in a 1 kHz square wave, and we're getting the inverted out.
+context after: So, channel 1, channel 2. So, let's have a look up on the scope here, and exactly what we get. This is exactly the same as the last video, basically. We've got 5 volts per division here, okay? So, 5 volts and 5 volts for both channels, and you'll see that they're one division.
+
+[1138] EEVblog #1138 - Systron Donner Counter Teardown — Dave Jones (explains)
+context before: So, you can really see the difference there. Fantastic. Check out the update rate on this baby. Look at that. They're going so fast you can't see them. Woo. That's counter mode.
+TEXT: WOW. THAT'S FANTASTIC. THIS thing looks like it works a treat. Well, she works. Check this out. I've set it to uh rate A here and I've set to 1 kHz range, so 1 Hz resolution here, generating just a 1 kHz uh square wave here and it's bang on.
+context after: But look, you've got to press the manual reset button. It doesn't work. Like if I just suddenly, you know, take that up to 10 kHz or something, it doesn't work.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (explains)
+context before: But, we'll start out by viewing the waveforms with no load. And you'll see we'll get exactly what we saw on the whiteboard. And this time, just for fun, we'll use our GW Instek GDS-2304A VPO oscilloscope.
+TEXT: Now, the yellow waveform here is channel one, the blue waveform is channel point two, and the purple waveform there is the output channel three. So, there's our input uh waveform there, 0 to 5 V square wave coming from my function generator.
+context after: And point number two, as you can see, it inverts just like we saw on the whiteboard. And then, our output voltage, of course, we've got no load, it's just flat like that.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (explains)
+context before: Let's go. Okay, let's measure the waveform update rate for this. Now I already know it's supposedly not that great according to Andy Ted in one of my second channel videos, but let's actually measure it cuz it's not on the data sheet.
+TEXT: Unlike the series 3, which is here is the spec sheet for it 200 up to 280,000 waveforms per second, which is not too shabby. So what I've done is I've set the auxiliary output here to trigger and I'm feeding in a 1 MHz square wave like this.
+context after: I've got nothing else turned on, so it's doing absolutely a bare-bones and we can actually measure the output. Here it is here. So this is the trigger output, so this is our waveform update rate in waveforms per second and you can see we're getting 1.9 K waveforms per second, but you'll notice that it's very bursty like that, right?
+
+[1743] EEVblog 1743 - Mechanical Vibration Detection with your Oscilloscope Probe — Dave Jones (explains)
+context before: It can hear that capacitor emitting. It's really something. You can see it on the frequency spike there. You might have noticed that the peak is actually at about 22 kHz.
+TEXT: It's actually double the frequency. So, it's actually a harmonic of the frequency that we're driving it at. Because we're driving it with a square wave. Now, watch what happens with this frequency here if I sweep it from 2 kHz to 20 kHz.
+context after: Watch this. The spot's going to jump around. You'll notice those peaks are sweeping. That was a 30-second time period. I'll lower that. Okay, I've now got a 10-second sweep.
+
+[8OaZ89TN0fo] Guest Video: OpenTechLab - IcoBoard FPGA Experiments — Dave Jones (explains)
+context before: Now, in order to achieve this, we're going to be using the 100 megahertz crystal oscillator input, which is the main oscillator on the ICO board. And we need to divide this frequency down to the point where it will be visible as a square wave of low enough frequency
+TEXT: that we can actually see it properly as a flashing light. And so what we're going to do is we're going to use a binary counter. And a binary counter, of course, counts up in binary, but also it ends up producing a series of square waves
+context after: where each bit ends up being half the frequency of the one above it. So the zeroth bit will flash at 50 megahertz, the first one at 25, second at 12.5, and so on and so on and so on down until we get 6 hertz, 3 hertz, and 1.5 hertz, which will be a nice speed to have the LEDs flashing at.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (explains)
+context before: It's just absolutely incredible. Okay, so what I'm going to do now is I'm going to experiment with this sucker and see if we can get it to actually simulate a car plugging in.
+TEXT: Now, as I said, it all happens on the CP or control pilot pin here and this is basically outputs a 1 kHz square wave. And as I said, the duty cycle of that will then indicate to the car what the maximum charge current it can take is.
+context after: And there's a formula for that. I'll put it up here. Here you go. So, now here's a diagram of from stole it from Wikipedia about basically what's going on here in terms of the car.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (explains)
+context before: Okay, so we've got the waveform generator connected to the digital filter and I've got the digital the output of the digital filter on output two. Right? Oh, yeah, that's yes, output two.
+TEXT: So that should work and I'm generating a 100 kHz square wave with my function gen. It's going into the digital filter and the digital filter it looks kind of cool like, you know, I can do like an eighth order Butterworth or whatever.
+context after: The sampling rate it looks like there only these selections here, okay? Well, let's go for 3.9 meg sample rate for our digital filter, okay? I got it rolling off at 100 kHz.
+
+[80] EEVblog #80 - Nokia E71 + Garmin Mobile XT = Embedded Hell — Dave Jones (explains)
+context before: So, you can actually see the standby power consumption. It was fantastic. So, it allowed users to actually compare their phones and sure enough, I don't have a shot of it anymore, but I'll see if I can find one on the net, but the Nokia uh means the Garmin mobile XT software, that little secret utility in there, what it would do is when the phone's in standby mode, for some reason, it would
+TEXT: come on and you would see a a square wave pulse like this of, you know, over, you know, several seconds that it'd go high and then several seconds that it'd go low and it would pulse like that when it's in standby mode.
+context after: And that would greatly increase the average standby power consumption. And in this case, it was like um there you go, it's it's just switched off there. It just went into standby for a few seconds and now as you can see, the average value dropped like that and then when I switched it back on just then, it pulsed up and it went down.
+
+[NvIv-0-R6qQ] Guest Video: TannerTech Designing a Frequency Counter — Dave Jones (explains)
+context before: and see that this thing counts all the way up and then goes back to 0 once it hits 999. Alright, so as you can see right now, I have this thing working pretty good. I have all the decade counters wired up in this huge rat nest of wire,
+TEXT: and as you can see, it's counting up right now. I have this whole setup hooked up to my frequency generator, and as you can see, it's putting out a square wave right now of 110 hertz. Now if we look at the square wave,
+context after: you can see that it's running at a duty cycle of 20%, which means it's on 20% of the time and off the other 80% of the time. So if we look at the frequency, we can actually mess around with this and we can change the speed at which the numbers count up.
+
+[937] EEVblog #937 - Retro Canon Still Camera Teardown! — Dave Jones (explains)
+context before: You can usually get these little motors to flip at a volt or two. So you usually, like, start out with a volt on your power supply and hook it up to the motor and you can get it to do stuff. Now, I was able to get it with my power supply,
+TEXT: but I've hooked this up to my function gen. I've got it set to 8 volts peak-to-peak before I actually got it to do this. And I've got a 1 hertz square wave. There we go. Look at that. Sweet. See the iris moving open.
+context after: And if I increase the amplitude, it should open all the way. And that's with an 8 volt sine wave. There we go. It's a, what's that, a four-bladed iris, is it? Okay, let's take that up to 10 volts peak-to-peak. Square wave. Yeah, it's opening more now.
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (explains)
+context before: We've got our bang on 10 microfarad capacitor there. We've got a 1K resistor in series with that, so we've got that RC circuit I showed you on the board before.
+TEXT: So, we should be able to see the charge of the capacitor there. And I've got that hooked up to my function gen here, and I've got it out putting a square wave, so we get a nice big step change from 0 to 5 V.
+context after: Remember, this is a 6.3 rated cap, so we're safely under that 5 Hz repetition rate with a 20% 5 Hz frequency with a 20% duty cycle. So, that'll allow us to see the charge and discharge cycle of the capacitor.
+
+[652] EEVblog #652 - Oscilloscope & Function Generator Termination Demo — Dave Jones (explains)
+context before: Bam! Everything changes because the length of a stub here. And I'll just give you a very quick whiteboard explanation of what's happening here. Now, you know that the a square wave by your Fourier uh theory is made up of or can be thought of or for practical purposes is made up of a fundamental frequency plus all of the odd harmonics at low at diminishing diminishing amplitudes.
+TEXT: And when you add up all these uh sine waves, it gives you a square wave. So, a square wave has many different frequencies contained in it. And for a transmission line, that's a big deal.
+context after: So, what we've got here is our signal generator. Okay, we're going through the first bit of coax, but it it doesn't matter. We're basically talking about the signal on the 50 ohm load at the oscilloscope.
+
+[296] EEVblog #296 - AIM-TTi I-Prober 520 Current Probe Review — Dave Jones (explains)
+context before: That's a key part of it. And pretty much, what you want to when you design a fluxgate magnetometer, they're designed to detect magnetic fields. That's how they work. So, this black arrow here, this up direction, we'll take that as the reference direction of the magnetic field that we want to measure.
+TEXT: Okay? So, it's just a simple coil of wire around a low saturation core like this. And it basically they the drive signal just goes positive, negative. It'll be a square wave like this.
+context after: So, it drives the core into saturation and you can effectively split it down the middle into two halves like this. So, there'll be flowing through that way and there'll be one flowing down like that.
+
+[1140] EEVblog #1140 - 3 CENT Micro LED Blinky with ICE! — Dave Jones (explains)
+context before: So T16 so it's 16-bit timer here and we've just got some extra code here. Oh, I've got to take this out. I was just sticking around here. A code which will use our timer here and now it will toggle our pin slower.
+TEXT: Hopefully, we'll get a 1 Hz square wave out of this thing. So I we haven't figured out like delays and stuff like any sort of like delay routines and stuff like that we've got.
+context after: So we're just using the timer. There you go. So interrupts not being used. It's just warning us. Use We use four memory. Remains 60 unused memory. So we're using four bytes of memory or 60 you know four words of memory and we've got 60 unused words of memory left and ROM ROM size for the 160 last year's code remain free.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (explains)
+context before: Okay. I'll check it out. We can We can probe it. We can probe it. Right, we can probe A. That wasn't obvious. I didn't know what that did. We can change your input offset.
+TEXT: Okay, cool bananas. Right, right. So, we're generating our 100 kHz square wave. Whoa! There we go. Right, so we're input A, right? So, there's our square wave. Okay. All right.
+context after: Okay, so we've got our 1 V peak-to-peak 100 kHz square wave. Okay, great. Can we probe this one as well? There we go. We can now probe it. Okay.
+
+[626] EEVblog #626 - Ceramic Capacitor Voltage Dependency — Dave Jones (explains)
+context before: Here we go, we're 2 volts per division, and like the characteristic of the charging of this thing has changed. Oh, man, you definitely don't want to use these for any sort of timing application.
+TEXT: And what happens if we add a bias level? We'll add a 9-V DC bias level. Remember, this is a 16-V cap. This cap will only go up to 10 V maximum output voltage on a square wave.
+context after: So, we're going from 9 to 10. So, we're going back to that 1-V uh difference, that 1-V change. But, let's have a look at the waveform, and this is what we get.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: Yeah, the segment will come on, but then your average DC value relative to your common pin is 5 V, and that's going to eventually kill your LCD. So, while this might work, in {quote} marks, do not drive your LCDs like this.
+TEXT: You want and need a 0-V average value for your drive signal. 100-Hz continuous 100-Hz square wave. And as you can see, the segment is on, but the contrast isn't that great."
+context after: Now, let's have a look what happens if we actually adjust the DC offset of the signal. So, let's actually shift this down like this, and you can see that if we actually take that to zero DC offset, so we've got plus minus 2 and 1/2 V still 5 V peak to peak, you'll see that it's actually vanished like that.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: So, this is the big cable that you've got connecting this thing. We have no details on that, okay? So, this has to come over, and this has to drive your serial clock line all the way over here like this.
+TEXT: Now, you could actually probe this with your scope and find that, you know, at the output here you have a beautiful, you know, nice square wave, something like this, okay?
+context after: Well, by the time it gets over this dodgy transmission line, which luckily you're not taking that 150, you know, that 100 milliamps, 10 to hundreds of milliamps, gulps of current from this board over here.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: So, if you're in any any of these modes, all you got to do is hit the Hertz button up the top here and you can get the displayed frequency in Hertz, kilohertz, and then the and pulse width in milliseconds as well and the duty cycle.
+TEXT: Excellent. And does that actually work? Well, let's try it. I got a square wave at 1 kilohertz with a 2.5 volt offset. The duty cycle is 20%. It's displaying 1 kilohertz.
+context after: Let's go in there and it's displaying the pulse width and you can swap between the That's the negative going pulse width of 0.8 milliseconds. We can swap that. 0.2 milliseconds on the high and you'll see it change over there.
+
+[1072] EEVblog #1072 - KRK Rokit 6 Studio Monitor Speaker Repair — Dave Jones (explains)
+context before: The speakers basically come straight out. All right, let's turn this puppy back on, hook the scope up to the output. I've disconnected one lead of the tweeter, so let's put it on.
+TEXT: We're on what, 50 volts per division or something like that. Let's have a go. Hey, there we go. Just as I thought. Big-ass square wave, cuz that's what it sounded like.
+context after: There you go. At what frequency? Interesting to note that it takes a few seconds to come on. I did see a relay on that board, so it's like got power on thump protection or whatever it is it's called, but yeah, well, there's your problem.
+
+[469] EEVblog #469 - Cockcroft-Walton Multiplier — Dave Jones (explains)
+context before: This is it's not ground, it's just a circuit reference point. So, G and that's at 0 volts. It's an AC signal we're getting out of the transformer. So, the voltage at point A there is this AC square wave.
+TEXT: No, it doesn't have to be a sine wave. In fact, in most cases, it is actually a square wave, okay? And B, in the uh green waveform here, will be our output waveform.
+context after: And as you can see it you end up with a voltage doubled signal. So, how does it do it? Well, it's actually very easy. Let me take you through step by step.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: Okay, I've turned on a 1 MHz square wave at the same uh Look at the what? Oh man, okay. Well, that's yeah, that's the undershoot. All right, so let's uh Let's scale this thing back out.
+TEXT: Here we go. There we go. All right. Now look, here's a this is a 1 MHz square wave. Look, it's just absolutely useless. Let me uh get the trigger set in on that.
+context after: So man, this I keep doing this keep hitting these buttons wrong. So let's get it way back down so it triggers properly. There we go. It should Yeah, it triggers now, but look at the undershoot and the overshoot.
+
+[453] EEVblog #453 - Mysteries of x1 Oscilloscope Probes Revealed — Dave Jones (explains)
+context before: You know, there's a little bit of change there, but the amplitude stability of this I don't know the spec, but it basically That probe is just fine. It is not attenuating at all because it has a rated bandwidth of 350 MHz on times 10 mode.
+TEXT: And of course, that bandwidth limit is going to kill any high frequency content like this square wave, for example. Here's a 10 MHz square wave on times 10 mode.
+context after: bandwidth of our probe is 350 MHz. And of course, it looks like a square wave. I didn't see the overshoot in the actual signal fidelity in there. But, if we switch it to times one, that bit Look at that.
+
+[717] EEVblog #717 - How To Hack Vacuum Fluorescent Displays — Dave Jones (explains)
+context before: So, anyway, we can get in here, and we can probe. These are the two pins on our uh filament. There we go. And the average value you can see in the bottom uh left-hand corner there, 6.8 volts.
+TEXT: That's actually uh reasonably high for a an RMS uh uh voltage. Anyway, you can see it's not a sine wave. It's just a uh square wave, that's which is just fine.
+context after: That's very typical. And bingo, look at that. I found our flashing cursor. You have to look through all the pins. Of course, it's going to be in the physical vicinity down here.
+
+[1089] EEVblog #1089 - XTAL Oscillator Teardown — Dave Jones (explains)
+context before: Just allows some standoff there. Anyway, this is a complete oscillator. It basically contains, well, it will contain a crystal of some description. They do come in many different types and physical form factors and things like that, but this will also have, in this case, it's a HC MOS oscillator circuit in there.
+TEXT: You've got there's a power pin, a ground pin, and a not connected or a like a tristate enable pin and an output pin on it. And it outputs a square wave.
+context after: It has a proper oscillator and an output buffer. Because this actually comes from the previous video where I actually had this CMOS oscillator on here and I did actually consider at the time, well, does this have a bypass capacitor built in?
+
+[908] EEVblog #908 - Zener Diodes — Dave Jones (explains)
+context before: Now there's like 200 plus mV differential. Big difference. And a very simple clamping example. Here I've got a 5.1 V Zener, a 1K dropper, and the yellow waveform is the input.
+TEXT: Uh, it's uh just a 7 V square wave, which just goes down to it goes between 1 and 7. Uh, and the blue waveform is the output across the Zener diode.
+context after: And you can see both 1 V per division. The Zener diode clamps that output voltage at 1, 2, 3, 4, 5 V. I've got both uh channels set to the same ground position or reference there, and it clamps the output nicely, and it's going to do it very, very sharply.
+
+[1032] EEVblog #1032 Part 3 - John Kenny Keysight Interview — Dave Jones (opinion)
+context before: One of the ones I find the most amazing is what we call Trueform. Trueform is really a trade secret that I can talk around without giving the trade secret. If you look at a traditional DDS style function generator, DDS is great because it's cheap
+TEXT: but it's got all sorts of problems. It's got jitter, it doesn't work well for other types of square waves, for example. Square waves are horrendous with jitter in DDS technology. Trueform has allowed us to dramatically simplify the structure of a function generator. I don't know if you're aware,
+context after: they would not generate square waves with a DAC. They would generate a triangle wave and they would run that into a comparator. No, no, no. You would have a limited two or three different slew rates and you would have a 10% minimum duty cycle.
+
+[NvIv-0-R6qQ] Guest Video: TannerTech Designing a Frequency Counter — Dave Jones (opinion)
+context before: So right now, you can see that the frequency is 539, which means it's 5.39 kilohertz. That is really accurate to my function generator, which is at 539 kilohertz too. All right, so for the future, I may actually make this display a lot better.
+TEXT: I may use Nixie tubes. I may even just replace this Arduino with a completely analog signal generation source where I can just control the control voltage pin of the 555 timer so we can trigger each pulse at the right time. Now also, this only works with square waves for the time being.
+context after: But in the future, I could actually make this work with sine waves. All right, so in a sine wave, whenever it goes high, we can use a comparator. And that comparator will read whenever it goes high for each time. And every time it goes high, it'll just give one pulse like this.
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (opinion)
+context before: And sure enough, they did. I believe, I think like everyone's like actually received a replacement now or whatever. And there's massive, you know, dozens and dozens of pages on the EEVblog forum talking about the issue. But they came to the party, they owned up to it and they fixed the issue
+TEXT: and we've got a new multimeter to check out. Just a quick recap here, if you take a function gen like this and do a 10 MHz sine wave, square waves, worse, you know, like a few volts peak-to-peak, it starts to happen, 10 volts peak-to-peak, it goes off the scale
+context after: and you've got your banana plugs like this, nothing else plugged in here, nothing up my sleeve and I just plug this in to the amps jack and it detects that it's on amps and boom, look at this. I mean negative 4 amps and look at this, it has some spooky action at a distance.
+
+[1594] EEVblog 1594 - Inside a Quantum Computer! with Andrea Morello — Dave Jones (opinion)
+context before: Let's go up here where it's a little brighter. From the dark blue to the green. Right. Right? Which means zero current to finite current. Now, when does that happen?
+TEXT: That's the randomness. And that's why it's called random telegraph signal. It's not a square wave. Right. It's got some randomness in the interval between the switches. it's almost randomly pulse width Yeah.
+context after: modulated. Yeah, yeah, yeah. But, there is a there is a time scale, right? So, you have slow random telegraph signal, fast random telegraph signal. So, you can actually show Steve, you want to show?
+
+[316] EEVblog #316 - More PFANG, More 13GHz Scope, & More Pulser — Dave Jones (opinion)
+context before: And he of course he's got AC coupling on the output. So let's uh short that AC coupling cap on the output and uh give it another try. Well, the AC coupling fixed it, of course, but um we've got the issue of uh the Pang is uh clearly do is um outputting that higher frequency, sorry, the lower frequency signal there on top of the uh high frequency 20 ncond pulse that we had in
+TEXT: there. So, we got to fix that one, too. And that fix was dead easy, of course. I just put it to square wave mode and went, "Ah, be done with it." Here we go.
+context after: So, here's our here is our output pulse. There's some ringing. Certainly some ringing there. Some overshoot and then some ringing. So, that's not that great. But in terms of, you know, if we take sort of the average rise time of this thing, we are talking 250 picos seconds.
+
+[131] EEVblog #131 - Live Show #7 — Dave Jones (mention)
+context before: So, hopefully I haven't, uh, busted it. Ta-da! There we go! And I just think it's really cool, I loved having the tens of seconds here, just ticking over, I, it'd constantly fascinate me, and I'd watch it and I'd waste half my life just watching my clock.
+TEXT: Anyway, I thought it was really cool. So there you go, there's some real old-fashioned, um, uh, hobby engineering from the, uh, from the early 80s. Yep, I love it. 4000 series CMOS is great. Ahem. Whew! What's a clock source? As I said, the clock source, it uses the mains, it uses the, it uses the 50 hertz from the mains, um, and it, it divides that down, it input filters it, there's a small filter on the input, it divides it down, converts it to a square wave, and, uh, and that's, and that's the clock source.
+context after: And it's very accurate. The 50 hertz mains here in Australia, and I'm sure in other countries, is, uh, is quite, um, uh, accurate over the long term. Over the short term, it, it, it drifts a bit, but over the long term, it's the most accurate clock I've ever had.
+
+[1448] EEVblog 1448 - Convert a Fluke 77 IV to True RMS for 10 CENTS!* — Dave Jones (mention)
+context before: So, here it is, undistorted sine wave. So, perfect sine wave, if you've got a true RMS meter, it gives you 0.707 of the peak value, and an average responding meter will also give you 0.707.
+TEXT: There's no error whatsoever, and they give you the error over here, zero. But, you put in any other wave form, a square wave, a triangle wave, noise, rect- a pulse wave, you know, SCR switching wave form, which is like a switching thing, and then no, it's not a sine wave, so you're going to get an error on your average responding meter, and that can be some of these errors can be
+context after: pretty high, right? You know, it's it's not a huge amount. If you're talking about, say, a triangle wave or something like that, like 3.8%, it's not much, but the further away it gets from that ideal sine wave, the more error you're going to get.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (mention)
+context before: It is not triggering, right, so okay, it's not triggering. That's why our data is not coming up. Okay, fair enough, but why the hell is it not triggering? That signal is there. Look, I'll, here we go, look, I'll plug this same thing over to here, okay, and let's do the bandwidth thing, there we go, there we go, look at that.
+TEXT: Okay, so that needs compensation, obviously, that's, you know, it's poorly compensated. But it works, yet I plug it on this scope, and it doesn't. And the exact same thing happens on channel two, when I set the source to there, and I've set it up, and look, if I actually plug in a signal here, there we go, I'm plugging in like a one mega square wave, it triggers.
+context after: No problems at all. And, like, if I go back to channel one, it's the same thing. If I go back to channel one, it's there. So bugger it, I've had enough of using this thing to probe its own clacker. Let's have a look now at hooking up the SPI line here.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (mention)
+context before: We don't know unless Rigol actually come clean and admit exactly what the issue is and what they did to fix it, but I thought we'd not only reproduce the problem here before we update the firmware, see if it works, but this thing open, have a quick sniff around with an EMC probe, see if we can get that signal.
+TEXT: Let's give it a try. So, consider this our before shot for the 5 microsecond jitter. Here it is, we've got a 20 MHz square wave going in. We've got our 5 microsecond precisely offset and I've got infinite persistence on there and you can see pretty much it's doing just maybe a division maybe, you know, 1 and 1/2 little graticule positions there.
+context after: So, it's 5 nanoseconds per division. You know, it looks like it's maybe 1.5 almost 2 nanoseconds jitter on there. Not a huge amount, but as I said in the previous video, my unit is not a particularly bad one.
+
+[1213] EEVblog #1213 - The Oscilloscope Interpolation Trap! — Dave Jones (mention)
+context before: looking at digital signals, for example, you can really come a-gutser. As we saw at the start, this can happen right at effectively very low frequencies if you run out of samples. You can really come a-gutser like that when it should look like that.
+TEXT: And it's just the memory depth of that. When it just has so few samples and you're looking at a different signal, you're looking at a square wave, in this particular case, nothing high frequency. It's got nothing to do with the bandwidth. You can reduce the bandwidth here to 20 meg and it's not going to make a difference.
+context after: You still go into it. You see there was very little difference in that data between the full 200 meg bandwidth. And if we do that again, we're still screwed because we don't have enough samples because we've only got 14k points. Whereas if we go up to enough memory or we choose a lower horizontal value,
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (mention)
+context before: If it's not a perfect sine wave, it's going to give you an error. It's not going to be accurate. Because the multimeter has only been calibrated to assume a perfect sine wave.
+TEXT: To give you another example from digital electronics you might be familiar with if you've got a V here so that that goes up to 1 V there. This is time and if you've got a pulse width modulated square wave that is like this let's say that this is 10% of the time this and it's zero 90% of the time like this.
+context after: What is the average value going to be? Well, our axis is zero volts down here like this. Everything's above the axis it's not actually an AC waveform it doesn't go negative but this can actually apply to it doesn't matter where the reference point is.
+
+[878] EEVblog #878 - Oscilloscope High Res vs Average Modes — Dave Jones (mention)
+context before: So what are the differences between this traditional mathematical averaging mode or this high resolution or sometimes called boxcar averaging mode? Well, it can range anywhere from between very little to essentially nothing in a practical measurement application to be in a huge difference which can greatly impact your measurement accuracy or what your entire waveform even looks like.
+TEXT: So it's really important to understand the differences between these two modes and not everyone does because it can be quite subtle. So what I'm going to do is take the an example of this square wave here which is sinusoidally modulated and it's got some noise on top of the sinusoidal part there.
+context after: So it's coupled in to the square wave here. And if we zoom right in like this, you can see it's actually updating like that. And if we zoom right in and have a look and we change between averaging and high resolution mode, look, it doesn't look to be much difference, does there?
+
+[522] EEVblog #522 - Rigol DS1000Z Oscilloscope Quick Look — Dave Jones (mention)
+context before: This is not production hardware, so don't take that as, yeah, an issue that would be in the production hardware. So we won't know. We'd have to test the production hardware, but there you go. It is running the latest firmware though, but I have been reliably told it is old hardware.
+TEXT: And of course, yes, we have the Waveform Gens down here, and output hot off. It's dual channel, and we're source one frequency, and sine wave, all sorts of stuff. These are the built-in waveforms, sine, square, ramp, pulse, DC, noise, built-in. And are fairly comprehensive, so really quite nice.
+context after: It uses the same software, I am told, as the 4000, the DG ARB software. So if you're familiar with that for the 4000 series ARB signal gen, then uses the same stuff, generates the same ARB waveform. So it really is quite a flexible unit.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (mention)
+context before: It's gone like that, but if we Yeah, we're still above it. So, it does move the trigger point with the scale. So, it it's at least doing what it's supposed to be doing properly and let me turn up the uh uh voltage on that and uh we should find that will go straight in.
+TEXT: So, amplitude. There we go. So, it does lock in. So, it kind of you know, it does a real basic bare-bones job of triggering on a basic signal. And if we turn on a 1 kHz square wave here at the same signal level, then you can see that signal So, I don't know Not sure what that glitch was there.
+context after: I don't know if you saw that on camera. Yeah, there we go. It's just glitching there. And um it's Yeah, you see that that ripple superimposed on there that's not down the bottom like this.
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (mention)
+context before: finger grip on that. You can just do it, but if you try and, like, put in a, uh, T-piece, for example, um, yeah, argh, good luck trying to spin that around. If I want to lock that off, I've actually got to get a pair of pliers in there and
+TEXT: actually move that. That's, ah, yeah, nah. Okay, let's have a play around with the built-in function gen, which is pretty much useless, so, just like the, uh, previous time, so let's go over here, and you might think it's this, output setting, okay? So you go in here, and it's got square wave.
+context after: Great. And maybe we can go in there, and sine wave, I haven't, uh, done the auto thing yet, so let's go out, like this, and let's auto range like that. I've only got, uh, no, I've got both channels hooked up. See what happens.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: one volt and we confirm that on a, uh, Keysight 200 meg scope, a hundred megahertz, one volt peak to peak with a one to one, uh, software probe option, because we're not using a divide by 10 probe. So we don't have the software option enabled.
+TEXT: Okay. But we plug the same thing into here and we don't get it. It's just silly buggers. There you go. 312 millivolts. Okay. So what I'm going to do now is just, uh, calibrate, uh, this probe. So I've got, uh, just a one kilohertz, uh, square wave here, and I'm going to give it a little,
+context after: uh, tweak-a-deek to make sure it's right. Otherwise we'll come a gutser and we'll get our wrong amplitude. And I've set the, uh, outputs no longer to 50 ohms. So there you go. I reckon that's, uh, that's square as look at that. Well, what the heck is that?
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (mention)
+context before: So, that's interesting. Yeah, that I don't like the velocity control on the Siglent. Just not very intelligent. Set that width of that hold off. That's interesting, isn't it? I love that.
+TEXT: You can go into your deep scope architecture theory here. This is terrific. Anyway, the best I seem to be able to get out of this with a standard 1 meg square wave going in, nothing else uh, on, and we're looking at, you know, 23 and 1/2 thousand waveform updates per second.
+context after: Not terrific. Um, this doesn't meet specs, so I don't know what's going on. Now, okay, so we're at our maximum update rate of about, uh, 23 kHz here, and let's I've only got the one channel.
+
+[941] EEVblog #941 - Schmitt Trigger Tutorial — Dave Jones (mention)
+context before: So, we're going to take a look at these uh two problems today and how we can fix them. There's basically one solution for both. So, let's take a look at slow rising input signals and the problems they can cause with digital circuitry.
+TEXT: Now, uh look at the Dave CAD drawing here. I've got a 74HC161 4-bit uh synchronous counter, jelly bean logic. I've got it wired up here and I've got the four LEDs on the output and I've just got like a 2-Hz input uh square wave and it's counting up in binary just fine.
+context after: And by the way, don't worry about all these extra pins here. This is just a complicated uh chip with that has a data load input. I've just set them all loaded.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (mention)
+context before: Hi, I thought I'd show you something interesting with Tektronix digital storage oscilloscopes and it is pretty specific to Tektronix scopes as far as I'm aware. I'm not aware of other brand scopes on the market that actually do this.
+TEXT: Now, let's take a look at this MDO 3000 series scope. I'm feeding in just a a 2 MHz square wave here. Nothing fancy. It's all triggered. Everything's hunky-dory and I've got the output the trigger output of this connected up to my Rigol function generator up here.
+context after: So, it's generating the 2 MHz signal as well as displaying effectively the waveform update rate of this oscilloscope. Now, I've talked about waveform update rates before in our previous video.
+
+[NvIv-0-R6qQ] Guest Video: TannerTech Designing a Frequency Counter — Dave Jones (mention)
+context before: And then immediately following this clock disable pin, we'd have to have a quick burst of the reset pin. Now between this reset time and the next clock disable time, we'd have to have that at a frequency of 1 Hz if we want to display the number on the screen in Hz.
+TEXT: So in this case, this is what the waveforms would look like for the clock, the reset, and the clock disable pins. So of course we'd have the clock, and the clock would just be the input frequency from whatever we're getting it from. Now on a separate timeline,
+context after: we can look at the reset and clock disable pins. So we'd start with a clock disable pulse on this line, and the clock disable pulse would last about 0.5 seconds, and then it would just go on. And then we'd have the reset pulse.
+
+[683] EEVblog #683 - Rigol DS1000Z & DS2000 Oscilloscope Jitter Problems — Dave Jones (mention)
+context before: He found a quite a serious problem in his Rigol 1104Z. And well, I've got the same one, essentially the same one, the DS1050. He has 1054Z here. So I thought we'd reproduce the problem. Now, rather than try and explain it all, I'll just do it.
+TEXT: And see if I can reproduce it on mine. So what I've got here is just a function generator generating a square wave, 5 volt peak to peak, whatever, at 20 megahertz. And I'm feeding that into our scope and no problems whatsoever. I mean, it's exactly what you'd
+context after: expect. You know, it's not terminated properly, doesn't matter. But there's no jitter in that signal whatsoever. I'm sure everyone can agree on that, and I've got no nothing turned on, I've got no high-res mode, no averaging, no nothing. So that's a very clean signal.
+
+[395] EEVblog #395 - World's Most Expensive Hard Drive Teardown — Dave Jones (mention)
+context before: 10 volts maximum of 20 volts on this function gen, there we go! And of course we can adjust the frequency that's 10 hertz at the moment, so let me adjust that down. 1 hertz! Boom! Boom! Boom! Boom! Boom! Boom! Boom! Boom! Fantastic! And if we do a
+TEXT: 1 hertz triangle wave there, you can see the more linear motion of it because of the ramp instead of the sine wave. That's a 1 hertz sine wave, and you can see the difference in the ramp. And if we do a 1 hertz square wave, it's going to go bang bang.
+context after: Bang! Bang! Bang! Bang! And although we're not going to be able to see higher frequencies, we'll certainly be able to hear them. Here we go, I'll put the mic up to it, and you'll be able to hear, that's 1 kilohertz and then 2
+
+[987] EEVblog #987 - Keysight U1272A Multimeter EMC Followup — Dave Jones (mention)
+context before: little offset there. So, maybe the board might still be a bit warm, or I couldn't see how having some beads in there would be causing some sort of DC offset there. So, that may come down. Don't, nothing to see there. Anyway, what we want to see,
+TEXT: we've got our 10 megahertz, we've got our square wave, 10 volts peak-to-peak. Let's whack it in. And, nah. Hey, but it's different. Hello? Ooh, still got the spooky action at a distance. Ooh, use the force, Luke. You can see that this has changed
+context after: dramatically. It's still there, okay, but drastically, drastically reduced. I mean, we were getting like full-scale stuff before. So, that, that has really made a hell of a difference. So, there's definitely something huge to do with those ground beads that go into the system ground.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: Anyway, what do we get in menu here? We've got view wave. Um, there's no enter button. You press mode. Yeah, you press mode. And there you go. What? There you go. It's showing the waveform. That's our saved waveform. That's, you know, kind of shows it as an icon view.
+TEXT: That's kind of nice. So there we go. There's a one kilohertz square wave. And we'll go in there and we'll view our wave like that. And there it is. Let's select that. And it's popped it back up. It's kind of neat. Can you do measurements on that
+context after: afterwards? Oh, look, you can just scroll through them. But like, there's no measurement cursor functionality in it. Um, like after you've done that, you can't go in. It's just a screen capture. You can't actually go in and analyze any of the waveform or
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: And we're you know, there's no arb capability by the looks of it. There's just, you know, no modulation capability. All you've got is your sine, square, triangle, you know, incredible triangle.
+TEXT: Hello, where's our triangle? Hello. Oh, there we go. Uh sorry, it switched back to one. Hey, did that switch? Look at that. It switches it's set to 3 MHz there for sine and it switched to square and it drops drops down to a kilohertz.
+context after: It's res- it's default reset the frequency. Why? That's ridiculous. Unbelievable. What the That I mean, you know, it's saved it for sine. Yeah, yeah, I guess it's a feature, right?
+
+[70] EEVblog #70 - Turn your Rigol DS1052E Oscilloscope into a 100MHz DS1102E (Hack) — Dave Jones (mention)
+context before: Okay, now before we do the mod, let's actually get a base level bandwidth and rise time measurement so we've got something to work with. And let's do the 50 standard unmodified unit here.
+TEXT: What I'm doing is I'm feeding in a very fast rise time square wave and you can actually measure that you can use that as a measurement of the bandwidth using the standard formula of 0.35 divided by the rise time or the fall time.
+context after: Now, what I've got it set here but we'll talk about it later. What I've got set here is 16 averages just to clean it up a bit equivalent time sampling but if you change it to real time it doesn't make much difference either.
+
+[683] EEVblog #683 - Rigol DS1000Z & DS2000 Oscilloscope Jitter Problems — Dave Jones (mention)
+context before: coupling. And I thought, this has got to be a pebcac, right? It's got to be, I'm just doing something incredibly dumb. But no! I've double-checked! This is just basic from AC to DC coupling. It goes from perfectly triggered to this massive amount of trigger jitter.
+TEXT: What the? And you'd think it's just a square wave or something. No, sine wave at frequency. Let's go down to 1 MHz, shall we? Here we go. It looks like okay, but square wave, look at that. We're still getting it. Look at that.
+context after: And we can even go down to 1 kHz. There we go, we're right down now to 1 kHz, of course we're a square wave, so we've got a rapid rise time still there. Look at that trigger jitter! And there's nothing I can do to get rid of that.
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (mention)
+context before: That is your peak to peak voltage and if you got a symmetrical waveform, the peak to peak voltage is going to be twice the peak voltage, obviously. Now, one of the downsides about peak and peak peak voltages while they're very commonly used, they don't actually tell you anything any information at all about the way the actual waveform shape.
+TEXT: It doesn't actually care. This could be a perfect sine wave, could be a triangle wave, a square wave, it doesn't matter what this waveform is. If it goes to plus one up here and minus one down here, it it doesn't matter.
+context after: It could have a tiny little spike like this, tiny little spike down here. It could be like a you know, that could be a very poor power factor as we've looked at.
+
+[690] EEVblog #690 - TDS220 Oscilloscope Autopsy — Dave Jones (mention)
+context before: It'd be Jeez, you'd be pretty desperate. Um and you know, just a safety thing like that mains isolation uh transformer, that's the biggie really. And it's working. Look at this.
+TEXT: I can get a channel two. I've got the probe compensation signal and you can see the square wave in there. No problems. This This sucker is alive. So, yes, there's the isolation transformer I was talking about there.
+context after: So, that's responsible for all of your safety between all your mains input and your uh and the rest of your circuitry, your BNCs, everything else. So, you know, but it is uh solidly mains earth uh reference or maybe not without the mod in it.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (mention)
+context before: She's taking its time. Heard the relay go there. Bingo. We will calibrate our probe, eh, shall we? So, it's hold the tongue at the right angle. There you go.
+TEXT: And it retains its shape even when we click the relay between 200 and 500. So, that's all right. Square wave signal fidelity at 1 kHz is all right. And it's giving us our measurement 1 kHz, 3 V peak to peak, V max.
+context after: That's actually from That'll be from the ground. So, that is useful and that is quick. We can't cause that to alias. Nope. Wow. So far, this looks very useful.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (mention)
+context before: Yeah, you can see it's going to start to do it. Here we go. There we go, drop the time base down. Yeah, there we go. It looks perfect, doesn't it?
+TEXT: You would think, "Aha, look at that perfect sine wave at 50 microseconds per division." What? Nope, that's aliasing. And there's a 10 MHz square wave. It's not handling that too bad at all given the bandwidth.
+context after: So yeah, this thing isn't exactly a user-friendly modern scope, that's for sure, but it is, you know, a 19 early '90s and '94 vintage, almost 20-year-old uh oscilloscope technology here in a handheld form factor and incredibly useful for its day, especially with the 50 MHz um bandwidth and you know, the basic multimeter functionality and stuff like that.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (mention)
+context before: It's so simple, it's so easy. You just stick the firmware file, which you don't have to register for on the website. You just download it, put on the USB stick.
+TEXT: It says before and after. And anyway, anyway, so Mikey posted about how there is a low frequency performance, like pulse response, a low frequency sort of response of the scope on a basic 1 kHz square wave.
+context after: So, I thought I'd try and reproduce it here. And I'll put Mikey's original one here. And this is the response I get. I'm I'm at a higher volts per division.
+
+[1335] EEVblog #1335 - Miniware $70 DT71 LCR Tweezer REVIEW — Dave Jones (mention)
+context before: So, diode mode and resistance look the same. And then we've got our capacitance mode with our two different levels. And I'm going to switch to inductance mode. We don't get the two levels, but it looks like there's two different frequencies in there.
+TEXT: No, it's just pulsating. There you go. Look at that. That's in inductance mode. Between a square wave and then it's charge discharge kind of thing. [clears throat] And this is in auto identify mode.
+context after: Jumping through a whole bunch of different modes there, isn't it? So, we saw that. Yeah, it's basically that's just a combination of all the modes that we saw there.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 2of2 — Dave Jones (mention)
+context before: So, as you can see, I've got it back down to 300 uh Hz, and um really the um the uh UEi doesn't um match the Fluke because it's not true RMS.
+TEXT: Whereas, if we put it to a a sine wave, for example, there we go. It's a sine wave now, and as you can see, it's spot-on. But, when you do it to a That's a square wave, and that's the triangle wave.
+context after: As you can see, it's out because it's not true RMS, but you can get a true RMS version of this meter for like 15 or $20 more. So, if you do need the true RMS capability, which I do recommend, um you should probably spring for the extra on that.
+
+[1367] EEVblog #1367 - 5 Types of Oscilloscope Passive Probes COMPARED — Dave Jones (mention)
+context before: Usually your higher frequency ones have it down there. It's neither here nor there. Does the same job. And for all these types of passive probes, you want to compensate them, and you do that by hooking up your probe in times 10 mode.
+TEXT: Doesn't do anything in times one cuz the compensation cap is for that 9 meg resistor in there for the times 10 mode. Hook it up to your compensation output, which just generates a 1 kHz square wave.
+context after: That's it. And then you use the adjustment tool provided, which is a non-conductive one. You don't want to use a conductive one. And hold your tongue at the right angle, and you trim that until you get a nice beautiful even square wave like that.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (mention)
+context before: No, I've done it. Okay, I've captured it. I'm going to see if we're outputting anything. So, no, that's just the sig gen, but where's our done the capture output?
+TEXT: Okay, mate, is it too high a frequency? Cut out a part or whole part of the current waveform signal, save it as an output of the signal generator. Is that one That That's just a 1 kHz square wave.
+context after: That's not what we the waveform we captured. So, I I don't know. Uh and then cursor over there. Okay, there you go. Let's go up. We can go up to a megahertz.
+
+[779] EEVblog #779 - Batteriser: How To Measure Battery Cutoff Voltage — Dave Jones (mention)
+context before: If I didn't know any better, I'd say that they just set up this bench as a just a promo video shot. And I just couldn't help but notice the oscilloscope.
+TEXT: Look at the square wave they've got there and you can see that all they're doing is measuring the compensation on the front of the scope and it's probably the worst compensation I've ever seen.
+context after: They don't even know how to compensate the probe. Hilarious. Sorry, had to point it out. So, we got the power supply set at 3 volts. Now, we can see how he behaves at the same voltage as two fresh batteries.
+
+[149] EEVblog #149 - Agilent Infiniivision 3000 X Series Oscilloscope Review — Dave Jones (mention)
+context before: And if we turn on the waveform generator option, as per the 2000, it is an extra cost optional extra. You get the function generator output down here, and it's exactly the same, which is quite surprising because on the 3000, you actually pay a bit more for that function generator option, but it's identical.
+TEXT: It's got the same function, sine, square, ramp, pulse, DC, noise, and it doesn't have arbitrary. Once again, it doesn't have any of that. So, it's really exactly the same function generator.
+context after: And as I didn't as I forgot to mention in the 2000 review, the even though it's got like a trigger output on the back, it does not have one thing that's missing is a modulation input connector.
+
+[1235] EEVblog #1235 - How To Align Signals On A Digital Oscilloscope — Dave Jones (mention)
+context before: So, let's take a look at it. We're using our Keysight 3000 X-Series cuz this happens to have the feature that we're looking for that's going to enable this. This is really interesting.
+TEXT: So, what I got here, channel A, channel B, and I've just got two signals here. They're actually like little bursts of square wave here like this and it's the same on channel two down here.
+context after: But, of course, to go in and see channel two, that's our problem. How do we go in and look at channel two? Oh, it's easy. Dave, go in there, trigger, select your source, go in there, and we're now triggering off channel two.
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (mention)
+context before: So, I mentioned before specific benefits of sinusoidal AC. So, let's take a look at them. And this basically applies to sinusoidal shape ACs, cuz it's the ideal AC waveform.
+TEXT: Sure, you can get square waves, which are AC, and you can get triangular waves, you can get all sorts of, you know, pulse width modulator waveforms, which can be AC and all sorts of stuff.
+context after: But in particular, sinusoidal ones have specific benefits. Let's take a look at them. It's easy to physically produce high powers, as we looked at. Those generators. This is how the vast majority, probably, of the power that you're using is generated using perfect sinusoidal AC from a generator.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (mention)
+context before: It's crazy. And one thing of course this thing doesn't have the probe does not have a compensation adjustment on it. So I think we'll find that's going to be an issue if we up the frequency.
+TEXT: Okay, I've turned on a 1 MHz square wave at the same uh Look at the what? Oh man, okay. Well, that's yeah, that's the undershoot. All right, so let's uh Let's scale this thing back out.
+context after: Here we go. There we go. All right. Now look, here's a this is a 1 MHz square wave. Look, it's just absolutely useless. Let me uh get the trigger set in on that.
+
+[qE-SwtYQM6E] Tektronix 2 Series Oscilloscope Pattern Generator — Dave Jones (mention)
+context before: Just hold down. And wish to delete it. Yes, I do wish to delete it. Um and I'm currently Wait, I don't want waveform view anymore. Why is that still there?
+TEXT: Ah, bugger it. I'm getting desperate. I'll hit the auto set button. This is what happens when you're not familiar. Well, there we go. Um that is uh not looking like a square wave to me.
+context after: Oh, duh. That explains it. Times one scope probe. There you go. Oh, there's your problem. I've done a video on that with the um times one um scope probes and uh how they have a lower bandwidth Uh oh.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (mention)
+context before: Works a treat. No worries. And let's just do a quick pulse response comparison with the Rigol here. They're both the same at 200 MHz analog bandwidth, so pretty much apples and apples.
+TEXT: And I'm just feeding a 10 MHz square wave. I've got it 50 ohm terminated. I'm not using the internal 50 ohm terminator, so we'll use an identical matched terminator for both scopes.
+context after: And interestingly, watch what happens if I turn on channel two, because we have the sample rate up here. Bingo, where you know, where upsetting the effective bandwidth of the thing, then watch see the subtle little difference in the subtle change there in the in the response to that.
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (mention)
+context before: Sorry, menu. Signal gen. Haven't looked at it yet. Yeah, there you go. Okay. So, can we go 10 MHz? Oh, okay. At one. Okay, it looks like we can do 1 MHz maximum.
+TEXT: Sine, square, triangular, sawtooth. Okay, no worries. We'll stick with square, 1 MHz, 3 volts peak to peak. That's good enough for Australia. And let's see if it's yep, yep, it is.
+context after: So, yeah, there's no aliasing on that. Look at that. That's great. Very happy with that. Looks like we just get nothing. Okay, below that, but yeah, we're not getting any any aliasing, so that's terrific.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (mention)
+context before: And this thing's supposed to have a 40 MHz analog bandwidth. You got to be kidding me. And what we've got down here this 200 MHz I think that's the sample rate I.E.
+TEXT: 200 meg sample per second. Oh, there we go. Is auto set auto set it's working on a square wave. Go on a 1 MHz square wave. Go figure. Let me turn it So turn it right out.
+context after: Turn the voltage right up like that. Hit auto set. Oh, there we go. Look at that. We've got no overshoot now at that range there. There we go. We go up a range.
+
+[793] EEVblog #793 - Rohde & Schwarz HMO1002 Oscilloscope Hands-On — Dave Jones (mention)
+context before: We've got ourselves a component tester, old-school component tester. Wow. Fantastic. Wow, that brings back memories. And we've got XY mode as well. I'd love to get a uh listen to this figure on Oh, look.
+TEXT: Combine, and you can still keep the voltmeter up there. Geez. This is going to town. And pattern generator as well. We can generate a square wave, counter, uh arbitrary.
+context after: Uh so, we can Oh, yeah, look at that. There's the There's the uh There's the pattern generator terminals on the front. That's a nice graphic. Geez, they've done well there.
+
+[6XpyOGw6RFM] Rohde & Schwarz RTB2000 Scope Pulse Response — Dave Jones (mention)
+context before: So yeah, it's not something I'd worry about too much unless it's absolutely horrific. Um it's just like an interesting quirk of scope front ends and the complexity of trying to implement a voltage divider over a frequency range like this.
+TEXT: And ultimately, of course, when you get a square wave with a rise like that, like you'll never see this distortion on, you know, like a a ramp waveform, for example.
+context after: It's just It's just moving too slowly. But when you get square wave with a pulse a step response like this, which has high frequency components in it depending on the slew rate, then the response after that can, you know, do interesting things.
+
+[1272] EEVblog #1272 - Mailbag — Dave Jones (mention)
+context before: And well, this one's not really a usable module, is it? It's really a custom-designed bit of kit. So, fortunately, um that's not something you could really put in your junk bin.
+TEXT: And if you feed a 12-V uh pulse into it, uh you can feed a square wave, but I'm feeding in a 100-ms pulse every second. If you go down to 10 ms, it it doesn't work.
+context after: In fact, let me ramp down the pulse width time here down at 50 ms now. Still ticking over. Let's try 25. Oh, you can see it. Little tiny flicker there.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Sorry, I'm just using a Siglent demo board. I think this is kind of annoying. I called up my event table here and I get my data in hex, even though I'm in ASCII mode.
+TEXT: So, what? Like, it's a bit inflexible. I've gone back to measure a simple square wave, and I can't change the memory depth. Okay, I figured out the memory depth.
+context after: You can only change it when it's in run mode. Wow, thanks a lot. And as for the measurements here, well, you know, fairly comprehensive, but a tiny little waveform, little bitty waveform, and like some text here would have been helpful.
+
+[1448] EEVblog 1448 - Convert a Fluke 77 IV to True RMS for 10 CENTS!* — Dave Jones (mention)
+context before: Um and here it is. It's a true RMS. There you go, 1 V RMS. Um it's recalibrated. You see how it was off before? It's now recalibrated. So now, we can fiddle around to see if it matches this.
+TEXT: So, let's go waveform. Let's go our square wave. Oh, look at that. Like a bought one. Like a bought one, true RMS, none of that average responding rubbish. Ramp.
+context after: Look at that. It was matching this before. Now, it's matching this. Oh, Bobby dazzler. Triangle wave we're getting before. How about that pseudo random binary sequence we got before?
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (mention)
+context before: Um like cursors, like bury those away. Okay, so we're running now. It's You can see it updating there. Why it can't get the frequency of that. Like why? That is the easiest signal possible to get.
+TEXT: A square wave like that. We've got more than enough divisions on the screen. Uh anyway, if we stop it, right? The thing is we've got 240k points of memory.
+context after: It's looks like it's got some data outside the screen. What? Got two screens worth or something like that? But 240k points is a you know, fairly decent amount of memory for a scope, specially for this uh price.
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (mention)
+context before: So, it's just acting as a buffer and I'm also feeding that same 100 hertz signal on pin number one there over to the second exclusive OR gate on pins 4, 5, and 6 there.
+TEXT: And the output of that actually driving a segment on the LCD. And I've got it powered up. We've got 5 volts. We're feeding in our 100 hertz square wave.
+context after: There it is and you'll see that the signal on both pins there are in phase. So, the top one is the uh common one, the yellow, and the green one down there is the segment.
+
+[1724] EEVblog 1724 - BWD 603B MiniLab RETRO TEARDOWN — Dave Jones (mention)
+context before: That's good enough for Australia. There we go. Our function gen works a treat. Look at that. So, that's what, 6.4 kilohertz? Something like that. A little bit of distortion down on the bottom there.
+TEXT: Maybe up the top, but not too shabby, huh? Oh, squa- oh, square. Oh, I think I think lube might be required. Oh, no. There we go. Square just came good.
+context after: No lube required. If I put pressure on that, yeah. And whoop. All buttons out, I get nothing. The triangle wave looks a bit wonky, doesn't it? And those lines don't look too straight, but you know, that's good enough for Australia.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (mention)
+context before: Like, what? Dude, can I clear it? I don't know. Oh, we've got Yeah, the color intensity graded display. Woo. Um but yeah, how do I get rid of that?
+TEXT: I guess I can't. Maybe I've got to auto again. Magic auto button. Look at that. It didn't auto scale a 10 MHz square wave. That's a 10 MHz square wave.
+context after: Sure, I'm in I I'm still in split screen mode, even though I don't have my math function turned on anymore. No, there's some sort of um the weird display thing.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (mention)
+context before: So, let's run through it. Should be pretty quick. If you haven't seen the previous video, watch that. It'll be linked down below. So, this is what we had previously with the Dickson doubler.
+TEXT: We had our VCC voltage at might be say 5 V or 3.3 V or whatever your system voltage is. Um and then we feed in a square wave from our microcontroller.
+context after: Doesn't have to be from a micro, could be from something else, but let's just say it's from a microcontroller. And based on the Dickson doubler here with the output filter, the output voltage is uh Vout equals two times VCC.
+
+[1119] EEVBlog #1119 - Designing a 1kV Isolated Oscilloscope — Dave Jones (mention)
+context before: You do. Okay. Now, one of the big issues we have is probes. Probes themselves are not linear to that degree. They might be good for 1%. So, one part in 100.
+TEXT: We want one part in 8,000. So, that means if you're looking at a square wave, we want the top of it to be linear to within one part in 8,000.
+context after: Just a milli just just a 200 millivolts actually what we're aiming for on 8 volts on 800 volts, sorry. Um and we found that we could not get that with standard probes.

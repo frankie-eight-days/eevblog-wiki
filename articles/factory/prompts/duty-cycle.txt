@@ -1,0 +1,283 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: duty cycle
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 50 passages drawn from 38 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# duty cycle`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: every, you know, thousand seconds, or something like that, okay, then, we can see, whoa, bingo, no, it gone from 43 hours here, and, for a thousand, it's, whoa, we now get 560 days battery life, because we've extended out the duration, so, the active on period is only a small little part of the entire, you know, longer it sleeps for
+TEXT: of course, the, you know, peak current is still the same, your on current's still the same, but, it's a, a proportion of the time, so, it's a small duty cycle of that, it's a small on time, so, the average current is gonna get smaller and smaller and smaller, and the average current gets smaller, your battery life goes up and up and up, and, this is where you can fiddle around with it, you know, you could do, oh, effective battery capacity, that's to do with, like, losses in the battery, or ESR, or other, you know, things like that, you know, losses in your system, um, and, yeah, you can just have a
+context after: fiddle around, and, of course, we can change those numbers, let's say, um, but, the point of measuring it is that, so, you don't have to fiddle with the numbers, because you've got actual measurements, but, if you know, you can actually override them, so, you can fiddle around to your heart's content here, and, you know, optimize your battery life, now, unfortunately, it doesn't, I, I assumed that when this, like, be
+
+[1045] EEVblog #1045 - How To Drive an LCD — Dave Jones (explains)
+context before: You can drive it with any sort of digital logic, microcontroller or anything like that and it will technically work as I'll demonstrate shortly. But this is actually an incorrect way to do it.
+TEXT: You do not want to drive this. Why? Because it Well, let's assume that you have one second on, one second off, a 50% duty cycle, it's going to give you an DC average voltage of, in this particular case with a 5 V drive signal, 2.5 V if it went up like that, for example, and it was 50% duty cycle.
+context after: And DC offsets on an LCD will eventually kill them. You do not want to use this method to drive your LCD, but it does technically work. Now, some people will try and get around this by driving it with a burst.
+
+[267] EEVblog #267 - Voltage Detection Stick Teardown — Dave Jones (explains)
+context before: in part E here. So we get our output signal D, which is a square wave, once again based on our input 50-60 Hz waveform, and it just smooths it out between the threshold voltages of this Schmitt inverter down here, based on the value of these two resistors need to be set, just to put it smack in the middle
+TEXT: of the threshold voltage. So once the input goes above a certain level, and that's to get rid of any issues with like a duty cycle, if noise does get through and it's not the correct duty cycle, then it probably may not actually reach the threshold voltages or something like that.
+context after: So that's just another mechanism to sort of filter things out a little bit. And then it double inverts that, or buffers it, to drive the output transistor which drives the LED. And that's pretty much all there is to it. And that is the basic operation of one of these voltage detection sticks.
+
+[-9l41zNWlxY] Guest Video: Voltlog #142 - Mailbag — Dave Jones (explains)
+context before: it will show you the temperature in degrees Celsius as well as the RPM. So right now we are seeing 27.6 degrees, 0 RPM on fan2, 27.4 degrees Celsius and 700 RPM on fan1. And there are two thresholds that you can set, a lower threshold and a higher threshold, and between those two the board will just ramp up the RPM,
+TEXT: which is basically the duty cycle output on that PWM pin, it will ramp that from 10% up to 100% in a linear fashion. You can also set an alarm threshold, and if you connect a buzzer to this output right here, you will get an audible alarm once that threshold is surpassed.
+context after: The circuit controlling all of this is an STM8S microcontroller, which makes it very easy to hack, so you could potentially use this as a development platform to create your own custom fan controller. And this is something I like about newer modules coming from China, they use STM microcontrollers more and more,
+
+[2_7ixfLcuLU] The $5 Hantek Scope Is ALIVE! - Kinda... — Dave Jones (explains)
+context before: Refresh. Hello? Nup. What's going on here? 100k. Here we go. No. Oh, apply! You've got to hit apply. No. Apply. Refresh. Okay. No, it's not changing. It's not changing. I don't know. I don't know what the deal is. Oh my goodness. Can we at least change the
+TEXT: type? Can we go to, you know, ramp or something? Apply. Yay! Okay. So that works just fine. That's not square. That's rectangular. Okay. We have to set our duty cycle. This doesn't work for frequency? Really? I don't know why. It's that, like, is that millivolts?
+context after: That doesn't change either. Wow. Yeah, see? Software's crap. I don't know. Anyway, the fact that we're able to get signals into both channel 1 and channel 2 and trigger from them indicates that, like, the front end is just fine. So even though I can't figure out how to change this,
+
+[BuFoA-qt1PY] Brymen BM2257 Intelligent Auto Power Off (iAPO) tested — Dave Jones (explains)
+context before: So if you put it in, sorry, if you put it in min-max average mode, apparently it'll switch that off, but I won't test that. I just want to test a periodic measurement. Will it actually continue to reset that sleep timer? So what I've got set up here is a
+TEXT: 100 millihertz signal, so basically once every 10 seconds, 10% duty cycle. And you can see it, it's going from 0 to 5 volts here, and you'll see them all tick over. There we go, it goes to 5. I think this has a slightly better update rate, which is why it stays
+context after: there at 5, gets to 5 quicker than the 235 does. Of course the BM786 has an extra digit of resolution there. It went to 2.5 volts interim there, but that's because the waveform just happened to be in the point in the sample period where it actually sampled that.
+
+[32] EEVblog #32 - Tandy 1000 Retro Computer time! — Dave Jones (explains)
+context before: And what I found is that it had an internal oscillator, and that wasn't being used. I actually used an external oscillator, and it already had an internal switch to switch between the external clock and this internal oscillator. Aha! Brilliant! Right, but then I found, I read the more, I looked the circuits more in
+TEXT: depth, and I found that the DMA memory processing still required a fixed 4.77 at 33% duty cycle, otherwise it wouldn't work. And I experimented with that, and sure enough, the machine crashed. So I had to generate that signal, regardless of the turbo mode.
+context after: And also, the timer chip, the real-time clock, actually required, I think it was a real-time clock, it required a 2.38 MHz. signal fixed. So my turbo board had to come up with both of these signals, regardless of what the actual processor clock speed was.
+
+[5] EEVblog #5 - Maxim product marketing, Function Generator Review — Dave Jones (explains)
+context before: it's doing the same thing. It's jumping around like a jack-in-the-box. And you go up to mid-scale, and it's nice and stable again. Now, this unit also has AM and FM modulation as well, which is set by this switch. So let's pull it out.
+TEXT: Modulation on. And we can increase the level, and we can see that that's amplitude modulation. And we push it in for frequency modulation. So it all works as expected. And, of course, there's the usual duty cycle adjustment, so we'll just give that a go.
+context after: And, yeah, it works. And probably from about 80% down to 20%, which is pretty usual. The things I like about it, though, is that it's got pretty much every bit of functionality you could want in a sort of mid- to low-end analog function generator.
+
+[NvIv-0-R6qQ] Guest Video: TannerTech Designing a Frequency Counter — Dave Jones (explains)
+context before: and as you can see, it's counting up right now. I have this whole setup hooked up to my frequency generator, and as you can see, it's putting out a square wave right now of 110 hertz. Now if we look at the square wave,
+TEXT: you can see that it's running at a duty cycle of 20%, which means it's on 20% of the time and off the other 80% of the time. So if we look at the frequency, we can actually mess around with this and we can change the speed at which the numbers count up.
+context after: So right now it's set up so it's incrementing 10 times per second, and that's true because you can see that this one counts about 1 every second. Now if I increase the frequency to 100 hertz, you can see that this one is now
+
+[1032] EEVblog #1032 Part 3 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: they would not generate square waves with a DAC. They would generate a triangle wave and they would run that into a comparator. No, no, no. You would have a limited two or three different slew rates and you would have a 10% minimum duty cycle.
+TEXT: Now with Trueform, you can get less than 1% duty cycle and you can get infinitely variable slew rates. That makes the product so much more usable on your bench. We're actually looking at how can we take that technology and integrate it in more and more
+context after: products because it is so, so much better for testing and use. It's one of those things that when we first did it, we learned about it from the RF guys because they're trying to create spectral purity with their waveform generators and that's what they focused on.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (explains)
+context before: And there we go. We're in waiting for EV mode with the uh 2.7 K. And there you go. You can see the Oh, oh, no. It's the No, it's cuz it just went into restart mode.
+TEXT: Oh, okay. Yeah, no, there it is again. There's your 1 kHz square wave. There you go. You can see that the duty cycle 53% there, which I think corresponds to the full 7 kW, which is what it's set up to by default or uh they're basically 32 amps.
+context after: Aha, in the advanced settings here, you can set up the supply grid for the device itself. Ah, yeah, 31.8 amps. There you go. Let's just say 10.2 amps, shall we?
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Beautiful. And what happens if we adjust the duty cycle here? Well, let's give it a go, shall we? Let's drop it down to say 10%. Wait. Of course, silly function gen only allows us to go down to 20% but there you go.
+TEXT: That's the expected 1.3 volts or 20% of that 6.6 volts cuz we've got a times two amp in there. There you go. It works fine and if you drop that if you did drop that duty cycle down to 1% or 0.1% you'll find that the output voltage would follow.
+context after: So there you go. That's a practical demonstration of how to replace your control part with the PWM output or a DAC output of a microcontroller. Piece of cake. Catch you next time.
+
+[1671] EEVblog 1671 - Beware of Multimeter Continuity Latching — Dave Jones (explains)
+context before: So, yeah, it is still very high at the 290 ohms there. So, 88 87 86 85 And equal Yeah, about 282 ohms there. Yeah, so, it's still high. So, that's what they tried to fix on this experimental version.
+TEXT: And if we do our pulse test here, 99.9% duty cycle here. So, it goes low for only 0.1% of the time. This is the shipping production version 11. And sure enough, they've actually significantly changed this since that version 9 version.
+context after: There you go. It still does it at 99.999%. What is that? 10 microseconds or something? And we go over to the that new threshold 12 version over here. It's basically basically the same.
+
+[717] EEVblog #717 - How To Hack Vacuum Fluorescent Displays — Dave Jones (explains)
+context before: And that's being multiplexed at the like a you know, 60 hertz or something like that. So, there you go. You can see the on-off burst like that. And uh of course, it's multiplexed in that part down in there, and then it's just completely switched off down in that part.
+TEXT: So, there you go. And of course, by adjusting the uh duty cycle and the frequency in there, you can adjust the uh brightness of the display. Oh, and I forgot to mention the voltage um we're at 20 V per divisions here.
+context after: So, this is a particularly high-voltage board. So, it's like 40 Look at that, like 45 V or thereabouts. So, yeah, pretty high. By the way, I just wanted to mention, even if you couldn't figure out like the uh proto- the interface protocol to this micro or uh anything like that, um you know, it's not as long as you work out it, you should be able to get it.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (explains)
+context before: So, you know, we'll show you that later in the much more versatile for the scope for example. But look, we can go in here and we can insert signals, we can insert bus signals. So we can go in here and say that digital pin 15,
+TEXT: what type is it? Is it a constant value? Is it a clock? Is it a random signal? I mean, just fantastic. Here we go. And we can define the duty cycle of the clock and the frequency and the idle time and the output type.
+context after: And it's just, yeah, fantastic. Very, very flexible. So what I've done here is I've just generated a clock signal there on pin 15. On pin 14 I've just generated a random frequency between the values 1 kHz and 10 kHz. So really flexible. You can
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Now, the period down here I've set to 100 microseconds, and that's equivalent to 10 kHz. So, we're going to get a 10-kHz repetition rate on our PWM signal. And then, I can set my on time.
+TEXT: I've set it to 1/10 of that. So, I'm setting it to 10% on time or 10% duty cycle. It's 10 microseconds out of that 100 microseconds total. Okay, so what I'm doing is I'm going to go into the simulation command here.
+context after: We're doing transient analysis. And I've set my stop time to 1 millisecond and I've set my time step so it effectively samples or simulates the circuit every 0.1 microseconds.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: You can actually see the bounce in there is to do with probing and things like that. So don't worry about that but the output noise there, look at that.
+TEXT: Beautiful. And what happens if we adjust the duty cycle here? Well, let's give it a go, shall we? Let's drop it down to say 10%. Wait. Of course, silly function gen only allows us to go down to 20% but there you go.
+context after: That's the expected 1.3 volts or 20% of that 6.6 volts cuz we've got a times two amp in there. There you go. It works fine and if you drop that if you did drop that duty cycle down to 1% or 0.1% you'll find that the output voltage would follow.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: And the frequency I've got set, as you can see here, if you go in here, you can see I've got 100 kHz frequency and our amplitude is 3.3 V.
+TEXT: So, we're simulating a microcontroller generating that PWM signal with a 3.3 V rail. The offset voltage because it the function gen that's got to be halfway in between. We've got a 50% duty cycle or 50% on time.
+context after: So, if we're feeding in 3.3 V and by the way, I've also changed this feedback resistor here just to make the math easy, changed it to 10K. So, we'll have a gain of times two in this amplifier control loop here.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Now, what we have here, what a PWM signal is in this case, is just it's a a fixed frequency, say 10 kHz or something like that might be a typical PWM frequency.
+TEXT: So, this waveform just repeats at at frequency of 10 kHz. Now, what changes though is the duty cycle or what's called the on time from 0 to 100% or what amount of time in that period that that waveform is high.
+context after: And it can be anywhere from 0 0, of course, 0% would be it doesn't go high at all. It just stays low. Your output pin just stays forever low.
+
+[392] EEVblog #392 - 555 LED PWM Hack — Dave Jones (explains)
+context before: So, it should handle that fairly decently. A 470 ohm base resistor here should give us enough current to drive that output at a half amp. Well, there's only one way to try it.
+TEXT: Let's give it a go. And here we go. Using those values I had here, I am going to turn my pot here. Got a 10K pot and well, it starts down here and you'll notice we're getting a duty cycle of a maximum 8.8%.
+context after: Now, this is the output on pin three of the 555 timer and you'll notice that it changes PWM all the way up to 99.6% duty cycle. So, that's not bad at all.
+
+[836] EEVblog #836 - Tour Of The Australian Synchrotron — Dave Jones (explains)
+context before: So. So, that's what happens. Right. And then they're not that hot, folks. There's a bit of warmth coming out of there, but um The heat the heat's dissipated in the copper accelerating structures in the LINAC.
+TEXT: Got it. These only come on for 10 microsecond. Uh burst. Okay. it's a peak power that's so high, but the duty cycle is very low. Right. So, the average power is actually relatively low.
+context after: Got it. And these are all uh power supplies, are they? Power supply systems or control racks? Yeah. Yeah, so So, there are 14 sectors. Yep. Each sector has power supply rack for the multipole magnets, Right.
+
+[392] EEVblog #392 - 555 LED PWM Hack — Dave Jones (explains)
+context before: Brilliant. Smoothly. Once again, the frequency does change, but whoopty-doo. All the way up to 99.2%. Lost our trigger there a little bit, but there you go. Just getting a more accurate value of the maximum.
+TEXT: There you go, it's close to 99%. percent. Ah, this works really quite well. I like it. 0.3%. To 99, greater than 99%. Terrific. So, just why were we able to swap pins three and seven?
+context after: Well, here's the discharge pin here. And as you can see, it's the Q, it's the not Q output of this RS flip-flop. And the regular output is just a buffered version of the Q output.
+
+[yzO1PsscjOI] WENS 540 Handheld 10MHz Oscilloscope and Debug Meter — Dave Jones (explains)
+context before: There's your board. It goes up to 921. 921.6. Yeah. There you go. Yeah. So there's your ba rates. And so you if you want to squirt a bit of data down and see if it's coming out the other end.
+TEXT: Yep. You can do that. And finally, there's a nice little square wave. Uh oh, you can adjust the duty cycle. And you can adjust the duty cycle frequency. Does that go to I don't know.
+context after: It goes up. It goes up to a meg and you can then bring it down. And it's obviously in weirdo harmonics of whatever it internal clock is. And you can change the duty cycle.
+
+[392] EEVblog #392 - 555 LED PWM Hack — Dave Jones (explains)
+context before: Not a problem. So, let's take a look at those waveforms again and see what duty cycles we get. They should be near identical. All right, let's have a look at the output.
+TEXT: We're measuring the duty cycle of the of input two now, which is our top waveform, which is our pin seven discharge pin. And if we adjust our PWM value, we're going down to 0.3%.
+context after: Brilliant. Smoothly. Once again, the frequency does change, but whoopty-doo. All the way up to 99.2%. Lost our trigger there a little bit, but there you go. Just getting a more accurate value of the maximum.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: Let's go in there and it's displaying the pulse width and you can swap between the That's the negative going pulse width of 0.8 milliseconds. We can swap that. 0.2 milliseconds on the high and you'll see it change over there.
+TEXT: There's a little annunciator there that shows that it's going high and bingo, there's our duty cycle of 20% and if we wind up that Let's go all the way up to 80 and it's 80.
+context after: Seems to work just fine. But that pulse width does seem to be off in the presence of high DC offsets. At low DC offsets, it's fine. At high DC offset of 2.5 volts, it does actually jump up.
+
+[1653] EEVblog 1653 - Alkaline Battery Leakage Testing 2 - Electric Boogaloo — Dave Jones (explains)
+context before: And then when it enters discharge mode, like boom, 88. And then when they start turning on, you'll get sort of like it'll drop a bit, and you'll get variations on that depending on how many LEDs are on and which one's in discharge mode.
+TEXT: So, yeah, I found that 130 ohms didn't work at all. And of course, with such a low discharge resistor value, you're going to get like a 50 50 duty cycle, basically spot on.
+context after: So, yeah, I found 130 was too low. These things didn't work at all. They only worked for like one cycle, and then stopped working. I had to up this to 180 ohms before they would all work.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: So, if you're in any any of these modes, all you got to do is hit the Hertz button up the top here and you can get the displayed frequency in Hertz, kilohertz, and then the and pulse width in milliseconds as well and the duty cycle.
+TEXT: Excellent. And does that actually work? Well, let's try it. I got a square wave at 1 kilohertz with a 2.5 volt offset. The duty cycle is 20%. It's displaying 1 kilohertz.
+context after: Let's go in there and it's displaying the pulse width and you can swap between the That's the negative going pulse width of 0.8 milliseconds. We can swap that. 0.2 milliseconds on the high and you'll see it change over there.
+
+[392] EEVblog #392 - 555 LED PWM Hack — Dave Jones (explains)
+context before: Our lux meter is switched off. Our lux meter is still reading. Oh, it's reading What's it reading? There we go. We're up to 1600 lux. And we're going all the way down to There you go.
+TEXT: Not a problem. So, let's take a look at those waveforms again and see what duty cycles we get. They should be near identical. All right, let's have a look at the output.
+context after: We're measuring the duty cycle of the of input two now, which is our top waveform, which is our pin seven discharge pin. And if we adjust our PWM value, we're going down to 0.3%.
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (explains)
+context before: And there's our signal again, but if we actually run that you can see it's just going silly buggers. I mean, it's just all over the shop. So, yes, if you go, "Oh, yeah, okay, that's a bit repetitive there." But then you've got big periods in here where it skips and everything.
+TEXT: And I thought that this chippy it didn't skip like that. It's supposed to just be consistent and change the duty cycle. So, it's just nuts. It's just all I Look at that.
+context after: Look at that. What's going on there? All right, because that output is just complete silly buggers. We kind of have a look at the power supply for the driving chip.
+
+[1557] EEVblog 1557 - Micsig SigOFIT Optical Fibre Probe + GaN Experiment — Dave Jones (explains)
+context before: Optic for fiber probe is the only way to do it for this application and for many other like you know high end like physics experiment applications and stuff like that and power and all these power measurement applications that have high frequency high voltage switching stuff like this got to use an optically isolated probe.
+TEXT: That's what your 100 dB of common mode rejection ratio does. It's just it's not a problem. And we can play around with the SigGen here. So let's adjust this duty cycle.
+context after: Look, you know like you've got no chance of measuring this with a differential probe. There's just too much ringing let alone at at at higher voltages. All this stuff is just is just going to absolutely dominate.
+
+[497] EEVBlog #497 - Siglent SDG5000 Function Generator Teardown — Dave Jones (explains)
+context before: That's in Australian dollars with the bit of a weak Aussie dollar at the moment, but yeah, quite an affordable function gen actually. And of course, it competes directly with the Rigol DG 4000 series which we've seen in quite a few videos now, but this one they claim they one up the Rigol with its with this easy pulse technology in this thing apparently.
+TEXT: So, which allows for lower phase noise, lower {slash} jitter, and greater resolution on in terms of being able to set the duty cycle, the pulse width, stuff like that.
+context after: So, you can get really fast edges apparently at low output frequencies. So, anyway, um it does have USB. This isn't going to be your review, of course, but we haven't seen this before, so we probably shouldn't probably should just give a minute here to give a brief overview.
+
+[1172] EEVblog #1172 - TRIAC Testing (WEP Meltdown Part 2) — Dave Jones (explains)
+context before: So, this is the input AC signal that we're actually triggering off and this is the current through the triac and you can see that our duty cycle is like, you know, it's it's somewhere in the middle.
+TEXT: And if I adjust these resistors here, we can see that duty cycle actually change like that. So, we can actually control the turn on and turn off time of this triac.
+context after: So, it seems to work and you can actually just see a little current pulse in there when it actually switches. There you go. Look at that. Neat. But anyway, there there doesn't seem to be anything wrong with this triac.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: Here's our Here's our table. Here's the table we had, okay? And these values down here, these these parameters match these and the rows are the same and we've just We're just going through the calculations and our numbers will pop out the other end.
+TEXT: Magic. Watch this. Now, the first thing we We to calculate is T on uh T off, T on on T on divided by T off. Now, this is the formula for it from the data sheet.
+context after: Now, let's punch in the numbers. Now, our voltage output, okay? That is 15 V. That's the voltage we want out of our circuit. Now, the forward voltage drop, okay?
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (explains)
+context before: Bang. Now in actual fact, we knew that uh because of cyclical operation and never going to sit there for incidentally the lifespan had to be 50,000 hours. We knew that they were never going to sit there at 70° or whatever for 50,000 hours.
+TEXT: Yep. It was inherent that with cyclic of seasons, etc. etc. and especially the fact that they were not going to be used at 100% duty cycle for speech. Yep.
+context after: They were never going to sit there baking at that temperature. So, they infinite almost the life and shelf life of the product. Yeah. And look over 20 years, how many electrolytics have I replaced?
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: And what we're doing is we're measuring this point here. You can see the little red probe down there on the circuit and we're probing that point right there, which is the PWM input.
+TEXT: And as you can see, it is 10% and you can go in there and actually measure that precisely, but trust me, it's going to be 10%. So, our on time is 10%.
+context after: So, we expect if we're feeding in 1 volt here, 1 volt peak-to-peak, there it is over on the Y axis here from 0 to 1 volt PWM signal, we expect 10% on time, we expect 1/10 voltage on here.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: The the microcontroller software can be off doing whatever it else it likes, and the PWM module in the micro will take care of generating the PWM waveform. And I highly recommend you use those if you have them available.
+TEXT: But, you can do it using just a any generic IO pin, and you can do it in software because all it is is a digital waveform with a varying duty cycle.
+context after: Now, what we have here, what a PWM signal is in this case, is just it's a a fixed frequency, say 10 kHz or something like that might be a typical PWM frequency.
+
+[f_SdM6sXHD4] FNIRSI SG-003A Process Meter + DSO-TC2 Oscilloscope & Transistor Tester — Dave Jones (explains)
+context before: Okay, so you don't even know that stop run. Test hold, I guess that makes sense, right? Maybe. Up and down. It's not even moving our waveform. Okay, right? So, we're selecting our thing.
+TEXT: So, Uh auto. So, we've got to use this button to go through duty cycle, PWM. Okay, so I presume that's our output. Uh sorry, 1 kHz. 50% duty cycle.
+context after: And then Oh, okay. So, now we've selected this, so you have to cycle through. And So, you got the one button to cycle one button interface to cycle through, and that moves our waveform.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: going to be, either 0 or 5 volts. Well, when you pass it through the RC filter like this, it averages out that duty cycle or on time value to a direct linear proportion linearly proportional voltage from 0 to 100% or 0 to 5 volts.
+TEXT: So, if it's on 10% of the time and off 90% of the time, you'll get out 1/10 of 5 volts or half a volt out of your RC filter down here.
+context after: Magic. So, you can see why it is actually a DAC. digital to analog converter. It works just like a DAC. You feed in a value, in this case, instead of outputting it into a digital to analog converter, you put it you the value that you put in from 0 to 100% gets converted into a duty cycle or on time from 0 to 100% and it generates an
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (mention)
+context before: things. So it adds them under the waveform here, so it's not superimposing them on the graticule, taking up space there. So we can go rise time, we can add that, we can add our width, for example, and we can scroll down and we can get all sorts of stuff.
+TEXT: We've got duty cycle, voltage maximum, look, it's very comprehensive. Voltage maximum, voltage minimum, rate of change, look at that. So we can add that in down here. There we go, it's 34 volts per second. There, fantastic. So you can get slew rates, you can get phase differences,
+context after: delay, ah, fantastic stuff. And that's just the horizontal. If we go up here, we can select between the horizontal and vertical there. So it's not really calling up a menu, they call it a menu button, but it's not, it's just like a mode between
+
+[1221] EEVblog #1221 - Mailbag Monday — Dave Jones (mention)
+context before: Hey, Snips, show, bleh, it, hey, Snips, show, bleh, and it showed up the math function. I love it, yeah, let's try that again, one more time for the dummies. Hey, Snips, show channel two. Hey, Snips, show channel two. Yay, channel two, brilliant, so it works.
+TEXT: Hey, Snips, zoom in. Hey, change the time base. Hey, Snips, zoom out. Cool. Hey, Snips, make channel one smaller. Yay, it's under my command. Hey, Snips. What's the duty cycle for channel one? Duty cycle, brilliant. Hey, Snips, clear all measurements. Oh, look at that, beautiful.
+context after: Winner, winner, chicken dinner. I'm surprised out of the box that it actually recognises my Aussie voice seems to do a decent job of it. So that's pretty cool. Well done. So I'm going to link in this down below. And of course, you can build it yourself.
+
+[1751] EEVblog 1751 - Oscilloscope Phase Measurement Masterclass — Dave Jones (mention)
+context before: So, what we have to do is we have to go up into measurements up here and then where in vertical measurements it's got nothing to do with the vertical the voltage of the measurement.
+TEXT: So, we want to go into horizontal over here and we want to have a look at the features for the horizontal and really you know, we can measure the frequency the period the rise fall time the width and the duty cycle and all that sort of stuff.
+context after: But there's no relative measurements between two waveforms over there. So, what we want to do is we want to go over to other and aha and here's where we could do it.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (mention)
+context before: So, you just null that out and bingo. And when it comes to frequency measurement, it is actually quite powerful. It'll work in both AC mode, DC mode because this This AC plus DC true RMS capability and it'll work in current mode as well.
+TEXT: So, if you're in any any of these modes, all you got to do is hit the Hertz button up the top here and you can get the displayed frequency in Hertz, kilohertz, and then the and pulse width in milliseconds as well and the duty cycle.
+context after: Excellent. And does that actually work? Well, let's try it. I got a square wave at 1 kilohertz with a 2.5 volt offset. The duty cycle is 20%. It's displaying 1 kilohertz.
+
+[869] EEVblog 869 - Counting LED Photons! — Dave Jones (mention)
+context before: Let's plug it in here, and yes, we can measure frequency, of course, that's, you know, it's a frequency counter, right? But the key is in the title. Universal counter, it actually counts stuff. It's got other modes, where... many different modes, you can do phase,
+TEXT: duty cycle, all that sort of jazz, but it's got a totalised mode. It does exactly what you think it does. It counts things, and here it is. And you go into gate, time, and you can actually set the gate time to one second like this.
+context after: So there it is. We can actually get our count on this thing. But just like any instrument, you've got to actually set it up properly. And notice we're getting like the 206, 212, or whatever it was before. That's because we haven't 50 ohm terminated, and
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (mention)
+context before: Now, let's go into our measure menu and have a look at that. And of course, you can add them down here. I've already got like the rise time down there and it does seem to be fairly comprehensive, but you got to go down here, you've got to go up here, you've got to press that, and then yeah, we've got a whole bunch uh period, frequency, mean, peak-to-peak, cycle, RMS, blah, blah,
+TEXT: blah, V start, overshoot, rise time, fall time, negative duty cycle, delay. So, you know, it's reasonably uh comprehensive. I don't mind that at all. So, let's choose peak-to-peak there, and we've got it Ah, no, it's it just add.
+context after: There we go. We just added our VP. What? VP? It's V peak-to-peak. It should be VPP. Peak-to-peak. You know what that is? It's not peak. And we'll use the show all button.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (mention)
+context before: One thing I did notice is that look, we're in diode mode or let's say if you always want to be in continuity mode by default, if you switch it and you go back, you lose that default range.
+TEXT: Now, you either like that or you don't. So, for reference, the Fluke does exactly the same thing. And we'll put mains up the clocker. We'll measure the duty cycle there and we can measure the hertz keys as well.
+context after: So, there you go. Well, mains is a bit out today, but it seems to only have 400 hertz maximum. So, this is interesting. Have it on DC volts, you try and measure AC, the mains here, it just flishy flashes back and forth.
+
+[10] EEVblog #10 Part 2 of 2 - Fluke 87 V Multimeter Review — Dave Jones (mention)
+context before: It's it's actually really quite good. Measures frequency, uh, but it only goes to, um, 200 kHz, I think, which isn't very high. So, it's not a it's not a great frequency counter, but it's handy.
+TEXT: Um, it does duty cycle percentages. Now, there's another really neat feature they've added to it. Um, on the AC measurement range here, um, it's actually got a low-pass, uh, filter function.
+context after: So, you just press shift and, um, it's it actually it shows you that there's a low-pass filter mode is in, and and it filters out high-frequency crap. So, that's that's really quite handy.
+
+[D2PANd9Hu3U] Zotek/Zoyi Test Equipment MAILBAG BONANZA UNBOXING! — Dave Jones (mention)
+context before: And we can go between normal, auto, single. Okay. Cool. Trig rising, falling. Oh, that's it. You can't do either. More measurement on. There you go. We've got RMS. We've got frequency.
+TEXT: Uh duty cycle. Okay. Peak to peak. Language. English. Auto off. Okay. So, we can turn the auto off. Um or on backlight. Backlight timer calibration. How do we how do we calibrate it?
+context after: I guess no probes, right? But not a review. Uh reset uh version 1.021. Okay. Um how do we change our volts per division? Well, our up down arrows also change our thing here.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: But JTAG usually quite high speed. Might have been out of the realm of something like this. But I I guess it would have been nice to have JTAG in there because a lot of logic analyzers will actually, you know, won't have JTAG.
+TEXT: Even high-end ones won't have JTAG option. And as far as measurements go, we got width, period, duty cycle, frequency, show the byte, show timing markers, and show errors as well.
+context after: Well, only one thing left to do. Feed some data into this sucker and see what it does. Now, of course, I always like to uh try and use these things without reading the manual at all cuz that's a true test of, you know, is this thing uh user-friendly or not?
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (mention)
+context before: So we can go into the continuity tester. Nice. Not not the loudest we've seen but a kind of fast latched and very quick. That's nice. No worries there at all.
+TEXT: DC volts and it's got Hertz. Duty cycle? Maybe you can actually detect the frequency in the Yeah, look at that. So AC superimposed on the DC average. Nice. It's made in Japan.
+context after: All the best stuff's made in Japan. Actually, that display is really quite nice. Not quite as sharp as that Aning one in terms of reflection but not far off.
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (mention)
+context before: So, they can implement that auto hold stuff in software. Whereas, it looks like they can't do that uh for some reason due to the multimeter chips. Although, you know, you can read the data out and like you could still do it in software, but that's probably a limitation of the of where the lack of auto hold mode on this thing comes from.
+TEXT: And I'm not sure why we've actually got a pulse output here like 600 hertz by default 50% duty cycle. I don't don't know why you need that on an industrial meter like this.
+context after: And of course it's going to be bang on. You wouldn't expect anything less. Well, it's hard to quibble about that one. One lousy least significant digit out on the resistance range.

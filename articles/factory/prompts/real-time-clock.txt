@@ -1,0 +1,638 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: real time clock
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 121 passages drawn from 93 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# real time clock`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[761] EEVblog #761 - Pebble Time Smartwatch Teardown — Dave Jones (explains)
+context before: It does crypto. It's got USB on the go. It's got all sorts of things even 3 ADC's. Ah, 20 comms interfaces. Woah, camera and LCD stuff. Yeah, it does DES encryption, all sorts of stuff.
+TEXT: CRC random number generators. Bob's your uncle and a real-time clock as well. We didn't see the 32 kHz oscillator in there. Actually, haven't seen that yet. Hmm, so I'm not entirely sure how they're actually implementing the clock in this thing whether or not it's a external one, the internal RTC because that would require a separate 32 kHz crystal which I couldn't see on the board.
+context after: So, I guess they must be actually running it off the main processor and in low speed low power mode, something like that. Anyway, there's the block diagram for those playing along at home.
+
+[1404] EEVblog 1404 - The Amazing HP 9845B Computer — Dave Jones (explains)
+context before: We've got four expansion headers which as I said designed to plug in these cartridges. Basically think of them as like you know like PC plug-in boards. You know your ISA plug-in boards essentially or your bloody whatever you got these days.
+TEXT: Newfangled micro channel rubbish or your PCI Express ports for you kiddies but basically yeah you plug in these expansion cards and they would have you know RS232 serial interfaces that have plotter interfaces printer interfaces external mass storage interfaces a real time clock cuz this didn't have a real time clock in it.
+context after: You had to plug in external one. It's like yeah you just plugged them in there and you could get an expansion cage which had an additional seven slots as well.
+
+[1538] EEVblog 1538 - NEW PROJECT Part 2 - Microcontroller Selection — Dave Jones (explains)
+context before: Don't care about it, but then it's, you know, it got all the extremely low power, like, you know, half a dozen different low power modes and stuff like that.
+TEXT: Does it have a real-time clock? Yes, hardware real-time clock calendar. I'm liking this. This is looking like a winner winner chicken dinner. But, yeah, as I said, like, the smaller 80 one would probably do the business, but if you can't get it, it might be better to actually design in the larger footprint.
+context after: In fact, this is probably an example of where we might be able to design in dual footprints so that cuz the pics are going to be fairly pin compatible.
+
+[269] EEVblog #269 - Energy Micro Tiny Gecko — Dave Jones (explains)
+context before: So, let's go look in the demos. There we go. We can download the demos. Blink the LED. Woohoo! Try different energy energy mode demo using the LCD. Let's try that.
+TEXT: Start. And it resets and that's pretty quick and yep, we've got something on our LCD. When you press the reset button here, you can see that it's uh, in 32 MHz mode and you can actually cycle through different modes, 32 kHz crystal, and when you do that, that will plus the RTC, the real-time clock.
+context after: So, you've got all these different modes that you can measure, and in the background, you'll be able to see the graph changing. So, let's give that a try. So, let's take a look at that.
+
+[C1on-LaIsCA] EEVblog #b10000000000 - 1K Micro Magic — Dave Jones (explains)
+context before: So they sent, they did send the prototype projects back, these magazines, but you had to send it to them to, so that they could test it out before they invent it, before they publish the thing. Anyway, composite video in, composite video out, powered from 12V DC, little 5V regulator in there.
+TEXT: PIC16F84, DELLA semiconductor DS1307, real-time clock chip, the main crystal and the 32kHz crystal for the real-time clock. I bit-banged, as I'll show you in the source code, bit-banged an I2C serial, an I2C port on this thing, and all this wonderful stuff, with the time, date, overlay, everything,
+context after: ran in 1k of program memory, just. But that's not all. Two months later, in October 1999, I had another one published, a follow-up project, which was the VTG, as opposed to the VCG, was the Video Title Generator. Where is it? There it is!
+
+[1538] EEVblog 1538 - NEW PROJECT Part 2 - Microcontroller Selection — Dave Jones (explains)
+context before: So, maybe if you use a main oscillator, a secondary oscillator a secondary oscillator for the timer, you probably can't then have the real-time clock one as well. So, you might have to use the secondary one for the uh real-time clock.
+TEXT: Oh, yeah, there it is. Secondary oscillator goes off to the RTCC. See there. So, if you're using the real-time clock counter, if you've got a 32 kHz watch uh crystal just for that, um that goes off to the RTCC, then you can't unless it you happen to use that frequency, maybe.
+context after: Let me think about that one. I might be able to, actually. Yeah. Yeah, I might be able to. I might be able to use the RTCC. I might be able to use the 32.768 kHz watch crystal to not only power the RTCC that I want, but also um as an input via this mux here to go into my timer.
+
+[688] EEVblog #688 - How To Rework Solder SMD Chips - BTTF Time Circuits Repair! — Dave Jones (explains)
+context before: Great, I don't use KiCad either, so I've got to go install that now. Just to look at the schematics so I can start probing this thing and playing around. Well, I just plugged it into the single board here, and it's doing exactly the same thing.
+TEXT: And I'm reading an email from Jockey, and he says that yeah, it should, once I've programmed the real-time clock in here, which I have, I've verified with the serial commands that it's actually ticking over and everything else, then the display should automatically update.
+context after: And you can actually choose to plug this into, like, any board you like here. And it's just not working on any of the boards, so I'm not sure if something more is damaged on there, maybe some of the driver transistors or something like that, perhaps?
+
+[32] EEVblog #32 - Tandy 1000 Retro Computer time! — Dave Jones (explains)
+context before: depth, and I found that the DMA memory processing still required a fixed 4.77 at 33% duty cycle, otherwise it wouldn't work. And I experimented with that, and sure enough, the machine crashed. So I had to generate that signal, regardless of the turbo mode.
+TEXT: And also, the timer chip, the real-time clock, actually required, I think it was a real-time clock, it required a 2.38 MHz. signal fixed. So my turbo board had to come up with both of these signals, regardless of what the actual processor clock speed was.
+context after: And what did you do back in the old days? You wanted to design the most elegant, simplistic circuit you could. So I channeled my inner Woz, my inner Wozniak, and I came up with this sucker. And I thought it was very clever at the time.
+
+[1538] EEVblog 1538 - NEW PROJECT Part 2 - Microcontroller Selection — Dave Jones (explains)
+context before: So, yeah, it looks like we can switch through a secondary oscillator. Or will the secondary oscillator Uh that's a low-power RC oscillator. Okay. Oh, no, that that's the internal low power.
+TEXT: So, maybe if you use a main oscillator, a secondary oscillator a secondary oscillator for the timer, you probably can't then have the real-time clock one as well. So, you might have to use the secondary one for the uh real-time clock.
+context after: Oh, yeah, there it is. Secondary oscillator goes off to the RTCC. See there. So, if you're using the real-time clock counter, if you've got a 32 kHz watch uh crystal just for that, um that goes off to the RTCC, then you can't unless it you happen to use that frequency, maybe.
+
+[1431] EEVblog 1431 - Keysight EDU33212A Function Generator Teardown — Dave Jones (explains)
+context before: This would be going off to the touch screen, wouldn't it? And anyway, so this would have like video driver and everything Uh, built in. That looks like another switch mode controller that's doing something.
+TEXT: Analog VDD, is it? Okay. Um, the power and fan connectors, nothing much doing. There's your real time clock. That's your 32 kHz, uh, clock, uh, crystal there. And that'd be And that the BQ, uh, 32002 would be an RTC, uh, clock chip.
+context after: And there's your battery backup, of course. Aha, there's your video connection. That's on the bottom side of the board there. You can see some, uh, matched length, uh, traces going on in there, um, as well.
+
+[909] EEVblog #909 - Heart Defibrillator Teardown — Dave Jones (explains)
+context before: energy section at all, we've got a couple of big-ass relays in here, looks like we've got a transformer in there, oh no, that's an inductor, no, I thought that was a transformer for a second, but one interesting thing is that they've got a backup battery, what is the backup
+TEXT: battery for? Well look, I see a watch crystal down in there 32.768 kilohertz, that'd be an RTC chip, why have they got an RTC in this thing? I can only presume that it actually records the time and date of when the incident actually
+context after: happened. In which case, well it's may not be that the date will be accurate, but the time may not be accurate because it's presumably set at the factory or whoever installed it in the location, but the thing with these is that they can sit there for years and the
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (explains)
+context before: Wow. Wow, it's almost too powerful. You could get lost in here. Um but that is that is absolutely brilliant. That's what you want as a beginner. You don't want to you know going into the data sheets and try to find this stuff is a real pain in the butt.
+TEXT: Um so other configuration stuff, uh DMA. Okay, so there's all the DMA stuff. Not really interested in GPIO. Uh real time clock. There we go, instruction what? Calibrate there your calibration values for your real time clock.
+context after: Uh ask RCC uh Oh, RCC? No, that's not RTC. That's um RCC. What's that? That's something else. Analog? Not there. What do they call it middle wares? That's hilarious.
+
+[1231] EEVblog #1231- New Uni-T UPO3000 Oscilloscope Teardown — Dave Jones (explains)
+context before: Confidence is not high. I repeat, confidence is not high. Anyway, let's have a sticky beak around the rest of the board. There's all the unpopulated logic analyzer stuff. So, that's actually a ton of stuff there that's uh unpopulated.
+TEXT: Wow. Um one of the most interesting things, look over here. 4.7 F. Not that microfarad or millifarad rubbish, 4.7 F. That's a super cap. 2.7 V. So, they've used that uh as a battery uh replacement for the real-time clock.
+context after: Anyway, it's stuck down, so it's not going to flap around in the breeze, no worries. And they've also uh soldered down the 32 kHz uh watch crystal as well, nice touch.
+
+[1289] EEVblog #1289 - Mystery Huawei Teardown — Dave Jones (explains)
+context before: These are your two fiber interfaces. So, they're like fiber modules just slide into there. So, all the laser diode goodness is inside. The module, the receivers, and transmit stuff is in there, and this is basically just a holder.
+TEXT: Pretty much board-to-board interconnect. Got an Altera Max 2 CPLD there. It's just doing some like general housekeeping stuff. And battery backup, of course, for the real-time clock. That'd be the real-time clock chip.
+context after: I think I see an ST branding on that puppy. And then, we've got all the power supply goodness. Wow, look at these. You would salvage these. These are like Obviously, they farm out the design of these to someone.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (explains)
+context before: And we've got more DC to DC converter stuff happening down in that corner. Large tracks all the uh power for this thing cuz it's going to take a fair bit of uh juice to run this thing.
+TEXT: And uh let's have a look. A few miscellaneous parts around here. That's probably our real-time clock, certainly. There's our watch crystal there, so that's just powering our real That'll be a real-time clock chip.
+context after: Don't even have to look up the number. Sure it is. And I thought at first that uh might be a JTAG um interface, but look, they've got uh uh Cal Secure on there for that pin and override.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: Something is wrong with it. I've programmed the code into here exactly the same as what uh he's got. He's uh double-checked that. It's okay. And I can talk to it via the serial port.
+TEXT: I can update the real-time clock and everything. So, it should automatically um update the RTC on the display here. It shouldn't be like this." So, there's um this appears to be something wrong with the hardware.
+context after: And if I power it up, you might see it change. The top one stays pretty consistent, but this Yeah, that second one there, you saw it. Even the green is a bit dim.
+
+[1275] EEVblog #1275 - Uniden UHF Walkie Talkie Teardowns — Dave Jones (explains)
+context before: Look at that. It's a whole bunch of discrete passives, a little watch crystal down here. So, that one, of course that's not going to be a uh an actual watch crystal 32768.
+TEXT: This doesn't have a real-time clock in it. That'd be a higher frequency. But yeah, that's potentially doing a lot of analogy goodness. So, that's got to be some you know, custom Uniden ASIC I would presume.
+context after: Hmm, anyway, board-to-board interconnect. The rest of it here's our transmitter and receiver up here. So, it's going to be you know, a little bit of shielding on there. So, we'll get that off and just see if we can get that board out.
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (explains)
+context before: But uh it works um the same if we just go over here like this, and boom, it instantly does the record uh mode enable on. But, as you can see from the screen caps here, it actually gets that date and time up in the top left wrong there, because this thing, as you saw in my teardown video, does not actually have a backup battery in it.
+TEXT: There's no real-time clock. There's no ability to set the clock for anything in this thing. So, that's pretty dumb. But, low cost, they saved a few bucks. Okay, so let's try out this record function here.
+context after: What I've got is a packet here with an infrequent glitch, so we don't know how often that comes up, but I've set my delayed trigger. So, I've gone over here, and I've delayed my trigger for a 10 microseconds, so that it waits for the packet, cuz if you don't have that, then you can get like triggering instability on your packet.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (explains)
+context before: Wow. And there's other weird parts like this one, for example, manufacturer GoTop. This is actually in embedded peripheral ICs and font chips. They actually have chips with fonts built in.
+TEXT: Here we go, embedded peripheral ICs, font chips, IO expansions, micro and supervisors, and real-time clock. So, if you want a really cheap real-time clock, for example, getting sidetracked here.
+context after: I haven't looked at these. Let's go in there and let's just sort by price here, shall we? There you go. If you're paying too much for your real-time clock, there you go, there you go, 10 cents in five quantity.
+
+[942] EEVblog #942 - Mystery Monday Teardown — Dave Jones (explains)
+context before: And right next to the batteries here, there's a ancient looking part, 26 week 1985. So, I'm not sure what's going on there cuz a lot of parts um elsewhere on the board are much uh later, as I'll show you.
+TEXT: But anyway, a 4543, that's a real-time clock chip. So, this is, you know, fairly old uh tech in here. Here we go. Uh So, here we go. We're talking uh 14th week '99 there, by the looks of it.
+context after: So, this looks like a 2000. Uh yep. Uh Yep, 6 week uh 1999. So, 2000 vintage. We've got ourselves a Atmel microcontroller here, old school uh 90S uh 1200.
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (explains)
+context before: I just haven't seen that sort of numbering scheme before. There's a 24 LC series uh E-squared PROM. That looks like dodgy hand-soldered in there. That's not terrific. But uh generally the soldering quality's okay on this thing.
+TEXT: Um I'm not going to uh complain about that. Um 32.768 kHz uh watch crystal there. But uh yeah, it must have a real-time clock in it, obviously. Um otherwise, they wouldn't bother with that.
+context after: They're obviously using uh for everything else, they're using the internal uh clock of that uh micro, no doubt. We've got ourselves another trimmer here, whatever the hell that's doing, but it doesn't instill a lot of confidence.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: That's absolutely fantastic. Claims there's a 2% error on that and a 1 volt drop. That's why I said if you feed in say a 24 volt if you got a 24 volt power supply powering this thing, you should be able to get 2 0 to 23 volts.
+TEXT: It doesn't come with a backup battery though, which is interesting. That'd be for your real time clock. So, not necessary for general operation, but if I've got one I'll whack it in there.
+context after: So, we've got the optional uh, Wi-Fi module here. So, we'll just whack that in there. Make sure the pins are lined up. And Bob's your uncle. We're good to go.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (explains)
+context before: So, to read that, then we would have had to have to a line going off to the micro and that would have potentially drained Um, well, it could have included a very big high power high value resistor in series with it, maybe, but it would have drained the battery.
+TEXT: Would have put more drain on the battery. So, no, it's going to Um, No, I guess the real-time clock will just stop working, you know, it'll reset every time you boot it up if it dies.
+context after: Uh, But, no, that was a good question. Does it come with an SD card? Yes, it does. They're a dime a dozen, you know, like a 2 gig or something.
+
+[643] EEVblog #643 - Mailbag — Dave Jones (explains)
+context before: It's on a secondary board here and then that board is surface mount soldered onto here. Almost like it's I don't know, not really an after thought, but gee, I don't know.
+TEXT: And then the 32.768 kHz watch crystal is then just you know, tacked onto a couple of the pins and that chip here. So, that's going to be more than the just the real-time clock chip.
+context after: It seems they went to a lot of trouble for a real-time clock chip. I mean, this is not hugely old this thing. So, anyway, we've got ourselves yeah, there we go.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (explains)
+context before: Oh, I got to keep those square. Oh, no, they'd actually That's what the molding's for. It's pretty much what I expected. A micro, a few miscellaneous bits and bobs, and it's looks like that a rechargeable battery down there cuz you wouldn't have a fixed lithium in something like this, would you?
+TEXT: I don't know, it could last forever. Anyway, that's for the real-time clock cuz this thing does have a timer. And you can see right up there. Geez, that's a weird layout, isn't it?
+context after: I mean, you know, you've got your real-time clock chip. There's your 32.768 kHz crystal, and and your battery's all the way down there. So, yeah, that wasn't good planning on your PCB layout point of view.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: It's like a bunch of segments uh missing. But, more to the point, it's not updating anything on the display. It's just static, basically displaying all digits. So, yeah, something's wrong.
+TEXT: So, we're going to get in there and probe the chip. The uh real-time uh this um shield on here, this is only a real-time clock. Uh basically, there's no extra circuitry on there.
+context after: The uh uh multiplex and drive circuitry is on the back of the panel here. So, this is the chip we fixed uh in the last video, and uh it's identical.
+
+[121] EEVblog 121GW Multimeter Kickstarter Live Chat — Dave Jones (explains)
+context before: Will it tell you when the internal CR1220 battery needs replacement? Didn't think of that. Um No, I don't think it does. I don't think it does. It just powers no.
+TEXT: No, it doesn't because the battery is connected directly to the real-time clock. The there's a real-time clock chip in here. It's connected directly to the voltage pin of that.
+context after: So, to read that, then we would have had to have to a line going off to the micro and that would have potentially drained Um, well, it could have included a very big high power high value resistor in series with it, maybe, but it would have drained the battery.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (explains)
+context before: In fact, um slower power uh than than the uh ST arm uh 32 STM32. This is 150 microamps per megahertz run mode, and if you remember, this one was 185 microamps per megahertz run mode.
+TEXT: So, technically the PIC24F lower power 400 nanoamp real-time clock and calendar operation. 400 nanoamps if we go over to here, it was standby mode plus RTC. There you go.
+context after: It's like almost triple the consumption, but it's still bugger all. The STM32L series in particular still more than good enough to meet the specs. But, if you're going for a real ultra low power, like the best you can get in the industry, you probably wouldn't be using something like this.
+
+[MqECOT5j-cE] Latte Panda BIOS Linux Troubleshooting - Featuring Sagan — Dave Jones (explains)
+context before: There we go. Yay. We win a chicken dinner. >> Oh, Camos check some error. Oh, it's got a dodgy battery in it. >> Oh, >> it it could have a >> That might be why the second BIOS doesn't work.
+TEXT: >> It's really only to keep the real time clock. >> Um, usually. >> Yay. >> Latte panda. >> It's working. We are pandering. Never pander folks. Don't pander to people.
+context after: >> Oh yes, that took me too long. >> Yes. Trap for young players that one. >> Oh, >> Linux men. Linux men. >> We're not worthy. We're not. >> Right.
+
+[955] EEVblog #955 - World's First Portable Computer Teardown — Dave Jones (explains)
+context before: And we've got a buzzer up here bigger as well. We've got the bell character on our keyboard, so it has to go ping. And this one thing which you'll notice that's not on here, and that is your traditional battery backup.
+TEXT: There was none of this CMOS bias rubbish back in the day, and there was no real-time clock either. So, this thing couldn't even keep the time when you switched it off.
+context after: And we can see right down here that this is actually a release rev F board. Look at all the dust. And here's our memory, check it out. The interesting thing about this is that look, it's all higgledy-piggledy.
+
+[673] EEVblog #673 - Mailbag — Dave Jones (explains)
+context before: One of those Weigand cards or, you know, like you swipe your card when you before you go in the gate. All that stuff is logged usually. So, it wouldn't surprise me if it logged it to a PC database over the Ethernet here.
+TEXT: Yeah, that would make complete sense. So, it tracks the time and date. Of course, there's a huge battery backup on the back there. So, it's got a real-time clock.
+context after: It can track the time and date of the entry and also, you know, everyone's card will be programmed in there. You know, do you have access, blah, blah, blah.
+
+[470] EEVblog #470 - Agilent N9344C 20GHz Spectrum Analyser Teardown — Dave Jones (explains)
+context before: High current traces you can see that. We've got more power supply stuff happening over here. And you know lots of little local regulation and core voltages everywhere, but yeah, that pretty much does the business.
+TEXT: It looks like we have a real-time clock down here. You can tell from the 32 kHz watch crystal down in there by the looks of it and a little tiny package.
+context after: External ADC and that about does it for this side of the board. So, I suspect there's more on the other side. So, let's flip it over. Nothing terribly exciting on here.
+
+[4vY5-obAx6w] Deye Hybrid Solar Inverter RTC FAIL! — Dave Jones (explains)
+context before: Maybe very short skips. And I'm not sure my I'm pretty sure it's not my mains doing that. So, I think it's the actual DI whatever measurement system in the DI inverter is doing that.
+TEXT: Now, if that's some how causing it to skip, I don't see how when you've got a proper RTC chip it it physically has supposed to have an RTC chip in there.
+context after: So, I I don't know, but anyway, that's at least something to go on. But anyway, they don't seem to think that's a thing. But they seem to think I just have a faulty board.
+
+[295] EEVblog #295 - $30 eBook Reader Teardown — Dave Jones (opinion)
+context before: No, they'll use Fangtek. And that's clearly connected to the 32 kHz crystal there. So probably some sort of a real time clock. I can't quite read that on the screen here.
+TEXT: It's HYM856 something perhaps something like that. So maybe yeah, some sort of real time clock device. Maybe that's not built in to the main Rockchip device. And up around near the power supply up here this is probably the power supply for the TFT display or something like that.
+context after: Some more stuff over there for the battery. That's um What is that? That's a PT4110. There you go. That's also a Powtech as well. Same brand obviously as the DC to DC converter.
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (opinion)
+context before: So there's our oscillator there. I don't know. Doesn't even seem to have a brand on that puppy. Hm. Got resistors everywhere and lots of unpopulated cap. Don't know that part number off the top of my head.
+TEXT: Um, interestingly, look, battery missing for the real-time clock. Um, yeah. Where is the battery? Does this thing not have a real-time clock in it? I can't remember. I haven't actually checked the uh firmware to see if it has a uh datetime stamp for any uh function.
+context after: Maybe it doesn't. H. So, there you go. What is that connector doing there? I mean, this is obviously a little driver for it for outputting whatever signal it happens to be, but they've gone to a gone to a bit of expense there.
+
+[949] EEVblog #949 - Australian Made Vintage Laptop Teardown! — Dave Jones (opinion)
+context before: No floppy, no nothing. And obviously this external interface, you know, designed for some sort of uh floppy disced uh system, something like that. Perhaps some sort of storage solution because where is the batterybacked um SRAM?
+TEXT: I'm not sure if it actually had um that internal battery. I think that's only for the real-time clock. I'm not sure if that actually uh kept the SRAM alive like say the classic uh Tandy 100 uh for example, you could um you know just leave all your stuff in RAM.
+context after: Anyway, if you had one of these um please let us know. The Cookabara. Wow. Anyway, I hope you enjoyed that. I have a um older and more interesting uh retro computer tear down for next week, so stay tuned for that.
+
+[973] EEVblog #973 - Hioki Multimeter Review & Clamp Meter Teardown — Dave Jones (opinion)
+context before: Granted, they've put little bits of insulation on there. You know, neat touch, but yeah. I'm not going to write home to my mother about it. Is that a 32 kilohertz watch crystal in there? Um, low power. You don't need, this doesn't need to have fast updating
+TEXT: or the rest of it, so maybe they are operating the chipset at 32.768 kilohertz. Hmm, who knows, or it could have its own faster internal oscillator, but there'd be no reason for a real-time clock in something like this. Oh, is that a trimmer?
+context after: Oh, I didn't want to see a trimmer in there. Gee, oh, there's another one! There's another one! Ah, trimmers all over the place. So as far as the multimeter side of this thing goes, you know, they've got the GDT in there, gas discharge tube for the overload, stuff like that,
+
+[687] EEVblog #687 - EFTPOS PIN Pad Terminal Teardown — Dave Jones (opinion)
+context before: So you'd expect to find like the keys and things in SRAM so that they can easily be uh destroyed at a moment's notice when you you know uh and violate any one of the uh tamper mechanisms inside this thing.
+TEXT: Now curiously um a massive 4700 mic 10V surface mount cap. Look at that beast there. So they really want to retain that um uh data. Well, I I reckon that's maybe that's uh for like I don't know some internal real-time clock or something.
+context after: And maybe that battery only powers the uh keys and uh other uh encryption uh type data perhaps. And this uh cap reservoir cap just uh keeps maybe the time and date going for uh a long time when it when the power is disconnected perhaps.
+
+[687] EEVblog #687 - EFTPOS PIN Pad Terminal Teardown — Dave Jones (opinion)
+context before: Now curiously um a massive 4700 mic 10V surface mount cap. Look at that beast there. So they really want to retain that um uh data. Well, I I reckon that's maybe that's uh for like I don't know some internal real-time clock or something.
+TEXT: And maybe that battery only powers the uh keys and uh other uh encryption uh type data perhaps. And this uh cap reservoir cap just uh keeps maybe the time and date going for uh a long time when it when the power is disconnected perhaps.
+context after: I'm not entirely sure. And we have ourselves a pulse transformer there for the Ethernet interface. And we've got our recording head over here, our RS232, our USB uh host over there.
+
+[266] EEVblog #266 - Mailbag — Dave Jones (opinion)
+context before: I really like that. It's rather neat, but uh uh if you don't know about the energy micro boards EFM uh the chips, the EFM 32 range there, ultra low power uh 32-bit micros, 180 microamps per megahertz megahertz execution, uh 900 nanoamps in deep sleep mode, whatever deep sleep mode means.
+TEXT: Presumably, that means with the real-time clock still uh going, and 20 nanoamps in shutoff mode, whatever shutoff is. That's presumably doing absolutely nothing. I don't know if that has wake up on interrupt or anything like that.
+context after: Check out the data sheet if you want further details, but 4 to 32k uh flash memory, 1 to 4 kilobytes SRAM, and it's got a built-in LCD controller, as you'd expect, 4 * 24 segments, and the LCD controller itself only uses 900 nanoamps.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (opinion)
+context before: Namely a co-processor. What sort of co-processor would they have on it? And does the Raspberry Pi ecosystem support a co-processor? Like software ecosystem support a co-processor? I've no idea.
+TEXT: Real-time clock? Yeah, the Raspberry Pi doesn't have a real-time clock, does it? Um and a uh, mini PCI slot and jewel camera support. Cuz if you want to do like stereo vision stuff, the regular Raspberry Pi only supports one.
+context after: So, cool. Let's take a look. Thank you very much, uh, Chris Crocker-White, hyphenated last name. Ooh. Go to the other bench. So, yes, just a reminder, if you are going to send stuff in, make sure you put mailbag on the top.
+
+[1132] EEVblog #1132 - The 3 Cent Microcontroller! — Dave Jones (opinion)
+context before: That is not a correct hit. It's not a JST connector, for example. So, you know, these things you just won't find them unless you know where to look. And this is like a This LCSC website looks like a good uh springboard actually find this sort of stuff.
+TEXT: So, as I said, like looking for a real-time clock, 10 cents if you're currently paying more than that or 8 cents or whatever it was, crazy. Anyway, um this font chip is really interesting.
+context after: Take a look at this. It's actually got built-in uh okay, this one's pretty pricey, right? It's an SPI uh memory array. 20 down to 20 cents in quantity under GoTop.
+
+[334] EEVblog #334 - History of PDA's in Teardowns — Dave Jones (opinion)
+context before: You can see the main crystal oscillator sitting next to that, and that wouldn't be a 400 MHz oscillator. That'd be like 20 MHz or something like that, and then be using internal phase-locked loops to uh uh boost that up to the required um internal clock rate or clock rates.
+TEXT: And they've got a battery down in here. I'm uh I don't think that would be a rechargeable. I think it's probably a uh it's probably a primary and uh used for the real-time clock, perhaps.
+context after: All right, we'll move around the board, and we'll see what we've got here. Uh there's the uh phono jack there. It's, you know, probably the biggest, coarsest thing on this device.
+
+[4vY5-obAx6w] Deye Hybrid Solar Inverter RTC FAIL! — Dave Jones (opinion)
+context before: So, I don't know what's going on there and it has an RTC chip. So, I don't know what the heck is going on, but anyway, um yeah, DIY seemed to think, "Oh, this is just normal.
+TEXT: Just internet connect the thing and set that um time sync function." I don't want to set the bloody time sync function. That's ridiculous. It should be able to with any crystal at all.
+context after: Um regardless of temperature variation, it should be able to keep like, you know, at least a minute per month or something like that at worst case. So, this is just nuts.
+
+[295] EEVblog #295 - $30 eBook Reader Teardown — Dave Jones (opinion)
+context before: There's you know, hundreds of companies like these in China that you've never heard of and they produce these cheapest chips devices and that's how they can get prices so low on these consumer products because they're not going to use like a like a Maxim brand or a TI power amplifier chip, one of the big name quality brands.
+TEXT: No, they'll use Fangtek. And that's clearly connected to the 32 kHz crystal there. So probably some sort of a real time clock. I can't quite read that on the screen here.
+context after: It's HYM856 something perhaps something like that. So maybe yeah, some sort of real time clock device. Maybe that's not built in to the main Rockchip device. And up around near the power supply up here this is probably the power supply for the TFT display or something like that.
+
+[1054] EEVblog #1054 - How an Analog PC Joystick Works — Dave Jones (mention)
+context before: card and that became the de facto industry standard joystick interface for the PC from then until the end of time until like USB joysticks took over. So, they lasted a long time this game controller joystick interface and it started out just as that single plug-in peripheral card which could control two different joysticks through a D15 connector and a Y splitter cable.
+TEXT: But of course, that took up an entire slot in your PC and well, dedicating a whole slot to a game controller kind of sucked. So, eventually these multi-combo IO cards took over where you could actually they would integrate a serial port, parallel port, joystick controller ports, real-time clock and all this sort of stuff into the one expansion card to try and save slots, but the circuitry remained exactly the same for like a
+context after: long time and there's probably other brand personal computers back in the day that used a similar type of analog joystick interface. And that's exactly what this is. It's actually an analog joystick.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (mention)
+context before: cycle resolution on sagging and stuff like that so it can record that time date and phase worst case excursions programmable trigger levels man it's got everything it's got IO as well it's got a various relay drive outputs and stuff like that really quite neat designed to operate over minus 25 to plus 60 degrees range it's 2.1 meg of non-volatile memory so it can record for 3600 days 10 years
+TEXT: with 30 minute intervals across two channels it can do up to 32 channels interval programmable two independent surveys whatever they are instantaneous readings policy inputs ability to store all of that sort of stuff and it really is a very powerful little beast of course it's got a built-in real time clock as well it's got you know the rate adjustable rate output and stuff like that it's got a
+context after: big LCD on it we might power it up after we do the tear down to see how it actually operates and it's going to have security as well because these are security and tamper detection and allowance because these things are smart meters, right?
+
+[1463] EEVblog 1463 - Mailbag — Dave Jones (mention)
+context before: Yes, he's aware of the Swiss Micros ones the excellent Swiss Micro ones. He said oh they're too expensive and yeah, so he decided to design his own series and then it got on to a hacker day and everyone said they wanted one.
+TEXT: So he started selling kits of these things and it's got a 192 by 64 display. It's twice as fast as the original units and it's got a real time clock and apparently on the Voyager models when in programming mode the key card codes are decoded in plain English runs on a standard 1 2032 coin cell battery and so this is the 41 and there you go on the back of these
+context after: aren't buttons. These are just a legend thing. So there you go. Let's turn her on, shall we? So it's been asleep. There you go. So of course the originals had seven segment displays none of this dot matrix rubbish.
+
+[1313] EEVblog #1313 - Bad Luck Mailbag — Dave Jones (mention)
+context before: basic with it. Out of the box. All right, I won't spend too long on this, I'll just see if I can get just something basic like loading a demo example or whatever, but I'm down on the download page here, update validity period. It's got font creators.
+TEXT: So cool. I guess if you want to choose your own custom fonts and things like that, you know, some companies have like, you know, font standards for their company of, you know, consolidate fonts across all their products and things. Hardware setting, RTCs, so it's got a real-time clock, keyboard setting, oh, okay, can you,
+context after: that's the thing I didn't check. Can you actually, now we're going to show you, oh, going to show, oops, now it's autoplaying. Is there, is there maybe some digital IO on here? Some of these have digital IO. You can actually program them, so you can actually use this as like a, well, maybe not
+
+[614] EEVblog #614 - Cebit 2014 Highlights — Dave Jones (mention)
+context before: Yep. Six degree of freedom sensor. Yes. Our PIC32, of course. We've got our micro SD card here for extended memory. There's a port here that's going to connect to our peripheral device over I squared C. So we've got power and data over the port.
+TEXT: Yep. Micro USB on there. This is a prototype, so the form factor is quite different to the final design. Which will look like that one we saw before on the... Yep. Absolutely. Yep. So on the back, we've got our flash memory, real-time clock over here, and the circuits down here at the base for communicating with the
+context after: various automotive OBD standards. Got it. And you can log data as well? Absolutely. So we've got memory on board. One of the key things about this product is it's always on, whether or not your iPhone is connected. Right. It's always giving you feedback and always collecting data
+
+[615] EEVblog #615 - Prema 6047 Multimeter Followup — Dave Jones (mention)
+context before: Now here's a schematic of the main processor here. And you can see there is the 65CO2. They've drawn it tiny because they've got just the parallel data buses coming in and out of it. So you don't need to show much at all. And they've got the other miscellaneous stuff
+TEXT: that you find in any microprocessor solution based around a 65CO2. There's the EEPROM, there's the main SRAM, and here, U12 here, is the battery-backed Dallas real-time clock chip. And basically what it is, is it pin-for-pin compatible with a regular SRAM chip of the same size, except that it's got a built-in
+context after: lithium primary battery in there. It's not rechargeable, it's primary. It's got a guaranteed 10-year factory life when you buy it. I think you can still buy them these days, I don't know, I haven't looked recently. But anyway, somebody in the comments previous video wanted to know how easy was it to remove?
+
+[109] Amazon Kindle 3 3G/GSM/WiFi 6" TEARDOWN - EEVblog #109 — Dave Jones (mention)
+context before: And that under there is obviously another component to do with the E Ink, I presume. Now, this device under here is another Freescale device. It's It's hard to read, but I've managed to see it, and it's an MC13892.
+TEXT: And that is a power management and user interface chip designed to work with the Freescale Freescale processor. So, it's got a real-time clock and power management and all sort of all sorts of stuff, and that's responsible for the low power consumption, or partly responsible for the low power consumption.
+context after: And I forgot to show you this little aspect to the wireless LAN antenna, too. You can see that gold-plated strip around the outer part of the case there, which connects straight into there.
+
+[384] EEVblog #384 - Agilent 4000X Oscilloscope Teardown — Dave Jones (mention)
+context before: and I'm not sure what this particular national semiconductor device over here is, and we've got a MAX9202 here, which is a fast quad comparator. And on the front side of the board here, one of those devices, well the one that's populated anyway, I assume the other unpopulated ones are the same, that's a Micron SY89855, it's an LV Pekel MUX.
+TEXT: And next to each one of the MegaZoom 4 ASICs is a Samsung DDR2 memory, it's 512 megabits. And surrounding our processor here, we've got our JTAG connector of course, which is joined all together, we've got a 32 kilohertz crystal for the real-time clock, we've got some program memory surrounding that,
+context after: and the Xilinx Spartan FPGA with its configuration PROMs down here. And you can see the different bypass capacitor configurations here, this is for the Xilinx FPGA, and this one here is the ARM processor. Next to it you can see that the balls are only around the outside there,
+
+[603] EEVblog #603 - Gas Sensor Teardown - Dräger Multiwarn II — Dave Jones (mention)
+context before: So what we've got here is a two board construction, right angle, ah, D25, as you'd expect, so, double-sided load on that, so, there's quite a bit of, ah, stuff going on on that board, but that's a processor, as I said, 8-16 bit, ah, micro,
+TEXT: maybe some latches or something like that, very old school sort of design, um, so I'm not sure of the vintage of this one, but, ah, might be able to get a chip, ah, date code or something like that. So we've got ourselves a battery, for the battery backup, of course, for the, ah, real-time clock,
+context after: that could be the real-time clock chip there, if it is quite old school, yeah, there's a 32 kil, that'd be the 32 kilohertz watch crystal next to it, because of course, being a data logger, you've got to, ah, ah, date and time, stamp everything, and then, ah, probably some analog stuff happening on the bottom, perhaps,
+
+[495] EEVblog #495 - World's First DSLR Camera - Kodak DCS315 Teardown — Dave Jones (mention)
+context before: And there's our main processor, and yes, it is a Motorola PowerPC. It's actually the the first embedded version of the PowerPC. It's the XPC 821 series, and this is known as the PowerQUICC, as in double C, Q U I double C, PowerQUICC architecture.
+TEXT: And it had PCMCIA built in, worked up to 50 MHz, and various other peripheral uh functions built in as well. We can see a real-time clock crystal next to that 32 uh K crystal there, and it did a hell of a lot, and that is responsible for, I'm sure, all of the processing grunt in this thing.
+context after: So, it'll be interesting to see what's attached on the other side, but that would have pretty much handled everything. Of course, it's virtually obsolete these days, but back then, this was pretty hot stuff.
+
+[290] EEVblog #290 - Mailbag — Dave Jones (mention)
+context before: The 32 kilohertz oscillator is on, doing various stuff, so what's the difference here? I don't, ah, right, oh, the CPU itself is actually, uh, switched off. So, uh, the main CPU's not actually executing. Stop mode, 620, oh, sorry, 620 nanoamps. Yes, um, and what are we doing in 620 nanoamps?
+TEXT: We're running our 32 kilohertz, uh, oscillator, and we're running our real-time clock, and that's, and we're doing some RAM stuff. So that's about it. Um, and snooze mode, 1 microamp, and what are we doing there? 32k, and ADC is on periodically, so you're doing some sort of data logging
+context after: or something like that, uh, presumably directly via DMA into the RAM. Once again, very similar to the, um, uh, Gecko devices. Wah, wah, wah, wah. Device driver software not successfully installed. I plugged the device in, and, uh, I get nothing. It says unidentified device.
+
+[688] EEVblog #688 - How To Rework Solder SMD Chips - BTTF Time Circuits Repair! — Dave Jones (mention)
+context before: I've downloaded it, everything's hunky-dory. And then I'm running the serial terminal. I typed in question mark as they said, and that gives me the help and bingo, it's running and now I should be able to set up, via the serial commands here, set up the display, the time-date display.
+TEXT: Excellent. Now I was able to talk to it and set up the real-time clock, but nothing changed on here. Because I was measuring actually 4.1 volts on the display here, and maybe I don't know, that's not enough for it to actually communicate with the chips and update the display on here
+context after: via the serial interface. Anyway, so I'll power that. Yes, I have checked that this is 5 volts center positive on this pin, and we should be able to plug it in here and just go. And it should have booted up. I've set the real-time
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (mention)
+context before: There's your exponent key. Oh. Got to be me. Who designed this? Stevie Wonder? So, let's crack open this prototype unit. See what's inside. Now, this is interesting. Remove and replace batteries one column at a time.
+TEXT: So, I assume that they've got both of these in parallel both like two AAA's in series and then both of those columns in parallel so that you don't lose memory contents presumably when you change it over or maybe like the RTC like maybe it doesn't have a coin cell battery in it.
+context after: Well, let's find out. Don't mind the way that they've done the battery contacts in there. They've got that spring there and there and that makes contacts with the pads down here.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (mention)
+context before: There's no need to have such precision in a simple base resistor like that, you know. So you use like E12, like an 8k2, something like that would have been fine. And your crystals are correct like this, with your traces coming in kept short, and then your caps
+TEXT: going down to ground, no worries. And then for your microchip MCP7940 real-time clock chip, I don't know why you've got a diode in series with the battery here. You really don't need that. The coin cell holders, like if you put them in backwards, they're going to be okay.
+context after: You don't need the 1k series or the diode there. But you can see what you've tried to do in actually protecting the battery putting in, but generally you just, you don't really need those. You can hook your battery straight onto there, no worries.
+
+[733] EEVblog #733 - Mailbag — Dave Jones (mention)
+context before: a humidity and temperature sensor, nice. And they've actually got different processors in here targeted for different uses, hence the different demo boards we've got here, no doubt. The Universal Bee up here is the 8UB1 and the Sleepy is 8SB1. U I'm going to presume stands for
+TEXT: USB, hence it's got that USB host there by looks of it, and S well it's Sleepy. It doesn't have the USB stuff, but certainly, well, this one probably has a real time clock in it but it's not connected. Anyway, maybe it's designed for lower power applications with the
+context after: touch, with the capacitive touch sensor interface built in. Anyway, let's power this one up, the Sleepy Bee, and yeah, there you go, same clock application that we had before by the looks of it. Does it do anything else? No, it probably just goes into different
+
+[624] EEVblog #624 - Mailbag — Dave Jones (mention)
+context before: input channels, so that's pretty good. And this has got 16 cores in it, as you can see. It's got JTAG debug, it's got 64K of SRAM, it's got schedulers, timers, clocks for real-time, it's got hardware response ports as well which can operate real-time and independently.
+TEXT: Fantastic. It's got built-in real-time clock, oscillator, supervisor, DC to DC power management, converter, IO, all sorts of jazz built in. Fantastic. It's got security ROM as well. Now this is the chip which is in this $149 kit. It's in a 217 pin BGA package pin.
+context after: Now it's to sell to yourself, but there you go. It's the 16A128, so it's got 16 cores, 128K of SRAM, 90 IO pins, and it does 1000 MIPS. Fantastic. So you know, this is a really powerful beast, it really is. It's a comprehensive range, 32-bit multicore
+
+[833] EEVblog #833 - Mailbag — Dave Jones (mention)
+context before: crack this puppy open. Oh, the screws have come off. Oh hang on, all these bloody, argh. Here we go, I think I've got most of the screws out. Ta-da! We're in like Flynn. And we have a blob. And that's it. There's a blob and a SIM card.
+TEXT: Not even a crystal. A ceramic resonator. Boring. Does have a real-time clock though. That's, oh no? Yeah, no, it's oh no, that's double-sided tape, is it? Oh yeah, no worries. Meh, built down to a cost. I'll just quickly open a few envelopes which I've got here.
+context after: I think this one's been sitting around forever. Sorry to Drax, KB3X that's his amateur radio. Call sign, hey Dave, do a show on the use of a vector network analyzer. I would yeah, it's a wireless world, and you've got like nada RF videos.
+
+[1242] EEVblog #1242 - Memory LCD+Supercaps+Low Power Design — Dave Jones (mention)
+context before: So you go into the product selector here, LQFP48 package, 32K of flash, 32 like you know, that's that's a significant part that has an LCD. Like wow, like gross overkill for simply a power up counter like this.
+TEXT: It's sacrilege. But hey, if you look at the data sheet for this, okay, 400 nanoamps in stop mode, 16 wake up lines, that's pretty good. 800 nano in stop mode plus RTC plus 8 kilobytes of SRAM retention, data backup, 88 micro microamps per megahertz in run mode.
+context after: So you'd be using like stop mode for sure, assuming that the LCD controller works in stop mode. It may not. Search for that. Liquid crystal display. Drives up to eight common terminals, 32 segments, late phase inversion to reduce power consumption and EMI.
+
+[3] EEVblog #3 - Static Myths, PIC Micro, Pocket Multimeter — Dave Jones (mention)
+context before: These are bugs in actual silicon devices. Um a recent one I've had experience with is the PIC, the Microchip PIC 24F series. I use the 24 FJ64GA series device in my uh scientific calculator watch.
+TEXT: The list of bugs in the 24F series uh device I was using is actually quite extensive and I'm going to have to actually read a list here. Um the brownout reset, the real-time clock, the I²C module, the UART, JTAG, uh SRAM, they got the size of the SRAM wrong.
+context after: It's incredible. Uh ADC, SPI, and uh a whole bunch of core functions, voltage regulator stuff, and and just regular core functions. It's crazy. The list is longer than my arm.
+
+[1538] EEVblog 1538 - NEW PROJECT Part 2 - Microcontroller Selection — Dave Jones (mention)
+context before: Ah, I am sold. Ding-a-ling, winner winner chicken dinner. Um I I'm I'm going to stop looking now. I'm going to stop looking. I'm I am sold. Ultra low power, ultra sleep.
+TEXT: Yeah, cuz battery friendly. Also, we've got it it meets the requirements. It's ultra low power. Oh, by the way, I forgot it'd be nice if it also had an internal real-time clock um as well with an external watch crystal as well so that it can keep the time.
+context after: That would be nice. I can always use an external chip for that. That's not a deal breaker, but I'm I'm sold. I haven't used this configurator thing. Learn more about the MCC.
+
+[949] EEVblog #949 - Australian Made Vintage Laptop Teardown! — Dave Jones (mention)
+context before: So that certainly dates this to uh you know the first quarter 84 manufacturer. Look at this beautiful bodgege we have here. Oops. We need to add some delay in there.
+TEXT: Resistor diode. Cut three caps in there. Oo, someone's tweaking something to get it working. Beautiful. Oh, yeah. Look at that. You're welcome. Got ourselves another bodgege on an op amp down in there near our uh battery backup for our realtime clock.
+context after: And there's a few more bodges elsewhere on the board, but this was actually very common back in the day to uh find mods like this. You know, re-pinning boards probably not as uh quick and and easy as it is these days.
+
+[619] EEVblog #619 - Dumpster Dive PABX Teardown — Dave Jones (mention)
+context before: And the rest of it, there's another custom ASIC chip here. It's got a different number on it. There's another ROM, so that's probably another some sort of processor something like that.
+TEXT: We've got some system memory over here. Um curiously, we've got a big super cap here plus we've got a battery backup. So, real-time clock, so the super cap maybe I don't know designed to keep the processor running so it can shut down gracefully.
+context after: Who knows? And there's the wave soldering arrow for all the dip parts. They put them through the wave soldering. I'm not going to bother to take this board out.
+
+[672] EEVblog #672 - GoPro Hero 4 Silver Teardown — Dave Jones (mention)
+context before: It does, you know, look, it's got uh caches in there, and and it's basically got three processors in this thing. Or you could have essentially say even more than that.
+TEXT: It's got uh two arm Cortex A9s in it. It's got an arm 11 as well. It's got USB 2. It's got all the requisite peripherals in there, real-time clock, power NTSC, UARTs, and uh NAND drivers, all sorts of DDR memory drivers, a video DSP, image DSP.
+context after: Goodness. So, well, it's just the DSPs. They're processors in their own right. So, there's at least five processors in here plus all miscellaneous stuff with a JTAG interface and everything else.
+
+[613] EEVblog #613 - Prema 6047 Multimeter Teardown — Dave Jones (mention)
+context before: We've got all our processing happening over here, good old EPROM in there. Don't want to lose that data out of that. You may not get that one that back in a hurry.
+TEXT: Ooh. Is that a real-time clock chip? One of those Dallas real-time clock chips under there perhaps? But yeah, we've got some precision front-end stuff happening over here. We've got it under a under a shield, but yeah, nothing fancy whatsoever.
+context after: So socketed, everything is basically socketed. Looks like we've got some precision foil resistors here. They look like Vishay ones, Z-foil construction if they were around back in the late '80s, but that's what they look like to me.
+
+[399] EEVblog #399 - GoPro Hero 2 Teardown — Dave Jones (mention)
+context before: It's maybe for uh debugging during um system uh testing or, you know, or development or uh something like that. It's got a USB uh host interface, of course. The JTAG, of course, that's how you program and uh uh test the thing.
+TEXT: And um it's got a wireless output, SD card, or building LCD, HDMI, blah blah blah. It's got the real-time clock building, and uh the image DSP sensor pipeline and scaling, and then the H.264 um encoding as well with dual stream uh rate control.
+context after: Fantastic. There's a lot of functionality um built into this thing. It's, you know, it's absolutely massive. So, um yeah, if you want more details, um check out the Well, I presume Well, you probably can't get the data sheet, actually.
+
+[639] EEVblog #639 - IBM L40SX Retro Laptop Teardown — Dave Jones (mention)
+context before: We've got an unpopulated device here. That looks like a crystal which goes next to it. Little four-pin metal can crystal. So, I don't know what would be going on there, but we have ourselves a Lattice GAL20V8 down in there as well.
+TEXT: So, once again, doing some glue logic. And that WDC controller, once again, got proto and proto over here. So, yeah, I don't know. Must mean something else. WDC76C21, that's the combined floppy drive controller and real-time clock.
+context after: And that WDC76C30 there, that's like a well, three-in-one, basically. It's a peripheral controller. So, it does dual serial port control, parallel, and all sort that sort of stuff. And it does interrupt multiplexing and also clock generation as well.
+
+[251] EEVblog #251 - Mailbag — Dave Jones (mention)
+context before: Thanks, Vincent. I have no idea what's in here. Let's have a look. Oh, I got PCBs. Tada! Elektor Electronics and yeah, there it is, Vincent Himpe. So, Vincent, author of the book, has sent it to me.
+TEXT: Excellent. Thanks, Vincent. I'll check it out. And these PCBs they're obviously for example projects in the book. We've got some real time clocks there. We've got LCD keypad. we've got a scope trigger, I squared prom, PWM leds.
+context after: What's that? It looks like some sort of analog to digital converter maybe. Um, and we've got whole other board. Shame they don't actually give you the parts to build it up, but sure you can buy the buy the parts, seven seg displays, all that sort of thing.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (mention)
+context before: Now, that could be because the Arduino is not sending any information. It could be a software issue. We don't 100% haven't ruled that out yet, but we're not getting any data out.
+TEXT: So, there you go, and it's supposed to be I have supposedly programmed the board to output the real-time clock information. So, we're getting nothing there. Okay, that would explain why we're getting all the digits turned on.
+context after: Okay, now for the clock line, which I'm pretty darn sure we're getting based on the other uh stuff we were Yeah, there we go. There's our clock line, and we could see the We knew that clock line was there because we were getting the transitions in coupled over to our other signals.
+
+[977] EEVblog #977 - Keysight 1000X Hacking - Part 1 — Dave Jones (mention)
+context before: Ah. So, anyway, let's look at some interesting stuff in here, shall we? There's the, you know, it's got the Speer 600, the DRAM, the flash, everything else. Uh, Windows CE bootloader, all that sort of jazz.
+TEXT: File not found. Uh, yeah, because we don't have a physical, um, ethernet, uh, file in there. So, anyway, preparing to download, real-time clock, loading image, BL image type. By the way, this board is called the BLT board.
+context after: It's got BLT on the, uh, top, silk screen, copper layer. So, that's, I think that's their internal name for this, uh, processor board. So, that's just like loading the, uh, image.
+
+[1396] EEVblog 1396 - BlackMagic ATEM Mini Extreme ISO TEARDOWN — Dave Jones (mention)
+context before: That's the whole point of it. But uh no, it looks like they got separate ones here for each FPGA. Um and there's a rescue connector. H that's interesting. It's another mysterious unpopulated connector here and here as well.
+TEXT: It's a very symmetrical design. And it's like, oh, as a layout uh engineer, you're just like, yeah, you just salivate over layouts like that. Beautiful. The same battery as the other one for our realtime clock over here.
+context after: And we got all our memory tied into our zinc FPGA. So, let's get these heat sinks off. See what this bad boy is. Is it the same one? Identical.
+
+[592] EEVblog #592 - Mailbag — Dave Jones (mention)
+context before: Here we go. Wow, check it out. Look at the high-speed board in it connects there. There we go. Got nothing else with it. So, no add-on modules. So, there you go.
+TEXT: The FX3 from Cypress. Wow. What's Oh, there we go. USB 3. Look at Oh, well, of course. That's what it's That's what it's actually for. USB 3. We've got ourselves battery backed uh real-time clock on the back, presumably.
+context after: But, yeah, it's a USB development a USB 3.0 development kit. Awesome. Hi Dave. It's something that I hope you'll be able to put to better use than I could.
+
+[1242] EEVblog #1242 - Memory LCD+Supercaps+Low Power Design — Dave Jones (mention)
+context before: Anyway, it's it's basically a multi-layer ceramic capacitor. And you might think, "Okay, well, it's just a capacitor. Why is it got 1,000 charging cycles?" Well, basically, they're going to have ridiculously thin tolerances in there, and basically, they're Yeah, they're going to have a finite life.
+TEXT: Unlike a regular regular multi-layer ceramic capacitor, which wouldn't. This only goes to 1.6 volts. Wow, that's bugger enough, all isn't it? Something like that'll be good enough to operate like a real-time clock chip.
+context after: That's no good to operate our sharp memory LCD over here, which needs It just says 3 volts. There's actually no Without the data sheet, we don't know what the lower limit of that is.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: So, they've got their own local regulator here. And these devices, these two chips here would be associated with power, you know, providing power, current limited 500 milliamp power to the front panel USB port.
+TEXT: And here's the date code, DS2000 main board version 1.00, 19th of March 2012. And you'll note that the real-time clock crystal there, a little bit bodgily soldered down, but at least it is soldered down held in place.
+context after: Bit of solder residue, flux residue left on there, but yeah, not a big deal. So, although I can see the thermal grease under there, I am actually going to try and take this sucker off and see if we can get access to see what that device is under there.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (mention)
+context before: So, it's all up under there on the front display board. I like the nice board to board interconnecting there. Very nice, very well designed, very professional. You have a battery backup battery there.
+TEXT: No, it wouldn't be for the cow uh stuff as in old uh multimeters. It'd just be for the uh real-time clock. That'd be it. But uh that's obviously the processor up in there running uh Windows CE, which this thing does.
+context after: And I I love how the front uh input front rear input switch there is just popped up through a cutout in the PCB. That is very nice. Well engineered.
+
+[1477] EEVblog 1477 - TEARDOWN! - NEW Tektronix 2 Series Oscilloscope — Dave Jones (mention)
+context before: Like you really Like you could have. I can understand why they've gone for the membrane keyboard. Now, this is interesting. They've got like two rings in here with annotation must cover and may cover.
+TEXT: So, obviously, this is the real time clock and this is the battery. So, this is the positive terminal of the battery on the back side of that. And so, obviously, they don't want this shorting out to the metal works.
+context after: So, that's just a note from the designer that, you know, look, make sure this terminal doesn't get shorted to anything. So, but there's no like, you know, tape or plastic sheet or anything like that to stop it shorting.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (mention)
+context before: Don't quote me. Um but yeah, it might be like a software option. But there it is. So, I'm not too fussed. There's an Atmel something or other processor down in there for those playing along at home.
+TEXT: Not too fussed, but yeah, that's the complete controller board down in there. Got the battery back up for the real time clock. It'll have really advanced ADCs on it cuz as I said, we're talking about .02% accuracy.
+context after: We're talking about 1 microamp current resolution on the 200 milliamp range. So, you know, as we'll see when we power this up, it's got lots of digits for for current measurement.
+
+[1314] EEVblog #1314 - Ultrasound Machine Teardown! — Dave Jones (mention)
+context before: So, anyway, tada! CPU time. This is our last board. And this is a Motorola 68040 for you Motorola fanboys. They all go wild. It's under there, thermal adhesive. I'm not going to bother to take it off.
+TEXT: And I've got the old school SIM modules up here, SIM BIOS logic. I don't know what that is. Bueller, Bueller. Then we've And I didn't know ST did lithium backup battery like SRAM real-time clock or whatever it is.
+context after: Things like Dallas Semi. I didn't know ST did that. And then we just got a whole bunch of others. That is a Cypress job down there. Actel FPGA or Actel Were Actel doing FPGAs back then?
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (mention)
+context before: Here we go. This is So, this Kipling side isn't this nice? Oh, and they've got the direct links to all the example code for LabVIEW Python DAC Factory Java.net Node.js, and more.
+TEXT: Okay, yep, I'm I'm thoroughly impressed. Okay, that's great. Yeah, this It's a professional-level support for this thing. As I said, as you'd expect. SD card installs, high high-res ADC installed, real-time clock.
+context after: Wow. Yeah, they Here's the This is the dashboard for it. Oh, look at that. It's got the pin outs and everything, and you can just select Uh very nice.
+
+[625] EEVblog #625 - Retro Teardown: Sony's First Digital Camera — Dave Jones (mention)
+context before: And of course this is our power input here coming from the battery compartment as we saw before. So all that generates all our different rails required inside this thing.
+TEXT: Now this part here, I couldn't actually get any data on that. I didn't spend too long, but anyway that's working at 20 MHz as well separate. And it's got part of the real-time clock there as well going into that.
+context after: But that's obviously some sort of the display controller cuz it's right near the display connector here. So that's got to have something to do with the display on this thing.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: We'll take a look at the block diagram in a second, but you can see the, uh, they've got an oscillator there. It's probably, uh, 32, uh, MHz oscillator. Is that another, uh, crystal there?
+TEXT: Possibly for real-time clock. And up here we've got our programming interface, so you could just, uh, solder a connector directly onto that and, uh, hack this thing if you, uh, were really that way inclined.
+context after: But, uh, apart from that, there's not much else on there. And there you go, there's the 32 MHz crystal oscillator. And there's the other crystal there, and it's got 24324 marked on it.
+
+[1690] EEVblog 1690 - Mailbag: Zifnu LED, Quantum Diamonds, Logic Gates, M.2 NAS — Dave Jones (mention)
+context before: We got a whole bunch of them. We got three here. One is uh populated like that. And we got another one here which has a Wi-Fi uh slot on it.
+TEXT: We've got a battery uh there for our realtime clock and three more. So, we've got six M.2 slots here. Um and this heatsink solution is just gorgeous. It's one large extruded aluminium heat sink with the air.
+context after: The um solution is quite nice. Uh the you can see like there's extra chunky boy um aluminum going right up the center there. So lots of uh lots of surface area to get the heat out on this bad boy.
+
+[989] EEVblog #989 - FLIR ETS320 Thermal Camera Teardown — Dave Jones (mention)
+context before: And of course, it's all in one big diecast alloy thing as I said for thermal mass reasons. You expect that. Um but, yeah. It's certainly over-engineered. And that is our main board.
+TEXT: We can see we've got our battery backup there. It's got a Well, presumably it's got a real-time clock boot loader 16.5 for those playing along at home. Winbond. All right, so we've got some SDRAM there.
+context after: We've got our ROM. Some more memory over here. So, that means the processor is tucked away inside. And for those hacking, I don't know, there's lots of test points here.
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (mention)
+context before: Already done that. What's inside. They've labeled all the chips. There we go, there's the 6 MHz Z80. There's the UPD65034 custom chip. They call it customer chip. But, that's just a custom ASIC.
+TEXT: And you know, a bunch of miscellaneous other stuff. They've got the UART and the RS232 driver and the real-time clock. And And interestingly, down here, this is what I like, a simplified block diagram.
+context after: And as I mentioned before, IC302 here is the main ASIC, and it runs continuously on the 12.2 MHz ceramic resonator there, and everything hooks into it. I mean, here's IC301 up here.
+
+[271] EEVblog #271 - Zoom H1 Recorder Teardown — Dave Jones (mention)
+context before: Another device over here. Our tab mounted uh LCD custom LCD display over here. Our carbonized PCB button which connects to the rubber uh button for the front panel for the record switch.
+TEXT: And a few miscellaneous things. And a real-time uh clock for the time and date. That's the 32 uh kHz crystal. And there's another uh surface mount connector up here which they decided not to populate.
+context after: And there we go. The main processor is a DSP. It's the classic uh Texas Instruments TMS 320 series. And the first device we've got up there is an EN 39SL800.
+
+[1019] EEVblog #1019 - Mailbag — Dave Jones (mention)
+context before: That'll be handling the USB interface or the Arduino side of things, basically. Um cuz I believe this is an Arduino interface. 74HC 14s for interface stuff and that's about all she wrote.
+TEXT: And I can't see what's on the bottom of that board cuz as I said, I can't get it off. It's uh soldered in place. Is that puppy uh some sort of battery backup or super cap for an for a real-time clock?
+context after: Anyway, big automotive blade fuse in there, so that's nice. So, apart from that, they've got the requisite high current traces anywhere. Looks to be quite nicely designed and assembled.
+
+[1614] EEVblog 1614 - Circuit Design TIP: Crystal Oscillators — Dave Jones (mention)
+context before: In this particular case, it shows that aha, they might be in there, but uh you don't get a free lunch. If you go down further in the data sheet, it shows that you actually need the uh external load capacitors.
+TEXT: But, there are some that won't need any external load capacitors. They're kind of handy. You might find that in say a low-power uh real-time clock uh uh, for example, with a 32.768 kHz watch crystal.
+context after: And you'll notice that this one actually has the 10 meg load resistor here actually internal with an internal switch, which is actually connected to the enable pin. So, when you disable the chip, it opens up this circuit, so there's no feedback resistor here, and it disables the oscillator.
+
+[1209] EEVblog #1209 - Mailbag — Dave Jones (mention)
+context before: Oh that the cassette's for the um uh that's for the recording I believe so yeah it's not a digital record yeah cassette recorder functions. It's not a digital recorder hence why you won't find any you know if it was a digital recorder you'd find a whole bunch of uh like non-volatile memory in there somewhere to do whatever.
+TEXT: So, there's a battery in there, but that would just be a for a real clone time clock or whatnot. And yeah, so it's it must be all analog, but there's there's certainly a lot on there, isn't there?
+context after: That is just an enormous board for that task. So, that went on the So, that's how big that the panel must have been, and I presume that this cutout in here is for something to do with the speaker or the phone to it.
+
+[116] EEVblog #116 - Retro Teardown - Tandy Radio Shack TRS-80 Model 100 — Dave Jones (mention)
+context before: 4000 series CMOS and some TL074 op-amps up there which we'll go into, but look at that. 4000 series everywhere you look. You just They're They're just all over the place.
+TEXT: Now, down in this corner over here, check out the real-time clock. There's the 32 kHz real-time clock crystal, and they've gunked it in there. They've They've actually put that that gunk glue.
+context after: That's not like a battery residue or something like that. It looks pretty ugly, but that's just old-fashioned gunking stuff that they've used to just, you know, pot all the components to hold that crystal in place.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (mention)
+context before: Anyway, it's an ARM Cortex M3 uh processor. Works from 32 K up to 32 megahertz. Uh yeah, the MIPS per megahertz if you're into that sort of thing. It's got a memory protection unit.
+TEXT: Blah blah blah. Volt low uh ultra low voltage detector. All that sort of stuff. It's got an internal 32 kHz oscillator with uh RTC. And it's also got an internal high-speed oscillator as well.
+context after: Plus minus 1%. That's pretty darn handy. And as I said, the low power 30 uh 7 kHz 30 I think I said 30 before 37 kHz um RC mode.
+
+[189] iRiver Story HD eBook Reader TEARDOWN - EEVblog #189 — Dave Jones (mention)
+context before: It It's It's a companion device to the ARM Cortex processor up there. It's got built-in battery charging. It's got Coulomb counting for knowing how much battery you've got left.
+TEXT: It's got a real-time clock and a whole bunch of DC-to-DC converters and voltage regulators to power the cores inside the processor and things like that. So, it's a It's a very essential chip.
+context after: And as you can see, there's a lot of analog stuff surrounding that. We've got the mini-B USB connector here. There's a small cutout in the board for that. There's another small device over here.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (mention)
+context before: You may not be able to see that, but I can see it, and that is a TI MSP430 processor down in there. There's a 32 kHz crystal down there.
+TEXT: There's probably another crystal somewhere else as well, or that could be the main one. Plus, there's got to be another real-time clock crystal somewhere as well. So, yeah. Um I don't know.
+context after: That's probably it for the main processor board. I mean, it's not, you know, there's not a huge amount doing there. We've got our uh cables connecting down to our main power board down here.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (mention)
+context before: So, uh I'm not sure what's going on there. It's not outputting the correct serial number. I guess they don't hold that in there. And uh chip double A board rev 4 internal RTC.
+TEXT: No ethernet found. Hmm, okay. Well, I guess it's not connected. And all that stuff, debug pro starting kernel. No RTC again on the 320 chip. No, it's a separate uh Windows CE bootloader.
+context after: There it is, common library blah blah. Bootloader for the Agilent P500 board. Yep, adaptation performed by Agilent in 2008. So, uh this is going back quite a bit. System ready, preparing for download.
+
+[607] EEVblog #607 - Agilent B2912A Source Measure Unit SMU Teardown — Dave Jones (mention)
+context before: Now, I don't know about you, but I have no compulsive need really to um get at and have a look at that main front panel board. There's nothing much on there.
+TEXT: It's just driving the display and the and the connectors and uh the front panel keypad and stuff like that. Not very interesting. It's got a battery backup there for the real-time clock.
+context after: And it just basically connects uh the ribbon cables through to the main uh boards and then through to the main processor board as we saw before. So, I won't bother taking that out.
+
+[339] EEVblog #339 - Cypres Parachute AAD Teardown — Dave Jones (mention)
+context before: Almost almost there. Uh this is just so un-electronic. It's not funny. Hey, tada! Uh we finally There was an extra bastard connector in there or something, was it? That's what was causing the problems.
+TEXT: Over a Maxim device and bingo, we're in. The main thing that strikes you here is just how old school this design really is. I mean, there's a Motorola MC68HC68 uh real-time clock chip.
+context after: There's the real-time clock crystal there. We've got a just a 74 series gate there and this I can barely make out the number on it but I'm but it's definitely a Motorola ZC4 something or other.
+
+[1539] EEVblog 1539 - NEW PROJECT Part 3 - STM32L vs PIC24F — Dave Jones (mention)
+context before: We don't need much memory for example, right? Even 32K and 8K of SRAM is overkill, right? So only talking about cuz you want the cheapest uh device you can, we're only talking about these two parts down here, the LO53C6 or the LO53R6.
+TEXT: So, here's our data sheet, okay? Yeah, as I said, uh 1.65 to 3.6 V uh operation, uh point, you know, 270 nA standby mode, 400 nA stop mode, uh and then then you've got the RTC as well.
+context after: We haven't even gone into the RTC, which I'm going to have. Um and that 88 microamps per megahertz in run mode. Half uh the value of the nominal PIC.
+
+[339] EEVblog #339 - Cypres Parachute AAD Teardown — Dave Jones (mention)
+context before: This is great. It's like pulling, you know, cobwebs off something. It's uh So, we've got one main PLCC device here and another sock Oh, man. This is going to take forever.
+TEXT: Yucko. There's our circuit. We've got a real-time clock. Crystal 32 kHz watch crystal there. The main oscillator The main crystal there for the oscillator for whatever that device is.
+context after: It tell There's the pressure sensor. It's the classic uh a port type there and they've just used, you know, an off-the-shelf uh one. You can see why it's um how it's got that uh ridge on there.
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (mention)
+context before: And we've got our date code, 20th week '92. So, it was uh manufactured would have been manufactured fairly shortly after that. And all the date codes are for the various chips seem to uh match.
+TEXT: So, been manufactured in the weeks or months after that. Um there's no crystal, it just uses a ceramic resonator there at uh 12.2 MHz. This is the real-time uh clock chip, of course.
+context after: I You know, I don't know the number offhand, 8521, but there's the 32 Oh. Can't see that on the screen. There's the 32 kHz uh watch crystal right there.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (mention)
+context before: But apart from that, it's there you go. Um yeah, it's one big ass graphical LCD. It displays like a little car and stuff. And there you go, there's the uh wireless connection up there.
+TEXT: I got no idea what that is, but, you know, leave it in the comments if you want to know. Little backup battery there for real time clock and the micro oh, must be hidden under there.
+context after: PIC24F for the win. All the Microchip fanboys go wild. And the good thing about that is that you can probably still buy those in the current component crisis. So, yeah, winner.
+
+[1242] EEVblog #1242 - Memory LCD+Supercaps+Low Power Design — Dave Jones (mention)
+context before: And bingo, the LCD controller can operate in stop mode. There you go. So, it can be continuously updating. And then if you wanted to change it, like if you had a a clock, for example, and a real-time clock running, you just interrupt that like once every second, and then you just update the display, and then go back down into stop mode, which was what, you know, 800 nanoamps or
+TEXT: something like that. So, in RTC mode, real-time clock mode. Right. So, you've got to go right down to the LCD controller down here, okay? And this is supply current and VDD 2 volts.
+context after: Well, let's say it's supply current at 3 volts. Bingo, we're up to 3 microamps. And that is going to be I think that's in addition. Look at the asterisks down here.
+
+[454] EEVblog #454 - JVC Camcorder Teardown — Dave Jones (mention)
+context before: I'm not sure. I've taken all the all the bits apart. I'm not actually sure what was uh making contact and making contact there now. And we could go into detail on all the other parts on here.
+TEXT: There's a little BGA down in there. This is probably some sort of RTC or something like that cuz that looks like possibly a 32 kHz crystal there perhaps although it could be higher.
+context after: Who knows what these are doing? I could In fact, AK, that seems like audio. I can look that one up. AK4694. Nope, I got absolutely zip on that one, folks, and uh I don't know what uh that text is scrolling there means.
+
+[1190] EEVblog #1190 - Mailbag Review Bonanza — Dave Jones (mention)
+context before: Yeah, terrific. High-speed counters and quadrature inputs and like PWM outputs. Wow, it's got everything. Fixed current outputs as well. 200 microamps, 10 microamps. Wow, take a squeeze inside. I'll just get the Wi-Fi antenna out of the way.
+TEXT: And there we go. That looks pretty jazzy. There's a lot involved in there. PIC32 processor. Let's have a look on the bottom. Got real-time clock, of course, that hints the battery.
+context after: Uh this is rev 1.35. Jeez, they've been through a few revisions, of course, which you'd expect. Looks like that's some sort of protection job in there perhaps right near the input.
+
+[438] EEVBlog #438 - Amiga 500 Retro Computer Teardown — Dave Jones (mention)
+context before: Now, it's different to the slightly green tinge we had on the other board. Now, it's exactly the same rev 5 board though. A few component differences like a few capacitor brand differences and stuff like that and we have a different board in here.
+TEXT: It looks like we have a small memory board with a real time clock in it. So, I'm not sure about the capacity of that one. It's not marked at all, but the floppy drive is different.
+context after: It's only got a uh two-way cable on it. Here's the one out of the other one. It's actually got a four-way cable here, whereas this one's only got a two-way cable.
+
+[746] EEVblog #746 - Sharp X68000 Retro Computer Teardown — Dave Jones (mention)
+context before: There's a chipset near the crystals here called hysteria. Once again, a custom Sharp ASIC. Geez, they really went to town on this thing. So, what does it do? Well, most likely some sort of uh clock controller timing chip, something like that.
+TEXT: It's down here. Now, there's a real-time clock crystal here. There's a real-time real-time clock chip right there to match up with that, but this is the main oscillator, of course.
+context after: And tucked away down in there is the MC68901. That's the multi-function peripheral chip for the 68000 CPU. It's a bit of a big uh beast physically, but it's got the like timers, counters, interrupt control, and all that sort of miscellaneous stuff you need in a PC.
+
+[715] EEVblog #715 - Mailbag — Dave Jones (mention)
+context before: And uh, yeah, all miscellaneous support stuff. Got to have a 74HC 244 in there. Of course you do. Jeez. LM324. What next? A triple 5 timer. Getting close. Got a nan gate.
+TEXT: Got a couple of voltage regs down in there, I'm sure. And uh that's about all she wrote. There we go. There's our watch crystal in there. That'll be handling our real time clock.
+context after: And it's about all. So, thank you very much, Hyram, for both of those items. And uh that's a quick look inside an old school TI calculator. There's a bit of a uh flame war going on on the EV logger forum about, oh, what use of bloody calculators, etc., etc.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (mention)
+context before: Those who remember the Y2K bug, oh jeez, I can Yeah, I was the Y2K engineer at uh Was it Tally's or Cellnet? No, it was probably Tally's Australia at the time.
+TEXT: And you I had to go around and certify that everything I'm talking every little piece and project that contained a microcontroller or anything that had no real-time clock in it.
+context after: I would still have to write a report certifying that it was Y2K compatible. Anyway, basic tada TRS-80 Model 100 software copyright 1990 cuz you want to save a few characters.
+
+[485] EEVblog #485 - Agilent TrueVolt 34461A Multimeter Teardown — Dave Jones (mention)
+context before: I guess that's the uh platform. I think we've seen that in uh other uh implementations of um Windows CE Agilent products. Here we go. Serial number, that is not my serial number.
+TEXT: So, uh I'm not sure what's going on there. It's not outputting the correct serial number. I guess they don't hold that in there. And uh chip double A board rev 4 internal RTC.
+context after: No ethernet found. Hmm, okay. Well, I guess it's not connected. And all that stuff, debug pro starting kernel. No RTC again on the 320 chip. No, it's a separate uh Windows CE bootloader.
+
+[1463] EEVblog 1463 - Mailbag — Dave Jones (mention)
+context before: Anyway, very comprehensive board. So, let's pair it up and yes, he says I think he says a quick demo. So, we've got a relay board here. This looks like one of those uh temperature humidity things.
+TEXT: We've got a microphone. Uh what's that? Oh, coin cell battery? I don't know what that is. Is that like a real-time uh clock thing? And we've got an ultrasonic distance sensor.
+context after: So, let's plug it in. See what's what. There is an external power up here, uh but there's no actual connection. You put it through the um Arduino or your ESP module here and bingo.
+
+[4vY5-obAx6w] Deye Hybrid Solar Inverter RTC FAIL! — Dave Jones (mention)
+context before: I think it came with the unit, but I'm not 100% sure. Anyway, I'm still looking for that. What a pain. So, yeah, I'm just losing time and this thing if you look at my teardown does actually have a crystal a 32 kilo 32.768 kilohertz watch crystal on it.
+TEXT: So, I don't know what's going on there and it has an RTC chip. So, I don't know what the heck is going on, but anyway, um yeah, DIY seemed to think, "Oh, this is just normal.
+context after: Just internet connect the thing and set that um time sync function." I don't want to set the bloody time sync function. That's ridiculous. It should be able to with any crystal at all.
+
+[187] EEVblog #187 - Tektronix TDS2024C Oscilloscope Teardown — Dave Jones (mention)
+context before: It doesn't ring a bell. But they've got some they've obviously got some that looks like DRAM there. They've got some high speed IDT memory there and there. And the analog input parts are national semiconductor parts.
+TEXT: Now curiously here's the battery for the real time clock. And look they've got a really an old fashioned SO package real time Dallas semiconductor real time clock over here.
+context after: It's quite nice compared to most of the stuff. Although you've got some standard SO packages over here. But some of the stuff is uh you know reasonably old school packaging.
+
+[1761] EEVblog 1761 - Micsig MHO14 Tablet Oscilloscope TEARDOWN — Dave Jones (mention)
+context before: A complex power management integrated circuit PMIC for those playing along at home. Uh, five configurable synchronous step-down converters, yeah. Nine LDO reg- regulators, two switches, and a battery fuel gauge, as well.
+TEXT: Nice. So, they could use that for the, um, onboard battery, as well. It's got an RTC, as well. Uh, that's that's crazy. It also includes an audio codec. Real great What?
+context after: Seriously? So, it's obviously designed for like a different type of product to an oscilloscope, or you know, just a generic to go with the Rockchip, well, the Rockchip chip where where the, um, arm processor chip would probably be used in a whole bunch of, you know, multi-media products and cheap tablets and stuff like that.
+
+[1018] EEVblog #1018 - ZeroPlus Logic Analysers — Dave Jones (mention)
+context before: You get all of these. One wire, seven segment, LIN module, AC-97. Like this is just CAN, two, CCIR, compact flash, CMOS image. Wow, is that like CMOS camera? But, like look at all that.
+TEXT: DS1302, um that's the RTC, isn't it? I believe. Um I I don't think it has eMMC. Um I think you have to look up the list, but it supports most of these, I believe.
+context after: So, all different I squared um C's, IRDA, IR modules, infrared um decoding, key lock, code hopping stuff. This is absolutely incredible. I believe you get most if not all of these decoders with like the bottom of the range $130 you know, $140 unit.
+
+[269] EEVblog #269 - Energy Micro Tiny Gecko — Dave Jones (mention)
+context before: And if we go into the Energy Aware Designer program here, this allows you to generate C code the initialization C code for various packages and various peripherals and things like that.
+TEXT: So, you go up here, you choose your device from all those and all the different types of packages, and then we can enable things like enable our real-time clock.
+context after: Bang. You want to do that? We want some ADCs. Yep, we've got looks like four to choose from in this particular package. Let's enable, you know, four channels of those.
+
+[917] EEVblog #917 - Mailbag — Dave Jones (mention)
+context before: Zilog Z80 series one of not the original Z80, but one of the later ones with a through hole ROM. They've actually soldered hand soldered the ROM in there. You can still see the residue left over.
+TEXT: Oh, wow, a couple of custom uh ASIC um uh uh There's an RTC there, battery backup, and uh a custom Sony part. Of course, Sony uh rolled their own silicons lots.
+context after: But oh, for all you Zilog fanboys. And sure enough, inside the back here, yep, rubber surround. Look at that. Beauty. And I actually like the connector uh system. It's uh sealed as well.
+
+[949] EEVblog #949 - Australian Made Vintage Laptop Teardown! — Dave Jones (mention)
+context before: So, that's why they can get away with none of the usual uh support stuff. You've just got all your jelly bean interface logic and stuff like that. So that's it.
+TEXT: We've got our processor. We got all our glue jelly bean logic, UART, CRT, all our memory, our ROM, our clock calendar is up here. That's that puppy up there.
+context after: Uh with the battery and the 32 kHz uh watch crystal next to it. And Bob's your uncle. That's about it. Oh, I just missed out on the uh backboard.
+
+[669] EEVblog #669 - FLIR TG165 Thermal Imager Teardown — Dave Jones (mention)
+context before: Ah, look. There you go. What is that little two pin device? We got some Got some caps on there. Is that another Is that another crystal? It looks bizarre.
+TEXT: Um, they've got to have a real-time clock crystal in here cuz this thing does have a uh realtime clock in it. So, is that what it is? Five pin 23s.
+context after: Nothing fancy. There's really nothing else interesting. The button of course is the uh trigger, the front front panel trigger, but uh this would just be uh US can't make out the number on that from the screen here, but that would just be uh USB.
+
+[452] EEVblog #452 - Stanford Research SR430 Teardown — Dave Jones (mention)
+context before: Go with that. That's just a floppy disk controller going off uh via the ribbon cable to the floppy drive. Down next to our battery there, no surprises. What's next to a battery in these things?
+TEXT: It's a Motorola um MC uh 146818 uh real-time clock I to C chip. Old school. And I found some chips as old as '93. Uh well, the 24th week of '93.
+context after: So, this dates this thing at uh just under uh 20 years old. And it's a bit hard to see all that uh logic there under the main CRT uh controller, but it's all uh 74HC uh logic stuff.

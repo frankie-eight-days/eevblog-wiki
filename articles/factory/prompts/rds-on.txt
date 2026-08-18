@@ -1,0 +1,198 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: rds on
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 33 passages drawn from 10 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# rds on`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: So, at a drain current ID here of 1 mA, it's only going to specify that on this particular data sheet. Typically like 2.1 V, so you can operate this directly from 3.3 V logic.
+TEXT: That'll turn the gate on. So, if your output of your microcontroller 3.3 V, it'll turn that gate on, and then switch your MOSFET on. The other main thing you're going to be concerned with for jelly bean performance is the on is the RDS on, the on resistance when you switch that gate on, and when how many ohms do you get across the drain and source terminals.
+context after: That's why it's RDS, the drain and source are the two terminals. So, as I said, it's not very spectacular at and this is going to change with VGS, your gate voltage.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: And sometimes you'd have to be careful. They may not actually show it in the equivalent circuit, but it might actually, you know, tell you that it's like ESD uh compliant or whatever, but I'm I'm having a hard time here.
+TEXT: This is getting This is getting ridiculous, right? So, yeah, I think that Sino power one is pretty It's very special snow flaky. Um like I'm sure like we can absolutely get another MOSFET with ESD protection, but trying to get it in the same package, uh trying to get it in the same voltage and current and RDS uh ratings is is another thing entirely, right?
+context after: So, yeah. I I just think we're out of luck. So, I'm I'm going to call it quits. I I I When I started this video, I didn't um think, "Oh, yeah, we should actually specifically search for the ESD one."
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: And there's they're a dime a dozen, right? You can there's a million on the market that can actually do this. So, an N channel big beefy N channel MOSFET like this is required to switch our 10 milliamp shunt resistance and of course we don't want to increase our burden voltage.
+TEXT: So, what you want to do is pick a particular MOSFET that has quite a low RDS on. RDS on is just the drain source resistance. The drain and the source here is just the effective resistance when you switch on that MOSFET hard and you know, a decent one is any jelly bean one is going to be less than 10 milliamps and of course you want it to
+context after: be less than 10 milliamps because you you know, and if it's higher than that, then you're more than doubling your shunt resistance here. So, you don't want to do that.
+
+[1331] EEVblog #1331 - BattLab One Review — Dave Jones (explains)
+context before: you saw that before, and that's reading the, or sensing the voltage across our current shunts, and we've got two current shunts here, we've got a 0.100 milli-ohms here, and we've got a 100-ohm, and then we've got a MOSFET actually just shorting out the 100-ohm, now, uh, he's just,
+TEXT: he's just gone with measuring the voltage across both resistors like that, so when you short out the MOSFET, you're going to include the RDS on of the MOSFET in series with the, uh, 100 milli-ohm current sense resistor here, and you can, like, get rid of that in software and stuff like that, um, you know, I, ideally you'd have, like,
+context after: a separate sense line coming out here, but then you gotta have a MUX to switch it, and, you know, uh, stuff like that, so, yeah, often it's just easier, I can understand why I did that, no worries, now, one thing I noticed is that it's got a thousand microfarads capacitance on the output,
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: You do the same as before, you just multiply the current by the range resistor, but because it's dropping by order of magnitude changing by an order of magnitude each time, the 50 millivolts remains constant except for the 10 amp range, but let's not worry about that.
+TEXT: Then and then we have our particular burden voltage specified in volts per amps, and then we have the actual burden voltage because that was theoretical. Over here is just theoretical due to the shunt resistor, but of course we have the MOSFET, the RDS on of the MOSFET, plus the 10 or 11 amps or whatever HRC fuse up here.
+context after: So it's going to be our 50 millivolt burden voltage, but we have to add on another 50 millivolts due to our HRC fuse up here. It's going to be in the order of 10 milliohms, could be 20, something like that, cold resistance.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Um and this particular case, they they usually give you like two values and these are fairly common like 10 V and 4 and 1/2 V or 5 V or something like that.
+TEXT: So RDS on is the RDS means the resistance between the drain and the source pin cuz this is the transistor and the gate actually controls it. So it's the resistance between the two pins when you enable the MOSFET because in this particular case, it's just being used as a switch basically off or on.
+context after: So it's going to be completely open or it's going to be completely shorted and the when it's completely shorted, it will have an RDS on that mean it's switched on of 9 m maximum.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: It will actually increase when it heats up, but let's not get into those sort of details. We'll just uh you know, ballpark sort of back of the envelope stuff here.
+TEXT: Um 50 millivolts there, plus 25 millivolts for the RDS on. This might be 5 milliohms for example, so 5 milliohms times your 5 amp, 25 millivolts. So your total burden voltage, your true burden voltage across your terminals here on that 5 amp range at lowish currents until it heats up, of course.
+context after: The fuse heats up. Talking 125 millivolts, something like that. Still pretty decent. Not a problem on the amps range. Now, it starts to get better and better as you go up the ranges.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: Your multimeter is only working from a couple of batteries. It switches this MOSFET on. I won't explain how MOSFETs work, but it switches on. It acts like a switch.
+TEXT: It's got like 5 or 10 milliamps RDS on. It's on resistance. So, effectively it just works just like a resistor and if the input goes negative cuz you might want to be measuring AC current for example or you you have put the probes in backwards, then it works as a switch.
+context after: It doesn't matter. If this voltage on the gate is positive with respect to the source down here, then or VGS is positive, then it's going to switch it on and act like a switch and it works in both directions and everything's hunky-dory.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (explains)
+context before: So let's choose, say, the Onsemi one here. We'll open the data sheet for that. So let's whack them side by side here and see how compatible they are. But, as I said, they're not as compatible as the Onsemi. In an application like this power factor correction device,
+TEXT: as long as you've got 500 volts, 18 amps, you've got a relatively similar RDS on and stuff like that, it, like, all the other, you know, the huge number of parameters here, like, there's a large number of actual parameters in a MOSFET. Just, you know, check these out.
+context after: It doesn't really matter for that application. If you're designing something, it would be different. But if you're just looking for a replacement MOSFET here, then, you know, no wuckers. She'll be right. No worries. So this is the MagnaChip one. You know, drain source voltage, we're talking 500 volts.
+
+[1387] EEVblog 1387 - MOSFET Repair Replacement Search — Dave Jones (explains)
+context before: It's like, a pulsed drain current is 72 amps. So even if you've got, like, 10 amps. The 5-amp version of this or something like that, it would probably do the job. But don't skimp on the voltage rating. Because, yeah, I think you might come a gutter there.
+TEXT: And the RDS on, it's probably not going to make a huge difference. When you're talking similar specified parts in terms of voltage and current, they're almost always going to be, so within a, like, fraction of an order of magnitude, you know, 10, 20%
+context after: or something is near enough in terms of the RDS on, for example, which is the other major parameter. You wouldn't worry about, you know, drive capacitance and stuff like that unless there was some really horrid part. But in this particular case, any 18N50 would do the job.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: You know, look, it's it's just bragging. I mean, granted, these voltage drops here, VDS, is getting quite high, you know, you often don't want to drop a couple of volts on your drain source there.
+TEXT: But, you know, look, 10 amps, 20 amps, this is just like insane sort of stuff. But, we can look at the RDS on in milliohms here. So, you know, look, around what, you know, 18 milliohms or something like that at VGS 10 V and VGS 4 V.
+context after: Not a huge difference between that. But, look at the currents you can do. This is just like what? But, you typically want to would wouldn't want to do these types of, you know, 10s, 20 amp sort of stuff in a SO-23 package.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: Or you can simply bolt the TO220 on your heatsink. So, when you have to dissipate a decent amount of power, this thing's not too shabby. So, the actual package itself with no heatsink in 3.8 W, but then, you know, like you're going to really go up there when you start uh heatsinking this sucker.
+TEXT: So, it's not too shabby. Uh VGS here, um it can like minimum of a volt. It's pretty great. So, RDS on here, yeah, they specify it. Look at 4 V here, they specify that at 4 V at 21 A and 4 V drive with 21 A for example, like 35 mΩ.
+context after: Now we're talking. And maximum continuous current load 46 A, but you can do 160 A pulsed drain current. So, if we go down and have a look at the uh characteristic curve down here, yeah, look at this.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: the circuit stuff. I mean this was obviously doing switching of the batteries here either charging or using them as loads. So you switch them off switch the charge in or you can switch or you can switch them out so that they're powering the product and stuff like that.
+TEXT: So you know I I knew that these things were being used as switches for this battery. So for a switch application, you can pretty much ignore like every other specification on this data sheet part from voltage, current, RDS on.
+context after: That's pretty much all you're going to have to do. And I wasn't worried about the fact that it didn't have internal gate protection like this. If it blew, it blew.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: But, this jobby, absolutely fantastic to have like, you know, 5 amps capability is just absolutely brilliant. So, and RDS on, we were talking about ohms before at at at at a VGS of 10 volts.
+TEXT: Now, we're talking not ohms, we're talking tens of milliohms. Like 26 milliohms stuff. And then they even specify so proud of it. They even down at 2.5 volts drive, we're we're still talking 48 milliohms on resistance.
+context after: So, you multiply your drain current by your on resistance and you know, V squared on R, and that's how much power you're dissipating in this thing. But, little SOT-23 package can do this much current.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: So you know, it's being used uh it's way over specified for this application, which is very common of course. That's why I didn't have any hesitation in using this Alpha and Omega one that I pulled from a uh laptop um as a replacement.
+TEXT: It's a minus it's a 30 V 12 amp one instead of a 17 amp one, but it doesn't really matter. Anyway, the third thing we have to look at is the RDS on at and that will be given at a particular VGS or gate source voltage.
+context after: Um and this particular case, they they usually give you like two values and these are fairly common like 10 V and 4 and 1/2 V or 5 V or something like that.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Whether it's like like my 10 1 micro amp or 10 micro amps, like it doesn't matter, right? This is not some critical application. Gate threshold voltages, this is not some ultra low voltage operation thing.
+TEXT: So, we're not worried about anything like that. Like the gate leakage current, you know, like who cares? But that RDS on, we've talked about that and they give typical values here and then maximum values over here.
+context after: You might have to go into typical versus maximum if you're getting a bit more like on the margin, whether or not you think your part might be equivalent or not.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (explains)
+context before: That's one of the most important things and the maximum current. But because it's like a a 12 amp rated MOSFET, like we're never going to get 12 amps. So, it's, you know, it isn't really a problem.
+TEXT: The higher RDS on at uh, the certain gate voltage, whatever it's being used in here, um, yeah, okay, it's might be a little bit higher, might display a little bit more heat, but can't even feel it, so, no worries.
+context after: Now, the really interesting part about this is the switching topology of these uh, MOSFETs that we saw here. You know, remember we only had the one charger chip, and it's only capable of uh, charging one battery, which contains two cells.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: So, here we go. So, MOSFETs or metal oxide silicon field effect transistor, that's the name, MOSFET or moosefets as I often call them, they are pretty much ubiquitous these days.
+TEXT: They're more popular than BJTs for lots of reasons. They are better lower RDS on, which is the on resistance of the transistor, so that's better. It's called RDS on in a MOSFET versus VCE sat typically in a BJT.
+context after: And that lower on resistance means lower voltage drop and more power handling more current handling capability and more power handling capability in a specific package, for example. So, if you've got like a little sub 23 package and it's got a lower RDS on, you're going to get a lot more bang for buck in your current and your power dissipation in a given package size in a MOSFET typically.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: Never heard of UMW. But as you can see, it's available in the SO-8 package. So, the SO-8 package is going to be bigger and better. It's going to have more surface area in there.
+TEXT: It's it's to dissipate more power, it's going to have low lower RDS on, greater dissipating power handling capability, so it's going to be even gruntier. So, we're moving up a package from the SO23 to the SO8.
+context after: But, even though it's only got one hit here on Digikey, if we go over to LCSC, if we have a look at the manufacturers that are in stock, there is, you know, 1 2 4 6 8, like, you know, more than half a dozen different manufacturers, and they've got no shortage of stock.
+
+[1753] EEVblog 1753 - Designing a 2000V Isolated Oscilloscope (Cleverscope) — Dave Jones (explains)
+context before: >> Can you do that calculation in the software? >> You can. >> You can? >> You can do it in maths. >> Oh, oh yeah. Yeah. Okay, right. You just a standard maths function.
+TEXT: Oh, okay. >> So we can calculate it. And and um and we can go on and and we can measure other stuff like RDS on. Let's try this. So >> Oh, we've only got 2 minutes of card footage left.
+context after: >> Oh my god, we're going to run out. >> Yep. >> So here we are measuring RDS on. So this little thing is there it is about 3 3.1 m.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: for you, or a relay, for example, then no problems whatsoever. It's basically a 60 V rated part, plenty for almost every, you know, generic application. It's RDS on is not that great.
+TEXT: It's spec like it's advertised as having 2.5 ohms here, which is pretty high for an RDS on of a MOSFET. We're going to see much better later, but hey, it's good enough for a straight.
+context after: It's good enough for almost every, you know, simple application up to say a couple of hundred milliamps, something like that. It's got low input capacitance, 22 puff. It's got low voltage threshold, which we'll take a look at.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: Not a huge difference between that. But, look at the currents you can do. This is just like what? But, you typically want to would wouldn't want to do these types of, you know, 10s, 20 amp sort of stuff in a SO-23 package.
+TEXT: So, yeah, don't be going there. And the thing with MOSFETs is there's plenty of different graphs, for example, like here we go. Here's RDS on again, versus your VGS voltage like this.
+context after: And you can see, that's why they say, like, you know, 2 volts, once you get down to it like 2 volts gate source drive on this thing, it's, you know, hasn't got much more to give there, captain.
+
+[931] EEVblog #931 - Designing A Better Multimeter PART 2 — Dave Jones (explains)
+context before: Say the 500 milliamp range here, we've still got our 50 millivolts due to our 100 milliohm shunt resistor here, but then, cuz we dropped our current by an order of magnitude, our but our fuse up here is still the same fuse on all these ranges, whereas 50 millivolts before, it's now 5 millivolts.
+TEXT: And then, and let's just assume that we use the same MOSFET in here with the same RDS on, then it's dropped from 25 millivolts to 2.5. So, it starts to become much less significant.
+context after: And of course, when you go up a range again, it starts to be less than an order of magnitude different, so we just call it meh. 50 millivolts plus meh, best spec ever.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: So RDS on is the RDS means the resistance between the drain and the source pin cuz this is the transistor and the gate actually controls it. So it's the resistance between the two pins when you enable the MOSFET because in this particular case, it's just being used as a switch basically off or on.
+TEXT: So it's going to be completely open or it's going to be completely shorted and the when it's completely shorted, it will have an RDS on that mean it's switched on of 9 m maximum.
+context after: Uh and but that's at 10 volts. If you've only got a 5-volt drive, so you got 5-volt circuitry actually driving this thing, then um typically then you're going to get, you know, 15 milliohms, something like that.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: No, Infineon SO8s. Look at this, you know, seems fairly common like these are all minus 30 V, right? So, there's a big selection at that 30 V window, right?
+TEXT: They're very common parts. Um but, you know, like we'd have to get into the 17 amp plus down here. Oh, no, I thought that was amps. No, that's going to be RDS on, right?
+context after: No, that's going to be RDS on. So, you want the like the lower ones down here. So, these parts, but they don't have and uh well, what's that? Does that have an E?
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: And if you care about like a leakage, for example, between your drain and source, you know, it's at like a maximum of 1 microamp here, you know, it's not much.
+TEXT: But, look at this RDS on. This is just like killer, right? So, these are these are your, uh, not like down at 2.5 volts, it can do an and an, uh, current of, uh, 3 amps.
+context after: So, you know, it'll easily do like, uh, 3 amps, uh, for example. Uh, you know, you're talking 24 milliohms typical, 48 milliohms maximum. Milliohms. So, get your confuser out here and, uh, your I squared R loss, your power dissipation in this thing at say 3 amps here at, uh, 24 milliohms, you're only, uh, talking like 0.2 watts.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: That's why it's RDS, the drain and source are the two terminals. So, as I said, it's not very spectacular at and this is going to change with VGS, your gate voltage.
+TEXT: So, at 10 volts here, you know, you're looking at like, you know, a couple of ohms, 2.4 ohms. It can rise at lower voltages, for example. So, it it's not spectacular.
+context after: It's not designed for high current, but you know, 100, couple hundred milliamps, no worries. And 1 MHz switching frequency, if you care about your input capacitance on a jelly bean part, you're probably not in jelly bean category.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: That'll turn the gate on. So, if your output of your microcontroller 3.3 V, it'll turn that gate on, and then switch your MOSFET on. The other main thing you're going to be concerned with for jelly bean performance is the on is the RDS on, the on resistance when you switch that gate on, and when how many ohms do you get across the drain and source terminals.
+TEXT: That's why it's RDS, the drain and source are the two terminals. So, as I said, it's not very spectacular at and this is going to change with VGS, your gate voltage.
+context after: So, at 10 volts here, you know, you're looking at like, you know, a couple of ohms, 2.4 ohms. It can rise at lower voltages, for example. So, it it's not spectacular.
+
+[1736] EEVblog 1736 - TOP 5 Jellybean MOSFET's — Dave Jones (explains)
+context before: For the jelly bean equivalent to the 2N7002 is the BSS84. It's been around since like the late '80s or something like that. SMD parts SOT-23. And it's basically the sort of wimpy equivalent to uh the N-channel uh 2N7002.
+TEXT: So, we're talking 50 V or -50 V because it's a P-channel, and we're talking, you know, in wimp a wimpy RDS(on) of like 10 ohms here at VGS uh 5 V or -5 V.
+context after: Um and, you know, 130 mA like. So, yeah, it's but it is the traditional equivalent. So, if you're going to stock the 2N7002, you're going to be stocking the BSS uh 84 as well.
+
+[1753] EEVblog 1753 - Designing a 2000V Isolated Oscilloscope (Cleverscope) — Dave Jones (explains)
+context before: Oh, okay. >> So we can calculate it. And and um and we can go on and and we can measure other stuff like RDS on. Let's try this. So >> Oh, we've only got 2 minutes of card footage left.
+TEXT: >> Oh my god, we're going to run out. >> Yep. >> So here we are measuring RDS on. So this little thing is there it is about 3 3.1 m.
+context after: >> And it's varying a little bit as it heats up. >> Yeah. >> And it's going up to 3.2, which is 118 milliohms change. >> It's crazy. >> It's crazy.
+
+[U_QoWa6qXeo] EEVsmoke #1 - Magic Component Smoke — Dave Jones (mention)
+context before: but oh, goodness, that is an absolute classic. Look at that thing. It's mounted next to two big MOSFETs. They're Infineon ones as well. They're cool MOS ones. Once again, revolutionary high-voltage technology. 650 volts. Thank you very much. Hence the large TO247 package to get the pin spacing and stuff like that.
+TEXT: Worldwide best RDS on ultra-low gate charge. Everything else, fantastic. But look at that. They're mounted onto a large heatsink there. With that sort of greenish kind of stuff is going to be some thermal adhesive pad kind of thing. Because look, there's no screws actually bolting these things on.
+context after: So they just basically are stuck onto there. And it's just imploded. I love it. Look at these solder joints down the bottom here, by the way. Take a squiz at those. There's no solder fillets coming up through the bottom side. So I don't like that.
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (mention)
+context before: So, if you turn all eight segments on including the decimal point, then you're going to get 1/8 of effectively 1/8 of the current that you get if you just turn on one segment because like they're all essentially the same voltage drop.
+TEXT: So, the series resistor would be calculated on the voltage drop and the supply voltage and any RDS on on the output MOSFETs inside here. But, so you could do it that way, but they haven't even done that.
+context after: They've got no They've just connected all the common cathodes together and taken them back here. And what they've done over here, very briefly, more detail on the other video, is this They've got an NPN NPN transistor here, right, which goes down to ground and then they've just got a series base resistor there and that's on the common cathode pin.
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (mention)
+context before: Basically, uh compatible logic between the two. It's got an eight-stage uh shift register and an eight-bit storage register as well and a serial out, um which so we can cascade the things and it's got eight open drain outputs as well.
+TEXT: Uh it's a quite a nice little part. It's uh rated for uh and it's got the avalanche energy rated and everything. RDS on 7 ohms typical, all that sort of stuff.
+context after: 250 milliamp current capability, ESD protection, blah blah blah blah blah. One thing I didn't notice in my first video, otherwise I would have chosen this chip straight away, is that it has actually output clamps on it at 33 volts.

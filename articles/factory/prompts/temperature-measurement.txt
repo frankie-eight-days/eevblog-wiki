@@ -1,0 +1,353 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: temperature measurement
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 64 passages drawn from 53 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# temperature measurement`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[401] EEVblog #401 - Lecroy 9384C Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: So, I thought we'd start again because we got to the point in the previous video where we found that the we we had a you know, a 0.1 or thereabouts short across the 3.3 volt rail on here and we tried to track that down and I explained how the usual culprits are the either the bypass caps or you know, one of the semiconductors or something like that.
+TEXT: But of course, I sucked off what I believe were all of the bypass capacitors on the 3.3 volt rail and the short was still there. And then I did some quick thermal temperature measurements of the only four devices which seem left on the 3.3 volt rail, which are these ASICs here because I don't have the memory modules plugged in and they were all at at the same
+context after: temperature pretty much. So, one of them didn't really stand out, you know, that was hotter than the others and I couldn't find any other place on the board just you know, using my hand just a quick look.
+
+[405] EEVblog #405 - Lecroy 9384C Oscilloscope Repair - Part 3 — Dave Jones (explains)
+context before: So, there you go. You would expect it to go up a little bit like that because we've now taken out 1/4 of the shorted chips, but I reckon that all of them are shorted.
+TEXT: That sort of confirms the original theory that well, the heat had nothing that tiny little what 3 or 4 degrees C difference between this chip and the others As I said, it it didn't add up at all because just the extra power dissipation in there, it didn't uh you know, it it just didn't make sense for it only to rise for a couple of degrees Celsius.
+context after: All right, so let's see what that translates to into with uh current. We expect it um to be slightly less than what we're getting before, which was around uh 10 amps or something without power on the other rails.
+
+[pwS6HnM9PDo] The Rigol DHO800 Fan(boys) Go Wild — Dave Jones (explains)
+context before: Hi, there's been some talk, well, a lot of talk, actually, on the EV blog forum about the DHO 800. I'll link in the thread, but there's been a lot of talk, in particular, about the fan in here and how it's, well, my opinion, it's a little bit whiny.
+TEXT: It's loud-ish. It's loud enough to probably annoy some people. So, anyway, I thought I'd just do some temperature simple temperature measurements. I've had this running overnight. I've got two different measurements here and there you go, they agree precisely, 39.4° ambient temperature here in the lab is about 24° according to my air con there.
+context after: So, we're talking, you know, 15 16° differential just running the scope like this and it seems to be constant power of about 35 to 36 W regardless of what you're doing, whether or not you have one channel or four channels, whether you're doing math or whatever.
+
+[587] EEVblog #587 - Tektronix MDO3000 Mixed Domain Oscilloscope Teardown — Dave Jones (explains)
+context before: Warning, internal temperature is approaching a point where the oscilloscope could be damaged if you continue. Check that the fans are operating and there's sufficient clearance, blah blah blah. Yeah, TechScopes, they run hot.
+TEXT: All right. Well, let's do a quick uncalibrated temperature of this thing with my Fluke E8. Look at that. I mean, I don't want to leave this thing here for too long, but uh yeah, I mean, well, they're silver heat sinks, so I may not have the emissivity set correct and all that sort of stuff, but we're we're talking, you know, 50° at least.
+context after: Those heat sinks are a hot spot up in there. 50 on the other side of the board there. So, I'm not sure what's uh what's going on there. But, anyway, this thing it I think it did actually automatically switch off.
+
+[-9l41zNWlxY] Guest Video: Voltlog #142 - Mailbag — Dave Jones (explains)
+context before: The board offers the possibility to set some thresholds, and let me just power the board and show you a few things. There you go, so I have the two thermistors connected and a fan connected on the fan1 output, so the board by default will cycle through the two channels,
+TEXT: it will show you the temperature in degrees Celsius as well as the RPM. So right now we are seeing 27.6 degrees, 0 RPM on fan2, 27.4 degrees Celsius and 700 RPM on fan1. And there are two thresholds that you can set, a lower threshold and a higher threshold, and between those two the board will just ramp up the RPM,
+context after: which is basically the duty cycle output on that PWM pin, it will ramp that from 10% up to 100% in a linear fashion. You can also set an alarm threshold, and if you connect a buzzer to this output right here, you will get an audible alarm once that threshold is surpassed.
+
+[664] EEVblog #664 - Peltier TEG Energy Harvesting Experiments — Dave Jones (explains)
+context before: for that sort of good, you know, 15 degree differential on there. But then again, like once again, to measure all this stuff really properly, you know, I have to have the correct thermal coupling on there, I've got to have another temperature probe on the bottom heat sink
+TEXT: connected correctly, I've got to have the temperature probe actually on the top connected correctly, and you know, it just gets really complicated to accurately measure these sort of things. You know, this is just a quick sort of ballpark setup here. If I really wanted to do this properly, you could fit around
+context after: all day setting it up before you actually could take some decently accurate measurements out of this thing. And there we go, at a good like 20 degree differential there, at least. Could be like 25 degree differential. I am able to get like 150 microamps at 3.3 volts
+
+[pwS6HnM9PDo] The Rigol DHO800 Fan(boys) Go Wild — Dave Jones (explains)
+context before: That's actually off the heat sink. So, it says that's 43, but yeah, it's don't take that cuz that the heat sink is actually just shaped like that. There's like a little corner cut out in there.
+TEXT: So, it I think it's viewing something else on the board in there. So, what I'll do now is I'll take the case off and I'll I'll disconnect the fan and see what temperature it gets up to with simply no fan, just like free air and I've got no air con turned on the lab in here, so the air is still.
+context after: So, let's see what we get. Hold on to your hat. I'm I'm in the middle of shooting the amp hour at the moment live, but this thing just reset.
+
+[1646] EEVblog 1646 - iFixIt FixHub Portable USB Soldering Station REVIEW — Dave Jones (explains)
+context before: According to its internal, okay. Right, so the solder's melted now. So, maybe maybe we could try that again. So, I'm going to turn it off. It's going down in Yeah, still lagging going down.
+TEXT: So, yeah, there seems to be some differential there, but it's hard to get temperature measurements like this. I mean, which is the true measurement? I mean, really, I mean, you could argue that all you care about is the tip, but then you've got the tip to sensor thermocouple sensor coupling.
+context after: Anyway, it's a 200°. Let's just ramp it up from there, shall we? So, I'm about to switch it on now. Boom, and claims it's already there, but no No, it does according to the thermocouple, it does take longer.
+
+[377] EEVblog #377 - Mailbag Monday — Dave Jones (explains)
+context before: 280, it's not very descriptive, but presumably that's the individual serial number for my device, and bingo! It's already been labeled and set up for me, but I'm sure that's relatively easy to set up and change. But bang! It seems to be working. It's
+TEXT: currently 25.61 degrees, or so it claims, at 39.57. Ooh, super duper accurate there. Lots of resolution on both the temperature and the humidity there. So basically almost 40% humidity. I don't know, that'd be about right. I don't have the aircon on at the moment, which is why
+context after: it is 25.61 degrees. So let me go switch the aircon on and see if it makes a difference. But anyway, it gives you a map as well, latitude and longitude. And no, this is not the exact location of the EEVblog office, it's probably near enough to the exchange
+
+[294] EEVblog #294 - Mailbag — Dave Jones (explains)
+context before: USB interface for ATtiny devices, which or any Atmel micro, which AVR micro, which doesn't have a built-in USB peripheral. Neat! I like it. Apparently it takes like a 1.5K or 2K of something of program space, but eh, whatever. And the specs are it's got a
+TEXT: one-year battery life, very nice. Measures temperature from minus 40 to 125, stores in the e-squared prom as 8-bit or a 10-bit, where you've got to use 2 bytes for that, and measures voltage from 0 to 15 volts. Once again, saving as 8-bit or 9-bit, not 10-bit, there you go.
+context after: Voltage range can be increased if the two voltage protection diodes are removed and the code is modified. Using external e-squared prom, as I mentioned, it can go up to 512K-bit, which is 65,000 readings for those 1-byte values, and it's got various sample delay times available from 28 seconds
+
+[1686] EEVblog 1686 - Electronex 2025 Melbourne - Walkaround — Dave Jones (explains)
+context before: First person with a breadboard, well done. And uh the Analog uh Discoveries, um which are absolutely fantastic. And ooh, what's a WebDAC? I haven't seen that before. Uh internet-enabled Oh, data logger solutions.
+TEXT: Okay, fantastic. So, well, and yep, it's Okay, thermal couple testing at the moment. So, we're just logging a temperature there to four digits. Logging temperature to four digits. Uh that's um very gutsy trying to measure temperature to four digits, but uh yeah, fantastic.
+context after: So, the Analog Discoveries, of course, absolutely uh fantastic. I've gone through uh reviewing uh those on the uh channel before. They're fantastic. Can't believe I missed the Digilent stand.
+
+[534] EEVblog #534 - Mailbag — Dave Jones (explains)
+context before: insert. Oh man. Chips really have gone to town there. And I just love the smell of this rubber. Oh yeah. Smells like a pair of thongs. Whoa, look, I didn't do anything and my board, my giant gecko board just sprung to life. There we go.
+TEXT: And I don't know, what's that Fahrenheit? That's temperature. And that's Fahrenheit and 22.2 degrees C. It's jumping around a bit, but there you go. It's obviously getting power from, is it getting power from the solar cell or from the thermal, or both perhaps?
+context after: Multiple sources. I guess that's the idea that they want to demo here. And I haven't actually looked at it yet, but we're looking, it looks like we've got different energy harvesting chips. This is really quite neat. It looks like you can evaluate the different types.
+
+[201] Mobile Cell Phone Radiation SAR Testing - EEVblog #201 — Dave Jones (explains)
+context before: Bit of sugar and salt, and that's actually similar to brain tissue, apparently. That's right. That's to say, yeah. And the the idea is to heat is to measure the heat How much it heats up by?
+TEXT: a Well, the idea is yeah, to measure the heat, but because uh the heat the temperature changes are too small for accurate measurements, we measure the E-field. Right. And then using the dielectric parameters of the liquid, we can calculate what the SAR is.
+context after: Fantastic. So you just put this at a specific height, is that where and then you scan over it? That's right. So 2 mm from the surface, we do a 2D scan.
+
+[828] EEVblog #828 - Siglent SPD3303X Precision Lab PSU Teardown — Dave Jones (explains)
+context before: So, I could actually put it down to say 1 V on uh uh both channels here and then uh that, you know, that might be near enough to sort of worst case um worst case power dissipation cuz it's got to drop almost the full uh whatever transformer tap voltage um down to our 1 V output and then we shorten the thing on the output.
+TEXT: So, yeah, um let's give it a whirl. So, this is actually really kind of hard to get, but uh if you have a look in there, like um sorry about the uh like the transformer is uh not um black anodized, so it's not going to be an accurate uh temperature.
+context after: So, it's going to show up cool, but let's look at our silicon down there. That's our output uh transistor. That's the hottest and I was getting a peak of just over 100.
+
+[622] EEVblog #622 - How To See Through Objects With A Thermal Camera — Dave Jones (explains)
+context before: Hi. Now, it's a very common thing in the electronics design industry to measure the thermal performance of a product, especially when you've got like a reasonably large system like uh something like this that's got fans in it and you've got to manage the thermal performance.
+TEXT: I've talked about this a lot on the blog and well, how do you measure it? Well, there's many different ways to measure it, but one of the big mistakes you can make, one of the traps for young players, is to measure things with the lid off like this.
+context after: And you've seen me do it in videos cuz I'm just getting like ballpark temperature measurements, but as you should know, the uh with something like this that's got a fan in it, with the lid off, you're not going to get the true temperature measurement of the devices in there.
+
+[623] EEVblog #623 - See Through Thermal Camera Followup — Dave Jones (explains)
+context before: are not thermally transparent. Sorry! So is this pink ESD bag thermally as transparent as the cling wrap? Well, let's try it. I've cut it into a single piece, so it's not a bag anymore, it's just a single piece. And here we go, I will overlay it, and you can see it come in
+TEXT: there, and it really, oh sorry, that was calibrated. It really does blur stuff out, and yeah, it's not nearly as good. You can see the maximum temperature go from 78 degrees here. You can watch that go down to yeah, drops down a lot, down to 63.
+context after: So not that great. Now we'll do exactly the same thing with cling wrap. Here we go. Here goes the cling wrap, 78. And as you can see, it only dropped down to 73, and you can see more detail in there, definitely. So cling wrap does work better.
+
+[970] EEVblog #970 - Mailbag — Dave Jones (explains)
+context before: Not entirely sure, but this is its actual packaging. It's got to be as light as possible cuz it's lifted up into the stratosphere or where it however high it goes on under and underneath a helium balloon and probably just I don't know how they actually deploy it.
+TEXT: It just hangs from the bottom designed to take temperature, barometric pressure and stuff like that. So, the Styrofoam would help keep it at a Well, you know, it's going to keep out the temperature for a bit, but hence why a little probe here.
+context after: So, is that temperature or is that a barometric pressure probe? Anyway, this is the transmit here. Of course, that's the antenna and they're designed to be low-cost disposable. They whack these up in the atmosphere and then they just drift wherever and land wherever.
+
+[669] EEVblog #669 - FLIR TG165 Thermal Imager Teardown — Dave Jones (explains)
+context before: It just had stood absolutely no chance whatsoever. And hello. There's my camera. There we go. Ta. Hey, there we go. I can see my camera. Can see myself. There you go.
+TEXT: Hello. Yep. Works fine. There's my LCD. And yeah, and we get our temperature, of course. There we go. 34. Yep. Good enough. Still works. So, after what, bloody 20 minutes of video or something, we can finally get to see the guts in this thing.
+context after: Probably, as I said before, STM 32F103. That's a um ARM Cortex M3. Pretty beefy. Uh 72meg maximum speed. You know, it's got 1meg built-in flash. It's got USB. It's got 16K of S RAM.
+
+[1110] EEVblog #1110 - Mailbag — Dave Jones (explains)
+context before: We'll give that a burl. And Come on. You've got to allow the flux to activate on that cuz it's a bit Uh it's not It's sticking a bit. It's not as good as the real JBC at 270.
+TEXT: Yes, I have checked the temperature and it is bang on 270, but it's not far off. It's certainly better than say the Pace ADS 200, that's for sure. So, that's not too shabby and and my power supply is only drawing like uh half an amp uh peak.
+context after: So, it's not really a drama. Yeah. This isn't bad at all. So, if we turn this up to 300, it should eat through that. And it does. So, yeah, they're nice.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (explains)
+context before: They're very You can buy them separately. They're very cheap and very simple, but all it is is basically a a bit of wire with a little um a little It's a wire sensor on the end.
+TEXT: I won't go into it. Anyway, K-type thermocouple, you plug it in, and if your meter has a temperature measurement function, there it is. It measures the temperature. Now, I'll put my finger on that, and you can see it go up and up.
+context after: And they have a huge temperature measurement range, like hundreds of degrees. So, they're really useful. It's also important to get a meter with good, clear, big digits that you can see from a long way away.
+
+[mkZFHEeQkQI] Unusual Repair - Part 2 - Thermal Boogaloo — Dave Jones (explains)
+context before: actually measures the internal temperature sensor on the PCB. And that actually could even be inside the processor. I'm not actually uh I haven't double-checked whether or not it's an external temperature sensor inside the uh actual CPU uh itself, which is common um to have internal uh temp sensors in um processors.
+TEXT: It's just a PN junction, basically, and then they calibrate it and blah, you know? Um Bob's your uncle. So, anyway, that's just a little tip how you can use your actually measure the internal temperature of your meter.
+context after: So, you know, I'll just check it periodically, um turn it on to temperature and see if the internal Once the internal temperature gets down, then I'll remove it from the cold to the heat, heat back to the cold, etc.
+
+[593] EEVblog #593 - HP35670A DSA Repair Part 4 - Thermal Testing — Dave Jones (explains)
+context before: But jeez, look at all that stuff over there. That part of the board is heating up like a like a torch. Look at that. Wow, that doesn't that doesn't look good and a couple of other hot spots as well, which is rather interesting.
+TEXT: So, yeah, let me set the camera and give you a good view of this. Now, what we're looking at here is the temperature on the screen here is telling us that is the maximum temperature across every pixel on that screen.
+context after: So, it ranges from room temperature, 23.8, to almost 70° there. And then we can see the components. You can see the advantage of the MSX technology here. You can see the outline of those chips.
+
+[1526] EEVblog 1526 - I put 283 Double Adapters in Series with a 2kW Load! — Dave Jones (explains)
+context before: If you did, please give it a big thumbs up and as always, discuss down below. Catch you next time. All right, I've reset it up here and, uh, I we're going to use the Flir.
+TEXT: There's the power point there. So, it's, uh, currently it's, uh, well, the cable there is at 32 uh degrees. So, let's follow the money and there you go. You can see that the uh the floor is at about uh 21 degrees.
+context after: Fairly constant uh temperature down here in the dungeon. Let's uh have a look. I'll try and keep this Sorry. Saying exactly uh steady cam. You can see there are differences.
+
+[1064] EEVblog #1064 - Soldering Irons OLD vs NEW — Dave Jones (explains)
+context before: So let's do a test. Okay, so what we need to do is I actually set up the emissivity and there's a whole list of uh custom materials and stuff in here and really like you know there's copper polished and all that sort of jazz, but um yeah, really we're we're just going to have to do this by experimentation by setting the custom value like this.
+TEXT: I've already set it to 0.5. It was a bit over. So I'm going to set it to uh 0.4 and we'll give that a whirl. And cuz we know our temperature of our iron's pretty accurate cuz we measured it the other time 240.
+context after: Uh I'll tweak it a bit more, but uh yeah, we'll we'll get it right. Okay, I'm going to call that um at 0.35 emissivity 246. Doesn't matter, right? We can actually what we want to do is we want to see the temperature drop.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Maybe the uh thermal overload's kicking something's kicking in, perhaps. Yeah, there we go. Our output's dropped to to 2 V. It's dropped out. Bang. But, there you go. It actually recovers at 1.2 amps.
+TEXT: Not a problem. I like it. And just for fun, we'll measure that heat sink temperature. We'll be at the 1 amp It's about 28.5 29° ambient here in the lab and let's uh let's probe that case and see what it's at.
+context after: Okay, it looks like it's settling at about 43.5°. And the heat sink itself is at about 41.5° C. So, there you have it. There's some basic really rough and ready tests, not sort of really precision power supply measurements at all, but I I think it passed with uh, flying colors on the uh, breadboard.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (explains)
+context before: It's an Extech, one of the big brand names. It's got a 3-year warranty. It's got CAT IV input protection. It's got a nice big clear display. It's waterproof and drop-proof, super rugged.
+TEXT: It's got the best temperature function out a lot with 0.1° resolution. It's got this lovely carry case which comes with it. It seems like excellent value for money. And it's And it's not bad value at all.
+context after: But, And you might think, well, what's not to like? As it turns out, well, quite a bit. As you saw, it's got the second worst tilting bail out of the bunch.
+
+[622] EEVblog #622 - How To See Through Objects With A Thermal Camera — Dave Jones (explains)
+context before: So, if we move the camera over towards the side of the chassis over here, you can see that this air flow is flowing out over this what would ordinarily be a cool area of the board over here and it's flowing all towards this exit bar point over here.
+TEXT: This vent hole on the side cuz we're forcing air in at the back here and it's flowing over here and going there. But once again, you'd have to get in there and measure individual temperature points.
+context after: But you can see how the concept actually can work. Got this Tektronix TDS 3054 oscilloscope you've seen in a previous video and yes, I've wrapped it all up. Check it out.
+
+[1636] EEVblog 1636 - Ultimate Multimeter Beginners Guide! — Dave Jones (explains)
+context before: But most multimeters you know, should be able to at least light up LEDs, and that's a handy little feature. And another very handy feature of some multimeters, they come with what's called a thermocouple, which is a temperature sensing probe.
+TEXT: It's got a little thermocouple tip that can measure the temperature of anything it comes in contact with, physical air or metal to measure heat sink temperatures or water liquids or whatever.
+context after: And that's that little thermometer symbol there. So you switch that on, degrees Celsius here in Australia, thank you very much, but you can select Fahrenheit as well. 29 and a half degrees Celsius, and if I put my fingers on that, of course my body temperature is going to cause that to go up.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: So, within that, it's good and outside of that, it says no good. One thing I like about the temperature probe is not only do you get it with it, but it's a 0.1 degrees C resolution.
+TEXT: The accuracy isn't that good. It's only like plus minus 1 degree C or 1.1 or something like that, but still, the resolution is excellent. And of course, it can do delta temperature as well.
+context after: So, you just null that out and bingo. And when it comes to frequency measurement, it is actually quite powerful. It'll work in both AC mode, DC mode because this This AC plus DC true RMS capability and it'll work in current mode as well.
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (explains)
+context before: Could be some circuitry on the bottom. Don't know, but yeah, so these two big brass solid brass blocks, they're just bolted in and connected to the giant pad that's under there like that.
+TEXT: You can see that there's a giant screw in there like that. So, yeah, they're measuring the temperature of each connector. Wow, that's attention to detail. Now, here's something interesting.
+context after: Look at this. There's a large footprint for a capacitor C27. Like, you know, a huge jobby like that, but they've actually put a little daughter board in there with two, four, six, like seven or eight, missing one, ceramic caps.
+
+[957] EEVblog #957 - How To Measure DC-DC Converter Efficiency — Dave Jones (explains)
+context before: And you might want to measure temperature for example. So, you might actually get in there and attach a little thermocouple probe to your converter or near your converter or whatever.
+TEXT: Maybe on if it's using a heat sink you might attach it to the heat sink or something like that and you can plot temperature versus your efficiency and output and load dissipation as well.
+context after: Just you know, if you want to be thorough. And that could be a big deal because hey, your converter might work. No worries. It's ambient temperature or whatever. Everything works just fine in the lab.
+
+[622] EEVblog #622 - How To See Through Objects With A Thermal Camera — Dave Jones (explains)
+context before: You'd have to read individual temperature points to actually see it but the you can see that the thermal spread across these parts here has also changed and gone higher.
+TEXT: But once again, you would have to get in there and actually measure those individual points and you'll notice that the maximum temperature to minimum temperature has also dropped as well.
+context after: Now, I've been sneaky and I've covered up this left hand vent over here. So, I've only got the air flowing out the right hand vent. So, you can actually probably see maybe some of the heat spreading across not not out this side but it's spreading in this direction like this.
+
+[f_SdM6sXHD4] FNIRSI SG-003A Process Meter + DSO-TC2 Oscilloscope & Transistor Tester — Dave Jones (explains)
+context before: While the tester is waiting to test, aim the at the IR mark at the panel. I Okay, I might see if I can get into that. Um But once again, like jack-of-all-trades, you know, Zener diode testing up to 21 volts.
+TEXT: That's actually rather useful. Um yeah, okay. DS18B20. Turns out that's a one-wire digital thermometer. So, I Like you plug it in there and you can measure temperature? Okay. Um DHT11.
+context after: I I think I've heard of that one. I think that's another temperature sensor. I don't get it. Where's the optical? Is that not in there yet? Is Is the optical not enabled yet?
+
+[742] EEVblog #742 - Why Electrolytic Capacitors Are Connected In Parallel — Dave Jones (explains)
+context before: And that Watch this. I haven't got it turned on, but look at that. I'm adding my hand in here. This is actually reflection of my hand down off the metallic tops, the the aluminum tops on those capacitors, and it's reflecting back.
+TEXT: So, you got to be careful when you're doing thermal measurements like this to make sure you're not actually getting heat reflected, and you've got to set up the emissivity correctly.
+context after: And yeah, and the bright aluminum tops on the capacitors isn't the best thing, but anyway, so we could like paint the top of the capacitors black or something like that if we wanted to.
+
+[249] EEVblog #249 - Agilent U1272A Multimeter Review — Dave Jones (explains)
+context before: And if you've got it backwards, it'll still do it as well, but it'll tell you it's negative up in the top display there. And the threshold voltages for good and bad are 0.3 volts and 0.8 volts.
+TEXT: So, within that, it's good and outside of that, it says no good. One thing I like about the temperature probe is not only do you get it with it, but it's a 0.1 degrees C resolution.
+context after: The accuracy isn't that good. It's only like plus minus 1 degree C or 1.1 or something like that, but still, the resolution is excellent. And of course, it can do delta temperature as well.
+
+[668] EEVblog #668 - Mailbag + FLIR TG165 — Dave Jones (explains)
+context before: So, that's very nice. Got a couple of presets. That works well. And apart from that, we can turn our laser off and on when we pull the trigger on the thing.
+TEXT: And uh Celsius and Fahrenheit for you Yanks. We can turn off the center spot, although if you do that, it still displays the uh temperature. We can set the time out.
+context after: And we can set the uh time and date which is used to um stamp the files obviously. And well that's it. That's all she wrote. Version 1.50. And uh there's nothing else fancy at all in this thing is designed to be completely idiotp proof.
+
+[170] EEVblog #170 - Agilent U1272A Multimeter FAIL — Dave Jones (explains)
+context before: Hey, look at that. Something weird's going on here. This thing has crapped itself. Crazy. Short out the probes. Ohms. Yep. Something Something's gone wrong in the teardown. Would you believe it?
+TEXT: Aw. What a loser. Well, let's get the temperature. Right, I think it's probably about 18.5° here in the lab, but let's switch this off and see if it resets itself.
+context after: No. Look, it's stuck there on those on those digits. I shorted out the input, and it's just stuck. Stuck on that. What did I kill it with? ESD or something?
+
+[zoyaHOqp9gI] Rigol DHO800 Oscilloscope Fan Upgrade Experiment — Dave Jones (explains)
+context before: All right, I'm doing the same test I did uh last time. Got uh two thermal uh probes in here. One's 41.5, the other's 42.1. We were getting uh 39.5 before.
+TEXT: So, we're getting a couple of degrees C increase. Uh the ambient temp according to my aircon is the same as 25 degrees uh C in here. So, this is at uh 5 V there.
+context after: So, I've had it on for like an hour. I could leave it on longer, but I think it's probably thermally equalized uh now. So, yeah, what we're talking 2.5 degrees, maybe 2 degrees C increase, which is not a lot from dropping it um from 8 V down to 5 V drive.
+
+[1619] EEVblog 1619 - Mailbag: Featuring Don McKenzie — Dave Jones (explains)
+context before: Oh, no. Tracks at right angles busted. Nice little tips like how to avoid heat sinks, uh thermal vi for example. And then we've got the practicalities, operating points of uh fan flows.
+TEXT: I've done some stuff on that, but you know, nice little nice little things. I like it. Little tips on how to measure uh the temperature of uh dyes, for example.
+context after: There are some things that are lacking though, like the op amp uh section, for example. It it really doesn't uh go into detail on much at all. As I said, like a page and a half on like op amps could have, you know, done with some more useful uh tips there perhaps.
+
+[OvGdE5hC1Ro] Bakon BK212 Soldering Station - URGH — Dave Jones (explains)
+context before: I don't like that it like just keeps updating the temperature so you can see it go down. And then let's take it out. Boom. Jump right back up to 370.
+TEXT: Uh uh it just under 380. There was no overshoot there according to its own display, of course. Uh I'll just do a temperature check. We've got it set for 380.
+context after: Let's see what it says. 372. That's It's jumping around. There you go. 380. Yep, no worries. Stupid heap of crap just falls out. This is absolutely the worst iron stand I have ever used.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (opinion)
+context before: I know is if you don't want to use it just ignore it but no they wasted a switch position on it and just the inclusion of it just rubs me the wrong way.
+TEXT: And a huge oversight especially when you start talking near 90 US dollars is the lack of temperature measurement. If this thing had temperature measurement instead of the HFE I probably would have upgraded my verdict of this thing saying oh it's probably a reasonable upgrade but because it doesn't have temperature and it's got a useless transistor tester no no no no.
+context after: Anyway current ranges are all still the same but we have a non-contact voltage detection now. Beauty. All right so let's compare it to one of the best EF building EF detection meters on the market the new BM786 has got two ranges it defaults to the high so let's just try the high first and the non-contact detection is the little tab is on the side here.
+
+[184] EEVblog #184 - Open Hardware Multimeter Concept — Dave Jones (opinion)
+context before: those voice recorder chips maybe. You could have a microphone in there perhaps and you could record your own, you know, overload or continuity or, you know, under 10 ohms or something like that. Warning, high voltage or nothing connected or something like that. I don't know.
+TEXT: Voice output might be novel, might be a wank, who knows. And what I've added up here is an often lacked function on multimeters is a good temperature capability. You know, I guess all good multimeters these days will have temperature capability, but they're all single channel and often, so often,
+context after: I've needed to measure multiple channels. So I reckon have two separate multiple temperature inputs. Use the blade type thermocouple, standard thermocouple inputs at the top, two or even three perhaps, depending on your requirements and space at the top and things like that. And then you can
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (opinion)
+context before: So, I'm very, very surprised. And they've got a offset uh trim pot in there as well just for the temperature. So, they you know, they really did take this thing seriously.
+TEXT: I guess maybe not surprising. I mean, it does have a specific, you know, maybe that was a big selling point they wanted to do. This thing does temperature and does it probably better and more accurately than your average multimeter.
+context after: There's not much else doing here. We've got some miscellaneous, looks like some filter stuff maybe happening around here. Uh there's our main oscillator 4 MHz and uh direct LCD driver up here.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (opinion)
+context before: They're not automatic. So, what you have to do is probe at the same time, and you're already using two hands to probe, and you're supposed to have a third hand available to press the damn button to hold the reading.
+TEXT: It's next to useless. So, unless you're getting an auto hold function, don't worry about it. It's pretty useless. Another useful feature that if you can get it, it's a really good thing, and that's temperature measurement.
+context after: Now, uh if it doesn't come with one of these temperature probes, then well, that's a pain in the ass. But uh a good meter will have will come with what's called a K-type thermocouple probe.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (opinion)
+context before: So, they're not measuring the temperature directly on the heat sink. That's not great. They're trying to save costs there. So, I don't know. Can you I spy the thermocouple?
+TEXT: Where's Wally? Where's Wally? Cuz they do give you a temperature read out, of course, but it's obviously not coming from the heat sink. Anyway, it does look like uh you know, really bare-bones uh type configuration.
+context after: Let me get it under the Mantis microscope and see if I can pull a part number for the main buck controller. Well, they've spoiled all our fun. Look at that.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (opinion)
+context before: I won't go into it. Anyway, K-type thermocouple, you plug it in, and if your meter has a temperature measurement function, there it is. It measures the temperature. Now, I'll put my finger on that, and you can see it go up and up.
+TEXT: And they have a huge temperature measurement range, like hundreds of degrees. So, they're really useful. It's also important to get a meter with good, clear, big digits that you can see from a long way away.
+context after: Now, compare that little cheapy with that uh Fluke. Now, the Flukes are much larger, sort of, uh, brighter. Just It's Well, it's hard to see on camera, but the other one, this little cheapy is really washed out and it doesn't have very good contrast.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (opinion)
+context before: It was like under $60. And now they've increased that by practically 50% more. And it's pushing closer to $90 now. And for that money, you're not even getting like extra temperature measurement.
+TEXT: As I said, if it probably had temperature measurement instead of HFE, I reckon they could have charged, you know, a little bit extra for it. Maybe not 50 percent, but yeah, there's just not enough there.
+context after: Maybe if it went to 50,000 counts, you might argue, well, you know, hey, that's a bit of a fantastic thing. Because, you know, if you're measuring 5 volts or 3.3 volts, you're not going to get the extra digit over a 5,000 or 6,000 count meter.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (opinion)
+context before: That's it. It's got a nice clear display. It's it it just works really well. I like it. It's got by far the best continuity tester out of the bunch.
+TEXT: It tests white leads. There's just nothing it can't do really, except measure temperature. It can't do that. So, if you need to measure temp, well, you know, it's no good.
+context after: Obviously, it doesn't have duty cycle. It doesn't have measurement hold function, but that's not measurement hold doesn't really matter. People hardly ever use that, but if you need it, well, it's not going to be suitable for you, but let's look at the downsides.
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (opinion)
+context before: One thing I have noticed with this is when I like hand when I just hold it, I'm always like accidentally pressing these buttons over here, and I it's it's kind of annoying, but you know, learn not to do it.
+TEXT: That temperature um seems completely Maybe I did touch that. It seems completely out, cuz my lab I've got my air con on here, and um it should be like 22.
+context after: Now, it's a shame that uh it doesn't have any like recording capability for the trend chart, which is weird, cuz it's got internal memory. You can save um screenshots and stuff, at least in this oscilloscope, and you know, you can um plug it up to the USBs, but I guess maybe that's what the app's for, cuz it does have Bluetooth and an app.
+
+[970] EEVblog #970 - Mailbag — Dave Jones (mention)
+context before: please let us know how something like this would perform in extremely low temperatures compared to say you know traditional ceramic NPO caps and stuff like that let us know cuz there's a there's definitely a reason why they've implemented it like this and you know I shot like it's not in 81 it's not recent but still there'd be a particular electrical reason why it was implemented like that but there's not much in it
+TEXT: that's basically all it is is just an RF transistor oscillator that transmits but absolutely fascinating physical implementation I love it and what that chip there chip there is doing it's obviously like they're obviously modulated it might be a custom ASIC modulating the temperature or whatever they're actually what this particular probes actually measuring I believe it that's normally temperature barometric pressure stuff like that that they're actually measuring so maybe two
+context after: parameters with the one sensor or maybe it's combined I'm not exactly sure what's going on there, but anyway. No, looks like no, they've just got the two two wires going out to that with the shielded back in on it.
+
+[1574] EEVblog 1574 - REVIEW: Is the $42 Fluke 101 Multimeter Any Good? — Dave Jones (mention)
+context before: It's pretty good. And for like if you can get it for $42 US, um you are actually getting a genuine robust little Fluke for that price. But, yeah, it's not going to win any awards for uh you know, bang for buck features and stuff like that.
+TEXT: Like I'm really bummed that it doesn't have the proper auto hold on here. That would have been excellent. Doesn't measure DC millivolts, but that's neither here nor there. The continuity tester is okay, it's not the best one out there, but it's adequate uh for the job and it measures uh capacitance and measures uh frequency, but there's no temperature, there's no other fancy stuff, there's no relative uh mode, there's no uh manual
+context after: range over hold. So, it's very, you know, plain vanilla type stuff, but if you want a genuine Fluke that'll probably still work in 20 years time, then it's worthy of consideration, I think.
+
+[64] EEVblog #64 - Fluke 28 Series II Multimeter Review & Teardown — Dave Jones (mention)
+context before: And well, I don't think that's all it's cracked up to be because check it out, it actually it actually protrudes from the rubber holster. So, if you sit it down on the table, it actually hits the plastic instead of the holster, so it lands flat bang on the plastic.
+TEXT: I don't like it. And you can do the same thing with the 87. Anyway, now in case you're wondering why they make the 27 series two as well and the differences, the only thing lacking in the 27 series two over this one, they're almost the same price I believe, um, is the temperature functionality and the fact that it's not true RMS.
+context after: This one's true RMS. Now the reason why, you know, some people might argue, "Well, why would you not have a true RMS meter these days?" Well, the answer is, actually, really obvious because Fluke, the old 28, um, sorry, the old 27, Fluke 27 was not a true RMS meter.
+
+[1448] EEVblog 1448 - Convert a Fluke 77 IV to True RMS for 10 CENTS!* — Dave Jones (mention)
+context before: Yeah, same as it does with a square wave, isn't it? So let's power this sucker on. Of course it's going to work. It doesn't say 177. That'd be nice.
+TEXT: Um so yeah, I don't know. Maybe we can mod the firmware, something like that. Anyway, and if you mod the firmware by the way, we could turn this into a 179 by adding temperature measurement cuz I think it's all in there but yeah, it's just the firmware you pay extra for.
+context after: Anyway, yeah, let's plug it in. Here we go. I've got my leads. Bingo. 1.11. So yeah, before I just measure the other stuff, I'll go to the calibration manual and we'll have to enter the cal mode on the back and we'll have to recalibrate.
+
+[489] EEVblog #489 - Agilent 34461A Multimeter Review — Dave Jones (mention)
+context before: And of course, you can calibrate this thing, but then it says uh locked cal string. Uh cal string hasn't been calibrated 237 times. I don't know. Um but, you need a secure code required to perform the uh calibration.
+TEXT: So, let's And it can measure the internal um temp or the ambient temp, 24°. And it's got quite a bit of uh security built in. Here it is. Um the LAN, we can actually uh disable the sockets and the Telnet and the web and all that sort of stuff.
+context after: And uh GPIB, we can lock it USB front and rear. We can lock all all Ah, fantastic. Now, if you're wondering what this NISS Palm sanitize here is, um it's a US military thing or something like that that means it just securely erases all of the data on here.
+
+[CYm-4gbl1Zc] ElectroBOOM Stalks Sydney — Dave Jones (mention)
+context before: There you go. I dropped my garbage. There we go. Oh jeez, that was an effort. There you go. Ah, that is now yours. There you go. Tiny and light.
+TEXT: And BM2257. Oh, it has temperature measurement and current measurement. And and I can't believe you're carrying around that big brick of a multimeter. doesn't have even have low impedance mode so you can short out the RCD breakers.
+context after: What are you what are you doing? And like uh you have to carry around resistors. How else? Yeah. I mean I I didn't know this existed. What What do you use this for?
+
+[1576] EEVblog 1576 - Tektronix DMM916 Multimeter Teardown & (Easy) Repair — Dave Jones (mention)
+context before: Touch hold. So, yeah, yeah, it's a fairly capable meter. Store recall. What else do we have in the setup? Can we go side to side? No. And bar graph?
+TEXT: Oh, that What? It's got different mode bar graphs? Does it have like center zero and stuff like that? Probably does. So, yeah, it's got the DBMs and we've got temperature as well and it's pretty capable little thing.
+context after: Didn't measure the nanofarads. Yeah, it's got 300 residual. puff that is. Oh, I'll tell you what, I will leave a link down below to my EV blog eBay store and I will auction this off uh starting at 99 cents.
+
+[121] EEVblog 121GW Custom Multimeter Prototype Unboxing — Dave Jones (mention)
+context before: They just, you know, randomly chose this color until I told them to give a certain Pantone color. So, let's switch it on. Uh the temperature didn't work before, did it?
+TEXT: No, low Z. Oh, voltage. Yeah. So, that's I assume Yeah, yeah, temperature. Degrees C. Hm? Volts. And that's degrees C are the Hm. Yeah, okay. The range switch feels very Yeah, it's very loosey-goosey.
+context after: Wow. I've never felt a a looser range switch than that one. Going to have to work on that, I think. An- anyway, so yep, even on volts, it's going to um by default is going to show the temperature 25.6.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (mention)
+context before: And there's our DC calibration trim pot. Looks like that's is that hooked up to two reference pins? We really need to look at the data sheet for this getting an internal block diagram to get more fancy pantsy.
+TEXT: Speaking of fancy pantsy, look at this. This is quite unusual. You don't often see this in a multimeter. So thumbs up to this. We've got cold junction compensation and that's for the temperature mode.
+context after: So you'll notice that when we select a temperature on the range switch here, bingo it goes up to here into this amp here but then that's offset with a cold junction compensation.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (mention)
+context before: When I go into the different it should drop. Yeah, cuz AC is going to take more because it's doing more stuff. And millivolts there. So, it's round about 20 mW.
+TEXT: Ohms keys is a bit less. And capacitance, more less again. Look at that. Temperature measurement mode, current. And other currents. So, yeah, the highest the highest mode here is your AC volts.
+context after: But let's just put it in say DC volts. But watch what happens when we turn our data on here. I'll hold this on. And boom, we're in data mode there.
+
+[AzIuayXzCvs] Brymen / EEVblog BM235 Multimeter Unboxing — Dave Jones (mention)
+context before: The Brymen That's That's turned out really well. It's rip that off. And uh there it is, the EEVblog. BM 235. Let's switch it on. Comes with batteries. It's ready to go.
+TEXT: Awesome. Look at that. Fantastic. Uh why has it gone to uh temperature? There we go. Millivolts. Yes, it has a 50 millivolt range and let's have a look. So, that's all that's all hunky-dory.
+context after: Excellent. Beautiful. So, that's going to be like the new EEVblog blue. I've got like a Pantone color. It's just like, you know, my logo is not quite the same color.
+
+[75] EEVblog #75 - Digital Multimeter Buying Guide for Beginners — Dave Jones (mention)
+context before: It's next to useless. So, unless you're getting an auto hold function, don't worry about it. It's pretty useless. Another useful feature that if you can get it, it's a really good thing, and that's temperature measurement.
+TEXT: Now, uh if it doesn't come with one of these temperature probes, then well, that's a pain in the ass. But uh a good meter will have will come with what's called a K-type thermocouple probe.
+context after: They're very You can buy them separately. They're very cheap and very simple, but all it is is basically a a bit of wire with a little um a little It's a wire sensor on the end.
+
+[1334] EEVblog #1334 - Mystery Dumpster Teardown — Dave Jones (mention)
+context before: Um it's buried up under there. Power on off and LCD adjust. Um okay. So, let's push it. Whoa, there we go. It's just homing or something. Yeah, it's just doing its power on test.
+TEXT: And oh, yep, clock. Yep, the clock's goneski. Error. Uh 3 degrees C. It measures measures the temperature, does it? Oh, that LCD is not great. This looks terrible on my camcorder screen.
+context after: It's not much better in real life. Anyway, version 1.04. Um clock, 1st of the 1st, '18. By the way, this thing actually fairly recently I used last calibrated 2015 and due on 2017.
+
+[1392] EEVblog 1392 - No temp probe? No problem! — Dave Jones (mention)
+context before: 
+TEXT: Hi, just a quick 2-minute tech tip video to do with multimeters and a feature you may not have known about with your multimeter and one you probably won't find in the manuals.
+context after: Hmm, I should update my manuals to actually include this. Um, if you've got a multimeter with a temperature functionality, most, you know, any decent multimeter is going to have measure temperature with a what's called a K-type uh thermocouple.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 2of2 — Dave Jones (mention)
+context before: I love it. Last and certainly least, the Ideal meter. 5.5 milliamps. God, you can fly to the moon on 5.5 milliamps. That's incredible at 9 volts. That That is a battery hog.
+TEXT: Now, let's And and it's low battery at about 7 volts, but that's a loser, really. That's the worst out of the bunch. And let's just do a quick temperature measurement.
+context after: I've got the Fluke reference one here, 14.4°C. Uh I've just got another el cheapo thermometer here, 14.9, and the Extech's doing 15.4, which isn't too bad at all. And it comes with um this little thermocouple adapter, which is um you know, it's reasonable, but it just accepts a standard K-type.

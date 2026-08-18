@@ -1,0 +1,303 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: trigger level
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 54 passages drawn from 34 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# trigger level`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (explains)
+context before: I mean, you know, if if you just want to get uh signals on there, then, you know, it's it's good enough. But, uh yeah, I would I would be tempted to go in there and tweak that just so that's that's a bit too far out, I think.
+TEXT: I'm not happy with that. So, we have to uh cal that internally. And we need to check our trigger as well, of course, now. So, we'll take our trigger level here and we just uh adjust it and make sure it goes uh make sure it goes between pretty close to the positive and negative um values there, and it certainly does.
+context after: And uh if we uh choose the negative slope trigger and do the same thing, yep, that's working perfectly. No problems at all. And that's in the peak-to-peak auto triggering mode.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: It's the horizontal deflection sweep or it's the voltage that's applied to the horizontal deflection plates, which causes the beam to sweep across the display. And that's a sawtooth waveform like this.
+TEXT: So, once the oscilloscope triggers, okay, at this point, if you set your trigger level to say this Y value here on the positive edge like this, then the Once that trigger is received, then it will start sweeping this voltage will increase and the beam will sweep across the display like that, drawing your waveform.
+context after: Now, when it gets to the end over here like this, okay, it's got to somehow get the beam back to here. It's got a what's called a retrace. So, it retrace its step all the way back here and it does that very quickly.
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (explains)
+context before: Our source here instead of being channel one, we don't want to trigger off our signal anymore. We want to trigger off our external signal. Bingo, there it is. And we can display that by turning on channel three.
+TEXT: There is that sync pulse. Check it out. Exactly there where as soon as it goes here, we want to trigger off that. And once again, we can use our trigger level here and we can cause it make that go unstable eventually because it's now triggering where our trigger level's working off external trigger pulse.
+context after: But that's the third option to do it. So there you go. Piece of cake for triggering on complex signal. Well, this isn't really complex. It's just a simple burst.
+
+[368] EEVblog #368 - EPIRB Teardown — Dave Jones (explains)
+context before: It's neat. All right, let's see if we can capture something in test mode here. I have no idea what it's going to give out or do anything at all or how to trigger.
+TEXT: That's why you got to experiment with these things to find out. So, I've got the channel one connected to the antenna output there. Single shot capture. We've got 100 milliseconds per division horizontal and one volt per division vertical set to trigger just above that.
+context after: So, eh let's give it a go. Let's press the button and uh see if we can trigger something. Up, there we go. We got something. There we go. We got a spike and then boop another little another little So, that's clearly above 1 V per division.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (explains)
+context before: So either if Oh, we got one. We got another one. So if the glitch actually either the glitch is in there or the actual signal is in there, then it you can actually capture on that.
+TEXT: And we've actually got the trigger level we can actually turn it up so that it'll never trigger on the glitch. And we can just sit there waiting and waiting to see if the glitch actually catches actually comes up in there, but you know, you could be waiting a while.
+context after: So technically it works, but it's not really the right tool for the job. One, and I can actually draw a little zone around that, okay? And then I can say it must intersect with that, but when I actually run it, you might think that it's triggering in there, but it's not.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: Something's really happening there. Is that my you know, what's wrong with my product that I'm testing when there's actually nothing wrong with it. You just over ranged and you can fix that with a range issue.
+TEXT: So it's not great, but maybe they can maybe that's a firmware fix. So we're running through the calibration now. So hopefully that'll do like an offset and maybe that'll fix that trigger level issue that slight offset in the trigger that we actually had and stuff.
+context after: No, it's still slightly off. See how that trigger line is above the triangle wave and quick multimeter test can it actually survive a thousand volts. Shows red up there for a hundred volts cuz it is member a thousand volt cat three rated.
+
+[771] EEVblog #771 - Electronic Safe Lock Powerline Attack Part 2 — Dave Jones (explains)
+context before: this thing. Okay, so what we want to do now is compare the first and second key presses to see if they're different. So here we go, we've waited the 10 seconds, so this will be a first key press, I'm going to trigger, I've changed it back to single shot capture
+TEXT: mode, YT mode, it's not rolling anymore. And I've set the negative trigger level down here, so that we're capturing, this is the beep pulse which we established in the previous video, that's the physical beep in there. It does all the processing before that.
+context after: Now that's what happens if you press the first button. Now we can actually store that waveform as a reference, just like we did last time. So I can go into my reference menu here, and I can go save, we can save that, bingo, there we go.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: So, what we've got is the AC coupling trigger coupling is there by default. It's up the top. There's a reason it's up the top is because on analog oscilloscopes, you pretty much, by default, want to use AC trigger coupling, and I'll show you why in a minute.
+TEXT: Now, on our analog oscilloscope here, we have the mode control as well, and we've got it on normal mode, okay? I'll explain that in a second. And we've got our level control, which adjusts our trigger point, which starts our sweep all the way over here.
+context after: So, you'll notice that is the start of a trigger point, whereas on a digital scope, it's in the middle. So, we can adjust our level control here, and the trigger point, once it gets up to there, boom, it's gone cuz it's no longer triggered.
+
+[879] EEVblog #879 - R&S HMO1202 Hacking Extended Version — Dave Jones (explains)
+context before: I'm at a loss here, look, I'm, I've got the correct type, I've got edge triggering, I'm at the correct source, channel one, which is what I'm using, the slope, positive, negative, both, it makes absolutely no difference to what happens, and then the filter, we're on DC, so we can set our level here, okay?
+TEXT: And here is the thing, right, we put it in auto mode, okay, so here's our level, it's positive, trigger level is smack in the middle, right, here's our ground point down here, everything's hunky-dory, this should work, you put it in normal mode, okay?
+context after: The trigger goes like this, and if I go to channel two, here, and change the bandwidth, look, it triggered, it triggered, but it didn't capture and display any data. What the hell? What is going on? Yet, if I go over to my keysight scope here, and I do the same normal mode, and I press that bandwidth limit button, it's capturing that, the probes are on the exact same point.
+
+[1402] EEVblog 1402 - Rohde & Schwarz NGA100 PSU Teardown + GIVEAWAY — Dave Jones (explains)
+context before: I don't think I've touched that. Lower the trigger level down here. And There you go. That is significantly different. But that one doesn't overshoot in terms of voltage, does it?
+TEXT: So, once again, it's got an interesting characteristic response here that just so happens to be near the That's just a coincidence that it's near my trigger level here. Of course, if I increase my trigger level up above that, we can do that again.
+context after: There you go. So, yeah, that's got an interesting response there. But this one doesn't over volt. So, yeah, it's got a bloop bloop. Yeah, so the Rohde & Schwarz one is not that good in terms of its constant current at switch on capability.
+
+[UJjMt2-k99c] What Is An Oscilloscope? — Dave Jones (explains)
+context before: and analyze it like that. And also, the oscilloscope, although this is more of a practicality of actually getting something on the screen, you see how it's a nice stable signal like that? If we actually adjust our trigger level here, which is this line here,
+TEXT: where it's going to trigger from, if we go up here, it should, well, not trigger. And it's not, okay? So it's not updating that screen display anymore. It's not doing anything. But if you move it down, bingo, it allows us to trigger the signal.
+context after: But that's a whole 'nother video. But that is what an oscilloscope allows you to do. And if your signal is doing something like this, I won't explain jitter, but if your signal is jumping back and forth really, really fast like that, you'll be able to see it on your oscilloscope.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (explains)
+context before: There you go. So, it practically corresponded with You might not see it at all, cuz it might perfectly correspond with a like a rising or falling edge there. So, you may not see it, but that's what happens when it's not actually synchronized with the actual main waveform itself.
+TEXT: And that might actually technically make it harder to do trigger off. And likewise, we can do runt triggering here. We've got all the usual suspects, and we can select our high and low signal levels, and also we've got our qualifiers as well.
+context after: They actually call them qualifier. So, a lot of scopes will call these things and the selections and setup of them, you know, something they'll use some different terminology, but they're essentially all doing all the same thing.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Now, on our analog oscilloscope here, we have the mode control as well, and we've got it on normal mode, okay? I'll explain that in a second. And we've got our level control, which adjusts our trigger point, which starts our sweep all the way over here.
+TEXT: So, you'll notice that is the start of a trigger point, whereas on a digital scope, it's in the middle. So, we can adjust our level control here, and the trigger point, once it gets up to there, boom, it's gone cuz it's no longer triggered.
+context after: Our trigger lead has gone off, and we can take it all the way down. Bingo, it's gone right off the bottom of the waveform. Oh, it's very intermittent. It doesn't know how to trigger on.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: So, like I can press channel two. No, no I don't like that at all. Like I like the like the menu is really nice. Anyway, you might think that T might be for time base here.
+TEXT: It's not. It's for your trigger level. But, that's okay. H is your time base for your horizontal. Like that. Okay, no worries. It's all fairly responsive. Can we just move with Yeah, yeah, that's actually really quite quite responsive.
+context after: I like that. And we've got measurement. So, that will whack up measurements. We've got menu over here. All sorts of stuff. It's It's really bright display. I really like it.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Well, to get it triggered, of course, we can move our trigger level down. But we don't have to do that on a modern digital scope. Regardless of where the waveform is, as long as it's within side the capture area of the ADC, look, it's got trigger push for 50%.
+TEXT: So we can just push that and the scope figures out where where the waveform is and automatically puts that trigger level smack in the center. Brilliant. So that's sort of like a one-button solution to not using AC trigger coupling.
+context after: So instead of having to always just muck around with this trigger level control, you can just go bang, give it to me. Thank you very much. Works the same on the Agilent and on the Tek.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Yes, it has the reset to zero level down here, but it's got a dedicated 50% button. So yeah, we can dick if our unknown signal, we can dick around with our level control, put in the middle and trigger, or we can just go bang, hit 50%, thank you very much.
+TEXT: And some people were confused why, if you go into the trigger menu and you go into the coupling and you set it to AC, you no longer get that trigger level control there because it doesn't make sense relative to your input channel.
+context after: So, we don't get that bar anymore even though it tells us our trigger level is down here. So, it's still displaying it, but it just doesn't make sense to print the level on the screen because we're cuz the trigger level over here is AC coupled from our displayed signal.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: There's our fourth signal, our third signal, doesn't even show up, our second, and back to our first. Absolutely useless. So the takeaway from that is if you use DC trigger coupling down here, then every time you probe a new signal on your circuit, an unknown signal, and it might have a different DC offset and you're using DC input coupling like that because you want to see the DC offset
+TEXT: you're probing your circuit. You want to know if there's a DC offset there. So you're using DC mode typically you might do and you've got to manually go in and tweak the level control each and every time if that DC input varies.
+context after: Whereas if you got AC coupling, you don't have to do that. You can set typically set one zero trigger point there and it'll the trigger on a good lot of input signals.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (explains)
+context before: Wow. Hopefully you heard the relays there. The way it didn't choose that time base to begin with. I don't know. Hmm, inconsistent auto set functionality. Anyway, has set the trigger to the middle.
+TEXT: Um, so we can actually adjust How do we adjust our trigger level? Can we just drag? I'm dragging it down. Look. And it springs back. Why? It's like an auto 50% trigger level and it always chooses even you can't override it.
+context after: What? Maybe you can do it in normal mode, perhaps. Let's go to normal mode. Ah, there you go. Yep. Is that the same as the other one? Um yeah, you've got to choose normal trigger mode in order to set the trigger level.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (explains)
+context before: So, it's obviously like going above the waveform and it just doesn't know what to do. There we go. Set it properly the times one scale factor on channel one here.
+TEXT: So, yeah, you'd expect it to go off trigger at when it gets to about two and a half cuz we're talking 1 volt, 2 volts, you know, two and a half there and that's what we start to see and bang at about yeah, 2.7 or something.
+context after: So, that's right down on the negative side. So, our AC trigger coupling is now coming back down. Whoop, let's go. Sorry. Let's go negative. And about the same, 2.6 about 2.5 volts or thereabouts.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: And that is the difference because with these new digital oscilloscopes, people are so used to seeing this trigger line and this trigger level, they've just got into a different mindset of using the scope.
+TEXT: And every time they trigger us every time they probe a new unknown signal, they go, "Oh, well, I've got to set my trigger level down here." Well, if you had AC trigger coupling turned on here, you might not have to do that.
+context after: It is advantageous even on these modern digital scopes. It works the same way, has the same advantage. Now, just as a little aside, I'll show you something that I don't particularly like about the Rigol digital scopes.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (explains)
+context before: Cool, huh? But, the next question is how do we actually trigger off one of these? That's where it gets a bit more interesting and where your modern scopes have features to actually do this.
+TEXT: And the other thing to remember is this has nothing to do with trigger level, right? If I set my trigger level right in the middle there, okay? We will still capture those because it's got nothing to do with uh triggering.
+context after: It's just because as I said, they're essentially just randomly wandering in the trigger uh sequence. So, we don't even have to set our trigger level. You can see that we're never triggering off actually one of these things.
+
+[1583] EEVblog 1583 - Advanced Oscilloscope Triggering: Glitch/Pulse/Runt/Interval — Dave Jones (explains)
+context before: But what we're actually using this time is what's called interval triggering here. So, it's one of the very comprehensive, you know, types of different triggering systems. Not every scope will actually have this and we've got interval trigger.
+TEXT: We can set it up shorter here or we can set it longer within or outside. So, it's extremely powerful and we've set the trigger level to there, right? And then I've got the interval width set to 80 nanoseconds there.
+context after: And of course it's going to trigger on anything less than 80 nanoseconds. Very It's another way to actually capture it. Check this out. This is very cool. It's got this fine level here.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: And what's nice here, we can go for the limit range various limit types and then the next page here, we can set our upper and lower limit. I was a bit confused for a second.
+TEXT: I thought I'd have to use the knob up here to adjust that. But, no, it's because it hasn't actually lit up to tell me, "No, you have to actually use the trigger level adjustment." Okay, no problem at all.
+context after: And we can set up our two different levels there for our runt pulse. So, we're basically getting something in between there like that and bingo, we are triggering off that little runt pulse there.
+
+[699] EEVblog #699 - Rigol DS1054Z Oscilloscope Jitter Fix Testing — Dave Jones (explains)
+context before: It's AC trigger coupling. Big, big difference. So, let's do that, and ta-da! We're a happy little happy little camper there. If I Oh, let's turn off our infinite persistence, cuz I was uh just varying the um offset uh level control there.
+TEXT: So, let's go into display, change that back to minimum. Thank you very much. So, I can change our level there. And of course, it's going to lose it because I'm adjusting the adjusting the trigger level.
+context after: So, it's obviously like going above the waveform and it just doesn't know what to do. There we go. Set it properly the times one scale factor on channel one here.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: Look, we're triggered there just fine. I switch over to another waveform. Bingo, we're automatically triggered. Look at that. Magic. And then we go over to another waveform with a different DC offset.
+TEXT: Bingo, we're still triggered. I mean, granted, this is going to change if our trigger level is slightly different, but you stand more chance of getting a signal first go by using AC trigger coupling.
+context after: So, let's select that to DC here and see what happens. No, our waveforms, no, it's not triggered properly. Let's go back to our waveform over here. No, it can't trigger on that and it can't trigger on that one here because on DC trigger coupling, you have to muck around every time you probe a new signal and set your trigger level like this.
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (explains)
+context before: There it is, the yellow marker, right? So, it's triggering in I don't know. In fact, it doesn't even look like it's triggering it like it should be in the center, right?
+TEXT: That should be in the center marker, but it's not. It's like moved over, right? So, that's wrong. And then, of course, if I change my trigger level, look, the waveform moves as you'd expect, right?
+context after: And if it drop off the bottom, look, it's still going, but look, watch this. We go up and up and up and up and woah, away she goes. Look at that.
+
+[265] EEVblog #265 - Philips PM6672 Timer Counter Teardown — Dave Jones (explains)
+context before: So, that's pretty much all there is and you'll find that the other the input the other input to the comparator will come from tada, no surprise, your trigger level sensitivity knob.
+TEXT: There it is. So, you set your trigger level and that's pretty much all you uh need to uh sense the input there. So, that's pretty darn easy. And here you go, I think we've found the meat of it.
+context after: That looks like the processor, the 8049, and that's hooked into the display system over here. Here's the uh it's the multiplexed um eight-digit display there and it's got There's the driver transistors for it and it's multiplexed in both ways.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: I don't get it. Now, while the optical encoders there they've got a nice indent on them, these soft ones don't. They're just an optical encoder. But, the the horizontal and the verticals actually have indents and they feel pretty good.
+TEXT: But, they're the only knob on this entire thing which is actually pushable is the level which sets the trigger level to 50% and it takes a while, too. Look at the hourglass come up there.
+context after: Clunk. Clunk. The scope's pretty slow for a lot of stuff as we'll go into later. But, why can't the the you know, why can't these be pushable and you can set the fine adjustment?
+
+[1320] EEVblog #1320 - Premature Oscilloscope Triggering — Dave Jones (explains)
+context before: Here's our trigger point, right? Our Our trigger point's right up here at like, you know, a volt and a half or something. So, it's got to rise above based on our trigger rules here.
+TEXT: Our edge trigger uh positive going slope, it must this signal must transition above our trigger level there before it will trigger, but there is nothing there. There's absolutely nothing.
+context after: Our positive going edge is all the way over here. What's going on? So, just for kicks, let's choose another scope here, signal in 1,100, whatever, channel two, slope rising edge, our trigger levels, you know, round about 2 volts, something like that.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (explains)
+context before: So we can just push that and the scope figures out where where the waveform is and automatically puts that trigger level smack in the center. Brilliant. So that's sort of like a one-button solution to not using AC trigger coupling.
+TEXT: So instead of having to always just muck around with this trigger level control, you can just go bang, give it to me. Thank you very much. Works the same on the Agilent and on the Tek.
+context after: But if you want to do the same thing on the Rigol, well, here's our level control here. It's around about there. Yeah, we can tweak it and bring it down to trigger our unknown signal, but because it's set the level to zero, if we push it like that, it drops down to zero.
+
+[nO09bc5ozng] NEW Tektronix 2 Series MSO Oscilloscope FIRST REACTION — Dave Jones (explains)
+context before: Yep. I double click. Okay, we've got ourselves a split view. Nice. Can we pinch and zoom? Yeah, course we can. Course we can. Can we Yep. Yep, course we can.
+TEXT: Operates exactly like you'd expect. And uh Yep. Can we set Can we drag the trigger level? Yeah, course we can. Yeah, everything Yeah, everything's operating exactly like you'd expect.
+context after: All right, very nice. Seems fast and responsive. Oh, yeah. Yep. Although that's No, that's that's that isn't updating now, is it? No. No, this is a saved No, right.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (explains)
+context before: Not much at all, but that's what happens when you get the deeper memory. And of course, if you turn fast acquisition mode back on, bingo, we're back up to 250,000 waveform updates per second.
+TEXT: That's at 100 nanoseconds uh per division. But, watch this. Watch what happens if I change the trigger level. Okay, here's my trigger level, right? It's right in the middle here.
+context after: Watch this. This is the interesting thing I wanted to show you. What happens if I raise the trigger point above that, so there is no longer any trigger, and it's got to go into auto trigger mode.
+
+[983] EEVblog #983 - A Shocking Oscilloscope Problem! — Dave Jones (explains)
+context before: That was a just a a pretty That one didn't do it. There's a There's a level There's a level there that it's actually That's actually that's because of my my trigger level is actually there.
+TEXT: Sorry. So if we set the trigger level just above the noise there, Oh, look. It's just the tiniest little knock That was so gentle a knock. That was I barely even tapped it.
+context after: And there we go. It's triggering channel 1 seems to be worse than the others. Channel 1 and channel 4 seem to be like the worst culprits. Channel 2 seems to be pretty good.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: Oh, so man. Menu is so confusing. You know you These two cycle through the menu in the horizontal direction and then the dual use uh vertical scale button over here is the one that you go down and you select it and you go like that and it should be now falling edge.
+TEXT: There we go. We've at least got the falling edge. Does kind of work. This is like the trigger level. Follows like this and so let's put the trigger level right.
+context after: It's the scroll rate of these buttons is terrible, by the way. It's faster to just manually click them like that than it is to hold it down and do the auto repeat thing.
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (explains)
+context before: And I've set up normal mode manual triggering on this so I can adjust the trigger level. And well, look, I can get it to not trigger at all. Barely.
+TEXT: Oh, yeah, we've got a big spike there. But barely because I'm adjusting the trigger level like that. It can be tricky to actually trigger on uh noise like this.
+context after: So, generally you want your uh trigger threshold maybe on a noise peak like that, for example. So, anyway, um generally you don't want to use your auto trigger mode.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: And the voltage just isn't getting there. So, what the Aha, figured it out. It It didn't disable this as a qualifier. It's always on, which is interesting. That's not how the Keysight one operates.
+TEXT: Anyway, a limit range is less than equal to, and we use our level control here. We're actually we'll have two trigger levels. You can actually see one up there.
+context after: There's one of them. I won't touch that. Can we get rid of that? There we go. We've got one trigger level there. And we can see that there's a runt pulse in there.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: That's that's what you want. And then you can move the waveform around. Presumably, yep, we can move it up and down. If you double click it, does it go back?
+TEXT: No, you want to be able to reset it. But that's okay. And then trigger is just going to adjust your your trigger level which is green. Is that going to vanish?
+context after: No, it's just going to stay there. That's fine. And then you got your AC and DC coupling over here. Brilliant. And we're going to probably have another menu. Yep.
+
+[330] EEVblog #330 - Medela Swing Teardown & Repair — Dave Jones (explains)
+context before: And now what we're looking at here is the sense waveform or that that sense wire coming back. So, there's a See those spikes? We've got some over voltage spikes there.
+TEXT: If you can see those happening. We can capture on those, of course. Move the trigger level up above here, and we can uh single shot capture one of those.
+context after: There we go. So, let's Let's have a look at that. Tada! Look at that. Beautiful. Let's turn the trigger back trigger level back down. So, that is um yeah, I do it's some sense winding coming back from the pump mechanism, the motor slash pump mechanism.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: Will we get our square wave? Yeah, we do. There you go. It's a bit of trigger jitter there, but anyway, let's go up a division and then we'll move that uh 200 mV 500 mV per division.
+TEXT: There you go. There's our trigger level. We can set that to 50%. We can move it around. Still in the business, but it's quite a bit of jittery on there.
+context after: Wow, look at that. I mean that's jumping around like a jack rabbit. Look at it. The waveform updating seems fast. It's supposed to have 50,000 waveform updates per second, but anyway, it is measuring our 10 MHz there.
+
+[1320] EEVblog #1320 - Premature Oscilloscope Triggering — Dave Jones (explains)
+context before: But, more to come on that perhaps. Hopefully, I fix it. Anyway, I wanted to show you something interesting here. Now, what I'm doing is I'm just uh triggering off uh the 3.3 V rail here and I'm just going to power up this scope.
+TEXT: So, what what I've got here is it's just on channel two here. My trigger level is just like, you know, set to the middle of the uh 3.3 V waveform here.
+context after: Okay, so what I'm going to do, I'm going to set it to a slow time base like 500 ms uh per division. I've got my pro Let's switch the product off.
+
+[685] EEVblog #685 - What Is Oscilloscope AC Trigger Coupling? — Dave Jones (opinion)
+context before: I've got four function generators set up here with different DC offsets, but just assume that we're probing a circuit. We don't know what's going on. We want to find out what happens, okay?
+TEXT: Out Look, our waveform's nice and triggered here, okay? We set our trigger level where we want, but because we've got AC triggering, watch what happens if I change Look, to a different signal with a different DC offset.
+context after: It still reliably triggers off that. No problems at all. It's a different waveform. Uh it could be a different frequency or whatever. Let me try a third signal that we're probing.
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (opinion)
+context before: That is shocking. Absolutely shocking. I don't think I've ever seen a scope this bad. The good new You want to know what the good news is? Well, the good news is that um it doesn't matter what uh memory depth you operate at, you're going to get the same waveform update rate.
+TEXT: So, hey, you may as well run 10 meg all the time. Smart my ass. For the Americans there, check this out. There's something wrong with the alternate trigger level.
+context after: There it is, the yellow marker, right? So, it's triggering in I don't know. In fact, it doesn't even look like it's triggering it like it should be in the center, right?
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (opinion)
+context before: One thing which I think is a little bit of a user interface fail, the trigger point here. There we go. I can adjust the trigger point, but it appears on this side.
+TEXT: I'd much rather have it on this side here because when you pop up the menu like that, bang, your trigger level has disappeared. Should be on this side over here.
+context after: But granted, the Rigol scope does exactly the same thing. So once again, when we change the intensity on this thing here, look, all we're doing is it's just changing the color of that waveform.
+
+[l-fuyHCs2Sw] Rohde & Schwarz RTB2004 Oscilloscope Acquisition Bug — Dave Jones (mention)
+context before: Anyway, I don't see that at higher frequencies, by the way, and I don't see that if I, whoop, there we go, yeah, we can still see it, still see it like that, and if I go down, oh, and that's actually supposed to be triggering off that, but it ain't, so I'm not sure what the, what the deal is there.
+TEXT: I've got AC coupling, high frequency, reject. Trigger level, you know, positive slope, I've got all the usual bells and whistles happening there, so it should be doing that, but it's obviously not triggering off, oh, there we go, it's triggering now, so can I get it to, maybe it doesn't like triggering at low frequencies, and that's slow updating, you expect that based on the time base.
+context after: Of course, it's interesting that it fills up the post-trigger first, and then comes in and displays the pre-trigger information. So, hmm, no, no, we don't get it, but if we take that trigger off, does it show up, is it going to show up, oh, come on, oh, the auto, normal, sorry, we're in auto, dull.
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (mention)
+context before: They've decided to dedicate um a user part of the screen for use your user measurements and stuff like that. And yes, it does show your current sample rate and your memory depth all the time.
+TEXT: I love that. Brilliant. Shows your trigger level. Shows your horizontal sweep speed. Shows your vertical over here. And then some user stuff over here. So, you know, it's it's not bad, but it's just interesting to note that they're sort of only using, you know, just over half of the bottom of the screen there.
+context after: One of those annoying aspects of this thing though is that you have to just jump all over the shop. Check this out. If I go up to the acquire menu, okay?
+
+[l-fuyHCs2Sw] Rohde & Schwarz RTB2004 Oscilloscope Acquisition Bug — Dave Jones (mention)
+context before: Look, that signal should not be doing that. Now, it's absolutely fine and dandy. You put it in single-shot mode and everything's fine. But when it's freaky, I don't think it's going to do that. But when it's freaky, I don't think it's going to do that.
+TEXT: But when it's freaky, I don't think it's going to do that. But when it's freaky, I don't think it's going to do that. But when it's freaky, I don't think it's going to do that. But when it's free-running like this, I've actually got the trigger level-- it's not actually triggering like that.
+context after: When it triggers, it-- but, well, it's supposed to be triggering, but it's-- look! Look at that! What's going on there? Now, this seems to be a function of the acquisition memory length. So I've got it on 1 meg at the moment. If I put it on automatic-- please forgive me, like, I've only been using the scope for five minutes, okay?
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (mention)
+context before: But there you go. Generally, basically exactly the same thing we're seeing before on our analog scope. And there you go. I've got that a bit better on the digital scope over here.
+TEXT: I've triggered manually now, so I'm in there and I've got AC coupling. I've got some noise reject on as well. I don't think that matters a huge amount, but I've got it set to normal and I'm just holding my tongue at the right angle and tweaking that trigger level.
+context after: And you know, pretty much we can capture that and of course then zoom in on any of the detail. We were sort of seeing that a bit clearer on the analog type stuff, but that is your high frequency noise and the rest of it is that low frequency content like that is your ripple.
+
+[824] EEVblog #824 - GW Instek GDS-1000B Oscilloscope Teardown — Dave Jones (mention)
+context before: back to zero. Fantastic. The horizontal section, it's got separate search, which of course the Rigol doesn't have. So you know, a replay mode control directly there, which the Rigol doesn't have. Very nice. And I like how the trigger settings here are totally separate.
+TEXT: But just like the Rigol, you don't get an external trigger, but that's not uncommon on a 4-channel scope. And other little niceties, a 50% trigger level button dedicated, the Rigol doesn't have that. So you know, it's got the same force button, which is okay.
+context after: But yeah, I really like that run-stop. The auto set is not sort of recessed or anything like that. But the menus are, look at the buttons, it all looks very bland and amateurish. So I don't know who the user interface product designer is
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: Great. Now it's 4.08 So, it's getting closer. I'm not going to quibble over 4.08 versus 4 volts on my SIGGEN. That's fine. Now, your trigger button actually changes your trigger mode. It's not a trigger menu at all, so rudimentary. So, that'll go into our single shot trigger mode.
+TEXT: We're in stop mode now. But then you can put it in normal mode like this. And geez, it's a fair bit of jitter in normal mode. I don't know why. There's our trigger level there. Geez, that's pretty how you're doing. Anyway, that does move our
+context after: trigger level. Look at that. Wow. And then it's going jittery like that. So, then it, whoop. Why is it not, yeah, it's just, it stopped, of course. You'd expect that in normal mode. But yeah, I'm not impressed by normal mode there. It's a bit how you're doing.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: data. So, meh. Might have some limited niche use, but, meh, it's disappointing. Time measure, for example. We can do, oh, frequency. Okay. So, well, let's just do time. Oh, that's showing it there. Ah, I thought that was cursor mode. Aha, auto 50%. That's why we may not be able to adjust
+TEXT: our trigger point, I suspect. Now, can we change? Yeah, there we go. In auto mode. There you go. Auto 50%. So, we can change that now. And bingo, there we go. Yep. Cool. Ah, no worries. I take back that. That was a bit limiting.
+context after: Afterglow. Afterglow, of course, is going to be our persistence. So, oh, that just sets the level. How do we actually set the mode? Oh, we might, I'll put my standard waveform in. Standard 1 megahertz sine wave with 1 kilohertz, 100% amplitude modulation on it.
+
+[803] EEVblog #803 - HP1740A Analog Oscilloscope — Dave Jones (mention)
+context before: Horizontal line there on the display, and then my vertical uh position adjustment wasn't doing anything. That was That was really weird. Huh. And it's done it again. It's done it again.
+TEXT: I was playing around with the uh delayed time base here, which is very nice, by the way. It's got the nice vernier control up here. Separate trigger level. It's got auto as well, sweep after delay, and manual.
+context after: I would Let's try and reboot it. No? Reboot it. What go? Repower it. Hey, there we go. We're in like Flynn. No? See? It's vanishing. Hmm. All right. Hopefully, I can show you this.
+
+[1638] EEVblog 1638 - NEW Keysight Megazoom V ASIC 1GHz HD3 Oscilloscope! — Dave Jones (mention)
+context before: Now, um as it's during the recording of this uh I was talking to Keysight. They actually gave me a list of the next five firmware releases. So, they have like a rolling schedule uh for all these firmware releases, and I know what's coming in each one of the next five firmware releases.
+TEXT: So, you know, they're going to fix them uh the monitor output, and they're going to fix the uh trigger uh level stuff, and they're going to add all sorts of various features in the upcoming firmware releases.
+context after: So, some things I wasn't able to uh showcase in this, but anyway, it's got so much stuff in it that like uh I could do another like three 1-hour review videos and probably still not cover anything.
+
+[1612] EEVblog 1612 - Siglent SDS1000X HD 12 bit Oscilloscope Teardown — Dave Jones (mention)
+context before: Even though you set the software bandwidth limit to 200 meg on here, you still get a noisier front end when it's baked into your physical design. The higher the bandwidth front end, even if you're software limited, it's still going to give you a higher noise floor.
+TEXT: It just is. All other things being equal, of course. So, totally expect that, but yeah, that's a significant difference. Oh, I just noticed that my trigger level was down in the noise here.
+context after: It's now above, just like it is on this one, and still I think this is faster. I mean, that's visibly faster. I don't even have to measure the trigger output to see that's faster.
+
+[p-eLu1z7-cs] Rigol HDO1000 Serial Boot Capture for Hack + R&S MXO4 play — Dave Jones (mention)
+context before: I've got channel number one. Let's turn it off like that. Single shot trigger again, slowish time base. I've got yeah, 40 milliseconds per division. Negative edge trigger cuz otherwise if we do positive edge trigger, we'll get it as soon as it powers up cuz we saw that the default state before was high.
+TEXT: So, let's try it. Yeah, and a trigger level about in the middle, you know, 1 and 1/2 volts. Nothing. It's gone high and it's not going low again unless I've goofed my trigger.
+context after: I don't think so. Nope, there we go. That was just it looks like that was just contact bounce there. Let's try it again. Just turn my intensity up there so you can see it.

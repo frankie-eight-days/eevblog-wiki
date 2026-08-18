@@ -1,0 +1,248 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: rc filter
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 43 passages drawn from 18 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# rc filter`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: And of course, you're going to get 0 V output. It's just low. It's a DC signal. But, let's say it goes high for X amount of time Let's say it goes high for 10% of the time, then 10% of the time it stays low for 90% of the time.
+TEXT: What do you get out? Well, you don't get out anything. It's a digital signal. But, if you pass it through a low-pass filter, an RC filter, first-order filter like this, you will actually magically, as long as you got the filter values right, magically convert this PWM signal into a DC voltage from 0 to 5 volts because, let's say we've got a 5 volt microcontroller and that's what its output voltage is
+context after: going to be, either 0 or 5 volts. Well, when you pass it through the RC filter like this, it averages out that duty cycle or on time value to a direct linear proportion linearly proportional voltage from 0 to 100% or 0 to 5 volts.
+
+[284] EEVblog #284 - Braun Toothbrush Teardown — Dave Jones (explains)
+context before: And it is actually this particular toothbrushes that like the top of the range professional model and it does things like actually pulses the motor to after a certain time to let you know, you know, oh, you've been brushing your teeth long enough.
+TEXT: So, you know, so it can do smart stuff like that because it's under IC control like that and it's very simple, just a standard N-channel switch there. And we've got a simple RC filter here which goes off which allows the that 4-bit analog to digital converter inside the microcontroller or it might even be a you know, a better resolution analog to digital converter allows it to measure the
+context after: battery voltage during charging. Now, as for charging itself, it's very simplistic. We've got a switch up here. I don't know whether or not it's a whether or not it's a MOSFET or it's a bipolar device.
+
+[995] EEVblog #995 - Power Supply Sequencing — Dave Jones (explains)
+context before: But, if you've got like a physical switch, just be aware that the MOSFET will switch off and on very very quickly. Hear that? Horrid. Now, in this case, our oscilloscope works just fine.
+TEXT: It could handle that no problems whatsoever. But, uh more sensitive uh systems, that switch bounce may be an real issue. But, of course, if you use one of the proper uh power supply sequencing chips or if you just use a digital logic or a pulse generator or whatever, a single shot, or you would simply add an RC filter to the uh to the contact uh the gate of the MOSFET, then
+context after: you know, it can solve the problem. I just wanted to demo that. Here's a quick Dave CAD drawing of what we've got. I've got three power MOSFETs. Uh these are sub 53 P06-20 for those playing along at home.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: So, really the noise limit will depend on this. Now, if you're driving your circuit with a pot like this and you've got this fed to you know a voltage reference or something like that say a 2.5 volt voltage reference you know a really quiet low noise voltage reference then your noise is going to and you're driving that pin directly then the noise is going to be pretty good.
+TEXT: But, if you're doing a PWM signal and you're feeding that through your RC filter like that and then you're driving that with a buffer obviously and you're driving that into the set pin like that then um your noise then any noise that you haven't filtered out here any noise on there is going to make it through to here and it's going to make it through to your output.
+context after: So, filtering if you're using microcontroller control filtering of your pulse width modulation modulated signal is important. But, you can really up these values. You can you know up them as high as you want to really you know absolutely slaughter any noise and just kill it dead.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Now, to do that uh to get around that, we can add a second stage RC filter like we've done here. Exactly the same. So, we've gone back to our original 10K and 100N here.
+TEXT: So, that's 159 hertz nominal uh 3DB cutoff. We've added another identical one here, 10K and 100N, and we could do it with the op-amp and use, you know, various configurations like a Sallen-Key configuration and all that sort of stuff, but let's just start keep it simple and put two um RC filters in series like this.
+context after: And if you run it, this is what you get. The green line there is the value on here like the exactly what we saw before. Okay, that's got our like 10 millivolts of ripple on it.
+
+[752] EEVblog #752 - Original Sony Walkman TPS-L2 Teardown — Dave Jones (explains)
+context before: They would be, you know, like carbon zinc type ones. And, oh, ever ready heavy duty, 3.5 volts. Whoa, alkaline, 8 hours with alkaline. Unbelievable. Weighs a minuscule 390 grams. Fantastic. And look, we get straight into the good stuff. Here's the block diagrams. Oh, check it out.
+TEXT: Here's the playback head. This is like a left channel. They're not showing the other channel. We'll see that later. There's that stupid hotline thing with the microphone. Anyway, goes straight into preamp with automatic gain control. There's our high-low tone bypass thing. Once again, it's just an RC filter.
+context after: Fantastic. Gotta love it. And then your buffer amp from the output of that. And this goes into your headphone amps and, well, that's it. Bob's your uncle. And, of course, well, we've got ourselves a servo amp with the motor drive here. Because if you didn't have this servo loop in here,
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: That's not terrific, especially if you're, you know, you're generating a -5-V rail and you need, say, a negative uh you know, almost near negative uh 5-V rail on the output or even -4.
+TEXT: You can only get a lousy 10 milliamps there, and even with that low value of resistor, the lower value of resistor you go, so as you decrease the resistor value, you have to increase your capacitance value, often to absurdly high values, uh to get the ripple rejection that you'll actually want.
+context after: And, of course, you can add a second stage on here. For example, you can add another 100 R, you can add another one, and that works, but you've doubled your amount of uh voltage drop across there for a given current.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, all of our noise, all of our ripple that we had on our filter here has gone all the way through cuz now we don't have adequately adequate filtering on the output or the or the input to the set pin here.
+TEXT: And what happens if we add in a second RC filter in here once again 10K and a 100N. Bang! There's our output voltage exactly the same scale as before but our ripple has dropped very very significantly and once again that's with no practically no output filtering or no filtering on the set pin.
+context after: And if we replace our filtering back our 22 mic here and our big capacitance on the output, bang! There's our noise. It's suddenly vanished. These little spikes in here are going to be due due to ground bounce and stuff like that.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: Our minus 3 dB point. So, it's 470 times 0.707, which is about 330. Going to be near enough because we don't have much resolution in there. So, it's the end tolerance in the components, of course.
+TEXT: The minus 3 dB frequency is not this expected uh multi-capacitor multiplier. It's exactly the same formula as the RC circuit. Why is it so? Well, as it turns out, this is why a lot of people don't like the name capacitor multiplier cuz it doesn't actually multiply this capacitance.
+context after: It's not really 10 microfarads in terms of filtering like this. What it does is actually reduce the current through this resistor and hence the current that the capacitor has to smooth out by 100 times.
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (explains)
+context before: yeah, whoa, I can auto-scale, I can't even adjust the amplitude over here, how do I do that? Doesn't seem to be there, that's crazy anyway, because it's so minute, like .005 dB there is like, it's nothing, right, so that's rule of flat if you had that set to like a, you know, a 60 dB scale or something
+TEXT: like that, um, that'd be flat as a tack over the frequency range, so yeah, if we put an RC filter in there, we'd see the response, okay whoop-de-doo, ah, the number of steps, okay, we can do 100, and, there we go it's going to take a bit longer, but that's kind of cool, but
+context after: very primitive though, um yeah, not terrific, but, you know, usable I guess, you know, for education stuff, although I still think that the analog discovery is a better educational tool than this, whoa, data corruption why is it, it's gone wow, that is incredible
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: You want it to ramp up nicely and then go rock steady at 5 V. Now, let's have a look here and try and predict what's actually going to happen here.
+TEXT: Now, uh the input voltage up here is pretty much it technically it's going through an RC filter here with the current shunt resistor, but it's negligible, really. So, it's a So, the voltage is going to go straight through to power the uh LT1080 straight to the output.
+context after: There's no uh there's no capacitance um around our voltage adjust pot or anything like that um or our voltage reference. So, that's going to power straight up instantly power the pot instantly.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: But just be careful if you're driving loads like LEDs and stuff directly from the microcontroller, then that current's got to come from the micro power rail, which comes from the voltage reference.
+TEXT: But as long as you don't exceed that, you can get excellent absolute output accuracy as well as resolution on a PWM. So as you saw, if we have 10% on, 90% off during our period here, then we're going to get this RC filter is going to average that value out to 0.5 V.
+context after: But it's not just going to be completely DC, there's going to be some noise on that. Okay? There's going to be noise superimposed on there depending upon the values you pick down here and how effective this filter is.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: So, instead of having the the whole load that we got there of 12 30 milliamps or whatever it is flowing through this resistor here, we've got 100 times less than that or about, you know, a couple of hundred microamps flowing through this resistor.
+TEXT: But, in terms of calculating your cutoff frequency, the formula is actually the same as it is for a normal RC filter. It's just that the currents are reduced. The capacitor isn't actually multiplied, but I guess it depends on how you want to look at it.
+context after: But, as far as calculating the frequency, no, it's exactly the same. So, capacitor multiplier, yeah, you either like that name or you don't. So, if we actually measure some of the voltages in here, we can actually find the gain of this transistor.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: We're getting about 5 mV, you know, 8 mV worth of ripple or something like that. And look at these little high-frequency stuff in here like that. Bit of ringing there, that's probably due to our probing and stuff like that, but you really want to get rid of this sort of stuff.
+TEXT: So, that's not adequate ripple. If we just used that 159 Hz filter there, that's that's really no good at all. I like that one bit. Now, you're probably asking, why did that output actually Why did that output ripple drop from 100 mV to under 10 mV?
+context after: It shouldn't have have all just If we were getting that here, shouldn't have all just passed through that straight to the output? Well, no, not really. Remember these caps we got here?
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: You can see that the switching frequency because um the RC filter we're using is not uh low enough in value to filter out all that noise. Who wants a power supply when you're trying to output 100 mV?
+TEXT: It's got, you know, what's it got? 10 mV of ripple on that. Ah, hopeless. And that's with a filter frequency down here of 159 Hz because if you do the math, use that formula, 1 over 2πRC, that's that the 3dB cutoff point of that filter is 159 Hz.
+context after: And we're trying to fil- filter out uh 10 kHz. So, as you can see, it's not terribly effective at all. But, let's try that again. If we actually change that to 1 microfarad, you'll find that this ripple here will decrease.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: What do you get out? Well, you don't get out anything. It's a digital signal. But, if you pass it through a low-pass filter, an RC filter, first-order filter like this, you will actually magically, as long as you got the filter values right, magically convert this PWM signal into a DC voltage from 0 to 5 volts because, let's say we've got a 5 volt microcontroller and that's what its output voltage is
+TEXT: going to be, either 0 or 5 volts. Well, when you pass it through the RC filter like this, it averages out that duty cycle or on time value to a direct linear proportion linearly proportional voltage from 0 to 100% or 0 to 5 volts.
+context after: So, if it's on 10% of the time and off 90% of the time, you'll get out 1/10 of 5 volts or half a volt out of your RC filter down here.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: That transistor has a multiplying gain that multiplies the base current to give you a higher collector current. And that's where the multiplier comes in here. As it turns out, this simple configuration, which is basically an RC filter with an emitter follower, is what's called a capacitance multiplier.
+TEXT: And some people don't call it that. It's just a basically an RC filter, which is a building block of its own, combined with a series pass transistor like this, which is again a building block topology circuit of its own.
+context after: So, you combine those two, and it in effect, the capacitance value C here, it gives you an effective capacitance value of not just the C, but C times beta, which is the gain of the transistor.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: You can only get a lousy 10 milliamps there, and even with that low value of resistor, the lower value of resistor you go, so as you decrease the resistor value, you have to increase your capacitance value, often to absurdly high values, uh to get the ripple rejection that you'll actually want.
+TEXT: And, of course, you can add a second stage on here. For example, you can add another 100 R, you can add another one, and that works, but you've doubled your amount of uh voltage drop across there for a given current.
+context after: And, as you can see, an a typical RC filter, even a multi-stage one, is not very effective at all for anything but ridiculously low currents, pretty much. So, one scenario where an RC filter like this or a two-stage RC filter is fine is if you've got, say, a uh pulse-width modulator and you're you want to actually uh generate a DC voltage from that.
+
+[1541] EEVblog1541 - What is this Blown SMD Component? Redux — Dave Jones (explains)
+context before: And of course, here's where it pays to know your packages as well. This is a SOT23 package, but it's a five-pin, so it's what's called a SOT23-5. And that's going to be valuable in our search.
+TEXT: But we also know that we've got a series resistor in here as well. So, we've got some sort of RC configuration, some sort of filter configuration. So, that could be like a power rail or something like that.
+context after: We don't know if this is like an output. Uh you know, it's hard to tell. But certainly one of the first things you'd suspect is ah it could be a fixed voltage regulator cuz it's just got a single output filter cap, for example.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, it's better to add this, uh, second stage here, and then you can keep your response time fairly quick at 10 ms or something like that. But, um, it has much greater attenuation.
+TEXT: So, you know, we're down in the hundreds of microvolts there now just by having a simple 10k and 100n like that, a two-stage RC filter. Beautiful. Now, what happens if your PWM signal is, say, 5 V out?
+context after: Now, let's change it back to 5 V here, but let's say because you're got a 5 V rail on your microcontroller, but you don't want to get 0 to 5 V out.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (explains)
+context before: Or of course this can be an adjustable resistor like they've got in this design here, a digital pot. So, uh yeah, just a really cool bit of kit. And basically, all you need to do is feed into the input a DAC from your microcontroller that sets the voltage.
+TEXT: You don't even need a DAC. You can just use a PWM and an RC filter there, and you can get the DC voltage on the input to the pin, and then just have it tied as a voltage follower, and Bob's your uncle.
+context after: Like that goes to your output here, and these are designed for like stable into sort of like any sort of load. That's their job. Yeah, thermal protection at 160° there by the looks of it.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Now, let's take a look. Let's go to the first-order filter. Now, I've set the filter to have a roll-off, a nominal roll-off, or a filter cut frequency of 1,000 Hz.
+TEXT: So, you can see that here. It's 1 kHz. And what that means, you've seen that probably seen that formula before. It's 1/2 pi RC, and that gives you the cutoff frequency of your filter.
+context after: Now, that it's not a brick wall cutoff, okay? What we've got on the X axis here is our frequency, okay? Now, this is a logarithmic scale, so it's in decades, so it doesn't go linearly from say 100 Hz to 1,000 Hz here.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: That's our RC time constant that it takes when you first switch on the supply or change the voltage or whatever. It doesn't respond instantly, but it eventually settles down to bingo.
+TEXT: What does it settle down to? Go across here, exactly 100 mV average. Trust me, if you drew a line straight through there, it would go right through the average point of that waveform.
+context after: So, there's our 1 10th. It's worked. Our 10% duty cycle has translated to uh 1/10 of that or 100 mV output voltage. And if you look at the output on the op-amp over here, you can see that that takes a little bit of time, but it it responds to the same value.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: It And if we zoom in on that, let's zoom in on that part of it there. Look at that. The blue one, smooth as a baby's butt. There's hardly any ripple on that at all.
+TEXT: We're talking, uh, .1 mV, .2 mV or something. It's tiny. So, that's just an easy way that you can get, uh, extra filtering on your PWM. Just add a second RC filter stage.
+context after: I mean, sure you can up these values here, okay? These, uh, 10k, uh, this 10k and 100n, you know, you can up those, but then your response time gets low.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: But, here's a little twist at the end. Let's actually confirm that we can actually get a capacitor multiplier, in quote marks. Does it actually multiply this capacitance here, C, by the gain of this transistor, which I'm going to say is 100, and I've actually measured it as 100.
+TEXT: Well, let's have a look. The The cutoff frequency, the minus 3 dB frequency, you should know it's one of the basic uh formulas, 1 over 2 pi RC. That's for your RC filter.
+context after: So, for 1 K that we've got in circuit, and I've changed the capacitor now down to 100 nF here. So, for 1 K and 100 nF, our cutoff frequency should be 1.59 kHz.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: Half a millivolt even. It's only half a millivolt ripple. Fantastic. So, as you saw there, there was really quite a trade-off between the response time and the uh and the filter effectiveness or the filter attenuation.
+TEXT: Now, to do that uh to get around that, we can add a second stage RC filter like we've done here. Exactly the same. So, we've gone back to our original 10K and 100N here.
+context after: So, that's 159 hertz nominal uh 3DB cutoff. We've added another identical one here, 10K and 100N, and we could do it with the op-amp and use, you know, various configurations like a Sallen-Key configuration and all that sort of stuff, but let's just start keep it simple and put two um RC filters in series like this.
+
+[396] EEVblog #396 - Bode Plotting on Your Osciloscope — Dave Jones (explains)
+context before: Because half of the waveform is below, we we don't want that. We want that set below the ADC range, and now we're maximizing the full use of our ADC.
+TEXT: Now, what I've got here is a very simple RC filter for starters. I've got a 2.2 nanofarad cap. It's just what I had handy, and I've got my decade resistance box here.
+context after: Got it set to 10 K, and we'll be able to double-check these values with the simulator and see if we get exactly the same response plot. So, let's go up here and have a look at our response with those two values in there.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: But it's not just going to be completely DC, there's going to be some noise on that. Okay? There's going to be noise superimposed on there depending upon the values you pick down here and how effective this filter is.
+TEXT: So, we really need to take a look at it in depth at the filter and what values you need to get rid of, say, a 10 kHz might be a, you know, a very typical frequency.
+context after: Let's take a look at what RC filter you need to get a decent low noise output from this, which then, usually, you want it lower than your resolution. So, if your resolution is 12 bits, you don't want the noise to be any more than one bit resolution or 1.22 mV.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: The voltage regulator just doesn't do it. Enter the capacitance multiplier. So, let's just consider all these uh scenarios the same. We've just got a ripple and we want to get rid of it.
+TEXT: What's the easiest way to get rid of uh ripple? Well, that's easy. You have a resistor and you have a capacitor like this. So, this is in and this is out.
+context after: And depending on the value of the R and the C, the larger you make the capacitance, the more ripple rejection you're going to get. It's going to attenuate your ripple.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: We're talking, uh, .1 mV, .2 mV or something. It's tiny. So, that's just an easy way that you can get, uh, extra filtering on your PWM. Just add a second RC filter stage.
+TEXT: I mean, sure you can up these values here, okay? These, uh, 10k, uh, this 10k and 100n, you know, you can up those, but then your response time gets low.
+context after: So, it's better to add this, uh, second stage here, and then you can keep your response time fairly quick at 10 ms or something like that. But, um, it has much greater attenuation.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, if we're feeding in 3.3 V and by the way, I've also changed this feedback resistor here just to make the math easy, changed it to 10K. So, we'll have a gain of times two in this amplifier control loop here.
+TEXT: So, if we're feeding in 3.3 V that we've got here, we should get some ripple out of here, of course, because it's not that great this filter on its own.
+context after: And so, and at 50% duty cycle, we'd expect to get 1.65 V out of here multiplied by two, we expect to get our 3.3 V out of here. Exactly what and let's actually see if we get it.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: There's one another one from TI and from various other people. Linear Technology do one as well. And and they're all pretty old, but they give you a good feel for how filters work.
+TEXT: In this case, we've just got our simple RC filter here uh with the buffer and that's called a single pole filter. And we can change the filter up here.
+context after: That's this number one up here. That's So, if we go to a second, what's called a second pole filter, you've added some extra components. And third, a three pole filter and a four pole filter.
+
+[1172] EEVblog #1172 - TRIAC Testing (WEP Meltdown Part 2) — Dave Jones (opinion)
+context before: And there's the magnetic flux density curves for all you uh magnetic aficionados. And that's all there is. Like two coils. So, they must have opposite side coils as two coils.
+TEXT: So, that's how they're configuring this. Neat. And of course, for this low-cost fan, And went, "Ah, we don't need this diode rubbish. We don't need these in this RC these RC filters down here on that.
+context after: Nah, don't worry about that. She'll be right. Just hook it up to the coil. Bob's your uncle." So, that's just crazy simplistic. I ones I've seen before are much more complicated than that in terms of all the drive.
+
+[1594] EEVblog 1594 - Inside a Quantum Computer! with Andrea Morello — Dave Jones (mention)
+context before: So, that the inner conductor gets cooled down a little bit. And then, the other the see the thing you see here is something we built ourselves, designed and built.
+TEXT: It's a filter box. So, this is a box that contains RC filters and LC filters and again serves the job of thermalizing and and filtering away all the high frequency radiation by the Planck-Einstein relation that the energy is the Planck constant times the frequency of a photon, a high frequency signal carries photons with a lot of energy.
+context after: So, you want those photons to not be there unless you really need them. So, everything about doing low temperature experiments is a game of We do need high frequency signals for certain purposes, but where we don't need them, we have to filter them out completely.
+
+[221] EEVblog #221 - Lab Power Supply Design - Part 1 — Dave Jones (mention)
+context before: So, we want to feed in 0 to 1 V and get 0 to 1 A out. Okay, let's try and explain this circuit, shall we? Now, hopefully we won't get lost.
+TEXT: Now, here's our voltage control input. We'll call it Vset. And we want 0 to 1 V to represent 0 to 1 A uh current limiting around this circuit. So, we've got a buffer here because you need a buffer if this comes from an pulse-width modulated output with an RC filter, you want that's not good enough to drive this circuit.
+context after: So, you need a buffer there. So, this is our 0 to 1 V control input. Now, it goes into this adder or summer circuit here and then that is fed into a * 2 amplifier here into the non-inverting input of this constant current equivalent circuit.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (mention)
+context before: There we go. That's what we see there. Wham, bam, thank you, ma'am. Not sure like right down here at like um really ridiculously low currents, it can change a lot, too.
+TEXT: Even that can ruin your day. Going from 80 mV might be acceptable in your design, cuz you might be post-regulating this thing either using a low dropout regulator or uh you know, a Zener or even just some um you know, RC or LC filtering or something like that.
+context after: But you know, going from 80 to 120, that could ruin your day, too. So, at light loads. So, you could have be, you know, got to be really careful with this thing.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: Well, if you have a look here, let's zoom out. There it is. There's our output voltage. It's pretty close. There's going to be some error in here. This isn't perfect, but if we was to use more more precision function gen and stuff, you'd get exactly 3.3.
+TEXT: So, we're getting out exactly what we expect. And this the green signal here which I'm triggering off, there's our 3.3 V 10 kHz PWM signal and the yellow trace here is the AC coupled output on that RC filter there.
+context after: So, on the RC RC filter right there, that's our yellow waveform there. As you can see, that yellow waveform 100 mV per division, we're getting 100 mV ripple on there.
+
+[759] EEVblog #759 - Mailbag — Dave Jones (mention)
+context before: They've got a zeno diode protection. That's not usual uh way you do it. Um unless they needed the uh pullup uh for some reason. You usually just do diode uh clamping there to positive and negative rail.
+TEXT: And then they've got another small RC filter in here. And of course the series uh resistors of course help protect the input uh limit the input uh current so you don't get uh uh damage the chip from maximum.
+context after: So yeah we got filtering plus protection there. And then our output. Yep. They just got a low side uh end channel MOSFET there. They got some lowass filtering on the gate and Bob's your uncle.
+
+[1103] EEVBlog #1103 - Omicron Labs Bode 100 Review & Experiments — Dave Jones (mention)
+context before: Or we can do gain phase analysis, which is your basically basic uh frequency response transfer that you get for a filter or something like that. So, in this case, it's your device under test.
+TEXT: You know, it could be a simple RC filter or anything like that. Or it could be an amplifier or whatever. And this is how you hook it up. The output here, you're measuring the output directly.
+context after: Well, you're measuring the input directly on channel 1 and the output on channel 2. And we can do reflection with the next external directional couplers as well. So, if you're into measuring directional couplers and stuff like that, beauty.
+
+[1417] EEVblog 1417 - AC Basics Tutorial Part 1: Alternating Current — Dave Jones (mention)
+context before: And as we've seen, sine waves are naturally produced in generators, but they're also produced in oscillator circuits as well. Wien bridge oscillators, Colpitts oscillators, you know, phase shift oscillators or whatever.
+TEXT: And also when you filter stuff, what comes out of it? If you've got a simple RC filter and you feed a square wave into it, it could be LC RC, it could be an active filter, whatever it is.
+context after: Feed into a filter, what comes out? Hopefully, a perfect sine wave. The better the filter, the more perfect a sine wave comes out. And this is a really interesting point.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: So, we expect if we're feeding in 1 volt here, 1 volt peak-to-peak, there it is over on the Y axis here from 0 to 1 volt PWM signal, we expect 10% on time, we expect 1/10 voltage on here.
+TEXT: Do we get it? Well, not quite and we'll see why. Now, the reason is is that is actually slowly ramping up because there's an RC time constant. We started the simulation from zero.
+context after: So, we're going to have to go in here and we're going to have to extend that time period. Let's say set it to 100 milliseconds like that. Let's leave it at 0.1.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: All right, enough of the simulation stuff. Let's actually feed it into our circuit a PWM signal to replace the pot which we used before in the previous videos. That's exactly what I've done.
+TEXT: I'm using the function generator output of my Agilent scope here to actually replace the pot. And I'm feeding it in via a single RC filter, which is what we've looked at.
+context after: And this is what I've got here. Instead of the voltage control pot, we've we've disconnected that and we're taking it down to a 10K and a 100N low-pass filter just as we looked at.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: We expect half a volt, 500 mV here. That was before we added this 10k, though. So, now we expect to halve that again, or .25 V, 250 mV. Let's see if we get it.
+TEXT: Bingo, we do. There's our 250 mV, but it's got the ripple. But, if we look on the output here, then bang! There it is. Our blue line our blue trace there, that's 250 mV.
+context after: So, let's run it again with that. We've got our 5-V signal here. Okay, there's our 0 to 5-V PWM signal at 10%. So, what do we expect out? We expect half a volt, 500 mV here.

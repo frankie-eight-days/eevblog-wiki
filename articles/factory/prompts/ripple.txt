@@ -1,0 +1,308 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: ripple
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 55 passages drawn from 25 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# ripple`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: So, fairly generic. We'll give that a go. Let's run it, and uh and see what happens. Let's look at it. Probe our output voltage here. And it's set to 3.52 V and our output voltage here is spot on 1 V.
+TEXT: So that's working a treat. And if you watch the values ramp up here, you'll notice that the voltage differential after it's settled down is higher here. This differential voltage here is higher than the differential voltage when it's ramping up, but it eventually settles down to a steady state and then what you see in there is the ripple.
+context after: And let's take a look at the differential voltage where got 10 V output here and it looks like we're about 12 11.85 V or thereabouts. Let's, you know, say 11.8 V.
+
+[1243] EEVblog #1243 - Sony Boombox REPAIR and Teardown — Dave Jones (explains)
+context before: So I've got one just hooked onto the bottom and one just hooked in and then just power it up and do it one by one. It's just safer. Now, there's actually no need to suspect these two big 2200 mic caps here because they're just the AC output coupling caps for the speaker.
+TEXT: But of course, one of the problems with suspecting a cap here is that there is no ripple. We're powering this from a DC supply. So like even if one of these caps, like a big main input bypass cap, had gone, it's not an issue cuz we're seeing like presumably some sort of oscillation of the power amp module.
+context after: So, you know, that cap really has has no effect whatsoever. Okay, I'm going to probe Q952 down here. There we go. There's our 5-V rail. So, our 6.9-V rail and our 5-V rail are both fine.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, all of our noise, all of our ripple that we had on our filter here has gone all the way through cuz now we don't have adequately adequate filtering on the output or the or the input to the set pin here.
+TEXT: And what happens if we add in a second RC filter in here once again 10K and a 100N. Bang! There's our output voltage exactly the same scale as before but our ripple has dropped very very significantly and once again that's with no practically no output filtering or no filtering on the set pin.
+context after: And if we replace our filtering back our 22 mic here and our big capacitance on the output, bang! There's our noise. It's suddenly vanished. These little spikes in here are going to be due due to ground bounce and stuff like that.
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (explains)
+context before: I've got a dual readout meter here, the U1272A, just so we can actually display AC and volts DC at the same time. So if we get in there and probe this sucker. I don't know which one's what. I don't think they're labelled. No, no, I don't think they're labelled at all.
+TEXT: So that's rather annoying. Which one? Doesn't really matter. Here we go. 5.3, 10 millivolts are ripple, bugger all. 5.3, eh, good enough. They probably tweaked that up to, you know, above the 5.25, but meh, good enough. What we really care about is that there's no real ripple
+context after: on there, so we'll do this other cap here. What's this one? That's 5.3 as well. There's bugger all ripple on that. What's this puppy here? 5.3 again. Oh, this is getting boring. Where's the 3.3 volt rail? Ah, 12, 12.8, there's still bugger all ripple there.
+
+[594] EEVblog #594 - How To Measure Power Supply Ripple & Noise — Dave Jones (explains)
+context before: I've triggered manually now, so I'm in there and I've got AC coupling. I've got some noise reject on as well. I don't think that matters a huge amount, but I've got it set to normal and I'm just holding my tongue at the right angle and tweaking that trigger level.
+TEXT: And you know, pretty much we can capture that and of course then zoom in on any of the detail. We were sort of seeing that a bit clearer on the analog type stuff, but that is your high frequency noise and the rest of it is that low frequency content like that is your ripple.
+context after: And of course we can trigger on that ripple because we can go into our source for our triggering and we can trigger off the AC line there. There we go.
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (explains)
+context before: on there, so we'll do this other cap here. What's this one? That's 5.3 as well. There's bugger all ripple on that. What's this puppy here? 5.3 again. Oh, this is getting boring. Where's the 3.3 volt rail? Ah, 12, 12.8, there's still bugger all ripple there.
+TEXT: You know, 26 millivolts, so it's not something we're going to worry about. Was that positive 12? This one's negative, not sure. I think I've got my probes around the wrong way. Doesn't matter. Just checking for, checking for ripple. No, 46 millivolts, no problems at all.
+context after: There's no 3.3 volt output on that one. They must be doing local voltage regulation on the boards. Let's measure these ones here. We're over on our output display board now actually. 15 volts, that's unusual. That's not something I expected to see on an output panel driver.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (explains)
+context before: Once again, I've got to disconnect the thing and replug it. I might even have to like restart the app. I don't like it. Once again, turn the power off and on again and we're in like Flynn.
+TEXT: All right, I'm still waiting for my Ripple, but uh if we send it, then the fee is very low, point double oh one Ripple. Um that's a lot less than what my other uh exchange charged me, that's for sure, like a many orders of magnitude less, but uh come on.
+context after: Seems to be a low frequency Ripple. Hey, we're in and that took uh two minutes, just over two minutes and we've got our 25 was the minimum Ripple I could uh send, and I got point charge point 15 Ripple.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: So, of course, this is still our 47 microfarads in here, but our second stage one up there, you'll be able to you can just see the ripple on there at the moment, but let's increase the frequency, shall we?
+TEXT: So, here we go. Oh, well well, we can drop well we we can increase it, of course, and of course, we just get better, you know, there's you can't see any ripple on there now, but if we lower that frequency down significantly, aha, look at that.
+context after: You can start seeing 4 kHz, three, you can start seeing the ripple appearing and the droop there. If we go down to 1 kHz, you know, ah, pretty bad.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: It's not going to look perfect like that anymore. Sorry about the red one going there. It's going to start drooping like this. And then it'll kick it back up, and it'll droop down again, and it'll kick it back up.
+TEXT: And you're going to get ripple on this DC output here. And sometimes that's not desirable if you're, you know, powering some analog stuff or something. But you might be able to say, have a voltage regulator, a 5-V voltage regulator in there.
+context after: Once again, we're assuming ideal diodes. We're not actually going to get 6 V out of this thing when we build it up, obviously, because, you know, a diode loss, you know, 0.3 V for a Schottky or something like that.
+
+[379] EEVBlog #379 - Yamaha RX-V557 Receiver Fix — Dave Jones (explains)
+context before: take them? And well, you know, I would have eventually found that, I was going to come back this morning and I thought I'm going to tackle that 4.5 volt 4.8 volt rail, so let's actually measure that now and see if it's gone back up to 5 volts.
+TEXT: No, there you go see? It's still 4.83, well it's a bit higher than what it was before, but maybe there's a bit more ripple on it perhaps, or a bit less ripple now or something like that but really that was essentially the same as before, so
+context after: it hasn't fixed that, well there you go, 4.79 it's the same. So there you go, as far as the meter's concerned at average DC, it's measuring basically the same so I can only come to the conclusion that it was extra ripple on there or something
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: So, it's got a significant amount of uh output capacitance, which does matter if you're uh switching into constant uh current mode, of course, because then your uh capacitors can still deliver that charge before the loop has uh time to respond.
+TEXT: So, ideally you want the uh in power supply design, you want the lowest possible output capacitance while still keeping your ripple uh low, but also uh when you switch into constant current mode, you don't want to uh uh fry your circuit.
+context after: So, it's a trade-off. Now, of course, you might remember this uh Ryden RD6006 DC power supply. This is also a 360 W power supply in uh quote marks and it's way cheaper than this Unit T, but have a look inside, right?
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: Hmm, but the bridge rectifier outputs the all the other ones are fine. It's only the 5-V rail. I can actually whack that one back. What was it? This big one here?
+TEXT: There we go. No, hang on. No, it was this one here, was it? I can never remember. Yeah, there we go. 4 volts. No good whatsoever. And I'm just having a look at the uh ripple on the 5-V rail here and uh we're on uh 2 volts per division.
+context after: And as you can see, it's just over that uh yeah, that 4 volts uh that we can see over there. I haven't got the multimeter on the uh rail, but yeah, it's a you know, that 4.2 volts or whatever we were seeing before, and the ripple is um basically bugger all.
+
+[1252] EEVblog #1252 - LED Panel Lighting Flicker Investigated — Dave Jones (explains)
+context before: Then it uses a proper secondary side constant current controller and you'll notice just like the other one there is actually no optocoupler feedback from the secondary back to the primary so they're also using a winding hence yep they've got the two pairs on the side there one pair will be for the switching one pair will be for the feedback but the difference of course is that the
+TEXT: constant current regulation is done on the secondary side and they've got big ass filter caps. That's why this one is going to have well won't be entirely ripple free but will have bugger all that it essentially won't flicker.
+context after: Big difference and there's probably what double triple the bomb cost there? That could be a chem too. What is their markings on there for what type of board material?
+
+[284] EEVblog #284 - Braun Toothbrush Teardown — Dave Jones (explains)
+context before: There you go. Once again, they're about uh just uh on 13 volts uh peak-to-peak and we're talking there's that uh 21.8 kHz there. That's our switching frequency, but you can see they've certainly flattened on the top.
+TEXT: Um this uh this channel here is uh more rounded on the bottom than this one is, but they're essentially inverse waveforms. And if we have a look at the uh ripple on our 4.5 V rail here, you can see the 22 kHz there.
+context after: There it is, 22 kHz, but of course, you can see that second rise there, which is due to the fact that we're a full wave rectifying this thing from the second coil.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: It's, as you saw, we couldn't trigger on the 5-V any significant variation on the 5-V rail itself, but when you get down, you know, we're only talking like 100 mV per division.
+TEXT: So, just that sort of noise or ripple that regulator is doing something, and it's not regulating as it should anymore. It's, yeah, it's still regulating at 5 V, but the AC component of it has actually changed.
+context after: So, that is causing something on the digital board. I don't know what. I'm not going to go into the digital board and try and, you know, dissect why, you know, it doesn't matter.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (explains)
+context before: So, I took that off, and what do you get? Magic. Look at that. Wham! That's an absolute shocker. And bingo, it's back to 100 mV. There you go. So, it's actually now made its way all the way through.
+TEXT: So, all of our noise, all of our ripple that we had on our filter here has gone all the way through cuz now we don't have adequately adequate filtering on the output or the or the input to the set pin here.
+context after: And what happens if we add in a second RC filter in here once again 10K and a 100N. Bang! There's our output voltage exactly the same scale as before but our ripple has dropped very very significantly and once again that's with no practically no output filtering or no filtering on the set pin.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: Um but you know, it's not like the capacitor has failed, and then otherwise we'd see huge amount of ripple on here, cuz it should be what normally uh 9 volts or whatever.
+TEXT: So, you know, 2 4 6 8, you know, it should be like up here and you know, if the cap was uh troublesome, we'd see, you know, a large amount of ripple, but we're seeing hardly any ripple on there at all.
+context after: So, it's it must be drawing excess current and it's it's just dragging that down. The output winding can't provide enough power. So, what we need to do now is go back to our schematic and have a closer look at what's happening here.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: And as you can see, it the ripple starts to get it it changes. That's the operation mode of the DC-to-DC converter changing based on the load. But, we can actually freeze that and take a look at some of those peaks.
+TEXT: As you can see, they're about almost 200 mV peak-to-peak ripple, which is probably a bit higher than what we actually wanted than what we calculated, but you know, it's still within the ballpark.
+context after: And as you can see, the the peaks are actually different. You can see the different change in mode of operation of the actual device based on that particular load.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (explains)
+context before: Of course, if you take the RMS of it, it's not much, but I get like that that is that's with no load. That's terrible, Muriel. So this is with my Rohde & Schwarz lab supply, and let me switch the Mean Well in.
+TEXT: And that's exactly the same with the Mean Well supply there. Okay, that's off. Let's switch on a 1 1 amp constant current load. Yeah, you can start to see the ripple there.
+context after: So that's off. It'll be thinner and flat. And on is that. So if I could just get rid of the high frequency crap, this thing would be all right, but it's all over the shop.
+
+[804] EEVblog #804 - HP1740A Oscilloscope Repair - Part 2 — Dave Jones (explains)
+context before: Otherwise, you can blow the ass out of your um scope and or your product. Okay, I'm trying to make it come good now, um but it's No, it's not going to come good.
+TEXT: Um but you know, it's not like the capacitor has failed, and then otherwise we'd see huge amount of ripple on here, cuz it should be what normally uh 9 volts or whatever.
+context after: So, you know, 2 4 6 8, you know, it should be like up here and you know, if the cap was uh troublesome, we'd see, you know, a large amount of ripple, but we're seeing hardly any ripple on there at all.
+
+[630] EEVblog #630 - How To: Soniq LCD TV Troubleshooting Repair - Part 1 — Dave Jones (explains)
+context before: So, I'm going to use my LeCroy AP031 differential probe here set to 100:1 um attenuation ratio. So, if there's 450 V on that cap, for example, then I'll only get 4.5 V out of this thing, and I can measure that on the scope.
+TEXT: Let's see if there's any ripple. So, let's power it on and see what we get. And there we go. We're at 1 V per division there. Don't Oh, there we Oh, that was interesting.
+context after: It just uh it was mucking around there for a minute. There was a bit of uh bit of ripple on that. And let me just connect the power and do that again.
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (explains)
+context before: And given that that is the waveform on the output of this cap here, even when I put in the much larger cap there on the rail, it's almost as if um there's something wrong uh, possibly with the, uh, driver transistors in here and it's just drawing, um, excess, uh, current or something like that.
+TEXT: Because to get that much ripple on that, uh, rail is just, yeah, there's something loading it down. So, something to do with the chip, perhaps even. Like, I don't know.
+context after: Could be like, uh, quite a few things. And if you go in there and actually measure the bases of the, uh, transistors in there, they all seem hunky-dory. I've measured them all and they all seem fine.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: There you go. There's our 1K resistor, and you can see that. So, it's a trade-off. As you increase uh the resistor R here, it starves the transistor of base current, therefore you get a larger uh voltage drop across the pass transistor, but you uh increase the uh ripple attenuation due to the just the RC filter ratio.
+TEXT: And if we go down really low to 100 Hz ripple here, you see we're 2 mV per division. It's still not much ripple, but of course, you can see it actually coming through.
+context after: So, once again, we're back at the uh 1K resistor there. So, if we really even wanted to knock out the uh 2 mV peak-to-peak ripple here at 100 Hz, then we could uh change our single transistor to a Darlington pair for example that would have higher gain, and then we could use a larger value of resistor for a given capacitance, and then filter it out that way.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: But, it's going to be, you know, it's going to be reasonably close. And I am probing the main filter cap as well. And as you can see there, we got 10 volts per division.
+TEXT: 10, 20, 30, 40. So, you know, 46 volts minimum. Plenty of margin in there for the ripple. And some initial probing of the heat sink there, it's at least to 45 degrees.
+context after: So, you know, as I said, it is quite difficult. I'm not going to get in there and actually, you know, I can't really probe the MOSFET itself. It's getting up there, but I wouldn't call that particularly hot.
+
+[361] EEVblog #361 - LED Ceiling Panel Lighting 101 — Dave Jones (explains)
+context before: Sorry, but we're gaining here. That is fading down. Yeah. Now, apparently we didn't quite start with both of them at full ball. No. Can you see a little bit of residual flicker on the left one?
+TEXT: I can see flicker on the camera here. Well, I'm The These These linear ones here Yeah. have no ripple. Mhm. So, they won't be responsible for any strobing. Yep.
+context after: They're PWM control. Got it. Yep. We don't know what what PWM frequency they're running from. So, no None of the ones we installed up in the ceiling here are PWM at all.
+
+[110] EEVblog #110 - Let's Design a DC to DC Switchmode Converter — Dave Jones (explains)
+context before: And I've built that up, and let's take a look at it. Here it is here. I've added As you can see, I've added in the extra uh I've added in the extra output cap and the inductor there, and this is the ripple at no load.
+TEXT: This is no This is the same scale as before, 100 mV, but as you can see, it's much much cleaner. If we turn that up to 20 mV per division, there you go.
+context after: It's actually quite clean. That's at no load. Now, let's turn this load up. That's now 30 milliamps, 40, 50, 60. Let's go up to our maximum of what we wanted, 100 milliamps.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: I've got it at 1.59 kHz here. So, it should be way below that, right? Because if if it is actually a multiplier and it's equivalent to 10 microfarads, our cutoff frequency should be 15.9 Hz.
+TEXT: So, we should get hardly any ripple at all. What do we get? Turn it on. What what what what about 310 mV or around about that 1.3 1.59 kHz frequency.
+context after: Our minus 3 dB point. So, it's 470 times 0.707, which is about 330. Going to be near enough because we don't have much resolution in there. So, it's the end tolerance in the components, of course.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: So, here we go. Oh, well well, we can drop well we we can increase it, of course, and of course, we just get better, you know, there's you can't see any ripple on there now, but if we lower that frequency down significantly, aha, look at that.
+TEXT: You can start seeing 4 kHz, three, you can start seeing the ripple appearing and the droop there. If we go down to 1 kHz, you know, ah, pretty bad.
+context after: So, you don't want to be operating these things at 1 kHz. 10 kHz, reasonably good rule of thumb. Now, what happens if we change all of these caps to 47 microfarads, pretty beefy value.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (opinion)
+context before: So, basically, all this filter talk we've been talking about doesn't actually apply directly those amplitudes to the PWM. It gets more complicated when you start talking to PWM signal.
+TEXT: And in practice, it's actually going to be uh lower than that, but let's uh use a ballpark. Let's say you did actually get 1 mV of ripple out. Assuming it transferred to your output through the regulator then, and there wasn't any extra further uh filtering, then, you know, that that might be okay, but generally you'd want to shoot for better than that.
+context after: But, with a filter cutoff of 10 Hz, you know, that means you're not going to be able to um change your output voltage really quickly. And, on a DC power supply, if you're manually turning a knob, it's not a problem, you know, you can't turn that knob very quickly at all.
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (opinion)
+context before: Yep, yep, 15 volts. Okay, so that must be a step-up converter I would presume. I finally found a logic level one. There we go. Down here, 1.8 volts with, you know, bugger all ripple of course. That's 1.8 volt core voltage for this main
+TEXT: processor, no doubt. Another logic level, 1.8 volts over here again. Once again there's no ripple, everything's fine, that'd be another core supply for one of the main ASICs under here. And there's a lot of people who might say, I'll replace these SsangYong caps
+context after: and things like that. But no, I don't need to do that, because I'm not measuring any ripple, the rails seem fine, everything I'm measuring seems fine. And like I said, these are all digital, like low-level digital stuff. Dry joint BGA under one of these, perhaps
+
+[780] EEVblog #780 - Samsung LCD TV Dumpster Dive Teardown — Dave Jones (opinion)
+context before: So that's rather annoying. Which one? Doesn't really matter. Here we go. 5.3, 10 millivolts are ripple, bugger all. 5.3, eh, good enough. They probably tweaked that up to, you know, above the 5.25, but meh, good enough. What we really care about is that there's no real ripple
+TEXT: on there, so we'll do this other cap here. What's this one? That's 5.3 as well. There's bugger all ripple on that. What's this puppy here? 5.3 again. Oh, this is getting boring. Where's the 3.3 volt rail? Ah, 12, 12.8, there's still bugger all ripple there.
+context after: You know, 26 millivolts, so it's not something we're going to worry about. Was that positive 12? This one's negative, not sure. I think I've got my probes around the wrong way. Doesn't matter. Just checking for, checking for ripple. No, 46 millivolts, no problems at all.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (opinion)
+context before: And in this case, I switched to the window trigger. And you can see it's probably just, you know, going over that top one. So, I had to set that I had had to use window triggering to go outside of the normal operational window to capture a really what is quite a small variation.
+TEXT: And most circuits would tolerate that quite well, you know, if you've got an additional 3.3-V local regulator on your rail or you're just powering some 5-V logic, it's going to tolerate this sort of ripple generally no problem whatsoever.
+context after: But there is something subtle on the particular processor inside processing circuitry inside this Rigol that is causing that thing to reset. So, if I wasn't absolutely confident that that regulator was dropping out, then I, you know, I could have thought, "Okay, well, I've checked that and that's not the problem." You know, not an issue at all.
+
+[630] EEVblog #630 - How To: Soniq LCD TV Troubleshooting Repair - Part 1 — Dave Jones (opinion)
+context before: Uh this um power supply is going to stay on all the time cuz this is just a soft standby function. So, you're always going to have that. So, what have we got there?
+TEXT: We've got a 100, 200, 300 and something on there. There we go. We're getting a little bit of uh bit of ripple on that, but yeah, nothing serious. So, we'll have to power the thing up, of course, and well, I'll do that now.
+context after: I'll press the standby button. Here we go. Boom. We jumped up. We're getting some ripple there. It doesn't look uh doesn't look that bad. I see the screen at the moment cuz the damn thing's lying down.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (opinion)
+context before: And if we change our base resistor here or our filter resistor from uh 1K to 10K for example, we'll find There you go. We've now got a larger drop like that, but uh of course, our corresponding AC ripple should go right down like that.
+TEXT: But, we're basically just uh down in the noise now. Yeah, there's a lot of noise due to all sorts of uh crap, but you can see that there's basically no ripple that we had there when we had our 1K resistor in there.
+context after: There you go. There's our 1K resistor, and you can see that. So, it's a trade-off. As you increase uh the resistor R here, it starves the transistor of base current, therefore you get a larger uh voltage drop across the pass transistor, but you uh increase the uh ripple attenuation due to the just the RC filter ratio.
+
+[1714] EEVblog 1714 - Presonus Eris Speaker REPAIR (Capacitor Pop Noise) — Dave Jones (opinion)
+context before: So, uh It's not pretty. Well, I got him. It ripped the black plastic off the bottom, but uh crude but effective. That's probably the best way of getting that out really.
+TEXT: Let's measure the ESR of this bad boy, shall we? At 100 kHz, it's good. Yeah. So, that's why like we were seeing good ripple on the um thing, but yeah, like it was jumping up a bit, but yeah, like uh it's fine.
+context after: 4,400 mic. There you go. So, yeah, I mean, the capacitor the big caps are fine and dandy. So, there's something else. I mean, you know, I could get that one out um as well.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (opinion)
+context before: They're going to do some filtering as well. And that's what you get if you you replace the 22 microfarad cap here down to 100 n. Bingo. And it turns out that I still had 47 microfarad of capacitance on the output there.
+TEXT: So, I took that off, and what do you get? Magic. Look at that. Wham! That's an absolute shocker. And bingo, it's back to 100 mV. There you go. So, it's actually now made its way all the way through.
+context after: So, all of our noise, all of our ripple that we had on our filter here has gone all the way through cuz now we don't have adequately adequate filtering on the output or the or the input to the set pin here.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (opinion)
+context before: And that's exactly the same with the Mean Well supply there. Okay, that's off. Let's switch on a 1 1 amp constant current load. Yeah, you can start to see the ripple there.
+TEXT: So that's off. It'll be thinner and flat. And on is that. So if I could just get rid of the high frequency crap, this thing would be all right, but it's all over the shop.
+context after: Don't worry about that that extra stuff out there is just a triggering thing. There we go. That's 6 amps. So I think that that's where they're getting their 100 mV uh volt uh spec from.
+
+[uOOGXORqsqQ] Trezor Safe 5 Bitcoin Crypo Hardware Wallet — Dave Jones (mention)
+context before: to, you know, get the right numbers on there. Processing, two seconds, one second, left, done. Beautiful. Pin protection turned on. Swipe up. Now we can activate the coins that we want to use on this. Myself, not a recommendation at all, but myself, I hold Bitcoin, Ethereum,
+TEXT: I hold Cardano, I hold a little bit of Solana, Ripple, oh, maybe, might have some Ethereum Classic somewhere, but Litecoin, Bitcoin Cash, and yeah, that's it. But I'll install those, no worries. Okay, complete setup. Go to Trezor Suite. Ooh, you can edit the name.
+context after: And boom, I am in, and of course, because this is a brand new wallet, I don't have any crypto. Aww. But it's trying to find it. It's trying to find my assets. I really like the Trezor interface. It works really well. I won't go through it, but
+
+[893] EEVblog #893 - Mailbag — Dave Jones (mention)
+context before: at least it's got a conformal coating, you should be able to see the shine on that. So they've at least gone the extra mile to keep the moisture out of this thing, but come on, this is not going to do a 384 watt
+TEXT: continuous output power. Are you kidding me? At least they've got a 105 degrees C rated cap on there. Anyway, like totally inadequate, you know, output capacitance. But yeah, I don't know what it's, you know it's driving, so ripple like, you know, nah, whatever.
+context after: But jeez, no, come on, come on. Anyone want to have a guess as to what the real maximum output power of this thing is? I don't know, probably getting towards an order of magnitude less than what they're claiming. So Keith wants to know if I give it a
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: There we go. That's better. Connected to the Ledger Nano S at the moment and it's got we can go to the firmware. No items to display. Anyway, applications. We can download.
+TEXT: Here's what we support. Bitcoin, Bitcoin cash, dash, dogecoin, ethereum, fido utf, komodo, litecoin, stratis hello, Ripple, there we go. We want to download that and a whole bunch of altcoins, which the Trezor does not uh support.
+context after: They're thinking about adding support for various ones, but it takes time. You can actually pay these companies to actually include in Trezor and others to uh add support for your um coin.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: You know, it costs like 50,000, 100,000 dollars or something one of the hardware wallets charges to actually add support. So, if you're developing a new coin, cuz there's a thousand coins, more than a thousand or something, and if you've developed one, then you can actually pay these hardware wallets, if you've got the money, uh the developers of the hardware wallets to add support for your coin.
+TEXT: And well, it's open source, isn't it? Presumably, you can develop your own open source app, but they will write it for you. Anyway, we are going to download a Ripple and for security, it is asking me to uh confirm processing.
+context after: It's installing. Hey, done. That was quick. I should now have access to Yes. I have Ripple. Hey, to begin, connect your Ledger wallet. It's already connected. Like if entered I got I like Argh!
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (mention)
+context before: Woo. So, actually, this is a really good example of a little bit of a tricky real real-world troubleshooting scenario where I had a theory, okay, this regulator is overheating, it was dropping out, causing resets on the on the processor inside this thing in some manner, but you know, I my theory was almost blown blown out of the water.
+TEXT: I expected the 5-V rail to just, you know, plummet down to zero or drop down to 3 V, or I don't know, do something stupid and allow, you know, a couple of volts or ripple to come through or something horrible like that.
+context after: And I couldn't capture it even with a tight couple hundred millivolt window triggering around the 5-V rail that I had there before. I couldn't do it on that 5-V scale.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: Like like it hasn't last operations. It's showing up there, but my balance is that's the that's the first one I transferred, not the second one. So, like will it make a fool out of me now if I refresh it?
+TEXT: I don't get it. Anyway, let's send some Ripple. Send. Confirm transaction. Unexpected error occurred. I confirm transaction. Unexpect I give up. I give up, really. I'm having problems sending Bitcoin Cash and Ripple.
+context after: Like what the hell? No, hold on to your hats. It is like it confirmed with the address up here eventually, but it kept saying error. Now it says that the transaction's being processed.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (mention)
+context before: We now jumped up to about 4.8 V or thereabouts. So, what's our frequency going to do? Well, of course, it's going to change the discharge curve of this cap.
+TEXT: So, of course, this is still our 47 microfarads in here, but our second stage one up there, you'll be able to you can just see the ripple on there at the moment, but let's increase the frequency, shall we?
+context after: So, here we go. Oh, well well, we can drop well we we can increase it, of course, and of course, we just get better, you know, there's you can't see any ripple on there now, but if we lower that frequency down significantly, aha, look at that.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: All right, I'm still waiting for my Ripple, but uh if we send it, then the fee is very low, point double oh one Ripple. Um that's a lot less than what my other uh exchange charged me, that's for sure, like a many orders of magnitude less, but uh come on.
+TEXT: Seems to be a low frequency Ripple. Hey, we're in and that took uh two minutes, just over two minutes and we've got our 25 was the minimum Ripple I could uh send, and I got point charge point 15 Ripple.
+context after: I think I got ripped. So, what I don't like about this uh Ledger is that I compared to the Trezor is that yeah, I've got all these different um apps to run to access my different altcoins, and that might be okay, but I kind of even the Trezor doesn't support many.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: And I was just about to send some Ripple back, but I just remembered you got to actually seed it with exactly with a minimum of 20 Ripple for the first transaction and I don't I'm a pauper.
+TEXT: I've only got 4.84 Ripple. Oh. Now, this is weird. I just put in another 50 Ripple in. I sent another 50 Ripple over. Took a couple of minutes and sure enough, it's now showing up as 74.70 balance.
+context after: It was actually showing up as zero for like 30 seconds there. I like I started to panic like my Ripple had disappeared. Um and but like where is the transaction?
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: Don't know why. Just tried again. Failed again. I don't know. What do I don't have don't have enough Bitcoin Cash to pay for it or what? What's going on?
+TEXT: And I was just about to send some Ripple back, but I just remembered you got to actually seed it with exactly with a minimum of 20 Ripple for the first transaction and I don't I'm a pauper.
+context after: I've only got 4.84 Ripple. Oh. Now, this is weird. I just put in another 50 Ripple in. I sent another 50 Ripple over. Took a couple of minutes and sure enough, it's now showing up as 74.70 balance.
+
+[dSek3p8gyv4] Tangem Open Source Crypto Bitcoin Hardware Wallet REVIEW — Dave Jones (mention)
+context before: No worries. And I just sent two XRP. Two XRP received. Uh and we can do explore transaction history. You got to do it manually, but that's only with XRP, so they might fix that in a previous version.
+TEXT: So, I've transferred Bitcoin Cash, uh XRP, Ripple, um and Ethereum. They all work a treat. And I just sent myself a couple of fiat bucks worth of Bitcoin, but that was moments ago.
+context after: Hasn't been received yet because well, it's a bit slower for the Bitcoin. You can speed it up if you pay more fees. Uh to send, for those who want to know, to send $2, which will appear in here shortly, there's the uh transaction down there, it only cost me 16 cents.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: The Trezor is a better easier to use solution, I think, especially for entering in the PIN code is much less sticky and it's sort of all integrated, but the Trezor supports a larger number of altcoins.
+TEXT: Take your pick. Now, this is interesting. It looks like it's an XE there for the Ripple wallet. So, that's not terrific. Wanted just I thought it was just another Chrome app.
+context after: Nope, it's an XE. So, there you go. We've got to actually install an XE, create a desktop shortcut. I like the Trezor in that it just worked from the you know the Chrome web app, and then that was it.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (mention)
+context before: So, that's fairly powerful. If you hit the test button up here, and you've got uh various uh application modules uh installed in this uh uh mask limit testing and power analysis.
+TEXT: If we choose power um if we switch on the power thing, we can measure stuff like like the ripple, uh power modulation, the uh safe operating area. Um absolutely brilliant.
+context after: Uh and what what else have we got? Power quality, um switching loss. I haven't actually got these hooked up to a you know, a switching power supply or something like that to actually measure stuff, but that looks like incredibly powerful functionality.
+
+[225] EEVblog #225 - Lab Power Supply Design Part 4 - PWM Control — Dave Jones (mention)
+context before: So, there's our 1 10th. It's worked. Our 10% duty cycle has translated to uh 1/10 of that or 100 mV output voltage. And if you look at the output on the op-amp over here, you can see that that takes a little bit of time, but it it responds to the same value.
+TEXT: But, there's a little bit of an offset there. That's going to be due to the offset voltage, but anyway, what we really care about here is this noise. Look at the ripple.
+context after: You can see that the switching frequency because um the RC filter we're using is not uh low enough in value to filter out all that noise. Who wants a power supply when you're trying to output 100 mV?
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (mention)
+context before: So, it should be 3 dB down at that frequency. But, because we have a beta or gain of this transistor of 100, so we should actually get a cutoff frequency of 1 kHz and equivalent to 100 times that 10 nF or 10 microfarads.
+TEXT: So, our cutoff frequency should be 15.9 Hz. Well, what do we get? Let's actually turn it on. Look, I've got my input signal here. My input peak-to-peak ripple is 470 mV.
+context after: I've got it at 1.59 kHz here. So, it should be way below that, right? Because if if it is actually a multiplier and it's equivalent to 10 microfarads, our cutoff frequency should be 15.9 Hz.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: How long it takes. Bitcoin is pretty notorious slow. Bitcoin cash is faster and Ripple is faster again. So, we can actually do that. We can actually go back in here and we can set up our Ripple wallet.
+TEXT: Cuz I'm into Ripple. Ledger weapon. Like I don't like around having to download all these things, but I guess you only do it once, but it's not it's not terrific.
+context after: The Trezor is a better easier to use solution, I think, especially for entering in the PIN code is much less sticky and it's sort of all integrated, but the Trezor supports a larger number of altcoins.
+
+[1048] EEVblog #1048 - Ledger Nano S Crypto Hardware Wallet — Dave Jones (mention)
+context before: Nope, it's an XE. So, there you go. We've got to actually install an XE, create a desktop shortcut. I like the Trezor in that it just worked from the you know the Chrome web app, and then that was it.
+TEXT: Ledger wallet Ripple, here it is. To begin, I've got to unlock the damn thing again. The Ethereum uh one, so we'll give that a whirl. I'll I'll tell you what.
+context after: I'm clicking on this thing and it ain't doing jack. So, I I don't know. I've opened it up here. Use your wallet to view account. So, I've got my, you know, I've chosen the Ethereum one on here and it's just quit app.
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (mention)
+context before: Did we? Yeah, look. Got something. Wow, okay. That's Wow, yeah. All right. It doesn't say anything not that I could find about all the LEDs lit up, so mhm.
+TEXT: Is that the RAM? So, I'm just going to measure the uh ripple on the 5-V digital cuz that's all we care about at the moment. So, I'll work on an AC pin two.
+context after: The spec is 150 mV peak-to-peak ripple, and we're getting what, what, 350 mV. So, yeah, our 5-V rail has got a lot of ripple on it. That would explain a bit.

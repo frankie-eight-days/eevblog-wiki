@@ -1,0 +1,418 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: current clamp
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 77 passages drawn from 31 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# current clamp`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1385] EEVblog 1385 - 8kW Home Solar Power System EXPANSION! — Dave Jones (explains)
+context before: I could buy more Enphase inverters, but it just seems a waste to like scrap the Sunny Boy system. I want to reuse as much as possible, but the interesting thing is is that because we've got the Solar Analytics monitoring uh system here, I've got a choice of how I want to monitor all of this.
+TEXT: There's actually I think there's like four combinations. I can have this continue to monitor the existing system as is or I can have we can feed through the current clamps here, we can feed the new system as well and then have this do the total system, which I think we should cuz then we can do the calculations of you know, battery storage and we can monitor the whole system cuz that's
+context after: ultimately all you care about even though us nerds do actually care about um you know, how the individual systems perform, um I think it's it's better to know. Although I can still look at that data from the Sunny Boy inverter uh because I export that data via Bluetooth.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: So they'll have that little current clamp transformer around physically the one wire coming from the Enphase inverters. And remember, this is after the inverter. So this is after it's generated the 240 volts required and put it onto the mains. So as I said, doesn't matter whether it's a microinverter.
+TEXT: There are inverters up here or a string inverter. This has nothing to do with it. It's not actually measuring the DC. It's after the inverter. So measuring the production from the panels is easy and simple. You can't goof it up. You just put a current clamp on there and it goes into the input to the either the Enphase Envoy monitor or the solar analytics monitor.
+context after: So each system has its own current clamp measuring that. And as we saw, that wasn't the problem, although, as I said, you can actually put the transformer on back to front if you goof it up and, well, you'll get negative. But that's not what's going on here.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (explains)
+context before: So, if you've got current flowing in this direction like this, and then this direction like this out out out the other wire in a full loop, they cancel each other out.
+TEXT: So, this, uh, current clamp is going to measure zero. There's going to be zero output from it. But, as soon as, um, some fault condition occurs, some earth leakage, you know, rain got in somewhere or somebody's touched something, something's failed somewhere, then there's going to be an imbalance in the current between the active and the neutral.
+context after: And then, uh, you will get either a positive depend on which way, um, you'll get either a positive negative output from your, uh, current clamp here. So, it's able to measure that.
+
+[vDtxmikcYuc] Who Screwed With The Solar Analytics Code? — Dave Jones (explains)
+context before: 
+TEXT: Hi. Someone's been doing some diddling of some code. Let's check it out. Don't you hate the code diddlers? This is my solar analytics, solar monitoring system. I wanted to measure some power consumption today because this is what it does. I have current clamps on my total consumption, my hot water system, my pool, the EV.
+context after: The aircon's not hooked up yet, but I'll change that once I get the switchboard upgraded. Yes, that's going to happen. Now, so I wanted to take some real measurements today, and I'm looking at the y-axis here, and it's like, okay, 800 watts. Oh, geez, okay, well, the yellow one is the solar produced.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: It's going negative, minus 880 watts consumed, and then mysteriously, at night, the consumption goes positive. What the? Now, when I posted this on Twitter, quite a few people said, oh, your current clamps must be installed backwards. And that, you know, seems a legit thing, because, well, after the installation, we're now getting negative current consumption, right, on both of these systems here.
+TEXT: It turns out... It turns out, no, the current clamps weren't on backwards. So if you aren't aware, it's current clamps like these ones that they install on these monitoring systems to allow you to measure the current, not only from your solar panel, so you can measure the production power coming from your panels,
+context after: but you can also measure the consumption of your house, and you can measure the current going out to the grid as well. And you can see, maybe you can see just on the top of there, there's a little arrow. And you have to install these the right way.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: Which it doesn't know about. So even though having the current clamp here is a perfectly fine solution. But only if this one doesn't exist. Then it would know how much it's actually producing. And then it can subtract the consumption from that figure. And give you the correct positive figure always.
+TEXT: But it doesn't. Because this is pumping an amp. It's pumping an extra two amps into this system inside here. And likewise for this end phase system here. It's got no idea that this other system here is pumping out two amps here. All it can measure is its own production plus the consumption up here.
+context after: So during the day it's going to show negative as well. It's going to show that it's exporting energy when you're actually consuming it. So how do we solve this? Well you can actually solve it simply. By paralleling current transformers. Because what is a current transformer?
+
+[296] EEVblog #296 - AIM-TTi I-Prober 520 Current Probe Review — Dave Jones (explains)
+context before: There's a, uh, there's a plug pack here with, uh, multiple, um, different, uh, you know, uh, mains adapters for around the world. And we also get ourselves a, um, one of these, uh, traditional, more traditional current clamps, where you can just put it on the end and it, bingo, instead of having the positional thing, it turns it into your traditional, um, uh, current, you know, oscilloscope current probe
+TEXT: system, where you put the wire through. And that will be a lot less sensitive to the position of the probe. So, if you want some, you know, some real easy, uh, absolute measurements, um, and you have a wire available to put through, you're much better off using this SamacSys 300-V CAT II rated.
+context after: It's got some really nice finger guards here. I really like these. So, because one of the, uh, uses, one of the primary uses of this is, uh, probing the, uh, traces in, uh, high-voltage, uh, high-energy, high-current switch-mode power supplies.
+
+[1505] EEVblog 1505 - 120W Home Phantom Power? Audit Time! — Dave Jones (explains)
+context before: per day uh figure for each particular item, and I have sorted this column by the highest uh power things first. So, you just saw in the clip before this how uh that solar analytics uh thing when it was saying 120 watts, it didn't seem to it was like like I'd hit some sort of bottom limit, and I think that was because I'm I was trying to do that
+TEXT: during the day, and of course the solar analytics uh system has two current clamps for import and export, and it's trying to get the difference, the differential uh figure trying to calculate in real time differential figure between uh those, and it didn't seem to be working too well.
+context after: So, I suspected it might actually be better at night, um and I did it uh last night, and it was actually way better. So, just before 11:00 p.m. here, we switched off absolutely everything, and it dropped down to 109.4 watts down here.
+
+[XD5Emhqd5Ks] Aircon Wiring Install FAIL- TWICE! — Dave Jones (explains)
+context before: So I got them to come out a second time, and, yeah, they finally installed the isolation circuit breaker here. Okay, that's great. And they did actually get it right. They did actually get it right in terms of the current clamp. This is behind here, if you haven't seen it.
+TEXT: There you go. It may not be the best view, but anyway. Oh, I got a... there's the current clamp. There's the clamp for... that's the measurement clamp. And all the Aircons are up the top there. So they have actually put it through. So, because I do have a separate monitoring circuit
+context after: for the Aircon systems as part of my solar analytics monitoring system. And they, yeah, they finally got that right. But I got them out primarily to A, fix that, and B, fix the dodgy wiring. So here's a photo of the wiring the first time they installed it.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: So let's have a squeeze around the back here. And this is not the best is it? But anyway. As you can see. We've got two current clamps there. There's the solar analytics current clamp. And there's the Enphase current clamp. And both of those are on there.
+TEXT: They are directional. So you have to actually get the direction correct on those. So both of those are measuring the current. Coming into and out of the property. So it depends on which way it flows. As to whether we're consuming power. Or we're actually exporting power to the grid.
+context after: And here's the breaker for the main existing three kilowatt system. And if we go around here. You can see how it comes out there. And it's got two. Once again. Two current clamps. That's the bigger one there. Is the new Enphase one. And the smaller one.
+
+[Uq553ckJ0uQ] MURPHY! - Reclaim Hot Water Heat Pump FAIL — Dave Jones (explains)
+context before: Oh! Bloody Murphy! Right? And then, I can, right, I've got other monitoring systems, I've got the Enphase system, but unfortunately, like, this is last night, but it doesn't have the granularity in there, and it doesn't have, because we had air cons on last night, it was
+TEXT: cold, so, yeah, I can't see any oscillation in there, and I've got my MyEnergy zappy for my EV, and once again, this orange one is the consumption, I can't see it in there, because it doesn't have a specific current clamp only for the heat pump, which is what the solar analytics
+context after: system does, that's just a whole house consumption, so I can't see it in there! That's what my solar analytics is for! It's got a specific current clamp for the heat pump, and it's bloody failed! Do you believe it? Like, that is normal, right?
+
+[uE0x8YR7nMg] Enphase Envoy S FAILING? — Dave Jones (explains)
+context before: Even with my old, even before I replaced it with a super duper high power Wi-Fi router, I never had an issue with my old little one that had a little internal patch antenna or something.
+TEXT: I've never had an issue like this, but it's gone down again again. And unfortunately, I can't tell if it's actually producing power short of actually going there and putting a current clamp on the on the actual um wire coming from there because I've got my solar analytics here.
+context after: But you can see my solar analytics here is is matching uh the produced is matching the consumed because as you can see here, everything is going into my battery.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: It's all a mess. You want to measure just your isolated load for your house down here. So the physical construction of your fuse box. And the fact that you have all these different fuses for all these different circuits. And it's all wired in there all together.
+TEXT: And they're effectively like all just in parallel. Then it makes it quite difficult. Not impossible but difficult on lots of fuse boxes. To be able to put one simple current clamp in there. And so that's why it's actually common practice to put the clamp outside of here.
+context after: And put it up here like this. So the current clamp for the consumption actually goes on the grid side. Like this. So that goes in there like that. And you would have another one, a second one like this. That then goes down into there like that.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: What's going on here is we have a problem measuring the consumption, the load. Why is it going negative? And why does that pattern follow the production from the panels? I.e. why does it follow the sun? It's negative during the day and it's positive during the night.
+TEXT: What's going on? Well, this is where it gets a little bit tricky. Now, of course, the obvious solution is to simply have a current clamp on here that measures the load like that. And, of course, you'd have a second one here. And that would go up into there like that.
+context after: So each system knows about the load and consumption. And once again, you can't really goof that up unless you put the current clamp on backwards. But then it would always read backwards. It wouldn't go negative during the day and then positive during other times.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: It's a real rat's nest of a thing. That's how it is in my particular fuse box. So unless you had a fuse box that had like one wire coming up. It would have to be one wire coming off here like this. And then going out into all these ones like this.
+TEXT: You would have to like break this off like this instead of separate wires. You'd have to have one wire there which then just went to all the other breakers like this. So that then you could put your current clamp into there. And you could take that reading off there.
+context after: But because your power board is like it's got one thing coming in here. And then it's, you know, like because the power can come back in here. And it's all running on the same wires. And it might flow out like that. But it might flow back in.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: One of which it doesn't know about. Two amps plus two amps. So there's going to be four amps pushing in this way. Like this. One amps going down here. What's going to happen? Well, you're going to get three amps flowing out like that.
+TEXT: So during the day because your current clamp's there. You're going to actually get a consumption reading of minus three amps. Because the current's flowing out. Not in like you're trying to read. And then magically night falls. This drops to zero. This drops to zero.
+context after: And you're drawing. You're still drawing. You're drawing your one amp load. Instantly you're now not reading minus three amps. Because there's nothing flowing back out. You're drawing everything from the grid. You're going to have flowing that way. You're just going to have your one amp.
+
+[1634] EEVblog 1634 - 15kWh AERL LFP Home Storage Battery Install! — Dave Jones (explains)
+context before: So, I should just go back. So, you go to the settings, battery setting, lithium. Yep. Uh battery capacity, what have we got there? 300 amp hours? Why are we beeping?
+TEXT: Why are we beeping? We're beeping cuz I don't know. We're We're off grid. System work mode. It's disconnected us from the grid. Did. I've installed the current clamp, and I don't know if this is the right way around, so it's showing an arrow going into the battery.
+context after: Does that mean it's charging the battery? It doesn't tell us that it's connected to the battery, does it? Uh yeah, cuz we've got the BMS here. That's why we've got the BMS here.
+
+[EYx46kRv2Bw] Myenergi Zappi 7kW EV Charger Installation & Testing — Dave Jones (explains)
+context before: Stop. Boost not available. No. Stopped. There we go. Okay. Well, it did charge for a second anyway. Okay. I upped my grid limit up. Yeah, up my grid limit there. 7.2 kilowatts. I'm successfully charging at 7.2 kilowatts. If I go inside, there it is.
+TEXT: 7.2 kilowatts. Winner, winner, chicken dinner. You still got to play around with the settings, though. But yeah, it does work. All right. The last step is to install the current clamp. You notice there's the arrow going that way. This is feeding into the house.
+context after: So this is my grid feed here. So there you go. I've got that connected. I spliced it into my Ethernet cable, which is a 30. In fact, the whole run is 35 meters. So yeah, that's a long way, but let's see if it works.
+
+[1628] EEVblog 1628 - Home Solar Power Re-Install + Upgrade + FAIL — Dave Jones (explains)
+context before: So that is uh not optional, but apparently uh it is hooked up. We've got the Wi-Fi dongle here and it is uh talking um as are the birds here.
+TEXT: But um yeah, anyway, I'm having installed an external uh current clamp on the grid side because that's only for you you don't need that for the basic install. Uh that's only if you want the uh energy monitoring battery system and you know, export capability.
+context after: Yeah, uh net capability and all that sort of uh jazz, but um yeah, anyway, um we've got no idea why the power we're getting 330 odd volts and we're only getting 0.1 amps out and the sun is shining.
+
+[1628] EEVblog 1628 - Home Solar Power Re-Install + Upgrade + FAIL — Dave Jones (explains)
+context before: Anyway, the Nphase system is the system that the monitoring system that I've got that monitors both the Nphase system the actual production of the Nphase system and the production from the new DI system.
+TEXT: So it's got current clamps in weird configurations. I've done videos on that and it allows me to monitor both combined because the Nphase system of course doesn't know that the DI system exists and the DI system doesn't know that the Nphase system exists.
+context after: Um, so that's what the solar analytics is for. It combines those two systems. You can see it's very cloudy and overcast today, but you can see it hit a peak of 3.82 kilowatts there.
+
+[1505] EEVblog 1505 - 120W Home Phantom Power? Audit Time! — Dave Jones (explains)
+context before: You can see that actually supports two different current clamps here. You see the little um symbol in there? It supports a current transformer, so a current output current clamp.
+TEXT: It also supports a voltage output uh current uh clamp as well. So, it gives you a voltage output proportional to input current. But, of course, if you want to measure if you want the power output here, you have to use the current uh transformer over here.
+context after: And it's got different settings in here. I can set a 1,000:1, 100:1, or a 10:1, or even a 1:1 uh transformer. So, but unfortunately, I don't have a ready uh current transformer available.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (explains)
+context before: I'll have to reverse engineer this to have a squeeze at what's going on there. I'm not going to do that in this video, but anyway, that's interesting. AC input terminal block, and then this is another e-sense thing.
+TEXT: This has lots of options. In fact, it has a wireless current sensor option, although it comes with the wired one. So, it supports up to three current clamps here, and it can actually measure your supply as well, so it can give you that sort of detail.
+context after: But, it it's basic operation, it only needs the one current clamp, which goes on the grid side there. So, there's that protection board. I can't read that on the LCD here.
+
+[1630] EEVblog 1630 - Solar Panels for Water Pre-Heating? — Dave Jones (explains)
+context before: And today, well, 15th of July here, we had a absolutely perfect solar day. In the middle of winter here, right in the still smack in the middle of winter, I was producing 5.21 kilowatts at peak.
+TEXT: That's from both of my Joule solar systems cuz I've got two different systems, but this is actually the combined total. And the blue one there is my hot water, cuz I've got current clamp on my hot water system, so I know how much it actually draws.
+context after: Now, I took a big long hot bath last night, so it actually took longer than normal to heat up. So, if we go back a day, it used less, and the day before that, that's probably a typical day there, right?
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: It turns out... It turns out, no, the current clamps weren't on backwards. So if you aren't aware, it's current clamps like these ones that they install on these monitoring systems to allow you to measure the current, not only from your solar panel, so you can measure the production power coming from your panels,
+TEXT: but you can also measure the consumption of your house, and you can measure the current going out to the grid as well. And you can see, maybe you can see just on the top of there, there's a little arrow. And you have to install these the right way.
+context after: And sure enough, if you install it back to front, and the current goes in the other direction, then, well, it's going to give you a negative output. And, yeah, that's a real thing. You've got to install them the right way. But that's not what's going on here, though.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: Right? So it can actually take that. The example that we had before. During the day. Two amps here. Okay so let's add the axes here. Like two amps. Let's say during the day. The three kilowatt system's generating two amps like this. It knows about that.
+TEXT: Because it's measuring. But it doesn't know about this system up here. So the output that this clamp here is measuring is actually four amps. It's not two amps. You've got the extra difference in here. The extra two amps caused by this array here.
+context after: Which it doesn't know about. So even though having the current clamp here is a perfectly fine solution. But only if this one doesn't exist. Then it would know how much it's actually producing. And then it can subtract the consumption from that figure. And give you the correct positive figure always.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: And please forgive me this is a bit difficult. I've got three hands to keep the switchboard open unfortunately. And like poke at things at the same time. Anyway here's our main 60/80 amps. I don't know what it actually is. But main breaker. Main fuse coming into the property.
+TEXT: So this is the side that we want to actually put a current clamp on. To measure both the incoming. And like consumption coming in. And also going back to the grid as well. So that needs a current clamp on it. For both the solar analytics system.
+context after: Which you've seen before. I've done a whole video on that. And there's the three current clamp inputs down there. And I used to have one channel for the production. I.e. coming from the solar panels. Another for the consumption. I.e. coming into the house.
+
+[Uq553ckJ0uQ] MURPHY! - Reclaim Hot Water Heat Pump FAIL — Dave Jones (explains)
+context before: although it's not an Aussie heat pump reclaim, they're the company that, Australian company that make the stainless steel tank and everything else, but I believe it's a Japanese heat pump. I can't remember. Mitsubishi or somebody? I can't remember who actually makes the actual heat pump itself.
+TEXT: But anyway, look, this is the power draw, because I've got a current clamp just on the hot water system. And this is what the normal graph looks like. It turns on at 10am, and then, you know, a couple of hours later, depending on how much water
+context after: it's used and the ambient temperature, it switches off. And then, I've never seen this little wiggle in here. And then, I've never seen this oscillation before. Unbelievable! The thing was bloody oscillating! And then, I thought, oh, something weird's happening, because around about 8pm or something, I actually
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: And they're effectively like all just in parallel. Then it makes it quite difficult. Not impossible but difficult on lots of fuse boxes. To be able to put one simple current clamp in there. And so that's why it's actually common practice to put the clamp outside of here.
+TEXT: And put it up here like this. So the current clamp for the consumption actually goes on the grid side. Like this. So that goes in there like that. And you would have another one, a second one like this. That then goes down into there like that.
+context after: So just from a physical way. From a wiring access point of view. It makes sense to do that. But now you can probably see the problem. What you've got now is a situation where each of these monitoring systems does not know about the other one.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: And put it up here like this. So the current clamp for the consumption actually goes on the grid side. Like this. So that goes in there like that. And you would have another one, a second one like this. That then goes down into there like that.
+TEXT: So just from a physical way. From a wiring access point of view. It makes sense to do that. But now you can probably see the problem. What you've got now is a situation where each of these monitoring systems does not know about the other one.
+context after: So if you've got your current clamps outside of here. The easiest way to understand it is just to put some numbers in. Let's say that here our house is taking one amp. Okay. And our solar systems here. They're both generating two amps each.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (explains)
+context before: So just from a physical way. From a wiring access point of view. It makes sense to do that. But now you can probably see the problem. What you've got now is a situation where each of these monitoring systems does not know about the other one.
+TEXT: So if you've got your current clamps outside of here. The easiest way to understand it is just to put some numbers in. Let's say that here our house is taking one amp. Okay. And our solar systems here. They're both generating two amps each.
+context after: Right. The sun's out. They're both generating two amps. Okay. So we're drawing one amp into the house. And we want to read that as a positive number. We want to read. This solar analytics system wants to read one amp. But what it's actually going to read is the total production from the two different systems.
+
+[1719] EEVblog 1719 - 75kWh Home Storage Battery Expansion! — Dave Jones (explains)
+context before: It's not too pleasant. It won't kill them, but you know, it's just not good. So, anyway, but once they're all installed and balanced, Bob's your uncle and I'll have 75 kWh.
+TEXT: So, 15 of these 5 kWh bad boys. Okay, so I put in the new energy monitor thing over here, which came with the Solis. So, we're going to install that rather than the current Well, it actually has the current clamp.
+context after: So, it goes into there, but then we've run an RS485 cable all the way back over to the new Solis rather than just run the You can't You don't need, strictly speaking, you don't need this if you just if you're not doing like export limiting and stuff like that, but I might.
+
+[1651] EEVblog 1651 - Home Electrical Switchboard UPGRADE! — Dave Jones (explains)
+context before: So, um yeah, it's it's way nicer than it was before. Now, I was talking about separating that solar uh one over here, the solar box to this one over here.
+TEXT: This is nice because uh then we've got the one link over here, and uh we can put the current clamps around that for the two different solar systems. Or I could add a third or a fourth solar system.
+context after: Don't plan on doing that. Got no roof space left really. Uh well, I do, but, you know. Anyway, um so, yeah, they're joined. So, instead of having to find the solar up here and put the like both wires through the current clamps and everything.
+
+[gAu8CvMjDrU] 15kWh AERL LFP Home Storage Battery - First Analysis — Dave Jones (explains)
+context before: Let's just say it was generating 5 kW, and the house was using 1 kW, then, okay, so there's 1 kW going out here into the house, then it would have 4 kW spare to power to charge the battery here.
+TEXT: So, that's no problem whatsoever. But, because I have connected a current clamp on here into the DI, the DI now knows what's going out to the grid and what's coming in from the grid like this.
+context after: So, let's take the example of, let's say the house is drawing 1 kW here like this, okay? And these panels in total are producing, let's say, 2 kW like this, but the end-phase system is also producing a total of 2 kW like this.
+
+[1719] EEVblog 1719 - 75kWh Home Storage Battery Expansion! — Dave Jones (explains)
+context before: But I'm actually going to install it with my other ones here. So let's give that a go. Where's the arrow? Pointing in that direction. Let's see if we've fixed that.
+TEXT: Winner winner chicken dinner. My intuition was correct. That current clamp for the Eastron energy meter was on backwards. But we were installing this in the dark last night. In pitch dark.
+context after: So yeah. So we've got 1.9 kilowatts coming from the solar at the moment. The sun's barely out. And now we've got it flowing into 2.1 kilowatts flowing into the battery.
+
+[1634] EEVblog 1634 - 15kWh AERL LFP Home Storage Battery Install! — Dave Jones (explains)
+context before: It's not obvious in the manual. The Deye manual sucks. And that's the thing with this Deye inverter. The manual looks like it's It's everything in it, but you can't understand the damn thing.
+TEXT: So, it's actually really complicated to set this up. Anyway, system work mode, I'm doing zero export to CT here, which which requires the current clamp, and I've got load first mode on.
+context after: So, basically, it's going to prioritize the load. So, basically, if I go turn on the oven or my EV now, it'll start if I don't have enough solar from both these systems, it will start sucking it from the battery.
+
+[1634] EEVblog 1634 - 15kWh AERL LFP Home Storage Battery Install! — Dave Jones (explains)
+context before: So, ultimately, how much current I've got to charge the battery here depends on what the two grids are doing, plus what the house is doing. And this DI doesn't have full visibility over the load in the house.
+TEXT: It doesn't need to, it just needs that current clamp on the grid there to know whether or not current's flowing out, in which case, well, we want to divert that back into the battery.
+context after: Thank you very much in AC couple mode, or we're going to power the house. So, yeah, very cool. But at night, of course, it all comes from the battery here.
+
+[1634] EEVblog 1634 - 15kWh AERL LFP Home Storage Battery Install! — Dave Jones (explains)
+context before: So, what I've got with AC couple mode, it takes whatever the Enphase is producing minus whatever the house load needs. Now, of course, it's measuring zero for the house load here because this doesn't know It It doesn't have a load current clamp on there.
+TEXT: So, it only has a current clamp for the grid side here, but it knows that there was ex- excess energy going into the grid here, and now it's diverting that into the battery as well.
+context after: Hence why we've got 3.2 plus I don't know an extra 1.2 kW or something from the Enphase system minus whatever the house is using at the moment and going into the battery.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (explains)
+context before: Would have been I don't know if you'll get your probes in there as well, maybe. Um would have been nice if they made it slightly bit bigger and it actually fitted the multimeter as well.
+TEXT: That would have been cool. Anyway, it's got your usual clampy jaws, pretty good. It's rated for 600 amps maximum. It'll give you 600 mV 100 amps, 100 mV 10 amps, and 1 amp at 1 mV.
+context after: So, it's not for low current, it's for big current jobbies. And there's no batteries in this, it's just a uh current uh transformer. So, um you can use this with any multimeter.
+
+[xC8zbL79-EM] Nissan Dualis ABS Modulator Failure Update — Dave Jones (explains)
+context before: Uh so, anyway, we'll see what we see, but um there you go. Uh it is now operational again. By the way, I will actually measure the uh current draw here.
+TEXT: I've zeroed that. You've got to zero these things. Um so, cuz you move it and the Earth's magnetic field gets in the way, but uh standby. What do we get standby?
+context after: We get uh jumps from 70 uh to 7 milliamps up to 20 milliamps, something like that. That sounds reasonable. I did disconnect the uh ABS uh ECU fuse as well, that F9 and E1.
+
+[1659] EEVblog 1659 - Quick 861 Pro Hot Air Station REVIEW — Dave Jones (explains)
+context before: Capture the peak on that. Oh, 1.4. Okay, yeah, I think we need to get in there and measure look at the waveform. All right, let's measure some waveforms, shall we?
+TEXT: We can do this just on the main side. So, I've got my uh Micsig uh current uh uh clamp here, which allows us uh which gives us uh 0.1 V uh per amp.
+context after: So, I set up current mode instead of voltage mode here, and we're uh 0.1 uh V per amp there, and we're uh 5 A uh per division. So, I've got some statistics there measuring a cycle RMS there.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (opinion)
+context before: This problem not only happened on my old 3-kilowatt system here, it also happened on my N-phase one. This is where, like, it was installed here, but I don't know, they didn't switch the data monitoring on until there. And, look, 200 watts consumed, and then during the day, this one's the yellow one is the actual consumption in this particular case.
+TEXT: It's going negative, minus 880 watts consumed, and then mysteriously, at night, the consumption goes positive. What the? Now, when I posted this on Twitter, quite a few people said, oh, your current clamps must be installed backwards. And that, you know, seems a legit thing, because, well, after the installation, we're now getting negative current consumption, right, on both of these systems here.
+context after: It turns out... It turns out, no, the current clamps weren't on backwards. So if you aren't aware, it's current clamps like these ones that they install on these monitoring systems to allow you to measure the current, not only from your solar panel, so you can measure the production power coming from your panels,
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (opinion)
+context before: Because it's measuring. But it doesn't know about this system up here. So the output that this clamp here is measuring is actually four amps. It's not two amps. You've got the extra difference in here. The extra two amps caused by this array here.
+TEXT: Which it doesn't know about. So even though having the current clamp here is a perfectly fine solution. But only if this one doesn't exist. Then it would know how much it's actually producing. And then it can subtract the consumption from that figure. And give you the correct positive figure always.
+context after: But it doesn't. Because this is pumping an amp. It's pumping an extra two amps into this system inside here. And likewise for this end phase system here. It's got no idea that this other system here is pumping out two amps here. All it can measure is its own production plus the consumption up here.
+
+[kCtGoymiShU] Deye Hybrid Inverter Gen Port Troubleshooting — Dave Jones (opinion)
+context before: Hi, I'm trying to get to the bottom of this mysterious DI 84 watt power consumption, which happens 24-7, regardless of what I do when I switch on the microinverter input on the generator port. So, I'll measure the current clamp, right? This is coming from the battery.
+TEXT: And, look at this, right? It's 1.15 amps there, and I've actually verified that with another current clamp. At a current voltage of... current voltage? Get it? I'm here all week. A current voltage of 53.6 volts there, that doesn't equal the 84 watts. And let me show you.
+context after: Okay, what I've done is I've actually isolated the inverter. It's nighttime here, obviously. So I've isolated the AC side, which is that one there, okay? And I've also isolated the new microinverter, which is that one there. So I switched both those off. So the DI inverter is being powered just from the battery.
+
+[7WbO1lnsLC8] Some Interesting Home Solar Data — Dave Jones (opinion)
+context before: 
+TEXT: Hi, just a small solar update video here after the big switchboard upgrade. I had to fiddle around with the current clamps quite a bit to get it to, you know, get the whole system back operational again because I've got like nine current clamps or something.
+context after: It's just absolutely crazy. And how they all interact and the two solar, different separate solar systems and everything, it gets messy. But yeah, I just thought I'd give you a little update here. And this is today. This is live here right now. And you can see, and also after I've got my new heat recovery and ventilation system installed as well.
+
+[OnoFcU0gro0] eevBLAB 122 - Flake 778 Multimeter Smartwatch! — Dave Jones (opinion)
+context before: Cool. Okay. If you're into that sort of thing, I've got to look, look at the earbud. Like, they are very good. Just, yeah, got to sell a bud version. That's all. But yeah, look at the fancy, fancy box. Stands you get and the current clamp.
+TEXT: I want the current clamp capability. So that, that, that'd be pretty cool. So yeah, it's got all the modern stuff. Look at this. Oh, it does everything. Got to go with the display as well. And it syncs all your data from your shoe phone or whatever.
+context after: So yeah. How do you rate the flake 778? So let us know in the comments down below. Do you prefer the 778 true RMS flake watch? Or do you prefer the old school non-smart jobby? With the real plug-in probes and the like nice resin strap and rugged look and feel.
+
+[OnoFcU0gro0] eevBLAB 122 - Flake 778 Multimeter Smartwatch! — Dave Jones (opinion)
+context before: Um, so way, way better. No, no, I'm sorry. No, I much prefer the other one. Look, look, look. That's just sexy as. That's manly. That'll put hair on your chest. Who's going to wear this one? Like Derek Zoolander? I don't know. No. Cool.
+TEXT: Cool. Okay. If you're into that sort of thing, I've got to look, look at the earbud. Like, they are very good. Just, yeah, got to sell a bud version. That's all. But yeah, look at the fancy, fancy box. Stands you get and the current clamp.
+context after: I want the current clamp capability. So that, that, that'd be pretty cool. So yeah, it's got all the modern stuff. Look at this. Oh, it does everything. Got to go with the display as well. And it syncs all your data from your shoe phone or whatever.
+
+[eHCzTC9lku8] The DOWNSIDE of my Home Solar Storage Battery — Dave Jones (opinion)
+context before: And this is, I guess, the price I pay. Now I don't have the ability to see that, but it's neither here nor there at the end of the day because it's more important to know what total energy I've taken from the grid each, you know, day or each month or each quarter when the bill comes in.
+TEXT: So there you go, but I just wanted to share that with you. So, yes, many future videos to come that will answer a lot of questions, but, yeah, there's no easy way to solve this by, you know, moving the current clamps and stuff like that
+context after: because the DI inverter's on the other side of the house to the end phase system. And even then, the DI system, it's all internal, right? You've seen the teardown, right? It's all internal. The panels come in, the battery comes in, and it just reroutes it literally via relays, right?
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (opinion)
+context before: Um bummed that it doesn't have a 60 microamp range. That would have been nice, but neither does the Fluke and you know, at this price point, yeah, what do you expect?
+TEXT: But it didn't have that 60 millivolt mode, though. Disappointed about that. All right, we've got the i600e current clamp here. Um this is 20 Yankee bucks, so very reasonably priced.
+context after: And here it is here. It is in the Fluke yellow. How close is that? How close is that? Trademark lawyers in the comments. >> [laughter] >> Wow. Anyway, um it does come with a um pouch, which um actually kind of just fits the multimeter.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (opinion)
+context before: So, it's not for low current, it's for big current jobbies. And there's no batteries in this, it's just a uh current uh transformer. So, um you can use this with any multimeter.
+TEXT: It doesn't have to be uh this one. So, if you just want to buy it on its own, um but most of them will have uh the current like, you know, you can just use the millivolt range.
+context after: But uh this one actually um has a specific current clamp mode. There it is, amps AC and amps DC. And uh it looks like we can't range that thing, so it's yeah, it's like 600 amp mode, and that's it.
+
+[wQbCsk7UAFc] eevBLAB 141 - Solar Analytics is a RIP OFF! — Dave Jones (opinion)
+context before: I don't know what's going on here. Um, anyway, it looks like, you know, is it reasonable? I don't know. Has anyone got it? Anyone used it? So, it is open source apparently.
+TEXT: It's on the GitHubs. Um, and it looks like it. Yeah, I I've got current clamps. I don't need current clamps, but I don't have current clamps with any TRS jacks on them.
+context after: And that kind of sucks. I want like screw terminals or something like that. Yeah, I know everyone will recombi Dave, Raspberry Pi with this, but you know, I need the actual hardware.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (opinion)
+context before: They got some input protection down there. I see a uh mauv and a thermister down there. Fuse of course. Um it's not directly soldered in. Why they've got this just jumping over to there like that, I don't know.
+TEXT: Um it maybe it allows them uh to get a current clamp over that thing perhaps. I don't know. Um weird. Anyway, looks like we do have a common mode choke here filtering.
+context after: So they're at least doing uh all the basic filtering stuff. There's our big ass um clunking mechanical switch there. Very nice. I like that. It doesn't look like they're uh they're faking that and just doing uh standby power.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (mention)
+context before: But, yeah, there's not too much more to play around with here. This is just the basics of um of how it works. It's pretty simple. It's just a smart relay with, you know, ground fault protection and residual current protection and stuff like that.
+TEXT: And this one's a little bit smarter in that uh it can use your excess solar based on a uh current clamp on the grid. So, anyway, yeah, subscribe to my EV Blog 2 channel if you want to um see like just like after I've installed this, I might actually um see if like that that wiring heats up, how much it I know it's going to heat up in the um the roof, like how
+context after: much it heats up. Put that sort of videos on my second channel. I think I'm like just hundreds of subs away from 100k subscribers. I get my YouTube silver awards for my second channel.
+
+[OnoFcU0gro0] eevBLAB 122 - Flake 778 Multimeter Smartwatch! — Dave Jones (mention)
+context before: I'm happy for you. So let's check it out. Let's give it a fair suck at the serve, shall we? The Flake 778. Here we go. Introduce it. Look at that. Oh, it's got the measurement on the bottom. Does it do heart rate or whatever?
+TEXT: Look at this. Look at this. Pop your earbuds. Earbuds turning into four millimeter banana jacks. Wireless measurement. It's true. Measure anything. And look at this. Current clamp capability. Oh, look at all the different, yeah, heart rate monitoring, fitness tracking. Of course, you've got to have a fitness tracker
+context after: these days. Can't sell a smartwatch without a fitness tracker. And look at the stand for it. The Flake True RMS Multimeter Smartwatch. That is very cool. But I don't think it's as sexy. I would rather have the Flake Multimeter watch, the original. I'd rather have the Flake 578.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (mention)
+context before: Just down in there. Is the solar analytics one. So both systems now. Actually are able to measure the current. They know what the current is. Coming from the existing three kilowatt panel. Okay. I'm trying to keep this panel open with my elbow. But anyway.
+TEXT: You can see another clamp here. This is the solar analytics clamp. And this cable here. Comes from the AC. From the new panels. Okay. So this is what we had to change. This one was actually measuring the air con system before. But I've now sacrificed the measurement of the air con power.
+context after: That's just now included in the total power. And I've moved that. To actually on here. To measure. The current coming from. The new five kilowatt system. And I've put that in parallel. You'll notice that. It's got a red. Marker. On there. And the other one.
+
+[kCtGoymiShU] Deye Hybrid Inverter Gen Port Troubleshooting — Dave Jones (mention)
+context before: 
+TEXT: Hi, I'm trying to get to the bottom of this mysterious DI 84 watt power consumption, which happens 24-7, regardless of what I do when I switch on the microinverter input on the generator port. So, I'll measure the current clamp, right? This is coming from the battery.
+context after: And, look at this, right? It's 1.15 amps there, and I've actually verified that with another current clamp. At a current voltage of... current voltage? Get it? I'm here all week. A current voltage of 53.6 volts there, that doesn't equal the 84 watts. And let me show you.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (mention)
+context before: So this is the side that we want to actually put a current clamp on. To measure both the incoming. And like consumption coming in. And also going back to the grid as well. So that needs a current clamp on it. For both the solar analytics system.
+TEXT: Which you've seen before. I've done a whole video on that. And there's the three current clamp inputs down there. And I used to have one channel for the production. I.e. coming from the solar panels. Another for the consumption. I.e. coming into the house.
+context after: What we're actually consuming. And then another one that did the air conditioning as well. But I'll explain the air conditioning consumption. But I'll explain that in a minute. And of course we've got the new Enphase. Envoy box up there. And so let's have a look at what's actually going on here.
+
+[1390] EEVblog 1390 - NEGATIVE Household Solar Consumption? WHY? — Dave Jones (mention)
+context before: They are directional. So you have to actually get the direction correct on those. So both of those are measuring the current. Coming into and out of the property. So it depends on which way it flows. As to whether we're consuming power. Or we're actually exporting power to the grid.
+TEXT: And here's the breaker for the main existing three kilowatt system. And if we go around here. You can see how it comes out there. And it's got two. Once again. Two current clamps. That's the bigger one there. Is the new Enphase one. And the smaller one.
+context after: Just down in there. Is the solar analytics one. So both systems now. Actually are able to measure the current. They know what the current is. Coming from the existing three kilowatt panel. Okay. I'm trying to keep this panel open with my elbow. But anyway.
+
+[EYx46kRv2Bw] Myenergi Zappi 7kW EV Charger Installation & Testing — Dave Jones (mention)
+context before: There's 62 percent because I was actually running the fast charge of the hair for most of the majority of the time there. But there you go. Very cool. So at the moment in full sun, you can see that there's zero to or from the grid,
+TEXT: which is exactly what you want because all of the solar is going into the car minus what the house is using. So, yeah, if I get another current clamp on there, which is easy to add, I'll be able to get that figure coming from there.
+context after: But I can get that figure coming from my other monitoring systems. It's just not conveniently on the screen here. But yeah, that works well. We're taking nothing from the grid and we're exporting nothing from the grid. All my excess solar at the moment is going into the car.
+
+[1651] EEVblog 1651 - Home Electrical Switchboard UPGRADE! — Dave Jones (mention)
+context before: What's the problem?" Um, well, the problem is here. Let's go take you in the back. This uh Can I open it all the way? It's going to spring back on me, isn't it?
+TEXT: Yes, it is. This is the problem. Look at this. It's an absolute rat's nest. Have you ever seen anything worse than this? And I've got a whole bunch of current clamps trying to, you know, let's play Where's Wally?
+context after: Where's the current clamps in there? I think I've got like half a dozen current clamps actually buried in this thing. And yeah, it's basically a big point-to-point wiring um system.
+
+[1651] EEVblog 1651 - Home Electrical Switchboard UPGRADE! — Dave Jones (mention)
+context before: So, that looks very nice. That is schmick. Let's have a look behind. Oh, look at this. I can easily open it now. Ah, it's a miracle. I've never been able to swing this thing open like that before.
+TEXT: So, it is much neater. It would look neater if like the current clamps weren't flapping around in the breeze. I've just been playing around with the current clamps. I might actually uh tidy them up and uh stuff.
+context after: But, yeah, everything's much nicer now. So, yeah, so imagine if we didn't have all the current clamps, it'd just be that one nice wiring loom going like that. And uh no, didn't have to add a single joiner.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (mention)
+context before: It'll it'll actually tell us what the PWM is. And presumably that's measured or well, cuz it's generating it it knows what it's generating, I guess. Whether or not it like measures that as a feedback, I don't know.
+TEXT: Here you go. This is nice. This is my lab voltage, generating consumption and stuff like that if you put the extra current clamps on, importing. It's pretty cool. What was that that that had Aussie something?
+context after: Oh, yeah, Australian Eastern Standard Time. So, that's pretty comprehensive. Yeah, there's that Harvey thing, the remote uh current clamp. Okay, what I've done now is I've just removed the input earth on this thing.
+
+[1505] EEVblog 1505 - 120W Home Phantom Power? Audit Time! — Dave Jones (mention)
+context before: Don't know. Um, either that's that's sort of like the lower end error in the Solar Analytics thing. But the good thing is I was able to measure a differential there in the Solar Analytics.
+TEXT: So when you're measuring a differential the absolute value doesn't actually matter. It's only the differential. The only way to do that better would be to get a current clamp for my um, Metrahit Energy here.
+context after: You can see that actually supports two different current clamps here. You see the little um symbol in there? It supports a current transformer, so a current output current clamp.
+
+[1651] EEVblog 1651 - Home Electrical Switchboard UPGRADE! — Dave Jones (mention)
+context before: Have Have you ever goofed that up? Uh going from this style setup to back to safety switches is generally not an issue. It's not Sometimes we get issues with existing circuits tripping and that kind of thing cuz obviously they weren't on a safety switch prior, so Right.
+TEXT: Um but yeah, not not often mix it up. We label everything pretty well as we're taking it off, so So, was this one of the more complicated ones with like half a dozen current clamps and two solar systems?
+context after: This is pretty straightforward. Oh, really? Yeah. Okay. You've had more complex. Yeah, yeah. We did like 36-pole boards and this is This is pretty pretty basic, so can be can be a tight squeeze trying to get uh 30 We generally go to a to a slightly bigger board to fit fit a 36-pole enclosure and that kind of thing, but otherwise you go to a commercial setup and you're doing, you know, 60 to 90
+
+[X83SPqsf5kY] Smart Meter Installed! — Dave Jones (mention)
+context before: So, they've celastic up to all the old holes. So, yeah. So, I've taken out four things and replaced it with the one smart meter. So, yeah. Um the new switchboard upgrade will happen and I believe they're going to install two 12-way uh DIN rails in there.
+TEXT: So, that'll all tidy up. But, uh still got like half a dozen current clamps in the back of this thing cuz I've got a complicated system. I've got two solar power independent solar power systems.
+context after: I've got a solar analytics system and I've got a Zappi EV charger and they all require current clamps out the wazoo. I might even have more than half a dozen.
+
+[qmcSEJehqZM] Energizer Battery Leak Fluke 3000 Multimeter "Repair" — Dave Jones (mention)
+context before: This is a uh CNX uh thing, which is a different wireless system to the FC, the Fluke Connect, which is what this one is. So, this is the FC, the Fluke Connect system.
+TEXT: Um, so, yeah, it's very different. So, anyway, I do have one of these uh loopy uh current clamp things, and yep, sure enough, ID number one, it powered up and it connected and it displayed.
+context after: So, we can select Can we select that? I forget how to use this. Yep. And there we go. Yep. Point two, it matches it over here. So, I I won't even bother.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: We've got five items. Can you believe it? Ah, you know what we say here on the EEVblog? Don't turn it on. Take it apart. And here it is in its nice little padded bag.
+TEXT: We've got the Fluke CNX 3000 meter. We've got the CNX i3000 wireless flex current clamp. We've got the CNX A3000 wireless AC clamp. And you guessed it, they keep calling them the 3000.
+context after: Get out of here. Tight fit. We've got the CNX T3000, which is a K-type thermocouple temperature wireless adapter. And we've got the CNX V3000, which is a wireless AC voltage.
+
+[1628] EEVblog 1628 - Home Solar Power Re-Install + Upgrade + FAIL — Dave Jones (mention)
+context before: So yeah, there you go. I do actually have one more ability to monitor both systems actually. And that system is the Myenergi Zappi that I installed for my EV, which so I can have basically 100% solar powered EV, my Hyundai Ioniq, which is still going great by the way after like 4 years.
+TEXT: Um, so it doesn't cost me anything. I charge that using excess power. So that's why the Myenergi Zappi system, which is another totally independent system with its own current clamps.
+context after: I've got current clamps coming out the wazoo in my fuse box. It's terrible, Muriel. Anyway, yeah, so there you go. Anyway, that is another independent way that I could it monitors the production from both systems combined.
+
+[1414] EEVblog 1414 - MicSig DP10007 High Voltage Probe - Turning it up to 11 — Dave Jones (mention)
+context before: Is there anything on the bottom? No, I don't Actually, ah they're probably relying on the input clamping of the op amp. I would say cuz I don't see any diodes in there, do you?
+TEXT: And that micro there makes sense. It's another one of those busy bees that we saw in the previous video with the mixing current clamp the teardown thingo. So, yeah, that makes sense.
+context after: You're going to reuse the the same family micro with in you know, most of your products where it's suitable. Anyway, there's not much else around there. That's about all she wrote, really.
+
+[1719] EEVblog 1719 - 75kWh Home Storage Battery Expansion! — Dave Jones (mention)
+context before: Okay, what's going on? Uh No, it's same thing's happening. Aha, setting up that different option um for the meter, we actually it added this one up here. I didn't have that before.
+TEXT: So a grid tied inverter boom out like that. So yeah, that wasn't there before. All right. So it's current clamp time in my famous switchboard here. And here's the new current clamp.
+context after: Yes, it's the Eastron split core. What's the 100 amp 100 milliamp per 100 amp? By the looks of it cuz you can set up the ratio. Now it was down here.
+
+[1651] EEVblog 1651 - Home Electrical Switchboard UPGRADE! — Dave Jones (mention)
+context before: Yes, it is. This is the problem. Look at this. It's an absolute rat's nest. Have you ever seen anything worse than this? And I've got a whole bunch of current clamps trying to, you know, let's play Where's Wally?
+TEXT: Where's the current clamps in there? I think I've got like half a dozen current clamps actually buried in this thing. And yeah, it's basically a big point-to-point wiring um system.
+context after: So, that big white one up there is the big incoming 60 amp uh single phase. And then we've got all the stuff, which is getting getting s- slowly upgraded here.
+
+[1060] EEVblog #1060 - $35,000 DataIO Unisite Universal Programmer Teardown! — Dave Jones (mention)
+context before: Beautiful. So, these are our positive and negative supplies, are they? Plus OC, minus OC. What? Local high and logic low supplies. Okay. So, these must be the voltages for the the the logic levels of the device under test.
+TEXT: So, if it's a 3.3 V part, for example, then they're obviously generating those, by the looks of it. Plus 21 V. Uh fine current clamp. So, it's got all these current references.
+context after: FCLR. So, what can it drive? It could drive constant currents into pins, presumably. That's amazing. Unbelievable. Overcurrent integrator, slew rate reference. So, it can actually control the slew rate.
+
+[1437] EEVblog 1437 - Zappi 7kW Electric Car Charger TEARDOWN + EXPERIMENT — Dave Jones (mention)
+context before: This has lots of options. In fact, it has a wireless current sensor option, although it comes with the wired one. So, it supports up to three current clamps here, and it can actually measure your supply as well, so it can give you that sort of detail.
+TEXT: But, it it's basic operation, it only needs the one current clamp, which goes on the grid side there. So, there's that protection board. I can't read that on the LCD here.
+context after: Um why it's got a little bit of like Kapton tape over that, I'm not entirely sure. But anyway, so obviously they're off-boarding their uh protection uh circuitry onto this dedicated board.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: Um yeah, not that exciting. Sorry, I'm not going to go into detail. It's like yeah, whatever. I don't even think I'll take the rest of the board out because, well, we know what's on the back of it.
+TEXT: But that is basically the uh input circuitry pretty much there for that uh clamp system Well, the um for that uh flexi sort of current clamp system up to 4,000 amps.
+context after: Oh, excitement plus here, folks. There it is, the i3000. Woohoo! Last but not least, we have the CNX T3000 wireless K-type thermometer. There you go, standard uh K-type thermocouple input, 30 volts max.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: Get out of here. Tight fit. We've got the CNX T3000, which is a K-type thermocouple temperature wireless adapter. And we've got the CNX V3000, which is a wireless AC voltage.
+TEXT: That's all it does, it just measures AC voltage. And we've got all the bits and bobs as well, including this flexible current clamp. How do you do it? There we go.
+context after: Just pops out like that. Goes in there. You lock it, and that's actually a current clamp up to That's the i2500-10, 2500 amps. So, woah, we can attempt to teardown.
+
+[1460] EEVblog1460 - REPAIRING a LED Studio Light with a DUMPSTER LAPTOP! — Dave Jones (mention)
+context before: You would think, right? So, I think there's something fishy going on with like cuz they've got lots of MOSFET switching in here, right? There's lots. And it'd be an interesting schematic, I think.
+TEXT: It's not easy to reverse engineer cuz of the black solder mask. No, it's some sort of drain. I can probably get a current clamp and put like a battery on here.
+context after: I think that they're switching the cells in parallel. But, the interesting thing is, even on the good one, if you only plug in one battery, it it does not work.
+
+[X83SPqsf5kY] Smart Meter Installed! — Dave Jones (mention)
+context before: So, that'll all tidy up. But, uh still got like half a dozen current clamps in the back of this thing cuz I've got a complicated system. I've got two solar power independent solar power systems.
+TEXT: I've got a solar analytics system and I've got a Zappi EV charger and they all require current clamps out the wazoo. I might even have more than half a dozen.
+context after: Anyway, lots of current clamps. But, there you go. Um progress on the switchboard. But, yeah. Like, I've still got the old uh ceramic base uh fuses here. So, yeah.
+
+[1651] EEVblog 1651 - Home Electrical Switchboard UPGRADE! — Dave Jones (mention)
+context before: Yeah. Yeah. You just divert it down to earth, yeah. Right. Yep, we're going to add a surge protector, so that's something we haven't had. And I've gotten gotten away with it for 20 odd years, so lucky, huh?
+TEXT: That's it. So, what are we going to going to do about the current clamps? Cuz you Cuz you're going to loom everything, right? Yeah, they will still be there.
+context after: We just got to work out a way to get them sitting a lot nicer than than how how they are at the moment, so we'll try and get everything into a nice loom and just maybe stagger them down the loom to fit them in, so.

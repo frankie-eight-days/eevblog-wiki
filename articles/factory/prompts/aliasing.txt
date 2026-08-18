@@ -1,0 +1,328 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: aliasing
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 59 passages drawn from 36 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# aliasing`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: And yeah, we zoom out like that, and it will show a physically different frequency. So, if you captured that, you know, if you weren't paying attention or whatever, and you capture that signal, sure, it's a sine wave, and what you've got is a sine wave, but it's, you know, completely different frequency.
+TEXT: So, you can come a cropper. Aliasing's a uh thing you've got to watch out for, not just in scopes, all sorts of sampling systems. Um and then you can get uh you know, frequencies folding back into the you know, you have to get into the whole signal theory thing, and frequencies fold back into range and stuff, and can do all sorts of weird and wonderful uh things when you're doing, you know,
+context after: analysis beyond just looking at a simple uh waveform and stuff like that. So, anyway, it's very interesting stuff, but um yeah, it's nothing inherently wrong with the Rigol scope, I don't think.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: 8.1 to any See, it doesn't do it anymore. Interesting, huh? So, if we actually stop that and stop is different, by the way. Look, it actually displays what is displayed on the screen is actually quite significantly different.
+TEXT: We can actually go back, right? Wait, there we go. There we go. There's your There's There's your problem, right? There is no modulation on the signal, but it's showing it because it's an oddball and you can go into the math behind it and you can go into the sample theory and you go into the whole works, right?
+context after: Because this does not have an anti-aliasing hardware filter in it. It's not doing that based on the sample rate. Whereas I think the Keysight does actually do that. Um So, anyway, so what else can we do?
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: Um and that that is the whole point of, you know, aliasing is that it shows a different different frequency signal. So, what do we got? Yeah, we got uh So, yeah, 10 MHz like that.
+TEXT: And yeah, we zoom out like that, and it will show a physically different frequency. So, if you captured that, you know, if you weren't paying attention or whatever, and you capture that signal, sure, it's a sine wave, and what you've got is a sine wave, but it's, you know, completely different frequency.
+context after: So, you can come a cropper. Aliasing's a uh thing you've got to watch out for, not just in scopes, all sorts of sampling systems. Um and then you can get uh you know, frequencies folding back into the you know, you have to get into the whole signal theory thing, and frequencies fold back into range and stuff, and can do all sorts of weird and wonderful uh things when you're doing, you know,
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: Hi, in a quick video on the second channel which I'll link in if you haven't seen it. I just was playing around with different brands of oscilloscopes and showing to see it well to see if they alias with a 10 MHz signal.
+TEXT: And Jason Long, I think it was in the comments, thank you, actually commented, is that actually aliasing or is it just a like a sample beat frequency because it's 10 MHz and the internal oscillator is 10 MHz or the and the sample rate will be in this particular case it's 2 gig samples per second.
+context after: But anyway, let's reproduce the problem. So I've got a 10 MHz signal there. There you go, 10 MHz. Let's wind the time base down and I'm in auto memory depth by the way, I believe.
+
+[1144] EEVblog #1144 - Padauk Programmer Reverse Engineering — Dave Jones (explains)
+context before: We don't know. It's not actually guaranteed. Until the device is programmed, that spec sheet, the data sheet, doesn't really come into play. It could burn some fuses and change the pins altogether. Let's have a look. Ooh, that does look like a clock line.
+TEXT: Now, we're getting a lot of aliasing, because the sample rate of the ADC on the analog discovery sucks. But, we can zoom in, and I'm going to. I'm just adding some hold-offs, so it doesn't re-trigger immediately. That's really annoying. Okay, so here we go, we're at 244 milliseconds, thereabouts.
+context after: I'm having to reprogram it every time. Now, this is a one-time programmable feature. And, because it takes a while to actually swap the device out, I'm only analyzing the data that's sent when it's already programmed. The device doesn't seem to know the difference.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: That's actually not too bad at all. Go out. Oops. Eh, got some alias in there. But, that will be because we are not on Um well, see this is actually another um I guess annoying actually it yeah, it is a bit of a fail.
+TEXT: It doesn't have auto memory depth. You've got to manually select it and you'll see that uh we can here we go, right? If we go right out like that, you can see that we're now getting that with 14 meg points no problems and of course with only 14k points, it's just going to alias it can't do it.
+context after: Um so 140k and 1.4 meg, but there's no auto memory depth selection. That's pretty disappointing. But holy dooly, take a look at that display. That uh it variable intensity display looks really good.
+
+[143] EEVblog #143 - Agilent 2000 X Series Infiniivision Oscilloscope Review — Dave Jones (explains)
+context before: It's no edges. There's no hardware frequency counter, and you'll see the digits drop as we drop the, ah, as we drop the time base like that. It continually goes down. That proves that it's a software frequency counter. Very disappointed. I expected with this new Whizbang ASIC, they would have put
+TEXT: a hardware frequency counter in there. Of course, one of the big problems with digital storage oscilloscopes is aliasing. Now, some, ah, oscilloscopes really can't handle it at all, but this one can. And to prove it, I've got a 20 megahertz sine wave going down here, and if we turn
+context after: the time base right down, you can see that it's not going to alias and give us a low frequency signal. We're at 500, we're at one second per division now, and it's still, um, it, you know, you can't obviously, ah, stop that and zoom in, but it's not going to alias.
+
+[I3FhAhxet7s] Rigol DHO800 Bug Testing — Dave Jones (explains)
+context before: that you'd expect it to alias. And I've showed in my review video that it does actually alias, as most scopes do. And they don't give you any warning. So I'll go to 200 milliseconds, and I don't get the display issue at all. But his one
+TEXT: shows, like, all this remarkable patterning out here, which I don't know what caused that. Some sort of, you know, reconstruction algorithm or something? That's a big, because it's aliasing, it's going crazy. I don't understand it. Anyway, I can't get it. I can't reproduce it.
+context after: Even if I slow it down even further to 500 milliseconds per division, 125 k points, I'm at 1 k samples per second, 1 meg points here. And I'm not seeing it. I tried measurements on and all sorts of things. I even tried, like, putting the trigger outside
+
+[I3FhAhxet7s] Rigol DHO800 Bug Testing — Dave Jones (explains)
+context before: the window, like, outside here, so that it's not actually triggering. It's going to guarantee that it's auto-triggering here. And still nothing. So I'm not able to reproduce his issue here. And you can see, like, if I put it to, like, 100 milliseconds here
+TEXT: or, like, you can really see, like, let's actually stop that and zoom in, you can really see that, you know, it ain't sinusoidal anymore, right? So, yeah, we're approaching the, you know, where it's going to, where you guarantee that it's going to start aliasing.
+context after: And here's one, although his one's an 8.0, is the 8.0 model. So his is the 70 megahertz, mine is the 100, but there shouldn't be any difference. And he said firmware 1.00. I've got firmware 1.00. There it is there. So, yeah, I can't reproduce it.
+
+[876] EEVblog #876 - NI VirtualBench Review — Dave Jones (explains)
+context before: Nuts. And well, here we go, I've used an external function generator to do my standard 1 MHz carrier with 1 kHz AM modulation with 100% modulation, and triggering is very typical of most scopes, so that jittering is you know, that's fairly normal, don't worry about that at
+TEXT: all. But what we're looking at is the intensity graded display, and it's there, you know, it's actually doing a half reasonable job. But yeah, that's okay. It gets a pass. But will it alias? That is the question. Let's have a squiz. No, it's doing pretty alright.
+context after: Yep. Excellent. No aliasing on that. Many better scopes have failed that one. That's great. Thumbs up. And some of you might be thinking, Dave, what's up with the fuzziness of this line? Is this scope noisy? No, I've done a whole video on that, and that is
+
+[704] EEVBlog #704 - Rigol DS1054Z Oscilloscope Features Review — Dave Jones (explains)
+context before: then you're only going to get, of course, 250 meg samples per second, or even three channels. 250 meg samples per second, what does that mean? Well it means that your sample rate is only 2.5 times your bandwidth. So in other words, it's 250 meg samples per second
+TEXT: over 100 megahertz, 2.5 times. Now in theory, that is just enough to prevent aliasing and give you a good result with sine x on x interpolation, which this thing does. But it depends, you can get into the complex math of how this works and whether or not
+context after: it's relevant, but basically you can have issues with pulse waveforms and other stuff if you try and get the full bandwidth out of all four channels here. So just be aware of that, if you do have the 100 megahertz version, then using all four channels and expecting to get
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (explains)
+context before: Peak to peak, RMS, frequency, period. Of course, it couldn't um it couldn't detect that waveform automatically. It's too hard for it. No scope I've I've tested has ever been able to do that.
+TEXT: But uh let's see if we can't uh get a trigger on that, huh? So, yeah, we're 4k, so we're going to alias there. There we go. 500 k 12k, so just like in the previous video I showed, it's got equivalent time uh sampling if you want that.
+context after: Real-time, normal, peak, average. It's got your basic stuff. Um so, it's not too bad at all. If we go to our display menu here, vectors and dots. Uh I've seen worse than that for a dot display.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (explains)
+context before: Let's try the spectrum analyzer. Show FFT and Okay, there's our FFT. Can we do anything on that? Can we zoom? No, we can't zoom in. We can just drag it around.
+TEXT: Can we left? No. Okay. Just check it. See if it aliases there. No, it doesn't. Just vanishes into obscurity. And And that's even without the 800 MHz anti-alias on, which I can hear a relay, by the way, with the 800 MHz anti-alias.
+context after: So, something's doing there. Back to 100 millolts. It's It's jittering like buggery now. So, it looks like the FFT functionality just it doesn't have any ability to do anything apart from just do the full sweep.
+
+[1140] EEVblog #1140 - 3 CENT Micro LED Blinky with ICE! — Dave Jones (explains)
+context before: And that's just a nature of the sampling. And it'll get worse the lower your sample rate goes. So, if we go down to say eight, it'll should be like really terrible, Muriel.
+TEXT: Well, it's different Yeah, anyway, look at that. I mean, well, in fact, look at that. At eight meg, there's whole sections where there's just nothing there. So, just be careful of that when you're using your logic analyzer.
+context after: So, even at 24 megasamples per second, there will be like it'll show you like 2 MHz everywhere on both of the different duty cycles here, but there'll be one point where it switches over there.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (explains)
+context before: Yeah, you can see it's going to start to do it. Here we go. There we go, drop the time base down. Yeah, there we go. It looks perfect, doesn't it?
+TEXT: You would think, "Aha, look at that perfect sine wave at 50 microseconds per division." What? Nope, that's aliasing. And there's a 10 MHz square wave. It's not handling that too bad at all given the bandwidth.
+context after: So yeah, this thing isn't exactly a user-friendly modern scope, that's for sure, but it is, you know, a 19 early '90s and '94 vintage, almost 20-year-old uh oscilloscope technology here in a handheld form factor and incredibly useful for its day, especially with the 50 MHz um bandwidth and you know, the basic multimeter functionality and stuff like that.
+
+[81] EEVblog #81 - Smart Tweezers LCR Meter Review And Teardown — Dave Jones (explains)
+context before: Okay, here it is measuring a 10 Hz sine wave and as you can see it's it's it's hard to read and yeah, it's displaying it, and yes, you can change the time base setting, but as soon as you do that, you know, it just it just disappears.
+TEXT: It's It's really uh I wouldn't say hopeless, but it it really is down in the toy category. Really going up in the high bandwidth stuff, 100 Hz. As you can see, it hasn't triggered properly or it's aliasing.
+context after: That's obviously aliasing. Okay? Just based on the sample rate. Now, I turn the sample rate up. Trust me, that's not a thing with the camera. I can't even see that display.
+
+[480] EEVblog #480 - 300MHz Owon SDS Oscilloscope — Dave Jones (explains)
+context before: Now, let's say you wanted the fastest screen updating rate. I mean, it's not very fast at the moment with a 100 K memory depth. Let's go into acquire button up here and go into a sample memory length.
+TEXT: 10 K. We're still seeing a waveform. Oh, it's getting some wobbly business. Not sure what's going on there. That's it's wobbly. So, it's sort of starting to alias there even when it's got it on the screen.
+context after: I don't don't like that at all. That's like jello mode, but look, you put down a thousand and you've you've just gone. Okay? So, let's say you've got your 100k depth here.
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (explains)
+context before: Sine, square, triangular, sawtooth. Okay, no worries. We'll stick with square, 1 MHz, 3 volts peak to peak. That's good enough for Australia. And let's see if it's yep, yep, it is.
+TEXT: So, yeah, there's no aliasing on that. Look at that. That's great. Very happy with that. Looks like we just get nothing. Okay, below that, but yeah, we're not getting any any aliasing, so that's terrific.
+context after: And there you go. And our trigger level's too low, so there you go. Boom. That's not bad at all. Out of trigger, into trigger. Oh, yep. I'm I'm liking this.
+
+[1379] EEVblog 1379 - What's all this NPLC Stuff Anyhow? — Dave Jones (explains)
+context before: Magic. But at this point here, I then switch to 0.2 power line cycles, or four and now which is 4 ms aperture or uh sample time. And as you can see, we start to see I you know, I up to like we start to see the peak there that 1 V peak-to-peak signal there.
+TEXT: But you might have noticed this, it's kind of like modulated. You might have seen this before in your oscilloscope. This looks like classic aliasing. This is all to do with your Nyquist stuff, right?
+context after: Where you need at least twice the sample rate, otherwise you get aliasing. So, we're I clearly getting sampling artifacts here of our 50 Hz um signal, and it's it's not good enough because we're only sampling at with an aperture time of 4 milliseconds or 0.2 power line cycles.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (explains)
+context before: And if you want to look at the aliasing, we're at 101 MHz here. The fastest 10 ns per division, can't go any faster than that. We go down, it's okay.
+TEXT: We go there, Kamigatsa, and then of course it's the wrong frequency cuz there's our aliasing. So, yeah. And I'm at 43 MHz. Uh, even though it's showing only four Oh, it shows 43 occasionally there.
+context after: And watch this, if I jump up to 44, boom, look at that amplitude difference. And that's exactly what we found on the pocket one, too. It had the weird ass response.
+
+[1272] EEVblog #1272 - Mailbag — Dave Jones (explains)
+context before: So, yeah, it's very simplistic, but hey, you know, it works. But, yeah, like there's no real controls. Okay, plus, minus. Okay, that's our time, but like it would have been better if they were labeled a bit better.
+TEXT: We'll start to see some aliasing, will we? Way! Oh, yeah. Look at that. Terrific. That's really aliasing. Look at the low frequency signal, that's aliasing, too. Wow. Wow, that is a sine wave.
+context after: It's going to do that as a sine wave. Oh, sorry, glare on the screen. It's going to do that. Yeah, that's that's terrific. So, select, we've got auto. Haven't Haven't read the manual at all.
+
+[1355] EEVblog #1355 - NEW Siglent SDS1104X-U $399 4CH Oscilloscope Teardown — Dave Jones (explains)
+context before: I guarantee when you power this thing up, that's all the sample rate you'll get. Two and a half samples, right, per cycle is I yeah, okay, you're not going to alias, but it's, you know, it's it's not very good.
+TEXT: Usually, you'll want 10 times. Usually, you know, a a good scope will have like 10 times. But as I said, technically, it's fine. You're not going to alias the sin(x)/x interpolation.
+context after: It's going to interpolate it for the given uh response of the front end. Different response front ends uh will have different effects on the uh you know, the type of interpolation you use and stuff like that.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: So, yeah, it's uh it's pretty schmick. So, it does the bit, but uh it doesn't have when you zoom in on the Keysight one, I'm not sure if I showed in the previous video, but it does like show like sampling jaggies and stuff like that, but it just the whole point is that it doesn't show you a different frequency to what you've actually got.
+TEXT: Um and that that is the whole point of, you know, aliasing is that it shows a different different frequency signal. So, what do we got? Yeah, we got uh So, yeah, 10 MHz like that.
+context after: And yeah, we zoom out like that, and it will show a physically different frequency. So, if you captured that, you know, if you weren't paying attention or whatever, and you capture that signal, sure, it's a sine wave, and what you've got is a sine wave, but it's, you know, completely different frequency.
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (explains)
+context before: The the app thing does not know that we switched ranges. Like, so how are we supposed to know like we're supposed to like manually multiply? Like, I assume it's 1 V per division on the normal mode.
+TEXT: I don't Let me see if I can at least get a sine wave and then I'm done. Okay, I'm feeding in a 10 MHz 4 V peak-to-peak sine wave and obviously we're getting some alias in there.
+context after: By the way, if you want to see, it kind of sort of shows up on the screen, but not really. There you go. Like, it's not even coming up as proper like full screen or anything.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: Let's double check. No, I'm in 1 meg. Let's put on auto cuz sometimes some scopes will have like anti-aliasing but only in auto mode. Let's go down. Let's go down.
+TEXT: Let's go down. If we go down to uh 2 5 So once we're down to 5 milliseconds per division, okay, we start to get that aliased signal. And there you go, it's 2 it's 2 hertz there.
+context after: Okay? Or yeah, 1 point it's 1 1 hertz. There we go. But the hardware frequency counter is still measuring 10 MHz cuz that's actually there's hardware in there. It's probably inside the FPGA or something like that to yeah, to like feed in the signal directly.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (explains)
+context before: Okay, so it's not doing it anymore because we had an odd We're using an oddball frequency. So, let's go to I don't know, um 8.1 MHz. And boom, see?
+TEXT: Instantly starts to alias. So, that's see? So, what's 8.1? I don't know. Get your confuser out. 8.1, figure out why 8.1's doing it at 5 megasamples per second with 1 megpoints.
+context after: Um and 2 seconds, right? It's It's doing it, right? So, 8.1, 8.2 MHz. 8.2 MHz is still doing it. 8.123, do we have to get off? Yeah, see? If you do the .123 thing, it works.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (explains)
+context before: Okay, I've got 140 MHz there and it's showing 1.24 V there. And we plug her in, 1.24 1.04. So, yeah, no. Anyway, from 150 160 170 180. So, it looks like it does have its claimed 180 MHz bandwidth.
+TEXT: Oh, there we go. We've hit some aliasing there. It doesn't like that at all, but we can actually go up to exactly 250. You can see that that's a beat of the sample rate there.
+context after: So, yeah. So, it does technically have its 180 MHz bandwidth. There it is 916 mV. And should be 860. So, you know, you can't expect this to have the claimed 180 MHz bandwidth.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (explains)
+context before: See if it can measure that. Yeah, it can. Let's go up to six. See if it can still measure that. No, overload. There's our 6 MHz sine wave there, so let's bump that up to uh say 25 MHz, shall we?
+TEXT: And see what we get. And there's our 25 MHz sine wave at 10 ns per division and let's drop the time base right down and we'll probably see some aliasing here as we drop down.
+context after: Yeah, you can see it's going to start to do it. Here we go. There we go, drop the time base down. Yeah, there we go. It looks perfect, doesn't it?
+
+[D2PANd9Hu3U] Zotek/Zoyi Test Equipment MAILBAG BONANZA UNBOXING! — Dave Jones (explains)
+context before: So, oops. Um yeah. Okay, thanks for telling me. This is great. So, anyway, uh yeah. All right, let's go back over here and we can adjust our time. Yeah, our time base is as fast as it went.
+TEXT: Yeah, of course it's going to alias. Totally expected. No dramas. Whoa. There we go. And we'll put that back. We'll auto range that. Yep. And it's 0.9 volts. Uh peakto peak.
+context after: It's supposed to be 1vt, but you know, eh, it's good enough. Let's lower the uh frequency on that, shall we? No. 1 MHz is8 volts now. There you go.
+
+[396] EEVblog #396 - Bode Plotting on Your Osciloscope — Dave Jones (explains)
+context before: And of course the good thing with this is that you can use it over a fairly wide frequency range. Depends on what your sweep generator is capable of and um the bandwidth of your oscilloscope.
+TEXT: But if you know, don't go near the you know, the upper frequency of it. Don't go near the uh maximum sample rate of your oscilloscope cuz you're going to start aliasing.
+context after: So, you don't want that to happen, but there you go. I think this is a neat little um it's not really a hack. It's just a neat little um alternate use for your oscilloscope.
+
+[p-eLu1z7-cs] Rigol HDO1000 Serial Boot Capture for Hack + R&S MXO4 play — Dave Jones (explains)
+context before: So, we can't do our predefined. Actually, can it go higher? User? Can Can it go higher than that? Never tried it. 1.5 meg. Oh, yeah, it can. Look at that.
+TEXT: Okay, let's try it. Ha, I can capture that, but it's being smart down there and it's tell me telling me that it's aliasing. So, oops. I don't know why it told me that.
+context after: Anyway, it's working just fine. And just a zoom into a random party here MR24 = 0x8c l something like that. So, don't know what any of that means, but it's captured it anyway.
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (explains)
+context before: And it retains its shape even when we click the relay between 200 and 500. So, that's all right. Square wave signal fidelity at 1 kHz is all right. And it's giving us our measurement 1 kHz, 3 V peak to peak, V max.
+TEXT: That's actually from That'll be from the ground. So, that is useful and that is quick. We can't cause that to alias. Nope. Wow. So far, this looks very useful.
+context after: Wow, it looks like it's implemented reasonably well, especially for the price. Now, it does seem to have an overload issue here. So, 200, we're switched down to the lower range.
+
+[858] EEVblog #858 - Red Pitaya — Dave Jones (explains)
+context before: It actually froze. So, we can change our time base, too, 2 ms per division. There we go. What are we picking up there? That's interesting. Because that's our channel one and that is That's fascinating, actually, because I've just connected, as you saw, the output of the sig gen to the input of this, and it's um the sig gen is turned off.
+TEXT: So, yeah. Quite strange. Anyway, we can turn our sig gen on. There it is. Hey. Got some alias in there. Doesn't like that. Um it seems to be more stable now.
+context after: It seems to be doing the business. So, I don't know. Um it's fairly It's fairly responsive. There's a little slight delay when I click that button, but not much.
+
+[D2PANd9Hu3U] Zotek/Zoyi Test Equipment MAILBAG BONANZA UNBOXING! — Dave Jones (explains)
+context before: Where's our signal? No. No. Our signal's gone. What? It's kind of sort of there. No. There you go. Oh, no. Because we were Oh, right. We were down at the slow time base.
+TEXT: Look at this. Look at this. It's just like this is a 100 kHz signal. No, no, that's no good at all. Look at that. Oh my goodness. Alissian at 100 kilohertz.
+context after: Uh yeah. Yeah. No, every man. These dogs getting into these smart soldering irons. Jeez, there must be a lot of market for them. Oneyear warranty. Again, no model number.
+
+[199] Tektronix Mixed Domain Oscilloscope MDO4000 Review - EEVblog #199 — Dave Jones (explains)
+context before: So, yeah, this thing's got so much dead time. I think I'll go out the back and bury it. Check out this weird anomaly. I'm I'm going to press the trigger level over here to actually press in the knob to set it to 50% and watch the display.
+TEXT: Look at that. See, what? What is that? Unbelievable. And let's do a test to see if we get any aliasing. Let's turn That's a 20 MHz sine wave, by the way.
+context after: Let's turn it down and yep, we do. Check it out. Alias city. But of course, you won't get that if you choose a longer memory depth like 1 meg.
+
+[1492] EEVblog 1492 - $5 Oscilloscope Repaired! + Oz GIVEAWAY — Dave Jones (explains)
+context before: What if you want to go to 20 like it's not this touchscreen rubbish. So, we enter and then we have to um somebody said, "Can you plug a mouse into it?" I doubt it.
+TEXT: Nope, absolutely not. Um I'm not surprised at all. So, I put in 20 MHz. We've obviously got some alias in there, but there you go. 20 MHz, no worries.
+context after: So, and 20 MHz on channel one as well. Not bad for a five buck scope, huh? Woah, look at that. RMS 900 mV. Well, one thing I'm looking for here is to how to set the 50 ohm whether or not you get a 50 ohm load.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (explains)
+context before: Yeah, go to 101 MHz and we at least get our sine wave and then it will eventually taper off. No. This thing just It's It's just ridiculous. It's It's almost a joke.
+TEXT: And if you want to look at the aliasing, we're at 101 MHz here. The fastest 10 ns per division, can't go any faster than that. We go down, it's okay.
+context after: We go there, Kamigatsa, and then of course it's the wrong frequency cuz there's our aliasing. So, yeah. And I'm at 43 MHz. Uh, even though it's showing only four Oh, it shows 43 occasionally there.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (explains)
+context before: I've got no problems with that at all. That's nice. Just look at the sharpness in there. And here's what I was telling you about with the auto memory depth.
+TEXT: Go into the acquire menu here and when you've got memory depth set to auto, you'll notice that we can't alias on this at all on this signal at all.
+context after: The auto memory depth mode just chooses the right amount of memory. It doesn't let you Well, granted, it does have an or an anti-alias mode, which the Siglent doesn't, but see, even with the anti-alias off, the auto memory depth just handles that, no problems at all.
+
+[1566] EEVblog 1566 - Rigol DHO800 12 Bit Oscilloscope FULL REVIEW — Dave Jones (explains)
+context before: So, it's pretty neat. And we can get rid of that, and we can go full screen FFT if we want. And if we get rid of the FFT, it'll automatically take us back to our waveform.
+TEXT: It's a nice user interface. I really like it. And I can actually get the scope to alias, by the way, if you go down, doesn't have any alias in.
+context after: If you go small enough time base, slow enough, way, there we go. No worries, but yeah, you expect that. But in general, like everything is like fairly responsive, you know, I can I can play around with this, no problems whatsoever.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (opinion)
+context before: So, this is this is 2 milliseconds total for the entire screen, okay? And the sine wave looks absolutely perfect, right? But you go out to this is now 2 milliseconds like that, and you see look, see?
+TEXT: So, it's all it's all coming out. Right? It's all funny business, but yes, it ultimately will it's still I would still call this aliasing. But how it implements itself on the screen in the hardware, you know, in the the once again, the the the the stopped display algorithm might be different to the real-time display algorithm as well.
+context after: So, you know, and that looks to be sort of the case here because we run that, right? Look, right? And then if we stop it in there because we're stopped at a different sample, right?
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (opinion)
+context before: So, 8.1 So, 8.1 doesn't do it. Oh, sorry, 8.1 aliases, okay? But, 8. Wait, let let's go 1 1. Okay? 8.11, way, there we go. There we go. That's interesting.
+TEXT: So, 8.105 MHz and you guessed it. Changes the ripple frequency. That's not the correct term, but you know, stick with me, right? And yeah, but 8. 8.1 and anything oddball like 8.123 will actually like smooth that out so to speak MHz.
+context after: 8.1 to any See, it doesn't do it anymore. Interesting, huh? So, if we actually stop that and stop is different, by the way. Look, it actually displays what is displayed on the screen is actually quite significantly different.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (opinion)
+context before: 
+TEXT: Hi, in a quick video on the second channel which I'll link in if you haven't seen it. I just was playing around with different brands of oscilloscopes and showing to see it well to see if they alias with a 10 MHz signal.
+context after: And Jason Long, I think it was in the comments, thank you, actually commented, is that actually aliasing or is it just a like a sample beat frequency because it's 10 MHz and the internal oscillator is 10 MHz or the and the sample rate will be in this particular case it's 2 gig samples per second.
+
+[797] EEVblog #797 - Siglent SDS1000X Oscilloscope Review — Dave Jones (opinion)
+context before: Just for kicks. Most don't. Oh, well, it's triggered, but yeah, it's gone uh It's gone in, but there we go. There's our signal. It will take some triggering. Most scopes are really picky with this.
+TEXT: That's actually not too bad at all. Go out. Oops. Eh, got some alias in there. But, that will be because we are not on Um well, see this is actually another um I guess annoying actually it yeah, it is a bit of a fail.
+context after: It doesn't have auto memory depth. You've got to manually select it and you'll see that uh we can here we go, right? If we go right out like that, you can see that we're now getting that with 14 meg points no problems and of course with only 14k points, it's just going to alias it can't do it.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (opinion)
+context before: Anyway, I'm not going to I'm not going to wrap my head around the numbers and try and sit down with pen and paper and figure it all out, but uh yeah, there you go.
+TEXT: It's interesting, huh? So, it does actually make a difference, and you can set it, you know, 9.12345 MHz like that, and it's not going to apparently, on the display anyway, it's not going to alias.
+context after: So, we can go like right down like that. Let's go to 1 second per division. Okay? So, this is 9.123 MHz, and we'll stop that, and we'll go in, and we can still see a sine wave, but it thinks it's 2.5 kHz, right?
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (opinion)
+context before: Well, see what is this offset thing? What is that? Like I all I'm doing is changing the horizontal. Right? It's all I'm doing. Oh, no. No, there There we go.
+TEXT: Well, we were seriously in a way. We were seriously aliasing before. There we go. I should have twigged by the time base setting there, but But look, it it's just jumping down.
+context after: I'm not doing anything. I'm just pressing left and right arrows, which changes the horizontal. 1 2 4 8 sequence. It doesn't even have your 1 2 your your your traditional 1 2 5 sequence.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (opinion)
+context before: Wow. And I'm in fast mode. Don't move. I seem to be in a sweet spot, am I? Here we go. Here we go. Uh, it's it Why is it Whoa, did you see that?
+TEXT: That waveform shifted. Wow, this is just This is terrible, Muriel. Okay, it seems to be reacting now. Why it wasn't doing it and then yeah, it's some aliasing thing.
+context after: Okay, now it seems to be operating okay. Either side of the center line there seems to do it. So, if you accidentally touch it, you're going to change your time base.
+
+[793] EEVblog #793 - Rohde & Schwarz HMO1002 Oscilloscope Hands-On — Dave Jones (opinion)
+context before: And I'm doing my standard intensity display here. Here we go. Once it Unfortunately, the buttons are not push the volts per division is pushable. So, you can get the fine mode, but unfortunately, um it's not there's no vertical position push, which is a shame.
+TEXT: They've gone to the effort to do that for the uh Hang on. Let's see if we can see if I can get this. Hang on. Oh, what the other thing it was it does alias, too.
+context after: So, uh you've got to And once again, there's no pushing on the horizontal there, but hang on. Hang on. Now, here we go. There's a reason why I was having trouble getting my standard uh test signal up here for the variable intensity display.
+
+[1317] EEVblog #1317 - $140 2CH 100MHz Fnirsi Tablet Oscilloscope Review — Dave Jones (opinion)
+context before: It's It's more than adequate for most uh tasks. And I still haven't figured out how to use the horizontal time base. Why Why Why am I flatlining? Has my signal suddenly vanished?
+TEXT: I'm I'm a continuous 1 kHz signal. Move fast. Move slow. It's What What's this ripple on the top? What is all this garbage? Like this is some sort of aliasing.
+context after: So, eight here, the time base increases a key area. That is the waveform push horizontally the strict area to the left of the center line is the key area.
+
+[2] EEVblog2 #858 - Red Pitaya Extended Cut — Dave Jones (opinion)
+context before: So, we can change our time base, too. 2 milliseconds per division. There we go. What are we picking up there? That's interesting because that's our channel one. And that is that's fascinating actually because I've just connected, as you saw, the output of the SIG gen to the input of this and it's um the SIG gen is turned off.
+TEXT: So yeah, quite strange. Anyway, we can turn our sig gen on. There it is. Hey, got some alias in there. Doesn't like that. Um, it seems to be more stable now.
+context after: It seems to be doing the business. So, I don't know. Um, it's fairly it's fairly responsive. There's a slight delay when I click that button, but not much. It's It's pretty good.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (opinion)
+context before: Sure enough, we are actually feeding in an exact 10 MHz signal. Well, let's actually change that, shall we? Let's actually change that over to let's go 9 MHz. Okay?
+TEXT: So 9 MHz, whoop, it changed there. We now got 9 MHz and it's still aliasing there. So let me go down 8 meg. Oh, kilohertz. No, 8 MHz. 8 MHz, still there.
+context after: 7-MHz, oh, still there. 6-MHz, and you're getting the idea, right? But, I expected it to actually change if we do it to not possibly not do this if we select an oddball frequency.
+
+[793] EEVblog #793 - Rohde & Schwarz HMO1002 Oscilloscope Hands-On — Dave Jones (opinion)
+context before: Once again, it's not uh oh, let me put it back in the middle there. Sorry, I'm mixing that up with the Once again, it it's tr- has a bit of trouble triggering on this as most scopes uh do.
+TEXT: By the way, one uh bad thing about this, it does seem to alias or it did before. It was Now, it's not. It's making a fool out of me.
+context after: Uh in automatic mode Now, I'll tell you what. This is interesting. You go into the acquire mode here, okay? You go into record mode down here and you can actually select max update rate like this and bingo, right?
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (mention)
+context before: It's just ridiculous. We can go up to 500 kilohertz, I believe. Yep, max. So 500 kilohertz, let's auto range that, and see what we get. Come on. You can do it. There you go. Something wrong with the scales there. Trust me, both are times one.
+TEXT: And all the moving and other controls works exactly the same as it did last time. And once again, it's pretty noisy on there. Just ignore the fact that this has a function generator. It's useless. Anyway, we'll go down in time base there, and probably can't get that to alias at this
+context after: particular sig gen. Oh, yeah. There we go. Well, it doesn't. It doesn't like that at all. And it's got more than enough memory. Kind of like it was a 50k or something. More than enough memory for the purposes of such an instrument like this.
+
+[1260] EEVblog #1260 - $70 100MHz Oscilloscope? — Dave Jones (mention)
+context before: We can move it around. That's hopeless. Anything else we've got on here by the looks of it? Brightness. And that's it. So, yeah, this thing is really rudimentary and I'm, I'm, ah, disappointed that you can't, 128k memory would have been useful, but it looks like it's only got the,
+TEXT: the display memory. You know, the, the 320, uh, samples across and that's it. I can't find a way to zoom in on that. That is very, very disappointing. Oh, yeah. Well, there's our alias in. I'm feeding in a hundred megahertz, uh, four volt peak to peak sine wave.
+context after: There's some offset there as well. Um, so of course, if we go to zoom in on that, it should come good. There we go. But no, there's certainly, certainly some offset there. That's not coming from my generator. And if we do this, look at this, we have some average sampling.
+
+[474] EEVblog #474 - GW Instek GDS-2000A Series Oscilloscope Unboxing & First Impression — Dave Jones (mention)
+context before: Is it? Yes, it is. There we go. So, why is there no function gen one? I don't get it. Anyway, that's that's weird. That's There's a little little bit of a lag there the first time you spin that knob.
+TEXT: Little bit of a lag, but otherwise, um we're going to get any aliasing on that? No, we have to turn that up in frequency, obviously. So, let's go up to Uh How do we adjust the frequent Look.
+context after: Select. Ah, okay. We're selecting that digit down there, and it's not even incrementing that digit. What the I mean, I've got to zoom in on that for you to see it.
+
+[j49T1E4UEv4] Oscilloscope Alias Followup — Dave Jones (mention)
+context before: It's going to go, "Hey, it's going to be different again." There you go. Look at that. Look at that. Wow. Look at that. One time base difference between those.
+TEXT: Funny business, right? And every scope's going to do this differently. Um so, yeah, but there's clearly no anti-aliasing filter in the scope, and I think most scopes don't have one, I think.
+context after: Uh jeez, I don't know. Is there a comprehensive list anywhere of But I think the Keysight is supposed to have it at least the Keysight on the 10 MHz signal, which is kind of like, you know, worst case, um then it it doesn't do it.
+
+[1709] EEVblog 1709 - Haasoscope Pro USB Oscilloscope: An Oscilloscope Oddity — Dave Jones (mention)
+context before: So, but I suspect shorting it out, I get my little 50 shorter plug, but I suspect that won't do anything. No, because it it it shouldn't have shouldn't have done anything.
+TEXT: What's going on? Uh, do I have to calibrate it? No, that's just over sampling alignment. Didn't pop up with anything. It's just 800 meg any alias. Nice. Okay, so that changed it a bit.
+context after: So, the problem is we don't have our traditional um oscilloscope controls here. Like where's the time base? Okay, we got time nanconds here. Is that like that's not like nanconds per division?
+
+[lXvXBdTP7Tg] Haasoscope Pro - An Oscilloscope Space Oddity — Dave Jones (mention)
+context before: No, because it it it shouldn't have shouldn't have done anything. What's going on? Uh, do I have to calibrate it? No, that's just oversampling alignment. Didn't pop up with anything.
+TEXT: It's just 800 meg any alias. Nice. Okay, so that changed it a bit. So, the problem is we don't have our traditional um oscilloscope uh controls here. Like where's the time base?
+context after: Okay, we got time nanconds here, but like is that like that's not like nanconds per division. It's interesting that it has a frame counter. It's doing 300 like 90.
+
+[1146] EEVblog #1146 - New Rigol MSO5000 Oscilloscope — Dave Jones (mention)
+context before: Nice. And yes, we can do uh modulation on the generator as well. So, different types of AM, FM, FSK. That's all right. So, what does our intensity grading look like?
+TEXT: Well, we've got our standard uh 1 MHz sine wave test signal with 1 kHz 100% uh modulation. It triggers on it very, very nicely. So, let's see if we can alias on that.
+context after: Of course, we've got 20 meg points, which is a lot of memory. So, I don't think we're going to have an issue there. Oh, yeah, there we go. We're starting to do it now.
+
+[792] EEVBlog #792 - Lecroy Wavejet Touch 354 Oscilloscope Review — Dave Jones (mention)
+context before: Got him. Got him. Fantastic. So, it's always there that replay mode. Yeah, that's very nice. That gets a big thumbs up. I like that. But you can see how we've dropped back to 426 there.
+TEXT: um because of our time base is uh different. So if we take that out right out there 222, we take our time base out even Oh, we got some alias in there.
+context after: And stop 161. There we go. We're just getting less and less and less and but that's what you expect. Let's take this one for example. Look at this replay back.

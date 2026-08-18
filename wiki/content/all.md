@@ -2,7 +2,7 @@
 title: All articles
 ---
 
-200 articles, generated from 2,886 transcribed videos.
+400 articles, generated from 2,886 transcribed videos.
 
 | Article | Videos | Explained in | Sources |
 |---|---:|---:|---:|
@@ -205,4 +205,204 @@ title: All articles
 | [[vacuum-fluorescent-display\|vacuum fluorescent display]] | 48 | 47 | 27 |
 | [[asic\|asic]] | 95 | 46 | 65 |
 | [[current\|current]] | 47 | 46 | 37 |
+| [[design-rule-checking\|design rule checking]] | 29 | 46 | 28 |
+| [[electrical-current\|electrical current]] | 34 | 46 | 27 |
 | [[potentiometer\|potentiometer]] | 97 | 46 | 49 |
+| [[resistor-tolerance\|resistor tolerance]] | 30 | 46 | 28 |
+| [[watt-hour\|watt hour]] | 26 | 46 | 25 |
+| [[arduino\|arduino]] | 128 | 45 | 45 |
+| [[brymen-bm787bt\|brymen bm787bt]] | 4 | 45 | 3 |
+| [[current-source\|current source]] | 40 | 45 | 37 |
+| [[electrical-resistance\|electrical resistance]] | 29 | 45 | 28 |
+| [[ram\|ram]] | 129 | 45 | 78 |
+| [[soldering-tip\|soldering tip]] | 43 | 45 | 34 |
+| [[differential-amplifier\|differential amplifier]] | 51 | 44 | 38 |
+| [[lithium-ion-battery\|lithium ion battery]] | 92 | 44 | 52 |
+| [[open-source-hardware\|open source hardware]] | 116 | 44 | 51 |
+| [[oscilloscope-memory-depth\|oscilloscope memory depth]] | 34 | 44 | 34 |
+| [[solar-irradiance\|solar irradiance]] | 16 | 44 | 15 |
+| [[square-wave\|square wave]] | 77 | 44 | 52 |
+| [[usb-power-delivery\|usb power delivery]] | 24 | 44 | 16 |
+| [[alkaline-battery\|alkaline battery]] | 65 | 43 | 46 |
+| [[battery-pack\|battery pack]] | 95 | 43 | 56 |
+| [[decibel\|decibel]] | 33 | 43 | 27 |
+| [[electromagnetic-interference\|electromagnetic interference]] | 63 | 43 | 55 |
+| [[phase-locked-loop\|phase locked loop]] | 50 | 43 | 41 |
+| [[wi-fi\|wi fi]] | 142 | 43 | 56 |
+| [[youtube\|youtube]] | 152 | 43 | 70 |
+| [[battery-leakage\|battery leakage]] | 35 | 42 | 33 |
+| [[bga\|bga]] | 129 | 42 | 70 |
+| [[electrical-contact\|electrical contact]] | 47 | 42 | 36 |
+| [[lcd-driver\|lcd driver]] | 77 | 42 | 52 |
+| [[conformal-coating\|conformal coating]] | 45 | 41 | 36 |
+| [[flash-memory\|flash memory]] | 116 | 41 | 66 |
+| [[flux\|flux]] | 47 | 41 | 33 |
+| [[nixie-tube\|nixie tube]] | 29 | 41 | 20 |
+| [[oscillation\|oscillation]] | 37 | 41 | 35 |
+| [[output-voltage\|output voltage]] | 42 | 41 | 42 |
+| [[solenoid\|solenoid]] | 35 | 41 | 31 |
+| [[trigger-holdoff\|trigger holdoff]] | 12 | 41 | 12 |
+| [[troubleshooting\|troubleshooting]] | 58 | 41 | 39 |
+| [[accelerometer\|accelerometer]] | 47 | 40 | 46 |
+| [[ceramic-capacitor\|ceramic capacitor]] | 84 | 40 | 49 |
+| [[current-clamp\|current clamp]] | 31 | 40 | 21 |
+| [[frequency-measurement\|frequency measurement]] | 55 | 40 | 49 |
+| [[galvanic-isolation\|galvanic isolation]] | 31 | 40 | 28 |
+| [[hand-soldering\|hand soldering]] | 111 | 40 | 59 |
+| [[isopropyl-alcohol\|isopropyl alcohol]] | 68 | 40 | 45 |
+| [[temperature-measurement\|temperature measurement]] | 53 | 40 | 36 |
+| [[trigger-level\|trigger level]] | 34 | 40 | 32 |
+| [[voltage-rail\|voltage rail]] | 41 | 40 | 39 |
+| [[aliasing\|aliasing]] | 36 | 39 | 33 |
+| [[backlight\|backlight]] | 80 | 39 | 54 |
+| [[diode-test\|diode test]] | 56 | 39 | 42 |
+| [[dynamic-range\|dynamic range]] | 39 | 39 | 36 |
+| [[electromagnetic-shielding\|electromagnetic shielding]] | 56 | 39 | 49 |
+| [[ground\|ground]] | 77 | 39 | 45 |
+| [[multilayer-ceramic-capacitor\|multilayer ceramic capacitor]] | 25 | 39 | 20 |
+| [[pin-pitch\|pin pitch]] | 31 | 39 | 30 |
+| [[probe-bandwidth\|probe bandwidth]] | 24 | 39 | 23 |
+| [[rise-time\|rise time]] | 36 | 39 | 33 |
+| [[solar-array\|solar array]] | 28 | 39 | 24 |
+| [[555-timer\|555 timer]] | 56 | 38 | 36 |
+| [[aa-battery\|aa battery]] | 101 | 38 | 60 |
+| [[bipolar-transistor\|bipolar transistor]] | 52 | 38 | 44 |
+| [[capacitive-coupling\|capacitive coupling]] | 34 | 38 | 32 |
+| [[clock-signal\|clock signal]] | 51 | 38 | 42 |
+| [[duty-cycle\|duty cycle]] | 38 | 38 | 33 |
+| [[overshoot\|overshoot]] | 47 | 38 | 44 |
+| [[pcb-footprint\|pcb footprint]] | 31 | 38 | 30 |
+| [[phase-angle\|phase angle]] | 16 | 38 | 16 |
+| [[solar-power-generation\|solar power generation]] | 26 | 38 | 25 |
+| [[volts-per-division\|volts per division]] | 36 | 38 | 31 |
+| [[working-distance\|working distance]] | 19 | 38 | 18 |
+| [[bandwidth-limit\|bandwidth limit]] | 41 | 37 | 33 |
+| [[input-bias-current\|input bias current]] | 15 | 37 | 15 |
+| [[kirchhoff-current-law\|kirchhoff current law]] | 12 | 37 | 11 |
+| [[light-pipe\|light pipe]] | 44 | 37 | 24 |
+| [[output-capacitance\|output capacitance]] | 34 | 37 | 31 |
+| [[output-capacitor\|output capacitor]] | 43 | 37 | 38 |
+| [[output-current\|output current]] | 27 | 37 | 26 |
+| [[parallel-circuit\|parallel circuit]] | 33 | 37 | 31 |
+| [[precision-resistor\|precision resistor]] | 60 | 37 | 51 |
+| [[shift-register\|shift register]] | 23 | 37 | 21 |
+| [[solar-panel-efficiency\|solar panel efficiency]] | 20 | 37 | 19 |
+| [[transmission-line\|transmission line]] | 33 | 37 | 33 |
+| [[bm235\|bm235]] | 43 | 36 | 30 |
+| [[current-sense-resistor\|current sense resistor]] | 45 | 36 | 33 |
+| [[desoldering\|desoldering]] | 65 | 36 | 43 |
+| [[electric-field\|electric field]] | 20 | 36 | 20 |
+| [[ptc-thermistor\|ptc thermistor]] | 45 | 36 | 32 |
+| [[sd-card\|sd card]] | 99 | 36 | 50 |
+| [[solder-mask-expansion\|solder mask expansion]] | 18 | 36 | 17 |
+| [[3-3v-rail\|3 3v rail]] | 37 | 35 | 35 |
+| [[agilent-u1272a\|agilent u1272a]] | 14 | 35 | 14 |
+| [[analog-bandwidth\|analog bandwidth]] | 33 | 35 | 31 |
+| [[dropper-resistor\|dropper resistor]] | 44 | 35 | 39 |
+| [[low-dropout-regulator\|low dropout regulator]] | 52 | 35 | 38 |
+| [[n-channel-mosfet\|n channel mosfet]] | 40 | 35 | 35 |
+| [[noise\|noise]] | 45 | 35 | 42 |
+| [[power-factor-correction\|power factor correction]] | 28 | 35 | 21 |
+| [[processor\|processor]] | 149 | 35 | 64 |
+| [[thermal-capacity\|thermal capacity]] | 21 | 35 | 20 |
+| [[input-capacitance\|input capacitance]] | 30 | 34 | 29 |
+| [[multilayer-pcb\|multilayer pcb]] | 65 | 34 | 52 |
+| [[pcb-manufacturing\|pcb manufacturing]] | 57 | 34 | 37 |
+| [[rotary-encoder\|rotary encoder]] | 58 | 34 | 48 |
+| [[temperature-control\|temperature control]] | 32 | 34 | 30 |
+| [[thermal-pad\|thermal pad]] | 68 | 34 | 47 |
+| [[kickstarter\|kickstarter]] | 113 | 33 | 36 |
+| [[leakage-current\|leakage current]] | 27 | 33 | 27 |
+| [[linear-power-supply\|linear power supply]] | 54 | 33 | 41 |
+| [[output-ripple\|output ripple]] | 15 | 33 | 15 |
+| [[overvoltage-protection\|overvoltage protection]] | 42 | 33 | 34 |
+| [[rc-time-constant\|rc time constant]] | 15 | 33 | 14 |
+| [[real-time-clock\|real time clock]] | 93 | 33 | 60 |
+| [[surface-mount-technology\|surface mount technology]] | 168 | 33 | 79 |
+| [[thermal-camera\|thermal camera]] | 63 | 33 | 37 |
+| [[arbitrary-waveform-generator\|arbitrary waveform generator]] | 71 | 32 | 35 |
+| [[battery-discharge-curve\|battery discharge curve]] | 17 | 32 | 17 |
+| [[electrical-rules-checking\|electrical rules checking]] | 12 | 32 | 10 |
+| [[high-resolution-mode\|high resolution mode]] | 31 | 32 | 26 |
+| [[oscillator\|oscillator]] | 96 | 32 | 60 |
+| [[overcurrent-protection\|overcurrent protection]] | 37 | 32 | 28 |
+| [[probe-compensation\|probe compensation]] | 30 | 32 | 27 |
+| [[rc-filter\|rc filter]] | 18 | 32 | 17 |
+| [[regenerative-braking\|regenerative braking]] | 11 | 32 | 11 |
+| [[rom\|rom]] | 84 | 32 | 42 |
+| [[shielding\|shielding]] | 97 | 32 | 47 |
+| [[solar-analytics\|solar analytics]] | 30 | 32 | 27 |
+| [[solder-paste\|solder paste]] | 46 | 32 | 32 |
+| [[tantalum-capacitor\|tantalum capacitor]] | 75 | 32 | 38 |
+| [[true-rms\|true rms]] | 57 | 32 | 29 |
+| [[3d-printing\|3d printing]] | 88 | 31 | 52 |
+| [[adhesive\|adhesive]] | 40 | 31 | 35 |
+| [[analog-multimeter\|analog multimeter]] | 28 | 31 | 19 |
+| [[autofocus\|autofocus]] | 28 | 31 | 25 |
+| [[capacitor-discharge\|capacitor discharge]] | 24 | 31 | 21 |
+| [[crt\|crt]] | 64 | 31 | 42 |
+| [[four-layer-pcb\|four layer pcb]] | 47 | 31 | 44 |
+| [[led-current\|led current]] | 18 | 31 | 18 |
+| [[oscilloscope-memory\|oscilloscope memory]] | 39 | 31 | 36 |
+| [[parallel-resistor\|parallel resistor]] | 19 | 31 | 19 |
+| [[ringing\|ringing]] | 32 | 31 | 30 |
+| [[solder\|solder]] | 54 | 31 | 40 |
+| [[via-stitching\|via stitching]] | 39 | 31 | 29 |
+| [[virtual-ground\|virtual ground]] | 10 | 31 | 10 |
+| [[apparent-power\|apparent power]] | 12 | 30 | 11 |
+| [[capacitive-reactance\|capacitive reactance]] | 18 | 30 | 17 |
+| [[decoupling-capacitor\|decoupling capacitor]] | 42 | 30 | 27 |
+| [[energy-consumption\|energy consumption]] | 24 | 30 | 23 |
+| [[feedback-resistor\|feedback resistor]] | 22 | 30 | 22 |
+| [[led-strip\|led strip]] | 27 | 30 | 19 |
+| [[multiplexing\|multiplexing]] | 32 | 30 | 32 |
+| [[open-circuit-voltage\|open circuit voltage]] | 20 | 30 | 18 |
+| [[operational-amplifier\|operational amplifier]] | 54 | 30 | 44 |
+| [[parallel-connection\|parallel connection]] | 30 | 30 | 30 |
+| [[pcb-design\|pcb design]] | 74 | 30 | 42 |
+| [[peak-to-peak-voltage\|peak to peak voltage]] | 34 | 30 | 27 |
+| [[rds-on\|rds on]] | 10 | 30 | 10 |
+| [[reference-waveform\|reference waveform]] | 19 | 30 | 16 |
+| [[resolution-bandwidth\|resolution bandwidth]] | 16 | 30 | 15 |
+| [[signal-generator\|signal generator]] | 86 | 30 | 59 |
+| [[startup-funding\|startup funding]] | 7 | 30 | 7 |
+| [[switching-noise\|switching noise]] | 24 | 30 | 24 |
+| [[touchscreen\|touchscreen]] | 102 | 30 | 53 |
+| [[121gw\|121gw]] | 43 | 29 | 35 |
+| [[battery-backup\|battery backup]] | 68 | 29 | 44 |
+| [[battery-cutoff-voltage\|battery cutoff voltage]] | 9 | 29 | 9 |
+| [[bleeder-resistor\|bleeder resistor]] | 29 | 29 | 25 |
+| [[connector\|connector]] | 119 | 29 | 52 |
+| [[cutoff-voltage\|cutoff voltage]] | 15 | 29 | 14 |
+| [[digital-oscilloscope\|digital oscilloscope]] | 40 | 29 | 32 |
+| [[energy-storage\|energy storage]] | 27 | 29 | 26 |
+| [[esd-mat\|esd mat]] | 23 | 29 | 23 |
+| [[heat-pump-hot-water-system\|heat pump hot water system]] | 16 | 29 | 12 |
+| [[junction-temperature\|junction temperature]] | 13 | 29 | 12 |
+| [[lcd-segment\|lcd segment]] | 16 | 29 | 16 |
+| [[open-collector-output\|open collector output]] | 20 | 29 | 20 |
+| [[production-testing\|production testing]] | 44 | 29 | 42 |
+| [[propagation-delay\|propagation delay]] | 17 | 29 | 17 |
+| [[slew-rate\|slew rate]] | 27 | 29 | 26 |
+| [[solar-power\|solar power]] | 47 | 29 | 40 |
+| [[supercapacitor\|supercapacitor]] | 46 | 29 | 34 |
+| [[threshold-voltage\|threshold voltage]] | 22 | 29 | 22 |
+| [[transformer-tap\|transformer tap]] | 24 | 29 | 24 |
+| [[trimmer-potentiometer\|trimmer potentiometer]] | 105 | 29 | 51 |
+| [[ambient-temperature\|ambient temperature]] | 27 | 28 | 27 |
+| [[amplitude-modulation\|amplitude modulation]] | 33 | 28 | 31 |
+| [[bluetooth\|bluetooth]] | 126 | 28 | 40 |
+| [[differential-pair\|differential pair]] | 41 | 28 | 37 |
+| [[digital-multimeter\|digital multimeter]] | 53 | 28 | 39 |
+| [[ferrite-bead\|ferrite bead]] | 53 | 28 | 36 |
+| [[frequency-sweep\|frequency sweep]] | 25 | 28 | 23 |
+| [[hrc-fuse\|hrc fuse]] | 46 | 28 | 36 |
+| [[input-jack\|input jack]] | 36 | 28 | 30 |
+| [[optocoupler\|optocoupler]] | 76 | 28 | 58 |
+| [[pcb-assembly\|pcb assembly]] | 65 | 28 | 45 |
+| [[rf-shielding\|rf shielding]] | 32 | 28 | 29 |
+| [[ripple\|ripple]] | 25 | 28 | 21 |
+| [[rs-232\|rs 232]] | 129 | 28 | 74 |
+| [[signal-averaging\|signal averaging]] | 27 | 28 | 27 |
+| [[solder-bridge\|solder bridge]] | 26 | 28 | 26 |
+| [[solder-wick\|solder wick]] | 36 | 28 | 24 |

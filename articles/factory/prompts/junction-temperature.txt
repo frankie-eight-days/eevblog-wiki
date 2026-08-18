@@ -1,0 +1,183 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: junction temperature
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 30 passages drawn from 13 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# junction temperature`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[773] EEVblog #773 - 80W INDUAL LED Light Teardown — Dave Jones (explains)
+context before: 12 of those strings in parallel like that. And spec-wise, we're talking about a power input 182 watts here. So yeah, well these are absolute maximum ratings. So yeah, you know, this thing is designed for really long-life industrial use, so you really want to, really wouldn't
+TEXT: want to push it that far. So you know, you'd have to look at your degrees C per watt or your thermal performance and all that sort of jazz. Anyway, forward current maximum of 4.8 amps and a maximum junction temperature 115 degrees C. And of course you've got to read the fine print down here, you know, the temperature of the
+context after: aluminum PCB is not to exceed 85 degrees C. So that heat sink that we looked at behind here, you would not want that heat sink to get to, well, and the actual aluminum-backed material, there's only a small loss between those two. But you wouldn't want to get that to greater than 85 degrees C.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: That's 11° C rise. That's quite That's quite a lot, actually. So, as you can see, we can increase the thermal per thermal performance of this system by adding in a proper um a seal pad or some thermal heat sink compound.
+TEXT: Now, the thermal but what we want the ultimate goal of this is what is the junction temperature of our power transistor. That's the important thing, okay? Now, um if we've got 87° C case temperature as we actually measured, and we know we've we know the thermal resistance of the junction to case from the data sheet.
+context after: Remember that value we got from the data sheet? So, that value is uh 10 watts * 3.1° C per watt, which is 31° C. That's the increase in temperature between the case and the junction, 31° plus the um temperature of the uh case is 118° C.
+
+[908] EEVblog #908 - Zener Diodes — Dave Jones (explains)
+context before: Are we within the power dissipation limits of this particular Zener diode? Well, the power in the Zener diode is the voltage of the Zener diode times the current. 5.1 times 50 milliamps, quarter of a watt.
+TEXT: No worries. And you might be thinking, "Dave, that quarter watt is going to that's a fair bit of power in just a little package like that. It's going to increase the junction temperature." Yes, it will and that'll change the dynamic resistance and everything and yeah, it gets more complicated.
+context after: I could go into a lot more detail, but I don't think we have time. Now, unfortunately, it gets a little bit more complicated because well, the real world is a little bit more complicated.
+
+[642] EEVblog #642 - TI Connected Launchpad — Dave Jones (explains)
+context before: And bloody, so many USB connected bloody devices. And I only have one spare port left on my ethernet switch as well. So it's all plugged in. Let's see if the sucker works. Rightio. Come on Bruce, you can do it mate. Here we go, let's click on Bruce.
+TEXT: And we're in! We're in! Online! It's been online time. Okay, it's got an online counter. That's pretty good. Junction temperature of the device. Presumably, it's just got an on-chip transistor, you know, PN junction silicon diode temperature sensor. They're pretty crude, but they do the job.
+context after: Two minutes and eight seconds it's been online. Actually, see if I can heat up that chip. See if it changes. Hang on, I'll put my finger on it. I've got my finger on it, and we've got a graph of the junction temperature there.
+
+[908] EEVblog #908 - Zener Diodes — Dave Jones (explains)
+context before: So this resistor is effectively inside the Zener diode. And this diode impedance or diode resistance is also known as the dynamic resistance because it's dynamic. It does actually change.
+TEXT: It's not a fixed value. And you guessed it, it changes with current and also as with practically every component, temperature as well. And not just your ambient temperature, the actual junction temperature of the Zener itself because Zeners are used as power devices typically.
+context after: So they heat up. They dissipate power. Hmm, trap for young players. And you know how I said diodes don't actually conduct anything in the reverse direction? Well, of course that's not true.
+
+[744] EEVblog #744 - SMD Thermal Heatsink Design - µSupply Part 15 — Dave Jones (explains)
+context before: And if you can take all those out of the equation, then you're going to be operating in a much better, lower temperature environment. You're going to get the heat away from the junction where it's being dissipated.
+TEXT: This is, by the way, that's the temperature of the junction, I forgot in there. Then you're going to extract the heat from the junction as efficiently as possible. But when you're dealing with surface mount devices in a little case like this and uh it all gets a bit harder.
+context after: Once again, better if you've got a fan in there to fan force stuff. But in a little handheld thing, you know, you're not going to do that if you're dissipating, you know, just a couple of watts or 5 watts or something like that.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: We already know that but let's assume that there's no loss between the case and the heat sink, right? Let's assume that it that's just fine. Well, the case, there it is.
+TEXT: 5° C per watt. We're trying to dissipate 5 W in this thing. The junction is going to be 25° C at least above that's above the already measured and quantified uh temperature on that heat sink which even in the case with the proper air flow and everything else is over 100° C.
+context after: You got to be kidding me. Ah, facepalm. Hang on, double facepalm. Well, enough of that fiasco. I may as well um do a little bit of poking around of what I originally did before I bloody discovered this ridiculous issue.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: work from there. And somebody actually asked me last week, it was a question on YouTube. Um somebody asked me, "Well, I didn't take into account the uh junction to case thermal resistance." And I didn't, cuz it was just a ballpark application.
+TEXT: But, in this In this exact example, okay, if you put 10 W into here, which is uh close to what I did last time, and it's 3° C per W, then my heat sink was only at seven uh 70° C, as we measured and calculated, but the junction is going to be 3° C per W above that.
+context after: In this case, 3 * 10 W is 30° C, the junction in there would have been at 100° C. There you go. So, what actual target temperature do you want for your junction?
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: Woohoo! But, that could be significant. And remember, when you're looking at these curves, don't fall into the trap of thinking that your product is only operating at ambient temperature at 25°.
+TEXT: It's not. This is the junction temperature of the actual uh device itself, the die temperature. And because this is a power supply and it's dissipating power, that junction temperature could easily get up to 100°, depending on how you do your thermal design.
+context after: So, if you're designing really precision uh power supplies, you need to take that sort of thing or any power system that dissipates power, you got to take these thermal graphs into consideration.
+
+[744] EEVblog #744 - SMD Thermal Heatsink Design - µSupply Part 15 — Dave Jones (explains)
+context before: the amount of power you dissipate in your transistor, you can actually calculate the temperature rise of the case. You can calculate what temperature that case will get to by just you know, simple Ohm's law stuff, the power multiplied by the thermal resistance of the case, and you can get the case temperature.
+TEXT: And likewise, you can then the as you can see, the temperature builds up at each stage until you get to a specific higher temperature at the junction. And a semiconductor might be rated for maybe you know, say 120° C absolute maximum junction temperature.
+context after: Well, you got to ensure that you don't exceed those sort of specs. But of course, you wouldn't want your transistor to get up to 120°. So, you you know, you calculate, you do all this, you design the size of your case, you design the size of your spreader bar, the number of vias, and all sorts of things.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: And the offset voltage, once again, doesn't really matter for our application because it um this is versus load current. So, the output offset voltage in millivolts is actually going to uh drop based on the output load current.
+TEXT: So, if the output load current's 1 amp here at ambient uh temperature or C, it tells you here TG junction, the temperature of the junction, not just the ambient uh temperature, because ambient temperature makes no difference to it at all.
+context after: All it cares about is temperature. Anyway, you're almost going to be uh 0.5 millivolts offset there. And if your junction's up to 125, 0.75 millivolts uh offset. And if you're designing precision applications, that could matter.
+
+[1461] EEVblog 1461 - The MOSFET Search CHALLENGE — Dave Jones (explains)
+context before: Who cares because I zapped it with these like it it doesn't matter. Right? So that's why I thought the absence the absence of that really didn't matter a rats.
+TEXT: So, the absolute maximum specifications, yeah, the voltage and the current were well within that. Junction temperatures doesn't matter. It's not being used in a blast furnace or something. Maximum power dissipations were well under that.
+context after: The thermal values as well, we're not dissipating these when in operation I could feel that the chips weren't even getting warm at all. So, yeah, it made like They weren't dissipating any power.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: Now, the thermal but what we want the ultimate goal of this is what is the junction temperature of our power transistor. That's the important thing, okay? Now, um if we've got 87° C case temperature as we actually measured, and we know we've we know the thermal resistance of the junction to case from the data sheet.
+TEXT: Remember that value we got from the data sheet? So, that value is uh 10 watts * 3.1° C per watt, which is 31° C. That's the increase in temperature between the case and the junction, 31° plus the um temperature of the uh case is 118° C.
+context after: That's roughly what the junction of that power transistor is going to measure. We can't actually um physically probe that. It's not it's not that easy to actually do, but you can calculate it.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: You know, it's it's in the ballpark. So um that's that's quite reasonable. Now as you can see the uh temperature of the um case we measured at 47. Exactly the same differential as before because whether or not it's uh forced cooling it doesn't matter because the um the case to heat sink is just going to be that little air gap in there between the uh power transistor and the
+TEXT: heat sink. So as you can see that's 11° difference. That hasn't changed. It's still 1.1 ° C per watt. Same as last time. Now what's our junction temperature? Well, it's uh 47° C um Celsius on the case plus the 3.1 ° C per watt * 10 31°.
+context after: Add them together junction temperature bingo 78° C. As you can see it was much higher than that before. So just by adding some forced cooling we've uh drastically reduced the junction temperature of our power transistor and just for fun I thought I'd see what happens if I enclose this in a box with basically no ventilation.
+
+[50] EEVblog #50 - Solid State Cree LED Lighting, and How Thermal Design Sucks. — Dave Jones (explains)
+context before: condition in a lab, you would have got basically a flat line but we didn't so I thought that was rather interesting. So I decided to do some calculations and see what I could come up with. Now I basically, I modelled the system something like this.
+TEXT: The Tj is the junction temperature actually in the LED itself, okay, and that's an unknown. I, you know, I just wanted to know that out of curiosity. Now Pt is the total power that I'm, that LED is wasting or putting into the heat
+context after: sink. Now we'll talk about that in a minute because that's a rather curious one. Now the data sheet, if you read it, it says that the thermal resistance of the LED to its solder junction is 6 degrees C per watt and also it comes on, the LED comes on a little base.
+
+[642] EEVblog #642 - TI Connected Launchpad — Dave Jones (explains)
+context before: And we're in! We're in! Online! It's been online time. Okay, it's got an online counter. That's pretty good. Junction temperature of the device. Presumably, it's just got an on-chip transistor, you know, PN junction silicon diode temperature sensor. They're pretty crude, but they do the job.
+TEXT: Two minutes and eight seconds it's been online. Actually, see if I can heat up that chip. See if it changes. Hang on, I'll put my finger on it. I've got my finger on it, and we've got a graph of the junction temperature there.
+context after: And... no, no, I've got a bit of noise on that. You know, in fact we've got a lot of noise on that thing. Anyway, that's the junction temperature, and that's all it's displaying at the moment. Next, waiting for device. Hmm. Oh, there you go.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: And if it's black, it gets closer to the ideal one for emissivity. So, that's why they use um that's why they anodize aluminum heat sinks black. Now, go into some real calculations and measurements later, but as you can see, you've got an ambient temperature.
+TEXT: It increases the temperature on the heat sink and then the temperature gets higher again and then the temperature, ultimately, the answer you want, you want a value for how hot your junction temperature's going to be.
+context after: And you just optimize your design the how the heat sink, the um air flow and all that sort of stuff to get a reasonable junction temperature. Now, if you want to get a little bit more tricky and theoretical, then I've drawn some capacitors in here.
+
+[744] EEVblog #744 - SMD Thermal Heatsink Design - µSupply Part 15 — Dave Jones (explains)
+context before: Because ultimately, you want as fewer things in series here as possible. So, if you can go straight from the case straight onto the heat sink here and avoid the vias and the sill pads and the uh and the heat transfer bar.
+TEXT: And if you can take all those out of the equation, then you're going to be operating in a much better, lower temperature environment. You're going to get the heat away from the junction where it's being dissipated.
+context after: This is, by the way, that's the temperature of the junction, I forgot in there. Then you're going to extract the heat from the junction as efficiently as possible. But when you're dealing with surface mount devices in a little case like this and uh it all gets a bit harder.
+
+[260] EEVblog #260 - Tracking Pre-Regulator Simulation in LTspice - PSU Part 13 — Dave Jones (explains)
+context before: It's around about 2 volts offset or 12 volts input voltage. And if we have a look at the data sheet for that device, well, it uh here it is here the gate threshold voltage at 1 milliamp ID is from anywhere from 0.8 to 2 volts.
+TEXT: So, really there is no typical figure and we're actually getting that 2 volts. So, it says go have a look at figure 8 down here and that's the gate source threshold voltage as a function of junction temperature.
+context after: So, really you know, we don't care cuz our junction temperatures pretty much only going to be ambient here, but it's showing a gate threshold voltage of around about 1 volt at 25° which is what the simulation would be running at.
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (explains)
+context before: That equals multiply those, that equals 138 degrees C temperature rise above ambient. If ambient's like 20 degrees, we're looking at 150 more than 158. So, pretty close to what we got there even with the no even with the air flow over this thing, the nominal rated air flow.
+TEXT: Notice we measured 161 degrees C. So, maybe the heat sink we've got slightly better than that cuz we were getting no air flow, but still this is way above the maximum junction temperature of the semiconductors.
+context after: And if we actually have a look at the MOSFET used here, the AD409, then we can see that the maximum junction temperature, absolute maximum, junction and storage can temperature 175 degrees C.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Let's try it. First one we're going to try and measure is 20 mA one down here because that's guaranteed to work. We should get just over 1.5 V there at 25°C And that's actually not the ambient temperature.
+TEXT: That's actually the junction temperature. And if you're doing this seriously, then you'll actually want to get a probe onto the case of the device, but even that is not the true temperature of the junction.
+context after: You will have to use the thermal data from the data sheet which shows the junction to case thermal resistance. You've got to take that into account to calculate the junction.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: And you've got to take it into account. Now, you notice this dot next to it. There's it's actually wider than that over the full temperature range. It tells you up here.
+TEXT: Bingo. Little trap. The other spec there is only for an ambient temperature of 25° C. And remember, this is not the ambient temperature. It's going to be the junction temperature of the device itself.
+context after: So, it's dissipating all that power and your heat sink's gone up to 60°. Well, your your lab might be 25°, but your heat sink and your device is at 60°.
+
+[908] EEVblog #908 - Zener Diodes — Dave Jones (explains)
+context before: What I've done here is dropped the resistor by an order of magnitude down to 100 ohms or so, and if we actually go right up to 15 V here, let's have a look.
+TEXT: Uh, we're now getting 5.4 V, but look, it's actually increasing, increasing, because the junction temperature of our Zener is going up. So, there you go. Whoopsie. It's not regulating too well, is it?
+context after: Hm. And there's a bigger differential. It went from 5.22 V up to 5.47 V as opposed to with the 1K, it went from uh there was only a 100 mV change, basically.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: When it's and it's thermal design, you have to take into account all sorts of things. The airflow over it, whether you or not you mount what type of case you mount it in, how it dissipates to the air, do you have it How much ventilation do you have?
+TEXT: And all sorts of stuff. But the goal is to keep your little power transistor or your component, your microprocessor, or whatever it is at a reliable and safe junction temperature, the actual die.
+context after: And that's the key, the junction temperature. So, let's take a look at it. And if you've seen my blog a long time ago on these um Cree star LEDs, well, you'll know I did a bit of thermal design calculation in that and how it was pretty messy stuff and how that uh the LED is a certain efficiency and it emits a certain amount of um energy or a
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: Remember that value we got from the data sheet? So, that value is uh 10 watts * 3.1° C per watt, which is 31° C. That's the increase in temperature between the case and the junction, 31° plus the um temperature of the uh case is 118° C.
+TEXT: That's roughly what the junction of that power transistor is going to measure. We can't actually um physically probe that. It's not it's not that easy to actually do, but you can calculate it.
+context after: There you go. And you can just um uh you know, tweak the thermal performance of your system either with air flow, as we saw, or with um by adding proper thermal compound in there.
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (explains)
+context before: These linear regs down here, back of the finger. Hang on. It is Ry Gall, so Ah, yay. Yay. Bloody hell, that's too hot to touch. Unbelievable. Have they done it again?
+TEXT: Okay, so that one there is 80°. Come on. This is not a rocket science, Ry Gall. That is too hot for a simple supply. I mean, like the junction temperature has like is well above that.
+context after: That's just that like granted, okay, we don't have the top in the case. So, we got like I can sort of put the case back I can Well, I can put something on the top and that's going to simulate the airflow.
+
+[512] EEVblog #512 - Rigol DP832 Bad Design Investigation — Dave Jones (explains)
+context before: These ones are little piss ant thin tabs on them. Look hopeless. So, that LM317, I mean, you've just got less thermal mass right there. And for the record, that looks to be an ST brand 301 LM317T.
+TEXT: And when I check the data sheet for the ST brand LM317, and just like all the others, you know, maximum junction operating temperature is, you know, around about that 125° C mark.
+context after: And we found we've, you know, proven by measurement and based on the data sheet values, the junction to case and that sort of stuff that they're operating above that.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: But, in this In this exact example, okay, if you put 10 W into here, which is uh close to what I did last time, and it's 3° C per W, then my heat sink was only at seven uh 70° C, as we measured and calculated, but the junction is going to be 3° C per W above that.
+TEXT: In this case, 3 * 10 W is 30° C, the junction in there would have been at 100° C. There you go. So, what actual target temperature do you want for your junction?
+context after: Well, how long is a piece of string? Really. Um you've got to You know, a lot of the time it's just a ballpark uh number. You might say, "Oh, it'd be nice to keep my junction temperature at 80." But, you know that if you go 10° C below that, your liability increases.
+
+[105] EEVblog #105 - Electronics Thermal Heatsink Design Tutorial — Dave Jones (explains)
+context before: Well, if you just mount this power transistor on your board free standing like that with no heat sink attached to it uh whatsoever, then um if you put 1 W into it, one if it's dissipating 1 W of power, then it's going to increase by 62.5 degrees C above ambient.
+TEXT: So, if the ambient's 20, then this is going to reach for 1 W, it's going to reach 82° C. And if you put your finger on there, you'll burn it.
+context after: So, uh that's a very simple That's why they have the junction to ambient, just in case you don't want to use it with a heat sink. But, if you do, if you attach it to a heat sink like this, then you use the junction to case, and that's the figure that we saw in the diagram before, and you plug that into your thermal design calculations, and you
+
+[895] EEVblog #895 - BEC Pro Model Airplane Regulator Testing — Dave Jones (mention)
+context before: Uh namely, we've got our two MOSFETs here. These are D409s. You might think this is the MOSFET, but it's not. Dead giveaway here is not connected. An A for anode, and the other one would be the cathode here.
+TEXT: That's uh the diode. And, of course, the uh inductor here will be dissipating uh power as well. But because that's not an active uh semiconductor with a maximum junction temperature where the magic smoke can escape, that one's much more hardy than the other.
+context after: So, we're really concerned about these devices dissipating power. And because the heatsinks on the other side of the board and they've just got vias underneath these going down to the other side actually transferring the heat from one side to the other, we're going to get losses in there.

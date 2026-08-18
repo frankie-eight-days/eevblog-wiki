@@ -1,0 +1,333 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: overcurrent protection
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 60 passages drawn from 37 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# overcurrent protection`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (explains)
+context before: They're not using the main display processor to actually you know, do any of that. So it's it's got its own local regulation. You need that for speed and you know, consistency and and just separation of your design like cuz you don't want to be doing like this kind of like low level uh stuff for your supply in your main applications processor.
+TEXT: That's not the job for it. It's the job of the local processor here to actually do that. So it's you know, it it's got to do all the you know, overcurrent overvoltage protection stuff which is all happening around here and then it's going to be controlling the regulation of your ESR and all your different modes your constant power mode and your constant current modes and everything else.
+context after: So it's handling all that sort of jazz. So there you go. Um A diagram wise it's it's fairly simplistic, you know? It's All the magic's in the firmware and of course all the precision parts, all these, you know, really expensive parts on here and this is this is why these things cost a pretty penny.
+
+[1170] EEVblog #1170 - TRUE Mystery Teardown! (not even Dave knows) — Dave Jones (explains)
+context before: It's not... He didn't do it himself, but, yeah, it's not hugely comprehensive, but it gives you some detail. There you go, 60 kilohertz PWM, and the high-voltage cap is, of course, charged to 400 volts DC, sustains large voltages, short-term transient output load currents as required for loads.
+TEXT: The high-voltage CPU includes a frequency reference from which the 50-60 hertz output for the PWM is defined, the PID control loop that stabilizes the output voltage, H-bridge over-current protection, supplementing the protection inherent in the analog design of the bridge. In addition to the analog bias voltage removal circuits described above to protect the MOSFETs, oh, we missed that,
+context after: it also monitors the current flowing through the JFETs, since the microprocessor is the source of the switching bias voltage signals. By detecting the overload condition, it can reduce the magnitude of the commanded output to reduce the transient currents present. The output regulation... is performed by the PID algorithm.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: So, yeah, just take that into account of anything that you're using this for. Um in this particular case, because we're cycling there into constant current constant voltage mode, boom, all that current's available to be dumped out.
+TEXT: And because the load was uh thinking, cuz this is an electronic load, takes time to respond and things like that, it just sets the output uh transistors like a really low uh impedance, and that will effectively short the output of the cap, cause all the current to be dumped into this load, and trip the output uh or the input current overcurrent protection system.
+context after: So, yeah, um that's just a quirk of testing these sorts of things. But, that can of course have very real consequences for the product that you're actually powering with this thing, and you could come a gutser, it could blow the ass out of your product.
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: Um yeah, you want to You don't want to blow the ass out of it and release the magic smoke. So, that's why you do overvoltage protection to make sure if it's a 5-V board, for example, you'd set your overvoltage protection to like, you know, 5.25 or 5.5.
+TEXT: Um and so, just to ensure that you don't go over that limit and overcurrent protection as well. That is different to your output voltage and current settings. It just means that some idiot manager can't come along or marketing person can't come along and start twiddling the knobs and and playing with the panel and actually blow up your million-dollar prototype.
+context after: And it's got ramps as well enabled. Can enable our ramp our ramp time. Oh, that that's just nice to like I could put it on the scope, but I guarantee you it's going to work.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: It's settled down. And then if we go up to 10 W, yeah, we're all good. And once it's settled down, 50 W, yep, exactly the same as what uh we got with the Junctek.
+TEXT: It's uh once it's all locked in and settled down, but it really doesn't like the transients when it switches on cuz it goes over current. So, then the power supply uh go goes briefly into uh constant current mode, and then the electronic load detects that, and it'll switch back in modes, and it'll just goes it just goes haywire.
+context after: And uh so, the two just play a merry little uh dance together. Let's uh 69. Let's go to 69, good value. And then we'll go to 96 watts like we had before, and everything's hunky-dory.
+
+[509] EEVblog #509 - Rigol DP832 Lab Power Supply — Dave Jones (explains)
+context before: There we go. It just automatically switched it off. There it is. So, let's There we go. Let's turn it on. There we go, cuz we haven't reached our limit.
+TEXT: There it is, 3.3. So, if we go up to 3.4, if we accidentally tip There we go, it's switched it off and we've protected our board. Excellent. So, those sort of features can be an absolute lifesaver, over voltage and over current protection for when you're first powering up a prototype or you're powering a really expensive thing.
+context after: Don't want to blow the ass out of it if you have a brain fart, and it doesn't matter if somebody else comes along and twiddles it. You can do it yourself, you know?
+
+[1558] EEVblog 1558 - Mailbag — Dave Jones (explains)
+context before: But, the interesting thing is is that I don't have my uh external power connected to this thing. So, it's doing that. It's getting that power from the uh from just from the USB connection um itself.
+TEXT: Okay, so what happens if I short that bad boy out? And we've got overcurrent. There we go. So, it says overcurrent. No luckers. Now, here's where it would have been nice to tell you whether or not you're using the USB power or the external uh power cuz the new Analog Discovery uh does that.
+context after: It can tell you which uh one you're actually using cuz clearly it works. I didn't expect it to work. I thought it needed the external uh power. So, that's good.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (explains)
+context before: wavegen or any one of the particular modules there. And same thing with trigger channel 2 as well. Audio output off on. Watchdog, this is interesting, disable the watchdog, keeps the device outputs enabled after it is disconnected from the PC. I haven't actually looked
+TEXT: into that, but that's rather interesting. And overcurrent protection as well, as we'll see on the schematic. It has quite significant USB overcurrent protection and measurement as well, so very nice. And as we'll see, with everything to do with this, very customizable in most aspects.
+context after: This is just the user interface options here, but yeah, very quite nice and flexible. But here we go, we've got our analog and digital instruments. I don't know why they have more instruments down here. Why not just like, well I guess because they're not analog or digital.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: Brilliant. One really annoying feature is you can't just turn on channel one like that and have over voltage protection set on another channel cuz it just won't let you turn on any of the channels.
+TEXT: It's stupid. Protect that channel. Great, but let me do whatever I want with the other channels, please. Now, what OCP does or overcurrent protection here does is that instead of going into current limiting mode, if you hit the current limit, it'll just switch off the output.
+context after: So, let's give that a go, right? It's OCP is off at the moment, right? So, it I've got channel one set to 3 volts at half an amp. It'll actually attempt to draw more than that.
+
+[1726] EEVblog 1726 - REPAIR of an EV Charger (Unusual Twist!) — Dave Jones (explains)
+context before: It's attempting to do some switching. So, but it doesn't like it. She ain't sticking on. So, maybe secondary side regulation feedback perhaps. So, you can probably see that updating there.
+TEXT: It is the same waveform and like every one two every three like every second that is updating. So, it looks like the switching controller is actually working. So, it's getting voltage, but it's entering some over protection over voltage over current protection hiccup mode.
+context after: And this is quite common with these switching controllers. I've had a look at the data sheet and it does mention it does have a protection mode like this. It doesn't mention a second.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (explains)
+context before: Although here I don't think you can set an output power limit. The constant current limit indicator there is not that bright. It's a bit hard to see, but you've got it nicely down here in the red.
+TEXT: No worries. And your limits here are your overvoltage protection and overcurrent protection. I think they're just software. There's not like a has a hardware crowbar, I don't believe. But anyway, we can set that and our little cursor comes up and then we can adjust that.
+context after: So, we can move our cursor over using the cursor keys and this is how you set the voltage and the current. So, let's say we're powering a 5-V digital port.
+
+[e98cYNPUxcg] Fluke PM3370B Solder Joint Inspection — Dave Jones (explains)
+context before: And that's why you've got to have a 400-V Nippon Chemi-Con caps here. So, what a PTC does, positive temperature coefficient, if the temperature of this part increases, which it will do if you pass more current through it, it will heat up.
+TEXT: And when it heats up, a PTC will actually increase in value. So, what that does, if, you know, there's some short in your circuit somewhere, there's some fault that's drawing excess current, then this will actually, a PTC, will heat up and it will limit the current flow.
+context after: So, it's an overcurrent protection device. Um but, why they've got an NTC in here in series with the bridge rectifier, what that's doing is it operates negative. So, if the temperature of this increases, the resistance goes down.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (explains)
+context before: Bingo, it's still in amp hours. It's not in watt hours. Would have been really nice to have a watt hour capacity as well. Um you can ultimately do that in the software.
+TEXT: You just can't do it built into the instrument. Bit of a shame, but and if you go into the configuration here, you can set various stuff like you can set the protection for example, let's go and have a look looking maximum power, maximum current, etc.
+context after: maximum time so that you can actually just have a you know, set these things so that you can't damage your product under test. Very neat. And measurement mode, let's go in and take a look at that.
+
+[692] EEVblog #692 - Digilent Analog Discovery Review — Dave Jones (explains)
+context before: There's our digital inputs, there we go, we saw those clamping diodes there before. Input protection resistors, and that's about all she wrote. You don't need much more for the digital. And here we go, here's the USB power control. I think I mentioned this at the start, it is quite advanced.
+TEXT: We've got a, once again, another ADM, well it's an ADM chip this time, which is a hot-swap controller for USB port, so it's, you know, capable of setting threshold as the value as we saw, you know, over current protection and things like that.
+context after: Because there's our current shunt resistor in there, it can measure all that. And it's got like a 12 bit ADC. There we go, you know, it's pretty advanced stuff, and you can probably read that out there in the software somewhere, because we didn't touch on everything
+
+[509] EEVblog #509 - Rigol DP832 Lab Power Supply — Dave Jones (explains)
+context before: And looks like it's the same with the overvoltage protection. I like that you can just toggle it like that. Press it once, twice, toggle it off and on, and it highlights.
+TEXT: I really like the highlighting function of that. And there you go, you can set your upper voltage as well. For example, a lot of people ask, you know, why do you need something like this, like this overvoltage overcurrent protection?
+context after: Well, what happens if you've got this power supply, okay, powering your brand new $100,000 prototype board, powering the 3.3 V rail directly, and you've got, you know, like massive expensive chips on there, and you can blow up the whole thing if some idiot just comes along and bumps the knob or something like that or does something?
+
+[1293] EEVblog #1293 - New Rohde and Schwarz NGP800 800W PSU — Dave Jones (explains)
+context before: I don't think the others had that. Pooh, I don't think so. Please correct me if I'm wrong. And yep, hi, the screen is a bit reflective. Little bit annoying, but you know, it's par for the course these days.
+TEXT: Anyway, overcurrent protection, I assume that's just software overcurrent protection and overvoltage protection. Of course, absolutely essential if you're powering like I've I've powered up boards worth, you know, like 50 grand.
+context after: And it's like if you blow them up, it's like the first prototype. Or it could be worth, you know, a million bucks. Because if you blow up that one prototype board and you lose your schedule for your project, and a million-dollar or ten-million-dollar projects hanging by the thread of literally by the thread of these wires hanging powering up the prototype.
+
+[874] Extended Cut: EEVblog #874 - Ted Wale — Dave Jones (explains)
+context before: I generally work on 4 amps. That's the power supply. That's the power supply. It gives me up to 20 volts. It gives me up to 20 volts. It gives me up to 20 volts. At 2 amps. At 2 amps. In the side there's a little red bar.
+TEXT: There's a little red button. If I exceed the 7... I just got sick of putting fuses in. I just got sick of putting fuses in. All I've got to do is push the button back in again All I've got to do is push the button back in again
+context after: when I find the trouble. When I put it in here I've got xenogliage in there. I've got xenogliage in there. I'm on 3 volts now. I'm on 3 volts now. That's for my bugs. That's for your FM bugs. Now I've got 4. I've got 5.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: See, there you go. And we've got voltage set, over voltage protection, current set, and well, no, that's That's just like an info thing. That That's a preset. Okay. So, I was wondering if I had presets or not, but cuz it doesn't have dedicated preset buttons.
+TEXT: Anyway, you can set your overcurrent protection and your overvoltage protection maximum. That'd probably just be software. That wouldn't be doing like a crowbar or anything like dedicated hardware for that, but that's common.
+context after: And there you go. You can get 10 different presets. That's pretty good. Don't mind that at all. So, why do you just There There you go. Right. Okay. Okay.
+
+[1541] EEVblog1541 - What is this Blown SMD Component? Redux — Dave Jones (explains)
+context before: So, the only difference is the BR at the front or SK at the front. So, you might have to go into If In fact, if you're replacing this, I would uh like they've got the two different ones for a reason.
+TEXT: So, So, it's got all this cool stuff in, and it should have an internal diagram. Yep, yep, there it is there. Right. So, it's got tons of stuff. So, it's got overvoltage, overcurrent, you know, detection and stuff like that.
+context after: Charge detection and everything. Right. It's got overtemperature protection built in. So, it's got a little, you know, silicon temperature sensor and stuff. So, yeah, okay. What's what's the difference?
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (explains)
+context before: So, that's what's happening here. Um the current from the output caps is being dumped into the load, and the current limit uh down here, it looks like it's set to its maximum of 70 amps, it's actually it's got uh a good electronic load like this will have uh these overcurrent overvoltage protections, so that which will kick in to actually protect it.
+TEXT: So, these things are actually hard to kill, or that's the intention of it. And so, that overcurrent protection is kicking in, and uh yeah, all that current is being dumped out of those um out of that big output cap.
+context after: So, yeah, just take that into account of anything that you're using this for. Um in this particular case, because we're cycling there into constant current constant voltage mode, boom, all that current's available to be dumped out.
+
+[1106] EEVblog #1106 - Pace ADS200 Soldering Station Review (JBC Killer?) — Dave Jones (explains)
+context before: Aha, we may be able to change our low temperature limit. Right. Change temperature preset. Setting store back to temperature match. Temperature match. That sounds like calibration. I thought this thing didn't need calibration.
+TEXT: Oh, and we found out what our current sensor resistor on there was for. Over current errors if the tip shorts out or something like that. Nice. And there are all the different tips for those playing along at home.
+context after: And the ultra performance ones. By the way, the only difference between the standard tips here and the high, uh, performance tips here is the extra thermal mass inside there.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (explains)
+context before: So, let's uh go output like that. There we go. It's dropped It's gone into current limiting mode, okay? So, it's current limited to 500 milliamps, but it's just continuously, like a normal power supply, is continuously current limiting.
+TEXT: But, if you don't want that, if you if it exceed if you want it uh to shut off when it exceeds that current limit, easy. Turn on OCP, and bingo, it just turned channel one off because we were overcurrent there.
+context after: So, if we switch all of the channels, see? And if I try to switch it on, I briefly try to switch it on, it goes overcurrent, and just switches the channel off.
+
+[509] EEVblog #509 - Rigol DP832 Lab Power Supply — Dave Jones (explains)
+context before: And if we adjust Can we adjust voltage? Oh, there we go. Yeah. There we go. We're doing it on channel 2. And if we do it on channel 1, now the channel is tracking state setting cannot be modified.
+TEXT: Okay, so it looks like you got to use channel 2 there. And if we have a look at the overcurrent protection here, there we go. It's selected that, and we can change that with 1 milliamp resolution.
+context after: Excellent. So, if you want to protect your circuits, which you should, of course, then no Chinglish, by the way, popping up overcurrent protection upper limit. You know, that's all right.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (explains)
+context before: And there you go. You can get 10 different presets. That's pretty good. Don't mind that at all. So, why do you just There There you go. Right. Okay. Okay.
+TEXT: So, we can go in and adjust all the presets and the overvoltage protection so you can have separate overvoltage protection and overcurrent protection for each of the presets. That's very nice.
+context after: I rather like this. Now, I see like 30.9 down there. I don't know what that is. I'm going to have to RTFM for that. But, of course, because it's only negotiated 12 volts here from this particular charger that I'm using, that's all we're going to get.
+
+[1613] EEVblog 1613 - Audiophile REPAIR: $4500 Chord Hugo DAC — Dave Jones (explains)
+context before: Um so, it's yeah. I don't know. That's weird. But, I was definitely measuring 0.6 ohms between there, which would cause, you know, it's a short. You short shorting out the cell.
+TEXT: So, the input So, the outputs are protection circuitry. Cuz they are the protection circuitry in these cells, they've got over voltage, over current, uh and low voltage, uh protection as well.
+context after: So, it won't, you know, So, in theory, if you've got a decently designed protection circuit in there, um with all those three features, you should not be able to kill the cell, but it'll certainly, uh you know, switch it off.
+
+[957] EEVblog #957 - How To Measure DC-DC Converter Efficiency — Dave Jones (explains)
+context before: Here's our characteristic curve for the Digilent 9-volt power brick, the efficiency versus the output current. Efficiency on the Y axis here from 0 to 100% and then the output current on a logarithmic uh graph, which is important.
+TEXT: I'll explain that in a second. Uh from 0.1 uh milliamps or 100 microamps right up to in this case I went up to about 320 milliamps before the overcurrent protection actually uh kicked in.
+context after: Now, uh granted, this DC to DC converter is only rated to 100 milliamps output, um but I went beyond that because I wanted to show you how it actually uh tails off there, otherwise it wouldn't have been very exciting, would it?
+
+[411] EEVblog #411 - MiniPro TL866 Universal Programmer Review — Dave Jones (explains)
+context before: So, you can switch the main chip power through to 24 different pins. I'm assuming and ground they would have done a similar thing. So, it's not a true universal programmer.
+TEXT: But there you go, 25 pins for switching ground through. And hey, it looks like it does overcurrent protection testing. And on on the VPP and the VCC. That's That's really neat.
+context after: Um I'm assuming that it, you know, has a transistor and it shorts out the rail and determines that the current limit is working. Neat. I like that. Beautiful. All right.
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (explains)
+context before: Woohoo! What the I just went away for 5 minutes to have a look at the manual, came back and it it went through its power on self test. Winner.
+TEXT: So, I'm not sure what that hiccuping was. There might be something else a little bit dodgy in there that was tripping the uh some sort of overcurrent protection. BUT, WOW!
+context after: We're in like Flynn. Look at that. We got trace. We've got trace. We We have no display. Hang on. Readout. Yeah, yeah, we have some readout, too. Oh, winner!
+
+[1203] EEVblog #1203 - REPAIR: Tektronix 2465B Oscilloscope — Dave Jones (explains)
+context before: So, yeah, it's obvious this thing was in backwards. It was drawing a large amount of current, and it was causing the shorting out that rail effectively, or loading it more than its um protection current, and the power supply was hiccuping.
+TEXT: Hic up Hic up Hic up. That's what good power supplies will do when they have overcurrent protection. They'll They won't just like shut off. They won't just blow a fuse.
+context after: They'll try again, and then get shut it down, try again, etc. And uh yeah, the magic smoke escaped. Brilliant. Um yeah, lucky I've got another one. Anyway, yes, these are One Hung Low brand uh low ESR uh caps I've put in here.
+
+[1558] EEVblog 1558 - Mailbag — Dave Jones (explains)
+context before: And of course, if we try and put 40 in there, it'll limit it to maximum of 20.1 volts. No surprise there at all. So, that is all right. I'm not going to try the USB C thing.
+TEXT: So, can we actually change that? So, 2.1 is the maximum current it'll actually do. So, let's go to max there. 2.1 and let's short that out and boom, over current.
+context after: Why is the actual current showing zero? Uh uh Let's try that with the National Instruments. So, we'll short it out and Oh, hello. Something's Something's gone wrong. It's not on off something has gone horribly wrong.
+
+[TQcV3ftPLgA] Matrix PSU Unboxings & Teardown — Dave Jones (explains)
+context before: So, I'm not that keen with that. Let me get No. Hang on. Let's brutalize it. What was it set to? 5.1 amps. All right. Let's brutalize this sucker, shall we?
+TEXT: Boom. There we go. And that change that changes to red there. So, 5.1 amps constant current. Boom. Boom. I can feel the relay and I can hear it here feel.
+context after: Yes, I can feel it, too. I can hear the relay going clickety-click. Whoa. There's lots of sparky sparks there. I'm really brutalizing this thing. So, putting it through a torture test right about now.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (opinion)
+context before: in this type of application, it's voltage is 12 to 30 volts operation, it doesn't seem to fit, and look at this physical location it's way away from the current sense resistors and the MOSFETs over there, so I need to be curious to trace that one out and get a schematic for this.
+TEXT: I can only imagine that they're using that maybe for a gross current overload, you know, maximum overcurrent protection thing for the MOSFETs, or something like that perhaps. And another part I didn't really expect to see, a video op-amp here, Analog Devices AD 818, you can see
+context after: three of those in there with the prominent white silk screen there so yeah, maybe it was just the designers, you know, jelly bean go-to op-amp for some reason. And hello old friend, down in the bottom left-hand corner there, the Analog Devices AD 620 instrumentation amp
+
+[411] EEVblog #411 - MiniPro TL866 Universal Programmer Review — Dave Jones (opinion)
+context before: And there you go, 258 yuan. Woo. You can get a Barbara Due Powerful software smooth, easy to use, cheap generic programming. Fantastic. And you can see that inside all their inductors are a little bit different to what we had on ours.
+TEXT: There you go, but anyway, I think yeah, not a bad quality little programmer. It's amazing what you can get for 50 bucks these days. And uh ultra-low power consumption, portable super performance, best overvoltage overcurrent protections.
+context after: So, it protects your devices and the programmer. Ah, and you can get it with all the those little adapters thrown in for um you know, next to nix as well.
+
+[468] EEVblog #468 - Uni-T UT513 Insulation Resistance Meter Teardown — Dave Jones (opinion)
+context before: Maximum range 5,000 volts here. Also does 2,500, 1,000, and 500. Really big bit of kit. I thought we'd take it apart, check out what's inside this puppy. Beautiful. Let's see if it does that at 2,500.
+TEXT: Yeah, still a little bit of arcing over there. Oh, and it switched off. It looks like maybe the MOVs or something kicked in or something kicked in to over current and this thing just switched off.
+context after: I don't know. Haven't read the manual. Curiously though, this thing's fresh out of the box. It does weird stuff like this. I've like turned it tried to turn it on again and like some of the segments come up.
+
+[720] EEVblog #720 - Mailbag — Dave Jones (opinion)
+context before: So, that must be the Intel 602 chipset. And what else have we got? Anyway, a whole bunch of stuff. I won't go through the motherboard. It's not that exciting, although I'm sure you motherboard aficionados would love to see it.
+TEXT: And that's interesting. That looks like some sort of current sense resistor down in there near this big switching power supply. So, maybe it's got some sort of overcurrent thing.
+context after: That could be a little differential amp maybe to measure across that uh resistor current shunt there perhaps. Yeah, so there's quite a lot of unpopulated stuff. There's some sort of connector um sort of some board connector or something like that.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (mention)
+context before: So, the weight distribution is pretty even. It's a fairly sturdy supply though in terms of you know, the case is reasonable thickness, reasonable and yeah, I don't mind the build quality at all certainly for the price.
+TEXT: And if we power it up here, we've got independent voltage and current readouts as you'd expect on any good lab supply plus a whole bunch of indicators. We've got over voltage protection, over current protection which are separate modes you can select, constant current mode, constant voltage mode, and whether or not the output is off or on because it's a got soft output switch and up to five different memory recalls.
+context after: Although, curiously, there are only four memory recall buttons here, but there are five LEDs. Go figure. And you can tell it's sort of you know, low cost, a bit slapped together.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: Well, that's already for a linear regulator, that's 80% efficient. And a good switch mode might only be 80, 90% or if you've only got 5.5 volts input, you're using an LDO, forget I'm using a switch mode circuit here.
+TEXT: And you want 5 volts out, that's only half a volt drop for the linear regulator. Bingo, you've got 90% efficiency for a linear regulator. Just with linear regulators and with switch modes, too, there's lots of other often internal circuitry in there for overcurrent protection, overvoltage protection, overtemperature protection, all sorts of other little things that they add in to make the chips more useful.
+context after: But don't let those confuse you. The basic operations is basically as I've shown here and that's going to be the same for all for those LDOs, those linear regulators and those switching regulators I've shown.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (mention)
+context before: I'd estimate 30 5, maybe 40° C already on the base plate. And if you really don't like that sickly beep sound, you can actually hold it and for a couple of seconds and it will switch off the beep sound.
+TEXT: Excellent. I like it. That's the way it should be. Now, I'm having a read of the manual here, which is all in English, by the way, and it you know, it's pretty pretty darn basic stuff, but it has nothing on the operation of the overcurrent protection and the overvoltage protection, or at least that's setting it, whether or not it's and even settable at all.
+context after: And I haven't really been able to figure out how it actually works. Now, for some testing, we've got the right tool for the job, the BK Precision 8500 300 W programmable DC electronic load.
+
+[314] EEVblog #314 - Korad KA3005P PSU Teardown — Dave Jones (mention)
+context before: You know what we say here on the EEVblog, don't turn it on, take it apart. And we'll have a quick peruse of the outside here. It's a single output supply, of course, 30 V 5 A.
+TEXT: It's got uh programmable memories. It's got uh it's a floating output, of course, plus your uh ground terminal here. It's got your optical encoder knob here, voltage current control, overvoltage, overcurrent protection, output on-off switch, lock-in, um memory recalls, various uh status indicator LEDs, and separate voltage and current readout displays.
+context after: It's got everything happening. And uh you it you can tell it's a linear supply uh by the weight of it, trust me. And there's a big uh whopping transformer in there.
+
+[655] EEVblog #655 - Auction Score — Dave Jones (mention)
+context before: And then we've got various displays. We can actually display the voltage. And here we go, we can actually display the set current there, so we don't actually have to short the output.
+TEXT: So, that'll go up to all the way to constant current of 6 amps. As I said, I believe these are a 200 watt total system power supply, and they've got over voltage protection here, so you can set that, so it won't go over voltage, got over current protection, and you can turn in turn the protection off and on.
+context after: And it's got an output on off switch, disable constant voltage, constant current display. You know, it it's not that It's not as easy to use as a regular bench supply, but hey, you know, if you got one of these in your lab, you certainly wouldn't be complaining.
+
+[1627] EEVblog 1627 - Electronex: Engineering Consulting with Xentronics — Dave Jones (mention)
+context before: Yeah, right, exactly right, so in the case of this, police cars. The example here is more like, yeah, something that might be like a fire and rescue truck or a utility truck, for example. And as you see here, this would be in the cab, this is effectively the body controller, and throughout the vehicle you have these nodes.
+TEXT: And pretty straightforward, these are just a bunch of inputs and outputs, that's all they are, they're an extension of it. But these obviously have overcurrent protection, automotive transient protection, overvoltage protection on all the inputs and outputs. And all the circuitry's on the bottom, is it?
+context after: Or is it not? There's some stuff over here, yeah, there's stuff there, and then on the bottom you can see there's a bunch of the microcontroller and hand transceiver and a few other things, this is one of my designs as well. Excellent, and they're waterproof connectors too, aren't they?
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (mention)
+context before: But why set it to 34 V if it's not actually capable of doing that? Crazy. So, feature-wise on the unit here, we've got it's actually quite, you know, quite well equipped.
+TEXT: It's got overcurrent protection, of course, we'll take a look at uh the OVP reset there is to reset the overvoltage protection if it trips. The overvoltage protection is down here, so you can set all each maximum output voltage for each independent channel or switch it off if it goes over.
+context after: You know, like if the power supply fails, fantastic um you know, protection stuff you don't normally get on uh low-end supplies. We've got independent parallel and serial mode here.
+
+[439] EEVblog #439 - Atten PPS3205T-3S Triple Output Power Supply Review — Dave Jones (mention)
+context before: They you know, functionality wise, spec wise, it's probably quite good value for money and it's probably reasonably designed and built inside, but they always lack the user interface. They're just awful.
+TEXT: So, really, you know, they could have dumped the recall key, the independent key, the auto key, the overcurrent protection key, the overvoltage protection set, this FC button, and you know, put those as shift functions somewhere else and had more usable dedicated keys on the thing.
+context after: And I show you that this knob does actually adjust the output live because you may not believe it unless you actually try it. It's you know, it doesn't like tell you stuff like that, you know, in the manual.
+
+[677] EEVblog #677 - Mailbag — Dave Jones (mention)
+context before: Multiple operating modes. Supports passive drive active control up to 3.5 amp uh output current. It's a pluggable module of course. It's uh you know designed to uh just plug into either a breadboard or you know for development purposes or into your final uh board.
+TEXT: Digitally configurable to adapt to any stepper motor. High quality thermal management system of course that's what uh TM are specializing in here. And uh high efficiency overurren blah blah blah blah blah digitally integrated stepper motion controller and there we go Arduino time.
+context after: thing I really like is that these data sheets are very professional and uh comprehensive mode, passive mode of operation, jog mode and uh so if you're doing any sort of uh stepper motor work and you want to do it with an Arduino, this is a really nice little solution and yeah, very professional documentation.
+
+[827] EEVblog #827 - Mailbag — Dave Jones (mention)
+context before: Yeah, those playing along at home might want to view that part number in HD. I can't read it on the camcorder LCD here. But yeah, they're certainly doing a lot of business on there. I'm not sure why they're doing so much, actually. My guess is what they're doing here, without trying to figure out what those part numbers are
+TEXT: and get data sheets, they're probably trying to do this properly. I.e. not just feeding 5 volts into a buck converter and then straight out. They're trying to actually negotiate the USB bus here, likely. And then actually providing over-current protection and stuff in here.
+context after: But also actually signaling back to the PC, OK, I want 500 milliamps, thank you, give it to me. Although, you don't have to do that. I mean, it's a misconception out there. The USB port will actually, or most, almost all of them, will actually supply 500 milliamps at 5 volts,
+
+[1550] EEVblog 1550 - Keysight E36731A Battery Emulator Teardown — Dave Jones (mention)
+context before: So, it looks like they got three different DACs for the different modes, voltage monitoring here and there's a parallel relay here, voltage sense local or something. There's local again, voltage sense serial relay.
+TEXT: So, not sure how the configurations working there, but there's current monitor and up here it looks like we have hardware over voltage protection trip, over current protection deck over voltage protection deck another current monitor over over current protection trip.
+context after: So this is done in hardware not software but looks of it. Beauty. Well, you'd expect it for the price. Looks like there's another current monitor resistor here but so I'd love to see the schematic for this exactly how this is arranged.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (mention)
+context before: It's showing that we're using M memory address zero there. So, it's got actually 10 memory positions, does it? And I don't know what the tick is. Anyway, it's reading 26° here in the lab, but you know, it's near enough.
+TEXT: Anyway, that's using that temperature sensor probe that's plugged into the back. And milliwatt hours, there's our capacity. Brilliant, it's showing Celsius and Fahrenheit there. Now, it's got over voltage protection, over current protection.
+context after: I believe they're only like software protections as in the previous supplies. I don't believe it's got proper hardware crow independent hardware crowbar protection. So, if the software fails or locks up or does whatever, then I don't think that's going to save your product from you know, over voltage.
+
+[1401] EEVblog 1401 - DC Fundamentals Part 6: DC Power, Efficiency, & Maximum Power Transfer Theory — Dave Jones (mention)
+context before: That makes sense, right? You're just going to increase your current and then all of your power is dissipated in your voltage source here, the internal resistance of the voltage source.
+TEXT: And of course, if you short out your load, well, you can heat up and blow up your voltage source, whatever it is, unless you got protection. So, that's pretty nasty, but at there is a sweet spot in there because we're talking about power.
+context after: It's a different beast with different equations. The only way you can deliver the maximum power into that load, doesn't matter what it is, is to actually match the source resistance.
+
+[1737] EEVblog 1737 - Alex Lidow: Inventor of the Power MOSFET — Dave Jones (mention)
+context before: So eight years ago you know first of all power conversion uh most power conversion my estimate is 80% of power conversion um has a sub element that is a half bridge that's a high side and a low side fat they have drivers and then they have a level shift and that's how almost everything's done you have full bridges you have three-phase bridges for motors you have all that bridge so the
+TEXT: thought was well let's integrate a bridge um and in 2014 we integrated created a half bridge. Um, and then in 2017, we added all the driver circuitry and the level circuitry, level shift circuitry, uh, and protection circuitry.
+context after: And that became a hit product, particularly with, uh, motor drives. And today, you know, a large large number of those humanoid robots use our integrated circuits for all the the motors and uh, and stuff like that.
+
+[862] EEVBlog #862 - BK Precision 8601 DC Electronic Load — Dave Jones (mention)
+context before: Um you know, you can do all this stuff on the uh front panel, except uh waveform recording, of course. So, it looks like yep, you can start everything else.
+TEXT: You can start and stop. Uh just fine. Input off or on. Short off or on. Remote sense off or on. Okay. We've got our virtual knob there. Uh enable overcurrent protection, blah blah blah, hardware power limit, blah blah blah.
+context after: So, yeah, okay. And it uh it's still it's a bit dicky. Anyway, look, we can save a list. No, that's that's it that's a program list. Okay, but once again, like waveform recording, okay?
+
+[1023] EEVblog #1023 - Rigol DL3021 Electronic Load Teardown — Dave Jones (mention)
+context before: It's the Illuminati button and yeah, we've got our graph mode. So, that means that in when you're in say constant current mode, you can do the graph. So, it's totally dependent upon constant power, depending on which mode you're in.
+TEXT: I don't mind that. They could have bloody labeled it though. And then the other modes is our over current protection mode. You can just sequence like do a step sequence mode for testing your supplies for power and current.
+context after: So, that's not bad at all. I like those three apps built in. And it looks like our on off button, there it is. Load just comes up. Tran whoop.
+
+[1030] EEVblog #1030 - $20 DIY Bench Power Supply! — Dave Jones (mention)
+context before: All right, let's power this thing up. I've got a 10-V I set a 10-V output with a 3-A load on our constant current load here and let's switch the digital output on and we'll capture that.
+TEXT: And that is as clean as a whistle. What's that 500 milliseconds per division 100-mV switch on? That's just fine and dandy. There's no overshoot whatsoever. It has overcurrent and overvoltage setpoint protection as well.
+context after: That's just a soft software thing. They're not doing that in hardware, but that's good. You can you know, if you don't want to damage something set it to you know, 5.5 V or something you got a critical board 5.5 V and it shouldn't go over, but it's a software thing.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: Got some arrow keys to select which digit you actually want. We've got a scape key for the menu. We've got an enter key for entering in menus. Doesn't do anything in normal mode.
+TEXT: And as I said, we've got the nice output button there. No worries. We've got a menu button. We've got voltage and current right next to the knob. No problems over voltage protection and over current protection.
+context after: If you actually hold those down, you can get in there and we've got three voltage and current memory presets like this and we've got our lock button right on the front panel.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: Anyway, um yeah, so 500 mA, that'll probably be the spec this Moku Go here. 6 V per microsecond slew rate. And they're designed for power supplies and test equipment.
+TEXT: Go figure. They've got over temperature and over current protection and there's the pin there for setting the current limit. As I said, you can actually do the like force a current into there.
+context after: But if we go down, we'll have a look at the internals for this. Yeah, so there's the internal. So effectively it's got a built-in 4.75 V voltage regulator and a built-in 31.6 k resistor.
+
+[315] EEVblog #315 - Korad KA3005P Review/FAIL — Dave Jones (mention)
+context before: It's stuck on 36 volts output. I've managed to cause it to go into some ridiculous mode where it's gone massively No, it's jumping all over the shop and the display is not updating at all.
+TEXT: That's constant resistance mode. We're getting 5 6 amps out of this thing. Over current protection over voltage protection on. Oh. It's going haywire. And really there's no excuse for this.
+context after: I mean, it's showing 12 volts at the moment. That's just not so. And just will not switch that output on. And but it's actually outputting 17.6 volts even though it's only displaying 12.
+
+[509] EEVblog #509 - Rigol DP832 Lab Power Supply — Dave Jones (mention)
+context before: Oh, well, look, we haven't even tried to enter a value in yet. We probably should try and use this stupid 3. Let's say 3.4 V. There we go. Okay.
+TEXT: There we go. So, we've set our upper limit to 3.4 V. So, now, if some idiot, like me, comes along and we try and change our voltage of channel two here, up, overcurrent protection, yeah.
+context after: There we go. It just automatically switched it off. There it is. So, let's There we go. Let's turn it on. There we go, cuz we haven't reached our limit.
+
+[1691] EEVblog 1691 - Uni-T UDP6731 360W Bench PSU REVIEW — Dave Jones (mention)
+context before: Off. And off. Uh Okay, I've looped the sense lines on the back. I've powered it off. Let's power it back on and see. Hopefully, I haven't buggered it. No, 18 volts.
+TEXT: It's back. Okay, let's try that again. Uh Okay, what I've got is an overcurrent protection input disabled here on my Rigol load, but watch what happens. Like both of these loads are off.
+context after: Okay? Like they're both the output is switched off. Okay, so they should be a high impedance input. Now, watch what happens when I connect over here, right? It's just I've got 18 volts, 13.5 amps set.
+
+[411] EEVblog #411 - MiniPro TL866 Universal Programmer Review — Dave Jones (mention)
+context before: So, that's interesting. Let's pop it over over. And uh ah, 9011. There you go. So, 1990 vintage. Let's put it back in. And let's give it a go. Uh here we go.
+TEXT: Program. And fingers crossed, don't do the device ID ID check. Bugger that off. But, will it program? Ah, overcurrent protection action. No external short circuit IC reverse or damaged.
+context after: And uh something's going on there, folks. But of course I just noticed that this has 12.5 V programming voltage written on it. And by selecting that device in library it had 13.5 V.
+
+[1606] EEVblog 1606 - $45 AlienTek DP100 100W USB-C PSU REVIEW — Dave Jones (mention)
+context before: So, I'll put the link in down below. So, thank you again to the viewer. Alienware didn't send this in. A A viewer actually paid for this and I sent it in cuz I guess they wanted me to review it.
+TEXT: Um so, yeah, it's it's really quite cool. Seems to meet all its specs. It's reasonably accurate and it's got all the over, you know, current and over voltage protections.
+context after: Haven't really completely flogged the hell out of it, but I can certainly get like 100 W out of the thing and, you know, I could get under the thermal camera and everything, but it doesn't seem to get hot even at like 100 W output.
+
+[1298] EEVblog #1298 - $70 2000W Power Supply — Dave Jones (mention)
+context before: There we go. Constant current and no wackers whatsoever. And yeah, my wires once again might get a little bit warm ski. But even even 15 gauge is going to get a bit warm at 25 amps.
+TEXT: Oh, yeah. Can feel it starting to warm up now. Neat. Hang on. That just went burko for a second. And my load just said over current protection input disabled.
+context after: Ah. Okay. You what? You what? Okay, I changed it to 10 V output and it's now fine. Like 175. Let's go to 195. Okay. Whoop. Whoop. What happened there?

@@ -1,0 +1,49 @@
+# desoldering
+
+Desoldering is the removal of solder from a joint in order to free a component, a connector, or an entire sub-board. It is the gating operation in most repair and teardown work: a board that cannot be lifted cannot be probed, and a suspect part that cannot be removed cannot be confirmed.[173][9u8TEJdAVdQ][230] It is also the basis of component salvage, and a routine step in reverse-engineering a board whose traces run underneath its parts.[riBwRC_CaAA][837]
+
+## Desoldering as a disassembly step
+
+A great deal of desoldering is forced by mechanical design rather than by any fault. Boards are commonly retained by soldered input jacks, connector tabs, or bare wire leads with no header, so the connector must come off before the board will lift.[173][9u8TEJdAVdQ][Yk_T-uCbg10][571] A single soldered tab on a TRS jack, or final soldering of BNC connectors on an analogue board, is enough to make a board effectively non-removable without a soldering iron.[571][790] Metal cans over RF and analogue sections are another case: their contents are inaccessible unless the can is desoldered.[1602][1275] Plastic clips designed for a part that does not pass through the board leave no alternative but to desolder the whole assembly.[1757] Where wires are soldered directly to boards, the specific assembly step implies a matching specific disassembly step.[1352]
+
+Construction of this kind compounds quickly. A metal plate carrying a bank of switches, with wires soldered directly into it and little clearance, has to be desoldered in its entirety before the board underneath can be reached, and the same work must be repeated on reassembly and on any subsequent visit.[1572][1593][1664] Where a switch or contact set is dirty rather than broken, cleaning it properly still means desoldering it and taking it apart, because in-situ cleaning generally cannot reach the contacts.[1757][1219]
+
+## Wick, pumps and desoldering stations
+
+Solder wick is the basic tool for clearing plated through-holes: laid over a filled hole and heated, it draws the solder away and re-opens the hole for a new lead.[365][905] It is also the finishing step after any other method, used to clean pads back to a solderable state.[405][1351] Its limits are visible in controlled measurement: after tinning a trace with 60/40 solder and then wicking the solder off again, the trace returned to roughly 52 milliohms against an original 51 milliohms, close to the starting value but not identical, and further wicking yields diminishing returns.[317] Physically scraping the wick along the surface may remove or leach a small amount of copper as well.[317]
+
+A hand vacuum solder sucker is the usual complement to wick and is often faster on large pins, where a desoldering gun fitted with a small nozzle is the wrong tool.[651] A desolder pump handles connectors soldered by a wave or dip process reasonably easily.[782] A dedicated vacuum desoldering station extends this to large multi-pin parts: a PLCC package was extracted in under three minutes at 300 °C, with a bent pin and awkward working position, with virtually no damage and the part retrieved intact.[542]
+
+Hot air is the standard approach for surface-mount rework and desoldering. Cheap hot air rework stations are considered acceptable for rework and desoldering duty even where a cheap soldering station would not be recommended, on the grounds that the tool sees far less use than a soldering iron.[400] Comparative removal of identical memory chips from a video card shows that time-to-removal depends heavily on airflow, temperature, nozzle height and movement, none of which has an obvious optimum for an unfamiliar part; every board and every chip differs.[1659] Good tweezers matter as much as the air station, since the part must be lifted the moment the joints go liquid.[1659]
+
+## Through-hole components and connectors
+
+Multi-pin through-hole connectors are awkward because all the pins must be molten simultaneously before the part will release. An iron with fast thermal recovery, set around 350 °C, can heat all the pins of a connector at once so the part lifts out, though this risks taking some of the through-hole plating with it.[397]
+
+Where the connector is not worth saving, sacrificing it is the more reliable route: cut or chop the pins off first, then heat and pull each pin out individually, and wick the holes afterwards.[538][278] This removes the need to heat three or more pins at once, and eliminates the sideways pressure that is otherwise applied while rocking the part free.[538][278] A single awkward pin can be chopped off from the top while the rest are heated together, with the remainder pulled through afterwards.[278] Fresh solder applied to old joints before removal helps, and is close to mandatory on corroded ones — badly corroded joints on a vintage board resist heat transfer and are extremely difficult to clear.[1527]
+
+Displays, backlights and similar large-pin-count parts are also through-hole work by another name: an LCD backlight soldered down to the board must be desoldered from underneath to be reached, and a vacuum fluorescent display carries a great many pins that all have to be cleared before it will lift.[1378][1669]
+
+## Surface-mount packages
+
+Fine-pitch leaded parts can be removed by wiping the pins off with an iron at just enough temperature to melt the joints. The direction of the wipe is critical: wiping sideways across the leads loads the pads laterally and lifts them, so the stroke must run lengthways along the pad.[405] A second pass picks up stragglers, and the pads are cleaned with wick afterwards.[405]
+
+Power packages with a thermal pad under the body are a distinct problem, because the pad's thermal mass and the leads demand different techniques. One approach separates the two: cut the leads with a sharp knife so the body, with its thermal pad, can be attacked on its own from underneath.[1322] Each of these techniques carries its own trade-offs, and cutting leads forecloses reuse of the part.[1322]
+
+At the extreme of fine pitch, a flip-chip die can sometimes be pushed straight off its substrate. On a processor module using 97/3 solder with pads only 180 microns wide, the sheer scarcity of solder meant the die would shear away under sideways pressure alone.[1341] This works only because of the tiny pitch and tiny solder volume; the same push applied to a BGA will shear off every pad, because the pad area provides almost no adhesion to hold the pads to the board.[1341]
+
+## Low-temperature alloys
+
+Low-melting-point alloy, sold on small reels of around 20 grams, is used specifically for desoldering. Applied around the perimeter of a package, it combines with the existing tin-lead solder and drops the melting point substantially, so that all sides of the part stay molten simultaneously long enough for the part to be lifted or dropped clear.[1351] It works, though the result is messy, and the pads are then cleaned up with wick.[1351] The material is expensive and difficult to manufacture, so it is used sparingly, but a small quantity is worth keeping for desoldering and for occasional ultra-low-temperature work.[1351]
+
+## Desoldering in fault-finding
+
+Removing parts is a legitimate diagnostic technique. A short on a supply rail can be found by the brute-force method of sucking parts off until the short vanishes, and desoldering is also the way to rule out surface contamination as the cause of a measurement anomaly.[230][1663] Where several chips sit shorted across the same rail, removing them one at a time drops the supply current in proportion, which both confirms the diagnosis and counts the culprits.[405]
+
+The technique is nonetheless expensive in risk. Brute-force removal should start with bypass capacitors and similar low-value parts rather than with an SO-package device, which can be ruined in the process.[230] The alternative is a high-resolution ohmmeter capable of tracing the short down through the copper, which requires enough resolution in the milliohm region to distinguish points along the path.[230] Components should not be sucked out until every path has been traced and the conclusion is certain; removing parts on speculation destroys evidence and parts alike.[230]
+
+## Salvage and reverse engineering
+
+Before cheap bulk components were available, salvaging equipment meant desoldering the parts from it — chips, capacitors, diodes and everything else — and the resulting components stocked the parts drawers for years afterwards.[riBwRC_CaAA][igqZ77NXpyE] A collection assembled this way can run to thousands of hours of desoldering, with each part individually bagged and itemised.[737] The practice persists selectively: high-power converter modules, LEDs and similar parts worth having are still worth desoldering out of a dead product.[1289][928] The modern shortcut is to keep whole boards rather than stripped parts, pulling a capacitor, choke, fuse or heatsink from the board only when one is needed.[725] Equipment with pin headers rather than soldered-in modules can be stripped with no desoldering at all.[9lIC3ZzIht4]
+
+For reverse engineering, desoldering is a way of seeing. Removing a chip or a socket exposes traces routed underneath it, which is faster and more reliable than buzzing out pins at random, and may reveal parts hidden under other parts.[837] Single-sided boards largely avoid the problem, since there are no traces running beneath top-side components; double-sided and denser boards generally require parts to come off before a correct schematic can be extracted.[1313][837] Some assemblies make this uneconomic — where a stack of boards is glued and gunked together, cutting the 0.1 inch pins all the way around and prising the boards apart is preferable to desoldering the interconnect.[339]

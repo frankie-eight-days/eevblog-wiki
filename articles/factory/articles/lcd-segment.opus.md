@@ -1,0 +1,49 @@
+# lcd segment
+
+An LCD segment is an individually addressable electrode etched onto the glass of a liquid crystal display, routed by a thin conductive path to a pin on the display's connector.[1044] Applying an electric field of the right polarity between a segment electrode and the common backplane twists the liquid crystals in the pocket between them, turning that segment dark or clear.[1297] Because the shape drawn on the glass is the shape that appears, segments are the unit in which a custom display is designed, and the count of segments and commons sets not only how complex the display is but how complex the driver behind it must be.[1044][1055]
+
+## Construction
+
+The segments are etched onto a glass layer, with little conductive paths carrying each one out to the pins; the shapes designed into that layer determine the shapes the display can show.[1044] The liquid crystal itself is a pocket of fluid sandwiched behind the segment layer, in front of the backplane electrode that acts as the common return.[1044] In chip-on-glass assemblies the driver die sits directly on the glass, fanning out to the commons on one edge and the segment lines on the other.[1699]
+
+Multiple graphic elements are frequently ganged into a single segment. The word MIN on a bar graph is one segment, not three letters, and a battery symbol with its plus and minus markings is likewise a single electrode: the manufacturer runs a conductive trace so thin it is invisible in normal viewing between the disjoint shapes, so they can only ever be switched together.[1074][1055] Decimal points and colons are treated the same way in the artwork.[1074]
+
+## Static drive
+
+A single-segment-per-pin, non-multiplexed display can be driven from ordinary logic. The common pin is fed a square wave of around 100 Hz, and each segment pin gets either the same waveform or its inversion.[1045] When segment and common are in phase, the differential voltage across the liquid crystal is zero and the segment stays off; inverting the phase produces a differential swing of plus and minus the supply and the segment turns on.[1045] Measured differentially on an oscilloscope, the in-phase case shows a flat zero-volt difference, while strapping the segment pin to the positive rail places ground midway and swings the crystal 5 V either side.[1045]
+
+The point of driving the common with an alternating waveform rather than holding it at ground is that it doubles the effective drive: a 5 V logic supply produces a ±5 V field without generating a separate higher rail.[1045] In firmware the whole scheme reduces to a bitwise exclusive-OR against the port value, which applies controlled inversion per segment.[1045] Turning everything off is equally simple — tie all segment pins to the common's level, and with no difference between them nothing lights.[1045]
+
+Segment pins must never be left floating. A tri-stated driver output looks like a zero-difference condition in theory, but the electrodes are capacitive and accumulate charge; a segment left open will eventually drift on by itself.[1045] The same capacitance makes an undriven display sensitive to nearby bodies — a hand waved across the room is enough to change what is showing, and a hand near the pins couples common-mode noise straight into the waveform.[ZtOXfFkV2jw][1045] Driving every segment at all times is the rule.[1045]
+
+## DC bias and its consequences
+
+Every LCD manufacturer's recommendation is against holding DC across the crystal, because it is the electrostatic polarity that switches the segments and a sustained one-way field is expected to degrade them.[1297] The conventional prediction is that DC-biased crystals become sluggish and eventually refuse to switch.[1297]
+
+A long-running endurance test drove a display exactly that way: common tied to ground, 5 V applied to segments, no alternating phase at all, with an Arduino simply counting 0 to 9 indefinitely.[ZtOXfFkV2jw][1297] The observed outcome was the opposite of the expected failure. After years of storage and re-powering, removing power left the displayed segments visible indefinitely rather than fading, and the pattern could be frozen on any digit and would stay on permanently.[1297] This is distinct from the ordinary capacitive-charge retention that holds segments briefly after power removal, which would have decayed long before.[1297]
+
+## Contrast, bias voltage and ghosting
+
+Segment appearance is sharply sensitive to the LCD driver's bias voltage, over a window only a few hundred millivolts wide. Sweeping the supply to an HT1622 driver, segments at 3.0 to 3.2 V are hopeless and 3.3 V still shows faded or ghost segments; 3.6 V gives a solid, even display; and by 4 V ghosting reappears on segments that should be off.[1105] Raising the rail roughly 100 mV was enough to clear the visible defect.[1105] Where only some segments look weak while others are crisp, the shared electrode is the thing to trace: following the conductor from a suspect segment through the gaps in the artwork showed several apparently separate segments tied together onto one common, localising the problem to that common rather than to the individual shapes.[1105] Viewing angle compounds the effect, with low angles fading segments that look acceptable head-on.[1105]
+
+Segments dropping out during operation are not always a display fault at all — a defective rotary selector switch in a multimeter produced glitching and lost segments on an otherwise healthy LCD.[9u8TEJdAVdQ]
+
+## Driving many segments
+
+Beyond a handful of segments, static drive becomes impractical and the display is multiplexed: several commons are scanned in turn, and each segment pin serves one segment per common. Driver capability is quoted in that form — four commons by 16 segments, four by 31, eight by 28 — and the product of the two sets the addressable total.[1055] Multiplexed displays are driven with multilevel bias rather than a simple two-level waveform, with segment waveforms in the tens of hertz; one calculator display measured 31.35 Hz on a segment line.[1094]
+
+Choosing the driver is largely a counting exercise done against parametric search: a design needing at least 215 segments filters out most parts immediately, with the surviving candidates being high pin count devices, and dedicated drivers such as the NXP PCF8545 available when a microcontroller cannot cover it.[1055] Parametric search data on segment counts is not always accurate and needs checking against the datasheet.[1055]
+
+Integrating the LCD controller into the microcontroller avoids an extra BOM line and its cost, which makes on-chip segment capacity a hard selection criterion alongside low power and timer resources.[1538] A design budgeted at roughly 73 segments must find a part that supports that many directly or fall back to an external controller.[1538] Where a chosen microcontroller has no LCD driver at all, the display ends up driven by a separate chip, as in a socket tester whose LCD carried two three-digit displays plus a set of annunciators.[1598] The pin allocation table is where the real constraint appears: LCD segment functions are multiplexed onto the same physical pins as the ADC inputs, so segments and analog channels compete directly, and recovering even one or two analog channels can mean giving up a decimal point or choosing commons 0 and 3 instead of 0 and 1.[248]
+
+A PIC 16F1934 supporting 24 segments with four commons at about $1.60 in 100-off quantity could drive four of the displays under consideration.[248] The HY12P66 candidate identified in a multimeter carries a 4×15 segment LCD driver on chip, enough for that meter's display including the extra automotive-variant segments left unused on the glass.[912] A display with far more segments than the application needs is not a problem: unused segments are simply never driven, so a pressure-gauge display can serve as a plain four-digit readout provided its physical size suits.[248] Conversely, a display carrying around 100 extra segments beyond what the main chipset can plausibly drive is evidence of a second driver hiding on the board.[1096]
+
+## Power
+
+Segments draw essentially nothing. A meter displaying all eights, with every segment energised, consumed no more than about 2.5 µA and showed no measurable increase over a blank display.[1383] Clearing the display did not reduce consumption either.[1383] This is consistent with the LCD being a capacitive load switched at around 100 Hz rather than a current-consuming emitter.[1045]
+
+## Designing custom segments
+
+Custom segment artwork is cheap enough to be routine — five custom displays came to 138 US dollars delivered, a price that only makes sense as a loss leader against a production order.[1105] What determines both cost and fidelity is how completely the segments are specified. Supplying the finished segment geometry as a DXF file leaves the manufacturer with little to do beyond routing the connections and producing the datasheet; handing over a rough sketch instead means they must draw the segments themselves and will charge extra tooling for the time.[1074]
+
+Fidelity is the stronger argument. A vendor told only that six seven-segment displays are wanted will substitute their own font for the digits and characters, with no guarantee the result is acceptable.[1055] Supplying the exact artwork forces them to match the specified font as closely as their tooling permits — some translation between file formats is unavoidable, but the outcome is very close to what was drawn.[1055] The work is in the drawing: rendering the segments and iterating on their proportions, thinning here and fattening there, takes considerable effort.[1055] Details such as the invisible link traces that join the parts of a multi-part symbol are best left to the manufacturer, who will adjust the design to suit their own internal processes regardless.[1055]

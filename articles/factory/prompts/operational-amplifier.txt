@@ -1,0 +1,458 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: operational amplifier
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 85 passages drawn from 54 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# operational amplifier`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (explains)
+context before: So, how much error can you tolerate in this amplifier here? What's the minimum? Well, it depends on your specs and what you're willing to whether or not you're willing to compensate for it in software, which I don't really want to do.
+TEXT: I want to try and get the maximum uh uh possible absolute accuracy out of this thing. So, the input offset error of this amplifier is going to matter. So, you can't make this resistor shunt resistor arbitrarily small, because then the voltage drop's going to be so small, it's going to be swamped by the input offset voltage of this op amp of this amplifier here.
+context after: So, what's the minimum that we can tolerate? Well, it's a basic rule of thumb is that well, you don't want it to be any more than one bit resolution on your analog-to-digital converter.
+
+[95] EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans — Dave Jones (explains)
+context before: It's really quite in-depth if you go into it, but uh I highly recommend you check it out and just be careful next time when you're designing uh even a simple circuit like this.
+TEXT: So, what's the solution? Well, I've still got some experimenting to do, but I had some um LP2902 quad op amps, which is almost identical to the LM324. In fact, they um often share the same uh data sheet, um but it's just a um it's a slightly it's got an extra current source in there and I wired one of those in, and it made a hell of a difference.
+context after: It's a hell of a lot more stable. All I need is a little bit more output capacitance, and it looks like a winner. And also, um I decided to get rid of this times four gain out of the control loop here, cuz that was just causing too much instability.
+
+[500] EEVblog #500 - Live Show — Dave Jones (explains)
+context before: I don't know. Haven't been to Europe for a long time. Have I checked out the high power opamps? OPA 541. No OPA 541. Let's have a look at the OPA 541.
+TEXT: High power monolithic operational amp. 60 volt supply. 9 amps continuous output current. Yeah, that's pretty groovy. That would make a nice project in its own right. just having a high powered amp like uh you know um with some g with some programmable gain in it or something and uh that'll be yeah programmable power supply.
+context after: Yeah, I'll look into that. Yeah, it's pretty beefy. 9 amps continuous output current 1.6 6 MHz gain bandwidth product and it's uniting gain stable as well. Yeah, neat to check it out.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Now, this digital software, right? So, that's where they came from. So, although we don't have analog computers today, we still use them for those mathematical operations. You can turn an op-amp into an integrator, for example.
+TEXT: You can turn it into a summer, which is just an adder, and things like that. So, they're really useful circuit building blocks. But, the main thing we're going to look at is the operational amplifier as an actual amplifier cuz that's what they're most commonly used for and probably what you'll mostly use them for as well.
+context after: So, an op-amp is essentially just an amplifier. Yes, it can be used for those mathematical operations, but essentially what it comes down to is this is a differential amplifier.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: So, the op-amp only has control over its output, but if you have feedback, it will change this output voltage to make sure this input equals this input here. And that's a very powerful rule of op-amps and if you see a closed loop configuration like this, you can be pretty sure that rule is going to apply.
+TEXT: So, using these two rules, let's look at the simplest config op-amp configuration possible and it's not this, it actually has no external components. So, what it has is the output tied back to the inverting input like this, and you feed your signal or your voltage into the non-inverting positive input like that.
+context after: And this is called an op-amp buffer. So, using our two rules, very easy to analyze this op-amp buffer circuit. Let's say we Let's just do DC because op-amps The other thing is op-amps are DC-coupled amplifiers.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: I think the confusion happens because people see that we have an input at this point here, but by the time we get to the amplifier, it's zero volts, and the other input is also zero volts, so the inputs to the amplifier are always zero.
+TEXT: So how on God's green earth can an input here be having any effect on the output if the two inputs to the amplifier are always zero volts? Let me give a quick explanation about how operational amplifiers work before I move on. As you said very well in your video, the operational amplifier
+context after: will change its output voltage to whatever voltage it takes within the limits of the circuit to make the two input voltages equal. In the case of the inverting amplifier, we take the non-inverting input of the op-amp and tie it to ground. The ground is by definition zero volts,
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (explains)
+context before: We've got op-amp input bias currents today. What is an op-amp input bias current and why is it important? Well, let's take a look at it. You've got your basic op-amp here.
+TEXT: Doesn't matter what op-amp it is, they're all going to have what's called an input bias current. Now, uh you're used to dealing with an ideal op-amp. Now, an ideal op-amp, of course, one of the rules for the ideal op-amp is that no current flows into the input pins.
+context after: But of course, in practice, that's complete because you're going to have some current flowing into or out of, we'll get into that, these input pins on this op-amp. And that's called the input bias current.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (explains)
+context before: Hi, welcome to the EEVblog. I'm your host, Dave Jones, and this is episode number 24. Right, this week I thought I'd talk about component which not many people are typically know about or use all that often.
+TEXT: It's the chopper amplifier. The it's a standard op amp, but it's called a chopper amp or an often called an auto zero amp. And basically what these are are they're they just they work just like a standard op amp except they have ridiculously low offset voltages.
+context after: Like crazy low. Like your standard op amp, you know, a standard general purpose op amp might have 10 millivolts offset, 1 millivolt offset, you know, 0.1 millivolts, you know, for a really good one.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: has to move her output to compensate. So now we have amplification. I make a small input change, and she has to make a large output change to compensate, always making sure that the junction between the two resistors, which is at the virtual ground, is at the same place.
+TEXT: So as this voltage increases, it does increase the voltage at this point, but then the op-amp reacts by decreasing this voltage to make sure that this voltage stays equal to that voltage, or zero. So this is not zero volts because it is tied to this voltage.
+context after: It's zero volts because the output of the amplifier constantly reacts to changes over here to make sure that this stays at the same voltage. If these two resistors are equal, then if this voltage goes up, this has to compensate by going down the same amount.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: So, let's trigger that and just disconnect the load. I know this isn't ideal. Normally, you'd electronic switches. But, we'll just disconnect that real quick and bam, there it is.
+TEXT: And you can see how it's immediately switched off there. There's a bit of high frequency stuff there as you'd expect. And then it boop, ramps back down, and then it kicks in, and the op amp kicks in and controls it all, and all settles back down nicely.
+context after: But, that's 50 mV per division. So, that's only jumped 50 mV there for a quarter of an amp output current. And of course, that's with our 1 microfarad output capacitance.
+
+[1436] EEVBlog 1436 - The TOP 5 Jellybean OPAMP's — Dave Jones (explains)
+context before: number and you know it's going to do the job because it's a jelly bean component. The first one we're going to take a look at here is the LM358.
+TEXT: It's a dual bipolar op amp. So if you need just a basic run-of-the-mill op amp to just do basic stuff, then the LM358 is a great choice. It's a dual op-amp, and they specifically call it an industry standard op-amp because it pretty much is.
+context after: So, it's two op-amp independent op-amps in the one package. There's pretty much no reason to use a single like op-amp jelly bean component. If you're going to like put and choose an op jelly bean op-amp, you might as well choose the LM358 because it's a dual one.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Now, there are two ways to learn about op-amps. One is this way, the hard way. We don't want to do it that way. That sucks. So, let's get rid of this and let's do it the easy way.
+TEXT: So, what is an op-amp or an operational amplifier? Well, the name operational amplifier comes from the fact that when they were first developed, they were developed to do mathematical operations, hence the name operational amplifier.
+context after: And back then we didn't have digital computers. They did they used these for analog computers. So, analog mathematical operations, addition, subtraction, integration, differentiation, stuff like that. Even that real hard calculus stuff, op-amps could actually do these operations in hardware.
+
+[854] EEVblog #854 - B52 Bomber Automatic Astro Compass Teardown — Dave Jones (explains)
+context before: And the other type is an electronic analog computer where it uses op-amps. Basically, that's what op-amps were originally developed for. Op-amp stands for operational amplifier, hence the name operational.
+TEXT: It performs mathematical operations, addition, subtraction, multiplication, etc. You can actually do using op-amps. So, I wasn't actually quite sure which one it would be, but we've got ourselves a mechanical analog computer.
+context after: So, you won't actually find hardly any. I can see a resistor in there. Can see a couple of resistors, but you basically will not find electronics or, you know, hardly any of it inside here at all.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Easy to remember because it's positive. The inverting input is likewise easy to remember cuz it's negative. Negative inverts something. So, that's the terminology you should be using when referring to op-amps.
+TEXT: Very important to get the terminology right, otherwise you sound like a bit of a dill. Now, there's an output pin here, easy, and there's two power supply pins, a positive and a negative one, which we'll talk about as well.
+context after: So, I mentioned that the gain of an op-amp naturally inside is designed to be enormous, almost infinite. So, what happens if you just feed voltage on the input here?
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: 
+TEXT: Hi, welcome to Fundamentals Friday. Today we're going to take a look at the operational amplifier or better known as the op-amp. Really important building block, absolutely essential that you understand how they work.
+context after: Now, there are two ways to learn about op-amps. One is this way, the hard way. We don't want to do it that way. That sucks. So, let's get rid of this and let's do it the easy way.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: Good price and quad. Um well um I numbers off hand gee no I just I'm I'll be struggling to recite a number off the top of my head but once again parametric search is the way to go.
+TEXT: Microchip have some nice um uh lowcost uh quad op amps but like them I think they're only like 6 volts maximum or something. They're they're very limited so they're not like the large voltage range like the LM 324.
+context after: Um, so maybe go to the microchip website, check out those ones cuz they're I do like the microchip analog parts. They're really quite I've said this a couple of times over the last couple of years.
+
+[1716] EEVblog 1716 - University Dumpster Diving: Kikusui Oscilloscope — Dave Jones (explains)
+context before: So, we've got a function generator with a beautiful dial here. It's only um it's only 200 kHz. Yeah, 200 kHz um bandwidth. Looks like you can do some modulation here.
+TEXT: I totally forgot it's been so long. And they had a uh operational amplifier here, and you can adjust the gain of your operational amplifier here, and then they had a power amplifier, which was pretty cool.
+context after: So, you feed your input signal, and uh you could adjust the bipolar uh power supply on it. So, plus minus 15 volts at 1 amp. So, you could actually power things like like a power amplifier.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: 50 mV per division. So, let's set it down there. And let's disconnect our load. And here we go. We're going to connect our load real quick. And bang, there we go.
+TEXT: There's our switch on transient. 100 mV, uh round about two divisions. And then you can see the op amp recovering there. And stabilizing. And of course, that was with the 1-microfarad output capacitance.
+context after: Let's uh try it again with the 47-microfarad. And uh Oh. There we go. We've got a lot a whole bunch of noise this time, but the transient's not as large as before.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (explains)
+context before: It's the chopper amplifier. The it's a standard op amp, but it's called a chopper amp or an often called an auto zero amp. And basically what these are are they're they just they work just like a standard op amp except they have ridiculously low offset voltages.
+TEXT: Like crazy low. Like your standard op amp, you know, a standard general purpose op amp might have 10 millivolts offset, 1 millivolt offset, you know, 0.1 millivolts, you know, for a really good one.
+context after: But, you know, often that's not good enough for very high precision DC and low frequency applications. And and you have to resort to one of these chopper amplifiers or auto zero amplifiers.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: One little mistake I noticed, oops, my formula here for the inverting amplifier, it needs a negative in front of it because the gain is actually negative. So, it's So, the gain is not in this case is not 10k is not 10, it's minus 10.
+TEXT: Oops. So, just back to this voltage rail thing briefly because it is something that is rather confusing because there is no ground pin on an op amp. There's only the positive and negative.
+context after: So, well, where does your reference go? Well, the reference is part of the external circuit. In this case, back to our non-inverting amplifier configuration, here is our ground reference here, and then our positive and negative supply is here like this.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (explains)
+context before: Who cares? Near enough to 100, right? So, um then we're going to have an input offset voltage here that 1 microvolts typical. And of course, that input offset voltage there is going to get multiplied by the gain of your op amp.
+TEXT: That's how it works. It's not just for this op amp. It's for all op amps. It's going to do that. So, let's say that this particular device that we have under test is has 1 microvolt there.
+context after: We expect 100 microvolts on the output here or 0.1 millivolts. So, we'll build it up and we see and we'll see if we get it. Of course, I've I've got it just got a couple of bypass uh caps on here.
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (explains)
+context before: Some speculator heard me use it and registered one low. I I'll probably get an email. Would you like to buy one low.com? No. Oh, your question's complicated. Mini me.
+TEXT: I can't divide down a higher VREF. Goodness. Uh, I can't can't down divide down a higher VREF because single supply opamp you would need a non-inverting config with a gain less than one.
+context after: Any ideas? But I sorry, I don't know. It's too complicated. kind of missed the first part of your question because the chat crashed. What do I think of the one low 50meg twochannel analog scopes on eBay?
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: That is to change the bandwidth of the circuit effectively. Um because we're not going to go into it. I'll have to do a second part to this video that goes into op amp bandwidth and things like that.
+TEXT: I have done one on cascading op amp bandwidth which I'll link in down below. But, for suffice it to say that an ideal op amp that we've been looking at has an infinite bandwidth.
+context after: That's infinite frequencies and signals, but in practice, no, of course not. Your practical op amp might have a 1 MHz bandwidth or a 100 kHz bandwidth or something like that.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (explains)
+context before: Okay, you've got your standard op amp here. It's called we'll we'll actually call it A. We'll call it op amp A. It's got two op amps in it, op amp A and op amp B.
+TEXT: Op amp A is your standard is the actual standard amplifier used to, you know, used as a standard op amp. Now, these op amp, you know, a regular op amp has an offset voltage VOS.
+context after: And as I said, you know, a typical op amp that might be a millivolt or something like that. You know, which is quite large for precision DC applications. Okay?
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (explains)
+context before: Okay? Now, what happens is the previously stored offset voltage here is um actually offsets this amplifier. So, this nulling amp- effectively, we've canceled out this input offset voltage. It's been canceled out.
+TEXT: Now, what that does is now these switches here are changed, uh this nulling amplifier is now measuring the input offset voltage on this amplifier, cuz it's fed through. Okay?
+context after: It's measuring the VOS of the main amplifier. And it's storing that output on capacitor C2 here. Okay? And then, that value is fed through like this, to the back to the amplifier, and it offsets its own VOS voltage.
+
+[222] EEVblog #222 - Lab Power Supply Design - Part 2 — Dave Jones (explains)
+context before: And the way you do that is to break into here. So, instead of that output going directly to the buffer there, it's a pretty standard technique if you want to increase the output impedance of your buffer or your amplifier or whatever, is to simply stick that in the feedback loop there like that.
+TEXT: Bingo. You've instantly gotten rid of that resistor, and And op amp compensates for it. Remember, due to op amp action, this voltage here will be equal to this voltage here.
+context after: It'll do whatever it needs on the output to make that voltage the same. So, you've effectively eliminated the output voltage drop across that resistor, but you still have the advantage that it's protecting the output.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (explains)
+context before: And I found when I built this thing up, that wasn't the case. I was getting up to 5 microvolts offset. Hmm. Let's go to the breadboard. But before we do that, let's take a look at the circuit which we're looking at here.
+TEXT: It's the AD 8628 uh op amp. It's a single op amp SO8 uh package. And I've got it set for a non-inverting gain of 100 here. Oh, it's actually 101 using 1K and 100K.
+context after: Who cares? Near enough to 100, right? So, um then we're going to have an input offset voltage here that 1 microvolts typical. And of course, that input offset voltage there is going to get multiplied by the gain of your op amp.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (explains)
+context before: So, they're really cool parts and I'll explain how they work. I've got the inside circuitry, the internal circuitry of a typical chopper or auto zero amplifier. And this is how it works.
+TEXT: Okay, you've got your standard op amp here. It's called we'll we'll actually call it A. We'll call it op amp A. It's got two op amps in it, op amp A and op amp B.
+context after: Op amp A is your standard is the actual standard amplifier used to, you know, used as a standard op amp. Now, these op amp, you know, a regular op amp has an offset voltage VOS.
+
+[1119] EEVBlog #1119 - Designing a 1kV Isolated Oscilloscope — Dave Jones (explains)
+context before: So, uh yeah. That's terrific. That's life. Awesome. So, then any other really troublesome things that caused you heartache during the development? Um let me think. The front end The front end, yes, there have been lots of hassles in terms of components not working the way they should work.
+TEXT: We started off life using Well, we still are using some analog devices op amps, and the spec for the op amp is that you can power it down. Okay.
+context after: But, when we powered it down, it dragged the input to minus 5 volts. Ah. And we didn't expect that. And neither did the designer who I spoke to in Ireland, a woman who said, "No, it doesn't do that." But then when she went and checked it, it does.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (opinion)
+context before: So, it's not actually coupled into the input as such it even though it's a flight like it's introducing noise into the ground reference the ground reference is still the reference.
+TEXT: So even if the reference is jiggling around due to the noise, it's you know, it's not introducing much. So there you go. That's doing some basic test on the OPA189 op amp and as expected I it was you know, relatively significantly lower noise than the MAX4239 and actual worthwhile upgrade for not much real change power really and it is effectively a drop in replacement for the micro current although as I said
+context after: unfortunately that LMV321 op amp that one will have to be changed to one that supports a higher rail voltage. So off hand I don't know just a regular LM321 might do the job.
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (opinion)
+context before: obviously, my camp, but they obviously get away with it. So, there you go. Really is a nice bit of kit. And as I said, overly complicated for what it, maybe it's not overly complicated, I don't know, I'd love to see the schematic of exactly what they're doing there.
+TEXT: It just has more stuff. More analogue-y stuff, more op-amps and stuff than I expected. I expected just, like really, I expected just a like an off-the-shelf, you know, crystal semiconductor, like USB audio interface going to, I expected the chipset that did like the microphone amplifier, the
+context after: like the dual-channel driving, and the whole works, you know, the DACs and the ADCs. I expected that, that, I expected maybe a couple of op-amps to, you know, bridge the, you know, the sound between the zero-latency thing between the microphone and the headphones and stuff like that.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (opinion)
+context before: It's magic. And that's how these chopper or auto-zero amplifiers can get incredibly uh low offset voltages like, you know, 1 microvolt instead of a millivolt, 0.1 microvolts, you know, really incredibly small offset voltages.
+TEXT: So, that's how an auto-zero chopper amplifier works. Um if you're trying to use a regular op-amp at uh DC, they're they're very noisy. And um And And that's a real problem for precision DC applications or, you know, low-frequency applications.
+context after: It's a real issue. And basically these um a chopper or auto-zero amplifier, because it uh effectively nulls out um uh DC offsets and very low-frequency signals, 1/f, those high-noise content ones are effectively canceled out by um chopper amplifiers.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (opinion)
+context before: If you haven't seen a video on chopper amps, I will link that right here down below. So click on that and watch that if you want to. It's one of my much older videos.
+TEXT: Anyway, pretty much one of the best zero drift low offset voltage operational amplifiers you can get on the market and yes, it's got that chopper configuration to get a very low offset voltage.
+context after: Check out some of the banner specs here. It claims to be the lowest auto zero amplifier noise of presumably any amplifier on the market. Awesome, super low offset voltage only one microvolts.
+
+[24] EEVblog #24 - Chopper Operational Amplifiers — Dave Jones (opinion)
+context before: Op amp A is your standard is the actual standard amplifier used to, you know, used as a standard op amp. Now, these op amp, you know, a regular op amp has an offset voltage VOS.
+TEXT: And as I said, you know, a typical op amp that might be a millivolt or something like that. You know, which is quite large for precision DC applications. Okay?
+context after: Now, what we would do is we want to zero that out. We want to null that out. That's what these chopper or auto zero amplifiers do. And the way it does this, it's got um four internal switches.
+
+[541] EEVblog #541 - Mailbag — Dave Jones (mention)
+context before: more upmarket DSA, the 35670A dynamic signal analyzer. But yeah, there's no way my analyzer can actually measure the performance of this sucker, but this would certainly be the best choice if I was most likely, all things considered, the best choice for upgrading the front-end amplifier on that thing.
+TEXT: Warning, Will Robinson, audiophile wank alert. LME-49990 TeleOverture. Oh yes, because it's going to sound fantastic. We're playing the William TeleOverture ultra-low distortion, ultra-low noise operational amplifier. And there's some of the applications. Oh, fantastic. Ultra-high quality audio signal processing, blah blah blah. Input current noise density and nominal
+context after: banner spec on the front page, never believe it of course. 0.9 nanovolts per root hertz, 1.3 nanovolts per root hertz maximum. And if we actually go into the curves here, it's actually not hugely better than the LM797. Yeah, 797. And if we have a look at the
+
+[233] EEVblog #233 - Lab Power Supply Design Part 6 - LT3080 Testing — Dave Jones (mention)
+context before: So, do we actually need a diode across here? Well, unless you somehow short out this or connect or this is connected through to the supply and you force your voltage to a much higher voltage which then can cause enough current to flow through the device and into your low impedance supply at the front end to actually kill the device, then the answer is no, not really.
+TEXT: It doesn't It seems to survive quite fine if you simply just switch it off like that. And of course, if you go in, if you're feeding in big voltages from outside, then you've got other things to worry about like, you know, maximum voltage on your on your op amps and your other components that are supplied from this positive input voltage here.
+context after: And well, if you wanted to solve that, then you'd have to have another regulator on the input here just to power all of your other stuff. So, you know, I don't know.
+
+[574] EEVblog #574 - NEC Analog TV IF Modulator Teardown — Dave Jones (mention)
+context before: There's our FET attenuator there. And that's exactly what we've got up here. There's our differential amplifier there, discrete transistor differential amplifier, of course. And there's our FET attenuator over there.
+TEXT: And that's just been amplified by an op-amp on the output. Bob's your uncle. So, all of this schematic does really match that overall block diagram very nicely. So, you can like put these one on top of the other, and you can go, "Right, here's our phase detector right here." And bingo, there's your phase detector going to be in there.
+context after: And, you know, it really is So, there's your DC amp, your low-pass filters happening in there, all sorts of stuff. So, it really is quite easy to follow when you have the schematic and the block diagram here.
+
+[530] EEVblog #530 - Electrophoresis Power Supply Teardown — Dave Jones (mention)
+context before: But, of course, because the transistor is slammed hard on, it's dragging the output of this diode bridge down to that 50 volt level. So, that's why we've got a huge amount of switching and that's why they they've decided to put a little snubber in there just to take the edge off that.
+TEXT: Oops, sorry, made a small mistake there. This resistor doesn't go back to the output of the voltage regulator, it goes back to before the input of the voltage regulator, which is the filtered 12 volt rail in here, which also powers the LM, you know, the comparators and the op amps and the other analog circuitry which we saw in there.
+context after: And now I'm looking at the output voltage, which is the blue waveform you can see in there. That's the 50 volts output voltage whoop, and you can see the see the undulation, the real low frequency undulation in there.
+
+[752] EEVblog #752 - Original Sony Walkman TPS-L2 Teardown — Dave Jones (mention)
+context before: and you'll notice that the pinch roller didn't move at all, so it's not driving that, it's driving it through the faster cog in there like that. So it'll go at a higher speed, it's no longer being driven by this belt here. And our main board, woo-hoo, advanced technology, single-in-line ICs here.
+TEXT: These are probably transistor arrays, most likely. They're not anything digital, of course, and they're not, probably not, oh, there might be some, you know, operational amplifier-type functionality in there, but basically this is essentially all discrete transistor solution. They've got a couple of extra trannies up the top there,
+context after: just because, well, they couldn't fit them into these single-in-line arrays, I guess, or they were, you know, just better served by having discrete transistors there. We've got some tantalums here, oh, these tag, these dipped tag tantalums. Blah, blah, blah. They send a shiver up the spine, they really do.
+
+[818] EEVblog #818 - Embedded Electronics With Jack Ganssle — Dave Jones (mention)
+context before: Why is it that I have to issue this set of statements in order to toggle this bit? I'm going to look at the library and the generated assembly code to see, oh, my God, there's registers. This is pretty cool. What is this? This is a magic idea that no existed inside here.
+TEXT: Yeah. You start looking at things like the diode equation. It's sort of interesting because you can't really do electronics unless you understand that there's a temperature coefficient associated with it. And there's nonlinearities. There's nonlinearities. You put a transistor in the feedback loop of an op amp,
+context after: and suddenly, whoa, you've got the coolest log amp I've ever seen. Yeah. Someone put an 8080 in the feedback loop of an op amp. Oh, just because. Just two inputs at a time. Right. Nice. Very nice. But, I mean, until you pursue that,
+
+[400] EEVblog #400 - 400th Live Show — Dave Jones (mention)
+context before: I mean you can't get a.3 volt reference because the band gap the the physics of band gaps I mean stop at you know 1.2 volts. I mean um I think there might be some weird physics ones which do eight or something band gap voltages but I don't know quote me on that.
+TEXT: So you have to divide it down. So, you've got to get either your precision resistors uh to divide it down, i.e. point.1% um precision resistors divide it down and then you got to buffer it, of course, with a a follower um an op amp follower or um you can use um ordinary resistors and uh and or and trim it.
+context after: You can trim it of course um with a trim pot. So, that's how you get a.3 volt reference. Once again, you'd buffer it. Um but then uh you know um if you're using ordinary resistors just watch the temp code.
+
+[141] EEVblog #141 - AA Alkaline Battery Capacity Measurement — Dave Jones (mention)
+context before: You need some way to accumulate all that data over time so that you can do your individual WHour calculations over time and then accumulate them all up to get yourself a total W hour figure.
+TEXT: Now that's you know it's fairly complex to do. You got to have the gear to actually do uh W hours. But amp hour measurement it's simple. You've got your battery under test, a simple dumbass constant current load, which is a FET and a O op amp and not much else really, and a multimeter and a stopwatch.
+context after: And that's it. Um, and you just measure the um uh you just set it up and just uh count the time with the stopwatch until it gets from the uh the voltage on the cell gets from fresh right down to your cutff voltage.
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (mention)
+context before: It just has more stuff. More analogue-y stuff, more op-amps and stuff than I expected. I expected just, like really, I expected just a like an off-the-shelf, you know, crystal semiconductor, like USB audio interface going to, I expected the chipset that did like the microphone amplifier, the
+TEXT: like the dual-channel driving, and the whole works, you know, the DACs and the ADCs. I expected that, that, I expected maybe a couple of op-amps to, you know, bridge the, you know, the sound between the zero-latency thing between the microphone and the headphones and stuff like that.
+context after: But, you know, and the 48 volt phantom power thing, but everything else is like, there's a lot of, it's just a lot of extra stuff in there. Anyway, a little bit surprised by that. But that's the Rode AI-1. I hope you enjoyed that little
+
+[1270] EEVblog #1270 - Electronics Textbook Shootout — Dave Jones (mention)
+context before: So, you know, that's where this sort of textbook is going. So if you don't know what a resistor or a capacitor is, you better go learn that first. So there you go. I'll just scroll through here, and you can stop those and read them yourself.
+TEXT: This is the full index broken down. Active filters, oscillators, operational amplifiers, things like that. I've done a whole, like, 45-minute video or something on op amps, and I didn't even cover everything. I'm not sure if I covered all the stuff that this thing's going to cover.
+context after: And we don't care about programming at the end. So there you go. They talk about atoms and the Bohr model and atomic numbers and, you know, like, yeah, no, the periodic table. It's like, yeah, no, you don't need to know this sort of stuff, but it's in here, you know, but you can skip it.
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (mention)
+context before: I've used that one a lot, and it's a nice little instrumentation amp, it's well, low cost in quote marks but yeah, for a precision instrumentation amp it is. No surprises for finding an in-amp in here. And of course, as always in a design
+TEXT: like this, you're going to find a smattering of ultra-precision operational amplifiers we've got the OP177s they're scattered in various locations across this, so yeah, no surprises you're going to have a bunch of those, and you're going to have a bunch of, yeah, there's LM393s
+context after: and there's other, you know, jelly bean type stuff. So I won't look too much further. And I'll just leave you with a choice smattering of high-res photos here for the other power supply section, and as always, the high-res photos are down on EEVblog.com, linked down below
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (mention)
+context before: 
+TEXT: Hello, Dave. I'm making this video in response to your video on operational amplifiers, particularly on the section on inverting amplifiers, where you said people become confused because of the signal at the input to the amplifier that seems to disappear at the virtual ground.
+context after: I think the confusion happens because people see that we have an input at this point here, but by the time we get to the amplifier, it's zero volts, and the other input is also zero volts, so the inputs to the amplifier are always zero.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (mention)
+context before: voltage to whatever it takes within the parameters available to make the two input voltages equal. Now those two voltages happen to be zero volts, but that's not because there's nothing there. It's simply the same voltage where the black lead happens to be. So thanks for watching,
+TEXT: and thanks for your video, Dave. It's one of the better videos I've seen on operational amplifiers on the internet. But even you said people get confused about the voltages seeming to disappear when they get to the op-amp. So hopefully this cleared it up for some people.
+context after: 
+
+[1005] EEVblog #1005 - Keithley 2302 Battery Simulator Teardown — Dave Jones (mention)
+context before: I can only imagine that they're using that maybe for a gross current overload, you know, maximum overcurrent protection thing for the MOSFETs, or something like that perhaps. And another part I didn't really expect to see, a video op-amp here, Analog Devices AD 818, you can see
+TEXT: three of those in there with the prominent white silk screen there so yeah, maybe it was just the designers, you know, jelly bean go-to op-amp for some reason. And hello old friend, down in the bottom left-hand corner there, the Analog Devices AD 620 instrumentation amp
+context after: I've used that one a lot, and it's a nice little instrumentation amp, it's well, low cost in quote marks but yeah, for a precision instrumentation amp it is. No surprises for finding an in-amp in here. And of course, as always in a design
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (mention)
+context before: So, we're a bit under where we were before, but like it's not much in it. It should maybe it'll go under one here, but yeah it's you know there's not a huge amount in it.
+TEXT: So, basically the op-amp and those resistors weren't really contributing much to that which is as you'd expect because as I said it goes through the power rail system and then it's effect on the op-amp itself has to do with the power supply rejection ratio.
+context after: So, it's not actually coupled into the input as such it even though it's a flight like it's introducing noise into the ground reference the ground reference is still the reference.
+
+[529] EEVblog #529 - HP 35660A DSA Upgrade Investigation — Dave Jones (mention)
+context before: You just have to be very careful. So I don't know, I'm going to have to mull this one over. I haven't got enough time to mull it over today. But it's a shame they're not in sockets, of course. It would have been really easy just to, you know, suck it and see, really.
+TEXT: Well I could certainly do that, suck off the solder and see, no pun intended. It might be worth a try. So you know, really the input noise is probably going to dominate in the front end here, combination of the FETs plus the op amp, and it's going to be the
+context after: input current noise as well as the input voltage noise, combination of both and the whole thing there. So you know, it might be worthwhile, you know, trying to upgrade this section, see if we can get better performance. So anyway, if anyone has any thoughts on that, please leave it in the comments.
+
+[1127] EEVblog #1127 - Mailbag Monday — Dave Jones (mention)
+context before: Wow, um This is not good. This is not good. Oh, wow. Okay, so there are they out They're our two ranges. Okay, so that switches from Okay. That switches our range, does it?
+TEXT: And then it goes into a MAX4416, which is a high-bandwidth op-amp. And oh, wow, that's just that is terrible. So, I thought this must be a problem with like the PDF output formatting or something like that, cuz I've seen things happen like that before.
+context after: So, I actually installed the latest version of Eagle, and I loaded in the Eagle file from the GitHub, and nope, it's the That's exactly what it is. Um Wow, this is just shocking.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: We've got a couple of trimmer caps in here for this switchable attenuator part of it for the higher-end voltages. We've probably got our this I haven't looked at the part number yet, but that probably will be a programmable gain amplifier driving the ADC.
+TEXT: That'll be a differential output programmable gain amp. There'll be a JFET and a couple of transistors in there to drive that thing. High-speed op amp over here and that's it's I think it's operation is going to be pretty very similar to the DS1052E.
+context after: Of course, these scopes have a upper bandwidth limit of 200 MHz as opposed to 100 MHz in the DS1052E. So, it's basically just that more of the same. They've just upped it to 200 MHz.
+
+[393] EEVblog #393 - LiPo Battery Discharge Testing — Dave Jones (mention)
+context before: You can design You can design and build your own load. A lot of people, very popular project, actually. A lot of people on the EEVblog forum are designing and building really quite nice do-it-yourself electronic loads.
+TEXT: And a lot of them are even microcontroller programmable or and/or PC programmable supplies. So, you can do this yourself. Um you can do it with a DAC card and a you know, and a FET and you know, not much else and an op-amp, not much else really.
+context after: So, um you don't necessarily need a high-end electronic load like this one to get these sort of discharge characteristic uh curves. You can certainly do it yourself. And I've uh done it myself before using, you know, National Instruments DAC card or something like that and a little black box which, you know, discharges batteries.
+
+[1525] EEVblog 1525 - Commisioned Mailbag — Dave Jones (mention)
+context before: to the, uh, main board down here. So, it, like, there's no other measurement stuff on there. That's it. We've got a little, uh, shield around there. But that's just that, uh, wafer switch. And there's just, and there's nothing on the bottom. There you go.
+TEXT: It's ultimately very simplistic, but it's based around a Maxim. What looks like, you know, an ADC. Uh, we've just got a MUX and an op-amp there by the looks of it. And that's our reference. All the analog, uh, fanboys go wild. It's an AD, uh,
+context after: 636 voltage reference. But, yeah, that's all she wrote. Um, you know, very nice, uh, ceramic resistor input, uh, divider and everything else. But this does, uh, true RMS. So I'm rather, uh, surprised at the, uh, processing, uh, simplicity of this thing, uh, for its day.
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (mention)
+context before: Got it? Um So, that's the you know That's the power amp section. Second Uh what else have we got? Another power amplifier, oddly enough. Uh incidentally, you will see here that uh this output rail comes down here through a big coupling capacitor, 470 mark, into our output transformer.
+TEXT: Mhm. The output transformer Well, look, if you if you're that desperate, yes, you can trace through all of this relay line but who cares? Uh one of the items that you might be interested in having a look at, though, is that op amp there.
+context after: I was going to ask about that one, yes. Okay, it's having a sniff of signal going into the VAS, the voltage amplifier stage. Now, while ever the power amplifier is acting within closed-loop conditions, Mhm.
+
+[624] EEVblog #624 - Mailbag — Dave Jones (mention)
+context before: There's our coil. They're using an inductor as a coil there. Let's pick that up, and well, let's get in there and have a look at those chips. Geez, yeah, nothing in it. Now one of these things, this doesn't look like a proper industrial grade tracer, that's for sure.
+TEXT: I've got an LM something or other there. It's obviously an op amp. Yeah, that's most likely a scenario, just a jellybean op amp. And we've got a 12C508. So we've got ourselves a little pick. There we go, a little 8 pin pick. And well,
+context after: yeah, okay, it's doing something and then flashing the LED and it's... but there's nothing on this side which is, you know, sending out any sort of code or anything like that. So I don't know what the hell's going on there, but I don't know.
+
+[722] EEVblog #722 - Mailbag — Dave Jones (mention)
+context before: It's got a 12-bit uh 1-meg sample per second ADC. That's not too shabby, either. Um because this is the um Cypress uh PSoC uh devices, they got the programmable analog stuff as well, uh which is really quite novel.
+TEXT: So, you get the uh four app uh op amps and low with um uh two low-power comparators as well, and they work in uh sleep mode. They're independent of the micro, and it's got programmable digital blocks and LCD segment control.
+context after: There's no LCD on here, unfortunately. That's a bit of a bummer, but anyway, um and CapSense and all the rest of the jazz. But, so there you go. That's a looks like a very nice kit.
+
+[208] Tektronix 2225 Oscilloscope Teardown and Calibration - EEVblog #208 — Dave Jones (mention)
+context before: fairly discreet stuff. I'm not recognizing some of the numbers of some of the ICs offhand, but they're they're certainly not custom hybrid type things. Although you could say that this little one down in here is a little on the vertical board there that custom resistor.
+TEXT: That looks like a thick film resistor hybrid there, but yeah, you know, apart from that it all it uses pretty much all discreet circuitry, transistors, basic op amps and digital you know, 4000 series logic ICs and so on.
+context after: Now, I just checked and that MC Motorola MC3346 for example is a transistor array. It's got a differential pair plus a couple of discreet transistors in there. So, you know, they've decided to use an IC instead of that.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (mention)
+context before: And here's another absolutely wild TI change that has nothing to do with uh the change note of this the process node or whatever that they've changed another one of their audio amps, the OPA uh 134.
+TEXT: It's the high performance sound plus trademark audio operational amplifier. Look at this. Oh, 8% uh THD. That's like homeopathic quantities of distortion there. Um, you know, so like it's it's the duck's guts, right?
+context after: Just take a look at this pin out. Just take a look. Memorize that. See if you notice any difference with uh the previous version of the data sheet. Here it is here.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (mention)
+context before: And you know, cheap as chips and do that. But once again, it may not be as effective. But this uh 27761 I rather like this. Like to have that uh LDO integrated.
+TEXT: And what what type of powering data Once again, powering data converters, interface power supplies, operational amplifier power. So, you know, just generating a negative rail for your op-amp and stuff like that.
+context after: But here we go, output voltage ripple. Here's the money shot. Look at this. Right? We're talking V in at 3 volts and V out minus 1.8. You're going to get higher ripple at the higher voltage supply.
+
+[500] EEVblog #500 - Live Show — Dave Jones (mention)
+context before: Yeah, I know. I still got the printer sitting there. I've still got um some guy who's written he's designed a board. I I didn't reply. Um I don't think he's got a board and he's developed a like he's written some code to make it work and stuff.
+TEXT: So apparently um I could do that but ah you know one of those projects that uh sits on the to-do list. The endless to-do list. Ah cool. Spiky, you're doing a programmable lab supply using a high power op amp.
+context after: Is it on the forum? put it on the forum if you haven't already. When will be the next contest? Oh, no idea. I might um I might maybe do a contest for the 500th show.
+
+[54] EEVblog #54 - Electronics - When I was a boy... — Dave Jones (mention)
+context before: This is all that remains of my extensive data book collection. I had three, I think two at least two or three full 6-ft high bookshelves filled with these data books.
+TEXT: And you had things like the the TTL logic data book, thousands of pages. And you had stuff like the linear applications data book. You you know, operational amplifiers, CMOS logic, all that sort of thing.
+context after: And really, the only way you could do electronics, the only knowledge you had of what parts to use and circuits and things like that were in the magazines you had in your personal library, the magazines and the data books.
+
+[1744] EEVblog 1744 - NEW Micsig DP700 High Voltage Differential Probe — Dave Jones (mention)
+context before: So yeah, no workers. And we've got some diode protection there. Looks like they left out a couple of them there. So, I'm not sure what the uh deal is there.
+TEXT: We've got an OPA uh op amp up here. We have to check that. Nothing special there. That's just a general purpose uh quad opam. It's not too shabby, but you know, nothing to write home to your mom about.
+context after: And here's where all the magic happens. This is an analog devices AD 8130A here. It's upside down, so all the electrons are going to fall out. This is a specific u differential receiver 270 MHz bandwidth.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (mention)
+context before: If I adjust it, I'm adjusting the pot there. So, you see the AC That's in voltage mode, and we switch to current mode. Bang. Exactly the same noise. All right, we'll measure this switch off transient now.
+TEXT: I'll set up a current for 250 mA. There we go. We've got 250 mA running on there. And this is our output AC coupled 50 mV per division. And the green trace again is our is our control op amp output.
+context after: So, let's trigger that and just disconnect the load. I know this isn't ideal. Normally, you'd electronic switches. But, we'll just disconnect that real quick and bam, there it is.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (mention)
+context before: 8 by 40 uh segments, which is um pretty much what I need. I think I need like um 36 segments or something like that. So, and it's got decent analog stuff as well.
+TEXT: It's got two op amps uh built-in. Not sure of the performance of those. I don't think I'm going to be able to use those at all. Uh 12-bit ADC, excellent at 1 megasamples per second with 25 channels.
+context after: Fantastic. It's got a DAC as well. A lot of micros don't have DACs, but it's got a 12-bit DAC uh with two channel DAC, awesome. So, you could do like stereo audio or something like that, perhaps.
+
+[900] EEVblog #900 - STM32 ARM Development Board — Dave Jones (mention)
+context before: So, what bias currents are we measuring? Cuz bias current is not static current, so anyway, um can you to compensate errors due to the uh bias current. Okay. Right, bias current record.
+TEXT: Okay, so that's like a calibration feature by looks of it. Bias current This operation consists of storing the bias current values of operational amplifier A. Hey, they've thought of everything.
+context after: Compensating for the error in the times 50 amplifier in there. Sweet. And bias current mode, there we go. JP1 off, yep, you betcha. And release the switch and it tells us the bias current.
+
+[1753] EEVblog 1753 - Designing a 2000V Isolated Oscilloscope (Cleverscope) — Dave Jones (mention)
+context before: So, we suck the heat out of the board, which is again 12 layers and it has quite a lot of copper in it. So, we spread the heat from all these quite the ADC on it's on it's 1 and 1/2 watts and we have a clock generator which makes our 500 megahertz clock reference.
+TEXT: It's another watt and there's some uh analog devices 1 gigahertz op amps. They're also pretty power hungry. >> I noticed um thermal-wise there's no fans in this thing. So, it's all passive.
+context after: Oh, there is. Where does it go? >> There's too much heat. >> Oh, okay. Oh, yeah, that's on the top. I was going to say, yeah. >> Fan was on the top.
+
+[Yk_T-uCbg10] Returned BM036 Clamp Meter Investigation — Dave Jones (mention)
+context before: Get all three at the same time, maybe? Come on. Nah, that's really annoying. Why did they do that? So, that MCP uh 6002, I think that's a I on the end there.
+TEXT: Um that's a uh that's one of the microchips op amp jobbies. And then got another little analog devices jobbie up there. I don't know what an AO9 is. Um yeah, there's nothing obvious there.
+context after: There's no solder joint issues that I can see. So, uh it would have passed its factory test, and why it got worse over time I don't know. And as I said, I'm doubting any of the mol- like the multimeter functionality, cuz it seems to work otherwise.
+
+[1336] EEVblog #1336 - DT71 LCR Tweezer Destructive Teardown + Lab Update — Dave Jones (mention)
+context before: Uh I would presume you'd need some of those. But yeah, there's not much in it, is there? I mean, jeez, that's, you know, it's a little bit over here, but uh that's just like some relay and MOSFET switching.
+TEXT: Um and maybe an amp. That little six-pin sot jobby, and it's about all she wrote. Wow. So, you can obviously tell why this thing is A, cheap, and B, its performance is not that great.
+context after: Leaves a bit to be desired. It's because it's just like, you know, there's not a lot of hardware, and there's no, you know, really precision hardware in here or something.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: So yeah, there's a penalty you pay there, but positive side is there's no real switching noise to be had here. So yeah, linear pass elements, these are really cool.
+TEXT: We'll have a quick look at the data sheet. So here it is, high voltage, high current. You know, it technically it's an operational amplifier. Single supply range from 8 V to 60 V.
+context after: So can go pretty high voltage stuff or you can do dual supply. You can split them there if you want. High output current 500 mA continuous. I thought it was 700 mA.
+
+[456] EEVblog #456 - CSIRO Rubidium Frequency Standard — Dave Jones (mention)
+context before: Not exactly sure what they're using that for. And it's another video distribution amplifier. Bit more complicated than the other one. Got lots of Looks like we've got some discrete trainees on here.
+TEXT: Look at this front end. Adjustment pots. Been somebody with a gray beard and right tongue angles tweak those and sealed the pots off there. And we have some Burr-Brown uh op-amps.
+context after: Nothing really special. Eh, it's a Euro video distribution amplifier. Woohoo! And on the back here they've gone to the trouble to of course design a custom back plate as well.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: Back from the future. But, if you think you're going to solve this problem by, you know, tweaking your input capacitance on this on over here, then you're completely wrong.
+TEXT: You're in the wrong ballpark because the loop stability of this thing is ultimately uh determined by the phase margin of the um output op amp in there for this voltage reference.
+context after: And the as I said, the output um capacitor here, the 10 microfarads with the uh a a it usually specifies in data sheet. It does in this case of it's got to be less than 0.1 ohms.
+
+[1752] EEVblog 1752 - Texas Instruments SCREWED UP the NE5532! — Dave Jones (mention)
+context before: Hi, Texas Instruments or TI have screwed up big time. And if you're not careful, this could actually cause great damage to your product, your company, whatever, if you're not paying attention and you happen to be using a design specification of a common jelly bean part which they've just changed.
+TEXT: Even though they've kind of sort of notified you of it, they made a big change that could impact a lot of people. And we're talking about the classic NE532 dual audio op amp.
+context after: And this is a classic Jelly Bean part. It's been around for decades. It was in my op amp jelly bean video. And Texas Instruments and just Texas Instruments alone because it's multis source.
+
+[271] EEVblog #271 - Zoom H1 Recorder Teardown — Dave Jones (mention)
+context before: It's all in here. It's great stuff. Excellent bedtime reading. And the other part is a JRC 2100A04. Not familiar? Well, you'll have to check it out. Maybe it's some sort of uh you know, dual op amp or dual microphone amplifier or something like that.
+TEXT: And I was right on the money on the other device, the JRC 2100 is actually an NJM or New Japan Radio 2100 dual operational amplifier. No funny business going on there at all.
+context after: It's just a low operating voltage plus minus 1 V to plus minus 3.5 V single supply operation dual op amp. No more to say there. And if we have a look at the dual board construction here, I was able to lift out the microphone insert over here and you can see the board-to-board interconnect they've got down here.
+
+[1328] EEVblog #1328 - uCurrent OPA189 Measurements — Dave Jones (mention)
+context before: So even if the reference is jiggling around due to the noise, it's you know, it's not introducing much. So there you go. That's doing some basic test on the OPA189 op amp and as expected I it was you know, relatively significantly lower noise than the MAX4239 and actual worthwhile upgrade for not much real change power really and it is effectively a drop in replacement for the micro current although as I said
+TEXT: unfortunately that LMV321 op amp that one will have to be changed to one that supports a higher rail voltage. So off hand I don't know just a regular LM321 might do the job.
+context after: Anyway, I need to investigate that but if you got a micro current and you want to like have a drop in replacement for lower noise and higher bandwidth this looks like a quite a decent option.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (mention)
+context before: So, that's why you never see an op-amp without any external circuitry, or what's called negative feedback. So, that brings us to our first practical application for the op-amp, which is a comparator.
+TEXT: But, before we look at that, we will look at the symbol here. Now, an op-amp is typically drawn as a triangle like this. It's got two inputs over here, and one input here.
+context after: Sometimes it might be flipped, depending on uh the ease of uh drawing your circuit and the way the signal flows, but it's exactly the same thing. Now, these two inputs here, one is the positive input is called the non-inverting input.
+
+[479] EEVblog #479 - Opamp Input Bias Current — Dave Jones (mention)
+context before: It's a 30-minute video of me marking around measuring some input offset voltages. Great fun. But today, we're going to do something related which we'll get back to on the breadboard and solve our problem from last time.
+TEXT: We've got op-amp input bias currents today. What is an op-amp input bias current and why is it important? Well, let's take a look at it. You've got your basic op-amp here.
+context after: Doesn't matter what op-amp it is, they're all going to have what's called an input bias current. Now, uh you're used to dealing with an ideal op-amp. Now, an ideal op-amp, of course, one of the rules for the ideal op-amp is that no current flows into the input pins.
+
+[409] EEVblog #409 - EDMI - Smart Meter Teardown — Dave Jones (mention)
+context before: That's probably it for the main processor board. I mean, it's not, you know, there's not a huge amount doing there. We've got our uh cables connecting down to our main power board down here.
+TEXT: That's where a lot of the interesting stuff is going to be. And of course, we have the classic LM324. It's actually an LMV uh 324. Whole bunch of uh passives around that.
+context after: It's probably just doing some uh buffering and things like that. Now, our battery's a Varta uh CA um half double A size, made in Germany. Aha, brilliant. Now, on the uh power board, well, there's probably three boards down there.
+
+[217] EEVblog #217 - Lecroy 9384C Oscilloscope Teardown — Dave Jones (mention)
+context before: That'd be my guess anyway, but uh if you got a better guess, let me know. And they've got a DAC 8800 one between two hybrid modules and that's a octal 8-bit digital-to-analog converter.
+TEXT: So, they obviously need four DACs there per analog channel for some reason, offsets and uh possibly things like that. And that's supported by a couple of LF 347 op amps.
+context after: And there's another huge quad flat pack on the top side of the analog-to-digital hybrid once again one for each channel and I can't look at the number on that.
+
+[232] EEVblog #232 - Lab Power Supply Design Part 5 — Dave Jones (mention)
+context before: It's still not going to be great. It's going to be very, very hot, but at least survive and it won't blow those resistors. So, if we've got a 1 amp current shunt resistor here and 1 milliamp flows through there, we're going to have 1 millivolt across here.
+TEXT: This op amp, the MAX4238 you've seen in my micro current, it's exactly the same. It's got a gain set by these two resistors here of 200. It's quite a high gain.
+context after: And so, if we've got 1 millivolt drop across the shunt resistor, we'll get 0.2 volts output. So, my little engineering note here says it again, the 200 the Vout equals 0.2 volts per milliamp flowing through here.
+
+[1248] EEVblog #1248 - INSANE! A 0.02% Process Meter for $9? WTF! — Dave Jones (mention)
+context before: There's There's something else going on here. Oh, and I checked out this part here. It's actually the same as down here. It's an OP2976. So, they've reused that of a gen- like a real expensive general purpose amp.
+TEXT: I Yeah, um these are these all look genuine. And And this is the kind of stuff you'd expect to find in a precision source measure unit like this. A TLC2252.
+context after: That's just a dual op amp. Nothing special going on there. Uh they're using another one down there as well. Linear Tech, right? Linear Tech don't make cheap parts. A 1446.
+
+[1104] EEVblog #1104 - Omicron Labs Bode 100 Teardown — Dave Jones (mention)
+context before: That's That's my first guess. Next to that we've got an ultra precision 80 8676. Special. Don't know what the top job up there is. That doesn't That's just a Probably that looks like a voltage reference.
+TEXT: So down here we've got some filtery doohickey going on. Check that out. Then we've got our six What? Six op amps? What have we got? And these are AD 8170s.
+context after: These are muxes so I can only presume that they're muxing in different filtering there. These ones up here are 8007s again. Oh, no, only two of those. Two 8007s and one That's just no PA 2277 low noise amp.
+
+[1258] EEVblog #1258 - MORE Dumpster Wandel And Goltermann! — Dave Jones (mention)
+context before: Is the synthesizer board. I've taken the can off there. It just popped off. And what do we have? We have an MC4 1648. That's a VCO, a voltage controlled oscillator.
+TEXT: Then we've got a 4011. Everyone knows what a 4011 is. Just a quad NAND gate. Thank you for playing. A bunch of you know, LF op-amps and stuff like that.
+context after: But yeah, I can put up the schematic. You know, I'm not going to like go through a complete design, a block-by-block design exercise for this thing. But this is basically what is it?
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (mention)
+context before: Can easily probably do a couple of milliamps. If you want in the order of hundreds of milliamps, uh you're not really going to get it from one of these capacitor charge pumps.
+TEXT: But of course, you can do an awful lot with a milliamp. You can fly to the moon on a milliamp or drive an LCD or drive an op amp or something like that.
+context after: You could even regulate, use one of those low power low dropout voltage regulators if you wanted to regulate the output because when you start putting a load on here, as we saw last time, even if it's a small load, you know, a drawing a milliamp or two, then you're going to start to see, well, you're Let's draw in the blue waveform.
+
+[1717] EEVblog 1717 - Rigol's INSANE New $999 350MHz Oscilloscope: TEARDOWN — Dave Jones (mention)
+context before: So, it doesn't make uh sense to respin the entire uh board cuz this is on the main board, obviously. Anyway, um so, apart from our custom ASIC, there's not much else.
+TEXT: This three-pin jobby, that'd just be a like an op bias op amp. 1282? I don't know. Yeah, it's just a precision uh op amp. So, yeah, no worries there.
+context after: And we've got our AC coupling cap here. And then we've got a relay to just uh short that out. So, in DC mode, it basically just um shorts out.

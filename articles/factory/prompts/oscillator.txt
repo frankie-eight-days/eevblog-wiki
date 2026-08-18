@@ -1,0 +1,578 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: oscillator
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 109 passages drawn from 96 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# oscillator`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[97] EEVblog #97 - Live Show #2 — Dave Jones (explains)
+context before:  know, thou shalt measure voltages, is the first step in, in, um, verifying, debugging any actual design or something like that, so, you know, there's, there's, uh, you start out with the basic steps like that, um, so you start out with a little methodical, a couple of steps, and then you, um, then you go into instinct, right, you know, what part of the circuit is, is, is gonna cause that particular response problem.
+TEXT: You know, if it's just a completely dead design, you know, you've gotta, well, you might know if it's a micro, you'll check the oscillator, does it start up, you know, is it, is it doing something like that, you'll check the lines, is there activity, and things like that, but it depends on the thing, so, um, sorry, no cut or dry, um, answer there, I'm afraid, it's just, um, yeah, a combination of instinct, experience, and, um, and, uh, thing.
+context after: Sometimes debugging your own projects is really hard, it's a lot harder than, a lot harder than you actually think, because you, you out-think yourself, you go, oh, it can't possibly be that, because that's, you know, and then you, you go away and you spend days debugging the damn thing, and then you find, yeah, it was that simple thing that you should have checked way up front, you know, you can get carried away.
+
+[280] EEVblog #280-4 - Talking Electronics - The Internet And Learning - Part 4 of 5 — Dave Jones (explains)
+context before: And how many all up are there? How many different ways? Oh, I think I think it's 50. I think it's But but you're you've did a two-part What No, like a hundred, right?
+TEXT: It was a hundred transistor circuits. Oh, no, that's that's actual circuits, but I did I've done another page on just the transistor as an amplifier. And just doing it as as a common emitter, a common base, or common collector amplifier, or putting two together, and once you get feedback it becomes an oscillator, or if you get positive feedback or negative feedback, it changes from an amplifier to an oscillator, so that you
+context after: can get all these different effects just out of one or two stages. And that was that was what I concentrated on, but I have done the other one on on on a hundred or two hundred circuits.
+
+[368] EEVblog #368 - EPIRB Teardown — Dave Jones (explains)
+context before: And I'm dual wielding probes here, using my third hand. And uh there's the signal, the yellow one is the return from that detection circuitry there. Slightly out of phase, but it's at the exact signal that's being inputted to the RF circuitry.
+TEXT: So, if we Up. If we disconnect that and we actually have a look at what's happening here, the microcontroller is outputting the modulation signal through here, through some AC coupling into the oscillator down here, which amplitude modulates it, and then it goes through the RF transmitter, and that's tapping off and that detection circuitry is reading it back and feeding it back in.
+context after: So, that microcontroller knows that it's actually transmitting the proper location it's transmitting that home-in modulation data, and presumably it'll, you know, stop flashing and or do whatever, you know, error error.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (explains)
+context before: Go and try a Go and try buy a second-hand lock-in amplifier on eBay, for example, and uh you know, like a Stanford Research lock-in amplifier and see how much they are.
+TEXT: But yeah, we can set our local oscillator frequency down here. Can we set it that precise? Can we? It's pretty good. And the higher-end versions, this Moku Go has only got like a 20 ppm oscillator in it, but the high-end ones, the ones that, you know, you can get a $50,000 version of this that has a really schmick oscillator in it with incredibly low jitter and all the rest of it.
+context after: But let's try and actually let's just open our scope and let's see what we've got. Right. So looking at our oscilloscope here, okay? We've got our channel A, we've got our channel B.
+
+[1288] EEVblog #1288 - Synology NAS Dumpster Find! (REPAIR) — Dave Jones (explains)
+context before: It looks like it is a fixed 25 MHz uh provided to devices requiring LPC clock. So, it's just a internal clock generated from uh the main uh processor clock, whether or not it's it's phase sync or not.
+TEXT: Well, it is internal, but whether or not that's important. So, you could potentially get around this fault even if this pull-up didn't work by putting in like a little having a little mod board with your own 25 MHz oscillator and then powering and then using that to power whatever boot circuitry, ROMs, or whatever uh legacy uh bus devices you've got powered on there.
+context after: But as I said, uh the synchronization could be a problem. So, but you could also have clock sync as well. So, it it's possible even if this pull-up uh resistor fix didn't do it.
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (explains)
+context before: What's the what's the truth of that? I don't know. Seriously don't know. The mic preamps have frequency response shaping. Uh we've got all of these various switches so that the mic the output of the mic preamp can be gated through to the intercom amplifier or to the the PA amplifier to be sent out to the global PA line.
+TEXT: Uh So, that switch will kind of run that one. That's the electronic switch there. That one will run that one. And if they are using that one, it not only gates that through, but it also gets the local uh 25 kHz oscillator and gates it through to And they And that's just summed onto the signal and Summed onto the signal.
+context after: That's it. Okay, you have to do that a few times. Uh Yeah. But you said the bandwidth of this was only 15 kHz. Yeah. Uh it's for for speech.
+
+[161] EEVblog #161 - 555 April Fools Revealed — Dave Jones (explains)
+context before: timer scam, and yes, it was complete bullshit, of course. There is no secret hidden easter egg in the triple five timer. Sorry, Hans, I couldn't resist including you to help sell the story. And, uh, if you're wondering how I did it, it's pretty simple.
+TEXT: Let me show you. What, uh, what you see here is real, but what you didn't see off camera is there's a second oscillator. InfiniiVision scope. Let's take a closer look. Okay, here it is. I've got, I'm using the waveform generator output. I'm generating a sine wave at, you guessed it, 55.5 hertz at about half a volt.
+context after: It's AC coupled. It goes into a little secret hidden switch here, which I was using to, uh, turn the signal off and on off camera that you didn't see. Now, of course, there's nothing connected to pin 5 here, of course, which is the modulation you can use for modulation input on the triple
+
+[235] EEVblog #235 - Rubidium Frequency Standard — Dave Jones (explains)
+context before: So, here's a typically good old-school frequency counter. It's a Philips PM 6672. You can pick these up on eBay. Going to have to do a teardown of this one.
+TEXT: And it's got Well, basically, it comes with several different types of oscillator options. When you buy frequency counters like this, whether they're the one hung low cheapies on eBay or they're the good ones, you know, name brand ones like this, then you're going to get different types.
+context after: And if you even this a good one like this, if you buy it just with its standard oscillator option, it's just going to have one of these regular, you know, quartz um temperature compensated oscillators in.
+
+[1504] EEVblog 1504 - The COOL thing you MISSED at Tesla AI Day 2022 — Dave Jones (explains)
+context before: watch the video and then i'm going to go back and watch the video and then i'm going to watch the video and then i'm going to go back and watch the video and then i'm going to put that on the power supply board and they've come a gutsy here um and and they admit it and
+TEXT: they show it as a learning example um it's absolutely so yeah they're getting no no clock outputs from the oscillators here okay and then they modeled it as like thermal like a vibration of wise so you put accelerometers i've done videos on this you can get little micro accelerometers
+context after: in fact i've got one so i've shown this before this is a pcb uh piezotronics uh accelerometer which um it's just that's the name of the company it's not to do with pcbs although i used to use these on pcbs all the time and they're tiny little accelerometers they've got b and c
+
+[538] EEVblog #538 - HP35670A DSA Repair - Part 2 — Dave Jones (explains)
+context before: I have no idea. But I had a lot of people comment on it, can I do extra videos fixing this thing? And yes, that was my intention to do videos until it's repaired or until I decide it's just not worth the effort.
+TEXT: So, here we go. I'm going to have another look at it, another crack at it. Now, to recap what happened last time, we have a known faulty power supply, which presumably took out best guess took out a 7912 -12 V regulator on the digital board, and that stopped the oscillator working.
+context after: So, we have got to the point where the unit does actually power up and runs through the software. So, all the digital part of it's working fine. But we're getting error messages on there saying that the ADC ASIC has failed.
+
+[1245] EEVblog #1245 - A Most Excellent REPAIR: IBM PCjr Keyboard — Dave Jones (explains)
+context before: Like, I don't know how comprehensively it tests it, but it knows that there's X gates in there, and I assume it exercises all options for all the stuff. So, yeah, um, um, okay. I'll tell you what, just for kicks, I decided to start this thing back
+TEXT: up without the chip in there, and yes, it oscillates now. We're getting that, uh, 400 kilohertz that we were getting before, and I thought that I'd just probe the lead over here, and then just do the shorty short thing. We're actually getting trend, uh, packet transmission.
+context after: There we go. Look, we're now sending data. We're sending data without the chip. Wow, look at that. Something's going on there. The signal level is just, that's the voltage drop of the, uh, lead there, the infrared lead, um, from the positive rail. Wow.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (explains)
+context before: Well, power supply's okay, the clock's okay. I got no data on it. What's left? So, really that is not looking promising, I'm afraid, because well, yeah, you've gone through the basics.
+TEXT: You measure the power, you measure the oscillator, you measure the signals going to the screen, which are our main well, our only symptom that we've got is that the thing doesn't uh boot, things like that by the activity on the LEDs, and we're just getting no response.
+context after: And of course, the system that you know, when you plug it into the system, it's not like it's it's still works like the audio and everything uh still works, and but you just can't uh see anything on the screen.
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (explains)
+context before: So, there's not much not much play in that at all. And if we bring in some metal here, there we go. Can see it see it change, but there's not a huge amount in that.
+TEXT: It doesn't change like it doesn't change by much before it calls up the buzzer. So, um and by the way, this buzzer is not solid, so I think our um it's sort of a bit intermittent between when it So, it must be oscillating here because there's no hysteresis on here.
+context after: It just goes a bit funny. So, it tends to come and go a bit, but let's put some more metal towards that. So, a big chunk of metal like these pliers and look at that.
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (explains)
+context before: You know, they'll advertise the fact that it has, you know, some brand or some people like the other brand better than others. Anyway, 4580s all the way through. Um, there was another 4580 all the way over here, we'll probably look at that later.
+TEXT: So anyway, that's the, uh, generation, so that'll have an oscillator in there, just to drive our multiplier. And, uh, what else have we got? Um, yeah, right. So, now, I'll explain the signal path here. This is what I find interesting, a little bit puzzling I guess,
+context after: in that, uh, here's our microphone amplifier, right? This is our main chip, this does everything. It's all the way over here, if I was laying out this board, I would have put that as the first thing, because the most critical thing in here would be the trace
+
+[161] EEVblog #161 - 555 April Fools Revealed — Dave Jones (explains)
+context before: five timer. Frequency modulation. Now, uh, but what you didn't see are these wires running under the ESD mat. There they go. And they pop up through a hole in the ESD mat at the bottom. And on the bottom here, I just drilled a hole through the breadboard.
+TEXT: There it is. And I soldered that, uh, that oscillator signal directly onto pin 5, the little strip inside on the bottom of the breadboard for pin 5. So that's how I was able to do it off camera. I just flicked that switch whenever I wanted to cue the modulation.
+context after: And that's it. Pretty darn simple. I hope you enjoyed it and catch you next time. Sorry Hans. And if you've never actually seen under a breadboard before, I highly recommend you just unscrew the, uh, screws on the bottom and lift it out. And lo and behold,
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (explains)
+context before: I've measured those. I had to take them out of circuit to measure them. Measure them at around about 10 kHz. I should have put that in there. Uh 1.7 mH for the drive coil and 18 micro henries for the sense coils.
+TEXT: Now, of course, this thing has to start up in some way. So, it's got to get base current to do that and it does that via uh R3 up here 15K and the sense coil, you see, can go down there and start that transistor and we can get some oscillation happening here.
+context after: And then we've got this convoluted arrangement down here. Basically, it looks convoluted, but all it is is basically they've got a series resistor R4 here and they're smoothing out any oscillation there.
+
+[831] EEVblog #831 - Power A Micro With No Power Pin! — Dave Jones (explains)
+context before: You can make an absolute fool of yourself. Big trap for young players here. What I've got is I've added a second chip here. I've added a uh CD uh 4060.
+TEXT: It's a 4000 series uh CMOS. I like this little uh part. I've always liked it ever since I was a kid. It's got basically a built-in uh oscillator which you can use with either an RC uh oscillator or you can use with an external crystal oscillator.
+context after: And it's basically a binary ripple counter output. So, I've just put um uh some resistors and uh caps in here just to get, you know, a frequency that uh you know, we can actually see.
+
+[669] EEVblog #669 - FLIR TG165 Thermal Imager Teardown — Dave Jones (explains)
+context before: So, um I don't maybe they got nothing on the bottom. I got to get that board out and check the uh bottom side, of course, but there's not a huge amount extra in there.
+TEXT: What's this thing working at? There you go. That looks like the main oscillator only 8 megahertz. But that's kind of what you'd expect because uh they wouldn't, you know, I mean, this thing's just got to read the serial interface from it.
+context after: It's either got to read the SPI or more more likely the Mippy interface from the Lepton sensor over here and then uh display it on the LCD. And that's basically it.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (explains)
+context before: So, it really doesn't need anything more powerful than that. And I guess they decided that they'd use that instead of a soft processor inside a higher end um FPGA than the uh Cyclone II here.
+TEXT: Now, while I said this layout is quite uh neat and they seem to know what they're doing, well, they didn't seem to you know, this is a 100 MHz oscillator up here and it's, you know, they should have put that closer to the chip over here.
+context after: It's, you know, a bit poor. I mean, it's it's going to work, but yeah, it's not good practice. Then looks like our programming interface there for our uh ST microcontroller and that's about all she wrote.
+
+[767] EEVblog #767 - Super Regenerative Receiver Problems — Dave Jones (explains)
+context before: er regenerative. Super regenerative. Super regenerative. Super regenerative. I'm going to get it better every time. Faster. So, to prove that theory I've got that this thing uses a regenerative super or super regenerative receiver, that they're interfering with each other because a super regen, that's easier to say, I'll stick with that, super regen receiver in these, they actually have an LC tank oscillator in them.
+TEXT: And with which actually has positive feedback. They actually oscillate. So, when you got an oscillator, if you don't shield that oscillator inside, it can actually transmit on basically the same frequency you're trying to receive.
+context after: So, these two receivers here are trying to receive on the same frequency and you don't design these properly to shield them and they're spewing out all sorts of RF energy at the frequency that you're trying to receive the damn thing on, then of course they're going to have weird ass problems where it doesn't receive like this because it's being swamped by the nearby device.
+
+[709] EEVblog #709 - EDC 4601 AC Voltage Standard Teardown — Dave Jones (explains)
+context before: Another FET over here. But jeez, what's going on there? Really is quite interesting. All this diode, which is probably like diode like gating, is actually goes into this Epson chip here.
+TEXT: Fascinating. And of course, it's obvious when you take a look at the data sheet, which I will link in down below. It's got a built-in oscillator and it's got a digital programmable divider in there to select multiple frequencies.
+context after: Hence, all the diode gating and stuff like that. It's just selecting the different frequencies. So, that is our main frequency element in there. So, yeah, I'd really love to get a schematic and theory of operation of how they're doing this whole thing, not just the oscillator side of things and the detector over here, but you know, just just the whole kitten caboodle for this thing.
+
+[1745] EEVblog 1745 - Continuity Tester Spectral Probing — Dave Jones (explains)
+context before: Presumably the same buzzer, they're just driving them in different frequency, of course, which is why they can change it in firmware. It's just a piezoceramic uh transducer, not a piezoceramic buzzer.
+TEXT: A buzzer is a piezoceramic transducer that has a built-in oscillator. So, you just give it 3 V or whatever, and it just buzzes at its own internal frequency. But a piezoceramic transducer is just the transducer on its own.
+context after: You need the external drive to make it go. So, that's what's going on here. So, yeah, it doesn't sound louder. I think we're going to have to bring out the big guns here.
+
+[1614] EEVblog 1614 - Circuit Design TIP: Crystal Oscillators — Dave Jones (explains)
+context before: Hi, just a quick circuit design tip. Thank you very much to uh Cyber City uh Circuits for actually prompting this one. He started a discussion on uh Twitter. I'll link it in down below, but that's what prompted this.
+TEXT: So, as you probably know, any active chip needs some sort of oscillator to actually run it, and you get that from a crystal like this, either just an individual crystal or from an external crystal oscillator.
+context after: But, it's very common for of course microcontrollers or any sort of chip. In this particular case, we've got DTMF uh tone generator, but it doesn't matter. It's just an example.
+
+[284] EEVblog #284 - Braun Toothbrush Teardown — Dave Jones (explains)
+context before: And they're certainly probably not uh easy to start developing with. And the core is an EM6600. That sounds like their own uh core. It's probably based on some derivative of uh something somewhere along the line.
+TEXT: Who knows? But anyway, it's a complete uh single-chip solution. Uh 4 microamps in active mode. The um uh built-in oscillator, it's designed for ultra-low power stuff. It only goes from 32 kHz to 800 kHz.
+context after: It's the main oscillator. It's got a watchdog uh timer. It's got a sleep controller. Uh 10-bit universal counter timer. Some interrupts in there. And a 4-bit ADC. So, it's really um you know, a pretty specific uh low-power sort of, you know, consumer microcontroller in these sort of consumer appliances cuz you can bet your bottom dollar that Braun paid absolute lowest possible, they shaved every cent, lowest possible
+
+[XRyDyOANQhc] Guest Video: The Defpom - Fluke Calibrator Repair — Dave Jones (explains)
+context before: Um and there will be more as well as I progress through it. Um but hopefully this is a little sample of of, you know, what you might get to see if you come to my channel and have a look and uh hopefully subscribe and so on.
+TEXT: So hopefully Dave chooses me. Otherwise it will never see light of day. Okay, so to start off with, I should explain what's going on here. Now this board here is the oscillator and it isn't oscillating.
+context after: All right, so what's supposed to happen is it's supposed to have a phase uh change as it goes through each amplifier stage on this board. It's supposed to go 380° on the first stage, 90°, and 90° again to get 360° or thereabouts, um which is then controlled electronically by the control board, oscillator control card, um which then fine-tunes that frequency, allows for any changes on the front panel controls,
+
+[238] EEVblog #238 - Power Supply Design Part 7 — Dave Jones (explains)
+context before: And we'll take a look at those later, but um basically I didn't have enough free pins. But with those external uh chips dedicated to IO, I freed up a few pins, but um as you can see, I'm still using all of the pins.
+TEXT: And as I mentioned previously, I wanted to use an external uh oscillator as well cuz the internal one uh wouldn't have been accurate enough for uh RS-232 uh serial comms, especially over temperature.
+context after: So, I'm using an external resonator here. It's going to be 8 MHz. Um it's an ATmega168 still or it could be a 328, whichever uh Arduino compatible one you desire.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (explains)
+context before: Look, series pass NPN transistor, exactly the same. Op-amp with a voltage reference, exactly the same. Feedback resistor network, exactly the same. So, what's different? Well, if you look at it, there's a gated oscillator down here.
+TEXT: There's a There's an oscillator. Let's just take an example of a fixed oscillator for the time being. And the op-amp actually switches that oscillator off and on to drive the series pass transistor.
+context after: Instead of driving it directly, it drives It just switches an oscillator in there. And we've added external to the chip, hence the little um little dot there, external components.
+
+[1237] EEVblog #1237 - Old School Teardown: HP3785A Jitter Analyser — Dave Jones (explains)
+context before: That's absolutely fantastic and looks like Oh. We're going to get some more large socket porn. Look at that. Look at that. So, there's not a huge amount on that.
+TEXT: Just a bunch of discrete over here. We've got some They They actually Yeah, they'd be uh they'd be oscillators. Really? Like, you know, Colpitts variation type oscillator with various crystals.
+context after: They'd be for the different bit rates, but they've devoted an entire board to that pretty much. Wow. Uh-huh, those white things, they're the uh they're the fuses on each board.
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (explains)
+context before: It just goes a bit funny. So, it tends to come and go a bit, but let's put some more metal towards that. So, a big chunk of metal like these pliers and look at that.
+TEXT: We can get our oscillator to stop completely. We can just swamp it that whether or not. It doesn't like that. There's not enough feedback in our sense coil and we're just killing that sucker.
+context after: But, of course, it's still going to buzz in that case because of the way that they've got the polarity on the threshold comparator there. Oh, by the way, sorry, I said that they're all 500 millivolts per division.
+
+[354] EEVblog #354 - CityRail PA Amp Teardown — Dave Jones (explains)
+context before: And in fact, it was I think Peter Godwin at Jands who did the logic, uh, uh, what do you call it? The logic equations required for these and programmed them in.
+TEXT: Got it. Yeah. Um, okay, including we've got a an oscillator over here which we tune up to 50 kHz. Oh, LM567. Yep. Uh, now you can use these LM567s as either, uh, oscillators Mhm.
+context after: or down here as a tone decoder. A sniffer. They are 567 is the classic tone decoder IC. Mhm. That's what it's famous for. We also use them as a precision oscillator.
+
+[1301] EEVblog #1301 - Arcade Machine Repair — Dave Jones (explains)
+context before: I've actually um taken those out, measured those. They were fine, but I replaced them anyway. Everything's hunky-dory. I've measured the uh diodes in here. They seem fine. And upon some further tracing, I've determined that the uh 16/15 V I believe it is is coming through a series resistor, a series diode, actually coming from the 12-V tap, which is actually uh you know, one of the outputs uh down here, basically.
+TEXT: But um yeah, once again, it's uh there is no primary side uh separate oscillator to actually power this thing. So, it looks like it's bootstrapped in uh you know, some way.
+context after: It's like uh god, how much further do I have to trace this thing? It's just It's just ridiculous. I could waste hours and hours going down this rabbit hole.
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (explains)
+context before: I can't actually uh remember. And this is the new bad boy ASIC that's responsible for uh the world's fastest updating scope. And obviously, um FPGA application processory thing over here, whatever it is uh they're using uh clock gen in there.
+TEXT: It's a dead giveaway when you got a couple of oscillators in there. That'll be like a PLL or like a clock uh gen for all the uh sampling. So, that'll be doing all that.
+context after: And here is our uh sampling memory. Huge amount. Can't remember what, but anyway, they'd be top of the uh line. It's interesting that it's got like six of them.
+
+[1218] EEVblog #1218 - 1GHz Oscilloscope Spec Shootout — Dave Jones (opinion)
+context before: So, you can take it from your lab uh 10 MHz reference. Anyway, the new 3 Series MDO hasn't got a great oscillator in it. The 4 Series is pretty good, and the LeCroy's meh as well.
+TEXT: But, yeah, um these three are the standouts, but you know, it's nice to have a low ppm oscillator. I think they should all spring for it. In this price category, talking about a 1 gig scope, come on, include a, you know, a 1 or 2 ppm oscillator in it, you know, temperature-compensated oscillator, please.
+context after: But, of course, uh some manufacturers like uh Siglent, they actually specify uh 1 ppm uh for 12 months, but over 10 years, it drifts to three it could uh they only guarantee 3.5 ppm over the 10 years.
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (opinion)
+context before: There's a couple of longer ones which go into support support posts on the bottom. There's another aluminum block on the bottom. But uh let's lift it up. We've got our gold flash around the edges.
+TEXT: Ta-da! We're in like Flynn. And yep, as I suspected, here is our oscillators. It looks like we've got two of them. And these are super duper Well, one of them's going to be super duper special cuz this one's pretty schmick oscillator, much better than the Rigol 815 that we saw in the comparison video.
+context after: It looks like they have a dual footprint there. So, let's take a look at this. All right. Now we can have a look around the main board here with our Takano microscope.
+
+[612] EEVblog #612 - Mailbag — Dave Jones (opinion)
+context before: Yeah, I can see the membrane under those ones. There we go. There we go, just didn't see it on that bottom one there. Eh, got something hanging off there? What's that strand? I don't know. But that, that is fascinating. And that is the crusty old switch mechanism.
+TEXT: Oh goodness. So this lift-up module here, probably some sort of oscillator, did give away as the adjustment pot on the top here, plus you know, just a bunch of through-hole parts on there with some sort of clip-on plastic cover. So let's get that off and see what's under.
+context after: Yeah, there we go. Look at that. That's like, you know, some sort of voltage regulator. Is it charging? Did it use rechargeable batteries or something like that? And the trim pot could be, well, it may not be an oscillator, I don't know. But yeah, that is, that is
+
+[384] EEVblog #384 - Agilent 4000X Oscilloscope Teardown — Dave Jones (opinion)
+context before: We've got our two mega zoom for A61 per sharing two channels. We've got the one ADC BGA package sharing two channels here. And that's why the memory and sample rate halves when you switch on two channels, or one and two, or three and four.
+TEXT: I mean if you switch on one and three or two and four or something, you get the full memory and full sample rates. Because they're shared between the one mega zoom for ASIC. And we've got the huge ADC there. It looks like that they have a higher spec oscillator in there.
+context after: It looks like higher spec. I haven't actually checked out the specs, it just doesn't look like a standard package, that's all. So possibly with the 10 megahertz output here, and input, they're expecting a better oscillator. Perhaps. I don't know, we'll have to check it out.
+
+[459] EEVblog #459 - Counter Shenanigans — Dave Jones (opinion)
+context before: I mean, I won't go into um architectures of various modes of how frequency counter work works right here, but come on, 50 seconds. Hey, there we go. Bang on.
+TEXT: 10 MHz, not a problem. So, instead of the uh rubidium standard, what I'm going to be a bit cheeky and I'm going to feed the output of the internal oscillator in here, that crappy 10 MHz stock oscillator, to the external reference input and to the input of this.
+context after: So, it really is feeding up its own clacker right about now. So, let me plug that in and uh see what we get because we should read always precisely 10.
+
+[973] EEVblog #973 - Hioki Multimeter Review & Clamp Meter Teardown — Dave Jones (opinion)
+context before: Granted, they've put little bits of insulation on there. You know, neat touch, but yeah. I'm not going to write home to my mother about it. Is that a 32 kilohertz watch crystal in there? Um, low power. You don't need, this doesn't need to have fast updating
+TEXT: or the rest of it, so maybe they are operating the chipset at 32.768 kilohertz. Hmm, who knows, or it could have its own faster internal oscillator, but there'd be no reason for a real-time clock in something like this. Oh, is that a trimmer?
+context after: Oh, I didn't want to see a trimmer in there. Gee, oh, there's another one! There's another one! Ah, trimmers all over the place. So as far as the multimeter side of this thing goes, you know, they've got the GDT in there, gas discharge tube for the overload, stuff like that,
+
+[813] EEVblog #813 - Mailbag — Dave Jones (opinion)
+context before: So, I got no idea where that puppy is, but yeah. There you go. So, we've got just a tad bit of ringing there due to our antenna earth lead.
+TEXT: Oops. But, yep, there we go. 5 V peak to peak at 10 MHz, near enough. It's probably I think this oscillator up there all bloody touchy-feely. This oscillator might be better than the uh one built into this uh Keysight um 500 MHz uh scope.
+context after: I think it is. So, thanks for sending that in, Samuel. I'll link it in down below for those who want to check it out. Next up, we've got one from Wellington in New Zealand.
+
+[470] EEVblog #470 - Agilent N9344C 20GHz Spectrum Analyser Teardown — Dave Jones (opinion)
+context before: Not sure what they're doing with the secondary oscillator, but then our ADC under this block here and that is what I get, you know, all the low phase noise of this spectrum analyzer.
+TEXT: Really good oscillator, really good mixes higher up and stuff like that in the RF block. So, I think it's time to take the RF block apart, but you'll see the uh the machine aluminum cover that they went to all that trouble.
+context after: They sealed off all the individual sections all under there. Done it properly. Built in braces. They've got a couple of test pads over here on the side of the board, but as far as like our production test pads and things go, I really you know, don't see anything else on here in terms of that.
+
+[521] EEVblog #521 - Picoscope 5000 USB Oscilloscope Teardown — Dave Jones (opinion)
+context before: We've got the bottom of the board. There we go. They've got uh So, dual side populated. They've got some shielding, surface mount shielding, Pico branded. Look at that. Wow, that's fancy pansy.
+TEXT: And uh is that the main oscillator down there? 10 MHz? That looks like it would be. And uh Yeah. All right. So, obviously we've got our forefront. This is a four-channel, yep, four-channel scope with external trigger.
+context after: And uh can't see any converter. We've got a BGA package there. You can see the see the via footprint on the bottom. And uh bit of flux residue on the hand soldering.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (opinion)
+context before: But that's just the case if it's ground. Hey, if not, eh, probably doesn't matter. It'll oscillate. Plug our programming header back in. Nope, still not reading the ID. Still not reading the chip ID.
+TEXT: Oh, so much for that. That was worth a try. It's oscillator-in. Maybe there was nothing wrong with that crystal at all. And yeah, the reason it wasn't oscillating before is cuz it wasn't getting power.
+context after: Damn. I should have actually um uh re-checked the oscillator when we discovered that there was no power to the chip. I should have re-checked it after after we forced the power on.
+
+[907] EEVblog #907 - RETRO Teardown: Sony Video Walkman — Dave Jones (opinion)
+context before: But yeah, they've made a little attempt to do that or is that yeah? No, it's it's shielding. They've metallized that. They haven't just put in like a piece of you know mylar or something like that.
+TEXT: There's a little DC to DC converter can. There you go. Bobby Dazzler. And under that can there we got ourselves a looks like an oscillator. Discrete transistor oscillator by the looks of it.
+context after: Interesting. And if you remember back, these are the two cans that were strapped together with that big copper strap there. Look at that. So there's obviously there might be something on the bottom side of that.
+
+[1720] EEVblog 1720 - Mailbag: USSR Bonanza + Logic Training + $69 Logic Analyzer — Dave Jones (opinion)
+context before: I don't know what's going on there. Oh, planar transformer. Look at that. Neat. Now, that miscellaneous bag. Oh, what is what on What on earth is that? Is that some kind of filter or something?
+TEXT: Maybe? It's in like a large like crystal type package, but it looks like it's some sort of you know, I don't know, oscillator or filter circuitry or something. No idea.
+context after: That's a relay. It's got to be. Well, I guess that could be a relay, too. I guess just in an oddball package. I don't know. Another relay. These look Yeah, these look like all relays.
+
+[497] EEVBlog #497 - Siglent SDG5000 Function Generator Teardown — Dave Jones (opinion)
+context before: You can't just power that willy-nilly from the supply rail and expect to get good specs. So, really they've um you know they've done reasonably well there. They haven't skimped at all, of course, but that's what you expect.
+TEXT: I mean this thing is you know it's specs are very very good for a um well for any sort of oscillator, let alone one in this sort of price range.
+context after: And we haven't showed you the relays yet. There they are, NEC UD2-4, something like that. Anyway, they are NEC branded, really crappy looking um inkjet printing uh labeling identifier on the top of those things.
+
+[571] EEVblog #571 - Sennheiser EW100 G3 Wireless Microphone Teardown — Dave Jones (mention)
+context before: I don't know if there's another model there, but certainly some unpopulated parts. There's a max 4581 analog switch. Nothing really special about there. And that's about all she wrote here.
+TEXT: But on the other side we'll probably find the same NXP processor. Actually, the top side here is rather interesting. Check this. I mean it's all the same, you know, we've got our infrared transmitter, we've got our oscillator there, two oscillators here, and our single lead diffuser, and you know, sort of the same stuff happening that we had before, but interestingly, it looks like we have some sort of
+context after: interlock switch here and over here as well. Check it out. Now at first I thought it was like a door switch, you know, to make sure the battery door is actually locked in position like that, but it's you know, it doesn't make contact with that battery door there.
+
+[1679] EEVblog 1679 - Why Does a Uni-T AWG Cost $5800? - BOM Cost Analysis — Dave Jones (mention)
+context before: Um yeah, they've gone to a lot of trouble to um filter those um analog rails. And up here, they've got I love the little modular block, little pro PCB tip.
+TEXT: Yeah. Um add little block sections like that. But extra pro tip, label them, please. like they haven't really labeled this like what is the function obviously that's a that's an oscillator with a uh you know a PLL um hooked on there or something and this is a I believe this is a comparator cuz this goes off to the rear panel it's got like a frequency counter um stuff built in so
+context after: it's got all that functionality um so yeah they just broken that but you know not a huge cost in uh this sort of stuff now if you know anything about semiconductors and pricing you'll know that the two biggies in this thing the two cod costliest parts are going to be your gigantic big ass FPGA here.
+
+[272] EEVblog #272 - Manson 9400 40A 3-15V Switchmode PSU Teardown — Dave Jones (mention)
+context before: It's you can use it for quite a few things but it is one of its primary uses is for a switch mode power supply application. And if we go down here and take a look at the functional block diagram here, you can see that there's not much in there at all.
+TEXT: There's a voltage reference down here, an internal reference, there's a couple of error amplifiers that are summed there, there's an internal oscillator switching oscillator, there's a dead band controller and there's a steering flip flop and and some outputs and some uncommitted output transistors so you could use them in various configurations if you needed to.
+context after: So there's really not much in there at all. So it is fairly generic and you would have to look at the greater operation in terms of the actual schematic for this device to see how it's better used and there's a typical application circuit and as you can see they don't tell you what the outputs go to because you can have your own configurations and use them in various configurations and as
+
+[1270] EEVblog #1270 - Electronics Textbook Shootout — Dave Jones (mention)
+context before: It doesn't. It's not that. It's not an introductory book in that respect. But it jumps basically to diodes. Special purpose diodes. Then you've got transistors. Transistor circuits. Then you've got various transistor amplifiers. You've got FETs. Amplifier frequency responses and stuff like that. You've got other components.
+TEXT: These are basically component-based textbooks. Thyristors. Then the op-amp. Basic op-amp circuits. Special op-amp circuits. Active filters. Oscillators. You know, voltage regulators and basic programming concepts for automated testing. Let's go to Malvino down the bottom here. Malvino's got, once again, diodes. It starts out with like semiconductors.
+context after: You might get some semiconductor theory, you know, doping and p-n junctions and things like that. But basically diodes, BJTs, amplifiers, power, JFETs, MOSFETs, thyristors, frequency effects, differential, operational amps, linear op-amps, circuit applications, active filters, non-linear, oscillators, regulators, and that's it. It's near identical index.
+
+[341] EEVblog #341 - Mailbag — Dave Jones (mention)
+context before: to check if your solder joints are okay, but that'd be, I think, neat if you were able to get a breadboard like this that actually reflows soldered directly onto the main board without having the jumpers. I just think that'd be neat. And there's a few
+TEXT: options on here, there's a couple of oscillator options, 32kHz, 4MHz, you can select all those with jumpers, we've got some photocells there and over here, and we can adjust a variable frequency as well input. One interesting thing I just noticed with this board, if you take a look at the power input here, this DC jack, it's got a
+context after: series diode protection in there, but it goes, what looks like, down to the ground plane, but it's not. This plane on the top here is actually your positive rail, and that goes over and connects to pin 2 of your in-circuit serial programmer. And the
+
+[810] EEVblog #810 - Micsig MS310 Handheld Oscilloscope Teardown — Dave Jones (mention)
+context before: couple across the isolation? Eh, but it looks like they've done it. And we've got the cans off both our oscilloscope channel, I won't bother doing the second channel because it'll be absolutely identical, and then our multimeter. Let's take a closer look at the multimeter first.
+TEXT: Here's our multimeter input, that's some, we've got some diode protection over there perhaps, and we've got ourselves a MOVs. There was nothing on the bottom side here, they've got some isolation slots. Curiously, we've got ourselves a 20 megahertz oscillator there, but what that's used for, is it that device there?
+context after: We'll have to have a look what that puppy is, but it's pretty minimal setup anyway. We've got like non-traditional multimeter type input, doesn't have your traditional multimeter chipset, that's for sure. And that's what our oscillator is for, that's a Silicon Labs F330, that's actually
+
+[1362] EEVblog #1362 - A Very Skookum Mailbag — Dave Jones (mention)
+context before: some transponder type thing so yeah anyway i think that's like potentially much cooler anyway let me know in the comments down below i just think that works much better could i have like a you know a test bench tuesday or something that's an old school uh techtronics 200 series wow the 210 or the 220
+TEXT: amazing but um the old school uh oscillator up here that looks like an old school gw one looks like all of this stuff here is all uh dedicated uh special design instrumentation please correct me if i'm wrong gary but uh it looks like we have a few uh communicating a couple of uh identical they're like one of those
+context after: communication uh receivers or something like that perhaps but yeah dedicated test setups and of course all the manuals that have all the schematics and all the repair uh stuff and all the uh calibration alignment information for all of the different aircraft instruments and transponders
+
+[I-9dGvk3BW8] TP-Link AX6000 Router Teardown — Dave Jones (mention)
+context before: There you go, managed to undo a couple of coaxes. Aha, there is some switching converters. There you go, no worries, you can give away, of course. You've got your inductor there and a whole bunch of parallel caps there. Oh, I love how they've got the silk screen for all of these tiny little,
+TEXT: oh my God, are they 0201s? They're absolutely tiny, Todd. Those bypass caps, oh, that's horrific. So I've obviously got two very dense BGAs under there. Looks like there's our oscillator down there. Yeah, you can tell that, that's a PLL in there. And we've got some memory, that'd be the flash, wouldn't it?
+context after: And we've got a very nice shielded can, which looks to be soldered down, so I'm not getting that off. And then a whole bunch of miscellaneous power supply stuff there. And yeah, more over there for the USB stuff, and just through-hole stuff down the bottom.
+
+[275] EEVblog #275 - PIR Sensor Teardown & Tutorial — Dave Jones (mention)
+context before: that resistor on the input doesn't cause false triggering. And just as an aside, Perkins-Elmer also do what's called a digipyro. And that's a, instead of being an analog pyroelectric sensor, it's actually a complete digital one. It's got the pyro elements down here just as we've seen, but it's got
+TEXT: an analog-to-digital converter, it's got a decimator, and a serial interface which goes off to a microcontroller, and a voltage reference of course, and an oscillator. So these are completely digital paths, but they're totally different systems to what we're looking at here today. We're looking at the
+context after: one which is analog only. And if you have a look at the rest of the specs on the table here for the LHI968, you can see the responsivity we've mentioned, the minimum, the typical figure, matching between the two different sensors, 10% and the noise we've talked about,
+
+[1635] EEVblog 1635 - Mailbag: RF book, Probe Bonanza, Beelink Ryzen 9 EQR6 PC, CueCat — Dave Jones (mention)
+context before: Yeah, it's very very Forrest Mims-like. Look at this. How transistors really work. So, real world amplifiers. Now, you've got mixers and all sorts of cool stuff. And then to Ohm's law.
+TEXT: And it's all handwritten. I really and just scanned in. I really like this. This is great stuff. So, you've got oscillators, receivers, amplifiers, modes of operation, biasing, experimentation, and then individual devices, secrets of various radios, and then you've got single transistor radios.
+context after: So, if you're into your ham radio stuff, this could be an absolute goldmine. Single vacuum tube tube, as we say here in Australia, um, radios. Um, I won't pretend to know what an Angelo Dyne is, um, and a Helena Dyne is.
+
+[377] EEVblog #377 - Mailbag Monday — Dave Jones (mention)
+context before: Check them out at postscope.com This, I think, could be fun. And there's the main device on this thing, it's an NXP LPC series processor, the 1764 FBD 100, and then we've got another National Semiconductor device there, that's presumably the Ethernet interface chip, because there's the Ethernet interface there.
+TEXT: So there you go, there's not much else on there. There's a, there's an oscillator, well there's actually two oscillators down there by the looks of it. There's a 50, is that 50 megahertz? Yeah, there's a 50 megahertz, and another one down there, is that a 32 kilohertz crystal perhaps for the
+context after: real-time clock? Oh! I like this! This is really neat, I just like the form factor and stuff. I'm going to plug this in. And here's the tiny little sensor board, obviously hand-assembled, and there's the SHT21 temperature and humidity sensor. These are really neat devices, I was using
+
+[1416] EEVblog 1416 - Random TEARDOWN: Sennheiser EW100 True Diversity Receiver — Dave Jones (mention)
+context before: feature i didn't know but obviously it's in the hardware that's the only reason for that hardware to exist there and then over in the processory section we've got a oh an 062 japan radio call this is more more analog stuff here a couple of japan radio corps uh they're an 062 fet amp are
+TEXT: they and there's our little uh watch crystal 32.768 kilohertz four megahertz oscillator for our processor in here which is an nxp jobby and i believe that's exactly the same one that was used in the on camera uh receiver as well that's in its own little metal can you don't want the electrons
+context after: falling out no way and they've like series terminated like everything in here like every line on here as is terminated look at that wow and then you've just got some regulation and other uh jelly beans stuff around here this goes off to of course the connector off to the um lcd front panel good old
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: But basically, let's say 5 V is our set voltage on our output that we want, then this transistor here switches off and on based on whether or not the output needs correction like that.
+TEXT: So, this is highly exaggerated. It's going to be much smaller voltage than that up here but the voltage is going to correct itself by switching this series pass transistor off and on via this oscillator in bursts and so, the green thing here is the switch transistor switching off and on.
+context after: So, any positive ramp like that, this the transistor is switched on and what happens when the transistor switched on is the current flows through the in like that and through to the out.
+
+[NvIv-0-R6qQ] Guest Video: TannerTech Designing a Frequency Counter — Dave Jones (mention)
+context before: So we have these three different waveforms, and we're going to generate to put into the CD4026 chip in order to get a really good frequency reading. Now, if I had multiple different 555 timers or a signal generator, then I could easily generate these three waveforms.
+TEXT: But my frequency generator only has two channels, and so that makes it a little bit difficult. And also, I really don't want to go through the pain of getting out a bunch of 555 timers and wiring up a bunch of different oscillators. So in this case, we're just going to try and generate
+context after: these waveforms on an Arduino Nano. All right, so I've made an Arduino code, and its main purpose is to generate those three different waveforms on three different pins of the Arduino. Those pins are pins 12, 11, and 10, respectively. I've uploaded this to an Arduino Nano.
+
+[557] EEVblog #557 - Retro Sinclair ZX Spectrum Computer Teardown — Dave Jones (mention)
+context before: Look at that. We've just got tin plated. Jeez, they saved a couple of cents there. Old Clive saving the old dollar to go for sort of, you know, the home madey. You know, it's almost like a, you know, a home etcher. It kind of reminds me of a home etcher kind of thing with just the tin plating and no solder mask.
+TEXT: Oh goodness, but that's actually neatly laid out. We've got our RF modulator up here and there's our main oscillator, 4.436 megahertz and you know, there's the main Ferranti. We've got some memory in here and yeah, it's removed a few things and well, yeah, it sucked a few things out.
+context after: Really quite ugly. The regulator over here, that looks a bit dodgy. We have a floater. Look at that. Just a bent 7805 just floating off the board there. They didn't even bother to solder it or screw it down. Ah, good on you Clive.
+
+[1270] EEVblog #1270 - Electronics Textbook Shootout — Dave Jones (mention)
+context before: So, you know, that's where this sort of textbook is going. So if you don't know what a resistor or a capacitor is, you better go learn that first. So there you go. I'll just scroll through here, and you can stop those and read them yourself.
+TEXT: This is the full index broken down. Active filters, oscillators, operational amplifiers, things like that. I've done a whole, like, 45-minute video or something on op amps, and I didn't even cover everything. I'm not sure if I covered all the stuff that this thing's going to cover.
+context after: And we don't care about programming at the end. So there you go. They talk about atoms and the Bohr model and atomic numbers and, you know, like, yeah, no, the periodic table. It's like, yeah, no, you don't need to know this sort of stuff, but it's in here, you know, but you can skip it.
+
+[85] EEVblog #85 - High Voltage Oscilloscope Probe Design — Dave Jones (mention)
+context before: Next time I make another one of these, I will not put that capacitor in. I'll fit it externally after I've done all of the potting and fiddle it to trim for good high frequency response.
+TEXT: Yep. The good news is the particular construction technique that I used indicate that up here at least it's flat out to well beyond 3 MHz, which is about as high as my crappy little oscillator will go, and rise time indicates that it's probably got a bandwidth of about 30 MHz.
+context after: So, na na na na na Tektronix. Awesome. Thanks, Don.
+
+[791] EEVblog #791 - Ebay Fluke 45 Multimeter Teardown — Dave Jones (mention)
+context before: So, it's not obvious at first glance. But, here's our output diode and here via our output resistors here. Here we go. There are current Are they current sense resistors?
+TEXT: I think they might be tapping it off there for current limiting. It goes out here. Bingo, there's our plus 5 volt rail. And that 5 volt output after the current sense resistors, it's then powering this oscillator here for the primary side of this switching converter here.
+context after: And this is a another convoluted arrangement that gives us plus 5 volt plus 5.2. I'm not sure why they need 5.2. Anyway, 5 volts AC, minus 30 volts, minus 5 volts, and yeah, a few rails to make this puppy work.
+
+[624] EEVblog #624 - Mailbag — Dave Jones (mention)
+context before: There is no disk inside, but that's okay, I'm sure you can go directly to the website and download the software. Now I do really like the modular interface on this thing, it's quite good, but the main board itself, I mean, yeah, it looks okay, tons of
+TEXT: expansion, but well, what do you get on it? I mean it's got an oscillator, but like there's no switchers, there's no LEDs by the looks of it, just general purpose, you know, LEDs you can use for debugging or just getting a hollow world blinky LED, you know, thing going.
+context after: So yeah, bit disappointed from that aspect. I don't think they've really thought about that a huge amount. Now they've obviously got these different symbols here, square, triangle, star, circle, and a compatible thing. Obviously this ethernet board, look, it's got all four symbols on there, so presumably you can plug it into any one of those four modules.
+
+[1373] EEVblog #1373 - DIY PCB Photograhy LED Light Box - Part 2 — Dave Jones (mention)
+context before: But, yeah, it's not as dark. Those traces are brighter, aren't they? On this side here. That's not my imagination. The copper shows up slightly differently. It's a bit brighter here. It's a bit duller over here, maybe. But, oh, here you go. Oh, look at that.
+TEXT: I didn't notice that. Wow. Now, this might be the slight differences in the camera tilt. That can matter a lot. But we can really, look at the number. Really standing out. On that oscillator there. Can't see it at all. So I'd have to, like, experiment that to see if it,
+context after: you know, because only slight, I've had a lot of experience, only slight differences in angle can make the difference between seeing that and not. So I'm not going to call that that is a result of having the LEDs on the bottom, but it seems
+
+[906] EEVblog #906 - Mailbag — Dave Jones (mention)
+context before: And I'm sure if you follow Dan's guides, you'll no doubt get these things. Electrical principles, there's your reactants and everything else. Fantastic, transformers, you've got Ohm's law, all sorts of stuff. Ah, general electronic stuff, as almost everyone would know about that sort of stuff.
+TEXT: Power supplies, schematic symbols, oh there you go. And then you've got to do some FET stuff, there you go. So if you want to brush up on your FET, oh you've got to do some digital stuff, oh there you go. Amplifiers and oscillators and all sorts of stuff, there you go.
+context after: Basic antenna theory and things like that. Oh, isotropic antennas and all dipoles and that sort of stuff, so cool. And one for the technician class as well. Anyway, I won't go through them, but check out his website, you can download the PDF yourself and by all
+
+[27aG9xhfk6s] See Blocks Review — Dave Jones (mention)
+context before: Okay. So they're measuring. You're actually using a multimeter to measure within there. So... What? AC generator? I'm not getting that. Ah, that. Yeah, that is hand-drawn. That is. That looks like a constant current. I'd say that's a constant current. Use this circuit above to produce...
+TEXT: Like, where's the oscillators and stuff? I'd like to see the transistors build up oscillators and things like that. Um... I don't think that is going to help anyone. I'm not seeing the value in that. See, the thing with these, Sagan, is that they give you the circuits,
+context after: but they don't really give you anything to explain what's going on, do they? Yeah, they don't explain it. They don't explain it. So you're building them up, and the lead's coming on, but it doesn't really explain how this light-dependent resistor here affects, you know, the current sort of flowing through
+
+[680] EEVblog #680 - Mailbag — Dave Jones (mention)
+context before: This one's like only a small 1 W one. I think that's what the one is there in that model number. So, little tiny 1 W one and 5 W in 5 W out.
+TEXT: You can get lots of different values, of course, and they've got their own building oscillators and everything else, their own magnetics, the whole shebang. So, you know, they're just you're feeding 5 W and you get 5 W out, fully galvanically isolated, as it's called.
+context after: And watch my video to understand why that's important. And the switch here up is RS232 mode and down is TTL. Very, very handy. I like this board. And if you got that down on the TTL level, then you can set your threshold level to either 5 W or 3.3 W.
+
+[827] EEVblog #827 - Mailbag — Dave Jones (mention)
+context before: There's our power switch in there. And this is going to have, well, it's an NEC part, so that's probably some custom thing. I don't think you'd even bother looking that puppy up. But anyway, yeah, not much in it at all. What's that? We've got some memory, have we?
+TEXT: Yes, and LCD module. And Bob's your uncle. That's about it. Ceramic resonator for the oscillator there. We've got some bulk decoupling there for the, just so that it wouldn't lose contents and stuff when you took the batteries out. It'd keep going for a little bit.
+context after: But that's about all she wrote. Nothing fancy-pantsy at all. And it's a rather interesting switch implementation, though. It looks like it's using a membrane with some carbon tracers on there and then pushing them together. Hmm, fascinating. Why did they go to that sort of effort?
+
+[494] EEVblog #494 - Mailbag — Dave Jones (mention)
+context before: libraries and all sorts of stuff on the disk, and plus you get the demos. I'm sure they work really well, I do actually want to spend some time to do some videos on FPGAs but I haven't covered them much on the blog before.
+TEXT: So yeah, there we go. It's got two pushbuttons, headers, blah blah blah, AD converter, there we go, it's got a 50 MHz oscillator on there, everything you need to get a basic I.O. based FPGA up and running with some built-in memory. So you know, it's even got the
+context after: Altera compatible byte-blaster program built in. Fantastic. And there you go, National Semiconductor are quite proud that they've teamed up with this, and they're showing you, extolling the virtues of their linear regulators that they've no doubt got on board there. There you go, and their 12-bit ADC, which they've no doubt got on there as well.
+
+[1256] EEVblog #1256 - GORGEOUS Mystery Test Gear Teardown! — Dave Jones (mention)
+context before: Look at that. No wonder the thing's heavy as a boat anchor. Unbelievable. And there it is. It's just brilliant. What does this little bridging board here do? Like, wow. Sorry for the reflections on this. Pretty horrible. I think I can make out, I can guess some of these names.
+TEXT: Rust phase measure. Norm freak. Beautiful. There's our 10 megahertz oscillator by the looks of it. 10 megahertz oscillator with a Z. There we go. I put my hand there. You can read that. Norm, normal frequency oscillator. Trigger phasm. Some sort of phase thing.
+context after: And trigger oscillator. So tracking, that'd be, you know, that'd be tracking oscillator, obviously. And that'd be tracking. Phase, tracking filter, something like that. Rust oscillator. TTL stuff. Contains TTL stuff. This is brilliant. Sorry to all my German viewers, but this is just hilarious.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: they should be on the left-hand side. And then they should be processed, go through amplifiers, do whatever, and then slowly work their way over to the right-hand side here. Now, because this is in a four-channel oscilloscope, where's our BNCs? If I looked at this, if I came to a schematic,
+TEXT: "Oh, this is the schematic for an oscilloscope." Great. I'm looking for the BNCs. Where should they be? They should be over here on the left-hand side. But they're not. We've got the power supply over here. We've got an oscillator. We've got a JTAG header.
+context after: We've got some other things. Where are the BNCs? Well, they're actually hard to find. They're buried away. In here. Here they are. So there's just so many things wrong with this. Not only are they incorrectly placed on the schematic for correct signal flow across your schematic,
+
+[193] FPGA Implementation Tutorial - EEVblog #193 — Dave Jones (mention)
+context before: You don't want to be including half a dozen voltage regulators. And FPGAs, of course, aren't magic. They don't have any internal clocks that are of any use to your design, generally.
+TEXT: So, really, your for your system to work, you're going to want to supply an external clock from either an oscillator, like we are in this case. Here we go, we've got a 3.3-V oscillator here, a standard packaged oscillator with its own bypass cap there.
+context after: And it might be say 20 MHz for a typical a general FPGA system, something like this. And you'll notice we've mentioned we're feeding it into a global clock pin.
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (mention)
+context before: So, let's switch this sucker on. Bloody default AC, pain in the ass. So, let's see. About 60 milliamps. So, very similar to the draw of the Z88. Let's have a quick squeeze here at the main clock.
+TEXT: And should be 12. There we go. 12.363 MHz. That's the That's, of course, not a crystal. That's a ceramic resonator. And let's have a look at the main oscillator as well, which is pin one of the 44-pin PLCC package, and it is continuously Why I say it?
+context after: Yes, it is continuously running. Although this thing isn't at in at its application mode yet. It's just giving that display. There you go, it just switched off. So, but let's What was that running at?
+
+[1130] EEVblog #1130 - Mailbag Monday — Dave Jones (mention)
+context before: Looks like it's only for its own dedicated switch-in power supply, which gives you a plus/minus 5, plus/minus 12. Doesn't tell you anything about, uh, power and it just gives you multiple connectors for that. Logic probe. Unfortunately, Mike, uh, lost the logic probe, but it's just a digital logic probe.
+TEXT: And then you can get access to all the interrupt pins, all the, um, knowledge pins, the oscillator, data bus, address bus, power bus. Fantastic. And output sync, oh, chop. I don't really know what that is. Designed to hook up to a scope or something?
+context after: Hmm. Strange. So my guess inside this is that we're just gonna have a couple of, uh, buffers on the input 'cause I doubt that we're, uh, the 244s on the card over there are gonna drive the ribbon cable and just, like, come out directly, like, break out directly to this.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (mention)
+context before: So that would be the um So then yeah, I think that there looks like there's probably a driver on here and it does probably go through directly to the BNC output there.
+TEXT: And uh there's the uh oscillator for the CPL and um yeah, there's not much else. So at least with the CPLD, it does have um some functionality, but not full it wouldn't have full arbitrary uh waveform capability or uh anything like that really.
+context after: So we can see that on the power side of things here, though. It looks like um uh a lot of the regulation is done internally to the scope and it's just powered through here.
+
+[193] FPGA Implementation Tutorial - EEVblog #193 — Dave Jones (mention)
+context before: If you go to the data sheet, that's the flash freeze pin. So, if you want to enable the flash freeze functionality, say you want to have a switch on your board or controlled from other circuitry, then you wouldn't be you might not be able to use that IO pin.
+TEXT: You might lose that pin for the flash freeze functionality. And once again, for the global clocks, you can either use them as IO or clock input. In this case, you might want to use your main oscillator might be fed into global clock zero here.
+context after: And in in that case, you would lose one of those IO pins for that functionality. Another major thing that you're going to have to deal with is the JTAG programming interface.
+
+[956] EEVblog #956 - Countersurveillance Monitor Teardown — Dave Jones (mention)
+context before: Click here. I'll try and include one of those card things if you want to YouTube card thing pop-up thingos. If you want to watch those Colin Mitchell interviews where he talks about his FM bugs and all sorts of things.
+TEXT: So yeah, that's a three transistor amp. So the first transistor would be used for the microphone gain and probably another one for the oscillator and one for the for the tone oscillator and one for the RF transmitter and that's all she wrote.
+context after: Bob's your uncle. And this particular one works around 172 MHz. All right, so let's lift the hood on this thing and see if I am right. Ta-da! Yep, that doesn't look that complicated.
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (mention)
+context before: Going in our acquisition engine, there's our capture memory. There's probably duplicate uh chips on the other side, so put could double the amount of memory there. I have to have a squiz.
+TEXT: Um, that looks like our main oscillator in there. And of course, our analog devices DSP up here that'll be doing all the uh the main guey uh type stuff, the operating system and the, you know, USB, the user interface, all that sort of stuff.
+context after: And our um display um ASIC/FPGA here. So it'll be funneling uh the data most likely directly from the acquisition ASIC over here into the uh display ASIC here. It'll be totally bypassing this processor.
+
+[874] Extended Cut: EEVblog #874 - Ted Wale — Dave Jones (mention)
+context before: this switch up here. So many different values. It's tapered. And as you screw it in you turn it round and it cleans itself. I made the box. I've got some old radios up there by the looks of it. It might look like a radio.
+TEXT: It's not very good because they really need new valves. And what have we got here? This is the Marconi. I think I can check condensers on this. That's why I've got the oscillator. This is what I made. I engraved this. I marked this off.
+context after: This is something I've been using. When you null this one you don't null it in the centre. It nulls here. If you go too far it'll come back up again. It changes polarity. Of course. I made this. We had the bending machines there.
+
+[687] EEVblog #687 - EFTPOS PIN Pad Terminal Teardown — Dave Jones (mention)
+context before: that you'd expect, you know, isolation relay, isolation slots, dedicated isolated section for a uh V32 uh modem that hooks up to the phone line. So, yeah, that doesn't seem to be uh in there or at least not on the top of anything inside here that we can see so far.
+TEXT: And we have a Viccom DM 9161 chipset there with its own dedicated oscillator. Of course, that's all for the Ethernet, the physical uh aspect of the Ethernet interface. And that one there is just a Joe Blogs RS232 uh interface driver.
+context after: Now, why they've got a second huge pin count boardtoboard interconnect connector there, I have no idea. It looks like a finer pin pitch than we've got here. So, I don't know.
+
+[45] EEVblog #45 - Arduino, PICAXE, and idiot assembler programmers — Dave Jones (mention)
+context before: And then you use um either assembly or C. Now, the big difference there is that um you know, there's many different types of IDE interfaces, development platforms, lots of traps you have to worry about setting up the individual registers inside the actual PIC or Atmel or some other micro.
+TEXT: You've got to set them up, you've got to configure the input pins, and you've got to There's lots of traps, oscillator options, and there's lots of you know, traps for young players for just starting out with just a PIC or an Atmel.
+context after: That's why the Arduino and the PICaxe are you know, the higher level ones are so good. You know what I really hate? Something that really ticks me off. Assembly language programmers.
+
+[199] Tektronix MDO4000 Oscilloscope Teardown - EEVblog #199 — Dave Jones (mention)
+context before: There are the backside of the BGAs for the four channel analog to digital converter. There's four separate devices. That looks like some sort of localized power supply for the ADC.
+TEXT: Probably a low noise supply. What else have we got? Not sure what that sort of stuff is there. Just some miscellaneous Oh, there's obviously a espresso oscillator there. So maybe that's some sort of local oscillator.
+context after: And we've got a magic can there. There's obviously some real black magic going on under that and some other miscellaneous stuff. Let's see if we can take off the RF shield.
+
+[507] EEVblog #507 - The First ARM Processor Computer - Acorn Archimedes A3000 — Dave Jones (mention)
+context before: So, there's 1 meg on the main board plus one on the expansion. But, it was capable of expanding far beyond that. Just in case you get lost around the circuit.
+TEXT: So, I'm not even going to bother probing around here, you know, the main oscillator or something, see if the processor is running. Really, you know, if you want to restore this, you've got to clean up that anyway.
+context after: So, you may as well do that as a first pass. There's a couple of more screws down here. There's one little retaining clip there and uh that pops out.
+
+[1416] EEVblog 1416 - Random TEARDOWN: Sennheiser EW100 True Diversity Receiver — Dave Jones (mention)
+context before: out and there's just a basic application block diagram and i think application block diagram and i think pretty much we're seeing near identical pretty much we're seeing near identical pretty much we're seeing near identical uh to that on this layout here anyway uh to that on this layout here anyway
+TEXT: uh to that on this layout here anyway let's have a look if we go in here here's let's have a look if we go in here here's let's have a look if we go in here here's our main oscillator 230 our main oscillator 230
+context after: our main oscillator 230 meg there it is and you can see that's meg there it is and you can see that's meg there it is and you can see that's pairing this 4127 chip here exactly i pairing this 4127 chip here exactly i
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (mention)
+context before: But these FPGAs are um have all the requisite interfaces, you know, 3.3, 2.5, 1.8, 1.2, blah blah blah. So uh yeah, not sure what the deal is there. Anyway, logic level translation.
+TEXT: So there's our oscillator there. I don't know. Doesn't even seem to have a brand on that puppy. Hm. Got resistors everywhere and lots of unpopulated cap. Don't know that part number off the top of my head.
+context after: Um, interestingly, look, battery missing for the real-time clock. Um, yeah. Where is the battery? Does this thing not have a real-time clock in it? I can't remember. I haven't actually checked the uh firmware to see if it has a uh datetime stamp for any uh function.
+
+[1701] EEVblog 1701 - $599 Australian Made Moku:Go Oscilloscope REVIEW — Dave Jones (mention)
+context before: That was pretty obvious, wasn't it? There you go. I should be able to pull the exact part number off there. Can't read that on the camcorder screen, but uh here you go.
+TEXT: We've got ourselves a little uh shielded can there. That'll be for the oscillator and PLL. This is interesting. SVT uh SV tronics Inc. Um that's an American company bringing manufacturing back to America.
+context after: Um so, yeah, that's the uh probably the bare board they're getting from that them, I suspect, because um unless they have like an assembly house here in Australia in Melbourne.
+
+[815] EEVBlog #815 - Mailbag Teardown Bonanza — Dave Jones (mention)
+context before: So, obviously, these transistors, well, I believe, are uh used to switch in various um LC filters here. So, that'd be my guess of what's going on. Maybe similar thing happening here as well.
+TEXT: Oh, that's a bit uneventful. I thought it would be some sort of, you know, a whiz-bang, you know, frequency ionized oscillator or something like that. I don't know. It's just the switching power supply.
+context after: Oh, and some of the transistors in here, MPF's uh 6521. That's just a um uh amplifier, so nothing uh fancy. We've got a 2N6727. That's just a uh high power uh switcher, basically.
+
+[1150] EEVblog #1150 - Electrostatic Speaker Teardown — Dave Jones (mention)
+context before: And this is like a Bluetooth spec application specific uh processing DSP chip. It has a DSP core in it. Whole bunch of other stuff. Incredibly powerful purpose-designed ASIC chip.
+TEXT: So yeah, no wonder they're using that. Does all the magic. Runs at like 80 megahertz uh DSP. You can see the little oscillator over there. You can see a whole bunch of miscellaneous stuff around there.
+context after: I don't actually have access to a data sheet for that. It's probably one of those stupid uh, you know, proprietary things. You got to sign an NDA to get it, something like that.
+
+[517] EEVblog #517 - Car Airbag Controller Teardown — Dave Jones (mention)
+context before: And check out the block diagram of this puppy. Here we go. We've got our overdamped uh y sensor and our x sensor in here. And we've got a delta sigma converter, sign C filter, uh various low-pass filters, compensation, linear interpolation, offset cancellation, output scaling.
+TEXT: Ah, wonderful stuff. It's got a built-in 8-meg oscillator and digital regulators and all sorts of uh power supply stuff. And it's got its own um internal array, one-time programmable array in there.
+context after: And uh this is a dual um axis one, but the other chip, the 6856, is identical to this except it only has the x-axis in here. It doesn't have this y-axis on the top.
+
+[809] EEVblog #809 - Mailbag — Dave Jones (mention)
+context before: Yeah. They had to bend them slightly down. So it's a bit how you doing. That's not the world's best engineering there, but yeah, like fairly common technique to uh just put a cutout in the board and uh mount your power tranny's right angle like that.
+TEXT: No worries. Don't know what the uh that board up there is doing. H oscillator. What's that for? That's for this Infinian part on the back there. I won't even bother looking up that uh part number.
+context after: But yeah, that looks like a fairly grunty processor for what it's doing. H genuine Bodgege. Check it out. And I don't think I've seen ROE branded caps before. H von Hand.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (mention)
+context before: I guess maybe not surprising. I mean, it does have a specific, you know, maybe that was a big selling point they wanted to do. This thing does temperature and does it probably better and more accurately than your average multimeter.
+TEXT: There's not much else doing here. We've got some miscellaneous, looks like some filter stuff maybe happening around here. Uh there's our main oscillator 4 MHz and uh direct LCD driver up here.
+context after: And Bob's your uncle. That's about it. Um some extra range, you know, the buttons and things like some extra range uh stuff. And well, not much. Well, what have we got here?
+
+[478] EEVblog #478 - Keithley 2015 THD Multimeter Teardown — Dave Jones (mention)
+context before: So, they're doing that really, really well. So, we'll take a look at these other block diagrams as well. So, here's the distortion analog circuitry. That There's the block that we just looked at, the digital circuitry there, but we've basically got our ADC here.
+TEXT: We've got a filter. There's our analog stuff. We've got our ADC clock oscillator, another FPGA controlling the whole ADC system with an E2 prom as well. So, not a huge amount happening there.
+context after: Then we've got our sine wave generator circuitry. And as I uh mentioned before, it's got its own control FPGA as well. Generate the sine generator is U301. We might have a look at that puppy, but then we've got the attenuation filter.
+
+[609] EEVblog #609 - Condenser Microphone Design Tutorial — Dave Jones (mention)
+context before: Got it. And decreasing it would be easy. Just use a pot. Increasing it, well, you'd have to have the voltage there to increase it in the first place. Yeah.
+TEXT: Uh In later times, uh various designs involving uh oscillators and step-up transformers were involved. Uh the method that I tended to use when I was at Rode Microphones was a CMOS oscillator.
+context after: Really, really dumb uh Yeah. CMOS oscillator, you know, usual usual resistor resistor capacitor type arrangement. Yep. Just so that you got a fairly well-determined frequency of oscillation. Whack that through another couple of stages of that.
+
+[417] EEVblog #417 - Fluke CNX3000 Wireless Multimeter Teardown — Dave Jones (mention)
+context before: It's an off-the-shelf Texas Instruments CC2530F128, and that is a, uh, Zigbee controller chipset. It's actually an 8051, uh, processor, 128K of flash, and all sorts of paraphernalia built in.
+TEXT: We'll take a look at the block diagram in a second, but you can see the, uh, they've got an oscillator there. It's probably, uh, 32, uh, MHz oscillator. Is that another, uh, crystal there?
+context after: Possibly for real-time clock. And up here we've got our programming interface, so you could just, uh, solder a connector directly onto that and, uh, hack this thing if you, uh, were really that way inclined.
+
+[746] EEVblog #746 - Sharp X68000 Retro Computer Teardown — Dave Jones (mention)
+context before: I love the names. Brilliant. Uh look at that. We better whip that battery out quick smart. It is gonski. It's made in Japan as well. Um and yeah, look, you can see some corrosion happening around here.
+TEXT: Doesn't look that bad and it's extended over to the steel case of this oscillator over here. Woah, thankfully it hasn't gone too much further. It shouldn't really affect it, I don't think.
+context after: Maybe there might be a trace broken, might have gotten onto the uh copper layer in there. Mm, not sure though. Let's hope not. There you go. That cleaned up rather nicely.
+
+[1695] EEVblog 1695 - Mailbag: Robin RCD Tester, PCB Book, USB Knob, Geekom IT12 Mini PC — Dave Jones (mention)
+context before: Right, so no, this is the book. This is the book. It's a physical hardware book. That is a brilliant idea. Well done, Ian. I like this. Cuz I was wondering why series and parallel combination circuits had the RC time constant on the back when the RC time constant is over here is because it's literally designed to flip over as a book.
+TEXT: Oh my goodness. That is so good. That is so novel. I really really like that. That's Let's apply some power. And we've got more over here. Volume two, let's transistors and oscillators.
+context after: We've got our repeat schematic symbols and then LEDs here, transistors and BJT circuits, MOSFET circuits, N-channel amplifier. UP WOW! WOW, THIS IS GREAT. This would make a really good gift, I I think.
+
+[710] EEVblog #710 - Intercom System Repair — Dave Jones (mention)
+context before: So, it's not like the LCD has failed. Uh we're just getting no data on those pins. That processor is not booting up. This is not looking good. Has our custom uh ASIC/processor failed?
+TEXT: Well, power supply's okay, the clock's okay. I got no data on it. What's left? So, really that is not looking promising, I'm afraid, because well, yeah, you've gone through the basics.
+context after: You measure the power, you measure the oscillator, you measure the signals going to the screen, which are our main well, our only symptom that we've got is that the thing doesn't uh boot, things like that by the activity on the LEDs, and we're just getting no response.
+
+[413] EEVblog #413 - Mailbag — Dave Jones (mention)
+context before: Now this is not the current consumption of just the LCD. This is the LCD plus the micro and all the supporting circuitry as well. And I'm on the microamp range on the micro current here.
+TEXT: So it's just over two microamps there. Um so the processor is still running in the background. That's you know, the 32 kHz uh a real-time clock oscillator and all that sort of stuff.
+context after: And uh with pulses, every time it switches the uh hand there, the uh seconds hand on there, it jumps up to well, I don't know. There's a there's an excursion.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (mention)
+context before: Good enough for my application. Uh low power supply current, it's under a milliamp. Good enough. Overload recovery time, uh it's not bad for a chopper amp. Um no external components, it's all internal.
+TEXT: Um all the uh chopper um uh circuitry and stuff all runs internally, and the oscillator is all internal, and all that sort of stuff. As is typical with uh chopper amps these days.
+context after: And it's qualified for automotive applications. Whoop-de-doo. But, anyway, I built this um I used this chip, and I discovered a little weird uh problem, well, an issue with it that I wasn't really expecting.
+
+[849] EEVblog #849 - Sony E-Mount Camera Lens Teardown — Dave Jones (mention)
+context before: Anyway, let's have a look. Don't know what that puppy is off hand. I'll have to look that up. Could be some sort of custom job. This thing is interesting.
+TEXT: This little ceramic package here. I'm not sure what that's doing. It's not me, you know, I first thought, oh, it's an oscillator, but no, no, there's our oscillator down in there.
+context after: But that's interesting. Let's take a look at the oscillator. Okay, can someone please explain to me why we need a 54 megahertz oscillator in here? It's a bloody lens.
+
+[1289] EEVblog #1289 - Mystery Huawei Teardown — Dave Jones (mention)
+context before: Gorgeous. No surprises for guessing the brand of the capacitors down in there. I don't even think I need to show you. Top notch quality everything on this. They would not be saving a single cent anywhere.
+TEXT: They just wouldn't bother. Tiny little oscillator down in there. That's for something going on there. And then a Broadcom chipset over here. We can have a look what that's doing.
+context after: Do we have a part number on that? Let's have a look at that. I'm sure that's doing something that we can find out about. And other stuff on the bottom well, drivers maybe like interfacing housekeeping for interfacing with the other boards up here.
+
+[492] EEVBlog #492 - Vintage Motorola MicroTAC Mobile Phone Teardown — Dave Jones (mention)
+context before: Should be able to. I can see the uh little clips down in there. And that's underneath the shielded can there. And we have a secondary shielded can underneath that.
+TEXT: So, whatever is under there some sort of oscillator maybe, uh pretty darn important. Yes, another two uh Motorola branded parts there. Once again, no idea what those things are.
+context after: Um then we have some sort of Looks like some sort of uh hybrid module down in here. I don't know. Some sort of uh filter or um filter package or oscillator or something like that.
+
+[625] EEVblog #625 - Retro Teardown: Sony's First Digital Camera — Dave Jones (mention)
+context before: So, let's start out by having a look at this beast here. And this is a Hitachi now Renesas, of course. SH7034 32-bit micro, 26 MIPS. It's only got like 4K of memory built in.
+TEXT: It's working at 20 MHz. You can see the oscillator there. And over in this corner here, obviously the big inductors and caps here. This is all part of our DC-to-DC converter.
+context after: And obviously this is our DC-to-DC controller here. It's an MB 3785A. It's a four-channel controller. We get our first look at a date code here. There we go, the 44th week 1997.
+
+[813] EEVblog #813 - Mailbag — Dave Jones (mention)
+context before: One of these. That's a piece of bee, isn't it? And one of these. It's a sticker. It's an Oshpark sticker. And Let's have a look. And some of these.
+TEXT: Some of these, Daddy. More boards? Ta-da! This I believe is It's an oscillator. It's an oscillator, Sagan. Yeah. It's a 10 MHz. Well, I believe it's 10 MHz. We'll find out.
+context after: And there we go. We've got ourselves I believe it's a reference oscillator board. Cool. Let's check it out. You want to power it up, Sagan? Yeah. What do you Where are you going to put the sticker?
+
+[803] EEVblog #803 - HP1740A Analog Oscilloscope — Dave Jones (mention)
+context before: And of course, that is for the uh delayed time base. If you do with the center one, what happens? Well, there's our board for our So, this would be our delayed time base our delayed sweep board.
+TEXT: This would be our main horizontal time base board or horizontal time base selection. The the main horizontal um oscillator could be down on the main board there, but yeah.
+context after: Nice. Check out the heat sinks on some of the metal can packages there. Old school. And there's our CRT, shielded, of course, and no touchy. Now, interestingly, if we have a look at our main block diagram here, and here's this like like ASIC chip I was talking about before for the differential preamplifier front end and driver.
+
+[714] EEVblog #714 - Metal Detector Reverse Engineering — Dave Jones (mention)
+context before: Aha, look at that. Discrete transistor by the looks of it. We've got one job here which is a it's a TL062 by the looks of it and uh, that is all she wrote.
+TEXT: So, it looks like we've got a bit of discrete transistor action happening here. That'll be an oscillator. A bit of hot snot around here. That's a bit how you doing.
+context after: And um, yeah, that wire that wiring is uh, a bit how you're doing as well. But yeah, it looks yeah, look, we've got a couple of coils there. Looks like we've got our two coils.
+
+[660] EEVblog #660 - Electrocardiogram (ECG) Experiments — Dave Jones (mention)
+context before: So, I'm not going to touch the bench at all and uh let's have a look. See if we can uh AC couple that sucker and uh yeah, I'm not sure what's going on there, but uh Is that a cardiac pulse?
+TEXT: No, I don't think so. No, we've got an oscillator there. Just fine and dandy. Test point one. Uh that's going to be No, we're getting zippity-do-da at the moment.
+context after: All right. So, what I've done is I've got it up on a wooden frame isolated here. So, none of the input circuitry is touching the uh ESD mat at all and we're going to probe TP8 again.
+
+[693] EEVblog #693 - AVO Transistor Analyser Teardown — Dave Jones (mention)
+context before: Just the the point-to-point wiring the tag board construction classic 1960s and big ass condensers with the big straps on them and those weird ass little ceramic or whatever smaller value ones the you know the hand wound resistors here for the smaller values just the hand numbered the hand labeled resistors over here.
+TEXT: Just beautiful the oscillator over 1 kHz oscillator in its own you know case over shielded case over here. Oh, it's just a thing of beauty and a joy forever.
+context after: It really is. Oh, and by the way yes, this is all rubber surrounding there. So, obviously designed to be like, you know, at least uh splash-proof, something like that.

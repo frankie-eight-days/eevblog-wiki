@@ -1,0 +1,273 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: shift register
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 48 passages drawn from 23 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# shift register`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1535] EEVblog 1535 - DeepPCB AI AutoRouting FAIL! — Dave Jones (explains)
+context before: And you can see how, you know, like the placement is ideal for this like each segment has its own chip or or two chips actually, which go to those two, those two, those two like, you know, so nothing's Not much is like crisscrossing across the board and stuff like that.
+TEXT: There are a few things like there's a few common control lines down here. It's a big shift register if you don't know. It's basically, you know, data in and data out and just drivers for the high voltage Nixie common drain drivers for the high voltage Nixie displays here and uh Bob's your uncle, but unless it's absolutely uncritical and you really don't care, um you know, but have some pride in your
+context after: PCB layout, please, from an old school PCB designer. Have some pride and don't do like have traces coming out of Look at this. Look at this one coming back in and just going And then it's coming along and then it's going and going up at this angle.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (explains)
+context before: But because this is a uh digit-based display, we to do zero uh to nine, we need 10 separate lines or 11 if we want uh one for the decimal point as well.
+TEXT: So, that rules out our driver chip being your traditional BCD to seven-segment display driver cuz this is not a seven-segment display. So, we basically want like a latched uh shift register type thing coming in so that, you know, we've got a uh clock line coming in here like this and then a latch line coming in as well and then it shifts the digits cuz you don't want um
+context after: all of your outputs to uh uh change like in sequence as you shift the data through like this. You don't want to see that. So, you want to have an internal latch.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: So I've basically got the interface that we want to drive here. We've got five 74HC164 chips and these are eight-bit serial shift registers. So it it has a clock coming in here.
+TEXT: It's got an input data pin. So on the positive going clock edge like this it will clock the whatever data is there through to Q0. And then on the next positive going edge like that it'll clock Q 0 through to Q 1 because if you have a look over here, this is there basically cascaded the Q output or the data output here is actually the then the data input for the
+context after: next one here. So it's just a shift register and just shift them along. So on the actual first clock pulse, we'll call it the first clock pulse over here cuz you got to have like initial state that you're uh talking about.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: So, it knew what that was. It knew how the segments actually you know the digits map in a seven-segment the segments map in a seven-segment display. It understood that.
+TEXT: It understood a shift register cuz we used like that you know, so this keyword of 40-bit shift register it knew what all that was. It knew that we wanted five seven segment displays with and it understood that there was a decimal point and it understood like and it this code was pretty close to being bang on right off the bat.
+context after: This actual shift output here I I just had forgotten my Arduino libraries. Yeah, that that would have worked. We didn't have to actually specifically that's a function that is designed to put the data first before it then shifts the clock.
+
+[1611] EEVblog 1611 - Top 5 Jellybean 7400 & 4000 Logic — Dave Jones (explains)
+context before: So, all you fanboys out there go wild. So, we'll have a look at the 164, but this is your basic serial shift register. You've got a serial clock here.
+TEXT: You've got a data input here. It's got This one has two inputs, and you've got a clear. And you basically feed your data in here, and you do your clockety do da here, and your data shifts from from here to QA, and then in the next clock pulse it shifts shifts from QA to QB, and so on, and you can shift your data through.
+context after: But, the classic problem with regular shift registers is that this data is changing. So, if you want to like output, say an 8-bit, you know, batch of data, like an 8-bit bus data, or eight data to drive eight things at the same time, you've got to actually shift, you know, it's got to shift through here.
+
+[1611] EEVblog 1611 - Top 5 Jellybean 7400 & 4000 Logic — Dave Jones (explains)
+context before: You've got a data input here. It's got This one has two inputs, and you've got a clear. And you basically feed your data in here, and you do your clockety do da here, and your data shifts from from here to QA, and then in the next clock pulse it shifts shifts from QA to QB, and so on, and you can shift your data through.
+TEXT: But, the classic problem with regular shift registers is that this data is changing. So, if you want to like output, say an 8-bit, you know, batch of data, like an 8-bit bus data, or eight data to drive eight things at the same time, you've got to actually shift, you know, it's got to shift through here.
+context after: So, if you're driving relays or something, uh for example, you'll actually hear them the relays clunking off and on, off and on, if if you do it slow enough, um as you shift through here.
+
+[824] EEVblog #824 - GW Instek GDS-1000B Oscilloscope Teardown — Dave Jones (explains)
+context before: to actually take these screws off and move that before I can physically get this board out, so eh, just, you know, small things like that. But ta-da! We're in like Flynn, and yep, we've got some stuff on the back anyway. And these things here look like 4000
+TEXT: series CMOS 4094, so 8-bit shift registers, so that's obviously, you know, how they're getting some control data to each channel. They're just, you know, saving some lines going over the PCB there. And that's around our calibration output, nothing much happening there at all, we've got a TL074
+context after: classic and another one of those 4094s. And curiously we have an unpopulated part there with a heatsink pad on the bottom, not sure what that is, that's basically just below the analog to digital converter, that's on the flip side, so I, would that some sort of clock PLL?
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: That's a terrible looking waveform, isn't it? It takes time for the data to shift through all of these registers. And if you don't have You can get versions of these chips without these registers if you want, but then the problem is is that these outputs here are just constantly changing all the time as the data shifts through and you don't really want that.
+TEXT: You want to make sure the data's in the right position first. So, if you want one here and a zero here and a one here and a zero here, you shift all that data in first and then you put a pulse on the clock line like that and it'll shift it all through and all the outputs change at once.
+context after: Brilliant. Geez, I'm waffling on. Dave, you get to the problems. Okay, first of all, nothing inherently wrong here, okay? So, yeah, you've got some decoupling here, right? 100 and mentioned 10 N before, doesn't really matter.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (explains)
+context before: But, that's the beauty of timing diagrams and why you need to understand them because you have to interpret this sort of stuff. And obviously, it's going it's the data is still low for the whole thing, and you can show that you know, we get through 1 2 3 4 5 6 6 clock pulses or whatever, our our one that we fed in over here has finally appeared
+TEXT: over here, and then next clock pulse it finally only on Q7 over here like this, so that one has just shifted all the way through like that. Winner. And there's more information that they're conveying in the timing diagrams here, like this is this asynchronous master UART type thing.
+context after: This is the start bit here. They're telling you that that start bit, that's always going to be zero, but bit zero here, the bits after that, they can be a high or a low.
+
+[747] EEVblog #747 - PC Based Logic Analyser Project — Dave Jones (explains)
+context before: And then we have our trigger control circuitry here. It looks much better than my original uh concept down in here. So, you can see that I I actually rather like this one.
+TEXT: I've uh split it up into uh separate sections, mask and invert uh shift registers. So, basically, I feed in serial data like this from the PC. It goes into these registers so I can actually set the individual bits on the mask array and the inverter comparator array here.
+context after: So, if you want to like mask out a bit, i.e., not uh trigger on that bit, you can set um an individual output here. And that was just an easy way to do this.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (explains)
+context before: It does you can feed in any sort of data, but they're just showing you an example here. Q10, for example, they're showing you the data. Okay, the first data bit.
+TEXT: One the data bit is high when this is clocked in. So, when this data bit, if you put a one on the input, and then you clock it like this on the next negative going edge like this, the data gets shifted cuz this is a shift register, gets shifted through to the Q0 output.
+context after: And then the data's gone low again like this and it stays low for the whole cycle, and then they can show that on the next clock edge. Okay, this data will be shifted in here at this particular point like this, but it's a zero.
+
+[1611] EEVblog 1611 - Top 5 Jellybean 7400 & 4000 Logic — Dave Jones (explains)
+context before: So, this is where the 595 comes in. It's basically a shift register. This is not uh the best example of here. Like, zoom in here and have a look.
+TEXT: Basically, the same thing's happening here, okay? This is your shift register part of it. You've got your shift register clock here. You've got your serial data. There's only one input instead of that handy uh AND gate you get on the 164, and there's a clear line.
+context after: So, all of that part forms a basic shift register. But, what you've got in addition is this output latch. So, you shift all of your data in first through here, and then this R clock line here, you pulse your R clock line, and then it shifts all eight data bits out at once.
+
+[VTAwzrKPjeE] Nixie Tube Display ESP8266 Wemos D1 Mini Testing — Dave Jones (explains)
+context before: So I've got two routines, pulse D clock and pulse R clock. It just goes low and then sets it back high again. Binary to BCD conversion, and then I've just got where it outputs two for loops that output all of my data. I assume I've got it around the right way.
+TEXT: I don't know. I haven't double-checked any of it. Anyway, I just want to see that the pins toggle and stuff like that. I can figure out the details later. So pulse R clock at the end, so I so it should pulse D clock all the time when it's shifting out that data.
+context after: How many? Eight times, you know, eight character displays. Oh, I think I forgot. Yeah, I forgot to add in the decimal point output, so I've goofed. Oh, and some, you know, there's no unused ones. Okay, so if you look at the schematic, if you go back and look at the schematic here,
+
+[1720] EEVblog 1720 - Mailbag: USSR Bonanza + Logic Training + $69 Logic Analyzer — Dave Jones (explains)
+context before: I'm not sure I would have used the word static, I would have used like a fixed or something like that, but, you know, it's it's fairly obvious what it is.
+TEXT: And you've got all your individual, um, gates as well. You've got a shift register here, so we can play with that. It's actually got individual LEDs on the output, so we've got a clock and I'm feeding that into the data, uh, my button into the data input here.
+context after: So, if we put a one into it, boom, we wait for the next clock cycle, and that one shifts through. And I at any point I can, right, I can go like the one, well, I just put in a couple, I put in another one there, and cool.
+
+[227] EEVblog #227 - Light Scythe — Dave Jones (explains)
+context before: and you'd go, oh, number 7 is a bit bright, so let's have it turn things down automatically so I don't have to pre-process it. That never got off the ground, and then this stuff came out and $35 a metre is pretty darn good.
+TEXT: I can't get past that. So each LED is reversible? Absolutely, absolutely. And it's a serial shift register. So you put data on this side and it gets squirted out on the other side. And the code is completely modular, so I just say this particular chain,
+context after: I've got 64 vertical pixels here, and I can extend it as long as I like. So I have planned around making a 5 metre one that I can dangle off a bridge and then walk. Is it shift and latch? Is shift then latch, or is it...
+
+[1080] EEVblog #1080 - Gigatron TTL RISC Kit Computer Review — Dave Jones (explains)
+context before: They've gone through a bit of a revival in terms of retro, you know, TTL computers and kits and things like that. Somebody's done, yes, I'm aware of the Monster 6502. I'm not sure if you can buy that as a kit, but it's a giant 6502 processor.
+TEXT: Would have been nice to like see some LEDs on here and like you could shift all the data through and use it as like a learning tool to watch data shift through the various registers and stuff like that. And you know, maybe some manual clocking buttons
+context after: or something like that to, you know, clock it through. So it's more of an educational tool. At this point, it's basically just a through-hole assembly kit with a fun little, you know, novel little computer at the end of it. So anyway, I hope you enjoyed that video.
+
+[32] EEVblog #32 - Tandy 1000 Retro Computer time! — Dave Jones (explains)
+context before: And what did you do back in the old days? You wanted to design the most elegant, simplistic circuit you could. So I channeled my inner Woz, my inner Wozniak, and I came up with this sucker. And I thought it was very clever at the time.
+TEXT: Well, you know, it's not too bad anyway. I was only young, so you know, I was impressed by it. And what I had was a three-stage shift register with feedback, and that was fed from the existing 14.318 MHz clock. And sure enough, that's a divide by six.
+context after: So the output gave me my fixed 2.38 MHz I needed. Great! Okay, but where did this 4.77 at precisely a 33% duty cycle come from? Well, I figured out, I looked at the mappings for this thing, and I figured out that this shifting clock going through
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (explains)
+context before: So, they could be doing some sort of PWM-ing, but you would have to blanket when you actually um shift the data in. The problem with the HC1664 is you can see the Q output here, it just goes to the output buffer.
+TEXT: This is not designed This chip's not designed for um have a cascadeable output, okay? Which some good uh shift registers that are designed to be cascaded They They will actually have and that pin will go out to another pin, so it's buffered.
+context after: Um so, it'll go out and you know, cascade to other chips. But, in this case, no, we have to take the output from Q7. So, what we have to do here is the data has to be tapped off here for the next chip and then so on for the next chip.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: It understood a shift register cuz we used like that you know, so this keyword of 40-bit shift register it knew what all that was. It knew that we wanted five seven segment displays with and it understood that there was a decimal point and it understood like and it this code was pretty close to being bang on right off the bat.
+TEXT: This actual shift output here I I just had forgotten my Arduino libraries. Yeah, that that would have worked. We didn't have to actually specifically that's a function that is designed to put the data first before it then shifts the clock.
+context after: So we didn't actually have to change that. So it turns out that was absolutely correct. It turns out the modulo thing here was correct. Like the actual function of it is correct except that it didn't know to use a temporary variable in there.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: This is This is correct. It looks like it hasn't done decimal point. Okay? Because we didn't tell it to do anything with the decimal point. That would be interesting if we could tell it add add a decimal point on the third digit or something.
+TEXT: I wonder if we can add that code. Anyway, what does it say? This code uses a for loop to shift the output set the segment patterns for each digit of the counter in reverse order from least significant digit to most significant digit.
+context after: That is correct with the first bit on the output being the last significant display digit. I still haven't got my head around if it's right or wrong yet, but it's damn close.
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (explains)
+context before: They might actually be multiplexing the displays. You could actually multiplex them. You might go, um, well, okay, let's multiplex one display at a time and then you're just constantly shifting stuff all the time.
+TEXT: You blank, shift, blank, shift, blank, shift. And then, uh, you know, and then turn on, you know, you might turn on each one of these for 100 milliseconds or something like that, you know, 200 milliseconds, uh, for example.
+context after: You might turn on each one of these digits and then shift in the data real quick. So, I think, um, that's really the only way where the only way forward, really, is to like like multiplex these displays to ensure we don't have all 40 on at once.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (explains)
+context before: It's actually two pins short. So, that raises the bizarre question that well, what do they do in the PM 100, the one channel one phase module? They would have to have this vertical riser board still, even though it says it's the PM uh 300 interface board there.
+TEXT: Like, huh? What the? And on this interface board, well, just a whole bunch of eight-bit shift registers. Uh 74HC 4094s. And what are they? 74HC597s. Go figure. And then just a miscellaneous uh HC04 inverter over this side.
+context after: So, they're obviously uh shifting the data in from the other two channels on the board on top. But it's just it's bizarre. Anyway, well, we do have an eight-bit micro here.
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (explains)
+context before: So we're going to have a look at the 6C595 uh series and these are 8-bit shift registers and having 595 on the end, hey, you might recognize that, right?
+TEXT: The 74HC595 the common as mud very useful jelly bean latched shift register which everyone seems to use and everyone I've been using them for decades and I was going to you probably use it for this project as well.
+context after: I don't know if it's coincidence that they named it 595, but it works very similar. The front end in terms of the shift register and the latched part of it is very similar to the 74HC595.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: Yes. Yes. Here we go. Here's the code to achieve the desired functionality. It's going to do it. It's going to have a crack at it. Now, it's generated a clock pin, a data pin, it's it initial counter 99999.
+TEXT: Pin mode, it's set up the pins. This is looking really promising. This is perfect so far. It's it's actually labeled them clock pin and data pin. Loop, shift out uh current counter value to the shift register.
+context after: Greater than five. Five, get the current digit Oh, yeah, yeah, there's five digits, sorry. Yep, yeah, of course. Byte segment pattern get segment pattern. So, it's Yeah, okay. So, down here it here are the segment patterns it needs.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (explains)
+context before: And you know, and up come the usual 4,000 and 7400 series ones, but none of these, because they're obsolete, none of these are high-voltage jobbies, I don't believe. So, we're barking up the wrong tree there.
+TEXT: Now, as I mentioned before, a good solution for this might be shift registers, for example. That's the one I'm looking at. So, you go into logic and shift register category, and bingo, what pops up first?
+context after: Well, the classic jelly bean 74HC595. But of course, they you'd need external wire drive transistors, external resistors for that. And you know, hey, you could do that. Choose any flavor.
+
+[1493] EEVblog 1493 - MacGyver Project - Part 2 — Dave Jones (explains)
+context before: It does, doesn't it, Segan? It changes everything. Not multiplexing Because yeah, so that common collector output is low which means that, you know, if you're getting the one the one Z data out here, if you're getting the ones out of your chip, which turns the segment on, then it's going to switch those on.
+TEXT: So, they're not actually multiplexing this thing. It's just nuts. And of course, they're they're shift registers. So, once you've shifted that data in, the data's going to stay on the output here.
+context after: If you feed out the ones to this out of this chip, then they're going to stay on. And as long as that common collector is low, then it's going to source current through all of those.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: That is correct with the first bit on the output being the last significant display digit. I still haven't got my head around if it's right or wrong yet, but it's damn close.
+TEXT: The get segment pattern function returns the binary representation of the segment pattern for the given digit, which is used to shift out the corresponding segment pattern for each digit.
+context after: The counter is decremented once per second using the delay function. It's It's It has done it. It's basically done it. Wow. Wow. Okay, so shift data out, data pin, clock pin.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: And you can probably just see, yeah, we're getting patterns like that. So, I'm single shot capturing this, and sure enough, check it out. It is It seems to be correct.
+TEXT: We've got our five packets of clock pulses. It should be eight. 1 2 3 4 5 6 7 8. Yep. And there's five packets of those. So, it shifts eight for the first digit and the second, boop, etc.
+context after: And then, we've got this turning on over here, which is in the middle, like this. Hence, why our middle digit is turning on. So, it's actually working. It's clocking the data and doing everything right, but our data's not correct.
+
+[717] EEVblog #717 - How To Hack Vacuum Fluorescent Displays — Dave Jones (explains)
+context before: We figured that out before we even hooked up the Arduino. We now know what the test pin is. We now know what the latch pin is. I've still got to figure out what the other ones are.
+TEXT: But each time you latch in a data, it just shifts the character to the next location. That's pretty much how I expected something like this to work. It could be a really dumb display.
+context after: Like there may be no like a control thing as I said where you can actually set the cursor location. Um I don't know. But at least I've got it up and running so I can clear the screen and display text.
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (explains)
+context before: The trace should have just come out here and then drop your VO should have been here and dropped straight down. Anyway, minor things. So, let's get back into the actual issue to hand here.
+TEXT: We talked about you could be drawing if you switch all of these outputs on at once, you could be gulping hundreds of milliamps of current just to drive these output transistors here.
+context after: So, these are our shift register here and our output transistors. So, what we've got is essentially this is kind of a neat example where while we don't have analog here, you know, I've done videos talking about our separate analog and digital grounds and power supplies and things like that.
+
+[1491] EEVblog 1491 - The MacGyver Project - Part 1 — Dave Jones (explains)
+context before: They've just got this. And of course, I'm you know, if you want to shift the data, this can be used as a blanking. So, you switch the transistor off, pull this low, it's not turned on, and then the displays don't display anything.
+TEXT: So, you've got your blank in there, so you can shift in your data and Bob's your uncle, right? But as I said, you've got 40 segments, eight LEDs in each one times five, 40 of them.
+context after: And as you saw in the data sheet, you can only have 25 mA maximum output. So, let's say 20, right? To make the numbers easy. So, you can have your 20 mA here, okay?
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: So, what I'm basically saying here is, as I said, on the first clock pulse that goes through is our least significant digit over here, and this is our most significant digit.
+TEXT: God, I hate drawing with the mouse. So, it knows that the first bit it sends out is the one that is going to get shifted all the way across to here like this after 40 clock pulses.
+context after: Now, hopefully, that's all it needs to know. Like, off the bat, I'm hoping that'll actually produce some sort of working code that allows us to at least, you know, base If it doesn't immediately work, then at least we can massage, at least it'll give us some sort of code base to work from, hopefully.
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (explains)
+context before: So, this is our first chip here. We've got this from our microcontroller solution, and then we and then we just daisy chain them. Boom, like that, chip to chip chip and chip to chip until we get right to the end.
+TEXT: And we're not actually reading any data back, we're just shifting the data out. Now, I mentioned before driving voltages, and this is can be a real trap for young players.
+context after: So, let's take a look at this. We'll take a look at our microcontroller solution in a minute, but I mentioned before that we could come a cropper on the input threshold voltage.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: At random, garbage, whatever, we should have been getting something. We knew we were getting we measured like you know, information going into these with the display information. The data was going in there, changing data was happening.
+TEXT: And if it was getting the clock, it should have been outputting something. We checked the multiplexer uh down in here with the shift register that was driving all that.
+context after: That was all working. We were shifting through our displays, otherwise we would would have got all this. And well, in the end, it was pretty obvious it had to be that that thing wasn't getting a clock.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (explains)
+context before: But of course, that will Well, you could do it with this. So, you could actually save technically save a resistor um on each one of those uh uh displays.
+TEXT: So, that's awesome. Um this chip looks like it's going to do the business. 16-bit shift register, 16-bit latch. It's got the data out so that we can cascade them.
+context after: No worries. It's all latched and so translator, I think. Winner winner chicken dinner. Except for the package. 0.5 mm pitch 32-lead QFN. What a pain in the ass. But hey, if you wanted to, you could have a look at this uh 8-bit job here.
+
+[1249] EEVblog #1249 - TUTORIAL: Timing Diagrams Explained — Dave Jones (explains)
+context before: And then the data's gone low again like this and it stays low for the whole cycle, and then they can show that on the next clock edge. Okay, this data will be shifted in here at this particular point like this, but it's a zero.
+TEXT: So, that zero there will get shifted through to this part here on this edge. So, it's now zero, and the former one that we had here has been shifted over to here.
+context after: So, if you want to show this in a bit better detail, you could actually put a dot with an arrow there like that to show it that that one shifted over to there.
+
+[689] EEVblog #689 - Back To The Future Time Circuits Troubleshooting — Dave Jones (explains)
+context before: And effectively, we're shifting an individual bit along like this based on that uh latch line as well to turn on each FET in turn like that. So, you'll never have two of these on at once.
+TEXT: You're only going to have uh one. So, it'll it'll switch on like a zero zero. And then, a zero will shift its way through turning on each FET in turn.
+context after: And then, of course, when each FET turns on, that means each display turns on and reads the data out from here. So, it'll just shift across in this fashion displaying the data for each one of those in turn.
+
+[1507] EEVblog 1507 - Mida: A surprisingly good cheap portable Electric Car EVSE Charger — Dave Jones (opinion)
+context before: It would control the relays as well. You can see a couple of back EMF diodes in there, can we? Um this one here is obviously to do with the current sense here, the core balance relay like this.
+TEXT: And this one over here, I thought was just like a driver going over to the like the LC like a shift register or something, but no. It's not. It's more interesting than that cuz this is the mains input here and you'll see that it's actually going off through these caps, right?
+context after: So you got a capacitive resistor divider thing happening here. So what is this chip? Like I thought, you know, right near these pins, I got fooled. It's actually this thing.
+
+[1144] EEVblog #1144 - Padauk Programmer Reverse Engineering — Dave Jones (opinion)
+context before: in that section, so I don't know why it's clocking. So, over here, it's still pulsing in the high frequency section. So, no different than before. Okay, so I've thought about this since, and I've seen this a little bit before. Um, this could be, um,
+TEXT: the clock pulses required to actually process the command. by the, um, by the PMS150C. So, it could take 12 clock pulses to process a word. Perhaps those pulses are required to shift it out of the, out of one register into another. Who knows?
+context after: But, I suspect those slow frequency pulses, they're lower frequency because that's, um, how much time it needs to process things. And, they're also, um, they're also required to actually process it. So, I'm not really sure what that low frequency clock section does. So, if we look at this, we do have these
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: We talked about you could be drawing if you switch all of these outputs on at once, you could be gulping hundreds of milliamps of current just to drive these output transistors here.
+TEXT: So, these are our shift register here and our output transistors. So, what we've got is essentially this is kind of a neat example where while we don't have analog here, you know, I've done videos talking about our separate analog and digital grounds and power supplies and things like that.
+context after: This kind of shares a similar sort of thing. You've got a high power section, even though it's all digital essentially, right? You've got a high power section here, right?
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (mention)
+context before: Hi, it's time for part three in the Nixie tube display driver project and we're on to the schematic now. But just a before we get into the schematic, we'll just go back and look at the drivers that we were going to use.
+TEXT: Now, I was going to actually go with a ULN2003 Darlington transistor driver with the Zener diode clamp as I mentioned in the previous video and then maybe some 74HC595s uh shift registers common as mud to drive those instead of the microchip solution like single chip type solution.
+context after: And interestingly, I was actually partway through laying out that schematic when I went to the forum and somebody mentioned a chip that I'd actually done that back in the first video and I actually shot a clip of it, but I didn't and and ultimately I didn't include it in the edit because it was it was already too long and everything, but I had looked at this chip cuz I thought it
+
+[1545] EEVblog 1545 - R&S MXO4 TEARDOWN. The World's Fastest Oscilloscope! — Dave Jones (mention)
+context before: And all this stuff down here, this would all be offset control for vertical offset range. I think it has a phenomenal offset range, doesn't it? If memory serves me correctly.
+TEXT: And of course, over here we have the old school 595 shift register for driving various stuff. You find it in every scope. It's absolutely amazing. Anyway, it It like we have a differential amp here, and it looks like this is some sort of differential driver, perhaps.
+context after: It looks like that's just driving the high impedance lines. You can see those over on this side here. These are the controlled impedance differential lines, which bugger off to the ADCs up there.
+
+[948] EEVblog #948 - Nixie Tube Display Project - Part 1 — Dave Jones (mention)
+context before: It's not available in LS or HC or any of the other families. It's 74. I think it's the 74141, is it? Um and yeah, no. We'll find another solution.
+TEXT: So, of course, one easy solution is we can just get shift registers, you know, 74HC uh 259s or something like that. Whatever your favorite latched uh shift register solution is, and then we can just power external high voltage transistors like that.
+context after: But you need 10 of them. So, we're going to look at we would need um 80 Let's say 88 external you've got to solder those all on the board.
+
+[227] EEVblog #227 - Light Scythe — Dave Jones (mention)
+context before: I can't get past that. So each LED is reversible? Absolutely, absolutely. And it's a serial shift register. So you put data on this side and it gets squirted out on the other side. And the code is completely modular, so I just say this particular chain,
+TEXT: I've got 64 vertical pixels here, and I can extend it as long as I like. So I have planned around making a 5 metre one that I can dangle off a bridge and then walk. Is it shift and latch? Is shift then latch, or is it...
+context after: This particular strip, there's a clock, data and a latch. The next generation of the strip, which is the $16 million colour one, is just clock and data. But I think there's actually a latch command or something like that that gets propagated, so it doesn't have...
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (mention)
+context before: You know, and then it's like yeah, you can probably like you know, you might be able to bluff your way into a job for a certain amount of time until they figure out that you're using an AI button you don't actually, you know, able to find things.
+TEXT: But, yeah, it's I'm I'm really amazed with that example. That it actually it it crossed hardware and software there and it kind of knew about seven-segment displays and and shift registers and stuff like that.
+context after: So, for taking that that simple text and doing it, I'm I'm thoroughly impressed. Wow, hats off. So, there you go. Thoughts and comments down below and if you like that video, please give it a big thumbs up and let me know if you want me to do the like another version of this just using old school discrete TTL logic or how other way you want me to take this
+
+[1365] EEVblog #1365 - Viewer PCB & Circuit Design Review — Dave Jones (mention)
+context before: But then you need more lines coming down here like this, which goes off to, you know, another board here, right? So, this is the identical board, but stuck in here.
+TEXT: So, you've got your 595s and everything in here. And then, you know, you've got the output of this one uh plus, right? So, you got the output of this, so this combines back in here like this and like that.
+context after: And then, this goes off to your next board like this, daisy-chained like this. And uh your daisy-chaining these boards, you've got the one driver over here. The one driver may not be enough on your Raspberry Pi to actually drive all of the capacitance of all of these lines.
+
+[589] EEVblog #589 - Voltech PM300 Power Analyser Teardown — Dave Jones (mention)
+context before: If you were say referencing one of the voltage terminals, it would have to be common referenced to the current shunt down here. But because they've got two separate high voltage attenuators on the input effectively, this voltage you can hook it up wherever you want over the entire operational range of this thing and you're not going to blow anything.
+TEXT: And then the data output side of our ADC, as I said, it's an 8-bit parallel output. So they're just whacking that into some shift registers. And of course, we don't have enough bits there.
+context after: So they're just feeding that over the optocoupler. And well, that's it. Nothing fancy whatsoever. Oh, I forgot to mention there is a trim pot down here. I'm not sure exactly what they're trimming.
+
+[677] EEVblog #677 - Mailbag — Dave Jones (mention)
+context before: Each pixel has its own uh sample and hold and uh integration op amp in there. Integration capacitor and a photo diode uh sensor. Of course, each uh photo diode is uh 3,500 uh microns uh wide.
+TEXT: So, there you go. 128 of those output buffer. It's got some switching and uh shift stuff. And yeah, and that's pretty much all there is. So, they're pretty easy to use.
+context after: And uh no doubt he's got some libraries available for it. So, if you want to play around with some uh line scan uh camera stuff on your Arduino, then give it a go.

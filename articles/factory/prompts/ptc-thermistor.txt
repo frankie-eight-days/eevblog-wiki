@@ -1,0 +1,508 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: ptc thermistor
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 95 passages drawn from 45 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# ptc thermistor`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[94] EEVblog #94 - Near Death Multimeter Experience — Dave Jones (explains)
+context before: When you plug the voltage probes in, it disconnects that switch and sends the voltage from the input through to through the 10 meg resistor into the VR1 input of the chip, and it should handle that and it should be fully protected.
+TEXT: And there's overload there's the input PTC and MOV protection devices there as well, which aren't shown on here, but that's what should actually protect the meter. But, what happened is because we plugged in the probes and that switch didn't engage, the 240 volts we were measuring went through that variable pot there and went through the PTC on board and a couple of those passive parts, and those
+context after: passive parts are the ones that you see blowing up on the top side of the board. So, I think that's pretty good confirmation that that's what the actual problem was.
+
+[151] EEVblog #151 - Extech Multimeter Canyon Trip — Dave Jones (explains)
+context before: Now, if you take a look at this green PTC here, you will see that uh it's almost this leg here is almost touching this input jack. It's like ah it's less than a millimeter.
+TEXT: It's it's I'd say it's borderline touching that damn thing. And that's well in the case of a PTC which is a low resistance anyway unless a fault condition occurs and then it goes open but that really just so during normal operation that's not going to cause a problem but during fault conditions that of course is you know that PTC you know is just not going to work if this thing shorted out to
+context after: that jack. And that's what can happen when you got piss poor construction technique with just the leads hanging around. Now we saw that in the teardown and the review and I I said it might be a problem and sure enough after being beat around this thing has moved and that leg's almost touching.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: And it's PTC PTC stands for positive temperature coefficient. It's a nominal 1k resistor, hence the value and the little dot. That's what the symbol for a thermistor is. If you see a resistor, every zig-zaggy one or a square one with a little dot next to it, it means it's a thermistor.
+TEXT: And what it does is if the temperature of that device rises, i.e. positive temperature going up, it's got a positive temperature coefficient. So, the resistance goes up. So, if you get an overload condition where there's too much current flowing through here and using Ohm's law, too much power dissipated in this resistor, then the resistance is going to go up.
+context after: So, it's a self-protecting mechanism. But, these things, just like similar to fuses, they act quite slowly. They have that thermal inertia and require heating up, that thermal mass inside in order for the value to go up.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: So, this is I, okay? You got current like this and this is T for time, okay? So, your current is down like this and it suddenly goes wham, straight up like that.
+TEXT: And then, it's going to roll off something like that as that PTC heats up. And that's also why you need a big high wattage wire wound high voltage resistor here, high power high temperature resistor in series with this cuz it needs to dissipate that heat as well when that MOV is switched on absorbing that, you know, the MOV doesn't magically absorb the energy.
+context after: It's got to flow through these two resistors as well. So, this has to uh have adequate power dissipation as well during that time before the PTC goes way up in value and it goes up in the megaohms range and there's no more current flowing through there and your multimeter's protected.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (explains)
+context before: Yeah, handled by uh multiplexing inside the chipset. And basically, the common of those is shorted down to ground when we're measuring AC and DC. But, when we're measuring ohms, it disconnects the ground, and it's you know, it's go it's activating this part on the lower end of this resistor network here in the ohms mode and the uh capacitance mode here.
+TEXT: In the volts uh DC mode, they've got an AC coupling cap here. They actually and I and a series resistor, so it's almost like a little snubber. They're uh shorting that out, and uh then our input goes, by the way, through a PTC, positive temperature coefficient resistor, which will increase in value in uh overloads, and that's that puppy down in there.
+context after: Sorry. Silly thing. There it is. There we go. There's our input uh PTC uh resistor. And then our big 1K Here we go. They This is where they have a note saying, "Install either one of these." So, install that or install that.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (explains)
+context before: So, it's got the input jack alert there, whereas the cheaper meter doesn't have that. And these are pretty reasonable input jacks, par for the course by the looks of it.
+TEXT: They've got shake-proof washers in there. But, the input protection on this is surprisingly good. We've got no less than five MOVs here, whereas the Fluke's only got three, and we've got two PTCs here, compared to only the one over on the fluke here, but they might have an extra path which actually needs the extra protection there.
+context after: So, it's I don't think they're paralleling those up. I'd have to check That'd be unusual if they did. I'd have to check the exact layout, but yeah, so I think what's happening there is that they've got the one extra path here with the PTC.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (explains)
+context before: And there's nothing else. There's no PTC input protection, no positive temperature coefficient resistor. If you don't know what that is, usually it's a a series resistor in series with the input here.
+TEXT: Usually you'll have a PTC in series here. Um, either a surface mount one, you know, or a little disc shaped through hole jobbie, you have a PTC resistor there that if excess current flows into the input terminals either here or here, then the PTC will heat up and increase its resistance, hence positive temperature coefficient.
+context after: It'll increase quickly increase its resistance and protect the magic smoke from being from escaping from any of the components in your multimeter circuit. They've got nothing. Not a Even like one of those cheapy $2 or $5 multimeters, they have at least a single PTC in series with them.
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (explains)
+context before: volts, something like that. And the Fluke 17B multimeter, same thing. We've got our positive volts ohms input here. We've got a thermistor here. That's why it's RT1 and not R1. And then we've got another thermistor here. Optional 1K resistor in stall either, but not both.
+TEXT: And then, bingo, if you're in ohms mode, what have you got? You've got a clamping circuit, slightly different, but basically doing exactly the same thing. Clamps it down at a low voltage, and then your PTC does the rest, handles it. And that's why you can use ohms mode to safely discharge your capacitor bank without damaging
+context after: your multimeter, at least if you've got a half-decent multimeter. No worries. So I hope you found that video useful. If you did, please give it a big thumbs up. Let me know which ways you can discuss down below in the comments or over on the EEVblog
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (explains)
+context before: And you can see that we've got the ohms mode all the way down here like this. So in low impedance mode, let's see what happens here. We've got our input coming in here. Then it goes through these two PTC resistors here, 1.5 K each, but they're not a fixed 1.5 K.
+TEXT: They will increase in value. That's what PTC stands for, positive temperature coefficient. The resistance will increase in a positive direction when the temperature increases. So we go through here like this, and then it goes up here and goes to. Analog ground, and analog ground is just over here like this.
+context after: So you've basically just put two 1.5 K PTC resistors across the input there. That's a perfect value for discharging capacitors. It's not too high that it causes a massive current flow, and it changes, and the resistance changes as they heat up. And that's why you can put 240 volts mains across here.
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (explains)
+context before: 2.5k, 2.75, or whatever it is here. But what happens in low impedance mode here, okay, this shorts to here like this. And this shorts to here. And you'll see that our positive input jack goes through R32, which is a 1k resistor, through that large PTC.
+TEXT: Because it's physically larger, it's going to be able to dissipate more heat. So, that's the one you want to use in your low impedance mode. Because you're going to be, because this PTC, positive temperature coefficient, it means the resistance. So, you're going to be able to dissipate more heat.
+context after: When the temperature increases. And, trust me, go and, if you stick this across 240 volt mains, go and use Ohm's law, 240 volts divided by 2.25k, and see what you come out with. You definitely want that to increase in value. Otherwise, your multimeter's going to get pretty hot pretty quickly, okay?
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (explains)
+context before: Low Z, off, volts AC, volts DC, ohms, millivolts. I've left out the current ranges just so we don't confuse anything. So, in the low Z position, okay, these two contacts will short out here. And likewise, these two contacts will short out here. And if we have any further ones, they'll short out.
+TEXT: So, in the ohms range, we'll have these short out. These short out. These short out here and these short out down here. So, I've physically arranged them like that. Now, you remember the low impedance path, low Z path on the BM235, the older design went through a resistor and a PTC like this.
+context after: And then it went through a Zener diode clamp like this down to ground. So, this wouldn't conduct until you'd get to like that threshold, that Zener threshold voltage of like 7 volts. And then you would start to see the load presented by this, you know,
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (explains)
+context before: So it'll hold that charge for a long time. That can be very dangerous. There's a lot of energy stored in those capacitors. Now, of course, one way you can discharge this, if you've got a lead that has like a resistor in it, you can put it across it and you can discharge it that way.
+TEXT: But some multimeters actually have a low Z or low impedance. Mode. And of course you can switch it over to that and that puts a 1K series resistor and a PTC resistor as well in series and that discharges that voltage. So we turn it back and bingo, it's the voltage is safely discharged.
+context after: But what happens if your multimeter doesn't have a low impedance mode like this? How do you discharge it? Aha, there's a trick. So what I'll do is turn that voltage back on and then off again. And if we want to safely discharge our capacitors, but we don't have that low impedance mode,
+
+[868] EEVblog #868 - Keysight U1282A Multimeter Torture Test — Dave Jones (explains)
+context before: they've actually got in the back of the plate here, they've got these supports. You can see where the force of the batteries has just, you know, almost cracked this thing. It's started to crack the back plate. They're designed, of course, to keep them in place
+TEXT: and stop them rattling around, but you know, these batteries weigh a lot, and the force of those really caused them to deform. Okay, let's try and crack this thing open. It ain't pretty. Oh, look at that! PTC that's fallen out there. I guess it's not going to protect the input.
+context after: Oh, wow, look at that. The board has deformed. Wow. Check it out. The piezotransducer, that was up in there. That was like heat sealed in there. That was, you know, just soldered, used a soldering iron or whatever to sort of melt that in place.
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (explains)
+context before: So you've basically just put two 1.5 K PTC resistors across the input there. That's a perfect value for discharging capacitors. It's not too high that it causes a massive current flow, and it changes, and the resistance changes as they heat up. And that's why you can put 240 volts mains across here.
+TEXT: And if you just had normal 1.5 K resistors, they'd burn up pretty quick. Use your ohms light. That's law, but because the resistance will rapidly increase as soon as the current flow and hence power dissipation inside these things gets too high and they heat up, then it sort
+context after: of like self-regulates itself. They protect themselves. So it's basically the perfect way to discharge a capacitor bank like this. So what happens in ohms mode? Well, in ohms mode, when you switch it over to ohms, it goes through another PTC and then through a 1 K resistor, that's often a fusible resistor, and it goes down here and across
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (explains)
+context before: Why is it so? Why is it so? Why is it so? If we have a look at our DaveCad reverse engineering drawing here of the BM235, it's a bit simplistic. It's a little bit. It's a little bit more here, but basically what it does is that your positive input, positive terminal here, you've got two different paths.
+TEXT: One is through a 1K resistor and a PTC, which is about 1K or 1.5K or thereabouts, and another path through, again, another 1K. These are high voltage input resistors, by the way, and another PTC, and both of those are clamped down to the common terminal with MOVs.
+context after: It's a bit more complicated. There's, like, multiple ones in that series here, but let's not worry about that. They're clamped down there. And this is the range switch here. And in voltage mode, of course, it uses this path here through a 10 meg input impedance through to the IC.
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (explains)
+context before: So we've got our positive input here, and then this is the switch position. So that's the off position, and this is the low impedance position. So the wiper comes down and basically shorts out those two, those two, those two, and those two there.
+TEXT: And you can see that we've got the ohms mode all the way down here like this. So in low impedance mode, let's see what happens here. We've got our input coming in here. Then it goes through these two PTC resistors here, 1.5 K each, but they're not a fixed 1.5 K.
+context after: They will increase in value. That's what PTC stands for, positive temperature coefficient. The resistance will increase in a positive direction when the temperature increases. So we go through here like this, and then it goes up here and goes to. Analog ground, and analog ground is just over here like this.
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (explains)
+context before: well, what we can do is just disconnect one of them like this. We can switch to the ohms range and just put it back on like that. Now, basically any decent multimeter will have a high voltage overload protection on the ohms range like this.
+TEXT: And the ohms range actually contains an internal PTC similar to the low impedance mode. And it'll be discharging the cap. Now, believe it or not, that capacitor is now safely discharged. Let me switch it back to voltage mode there. It's only 2.3 volts.
+context after: There you go. We've safely discharged that capacitor and we can now work on our circuit using the ohms mode. Beauty. Now, you notice that I actually disconnected the circuit before I switched over to the ohms range. And there's a reason for that is because while I like I've switched it off now and I can actually with this particular me,
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: In the case of the Fluke 27, it's a five a 3.5k wirewound resistor. It's going to be a high temperature one, high power one, you know, it's going to be a pretty big input resistor there.
+TEXT: And then, that's in series permanently in series with the input. That's the first thing you're going to have. Then, you're going to have what's called uh I often call them PTCs, or the other name for them is or the more correct name is a thermistor.
+context after: And it's PTC PTC stands for positive temperature coefficient. It's a nominal 1k resistor, hence the value and the little dot. That's what the symbol for a thermistor is. If you see a resistor, every zig-zaggy one or a square one with a little dot next to it, it means it's a thermistor.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (explains)
+context before: So, so right off the bat, I can't see any protection in here apart from the fuses. Where are the PTCs? Where are the MOVs? They're just not there. Nice little MELF resistors there.
+TEXT: You know, I'm a MELF resistor fan boy, but unless the protection devices are on the bottom side. Uh-oh, what do we have over here? We've got one. There it is, PTC right up there on the other side that of the battery contact right near the chip.
+context after: So, that's a interesting placement. So, yeah, like a bare minimum input protection. Where's the fuse? Where Where do you even find those? They're 10 mm by 3 mm by the looks of it.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: So, this absorbs all of that pulse energy like that. And because it's very low impedance, there's going to be a very low voltage across it to then go into the multimeter.
+TEXT: But these things can act, you know, extremely quickly, you know, microseconds, nanoseconds, that kind of stuff, very quickly. And then, that causes the PTC to heat up, which then, let's have a look at Let's draw a quick little crude graph here.
+context after: So, this is I, okay? You got current like this and this is T for time, okay? So, your current is down like this and it suddenly goes wham, straight up like that.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (explains)
+context before: So, the initial surge current, uh, if you get like an over-voltage condition and a surge current happens, then it's going to be clamped by the MOVs or, uh, maybe the clamp diodes, you know, somewhere else.
+TEXT: It depends on the, uh, what's actually doing it the, uh, protection there. Then you're going to get a large inrush, uh, current and the PTCs are going to be low value, uh, resistance until such time as they have time to heat up.
+context after: So, yeah, that's not good. Like most meters on the market, uh, with any decent input protection will have a high voltage surge input resistor and this just doesn't have it.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: That's a perfect example of a well-designed high energy CAT IV rated input protected multimeter. So, there you have it. There's actually not much to multimeter input protection. It all pretty much comes down to HRC fuses, isolation slots, little bit of circuitry to ensure that the fuses blow instead of the shunt resistors.
+TEXT: On the voltage side, the PTC is one of the keys along with the MOV. So, if your if the multimeter you open doesn't have a PTC, a MOV, a bridge rectifier, and HRC fuses, then it's probably not designed as well as a quality Fluke.
+context after: And it's probably a heap of garbage. So, this is a very good baseline to look at when you're evaluating a multimeter yourself to see if it's safe. If you've got some brand you've never heard of before, open it up, check it out, check out the high voltage isolation slots, the HRC fuses, bridge rectifiers, PTCs, MOVs.
+
+[uC-q-FjXEsA] 1980s EEVblog Pocket Multimeter Overload Testing — Dave Jones (explains)
+context before: Over on the, yeah, the battery symbol's showing up. 10 meg. Something's going on there, but yeah, it survives that just fine. It's interesting that it, well, it showed up 10 meg before. So, yep. No problem. And 240, yeah, there we go. That's the
+TEXT: PTC. That is common, of course. The PTC's going to be in series. It's going to warm up a tad. So let's stick that up the clacker. There you go. That will come back down to precise. Yes, that'll come back down to 10k. No worries.
+context after: Survives. Winner, winner, chicken dinner. Catch you next time.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (explains)
+context before: Like if I go and show you the internals of uh like a typical chipset, there's many different ways you can actually uh yeah, many different ways that you configure it, right?
+TEXT: They're extremely complex, right? They're extremely complex things. There's many different ways that you configure all of this stuff down here. And you'll notice that here down here it says use a PTC plus a 100 ohm resistor.
+context after: On a typical multimeter, you'll get a 1K resistor, often fusible type on the you know your Flukes and your high quality meters, you'll get a fusible 1K resistor plus a PTC um in series.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: So, your 1,000 V rated meter is CAT III. It's actually designed to survive 6 or 8 kV transient voltages. And the way it does that, that PTC is not going to help you at all.
+TEXT: It doesn't have time to heat up and raise the temperature. So, we use MOVs, metal oxide varistors. You've heard me mention these before. I'll point them out. They're usually these round radial devices inside the multimeter.
+context after: You know, they're really big and chunky usually. And we'll get into that why that's important in the moment. and you need one of those from here to ground. When I say ground, it's the internal ground of the multimeter.
+
+[XpZVIWdXliY] Fluke OneTouch Network Tester Battery Restoration Attempt — Dave Jones (explains)
+context before: So, yeah, I think these batteries are kaput. It'd be nice if I could actually get in there and measure individual voltages. I might have to dig out the hot snot, I think.
+TEXT: All right, there you go. I actually got it out, and you can see we've got a PTC in there. That was like up against one of the contacts up there, so you got good thermal contact, and then just had some heat shrink here.
+context after: This is This one's come off, but they're all in series, of course, now. Let's actually measure the individual cell voltages. I would not expect them to be balanced. I'd be very surprised if they're all balanced.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (explains)
+context before: Of course, the original one, uh, didn't have it because, well, there were no were no, uh, MOVs. They only had the, uh, PTCs, but of course, you would have the, uh, clamp protection, uh, diodes in here.
+TEXT: Where, uh, they're associated with they over here. They're associated with the current, I think. Anyway, any clamp protection is reliant upon the PTC to heat up and they haven't changed anything there.
+context after: So, yeah, they've beefed it up, but still for the cost of a series, you know, surge resistor, come on. Anyway, you can see the, uh, like limited amount of, uh, clamping here.
+
+[W2o8otvVML4] ZERO INPUT PROTECTION! Micsig MHO14 Oscilloscope/Multimeter — Dave Jones (explains)
+context before: basic. I forgot to mention though, there is no zero zilch nada input protection on the volts ohms amps jack. Let's follow the money. It goes straight into this I don't even know if this is a ceramic resistor divider or whether or not they've just got the actual individual resistors in there like this, but it basically goes straight into that resistor divider network here.
+TEXT: And there's nothing else. There's no PTC input protection, no positive temperature coefficient resistor. If you don't know what that is, usually it's a a series resistor in series with the input here.
+context after: Usually you'll have a PTC in series here. Um, either a surface mount one, you know, or a little disc shaped through hole jobbie, you have a PTC resistor there that if excess current flows into the input terminals either here or here, then the PTC will heat up and increase its resistance, hence positive temperature coefficient.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (explains)
+context before: Cuz in theory, you only need the one. Okay? And normally, it's open circuit. So, that resistor doesn't exist doesn't exist. It doesn't affect anything at all, but if it exceeds its nominal rated voltage, in this case, in the Fluke 27, 430 V, then it will very quickly clamp down, hence sort of the hysteresis kind of symbol in there like that.
+TEXT: Once it reaches that threshold, bang, it'll clamp down and go very low impedance and shunt all of the current down through there like that, which then will cause the PTC to heat up relatively quickly.
+context after: So, this absorbs all of that pulse energy like that. And because it's very low impedance, there's going to be a very low voltage across it to then go into the multimeter.
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (explains)
+context before: Don't get it. All right, so let's take a look at the input section here and it looks there's some unusual stuff happening here, but anyway, before I get into that, here's our ground terminal here.
+TEXT: We can see we've got a little thermistor in there at a PTC, you know, positive temperature coefficient thermistor. Dead giveaway is the RT down there. We've got four little surface mount diodes.
+context after: That's going to be our diode bridge protection there. And here's our positive input terminal going through another PTC thermistor going through a big ass nice-looking heat shrunk uh big power um series protection resistor.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (explains)
+context before: And that's just jumping over to here which is going to one of our main range switches there. So that, you know, instead of having like a proper high voltage input protection resistor, um, they've just used like 10 SMD resistors.
+TEXT: It's like, and it looks like, uh, these other two sets of PTCs, there's two other paths, but, uh, they've got two of those in series because, well, they couldn't get a high enough voltage.
+context after: Joby, what's going on there? You don't usually see that. So yeah, you've got your 2,000 volts going over here. And this is your 2,000 volt string here going along and got like there's no protection at the end of this at all.
+
+[e98cYNPUxcg] Fluke PM3370B Solder Joint Inspection — Dave Jones (explains)
+context before: So, I don't know. Let's go. Okay, there's the part there. And the first thing to notice, you know how I mentioned PTC before? This is actually NTC or negative temperature coefficient.
+TEXT: PTC is positive temperature coefficient. I just assumed it was a PTC. I couldn't see the writing on it from the top because it's in series, of course, with the diode bridge.
+context after: Here's your 240-V mains input here. Here's your X-class capacitor across the input. And then you've got a what I thought was a PTC in series with your diode bridge rectifier here, which is a full-wave bridge rectifies your AC mains.
+
+[151] EEVblog #151 - Extech Multimeter Canyon Trip — Dave Jones (explains)
+context before: Um this is the uh this is the one with the dodgy link in it, by the way. Uh so, yeah, it looks like it survived. No problems at all.
+TEXT: Now, if you take a look at this green PTC here, you will see that uh it's almost this leg here is almost touching this input jack. It's like ah it's less than a millimeter.
+context after: It's it's I'd say it's borderline touching that damn thing. And that's well in the case of a PTC which is a low resistance anyway unless a fault condition occurs and then it goes open but that really just so during normal operation that's not going to cause a problem but during fault conditions that of course is you know that PTC you know is just not going to work if this thing shorted out to
+
+[372] EEVblog #372 - Fluke 27 Multimeter Review & Teardown — Dave Jones (explains)
+context before: It's only average responding. And we've got no less than five MOVs here for input um fast surge overload protection, but they've got four of them in series here to get the increased voltage and then it would uh dissipate the energy across the four devices instead of having one big monster one.
+TEXT: And the uh black device there is a PTC thermistor for the slower overload condition. And they've gone to the effort to go, "Well, we need some internal shielding as well.
+context after: So, bugger it. Let's put on a big internal right angle metal shield." And they haven't skimped there on the battery wires. Look at that. They've put little crimp connectors on the end first and then soldered the whole lot in.
+
+[1731] EEVblog 1731 - $50 Ziboo 17B Pro Multimeter vs $150 Fluke REVIEW — Dave Jones (explains)
+context before: I would have, you know, that would have been a nice touch. Um fix it in firmware maybe. Okay, standard overload test 240 volts AC mains up the clacker. Let's go to millivolts there.
+TEXT: Let's go to hertz. It measures that of course. Let's go to the ohms keys there. Our PTCs will be heating up a little bit. Let's go to your capacitance.
+context after: Let's go to your um current ranges. And it and they're up. Yep, there you go. >> [laughter] >> And let's go back. And up up up. No, I see it defaulted to the DC thing.
+
+[712] EEVblog #712 - Uni-T UT71E Multimeter — Dave Jones (opinion)
+context before: Interestingly, they've used mouth packages here. Look, all all out of alignment. Bit how you doing? Don't like that at all. And I'm actually stunned that they've gone to the effort to put a isolation slot there.
+TEXT: She's, why bother? And that's one pathetic looking PTC on the input there and it's not like they got um, big carbon composite uh input resistors. Either just regular Joe blogs metal films and look, there's no MOVs.
+context after: There's no MOVs. What was designed to go across there? I don't know, but it's bloody well missing and it's we got nothing. Geez, give me a break. No MOVs at all, just a single PTC and piss ant M205 fuses.
+
+[884] EEVblog #884 - EEVBlog BM235 Multimeter REPAIR — Dave Jones (opinion)
+context before: All right, here we go. Here's the top board. We've got our Here's our voltage input, of course. There's two input protection resistors. I can measure those, of course. They're uh 1K.
+TEXT: Good old brown brown black red there. And I don't think it's going to be our PTCs here because otherwise we wouldn't get anything. But anyway, ooh. Is that got a little Uh somebody's had a little crimp.
+context after: No, no, it's all right. No worries there, but we could measure those. They should be about uh a K each or something like that. But as I like if it wasn't broken like that doesn't explain like the zero ohms and things like that.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (opinion)
+context before: You know, if it's a 1,000-V multimeter and you slowly ramp it up to, you know, 2,000 V or something, then this thing is going to eventually kick in. It's for that slow stuff.
+TEXT: So, if your multimeter doesn't have at least one PTC, one thermistor in series with with the input, usually you can see it, you can follow the trace in, it's pretty simple.
+context after: And if it's not in series with the input in somehow, then it's a piss-poor design multimeter. Piece of junk. You shouldn't touch it. Now, the next thing we need uh something to handle the transients, those really fast inputs, because this is something a lot of people don't understand with multimeters.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (opinion)
+context before: So, this is where we need some input protection circuitry that sees very fast transient pulses. And those CAT ratings will be defined by how many high voltage transient pulses they can survive and anywhere up to 8 kV.
+TEXT: So, your 1,000 V rated meter is CAT III. It's actually designed to survive 6 or 8 kV transient voltages. And the way it does that, that PTC is not going to help you at all.
+context after: It doesn't have time to heat up and raise the temperature. So, we use MOVs, metal oxide varistors. You've heard me mention these before. I'll point them out. They're usually these round radial devices inside the multimeter.
+
+[e98cYNPUxcg] Fluke PM3370B Solder Joint Inspection — Dave Jones (opinion)
+context before: So, you know, it gets hotter inside. So, it's effectively like heating up all the components to try and make it fail. But, unfortunately, it hasn't failed. Now, I want to take out the board and actually have a look at what solder joint and one of the components cuz here's a comment from the previous video from John Bonham.
+TEXT: Thank you very much. Who noticed in one of my lingering nut shots, which I'll show here, that it looks like I believe it's the PTC in there, is it?
+context after: On the input side over here that was It looked like the solder joint on that was dry as a dead dingo's donger. And somebody emailed me about another surface mount capacitor on the bottom that they think they noticed a like the solder was missing or a dodgy joint or something like that.
+
+[1351] EEVblog #1351 - Mailbag — Dave Jones (mention)
+context before: be, so, it's all about the vibe, so, let's, let's crack this open, and we're in like Flynn, there we go, oh, that's neat enough, there you go, there's our fuse up there, it is a, uh, ceramic job, so, that's alright, um, it's kind of, like, bodged in there, I don't, like, it doesn't have a proper holder, it's just, like, got these contacts just soldered onto the side of the board, but, yeah, it's adequate for the job,
+TEXT: um, what, what is this? Don't, that looks like a real, is that like a relay? Oh, that's how they're doing it, of course, because this doesn't have a rotary switch, so they must be doing, um, some switching there, PTC here, we've got some diode protection up here, we've got, uh, there's your high voltage input resistor, uh, string there, it's, you know, it's, it's okay for a pocket meter, um, it's, you know, it's, like, how much does this thing cost?
+context after: Anyway, um, there's our lead, uh, and, and it's just a two-chip set, uh, so it's one LCD driver and one is the multimeter chipset, I can't say I've heard of an SDIC SD7581, is it? Well, that's interesting, turns out that that is a, uh, RISC micro, a little 8-bit RISC, uh, micro data sheet I, uh, I only found, it's in, uh, Mandarin, so, uh, but it's got a, uh, 24-bit, uh, Delta Sigma ADC in it,
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: That is a once again it's a Cirrus It's a Cirrus Tech. You I'm not sure it's hard to get good light on that but it's actually a Cirrus Cirrus Tech chip.
+TEXT: It's a ES51967. Yes 967B. So there you go two with the Cirrus Tech standard chipset. But the layout is quite nice. It's all surface mount construction and as I said the mobs they've got some PTCs there as well by the looks of it all surface mount construction except for the timing or the sampling cap here which is through hole and that's that's about it but that is very nice construction.
+context after: BK Precision have gone to a bit of effort there, but unfortunately no um blast shield protection really around the outside. There's no grooves which um actually go into the case, but it is all shielded.
+
+[1420] EEVblog 1420 - Mailbag — Dave Jones (mention)
+context before: Actually, I don't mind the look of that. Got the big high voltage resistor there. They got multiple smaller 1206s in series like that. And yeah, what's doing? They got three different strings over here and multiple strings, multiple strings.
+TEXT: Yeah. Oh, yeah, that's actually a input probe detection input. There you go. One PTC. Don't see any MOVs, but, you know, I On these sorts of handhelds, you don't really expect protection, but then, you know, they just give you the rating of, you know, They even put the IEC standard on there and like CAT III, CAT IV, 600 V.
+context after: No. No. And these are only 250 V fuses. Are they even rated They even got anything on them? Oh, wow. Wow, they don't even have any branding at all.
+
+[1452] EEVblog 1452 - Fluke PM3370B Combiscope REPAIR — Dave Jones (mention)
+context before: So obviously it's going to be power supply related. So we're having a look at the power supply board here which is you know, a fairly complicated little beast. We've got our mains input here.
+TEXT: There's no refer caps on the input. We've got a full wave PTC. We've got a full wave bridge rectifier. We've got the the high mains high voltage caps, common mode choke and then primary side uh switching here and our main switching transformer and then a big secondary side and look at all those Nippon Chemicon caps.
+context after: Oh, beautiful. Now the first thing you might suspect of course is the caps. You know, electrolytic caps famous for failing especially on a 20 year old scope. But unfortunately that doesn't really fit the symptoms.
+
+[1592] EEVblog 1592 - Fluke 287 Multimeter Teardown — Dave Jones (mention)
+context before: And then you just calibrate it, uh, out. So, it's all about the, uh, Temco. Um... Stuff. Then they've got that milliamp jack, uh, sent in here. And here's our input jack here. Here's our, uh, fusible resistor. We've got our high voltage resistor here.
+TEXT: We've got our, uh, PTC here. And then we've got three MOVs there like that, uh, in your classic arrangement. And, you know, you've got range switch stuff happening up here. Looks like they've got some, uh, Zener, uh, clamping there. That's interesting. Got some more clamping action happening here.
+context after: And here's your main, uh, Fluke chipset, which you saw next to that, uh... Uh, hybrid, uh, divider network, which is actually here. That's all, that's, uh, Z2 there. So, those resistors are all, uh, thermally matched in the, uh, ceramic hybrid. That's why they put them on the, uh, ceramic there.
+
+[Iwy8UVVQNkA] Sanwa PM300 Pocket Multimeter Review — Dave Jones (mention)
+context before: So if you had to replace the leads, I guess you could, but the strain relief is excellent on these. It's one of the best I've seen in a pocket multimeter. So we've got the CR2032 coin cell battery just plugs in there, held in by the back case.
+TEXT: And as you can probably see, we've got ourselves a PTC protection down in there, as you'd expect of a Cat, a Cat 4, Cat 3 slash 4 multimeter. Ta-da! And, so there's our range switch, nice gold-plated contacts on that. So I won't open that and show you that there's just like, I don't know,
+context after: some plastic indent thing inside. And I was thinking about printing up a custom surround for this, EEVblog surround, because they would not customize it for me, at least not at the moment. I guess, you know, like, they don't trust me yet. They almost didn't want to give me, like, a distributorship on this thing.
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (mention)
+context before: top and bottom like this. So, I can just swap between the top and bottom and we can reverse engineer this circuit. So, I've done a whole video on various techniques for reverse engineering PCBs and stuff like that. So, I'll link that one in if you haven't seen it.
+TEXT: So, I won't go over details, but you can see that we've got our varistas here, which are out there. We've got our MOVs and we've got two PTCs here. These are both unbranded, by the way. There's no markings on them. And this one's a bigger one, which is heat-shrunk here.
+context after: Here's our two input resistors up here. So, they're big, large, high-voltage jobbies like that. And these two resistors down here are our 5-meg input resistors for our current sense jack circuit. So, we won't bother with that. And we've got our board-to-board interconnect. Four pins up here, JU1.
+
+[1655] EEVblog 1655 - How to Discharge Capacitors SAFELY using a Multimeter! — Dave Jones (mention)
+context before: But because we've got the PTC in there, it's protected. It works like it is in low impedance or low Z mode. So effectively your ohms range works like a low impedance mode. Beauty! And if we go to the classic Fluke 87 multimeter schematic, same thing happens.
+TEXT: Here's our positive input here. We've got a 1K fusible resistor. They actually specify it as fusible. There's the plus T. That means a PTC, positive temperature coefficient. And then there, trust me, there is a dot there. And in ohms mode, it goes through here.
+context after: Aha! There's our Zener clamping circuit yet again. Going down to ground. Beauty! So that is going to clamp this point here, which then goes through to all the sensitive stuff over here, which goes into your main chip. So it's fully protected. It's going to clamp at that Zener voltage, which is only, you know, like 8 volts, 10
+
+[1540] EEVblog 1540 - The $80 Zotek ZT-702S Osciloscope Multimeter REVIEW — Dave Jones (mention)
+context before: And our input jacks here look okay for the price category. They're not split jacks at all over here. So, it looks like it has no input or split jack input alert.
+TEXT: Little M205 fuses here, but they are ceramic jobbies. So, that's pretty good. Not a huge amount of protection. We've got a real fading relay here. So, that's not too shabby, but yeah, basically two input mouth series resistors here and a tiny little PTC there.
+context after: And so, unless there's mobs on the other side, yeah, not a huge amount of protection. So, the CAT IV 600 V CAT III 1000 V, yeah, no. Compare this with say the BM786, which is exactly the same specification as that and I'll put up the photo here.
+
+[648] EEVblog #648 - Mailbag — Dave Jones (mention)
+context before: So yeah, but it's only your typical, you know, half percent meter. So nothing flash. And you can forget any HRC fuses just then M205 glass type there. So as I said, doesn't really meet today's safety standards.
+TEXT: We've got input uh protection resistors, but that's about as far as it goes. There's no MOVs or uh PTC's. Now that's interesting. Look at that. They've just taped over sort of like five individual traces over to there instead of doing it in one big fat trace.
+context after: Why? Sort of, you know, staggered fusing capability or something like that. This is for the current shunt resistors. So, yeah, that's unusual. And somebody's had a hack at that one.
+
+[1592] EEVblog 1592 - Fluke 287 Multimeter Teardown — Dave Jones (mention)
+context before: That's just the high voltage input resistor there. Of course, this is Cat 4, 600 volts. Cat 3, 1,000 volts. So, it's going to have pretty decent input protection and space in everything else. And we see that here. We've got the isolation slots all around here.
+TEXT: We've got our fusible input resistor here. We've got a PTC. We've got three MOVs. They're not huge, but there's three MOVs there. There's our 10 amp current shunt. And I'm not seeing the diode e-bridge for the fuse protection. Usually, you have one of those.
+context after: Could be on the other side. There's another PTC up here that's missing. So, that's interesting. But, anyway, there you go. And they've got just an isolation slot under the input resistor divider there. Very nice. A whole bunch of miscellaneous stuff. And there's our little super cap over there.
+
+[775] EEVblog #775 - Mailbag — Dave Jones (mention)
+context before: And check out the wire just hanging there, the sense wire hanging off the current shunt there. Somebody's held their tongue at the right angle and has tweaked that. But you know, it still does the business today. And that's about where the protection ends.
+TEXT: There's no MOVs or PTCs that I can see anyway. But hey, at least I've got big-ass HRC fuses. Classic 4011 4000 series CMOS, Japan Radio Corp. They've just got a Joe Bloggs op-amp in there. Nothing fancy whatsoever. Hmm, I wonder if we can tweak that puppy.
+context after: And on the bottom side here, they haven't got gold plate, so they've got nickel-plated contacts here. Not uncommon for the day really. And a JRC, Japan Radio Corp. Multimeter chipset. I didn't know they did multimeter chipsets. There you go. JRC again, jeez. Learn something new every day.
+
+[1597] EEVblog 1597 - Zoyi ZT-703S $80 2CH 50MHz Oscilloscope/Multimeter Review — Dave Jones (mention)
+context before: There you go. So, you know, it's quite decent. Like, just as a little portable scope, just to get some signals up. And it's got a cursor measurement as well. You can do that if you're really keen. But, meh. Alright, quick looking side here.
+TEXT: We'll compare the 780X. 702 on the left here to the new 703 on the right here. Multimeter, front end, same HRC fuses, same arrangement. We've got exactly the same relay here. Same input MELF high voltage resistors here. Single PTC is exactly the same.
+context after: All the clamping is exactly the same here. Some resistors have changed here for the MELF, for the chipset here. Because the multimeter chipset has changed. We'll try and get the number in a sec. But, it is 25,000 count versus 10,000 count. So, it's different, but, basically, exactly the same arrangement.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: They've actually got high voltage blast shields around Well, not not shields, but they they are actually slots in the board, little plastic slots in the board routed in it like that.
+TEXT: So, that's not too bad at all. There's a decent amount of input There's decent amount of input protection. There's your there's your mods and um um there's your PTCs down there and well, you know, it's not too bad at all, but check this out.
+context after: This speaker up here, this buzzer, look, it's This is one of the dodgiest things I've ever seen. I can't believe it. It's mounted just on that one screw there and it's sort of just it's it's on an angle and it's not mounted properly at all.
+
+[872] EEVblog #872 - Mailbag — Dave Jones (mention)
+context before: and, you know, measure your car battery voltage or something like that? Fine, whatever, but come on. So we've got ourselves a fuse over there but that's not the 10 amp, that'd be for the other input, which is not Yes, yes, it is milliamps, there you go, it shares the
+TEXT: input jack, so they've got that hard fuse there. They've got two token PTCs It's like, yeah, come on, give me a break Anyway, actually, no that fuse is over on that side, so is that I mean, it says unfused It says unfused, look, there you go
+context after: So I, yeah, anyway, 250 milliamps, 200 milliamps max, oh goodness, anyway just token protection, it's not rated for anything. Don't use this on anything other than low voltage DC, please. But anyway, that's an interesting step up from the $5 meter, which I'm sure used an
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (mention)
+context before: Okay, here's our input um terminal here, it goes through our PTC. Then we've got the series protection resistor here. Okay, big ass huge power protection resistor. And then that from that terminal there, there's our gas discharge tube.
+TEXT: So, that's our overvoltage uh spark gap protection there. And that shunts that down to ground immediately right here. And then uh this on top here, this goes off through another PTC thermistor, then into another uh protection resistor here.
+context after: And then so, this protection resistor from here to here. And then the in other side of that protection resistor is also spark gap protected down to the same ground there.
+
+[94] EEVblog #94 - Near Death Multimeter Experience — Dave Jones (mention)
+context before: What a piece of Okay, now if you're actually curious to see what damage was actually done, there's a there's a capacitor down there which is blown. There's a few passive components around here which which are blown and nothing else on the top.
+TEXT: They've got a PTC there and they've got a couple of MOVs as well and but they didn't actually blow, but this input resistor here is a bit charred. There's some charring on there, but the real issue is if you flip it over like this, bingo!
+context after: Look at the soft rubber switch. Look at all the charring on that rubber switch there. Unbelievable. And the bottom side of the of the rubber switch contacts, it's all charred completely around there.
+
+[1704] EEVblog 1704 - WTF? The ANENG 626 Multimeter REVIEW — Dave Jones (mention)
+context before: That's all right. Yep, and it goes back to auto. Hey, actually someone was thinking there. That down there looks like the gigantic backlight they're going to need on this thing.
+TEXT: Uh and oh, mouth mouth mouth, the mouth fanboys go wild, and there's our input protection. Yep, we've got one PTC, and uh that's all she wrote. None of that mouth rubbish, you don't need any of that in a CAT III 600 V multimeter, do you?
+context after: There's our current shunt resistor there. We'll have to have a look at what chipset that is. That looks like it's probably the antenna for our non-contact voltage detection up there.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: So, anyway, let's take it open. And it pops open like that. And the first thing you notice is the shield. This real dodgy looking shield just folded over like that with a paper backing.
+TEXT: I really don't like that at all. It just looks really cheap and, you know, cheap and nasty. Ugh. Anyway, let's check out the rest of it. Um Okay. Um input protection, we've got a pretty wimpy looking PTC there, a wimpy looking MOV there.
+context after: So, you know, basically very minimum um input protection. You You don't get a lot of um a feeling of big confidence with this. They've only got small um 3AG size um HRC, but they are HRC uh fuses, of course.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (mention)
+context before: Now, of course, the UT61E was, uh, never recommended for its, uh, input protection and stuff like that. It's just for its, uh, bang per buck. So, they have actually, uh, improved it there.
+TEXT: No less than four PTCs and three MOVs. You might think that's great. Well, okay, but where's the input protection resistor? There's actually nothing like usually they have a high voltage, uh, surge resistor in series with the, uh, PTCs.
+context after: Because how the PTCs work is that they're a low resistance value and they only, uh, go up in resistance, uh, when they actually heat up and that takes time.
+
+[832] EEVblog #832 - Keysight U1282A Multimeter Teardown — Dave Jones (mention)
+context before: As you'd expect they'd be they are gold plated or are they a nickel? It looks goldish plated, but they're more yeah. And I'll just show you the spacing that they've used here and why, you know, this thing would ultimately get its uh you know, cat would be part of getting its cat four rating.
+TEXT: Okay, here's our input um terminal here, it goes through our PTC. Then we've got the series protection resistor here. Okay, big ass huge power protection resistor. And then that from that terminal there, there's our gas discharge tube.
+context after: So, that's our overvoltage uh spark gap protection there. And that shunts that down to ground immediately right here. And then uh this on top here, this goes off through another PTC thermistor, then into another uh protection resistor here.
+
+[dv0B_WqL7w4] UniT 210E Current Clamp Teardown + Brymen Comparison — Dave Jones (mention)
+context before: I mean, there's your port. I mean, you know, sure enough, right? There's your port. Does anyone know? Can anyone confirm that there is firmware for this thing? Leave it in the comments. Like it, like it has to be like a multimeter chipset, right?
+TEXT: Alright, let's have a look at the input protection. What have we got here? Two PTCs, three MOVs, three MOVs, two PTCs. Although this is a lower cat rating. A 300 volt cat 3, at best. The Bryman is a 300 volt cat 4. Thank you very much.
+context after: And as you saw in the Bryman, yeah, it's got like an entirely separate board. So yeah, the Bryman, Bryman has better overrange. And check out what they've got on the back here. They've just got like a PCB. Oh, what is that? They've just got like a custom right angle-y thing like that, and just screwed in.
+
+[m3sQHx5aMmU] BM786 Switch Issue - Part 2 — Dave Jones (mention)
+context before: But, yeah, that was right on the point. So, how did that happen? Like like it's not an over- like it's not an arc overload or anything. There's nothing like you know.
+TEXT: And it's in ohms range. Like there's you'd never get high enough current passing through the um input protection resistors here and and the PTCs to cause some sort of ridiculous, you know, arcing of like a across that contact.
+context after: It's just It's just not possible. So, yeah, I don't Well, I don't see how it's possible anyway. So, yeah, that's That is fascinating. Just happens to be right at the ohms position.
+
+[1161] EEVblog #1161- Automated Coffee Machine Dumpster Teardown — Dave Jones (mention)
+context before: They're all very nice, you know, you could salvage those, salvage your input caps. It's all It's all very nice. We've got a whole bunch of mobs down there. 1 2 3 4 5.
+TEXT: We've got a There's a PTC over there. Got our bridge rectifier. And jeez, that's quite jazzy. Got some sort of pump thing happening here. Not sure what the deal is there, but once again, you know, you could salvage all those.
+context after: Okay, so what looks What looks like happening? And once again, I don't know the flow of how these things work. So, I'm just winging it. So, bear with me.
+
+[853] EEVblog #853 - How A Multimeter Works — Dave Jones (mention)
+context before: In the volts uh DC mode, they've got an AC coupling cap here. They actually and I and a series resistor, so it's almost like a little snubber. They're uh shorting that out, and uh then our input goes, by the way, through a PTC, positive temperature coefficient resistor, which will increase in value in uh overloads, and that's that puppy down in there.
+TEXT: Sorry. Silly thing. There it is. There we go. There's our input uh PTC uh resistor. And then our big 1K Here we go. They This is where they have a note saying, "Install either one of these." So, install that or install that.
+context after: So, they've got this 1K resistor here in series. That's very common input uh protection for you know, it pretty much handles This is how why you can put mains on the um ohms range, for example, because you've got the PT resistor here, which will increase in value with any overload.
+
+[91] EEVblog #91 - $50 Multimeter Shootout - Extech EX330, Amprobe AM220, Elenco, Vichy VC99, GS Pro-50 — Dave Jones (mention)
+context before: So they're actually full metal sockets. You got glass fuses. They're not little M205s. They're not HRC ceramic ones but hey, for the price, that's still pretty good. There's a big power input resistor here going into a varistor there.
+TEXT: That's obviously a varistor. A couple of more large value There's another power resistor down there. It's the That's the 1K input resistor. There's a PTC as well. So it's got PTC and it looks like a varistor protection.
+context after: These pads obviously went to a different type of battery a different type of battery housing. So they must have sort of changed the design at the last minute or something like that.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: There are I can't see any MOVs at all. The The 10 amp current shunt is one of the better, nicer ones I've seen. That's really quite neat. The two massive HRC fuses, of course.
+TEXT: Big beasts they are, but they've just got a couple of PTCs down here. And And that's that's basically it. I can't see any MOVs, which is quite surprising. But, they they do have the high voltage slots around here.
+context after: So, they have actually put a bit of thought and effort into that. Now, the input jacks are rather unusual. This one here, this is the This is the ohms one.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (mention)
+context before: What What What is that? No, there's nothing in the manual about uh And that thing on the back is supposed to like doesn't hold accessories or anything like that.
+TEXT: I mean like I don't get it. Um I don't know. Well, that's kind of like old school, isn't it? Look, but they've even got Look, they've got the proper heat shrink around the PTC there and there's a spark gap.
+context after: And Is that another little PTC down in there? Yeah, I think it is based on the symbol. What do we got in there? Okay, that's a like a vertical high voltage axial resistor in there just bent over.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (mention)
+context before: The first thing is that the input jacks on the previous version, they were like these split input jacks. The new ones actually have solid jacks like this. Very nice, which then screw in.
+TEXT: So, that's a really good upgrade right there. I like that. Now, as far as the input protection goes, they have really beefed it up. Before, we only had uh, two PTCs here and no MOVs at all, uh, to speak of.
+context after: Now, of course, the UT61E was, uh, never recommended for its, uh, input protection and stuff like that. It's just for its, uh, bang per buck. So, they have actually, uh, improved it there.
+
+[1378] EEVblog 1378 - NEW Uni-T UT61E+ Multimeter - Still bang-per-buck king? — Dave Jones (mention)
+context before: So, yeah, that's not good. Like most meters on the market, uh, with any decent input protection will have a high voltage surge input resistor and this just doesn't have it.
+TEXT: Of course, the original one, uh, didn't have it because, well, there were no were no, uh, MOVs. They only had the, uh, PTCs, but of course, you would have the, uh, clamp protection, uh, diodes in here.
+context after: Where, uh, they're associated with they over here. They're associated with the current, I think. Anyway, any clamp protection is reliant upon the PTC to heat up and they haven't changed anything there.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (mention)
+context before: So, you can rip those fuses out of your multimeter and you're still going to be able to measure volts, ohms, and capacitance and diodes and all that sort of regular stuff except current and that has its own input protection circuitry as well.
+TEXT: That's where the MOVs and the PTCs you've heard me talk of come into it. So, let's get the whiteboard. And here it is. We're going to have a crack at basic input protection circuitry on a multimeter.
+context after: And this is actually the exact input circuitry, or pretty close to the exact input circuitry for the Fluke 27 multimeter. And I'll link in the service manual down there in the description, and you can download it and have a look at it yourself.
+
+[829] EEVblog #829 - Siglent SDM3055 Bench Multimeter Teardown — Dave Jones (mention)
+context before: But check it out, we have ourselves a genuine budge. Look at this. They have this big power resistor, which is, according to the footprint down there, is supposed to be a surface mount jobby.
+TEXT: And they've got that flying lead coming over to this PTC. I mean, that's just horrible. There's no excuse for that in a bit of production gear like this. There's just, yeah, absolutely no excuse.
+context after: Geez. I mean, come on. And this is rather unusual. Look at that. That looks like a ceramic resistor network. It almost looks like like it's a BGA package or or something like that.
+
+[e9cpKN69Avk] 121GW Development History — Dave Jones (mention)
+context before: We're going to drive the LCD directly with the PIC 24F here. And we, you know, it wasn't that It was just sort of like a first bash at it up here.
+TEXT: We've got the HY31 31 chip set here. So, it was all taking shape. Everything I don't I think the switch architecture had changed the input protection with the MOVs and the PTCs and everything.
+context after: Like, it was all really starting to take shape there. So, you know, the additional burden voltage circuit down here with the MAX4258 is it or whatever. So, it was really, you know, it was starting to come along.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: Now, what have we got here? Um there's you know quite a selection of um input reasonable plating on there. It's not gold. It's like um some sort of nickel plated um contact on there.
+TEXT: Um as you can see the high voltage isolation slots. The input protection, look one PTC carbon film resistors like this and that's that's it. That's that looks like the entire input protection.
+context after: There's nothing else. There's no MOVs at all. Just one PTC. Uh that's what you'd expect from a sub $50 meter. I'm quite disappointed with that really. And um you know, it's it's not the best it's not the best uh construction at all.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (mention)
+context before: So, let's follow this through and see what we get. Here's our voltage input jack here. So, our voltage input jack is going to go through a 3.5 K wire wound resistor, then a 1 K thermistor.
+TEXT: Where's that? Here it is. It's connected directly to the 3.5 K wire wound resistor there. That's a high power high energy resistor, probably high temperature as well. And there is our PTC.
+context after: We can't actually see it. This I don't think there's any real markings on that one, but anyway, I think it's a Rohm brand uh PTC, but there it is.
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (mention)
+context before: We've got an isolation slot under there. Pretty standard fare on your connectors here. I don't see any Loctite on them though. That black solder mask annoying. Anyway, we do actually have isolation slots going in there.
+TEXT: It's hard to see black on black. But look, isolation slots under the relay here as well. Wow, three no, not one, not two, but three MOVs, one PTC. That's our high voltage input resistor.
+context after: Nothing special there, but I'm I'm quite surprised. Look at the isolation slots. I'm I'm rather impressed. And look at this. You know how we said it was actually isolated?
+
+[1723] EEVblog 1723 - AlienTek DM40 Multimeter/Oscilloscope Review — Dave Jones (mention)
+context before: All of the battery charge functionality here. No worries. Close up of the jacks there. They might have some Loctite. I haven't taken them off. There might be some Loctite in there we're not seeing.
+TEXT: And we've got our current shunt resistors. There's our big 10 amp shunt. As I said, we've got three MOVs here and one PTC here. Very standard like front end multimeter implementation.
+context after: May not get CAT IV out of this really, but they're doing their darnedest. And here's the analog front end. As I said, nice shielded relay here. So we've just got some compensation on there.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (mention)
+context before: Oh, no. I thought that was flapping around in the breeze, but uh it's just wide. Anyway, um there it is. So, that's okay. Look Oh, there's our fuse. Okay.
+TEXT: We've got ourselves a uh resettable fuse in there by the looks of it. Then we've got a uh PTC uh in there, and uh the mouth resistors again. It's It's quite reasonable for the price.
+context after: I don't mind the uh uh the attachment. Oh, they're a bit how you doing? But, uh anyway, they're not going to cut like you're not going to be removing these leads all the time.
+
+[1431] EEVblog 1431 - Keysight EDU33212A Function Generator Teardown — Dave Jones (mention)
+context before: But yeah, no, it looks nice. We've got a nice spade lug going down to the chassis down here. No wackers. Everything's all heat shrunk. We've got input fuse in here.
+TEXT: We've got a PTC there, do we? X and Y class caps or your common mode chokes, all the requisite stuff. No worries. I mean, it's only like, you know, a 30 W power supply or something.
+context after: All right, let's take a look at this board, shall we? I'm actually capturing my 4K screen this kind of time instead of my regular 1080 screen. So, let's have a squeeze.
+
+[1096] EEVblog #1096 - ANENG Q1 Multimeter Teardown (Now in 4K!) — Dave Jones (mention)
+context before: I thought you know, where does the other side of the contacts go cuz this is the common pin of the relay here. Here's the input coming You can see that comes directly from the input there.
+TEXT: So, there's nothing else connected. Look, nothing behind the curtain there. So, by default, there is no the PTC is on the switched side. Here's the PTC there between those two pins.
+context after: There's absolutely nothing on the other contact. So, all they're doing with that relay, the latched relay, that's why it's got two coils there. You can switch it one way or the other then it just stays there to reduce your power consumption.
+
+[1007] EEVblog #1007 - Is a $25 Multimeter Any Good? — Dave Jones (mention)
+context before: Yeah, both ranges are fuses fused and yes, they are HRC high rupture capacity fuses in quote marks, but they're absolutely tiny. So, that's a 10 amp job 250 volts not this high voltage rubbish and 200 milliamps down here for the combined volts and milliamp microamp jack down there.
+TEXT: So, so right off the bat, I can't see any protection in here apart from the fuses. Where are the PTCs? Where are the MOVs? They're just not there. Nice little MELF resistors there.
+context after: You know, I'm a MELF resistor fan boy, but unless the protection devices are on the bottom side. Uh-oh, what do we have over here? We've got one. There it is, PTC right up there on the other side that of the battery contact right near the chip.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (mention)
+context before: Anyway, looks quite looks quite decent. Let's get the display out of there. It's going to come out in one nice uh jet like Hioki chipset. Have they rolled their own?
+TEXT: Yeah, wouldn't surprise me. Anyway, um it doesn't get much better from a high voltage point of view. Wow. Wow, look at how unconventional surface mount uh that'll be a PTC there.
+context after: So, that's you know, there's no markings on that. But, yeah, wow, look at that. They've really uh you know, lots of spacing in there. Yeah, they've really designed this uh properly um the two resistors in series, well, three there to get the uh high voltage on all those inputs, plus PTC and the actual resistor.
+
+[3kdYGneg9xI] Brymen BM037 Clamp Meter Teardown — Dave Jones (mention)
+context before: But, um you know, the the the case feels good quality. It's got, you know, the um deep um the deep protection in there for blast protection and stuff and the input protection's really good.
+TEXT: I mean, jeez, they got, you know, three MOVs and a couple of PTCs in there. That's pretty good. Right? And plus the two fuse what what are probably fusible resistors as well.
+context after: Really nice. And And on a separate board. So, that's how they're getting their high current rating. Thank you, everyone, for uh joining me for this uh teardown. And um thanks for helping out on the analysis.
+
+[1083] EEVblog #1083 - Pocket Multimeter Shootout — Dave Jones (mention)
+context before: Single screw on the back. And yes, it is captive. Look at that. Beautiful. Anyway, we've got the transducer in there. We've been mooned and I have done a review video and tear down of this one before.
+TEXT: Strain relief in there is excellent. PTC. All right, let's open her up. And ta-da! The range switch down there. As I said, you really have to feel that. It is very very nice.
+context after: But look at this. Nice and neat and tidy in here. We've got our high voltage stringer resistors like that. None of that axial rubbish. They've done that all with surface mount single PTC and a spark gap in here, but very nice spacing with extra diode protection around here.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: So, I put it down to a one-off. Extech have investigated it. They haven't got back to me about it, but they are treating this as a serious issue. So, I'm treating it as a one-off, but it just happened to be in my unit.
+TEXT: So, there you go. Anyway, let's take a look at the input protection. Three big MOVs here, a big PTC, but look, they're all crowded and they're folded over in there like that.
+context after: So, you know, I'll give them thumbs up for the input protection, but the just the crowding of it. Look at the vertical input protection resistor like that. It's just all bunched in there.
+
+[1692] EEVblog 1692 - $130 Fluke 17B MAX Multimeter REVIEW — Dave Jones (mention)
+context before: They've got that extra one there. So, they just replaced the single package with multiple ones there. Um I don't know, might have been cheaper. Might have been bomb reuse from over here somewhere.
+TEXT: Something like that. Anyway, um same arrangement. We've got our 1k um input uh fusible protection resistor here. We've got our input uh PT single uh input PTC in line here.
+context after: We've got three moss here. There's our AC coupling cap there. We've got another 1k SMD there. Apart from that, it's very similar um design really. Uh and the 10 amp path over here.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (mention)
+context before: We hooked it up If you've seen my previous video I did with Doug, we hooked it up to a real high-energy machine, and we blew the crap out of this thing.
+TEXT: That's why the MOVs are blowing here and the PTCs uh seen the better days, but here we go. Here's our voltage input jack. Nice high voltage isolation slot. Look at that.
+context after: They've They've gone right to the edge of the board. Cut that out completely around so it doesn't interfere with the fuse over here and right around like that. Beautiful.
+
+[1096] EEVblog #1096 - ANENG Q1 Multimeter Teardown (Now in 4K!) — Dave Jones (mention)
+context before: That's like you want to peel back the ground plane. Why have that close? I don't I don't understand that at all. I think that's probably too close, but this thing yeah, I I forgot to mention it's only like just like the 8008 is 600 volt CAT III, but it's not independently tested or rated or anything like that.
+TEXT: Okay, we've got a couple of more MELs. You know, I'm a bit of a MEL fanboy, but apart from that, where are the where's the PTC protection? Where are the MELs on there?
+context after: We've got ourselves a diode. Yeah, good on you. And here's the interesting thing. We've got ourselves a relay. Look, it's a big proper ass relay in there, and it goes clunk when you power it on.
+
+[1578] EEVblog 1578 - No one can be told what the Metrix is. — Dave Jones (mention)
+context before: But anyway, there's our 10 meg input resistor there. Oh, we've got another one over there as well. Hi, that's a 9-meg jobby. Now, this is quite an old model, sort of like before the standards.
+TEXT: So, so we've got one PTC there. Doesn't look particularly grunty. We have to take this top board off, don't we? So, that range switch is held in there with standoffs.
+context after: It's very nice. I wonder if it's like two sided. Cuz obvious nice metal threaded inserts. Lovely. Oh, everything in here is metal threaded inserts except the board except those two screws that held the board in.
+
+[1704] EEVblog 1704 - WTF? The ANENG 626 Multimeter REVIEW — Dave Jones (mention)
+context before: There you go. That's all right. Let's have a brief look. We've got our input over here. As I said, we've got three 3-meg resistors in series there. They do that to get the higher voltage and they've got the two MOSFETs here.
+TEXT: They've got the one 1.5k PTC. There's no MOSFETs on this thing. The Q4 and Q5 are transistor Zener clamp. I've done a video on that and there's our relay switching.
+context after: So, I'm not sure under what modes it switches. You can probably bet your bottom dollar that the schematic for this is like straight out of the data sheet app note.
+
+[1388] EEVblog 1388 -  Dumpster Diving 4K TV Murphy's "Repair" — Dave Jones (mention)
+context before: They can, you know, the legs can expand and they don't crack and all the rest of it. Sometimes you might see them with like a little loop in them as well to take any thermal stress.
+TEXT: Okay, it looks like is that a PTC? It's got an RT. Not looking for anything obviously blowing. The uh main DC input filter cap. Look at that. It's a sausage jobbie.
+context after: HBC. Um, no, there's nothing nothing blowing, nothing blowing on the secondary uh side caps or anything. So, magic smoke hasn't been released. Uh got input chokes, input caps. Um, but not the X and Y class caps down here.
+
+[99] EEVblog #99 - $100 Multimeter Shootout - Extech Amprobe BK Precision Ideal UEi Uni-T PART 1of2 — Dave Jones (mention)
+context before: As you can see, there's no bodges. The PCB is completely fully formed around there, but we still have these horribly bunched and pushed over input components here. They're They're just not nice at all.
+TEXT: And the this PTC down here, this poly switch, it's very hard to get in there and see it, but it's actually chipped on the bottom there. It's actually chipped away.
+context after: And all the components have been pushed and shoved, and I don't really know why. I Can you get in there and see it or not 100% sure, but yeah, it's just Uh, it They really need to improve their quality.
+
+[1734] EEVblog 1734 - Uni-T UT892 2000V High Voltage Multimeter TESTED — Dave Jones (mention)
+context before: No. No, it doesn't go anywhere else there. And there's your distance between your ground. Okay. Right off the bat. Right off the bat. Here is your 2,00 volts, which is over here.
+TEXT: Granted, it's on the other side of the PTC, but like how many millimeters? I mean, we're talking barely 4 mm there with no um creepage isolation slot at all.
+context after: Um between the ground and the 2000vt PTC input. That's like no, no, no, no, no, no. like it'll work, but then you know your solder mask degrades, you get some moisture under there or whatever and you're going to come a gutter.
+
+[1096] EEVblog #1096 - ANENG Q1 Multimeter Teardown (Now in 4K!) — Dave Jones (mention)
+context before: We've got ourselves a diode. Yeah, good on you. And here's the interesting thing. We've got ourselves a relay. Look, it's a big proper ass relay in there, and it goes clunk when you power it on.
+TEXT: Wait, no. Is that our PTC? That could be our one and only PTC, is it? Uh, okay, it's better than nothing. Anyway, we've got ourselves the black blob there.
+context after: What else? Look at this beastie. There, yes, they have rubbed the numbers off that. Look at that, they have completely erased from existence. Got ourselves an e-squared prom there with some pretty crusty soldering.
+
+[373] EEVblog #373 - Multimeter Input Protection Tutorial — Dave Jones (mention)
+context before: Where's that? Here it is. It's connected directly to the 3.5 K wire wound resistor there. That's a high power high energy resistor, probably high temperature as well. And there is our PTC.
+TEXT: We can't actually see it. This I don't think there's any real markings on that one, but anyway, I think it's a Rohm brand uh PTC, but there it is.
+context after: And the trace from that PTC actually goes under the bottom to here, this top part, and then goes off to the range switch, and through all the rest of it.

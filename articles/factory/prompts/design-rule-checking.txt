@@ -1,0 +1,358 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: design rule checking
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 65 passages drawn from 29 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# design rule checking`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (explains)
+context before: We don't need one bypass cap per pin. We can get away with a lot less, right? This is just getting nuts." So, three, they might have had requirements for spacing requirements and things like that from the assembly house.
+TEXT: And then they might have had standard footprints company footprint footprints to work from, company approved spacings and DRC requirements for the board, and you know, all sorts of like older school requirements that might have been carried on from like a decade earlier, but they still use them today, and they might have the PCB designer might have still been working around those DRC constraints and stuff like that.
+context after: And then, well, if you told, "I've got to lay out this board, and here's all these caps." Yeah, why not? Just, you know, make them in nice neat rows and columns like this.
+
+[358] EEVblog #358 - Electronex 2012 — Dave Jones (explains)
+context before: Can you explain, does it take the full six days to manufacture the eight layers? No, not for the manufacture of it, but there's the engineering side. We need to get our tooling made to manufacture the different layers. Do you manufacture your own in-house tooling?
+TEXT: Do you actually print your own? Yes, we do. We've got all that in-house, and we've got that capability in-house. It's something that we feel there's no alternative other than to keep that in our facility. So that's all part of the process. But the engineering side, firstly, when we get the design, we've got to look at the product and make sure that we go through its design rule checks before we go into manufacture.
+context after: Make sure that once those design rule checks are done and there's any questions that we generate from doing those checks have been answered by the customer, then we can get into the process of manufacturing. So we allow ourselves that time to make sure that we've got everything ready to go before we start manufacturing.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (explains)
+context before: So, we're now we're in our basically our our tidy-up phase of our PCB. Let's assume that we had to routed this and um then we're uh in the point where we're um just making sure all of the nets and where we've we've connected all the nets.
+TEXT: We've got no unconnected nets. You might at this stage do a DRC and you might get a report and you might put that on a second screen so that you have your report there and then you just go through and you might have 20 things that aren't connected because of that floating copper you had there or you know, some other issue or something like that and you just go through and tidy
+context after: them all up until you get a DRC zero DRC errors and then there's lots of other things before before actually releasing your board but anyway, why don't what why doesn't L come in here?
+
+[1327] EEVblog #1327 - 3 Ways to FAIL at PCB Manufacture — Dave Jones (explains)
+context before: One of the first rules of when you start laying out a PCB, you know, you've done your schematic and then you import all your part footprints and your net list and you're ready to start routing.
+TEXT: You set up all of your clearances. You set up your trace widths and you know, other sorts of you know, trace to via things and your via hole sizes and yeah, you know, you set up all this stuff first before you start routing and you base that information all the track and space and clearance and design rule DRC checking stuff on the capability of the PCB you're getting
+context after: manufactured. Especially if you're going after one of these cheap $5 prototyping services and you need to do something really fine, like fine traces and and clearances and things like that, uh this is where you can come a cropper.
+
+[1405] EEVblog 1405 - Focusrite Scarlett Solo vs Rode AI-1 TEARDOWN — Dave Jones (explains)
+context before: and you could do the knobs and you can do everything and you could see at the design stage that that that that uh, capacitor is not going to fail with that.
+TEXT: You can be 100% confident that's going to work because the software will give you a like it'll just flag it and say these two components are touching. You know, when you put this board in, you know, it can like software insert the board and it knows that they're going to fail and, you know, it it really is a very valuable tool and uh, can save a lot of uh re-spin and
+context after: you know, get it right the first time. Um I'm not going to bother to take the board out cuz I don't think there's anything on the bottom side of that board that would surprise me because you want to minimize you you wouldn't go double-sided load unless you absolutely have to.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (explains)
+context before: We've got place, we can place a component, a power port, um and they have hotkeys, shift A, shift P, uh a wire, a bus. It can do bus oriented stuff, which is quite nice.
+TEXT: Wire to bus entry. Excellent. That's all good. No connect flag. um that will be used for your uh design real check in your uh DRC. So if you don't want it to analyze a particular uh node in your circuit like you've left a pin open or something and you don't want it to give you an error message, you'll left that pin floating for a reason, then you would put a no
+context after: connect flag on there. So let's see if we can actually put that no connect. Ah, it's just a it's just an X. So if we put no connect on that pin like that when we do a design rule check it won't actually analyze that pin.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, you use that as an inspection tool. We've done that. You lock everything down. Then we'll do our final You can do that after your DRC, but we'll just in this particular case, we'll do our DRC.
+TEXT: We might find one or two little errors, we'll fix it. We'll do the 3D view again and lock it all down, and then we're good to go. So, you wouldn't want to refill all the zones and do the DRC and then just generate the Gerbers, cuz refilling the zones you might have changed your clearances, your tolerances, you know, and all that sort of stuff in your zone.
+context after: You may not get like copper through here, for example. You wanted copper through there, but you accidentally didn't realize that you changed the clearances in there the for the copper zones and stuff like that for the copper pours.
+
+[1353] EEVblog #1353 - WHY Are These Pins Shorted? — Dave Jones (explains)
+context before: Then we can actually route our trace on here. We want to drop, that's too thick, okay? We want to, oh, let's, none of that metric rubbish, okay? Let's just say we had a five-thou trace like this, right? You'd go like that, out, and you'd go like that.
+TEXT: Haven't properly set the... The snap grids and some things like that, but there you go, right? And you can see we've automatically got a design rule, online design rule, minimum between pad and track here. So yeah, that's, doesn't matter. But you can see, yeah, so, you know, a proper PCB design, if you can, route the traces out
+context after: like that. It just avoids any confusion whatsoever, especially an optical camera inspection system could actually see that. Could actually... It could deliberately flag that up. But of course, it'd be the same on every single board. So you just mask out that error if you're doing an optical camera inspection.
+
+[552] EEVblog #552 - DFM Automated PCB Panel Testing — Dave Jones (explains)
+context before: actually added some stuff and if I wanted to, I could add active circuitry onto this panel no problems at all. And now I haven't gone to the effort to produce a separate schematic for this panel, but if you are really doing it seriously and you want to design real check.
+TEXT: So I can't design real check this panel board because it's so simple. I don't really have to. The risk of me goofing something up is quite low although Murphy's law, you know how it goes, but anyway, if you want to design real check that, you'd typically have a schematic associated that and there's various ways to do that.
+context after: So you would have individual board schematics and then a panel level schematic as well if you're really going to town on this thing, but that's all there is to it.
+
+[358] EEVblog #358 - Electronex 2012 — Dave Jones (explains)
+context before: Do you actually print your own? Yes, we do. We've got all that in-house, and we've got that capability in-house. It's something that we feel there's no alternative other than to keep that in our facility. So that's all part of the process. But the engineering side, firstly, when we get the design, we've got to look at the product and make sure that we go through its design rule checks before we go into manufacture.
+TEXT: Make sure that once those design rule checks are done and there's any questions that we generate from doing those checks have been answered by the customer, then we can get into the process of manufacturing. So we allow ourselves that time to make sure that we've got everything ready to go before we start manufacturing.
+context after: Because as you can imagine, once you've made an eight-layer board and you discover that something's gone wrong, it's just scrap. What sort of tolerances can you do in-house? As far as track and space? Yes, track and space. Well, five thou track and space.
+
+[990] EEVblog #990 - Getting The PCB Manufactured (Nixie PART 5) — Dave Jones (explains)
+context before: is we're going to actually get this board manufactured. So we've finished our routing, what is the next step to getting it manufactured? So let's go through it. Now, first of all, you'd want to, I probably said this before, but you want to use the 3D view.
+TEXT: And this is where 3D view is fantastic, not for the packages. In fact, you can get rid of the packages, and just look at things like solder mask expansion, for example, in there. Do I have solder mask between all of my pins? You can capture all, you can get this sort of stuff using DRC rules and stuff like that.
+context after: But, you know, nothing beats a good visual look at what your board is physically going to look like when you get it manufactured. And that's the great thing about 3D viewing. So yes, whilst all these, you know, 3D models are all great and everything,
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (explains)
+context before: So, I've just uh branched that out into a separate video which should be uploaded at the same time as this one. So, check that out if you want to know about electrical rules checking in schematics.
+TEXT: Basically, we're past a DRC as I said like the hidden pin thing before. You'll notice that there's no ground or VCC inside these things, but I could like go in here and then just uh show what uh show all pins even if hidden and you'll notice that there are actually some hidden pins in there.
+context after: So, that's it. That's our schematic and uh hopefully that works and hopefully you you found that interesting. I know what has this been like half an hour of waffle or something like that, but uh you know, we've covered like uh done ERC and component layout and nice schematic design and you know, stuff like that and it looks like, you know, a nice layout.
+
+[111] EEVblog #111 - Live Show #5 — Dave Jones (explains)
+context before: That is, that is a godsend and the silk screen, that's a godsend for checking your board prior to sending it out. It's great. So, before I send my board out, I'll just hit the 3D view and pop it up and you can see exactly what your board's going to look like when you do that.
+TEXT: So, yeah, it's, it's fantastic. So, I love that. Geez, it's 9am already. I better, better get going. Any more quick questions? Does the software do schematic verification as well? Yes, it does DRC as well. What's the smallest quantity of PCBs need to make professionally made PCBs economical?
+context after: You can just do one. You can just do one at PCB cart. I've just gotten one board made before. Granted, it was a, you know, it was a, it was a panel, but, you know, you can just, you can just get one. It's economical, you know, the tooling might be $40 tooling and you just, you know,
+
+[1327] EEVblog #1327 - 3 Ways to FAIL at PCB Manufacture — Dave Jones (explains)
+context before: Oh, look, see? We've violated our clearance rule in here for the spacing between the pad and the trace here. Aha, we've got different specs for that. So, if you've gone in there and gone, "Oh, okay, I've changed all my traces to four mils.
+TEXT: Yeah, no worries." Let's run the design rule checker and you run your DRC and you go "Track too close to pad because that's their minimum specification for the like distance between the track and the pad like that and you've just you're just a smidgen over only needs to be a smidgen over.
+context after: Remember this is software doing this, right? Humans aren't going to override this unless you're paying them money and then they'll rub their chin and go, "Oh yeah, yeah, she'll be right.
+
+[975] EEVblog #975 - Human vs Autorouter — Dave Jones (explains)
+context before: You can do it. Alium Citus auto router. I It's kind of fascinating to watch it go though. I do enjoy watching out auto routers do their thing and but no, there's all I'm always going to have an issue with it.
+TEXT: Um, regardless of what you know what end result, there's always going to be something pretty horrid in there. But electrically, everything should be fine because it's going to meet the design rules, the clearance, the trace widths, everything else, and all the nets are going to be joined.
+context after: Suppose sometimes it just will back itself into a corner because it doesn't know what it's doing. And, you know, it it's just given up ripping up uh traces and rerouting them.
+
+[254] EEVblog #254 - KiCAD PCB First Impressions — Dave Jones (explains)
+context before: high contrast display mode, yes it does, there we go, we're in high contrast display mode, and, although it doesn't, it shows you, it does show you the highlighted on the bottom, so they've got that working, pretty happy with that, um, and what else have we got here,
+TEXT: oh boy, fast access to the web based free route, advanced router, no thanks, auto routers, jeez, um, perform design rule checks, by net class minimum trace width, excellent, um, is it only in millimetres, or can you choose metric, for that, if we're in millimetre mode at the moment,
+context after: so I'm assuming, if we go to, imperial mode, inches, and we go back up to that, where was it, design rules, no, hang on, where was it, ERC, perform design rule check, there it is, in inches, yes, it's put the, right, it's put the,
+
+[ag-MjKAfATw] Rode AI-1 USB Audio Interface Teardown — Dave Jones (explains)
+context before: you could, like, import not only the main board down here, but you can import this board with 3D models of these, 3D models of the ribbon cable, 3D models of all these connectors and these plastics and everything else, and you could do the knobs,
+TEXT: and you could do everything. And you could see, at the design stage, that that capacitor is not going to foul with that. You can be 100% confident that's going to work, because the software will give you a, like, it'll just flag it and say, these two components are
+context after: touching. You know, when you put this board in, you know, it can, like, software insert the board, and it knows that they're going to foul. And, you know, it really is a very valuable tool. And it can save a lot of re-spin and, you know, get it right the first time
+
+[nkLQ-Co_cXI] Jaycar Scope Winner — Dave Jones (explains)
+context before: He's actually been designing little expansion cards for the open source framework laptop, and he's actually starting, looks like he's starting to get some funding from the framework company. I didn't know they were doing that, but that's great. He's getting ready to sell his first expansion card.
+TEXT: So yeah, I think that's absolutely fantastic. And this is, um, whoop, is it going to, whoop, yep, it's going to open there. He's had to get a bodge wire on there because he forgot to connect the copper pouring there. That's when you have to do your DRC checking.
+context after: I've done a video on that somewhere. But yeah, it's good that you learn like that. Fantastic. And some other boards he's done. Let's go over here and have a squiz. Look, like, this is good stuff. One, and this one worked partially. I like that.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: So, if we now go in there and we place the track, for example, let's go this one here, right? I can't It'll automatically go around other nets. So, it'll the two nets that we're going to.
+TEXT: We're going from here to here, and it won't let me go over any of those other objects. But, if we go in there and then uh change that to, you know, ignore obstacles, for example, then it will let us pretty much do anything we want, and it won't pick it up.
+context after: Of course, we can do um online DRC, for example. So, if I was dumb enough to place a trace that went through two pads and two holes like that, um you wouldn't find that error until you went to do a DRC, a design rule check.
+
+[990] EEVblog #990 - Getting The PCB Manufactured (Nixie PART 5) — Dave Jones (explains)
+context before: You're doing it for a client or a company or something that's professional and everything else. You'd, you know, you'd go to town. But we don't care. It's a one-off. So what we want to do now is we want to do a DRC, a design rule check.
+TEXT: So we go into design rule check. And I've shown, I'm pretty sure I've shown DRC in the previous video, did I? If not, my apologies. We run our DRC check. And once again, all of the electrical, you can enable and disable all sorts of various stuff in here,
+context after: what you want actually checked. The online one, whether or not you do it live or via the batch thing, which is what we're running now. So anyway, let's just assume that we've got all of our settings set up correct, and bingo, this is the ultimate goal before you get a board manufactured,
+
+[o2NxHu5Bsnk] Discussion with Shahriar from The Signal Path — Dave Jones (explains)
+context before: Really? But now you can't do that anymore because of the patterning limitations. Everything has to be the same direction. Uh that's just one of the many many things. Uh Wow.
+TEXT: This is called the DRC rules. You know, when you do this is also true for PCBs, right? So the DRC stack, which is the complexity of how many things are you have to take into I mean this thing is now massive of how many and the tools are very expensive.
+context after: You have to spend millions of dollars just to put the tools. So the cost of development and that's if you look there's actually like if I think there's only maybe two or three semiconductor companies out in the world that can do these 5-3 kind of nanometer process in the TSMC and Samsung Intel potentially could get there.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: Hi, this is just a little aside video from my Nixie Tube display driver videos I've been doing cuz I thought some people might find this just interesting in its own right.
+TEXT: We're going to talk about electrical rules checking in schematic documents. In this case using a powerful tool like Altium Designer and just exactly what is an ERC? How does it differ from a design rule check on a PCB and what advantages it can have?
+context after: So, let's get to it. Just to show you doing an ERC on a schematic like this. Now, a lot of people would just skip this if you're just doing it quickly and getting up and running, but hey, you know, you could get if you're doing any sort of serious design or even a one-off like you know, let's say we had our grid set incorrectly and we had a fine grid and
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (explains)
+context before: No? Yes, they are. Okay. So, they're they're nothing to with VCC. Oh, hi. This one here is, look. Hi. Look, H, right? So, Oh, look at that. Look at that.
+TEXT: We have a DAG. We've got a DAG. We found it. There we go. Look at that. We've got a genuine DAG. Little little bit of track in there. So, it's going So, if we did a DRC on this a design rule check, it would say that you've got some floating copper.
+context after: I don't know what it would call it in KiCad, but you know, that's basically it's it's floating copper. It's unconnected copper. So, we want to kill that and our trace goes away.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: Of course, we can do um online DRC, for example. So, if I was dumb enough to place a trace that went through two pads and two holes like that, um you wouldn't find that error until you went to do a DRC, a design rule check.
+TEXT: But, of course, you can do um DRCs uh live like that. You can go online DRC, and then uh when you're when you're actually um uh placing those traces, it would actually uh highlight, come up and uh tell you that you're being a bit of a dummy.
+context after: Look at that. Don't do that. You know, that's violating your design rules. You're you're going to short things out. So, yeah, but once again, these are all tool specific uh rules and things like that.
+
+[349] EEVblog #349 - SMCBA Lecture IPC-2581 Open Standards for PCB Design Data — Dave Jones (explains)
+context before: Only much worse in this case. So I would imagine this type of viewer is going to be fairly common. It'll be like your PC Gerber or like your Gerber editor. You know, you do a CAD design. You've been looking at this for three weeks.
+TEXT: Everything's perfect. The VRCs are clean. You call up the Gerbers just for one final check, and the very first thing you see is an error. Boom. Right there. Okay. You see things that a Gerber editor that you have missed in your CAD system
+context after: because of the way that you're looking at things. You're looking at fresh eyes when you're looking at a Gerber file. Because you're just looking at one layer, generally. Looking at two layers is fairly complex and difficult to grasp. So suddenly you're looking at one layer with fresh eyes
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: If you go into polygon actions, you can actually shelve all of the polygons. So, bang, I've now got all the bottom layer available for um for all of my uh routing and things like that so nothing conflicts.
+TEXT: And you'll find that if I go in and do a design rule check now, there'll be probably, you know, there could be dozens or hundreds of errors or something like that because all things are shorted out and not connected and various things.
+context after: But as you can see, all of those uh nets, all of those rats' nests, those from-tos as they're called in the uh Altium world, they're um they're all the unrouted connections.
+
+[1032] EEVblog #1032 Part 2 - John Kenny Keysight Interview — Dave Jones (explains)
+context before: Doing it by hand with Rubylith and and the little coupons you put down for the Yes. Yeah, the for the IC for the DIP packages and stuff. Yeah. Yeah.
+TEXT: And now it's all on on a computer and it's uh it does all design rule checking. You put in all your constraints, all your safety spacings, all your transmission lines, all your ampacities for all your tracks and it checks everything.
+context after: But what have been the major advances in the development tool? There'd be one where you switch from the uh from the tape to a PC for laid out boards and then it happened in multiple steps.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: H and now H. And if we run the DRC again, I think we'll find we're good. So, there you go. That's interesting that it didn't like it didn't flag like hundreds and hundreds.
+TEXT: There should have been hundreds of you know, dozen at least dozens of shorted connections there. Oh, it's Well, why it listed them as unconnected? That's the other thing. So, let's just anyway, let's just run that design rule check.
+context after: List unconnected. It still thinks that they're unconnected. What what what? Have I done the same thing on the top? Nope, there's no other hidden uh polygon under there. So, no.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (explains)
+context before: ERC. I I like the menus. They're categorized into objects. What do you want to do? You want to place your components, you want to place images, you want to place tables, things like that.
+TEXT: Then you've got verification, which is a separate menu, which is your design rule checking and your hierarchy checking. Then you've got a separate library function and tools. I rather like the uh neat organization of those options.
+context after: That's rather good. Customize grid. There we go. Let's say it's 0.1 inch grid. That doesn't look like a 0.1 inch grid to me. Not sure what's going on there.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: We're going from here to here, and it won't let me go over any of those other objects. But, if we go in there and then uh change that to, you know, ignore obstacles, for example, then it will let us pretty much do anything we want, and it won't pick it up.
+TEXT: Of course, we can do um online DRC, for example. So, if I was dumb enough to place a trace that went through two pads and two holes like that, um you wouldn't find that error until you went to do a DRC, a design rule check.
+context after: But, of course, you can do um DRCs uh live like that. You can go online DRC, and then uh when you're when you're actually um uh placing those traces, it would actually uh highlight, come up and uh tell you that you're being a bit of a dummy.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: And if there's any breaks or isolated things, then you'll put in some extra vias and jumpers over to connect the ground planes. But yeah, there shouldn't be too much left to route there.
+TEXT: So what we'll do at this stage is just run a DRC, a design rule check. And let me bring this over. And we can go in here and change all the different parameters which we want to run in batch mode and all that sort of jazz.
+context after: But we'll just run what we've got and see what we get. And sure enough, here it is. We've got a clearance constraint that we need to look at. A VCC is missing.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: That's what I'd be asking for. "Show us your constraints to see if you're fudging uh the DRCs cuz anyone can make You can have a board riddled with errors and get your DRC errors down to zero.
+TEXT: So, they can produce your report and go, "Here it is, there's no errors." But, it's riddled with problems. So, it's all about the constraints that you set up when you do your uh design rule checking and your ERC.
+context after: Uh your electrical rules checking. ERC is for schematics electrical rule checking and then DRC is for design rule checking, which is for PCBs. And in this particular case, we could ignore that.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (explains)
+context before: I think that's caused by my screen capture here. Anyway, um what we want to do is we want to create an ERC in this thing. So, we want to go to add new validation output.
+TEXT: Now, we've got two different types. One's a design Oh, that's annoying, a design rules check, a DRC, but you'll notice that it's only available on our PCB document cuz DRCs, a design rule check, is done on PCBs.
+context after: But if you want to do the same basically the same thing on a schematic, it's called an ERC, an electrical rules check. So you notice, so this is what we want, electrical rules check, and then it we've got one schematic document in our project, so we select that, and bingo, we've got an ERC on our um thing here.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (explains)
+context before: But, of course, you can do um DRCs uh live like that. You can go online DRC, and then uh when you're when you're actually um uh placing those traces, it would actually uh highlight, come up and uh tell you that you're being a bit of a dummy.
+TEXT: Look at that. Don't do that. You know, that's violating your design rules. You're you're going to short things out. So, yeah, but once again, these are all tool specific uh rules and things like that.
+context after: But, generally, I often I don't like online DRC like this cuz on really complex boards, traditionally, Altium that slowed it right down, you know? So, often, on really complex boards, I might turn off in online DRC.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, you could find that it was working before when you last viewed it, but now all your copper's broken in here and stuff like that. So, really, you know, just be careful when you're refilling zones.
+TEXT: Report all errors for tracks. Check footprint uh courtyard overlap. Uh where that's like if you the footprints, you can specify a courtyard of components whether any any components are overlapping.
+context after: If you got a chip here and a chip here and they're overlapping like that, then it'll flag that as an error. It's a it's a mechanical DRC error essentially.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (explains)
+context before: Beautiful. All right. So, I've got our floating copper, all right? Net. Let's just put it to H, right? Okay, so we've got We've We've now got our error, okay?
+TEXT: Look at that. Automatically comes up. Sweet ass. So, if go to our DRC and we start our DRC. Ah. They're different. They're two different processes. That's interesting. Okay, I guess it makes sense.
+context after: If your design rule check it it is your design rules. It's not connection-based thing. But anyway, yeah, so they've they've decided to separate those. I Okay, I've I've got no complaint about that.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, they can produce your report and go, "Here it is, there's no errors." But, it's riddled with problems. So, it's all about the constraints that you set up when you do your uh design rule checking and your ERC.
+TEXT: Uh your electrical rules checking. ERC is for schematics electrical rule checking and then DRC is for design rule checking, which is for PCBs. And in this particular case, we could ignore that.
+context after: I'm absolutely confident and we can check out verify our Gerbers that this would be fine. So, I could go, "Look, I just want to send this board out to one-off.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: Mucking around with the silkscreen and Jeez, I think we're almost done. I'm looking for my micro supply there. There we go. I think we're done. We're going to do a DRC check.
+TEXT: There we go. There's our DRC And uh looks like we've got a few errors. Tidying those up. Looks like just a few uh clearance errors. Probably doesn't meet the 10 thou uh clearance.
+context after: And it looks like I'm shuffling I changed my ground plane there. I'm changing my polygon. It's part of the ground plane. I've just decided to shuffle that there cuz there probably wasn't enough room there to get the uh the polygon was a bit thin there even though on the left-hand side even though it didn't carry any significant current on the left-hand side.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (explains)
+context before: I'm doing some bypass cap work up the top. I'm Oh, what am I doing? I'm down into design rule checking. There you go. I have actually finished the basic layout.
+TEXT: So, I did a basic design rule check to find what the errors is. That will find, uh, um, points that aren't connected. Actually, you know, uh, circuit nets which aren't connected.
+context after: And there might be a dozen or two, uh, left in there. So, I will I'm now starting to layout those and I'm starting to connect the, uh, power now.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, now really we want to do our ERC thing. I'm still don't know what's causing this. Like, why is that still showing that as a net? I don't know.
+TEXT: Anyway, so now we want to do our DRC before we do our Gerbers, because you want to make sure that you haven't screwed the pooch. So, design rules checker, we want that in there.
+context after: Let's list Um uh once again, you can put in your tolerances and stuff like that here. There's options to like refill all your zones before performing DRC. Unless you've got a special circumstance, I wouldn't recommend doing that, cuz you can screw the pooch.
+
+[968] EEVblog #968 - Mystery EDA Package — Dave Jones (explains)
+context before: Um but that's that's not too shabby. They're they're all the different p all the different pads in here are they? So there's an AT mega 128 and they're all the different uh pads and uh that are used and VAS presumably are they?
+TEXT: And we've got DRC design rules setup. It's all very familiar default. So you can set it up. That's all. Oh, I kind of like the grid array there. So copper to copper for example.
+context after: I like that. There you go. You can do pad to pad clearances. H same net route length limit track width minimum all that sort of stuff. And you could s store those as a configuration.
+
+[245] EEVblog #245 - PSU Design Part 10 - PCB Layout Editing — Dave Jones (explains)
+context before: You know, it takes a bit of while to work out the best location for the platypus, but looks like it was the same as last time, just shuffled over a bit.
+TEXT: Mucking around with the silkscreen and Jeez, I think we're almost done. I'm looking for my micro supply there. There we go. I think we're done. We're going to do a DRC check.
+context after: There we go. There's our DRC And uh looks like we've got a few errors. Tidying those up. Looks like just a few uh clearance errors. Probably doesn't meet the 10 thou uh clearance.
+
+[240] EEVblog #240 - Power Supply Design Part 8 — Dave Jones (explains)
+context before: It'll talk to my power supply board instead. Beauty. All right, one of the first things I want to do is uh just compare the data sheet pin out against what I've got on my schematic here, just to make sure there wasn't an issue with uh the pin out in my uh library compiler for that, and that looks sweet.
+TEXT: So, I don't see any issues there at all. So, and um because I've done a DRC check between the schematic and the PCB, I know the PCB is going to match the schematic.
+context after: So, it should be sweet. All right, the next thing I'm going to want to do is uh just uh check a few things. Uh just check pin one here.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (explains)
+context before: Highlights individual pins and can we edit that pin? No, we can't. It's automatically drawn a wire. Pin name not connected pin properties. There we go. Bang. Undefined passive input output.
+TEXT: So, that's that's all your design rule checking stuff at the schematic level. You can set them as power pins and inputs or outputs or passive or whatever you like.
+context after: That's excellent. Selected parts. Yeah, that looks good. I like it. You can just edit your pin directly on the schematic. It doesn't force you to go back into your library and update the part.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: I should have checked that. Track near via. Oh, look, there's our little red arrow. What's What's wrong with that? There's nothing wrong with that. Aha, I was wrong. It is only reporting the first error cuz I didn't have this tech checkbox ticked.
+TEXT: Uh here we go. Report all errors. Uh this can be slow. If unselected, only the first DRC violation will be displayed. So, yep. There we go. So, start DRC again.
+context after: And two two track ends too close. Track near via. Okay. So, now there you go. Trap for young players. Young KiCad players. So, these are all my DRCs with this board.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (opinion)
+context before: Hey, that's neat. Hadn't noticed that before. That automatic when you move your uh cursor over a um over a wire there, it actually highlights the entire uh thing, which is rather nice.
+TEXT: I'll I'll like that. That's pretty That's pretty neat. It highlights all grounds if if you're selecting grounds. I assume there's some way to turn that off, but design rule checking works.
+context after: Library setup. Here we go. Uh look. DipTrace. Here's our Here's our libraries. lib. DipTrace/lib. Why didn't that subdirectory show up before? Okay. Yeah, there it is. There's all our schematic libraries.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (opinion)
+context before: Can I delete you know all that? Whatever. I don't think Here we go. This Gerber viewer's all right, isn't it? It's overlayed them by default. How about that? There you go.
+TEXT: Does it have any like um any checking? Any design errors? Just just a viewer? Yeah, it's it's not a professional production tool. All right, showing the um showing the outline here.
+context after: Where does that come from? Showing the um I didn't think that we printed didn't think that we printed the Why Why is it got the sheet on there? We didn't print a sheet.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: It's, you know, we can... I think it's changed all the defaults in Altium. I'm not going to muck around. But it will actually snap. And if that's not electrically connected, if you don't set the snap, read properly, you can be like 0.1 millimeters off that or something like that,
+TEXT: and it's not going to make electrical connection. And then that is not going to generate a correct netlist, which then goes into your... which then exports into your PCB or imports into your PCB, so that you can then do design rule checking. And using an electronic CAD package like this for schematic and PCB design,
+context after: it's all about electrical rules checking. So, that's the first thing you're going to want to do when laying out... your schematic, set your snap grids. Now, unfortunately, this one is all... because it's imported, it's all off the grid. It's not something that we would have done from scratch.
+
+[155] EEVblog #155 - ITead Studio PCB Prototype Goof — Dave Jones (mention)
+context before: connect up like that, and that provided the, uh, ground path needed to complete the circuit, and that's why it instantly started to work. The signal integrity is going to be complete and out of crap, because it's got to go all the way through your power board and back out.
+TEXT: It's going to be awful, but because this isn't, you know, UART interface isn't particularly high speed, it was able to work no problems at all. So I was asking myself, how could this be? Because I know I did a DRC, a design rule check, on this board before I sent it out, and there were no breaks
+context after: in the ground at all, so I knew I hadn't goofed up my PCB layout, I knew I didn't even have to go back and check that, because, you know, DRC, it, you know, you rely on it, and it works, okay? So I knew
+
+[990] EEVblog #990 - Getting The PCB Manufactured (Nixie PART 5) — Dave Jones (mention)
+context before: so we have to generate NC drill files, they're called. So if we go to fabrication outputs again, we go NC drill files, and once again, you can automate all this, so, you know, it's a single, almost practically a single click to do all sorts of stuff,
+TEXT: generating Gerbers, NC drill files, bill of materials, and DRCs, and all sorts of stuff, if you want. But, yeah, once again, we're going to do the inches thing, 25 here, suppress trailing zeros, reference relative to origin. You want to make sure that matches your one before,
+context after: otherwise they're going to be, they will not line up. When it imports into their CAM software, both the NC drill file and the Gerbers, they've got special CAM software. They do not use Altium, by the way. If you think the manufacturers will import your Gerber files into Altium
+
+[254] EEVblog #254 - KiCAD PCB First Impressions — Dave Jones (mention)
+context before: if I'm not mistaken. So, and that kind of sounds French to me. So select layer pairs, top layer, bottom layer. I'm not sure what this layer pair business is. Ah, the same, yeah. Oh, okay, right. To be displayed, I guess. I don't, yeah, I don't understand that.
+TEXT: Anyway, all I want to do is design rule check, read netlist. Let me look at the buttons here. Open module editor. Module editor, I assume. Once again, I believe that's the footprint editor, if I'm not mistaken. Let's click on that. And it is, it's the footprint editor,
+context after: but they've called it the module editor. Wow, really? I think they need to work on these names. I mean, you know, nobody calls a PCB footprint a module. That's just, yeah, that just doesn't work. New module, load module from library. Yeah, load module from current board.
+
+[254] EEVblog #254 - KiCAD PCB First Impressions — Dave Jones (mention)
+context before: but that's only a small thing, not a big deal, um, polar coordinates as well, you can display the, there you go, down in, down here, you can display polar coordinates, excellent, that's handy for laying out, uh, circular boards, and things like that, so,
+TEXT: um, you know, if you've got a circular board, and you want to put things around the outside connector, at certain, you know, 10 degree intervals, um, that's pretty handy, so I like that, that's neat, disable design rule checking, presumably as you're routing, uh,
+context after: what else have we got, page settings, paper size and text, oh yeah, by default, yeah, A4, none of this, uh, none of this, fools, none of this, you know, US rubbish, that's great, A4, excellent, um, 3D display, oh, let's have a look at it,
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (mention)
+context before: Anyway, so now we want to do our DRC before we do our Gerbers, because you want to make sure that you haven't screwed the pooch. So, design rules checker, we want that in there.
+TEXT: Let's list Um uh once again, you can put in your tolerances and stuff like that here. There's options to like refill all your zones before performing DRC. Unless you've got a special circumstance, I wouldn't recommend doing that, cuz you can screw the pooch.
+context after: Um because there's steps here. You go in we've done our layout board, we've verified it in 3D mode. 3D mode is brilliant for it's what you see is what you get.
+
+[254] EEVblog #254 - KiCAD PCB First Impressions — Dave Jones (mention)
+context before: like that, how do I end, routing, here's my hotkey list, for, the PCB editor, zoom in, zoom out, zoom auto, switch units, oh, switch units is control U, that's handy, reset local coordinates, space, undo, ah, okay, well, I'm not, may, don't tell me that it's only going to let you finish,
+TEXT: the route, if you go to a valid, DRC, maybe you've got to turn, DRC off, so if we switch, um, where was that, tools, preferences, general, wow, now I'm really getting into it, um, DRC on, let's turn DRC off, okay, so we've, track only 45 degrees,
+context after: yeah, excellent, track auto delete, enabled, so automatic track deletion when, recreating a track, okay, show, mod, rat nest, okay, let's try that, I switched off my DRC, okay, so, if I try, if I place, my trace like this, it's got a question mark there,
+
+[990] EEVblog #990 - Getting The PCB Manufactured (Nixie PART 5) — Dave Jones (mention)
+context before: We simply don't care. Like, you know, there's a dot here, for example, you know, a silkscreen dot for pin one marker of that SOT-223 package there. But, like, we just don't care, right? So you would fuss about this sort of stuff if it was a, you know, a proper production board.
+TEXT: You're doing it for a client or a company or something that's professional and everything else. You'd, you know, you'd go to town. But we don't care. It's a one-off. So what we want to do now is we want to do a DRC, a design rule check.
+context after: So we go into design rule check. And I've shown, I'm pretty sure I've shown DRC in the previous video, did I? If not, my apologies. We run our DRC check. And once again, all of the electrical, you can enable and disable all sorts of various stuff in here,
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (mention)
+context before: It was uh fascinating. But oh, there you go. I'm fairly pleased with that. And this is literally my first time using this. So, I've been going 45 minutes now.
+TEXT: And uh in 45 minutes, I've installed it, played around, around with the uh calculators, talking about those, and I've been able to edit hierarchy or schematics and do uh design rule checks and use my component library.
+context after: Haven't created parts yet, but gee, it's not bad. I like it. So, I'll call that uh quits for uh this one anyway, just for this uh schematic part. I need a drink.
+
+[1262] EEVblog #1262 - Designing a Flex PCB + uSupply Update — Dave Jones (mention)
+context before: And here's our differential pair. And as it turns out, we don't actually have to connect this on top, because this would already be connected on our board. So, there's absolutely no reason to connect those two pads there.
+TEXT: But, just in case this one doesn't make connection and this one does when you're soldering, I just for completeness and for design rule checking, of course, you would then get this across here like this.
+context after: No wackers. There we go. Almost done. Just got to join up some grounds. There we go. We are We are done. We are fully routed. I didn't uh define my I stretched my board outline just a tad there, so I'll redo that.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (mention)
+context before: It's um pretty darn intuitive and uh let's Is there any capability to uh do penalization? Let's have a look. Cuz I think there might be I think I read somewhere that it allows you to do route manual, route setup.
+TEXT: We haven't even tried to route any traces yet. Jeez, we're really uh design rule check. Place board outline, auto router setup. Uh jeez, I could be playing around with this until the cows come home.
+context after: But uh I am led to believe that there is a way to do penalization, auto penalization, just like in Altium. And I'm probably missing it. Uh But that would be awesome um because that if you're taking boards through to production, of course, um that capability is uh pretty much essential.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (mention)
+context before: Um because there's steps here. You go in we've done our layout board, we've verified it in 3D mode. 3D mode is brilliant for it's what you see is what you get.
+TEXT: So, you use that as an inspection tool. We've done that. You lock everything down. Then we'll do our final You can do that after your DRC, but we'll just in this particular case, we'll do our DRC.
+context after: We might find one or two little errors, we'll fix it. We'll do the 3D view again and lock it all down, and then we're good to go. So, you wouldn't want to refill all the zones and do the DRC and then just generate the Gerbers, cuz refilling the zones you might have changed your clearances, your tolerances, you know, and all that sort of stuff in your zone.
+
+[253] EEVblog #253 - KiCAD Install & Schematic - First Impressions — Dave Jones (mention)
+context before: And so if you're using this on, you know, a little netbook or something like that with 1,024 x 768, you might be limited. Sorry, I'm I'm capturing 1280 by 720 at the moment.
+TEXT: Um, a 16:9 aspect ratio screen here, but yeah, I am fairly happy with that schematic editor so far. Annotate schematic, perform electric. Okay, the DRC's up there. Generate net list.
+context after: It's all there. Let's have a look at the bill of materials components by reference. Yeah, whatever. Let's choose. Okay. And it's a list format. Okay. Bill of materials. It only gives you a dot list.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (mention)
+context before: The board's going to be the same. I I don't think I have to do anything else. Like, this is not a production board, right? I I just like this is a one-off.
+TEXT: I just want one. Right? So, I'm going to uh So, I'm not going to fuss over other things. I've done my DRC. It's all connected. It should work. But, it's a four-layer board.
+context after: Like and we and we don't have to worry about like other stuff like 15 thou Oh, look, it's added chamfers. Oh, look. Isn't that pretty? Isn't that? It's added the chamfers.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (mention)
+context before: So, that's interesting why it actually like that was a massive error. I had those ground plane shorted together. And if we got that board manufactured, if I ignored that, oh, there's only one unconnected pad, but I hadn't done the DRC yet.
+TEXT: But like once again, let's go up here. Design rule check. We'll start the DRC. Okay? Boom. That's it. So, maybe it would have given hundreds of errors before or something.
+context after: I should have checked that. Track near via. Oh, look, there's our little red arrow. What's What's wrong with that? There's nothing wrong with that. Aha, I was wrong. It is only reporting the first error cuz I didn't have this tech checkbox ticked.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (mention)
+context before: You might go, "Oh, okay. I'm using 50 uh 1.2 mm holes for example and I've got two that are 1.25." Well, can I just you make those uh two holes 1.2 mm and that will in theory make your PCB a bit cheaper cuz there's less tool changes required.
+TEXT: It's just a nice professional final step to actually do that and check those sort of things. And uh and once again, you'll do I'll do a more detailed design rule check.
+context after: If I do care about silkscreen over pads, I'll be checking for things like that. Electrical uh clearances, of course, is a big thing. Maybe component spacing clearances, but because generally I I know the size of components or the silk screen outline defines the size of the component.
+
+[244] EEVblog #244 - How To Lay Out A PCB - PSU Design Part 9 — Dave Jones (mention)
+context before: And uh I don't think I actually have uh any or uh, very few components left on the outside of the board to actually drag into here. So, now I'm doing a bit more fine detail up there.
+TEXT: I'm doing some bypass cap work up the top. I'm Oh, what am I doing? I'm down into design rule checking. There you go. I have actually finished the basic layout.
+context after: So, I did a basic design rule check to find what the errors is. That will find, uh, um, points that aren't connected. Actually, you know, uh, circuit nets which aren't connected.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (mention)
+context before: There we go. Just whack it under there. That'll do. Dave CAD full layer. Yep, good to go. All right. Yeah, I won't I'm not going to This This is not going to be a tutorial on how to how to do a PCB, the steps going through for getting your PCB made.
+TEXT: And uh It's passed DRC and uh there's no there's no unconnected jobs. I I like the fact that it has list unconnected as separate to the DRC. It's kind of good.
+context after: You know, cuz they they are kind of different steps. Um you know, in in the checking process after you've finished a board. So, I kind of like that. You know, like a a DRC will find unconnected stuff, right?

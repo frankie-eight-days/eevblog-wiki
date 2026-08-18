@@ -1,0 +1,43 @@
+# probe bandwidth
+
+Probe bandwidth is the frequency limit of the probe itself, as distinct from the bandwidth of the oscilloscope it plugs into. Because the probe sits ahead of the instrument's front end, it sets the true ceiling of the measurement: a 200 MHz scope fed by a probe that rolls off at 8 MHz is an 8 MHz system.[453] The specification printed on a probe is normally its best case — the times 10 attenuating position — and several common configurations fall an order of magnitude or more below it.[453][1367]
+
+## The times one trap
+
+A switchable times 1 / times 10 passive probe does not carry its rated bandwidth into the times 1 position. A 100 MHz or 200 MHz rated probe has a drastically lower bandwidth there, typically an order of magnitude or more down.[453] Published figures cluster tightly: DC to 8 MHz on one 350 MHz rated probe,[453] DC to 6 MHz on a Siglent PP510 sold as a 100 MHz probe,[1445][EWR4RQPzB6U] about 5 MHz on another,[1266] roughly 6.5 MHz on a typical switchable unit,[1445] and around 10 MHz as a generous upper bound.[1362][GS0WqUKZ-3c] Six megahertz is close to a universal standard value for the times 1 position.[EWR4RQPzB6U]
+
+The consequence shows up in rise time as much as in frequency. The same probe specified at DC to 6 MHz in times 1 lists a 58 ns rise time there against 1 ns at full times 10 bandwidth;[1367] another compares 900 ps in times 10 against 40 ns in times 1.[453] The cause is not the switch shorting the divider through but the compensation network in the probe head, and the loss is real: on a 350 MHz rated probe in times 1 mode, measured response was 0.707 at 10.1 MHz, with severe attenuation by 150 MHz.[453]
+
+Measured performance can beat the datasheet. A Rigol PVP3150 specified at DC to 20 MHz in times 1 peaks slightly — under half a dB — at around 25 MHz, with an actual −3 dB point in the region of 50 to 60 MHz.[1566][EWR4RQPzB6U] A Siglent PP510 specified at 6 MHz rolls off smoothly with no pre-peak, reaching −3 dB just over 10 MHz and 5.5 dB down at 20 MHz.[EWR4RQPzB6U]
+
+This matters directly for noise work. The times 1 position is preferred for measuring supply ripple and noise because the signal is not divided down, giving better fidelity;[594] but noise is conventionally measured over a 20 MHz bandwidth — the reason oscilloscopes provide 20 MHz bandwidth limits — and a standard times 1 probe rolling off at 6 MHz is not delivering that bandwidth.[EWR4RQPzB6U][594] A probe that genuinely reaches 20 MHz in times 1 is therefore unusually useful for the application.[1566]
+
+## Passive probe ceilings
+
+Passive probe technology tops out well below active probing. Most passive probes stop around 500 MHz;[1266][383] a 700 MHz passive probe, such as those shipped even with the 1.5 GHz models of the Agilent 4000X series, represents strong engineering;[383] and only one or two on the market reach a gigahertz.[383] The Tektronix TPP1000 is a 1 GHz passive probe at 300 V, 10 MΩ, and 3.9 pF input capacitance, costing roughly 800 dollars.[1367]
+
+The reason passive probes are limited is deliberate construction. Probe cable is lossy coax, using a resistive nichrome-type conductor with a wiggle in the middle rather than plain copper, so that the probe is matched to the 1 MΩ-and-capacitance front end of an oscilloscope.[1266] Plain coaxial cable achieves far higher bandwidth than any passive probe but is less forgiving, since it must be terminated properly.[1266] Purpose-built low-impedance resistive probes made from coax can reach many gigahertz, even 10 GHz, when constructed and terminated correctly.[1367]
+
+Fixed times 10 probes, supplied with higher-bandwidth scopes, avoid the handle switch entirely and can be optimised for performance — 500 MHz with the same 10 MΩ input impedance and 9 MΩ divider resistor as the switchable types.[1367] For general work a fixed times 10 probe is the better default, since the times 1 switch is rarely used.[1367]
+
+## Active, differential, and isolated probes
+
+Above the passive ceiling the cost rises sharply: active probes start in the four-digit range and run to five digits.[1368][Y7t6BIhBZhc] Typical examples are a 2 GHz probe with a 10:1 divider ratio and 1 MΩ input impedance, and a 1 GHz Siglent active probe at 1 MΩ and 1.2 pF.[1368][Y7t6BIhBZhc] A 12 GHz Infiniium 1169A probe costs on the order of 11,000 Australian dollars on its own.[ulSTHy5kItM] Where an active probe and the best passive probe share the same nominal bandwidth, the difference is input capacitance — 1.2 pF against 3.9 pF — because capacitance is what dominates loading at high frequency.[Y7t6BIhBZhc] Accessory choice also enters the specification: long leads plugged directly into an active probe head are quoted at around 500 MHz, against a rigid probe tip with offset ground for full performance.[1368]
+
+High-voltage differential probes sit lower. A benchmark HVP70 is a 70 MHz part;[1557][1744] the Micsig MDP700 family spans 100, 150, and 200 MHz across the MDP700, MDP701, and MDP702.[1631] Differential probes built around a differential amplifier architecture are inherently slower than isolated optical probes, which behave like active probes and can reach a gigahertz or beyond.[1557]
+
+Beyond roughly 100 MHz, differential probe bandwidth is largely academic because the connection dominates. With leads flying loose, a 300 megahertz high-voltage differential probe has little point: "the probing solution is everything".[1744] Seventy megahertz is more than enough once probing is factored in, and even a 20 MHz differential probe is decently useful.[1744] Where genuine high-frequency differential measurement is required, a fibre-optic differential probe is the better answer.[1744] Bandwidth also carries a noise penalty — the lower-bandwidth 70 MHz probe is measurably quieter than the 100 MHz one.[1744]
+
+Probe bandwidth is nonetheless the thing that decides whether fast switching content is visible at all. A 1 MHz switching node extends into tens and even hundreds of megahertz through its harmonics, so common-mode rejection and bandwidth must both be assessed at those harmonic frequencies rather than at the fundamental.[1557] Manufacturer datasheets frequently stop short of that: a 70 MHz probe whose CMRR is specified only to 10 MHz hides a sharp degradation above it, measuring −21 dB at 70 MHz.[1521]
+
+## Matching probe to instrument
+
+A probe only needs to outrun the scope in front of it. The Rigol DS1054Z ships four RP2200 switchable probes rated 150 MHz with a nominal 17 pF input capacitance in times 10 — ordinary parts, but ample for a 50 MHz instrument, so probe performance is not the limit.[704] Under controlled comparison on a 100 MHz scope, a supplied 150 MHz probe and better probes produce essentially the same result.[707] Similarly, on a 500 MHz scope a 500 MHz, 11 pF passive probe makes probe bandwidth largely irrelevant to the outcome.[1718]
+
+Physical probing fixtures carry their own bandwidth. A hands-free PCBite holder is specified at 3 dB down at 200 MHz with 14 to 18 pF of input capacitance, adequate for general-purpose use, while its SP10 passive 1:1 hands-free probe falls back to the usual times 1 territory of about 10 MHz.[GS0WqUKZ-3c]
+
+## Setting and verifying probe bandwidth
+
+Some oscilloscopes allow the probe's bandwidth to be entered independently of the channel bandwidth limit. On the R&S MXO4 a user-defined probe entry accepts an arbitrary probe bandwidth — one channel at 700 MHz alongside another at 20 MHz, and settings down to 850 kHz.[1529] The same facility on a Keysight MSO4 allows a probe bandwidth to be dialled in and taken down into the kilohertz region, acting as front-end filtering.[1638] The setting is not cosmetic in measurement workflows: changing modes can reset the probe definition, requiring the user-defined bandwidth to be re-entered at the probe's actual figure.[1631]
+
+Verification is done against the datasheet and, where possible, by measurement. A frequency response analyser sweeping the probe in times 1 mode from 100 kHz to 100 MHz yields the true −3 dB point and phase response directly.[EWR4RQPzB6U] A fast-edge pulse generator serves the same purpose from the time domain, verifying bandwidth and step response of the whole probing system via the 0.35 rise-time relationship for a Gaussian response.[433] Datasheets are not always complete — the sheet supplied in the box with one probe omitted the times 1 bandwidth entirely, which appeared only in the manufacturer's series datasheet.[1445] Checking the specific probe's rated bandwidth before trusting a measurement is the standing precaution.[594]

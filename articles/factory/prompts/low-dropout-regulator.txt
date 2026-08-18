@@ -1,0 +1,428 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: low dropout regulator
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 79 passages drawn from 52 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# low dropout regulator`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[zyuRcsM0gjI] eevBLAB #10 - Why Learn Basic Electronics? — Dave Jones (explains)
+context before: Sure. Okay, that sort of stuff's possible. But, hey, what happens when you want some sort of specialized interface, some sort of specialized sensors, something that hasn't been done before, something where you might find uh that off-the-shelf code or whatever doesn't work and you have to start doing stuff, either writing your own code or more importantly, designing your own electronics.
+TEXT: Just changing a few little requirements can easily put you in the realm of, well, I've got to do some electronics. I've got to know how basic interfaces and it work, maybe how basic protocols work, uh you know, basic power supplies and can I supply enough power, what a low drop out voltage regulator is, why does my product fail when it my little gadget fail when it drops below a
+context after: certain voltage, why does it go erratic, all that sort of stuff. It's just countless things. And Vakash specifically mentions that, well, assume that I'm not building hobbyist boards for explicit sale uh to consumers.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: Now, here is, if you go through the data sheet, it'll it'll be the same for all voltage regulators like this. All linear voltage regulators will have a dropout voltage specification.
+TEXT: You can get special low dropout types, which go down to several hundred millivolts or something like that. They can actually be quite low, but here is our parametric graph of the input to output differential voltage on the Y axis here from 1 volt up to 3 volts, and that's the dropout voltage, okay, on the Y axis versus temperature, cuz this effect does change with temperature.
+context after: And as you can see, curiously, it has at different and these load lines are for different output load currents. This one up here, which curves like that, is for the maximum 1.5 amps output, and then 1 amp and 500 milliamps, 200 milliamps, and then the lowest load line they've got is 20 milliamps here.
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (explains)
+context before: That'll be super clean, right? End your problems. Uh-uh. As it turns out, your voltage regulators, which are used everywhere to give you like a supposedly clean regulated, hence their name, regulated output voltage, are actually quite poor at uh attenuating large amounts of input ripple.
+TEXT: Yes, they regulate well. It'll give you your precise minus 4 volts or 3.3 volts or whatever voltage you actually uh set your regulator to. But, if you've got tens or hundreds of millivolts of input ripple that you're trying to get rid of, LDOs can be a poor way to do it because the amount of attenuation of the ripple from input to output depends on uh not only the type
+context after: of regulator, it depends on the input to output or the dropout voltage of the regulator. As you get lower, it can potentially get worse. Here's a graph uh which can show you a typical uh result of that.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (explains)
+context before: So, it can be an absolute bargain if you just need to generate a a simple low current negative voltage. As I said, for an op-amp or for a negative regulator or for to get a regulator down to zero or for any other purpose that you need that split supply.
+TEXT: And once again, you can add a linear regulator on the output here. If your input voltage is high enough, you could use a low dropout regulator. So, if you had a 5-volt supply, for example, then you could easily use even with at at low currents, even with crappy 1N4148 diodes and low values of capacitors in here, you could you get a fully regulated and clean 3.3 volt
+context after: linear supply with a low dropout regulator. Not a problem. But using this particular load, which is 10K at the moment, there's our output voltage 3.64 volts. That's good enough to give us basically, you know, a couple hundred microamps um, output current if we use a low power, uh, low dropout voltage regulator at 3.3 volts.
+
+[473] EEVBlog #473 - Microcontroller Voltage Doubler — Dave Jones (explains)
+context before: But of course, you can do an awful lot with a milliamp. You can fly to the moon on a milliamp or drive an LCD or drive an op amp or something like that.
+TEXT: You could even regulate, use one of those low power low dropout voltage regulators if you wanted to regulate the output because when you start putting a load on here, as we saw last time, even if it's a small load, you know, a drawing a milliamp or two, then you're going to start to see, well, you're Let's draw in the blue waveform.
+context after: It's not going to look perfect like that anymore. Sorry about the red one going there. It's going to start drooping like this. And then it'll kick it back up, and it'll droop down again, and it'll kick it back up.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: But, the good thing is the packages are small scale as well, SOIC, TO-92, absolute classic. There's a SOT-89 and there's a TSOP package as well. So, there you have it, the LM317, the absolute classic jellybean adjustable voltage regulator.
+TEXT: You still find it used in its millions, probably even billions today. Now, the disadvantage with the two previous regulators we've looked at is that they're not LDOs or what's called a low dropout voltage regulator cuz as you saw, like 2 and 1/2 to 3 volts voltage differential you've got to have minimum across that regulator.
+context after: Not only does that dissipate a lot of power, but in a lot of circuits, and especially if you've got cascading regulators, like one power one regulator power from another, etc., you can find that you just don't have that differential voltage margin available.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (explains)
+context before: And once again, you can add a linear regulator on the output here. If your input voltage is high enough, you could use a low dropout regulator. So, if you had a 5-volt supply, for example, then you could easily use even with at at low currents, even with crappy 1N4148 diodes and low values of capacitors in here, you could you get a fully regulated and clean 3.3 volt
+TEXT: linear supply with a low dropout regulator. Not a problem. But using this particular load, which is 10K at the moment, there's our output voltage 3.64 volts. That's good enough to give us basically, you know, a couple hundred microamps um, output current if we use a low power, uh, low dropout voltage regulator at 3.3 volts.
+context after: We'd get a nice clean supply with even these crappy parts. So, there you go. I hope you enjoyed that. If you want to discuss it, uh, jump on over to the EEVblog forum.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And that's what happens when you um when you're on the margin like this using an LM317 voltage regula- regulator, a standard linear regulator instead of a low dropout one where we would have had plenty of margin.
+TEXT: Um instead of having, you know, the 1.5 to 2 volts dropout voltage, which we get with the LM317, if you use an LDO, it might have .2 volts dropout voltage, and we'd have a ton of margin, and the output current would work right up to, you know, 500 milliamps, not a problem, and everything would be sweet.
+context after: But, we're just trying to be really cheap and simple and nasty here and use an LM317. And if you're interested to know what the quiescent current is for just the AVR ISP Mark II programmer on its own, that's the input current for the USB, the 5-volt USB.
+
+[ILIO5b1BliE] Why Use AA's Instead of 9V Batteries in Multimeters? — Dave Jones (explains)
+context before: They actually have a graph here of Shame they don't actually show you this is constant current load, okay? Shame they don't actually show you a phi curve for 5 milliamps, but it's going to be in there somewhere and it's probably not going to be I'm not going to say it's not going to be halfway, but it's going to maybe at a guess you'd have to measure it.
+TEXT: It might be 150 hours. Now you'd have in fact in the case of a 9-V battery, I could hook a 9-V battery onto this and it would work and you would actually get because our the lowest voltage the highest voltage regulator in this is 4 V, so it's an LDO, so it drops out at like 4.1 V or something.
+context after: We could actually use go down right to 5 V and use the entire capacity of the battery, 100% capacity of the battery, which would be nice and we might get maybe 150 hours use out of it, but 150 hours on a modern multimeter is not really good enough.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: All right, let's power this thing up. Take a look. I've got it down on a little adapter down there, little SOT-23 jobby. Yes, I will No, I don't have any bypass caps cuz I thought we'd just uh have a look first to see uh the stability of thing without any bypass capacitors on it.
+TEXT: Cuz this is a low dropout voltage regulator, an LDO. One of the classic issues with LDOs is uh stability. They can actually oscillate if you don't incorrect if you don't correctly load them with the correct amount of capacitance, the correct type of capacitor, the ESR, all that sort of stuff.
+context after: So, they can potentially oscillate cuz they use a PNP or a P-channel uh pass element, which is inherently more unstable. And anyway, I won't go into the details, but the advantage of it is is that you get the low dropout voltage.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (explains)
+context before: Now, the advantage of the graphite anode one, as you can see, it starts off and maintains a higher voltage for a longer amount of time. And this is flatter.
+TEXT: Uh the curve here is flatter than the coke anode one. And it drops off much later in voltage as well. So, the advantage of that is that you can power your 3.3 V circuit, a modern circuit, microcontroller, whatever at 3.3 V directly from the battery using the low dropout voltage regulator.
+context after: Because if your circuit is 3.3 V, there it is, okay? But, uh you might use a linear low dropout voltage regulator. Might have a dropout voltage of 0.1 V or even 0.2 V.
+
+[497] EEVBlog #497 - Siglent SDG5000 Function Generator Teardown — Dave Jones (explains)
+context before: And the main board here, as I said, looks to be very well designed and laid out. They seem to know what they're doing here. We've got our regulation circuitry up the top here.
+TEXT: These are all obviously low dropout regulators for all the various rails, which is why they can get away with no regulation on the output of the converter up there because the main uh uh the main power supply board because then they're just locally regulating them down here.
+context after: And of course, they're going to use multiple taps there because they want the lowest possible power dissipation in these devices. They're only using the PCB as the heat sink in there.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (explains)
+context before: So, then it it reduces the effectiveness of reducing that output ripple, and as we saw in that uh complicated formula um back there. So, there's only so much you can do.
+TEXT: You can't just put, you know, a thousand mic in there and think that your ripple's going to zero. So, you might have to do some post regulation. So, you might put a low dropout regulator on the output of your 7660, for example, if you need a minimum amount of ripple.
+context after: But, there there's a bit of a trap there using a uh using a 7660 and then having your post regulator on there is depending on the voltage drop across that regulator.
+
+[875] EEVblog #875 - NI VirtualBench Teardown — Dave Jones (explains)
+context before: is the switch mode converter. You'll notice that we've got our diode outputs there and we've got our bulk ceramic decoupling on the input. And if we flip it over, we've actually got, there we go, these look like our primary side drive transistors right here.
+TEXT: And we've got some extra output filter in there. We've got everything hunky-dory. So what it is is they're using this as a switching pre-regulator and then I believe it looks like that they're using the outputs. These are low dropout linear regulators on the outputs,
+context after: which is why they might only be dissipating like a watt each regardless of the output voltage. Just to clean it up. Because you could have a direct switch mode output but then it's not all that clean and well, I don't think national instruments would do that.
+
+[1034] EEVblog #1034 - Mailbag — Dave Jones (explains)
+context before: or whatever, then it's better to have it in series. Because if you plug in backwards, it just you get no current at all, rather than just short it out. 680 mic is probably quite high for the input. You generally don't need that for just input stability
+TEXT: on a regulator like this. Then, yeah, you don't really need that. Now as for the regulator here, the LD 11175, this is a low dropout regulator. And these are less stable than your regular like 7805 ones, for example. You need a specific type and size of output
+context after: capacitors to, you know, make it work. It's not a problem, but it's just that when you've got a 9 to 12 volt input, I wouldn't be using an LDO here. Once again, it's still going to work just fine, but I would just be using biggest 5 volts out, just a
+
+[972] EEVblog #972 - Operating Chips Outside Their Spec — Dave Jones (explains)
+context before: signals, down at a 3.6 volt chip supply limit, well under that data sheet value of 4.8, so this chip is very conservatively specified, and by the way, 3.6 volts will be the highest operational voltage part inside this meter, so this allows us to set our dropout voltage
+TEXT: our low battery detector voltage not much above that 3.6, so you might set it to, have to look at the data sheet for the regulators, the low dropout regulators used in this, but you know, it might be typically 50 millivolts, 100 millivolts, not much above that
+context after: so 3.6 volts nominal would give a low battery warning indicator of 0.9 volts per cell, and that's pretty darn good, you're using up you know, vast majority of the energy inside those 4 AA batteries, so that's quite good design you don't want to be, you know, pissing away
+
+[321] EEVblog #321 - Google Nexus 7 Tablet Teardown — Dave Jones (explains)
+context before: And up here it says accurate real-time navigation and improved sensitivity in urban canyon environments. Love the term urban canyon, but give me real canyons any day of the week.
+TEXT: Anyway, it claims that, you know, low power consumption, ultra low power tracking mode, and it's got a built-in LDO as well, which of course reduces your bomb cost. And they make a point of doing that, of course, because, you know, systems integration stuff.
+context after: You're looking to lower your bill of materials cost in these sort of things. If you're trying to eke out every cent, having an LDO, you know, a voltage regulator in there don't have to provide a local one.
+
+[1147] EEVblog #1147 - 1 Cent Regulator! That's MAD! — Dave Jones (explains)
+context before: Hi, sorry about the new office background here. I didn't have time to build it scale or to paint it. In a previous video and previous couple of videos, we looked at the 3 cent microcontroller from Paducah and we got that from LCSC, which is a Chinese catalog type Digi-Key kind of competitor Digi-Key Mouser Farnell's catalog competitor.
+TEXT: And I thought we'd take a look at another part from them. It's not a microcontroller because well microcontrollers are expensive, right? At 3 cents. How about another jelly bean part which you'd be no doubt familiar with, the low dropout voltage regulator.
+context after: How cheap can you get these on LCSC? Well, turns out you can get them for 1 cent or little bit of maybe 1 and 1/2 cents. I'm rounding down to 1 cent.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: So, 100 microfarad output cap and that's one of the disadvantage cuz output capacitors, well, voltage divider resistors, they're cheap. The output capacitor requirements that match the stability, the value, and the impedance needed for the to make your regulator stable can often come at a high cost.
+TEXT: So, jelly bean typically implies lower cost. But, anyway, with low dropout regulators, you don't get a free lunch there. And often there'll be an entire section in a low dropout regulator data sheet actually devoted to the output capacitor selection.
+context after: This case it's got output capacitor selection is critical for regulator stability. Larger C out values benefit the regulator by improving transient response and loop stability. Devices designed to be stable with tantalum and aluminum electrolyte caps with ESR between 0.2 and 10 ohms.
+
+[224] EEVblog #224 - Lab Power Supply Design - Part 3 — Dave Jones (explains)
+context before: Bang. And we'll just go down to our 10 millivolts per division AC coupled. That's with the point 47 microfarad bypass cap on there. That's by the way this is at 0.2 amps load.
+TEXT: By the way, I am driving 200 milliamps. So let's remove it and bang. There you go. It does that's with no output capacitance. It really does not like that at all as you'd expect for a low drop out voltage regulator like this.
+context after: So it seems to be stable but you know at high you'd have to test it at higher current but of course you wouldn't just as good design practice putting anything less than the recommended 2.2 microfarad ceramic output capacitance but even point 47 seems to work fine at at about a quarter of an amp.
+
+[491] EEVblog #491 - Nintendo 64 Game Console Teardown — Dave Jones (explains)
+context before: So, I'm not sure what uh normal system operation is supposed to be there but uh it you know, it wouldn't surprise me if the chip just shuts down and does absolutely nothing like the graphics chip does nothing until um Well, in the main CPU would be running so it'd be um sharing some of that presumably and well, I you know, uh I don't know but it wouldn't surprise me
+TEXT: if it just, you know, went into some uh sort of hibernation mode just waiting to uh uh plug a the into there. And the termination voltage, which has its own low dropout regulator down in here, that's measuring yet 2.5 volts.
+context after: And I'm not seeing anything between the two the CPU and the graphics processor either. So, really, yeah, you know, this thing's dead as a dodo or it's in some sort of wait hibernation mode for that cartridge.
+
+[1761] EEVblog 1761 - Micsig MHO14 Tablet Oscilloscope TEARDOWN — Dave Jones (explains)
+context before: So, it's a companion uh, DC-to-DC converter. Curious to look that up now. Here it is. Woah, confidential. Didn't sign the NDA. Oh, no. How did I get it? >> [laughter] >> And let's have a look there.
+TEXT: A complex power management integrated circuit PMIC for those playing along at home. Uh, five configurable synchronous step-down converters, yeah. Nine LDO reg- regulators, two switches, and a battery fuel gauge, as well.
+context after: Nice. So, they could use that for the, um, onboard battery, as well. It's got an RTC, as well. Uh, that's that's crazy. It also includes an audio codec. Real great What?
+
+[761] EEVblog #761 - Pebble Time Smartwatch Teardown — Dave Jones (explains)
+context before: But, uh being right next to the power terminals here, it's got to be some sort of uh regulator. And it's, you know, six-pin uh package, fairly typical. That's got to be its big output pin.
+TEXT: So, let's go see if we can find some data on that. Well, it turns out that's a Linear Technology LT3009 uh LDO, low dropout voltage regulator. And yeah, it's They don't have the room to put the real part number in there.
+context after: I think they bloody well could have. Could have put 3009 instead of LDKD. There it is. So, it's a 3.3-V job. Um no surprises whatsoever because uh they they would be powering that uh directly from the battery.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: So, just consider it like under 1.2 volts here. What does this uh cheapy here say? 1 to 1.1, something like that. But, if you have factor in 1.2, yeah, that's good enough.
+TEXT: But, the 1117 is not the lowest dropout voltage regulator. Like, if you need like in the order of, you know, 50 millivolts, 100 millivolts dropout, or something like that, then you're going to have to choose other parts.
+context after: But, this is it is significantly better than the uh 317. That's for sure. So, this is more than capable of, for example, having like a 3.3 volt rail using the 1117 after like a 7805, or something like that.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (explains)
+context before: Can't Can't use it anything under that. But the 317, it'll go up to 37 volts here. So, anywhere from 1.25 to 37, absolute killer. All you need is two resistors in there.
+TEXT: It's available in all your favorite biggie packages like this. And once again, this is not a low dropout regulator. We'll have a look at that in a second. One of the downsides is it does have a lower dropout voltage.
+context after: Uh here we go. Input to output differential voltage, uh 3 volts minimum typically. So, that's more than the 7805. So, uh but once again, this is not a low dropout regulator.
+
+[800] EEVblog #800 - Siglent 1000X Oscilloscope Teardown — Dave Jones (explains)
+context before: But uh look at what they have out here in addition to this uh negative 5V regulator. Look, they got some LP 3878s. I suspected they might. So, I had a closer look at these.
+TEXT: These are low-noise adjustable uh dropout um low dropout voltage regulators. So, they're low noise, of course, designed uh to get the low-noise performance for powering the circuitry on the analog front end.
+context after: Nice. Although, granted, they've only got two of those um for well, maybe there's one per channel. I'm not sure or whether or not uh two power uh both channels uh and they're common.
+
+[326] EEVblog #326 - Makerbot Replicator Teardown — Dave Jones (explains)
+context before: I love open source hardware. There's the info. Woohoo, we can check it out. We can modify this thing, do whatever we want. Brilliant. Houston, we have a botch. Classic solder botch between two pins on what looks like an optocoupler.
+TEXT: And there's another botch. We've got a mod wire here and a classic sliced trace there, cut straight through, and bridge between these two power devices. One's an LM340 low drop out voltage regulator.
+context after: I'm familiar with that one, and the other one, can't quite see the number. But there you go. Botches, couple of botches on the board. Never send a human to do a machine's job.
+
+[6] EEVblog #6 - Part 1 of 2 - Meterman 37XR Multimeter review — Dave Jones (explains)
+context before: Hi, welcome to the EE Vblog. I'm your host, Dave Jones, and this is episode number six. Now, I had a comment on the number five blog from a person called Brack, and he said, "How about I name some microchip devices that I really like?" Cuz I talked about the analog microchip devices before and how they're so good.
+TEXT: Um so, that's a fair enough question. There's one analog microchip part I've used recently, and that's the TC1014. It's a low dropout fixed voltage regulator, low power. It's in a SOT23-5 package.
+context after: It's an industry standard pinout, so you can use it as a replacement for other other parts on the market. And it's It's a really good part for a couple of reasons.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: You can actually increase these values, but then the error term becomes significant, and you're not going to meet a lot of the data sheet's specs. So, you really should keep that to about 240 or well, you know, certainly under like 500 ohms or something like that to really keep the thing within spec.
+TEXT: I typically use a 220 ohm. Now, the other trap with the LM317 is that it is not what's called a low dropout voltage regulator. It's a just a standard linear regulator with a high dropout voltage.
+context after: That means the dropout voltage is the voltage differential between the input. So, the input must be X volts higher than the output, otherwise it drops out of voltage regulation, which I won't go into the details of how and why, but it basically means if you've got 5 volts out of your regulator, for example, well, you need typically for an LM317 as a rule of thumb at full current, it's
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (explains)
+context before: I've I've never seen anything like that before. Seems to be some sort of new method to sort of cover up the identity of what that chip is. Go figure.
+TEXT: And they've got SOT223 3117 low dropout voltage regulators. It's quite a few of them scattered around this board. And as you can see, they've got a tiny little heat sink attached to them.
+context after: Really nice little layout, nice via stitching. And if we have a look at the main Rigol device here, whatever it is, we can uh see all of the differential pair serpentine traces leading up to this main BGA device up here with the heatsink on it and you can see how they're not only adding the serpentine parts into each pair to match say this pair here with the one next to it and match
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (explains)
+context before: Not much I can do there. Sorry about the glare, but that's the only way we can get the part number on these puppies. These are Micrel 5209s. So, I've used those before.
+TEXT: They're uh low noise low dropout regulators. Not bad little things. So, nothing else much doing. Discrete or two. No wackers, but what is U16 over here? And that one right there.
+context after: Bit of magic happening. Bit hard to make out, but that's an Analog Devices ADF4001. And here's the data sheet for the ADF4001 from Analog Devices. 200 meg clock generator PLL.
+
+[385] EEVblog #385 - Amstrad NC100 Notepad Repair — Dave Jones (explains)
+context before: Um that there looks like it could be a voltage regulator. So, maybe they have a 5-V regulator on this thing. Although, if you're powering it from uh 6-V batteries, the four uh double A's in series, that's um 6-V uh nominal.
+TEXT: Um but, that's going to drop fairly drastically. So, a 5-V regulator, even a low dropout one, isn't going to regulate uh for very long over that full battery discharge curve.
+context after: So, what I'll do is I'll just power this thing from a 6-V bench supply, and uh let's give it a go. So, 6 V, switch it on, and soft power switch.
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (explains)
+context before: So, they're just doing some very basic stuff with those TL072s. Nothing RF there at all. And then we go over into this network here. And yeah, they are all the same value resistors.
+TEXT: Yep, they are. And then we jump in in. There's a low voltage um local There's a low dropout linear regulator on the other side of that. Just some local voltage regulation.
+context after: Then we've got looks like a multi-stage LC filter there. And going into another device, not sure what that one's doing there. And once again, they've lasered the number off that one.
+
+[1539] EEVblog 1539 - NEW PROJECT Part 3 - STM32L vs PIC24F — Dave Jones (explains)
+context before: Oh, hello. Right off the bat, what's going on here? Is that banner spec Can you smell some BS in the banner spec? Maybe. Look Check this out, right? Under these conditions, uh range 3 V core is 1.2 V, so that's the core voltage that it's running at.
+TEXT: As I said, it's got an internal um uh low dropout regulator in there. At 1 megahertz, 165 typical microamps. What happened to the 88 or whatever we were running at?
+context after: Supply current in run mode, code executed from flash. Once again, you've got to go into all the different modes and the clocking sources, all sorts of jazz like that.
+
+[269] EEVblog #269 - Energy Micro Tiny Gecko — Dave Jones (explains)
+context before: In fact, it's got two of them for one for range one and one for range two as well. And it's it's not a bad device at all and it's a current sense amplifier.
+TEXT: And if we take a look up here, we've got an LP3982. That's a low drop out voltage regulator for the for the supply for the CPU and 5 volts in 3.3 volts out.
+context after: And there's our current shunt resistor the 4R7 there. And of course, it taps off those two values down into the current sense amplifier down here for both ranges. And then the output is switched in here.
+
+[444] EEVblog #444 - Car Lane Guidance Camera Teardown — Dave Jones (opinion)
+context before: there, not sure what. Let's have a look at that. By the way, it is a Rev-D board, so they've had a few sucks of the proverbial SAV there. And it looks like we've just got a couple of switching regulators around the place and stuff like that.
+TEXT: Nothing too fancy, that's probably a low dropout linear reg for one of the cores. I'm not sure if it's got multiple voltage requirements or whatever on these chips, but no, I think this was a single 3.3 volt, wasn't it? There's the oscillator module, 10 megahertz, there we go.
+context after: And yeah, there's not much else on here really, just miscellaneous support stuff. You see, like you do a basic Google search on that and you come up with ZIP. I mean, you know, you could spend a bit more time at it, you could
+
+[823] EEVBlog #823 - Rigol DSG815 RF Signal Generator Teardown — Dave Jones (opinion)
+context before: Anyway, you can see the center line of the PCB in there, and they've got the gold plating on the edges of the board too, so very nice attention to detail, so nothing escapes from this metal can. Fantastic. And all this stuff outside here, obviously power
+TEXT: supply, these are all going to be, I don't even have to look at them, they're probably low drop-out regulators, more regulators up here, everything's going to be linear, none of this switch mode rubbish. So it looks like we have our power coming over here,
+context after: that would come from a switch mode power supply, it's how they get the size down of course. But you won't find any switch mode converters on the main analog board itself, either outside the can or inside the can, definitely. Okay, looking at the spec sheet, there seems to be a pulse modulation option, so I'm going to assume
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: So, you they won't oscillate like this and do other weird stuff, but we're still talking about not a huge amount there, but if we keep dropping that input voltage say to 4.75 or we change the output current, it's going to change with the output current as well.
+TEXT: But, as you can see, it does actually doesn't drop out as smoothly as you'd like, but that's the LM317. There are much better regulators out there. And if you're keen on the actual details of the circuit, there's not much to it.
+context after: Here's the Dave CAD drawing of it. It's basically just a 5-V USB input. Any 3.3-V voltage regulator regulator you like. I used an LM317 cuz I didn't have anything else at the time.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: Here's the Dave CAD drawing of it. It's basically just a 5-V USB input. Any 3.3-V voltage regulator regulator you like. I used an LM317 cuz I didn't have anything else at the time.
+TEXT: It's not that great. I'd recommend you use a low drop out an LDO voltage regulator. 3.3-V just a a selection switch to choose between them and an on-off switch and hook that up to pin two of the ISP connector and that's it.
+context after: Bingo, you've got yourself a modified AVR ISP Mark II programmer. So, after all that, am I happy with this? Well, not not 100% No, it's There's a quite a limita- quite a few limitations.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: I know I was going to be limited. I was hoping for a little bit better but and then than the data sheet performance figures, but they are pretty much spot on to the to the figures there.
+TEXT: So, it's not that great. I think I might actually replace it with a low dropout voltage regulator and just a fixed voltage a fixed 3.3 volt one. So, you don't even need the adjustment adjustment resistors on there.
+context after: All you need is the regulator and input and output cap. Problem solved. Huge amount of margin and well, there you go. That was just implementing simple LM317 on a design.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (opinion)
+context before: Now, 6.5 volts might, you know, it sounds reasonable. This runs from eight AA batteries, either alkaline or nickel metal hydride. There's a switch in there. Yes, it is set to alkaline.
+TEXT: And let's say you had your nickel metal hydride, then it would drop out at say 1.1 volts per cell. That's 8.8 volts. So, you know, if you didn't use an LDO in here, they scrub the number off the regulator on there.
+context after: So, you know, adjustable. I like 6.5 sounds reasonable, I guess. So, given that all the numbers are rubbed off the chips, and we don't know what it's supposed to be set at, I'll just leave it for now.
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (opinion)
+context before: So, really you know, I think it's going to do the job. But, hey, let's test it. Now, I thought we'd just check the uh performance of this thing to see if it meets the data sheet specs.
+TEXT: Because if you remember, I said that we're going to be pretty close to the limit of the dropout voltage of this LM317. Because ideally, I would have used a low dropout regulator in this application.
+context after: But, I didn't have one left in my junk box. I just decided to use an LM317. And let's see if it matches the uh dropout voltage graph, shall we?
+
+[454] EEVblog #454 - JVC Camcorder Teardown — Dave Jones (opinion)
+context before: Your guess is as good as mine. And yeah, by all means, uh go look these up, but nothing terribly exciting to write home about. And we've just got more power stuff around here.
+TEXT: You can tell by all the large traces, large inductors are always a dead giveaway, some sort of, you know, some sort of regulator in there, low dropout regulator perhaps.
+context after: Now, we're getting into the obscure numbers down here. And uh there's curiously a lot of passive parts around here. Look at all these resistors. So, not sure what that puppy's doing there at all.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (opinion)
+context before: So, you'd have to weigh up that. Maybe you could get May see it might be cheaper to just go with the other one with an external LDO that you might get a you know, a Japan Radio Corp LDO or something like that.
+TEXT: And you know, cheap as chips and do that. But once again, it may not be as effective. But this uh 27761 I rather like this. Like to have that uh LDO integrated.
+context after: And what what type of powering data Once again, powering data converters, interface power supplies, operational amplifier power. So, you know, just generating a negative rail for your op-amp and stuff like that.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (opinion)
+context before: If you're only dropping a small the smaller voltage you drop, the less effective it becomes of filtering input noise and stuff like that. So, if you only got a low dropout voltage on it, then your noise might pass mostly through that regulator.
+TEXT: So, you know, you've got to be careful there. It's not a magic putting a LDO on the output is not a magic bullet. So, let's have a look at this bad boy.
+context after: Inverts and regulates the input supply voltage. Low output ripple. There it is. Shut down lowest quiescent current. Blah blah blah. Up to 250 milliamps output current. That's huge, right?
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (opinion)
+context before: Cuz this standard linear regulator, cuz it uses a Darlington pair like this, you're actually going to have two VBE drops plus the saturation voltage of that transistor. So, that's why, in say a 7805, you'll see a typical dropout voltage of like 1 and 1/2 or 2 V or something like that, or even higher, because it's just a function of the Darlington NPN transistor and how it's used.
+TEXT: But an LDO, what is an LDO? Is it totally different? No, it's exactly the same as well. I'm glad you asked. Let's take a look at that. What is an LDO?
+context after: Everything else is exactly the same, but an LDO uses All right, it's a bit hard to draw like this. Uses a PNP transistor. That's it. Not in the Darlington configuration.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (mention)
+context before: The switch mode ones are more advanced if you want to get greater efficiency based on various input voltages and stuff like that. Anyway, these automatically charge the battery using this, uh, three or two-step charging process, instantly determine, uh, the current flowing through the cell, and they determine the voltage on the cell.
+TEXT: They've got built-in voltage references, and they do everything for you, and you can just hang your circuitry via a low dropout voltage regulator, as we mentioned before. If you're powering a 3.3 V circuit, no problems at all, hang it straight off, but always remember when you're charging that your circuit will also take a certain amount of current as well.
+context after: So, you have to take that into account when you calculate this value up here. So, if our circuit was taking an extra 25 milliamps, uh, then our cell at half C 25, we'd need to set this value to 50 milliamps to cater for the current down into the cell, and also to power the circuit under test.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (mention)
+context before: Where is it? Oh, come on. There it is. Output current, switched array, and then yep, you guessed it. We've got an LDO. There it is. So, yeah, negative band gap, low pass filter, and then we've got a low pass filter here, and a voltage out.
+TEXT: So, there you go. It's got integrated LDO. Awesome. Let's check the price on that. See if it's actually cheaper than this LM72776. Hmm. Nah, unfortunately, it's not cheaper. There in 3,000 quantity, we're talking 44 cents here for the 2776 and the 27761 with the integrated LDO, it's more expensive, needs greater silicon area.
+context after: They can't get the the yield on the not the yield, the you know, the density on the wafer. So, you know, you pay for wafer space. So, for 3,000 quantity, 82 cents.
+
+[95] EEVblog #95 - Linear Regulators, Closed Loops, Simulations, & Brand Shenanigans — Dave Jones (mention)
+context before: 
+TEXT: Hi, welcome to the AAVlog, an electronics engineering video blog of interest to anyone involved in electronics design. I'm your host, Dave Jones. Hi, now a couple of episodes ago, I showed you a standard linear regulator circuit and how it wasn't that much different to LDOs and even switch mode power supply regulators.
+context after: Now, as it so happened, I've actually been playing around with just such a circuit recently. In In fact, pretty much exactly this. I've been using a TLC 2252 op-amp with an MJD 212.
+
+[972] EEVblog #972 - Operating Chips Outside Their Spec — Dave Jones (mention)
+context before: And I've got the Keysight 34470A, which is a beast of a 7.5 digit multimeter. So we're going to use that to compare the readings. And basically, you know, if we adjust the different waveforms and our 121 GW varies from our reference Keysight here,
+TEXT: then, you know, we know to investigate further. But basically, if we change the voltage range right down and we test various waveforms, and it matches something like the Keysight here, hey, no worries. Now the AD8436 inside here is actually powered from a low dropout voltage regulator in this case.
+context after: So rather than, like, butcher the circuit and everything else and bypass that and put the existing 3.6 volt voltage regulator on there, I thought I'd just drop the battery supply like this and actually let the voltage regulator drop out, and then we can lower the voltage.
+
+[892] EEVblog #892 - Siglent SSA3021X Spectrum Analyser Teardown — Dave Jones (mention)
+context before: And you know, lots of bypass caps around them, the zero ohm resistors, not much else. Um what are they? They're actually linear voltage regulators. They are from Hittite, of course, but they're, you know, specifically high power supply rejection ratio.
+TEXT: Uh The PSRR, um of course, low drop out voltage regulators. So, there you go. They use the specific Hittite ones, which are would have been recommended possibly in the data sheet for this, um even though I haven't had a look for that, you know, that's probably where they came from.
+context after: They're specifically designed to match the other Hittite chip sets. And that's not uncommon for manufacturers of specific stuff like that. 74HC 244. And that's about all she wrote. There's nothing really exciting on the other side of the board here.
+
+[176] EEVblog #176 - Lithium Ion/Polymer Battery Charging Tutorial — Dave Jones (mention)
+context before: It automatically powers down. It's nice. It's in a You can get it in a tiny 2 mm by 3 mm DFM or an easier-to-use uh five-pin SOT23. Fantastic. I like it.
+TEXT: And, this is the typical application. This is how simple it is here. Your voltage input from your charger, decoupling cap, your output voltage. You've got to have a decoupling cap on there, otherwise it can oscillate just like any linear or low dropout voltage regulator can.
+context after: Same thing here. The internal charging circuitry is the same uh if it's similar circuitry to what's used, and it will be an unstable loop unless you add the output the recommended value of output capacitance.
+
+[1038] EEVblog #1038 - Uni-T UPO2104CS Oscilloscope Teardown — Dave Jones (mention)
+context before: Alright, let's have a look at the main board under the Togano microscope here. It's version 1.07. Things have had several sucks at the SAV. Which is not uncommon, of course. And all the caps around here, these are wet electrolyte tights. Because you can see the cross, the vent cross mark on the top.
+TEXT: So you know they're not solid aluminium electrolyte capacitors. Got a couple of low dropout voltage regs there. Nothing special. That looks like it's the LCD, does it? Coming from, ta-da, the main applications processor. For all you TI fanboys, there it is right there.
+context after: And that's a bit of a beast. That's the Sitara line ARM Cortex-A8 processor, up to 1 gig. I will have to look at, well, 100 there could be the 1 gig model. Anyway, we've got all the termination resistors over here for the driver.
+
+[1561] EEVblog 1561 - µSupply USB Power Supply - Part 21 — Dave Jones (mention)
+context before: And it just looks beautiful. The contrast is excellent. Oh, it's Bobby Dazzler, thing of beauty, joy forever. All right, let's take a quick look at the schematic and the PCB to see what we've got here.
+TEXT: Uh now, this is the top-level uh schematic here, and this is just the overall links in um other sheets here. So, we've got the LDO, we've got the pre-buck, I've got the USB um isolation, we've got the main micro part and the HMI, which is the human machine interface.
+context after: Um and uh like a handy little note here about where the uh binding post uh came from. And as I mentioned uh they are actually a custom uh we got them custom machined, the post machined.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (mention)
+context before: There we go. That's what we see there. Wham, bam, thank you, ma'am. Not sure like right down here at like um really ridiculously low currents, it can change a lot, too.
+TEXT: Even that can ruin your day. Going from 80 mV might be acceptable in your design, cuz you might be post-regulating this thing either using a low dropout regulator or uh you know, a Zener or even just some um you know, RC or LC filtering or something like that.
+context after: But you know, going from 80 to 120, that could ruin your day, too. So, at light loads. So, you could have be, you know, got to be really careful with this thing.
+
+[391] EEVblog #391 - Rigol DSA815 Spectrum Analyser Teardown — Dave Jones (mention)
+context before: And this section here, just above the processor, they've got a Linear Technology LTC7328LX two-phase synchronous regulator and you can see above it just there, you can see the um two external MOSFETs as well, the two external N-channel MOSFETs used for the synchronous rectification and uh it's probably um wouldn't be a stretch to uh guess that they've uh got the um uh switching frequency of this thing locked
+TEXT: to the uh sampling frequency so that it doesn't interfere with the acquisition part of the RF front end. No surprises for finding a whole bunch of uh low drop out linear regulators here, you know, triple 17s, um you know, sort of like the industry standard.
+context after: We've got 5-V rails, they've got all sorts of little test points here, 15 V you go right over to here, we're talking 32 V up here and they've got various other uh rails and they're all hooked into nice little test points all down here.
+
+[90] EEVblog #90 - Linear and LDO regulators and Switch Mode Power Supply Tutorial — Dave Jones (mention)
+context before: Um we won't go into it, but I just wanted to show how very similar they are. Now, just for a bit of completeness, cuz I know some people will complain, this NPN series pass transistor here is not just a basic NPN transistor.
+TEXT: It's actually a um a Darlington transistor like this. So, whoop. There you go. It's actually an NPN Darlington transistor. And same down here as well. Now, you've probably heard about low dropout regulators, and you might think they're all mysterious, too.
+context after: What is a low dropout uh voltage regulator? Well, it's just got a lower voltage drop, a lower tolerance between input and output than a than a standard linear regulator.
+
+[1145] EEVBlog #1145 - Dumpster Diving 4K TV! — Dave Jones (mention)
+context before: This is 1.2 V, 1.2, 3.3, and 1.2 again up here. And that makes sense like 1.2 for like a high like a really modern high-density uh logic, you know, custom ASIC device up there.
+TEXT: There's only, you know, the one 3.3 here. Everything else would maybe be some sort of, you know, local LDO type stuff, things like that. Test pads haven't really found any yet in terms of that, but all the, you know, all the local regulation looks okay.
+context after: So, you know, it's hard to tell at this stage, but unless you got like experience with these things and go, you know, servicing these every day, oh yeah, I know that chip fails all the time.
+
+[463] EEVblog #463 - More Dumpster Diving — Dave Jones (mention)
+context before: once again the striped removal of the solder mask. So that's going to help with your heat dissipation from this pad. Ordinarily you just leave the entire solder mask off the entire thing, rather than just a small little stripe like that. So it's a bit silly, but if we flip it.
+TEXT: So there you go, that's just probably like a little low dropout voltage regulator, or something like that. And they've fully removed the solder mask on the top there, so I don't know why they didn't do that on the bottom. And hey, we've got some paste
+context after: which was on there. They've, I don't know why they've done that, probably to increase the thermal capacity going through, because if you do put solder on there, it's a greater thermal mass, you get lower thermal resistance through to the other, the pad on the other side
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (mention)
+context before: Right down to a relatively low one. So that's alright. No worries. You don't really need on a portable thing like this 20 volts is plenty. Then you've got the old-fashioned LMV 324 in there. And that just goes. The analog the ADC, the 10-bit, sorry, the 12-bit
+TEXT: 2 MHz ADC is built into the PIC32 there. So there's not much else. We've got an FT232 of course, classic for your USB interface. It looks like we have some power supply stuff up there. 3.3 volt low dropout reg. And well there's not much else.
+context after: A couple of switches here. What is BTNP and BTNR? Huh? Don't get it. As for the function generator, the DAC for that is not built into the PIC32. They're actually, here's the schematic they're actually using an R2R ladder network to actually do that.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (mention)
+context before: Wow. Fantastic, right? So, for a single 5-V in, you get a regulated output. So, this could potentially replace Let's go down and look at the block diagram. Potentially replace two regulators in your design.
+TEXT: So, you can put it all in one chip. So, you could have the So, you can consolidate a 7660 and some other positive voltage regulator you're using in your design and the negative filtering LDO on the negative rail on the output of your 7660.
+context after: So, there you go. There you go. It's got two It's got a positive and negative one and a separate a totally separate positive one here, by the looks of it.
+
+[475] EEVblog #475 - GW Instek GDS-2000A Oscilloscope Teardown — Dave Jones (mention)
+context before: Look, you can see it coming in here. It's decoupled with that cap through an inductor there and then it uh just buggers off through some uh four vas down there over to the bottom side over here to an internal layer.
+TEXT: This is obviously a uh four layer board and uh then it powers off there. Looks like they've got a little low dropout uh reg there for something or other for some uh local regulation probably for the uh Max 2 uh PLLD or something like that.
+context after: But generally it looks like they're just uh powered directly from the uh supplies within the scope, but that's not uh surprising at all. Well, there's absolutely no surprises on this uh board at all.
+
+[731] EEVblog #731 - Keithley DMM7510 7.5 Digit Multimeter Teardown — Dave Jones (mention)
+context before: Wow, trying to isolate those." But uh that must be the voltage reference on the other side. But no, that's just Look Look at the pinout. That's that PCI connector that goes over to the digital board we saw before.
+TEXT: So, yeah, they're just trying to isolate things there. They're doing that really, really well. And then if we get further down here right next to Got some cutouts around what looks like maybe little uh 3-V low low dropout uh voltage regs.
+context after: Perhaps we've got some cutouts around those. And yeah, Keithley know what they're what they're doing. As I said, they're the masters. You can see all the uh guard traces all around there as well for uh to um equalize your uh and stop your leakage.
+
+[359] EEVblog #359 - QDSO Pocket Oscilloscope Review — Dave Jones (mention)
+context before: So, we've got two trimmer caps there to adjust it and then just, you know, a dodgy um attenuator system there and, you know, really I don't know what these are little uh op amps or something um single op amp packages or something like that perhaps uh not entirely sure and then we've got our DC to DC converter up here and the battery charger.
+TEXT: Battery charger will be probably that device there. A low drop out voltage regulator. It's a triple 17 classic there and what we've got here is this is interesting. We've got an ST microcontroller by the looks of it.
+context after: And if you can see there, that's an 8S103 ST microcontroller. That's like a low end 8-bit, you know, 8K flash microcontroller. So, not very powerful at all, but you don't really need that when you've got a a dedicated display chip handling the display.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: Now, here's one of the traps for young players. Um you know how I said the TL 40 40 40 41 is stable with capacitive load? Well, unfortunately, the TL431 is not.
+TEXT: So, you've got a stable region and you've got an unstable region, just like with low dropout regulators and stuff like that. You can't just whack a capacitor on the output and it's yeah, not going to be stable.
+context after: There's going to be an unstable region there and you can completely come a gutser. I won't go into the details, but I will also link in this data sheet down below for application note down below.
+
+[567] EEVblog #567 - Precision 1A Current Source — Dave Jones (mention)
+context before: And you know, that's that's really quite nice. And that's what allows you in this configuration to use this NPN transistor and then feed it back. And of course you got to have a minimum output capacitance on here as well for stability because a voltage reference has an internal error amplifier.
+TEXT: And I knew that and of course error amplifiers just like linear regulators and low dropout regulators, they can oscillate if you don't have the correct, you know, bypass capacitors on the input and the output.
+context after: So that's why I wanted to breadboard this thing up. I wasn't sure. I had a funny feeling that, you know, look it's in the it's in the data sheet, you know, it should just work, but does it?
+
+[894] EEVblog #894 - Keysight U1461A Insulation Resistance Multimeter Teardown — Dave Jones (mention)
+context before: No worries whatsoever. Soldering looks uh soldering looks good. No issues at all that I can see. And uh what else have we got? 052. That would be a TL052 op amp would be my guess.
+TEXT: It's not uh doesn't have to do anything critical. So cells that'll be a low dropout regulator17 or something like that. Uh 053 that'll be a uh 4 403 analog switch really old school 4000 series uh CMOS vintage.
+context after: Got ourselves a bunch of tants. Another TL5 or a TL52 uh Max. And here we got ourselves a Max 4583. That's a analog uh switch and uh once again like a better probably better performance specs than just your 405 you know your 4000 series uh CMOS mxes and things like that.
+
+[33] EEVblog #33 1of2 - Capacitor Tutorial (Electrolytic, Tantalum, & Plastic Film) — Dave Jones (mention)
+context before: If you want really reliable designs using these things, you put two or more in parallel. That way they share the ripple current, they share the heat, and they lower the ESR, and it increases your reliability in your system.
+TEXT: So, parallel is a really good way to go. And you can also get low ESR versions of these things, and they're good for using switch-mode power supplies and low-dropout voltage regulators and things like that.
+context after: Now, the temperature variation of electros is pretty horrible. Can be anywhere from +5 to -40%, -50%. So, I just watch out for it. And of course, they're polarized. You have to put them in the circuit the right way.
+
+[360] EEVblog #360 - Rigol DS2000 Oscilloscope Teardown — Dave Jones (mention)
+context before: A valve heater or something like that for an old valve? 6.3 V wasn't it for the heater for the old valves? I could be wrong. I'm sure I'll be corrected by one of the old graybeards, but there are four of these like that.
+TEXT: Identical layout. There we go. Local low dropout reg 1117 again. And then we've got another TI device a HA595. And there it is. Channel one sec, channel one third, channel two third, channel two sec.
+context after: And that's pretty much all she wrote on the main board there. I mean, you know, there's a a couple of uh stuff here for the uh back light inverter and other uh um couple of uh core voltage uh switching voltage regulators around there for core voltages for various uh FPGAs and things, but yeah, that's about it.
+
+[465] EEVblog #465 - LED LCD Panel Teardown — Dave Jones (mention)
+context before: So, they come across with a hot bar down there and actually press down on these and they and it solders these flat flex strips down onto the board there.
+TEXT: Very common technique for this sort of thing. So, let's Well, there's nothing much else on the board. There's a little uh low dropout rig there or something. There's something else here.
+context after: That's a CMO CM502. I'm not even going to bother to look these up. Um not too fussy. I'm Oh, look at that. That looks interesting. Looks like that's been Ah, look.
+
+[1438] EEVblog 1438 - The TOP 5 Jellybean Regulators & References — Dave Jones (mention)
+context before: And then when you're designing products, you can just drop in these parts. Oh, I need a regulator. I need an op amp. I need a comparator. Whatever it is, you can just pull it from your jelly bean components library and just drop it in there knowing you're good to go.
+TEXT: Bob's your uncle. First up is linear voltage regulators. None of that uh low dropout rubbish either. This one is an absolute classic. You've guaranteed to have already used this thing.
+context after: So, but it is the jelly bean part. When you think of a jelly bean voltage regulator, you think of the 7805 or the 78XX series as it's uh called.
+
+[1617] EEVblog 1617 - Architectural LED Lighting Build + Test — Dave Jones (mention)
+context before: But yeah, yeah, no, it's not that. Okay, we've got another Z core brand. Now, let's check that out. Okay, five pin sot 23. Um Osram. It could be an Osram chip.
+TEXT: Z core / ASM Osram. Didn't know that Osram were into low drop out LED driver. Okay, Austria micro systems low drop out LED drivers. LED drivers are parallel parallel connected LED.
+context after: Ultra low voltage drop less than 150 millivolts for battery up to 80 milliamps per LED up to 40 milliamps per LED as various standards. So, no, this doesn't seem right cuz there's a V set here, 3 volts, and there's a series current set resistor there as an enable pin.
+
+[472] EEVblog #472 - JBC CD-2BB Soldering Iron Teardown — Dave Jones (mention)
+context before: Soldered absolutely beautifully as are all of the passives in the SO8 perfect amount of solder, perfect fillet fillets on there. Oppo 7 LM358 another Oppo 7 and we have a couple of devices over here 3H7 it looks like a opto couplers of some sort.
+TEXT: And then our power MOSFETs over there sort of bog standard 4470s you know 40 V in channel devices fairly beefy. And that looks like a L4931 low dropout voltage regulator there.
+context after: We've got some surface mount electrolytics don't know what brand they are I'm not going to bother to look them up really not a huge deal. We've got our speaker down there.
+
+[488] EEVblog #488 - Dumpster Dive Parts Salvage — Dave Jones (mention)
+context before: You could possibly reuse that. So, there you go. The rest of it you wouldn't Would you bother getting the tactile buttons? I doubt it but anyway, nice little LCD module score.
+TEXT: I like it. Once again, the main processor board here not of a huge amount of use like you know, surface mount regulator there low drop out rig but there's a nice big inductor.
+context after: You'd That's worth desoldering for sure but apart from that, you know, they're like you would generally don't uh salvage caps for these things unless you're pretty uh desperate. But uh yeah, it's not of much use, but not bad, worth taking apart.
+
+[23] EEVblog #23 - GSM mobile phone audio design — Dave Jones (mention)
+context before: And we And we got this chip. We got some samples, and we tried it out, and, lo and behold, it worked perfectly with nothing more than a single bypass cap.
+TEXT: That's all it needed. It was amazing. And no RF filtering at all. Uh, no low-dropout regulator on the input. And, you know, nothing. We couldn't believe it. It just worked.
+context after: So, there you go. You know, next time you're doing something critical like this, remember about RF immunity, and, um, cuz it can be a real problem. And a great test for your product, actually, after you've designed your product, a really good test is to get your mobile phone and put it near, you know, put it make it ring, and put it all over the board and see what happens to your
+
+[1116] EEVBlog #1116 - How to Remove Power Supply Ripple — Dave Jones (mention)
+context before: So, you want to clean up ripple in, you know, any of these sorts of cases or, you know, other cases as well. How do you do that? Well, typically, you might just go, "Well, that's easy, Dave.
+TEXT: I'll just whack in a regulator." So, you know, you might have your minus 5 volts here and you might say have a minus 4-volt regulator there. Just a low drop-out regulator.
+context after: That'll be super clean, right? End your problems. Uh-uh. As it turns out, your voltage regulators, which are used everywhere to give you like a supposedly clean regulated, hence their name, regulated output voltage, are actually quite poor at uh attenuating large amounts of input ripple.
+
+[436] EEVblog #436 - Saleae USB Logic Analyser Review & Teardown — Dave Jones (mention)
+context before: I mean if you're working on 1.8 volt logic systems you know you're probably working on a pretty serious system and you're probably need a more serious logic analyzer anyway.
+TEXT: And it looks like we have ourselves a low drop out 3.3 volt voltage regulator there. There's those input diode clamps. You can see them in standard 6 pin package there.
+context after: It's got DO-46 on I'm not going to bother looking up the type though. It'd be a low capacitive type. You can see the input series protection resistors there. So basically it goes directly from the input pins through series resistors through the diode clamps which are diode clamp to the positive and negative rails.
+
+[1582] EEVblog 1582 - FNIRSI DPOX180H 180MHz DPO for $123? — Dave Jones (mention)
+context before: That's not the front end. That's just our offsets um and stuff like that. Bias. That's not part of the uh signal chain at all. And yeah, due to the placement of these parts down in the bottom corner, I don't expect they're part of the signal chain either.
+TEXT: Like that looks like possibly a uh low dropout reg. So, yeah, um this op-amp's probably doing offset, but it seems like the signal path is all discrete transistor here.
+context after: I don't know what an R1A is. Didn't bring my pirate hat. And then you've got all these outside of the um metal can here. So, all these are outside of the metal can.
+
+[1115] EEVblog #1115 - Traps In Chips - And the 7660 — Dave Jones (mention)
+context before: You can't just put, you know, a thousand mic in there and think that your ripple's going to zero. So, you might have to do some post regulation. So, you might put a low dropout regulator on the output of your 7660, for example, if you need a minimum amount of ripple.
+TEXT: But, there there's a bit of a trap there using a uh using a 7660 and then having your post regulator on there is depending on the voltage drop across that regulator.
+context after: If you're only dropping a small the smaller voltage you drop, the less effective it becomes of filtering input noise and stuff like that. So, if you only got a low dropout voltage on it, then your noise might pass mostly through that regulator.

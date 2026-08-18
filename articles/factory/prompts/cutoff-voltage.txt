@@ -1,0 +1,198 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: cutoff voltage
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 33 passages drawn from 15 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# cutoff voltage`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[140] EEVblog #140 - Battery Capacity Tutorial — Dave Jones (explains)
+context before: So, but a two-cell design, normally 3-V, 1.6-V is the is what you want it to work down to. Three-cell and four-cell a nominal 6-V system, 3.2-V down to. And a six-cell system or your standard 9-V battery like this, ideally, your product should work down to 4.8-V.
+TEXT: And this is why in my product reviews, you will see that I actually measure the the cutout voltage of the battery. So, if a multimeter's working from this 9-V battery and its cutout voltage is, you know, 6.5 or 7-V as some of them are or even higher, then they're just pissing away a ton of capacity in the battery.
+context after: It's crazy. Don't do it. Now, one of the big things that affects batteries, particularly alkaline cells, is the temperature. Not just the ambient temperature, but the temperature of the cell as well.
+
+[1693] EEVblog 1693 - Uni-T UTE310 Power Meter Teardown & Practical Demo — Dave Jones (explains)
+context before: And we can get an accumulated milliwatt-hour figure. But anyway, just use your noggin at the moment and look at how fast that's counting up. Maybe count that digit three, four, five, six, and well, actually, we'll do it live here.
+TEXT: Ready? We'll turn on the data mode. Boom! It's now transmitting. And that's counting up significantly quicker now. So, we can get an accumulated milliwatt hour figure over time. And if we know the milliwatt hour capacity of our battery, for example, for a given cutoff voltage, I know it gets a bit complicated.
+context after: We can start talking about cutoff voltages and things like that, but um yeah, we can we can use this tool to actually um get a like a nice battery consumption figure, uh a comparative battery consumption figure for our product that we're developing.
+
+[1732] EEVblog 1732 - 20yo 1000+ Cycle Panasonic Li-Ion Battery TESTED — Dave Jones (explains)
+context before: But, what this is useful for, let's say you're designing your product, for example, and uh it's powered from batteries, and your cutout voltage, you know, you have an automatic cutout or a low battery indicator or something like that or an auto switch off or whatever.
+TEXT: Let's say you set it to say 3.3 volts here. Okay? That was like the minimum you want it to. Then, you can see that the battery, you're only going to say say you're looking at the green one here, you can go across at 3.3 volts here, and then drop it down, you're only going to get 220 milliamp hour capacity.
+context after: You're wasting all of that extra capacity there. And you just read the number off there. So, the lower a battery voltage you can design your product to, the more capacity you're going to extract from the battery.
+
+[772] EEVblog #772 - How To Calculate Wasted Battery Capacity — Dave Jones (explains)
+context before: And then once at that point there, we actually drop a line down vertically until it intersects because it's the same time period, we want exactly the same time period, that's why we're dropping that line vertically, drop it down until it intersects our remaining capacity graph, and then we can
+TEXT: draw, and then we can actually extend that horizontally out to our new right-hand y-axis here, to get and read off directly our remaining energy capacity. So if we design our product with a 1 volt cutoff, and we're using a Duracell copper-top AA, it could be multiple ones in series, at 100 milliamps
+context after: constant current discharge, so 1 volt per cell then if our remaining energy capacity after the product shows low battery, look, it's not quite 5%, it's maybe 4%, you know, we could round it to 5, but yeah look, it's bugger all, so we've wasted hardly any
+
+[789] EEVblog #789 - Batteriser Monkey BUSTED! — Dave Jones (explains)
+context before: Now this What I didn't show last time is that the BK Precision 8500 electronic load actually has a battery test mode. If I actually go in there, shift battery, for example, I can go up.
+TEXT: There we go. I can actually set a minimum voltage here of what I want this thing to cut out at. So I can set my constant current load so it'll just continue to do a draw constant current from the battery until it hits whatever voltage we specify here, and then it'll automatically cut out.
+context after: So, the plan is to discharge two brand new batteries two until they get to about 1.25 volts open circuit voltage, even though that's the wrong way to measure it, and there's lots of traps in doing that.
+
+[140] EEVblog #140 - Battery Capacity Tutorial — Dave Jones (explains)
+context before: So, that's why the constant current amp hour capacity at a certain constant current load might often be similar to the watt hour capacity or the true capacity of the battery.
+TEXT: So, what sort of things can affect battery capacity? It turns out there's quite a lot of things that can actually affect it. Number one, and we'll go through all these in detail later, but number one, the cutoff voltage that you choose to use in your circuit or the product you've got.
+context after: Number two, the temperature of the battery, not just the ambient temperature, but we'll go into that. The discharge current or the discharge power or whatever you determine the discharge rate.
+
+[772] EEVblog #772 - How To Calculate Wasted Battery Capacity — Dave Jones (explains)
+context before: multimeter or some other data logger to measure the voltage, or you could do it old-fashioned way, pen and paper. Every minute, just write down a voltage reading. And so we've got the data into a spreadsheet, however way you want to do it. And you can see down here we've logged the voltage.
+TEXT: It starts out at 1.65 volts, and that's a fresh cell of course. And then we're going to nominate a cut-off voltage of 0.8 volts here, and we've got a test current here of 0.1 amps. Now you don't actually have to measure the current if you know you've got a constant current load,
+context after: but in this case, the current has been measured and we've got the exact value here. But you don't necessarily need that. All you need is the voltage value and the known discharge current. If you're just measuring the product itself, well, the product is the product that draws whatever power, whatever current
+
+[779] EEVblog #779 - Batteriser: How To Measure Battery Cutoff Voltage — Dave Jones (explains)
+context before: It It's so fundamentally wrong. Nobody in the industry does it like that. You can't. It's wrong. And as I said, and I'll repeat, this is why the manufacturers only publish loaded voltage curves because all you can get is this terminal voltage here.
+TEXT: And when you design a product, all that matters All that matters is the voltage on those terminals. And this is why it's fundamentally correct to use a power supply to measure the cut off voltage of a product because you're effectively You've got zero ohms in there, okay?
+context after: You're putting that voltage. You're forcing the voltage right onto the terminals there. You've got no internal resistance whatsoever. So, you're actually measuring the true uh cut off voltage of the product by doing that.
+
+[1732] EEVblog 1732 - 20yo 1000+ Cycle Panasonic Li-Ion Battery TESTED — Dave Jones (explains)
+context before: It's actually a little bit confusing this capacity graph here because it's showing us the voltage the characteristic voltage curve, but just the x-axis is sneakily the time component's been removed and replaced that with the milliamp hours.
+TEXT: But, what this is useful for, let's say you're designing your product, for example, and uh it's powered from batteries, and your cutout voltage, you know, you have an automatic cutout or a low battery indicator or something like that or an auto switch off or whatever.
+context after: Let's say you set it to say 3.3 volts here. Okay? That was like the minimum you want it to. Then, you can see that the battery, you're only going to say say you're looking at the green one here, you can go across at 3.3 volts here, and then drop it down, you're only going to get 220 milliamp hour capacity.
+
+[772] EEVblog #772 - How To Calculate Wasted Battery Capacity — Dave Jones (explains)
+context before: volts, or a volt or something, which a lot of products are, even at 5 milliamps, look, bugger all, 1.1 volts, 1, look you're, you know, covering the whole range. You're right there. That whole battery riser concept is like look, it's the entire range of currents.
+TEXT: Sure, constant current but constant power is not going to be much different. So you're really only going to be getting that, you know, that 10-20% extra available energy, wasted energy in your battery for, you know, 1 or 1.1 volts cutoff. That's absolute best case.
+context after: I mean, there's just no getting around it. So this, you know, 8 times rubbish relies on the fact that the product is extremely poorly designed and has a cutoff here, up here, under load of like 1.4 volts to get your 80%. Crazy. So I know this was a rather
+
+[789] EEVblog #789 - Batteriser Monkey BUSTED! — Dave Jones (explains)
+context before: It's the terminal voltage of the battery that is dropping due to the electrochemistry because there's no energy left in it. So, a power supply is equivalent to using a battery when you probe it properly like everyone in the bloody industry does.
+TEXT: Except Batteriser. Oh, it's just unbelievable. So, you can clearly see with no doubt whatsoever that a power supply is equivalent for determining the cutoff voltage of battery because the cutoff voltage is probing right up the monkey's butt right on the terminals.
+context after: That's all that matters, not the open circuit voltage of the battery, of course. Batteries are not the same as power supplies when you measure the damn things open circuit cuz this doesn't have any electrochemistry.
+
+[S-UqkM8iDKM] #1179 - PowerFilm Flexible Indoor Solar Cell — Dave Jones (explains)
+context before: on top of that? Put a multimeter on top of that. And it should die when we get to luxometer. Can we look at that? There you go, it's varying. So when it supposed to die when it gets to about 3.2. We'll see. These are not the droids you are looking for.
+TEXT: Still going, still going. Not sure what it operates down to, but I think I said it won't start up or something at 3. Yeah, yep, yep, died. At about 3 volts there. There you go. And you see that has stopped discharging, because the process is not running anymore.
+context after: In fact it's the capacitor's recovering. So there you go. That's dielectric absorption for you. I think I've done a video on that somewhere. Anyway, cool. That's great. That works a treat. Oh, yep, it just automatically recovered itself there. And once we got to, it's now back up.
+
+[772] EEVblog #772 - How To Calculate Wasted Battery Capacity — Dave Jones (explains)
+context before: to design cutoffs to maximize your energy use. But things like alkalines, they have this very poor characteristic or non-flat characteristic discharge curve, and you can actually waste a significant amount of capacity in your battery. But as you saw, any product designed to use rechargeable batteries is going to have at least 1.1 volts
+TEXT: maximum or less, and it's bugger all. And when you look at, for example, all the different currents for example, look, even from 5 milliamps all the way up to an amp here, so it pretty much covers the entire range here. You know, if you have that cutout at 1.1
+context after: volts, or a volt or something, which a lot of products are, even at 5 milliamps, look, bugger all, 1.1 volts, 1, look you're, you know, covering the whole range. You're right there. That whole battery riser concept is like look, it's the entire range of currents.
+
+[ixbLmBWUqcQ] Popular Mechanics Promotes Batteriser 2.0! — Dave Jones (explains)
+context before: where I actually got these Batterizers. They actually did deliver. And it really is quite nice engineering, actually, how they've integrated the circuitry into here. And, yeah, we busted it right open with repeating the actual toy train test that they did and on an MP3 player test.
+TEXT: And, no, spoiler alert, it actually reduced the battery consumption. But in theory, it's possible. Yes, you can get some extra energy out of dead batteries due to the cutoff voltage of some modern electronics, which may not be low enough to extract, you know,
+context after: the tiny little part of the curve over here. So, anyway, this is like a real fluff piece over here. And it goes like it's all part one. And it's all, you know, it's all about, you know, his story and everything, which is great.
+
+[774] EEVblog #774 - Low Battery Discharge Testing Part 1 — Dave Jones (explains)
+context before: to do, that's just standard to do a little bit of averaging to get a reasonably stable reading. And so it's taking one sample every 60 seconds, and you can actually duration I put in, I'm doing number of readings. So I calculated that our 2000 should be plenty.
+TEXT: Because unfortunately, that's the problem with this method using the multimeter. And as opposed to the one with using this allows us to program, if we just use the electronic load, we could program in a cutoff voltage where it would actually stop logging at.
+context after: Whereas this one, with just the multimeter, doesn't allow us to do that. So you have to do a little bit of math up front, know what the capacity of your battery is, know how many readings you're going to want, or you can do it in
+
+[RFb3TwWzza0] Alkaline Battery Leakage Test Setup — Dave Jones (explains)
+context before: Anyway, so that's the plan. So I've got it hooked up to my electronic load here and I'm about to run a 24-hour test. So I've set it to 0.1 amps here, 100 milliamps. Voltage stop, I'm not going to stop on voltage, so if any of these happen to go reverse voltage or whatever, I'm just going to have to live with it.
+TEXT: Okay, so I'm not worried about that. The current stop, I'm not worried about that. Sorry, capacity stop, milliamp hour stop, not going to worry about that. But the time stop, 86,400 seconds is 24 hours. The voltage on will be 0.5 volts, so that should work.
+context after: So, I don't use this all that often. How do I run it? So I'm running the battery app. Do I just, I think I just hit on, don't I? I think that's how I started, can't remember. Anyway, let's go. Ta-da, and there it is.
+
+[772] EEVblog #772 - How To Calculate Wasted Battery Capacity — Dave Jones (explains)
+context before: graph to actually properly calculate the remaining energy capacity in a battery. And we can do this because we've lined up these axes. As I said, the start data point up here, and the end data point, so we can actually draw lines on here and intersect things, and work it out.
+TEXT: Now let's say that we designed a product with a cutout voltage under load of course, as I've said, of 1 volt here, okay? So we can actually go along here and draw a straight line across here until it intersects our voltage graph okay?
+context after: And then once at that point there, we actually drop a line down vertically until it intersects because it's the same time period, we want exactly the same time period, that's why we're dropping that line vertically, drop it down until it intersects our remaining capacity graph, and then we can
+
+[XDjyY48u0PU] Alkaline Battery Discharge Testing Part 2 — Dave Jones (explains)
+context before: There we go, 25 volts. That pack is 25 volts. That's exactly what we expected. Whoa, look, it's dropping. Look. 5, and then the load, once you put, ah, good, because we were no load. Once you put the load on it, wow. We've got, like, 2 volts per pack, mostly.
+TEXT: Open circuit voltage, 15. All right, hang on, I'll just hook up an individual battery pack like this, so 2 of them in series. And what I'll do is I'll set a constant current of 1 amp, and I'll set a cut-out voltage here of 1.8 volts.
+context after: Yes, there'll be some drop across the leads and stuff like that. Um, so 0.9 volts per cell, nominal. So I'm going to give that a burl. Oh, on. There we go. Oh, test completed. Yep. The voltage instantly dropped down. Ha, kamikaze. Remote sensing might be required.
+
+[9FCzAgJhRdc] NiMH 8000mAh Capacity Claim TESTED — Dave Jones (explains)
+context before: It's never been used, so this is the only time I've ever charged it. Meh. So, you know, I'd expect not quite full capacity, but I'd be surprised if we got under maybe, you know, 7,000, something like that. So I'll set the current there to 1 amp.
+TEXT: 40 amp range. We'll go to the 4 amp range. Bit more accuracy. Okay, 1 amp, 1 volt stop. 0 milliamp, we're not, we've disabled the stop because you can stop at a certain capacity or you can stop with a certain timer. Voltage on 0.5.
+context after: Everything should be hunky-dory. Right. Off. And hopefully, load. There we go. 1 amp load. It's timing. There we go. We've extracted 1 milliamp hour. And I'll just leave that running for a basic, well, it'll automatically stop and then give us the accumulated value here,
+
+[9FCzAgJhRdc] NiMH 8000mAh Capacity Claim TESTED — Dave Jones (explains)
+context before: Alright, so let's measure the capacity of this thing. Please excuse the crudity of my battery holder here. I lost it in the lab moves. So anyway, I've whacked some tape on there. I'm using a Kelvin connection for terminal sense. So we're sensing the voltage directly on the battery.
+TEXT: I've got my electronic load here. I'm going to set it to cut out at 1 volt here, which is a nominal sort of cut out voltage. And I won't set any timeout or anything like that. So we'll get our milliamp hour figure here.
+context after: We've got a battery discharge application here. As you can see, it's currently 1.37 volts. It was up to 1.5 something, but I've left it overnight or a day or two. And so it's fully charged after roughly, I don't know, because I used my power supply.
+
+[-ir61ARd5T4] WTF is Wrong with my Rigol DL3021 Electronic Load? — Dave Jones (explains)
+context before: Look at this. So, I was just going to use this like to test the battery capacity cuz it's got a battery mode on it where you know, so you go and say it's got the regular constant current constant voltage constant resistance constant power everything else.
+TEXT: But, it's got a battery test app which will give you the amp and which will give you the amp hours and the watt hours as well, and you can set like cut off voltages and what constant current you want to test at, right?
+context after: And very cool stuff, okay? So, let's see what happens when I hook it up to my Goal Zero here. Okay, it's almost finished charging. The great Oh, there we go.
+
+[1732] EEVblog 1732 - 20yo 1000+ Cycle Panasonic Li-Ion Battery TESTED — Dave Jones (explains)
+context before: Um so, 500 mA I'm going to do this one at. So, that's about, you know, it's not quite 1C rating. 1C would be 680 mA, but um yeah, we'll just go half an amp and then we might do 250 and then 100 or something like that.
+TEXT: So, I'm going to do constant current. It'll discharge that constantly, uh hence why it's called constant current, until it reaches that threshold voltage of 2.8 V. Now, you'll notice that it says sense there.
+context after: That's because I've got um external sensing set up. So, uh it's reading the voltage back from here. That eliminates any voltage drop in uh the cables going to the load.
+
+[140] EEVblog #140 - Battery Capacity Tutorial — Dave Jones (explains)
+context before: You're just pissing away all of that battery capacity. Now, it gets even worse if you do 1.2. Look at 1.2 V. If you set it to cut out at that, you're wasting half of your battery capacity.
+TEXT: It's crazy. So, a well-designed product will have as low a cutout voltage as possible. And for an alkaline, that's about 0.8 V. A superbly designed product will operate all the way down to 0.8 V per cell.
+context after: So, when you're actually designing your circuit to work off AA or AAA alkaline cells or primary cells, these are the voltages that you should design your product to work down to.
+
+[1732] EEVblog 1732 - 20yo 1000+ Cycle Panasonic Li-Ion Battery TESTED — Dave Jones (explains)
+context before: Um and it's good to discharge. Let's go. Okay, so what I've got is my BK Precision electronic load here. I've got it set up in battery mode. So, um I'm going to have a fairly aggressive 2.8 V stop voltage.
+TEXT: Um so, it'll automatically cut out the load uh when it hits 2.8 V. So, that's, you know, generally, if you want to be on the safe side, you'd be about 3 V, but there's a bit of energy left in the battery.
+context after: So, I'll go super aggressive at uh 2.8 V. There's practically no energy left in the battery once you get to a terminal voltage of 2.8 V for a lithium ion cell like this.
+
+[779] EEVblog #779 - Batteriser: How To Measure Battery Cutoff Voltage — Dave Jones (explains)
+context before: That's why I said you have to actually measure directly on the battery terminals of the product. And when you do that, when you measure on the battery terminals, that, by definition, okay, is the battery cutoff voltage of the product because you can't measure this value in here.
+TEXT: It only matters what the value is in there because the internal circuitry you've got for your product actually has a voltage reference in there, and that's what's determining what shuts off your product.
+context after: So, it's the battery. It's the voltage on the battery terminals here. It's got nothing to do with this internal resistance. It's a complete red herring. And the other reason why this internal resistance here doesn't matter for the cutoff voltage is because look at the data sheets for any battery at all.
+
+[140] EEVblog #140 - Battery Capacity Tutorial — Dave Jones (explains)
+context before: So, if you're actually designing a product, and let's actually take a look at the discharge a typical discharge curve right here. Now, if you're actually designing a product, here is here is the voltage of the battery.
+TEXT: Now, if you design your product to cut out at say or give you a low battery warning error at say 1.1 V here, then bingo, look at all this capacity under the curve here that you're throwing away.
+context after: You're just pissing away all of that battery capacity. Now, it gets even worse if you do 1.2. Look at 1.2 V. If you set it to cut out at that, you're wasting half of your battery capacity.
+
+[140] EEVblog #140 - Battery Capacity Tutorial — Dave Jones (explains)
+context before: Some batteries are a lot better than others self-discharge, and that's tied into shelf life there as well. So, let's look at these. Okay, now let's take a look at some real data sheets.
+TEXT: I've got an Energizer AA here. It's an alkaline AA standard Energizer. You know it, you've used it. And let's take a look at the effect of the cutout voltage on your actual product.
+context after: So, if you're actually designing a product, and let's actually take a look at the discharge a typical discharge curve right here. Now, if you're actually designing a product, here is here is the voltage of the battery.
+
+[1732] EEVblog 1732 - 20yo 1000+ Cycle Panasonic Li-Ion Battery TESTED — Dave Jones (explains)
+context before: You're wasting all of that extra capacity there. And you just read the number off there. So, the lower a battery voltage you can design your product to, the more capacity you're going to extract from the battery.
+TEXT: As you saw there in that test, when I re after the battery was flat and we cut off at 2.8 volts, cuz trust me, it it go it drops like a brick wall at like 2.8 volts.
+context after: You're not going to get like any much if any capacity. And that's what we saw in that test there, we only got what an extra 15 milliamp hours out of it.
+
+[lYKjScnkeq0] Goal Zero Yeti 400 Lithium Battery: Capacity Test — Dave Jones (explains)
+context before: I don't know. All right, we are done. And for those who were watching my live stream on the EV Blog 2 channel, um you would have seen this happen live.
+TEXT: I was actually streaming while this um we're we're still at 2%. We're still at 2%. But uh the 9 volts cut out on here before this thing actually cut out.
+context after: So um I think this would have cut out very quickly. The voltage was dropping off very fast and I think this would have died like a minute later or something like that.
+
+[XDjyY48u0PU] Alkaline Battery Discharge Testing Part 2 — Dave Jones (opinion)
+context before: Yep, we're really right there. There's nothing left. Nah, there's, ah, let me measure the actual, ah, voltage on the battery itself. I'm getting 1.21 volts on the actual battery itself. So there's not a huge amount of drop in those leads, so yeah, there's really not much left in those batteries at all.
+TEXT: Wow. Yeah, I don't think I'll wait. Nah. Ha, ha. Actually, I might just set, like, a stop of 1 volt. Let's just, like, really hammer these suckers. Yeah, so I think I'm just going to go medieval on their arse. And, ah, I've done a couple now,
+context after: so I've set the, ah, stop voltage to 1 volt. So that's half a volt per cell. But, as I said, there is drop in the contacts and the wires and everything else, so I'm not really, and there is capacity left in these batteries.
+
+[789] EEVblog #789 - Batteriser Monkey BUSTED! — Dave Jones (opinion)
+context before: This thing does. All that matters is the cutoff voltage at the terminals there. So, their very specific claim at the end of the video that me measuring the battery cutoff voltage with this is is wrong and misleading at best.
+TEXT: That was their claim. Here it is right in the video. To use a power supply to show a battery operated device's cutoff voltage ignoring the battery's internal resistance is wrong and misleading at best.
+context after: And you can see that's total rubbish because they didn't probe it properly. Unbelievable. It's such a misleading video this Batteriser one. It's completely busted. I don't know how I can bust it any more than that.
+
+[9FCzAgJhRdc] NiMH 8000mAh Capacity Claim TESTED — Dave Jones (mention)
+context before: and almost 2,700 milliamp hours there, so already, it's greater than the claimed capacity of the Energizer one, is it? But of course, the capacity is actually going to vary depending on the discharge rate. And almost 5.5 hours later, 5420 milliamp hours, almost 7 watt hours,
+TEXT: and it's still going 1.236 volts. We've set a cutoff voltage of 1 volt. But of course, right at the end, it'll start to rapidly fall off. So, I don't know. It could die in another, you know, 20 minutes or something. I just don't know.
+context after: But anyway, because this particular cell, in the data sheet, it doesn't have any characteristic curves. In fact, it doesn't even specify what current the capacity, the 8,000 milliamp hours, is rated at. Because, as I said, the capacity of the battery will vary with the discharge current.
+
+[1265] EEVblog #1265 - $53 360W Lab Bench PSU! — Dave Jones (mention)
+context before: So, like I don't know where you set up the charging parameters for different types of batteries. Um I I don't get it. So, I can only presume that we have to manually do it like this.
+TEXT: So, 1.5 V for example, half an amp, whatever. We've got our battery connected. It's 1.27. Let's press on. It's constant current charging at half an amp. Where is your cutoff voltage?
+context after: I guess you can set maybe overvoltage protection, could you? It's rudimentary, but that's no different to a regular bench power supply. Like you can do exactly the same thing.

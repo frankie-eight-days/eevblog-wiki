@@ -1,0 +1,503 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: ground
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 94 passages drawn from 77 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# ground`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, if you've got a board like this and you've got a layer on the top, then you've got your two inner layers, you want the inner layer as close to the top ground and the bottom and you know, you want it as close to the power plane.
+TEXT: Ground and VCC are effectively the same. The bypass capacitors ensure that. Um then you want it as close as possible to the plane. So, you want the inner core to be thick and then the outer planes and then the outer signal layers to be as close as possible and tiny little thin prepregs next to the layer.
+context after: And they don't give you the option here. There's a controlled impedance option. Yes, but that just tells you the standard We could go look that up. But I'm just going to go for their standard stack up.
+
+[278] EEVblog #278 - Elmo Visual Presenter Teardown — Dave Jones (explains)
+context before: They didn't quite uh fit there. but ta-da! There we go. Finally got it to fit, and we now have a beautiful standard DC jack that I should have a power adapter for.
+TEXT: And of course, you're going to make sure the polarity is correct. In this case, the center pin goes down to the third one there through a poly switch goes down to the what's clearly the positive input with the poly switch down there, and the other two are connected down through ground as they should be.
+context after: So, that should work fine. Now, I know you're curious to know which devices are on the board, but unfortunately, finding info on these is very few and far between.
+
+[GoKbPDADG0c] The Incredible Switch Replacement Repair — Dave Jones (explains)
+context before: It's just not going to happen. The current was passing through that switch, absolutely, no doubt, and the reason it was passing through there, as we saw in the previous video, here is where the battery positive comes in. The three volts from the two AA batteries goes through this switch, comes into the center
+TEXT: contact here, and that trace goes up to one of the contacts on the AB selection channel select switch up here, and the outer case is, of course, shielded, so this pin obviously, uh, shorted over to the metal case, and they've used the metal case as a ground, and as I mentioned in the previous video,
+context after: it looks like the reason they've done that is a PCB layout reason, because they wanted the other side of the selection switch to be ground, they couldn't get the trace around the outside of the board there, they probably couldn't, is this still ground up here, I don't know, they couldn't get it
+
+[DNlA4X5_S30] Schematic Component Library Drawing Tip — Dave Jones (explains)
+context before: You've got your Nixie tube on one side. Or your display or whatever, you're driving it, so it makes sense to have all of the outputs on one side here. You'll notice that I've gone to the effort to put in the open collector output symbol here to show that they're, well, in this case, they're open drain, but, you know, same thing, you convey the information.
+TEXT: And then here, of course, VCC, you want VCC up here so that you can put your symbol just there. You want your ground down the bottom so you can put that there. Now, the chip enable, usually you're going to... You know, just, you know, for simple applications, you're just going to tie it to ground.
+context after: So why put it, you know, somewhere else? Like, you know, pin 7 down here, and if your ground's over there, then you put another ground symbol. If you put it right next to your ground pin, pin 16 here, then you can just tie it like that.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: Then if I take the red lead and I put it here, I will measure positive 10 volts, positive 5 volts, zero volts, minus 5 volts, and minus 10 volts. So my zero volts simply depends on where I put the black lead of my voltmeter when I'm measuring my voltage.
+TEXT: And if I decide that I'm going to measure all of my voltages from this point here, this becomes my ground. And so now my ground is not my lowest voltage, but it's between my lowest voltage and my highest voltage. So I have voltages higher than ground, and I have voltages lower than ground.
+context after: So I have positive voltages, and I have negative voltages. So zero volts is not the absence of voltage. Here my zero volts is 10 volts above my lowest possible voltage, and it's 10 volts below my highest possible voltage. So in our typical op-amp circuit, we are going to put our ground
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: will change its output voltage to whatever voltage it takes within the limits of the circuit to make the two input voltages equal. In the case of the inverting amplifier, we take the non-inverting input of the op-amp and tie it to ground. The ground is by definition zero volts,
+TEXT: and it will remain zero no matter whatever else happens to the circuit. The operational amplifier will adjust its output to whatever voltage it takes to make the inverting input also zero volts, and so we call this inverting input a virtual ground. Now when we look at this ground and this
+context after: virtual ground, it's important to remember that zero volts is not the absence of voltage. Here I have four 5-volt batteries giving us a total of 20 volts from here to here. Now let me use these pins as a virtual voltmeter, and if I put my voltmeter like this, of course I will read
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (explains)
+context before: And if I decide that I'm going to measure all of my voltages from this point here, this becomes my ground. And so now my ground is not my lowest voltage, but it's between my lowest voltage and my highest voltage. So I have voltages higher than ground, and I have voltages lower than ground.
+TEXT: So I have positive voltages, and I have negative voltages. So zero volts is not the absence of voltage. Here my zero volts is 10 volts above my lowest possible voltage, and it's 10 volts below my highest possible voltage. So in our typical op-amp circuit, we are going to put our ground
+context after: in the middle of our stack of batteries or stack of power supplies. We don't have to, but this is the way we typically do it. And so we measure our voltages. Some are positive and some are negative with zero in the middle. Voltage, like altitude, is a type of potential energy.
+
+[1531] EEVblog 1531 - Can ChatGPT generate all the code for my Macgyver Project? (Part 3) — Dave Jones (explains)
+context before: Then the data, whatever was on Q7 here, that's the data that gets shifted to Q0 here. So it's one big effectively 5/8 uh 40. It's an 8-bit shift register so 40 bits here and shifts all the way through like this.
+TEXT: So we've got a common cathode uh seven-segment uh display like this. It's common cathode cuz all the cathodes uh tied together so they would go down to ground. In this particular case, it goes off to a pin on the board here which we can use that for like blanking and stuff like that.
+context after: So when we're shifting data in, we we can actually blank the display so you don't see the data like shifting all the way through. Anyway, I've talked about that in a previous video.
+
+[777] EEVblog #777 - Keithley 177 Microvolt DMM Repair — Dave Jones (explains)
+context before: So if we have a look here, here's our output terminal, but it's the output negative terminal. Here's our analog output. So you can see the trace running across here like this. This is the resistor that's had the R's burnt out of it, but it's actually the ground terminal here.
+TEXT: So, and that's connected through to pin 7 of the chip, which is actually the ground pins. And that's connected through to pin 7 here, big, fat-arse trace. And if we have a look there, pin 7, you might think is the ground, based on, you know, a usual pin-out of the chip, but it's not,
+context after: because it's some analog, you know, weird-arse analog chip, doesn't follow the usual rules. Pin 7 is actually the plus 15 volts input for the internal reference. Now, we know the plus 15 volts is OK, so I think that's blown resistor there really has nothing to do with this
+
+[158] EEVblog #158 - AVR ISP MK2 + LM317 Regulator Tutorial — Dave Jones (explains)
+context before: And this is one of the feedback resistors. And the other one, which is used to set the voltage, I've got two in series there, which will go into the circuit, but they uh these are the ones that set the output voltage.
+TEXT: And this here is um just an input a 100 n uh input decoupling cap for the 5-V rail. So it goes 5 V and it's soldered down onto the tab of the um the the shield of the USB connector, which is I've checked, it is actually connected through to the ground point.
+context after: Um and this here is the uh another um 100 n output capacitor. Oh, sorry, it's not 100 n, it's like um that. And uh yeah, I just picked the uh highest value I found in my junk box that fitted, and it's connected between the output and ground as well.
+
+[1163] EEVblog #1163 - Xmas Mailbag — Dave Jones (explains)
+context before: So I'm going to read out this schematic. So I'm going to read out this schematic. So I'm going to read out this schematic. So I'm going to read out this schematic. So I'm going to read out this schematic. For you, the positive terminal of the battery, which is VCC, is connected to the positive terminal of an LED.
+TEXT: Yeah, it's all a bit slow though. The negative terminal of an LED is connected with one of the ends of a 330 ohm resistor. And the right end of the resistor is actually connected to ground. And the right end of the resistor is actually connected to ground.
+context after: And the right end of the resistor is actually connected to ground. That a resistor can be both polarity, battery, polarity matters, lead polarity matters. That a resistor can be both polarity, battery, polarity matters, lead polarity matters. That a resistor can be both polarity, battery, polarity matters, lead polarity matters.
+
+[1664] EEVblog 1664 - REPAIR with Junk Bin Parts! Keithley 2302 — Dave Jones (explains)
+context before: So, let's start that up and see if we get it and see if we get lucky. No, we don't. It's a bit of a bummer. But you remember how we said that pin three there wasn't going to anywhere and sure enough, I've had a squeeze and there seems to be no trace going off pin three there.
+TEXT: So, that was uh floating. So, you can actually measure that, measure that compared to ground and sure enough, it's not going off floating and you know, like you do any of the other pins and they're obviously connected to some sort of like semiconductor.
+context after: So, pin three is floating. And what's pin three on this? Well, that's the LCD contrast voltage. So, that you know, leaving that floating, uh that might uh the display might be working, but it may not have the correct uh contrast voltage on there.
+
+[1667] EEVblog 1667 - Reverse Engineering the Brymen BM2257 Multimeter LowZ Mode — Dave Jones (explains)
+context before: When the temperature increases. And, trust me, go and, if you stick this across 240 volt mains, go and use Ohm's law, 240 volts divided by 2.25k, and see what you come out with. You definitely want that to increase in value. Otherwise, your multimeter's going to get pretty hot pretty quickly, okay?
+TEXT: But at low voltages, it's just going to remain that, you know, nominal 1.25k or whatever. Okay? So, it goes through here, like this, and then it goes into this contact, boom, straight down here, and then they shunt it directly to ground like that.
+context after: And they bypass any Zener clamping diode. So, that's why the new BM2257 model has the low impedance mode all the time. Because they're shunting that right down to ground. No wuckers. Excellent. And then how are they reading off that voltage? Well, they're not reading it off this path, because this path has gone down to ground.
+
+[DNlA4X5_S30] Schematic Component Library Drawing Tip — Dave Jones (explains)
+context before: And then here, of course, VCC, you want VCC up here so that you can put your symbol just there. You want your ground down the bottom so you can put that there. Now, the chip enable, usually you're going to... You know, just, you know, for simple applications, you're just going to tie it to ground.
+TEXT: So why put it, you know, somewhere else? Like, you know, pin 7 down here, and if your ground's over there, then you put another ground symbol. If you put it right next to your ground pin, pin 16 here, then you can just tie it like that.
+context after: Bingo. Real easy. And then VCC up the top, of course, then you can just put your VCC symbol there. And, of course, your clear pin, often for simple applications. Again, you will just... Have that permanently tied high because it's an active low because I've put the not symbol.
+
+[1519] EEVblog 1519 - FREE Your Sonos Speaker! (HACK) — Dave Jones (explains)
+context before: What is this device What is this six-pin jobby? A common mode choke there. So, aha, I think that is the main voltage output. So, we could even desolder that and remove all of the power from all the stuff on this side here if we're not using it anymore.
+TEXT: Right, so let's actually measure the voltage here. Of course, all this stuff along here is all mains potential. So, we'll use our patented tight takeaway protection mechanism here. I can physically see that the center pin is ground.
+context after: It's to the ground plane. 25 volts. Bingo. That's a volt above our 24 maximum. So, I don't know what the absolute maximum is. And the other one? 11.6. So, we haven't got quite got the 12 to 24, but that's going to be good enough for Australia.
+
+[1093] EEVblog #1093 - Casio FX260 Solar II Calculator Review — Dave Jones (explains)
+context before: And this one looks like it's uh 47th week 17. So, still got that new calculator smell. Oh, reset. I'll tell you what. If I short those two pads out, it doesn't Damn, will reset it.
+TEXT: Am I going to the wrong one? I'm going to positive. Obviously got to do it to ground. Oh. Oh. My poor Yep, got it. So, sorry uh for all you keypad membrane fanboys, but I'm not going to uh drill out the heat stakes in there.
+context after: This is the only one I got. I want to preserve it. It's not that exciting, anyway. Um but, you can see uh the evolutionary difference in there. You can definitely see the uh size in the actual differences in size of the case there.
+
+[1313] EEVblog #1313 - Bad Luck Mailbag — Dave Jones (explains)
+context before: melted. And yeah, I, they're getting an antenna out of this. I'm pretty sure that's what it is. And I presume it's like a, uh, dual diversity antenna, is it? And yep, that's it. Um, and it just uses, um, contacts down the bottom like that.
+TEXT: So, uh, yeah, that is, that's, oh, okay. Yep, so that's, they're the inner ones of the ground there. And the two outer ones, uh, the two sides of the antenna. Neat. So, uh, yeah, they went to a lot of effort to form that.
+context after: That's really interesting. Has anyone seen anything like that before? I don't think I have. I haven't seen one, like, formed like that, especially one that, like, goes over the edge like that. That's, uh, that's, oh, is that part of, is that part of the ground?
+
+[717] EEVblog #717 - How To Hack Vacuum Fluorescent Displays — Dave Jones (explains)
+context before: Um not likely to be both. But look, you can see all the pins on this top side are all shorted together. Look at that. All except that one going off over there to a little jumper link E7 E5 E6, whatever the hell that means.
+TEXT: But anyway, there's a jumper link in there. Maybe we can experiment with that later. But all of those uh shorted out, so they're likely ground. We can measure those, of course, before we go hooking up to the thing.
+context after: And look what we've got here. This is our micro, of course, on the bottom. And we've got 1 2 3 4 5 6 7 8 8 pins going off to the micro in one bus.
+
+[483] EEVblog #483 - Microcontroller Voltage Inverter Tutorial — Dave Jones (explains)
+context before: Well, it's very simple. Instead of doubling, we want to invert. So, what do we do? Hmm. We erase these diodes here, and we draw them the other way around.
+TEXT: Like that. But, that's not all we have to do. We also have to get rid of VCC here. That's no longer VCC. That is ground. Like that. And bingo, we keep our um signal from our square wave from our microcontroller.
+context after: There goes from zero to VCC. And in this case, our output voltage Vout is going to be not doubled, it's going to be minus VCC. Once again, ideal case assuming no diode losses.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: Always go back to your two rules. What's our second rule here? The op-amp tries to keep the input voltages the same. In fact, it will if you've got this non-inverting configuration and you haven't hit the rails yet.
+TEXT: So, if the amplifier's working normally and within normal bounds of your power supply rail, these two inputs will always be the same. So, we're actually connected our non-inverting input down to ground here.
+context after: It's connected to ground. We're forced to the ground. It's never going to change. So, what is the inverting input here going to do? Well, of course, rule number two, it's going to be identical.
+
+[600] EEVblog #600 - OpAmps Tutorial - What is an Operational Amplifier? — Dave Jones (explains)
+context before: They build up their op-amp circuit. They start probing around, and they've got their input signal here. You know, it's a 1 kHz 1 V sine wave, for example. And let's say they measure this side of the resistor, and the signal's there.
+TEXT: They measure this side of the resistor, and it's ground. The signal's vanished. Where's it gone? Strange, but true. So, let's follow this through and use our rules and see if we can analyze this circuit.
+context after: Once again, the DC case to make it make it easy. We've got 1 V on the input here, positive 1 V with respect to ground, of course. Now, we've said before that trust me, we'll measure it later, but this pin is going to be ground.
+
+[947] EEVblog #947 - Chronos High Speed Camera Review — Dave Jones (explains)
+context before: There we go. It just stopped. And then we can go back in and play that back. So that external trigger can work with anything. But because I've got like a 20 milliamp uh pullup at the moment and I've inverted it, um just shorting it out.
+TEXT: So basically ground in the input will actually uh stop the recording. And then of course any uh post uh capture data that you've specified in here. It won't stop instantly if you have a value in there.
+context after: It'll stop x number of frames later. And I'm not sure if you can see that, but I'm recording outside now here in uh quite bright light, not direct sun.
+
+[744] EEVblog #744 - SMD Thermal Heatsink Design - µSupply Part 15 — Dave Jones (explains)
+context before: Now, of course, if we had a uh like a 7805 voltage regulator, for example, like we do here, this one is, then this tab is actually connected to the middle pin, which is actually ground.
+TEXT: And okay, if you want to connect your ground if you would do want to ground your case, then that's fine. You can just put your screw in there, and you don't need any insulating washer in there.
+context after: So, in probably the majority of cases, you want to isolate your tab of your regulator or your transistor from the case. So, you've got to have some sort of insulating material mica washer or a um sil pad or something like that.
+
+[1279] EEVblog #1279 - Best Dumpster PC Find Yet! — Dave Jones (explains)
+context before: I can't see how that thing's keyed. So yeah, that makes sense that they're both outer ground. So that's okay. And just double checking that I don't have one. Nope.
+TEXT: Bloody Murphy. And if I check between the HDMI shell, yep, they're both ground. So those two outer pins are definitely ground and that center one should be positive, but let me measure that.
+context after: Yeah, 42 meg. Go the other way. Mhm. The good thing about having the HDMI connector there like that, I can just plug that in, use that outer shell. So center pin outer shell.
+
+[1087] EEVblog #1087 - UNBELIEVABLE Alesis Studio Monitor Fault! — Dave Jones (explains)
+context before: Basically, saturated at 14.7. It's saturated at the negative rail. So, that is the correct polarity. If this is not -15 V, the LED dropper, that's the correct polarity for the blue LED relative to ground here.
+TEXT: Because this is ground is actually a higher potential than -15 V, the blue LED is going to light up. Simple. And likewise, if uh happens, I haven't uh like reverse engineered all this side.
+context after: This is obviously coming from the clipping uh circuit, and as soon as it uh clips and wants to turn on the LED, it then drives this high like this, and that just drives the red LED like that, down to ground.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (explains)
+context before: Cool. It's probing time. It's probing time. What I've got here is a Raspberry Pi 3B+ uh 3A+, sorry, for those playing along at home, and I'm using uh the supplied lead.
+TEXT: By the way, it wasn't labeled and it wasn't obvious which one was the uh zero like the ground here. So, um yeah, I measured it made sure it went uh to ground, and I've labeled it negative.
+context after: So, there happens to be a convenient uh ground and 5-V pins on there right next to each other. So, we can probe that directly. Of course, as I said, that's not the absolute best, uh, way to probe it, but it's definitely more than good enough for Australia.
+
+[CK5nbC_dBWk] Siglent Signal Generator FAIL — Dave Jones (explains)
+context before: There you go. Well, we've got something. We got one. There you go. That's serial if I've ever seen it. Bingo, found it. It's that uh header along the bottom there like that.
+TEXT: So, that pin there, pin two, is it? Pin one is 5 V. Presumably, pin four is ground. Double-check that. Pin two is the output. Bingo, we can hook that up to our uh RS-232 board.
+context after: Well, it's not RS-232 cuz it's not RS-232 signals levels, is it? TTL-based. You know what I mean. TTL signal levels, 0 to 5 V stuff. Acceptance. Not that. 1 2 3.
+
+[1522] EEVblog 1522 - BM786 Multimeter Repair PART 2 — Dave Jones (explains)
+context before: Now, the pinout for the QFN is slightly different to this one. So, I do actually have the pinout for this one and it matches up. Um this is the uh clock going in here and this is the data for the debug interface.
+TEXT: So, clock and data. I've discovered that this one here is uh VSS or ground and this one here, or pin uh three here, is actually uh positive. So, ground and positive rail here.
+context after: But the QFN pinout is like shifted one pin around so that pin 64 here is the ground and then this one's the clock. This one's the data and I've uh in and in this particular case, pin two is actually the reset pin.
+
+[1541] EEVblog1541 - What is this Blown SMD Component? Redux — Dave Jones (explains)
+context before: But yeah, that'd be for their uh automated uh production testing. So, they'll give you no details on that unless you're manufacturing the chip. You won't know what that is.
+TEXT: So, you leave it alone. And of course, uh VDD and pin two here is ground. So, that's what we uh saw here. That's what we suspected that that one might might be a ground there.
+context after: And of course, as you saw the RC uh circuit here powering this thing, and Bob's your uncle. We've found it, right? It It has to be this part. There's absolutely no way.
+
+[1428] EEVblog 1428 - Sony RX100 IV Camera Repair and then WTF! — Dave Jones (explains)
+context before: The uh the auto fi- No, the LED that lights up um the Yeah, the auto focus uh LED thing that actually lights you up in in the dark. That uh allows you to focus in the dark and stuff.
+TEXT: So, I'm going to assume it's ground. And that one over there always comes on. That one doesn't. Yep. So, there's one contact there. So, yeah, I think it's this side over here.
+context after: So, this side's grounded. This side's not. So, Yeah, excuse me. This might not This might not be pretty. Got to use your three hands here. Tongue at the right angle.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (explains)
+context before: But, today we're going to simplify it to one because there's already going to be enough involved in actually solving just one node here. And you might think, "But, Dave, we've got two nodes.
+TEXT: There's this other one down here." Well, no, because what we've got is when doing nodal analysis, we need a reference point. So, we're going to call it ground like that.
+context after: We're just going to put the ground symbol. We're going to say this is our reference point. So, we don't have to worry about this node. We really want to solve this node up here cuz what we want is like the voltage at node A relative to our reference point here.
+
+[1520] EEVblog 1520 - Troubleshooting a Faulty BM786 Multimeter — Dave Jones (explains)
+context before: Um that That is what we need to fix here. So, let's start off by doing a sanity check of what what I know as the system. Well, in the initial system ground over here and the ground over on the thing, yep, it's the same ground.
+TEXT: So, let's go from here and find out which pins is this one over here. Once again, that's also ground. That's what I suspected, right? It's the negative of the cap there.
+context after: It's right. Everything's hunky-dory. Don't know why that cap's missing over there, right? But all this all this stuff here, right? This is ground. This is definitely the ground pin.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (explains)
+context before: So, we're going to have to place a new zone. Um maybe there is a way to do it or whatever, I don't know. But anyway, we'll delete our copper zones and you'll see all of our nets are now unconnected.
+TEXT: All of our uh positive, uh which is called H. That's just the designers on the schematic chose the name H for high and L for low. They're actually VCC and ground, okay?
+context after: So, all these nets are unconnected. That's what all these nets here mean. Now, if we go back into our top layer or FCU, [ __ ] you. Um sure, that's a running joke in the KiCad forum, isn't it?
+
+[831] EEVblog #831 - Power A Micro With No Power Pin! — Dave Jones (explains)
+context before: All IO pins have protection diodes to both VCC and ground as indicated in this diagram. Here is the IO pin and these are your input protection diodes. And you'll notice that they're actually reverse biased, so they're never actually on unless you overdrive the inputs.
+TEXT: This arrow up here, for example, is showing that it's going up to the VCC pin, the positive rail. And of course this one's going down to the ground pin of the chip.
+context after: These diodes are actually inside the chip and sometimes they have a series resistor in there as well. And this is how they protect the input pins on most, almost, you know, let's say almost all CMOS devices will have these input protection diodes.
+
+[202] EMC RF Anechoic Test Facility Tour - EEVblog #202 — Dave Jones (explains)
+context before: So we've got the septum here. That's called the what? The septum, I think. Okay, all right. All right. And that's connected to the center pin of that uh connector.
+TEXT: Ah, right. So that actually goes right down to the center pin of the RF connector at the end. That's right. Right down there. And um all the rest outside is ground.
+context after: Right. Is that Yeah, that's mains earth, I take it. Yep. It's all Yeah, must be. Yeah, just for safety reasons. Okay. Yep. Cuz if you accidentally put this at a voltage you're sort of Yeah, sure.
+
+[1202] EEVblog #1202 - LCD Repair Redux — Dave Jones (explains)
+context before: All right, no worries. So, that seems to be a reasonable value. So, I'll just whack in a 4.7k either directly across the pins in there, but then that could short out to the front panel.
+TEXT: Maybe I could do it in there cuz the trace comes all the way here. So, between there and ground. And that should do it. And that will have full electronic control.
+context after: Beauty. So, there you go. Got a resistor from that point around to the ground of the cap over there. So, let's see if that does the business. Ta-da! Fantastic.
+
+[V0RWwSw96Sw] Jackery Battery Bank FAIL - Part 2 — Dave Jones (explains)
+context before: And yeah, nah. So, no charging there wasn't a battery threshold voltage thing that was under locking it or whatever. Nah. And I think it's likely that this is that Jelly Bean DW01 cuz the pin pinout seems to match.
+TEXT: I mean, ground here is uh pin six over here. And if we jump over to the data sheet, you can see that pin six is ground. Uh pin pin five is VCC through a resistor.
+context after: And well, it yeah, that seems to be it. And yeah, I'm assuming that trace goes up there to pin five. So, it's through a resistor and then you've got a bypass uh cap on there going down to ground.
+
+[1111] EEVblog #1111 - World's First Microcontroller & Electronic Game — Dave Jones (explains)
+context before: So, here's our 100 pF cap on the back here. And, if you're follow the money from this pin here, let's go around. Always follow the money. Right into the basement car park at midnight.
+TEXT: It's where all you find get all the good info. So, that's actually pin 20, which is the VSS or ground pin, and that goes over to the the switch the ground there.
+context after: And you can see that the two oscillator pins 18 and 19 are actually shorted out. So, I didn't but do believe it's actually using the internal oscillator. But, it's also got a power on needs a power on reset.
+
+[831] EEVblog #831 - Power A Micro With No Power Pin! — Dave Jones (explains)
+context before: Pin one is actually the VCC pin or the positive power pins. So, I've got that. Here's pin one of the chip. It's going up to my positive rail there.
+TEXT: And then pin 14 is actually the ground pin. So, you'll see that going down to there. That's going down to ground. So, I'm powering my chip from a 3.3 V rail.
+context after: And then, of course, to have the micro actually work is to start up and work. the reset, which is pin 10 down here. So, it's hooked up. So, of course, if you disconnect the reset pin, it's not going to actually do anything.
+
+[1512] EEVblog 1512 - Why Bypass Your PCB Like THIS? — Dave Jones (opinion)
+context before: And you don't put that on your silkscreen layer. That's a golden rule. You put it on your copper layer, um so that uh yeah, it's more accurate. So then any um offset errors on your silk screen and your copper don't matter.
+TEXT: Oh yeah, there we go. That's I totally missed that 3.3-V uh rail there. So yeah, and then there's another adjustable rail there. So there's you know, there's probably some like um internal you know, uh sort of like ground uh in there, probably just for that one chip, and the bypass caps do that.
+context after: And you just don't need all those. It's just It's it's it's just silly stuff. Um just a couple of bulk decoupling caps would have been fine for something like this.
+
+[1144] EEVblog #1144 - Padauk Programmer Reverse Engineering — Dave Jones (opinion)
+context before: Hey, so I'm going to be kind of going into the reverse engineering of the PMS-150C programming interface. This might be very difficult, it might be very easy, but I suspect it's going to be quite obscure. So, let's just look at what we've got.
+TEXT: So, first things first, I have this SOIC-8. When I talk about a pin, I'm going to be talking about the numbers. The numbers go round anticlockwise. So, 1, 2, 3, 4, 5, 6, 7, 8. Now, I've made some assumptions with this. So, I'm going to assume that this is ground and this is power.
+context after: I'm also going to assume that reset is still reset. So, and I'm also going to assume that reset is active low. So, it's resetting when it's at ground. So, it's running when it's at power rail or something. High, logic high. So, that leaves us with five pins to analyze for.
+
+[HbMnQdRzD8A] Guest Video: Bob DuHamel - How Opamp Virtual Grounds Work — Dave Jones (opinion)
+context before: If we move the black lead down to here, now this is zero volts, and we have plus 5, plus 10, plus 15, and plus 20. And it changes all the voltages in our op-amp circuit too, where now our two inputs are at plus 10 volts, and this is plus 15, and this is plus 5 volts.
+TEXT: This is probably confusing, and that's why we don't do op-amps this way. And we usually use op-amps in places where it makes sense to have both positive and negative voltages. So this is not a good place to designate as our ground or our zero volts.
+context after: So let's move the black lead back here, make that our zero volts, make that our ground, and now things make a lot more sense. We have positive five volts here, negative five volts here. The op-amp is doing what op-amps always do. It's adjusting its output
+
+[kU7zSSuy9WQ] How to ID a Mystery Microcontroller — Dave Jones (opinion)
+context before: Um so, we know that's pin one and it's a 44-pin chip. And then it's got a uh other programming uh pins here, which is 44, 42, you know, 40, 39, etc.
+TEXT: Stuff like that. Okay? And I thought before I actually uh reverse engineered this schematic uh for this, I thought pin 12 down here was actually ground. I thought that was actually ground, but it's not.
+context after: It turns out that's the com uh chip that's the com terminal here of the multimedia chipset, which is not ground over here. But anyway, getting ahead of myself. Um now, what else have we got?
+
+[1673] EEVblog 1673 - JBL Partybox 310 Repair - Part 2 (SPOILER) — Dave Jones (mention)
+context before: Here it is here. So, this is the power key line coming in like this. This comes over two ribbon cables plus six, no less than at least six jumper links to actually get to the point. And as well as a ferrite bead inductor, which is over here like this.
+TEXT: And that goes to one side and then the other side of the switch just goes down to ground. That's it. So, yeah, this is the actual signal here. So, I got to thinking like, look at this, right? I've only really seen a break like this on like a bare board PCB where there's been an over etching problem, for example.
+context after: Happens all the time. Like, you know, common as mud, really. That's why they do electrical testing on your bare board PCBs to check that there's no breaks in the PCBs like this from over etching. So, that's it. So, yeah, this is the actual signal here.
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (mention)
+context before: So, I've just uh branched that out into a separate video which should be uploaded at the same time as this one. So, check that out if you want to know about electrical rules checking in schematics.
+TEXT: Basically, we're past a DRC as I said like the hidden pin thing before. You'll notice that there's no ground or VCC inside these things, but I could like go in here and then just uh show what uh show all pins even if hidden and you'll notice that there are actually some hidden pins in there.
+context after: So, that's it. That's our schematic and uh hopefully that works and hopefully you you found that interesting. I know what has this been like half an hour of waffle or something like that, but uh you know, we've covered like uh done ERC and component layout and nice schematic design and you know, stuff like that and it looks like, you know, a nice layout.
+
+[5eJorvyA708] Altium Designer Serious ERC bug — Dave Jones (mention)
+context before: So what I've got here is I've deliberately introduced several errors into this schematic here. One is a data out, an output pin of this chip is connected over to another output here, okay? So two outputs shorted together, it should detect that, you know, as a fail, okay?
+TEXT: And then I've got, well, I've got two floating, I've got a floating input here, so two inputs connected together with no driving source, okay? It should detect that and I've got another one here where the data output pin is connected through to ground, so it's connected to a power net.
+context after: Once again, a really bad error which should be picked up by an ERC. So, hey, look, I'll go into my out job here, okay? I've got my out job set for my Nixie Tube display project, here we go, and I'll run that and bingo, look, okay, I've got a couple that are saying there's no driving source, okay?
+
+[856] EEVblog #856 - Mailbag — Dave Jones (mention)
+context before: switcher. That's it. There's nothing else in there. Well, we'll have to crack this one open. Soldered shut. And I tore this thing apart with absolutely no thought about ever putting it back together. And there's actually more in here than I thought there'd be.
+TEXT: I'm very, very surprised. Anyway, there's quite a significant amount of stuff. Anyway, here's our RF inputs here, and they've got PTC protection on there. We've got an inductor going down to ground there. And we've got some... Yeah, it's coupling in there. And what have we got here?
+context after: Is this some sort of power amp package or something? I don't know. Why we've got this little tiny shield in there. Doesn't look like any active stuff in there. Looks like all passive stuff. But anyway, they've decided to shield that. This is just the, if you're wondering what's in here,
+
+[1433] EEVblog 1433 - More Adventures in Sony RX100 Repair (Part 3) — Dave Jones (mention)
+context before: Maybe it's just long enough. Maybe. Now, the problem is, when I fold this like this, it comes back like, no, no, they're definitely not long enough. Um, right, when it folds over like that. I mean, you know, look, there's no reason why I couldn't, like,
+TEXT: solder, like, the ground down to, like, here, or something. Like that. Like, there's no reason why you can't take, like, a shortcut like that. Uh, for example. Um, because it's only battery. It doesn't matter. But to test that, I've gotta put the, uh, ribbon cables
+context after: back in and test the continuity. Uh, I think I've taken some trace off there too. Alright, so what I'm gonna do, yeah, I'm just gonna have to scrape some more off. There's my teeniest, tiniest heat shrink. We'll give that a go. Couldn't be bothered using the hot air gun.
+
+[67] EEVblog #67 - Hacking the Princeton Tec EOS LED Headlamp with a Cree XPG — Dave Jones (mention)
+context before: measuring the input current, so we can, from that, we can work out the input power. We've got the, um, LED working on maximum brightness, and here's the LED, uh, current, 290 milliamps, and here's the LED voltage, almost three volts. So there you go, that's a reason to have actually
+TEXT: at least four, let alone five, because if I want to probe that circuit, I now need a fifth multimeter. This is a first stab at what's happening here. Here's, ground is over here, okay, that's your ground input, and this is your positive input from the battery.
+context after: Now, there's a diode here which goes off somewhere, there's a transistor here, Q something or other, uh, there's your, um, there's your main DC to DC, um, converter inductor, okay, so that's 100 microhenries by the looks of it, and, uh, there's your diode as well, there's the input smoothing cap, that's obviously,
+
+[NvIv-0-R6qQ] Guest Video: TannerTech Designing a Frequency Counter — Dave Jones (mention)
+context before: So, let's get started. So, this is the CD4026B microchip and it's a typical 16-pin chip. And it's compatible with these common cathode 7-segment display chips right here. So, these are the two chips we're basically going to be using inside this video. Alright, so pretty much what this chip has is it has a bunch of different connections
+TEXT: to connect to the different pins of the 7-segment display. So, you see we have pins A, B, C, D, E, F, G. Now, all those pins connect to the corresponding A, B, C, D, E, F, G pins on the 7-segment display chip. Of course, you've got 0 volts or ground and VCC.
+context after: VCC for the CD4026 can be anywhere between 5 and 15 volts. So, it'll probably work at 12 volts for this project. Now, the CD4026 has some interesting pins. Clock is one of the most important pins on this chip. So, pretty much what happens is whenever you give a pulse to clock,
+
+[725] EEVblog #725 - LG Plasma TV Teardown — Dave Jones (mention)
+context before: and ta-da! No surprises for guessing, the wiring comes straight out of there over to your vertical boards here. And those things aren't particularly high power, so what they can do is just loop the power through here and have it come in over there
+TEXT: like that. No problems whatsoever. In fact, they have sensibly marked those there we go, VA, that's going to be our 65 volt supply, plus they're running the 5 volt there for the digital as well and ground, and that's basically all there is for those boards.
+context after: So they just daisy chain those across these boards here, not consuming a huge amount of power at all. You can tell by the fact that A, they're daisy chained through the boards like that, and B, oops, that's my remote cable just hanging down there
+
+[812] EEVblog #812 - Varta 15min NiMH Charger Part 2 — Dave Jones (mention)
+context before: there's a trace that goes off under there and it snakes off around there around there, around there into, bingo, Q25 here. That's got to be a little that's a little SOP23 MOSFET. And then there's two 6R2 resistors in parallel under that, that actually then
+TEXT: go back to ground on the other side. Here's that current shunt resistor in there. And so the other side of that. Bingo. And it wasn't so obvious on these ones here, for example. Here's the next one and then the next one. So there's actually four of these
+context after: duplicate discharge transistors discharge MOSFETs, and this actually drops down through some vias into a trace and actually ends up under the chip here. Actually under the thing. So there's vias under there and it goes on the other side. So you've just got to follow these things carefully.
+
+[953] EEVblog #953 - What Is Schematic ERC? — Dave Jones (mention)
+context before: Oops, you shorted two outputs together. You could release the magic smoke. So, I've deliberately added that error in here and also another error here. Look on this chip U6 D out pin 18.
+TEXT: I've actually shorted that down to ground. So, once again, yeah, you could release the magic a smoke. You really want to pick an error like this up. I've got another one D in here which is a floating and it's got you can do online checking as well.
+context after: Like it shows it on the schematic. That's what that red squiggle is. That shows where the errors are. So, what we can do is we can just compile our project here and bingo.
+
+[1193] EEVblog #1193 - KiCAD PCB 4 Layer Swapping & Stackup — Dave Jones (mention)
+context before: And if we go into copper, uh sorry, if we go into VCC layer, bingo, our traces are now transferred into there. And we can go and do an identical thing to the bottom layer.
+TEXT: It's too easy. We just highlight like that. And filter selection. And traces, that's it. Boom. Properties. Boom. Ground. Done. And bingo, we now have the VCC and ground layers, which we'll have to rename, of course, because they're no longer that.
+context after: We can just go into Let's just call it inner top and inner bottom, like that. And we'll leave it FCU and PCU. It doesn't matter. And we don't have to change that back to power plane.
+
+[7bVnsXHO6Uw] EEVacademy | Digital Design Series Part 1 - Introduction To Digital Logic — Dave Jones (mention)
+context before: So, your digital system is not going to know how to interpret that. So, that is why you'll always see digital signals being just one or zero with as fast an edge as humanly possible.
+TEXT: So, in a typical digital logic system, we might have a chip here, for example, that is connected to ground and is connected to 5 volts or 3.3 volts, for example, are very typical modern digital logic levels or even lower, you know, 1.8 1.2 volts.
+context after: It doesn't matter. It's going to represent a binary value one and zero, true and false, high and low. And you will have various inputs to the chip, and you'll have various outputs to the chip.
+
+[476] EEVblog #476 - Opamp Offset Voltage Measurement — Dave Jones (mention)
+context before: I've got a split supply. In this case, it can go anywhere from uh well, from 2.7 total um up to 5 volts. Now, what I've done is gone and actually uh assembled this chip on uh one of my um micro current boards here because it has the same uh configuration.
+TEXT: Just allows me to easily do that. I've removed all other uh circuitry on there, the rail splitter, and all that sort of stuff. So, it's powered from my external bench supply uh positive supply, negative supply, and my uh and there's the ground.
+context after: And uh that's my output. Now, I've got my output uh voltage on here, and I've got my uh supply rail here. So, it's 5 volts total across here. So, split is plus minus 2 and 1/2 volts.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: It didn't make sense vertically and it doesn't make sense horizontally either. The B and C is the input for this entire project. So you want it to be on the right hand, left hand side of your schematic. Remember, input signals on the left flow through your page, output signals on the right.
+TEXT: So first of all, we want to get this poor B and C, well, let's just, let's just get it out. Right, so we want it to be like over here like this. All right, now we don't need two ground symbols, so we'll get rid of that and we'll just join one.
+context after: Right, so this is now starting to make a lot more sense. So how do we orient the switch? I don't know, you could like maybe have it like that perhaps. Oh, yeah, that switch is better off being horizontal like that. This is going to be much nicer.
+
+[1353] EEVblog #1353 - WHY Are These Pins Shorted? — Dave Jones (mention)
+context before: like flick it off. No problems whatsoever. It gets everywhere. Only little solder mask balls, pain in the ass. Anyway, so yeah, that's the purpose of having solder mask and that's the purpose of having it between pins is to prevent shorts between this. But anyway, back to the original question, Dave, why is there a deliberate short in here?
+TEXT: I guarantee it's a deliberate short. I'll tell you. Let's go in here. Here we go. It's a pad, right? Pad 22. So let's actually just change that so it's actually ground. It doesn't chuck a wobbly when we try and connect a track to it, okay?
+context after: So when we're laying out a board like this, PCB designers, we love to use snap grids. If you're not using a snap grid, you're not a proper PCB designer, okay? Your designs are going to be crap, right? Snap grids, I've done whole videos on that of what, you know, the best snap grid.
+
+[1129] EEVblog #1129 - Creating a Nice Readable Schematic — Dave Jones (mention)
+context before: It doesn't matter which one you use, makes a rat's ass difference, but be consistent in the types of schematic symbols. It's important. Right, so now we really have to reformat this thing because this is like, this was my first thing with this schematic that I went, this is so bad.
+TEXT: Not only is that B and C connector rotated like that, there's no left, right flow in it. And then look, having the, this is the, we've got four 200 ohm resistors in parallel here going down to ground, not as any ground symbol upside down.
+context after: This is actually a switch symbol here. It's not very good because it doesn't have like the circular contacts, so the switch symbol's not drawn properly, stuff like that. But, you know, that's neither here nor there. So we need to like reorient this whole thing and, oh, it's not going to be fun.
+
+[552] EEVblog #552 - DFM Automated PCB Panel Testing — Dave Jones (mention)
+context before: I'll just have a whole bunch of like 10 red green LEDs, which will just uh pass fail the current into the board like this. Easy. So, I've just done a quick Dave CAD noodle here of what my test board will be.
+TEXT: It'll have like a 14-way test connector here. I need 13 connections, so just make a 14 or 15-way just a 0.1 inch header, for example. Then it's got ground, reference ground, and those 10 output voltages from the 10 individual boards.
+context after: And then they just go into a window detector here, which then lights up a, you know, a red green light based on a reference voltage for a particular known test current.
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (mention)
+context before: But what it shows is that our supply pin is 6 volts, but we're only getting 5.8 volts output. So, let's actually uh draw our gate here. Okay? So, we've got our NAND gate now.
+TEXT: This is our 6-V supply pin inside here. We have ourselves a little transistor like this, which is going to the output pin. And then if we have a resistor, which is then going down to ground, this here is is not 0 ohms output, okay?
+context after: It has a resistance, and you can calculate that output resistance based on the drop there. So, we're getting a 0.2-V drop at 5.2 milliamps output current. So, use Ohm's law.
+
+[1669] EEVblog 1669 - Agilent 53131A VFD to LED Display Upgrade MAILBAG — Dave Jones (mention)
+context before: So, yeah, I'm not going to muck around with that, but yeah, I assume that it's got adequate uh current to um drive it with all the uh segments on and whatnot.
+TEXT: But, even if the rail drops a bit, it's just like the front panel stuff. It's not actually um, you know, shouldn't affect the rest of it. And our negative is the uh ground for that uh terminal uh that uh holding strip that we had.
+context after: So, we just uh manage the wires under there like that, snake them around the chippies, and pressing it gently until it touches with the ribbon cable connectors. Solder a couple of pins to the top row on each side.
+
+[1288] EEVblog #1288 - Synology NAS Dumpster Find! (REPAIR) — Dave Jones (mention)
+context before: So, practically a brand new DS 415 four-drive uh NAS in the dumpster. Well, it was faulty cuz it did have this uh C2000 uh Intel Atom bug, but it's fixed and it's rearing to go.
+TEXT: Should I trust it? Mhm. Okay, so what I'm going to do is just uh probe the signal here on pin six. Pin two's actually ground. I'm using my uh low inductance uh probe here cuz we've actually got as you'll see a 25 meg signal.
+context after: Look at that. And that's a bit how you're doing. That's not my probe uh doing all that funny business in there. That is uh the actual signal. So, that's that's the clock.
+
+[1306] EEVblog #1306 (4 of 5): Open Source SDCC C Compiler — Dave Jones (mention)
+context before: There you go. PA3. There you go. Is actually this pin down here and I believe the eight-pin chip will just use the bottom eight pins down there. So it's the same pinout.
+TEXT: So it's got VCC and ground like that. And on the 14-pin chip, they're in the middle, but on the eight-pin chip, the pinout should be exactly the same. So PA3 will be this pin down in the bottom right corner down here.
+context after: And that's the pin that we're going to actually toggle. So we'll just download SDCC here. Let's go to the download page. Win 64. That's the one we want. Version four cuz that supports the latest one.
+
+[577] EEVblog #577 - Precision 1A Current Source Part 2 — Dave Jones (mention)
+context before: Here's our ammeter. We've got a precise Yes, we do have a precise 1.25 V across our precision 1.25 ohm resistor. Yes, so we are getting precisely 1 amp flowing through here like this, down through the resistor and out the bottom, but we've got a 2 milliamp error current coming down here and going Oh, thank you.
+TEXT: I need to go in there, down to ground. So, we've got a precision Even though we've got that precise voltage across there, our resistor, we think, "Oh, yeah, we definitely have to generate our 1 amp through there.
+context after: That's Ohm's law." Aha, we forgot about this sneaky little current path going down there, little bastard. And that's where our 2 milliamp errors coming from. In this case, it's only .2% So, it's not much, but hey, we're trying to design a precision current source here at .02% order of magnitude better, 10 times better than that.
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (mention)
+context before: Uh this one this first number down here like this. So, one, two, three, and four. So, uh input A, so this is gate number one, input A, gate number one, input B, and gate number one, output Y.
+TEXT: And then on your larger packages here, there's a bunch of NCs or not connected, and it tells you that there's no internal connection there. And of course, ground is ground pin, and VCC is your positive power pin.
+context after: If you didn't know what VCC means, and well, where that actual term comes from, we won't get into, but you look in your functional description table. It's the power pin.
+
+[430] EEVblog #430 - Fluke 91 Scopemeter Teardown — Dave Jones (mention)
+context before: So, you can't just go and use a regular um scope probe on that and think you're going to get it to work. And yeah, it's just got the regular outputs here.
+TEXT: There's the center conductor. There's the ground. Incidentally, the ground is wrapped in this uh capacitor, wrapped tightly around that uh lovely, beautiful. Look at that. Someone's gone to a lot of trouble, eh?
+context after: Beautiful uh work and they soldered that onto the ground connector and that's AC coupling the ground or the negative input on that BNC through to presumably signal common and this internal shielding.
+
+[952] EEVblog #952 - Nixie Tube Display Project - Part 3 — Dave Jones (mention)
+context before: You're driving it. So it makes sense to have all of the outputs on one side. Here you'll notice that I've gone to the effort to put in the open collector output symbol here to show that they're well, in this case they're open drain.
+TEXT: But you know, same thing you convey the information. And then here of course VCC. You want VCC up here so that you can put your symbol just there. You want your ground down the bottom so you can put that there.
+context after: Now the chip enable usually you're going to just you know, for simple applications you're just going to tie it to ground. So why put it you know, somewhere else like pin seven down here and if your ground's over there then you put put another ground symbol.
+
+[1087] EEVblog #1087 - UNBELIEVABLE Alesis Studio Monitor Fault! — Dave Jones (mention)
+context before: That transistor there actually shorts them out. We'll see why in a second. And it goes through a LED dropper resistor here to an op amp. Now, I've actually measured this and when the power is both off and on, we've got negative 15 V.
+TEXT: Basically, saturated at 14.7. It's saturated at the negative rail. So, that is the correct polarity. If this is not -15 V, the LED dropper, that's the correct polarity for the blue LED relative to ground here.
+context after: Because this is ground is actually a higher potential than -15 V, the blue LED is going to light up. Simple. And likewise, if uh happens, I haven't uh like reverse engineered all this side.
+
+[242] EEVblog #242 - Hakko FX-888 Soldering Iron Hack — Dave Jones (mention)
+context before: You can do things without shorting out the rail. So, and they use them as lead droppers as well. So, let's take a look at how this works. Let's start out by taking the example of when the internal open collector driver inside the IC, this is our existing high-current IC down here, just like we saw before over here.
+TEXT: Okay? And let's say this turns on and switches our traditional red our existing red LED on. Well, let's look at what happens here. If we pull this down to ground, this transistor, the base, is uh is cut off.
+context after: So, there's no base current, so it switches this transistor off. So, you can just ignore that. That transistor there doesn't exist anymore. It's switched off. So, what happens? 9 volts flows through this resistor here.
+
+[167] EEVblog #167 - Atten 858D Hot Air Rework Review — Dave Jones (mention)
+context before: The reed switch actually engages like that, and it switches it off. Nice little safety and convenience feature. I really like it. So, that's how they've implemented that. And underneath here is a tiny little board.
+TEXT: Doesn't It's really just a interface board, but it's actually labeled. It's quite nice. There's There's the It's got labels for the heater, for the fan, for the sensor. There's ground, and there's a U1B.
+context after: I'm not sure what that is, but yeah, it's just a little interface connector board. I'm sure if I take that out, there's no circuitry on the back there. Now, this is rather interesting.
+
+[1246] EEVblog #1246 - Dumpster TV to Retro RGB Monitor Conversion — Dave Jones (mention)
+context before: So, that one would be much easier to tap into. But, as I said, I don't know. This one's bigger. It's I'm All right. So, what I'm going to do is actually cut this jumper link here, which comes from pin 21, which was that commutate pin.
+TEXT: And there's a resistor pull down there. So, there's the jumper going over there. So, if I cut that, it'll be pulled down to ground. So, it's what Don't know if you have to get the soldering iron out.
+context after: I just cut that and see if our input the board back, see if our signal will changes, see if we get a blank screen. We shouldn't get anything. We shouldn't get our line.
+
+[974] EEVblog #974 - PCB Layout Walkthrough - PART 4 — Dave Jones (mention)
+context before: Wow, that's being cheeky. And of course it's at this point that I'd bring in these pesky little dropper resistors with that we've got here and sort of massage them into place as well.
+TEXT: And once again, they can easily go under the tubes here anywhere you want. And it's at this point I notice a screw up. Look at U14 here. Nothing's connected except VCC and ground and VCC on pin one.
+context after: Jump over to the schematic here, and it's supposed to be U12. Oh. Oops. There it is. That one's labeled U14. That should be U12, and that should be part F.
+
+[1429] EEVblog 1429 - Sony RX100 Camera Troubleshooting Part 2 — Dave Jones (mention)
+context before: Ah, beautiful. Anyway, there's the There's that uh battery board with the uh flex, and it's got tiny little coin cell lithium on there. That'll be so Would it be soldered in?
+TEXT: Maybe. Oh, yeah, there you go. It's got those those extra That's where the battery goes on that pin one there. Tiny little pin one goes over to the uh coin cell there, and then it shares a ground.
+context after: Wow, but anyway, um yeah, I It's like cuz we measured that. Like, we were getting We were getting power on there. The coin cell shouldn't matter. If the coin cell's not there, it should still boot.
+
+[1376] EEVblog 1376 - Tandy 102 Vintage Computer REPAIR — Dave Jones (mention)
+context before: Okay, it's probing time. What I did is I just soldered a uh little uh 0.1 in header pin onto uh the ground pin there, which is uh pin five and pin six is ground.
+TEXT: So, that just allows me There was no other like convenient uh ground point, unfortunately. And I'll include the schematic here. So, what we're looking at, we want to probe the chip select pins.
+context after: Um, that's like definitely the first port of call. So, we're talking pins 16, 15, 14, CS21, pin 14. That's the culprit that we actually want, right there. So, pin 12, 10, eight.
+
+[135] EEVblog #135 - Kindle Case Mythbusting — Dave Jones (mention)
+context before: Cuz we know it has to drive this LED. Now, the Kindle's turned on, so it must output a voltage across here and here, but we've already measured this pin up here and we're getting nothing.
+TEXT: So, there must be some sense circuit which switches that in, and my guess is that it's the bottom pin down here. Let's check it out. Now, I'm measuring the top output here relative to ground.
+context after: And we'll short out the two pins down the bottom, and let's see what we get on our output, shall we? Look at that, bingo! 3.9 V. Disconnect. And there you go.
+
+[255] EEVblog #255 - DIPtrace PCB CAD - First Impressions — Dave Jones (mention)
+context before: Hey, that's neat. Hadn't noticed that before. That automatic when you move your uh cursor over a um over a wire there, it actually highlights the entire uh thing, which is rather nice.
+TEXT: I'll I'll like that. That's pretty That's pretty neat. It highlights all grounds if if you're selecting grounds. I assume there's some way to turn that off, but design rule checking works.
+context after: Library setup. Here we go. Uh look. DipTrace. Here's our Here's our libraries. lib. DipTrace/lib. Why didn't that subdirectory show up before? Okay. Yeah, there it is. There's all our schematic libraries.
+
+[sr1DOHnJi8I] EEVacademy | Digital Design Series Part 4 - Digital Logic Datasheets Explained — Dave Jones (mention)
+context before: I've got four of these gates. Therefore, I can have a maximum of a 100 4 * 25 or 100 milliamps coming out of this chip." Well, no, you can't.
+TEXT: Look at the continuous current through VCC or ground is only plus minus 50 milliamps here. So, you can only take a maximum of plus minus 50 milliamps continuous from the actual chip.
+context after: So, if you've got your chip like this, and there's your 5-V rail or whatever it is, and you've got your four outputs here, the total current on all these four outputs is not to exceed 50 milliamps.
+
+[678] EEVblog #678 - What is a PCB Spark Gap? — Dave Jones (mention)
+context before: So, they're just going to like spark over once and boom, that's it. It It absorbs all the energy out of it. And that's the whole idea of these things is to take out the energy before it reaches your circuit.
+TEXT: So, generally, this isn't the best example here, but generally, these would be right near your input connector, for example, going down to ground. And I'll show you that in a minute.
+context after: And then, you'd have the trace leading off to your chip over here because you want the energy to be dissipated right at your input connector where the impulse actually happens.
+
+[Ep4r-wD7PPs] KiCAD PCB Design — Dave Jones (mention)
+context before: You You want to do them separate. Um The PCB manufacturers know. Like, you don't have to muck around with that. So, anyway, yep, done. All right. So, I've generated drill files and then we whoa.
+TEXT: It just plotted. I expected I don't know expected it to ask something. It just did it. So, with our FCU Gerber is created, our VCC, our ground. I I like how it uh how it names them.
+context after: That's good. F silk, F mask Gerber edge cuts It's all good. I I think we're probably done. Does it have a Gerber viewer? Really, PCBWay asked for a combined.
+
+[1598] EEVblog 1598 - ANENG AC11 Socket Tester TEARDOWN + SCHEMATIC Reverse Eng — Dave Jones (mention)
+context before: So, why not include it? And that buzzer terminal, they do actually use pin 22 down here on the uh design for the uh buzzer. And then you've just got that those uh programming pins which we uh saw before on those pads there.
+TEXT: Hence, that's the VPP and these ones over here and they must have another pad for ground and stuff like that before they solder, probably underneath the battery uh terminal there.
+context after: So, you know, pogo pins uh to program this chip uh once they've uh soldered it, you wouldn't buy it from the manufacturer. You might buy the bare die pre-programmed, maybe, but given that um the pads are on here, it's more likely that they're just buying a blank, they're whacking on the board, and then they program it later.
+
+[kU7zSSuy9WQ] How to ID a Mystery Microcontroller — Dave Jones (mention)
+context before: And like maybe like I was viewing it at lower res and looked like an R54 instead of a P54 maybe and my mind just totally skipped that as a P54 next to that pad.
+TEXT: So yeah I I totally missed it. So we actually have two pieces of information there. As it turns out the ground down here on pin what I thought was pin 12 that's a complete furphy.
+context after: So you know if you started searching for that you would come a cropper but I was searching the only information I had was VPP on pin one and it's a 44 pin chip and it's some sort of microcontroller which a multimeter chipset is a microcontroller but it just contains all the analog multi plexes and the dual slope ADC and everything else required for multimeter functionality of course but that's some
+
+[1299] EEVblog #1299 - Dumpster Laptop REPAIR — Dave Jones (mention)
+context before: That's an input inductor. So, and then that looks like our polyfuse there. It's arced over like that. Anyway, what I'm going to do is that that inductor could be buggered.
+TEXT: Surface mount inductor, so I'll just measure the continuity of that. And I'll just measure from well, from this point to ground, make sure it's not shorted or anything like that.
+context after: I think I need one of those Paul Daniels style on-screen multimeter things. Um anyway, let's measure between there and one of our ground pins there. Two make No, it's just Yeah, it's cycling through.
+
+[1322] EEVblog #1322 - JBL LSR308 Monitor Speaker Repair (FULL) — Dave Jones (mention)
+context before: There you go, pin 24. So, that is driving the reset line. So, I can simply remove that resistor and um well, the cap is not exactly tying it to ground.
+TEXT: It'll tie it to ground on power on, uh but then there'll be nothing holding it uh to ground, but then I can just put in a little mod wire to just short that sucker to ground.
+context after: So, it would be safe cuz it's still 1K, so it wouldn't be shorting out the output of the chip. So, the other side of this resistor over here, I can simply short to ground.
+
+[855] EEVblog #855 - Ceramic Capacitor Piezoelectric Effect — Dave Jones (mention)
+context before: I'll put the screen back in. I'll solder some wires on to some various places and then we can bring that back out. All right, what I've done is solder four little wires on here.
+TEXT: We've got ground and the out main output 10 microfarad filter cap, which is the culprit here. And then we've got the charge pump capacitor. So, both wires coming out there.
+context after: I've just bent them around like that. I could actually try and bring it out the optional LED hole here. Well, optional. It's not an option on this model, but there's actually curiously there's a footprint down there.
+
+[820] EEVblog #820 - DC Fundamentals Part 5: Mesh & Nodal Circuit Analysis Tutorial — Dave Jones (mention)
+context before: So, let's do I2. What is it? Wow, it's pretty easy. Remember, it's always a referenced back to this reference point, VA, the voltage at point A. What's the differential voltage, just like we got here?
+TEXT: Instead of E1, look, it's ground. It's connected directly. So, VA, it's minus nothing. So, it's just VA on R. Too easy. Ohm's law. And I forgot that's actually R2 there.
+context after: And we plug in the number that we know. We know R2. We still don't know what VA is. We have no idea. It'll come out in the wash. And so, it's VA on 20.
+
+[992] EEVblog #992 (Part 2) - How To Clean & Service A Microscope — Dave Jones (mention)
+context before: Okay, the hot melt's been neatened up a little bit. Um, so now I'm ready to join it to the constant current source. Just checking the polarity of the connector.
+TEXT: Can't be bothered to check the data sheet. Time to mark the ground. Now, what we have is the constant current source. I've got it just connected to the amp range here.
+context after: Um, and there it is connected to the USB pack. Um, and we're getting 300 milliamps just as we should. Just going to attach a heat sink to the thing.
+
+[1475] EEVblog 1475 - What's This SMD Part? — Dave Jones (mention)
+context before: This is interesting. This actually shows like a a filter network here actually on the voltage feedback pin. So, this is obviously an adjustable jobbie here. But anyway, let's let's have a look at the Well, we can just go by the pin numbers now.
+TEXT: Uh pin three here. Yep. Pin three is correct. It's our switching output. Pin five is our voltage feedback. Uh-huh. Okay. Pin four is VIN. Yep. Um pin two is ground.
+context after: Looks like pin two is always ground. And uh pin one is the enable pin. Once again, it's the same pinout as the other one. So, maybe maybe maybe maybe this is actually an a part of the adjustment um and the other resistor is somewhere else off uh here which we can't see.
+
+[242] EEVblog #242 - Hakko FX-888 Soldering Iron Hack — Dave Jones (mention)
+context before: The board will be about here about this distance from it. So, it shouldn't touch the board. Not that there's anything to touch cuz there's no tracks on the top side.
+TEXT: So, that should uh fit in there quite well. Let's wire it in. And here's our connections on the board here. We've got uh ground over here on this side of the cap.
+context after: And we've got the red wire which is the plus 9-V coming from the other side of the cap. And then the orange wire is the uh gate wire and that goes directly to the bottom side of the resistor down here.
+
+[398] EEVblog #398 - Lecroy 9384C Oscilloscope Repair — Dave Jones (mention)
+context before: I got it off and uh it's got multiple rails. It's got uh 3.3 V there. There's a yellow one, the orange one down in there is uh 5 V.
+TEXT: There's four of those or three of those. There's ground. There's uh plus minus 15 V. There's plus minus 2 V and um a couple of other uh voltages there as well.
+context after: And I think there's some sort of uh sense line as well coming back. But after I heard this um sizzle and it stopped working, um I measured the rails again and the 3.3 V rail is dead.
+
+[966] EEVblog #966 - CPM700 Counter Surveillance Monitor Repair — Dave Jones (mention)
+context before: That was a nice first shot. It ain't that. So, there's voltage getting up to the probe. What we'll do now is just actually plug in the probe into here and just verify that we're getting the voltage up here.
+TEXT: Okay, let's measure up its clacker, the ground, and this big uh pad up here is all the uh positive. One nice no solder mask rubbish on there and uh 5.75 volts.
+context after: There you go. We're getting some loss on the uh coax. You'd kind of expect that. In fact, if we measure sort of the difference, let's measure the input but the ground through the coax.
+
+[1733] EEVblog 1733 - Mailbag: $100 2GHz Power Rail Probe, Retro Chip Tester — Dave Jones (mention)
+context before: So, if we actually go into the active probe here, you'll see that we actually don't have an option for AC coupling. It's just not there. If your scope front end is capable of taking care of those DC offsets, then you can get a bit more dynamic range, but we're 1 V per division here.
+TEXT: You can see our ground, so 1 2 3 4 5. So, we're measuring the information there. So, yes, we can zoom in on that, okay? Here we go. Here we go, and boom.
+context after: Our signal has come in once we've taken out that 5 V offset. But, look how much noisier that is. It's terrible, Muriel. Yeah, we can still see the informa you know, the information, some of the information's still there.
+
+[346] EEVblog #346 - MLF/QFN SMD Reflow Soldering — Dave Jones (mention)
+context before: Um, but you can um easily do this if your pads were about long enough, you could do this with a regular soldering iron as well, but I chose the solder paste method this time and I think that should work a treat.
+TEXT: So, what I should do now is actually uh go around each pin and uh check to make sure it's not shorted to the thermal pad which is ground, of course.
+context after: So, um you know, just as a uh double check. It's hard to hard to check that it's actually connected to the pin. You can sort of see the connections on the side there.
+
+[8P8Af5SR57U] Goal Zero Yeti 400 Lithium Battery Follow--up — Dave Jones (mention)
+context before: There it is there. That four pin jobby that. Yeah. Yeah. There we go. That four pin jobby there. And unfortunately it is not I got a f it is not a direct access to the um batteries.
+TEXT: So it's actually an I squared C um interface. So there you go. Ground um I squared C um the clock and data lines and it just says BMS there.
+context after: So that's going over to the uh battery management um thing on that uh board. So it looks like it is happening on that board or maybe it's controlled via My bloody tripod keeps falling down.

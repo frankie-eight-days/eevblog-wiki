@@ -1,0 +1,263 @@
+You are writing an encyclopedia article for a technical reference wiki about the EEVblog YouTube channel's body of knowledge.
+
+The subject is: trigger holdoff
+
+SOURCE
+You are given every passage from the corpus that touches this subject: 46 passages drawn from 12 videos. Each passage carries the video number, its title, a deep link, the speaker, and the surrounding context. Nothing has been pre-selected or summarised for you -- deciding what is worth saying is part of your job.
+
+REGISTER AND VOICE
+- Encyclopedic, neutral, third person. State claims as knowledge, not as things someone said on a video.
+- Every factual sentence carries a bracketed video citation, e.g. "A linear regulator needs headroom between input and output to regulate at all.[844]" Stack them when several passages support one statement: "...[844][1112]".
+- ZERO meta commentary. Never mention YouTube, a video, a channel, a teardown as-a-video, a viewer, this article, or the reader. The bracketed numbers are the only trace of provenance.
+- Use named attribution ONLY where whose practice it is is itself the content -- a specific bench habit, a personal rule of thumb. Ordinary technical facts are never attributed to whoever happened to say them.
+- Never write a Reception section, and never write reception or adoption material: nothing about how a product was received, what users felt, or how popular a thing became.
+
+QUOTATION -- THIS IS CHECKED MECHANICALLY
+- Direct quotation is rare; quote only when the exact phrasing is itself the artifact.
+- Any string you place in quotation marks MUST appear character-for-character inside the `text` field of one of the supplied passages. It is byte-compared after you finish. A hyphen added, a filler word dropped, or a contraction expanded is a FAILURE.
+- If you cannot reproduce it exactly, paraphrase instead. Paraphrase is always safe; an approximate quote is not.
+
+CITATIONS -- ALSO CHECKED
+- Cite only the bracketed tokens that appear in the supplied passages, exactly as given. Most are video numbers; a few are video ids like [fK2KBDo7ISY] for videos with no number in the title. Reproduce whichever token the passage carries. Do not infer, guess, or invent one.
+
+SUBSTANCE
+- Lead with what the thing IS and why it matters, in two or three sentences, before any detail.
+- Prefer the specific over the general: a number, a threshold, a failure mode, a named part, a concrete consequence. Discard passages that carry no knowledge -- a passing name-drop is not material.
+- Where the corpus contains a strong practical opinion held consistently, it may be stated as engineering judgment, not as sentiment.
+- Organise under `##` headings that suit the subject. Do not use a fixed template.
+- Length: whatever the evidence supports. Do not pad. If the evidence is thin, write a short article and stop.
+
+OUTPUT
+Markdown only. Start with `# trigger holdoff`. No preamble, no closing remarks, no notes about your process.
+
+=== PASSAGES ===
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (explains)
+context before: So, if we increase this holdoff value here, you'll find at 20 µs, it will magically become stable. There we go, 4 µs, 5, 6. It's a bit touchy. I don't want to turn it too fast.
+TEXT: 10, we're still not stable, but as soon as we hit that 20 µs, here we go. We're almost there. Bam. There we go. We're just over 20 µs, and now we're stable at all time bases there, and it's always going to trigger off that first period because the holdoff, trigger holdoff is going to occur regardless of which random cycle the the first time you run it, it might
+context after: trigger in the center there or something like that, but after that, it's going to rearm only during the dead period, so it will always trigger on that very first if it re-arms in this dead period, it waits until that very first cycle.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Each oscilloscope is different. Some will be calibrated, others will be like in actual time units. So, um you'll be able to actually set an exact hold off time. Others will just be a just a simple analog control which allow you to increase that time.
+TEXT: Now, the hold off time will be in addition to that retrace period. So, when your beam sweeps across like this and gets to the end of the waveform, instead of just immediately retrace back like that, what it does well, it still retrace back, but instead of rearming straight away, rearming that trigger circuitry ready for the next trace, it just holds off.
+context after: And that's why it's called trigger hold off because it effectively disables your trigger signal again for a fixed period of time. Now, of course, that hold off time must at least be as long as the retrace period to sweep that back and plus a little bit extra for it to settle before that trigger circuitry resets.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Now, the hold off time will be in addition to that retrace period. So, when your beam sweeps across like this and gets to the end of the waveform, instead of just immediately retrace back like that, what it does well, it still retrace back, but instead of rearming straight away, rearming that trigger circuitry ready for the next trace, it just holds off.
+TEXT: And that's why it's called trigger hold off because it effectively disables your trigger signal again for a fixed period of time. Now, of course, that hold off time must at least be as long as the retrace period to sweep that back and plus a little bit extra for it to settle before that trigger circuitry resets.
+context after: But, you can actually extend that. But, why would you want to do that? Isn't update rate important? Why would you want to sit there doing nothing, displaying nothing on your CRT screen, potentially missing information, missing data when you can just rearm it and go straight away?
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: It actually dims when because there's not as many re-traces on the display. Now, let's feed the exact same signal into a modern digital oscilloscope like this Rigol DS1052E here.
+TEXT: It's only a low-cost scope, but it'll give you an idea the even the high-end ones will have exactly the same functionality. As you can see, the same signal. It doesn't know where to trigger from cuz we if we go into the trigger menu over here, we're only triggering off regular uh positive slope edge triggering.
+context after: It's an auto sweep and it's just it's not really doing anything at all. It's quite boring. So, um really it's it's not doing much at all. Now, if we change the time base here, the horizontal, we can get to a point where we can see start to see that there is some sort of packet type information in there.
+
+[1360] EEVblog #1360 - REPAIR - Aircon Control Panel — Dave Jones (explains)
+context before: So, I'm going to change my told off time here to uh oh, it's all over the shop. Oh, jeez, that's a that's jumping around. Oh. Anyway, let's set it to like, you know, I don't know, 400 ms or something like that.
+TEXT: There you go. We should be able to trigger off that fairly reliably. Where's my trigger point? Yep. There you go. So, I'm sure I've done videos on this. So, what happens is after the trigger, it waits another 400 ms before it arms the triggering system again, so that Yeah, it'll arm within that dead period.
+context after: It'll uh re-arm about there, something like that. And then it'll capture the next packet. So, that's how we can reliably trigger on that. So, there you go. Okay. Now, watch that.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: And of course, you can stop it, and then zoom into your data, of course, and then you can analyze it. But, that's just a way that you can get triggering on a complex waveform using trigger hold off.
+TEXT: It's brilliant, and that's what it's for. And just to show that hold off again on the digital scope, or the effect of it, I've just got some noise I'm just measuring a noise signal here, so you can see the updating on the display going flash flash flash flash flash, because I've got the minimum hold time.
+context after: Now, let's change that hold off time to Let's change it, say Let's go massive. Let's go up to a second, and you'll see it Well, there we go, about a second.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Well, that's what trigger hold off can do. If you increase that hold off time from the minimum or from zero, you switch it on, and let's say the time period from here from here to here is say 100 microseconds, and you know it's 100 microseconds.
+TEXT: You don't have to know. You can just in kick keep increasing the hold off time until you get the display you want. But let's say you did know that that dead time in there was 100 microseconds, well, you might set your hold off time to you slightly less than that, 90 microseconds, 95 microseconds.
+context after: And what that does to the display uh what that does to the scope is that it the trigger will only trigger if there's 95 a minimum of 95 um uh microseconds of hold time of of dead time before that.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Well, let's give it a try, shall we? Here we go. It's trying to figure itself out and bingo. Okay, it's set it up. It's triggered. Now, like if we we could have gone like that and let's let's hit it again, change the time base, boom, right?
+TEXT: And it will auto scale like that. But, has it triggered off those packets? No, because it's not smart enough to do it. It just doesn't realize. But, if we go into the trigger menu here, and we go to set up, it will have, as all modern digital scopes do, they will have a hold off option.
+context after: Now, if you reset it, which is the default value when you're using the oscilloscope normally, the hold value, in this case, is 500 nanoseconds minimum. Now, let's increase that, shall we?
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (explains)
+context before: Yep. Yep. There should be like a runty pulse, an anomaly. Whoop, yep. See it? See it? This is the fast update rate of the Keysight. Anyway, so you can see Yep.
+TEXT: Yep. Saw another one. Yep. Got one there. Right, so you can see that. Now, I'll do the same signal on the Tek. There you go. Exactly the same uh settings, 2.2 microseconds uh hold off time uh so that you know, so that it doesn't otherwise you get jittery trigger and stuff like that.
+context after: So, you got to hold off on uh complex waveforms like this. But yeah, I'm waiting for the cows come home. Um I'm not I'm not seeing anything. Not seeing any jitteries.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: There's the There's the individual packet there. Magic. We've now stably triggered on that packet of data and you can do the same thing on a complex analog waveform as well.
+TEXT: Now, there's actually one side effect of the holdoff control that is a bit hard to get on the display, but I'll see if I can do it. Um because when you when you add trigger holdoff, then it is then the display is not re-tracing as often and as fast on an analog scope.
+context after: So, the intensity of your display is actually going to dim. So, I've got no holdoff or minimum at the moment. Now, actually see if you can remember that trace brightness and see if it dims when I turn up There we go.
+
+[1056] EEVblog #1056 - Digilent Open Scope MZ Review — Dave Jones (explains)
+context before: over here is full screen if we go like that, should now match. Kind of like that. So that's pretty jazzy. There's significant offset there. There's a 40 millivolt offset Wow! Sorry, yeah, 40 millivolt offset. That's a lot. Is that inherent in the channel?
+TEXT: I thought we calibrated this thing. Anyway, so that's not terrific, but yeah, I like how that auto-zooms in vertically, that's really quite nice. But yeah, there's no trigger hold-off or anything like that trigger delay to allow me to you know, reliably trigger on a
+context after: packet after a dead space or anything like that. Nothing basic, and there looks to be no decoders in it, and the interface for the phone is exactly the same as the one you get on the web, which is kind of understandable. So yeah, it's just exactly the same as the
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: And we've got to adjust that. Now, it's a bit touchy, this one. It can jump around the place if you uh turn it too fast, so But, if we get to 40, there we go.
+TEXT: Bingo. There it is. We've got our stable display using our hold off control. Magic. Now, just to clarify that one bit further, what hold time will actually work is uh actually the period of the entire repetitive cycle that you're trying to actually capture.
+context after: And that window in there is the value that will actually work. So, I've set up the vertical cursors here. I've set one right at the start of the packet which I want to measure.
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (explains)
+context before: Now, we can increase that value, and because this burst here is 20 µs, if we if it's under 20 µs, then it can still trigger on parts of that waveform.
+TEXT: We want it to delay or hold off. That's why it's called holdoff, trigger holdoff. Hold off for that entire 20 µs period. Because if it happens to trigger off the first uh edge there, then it needs to hold off for at least 20 µs to make it stable.
+context after: So, if we increase this holdoff value here, you'll find at 20 µs, it will magically become stable. There we go, 4 µs, 5, 6. It's a bit touchy. I don't want to turn it too fast.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: And let's turn this hold-off up. And notice I'm not changing the time base and bingo, there it is. After it's finished, bang, it's got to wait. It's got that hold-off time and it must wait before it gets the next trigger.
+TEXT: I know what you're thinking. Whoop-de-doo. What's the point of trigger hold-off? That didn't show us anything. It just delayed the sweep. What point is that? Well, there is really no point for simple repetitive waveforms like that sine wave use.
+context after: So, let's take a look at another example where it's actually going to be of great value. Now, let's take the case of a digital signal here, but it doesn't have to be digital.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: And you don't want that. You want to actually trigger off a fixed pattern like that and you want to see the gaps in between here and you want to do all that sort of stuff.
+TEXT: Well, that's what trigger hold off can do. If you increase that hold off time from the minimum or from zero, you switch it on, and let's say the time period from here from here to here is say 100 microseconds, and you know it's 100 microseconds.
+context after: You don't have to know. You can just in kick keep increasing the hold off time until you get the display you want. But let's say you did know that that dead time in there was 100 microseconds, well, you might set your hold off time to you slightly less than that, 90 microseconds, 95 microseconds.
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (explains)
+context before: I was single shot capturing it, and you can go in there, and you can view the waveform just fine. So, they wanted to ask, how do we fix that trigger jitter like that?
+TEXT: And it turns out I've already done a video on this. It's called trigger hold-off, and I go it's about 20-minute video. It explains how to trigger like this, but there's actually, uh, three ways to, uh, trigger off this thing and make it stable.
+context after: So, let's take a look at them. Now, why does it trigger? Um, I be very brief because it's in my more detailed video, but basically, when you've got a burst, a sine wave burst like this, we're triggering off the yellow waveform here, and you'll notice that the jitter is basically the same width as the packet of data like that.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: So, any hold-off time in that period should give you a nice stable triggered display like we're seeing here. And this is actually a live display. It's not actually That's actually captured, okay?
+TEXT: And that's actually live. So, let's try that and see if it works. And here we go. Let's try and prove that the hold-off time 37 microseconds. So, all all before 37 microseconds it doesn't work, but after we should hit about 40 or or hey, bingo.
+context after: There we go. 39.6 is near enough cuz we didn't measure that absolutely precisely. And it should work up to about 47 or thereabouts, maybe with a bit of errors, but it's still going.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (explains)
+context before: In fact, it's gone up a little bit to 24 kHz. Oh, I promised to show you how the uh trigger hold-off can slow down the waveform update rates per second.
+TEXT: I've probably showed you this before, but let's go in there. Here we go, trigger hold-off. It's down at 100 ns at the moment. If we increase that, I have to increase it a fair amount before it's going to become a percentage, but here it is.
+context after: Look at that. There we go. Our waveform update rate has dropped to basically the uh trigger hold-off value. So, there we go. That's 100 microseconds uh hold-off there, and we're getting basically almost 10 kHz there.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: So, really there is no retrace period, but there might be a processing time and stuff like that before it can actually trigger. And of course, a a one of the benefits of a digital oscilloscope is that you get pre and post trigger.
+TEXT: So, it will typically trigger trigger in the middle like this, but really the hold off concept is exactly the same. After it's finished capturing the data, it will hold off triggering again for a certain predetermined amount of time.
+context after: And the real benefit with digital scopes is that they all have really high resolution digital control for the hold off time. It allows you to set a precise value.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: And after that it's just not going to work at all. And then of course we're able to capture that and zoom into our heart's content. And we've got a nice beautifully triggered uh complex waveform.
+TEXT: So, next time you're playing around with complex waveforms like this, be it digital or analog, just have a play around with the trigger hold-off. There's no need to put up with that crap uh display which just goes all over the place.
+context after: Sure, we can just start-stop that and capture the data, but it's good to have your live uh you know, if if you've got enough if you got a digital storage scope with enough memory, sure you can just capture it like that and everything's fine.
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (explains)
+context before: There's just more chance of that happening. So, I'll change this uh change this back to get ourselves a really horribly triggered waveform, shall we? So, let's go in there, number of cycles, increase those.
+TEXT: Bang, okay. So, we we want to trigger off this thing here. Now, the way we do it is with trigger holdoff. I've done a whole video on this. So, let's go into the mode coupling menu here, and there's an option here called holdoff.
+context after: And this is available on analog scopes as well as digital. And it's currently set to the minimum value of 40 ns. So, I won't go into the details, but watch my other video if you want to see it.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Let's select that, and let's turn it up. And I happen to know that that if we put in about 45 odd microseconds, that should allow us to trigger off this sucker, because that's what that dead time is.
+TEXT: So, well, we're getting about No, we're getting there. So, let's Let's go up. Well, bingo. There we go, about 40 microseconds. And there, bingo. Our trigger hold off has worked perfectly, and we're actually triggering off that.
+context after: So, you can that live display like that is incredibly valuable, so that you can actually see if there's any glitches in there in real time, and stuff like that.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Now, let's say you've got a burst of data like this separated by a long period of of nothing, really, and then there's another burst of data. And it might be the same burst or it might be the data that you want to look at.
+TEXT: Now, if you don't have the hold off set at all, okay? If you've just got the trigger set, positive edge trigger, set in the middle like that, well, it can trigger off this point, this point, this point, this point, this point.
+context after: It doesn't really know where to trigger. It's got no idea at all. The scope hasn't got a clue. This edge over here or this one in the middle of the waveform is exactly the same as this one here.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: That everyone thinks is so wonderful. Let's try it on this scope and see if it does anything. Here we go. There you go. It's It's hopeless. It doesn't know what to do, either.
+TEXT: And it's not surprising, really. It just did the same as the Rigol. So, what we've got to do is we've got to go into Of course, we've got to go into our trigger mode, and the minimum hold off time, there it is, 40 nanoseconds.
+context after: And we've got to adjust that. Now, it's a bit touchy, this one. It can jump around the place if you uh turn it too fast, so But, if we get to 40, there we go.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: But anyway, let's turn this hold-off control so you can see it does exactly the same thing here. Let me turn that readout down a bit. It's a bit distracting.
+TEXT: And let's turn this hold-off up. And notice I'm not changing the time base and bingo, there it is. After it's finished, bang, it's got to wait. It's got that hold-off time and it must wait before it gets the next trigger.
+context after: I know what you're thinking. Whoop-de-doo. What's the point of trigger hold-off? That didn't show us anything. It just delayed the sweep. What point is that? Well, there is really no point for simple repetitive waveforms like that sine wave use.
+
+[200] EEVblog #200 - Retrospective — Dave Jones (explains)
+context before: It's just crazy. These birds just won't shut up. Guys, as you can see, I goofed it. I didn't have my head screwed on and I drilled the hole on the wrong side of the device.
+TEXT: That's just a way that you can get triggering on a complex waveform using trigger holdoff. It's brilliant and that's what it's for. Look at this thing, okay? Look. Look, there's modulation on there at 55.5 kHz.
+context after: 555. You'll know that I couldn't resist myself. I did a triple 5 timer scam and yes, it was complete [ __ ] of course. There is no secret hidden Easter egg in the 555 timer.
+
+[1220] EEVblog #1220 - Siglent SDS5000X 1GHz Oscilloscope Review — Dave Jones (explains)
+context before: So, that that would have to do with the well, the scope needing to do stuff. But, yeah, that's a It's quite a large discrepancy, isn't it? Not sure that means anything.
+TEXT: Just find it interesting. And I really like this. If you set your trigger Well, set your trigger hold off here, and you adjust your trigger hold off, you can actually see the output width changing over there.
+context after: So, that's interesting. Yeah, that I don't like the velocity control on the Siglent. Just not very intelligent. Set that width of that hold off. That's interesting, isn't it? I love that.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: So, what they do is they blanket like this when it's retrace it and then it arms then the trigger circuitry arms again and it's ready for the next sweep and it does that again and again and again for your repeating signal.
+TEXT: But, what happens is there is actually an extra hold off time here and that's what that analog hold off control on your analog oscilloscope does. It actually increases this time period up to a certain point.
+context after: Each oscilloscope is different. Some will be calibrated, others will be like in actual time units. So, um you'll be able to actually set an exact hold off time. Others will just be a just a simple analog control which allow you to increase that time.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Now, if you reset it, which is the default value when you're using the oscilloscope normally, the hold value, in this case, is 500 nanoseconds minimum. Now, let's increase that, shall we?
+TEXT: Let's select that, and let's turn it up. And I happen to know that that if we put in about 45 odd microseconds, that should allow us to trigger off this sucker, because that's what that dead time is.
+context after: So, well, we're getting about No, we're getting there. So, let's Let's go up. Well, bingo. There we go, about 40 microseconds. And there, bingo. Our trigger hold off has worked perfectly, and we're actually triggering off that.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: In fact, a lot of people have never used it and well, quite frankly, they don't know what it does. And it can be found as a dedicated knob on many higher-end, in fact, most higher-end, older analog oscilloscopes, but especially on new digital scopes, they will have this option that a lot of people go, "Well, what's that?" I'm not really sure.
+TEXT: They might twiddle it, but they don't really understand what it does. What is it? It's trigger holdoff. Let's take a look at it. First up, a bit of a background refresher on oscilloscope triggering.
+context after: Now, this is going to be in reference to the old-fashioned analog oscilloscope, the old CRT cathode ray oscilloscope, because the concept starts there and it it carries on over to digital scopes, which are effectively the same thing.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: You don't have to know. You can just in kick keep increasing the hold off time until you get the display you want. But let's say you did know that that dead time in there was 100 microseconds, well, you might set your hold off time to you slightly less than that, 90 microseconds, 95 microseconds.
+TEXT: And what that does to the display uh what that does to the scope is that it the trigger will only trigger if there's 95 a minimum of 95 um uh microseconds of hold time of of dead time before that.
+context after: Otherwise, it just ignores those trigger points. So, what it's going to do is it's going to capture that first trigger point after that hold off time. And the result is bingo, a magically stable display where you're actually able to see not only the individual uh packet down here, but the but the entire waveform display if you turn the horizontal out far enough, and you get a stable display.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Sure, we can just start-stop that and capture the data, but it's good to have your live uh you know, if if you've got enough if you got a digital storage scope with enough memory, sure you can just capture it like that and everything's fine.
+TEXT: But really uh you you can't beat having that stable triggered display for live viewing. So, just play around with the hold-off control next time you're using the scope. I hope that was worthwhile.
+context after: See you.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: And that window in there is the value that will actually work. So, I've set up the vertical cursors here. I've set one right at the start of the packet which I want to measure.
+TEXT: And let's go Let's move the other cursor here. And as you can see, it should The hold off should work anywhere from about 40 microseconds up to just before about 47 microseconds, or thereabouts.
+context after: So, any hold-off time in that period should give you a nice stable triggered display like we're seeing here. And this is actually a live display. It's not actually That's actually captured, okay?
+
+[1235] EEVblog #1235 - How To Align Signals On A Digital Oscilloscope — Dave Jones (explains)
+context before: Or we can do random hold off. I like the sound of random hold off. Anyway, if you don't know about trigger hold off, I've probably done a video on that, have I?
+TEXT: Anyway, um basically it'll take the first trigger, then it'll wait, it'll hold off for a certain number of milliseconds before it arms itself again, before it can trigger the next one.
+context after: Anyway, this is probably not the best example for that, but you may have to twiddle around with that. And this would actually be a classic use case for segmented memory as well.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: Now, let's take a look at an analog oscilloscope here. Now, unfortunately, this isn't the best example cuz this is an analog digital combi scope. So, it's a bit complicated on the display here, but what we're interested in is the dedicated control down here.
+TEXT: Now, it says delay position, but that's only for the delayed time base. If I turn it on, there we go. It's actually the hold off control. In regular mode of operation, it's hold off.
+context after: Now, it's got a dedicated button. So, you think it's a pretty darn important control, and it is. So, let's take a look at the screen here when we operate the delay control.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: You can see the positive and the negative level and you can see a couple of traces in there. If you zoom in, you can see some edges and stuff, but it just jumps around and gives you a completely jumbled display.
+TEXT: And you don't want that. You want to actually trigger off a fixed pattern like that and you want to see the gaps in between here and you want to do all that sort of stuff.
+context after: Well, that's what trigger hold off can do. If you increase that hold off time from the minimum or from zero, you switch it on, and let's say the time period from here from here to here is say 100 microseconds, and you know it's 100 microseconds.
+
+[196] Tektronix 2225 Analog Oscilloscope - EEVblog #196 — Dave Jones (explains)
+context before: So, normal mode works as well. And we'll check the single sweep mode over here. So, take it all the way over, and we get nothing on the screen. This is where you're probably going to want to turn your intensity up like this, and then press the trigger button.
+TEXT: There it is. Bang. No problems at all. And a very simple way to test your trigger hold off down here is to set it to minimum, and note the brightness of the trace here.
+context after: And as you turn your hold off control up, it should dim like that. And that's a very basic test that indicates that the trigger hold off is working as well.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: It doesn't really know where to trigger. It's got no idea at all. The scope hasn't got a clue. This edge over here or this one in the middle of the waveform is exactly the same as this one here.
+TEXT: It It doesn't know. So, with no hold off at all, what you get on your display, you've probably seen it before when you probe digital signals, it's just garbage, really.
+context after: You can see the positive and the negative level and you can see a couple of traces in there. If you zoom in, you can see some edges and stuff, but it just jumps around and gives you a completely jumbled display.
+
+[617] EEVblog #617 - Tektronix Oscilloscope Anomaly — Dave Jones (explains)
+context before: Now, exactly the same test again. What happens if I disconnect my input signal down here? Well, let's have a look. 23 and 1/2 kHz, disconnected, it's exactly the same.
+TEXT: In fact, it's gone up a little bit to 24 kHz. Oh, I promised to show you how the uh trigger hold-off can slow down the waveform update rates per second.
+context after: I've probably showed you this before, but let's go in there. Here we go, trigger hold-off. It's down at 100 ns at the moment. If we increase that, I have to increase it a fair amount before it's going to become a percentage, but here it is.
+
+[1478] EEVblog 1478 - Waveform Update Rate Shootout - Tek 2 Series vs Others — Dave Jones (explains)
+context before: I've got the rare anomaly uh setting, so I'm not sure of the exact details of that. You can probably go and look up uh info somewhere. But anyway, there you go.
+TEXT: I've got a hold off in there of uh 2.2 microseconds to try and to get the display stable, and hopefully you can see all that Well, well, yep. Oh, yep.
+context after: Yep. Yep. There should be like a runty pulse, an anomaly. Whoop, yep. See it? See it? This is the fast update rate of the Keysight. Anyway, so you can see Yep.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (explains)
+context before: It's just really digital uh you know, garbage, really. You can't see much at all. You can see it's transitioning and all that sort of stuff, and everything's just fine, but really you can't make out that there's actually uh packets there.
+TEXT: So, that's no of no use at all. So, what what we want to do is we want to use the hold off control here. So, let's turn the hold off controller.
+context after: I don't know exactly what the time period is, but you can see the display kind of shifting there. And wait, bingo. There it is. We eventually hit a hold off time.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (opinion)
+context before: So, that's no of no use at all. So, what what we want to do is we want to use the hold off control here. So, let's turn the hold off controller.
+TEXT: I don't know exactly what the time period is, but you can see the display kind of shifting there. And wait, bingo. There it is. We eventually hit a hold off time.
+context after: If I go further than that, boom, it's gone again. So, there will be that window there where it it just delayed enough that we could see the difference in those packets.
+
+[159] EEVblog #159 - Oscilloscope Trigger Holdoff Tutorial — Dave Jones (opinion)
+context before: And it's not surprising, really. It just did the same as the Rigol. So, what we've got to do is we've got to go into Of course, we've got to go into our trigger mode, and the minimum hold off time, there it is, 40 nanoseconds.
+TEXT: And we've got to adjust that. Now, it's a bit touchy, this one. It can jump around the place if you uh turn it too fast, so But, if we get to 40, there we go.
+context after: Bingo. There it is. We've got our stable display using our hold off control. Magic. Now, just to clarify that one bit further, what hold time will actually work is uh actually the period of the entire repetitive cycle that you're trying to actually capture.
+
+[1678] EEVblog 1678 - Oscilloscope Trigger Warning — Dave Jones (mention)
+context before: So what I've got here is just a basic DC signal, 10 volts coming from my power supply. I'm 2 volts up per division here, and I can switch this on or off like this. That's it, right? And I've got a trigger point just right in the middle there.
+TEXT: There's nothing fancy with the trigger couplings just set to DC here. There's no noise reject or hold off or anything, right? So it's a pretty simple thing. In my case, I just want basic edge triggering. When it goes from 0 to 10 volts here, positive edge, I want it to trigger, and that's it.
+context after: So that's pretty easy, right? We're at 100 milliseconds per division here. I press my single shot button like that, and I turn on my power supply. And Bob's your uncle, right? I can do this all day long. Press single shot, and then, boom, I trigger every single time.
+
+[487] EEVblog #487 - Tekway DST1102B Oscilloscope Review — Dave Jones (mention)
+context before: Okay, yeah, fair enough. No, that's fine. And in the horizontal menu, we have a play stop mode here. I wonder if that's part of the segmented memory option cuz apparently this thing does have segmented memory.
+TEXT: At least that's what I read on the website. So possibly that has something to do with it. It's got some markers in there. So yeah, I'm not sure. Yeah, we're going to have to use V0 knob to adjust trigger hold off.
+context after: Yeah, thanks for that. And check this out, folks. Waveform mode and XY mode. Brilliant. On the same display. Are you kidding me? That's fantastic. Well, it was fantastic until it locked up.
+
+[387] EEVblog #387 - Oscilloscope Trigger Jitter — Dave Jones (mention)
+context before: But that's the third option to do it. So there you go. Piece of cake for triggering on complex signal. Well, this isn't really complex. It's just a simple burst.
+TEXT: So there are the basics. Once again, I've done a whole tutorial on trigger hold off which uses basically this same example and it shows analog and digital scopes as well.
+context after: So if you like it, please give it a big thumbs up. If you want to discuss it, jump on over to the EEVblog forum. Catch you next time.
